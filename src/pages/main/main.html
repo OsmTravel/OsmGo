@@ -1,0 +1,69 @@
+<div id="locationWaiting" *ngIf="!locationService.gpsIsReady">
+	<h1>Geolocation</h1>
+</div>
+
+<ion-content padding class="home" #mycontent>
+
+
+	<div id="map">
+
+		<ion-fab left top >
+			<button tappable ion-fab fab-bottom (click)="menuCtrl.open()">
+     <ion-icon  name="menu"></ion-icon>
+  </button>
+		</ion-fab>
+
+		<ion-fab right top *ngIf="dataService.getCountGeojsonChanged() > 0" style="margin-right:40px;">
+			<button tappable  ion-fab fab-bottom (click)="goToPushDataPage()">
+     			<ion-icon  name="log-in"></ion-icon>
+  			</button>
+		</ion-fab>
+
+		<ion-fab left bottom>
+			<button tappable  ion-fab fab-bottom (click)="loadData()" [disabled]="mapService.loadingData">
+     		<ion-icon [ngClass]= "{'fa-spin' :mapService.loadingData}" name="refresh"></ion-icon>
+ 		 </button>
+		</ion-fab>
+
+		<ion-fab right bottom *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"  style="margin-bottom:60px;">
+			<button tappable  ion-fab fab-bottom color="danger" (click)="mapService.positionateMarker()" [disabled]="loadingData">
+        		<ion-icon name="add"></ion-icon>
+      		</button>
+		</ion-fab>
+
+		<ion-fab right bottom>
+			<button tappable  ion-fab fab-bottom (click)="mapService.centerOnMyPosition()">
+        		<ion-icon name="locate"></ion-icon>
+      		</button>
+		</ion-fab>
+
+		<ion-fab right bottom *ngIf="mapService.markerMoving" style="margin-right:60px; z-index: 1000;">
+			<button tappable ion-fab fab-bottom color="secondary" (click)="mapService.openModalOsm()">
+        		<ion-icon name="checkmark"></ion-icon>
+       		</button>
+		</ion-fab>
+
+		<ion-fab right bottom *ngIf="mapService.markerMoving">
+			<button tappable  ion-fab fab-bottom color="danger" (click)="mapService.cancelNewMarker()">
+         		<ion-icon name="close"></ion-icon>
+      		</button>
+		</ion-fab>
+
+
+		<ion-fab right bottom *ngIf="mapService.markerMoveMoving" style="margin-right:60px; z-index: 1000;">
+			<button ion-fab fab-bottom color="secondary" (click)="mapService.openModalWithNewPosition()">
+         		<ion-icon name="checkmark"></ion-icon>
+      		</button>
+		</ion-fab>
+
+
+		<ion-fab right bottom *ngIf="mapService.markerMoveMoving">
+			<button ion-fab fab-bottom color="danger" (click)="mapService.cancelNewPosition()">
+     			<ion-icon name="close"></ion-icon>
+ 			 </button>
+		</ion-fab>
+
+	</div>
+</ion-content>
+
+<menu-content [content]="mycontent"></menu-content>

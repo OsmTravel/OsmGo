@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  {{ configService.getAppVersion().appName}} <br> 
+  {{ configService.getAppVersion().appVersionCode }}<br>
+  {{ configService.getAppVersion().appVersionNumber}} <br>
+
+</ion-content>

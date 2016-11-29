@@ -1,0 +1,261 @@
+{
+    "cuisine": {"type":"list","lbl":"Type de cuisine", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"barbecue","lbl":"Barbecue"},
+        {"v":"steak_house","lbl":"Beef Steak"},
+        {"v":"burger","lbl":"Burger"},
+        {"v":"cake","lbl":"Cake"},
+        {"v":"coffee_shop","lbl":"Coffee Shop"},
+        {"v":"couscous","lbl":"Couscous"},
+        {"v":"crepe","lbl":"Crepe"},
+        {"v":"curry","lbl":"Curry"},
+        {"v":"dessert","lbl":"Dessert"},
+        {"v":"donut","lbl":"Donut"},
+        {"v":"doughnut","lbl":"Doughnut"},
+        {"v":"empanada","lbl":"Empanada"},
+        {"v":"fish_and_chips","lbl":"Fish And Chips"},
+        {"v":"friture","lbl":"Friture"},
+        {"v":"ice_cream","lbl":"Glasse"},
+        {"v":"kebab","lbl":"Kebab"},
+        {"v":"mediterranean","lbl":"Mediterranean"},
+        {"v":"noodle","lbl":"Noodle"},
+        {"v":"pancake","lbl":"Pancake"},
+        {"v":"pasta","lbl":"Pasta"},
+        {"v":"pizza","lbl":"Pizza"},
+        {"v":"seafood","lbl":"Poisson, fruits de mer"},
+        {"v":"chicken","lbl":"Poulet"},
+        {"v":"sandwich","lbl":"Sandwich"},
+        {"v":"sushi","lbl":"Sushi"},
+        {"v":"tapas","lbl":"Tapas"},
+        {"v":"pie","lbl":"Tarte"},
+        {"v":"wings","lbl":"Wings"},
+        {"v":"african","lbl":"Cuisine Africaine"},
+        {"v":"german","lbl":"Cuisine Allemande"},
+        {"v":"american","lbl":"Cuisine Americaine"},
+        {"v":"arab","lbl":"Cuisine Arabe"},
+        {"v":"argentinian","lbl":"Cuisine Argentine"},
+        {"v":"asian","lbl":"Cuisine Asiatique"},
+        {"v":"australian","lbl":"Cuisine Australienne"},
+        {"v":"baiana","lbl":"Cuisine Baiana"},
+        {"v":"balkan","lbl":"Cuisine Balkan"},
+        {"v":"basque","lbl":"Cuisine Basque"},
+        {"v":"bavarian","lbl":"Cuisine Bavarian"},
+        {"v":"belarusian","lbl":"Cuisine Belarusian"},
+        {"v":"brazilian","lbl":"Cuisine Bresillienne"},
+        {"v":"cantonese","lbl":"Cuisine Cantonaise "},
+        {"v":"caribbean","lbl":"Cuisine Caribbean"},
+        {"v":"chinese","lbl":"Cuisine Chinoise"},
+        {"v":"korean","lbl":"Cuisine Coréeene"},
+        {"v":"croatian","lbl":"Cuisine Croate"},
+        {"v":"danish","lbl":"Cuisine Danoise"},
+        {"v":"spanish","lbl":"Cuisine Espagnole"},
+        {"v":"french","lbl":"Cuisine Française"},
+        {"v":"greek","lbl":"Cuisine Greque"},
+        {"v":"hungarian","lbl":"Cuisine Hongroise"},
+        {"v":"indian","lbl":"Cuisine Indienne"},
+        {"v":"international","lbl":"Cuisine International"},
+        {"v":"iranian","lbl":"Cuisine Iranienne"},
+        {"v":"italian","lbl":"Cuisine Italienne"},
+        {"v":"japanese","lbl":"Cuisine Japonaise"},
+        {"v":"latin_american","lbl":"Cuisine Latino américaine"},
+        {"v":"lebanese","lbl":"Cuisine Libanaise"},
+        {"v":"malagasy","lbl":"Cuisine Malgache"},
+        {"v":"mexican","lbl":"Cuisine Mexicaine"},
+        {"v":"pakistani","lbl":"Cuisine Pakistanaise"},
+        {"v":"peruvian","lbl":"Cuisine Peruvianaise"},
+        {"v":"polish","lbl":"Cuisine Polonaise"},
+        {"v":"portuguese","lbl":"Cuisine Portugaise"},
+        {"v":"regional","lbl":"Cuisine Regionalaise"},
+        {"v":"russian","lbl":"Cuisine Russe"},
+        {"v":"czech","lbl":"Cuisine Tcheque"},
+        {"v":"thai","lbl":"Cuisine Thaïlandaise"},
+        {"v":"turkish","lbl":"Cuisine Turque"},
+        {"v":"vietnamese","lbl":"Cuisine Vietnamienne"}
+
+    ]},
+    "fire_hydrant:type":{"type":"select","lbl":"Type", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"underground","lbl":"Souterraine"},
+        {"v":"pillar","lbl":"Pilier / hors sol"},
+        {"v":"wall","lbl":"Mur"},
+        {"v":"pond","lbl":"Etang"}
+    ]},
+
+    "fire_hydrant:position":{"type":"select","lbl":"Position", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"lane","lbl":"lane"},
+        {"v":"parking_lot","lbl":"parking_lot"},
+        {"v":"sidewalk","lbl":"sidewalk"},
+        {"v":"green","lbl":"green"}
+    ]},
+
+    "fire_hydrant:diameter":{"type":"number","lbl":"Diamètre", "tags":[
+    ]},
+
+    "school:FR":{"type":"select","lbl":"Ecole FR", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"maternelle","lbl":"Maternelle (petite à grande section)"},
+        {"v":"primaire","lbl":"Primaire (maternelle et élémentaire)"},
+        {"v":"élémentaire","lbl":"Élémentaire (CP à CM2)"},
+        {"v":"collège","lbl":"Collège (6e à 3e)"},
+        {"v":"lycée","lbl":"Lycée (2nde à Terminale)"},
+        {"v":"secondaire","lbl":"Secondaire (collège et lycée)"}
+    ]},
+    "operator":{"type":"text","lbl":"Opérateur", "tags":[
+    ]},
+    "brand":{"type":"text","lbl":"Marque", "tags":[
+    ]},
+
+    "bicycle_parking":{"type":"select","lbl":"Type", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"stands","lbl":"Arceau/Sheffield"},
+        {"v":"shed","lbl":"Abri dédié"},
+        {"v":"lockers","lbl":"Box individuel"},
+        {"v":"bollard","lbl":"Bollard"},
+        {"v":"wall_loops","lbl":"Pinces-roues"},
+        {"v":"informal","lbl":"Informel"}
+    ]},
+
+    "capacity":{"type":"number","lbl":"Capacité", "tags":[
+    ]},
+    
+    "covered":{"type":"select","lbl":"Couvert", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+
+    "butcher":{"type":"select","lbl":"Spécialité", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"pork","lbl":"Charcuterie"},
+        {"v":"poultry","lbl":"Volailles"},
+        {"v":"game","lbl":"Gibier"},
+        {"v":"halal","lbl":"Halal"},
+        {"v":"kosher","lbl":"Kascher"}
+    ]},
+    
+    "organic":{"type":"select","lbl":"Biologique", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"},
+        {"v":"only","lbl":"Uniquement"}
+    ]},
+    
+    "pastry_shop":{"type":"select","lbl":"Pâtisseries", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"},
+        {"v":"only","lbl":"Uniquement"}
+    ]},
+    "male":{"type":"select","lbl":"Homme", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+     "female":{"type":"select","lbl":"Femme", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "lottery":{"type":"select","lbl":"Vente de jeux de hasard", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "self_service":{"type":"select","lbl":"Self service", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "second_hand":{"type":"select","lbl":"Articles d'occasion", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+      "recycling_type":{"type":"select","lbl":"Type", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"container","lbl":"Conteneur"},
+        {"v":"centre","lbl":"Déchèterie"}
+    ]},
+    "recycling:glass_bottles":{"type":"select","lbl":"Bouteilles de verre et bocaux", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "recycling:paper":{"type":"select","lbl":"Papier", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "recycling:plastic":{"type":"select","lbl":"Plastique", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "backrest":{"type":"select","lbl":"Dossier", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "tobacco":{"type":"select","lbl":"Vente de cigarettes", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "seats":{"type":"number","lbl":"Nombre de places", "tags":[
+    ]},
+    "religion":{"type":"select","lbl":"Religion", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"christian","lbl":"Chrétienne"},
+        {"v":"jewish","lbl":"Judaïste"},
+        {"v":"muslim","lbl":"Islamique"},
+        {"v":"multifaith","lbl":"Multiconfessionnelle"}   
+    ]},
+
+"vending": {"type":"list","lbl":"Objet vendu", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"admission_tickets", "lbl":"Tickets d'entrée" },
+        {"v":"bread", "lbl":"Pains" },
+        {"v":"cigarettes", "lbl":"Cigarettes" },
+        {"v":"condoms", "lbl":"Préservatifs" },
+        {"v":"drinks", "lbl":"Boissons, soda,eau, jus de fruits,..." },
+        {"v":"excrement_bags", "lbl":"Sacs pour les excréments d'animaux" },
+        {"v":"food", "lbl":"Nourriture" },
+        {"v":"laundry_detergent", "lbl":"lessives, adoucissants" },
+        {"v":"milk", "lbl":"Lait frais" },
+        {"v":"newspapers", "lbl":"Journaux" },
+        {"v":"parking_tickets", "lbl":"Tickets de parking" },
+        {"v":"public_transport_tickets", "lbl":"Tickets de transport en commun" },
+        {"v":"sweets", "lbl":"Sucreries/bonbons" },
+        {"v":"toys", "lbl":"Jouets" }
+    ]},
+"social_facility": {"type":"list","lbl":"Type de services sociaux", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"group_home", "lbl":"Résidence avec services sociaux et médicaux" },
+        {"v":"assisted_living", "lbl":"Lieu de résidence collective" },
+        {"v":"shelter", "lbl":"Refuge temporaire" },
+        {"v":"ambulatory_care", "lbl":"ambulatory_care" },
+        {"v":"outreach", "lbl":"Aide sociale, juridique,conseils..." },
+        {"v":"workshop", "lbl":"Lieu de travail pour l'insertion/ handicapés" },
+        {"v":"food_bank", "lbl":"Banque alimentaire" }
+    ]},
+    
+"social_facility:for": {"type":"list","lbl":"Destinataire des services", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"abused", "lbl":"Victimes d'abus sexuels" },
+        {"v":"child", "lbl":"Enfants" },
+        {"v":"disabled", "lbl":"Handicapées physiques" },
+        {"v":"diseased", "lbl":"Malades" },
+        {"v":"drug_addicted", "lbl":"Toxicomanes " },
+        {"v":"homeless", "lbl":"Sans abris" },
+        {"v":"juvenile", "lbl":"Jeunes" },
+        {"v":"mental_health", "lbl":"Deficient mentaux" },
+        {"v":"migrant", "lbl":"Migrants, réfugiés" },
+        {"v":"orphan", "lbl":"Orphelins" },
+        {"v":"senior", "lbl":"Personnes âgées" },
+        {"v":"underprivileged", "lbl":"Personnes pauvres ou désavantagées" },
+        {"v":"unemployed", "lbl":"Personnes sans emploi" },
+        {"v":"victim", "lbl":"Victimes d'agression" }
+    ]}
+
+}

@@ -1,0 +1,98 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Paramètres</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h4>Map</h4>
+		<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label> Suivie de la position </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.followPosition" (ionChange)="followPositionChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">La carte est centré sur votre position</label>
+		</ion-card-content>
+	</ion-card>
+
+		<ion-card>
+		<ion-card-header> </ion-card-header>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Suivie de l'orientation </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.lockMapHeading" (ionChange)="lockMapHeadingChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">L'orientation de la carte dépend de celle du téléphone</label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Incliner la carte </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.mapIsPiched" (ionChange)="mapIsPichedChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">Incline la carte à 60°</label>
+		</ion-card-content>
+	</ion-card>
+
+	<h4>Tags</h4>
+		<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Liste des tags par défaut</ion-label>
+				<ion-select [(ngModel)]="this.configService.config.defaultPrimarykeyWindows" (ionChange)="defaultPrimarykeyWindowsChange($event)">
+					<ion-option value="allTags">Tout les tags</ion-option>
+					<ion-option value="bookmarks">Bookmarks</ion-option>
+					<ion-option value="type">Type</ion-option>
+				</ion-select>
+			</ion-item>
+			<label class="hint">Type de tag par défaut à l'ouverture de la fenêtre de sélection</label>
+		</ion-card-content>
+	</ion-card>
+
+	<h4>Data</h4>
+	<ion-card>
+		<ion-card-header>
+			Marge ({{this.configService.config.mapMarginBuffer}} m)
+		</ion-card-header>
+		<ion-card-content>
+			<ion-range [(ngModel)]="this.configService.config.mapMarginBuffer" debounce="300" (ionChange)="mapMarginBufferChange($event)"
+				min="0" max="100">
+				<ion-label range-left>0m</ion-label>
+				<ion-label range-right>100m</ion-label>
+			</ion-range>
+			<label class="hint">Distance autour de la vue courante où les données seront téléchargées</label>
+		</ion-card-content>
+	</ion-card>
+
+
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Déléguer la conversion des données </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.delegateDataConversion" (ionChange)="delegateDataConversionChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">Délégue la conversion des données à un serveur pour gagner en rapidité</label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Mode différé </ion-label>
+				<ion-toggle [disabled]="!this.osmApi.getUserInfo().connected" [(ngModel)]="this.configService.config.isDelayed" (ionChange)="isDelayedChange($event)"></ion-toggle>
+			</ion-item>
+			<label *ngIf="!this.osmApi.getUserInfo().connected" class="hint">Connectez vous pour passer en mode live</label>
+			<label class="hint">Les données seront envoyées en une fois != Les données seront envoyées à chaque modification</label>
+		</ion-card-content>
+	</ion-card>
+
+		
+
+
+</ion-content>
