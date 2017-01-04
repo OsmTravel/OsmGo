@@ -202,6 +202,28 @@
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+    "bench":{"type":"select","lbl":"Banc", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+
+    "wheelchair":{"type":"select","lbl":"Accessible en fauteuil", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"limited","lbl":"Limité"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "shelter":{"type":"select","lbl":"Abri", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+    "tactile_paving":{"type":"select","lbl":"Pavé tactile", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},  
     "seats":{"type":"number","lbl":"Nombre de places", "tags":[
     ]},
     "religion":{"type":"select","lbl":"Religion", "tags":[
