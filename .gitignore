@@ -13,6 +13,7 @@ log.txt
 .directory
 .editorconfig
 npm-debug.log*
+modulepaths.json
 
 .idea/
 .sass-cache/
