@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Geolocation, DeviceOrientation, CompassHeading, Diagnostic, PositionError } from 'ionic-native';
+import { Geolocation, DeviceOrientation, Diagnostic, PositionError } from 'ionic-native';
 
 import { Observable } from 'rxjs/Rx';
 
@@ -11,7 +11,7 @@ export class LocationService {
     eventPlatformReady = new EventEmitter();
     location;
     pointGeojson;
-    compassHeading: CompassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
+    compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
     headingTest = 0;
     gpsIsReady = false;
     subscriptionLocation;
@@ -76,16 +76,17 @@ export class LocationService {
     enableGeolocation() {
      
         this.subscriptionWatchLocation = Geolocation.watchPosition({ enableHighAccuracy: true })
-            .filter((p: PositionError) => {
-                if (p.code == 1) { // debug run livereload (fix => non https)
-                    this.location = { coords: { accuracy: 20, altitude: null, altitudeAccuracy: null, heading: null, latitude: 45.1865723, longitude: 5.7171862, speed: null }, timestamp: 1479114012803 };
-                    this.eventNewLocation.emit(this.getGeojsonPos());
+            //.filter((p) => p === undefined) //Filter Out Errors
+            // .filter((p: PositionError) => {
+            //     if (p.code == 1) { // debug run livereload (fix => non https)
+            //         this.location = { coords: { accuracy: 20, altitude: null, altitudeAccuracy: null, heading: null, latitude: 45.1865723, longitude: 5.7171862, speed: null }, timestamp: 1479114012803 };
+            //         this.eventNewLocation.emit(this.getGeojsonPos());
                   
-                    if (!this.gpsIsReady)
-                        this.gpsIsReady = true;
-                }
-                return p.code === undefined
-            }) //Filter Out Errors
+            //         if (!this.gpsIsReady)
+            //             this.gpsIsReady = true;
+            //     }
+            //     return p.code === undefined
+            // }) //Filter Out Errors
             .subscribe((data) => {
                 this.getGeojsonPos()
                 if (!this.gpsIsReady)
@@ -116,17 +117,14 @@ export class LocationService {
 
 
     heading(isVirtual) {
+        console.log(isVirtual);
         if (isVirtual) { // for testing : ionic Serve
-            let c = 0;
-            Observable.timer(1000, 100).subscribe(t => {
-                if (c > 355) { c = 0; };
-                c = c + 3;
-                this.compassHeading = { magneticHeading: 0, trueHeading: c, headingAccuracy: 0, timestamp: 0 };
+                this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
                 this.eventNewCompassHeading.emit(this.compassHeading);
-            });
+           
 
         } else {
-            DeviceOrientation.watchHeading({ frequency: 50 }).subscribe((data: CompassHeading) => {
+            DeviceOrientation.watchHeading({ frequency: 50 }).subscribe((data) => {
                 this.compassHeading = data;
                 this.eventNewCompassHeading.emit(data);
             }

@@ -38,9 +38,10 @@ modal{
 
     .fabInlineMarginLess{
         margin-left: 4px !important;
-         margin-top: 2px !important;
-        display: inline !important;
-        vertical-align: -webkit-baseline-middle !important;
+        margin-top: 2px !important;
+        float: left;
+        // display: inline !important;
+        // vertical-align: -webkit-baseline-middle !important;
     }
 
     .alertCard {

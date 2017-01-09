@@ -22,13 +22,18 @@ export class MyApp {
     Splashscreen.show();
 
     platform.ready().then(() => {
-      console.log('Là')
-      if (Device.device.platform != undefined){
+      let test = Device.uuid;
+      console.log(typeof Device.platform)
+
+
+
+      if (typeof Device.platform == 'string'){
         this.configService.loadAppVersion();
       }
       //loadAppVersion
-      console.log(Device.device.platform);
-      this.locationService.eventPlatformReady.emit((Device.device.platform) ? false : true);
+      console.log(Device);
+      this.locationService.eventPlatformReady.emit((typeof Device.platform == 'string') ? false : true); // object => ionic serve
+       //this.locationService.eventPlatformReady.emit(true);
       Insomnia.keepAwake()
         .then(
         () => console.log('Insomnia success'),

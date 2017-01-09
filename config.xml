@@ -61,5 +61,7 @@
   <allow-navigation href="*"/>
   <allow-navigation href="http://192.168.1.106:8100"/>
   <allow-navigation href="http://192.168.56.1:8100"/>
+  <allow-navigation href="http://192.168.1.103:8000"/>
+  <allow-navigation href="http://192.168.1.103:8100"/>
   <icon src="resources/android/icon/drawable-xhdpi-icon.png"/>
 </widget>
