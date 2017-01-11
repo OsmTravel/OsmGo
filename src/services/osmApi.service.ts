@@ -254,7 +254,8 @@ export class OsmApiService {
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
         this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-        this.dataService.addFeatureToGeojson(feature);
+       // this.dataService.addFeatureToGeojson(feature);
+       // refresh changed only
         return Observable.of(_feature);
 
     }
@@ -271,19 +272,19 @@ export class OsmApiService {
     }
 
     // Update
-    updateOsmElement(_feature) {
+    updateOsmElement(_feature, origineData) {
         let feature = JSON.parse(JSON.stringify(_feature));
         let id = feature.id;
-
-        if (feature.properties.changeType) { // il a déjà été modifié
-            this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-            this.dataService.updateFeatureToGeojson(feature)
+        console.log(origineData);
+        if (origineData === 'data_changed'){// il a déjà été modifié == if (feature.properties.changeType)
+             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
         }
-        else { //jamais été modifié, n'exite donc pas dans this.geojsonChanged
+
+        else { //jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update';
-            feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id);
+            feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id,'data');
             this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-            this.dataService.updateFeatureToGeojson(feature)
+            this.dataService.deleteFeatureFromGeojson(feature)
         }
         return Observable.of(id);
     }
@@ -313,23 +314,20 @@ export class OsmApiService {
 
         if (feature.properties.changeType) { // il a déjà été modifié
             if (feature.properties.changeType === 'Create') { // il n'est pas sur le serveur, on le supprime des 2 geojson
-                this.dataService.deleteFeatureFromGeojson(feature);
                 this.dataService.deleteFeatureFromGeojsonChanged(feature);
             }
             else if (feature.properties.changeType === 'Update') { // on reprend les données originales 
                 this.dataService.updateFeatureToGeojson(feature.properties.originalData);
                 feature.properties.changeType = 'Delete';
                 this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-                this.dataService.updateFeatureToGeojson(feature)
             }
         }
         else { //jamais été modifié, n'exite donc pas dans this.geojsonChanged
             feature.properties.changeType = 'Delete';
-            feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id);
+            feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id, 'data');
             this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-            this.dataService.updateFeatureToGeojson(feature)
+            this.dataService.deleteFeatureFromGeojson(feature)
         }
-        // this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
         return Observable.of(id);
     }
 
@@ -367,7 +365,7 @@ export class OsmApiService {
         let that = this;
         let workerMergeData = new Worker("assets/workers/worker-mergeData.js");
         workerMergeData.onmessage = function (event) {
-            that.mapService.getSyleAndRedraw(event.data);
+            that.mapService.getStyleAndRedraw(event.data);
             workerMergeData.terminate();
 
         };
@@ -466,7 +464,7 @@ export class OsmApiService {
         }
     }
 
-    /* ne garde que les relations complètes */
+    /* ne garde que les relations complètes (=> web worker?) (côté serveur?)*/
     private filterFeatures(features) {
         let filterFeatures = [];
         for (let i = 0; i < features.length; i++) {
@@ -479,7 +477,6 @@ export class OsmApiService {
             }
         }
         return filterFeatures;
-
     }
 
     private xmlOsmToFormatedGeojson(res) {
@@ -491,7 +488,7 @@ export class OsmApiService {
         return this.mapService.setIconStyle((featuresWayToPoint));
     }
 
-
+// => web workers? effectué coté serveur
     private wayToPoint(FeatureCollection) {
         let features = FeatureCollection.features;
         for (let i = 0; i < features.length; i++) {

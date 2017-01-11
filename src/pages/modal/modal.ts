@@ -23,6 +23,7 @@ export class ModalsContentPage {
   tags = []; // main data
   originalTags = [];
   feature;
+  origineData:string;
   typeFiche;
   displayCode = false;
   mode;
@@ -57,6 +58,7 @@ export class ModalsContentPage {
 
     this.feature = JSON.parse(JSON.stringify(params.data.data));
     this.mode = params.data.type; // Read, Create, Update
+    this.origineData = params.data.origineData;
 
     this.typeFiche = 'Loading'; // Edit, Read, Loading
 
@@ -78,6 +80,7 @@ export class ModalsContentPage {
 
   ngOnInit() { // override
     this.initComponent();
+    console.log(this.params);
 
 
   }
@@ -273,8 +276,10 @@ export class ModalsContentPage {
     this.typeFiche = 'Loading';
     this.pushTagsToFeature(); // on pousse les tags dans la feature
 
+    console.log(this.origineData);
+
     if (this.configService.getIsDelayed()) {
-      this.osmApi.updateOsmElement(this.feature).subscribe(data => {
+      this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(data => {
         this.dismiss({redraw: true});
       })
     }

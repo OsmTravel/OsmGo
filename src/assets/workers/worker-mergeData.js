@@ -12,10 +12,10 @@ importScripts('../lib/turf.min.js');
                 geojson.features.splice(i, 1);
             }
         }
-        // ADD to geojson
-        for (let i = 0; i < geojsonChanged.features.length; i++) {
-            geojson.features.push(geojsonChanged.features[i]);
-        }
+        // // ADD to geojson
+        // for (let i = 0; i < geojsonChanged.features.length; i++) {
+        //     geojson.features.push(geojsonChanged.features[i]);
+        // }
         return JSON.parse(JSON.stringify(geojson))
     }
 

@@ -37,6 +37,7 @@ export class MapService {
   eventOsmElementDeleted = new EventEmitter();
   eventOsmElementCreated = new EventEmitter();
   eventMarkerReDraw = new EventEmitter();
+  eventMarkerChangedReDraw = new EventEmitter();
   markersLayer = [];
 
   constructor(
@@ -57,13 +58,20 @@ export class MapService {
       console.log('eventMarkerReDraw');
       if (geojson) {
         this.map.getSource('data').setData(geojson);
-        this.drawWaysPoly(geojson);
+        this.drawWaysPoly(geojson, 'ways');
+      }
+    });
+
+    this.eventMarkerChangedReDraw.subscribe(geojson => {
+      console.log('eventMarkerChangedReDraw');
+      if (geojson) {
+        this.map.getSource('data_changed').setData(geojson);
+        this.drawWaysPoly(geojson, 'ways_changed');
       }
     });
   } //EOF constructor
 
-
-  drawWaysPoly(geojson) {
+  drawWaysPoly(geojson, source) {
     //  let geojson = this.dataService.getMergedGeojsonGeojsonChanged();
     let features = geojson.features;
     let featuresWay = [];
@@ -75,7 +83,7 @@ export class MapService {
       }
     }
 
-    this.map.getSource('ways').setData({ "type": "FeatureCollection", "features": featuresWay });
+    this.map.getSource(source).setData({ "type": "FeatureCollection", "features": featuresWay });
   }
 
   getBbox() {
@@ -179,7 +187,7 @@ export class MapService {
     }
     let pt = turf.point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
-    this.eventShowModal.emit({ type: 'Create', geojson: pt })
+    this.eventShowModal.emit({ type: 'Create', geojson: pt, origineData: null })
   }
 
   cancelNewMarker() {
@@ -195,13 +203,15 @@ export class MapService {
     let newLngLat = this.markerMove.getLngLat();
     // on pousse les nouvelle coordonnées dans le geojson
     geojson.geometry.coordinates = [newLngLat.lng, newLngLat.lat];
-    this.eventShowModal.emit({ type: this.mode, geojson: geojson, newPosition: true });
+    let origineData = (geojson.properties.changeType) ? 'data_changed' : 'data';
+    this.eventShowModal.emit({ type: this.mode, geojson: geojson, newPosition: true, origineData: origineData });
   }
 
   cancelNewPosition() {
     this.markerMoveMoving = false;
     let geojson = this.markerMove.data;
-    this.eventShowModal.emit({ type: this.mode, geojson: geojson });
+    let origineData = (geojson.properties.changeType) ? 'data_changed' : 'data';
+    this.eventShowModal.emit({ type: this.mode, geojson: geojson, origineData: origineData });
     this.markerMove.remove();
   }
 
@@ -228,7 +238,7 @@ export class MapService {
     this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData());
   }
 
-  getSyleAndRedraw(geojson) {
+  getStyleAndRedraw(geojson) {
     let that = this;
     let workerGetStyle = new Worker("assets/workers/worker-getIconStyle.js");
     workerGetStyle.onmessage = function (event) {
@@ -445,14 +455,15 @@ export class MapService {
     this.dataService.localStorage.get('geojsonChanged').then(data => {
       if (data) {
         this.dataService.setGeojsonChanged(data);
+        this.eventMarkerChangedReDraw.emit(data);
       }
       this.dataService.localStorage.get('geojson').then(data2 => {
         if (data2) {
           if (data2.features.length > 0)
             this.alertService.eventNewAlert.emit(data2.features.length + ' anciens éléments chargés')
           this.dataService.setGeojson(data2);
-          let geojsonIni = this.dataService.getMergedGeojsonGeojsonChanged();
-          this.eventMarkerReDraw.emit(geojsonIni);
+          //let geojsonIni = this.dataService.getMergedGeojsonGeojsonChanged();
+          this.eventMarkerReDraw.emit(data2);
         }
       });
     });
@@ -469,7 +480,9 @@ export class MapService {
 
     this.map.addSource("bbox", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("data", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
+    this.map.addSource("data_changed", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("ways", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
+    this.map.addSource("ways_changed", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("location_circle", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("location_point", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
 
@@ -501,11 +514,34 @@ export class MapService {
       "filter": ['all', ['==', '$type', 'LineString']]
     });
 
+        this.map.addLayer({
+      "id": "way_fill_changed", "type": "fill", "minzoom": minzoom, "source": "ways_changed",
+      'paint': { 'fill-color': { "property": 'hexColor', "type": 'identity' }, 'fill-opacity': 0.3 },
+      "filter": ['all', ['==', '$type', 'Polygon']]
+    });
+
+    this.map.addLayer({
+      "id": "way_line_changed", "type": "line", "source": "ways_changed", "minzoom": minzoom,
+      "paint": {
+        //  "line-color": { "property": 'hexColor', "type": 'identity' },
+        "line-width": 4, 'line-opacity': 0.7
+      },
+      "layout": { "line-join": "round", "line-cap": "round" },
+      "filter": ['all', ['==', '$type', 'LineString']]
+    });
+
     this.map.addLayer({
       "id": "label", "type": "symbol", "minzoom": 16.5, "source": "data",
       "layout": { "icon-image": "none", "icon-offset": [0, -14], "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
       "paint": { "text-color": "#888", "text-halo-color": "rgba(255,255,255,0.8)", "text-halo-width": 1 }
     });
+
+    this.map.addLayer({
+      "id": "label_changed", "type": "symbol", "minzoom": 16.5, "source": "data_changed",
+      "layout": { "icon-image": "none", "icon-offset": [0, -14], "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
+      "paint": { "text-color": "#888", "text-halo-color": "rgba(255,255,255,0.8)", "text-halo-width": 1 }
+    });
+
     //location
     this.map.addLayer({
       "id": "location_circle", "type": "fill", "source": "location_circle",
@@ -527,14 +563,13 @@ export class MapService {
       "layout": { "icon-image": "{marker}", "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-offset": [0, -14] }
     });
 
-    // this.map.addLayer({
-    //   "id": "icon", "type": "symbol", "source": "data",
-    //   "minzoom": minzoom,
-    //   "layout": { "icon-image": "{icon}", "icon-ignore-placement": true, "icon-offset": [0, -20] }
-    // });
+    this.map.addLayer({
+      "id": "marker_changed", "type": "symbol", "minzoom": minzoom, "source": "data_changed",
+      "layout": { "icon-image": "{marker}", "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-offset": [0, -14] }
+    });
 
     this.map.addLayer({
-      "id": "icon-change", "type": "symbol", "source": "data",
+      "id": "icon-change", "type": "symbol", "source": "data_changed",
       "layout": {
         "icon-image": "{changeType}", "icon-ignore-placement": true, "icon-offset": [0, -35]
       }
@@ -542,13 +577,20 @@ export class MapService {
 
     this.map.on('click', function (e) {
       let c = [[e.point.x - 8, e.point.y + 8], [e.point.x + 8, e.point.y + 18]];
-      let features = map.queryRenderedFeatures(c, { layers: ['marker', 'label', 'icon-change'] });
+      let features = map.queryRenderedFeatures(c, { layers: ['marker', 'marker_changed', 'label_changed', 'label', 'icon-change'] });
       if (!features.length) {
         return;
       }
       let feature = features[0];
-      let geojson = that.dataService.getFeatureById(feature.properties.id);
-      that.eventShowModal.emit({ type: 'Read', geojson: geojson });
+      let layer = feature.layer.id;
+      // Provenance de la donnée d'origine (data OU data_changed)
+      let origineData = 'data';
+      if (layer === 'label_changed' || layer === 'marker_changed' || layer === 'icon-change') {
+        origineData = 'data_changed';
+      }
+
+      let geojson = that.dataService.getFeatureById(feature.properties.id, origineData);
+      that.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
     });
 
     this.map.on('dragstart', function (e) {

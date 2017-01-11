@@ -69,8 +69,11 @@ export class DataService {
         }
     }
 
-    getFeatureById(id) {
-        let features = this.getGeojson().features;
+    getFeatureById(id,origineData) {
+      
+          let features= (origineData === 'data_changed') ? this.getGeojsonChanged().features :   this.getGeojson().features;
+      
+        
         for (let i = 0; i < features.length; i++) {
             if (features[i].properties.id === id) {
                 return JSON.parse(JSON.stringify(features[i]));
@@ -148,7 +151,7 @@ export class DataService {
 
         let originalFeature = JSON.parse(JSON.stringify(feature.properties.originalData));
         this.deleteFeatureFromGeojsonChanged(feature);
-        this.deleteFeatureFromGeojson(feature);
+        //this.deleteFeatureFromGeojson(feature);
         if (feature.properties.changeType !== 'Create') {
             this.addFeatureToGeojson(originalFeature);
         }
@@ -156,8 +159,9 @@ export class DataService {
 
     resetGeojsonData() {
         this.setGeojson({ "type": "FeatureCollection", "features": [] });
-        this.getMergedGeojsonGeojsonChanged();
-        return this.getMergedGeojsonGeojsonChanged();
+        // this.getMergedGeojsonGeojsonChanged();
+        // return this.getMergedGeojsonGeojsonChanged();
+        return { "type": "FeatureCollection", "features": [] };
     }
 
 }

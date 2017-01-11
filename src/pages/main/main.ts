@@ -43,7 +43,7 @@ export class MainPage {
     mapService.eventShowModal.subscribe(data => {
       // console.log(data);
       let newPosition = (data.newPosition) ? data.newPosition : false;
-      let modal = this.modalCtrl.create(ModalsContentPage, { type: data.type, data: data.geojson, newPosition: newPosition });
+      let modal = this.modalCtrl.create(ModalsContentPage, { type: data.type, data: data.geojson, newPosition: newPosition, origineData: data.origineData});
       modal.onDidDismiss(data => {
         if (data) {
           if (data.type === 'Move') {
@@ -52,6 +52,7 @@ export class MainPage {
           if (data.redraw) {
             setTimeout(() => {
               this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
+              this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
             }, 100);
 
           }
