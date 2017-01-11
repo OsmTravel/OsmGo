@@ -22,9 +22,8 @@ export class MyApp {
     Splashscreen.show();
 
     platform.ready().then(() => {
-      let test = Device.uuid;
-      console.log(typeof Device.platform)
-
+  
+      
 
 
       if (typeof Device.platform == 'string'){

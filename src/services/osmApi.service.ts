@@ -27,7 +27,7 @@ export class OsmApiService {
     urlDataServer = 'http://osmgo-data.dogeo.fr/';
     localStorage = new Storage();
     user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
-    changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment:'' };
+    changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     changeSetComment = 'Sortie avec Osm Go!';
 
     eventNewPoint = new EventEmitter();
@@ -55,7 +55,7 @@ export class OsmApiService {
                 this.changeset = d;
             }
             else {
-                this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment:this.changeSetComment };
+                this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.changeSetComment };
             }
         });
     }
@@ -83,7 +83,7 @@ export class OsmApiService {
         this.localStorage.set('user_info', this.user_info);
     }
 
-    resetUserInfo(){
+    resetUserInfo() {
         this.user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
         this.localStorage.set('user_info', this.user_info);
     }
@@ -116,7 +116,7 @@ export class OsmApiService {
     };
 
     setChangeset(_id: string, _created_at, _last_changeset_activity, _comment) { // alimente changeset + localstorage
-        this.changeset = { id: _id, last_changeset_activity: _last_changeset_activity, created_at: _created_at, comment:_comment };  // to do => ajouter le serveur?
+        this.changeset = { id: _id, last_changeset_activity: _last_changeset_activity, created_at: _created_at, comment: _comment };  // to do => ajouter le serveur?
         this.localStorage.set('changeset', this.changeset);
     };
 
@@ -161,8 +161,8 @@ export class OsmApiService {
         // si il n'existe pas
         if (this.getChangeset().id == null || this.getChangeset().id === '') {
             return this.createOSMChangeSet(_comments);
-        } 
-        else if (_comments !== this.getChangeset().comment ){ // un commentaire différent => nouveau ChangeSet
+        }
+        else if (_comments !== this.getChangeset().comment) { // un commentaire différent => nouveau ChangeSet
             return this.createOSMChangeSet(_comments);
         }
         else if ((Date.now() - this.getChangeset().last_changeset_activity) / 1000 > 3540 || // bientot une heure sans activité 
@@ -362,56 +362,22 @@ export class OsmApiService {
         return query;
     }
 
-    mergeNewOldData(newGeojson, bbox_geojson) {
 
-        let oldGeojson = this.dataService.getGeojson();
+    mergeNewOldData(newGeojson, oldGeojson, bbox_geojson) {
+        let that = this;
+        let workerMergeData = new Worker("assets/workers/worker-mergeData.js");
+        workerMergeData.onmessage = function (event) {
+            that.mapService.getSyleAndRedraw(event.data);
+            workerMergeData.terminate();
 
-        let oldFeatures = oldGeojson.features;
-        let newFeatures = newGeojson.features;
+        };
 
-        if (oldFeatures.length == 0) {
-            return newGeojson;
-        }
-        else {
-            //  le cas où une feature a été supprimé entre temps, on doit la supprimer de nos données:
-            let id_features_deleted = [];
-            for (let i = 0; i < oldFeatures.length; i++) { // si la feature est dans la BBOX, on la push pour la supprimer
-                if (turf.inside(oldFeatures[i], bbox_geojson)) {
-                    id_features_deleted.push(oldFeatures[i].id)
-                }
-            }
-            for (let i = 0; i < newFeatures.length; i++) {
-                let feature_id = newFeatures[i].id;
-
-                for (let j = 0; j < oldFeatures.length; j++) {
-                    if (feature_id == oldFeatures[j].id) { //la feature existe déjà dans nos données, on la remplace
-                        oldFeatures[j] = newFeatures[i];
-                        id_features_deleted.splice(id_features_deleted.indexOf(feature_id), 1); //la feature existe toujours, on la supprime du tableau
-                        break;
-                    }
-                    if (j == oldFeatures.length - 1) {   //la feature n'existe pas, on l'ajoute
-                        oldFeatures.push(newFeatures[i]);
-                    }
-                }
-            }
-
-            //parcours les features qui ont été supprimées pour les supprimer de nos données.
-            for (let i = 0; i < id_features_deleted.length; i++) {
-                let id_to_delete = id_features_deleted[i];
-                for (let j = 0; j < oldFeatures.length; j++) {
-                    if (oldFeatures[j].id == id_to_delete) {
-                        oldFeatures.splice(j, 1);
-                        break;
-                    }
-                }
-            }
-            return oldGeojson;
-        }
-    }
-
-
-
-    setBbox(newBoboxFeature) {
+        workerMergeData.postMessage({
+            newGeojson: newGeojson,
+            oldGeojson: oldGeojson, bbox_geojson: bbox_geojson,
+            geojsonChanged : that.dataService.getGeojsonChanged()
+        });}
+        setBbox(newBoboxFeature) {
 
         let resBbox;
         if (this.dataService.getGeojsonBbox().features.length == 0) {
@@ -452,7 +418,7 @@ export class OsmApiService {
                     .map((res) => {
                         let geojson = res.json()
                         this.setBbox(featureBbox);
-                        return this.mergeNewOldData(this.setIconStyle(geojson),featureBbox);
+                        this.mergeNewOldData(geojson, this.dataService.getGeojson(), featureBbox);
                     })
                     .catch((error: any) => {
                         return Observable.throw('Impossible de télécharger les données (Overpass délégué)')
@@ -467,7 +433,7 @@ export class OsmApiService {
                     .map((res) => {
                         let geojson = res.json()
                         this.setBbox(featureBbox);
-                        return this.mergeNewOldData(this.setIconStyle(geojson),featureBbox);
+                        this.mergeNewOldData(geojson, this.dataService.getGeojson(), featureBbox);
                     })
                     .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (api06)'));
 
@@ -483,7 +449,7 @@ export class OsmApiService {
                     .map((res) => {
                         this.setBbox(featureBbox);
                         console.log('Data Load in : ' + (new Date().getTime() - d1));
-                        return this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), featureBbox); //this.xmlOsmToFormatedGeojson(res)
+                        this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), this.dataService.getGeojson(), featureBbox);
                     })
                     .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (overpassApi)'));
             }
@@ -493,7 +459,7 @@ export class OsmApiService {
                 return this.http.get(url)
                     .map((res) => {
                         this.setBbox(featureBbox);
-                        return this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), featureBbox); //this.xmlOsmToFormatedGeojson(res)
+                        this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), this.dataService.getGeojson(), featureBbox);
                     })
                     .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (api06)'));
             }
@@ -522,7 +488,7 @@ export class OsmApiService {
         geojson.features = this.filterFeatures(geojson.features)
 
         let featuresWayToPoint = this.wayToPoint(geojson);
-        return this.setIconStyle(featuresWayToPoint);
+        return this.mapService.setIconStyle((featuresWayToPoint));
     }
 
 
@@ -558,17 +524,6 @@ export class OsmApiService {
                     }
                 }
             }
-        }
-        return FeatureCollection;
-    }
-
-
-
-    private setIconStyle(FeatureCollection) {
-        let features = FeatureCollection.features;
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i];
-            this.mapService.getIconStyle(feature);
         }
         return FeatureCollection;
     }

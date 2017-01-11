@@ -230,7 +230,7 @@ export class PushDataToOsmPage {
         this.summary = this.getSummary();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
             setTimeout(() => {
-              this.mapService.eventMarkerReDraw.emit();
+              this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
             }, 100);
     }
 

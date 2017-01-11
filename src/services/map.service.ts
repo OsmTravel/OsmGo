@@ -54,14 +54,17 @@ export class MapService {
     })
 
     this.eventMarkerReDraw.subscribe(geojson => {
-      this.map.getSource('data').setData(this.dataService.getMergedGeojsonGeojsonChanged());
-      this.drawWaysPoly();
+      console.log('eventMarkerReDraw');
+      if (geojson) {
+        this.map.getSource('data').setData(geojson);
+        this.drawWaysPoly(geojson);
+      }
     });
   } //EOF constructor
 
 
-  drawWaysPoly() {
-    let geojson = this.dataService.getMergedGeojsonGeojsonChanged();
+  drawWaysPoly(geojson) {
+    //  let geojson = this.dataService.getMergedGeojsonGeojsonChanged();
     let features = geojson.features;
     let featuresWay = [];
     for (let i = 0; i < features.length; i++) {
@@ -71,6 +74,7 @@ export class MapService {
         featuresWay.push(featureWay);
       }
     }
+
     this.map.getSource('ways').setData({ "type": "FeatureCollection", "features": featuresWay });
   }
 
@@ -220,11 +224,27 @@ export class MapService {
   }
 
   resetDataMap() {
-    this.dataService.resetGeojsonData();
-    this.dataService.resetGeojsonBbox();
-    this.eventNewBboxPolygon.emit(this.dataService.getGeojsonBbox());
-    this.eventMarkerReDraw.emit();
+    this.eventNewBboxPolygon.emit(this.dataService.resetGeojsonBbox());
+    this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData());
   }
+
+  getSyleAndRedraw(geojson) {
+    let that = this;
+    let workerGetStyle = new Worker("assets/workers/worker-getIconStyle.js");
+    workerGetStyle.onmessage = function (event) {
+      that.dataService.setGeojson(event.data);
+      that.eventMarkerReDraw.emit(event.data);
+      that.loadingData = false;
+      workerGetStyle.terminate()
+    }
+
+    workerGetStyle.postMessage({
+      tags: that.tagsService.getTags(),
+      geojson: geojson,
+      listOfPrimaryKeys: that.tagsService.getListOfPrimaryKey()
+    });
+  }
+
 
   private getMarkerShape(feature) {
     if (feature.properties.tags.name) {
@@ -313,6 +333,15 @@ export class MapService {
       }
     }
     return feature;
+  }
+
+  setIconStyle(FeatureCollection) {
+    let features = FeatureCollection.features;
+    for (let i = 0; i < features.length; i++) {
+      let feature = features[i];
+      this.getIconStyle(feature);
+    }
+    return FeatureCollection;
   }
 
   initMap() {
@@ -416,20 +445,19 @@ export class MapService {
     this.dataService.localStorage.get('geojsonChanged').then(data => {
       if (data) {
         this.dataService.setGeojsonChanged(data);
-        this.eventMarkerReDraw.emit();
       }
-
+      this.dataService.localStorage.get('geojson').then(data2 => {
+        if (data2) {
+          if (data2.features.length > 0)
+            this.alertService.eventNewAlert.emit(data2.features.length + ' anciens éléments chargés')
+          this.dataService.setGeojson(data2);
+          let geojsonIni = this.dataService.getMergedGeojsonGeojsonChanged();
+          this.eventMarkerReDraw.emit(geojsonIni);
+        }
+      });
     });
 
-    this.dataService.localStorage.get('geojson').then(data => {
-      if (data) {
-        if (data.features.length > 0)
-          this.alertService.eventNewAlert.emit(data.features.length + ' anciens éléments chargés')
-        this.dataService.setGeojson(data);
-        this.eventMarkerReDraw.emit();
-      }
 
-    });
   }
 
   mapIsLoaded() {
@@ -437,7 +465,7 @@ export class MapService {
     let that = this;
 
     this.loadDataFromLocalStorage();
-    let minzoom = 15.5;
+    let minzoom = 12;
 
     this.map.addSource("bbox", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("data", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });

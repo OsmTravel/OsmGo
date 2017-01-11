@@ -145,8 +145,8 @@ export class LocationService {
     }
 
     getGeojsonPos() {
-        let lon = (this.location) ? this.location.coords.longitude : 5.6;
-        let lat = (this.location) ? this.location.coords.latitude : 45.6;
+        let lon = (this.location && this.location.coords) ? this.location.coords.longitude : 5.6;
+        let lat = (this.location && this.location.coords) ? this.location.coords.latitude : 45.6;
         let accuracy = (this.location) ? this.location.coords.accuracy : 0;
         let heading = this.compassHeading.trueHeading;
 

@@ -51,7 +51,7 @@ export class MainPage {
           }
           if (data.redraw) {
             setTimeout(() => {
-              this.mapService.eventMarkerReDraw.emit();
+              this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
             }, 100);
 
           }
@@ -97,9 +97,7 @@ export class MainPage {
     let bbox = this.mapService.getBbox()
     this.osmApi.getDataFromBbox(bbox, false, this.configService.getDelegateDataConversion())
       .subscribe(data => { // data = geojson a partir du serveur osm
-        this.dataService.setGeojson(data);
-        this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
-        this.mapService.loadingData = false;
+    
       },
       err => {
         this.mapService.loadingData = false;

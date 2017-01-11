@@ -26,6 +26,7 @@ export class DataService {
 
     resetGeojsonBbox() {
         this.setGeojsonBbox({ "type": "FeatureCollection", "features": [] });
+        return { "type": "FeatureCollection", "features": [] };
     }
 
 
@@ -155,7 +156,8 @@ export class DataService {
 
     resetGeojsonData() {
         this.setGeojson({ "type": "FeatureCollection", "features": [] });
-        return { "type": "FeatureCollection", "features": [] };
+        this.getMergedGeojsonGeojsonChanged();
+        return this.getMergedGeojsonGeojsonChanged();
     }
 
 }
