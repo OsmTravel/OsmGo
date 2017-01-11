@@ -204,7 +204,8 @@ export class PushDataToOsmPage {
         else {
             this.isPushing = false;
             this.summary = this.getSummary();
-            this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
+            this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
+             this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
             this.featuresChanges = this.dataService.getGeojsonChanged().features;
             if (this.dataService.getGeojsonChanged().features.length === 0) { // Y'a plus d'éléments à pusher
                 this.navCtrl.popToRoot();

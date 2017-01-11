@@ -238,22 +238,7 @@ export class MapService {
     this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData());
   }
 
-  getStyleAndRedraw(geojson) {
-    let that = this;
-    let workerGetStyle = new Worker("assets/workers/worker-getIconStyle.js");
-    workerGetStyle.onmessage = function (event) {
-      that.dataService.setGeojson(event.data);
-      that.eventMarkerReDraw.emit(event.data);
-      that.loadingData = false;
-      workerGetStyle.terminate()
-    }
 
-    workerGetStyle.postMessage({
-      tags: that.tagsService.getTags(),
-      geojson: geojson,
-      listOfPrimaryKeys: that.tagsService.getListOfPrimaryKey()
-    });
-  }
 
 
   private getMarkerShape(feature) {

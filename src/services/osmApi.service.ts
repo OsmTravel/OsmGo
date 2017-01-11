@@ -254,8 +254,8 @@ export class OsmApiService {
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
         this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-       // this.dataService.addFeatureToGeojson(feature);
-       // refresh changed only
+        // this.dataService.addFeatureToGeojson(feature);
+        // refresh changed only
         return Observable.of(_feature);
 
     }
@@ -276,13 +276,13 @@ export class OsmApiService {
         let feature = JSON.parse(JSON.stringify(_feature));
         let id = feature.id;
         console.log(origineData);
-        if (origineData === 'data_changed'){// il a déjà été modifié == if (feature.properties.changeType)
-             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
+        if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
+            this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
         }
 
         else { //jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update';
-            feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id,'data');
+            feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id, 'data');
             this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
             this.dataService.deleteFeatureFromGeojson(feature)
         }
@@ -363,19 +363,41 @@ export class OsmApiService {
 
     mergeNewOldData(newGeojson, oldGeojson, bbox_geojson) {
         let that = this;
-        let workerMergeData = new Worker("assets/workers/worker-mergeData.js");
-        workerMergeData.onmessage = function (event) {
-            that.mapService.getStyleAndRedraw(event.data);
-            workerMergeData.terminate();
 
-        };
 
-        workerMergeData.postMessage({
-            newGeojson: newGeojson,
-            oldGeojson: oldGeojson, bbox_geojson: bbox_geojson,
-            geojsonChanged : that.dataService.getGeojsonChanged()
-        });}
-        setBbox(newBoboxFeature) {
+
+        let workerGetStyle = new Worker("assets/workers/worker-getIconStyle.js");
+
+        workerGetStyle.postMessage({
+            tags: that.tagsService.getTags(),
+            geojson: newGeojson,
+            listOfPrimaryKeys: that.tagsService.getListOfPrimaryKey()
+        });
+
+        workerGetStyle.onmessage = function (newGeojsonStyled) {
+            //that.dataService.setGeojson(event.data);
+            //   that.eventMarkerReDraw.emit(event.data);
+            //   that.loadingData = false;
+            workerGetStyle.terminate()
+            let workerMergeData = new Worker("assets/workers/worker-mergeData.js");
+
+            workerMergeData.postMessage({
+                newGeojson: newGeojsonStyled.data,
+                oldGeojson: oldGeojson, 
+                bbox_geojson: bbox_geojson,
+                geojsonChanged: that.dataService.getGeojsonChanged()
+            });
+
+            workerMergeData.onmessage = function (mergedGeojson) {
+                that.dataService.setGeojson(mergedGeojson.data)
+
+                that.mapService.eventMarkerReDraw.emit(mergedGeojson.data);
+                that.mapService.loadingData = false;
+                workerMergeData.terminate();
+            };
+        }
+    }
+    setBbox(newBoboxFeature) {
 
         let resBbox;
         if (this.dataService.getGeojsonBbox().features.length == 0) {
@@ -488,7 +510,7 @@ export class OsmApiService {
         return this.mapService.setIconStyle((featuresWayToPoint));
     }
 
-// => web workers? effectué coté serveur
+    // => web workers? effectué coté serveur
     private wayToPoint(FeatureCollection) {
         let features = FeatureCollection.features;
         for (let i = 0; i < features.length; i++) {
