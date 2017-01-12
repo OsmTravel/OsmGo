@@ -100,6 +100,7 @@ export class ModalPrimaryTag {
     selected(e) {
         console.log(e);
         this._primaryKey = { key: e.primaryKey, value: e.key };
+        this.summit(this.typeFiche)
     }
 
     test() {

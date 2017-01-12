@@ -1,92 +1,100 @@
 <div *ngIf="!loading" style="height:100%; background-color: white;">
 
-	<div id="tab">
-		<button ion-button clear (click)="typeFiche = 'list'">Liste</button>
-		<button ion-button clear (click)="typeFiche = 'custom'">Custom</button>
-	</div>
-	<div *ngIf="typeFiche == 'list'">
-		<div id="searchSelect">
-			<div style="width: 45%; padding:8px;">
-				<select class="select-md" style="width: 100%;" [(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
-					<option   value="bookmarks" >  Favoris </option>
-					<option   value="full" >  Tous les tags </option>
-                     <option  *ngFor ="let tag of primaryKeys" [ngValue]="tag.key" >  {{tag.lbl}} ({{tag.key}})</option>
-                </select>
+<div id="tab">
+	<button ion-button clear (click)="typeFiche = 'list'">Liste</button>
+	<button ion-button clear (click)="typeFiche = 'custom'">Custom</button>
+</div>
+<div *ngIf="typeFiche == 'list'">
+	<div id="searchSelect">
+		<div style="width: 45%; padding:8px;">
+<select class="select-md" style="width: 100%;" [(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
+<option value="bookmarks"> Favoris </option>
+<option value="full"> Tous les tags </option>
+<option *ngFor="let tag of primaryKeys" [ngValue]="tag.key"> {{tag.lbl}} ({{tag.key}})</option>
+</select>
 
-			</div>
+</div>
 
-			<div id="searchDiv">
-				<ion-searchbar [(ngModel)]="searchText" [debounce]="300"></ion-searchbar>
-			</div>
+<div id="searchDiv">
+	<ion-searchbar [(ngModel)]="searchText" [debounce]="300"></ion-searchbar>
+</div>
 
-		</div>
-
-
-		<div class="listTag" *ngIf="selectedKey !== 'full' || (searchText.length > 2 && selectedKey === 'full' )">
-			<table class="tableListe">
-				<tr *ngFor="let tag of currentListOfTags | filterByContent:['key','lbl','lbl_alt']:searchText;">
-					<td (click)="addRemoveToBookmarks(tag)" style="width:36px">
-						<ion-icon [style.color]="isBookMarked(tag) ? '#ffe80a' : '#d8d8d8'" name="star" item-left style="font-size: 26px;"></ion-icon>
-					</td>
-					<td (click)="selected(tag)" [style.color]="(_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key) ? '#3b22dd' : 'black'">
-						<b>{{tag?.lbl}}</b>
-						<br> {{tag?.key}} ({{tag?.primaryKey }})</td>
-					<td style="width:36px">
-
-						<div *ngIf="_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key">
-							<ion-icon name="checkmark" item-left style="font-size: 26px; color: green;"></ion-icon>
-						</div>
-
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<div class="listTag" *ngIf="selectedKey === 'full' && searchText.length < 3 ">
-			<h3>Au moins 3 lettres dans la recherche</h3>
-
-		</div>
-	</div>
+</div>
 
 
-	<div *ngIf="typeFiche == 'custom'">
-		<div id="searchSelect">
-			<div style="width: 100%; padding:8px;">
-				<select class="select-md" style="width: 100%;" [(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
-                     <option  *ngFor ="let tag of primaryKeys" [ngValue]="tag.key" >  {{tag.lbl}} ({{tag.key}})</option>
-            </select>
+<div class="listTag" *ngIf="selectedKey !== 'full' || (searchText.length > 2 && selectedKey === 'full' )">
+	<table class="tableListe">
+		<tr *ngFor="let tag of currentListOfTags | filterByContent:['key','lbl','lbl_alt']:searchText;">
+			<td style="width:16px;" [style.background-color]="tag.markerColor">
+<img *ngIf="tag.icon == '' " src="assets/mapStyle/IconsSVG/maki-circle-15.svg" height="15px" width="15px" style="max-width: 16px;" />
+<img *ngIf="tag.icon != '' " src="assets/mapStyle/IconsSVG/{{tag.icon}}.svg" height="15px" width="15px" style="max-width: 16px;" />
+</td>
 
-			</div>
-		</div>
+<td (click)="addRemoveToBookmarks(tag)" style="width:36px">
+<ion-icon [style.color]="isBookMarked(tag) ? '#ffe80a' : '#d8d8d8'" name="star" item-left style="font-size: 26px;"></ion-icon>
+</td>
+<td (click)="selected(tag)" [style.color]="(_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key) ? '#3b22dd' : 'black'">
+	<b>{{tag?.lbl}}</b>
+	<br> {{tag?.key}} ({{tag?.primaryKey }})
+	<br> <span style="font-size: 11px;font-style: italic;"> {{tag?.lbl_alt}}
+</span>
+</td>
+<td style="width:36px">
 
-		<div class="listTag">
-			<ion-item>
-				<ion-label floating>Value</ion-label>
-				<ion-input type="text" [(ngModel)]="customValue"></ion-input>
-			</ion-item>
+<div *ngIf="_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key">
+	<ion-icon name="checkmark" item-left style="font-size: 26px; color: green;"></ion-icon>
+</div>
 
-		</div>
-	</div>
+</td>
+</tr>
+</table>
+</div>
 
-		<div id="footer">
-			<button ion-button (click)="summit(typeFiche)" [disabled]="(customValue == ''  || selectedKey =='bookmarks' || selectedKey =='full' ) && typeFiche == 'custom' ">Valider</button>
-			<button ion-button color="danger" (click)="cancel()">Annuler</button>
-		</div>
+<div class="listTag" *ngIf="selectedKey === 'full' && searchText.length < 3 ">
+	<h3>Au moins 3 lettres dans la recherche</h3>
+
+</div>
+</div>
+
+
+<div *ngIf="typeFiche == 'custom'">
+	<div id="searchSelect">
+		<div style="width: 100%; padding:8px;">
+<select class="select-md" style="width: 100%;" [(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
+<option *ngFor="let tag of primaryKeys" [ngValue]="tag.key"> {{tag.lbl}} ({{tag.key}})</option>
+</select>
+
+</div>
+</div>
+
+<div class="listTag">
+	<ion-item>
+		<ion-label floating>Value</ion-label>
+		<ion-input type="text" [(ngModel)]="customValue"></ion-input>
+	</ion-item>
+
+</div>
+</div>
+
+<div id="footer">
+	<button *ngIf="typeFiche == 'custom'" ion-button (click)="summit(typeFiche)" [disabled]="(customValue == ''  || selectedKey =='bookmarks' || selectedKey =='full' ) && typeFiche == 'custom' ">Valider</button>
+	<button ion-button color="danger" (click)="cancel()">Annuler</button>
+</div>
 
 
 
-	<div *ngIf="loading" style="height:100%">
-		<ion-header>
-			<ion-toolbar>
-				<ion-title>
-					Chargement...
-				</ion-title>
-			</ion-toolbar>
-		</ion-header>
+<div *ngIf="loading" style="height:100%">
+<ion-header>
+	<ion-toolbar>
+		<ion-title>
+			Chargement...
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
 
-		<ion-content>
-		</ion-content>
+<ion-content>
+</ion-content>
 
-		<ion-footer>
-		</ion-footer>
-	</div>
+<ion-footer>
+</ion-footer>
+</div>

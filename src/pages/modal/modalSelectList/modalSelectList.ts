@@ -3,7 +3,8 @@ import { ModalController, NavParams, ViewController, Platform } from 'ionic-angu
 
 
 @Component({
-    templateUrl: 'modalSelectList.html'
+    templateUrl: 'modalSelectList.html',
+     selector: 'modal-select-list',
 })
 export class ModalSelectList {
     data;
@@ -18,7 +19,6 @@ export class ModalSelectList {
 
     ) {
         this.data = params.data;
-        // backButton
         this.platform.registerBackButtonAction(e => {
             this.dismiss();
         });
@@ -29,8 +29,6 @@ export class ModalSelectList {
     }
 
     searchTextChange(e) {
-
-
         //this.allTags[this.selectedKey].value;
 
     }
