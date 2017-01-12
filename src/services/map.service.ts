@@ -134,7 +134,7 @@ export class MapService {
         "type": "raster",
         "source": "tmsIgn",
         "minzoom": 14,
-        "maxzoom": 19
+        "maxzoom": 20
       }, 'bboxLayer');
     }
     else {
@@ -474,7 +474,7 @@ export class MapService {
     //test Tile
     this.map.addSource("tmsIgn", {
       "type": "raster",
-      "tiles": ['http://proxy-ortho-ign.dogeo.fr/{z}/{x}/{y}'], "tileSize": 256
+       "tiles": ['http://proxy-ortho-ign.dogeo.fr/{z}/{x}/{y}'], "tileSize": 256
     });
 
 
