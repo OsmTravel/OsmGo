@@ -28,46 +28,6 @@ function getMarkerShape(feature) {
     }
   }
 
-  function getHexColor(configMarker) {
-
-    switch (configMarker.markerColor) {
-      case 'black':
-        return '#231F20';
-      case 'blue':
-        return '#1B75BB';
-      case 'blue-dark.':
-        return '#286273';
-      case 'cyan':
-        return '#32A9DD';
-      case 'green':
-        return '#009549';
-      case 'green-dark':
-        return '#006838';
-      case 'green-light':
-        return '#70B044';
-      case 'orange':
-        return '#EF9228';
-      case 'orange-dark':
-        return '#D73F29';
-      case 'pink':
-        return '#C057A0';
-      case 'purple':
-        return '#5B396C';
-      case 'red':
-        return '#A23337';
-      case 'red-dark':
-        return '#75030B';
-      case 'violet':
-        return '#90278E';
-      case 'white':
-        return '#FFFFFF';
-      case 'yellow':
-        return '#F5BB3A';
-      default:
-        return '#231F20';
-    }
-
-  }
 
 function getConfigMarkerByKv(primaryTag, tags){
     for (let i = 0; i < tags.length; i++){
@@ -87,12 +47,12 @@ function getFeatureStyle(feature, listOfPrimaryKeys, tags){
         //circle-red-mi-white-assistive-listening-system
         feature.properties.icon = (configMarker.icon) ? configMarker.icon : ''
         feature.properties.marker = getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
-        feature.properties.hexColor = getHexColor(configMarker);
+        feature.properties.hexColor = configMarker.markerColor;
 
       } else { // on ne connait pas la 'value', donc pas de config pour le marker 
-        feature.properties.marker = getMarkerShape(feature) + '-black-';
+        feature.properties.marker = getMarkerShape(feature) + '-#000000-';
         feature.properties.icon = 'mi-white-circle'
-        feature.properties.hexColor = '#231F20';
+        feature.properties.hexColor = '#000000';
       }
     }
 

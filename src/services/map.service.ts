@@ -319,12 +319,12 @@ export class MapService {
         //circle-red-mi-white-assistive-listening-system
         feature.properties.icon = (configMarker.icon) ? configMarker.icon : ''
         feature.properties.marker = this.getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
-        feature.properties.hexColor = this.getHexColor(configMarker);
+        feature.properties.hexColor = configMarker.markerColor;
 
       } else { // on ne connait pas la 'value', donc pas de config pour le marker 
-        feature.properties.marker = this.getMarkerShape(feature) + '-black-';
+        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
         feature.properties.icon = 'mi-white-circle'
-        feature.properties.hexColor = '#231F20';
+        feature.properties.hexColor = '#000000';
       }
     }
     return feature;
@@ -447,7 +447,6 @@ export class MapService {
           if (data2.features.length > 0)
             this.alertService.eventNewAlert.emit(data2.features.length + ' anciens éléments chargés')
           this.dataService.setGeojson(data2);
-          //let geojsonIni = this.dataService.getMergedGeojsonGeojsonChanged();
           this.eventMarkerReDraw.emit(data2);
         }
       });
