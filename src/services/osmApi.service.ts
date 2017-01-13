@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
-//import * as localforage from "localforage";
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { MapService } from './map.service';
@@ -19,7 +19,7 @@ declare var turf: any;
 @Injectable()
 export class OsmApiService {
 
-    isDevServer = false;
+    isDevServer = false; // dev serveur
     urlsOsm = {
         prod: { "api": 'http://api.openstreetmap.org', "overpass": "http://api.openstreetmap.fr/oapi/interpreter" },
         dev: { "api": 'http://api06.dev.openstreetmap.org', "overpass": "" }

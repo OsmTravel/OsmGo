@@ -3,7 +3,7 @@
 		<ion-navbar>
 
 			<ion-icon (click)="closeMenu()" name="arrow-back" style="font-size: 30px;vertical-align: sub;">
-				<ion-title style="display: inline-flex;">Menu</ion-title>
+				<ion-title style="display: inline-flex;">OSM Go!</ion-title>
 			</ion-icon>
 		</ion-navbar>
 	</ion-header>
@@ -18,18 +18,12 @@
 
 
 
-
-			<ion-item>
-				<ion-label> Ortho IGN </ion-label>
-				<ion-toggle (ionChange)="mapService.displayIgnOrtho($event.checked)"></ion-toggle>
-			</ion-item>
-
 			<ion-item (click)="pushPage('settingsPage')">
 				Paramètres
 			</ion-item>
 
 			<ion-item (click)="pushPage('aboutPage')">
-				About
+				A Propos
 			</ion-item>
 
 			<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">

@@ -48,7 +48,8 @@ export class MenuPage {
         {
           text: 'Confirmer',
           handler: () => {
-            this.mapService.resetDataMap()
+            this.mapService.resetDataMap();
+            this.closeMenu();
           }
         }
       ]

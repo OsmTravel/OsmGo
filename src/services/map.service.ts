@@ -136,9 +136,11 @@ export class MapService {
         "minzoom": 14,
         "maxzoom": 20
       }, 'bboxLayer');
+      this.configService.config.displayOrtho = true;
     }
     else {
       this.map.removeLayer('lyrOrthoIgn')
+       this.configService.config.displayOrtho = false;
     }
   }
   centerOnMyPosition() {
@@ -473,7 +475,8 @@ export class MapService {
     //test Tile
     this.map.addSource("tmsIgn", {
       "type": "raster",
-       "tiles": ['http://proxy-ortho-ign.dogeo.fr/{z}/{x}/{y}'], "tileSize": 256
+      "tiles": ['http://proxy-ortho-ign.dogeo.fr/{z}/{x}/{y}'], "tileSize": 256
+      // "tiles": ['http://a.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw'], "tileSize": 256
     });
 
 

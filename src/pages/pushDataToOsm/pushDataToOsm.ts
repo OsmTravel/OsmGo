@@ -118,7 +118,7 @@ export class PushDataToOsmPage {
                         newFeature = this.mapService.getIconStyle(newFeature); // style
                         this.summary.Total--;
                         this.summary.Create--;
-                        this.dataService.deleteFeatureFromGeojson(featureChanged); //suppression des data
+                        // this.dataService.deleteFeatureFromGeojson(featureChanged); //suppression des data
                         this.dataService.deleteFeatureFromGeojsonChanged(featureChanged)
 
                         this.dataService.addFeatureToGeojson(newFeature); //creation du nouveau 
@@ -154,7 +154,7 @@ export class PushDataToOsmPage {
                         this.summary.Total--;
                         this.summary.Update--;
 
-                        this.dataService.deleteFeatureFromGeojson(featureChanged);
+                        //this.dataService.deleteFeatureFromGeojson(featureChanged);
                         this.dataService.deleteFeatureFromGeojsonChanged(featureChanged)
                         this.dataService.addFeatureToGeojson(newFeature);
 
@@ -181,7 +181,7 @@ export class PushDataToOsmPage {
                         this.summary.Total--;
                         this.summary.Delete--;
 
-                        this.dataService.deleteFeatureFromGeojson(featureChanged);
+                        //this.dataService.deleteFeatureFromGeojson(featureChanged);
                         this.dataService.deleteFeatureFromGeojsonChanged(featureChanged)
                         this.featuresChanges = this.dataService.getGeojsonChanged().features;
                         this.pushFeatureToOsm(this.dataService.getGeojsonChanged().features[this.index], this.changesetId, this.index)
@@ -205,7 +205,8 @@ export class PushDataToOsmPage {
             this.isPushing = false;
             this.summary = this.getSummary();
             this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
-             this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
+            this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
+            // this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
             this.featuresChanges = this.dataService.getGeojsonChanged().features;
             if (this.dataService.getGeojsonChanged().features.length === 0) { // Y'a plus d'éléments à pusher
                 this.navCtrl.popToRoot();
@@ -233,6 +234,7 @@ export class PushDataToOsmPage {
             setTimeout(() => {
               this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
               this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
+              this.navCtrl.popToRoot();
             }, 100);
     }
 
