@@ -26,81 +26,52 @@
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<ion-card style="background-color: #f4f4f4;">
-				<ion-card-content>
-					Version : {{feature.properties?.meta?.version}} <br> Modifié le : {{feature.properties.meta.timestamp | date:'dd/MM/yyyy
-					HH:mm'}}
-					<!-- | date:'dd/MM/yyyy HH:mm'-->
-					<br> Par : {{feature?.properties?.meta?.user}}
-				</ion-card-content>
-			</ion-card>
-
+			<read-meta *ngIf="feature.properties.meta" [meta]="feature.properties.meta" > </read-meta>
+	
 			<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.alert != ''" class="alertCard">
 				<ion-card-content>
 					{{configOfPrimaryKey?.alert}}
 				</ion-card-content>
 			</ion-card>
 
-			<!--<ion-item>
-				<ion-label>Code</ion-label>
-				<ion-toggle [(ngModel)]="displayCode"></ion-toggle>
-			</ion-item>-->
-
 
 			<!--Primary Key-->
-			<ion-card>
-				<ion-card-header>
-
-					<b *ngIf="!displayCode">{{allTags[primaryKey.key].lbl}}</b>
-					<b *ngIf="displayCode">{{primaryKey.key}}</b>
-				</ion-card-header>
-				<ion-card-content>
-					<p *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
-					<p *ngIf="displayCode || !configOfPrimaryKey?.lbl"> <i class="fa fa-code" aria-hidden="true"></i> {{findElement(tags,{key : primaryKey.key})?.value}}</p>
-				</ion-card-content>
-			</ion-card>
-
+			<read-primary-key 
+				[displayCode]="displayCode"
+				[keyLbl] = "allTags[primaryKey.key].lbl"
+				[primaryKey] = "primaryKey"
+				[configOfPrimaryKey] = "configOfPrimaryKey">
+			</read-primary-key>
+	
 			<!--Les presets-->
-			<ion-card *ngFor="let tag of tags | filterIncludeKeys:configOfPrimaryKey?.presets | filterNull;">
-				<ion-card-header>
-					<b *ngIf="!displayCode">{{currentPresets[tag.key]?.lbl}}</b>
-					<b *ngIf="displayCode">{{tag.key}}</b>
-				</ion-card-header>
-				<ion-card-content>
-					<p *ngIf="!displayCode && findElement(currentPresets[tag.key]?.tags,{v: tag.value})?.lbl">{{ findElement(currentPresets[tag.key]?.tags,{v: tag.value})?.lbl }} </p>
-					<p *ngIf="displayCode || !findElement(currentPresets[tag.key]?.tags,{v: tag.value})?.lbl">
-						<i *ngIf="currentPresets[tag.key]?.type !== 'number' && currentPresets[tag.key]?.type !== 'text' " class="fa fa-code" aria-hidden="true"></i>						{{ tag.value }}</p>
-				</ion-card-content>
-			</ion-card>
+			<div *ngFor="let tag of tags | filterIncludeKeys:configOfPrimaryKey?.presets | filterNull;">
+				<read-presets
+					[displayCode]="displayCode"
+					[currentPresets] ="currentPresets"
+					[tag]="tag"> 
+				</read-presets>
+			</div>
 
 			<!--Le reste des tags-->
-			<ion-card *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
-				<ion-card-header>
-					<b>{{tag.key}}</b>
-				</ion-card-header>
-				<ion-card-content>
-					<p>{{tag.value}}</p>
-				</ion-card-content>
-			</ion-card>
+			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
+				<read-other-tag [tag]="tag">  </read-other-tag>
+			</div>
 
 		</ion-content>
 
 		<ion-footer>
 			<button ion-fab *ngIf="typeFiche==='Read'" (click)="dismiss()" class="fabInlineMarginLess">
-        <ion-icon name="close"> </ion-icon>
-      </button>
+				<ion-icon name="close"> </ion-icon>
+			</button>
 
-
-	<button ion-fab (click)="updateMode()" class="fabInlineMarginLess">
-        <ion-icon name="create"> </ion-icon>
-      </button>
+			<button ion-fab (click)="updateMode()" class="fabInlineMarginLess">
+				<ion-icon name="create"> </ion-icon>
+			</button>
 
 			<button ion-fab (click)="cancelChange()" color="danger" *ngIf="feature.properties.changeType" class="fabInlineMarginLess">
-        <ion-icon name="close"> </ion-icon>
-        <ion-icon name="create"> </ion-icon>
-      </button>
-
-
+				<ion-icon name="close"> </ion-icon>
+				<ion-icon name="create"> </ion-icon>
+			</button>
 		</ion-footer>
 	</div>
 
@@ -128,6 +99,7 @@
 
 
 		<ion-content>
+			<read-meta *ngIf="feature.properties.meta" [meta]="feature.properties.meta" > </read-meta>
 			<!--Alert-->
 			<ion-card *ngIf="configOfPrimaryKey?.alert && configOfPrimaryKey?.alert != ''" class="alertCard">
 				<ion-card-content>

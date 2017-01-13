@@ -16,6 +16,12 @@ import { MainPage } from '../pages/main/main';
 import { ModalsContentPage } from '../pages/modal/modal';
 import { ModalPrimaryTag } from '../pages/modal/modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from '../pages/modal/modalSelectList/modalSelectList';
+
+import { ReadPrimaryKey } from '../pages/modal/components/READ_PrimaryKey.component';
+import { ReadPresets } from '../pages/modal/components/READ_Presets.component';
+import { ReadOtherTag } from '../pages/modal/components/READ_OtherTag.component';
+import { ReadMeta } from '../pages/modal/components/READ_Meta.component';
+
 import { MenuPage } from '../pages/menu/menu';
 import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
@@ -48,7 +54,10 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
     PushDataToOsmPage,
     LoginPage,
     
-
+    ReadPrimaryKey,
+    ReadPresets,
+    ReadOtherTag,
+    ReadMeta,
 
     KeysPipe,
     FilterExcludeKeysPipe,
