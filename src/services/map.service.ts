@@ -494,7 +494,7 @@ export class MapService {
     this.map.addLayer({
       "id": "way_line", "type": "line", "source": "ways", "minzoom": minzoom,
       "paint": {
-        //  "line-color": { "property": 'hexColor', "type": 'identity' },
+          "line-color": { "property": 'hexColor', "type": 'identity' },
         "line-width": 4, 'line-opacity': 0.7
       },
       "layout": { "line-join": "round", "line-cap": "round" },
@@ -510,7 +510,7 @@ export class MapService {
     this.map.addLayer({
       "id": "way_line_changed", "type": "line", "source": "ways_changed", "minzoom": minzoom,
       "paint": {
-        //  "line-color": { "property": 'hexColor', "type": 'identity' },
+        "line-color": { "property": 'hexColor', "type": 'identity' },
         "line-width": 4, 'line-opacity': 0.7
       },
       "layout": { "line-join": "round", "line-cap": "round" },
