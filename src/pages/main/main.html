@@ -27,8 +27,8 @@
 
 		<ion-fab left bottom style="margin-bottom:60px;">
 			<button tappable  ion-fab fab-bottom  
-				[color]="configService.config.displayOrtho ? 'light' : 'secondary'  " 
-				(click)="mapService.displayIgnOrtho(!configService.config.displayOrtho)">
+				[color]="mapService.isDisplayOrtho ? 'light' : 'secondary'  " 
+				(click)="mapService.displayIgnOrtho(!mapService.isDisplayOrtho)">
      		<ion-icon  name="image"></ion-icon>
  		 </button>
 		</ion-fab>

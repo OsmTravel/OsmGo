@@ -26,6 +26,7 @@ export class MapService {
   loadingData = false;
   headingIsLocked = true;
   positionIsFollow = true;
+  isDisplayOrtho:boolean =  false;
 
 
   eventDomMainReady = new EventEmitter();
@@ -136,11 +137,11 @@ export class MapService {
         "minzoom": 14,
         "maxzoom": 20
       }, 'bboxLayer');
-      this.configService.config.displayOrtho = true;
+      this.isDisplayOrtho = true;
     }
     else {
       this.map.removeLayer('lyrOrthoIgn')
-       this.configService.config.displayOrtho = false;
+       this.isDisplayOrtho = false;
     }
   }
   centerOnMyPosition() {
