@@ -13,7 +13,7 @@
   </button>
 		</ion-fab>
 
-		<ion-fab right top *ngIf="dataService.getCountGeojsonChanged() > 0" style="margin-right:40px;">
+		<ion-fab right top *ngIf="dataService.geojsonChanged.features.length > 0" style="margin-right:40px;">
 			<button tappable  ion-fab fab-bottom (click)="goToPushDataPage()">
      			<ion-icon  name="log-in"></ion-icon>
   			</button>

@@ -65,7 +65,7 @@
         <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash"></ion-icon>
 
       </td>
-      <td>{{tagsService.getPrimaryKeyOfObject(item.properties?.tags).k}}: {{tagsService.getPrimaryKeyOfObject(item.properties?.tags).v}}</td>
+      <td>{{item.properties?.primaryTag.k}}: {{item.properties?.primaryTag.v}}</td>
       <td>{{item?.properties?.tags?.name}}</td>
         <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon name="locate"></ion-icon>  </td>
       <td>

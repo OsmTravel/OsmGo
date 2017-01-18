@@ -25,14 +25,14 @@ export class OsmApiService {
         dev: { "api": 'http://api06.dev.openstreetmap.org', "overpass": "" }
     }
     urlDataServer = 'http://osmgo-data.dogeo.fr/';
+
+    
     localStorage = new Storage();
     user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
     changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     changeSetComment = 'Sortie avec Osm Go!';
 
     eventNewPoint = new EventEmitter();
-
-
 
     constructor(
         private http: Http,
@@ -492,8 +492,9 @@ export class OsmApiService {
         for (let i = 0; i < features.length; i++) {
             let feature = features[i];
             if (!feature.properties.tainted) { // !relation incomplete
-
-                if (this.tagsService.getPrimaryKeyOfObject(feature.properties.tags)) { // !aucun tag interessant
+                let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature.properties.tags);
+                if (primaryTag) { //tag interessant
+                    feature.properties['primaryTag'] = primaryTag;
                     filterFeatures.push(feature);
                 }
             }

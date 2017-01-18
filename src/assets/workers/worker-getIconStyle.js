@@ -39,7 +39,7 @@ function getConfigMarkerByKv(primaryTag, tags){
 }
 
 function getFeatureStyle(feature, listOfPrimaryKeys, tags){
-    let primaryTag = getPrimaryKeyOfObject(feature.properties.tags,listOfPrimaryKeys);
+    let primaryTag = feature.properties['primaryTag']; // getPrimaryKeyOfObject(feature.properties.tags,listOfPrimaryKeys);
      
     if (listOfPrimaryKeys.indexOf(primaryTag.k) !== -1){ //// c'est un objet à afficher
         let configMarker = getConfigMarkerByKv(primaryTag,tags[primaryTag.k].values);

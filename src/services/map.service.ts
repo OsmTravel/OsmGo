@@ -305,9 +305,7 @@ export class MapService {
   getMapStyle(): Observable<any> {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .map(res => {
-
         let mapStyle = res.json();
-
         return mapStyle;
       });
 
@@ -316,10 +314,11 @@ export class MapService {
   getIconStyle(feature) {
     let listOfPrimaryKeys = this.tagsService.getListOfPrimaryKey();
     let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature.properties.tags); // {k: "shop", v: "travel_agency"}
+    feature.properties['primaryTag'] = primaryTag;
     if (listOfPrimaryKeys.indexOf(primaryTag.k) !== -1) { // c'est un objet à afficher
       let configMarker = this.tagsService.getConfigMarkerByKv(primaryTag.k, primaryTag.v);
       if (configMarker) { // OK
-        //circle-red-mi-white-assistive-listening-system
+
         feature.properties.icon = (configMarker.icon) ? configMarker.icon : ''
         feature.properties.marker = this.getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
         feature.properties.hexColor = configMarker.markerColor;
@@ -337,7 +336,7 @@ export class MapService {
     let features = FeatureCollection.features;
     for (let i = 0; i < features.length; i++) {
       let feature = features[i];
-      this.getIconStyle(feature);
+      this.getIconStyle(feature); // lent....
     }
     return FeatureCollection;
   }
@@ -362,7 +361,7 @@ export class MapService {
       this.map = new mapboxgl.Map({
         container: 'map',
         style: mapStyle, // 'streets-v9','outdoors-v9','light-v9','dark-v9','satellite-v9','satellite-streets-v9'
-        center: [45, 5],
+        center: [5, 45],
         zoom: 19,
         maxZoom: 22,
         doubleClickZoom: false,
