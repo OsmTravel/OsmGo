@@ -18,9 +18,13 @@ import { ModalPrimaryTag } from '../pages/modal/modal.primaryTag/modal.primaryTa
 import { ModalSelectList } from '../pages/modal/modalSelectList/modalSelectList';
 
 import { ReadPrimaryKey } from '../pages/modal/components/READ_PrimaryKey.component';
+import { EditPrimaryKey } from '../pages/modal/components/EDIT_PrimaryKey.component';
 import { ReadPresets } from '../pages/modal/components/READ_Presets.component';
+import { EditPresets } from '../pages/modal/components/EDIT_Presets.component';
 import { ReadOtherTag } from '../pages/modal/components/READ_OtherTag.component';
+import { EditOtherTag } from '../pages/modal/components/EDIT_OtherTag.component'
 import { ReadMeta } from '../pages/modal/components/READ_Meta.component';
+
 
 import { MenuPage } from '../pages/menu/menu';
 import { AboutPage } from '../pages/about/about';
@@ -58,6 +62,9 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
     ReadPresets,
     ReadOtherTag,
     ReadMeta,
+    EditPrimaryKey,
+    EditPresets,
+    EditOtherTag,
 
     KeysPipe,
     FilterExcludeKeysPipe,

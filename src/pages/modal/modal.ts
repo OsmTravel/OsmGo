@@ -202,7 +202,6 @@ export class ModalsContentPage {
     if (idx !== -1) {
       this.tags.splice(idx, 1);
     }
-
   }
 
   toLowerCase(text: string) {
@@ -225,13 +224,10 @@ export class ModalsContentPage {
 
   createOsmElement() {
     this.typeFiche = 'Loading';
-
-
     this.tagsService.setLastTagAdded(this.primaryKey);
 
     this.pushTagsToFeature(); // on pousse les tags dans la feature
     if (this.configService.getIsDelayed()) {
-
         this.osmApi.createOsmNode(this.feature).subscribe(data => {
           this.dismiss({redraw: true});
         })
@@ -363,14 +359,8 @@ export class ModalsContentPage {
         // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
         let idx = _.findIndex(this.tags, { key: this.primaryKey.key, value: this.primaryKey.value });
         this.tags[idx] = JSON.parse(JSON.stringify(data));
-
         this.primaryKey = JSON.parse(JSON.stringify(data));
         this.initComponent();
-        // this.clearNullTags();
-        // if (_.findIndex(this.tags, { key: 'name' }) === -1) // on ajoute un nom vide si il n'existe pas
-        //   this.tags.push({ key: 'name', value: '' });
-        // this.primaryKey = this.getPrimaryKeyOfTags()
-        // this.configOfPrimaryKey = this.getConfigOfPrimarykey();
       }
     });
     modal.present();

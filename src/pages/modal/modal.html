@@ -95,9 +95,6 @@
 			</ion-fab>
 		</ion-header>
 
-
-
-
 		<ion-content>
 			<read-meta *ngIf="feature.properties.meta" [meta]="feature.properties.meta" > </read-meta>
 			<!--Alert-->
@@ -106,96 +103,33 @@
 					{{configOfPrimaryKey?.alert}}
 				</ion-card-content>
 			</ion-card>
+
 			<!--Primary key-->
-			<ion-card (click)="openPrimaryTagModal()">
-				<ion-card-header>
-					<b *ngIf="!displayCode">{{allTags[primaryKey.key].lbl}}</b>
-					<b *ngIf="displayCode">{{primaryKey.key}}</b>
-
-				</ion-card-header>
-				<ion-card-content>
-
-
-					<ion-grid>
-						<ion-row>
-							<ion-col width-90>
-								<p *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
-								<p *ngIf="displayCode || !configOfPrimaryKey?.lbl"> <i class="fa fa-code" aria-hidden="true"></i> {{findElement(tags,{key : primaryKey.key})?.value}}</p>
-
-							</ion-col>
-							<ion-col width-10>
-								<i class="fa fa-cog fa-2x"></i>
-							</ion-col>
-						</ion-row>
-					</ion-grid>
-				</ion-card-content>
-			</ion-card>
+			<edit-primary-key 
+				[displayCode]="displayCode"
+				[keyLbl] = "allTags[primaryKey.key].lbl"
+				[primaryKey] = "primaryKey"
+				[configOfPrimaryKey] = "configOfPrimaryKey"
+				(openPrimaryTagModal) = "openPrimaryTagModal()">
+			</edit-primary-key>
 
 			<!--Les presets-->
-			<ion-card *ngFor="let tag of tags | filterIncludeKeys:configOfPrimaryKey?.presets; let j = index; trackBy:j;">
-				<ion-card-header>
-					<b *ngIf="!displayCode">{{currentPresets[tag.key]?.lbl}}</b>
-					<i *ngIf="!displayCode && currentPresets[tag.key]?.type === 'list'" 
-						class="fa fa-cog"></i>
+			<div *ngFor="let tag of tags | filterIncludeKeys:configOfPrimaryKey?.presets; let j = index; trackBy:j;">
 
-					<b *ngIf="displayCode">{{tag.key}}</b>
-				</ion-card-header>
-				<ion-card-content (click)=" (!displayCode && currentPresets[tag.key]?.type === 'list') ? openModalList({tag:tag, presets: currentPresets[tag.key]}) : null">
-					<ion-grid>
-						<ion-row>
-							<ion-col width-90>
-								<!--Bug ion-select-->
-								<select class="select-md" *ngIf="!displayCode && currentPresets[tag.key]?.type === 'select'" [(ngModel)]="tag.value"> 
-           							 <option  *ngFor ="let item of currentPresets[tag.key].tags;" [ngValue]="item.v" >  {{item.lbl}} </option>
-        					  </select>
-								<ion-item *ngIf="!displayCode && currentPresets[tag.key]?.type === 'list'">
-									<p *ngIf="!displayCode && findElement(currentPresets[tag.key]?.tags,{v: tag.value})?.lbl">{{ findElement(currentPresets[tag.key]?.tags,{v: tag.value})?.lbl }} </p>
-
-
-								</ion-item>
-
-								<ion-item *ngIf="!displayCode && currentPresets[tag.key]?.type === 'number'">
-									<ion-input type="number" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-								</ion-item>
-
-								<ion-item *ngIf="displayCode || currentPresets[tag.key]?.type === 'text'">
-									<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-								</ion-item>
-
-							</ion-col>
-							<ion-col width-10>
-								<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
-							</ion-col>
-						</ion-row>
-					</ion-grid>
-
-
-				</ion-card-content>
-			</ion-card>
+				<edit-presets
+					[displayCode]="displayCode"
+					[currentPresets] ="currentPresets"
+					[tag]="tag"
+					(openPrimaryListModal) = "openModalList({tag:tag, presets: currentPresets[tag.key]})"> 
+				</edit-presets>
+			</div>
 
 
 
 			<!--Le reste des tags-->
-			<ion-card *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
-				<ion-card-header>
-					<b>{{tag.key}}</b>
-				</ion-card-header>
-				<ion-card-content>
-					<ion-grid>
-						<ion-row>
-							<ion-col width-90>
-								<ion-item>
-									<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-								</ion-item>
-							</ion-col>
-							<ion-col width-10>
-								<i (click)="deleteTag(tag)" class="fa fa-times fa-2x"></i>
-							</ion-col>
-						</ion-row>
-					</ion-grid>
-
-				</ion-card-content>
-			</ion-card>
+			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
+				<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
+			</div>
 
 			<!--Nouveaux tag-->
 			<button ion-fab tappable color="secondary" *ngIf="!displayAddTag" (click)="displayAddTag = true" style="margin:5px;">
@@ -203,7 +137,6 @@
       		</button>
 
 			<ion-card *ngIf="displayAddTag">
-
 				<ion-card-header *ngIf="displayAddTag">
 					Ajouter un tag
 				</ion-card-header>
@@ -217,18 +150,15 @@
 						<ion-input type="text" placeholder="value" [(ngModel)]="newTag.value"></ion-input>
 					</ion-item>
 					<button ion-button [disabled]="newTag.key == '' || newTag.value == ''" (click)="addTag()"> Ajouter </button>
-
 				</ion-card-content>
 			</ion-card>
 
 		</ion-content>
 
 		<ion-footer>
-			<!--<button ion-button (click)="dismiss()">Anuler</button>-->
 			<button ion-fab tappable (click)="dismiss()" class="fabInlineMarginLess">
         <ion-icon name="close"> </ion-icon>
       </button>
-			<!--[disabled]="!dataIsChanged() && !newPosition"-->
 			<button ion-fab tappable color="secondary" [disabled]="!dataIsChanged() && !newPosition" *ngIf="mode =='Update'" (click)="updateOsmElement()"
 				class="fabInlineMarginLess" style="margin-right:15px;">
         <ion-icon name="checkmark"> </ion-icon>
@@ -252,17 +182,10 @@
         <ion-icon name="trash"> </ion-icon>
       </button>
 
-			<!--<button ion-button (click)="updateOsmElement()" *ngIf="mode =='Update'">Modifier</button>-->
-			<!--<button ion-button (click)="moveOsmElement()" *ngIf="feature.properties.type === 'node'">Déplacer</button>-->
-			<!--<button ion-button (click)="createOsmElement()" *ngIf="mode =='Create'">Créé</button>-->
-			<!--<button ion-button smallcolor="danger" *ngIf="feature.properties.type == 'node' && mode=='Update'" (click)="deleteOsmElement()">Supprimer</button>-->
-			<!--<button ion-buttoncolor="danger" (click)="toogleCode()">Code</button>-->
 		</ion-footer>
 
 	</div>
 	<!--EOF *ngSwitchCase="'Update'"-->
-
-
 	<div *ngSwitchCase="'Loading'" style="height:100%">
 		<ion-header>
 			<ion-toolbar>

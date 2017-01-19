@@ -26,7 +26,7 @@ export class MapService {
   loadingData = false;
   headingIsLocked = true;
   positionIsFollow = true;
-  isDisplayOrtho:boolean =  false;
+  isDisplayOrtho: boolean = false;
 
 
   eventDomMainReady = new EventEmitter();
@@ -141,7 +141,7 @@ export class MapService {
     }
     else {
       this.map.removeLayer('lyrOrthoIgn')
-       this.isDisplayOrtho = false;
+      this.isDisplayOrtho = false;
     }
   }
   centerOnMyPosition() {
@@ -224,7 +224,6 @@ export class MapService {
   }
 
   createDomMoveMarker(coord: number[], data) {
-    // createDomMoveMarker(geojson.geometry.coordinates, 'black', 'arrows', 'fa', 'white', geojson);
     let el = document.createElement('div');
     el.className = 'extra-marker extra-marker-circle-black';
     let icon = document.createElement('i');
@@ -245,9 +244,9 @@ export class MapService {
 
 
   private getMarkerShape(feature) {
-    if (feature.properties.tags.name) {
-      feature.properties['_name'] = feature.properties.tags.name;
-    }
+    // rien a faire ici...
+    feature.properties['_name'] = feature.properties.tags.name ? feature.properties.tags.name : '';
+
     if (feature.properties.type === 'node') {
       return 'circle'
     }
@@ -262,46 +261,7 @@ export class MapService {
     }
   }
 
-  private getHexColor(configMarker) {
 
-    switch (configMarker.markerColor) {
-      case 'black':
-        return '#231F20';
-      case 'blue':
-        return '#1B75BB';
-      case 'blue-dark.':
-        return '#286273';
-      case 'cyan':
-        return '#32A9DD';
-      case 'green':
-        return '#009549';
-      case 'green-dark':
-        return '#006838';
-      case 'green-light':
-        return '#70B044';
-      case 'orange':
-        return '#EF9228';
-      case 'orange-dark':
-        return '#D73F29';
-      case 'pink':
-        return '#C057A0';
-      case 'purple':
-        return '#5B396C';
-      case 'red':
-        return '#A23337';
-      case 'red-dark':
-        return '#75030B';
-      case 'violet':
-        return '#90278E';
-      case 'white':
-        return '#FFFFFF';
-      case 'yellow':
-        return '#F5BB3A';
-      default:
-        return '#231F20';
-    }
-
-  }
   getMapStyle(): Observable<any> {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .map(res => {
@@ -462,7 +422,7 @@ export class MapService {
     let that = this;
 
     this.loadDataFromLocalStorage();
-    let minzoom = 12;
+    let minzoom = 14;
 
     this.map.addSource("bbox", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("data", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
@@ -494,21 +454,21 @@ export class MapService {
     this.map.addLayer({
       "id": "way_line", "type": "line", "source": "ways", "minzoom": minzoom,
       "paint": {
-          "line-color": { "property": 'hexColor', "type": 'identity' },
+        "line-color": { "property": 'hexColor', "type": 'identity' },
         "line-width": 4, 'line-opacity': 0.7
       },
       "layout": { "line-join": "round", "line-cap": "round" },
       "filter": ['all', ['==', '$type', 'LineString']]
     });
 
-        this.map.addLayer({
-      "id": "way_fill_changed", "type": "fill", "minzoom": minzoom, "source": "ways_changed",
+    this.map.addLayer({
+      "id": "way_fill_changed", "type": "fill",  "source": "ways_changed",
       'paint': { 'fill-color': { "property": 'hexColor', "type": 'identity' }, 'fill-opacity': 0.3 },
       "filter": ['all', ['==', '$type', 'Polygon']]
     });
 
     this.map.addLayer({
-      "id": "way_line_changed", "type": "line", "source": "ways_changed", "minzoom": minzoom,
+      "id": "way_line_changed", "type": "line", "source": "ways_changed",
       "paint": {
         "line-color": { "property": 'hexColor', "type": 'identity' },
         "line-width": 4, 'line-opacity': 0.7
@@ -551,7 +511,7 @@ export class MapService {
     });
 
     this.map.addLayer({
-      "id": "marker_changed", "type": "symbol", "minzoom": minzoom, "source": "data_changed",
+      "id": "marker_changed", "type": "symbol", "source": "data_changed",
       "layout": { "icon-image": "{marker}", "icon-allow-overlap": true, "icon-ignore-placement": true, "icon-offset": [0, -14] }
     });
 
