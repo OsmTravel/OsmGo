@@ -14,7 +14,7 @@ Cartographier votre environnement direct n'a jamais été aussi simple et rapide
 
 ![fiche-edit](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/fiche-edit.png)
 
-![main-windows-with-changes](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/main-windows-with-changes)
+![main-windows-with-changes](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/main-windows-with-changes.png)
 
 ![select-primary-tag](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/select-primary-tag.png)
 
