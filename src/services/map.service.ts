@@ -56,7 +56,6 @@ export class MapService {
     })
 
     this.eventMarkerReDraw.subscribe(geojson => {
-      console.log('eventMarkerReDraw');
       if (geojson) {
         this.map.getSource('data').setData(geojson);
         this.drawWaysPoly(geojson, 'ways');
@@ -64,7 +63,6 @@ export class MapService {
     });
 
     this.eventMarkerChangedReDraw.subscribe(geojson => {
-      console.log('eventMarkerChangedReDraw');
       if (geojson) {
         this.map.getSource('data_changed').setData(geojson);
         this.drawWaysPoly(geojson, 'ways_changed');
@@ -73,7 +71,6 @@ export class MapService {
   } //EOF constructor
 
   drawWaysPoly(geojson, source) {
-    //  let geojson = this.dataService.getMergedGeojsonGeojsonChanged();
     let features = geojson.features;
     let featuresWay = [];
     for (let i = 0; i < features.length; i++) {
@@ -261,7 +258,6 @@ export class MapService {
     }
   }
 
-
   getMapStyle(): Observable<any> {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .map(res => {
@@ -320,7 +316,7 @@ export class MapService {
 
       this.map = new mapboxgl.Map({
         container: 'map',
-        style: mapStyle, // 'streets-v9','outdoors-v9','light-v9','dark-v9','satellite-v9','satellite-streets-v9'
+        style: mapStyle,
         center: [5, 45],
         zoom: 19,
         maxZoom: 22,
@@ -345,7 +341,6 @@ export class MapService {
 
     })
 
-    // this.map.resize();
     let timer = Observable.timer(100, 100);
     let subscriptionTimer = timer.subscribe(t => {
       this.map.resize();
@@ -360,7 +355,6 @@ export class MapService {
     this.configService.eventConfigIsLoaded.subscribe(conf => {
       this.setPitch(conf.mapIsPiched);
     });
-
 
     // un nouveau polygon!
     this.eventNewBboxPolygon.subscribe(geojsonPolygon => {
@@ -413,8 +407,6 @@ export class MapService {
         }
       });
     });
-
-
   }
 
   mapIsLoaded() {
@@ -438,7 +430,6 @@ export class MapService {
       "tiles": ['http://proxy-ortho-ign.dogeo.fr/{z}/{x}/{y}'], "tileSize": 256
       // "tiles": ['http://a.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw'], "tileSize": 256
     });
-
 
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
@@ -552,8 +543,7 @@ export class MapService {
 
 
     //GPS
-    if (this.locationService.gpsIsReady) {//this.locationService.getGeojsonPos().features[0]) {
-      //  this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
+    if (this.locationService.gpsIsReady) {
       this.map.getSource('location_point').setData(this.locationService.getGeojsonPos())
       this.map.setCenter(this.locationService.getGeojsonPos().features[0].geometry.coordinates)
     }
@@ -575,7 +565,6 @@ export class MapService {
       }
     });
 
-
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
       this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
       if (geojsonPos.features[0].properties) {
@@ -585,10 +574,6 @@ export class MapService {
         }
       }
     })
-
-
-
   }
-
 
 }

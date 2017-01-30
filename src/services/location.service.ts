@@ -1,7 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Geolocation, DeviceOrientation, Diagnostic, PositionError } from 'ionic-native';
+import { Geolocation, DeviceOrientation, Diagnostic } from 'ionic-native';
 
-import { Observable } from 'rxjs/Rx';
 
 @Injectable()
 export class LocationService {
@@ -69,7 +68,7 @@ export class LocationService {
                 }
             })
             .catch(error => {
-                console.log(error);
+               
             });
     }
 
@@ -100,35 +99,15 @@ export class LocationService {
         this.subscriptionWatchLocation.unsubscribe()
     }
 
-
-    // getCurrentPosition() {
-    //     //this.eventNewLocation.emit(this.getGeojsonPos());
-    //     this.gpsIsReady = true;
-    //     Geolocation.getCurrentPosition().then((data) => {
-    //         console.log(data);
-    //         this.gpsIsReady = true;
-    //         this.location = data;
-    //         this.eventNewLocation.emit(this.getGeojsonPos());
-    //     }).catch((error) => {
-    //         console.log('Error getting location', error);
-    //     });
-    // }
-
-
-
     heading(isVirtual) {
-        console.log(isVirtual);
         if (isVirtual) { // for testing : ionic Serve
                 this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
                 this.eventNewCompassHeading.emit(this.compassHeading);
-           
-
         } else {
             DeviceOrientation.watchHeading({ frequency: 50 }).subscribe((data) => {
                 this.compassHeading = data;
                 this.eventNewCompassHeading.emit(data);
-            }
-            );
+            });
         }
     }
     getLocation() {

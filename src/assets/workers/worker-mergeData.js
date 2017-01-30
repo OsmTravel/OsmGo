@@ -12,10 +12,6 @@ importScripts('../lib/turf.min.js');
                 geojson.features.splice(i, 1);
             }
         }
-        // // ADD to geojson
-        // for (let i = 0; i < geojsonChanged.features.length; i++) {
-        //     geojson.features.push(geojsonChanged.features[i]);
-        // }
         return JSON.parse(JSON.stringify(geojson))
     }
 
@@ -33,7 +29,6 @@ function reponse(event){
   
         
         if (oldFeatures.length == 0) {
-          //postMessage(newGeojson);
           geojson = newGeojson;
         } 
         
@@ -41,7 +36,6 @@ function reponse(event){
           //  le cas où une feature a été supprimé entre temps, on doit la supprimer de nos données:
             let id_features_deleted = [];
             for (let i = 0; i < oldFeatures.length; i++) { // si la feature est dans la BBOX, on la push pour la supprimer
-             // console.log(turf.inside(oldFeatures[i], bbox_geojson));
                 if (turf.inside(oldFeatures[i], bbox_geojson)) {
                     id_features_deleted.push(oldFeatures[i].id)
                 }
@@ -71,7 +65,6 @@ function reponse(event){
                 }
             }
             geojson = oldGeojson
-        //postMessage(oldGeojson);
         }
         postMessage(getMergedGeojsonGeojsonChanged(geojson,geojsonChanged));
 }

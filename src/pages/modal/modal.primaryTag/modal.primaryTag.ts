@@ -35,32 +35,20 @@ export class ModalPrimaryTag {
     ) {
         this._primaryKey = this.params.data.primaryKey;
 
-
-
-
-        // this._primaryKey = { key: this.params.data.primaryKey.key, value:  this.params.data.primaryKey.value };
-
         // backButton
         this.platform.registerBackButtonAction(e => {
             this.dismiss();
         });
 
-
-
     }
 
     ngOnInit() {
-
-
         this.tagsService.getAllTags().subscribe(allTags => {
             this.allTags = allTags;
 
             for (let key in allTags) {
                 this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
             }
-
-            // this.selectedKey = this._primaryKey.key; //(this.params.data.configOfPrimaryKey.primaryKey) ? this.params.data.configOfPrimaryKey.primaryKey : null ;
-            console.log(this.configService.getDefaultPrimarykeyWindows());
             if (this.configService.getDefaultPrimarykeyWindows() == 'allTags') {
 
                 this.selectedKey = 'full'
@@ -70,7 +58,6 @@ export class ModalPrimaryTag {
             } else {
                 this.selectedKey = this._primaryKey.key;
             }
-            console.log(this.selectedKey);
             if (this.selectedKey == 'full') {
                 this.currentListOfTags = this.tagsService.getFullTags();
             } else if (this.selectedKey == 'bookmarks') {
@@ -90,7 +77,6 @@ export class ModalPrimaryTag {
         if (typeFiche == 'custom') {
             this._primaryKey = { key: this.selectedKey, value: this.customValue }
         }
-        console.log(this._primaryKey);
         this.dismiss(this._primaryKey);
     }
     cancel() {
@@ -98,29 +84,21 @@ export class ModalPrimaryTag {
     }
 
     selected(e) {
-        console.log(e);
         this._primaryKey = { key: e.primaryKey, value: e.key };
         this.summit(this.typeFiche)
     }
 
-    test() {
-        console.log('ok');
-    }
-
     addRemoveToBookmarks(tag) {
         this.tagsService.addRemoveBookMark(tag);
-        console.log(tag);
     }
     isBookMarked(tag) {
         let bM: any = this.tagsService.getBookMarks();
-
         for (let i = 0; i < bM.length; i++) {
             if (bM[i].primaryKey == tag.primaryKey && bM[i].key == tag.key) {
                 return true
             }
         }
         return false;
-        //if (this.tagsService.getBookMarks())
     }
 
     updateSelectedValue(key) {
@@ -130,7 +108,6 @@ export class ModalPrimaryTag {
             this.currentListOfTags = this.tagsService.getBookMarks();
         }
         else {
-
             this.currentListOfTags = this.allTags[key].values;
         }
 

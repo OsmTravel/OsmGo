@@ -103,6 +103,7 @@
     ]},
     "operator":{"type":"text","lbl":"Opérateur", "tags":[
     ]},
+
     "brand":{"type":"text","lbl":"Marque", "tags":[
     ]},
 
@@ -147,56 +148,67 @@
         {"v":"no","lbl":"Non"},
         {"v":"only","lbl":"Uniquement"}
     ]},
+
     "male":{"type":"select","lbl":"Homme", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
      "female":{"type":"select","lbl":"Femme", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "lottery":{"type":"select","lbl":"Vente de jeux de hasard", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "self_service":{"type":"select","lbl":"Self service", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "second_hand":{"type":"select","lbl":"Articles d'occasion", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
       "recycling_type":{"type":"select","lbl":"Type", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"container","lbl":"Conteneur"},
         {"v":"centre","lbl":"Déchèterie"}
     ]},
+
     "recycling:glass_bottles":{"type":"select","lbl":"Bouteilles de verre et bocaux", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "recycling:paper":{"type":"select","lbl":"Papier", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "recycling:plastic":{"type":"select","lbl":"Plastique", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "backrest":{"type":"select","lbl":"Dossier", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "tobacco":{"type":"select","lbl":"Vente de cigarettes", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
@@ -211,21 +223,47 @@
     "wheelchair":{"type":"select","lbl":"Accessible en fauteuil", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"},
         {"v":"limited","lbl":"Limité"},
+        {"v":"designated","lbl":"designated"}
+    ]},
+
+    "fee":{"type":"select","lbl":"Accès payant", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"},
+        {"v":"interval","lbl":"Selon l'heure"}
+    ]},
+
+
+
+      "drive_through":{"type":"select","lbl":"Drive", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+    
+    "dispensing":{"type":"select","lbl":"Vente de médicaments sur ordonnance", "tags":[
+        {"v":"","lbl":" NC"},
+        {"v":"yes","lbl":"Oui"},
+        {"v":"no","lbl":"Non"}
+    ]},
+
     "shelter":{"type":"select","lbl":"Abri", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},
+
     "tactile_paving":{"type":"select","lbl":"Pavé tactile", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"yes","lbl":"Oui"},
         {"v":"no","lbl":"Non"}
     ]},  
+
     "seats":{"type":"number","lbl":"Nombre de places", "tags":[
     ]},
+
     "religion":{"type":"select","lbl":"Religion", "tags":[
         {"v":"","lbl":" NC"},
         {"v":"christian","lbl":"Chrétienne"},

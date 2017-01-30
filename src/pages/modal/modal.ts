@@ -72,17 +72,12 @@ export class ModalsContentPage {
     this.platform.registerBackButtonAction(e => {
       this.dismiss();
     });
-
-    // this.primaryKeys = this.tagsService.getPrimaryKeys();
   }
 
 
 
   ngOnInit() { // override
     this.initComponent();
-    console.log(this.params);
-
-
   }
 
   presentConfirm() {
@@ -158,9 +153,6 @@ export class ModalsContentPage {
             this.currentPresets = presets;
           });
         }
-
-      } else {
-        console.log('OUPS!');
       }
     });
 
@@ -190,7 +182,6 @@ export class ModalsContentPage {
 
   addTag() {
     // controler que la clé n'existe pas
-
     if (this.newTag.key != '' && this.newTag.value !== '') {
       this.tags.push(this.newTag);
       this.newTag = { key: '', value: '' };
@@ -251,7 +242,6 @@ export class ModalsContentPage {
             this.feature = this.mapService.getIconStyle(this.feature); // style
 
             this.dataService.addFeatureToGeojson(this.feature);
-            //this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
             this.dismiss({redraw: true});
 
           },
@@ -263,7 +253,6 @@ export class ModalsContentPage {
         error => {
           this.typeFiche = 'Edit';
           this.presentToast(JSON.stringify(error));
-          //this.alertService.eventNewAlert.emit(error);
         });
     }
   }
@@ -271,8 +260,6 @@ export class ModalsContentPage {
   updateOsmElement() {
     this.typeFiche = 'Loading';
     this.pushTagsToFeature(); // on pousse les tags dans la feature
-
-    console.log(this.origineData);
 
     if (this.configService.getIsDelayed()) {
       this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(data => {
@@ -290,7 +277,6 @@ export class ModalsContentPage {
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // création du style
             this.dataService.updateFeatureToGeojson(this.feature);
-            //this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
             this.dismiss({redraw: true});
           },
           er => {

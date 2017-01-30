@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="fr.dogeo.osmgo" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fr.dogeo.osmgo" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Osm Go!</name>
-  <description>Osm Go: les POI, Mapper les tous! </description>
+  <description>Cartographiez les tous! </description>
   <author email="fabien.delolmo@gmail.com" href="https://dogeo.fr">Fabien Del Olmo</author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -56,7 +56,7 @@
   <plugin name="cordova-plugin-statusbar" spec="~2.2.0"/>
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
   <plugin name="cordova-plugin-insomnia" spec="https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git"/>
-  <plugin name="cordova.plugins.diagnostic" spec="~3.3.2"/>
+  <plugin name="cordova.plugins.diagnostic" spec="~3.3.3"/>
   <plugin name="cordova-plugin-app-version" spec="~0.1.9"/>
   <allow-navigation href="*"/>
   <allow-navigation href="http://192.168.1.106:8100"/>

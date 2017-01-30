@@ -19,31 +19,26 @@ export class MyApp {
 
 
   constructor(platform: Platform, private locationService: LocationService, public configService: ConfigService) {
-    Splashscreen.show();
+     Splashscreen.show();
 
     platform.ready().then(() => {
-  
-      
+       Splashscreen.hide();
+      StatusBar.styleDefault();       
 
 
       if (typeof Device.platform == 'string'){
         this.configService.loadAppVersion();
       }
-      //loadAppVersion
-      console.log(Device);
+
       this.locationService.eventPlatformReady.emit((typeof Device.platform == 'string') ? false : true); // object => ionic serve
-       //this.locationService.eventPlatformReady.emit(true);
-      Insomnia.keepAwake()
-        .then(
-        () => console.log('Insomnia success'),
-        () => console.log('Insomnia error')
-        );
+
+      if (Device.platform == 'Android'){
+        Insomnia.keepAwake();
+      }
 
 
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      Splashscreen.hide();
-      StatusBar.styleDefault();
+     
+    
     });
 
   }

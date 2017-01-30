@@ -14,8 +14,8 @@ export class FilterByContentPipe implements PipeTransform {
                 if (patt.test(item[keys[i]])) {
                     return true;
                 } else if (  patt.test(item[keys[i]].replace(/[û]/g, 'u')
-                        .replace(/[áàâ]/g, 'a')
-                        .replace(/[éèê]/g, 'e')
+                        .replace(/[Àáàâ]/g, 'a')
+                        .replace(/[Ééèê]/g, 'e')
                         .replace(/[íîï]/g, 'i')
                         .replace(/[óô]/g, 'o')
                         .replace(/ç/g, 'c'))) {

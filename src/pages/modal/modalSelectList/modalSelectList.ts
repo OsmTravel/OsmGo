@@ -28,13 +28,7 @@ export class ModalSelectList {
         this.viewCtrl.dismiss(data);
     }
 
-    searchTextChange(e) {
-        //this.allTags[this.selectedKey].value;
-
-    }
-
     selected(e) {
-        //console.log(e);
         if (e) {
             this.dismiss(e);
         }

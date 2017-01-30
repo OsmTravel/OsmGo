@@ -12,7 +12,7 @@
 		<ion-card>
 		<ion-card-content>
 			<ion-item>
-				<ion-label> Suivie de la position </ion-label>
+				<ion-label> Suivi de la position </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.followPosition" (ionChange)="followPositionChange($event)"></ion-toggle>
 			</ion-item>
 			<label class="hint">La carte est centré sur votre position</label>
@@ -23,7 +23,7 @@
 		<ion-card-header> </ion-card-header>
 		<ion-card-content>
 			<ion-item>
-				<ion-label>Suivie de l'orientation </ion-label>
+				<ion-label>Suivi de l'orientation </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.lockMapHeading" (ionChange)="lockMapHeadingChange($event)"></ion-toggle>
 			</ion-item>
 			<label class="hint">L'orientation de la carte dépend de celle du téléphone</label>

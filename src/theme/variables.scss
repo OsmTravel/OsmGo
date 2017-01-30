@@ -2,6 +2,7 @@
 // http://ionicframework.com/docs/v2/theming/
 @import "ionic.globals";
 
+
 @import "../pages/main/main";
 @import "../pages/modal/modal";
 @import "../pages/pushDataToOsm/pushDataToOsm";
@@ -52,4 +53,4 @@ $colors: (
 // http://ionicframework.com/docs/v2/ionicons/
 
 $ionicons-font-path: "../assets/fonts";
-@import "ionicons";
+@import "ionic.ionicons";

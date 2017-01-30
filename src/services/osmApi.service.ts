@@ -254,7 +254,6 @@ export class OsmApiService {
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
         this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-        // this.dataService.addFeatureToGeojson(feature);
         // refresh changed only
         return Observable.of(_feature);
 
@@ -275,7 +274,6 @@ export class OsmApiService {
     updateOsmElement(_feature, origineData) {
         let feature = JSON.parse(JSON.stringify(_feature));
         let id = feature.id;
-        console.log(origineData);
         if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
         }
@@ -298,13 +296,10 @@ export class OsmApiService {
         let headers = new Headers();
         headers.append('Authorization', 'Basic ' + btoa(this.getUserInfo().user + ':' + this.getUserInfo().password));
         headers.append('Content-Type', 'text/xml');
-        //contentType: "text/xml"
         return this.http.put(url, content_put, { headers: headers }).map(data => {
             this.mapService.eventOsmElementUpdated.emit(feature);
             return data.text();
         })
-
-
     }
 
     // Delete
@@ -342,7 +337,6 @@ export class OsmApiService {
             this.mapService.eventOsmElementDeleted.emit(feature);
             return data.text();
         })
-        // .catch((error: any) =>  Observable.throw(error.json().error || 'Impossible de supprimer l\'élément'));
     }
 
     getUrlOverpassApi(bbox: string[]) {
@@ -375,9 +369,6 @@ export class OsmApiService {
         });
 
         workerGetStyle.onmessage = function (newGeojsonStyled) {
-            //that.dataService.setGeojson(event.data);
-            //   that.eventMarkerReDraw.emit(event.data);
-            //   that.loadingData = false;
             workerGetStyle.terminate()
             let workerMergeData = new Worker("assets/workers/worker-mergeData.js");
 
@@ -409,18 +400,15 @@ export class OsmApiService {
 
             let oldBboxFeature = JSON.parse(JSON.stringify(oldBbox.features[0]));
 
-            let union = turf.union(newBoboxFeature, oldBboxFeature); //turf.featureCollection([turf.union(oldBbox.features[0], newGeojsonBbox.features[0])]);
+            let union = turf.union(newBoboxFeature, oldBboxFeature);
             resBbox = { "type": "FeatureCollection", "features": [union] }
             this.dataService.setGeojsonBbox(resBbox);
-
         }
         this.mapService.eventNewBboxPolygon.emit(resBbox);
     }
 
     getDataFromBbox(bbox: string[], useOverpassApi: boolean = false, delegateOsm2geojson: boolean = true) {
-        let d1 = new Date().getTime();
         let featureBbox = turf.bboxPolygon(bbox);
-        // parsefloat
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
             featureBbox.geometry.coordinates[0][i][0] = parseFloat(featureBbox.geometry.coordinates[0][i][0]);
             featureBbox.geometry.coordinates[0][i][1] = parseFloat(featureBbox.geometry.coordinates[0][i][1]);
@@ -468,7 +456,6 @@ export class OsmApiService {
                 return this.http.post(urlOverpassApi, this.getUrlOverpassApi(bbox))
                     .map((res) => {
                         this.setBbox(featureBbox);
-                        console.log('Data Load in : ' + (new Date().getTime() - d1));
                         this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), this.dataService.getGeojson(), featureBbox);
                     })
                     .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (overpassApi)'));

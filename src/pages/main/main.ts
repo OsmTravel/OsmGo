@@ -38,10 +38,8 @@ export class MainPage {
     this.platform.registerBackButtonAction(e => {
       this.presentConfirm();
     });
-    //this.osmApi.getUserInfo()
 
     mapService.eventShowModal.subscribe(data => {
-      // console.log(data);
       let newPosition = (data.newPosition) ? data.newPosition : false;
       let modal = this.modalCtrl.create(ModalsContentPage, { type: data.type, data: data.geojson, newPosition: newPosition, origineData: data.origineData});
       modal.onDidDismiss(data => {
@@ -63,7 +61,6 @@ export class MainPage {
 
 
     this.alertService.eventNewAlert.subscribe(alert => {
-      console.log(alert);
       this.presentToast(alert);
     })
 
