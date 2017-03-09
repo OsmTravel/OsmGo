@@ -46,9 +46,9 @@
 			<ion-item>
 				<ion-label>Liste des tags par défaut</ion-label>
 				<ion-select [(ngModel)]="this.configService.config.defaultPrimarykeyWindows" (ionChange)="defaultPrimarykeyWindowsChange($event)">
-					<ion-option value="allTags">Tout les tags</ion-option>
-					<ion-option value="bookmarks">Bookmarks</ion-option>
-					<ion-option value="type">Type</ion-option>
+					<ion-option value="allTags">Tous les tags</ion-option>
+					<ion-option value="bookmarks">Favoris</ion-option>
+					<ion-option value="type">Par type</ion-option>
 				</ion-select>
 			</ion-item>
 			<label class="hint">Type de tag par défaut à l'ouverture de la fenêtre de sélection</label>
@@ -77,7 +77,7 @@
 				<ion-label>Déléguer la conversion des données </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.delegateDataConversion" (ionChange)="delegateDataConversionChange($event)"></ion-toggle>
 			</ion-item>
-			<label class="hint">Délégue la conversion des données à un serveur pour gagner en rapidité</label>
+			<label class="hint">Délégue la conversion des données à un serveur (utile pour les smartphones un peu lent...)</label>
 		</ion-card-content>
 	</ion-card>
 
@@ -87,8 +87,17 @@
 				<ion-label>Mode différé </ion-label>
 				<ion-toggle [disabled]="!this.osmApi.getUserInfo().connected" [(ngModel)]="this.configService.config.isDelayed" (ionChange)="isDelayedChange($event)"></ion-toggle>
 			</ion-item>
-			<label *ngIf="!this.osmApi.getUserInfo().connected" class="hint">Connectez vous pour passer en mode live</label>
-			<label class="hint">Les données seront envoyées en une fois != Les données seront envoyées à chaque modification</label>
+			<label *ngIf="!this.osmApi.getUserInfo().connected" class="hint">Connectez vous pour passer en mode live<br></label>
+			
+			<label *ngIf="!this.configService.config.isDelayed" class="hint">Mode live On</label>
+			<label *ngIf="this.configService.config.isDelayed" class="hint">Mode live Off</label>
+			<br>
+			<label *ngIf="!this.configService.config.isDelayed" class="hint">
+				Après chaque modification, l'élément est envoyé vers OpenStreetMap
+			</label>
+			<label *ngIf="this.configService.config.isDelayed" class="hint">
+				Les éléments modifiés seront envoyés en une fois à votre demande (mode conseillé)
+			</label>
 		</ion-card-content>
 	</ion-card>
 

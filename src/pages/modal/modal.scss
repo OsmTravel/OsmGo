@@ -1,10 +1,10 @@
 modal{
     $headerHeight :56px;
     $footerHeight : 60px;
-    // ion-content{
-    //     margin-top: $headerHeight;
-    //     margin-bottom: $footerHeight;
-    // }
+
+    .input-cover{
+        display: none;
+    }
         
     .scroll-content{
          margin-top: $headerHeight;
@@ -31,17 +31,11 @@ modal{
         background-color: white;
     }
 
-    button {
-       // vertical-align: top !important;
-      // vertical-align: middle !important;
-    }
 
     .fabInlineMarginLess{
         margin-left: 4px !important;
         margin-top: 2px !important;
         float: left;
-        // display: inline !important;
-        // vertical-align: -webkit-baseline-middle !important;
     }
 
     .alertCard {

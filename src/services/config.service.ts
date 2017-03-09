@@ -13,7 +13,7 @@ export class ConfigService {
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
-        delegateDataConversion: true,
+        delegateDataConversion: false,
         isDelayed: true
     };
     appVersion = { appName: 'Osm Go!', appVersionCode: 12, appVersionNumber: '0.0.0' }
