@@ -1,10 +1,15 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { AppVersion } from 'ionic-native';
+import { AppVersion } from '@ionic-native/app-version';
 
 @Injectable()
 export class ConfigService {
-    localStorage = new Storage();
+      constructor(public localStorage: Storage, private _appVersion: AppVersion) { 
+    
+           this.loadConfig();
+      }
+
+    
     eventConfigIsLoaded = new EventEmitter();
 
     config = {
@@ -18,10 +23,7 @@ export class ConfigService {
     };
     appVersion = { appName: 'Osm Go!', appVersionCode: 12, appVersionNumber: '0.0.0' }
 
-    constructor() {
-        this.loadConfig();
 
-    }
 
     loadConfig() {
         this.localStorage.get('config').then(d => {
@@ -38,13 +40,13 @@ export class ConfigService {
 
     loadAppVersion() {
 
-        AppVersion.getAppName().then(e => {
+        this._appVersion.getAppName().then(e => {
             this.appVersion.appName = e;
         });
-        AppVersion.getVersionCode().then(e => {
+        this._appVersion.getVersionCode().then(e => {
             this.appVersion.appVersionCode = e;
         });
-        AppVersion.getVersionNumber().then(e => {
+        this._appVersion.getVersionNumber().then(e => {
             this.appVersion.appVersionNumber = e;
         });
 

@@ -1,7 +1,22 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule,ErrorHandler } from '@angular/core';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpModule} from '@angular/http';
+
+
+import { BrowserModule } from '@angular/platform-browser';
+
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
+
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { Geolocation } from '@ionic-native/geolocation';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
+import { AppVersion } from '@ionic-native/app-version';
+import { Diagnostic } from '@ionic-native/diagnostic';
+
+import { Insomnia } from '@ionic-native/insomnia';
+import { Device } from '@ionic-native/device';
 
 
 import { MapService } from '../services/map.service';
@@ -75,7 +90,9 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
     FilterByContentPipe
   ],
   imports: [
-    IonicModule.forRoot(MyApp),
+      HttpModule,
+      BrowserModule,
+      IonicModule.forRoot(MyApp),
      IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
@@ -92,6 +109,10 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
     LoginPage
     
   ],
-  providers: [ConfigService,OsmApiService,MapService,TagsService,DataService, RouterService, AlertService, LocationService]
+  providers: [ConfigService,OsmApiService,MapService,TagsService,DataService, 
+  RouterService, AlertService, LocationService,
+   SplashScreen, StatusBar, Geolocation, DeviceOrientation, Diagnostic, AppVersion, Insomnia, Device,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule { }

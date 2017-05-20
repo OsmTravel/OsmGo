@@ -13,9 +13,9 @@ export class TagsService {
     tags;
     Presets = [];
     primaryKeys = [];
-    localStorage = new Storage();
 
-    constructor(private http: Http) {
+
+    constructor(private http: Http, public localStorage: Storage) {
         this.loadLastTagAdded();
         this.loadBookMarks();
         this.loadPrimaryKeys();

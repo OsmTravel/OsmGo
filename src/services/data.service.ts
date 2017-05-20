@@ -9,10 +9,10 @@ export class DataService {
     geojsonChanged = { "type": "FeatureCollection", "features": [] }
     geojsonWay = { "type": "FeatureCollection", "features": [] };
     geojsonBbox = { "type": "FeatureCollection", "features": [] };
-    localStorage = new Storage();
-    constructor() {
 
-    }
+     constructor(public localStorage: Storage) { 
+      }
+
 
 
 

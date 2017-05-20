@@ -27,7 +27,7 @@ export class OsmApiService {
     urlDataServer = 'http://osmgo-data.dogeo.fr/';
 
     
-    localStorage = new Storage();
+ 
     user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
     changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     changeSetComment = 'Sortie avec Osm Go!';
@@ -40,7 +40,8 @@ export class OsmApiService {
         public tagsService: TagsService,
         public dataService: DataService,
         public alertService: AlertService,
-        public configService: ConfigService
+        public configService: ConfigService,
+        private localStorage: Storage
     ) {
         this.localStorage.get('user_info').then(d => {
             if (d && d.connected) {

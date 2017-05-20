@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { StatusBar, Device, Insomnia } from 'ionic-native';
-import { Splashscreen } from 'ionic-native';
+import { Insomnia } from '@ionic-native/insomnia';
+import { Device } from '@ionic-native/device';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationService } from '../services/location.service'
 import { ConfigService } from '../services/config.service'
 
@@ -14,31 +16,33 @@ import { MainPage } from '../pages/main/main';
 })
 export class MyApp {
   rootPage = MainPage;
-   
 
 
 
-  constructor(platform: Platform, private locationService: LocationService, public configService: ConfigService) {
-     Splashscreen.show();
+
+  constructor(platform: Platform, private splashScreen: SplashScreen,
+    private statusBar: StatusBar, private locationService: LocationService, private device: Device,  private insomnia: Insomnia,
+    public configService: ConfigService) {
+    this.splashScreen.show();
 
     platform.ready().then(() => {
-       Splashscreen.hide();
-      StatusBar.styleDefault();       
+      this.splashScreen.hide();
+      this.statusBar.styleDefault();
 
 
-      if (typeof Device.platform == 'string'){
+      if (typeof this.device.platform == 'string') {
         this.configService.loadAppVersion();
       }
 
-      this.locationService.eventPlatformReady.emit((typeof Device.platform == 'string') ? false : true); // object => ionic serve
+      this.locationService.eventPlatformReady.emit((typeof this.device.platform == 'string') ? false : true); // object => ionic serve
 
-      if (Device.platform == 'Android'){
-        Insomnia.keepAwake();
+      if (this.device.platform == 'Android') {
+        this.insomnia.keepAwake();
       }
 
 
-     
-    
+
+
     });
 
   }

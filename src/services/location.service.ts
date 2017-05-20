@@ -1,5 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Geolocation, DeviceOrientation, Diagnostic } from 'ionic-native';
+import { Geolocation } from '@ionic-native/geolocation';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
+
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 
 @Injectable()
@@ -16,7 +19,7 @@ export class LocationService {
     subscriptionLocation;
     subscriptionWatchLocation;
 
-    constructor() {
+    constructor(private geolocation: Geolocation, private deviceOrientation: DeviceOrientation, private diagnostic: Diagnostic) {
 
 
 
@@ -32,7 +35,7 @@ export class LocationService {
                 this.enableGeolocation();
             } else {
 
-                Diagnostic.registerLocationStateChangeHandler(data => {
+                this.diagnostic.registerLocationStateChangeHandler(data => {
                     if (data === 'location_off') {
                         this.disableGeolocation();
                     } else {
@@ -40,10 +43,10 @@ export class LocationService {
                     }
                 })
 
-                Diagnostic.isLocationAuthorized()
+                this.diagnostic.isLocationAuthorized()
                     .then(autorised => {
                         if (autorised === false) {
-                            Diagnostic.requestLocationAuthorization().then(e => {
+                            this.diagnostic.requestLocationAuthorization().then(e => {
                                 if (e == 'GRANTED') {
                                     this.checkIfLocationIsAvailable()
                                 }
@@ -59,10 +62,10 @@ export class LocationService {
     }
 
     checkIfLocationIsAvailable() {
-        Diagnostic.isLocationAvailable()
+        this.diagnostic.isLocationAvailable()
             .then(isLocationAvailable => {
                 if (!isLocationAvailable) {
-                    Diagnostic.switchToLocationSettings();
+                    this.diagnostic.switchToLocationSettings();
                 } else { // la loc est activé
                     this.enableGeolocation();
                 }
@@ -74,7 +77,7 @@ export class LocationService {
 
     enableGeolocation() {
      
-        this.subscriptionWatchLocation = Geolocation.watchPosition({ enableHighAccuracy: true })
+        this.subscriptionWatchLocation = this.geolocation.watchPosition({ enableHighAccuracy: true })
             //.filter((p) => p === undefined) //Filter Out Errors
             // .filter((p: PositionError) => {
             //     if (p.code == 1) { // debug run livereload (fix => non https)
@@ -104,7 +107,7 @@ export class LocationService {
                 this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
                 this.eventNewCompassHeading.emit(this.compassHeading);
         } else {
-            DeviceOrientation.watchHeading({ frequency: 50 }).subscribe((data) => {
+            this.deviceOrientation.watchHeading({ frequency: 50 }).subscribe((data) => {
                 this.compassHeading = data;
                 this.eventNewCompassHeading.emit(data);
             });
