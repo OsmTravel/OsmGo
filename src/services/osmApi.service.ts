@@ -21,7 +21,7 @@ export class OsmApiService {
 
     isDevServer = false; // dev serveur
     urlsOsm = {
-        prod: { "api": 'http://api.openstreetmap.org', "overpass": "http://api.openstreetmap.fr/oapi/interpreter" },
+        prod: { "api": 'http://api.openstreetmap.org', "overpass": "http://overpass-api.de/api/interpreter" },
         dev: { "api": 'http://api06.dev.openstreetmap.org', "overpass": "" }
     }
     urlDataServer = 'http://osmgo-data.dogeo.fr/';
@@ -452,8 +452,7 @@ export class OsmApiService {
 
         else { // on ne delegue pas au serveur
             if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
-                // let urlOverpassApi = 'http://overpass-api.de/api/interpreter';
-                let urlOverpassApi = 'http://api.openstreetmap.fr/oapi/interpreter';
+                let urlOverpassApi = 'http://overpass-api.de/api/interpreter';
                 return this.http.post(urlOverpassApi, this.getUrlOverpassApi(bbox))
                     .map((res) => {
                         this.setBbox(featureBbox);

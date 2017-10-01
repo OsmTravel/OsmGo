@@ -491,7 +491,7 @@
         "presets": ["wheelchair"] },
         {"key": "pitch", "lbl": "Terrain de sport", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
         "presets": ["wheelchair"] },
-        {"key": "playground", "lbl": "Air de jeu", "lbl_alt": "", "icon": "maki-playground-15", "markerColor": "#5B396C", "alert": "", 
+        {"key": "playground", "lbl": "Aire de jeu", "lbl_alt": "", "icon": "maki-playground-15", "markerColor": "#5B396C", "alert": "", 
         "presets": [] },
         {"key": "sports_centre", "lbl": "Centre sportif", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
         "presets": ["wheelchair"] },
