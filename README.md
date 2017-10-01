@@ -6,16 +6,34 @@ On parle bien des POI!
 "OSM Go !" est une application mobile qui permet d'enrichir Openstreetmap directement sur le terrain.
 Cartographier votre environnement direct n'a jamais été aussi simple et rapide. Gardez les yeux ouverts et ayez le réflexe! 
 
-![main-window-mapbox](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/main-window-mapbox.png)
+Une courte présentation et l'APK sont accessibles ici : http://osmgo.dogeo.fr
 
-![main-window-ortho](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/main-window-ortho.png)
+![main-window-mapbox](http://osmgo.dogeo.fr/prez/static/images/main-window-mapbox.png)
 
-![fiche-read](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/fiche-read.png)
+![main-window-ortho](http://osmgo.dogeo.fr/prez/static/images/main-window-ortho.png)
 
-![fiche-edit](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/fiche-edit.png)
+![fiche-read](http://osmgo.dogeo.fr/prez/static/images/fiche-read.png)
 
-![main-windows-with-changes](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/main-windows-with-changes.png)
+![fiche-edit](http://osmgo.dogeo.fr/prez/static/images/fiche-edit.png)
 
-![select-primary-tag](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/select-primary-tag.png)
+![main-windows-with-changes](http://osmgo.dogeo.fr/prez/static/images/main-windows-with-changes.png)
 
-![send-data](https://raw.githubusercontent.com/DoFabien/OsmGo/master/screenshot/send-data.png)
+![select-primary-tag](http://osmgo.dogeo.fr/prez/static/images/select-primary-tag.png)
+
+![send-data](http://osmgo.dogeo.fr/prez/static/images/send-data.png)
+
+
+
+### Dev cheat sheet
+
+#### Installation 
+
+sudo npm install -g cordova
+sudo npm install -g ionic
+
+ionic cordova platform add android
+
+#### Run
+ionic serve 
+
+ionic cordova run android
