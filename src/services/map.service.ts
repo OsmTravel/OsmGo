@@ -227,7 +227,7 @@ export class MapService {
     icon.style.color = 'white';
     icon.className = 'fa fa-arrows';
     el.appendChild(icon);
-    let marker = new mapboxgl.Marker(el, { offset: [-17, -42] }).setLngLat(coord);
+    let marker = new mapboxgl.Marker(el, { offset: [0, -15] }).setLngLat(coord);
     marker.data = data;
     return marker;
   }
@@ -461,13 +461,13 @@ export class MapService {
 
     this.map.addLayer({
       "id": "label", "type": "symbol", "minzoom": 16.5, "source": "data",
-      "layout": { "icon-image": "none", "icon-offset": [0, -14], "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
+      "layout": { "icon-image": "none", "icon-anchor" :'bottom', "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
       "paint": { "text-color": "#888", "text-halo-color": "rgba(255,255,255,0.8)", "text-halo-width": 1 }
     });
 
     this.map.addLayer({
       "id": "label_changed", "type": "symbol", "minzoom": 16.5, "source": "data_changed",
-      "layout": { "icon-image": "none", "icon-offset": [0, -14], "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
+      "layout": { "icon-image": "none","icon-anchor" :'bottom', "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
       "paint": { "text-color": "#888", "text-halo-color": "rgba(255,255,255,0.8)", "text-halo-width": 1 }
     });
 
