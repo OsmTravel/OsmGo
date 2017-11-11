@@ -131,8 +131,7 @@ export class MapService {
         "id": "lyrOrthoIgn",
         "type": "raster",
         "source": "tmsIgn",
-        "minzoom": 14,
-        "maxzoom": 20
+        "minzoom": 0
       }, 'bboxLayer');
       this.isDisplayOrtho = true;
     }
@@ -344,7 +343,9 @@ export class MapService {
     let timer = Observable.timer(100, 100);
     
        let subscriptionTimer = timer.subscribe(t => {
-         this.map.resize();
+        if (this.map){
+          this.map.resize();
+        }       
          if (document.getElementById('map').offsetWidth > 200) {
            subscriptionTimer.unsubscribe();
          }
@@ -427,10 +428,11 @@ export class MapService {
     this.map.addSource("location_point", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
 
     //test Tile
-    this.map.addSource("tmsIgn", {
-      "type": "raster",
-      "tiles": ['http://proxy-ortho-ign.dogeo.fr/{z}/{x}/{y}'], "tileSize": 256
-      // "tiles": ['http://a.tiles.mapbox.com/v4/openstreetmap.map-inh7ifmo/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoib3BlbnN0cmVldG1hcCIsImEiOiJncjlmd0t3In0.DmZsIeOW-3x-C5eX-wAqTw'], "tileSize": 256
+    this.map.addSource('tmsIgn', {
+      'type': 'raster',
+      'tiles': ['https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}'], 
+      'tileSize': 256, 
+      'maxzoom':19
     });
 
     this.map.addLayer({
