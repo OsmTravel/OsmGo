@@ -323,7 +323,7 @@ export class MapService {
         doubleClickZoom: false,
         attributionControl: false,
         dragRotate: false,
-        trackResize: true,
+        trackResize: false,
         pitch: (this.configService.config.mapIsPiched) ? 60 : 0
       });
 
@@ -340,6 +340,17 @@ export class MapService {
       });
 
     })
+
+    let timer = Observable.timer(100, 100);
+    
+       let subscriptionTimer = timer.subscribe(t => {
+         this.map.resize();
+         if (document.getElementById('map').offsetWidth > 200) {
+           subscriptionTimer.unsubscribe();
+         }
+       });
+    
+   
 
     /* SUBSCRIPTION */
     // la config est chargée
