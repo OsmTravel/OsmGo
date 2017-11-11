@@ -42,11 +42,15 @@
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.18",
-    "cordova-plugin-insomnia": "git+https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git"
+    "cordova-plugin-insomnia": "git+https://github.com/EddyVerbruggen/Insomnia-PhoneGap-Plugin.git",
+    "mapbox-gl": "^0.40.1"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.0",
     "typescript": "2.4.2"
+  },
+  "config": {
+    "ionic_copy": "./config/copy.config.js"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
