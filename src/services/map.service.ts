@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { DataService } from './data.service'
 import { TagsService } from './tags.service'
@@ -48,6 +48,7 @@ export class MapService {
     public alertService: AlertService,
     public locationService: LocationService,
     public configService: ConfigService,
+    private zone: NgZone,
     private http: Http) {
 
     this.eventDomMainReady.subscribe(mes => {
@@ -312,46 +313,48 @@ export class MapService {
       }
       mapStyle.sprite = spritesFullPath;
 
+      that.zone.runOutsideAngular(() => {
+        this.map = new mapboxgl.Map({
+          container: 'map',
+          style: mapStyle,
+          center: [5, 45],
+          zoom: 19,
+          maxZoom: 22,
+          doubleClickZoom: false,
+          attributionControl: false,
+          dragRotate: false,
+          trackResize: false,
+          pitch: (this.configService.config.mapIsPiched) ? 60 : 0
+        });
 
-      this.map = new mapboxgl.Map({
-        container: 'map',
-        style: mapStyle,
-        center: [5, 45],
-        zoom: 19,
-        maxZoom: 22,
-        doubleClickZoom: false,
-        attributionControl: false,
-        dragRotate: false,
-        trackResize: false,
-        pitch: (this.configService.config.mapIsPiched) ? 60 : 0
-      });
 
-      this.map.addControl(new mapboxgl.NavigationControl());
+        this.map.addControl(new mapboxgl.NavigationControl());
 
-      this.map.on('load', function () {
-        that.mapIsLoaded();
+        this.map.on('load', function () {
+          that.mapIsLoaded();
 
-      });
+        });
 
-      this.map.on('move', (e) => {
-        if (this.markerMoving || this.markerMoveMoving)
-          this.eventMarkerMove.emit(this.map.getCenter());
-      });
+        this.map.on('move', (e) => {
+          if (this.markerMoving || this.markerMoveMoving)
+            this.eventMarkerMove.emit(this.map.getCenter());
+        });
 
+      })
     })
 
     let timer = Observable.timer(100, 100);
-    
-       let subscriptionTimer = timer.subscribe(t => {
-        if (this.map){
-          this.map.resize();
-        }       
-         if (document.getElementById('map').offsetWidth > 200) {
-           subscriptionTimer.unsubscribe();
-         }
-       });
-    
-   
+
+    let subscriptionTimer = timer.subscribe(t => {
+      if (this.map) {
+        this.map.resize();
+      }
+      if (document.getElementById('map').offsetWidth > 200) {
+        subscriptionTimer.unsubscribe();
+      }
+    });
+
+
 
     /* SUBSCRIPTION */
     // la config est chargée
@@ -430,9 +433,9 @@ export class MapService {
     //test Tile
     this.map.addSource('tmsIgn', {
       'type': 'raster',
-      'tiles': ['https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}'], 
-      'tileSize': 256, 
-      'maxzoom':19
+      'tiles': ['https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}'],
+      'tileSize': 256,
+      'maxzoom': 19
     });
 
     this.map.addLayer({
@@ -457,7 +460,7 @@ export class MapService {
     });
 
     this.map.addLayer({
-      "id": "way_fill_changed", "type": "fill",  "source": "ways_changed",
+      "id": "way_fill_changed", "type": "fill", "source": "ways_changed",
       'paint': { 'fill-color': { "property": 'hexColor', "type": 'identity' }, 'fill-opacity': 0.3 },
       "filter": ['all', ['==', '$type', 'Polygon']]
     });
@@ -474,13 +477,13 @@ export class MapService {
 
     this.map.addLayer({
       "id": "label", "type": "symbol", "minzoom": 16.5, "source": "data",
-      "layout": { "icon-image": "none", "icon-anchor" :'bottom', "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
+      "layout": { "icon-image": "none", "icon-anchor": 'bottom', "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
       "paint": { "text-color": "#888", "text-halo-color": "rgba(255,255,255,0.8)", "text-halo-width": 1 }
     });
 
     this.map.addLayer({
       "id": "label_changed", "type": "symbol", "minzoom": 16.5, "source": "data_changed",
-      "layout": { "icon-image": "none","icon-anchor" :'bottom', "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
+      "layout": { "icon-image": "none", "icon-anchor": 'bottom', "text-field": "{_name}", "text-font": ["Roboto-Regular"], "text-allow-overlap": false, "text-size": 9, "text-offset": [0, 1] },
       "paint": { "text-color": "#888", "text-halo-color": "rgba(255,255,255,0.8)", "text-halo-width": 1 }
     });
 
