@@ -322,7 +322,7 @@ export class MapService {
           maxZoom: 22,
           doubleClickZoom: false,
           attributionControl: false,
-          dragRotate: false,
+          dragRotate: true,
           trackResize: false,
           pitch: (this.configService.config.mapIsPiched) ? 60 : 0
         });
@@ -538,12 +538,8 @@ export class MapService {
       that.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
     });
 
-    this.map.on('dragstart', function (e) {
-      that.headingIsLocked = false;
-      that.positionIsFollow = false;
-    });
 
-    this.map.on('rotatestart', function (e) {
+    this.map.on('touchmove', function (e) {
       that.headingIsLocked = false;
       that.positionIsFollow = false;
     });

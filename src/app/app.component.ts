@@ -17,7 +17,9 @@ import { MainPage } from '../pages/main/main';
 export class MyApp {
   rootPage = MainPage;
 
-
+  
+  
+  // let status bar overlay webview
 
 
   constructor(platform: Platform, private splashScreen: SplashScreen,
@@ -27,7 +29,9 @@ export class MyApp {
 
     platform.ready().then(() => {
       this.splashScreen.hide();
-      this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(true);
+      // set status bar to white
+      this.statusBar.backgroundColorByHexString('#3F51B5');
 
 
       if (typeof this.device.platform == 'string') {
