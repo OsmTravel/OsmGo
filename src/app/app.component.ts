@@ -28,9 +28,7 @@ export class MyApp {
 
     platform.ready().then(() => {
       this.splashScreen.hide();
-      this.statusBar.overlaysWebView(true);
-      // set status bar to white
-      this.statusBar.backgroundColorByHexString('#3F51B5');
+      this.statusBar.hide()
 
 
       if (typeof this.device.platform == 'string') {
@@ -43,7 +41,7 @@ export class MyApp {
 
   }
   ngAfterViewInit() {
-
+    this.statusBar.hide()
   }
 
 }
