@@ -22,7 +22,7 @@ export class OsmApiService {
     isDevServer = false; // dev serveur
     urlsOsm = {
         prod: { "api": 'http://api.openstreetmap.org', "overpass": "http://overpass-api.de/api/interpreter" },
-        dev: { "api": 'http://api06.dev.openstreetmap.org', "overpass": "" }
+        dev: { "api": 'https://master.apis.dev.openstreetmap.org', "overpass": "" }
     }
     urlDataServer = 'http://osmgo-data.dogeo.fr/';
 
