@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { Insomnia } from '@ionic-native/insomnia';
 import { Device } from '@ionic-native/device';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +22,7 @@ export class MyApp {
 
 
   constructor(platform: Platform, private splashScreen: SplashScreen,
-    private statusBar: StatusBar, private locationService: LocationService, private device: Device,  private insomnia: Insomnia,
+    private statusBar: StatusBar, private locationService: LocationService, private device: Device,
     public configService: ConfigService) {
     this.splashScreen.show();
 
@@ -39,13 +38,6 @@ export class MyApp {
       }
 
       this.locationService.eventPlatformReady.emit((typeof this.device.platform == 'string') ? false : true); // object => ionic serve
-
-      if (this.device.platform == 'Android') {
-        this.insomnia.keepAwake();
-      }
-
-
-
 
     });
 
