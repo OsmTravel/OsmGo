@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter, NgZone } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { DataService } from './data.service'
 import { TagsService } from './tags.service'
 import { AlertService } from './alert.service'
@@ -10,8 +10,10 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/timer';
 declare var turf;
 declare var mapboxgl: any;
+
 
 @Injectable()
 export class MapService {

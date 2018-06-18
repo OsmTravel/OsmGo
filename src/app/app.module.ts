@@ -15,7 +15,6 @@ import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-nativ
 import { AppVersion } from '@ionic-native/app-version';
 import { Diagnostic } from '@ionic-native/diagnostic';
 
-import { Insomnia } from '@ionic-native/insomnia';
 import { Device } from '@ionic-native/device';
 
 
@@ -111,7 +110,7 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
   ],
   providers: [ConfigService,OsmApiService,MapService,TagsService,DataService, 
   RouterService, AlertService, LocationService,
-   SplashScreen, StatusBar, Geolocation, DeviceOrientation, Diagnostic, AppVersion, Insomnia, Device,
+   SplashScreen, StatusBar, Geolocation, DeviceOrientation, Diagnostic, AppVersion, Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { Platform, ViewController } from 'ionic-angular';
 
@@ -7,7 +7,8 @@ import { ConfigService } from  '../../services/config.service';
 
 @Component({
   selector: 'page-about',
-  templateUrl: 'about.html'
+  templateUrl: 'about.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutPage {
 

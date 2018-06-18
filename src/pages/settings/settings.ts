@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavController, Platform, ViewController } from 'ionic-angular';
 import { ConfigService } from '../../services/config.service'
 import { MapService } from '../../services/map.service'
@@ -7,7 +7,8 @@ import { OsmApiService } from '../../services/osmApi.service';
 
 @Component({
   selector: 'page-settings',
-  templateUrl: 'settings.html'
+  templateUrl: 'settings.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsPage {
 

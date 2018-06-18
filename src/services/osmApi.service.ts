@@ -1,10 +1,12 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
+
 import { MapService } from './map.service';
 import { TagsService } from './tags.service';
 import { DataService } from './data.service'
@@ -21,7 +23,7 @@ export class OsmApiService {
 
     isDevServer = false; // dev serveur
     urlsOsm = {
-        prod: { "api": 'http://api.openstreetmap.org', "overpass": "http://overpass-api.de/api/interpreter" },
+        prod: { "api": 'https://api.openstreetmap.org', "overpass": "https://overpass-api.de/api/interpreter" },
         dev: { "api": 'https://master.apis.dev.openstreetmap.org', "overpass": "" }
     }
     urlDataServer = 'http://osmgo-data.dogeo.fr/';

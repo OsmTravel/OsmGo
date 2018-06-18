@@ -21,7 +21,7 @@ export class ConfigService {
         delegateDataConversion: false,
         isDelayed: true
     };
-    appVersion = { appName: 'Osm Go!', appVersionCode: 12, appVersionNumber: '0.0.0' }
+    appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: '0.0.0' }
 
 
 

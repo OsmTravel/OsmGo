@@ -23,12 +23,12 @@ export class RouterService {
 
 
     pushPage(pageName) {
-        let nav = this.app.getActiveNav()
+        let nav = this.app.getActiveNavs()[0]
         nav.push(this.pages[pageName].component);
     }
 
     setRootPage(pageName) {
-        let nav = this.app.getActiveNav()
+        let nav = this.app.getActiveNavs()[0]
         nav.setRoot(this.pages[pageName].component);
     }
 }
