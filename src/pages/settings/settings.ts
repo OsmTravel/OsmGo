@@ -7,8 +7,7 @@ import { OsmApiService } from '../../services/osmApi.service';
 
 @Component({
   selector: 'page-settings',
-  templateUrl: 'settings.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: 'settings.html'
 })
 export class SettingsPage {
 

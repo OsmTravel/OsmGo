@@ -39,7 +39,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="16" />
+    <preference name="android-minSdkVersion" value="21" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashScreenDelay" value="0" />
     <preference name="FadeSplashScreen" value="false" />
@@ -50,12 +50,7 @@
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
     <allow-navigation href="*" />
-    <allow-navigation href="http://192.168.1.106:8100" />
-    <allow-navigation href="http://192.168.56.1:8100" />
-    <allow-navigation href="http://192.168.1.103:8000" />
-    <allow-navigation href="http://192.168.1.103:8100" />
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
-    <allow-navigation href="http://192.168.0.15:8100" />
     <plugin name="cordova-plugin-app-version" spec="^0.1.9" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
@@ -65,5 +60,6 @@
     <plugin name="cordova.plugins.diagnostic" spec="^3.3.3" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
     <plugin name="cordova-plugin-device-orientation" spec="^1.0.7" />
-    <engine name="android" spec="^6.2.3" />
+    <allow-navigation href="http://192.168.1.101:8100" />
+    <engine name="android" spec="~7.0.0" />
 </widget>
