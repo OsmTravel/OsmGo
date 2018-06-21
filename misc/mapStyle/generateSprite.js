@@ -9,7 +9,7 @@ const parseString = require('xml2js').parseString;
 const iconsSVGsPath = path.join(__dirname,'../mapStyle/SvgForSprites/SVGs/');
 const markersModelPath = path.join(__dirname,'../mapStyle/SvgForSprites/markersModel/');
 const tagsPath = path.join(__dirname,'../../src/assets/tags/tags.json');
-const outputFolderSVG = path.join(__dirname,'./tmp/');
+const outputFolderSVG = path.join(__dirname,'../../src/assets/mapStyle/IconsSVG/');
 
 
 fs.removeSync(outputFolderSVG);
@@ -146,6 +146,5 @@ for (let i = 1; i <=2; i++){
     });
     
 };
-fs.removeSync(outputFolderSVG);
 
 
