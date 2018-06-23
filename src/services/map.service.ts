@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter, NgZone } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { DataService } from './data.service'
 import { TagsService } from './tags.service'
 import { AlertService } from './alert.service'
@@ -10,8 +10,11 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-declare var turf;
+import 'rxjs/add/observable/timer';
+import * as turf from '@turf/turf';
+import { Feature, Geometry, Point, BBox } from '@turf/turf';
 declare var mapboxgl: any;
+
 
 @Injectable()
 export class MapService {
@@ -85,7 +88,7 @@ export class MapService {
     this.map.getSource(source).setData({ "type": "FeatureCollection", "features": featuresWay });
   }
 
-  getBbox() {
+  getBbox() :BBox {
     let marginBuffer = this.configService.getMapMarginBuffer(); // buffer en m
 
     let w = document.getElementById('map').offsetWidth;
@@ -111,12 +114,12 @@ export class MapService {
         lat_max = coordinates[i][1];
     }
 
-    let pointMin = { "type": "Feature", "properties": {}, "geometry": { "type": "Point", "coordinates": [lng_min, lat_min] } };
-    let pointMax = { "type": "Feature", "properties": {}, "geometry": { "type": "Point", "coordinates": [lng_max, lat_max] } };
+    let pointMin:Point = { "type": "Point", "coordinates": [lng_min, lat_min] };
+    let pointMax:Point = { "type": "Point", "coordinates": [lng_max, lat_max] };
     var coordsMin = turf.destination(pointMin, marginBuffer / 1000, -135).geometry.coordinates;
     let coordsMax = turf.destination(pointMax, marginBuffer / 1000, 45).geometry.coordinates;
 
-    let bbox = [parseFloat(coordsMin[0]).toFixed(6), parseFloat(coordsMin[1]).toFixed(6), parseFloat(coordsMax[0]).toFixed(6), parseFloat(coordsMax[1]).toFixed(6)]; // on est pas à 1m près
+    let bbox :BBox = [coordsMin[0], coordsMin[1],coordsMax[0], coordsMax[1]]; // TODO : on est pas à 1m près
     return bbox;
   }
 
@@ -324,7 +327,9 @@ export class MapService {
           attributionControl: false,
           dragRotate: true,
           trackResize: false,
-          pitch: (this.configService.config.mapIsPiched) ? 60 : 0
+          failIfMajorPerformanceCavea: false,
+          pitch: (this.configService.config.mapIsPiched) ? 60 : 0,
+          collectResourceTiming: false
         });
 
 
@@ -339,6 +344,10 @@ export class MapService {
           if (this.markerMoving || this.markerMoveMoving)
             this.eventMarkerMove.emit(this.map.getCenter());
         });
+
+        // this.map.on('render',e => {
+        //   console.log(e);
+        // })
 
       })
     })
@@ -551,8 +560,8 @@ export class MapService {
       this.map.setCenter(this.locationService.getGeojsonPos().features[0].geometry.coordinates)
     }
 
-    this.locationService.eventNewCompassHeading.subscribe(heading => {
-
+    this.locationService.eventNewCompassHeading
+      .subscribe(heading => {
       if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
         this.map.rotateTo(heading.trueHeading);
         if (that.configService.config.mapIsPiched) {
@@ -569,7 +578,10 @@ export class MapService {
     });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
-      this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
+      
+        // cercle indiquant la précision
+        this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
+
       if (geojsonPos.features[0].properties) {
         this.map.getSource('location_point').setData(geojsonPos);
         if (this.configService.config.followPosition && this.positionIsFollow) {

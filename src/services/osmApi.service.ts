@@ -1,10 +1,12 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/of';
+
 import { MapService } from './map.service';
 import { TagsService } from './tags.service';
 import { DataService } from './data.service'
@@ -14,14 +16,14 @@ import { ConfigService } from './config.service';
 
 declare var osmtogeojson: any;
 declare var $: any;
-declare var turf: any;
+import * as turf from '@turf/turf';
 
 @Injectable()
 export class OsmApiService {
 
     isDevServer = false; // dev serveur
     urlsOsm = {
-        prod: { "api": 'http://api.openstreetmap.org', "overpass": "http://overpass-api.de/api/interpreter" },
+        prod: { "api": 'https://api.openstreetmap.org', "overpass": "https://overpass-api.de/api/interpreter" },
         dev: { "api": 'https://master.apis.dev.openstreetmap.org', "overpass": "" }
     }
     urlDataServer = 'http://osmgo-data.dogeo.fr/';
@@ -340,7 +342,7 @@ export class OsmApiService {
         })
     }
 
-    getUrlOverpassApi(bbox: string[]) {
+    getUrlOverpassApi(bbox: turf.BBox) {
 
         let OPapiBbox = bbox[1] + ',' + bbox[0] + ',' + bbox[3] + ',' + bbox[2];
         let keys = this.tagsService.getListOfPrimaryKey();
@@ -408,11 +410,11 @@ export class OsmApiService {
         this.mapService.eventNewBboxPolygon.emit(resBbox);
     }
 
-    getDataFromBbox(bbox: string[], useOverpassApi: boolean = false, delegateOsm2geojson: boolean = true) {
+    getDataFromBbox(bbox: turf.BBox, useOverpassApi: boolean = false, delegateOsm2geojson: boolean = true) {
         let featureBbox = turf.bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
-            featureBbox.geometry.coordinates[0][i][0] = parseFloat(featureBbox.geometry.coordinates[0][i][0]);
-            featureBbox.geometry.coordinates[0][i][1] = parseFloat(featureBbox.geometry.coordinates[0][i][1]);
+            featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
+            featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
 
         let bboxArea = turf.area(featureBbox);

@@ -13,6 +13,7 @@ import { RouterService } from '../../services/router.service';
 import { AlertService } from '../../services/alert.service';
 import { ConfigService } from '../../services/config.service';
 import { ModalsContentPage } from '../modal/modal';
+import { BBox } from '@turf/turf';
 
 
 @Component({
@@ -92,7 +93,7 @@ export class MainPage {
 
   loadData() {
     this.mapService.loadingData = true;
-    let bbox = this.mapService.getBbox()
+    let bbox:BBox = this.mapService.getBbox()
     this.osmApi.getDataFromBbox(bbox, false, this.configService.getDelegateDataConversion())
       .subscribe(data => { // data = geojson a partir du serveur osm
     

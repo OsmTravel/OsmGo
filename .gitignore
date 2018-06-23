@@ -37,3 +37,5 @@ build/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .sourcemaps
+
+package-lock\.json

@@ -28,7 +28,7 @@ export class MyApp {
 
     platform.ready().then(() => {
       this.splashScreen.hide();
-      this.statusBar.hide()
+      // this.statusBar.hide()
 
 
       if (typeof this.device.platform == 'string') {

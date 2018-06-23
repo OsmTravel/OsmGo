@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavController, Platform, ViewController } from 'ionic-angular';
 import { ConfigService } from '../../services/config.service'
 import { MapService } from '../../services/map.service'
