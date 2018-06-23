@@ -3,7 +3,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 
 import { Diagnostic } from '@ionic-native/diagnostic';
-
+import * as turf from '@turf/turf';
+// declare var turf;
 
 @Injectable()
 export class LocationService {
@@ -20,11 +21,6 @@ export class LocationService {
     subscriptionWatchLocation;
 
     constructor(private geolocation: Geolocation, private deviceOrientation: DeviceOrientation, private diagnostic: Diagnostic) {
-
-
-
-        // this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
-
 
         this.eventPlatformReady.subscribe(isVirtual => {
             /*DEBUG ionic serve */
@@ -71,31 +67,33 @@ export class LocationService {
                 }
             })
             .catch(error => {
-               
+
             });
     }
 
     enableGeolocation() {
-     
+
         this.subscriptionWatchLocation = this.geolocation.watchPosition({ enableHighAccuracy: true })
-            //.filter((p) => p === undefined) //Filter Out Errors
-            // .filter((p: PositionError) => {
-            //     if (p.code == 1) { // debug run livereload (fix => non https)
-            //         this.location = { coords: { accuracy: 20, altitude: null, altitudeAccuracy: null, heading: null, latitude: 45.1865723, longitude: 5.7171862, speed: null }, timestamp: 1479114012803 };
-            //         this.eventNewLocation.emit(this.getGeojsonPos());
-                  
-            //         if (!this.gpsIsReady)
-            //             this.gpsIsReady = true;
-            //     }
-            //     return p.code === undefined
-            // }) //Filter Out Errors
             .subscribe((data) => {
-                this.getGeojsonPos()
-                if (!this.gpsIsReady)
-                    this.gpsIsReady = true;
-                this.location = data;
-                this.eventNewLocation.emit(this.getGeojsonPos());
+                    if (!this.gpsIsReady) {
+                        this.gpsIsReady = true;
+                    }
+
+                    let distance = Infinity;
+                    if (this.location && this.location.coords) {
+                        const from = turf.point([data.coords.longitude, data.coords.latitude]);
+                        const to = turf.point([this.location.coords.longitude, this.location.coords.latitude]);
+                        distance = turf.distance(from, to, { units: 'metres' }); //=> m
+                    } else {
+
+                    }
+
+                    if (distance > 1.5) {
+                        this.location = data;
+                        this.eventNewLocation.emit(this.getGeojsonPos());
+                    }
             });
+
     };
 
     disableGeolocation() {
@@ -104,12 +102,16 @@ export class LocationService {
 
     heading(isVirtual) {
         if (isVirtual) { // for testing : ionic Serve
-                this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
+            this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
                 this.eventNewCompassHeading.emit(this.compassHeading);
         } else {
-            this.deviceOrientation.watchHeading({ frequency: 50 }).subscribe((data) => {
-                this.compassHeading = data;
-                this.eventNewCompassHeading.emit(data);
+            this.deviceOrientation.watchHeading({ frequency: 200 }).subscribe((data) => {
+                    if (Math.abs(data.trueHeading - this.compassHeading.trueHeading) > 4) {
+                        // near 360? TODO
+                        this.compassHeading = data;
+                        this.eventNewCompassHeading.emit(data);
+                    }
+
             });
         }
     }

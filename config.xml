@@ -34,7 +34,6 @@
     <preference name="loadUrlTimeoutValue" value="700000" />
     <preference name="windows-target-version" value="10.0" />
     <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="xwalkCommandLine" value="--ignore-gpu-blacklist" />
     <preference name="orientation" value="portrait" />
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />

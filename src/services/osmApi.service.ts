@@ -16,7 +16,7 @@ import { ConfigService } from './config.service';
 
 declare var osmtogeojson: any;
 declare var $: any;
-declare var turf: any;
+import * as turf from '@turf/turf';
 
 @Injectable()
 export class OsmApiService {
@@ -342,7 +342,7 @@ export class OsmApiService {
         })
     }
 
-    getUrlOverpassApi(bbox: string[]) {
+    getUrlOverpassApi(bbox: turf.BBox) {
 
         let OPapiBbox = bbox[1] + ',' + bbox[0] + ',' + bbox[3] + ',' + bbox[2];
         let keys = this.tagsService.getListOfPrimaryKey();
@@ -410,11 +410,11 @@ export class OsmApiService {
         this.mapService.eventNewBboxPolygon.emit(resBbox);
     }
 
-    getDataFromBbox(bbox: string[], useOverpassApi: boolean = false, delegateOsm2geojson: boolean = true) {
+    getDataFromBbox(bbox: turf.BBox, useOverpassApi: boolean = false, delegateOsm2geojson: boolean = true) {
         let featureBbox = turf.bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
-            featureBbox.geometry.coordinates[0][i][0] = parseFloat(featureBbox.geometry.coordinates[0][i][0]);
-            featureBbox.geometry.coordinates[0][i][1] = parseFloat(featureBbox.geometry.coordinates[0][i][1]);
+            featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
+            featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
 
         let bboxArea = turf.area(featureBbox);
