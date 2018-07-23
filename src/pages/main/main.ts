@@ -92,6 +92,8 @@ export class MainPage {
   }
 
   loadData() {
+    // L'utilisateur charge les données, on supprime donc le tooltip
+    this.alertService.displayToolTipRefreshData = false;
     this.mapService.loadingData = true;
     let bbox:BBox = this.mapService.getBbox()
     this.osmApi.getDataFromBbox(bbox, false, this.configService.getDelegateDataConversion())
@@ -133,5 +135,14 @@ export class MainPage {
   ngAfterViewInit() {
     this.tagsService.loadTags();
     this.mapService.eventDomMainReady.emit(document.getElementById('map'));
+    let that = this;
+    this.alertService.eventDisplayToolTipRefreshData.subscribe(e => {
+      // On affiche le Tootltip "Télécharger les données de la zone" pour 10 sec
+      that.alertService.displayToolTipRefreshData = true;
+      setTimeout(function () {
+        that.alertService.displayToolTipRefreshData = false;
+
+      }, 10000);
+    })
   }
 }

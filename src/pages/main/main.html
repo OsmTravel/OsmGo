@@ -20,7 +20,10 @@
 		</ion-fab>
 
 		<ion-fab left bottom>
-			<button tappable  ion-fab fab-bottom (click)="loadData()" [disabled]="mapService.loadingData">
+			<button tappable  ion-fab fab-bottom (click)="loadData()"
+				tooltip='Télécharger les données de la zone'
+				positionH="right" arrow="true" event="press" [active]="alertService.displayToolTipRefreshData"
+			[disabled]="mapService.loadingData">
      		<ion-icon [ngClass]= "{'fa-spin' :mapService.loadingData}" name="refresh"></ion-icon>
  		 </button>
 		</ion-fab>
@@ -34,7 +37,7 @@
 		</ion-fab>
 
 		<ion-fab right bottom *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"  style="margin-bottom:60px;">
-			<button tappable  ion-fab fab-bottom color="danger" (click)="mapService.positionateMarker()" [disabled]="loadingData">
+			<button tappable  ion-fab fab-bottom color="danger" (click)="mapService.positionateMarker()" [disabled]="mapService.loadingData">
         		<ion-icon name="add"></ion-icon>
       		</button>
 		</ion-fab>
