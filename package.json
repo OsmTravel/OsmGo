@@ -41,6 +41,7 @@
     "cordova.plugins.diagnostic": "^4.0.8",
     "ionic-angular": "3.9.2",
     "ionic-plugin-keyboard": "^2.2.1",
+    "ionic-tooltips": "^2.0.1",
     "ionicons": "3.0.0",
     "mapbox-gl": "^0.41.0",
     "rxjs": "5.5.11",

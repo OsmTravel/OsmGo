@@ -2,7 +2,8 @@ import { NgModule,ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule} from '@angular/http';
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TooltipsModule } from 'ionic-tooltips';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { MyApp } from './app.component';
@@ -90,6 +91,8 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
   ],
   imports: [
       HttpModule,
+      BrowserAnimationsModule,
+      TooltipsModule,
       BrowserModule,
       IonicModule.forRoot(MyApp),
      IonicStorageModule.forRoot()

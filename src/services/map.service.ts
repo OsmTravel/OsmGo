@@ -348,7 +348,7 @@ export class MapService {
         // this.map.on('render',e => {
         //   console.log(e);
         // })
-
+        
       })
     })
 
@@ -415,8 +415,14 @@ export class MapService {
       }
       this.dataService.localStorage.get('geojson').then(data2 => {
         if (data2) {
-          if (data2.features.length > 0)
-            this.alertService.eventNewAlert.emit(data2.features.length + ' anciens éléments chargés')
+          if (data2.features.length > 0){
+            // Il y a des données stockées en mémoires...
+            this.alertService.eventNewAlert.emit(data2.features.length + ' anciens objets chargés')
+          }else {
+            // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
+            this.alertService.eventDisplayToolTipRefreshData.emit();
+          }
+            
           this.dataService.setGeojson(data2);
           this.eventMarkerReDraw.emit(data2);
         }
