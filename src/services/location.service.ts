@@ -4,7 +4,6 @@ import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-nativ
 
 import { Diagnostic } from '@ionic-native/diagnostic';
 import * as turf from '@turf/turf';
-// declare var turf;
 
 @Injectable()
 export class LocationService {
@@ -19,6 +18,8 @@ export class LocationService {
     gpsIsReady = false;
     subscriptionLocation;
     subscriptionWatchLocation;
+    forceOpen: boolean = false; // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
+    isFirstLocation = true;
 
     constructor(private geolocation: Geolocation, private deviceOrientation: DeviceOrientation, private diagnostic: Diagnostic) {
 
@@ -45,6 +46,8 @@ export class LocationService {
                             this.diagnostic.requestLocationAuthorization().then(e => {
                                 if (e == 'GRANTED') {
                                     this.checkIfLocationIsAvailable()
+                                } else {
+                                    // l'utilisateur à refuser la geoloc ...
                                 }
                             })
 
@@ -87,8 +90,9 @@ export class LocationService {
                     } else {
 
                     }
-
-                    if (distance > 1.5) {
+                    // on ne déplace le marker que si la position à changé de 2 m au moins
+                    // Sinon ça regénère le rendu et ça fait chauffé le téléphone pour rien...
+                    if (distance > 2) {
                         this.location = data;
                         this.eventNewLocation.emit(this.getGeojsonPos());
                     }

@@ -68,6 +68,14 @@ export class MainPage {
 
   }
 
+  openMapWithoutLocation(){
+    this.locationService.forceOpen = true;
+    this.configService.config.lockMapHeading = false;
+    this.configService.config.followPosition = false;
+    this.mapService.map.map.setBearing(0);
+  }
+
+
   presentConfirm() {
     let alert = this.alertCtrl.create({
       title: 'Vraiment?',

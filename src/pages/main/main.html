@@ -1,5 +1,8 @@
-<div id="locationWaiting" *ngIf="!locationService.gpsIsReady">
+<div id="locationWaiting" *ngIf="!locationService.gpsIsReady && !locationService.forceOpen">
+	<!-- TODO, en fare un component... -->
 	<h1>Geolocation</h1>
+
+	<button tappable ion-button (click)="openMapWithoutLocation()"> Entrer quand même sans geolocalisation </button>
 </div>
 
 <ion-content padding class="home" #mycontent>
@@ -43,7 +46,7 @@
 		</ion-fab>
 
 		<ion-fab right bottom>
-			<button tappable  ion-fab fab-bottom (click)="mapService.centerOnMyPosition()">
+			<button tappable  ion-fab fab-bottom (click)="mapService.centerOnMyPosition()" [disabled]="!locationService.gpsIsReady">
         		<ion-icon name="locate"></ion-icon>
       		</button>
 		</ion-fab>

@@ -320,8 +320,8 @@ export class MapService {
         this.map = new mapboxgl.Map({
           container: 'map',
           style: mapStyle,
-          center: [5, 45],
-          zoom: 19,
+          center: [2.62, 46.98],
+          zoom: 4.8,
           maxZoom: 22,
           doubleClickZoom: false,
           attributionControl: false,
@@ -341,6 +341,8 @@ export class MapService {
         });
 
         this.map.on('move', (e) => {
+          console.log(this.map.getCenter())
+          console.log(this.map.getZoom())
           if (this.markerMoving || this.markerMoveMoving)
             this.eventMarkerMove.emit(this.map.getCenter());
         });
@@ -584,6 +586,11 @@ export class MapService {
     });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
+      if (this.locationService.isFirstLocation){
+        this.locationService.isFirstLocation = false;
+        this.map.setZoom(19);
+      }
+    
       
         // cercle indiquant la précision
         this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
