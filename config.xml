@@ -58,7 +58,8 @@
     <plugin name="cordova-sqlite-storage" spec="^2.0.4" />
     <plugin name="cordova.plugins.diagnostic" spec="^3.3.3" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <plugin name="cordova-plugin-device-orientation" spec="^1.0.7" />
     <allow-navigation href="http://192.168.1.101:8100" />
+    <allow-navigation href="http://192.168.1.102:8100" />
     <engine name="android" spec="~7.0.0" />
+    <plugin name="cordova-plugin-device-orientation" spec="^2.0.1" />
 </widget>

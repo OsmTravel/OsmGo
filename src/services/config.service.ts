@@ -21,6 +21,11 @@ export class ConfigService {
         delegateDataConversion: false,
         isDelayed: true
     };
+
+    init = { lng : 2.6,
+             lat: 47,
+             zoom: 4.8 }
+
     appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: '0.0.0' }
 
 

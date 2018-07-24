@@ -1,9 +1,9 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 
 import { Diagnostic } from '@ionic-native/diagnostic';
 import * as turf from '@turf/turf';
+import { ConfigService } from './config.service';
 
 @Injectable()
 export class LocationService {
@@ -11,6 +11,7 @@ export class LocationService {
     eventNewCompassHeading = new EventEmitter();
     eventStartCompassHeading = new EventEmitter();
     eventPlatformReady = new EventEmitter();
+    eventLocationIsReady = new EventEmitter();
     location;
     pointGeojson;
     compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
@@ -19,16 +20,14 @@ export class LocationService {
     subscriptionLocation;
     subscriptionWatchLocation;
     forceOpen: boolean = false; // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
-    isFirstLocation = true;
 
-    constructor(private geolocation: Geolocation, private deviceOrientation: DeviceOrientation, private diagnostic: Diagnostic) {
+    constructor(private geolocation: Geolocation,
+        private diagnostic: Diagnostic,
+        public configService: ConfigService) {
 
         this.eventPlatformReady.subscribe(isVirtual => {
             /*DEBUG ionic serve */
             if (isVirtual) {
-                this.location = { coords: { accuracy: 20, altitude: null, altitudeAccuracy: null, heading: null, latitude: 45.1865723, longitude: 5.7171862, speed: null }, timestamp: 1479114012803 };
-                this.eventNewLocation.emit(this.getGeojsonPos());
-                this.gpsIsReady = true;
                 this.enableGeolocation();
             } else {
 
@@ -48,6 +47,7 @@ export class LocationService {
                                     this.checkIfLocationIsAvailable()
                                 } else {
                                     // l'utilisateur à refuser la geoloc ...
+                                    this.dontUseLocation();
                                 }
                             })
 
@@ -56,7 +56,7 @@ export class LocationService {
                         }
                     })
             }
-            this.heading(isVirtual)
+            this.heading()
         })
     }
 
@@ -78,24 +78,30 @@ export class LocationService {
 
         this.subscriptionWatchLocation = this.geolocation.watchPosition({ enableHighAccuracy: true })
             .subscribe((data) => {
-                    if (!this.gpsIsReady) {
-                        this.gpsIsReady = true;
-                    }
+                if (!this.gpsIsReady) {
+                    this.configService.init.zoom = 19;
+                    this.configService.init.lng = data.coords.longitude;
+                    this.configService.init.lng = data.coords.latitude;
+                    this.eventLocationIsReady.emit(data);
+                    this.gpsIsReady = true;
+                }
 
-                    let distance = Infinity;
-                    if (this.location && this.location.coords) {
-                        const from = turf.point([data.coords.longitude, data.coords.latitude]);
-                        const to = turf.point([this.location.coords.longitude, this.location.coords.latitude]);
-                        distance = turf.distance(from, to, { units: 'metres' }); //=> m
-                    } else {
+                let distance = Infinity;
+                if (this.location && this.location.coords) {
+                    const from = turf.point([data.coords.longitude, data.coords.latitude]);
+                    const to = turf.point([this.location.coords.longitude, this.location.coords.latitude]);
+                    distance = turf.distance(from, to, { units: 'metres' }); //=> m
+                } else {
 
-                    }
-                    // on ne déplace le marker que si la position à changé de 2 m au moins
-                    // Sinon ça regénère le rendu et ça fait chauffé le téléphone pour rien...
-                    if (distance > 2) {
-                        this.location = data;
-                        this.eventNewLocation.emit(this.getGeojsonPos());
-                    }
+                }
+                // on ne déplace le marker que si la position a changé d'au moins 2 m
+                // Sinon ça regénère le rendu et ça fait chauffé le téléphone pour rien...
+                if (distance > 2) {
+                    this.location = data;
+                    this.eventNewLocation.emit(this.getGeojsonPos());
+                }
+            }, error => {
+                console.log(error);
             });
 
     };
@@ -104,19 +110,29 @@ export class LocationService {
         this.subscriptionWatchLocation.unsubscribe()
     }
 
-    heading(isVirtual) {
-        if (isVirtual) { // for testing : ionic Serve
+    heading() {
+        if (!navigator['compass']) { // for testing : ionic Serve
             this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
-                this.eventNewCompassHeading.emit(this.compassHeading);
+            this.eventNewCompassHeading.emit(this.compassHeading);
         } else {
-            this.deviceOrientation.watchHeading({ frequency: 200 }).subscribe((data) => {
-                    if (Math.abs(data.trueHeading - this.compassHeading.trueHeading) > 4) {
+    
+            // utilisation l'api native du navigateur
+              const options = {
+                frequency: 300
+              }; 
+              navigator['compass'].watchHeading(data => {
+                if (this.gpsIsReady) {
+                    // si on a un mouvement d'au moins 4°
+                    if (Math.abs(data.magneticHeading - this.compassHeading.magneticHeading) > 4) {
                         // near 360? TODO
                         this.compassHeading = data;
                         this.eventNewCompassHeading.emit(data);
                     }
-
-            });
+                } 
+              }, 
+              error => {
+                  console.log(error)
+              }, options);
         }
     }
     getLocation() {
@@ -124,7 +140,7 @@ export class LocationService {
     }
 
     getCoordsPosition() {
-        if (this.location) {
+        if (this.location && this.location.coords) {
             return [this.location.coords.longitude, this.location.coords.latitude]
         }
         else {
@@ -133,10 +149,10 @@ export class LocationService {
     }
 
     getGeojsonPos() {
-        let lon = (this.location && this.location.coords) ? this.location.coords.longitude : 5.6;
-        let lat = (this.location && this.location.coords) ? this.location.coords.latitude : 45.6;
-        let accuracy = (this.location) ? this.location.coords.accuracy : 0;
-        let heading = this.compassHeading.trueHeading;
+        let lon = (this.location && this.location.coords) ? this.location.coords.longitude : this.configService.init.lng;
+        let lat = (this.location && this.location.coords) ? this.location.coords.latitude : this.configService.init.lat;
+        let accuracy = (this.location && this.location.coords) ? this.location.coords.accuracy : 0;
+        let heading = this.compassHeading.magneticHeading;
 
         this.pointGeojson = {
             "type": "FeatureCollection", "features": [
@@ -176,4 +192,13 @@ export class LocationService {
             "type": "FeatureCollection", "features": [{ "type": "Feature", "geometry": { "type": "Polygon", "coordinates": [ret] } }]
         };
     };
+
+
+    dontUseLocation() {
+        this.configService.init.zoom = 4.8;
+        this.forceOpen = true;
+        this.configService.config.lockMapHeading = false;
+        this.configService.config.followPosition = false;
+        this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
+    }
 }

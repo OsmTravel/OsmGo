@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
 import { MainPage } from '../pages/main/main';
 import { SettingsPage } from '../pages/settings/settings';
+import { LocationPage } from '../pages/location/location';
 
 
 @Injectable()
@@ -14,7 +15,8 @@ export class RouterService {
         "aboutPage": { "component": AboutPage },
         "loginPage": {"component" : LoginPage},
         "mainPage": { "component" : MainPage },
-        "settingsPage": { "component" : SettingsPage }
+        "settingsPage": { "component" : SettingsPage },
+        "locationPage": { "component" : LocationPage}
     };
 
     constructor(private app: App) {

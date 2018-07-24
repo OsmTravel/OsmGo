@@ -53,9 +53,12 @@ export class MapService {
     public configService: ConfigService,
     private zone: NgZone,
     private http: Http) {
-
+    
     this.eventDomMainReady.subscribe(mes => {
       mapboxgl.accessToken = 'pk.eyJ1IjoiZHozMTY0MjQiLCJhIjoiNzI3NmNkOTcyNWFlNGQxNzU2OTA1N2EzN2FkNWIwMTcifQ.NS8KWg47FzfLPlKY0JMNiQ';
+            this.locationService.eventLocationIsReady.subscribe( data => {
+              this.map.setZoom(19);
+      })
       this.initMap();
     })
 
@@ -320,8 +323,8 @@ export class MapService {
         this.map = new mapboxgl.Map({
           container: 'map',
           style: mapStyle,
-          center: [2.62, 46.98],
-          zoom: 4.8,
+          center: [this.configService.init.lng, this.configService.init.lat],
+          zoom: this.configService.init.zoom,
           maxZoom: 22,
           doubleClickZoom: false,
           attributionControl: false,
@@ -586,12 +589,6 @@ export class MapService {
     });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
-      if (this.locationService.isFirstLocation){
-        this.locationService.isFirstLocation = false;
-        this.map.setZoom(19);
-      }
-    
-      
         // cercle indiquant la précision
         this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
 

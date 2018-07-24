@@ -42,7 +42,7 @@ export class MainPage {
 
     mapService.eventShowModal.subscribe(data => {
       let newPosition = (data.newPosition) ? data.newPosition : false;
-      let modal = this.modalCtrl.create(ModalsContentPage, { type: data.type, data: data.geojson, newPosition: newPosition, origineData: data.origineData});
+      let modal = this.modalCtrl.create(ModalsContentPage, { type: data.type, data: data.geojson, newPosition: newPosition, origineData: data.origineData });
       modal.onDidDismiss(data => {
         if (data) {
           if (data.type === 'Move') {
@@ -66,13 +66,6 @@ export class MainPage {
     })
 
 
-  }
-
-  openMapWithoutLocation(){
-    this.locationService.forceOpen = true;
-    this.configService.config.lockMapHeading = false;
-    this.configService.config.followPosition = false;
-    this.mapService.map.map.setBearing(0);
   }
 
 
@@ -103,15 +96,15 @@ export class MainPage {
     // L'utilisateur charge les données, on supprime donc le tooltip
     this.alertService.displayToolTipRefreshData = false;
     this.mapService.loadingData = true;
-    let bbox:BBox = this.mapService.getBbox()
+    let bbox: BBox = this.mapService.getBbox()
     this.osmApi.getDataFromBbox(bbox, false, this.configService.getDelegateDataConversion())
       .subscribe(data => { // data = geojson a partir du serveur osm
-    
+
       },
-      err => {
-        this.mapService.loadingData = false;
-        this.presentToast(err);
-      });
+        err => {
+          this.mapService.loadingData = false;
+          this.presentToast(err);
+        });
   }
 
 

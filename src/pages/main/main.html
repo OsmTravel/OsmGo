@@ -1,9 +1,5 @@
-<div id="locationWaiting" *ngIf="!locationService.gpsIsReady && !locationService.forceOpen">
-	<!-- TODO, en fare un component... -->
-	<h1>Geolocation</h1>
-
-	<button tappable ion-button (click)="openMapWithoutLocation()"> Entrer quand même sans geolocalisation </button>
-</div>
+<page-location id="locationWaiting" *ngIf="!locationService.gpsIsReady && !locationService.forceOpen">
+</page-location>
 
 <ion-content padding class="home" #mycontent>
 
