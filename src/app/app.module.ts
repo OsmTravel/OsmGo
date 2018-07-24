@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipsModule } from 'ionic-tooltips';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { LongPressModule } from 'ionic-long-press';
+
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -94,6 +96,7 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
       HttpModule,
       BrowserAnimationsModule,
       TooltipsModule,
+      LongPressModule,
       BrowserModule,
       IonicModule.forRoot(MyApp),
      IonicStorageModule.forRoot()

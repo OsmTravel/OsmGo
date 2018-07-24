@@ -72,6 +72,14 @@
 				<ion-icon name="close"> </ion-icon>
 				<ion-icon name="create"> </ion-icon>
 			</button>
+
+			<button ion-fab ion-long-press *ngIf="!feature.properties.changeType"
+					[interval]="500" (onPressing)="addSurveyDate()"
+					color="secondary"
+					(click)="clickOnFabSurveyButton()"
+					class="fabInlineMarginLess fabSurveyDate">
+					<ion-icon name="checkmark-circle-outline"></ion-icon>
+			</button>
 		</ion-footer>
 	</div>
 

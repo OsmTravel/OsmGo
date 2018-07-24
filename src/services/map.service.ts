@@ -344,8 +344,6 @@ export class MapService {
         });
 
         this.map.on('move', (e) => {
-          console.log(this.map.getCenter())
-          console.log(this.map.getZoom())
           if (this.markerMoving || this.markerMoveMoving)
             this.eventMarkerMove.emit(this.map.getCenter());
         });

@@ -6,6 +6,7 @@ import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { AlertService } from '../../services/alert.service';
 
+
 import { TagsService } from '../../services/tags.service';
 
 
@@ -27,7 +28,7 @@ export class ModalsContentPage {
   typeFiche;
   displayCode = false;
   mode;
-  configOfPrimaryKey = { presets: [] };
+  configOfPrimaryKey = { presets: [], alert :undefined };
   currentPresets = {};
   primaryKey = { key: '', value: '', lbl: '' };
   customValue = '';
@@ -380,5 +381,36 @@ export class ModalsContentPage {
     toast.present();
   }
 
+  addSurveyDate(){
+    const now = new Date;
+    const YYYY = now.getFullYear()
+    const MM = ((now.getMonth())+1 < 10) ? '0'+ (now.getMonth()+1) : ''+ (now.getMonth()+1);
+    const DD = (now.getDate()< 10) ? '0'+ now.getDate() : ''+ now.getDate();
+    const isoDate = YYYY + '-' + MM + '-' + DD
+ 
+    let tagSurveyIndex = -1;
+    for (let i = 0; i < this.tags.length; i++){
+      if (this.tags[i].key === 'survey:date'){
+        tagSurveyIndex = i;
+        break;
+      }
+    }
+    if (tagSurveyIndex != -1){ // le tag existe déjà, on l'écrase
+      this.tags[tagSurveyIndex].value = isoDate;
+    } else {
+      this.tags.push({'key':'survey:date', 'value' : isoDate})
+    }
+
+    this.updateOsmElement() ;
+  }
+
+  clickOnFabSurveyButton(){
+    const toast = this.toastCtrl.create({
+      message: 'Veuillez appuyer longuement pour ajouter une date de verification',
+      position : 'middle',
+      duration: 3000
+    });
+    toast.present();
+  }
 
 }
