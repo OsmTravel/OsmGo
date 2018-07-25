@@ -74,16 +74,6 @@
 	<ion-card>
 		<ion-card-content>
 			<ion-item>
-				<ion-label>Déléguer la conversion des données </ion-label>
-				<ion-toggle [(ngModel)]="this.configService.config.delegateDataConversion" (ionChange)="delegateDataConversionChange($event)"></ion-toggle>
-			</ion-item>
-			<label class="hint">Délégue la conversion des données à un serveur (utile pour les smartphones un peu lent...)</label>
-		</ion-card-content>
-	</ion-card>
-
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
 				<ion-label>Mode différé </ion-label>
 				<ion-toggle [disabled]="!this.osmApi.getUserInfo().connected" [(ngModel)]="this.configService.config.isDelayed" (ionChange)="isDelayedChange($event)"></ion-toggle>
 			</ion-item>

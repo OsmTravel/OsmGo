@@ -18,7 +18,6 @@ export class ConfigService {
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
-        delegateDataConversion: false,
         isDelayed: true
     };
 
@@ -108,14 +107,6 @@ export class ConfigService {
         return this.config.defaultPrimarykeyWindows;
     }
 
-    setDelegateDataConversion(delegateDataConversion: boolean) {
-        this.config.delegateDataConversion = delegateDataConversion;
-        this.localStorage.set('config', this.config);
-    }
-
-    getDelegateDataConversion() {
-        return this.config.delegateDataConversion;
-    }
 
     setIsDelayed(isDelayed: boolean) {
         this.config.isDelayed = isDelayed;

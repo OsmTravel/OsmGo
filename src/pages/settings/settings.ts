@@ -51,9 +51,6 @@ export class SettingsPage {
     this.configService.setDefaultPrimarykeyWindows(e);
   }
 
-  delegateDataConversionChange(e) {
-    this.configService.setDelegateDataConversion(e.checked);
-  }
 
   isDelayedChange(e){
     this.configService.setIsDelayed(e.checked);

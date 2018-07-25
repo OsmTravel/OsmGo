@@ -97,7 +97,7 @@ export class MainPage {
     this.alertService.displayToolTipRefreshData = false;
     this.mapService.loadingData = true;
     let bbox: BBox = this.mapService.getBbox()
-    this.osmApi.getDataFromBbox(bbox, false, this.configService.getDelegateDataConversion())
+    this.osmApi.getDataFromBbox(bbox, false)
       .subscribe(data => { // data = geojson a partir du serveur osm
 
       },

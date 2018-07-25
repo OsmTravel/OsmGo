@@ -1,6 +1,7 @@
 import { NgModule,ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule} from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipsModule } from 'ionic-tooltips';
@@ -94,6 +95,7 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
   ],
   imports: [
       HttpModule,
+      HttpClientModule,
       BrowserAnimationsModule,
       TooltipsModule,
       LongPressModule,
