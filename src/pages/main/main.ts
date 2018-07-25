@@ -126,7 +126,8 @@ export class MainPage {
   presentToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
-      duration: 5000,
+      position : 'top',
+      duration: 4000,
       showCloseButton: true,
       closeButtonText: 'X'
     });

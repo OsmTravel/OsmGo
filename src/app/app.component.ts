@@ -25,17 +25,18 @@ export class MyApp {
     private statusBar: StatusBar, private locationService: LocationService, private device: Device,
     public configService: ConfigService) {
     this.splashScreen.show();
-
+      console.log(platform.platforms())
     platform.ready().then(() => {
       this.splashScreen.hide();
-      // this.statusBar.hide()
+      // this.statusBar.overlaysWebView(true);
+      // this.statusBar.styleBlackTranslucent()
+      this.statusBar.show();
 
-
-      if (typeof this.device.platform == 'string') {
+      if (platform.platforms().length > 1){
         this.configService.loadAppVersion();
       }
 
-      this.locationService.eventPlatformReady.emit((typeof this.device.platform == 'string') ? false : true); // object => ionic serve
+      this.locationService.eventPlatformReady.emit((platform.platforms().length > 1) ? false : true); // object => == 1 => ionic serve ( ['core'])
 
     });
 
