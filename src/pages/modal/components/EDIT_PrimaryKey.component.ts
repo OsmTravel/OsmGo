@@ -19,7 +19,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                                 	{{primaryKey.value}}
                                 </p>
 							</ion-col>
-							<ion-col width-10>
+							<ion-col width-10 class="ion-col10" class="ion-col10">
 								<i class="fa fa-cog fa-2x"></i>
 							</ion-col>
 						</ion-row>
