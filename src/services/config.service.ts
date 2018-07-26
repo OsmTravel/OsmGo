@@ -4,8 +4,9 @@ import { AppVersion } from '@ionic-native/app-version';
 
 @Injectable()
 export class ConfigService {
+    eventCloseGeolocPage  = new EventEmitter();
+
       constructor(public localStorage: Storage, private _appVersion: AppVersion) { 
-    
            this.loadConfig();
       }
 
@@ -20,6 +21,9 @@ export class ConfigService {
         defaultPrimarykeyWindows: 'allTags',
         isDelayed: true
     };
+
+    geolocPageIsOpen = true;
+    geojsonIsLoadedFromCache = false;
 
     init = { lng : 2.6,
              lat: 47,

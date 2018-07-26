@@ -27,7 +27,6 @@ export class MyApp {
     this.splashScreen.show();
 
     this.configService.platforms = platform.platforms()
-      console.log(this.configService.platforms)
 
     platform.ready().then(() => {
       this.splashScreen.hide();

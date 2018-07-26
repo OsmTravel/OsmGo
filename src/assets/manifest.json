@@ -1,11 +1,10 @@
 {
   "name": "Osm Go !",
   "short_name": "Osm Go !",
-  "start_url": "index.html",
+  "start_url": "/www",
   "display": "fullscreen",
-  "xwalk_android_permissions": ["ACCESS_FINE_LOCATION"],
   "icons": [{
-    "src": "assets/logo.png",
+    "src": "logo.png",
     "sizes": "192x192",
     "type": "image/png"
   }],

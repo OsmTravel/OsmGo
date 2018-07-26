@@ -88,6 +88,8 @@ export class LocationService {
                     this.configService.init.lng = data.coords.longitude;
                     this.configService.init.lng = data.coords.latitude;
                     this.eventLocationIsReady.emit(data);
+                    this.configService.geolocPageIsOpen = false;
+                    this.configService.eventCloseGeolocPage.emit('gpsIsReady');
                     this.gpsIsReady = true;
                 }
 
@@ -205,5 +207,7 @@ export class LocationService {
         this.configService.config.lockMapHeading = false;
         this.configService.config.followPosition = false;
         this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
+        this.configService.geolocPageIsOpen = false;
+        this.configService.eventCloseGeolocPage.emit('force');
     }
 }

@@ -75,6 +75,13 @@ export class MapService {
         this.drawWaysPoly(geojson, 'ways_changed');
       }
     });
+
+    this.configService.eventCloseGeolocPage.subscribe(e => {
+      if (this.configService.geojsonIsLoadedFromCache && !this.configService.geolocPageIsOpen){
+        this.diplayInitToast()
+      }
+        
+    })
   } //EOF constructor
 
   drawWaysPoly(geojson, source) {
@@ -154,6 +161,7 @@ export class MapService {
     }
     if (this.configService.config.followPosition) {
       this.positionIsFollow = true;
+      this.map.rotateTo(this.locationService.compassHeading.trueHeading);
     }
   }
 
@@ -416,21 +424,29 @@ export class MapService {
         this.dataService.setGeojsonChanged(data);
         this.eventMarkerChangedReDraw.emit(data);
       }
-      this.dataService.localStorage.get('geojson').then(data2 => {
-        if (data2) {
-          if (data2.features.length > 0){
-            // Il y a des données stockées en mémoires...
-            this.alertService.eventNewAlert.emit(data2.features.length + ' anciens objets chargés')
-          }else {
-            // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
-            this.alertService.eventDisplayToolTipRefreshData.emit();
-          }
-            
-          this.dataService.setGeojson(data2);
-          this.eventMarkerReDraw.emit(data2);
-        }
-      });
     });
+
+    this.dataService.localStorage.get('geojson').then(data => {
+      this.configService.geojsonIsLoadedFromCache = true;
+      if (data) {
+        this.dataService.setGeojson(data);
+        this.eventMarkerReDraw.emit(data);
+        if (!this.configService.geolocPageIsOpen){
+          this.diplayInitToast();
+        }
+      }
+    });
+  }
+
+  diplayInitToast(){
+    let data = this.dataService.getGeojson()
+    if (data.features.length > 0){
+      // Il y a des données stockées en mémoires...
+      this.alertService.eventNewAlert.emit(data.features.length + ' anciens objets chargés')
+    }else {
+      // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
+      this.alertService.eventDisplayToolTipRefreshData.emit();
+    }
   }
 
   mapIsLoaded() {
@@ -573,14 +589,15 @@ export class MapService {
       .subscribe(heading => {
       if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
         this.map.rotateTo(heading.trueHeading);
+        // TODO : consomme beaucoup trop de cpu ... 
         if (that.configService.config.mapIsPiched) {
           map.setLayoutProperty('location_point', 'icon-rotation-alignment', 'map');
           map.setLayoutProperty('location_point', 'icon-rotate', heading.trueHeading)
-        } else { // plus  jolie en vu du dessus, icon toujour au nord, la carte tourne
+        } else { // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
           map.setLayoutProperty('location_point', 'icon-rotation-alignment', 'viewport');
           map.setLayoutProperty('location_point', 'icon-rotate', 0);
         }
-      } else { // la map reste fixe, l'icone tourn
+      } else { // la map reste fixe, l'icon tourne
         map.setLayoutProperty('location_point', 'icon-rotation-alignment', 'map');
         map.setLayoutProperty('location_point', 'icon-rotate', heading.trueHeading)
       }
