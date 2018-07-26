@@ -6,7 +6,7 @@ import { MapService } from '../../services/map.service';
 import { Observable } from 'rxjs/Observable';
 
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-location',
   templateUrl: 'location.html',

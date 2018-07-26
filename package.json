@@ -22,7 +22,7 @@
     "@ionic-native/app-version": "^4.7.0",
     "@ionic-native/core": "4.7.0",
     "@ionic-native/device": "^4.7.0",
-    "@ionic-native/device-orientation": "^4.10.0",
+    "@ionic-native/device-orientation": "^4.10.1",
     "@ionic-native/diagnostic": "^4.7.0",
     "@ionic-native/file-path": "^4.7.0",
     "@ionic-native/geolocation": "^4.7.0",
@@ -32,6 +32,7 @@
     "@turf/turf": "^5.1.6",
     "@types/navigation": "^4.0.3",
     "cordova-android": "7.0.0",
+    "cordova-browser": "5.0.3",
     "cordova-plugin-app-version": "^0.1.9",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-device-orientation": "^2.0.1",
@@ -84,7 +85,8 @@
       "cordova-plugin-device-orientation": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

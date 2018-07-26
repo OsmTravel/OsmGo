@@ -11,7 +11,7 @@ export class ConfigService {
 
     
     eventConfigIsLoaded = new EventEmitter();
-
+    platforms = [];
     config = {
         mapMarginBuffer: 50,
         mapIsPiched: false,

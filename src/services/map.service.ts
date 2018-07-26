@@ -311,7 +311,7 @@ export class MapService {
       let spritesFullPath = 'mapStyle/sprites';
       if (window.location.protocol == 'http:' || window.location.protocol == 'https:') {
         // http://localhost:8100/ => http://localhost:8100/assets/mapStyle/sprites
-        spritesFullPath = path + 'assets/mapStyle/sprites'
+        spritesFullPath = (path + 'assets/mapStyle/sprites').replace('index.html','');
       }
       else {
         //file:///android_asset/www/index.html => file:///android_asset/www/assets/mapStyle/sprites

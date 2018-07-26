@@ -78,6 +78,11 @@ export class LocationService {
 
         this.subscriptionWatchLocation = this.geolocation.watchPosition({ enableHighAccuracy: true })
             .subscribe((data) => {
+                if (!data.coords){
+                    console.log(data);
+                    return data;
+                }
+
                 if (!this.gpsIsReady) {
                     this.configService.init.zoom = 19;
                     this.configService.init.lng = data.coords.longitude;
@@ -111,7 +116,7 @@ export class LocationService {
     }
 
     heading() {
-        if (!navigator['compass']) { // for testing : ionic Serve
+        if (!navigator['compass'] || this.configService.platforms.indexOf('core') !== -1) { // for testing : ionic Serve
             this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
             this.eventNewCompassHeading.emit(this.compassHeading);
         } else {
