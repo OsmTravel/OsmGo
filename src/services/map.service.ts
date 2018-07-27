@@ -34,6 +34,7 @@ export class MapService {
   domMarkerPosition: HTMLDivElement;
   arrowDirection: HTMLDivElement;
   markerLocation = undefined;
+  layersAreLoaded = false;
 
 
   eventDomMainReady = new EventEmitter();
@@ -110,6 +111,31 @@ export class MapService {
     this.map.getSource(source).setData({ "type": "FeatureCollection", "features": featuresWay });
   }
 
+
+  /*
+  On lui donne une distance en mètre, il nous retourne distance en pixel
+  Fortement inspirer de : https://github.com/mapbox/mapbox-gl-js/blob/9ee69dd4a74a021d4a04a8a96a3e8f06062d633a/src/ui/control/scale_control.js#L87 
+  */
+  getPixelDistFromMeter(map, dist: number) {
+    const y = map.getContainer().clientHeight / 2;
+    const mapWidth = map.getContainer().clientWidth;
+
+    function getDistance(latlng1, latlng2) {
+      const R = 6371000;
+      const rad = Math.PI / 180,
+        lat1 = latlng1.lat * rad,
+        lat2 = latlng2.lat * rad,
+        a = Math.sin(lat1) * Math.sin(lat2) +
+          Math.cos(lat1) * Math.cos(lat2) * Math.cos((latlng2.lng - latlng1.lng) * rad);
+      const maxMeters = R * Math.acos(Math.min(a, 1));
+      return maxMeters;
+    }
+    const distWidth = getDistance(map.unproject([0, y]), map.unproject([mapWidth, y]));
+    const pxPerMeter = mapWidth / distWidth;
+
+    return Math.round(dist * pxPerMeter);
+  };
+
   getBbox(): BBox {
     let marginBuffer = this.configService.getMapMarginBuffer(); // buffer en m
 
@@ -177,6 +203,12 @@ export class MapService {
       this.map.rotateTo(this.locationService.compassHeading.trueHeading);
       this.arrowDirection.setAttribute("style", "transform: rotate(0deg");
     }
+  }
+  changeLocationRadius(newRadius: number, transition: boolean = false): void {
+    const pxRadius = this.getPixelDistFromMeter(this.map, newRadius);
+    let duration = transition ? 300 : 0;
+    this.map.setPaintProperty('location_circle', 'circle-radius-transition', { "duration": duration });
+    this.map.setPaintProperty('location_circle', 'circle-radius', pxRadius);
   }
 
 
@@ -342,8 +374,8 @@ export class MapService {
           doubleClickZoom: false,
           attributionControl: false,
           dragRotate: true,
-          trackResize: false,
-          failIfMajorPerformanceCavea: false,
+          trackResize: true,
+          // failIfMajorPerformanceCavea: false,
           pitch: 0,
           pitchWithRotate: false,
           collectResourceTiming: false
@@ -358,10 +390,17 @@ export class MapService {
         });
 
         this.map.on('move', (e) => {
-          if (this.markerMoving || this.markerMoveMoving)
+          if (this.markerMoving || this.markerMoveMoving) {
             this.eventMarkerMove.emit(this.map.getCenter());
+          }
         });
 
+        this.map.on('zoom', (e) => {
+          if (this.layersAreLoaded && this.locationService.location) {
+            this.changeLocationRadius(this.locationService.location.coords.accuracy, false);
+          }
+
+        });
         // this.map.on('render',e => {
         //   console.log(e);
         // })
@@ -369,21 +408,7 @@ export class MapService {
       })
     })
 
-    let timer = Observable.timer(100, 100);
-
-    let subscriptionTimer = timer.subscribe(t => {
-      if (this.map) {
-        this.map.resize();
-      }
-      if (document.getElementById('map').offsetWidth > 200) {
-        subscriptionTimer.unsubscribe();
-      }
-    });
-
-
-
     /* SUBSCRIPTIONS */
-
     // un nouveau polygon!
     this.eventNewBboxPolygon.subscribe(geojsonPolygon => {
       this.map.getSource('bbox').setData(geojsonPolygon);
@@ -552,9 +577,14 @@ export class MapService {
 
     //location
     this.map.addLayer({
-      "id": "location_circle", "type": "fill", "source": "location_circle",
+      "id": "location_circle", "type": "circle", "source": "location_circle",
       "layout": {},
-      "paint": { "fill-color": '#A6A6FF', "fill-opacity": 0.3 }
+      "paint": {
+        "circle-color": '#9bbcf2', "circle-opacity": 0.2, "circle-radius": 0,
+        'circle-stroke-width': 2, "circle-stroke-color": '#9bbcf2', 'circle-stroke-opacity': 0.5,
+        'circle-radius-transition': { "duration": 0 }
+      }
+
     });
 
 
@@ -575,6 +605,7 @@ export class MapService {
         "icon-image": "{changeType}", "icon-ignore-placement": true, "icon-offset": [0, -35]
       }
     });
+    this.layersAreLoaded = true;
 
     this.map.on('click', function (e) {
       let c = [[e.point.x - 8, e.point.y + 8], [e.point.x + 8, e.point.y + 18]];
@@ -609,13 +640,6 @@ export class MapService {
       }
     })
 
-
-    //GPS
-    if (this.locationService.gpsIsReady) {
-      this.addDomMarkerPosition();
-      this.map.setCenter(this.locationService.getGeojsonPos().features[0].geometry.coordinates)
-    }
-
     this.locationService.eventNewCompassHeading
       .subscribe(heading => {
         if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
@@ -633,17 +657,22 @@ export class MapService {
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
       this.addDomMarkerPosition();
 
-      // cercle indiquant la précision
-      this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition());
-
-      if (geojsonPos.features[0].properties) {
+      if (geojsonPos.features && geojsonPos.features[0].properties) {
         this.markerLocation.setLngLat(geojsonPos.features[0].geometry.coordinates)
+        this.map.getSource('location_circle').setData(geojsonPos);
+        this.changeLocationRadius(geojsonPos.features[0].properties.accuracy, true);
 
         if (this.configService.config.followPosition && this.positionIsFollow) {
           that.map.setCenter(geojsonPos.features[0].geometry.coordinates)
         }
       }
     })
+
+    // La localisation était déjà ready avnt que la carte ne soit chargée
+    if (this.locationService.gpsIsReady) {
+      this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos())
+
+    }
   }
 
 }
