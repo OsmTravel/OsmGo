@@ -15,9 +15,9 @@
    viewBox="0 0 33.866666 33.866668"
    version="1.1"
    id="svg8"
-   inkscape:export-filename="/home/fabien/Projets/OsmGo/src/assets/location.png"
-   inkscape:export-xdpi="48"
-   inkscape:export-ydpi="48"
+   inkscape:export-filename="/home/fabien/Projets/OsmGo/src/assets/locationX2-wo-orientation.png"
+   inkscape:export-xdpi="96.000008"
+   inkscape:export-ydpi="96.000008"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="location.svg">
   <defs
@@ -65,16 +65,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.345907"
-     inkscape:cx="102.91123"
+     inkscape:cx="53.89612"
      inkscape:cy="31.455811"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer2"
      showgrid="false"
      units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="1052"
-     inkscape:window-x="1920"
-     inkscape:window-y="0"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      showguides="false" />
   <metadata
@@ -85,15 +85,15 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Calque 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(0,-263.13332)">
+     id="layer2"
+     inkscape:label="cone"
+     style="display:inline">
     <path
        sodipodi:type="star"
        id="path14"
@@ -110,13 +110,20 @@
        d="M 14.064524,288.53333 7.0322619,276.43493 -6.5487269e-7,264.33652 13.993654,264.29561 l 13.993656,-0.0409 -6.961393,12.13932 z"
        inkscape:transform-center-x="0.028586397"
        inkscape:transform-center-y="3.5039986"
-       style="fill:url(#radialGradient4594);stroke-width:0.26458332;fill-opacity:1;stroke:url(#radialGradient4592);opacity:0.258"
-       transform="matrix(1.2100722,0,0,0.87182264,1.3756938e-7,32.750096)" />
+       style="display:inline;opacity:0.25799997;fill:url(#radialGradient4594);fill-opacity:1;stroke:url(#radialGradient4592);stroke-width:0.26458332"
+       transform="matrix(1.2100722,0,0,0.87182264,1.3756938e-7,-230.38322)" />
+  </g>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.13332)"
+     style="display:inline">
     <circle
        id="path10"
        cx="16.933332"
        cy="280.06665"
-       style="opacity:1;fill:#000080;stroke:#ffffff;stroke-width:0.79375;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="opacity:1;fill:#000080;fill-opacity:1;stroke:#ffffff;stroke-width:0.79374999;stroke-miterlimit:4;stroke-dasharray:none"
        r="4.1631122" />
   </g>
 </svg>

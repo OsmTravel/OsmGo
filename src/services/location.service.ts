@@ -20,6 +20,7 @@ export class LocationService {
     subscriptionLocation;
     subscriptionWatchLocation;
     forceOpen: boolean = false; // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
+    headingIsDisable = false;
 
     constructor(private geolocation: Geolocation,
         private diagnostic: Diagnostic,
@@ -119,6 +120,7 @@ export class LocationService {
 
     heading() {
         if (!navigator['compass'] || this.configService.platforms.indexOf('core') !== -1) { // for testing : ionic Serve
+            this.headingIsDisable = true;
             this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
             this.eventNewCompassHeading.emit(this.compassHeading);
         } else {

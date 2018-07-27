@@ -63,6 +63,7 @@ export class MapService {
     this.domMarkerPosition.className = 'positionMarkersSize';
 
     this.arrowDirection = document.createElement('div');
+    // locationMapIcon-wo-orientation
     this.arrowDirection.className = 'positionMarkersSize locationMapIcon';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)'
@@ -581,7 +582,7 @@ export class MapService {
       "layout": {},
       "paint": {
         "circle-color": '#9bbcf2', "circle-opacity": 0.2, "circle-radius": 0,
-        'circle-stroke-width': 2, "circle-stroke-color": '#9bbcf2', 'circle-stroke-opacity': 0.5,
+        'circle-stroke-width': 1, "circle-stroke-color": '#9bbcf2', 'circle-stroke-opacity': 0.5,
         'circle-radius-transition': { "duration": 0 }
       }
 
@@ -655,6 +656,9 @@ export class MapService {
       });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
+      if (this.locationService.headingIsDisable) {
+        this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
+      }
       this.addDomMarkerPosition();
 
       if (geojsonPos.features && geojsonPos.features[0].properties) {
@@ -670,6 +674,10 @@ export class MapService {
 
     // La localisation était déjà ready avnt que la carte ne soit chargée
     if (this.locationService.gpsIsReady) {
+      if (this.locationService.headingIsDisable) {
+        console.log(this.locationService.headingIsDisable);
+        this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
+      }
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos())
 
     }
