@@ -18,7 +18,7 @@ export class LoginPage {
 
      login() {
         this.osmApi.getUserDetail(this.username, this.password).subscribe(res=>{
-                this.navCtrl.pop();
+                this.navCtrl.popToRoot();
          },(error =>{
              this.errorLogin = error;
          })

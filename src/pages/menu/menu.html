@@ -1,4 +1,6 @@
-<ion-menu [content]="content" swipeEnabled="false" side="left" menuType="push">
+<ion-menu [content]="content" swipeEnabled="false"
+	(ionOpen)="menuOpened()" (ionClose)="menuClosed()"
+	 side="left" menuType="push">
 	<ion-header>
 		<ion-navbar>
 

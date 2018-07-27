@@ -182,8 +182,9 @@ export class ModalsContentPage {
   }
 
   addTag() {
-    // controler que la clé n'existe pas
+    // TODO : controler que la clé n'existe pas et notifier le cas échéant
     if (this.newTag.key != '' && this.newTag.value !== '') {
+      this.newTag.key = this.newTag.key.toLowerCase().trim();
       this.tags.push(this.newTag);
       this.newTag = { key: '', value: '' };
       this.displayAddTag = false;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { NavController, ModalController, ToastController, Platform, AlertController } from 'ionic-angular';
 
 import { MenuController } from 'ionic-angular';
@@ -15,7 +15,8 @@ import { ConfigService } from '../../services/config.service';
 import { ModalsContentPage } from '../modal/modal';
 import { BBox } from '@turf/turf';
 
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 @Component({
   templateUrl: 'main.html',
   selector: 'main',
@@ -23,7 +24,8 @@ import { BBox } from '@turf/turf';
 
 export class MainPage {
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public toastCtrl: ToastController, public menuCtrl: MenuController,
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public toastCtrl: ToastController,
+    public menuCtrl: MenuController,
     public osmApi: OsmApiService,
     public tagsService: TagsService,
     public mapService: MapService,
@@ -33,27 +35,47 @@ export class MainPage {
     public alertService: AlertService,
     public configService: ConfigService,
     public platform: Platform,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private _ngZone: NgZone
   ) {
+    this.navCtrl.viewDidEnter.subscribe(e => {
+      if (e.index === 0) {
+        if (this.mapService.layersAreLoaded) {
+          this.configService.freezeMapRenderer = false;
+          this.mapService.map.resize();
+        }
+      }
+    })
+    this.navCtrl.viewWillEnter.subscribe(e => {
+      if (e.index !== 0) {
+        if (this.mapService.layersAreLoaded) {
+          this.configService.freezeMapRenderer = true;
+          this.mapService.map.stop()
+        }
+      } else {
+        this.configService.freezeMapRenderer = false;
+      }
+    })
     // backButton
     this.platform.registerBackButtonAction(e => {
       this.presentConfirm();
     });
 
     mapService.eventShowModal.subscribe(data => {
+      this.configService.freezeMapRenderer = true;
       let newPosition = (data.newPosition) ? data.newPosition : false;
       let modal = this.modalCtrl.create(ModalsContentPage, { type: data.type, data: data.geojson, newPosition: newPosition, origineData: data.origineData });
       modal.onDidDismiss(data => {
+        this.configService.freezeMapRenderer = false;
         if (data) {
           if (data.type === 'Move') {
             this.mapService.eventMoveElement.emit(data);
           }
           if (data.redraw) {
-            setTimeout(() => {
+            Observable.timer(100).subscribe(t => {
               this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
               this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
-            }, 100);
-
+            })
           }
         }
       });
@@ -67,6 +89,12 @@ export class MainPage {
 
 
   }
+
+  openMenu() {
+
+    this.menuCtrl.open();
+  }
+
 
 
   presentConfirm() {
@@ -126,7 +154,7 @@ export class MainPage {
   presentToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
-      position : 'top',
+      position: 'top',
       duration: 4000,
       showCloseButton: true,
       closeButtonText: 'X'
@@ -140,11 +168,13 @@ export class MainPage {
     let that = this;
     this.alertService.eventDisplayToolTipRefreshData.subscribe(e => {
       // On affiche le Tootltip "Télécharger les données de la zone" pour 10 sec
-      that.alertService.displayToolTipRefreshData = true;
-      setTimeout(function () {
-        that.alertService.displayToolTipRefreshData = false;
+      this._ngZone.run(() => {
+        that.alertService.displayToolTipRefreshData = true;
+        Observable.timer(8000).subscribe(t => {
+          that.alertService.displayToolTipRefreshData = false;
+        })
+      });
 
-      }, 10000);
     })
   }
 }

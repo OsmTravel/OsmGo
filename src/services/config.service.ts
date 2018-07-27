@@ -12,12 +12,14 @@ export class ConfigService {
 
     
     eventConfigIsLoaded = new EventEmitter();
+    freezeMapRenderer = false;
     platforms = [];
 
     baseMapSources = [
         {'id': 'tmsIgn', 'label':'Ortho IGN'},
         {'id': 'mapbox-satellite', 'label':'Mapbox satellite'}
     ]
+    currentZoom:number = undefined;
 
     config = {
         mapMarginBuffer: 50,
@@ -124,6 +126,4 @@ export class ConfigService {
     getBaseMapId() {
         return this.config.baseMapSourceId;
     }
-
-
 }

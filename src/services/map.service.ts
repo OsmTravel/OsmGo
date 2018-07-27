@@ -50,7 +50,7 @@ export class MapService {
   markersLayer = [];
 
   constructor(
-
+    private _ngZone: NgZone,
     public dataService: DataService,
     public tagsService: TagsService,
     public alertService: AlertService,
@@ -631,7 +631,6 @@ export class MapService {
       that.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
     });
 
-
     this.map.on('touchmove', function (e) {
       that.headingIsLocked = false;
       that.positionIsFollow = false;
@@ -645,6 +644,12 @@ export class MapService {
         this.arrowDirection.setAttribute("style", "transform: rotate(" + iconRotate + "deg")
       }
     })
+
+    this.map.on('zoom', function (e) {
+      that._ngZone.run(() => { 
+        that.configService.currentZoom = that.map.getZoom();
+       });
+    });
 
     this.locationService.eventNewCompassHeading
       .subscribe(heading => {

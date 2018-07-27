@@ -79,8 +79,7 @@ export class LocationService {
 
         this.subscriptionWatchLocation = this.geolocation.watchPosition({ enableHighAccuracy: true })
             .subscribe((data) => {
-                if (!data.coords){
-                    console.log(data);
+                if (!data.coords) {
                     return data;
                 }
 
@@ -95,7 +94,7 @@ export class LocationService {
                 }
 
                 let distance = Infinity;
-                if (this.location && this.location.coords) {
+                if (this.location && this.location.coords && !this.configService.freezeMapRenderer) {
                     const from = turf.point([data.coords.longitude, data.coords.latitude]);
                     const to = turf.point([this.location.coords.longitude, this.location.coords.latitude]);
                     distance = turf.distance(from, to, { units: 'metres' }); //=> m
@@ -104,7 +103,7 @@ export class LocationService {
                 }
                 // on ne déplace le marker que si la position a changé d'au moins 2 m
                 // Sinon ça regénère le rendu et ça fait chauffé le téléphone pour rien...
-                if (distance > 2) {
+                if (distance > 2 && !this.configService.freezeMapRenderer) {
                     this.location = data;
                     this.eventNewLocation.emit(this.getGeojsonPos());
                 }
@@ -124,24 +123,27 @@ export class LocationService {
             this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
             this.eventNewCompassHeading.emit(this.compassHeading);
         } else {
-    
+
             // utilisation l'api native du navigateur
-              const options = {
+            const options = {
                 frequency: 300
-              }; 
-              navigator['compass'].watchHeading(data => {
+            };
+            navigator['compass'].watchHeading(data => {
                 if (this.gpsIsReady) {
                     // si on a un mouvement d'au moins 4°
                     if (Math.abs(data.magneticHeading - this.compassHeading.magneticHeading) > 4) {
                         // near 360? TODO
-                        this.compassHeading = data;
-                        this.eventNewCompassHeading.emit(data);
+                        if (!this.configService.freezeMapRenderer) {
+                            this.compassHeading = data;
+                            this.eventNewCompassHeading.emit(data);
+                        }
+
                     }
-                } 
-              }, 
-              error => {
-                  console.log(error)
-              }, options);
+                }
+            },
+                error => {
+                    console.log(error)
+                }, options);
         }
     }
     getLocation() {

@@ -21,7 +21,7 @@
         </ion-item>
 
         <div *ngIf="errorLogin">
-            {{errorLogin._body}} {{errorLogin | json}}
+            {{errorLogin._body}}
         </div>
         <button ion-button (click)="login()" block>Se connecter</button>
     </ion-list>

@@ -85,7 +85,7 @@
 
 
 
-	<!-- -------------------------SOF *ngSwitchCase="'EDIT'"------------------------------------ -->
+	<!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
 	<div *ngSwitchCase="'Edit'" style="height:100%">
 
 		<ion-header>
@@ -151,7 +151,7 @@
 				<ion-card-content *ngIf="displayAddTag">
 					<ion-item>
 						<ion-label primary stacked>Key</ion-label>
-						<ion-input type="text" placeholder="Key" (keyup)="newTag.key = toLowerCase(newTag.key)" [(ngModel)]="newTag.key"></ion-input>
+						<ion-input type="text" placeholder="Key" [(ngModel)]="newTag.key"></ion-input>
 					</ion-item>
 					<ion-item>
 						<ion-label primary stacked>Value</ion-label>
