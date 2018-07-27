@@ -19,3 +19,18 @@
     width: 10%;
     max-width: 10%;
 }
+
+
+.positionMarkersSize{
+    width: 64px;
+    height: 64px;
+}
+
+.locationMapIcon{
+    background: url(../assets/location.png) no-repeat 0 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+}

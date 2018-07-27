@@ -41,12 +41,6 @@ export class SettingsPage {
     this.configService.setFollowPosition(e.checked);
   }
 
-
-  mapIsPichedChange(e) {
-    this.configService.setMapIsPiched(e.checked);
-    this.mapService.setPitch(e.checked);
-  }
-
   defaultPrimarykeyWindowsChange(e) {
     this.configService.setDefaultPrimarykeyWindows(e);
   }

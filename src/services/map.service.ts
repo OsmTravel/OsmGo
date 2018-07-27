@@ -31,6 +31,10 @@ export class MapService {
   positionIsFollow = true;
   isDisplayOrtho: boolean = false;
 
+  domMarkerPosition: HTMLDivElement;
+  arrowDirection: HTMLDivElement;
+  markerLocation = undefined;
+
 
   eventDomMainReady = new EventEmitter();
   eventCreateNewMap = new EventEmitter();
@@ -53,11 +57,19 @@ export class MapService {
     public configService: ConfigService,
     private zone: NgZone,
     private http: Http) {
-    
+
+    this.domMarkerPosition = document.createElement('div');
+    this.domMarkerPosition.className = 'positionMarkersSize';
+
+    this.arrowDirection = document.createElement('div');
+    this.arrowDirection.className = 'positionMarkersSize locationMapIcon';
+    this.domMarkerPosition.appendChild(this.arrowDirection);
+    this.arrowDirection.style.transform = 'rotate(0deg)'
+
     this.eventDomMainReady.subscribe(mes => {
       mapboxgl.accessToken = 'pk.eyJ1IjoiZHozMTY0MjQiLCJhIjoiNzI3NmNkOTcyNWFlNGQxNzU2OTA1N2EzN2FkNWIwMTcifQ.NS8KWg47FzfLPlKY0JMNiQ';
-            this.locationService.eventLocationIsReady.subscribe( data => {
-              this.map.setZoom(19);
+      this.locationService.eventLocationIsReady.subscribe(data => {
+        this.map.setZoom(19);
       })
       this.initMap();
     })
@@ -77,10 +89,10 @@ export class MapService {
     });
 
     this.configService.eventCloseGeolocPage.subscribe(e => {
-      if (this.configService.geojsonIsLoadedFromCache && !this.configService.geolocPageIsOpen){
+      if (this.configService.geojsonIsLoadedFromCache && !this.configService.geolocPageIsOpen) {
         this.diplayInitToast()
       }
-        
+
     })
   } //EOF constructor
 
@@ -98,7 +110,7 @@ export class MapService {
     this.map.getSource(source).setData({ "type": "FeatureCollection", "features": featuresWay });
   }
 
-  getBbox() :BBox {
+  getBbox(): BBox {
     let marginBuffer = this.configService.getMapMarginBuffer(); // buffer en m
 
     let w = document.getElementById('map').offsetWidth;
@@ -124,12 +136,12 @@ export class MapService {
         lat_max = coordinates[i][1];
     }
 
-    let pointMin:Point = { "type": "Point", "coordinates": [lng_min, lat_min] };
-    let pointMax:Point = { "type": "Point", "coordinates": [lng_max, lat_max] };
+    let pointMin: Point = { "type": "Point", "coordinates": [lng_min, lat_min] };
+    let pointMax: Point = { "type": "Point", "coordinates": [lng_max, lat_max] };
     var coordsMin = turf.destination(pointMin, marginBuffer / 1000, -135).geometry.coordinates;
     let coordsMax = turf.destination(pointMax, marginBuffer / 1000, 45).geometry.coordinates;
 
-    let bbox :BBox = [coordsMin[0], coordsMin[1],coordsMax[0], coordsMax[1]]; // TODO : on est pas à 1m près
+    let bbox: BBox = [coordsMin[0], coordsMin[1], coordsMax[0], coordsMax[1]]; // TODO : on est pas à 1m près
     return bbox;
   }
 
@@ -158,19 +170,12 @@ export class MapService {
     this.map.setCenter(this.locationService.getCoordsPosition());
     if (this.configService.config.lockMapHeading) {
       this.headingIsLocked = true;
+
     }
     if (this.configService.config.followPosition) {
       this.positionIsFollow = true;
       this.map.rotateTo(this.locationService.compassHeading.trueHeading);
-    }
-  }
-
-  setPitch(pitched: boolean) {
-    if (this.configService.config.mapIsPiched == false) {
-      this.map.setPitch(0);
-    }
-    else {
-      this.map.setPitch(60);
+      this.arrowDirection.setAttribute("style", "transform: rotate(0deg");
     }
   }
 
@@ -319,7 +324,7 @@ export class MapService {
       let spritesFullPath = 'mapStyle/sprites';
       if (window.location.protocol == 'http:' || window.location.protocol == 'https:') {
         // http://localhost:8100/ => http://localhost:8100/assets/mapStyle/sprites
-        spritesFullPath = (path + 'assets/mapStyle/sprites').replace('index.html','');
+        spritesFullPath = (path + 'assets/mapStyle/sprites').replace('index.html', '');
       }
       else {
         //file:///android_asset/www/index.html => file:///android_asset/www/assets/mapStyle/sprites
@@ -339,7 +344,8 @@ export class MapService {
           dragRotate: true,
           trackResize: false,
           failIfMajorPerformanceCavea: false,
-          pitch: (this.configService.config.mapIsPiched) ? 60 : 0,
+          pitch: 0,
+          pitchWithRotate: false,
           collectResourceTiming: false
         });
 
@@ -359,7 +365,7 @@ export class MapService {
         // this.map.on('render',e => {
         //   console.log(e);
         // })
-        
+
       })
     })
 
@@ -376,11 +382,7 @@ export class MapService {
 
 
 
-    /* SUBSCRIPTION */
-    // la config est chargée
-    this.configService.eventConfigIsLoaded.subscribe(conf => {
-      this.setPitch(conf.mapIsPiched);
-    });
+    /* SUBSCRIPTIONS */
 
     // un nouveau polygon!
     this.eventNewBboxPolygon.subscribe(geojsonPolygon => {
@@ -431,22 +433,50 @@ export class MapService {
       if (data) {
         this.dataService.setGeojson(data);
         this.eventMarkerReDraw.emit(data);
-        if (!this.configService.geolocPageIsOpen){
+        if (!this.configService.geolocPageIsOpen) {
           this.diplayInitToast();
         }
       }
     });
   }
 
-  diplayInitToast(){
+  diplayInitToast() {
     let data = this.dataService.getGeojson()
-    if (data.features.length > 0){
+    if (data.features.length > 0) {
       // Il y a des données stockées en mémoires...
       this.alertService.eventNewAlert.emit(data.features.length + ' anciens objets chargés')
-    }else {
+    } else {
       // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
       this.alertService.eventDisplayToolTipRefreshData.emit();
     }
+  }
+
+  getIconRotate(heading, mapBearing) {
+    heading = heading > 354 ? 0 : heading + 5;
+    mapBearing = mapBearing < 0 ? 360 + mapBearing : mapBearing;
+    let iconRotate = heading - mapBearing;
+    if (iconRotate >= 360) {
+      iconRotate = iconRotate - 360
+    } else if (iconRotate <= 0) {
+      iconRotate = iconRotate + 360;
+    }
+    return iconRotate
+  }
+
+  addDomMarkerPosition() {
+    if (!this.markerLocation) {
+      this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition, { offset: [0, 0] }).setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
+      this.markerLocation.addTo(this.map);
+
+      //  Pour debugger sur le navigateur...
+      //   let heading = 0;
+      //  Observable.timer(500, 500).subscribe(t => {
+      //   heading = heading > 349 ? 0 : heading + 10;
+      //   this.domMarkerPosition.children[0].setAttribute("style", "transform: rotate("+ this.getIconRotate( heading, this.map.getBearing())+"deg")
+      // })
+    }
+
+
   }
 
   mapIsLoaded() {
@@ -462,7 +492,6 @@ export class MapService {
     this.map.addSource("ways", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("ways_changed", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
     this.map.addSource("location_circle", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
-    this.map.addSource("location_point", { "type": "geojson", "data": { "type": "FeatureCollection", "features": [] } });
 
     //test Tile
     this.map.addSource('tmsIgn', {
@@ -527,13 +556,6 @@ export class MapService {
       "layout": {},
       "paint": { "fill-color": '#A6A6FF', "fill-opacity": 0.3 }
     });
-    this.map.addLayer({
-      "id": "location_point", "type": "symbol", "source": "location_point",
-      "layout": {
-        "icon-image": "arrow-position", "icon-allow-overlap": true, "icon-ignore-placement": true,
-        'icon-rotate': { "property": 'trueHeading', "type": 'identity' }
-      }
-    });
 
 
     // defini le style du marker en arrière plan
@@ -578,37 +600,45 @@ export class MapService {
       that.positionIsFollow = false;
     });
 
+    this.map.on('rotate', e => {
+      if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
+
+      } else { // la map reste fixe, l'icon tourne
+        const iconRotate = this.getIconRotate(this.locationService.compassHeading.trueHeading, this.map.getBearing())
+        this.arrowDirection.setAttribute("style", "transform: rotate(" + iconRotate + "deg")
+      }
+    })
+
 
     //GPS
     if (this.locationService.gpsIsReady) {
-      this.map.getSource('location_point').setData(this.locationService.getGeojsonPos())
+      this.addDomMarkerPosition();
       this.map.setCenter(this.locationService.getGeojsonPos().features[0].geometry.coordinates)
     }
 
     this.locationService.eventNewCompassHeading
       .subscribe(heading => {
-      if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
-        this.map.rotateTo(heading.trueHeading);
-        // TODO : consomme beaucoup trop de cpu ... 
-        if (that.configService.config.mapIsPiched) {
-          map.setLayoutProperty('location_point', 'icon-rotation-alignment', 'map');
-          map.setLayoutProperty('location_point', 'icon-rotate', heading.trueHeading)
-        } else { // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
-          map.setLayoutProperty('location_point', 'icon-rotation-alignment', 'viewport');
-          map.setLayoutProperty('location_point', 'icon-rotate', 0);
+        if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
+          this.map.rotateTo(heading.trueHeading);
+          // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
+          this.arrowDirection.setAttribute("style", "transform: rotate(0deg")
+
+        } else { // la map reste fixe, l'icon tourne
+
+          const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing())
+          this.arrowDirection.setAttribute("style", "transform: rotate(" + iconRotate + "deg")
         }
-      } else { // la map reste fixe, l'icon tourne
-        map.setLayoutProperty('location_point', 'icon-rotation-alignment', 'map');
-        map.setLayoutProperty('location_point', 'icon-rotate', heading.trueHeading)
-      }
-    });
+      });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
-        // cercle indiquant la précision
-        this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition())
+      this.addDomMarkerPosition();
+
+      // cercle indiquant la précision
+      this.map.getSource('location_circle').setData(this.locationService.getGeoJSONCirclePosition());
 
       if (geojsonPos.features[0].properties) {
-        this.map.getSource('location_point').setData(geojsonPos);
+        this.markerLocation.setLngLat(geojsonPos.features[0].geometry.coordinates)
+
         if (this.configService.config.followPosition && this.positionIsFollow) {
           that.map.setCenter(geojsonPos.features[0].geometry.coordinates)
         }

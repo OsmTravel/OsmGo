@@ -15,7 +15,6 @@ export class ConfigService {
     platforms = [];
     config = {
         mapMarginBuffer: 50,
-        mapIsPiched: false,
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
@@ -73,17 +72,6 @@ export class ConfigService {
     getMapMarginBuffer() {
         return this.config.mapMarginBuffer;
     }
-
-
-
-    setMapIsPiched(pitched: boolean) {
-        this.config.mapIsPiched = pitched;
-        this.localStorage.set('config', this.config);
-    }
-    getMapIsPiched() {
-        return this.config.mapIsPiched;
-    }
-
 
     setLockMapHeading(isLockMapHeading: boolean) {
         this.config.lockMapHeading = isLockMapHeading;
