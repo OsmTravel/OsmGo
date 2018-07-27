@@ -45,8 +45,12 @@ export class SettingsPage {
     this.configService.setDefaultPrimarykeyWindows(e);
   }
 
-
   isDelayedChange(e){
     this.configService.setIsDelayed(e.checked);
+  }
+
+  baseMapChange(e){
+    this.configService.setBaseSourceId(e);
+    this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
   }
 }

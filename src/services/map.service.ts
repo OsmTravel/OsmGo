@@ -29,7 +29,7 @@ export class MapService {
   loadingData = false;
   headingIsLocked = true;
   positionIsFollow = true;
-  isDisplayOrtho: boolean = false;
+  isDisplaySatelliteBaseMap: boolean = false;
 
   domMarkerPosition: HTMLDivElement;
   arrowDirection: HTMLDivElement;
@@ -177,20 +177,20 @@ export class MapService {
   }
 
 
-  displayIgnOrtho(isDisplay: boolean) {
+  displaySatelliteBaseMap(sourceName ,isDisplay: boolean) {
 
     if (isDisplay) {
       this.map.addLayer({
-        "id": "lyrOrthoIgn",
+        "id": "lyr-basemap-satellite",
         "type": "raster",
-        "source": "tmsIgn",
+        "source": sourceName,
         "minzoom": 0
       }, 'bboxLayer');
-      this.isDisplayOrtho = true;
+      this.isDisplaySatelliteBaseMap = true;
     }
     else {
-      this.map.removeLayer('lyrOrthoIgn')
-      this.isDisplayOrtho = false;
+      this.map.removeLayer('lyr-basemap-satellite')
+      this.isDisplaySatelliteBaseMap = false;
     }
   }
   centerOnMyPosition() {
@@ -526,6 +526,11 @@ export class MapService {
       'tileSize': 256,
       'maxzoom': 19
     });
+    this.map.addSource("mapbox-satellite", {
+      "type": "raster",
+      "url": "mapbox://mapbox.satellite",
+      "tileSize": 256
+  });
 
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
@@ -675,7 +680,6 @@ export class MapService {
     // La localisation était déjà ready avnt que la carte ne soit chargée
     if (this.locationService.gpsIsReady) {
       if (this.locationService.headingIsDisable) {
-        console.log(this.locationService.headingIsDisable);
         this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
       }
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos())

@@ -60,6 +60,21 @@
 		</ion-card-content>
 	</ion-card>
 
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Imagerie aérienne {{this.configService.config.baseMapSourceId}}</ion-label>
+				
+				<ion-select [(ngModel)]="this.configService.config.baseMapSourceId" (ionChange)="baseMapChange($event)">
+					<ion-option *ngFor="let baseMap of this.configService.baseMapSources" [value]="baseMap.id">
+						{{baseMap.label}}
+					</ion-option>
+				</ion-select>
+			</ion-item>
+			<label class="hint">Imagerie aérienne à utiliser</label>
+		</ion-card-content>
+	</ion-card>
+
 
 	<ion-card>
 		<ion-card-content>

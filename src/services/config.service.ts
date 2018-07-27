@@ -13,12 +13,19 @@ export class ConfigService {
     
     eventConfigIsLoaded = new EventEmitter();
     platforms = [];
+
+    baseMapSources = [
+        {'id': 'tmsIgn', 'label':'Ortho IGN'},
+        {'id': 'mapbox-satellite', 'label':'Mapbox satellite'}
+    ]
+
     config = {
         mapMarginBuffer: 50,
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
-        isDelayed: true
+        isDelayed: true,
+        baseMapSourceId : this.baseMapSources[0].id
     };
 
     geolocPageIsOpen = true;
@@ -109,6 +116,14 @@ export class ConfigService {
         return this.config.isDelayed;
     }
 
+    setBaseSourceId(baseMapSourceId: string) {
+        this.config.baseMapSourceId = baseMapSourceId;
+        this.localStorage.set('config', this.config);
+    }
+
+    getBaseMapId() {
+        return this.config.baseMapSourceId;
+    }
 
 
 }
