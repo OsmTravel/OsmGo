@@ -6,13 +6,14 @@ import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { AlertService } from '../../services/alert.service';
 
+
 import { TagsService } from '../../services/tags.service';
 
 
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 
-declare var _;
+import * as _ from "lodash";
 
 @Component({
   selector: 'modal',
@@ -27,7 +28,7 @@ export class ModalsContentPage {
   typeFiche;
   displayCode = false;
   mode;
-  configOfPrimaryKey = { presets: [] };
+  configOfPrimaryKey = { presets: [], alert :undefined };
   currentPresets = {};
   primaryKey = { key: '', value: '', lbl: '' };
   customValue = '';
@@ -132,7 +133,7 @@ export class ModalsContentPage {
   initComponent() {
     // supprimer les valeurs vide de this.tags (changement de type)
     this.clearNullTags();
-    if (_.findIndex(this.tags, { key: 'name' }) === -1) // on ajoute un nom vide si il n'existe pas
+    if (_.findIndex(this.tags, o=> { return  o.key =='name' }) === -1) // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
 
     this.tagsService.getAllTags().subscribe(allTags => {
@@ -181,8 +182,9 @@ export class ModalsContentPage {
   }
 
   addTag() {
-    // controler que la clé n'existe pas
+    // TODO : controler que la clé n'existe pas et notifier le cas échéant
     if (this.newTag.key != '' && this.newTag.value !== '') {
+      this.newTag.key = this.newTag.key.toLowerCase().trim();
       this.tags.push(this.newTag);
       this.newTag = { key: '', value: '' };
       this.displayAddTag = false;
@@ -343,7 +345,9 @@ export class ModalsContentPage {
     modal.onDidDismiss(data => {
       if (data) {
         // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
-        let idx = _.findIndex(this.tags, { key: this.primaryKey.key, value: this.primaryKey.value });
+        let idx = _.findIndex(this.tags, 
+            o=> { return o.key == this.primaryKey.key && o.value == this.primaryKey.value; });
+
         this.tags[idx] = JSON.parse(JSON.stringify(data));
         this.primaryKey = JSON.parse(JSON.stringify(data));
         this.initComponent();
@@ -380,5 +384,36 @@ export class ModalsContentPage {
     toast.present();
   }
 
+  addSurveyDate(){
+    const now = new Date;
+    const YYYY = now.getFullYear()
+    const MM = ((now.getMonth())+1 < 10) ? '0'+ (now.getMonth()+1) : ''+ (now.getMonth()+1);
+    const DD = (now.getDate()< 10) ? '0'+ now.getDate() : ''+ now.getDate();
+    const isoDate = YYYY + '-' + MM + '-' + DD
+ 
+    let tagSurveyIndex = -1;
+    for (let i = 0; i < this.tags.length; i++){
+      if (this.tags[i].key === 'survey:date'){
+        tagSurveyIndex = i;
+        break;
+      }
+    }
+    if (tagSurveyIndex != -1){ // le tag existe déjà, on l'écrase
+      this.tags[tagSurveyIndex].value = isoDate;
+    } else {
+      this.tags.push({'key':'survey:date', 'value' : isoDate})
+    }
+
+    this.updateOsmElement() ;
+  }
+
+  clickOnFabSurveyButton(){
+    const toast = this.toastCtrl.create({
+      message: 'Veuillez appuyer longuement pour ajouter une date de verification',
+      position : 'middle',
+      duration: 3000
+    });
+    toast.present();
+  }
 
 }

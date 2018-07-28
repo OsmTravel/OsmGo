@@ -1,10 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+
 import { Http, Headers } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/of';
 
 import { MapService } from './map.service';
@@ -15,8 +18,10 @@ import { ConfigService } from './config.service';
 
 
 declare var osmtogeojson: any;
-declare var $: any;
-import * as turf from '@turf/turf';
+
+import {  union, bboxPolygon, area, BBox, pointOnSurface, 
+        polygon, multiPolygon, lineString, multiLineString } from '@turf/turf';
+import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
 export class OsmApiService {
@@ -26,7 +31,6 @@ export class OsmApiService {
         prod: { "api": 'https://api.openstreetmap.org', "overpass": "https://overpass-api.de/api/interpreter" },
         dev: { "api": 'https://master.apis.dev.openstreetmap.org', "overpass": "" }
     }
-    urlDataServer = 'http://osmgo-data.dogeo.fr/';
 
     
  
@@ -38,6 +42,7 @@ export class OsmApiService {
 
     constructor(
         private http: Http,
+        private httpClient: HttpClient,
         public mapService: MapService,
         public tagsService: TagsService,
         public dataService: DataService,
@@ -194,51 +199,51 @@ export class OsmApiService {
 
     // convert feature to xml(osm)
     geojson2OsmUpdate(_feature, id_changeset) {
-        var tags_json = _feature.properties.tags;
-        var type_objet = _feature.properties.type;
-        var version = _feature.properties.meta.version;
-        var id = _feature.properties.id;
+        const tags_json = _feature.properties.tags;
+        const type_objet = _feature.properties.type;
+        let version = _feature.properties.meta.version;
+        const id = _feature.properties.id;
 
         if (type_objet === 'node') { // c'est un noeud, les coords sont dans le Geojson
-            var lng = _feature.geometry.coordinates[0];
-            var lat = _feature.geometry.coordinates[1];
-            var node_header = '<node id="' + id + '" changeset="' + id_changeset + '" version="' + version + '" lat="' + lat + '" lon="' + lng + '">';
-            var tags_xml = '';
+            const lng = _feature.geometry.coordinates[0];
+            const lat = _feature.geometry.coordinates[1];
+            const node_header = '<node id="' + id + '" changeset="' + id_changeset + '" version="' + version + '" lat="' + lat + '" lon="' + lng + '">';
+            let tags_xml = '';
             for (var k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += '<tag k="' + k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '" v="' + String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"/>';
 
                 }
             }
-            var xml = '<osm>' + node_header + tags_xml + '</node></osm>';
+            let xml = '<osm>' + node_header + tags_xml + '</node></osm>';
             return (xml);
         } else if (type_objet === 'way') {
-            var way_header = '<way id="' + id + '" changeset="' + id_changeset + '" version="' + version + '">';
-            var tags_xml = '';
-            for (var k in tags_json) {
+            const way_header = '<way id="' + id + '" changeset="' + id_changeset + '" version="' + version + '">';
+            let tags_xml = '';
+            for (let k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += '<tag k="' + k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '" v="' + String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"/>';
                 }
             }
-            var nd_ref_xml = '';
-            for (var i = 0; i < _feature.ndRefs.length; i++) {
+            let nd_ref_xml = '';
+            for (let i = 0; i < _feature.ndRefs.length; i++) {
                 nd_ref_xml += '<nd ref="' + _feature.ndRefs[i] + '"/>';
             }
-            var xml = '<osm>' + way_header + nd_ref_xml + tags_xml + '</way></osm>';
+            let xml = '<osm>' + way_header + nd_ref_xml + tags_xml + '</way></osm>';
             return xml;
         } else if (type_objet === 'relation') {
-            var relation_header = '<relation id="' + id + '" changeset="' + id_changeset + '" version="' + version + '">';
-            var tags_xml = '';
-            for (var k in tags_json) {
+            const relation_header = '<relation id="' + id + '" changeset="' + id_changeset + '" version="' + version + '">';
+            let tags_xml = '';
+            for (let k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += '<tag k="' + k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '" v="' + String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"/>';
                 }
             }
-            var rel_ref_xml = '';
-            for (var i = 0; i < _feature.relMembers.length; i++) {
+            let rel_ref_xml = '';
+            for (let i = 0; i < _feature.relMembers.length; i++) {
                 rel_ref_xml += '<member type="' + _feature.relMembers[i].type + '" role="' + _feature.relMembers[i].role + '" ref="' + _feature.relMembers[i].ref + '"/>'
             }
-            var xml = '<osm>' + relation_header + tags_xml + rel_ref_xml + '</relation></osm>';
+            let xml = '<osm>' + relation_header + tags_xml + rel_ref_xml + '</relation></osm>';
             return xml;
         }
 
@@ -342,7 +347,7 @@ export class OsmApiService {
         })
     }
 
-    getUrlOverpassApi(bbox: turf.BBox) {
+    getUrlOverpassApi(bbox: BBox) {
 
         let OPapiBbox = bbox[1] + ',' + bbox[0] + ',' + bbox[3] + ',' + bbox[2];
         let keys = this.tagsService.getListOfPrimaryKey();
@@ -403,76 +408,55 @@ export class OsmApiService {
 
             let oldBboxFeature = JSON.parse(JSON.stringify(oldBbox.features[0]));
 
-            let union = turf.union(newBoboxFeature, oldBboxFeature);
-            resBbox = { "type": "FeatureCollection", "features": [union] }
+            const resultUnion = union(newBoboxFeature, oldBboxFeature);
+            resBbox = { "type": "FeatureCollection", "features": [resultUnion] }
             this.dataService.setGeojsonBbox(resBbox);
         }
         this.mapService.eventNewBboxPolygon.emit(resBbox);
     }
 
-    getDataFromBbox(bbox: turf.BBox, useOverpassApi: boolean = false, delegateOsm2geojson: boolean = true) {
-        let featureBbox = turf.bboxPolygon(bbox);
+    getDataFromBbox(bbox: BBox, useOverpassApi: boolean = false) {
+        let featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
             featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
             featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
-
-        let bboxArea = turf.area(featureBbox);
-        if (delegateOsm2geojson) { //On delegue la conversion au serveur
+        let bboxArea = area(featureBbox);
 
             if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
-                let url = this.urlDataServer + '/overpassApi?' +
-                    'bbox=' + bbox.join(',') +
-                    '&keys=' + this.tagsService.getListOfPrimaryKey().join();
+                let urlOverpassApi = 'https://overpass-api.de/api/interpreter';
 
-                return this.http.get(url)
+                return this.httpClient.post(urlOverpassApi, this.getUrlOverpassApi(bbox), { responseType: 'text' })
                     .map((res) => {
-                        let geojson = res.json()
+                        let newDataJson = this.xmlOsmToFormatedGeojson(res);
+                        // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
+                        if (newDataJson.error){
+                            throw ErrorObservable.create(newDataJson.error);
+                        }
                         this.setBbox(featureBbox);
-                        this.mergeNewOldData(geojson, this.dataService.getGeojson(), featureBbox);
+                        this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
                     })
-                    .catch((error: any) => {
-                        return Observable.throw('Impossible de télécharger les données (Overpass délégué)')
-                    });
-
-            }
-            else {// api06
-                let url = this.urlDataServer + '/api06?' +
-                    'bbox=' + bbox.join(',') +
-                    '&keys=' + this.tagsService.getListOfPrimaryKey().join();
-                return this.http.get(url)
-                    .map((res) => {
-                        let geojson = res.json()
-                        this.setBbox(featureBbox);
-                        this.mergeNewOldData(geojson, this.dataService.getGeojson(), featureBbox);
-                    })
-                    .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (api06)'));
-
-            }
-        }
-
-
-        else { // on ne delegue pas au serveur
-            if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
-                let urlOverpassApi = 'http://overpass-api.de/api/interpreter';
-                return this.http.post(urlOverpassApi, this.getUrlOverpassApi(bbox))
-                    .map((res) => {
-                        this.setBbox(featureBbox);
-                        this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), this.dataService.getGeojson(), featureBbox);
-                    })
-                    .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (overpassApi)'));
+                    .catch((error: any) => 
+                    { 
+                        return Observable.throw(error.message || 'Impossible de télécharger les données (overpassApi)')
+                    }
+                );
             }
             else {
                 let url = this.getUrlApi() + '/api/0.6/map?bbox=' + bbox.join(',');
-
-                return this.http.get(url)
+                return this.httpClient.get(url, { responseType: 'text' })
                     .map((res) => {
+                        let newDataJson = this.xmlOsmToFormatedGeojson(res);
+                        // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
+                        if (newDataJson.error){
+                            throw ErrorObservable.create(newDataJson.error);
+                        }
                         this.setBbox(featureBbox);
-                        this.mergeNewOldData(this.xmlOsmToFormatedGeojson(res), this.dataService.getGeojson(), featureBbox);
+                        this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
                     })
-                    .catch((error: any) => Observable.throw(error.json().error || 'Impossible de télécharger les données (api06)'));
+                    .catch((error: any) => Observable.throw(error.message || 'Impossible de télécharger les données (api06)'));
             }
-        }
+        
     }
 
     /* ne garde que les relations complètes (=> web worker?) (côté serveur?)*/
@@ -492,7 +476,12 @@ export class OsmApiService {
     }
 
     private xmlOsmToFormatedGeojson(res) {
-        let xml = new DOMParser().parseFromString(res.text(), 'text/xml');
+
+        let xml = new DOMParser().parseFromString(res, 'text/xml');
+        if (xml.getElementsByTagName("remark")[0]
+            && xml.getElementsByTagName("remark")[0]['textContent']){
+            return {'error': xml.getElementsByTagName("remark")[0]['textContent'] }
+        }
         let geojson = osmtogeojson(xml).geojson;
         geojson.features = this.filterFeatures(geojson.features)
 
@@ -514,21 +503,21 @@ export class OsmApiService {
                     let geom;
                     switch (feature.geometry.type) {
                         case 'Polygon':
-                            geom = turf.polygon(feature.geometry.coordinates);
+                            geom = polygon(feature.geometry.coordinates);
                             break;
                         case 'MultiPolygon':
-                            geom = turf.multiPolygon(feature.geometry.coordinates);
+                            geom = multiPolygon(feature.geometry.coordinates);
                             break;
                         case 'LineString':
-                            geom = turf.lineString(feature.geometry.coordinates);
+                            geom = lineString(feature.geometry.coordinates);
                             break;
                         case 'MultiLineString':
-                            geom = turf.multiLineString(feature.geometry.coordinates);
+                            geom = multiLineString(feature.geometry.coordinates);
                             break;
                     }
 
                     if (geom) {
-                        feature.geometry.coordinates = turf.pointOnSurface(geom).geometry.coordinates;
+                        feature.geometry.coordinates = pointOnSurface(geom).geometry.coordinates;
                         feature.geometry.type = 'Point';
                     }
                 }

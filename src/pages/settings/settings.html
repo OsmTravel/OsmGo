@@ -15,7 +15,7 @@
 				<ion-label> Suivi de la position </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.followPosition" (ionChange)="followPositionChange($event)"></ion-toggle>
 			</ion-item>
-			<label class="hint">La carte est centré sur votre position</label>
+			<label class="hint">La carte est centrée sur votre position</label>
 		</ion-card-content>
 	</ion-card>
 
@@ -27,16 +27,6 @@
 				<ion-toggle [(ngModel)]="this.configService.config.lockMapHeading" (ionChange)="lockMapHeadingChange($event)"></ion-toggle>
 			</ion-item>
 			<label class="hint">L'orientation de la carte dépend de celle du téléphone</label>
-		</ion-card-content>
-	</ion-card>
-
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-label>Incliner la carte </ion-label>
-				<ion-toggle [(ngModel)]="this.configService.config.mapIsPiched" (ionChange)="mapIsPichedChange($event)"></ion-toggle>
-			</ion-item>
-			<label class="hint">Incline la carte à 60°</label>
 		</ion-card-content>
 	</ion-card>
 
@@ -70,16 +60,21 @@
 		</ion-card-content>
 	</ion-card>
 
-
 	<ion-card>
 		<ion-card-content>
 			<ion-item>
-				<ion-label>Déléguer la conversion des données </ion-label>
-				<ion-toggle [(ngModel)]="this.configService.config.delegateDataConversion" (ionChange)="delegateDataConversionChange($event)"></ion-toggle>
+				<ion-label>Imagerie aérienne {{this.configService.config.baseMapSourceId}}</ion-label>
+				
+				<ion-select [(ngModel)]="this.configService.config.baseMapSourceId" (ionChange)="baseMapChange($event)">
+					<ion-option *ngFor="let baseMap of this.configService.baseMapSources" [value]="baseMap.id">
+						{{baseMap.label}}
+					</ion-option>
+				</ion-select>
 			</ion-item>
-			<label class="hint">Délégue la conversion des données à un serveur (utile pour les smartphones un peu lent...)</label>
+			<label class="hint">Imagerie aérienne à utiliser</label>
 		</ion-card-content>
 	</ion-card>
+
 
 	<ion-card>
 		<ion-card-content>

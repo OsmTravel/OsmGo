@@ -13,16 +13,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                         <ion-grid>
 							<ion-row>
 
-								<ion-col width-90>
-                                	<select class="select-md" *ngIf="!displayCode" [(ngModel)]="tag.value"> 
-										<option  *ngFor ="let item of currentPresets[tag.key].tags;" [ngValue]="item.v" >  {{item.lbl}} </option>
-									</select>
-                                    <ion-item *ngIf="displayCode">
+                                <ion-col width-90>
+                                
+                                    <ion-select *ngIf="!displayCode" [interface]="'popover'" [(ngModel)]="tag.value"
+                                        style="width: 100%; min-width: 100%;padding-left:0;"
+                                    >
+                                        <ion-option  *ngFor ="let item of currentPresets[tag.key].tags;" [value]="item.v" >  {{item.lbl}} </ion-option>
+                                    </ion-select>
+                                
+
+                                <ion-item *ngIf="displayCode">
 										<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
 									</ion-item>
                                 </ion-col>
 
-								<ion-col width-10>
+								<ion-col width-10 class="ion-col10">
 								<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
 								</ion-col>
 							</ion-row>
@@ -52,7 +57,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 										<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
 									</ion-item>
                                 </ion-col>
-								<ion-col width-10>
+								<ion-col width-10 class="ion-col10">
 									<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
 								</ion-col>
 							</ion-row>
@@ -77,7 +82,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 									</ion-item>
                                
                                 </ion-col>
-								<ion-col width-10>
+								<ion-col width-10 class="ion-col10">
 									<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
 								</ion-col>
 							</ion-row>
@@ -101,7 +106,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 										<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
 									</ion-item>
                                 </ion-col>
-								<ion-col width-10>
+								<ion-col width-10 class="ion-col10">
 									<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
 								</ion-col>
 							</ion-row>

@@ -11,7 +11,7 @@
 							</ion-title>
 
 						</ion-col>
-						<ion-col width-10 style="padding: 0;">
+						<ion-col width-10 style="padding: 0;" class="ion-col10">
 							<button ion-fab mini (click)="toogleCode()" style="margin: 0;padding: 0;">   
 									 <ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
          							 <ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
@@ -72,12 +72,20 @@
 				<ion-icon name="close"> </ion-icon>
 				<ion-icon name="create"> </ion-icon>
 			</button>
+
+			<button ion-fab ion-long-press *ngIf="!feature.properties.changeType"
+					[interval]="500" (onPressing)="addSurveyDate()"
+					color="secondary"
+					(click)="clickOnFabSurveyButton()"
+					class="fabInlineMarginLess fabSurveyDate">
+					<ion-icon name="checkmark-circle-outline"></ion-icon>
+			</button>
 		</ion-footer>
 	</div>
 
 
 
-	<!-- -------------------------SOF *ngSwitchCase="'EDIT'"------------------------------------ -->
+	<!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
 	<div *ngSwitchCase="'Edit'" style="height:100%">
 
 		<ion-header>
@@ -143,7 +151,7 @@
 				<ion-card-content *ngIf="displayAddTag">
 					<ion-item>
 						<ion-label primary stacked>Key</ion-label>
-						<ion-input type="text" placeholder="Key" (keyup)="newTag.key = toLowerCase(newTag.key)" [(ngModel)]="newTag.key"></ion-input>
+						<ion-input type="text" placeholder="Key" [(ngModel)]="newTag.key"></ion-input>
 					</ion-item>
 					<ion-item>
 						<ion-label primary stacked>Value</ion-label>

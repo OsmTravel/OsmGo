@@ -1,9 +1,13 @@
 import { NgModule,ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule} from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TooltipsModule } from 'ionic-tooltips';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { LongPressModule } from 'ionic-long-press';
 
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
@@ -11,7 +15,6 @@ import { IonicStorageModule } from '@ionic/storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Geolocation } from '@ionic-native/geolocation';
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
 import { AppVersion } from '@ionic-native/app-version';
 import { Diagnostic } from '@ionic-native/diagnostic';
 
@@ -45,6 +48,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { AboutPage } from '../pages/about/about';
 import { LoginPage } from '../pages/login/login';
 import { SettingsPage } from '../pages/settings/settings';
+import { LocationPage } from '../pages/location/location';
 
 import { PushDataToOsmPage } from '../pages/pushDataToOsm/pushDataToOsm';
 
@@ -64,6 +68,7 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
   declarations: [
     MyApp,
     SettingsPage,
+    LocationPage,
     MainPage,
     ModalsContentPage,
     ModalPrimaryTag,
@@ -90,6 +95,10 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
   ],
   imports: [
       HttpModule,
+      HttpClientModule,
+      BrowserAnimationsModule,
+      TooltipsModule,
+      LongPressModule,
       BrowserModule,
       IonicModule.forRoot(MyApp),
      IonicStorageModule.forRoot()
@@ -110,7 +119,7 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
   ],
   providers: [ConfigService,OsmApiService,MapService,TagsService,DataService, 
   RouterService, AlertService, LocationService,
-   SplashScreen, StatusBar, Geolocation, DeviceOrientation, Diagnostic, AppVersion, Device,
+   SplashScreen, StatusBar, Geolocation, Diagnostic, AppVersion, Device,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

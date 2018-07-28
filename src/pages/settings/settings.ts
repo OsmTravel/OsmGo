@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, Platform, ViewController } from 'ionic-angular';
 import { ConfigService } from '../../services/config.service'
 import { MapService } from '../../services/map.service'
@@ -41,21 +41,16 @@ export class SettingsPage {
     this.configService.setFollowPosition(e.checked);
   }
 
-
-  mapIsPichedChange(e) {
-    this.configService.setMapIsPiched(e.checked);
-    this.mapService.setPitch(e.checked);
-  }
-
   defaultPrimarykeyWindowsChange(e) {
     this.configService.setDefaultPrimarykeyWindows(e);
   }
 
-  delegateDataConversionChange(e) {
-    this.configService.setDelegateDataConversion(e.checked);
-  }
-
   isDelayedChange(e){
     this.configService.setIsDelayed(e.checked);
+  }
+
+  baseMapChange(e){
+    this.configService.setBaseSourceId(e);
+    this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
   }
 }

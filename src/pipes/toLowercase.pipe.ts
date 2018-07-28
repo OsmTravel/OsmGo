@@ -1,13 +1,13 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import { Pipe } from '@angular/core';
 
 @Pipe({
     name: 'lowercase',
     pure: false
 })
 
-export class ToLowercasePipe implements PipeTransform {
-    transform(text:string) {
+export class ToLowercasePipe {
+    transform(text: string) {
         if (text)
-         return text.toLowerCase();
+            return text.toLowerCase();
     }
 }

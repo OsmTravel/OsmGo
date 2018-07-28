@@ -419,7 +419,7 @@
         "presets": ["vending", "wheelchair"] },
         {"key": "social_facility", "lbl": "Service social", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
         "presets": ["social_facility","social_facility:for", "wheelchair"] },
-        {"key": "parking_entrance", "lbl": "Entrée de parking", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "maki-parking-garage-15", 
+        {"key": "parking_entrance", "lbl": "Entrée de parking", "lbl_alt": "", "icon": "maki-parking-garage-15", "markerColor": "#EF9228", "alert": "", 
         "presets": [] },
         {"key": "dojo", "lbl": "Dojo", "lbl_alt": "aikido, judo, kendo, karate...", "icon": "", "markerColor": "#EF9228", "alert": "", 
         "presets": [] },

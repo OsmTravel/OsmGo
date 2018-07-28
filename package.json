@@ -1,12 +1,13 @@
 {
   "name": "osm_go",
   "author": "Fabien Del Olmo",
-  "homepage": "http://osmgo.dogeo.fr",
+  "homepage": "https://osmgo.dogeo.fr",
   "description": "Cartographiez les tous!",
   "private": true,
   "scripts": {
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
+    "lint": "ionic-app-scripts lint",
     "sprites": "node  ./misc/mapStyle/generateSprite.js"
   },
   "dependencies": {
@@ -22,7 +23,7 @@
     "@ionic-native/app-version": "^4.7.0",
     "@ionic-native/core": "4.7.0",
     "@ionic-native/device": "^4.7.0",
-    "@ionic-native/device-orientation": "^4.7.0",
+    "@ionic-native/device-orientation": "^4.10.1",
     "@ionic-native/diagnostic": "^4.7.0",
     "@ionic-native/file-path": "^4.7.0",
     "@ionic-native/geolocation": "^4.7.0",
@@ -30,7 +31,10 @@
     "@ionic-native/status-bar": "4.7.0",
     "@ionic/storage": "2.1.3",
     "@turf/turf": "^5.1.6",
-    "cordova-android": "^7.0.0",
+    "@types/lodash": "^4.14.115",
+    "@types/navigation": "^4.0.3",
+    "cordova-android": "7.0.0",
+    "cordova-browser": "5.0.3",
     "cordova-plugin-app-version": "^0.1.9",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-device-orientation": "^2.0.1",
@@ -40,9 +44,12 @@
     "cordova-sqlite-storage": "^2.3.2",
     "cordova.plugins.diagnostic": "^4.0.8",
     "ionic-angular": "3.9.2",
+    "ionic-long-press": "^1.5.0",
     "ionic-plugin-keyboard": "^2.2.1",
+    "ionic-tooltips": "^2.0.1",
     "ionicons": "3.0.0",
-    "mapbox-gl": "^0.41.0",
+    "lodash": "^4.17.10",
+    "mapbox-gl": "^0.47.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
@@ -65,8 +72,7 @@
     "cordova-plugin-splashscreen",
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard",
-    "cordova-plugin-geolocation",
-    "cordova-plugin-device-orientation"
+    "cordova-plugin-geolocation"
   ],
   "cordovaPlatforms": [],
   "cordova": {
@@ -82,7 +88,8 @@
       "cordova-plugin-device-orientation": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

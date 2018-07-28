@@ -14,3 +14,34 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.ion-col10{
+    width: 10%;
+    max-width: 10%;
+}
+
+
+.positionMarkersSize{
+    width: 64px;
+    height: 64px;
+}
+
+.locationMapIcon{
+    background: url(../assets/locationX2.png) no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+}
+
+.locationMapIcon-wo-orientation{
+    background: url(../assets/locationX2-wo-orientation.png) no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+}

@@ -1,6 +1,5 @@
-<div id="locationWaiting" *ngIf="!locationService.gpsIsReady">
-	<h1>Geolocation</h1>
-</div>
+<page-location id="locationWaiting" *ngIf="!locationService.gpsIsReady && !locationService.forceOpen">
+</page-location>
 
 <ion-content padding class="home" #mycontent>
 
@@ -8,7 +7,7 @@
 	<div id="map">
 
 		<ion-fab left top >
-			<button tappable ion-fab fab-bottom (click)="menuCtrl.open()">
+			<button tappable ion-fab fab-bottom (click)="openMenu()">
      <ion-icon  name="menu"></ion-icon>
   </button>
 		</ion-fab>
@@ -20,27 +19,30 @@
 		</ion-fab>
 
 		<ion-fab left bottom>
-			<button tappable  ion-fab fab-bottom (click)="loadData()" [disabled]="mapService.loadingData">
-     		<ion-icon [ngClass]= "{'fa-spin' :mapService.loadingData}" name="refresh"></ion-icon>
+			<button tappable  ion-fab fab-bottom (click)="loadData()"
+				[tooltip]="(configService.currentZoom < 14 ? 'Zoomez puis t' : 'T') +  'élécharger les données de la zone'"
+				positionH="right" arrow="true" event="press" [active]="alertService.displayToolTipRefreshData"
+			[disabled]="mapService.loadingData || configService.currentZoom < 14">
+			 <ion-icon [ngClass]= "{'fa-spin' :mapService.loadingData}" name="refresh"></ion-icon>
  		 </button>
 		</ion-fab>
 
 		<ion-fab left bottom style="margin-bottom:60px;">
 			<button tappable  ion-fab fab-bottom  
-				[color]="mapService.isDisplayOrtho ? 'light' : 'secondary'  " 
-				(click)="mapService.displayIgnOrtho(!mapService.isDisplayOrtho)">
+				[color]="mapService.isDisplaySatelliteBaseMap ? 'light' : 'secondary'  " 
+				(click)="mapService.displaySatelliteBaseMap(configService.getBaseMapId(), !mapService.isDisplaySatelliteBaseMap)">
      		<ion-icon  name="image"></ion-icon>
  		 </button>
 		</ion-fab>
 
 		<ion-fab right bottom *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"  style="margin-bottom:60px;">
-			<button tappable  ion-fab fab-bottom color="danger" (click)="mapService.positionateMarker()" [disabled]="loadingData">
+			<button tappable  ion-fab fab-bottom color="danger" (click)="mapService.positionateMarker()" [disabled]="mapService.loadingData">
         		<ion-icon name="add"></ion-icon>
       		</button>
 		</ion-fab>
 
 		<ion-fab right bottom>
-			<button tappable  ion-fab fab-bottom (click)="mapService.centerOnMyPosition()">
+			<button tappable  ion-fab fab-bottom (click)="mapService.centerOnMyPosition()" [disabled]="!locationService.gpsIsReady">
         		<ion-icon name="locate"></ion-icon>
       		</button>
 		</ion-fab>
@@ -74,4 +76,4 @@
 	</div>
 </ion-content>
 
-<menu-content [content]="mycontent"></menu-content>
+<menu-content [content]="mycontent" ></menu-content>

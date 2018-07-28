@@ -4,23 +4,39 @@ import { AppVersion } from '@ionic-native/app-version';
 
 @Injectable()
 export class ConfigService {
+    eventCloseGeolocPage  = new EventEmitter();
+
       constructor(public localStorage: Storage, private _appVersion: AppVersion) { 
-    
            this.loadConfig();
       }
 
     
     eventConfigIsLoaded = new EventEmitter();
+    freezeMapRenderer = false;
+    platforms = [];
+
+    baseMapSources = [
+        {'id': 'tmsIgn', 'label':'Ortho IGN'},
+        {'id': 'mapbox-satellite', 'label':'Mapbox satellite'}
+    ]
+    currentZoom:number = undefined;
 
     config = {
         mapMarginBuffer: 50,
-        mapIsPiched: false,
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
-        delegateDataConversion: false,
-        isDelayed: true
+        isDelayed: true,
+        baseMapSourceId : this.baseMapSources[0].id
     };
+
+    geolocPageIsOpen = true;
+    geojsonIsLoadedFromCache = false;
+
+    init = { lng : 2.6,
+             lat: 47,
+             zoom: 4.8 }
+
     appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: '0.0.0' }
 
 
@@ -66,17 +82,6 @@ export class ConfigService {
         return this.config.mapMarginBuffer;
     }
 
-
-
-    setMapIsPiched(pitched: boolean) {
-        this.config.mapIsPiched = pitched;
-        this.localStorage.set('config', this.config);
-    }
-    getMapIsPiched() {
-        return this.config.mapIsPiched;
-    }
-
-
     setLockMapHeading(isLockMapHeading: boolean) {
         this.config.lockMapHeading = isLockMapHeading;
         this.localStorage.set('config', this.config);
@@ -103,14 +108,6 @@ export class ConfigService {
         return this.config.defaultPrimarykeyWindows;
     }
 
-    setDelegateDataConversion(delegateDataConversion: boolean) {
-        this.config.delegateDataConversion = delegateDataConversion;
-        this.localStorage.set('config', this.config);
-    }
-
-    getDelegateDataConversion() {
-        return this.config.delegateDataConversion;
-    }
 
     setIsDelayed(isDelayed: boolean) {
         this.config.isDelayed = isDelayed;
@@ -121,6 +118,12 @@ export class ConfigService {
         return this.config.isDelayed;
     }
 
+    setBaseSourceId(baseMapSourceId: string) {
+        this.config.baseMapSourceId = baseMapSourceId;
+        this.localStorage.set('config', this.config);
+    }
 
-
+    getBaseMapId() {
+        return this.config.baseMapSourceId;
+    }
 }

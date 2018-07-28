@@ -15,7 +15,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 									<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
 								</ion-item>
 							</ion-col>
-							<ion-col width-10>
+							<ion-col width-10 class="ion-col10">
 								<i (click)="eventDeleteTag(tag)" class="fa fa-times fa-2x"></i>
 							</ion-col>
 						</ion-row>

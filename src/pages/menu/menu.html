@@ -1,4 +1,6 @@
-<ion-menu [content]="content" swipeEnabled="false" side="left" menuType="push">
+<ion-menu [content]="content" swipeEnabled="false"
+	(ionOpen)="menuOpened()" (ionClose)="menuClosed()"
+	 side="left" menuType="push">
 	<ion-header>
 		<ion-navbar>
 
@@ -13,7 +15,7 @@
 		<ion-list>
 
 			<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('loginPage')">
-				Se connecter
+				Se connecter à OpenStreetMap
 			</ion-item>
 
 

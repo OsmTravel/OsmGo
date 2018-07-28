@@ -24,7 +24,7 @@ export class MenuPage {
         public mapService: MapService,
         public osmApi: OsmApiService,
         public dataService: DataService,
-        public configService : ConfigService,
+        public configService: ConfigService,
         public alertService: AlertService,
         private alertCtrl: AlertController,
         public platform: Platform
@@ -32,34 +32,42 @@ export class MenuPage {
 
 
     }
+    menuClosed() {
+        this.configService.freezeMapRenderer = false;
+    }
 
-      deleteDatapresentConfirm() {
-    let alert = this.alertCtrl.create({
-      title: 'Vraiment?',
-      message: 'Supprimer les données téléchargées? (conserve les modifications)',
-      buttons: [
-        {
-          text: 'Annuler',
-          role: 'cancel',
-          handler: () => {
+    // Le menu est ouvert, on freeze le rendu de la carte
+    menuOpened() {
+        this.configService.freezeMapRenderer = true;
+    }
 
-          }
-        },
-        {
-          text: 'Confirmer',
-          handler: () => {
-            this.mapService.resetDataMap();
-            this.closeMenu();
-          }
-        }
-      ]
-    });
-    alert.present();
-  }
+    deleteDatapresentConfirm() {
+        let alert = this.alertCtrl.create({
+            title: 'Vraiment?',
+            message: 'Supprimer les données téléchargées? (conserve les modifications)',
+            buttons: [
+                {
+                    text: 'Annuler',
+                    role: 'cancel',
+                    handler: () => {
 
-  exit(){
-      this.platform.exitApp();
-  }
+                    }
+                },
+                {
+                    text: 'Confirmer',
+                    handler: () => {
+                        this.mapService.resetDataMap();
+                        this.closeMenu();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    }
+
+    exit() {
+        this.platform.exitApp();
+    }
     pushPage(pageName) {
         this.routerService.pushPage(pageName)
     }
@@ -72,10 +80,10 @@ export class MenuPage {
         this.menuCtrl.close();
     }
 
-    logout(){
+    logout() {
         this.configService.setIsDelayed(true);
         this.osmApi.resetUserInfo();
         this.pushPage('loginPage')
     }
- 
+
 }
