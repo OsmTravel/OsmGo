@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
-import { Device } from '@ionic-native/device';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocationService } from '../services/location.service'
@@ -22,7 +21,7 @@ export class MyApp {
 
 
   constructor(platform: Platform, private splashScreen: SplashScreen,
-    private statusBar: StatusBar, private locationService: LocationService, private device: Device,
+    private statusBar: StatusBar, private locationService: LocationService,
     public configService: ConfigService) {
     this.splashScreen.show();
 

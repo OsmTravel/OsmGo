@@ -5,7 +5,8 @@ import { OsmApiService } from '../../services/osmApi.service';
 import { TagsService } from '../../services/tags.service';
 import { MapService } from '../../services/map.service';
 import { DataService } from '../../services/data.service';
-
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/timer';
 
 
 @Component({
@@ -231,11 +232,11 @@ export class PushDataToOsmPage {
         }
         this.summary = this.getSummary();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
-            setTimeout(() => {
-              this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
-              this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
-              this.navCtrl.popToRoot();
-            }, 100);
+        Observable.timer(100).subscribe(t => {
+            this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
+            this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
+            this.navCtrl.popToRoot();
+          })
     }
 
     centerToElement(pointCoordinates){

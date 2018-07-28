@@ -11,8 +11,8 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/timer';
-import * as turf from '@turf/turf';
-import { Feature, Geometry, Point, BBox } from '@turf/turf';
+
+import {  destination, point, Point, BBox } from '@turf/turf';
 declare var mapboxgl: any;
 
 
@@ -165,8 +165,8 @@ export class MapService {
 
     let pointMin: Point = { "type": "Point", "coordinates": [lng_min, lat_min] };
     let pointMax: Point = { "type": "Point", "coordinates": [lng_max, lat_max] };
-    var coordsMin = turf.destination(pointMin, marginBuffer / 1000, -135).geometry.coordinates;
-    let coordsMax = turf.destination(pointMax, marginBuffer / 1000, 45).geometry.coordinates;
+    var coordsMin = destination(pointMin, marginBuffer / 1000, -135).geometry.coordinates;
+    let coordsMax = destination(pointMax, marginBuffer / 1000, 45).geometry.coordinates;
 
     let bbox: BBox = [coordsMin[0], coordsMin[1], coordsMax[0], coordsMax[1]]; // TODO : on est pas à 1m près
     return bbox;
@@ -237,7 +237,7 @@ export class MapService {
     } else {
       newTag['shop'] = '*';
     }
-    let pt = turf.point([coords.lng, coords.lat], { type: 'node', tags: newTag });
+    let pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
     this.eventShowModal.emit({ type: 'Create', geojson: pt, origineData: null })
   }

@@ -18,8 +18,9 @@ import { ConfigService } from './config.service';
 
 
 declare var osmtogeojson: any;
-declare var $: any;
-import * as turf from '@turf/turf';
+
+import {  union, bboxPolygon, area, BBox, pointOnSurface, 
+        polygon, multiPolygon, lineString, multiLineString } from '@turf/turf';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
@@ -30,7 +31,6 @@ export class OsmApiService {
         prod: { "api": 'https://api.openstreetmap.org', "overpass": "https://overpass-api.de/api/interpreter" },
         dev: { "api": 'https://master.apis.dev.openstreetmap.org', "overpass": "" }
     }
-    urlDataServer = 'http://osmgo-data.dogeo.fr/';
 
     
  
@@ -347,7 +347,7 @@ export class OsmApiService {
         })
     }
 
-    getUrlOverpassApi(bbox: turf.BBox) {
+    getUrlOverpassApi(bbox: BBox) {
 
         let OPapiBbox = bbox[1] + ',' + bbox[0] + ',' + bbox[3] + ',' + bbox[2];
         let keys = this.tagsService.getListOfPrimaryKey();
@@ -408,20 +408,20 @@ export class OsmApiService {
 
             let oldBboxFeature = JSON.parse(JSON.stringify(oldBbox.features[0]));
 
-            let union = turf.union(newBoboxFeature, oldBboxFeature);
-            resBbox = { "type": "FeatureCollection", "features": [union] }
+            const resultUnion = union(newBoboxFeature, oldBboxFeature);
+            resBbox = { "type": "FeatureCollection", "features": [resultUnion] }
             this.dataService.setGeojsonBbox(resBbox);
         }
         this.mapService.eventNewBboxPolygon.emit(resBbox);
     }
 
-    getDataFromBbox(bbox: turf.BBox, useOverpassApi: boolean = false) {
-        let featureBbox = turf.bboxPolygon(bbox);
+    getDataFromBbox(bbox: BBox, useOverpassApi: boolean = false) {
+        let featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
             featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
             featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
-        let bboxArea = turf.area(featureBbox);
+        let bboxArea = area(featureBbox);
 
             if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
                 let urlOverpassApi = 'https://overpass-api.de/api/interpreter';
@@ -503,21 +503,21 @@ export class OsmApiService {
                     let geom;
                     switch (feature.geometry.type) {
                         case 'Polygon':
-                            geom = turf.polygon(feature.geometry.coordinates);
+                            geom = polygon(feature.geometry.coordinates);
                             break;
                         case 'MultiPolygon':
-                            geom = turf.multiPolygon(feature.geometry.coordinates);
+                            geom = multiPolygon(feature.geometry.coordinates);
                             break;
                         case 'LineString':
-                            geom = turf.lineString(feature.geometry.coordinates);
+                            geom = lineString(feature.geometry.coordinates);
                             break;
                         case 'MultiLineString':
-                            geom = turf.multiLineString(feature.geometry.coordinates);
+                            geom = multiLineString(feature.geometry.coordinates);
                             break;
                     }
 
                     if (geom) {
-                        feature.geometry.coordinates = turf.pointOnSurface(geom).geometry.coordinates;
+                        feature.geometry.coordinates = pointOnSurface(geom).geometry.coordinates;
                         feature.geometry.type = 'Point';
                     }
                 }

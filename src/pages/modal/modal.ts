@@ -13,7 +13,7 @@ import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 
-declare var _;
+import * as _ from "lodash";
 
 @Component({
   selector: 'modal',
@@ -133,7 +133,7 @@ export class ModalsContentPage {
   initComponent() {
     // supprimer les valeurs vide de this.tags (changement de type)
     this.clearNullTags();
-    if (_.findIndex(this.tags, { key: 'name' }) === -1) // on ajoute un nom vide si il n'existe pas
+    if (_.findIndex(this.tags, o=> { return  o.key =='name' }) === -1) // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
 
     this.tagsService.getAllTags().subscribe(allTags => {
@@ -345,7 +345,9 @@ export class ModalsContentPage {
     modal.onDidDismiss(data => {
       if (data) {
         // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
-        let idx = _.findIndex(this.tags, { key: this.primaryKey.key, value: this.primaryKey.value });
+        let idx = _.findIndex(this.tags, 
+            o=> { return o.key == this.primaryKey.key && o.value == this.primaryKey.value; });
+
         this.tags[idx] = JSON.parse(JSON.stringify(data));
         this.primaryKey = JSON.parse(JSON.stringify(data));
         this.initComponent();

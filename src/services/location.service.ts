@@ -2,7 +2,8 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { Diagnostic } from '@ionic-native/diagnostic';
-import * as turf from '@turf/turf';
+
+import {  distance, point} from '@turf/turf';
 import { ConfigService } from './config.service';
 
 @Injectable()
@@ -93,17 +94,17 @@ export class LocationService {
                     this.gpsIsReady = true;
                 }
 
-                let distance = Infinity;
+                let deltaDistance = Infinity;
                 if (this.location && this.location.coords && !this.configService.freezeMapRenderer) {
-                    const from = turf.point([data.coords.longitude, data.coords.latitude]);
-                    const to = turf.point([this.location.coords.longitude, this.location.coords.latitude]);
-                    distance = turf.distance(from, to, { units: 'metres' }); //=> m
+                    const from = point([data.coords.longitude, data.coords.latitude]);
+                    const to = point([this.location.coords.longitude, this.location.coords.latitude]);
+                    deltaDistance = distance(from, to, { units: 'metres' }); //=> m
                 } else {
 
                 }
                 // on ne déplace le marker que si la position a changé d'au moins 2 m
                 // Sinon ça regénère le rendu et ça fait chauffé le téléphone pour rien...
-                if (distance > 2 && !this.configService.freezeMapRenderer) {
+                if (deltaDistance > 2 && !this.configService.freezeMapRenderer) {
                     this.location = data;
                     this.eventNewLocation.emit(this.getGeojsonPos());
                 }
