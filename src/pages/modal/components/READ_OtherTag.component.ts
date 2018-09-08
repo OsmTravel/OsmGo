@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 					<b>{{tag.key}}</b>
 				</ion-card-header>
 				<ion-card-content>
-					<p>{{tag.value}}</p>
+				<p><i class="fa fa-code" aria-hidden="true"></i>
+				{{tag.value}}</p>
 				</ion-card-content>
 			</ion-card>
   `

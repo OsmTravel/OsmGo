@@ -61,6 +61,8 @@ import { FilterIncludeKeysPipe } from '../pipes/filterIncludeKeys.pipe';
 import { FilterNullValuePipe } from '../pipes/filterNullValue.pipe';
 import { ToLowercasePipe } from '../pipes/toLowercase.pipe';
 import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
+import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
+
 
 
 
@@ -91,7 +93,8 @@ import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
     FilterIncludeKeysPipe,
     FilterNullValuePipe,
     ToLowercasePipe,
-    FilterByContentPipe
+    FilterByContentPipe,
+    DisplayPresetLabelPipe
   ],
   imports: [
       HttpModule,

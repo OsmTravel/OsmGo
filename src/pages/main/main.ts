@@ -38,6 +38,10 @@ export class MainPage {
     private alertCtrl: AlertController,
     private _ngZone: NgZone
   ) {
+
+    this.tagsService.loadPresets().subscribe();
+    this.tagsService.loadTags();
+ 
     this.navCtrl.viewDidEnter.subscribe(e => {
       if (e.index === 0) {
         if (this.mapService.layersAreLoaded) {
