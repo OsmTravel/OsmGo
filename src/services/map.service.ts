@@ -104,7 +104,7 @@ export class MapService {
     for (let i = 0; i < features.length; i++) {
       let feature = features[i];
       if (feature.properties.type !== 'node') {
-        let featureWay = { 'type': 'Feature', 'properties': { 'hexColor': feature.properties.hexColor }, 'geometry': feature.properties.way_geometry };
+        let featureWay = { 'type': 'Feature', 'properties': { 'hexColor': feature.properties.hexColor, 'mesure':feature.properties.mesure }, 'geometry': feature.properties.way_geometry };
         featuresWay.push(featureWay);
       }
     }
@@ -489,6 +489,19 @@ export class MapService {
     return iconRotate
   }
 
+  toogleMesureFilter(enable:boolean, layerName:string, value:number, map){
+    const currentFilter = map.getFilter(layerName);
+    const unfiltered = currentFilter.filter(el => el[1] && el[1] !== "mesure");
+    if (enable){
+       let newFilter = [...unfiltered, ['<', 'mesure', value] ];
+       map.setFilter(layerName, newFilter);
+       return layerName;
+    } else {
+      map.setFilter(layerName, unfiltered);
+      return unfiltered
+    }
+  }
+
   addDomMarkerPosition() {
     if (!this.markerLocation) {
       this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition, { offset: [0, 0] }).setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
@@ -612,6 +625,11 @@ export class MapService {
       }
     });
     this.layersAreLoaded = true;
+
+    // value en m²!
+    this.toogleMesureFilter(this.configService.getFilterWayByArea(), 'way_fill', 5000, this.map);
+    // value en km!
+    this.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.map);
 
     this.map.on('click', function (e) {
       let c = [[e.point.x - 8, e.point.y + 8], [e.point.x + 8, e.point.y + 18]];
