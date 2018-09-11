@@ -49,7 +49,7 @@
     "ionic-tooltips": "^2.0.1",
     "ionicons": "3.0.0",
     "lodash": "^4.17.10",
-    "mapbox-gl": "^0.48.0",
+    "mapbox-gl": "^0.49.0-beta.1",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
