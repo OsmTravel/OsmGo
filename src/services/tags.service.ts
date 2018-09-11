@@ -15,7 +15,7 @@ export class TagsService {
     primaryKeys = [];
 
 
-    constructor(private http: Http, public localStorage: Storage) {
+    constructor(private http: Http,  public localStorage: Storage) {
         this.loadLastTagAdded();
         this.loadBookMarks();
         this.loadPrimaryKeys();
@@ -154,10 +154,13 @@ export class TagsService {
 
     loadPresets() {
         return this.http.get('assets/tags/presets.json')
-            .map((p) => {
-                this.presets = p.json();
+            .map((p) => { // c'est moche... vivement rx6.
+               let json =  p.json()
+               for (let k in json){
+                   json[k]['_id'] = k;
+               }
+                this.presets = json;
                 return this.presets
-
             });
     }
 
