@@ -321,8 +321,8 @@
         "presets": ["wheelchair"] },
         {"key": "hotel", "lbl": "Hôtel", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "",
         "presets": ["wheelchair"] },
-        {"key": "kindergarten", "lbl": "Jardin d'enfants", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "",
-        "presets": ["wheelchair"] },
+        {"key": "kindergarten", "lbl": "Jardin d'enfants", "lbl_alt": "crèches, haltes-garderies", "icon": "", "markerColor": "#EF9228", "alert": "",
+        "presets": ["nursery", "wheelchair"] },
         {"key": "car_wash", "lbl": "Station de lavage de voitures", "lbl_alt": "", "icon": "mi-car-wash", "markerColor": "#EF9228", "alert": "",
         "presets": [] },
         {"key": "place_of_worship", "lbl": "Lieu de culte", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "",
@@ -345,7 +345,7 @@
         "presets": ["wheelchair"] },
         {"key": "doctors", "lbl": "Médecin", "lbl_alt": "Docteur", "icon": "maki-doctor-15", "markerColor": "#EF9228", "alert": "",
         "presets": ["wheelchair"] },
-        {"key": "nursery", "lbl": "Nurserie", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "",
+        {"key": "nursery", "lbl": "Nurserie", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "Déprécié, utiliser : amenity=kindergarten + nursery=yes.",
         "presets": ["wheelchair"] },
         {"key": "courthouse", "lbl": "Palais de justice", "lbl_alt": "", "icon": "fa-balance-scale", "markerColor": "#EF9228", "alert": "",
         "presets": ["wheelchair"] },
@@ -399,8 +399,6 @@
         "presets": ["wheelchair"] },
         {"key": "toilets", "lbl": "Toilettes", "lbl_alt": "wc", "icon": "maki-toilet-15", "markerColor": "#EF9228", "alert": "",
         "presets": ["fee","male", "female","wheelchair"] },
-        {"key": "emergency_phone", "lbl": "Téléphone d'urgence", "lbl_alt": "", "icon": "maki-telephone-15", "markerColor": "#EF9228", "alert": "",
-        "presets": [] },
         {"key": "telephone", "lbl": "Téléphone public", "lbl_alt": "", "icon": "maki-telephone-15", "markerColor": "#EF9228", "alert": "",
         "presets": [] },
         {"key": "university", "lbl": "Université", "lbl_alt": "", "icon": "mi-university", "markerColor": "#EF9228", "alert": "",
@@ -460,6 +458,14 @@
     "emergency":{"type":"urgence", "lbl": "Urgence", "values":[
         {"key": "fire_hydrant", "lbl": "Borne d'incendie", "lbl_alt": "Borne incendie, borne-fontaine, borne fontaine, bouche d'incendie", "icon": "maki-fire-station-15", "markerColor": "#75030B", "alert": "",
          "presets": ["fire_hydrant:type", "fire_hydrant:position","fire_hydrant:diameter"] },
+         {"key": "defibrillator", "lbl": "Défibrilateur", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "",
+            "presets": [] },
+         {"key": "phone", "lbl": "Téléphone d'urgence", "lbl_alt": "", "icon": "maki-telephone-15", "markerColor": "#75030B", "alert": "",
+                "presets": [] },
+        {"key": "assembly_point", "lbl": "Point de rassemblement", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "", "presets": [] },
+        {"key": "siren", "lbl": "Sirène d'alerte", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "", "presets": [] },
+        {"key": "lifeguard_tower", "lbl": "Tour de sauveteur", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "", "presets": [] },
+        {"key": "life_ring", "lbl": "Bouée de sauvetage", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "", "presets": [] },
         {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "",
         "presets": [] }
     ]},
@@ -657,6 +663,20 @@
         {"key": "rehabilitation", "lbl": "rehabilitation", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
         {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
     ]},
+    "historic":{"type":"historic", "lbl": "Historique ", "values":[
+        {"key": "wayside_cross", "lbl": "Croix historique", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "memorial", "lbl": "Petit mémorial", "lbl_alt": "monument aux morts, stèle, plaque commémorative", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "monument", "lbl": "Grand mémorial", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "archaeological_site", "lbl": "Monuments antiques", "lbl_alt": "fouilles archéologiques", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "castle", "lbl": "Chateau", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "fort", "lbl": "Fort", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "ruins", "lbl": "Ruine historique", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "wayside_shrine", "lbl": "Petit autel", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "boundary_stone", "lbl": "Borne frontière", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "tomb", "lbl": "Tombes d'intérêt historique", "lbl_alt": "", "icon": "", "markerColor": "#FFBA0C", "alert": "", "presets": [] },
+        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
+    ]},
+
     "natural":{"type":"natural", "lbl": "Naturel", "values":[
         {"key": "tree", "lbl": "Arbre isolé ou remarquable", "lbl_alt": "Arbre isolé, arbre remarquable", "icon": "maki-park-15", "markerColor": "#009549", "alert": "", "presets": [] },
         {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }

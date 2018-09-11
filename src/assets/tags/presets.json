@@ -455,5 +455,15 @@
       {"v": "victim", "lbl": "Victimes d'agression"}
     ],
     "key": "social_facility:for"
+  },
+  "nursery":{
+    "type": "select",
+    "lbl": "Garderie",
+    "tags": [
+      {"v": "", "lbl": " NC"},
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"}
+    ],
+    "key": "nursery"
   }
 }
