@@ -1,3 +1,15 @@
+# 0.5.0
+## Interface
+    * Ajout de nombreux tags (dont la historic=*)
+
+## Features
+    * Possibilité de filtrer les objets linéaires et surfaciques supérieur à une certaine surface/longueur
+    * Possibilité d'avoir des presets spécifiques sur une même key
+
+## Divers
+    * Simplification du code de la fiche
+    * Mapbox Gl Js 0.49.0
+
 # 0.4.0
 
 ## Interface

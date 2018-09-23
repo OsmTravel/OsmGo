@@ -235,7 +235,7 @@ export class MapService {
       let lastTag: any = this.tagsService.getLastTagAdded();
       newTag[lastTag.key] = lastTag.value;
     } else {
-      newTag['shop'] = '*';
+      newTag['shop'] = 'yes';
     }
     let pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
