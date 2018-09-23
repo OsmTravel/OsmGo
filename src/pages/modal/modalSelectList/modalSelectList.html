@@ -1,6 +1,6 @@
     <ion-toolbar>
         <ion-title>
-            {{data.presets.lbl}}
+            {{ data.preset.lbl }}
         </ion-title>
     </ion-toolbar>
 <div id="divContentSB">
@@ -11,12 +11,13 @@
 
 
 <div class="listTag">
-    <ion-list radio-group [(ngModel)]="newTag" (ionChange)="selected($event)">
-        <ion-item *ngFor="let tag of data.presets.tags | filterByContent:['v','lbl']:searchText;">
+    <ion-list radio-group [(ngModel)]="data.value" (ionChange)="selected($event)">
+        <ion-item *ngFor="let tag of data.preset.tags | filterByContent:['v','lbl']:searchText;">
             <ion-label> <b>{{tag.lbl}}</b>
                 <br> {{tag.v}}
             </ion-label>
-            <ion-radio [value]="{key: data.tag.key, value:tag.v}"></ion-radio>
+
+            <ion-radio   [value]="tag.v"></ion-radio>
 
         </ion-item>
     </ion-list>

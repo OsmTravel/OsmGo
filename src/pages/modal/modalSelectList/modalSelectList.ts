@@ -8,17 +8,18 @@ import { ModalController, NavParams, ViewController, Platform } from 'ionic-angu
 })
 export class ModalSelectList {
     data;
-    newTag;
     searchText = '';
+    initvalue: string;
     constructor(
         public params: NavParams,
         public viewCtrl: ViewController,
         public modalCtrl: ModalController,
         public platform: Platform
 
-
     ) {
+        this.initvalue = params.data.value;
         this.data = params.data;
+        
         this.platform.registerBackButtonAction(e => {
             this.dismiss();
         });
@@ -29,10 +30,9 @@ export class ModalSelectList {
     }
 
     selected(e) {
-        if (e) {
-            this.dismiss(e);
+        if (e && this.initvalue !== e) {
+            this.dismiss({'key': this.data.key, value: e });
         }
-
     }
 
 }

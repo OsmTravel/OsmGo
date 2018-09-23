@@ -27,7 +27,9 @@ export class ConfigService {
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
         isDelayed: true,
-        baseMapSourceId : this.baseMapSources[0].id
+        baseMapSourceId : this.baseMapSources[0].id,
+        filterWayByArea : true,
+        filterWayByLength: true
     };
 
     geolocPageIsOpen = true;
@@ -126,4 +128,23 @@ export class ConfigService {
     getBaseMapId() {
         return this.config.baseMapSourceId;
     }
+
+    /* Boolean, activé ou pas */
+    setFilterWayByArea(enable: boolean) {
+        this.config.filterWayByArea = enable;
+        this.localStorage.set('config', this.config);
+    }
+    getFilterWayByArea() {
+        return this.config.filterWayByArea;
+    }
+
+    setFilterWayByLength(enable: boolean) {
+        this.config.filterWayByLength = enable;
+        this.localStorage.set('config', this.config);
+    }
+
+    getFilterWayByLength() {
+        return this.config.filterWayByLength;
+    }
+
 }

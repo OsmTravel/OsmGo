@@ -8,8 +8,8 @@
 
 
 <ion-content padding>
-	<h4>Map</h4>
-		<ion-card>
+	<h4> Carte </h4>
+	<ion-card>
 		<ion-card-content>
 			<ion-item>
 				<ion-label> Suivi de la position </ion-label>
@@ -19,7 +19,7 @@
 		</ion-card-content>
 	</ion-card>
 
-		<ion-card>
+	<ion-card>
 		<ion-card-header> </ion-card-header>
 		<ion-card-content>
 			<ion-item>
@@ -27,6 +27,28 @@
 				<ion-toggle [(ngModel)]="this.configService.config.lockMapHeading" (ionChange)="lockMapHeadingChange($event)"></ion-toggle>
 			</ion-item>
 			<label class="hint">L'orientation de la carte dépend de celle du téléphone</label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header> </ion-card-header>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Cacher les surface de plus de 5000 m² </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.filterWayByArea" (ionChange)="filterWayByArea($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">Un marker symbolisera toujours le polygon</label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header> </ion-card-header>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Cacher les lignes de plus de 200 m </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.filterWayByLength" (ionChange)="filterWayByLength($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">Un marker symbolisera toujours la ligne</label>
 		</ion-card-content>
 	</ion-card>
 

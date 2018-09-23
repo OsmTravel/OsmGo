@@ -36,25 +36,25 @@
 
 
 			<!--Primary Key-->
+	
 			<read-primary-key 
 				[displayCode]="displayCode"
-				[keyLbl] = "allTags[primaryKey.key].lbl"
+				[keyLbl] = "tagsService.tags[primaryKey.key].lbl"
 				[primaryKey] = "primaryKey"
 				[configOfPrimaryKey] = "configOfPrimaryKey">
 			</read-primary-key>
 	
 			<!--Les presets-->
-			<div *ngFor="let tag of tags | filterIncludeKeys:configOfPrimaryKey?.presets | filterNull;">
-				<read-presets
+			<div *ngFor="let tag of tags;">
+				<read-presets *ngIf="tag.preset && tag.value !== ''"
 					[displayCode]="displayCode"
-					[currentPresets] ="currentPresets"
 					[tag]="tag"> 
 				</read-presets>
 			</div>
 
 			<!--Le reste des tags-->
-			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
-				<read-other-tag [tag]="tag">  </read-other-tag>
+			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key];">
+				<read-other-tag [tag]="tag" *ngIf="!tag.preset ">  </read-other-tag>
 			</div>
 
 		</ion-content>
@@ -115,20 +115,20 @@
 			<!--Primary key-->
 			<edit-primary-key 
 				[displayCode]="displayCode"
-				[keyLbl] = "allTags[primaryKey.key].lbl"
+				[keyLbl] = "tagsService.tags[primaryKey.key].lbl"
 				[primaryKey] = "primaryKey"
 				[configOfPrimaryKey] = "configOfPrimaryKey"
 				(openPrimaryTagModal) = "openPrimaryTagModal()">
 			</edit-primary-key>
 
 			<!--Les presets-->
-			<div *ngFor="let tag of tags | filterIncludeKeys:configOfPrimaryKey?.presets; let j = index; trackBy:j;">
+			<div *ngFor="let tag of tags">
 
-				<edit-presets
+				<edit-presets *ngIf="tag.preset"
 					[displayCode]="displayCode"
-					[currentPresets] ="currentPresets"
+
 					[tag]="tag"
-					(openPrimaryListModal) = "openModalList({tag:tag, presets: currentPresets[tag.key]})"> 
+					(openPrimaryListModal) = "openModalList(tag)"> 
 				</edit-presets>
 			</div>
 

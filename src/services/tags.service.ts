@@ -11,18 +11,18 @@ export class TagsService {
     lastTagAdded = {};
     bookMarks = [];
     tags;
-    Presets = [];
+    presets = {};
     primaryKeys = [];
 
 
-    constructor(private http: Http, public localStorage: Storage) {
+    constructor(private http: Http,  public localStorage: Storage) {
         this.loadLastTagAdded();
         this.loadBookMarks();
         this.loadPrimaryKeys();
 
     }
 
-//bookMarks
+    //bookMarks
     getBookMarks() {
         return this.bookMarks;
     }
@@ -30,19 +30,19 @@ export class TagsService {
         this.localStorage.set('bookMarks', bookMarks);
         this.bookMarks = bookMarks;
     }
-    addRemoveBookMark(tag){
 
+    addRemoveBookMark(tag) {
         let ind = -1;
-        for (let i =0; i < this.bookMarks.length; i++){
-            if (this.bookMarks[i].key == tag.key && this.bookMarks[i].primaryKey == tag.primaryKey){
-                 ind = i; 
-            } 
+        for (let i = 0; i < this.bookMarks.length; i++) {
+            if (this.bookMarks[i].key == tag.key && this.bookMarks[i].primaryKey == tag.primaryKey) {
+                ind = i;
+            }
         }
 
-        if (ind === -1){
+        if (ind === -1) {
             this.bookMarks.push(tag);
         } else {
-            this.bookMarks.splice(ind,1);
+            this.bookMarks.splice(ind, 1);
         }
         this.localStorage.set('bookMarks', this.bookMarks);
     }
@@ -52,14 +52,14 @@ export class TagsService {
             if (d) {
                 this.bookMarks = d;
             } else {
-               this.bookMarks = [];
+                this.bookMarks = [];
             }
         });
     }
 
 
-//LastTagAdded
-     getLastTagAdded() {
+    //LastTagAdded
+    getLastTagAdded() {
         return this.lastTagAdded;
     }
     setLastTagAdded(lastTag) {
@@ -71,27 +71,26 @@ export class TagsService {
             if (d) {
                 this.lastTagAdded = d;
             } else {
-               this.lastTagAdded = null;
+                this.lastTagAdded = null;
             }
         });
     }
 
-    loadPrimaryKeys(){
-         this.getAllTags().subscribe(allTags => {
+    loadPrimaryKeys() {
+        this.getAllTags().subscribe(allTags => {
             for (let key in allTags) {
                 this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
             }
-         });
+        });
     }
-    
-    getPrimaryKeys(){
+
+    getPrimaryKeys() {
         return this.primaryKeys;
     }
 
-    getAllTags(): Observable<any> {
+    getAllTags(): Observable<any> { // tags à plat ?
         return this.http.get('assets/tags/tags.json')
             .map(res => {
-
                 let tags = res.json();
                 for (let tagsObject in tags) {
                     for (let i = 0; i < tags[tagsObject].values.length; i++) {
@@ -103,11 +102,20 @@ export class TagsService {
             });
     }
 
+    getTagConfigByKeyValue(key, value){
+        const filtered = this.tags[key].values.filter(elem => elem.key === value);
+        if (filtered.length > 0){
+            return filtered[0];
+        } else {
+            return undefined;
+        }
+    }
+
+
 
     loadTags() {
         this.http.get('assets/tags/tags.json')
             .map((res) => {
-
                 // this.tags = res;
                 return res;
             })
@@ -122,10 +130,10 @@ export class TagsService {
                 this.tags = tags;
                 this.getListOfPrimaryKey();
                 return tags;
-            })
-            ;
+            });
         // .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     };
+
 
 
     getTags() {
@@ -144,16 +152,21 @@ export class TagsService {
         return res;
     }
 
-    getPresets(presetsList: string[]) {
+    loadPresets() {
         return this.http.get('assets/tags/presets.json')
-            .map((p) => {
-                p = p.json();
-                let res = {};
-                for (let i = 0; i < presetsList.length; i++) {
-                    res[presetsList[i]] = p[presetsList[i]];
-                }
-                return res;
+            .map((p) => { // c'est moche... vivement rx6.
+               let json =  p.json()
+               for (let k in json){
+                   json[k]['_id'] = k;
+               }
+                this.presets = json;
+                return this.presets
             });
+    }
+
+
+    getPresetsById(id) {
+        return this.presets[id];
     }
 
 

@@ -45,11 +45,24 @@ export class SettingsPage {
     this.configService.setDefaultPrimarykeyWindows(e);
   }
 
-  isDelayedChange(e){
+  isDelayedChange(e) {
     this.configService.setIsDelayed(e.checked);
   }
 
-  baseMapChange(e){
+  filterWayByArea(e) {
+    this.configService.setFilterWayByArea(e.checked);
+    // value en m²!
+    this.mapService.toogleMesureFilter(this.configService.getFilterWayByArea(), 'way_fill', 5000, this.mapService.map);
+
+  }
+
+  filterWayByLength(e) {
+    this.configService.setFilterWayByLength(e.checked);
+    // value en km!
+    this.mapService.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.mapService.map);
+  }
+
+  baseMapChange(e) {
     this.configService.setBaseSourceId(e);
     this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
   }

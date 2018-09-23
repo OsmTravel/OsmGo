@@ -3,10 +3,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'edit-presets',
     template: `
-                    <ion-card *ngIf="currentPresets[tag.key]?.type === 'select'">
+                    <ion-card *ngIf="tag.preset?.type === 'select'">
                         <ion-card-header>
-                        	<b *ngIf="!displayCode">{{currentPresets[tag.key]?.lbl}}</b>
-						    <b *ngIf="displayCode">{{tag.key}}</b>
+                        	<b *ngIf="!displayCode">{{tag.preset?.lbl}}</b>
+                            <b *ngIf="displayCode">
+                            <i class="fa fa-code" ></i>
+                            {{tag.preset?.key}}</b>
                         </ion-card-header>
 
                         <ion-card-content>
@@ -18,7 +20,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                                     <ion-select *ngIf="!displayCode" [interface]="'popover'" [(ngModel)]="tag.value"
                                         style="width: 100%; min-width: 100%;padding-left:0;"
                                     >
-                                        <ion-option  *ngFor ="let item of currentPresets[tag.key].tags;" [value]="item.v" >  {{item.lbl}} </ion-option>
+                                        <ion-option  *ngFor ="let item of tag.preset.tags;" [value]="item.v" >  {{item.lbl}} </ion-option>
                                     </ion-select>
                                 
 
@@ -38,21 +40,21 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 
-                   <ion-card *ngIf="currentPresets[tag.key]?.type === 'list'">
-                        <ion-card-header  (click)="emitOpenModal()">
-                        	<b *ngIf="!displayCode">{{currentPresets[tag.key]?.lbl}} <i  class="fa fa-cog"></i></b>
-						    <b *ngIf="displayCode"> {{tag.key}}</b>
+                   <ion-card *ngIf="tag.preset?.type === 'list'">
+                        <ion-card-header  (click)="emitOpenModal(tag)">
+                        	<b *ngIf="!displayCode">{{ tag.preset?.lbl }} <i  class="fa fa-cog"></i></b>
+						    <b *ngIf="displayCode"> <i class="fa fa-code" ></i> {{ tag.preset?.key }}</b>
                         </ion-card-header>
 
                         <ion-card-content>
                         <ion-grid>
 							<ion-row>
 								<ion-col width-90  >
-                                    <ion-item *ngIf="!displayCode && findCurrentConfigPresset(tag)" (click)="emitOpenModal()">
-                                        <p>{{ findCurrentConfigPresset(tag).lbl }} </p>
+                                    <ion-item *ngIf="!displayCode && (tag | displayPresetLabel)" (click)="emitOpenModal(tag)">
+                                        <p>{{ (tag | displayPresetLabel)?.lbl }} </p>
                                     </ion-item>
                                    
-                                    <ion-item *ngIf="displayCode || !findCurrentConfigPresset(tag)" style="padding-left: 0px">
+                                    <ion-item *ngIf="displayCode || !(tag | displayPresetLabel)" style="padding-left: 0px">
                                          <ion-label color="primary"> <i class="fa fa-code"></i> </ion-label>
 										<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
 									</ion-item>
@@ -67,10 +69,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 
-                    <ion-card *ngIf="currentPresets[tag.key]?.type === 'number'">
+                    <ion-card *ngIf="tag.preset?.type === 'number'">
                         <ion-card-header>
-                        	<b *ngIf="!displayCode">{{currentPresets[tag.key]?.lbl}}</b>
-						    <b *ngIf="displayCode">{{tag.key}}</b>
+                        	<b *ngIf="!displayCode">{{tag.preset?.lbl}}</b>
+						    <b *ngIf="displayCode"> <i class="fa fa-code" ></i> {{tag.preset?.key}}</b>
                         </ion-card-header>
 
                         <ion-card-content>
@@ -92,10 +94,10 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
 
-                    <ion-card *ngIf="currentPresets[tag.key]?.type === 'text'">
+                    <ion-card *ngIf="tag.preset?.type === 'text'">
                         <ion-card-header>
-                        	<b *ngIf="!displayCode">{{currentPresets[tag.key]?.lbl}}</b>
-						    <b *ngIf="displayCode">{{tag.key}}</b>
+                            <b *ngIf="!displayCode">{{ tag.preset?.lbl }}</b>
+                            <b *ngIf="displayCode"> <i class="fa fa-code" ></i> {{ tag.preset?.key }}</b>
                         </ion-card-header>
 
                         <ion-card-content>
@@ -117,34 +119,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class EditPresets {
     @Input() displayCode;
-    @Input() currentPresets;
     @Input() tag;
 
     @Output() openPrimaryListModal = new EventEmitter();
 
-    emitOpenModal(){
-        if (!this.displayCode && this.currentPresets[this.tag.key].type == 'list'){
-              this.openPrimaryListModal.emit();
+    emitOpenModal(tag){
+        if (!this.displayCode && this.tag.preset.type == 'list'){
+              this.openPrimaryListModal.emit(tag);
         }
     }
-
-    findCurrentConfigPresset(tag) {
-        if (this.currentPresets[tag.key]) {
-            if (this.currentPresets[tag.key].type == 'list' || this.currentPresets[tag.key].type == 'select') {
-                for (let i = 0; i < this.currentPresets[tag.key].tags.length; i++) {
-                    if (this.currentPresets[tag.key].tags[i].v == tag.value){
-                        return this.currentPresets[tag.key].tags[i];
-                    }
-                }
-            }
-            else {
-                return  {v: tag.value, lbl: tag.value}
-            }
-        }
-        else { //=> undefined ???
-        }
-        return null;
-    }
-
-
 }

@@ -19,8 +19,10 @@ import { ConfigService } from './config.service';
 
 declare var osmtogeojson: any;
 
-import {  union, bboxPolygon, area, BBox, pointOnSurface, 
-        polygon, multiPolygon, lineString, multiLineString } from '@turf/turf';
+import {
+    union, bboxPolygon, area, BBox, pointOnSurface, length,
+    polygon, multiPolygon, lineString, multiLineString
+} from '@turf/turf';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
 @Injectable()
@@ -32,8 +34,8 @@ export class OsmApiService {
         dev: { "api": 'https://master.apis.dev.openstreetmap.org', "overpass": "" }
     }
 
-    
- 
+
+
     user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
     changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     changeSetComment = 'Sortie avec Osm Go!';
@@ -382,7 +384,7 @@ export class OsmApiService {
 
             workerMergeData.postMessage({
                 newGeojson: newGeojsonStyled.data,
-                oldGeojson: oldGeojson, 
+                oldGeojson: oldGeojson,
                 bbox_geojson: bbox_geojson,
                 geojsonChanged: that.dataService.getGeojsonChanged()
             });
@@ -423,40 +425,39 @@ export class OsmApiService {
         }
         let bboxArea = area(featureBbox);
 
-            if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
-                let urlOverpassApi = 'https://overpass-api.de/api/interpreter';
+        if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
+            let urlOverpassApi = 'https://overpass-api.de/api/interpreter';
 
-                return this.httpClient.post(urlOverpassApi, this.getUrlOverpassApi(bbox), { responseType: 'text' })
-                    .map((res) => {
-                        let newDataJson = this.xmlOsmToFormatedGeojson(res);
-                        // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
-                        if (newDataJson.error){
-                            throw ErrorObservable.create(newDataJson.error);
-                        }
-                        this.setBbox(featureBbox);
-                        this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
-                    })
-                    .catch((error: any) => 
-                    { 
-                        return Observable.throw(error.message || 'Impossible de télécharger les données (overpassApi)')
+            return this.httpClient.post(urlOverpassApi, this.getUrlOverpassApi(bbox), { responseType: 'text' })
+                .map((res) => {
+                    let newDataJson = this.xmlOsmToFormatedGeojson(res);
+                    // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
+                    if (newDataJson.error) {
+                        throw ErrorObservable.create(newDataJson.error);
                     }
+                    this.setBbox(featureBbox);
+                    this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
+                })
+                .catch((error: any) => {
+                    return Observable.throw(error.message || 'Impossible de télécharger les données (overpassApi)')
+                }
                 );
-            }
-            else {
-                let url = this.getUrlApi() + '/api/0.6/map?bbox=' + bbox.join(',');
-                return this.httpClient.get(url, { responseType: 'text' })
-                    .map((res) => {
-                        let newDataJson = this.xmlOsmToFormatedGeojson(res);
-                        // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
-                        if (newDataJson.error){
-                            throw ErrorObservable.create(newDataJson.error);
-                        }
-                        this.setBbox(featureBbox);
-                        this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
-                    })
-                    .catch((error: any) => Observable.throw(error.message || 'Impossible de télécharger les données (api06)'));
-            }
-        
+        }
+        else {
+            let url = this.getUrlApi() + '/api/0.6/map?bbox=' + bbox.join(',');
+            return this.httpClient.get(url, { responseType: 'text' })
+                .map((res) => {
+                    let newDataJson = this.xmlOsmToFormatedGeojson(res);
+                    // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
+                    if (newDataJson.error) {
+                        throw ErrorObservable.create(newDataJson.error);
+                    }
+                    this.setBbox(featureBbox);
+                    this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
+                })
+                .catch((error: any) => Observable.throw(error.message || 'Impossible de télécharger les données (api06)'));
+        }
+
     }
 
     /* ne garde que les relations complètes (=> web worker?) (côté serveur?)*/
@@ -479,8 +480,8 @@ export class OsmApiService {
 
         let xml = new DOMParser().parseFromString(res, 'text/xml');
         if (xml.getElementsByTagName("remark")[0]
-            && xml.getElementsByTagName("remark")[0]['textContent']){
-            return {'error': xml.getElementsByTagName("remark")[0]['textContent'] }
+            && xml.getElementsByTagName("remark")[0]['textContent']) {
+            return { 'error': xml.getElementsByTagName("remark")[0]['textContent'] }
         }
         let geojson = osmtogeojson(xml).geojson;
         geojson.features = this.filterFeatures(geojson.features)
@@ -489,7 +490,8 @@ export class OsmApiService {
         return this.mapService.setIconStyle((featuresWayToPoint));
     }
 
-    // => web workers? effectué coté serveur
+    // => web workers?
+    // on en profite pour calculer les distances/surface
     private wayToPoint(FeatureCollection) {
         let features = FeatureCollection.features;
         for (let i = 0; i < features.length; i++) {
@@ -503,15 +505,19 @@ export class OsmApiService {
                     let geom;
                     switch (feature.geometry.type) {
                         case 'Polygon':
+                            feature.properties['mesure'] = area(feature.geometry)
                             geom = polygon(feature.geometry.coordinates);
                             break;
                         case 'MultiPolygon':
+                            feature.properties['mesure'] = area(feature.geometry)
                             geom = multiPolygon(feature.geometry.coordinates);
                             break;
                         case 'LineString':
+                            feature.properties['mesure'] = length(feature.geometry)
                             geom = lineString(feature.geometry.coordinates);
                             break;
                         case 'MultiLineString':
+                            feature.properties['mesure'] = length(feature.geometry)
                             geom = multiLineString(feature.geometry.coordinates);
                             break;
                     }

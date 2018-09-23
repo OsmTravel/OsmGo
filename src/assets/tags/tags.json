@@ -1,664 +1,4238 @@
 {
-        "advertising":{"type":"advertising", "lbl": "Dispositif publicitaire", "values":[
-        {"key": "billboard", "lbl": "Panneau publicitaire", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "board", "lbl": "Petit panneau publicitaire", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "poster_box", "lbl": "Caisson publicitaire double-face", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "totem", "lbl": "Totem (>6.5m)", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "column", "lbl": "Colonne Morris", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "flag", "lbl": "Drapeau", "lbl_alt": "", "icon": "maki-embassy-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "sign", "lbl": "sign", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "screen", "lbl": "Ecran", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "sculpture", "lbl": "sculpture / objet 3D", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "tarp", "lbl": "tarp", "lbl_alt": "", "icon": "maki-art-gallery-15", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "wall_painting", "lbl": "Peinture sur mur", "lbl_alt": "", "icon": "mi-painter", "markerColor": "#D73F29", "alert": "", "presets": [] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]},
-    "shop":{"type":"shop", "lbl": "Commerce", "values":[
-        {"key": "travel_agency", "lbl": "Agence de voyage", "lbl_alt": "", "icon": "mi-travel-agency",  "markerColor": "#A23337", "alert": "",
-         "presets": ["operator", "wheelchair"]},
-        {"key": "estate_agent", "lbl": "Agent immobilier", "lbl_alt": "", "icon": "mi-real-estate-agency",  "markerColor": "#A23337", "alert": "Préférez la catégorie 'Bureau'", 
-         "presets": ["operator", "wheelchair"] },
-        {"key": "insurance", "lbl": "Assurance", "lbl_alt": "", "icon": "mi-insurance-agency",  "markerColor": "#A23337", "alert": "Préférez la catégorie 'Bureau'", 
-         "presets": ["operator", "wheelchair"] },
-        {"key": "jewelry", "lbl": "Bijouterie", "lbl_alt": "", "icon": "mi-jewelry-store",  "markerColor": "#A23337", "alert": "",
-         "presets": ["operator", "wheelchair"] },
-        {"key": "butcher", "lbl": "Boucherie / Charcuterie", "lbl_alt": "", "icon": "custom-butcher",  "markerColor": "#A23337", "alert": "", 
-         "presets": ["butcher","organic", "wheelchair"] },
-        {"key": "bakery", "lbl": "Boulangerie", "lbl_alt": "", "icon": "mi-bakery",  "markerColor": "#A23337", "alert": "",
-         "presets": ["pastry_shop","organic", "wheelchair"] },
-        {"key": "art", "lbl": "Boutique d'art", "lbl_alt": "", "icon": "mi-art-gallery",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["art", "wheelchair"] },
-        {"key": "gift", "lbl": "Boutique de cadeaux", "lbl_alt": "", "icon": "fa-gift", "markerColor": "#A23337", "alert": "", 
-        "presets": [ "wheelchair"] },
-        {"key": "wine", "lbl": "Caviste", "lbl_alt": "", "icon": "mi-liquor-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "shopping_centre", "lbl": "Centre commercial", "lbl_alt": "", "icon": "mi-shopping-mall",  "markerColor": "#A23337", "alert": "shopping_centre : Préférer 'mal'",
-         "presets": ["wheelchair"] },
-        {"key": "hairdresser", "lbl": "Coiffeur", "lbl_alt": "", "icon": "mi-hair-care", "markerColor": "#A23337", "alert": "",
-         "presets": ["operator","male","female","wheelchair"] },
-        {"key": "confectionery", "lbl": "Confiserie", "lbl_alt": "sucreries, pâtisseries", "icon": "fa-birthday-cake", "markerColor": "#A23337", "alert": "",
-        "presets": ["operator","wheelchair"] },
-        {"key": "florist", "lbl": "Fleuriste", "lbl_alt": "", "icon": "mi-florist",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["operator","wheelchair"] },
-        {"key": "mall", "lbl": "Galerie marchande", "lbl_alt": "", "icon": "mi-department-store",  "markerColor": "#A23337", "alert": "",
-         "presets": ["wheelchair"] },
-        {"key": "car_repair", "lbl": "Garage Automobile", "lbl_alt": "", "icon": "mi-car-repair",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["operator","brand","wheelchair"] },
-        {"key": "department_store", "lbl": "Grand magasin", "lbl_alt": "", "icon": "mi-shopping-mall", "markerColor": "#A23337", "alert": "",
-        "presets": ["wheelchair"] },
-        {"key": "garden_centre", "lbl": "Jardinerie", "lbl_alt": "", "icon": "maki-garden-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "kiosk", "lbl": "Kiosque", "lbl_alt": "", "icon": "maki-library-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["lottery","wheelchair"] },
-        {"key": "laundry", "lbl": "Laverie / Blanchisserie", "lbl_alt": "", "icon": "maki-laundry-15",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["self_service", "wheelchair"] },
-        {"key": "books", "lbl": "Librairie", "lbl_alt": "", "icon": "maki-library-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["second_hand","wheelchair"] },
-        {"key": "organic", "lbl": "Magasin bio", "lbl_alt": "", "icon": "mi-florist", "markerColor": "#A23337", "alert": "Ne plus utiliser", 
-        "presets": ["wheelchair"] },
-        {"key": "outdoor", "lbl": "Magasin d'activités de plein air", "lbl_alt": "", "icon": "mi-climbing",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["operator","brand","wheelchair"] },
-        {"key": "food", "lbl": "Magasin d'alimentation", "lbl_alt": "", "icon": "mi-convenience-store",  "markerColor": "#A23337", "alert": "préférez 'deli'", 
-        "presets": ["wheelchair"] },
-        {"key": "furniture", "lbl": "Mobilier et décoration d'intérieur", "lbl_alt": "", "icon": "mi-furniture-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "pet", "lbl": "Magasin d'animaux", "lbl_alt": "", "icon": "mi-pet-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "electronics", "lbl": "Magasin d'électronique", "lbl_alt": "", "icon": "mi-electronics-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "charity", "lbl": "Magasin de bienfaisance", "lbl_alt": "", "icon": "mi-health", "markerColor": "#A23337", "alert": "", 
-        "presets": ["second_hand","wheelchair"] },
-        {"key": "beverages", "lbl": "Magasin de boissons", "lbl_alt": "", "icon": "mi-liquor-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "doityourself", "lbl": "Magasin de bricolage", "lbl_alt": "", "icon": "mi-hardware-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "shoes", "lbl": "Magasin de chaussures", "lbl_alt": "", "icon": "osm-shoes", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "cosmetics", "lbl": "Magasin de cosmétiques, parfumerie", "lbl_alt": "", "icon": "osm-perfumery",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "toys", "lbl": "Magasin de jouets", "lbl_alt": "", "icon": "maki-rocket-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "fashion", "lbl": "Magasin de mode", "lbl_alt": "", "icon": "mi-clothing-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "motorcycle", "lbl": "Magasin de moto", "lbl_alt": "", "icon": "",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "music", "lbl": "Disquaire", "lbl_alt": "Magasin de musique", "icon": "fa-music", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "musical_instrument", "lbl": "Magasin d'instrument de musique", "lbl_alt": "", "icon": "fa-music", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "copyshop", "lbl": "Magasin de photocopies", "lbl_alt": "reprographie", "icon": "mi-school", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "photo", "lbl": "Magasin de photographie", "lbl_alt": "", "icon": "mi-point-of-interest",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "farm", "lbl": "Magasin de produits agricoles", "lbl_alt": "", "icon": "maki-farm-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "chemist", "lbl": "Magasin de produits d'hygiène", "lbl_alt": "", "icon": "osm-chemist", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "beauty", "lbl": "Magasin de produits de beauté", "lbl_alt": "", "icon": "osm-beauty",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "sports", "lbl": "Magasin de sport", "lbl_alt": "", "icon": "mi-tennis",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "carpet", "lbl": "Magasin de tapis", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "mobile_phone", "lbl": "Magasin de téléphones mobiles", "lbl_alt": "", "icon": "fa-mobile-phone", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "video", "lbl": "Magasin de Location / vente vidéos", "lbl_alt": "", "icon": "mi-movie-rental", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "car", "lbl": "Concessionnaire automobile", "lbl_alt": "", "icon": "mi-car-dealer",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bicycle", "lbl": "Magasin de vélos", "lbl_alt": "", "icon": "maki-bicycle-share-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "clothes", "lbl": "Magasin de vêtements", "lbl_alt": "", "icon": "mi-clothing-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "general", "lbl": "Magasin généraliste", "lbl_alt": "", "icon": "mi-shopping-mall", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "hifi", "lbl": "Magasin Hi-Fi", "lbl_alt": "", "icon": "fa-headphones", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "computer", "lbl": "Magasin informatique", "lbl_alt": "", "icon": "fa-desktop", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "greengrocer", "lbl": "Marchand de fruits et légumes", "lbl_alt": "primeur", "icon": "osm-greengrocer", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "newsagent", "lbl": "Marchand de journaux", "lbl_alt": "", "icon": "fa-newspaper-o", "markerColor": "#A23337", "alert": "",
-        "presets": ["tobacco","wheelchair"] },
-        {"key": "bed", "lbl": "Magasin de literie", "lbl_alt": "lit, matelas", "icon": "mi-lodging", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "window_blind", "lbl": "Vente de stores", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "scuba_diving", "lbl": "Vente d'équipement de plongée sous-marine", "lbl_alt": "", "icon": "mi-scuba-diving", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "vacuum_cleaner", "lbl": "Vente d'aspirateurs", "lbl_alt": "électroménager", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "tyres", "lbl": "Vente de pneus", "lbl_alt": "", "icon": "maki-circle-stroked-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "swimming_pool", "lbl": "Magasin de piscines", "lbl_alt": "", "icon": "maki-swimming-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "fishing", "lbl": "Magasin de pêche", "lbl_alt": "", "icon": "mi-fishing-pier", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "weapons", "lbl": "Armurie", "lbl_alt": "vente d'armes", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "model", "lbl": "Magasin de modélisme", "lbl_alt": "model réduit", "icon": "maki-rocket-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "lamps", "lbl": "Vente de luminaires", "lbl_alt": "lampes", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "houseware", "lbl": "Vente d'articles ménagers", "lbl_alt": "lampes", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "optician", "lbl": "Opticien", "lbl_alt": "lunette", "icon": "osm-optician", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "stationery", "lbl": "Papeterie", "lbl_alt": "", "icon": "fa-file-text", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "car_parts", "lbl": "Pièces d'automobile", "lbl_alt": "", "icon": "mi-car-repair",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "fish", "lbl": "Poissonnerie", "lbl_alt": "", "icon": "mi-fish-cleaning",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "funeral_directors", "lbl": "Pompes funèbres", "lbl_alt": "", "icon": "mi-funeral-home",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "dry_cleaning", "lbl": "Pressing", "lbl_alt": "", "icon": "maki-laundry-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "hardware", "lbl": "Quincaillerie", "lbl_alt": "outillage, copie de clés", "icon": "mi-hardware-store", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "salon", "lbl": "Salon", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "supermarket", "lbl": "Supermarché", "lbl_alt": "", "icon": "mi-grocery-or-supermarket", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "car_dealer", "lbl": "Vendeur de voitures", "lbl_alt": "", "icon": "mi-car-dealer",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "convenience", "lbl": "Épicerie / Supérette", "lbl_alt": "", "icon": "mi-convenience-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "grocery", "lbl": "Épicerie alimentation non périssable", "lbl_alt": "", "icon": "mi-convenience-store",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "massage", "lbl": "Salon de massage", "lbl_alt": "", "icon": "mi-spa",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "frame", "lbl": "Vente d'encadrements", "lbl_alt": "", "icon": "fa-file-picture-o", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "hearing_aids", "lbl": "Audioprothésiste", "lbl_alt": "", "icon": "mi-assistive-listening-system",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "vacant", "lbl": "Local vacant", "lbl_alt": "", "icon": "mi-storage",  "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "fabric", "lbl": "Magasin de tissus", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "variety_store", "lbl": "Vente d'articles à petit prix", "lbl_alt": "", "icon": "fa-krw", "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "bag", "lbl": "Magasin de sacs, mallettes, valises", "lbl_alt": "", "icon": "mi-department-store",  "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "second_hand", "lbl": "Vente d'articles et de matériel d'occasion", "lbl_alt": "", "icon": "fa-krw", "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "deli", "lbl": "Épicerie vendant des produits de luxe", "lbl_alt": "", "icon": "mi-convenience-store",  "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "kitchen", "lbl": "Vente de cuisines", "lbl_alt": "", "icon": "mi-furniture-store",  "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "interior_decoration", "lbl": "Vente d'objets pour la décoration intérieure", "lbl_alt": "", "icon": "mi-furniture-store",  "markerColor": "#A23337", "alert": "", "presets": ["wheelchair"] },
-        {"key": "tattoo", "lbl": "Salon de tatouage", "lbl_alt": "", "icon": "mi-hindu-temple",  "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "e-cigarette", "lbl": "Vente de e-cigarette", "lbl_alt": "vape, cigarette électronique", "icon": "fa-magic", "markerColor": "#A23337", "alert": "", "presets": ["wheelchair"] },
-        {"key": "locksmith", "lbl": "Serrurier", "lbl_alt": "", "icon": "fa-key", "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "bathroom_furnishing", "lbl": "Vente d'accessoires de salle de bain", "lbl_alt": "", "icon": "mi-plumber",  "markerColor": "#A23337", "alert": "", "presets": ["wheelchair"] },
-        {"key": "cheese", "lbl": "Fromager, vente de fromages", "lbl_alt": "", "icon": "",  "markerColor": "#A23337", "alert": ""
-        , "presets": ["wheelchair"] },
-        {"key": "leather", "lbl": "Vente de vêtements ou maroquinerie en cuir", "lbl_alt": "", "icon": "",  "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "video_games", "lbl": "Location, vente de jeux vidéo", "lbl_alt": "", "icon": "maki-gaming-15", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "curtain", "lbl": "Magasin de rideaux ou tentures", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "antiques", "lbl": "Antiquaire, brocante", "lbl_alt": "", "icon": "mi-furniture-store", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "alcohol", "lbl": "Vente d'alcool", "lbl_alt": "", "icon": "maki-alcohol-shop-15", "markerColor": "#A23337", "alert": "Magasin de vente d'alcool propriété du gouvernement ou sous licence. N'existe pas en France", 
-        "presets": ["wheelchair"] },
-        {"key": "party", "lbl": "Vente d'accessoires pour la fête", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "coffee", "lbl": "Vente de café", "lbl_alt": "torrefacteur", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "seafood", "lbl": "Vente de produits de la mer", "lbl_alt": "Crustacés, coquillages...", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "pastry", "lbl": "Pâtisserie", "lbl_alt": "gâteaux, biscuits, tartes...", "icon": "osm-confectionery", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "tobacco", "lbl": "Bureau de tabac", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "medical_supply", "lbl": "magasin de fournitures médicales", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "herbalist", "lbl": "Herboristerie", "lbl_alt": "Plante médicinale", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "chocolate", "lbl": "Chocolatier", "lbl_alt": "vente de chocolats", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "dairy", "lbl": "Crémerie", "lbl_alt": "vente de produits laitiers", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "watches", "lbl": "Horlogerie", "lbl_alt": "Magasin vendant des montres", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "baby_goods", "lbl": "Magasin de puériculture", "lbl_alt": "Magasin vendant des objets pour bébé", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "erotic", "lbl": "Sex-shop", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "nutrition_supplements", "lbl": "Vente de compléments nutritionnels", "lbl_alt": "compléments alimentaire", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "electrical", "lbl": "Vente de fournitures et d'appareils éléctriques", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "fireplace", "lbl": "Magasin de cheminées, poêles, inserts à bois", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "garden_furniture", "lbl": "Equipement et mobilier de jardin ", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "anime", "lbl": "Anime", "lbl_alt": "manga, cosplay", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "games", "lbl": "Vente de jeux de société", "lbl_alt": "Jeux de plateau", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "glaziery", "lbl": "Vente de vitrages de fenêtres et de portes.", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#A23337", "alert": "", "presets": [] }
-    ]},
-
-    "amenity":{"type":"amenity", "lbl": "Équipement", "values":[
-        {"key": "embassy", "lbl": "Ambassade", "lbl_alt": "", "icon": "maki-embassy-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bus_station", "lbl": "Arrêt de bus", "lbl_alt": "", "icon": "mi-bus-station", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "auditorium", "lbl": "Auditorium", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "driving_school", "lbl": "Auto-école", "lbl_alt": "", "icon": "fa-car", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bench", "lbl": "Banc", "lbl_alt": "", "icon": "custom-bench", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["backrest","seats"] },
-        {"key": "bank", "lbl": "Banque", "lbl_alt": "", "icon": "maki-bank-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["brand","operator","wheelchair"] },
-        {"key": "bar", "lbl": "Bar", "lbl_alt": "", "icon": "maki-bar-15", "markerColor": "#EF9228", "alert": "",
-        "presets": ["wheelchair"] },
-        {"key": "pub", "lbl": "Pub", "lbl_alt": "", "icon": "mi-bar", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "library", "lbl": "Bibliothèque", "lbl_alt": "", "icon": "mi-library", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "brothel", "lbl": "Bordel", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "N'éxite pas en France", 
-        "presets": ["wheelchair"] },
-        {"key": "nightclub", "lbl": "Boîte de nuit", "lbl_alt": "", "icon": "maki-music-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "post_box", "lbl": "Boîtes aux lettres", "lbl_alt": "boite à lettre", "icon": "mi-post-box", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "post_office", "lbl": "Bureau de poste", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "public_building", "lbl": "Bâtiment public", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "cafe", "lbl": "Café", "lbl_alt": "", "icon": "mi-cafe", "markerColor": "#EF9228", "alert": "",
-        "presets": ["wheelchair"] },
-        {"key": "fire_station", "lbl": "Caserne de pompiers", "lbl_alt": "", "icon": "mi-fire-station", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "casino", "lbl": "Casino", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "arts_centre", "lbl": "Centre artistique", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "health_centre", "lbl": "Centre de santé", "lbl_alt": "", "icon": "mi-health", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "youth_centre", "lbl": "Centre pour la jeunesse", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "grave_yard", "lbl": "Cimetière", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "cinema", "lbl": "Cinéma", "lbl_alt": "", "icon": "maki-cinema-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "clinic", "lbl": "Clinique", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "club", "lbl": "Club", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "social_club", "lbl": "Club social", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "shopping", "lbl": "Commerce", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "waste_basket", "lbl": "Poubelle", "lbl_alt": "Corbeille", "icon": "maki-waste-basket-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "car_sharing", "lbl": "Station d'autopartage", "lbl_alt": "", "icon": "maki-car-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "ice_cream", "lbl": "Crème glacée", "lbl_alt": "", "icon": "maki-ice-cream-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "crematorium", "lbl": "Crématorium", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "atm", "lbl": "DAB $", "lbl_alt": "Distributeur automatique", "icon": "mi-atm", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "dentist", "lbl": "Dentiste", "lbl_alt": "", "icon": "maki-dentist-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "dormitory", "lbl": "Dortoir", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "drinking_water", "lbl": "Eau potable", "lbl_alt": "", "icon": "maki-drinking-water-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "fountain", "lbl": "Fontaine", "lbl_alt": "", "icon": "osm-fountain", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "hospital", "lbl": "Hôpital", "lbl_alt": "", "icon": "mi-hospital", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "hotel", "lbl": "Hôtel", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "kindergarten", "lbl": "Jardin d'enfants", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "car_wash", "lbl": "Station de lavage de voitures", "lbl_alt": "", "icon": "mi-car-wash", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "place_of_worship", "lbl": "Lieu de culte", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "car_rental", "lbl": "Location de voitures", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bicycle_rental", "lbl": "Location de vélos", "lbl_alt": "Vélib'", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "shop", "lbl": "Magasin", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "townhall", "lbl": "Mairie", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "retirement_home", "lbl": "Maison de retraite", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "nursing_home", "lbl": "Maison de santé", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "market", "lbl": "Marché", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "public_market", "lbl": "Marché public", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "doctors", "lbl": "Médecin", "lbl_alt": "Docteur", "icon": "maki-doctor-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "nursery", "lbl": "Nurserie", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "courthouse", "lbl": "Palais de justice", "lbl_alt": "", "icon": "fa-balance-scale", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "park", "lbl": "Parc", "lbl_alt": "", "icon": "maki-park-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "parking", "lbl": "Parking", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bicycle_parking", "lbl": "Parking à vélos", "lbl_alt": "", "icon": "maki-bicycle-15", "markerColor": "#1B75BB", "alert": "", 
-         "presets": ["bicycle_parking","operator","capacity","covered"] },
-        {"key": "pharmacy", "lbl": "Pharmacie", "lbl_alt": "", "icon": "mi-pharmacy", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["dispensing","wheelchair"] },
-        {"key": "marketplace", "lbl": "Place de marché", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "recycling", "lbl": "Point de recyclage", "lbl_alt": "Vide verre, décheterie", "icon": "recycling", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["recycling_type","recycling:glass_bottles","recycling:plastic","recycling:paper"] },
-        {"key": "police", "lbl": "Police", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "prison", "lbl": "Prison", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "preschool", "lbl": "Préscolaire", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "shelter", "lbl": "Abris", "lbl_alt": "refuge", "icon": "osm-shelter", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "restaurant", "lbl": "Restaurant", "lbl_alt": "", "icon": "mi-restaurant", "markerColor": "#EF9228", "alert": "", 
-         "presets": ["cuisine","wheelchair"] },
-        {"key": "fast_food", "lbl": "Restauration rapide / Fast food", "lbl_alt": "", "icon": "mi-food", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["cuisine","wheelchair"] },
-        {"key": "hall", "lbl": "Salle", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "village_hall", "lbl": "Salle communale", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "gym", "lbl": "Salle de gymnastique", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", "presets": [] },
-        {"key": "community_centre", "lbl": "Salle polyvalente", "lbl_alt": "salle des fêtes, municipale, maison de quartier", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "sauna", "lbl": "Sauna", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", "presets": [] },
-        {"key": "mountain_rescue", "lbl": "Secours en montagne", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "hunting_stand", "lbl": "Stand de tir", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "fuel", "lbl": "Station service", "lbl_alt": "", "icon": "maki-fuel-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "studio", "lbl": "Studio", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "supermarket", "lbl": "Supermarché", "lbl_alt": "", "icon": "mi-grocery-or-supermarket", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "taxi", "lbl": "Taxi", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "ferry_terminal", "lbl": "Terminal de ferry", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "theatre", "lbl": "Théâtre", "lbl_alt": "", "icon": "maki-theatre-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "toilets", "lbl": "Toilettes", "lbl_alt": "wc", "icon": "maki-toilet-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["fee","male", "female","wheelchair"] },
-        {"key": "emergency_phone", "lbl": "Téléphone d'urgence", "lbl_alt": "", "icon": "maki-telephone-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "telephone", "lbl": "Téléphone public", "lbl_alt": "", "icon": "maki-telephone-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "university", "lbl": "Université", "lbl_alt": "", "icon": "mi-university", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "veterinary", "lbl": "Vétérinaire", "lbl_alt": "", "icon": "mi-veterinary-care", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "reception_area", "lbl": "Zone de réception", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "school", "lbl": "Ecole", "lbl_alt": "", "icon": "mi-school",  "markerColor": "#EF9228", "alert": "", 
-        "presets": ["school:FR","wheelchair"] },
-        {"key": "college", "lbl": "Établissement d'enseignement supérieur", "lbl_alt": "", "icon": "fa-graduation-cap", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "swingerclub", "lbl": "Club echangiste", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "vending_machine", "lbl": "Distributeur automatique", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "Ne distribue pas d'argent != DAB", 
-        "presets": ["vending", "wheelchair"] },
-        {"key": "social_facility", "lbl": "Service social", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["social_facility","social_facility:for", "wheelchair"] },
-        {"key": "parking_entrance", "lbl": "Entrée de parking", "lbl_alt": "", "icon": "maki-parking-garage-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "dojo", "lbl": "Dojo", "lbl_alt": "aikido, judo, kendo, karate...", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "ticket_validator", "lbl": "Composteur de billets", "lbl_alt": "", "icon": "fa-outdent", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "bureau_de_change", "lbl": "Bureau de change", "lbl_alt": "", "icon": "maki-bank-15", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "bbq", "lbl": "Barbecue", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "music_school", "lbl": "Ecole de musique", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "language_school", "lbl": "Ecole de langues", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "charging_station", "lbl": "Station de recharge (véhicules électriques)", "lbl_alt": "", "icon": "osm-charging_station", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "stripclub", "lbl": "Boîte de strip-tease", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "clock", "lbl": "Horloge publique", "lbl_alt": "", "icon": "fa-clock-o", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-        {"key": "internet_cafe", "lbl": "Cybercafé", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "table", "lbl": "Table publique", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", 
-        "presets": [] },
-
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#EF9228", "alert": "", "presets": [] }
-    ]},
-
-    "public_transport":{"type":"public_transport", "lbl": "Transport en commun", "values":[
-        {"key": "stop_position", "lbl": "Arret", "lbl_alt": "", "icon": "mi-bus-station", "markerColor": "#C057A0", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "platform", "lbl": "Platforme d'attente", "lbl_alt": "", "icon": "mi-bus-station", "markerColor": "#C057A0", "alert": "", 
+  "advertising": {
+    "type": "advertising",
+    "lbl": "Dispositif publicitaire",
+    "values": [
+      {
+        "key": "billboard",
+        "lbl": "Panneau publicitaire",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "board",
+        "lbl": "Petit panneau publicitaire",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "poster_box",
+        "lbl": "Caisson publicitaire double-face",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "totem",
+        "lbl": "Totem (>6.5m)",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "column",
+        "lbl": "Colonne Morris",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "flag",
+        "lbl": "Drapeau",
+        "lbl_alt": "",
+        "icon": "maki-embassy-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sign",
+        "lbl": "sign",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "screen",
+        "lbl": "Ecran",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sculpture",
+        "lbl": "sculpture / objet 3D",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tarp",
+        "lbl": "tarp",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "wall_painting",
+        "lbl": "Peinture sur mur",
+        "lbl_alt": "",
+        "icon": "mi-painter",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "shop": {
+    "type": "shop",
+    "lbl": "Commerce",
+    "values": [
+      {
+        "key": "travel_agency",
+        "lbl": "Agence de voyage",
+        "lbl_alt": "",
+        "icon": "mi-travel-agency",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "wheelchair", "shop#travel_agency#operator"]
+      },
+      {
+        "key": "estate_agent",
+        "lbl": "Agent immobilier",
+        "lbl_alt": "",
+        "icon": "mi-real-estate-agency",
+        "markerColor": "#A23337",
+        "alert": "Préférez la catégorie 'Bureau'",
+        "presets": ["operator", "wheelchair", "shop#estate_agent#operator"]
+      },
+      {
+        "key": "insurance",
+        "lbl": "Assurance",
+        "lbl_alt": "",
+        "icon": "mi-insurance-agency",
+        "markerColor": "#A23337",
+        "alert": "Préférez la catégorie 'Bureau'",
+        "presets": ["operator", "wheelchair"]
+      },
+      {
+        "key": "jewelry",
+        "lbl": "Bijouterie",
+        "lbl_alt": "",
+        "icon": "mi-jewelry-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "wheelchair"]
+      },
+      {
+        "key": "butcher",
+        "lbl": "Boucherie / Charcuterie",
+        "lbl_alt": "",
+        "icon": "custom-butcher",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["butcher", "organic", "wheelchair"]
+      },
+      {
+        "key": "bakery",
+        "lbl": "Boulangerie",
+        "lbl_alt": "",
+        "icon": "mi-bakery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["pastry_shop", "organic", "wheelchair"]
+      },
+      {
+        "key": "art",
+        "lbl": "Boutique d'art",
+        "lbl_alt": "",
+        "icon": "mi-art-gallery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["art", "wheelchair"]
+      },
+      {
+        "key": "gift",
+        "lbl": "Boutique de cadeaux",
+        "lbl_alt": "",
+        "icon": "fa-gift",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "wine",
+        "lbl": "Caviste",
+        "lbl_alt": "",
+        "icon": "mi-liquor-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hairdresser",
+        "lbl": "Coiffeur",
+        "lbl_alt": "",
+        "icon": "mi-hair-care",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "male", "female", "wheelchair"]
+      },
+      {
+        "key": "confectionery",
+        "lbl": "Confiserie",
+        "lbl_alt": "sucreries, pâtisseries",
+        "icon": "fa-birthday-cake",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "wheelchair"]
+      },
+      {
+        "key": "florist",
+        "lbl": "Fleuriste",
+        "lbl_alt": "",
+        "icon": "mi-florist",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "wheelchair"]
+      },
+      {
+        "key": "mall",
+        "lbl": "Galerie marchande",
+        "lbl_alt": "",
+        "icon": "mi-department-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "car_repair",
+        "lbl": "Garage Automobile",
+        "lbl_alt": "",
+        "icon": "mi-car-repair",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "brand", "wheelchair"]
+      },
+      {
+        "key": "department_store",
+        "lbl": "Grand magasin",
+        "lbl_alt": "",
+        "icon": "mi-shopping-mall",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "garden_centre",
+        "lbl": "Jardinerie",
+        "lbl_alt": "",
+        "icon": "maki-garden-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "kiosk",
+        "lbl": "Kiosque",
+        "lbl_alt": "",
+        "icon": "maki-library-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["lottery", "wheelchair"]
+      },
+      {
+        "key": "laundry",
+        "lbl": "Laverie / Blanchisserie",
+        "lbl_alt": "",
+        "icon": "maki-laundry-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["self_service", "wheelchair"]
+      },
+      {
+        "key": "books",
+        "lbl": "Librairie",
+        "lbl_alt": "",
+        "icon": "maki-library-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["second_hand", "wheelchair"]
+      },
+      {
+        "key": "organic",
+        "lbl": "Magasin bio",
+        "lbl_alt": "",
+        "icon": "mi-florist",
+        "markerColor": "#A23337",
+        "alert": "C'est une erreur, ne plus utiliser",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "outdoor",
+        "lbl": "Magasin d'activités de plein air",
+        "lbl_alt": "",
+        "icon": "mi-climbing",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["operator", "brand", "wheelchair"]
+      },
+      {
+        "key": "food",
+        "lbl": "Magasin d'alimentation",
+        "lbl_alt": "",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "préférez 'deli'",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "furniture",
+        "lbl": "Mobilier et décoration d'intérieur",
+        "lbl_alt": "",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "pet",
+        "lbl": "Magasin d'animaux",
+        "lbl_alt": "",
+        "icon": "mi-pet-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "electronics",
+        "lbl": "Magasin d'électronique",
+        "lbl_alt": "",
+        "icon": "mi-electronics-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "charity",
+        "lbl": "Magasin de bienfaisance",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["second_hand", "wheelchair"]
+      },
+      {
+        "key": "beverages",
+        "lbl": "Magasin de boissons",
+        "lbl_alt": "",
+        "icon": "mi-liquor-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "doityourself",
+        "lbl": "Magasin de bricolage",
+        "lbl_alt": "",
+        "icon": "mi-hardware-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "shoes",
+        "lbl": "Magasin de chaussures",
+        "lbl_alt": "",
+        "icon": "osm-shoes",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "cosmetics",
+        "lbl": "Magasin de cosmétiques, parfumerie",
+        "lbl_alt": "",
+        "icon": "osm-perfumery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "toys",
+        "lbl": "Magasin de jouets",
+        "lbl_alt": "",
+        "icon": "maki-rocket-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fashion",
+        "lbl": "Magasin de mode",
+        "lbl_alt": "",
+        "icon": "mi-clothing-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "motorcycle",
+        "lbl": "Magasin de moto",
+        "lbl_alt": "",
+        "icon": "fa-motorcycle",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "music",
+        "lbl": "Disquaire",
+        "lbl_alt": "Magasin de musique",
+        "icon": "fa-music",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "musical_instrument",
+        "lbl": "Magasin d'instrument de musique",
+        "lbl_alt": "",
+        "icon": "osm-musical_instrument",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "copyshop",
+        "lbl": "Magasin de photocopies",
+        "lbl_alt": "reprographie",
+        "icon": "mi-school",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "photo",
+        "lbl": "Magasin de photographie",
+        "lbl_alt": "",
+        "icon": "mi-point-of-interest",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "farm",
+        "lbl": "Magasin de produits agricoles",
+        "lbl_alt": "",
+        "icon": "maki-farm-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "chemist",
+        "lbl": "Magasin de produits d'hygiène",
+        "lbl_alt": "",
+        "icon": "osm-chemist",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "beauty",
+        "lbl": "Magasin de produits de beauté",
+        "lbl_alt": "",
+        "icon": "osm-beauty",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "sports",
+        "lbl": "Magasin de sport",
+        "lbl_alt": "",
+        "icon": "mi-tennis",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "carpet",
+        "lbl": "Magasin de tapis",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "mobile_phone",
+        "lbl": "Magasin de téléphones mobiles",
+        "lbl_alt": "",
+        "icon": "fa-mobile-phone",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "video",
+        "lbl": "Magasin de Location / vente vidéos",
+        "lbl_alt": "",
+        "icon": "mi-movie-rental",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "car",
+        "lbl": "Concessionnaire automobile",
+        "lbl_alt": "",
+        "icon": "mi-car-dealer",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bicycle",
+        "lbl": "Magasin de vélos",
+        "lbl_alt": "",
+        "icon": "maki-bicycle-share-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "clothes",
+        "lbl": "Magasin de vêtements",
+        "lbl_alt": "",
+        "icon": "mi-clothing-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "general",
+        "lbl": "Magasin généraliste",
+        "lbl_alt": "",
+        "icon": "mi-shopping-mall",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hifi",
+        "lbl": "Magasin Hi-Fi",
+        "lbl_alt": "",
+        "icon": "fa-headphones",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "computer",
+        "lbl": "Magasin informatique",
+        "lbl_alt": "",
+        "icon": "fa-desktop",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "greengrocer",
+        "lbl": "Marchand de fruits et légumes",
+        "lbl_alt": "primeur",
+        "icon": "osm-greengrocer",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "newsagent",
+        "lbl": "Marchand de journaux",
+        "lbl_alt": "",
+        "icon": "fa-newspaper-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["tobacco", "wheelchair"]
+      },
+      {
+        "key": "bed",
+        "lbl": "Magasin de literie",
+        "lbl_alt": "lit, matelas",
+        "icon": "mi-lodging",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "window_blind",
+        "lbl": "Vente de stores",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "scuba_diving",
+        "lbl": "Vente d'équipement de plongée sous-marine",
+        "lbl_alt": "",
+        "icon": "mi-scuba-diving",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "vacuum_cleaner",
+        "lbl": "Vente d'aspirateurs",
+        "lbl_alt": "électroménager",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "tyres",
+        "lbl": "Vente de pneus",
+        "lbl_alt": "",
+        "icon": "maki-circle-stroked-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "swimming_pool",
+        "lbl": "Magasin de piscines",
+        "lbl_alt": "",
+        "icon": "maki-swimming-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fishing",
+        "lbl": "Magasin de pêche",
+        "lbl_alt": "",
+        "icon": "mi-fishing-pier",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "weapons",
+        "lbl": "Armurie",
+        "lbl_alt": "vente d'armes",
+        "icon": "fa-crosshairs",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "model",
+        "lbl": "Magasin de modélisme",
+        "lbl_alt": "model réduit",
+        "icon": "maki-rocket-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "lamps",
+        "lbl": "Vente de luminaires",
+        "lbl_alt": "lampes",
+        "icon": "fa-lightbulb-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "houseware",
+        "lbl": "Vente d'articles ménagers",
+        "lbl_alt": "lampes",
+        "icon": "maki-laundry-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "optician",
+        "lbl": "Opticien",
+        "lbl_alt": "lunette",
+        "icon": "osm-optician",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "stationery",
+        "lbl": "Papeterie",
+        "lbl_alt": "",
+        "icon": "fa-file-text",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "car_parts",
+        "lbl": "Pièces d'automobile",
+        "lbl_alt": "",
+        "icon": "mi-car-repair",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fish",
+        "lbl": "Poissonnerie",
+        "lbl_alt": "",
+        "icon": "mi-fish-cleaning",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "funeral_directors",
+        "lbl": "Pompes funèbres",
+        "lbl_alt": "",
+        "icon": "mi-funeral-home",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "dry_cleaning",
+        "lbl": "Pressing",
+        "lbl_alt": "",
+        "icon": "maki-laundry-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hardware",
+        "lbl": "Quincaillerie",
+        "lbl_alt": "outillage, copie de clés",
+        "icon": "mi-hardware-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "supermarket",
+        "lbl": "Supermarché",
+        "lbl_alt": "",
+        "icon": "mi-grocery-or-supermarket",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "convenience",
+        "lbl": "Épicerie / Supérette",
+        "lbl_alt": "",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "grocery",
+        "lbl": "Épicerie alimentation non périssable",
+        "lbl_alt": "",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "massage",
+        "lbl": "Salon de massage",
+        "lbl_alt": "",
+        "icon": "mi-spa",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "frame",
+        "lbl": "Vente d'encadrements",
+        "lbl_alt": "",
+        "icon": "fa-file-picture-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hearing_aids",
+        "lbl": "Audioprothésiste",
+        "lbl_alt": "",
+        "icon": "mi-assistive-listening-system",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "vacant",
+        "lbl": "Local vacant",
+        "lbl_alt": "",
+        "icon": "mi-storage",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fabric",
+        "lbl": "Magasin de tissus",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "variety_store",
+        "lbl": "Vente d'articles à petit prix",
+        "lbl_alt": "",
+        "icon": "fa-krw",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bag",
+        "lbl": "Magasin de sacs, mallettes, valises",
+        "lbl_alt": "",
+        "icon": "mi-department-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "second_hand",
+        "lbl": "Vente d'articles et de matériel d'occasion",
+        "lbl_alt": "",
+        "icon": "fa-krw",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "deli",
+        "lbl": "Épicerie vendant des produits de luxe",
+        "lbl_alt": "",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "kitchen",
+        "lbl": "Vente de cuisines",
+        "lbl_alt": "",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "interior_decoration",
+        "lbl": "Vente d'objets pour la décoration intérieure",
+        "lbl_alt": "",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "tattoo",
+        "lbl": "Salon de tatouage",
+        "lbl_alt": "",
+        "icon": "mi-hindu-temple",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "e-cigarette",
+        "lbl": "Vente de e-cigarette",
+        "lbl_alt": "vape, cigarette électronique",
+        "icon": "fa-magic",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "locksmith",
+        "lbl": "Serrurier",
+        "lbl_alt": "",
+        "icon": "fa-key",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bathroom_furnishing",
+        "lbl": "Vente d'accessoires de salle de bain",
+        "lbl_alt": "",
+        "icon": "mi-plumber",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "cheese",
+        "lbl": "Fromager, vente de fromages",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "leather",
+        "lbl": "Vente de vêtements ou maroquinerie en cuir",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "video_games",
+        "lbl": "Location, vente de jeux vidéo",
+        "lbl_alt": "",
+        "icon": "maki-gaming-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "curtain",
+        "lbl": "Magasin de rideaux ou tentures",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "antiques",
+        "lbl": "Antiquaire, brocante",
+        "lbl_alt": "",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "alcohol",
+        "lbl": "Vente d'alcool",
+        "lbl_alt": "",
+        "icon": "maki-alcohol-shop-15",
+        "markerColor": "#A23337",
+        "alert": "Magasin de vente d'alcool propriété du gouvernement ou sous licence. N'existe pas en France",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "party",
+        "lbl": "Vente d'accessoires pour la fête",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "coffee",
+        "lbl": "Vente de café / torréfacteur",
+        "lbl_alt": "torrefacteur",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "seafood",
+        "lbl": "Vente de produits de la mer",
+        "lbl_alt": "Crustacés, coquillages...",
+        "icon": "mi-fish-cleaning",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "pastry",
+        "lbl": "Pâtisserie",
+        "lbl_alt": "gâteaux, biscuits, tartes...",
+        "icon": "osm-confectionery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "tobacco",
+        "lbl": "Bureau de tabac",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "medical_supply",
+        "lbl": "magasin de fournitures médicales",
+        "lbl_alt": "",
+        "icon": "mi-doctor",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "herbalist",
+        "lbl": "Herboristerie",
+        "lbl_alt": "Plante médicinale",
+        "icon": "fa-pagelines",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "chocolate",
+        "lbl": "Chocolatier",
+        "lbl_alt": "vente de chocolats",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "dairy",
+        "lbl": "Crémerie",
+        "lbl_alt": "vente de produits laitiers",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "watches",
+        "lbl": "Horlogerie",
+        "lbl_alt": "Magasin vendant des montres",
+        "icon": "fa-clock-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "baby_goods",
+        "lbl": "Magasin de puériculture",
+        "lbl_alt": "Magasin vendant des objets pour bébé",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "erotic",
+        "lbl": "Sex-shop",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "nutrition_supplements",
+        "lbl": "Vente de compléments nutritionnels",
+        "lbl_alt": "compléments alimentaire",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "electrical",
+        "lbl": "Vente de fournitures et d'appareils éléctriques",
+        "lbl_alt": "",
+        "icon": "fa-lightbulb-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fireplace",
+        "lbl": "Magasin de cheminées, poêles, inserts à bois",
+        "lbl_alt": "",
+        "icon": "fa-fire",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "garden_furniture",
+        "lbl": "Equipement et mobilier de jardin ",
+        "lbl_alt": "",
+        "icon": "maki-garden-center-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "anime",
+        "lbl": "Anime",
+        "lbl_alt": "manga, cosplay",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "games",
+        "lbl": "Vente de jeux de société",
+        "lbl_alt": "Jeux de plateau",
+        "icon": "none",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "glaziery",
+        "lbl": "Vente de vitrages de fenêtres et de portes.",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "gas",
+        "lbl": "Vente de bouteille de gaz",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ticket",
+        "lbl": "Vente de tickets / billetterie",
+        "lbl_alt": "Tickets de concerts, événements, transport public ...",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "frozen_food",
+        "lbl": "Vente d'aliments surgelés",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "boutique",
+        "lbl": "Magasin de Haute couture",
+        "lbl_alt": "",
+        "icon": "maki-clothing-store-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "perfumery",
+        "lbl": "Parfumerie",
+        "lbl_alt": "",
+        "icon": "osm-perfumery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "paint",
+        "lbl": "Magasin de peinture",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tea",
+        "lbl": "Vente de thé",
+        "lbl_alt": "",
+        "icon": "osm-Tea-14",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "trade",
+        "lbl": "Grossiste",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pet_grooming",
+        "lbl": "Salon de toilettage",
+        "lbl_alt": "",
+        "icon": "maki-dog-park-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sewing",
+        "lbl": "Vente de fournitures de couture",
+        "lbl_alt": "vente de tissu, de fil, des aiguilles à tricoter, des machines à coudre",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "agrarian",
+        "lbl": "Vente de produits agricoles",
+        "lbl_alt": "pesticides, des engrais, des semences certifiées, du matériel agricole",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "amenity": {
+    "type": "amenity",
+    "lbl": "Équipement",
+    "values": [
+      {
+        "key": "embassy",
+        "lbl": "Ambassade",
+        "lbl_alt": "",
+        "icon": "maki-embassy-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bus_station",
+        "lbl": "Arrêt de bus",
+        "lbl_alt": "",
+        "icon": "mi-bus-station",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "auditorium",
+        "lbl": "Auditorium",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "driving_school",
+        "lbl": "Auto-école",
+        "lbl_alt": "",
+        "icon": "fa-car",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bench",
+        "lbl": "Banc",
+        "lbl_alt": "",
+        "icon": "custom-bench",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["backrest", "seats"]
+      },
+      {
+        "key": "bank",
+        "lbl": "Banque",
+        "lbl_alt": "",
+        "icon": "maki-bank-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["brand", "operator", "wheelchair"]
+      },
+      {
+        "key": "bar",
+        "lbl": "Bar",
+        "lbl_alt": "",
+        "icon": "maki-bar-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "pub",
+        "lbl": "Pub",
+        "lbl_alt": "",
+        "icon": "mi-bar",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "library",
+        "lbl": "Bibliothèque",
+        "lbl_alt": "",
+        "icon": "mi-library",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "brothel",
+        "lbl": "Bordel",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "N'éxite pas en France",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "nightclub",
+        "lbl": "Boîte de nuit",
+        "lbl_alt": "",
+        "icon": "maki-music-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "post_box",
+        "lbl": "Boîtes aux lettres",
+        "lbl_alt": "boite à lettre",
+        "icon": "mi-post-box",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "post_office",
+        "lbl": "Bureau de poste",
+        "lbl_alt": "",
+        "icon": "maki-post-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "public_building",
+        "lbl": "Bâtiment public",
+        "lbl_alt": "",
+        "icon": "fa-building-o",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "cafe",
+        "lbl": "Café",
+        "lbl_alt": "",
+        "icon": "mi-cafe",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fire_station",
+        "lbl": "Caserne de pompiers",
+        "lbl_alt": "",
+        "icon": "mi-fire-station",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "casino",
+        "lbl": "Casino",
+        "lbl_alt": "",
+        "icon": "mi-casino",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "arts_centre",
+        "lbl": "Centre artistique",
+        "lbl_alt": "",
+        "icon": "mi-art-gallery",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "health_centre",
+        "lbl": "Centre de santé",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "youth_centre",
+        "lbl": "Centre pour la jeunesse",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "grave_yard",
+        "lbl": "Cimetière",
+        "lbl_alt": "",
+        "icon": "mi-cemetery",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "cinema",
+        "lbl": "Cinéma",
+        "lbl_alt": "",
+        "icon": "maki-cinema-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "clinic",
+        "lbl": "Clinique",
+        "lbl_alt": "",
+        "icon": "fa-hospital-o",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "club",
+        "lbl": "Club",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "social_club",
+        "lbl": "Club social",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "waste_basket",
+        "lbl": "Poubelle",
+        "lbl_alt": "Corbeille",
+        "icon": "maki-waste-basket-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "car_sharing",
+        "lbl": "Station d'autopartage",
+        "lbl_alt": "",
+        "icon": "maki-car-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ice_cream",
+        "lbl": "Crème glacée",
+        "lbl_alt": "",
+        "icon": "maki-ice-cream-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "crematorium",
+        "lbl": "Crématorium",
+        "lbl_alt": "",
+        "icon": "fa-fire",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "atm",
+        "lbl": "DAB $",
+        "lbl_alt": "Distributeur automatique",
+        "icon": "mi-atm",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "dentist",
+        "lbl": "Dentiste",
+        "lbl_alt": "",
+        "icon": "maki-dentist-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "dormitory",
+        "lbl": "Dortoir",
+        "lbl_alt": "",
+        "icon": "fa-bed",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "drinking_water",
+        "lbl": "Eau potable",
+        "lbl_alt": "",
+        "icon": "maki-drinking-water-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fountain",
+        "lbl": "Fontaine",
+        "lbl_alt": "",
+        "icon": "osm-fountain",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hospital",
+        "lbl": "Hôpital",
+        "lbl_alt": "",
+        "icon": "mi-hospital",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hotel",
+        "lbl": "Hôtel",
+        "lbl_alt": "",
+        "icon": "fa-bed",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "kindergarten",
+        "lbl": "Jardin d'enfants",
+        "lbl_alt": "crèches, haltes-garderies",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["nursery", "wheelchair"]
+      },
+      {
+        "key": "car_wash",
+        "lbl": "Station de lavage de voitures",
+        "lbl_alt": "",
+        "icon": "mi-car-wash",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "place_of_worship",
+        "lbl": "Lieu de culte",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "car_rental",
+        "lbl": "Location de voitures",
+        "lbl_alt": "",
+        "icon": "mi-car-rental",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bicycle_rental",
+        "lbl": "Location de vélos",
+        "lbl_alt": "Vélib'",
+        "icon": "mi-bicycle-store",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "shop",
+        "lbl": "Magasin",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "townhall",
+        "lbl": "Mairie",
+        "lbl_alt": "Hotel de ville",
+        "icon": "maki-town-hall-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "retirement_home",
+        "lbl": "Maison de retraite",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "nursing_home",
+        "lbl": "Maison de santé",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "market",
+        "lbl": "Marché",
+        "lbl_alt": "",
+        "icon": "fa-apple",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "doctors",
+        "lbl": "Médecin",
+        "lbl_alt": "Docteur",
+        "icon": "maki-doctor-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "nursery",
+        "lbl": "Nurserie",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "Déprécié, utiliser : amenity=kindergarten + nursery=yes.",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "courthouse",
+        "lbl": "Palais de justice",
+        "lbl_alt": "",
+        "icon": "fa-balance-scale",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "park",
+        "lbl": "Parc",
+        "lbl_alt": "",
+        "icon": "maki-park-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "parking",
+        "lbl": "Parking",
+        "lbl_alt": "",
+        "icon": "mi-parking",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bicycle_parking",
+        "lbl": "Parking à vélos",
+        "lbl_alt": "",
+        "icon": "maki-bicycle-15",
+        "markerColor": "#1B75BB",
+        "alert": "",
+        "presets": ["bicycle_parking", "operator", "capacity", "covered"]
+      },
+      {
+        "key": "pharmacy",
+        "lbl": "Pharmacie",
+        "lbl_alt": "",
+        "icon": "mi-pharmacy",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["dispensing", "wheelchair"]
+      },
+      {
+        "key": "marketplace",
+        "lbl": "Place de marché",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "recycling",
+        "lbl": "Point de recyclage",
+        "lbl_alt": "Vide verre, décheterie",
+        "icon": "recycling",
+        "markerColor": "#EF9228",
+        "alert": "",
         "presets": [
-            "bench", "wheelchair", "shelter", "operator"
-            ] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#C057A0", "alert": "", "presets": [] }
-    ]},
-
-    "emergency":{"type":"urgence", "lbl": "Urgence", "values":[
-        {"key": "fire_hydrant", "lbl": "Borne d'incendie", "lbl_alt": "Borne incendie, borne-fontaine, borne fontaine, bouche d'incendie", "icon": "maki-fire-station-15", "markerColor": "#75030B", "alert": "", 
-         "presets": ["fire_hydrant:type", "fire_hydrant:position","fire_hydrant:diameter"] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#75030B", "alert": "", 
-        "presets": [] }
-    ]},
-
-    "leisure":{"type":"leisure", "lbl": "Loisirs ", "values":[
-        {"key": "adult_gaming_centre", "lbl": "Salle de jeux pour adultes", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "amusement_arcade", "lbl": "Salle d'arcade", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bandstand", "lbl": "Kiosque à musique.", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "bird_hide", "lbl": "Observatoire d'oiseaux", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "dance", "lbl": "Salle de danse", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "dog_park", "lbl": "Parc à chien", "lbl_alt": "", "icon": "maki-dog-park-15", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "firepit", "lbl": "Emplacement pour feu de camp", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "hackerspace", "lbl": "Hackerspace", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "ice_rink", "lbl": "Patinoire", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "marina", "lbl": "Marina", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "miniature_golf", "lbl": "Mini golf", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "park", "lbl": "Parc", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "pitch", "lbl": "Terrain de sport", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "playground", "lbl": "Aire de jeu", "lbl_alt": "", "icon": "maki-playground-15", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "sports_centre", "lbl": "Centre sportif", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "stadium", "lbl": "Stade", "lbl_alt": "", "icon": "maki-stadium-15", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "summer_camp", "lbl": "Colonie de vacances", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "swimming_pool", "lbl": "Piscine", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "water_park", "lbl": "Parc aquatique.", "lbl_alt": "", "icon": "mi-diving", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "wildlife_hide", "lbl": "Observatoire d'animaux", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "sauna", "lbl": "Sauna", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]},
-
-    "craft":{"type":"craft", "lbl": "Artisanat", "values":[
-        {"key": "basket_maker", "lbl": "Vannier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "beekeeper", "lbl": "Apiculteur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "blacksmith", "lbl": "Forgeron", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "brewery", "lbl": "Brasserie", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "boatbuilder", "lbl": "Charpentier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "bookbinder", "lbl": "Relieur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "carpenter", "lbl": "Charpentier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "caterer", "lbl": "Traiteur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "clockmaker", "lbl": "Horloger", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "confectionery", "lbl": "Confiserie", "lbl_alt": "magasin de bonbons ou de chocolats", "icon": "fa-birthday-cake", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "dressmaker", "lbl": "Atelier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "electrician", "lbl": "Électricien", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "floorer", "lbl": "Solier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "gardener", "lbl": "Paysagiste", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "glaziery", "lbl": "Verrerie", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "handicraft", "lbl": "Artisanat", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "hvac", "lbl": "Climatisation", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "insulation", "lbl": "Isolation thermique", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "jeweller", "lbl": "Bijoutier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "key_cutter", "lbl": "Reproduction de clés", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "locksmith", "lbl": "Serrurier", "lbl_alt": "", "icon": "fa-key", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "metal_construction", "lbl": "Constructions métalliques", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "optician", "lbl": "Opticien", "lbl_alt": "", "icon": "fa-eye", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "painter", "lbl": "Peintre", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "parquet_layer", "lbl": "Poseur de patquet", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "photographer", "lbl": "Photographe", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "photographic_laboratory", "lbl": "Laboratoire photo", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "plasterer", "lbl": "Plâtrier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "plumber", "lbl": "Plombier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "pottery", "lbl": "Potier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "rigger", "lbl": "Gréeur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "roofer", "lbl": "Couvreur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "saddler", "lbl": "Sellier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "sailmaker", "lbl": "Voilier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "sawmill", "lbl": "Scierie", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "sculptor", "lbl": "Sculpteur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "shoemaker", "lbl": "Cordonnier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "stonemason", "lbl": "Tailleur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "chimney_sweeper", "lbl": "Ramoneur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "tailor", "lbl": "Tailleur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "tiler", "lbl": "Carreleur", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "tinsmith", "lbl": "Ferblantier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "upholsterer", "lbl": "Tapissier", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "watchmaker", "lbl": "Horloger", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "window_construction", "lbl": "Portes et fenêtres", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", "presets": [] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-
-    ]},
-    "tourism":{"type":"tourism", "lbl": "Tourisme", "values":[
-        {"key": "alpine_hut", "lbl": "Refuge de montagne", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "attraction", "lbl": "Attraction touristique", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "artwork", "lbl": "Œuvre d'art", "lbl_alt": "Oeuvre d'art, sculture", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "camp_site", "lbl": "Camping", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "caravan_site", "lbl": "Aire pour caravanes", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "gallery", "lbl": "Galerie d'art", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "hostel", "lbl": "Auberge de jeunesse", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "hotel", "lbl": "Hôtel", "lbl_alt": "", "icon": "maki-lodging-15", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "information", "lbl": "Office de tourisme, Point d'information", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "motel", "lbl": "Motel", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "museum", "lbl": "Musée", "lbl_alt": "", "icon": "mi-museum", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "picnic_site", "lbl": "Aire de pique-nique", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "theme_park", "lbl": "Parc d'attraction", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "viewpoint", "lbl": "Point de vue", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "wilderness_hut", "lbl": "Abri de bivouac", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": [] },
-        {"key": "zoo", "lbl": "Zoo", "lbl_alt": "", "icon": "", "markerColor": "#5B396C", "alert": "", 
-        "presets": ["wheelchair"] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]},
-    "office":{"type":"office", "lbl": "Bureau", "values":[
-        {"key": "accountant", "lbl": "Comptable", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "advertising_agency", "lbl": "Agence publicitaire", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "architect", "lbl": "Architecte", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "association", "lbl": "Association", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "company", "lbl": "Entreprise", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "educational_institution", "lbl": "Établissement d'enseignement.", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "employment_agency", "lbl": "Agence de placement", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "estate_agent", "lbl": "Agent immobilier", "lbl_alt": "", "icon": "mi-real-estate-agency", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "forestry", "lbl": "Administration forestière", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "foundation", "lbl": "Fondation", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "government", "lbl": "Administration gouvernementale", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "guide", "lbl": "Guides touristiques", "lbl_alt": "guides de montagne, guides de plongée, ...", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "insurance", "lbl": "Assurance", "lbl_alt": "", "icon": "mi-insurance-agency", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "it", "lbl": "Spécialistes en informatique", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "lawyer", "lbl": "Juriste, avocat", "lbl_alt": "huissier, notaire,etc.", "icon": "mi-lawyer", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "newspaper", "lbl": "Journal ou agence de presse", "lbl_alt": "", "icon": "fa-newspaper-o", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "ngo", "lbl": "ONG", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "notary", "lbl": "Étude de notaire", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "political_party", "lbl": "Parti politique.", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "private_investigator", "lbl": "Détective privé", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "religion", "lbl": "Instance religieuse", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", 
-        "presets": ["religion"] },
-        {"key": "research", "lbl": "Recherche & Développement", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "tax", "lbl": "Administration fiscale", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "tax_advisor", "lbl": "Conseiller fiscal.", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "telecommunication", "lbl": "Compagnie de télécommunications", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "travel_agent", "lbl": "Agence de voyage", "lbl_alt": "", "icon": "", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "water_utility", "lbl": "Agence de l'eau.", "lbl_alt": "", "icon": "maki-water-15", "markerColor": "#F5BB3A", "alert": "", "presets": [] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]},
-    "man_made":{"type":"man_made", "lbl": "Édifice", "values":[
-        {"key": "lighthouse", "lbl": "Phare", "lbl_alt": "", "icon": "maki-lighthouse-15", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-        {"key": "ligmasththouse", "lbl": "Mât d'émission radio", "lbl_alt": "Émetteur de téléphonie mobile, mât de transmission", "icon": "maki-monument-15", "markerColor": "#D3D3D3", "alert": "", "presets": [] },  
-        {"key": "advertising", "lbl": "Dispositifs Publicitaires", "lbl_alt": "", "icon": "maki-monument-15", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-        {"key": "cross", "lbl": "Croix sommitale", "lbl_alt": "Croix avec peu de valeur historique ou religieuse", "icon": "", "markerColor": "#D3D3D3", "alert": "", "presets": [] },  
-        {"key": "flagpole", "lbl": "Mât de drapeau", "lbl_alt": "", "icon": "", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-        {"key": "surveillance", "lbl": "Caméra de vidéo-surveillance", "lbl_alt": "", "icon": "", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-        {"key": "water_tower", "lbl": "Château d'eau", "lbl_alt": "", "icon": "osm-water-tower", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-        {"key": "water_well", "lbl": "Puits", "lbl_alt": "", "icon": "", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-        {"key": "water_tap", "lbl": "Robinet d'eau", "lbl_alt": "", "icon": "", "markerColor": "#D3D3D3", "alert": "", "presets": [] },
-
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]},
-    "healthcare":{"type":"healthcare", "lbl": "Santé", "values":[
-        {"key": "alternative", "lbl": "Medecine alternative", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "audiologist", "lbl": "Audiologist", "lbl_alt": "", "icon": "mi-assistive-listening-system", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "blood_bank", "lbl": "Banque du sang", "lbl_alt": "", "icon": "maki-blood-bank-15", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "blood_donation", "lbl": "Dont du sang", "lbl_alt": "", "icon": "maki-blood-bank-15", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "centre", "lbl": "Centre médical", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "clinic", "lbl": "Clinic", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "dentist", "lbl": "Dentiste", "lbl_alt": "", "icon": "maki-dentist-15", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "doctor", "lbl": "Medecin", "lbl_alt": "Docteur", "icon": "maki-doctor-15", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "hospital", "lbl": "Hôpital", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "midwife", "lbl": "Sage-femme", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "occupational_therapist", "lbl": "occupational_therapist", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "physiotherapist", "lbl": "physiotherapist", "lbl_alt": "", "icon": "mi-physiotherapist", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "podiatrist", "lbl": "podiatrist", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "psychotherapist", "lbl": "psychotherapist", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "rehabilitation", "lbl": "rehabilitation", "lbl_alt": "", "icon": "mi-health", "markerColor": "#C9BCF0", "alert": "", "presets": [] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]},
-    "natural":{"type":"natural", "lbl": "Naturel", "values":[
-        {"key": "tree", "lbl": "Arbre isolé ou remarquable", "lbl_alt": "Arbre isolé, arbre remarquable", "icon": "maki-park-15", "markerColor": "#009549", "alert": "", "presets": [] },
-        {"key": "*", "lbl": "_NC", "lbl_alt": "", "icon": "", "markerColor": "#000000", "alert": "", "presets": [] }
-    ]}
+          "recycling_type",
+          "recycling:glass_bottles",
+          "recycling:plastic",
+          "recycling:paper"
+        ]
+      },
+      {
+        "key": "police",
+        "lbl": "Police",
+        "lbl_alt": "",
+        "icon": "maki-police-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "prison",
+        "lbl": "Prison",
+        "lbl_alt": "",
+        "icon": "maki-prison-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "shelter",
+        "lbl": "Abris",
+        "lbl_alt": "refuge",
+        "icon": "osm-shelter",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "restaurant",
+        "lbl": "Restaurant",
+        "lbl_alt": "",
+        "icon": "mi-restaurant",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["cuisine", "wheelchair"]
+      },
+      {
+        "key": "fast_food",
+        "lbl": "Restauration rapide / Fast food",
+        "lbl_alt": "",
+        "icon": "mi-food",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["cuisine", "wheelchair"]
+      },
+      {
+        "key": "hall",
+        "lbl": "Salle",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "village_hall",
+        "lbl": "Salle communale",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "gym",
+        "lbl": "Salle de gymnastique",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "community_centre",
+        "lbl": "Salle polyvalente",
+        "lbl_alt": "salle des fêtes, municipale, maison de quartier",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "sauna",
+        "lbl": "Sauna",
+        "lbl_alt": "",
+        "icon": "mi-spa",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "mountain_rescue",
+        "lbl": "Secours en montagne",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hunting_stand",
+        "lbl": "Stand de tir",
+        "lbl_alt": "",
+        "icon": "fa-crosshairs",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fuel",
+        "lbl": "Station service",
+        "lbl_alt": "",
+        "icon": "maki-fuel-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "studio",
+        "lbl": "Studio",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "supermarket",
+        "lbl": "Supermarché",
+        "lbl_alt": "",
+        "icon": "mi-grocery-or-supermarket",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "taxi",
+        "lbl": "Taxi",
+        "lbl_alt": "",
+        "icon": "mi-taxi-stand",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ferry_terminal",
+        "lbl": "Terminal de ferry",
+        "lbl_alt": "",
+        "icon": "mi-boat-tour",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "theatre",
+        "lbl": "Théâtre",
+        "lbl_alt": "",
+        "icon": "maki-theatre-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "toilets",
+        "lbl": "Toilettes",
+        "lbl_alt": "wc",
+        "icon": "maki-toilet-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["fee", "male", "female", "wheelchair"]
+      },
+      {
+        "key": "telephone",
+        "lbl": "Téléphone public",
+        "lbl_alt": "",
+        "icon": "maki-telephone-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "university",
+        "lbl": "Université",
+        "lbl_alt": "",
+        "icon": "mi-university",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "veterinary",
+        "lbl": "Vétérinaire",
+        "lbl_alt": "",
+        "icon": "mi-veterinary-care",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "school",
+        "lbl": "Ecole",
+        "lbl_alt": "",
+        "icon": "mi-school",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["school:FR", "wheelchair"]
+      },
+      {
+        "key": "college",
+        "lbl": "Établissement d'enseignement supérieur",
+        "lbl_alt": "",
+        "icon": "fa-graduation-cap",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "swingerclub",
+        "lbl": "Club echangiste",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "vending_machine",
+        "lbl": "Distributeur automatique",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "Ne distribue pas d'argent != DAB",
+        "presets": ["vending", "wheelchair"]
+      },
+      {
+        "key": "social_facility",
+        "lbl": "Service social",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["social_facility", "social_facility:for", "wheelchair"]
+      },
+      {
+        "key": "parking_entrance",
+        "lbl": "Entrée de parking",
+        "lbl_alt": "",
+        "icon": "maki-parking-garage-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "dojo",
+        "lbl": "Dojo",
+        "lbl_alt": "aikido, judo, kendo, karate...",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ticket_validator",
+        "lbl": "Composteur de billets",
+        "lbl_alt": "",
+        "icon": "fa-outdent",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bureau_de_change",
+        "lbl": "Bureau de change",
+        "lbl_alt": "",
+        "icon": "maki-bank-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bbq",
+        "lbl": "Barbecue",
+        "lbl_alt": "",
+        "icon": "maki-fire-station-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "music_school",
+        "lbl": "Ecole de musique",
+        "lbl_alt": "",
+        "icon": "fa-music",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "language_school",
+        "lbl": "Ecole de langues",
+        "lbl_alt": "",
+        "icon": "fa-language",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "charging_station",
+        "lbl": "Station de recharge (véhicules électriques)",
+        "lbl_alt": "",
+        "icon": "osm-charging_station",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "stripclub",
+        "lbl": "Boîte de strip-tease",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "clock",
+        "lbl": "Horloge publique",
+        "lbl_alt": "",
+        "icon": "fa-clock-o",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "internet_cafe",
+        "lbl": "Cybercafé",
+        "lbl_alt": "",
+        "icon": "fa-internet-explorer",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "table",
+        "lbl": "Table publique",
+        "lbl_alt": "",
+        "icon": "maki-picnic-site-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "parking_space",
+        "lbl": "Emplacement de parking particulier",
+        "lbl_alt": "",
+        "icon": "maki-parking-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "swimming_pool",
+        "lbl": "Piscine (déconseillé) ",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "leisure=swimming_pool",
+        "presets": []
+      },
+      {
+        "key": "lavoir",
+        "lbl": "Lavoir",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "motorcycle_parking",
+        "lbl": "Parking à moto",
+        "lbl_alt": "stationnement de moto",
+        "icon": "fa-motorcycle",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "shower",
+        "lbl": "Douche publique",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "public_bookcase",
+        "lbl": "Livres en libre service",
+        "lbl_alt": "",
+        "icon": "fa-book",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "vehicle_inspection",
+        "lbl": "Centre de contrôle technique",
+        "lbl_alt": "",
+        "icon": "mi-car-repair",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_point",
+        "lbl": "Eau potable (disponible en grande quantité)",
+        "lbl_alt": "",
+        "icon": "maki-drinking-water-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "compressed_air",
+        "lbl": "Air comprimé",
+        "lbl_alt": "Gonfleur de pneu",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "watering_place",
+        "lbl": "Point d'eau potable pour animaux ",
+        "lbl_alt": "",
+        "icon": "maki-water-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "dancing_school",
+        "lbl": "dancing_school",
+        "lbl_alt": "Ecole de danse",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "photo_booth",
+        "lbl": "Photomaton",
+        "lbl_alt": "",
+        "icon": "fa-camera",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "animal_breeding",
+        "lbl": "Elevage d'animaux",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sanitary_dump_station",
+        "lbl": "Vidange eaux usées",
+        "lbl_alt": "dispositif pour vider les eaux usées (camping car, etc)",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "polling_station",
+        "lbl": "Bureau de vote",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "coworking_space",
+        "lbl": "Espace de coworking",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "boat_rental",
+        "lbl": "Location de beateaux",
+        "lbl_alt": "",
+        "icon": "mi-boating",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "monastery",
+        "lbl": "Monastère",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "public_transport": {
+    "type": "public_transport",
+    "lbl": "Transport en commun",
+    "values": [
+      {
+        "key": "stop_position",
+        "lbl": "Arret",
+        "lbl_alt": "",
+        "icon": "mi-bus-station",
+        "markerColor": "#C057A0",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "platform",
+        "lbl": "Platforme d'attente",
+        "lbl_alt": "",
+        "icon": "mi-bus-station",
+        "markerColor": "#C057A0",
+        "alert": "",
+        "presets": ["bench", "wheelchair", "shelter", "operator"]
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#C057A0",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "emergency": {
+    "type": "urgence",
+    "lbl": "Urgence",
+    "values": [
+      {
+        "key": "fire_hydrant",
+        "lbl": "Borne d'incendie",
+        "lbl_alt": "Borne incendie, borne-fontaine, borne fontaine, bouche d'incendie",
+        "icon": "maki-fire-station-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [
+          "fire_hydrant:type",
+          "fire_hydrant:position",
+          "fire_hydrant:diameter"
+        ]
+      },
+      {
+        "key": "defibrillator",
+        "lbl": "Défibrilateur",
+        "lbl_alt": "",
+        "icon": "fa-heartbeat",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "phone",
+        "lbl": "Téléphone d'urgence",
+        "lbl_alt": "",
+        "icon": "maki-telephone-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "assembly_point",
+        "lbl": "Point de rassemblement",
+        "lbl_alt": "",
+        "icon": "fa-compress",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "siren",
+        "lbl": "Sirène d'alerte",
+        "lbl_alt": "",
+        "icon": "osm-musical_instrument",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "lifeguard_tower",
+        "lbl": "Tour de sauveteur",
+        "lbl_alt": "",
+        "icon": "maki-ranger-station-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "life_ring",
+        "lbl": "Bouée de sauvetage",
+        "lbl_alt": "",
+        "icon": "life-ring-solid",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_tank",
+        "lbl": "Réserves d'eau anti-incendie ",
+        "lbl_alt": "cuve / bassin anti-incendie ",
+        "icon": "maki-fire-station-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fire_extinguisher",
+        "lbl": "Extincteur ",
+        "lbl_alt": "",
+        "icon": "fa-fire-extinguisher",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "leisure": {
+    "type": "leisure",
+    "lbl": "Loisirs ",
+    "values": [
+      {
+        "key": "adult_gaming_centre",
+        "lbl": "Salle de jeux pour adultes",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "amusement_arcade",
+        "lbl": "Salle d'arcade",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bandstand",
+        "lbl": "Kiosque à musique.",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "bird_hide",
+        "lbl": "Observatoire d'oiseaux",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "dance",
+        "lbl": "Salle de danse",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "dog_park",
+        "lbl": "Parc à chien",
+        "lbl_alt": "",
+        "icon": "maki-dog-park-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "firepit",
+        "lbl": "Emplacement pour feu de camp",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hackerspace",
+        "lbl": "Hackerspace",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "ice_rink",
+        "lbl": "Patinoire",
+        "lbl_alt": "",
+        "icon": "mi-ice-skating",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "marina",
+        "lbl": "Marina",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "miniature_golf",
+        "lbl": "Mini golf",
+        "lbl_alt": "",
+        "icon": "maki-cricket-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "park",
+        "lbl": "Parc",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "pitch",
+        "lbl": "Terrain de sport",
+        "lbl_alt": "",
+        "icon": "maki-basketball-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "playground",
+        "lbl": "Aire de jeu",
+        "lbl_alt": "",
+        "icon": "maki-playground-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sports_centre",
+        "lbl": "Centre sportif",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "stadium",
+        "lbl": "Stade",
+        "lbl_alt": "",
+        "icon": "maki-stadium-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "summer_camp",
+        "lbl": "Colonie de vacances",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "swimming_pool",
+        "lbl": "Piscine",
+        "lbl_alt": "",
+        "icon": "maki-swimming-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "water_park",
+        "lbl": "Parc aquatique.",
+        "lbl_alt": "",
+        "icon": "mi-diving",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "wildlife_hide",
+        "lbl": "Observatoire d'animaux",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sauna",
+        "lbl": "Sauna",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "garden",
+        "lbl": "Jardin",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "picnic_table",
+        "lbl": "Table de Table de pique-nique",
+        "lbl_alt": "",
+        "icon": "maki-picnic-site-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "track",
+        "lbl": "Piste de course",
+        "lbl_alt": "Piste d’athlétisme, de chevaux, etc",
+        "icon": "maki-pitch-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "slipway",
+        "lbl": "Rampe de mise à l'eau",
+        "lbl_alt": "",
+        "icon": "mi-boat-ramp",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "golf_course",
+        "lbl": "Terrain de golf",
+        "lbl_alt": "",
+        "icon": "maki-golf-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fitness_station",
+        "lbl": "Equipements fitness ",
+        "lbl_alt": "",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#5B396C",
+        "alert": "En extérieur uniquement",
+        "presets": []
+      },
+      {
+        "key": "horse_riding",
+        "lbl": "Centre équestre",
+        "lbl_alt": "équitation, cheval",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fitness_centre",
+        "lbl": "Salle de sport",
+        "lbl_alt": "centre de fitness ",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "nature_reserve",
+        "lbl": "Réserve naturelle",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fishing",
+        "lbl": "Spot de pêche",
+        "lbl_alt": "",
+        "icon": "mi-fishing-pier",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bowling_alley",
+        "lbl": "Bowling",
+        "lbl_alt": "",
+        "icon": "mi-bowling-alley",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "escape_game",
+        "lbl": "Escape game",
+        "lbl_alt": "escape room,  quest room",
+        "icon": "fa-key",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "table_tennis_table",
+        "lbl": "Table de ping-pong",
+        "lbl_alt": "pingpong, tenis de table",
+        "icon": "maki-tennis-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "craft": {
+    "type": "craft",
+    "lbl": "Artisanat",
+    "values": [
+      {
+        "key": "basket_maker",
+        "lbl": "Vannier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "beekeeper",
+        "lbl": "Apiculteur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "blacksmith",
+        "lbl": "Forgeron",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "brewery",
+        "lbl": "Brasserie",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "boatbuilder",
+        "lbl": "Charpentier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bookbinder",
+        "lbl": "Relieur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "carpenter",
+        "lbl": "Charpentier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "caterer",
+        "lbl": "Traiteur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "clockmaker",
+        "lbl": "Horloger",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "confectionery",
+        "lbl": "Confiserie",
+        "lbl_alt": "magasin de bonbons ou de chocolats",
+        "icon": "fa-birthday-cake",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "dressmaker",
+        "lbl": "Atelier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "electrician",
+        "lbl": "Électricien",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "floorer",
+        "lbl": "Solier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "gardener",
+        "lbl": "Paysagiste",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "glaziery",
+        "lbl": "Verrerie",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "handicraft",
+        "lbl": "Artisanat",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hvac",
+        "lbl": "Climatisation",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "insulation",
+        "lbl": "Isolation thermique",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "jeweller",
+        "lbl": "Bijoutier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "key_cutter",
+        "lbl": "Reproduction de clés",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "locksmith",
+        "lbl": "Serrurier",
+        "lbl_alt": "",
+        "icon": "fa-key",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "metal_construction",
+        "lbl": "Constructions métalliques",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "optician",
+        "lbl": "Opticien",
+        "lbl_alt": "",
+        "icon": "fa-eye",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "painter",
+        "lbl": "Peintre",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "parquet_layer",
+        "lbl": "Poseur de patquet",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "photographer",
+        "lbl": "Photographe",
+        "lbl_alt": "",
+        "icon": "maki-attraction-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "photographic_laboratory",
+        "lbl": "Laboratoire photo",
+        "lbl_alt": "",
+        "icon": "fa-camera",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "plasterer",
+        "lbl": "Plâtrier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "plumber",
+        "lbl": "Plombier",
+        "lbl_alt": "",
+        "icon": "mi-plumber",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pottery",
+        "lbl": "Potier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "rigger",
+        "lbl": "Gréeur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "roofer",
+        "lbl": "Couvreur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "saddler",
+        "lbl": "Sellier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sailmaker",
+        "lbl": "Voilier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sawmill",
+        "lbl": "Scierie",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sculptor",
+        "lbl": "Sculpteur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "shoemaker",
+        "lbl": "Cordonnier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "stonemason",
+        "lbl": "Tailleur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "chimney_sweeper",
+        "lbl": "Ramoneur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tailor",
+        "lbl": "Tailleur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tiler",
+        "lbl": "Carreleur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tinsmith",
+        "lbl": "Ferblantier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "upholsterer",
+        "lbl": "Tapissier",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "watchmaker",
+        "lbl": "Horloger",
+        "lbl_alt": "",
+        "icon": "fa-clock-o",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "window_construction",
+        "lbl": "Portes et fenêtres",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "winery",
+        "lbl": "Producteur de vin",
+        "lbl_alt": "",
+        "icon": "mi-liquor-store",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "builder",
+        "lbl": "Entreprise du BTP",
+        "lbl_alt": " travaux de construction et de travaux publics",
+        "icon": "none",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "distillery",
+        "lbl": "Distillerie",
+        "lbl_alt": "",
+        "icon": "mi-liquor-store",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "electronics_repair",
+        "lbl": "Réparateur de produits électroniques ",
+        "lbl_alt": "Réparateur téléphone, ordinateurs, etc",
+        "icon": "fa-mobile-phone",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "tourism": {
+    "type": "tourism",
+    "lbl": "Tourisme",
+    "values": [
+      {
+        "key": "alpine_hut",
+        "lbl": "Refuge de montagne",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "attraction",
+        "lbl": "Attraction touristique",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "artwork",
+        "lbl": "Œuvre d'art",
+        "lbl_alt": "Oeuvre d'art, sculture",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "camp_site",
+        "lbl": "Camping",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "caravan_site",
+        "lbl": "Aire pour caravanes",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "gallery",
+        "lbl": "Galerie d'art",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hostel",
+        "lbl": "Auberge de jeunesse",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "hotel",
+        "lbl": "Hôtel",
+        "lbl_alt": "",
+        "icon": "maki-lodging-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "information",
+        "lbl": "Office de tourisme, Point d'information",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "motel",
+        "lbl": "Motel",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "museum",
+        "lbl": "Musée",
+        "lbl_alt": "",
+        "icon": "mi-museum",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "picnic_site",
+        "lbl": "Aire de pique-nique",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "theme_park",
+        "lbl": "Parc d'attraction",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "viewpoint",
+        "lbl": "Point de vue",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "wilderness_hut",
+        "lbl": "Abri de bivouac",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "zoo",
+        "lbl": "Zoo",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "guest_house",
+        "lbl": "Chambres d'hôte",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "chalet",
+        "lbl": "Meublé de tourisme / gîte",
+        "lbl_alt": "gîte rural",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "apartment",
+        "lbl": "Appartements de location de vacances",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "Le bâtiment entier doit être voué à la location de vacances ",
+        "presets": []
+      },
+      {
+        "key": "aquarium",
+        "lbl": "Aquarium public",
+        "lbl_alt": "",
+        "icon": "none",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "office": {
+    "type": "office",
+    "lbl": "Bureau",
+    "values": [
+      {
+        "key": "accountant",
+        "lbl": "Comptable",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "advertising_agency",
+        "lbl": "Agence publicitaire",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "architect",
+        "lbl": "Architecte",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "association",
+        "lbl": "Association",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "company",
+        "lbl": "Entreprise",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "educational_institution",
+        "lbl": "Établissement d'enseignement.",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "employment_agency",
+        "lbl": "Agence de placement",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "estate_agent",
+        "lbl": "Agent immobilier",
+        "lbl_alt": "",
+        "icon": "mi-real-estate-agency",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "forestry",
+        "lbl": "Administration forestière",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "foundation",
+        "lbl": "Fondation",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "government",
+        "lbl": "Administration gouvernementale",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "guide",
+        "lbl": "Guides touristiques",
+        "lbl_alt": "guides de montagne, guides de plongée, ...",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "insurance",
+        "lbl": "Assurance",
+        "lbl_alt": "",
+        "icon": "mi-insurance-agency",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "it",
+        "lbl": "Spécialistes en informatique",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "lawyer",
+        "lbl": "Juriste, avocat",
+        "lbl_alt": "huissier, notaire,etc.",
+        "icon": "mi-lawyer",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "newspaper",
+        "lbl": "Journal ou agence de presse",
+        "lbl_alt": "",
+        "icon": "fa-newspaper-o",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ngo",
+        "lbl": "ONG",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "notary",
+        "lbl": "Étude de notaire",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "political_party",
+        "lbl": "Parti politique.",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "private_investigator",
+        "lbl": "Détective privé",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "religion",
+        "lbl": "Instance religieuse",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["religion"]
+      },
+      {
+        "key": "research",
+        "lbl": "Recherche & Développement",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tax",
+        "lbl": "Administration fiscale",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tax_advisor",
+        "lbl": "Conseiller fiscal.",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "telecommunication",
+        "lbl": "Compagnie de télécommunications",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "travel_agent",
+        "lbl": "Agence de voyage",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_utility",
+        "lbl": "Agence de l'eau.",
+        "lbl_alt": "",
+        "icon": "maki-water-15",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "administrative",
+        "lbl": "Administration",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "Déprécié, utiliser : office=government.",
+        "presets": []
+      }
+    ]
+  },
+  "man_made": {
+    "type": "man_made",
+    "lbl": "Édifice",
+    "values": [
+      {
+        "key": "lighthouse",
+        "lbl": "Phare",
+        "lbl_alt": "",
+        "icon": "maki-lighthouse-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "communications_tower",
+        "lbl": "Mât d'émission radio (+ 100m)",
+        "lbl_alt": "Émetteur de téléphonie mobile, mât de transmission",
+        "icon": "maki-monument-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "advertising",
+        "lbl": "Dispositifs Publicitaires",
+        "lbl_alt": "",
+        "icon": "maki-monument-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "cross",
+        "lbl": "Croix sommitale",
+        "lbl_alt": "Croix avec peu de valeur historique ou religieuse",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "flagpole",
+        "lbl": "Mât de drapeau",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "surveillance",
+        "lbl": "Caméra de vidéo-surveillance",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_tower",
+        "lbl": "Château d'eau",
+        "lbl_alt": "",
+        "icon": "osm-water-tower",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_well",
+        "lbl": "Puits",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_tap",
+        "lbl": "Robinet d'eau",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "survey_point",
+        "lbl": "Borne géodésique, piliers de triangulation",
+        "lbl_alt": "équipements fixes utilisés par les topographes",
+        "icon": "none",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "storage_tank",
+        "lbl": "Cuve de stockage (liquide)",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pier",
+        "lbl": "Jetée",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "Devrait être uniquement sous forme de polygone... ",
+        "presets": []
+      },
+      {
+        "key": "wastewater_plant",
+        "lbl": "Station d'épuration",
+        "lbl_alt": "Traitement des eaux usées",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pipeline",
+        "lbl": "Pipeline",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "Doit être un ligne...",
+        "presets": []
+      },
+      {
+        "key": "tower",
+        "lbl": "Tour",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "reservoir_covered",
+        "lbl": "Réservoir d'eau enterré ",
+        "lbl_alt": "Château d'eau",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "works",
+        "lbl": "Usine / production industriel",
+        "lbl_alt": "Usine automobile, raffinerie, etc",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "mast",
+        "lbl": "Petit mat ",
+        "lbl_alt": "Pylône de télécommunication, etc",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "street_cabinet",
+        "lbl": "Armoire de rue",
+        "lbl_alt": "Armoire techniques, compteurs de l'éclairage public etc..",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "silo",
+        "lbl": "Silo à grain",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "monitoring_station",
+        "lbl": "Stations de mesure ",
+        "lbl_alt": "station de surveillance, limnimètre, marégraphe, pollution, météo",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "windmill",
+        "lbl": "Moulin à vent ",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "watermill",
+        "lbl": "Moulin à eau ",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "chimney",
+        "lbl": "Cheminé industrielle",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "Ne taguer que si > 10m",
+        "presets": []
+      },
+      {
+        "key": "adit",
+        "lbl": "Une entrée d'une galerie de mine",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "Doit être (quasiment) horizontale ",
+        "presets": []
+      },
+      {
+        "key": "dovecote",
+        "lbl": "Pigeonnier",
+        "lbl_alt": "Colombier",
+        "icon": "none",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "snow_cannon",
+        "lbl": "Canon à neige",
+        "lbl_alt": "enneigeur",
+        "icon": "mi-snow",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pumping_station",
+        "lbl": "Station de pompage",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "crane",
+        "lbl": "Grue (permanente) ",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "mineshaft",
+        "lbl": "Puits de mine",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "healthcare": {
+    "type": "healthcare",
+    "lbl": "Santé",
+    "values": [
+      {
+        "key": "alternative",
+        "lbl": "Medecine alternative",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "audiologist",
+        "lbl": "Audiologist",
+        "lbl_alt": "",
+        "icon": "mi-assistive-listening-system",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "blood_bank",
+        "lbl": "Banque du sang",
+        "lbl_alt": "",
+        "icon": "maki-blood-bank-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "blood_donation",
+        "lbl": "Dont du sang",
+        "lbl_alt": "",
+        "icon": "maki-blood-bank-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "centre",
+        "lbl": "Centre médical",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "clinic",
+        "lbl": "Clinic",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "dentist",
+        "lbl": "Dentiste",
+        "lbl_alt": "",
+        "icon": "maki-dentist-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "doctor",
+        "lbl": "Medecin",
+        "lbl_alt": "Docteur",
+        "icon": "maki-doctor-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hospital",
+        "lbl": "Hôpital",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "midwife",
+        "lbl": "Sage-femme",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "occupational_therapist",
+        "lbl": "occupational_therapist",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "physiotherapist",
+        "lbl": "physiotherapist",
+        "lbl_alt": "",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "podiatrist",
+        "lbl": "podiatrist",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "psychotherapist",
+        "lbl": "psychotherapist",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "rehabilitation",
+        "lbl": "rehabilitation",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "laboratory",
+        "lbl": "Laboratoire de biologie médicale ",
+        "lbl_alt": "laboratoire d'analyses médicales ",
+        "icon": "",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "historic": {
+    "type": "historic",
+    "lbl": "Historique ",
+    "values": [
+      {
+        "key": "wayside_cross",
+        "lbl": "Croix historique",
+        "lbl_alt": "",
+        "icon": "maki-religious-christian-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "memorial",
+        "lbl": "Petit mémorial",
+        "lbl_alt": "monument aux morts, stèle, plaque commémorative",
+        "icon": "maki-monument-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "monument",
+        "lbl": "Grand mémorial",
+        "lbl_alt": "",
+        "icon": "maki-museum-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "archaeological_site",
+        "lbl": "Monuments antiques",
+        "lbl_alt": "fouilles archéologiques",
+        "icon": "none",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "castle",
+        "lbl": "Chateau",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fort",
+        "lbl": "Fort",
+        "lbl_alt": "",
+        "icon": "fa-empire",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ruins",
+        "lbl": "Ruine historique",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "wayside_shrine",
+        "lbl": "Petit autel",
+        "lbl_alt": "",
+        "icon": "maki-religious-christian-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "boundary_stone",
+        "lbl": "Borne frontière",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tomb",
+        "lbl": "Tombes d'intérêt historique",
+        "lbl_alt": "",
+        "icon": "mi-cemetery",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "building",
+        "lbl": "Bâtiment historique ",
+        "lbl_alt": "",
+        "icon": "maki-building-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "natural": {
+    "type": "natural",
+    "lbl": "Naturel",
+    "values": [
+      {
+        "key": "tree",
+        "lbl": "Arbre isolé ou remarquable",
+        "lbl_alt": "Arbre isolé, arbre remarquable",
+        "icon": "maki-park-15",
+        "markerColor": "#009549",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#009549",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water",
+        "lbl": "Eau",
+        "lbl_alt": "",
+        "icon": "maki-water-15",
+        "markerColor": "#009549",
+        "alert": "Doit être une surface",
+        "presets": []
+      }
+    ]
+  }
 }

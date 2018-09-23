@@ -5,13 +5,14 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     template: `
    	    <ion-card>
 				<ion-card-header>
-					<b>{{tag.key}}</b>
+				<i class="fa fa-code" aria-hidden="true"></i>	<b>{{tag.key}}</b>
 				</ion-card-header>
 				<ion-card-content>
 					<ion-grid>
 						<ion-row>
 							<ion-col width-90>
 								<ion-item>
+								
 									<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
 								</ion-item>
 							</ion-col>

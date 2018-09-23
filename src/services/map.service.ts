@@ -63,14 +63,14 @@ export class MapService {
     this.domMarkerPosition.className = 'positionMarkersSize';
 
     this.arrowDirection = document.createElement('div');
-    // locationMapIcon-wo-orientation
+
     this.arrowDirection.className = 'positionMarkersSize locationMapIcon';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)'
 
     this.eventDomMainReady.subscribe(mes => {
       mapboxgl.accessToken = 'pk.eyJ1IjoiZHozMTY0MjQiLCJhIjoiNzI3NmNkOTcyNWFlNGQxNzU2OTA1N2EzN2FkNWIwMTcifQ.NS8KWg47FzfLPlKY0JMNiQ';
-      this.locationService.eventLocationIsReady.subscribe(data => {
+      this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
         this.map.setZoom(19);
       })
       this.initMap();
@@ -104,7 +104,7 @@ export class MapService {
     for (let i = 0; i < features.length; i++) {
       let feature = features[i];
       if (feature.properties.type !== 'node') {
-        let featureWay = { 'type': 'Feature', 'properties': { 'hexColor': feature.properties.hexColor }, 'geometry': feature.properties.way_geometry };
+        let featureWay = { 'type': 'Feature', 'properties': { 'hexColor': feature.properties.hexColor, 'mesure':feature.properties.mesure }, 'geometry': feature.properties.way_geometry };
         featuresWay.push(featureWay);
       }
     }
@@ -235,7 +235,7 @@ export class MapService {
       let lastTag: any = this.tagsService.getLastTagAdded();
       newTag[lastTag.key] = lastTag.value;
     } else {
-      newTag['shop'] = '*';
+      newTag['shop'] = 'yes';
     }
     let pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
@@ -489,6 +489,19 @@ export class MapService {
     return iconRotate
   }
 
+  toogleMesureFilter(enable:boolean, layerName:string, value:number, map){
+    const currentFilter = map.getFilter(layerName);
+    const unfiltered = currentFilter.filter(el => el[1] && el[1] !== "mesure");
+    if (enable){
+       let newFilter = [...unfiltered, ['<', 'mesure', value] ];
+       map.setFilter(layerName, newFilter);
+       return layerName;
+    } else {
+      map.setFilter(layerName, unfiltered);
+      return unfiltered
+    }
+  }
+
   addDomMarkerPosition() {
     if (!this.markerLocation) {
       this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition, { offset: [0, 0] }).setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
@@ -612,6 +625,11 @@ export class MapService {
       }
     });
     this.layersAreLoaded = true;
+
+    // value en m²!
+    this.toogleMesureFilter(this.configService.getFilterWayByArea(), 'way_fill', 5000, this.map);
+    // value en km!
+    this.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.map);
 
     this.map.on('click', function (e) {
       let c = [[e.point.x - 8, e.point.y + 8], [e.point.x + 8, e.point.y + 18]];

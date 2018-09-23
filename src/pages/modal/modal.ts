@@ -1,15 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { ModalController, Platform, NavParams, ViewController, LoadingController, ToastController, AlertController } from 'ionic-angular';
 import { OsmApiService } from '../../services/osmApi.service';
 import { MapService } from '../../services/map.service';
 import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { AlertService } from '../../services/alert.service';
-
-
 import { TagsService } from '../../services/tags.service';
-
-
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 
@@ -24,15 +20,15 @@ export class ModalsContentPage {
   tags = []; // main data
   originalTags = [];
   feature;
-  origineData:string;
+  origineData: string;
   typeFiche;
   displayCode = false;
   mode;
-  configOfPrimaryKey = { presets: [], alert :undefined };
-  currentPresets = {};
+  configOfPrimaryKey = { presets: [], alert: undefined };
+
   primaryKey = { key: '', value: '', lbl: '' };
   customValue = '';
-  // primaryKeys = [];
+
   newTag = { key: '', value: '' };
   allTags;
   newPosition;
@@ -51,7 +47,8 @@ export class ModalsContentPage {
     public configService: ConfigService,
     public alertService: AlertService,
     public toastCtrl: ToastController,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private zone: NgZone
 
   ) {
 
@@ -67,6 +64,7 @@ export class ModalsContentPage {
     for (let tag in this.feature.properties.tags) {
       this.tags.push({ key: tag, value: this.feature.properties.tags[tag] });
     }
+    //clone
     this.originalTags = JSON.parse(JSON.stringify(this.tags));
 
     // backButton
@@ -105,59 +103,45 @@ export class ModalsContentPage {
   }
 
 
-  getPrimaryKeyOfTags() {
+  getPrimaryKeyOfTags(tags) {
     let listOfPrimaryKey = this.tagsService.getListOfPrimaryKey();
-    for (let i = 0; i < this.tags.length; i++) {
-      if (listOfPrimaryKey.indexOf(this.tags[i].key) !== -1)
-        return JSON.parse(JSON.stringify(this.tags))[i];
+    for (let i = 0; i < tags.length; i++) {
+      if (listOfPrimaryKey.indexOf(tags[i].key) !== -1)
+        return JSON.parse(JSON.stringify(tags))[i];
     }
-    return null;
+    return undefined;
   }
 
-  getConfigOfPrimarykey() {
-    let ind = _.findIndex(this.allTags[this.primaryKey.key].values, { 'key': this.primaryKey.value });
-    return this.allTags[this.primaryKey.key].values[ind];
-  }
-
-  clearNullTags() {
-    // supprimer les valeurs vide de this.tags (changement de type)
-    for (let i = 0; i < this.tags.length; i++) {
-
-      if (this.tags[i].value === '' || !this.tags[i].value) {
-
-        this.tags.splice(i, 1);
-        i--;
-      };
-    }
-  }
   initComponent() {
+    // Edit, Read, Loading
+    this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read';
     // supprimer les valeurs vide de this.tags (changement de type)
-    this.clearNullTags();
-    if (_.findIndex(this.tags, o=> { return  o.key =='name' }) === -1) // on ajoute un nom vide si il n'existe pas
+    this.tags = this.tags.filter(tag => tag.value && tag.value !== '')
+
+    if (this.tags.filter(tag => tag.key == 'name')) { // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
+    }
+    // retourne la clé principale : {key: "amenity", value: "cafe"}
+    this.primaryKey = this.getPrimaryKeyOfTags(this.tags);
 
-    this.tagsService.getAllTags().subscribe(allTags => {
-      this.allTags = allTags;
-      this.primaryKey = this.getPrimaryKeyOfTags();
+    // la configuration pour cette clé principale (lbl, icon, presets[], ...)
+    this.configOfPrimaryKey = this.tagsService.getTagConfigByKeyValue(this.primaryKey['key'], this.primaryKey['value']);
+    const presetsIds = (this.configOfPrimaryKey && this.configOfPrimaryKey.presets) ? this.configOfPrimaryKey.presets : undefined;
 
-      this.configOfPrimaryKey = this.getConfigOfPrimarykey();
-      this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read'; // Edit, Read, Loading
+    if (presetsIds && presetsIds.length > 0) {
+      // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
+      for (let i = 0; i < presetsIds.length; i++) {
+        let preset = this.tagsService.getPresetsById(presetsIds[i]);
 
-      if (this.configOfPrimaryKey) {
-        if (this.configOfPrimaryKey.presets.length > 0) {
-          // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
-          for (let i = 0; i < this.configOfPrimaryKey.presets.length; i++) {
-            if (_.findIndex(this.tags, { key: this.configOfPrimaryKey.presets[i] }) === -1)
-              this.tags.push({ key: this.configOfPrimaryKey.presets[i], value: '' });
-          }
-          this.tagsService.getPresets(this.configOfPrimaryKey.presets).subscribe(presets => {
-            this.currentPresets = presets;
-          });
+        // le tag utilisant la clé du preset 
+        const tagOfPreset = this.tags.filter(tag => tag.key === preset.key)[0] || undefined;
+        if (tagOfPreset) {
+          tagOfPreset['preset'] = preset; // on met la config du prset direct dans le "tag" => key, value, preset[]
+        } else { // => un le tag avec la key du preset n'existe pas, on l'insert vide
+          this.tags.push({ 'key': preset.key, 'value': '', preset: preset })
         }
       }
-    });
-
-
+    }
   }
 
   dataIsChanged() {
@@ -173,12 +157,16 @@ export class ModalsContentPage {
   }
 
   updateMode() {
-    this.mode = 'Update';
-    this.typeFiche = 'Edit';
+    this.zone.run(() => {
+      this.mode = 'Update';
+      this.typeFiche = 'Edit';
+    })
   }
 
   toogleCode() { // affiche les tags originaux
-    this.displayCode = (this.displayCode) ? false : true;
+    this.zone.run(() => {
+      this.displayCode = (this.displayCode) ? false : true;
+    })
   }
 
   addTag() {
@@ -201,7 +189,7 @@ export class ModalsContentPage {
     return text.toLowerCase();
   }
 
-  // renvoie l'élément du tableau correspondant 
+  // renvoie l'élément du tableau correspondant  || TODO => pipe
   findElement(array, kv) { // {'user': 'fred'}
     let idx = _.findIndex(array, kv);
     if (idx !== -1) {
@@ -209,7 +197,6 @@ export class ModalsContentPage {
     }
     return null;
   }
-
 
   dismiss(data = null) {
     this.viewCtrl.dismiss(data);
@@ -221,10 +208,10 @@ export class ModalsContentPage {
 
     this.pushTagsToFeature(); // on pousse les tags dans la feature
     if (this.configService.getIsDelayed()) {
-        this.osmApi.createOsmNode(this.feature).subscribe(data => {
-          this.dismiss({redraw: true});
-        })
-     
+      this.osmApi.createOsmNode(this.feature).subscribe(data => {
+        this.dismiss({ redraw: true });
+      })
+
 
     }
 
@@ -244,13 +231,13 @@ export class ModalsContentPage {
             this.feature = this.mapService.getIconStyle(this.feature); // style
 
             this.dataService.addFeatureToGeojson(this.feature);
-            this.dismiss({redraw: true});
+            this.dismiss({ redraw: true });
 
           },
-          error => {
-            this.typeFiche = 'Edit';
-            this.presentToast(JSON.stringify(error));
-          });
+            error => {
+              this.typeFiche = 'Edit';
+              this.presentToast(JSON.stringify(error));
+            });
       },
         error => {
           this.typeFiche = 'Edit';
@@ -265,7 +252,7 @@ export class ModalsContentPage {
 
     if (this.configService.getIsDelayed()) {
       this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(data => {
-        this.dismiss({redraw: true});
+        this.dismiss({ redraw: true });
       })
     }
 
@@ -279,12 +266,12 @@ export class ModalsContentPage {
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // création du style
             this.dataService.updateFeatureToGeojson(this.feature);
-            this.dismiss({redraw: true});
+            this.dismiss({ redraw: true });
           },
-          er => {
-            this.typeFiche = 'Edit';
-            this.presentToast(er.statusText + ' : ' + er.text());
-          });
+            er => {
+              this.typeFiche = 'Edit';
+              this.presentToast(er.statusText + ' : ' + er.text());
+            });
 
       },
         error => {
@@ -300,7 +287,7 @@ export class ModalsContentPage {
 
     if (this.configService.getIsDelayed()) {
       this.osmApi.deleteOsmElement(this.feature).subscribe(data => {
-        this.dismiss({redraw: true});
+        this.dismiss({ redraw: true });
       })
     }
     else {
@@ -308,14 +295,14 @@ export class ModalsContentPage {
         this.osmApi.apiOsmDeleteOsmElement(this.feature, CS)
           .subscribe(data => {
             this.dataService.deleteFeatureFromGeojson(this.feature);
-           // this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
-           this.dismiss({redraw: true});
-  
+            // this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
+            this.dismiss({ redraw: true });
+
           },
-          error => {
-            this.typeFiche = 'Edit';
-            this.presentToast(error.statusText + ' : ' + error.text());
-          });
+            error => {
+              this.typeFiche = 'Edit';
+              this.presentToast(error.statusText + ' : ' + error.text());
+            });
       });
     }
 
@@ -337,7 +324,6 @@ export class ModalsContentPage {
     // on emet l'evenement 
   }
   openPrimaryTagModal() {
-
     let data = { geojson: this.feature, configOfPrimaryKey: this.configOfPrimaryKey, primaryKey: this.primaryKey, tags: this.tags };
     let modal = this.modalCtrl.create(ModalPrimaryTag, data);
 
@@ -345,9 +331,10 @@ export class ModalsContentPage {
     modal.onDidDismiss(data => {
       if (data) {
         // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
-        let idx = _.findIndex(this.tags, 
-            o=> { return o.key == this.primaryKey.key && o.value == this.primaryKey.value; });
+        let idx = _.findIndex(this.tags,
+          o => { return o.key == this.primaryKey.key && o.value == this.primaryKey.value; });
 
+        console.log(this.tags[idx]);
         this.tags[idx] = JSON.parse(JSON.stringify(data));
         this.primaryKey = JSON.parse(JSON.stringify(data));
         this.initComponent();
@@ -361,8 +348,7 @@ export class ModalsContentPage {
 
     modal.onDidDismiss(data => {
       if (data) {
-        let idx = _.findIndex(this.tags, { key: data.key });
-        this.tags[idx] = JSON.parse(JSON.stringify(data));
+        this.tags.filter(tag => tag.key === data.key)[0].value = data.value;
       }
     });
 
@@ -371,8 +357,7 @@ export class ModalsContentPage {
 
   cancelChange() {
     this.dataService.cancelFeatureChange(this.feature);
-   // this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
-     this.dismiss({redraw: true});
+    this.dismiss({ redraw: true });
   }
   presentToast(message) {
     let toast = this.toastCtrl.create({
@@ -384,33 +369,33 @@ export class ModalsContentPage {
     toast.present();
   }
 
-  addSurveyDate(){
+  addSurveyDate() {
     const now = new Date;
     const YYYY = now.getFullYear()
-    const MM = ((now.getMonth())+1 < 10) ? '0'+ (now.getMonth()+1) : ''+ (now.getMonth()+1);
-    const DD = (now.getDate()< 10) ? '0'+ now.getDate() : ''+ now.getDate();
+    const MM = ((now.getMonth()) + 1 < 10) ? '0' + (now.getMonth() + 1) : '' + (now.getMonth() + 1);
+    const DD = (now.getDate() < 10) ? '0' + now.getDate() : '' + now.getDate();
     const isoDate = YYYY + '-' + MM + '-' + DD
- 
+
     let tagSurveyIndex = -1;
-    for (let i = 0; i < this.tags.length; i++){
-      if (this.tags[i].key === 'survey:date'){
+    for (let i = 0; i < this.tags.length; i++) {
+      if (this.tags[i].key === 'survey:date') {
         tagSurveyIndex = i;
         break;
       }
     }
-    if (tagSurveyIndex != -1){ // le tag existe déjà, on l'écrase
+    if (tagSurveyIndex != -1) { // le tag existe déjà, on l'écrase
       this.tags[tagSurveyIndex].value = isoDate;
     } else {
-      this.tags.push({'key':'survey:date', 'value' : isoDate})
+      this.tags.push({ 'key': 'survey:date', 'value': isoDate })
     }
 
-    this.updateOsmElement() ;
+    this.updateOsmElement();
   }
 
-  clickOnFabSurveyButton(){
+  clickOnFabSurveyButton() {
     const toast = this.toastCtrl.create({
       message: 'Veuillez appuyer longuement pour ajouter une date de verification',
-      position : 'middle',
+      position: 'middle',
       duration: 3000
     });
     toast.present();
