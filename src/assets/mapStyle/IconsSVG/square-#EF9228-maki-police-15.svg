@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="marker-circle-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"  y="0px" width="24px" height="36px" viewBox="0 0 24 36" enable-background="new 0 0 24 36" xml:space="preserve"><path fill="#EF9228" d="M20.103,0.57H2.959c-1.893,0-3.365,0.487-3.365,2.472l-0.063,18.189c0,1.979,1.526,3.724,3.418,3.724h4.558
+		l4.01,11.545l3.966-11.545h4.56c1.894,0,3.488-1.744,3.488-3.724V4.166C23.531,2.18,21.996,0.57,20.103,0.57z"></path><path fill="#ffffff" transform="translate(4.5 4.5)" d="M5.5,1L6,2h5l0.5-1H5.5z M6,2.5v1.25c0,0,0,2.75,2.5,2.75S11,3.75,11,3.75V2.5H6z M1.9844,3.9863
+	C1.4329,3.9949,0.9924,4.4485,1,5v4c-0.0001,0.6398,0.5922,1.1152,1.2168,0.9766L5,9.3574V14l5.8789-6.9297
+	C10.7391,7.0294,10.5947,7,10.4414,7H6.5L3,7.7539V5C3.0077,4.4362,2.5481,3.9775,1.9844,3.9863z M11.748,7.7109L6.4121,14H12
+	V8.5586C12,8.2451,11.9061,7.9548,11.748,7.7109z"></path> </svg>
