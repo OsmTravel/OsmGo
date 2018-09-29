@@ -2371,7 +2371,7 @@
         "key": "life_ring",
         "lbl": "Bouée de sauvetage",
         "lbl_alt": "",
-        "icon": "life-ring-solid",
+        "icon": "",
         "markerColor": "#75030B",
         "alert": "",
         "presets": []
