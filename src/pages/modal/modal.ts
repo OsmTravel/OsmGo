@@ -117,8 +117,8 @@ export class ModalsContentPage {
     this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read';
     // supprimer les valeurs vide de this.tags (changement de type)
     this.tags = this.tags.filter(tag => tag.value && tag.value !== '')
-
-    if (!this.tags.filter(tag => tag.key == 'name')) { // on ajoute un nom vide si il n'existe pas
+    
+    if (!this.tags.filter(tag => tag.key == 'name')[0]) { // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
     }
     // retourne la clé principale : {key: "amenity", value: "cafe"}
