@@ -1003,7 +1003,7 @@
         "key": "tobacco",
         "lbl": "Bureau de tabac",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1120,7 +1120,7 @@
         "key": "games",
         "lbl": "Vente de jeux de société",
         "lbl_alt": "Jeux de plateau",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1129,7 +1129,7 @@
         "key": "glaziery",
         "lbl": "Vente de vitrages de fenêtres et de portes.",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1986,7 +1986,7 @@
         "key": "social_facility",
         "lbl": "Service social",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["social_facility", "social_facility:for", "wheelchair"]
@@ -2148,7 +2148,7 @@
         "key": "shower",
         "lbl": "Douche publique",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2265,7 +2265,7 @@
         "key": "monastery",
         "lbl": "Monastère",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2380,7 +2380,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#75030B",
         "alert": "",
         "presets": []
@@ -3157,7 +3157,7 @@
         "key": "builder",
         "lbl": "Entreprise du BTP",
         "lbl_alt": " travaux de construction et de travaux publics",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3370,7 +3370,7 @@
         "key": "aquarium",
         "lbl": "Aquarium public",
         "lbl_alt": "",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3742,7 +3742,7 @@
         "key": "survey_point",
         "lbl": "Borne géodésique, piliers de triangulation",
         "lbl_alt": "équipements fixes utilisés par les topographes",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3886,7 +3886,7 @@
         "key": "dovecote",
         "lbl": "Pigeonnier",
         "lbl_alt": "Colombier",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -4123,7 +4123,7 @@
         "key": "archaeological_site",
         "lbl": "Monuments antiques",
         "lbl_alt": "fouilles archéologiques",
-        "icon": "none",
+        "icon": "",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
