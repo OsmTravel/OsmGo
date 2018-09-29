@@ -66,7 +66,7 @@ export class ModalsContentPage {
     }
     //clone
     this.originalTags = JSON.parse(JSON.stringify(this.tags));
-
+    
     // backButton
     this.platform.registerBackButtonAction(e => {
       this.dismiss();
@@ -118,7 +118,7 @@ export class ModalsContentPage {
     // supprimer les valeurs vide de this.tags (changement de type)
     this.tags = this.tags.filter(tag => tag.value && tag.value !== '')
 
-    if (this.tags.filter(tag => tag.key == 'name')) { // on ajoute un nom vide si il n'existe pas
+    if (!this.tags.filter(tag => tag.key == 'name')) { // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
     }
     // retourne la clé principale : {key: "amenity", value: "cafe"}

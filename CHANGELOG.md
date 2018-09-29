@@ -1,3 +1,8 @@
+# 0.5.1-2
+### Fix
+    * Certains marker pouvait de pas s'afficher ("none" à la place de "" )
+    * La key "tag" était systématiquement écrasé
+
 # 0.5.0
 ## Interface
     * Ajout de nombreux tags (dont la historic=*)
