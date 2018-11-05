@@ -85,7 +85,7 @@ let iconsMarkersStr = [];
 for (key in tags) {
     for (let i = 0; i < tags[key].values.length; i++) {
 
-        let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon
+        let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon    
         if (iconsMarkersStr.indexOf(strIcM) == -1) {
             iconsMarkersStr.push(strIcM);
             console.log(strIcM);
@@ -95,6 +95,8 @@ for (key in tags) {
     }
 }
 
+generateMarkerIcon('', "#ffffff", "#000000")
+
 
 //copy whiteliste 
 const whiteList = ['none', 'Delete', 'Create', 'Update', 'arrow-position'];
@@ -103,7 +105,7 @@ for (let i = 0; i < whiteList.length; i++) {
     fs.copySync(iconsSVGsPath + whiteList[i] + '.svg', outputFolderSVG + whiteList[i] + '.svg');
 }
 
-console.log('génération des srpites');
+console.log('génération des sprites');
 for (let i = 1; i <=2; i++){
     const pxRatio = i;
     let svgs = glob.sync(path.resolve(outputFolderSVG + '*.svg'))

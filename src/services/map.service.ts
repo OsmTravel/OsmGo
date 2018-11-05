@@ -331,10 +331,10 @@ export class MapService {
         feature.properties.marker = this.getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
         feature.properties.hexColor = configMarker.markerColor;
 
-      } else { // on ne connait pas la 'value', donc pas de config pour le marker 
-        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
-        feature.properties.icon = 'mi-white-circle'
+      } else { // on ne connait pas la 'value', donc pas de config pour le marker
+        feature.properties.icon = 'maki-circle-15' 
         feature.properties.hexColor = '#000000';
+        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
       }
     }
     return feature;
