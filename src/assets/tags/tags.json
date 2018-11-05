@@ -4234,5 +4234,84 @@
         "presets": []
       }
     ]
+  },
+  "highway": {
+    "exclude_way_values": ["footway","motorway","trunk","primary","secondary","tertiary","unclassified","residential","service","motorway_link","trunk_link","primary_link","secondary_link","tertiary_link","living_street","pedestrian","track","bus_guideway","escape","road","footway","bridleway","path","cycleway","proposed","construction"],
+    "type": "highway",
+    "lbl": "Voirie",
+    "values": [
+      {
+        "key": "street_lamp",
+        "lbl": "Lampadaire",
+        "lbl_alt": "Candelabre",
+        "icon": "fa-lightbulb-o",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "crossing",
+        "lbl": "Passage piéton",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "traffic_signals",
+        "lbl": "Feu tricolore",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "stop",
+        "lbl": "Panneau ; Stop",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "give_way",
+        "lbl": "Panneau : Cédez le passage",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "speed_camera",
+        "lbl": "Radar fixe",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bus_stop",
+        "lbl": "Arrêt de bus",
+        "lbl_alt": "",
+        "icon": "mi-bus-station",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      }
+    ]
   }
 }

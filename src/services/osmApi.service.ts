@@ -460,15 +460,25 @@ export class OsmApiService {
 
     }
 
-    /* ne garde que les relations complètes (=> web worker?) (côté serveur?)*/
+    /* 
+        ne garde que les relations complètes (=> web worker?)
+        on filtre certain tags (ways)
+    */
     private filterFeatures(features) {
+        
         let filterFeatures = [];
         for (let i = 0; i < features.length; i++) {
-            let feature = features[i];
+            let feature = features[i];         
             if (!feature.properties.tainted) { // !relation incomplete
                 let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature.properties.tags);
                 if (primaryTag) { //tag interessant
                     feature.properties['primaryTag'] = primaryTag;
+                    // on filtre les certaines valeurs si c'est un way (pour ne pas afficher les routes par exemple)
+                    if (feature.properties.type == 'way' 
+                        && this.tagsService.tags[primaryTag.k].exclude_way_values 
+                        && this.tagsService.tags[primaryTag.k].exclude_way_values.indexOf(primaryTag.v) !== -1 ){
+                            continue
+                        }
                     filterFeatures.push(feature);
                 }
             }
@@ -497,6 +507,7 @@ export class OsmApiService {
         for (let i = 0; i < features.length; i++) {
 
             let feature = features[i];
+            // console.log(feature);
             if (feature.geometry) {
                 if (feature.geometry.type !== 'Point') {
 
