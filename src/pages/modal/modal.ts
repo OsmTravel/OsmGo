@@ -396,7 +396,7 @@ export class ModalsContentPage {
     const toast = this.toastCtrl.create({
       message: 'Veuillez appuyer longuement pour ajouter une date de verification',
       position: 'middle',
-      duration: 3000
+      duration: 2000
     });
     toast.present();
   }

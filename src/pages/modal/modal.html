@@ -74,9 +74,10 @@
 			</button>
 
 			<button ion-fab ion-long-press *ngIf="!feature.properties.changeType"
-					[interval]="500" (onPressing)="addSurveyDate()"
+					[interval]="500" 
+					(onPressing)="addSurveyDate()"
 					color="secondary"
-					(click)="clickOnFabSurveyButton()"
+					(tap)="clickOnFabSurveyButton()"
 					class="fabInlineMarginLess fabSurveyDate">
 					<ion-icon name="checkmark-circle-outline"></ion-icon>
 			</button>
