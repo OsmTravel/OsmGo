@@ -61,6 +61,7 @@ import { FilterIncludeKeysPipe } from '../pipes/filterIncludeKeys.pipe';
 import { FilterNullValuePipe } from '../pipes/filterNullValue.pipe';
 import { ToLowercasePipe } from '../pipes/toLowercase.pipe';
 import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
+import { FilterDeprecatedTagPipe } from '../pipes/filterDeprecatedTag.pipe';
 import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
 
 
@@ -94,6 +95,7 @@ import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
     FilterNullValuePipe,
     ToLowercasePipe,
     FilterByContentPipe,
+    FilterDeprecatedTagPipe,
     DisplayPresetLabelPipe
   ],
   imports: [

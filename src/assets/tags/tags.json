@@ -133,6 +133,7 @@
         "icon": "mi-real-estate-agency",
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
+        "deprecated" : true,
         "presets": ["operator", "wheelchair", "shop#estate_agent#operator"]
       },
       {
@@ -142,6 +143,7 @@
         "icon": "mi-insurance-agency",
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
+        "deprecated" : true,
         "presets": ["operator", "wheelchair"]
       },
       {
@@ -313,6 +315,7 @@
         "icon": "mi-convenience-store",
         "markerColor": "#A23337",
         "alert": "préférez 'deli'",
+        "deprecated" : true,
         "presets": ["wheelchair"]
       },
       {
@@ -1678,6 +1681,7 @@
         "icon": "",
         "markerColor": "#EF9228",
         "alert": "Déprécié, utiliser : amenity=kindergarten + nursery=yes.",
+        "deprecated" : true,
         "presets": ["wheelchair"]
       },
       {
@@ -3640,6 +3644,7 @@
         "icon": "",
         "markerColor": "#F5BB3A",
         "alert": "Déprécié, utiliser : office=government.",
+        "deprecated" : true,
         "presets": []
       }
     ]
