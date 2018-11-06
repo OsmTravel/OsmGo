@@ -136,7 +136,7 @@
 
 
 			<!--Le reste des tags-->
-			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
+			<div *ngFor="let tag of tags | filterExcludeKeys: getExcludeKeysFromOtherTags(primaryKey.key, configOfPrimaryKey)">
 				<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
 			</div>
 

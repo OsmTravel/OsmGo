@@ -124,7 +124,7 @@
         "icon": "mi-travel-agency",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "wheelchair", "shop#travel_agency#operator"]
+        "presets": ["shop#travel_agency#operator", "wheelchair"]
       },
       {
         "key": "estate_agent",
@@ -134,7 +134,7 @@
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
         "deprecated" : true,
-        "presets": ["operator", "wheelchair", "shop#estate_agent#operator"]
+        "presets": ["shop#estate_agent#operator", "operator", "wheelchair"]
       },
       {
         "key": "insurance",
@@ -1582,7 +1582,8 @@
         "icon": "",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["nursery", "wheelchair"]
+        "presets": ["nursery", "wheelchair"],
+        "deprecated":true
       },
       {
         "key": "car_wash",
@@ -2316,7 +2317,7 @@
       {
         "key": "fire_hydrant",
         "lbl": "Borne d'incendie",
-        "lbl_alt": "Borne incendie, borne-fontaine, borne fontaine, bouche d'incendie",
+        "lbl_alt": "borne-fontaine, borne fontaine, bouche d'incendie",
         "icon": "maki-fire-station-15",
         "markerColor": "#75030B",
         "alert": "",
@@ -2324,6 +2325,10 @@
           "fire_hydrant:type",
           "fire_hydrant:position",
           "fire_hydrant:diameter"
+        ],
+        "default_values":[
+          {"key":"name", "value": ""},
+          {"key": "fire_hydrant:type", "value":"pillar"}
         ]
       },
       {
