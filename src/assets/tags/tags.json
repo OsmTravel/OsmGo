@@ -133,8 +133,8 @@
         "icon": "mi-real-estate-agency",
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
-        "deprecated" : true,
-        "presets": ["shop#estate_agent#operator", "operator", "wheelchair"]
+        "deprecated": true,
+        "presets": ["shop#estate_agent#operator", "wheelchair"]
       },
       {
         "key": "insurance",
@@ -143,7 +143,7 @@
         "icon": "mi-insurance-agency",
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
-        "deprecated" : true,
+        "deprecated": true,
         "presets": ["operator", "wheelchair"]
       },
       {
@@ -203,7 +203,7 @@
       {
         "key": "hairdresser",
         "lbl": "Coiffeur",
-        "lbl_alt": "",
+        "lbl_alt": "Barbier",
         "icon": "mi-hair-care",
         "markerColor": "#A23337",
         "alert": "",
@@ -315,7 +315,7 @@
         "icon": "mi-convenience-store",
         "markerColor": "#A23337",
         "alert": "préférez 'deli'",
-        "deprecated" : true,
+        "deprecated": true,
         "presets": ["wheelchair"]
       },
       {
@@ -601,7 +601,7 @@
         "key": "window_blind",
         "lbl": "Vente de stores",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-bug",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -979,7 +979,7 @@
         "key": "coffee",
         "lbl": "Vente de café / torréfacteur",
         "lbl_alt": "torrefacteur",
-        "icon": "",
+        "icon": "fa-coffee",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1006,7 +1006,7 @@
         "key": "tobacco",
         "lbl": "Bureau de tabac",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "smoking-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1078,7 +1078,7 @@
         "key": "nutrition_supplements",
         "lbl": "Vente de compléments nutritionnels",
         "lbl_alt": "compléments alimentaire",
-        "icon": "",
+        "icon": "fa-capsules-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1123,7 +1123,7 @@
         "key": "games",
         "lbl": "Vente de jeux de société",
         "lbl_alt": "Jeux de plateau",
-        "icon": "",
+        "icon": "fa-chess-knight-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1132,7 +1132,7 @@
         "key": "glaziery",
         "lbl": "Vente de vitrages de fenêtres et de portes.",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-door-closed-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1159,7 +1159,7 @@
         "key": "frozen_food",
         "lbl": "Vente d'aliments surgelés",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-snow",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1186,7 +1186,7 @@
         "key": "paint",
         "lbl": "Magasin de peinture",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-painter",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1204,7 +1204,7 @@
         "key": "trade",
         "lbl": "Grossiste",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "truck-loading-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1231,7 +1231,7 @@
         "key": "agrarian",
         "lbl": "Vente de produits agricoles",
         "lbl_alt": "pesticides, des engrais, des semences certifiées, du matériel agricole",
-        "icon": "",
+        "icon": "fa-tractor-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1240,7 +1240,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1426,7 +1426,7 @@
         "key": "youth_centre",
         "lbl": "Centre pour la jeunesse",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-child",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1579,11 +1579,11 @@
         "key": "kindergarten",
         "lbl": "Jardin d'enfants",
         "lbl_alt": "crèches, haltes-garderies",
-        "icon": "",
+        "icon": "fa-child",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["nursery", "wheelchair"],
-        "deprecated":true
+        "deprecated": true
       },
       {
         "key": "car_wash",
@@ -1598,7 +1598,7 @@
         "key": "place_of_worship",
         "lbl": "Lieu de culte",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "pray-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1682,7 +1682,7 @@
         "icon": "",
         "markerColor": "#EF9228",
         "alert": "Déprécié, utiliser : amenity=kindergarten + nursery=yes.",
-        "deprecated" : true,
+        "deprecated": true,
         "presets": ["wheelchair"]
       },
       {
@@ -1802,7 +1802,7 @@
         "key": "hall",
         "lbl": "Salle",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-building-15",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -1820,7 +1820,7 @@
         "key": "gym",
         "lbl": "Salle de gymnastique",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-physiotherapist",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -1847,7 +1847,7 @@
         "key": "mountain_rescue",
         "lbl": "Secours en montagne",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-health",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -1919,7 +1919,7 @@
         "key": "toilets",
         "lbl": "Toilettes",
         "lbl_alt": "wc",
-        "icon": "maki-toilet-15",
+        "icon": "mi-toilet",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["fee", "male", "female", "wheelchair"]
@@ -1973,7 +1973,7 @@
         "key": "swingerclub",
         "lbl": "Club echangiste",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-toilet",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -1982,7 +1982,7 @@
         "key": "vending_machine",
         "lbl": "Distributeur automatique",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-hand-holding-usd-solid",
         "markerColor": "#EF9228",
         "alert": "Ne distribue pas d'argent != DAB",
         "presets": ["vending", "wheelchair"]
@@ -1991,7 +1991,7 @@
         "key": "social_facility",
         "lbl": "Service social",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["social_facility", "social_facility:for", "wheelchair"]
@@ -2108,7 +2108,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2126,7 +2126,7 @@
         "key": "swimming_pool",
         "lbl": "Piscine (déconseillé) ",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-swimming-15",
         "markerColor": "#EF9228",
         "alert": "leisure=swimming_pool",
         "presets": []
@@ -2153,7 +2153,7 @@
         "key": "shower",
         "lbl": "Douche publique",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "shower-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2225,7 +2225,7 @@
         "key": "animal_breeding",
         "lbl": "Elevage d'animaux",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-zoo-15",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2243,7 +2243,7 @@
         "key": "polling_station",
         "lbl": "Bureau de vote",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-person-booth-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2252,7 +2252,7 @@
         "key": "coworking_space",
         "lbl": "Espace de coworking",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-place-of-worship",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2270,7 +2270,7 @@
         "key": "monastery",
         "lbl": "Monastère",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "pray-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2303,7 +2303,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#C057A0",
         "alert": "",
         "presets": []
@@ -2326,9 +2326,9 @@
           "fire_hydrant:position",
           "fire_hydrant:diameter"
         ],
-        "default_values":[
-          {"key":"name", "value": ""},
-          {"key": "fire_hydrant:type", "value":"pillar"}
+        "default_values": [
+          {"key": "name", "value": ""},
+          {"key": "fire_hydrant:type", "value": "pillar"}
         ]
       },
       {
@@ -2380,7 +2380,7 @@
         "key": "life_ring",
         "lbl": "Bouée de sauvetage",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "life-ring-solid",
         "markerColor": "#75030B",
         "alert": "",
         "presets": []
@@ -2389,7 +2389,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#75030B",
         "alert": "",
         "presets": []
@@ -2431,7 +2431,7 @@
         "key": "amusement_arcade",
         "lbl": "Salle d'arcade",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-gamepad",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2449,7 +2449,7 @@
         "key": "bird_hide",
         "lbl": "Observatoire d'oiseaux",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-dove-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2476,7 +2476,7 @@
         "key": "firepit",
         "lbl": "Emplacement pour feu de camp",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-fire",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2485,7 +2485,7 @@
         "key": "hackerspace",
         "lbl": "Hackerspace",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-laptop-code-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2503,7 +2503,7 @@
         "key": "marina",
         "lbl": "Marina",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-boating",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2521,7 +2521,7 @@
         "key": "park",
         "lbl": "Parc",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-park-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2548,7 +2548,7 @@
         "key": "sports_centre",
         "lbl": "Centre sportif",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-dribbble",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2566,7 +2566,7 @@
         "key": "summer_camp",
         "lbl": "Colonie de vacances",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-child",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2593,7 +2593,7 @@
         "key": "wildlife_hide",
         "lbl": "Observatoire d'animaux",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-dove-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2602,7 +2602,7 @@
         "key": "sauna",
         "lbl": "Sauna",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-hot-tub-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2611,7 +2611,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2620,7 +2620,7 @@
         "key": "garden",
         "lbl": "Jardin",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-florist",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2674,7 +2674,7 @@
         "key": "horse_riding",
         "lbl": "Centre équestre",
         "lbl_alt": "équitation, cheval",
-        "icon": "",
+        "icon": "fa-chess-knight-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2692,7 +2692,7 @@
         "key": "nature_reserve",
         "lbl": "Réserve naturelle",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-frog-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2770,7 +2770,7 @@
         "key": "brewery",
         "lbl": "Brasserie",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-beer-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2815,7 +2815,7 @@
         "key": "clockmaker",
         "lbl": "Horloger",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-clock-o",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2842,7 +2842,7 @@
         "key": "electrician",
         "lbl": "Électricien",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-electrician",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2905,7 +2905,7 @@
         "key": "jeweller",
         "lbl": "Bijoutier",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-jewelry-store",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2914,7 +2914,7 @@
         "key": "key_cutter",
         "lbl": "Reproduction de clés",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-key",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2941,7 +2941,7 @@
         "key": "optician",
         "lbl": "Opticien",
         "lbl_alt": "",
-        "icon": "fa-eye",
+        "icon": "fa-glasses-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2950,7 +2950,7 @@
         "key": "painter",
         "lbl": "Peintre",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-painter",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2977,7 +2977,7 @@
         "key": "photographic_laboratory",
         "lbl": "Laboratoire photo",
         "lbl_alt": "",
-        "icon": "fa-camera",
+        "icon": "maki-attraction-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3022,7 +3022,7 @@
         "key": "roofer",
         "lbl": "Couvreur",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-roofing-contractor",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3067,14 +3067,14 @@
         "key": "shoemaker",
         "lbl": "Cordonnier",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "osm-shoes",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
       },
       {
         "key": "stonemason",
-        "lbl": "Tailleur",
+        "lbl": "Tailleur de pierre",
         "lbl_alt": "",
         "icon": "",
         "markerColor": "#5B396C",
@@ -3139,7 +3139,7 @@
         "key": "window_construction",
         "lbl": "Portes et fenêtres",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-door-closed-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3148,7 +3148,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3199,7 +3199,7 @@
         "key": "alpine_hut",
         "lbl": "Refuge de montagne",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-roofing-contractor",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3217,7 +3217,7 @@
         "key": "artwork",
         "lbl": "Œuvre d'art",
         "lbl_alt": "Oeuvre d'art, sculture",
-        "icon": "",
+        "icon": "mi-art-gallery",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3226,7 +3226,7 @@
         "key": "camp_site",
         "lbl": "Camping",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-campsite-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -3235,7 +3235,7 @@
         "key": "caravan_site",
         "lbl": "Aire pour caravanes",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-truck-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3244,7 +3244,7 @@
         "key": "gallery",
         "lbl": "Galerie d'art",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-art-gallery",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -3253,7 +3253,7 @@
         "key": "hostel",
         "lbl": "Auberge de jeunesse",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-lodging-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -3271,7 +3271,7 @@
         "key": "information",
         "lbl": "Office de tourisme, Point d'information",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-info-circle",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -3280,7 +3280,7 @@
         "key": "motel",
         "lbl": "Motel",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-lodging-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -3298,7 +3298,7 @@
         "key": "picnic_site",
         "lbl": "Aire de pique-nique",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-picnic-site-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3307,7 +3307,7 @@
         "key": "theme_park",
         "lbl": "Parc d'attraction",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-amusement-park",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3316,7 +3316,7 @@
         "key": "viewpoint",
         "lbl": "Point de vue",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-eye",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3325,7 +3325,7 @@
         "key": "wilderness_hut",
         "lbl": "Abri de bivouac",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-roofing-contractor",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3334,7 +3334,7 @@
         "key": "zoo",
         "lbl": "Zoo",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-zoo",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -3343,7 +3343,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3352,7 +3352,7 @@
         "key": "guest_house",
         "lbl": "Chambres d'hôte",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-lodging-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3361,7 +3361,7 @@
         "key": "chalet",
         "lbl": "Meublé de tourisme / gîte",
         "lbl_alt": "gîte rural",
-        "icon": "",
+        "icon": "fa-home",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3370,7 +3370,7 @@
         "key": "apartment",
         "lbl": "Appartements de location de vacances",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-home",
         "markerColor": "#5B396C",
         "alert": "Le bâtiment entier doit être voué à la location de vacances ",
         "presets": []
@@ -3379,7 +3379,7 @@
         "key": "aquarium",
         "lbl": "Aquarium public",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-aquarium-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3484,7 +3484,7 @@
         "key": "government",
         "lbl": "Administration gouvernementale",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-town-hall-15",
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
@@ -3511,7 +3511,7 @@
         "key": "it",
         "lbl": "Spécialistes en informatique",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-laptop-code-solid",
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
@@ -3583,7 +3583,7 @@
         "key": "research",
         "lbl": "Recherche & Développement",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-brain-solid",
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
@@ -3592,7 +3592,7 @@
         "key": "tax",
         "lbl": "Administration fiscale",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-dollar",
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
@@ -3619,7 +3619,7 @@
         "key": "travel_agent",
         "lbl": "Agence de voyage",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-travel-agency",
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
@@ -3637,7 +3637,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
@@ -3646,10 +3646,10 @@
         "key": "administrative",
         "lbl": "Administration",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-town-hall-15",
         "markerColor": "#F5BB3A",
         "alert": "Déprécié, utiliser : office=government.",
-        "deprecated" : true,
+        "deprecated": true,
         "presets": []
       }
     ]
@@ -3671,7 +3671,7 @@
         "key": "communications_tower",
         "lbl": "Mât d'émission radio (+ 100m)",
         "lbl_alt": "Émetteur de téléphonie mobile, mât de transmission",
-        "icon": "maki-monument-15",
+        "icon": "fa-broadcast-tower-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3689,7 +3689,7 @@
         "key": "cross",
         "lbl": "Croix sommitale",
         "lbl_alt": "Croix avec peu de valeur historique ou religieuse",
-        "icon": "",
+        "icon": "fa-cross-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3698,7 +3698,7 @@
         "key": "flagpole",
         "lbl": "Mât de drapeau",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-flag",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3707,7 +3707,7 @@
         "key": "surveillance",
         "lbl": "Caméra de vidéo-surveillance",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "video-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3734,7 +3734,7 @@
         "key": "water_tap",
         "lbl": "Robinet d'eau",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-drinking-water-15",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3743,7 +3743,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3752,7 +3752,7 @@
         "key": "survey_point",
         "lbl": "Borne géodésique, piliers de triangulation",
         "lbl_alt": "équipements fixes utilisés par les topographes",
-        "icon": "",
+        "icon": "mi-cemetery",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3806,7 +3806,7 @@
         "key": "reservoir_covered",
         "lbl": "Réservoir d'eau enterré ",
         "lbl_alt": "Château d'eau",
-        "icon": "",
+        "icon": "maki-water-15",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3815,7 +3815,7 @@
         "key": "works",
         "lbl": "Usine / production industriel",
         "lbl_alt": "Usine automobile, raffinerie, etc",
-        "icon": "",
+        "icon": "maki-industry-15",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3833,7 +3833,7 @@
         "key": "street_cabinet",
         "lbl": "Armoire de rue",
         "lbl_alt": "Armoire techniques, compteurs de l'éclairage public etc..",
-        "icon": "",
+        "icon": "fa-cube",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3851,7 +3851,7 @@
         "key": "monitoring_station",
         "lbl": "Stations de mesure ",
         "lbl_alt": "station de surveillance, limnimètre, marégraphe, pollution, météo",
-        "icon": "",
+        "icon": "thermometer-half-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -3878,7 +3878,7 @@
         "key": "chimney",
         "lbl": "Cheminé industrielle",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-industry-15",
         "markerColor": "#D3D3D3",
         "alert": "Ne taguer que si > 10m",
         "presets": []
@@ -3896,7 +3896,7 @@
         "key": "dovecote",
         "lbl": "Pigeonnier",
         "lbl_alt": "Colombier",
-        "icon": "",
+        "icon": "fa-dove-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": []
@@ -4082,7 +4082,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#C9BCF0",
         "alert": "",
         "presets": []
@@ -4091,7 +4091,7 @@
         "key": "laboratory",
         "lbl": "Laboratoire de biologie médicale ",
         "lbl_alt": "laboratoire d'analyses médicales ",
-        "icon": "",
+        "icon": "microscope-solid",
         "markerColor": "#C9BCF0",
         "alert": "",
         "presets": []
@@ -4187,7 +4187,7 @@
         "key": "tomb",
         "lbl": "Tombes d'intérêt historique",
         "lbl_alt": "",
-        "icon": "mi-cemetery",
+        "icon": "maki-cemetery-15",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
@@ -4196,7 +4196,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
@@ -4205,7 +4205,7 @@
         "key": "building",
         "lbl": "Bâtiment historique ",
         "lbl_alt": "",
-        "icon": "maki-building-15",
+        "icon": "fa-bank",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
@@ -4229,7 +4229,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#009549",
         "alert": "",
         "presets": []
@@ -4246,7 +4246,34 @@
     ]
   },
   "highway": {
-    "exclude_way_values": ["footway","motorway","trunk","primary","secondary","tertiary","unclassified","residential","service","motorway_link","trunk_link","primary_link","secondary_link","tertiary_link","living_street","pedestrian","track","bus_guideway","escape","road","footway","bridleway","path","cycleway","proposed","construction"],
+    "exclude_way_values": [
+      "footway",
+      "motorway",
+      "trunk",
+      "primary",
+      "secondary",
+      "tertiary",
+      "unclassified",
+      "residential",
+      "service",
+      "motorway_link",
+      "trunk_link",
+      "primary_link",
+      "secondary_link",
+      "tertiary_link",
+      "living_street",
+      "pedestrian",
+      "track",
+      "bus_guideway",
+      "escape",
+      "road",
+      "footway",
+      "bridleway",
+      "path",
+      "cycleway",
+      "proposed",
+      "construction"
+    ],
     "type": "highway",
     "lbl": "Voirie",
     "values": [
@@ -4263,7 +4290,7 @@
         "key": "crossing",
         "lbl": "Passage piéton",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-align-justify",
         "markerColor": "#0E5F71",
         "alert": "",
         "presets": []
@@ -4272,14 +4299,14 @@
         "key": "traffic_signals",
         "lbl": "Feu tricolore",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "osm-traffic_light",
         "markerColor": "#0E5F71",
         "alert": "",
         "presets": []
       },
       {
         "key": "stop",
-        "lbl": "Panneau ; Stop",
+        "lbl": "Panneau : Stop",
         "lbl_alt": "",
         "icon": "",
         "markerColor": "#0E5F71",
@@ -4299,7 +4326,7 @@
         "key": "speed_camera",
         "lbl": "Radar fixe",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "video-solid",
         "markerColor": "#0E5F71",
         "alert": "",
         "presets": []
@@ -4317,7 +4344,7 @@
         "key": "yes",
         "lbl": "_NC",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "wiki_question",
         "markerColor": "#0E5F71",
         "alert": "",
         "presets": []

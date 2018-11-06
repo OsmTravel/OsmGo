@@ -24,10 +24,14 @@ function exportIcons(iconName, iconSVGpath) {
     fs.writeFileSync( outputFolderSVG + iconName + '.svg', iconSVGexport)
 }
 
-function generateMarkerIcon(iconName, colorIcon, colorMarker) {
+function generateMarkerIcon(iconName, colorIcon, colorMarker, unknowTag = false) {
     let iconSVG ;
     if (iconName == '') {
-         iconSVG = fs.readFileSync(iconsSVGsPath + 'maki-circle-15.svg').toString();
+         if (unknowTag){
+            iconSVG = fs.readFileSync(iconsSVGsPath + 'wiki_question.svg').toString();
+        }else{
+            iconSVG = fs.readFileSync(iconsSVGsPath + 'maki-circle-15.svg').toString();
+        }
 
     } else {
         iconSVG = fs.readFileSync(iconsSVGsPath + iconName + '.svg').toString();
@@ -95,7 +99,7 @@ for (key in tags) {
     }
 }
 
-generateMarkerIcon('', "#ffffff", "#000000")
+generateMarkerIcon('', "#ffffff", "#000000", true)
 
 
 //copy whiteliste 

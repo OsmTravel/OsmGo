@@ -1,5 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="20px" height="20px" viewBox="0 0 15 15" version="1.1">
-  <g id="surface1">
-    <path d="M 2.445312 4.820312 L 4.261719 4.820312 L 4.246094 5.890625 L 2.445312 7.511719 Z M 7.472656 4.226562 L 0.300781 10.550781 L 1.054688 11.398438 L 7.5 5.714844 L 13.945312 11.398438 L 14.699219 10.550781 L 7.527344 4.226562 L 7.5 4.199219 Z M 7.472656 4.226562 " fill="#FFFFFF"/>
-  </g>
-</svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="15px" height="15px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" space="preserve">
+    <path d="M2.445312,4.820312L4.261719,4.820312L4.246094,5.890625L2.445312,7.511719ZM7.472656,4.226562L0.300781,10.550781L1.054688,11.398438L7.5,5.714844L13.945312,11.398438L14.699219,10.550781L7.527344,4.226562L7.5,4.199219ZM7.472656,4.226562" fill="#FFFFFF"/>
+    </svg>
