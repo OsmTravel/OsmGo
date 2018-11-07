@@ -1,4 +1,5 @@
 
+// pas utilisé?!
 function getPrimaryKeyOfObject(featureTags, listOfPrimaryKey) {
   let kv = { k: '', v: '' };
   for (let k in featureTags) {

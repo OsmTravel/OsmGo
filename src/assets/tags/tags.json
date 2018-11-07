@@ -121,7 +121,7 @@
         "key": "travel_agency",
         "lbl": "Agence de voyage",
         "lbl_alt": "",
-        "icon": "mi-travel-agency",
+        "icon": "mi-airport",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["shop#travel_agency#operator", "wheelchair"]
@@ -297,7 +297,8 @@
         "icon": "mi-florist",
         "markerColor": "#A23337",
         "alert": "C'est une erreur, ne plus utiliser",
-        "presets": ["wheelchair"]
+        "presets": ["wheelchair"],
+        "deprecated": true
       },
       {
         "key": "outdoor",
@@ -349,7 +350,7 @@
         "key": "charity",
         "lbl": "Magasin de bienfaisance",
         "lbl_alt": "",
-        "icon": "mi-health",
+        "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["second_hand", "wheelchair"]
@@ -493,7 +494,7 @@
         "key": "carpet",
         "lbl": "Magasin de tapis",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "fa-scroll-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -601,7 +602,7 @@
         "key": "window_blind",
         "lbl": "Vente de stores",
         "lbl_alt": "",
-        "icon": "fa-bug",
+        "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -720,8 +721,9 @@
         "lbl_alt": "",
         "icon": "mi-fish-cleaning",
         "markerColor": "#A23337",
-        "alert": "",
-        "presets": ["wheelchair"]
+        "alert": "Utilisez : shop=seafood",
+        "presets": ["wheelchair"],
+        "deprecated": true
       },
       {
         "key": "funeral_directors",
@@ -1123,7 +1125,7 @@
         "key": "games",
         "lbl": "Vente de jeux de société",
         "lbl_alt": "Jeux de plateau",
-        "icon": "fa-chess-knight-solid",
+        "icon": "fa-chess-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1150,7 +1152,7 @@
         "key": "ticket",
         "lbl": "Vente de tickets / billetterie",
         "lbl_alt": "Tickets de concerts, événements, transport public ...",
-        "icon": "",
+        "icon": "fa-ticket-alt-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1318,7 +1320,7 @@
         "key": "pub",
         "lbl": "Pub",
         "lbl_alt": "",
-        "icon": "mi-bar",
+        "icon": "fa-beer",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1423,19 +1425,10 @@
         "presets": ["wheelchair"]
       },
       {
-        "key": "youth_centre",
-        "lbl": "Centre pour la jeunesse",
-        "lbl_alt": "",
-        "icon": "fa-child",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
         "key": "grave_yard",
         "lbl": "Cimetière",
         "lbl_alt": "",
-        "icon": "mi-cemetery",
+        "icon": "maki-cemetery-15",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1454,24 +1447,6 @@
         "lbl": "Clinique",
         "lbl_alt": "",
         "icon": "fa-hospital-o",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
-        "key": "club",
-        "lbl": "Club",
-        "lbl_alt": "",
-        "icon": "",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
-        "key": "social_club",
-        "lbl": "Club social",
-        "lbl_alt": "",
-        "icon": "",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1526,15 +1501,6 @@
         "lbl": "Dentiste",
         "lbl_alt": "",
         "icon": "maki-dentist-15",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
-        "key": "dormitory",
-        "lbl": "Dortoir",
-        "lbl_alt": "",
-        "icon": "fa-bed",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1622,15 +1588,6 @@
         "presets": ["wheelchair"]
       },
       {
-        "key": "shop",
-        "lbl": "Magasin",
-        "lbl_alt": "",
-        "icon": "",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
         "key": "townhall",
         "lbl": "Mairie",
         "lbl_alt": "Hotel de ville",
@@ -1640,19 +1597,10 @@
         "presets": ["wheelchair"]
       },
       {
-        "key": "retirement_home",
-        "lbl": "Maison de retraite",
-        "lbl_alt": "",
-        "icon": "",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
         "key": "nursing_home",
         "lbl": "Maison de santé",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-health",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1734,7 +1682,7 @@
         "key": "marketplace",
         "lbl": "Place de marché",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "osm-marketplace",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1799,24 +1747,6 @@
         "presets": ["cuisine", "wheelchair"]
       },
       {
-        "key": "hall",
-        "lbl": "Salle",
-        "lbl_alt": "",
-        "icon": "maki-building-15",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": []
-      },
-      {
-        "key": "village_hall",
-        "lbl": "Salle communale",
-        "lbl_alt": "",
-        "icon": "",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
         "key": "gym",
         "lbl": "Salle de gymnastique",
         "lbl_alt": "",
@@ -1829,7 +1759,7 @@
         "key": "community_centre",
         "lbl": "Salle polyvalente",
         "lbl_alt": "salle des fêtes, municipale, maison de quartier",
-        "icon": "",
+        "icon": "osm-community_centre",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1840,17 +1770,9 @@
         "lbl_alt": "",
         "icon": "mi-spa",
         "markerColor": "#EF9228",
-        "alert": "",
-        "presets": []
-      },
-      {
-        "key": "mountain_rescue",
-        "lbl": "Secours en montagne",
-        "lbl_alt": "",
-        "icon": "mi-health",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": []
+        "alert": "Utilisez leisure=sauna",
+        "presets": [],
+        "deprecated": true
       },
       {
         "key": "hunting_stand",
@@ -1872,18 +1794,9 @@
       },
       {
         "key": "studio",
-        "lbl": "Studio",
+        "lbl": "Studio d'enregistrement",
         "lbl_alt": "",
-        "icon": "",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair"]
-      },
-      {
-        "key": "supermarket",
-        "lbl": "Supermarché",
-        "lbl_alt": "",
-        "icon": "mi-grocery-or-supermarket",
+        "icon": "fa-headset-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair"]
@@ -1990,7 +1903,7 @@
       {
         "key": "social_facility",
         "lbl": "Service social",
-        "lbl_alt": "",
+        "lbl_alt": "Maison de retraite, ",
         "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#EF9228",
         "alert": "",
@@ -2135,7 +2048,7 @@
         "key": "lavoir",
         "lbl": "Lavoir",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-roofing-contractor",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2207,7 +2120,7 @@
         "key": "dancing_school",
         "lbl": "dancing_school",
         "lbl_alt": "Ecole de danse",
-        "icon": "",
+        "icon": "dance-instructor",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
@@ -2422,7 +2335,7 @@
         "key": "adult_gaming_centre",
         "lbl": "Salle de jeux pour adultes",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-casino",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2440,7 +2353,7 @@
         "key": "bandstand",
         "lbl": "Kiosque à musique.",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "maki-music-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2458,7 +2371,7 @@
         "key": "dance",
         "lbl": "Salle de danse",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "dance-instructor",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"]
@@ -2674,7 +2587,7 @@
         "key": "horse_riding",
         "lbl": "Centre équestre",
         "lbl_alt": "équitation, cheval",
-        "icon": "fa-chess-knight-solid",
+        "icon": "fa-horse-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -2692,7 +2605,7 @@
         "key": "nature_reserve",
         "lbl": "Réserve naturelle",
         "lbl_alt": "",
-        "icon": "fa-frog-solid",
+        "icon": "fa-otter-solid",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": []
@@ -3200,7 +3113,7 @@
         "lbl": "Refuge de montagne",
         "lbl_alt": "",
         "icon": "mi-roofing-contractor",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3209,7 +3122,7 @@
         "lbl": "Attraction touristique",
         "lbl_alt": "",
         "icon": "",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3218,7 +3131,7 @@
         "lbl": "Œuvre d'art",
         "lbl_alt": "Oeuvre d'art, sculture",
         "icon": "mi-art-gallery",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3227,7 +3140,7 @@
         "lbl": "Camping",
         "lbl_alt": "",
         "icon": "maki-campsite-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3236,7 +3149,7 @@
         "lbl": "Aire pour caravanes",
         "lbl_alt": "",
         "icon": "fa-truck-solid",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3245,7 +3158,7 @@
         "lbl": "Galerie d'art",
         "lbl_alt": "",
         "icon": "mi-art-gallery",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3254,7 +3167,7 @@
         "lbl": "Auberge de jeunesse",
         "lbl_alt": "",
         "icon": "maki-lodging-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3263,7 +3176,7 @@
         "lbl": "Hôtel",
         "lbl_alt": "",
         "icon": "maki-lodging-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3272,7 +3185,7 @@
         "lbl": "Office de tourisme, Point d'information",
         "lbl_alt": "",
         "icon": "fa-info-circle",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3281,7 +3194,7 @@
         "lbl": "Motel",
         "lbl_alt": "",
         "icon": "maki-lodging-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3290,7 +3203,7 @@
         "lbl": "Musée",
         "lbl_alt": "",
         "icon": "mi-museum",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3299,7 +3212,7 @@
         "lbl": "Aire de pique-nique",
         "lbl_alt": "",
         "icon": "maki-picnic-site-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3308,7 +3221,7 @@
         "lbl": "Parc d'attraction",
         "lbl_alt": "",
         "icon": "mi-amusement-park",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3317,7 +3230,7 @@
         "lbl": "Point de vue",
         "lbl_alt": "",
         "icon": "fa-eye",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3326,7 +3239,7 @@
         "lbl": "Abri de bivouac",
         "lbl_alt": "",
         "icon": "mi-roofing-contractor",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3335,7 +3248,7 @@
         "lbl": "Zoo",
         "lbl_alt": "",
         "icon": "mi-zoo",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": ["wheelchair"]
       },
@@ -3344,7 +3257,7 @@
         "lbl": "_NC",
         "lbl_alt": "",
         "icon": "wiki_question",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3353,7 +3266,7 @@
         "lbl": "Chambres d'hôte",
         "lbl_alt": "",
         "icon": "maki-lodging-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3362,7 +3275,7 @@
         "lbl": "Meublé de tourisme / gîte",
         "lbl_alt": "gîte rural",
         "icon": "fa-home",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       },
@@ -3371,7 +3284,7 @@
         "lbl": "Appartements de location de vacances",
         "lbl_alt": "",
         "icon": "fa-home",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "Le bâtiment entier doit être voué à la location de vacances ",
         "presets": []
       },
@@ -3380,7 +3293,7 @@
         "lbl": "Aquarium public",
         "lbl_alt": "",
         "icon": "maki-aquarium-15",
-        "markerColor": "#5B396C",
+        "markerColor": "#9D7178",
         "alert": "",
         "presets": []
       }
@@ -4133,7 +4046,7 @@
         "key": "archaeological_site",
         "lbl": "Monuments antiques",
         "lbl_alt": "fouilles archéologiques",
-        "icon": "",
+        "icon": "fa-archway-solid",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
@@ -4178,7 +4091,7 @@
         "key": "boundary_stone",
         "lbl": "Borne frontière",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "mi-cemetery",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
@@ -4250,10 +4163,15 @@
       "footway",
       "motorway",
       "trunk",
+      "trunk_link",
       "primary",
+      "primary_link",
       "secondary",
+      "secondary_link",
       "tertiary",
+      "tertiary_link",
       "unclassified",
+      "abandoned",
       "residential",
       "service",
       "motorway_link",
@@ -4272,7 +4190,11 @@
       "path",
       "cycleway",
       "proposed",
-      "construction"
+      "construction",
+      "steps",
+      "pedestrian",
+      "motorway_junction",
+      "platform"
     ],
     "type": "highway",
     "lbl": "Voirie",

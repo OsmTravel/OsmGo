@@ -103,7 +103,7 @@ generateMarkerIcon('', "#ffffff", "#000000", true)
 
 
 //copy whiteliste 
-const whiteList = ['none', 'Delete', 'Create', 'Update', 'arrow-position'];
+const whiteList = ['none', 'Delete', 'Create', 'Update'];
 
 for (let i = 0; i < whiteList.length; i++) {
     fs.copySync(iconsSVGsPath + whiteList[i] + '.svg', outputFolderSVG + whiteList[i] + '.svg');
