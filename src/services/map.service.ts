@@ -321,7 +321,7 @@ export class MapService {
 
   getIconStyle(feature) {
     let listOfPrimaryKeys = this.tagsService.getListOfPrimaryKey();
-    let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature.properties.tags); // {k: "shop", v: "travel_agency"}
+    let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature); // {k: "shop", v: "travel_agency"}
     feature.properties['primaryTag'] = primaryTag;
     if (listOfPrimaryKeys.indexOf(primaryTag.k) !== -1) { // c'est un objet à afficher
       let configMarker = this.tagsService.getConfigMarkerByKv(primaryTag.k, primaryTag.v);
@@ -632,11 +632,14 @@ export class MapService {
     this.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.map);
 
     this.map.on('click', function (e) {
+      // TODO plus besoin, plus de pitch possible
       let c = [[e.point.x - 8, e.point.y + 8], [e.point.x + 8, e.point.y + 18]];
       let features = map.queryRenderedFeatures(c, { layers: ['marker', 'marker_changed', 'label_changed', 'label', 'icon-change'] });
       if (!features.length) {
         return;
       }
+      // TODO : Dans le cas ou plusieurs objets sont selectionner, laisser l'utilisateur choisir
+      // console.log(features)
       let feature = features[0];
       let layer = feature.layer.id;
       // Provenance de la donnée d'origine (data OU data_changed)

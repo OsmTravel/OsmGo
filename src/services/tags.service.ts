@@ -181,25 +181,23 @@ export class TagsService {
         return listeOfPrimaryKey;
     }
 
-    getPrimaryKeyOfObject(tags) {
+    getPrimaryKeyOfObject(feature) {
+        const tags  = feature.properties.tags
         let types_liste = this.getListOfPrimaryKey();
         let kv = { k: '', v: '' };
         for (let k in tags) {
+            // console.log(k);
             if (types_liste.indexOf(k) !== -1) {
+                // on filtre ici pour ne pas prendre en compte les ways exclus
+                if ((feature.properties.type == 'way' || feature.properties.type =='relation')
+                    && this.tags[k].exclude_way_values 
+                    && this.tags[k].exclude_way_values.indexOf(tags[k]) !== -1 
+                    ){
+                        continue
+                }
                 kv = { k: k, v: tags[k] };
+                // console.log(kv)
                 return kv
-            }
-        }
-        return null;
-    }
-
-    getPrimaryKeyOfArray(tags) {
-        let types_liste = this.getListOfPrimaryKey();
-        let kv = { key: '', value: '' };
-        for (let i = 0; i < tags.length; i++) {
-            if (types_liste.indexOf(tags[i].key) !== -1) {
-                kv = { key: tags[i].key, value: tags[i].value };
-                break;
             }
         }
         return null;

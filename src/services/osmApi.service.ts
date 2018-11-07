@@ -470,15 +470,10 @@ export class OsmApiService {
         for (let i = 0; i < features.length; i++) {
             let feature = features[i];         
             if (!feature.properties.tainted) { // !relation incomplete
-                let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature.properties.tags);
+                let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature);
                 if (primaryTag) { //tag interessant
                     feature.properties['primaryTag'] = primaryTag;
-                    // on filtre les certaines valeurs si c'est un way (pour ne pas afficher les routes par exemple)
-                    if (feature.properties.type == 'way' 
-                        && this.tagsService.tags[primaryTag.k].exclude_way_values 
-                        && this.tagsService.tags[primaryTag.k].exclude_way_values.indexOf(primaryTag.v) !== -1 ){
-                            continue
-                        }
+  
                     filterFeatures.push(feature);
                 }
             }
