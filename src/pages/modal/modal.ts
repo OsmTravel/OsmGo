@@ -166,8 +166,11 @@ export class ModalsContentPage {
     }
   }
 
-  // les clé à exclure dans les "autres tags"
+  // les clés à exclure dans les "autres tags", (qui ne sont pas dans les presets donc)
   getExcludeKeysFromOtherTags(primaryKey, configOfPrimaryKey) {
+    if (!configOfPrimaryKey){
+      return []
+    }
     let res = [primaryKey, 'name',]
     let presetsIds = configOfPrimaryKey.presets;
     for (let i = 0; i < presetsIds.length; i++) {
