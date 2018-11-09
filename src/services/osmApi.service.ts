@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/from';
 
 import { MapService } from './map.service';
 import { TagsService } from './tags.service';
@@ -16,12 +17,10 @@ import { DataService } from './data.service'
 import { AlertService } from './alert.service';
 import { ConfigService } from './config.service';
 
-
 declare var osmtogeojson: any;
 
 import {
-    union, bboxPolygon, area, BBox, pointOnSurface, length,
-    polygon, multiPolygon, lineString, multiLineString
+    union, bboxPolygon, area, BBox
 } from '@turf/turf';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 
@@ -365,41 +364,8 @@ export class OsmApiService {
     }
 
 
-    mergeNewOldData(newGeojson, oldGeojson, bbox_geojson) {
-        let that = this;
 
-
-
-        let workerGetStyle = new Worker("assets/workers/worker-getIconStyle.js");
-
-        workerGetStyle.postMessage({
-            tags: that.tagsService.getTags(),
-            geojson: newGeojson,
-            listOfPrimaryKeys: that.tagsService.getListOfPrimaryKey()
-        });
-
-        workerGetStyle.onmessage = function (newGeojsonStyled) {
-            workerGetStyle.terminate()
-            let workerMergeData = new Worker("assets/workers/worker-mergeData.js");
-
-            workerMergeData.postMessage({
-                newGeojson: newGeojsonStyled.data,
-                oldGeojson: oldGeojson,
-                bbox_geojson: bbox_geojson,
-                geojsonChanged: that.dataService.getGeojsonChanged()
-            });
-
-            workerMergeData.onmessage = function (mergedGeojson) {
-                that.dataService.setGeojson(mergedGeojson.data)
-
-                that.mapService.eventMarkerReDraw.emit(mergedGeojson.data);
-                that.mapService.loadingData = false;
-                workerMergeData.terminate();
-            };
-        }
-    }
     setBbox(newBoboxFeature) {
-
         let resBbox;
         if (this.dataService.getGeojsonBbox().features.length == 0) {
             resBbox = { "type": "FeatureCollection", "features": [newBoboxFeature] };
@@ -407,7 +373,6 @@ export class OsmApiService {
 
         } else {
             let oldBbox = this.dataService.getGeojsonBbox();
-
             let oldBboxFeature = JSON.parse(JSON.stringify(oldBbox.features[0]));
 
             const resultUnion = union(newBoboxFeature, oldBboxFeature);
@@ -415,6 +380,68 @@ export class OsmApiService {
             this.dataService.setGeojsonBbox(resBbox);
         }
         this.mapService.eventNewBboxPolygon.emit(resBbox);
+    }
+/*
+    Observable : Utilise un Web Worker pour, ajouter un point au polygon, definir le style, filtrer et fusionner les données 
+*/
+    formatOsmJsonData$(newGeojson, oldGeojson, featureBbox, geojsonChanged) {
+        let that = this
+        return Observable.from(
+            new Promise((resolve, reject) => {
+                let workerFormatData = new Worker("assets/workers/worker-formatOsmData.js");
+                workerFormatData.postMessage({
+                    tagsConfig: that.tagsService.getTags(),
+                    osmData: newGeojson,
+                    oldGeojson: oldGeojson,
+                    featureBbox: featureBbox,
+                    geojsonChanged : geojsonChanged
+                });
+
+                workerFormatData.onmessage = function (formatedData) {
+                    workerFormatData.terminate()
+                    if (formatedData.data) {
+                        resolve(formatedData.data);
+                    } else {
+                        reject(Error("It broke"));
+                    }
+                }
+            })
+        )
+    }
+
+    /*
+        Convertit les donnée XML d'OSM en geojson en utilisant osmtogeojson
+        Filtre les données*
+        Convertit les polygones/lignes en point
+        Generation du style dans les properties*
+        Fusion avec les données existantes (ancienne + les données modifiés)*
+        
+        * utilisation du webworker
+    */
+    formatDataResult(osmData, oldGeojson, featureBbox, geojsonChanged) {
+        let xml = new DOMParser().parseFromString(osmData, 'text/xml');
+        if (xml.getElementsByTagName("remark")[0]
+            && xml.getElementsByTagName("remark")[0]['textContent']) {
+            return { 'error': xml.getElementsByTagName("remark")[0]['textContent'] }
+        }
+        let geojson = osmtogeojson(xml).geojson;
+
+        return this.formatOsmJsonData$(geojson, oldGeojson, featureBbox, geojsonChanged)
+            .subscribe(newDataJson => {
+                // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
+                if (newDataJson['error']) {
+                    throw ErrorObservable.create(newDataJson['error']);
+                }
+                this.setBbox(featureBbox);
+                this.dataService.setGeojson(newDataJson)
+                this.mapService.eventMarkerReDraw.emit(newDataJson);
+                this.mapService.loadingData = false;
+            },
+                error => {
+                    // TODO?
+                    console.log(error)
+                }
+            )
     }
 
     getDataFromBbox(bbox: BBox, useOverpassApi: boolean = false) {
@@ -426,115 +453,24 @@ export class OsmApiService {
         let bboxArea = area(featureBbox);
 
         if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
-            let urlOverpassApi = 'https://overpass-api.de/api/interpreter';
-
-            return this.httpClient.post(urlOverpassApi, this.getUrlOverpassApi(bbox), { responseType: 'text' })
-                .map((res) => {
-                    let newDataJson = this.xmlOsmToFormatedGeojson(res);
-                    // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
-                    if (newDataJson.error) {
-                        throw ErrorObservable.create(newDataJson.error);
-                    }
-                    this.setBbox(featureBbox);
-                    this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
+            let url = 'https://overpass-api.de/api/interpreter';
+            return this.httpClient.post(url, this.getUrlOverpassApi(bbox), { responseType: 'text' })
+                .map((osmData) => {
+                    this.formatDataResult(osmData, this.dataService.getGeojson(), featureBbox, this.dataService.getGeojsonChanged())
                 })
                 .catch((error: any) => {
                     return Observable.throw(error.message || 'Impossible de télécharger les données (overpassApi)')
                 }
                 );
-        }
-        else {
+
+        } else {
             let url = this.getUrlApi() + '/api/0.6/map?bbox=' + bbox.join(',');
             return this.httpClient.get(url, { responseType: 'text' })
-                .map((res) => {
-                    let newDataJson = this.xmlOsmToFormatedGeojson(res);
-                    // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
-                    if (newDataJson.error) {
-                        throw ErrorObservable.create(newDataJson.error);
-                    }
-                    this.setBbox(featureBbox);
-                    this.mergeNewOldData(newDataJson, this.dataService.getGeojson(), featureBbox);
+                .map((osmData) => {
+                    this.formatDataResult(osmData, this.dataService.getGeojson(), featureBbox, this.dataService.getGeojsonChanged())
                 })
                 .catch((error: any) => Observable.throw(error.message || 'Impossible de télécharger les données (api06)'));
+
         }
-
-    }
-
-    /* 
-        ne garde que les relations complètes (=> web worker?)
-        on filtre certain tags (ways)
-    */
-    private filterFeatures(features) {
-        
-        let filterFeatures = [];
-        for (let i = 0; i < features.length; i++) {
-            let feature = features[i];         
-            if (!feature.properties.tainted) { // !relation incomplete
-                let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature);
-                if (primaryTag) { //tag interessant
-                    feature.properties['primaryTag'] = primaryTag;
-  
-                    filterFeatures.push(feature);
-                }
-            }
-        }
-        return filterFeatures;
-    }
-
-    private xmlOsmToFormatedGeojson(res) {
-
-        let xml = new DOMParser().parseFromString(res, 'text/xml');
-        if (xml.getElementsByTagName("remark")[0]
-            && xml.getElementsByTagName("remark")[0]['textContent']) {
-            return { 'error': xml.getElementsByTagName("remark")[0]['textContent'] }
-        }
-        let geojson = osmtogeojson(xml).geojson;
-        geojson.features = this.filterFeatures(geojson.features)
-
-        let featuresWayToPoint = this.wayToPoint(geojson);
-        return this.mapService.setIconStyle((featuresWayToPoint));
-    }
-
-    // => web workers?
-    // on en profite pour calculer les distances/surface
-    private wayToPoint(FeatureCollection) {
-        let features = FeatureCollection.features;
-        for (let i = 0; i < features.length; i++) {
-
-            let feature = features[i];
-            // console.log(feature);
-            if (feature.geometry) {
-                if (feature.geometry.type !== 'Point') {
-
-                    // on stocke la géométrie d'origine dans .way_geometry
-                    feature.properties.way_geometry = JSON.parse(JSON.stringify(feature.geometry));
-                    let geom;
-                    switch (feature.geometry.type) {
-                        case 'Polygon':
-                            feature.properties['mesure'] = area(feature.geometry)
-                            geom = polygon(feature.geometry.coordinates);
-                            break;
-                        case 'MultiPolygon':
-                            feature.properties['mesure'] = area(feature.geometry)
-                            geom = multiPolygon(feature.geometry.coordinates);
-                            break;
-                        case 'LineString':
-                            feature.properties['mesure'] = length(feature.geometry)
-                            geom = lineString(feature.geometry.coordinates);
-                            break;
-                        case 'MultiLineString':
-                            feature.properties['mesure'] = length(feature.geometry)
-                            geom = multiLineString(feature.geometry.coordinates);
-                            break;
-                    }
-
-                    if (geom) {
-                        feature.geometry.coordinates = pointOnSurface(geom).geometry.coordinates;
-                        feature.geometry.type = 'Point';
-                    }
-                }
-            }
-        }
-        return FeatureCollection;
     }
 } // EOF Services
