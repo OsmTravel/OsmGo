@@ -403,6 +403,28 @@ export class ModalsContentPage {
     toast.present();
   }
 
+  confirmAddSurveyDate(){
+      let alert = this.alertCtrl.create({
+        title: `Objet vérifié ?`,
+        subTitle: `Ajouter le tag 'survey:date' à la date du jour`,
+        buttons: [
+          {
+            text: 'Non',
+            role: 'cancel',
+            handler: data => {
+            }
+          },
+          {
+            text: 'Oui',
+            handler: data => {
+              this.addSurveyDate()
+            }
+          }
+        ]
+      });
+      alert.present();
+  }
+
   addSurveyDate() {
     const now = new Date;
     const YYYY = now.getFullYear()
