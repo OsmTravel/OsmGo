@@ -1130,5 +1130,23 @@
         "lbl": "Opérateur",
         "tags": [],
         "key": "operator"
+    },
+    "phone": {
+        "type": "text",
+        "lbl": "Téléphone",
+        "tags": [],
+        "key": "phone"
+    },
+    "website":{
+        "type": "text",
+        "lbl": "Site web",
+        "tags": [],
+        "key": "website"
+    },
+    "opening_hours":{
+        "type": "text",
+        "lbl": "Horaires d'ouverture",
+        "tags": [],
+        "key": "opening_hours"
     }
 }
