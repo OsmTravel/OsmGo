@@ -1,3 +1,26 @@
+# 0.6.0
+### Fix
+    * Fiche : affichage de l'utilisateur après l'envoi d'une modification
+    * Fiche : le bouton survey:date devient un bouton classique avec une alerte de confirmation
+    * Le markers sans tag connu pouvaient ne pas apparaître
+
+## Interface
+    * Ajout et harmonisation des icons
+    * Lors d'un clic sur plusieur objet, on devra choisir le quel on veut séléctionner
+
+## Config
+    * Un tag peut être "obsolète", il n'apparaîtra pas dans la liste des tags
+    * Possibilité d'ajouter des valeurs par défaut pour la création d'un objet
+    * Ajout de la key "highway"
+    * Possibilité de ne pas prendre en compte certaines valeurs si l'objet est un "way"
+    * Ajout de tags et de presets
+
+## Divers
+    * Utilisation d'un unique web worker pour traiter les données (style/ filtre / wayTopoint / merge )
+    * Upgrade Mapbox GL JS 0.50.0
+    * Le repértoire "platforms" est sorti du .gitignore ( => FDroid)
+
+
 # 0.5.(1-2-3)
 ### Fix
     * Certains markers pouvaient de pas s'afficher ("none" à la place de "" )
