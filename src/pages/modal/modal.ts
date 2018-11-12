@@ -66,7 +66,7 @@ export class ModalsContentPage {
     }
     //clone
     this.originalTags = JSON.parse(JSON.stringify(this.tags));
-    
+
     // backButton
     this.platform.registerBackButtonAction(e => {
       this.dismiss();
@@ -104,10 +104,19 @@ export class ModalsContentPage {
 
 
   getPrimaryKeyOfTags(tags) {
+    const feature = this.feature;
     let listOfPrimaryKey = this.tagsService.getListOfPrimaryKey();
     for (let i = 0; i < tags.length; i++) {
-      if (listOfPrimaryKey.indexOf(tags[i].key) !== -1)
+      if (listOfPrimaryKey.indexOf(tags[i].key) !== -1) {
+        /* on ne prend pas en compte les ways exclus pour détérminer la primarykey*/
+        if ((feature.properties.type == 'way' || feature.properties.type =='relation')
+          && this.tagsService.tags[tags[i].key].exclude_way_values
+          && this.tagsService.tags[tags[i].key].exclude_way_values.indexOf(tags[i].value) !== -1
+        ) {
+          continue
+        }
         return JSON.parse(JSON.stringify(tags))[i];
+      }
     }
     return undefined;
   }
@@ -116,8 +125,8 @@ export class ModalsContentPage {
     // Edit, Read, Loading
     this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read';
     // supprimer les valeurs vide de this.tags (changement de type)
-    this.tags = this.tags.filter(tag => tag.value && tag.value !== '')
-    
+    this.tags = this.tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue)
+
     if (!this.tags.filter(tag => tag.key == 'name')[0]) { // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
     }
@@ -142,6 +151,32 @@ export class ModalsContentPage {
         }
       }
     }
+    // on ajoute les valeurs par defaut s'il on crée l'objet
+    if (this.mode === "Create" && this.configOfPrimaryKey['default_values']) {
+      let default_values = this.configOfPrimaryKey['default_values'];
+      for (let i = 0; i < default_values.length; i++) {
+        let filteredTag = this.tags.filter(tag => tag.key == default_values[i].key);
+        if (filteredTag[0]) { // le preset existe déja, on lui injecte la valeur
+          filteredTag[0].value = default_values[i].value
+          filteredTag[0]['isDefaultValue'] = true
+        } else { // N'est pas présent dans les presets, on l'ajoute
+          this.tags.push({ 'key': default_values[i].key, 'value': default_values[i].value, 'isDefaultValue': true })
+        }
+      }
+    }
+  }
+
+  // les clés à exclure dans les "autres tags", (qui ne sont pas dans les presets donc)
+  getExcludeKeysFromOtherTags(primaryKey, configOfPrimaryKey) {
+    if (!configOfPrimaryKey){
+      return []
+    }
+    let res = [primaryKey, 'name',]
+    let presetsIds = configOfPrimaryKey.presets;
+    for (let i = 0; i < presetsIds.length; i++) {
+      res.push(this.tagsService.presets[presetsIds[i]].key)
+    }
+    return res
   }
 
   dataIsChanged() {
@@ -334,7 +369,6 @@ export class ModalsContentPage {
         let idx = _.findIndex(this.tags,
           o => { return o.key == this.primaryKey.key && o.value == this.primaryKey.value; });
 
-        console.log(this.tags[idx]);
         this.tags[idx] = JSON.parse(JSON.stringify(data));
         this.primaryKey = JSON.parse(JSON.stringify(data));
         this.initComponent();
@@ -369,6 +403,28 @@ export class ModalsContentPage {
     toast.present();
   }
 
+  confirmAddSurveyDate(){
+      let alert = this.alertCtrl.create({
+        title: `Objet vérifié ?`,
+        subTitle: `Ajouter le tag 'survey:date' à la date du jour`,
+        buttons: [
+          {
+            text: 'Non',
+            role: 'cancel',
+            handler: data => {
+            }
+          },
+          {
+            text: 'Oui',
+            handler: data => {
+              this.addSurveyDate()
+            }
+          }
+        ]
+      });
+      alert.present();
+  }
+
   addSurveyDate() {
     const now = new Date;
     const YYYY = now.getFullYear()
@@ -396,7 +452,7 @@ export class ModalsContentPage {
     const toast = this.toastCtrl.create({
       message: 'Veuillez appuyer longuement pour ajouter une date de verification',
       position: 'middle',
-      duration: 3000
+      duration: 2000
     });
     toast.present();
   }

@@ -6,13 +6,14 @@ import { AlertService } from './alert.service'
 import { LocationService } from './location.service'
 import { ConfigService } from './config.service'
 import { Http } from '@angular/http';
-
+import * as _ from 'lodash';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/timer';
 
 import {  destination, point, Point, BBox } from '@turf/turf';
+import { AlertController } from 'ionic-angular';
 declare var mapboxgl: any;
 
 
@@ -57,6 +58,7 @@ export class MapService {
     public locationService: LocationService,
     public configService: ConfigService,
     private zone: NgZone,
+    private alertCtrl: AlertController,
     private http: Http) {
 
     this.domMarkerPosition = document.createElement('div');
@@ -321,7 +323,7 @@ export class MapService {
 
   getIconStyle(feature) {
     let listOfPrimaryKeys = this.tagsService.getListOfPrimaryKey();
-    let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature.properties.tags); // {k: "shop", v: "travel_agency"}
+    let primaryTag = this.tagsService.getPrimaryKeyOfObject(feature); // {k: "shop", v: "travel_agency"}
     feature.properties['primaryTag'] = primaryTag;
     if (listOfPrimaryKeys.indexOf(primaryTag.k) !== -1) { // c'est un objet à afficher
       let configMarker = this.tagsService.getConfigMarkerByKv(primaryTag.k, primaryTag.v);
@@ -331,10 +333,10 @@ export class MapService {
         feature.properties.marker = this.getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
         feature.properties.hexColor = configMarker.markerColor;
 
-      } else { // on ne connait pas la 'value', donc pas de config pour le marker 
-        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
-        feature.properties.icon = 'mi-white-circle'
+      } else { // on ne connait pas la 'value', donc pas de config pour le marker
+        feature.properties.icon = 'maki-circle-15' 
         feature.properties.hexColor = '#000000';
+        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
       }
     }
     return feature;
@@ -514,8 +516,17 @@ export class MapService {
       //   this.domMarkerPosition.children[0].setAttribute("style", "transform: rotate("+ this.getIconRotate( heading, this.map.getBearing())+"deg")
       // })
     }
+  }
+  selectFeature(feature){
+    let layer = feature['layer'].id;
+    // Provenance de la donnée d'origine (data OU data_changed)
+    let origineData = 'data';
+    if (layer === 'label_changed' || layer === 'marker_changed' || layer === 'icon-change') {
+      origineData = 'data_changed';
+    }
 
-
+    let geojson = this.dataService.getFeatureById(feature['properties'].id, origineData);
+    this.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
   }
 
   mapIsLoaded() {
@@ -631,22 +642,44 @@ export class MapService {
     // value en km!
     this.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.map);
 
-    this.map.on('click', function (e) {
-      let c = [[e.point.x - 8, e.point.y + 8], [e.point.x + 8, e.point.y + 18]];
-      let features = map.queryRenderedFeatures(c, { layers: ['marker', 'marker_changed', 'label_changed', 'label', 'icon-change'] });
+    
+
+    this.map.on('click', (e) => {
+      let features = map.queryRenderedFeatures(e.point, { layers: ['marker', 'marker_changed', 'icon-change'] });
       if (!features.length) {
         return;
       }
-      let feature = features[0];
-      let layer = feature.layer.id;
-      // Provenance de la donnée d'origine (data OU data_changed)
-      let origineData = 'data';
-      if (layer === 'label_changed' || layer === 'marker_changed' || layer === 'icon-change') {
-        origineData = 'data_changed';
-      }
+      // sans duplicate (by id osm)
+      const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
-      let geojson = that.dataService.getFeatureById(feature.properties.id, origineData);
-      that.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
+      if (uniqFeaturesById.length > 1){
+          let alert = this.alertCtrl.create();
+          alert.setTitle(`Sélectionner l'objet`);
+          for (let i = 0; i < uniqFeaturesById.length; i++){
+            let tags = JSON.parse(uniqFeaturesById[i]['properties'].tags)
+            let pk = JSON.parse(uniqFeaturesById[i]['properties'].primaryTag)
+            let name = tags.name || '?'
+            let label = `${name}  (${pk.k} = ${pk.v})` 
+            alert.addInput({
+              type: 'radio',
+              label: label,
+              value: uniqFeaturesById[i]['properties']['id'],
+              checked: (i == 0) ? true : false
+            });
+          }
+      
+          alert.addButton('Annuler');
+          alert.addButton({
+            text: 'Ok',
+            handler: (data: any) => {
+              let selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data)
+              this.selectFeature(selectedFeature[0])
+            }
+          });
+          alert.present();
+      } else {
+        this.selectFeature(uniqFeaturesById[0])
+      }
     });
 
     this.map.on('touchmove', function (e) {

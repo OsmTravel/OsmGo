@@ -7,7 +7,8 @@ import {Pipe} from '@angular/core';
 
 export class FilterExcludeKeysPipe{
     transform(items, excludeKeys: string[]) {
-        if (excludeKeys)
-        return items.filter(item => excludeKeys.indexOf(item.key) === -1);
+        if (excludeKeys){
+            return items.filter(item => excludeKeys.indexOf(item.key) === -1);
+        }
     }
 }

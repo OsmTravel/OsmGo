@@ -3,27 +3,20 @@
 	<div *ngSwitchCase="'Read'" style="height:100%">
 		<ion-header>
 			<ion-toolbar>
-				<ion-grid>
-					<ion-row>
-						<ion-col width-90>
 							<ion-title>
 								{{(findElement(tags,{key:'name'}).value != '') ? findElement(tags,{key:'name'}).value : 'Sans nom' }}
 							</ion-title>
-
-						</ion-col>
-						<ion-col width-10 style="padding: 0;" class="ion-col10">
-							<button ion-fab mini (click)="toogleCode()" style="margin: 0;padding: 0;">   
-									 <ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-         							 <ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
-							</button>
-						</ion-col>
-					</ion-row>
-				</ion-grid>
-
-
-
+			
 
 			</ion-toolbar>
+	
+			<ion-fab  right class="fabToogleCode">
+					<button ion-fab mini (click)="toogleCode()">
+						<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+						<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+					  </button>
+				</ion-fab>
+			
 		</ion-header>
 		<ion-content>
 			<read-meta *ngIf="feature.properties.meta" [meta]="feature.properties.meta" > </read-meta>
@@ -73,10 +66,9 @@
 				<ion-icon name="create"> </ion-icon>
 			</button>
 
-			<button ion-fab ion-long-press *ngIf="!feature.properties.changeType"
-					[interval]="500" (onPressing)="addSurveyDate()"
+			<button ion-fab *ngIf="!feature.properties.changeType"
 					color="secondary"
-					(click)="clickOnFabSurveyButton()"
+					(click)="confirmAddSurveyDate()"
 					class="fabInlineMarginLess fabSurveyDate">
 					<ion-icon name="checkmark-circle-outline"></ion-icon>
 			</button>
@@ -95,7 +87,7 @@
 				</ion-title>
 			</ion-toolbar>
 
-			<ion-fab right top>
+			<ion-fab right class="fabToogleCode">
 				<button ion-fab mini (click)="toogleCode()">
           <ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
           <ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
@@ -135,7 +127,7 @@
 
 
 			<!--Le reste des tags-->
-			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key].concat(configOfPrimaryKey?.presets);">
+			<div *ngFor="let tag of tags | filterExcludeKeys: getExcludeKeysFromOtherTags(primaryKey.key, configOfPrimaryKey)">
 				<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
 			</div>
 

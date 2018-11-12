@@ -112,7 +112,7 @@ export class PushDataToOsmPage {
                         newFeature['properties']['tags'] = JSON.parse(JSON.stringify(featureChanged.properties.tags));
                         newFeature['properties']['meta'] = {};
                         newFeature['properties']['meta']['version'] = 1;
-                        newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().user;
+                        newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
                         newFeature['properties']['meta']['uid'] = this.osmApi.getUserInfo().uid;
                         newFeature['properties']['meta']['timestamp'] = new Date().toISOString();
 
@@ -144,7 +144,7 @@ export class PushDataToOsmPage {
                         let newFeature = {};
                         newFeature = featureChanged;
                         newFeature['properties']['meta']['version']++;
-                        newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().user;
+                        newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
                         newFeature['properties']['meta']['uid'] = this.osmApi.getUserInfo().uid;
                         newFeature['properties']['meta']['timestamp'] = new Date().toISOString();
                         delete newFeature['properties']['changeType'];

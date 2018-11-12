@@ -7,8 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TooltipsModule } from 'ionic-tooltips';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { LongPressModule } from 'ionic-long-press';
-
 import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 
@@ -61,6 +59,7 @@ import { FilterIncludeKeysPipe } from '../pipes/filterIncludeKeys.pipe';
 import { FilterNullValuePipe } from '../pipes/filterNullValue.pipe';
 import { ToLowercasePipe } from '../pipes/toLowercase.pipe';
 import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
+import { FilterDeprecatedTagPipe } from '../pipes/filterDeprecatedTag.pipe';
 import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
 
 
@@ -94,6 +93,7 @@ import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
     FilterNullValuePipe,
     ToLowercasePipe,
     FilterByContentPipe,
+    FilterDeprecatedTagPipe,
     DisplayPresetLabelPipe
   ],
   imports: [
@@ -101,7 +101,6 @@ import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
       HttpClientModule,
       BrowserAnimationsModule,
       TooltipsModule,
-      LongPressModule,
       BrowserModule,
       IonicModule.forRoot(MyApp),
      IonicStorageModule.forRoot()
