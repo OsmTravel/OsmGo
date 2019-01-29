@@ -11,18 +11,15 @@ L'APK peut se trouver dans la catégorie [realeases de ce repo](https://github.c
 
 L'application Android est disponible sur [GooglePlay](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
-![main-window-mapbox](./doc/img/map-vt.png)
 
-![main-window-ortho](./doc/img/map-ortho.png)
-
-![fiche-read](./doc/img/fiche.png)
-
-![main-windows-with-changes](./doc/img/map-modif.png)
-
-![select-primary-tag](./doc/img/select-primary-tag-velo.png)
-
-![send-data](./doc/img/send-data.png)
-
+ <p align="center">
+  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-vt.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-ortho.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/fiche.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-modif.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/select-primary-tag-velo.png?raw=true"/>
+  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/send-data.png"/>
+</p>
 
 
 ### Dev
