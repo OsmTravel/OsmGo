@@ -6,25 +6,22 @@ On parle bien des POI!
 *OSM Go !* est une application mobile qui permet d'enrichir Openstreetmap directement sur le terrain.
 Cartographier votre environnement direct n'a jamais été aussi simple et rapide. Gardez les yeux ouverts et ayez le réflexe! 
 
-Une courte présentation est accessibles [ici](https://osmgo.dogeo.fr)
 
-L'APK peut se trouver dans la catégorie [realeases de ce repo](https://github.com/DoFabien/OsmGo/releases) mais également [ici](https://osmgo.dogeo.fr/apk/osmgo.apk)
+L'APK peut se trouver dans la catégorie [realeases de ce repo](https://github.com/DoFabien/OsmGo/releases) 
 
 L'application Android est disponible sur [GooglePlay](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
-![main-window-mapbox](http://osmgo.dogeo.fr/prez/static/images/main-window-mapbox.png)
+![main-window-mapbox](./doc/img/map-vt.png)
 
-![main-window-ortho](http://osmgo.dogeo.fr/prez/static/images/main-window-ortho.png)
+![main-window-ortho](./doc/img/map-ortho.png)
 
-![fiche-read](http://osmgo.dogeo.fr/prez/static/images/fiche-read.png)
+![fiche-read](./doc/img/fiche.png)
 
-![fiche-edit](http://osmgo.dogeo.fr/prez/static/images/fiche-edit.png)
+![main-windows-with-changes](./doc/img/map-modif.png)
 
-![main-windows-with-changes](http://osmgo.dogeo.fr/prez/static/images/main-windows-with-changes.png)
+![select-primary-tag](./doc/img/select-primary-tag-velo.png)
 
-![select-primary-tag](http://osmgo.dogeo.fr/prez/static/images/select-primary-tag.png)
-
-![send-data](http://osmgo.dogeo.fr/prez/static/images/send-data.png)
+![send-data](./doc/img/send-data.png)
 
 
 
