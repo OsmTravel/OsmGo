@@ -1,0 +1,41 @@
+<ion-menu side="start" swipeGesture="false"
+	contentId="menu1" menuId="menu1" 
+	(ionWillOpen)="menuOpened()" 
+	(ionWillClose)="menuClosed()">
+	<ion-header>
+	  <ion-toolbar color="primary">
+		<ion-title>Osm Go !</ion-title>
+	  </ion-toolbar>
+	</ion-header>
+	<ion-content>
+	  <ion-list>
+		<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
+			Se connecter à OpenStreetMap
+		</ion-item>
+
+		<ion-item (click)="pushPage('/settings')">
+			Paramètres
+		</ion-item>
+
+		<ion-item (click)="pushPage('/about')">
+			À Propos
+		</ion-item>
+
+		<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
+			Se déconnecter
+		</ion-item>
+
+		<ion-item color="danger" (click)="deleteDatapresentConfirm()">
+			Supprimer les données
+		</ion-item>
+
+		<ion-item  (click)="exit()"> 
+			Quitter
+		</ion-item>
+	  </ion-list>
+	</ion-content>
+  </ion-menu>
+  
+
+
+ <ion-router-outlet style="z-index: -2;" id="menu1"></ion-router-outlet> 

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Email ou nom d'utilisateur OpenStreetMap</ion-label>
+            <ion-input [(ngModel)]="username" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Mot de passe</ion-label>
+            <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+
+        <div *ngIf="errorLogin">
+            {{errorLogin._body}}
+        </div>
+        <ion-button  ion-button (click)="login()" block>Se connecter</ion-button>
+    </ion-list>
+
+</ion-content>
+

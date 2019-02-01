@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary"> 
+          <ion-icon name="arrow-back"></ion-icon> 
+       </ion-buttons>
+    <ion-title>
+      À propos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header> OSM Go !</ion-card-header>
+    <ion-card-content>
+      Version : {{ configService.getAppVersion().appVersionNumber}}
+      Build : {{ configService.getAppVersion().appVersionCode }}<br> 
+     
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header> Sources</ion-card-header>
+    <ion-card-content>
+     Données : Openstreetmap<br> 
+     Ortophoto : <a href="http://openstreetmap.fr/f/2016.05.20_OSM-FR_IGN_Ortho.pdf" target="_blank">IGN</a> 
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

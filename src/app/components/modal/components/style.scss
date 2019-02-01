@@ -1,0 +1,31 @@
+.wrapperEdit2cols{
+    width: 100%;
+    min-height: 32px;
+    
+}
+
+.contentEdit2cols{
+    position: relative;
+    float: left;
+    min-height: 32px;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 100%;
+    width: calc(100% - 32px);
+}
+
+.buttonEdit2cols{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    height: 100%;
+}
+
+ion-card{
+    padding-bottom: 1em;
+}
+
+.primaryKeyLabel {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
