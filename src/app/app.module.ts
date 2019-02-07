@@ -45,6 +45,7 @@ import { ToLowercasePipe } from './pipes/toLowercase.pipe';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { DeviceOrientation } from '@ionic-native/device-orientation/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
 
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
@@ -79,6 +80,7 @@ import { HttpClientModule } from '@angular/common/http';
     Diagnostic,
     StatusBar,
     SplashScreen,
+    Vibration,
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

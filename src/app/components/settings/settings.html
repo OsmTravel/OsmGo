@@ -38,7 +38,7 @@
 				<ion-label>Cacher les surface de plus de 5000 m² </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.filterWayByArea" (ionChange)="filterWayByArea($event)"></ion-toggle>
 			</ion-item>
-			<label class="hint">Un marker symbolisera toujours le polygon</label>
+			<label class="hint">Les surface de plus de 5000 m² ne seront pas affichées. Un marker symbolisera toujours le polygon</label>
 		</ion-card-content>
 	</ion-card>
 
@@ -49,7 +49,7 @@
 				<ion-label>Cacher les lignes de plus de 200 m </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.filterWayByLength" (ionChange)="filterWayByLength($event)"></ion-toggle>
 			</ion-item>
-			<label class="hint">Un marker symbolisera toujours la ligne</label>
+			<label class="hint">Les lignes de plus de 200 m ne seront pas affichées.Un marker symbolisera toujours la ligne</label>
 		</ion-card-content>
 	</ion-card>
 

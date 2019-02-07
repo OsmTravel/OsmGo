@@ -26,8 +26,8 @@ export class AppComponent {
     this.configService.platforms = this.platform.platforms();
 
     this.platform.ready().then(() => {
+      this.configService.loadAppVersion();
       this.splashScreen.hide();
-      // this.statusBar.styleDefault();
       this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
     });
   }

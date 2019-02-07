@@ -434,8 +434,8 @@ export class ModalsContentPage implements OnInit {
 
   confirmAddSurveyDate() {
     this.alertCtrl.create({
-      // title: `Objet vérifié ?`,
-      // subTitle: `Ajouter le tag 'survey:date' à la date du jour`,
+      header: `Objet vérifié ?`,
+      subHeader: `Ajouter le tag 'survey:date' à la date du jour`,
       buttons: [
         {
           text: 'Non',
@@ -478,17 +478,6 @@ export class ModalsContentPage implements OnInit {
     }
 
     this.updateOsmElement();
-  }
-
-  clickOnFabSurveyButton() {
-    this.toastCtrl.create({
-      message: 'Veuillez appuyer longuement pour ajouter une date de verification',
-      position: 'middle',
-      duration: 2000
-    }).then(toast => {
-      toast.present();
-    });
-
   }
 
 }

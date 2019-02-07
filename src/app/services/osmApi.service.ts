@@ -116,7 +116,7 @@ export class OsmApiService {
                     return res;
                 }),
                 catchError((error: any) => {
-                    return Observable.throw(error);
+                    return throwError(error);
                 })
             );
 
@@ -160,7 +160,7 @@ export class OsmApiService {
                     const user = xml.getElementsByTagName('changeset')[0].getAttribute('user');
                     return { open: open, user: user };
                 }),
-                catchError((error: any) => Observable.throw(error.json().error || 'Impossible d\'accédé au changeset'))
+                catchError((error: any) => throwError(error.json().error || 'Impossible d\'accédé au changeset'))
             );
     }
 
@@ -185,7 +185,7 @@ export class OsmApiService {
                     this.setChangeset(res, Date.now(), Date.now(), comment);
                     return res;
                 }),
-                catchError((error: any) => Observable.throw(error.json().error || 'Impossible de créer le changeset'))
+                catchError((error: any) => throwError(error.json().error || 'Impossible de créer le changeset'))
             );
     }
 
@@ -327,7 +327,7 @@ export class OsmApiService {
                 map(id => {
                     return id;
                 }),
-                catchError((error: any) => Observable.throw(error.json().error || 'Impossible de créer l\'élément'))
+                catchError((error: any) => throwError(error.json().error || 'Impossible de créer l\'élément'))
             );
     }
 

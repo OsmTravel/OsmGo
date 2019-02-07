@@ -137,7 +137,7 @@ export class TagsService {
                 this.getListOfPrimaryKey();
                 return tags;
             });
-        // .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+        // .catch((error: any) => throwError(error.json().error || 'Server error'));
     }
 
 

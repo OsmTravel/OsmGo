@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header  color="primary">
+  <ion-toolbar  color="primary">
       <ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary"> 
           <ion-icon name="arrow-back"></ion-icon> 
        </ion-buttons>
@@ -12,6 +12,12 @@
 
 
 <ion-content padding>
+
+  	<ion-card *ngIf="!osmApi.user_info.connected" color="danger" >
+				<ion-card-content>
+            Veuillez vous connecter pour envoyer vos modifications vers OSM. 
+				</ion-card-content>
+			</ion-card>
 
   <ion-card>
     <ion-card-header>
@@ -87,6 +93,8 @@
 
 <ion-footer>
   <!--  [disabled]="summary.Total === 0 || isPushing" ion-button block  -->
-  <ion-button color="danger" (click)="presentConfirm()">Supprimer les modifications</ion-button>
-  <ion-button  (click)="pushDataToOsm(commentChangeset)">Envoyer les données!</ion-button>
+  <ion-button class="footerButton" color="danger" (click)="presentConfirm()">Supprimer</ion-button>
+  <ion-button class="footerButton" 
+              [disabled]="!osmApi.user_info.connected || summary.Total === 0"
+              (click)="pushDataToOsm(commentChangeset)">Envoyer !</ion-button>
 </ion-footer>

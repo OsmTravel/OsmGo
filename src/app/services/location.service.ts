@@ -124,10 +124,10 @@ export class LocationService {
     heading() {
 
 
-        window.addEventListener('compassneedscalibration',function(event) {
-            console.log('ask user to wave device in a figure-eight motion');  
-               event.preventDefault();
-        }, true);
+        // window.addEventListener('compassneedscalibration',function(event) {
+        //     console.log('ask user to wave device in a figure-eight motion');
+        //        event.preventDefault();
+        // }, true);
 
         if (this.configService.platforms.indexOf('android') === -1) { // for testing : ionic Serve
             this.headingIsDisable = true;

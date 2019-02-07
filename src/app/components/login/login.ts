@@ -17,9 +17,11 @@ export class LoginPage {
     }
 
     login() {
-        this.osmApi.getUserDetail(this.username, this.password).subscribe(res => {
+        this.osmApi.getUserDetail(this.username, this.password)
+        .subscribe(res => {
             this.navCtrl.pop();
         }, (error => {
+            console.log(error);
             this.errorLogin = error;
         })
         );

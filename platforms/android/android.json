@@ -58,6 +58,12 @@
               "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
               "count": 1
             }
+          ],
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+              "count": 1
+            }
           ]
         }
       },
@@ -148,6 +154,9 @@
     },
     "cordova-plugin-device-orientation": {
       "PACKAGE_NAME": "io.ionic.starter"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "fr.dogeo.osmgo"
     }
   },
   "dependent_plugins": {},
@@ -337,6 +346,7 @@
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-ionic-webview": "2.3.2",
     "cordova-plugin-ionic-keyboard": "2.1.3",
-    "cordova-plugin-device-orientation": "2.0.1"
+    "cordova-plugin-device-orientation": "2.0.1",
+    "cordova-plugin-vibration": "3.1.0"
   }
 }

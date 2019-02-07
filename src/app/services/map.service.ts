@@ -1,3 +1,4 @@
+import { Vibration } from '@ionic-native/vibration/ngx';
 import { Injectable, EventEmitter, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
@@ -7,6 +8,7 @@ import { AlertService } from './alert.service';
 import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
+
 import * as _ from 'lodash';
 
 
@@ -28,7 +30,8 @@ export class MapService {
     public configService: ConfigService,
     private zone: NgZone,
     private alertCtrl: AlertController,
-    private http: HttpClient) {
+    private http: HttpClient,
+    private vibration: Vibration) {
 
     this.domMarkerPosition = document.createElement('div');
     this.domMarkerPosition.className = 'positionMarkersSize';
@@ -658,12 +661,11 @@ export class MapService {
       if (!features.length) {
         return;
       }
+      this.vibration.vibrate(50);
       // // sans duplicate (by id osm)
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
-        //   // TODO!
-
         const inputsParams = uniqFeaturesById.map((f, i) => {
           const tags = JSON.parse(f['properties'].tags);
           const pk = JSON.parse(f['properties'].primaryTag);

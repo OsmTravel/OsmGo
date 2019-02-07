@@ -5,11 +5,12 @@ import { OsmApiService } from '../../services/osmApi.service';
 import { TagsService } from '../../services/tags.service';
 import { MapService } from '../../services/map.service';
 import { DataService } from '../../services/data.service';
-import { Observable, timer } from 'rxjs';
+import { timer } from 'rxjs';
 
 @Component({
     selector: 'page-push-data-to-osm',
-    templateUrl: './pushDataToOsm.html'
+    templateUrl: './pushDataToOsm.html',
+    styleUrls: ['./pushDataToOsm.scss']
 })
 
 export class PushDataToOsmPage implements AfterViewInit {
@@ -28,7 +29,7 @@ export class PushDataToOsmPage implements AfterViewInit {
         public mapService: MapService,
         public navCtrl: NavController,
         private alertCtrl: AlertController,
-        public platform: Platform,
+        public platform: Platform
         // public viewCtrl: ViewController
     ) {
         // this.platform.registerBackButtonAction(e => {
@@ -70,7 +71,7 @@ export class PushDataToOsmPage implements AfterViewInit {
     displayError(error) {
         this.alertCtrl.create({
             // title: error.statusText + ' : ' + error.status,
-            message: error._body,
+            message: error.error,
             buttons: [
                 {
                     text: 'Fermer',
@@ -244,7 +245,7 @@ export class PushDataToOsmPage implements AfterViewInit {
             this.mapService.map.setZoom(18.5);
         }
         this.mapService.map.setCenter(pointCoordinates);
-        // this.dismiss(); TODO
+        this.navCtrl.pop();
     }
 
     ngAfterViewInit() {

@@ -11,7 +11,8 @@ import { AlertService } from '../../services/alert.service';
 
 @Component({
     selector: 'menu',
-    templateUrl: './menu.html'
+    templateUrl: './menu.html',
+    styleUrls: ['./menu.scss']
 })
 export class MenuPage {
 
@@ -88,7 +89,6 @@ export class MenuPage {
     logout() {
         this.configService.setIsDelayed(true);
         this.osmApi.resetUserInfo();
-        this.pushPage('loginPage');
     }
 
 }

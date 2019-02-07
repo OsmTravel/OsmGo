@@ -62,6 +62,7 @@ export class ConfigService {
     loadAppVersion() {
 
         this._appVersion.getAppName().then(e => {
+            console.log(e);
             this.appVersion.appName = e;
         });
         this._appVersion.getVersionCode().then(e => {

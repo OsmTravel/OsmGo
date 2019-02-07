@@ -15,7 +15,9 @@ import { ConfigService } from '../../services/config.service';
 import { ModalsContentPage } from '../modal/modal';
 import { BBox } from '@turf/turf';
 
-import { Observable, timer } from 'rxjs';
+import { timer } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Router, NavigationEnd } from '@angular/router';
 
 
 @Component({
@@ -25,8 +27,11 @@ import { Observable, timer } from 'rxjs';
 })
 
 export class MainPage implements AfterViewInit {
+  modalIsOpen = false;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public toastCtrl: ToastController,
+  constructor(public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public toastCtrl: ToastController,
     public menuCtrl: MenuController,
     public osmApi: OsmApiService,
     public tagsService: TagsService,
@@ -37,35 +42,44 @@ export class MainPage implements AfterViewInit {
     public configService: ConfigService,
     public platform: Platform,
     private alertCtrl: AlertController,
-    private _ngZone: NgZone
+    private _ngZone: NgZone,
+    private router: Router
   ) {
 
     this.tagsService.loadPresets().subscribe();
     this.tagsService.loadTags();
 
-    // this.navCtrl.viewDidEnter.subscribe(e => {
-    //   if (e.index === 0) {
-    //     if (this.mapService.layersAreLoaded) {
-    //       this.configService.freezeMapRenderer = false;
-    //       this.mapService.map.resize();
-    //     }
-    //   }
-    // });
+    this.router.events.subscribe((e) => {
 
-    // this.navCtrl.viewWillEnter.subscribe(e => {
-    //   if (e.index !== 0) {
-    //     if (this.mapService.layersAreLoaded) {
-    //       this.configService.freezeMapRenderer = true;
-    //       this.mapService.map.stop();
-    //     }
-    //   } else {
-    //     this.configService.freezeMapRenderer = false;
-    //   }
-    // });
-    // // backButton
-    // this.platform.registerBackButtonAction(e => {
-    //   this.presentConfirm();
-    // });
+      if (e instanceof NavigationEnd) {
+        if (e['urlAfterRedirects'] === '/main') {
+          this.configService.freezeMapRenderer = false;
+          // la carte ne detect pas toujours le changement de taille du DOM...
+          if (this.mapService.map) {
+            timer(300).subscribe(t => {
+              this.mapService.map.resize();
+            });
+          }
+
+        } else {
+          this.configService.freezeMapRenderer = true;
+        }
+      }
+    });
+
+    this.platform.backButton.subscribe(async () => {
+      if (this.router.url === '/main') {
+        if (this.modalIsOpen) {
+          return;
+        }
+        const menuIsOpen = await this.menuCtrl.isOpen('menu1');
+        if (menuIsOpen) {
+          this.menuCtrl.close('menu1');
+        } else {
+          this.presentConfirm();
+        }
+      }
+    });
 
     mapService.eventShowModal.subscribe(async (_data) => {
 
@@ -78,10 +92,11 @@ export class MainPage implements AfterViewInit {
         componentProps: { type: _data.type, data: _data.geojson, newPosition: newPosition, origineData: _data.origineData }
       });
       await modal.present();
+      this.modalIsOpen = true;
 
       modal.onDidDismiss().then(d => {
+        this.modalIsOpen = false;
         const data = d.data;
-        console.log('[onDidDismiss]', data);
         this.configService.freezeMapRenderer = false;
         if (data) {
           if (data['type'] === 'Move') {
@@ -140,10 +155,13 @@ export class MainPage implements AfterViewInit {
 
   loadData() {
     // L'utilisateur charge les données, on supprime donc le tooltip
-    this.alertService.displayToolTipRefreshData = false;
-    this.mapService.loadingData = true;
+    this._ngZone.run(() => {
+      this.alertService.displayToolTipRefreshData = false;
+      this.mapService.loadingData = true;
+    });
+
+
     const bbox: BBox = this.mapService.getBbox();
-    console.log(bbox);
     this.osmApi.getDataFromBbox(bbox, false)
       .subscribe(data => { // data = geojson a partir du serveur osm
 
@@ -188,16 +206,23 @@ export class MainPage implements AfterViewInit {
   ngAfterViewInit() {
     this.tagsService.loadTags();
     this.mapService.eventDomMainReady.emit(document.getElementById('map'));
-    const that = this;
-    this.alertService.eventDisplayToolTipRefreshData.subscribe(e => {
-      // On affiche le Tootltip "Télécharger les données de la zone" pour 10 sec
-      this._ngZone.run(() => {
-        that.alertService.displayToolTipRefreshData = true;
-        timer(8000).subscribe(t => {
-          that.alertService.displayToolTipRefreshData = false;
-        });
-      });
+    this.alertService.eventDisplayToolTipRefreshData.subscribe(async e => {
 
+      const toast = await this.toastCtrl.create({
+        position: 'bottom',
+        message: 'Charger les données de l\'emprise ?',
+        showCloseButton: true,
+        duration: 6000,
+        closeButtonText: 'Ok'
+      });
+      toast.present();
+      toast.onDidDismiss().then(ev => {
+        if (ev.role === 'cancel') {
+          if (this.mapService.map && this.mapService.map.getZoom() > 16) {
+            this.loadData();
+          }
+        }
+      });
     });
   }
 }

@@ -1,5 +1,8 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header color="primary">
+  <ion-toolbar color="primary">
+        <ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary"> 
+                <ion-icon name="arrow-back"></ion-icon> 
+             </ion-buttons>
     <ion-title>
       Login
     </ion-title>
@@ -9,22 +12,26 @@
 
 <ion-content padding>
 
-    <ion-list>
         <ion-item>
-            <ion-label floating>Email ou nom d'utilisateur OpenStreetMap</ion-label>
-            <ion-input [(ngModel)]="username" type="text"></ion-input>
+                <ion-input [(ngModel)]="username" 
+                placeholder="Email ou nom d'utilisateur OpenStreetMap" ></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-input [(ngModel)]="password" type="password" placeholder="Mot de passe"></ion-input>
         </ion-item>
 
-        <ion-item>
-            <ion-label floating>Mot de passe</ion-label>
-            <ion-input [(ngModel)]="password" type="password"></ion-input>
-        </ion-item>
+        <ion-card *ngIf="errorLogin" color="danger" >
+            <ion-card-content>
+                {{errorLogin.error}} 
+            </ion-card-content>
+          </ion-card>
+   
 
-        <div *ngIf="errorLogin">
-            {{errorLogin._body}}
-        </div>
-        <ion-button  ion-button (click)="login()" block>Se connecter</ion-button>
-    </ion-list>
+        <ion-button 
+        style="margin-top: 16px; width: 100%;"
+        (click)="login()" block>Se connecter</ion-button>
+
 
 </ion-content>
 
