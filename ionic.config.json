@@ -1,7 +1,7 @@
 {
-  "name": "ion2",
+  "name": "osmGoIonic4",
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular"
+  "type": "angular"
 }

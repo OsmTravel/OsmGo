@@ -1,0 +1,100 @@
+<ion-header  color="primary">
+  <ion-toolbar  color="primary">
+      <ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary"> 
+          <ion-icon name="arrow-back"></ion-icon> 
+       </ion-buttons>
+    <ion-title>
+      Envoyer les données
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+  	<ion-card *ngIf="!osmApi.user_info.connected" color="danger" >
+				<ion-card-content>
+            Veuillez vous connecter pour envoyer vos modifications vers OSM. 
+				</ion-card-content>
+			</ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Nombre d'éléments restant : {{summary.Total}}
+    </ion-card-header>
+    <ion-card-content>
+      <table style="width:100%">
+        <tr>
+          <th>Création</th>
+          <th>Modification</th>
+          <th>Suppression</th>
+        </tr>
+        <tr>
+          <td>{{summary.Create}}</td>
+          <td>{{summary.Update}}</td>
+          <td>{{summary.Delete}}</td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+
+
+  <ion-card>
+       <ion-card-header>
+      Commentaire du changeset
+    </ion-card-header>
+     <ion-card-content>
+    <ion-item>
+      <ion-input [(ngModel)]="commentChangeset" type="text"></ion-input>
+    </ion-item>
+     </ion-card-content>
+  </ion-card>
+
+
+
+
+  <table style="width:100%">
+    <tr>
+      <th style="width: 45px;">Type</th>
+      <th>Clé principale</th>
+      <th>Nom</th>
+      <th style="width: 45px;"><ion-icon name="locate"></ion-icon></th>
+      <th style="width: 45px;">Erreur</th>
+      
+    </tr>
+    <tr *ngFor="let item of featuresChanges">
+      <td>
+        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add"></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create"></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash"></ion-icon>
+
+      </td>
+      <td>{{item.properties?.primaryTag.k}}: {{item.properties?.primaryTag.v}}</td>
+      <td>{{item?.properties?.tags?.name}}</td>
+        <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon name="locate"></ion-icon>  </td>
+      <td>
+        <div *ngIf="item.error" (click)="displayError(item.error)">
+          <ion-icon name="bug"></ion-icon>
+        </div>
+      </td>
+    
+    </tr>
+  </table>
+
+  <!--[disabled]="summary.Total === 0 || isPushing"-->
+
+
+</ion-content>
+
+<ion-footer>
+  <!--  [disabled]="summary.Total === 0 || isPushing" ion-button block  -->
+  <ion-button class="footerButton" color="danger" (click)="presentConfirm()">Supprimer</ion-button>
+  <ion-button class="footerButton" 
+              [disabled]="!osmApi.user_info.connected || summary.Total === 0"
+              (click)="pushDataToOsm(commentChangeset)">Envoyer !</ion-button>
+</ion-footer>

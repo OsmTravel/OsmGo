@@ -1,0 +1,48 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+.mapboxgl-ctrl-logo{
+    display: none !important;
+}
+.menu-content-overlay{
+z-index: -2 !important;
+}
+.show-menu{
+    z-index: 1000;
+}
+
+
+.positionMarkersSize{
+    width: 64px;
+    height: 64px;
+}
+
+.locationMapIcon{
+    background: url(./assets/locationX2.png) no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+}
+
+.locationMapIcon-wo-orientation{
+    background: url(./assets/locationX2-wo-orientation.png) no-repeat 0 0;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+}

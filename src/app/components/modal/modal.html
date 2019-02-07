@@ -1,0 +1,192 @@
+<div class="wrapper" [ngSwitch]="typeFiche">
+	<!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
+	<div *ngSwitchCase="'Read'" style="height:100%">
+		<ion-header>
+			<ion-toolbar>
+				<ion-title>
+					{{(findElement(tags,{key:'name'}).value != '') ? findElement(tags,{key:'name'}).value : 'Sans nom' }}
+				</ion-title>
+
+
+			</ion-toolbar>
+
+			<ion-fab style="bottom:-26; right: 5px;" class="fabToogleCode">
+				<ion-fab-button size="small" (click)="toogleCode()">
+					<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+					<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+				</ion-fab-button>
+			</ion-fab>
+
+		</ion-header>
+		<div class="content">
+			<read-meta *ngIf="feature.properties.meta" [meta]="feature.properties.meta"> </read-meta>
+
+			<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.alert != ''" class="alertCard">
+				<ion-card-content>
+					{{configOfPrimaryKey?.alert}}
+				</ion-card-content>
+			</ion-card>
+
+
+			<!--Primary Key-->
+ 
+			<read-primary-key [displayCode]="displayCode" [keyLbl]="tagsService.tags[primaryKey.key].lbl" [primaryKey]="primaryKey"
+			 [configOfPrimaryKey]="configOfPrimaryKey">
+			</read-primary-key>
+
+			<!--Les presets-->
+			<div *ngFor="let tag of tags;">
+				<read-presets *ngIf="tag.preset && tag.value !== ''" [displayCode]="displayCode" [tag]="tag">
+				</read-presets>
+			</div>
+
+			<!--Le reste des tags-->
+			<div *ngFor="let tag of tags | filterExcludeKeys:['name',primaryKey.key];">
+				<read-other-tag [tag]="tag" *ngIf="!tag.preset "> </read-other-tag>
+			</div>
+
+		</div>
+
+		<ion-footer>
+			<ion-fab-button *ngIf="typeFiche==='Read'" (click)="dismiss()" class="fabInlineMarginLess">
+				<ion-icon name="close"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button (click)="updateMode()" class="fabInlineMarginLess">
+				<ion-icon name="create"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button  (click)="cancelChange()" color="danger" *ngIf="feature.properties.changeType" class="fabInlineMarginLess">
+				<ion-icon name="close"> </ion-icon>
+				<ion-icon name="create"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button *ngIf="!feature.properties.changeType" color="secondary" (click)="confirmAddSurveyDate()" class="fabInlineMarginLess fabSurveyDate">
+				<ion-icon name="checkmark-circle-outline"></ion-icon>
+			</ion-fab-button>
+		</ion-footer>
+	</div>
+
+
+
+	<!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
+	<div *ngSwitchCase="'Edit'" style="height:100%">
+
+		<ion-header>
+			<ion-toolbar>
+				<ion-title>
+					<ion-input type="text" [placeholder]="'Nom'" [(ngModel)]="findElement(tags,{key : 'name'}).value"></ion-input>
+				</ion-title>
+			</ion-toolbar>
+
+			<ion-fab style="bottom:-26; right: 5px;" class="fabToogleCode">
+				<ion-fab-button size="small" (click)="toogleCode()">
+					<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+					<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+				</ion-fab-button>
+			</ion-fab>
+		</ion-header>
+
+		<div class="content">
+			<read-meta *ngIf="feature.properties.meta" [meta]="feature.properties.meta"> </read-meta>
+			<!--Alert-->
+			<ion-card *ngIf="configOfPrimaryKey?.alert && configOfPrimaryKey?.alert != ''" class="alertCard">
+				<ion-card-content>
+					{{configOfPrimaryKey?.alert}}
+				</ion-card-content>
+			</ion-card>
+
+			<!--Primary key-->
+			<edit-primary-key [displayCode]="displayCode" [keyLbl]="tagsService.tags[primaryKey.key].lbl" [primaryKey]="primaryKey"
+			 [configOfPrimaryKey]="configOfPrimaryKey" (openPrimaryTagModal)="openPrimaryTagModal()">
+			</edit-primary-key>
+
+			<!--Les presets-->
+			<div *ngFor="let tag of tags">
+
+				<edit-presets *ngIf="tag.preset" [displayCode]="displayCode" [tag]="tag" (openPrimaryListModal)="openModalList(tag)">
+				</edit-presets>
+			</div>
+
+
+
+			<!--Le reste des tags-->
+			<div *ngFor="let tag of tags | filterExcludeKeys: getExcludeKeysFromOtherTags(primaryKey.key, configOfPrimaryKey)">
+				<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
+			</div>
+
+			<!--Nouveaux tag-->
+			<ion-fab-button tappable color="secondary" *ngIf="!displayAddTag" (click)="displayAddTag = true" style="margin:5px;">
+				<ion-icon name="add"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-card *ngIf="displayAddTag">
+				<ion-card-header *ngIf="displayAddTag">
+					Ajouter un tag
+				</ion-card-header>
+				<ion-card-content *ngIf="displayAddTag">
+					<ion-item>
+						<ion-label primary stacked>Key</ion-label>
+						<ion-input type="text" placeholder="Key" [(ngModel)]="newTag.key"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label primary stacked>Value</ion-label>
+						<ion-input type="text" placeholder="value" [(ngModel)]="newTag.value"></ion-input>
+					</ion-item>
+					<ion-button ion-button [disabled]="newTag.key == '' || newTag.value == ''" (click)="addTag()"> Ajouter
+					</ion-button>
+				</ion-card-content>
+			</ion-card>
+
+		</div>
+
+		<ion-footer>
+			<ion-fab-button tappable (click)="dismiss()" class="fabInlineMarginLess">
+				<ion-icon name="close"> </ion-icon>
+			</ion-fab-button>
+			<ion-fab-button tappable color="secondary" [disabled]="!dataIsChanged() && !newPosition" *ngIf="mode =='Update'"
+			 (click)="updateOsmElement()" class="fabInlineMarginLess" style="margin-right:15px;">
+				<ion-icon name="checkmark"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button  tappable color="secondary" *ngIf="mode =='Create'" 
+			 (click)="createOsmElement()" class="fabInlineMarginLess">
+				<ion-icon name="checkmark"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button  tappable *ngIf="feature.properties.type === 'node'" 
+			(click)="moveOsmElement()" class="fabInlineMarginLess">
+				<ion-icon name="move"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button tappable color="danger" *ngIf="feature.properties.changeType" class="fabInlineMarginLess"
+			(click)="cancelChange()" >
+				<ion-icon name="close"> </ion-icon>
+				<ion-icon name="create"> </ion-icon>
+			</ion-fab-button>
+
+			<ion-fab-button tappable ion-fab right color="danger" *ngIf="feature.properties.type == 'node' && mode=='Update'"
+			 (click)="presentConfirm()" class="fabInlineMarginLess">
+				<ion-icon name="trash"> </ion-icon>
+			</ion-fab-button>
+
+		</ion-footer>
+
+	</div>
+	<!--EOF *ngSwitchCase="'Update'"-->
+	<div *ngSwitchCase="'Loading'" style="height:100%">
+		<ion-header>
+			<ion-toolbar>
+				<ion-title>
+					Loading...
+				</ion-title>
+			</ion-toolbar>
+		</ion-header>
+		<ion-content>
+			<h1>Loading ... </h1>
+		</ion-content>
+		<ion-footer>
+		</ion-footer>
+
+	</div>
+</div>

@@ -1,128 +1,89 @@
-import { NgModule,ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { HttpModule} from '@angular/http';
-import { HttpClientModule } from '@angular/common/http';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TooltipsModule } from 'ionic-tooltips';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
-import { MyApp } from './app.component';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { Geolocation } from '@ionic-native/geolocation';
-import { AppVersion } from '@ionic-native/app-version';
-import { Diagnostic } from '@ionic-native/diagnostic';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
-import { Device } from '@ionic-native/device';
-
-
-import { MapService } from '../services/map.service';
-import { OsmApiService } from '../services/osmApi.service';
-import { TagsService } from '../services/tags.service';
-import { DataService } from '../services/data.service';
-import { RouterService } from '../services/router.service';
-import { AlertService } from '../services/alert.service';
-import { LocationService } from '../services/location.service';
-import { ConfigService } from '../services/config.service';
-
-import { MainPage } from '../pages/main/main';
-import { ModalsContentPage } from '../pages/modal/modal';
-import { ModalPrimaryTag } from '../pages/modal/modal.primaryTag/modal.primaryTag';
-import { ModalSelectList } from '../pages/modal/modalSelectList/modalSelectList';
-
-import { ReadPrimaryKey } from '../pages/modal/components/READ_PrimaryKey.component';
-import { EditPrimaryKey } from '../pages/modal/components/EDIT_PrimaryKey.component';
-import { ReadPresets } from '../pages/modal/components/READ_Presets.component';
-import { EditPresets } from '../pages/modal/components/EDIT_Presets.component';
-import { ReadOtherTag } from '../pages/modal/components/READ_OtherTag.component';
-import { EditOtherTag } from '../pages/modal/components/EDIT_OtherTag.component'
-import { ReadMeta } from '../pages/modal/components/READ_Meta.component';
+import { AboutPage } from './components/about/about';
+import { LocationPage } from './components/location/location';
+import { LoginPage } from './components/login/login';
+import { MainPage } from './components/main/main';
+import { MenuPage } from './components/menu/menu';
+import { ModalsContentPage } from './components/modal/modal';
+import { ModalPrimaryTag } from './components/modal/modal.primaryTag/modal.primaryTag';
 
 
-import { MenuPage } from '../pages/menu/menu';
-import { AboutPage } from '../pages/about/about';
-import { LoginPage } from '../pages/login/login';
-import { SettingsPage } from '../pages/settings/settings';
-import { LocationPage } from '../pages/location/location';
+import { ModalSelectList } from './components/modal/modalSelectList/modalSelectList';
+import { PushDataToOsmPage } from './components/pushDataToOsm/pushDataToOsm';
+import { SettingsPage } from './components/settings/settings';
 
-import { PushDataToOsmPage } from '../pages/pushDataToOsm/pushDataToOsm';
+import { ReadMeta } from './components/modal/components/READ_Meta.component';
+import { ReadPrimaryKey } from './components/modal/components/READ_PrimaryKey.component';
+import { ReadOtherTag } from './components/modal/components/READ_OtherTag.component';
+import { ReadPresets } from './components/modal/components/READ_Presets.component';
 
+import { EditOtherTag } from './components/modal/components/EDIT_OtherTag.component';
+import { EditPresets } from './components/modal/components/EDIT_Presets.component';
+import { EditPrimaryKey } from './components/modal/components/EDIT_PrimaryKey.component';
 
+import { DisplayPresetLabelPipe } from './pipes/displayPresetLabel.pipe';
+import { FilterByContentPipe } from './pipes/filterByContent.pipe';
+import { FilterDeprecatedTagPipe } from './pipes/filterDeprecatedTag.pipe';
+import { FilterExcludeKeysPipe } from './pipes/filterExcludeKeys.pipe';
+import { FilterIncludeKeysPipe } from './pipes/filterIncludeKeys.pipe';
+import { FilterNullValuePipe } from './pipes/filterNullValue.pipe';
+import { KeysPipe } from './pipes/keys.pipe';
+import { ToLowercasePipe } from './pipes/toLowercase.pipe';
 
+import { AppVersion } from '@ionic-native/app-version/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { DeviceOrientation } from '@ionic-native/device-orientation/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
 
-import { KeysPipe } from '../pipes/keys.pipe';
-import { FilterExcludeKeysPipe } from '../pipes/filterExcludeKeys.pipe';
-import { FilterIncludeKeysPipe } from '../pipes/filterIncludeKeys.pipe';
-import { FilterNullValuePipe } from '../pipes/filterNullValue.pipe';
-import { ToLowercasePipe } from '../pipes/toLowercase.pipe';
-import { FilterByContentPipe } from '../pipes/filterByContent.pipe';
-import { FilterDeprecatedTagPipe } from '../pipes/filterDeprecatedTag.pipe';
-import { DisplayPresetLabelPipe } from '../pipes/displayPresetLabel.pipe';
+import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [
-    MyApp,
-    SettingsPage,
-    LocationPage,
-    MainPage,
-    ModalsContentPage,
-    ModalPrimaryTag,
-    ModalSelectList,
-    MenuPage,
-    AboutPage,
-    PushDataToOsmPage,
-    LoginPage,
-    
-    ReadPrimaryKey,
-    ReadPresets,
-    ReadOtherTag,
-    ReadMeta,
-    EditPrimaryKey,
-    EditPresets,
-    EditOtherTag,
+  declarations: [AppComponent, MainPage, LocationPage, AboutPage, LoginPage, MenuPage,
+    ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
+    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey,
 
-    KeysPipe,
-    FilterExcludeKeysPipe,
-    FilterIncludeKeysPipe,
-    FilterNullValuePipe,
-    ToLowercasePipe,
+    DisplayPresetLabelPipe,
     FilterByContentPipe,
     FilterDeprecatedTagPipe,
-    DisplayPresetLabelPipe
+    FilterExcludeKeysPipe,
+    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe,
   ],
+  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList],
   imports: [
-      HttpModule,
-      HttpClientModule,
-      BrowserAnimationsModule,
-      TooltipsModule,
-      BrowserModule,
-      IonicModule.forRoot(MyApp),
-     IonicStorageModule.forRoot()
+    BrowserModule,
+    FormsModule,
+    IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule
   ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    MainPage,
-    SettingsPage,
-    ModalsContentPage,
-    ModalPrimaryTag,
-    ModalSelectList,
-    MenuPage,
-    AboutPage,
-    PushDataToOsmPage,
-    LoginPage
-    
+
+  providers: [
+    AppVersion,
+    Geolocation,
+    DeviceOrientation,
+    Diagnostic,
+    StatusBar,
+    SplashScreen,
+    Vibration,
+
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  providers: [ConfigService,OsmApiService,MapService,TagsService,DataService, 
-  RouterService, AlertService, LocationService,
-   SplashScreen, StatusBar, Geolocation, Diagnostic, AppVersion, Device,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
