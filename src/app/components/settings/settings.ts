@@ -20,17 +20,9 @@ export class SettingsPage {
 
     public osmApi: OsmApiService) {
 
-    // this.platform.registerBackButtonAction(e => {
-    //   this.dismiss();
-    // });
-
   }
 
-  dismiss(data = null) {
-    // this.viewCtrl.dismiss(data);
-  }
   back() {
-    console.log('back');
    this.navCtrl.back();
   }
 

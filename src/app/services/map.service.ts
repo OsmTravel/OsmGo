@@ -188,9 +188,7 @@ export class MapService {
     const pointMax: Point = { 'type': 'Point', 'coordinates': [lng_max, lat_max] };
     const coordsMin = destination(pointMin, marginBuffer / 1000, -135).geometry.coordinates;
     const coordsMax = destination(pointMax, marginBuffer / 1000, 45).geometry.coordinates;
-
     const bbox: BBox = [coordsMin[0], coordsMin[1], coordsMax[0], coordsMax[1]]; // TODO : on est pas à 1m près
-    console.log('bbox', bbox);
     return bbox;
   }
 
@@ -366,7 +364,6 @@ export class MapService {
     const that = this;
     this.getMapStyle().subscribe(mapStyle => { // tricks pour donner le chemin complet des sprites pour MapboxGL >= 0.27
       const path = window.location.href;
-      console.log(path);
       let spritesFullPath = 'mapStyle/sprites';
       if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
         const basePath = path.split('#')[0];
@@ -520,7 +517,7 @@ export class MapService {
       this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition,
         { offset: [0, 0] }).setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
       this.markerLocation.addTo(this.map);
-      console.log(this.markerLocation);
+
     }
   }
   selectFeature(feature) {
@@ -689,12 +686,11 @@ export class MapService {
                 role: 'cancel',
                 cssClass: 'secondary',
                 handler: () => {
-                  console.log('Confirm Cancel');
+
                 }
               }, {
                 text: 'Ok',
                 handler: (data: any) => {
-                  console.log(data);
                   const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
                   this.selectFeature(selectedFeature[0]);
                 }
@@ -706,7 +702,6 @@ export class MapService {
         await alert.present();
 
       } else {
-        console.log(uniqFeaturesById[0]);
         this.selectFeature(uniqFeaturesById[0]);
       }
     });

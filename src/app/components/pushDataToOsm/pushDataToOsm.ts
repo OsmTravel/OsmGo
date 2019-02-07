@@ -1,3 +1,4 @@
+
 import { Component, AfterViewInit } from '@angular/core';
 
 import { NavController, AlertController, Platform } from '@ionic/angular';
@@ -5,6 +6,7 @@ import { OsmApiService } from '../../services/osmApi.service';
 import { TagsService } from '../../services/tags.service';
 import { MapService } from '../../services/map.service';
 import { DataService } from '../../services/data.service';
+import { ConfigService } from '../../services/config.service';
 import { timer } from 'rxjs';
 
 @Component({
@@ -29,13 +31,14 @@ export class PushDataToOsmPage implements AfterViewInit {
         public mapService: MapService,
         public navCtrl: NavController,
         private alertCtrl: AlertController,
+        private configService: ConfigService,
         public platform: Platform
         // public viewCtrl: ViewController
     ) {
         // this.platform.registerBackButtonAction(e => {
         //     this.dismiss();
         // });
-        this.commentChangeset = this.osmApi.getChangesetComment();
+        this.commentChangeset = this.configService.getChangeSetComment();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
     }
 
@@ -218,6 +221,7 @@ export class PushDataToOsmPage implements AfterViewInit {
 
     pushDataToOsm(commentChangeset) {
         this.isPushing = true;
+        this.configService.setChangeSetComment(commentChangeset);
         // let featuresChanged = this.dataService.getGeojsonChanged().features;
         this.osmApi.getValidChangset(commentChangeset).subscribe(CS => {
             this.index = 0;

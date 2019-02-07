@@ -56,7 +56,6 @@ export class ModalsContentPage implements OnInit {
 
   ) {
 
-    console.log(params);
     this.newPosition = params.data.newPosition;
 
     this.feature = JSON.parse(JSON.stringify(params.data.data));
@@ -259,7 +258,7 @@ export class ModalsContentPage implements OnInit {
 
     } else { // liveMode // on envoie le point sur le serveur OSM
 
-      this.osmApi.getValidChangset(this.osmApi.getChangesetComment()).subscribe(CS => {
+      this.osmApi.getValidChangset(this.configService.getChangeSetComment()).subscribe(CS => {
 
         this.osmApi.apiOsmCreateNode(this.feature, CS)
           .subscribe(data => {
@@ -297,7 +296,7 @@ export class ModalsContentPage implements OnInit {
         this.dismiss({ redraw: true });
       });
     } else {
-      this.osmApi.getValidChangset(this.osmApi.getChangesetComment()).subscribe(CS => {
+      this.osmApi.getValidChangset(this.configService.getChangeSetComment()).subscribe(CS => {
         this.osmApi.apiOsmUpdateOsmElement(this.feature, CS)
           .subscribe(data => {
             this.feature.properties.meta.version++;
@@ -330,7 +329,7 @@ export class ModalsContentPage implements OnInit {
         this.dismiss({ redraw: true });
       });
     } else {
-      this.osmApi.getValidChangset(this.osmApi.getChangesetComment()).subscribe(CS => {
+      this.osmApi.getValidChangset(this.configService.getChangeSetComment()).subscribe(CS => {
         this.osmApi.apiOsmDeleteOsmElement(this.feature, CS)
           .subscribe(data => {
             this.dataService.deleteFeatureFromGeojson(this.feature);

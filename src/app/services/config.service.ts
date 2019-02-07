@@ -29,8 +29,11 @@ export class ConfigService {
         isDelayed: true,
         baseMapSourceId: this.baseMapSources[0].id,
         filterWayByArea: true,
-        filterWayByLength: true
+        filterWayByLength: true,
+        changeSetComment : 'Sortie avec Osm Go!'
     };
+
+
 
     geolocPageIsOpen = true;
     geojsonIsLoadedFromCache = false;
@@ -86,6 +89,14 @@ export class ConfigService {
     }
     getMapMarginBuffer() {
         return this.config.mapMarginBuffer;
+    }
+
+    setChangeSetComment(comment: string) {
+        this.config.changeSetComment = comment;
+        this.localStorage.set('config', this.config);
+    }
+    getChangeSetComment() {
+        return this.config.changeSetComment;
     }
 
     setLockMapHeading(isLockMapHeading: boolean) {

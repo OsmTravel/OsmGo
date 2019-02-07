@@ -32,7 +32,7 @@ export class OsmApiService {
 
     user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
     changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
-    changeSetComment = 'Sortie avec Osm Go!';
+    // changeSetComment = 'Sortie avec Osm Go!';
 
     eventNewPoint = new EventEmitter();
 
@@ -57,7 +57,7 @@ export class OsmApiService {
             if (d) {
                 this.changeset = d;
             } else {
-                this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.changeSetComment };
+                this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.configService.getChangeSetComment() };
             }
         });
     }
@@ -72,9 +72,6 @@ export class OsmApiService {
         }
     }
 
-    getChangesetComment() {
-        return this.changeSetComment;
-    }
 
     getUserInfo() {
         return this.user_info;

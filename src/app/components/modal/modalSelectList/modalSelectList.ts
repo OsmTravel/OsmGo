@@ -30,7 +30,6 @@ export class ModalSelectList {
     }
 
     selected(e) {
-        console.log(e.detail.value);
         if (e && e.detail && this.initvalue !== e.detail) {
             this.dismiss({ 'key': this.data.key, 'value': e.detail.value });
         }

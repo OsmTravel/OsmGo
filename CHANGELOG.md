@@ -8,6 +8,7 @@
     * Modification de quelques CSS
     * Un utilisateur non connecté peut désormais suivre ses modifications et les supprimer (il ne peut bien sûr pas les envoyer)
     * Retour haptique lors d'un clique sur un objet (avant l'ouverture de la fiche)
+    * Le commentaire du dernier changeset est enregistré et proposé par défaut pour le suivant
 
 
 # 0.6.0
