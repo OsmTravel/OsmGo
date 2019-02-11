@@ -1,8 +1,7 @@
-# Dev
+# 0.7.0
 ## Divers
     * Migration de Ionic 3 à Ionic 4
-    * Mapbox Gl js 0.53.0-beta.1
-    
+    * Mapbox Gl js 0.53.0
 
 ## Interface
     * Modification de quelques CSS
