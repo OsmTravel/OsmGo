@@ -1,0 +1,34 @@
+    $footerHeight : 50px;
+    $header : 0;
+
+  
+
+    #locationWaiting {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background-color: whitesmoke;
+    }
+
+    .main scroll-content{
+        margin-bottom: 0;
+    }
+
+    #map {
+        position: absolute; top:$header; bottom: 0;right: 0; left: 0;
+    }
+    .mapboxgl-ctrl-logo{
+        display: none;
+    }
+
+    ion-footer {
+        height: $footerHeight;
+    }
+
+    .ion-fab{
+        z-index: 5000;
+    }  
+

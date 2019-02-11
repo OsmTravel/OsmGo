@@ -6,11 +6,11 @@ On parle bien des POI!
 *OSM Go !* est une application mobile qui permet d'enrichir Openstreetmap directement sur le terrain.
 Cartographier votre environnement direct n'a jamais été aussi simple et rapide. Gardez les yeux ouverts et ayez le réflexe! 
 
-
 L'APK peut se trouver dans la catégorie [realeases de ce repo](https://github.com/DoFabien/OsmGo/releases) 
 
 L'application Android est disponible sur [GooglePlay](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
+Une documentation rapide est [disponible ici](https://github.com/DoFabien/OsmGo/wiki)
 
  <p align="center">
   <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-vt.png?raw=true"/>
@@ -23,7 +23,7 @@ L'application Android est disponible sur [GooglePlay](https://play.google.com/st
 
 
 ### Dev
-Osm Go! est une application *hybride* utilisant Ionic 3, donc Cordova et Angular. Pour le rendu de la carte, c'est l'excelent Mapbox GL JS qui est à la manœuvre
+Osm Go! est une application *hybride* utilisant Ionic 4, donc Cordova et Angular 7. Pour le rendu de la carte, c'est l'excelent Mapbox GL JS qui est à la manœuvre
 
 #### Installation 
 1) Installation des dépendences gloables

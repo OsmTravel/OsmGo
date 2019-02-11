@@ -1,0 +1,32 @@
+<ion-toolbar>
+    <ion-title>
+        {{ data.preset.lbl }}
+    </ion-title>
+</ion-toolbar>
+<div id="divContentSB">
+    <div id="searchDiv">
+        <ion-searchbar [(ngModel)]="searchText" [debounce]="300"></ion-searchbar>
+    </div>
+</div>
+
+
+<div class="listTag">
+    <!-- radio-group [(ngModel)]="data.value" (ionChange)="selected($event)" -->
+    <ion-list>
+        <ion-radio-group (ionChange)="selected($event)" [(ngModel)]="data.value">
+            <ion-item 
+            *ngFor="let tag of data.preset.tags | filterByContent:['v','lbl']:searchText;">
+                <ion-label> 
+                    <b>{{tag.lbl}}</b>
+                    <br> {{tag.v}}
+                </ion-label>
+
+                <ion-radio [value]="tag.v"></ion-radio>
+
+            </ion-item>
+        </ion-radio-group>
+    </ion-list>
+</div>
+<div id="footer">
+    <ion-button ion-button color="danger" (click)="dismiss()">Annuler</ion-button>
+</div>

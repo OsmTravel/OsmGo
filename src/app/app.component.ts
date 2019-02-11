@@ -1,49 +1,34 @@
+import { ConfigService } from './services/config.service';
+import { LocationService } from './services/location.service';
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { LocationService } from '../services/location.service'
-import { ConfigService } from '../services/config.service'
 
-import { MainPage } from '../pages/main/main';
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 
 @Component({
-  template: `
-  <ion-nav [root]="rootPage"></ion-nav>`
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
-export class MyApp {
-  rootPage = MainPage;
+export class AppComponent {
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private locationService: LocationService,
+    public configService: ConfigService
+  ) {
+    this.initializeApp();
+  }
 
-  
-  
-  // let status bar overlay webview
+  initializeApp() {
+    this.configService.platforms = this.platform.platforms();
 
-
-  constructor(platform: Platform, private splashScreen: SplashScreen,
-    private statusBar: StatusBar, private locationService: LocationService,
-    public configService: ConfigService) {
-    this.splashScreen.show();
-
-    this.configService.platforms = platform.platforms()
-
-    platform.ready().then(() => {
+    this.platform.ready().then(() => {
+      this.configService.loadAppVersion();
       this.splashScreen.hide();
-      // this.statusBar.overlaysWebView(true);
-      // this.statusBar.styleBlackTranslucent()
-      this.statusBar.show();
-      
-      if (platform.platforms().indexOf('core') === -1){
-        this.configService.loadAppVersion();
-      }
-
-      this.locationService.eventPlatformReady.emit((platform.platforms().indexOf('core') === -1) ? false : true); // object => == 1 => ionic serve ( ['core'])
-
+      this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
     });
-
   }
-  ngAfterViewInit() {
-    this.statusBar.hide()
-  }
-
 }

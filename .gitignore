@@ -38,3 +38,5 @@ UserInterfaceState.xcuserstate
 .sourcemaps
 
 package-lock\.json
+
+platforms/

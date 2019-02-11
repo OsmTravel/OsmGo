@@ -1,3 +1,15 @@
+# 0.7.0
+## Divers
+    * Migration de Ionic 3 à Ionic 4
+    * Mapbox Gl js 0.53.0
+
+## Interface
+    * Modification de quelques CSS
+    * Un utilisateur non connecté peut désormais suivre ses modifications et les supprimer (il ne peut bien sûr pas les envoyer)
+    * Retour haptique lors d'un clique sur un objet (avant l'ouverture de la fiche)
+    * Le commentaire du dernier changeset est enregistré et proposé par défaut pour le suivant
+
+
 # 0.6.0
 ### Fix
     * Fiche : affichage de l'utilisateur après l'envoi d'une modification
