@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.dogeo.osmgo" version="0.7.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="fr.dogeo.osmgo" version="0.7.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Osm Go!</name>
     <description>Cartographiez les tous! </description>
     <author email="fabien.delolmo@gmail.com" href="https://dogeo.fr">Fabien Del Olmo</author>
