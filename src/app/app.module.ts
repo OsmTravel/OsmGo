@@ -50,7 +50,8 @@ import { Vibration } from '@ionic-native/vibration/ngx';
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
-
+import { MomentModule } from 'ngx-moment';
+import 'moment/locale/fr';
 
 @NgModule({
   declarations: [AppComponent, MainPage, LocationPage, AboutPage, LoginPage, MenuPage,
@@ -70,7 +71,8 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
 
   providers: [
