@@ -216,7 +216,7 @@ export class OsmApiService {
         for (const k in tags_json) {
             if (k !== '' && tags_json[k] !== '') {
                 tags_xml += `<tag
-                k="${k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
+                k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
                 v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
             }
         }
@@ -243,7 +243,7 @@ export class OsmApiService {
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += `<tag
-                                    k="${k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
+                                    k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
                                     v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
 
                 }
@@ -256,7 +256,7 @@ export class OsmApiService {
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += `<tag
-                    k="${k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
+                    k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
                     v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
                 }
             }
@@ -272,7 +272,7 @@ export class OsmApiService {
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += `<tag
-                        k="${k.toLowerCase().trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
+                        k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
                         v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
                 }
             }
