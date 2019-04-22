@@ -1,3 +1,10 @@
+# 0.7.2
+### Fix
+    * Les "clés" peuvent contenir des majuscules ... (ex : ref:FR_FINESS)
+
+## Interface
+    *  Affichage de la dernière modification depuis maintenant. Ex : Modifié il y a 4 mois
+
 # 0.7.0
 ## Divers
     * Migration de Ionic 3 à Ionic 4
