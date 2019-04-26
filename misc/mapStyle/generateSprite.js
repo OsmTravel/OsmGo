@@ -1,9 +1,10 @@
-const spritezero = require('@mapbox/spritezero');
 const fs = require('fs-extra');
-const glob = require('glob');
 const path = require('path');
 const cheerio = require('cheerio');
 const parseString = require('xml2js').parseString;
+
+const Spritesmith = require('spritesmith');
+const sharp = require('sharp');
 
 
 const iconsSVGsPath = path.join(__dirname,'../mapStyle/SvgForSprites/SVGs/');
@@ -92,8 +93,6 @@ for (key in tags) {
         let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon    
         if (iconsMarkersStr.indexOf(strIcM) == -1) {
             iconsMarkersStr.push(strIcM);
-            console.log(strIcM);
-
             generateMarkerIcon(tags[key].values[i].icon, "#ffffff", tags[key].values[i].markerColor)
         }
     }
@@ -109,48 +108,64 @@ for (let i = 0; i < whiteList.length; i++) {
     fs.copySync(iconsSVGsPath + whiteList[i] + '.svg', outputFolderSVG + whiteList[i] + '.svg');
 }
 
-console.log('génération des sprites');
-for (let i = 1; i <=2; i++){
-    const pxRatio = i;
-    let svgs = glob.sync(path.resolve(outputFolderSVG + '*.svg'))
-        .map(function (f) {
-            return {
-                svg: fs.readFileSync(f),
-                id: path.basename(f).replace('.svg', '')
-            };
-        });
-    // var pngPath = path.resolve(path.join(__dirname, './output/sprites@' + pxRatio + '.png'));
-    const jsonPath = path.join(__dirname,'../../src/assets/mapStyle/sprites' + 
-            ((pxRatio == 1) ? '' : ('@'+ pxRatio+'x')) + 
-            '.json');
 
-    // Pass `true` in the layout parameter to generate a data layout
-    // suitable for exporting to a JSON sprite manifest file.
+const svgNames = fs.readdirSync(outputFolderSVG);
+// filtrer que les SVG
 
-    spritezero.generateLayout({ imgs: svgs, pixelRatio: pxRatio, format: true }, function (err, dataLayout) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        fs.writeFileSync(jsonPath, JSON.stringify(dataLayout));
-    });
 
-        const pngPath = path.join(__dirname,'../../src/assets/mapStyle/sprites' + 
-        ((pxRatio == 1) ? '' : ('@'+ pxRatio+'x')) + 
-        '.png');
+const generateSprites = async (outPath, factor = 1) => {
+    const pngFolder = path.join(__dirname,'tmp', 'PNG', `@${factor}`);
+    await fs.emptyDir(pngFolder)
 
-    // Pass `false` in the layout parameter to generate an image layout
-    // suitable for exporting to a PNG sprite image file.
-    spritezero.generateLayout({ imgs: svgs, pixelRatio: pxRatio, format: false }, function (err, imageLayout) {
-        spritezero.generateImage(imageLayout, function (err, image) {
-            if (err) {
-                console.log(err);
-                return;
+    for (let i = 0; i < svgNames.length; i ++){
+        const svgFileName = svgNames[i];
+        const filePath = path.join(outputFolderSVG, svgFileName)
+        const image = sharp(filePath, { density: 72 * factor });
+        await image
+            .png()
+            .toFile( path.join(pngFolder, `${svgFileName}.png`))
+        
+    }
+
+    const pngsNameFile = fs.readdirSync(pngFolder);
+    const pngPaths = pngsNameFile.map(n => path.join(pngFolder,n ))
+    var sprites = pngPaths
+
+    return new Promise(  (resolve, reject) => {
+        Spritesmith.run({src:sprites}, async function handleResult (err, result) {
+            if (err){
+                reject(err);
             }
-            fs.writeFileSync(pngPath, image);
-        });
-    });
-    
-};
+       
+          const outFileName = factor === 1 ? 'sprites' : `sprites@${factor}x` 
+           await  sharp(result.image).toFile(path.join(outPath, outFileName + '.png'))
+
+            const jsonSprites = {};
+            for ( const k in result.coordinates){
+                const basename = path.basename(k).replace('.svg.png', '');
+                jsonSprites[basename] = {...result.coordinates[k], "pixelRatio":factor}
+            }
+            fs.writeFileSync(path.join(outPath, outFileName + '.json'), JSON.stringify(jsonSprites));
+            await fs.remove(pngFolder)
+            
+            resolve({'json': path.join(outPath, outFileName + '.json'), 'png': path.join(outPath, outFileName + '.png') })
+
+          });
+
+    })
+
+ 
+}
+
+// fs.mkdirSync(pngFolder)
+;
+
+const outPath = path.join(__dirname,'../../src/assets/mapStyle/')
+Promise.all( [generateSprites(outPath, 1), generateSprites(outPath, 2), generateSprites(outPath, 3)])
+    .then( e => {
+        console.log(e);
+    console.log('fini')
+})
+
 
 
