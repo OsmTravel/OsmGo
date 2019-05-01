@@ -1,3 +1,10 @@
+# 0.7.3
+## Divers 
+* Mapbox Gl js 0.54.0
+
+### Fix
+    * # 15 [Affichage de la carte](https://github.com/DoFabien/OsmGo/issues/15)
+
 # 0.7.2
 ### Fix
     * Les "clés" peuvent contenir des majuscules ... (ex : ref:FR_FINESS)

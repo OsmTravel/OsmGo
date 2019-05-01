@@ -46,7 +46,7 @@
     "cordova.plugins.diagnostic": "4.0.11",
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
-    "mapbox-gl": "^0.53.1",
+    "mapbox-gl": "^0.54.0",
     "moment": "^2.24.0",
     "ngx-moment": "^3.4.0",
     "rxjs": "~6.3.3",
@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.12.3",
-    "@angular-devkit/build-angular": "~0.12.3",
+    "@angular-devkit/build-angular": "^0.13.8",
     "@angular-devkit/core": "~7.2.3",
     "@angular-devkit/schematics": "~7.2.3",
     "@angular/cli": "~7.2.3",
