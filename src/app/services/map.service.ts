@@ -1,6 +1,6 @@
 import { Vibration } from '@ionic-native/vibration/ngx';
 import { Injectable, EventEmitter, NgZone } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { DataService } from './data.service';
 import { TagsService } from './tags.service';
@@ -373,7 +373,6 @@ export class MapService {
         spritesFullPath = path.replace('/index.html', '/assets/mapStyle/sprites');
       }
       mapStyle.sprite = spritesFullPath;
-
       that.zone.runOutsideAngular(() => {
         this.map = new mapboxgl.Map({
           container: 'map',
@@ -384,7 +383,7 @@ export class MapService {
           doubleClickZoom: false,
           attributionControl: false,
           dragRotate: true,
-          trackResize: true,
+          trackResize: this.configService.platforms.includes('desktop') ? true : false,
           // failIfMajorPerformanceCavea: false,
           pitch: 0,
           pitchWithRotate: false,
@@ -765,6 +764,10 @@ export class MapService {
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos());
 
     }
+
+    timer(500).subscribe(e => {
+      this.map.resize();
+    });
   }
 
 }
