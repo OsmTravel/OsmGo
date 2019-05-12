@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
 
   selectedPresetConfig;
   selectedPresetId;
+  generatingSprites = false;
 
   constructor(public tagsService: TagsService,
     public taginfoService: TaginfoService,
@@ -30,8 +31,10 @@ export class AppComponent implements OnInit {
   }
 
   generatesSprites() {
+    this.generatingSprites = true;
     this.tagsService.generatesSprites().subscribe(e => {
       console.log(e);
+      this.generatingSprites = false;
     });
   }
 

@@ -130,7 +130,8 @@
           "phone",
           "website",
           "opening_hours"
-        ]
+        ],
+        "deprecated": false
       },
       {
         "key": "estate_agent",

@@ -8,8 +8,10 @@
     </mat-select>
   </mat-form-field>
 
-  <button mat-button (click)="openDialogAddPrimaryValue(selectedTagKey)"> ADD </button>
-  <button mat-button (click)="generatesSprites()"> SPRITES </button>
+  <button mat-button (click)="openDialogAddPrimaryValue(selectedTagKey)"> Ajouter un tag </button>
+  <button mat-button [disabled]="generatingSprites" (click)="generatesSprites()"> 
+      {{ generatingSprites ? 'En cours de génération ...' :  'Générer les sprites' }}   
+  </button>
   
 </div>
 
@@ -17,13 +19,14 @@
   <table *ngIf="selectedTagKey" style="width: 100%;">
     <tr>
       <th>icon</th>
- 
+      <th></th>
       <th>Clé</th>
       <th>Label</th>
       <th>Nombre de presets</th>
       <th>%</th>
     </tr>
-    <tr *ngFor="let primaryTagValueConfig of tagsService.tagsConfig[selectedTagKey].values" (click)="tagValueConfigChange(primaryTagValueConfig)">
+    <tr *ngFor="let primaryTagValueConfig of tagsService.tagsConfig[selectedTagKey].values" 
+        (click)="tagValueConfigChange(primaryTagValueConfig)" >
       <td>
         <div style="width: 32px;min-height: 32px;height: 100%;" [ngStyle]="{'background-color': primaryTagValueConfig.markerColor}">
           <img *ngIf="primaryTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon" [src]="'/api/svg/'+ primaryTagValueConfig.icon"
@@ -31,7 +34,7 @@
         </div>
       </td>
   
-    
+      <td> <mat-icon *ngIf="primaryTagValueConfig.deprecated"> warning</mat-icon> </td>
       <td>{{primaryTagValueConfig.key}}</td>
       <td>{{primaryTagValueConfig.lbl}}</td>
       <td>{{primaryTagValueConfig.presets.length}}</td>
@@ -42,6 +45,7 @@
 </div>
 
 <div class="presets" *ngIf="selectedTagValueConfig">
+  
   <h3>{{selectedTagValueConfig.key}}</h3>
   <div style="width: 32px;height: 32px; display: inline-block" [ngStyle]="{'background-color': selectedTagValueConfig.markerColor}" (click)="openDialogIconsSelector(selectedTagKey, selectedTagValueConfig.key)">
     <img *ngIf="selectedTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon" [src]="'/api/svg/'+ selectedTagValueConfig.icon"
@@ -70,6 +74,17 @@
     (change)="primaryTagHasChanged($event)"
     placeholder="Alerte">
   </mat-form-field>
+
+<div style="margin:5px;">
+    <mat-slide-toggle [(ngModel)]="selectedTagValueConfig.deprecated" (change)="primaryTagHasChanged($event)"> 
+        Déprécié ?
+      </mat-slide-toggle>
+      <span *ngIf="selectedTagValueConfig.deprecated" style="    font-weight: bold; color: red;">
+        Ce tag est déprécié, il n'apparaîtra pas dans les propositions
+      </span>
+</div>
+
+  
 
   <table *ngIf="tagsService.presetsConfig  as presetsConfig">
 

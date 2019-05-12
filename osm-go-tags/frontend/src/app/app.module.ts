@@ -7,7 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule, MatFormFieldModule} from '@angular/material';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {DialogModifyPresetsAppComponent} from './dialog-modify-presets/dialog-modify-presets';
 import { KeyPipe } from './key.pipe';
@@ -25,7 +28,7 @@ import { DialogAddPrimaryValueComponent } from './dialog-add-primary-value/dialo
   imports: [
     BrowserModule, HttpClientModule, BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule, MatFormFieldModule, FormsModule,
-    MatDialogModule, MatStepperModule, MatGridListModule
+    MatDialogModule, MatStepperModule, MatGridListModule, MatSlideToggleModule, MatProgressSpinnerModule,MatIconModule
   ],
   providers: [],
   entryComponents: [DialogModifyPresetsAppComponent, DialogIconComponent, DialogAddPrimaryValueComponent],

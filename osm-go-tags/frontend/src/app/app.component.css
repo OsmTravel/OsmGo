@@ -25,6 +25,9 @@ th{
   text-align: left;
 }
 
+.selectedRow{
+  background-color: red;
+}
 
 /* .svg-icon g path {
   fill: #ffffff;
