@@ -1,0 +1,17 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "car_pooling", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Agence de Mobilité Nord Isère", "count": 1},
+      {"value": "La Roue Verte", "count": 1},
+      {"value": "Vinci Autoroute", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "capacity", "tags": [{"value": "50", "count": 1}], "count": 1}
+]

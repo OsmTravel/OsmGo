@@ -1,0 +1,262 @@
+[
+  {"key": "amenity", "tags": [{"value": "taxi", "count": 166}], "count": 166},
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "4", "count": 20},
+      {"value": "5", "count": 18},
+      {"value": "3", "count": 12},
+      {"value": "6", "count": 8},
+      {"value": "2", "count": 7},
+      {"value": "7", "count": 4},
+      {"value": "10", "count": 4},
+      {"value": "1", "count": 3},
+      {"value": "8", "count": 3},
+      {"value": "None", "count": 2},
+      {"value": "61", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "102", "count": 1},
+      {"value": "21", "count": 1}
+    ],
+    "count": 86
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "TAXCHP01", "count": 1},
+      {"value": "TAXCAL01", "count": 1},
+      {"value": "TAX705", "count": 1},
+      {"value": "TAX100", "count": 1},
+      {"value": "TAX900", "count": 1},
+      {"value": "TAXVIL03", "count": 1},
+      {"value": "TAX301", "count": 1},
+      {"value": "TAXVIL01", "count": 1},
+      {"value": "TAXBRO02", "count": 1},
+      {"value": "TAX310", "count": 1},
+      {"value": "TAX200", "count": 1},
+      {"value": "TAXVIL05", "count": 1},
+      {"value": "TAX208", "count": 1},
+      {"value": "TAX308", "count": 1},
+      {"value": "TAXTDL01", "count": 1},
+      {"value": "TAX803", "count": 1},
+      {"value": "TAX703", "count": 1},
+      {"value": "TAX801", "count": 1},
+      {"value": "TAX203", "count": 1},
+      {"value": "TAX901", "count": 1},
+      {"value": "TAX902", "count": 1},
+      {"value": "TAX603", "count": 1},
+      {"value": "TAX602", "count": 1},
+      {"value": "TAX604", "count": 1},
+      {"value": "TAX605", "count": 1},
+      {"value": "TAX709", "count": 1},
+      {"value": "TAX500", "count": 1},
+      {"value": "TAX202", "count": 1},
+      {"value": "TAX207", "count": 1},
+      {"value": "TAX206", "count": 1},
+      {"value": "TAX201", "count": 1},
+      {"value": "TAX504", "count": 1},
+      {"value": "TAXOUL02", "count": 1},
+      {"value": "TAX2xx", "count": 1},
+      {"value": "TAX311", "count": 1},
+      {"value": "TAXLIM01", "count": 1},
+      {"value": "TAX708", "count": 1},
+      {"value": "TAXVIL02", "count": 1},
+      {"value": "TAX601", "count": 1},
+      {"value": "TAXBRO06", "count": 1},
+      {"value": "TAXBRO04", "count": 1},
+      {"value": "TAXBRO05", "count": 1},
+      {"value": "TAXCAL02", "count": 1},
+      {"value": "TAX306", "count": 1},
+      {"value": "TAX304", "count": 1},
+      {"value": "TAX800", "count": 1},
+      {"value": "TAX401", "count": 1},
+      {"value": "TAX903", "count": 1},
+      {"value": "TAX204", "count": 1},
+      {"value": "TAXVIL04", "count": 1},
+      {"value": "TAXECU01", "count": 1},
+      {"value": "TAX205", "count": 1},
+      {"value": "TAX503", "count": 1},
+      {"value": "TAXBRO03", "count": 1},
+      {"value": "TAXVEN02", "count": 1},
+      {"value": "TAXVEN01", "count": 1},
+      {"value": "TAX501", "count": 1},
+      {"value": "TAXSFL01", "count": 1},
+      {"value": "TAX300", "count": 1},
+      {"value": "TAXSFL02", "count": 1},
+      {"value": "TAX502", "count": 1},
+      {"value": "TAXCHR01", "count": 1},
+      {"value": "TAX600", "count": 1},
+      {"value": "TAX606", "count": 1},
+      {"value": "TAX307", "count": 1},
+      {"value": "TAX702", "count": 1},
+      {"value": "TAXSFO01", "count": 1},
+      {"value": "TAXVAU01", "count": 1},
+      {"value": "TAX402", "count": 1},
+      {"value": "TAX701", "count": 1},
+      {"value": "TAX505", "count": 1},
+      {"value": "TAX704", "count": 1},
+      {"value": "TAX400", "count": 1},
+      {"value": "TAX209", "count": 1},
+      {"value": "TAX706", "count": 1},
+      {"value": "TAXBRO01", "count": 1},
+      {"value": "TAX904", "count": 1},
+      {"value": "TAX707", "count": 1},
+      {"value": "TAXOUL01", "count": 1},
+      {"value": "TAXVAU02", "count": 1},
+      {"value": "TAX210", "count": 1},
+      {"value": "TAXRIL01", "count": 1},
+      {"value": "TAXSPR02", "count": 1},
+      {"value": "TAX312", "count": 1},
+      {"value": "TAXCOR01", "count": 1}
+    ],
+    "count": 85
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Totem: NON - Panneau: OUI - Téléphone: NON - Diodes: NON - Séparateur: Peinture",
+        "count": 24
+      },
+      {
+        "value": "Totem: OUI - Panneau: OUI - Téléphone: NON - Diodes: OUI - Séparateur: Bordure granit",
+        "count": 14
+      },
+      {
+        "value": "Totem: NON - Panneau: OUI - Téléphone: NON - Diodes: NON - Séparateur: Bordure granit",
+        "count": 9
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: NON - Diodes: OUI - Séparateur: Bordure granit",
+        "count": 5
+      },
+      {
+        "value": "Totem: NON - Panneau: OUI - Téléphone: NON - Diodes: OUI - Séparateur: Bordure granit",
+        "count": 5
+      },
+      {
+        "value": "Totem: OUI - Panneau: OUI - Téléphone: NON - Diodes: NON - Séparateur: Peinture",
+        "count": 4
+      },
+      {
+        "value": "Totem: OUI - Panneau: OUI - Téléphone: NON - Diodes: NON - Séparateur: Bordure granit",
+        "count": 3
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: NON - Diodes: NON - Séparateur: Bordure granit",
+        "count": 3
+      },
+      {
+        "value": "Totem: NON - Panneau: OUI - Téléphone: OUI - Diodes: NON - Séparateur: Peinture",
+        "count": 2
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: NON - Diodes: NON - Séparateur: Peinture",
+        "count": 2
+      },
+      {
+        "value": "Totem: NON - Panneau: NON - Téléphone: NON - Diodes: NON - Séparateur: None",
+        "count": 2
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: OUI - Diodes: NON - Séparateur: Peinture",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: NON - Diodes: NON - Séparateur: None",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: OUI - Diodes: OUI - Séparateur: Autre",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: OUI - Téléphone: NON - Diodes: OUI - Séparateur: Bordure granit  -Station Taxi déplacée juillet 17, refaire la description-",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: ? - Téléphone: ? - Diodes: ? - Séparateur: Peinture",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: OUI - Diodes: OUI - Séparateur: Bordure granit",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: OUI - Téléphone: NON - Diodes: OUI - Séparateur: Peinture",
+        "count": 1
+      },
+      {
+        "value": "Totem: NON - Panneau: NON - Téléphone: OUI - Diodes: NON - Séparateur: Peinture",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: NON - Téléphone: NON - Diodes: NON - Séparateur: Autre",
+        "count": 1
+      },
+      {
+        "value": "Totem: OUI - Panneau: OUI - Téléphone: OUI - Diodes: OUI - Séparateur: Bordure granit",
+        "count": 1
+      },
+      {
+        "value": "Totem: NON - Panneau: OUI - Téléphone: NON - Diodes: NON - Séparateur: Autre",
+        "count": 1
+      }
+    ],
+    "count": 84
+  },
+  {
+    "key": "shelter",
+    "tags": [{"value": "no", "count": 78}, {"value": "yes", "count": 6}],
+    "count": 84
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Intégration des stations de taxis basée sur le fichier du Grand Lyon",
+        "count": 83
+      },
+      {"value": "Absent de la base TAXI du fichier GrandLyon", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 5}, {"value": "1", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33618192000", "count": 2},
+      {"value": "+33 4 78 68 23 23", "count": 1},
+      {"value": "+33 6 09 92 71 63", "count": 1},
+      {"value": "+33 6 88 64 78 90", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Taxi du parc", "count": 1},
+      {"value": "Bauges taxi et ambulances", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.allotaxi.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "bus_stop", "count": 1}], "count": 1},
+  {
+    "key": "public_transport",
+    "tags": [{"value": "stop_position", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "garages", "count": 1}], "count": 1}
+]

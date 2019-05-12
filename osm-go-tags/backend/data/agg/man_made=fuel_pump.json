@@ -1,0 +1,10 @@
+[
+  {
+    "key": "ref",
+    "tags": [{"value": "1", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {"key": "man_made", "tags": [{"value": "fuel_pump", "count": 2}], "count": 2},
+  {"key": "fuel:diesel", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "fuel:GTL_diesel", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

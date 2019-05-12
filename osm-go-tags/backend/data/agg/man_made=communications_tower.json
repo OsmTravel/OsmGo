@@ -1,0 +1,26 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "communications_tower", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "communication:microwave",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "89", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q55305304", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Tour hertzienne de Saint-Denis-lès-Bourg", "count": 1}
+    ],
+    "count": 1
+  }
+]

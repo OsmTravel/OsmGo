@@ -1,0 +1,58 @@
+[
+  {"key": "historic", "tags": [{"value": "tower", "count": 10}], "count": 10},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3532987", "count": 1},
+      {"value": "Q19850693", "count": 1},
+      {"value": "Q22966982", "count": 1},
+      {"value": "Q52736273", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1956-11-02", "count": 1},
+      {"value": "1982-11-23", "count": 1},
+      {"value": "1943-09-08", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116921", "count": 1},
+      {"value": "PA00117994", "count": 1},
+      {"value": "PA00117177", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 2}, {"value": "2", "count": 1}],
+    "count": 3
+  },
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "6", "count": 1}], "count": 1},
+  {
+    "key": "network",
+    "tags": [{"value": "Réseau Chappe", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "description", "tags": [{"value": "Tour", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "tower", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Commune de Saint-Martin-La-Plaine", "count": 1}],
+    "count": 1
+  }
+]

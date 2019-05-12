@@ -1,0 +1,226 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "secondary_link", "count": 484}],
+    "count": 484
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 435}, {"value": "no", "count": 7}],
+    "count": 442
+  },
+  {
+    "key": "surface",
+    "tags": [{"value": "asphalt", "count": 203}],
+    "count": 203
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "50", "count": 115},
+      {"value": "80", "count": 11},
+      {"value": "70", "count": 9},
+      {"value": "60", "count": 8},
+      {"value": "30", "count": 8}
+    ],
+    "count": 151
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "1", "count": 50},
+      {"value": "2", "count": 20},
+      {"value": "4", "count": 3},
+      {"value": "3", "count": 3}
+    ],
+    "count": 76
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 502", "count": 5},
+      {"value": "D 100", "count": 4},
+      {"value": "D 52N", "count": 4},
+      {"value": "D 94", "count": 4},
+      {"value": "D 142", "count": 4},
+      {"value": "D 315", "count": 4},
+      {"value": "D 539", "count": 3},
+      {"value": "D 8", "count": 3},
+      {"value": "D 82", "count": 3},
+      {"value": "D 576", "count": 3},
+      {"value": "D 215", "count": 2},
+      {"value": "D 190", "count": 2},
+      {"value": "D 45a", "count": 2},
+      {"value": "D 3", "count": 2},
+      {"value": "D 5", "count": 2},
+      {"value": "D 520E", "count": 2},
+      {"value": "D 201", "count": 2},
+      {"value": "D 608", "count": 2},
+      {"value": "D 7", "count": 1},
+      {"value": "D 10", "count": 1},
+      {"value": "D 523", "count": 1},
+      {"value": "D 2", "count": 1},
+      {"value": "D 15", "count": 1},
+      {"value": "D 9E3", "count": 1},
+      {"value": "D 308", "count": 1},
+      {"value": "D 906", "count": 1},
+      {"value": "D 1087", "count": 1},
+      {"value": "D 76", "count": 1},
+      {"value": "D 342", "count": 1},
+      {"value": "D 30", "count": 1}
+    ],
+    "count": 65
+  },
+  {
+    "key": "bicycle",
+    "tags": [{"value": "no", "count": 25}, {"value": "yes", "count": 8}],
+    "count": 33
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 24},
+      {"value": "-1", "count": 4},
+      {"value": "0", "count": 3},
+      {"value": "2", "count": 1}
+    ],
+    "count": 32
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 18}], "count": 18},
+  {
+    "key": "cycleway:right",
+    "tags": [
+      {"value": "lane", "count": 17},
+      {"value": "shared_lane", "count": 1}
+    ],
+    "count": 18
+  },
+  {"key": "horse", "tags": [{"value": "no", "count": 13}], "count": 13},
+  {
+    "key": "destination",
+    "tags": [
+      {
+        "value": "Les Ménuires;Val Thorens;Saint-Martin de Belleville;Saint-Jean de Belleville",
+        "count": 1
+      },
+      {"value": "Parilly", "count": 1},
+      {
+        "value": "Veauche Cité Saint-Laurent;Saint-Galmier;Zone Industrielle de la Plaine",
+        "count": 1
+      },
+      {"value": "Caluire - Saint-Clair", "count": 1},
+      {
+        "value": "La Fouillouse;Andrézieux Bouthéon;Aérodrome Bouthéon",
+        "count": 1
+      },
+      {
+        "value": "Saint-Bonnet les Oules;Parc de Milieu;Parc de l'Orme les sources",
+        "count": 1
+      },
+      {"value": "A72;Andrézieux-Bouthéon;Saint-Etienne", "count": 1},
+      {"value": "Le Bon Coin", "count": 1},
+      {
+        "value": "Périphérique;Miribel;Vassieux;Avenue de Poumeyrol;Saint-Clair",
+        "count": 1
+      },
+      {
+        "value": "A 43;Vezeronce-C.;Dolomieu;La Tour du Pin;Bourgoin-J.;Sermerieu",
+        "count": 1
+      },
+      {
+        "value": "Saint-Bonnet les Oules;Zone Industrielle de Lapra;Parc de Milieu;Parc de l'Orme les sources",
+        "count": 1
+      },
+      {
+        "value": "Barret-de-Lioure;Montbrun-les-Bains;Ferrassières;Sault",
+        "count": 1
+      }
+    ],
+    "count": 12
+  },
+  {"key": "foot", "tags": [{"value": "no", "count": 9}], "count": 9},
+  {"key": "embankment", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "turn:lanes",
+    "tags": [
+      {"value": "left|through|right", "count": 2},
+      {"value": "through|through;right", "count": 1},
+      {"value": "left|through|through", "count": 1},
+      {"value": "through|through|through;right|right", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "422185692C", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "lane", "count": 3},
+      {"value": "share_busway", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "sidewalk", "tags": [{"value": "right", "count": 3}], "count": 3},
+  {
+    "key": "destination:ref",
+    "tags": [{"value": "D 542", "count": 2}, {"value": "D 546", "count": 1}],
+    "count": 3
+  },
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "FIXME départementale classée en 1999 sans numéro ?",
+        "count": 3
+      }
+    ],
+    "count": 3
+  },
+  {"key": "maxheight", "tags": [{"value": "4.1", "count": 2}], "count": 2},
+  {
+    "key": "destination:lanes",
+    "tags": [
+      {"value": "Caluire - Saint-Clair|Caluire - Saint-Clair||", "count": 2}
+    ],
+    "count": 2
+  },
+  {"key": "trolley_wire", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "lit", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "oneway:psv", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "maxweight", "tags": [{"value": "19", "count": 2}], "count": 2},
+  {"key": "old_ref", "tags": [{"value": "N 6", "count": 1}], "count": 1},
+  {"key": "voltage", "tags": [{"value": "750", "count": 1}], "count": 1},
+  {"key": "lanes:forward", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "electrified",
+    "tags": [{"value": "contact_line", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "access:lanes",
+    "tags": [{"value": "yes|no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "bicycle:lanes",
+    "tags": [{"value": "yes|designated", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "bus:lanes",
+    "tags": [{"value": "yes|designated", "count": 1}],
+    "count": 1
+  },
+  {"key": "busway", "tags": [{"value": "lane", "count": 1}], "count": 1},
+  {"key": "oneway:bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "frequency", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

@@ -1,0 +1,56 @@
+[
+  {"key": "craft", "tags": [{"value": "shoemaker", "count": 45}], "count": 45},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 31 58 62", "count": 1},
+      {"value": "+33 6 12 73 65 21", "count": 1},
+      {"value": "+33 4 76 48 39 64", "count": 1},
+      {"value": "+33 4 78 89 32 05", "count": 1},
+      {"value": "+33476152811", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Cordonnier (réparations) et créateur", "count": 1},
+      {
+        "value": "Cordonerie / Clés Minutes / Plaque Auto-Moto / Télécommande de Portail / Clés à Puce / Tampon - Gravure",
+        "count": 1
+      },
+      {"value": "Aussi clés, tampons, gravures.", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lechaussemontagne.fr/", "count": 1},
+      {"value": "https://www.facebook.com/cssportes/", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/cordonnerie-cle-minute-cordonnerie-cle-minute-geant-saint-martin-dheres",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "locksmith", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "comment",
+    "tags": [{"value": "L'orthographe du nom n'est pas erronée.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Philippe Fernandez", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

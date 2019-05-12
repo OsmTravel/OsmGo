@@ -1,0 +1,243 @@
+[
+  {"key": "shop", "tags": [{"value": "yes", "count": 298}], "count": 298},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Location matériel", "count": 1},
+      {"value": "agence de communication", "count": 1},
+      {"value": "Vente et transport de combustibles ", "count": 1},
+      {"value": "vente maintenance de manèges", "count": 1},
+      {"value": "Tabac", "count": 1},
+      {"value": "Chasse - Pêche", "count": 1},
+      {"value": "Rééducation Alimentaire", "count": 1},
+      {"value": "Location de matériel BTP", "count": 1},
+      {"value": "Piscines et spas", "count": 1},
+      {"value": "Matériaux de construction", "count": 1},
+      {"value": "revente et production d'énergie solaire à EDF", "count": 1},
+      {"value": "Transports spéciaux", "count": 1},
+      {"value": "swimming pools ; Piscines", "count": 1},
+      {"value": "Commerce équitable.", "count": 1},
+      {"value": "Caoutchoucs et Plastiques Industriels", "count": 1},
+      {"value": "Cordonnerie, clés", "count": 1},
+      {"value": "Épicerie fine", "count": 1},
+      {
+        "value": "Magasin de sports, Location de skis, Golf, Tennis",
+        "count": 1
+      },
+      {"value": "Location de matériel", "count": 1},
+      {"value": "Piscine et nautique", "count": 1},
+      {"value": "Entreprise horticole", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.moventeam.fr/", "count": 1},
+      {"value": "http://www.corabio.org/", "count": 1},
+      {"value": "http://www.elfenature.com/", "count": 1},
+      {"value": "http://www.hygena.fr/", "count": 1},
+      {"value": "https://www.mbe-franchising.fr", "count": 1},
+      {"value": "http://www.chocolatier-berthelot69.com/", "count": 1},
+      {
+        "value": "http://www.artisansdumonde.org/les-associations-locales/artisans-du-monde-valence",
+        "count": 1
+      },
+      {"value": "http://www.debeaux-chauffage-26.fr/", "count": 1},
+      {"value": "http://grandsespaces-parapente-annecy.com/", "count": 1},
+      {"value": "http://yogat.free.fr/", "count": 1},
+      {"value": "https://www.comptoir-irlandais.com/", "count": 1},
+      {"value": "https://enventelibre.org/fr/", "count": 1},
+      {"value": "http://www.domainedecoucouzac.fr/", "count": 1},
+      {"value": "https://www.cookme-shop.com/", "count": 1},
+      {"value": "www.mauduitsports.com", "count": 1},
+      {"value": "https://www.facebook.com/Creazyvap01/", "count": 1},
+      {"value": "http://www.callyope.com/", "count": 1},
+      {"value": "http://www.cetram.fr/", "count": 1},
+      {"value": "http://www.kei-stone.fr", "count": 1},
+      {"value": "https://www.breuilhorticulture.fr", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fuel", "count": 10},
+      {"value": "driving_school", "count": 2},
+      {"value": "restaurant", "count": 2},
+      {"value": "bus_station", "count": 1},
+      {"value": "doctors", "count": 1},
+      {"value": "health_facility", "count": 1},
+      {"value": "bar", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Elan", "count": 3},
+      {"value": "Avia", "count": 2},
+      {"value": "Total", "count": 2},
+      {"value": "Independent", "count": 1},
+      {"value": "Kiloutou", "count": 1},
+      {"value": "Esso", "count": 1},
+      {"value": "Yamaha", "count": 1},
+      {"value": "BMW", "count": 1},
+      {"value": "BP", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 60 79 06", "count": 1},
+      {"value": "+33 4 50 34 40 09", "count": 1},
+      {"value": "+33474852612", "count": 1},
+      {"value": "+33478878027", "count": 1},
+      {"value": "+33 4 75 56 34 27", "count": 1},
+      {"value": "+33 4 75 59 74 35", "count": 1},
+      {"value": "+33437021418", "count": 1},
+      {"value": "+33 4 78202198", "count": 1},
+      {"value": "+33 4 50 58 10 41", "count": 1},
+      {"value": "+33 4 79 08 63 08", "count": 1},
+      {"value": "+334 50 02 04 07", "count": 1},
+      {"value": "+33 6 15 71 10 03", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Elan", "count": 2},
+      {"value": "APRR", "count": 1},
+      {"value": "Carburants Sud Ardèche", "count": 1},
+      {"value": "Eueka", "count": 1},
+      {"value": "Réseau SOCODA", "count": 1},
+      {"value": "Eugène Herrero", "count": 1},
+      {"value": "Thai Vang", "count": 1},
+      {"value": "Esso", "count": 1},
+      {"value": "Total", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "fuel:diesel", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "metal_construction", "count": 1},
+      {"value": "hvac", "count": 1},
+      {"value": "locksmith", "count": 1},
+      {"value": "shoemaker", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "martial art equipment", "count": 1},
+      {"value": "Vente de miel", "count": 1},
+      {"value": "Précédemment: \"Corps Éveillé\"", "count": 1},
+      {
+        "value": "On peut y acheter des forfait de ski pour les remontés mécaniques",
+        "count": 1
+      },
+      {
+        "value": "shop sells furniture/equipment/decoration to run/equip other shops",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "793 405 275 00017", "count": 1},
+      {"value": "779 761 964 00013", "count": 1},
+      {"value": "485 026 454 00010", "count": 1},
+      {"value": "50 142 113 00041", "count": 1},
+      {"value": "39330103100018", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:FR:prix-carburants",
+    "tags": [
+      {"value": "69600004", "count": 1},
+      {"value": "73000007", "count": 1},
+      {"value": "42110006", "count": 1},
+      {"value": "7170001", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "sport", "tags": [{"value": "free_flying", "count": 3}], "count": 3},
+  {"key": "fixme", "tags": [{"value": "shop=?", "count": 3}], "count": 3},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@chocolatier-berthelot69.com", "count": 1},
+      {"value": "info@mauduitsports.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "animal", "tags": [{"value": "wellness", "count": 2}], "count": 2},
+  {"key": "vending", "tags": [{"value": "fuel", "count": 2}], "count": 2},
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "fuel", "count": 2}],
+    "count": 2
+  },
+  {"key": "ele", "tags": [{"value": "1450 M", "count": 1}], "count": 1},
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "biology", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {"key": "type:FR:FINESS", "tags": [{"value": "611", "count": 1}], "count": 1},
+  {"key": "fair_trade", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "7211Z", "count": 1}], "count": 1},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/pages/P-Berthelot-Chocolatier/618678074884336",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "alcohol", "tags": [{"value": "wine", "count": 1}], "count": 1},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapist", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "FIXME",
+    "tags": [{"value": "what does the shop sell?", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "generator:output:electricity",
+    "tags": [{"value": "solar", "count": 1}],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "italian", "count": 1}], "count": 1},
+  {"key": "fuel:lpg", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "is_in", "tags": [{"value": "FEURS", "count": 1}], "count": 1},
+  {"key": "compressed_air", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "hgv:lanes", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,8 @@
+[
+  {"key": "office", "tags": [{"value": "services", "count": 4}], "count": 4},
+  {
+    "key": "note",
+    "tags": [{"value": "Aide à domicile", "count": 1}],
+    "count": 1
+  }
+]

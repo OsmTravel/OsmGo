@@ -1,0 +1,14 @@
+[
+  {"key": "office", "tags": [{"value": "laboratory", "count": 3}], "count": 3},
+  {
+    "key": "email",
+    "tags": [{"value": "eitn@unic.cnrs-gif.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.eitn.eu/", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "CNRS", "count": 1}], "count": 1}
+]

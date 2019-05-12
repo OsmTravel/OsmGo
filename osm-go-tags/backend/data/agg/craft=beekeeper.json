@@ -1,0 +1,26 @@
+[
+  {"key": "craft", "tags": [{"value": "beekeeper", "count": 12}], "count": 12},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Philippe Boden", "count": 1},
+      {"value": "GAEC", "count": 1},
+      {"value": "Olivier Rousset", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "miel-bio.biz", "count": 1},
+      {"value": "http://www.labeillegourmande.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 71 02 54", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "only", "count": 1}], "count": 1}
+]

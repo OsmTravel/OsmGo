@@ -1,0 +1,323 @@
+[
+  {"key": "shop", "tags": [{"value": "books", "count": 261}], "count": 261},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.librairieruedeverneuil.com/", "count": 1},
+      {"value": "http://www.lesprit-livre.fr/", "count": 1},
+      {"value": "http://www.labouquineriegrenoble.com", "count": 1},
+      {"value": "www.lalibrairiedutramway.com", "count": 1},
+      {"value": "http://www.librairielucioles.com/", "count": 1},
+      {"value": "http://www.lefuni.net/", "count": 1},
+      {"value": "http://www.terredeslivres.fr/", "count": 1},
+      {"value": "http://lettresacroquer.fr/", "count": 1},
+      {"value": "http://www.lamaisondelapresse.fr/", "count": 1},
+      {"value": "http://www.librairiemosaique.fr", "count": 1},
+      {
+        "value": "http://www.gibertjoseph.com/magasins/vaulx-en-velin.html",
+        "count": 1
+      },
+      {"value": "http://www.majuscule.eu/", "count": 1},
+      {"value": "www.unpetitnoir.fr", "count": 1},
+      {"value": "http://www.les9mondes.com", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Librairie-Les-Bulles-de-Vienne/550439561671412",
+        "count": 1
+      },
+      {"value": "http://www.momie.fr/pa128/nos-librairies?nt_id=2", "count": 1},
+      {
+        "value": "http://www.bdfugue.com/librairie-bdfugue-grenoble/",
+        "count": 1
+      },
+      {"value": "www.misenpage.fr", "count": 1},
+      {"value": "https://lavoieauxchapitres.wordpress.com/", "count": 1},
+      {"value": "http://www.larchipeldesmots.fr/", "count": 1},
+      {"value": "http://www.lesartsfrontieres.fr/", "count": 1},
+      {"value": "http://legrandcafefrancais.blogspot.fr/", "count": 1},
+      {"value": "http://annecyburo.apluspapeterie.fr/", "count": 1},
+      {"value": "https://www.auvieuxcampeur.fr/boutiques/Lyon", "count": 1},
+      {"value": "http://levieilannecy.canalblog.com/", "count": 1},
+      {"value": "http://www.librairiedesarts.fr/", "count": 1},
+      {"value": "https://librairieletincelle.wordpress.com/", "count": 1},
+      {"value": "http://www.loiseausiffleur.fr/", "count": 1},
+      {"value": "http://librairielescordeliers.hautetfort.com/", "count": 1},
+      {"value": "http://www.librairielamanufacture.fr/", "count": 1},
+      {
+        "value": "http://www.laprocure.com/les-librairies-la-procure/procure-peuple-libre-53.html",
+        "count": 1
+      },
+      {"value": "http://librairie.acappella.eu", "count": 1},
+      {"value": "http://librairielahulotte.com/", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/pages/La-Parenth%C3%A8se-Librairie/222439894584725",
+        "count": 1
+      },
+      {"value": "http://omerveilles.com/", "count": 1},
+      {"value": "https://www.livresetcie.fr/", "count": 1},
+      {"value": "http://le-cafe-de-chloe.business.site/", "count": 1},
+      {"value": "http://www.momie.fr/pa128/nt4/lyon-mangas", "count": 1},
+      {"value": "https://www.comics-zone.com/", "count": 1},
+      {"value": "http://www.momie.fr/pa128/nt10/lyon-bd-comics", "count": 1},
+      {
+        "value": "https://www.decitre.fr/aide/nos-librairies/saint-priest",
+        "count": 1
+      },
+      {
+        "value": "https://www.decitre.fr//aide/nos-librairies/ecully",
+        "count": 1
+      },
+      {
+        "value": "https://www.decitre.fr/aide/nos-librairies/part-dieu",
+        "count": 1
+      },
+      {"value": "http://www.espacebrasserie.fr/", "count": 1},
+      {"value": "http://librairie-boutiquedesmarais.com/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Fnac",
+        "count": 1
+      }
+    ],
+    "count": 46
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 51 23 35", "count": 1},
+      {"value": "+33 4 76 42 49 81", "count": 1},
+      {"value": "+33 4 78 72 84 22", "count": 1},
+      {"value": "+33 4 26 68 00 10", "count": 1},
+      {"value": "+33 9 63 68 15 52", "count": 1},
+      {"value": "+33 4 75 45 03 80", "count": 1},
+      {"value": "+33 4 74 85 09 50", "count": 1},
+      {"value": "+33 4 74 15 03 29", "count": 1},
+      {"value": "+33 9 73 65 41 38", "count": 1},
+      {"value": "+33 4 78 37 63 19", "count": 1},
+      {"value": "+33 4 75 82 91 17", "count": 1},
+      {"value": "+33 4 74 53 07 14", "count": 1},
+      {"value": "+33 4 76 51 66 22", "count": 1},
+      {"value": "+33 4 38 37 18 36", "count": 1},
+      {"value": "+33 4 37 70 41 62", "count": 1},
+      {"value": "+33 4 50 40 21 83", "count": 1},
+      {"value": "+33 4 75 35 01 07", "count": 1},
+      {"value": "+33478444199", "count": 1},
+      {"value": "+33 4 50 45 25 95", "count": 1},
+      {"value": "+33 4 74 85 53 08", "count": 1},
+      {"value": "+33 4 50 33 00 00", "count": 1},
+      {"value": "+33 9 73 13 75 97", "count": 1},
+      {"value": "+33 4 75 41 57 04", "count": 1},
+      {"value": "+33 4 75 05 15 55", "count": 1},
+      {"value": "+33 4 75 02 09 05", "count": 1},
+      {"value": "+33 4 75 43 12 90", "count": 1},
+      {"value": "+33 4 75 43 78 79", "count": 1},
+      {"value": "+33 4 78 28 47 15", "count": 1},
+      {"value": "+33 4 75 33 33 79", "count": 1},
+      {"value": "+33 4 75 33 11 27", "count": 1},
+      {"value": "+33 4 76 24 77 82", "count": 1},
+      {"value": "+33 4 78 24 03 60", "count": 1},
+      {"value": "+33 4 78 37 04 92", "count": 1},
+      {"value": "+33 4 26 65 78 02", "count": 1},
+      {"value": "+33 4 78 84 85 62", "count": 1},
+      {"value": "+33 4 78 37 94 59", "count": 1},
+      {"value": "+33 4 74 93 32 26", "count": 1},
+      {"value": "0 825 020 020", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 14},
+      {"value": "no", "count": 7},
+      {"value": "limited", "count": 5}
+    ],
+    "count": 26
+  },
+  {
+    "key": "second_hand",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "only", "count": 4},
+      {"value": "no", "count": 3}
+    ],
+    "count": 18
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Librairie religieuse chrétienne", "count": 1},
+      {"value": "anarchist bookstore", "count": 1},
+      {"value": "Book and media shop", "count": 1},
+      {"value": "Librairie spécialisée dans la bande-dessinée.", "count": 1},
+      {"value": "Librairie Papeterie", "count": 1},
+      {
+        "value": "Librairie spécialisée en BD, Mangas et Comics;Magasin de jeux de société, jeux spécialisé, Salle de jeux",
+        "count": 1
+      },
+      {"value": "bar . librairie", "count": 1},
+      {"value": "Librairie/papèterie/presse", "count": 1},
+      {"value": "Librairie ésotérique", "count": 1},
+      {
+        "value": "Libraire généraliste occasion et neuf, avec un espace papeterie.",
+        "count": 1
+      },
+      {"value": "Librairie généraliste et religieuse chrétienne.", "count": 1},
+      {"value": "Librairie généraliste.", "count": 1},
+      {"value": "Vente de partitions de musique", "count": 1},
+      {
+        "value": "Des romans de science-fiction et de fantasy, des bandes dessinées, des comics et des mangas.",
+        "count": 1
+      }
+    ],
+    "count": 14
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Fnac", "count": 8},
+      {"value": "Decitre", "count": 2},
+      {"value": "Maison de la Presse", "count": 1},
+      {"value": "Momie", "count": 1},
+      {"value": "BD Fugue", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "books",
+    "tags": [
+      {"value": "comic", "count": 7},
+      {"value": "children", "count": 2},
+      {"value": "anarchism", "count": 1},
+      {"value": "SF;comics;fantasy", "count": 1},
+      {"value": "catholic", "count": 1},
+      {"value": "antiquarian", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [{"value": "Q676585", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Fnac", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "brand:website",
+    "tags": [{"value": "http://fnac.com/", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 5},
+      {"value": "0;1", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "E. Leclerc", "count": 2},
+      {"value": "indépendant", "count": 1},
+      {"value": "Majuscule", "count": 1},
+      {"value": "SAS Momie Folie", "count": 1},
+      {"value": "BD Fugue", "count": 1},
+      {"value": "Indépendant", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 5}], "count": 5},
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 2},
+      {"value": "yes", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "library", "count": 1},
+      {"value": "cafe", "count": 1},
+      {"value": "bar", "count": 1},
+      {"value": "restaurant", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 4}], "count": 4},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Fnac", "count": 1},
+      {"value": "fr:Cultura", "count": 1},
+      {"value": "fr:La Gryffe", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "grenoble@momie.fr", "count": 1},
+      {"value": "grenoble@bdfugue.com", "count": 1},
+      {"value": "mapetitelibrairie@orange.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1978", "count": 1},
+      {"value": "septembre 2009", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3007154", "count": 1},
+      {"value": "Q19956091", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Librairie-Café-Polar", "count": 1}],
+    "count": 1
+  },
+  {"key": "library", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://web.archive.org/web/20161212210723/http://lagryffe.net/wp-content/uploads/2015/11/1985-devant-la-gryffe.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "main", "count": 1}], "count": 1},
+  {"key": "step_count", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "music", "tags": [{"value": "sheet", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-19", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

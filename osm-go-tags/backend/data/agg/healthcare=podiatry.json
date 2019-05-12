@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
+  {"key": "healthcare", "tags": [{"value": "podiatry", "count": 1}], "count": 1}
+]

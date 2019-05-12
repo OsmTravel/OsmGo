@@ -1,0 +1,77 @@
+[
+  {"key": "natural", "tags": [{"value": "rock", "count": 631}], "count": 631},
+  {
+    "key": "man_made",
+    "tags": [{"value": "breakwater", "count": 42}],
+    "count": 42
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "attraction", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Une des Sept Merveilles du Dauphiné", "count": 1},
+      {"value": "Inscription rouge \"X 11\"", "count": 1},
+      {"value": "Zone de Scialets", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "CLC:code",
+    "tags": [{"value": "332", "count": 1}, {"value": "322", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-182937", "count": 1},
+      {"value": "FR-260515", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 2}], "count": 2},
+  {"key": "sport", "tags": [{"value": "climbing", "count": 2}], "count": 2},
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "outdoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.camptocamp.org/routes/57081/fr/vallon-de-berard-l-ile-aux-razmokets",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_geodesie.asp?num_site=38269A&X=920017&Y=6426839",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3211624", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:La Pierre Percée", "count": 1}],
+    "count": 1
+  },
+  {"key": "rock", "tags": [{"value": "hoodoo", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "pas vérifié si roche liée au socle", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "climbing",
+    "tags": [{"value": "route_bottom", "count": 1}],
+    "count": 1
+  }
+]

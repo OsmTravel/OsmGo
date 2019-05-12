@@ -1,0 +1,9 @@
+[
+  {"key": "natural", "tags": [{"value": "plateau", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3391650", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Planèze de Saint-Flour", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "public_bath", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "bath:type",
+    "tags": [
+      {"value": "thermal", "count": 3},
+      {"value": "hammam", "count": 2},
+      {"value": "float_spa", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "bath:open_air",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.experience-silence.com/", "count": 1},
+      {"value": "https://www.nomad-et-sens.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Caissons de flottaison", "count": 1}],
+    "count": 1
+  },
+  {"key": "leisure", "tags": [{"value": "sauna", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "SARL AMAN-IMAN", "count": 1}],
+    "count": 1
+  }
+]

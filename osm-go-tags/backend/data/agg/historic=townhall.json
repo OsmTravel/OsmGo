@@ -1,0 +1,54 @@
+[
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA60000019", "count": 1},
+      {"value": "PA00135215", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "townhall", "count": 2}], "count": 2},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "townhall", "count": 2}], "count": 2},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2004-03-29", "count": 1},
+      {"value": "1995-02-13", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22979964", "count": 1},
+      {"value": "Q22975895", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Hôtel de ville de Noyon", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "mairie-billom@wanadoo.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33473733767", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://billom.fr", "count": 1}],
+    "count": 1
+  }
+]

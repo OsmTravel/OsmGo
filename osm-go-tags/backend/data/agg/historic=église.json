@@ -1,0 +1,65 @@
+[
+  {
+    "key": "mhs:criteria",
+    "tags": [{"value": "église, mobilier et sculptures", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "place_of_worship", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:website",
+    "tags": [
+      {
+        "value": "http://www.culture.gouv.fr/public/mistral/mersri_fr?ACTION",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "église", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Saint-Pierre-de-Buzet_-_%C3%89glise_Saint-Pierre_-1.JPG/280px-Saint-Pierre-de-Buzet_-_%C3%89glise_Saint-Pierre_-1.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "L'église paraît avoir fait partie d'un monastère dont l'emplacement s'aperçoit encore. C'est une église romane d'élévation assez exceptionnelle.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1926/01/07", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00084240", "count": 1}], "count": 1},
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "C12", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q17484078", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Église Saint-Pierre de Saint-Pierre-de-Buzet", "count": 1}
+    ],
+    "count": 1
+  }
+]

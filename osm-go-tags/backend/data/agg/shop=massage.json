@@ -1,0 +1,70 @@
+[
+  {"key": "shop", "tags": [{"value": "massage", "count": 22}], "count": 22},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "lesbainsdenahla.com", "count": 1},
+      {"value": "http://www.ivoirebene.com/", "count": 1},
+      {
+        "value": "http://lestresoms.com/fr/page/hotel-spa-annecy.7.html",
+        "count": 1
+      },
+      {"value": "http://www.thai-detente.com/", "count": 1},
+      {"value": "http://www.royalspa.fr/", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "massage", "tags": [{"value": "thai", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 80 38 98 62", "count": 1},
+      {"value": "+33 4 78 60 66 87", "count": 1},
+      {"value": "+33 760 888 838", "count": 1},
+      {"value": "+33 4 78 89 97 74", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Thé et Massage pieds", "count": 1},
+      {
+        "value": "Voyagez au cœur de la détente au Pavillon du Bien-Être, bénéficiez de soins thématiques concoctés pour vous faire rêver. Nous vous proposons des soins du visage personnalisés, ainsi que des soins du monde et de beauté à s'offrir en solo ou en duo.",
+        "count": 1
+      },
+      {"value": "Uniquement sur rendez-vous", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "info@spa-annecy.com", "count": 1},
+      {"value": "thai.detente@gmail.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Delphine Tourne", "count": 1},
+      {"value": "Véronique et Pascal Droux", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "http://lesbainsdenahla.com/img/lbdn-photo.jpg", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "leisure", "tags": [{"value": "sauna", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "healthcare", "count": 1}], "count": 1}
+]

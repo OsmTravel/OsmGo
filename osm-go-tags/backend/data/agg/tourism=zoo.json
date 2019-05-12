@@ -1,0 +1,36 @@
+[
+  {"key": "tourism", "tags": [{"value": "zoo", "count": 23}], "count": 23},
+  {
+    "key": "zoo",
+    "tags": [
+      {"value": "petting_zoo", "count": 1},
+      {"value": "safari_park", "count": 1},
+      {"value": "parrot", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.perroquet-spectacle.com/", "count": 1},
+      {"value": "http://www.parcdesoiseaux.com", "count": 1},
+      {"value": "http://www.tropicaland.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 2}], "count": 2},
+  {"key": "created_by", "tags": [{"value": "Editop", "count": 2}], "count": 2},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "drive_through", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "attraction", "tags": [{"value": "animal", "count": 1}], "count": 1},
+  {"key": "animal", "tags": [{"value": "deer", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "grassland", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3364320", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Parc des oiseaux", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "pool_manufacturer", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.artdecopiscine.fr/", "count": 1}],
+    "count": 1
+  }
+]

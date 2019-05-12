@@ -1,0 +1,15 @@
+[
+  {"key": "staff", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "shelter", "count": 1}], "count": 1},
+  {"key": "heating", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "leisure",
+    "tags": [{"value": "wilderness_hut", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Club Vosgien", "count": 1}],
+    "count": 1
+  }
+]

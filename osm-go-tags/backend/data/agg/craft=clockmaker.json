@@ -1,0 +1,8 @@
+[
+  {"key": "craft", "tags": [{"value": "clockmaker", "count": 6}], "count": 6},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 78 64 16 98", "count": 1}],
+    "count": 1
+  }
+]

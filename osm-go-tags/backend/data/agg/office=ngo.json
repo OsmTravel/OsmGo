@@ -1,0 +1,104 @@
+[
+  {"key": "office", "tags": [{"value": "ngo", "count": 21}], "count": 21},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 21 09", "count": 1},
+      {"value": "+33 4 78 24 10 14", "count": 1},
+      {"value": "+33 4 75891101", "count": 1},
+      {"value": "+33 4 75042197", "count": 1},
+      {"value": "+33 7 78051782", "count": 1},
+      {"value": "+33 4 75012214", "count": 1},
+      {"value": "+33 4 75946142", "count": 1},
+      {"value": "+33 4 75658860", "count": 1},
+      {"value": "+33 4 75222413", "count": 1},
+      {"value": "+33 4 72 41 74 42", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.croix-rouge.fr/", "count": 1},
+      {
+        "value": "http://www.unicef.fr/contenu/comite-unicef/unicef-rhone",
+        "count": 1
+      },
+      {"value": "http://www.bazarsansfrontieres.fr/", "count": 1},
+      {"value": "http://montelimar.croix-rouge.fr", "count": 1},
+      {"value": "http://privas.croix-rouge.fr/", "count": 1},
+      {"value": "http://die.croix-rouge.fr", "count": 1},
+      {"value": "http://www.conf-aura.fr/", "count": 1},
+      {"value": "http://www.handicap-international.org", "count": 1},
+      {"value": "http://cartong.org/", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Croix-Rouge française", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 75891101", "count": 1},
+      {"value": "+33 4 75013045", "count": 1},
+      {"value": "+33 4 75658860", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {
+        "value": "fr:Centre international de recherche sur le cancer",
+        "count": 2
+      },
+      {"value": "fr:Handicap International", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "doctors", "count": 1},
+      {"value": "social_facility", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "dl.montelimar@croix-rouge.fr", "count": 1},
+      {"value": "info@cartong.org", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "second_hand", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Syndicat Agricole qui promeut l'Agriculture Paysanne",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q1575029", "count": 1}], "count": 1},
+  {
+    "key": "emergency",
+    "tags": [{"value": "defibrillator", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "72", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1}
+]

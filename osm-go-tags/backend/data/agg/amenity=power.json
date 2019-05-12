@@ -1,0 +1,5 @@
+[
+  {"key": "amenity", "tags": [{"value": "power", "count": 1}], "count": 1},
+  {"key": "color", "tags": [{"value": "yellow", "count": 1}], "count": 1},
+  {"key": "power", "tags": [{"value": "generator", "count": 1}], "count": 1}
+]

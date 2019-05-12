@@ -1,0 +1,18 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "planetarium", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Planétarium de Saint-Étienne", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.planetariumvv.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

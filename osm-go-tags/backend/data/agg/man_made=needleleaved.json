@@ -1,0 +1,9 @@
+[
+  {"key": "landuse", "tags": [{"value": "forest", "count": 1}], "count": 1},
+  {"key": "leaf_cycle", "tags": [{"value": "mixed", "count": 1}], "count": 1},
+  {
+    "key": "man_made",
+    "tags": [{"value": "needleleaved", "count": 1}],
+    "count": 1
+  }
+]

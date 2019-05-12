@@ -1,0 +1,24 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "ambulance_station", "count": 17}],
+    "count": 17
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 54 61 67", "count": 1},
+      {"value": "+33 4 74 85 50 17", "count": 1},
+      {"value": "+33478444023", "count": 1},
+      {"value": "+33 4 77 24 16 44", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.jardin-ambulance-vienne.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

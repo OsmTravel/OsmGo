@@ -1,0 +1,6 @@
+[
+  {"key": "barrier", "tags": [{"value": "gate", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "furniture", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

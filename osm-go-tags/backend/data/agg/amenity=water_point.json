@@ -1,0 +1,33 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "water_point", "count": 96}],
+    "count": 96
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 1},
+      {"value": "conditional", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "ft_symbol", "tags": [{"value": "343", "count": 1}], "count": 1},
+  {
+    "key": "drinking_water:legal",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Haute pression. Gelée en hiver ?", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  }
+]

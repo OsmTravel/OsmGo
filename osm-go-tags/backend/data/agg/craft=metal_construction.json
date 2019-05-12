@@ -1,0 +1,25 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "metal_construction", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Métallerie Aluminium Miroiterie", "count": 1},
+      {"value": "Constructions Métalliques", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://ericfaure-mobilier.fr", "count": 1},
+      {"value": "http://ferdesalpes.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

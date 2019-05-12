@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "yoga_studio", "count": 1}],
+    "count": 1
+  },
+  {"key": "created_by", "tags": [{"value": "JOSM", "count": 1}], "count": 1}
+]

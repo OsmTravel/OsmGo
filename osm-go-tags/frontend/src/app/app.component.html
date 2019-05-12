@@ -1,0 +1,91 @@
+<div class="primaryKey">
+  <mat-form-field>
+    <mat-select placeholder="Key" [(value)]="selectedTagKey" (selectionChange)="selectKeyTagChange($event)">
+      <mat-option *ngFor="let key of tagsService.tagsConfig | keys  " [value]="key">
+
+        {{tagsService.tagsConfig[key]?.lbl}} / {{ key}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-button (click)="openDialogAddPrimaryValue(selectedTagKey)"> ADD </button>
+  <button mat-button (click)="generatesSprites()"> SPRITES </button>
+  
+</div>
+
+<div class="primaryValue">
+  <table *ngIf="selectedTagKey" style="width: 100%;">
+    <tr>
+      <th>icon</th>
+ 
+      <th>Clé</th>
+      <th>Label</th>
+      <th>Nombre de presets</th>
+      <th>%</th>
+    </tr>
+    <tr *ngFor="let primaryTagValueConfig of tagsService.tagsConfig[selectedTagKey].values" (click)="tagValueConfigChange(primaryTagValueConfig)">
+      <td>
+        <div style="width: 32px;min-height: 32px;height: 100%;" [ngStyle]="{'background-color': primaryTagValueConfig.markerColor}">
+          <img *ngIf="primaryTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon" [src]="'/api/svg/'+ primaryTagValueConfig.icon"
+          />
+        </div>
+      </td>
+  
+    
+      <td>{{primaryTagValueConfig.key}}</td>
+      <td>{{primaryTagValueConfig.lbl}}</td>
+      <td>{{primaryTagValueConfig.presets.length}}</td>
+      <td> {{getCountPrimaryKey( selectedTagKey ,primaryTagValueConfig.key)}}</td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="presets" *ngIf="selectedTagValueConfig">
+  <h3>{{selectedTagValueConfig.key}}</h3>
+  <div style="width: 32px;height: 32px; display: inline-block" [ngStyle]="{'background-color': selectedTagValueConfig.markerColor}" (click)="openDialogIconsSelector(selectedTagKey, selectedTagValueConfig.key)">
+    <img *ngIf="selectedTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon" [src]="'/api/svg/'+ selectedTagValueConfig.icon"
+    />
+   
+
+  </div>
+  <div *ngIf="selectedTagValueConfig.icon" > {{ selectedTagValueConfig.icon }}</div>
+  <!-- <img [style.width]="'24px'" [style.height]="'36px'" [style.background]= "'url(/api/sprites/png)'" 
+  [style.background-position] = "-currentSprite.x +'px '+ -currentSprite.y +'px'"
+> -->
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.lbl"
+    (change)="primaryTagHasChanged($event)"
+    placeholder="Label" style="font-weight: bolder; font-size: 1.5em;">
+
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+      <input matInput [(ngModel)]="selectedTagValueConfig.lbl_alt"
+      (change)="primaryTagHasChanged($event)"
+      placeholder="Label alternatif">
+    </mat-form-field>
+  
+  <mat-form-field style="width: 100%; color:red;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.alert"
+    (change)="primaryTagHasChanged($event)"
+    placeholder="Alerte">
+  </mat-form-field>
+
+  <table *ngIf="tagsService.presetsConfig  as presetsConfig">
+
+    <tr *ngFor="let presetId of selectedTagValueConfig.presets">
+      <td>{{ presetsConfig[presetId]?.key}}</td>
+      <td>{{presetsConfig[presetId]?.lbl}}</td>
+      <td>{{presetsConfig[presetId]?.type}}</td>
+      <td>{{presetsConfig[presetId]?.tags?.length}}</td>
+      <td><button mat-raised-button color="primary" (click)="openPresetsDialog('update',selectedTagKey, selectedTagValueConfig.key, presetsConfig[presetId])">Modifier</button></td>
+    </tr>
+  </table>
+  <button mat-raised-button color="primary" (click)="openPresetsDialog('add',selectedTagKey, selectedTagValueConfig.key,{type: 'text', lbl: '', tags: []})">Ajouter
+    un preset</button>
+
+
+
+    <button mat-button (click)="toOsmPage(selectedTagKey, selectedTagValueConfig.key)"> OSM WIKI</button>
+    
+</div>

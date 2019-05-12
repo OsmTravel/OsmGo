@@ -1,0 +1,13 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "community_information_kiosk", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1}
+]

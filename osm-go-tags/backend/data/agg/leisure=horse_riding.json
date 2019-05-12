@@ -1,0 +1,65 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "horse_riding", "count": 45}],
+    "count": 45
+  },
+  {"key": "sport", "tags": [{"value": "equestrian", "count": 14}], "count": 14},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.levergier.com", "count": 1},
+      {"value": "https://paroledecheval.ffe.com/", "count": 1},
+      {"value": "http://lagrangeducoudray.ffe.com", "count": 1},
+      {"value": "lajumenterie.ffe.com", "count": 1},
+      {"value": "https://centre-equestre-thones.ffe.com", "count": 1},
+      {"value": "http://www.equain.fr/", "count": 1},
+      {"value": "http://www.poneyclubdupeillard.fr", "count": 1},
+      {"value": "http://www.equi-maillat.ffe.com/", "count": 1},
+      {"value": "http://www.seilletequitation.fr/fr/", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 34 60 87", "count": 1},
+      {"value": "+33 4 76 72 36 60", "count": 1},
+      {"value": "+33 4 50 02 91 20", "count": 1},
+      {"value": "+33 4 78 55 23 02", "count": 1},
+      {"value": "+33 4 74 49 10 34", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "stables", "count": 1},
+      {"value": "animal_boarding", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "lajum@orange.fr", "count": 1},
+      {"value": "equain@orange.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Claude Vermorel", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "animal_boarding",
+    "tags": [{"value": "horse", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "chalet", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "lit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "bridleway", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "permissive", "count": 1}], "count": 1}
+]

@@ -1,0 +1,30 @@
+[
+  {"key": "shop", "tags": [{"value": "ski", "count": 11}], "count": 11},
+  {
+    "key": "entrance",
+    "tags": [{"value": "yes", "count": 2}, {"value": "main", "count": 1}],
+    "count": 3
+  },
+  {"key": "ski:rental", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "amenity", "tags": [{"value": "ski_rental", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Website invalide (www.guidon-sports.com)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "encore présent ? un nouveau \"Skiloc Jaÿ Sport\" a ouvert en 2016 dans les chalets de Layssia tout proche. Est-ce un déménagement ou l'ouverture d'un magasin supplémentaire ??",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33450349820", "count": 1}], "count": 1},
+  {"key": "ski:sales", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ski:type", "tags": [{"value": "alpine", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "ski", "count": 1}], "count": 1},
+  {"key": "ski:clothes", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

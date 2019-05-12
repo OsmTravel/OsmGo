@@ -1,0 +1,10 @@
+[
+  {"key": "craft", "tags": [{"value": "handcraft", "count": 4}], "count": 4},
+  {"key": "shop", "tags": [{"value": "gift", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "gallery", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://oukonva.fr/lieu/303", "count": 1}],
+    "count": 1
+  }
+]

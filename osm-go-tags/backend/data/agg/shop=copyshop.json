@@ -1,0 +1,100 @@
+[
+  {"key": "shop", "tags": [{"value": "copyshop", "count": 64}], "count": 64},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.copytop.com/agence-lyon-hotel-de-ville",
+        "count": 1
+      },
+      {"value": "http://quickprint.fr/", "count": 1},
+      {"value": "http://synergie-copy.com/", "count": 1},
+      {"value": "http://www.multicopies-creation.com/", "count": 1},
+      {"value": "https://www.corep.fr", "count": 1},
+      {"value": "http://induscopies.fr", "count": 1},
+      {
+        "value": "http://www.copytop.com/agence-lyon-saxe-lafayette",
+        "count": 1
+      },
+      {"value": "http://clertant.fr", "count": 1},
+      {"value": "http://www.xylenprod.fr", "count": 1},
+      {
+        "value": "https://www.corep.fr/agence/corep-lyon-grange-blanche/",
+        "count": 1
+      },
+      {"value": "http://express-copies.fr/", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 78 89 10", "count": 1},
+      {"value": "+33 4 74 31 99 91", "count": 1},
+      {"value": "+33 4 78 61 01 20", "count": 1},
+      {"value": "+33 4 26 03 01 93", "count": 1},
+      {"value": "+33 4 26 03 01 94", "count": 1},
+      {"value": "+33 4 50 45 55 73", "count": 1},
+      {"value": "+33 4 78 42 05 56", "count": 1},
+      {"value": "0963601297", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 4}], "count": 4},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Imprimeur", "count": 2},
+      {"value": "photocopier", "count": 1},
+      {"value": "Anciennement Imprimerie Dubouloz", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "COPY-TOP", "count": 2},
+      {"value": "Photomaton", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Photocopieur libre-service", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Is there a better tag for standalone self-serve copy machine ?",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {
+        "value": "Entreprise de reproduction et sauvegarde de photos et vidéos, tirages et impressions couleurs",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "craft", "tags": [{"value": "printer", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1}
+]

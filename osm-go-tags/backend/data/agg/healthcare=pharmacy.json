@@ -1,0 +1,74 @@
+[
+  {"key": "amenity", "tags": [{"value": "pharmacy", "count": 31}], "count": 31},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "pharmacy", "count": 31}],
+    "count": 31
+  },
+  {"key": "dispensing", "tags": [{"value": "yes", "count": 22}], "count": 22},
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [
+      {"value": "380007955", "count": 1},
+      {"value": "380007534", "count": 1},
+      {"value": "380012906", "count": 1},
+      {"value": "380012922", "count": 1},
+      {"value": "380012807", "count": 1},
+      {"value": "380009423", "count": 1},
+      {"value": "380008250", "count": 1},
+      {"value": "260005814", "count": 1},
+      {"value": "380010983", "count": 1},
+      {"value": "010003887", "count": 1},
+      {"value": "690009873", "count": 1},
+      {"value": "420006330", "count": 1},
+      {"value": "010006203", "count": 1},
+      {"value": "260003645", "count": 1},
+      {"value": "260008453", "count": 1},
+      {"value": "420004913", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "drive_through",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 83 00 58", "count": 1},
+      {"value": "+33 4 72 24 63 51", "count": 1},
+      {"value": "+33 4 77 64 40 28", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lapharmaciecentrale.fr/", "count": 1},
+      {
+        "value": "http://pharmacie.rhone-alpes-pharma.com/454434-pharmacie-de-renaison#pos-content-carousel",
+        "count": 1
+      },
+      {
+        "value": "https://www.la-plagne.com/commerce-et-service/1/134760-pharmacie-mengeon.html",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Pharma", "count": 1},
+      {"value": "Mengeon Martine", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "brand",
+    "tags": [{"value": "Hello Pharmacie", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

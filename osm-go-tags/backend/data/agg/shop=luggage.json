@@ -1,0 +1,46 @@
+[
+  {"key": "shop", "tags": [{"value": "luggage", "count": 17}], "count": 17},
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 3},
+      {"value": "-1", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.rayondor-bagages.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Rayon d'Or", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "resurvey", "count": 1}], "count": 1},
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-12-24", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "level:ref", "tags": [{"value": "Niveau 0", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Guy Hoquet (agence immobilière)", "count": 1}],
+    "count": 1
+  }
+]

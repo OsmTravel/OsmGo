@@ -1,0 +1,12 @@
+[
+  {"key": "maze", "tags": [{"value": "labyrinth", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "maze", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "wood", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.labyleo.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "attraction", "tags": [{"value": "maze", "count": 1}], "count": 1}
+]

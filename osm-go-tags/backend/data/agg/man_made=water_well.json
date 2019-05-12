@@ -1,0 +1,59 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "water_well", "count": 198}],
+    "count": 198
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "archaeological_site", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 2}, {"value": "no", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Un puit protégé par une grille", "count": 1},
+      {"value": "Puits Gallo-Romain", "count": 1},
+      {"value": "source captée", "count": 1},
+      {"value": "Captade d'eau potable", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "covered", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fountain", "count": 2},
+      {"value": "drinking_water", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "pump",
+    "tags": [{"value": "manual", "count": 1}, {"value": "powered", "count": 1}],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "FIXME",
+    "tags": [
+      {
+        "value": "position approximative, a revérifier sur le terrain",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "drinking_water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "spring", "count": 1}], "count": 1}
+]

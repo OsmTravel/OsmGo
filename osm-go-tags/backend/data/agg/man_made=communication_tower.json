@@ -1,0 +1,17 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "communication_tower", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "communication:radio",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tower:type",
+    "tags": [{"value": "communication", "count": 1}],
+    "count": 1
+  }
+]

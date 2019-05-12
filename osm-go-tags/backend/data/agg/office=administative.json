@@ -1,0 +1,12 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "administative", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.anneville-ambourville.fr", "count": 1}],
+    "count": 1
+  }
+]

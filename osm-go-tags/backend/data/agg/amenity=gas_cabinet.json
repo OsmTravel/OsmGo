@@ -1,0 +1,9 @@
+[
+  {"key": "ref", "tags": [{"value": "24164", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "gas_cabinet", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "GEG", "count": 1}], "count": 1}
+]

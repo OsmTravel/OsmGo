@@ -1,0 +1,12 @@
+[
+  {
+    "key": "note",
+    "tags": [{"value": "CARTO-SILAT-10-2013", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "physioterapist", "count": 1}],
+    "count": 1
+  }
+]

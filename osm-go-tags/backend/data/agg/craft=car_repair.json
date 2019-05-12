@@ -1,0 +1,17 @@
+[
+  {"key": "craft", "tags": [{"value": "car_repair", "count": 3}], "count": 3},
+  {"key": "ref", "tags": [{"value": "S17", "count": 1}], "count": 1},
+  {"key": "hide", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "car_repair", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "fheller@alsatis.net", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 92 43 16 99", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

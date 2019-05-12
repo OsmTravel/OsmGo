@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "fridge", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.identites-mutuelle.com/lesfrigossolidaires",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

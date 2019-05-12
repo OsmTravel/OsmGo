@@ -1,0 +1,87 @@
+[
+  {"key": "shop", "tags": [{"value": "tobacco", "count": 159}], "count": 159},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74372311", "count": 1},
+      {"value": "+33 9 65 16 08 95", "count": 1},
+      {"value": "+33 4 76 59 00 72", "count": 1},
+      {"value": "+33 4 78 32 10 55", "count": 1},
+      {"value": "+33 4 78 25 11 53", "count": 1},
+      {"value": "+33478051816", "count": 1},
+      {"value": "+33 4 76 49 03 54", "count": 1},
+      {"value": "+33 4 75 36 43 69", "count": 1},
+      {"value": "+33 4 76 22 14 01", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "no", "count": 2},
+      {"value": "limited", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "bar", "count": 3},
+      {"value": "restaurant", "count": 1},
+      {"value": "cafe", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 4}, {"value": "1", "count": 1}],
+    "count": 5
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {"key": "indoor", "tags": [{"value": "room", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/klope-one-klope-one-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/L-Espace-du-Fumeur",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "convenience", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "shop", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "newspaper", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Jean-Luc Fialon", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "vente de permis pêche", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Cigarettes électroniques", "count": 1}],
+    "count": 1
+  },
+  {"key": "gift", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "surveillance", "tags": [{"value": "indoor", "count": 1}], "count": 1}
+]

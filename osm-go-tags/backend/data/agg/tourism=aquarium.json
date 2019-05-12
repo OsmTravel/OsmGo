@@ -1,0 +1,8 @@
+[
+  {"key": "tourism", "tags": [{"value": "aquarium", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Aquarium de Lyon", "count": 1}],
+    "count": 1
+  }
+]

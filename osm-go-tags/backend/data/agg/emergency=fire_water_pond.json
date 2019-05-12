@@ -1,0 +1,11 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_water_pond", "count": 3}],
+    "count": 3
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "reservoir", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "water", "count": 1}], "count": 1},
+  {"key": "water", "tags": [{"value": "reservoir", "count": 1}], "count": 1}
+]

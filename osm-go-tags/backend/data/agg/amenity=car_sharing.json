@@ -1,0 +1,205 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "car_sharing", "count": 216}],
+    "count": 216
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Citélib", "count": 106},
+      {"value": "Groupe Bolloré", "count": 57},
+      {"value": "Citiz", "count": 21},
+      {"value": "Citiz Alpes-Loire", "count": 10},
+      {"value": "LPA", "count": 6},
+      {"value": "Mobility Genossenschaft", "count": 5},
+      {"value": "Alpes Autopartage", "count": 2},
+      {"value": "Bluely", "count": 2},
+      {"value": "citelib", "count": 1},
+      {"value": "Citiz Alpes Loire", "count": 1}
+    ],
+    "count": 211
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "1", "count": 106},
+      {"value": "5", "count": 44},
+      {"value": "4", "count": 30},
+      {"value": "2", "count": 9},
+      {"value": "3", "count": 7},
+      {"value": "0", "count": 7},
+      {"value": "6", "count": 3},
+      {"value": "9", "count": 1},
+      {"value": "7", "count": 1}
+    ],
+    "count": 208
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://citelib.com/", "count": 105},
+      {"value": "https://alpes-loire.citiz.coop/", "count": 18},
+      {"value": "http://citiz.coop/", "count": 6},
+      {"value": "http://www.mobility.ch/", "count": 5},
+      {"value": "http://citelib.com", "count": 2},
+      {"value": "https://citiz.coop/", "count": 1},
+      {"value": "http://alpes-loire.citiz.coop/", "count": 1}
+    ],
+    "count": 138
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "Bluely", "count": 58}, {"value": "Citiz", "count": 16}],
+    "count": 74
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "48", "count": 2},
+      {"value": "33", "count": 2},
+      {"value": "7", "count": 2},
+      {"value": "32", "count": 1},
+      {"value": "42", "count": 1},
+      {"value": "44", "count": 1},
+      {"value": "38", "count": 1},
+      {"value": "34", "count": 1},
+      {"value": "37", "count": 1},
+      {"value": "43", "count": 1},
+      {"value": "39", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "55", "count": 1},
+      {"value": "40", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "47", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "54", "count": 1},
+      {"value": "52", "count": 1},
+      {"value": "22", "count": 1},
+      {"value": "36", "count": 1},
+      {"value": "51", "count": 1},
+      {"value": "23", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "31", "count": 1},
+      {"value": "41", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "53", "count": 1},
+      {"value": "25", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "29", "count": 1},
+      {"value": "45", "count": 1},
+      {"value": "57", "count": 1},
+      {"value": "27", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "49", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "28", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "50", "count": 1},
+      {"value": "19", "count": 1},
+      {"value": "46", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "20", "count": 1},
+      {"value": "56", "count": 1}
+    ],
+    "count": 58
+  },
+  {
+    "key": "brand:website",
+    "tags": [{"value": "https://www.bluely.eu", "count": 57}],
+    "count": 57
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Bluely", "count": 57}],
+    "count": 57
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [{"value": "Q16039715", "count": 57}],
+    "count": 57
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "01/11/2014", "count": 23},
+      {"value": "01/03/2015", "count": 1},
+      {"value": "15/03/2016", "count": 1},
+      {"value": "2015", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "capacity:charging",
+    "tags": [
+      {"value": "4", "count": 16},
+      {"value": "6", "count": 5},
+      {"value": "8", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "3", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Citiz LPA", "count": 6}],
+    "count": 6
+  },
+  {"key": "wikidata", "tags": [{"value": "Q2872582", "count": 6}], "count": 6},
+  {
+    "key": "mobility:station_id",
+    "tags": [
+      {"value": "2617", "count": 1},
+      {"value": "2806", "count": 1},
+      {"value": "3952", "count": 1},
+      {"value": "3875", "count": 1},
+      {"value": "3998", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "check capacity", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "je ne sais pas où il est précisément, mais il n'est pas ou plus là où il était, je le bouge sans savoir exactement où on récupère les véhicule à louer.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Toyota Prius, Hybride, cathégorie \"HY\"", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

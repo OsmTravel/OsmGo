@@ -1,0 +1,34 @@
+[
+  {"key": "shop", "tags": [{"value": "general", "count": 6}], "count": 6},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ulisse38.com/6794-page-2.htm", "count": 1},
+      {"value": "la-boutik.com", "count": 1},
+      {"value": "www.coral-groupe.fr/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "activity",
+    "tags": [{"value": "Atelier ressourcerie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 26 66 94", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

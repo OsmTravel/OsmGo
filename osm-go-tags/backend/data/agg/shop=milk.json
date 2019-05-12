@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "milk", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [
+      {
+        "value": "Coopérative Agricole des Producteurs de Reblochons de la Vallée de Thônes",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

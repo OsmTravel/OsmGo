@@ -1,0 +1,17 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "graphic_artist", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "Jeanjean.graphisme@hotmail.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 2 41 20 07 05", "count": 1}],
+    "count": 1
+  }
+]

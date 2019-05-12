@@ -1,0 +1,56 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "alternative", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "osteopathy", "count": 6},
+      {"value": "applied_kinesiology", "count": 2},
+      {
+        "value": "qi-gong;bien-être;énergetique;relaxation;méditations;réflexologie;hypnosis;hypnose;formation;applied_kinesiology;aromatherapy;naturopathy;traditional_chinese_medicine;reflexology;hypnotherapy",
+        "count": 1
+      },
+      {"value": "osteopathy;traditional_chinese_medicine", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 21 08 78", "count": 1},
+      {"value": "+33 4 76 73 06 56", "count": 1},
+      {"value": "+33 4 79 33 51 42", "count": 1},
+      {"value": "+33 4 78 39 71 74", "count": 1},
+      {"value": "+33 6 85 54 76 56", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://qinglong.fr/", "count": 1},
+      {"value": "http://www.vita-zen.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Quay-Cendre Marcel", "count": 1},
+      {"value": "Clément Montagnat-Rentier", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Espace soins et bien-être. Médecine alternative", "count": 1}
+    ],
+    "count": 1
+  }
+]

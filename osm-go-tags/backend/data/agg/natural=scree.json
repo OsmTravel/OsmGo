@@ -1,0 +1,76 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "scree", "count": 1694}],
+    "count": 1694
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-208017", "count": 2},
+      {"value": "FR-169766", "count": 2},
+      {"value": "FR-145671", "count": 1},
+      {"value": "FR-208145", "count": 1},
+      {"value": "FR-200038", "count": 1},
+      {"value": "FR-187957", "count": 1},
+      {"value": "FR-187901", "count": 1},
+      {"value": "FR-140738", "count": 1},
+      {"value": "FR-140820", "count": 1},
+      {"value": "FR-146718", "count": 1},
+      {"value": "FR-160527", "count": 1},
+      {"value": "FR-160743", "count": 1},
+      {"value": "FR-163477", "count": 1},
+      {"value": "FR-166815", "count": 1},
+      {"value": "FR-167388", "count": 1},
+      {"value": "FR-260330", "count": 1},
+      {"value": "FR-207808", "count": 1},
+      {"value": "FR-259711", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "CLC:code",
+    "tags": [{"value": "332", "count": 19}, {"value": "321", "count": 1}],
+    "count": 20
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 20}], "count": 20},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "scree et bare_rock pas distingués", "count": 10},
+      {"value": "test de rendu et de pertinence de balise", "count": 1}
+    ],
+    "count": 11
+  },
+  {"key": "geological", "tags": [{"value": "moraine", "count": 4}], "count": 4},
+  {"key": "surface", "tags": [{"value": "gravel", "count": 3}], "count": 3},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "zone à améliorer", "count": 1},
+      {"value": "approximatif / survey", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Éboulit Récent (2012) ayant recouvert les deux chemins forestiers",
+        "count": 1
+      },
+      {"value": "Spoil heap from abandoned stone quarry", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {"key": "landuse", "tags": [{"value": "bare_rock", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Ruines de Séchilienne", "count": 1}],
+    "count": 1
+  },
+  {"key": "hazard", "tags": [{"value": "erosion", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1}
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "telephone", "count": 655}],
+    "count": 655
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "France Télécom", "count": 202},
+      {"value": "Orange", "count": 81},
+      {"value": "France Telecom", "count": 37},
+      {"value": "orange", "count": 2},
+      {"value": "cabine SOS", "count": 1},
+      {"value": "Swisscom", "count": 1},
+      {"value": "france télécom", "count": 1}
+    ],
+    "count": 325
+  },
+  {
+    "key": "payment:telephone_cards",
+    "tags": [{"value": "yes", "count": 85}, {"value": "no", "count": 1}],
+    "count": 86
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 52}, {"value": "no", "count": 1}],
+    "count": 53
+  },
+  {
+    "key": "covered",
+    "tags": [
+      {"value": "yes", "count": 15},
+      {"value": "both", "count": 14},
+      {"value": "booth", "count": 4},
+      {"value": "no", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 95 99 35", "count": 1},
+      {"value": "+33 4 76 95 23 24", "count": 1},
+      {"value": "+33 4 78 02 18 86", "count": 1},
+      {"value": "+33 4 76 72 77 73", "count": 1},
+      {"value": "+33 4 76 72 46 24", "count": 1},
+      {"value": "+33 4 77 50 11 24", "count": 1},
+      {"value": "+33 4 76 48 44 42", "count": 1},
+      {"value": "+33 4 76 95 99 53", "count": 1},
+      {"value": "+33 4 76 95 97 35", "count": 1},
+      {"value": "+33 4 76 95 01 35", "count": 1},
+      {"value": "+33 4 76 95 23 42", "count": 1},
+      {"value": "+33 4 74 40 92 40", "count": 1},
+      {"value": "+33 4 76 72 77 74", "count": 1},
+      {"value": "+33 4 74 39 81 24", "count": 1},
+      {"value": "+33 4 77 75 79 53", "count": 1},
+      {"value": "+33 4 76 34 43 53", "count": 1},
+      {"value": "+33 4 76 34 41 53", "count": 1},
+      {"value": "+33 4 78 47 05 35", "count": 1},
+      {"value": "+33 4 76 34 21 68", "count": 1},
+      {"value": "+33492585153", "count": 1},
+      {"value": "+33492585235", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 15}, {"value": "no", "count": 5}],
+    "count": 20
+  },
+  {
+    "key": "payment:coins",
+    "tags": [{"value": "yes", "count": 9}, {"value": "no", "count": 7}],
+    "count": 16
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "01456", "count": 1},
+      {"value": "7375", "count": 1},
+      {"value": "4801", "count": 1},
+      {"value": "2065", "count": 1},
+      {"value": "2120", "count": 1},
+      {"value": "2107", "count": 1},
+      {"value": "925210402", "count": 1},
+      {"value": "3559", "count": 1},
+      {"value": "0476774353", "count": 1},
+      {"value": "0476770135", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "payment:electronic_purses",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Vérifier la présence ou non de la cabine téléphonique",
+        "count": 4
+      },
+      {"value": "resurvey exact position", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "payment:notes", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "level", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "don't working", "count": 1},
+      {"value": "Cabine rouge de style anglais", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "capacity",
+    "tags": [{"value": "2", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Vestige des temps anciens, les cabines téléphoniques semblent subsister comme monument historique. Elle a été transformé en Bibliothèque libre.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "payment", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.joueclub-annemasse.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

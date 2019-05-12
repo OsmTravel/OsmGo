@@ -1,0 +1,97 @@
+[
+  {"key": "shop", "tags": [{"value": "gift", "count": 159}], "count": 159},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "artisanat", "count": 9},
+      {"value": "Produits régionaux; Souvenirs", "count": 1},
+      {"value": "brocante, location d'objet, exposition", "count": 1},
+      {"value": "anciennement situé Rue de la République", "count": 1},
+      {
+        "value": "cadeaux; souvenirs; artisanat; produits locaux; fromager",
+        "count": 1
+      }
+    ],
+    "count": 13
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://lyon-ouest.artisansdumonde.org", "count": 1},
+      {"value": "doretdesaveurs.fr", "count": 1},
+      {"value": "http://www.ateliers-marinette.fr", "count": 1},
+      {"value": "http://boutique.olweb.fr", "count": 1},
+      {"value": "http://ardeche-guide.com", "count": 1},
+      {"value": "http://www.pagesjaunes.fr/pros/09050976", "count": 1},
+      {"value": "www.barbouille-et-barbotine.fr", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74372311", "count": 1},
+      {"value": "+33 4 84 25 00 96", "count": 1},
+      {"value": "+33 4 76 89 98 63", "count": 1},
+      {"value": "+33478444915", "count": 1},
+      {"value": "+33 474509080", "count": 1},
+      {"value": "+33 4 75 52 79 06", "count": 1},
+      {"value": "+33 4 75 42 72 18", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "cafe", "count": 2},
+      {"value": "restaurant", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 2}],
+    "count": 2
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 2}], "count": 2},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "L'élément n'existe pas ou plus", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "FIXME", "tags": [{"value": "maroquinerie", "count": 1}], "count": 1},
+  {"key": "drink:wine", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Décoration", "count": 1}],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1},
+  {"key": "beverage", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

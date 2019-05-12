@@ -1,0 +1,15 @@
+[
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "track", "count": 1},
+      {"value": "residential", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "Chemin des Bas Champarts", "count": 2}],
+    "count": 2
+  }
+]

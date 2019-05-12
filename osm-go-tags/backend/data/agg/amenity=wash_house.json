@@ -1,0 +1,6 @@
+[
+  {"key": "amenity", "tags": [{"value": "wash_house", "count": 7}], "count": 7},
+  {"key": "drinking_water", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "historic", "tags": [{"value": "building", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

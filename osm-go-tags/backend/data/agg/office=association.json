@@ -1,0 +1,387 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "association", "count": 167}],
+    "count": 167
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cyberdeclic.org", "count": 1},
+      {"value": "http://www.clubleovienne.org/", "count": 1},
+      {"value": "http://www.cvac.fr/", "count": 1},
+      {"value": "http://www.shiatsuetdetente.com", "count": 1},
+      {"value": "http://www.sgdf38.fr/", "count": 1},
+      {"value": "http://www.adate.org/", "count": 1},
+      {"value": "http://www.locauxmotiv.fr", "count": 1},
+      {"value": "http://www.mjc-rhonealpes.org", "count": 1},
+      {"value": "http://memoiredhierpourdemain.com", "count": 1},
+      {"value": "http://www.francmacon-grenoble.org/", "count": 1},
+      {"value": "http://grenoble.ecles.fr/", "count": 1},
+      {"value": "http://www.tuba-lyon.com", "count": 1},
+      {"value": "http://centrelgbti-grenoble.org", "count": 1},
+      {"value": "http://www.collines-bio.info/", "count": 1},
+      {"value": "http://www.aileslyonnaises.com", "count": 1},
+      {"value": "ameuso.org", "count": 1},
+      {
+        "value": "http://www.mjc-centresocial-victorhugo.com/la-maison-des-associations/",
+        "count": 1
+      },
+      {"value": "http://dd26.blogs.apf.asso.fr/", "count": 1},
+      {"value": "http://lespoucesvertes.blogspot.fr", "count": 1},
+      {
+        "value": "https://plus.google.com/109560236367454577560/posts",
+        "count": 1
+      },
+      {"value": "http://www.temps-jeunes.com/", "count": 1},
+      {"value": "http://grenoble.ufcquechoisir.fr/", "count": 1},
+      {"value": "http://www.ml-grenoble.org", "count": 1},
+      {"value": "http://cluji.fr/", "count": 1},
+      {"value": "http://www.ale-lyon.org/", "count": 1},
+      {"value": "http://www.hespul.org/", "count": 1},
+      {"value": "http://www.activroyans.fr", "count": 1},
+      {"value": "https://www.24heures.org/a-propos/", "count": 1},
+      {"value": "www.institut-the-zen.com", "count": 1},
+      {
+        "value": "https://www.maisondesfamilles.fr/nos-maisons-des-familles/maison-des-familles-grenoble/",
+        "count": 1
+      },
+      {"value": "https://www.departements-regions-cyclables.org/", "count": 1},
+      {"value": "http://www.acoucite.org", "count": 1},
+      {"value": "https://www.aremacs.com/", "count": 1},
+      {"value": "http://www.lagonette.org/", "count": 1},
+      {"value": "ski-club-insa-lyon.wixsite.com", "count": 1},
+      {"value": "http://www.laea.fr", "count": 1},
+      {
+        "value": "https://www.facebook.com/union.mariniere.vernaison/",
+        "count": 1
+      },
+      {"value": "http://lyonvillage.free.fr", "count": 1},
+      {"value": "http://cles-facil.fr/", "count": 1},
+      {"value": "http://www.lyonfrenchtech.com/", "count": 1},
+      {"value": "http://afevgrenoble.wixsite.com/afev", "count": 1},
+      {"value": "https://www.info-jeunes.fr/", "count": 1},
+      {"value": "http://www.usinevivante.org/", "count": 1},
+      {"value": "http://www.levillage2sante.fr/", "count": 1},
+      {"value": "www.cap-berriat.com", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 41 75 27", "count": 1},
+      {"value": "+33 4 76 63 27 27", "count": 1},
+      {"value": "+33 4 74 85 36 52", "count": 1},
+      {"value": "+33 4 74 85 88 62", "count": 1},
+      {"value": "+33 6 01 76 17 68", "count": 1},
+      {"value": "+33 4 78 78 96 96", "count": 1},
+      {"value": "+33 4 78 21 35 49", "count": 1},
+      {"value": "+33 4 78 20 90 98", "count": 1},
+      {"value": "+33 4 77 73 15 08", "count": 1},
+      {"value": "+33 4 75 78 58 60", "count": 1},
+      {"value": "+33 4 76 09 54 86", "count": 1},
+      {"value": "+33 4 72721980", "count": 1},
+      {"value": "+33 4 75 40 95 01", "count": 1},
+      {"value": "+33 4 72 43 70 00", "count": 1},
+      {"value": "+33 4 72918600", "count": 1},
+      {"value": "+33 4 26 00 55 22", "count": 1},
+      {"value": "+33 4 72794367", "count": 1},
+      {"value": "+33 9 51 57 91 33", "count": 1},
+      {"value": "+33478277967", "count": 1},
+      {"value": "+33 6 73 10 23 44", "count": 1},
+      {"value": "+33 4 76 86 56 00", "count": 1},
+      {"value": "+33 4 75 79 21 81", "count": 1},
+      {"value": "+33 4 75 41 07 33", "count": 1},
+      {"value": "+334 76 96 60 79", "count": 1},
+      {"value": "+33 4 78 23 31 16", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Énergies renouvelables et efficacité énergétique", "count": 1},
+      {
+        "value": "Séjours de vacances adaptés pour adultes déficients intellectuels",
+        "count": 1
+      },
+      {
+        "value": "Etude de la faune des invertébrés et de la flore régionale par des travaux d'inventaires.",
+        "count": 1
+      },
+      {
+        "value": "Atelier Permanent d’Initiation à l’Environnement Urbain",
+        "count": 1
+      },
+      {
+        "value": "Favorise le développement de l'apiculture et la vente des produits dans la Loire.",
+        "count": 1
+      },
+      {"value": "Refuge pour Animaux", "count": 1},
+      {
+        "value": "Association pour une alimentation locale en direct avec les producteurs",
+        "count": 1
+      },
+      {"value": "Club de pilotage", "count": 1},
+      {
+        "value": "Association des paralysés de France; délégation de la Drôme",
+        "count": 1
+      },
+      {
+        "value": "Initiation informatique et internet pour les plus de 50 ans",
+        "count": 1
+      },
+      {"value": "Club Jeux et Imaginaire de l'INSA de Lyon", "count": 1},
+      {
+        "value": "Mutualisation de locaux et matériel pour les associations membres",
+        "count": 1
+      },
+      {"value": "Union des Pêcheurs", "count": 1},
+      {
+        "value": "Association pour le développement du travail manuel et de la conduite automobile chez l’enfant",
+        "count": 1
+      },
+      {
+        "value": "Observatoire de l'environnement sonore de Lyon Métropole",
+        "count": 1
+      },
+      {
+        "value": "Association pour le respect de l'environnement lors des manifestations culturelles et sportives",
+        "count": 1
+      },
+      {
+        "value": "Siège du conservatoire d'espaces naturels Rhône-Alpes",
+        "count": 1
+      },
+      {"value": "Association Monnaie Locale du Rhône", "count": 1},
+      {
+        "value": "Accompagnement de musiciens professionnels, musiques actuelles et traditionnelles.",
+        "count": 1
+      },
+      {"value": "association de protection de la nature", "count": 1},
+      {
+        "value": "Student aerospace club: CanSat, experimental rockets and related activities. The entrance is down a ramp to the basement on the eastern side of the building.",
+        "count": 1
+      },
+      {
+        "value": "Cap Berriat, depuis 50 ans, axe son projet sur le soutien aux initiatives des jeunes et à la petite vie associative, en développant notamment l’accompagnement de projet et l’animation d’une pépinière d’associations portées par des jeunes de 16 à 30 ans.",
+        "count": 1
+      }
+    ],
+    "count": 22
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "social_facility", "count": 7},
+      {"value": "community_centre", "count": 3},
+      {"value": "public_building", "count": 2},
+      {"value": "translation", "count": 1},
+      {"value": "animal_shelter", "count": 1},
+      {"value": "coworking_space", "count": 1},
+      {"value": "school", "count": 1},
+      {"value": "bar", "count": 1},
+      {"value": "music_school", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 7},
+      {"value": "no", "count": 2},
+      {"value": "limited", "count": 2}
+    ],
+    "count": 11
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 6}, {"value": "1", "count": 4}],
+    "count": 10
+  },
+  {
+    "key": "social_facility:for",
+    "tags": [
+      {"value": "underprivileged", "count": 5},
+      {"value": "senior", "count": 1},
+      {"value": "family;child", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "crefad", "count": 1},
+      {"value": "Lyon Urban Data", "count": 1},
+      {"value": "Secours Populaire Français", "count": 1},
+      {"value": "Secours Catholique", "count": 1},
+      {"value": "Réseau Adolescents Isère", "count": 1},
+      {"value": "ADMR", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "social_facility",
+    "tags": [
+      {"value": "food_bank", "count": 4},
+      {"value": "ambulatory_care", "count": 1},
+      {"value": "assisted_living", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@memoiredhierpourdemain.com", "count": 1},
+      {"value": "info@cyberdeclic.org", "count": 1},
+      {"value": "cl38-0410@francepetanque.com", "count": 1},
+      {"value": "contact@cap-berriat.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "club",
+    "tags": [
+      {"value": "scout", "count": 3},
+      {"value": "freemasonry", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {"value": "Centre de Sauvegarde de la Faune Sauvage", "count": 1},
+      {
+        "value": "Association aérospatiale étudiante: CanSat, fusées expérimentales et activités similaires. L'entrée se situe au bout d'une rampe menant au sous-sol, du côté est du bâtiment.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 78 20 90 95", "count": 1},
+      {"value": "+33 4 75 78 58 61", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "travel_agency", "count": 1},
+      {"value": "farm", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "water_jousting", "count": 1},
+      {"value": "rowing", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "animal_shelter",
+    "tags": [{"value": "bird;mammal", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service_times",
+    "tags": [{"value": "Mo-Su 07:30-12:00,16:00-18:30", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "des paniers de paysans locaux distribués chaque semaine",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "animal_shelter:release",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1},
+  {
+    "key": "walking_disability:description:fr",
+    "tags": [
+      {
+        "value": "Inaccessible aux fauteuils roulants. Accessible aux PMR.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [{"value": "2 marches pour accéder au bâtiment.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Précédemment: agence Fides Hermes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:24 heures de l'INSA de Lyon", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "community_centre:for",
+    "tags": [{"value": "lesbian;gay;bi;trans;lgbt;lgbti", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access:blind", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access:deaf", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "access:mental_disabled",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "blind:description:fr",
+    "tags": [
+      {"value": "Accessible aux aveugles et aux malvoyants.", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "deaf:description:fr",
+    "tags": [{"value": "Accessible aux sourds et malentendants.", "count": 1}],
+    "count": 1
+  },
+  {"key": "handrail", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "mental_disabled:description:fr",
+    "tags": [{"value": "Accessible aux handicapés mentaux.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "municipal:facilities:fr",
+    "tags": [{"value": "culturels", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "photo",
+    "tags": [{"value": "http://i.imgur.com/OaEKX9o.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q2815254", "count": 1}], "count": 1}
+]

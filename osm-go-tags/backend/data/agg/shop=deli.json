@@ -1,0 +1,171 @@
+[
+  {"key": "shop", "tags": [{"value": "deli", "count": 127}], "count": 127},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 9 87 87 87 30", "count": 1},
+      {"value": "+33 4 76 80 44 24", "count": 1},
+      {"value": "+33 4 76 46 32 40", "count": 1},
+      {"value": "+33 4 79 00 64 07", "count": 1},
+      {"value": "+33 4 76 27 63 04", "count": 1},
+      {"value": "+33 4 74 31 63 03", "count": 1},
+      {"value": "+33 4 74 85 46 40", "count": 1},
+      {"value": "+33 6 45 53 41 34", "count": 1},
+      {"value": "+33 9 52 32 55 01", "count": 1},
+      {"value": "+33 4 74 85 48 65", "count": 1},
+      {"value": "+33666963547", "count": 1},
+      {"value": "+33 9 65 00 03 11", "count": 1},
+      {"value": "+33 7 83008008", "count": 1},
+      {"value": "+33 474509052", "count": 1},
+      {"value": "+33 4 78 52 29 63", "count": 1},
+      {"value": "+33 6 49 80 91 09", "count": 1},
+      {"value": "+33 4 38 38 88 88", "count": 1},
+      {"value": "+33 4 38 49 03 95", "count": 1},
+      {"value": "+33 4 76 09 77 61", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cracovia.fr", "count": 1},
+      {"value": "http://atredesbourcas.perso.sfr.fr/", "count": 1},
+      {"value": "http://www.le-restique.fr/", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/pages/Huiles-Epices-Papilles/289555441164428",
+        "count": 1
+      },
+      {
+        "value": "https://fr-fr.facebook.com/pages/G-comme-Gourmet/172290846282273",
+        "count": 1
+      },
+      {"value": "https://fr-fr.facebook.com/LeComptoirDesTerroirs", "count": 1},
+      {"value": "http://www.saint-jean.fr/la-boutique-de-grenoble", "count": 1},
+      {"value": "http://www.artisanatmonastique.com/lyon.htm", "count": 1},
+      {"value": "http://www.fruitiere-des-neiges.com/", "count": 1},
+      {"value": "http://www.ausommelier.com/", "count": 1},
+      {"value": "http://www.jean-paul-gaucher.fr", "count": 1},
+      {"value": "http://www.urban-food.fr", "count": 1},
+      {"value": "http://www.juletflo.com", "count": 1},
+      {"value": "http://www.c-gastronomie.fr/", "count": 1},
+      {"value": "www.Epices-Tout.com", "count": 1},
+      {"value": "www.lecarreasiatique.com", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/L-Occitane-en-Provence",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Cafes-Thes-Frederic",
+        "count": 1
+      }
+    ],
+    "count": 18
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 7},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 6}, {"value": "1", "count": 3}],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Produits régionaux", "count": 1},
+      {"value": "Local regional products. ", "count": 1},
+      {"value": "Foies Gras, Confits, Cous Farcis", "count": 1},
+      {"value": "Chocolatier", "count": 1},
+      {"value": "Épicerie sans emballage", "count": 1},
+      {"value": "Artisan fumeur : poissons, viandes, fromages.", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "entrance",
+    "tags": [{"value": "yes", "count": 4}, {"value": "main", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "regional", "count": 1},
+      {"value": "french", "count": 1},
+      {"value": "italian", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "shop", "count": 1},
+      {"value": "SICA Coop. LE SAINT-BERNARD", "count": 1},
+      {"value": "Cofi", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 3}], "count": 3},
+  {
+    "key": "facebook",
+    "tags": [
+      {"value": "https://www.facebook.com/OChatGourmand/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Le-Carr%C3%A9-Asiatique/480001055476059",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "saint-jean@raviole.com", "count": 1},
+      {"value": "boutique@c-gastronomie.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 2}], "count": 2},
+  {"key": "alcohol", "tags": [{"value": "wine", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_hydrant", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [{"value": "marche de 3cm env.", "count": 1}],
+    "count": 1
+  },
+  {"key": "bulk_purchase", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "food", "tags": [{"value": "spanish", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "origin",
+    "tags": [
+      {
+        "value": "african,asian,japanese,korean,thai,chinese,west indies,cambodia,vietnam",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [
+      {"value": "Epicerie spécialisée dans la vente d'épices.", "count": 1}
+    ],
+    "count": 1
+  }
+]

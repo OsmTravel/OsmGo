@@ -1,0 +1,8 @@
+[
+  {
+    "key": "water",
+    "tags": [{"value": "stream", "count": 38}, {"value": "river", "count": 18}],
+    "count": 56
+  },
+  {"key": "natural", "tags": [{"value": "river", "count": 56}], "count": 56}
+]

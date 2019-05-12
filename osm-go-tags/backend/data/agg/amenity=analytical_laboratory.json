@@ -1,0 +1,17 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "analytical_laboratory", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 3 29 63 12 59", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 29 63 11 99", "count": 1}],
+    "count": 1
+  }
+]

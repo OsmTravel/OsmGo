@@ -1,0 +1,17 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_extinguisher", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Voir https://fr.wikipedia.org/wiki/Douche_portative_de_sécurité",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

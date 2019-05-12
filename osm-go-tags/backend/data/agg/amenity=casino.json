@@ -1,0 +1,60 @@
+[
+  {"key": "amenity", "tags": [{"value": "casino", "count": 19}], "count": 19},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.casinodenoiretable.com", "count": 1},
+      {"value": "http://www.casinograndcercle.com/", "count": 1},
+      {"value": "http://lenewcastel.fr/", "count": 1},
+      {"value": "http://saintgervais.groupetranchant.com/", "count": 1},
+      {"value": "http://www.pokerbowl.fr/", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Casino Grand-Cercle", "count": 1},
+      {"value": "fr:Casino de Challes-les-Eaux", "count": 1},
+      {"value": "fr:Bains de la Caille", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Partouche", "count": 1},
+      {"value": "JOA", "count": 1},
+      {"value": "Groupe Tranchant", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22968377", "count": 1},
+      {"value": "Q19658408", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "adult_gaming_centre", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "10pin", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 72 86 14", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118172", "count": 1}], "count": 1}
+]

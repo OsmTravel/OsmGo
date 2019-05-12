@@ -1,0 +1,8 @@
+[
+  {"key": "amenity", "tags": [{"value": "billboard", "count": 2}], "count": 2},
+  {
+    "key": "advertising",
+    "tags": [{"value": "billboard", "count": 2}],
+    "count": 2
+  }
+]

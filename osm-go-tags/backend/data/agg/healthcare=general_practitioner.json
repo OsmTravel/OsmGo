@@ -1,0 +1,44 @@
+[
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 2}], "count": 2},
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+49 6805 22412", "count": 1},
+      {"value": "+49 6805 8197", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "healthcare",
+    "tags": [{"value": "general_practitioner", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "general;internal", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "John Warmann", "count": 1},
+      {"value": "Dr. Franz Weidmann", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+49 6805 8318", "count": 1},
+      {"value": "+49 6805 8197", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.hausarzt-kleinblittersdorf.de/", "count": 2}
+    ],
+    "count": 2
+  }
+]

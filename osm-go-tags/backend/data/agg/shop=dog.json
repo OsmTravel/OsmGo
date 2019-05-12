@@ -1,0 +1,14 @@
+[
+  {
+    "key": "description",
+    "tags": [{"value": "toilettage pour chien", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "tag principal à corriger", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33561829247", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "dog", "count": 1}], "count": 1}
+]

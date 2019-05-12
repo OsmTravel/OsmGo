@@ -1,0 +1,115 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "reservoir_covered", "count": 555}],
+    "count": 555
+  },
+  {
+    "key": "type",
+    "tags": [
+      {"value": "water", "count": 13},
+      {"value": "ethylene", "count": 1},
+      {"value": "drain", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "emergency",
+    "tags": [
+      {"value": "water_tank", "count": 11},
+      {"value": "fire_hydrant", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Régie des Eaux de Grenoble", "count": 2},
+      {"value": "SIERG", "count": 1},
+      {"value": "Stéphanoise des Eaux", "count": 1},
+      {"value": "SIAEP", "count": 1},
+      {"value": "Service des eaux", "count": 1},
+      {
+        "value": "Syndicat Intercommunal des Eaux Vif - Le Gua - Miribel-Lanchatre",
+        "count": 1
+      },
+      {"value": "Véolia", "count": 1},
+      {"value": "SDEI", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "landuse", "tags": [{"value": "reservoir", "count": 7}], "count": 7},
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "250", "count": 2},
+      {"value": "1500", "count": 1},
+      {"value": "500", "count": 1},
+      {"value": "120 m3", "count": 1},
+      {"value": "35", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "content", "tags": [{"value": "water", "count": 5}], "count": 5},
+  {"key": "wall", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {"key": "layer", "tags": [{"value": "-1", "count": 5}], "count": 5},
+  {
+    "key": "reservoir_type",
+    "tags": [
+      {"value": "water_storage", "count": 3},
+      {"value": "sewage", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 2},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "water_tank:volume",
+    "tags": [{"value": "50000", "count": 2}, {"value": "45000", "count": 1}],
+    "count": 3
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "natural",
+    "tags": [
+      {"value": "grassland", "count": 1},
+      {"value": "water", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "power", "tags": [{"value": "plant", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Reserve d'eau + Installation Photovoltaïque", "count": 2}
+    ],
+    "count": 2
+  },
+  {
+    "key": "generator:method",
+    "tags": [{"value": "photovoltaic", "count": 2}],
+    "count": 2
+  },
+  {"key": "water", "tags": [{"value": "reservoir", "count": 2}], "count": 2},
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Tracé estimé rien sur le cadastre", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "1610", "count": 1}], "count": 1},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "location",
+    "tags": [{"value": "overground", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "2018-07", "count": 1}], "count": 1}
+]

@@ -1,0 +1,53 @@
+[
+  {"key": "shop", "tags": [{"value": "tyres", "count": 27}], "count": 27},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Point S", "count": 2},
+      {"value": "Top'Pneu", "count": 1},
+      {"value": "BestDrive;Christophe GARGIULO", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33478216029", "count": 1},
+      {"value": "+33426182097", "count": 1},
+      {"value": "+33 4 78 06 41 01", "count": 1},
+      {"value": "+33 4 79 88 17 73", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.toppneu.fr/", "count": 1},
+      {"value": "https://www.1001pneus.fr", "count": 1},
+      {"value": "http://www.bestdrive.fr/centres/la-boisse-42.html", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Point S", "count": 2},
+      {"value": "Euro Tyre", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "stpriest@toppneu.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {"value": "https://www.facebook.com/OPML-259761110720792/", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1}
+]

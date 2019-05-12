@@ -1,0 +1,89 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "traffic_sign", "count": 149}],
+    "count": 149
+  },
+  {
+    "key": "hazard",
+    "tags": [
+      {"value": "animal_crossing", "count": 135},
+      {"value": "children", "count": 11},
+      {"value": "cow", "count": 1},
+      {"value": "horse", "count": 1}
+    ],
+    "count": 148
+  },
+  {
+    "key": "position",
+    "tags": [{"value": "right", "count": 141}, {"value": "both", "count": 5}],
+    "count": 146
+  },
+  {
+    "key": "traffic_signals:direction",
+    "tags": [{"value": "forward", "count": 143}, {"value": "both", "count": 1}],
+    "count": 144
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "FR:A15b", "count": 123},
+      {"value": "FR:A13a", "count": 11},
+      {"value": "FR:A15a", "count": 9}
+    ],
+    "count": 143
+  },
+  {
+    "key": "animal_crossing",
+    "tags": [
+      {"value": "wild", "count": 125},
+      {"value": "domestic", "count": 9}
+    ],
+    "count": 134
+  },
+  {
+    "key": "distance",
+    "tags": [
+      {"value": "5", "count": 15},
+      {"value": "100m", "count": 10},
+      {"value": "4", "count": 9},
+      {"value": "7", "count": 9},
+      {"value": "2", "count": 7},
+      {"value": "9", "count": 5},
+      {"value": "3", "count": 5},
+      {"value": "6", "count": 3},
+      {"value": "2.5", "count": 2},
+      {"value": "1", "count": 2},
+      {"value": "8", "count": 2},
+      {"value": "1.4", "count": 2},
+      {"value": "0.5", "count": 2},
+      {"value": "3.8", "count": 2},
+      {"value": "3.2", "count": 1},
+      {"value": "3.5", "count": 1},
+      {"value": "1.6", "count": 1},
+      {"value": "5.5", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "1.7", "count": 1},
+      {"value": "1.5", "count": 1},
+      {"value": "6.5", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "14.5", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "18", "count": 1}
+    ],
+    "count": 89
+  },
+  {
+    "key": "traffic_sign",
+    "tags": [
+      {"value": "FR:A15b", "count": 3},
+      {"value": "FR:A15a1", "count": 1},
+      {"value": "FR:A15c", "count": 1},
+      {"value": "speed_limit", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "maxspeed", "tags": [{"value": "30", "count": 1}], "count": 1}
+]

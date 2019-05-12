@@ -1,0 +1,20 @@
+[
+  {"key": "shop", "tags": [{"value": "grocery", "count": 7}], "count": 7},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 83 63 79", "count": 1},
+      {"value": "+33 4 75 43 15 88", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.la-ferme-d-emile.com/", "count": 1},
+      {"value": "http://www.toutelitalie.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "cuisine", "tags": [{"value": "italian", "count": 1}], "count": 1}
+]

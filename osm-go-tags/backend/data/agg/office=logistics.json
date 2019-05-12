@@ -1,0 +1,25 @@
+[
+  {"key": "office", "tags": [{"value": "logistics", "count": 6}], "count": 6},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "motorcycle:logistics",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:rental",
+    "tags": [{"value": "yes;trailer", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 11 26 28 09", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "motorcycle", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "https://www.kangou2roues.com", "count": 1}],
+    "count": 1
+  }
+]

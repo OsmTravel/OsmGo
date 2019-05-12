@@ -1,0 +1,1222 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "memorial", "count": 1526}],
+    "count": 1526
+  },
+  {
+    "key": "memorial",
+    "tags": [
+      {"value": "war_memorial", "count": 310},
+      {"value": "statue", "count": 72},
+      {"value": "plaque", "count": 42},
+      {"value": "stele", "count": 24},
+      {"value": "bust", "count": 10},
+      {"value": "stone", "count": 4},
+      {"value": "war_monument", "count": 2},
+      {"value": "garden", "count": 1},
+      {"value": "mémorial", "count": 1},
+      {"value": "memorial", "count": 1},
+      {"value": "sculpture", "count": 1},
+      {"value": "person", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 470
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {
+        "value": "Les rapatriés à leurs morts laissés en Afrique du Nord",
+        "count": 1
+      },
+      {
+        "value": "La République Française en hommage aux victimes des persécutions racistes et antisémites et des crimes contre l'humanité commis sous l'autorité de fait dite \"Gouvernement de l'Etat Français\" (1940-1944) N'oublions jamais",
+        "count": 1
+      },
+      {"value": "1991 Gianni Bugno (Italie)", "count": 1},
+      {"value": "1990 Gianni Bugno (Italie)", "count": 1},
+      {"value": "1988 - Steven Rooks (Pays-Bas)", "count": 1},
+      {
+        "value": "1983 Peter Winnen (Pays-Bas) - 2013 Christophe Riblon (France)",
+        "count": 1
+      },
+      {"value": "1982 Beat Breu (Suisse)", "count": 1},
+      {"value": "1981 Peter Winnen (Pays-Bas)", "count": 1},
+      {
+        "value": "1979 Joachim Agostinho (Portugal) - 2008 Carlos Sastre (Espagne)",
+        "count": 1
+      },
+      {"value": "1997 Marco Pantani (Italie)", "count": 1},
+      {
+        "value": "Dauphiné; 45° de Latitude Nord; Ici Commence le Midi",
+        "count": 1
+      },
+      {"value": "À nos glorieux morts Les maquis du Grésivaudan", "count": 1},
+      {
+        "value": "SENATEUR VAÏSSE Jean-Claude / Préfet du Rhône du 25 mars 1853 au 29 août 1864 / Créateur du parc de la Tête d'Or",
+        "count": 1
+      },
+      {"value": "accident car 13 août 1954", "count": 1},
+      {"value": "2012 Thierry Romain (France)", "count": 1},
+      {
+        "value": "1976 Hennie Kuiper (Pays-Bas) - 2006 Frank Schleck (Luxembuorg)",
+        "count": 1
+      },
+      {
+        "value": "1952 Fausto Coppi (Italie) - 2001 Lance Armstrong (U.S.A)",
+        "count": 1
+      },
+      {
+        "value": "En memoires de Maurice Vidalin LT. Jean Collet  Roger André LORAT0  Edmond TOUZE   Roger WUTRICH morts pour que vive la France et en souvenir de leurs camarades du maquis de Montfort victimes des balles fascistes le 10 Aout 1943.",
+        "count": 1
+      },
+      {
+        "value": "\"GITE à BALMAT\" 2530m. Le 7 Août 1786 les Chamoniards Jacques Balmat et Michel G. Paccard ont bivouaqué dans des contitions difficiles sous ce bloc de granit.",
+        "count": 1
+      },
+      {
+        "value": "Le P.C. du bataillon SAMBRE et MEUSE de l'armée secrète de la Loire cantonna en ces lieux Août Sept 1944",
+        "count": 1
+      },
+      {
+        "value": "Aux enfants de Sainte-Euphémie morts pour la France",
+        "count": 1
+      },
+      {"value": "Pantani Forever", "count": 1},
+      {
+        "value": "Honneur à ceux de la Résistance qui sont morts pour que la vive la France. Ici a été tué à 23 ans le 21-7-44 Albert Brozeck dit Jean Lambert M.O.I. chef du groupe Liberté du 5 ème Bataillon des Francs Tireurs et Partisans. Français Souvenez-vous",
+        "count": 1
+      },
+      {
+        "value": "Aux victimes de la barbarie nazie. Fusillés le 20 juillet 1944.",
+        "count": 1
+      },
+      {
+        "value": "A la mémoire de Pierre Dalloz habitant de Sassenage Résistant co-fondateur du maquis du Vercors en février 1943",
+        "count": 1
+      },
+      {
+        "value": "Jean Moulin 1899 1943 Unificateur de la Résistance",
+        "count": 1
+      },
+      {
+        "value": "La société des mines de la Loire à ses collaborateurs morts, victimes de la guerre et du devoir.",
+        "count": 1
+      },
+      {
+        "value": "La commune de Saint Paul à ses enfants morts pour la France",
+        "count": 1
+      },
+      {
+        "value": "En hommage à Kévin NOUBISSI et Sofiane TADBIRT - 21 ans - Deux frères de cœur qui ont sacrifié leur vie pour épargner celle de leurs frères le 28 septembre 2012. Honorons leurs valeurs, dignité, solidarité, humanité. Que la paix soit sur vous.",
+        "count": 1
+      },
+      {"value": "1492 Mont Aiguille 1992", "count": 1},
+      {
+        "value": "Ici, le 24 juin 1894, François Marie Sadi Carnot, président de la République Française, fut poignardé mortellement par l'anarchiste Caserio",
+        "count": 1
+      },
+      {
+        "value": "Pour que la Paix règne sur le monde - Aux morts pour la France lors de la guerre d'Algérie et des combats de Tunisie et du Maroc 1952-1962 - Aux hommes des cinq continents qui ont combattu pour la France\"",
+        "count": 1
+      },
+      {
+        "value": "L’AIGLE AVEC LES COULEURS NATIONALES VOLERA DE CLOCHER EN CLOCHER JUSQU’AUX TOURS DE NOTRE-DAME F. GILBERT 1867 | DANS CETTE PRAIRIE LE 7 MARS 1815 VERS 3 HEURES APRES-MIDI NAPOLEON 1er DEBARQUE DE L’ILE D’ELBE ET GAGNANT PARIS A MARCHES FORCEES [...]",
+        "count": 1
+      },
+      {
+        "value": "HONNEUR ET PATRIE F. GILBERT 1867 | ERECTION A GRENOBLE DE LA STATUE EQUESTRE DE NAPOLEON 1er ŒUVRE DE FREMIET 17 AOUT 1868 RESTAURATION ET MISE EN PLACE A LAFFREY 5 SEPTEMBRE 1929 CLASSEMENT DU SITE HISTORIQUE INAUGURATION DE L’ENSEMBLE 31 AOUT 1930.",
+        "count": 1
+      },
+      {
+        "value": "En souvenir de leur terre natale la ville de Lyon à ses enfants d'Afrique du Nord qu'elle a accueillis",
+        "count": 1
+      },
+      {
+        "value": "Il n'y a pas d'idéal plus noble que celui d'une société où le travail sera souverain.",
+        "count": 1
+      },
+      {
+        "value": "A la mémoire de RIVET Albert Pionnier de la résistance Matheysine",
+        "count": 1
+      },
+      {
+        "value": "Albert REYNIER Chef de l'Armée secrète Départemanle",
+        "count": 1
+      },
+      {
+        "value": "1914-1918 La commune de Beaumont en Diois à ses glorieux morts",
+        "count": 1
+      },
+      {"value": "Aux héros du Vercors GUIBAUD Louis MESSE Marcel", "count": 1},
+      {
+        "value": "Le 8-2-1944 22 maquisards du poste de commandement soutinrent un combat sanglant contre 250 Allemands",
+        "count": 1
+      },
+      {
+        "value": "1952-1962 Hommage aux combattants et victimes de guerre Algérie-Maroc-Tunisie",
+        "count": 1
+      },
+      {
+        "value": "Ici le 25-07-1914 Jean Jaures fondateur du journal L'Humanité prononça son dernier discours pour la paix.",
+        "count": 1
+      },
+      {
+        "value": "Juillet 1944. Maquisards du Vercors, Gressois, Gressoises victimes de l'oppresseur nazi que vive le souvenir de nos martyrs de la liberté",
+        "count": 1
+      },
+      {
+        "value": "Pierre et Marie-Jo TRAPPIER, emportés le 15 mars 2008, unis pour l'éternité",
+        "count": 1
+      },
+      {
+        "value": "A SES MEMBRES DISPARUES L'UNION SPORTIVE BRESSANE RECONNAISSANTE",
+        "count": 1
+      },
+      {
+        "value": "Ici est tombé sous les balles allemandes le 24 août 1944 Goddard Daniel à l'âge de 17 ans",
+        "count": 1
+      },
+      {
+        "value": "Inauguré le 19 septembre 1982 par Raymond Barre ancien Premier Ministre",
+        "count": 1
+      },
+      {"value": "Quentin CHICHOUX 1993-2015", "count": 1},
+      {
+        "value": "1896-1967. Grand officier de la légion d'honneur. Croix de guerre 1914-1918 1939-1945. Médaille des évadés. Secrétaire d'état à l'air. Député du Rhône. Premier adjoint au maire de Lyon",
+        "count": 1
+      },
+      {
+        "value": "Oeuvre du sculpteur oullinois Robert Magand, créée en 1982 puis rénovée par l'artiste, inaugurée le 30 juin 2011 par François-Noel Buffet, Sénateur-Maire.",
+        "count": 1
+      },
+      {
+        "value": "La commune du Sappey reconnaissante à ses enfants",
+        "count": 1
+      },
+      {
+        "value": "A L'OCCASION DU BICENTENAIRE DE LA REVOLUTION FRANCAISE L'ARBRE DE LA LIBERTE A ETE PLANTE SUR CET EMPLACEMENT",
+        "count": 1
+      },
+      {
+        "value": "La Commune de Lozanne A Ses Enfants Morts Pour La Patrie 1914 - 1918",
+        "count": 1
+      },
+      {
+        "value": "Souvenir Français A nous Le Souvenir A Eux l'Immortalité",
+        "count": 1
+      },
+      {
+        "value": "Planvillard Ici fut créé le 3 mars le premier maquis de Savoie qui fut le noyau du glorieux bataillon de Tarentaise",
+        "count": 1
+      },
+      {
+        "value": "À la Cova, en 1943 et 1944, Joseph et Alice Condevaux et leurs enfants, avec le soutien de la population du village, ont accueilli plusieurs dizaines de réfractaires au S.T.O.",
+        "count": 1
+      },
+      {
+        "value": "Une oeuvre d'expiation pour l'injustice et la souffrance que nous avons vécues au cours de ce siècle, exprimant résistance, guérison et espoir pour le futur.",
+        "count": 1
+      },
+      {
+        "value": "C'est ici que le 6 juin 1944 s'est formé le Secteur C Armée Secrète qui a combattu jusqu'à la victoire pour la liberté",
+        "count": 1
+      },
+      {
+        "value": "Victime de son courage. Au capitaine Granier Ernest. Mort pour la France",
+        "count": 1
+      },
+      {"value": "Gabriel Fauré compositeur 1845-1924", "count": 1},
+      {"value": "Richard Andrès et Léon Bouvard", "count": 1},
+      {"value": "Roissard à ses enfants morts pour la France", "count": 1},
+      {
+        "value": "En la prison du Fort Montluc de 1914 à 1944 plusieurs milliers de patriots français ont été incarcérés avant d'être exécutés ou déportés dans les camps d'extermination nazis. En souvenir",
+        "count": 1
+      },
+      {
+        "value": "Le 9 juin 1564 le roy Charles IX et la royne sa mère ont couché dans cette maison à St Rambert l'Isle Barbe",
+        "count": 1
+      },
+      {"value": "Mémorial AFN de Haute-Savoie", "count": 1},
+      {
+        "value": "Monument aux morts rendant hommage aux Français fusillés dans ce hameau de Saint-Cyr-sur-Menthon par les Allemands le 21 août 1944.",
+        "count": 1
+      },
+      {
+        "value": "Ici le 11 juin 1944 \nont été fusillés \npar les Allemands \nMarius Peillet \nFerdinand Peillet \nHamouche Slimmih \nMort pour la France",
+        "count": 1
+      },
+      {
+        "value": "En souvenir et en hommage au membres de l'ordre Saint Beatus et à tout ceux qui participèrent à la création et au developpement de BAT Taraflex - R.M",
+        "count": 1
+      },
+      {
+        "value": "À la mémoire des victimes de l'accident de téléphérique du 15 janvier 1989. La commune de Vaujany.",
+        "count": 1
+      },
+      {"value": "L'Abbaye à ses enfants morts pour la France", "count": 1},
+      {"value": "Philibert Gaillard 1884-1944", "count": 1},
+      {"value": "nom des victimes", "count": 1},
+      {
+        "value": "En ce lieu le 18 juillet 1973 43 touristes belges ont trouvés la mort",
+        "count": 1
+      },
+      {
+        "value": "En mémoire des enfants d'Yzieu, rafflés le 06 avril 1944",
+        "count": 1
+      },
+      {
+        "value": "BIR HAKEIM – 11 juin 1942 – ‟Le monde a reconnu la France, quand à Bir Hakeim un rayon de sa gloire renaissante est venu caresser le front sanglant de ses soldats – 18 juin 1942 – Charles de GAULLE",
+        "count": 1
+      },
+      {
+        "value": "La compagnie Stéphane à son chef Le capitaine Etienne Poitau et à ses morts tombés au champ d'honneur",
+        "count": 1
+      },
+      {"value": "Ici est la tombe de qui n’en a pas", "count": 1},
+      {
+        "value": "Ici au pied de cette butte face au peloton d’exécution allemand ces résistants sont morts pour la France et la liberté",
+        "count": 1
+      },
+      {
+        "value": "Ils sont morts pour que meure la guerre et que vive la France",
+        "count": 1
+      },
+      {
+        "value": "Personnel de la société Rhodiaceta victime de la guerre 1939-1945",
+        "count": 1
+      },
+      {"value": "A nos morts 1939-1945", "count": 1},
+      {
+        "value": "Saint Michel des Portes à ses enfants morts pour la France 1914-1918",
+        "count": 1
+      },
+      {
+        "value": "Dans cette commune naquit Madame Cognacq née Marie Louis Jaÿ Fondatrice de la Samaritaine à Paris 1838 - 1925 Bienfaitrice de Samoëns",
+        "count": 1
+      },
+      {"value": "Aux enfants du Rhône défenseurs de la Patrie", "count": 1},
+      {
+        "value": "J’arrive parmi vous reprendre mes droits qui sont les vôtres | A Napoléon 1er, la ville de Grenoble et le département de l’Isère, avec le concours de l’Etat, ont élevé cette statue dans la cité qui, la première, a accueilli l’Empereur à son retour [...]",
+        "count": 1
+      },
+      {"value": "Préambule de la déclaration des droits de l'homme", "count": 1}
+    ],
+    "count": 87
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1982", "count": 2},
+      {"value": "C20", "count": 2},
+      {"value": "1989", "count": 2},
+      {"value": "1946", "count": 2},
+      {"value": "1922", "count": 2},
+      {"value": "1867", "count": 2},
+      {"value": "2007", "count": 2},
+      {"value": "1968", "count": 1},
+      {"value": "13/06/1976", "count": 1},
+      {"value": "1916", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "1825", "count": 1},
+      {"value": "1953", "count": 1},
+      {"value": "1983-12-18", "count": 1},
+      {"value": "1972", "count": 1},
+      {"value": "1920", "count": 1},
+      {"value": "1951", "count": 1},
+      {"value": "16 of April 2011", "count": 1},
+      {"value": "1914-07-12", "count": 1},
+      {"value": "1878", "count": 1},
+      {"value": "1997-11-2", "count": 1},
+      {"value": "1948", "count": 1},
+      {"value": "1907", "count": 1},
+      {"value": "1931", "count": 1},
+      {"value": "2015-09-26", "count": 1},
+      {"value": "1843", "count": 1},
+      {"value": "1991-03-06", "count": 1},
+      {"value": "2008", "count": 1},
+      {"value": "1982-09-19", "count": 1},
+      {"value": "2015", "count": 1},
+      {"value": "2006-09-18", "count": 1},
+      {"value": "2016", "count": 1},
+      {"value": "2001", "count": 1},
+      {"value": "C19", "count": 1},
+      {"value": "1934-09-30", "count": 1},
+      {"value": "1943", "count": 1},
+      {"value": "1973", "count": 1},
+      {"value": "1912", "count": 1},
+      {"value": "24/05/2006", "count": 1},
+      {"value": "1887", "count": 1},
+      {"value": "1868-08-17;1930-08-31", "count": 1},
+      {"value": "1989-12-10", "count": 1},
+      {"value": "1933", "count": 1}
+    ],
+    "count": 50
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Varambon_(1).JPG",
+        "count": 1
+      },
+      {
+        "value": "http://phototheque.1000wallpapers.com/galleries/Nature/p/Pa+%E0+Pl/Parc+de+la+T%EAte+d'Or/Ile+du+souvenir/Monument+aux+morts/large/Monument+aux+morts+5.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Leyment_-_juillet_2014_(9).JPG",
+        "count": 1
+      },
+      {
+        "value": "http://fr.wikipedia.org/wiki/Fichier:Statue_senateur_Vaise.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://s4.e-monsite.com/2011/03/21/07/resize_550_550//IMG_0812.jpg",
+        "count": 1
+      },
+      {"value": "File:Monument aux morts de Chichilianne.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:M%C3%A9morial_h%C3%A9l%C3%A8ne_et_victor_Basch.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Buste_de_Joseph_Lavarenne_Place_Beno%C3%AEt-Cr%C3%A9pu_%C3%A0_Lyon.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_au_morts_du_Mas_Rillier.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_aux_morts_de_Dortan_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:St%C3%A8le_de_l%27abb%C3%A9_Dubettier_%C3%A0_Dortan.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cloche_vestige_de_l%27incendie_du_21_juillet_1944.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_du_martyr_%C3%A0_Dortan.JPG",
+        "count": 1
+      },
+      {
+        "value": "http://commons.wikimedia.org/wiki/File:Cheignieu_01.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_aux_morts_de_Meximieux_-_3.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_aux_morts_de_Saint-Maurice-de-Beynost_apr%C3%A8s_d%C3%A9m%C3%A9nagement_de_2014_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_Camp_Didier_-_Mionnay_-_Saint-Andr%C3%A9-de-Corcy.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:St%C3%A8le_du_Camp_Didier_de_la_ferme_de_Grange_Blanche_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_aux_morts_d%27Hauterives.JPG",
+        "count": 1
+      },
+      {"value": "File:Monument aux morts aux Saillants du Gua.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Former_town_hall_and_war_memorial_Ch%C3%A2teau-Gaillard_(Ain)_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "File:Monument aux morts de Clelles 2014-07-27A.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://commons.wikimedia.org/wiki/File:Arbent_2014_(1).JPG?uselang=fr",
+        "count": 1
+      },
+      {
+        "value": "File:Plaque Mont Aiguille 1492-1992 Chichilanne.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Le_Veilleur_de_pierre_place_Bellecour.jpg",
+        "count": 1
+      },
+      {
+        "value": "File:Plaque commémorative pour l'assassinat de Sadi Carnot (Palais de la Bourse, Lyon).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monuments_aux_morts_de_Saint-Jean-de-Niost.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Vaux-en-Bugey_(9).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Tr%C3%A9voux,_monument_fusiliers_marins_01.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Les_Allymes_2015_(1).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cemetery_Vancia_-1.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Plaque_g%C3%A9nocide_arm%C3%A9nien_Saint-Maurice-de-Beynost.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:M%C3%A9morial_des_21_fusill%C3%A9s_de_1944_de_Dagneux.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:St%C3%A8le_%C3%A0_Alexandre_Blanchon.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cemetery_of_Saint-Andr%C3%A9-de-Corcy_-_november_2016_(29).JPG",
+        "count": 1
+      },
+      {"value": "File:Échirolles 4 monument aux morts.JPG", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Plaque_de_la_statue_%22Chemin_du_Bac%22_%C3%A0_Oullins_(Rh%C3%B4ne,_France).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:St%C3%A8le_des_Martyrs_(Rillieux-la-Pape).jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:2017-06-04_Saint-Cierge-la-Serre_(38).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Col_du_Moulin_%C3%A0_Vent_-_Lyas_(4).JPG",
+        "count": 1
+      },
+      {"value": "File:Grenoble été2017 abc13.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_%C3%A0_Ferdinand_et_Marius_Peillet_et_%C3%A0_Hamouche_Slimmih_(Mollon,_Villieu-Loyes-Mollon,_France)_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Dareiz%C3%A9_-_M%C3%A9morial_hommage_Saint-Beatus_et_Taraflex.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau-de-La-Corbi%C3%A8re-1.jpg",
+        "count": 1
+      },
+      {"value": "File:Stèle commémorative Place Bir-Hakeim.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/Category:Nicholas_Tchkotoua#/media/File:Nicholas_Tchkotoua-grave-1.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Lyon_Armenian_Genocide_Memorial2.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_aux_morts_-_Guerre_de_1870-71_-_Parc_de_la_T%C3%AAte_d%27Or_(Lyon-France).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cemetery_of_Sathonay-Camp_(2).JPG",
+        "count": 1
+      }
+    ],
+    "count": 49
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "fr:Monument aux morts", "count": 4},
+      {
+        "value": "Bas-relief présent sur le piédestal de la statue lors de sa première érection à Grenoble place de Verdun.",
+        "count": 2
+      },
+      {"value": "guerres 14-18 et 39-45", "count": 1},
+      {
+        "value": "Statue de la Vierge : Tête : Axe et sommet - Point vu en place en 2000",
+        "count": 1
+      },
+      {
+        "value": "Statue-buste du Senateur Jean-Claude Marius Magdeleine Vaïsse",
+        "count": 1
+      },
+      {
+        "value": "Mémorail à Antoine Pinay Créateur du Nouveau Franc",
+        "count": 1
+      },
+      {"value": "Monument aux Morts", "count": 1},
+      {"value": "Stèle Marco Pantani", "count": 1},
+      {"value": "fr:Stèle de l'appel du 18 juin 1940", "count": 1},
+      {"value": "Monument aux morts", "count": 1},
+      {"value": "Buste de Jean-Mermoz", "count": 1},
+      {
+        "value": "À la mémoire de Missak Manouchian (côté Est) et des Arméniens massacrés en Turquie en 1915 (côté Ouest)",
+        "count": 1
+      },
+      {
+        "value": "fr:Mémorial à Firmin Tribouillier, Armand Gili et Auguste Venet abattus le 9 juin 1944",
+        "count": 1
+      },
+      {
+        "value": "fr:Mémorial de l'assassinat de trente Résistants par les Allemands le 16 juin 1944, dont Marc Boch.",
+        "count": 1
+      },
+      {"value": "fr:Monument aux morts du Mas Rillier", "count": 1},
+      {"value": "fr:Stèle en hommage à l'abbé Dubettier", "count": 1},
+      {
+        "value": "fr:Cloche vestige de l'incendie du 21 juillet 1944",
+        "count": 1
+      },
+      {
+        "value": "Éva Péan-Pagès directrice du foyer de jeunes filles UCJF \"Brise des Neiges\" a sauvé 96 juifs dans cette maison.",
+        "count": 1
+      },
+      {
+        "value": "Monument aux résistants employés de la manufacture d'armes de Saint-Etienne",
+        "count": 1
+      },
+      {
+        "value": "Monuments aux Morts : \"Barnave à ses héroïques enfants morts pour la France\"",
+        "count": 1
+      },
+      {
+        "value": "Inauguration de la route SYLVO-PASTORALE du Col du Sac par Monsieur Daniel JULIET le 16 Septembre 2005. Le SIVU du CRET D'EAU. L'O.N.F. La RESERVE NATURELLE",
+        "count": 1
+      },
+      {
+        "value": "Ici dans cette carrière ont été fusillés les onze otages de Vif",
+        "count": 1
+      },
+      {
+        "value": "Monument aux Morts : Statue : Axe au sommet premiere marche - Point vu en place en 2002",
+        "count": 1
+      },
+      {
+        "value": "Dalle rouge insérée dans la chaussée marquant le lieu de l'assassinat de Sadi Carnot",
+        "count": 1
+      },
+      {
+        "value": "A la mémoire de François de Quinsonas, dit \"Lieutenant Fiancey\", mort le 27 juillet 1944",
+        "count": 1
+      },
+      {
+        "value": "Monument aux morts : Repère en bronze scellé dans une marche (non retrouvé en 2002) - Point non retrouvé en 2002",
+        "count": 1
+      },
+      {
+        "value": "Voté par le Conseil municipal en octobre 1930, le buste est inauguré le 5 juillet 1931.",
+        "count": 1
+      },
+      {
+        "value": "Plaque \"Alfred Fredet 1829 - 1904 Créateur - industriel - bienfaiteur\" sur la fontaine",
+        "count": 1
+      },
+      {
+        "value": "Plaque \"Hélène Fredet, bienfaitrice des écoles de Brignoud sur Froges, 1887-1967\"",
+        "count": 1
+      },
+      {"value": "Plaque \"Jean Moulin, Héros de la résistance\"", "count": 1},
+      {"value": "Statue de la Vierge", "count": 1},
+      {
+        "value": "Nello Sartini lâchement assassiné par les nazis à l'âge de 33 ans le 20 août 1944",
+        "count": 1
+      },
+      {"value": "\"à Roger Col qui fonda l'ADPC 38\"", "count": 1},
+      {
+        "value": "Croix de Lorraine, \"A la mémoire de BOCCHIETTI Armand, BERGER Jean-Louis, tués par les Allemands le 31 août 1944",
+        "count": 1
+      },
+      {
+        "value": "Inscription : \"Ici 21 patriotes ont été fusillés par les Allemands",
+        "count": 1
+      },
+      {"value": "A nos morts de la Grande Guerre 1914 - 1918", "count": 1},
+      {
+        "value": "Monument en mémoire de la tragédie du Giffre, le 1er avril 1944",
+        "count": 1
+      },
+      {
+        "value": "Wagon faisant hommage à des migrants mexicains découverts en 1987 dans un wagon abandonné en plein désert",
+        "count": 1
+      },
+      {
+        "value": "Aux enfants de Saint Martin le Vinoux morts pour la France 1914-1918 1939-1945",
+        "count": 1
+      },
+      {"value": "déportés résistants du 11 novembre 1943", "count": 1},
+      {
+        "value": "« 1901 - 2001 / Cent ans de liberté d'associations / Vif le 15-09-2001 »",
+        "count": 1
+      },
+      {
+        "value": "Mémorial sur la place de la Mairie de Saint-Cyr-sur-Menthon rendant hommage aux victimes de la guerre d'Algérie.",
+        "count": 1
+      },
+      {
+        "value": "Inaugurée le 17 Août 1868 à Grenoble cette statue est déboulonnée et démontée lors de la chute du Second Empire en 1870. Finalement restaurée elle est transférée à Laffrey en 1929 et inaugurée une seconde fois le 31 Août 1930.",
+        "count": 1
+      },
+      {"value": "Statue type \"Christ en majesté\"", "count": 1}
+    ],
+    "count": 48
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "artwork", "count": 22},
+      {"value": "information", "count": 11},
+      {"value": "attraction", "count": 3},
+      {"value": "viewpoint", "count": 2}
+    ],
+    "count": 38
+  },
+  {
+    "key": "ref:FR:MemorialGenWeb",
+    "tags": [
+      {"value": "45284", "count": 1},
+      {"value": "45370", "count": 1},
+      {"value": "3532", "count": 1},
+      {"value": "59344", "count": 1},
+      {"value": "7476", "count": 1},
+      {"value": "22572", "count": 1},
+      {"value": "45873", "count": 1},
+      {"value": "21485", "count": 1},
+      {"value": "3543", "count": 1},
+      {"value": "3557", "count": 1},
+      {"value": "6112", "count": 1},
+      {"value": "3509", "count": 1},
+      {"value": "30973", "count": 1},
+      {"value": "8561", "count": 1},
+      {"value": "21488", "count": 1},
+      {"value": "6503", "count": 1},
+      {"value": "3483", "count": 1},
+      {"value": "41583", "count": 1},
+      {"value": "45299", "count": 1},
+      {"value": "3554", "count": 1},
+      {"value": "3541", "count": 1},
+      {"value": "3495", "count": 1},
+      {"value": "4252", "count": 1},
+      {"value": "3528", "count": 1},
+      {"value": "7447", "count": 1},
+      {"value": "3553", "count": 1},
+      {"value": "3493", "count": 1},
+      {"value": "12959", "count": 1},
+      {"value": "12972", "count": 1},
+      {"value": "50037", "count": 1},
+      {"value": "3591", "count": 1},
+      {"value": "4250", "count": 1},
+      {"value": "3512", "count": 1},
+      {"value": "3479", "count": 1},
+      {"value": "3515", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q19946616", "count": 1},
+      {"value": "Q17341711", "count": 1},
+      {"value": "Q18001861", "count": 1},
+      {"value": "Q42709711", "count": 1},
+      {"value": "Q3333168", "count": 1},
+      {"value": "Q3386979", "count": 1},
+      {"value": "Q15952845", "count": 1},
+      {"value": "Q28151052", "count": 1},
+      {"value": "Q13518318", "count": 1},
+      {"value": "Q3333120", "count": 1},
+      {"value": "Q3149842", "count": 1},
+      {"value": "Q16819464", "count": 1},
+      {"value": "Q680897", "count": 1},
+      {"value": "Q15961059", "count": 1},
+      {"value": "Q26981727", "count": 1},
+      {"value": "Q2872352", "count": 1},
+      {"value": "Q15726574", "count": 1},
+      {"value": "Q19795235", "count": 1},
+      {"value": "Q185914", "count": 1},
+      {"value": "Q24717198", "count": 1},
+      {"value": "Q22996670", "count": 1},
+      {"value": "Q20871346", "count": 1},
+      {"value": "Q28769166", "count": 1},
+      {"value": "Q3323300", "count": 1},
+      {"value": "Q40847620", "count": 1},
+      {"value": "Q3323363", "count": 1},
+      {"value": "Q42933984", "count": 1},
+      {"value": "Q7026297", "count": 1},
+      {"value": "Q3333154", "count": 1},
+      {"value": "Q3333157", "count": 1},
+      {"value": "Q14922289", "count": 1},
+      {"value": "Q17341699", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Sadi Carnot (homme politique)#Assassinat", "count": 2},
+      {"value": "fr:Mémorial national des Justes", "count": 1},
+      {"value": "fr:Veilleur de pierre", "count": 1},
+      {"value": "fr:La Sasson", "count": 1},
+      {"value": "fr:Pierre Semard", "count": 1},
+      {"value": "fr:Mur des fusillés (Valréas)", "count": 1},
+      {"value": "fr:L'Aigle des Balmettes", "count": 1},
+      {"value": "fr:Prison Montluc", "count": 1},
+      {"value": "fr:Mémorial Hélène-et-Victor-Basch", "count": 1},
+      {"value": "fr:Incendie du 5-7", "count": 1},
+      {"value": "fr:Tombe du Facteur Cheval", "count": 1},
+      {"value": "fr:Jean Mermoz", "count": 1},
+      {
+        "value": "fr:Mémorial du génocide arménien de Décines-Charpieu",
+        "count": 1
+      },
+      {"value": "fr:Monument aux morts de l'île du Souvenir", "count": 1},
+      {"value": "fr:Autel de Saint-Jean-de-Muzols", "count": 1},
+      {"value": "fr:Statue équestre de Louis XIV (Lyon)", "count": 1},
+      {"value": "fr:Monument aux morts d'Oran", "count": 1},
+      {"value": "fr:Michel Servet", "count": 1},
+      {"value": "fr:Massacre du fort de Côte-Lorette", "count": 1},
+      {"value": "fr:Statue Xavier Bichat", "count": 1},
+      {"value": "fr:Monument aux morts de Saint-Martin-d'Estréaux", "count": 1},
+      {"value": "fr:Stèle du génocide de Meyzieu", "count": 1},
+      {"value": "fr:Monument du général Joubert", "count": 1},
+      {"value": "en:Nicholas Tchkotoua", "count": 1},
+      {"value": "fr:Vierge du Mas Rillier", "count": 1},
+      {"value": "fr:Catastrophe de Fourvière", "count": 1},
+      {"value": "fr:Mémorial des enfants d'Izieu", "count": 1},
+      {
+        "value": "fr:Mémorial des maquis de l'Ain et de la Résistance",
+        "count": 1
+      },
+      {"value": "fr:Mémorial lyonnais du génocide arménien", "count": 1},
+      {"value": "fr:Monument des enfants du Rhône", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "2", "count": 2},
+      {"value": "6", "count": 2},
+      {"value": "7", "count": 2},
+      {"value": "9", "count": 2},
+      {"value": "13", "count": 2},
+      {"value": "14", "count": 2},
+      {"value": "1", "count": 2},
+      {"value": "0121201 - C", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "2616806 - C", "count": 1},
+      {"value": "4201701 - A", "count": 1},
+      {"value": "19", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "12", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "memorial:type",
+    "tags": [
+      {"value": "statue", "count": 20},
+      {"value": "plate", "count": 2},
+      {"value": "floor_plate", "count": 1},
+      {"value": "altar", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "artwork_type",
+    "tags": [
+      {"value": "statue", "count": 12},
+      {"value": "sculpture", "count": 10}
+    ],
+    "count": 22
+  },
+  {
+    "key": "memorial:conflict",
+    "tags": [
+      {"value": "WW1;WW2", "count": 11},
+      {"value": "WW1", "count": 6},
+      {"value": "WW2", "count": 3},
+      {"value": "ww1", "count": 2}
+    ],
+    "count": 22
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "965", "count": 1},
+      {"value": "216.82", "count": 1},
+      {"value": "1252.06", "count": 1},
+      {"value": "1480", "count": 1},
+      {"value": "1390", "count": 1},
+      {"value": "1295", "count": 1},
+      {"value": "1120", "count": 1},
+      {"value": "1055", "count": 1},
+      {"value": "1025", "count": 1},
+      {"value": "1037.96", "count": 1},
+      {"value": "1669", "count": 1},
+      {"value": "988", "count": 1},
+      {"value": "1713", "count": 1},
+      {"value": "900", "count": 1},
+      {"value": "806", "count": 1},
+      {"value": "2530", "count": 1},
+      {"value": "2301", "count": 1},
+      {"value": "1686", "count": 1},
+      {"value": "2030", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 3
+      },
+      {
+        "value": "Le monument de la place Fourneyron, inauguré en octobre 1933, rend hommage aux 6 000 Stéphanois morts durant la Première Guerre mondiale.",
+        "count": 1
+      },
+      {"value": "Monument en hommage au Sergent Blandant.", "count": 1},
+      {"value": "plaque commémorative Louisendorf", "count": 1},
+      {
+        "value": "Le Monument est inauguré en 1989. C'est une sculpture de Toros. La ceinture de la robe flottant au vent dessine les monts Ararat qui séparent l'Arménie de la Turquie. Le bloc marqué de la croix à droite est fait en khatchkar, une pierre d'Arménie.",
+        "count": 1
+      },
+      {
+        "value": "Monument commémoratif des mineurs morts lors de la Première Guerre mondiale.",
+        "count": 1
+      },
+      {
+        "value": "Réplique de la célèbre statue exposée au Musée du Louvre. Elle est apposée sur la façade de l'école Tardy, une inscription rappelle que cette statue est dédiée à la mémoire des maîtres et élèves tués lors du bombardement du 26 mai 1944.",
+        "count": 1
+      },
+      {
+        "value": "Nouvelle situation depuis mai-juin 2016. Anciennement à côté de la Mairie",
+        "count": 1
+      },
+      {
+        "value": "Le monument commémoratif aux élèves et professeurs morts dans les combats de 1914-1918 représente quelques grandes pages militaires de l'histoire : Poitiers, La Marne, Valmy...",
+        "count": 1
+      },
+      {
+        "value": "Un premier buste de Jules Janin en bronze a été fondu par les Allemands pendant la Seconde Guerre mondiale. Aujourd'hui, le buste du « Prince de la critique » est en pierre.",
+        "count": 1
+      },
+      {"value": "Réalisé par Claude GRANGE", "count": 1},
+      {
+        "value": "A la mémoire de l'adjudant Stéphane Abbes du Corps départemental des sapeurs-pompiers du Rhône centre d’intervention Lyon-Corneille. Mort en service commandé le 28 février 2008 lors de l’explosion de gaz 117 cours Lafayette à Lyon",
+        "count": 1
+      }
+    ],
+    "count": 14
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 9}, {"value": "limited", "count": 3}],
+    "count": 12
+  },
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "heritage",
+    "tags": [
+      {"value": "3", "count": 8},
+      {"value": "2", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117982", "count": 1},
+      {"value": "PA00082198", "count": 1},
+      {"value": "PA00116967", "count": 1},
+      {"value": "PA00116788", "count": 1},
+      {"value": "PA38000012", "count": 1},
+      {"value": "PA01000042", "count": 1},
+      {"value": "PA00117650", "count": 1},
+      {"value": "PA00116343", "count": 1},
+      {"value": "PA00116609", "count": 1},
+      {"value": "PA42000048", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2016-03-25", "count": 2},
+      {"value": "1982", "count": 1},
+      {"value": "1981-12-22", "count": 1},
+      {"value": "2011-05-23", "count": 1},
+      {"value": "1943-09-17", "count": 1},
+      {"value": "2003-04-01", "count": 1},
+      {"value": "1989-02-21", "count": 1},
+      {"value": "1932-10-04", "count": 1},
+      {"value": "1991-03-26", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "subject:wikidata",
+    "tags": [
+      {"value": "Q7742", "count": 1},
+      {"value": "Q20792945", "count": 1},
+      {"value": "Q2908", "count": 1},
+      {"value": "Q8027", "count": 1},
+      {"value": "Q1441510", "count": 1},
+      {"value": "Q632", "count": 1},
+      {"value": "Q3588534", "count": 1},
+      {"value": "Q12688", "count": 1},
+      {"value": "Q3418583", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "inscription:fr",
+    "tags": [
+      {
+        "value": "Aux enfants de Termignon glorieusement tombés pour la patrie, la commune reconnaissante. 1914- 1918",
+        "count": 1
+      },
+      {
+        "value": "En souvenir de Gabriel Barret Lieutenant FFI mort pour la France le 12 septembre 1944",
+        "count": 1
+      },
+      {
+        "value": "Aux engagés volontaires tombés face à l'ennemi en ce lieu de France le 12 mars 1945",
+        "count": 1
+      },
+      {
+        "value": "Aux enfants de Sollières-Sardières morts au champ d'honneur 1914-1918 Gloire et reconnaissance",
+        "count": 1
+      },
+      {"value": "Aussois à ses glorieux morts", "count": 1},
+      {
+        "value": "Au sergent Mouret tué accidentellement le 18 janvier 1931. Le commandant, les officiers, sous-officiers, caporaux et chasseurs du 13e BCA.",
+        "count": 1
+      },
+      {
+        "value": "À la mémoire de Florentin Sibue, Henri Plaisance surveillants des Eaux et Forêts, morts en service commandé le 28 février 1935 au Mont-Rond, victimes d'une avalanche",
+        "count": 1
+      },
+      {"value": "Comps à ses enfants morts pour la France", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://cds.cern.ch/record/745737", "count": 1},
+      {
+        "value": "http://sv69.e-monsite.com/pages/articles-algerie/memorial-pour-les-anciens-combattants-du-rhone-morts-en-afrique-du-nord.html",
+        "count": 1
+      },
+      {"value": "http://www.memorial-montluc.fr", "count": 1},
+      {"value": "http://coord.info/GC16VNR", "count": 1},
+      {"value": "http://www.saint-georges-les-bains.fr/Au-village", "count": 1},
+      {
+        "value": "http://www.culture74.fr/patrimoine-bati/proprietes-departementales/204-le-site-de-morette",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "subject:wikipedia",
+    "tags": [
+      {"value": "fr:Jeanne d'Arc", "count": 1},
+      {"value": "fr:Francis Garnier", "count": 1},
+      {"value": "fr:Jean Moulin", "count": 1},
+      {"value": "fr:Émile Girodet", "count": 1},
+      {"value": "fr:Jean Jaurès", "count": 1},
+      {"value": "fr:Rampe de Laffrey", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikimedia_commons",
+    "tags": [
+      {
+        "value": "File:Liste des fusillés, au mur des fusillés à la nécropole nationale de la Doua.JPG",
+        "count": 2
+      },
+      {
+        "value": "Category:Monument des fusiliers marins de Trévoux",
+        "count": 1
+      },
+      {"value": "File:Ranchal_-_Monument_aux_morts_.jpg", "count": 1},
+      {
+        "value": "File:Les tombes des fusillés à la nécropole nationale de la Doua.JPG",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "material",
+    "tags": [{"value": "bronze", "count": 3}, {"value": "stone", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "survey_point", "count": 3},
+      {"value": "cross", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Check name", "count": 1},
+      {"value": "position exacte à vérifier", "count": 1},
+      {
+        "value": "Préciser la position exacte la Stèle Jean Perrot, qui était initialement sur le square Napoléon, et déplacée suite à la construction d'un bâtiment. Source : http://cluq-grenoble.org/WordPress/wp-content/uploads/2014/01/bulletin-decembre-2013-UHQEB.pdf",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 3}], "count": 3},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0121201",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=2616806",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=4201701",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fountain", "count": 1},
+      {"value": "drinking_water", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "monument",
+    "tags": [{"value": "war_memorial", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "artist:wikipedia",
+    "tags": [
+      {"value": "fr:Emmanuel Frémiet", "count": 1},
+      {"value": "fr:Joseph Lamberton", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "inscription:url",
+    "tags": [
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/1/1e/FBBP01_-_Havre_AC_%282016-09-16%29_%285%29.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "author",
+    "tags": [{"value": "Antoine Sartorio", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "1939 - 1945", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:W",
+    "tags": [{"value": "tN_uhZQfyvgHFyExToRw8w", "count": 1}],
+    "count": 1
+  },
+  {"key": "grave", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "description:de",
+    "tags": [{"value": "Kriegerdenkmal", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33478536041", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "cemetery", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "S2yNBzukhV5yiNFvjDqUtg", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "cave_entrance", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Statue_de_Jean-%C3%89tienne_Championnet_-_Valence_-2014-09-28-_P1940385.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "memorial:text",
+    "tags": [{"value": "Pax Christi in regno Christi", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "architect",
+    "tags": [{"value": "Alfred Rochette", "count": 1}],
+    "count": 1
+  }
+]

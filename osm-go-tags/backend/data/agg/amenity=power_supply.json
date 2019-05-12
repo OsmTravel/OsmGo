@@ -1,0 +1,34 @@
+[
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "power_supply", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {
+    "key": "power_supply",
+    "tags": [{"value": "cee_17_blue", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:payment:en",
+    "tags": [
+      {
+        "value": "Payment tokens available from local shops in Le Bessat",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description:payment:fr",
+    "tags": [
+      {
+        "value": "Jetons disponible auprès des commercants au Bessat",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {"key": "craft", "tags": [{"value": "ski", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "on@fabriqueduski.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 26 41 89", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.fabriqueduski.com", "count": 1}],
+    "count": 1
+  }
+]

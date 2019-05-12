@@ -1,0 +1,132 @@
+[
+  {"key": "shop", "tags": [{"value": "mall", "count": 120}], "count": 120},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 12}, {"value": "limited", "count": 1}],
+    "count": 13
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Carrefour", "count": 4},
+      {"value": "Auchan", "count": 2},
+      {"value": "Rodamco Europe", "count": 1},
+      {"value": "Système U", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "Groupement des Mousquetaires", "count": 1},
+      {"value": "Casino", "count": 1},
+      {"value": "Compagnie de Phalsbourg", "count": 1},
+      {"value": "Intermarché", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.carredesoie.com/", "count": 2},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Swarovski",
+        "count": 1
+      },
+      {"value": "http://www.la-galerie.com/", "count": 1},
+      {"value": "http://centrecommercial-partdieu.com", "count": 1},
+      {"value": "http://www.e-leclerc.com/magasin/civrieux", "count": 1},
+      {"value": "http://www.carrefour.fr/magasin/bourg-en-bresse", "count": 1},
+      {"value": "http://thevillageoutlet.com", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3191256", "count": 1},
+      {"value": "Q9478", "count": 1},
+      {"value": "Q22976390", "count": 1},
+      {"value": "Q27042213", "count": 1},
+      {"value": "Q42887321", "count": 1},
+      {"value": "Q2944980", "count": 1},
+      {"value": "Q2944951", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 09 55 45", "count": 1},
+      {"value": "+33 1 53 70 56 56", "count": 1},
+      {"value": "+33 4 72 14 62 60", "count": 1},
+      {"value": "+33 4 74 50 30 00", "count": 1},
+      {"value": "+33 4 74 95 37 01", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 2}],
+    "count": 2
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:La Part-Dieu (centre commercial)", "count": 1},
+      {"value": "fr:Chapellerie Mossant", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2014-09", "count": 1},
+      {"value": "18/05/2018", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "height", "tags": [{"value": "8", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "stephanie@commercant-ephemere.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:colour", "tags": [{"value": "gray", "count": 1}], "count": 1},
+  {"key": "ref:mhs", "tags": [{"value": "PA26000013", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0;1", "count": 1}], "count": 1},
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "is_in", "tags": [{"value": "Dardilly", "count": 1}], "count": 1},
+  {"key": "trolley", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "trolley:emp",
+    "tags": [{"value": "exterior", "count": 1}],
+    "count": 1
+  },
+  {"key": "trolley:infant", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "THE VILLAGE LYON - LE FRENCH OUTLET", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2004-04-06", "count": 1}],
+    "count": 1
+  }
+]

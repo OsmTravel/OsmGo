@@ -1,0 +1,15 @@
+[
+  {"key": "historic", "tags": [{"value": "military", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "SSBS : ancienne antenne Vestale de transmission de l'ordre d'engagement présidentiel des missiles nucléaires du Plateau d'Albion.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "slab", "count": 1}], "count": 1}
+]

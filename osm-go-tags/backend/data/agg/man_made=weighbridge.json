@@ -1,0 +1,24 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "weighbridge", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Wayside_cross_2_in_Savignac-de-Nontron.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Historic_weighbridge_in_Saint-Pardoux-la-Rivi%C3%A8re.JPG",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "service", "count": 1}], "count": 1}
+]

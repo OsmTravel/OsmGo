@@ -1,0 +1,64 @@
+[
+  {"key": "amenity", "tags": [{"value": "studio", "count": 20}], "count": 20},
+  {
+    "key": "studio",
+    "tags": [
+      {"value": "radio", "count": 8},
+      {"value": "audio", "count": 3},
+      {"value": "television", "count": 2},
+      {"value": "video", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.francebleu.fr/saint-etienne-loire", "count": 1},
+      {"value": "http://www.polepixel.fr/", "count": 1},
+      {"value": "radiodragon.org", "count": 1},
+      {"value": "http://www.tl7.fr/", "count": 1},
+      {
+        "value": "http://france3-regions.francetvinfo.fr/rhone-alpes/loire/saint-etienne",
+        "count": 1
+      },
+      {"value": "http://rcf.fr/radio/rcf42", "count": 1},
+      {"value": "www.MichelDuong.Fr", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 9 80 83 62 78", "count": 1},
+      {"value": "+33 4 77 81 42 33", "count": 1},
+      {"value": "+33 4 77 42 04 00", "count": 1},
+      {"value": "+33 4 77 59 32 32", "count": 1},
+      {"value": "+33 4 77 56 80 56", "count": 1},
+      {"value": "+33 4 77 49 55 45", "count": 1},
+      {"value": "+33 6 12 46 32 36", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "type",
+    "tags": [
+      {"value": "television", "count": 1},
+      {"value": "Federico_Barco_Cruz", "count": 1},
+      {"value": "audio", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "France 3", "count": 1},
+      {"value": "MJC Parmentier", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "Radios Chrétiennes Francophones", "count": 1}],
+    "count": 1
+  }
+]

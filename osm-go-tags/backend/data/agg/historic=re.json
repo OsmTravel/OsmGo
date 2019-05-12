@@ -1,0 +1,8 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "residential", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "re", "count": 1}], "count": 1}
+]

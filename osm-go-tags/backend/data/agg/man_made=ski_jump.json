@@ -1,0 +1,4 @@
+[
+  {"key": "sport", "tags": [{"value": "ski_jumping", "count": 2}], "count": 2},
+  {"key": "man_made", "tags": [{"value": "ski_jump", "count": 2}], "count": 2}
+]

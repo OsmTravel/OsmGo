@@ -1,0 +1,8 @@
+[
+  {"key": "shop", "tags": [{"value": "coins", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.achat-or-toulouse.fr/", "count": 1}],
+    "count": 1
+  }
+]

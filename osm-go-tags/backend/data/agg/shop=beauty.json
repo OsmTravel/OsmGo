@@ -1,0 +1,359 @@
+[
+  {"key": "shop", "tags": [{"value": "beauty", "count": 388}], "count": 388},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://yves-rocher.fr/ecully-c-cial", "count": 1},
+      {"value": "http://www.fashion-minut.com/", "count": 1},
+      {"value": "yves-rocher.fr/annecy", "count": 1},
+      {"value": "http://www.emea-spa.com/", "count": 1},
+      {"value": "https://www.destineebeaute.fr/", "count": 1},
+      {"value": "https://www.beautyzina.com/", "count": 1},
+      {"value": "http://www.carlancevienne.fr/", "count": 1},
+      {
+        "value": "http://www.depiltech.com/fr/epilation-definitive/vienne/244",
+        "count": 1
+      },
+      {"value": "http://www.evasion-sensorielle-institut.fr/", "count": 1},
+      {"value": "http://www.detent-fish-spa.fr/", "count": 1},
+      {"value": "http://axebeaute.lescigales.org/", "count": 1},
+      {"value": "http://www.algance.org/", "count": 1},
+      {"value": "http://www.citron-vert.fr/", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/Loly-Institut_2375.asp",
+        "count": 1
+      },
+      {"value": "www.kokum.fr", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/MiamiSunIsaBelOngleVienne?rf=384417898292898",
+        "count": 1
+      },
+      {"value": "http://vienne.effea-minceur.com/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Sens-et-bien-%C3%AAtre-Sandrine-Ballaz/523610077727476",
+        "count": 1
+      },
+      {
+        "value": "https://fr-fr.facebook.com/pages/LArt-DEtre-Belle/190730927788291",
+        "count": 1
+      },
+      {"value": "http://www.institutcapucine.fr/", "count": 1},
+      {"value": "http://beautedurfe.fr", "count": 1},
+      {"value": "http://bbor25.wix.com/site-o-jasmin", "count": 1},
+      {"value": "yves-rocher.fr/montbrison", "count": 1},
+      {"value": "http://yves-rocher.fr/villefranche-sur-saone", "count": 1},
+      {"value": "http://yves-rocher.fr/romans", "count": 1},
+      {"value": "http://yves-rocher.fr/aix-les-bains", "count": 1},
+      {"value": "http://yves-rocher.fr/albertville", "count": 1},
+      {"value": "http://yves-rocher.fr/lyon-republique", "count": 1},
+      {"value": "http://yves-rocher.fr/lyon-victor-hugo", "count": 1},
+      {"value": "http://yves-rocher.fr/lyon-freres-lumiere", "count": 1},
+      {"value": "http://yves-rocher.fr/lyon-croix-rousse", "count": 1},
+      {"value": "http://yves-rocher.fr/lyon-vaise", "count": 1},
+      {"value": "yves-rocher.fr/lyon-saxe", "count": 1},
+      {"value": "yves-rocher.fr/voiron", "count": 1},
+      {"value": "http://yves-rocher.fr/grenoble-st-egreve", "count": 1},
+      {"value": "http://yves-rocher.fr/valence", "count": 1},
+      {"value": "yves-rocher.fr/montelimar", "count": 1},
+      {"value": "http://yves-rocher.fr/st-etienne-c-cial-centre-2", "count": 1},
+      {"value": "http://yves-rocher.fr/cluses", "count": 1},
+      {"value": "http://yves-rocher.fr/st-chamond", "count": 1},
+      {"value": "http://yves-rocher.fr/chambery-c-cial", "count": 1},
+      {"value": "http://yves-rocher.fr/la-tour-du-pin", "count": 1},
+      {"value": "http://yves-rocher.fr/thonon-les-bains", "count": 1},
+      {"value": "http://yves-rocher.fr/crest", "count": 1},
+      {"value": "http://yves-rocher.fr/annemasse-migros", "count": 1},
+      {"value": "http://yves-rocher.fr/meylan-c-cial", "count": 1},
+      {"value": "www.chrisalyd.fr", "count": 1},
+      {"value": "yves-rocher.fr/venissieux-c-cial", "count": 1},
+      {"value": "http://yves-rocher.fr/bellegarde", "count": 1},
+      {"value": "yves-rocher.fr/st-priest-c-cial", "count": 1},
+      {"value": "http://yves-rocher.fr/lyon-caluire-2", "count": 1},
+      {"value": "yves-rocher.fr/salaise-sur-sanne", "count": 1},
+      {"value": "http://yves-rocher.fr/seynod", "count": 1},
+      {"value": "http://yves-rocher.fr/roanne", "count": 1},
+      {"value": "http://yves-rocher.fr/aubenas", "count": 1},
+      {"value": "http://yves-rocher.fr/la-cote-st-andre", "count": 1},
+      {"value": "http://yves-rocher.fr/annonay", "count": 1},
+      {"value": "http://yves-rocher.fr/guilherand-granges-c-cial", "count": 1},
+      {"value": "yves-rocher.fr/oyonnax", "count": 1},
+      {"value": "http://yves-rocher.fr/villeurbanne", "count": 1},
+      {"value": "http://yves-rocher.fr/bourg-en-bresse", "count": 1},
+      {"value": "http://yves-rocher.fr/firminy", "count": 1},
+      {"value": "http://yves-rocher.fr/feurs", "count": 1},
+      {"value": "http://yves-rocher.fr/oullins", "count": 1},
+      {"value": "http://yves-rocher.fr/beynost", "count": 1},
+      {"value": "yves-rocher.fr/chatte-cc", "count": 1},
+      {"value": "http://yves-rocher.fr/givors-c-cial", "count": 1},
+      {
+        "value": "www.yves-rocher.fr/control/epm/france/fr/moncdb/at/europe/france/bourgogne/macon/macon",
+        "count": 1
+      },
+      {"value": "http://yves-rocher.fr/lyon-c-cial-la-part-dieu", "count": 1},
+      {"value": "http://yves-rocher.fr/chambery", "count": 1},
+      {"value": "http://yves-rocher.fr/grenoble-st-jacques", "count": 1},
+      {"value": "http://onglerie-grenoble.fr/", "count": 1},
+      {"value": "http://www.symbiose-cotezen.fr", "count": 1},
+      {"value": "http://www.linstants.com", "count": 1},
+      {"value": "http://lesfeespapillon.eu", "count": 1},
+      {"value": "http://yves-rocher.fr/val-thoiry", "count": 1},
+      {"value": "yves-rocher.fr/villefranche-sur-saone-c-co", "count": 1},
+      {"value": "http://www.lespadespins-davezieux.fr/", "count": 1},
+      {"value": "http://www.imagym.fr/", "count": 1},
+      {
+        "value": "http://www.payot.com/FR/fr/ou-nous-trouver/institut-du-chateau",
+        "count": 1
+      },
+      {"value": "http://www.lachrysalide.ch/site/fr/", "count": 1},
+      {"value": "http://www.christinebeaute.fr/", "count": 1},
+      {
+        "value": "http://www.carlance.fr/carlance-institut-de-beaute-MIONS.html",
+        "count": 1
+      },
+      {"value": "www.espace-perfyliss.com", "count": 1},
+      {"value": "http://www.espacetuina.com", "count": 1},
+      {"value": "http://institut-magalie-annecy.com/", "count": 1},
+      {"value": "http://www.institut-lessentielle-valence.fr/fr", "count": 1},
+      {"value": "http://institut-lyautey.com/", "count": 1},
+      {"value": "http://www.naturedeaux.com/", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/saint-algue-saint-algue-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {"value": "http://yves-rocher.fr/grenoble-grand-place", "count": 1},
+      {"value": "https://www.csbeaute.fr/", "count": 1}
+    ],
+    "count": 92
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 25 72 12", "count": 1},
+      {"value": "+33 4 26 65 35 28", "count": 1},
+      {"value": "+33 4 76 42 55 07", "count": 1},
+      {"value": "+33 4 76 73 02 30", "count": 1},
+      {"value": "+33 4 76 72 88 44", "count": 1},
+      {"value": "+33 4 76 95 13 45", "count": 1},
+      {"value": "+33 4 76 96 20 93", "count": 1},
+      {"value": "+33 7 68 50 26 26", "count": 1},
+      {"value": "+33 9 51 93 46 01", "count": 1},
+      {"value": "+33 4 76 95 10 63", "count": 1},
+      {"value": "+33 4 74 85 04 46", "count": 1},
+      {"value": "+33 4 74 85 27 22", "count": 1},
+      {"value": "+33 9 81 33 30 92", "count": 1},
+      {"value": "+33 6 29 38 05 45", "count": 1},
+      {"value": "+33 4 69 32 50 61", "count": 1},
+      {"value": "+33 4 74 31 03 67", "count": 1},
+      {"value": "+33 4 74 85 41 13", "count": 1},
+      {"value": "+33 4 74 20 42 28", "count": 1},
+      {"value": "+33 4 74 53 14 67", "count": 1},
+      {"value": "+33 4 77 39 72 51", "count": 1},
+      {"value": "+33 4 74 85 11 30", "count": 1},
+      {"value": "+33 6 68 27 26 08", "count": 1},
+      {"value": "+33 4 79 61 47 74", "count": 1},
+      {"value": "+33 4 75 29 33 34", "count": 1},
+      {"value": "+33 4 75 29 99 68", "count": 1},
+      {"value": "+33 4 74 85 30 09", "count": 1},
+      {"value": "+33 4 37 02 07 53", "count": 1},
+      {"value": "+33 4 74 31 72 48", "count": 1},
+      {"value": "+33 4 74 48 02 07", "count": 1},
+      {"value": "+33 4 75 47 46 30", "count": 1},
+      {"value": "+33 4 50 20 17 52", "count": 1},
+      {"value": "+33 4 77 24 19 94", "count": 1},
+      {"value": "+33 4 77 97 39 42", "count": 1},
+      {"value": "+33 4 69 37 61 85", "count": 1},
+      {"value": "+33 4 78 62 38 01", "count": 1},
+      {"value": "+33 4 79 33 22 46", "count": 1},
+      {"value": "+33478442867", "count": 1},
+      {"value": "+33478487622", "count": 1},
+      {"value": "+33 6 88 73 26 45", "count": 1},
+      {"value": "+33477542418", "count": 1},
+      {"value": "+33476481977", "count": 1},
+      {"value": "+33472310766", "count": 1},
+      {"value": "+33478050428", "count": 1},
+      {"value": "+33 4 37864048", "count": 1},
+      {"value": "+33 4 78 55 19 35", "count": 1},
+      {"value": "+33 4 75 30 84 01", "count": 1},
+      {"value": "+33 9 81311691", "count": 1},
+      {"value": "+33 4 78206287", "count": 1},
+      {"value": "079 101 79 46", "count": 1},
+      {"value": "+33 6 50 91 68 99", "count": 1},
+      {"value": "+33478642572", "count": 1},
+      {"value": "+33478721158", "count": 1},
+      {"value": "+33 4 72224074", "count": 1},
+      {"value": "+33475567554", "count": 1},
+      {"value": "+33 4 50 51 44 19", "count": 1},
+      {"value": "+33 4 77 65 62 64", "count": 1},
+      {"value": "+33 4 72 74 19 19", "count": 1},
+      {"value": "+33 4 72 74 19 97", "count": 1},
+      {"value": "+33 4 26180495", "count": 1},
+      {"value": "+33782946768", "count": 1},
+      {"value": "+33 6 89 58 99 84", "count": 1},
+      {"value": "+33 4 78213761", "count": 1},
+      {"value": "+33 4 75 84 58 88", "count": 1},
+      {"value": "+33475278043", "count": 1},
+      {"value": "+33476570940", "count": 1},
+      {"value": "+33 4 76 49 56 87", "count": 1},
+      {"value": "+33 4 75 02 20 84", "count": 1}
+    ],
+    "count": 67
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 4}
+    ],
+    "count": 20
+  },
+  {
+    "key": "beauty",
+    "tags": [
+      {"value": "spa", "count": 4},
+      {"value": "nails", "count": 3},
+      {"value": "hair_removal", "count": 2},
+      {"value": "tanning", "count": 2},
+      {"value": "pets", "count": 1},
+      {"value": "cosmetics", "count": 1},
+      {"value": "massage", "count": 1},
+      {"value": "nail", "count": 1},
+      {"value": "aesthetic", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Chrisalyd", "count": 1},
+      {"value": "Citron vert", "count": 1},
+      {"value": "Esthéticien", "count": 1},
+      {"value": "E.Leclerc", "count": 1},
+      {"value": "Morgane Genouilhac", "count": 1},
+      {"value": "Guinot institut", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "Institut Guinot", "count": 1},
+      {"value": "Institut Mahler", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 7}, {"value": "1", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Institut de Beauté", "count": 2},
+      {"value": "Institut de beauté", "count": 1},
+      {"value": "Les ravissantes, L'institut de beauté", "count": 1},
+      {"value": "Centre de bronzage", "count": 1},
+      {"value": "onglerie", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@beautedurfe.fr", "count": 1},
+      {"value": "inoebienetre@gmail.com", "count": 1},
+      {"value": "christine.beaute69@gmail.com", "count": 1},
+      {"value": "espace-perfyliss@orange.fr", "count": 1},
+      {"value": "info@csbeaute.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Symbiose-Coiffure-C%C3%B4t%C3%A9-Zen-465110800301788/",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/Institut.Beaute.linstants/",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/Lillyongles-150650465523429/",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "tanning_salon", "count": 1},
+      {"value": "sauna", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "https://www.atelierdusourcil.com/project/42-saint-etienne/",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/Espace-Perfyliss-179528658807031/?ref=page_internal",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "50501291400022", "count": 1},
+      {"value": "384 970 786 00040", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Centre d'amincissement", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Yves Rocher (entreprise)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Deux magasins sont présents dans Part-Dieu, un nommé \"Institut\" et l'autre non",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "lat", "tags": [{"value": "45.9586914", "count": 1}], "count": 1},
+  {"key": "lon", "tags": [{"value": "5.3583854", "count": 1}], "count": 1},
+  {"key": "organic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "précédemment: \"Mme Zaza de Marseille\"", "count": 1}],
+    "count": 1
+  },
+  {"key": "unisex", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "9602A", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Yves Rocher", "count": 1}], "count": 1},
+  {
+    "key": "reservation",
+    "tags": [{"value": "required", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "258", "count": 1}], "count": 1}
+]

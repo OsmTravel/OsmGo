@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "archive", "count": 3}], "count": 3},
+  {
+    "key": "operator",
+    "tags": [{"value": "Gaumont Pathé", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.gaumontpathearchives.com", "count": 1}],
+    "count": 1
+  }
+]

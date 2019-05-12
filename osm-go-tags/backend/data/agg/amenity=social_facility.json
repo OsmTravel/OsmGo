@@ -1,0 +1,630 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "social_facility", "count": 432}],
+    "count": 432
+  },
+  {
+    "key": "social_facility",
+    "tags": [
+      {"value": "group_home", "count": 185},
+      {"value": "outreach", "count": 78},
+      {"value": "assisted_living", "count": 23},
+      {"value": "food_bank", "count": 13},
+      {"value": "ambulatory_care", "count": 10},
+      {"value": "nursing_home", "count": 8},
+      {"value": "shelter", "count": 4},
+      {"value": "workshop", "count": 2},
+      {"value": "healthcare", "count": 1},
+      {"value": "Centre_d'hébergement_et_de_réinsertion_sociale", "count": 1},
+      {"value": "community_centre", "count": 1},
+      {"value": "recycling", "count": 1},
+      {"value": "school", "count": 1},
+      {"value": "advice", "count": 1}
+    ],
+    "count": 329
+  },
+  {
+    "key": "social_facility:for",
+    "tags": [
+      {"value": "senior", "count": 189},
+      {"value": "juvenile", "count": 13},
+      {"value": "underprivileged", "count": 13},
+      {"value": "mental_health", "count": 12},
+      {"value": "disabled", "count": 9},
+      {"value": "child", "count": 8},
+      {"value": "migrant", "count": 4},
+      {"value": "homeless", "count": 2},
+      {"value": "student", "count": 2},
+      {"value": "unemployed", "count": 2},
+      {"value": "elderly", "count": 1},
+      {"value": "family;child", "count": 1},
+      {"value": "family", "count": 1},
+      {"value": "child;juvenile", "count": 1},
+      {"value": "juvenile;child", "count": 1},
+      {"value": "drug_addicted", "count": 1},
+      {"value": "youth", "count": 1},
+      {"value": "intellectual_disability", "count": 1},
+      {"value": "migrants", "count": 1},
+      {"value": "displaced", "count": 1},
+      {"value": "juvenile;mental_healt", "count": 1}
+    ],
+    "count": 265
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Saint-Etienne", "count": 5},
+      {"value": "Ville de Saint-Étienne", "count": 5},
+      {"value": "korian", "count": 3},
+      {"value": "Association des Centres Sociaux Rillieux-La-Pape", "count": 3},
+      {"value": "ORPEA", "count": 3},
+      {"value": "Triangle", "count": 2},
+      {"value": "Association Sainte Agnès", "count": 2},
+      {"value": "Colisée", "count": 2},
+      {"value": "Conseil Général de la Loire", "count": 1},
+      {"value": "Association Interlude", "count": 1},
+      {"value": "Korian", "count": 1},
+      {"value": "Inforoutes", "count": 1},
+      {"value": "EHPAD Mellet Mandard", "count": 1},
+      {"value": "Association La Véranda", "count": 1},
+      {"value": "Ville d'Annemasse", "count": 1},
+      {"value": "CAF loire", "count": 1},
+      {"value": "ACPPA", "count": 1},
+      {"value": "ADAPEI du Rhône", "count": 1},
+      {"value": "Envie", "count": 1},
+      {"value": "Secours Populaire", "count": 1},
+      {"value": "ADAPT", "count": 1},
+      {"value": "Secours Catholique de la Loire", "count": 1},
+      {"value": "Secours Catholique", "count": 1},
+      {"value": "CAPI", "count": 1},
+      {"value": "Croix Rouge Française", "count": 1},
+      {"value": "Conseil Départemental de l'Ain", "count": 1},
+      {"value": "adessadomicile", "count": 1},
+      {"value": "Géronvie", "count": 1},
+      {"value": "Mima Aide et maintien de domicile", "count": 1},
+      {"value": "CCAS", "count": 1},
+      {"value": "Association des Paralisés de France", "count": 1},
+      {"value": "CCAS ville de Grenoble", "count": 1},
+      {"value": "Caf de l'Isère", "count": 1},
+      {"value": "Mairie d'Écully", "count": 1},
+      {"value": "AGASEF", "count": 1},
+      {"value": "Restaurants du cœur", "count": 1},
+      {"value": "Armée du Salut", "count": 1},
+      {"value": "Mutualité de la Loire", "count": 1},
+      {"value": "Les petites soeurs des pauvres", "count": 1},
+      {"value": "Chrysalide", "count": 1},
+      {"value": "EHPADE Hôpital", "count": 1},
+      {"value": "Résidence Malgazon", "count": 1},
+      {"value": "CH Annecy Genevois", "count": 1},
+      {
+        "value": "Congrégation de Notre Dame de Charité du Bon Pasteur",
+        "count": 1
+      },
+      {"value": "Forum réfugiés-Cosi", "count": 1},
+      {"value": "OVE", "count": 1},
+      {"value": "Ville de Roanne", "count": 1},
+      {"value": "Association Les Bruyères", "count": 1},
+      {"value": "Petites Soeurs des Pauvres", "count": 1},
+      {"value": "Orpea", "count": 1},
+      {"value": "Annemasse Agglo", "count": 1},
+      {"value": "Maison de retraite de la Christinière", "count": 1},
+      {"value": "Association le logis du soleil", "count": 1},
+      {"value": "Conseil Général de l'Isère", "count": 1},
+      {"value": "Mutualité Française Isère", "count": 1},
+      {"value": "Centre Hospitalier Alpes Léman", "count": 1},
+      {"value": "AFIPAIEM de Grenoble", "count": 1},
+      {"value": "Caisse d'Allocations Familiales de Grenoble", "count": 1},
+      {"value": "EHPAD", "count": 1},
+      {"value": "La Mutualité Française", "count": 1},
+      {"value": "Conseil Général de la Drôme", "count": 1},
+      {"value": "Croix-Rouge Française", "count": 1},
+      {"value": "Sévigné", "count": 1},
+      {"value": "Fondation ARHM", "count": 1},
+      {"value": "Mairie Villefontaine", "count": 1},
+      {"value": "Groupe ACPPA", "count": 1},
+      {"value": "Cham Savoie", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 43 89 69", "count": 1},
+      {"value": "+41 22 744 01 00", "count": 1},
+      {"value": "+33 4 77 90 28 93", "count": 1},
+      {"value": "+33 4 76 23 11 92", "count": 1},
+      {"value": "+33 4 88 92 20 06", "count": 1},
+      {"value": "+33 4 26 44 35 00", "count": 1},
+      {"value": "+33 4 74 85 05 75", "count": 1},
+      {"value": "+33 4 77 24 24 46", "count": 1},
+      {"value": "+33 4 76 33 08 13", "count": 1},
+      {"value": "+33 4 75 93 29 73", "count": 1},
+      {"value": "+33 475692906", "count": 1},
+      {"value": "+33 475692903", "count": 1},
+      {"value": "+33 475670507", "count": 1},
+      {"value": "+33 4 74 31 95 33", "count": 1},
+      {"value": "+33 4 78 20 90 98", "count": 1},
+      {"value": "+33 4 78 55 31 47", "count": 1},
+      {"value": "+33 4 77 53 66 57", "count": 1},
+      {"value": "+33 4 77 41 86 70", "count": 1},
+      {"value": "+33 4 77 40 11 11", "count": 1},
+      {"value": "+33 4 77 31 15 15", "count": 1},
+      {"value": "+33 4 77 55 02 77", "count": 1},
+      {"value": "+33 4 69845060", "count": 1},
+      {"value": "+33 4 78 09 17 18", "count": 1},
+      {"value": "+33 4 76 96 76 15", "count": 1},
+      {"value": "+33 4 77 01 15 60", "count": 1},
+      {"value": "+33 4 77 79 50 00", "count": 1},
+      {"value": "+33 4 77 41 21 68", "count": 1},
+      {"value": "+33 4 77 49 00 15", "count": 1},
+      {"value": "+33 4 77 59 53 53", "count": 1},
+      {"value": "+33 4 77 91 41 00", "count": 1},
+      {"value": "+33 4 77 81 02 55", "count": 1},
+      {"value": "+33 4 77 47 80 80", "count": 1},
+      {"value": "+33 4 77 74 23 15", "count": 1},
+      {"value": "+33 4 77 49 56 56", "count": 1},
+      {"value": "+33 4 77 92 17 92", "count": 1},
+      {"value": "+33 4 77 95 74 93", "count": 1},
+      {"value": "+33 4 78 60 88 17", "count": 1},
+      {"value": "+33 4 77 32 87 91", "count": 1},
+      {"value": "+33 4 77 32 20 40", "count": 1},
+      {"value": "+33 4 77 57 28 62", "count": 1},
+      {"value": "+33 4 77 02 02 80", "count": 1},
+      {"value": "+33 4 77 74 09 98", "count": 1},
+      {"value": "+33 4 77 46 54 54", "count": 1},
+      {"value": "+33 4 77 74 28 44", "count": 1},
+      {"value": "+33477573171", "count": 1},
+      {"value": "+33 4 77 74 62 59", "count": 1},
+      {"value": "+33 4 74 83 27 27", "count": 1},
+      {"value": "+33 4 77 92 19 19", "count": 1},
+      {"value": "+33 4 77 93 04 04", "count": 1},
+      {"value": "+33 4 77 93 21 20", "count": 1},
+      {"value": "+33 4 77 90 50 70", "count": 1},
+      {"value": "+33 4 79 09 60 80", "count": 1},
+      {"value": "+33 4 50 49 66 13", "count": 1},
+      {"value": "+33 4 72 69 44 00", "count": 1},
+      {"value": "+33 4 78 79 16 05", "count": 1},
+      {"value": "+33 4 77 31 07 07", "count": 1},
+      {"value": "+33 4 77 29 34 00", "count": 1},
+      {"value": "+33 4 37 46 18 18", "count": 1},
+      {"value": "+33 4 77 83 02 42", "count": 1},
+      {"value": "+33 4 77 53 88 57", "count": 1},
+      {"value": "+33 4 76 76 54 15", "count": 1},
+      {"value": "+33 4 77 95 04 35", "count": 1},
+      {"value": "+33 4 77 36 31 36", "count": 1},
+      {"value": "+33 4 77 30 10 24", "count": 1},
+      {"value": "+33 476 29 80 50", "count": 1},
+      {"value": "+33 4 76 84 29 60", "count": 1},
+      {"value": "+33 4 77 30 41 14", "count": 1},
+      {"value": "+33 4 77 34 47 80", "count": 1},
+      {"value": "+33 4 28 04 10 20", "count": 1},
+      {"value": "+33 4 79 26 41 90", "count": 1},
+      {"value": "+33 4 74 27 30 99", "count": 1},
+      {"value": "+33 4 76 32 64 70", "count": 1},
+      {"value": "+33 4 79 32 49 52", "count": 1}
+    ],
+    "count": 73
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.csxrillieux.asso.fr/", "count": 3},
+      {
+        "value": "http://www.missions-locales.org/1-338-Fiche-Mission.php?id=4",
+        "count": 2
+      },
+      {"value": "http://www.ste-agnes.fr", "count": 2},
+      {
+        "value": "http://maison-retraite.ehpadhospiconseil.fr/ehpad/380010058/ehpad-la-cheneraie-residence-bois-ballier-st-quentin-fallavier",
+        "count": 1
+      },
+      {"value": "http://www.residencelechasseur.fr", "count": 1},
+      {
+        "value": "http://www.korian.fr/clinique-ssr/ssr-korian-les-arbelles-bourg-en-bresse-01000/",
+        "count": 1
+      },
+      {
+        "value": "http://www.etudierendromeardeche.fr/jsp/fiche_article.jsp?CODE=1255595702967&LANGUE=0",
+        "count": 1
+      },
+      {
+        "value": "http://www.vienne.fr/lieux/carrousel-foyer-restaurant-de-cybele",
+        "count": 1
+      },
+      {"value": "http://www.agems.ch/les-chataigniers/", "count": 1},
+      {"value": "http://www.laveranda.eu/", "count": 1},
+      {
+        "value": "http://www.mairie-annonay.fr/Information-Orientation.html",
+        "count": 1
+      },
+      {"value": "http://www.maison-animation-cotonne-montferre.fr", "count": 1},
+      {
+        "value": "http://www.vienne.fr/solidarite/les-personnes-en-difficultes",
+        "count": 1
+      },
+      {"value": "http://www.ehpad-marie-romier.org/", "count": 1},
+      {"value": "http://www.ameli.fr/", "count": 1},
+      {"value": "https://www.caf.fr/ma-caf/caf-de-l-ardeche/", "count": 1},
+      {"value": "http://www.jardins-arcadie-saintetienne.fr/", "count": 1},
+      {"value": "http://www.ch-claudinon.fr/", "count": 1},
+      {
+        "value": "http://www.hopitaldugier.fr/maison-de-retraite-ehpad.html",
+        "count": 1
+      },
+      {
+        "value": "http://annuaire.action-sociale.org/?p=savs-lift-420012668&details=caracteristiques#public",
+        "count": 1
+      },
+      {"value": "http://www.mjc-chateauvert.fr/", "count": 1},
+      {
+        "value": "http://www.maison-retraite-selection.fr/maison-de-retraite/ehpad/5971-la-cheneraie-pavillon-marie-beatrice.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.saint-etienne.fr/solidarite/residences-personnes-agees-1",
+        "count": 1
+      },
+      {
+        "value": "https://www.maisondesfamilles.fr/nos-maisons-des-familles/maison-des-familles-grenoble/",
+        "count": 1
+      },
+      {"value": "http://www.ain-domicileservices.fr/", "count": 1},
+      {"value": "https://pimmslyonmetropole.com/", "count": 1},
+      {"value": "http://www.ehpad-vinay.fr/", "count": 1},
+      {"value": "http://www.maison-d-annie.fr/", "count": 1},
+      {
+        "value": "http://www.lesmaisonsderetraite.fr/maison-de-retraite-medicalisee-ehpad/42-loire-42000-st-etienne-residence-st-vincent-de-paul-4159.htm",
+        "count": 1
+      },
+      {"value": "http://stetienne.pallianet.org/", "count": 1},
+      {
+        "value": "http://www.armeedusalut.fr/etablissements/la-sarraziniere/presentation.html",
+        "count": 1
+      },
+      {"value": "http://www.chrysalide-ressourcerie.org/", "count": 1},
+      {"value": "https://closchampirol-ehpad.lna-sante.com/", "count": 1},
+      {
+        "value": "https://www.odyneo.fr/etablissements/les-tourrais-de-craponne/",
+        "count": 1
+      },
+      {"value": "http://www.forumrefugies.org/", "count": 1},
+      {"value": "http://www.renaudiere.org/", "count": 1},
+      {"value": "http://saint-chamond.lesopalines.fr/", "count": 1},
+      {"value": "http://www.entraidepierrevaldo.org/", "count": 1},
+      {"value": "http://www.mrl-42.fr/", "count": 1},
+      {"value": "http://www.reyrieux.fr/spip.php?article105", "count": 1},
+      {"value": "http://www.reynies-beviere.com/", "count": 1},
+      {"value": "http://www.ehpadsaintheand.fr/", "count": 1},
+      {"value": "http://www.fndsa.org/", "count": 1},
+      {
+        "value": "http://rhone.restosducoeur.org/nous-trouver.php?centre=VILLEURBANNE",
+        "count": 1
+      },
+      {
+        "value": "http://www.arhm.fr/qui_sommes_nous/l_escale/mas_de_revolat",
+        "count": 1
+      }
+    ],
+    "count": 49
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 29},
+      {"value": "no", "count": 1},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "80", "count": 2},
+      {"value": "106", "count": 2},
+      {"value": "103", "count": 1},
+      {"value": "44", "count": 1},
+      {"value": "70", "count": 1},
+      {"value": "73", "count": 1},
+      {"value": "100", "count": 1},
+      {"value": "125", "count": 1},
+      {"value": "60", "count": 1},
+      {"value": "300", "count": 1},
+      {"value": "40", "count": 1},
+      {"value": "32", "count": 1},
+      {"value": "116", "count": 1},
+      {"value": "63", "count": 1},
+      {"value": "26", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "56", "count": 1},
+      {"value": "110", "count": 1},
+      {"value": "90", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Maison de retraite", "count": 2},
+      {"value": "Soins Infirmiers", "count": 1},
+      {
+        "value": "Cabinet de soins infirmiers 7j/7 à domicile et au cabinet sur rendez-vous",
+        "count": 1
+      },
+      {
+        "value": "Aide ménagère et à la toilette, préparation des repas, accompagnement, ménage, garde d'enfants, jardinage, bricolage",
+        "count": 1
+      },
+      {
+        "value": "Le CHRS Francis Feydel accueille, en milieu urbain, des personnes en souffrance psychique avec un hébergement et un encadrement leur permettant de se stabiliser et de retrouver une autonomie et une insertion adaptée.",
+        "count": 1
+      },
+      {"value": "L'association du service à domicile", "count": 1},
+      {"value": "Cabinet de soins infirmiers", "count": 1},
+      {"value": "Relais Assistants Maternels", "count": 1},
+      {"value": "Cabinet Infirmier", "count": 1},
+      {"value": "Point d’Information Médiation Multiservices", "count": 1},
+      {"value": "Résidence de personnes agées", "count": 1},
+      {"value": "Foyer logement pour personnes agées", "count": 1},
+      {"value": "Maison d'Enfants à Caractère Social", "count": 1},
+      {"value": "Maison de retraite mutualiste", "count": 1},
+      {"value": "Institut Médico-Éducatif", "count": 1},
+      {"value": "Institut Médico-Professionnel", "count": 1},
+      {"value": "EHPAD", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [
+      {"value": "260002019", "count": 1},
+      {"value": "420009599", "count": 1},
+      {"value": "730785771", "count": 1},
+      {"value": "740785118", "count": 1},
+      {"value": "420788515", "count": 1},
+      {"value": "690782859", "count": 1},
+      {"value": "730783982", "count": 1},
+      {"value": "380794586", "count": 1},
+      {"value": "380781419", "count": 1},
+      {"value": "380784264", "count": 1},
+      {"value": "010786929", "count": 1},
+      {"value": "380011098", "count": 1},
+      {"value": "380794743", "count": 1},
+      {"value": "730783651", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "type:FR:FINESS",
+    "tags": [
+      {"value": "500", "count": 9},
+      {"value": "183", "count": 2},
+      {"value": "355", "count": 1},
+      {"value": "200", "count": 1},
+      {"value": "255", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "office",
+    "tags": [
+      {"value": "association", "count": 7},
+      {"value": "insurance", "count": 2},
+      {"value": "administrative", "count": 1},
+      {"value": "ngo", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ba42.banquealimentaire.org/pages/croix-rouge-francaise-00102",
+        "count": 1
+      },
+      {
+        "value": "http://www.saint-etienne.fr/solidarite/seniors/vivre-residence/residence-chavanelle",
+        "count": 1
+      },
+      {
+        "value": "http://loire.secours-catholique.org/Un-nouveau-projet-a-saint-Etienne",
+        "count": 1
+      },
+      {
+        "value": "http://www.mairie-la-talaudiere.fr/index.php/component/content/article/26",
+        "count": 1
+      },
+      {"value": "http://www.caf.fr/allocataires/caf-de-la-loire", "count": 1},
+      {
+        "value": "http://www.missions-locales.org/1-338-Fiche-Mission.php?id=26",
+        "count": 1
+      },
+      {
+        "value": "http://www.mjc-rhonealpes.org/annuaire/mjc/mjc-feurs",
+        "count": 1
+      },
+      {
+        "value": "https://www.aggloroanne.fr/enfance-jeunesse-education/enfance-jeunesse/centre-jeunesse-pierre-beregovoy-205.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.mutualiteisere.org/annuaire-p20-centre-mutualiste-michel-philibert-ehpad-unite-soins-longue-duree.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.mutualite-loire.com/index.php/residence-mutualiste-bellevue.html",
+        "count": 1
+      }
+    ],
+    "count": 10
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "public", "count": 8}, {"value": "private", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "yes", "count": 5}, {"value": "public", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "CGT;FO;CFDT;CFTC;CGC", "count": 1},
+      {
+        "value": "http://www.pss-archi.eu/immeubles/FR-74012-57934.html",
+        "count": 1
+      },
+      {"value": "FIXME", "count": 1},
+      {
+        "value": "Ancien Siège départemental de la Banque alimentaire",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 78 20 90 95", "count": 1},
+      {"value": "+33 4 50 49 66 95", "count": 1},
+      {"value": "+33 4 77 29 16 43", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1975", "count": 1},
+      {"value": "C20", "count": 1},
+      {"value": "1970", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Caisse d'Allocations Familiales", "count": 1},
+      {"value": "Odynéo", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "bie@ville-ecully.fr", "count": 1},
+      {"value": "lyonvaise@pimms.org", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "castle", "count": 2}], "count": 2},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q26917443", "count": 1},
+      {"value": "Q2929008", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "8710A", "count": 2}], "count": 2},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "30227819700017", "count": 1},
+      {"value": "77559590300334", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Buvette Prouvé-Novarina", "count": 1},
+      {"value": "fr:Croix-Rouge", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "sport", "tags": [{"value": "multi", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "Category:MJC Monplaisir", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Foyer restaurant pour personnes agées.", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:uai", "tags": [{"value": "0421943J", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-08-30", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "public", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "second_hand", "count": 1}], "count": 1},
+  {"key": "healthcare", "tags": [{"value": "centre", "count": 1}], "count": 1},
+  {"key": "ref:inforoutes", "tags": [{"value": "ccm", "count": 1}], "count": 1},
+  {
+    "key": "castle_type",
+    "tags": [{"value": "stately", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "38524A088N", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "35", "count": 1}], "count": 1},
+  {
+    "key": "service_times",
+    "tags": [{"value": "Mo-Su 07:30-12:00,16:00-18:30", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "social_facility_for",
+    "tags": [{"value": "senior", "count": 1}],
+    "count": 1
+  },
+  {"key": "emergency", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "ref:UAI", "tags": [{"value": "0692868T", "count": 1}], "count": 1},
+  {
+    "key": "school:FR",
+    "tags": [{"value": "élémentaire", "count": 1}],
+    "count": 1
+  },
+  {"key": "atm", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2013-05-15", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118393", "count": 1}], "count": 1},
+  {"key": "ref:FR:DUI", "tags": [{"value": "2774", "count": 1}], "count": 1},
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "+33 6 25767231", "count": 1}],
+    "count": 1
+  }
+]

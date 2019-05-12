@@ -1,0 +1,119 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "driving_school", "count": 191}],
+    "count": 191
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 24 11 26", "count": 1},
+      {"value": "+33 4 76 70 26 11", "count": 1},
+      {"value": "+33 4 78 89 82 42", "count": 1},
+      {"value": "+33 4 74 85 13 91", "count": 1},
+      {"value": "+33 4 74 78 22 76", "count": 1},
+      {"value": "+33 4 74 85 02 51", "count": 1},
+      {"value": "+33 4 74 85 05 24", "count": 1},
+      {"value": "+33 9 54 35 17 70", "count": 1},
+      {"value": "+33 4 74 53 30 26", "count": 1},
+      {"value": "+33 4 74 56 87 93", "count": 1},
+      {"value": "+33 4 76 54 30 52", "count": 1},
+      {"value": "+33 4 74 31 76 81", "count": 1},
+      {"value": "+33 4 76 42 56 26", "count": 1},
+      {"value": "+33 4 76 96 83 50", "count": 1},
+      {"value": "+33 4 77 24 00 32", "count": 1},
+      {"value": "+33 4 50 92 60 47", "count": 1},
+      {"value": "+33 4 76 09 10 10", "count": 1},
+      {"value": "+33 4 74 31 70 18", "count": 1},
+      {"value": "+33 4 50 37 76 40", "count": 1},
+      {"value": "+33477331306", "count": 1},
+      {"value": "+33 4 78 94 94 19", "count": 1},
+      {"value": "+33 4 78 41 13 04", "count": 1},
+      {"value": "+33 4 72 85 93 62", "count": 1},
+      {"value": "+33478484586", "count": 1},
+      {"value": "+33 4 74 76 06 19", "count": 1},
+      {"value": "+33 4 72 14 98 98", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.les3fac.com/", "count": 1},
+      {"value": "http://auto-ecole-marcellin.com/", "count": 1},
+      {"value": "http://www.autoecoledelapyramide.fr/", "count": 1},
+      {"value": "http://www.ecoledeconduiteyanic.com/", "count": 1},
+      {"value": "http://www.auto-ecole-vienne.fr/", "count": 1},
+      {"value": "http://www.autoecoleporras.com", "count": 1},
+      {"value": "http://angeliqueconduite.fr", "count": 1},
+      {"value": "http://www.autoecoleyanic.com/", "count": 1},
+      {"value": "http://www.auto-ecole-des-brotteaux.fr/", "count": 1},
+      {"value": "https://www.saint-cyr-auto-ecole.fr/", "count": 1},
+      {
+        "value": "http://www.ecf.asso.fr/Auto-ecole/CESR-69/Le-Centre-CESR-ECF-VAULX-EN-VELIN",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "yes", "count": 3},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "license_classes",
+    "tags": [
+      {"value": "A1;A;B", "count": 2},
+      {"value": "auto;moto", "count": 2},
+      {"value": "B", "count": 2},
+      {"value": "A, B", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "42387284500031", "count": 1},
+      {"value": "79159984800037", "count": 1},
+      {"value": "53178082300039", "count": 1},
+      {"value": "48464334100015", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "shop", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "verifier tag", "count": 1},
+      {"value": "Nouvelle adresse avant place Cécillon du Perrier", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "driving_school", "tags": [{"value": "car", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.ecoleeuropeennedeconduite.fr/index.php/agences/fourneyron",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone:mobile",
+    "tags": [{"value": "+336 83 15 41 65", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "brand",
+    "tags": [{"value": "École de Conduite Française", "count": 1}],
+    "count": 1
+  }
+]

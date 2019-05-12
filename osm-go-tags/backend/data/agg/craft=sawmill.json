@@ -1,0 +1,35 @@
+[
+  {"key": "craft", "tags": [{"value": "sawmill", "count": 35}], "count": 35},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Patrick Chassignol", "count": 1},
+      {"value": "Souchon", "count": 1},
+      {"value": "Forge Mahussier", "count": 1},
+      {"value": "Louis Julliard", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://scierie-construction-bois-isere.com/", "count": 1},
+      {"value": "http://www.souchon-freres.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 2}], "count": 2},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "works", "count": 1}], "count": 1},
+  {"key": "works:type", "tags": [{"value": "sawmill", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 64 48 46", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 77 64 44 95", "count": 1}],
+    "count": 1
+  }
+]

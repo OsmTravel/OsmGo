@@ -1,0 +1,20 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "construction", "count": 10}],
+    "count": 10
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "changer en shop=ticket lors de son ouverture", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "network", "tags": [{"value": "Transilien", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "SNCF", "count": 1}], "count": 1},
+  {"key": "construction", "tags": [{"value": "ticket", "count": 1}], "count": 1}
+]

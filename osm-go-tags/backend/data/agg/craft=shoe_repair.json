@@ -1,0 +1,28 @@
+[
+  {"key": "craft", "tags": [{"value": "shoe_repair", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Réparation de chaussons d'escalade et matériel de montagne.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "info@clinique-du-chausson.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 7 87969480", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "https://reparation-materiel-montagne.fr/", "count": 1}],
+    "count": 1
+  }
+]

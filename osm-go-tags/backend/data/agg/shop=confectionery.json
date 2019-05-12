@@ -1,0 +1,140 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "confectionery", "count": 109}],
+    "count": 109
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 46 30 97", "count": 1},
+      {"value": "+33478298508", "count": 1},
+      {"value": "+33 4 75 00 19 72", "count": 1},
+      {"value": "+33 4 57 93 03 89", "count": 1},
+      {"value": "+33 4 50 03 10 59", "count": 1},
+      {"value": "+33 4 75 29 02 32", "count": 1},
+      {"value": "+33 4 50 92 11 38", "count": 1},
+      {"value": "+33 4 50 38 81 38", "count": 1},
+      {"value": "+33 4 75 01 04 95", "count": 1},
+      {"value": "+33 6 27 66 05 53", "count": 1},
+      {"value": "+33 4 76 22 61 70", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.chocolats-pralus.com/", "count": 1},
+      {"value": "https://linstant-patisserie.fr/", "count": 1},
+      {"value": "http://www.lecomptoirdemathilde.com", "count": 1},
+      {"value": "https://labonbonnieredotlive.wordpress.com/", "count": 1},
+      {"value": "www.traiteuraunezfin.fr", "count": 1},
+      {"value": "http://www.chocolat-voisin.com/", "count": 1},
+      {"value": "www.patisserie-lesage.com", "count": 1},
+      {"value": "http://www.les-chocolats-d-abi-et-lisa.com/", "count": 1},
+      {"value": "http://www.nougat-doulce-france.fr", "count": 1},
+      {"value": "http://confiserielousucreu.fr/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Jeff-de-Bruges",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 4}, {"value": "1", "count": 1}],
+    "count": 5
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 4}], "count": 4},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "patisserielinstant@gmail.com", "count": 1},
+      {"value": "aunezfin@hotmail.com", "count": 1},
+      {"value": "gourmandises@patisserie-lesage.com", "count": 1},
+      {"value": "confiserielousucreu@gmail.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "ice_cream", "count": 2}, {"value": "cafe", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "produits régionaux", "count": 1},
+      {"value": "Listed in Gault&Millaut", "count": 1},
+      {"value": "mailto:labonbonniere@live.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Dosenbach-Ochsner AG", "count": 1},
+      {"value": "MAÎTRE PÂTISSIER, CHOCOLATIER, GLACIER", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Patissier/chocolatier", "count": 1},
+      {"value": "chocolats", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "chocolate", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "takeaway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 50 37 53 11", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1941-03-07", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117857", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q22967563", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [{"value": "http://www.chocolateriedesbauges.com/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "cuisine", "tags": [{"value": "cake", "count": 1}], "count": 1}
+]

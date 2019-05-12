@@ -1,0 +1,17 @@
+[
+  {"key": "craft", "tags": [{"value": "yes", "count": 19}], "count": 19},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Maçonnerie générale", "count": 1},
+      {"value": "Fabrication de moules plastiques", "count": 1},
+      {"value": "Fabrication matériel de levage et de manutention", "count": 1},
+      {"value": "Travaux de plâtrerie", "count": 1},
+      {"value": "plomberie", "count": 1},
+      {"value": "menuiserie, charpentes", "count": 1},
+      {"value": "cabinet d'expertise comptable", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "shop", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

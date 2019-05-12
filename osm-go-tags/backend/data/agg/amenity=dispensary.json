@@ -1,0 +1,8 @@
+[
+  {"key": "amenity", "tags": [{"value": "dispensary", "count": 1}], "count": 1},
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "dispensary", "count": 1}],
+    "count": 1
+  }
+]

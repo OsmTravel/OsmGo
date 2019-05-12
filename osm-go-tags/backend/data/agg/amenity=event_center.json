@@ -1,0 +1,40 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "event_center", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "congres@metz-evenements.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "height", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "20", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Limites approximatives réalisées à partir de la vue aérienne \"Standard DigitalGlobe\", à corriger dès que présent dans le Cadastre",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "GL Events", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 87 55 66 00", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2018-09-07", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.metz-congres.com/fr", "count": 1}],
+    "count": 1
+  }
+]

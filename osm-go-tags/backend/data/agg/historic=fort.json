@@ -1,0 +1,137 @@
+[
+  {"key": "historic", "tags": [{"value": "fort", "count": 91}], "count": 91},
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "wall", "count": 6},
+      {"value": "retaining_wall", "count": 6},
+      {"value": "city_wall", "count": 4},
+      {"value": "fence; retaining_wall", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Fort des Quatre Seigneurs", "count": 1},
+      {"value": "fr:Bastille (Grenoble)", "count": 1},
+      {"value": "fr:Fort de Comboire", "count": 1},
+      {"value": "fr:Fort du Bourcet", "count": 1},
+      {"value": "it:Batteria Pattacroce", "count": 1},
+      {"value": "fr:Fort de Feyzin", "count": 1},
+      {"value": "fr:Fort de Montcorin", "count": 1},
+      {"value": "fr:Fort de Champvillard", "count": 1},
+      {"value": "fr:Fort du Bruissin", "count": 1},
+      {"value": "fr:Fort du Saint-Eynard", "count": 1},
+      {"value": "fr:Marthod", "count": 1},
+      {"value": "fr:Fort du Mûrier", "count": 1},
+      {"value": "fr:Fort du Mont Verdun", "count": 1},
+      {"value": "fr:Fort de Vancia", "count": 1},
+      {"value": "it:Batteria La Court", "count": 1},
+      {"value": "it:Forte Cassa", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 11},
+      {"value": "wilderness_hut", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3078375", "count": 1},
+      {"value": "Q545992", "count": 1},
+      {"value": "Q3078332", "count": 1},
+      {"value": "Q3078199", "count": 1},
+      {"value": "Q3078382", "count": 1},
+      {"value": "Q3078323", "count": 1},
+      {"value": "Q1438848", "count": 1},
+      {"value": "Q17628482", "count": 1},
+      {"value": "Q1438876", "count": 1},
+      {"value": "Q3078353", "count": 1},
+      {"value": "Q761624", "count": 1},
+      {"value": "Q3078371", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "2395", "count": 1},
+      {"value": "1993", "count": 1},
+      {"value": "1440", "count": 1},
+      {"value": "2090", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "ruins", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "military",
+    "tags": [
+      {"value": "bunker", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "barracks", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "1887", "count": 1}, {"value": "1905", "count": 1}],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "military", "count": 2}], "count": 2},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "381850788D", "count": 1}],
+    "count": 1
+  },
+  {"key": "natural", "tags": [{"value": "grassland", "count": 1}], "count": 1},
+  {
+    "key": "site_type",
+    "tags": [{"value": "fortification", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "castle_type",
+    "tags": [{"value": "fortress", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.fortifications-maurienne.com/saintgobain.htm",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1994-08-19", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00132949", "count": 1}], "count": 1},
+  {"key": "drinking_water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "FIXME (très approximatif)", "count": 1}],
+    "count": 1
+  }
+]

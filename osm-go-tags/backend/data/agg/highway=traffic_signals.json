@@ -1,0 +1,167 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "traffic_signals", "count": 4897}],
+    "count": 4897
+  },
+  {
+    "key": "traffic_signals:direction",
+    "tags": [
+      {"value": "forward", "count": 349},
+      {"value": "backward", "count": 279}
+    ],
+    "count": 628
+  },
+  {
+    "key": "crossing",
+    "tags": [
+      {"value": "traffic_signals", "count": 529},
+      {"value": "no", "count": 40},
+      {"value": "uncontrolled", "count": 9},
+      {"value": "island", "count": 5},
+      {"value": "zebra", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 585
+  },
+  {
+    "key": "traffic_signals",
+    "tags": [
+      {"value": "signal", "count": 291},
+      {"value": "traffic_lights", "count": 39},
+      {"value": "crossing", "count": 10},
+      {"value": "emergency", "count": 2}
+    ],
+    "count": 342
+  },
+  {
+    "key": "crossing_ref",
+    "tags": [{"value": "zebra", "count": 198}],
+    "count": 198
+  },
+  {
+    "key": "supervised",
+    "tags": [{"value": "no", "count": 79}, {"value": "yes", "count": 7}],
+    "count": 86
+  },
+  {
+    "key": "button_operated",
+    "tags": [{"value": "yes", "count": 81}, {"value": "no", "count": 4}],
+    "count": 85
+  },
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "forward", "count": 44},
+      {"value": "backward", "count": 27}
+    ],
+    "count": 71
+  },
+  {
+    "key": "tactile_paving",
+    "tags": [{"value": "yes", "count": 51}, {"value": "no", "count": 2}],
+    "count": 53
+  },
+  {
+    "key": "bicycle",
+    "tags": [{"value": "yes", "count": 31}, {"value": "no", "count": 10}],
+    "count": 41
+  },
+  {
+    "key": "restriction:bicycle",
+    "tags": [{"value": "give_way", "count": 28}],
+    "count": 28
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2018-08-01", "count": 7},
+      {"value": "2018-02-15", "count": 5},
+      {"value": "2017-09-21", "count": 2},
+      {"value": "2018-08-09", "count": 1},
+      {"value": "2017-07-18", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "horse",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "surveillance", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "traffic_signals:sound",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "barrier", "tags": [{"value": "lift_gate", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Carrefour modifie, vu sur le terrain en decembre 2015",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {"key": "maxspeed", "tags": [{"value": "30", "count": 2}], "count": 2},
+  {
+    "key": "created_by",
+    "tags": [{"value": "Editop", "count": 1}, {"value": "JOSM", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Feux et marquages au sol non apparents sur les orthophotographies Lyon 2015",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "railway",
+    "tags": [{"value": "level_crossing", "count": 1}],
+    "count": 1
+  },
+  {"key": "motorcar", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0016", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "public", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "traffic_calming",
+    "tags": [{"value": "table", "count": 1}],
+    "count": 1
+  },
+  {"key": "sloped_curb", "tags": [{"value": "both", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "psv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "bus:lanes",
+    "tags": [{"value": "yes|yes|designated", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "access:lanes",
+    "tags": [{"value": "yes|yes|no", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "542", "count": 1}], "count": 1},
+  {"key": "camera:type", "tags": [{"value": "dome", "count": 1}], "count": 1},
+  {"key": "motorcycle", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

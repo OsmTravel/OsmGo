@@ -1,0 +1,75 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "mini_roundabout", "count": 1025}],
+    "count": 1025
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Merkaartor 0.13", "count": 2},
+      {"value": "Editop", "count": 1},
+      {"value": "JOSM", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "anticlockwise", "count": 3},
+      {"value": "sens trigo", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "traffic_calming",
+    "tags": [
+      {"value": "hump", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "table", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 2}],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {
+    "key": "historic",
+    "tags": [{"value": "wayside_cross", "count": 2}],
+    "count": 2
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "ce giratoire est-il traversable ?", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0016", "count": 1}],
+    "count": 1
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "fountain", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "tree", "count": 1}], "count": 1},
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 1}],
+    "count": 1
+  }
+]

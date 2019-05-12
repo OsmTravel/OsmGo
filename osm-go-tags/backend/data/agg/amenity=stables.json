@@ -1,0 +1,37 @@
+[
+  {"key": "amenity", "tags": [{"value": "stables", "count": 2}], "count": 2},
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "horse_riding", "count": 1},
+      {"value": "sports_centre", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "secondsouffle@yahoo.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://u.jimdo.com/www27/o/s41ee3c97ad0a954e/img/i404a7d5bcf8c471a/1377885582/orig/le-centre-%C3%A9questre.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 03 65 15 61", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "equestrian", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.secondsouffle.fr/", "count": 1}],
+    "count": 1
+  }
+]

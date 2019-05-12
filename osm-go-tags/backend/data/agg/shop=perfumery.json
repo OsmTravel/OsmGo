@@ -1,0 +1,35 @@
+[
+  {"key": "shop", "tags": [{"value": "perfumery", "count": 20}], "count": 20},
+  {"key": "level", "tags": [{"value": "0", "count": 4}], "count": 4},
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.marionnaud.fr/", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/bleu-libellule-bleu-libellule-geant-saint-martin-dheres",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 70 08 99", "count": 1},
+      {"value": "+33476421558", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {"key": "brand", "tags": [{"value": "Nocibé", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Marionnaud", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cards", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "note", "tags": [{"value": "Parfumerie", "count": 1}], "count": 1}
+]

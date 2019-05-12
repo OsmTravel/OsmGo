@@ -1,0 +1,14 @@
+[
+  {"key": "highway", "tags": [{"value": "bus_stop", "count": 1}], "count": 1},
+  {"key": "uic_ref", "tags": [{"value": "3462", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Liberty Bus", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "bus", "count": 1}],
+    "count": 1
+  }
+]

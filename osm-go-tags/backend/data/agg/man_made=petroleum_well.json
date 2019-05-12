@@ -1,0 +1,23 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "petroleum_well", "count": 220}],
+    "count": 220
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "ref_no",
+    "tags": [
+      {"value": "99/18-1;99/18-1A", "count": 1},
+      {"value": "99/18-1B", "count": 1},
+      {"value": "87/14-1", "count": 1},
+      {"value": "98/23-1", "count": 1},
+      {"value": "99/16-1", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 4}], "count": 4},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "track", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,8 @@
+[
+  {"key": "content", "tags": [{"value": "manure", "count": 1}], "count": 1},
+  {
+    "key": "man_made",
+    "tags": [{"value": "reservoir_tank", "count": 1}],
+    "count": 1
+  }
+]

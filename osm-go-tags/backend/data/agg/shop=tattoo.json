@@ -1,0 +1,34 @@
+[
+  {"key": "shop", "tags": [{"value": "tattoo", "count": 44}], "count": 44},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 88 79 48 88", "count": 1},
+      {"value": "+33 4 57 13 53 93", "count": 1},
+      {"value": "+33 4 74 57 86 67", "count": 1},
+      {"value": "+33 9 83 07 36 48", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.dame-de-pique.fr", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Skull-and-Rose/326618897443796",
+        "count": 1
+      },
+      {"value": "http://www.tattoo-mistika.fr/", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {"key": "dispensing", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "+33 6 15106615", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "Check name", "count": 1}], "count": 1}
+]

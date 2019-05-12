@@ -1,0 +1,106 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "technical_monument", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "heritage",
+    "tags": [
+      {"value": "3", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "47 m", "count": 1},
+      {"value": "25 m", "count": 1},
+      {"value": "3.5", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "crane", "count": 2},
+      {"value": "mineshaft", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PM44000873", "count": 1},
+      {"value": "IA58000602", "count": 1},
+      {"value": "IA45000048", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1966", "count": 1},
+      {"value": "1942..1943", "count": 1},
+      {"value": "1912", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2005-05-27", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "technical_monument",
+    "tags": [{"value": "train", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Grue Titan", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Gleisabschnitt der ehem. Straßenbahnlinie", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://patrimoinemanosquin.weebly.com/la-glaciegravere.html",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "attraction", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/a/ae/TGV001.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "manufacturer",
+    "tags": [{"value": "GEC Alsthom", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:colour", "tags": [{"value": "black", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3118168", "count": 1}], "count": 1}
+]

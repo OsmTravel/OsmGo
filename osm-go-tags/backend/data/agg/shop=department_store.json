@@ -1,0 +1,67 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "department_store", "count": 30}],
+    "count": 30
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La Foir'Fouille", "count": 1},
+      {"value": "Spar", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "Super U", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://gasandmore.ch", "count": 1},
+      {"value": "www.sca-productions.com", "count": 1},
+      {"value": "http://www.cite-antiquaires.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "ski_rental", "count": 1},
+      {"value": "parking", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "1", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+41587481265", "count": 1},
+      {"value": "+33 4 76 21 24 09", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "rental", "tags": [{"value": "ski", "count": 1}], "count": 1},
+  {
+    "key": "parking",
+    "tags": [{"value": "multi-storey", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "C'est vraiment le nom du commerce", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 1}], "count": 1},
+  {"key": "drive_through", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "Position estimated", "count": 1}],
+    "count": 1
+  },
+  {"key": "colour", "tags": [{"value": "silver", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

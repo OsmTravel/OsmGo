@@ -1,0 +1,15 @@
+[
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "emergency", "tags": [{"value": "map", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "plan du niveau avcec l'emplacement des acces de secours et extincteurs",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

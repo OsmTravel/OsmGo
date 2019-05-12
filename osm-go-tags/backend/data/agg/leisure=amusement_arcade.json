@@ -1,0 +1,44 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "amusement_arcade", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.gamespirit.fr/", "count": 1},
+      {"value": "http://destination-vr.fr/", "count": 1},
+      {"value": "http://virtualplace.fr/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "virtual_reality",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@gamespirit.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 78 60 32 20", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "video_games", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Simulateurs pilotage automobile et avion, Escape room.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

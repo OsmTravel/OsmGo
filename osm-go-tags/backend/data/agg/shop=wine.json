@@ -1,0 +1,67 @@
+[
+  {"key": "shop", "tags": [{"value": "wine", "count": 30}], "count": 30},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://fr-fr.facebook.com/lacavedutemple/", "count": 1},
+      {"value": "http://www.rhone-magnum.fr/", "count": 1},
+      {"value": "http://www.lechatouilleur.fr", "count": 1},
+      {"value": "http://anticwine.e-monsite.com", "count": 1},
+      {"value": "https://www.unecaveabron.com", "count": 1},
+      {"value": "https://www.vinssurvans.fr/", "count": 1},
+      {"value": "http://www.cave-du-bourg.fr/", "count": 1},
+      {"value": "http://corpsdeloup.com/", "count": 1},
+      {
+        "value": "https://www.nicolas.com/fr/magasins/LYON-SAXE/s/00008943.html",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 31 08 17", "count": 1},
+      {"value": "+33 4 50 58 02 24", "count": 1},
+      {"value": "+33478370896", "count": 1},
+      {"value": "+33 4 75 88 56 46", "count": 1},
+      {"value": "+33 4 78 65 94 05", "count": 1},
+      {"value": "+33 4 75 57 13 51", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Nicolas", "count": 1},
+      {"value": "Famille Daubrée", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "winery", "count": 1}], "count": 1},
+  {"key": "currency:XLT", "tags": [{"value": "GONT", "count": 1}], "count": 1},
+  {
+    "key": "payment:cash:XLT-GONT",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "4725Z", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "52531740000014", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2 novembre 2010", "count": 1}],
+    "count": 1
+  },
+  {"key": "cuisine", "tags": [{"value": "french", "count": 1}], "count": 1}
+]

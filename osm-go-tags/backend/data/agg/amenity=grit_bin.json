@@ -1,0 +1,8 @@
+[
+  {"key": "amenity", "tags": [{"value": "grit_bin", "count": 20}], "count": 20},
+  {
+    "key": "access",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  }
+]

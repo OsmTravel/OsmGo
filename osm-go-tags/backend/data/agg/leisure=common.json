@@ -1,0 +1,70 @@
+[
+  {"key": "leisure", "tags": [{"value": "common", "count": 261}], "count": 261},
+  {"key": "area", "tags": [{"value": "yes", "count": 11}], "count": 11},
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "village_green", "count": 6},
+      {"value": "grass", "count": 3}
+    ],
+    "count": 9
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "380220120L", "count": 1},
+      {"value": "692190230Y", "count": 1},
+      {"value": "385600790A", "count": 1},
+      {"value": "6902640185D", "count": 1},
+      {"value": "6902640601F", "count": 1},
+      {"value": "6902641525K", "count": 1},
+      {"value": "6902641005V", "count": 1},
+      {"value": "690920305G", "count": 1},
+      {"value": "383150175X", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Place Bellevue (Lyon)", "count": 1},
+      {"value": "fr:Place Benoît-Crépu", "count": 1},
+      {"value": "fr:Foire de Beaucroissant", "count": 1},
+      {"value": "fr:Fort de Côte-Lorette", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "ice_climbing", "count": 1},
+      {"value": "canoe", "count": 1},
+      {"value": "multi", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "pedestrian", "count": 2},
+      {"value": "residential", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "surface",
+    "tags": [{"value": "grass", "count": 1}, {"value": "paved", "count": 1}],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [{"value": "How to tag this ?", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "waterfall", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "1.6", "count": 1}], "count": 1}
+]

@@ -1,0 +1,14 @@
+[
+  {"key": "natural", "tags": [{"value": "volcano", "count": 2}], "count": 2},
+  {"key": "ele", "tags": [{"value": "725", "count": 1}], "count": 1},
+  {
+    "key": "volcano:type",
+    "tags": [{"value": "stratovolcano", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "volcano:status",
+    "tags": [{"value": "extinct", "count": 1}],
+    "count": 1
+  }
+]

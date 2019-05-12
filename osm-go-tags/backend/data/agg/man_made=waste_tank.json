@@ -1,0 +1,12 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "waste_tank", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Réservoir de déchets", "count": 2}],
+    "count": 2
+  }
+]

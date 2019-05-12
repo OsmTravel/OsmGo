@@ -1,0 +1,20 @@
+[
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "sally_port", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1978-09-07", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117020", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q22966875", "count": 1}], "count": 1}
+]

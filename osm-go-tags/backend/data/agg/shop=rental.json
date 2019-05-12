@@ -1,0 +1,24 @@
+[
+  {"key": "shop", "tags": [{"value": "rental", "count": 16}], "count": 16},
+  {"key": "canoe_rental", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "rental", "count": 2},
+      {"value": "boat_rental", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "ski:rental", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "bicycle:rental", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "commercial", "count": 1}], "count": 1},
+  {"key": "kayak_rental", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.grillet-sports.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Loxam", "count": 1}], "count": 1},
+  {"key": "rental", "tags": [{"value": "machines", "count": 1}], "count": 1},
+  {"key": "mtb:rental", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

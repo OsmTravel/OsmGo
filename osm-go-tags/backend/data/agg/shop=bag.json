@@ -1,0 +1,36 @@
+[
+  {"key": "shop", "tags": [{"value": "bag", "count": 37}], "count": 37},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 4}, {"value": "1", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 14 18", "count": 1},
+      {"value": "+33 4 74 85 12 41", "count": 1},
+      {"value": "+33 4 74 85 49 23", "count": 1},
+      {"value": "+33 4 76 09 62 44", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 4}], "count": 4},
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "note", "tags": [{"value": "Maroquinerie", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Gandy",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {"key": "shop", "tags": [{"value": "craft", "count": 17}], "count": 17},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://ideogram-papier.com/", "count": 1},
+      {"value": "http://www.arteis-chambery.fr/", "count": 1},
+      {"value": "https://www.arte-sincero.com/", "count": 1},
+      {"value": "http://etcolegram.free.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "craft",
+    "tags": [{"value": "hvac", "count": 1}, {"value": "pottery", "count": 1}],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "Juliette Baras", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Vente d'artisanat local (bijoux, chapeaux, sculpture, etc.)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 28 57 14", "count": 1}],
+    "count": 1
+  }
+]

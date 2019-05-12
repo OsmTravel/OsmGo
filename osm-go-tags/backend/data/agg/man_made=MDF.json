@@ -1,0 +1,15 @@
+[
+  {"key": "ref", "tags": [{"value": "mut38", "count": 1}], "count": 1},
+  {
+    "key": "telecom",
+    "tags": [{"value": "central_office", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "MDF", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "France Telecom", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:PTT", "tags": [{"value": "38185MUT", "count": 1}], "count": 1}
+]

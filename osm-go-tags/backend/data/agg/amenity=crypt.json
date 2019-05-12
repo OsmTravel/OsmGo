@@ -1,0 +1,16 @@
+[
+  {"key": "amenity", "tags": [{"value": "crypt", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1994-12-05", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00132939", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3329777", "count": 1}], "count": 1}
+]

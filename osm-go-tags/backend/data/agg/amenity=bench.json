@@ -1,0 +1,207 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "bench", "count": 7511}],
+    "count": 7511
+  },
+  {
+    "key": "backrest",
+    "tags": [{"value": "yes", "count": 3154}, {"value": "no", "count": 582}],
+    "count": 3736
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "wood", "count": 1971},
+      {"value": "concrete", "count": 234},
+      {"value": "stone", "count": 208},
+      {"value": "metal", "count": 175},
+      {"value": "rock", "count": 15},
+      {"value": "bois et métal", "count": 11},
+      {"value": "plastic", "count": 4},
+      {"value": "Bois", "count": 1},
+      {"value": "wood;metal", "count": 1},
+      {"value": "pierre et bois", "count": 1},
+      {"value": "pierre-bois", "count": 1}
+    ],
+    "count": 2622
+  },
+  {
+    "key": "seats",
+    "tags": [
+      {"value": "3", "count": 1240},
+      {"value": "4", "count": 519},
+      {"value": "2", "count": 153},
+      {"value": "5", "count": 110},
+      {"value": "6", "count": 68},
+      {"value": "1", "count": 30},
+      {"value": "8", "count": 20},
+      {"value": "12", "count": 11},
+      {"value": "10", "count": 7},
+      {"value": "14", "count": 3},
+      {"value": "30", "count": 1},
+      {"value": "60", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "15", "count": 1}
+    ],
+    "count": 2167
+  },
+  {
+    "key": "colour",
+    "tags": [
+      {"value": "brown", "count": 1322},
+      {"value": "gray", "count": 278},
+      {"value": "white", "count": 86},
+      {"value": "green", "count": 66},
+      {"value": "black", "count": 10},
+      {"value": "red", "count": 10},
+      {"value": "blue", "count": 5},
+      {"value": "#CD853F", "count": 1}
+    ],
+    "count": 1778
+  },
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "SSE", "count": 8},
+      {"value": "SSW", "count": 7},
+      {"value": "SE", "count": 6},
+      {"value": "SW", "count": 6},
+      {"value": "N", "count": 6},
+      {"value": "NE", "count": 5},
+      {"value": "E", "count": 4},
+      {"value": "S", "count": 3},
+      {"value": "ENE", "count": 2},
+      {"value": "NW", "count": 2},
+      {"value": "WNW", "count": 2},
+      {"value": "W", "count": 2},
+      {"value": "NNE", "count": 1},
+      {"value": "NNW", "count": 1}
+    ],
+    "count": 55
+  },
+  {
+    "key": "surface",
+    "tags": [{"value": "wood", "count": 23}, {"value": "stone", "count": 1}],
+    "count": 24
+  },
+  {
+    "key": "capacity",
+    "tags": [{"value": "2", "count": 7}, {"value": "3", "count": 5}],
+    "count": 12
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1530", "count": 2},
+      {"value": "511", "count": 1},
+      {"value": "845", "count": 1},
+      {"value": "920", "count": 1},
+      {"value": "910", "count": 1},
+      {"value": "269.0", "count": 1},
+      {"value": "317.4", "count": 1},
+      {"value": "325.2", "count": 1},
+      {"value": "351.0", "count": 1},
+      {"value": "350.0", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "FIXME Ce sont plutôt des chaises, mais comment les tagguer ?",
+        "count": 9
+      },
+      {"value": "2 gradins continus d'environ 15m linéaire chacun", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "level", "tags": [{"value": "-1", "count": 10}], "count": 10},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "viewpoint", "count": 8},
+      {"value": "picnic_site", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "orientation",
+    "tags": [
+      {"value": "east", "count": 5},
+      {"value": "SW", "count": 2},
+      {"value": "N", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "picnic_table", "count": 5},
+      {"value": "pitch", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Chaises longues", "count": 3},
+      {"value": "banc fait de 3 skis", "count": 1},
+      {"value": "Couvert", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ele:msl",
+    "tags": [
+      {"value": "269.0", "count": 1},
+      {"value": "317.4", "count": 1},
+      {"value": "325.2", "count": 1},
+      {"value": "351.0", "count": 1},
+      {"value": "350.0", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "bench", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-09-27", "count": 3},
+      {"value": "2017-07-05", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "facing",
+    "tags": [{"value": "SE", "count": 2}, {"value": "NW", "count": 1}],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "bin", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "highway", "tags": [{"value": "bus_stop", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "transisère", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "2006", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "free_flying", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.pioupiou.fr/fr/289", "count": 1}],
+    "count": 1
+  }
+]

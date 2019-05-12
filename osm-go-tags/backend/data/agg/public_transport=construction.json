@@ -1,0 +1,16 @@
+[
+  {
+    "key": "construction",
+    "tags": [{"value": "stop_position", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "construction", "count": 5}],
+    "count": 5
+  },
+  {"key": "network", "tags": [{"value": "RATP", "count": 2}], "count": 2},
+  {"key": "operator", "tags": [{"value": "RATP", "count": 2}], "count": 2},
+  {"key": "ref", "tags": [{"value": "T3b", "count": 2}], "count": 2},
+  {"key": "tram", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

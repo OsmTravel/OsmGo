@@ -1,0 +1,24 @@
+[
+  {
+    "key": "advertising",
+    "tags": [{"value": "small_billboards", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "faces",
+    "tags": [{"value": "2", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {"key": "luminous", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "A5GPENwjzvl7q7pk69uCVA", "count": 1}],
+    "count": 1
+  },
+  {"key": "support", "tags": [{"value": "wall", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-24", "count": 1}],
+    "count": 1
+  }
+]

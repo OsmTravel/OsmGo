@@ -1,0 +1,31 @@
+[
+  {"key": "office", "tags": [{"value": "religion", "count": 3}], "count": 3},
+  {
+    "key": "religion",
+    "tags": [
+      {"value": "christian", "count": 2},
+      {"value": "buddhist", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "accueil@cebtl-ktl.org", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 37 24 01 93", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.cebtl-ktl.org/", "count": 1}],
+    "count": 1
+  }
+]

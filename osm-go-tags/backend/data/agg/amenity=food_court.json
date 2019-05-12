@@ -1,0 +1,50 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "food_court", "count": 24}],
+    "count": 24
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "CROUS de Lyon", "count": 1},
+      {"value": "Crous", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "1", "count": 1}, {"value": "-1", "count": 1}],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "takeaway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.crous-lyon.fr/restaurant/cafeteria-telecom-saint-etienne/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "toilets:access",
+    "tags": [{"value": "customers", "count": 1}],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 26 25 53 02;+33 4 75 60 87 38", "count": 1}],
+    "count": 1
+  }
+]

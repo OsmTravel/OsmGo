@@ -1,0 +1,9 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "potty_area", "count": 27}],
+    "count": 27
+  },
+  {"key": "dog", "tags": [{"value": "designated", "count": 24}], "count": 24},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "key": "fixme",
+    "tags": [{"value": "really unsure about how to tag this", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "logistics", "count": 1}], "count": 1}
+]

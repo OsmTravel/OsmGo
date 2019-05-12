@@ -1,0 +1,38 @@
+[
+  {"key": "office", "tags": [{"value": "financial", "count": 13}], "count": 13},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3006216", "count": 2},
+      {"value": "Q3211063", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Crédit foncier de France", "count": 2},
+      {"value": "fr:La Nef (entreprise)", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 81 65 00 00", "count": 1},
+      {"value": "+33 825 00 20 04", "count": 1},
+      {"value": "+33478730330", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "atm", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.lanef.com", "count": 1},
+      {"value": "https://www.sofinco.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

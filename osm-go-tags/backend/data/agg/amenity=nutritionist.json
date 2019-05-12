@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "nutritionist", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "8690F", "count": 1}], "count": 1}
+]

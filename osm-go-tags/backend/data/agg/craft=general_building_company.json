@@ -1,0 +1,8 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "general_building_company", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1}
+]

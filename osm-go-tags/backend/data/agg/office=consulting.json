@@ -1,0 +1,25 @@
+[
+  {"key": "office", "tags": [{"value": "consulting", "count": 7}], "count": 7},
+  {
+    "key": "consulting",
+    "tags": [
+      {"value": "human ressources", "count": 1},
+      {"value": "hypnose", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+41 61 482 16 16", "count": 1},
+      {"value": "+33 643629018", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.simpleperfect.ch", "count": 1}],
+    "count": 1
+  }
+]

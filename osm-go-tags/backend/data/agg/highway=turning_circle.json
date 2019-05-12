@@ -1,0 +1,61 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "turning_circle", "count": 5971}],
+    "count": 5971
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Merkaartor 0.13", "count": 3},
+      {"value": "JOSM", "count": 1},
+      {"value": "Merkaartor 0.11", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 2},
+      {"value": "pebblestone", "count": 1},
+      {"value": "gravel", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {"key": "amenity", "tags": [{"value": "parking", "count": 2}], "count": 2},
+  {"key": "fee", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "parking", "tags": [{"value": "surface", "count": 2}], "count": 2},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Rond point ", "count": 1}],
+    "count": 1
+  },
+  {"key": "aeroway", "tags": [{"value": "helipad", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "780", "count": 1}], "count": 1},
+  {
+    "key": "transport",
+    "tags": [{"value": "turning_cycle", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service",
+    "tags": [{"value": "parking_aisle", "count": 1}],
+    "count": 1
+  },
+  {"key": "construction", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "crossing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "741730027L", "count": 1}],
+    "count": 1
+  }
+]

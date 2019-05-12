@@ -1,0 +1,63 @@
+[
+  {"key": "shop", "tags": [{"value": "e-cigarette", "count": 41}], "count": 41},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://vapstyle.fr/", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/pages/Smoky-House-Vienne/1407813159474440?ref=stream",
+        "count": 1
+      },
+      {"value": "http://www.cigelecgeneration.com/boutique/", "count": 1},
+      {"value": "http://www.yes-attitude.com/", "count": 1},
+      {"value": "http://www.ciga.fr", "count": 1},
+      {"value": "http://www.clop-oliver.fr/", "count": 1},
+      {"value": "http://www.cigusto.com/", "count": 1},
+      {
+        "value": "https://www.vapostore.com/boutiques/3-magasin-cigarette-electronique-province/lyon-69-58",
+        "count": 1
+      },
+      {"value": "https://www.vap-en-marche.fr/", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 31 64 48", "count": 1},
+      {"value": "+33 6 79 14 13 95", "count": 1},
+      {"value": "+33 9 52 56 30 00", "count": 1},
+      {"value": "+33478607789", "count": 1},
+      {"value": "+33 4 26070780", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 3}, {"value": "limited", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Cigarettes électroniques", "count": 1},
+      {"value": "Vapotage", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Vapostore", "count": 1},
+      {"value": "Au bon vapoteur", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "post_office:type",
+    "tags": [{"value": "post_partner", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "shop=?", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

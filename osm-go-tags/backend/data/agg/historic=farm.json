@@ -1,0 +1,132 @@
+[
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA73000013", "count": 1},
+      {"value": "PA00116545", "count": 1},
+      {"value": "PA00116546", "count": 1},
+      {"value": "PA00118076", "count": 1},
+      {"value": "PA07000012", "count": 1},
+      {"value": "PA00116544", "count": 1},
+      {"value": "PA00116387", "count": 1},
+      {"value": "PA00116572", "count": 1},
+      {"value": "PA74000008", "count": 1},
+      {"value": "PA74000013", "count": 1},
+      {"value": "PA00116615", "count": 1},
+      {"value": "PA00116767", "count": 1},
+      {"value": "PA00116768", "count": 1},
+      {"value": "PA00116769", "count": 1},
+      {"value": "PA00116737", "count": 1},
+      {"value": "PA74000005", "count": 1},
+      {"value": "PA00116781", "count": 1},
+      {"value": "PA00116698", "count": 1},
+      {"value": "PA00116741", "count": 1},
+      {"value": "PA00116780", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 14}, {"value": "2", "count": 6}],
+    "count": 20
+  },
+  {"key": "historic", "tags": [{"value": "farm", "count": 20}], "count": 20},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22998086", "count": 1},
+      {"value": "Q3068897", "count": 1},
+      {"value": "Q3115330", "count": 1},
+      {"value": "Q22968242", "count": 1},
+      {"value": "Q3115331", "count": 1},
+      {"value": "Q3068929", "count": 1},
+      {"value": "Q3068912", "count": 1},
+      {"value": "Q3068917", "count": 1},
+      {"value": "Q3280115", "count": 1},
+      {"value": "Q3068866", "count": 1},
+      {"value": "Q3068909", "count": 1},
+      {"value": "Q3068843", "count": 1},
+      {"value": "Q3068844", "count": 1},
+      {"value": "Q3068850", "count": 1},
+      {"value": "Q3068901", "count": 1},
+      {"value": "Q3068963", "count": 1},
+      {"value": "Q3068869", "count": 1},
+      {"value": "Q3068852", "count": 1},
+      {"value": "Q3068851", "count": 1},
+      {"value": "Q3068827", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 20}],
+    "count": 20
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1985-10-07", "count": 3},
+      {"value": "1925", "count": 2},
+      {"value": "1984-05-30", "count": 2},
+      {"value": "1987-09-22", "count": 2},
+      {"value": "2006-10-24", "count": 1},
+      {"value": "1938", "count": 1},
+      {"value": "1944", "count": 1},
+      {"value": "1994", "count": 1},
+      {"value": "2010-12-07", "count": 1},
+      {"value": "1930", "count": 1},
+      {"value": "2007-03-05", "count": 1},
+      {"value": "1981-12-28", "count": 1},
+      {"value": "1988-10-24", "count": 1},
+      {"value": "2004", "count": 1},
+      {"value": "2007-09-19", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Ferme La Grangeasse", "count": 1},
+      {"value": "fr:Ferme de Travernay", "count": 1},
+      {"value": "fr:Grange des Carons", "count": 1},
+      {"value": "fr:Grange du Cheylard", "count": 1},
+      {"value": "fr:Ferme des Planons", "count": 1},
+      {"value": "fr:Ferme de la Forêt", "count": 1},
+      {"value": "fr:Ferme de la Servette", "count": 1},
+      {"value": "fr:Maison du patrimoine bornandin", "count": 1},
+      {"value": "fr:Ferme de Bel-Air (Frangy)", "count": 1},
+      {"value": "fr:Ferme de la Grange du Clou", "count": 1},
+      {"value": "fr:Ferme La Petite Grangeasse", "count": 1},
+      {"value": "fr:Ferme Peyronnet", "count": 1},
+      {"value": "fr:Ferme de l'Espinas", "count": 1},
+      {"value": "fr:Ferme à Isidore", "count": 1},
+      {"value": "fr:Ferme de Clastres", "count": 1},
+      {"value": "fr:Ferme Reynaud", "count": 1},
+      {"value": "fr:Ferme Pra-Plot", "count": 1},
+      {"value": "fr:Ferme Andeol", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C18", "count": 3},
+      {"value": "C17", "count": 2},
+      {"value": "C13", "count": 1},
+      {"value": "C19", "count": 1},
+      {"value": "C15", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Grange du Cheylard, ancienne dépendance de l'abbaye de Mazan",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "museum", "count": 1}], "count": 1}
+]

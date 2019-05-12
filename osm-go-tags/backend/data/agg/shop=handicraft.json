@@ -1,0 +1,23 @@
+[
+  {"key": "shop", "tags": [{"value": "handicraft", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [{"value": "Librairie - Artisanat", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33650443529;+3361213245", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.mukisa-uganda.com/pagesanglais/contacts2.htm",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

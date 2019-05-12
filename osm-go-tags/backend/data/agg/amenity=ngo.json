@@ -1,0 +1,14 @@
+[
+  {"key": "amenity", "tags": [{"value": "ngo", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.fondationbrigittebardot.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q919237", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Fondation Brigitte-Bardot", "count": 1}],
+    "count": 1
+  }
+]

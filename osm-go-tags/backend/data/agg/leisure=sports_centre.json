@@ -1,0 +1,850 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "sports_centre", "count": 1871}],
+    "count": 1871
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "multi", "count": 276},
+      {"value": "swimming", "count": 113},
+      {"value": "tennis", "count": 78},
+      {"value": "equestrian", "count": 64},
+      {"value": "boules", "count": 55},
+      {"value": "gymnastics", "count": 35},
+      {"value": "soccer", "count": 30},
+      {"value": "climbing", "count": 29},
+      {"value": "ultralight_aviation", "count": 23},
+      {"value": "basketball", "count": 17},
+      {"value": "10pin", "count": 10},
+      {"value": "sailing", "count": 9},
+      {"value": "skiing", "count": 9},
+      {"value": "climbing_adventure", "count": 8},
+      {"value": "horse_racing", "count": 7},
+      {"value": "rowing", "count": 7},
+      {"value": "motor", "count": 6},
+      {"value": "karting", "count": 5},
+      {"value": "handball", "count": 5},
+      {"value": "rugby_union", "count": 5},
+      {"value": "athletics", "count": 5},
+      {"value": "laser_tag", "count": 4},
+      {"value": "boxing", "count": 4},
+      {"value": "table_tennis", "count": 4},
+      {"value": "skateboard", "count": 4},
+      {"value": "skating", "count": 4},
+      {"value": "shooting", "count": 4},
+      {"value": "squash", "count": 3},
+      {"value": "volleyball", "count": 3},
+      {"value": "fitness", "count": 3},
+      {"value": "bmx", "count": 3},
+      {"value": "canoe", "count": 3},
+      {"value": "ice_skating", "count": 3},
+      {"value": "climbing;bouldering", "count": 3},
+      {"value": "racquet", "count": 2},
+      {"value": "aikido", "count": 2},
+      {"value": "rugby", "count": 2},
+      {"value": "water_ski", "count": 2},
+      {"value": "bowls", "count": 2},
+      {"value": "football", "count": 2},
+      {"value": "kitesurfing", "count": 2},
+      {"value": "judo", "count": 2},
+      {"value": "yoga", "count": 2},
+      {"value": "rafting", "count": 2},
+      {"value": "dance", "count": 1},
+      {"value": "swimming, tennis, squash", "count": 1},
+      {"value": "american_football", "count": 1},
+      {"value": "tennis;soccer;badminton", "count": 1},
+      {"value": "jorkyball", "count": 1},
+      {
+        "value": "climbing;handball;badminton;bodybuilding;volleyball;basketball",
+        "count": 1
+      },
+      {"value": "swimming;judo", "count": 1},
+      {"value": "circus", "count": 1},
+      {"value": "ice_hockey;swimming", "count": 1},
+      {"value": "zumba", "count": 1},
+      {"value": "golf", "count": 1},
+      {"value": "gymnastics;basketball;badminton;handball", "count": 1},
+      {"value": "basketball;multi", "count": 1},
+      {"value": "judo;karate;aikido;iaido;yoga;tai-chi-chuan", "count": 1},
+      {"value": "roller_hockey", "count": 1},
+      {"value": "badminton;climbing;judo;athletics", "count": 1},
+      {
+        "value": "climbing;badminton;volleyball;handball;wrestling;gymnastics;basketball;soccer",
+        "count": 1
+      },
+      {"value": "cirque", "count": 1},
+      {"value": "curling", "count": 1},
+      {"value": "multi;climbing;basketball", "count": 1},
+      {"value": "paragliding", "count": 1},
+      {"value": "cycling", "count": 1},
+      {"value": "archery", "count": 1},
+      {"value": "hockey", "count": 1},
+      {"value": "climbing;basketball;badminton", "count": 1},
+      {"value": "climbing;basketball;handball", "count": 1},
+      {"value": "badminton;squash;fitness;futsal", "count": 1},
+      {"value": "dog_racing", "count": 1},
+      {"value": "judo;karate;aïkido", "count": 1},
+      {
+        "value": "athletics;tennis;handball;badminton;volleyball;soccer;basketball;running;gymnastics",
+        "count": 1
+      },
+      {"value": "tennis;squash", "count": 1},
+      {"value": "ski de fond", "count": 1},
+      {"value": "handball;badminton;volleyball;soccer", "count": 1},
+      {"value": "club_de_forme", "count": 1},
+      {"value": "swimming;diving", "count": 1},
+      {"value": "fencing", "count": 1},
+      {"value": "soccer;rugby_league", "count": 1},
+      {"value": "soccer;tennis;squash;badminton", "count": 1},
+      {"value": "judo;gymnastics;basketball;handball;climbing", "count": 1},
+      {"value": "football;basketball", "count": 1},
+      {"value": "gymnastics;basketball;multi;volleyball;climbing", "count": 1},
+      {"value": "swimming;scuba_diving;fitness", "count": 1},
+      {"value": "autocross", "count": 1},
+      {"value": "model_car_racing", "count": 1},
+      {"value": "soccer;basketball", "count": 1},
+      {"value": "horse_riding", "count": 1},
+      {"value": "petanque;archery", "count": 1},
+      {"value": "paintball", "count": 1},
+      {"value": "baseball;tennis", "count": 1},
+      {"value": "motocross", "count": 1},
+      {"value": "swimming; fitness; weightlifting", "count": 1}
+    ],
+    "count": 912
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.espacevertical.com", "count": 2},
+      {"value": "http://www.formrider.com", "count": 2},
+      {
+        "value": "http://www.lasergame-evolution.com/fr/106/Saint%20Martin%20D%27H%C3%A8res/",
+        "count": 1
+      },
+      {"value": "http://www.equitation-gite-ardeche.com/", "count": 1},
+      {"value": "http://www.aald.fr", "count": 1},
+      {"value": "http://www.croixdebauzon.com", "count": 1},
+      {"value": "http://genas-bowling.fr/", "count": 1},
+      {"value": "https://www.aloha-sport.fr/", "count": 1},
+      {"value": "http://boutique.sogevab.com", "count": 1},
+      {"value": "http://www.ablok.fr", "count": 1},
+      {"value": "http://www.olympe-fitness.com/", "count": 1},
+      {"value": "http://www.bowlingstar.fr/", "count": 1},
+      {"value": "http://www.urbantrip.fr", "count": 1},
+      {"value": "http://www.bowlingarc2000.com/", "count": 1},
+      {
+        "value": "http://gresse-en-vercors.fr/index.php/sitra/fiche/getFicheSitra?idObjetSitra=507250",
+        "count": 1
+      },
+      {"value": "https://www.climb-up-lyon.fr/", "count": 1},
+      {"value": "http://megazonelyon.com/", "count": 1},
+      {"value": "http://beynost.l-appart.net", "count": 1},
+      {"value": "http://www.oyogastudio.com/", "count": 1},
+      {"value": "http://amazonia.fr/", "count": 1},
+      {"value": "www.dojo-arts-martiaux.com/", "count": 1},
+      {"value": "http://www.espacecardio.fr", "count": 1},
+      {"value": "www.salstpriesttennis.fr", "count": 1},
+      {"value": "www.omh-france-74.com", "count": 1},
+      {"value": "http://www.set-et-match.fr/", "count": 1},
+      {"value": "http://www.fashionclub.fr", "count": 1},
+      {"value": "amazonia.fr/club/grenoble-echirolles", "count": 1},
+      {"value": "http://basenautiquedugap.com", "count": 1},
+      {"value": "http://parc-usson-aventure.com/", "count": 1},
+      {"value": "https://www.aquamotion-courchevel.com/", "count": 1},
+      {"value": "http://www.freekiteschool.com/", "count": 1},
+      {"value": "http://www.teknikite.fr/", "count": 1},
+      {"value": "http://www.wakeiteasy.com/", "count": 1},
+      {"value": "http://www.mroc2.com/", "count": 1},
+      {
+        "value": "http://www.france-aventures.com/fr/nos-parc-fr/lyon",
+        "count": 1
+      },
+      {"value": "http://www.salsagrenoble.fr", "count": 1},
+      {"value": "https://www.facebook.com/Escape-162549220910920/", "count": 1},
+      {
+        "value": "http://www.saintpierredechartreuse.fr/chartreuse-bike-park-base-de-loisirs",
+        "count": 1
+      },
+      {"value": "https://www.mroc3.com/", "count": 1},
+      {
+        "value": "http://integralrafting.wixsite.com/integral-rafting",
+        "count": 1
+      },
+      {
+        "value": "http://maresaenligne.fr/siteresa/squashclubdelyon.php",
+        "count": 1
+      },
+      {"value": "https://www.masquedefer.com/", "count": 1},
+      {"value": "https://villeurbanne.wellness-sportclub.fr/", "count": 1},
+      {"value": "http://www.mistral-fc.fr/", "count": 1},
+      {"value": "http://www.palais-des-sports.com/", "count": 1},
+      {"value": "http://www.labo-bloc.com", "count": 1},
+      {"value": "www.leshippodromesdelyon.fr", "count": 1},
+      {"value": "http://www.sivom-nautic.com/", "count": 1},
+      {"value": "https://www.aventuretrieves.com", "count": 1},
+      {"value": "http://www.cirque-eybens.org/", "count": 1},
+      {"value": "http://www.judoclub-delaloire.fr/", "count": 1},
+      {"value": "http://squashcenter.free.fr/", "count": 1},
+      {
+        "value": "http://www.lyon.fr/lieu/sport/gymnase-de-la-martiniere.html",
+        "count": 1
+      },
+      {"value": "http://www.saleveairlines.com/", "count": 1},
+      {"value": "http://green-kart.com/", "count": 1},
+      {"value": "http://www.ceharasdartemare.ffe.com/", "count": 1},
+      {
+        "value": "http://www.lechambon.fr/Vivre-Sport%20et%20vie%20associative-Piscine%20de%20l%27Ondaine--E-18-20-127.html",
+        "count": 1
+      },
+      {"value": "http://www.mineral-spirit.fr", "count": 1},
+      {
+        "value": "http://www.thones-valsulens.com/fr/sitra-activites-aquatiques/piscine-municipale-169075.html",
+        "count": 1
+      },
+      {"value": "http://www.secondsouffle.fr/", "count": 1},
+      {
+        "value": "http://www.camptocamp.org/sites/102609/fr/correncon-rochers-de-combeauvieux",
+        "count": 1
+      },
+      {"value": "http://www.tizianoruffa.com/", "count": 1},
+      {"value": "http://www.almrbasket.com/", "count": 1},
+      {"value": "https://holdup-escalade.fr/", "count": 1},
+      {
+        "value": "http://www.haute-maurienne-vanoise.com/noesit/!/fiche/piscine-municipale-du-parc-de-loisirs-des-glieres-93763",
+        "count": 1
+      },
+      {"value": "http://voile.lyonsportmetropole.org/", "count": 1},
+      {"value": "http://www.cercle-voile-valence.fr/", "count": 1},
+      {"value": "http://avironvalentinois.fr/", "count": 1},
+      {"value": "bmxbeynost.com", "count": 1},
+      {"value": "http://www.uscf.fr", "count": 1},
+      {"value": "http://www.vertilac.fr/", "count": 1},
+      {
+        "value": "https://www.veauche.fr/sport-et-sport/equipements-sportifs/complexe-sportif",
+        "count": 1
+      },
+      {"value": "http://www.parc-dereches.com/tennis-morzine/", "count": 1},
+      {"value": "www.ferme-equestre-malafretaz.com", "count": 1},
+      {"value": "http://www.lolympide.fr", "count": 1},
+      {"value": "www.les-vagues.com", "count": 1},
+      {"value": "http://www.centreequestredantoulin.com/", "count": 1},
+      {"value": "http://galopsmerveilles.canalblog.com/", "count": 1},
+      {"value": "http://www.saintigny-autocross.com/", "count": 1},
+      {"value": "http://www.maccr07.com/", "count": 1},
+      {"value": "http://www.espaceaquatiquelinae.fr/", "count": 1},
+      {"value": "http://www.tc3c.com", "count": 1},
+      {"value": "http://tcbourg.tennisweb.fr/", "count": 1},
+      {"value": "www.archipel-aquacentre.fr", "count": 1},
+      {"value": "http://www.crv-losc.fr/", "count": 1},
+      {"value": "http://www.grand-parc.fr/", "count": 1},
+      {
+        "value": "http://www.cc-hautbugey.fr/centre_nautique_intercommunal.html",
+        "count": 1
+      },
+      {"value": "http://grandlyon.asptt.com", "count": 1},
+      {"value": "http://solitaryce.free.fr/", "count": 1},
+      {"value": "http://mvtennis.fr/", "count": 1},
+      {
+        "value": "http://www.ville-saint-priest.fr/Les-stades.1725.0.html",
+        "count": 1
+      },
+      {"value": "https://www.aventuredubugey.fr", "count": 1},
+      {"value": "http://www.standpark.fr", "count": 1},
+      {"value": "http://www.clubulmcrottet.sitew.f", "count": 1},
+      {"value": "http://lesailesdumerlin.fr", "count": 1},
+      {"value": "http://freegolfgresse.canalblog.com/", "count": 1},
+      {
+        "value": "http://ccpaysdecruseilles.org/services/centre-nautique",
+        "count": 1
+      }
+    ],
+    "count": 99
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 07 23 43", "count": 2},
+      {"value": "+33 6 82 93 49 67", "count": 1},
+      {"value": "+33 4 79 00 00 76", "count": 1},
+      {"value": "+33 4 37 59 81 31", "count": 1},
+      {"value": "+33 4 76 34 34 34", "count": 1},
+      {"value": "+33 4 72 74 26 86", "count": 1},
+      {"value": "+33 6 09 84 59 74", "count": 1},
+      {"value": "+33 4 78 41 09 82", "count": 1},
+      {"value": "+33 6 95 01 84 08", "count": 1},
+      {"value": "+33 4 78203968", "count": 1},
+      {"value": "+33 6 26 90 28 15", "count": 1},
+      {"value": "+33 6 19 41 28 27", "count": 1},
+      {"value": "+33 6 13 10 32 76", "count": 1},
+      {"value": "+33 6 21 38 13 46", "count": 1},
+      {"value": "+33 6 20 26 83 45", "count": 1},
+      {"value": "+33 4 76 96 51 94", "count": 1},
+      {"value": "+33 4 76 80 25 05", "count": 1},
+      {"value": "+33 437 43 32 32", "count": 1},
+      {"value": "+33 4 76 54 27 27", "count": 1},
+      {"value": "+33 4 76 53 16 60", "count": 1},
+      {"value": "+33476170850", "count": 1},
+      {"value": "+33 4 72 10 30 30", "count": 1},
+      {"value": "+33 4 76 84 51 53", "count": 1},
+      {"value": "+33 4 76 21 72 98", "count": 1},
+      {"value": "+33 4 76 44 18 17", "count": 1},
+      {"value": "+33 4 78 21 67 62", "count": 1},
+      {"value": "+33 4 76 07 72 04", "count": 1},
+      {"value": "+33 4 76 34 16 64", "count": 1},
+      {"value": "+33 4 76 18 03 74", "count": 1},
+      {"value": "+33 4 50 02 01 76", "count": 1},
+      {"value": "+33 6 03 65 15 61", "count": 1},
+      {"value": "+33 4 74 43 19 00", "count": 1},
+      {"value": "+33 6 83 33 67 84", "count": 1},
+      {"value": "+33 4 79 05 89 32", "count": 1},
+      {"value": "+33 6 07 77 56 13", "count": 1},
+      {"value": "+33 4 79 01 08 83", "count": 1},
+      {"value": "+33 4 77 79 28 22", "count": 1},
+      {"value": "+33 4 50 79 08 43", "count": 1},
+      {"value": "+33 4 74 30 81 19", "count": 1},
+      {"value": "+33 4 76 38 35 38", "count": 1},
+      {"value": "+33 4 72 02 65 87", "count": 1},
+      {"value": "+33 4 78065842", "count": 1},
+      {"value": "+33 4 75 06 91 90", "count": 1},
+      {"value": "+33 4 74 77 46 76", "count": 1},
+      {"value": "+33 4 72 81 27 27", "count": 1},
+      {"value": "+33 4 75 94 22 50", "count": 1},
+      {"value": "+33 4 76 25 06 15", "count": 1},
+      {"value": "+33 4 78 21 76 51", "count": 1},
+      {"value": "+33 4 50 44 12 68", "count": 1}
+    ],
+    "count": 50
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Saint-Étienne", "count": 5},
+      {"value": "Département de l'Isère", "count": 4},
+      {"value": "Public", "count": 2},
+      {"value": "Olympique Lyonnais", "count": 2},
+      {"value": "Office municipal des sports de Grenoble", "count": 1},
+      {"value": "Ville de Lyon", "count": 1},
+      {
+        "value": "Syndicat Intercommunal à Vocation Multiple de la Rive Gauche du Drac (SIRD)",
+        "count": 1
+      },
+      {"value": "Mairie de Noyarey", "count": 1},
+      {"value": "Annemasse Agglo", "count": 1},
+      {"value": "Ville du Chambon-Feugerolles", "count": 1},
+      {"value": "Chamonix Hockey Club", "count": 1},
+      {"value": "Aita Pea", "count": 1},
+      {"value": "Aventures Concept", "count": 1},
+      {"value": "Aquavert", "count": 1},
+      {"value": "CMCAS / GAZELEC", "count": 1},
+      {"value": "private", "count": 1},
+      {
+        "value": "Communauté de Communes des Montagnes du Haut-Forez",
+        "count": 1
+      },
+      {"value": "Sogevab", "count": 1},
+      {"value": "LOU (Lyon Olympique Universitaire)", "count": 1},
+      {"value": "Camping Oursiere", "count": 1},
+      {"value": "Caliceo", "count": 1},
+      {"value": "Chambéry Métropole", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 15},
+      {"value": "limited", "count": 7},
+      {"value": "no", "count": 4}
+    ],
+    "count": 26
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 23}], "count": 23},
+  {"key": "aeroway", "tags": [{"value": "airstrip", "count": 22}], "count": 22},
+  {
+    "key": "access",
+    "tags": [
+      {"value": "customers", "count": 9},
+      {"value": "private", "count": 5},
+      {"value": "yes", "count": 5},
+      {"value": "public", "count": 2},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "local_ref",
+    "tags": [
+      {"value": "LF0157", "count": 1},
+      {"value": "LF2655", "count": 1},
+      {"value": "LF3869", "count": 1},
+      {"value": "LF2628", "count": 1},
+      {"value": "LF0125", "count": 1},
+      {"value": "LF0121", "count": 1},
+      {"value": "LF0161", "count": 1},
+      {"value": "LF0154", "count": 1},
+      {"value": "LF4224", "count": 1},
+      {"value": "LF0753", "count": 1},
+      {"value": "LF3870", "count": 1},
+      {"value": "LF6951", "count": 1},
+      {"value": "LF0152", "count": 1},
+      {"value": "LF0153", "count": 1},
+      {"value": "LF4223", "count": 1},
+      {"value": "LF4225", "count": 1},
+      {"value": "LF2651", "count": 1},
+      {"value": "LF7431", "count": 1},
+      {"value": "LF7470", "count": 1},
+      {"value": "LF7351", "count": 1},
+      {"value": "LF3853", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "concrete", "count": 4},
+      {"value": "grass", "count": 4},
+      {"value": "sand", "count": 3},
+      {"value": "asphalt", "count": 3},
+      {"value": "compacted", "count": 3}
+    ],
+    "count": 17
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Horaires :\nOuvert du lundi au dimanche, de 08h30 à 19h30.\nFermé du 1 octobre au 24 mai.",
+        "count": 1
+      },
+      {"value": "Acrobranche", "count": 1},
+      {"value": "Ecole de kitesurf et hydrofoil", "count": 1},
+      {"value": "Ecole de kitesurf", "count": 1},
+      {"value": "Ecole de ski nautique, wakeboard et wake surf", "count": 1},
+      {"value": "Ecole de ski nautique", "count": 1},
+      {"value": "Piscine d'été", "count": 1},
+      {"value": "Niveau 0", "count": 1},
+      {"value": "Bassin ludique de natation", "count": 1},
+      {"value": "Salle multi-sport", "count": 1},
+      {"value": "Canoe kayak Décines Meyzieu", "count": 1},
+      {"value": "Centre Nautique de Vaulx-en-Velin", "count": 1},
+      {"value": "Cercle de Yachting à Voile du Grand Large", "count": 1},
+      {
+        "value": "Espace de nature, de découverte, de pratiques familiales et sportives, le Grand Parc offre toute l’année une programmation variée d’activités et d’événements sportifs, culture ou nature, sur terre comme sur l’eau. POUR TOUS. A 15 MIN DE LYON",
+        "count": 1
+      }
+    ],
+    "count": 14
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "espacevertical@yahoo.fr", "count": 2},
+      {"value": "grandlyon@asptt.com", "count": 1},
+      {"value": "odysseeverte@gresse-en-vercors.fr", "count": 1},
+      {"value": "info@megazonelyon.com", "count": 1},
+      {"value": "info@oyogastudio.com", "count": 1},
+      {"value": "saltennis@orange.fr", "count": 1},
+      {"value": "valthorens@sogevab.com", "count": 1},
+      {"value": "annecy.salesiennegyl@orange.fr", "count": 1},
+      {"value": "secondsouffle@yahoo.fr", "count": 1},
+      {"value": "lesmenuires@sogevab.com", "count": 1},
+      {"value": "complexe.sportif@veauche.fr", "count": 1},
+      {"value": "info@parc-dereches.com", "count": 1},
+      {"value": "rafting@laposte.net", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 11}, {"value": "wall", "count": 2}],
+    "count": 13
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2946064", "count": 1},
+      {"value": "Q3207973", "count": 1},
+      {"value": "Q3126056", "count": 1},
+      {"value": "Q8503", "count": 1},
+      {"value": "Q44423276", "count": 1},
+      {"value": "Q15265667", "count": 1},
+      {"value": "Q644431", "count": 1},
+      {"value": "Q43142539", "count": 1},
+      {"value": "Q3135901", "count": 1},
+      {"value": "Q18533541", "count": 1},
+      {"value": "Q3495969", "count": 1},
+      {"value": "Q43309192", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Stade de l'Étivallière", "count": 1},
+      {"value": "fr:La Croix de Bauzon", "count": 1},
+      {"value": "en:Patinoire olympique de Pralognan-la-Vanoise", "count": 1},
+      {"value": "fr:Palais des sports de Megève", "count": 1},
+      {"value": "fr:Centre sportif Richard-Bozon", "count": 1},
+      {"value": "fr:Palais des sports de Lyon", "count": 1},
+      {"value": "fr:Hippodrome de Parilly", "count": 1},
+      {"value": "fr:Halle d'athlétisme Stéphane-Diagana", "count": 1},
+      {"value": "fr:Stade de Firminy-Vert", "count": 1},
+      {"value": "fr:Groupama OL Training Center", "count": 1},
+      {"value": "fr:Centre Tola Vologe", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "community_centre", "count": 5},
+      {"value": "swimming_pool", "count": 2},
+      {"value": "dancing_school", "count": 1},
+      {"value": "stables", "count": 1},
+      {"value": "dojo", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Gymnase", "count": 2},
+      {
+        "value": "Ceci n'est pas un doublon avec le centre sportif de l'autre côté de la route",
+        "count": 1
+      },
+      {"value": "Skatepark, sports de combat, hip-hop", "count": 1},
+      {"value": "Salle de forme", "count": 1},
+      {"value": "Salle des Sports", "count": 1},
+      {"value": "boulodrome", "count": 1},
+      {
+        "value": "parking souterrain privé et courts de tennis au dessus",
+        "count": 1
+      },
+      {"value": "Stade de réserve pour le ETG FC", "count": 1},
+      {"value": "Dojo de Viriat", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "covered",
+    "tags": [{"value": "yes", "count": 8}, {"value": "no", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "climbing:boulder",
+    "tags": [{"value": "yes", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "private", "count": 5}, {"value": "public", "count": 1}],
+    "count": 6
+  },
+  {"key": "boules", "tags": [{"value": "lyonnaise", "count": 5}], "count": 5},
+  {
+    "key": "fee",
+    "tags": [{"value": "yes", "count": 4}, {"value": "6€", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "water", "count": 3}, {"value": "stone", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "type",
+    "tags": [
+      {"value": "petanque", "count": 2},
+      {"value": "lyonnaise", "count": 1},
+      {"value": "indoor_range", "count": 1},
+      {"value": "cliff", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2015", "count": 1},
+      {"value": "2013", "count": 1},
+      {"value": "2012", "count": 1},
+      {"value": "C20", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "centre équestre réorganisé suite ouverture sortie autoroute",
+        "count": 1
+      },
+      {"value": "add better tag if exists", "count": 1},
+      {"value": "Placé d'après une note OSM", "count": 1},
+      {"value": "Check position", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "roof:shape",
+    "tags": [
+      {"value": "hipped", "count": 1},
+      {"value": "round", "count": 1},
+      {"value": "flat", "count": 1},
+      {"value": "dome", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "recreation_ground", "count": 1},
+      {"value": "construction", "count": 1},
+      {"value": "school", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "519", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "740", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "site",
+    "tags": [
+      {"value": "http://asso.ffv.fr/sal-yachting/", "count": 1},
+      {"value": "http://www.ckdm.fr/", "count": 1},
+      {"value": "http://www.cyvgl.com/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "climbing:sport",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "club", "tags": [{"value": "sport", "count": 3}], "count": 3},
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 01 04 82", "count": 1},
+      {"value": "+33 4 72 81 27 20", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "height",
+    "tags": [{"value": "8.05", "count": 1}, {"value": "15 m", "count": 1}],
+    "count": 2
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "piste:type", "tags": [{"value": "nordic", "count": 2}], "count": 2},
+  {
+    "key": "phone:mobile",
+    "tags": [
+      {"value": "+33 6 14 60 44 85", "count": 1},
+      {"value": "+33 6 78 43 86 27", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "0", "count": 1}, {"value": "-1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://u.jimdo.com/www27/o/s41ee3c97ad0a954e/img/i404a7d5bcf8c471a/1377885582/orig/le-centre-%C3%A9questre.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.lecourrierdelarchitecte.com/upload/article/article_4632/03(@Maxime%20Jegat)_B.jpg",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://www.olympe-fitness.com/", "count": 1},
+      {
+        "value": "https://www.gralon.net/mairies-france/rhone/equipement-sportif-stade-d-athletisme-complexe-sportif-saint-romain-en-gal-21880.htm",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "seasonal",
+    "tags": [{"value": "yes", "count": 1}, {"value": "winter", "count": 1}],
+    "count": 2
+  },
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "ref:UAI", "tags": [{"value": "0692102K", "count": 1}], "count": 1},
+  {
+    "key": "brand",
+    "tags": [{"value": "Wellness sport club", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "roof:material",
+    "tags": [{"value": "metal", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:vatin",
+    "tags": [{"value": "FR395157225", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "health_specialty",
+    "tags": [{"value": "yoga", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "elevator", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "piste:difficulty",
+    "tags": [{"value": "intermediate", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [{"value": "classic;skating", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:CEF",
+    "tags": [{"value": "69389_04", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "k_hBjwA_LbZE-TbFc_vvmQ", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [{"value": "380005116", "count": 1}],
+    "count": 1
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "end_date", "tags": [{"value": "1910", "count": 1}], "count": 1},
+  {
+    "key": "architect",
+    "tags": [{"value": "C. Nallet", "count": 1}],
+    "count": 1
+  },
+  {"key": "dispensing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "wayside_cross", "count": 1}],
+    "count": 1
+  },
+  {"key": "fence", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "120 m", "count": 1}], "count": 1},
+  {"key": "maxwidth", "tags": [{"value": "70 m", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "01093B070A", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1984-10-08", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117490", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "water", "tags": [{"value": "canal", "count": 1}], "count": 1},
+  {"key": "waterway", "tags": [{"value": "riverbank", "count": 1}], "count": 1},
+  {"key": "motorboat", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "FIXME",
+    "tags": [{"value": "forme du bâtiment et tags à revoir", "count": 1}],
+    "count": 1
+  },
+  {"key": "colour", "tags": [{"value": "brown", "count": 1}], "count": 1},
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10f", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:depth",
+    "tags": [{"value": "20", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:difficulty",
+    "tags": [{"value": "1", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:maxdepth",
+    "tags": [{"value": "20", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:type:pool",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:type:training",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "public", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wifi", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "climbing:rock",
+    "tags": [{"value": "limestone", "count": 1}],
+    "count": 1
+  },
+  {"key": "theme", "tags": [{"value": "SPORT", "count": 1}], "count": 1},
+  {
+    "key": "soustheme",
+    "tags": [{"value": "Equipement sportif", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:height", "tags": [{"value": "6", "count": 1}], "count": 1}
+]

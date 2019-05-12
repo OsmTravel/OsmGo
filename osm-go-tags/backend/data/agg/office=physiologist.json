@@ -1,0 +1,18 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "physiologist", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "office", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "medical_system:western",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

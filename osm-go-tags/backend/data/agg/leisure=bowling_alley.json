@@ -1,0 +1,32 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "bowling_alley", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "10pin", "count": 1},
+      {"value": "10pin;billiards", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0;1", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Bowling;bar;restaurant;billard", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33450964135", "count": 1}], "count": 1},
+  {
+    "key": "start_date",
+    "tags": [{"value": "2015-11-19", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.bowlingsamoens.com/", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "mountain_rescue", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "Bergwacht Schwarzwald", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Bergwacht Schwarzwald, Ortsgruppe Istein", "count": 1}],
+    "count": 1
+  }
+]

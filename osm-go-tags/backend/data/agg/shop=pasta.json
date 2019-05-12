@@ -1,0 +1,9 @@
+[
+  {"key": "shop", "tags": [{"value": "pasta", "count": 2}], "count": 2},
+  {"key": "cuisine", "tags": [{"value": "italian", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Pâtes fraiches. Spécialités italiennes", "count": 1}],
+    "count": 1
+  }
+]

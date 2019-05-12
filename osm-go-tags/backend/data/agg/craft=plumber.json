@@ -1,0 +1,37 @@
+[
+  {"key": "craft", "tags": [{"value": "plumber", "count": 30}], "count": 30},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Plomberie installation et dépannage - Installation et rénovation de salles de bain",
+        "count": 1
+      },
+      {"value": "Plombier-chauffagiste, énergies renouvelables", "count": 1},
+      {"value": "Alpes Plomberie Services", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.plomberiedelasource.com", "count": 1},
+      {"value": "http://charat-plomberie.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 58 44 88", "count": 1},
+      {"value": "+33 4 76 34 46 92", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "Thierry Rossillol", "count": 1}],
+    "count": 1
+  }
+]

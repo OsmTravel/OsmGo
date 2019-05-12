@@ -1,0 +1,42 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "slipway", "count": 159}],
+    "count": 159
+  },
+  {
+    "key": "seamark:type",
+    "tags": [{"value": "small_craft_facility", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "seamark:small_craft_facility:category",
+    "tags": [{"value": "slipway", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "highway",
+    "tags": [{"value": "service", "count": 8}, {"value": "track", "count": 3}],
+    "count": 11
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "concrete", "count": 3},
+      {"value": "cobblestone", "count": 2}
+    ],
+    "count": 5
+  },
+  {"key": "vehicle", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "incline",
+    "tags": [{"value": "down", "count": 2}, {"value": "up", "count": 1}],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {"key": "ft_symbol", "tags": [{"value": "117", "count": 2}], "count": 2},
+  {"key": "tracktype", "tags": [{"value": "grade2", "count": 2}], "count": 2},
+  {"key": "sport", "tags": [{"value": "water_ski", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "operating", "tags": [{"value": "car", "count": 1}], "count": 1}
+]

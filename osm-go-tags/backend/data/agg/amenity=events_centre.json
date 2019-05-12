@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "events_centre", "count": 4}],
+    "count": 4
+  },
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1}
+]

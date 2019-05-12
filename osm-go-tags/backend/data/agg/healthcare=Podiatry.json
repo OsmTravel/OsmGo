@@ -1,0 +1,12 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "Podiatry", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Laurence SAINTOT-POIRSON", "count": 1}],
+    "count": 1
+  }
+]

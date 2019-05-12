@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "conservatoire municipal", "count": 2}],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

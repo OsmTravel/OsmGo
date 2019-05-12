@@ -1,0 +1,17 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 2 47 48 20 38", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "accessoires_poids_lourds", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "polytrucks.fr", "count": 1}],
+    "count": 1
+  }
+]

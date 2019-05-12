@@ -1,0 +1,30 @@
+[
+  {"key": "craft", "tags": [{"value": "insulation", "count": 3}], "count": 3},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 69 82 14 70", "count": 1},
+      {"value": "+33983764470", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.elecgaz.net", "count": 1},
+      {"value": "http://www.thermo-reno.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Votre installation de chauffage et ou de production d’eau chaude sanitaire est au cœur de votre bien être et au cœur de nos préoccupations.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "Thermoreno", "count": 1}], "count": 1}
+]

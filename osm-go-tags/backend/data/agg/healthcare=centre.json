@@ -1,0 +1,39 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "centre", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "doctors", "count": 3},
+      {"value": "social_facility", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "occupational", "count": 1},
+      {"value": "general;paediatrics", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Précédemment: \"Centre Services\"", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Services à domicile", "count": 1}],
+    "count": 1
+  },
+  {"key": "type:FR:FINESS", "tags": [{"value": "603", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 34 03 31", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {"key": "shop", "tags": [{"value": "pastry", "count": 49}], "count": 49},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 89 78 87", "count": 1},
+      {"value": "+33 4 50 87 08 88", "count": 1},
+      {"value": "+33 4 77 50 61 18", "count": 1},
+      {"value": "+33478484187", "count": 1},
+      {"value": "+33477563830", "count": 1},
+      {"value": "+33478486241", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Pâtissier - Chocolatier - Glacier - Nougats - Pognes",
+        "count": 1
+      },
+      {"value": "Pâtisserie, salon de thé", "count": 1},
+      {"value": "Glacier Patissier Chocolatier B. Perrier", "count": 1},
+      {"value": "100% bio", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.patisserie-luhantines.com/", "count": 1},
+      {"value": "http://www.patisseriebruyat.fr", "count": 1},
+      {"value": "https://www.thecakeshop.fr/", "count": 1},
+      {"value": "https://www.ladelicatesse.fr/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@patisserie-luhantines.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "delivery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "caterer", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "cake", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Tierry Cauet", "count": 1}],
+    "count": 1
+  }
+]

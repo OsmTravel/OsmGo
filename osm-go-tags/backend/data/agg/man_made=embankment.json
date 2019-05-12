@@ -1,0 +1,35 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "embankment", "count": 154}],
+    "count": 154
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "retaining_wall", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Zone dangereuse", "count": 2},
+      {"value": "Zone très dangereuse", "count": 2}
+    ],
+    "count": 4
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 3}], "count": 3},
+  {"key": "embankment", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "highway",
+    "tags": [{"value": "residential", "count": 1}],
+    "count": 1
+  },
+  {"key": "waterway", "tags": [{"value": "weir", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Zone dangereuse", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "2.5", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "cliff", "count": 1}], "count": 1}
+]

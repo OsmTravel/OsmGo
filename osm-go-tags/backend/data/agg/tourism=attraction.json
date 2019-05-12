@@ -1,0 +1,1177 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "attraction", "count": 541}],
+    "count": 541
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Cadole", "count": 14},
+      {"value": "fr:Musilac", "count": 2},
+      {"value": "fr:Buvette Cachat", "count": 2},
+      {"value": "fr:Borne au Lion", "count": 2},
+      {"value": "fr:Château des Bruneaux", "count": 1},
+      {"value": "fr:Fontaine ardente", "count": 1},
+      {"value": "fr:Pierre-aux-Fées (Reignier)", "count": 1},
+      {"value": "fr:Aven d'Orgnac", "count": 1},
+      {"value": "fr:La Pierre Percée", "count": 1},
+      {"value": "fr:La Sasson", "count": 1},
+      {"value": "fr:Grotte de Saint-Marcel", "count": 1},
+      {"value": "fr:Cascade du Ray-Pic", "count": 1},
+      {"value": "fr:Le Gros Caillou", "count": 1},
+      {"value": "fr:Horloge Charvet", "count": 1},
+      {"value": "fr:Fontaine de La Voulte-sur-Rhône", "count": 1},
+      {"value": "fr:Éperon barré d'Hières-sur-Amby", "count": 1},
+      {"value": "fr:Auberge de Peyrebeille", "count": 1},
+      {"value": "fr:Voie romaine", "count": 1},
+      {"value": "fr:Taurobole de Tain-l'Hermitage", "count": 1},
+      {"value": "fr:Pont de Chambonas", "count": 1},
+      {"value": "fr:Arc de Campanus", "count": 1},
+      {"value": "fr:Aqueduc romain de Vieu", "count": 1},
+      {"value": "fr:Château de Couzan", "count": 1},
+      {"value": "fr:Cascade de Glandieu", "count": 1},
+      {"value": "fr:Château de Bouthéon", "count": 1},
+      {"value": "fr:Bastille (Grenoble)", "count": 1},
+      {"value": "fr:Calvaire de Mogneneins", "count": 1},
+      {"value": "fr:Caborne", "count": 1},
+      {"value": "fr:Balmes de Montbrun", "count": 1},
+      {"value": "fr:Claps", "count": 1},
+      {"value": "fr:Traboule de la Tour Rose", "count": 1},
+      {"value": "fr:Porte du Bourg de l'homme", "count": 1},
+      {"value": "fr:Mini World Lyon", "count": 1},
+      {"value": "fr:Château de Bocsozel", "count": 1},
+      {"value": "fr:Hôtel Royal (Aix-les-Bains)", "count": 1},
+      {"value": "fr:Temple de Diane d'Aix-les-Bains", "count": 1},
+      {"value": "fr:Maison du Chamarier", "count": 1},
+      {"value": "fr:Chartreuse de Sainte-Croix-en-Jarez", "count": 1},
+      {"value": "fr:Pierre à Jean-Jacques Rousseau", "count": 1},
+      {"value": "fr:Maison Falconnet", "count": 1},
+      {"value": "fr:Ancien hôtel de préfecture de l'Ain", "count": 1},
+      {"value": "fr:Écurie Schlutz", "count": 1},
+      {"value": "fr:Écurie Gerlier", "count": 1},
+      {"value": "fr:Grottes de Choranche", "count": 1},
+      {
+        "value": "fr:Cathédrale Saint-François-de-Sales de Chambéry",
+        "count": 1
+      },
+      {"value": "fr:Casamaures", "count": 1},
+      {"value": "fr:Pont d'Arc", "count": 1},
+      {"value": "fr:Château de Sonnaz (Haute-Savoie)", "count": 1},
+      {"value": "fr:Château de Ripaille", "count": 1},
+      {"value": "fr:Casino Grand-Cercle", "count": 1},
+      {"value": "fr:Église Saint-Pierre de Champagne", "count": 1},
+      {"value": "fr:Sanatorium Martel de Janville", "count": 1},
+      {"value": "fr:Église Saint-Pierre de Firminy", "count": 1},
+      {"value": "fr:Maison de la culture de Firminy-Vert", "count": 1},
+      {"value": "fr:Gros tilleul de Samoëns", "count": 1},
+      {"value": "fr:Unité d'habitation de Firminy-Vert", "count": 1},
+      {"value": "fr:Piscine de Firminy-Vert", "count": 1},
+      {"value": "fr:Théâtre antique de Lyon", "count": 1},
+      {"value": "fr:Odéon antique de Lyon", "count": 1},
+      {"value": "fr:Abbaye d'Hautecombe", "count": 1},
+      {"value": "fr:Kiosque Peynet", "count": 1},
+      {"value": "fr:Presbytère (ancien château)", "count": 1},
+      {"value": "fr:Église Saint-Pierre de Lémenc", "count": 1},
+      {"value": "fr:Château de Buisson-Rond", "count": 1},
+      {"value": "fr:Rotonde ferroviaire de Chambéry", "count": 1},
+      {"value": "fr:Pont de Nyons", "count": 1},
+      {"value": "fr:Chapelle Notre-Dame-de-Pitié de Serrières", "count": 1},
+      {"value": "fr:Église Saint-Nicolas-de-Tolentin de Brou", "count": 1},
+      {"value": "fr:Château de Miolans", "count": 1},
+      {"value": "fr:Château de Grignan", "count": 1},
+      {"value": "fr:Château d'Ampuis", "count": 1},
+      {"value": "fr:Pont du Diable (Thueyts)", "count": 1},
+      {"value": "fr:Château d'Épierre (Savoie)", "count": 1},
+      {"value": "fr:Château d'Essalois", "count": 1},
+      {"value": "fr:Pont du Roi", "count": 1},
+      {"value": "fr:Chapelle du Saint-Sépulcre de Saint-Restitut", "count": 1},
+      {"value": "fr:Maison du bailli de Boucieu-le-Roi", "count": 1},
+      {"value": "fr:Fontaine des éléphants", "count": 1},
+      {"value": "fr:Thermes de Challes-les-Eaux", "count": 1},
+      {"value": "fr:Château d'Alba-la-Romaine", "count": 1},
+      {"value": "fr:Cour des Voraces", "count": 1},
+      {"value": "fr:Château de la Bastie d'Urfé", "count": 1},
+      {"value": "fr:Stade de Firminy-Vert", "count": 1},
+      {"value": "it:Caserma difensiva del Malamot", "count": 1},
+      {"value": "fr:Château des ducs de Savoie", "count": 1},
+      {"value": "fr:Château du Bourget", "count": 1},
+      {"value": "fr:Abbaye Notre-Dame d'Ambronay", "count": 1},
+      {"value": "fr:Château de Saint-Maurice-de-Rémens", "count": 1},
+      {"value": "fr:Sanctuaire de Cybèle", "count": 1},
+      {"value": "fr:Théâtre gallo-romain d'Alba-la-Romaine", "count": 1},
+      {"value": "fr:Église Notre-Dame de Thines", "count": 1},
+      {"value": "fr:Aqueduc du Gier", "count": 1},
+      {"value": "fr:Monastère royal de Brou", "count": 1},
+      {"value": "fr:Château de Saint-Bernard", "count": 1},
+      {"value": "fr:Abbaye d'Aulps", "count": 1},
+      {"value": "fr:Peisey-Nancroix#Lieux et monuments", "count": 1},
+      {"value": "fr:Château de Montréal (Ardèche)", "count": 1},
+      {"value": "fr:Château de la Sône", "count": 1},
+      {"value": "fr:Cromlech du Petit-Saint-Bernard", "count": 1},
+      {"value": "fr:Pile du bac à traille de Champagne", "count": 1},
+      {"value": "fr:Château de Condrieu", "count": 1},
+      {"value": "fr:Musée gallo-romain de Saint-Romain-en-Gal", "count": 1},
+      {"value": "fr:Palais idéal", "count": 1},
+      {"value": "fr:Abbaye de la Bénisson-Dieu", "count": 1},
+      {"value": "fr:Château de Rochemaure", "count": 1},
+      {"value": "fr:Château de Boulogne", "count": 1},
+      {"value": "fr:Basilique funéraire Saint-Laurent de Choulans", "count": 1},
+      {"value": "fr:Chapelle des Capucins (Valence)", "count": 1}
+    ],
+    "count": 124
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3328559", "count": 2},
+      {"value": "Q3099270", "count": 1},
+      {"value": "Q3117251", "count": 1},
+      {"value": "Q1062180", "count": 1},
+      {"value": "Q16508214", "count": 1},
+      {"value": "Q3076101", "count": 1},
+      {"value": "Q1328655", "count": 1},
+      {"value": "Q2911144", "count": 1},
+      {"value": "Q790408", "count": 1},
+      {"value": "Q3211624", "count": 1},
+      {"value": "Q1837168", "count": 1},
+      {"value": "Q1046875", "count": 1},
+      {"value": "Q16303800", "count": 1},
+      {"value": "Q3140585", "count": 1},
+      {"value": "Q3076137", "count": 1},
+      {"value": "Q22966933", "count": 1},
+      {"value": "Q743426", "count": 1},
+      {"value": "Q22968153", "count": 1},
+      {"value": "Q2872370", "count": 1},
+      {"value": "Q3396909", "count": 1},
+      {"value": "Q2023885", "count": 1},
+      {"value": "Q2859242", "count": 1},
+      {"value": "Q1011384", "count": 1},
+      {"value": "Q2940841", "count": 1},
+      {"value": "Q2968643", "count": 1},
+      {"value": "Q545992", "count": 1},
+      {"value": "Q2400269", "count": 1},
+      {"value": "Q22967179", "count": 1},
+      {"value": "Q805472", "count": 1},
+      {"value": "Q2932721", "count": 1},
+      {"value": "Q3536131", "count": 1},
+      {"value": "Q22968224", "count": 1},
+      {"value": "Q3399174", "count": 1},
+      {"value": "Q22967259", "count": 1},
+      {"value": "Q17327772", "count": 1},
+      {"value": "Q15940061", "count": 1},
+      {"value": "Q20971072", "count": 1},
+      {"value": "Q22968373", "count": 1},
+      {"value": "Q22968372", "count": 1},
+      {"value": "Q13377530", "count": 1},
+      {"value": "Q3279987", "count": 1},
+      {"value": "Q2961281", "count": 1},
+      {"value": "Q16670102", "count": 1},
+      {"value": "Q3278714", "count": 1},
+      {"value": "Q27950512", "count": 1},
+      {"value": "Q3579085", "count": 1},
+      {"value": "Q3579081", "count": 1},
+      {"value": "Q2975454", "count": 1},
+      {"value": "Q2942331", "count": 1},
+      {"value": "Q22979290", "count": 1},
+      {"value": "Q22968449", "count": 1},
+      {"value": "Q18328132", "count": 1},
+      {"value": "Q22968223", "count": 1},
+      {"value": "Q2940800", "count": 1},
+      {"value": "Q2929007", "count": 1},
+      {"value": "Q21619415", "count": 1},
+      {"value": "Q964638", "count": 1},
+      {"value": "Q22968377", "count": 1},
+      {"value": "Q22996905", "count": 1},
+      {"value": "Q3583829", "count": 1},
+      {"value": "Q3471671", "count": 1},
+      {"value": "Q2911130", "count": 1},
+      {"value": "Q3279767", "count": 1},
+      {"value": "Q2971465", "count": 1},
+      {"value": "Q16964849", "count": 1},
+      {"value": "Q3389225", "count": 1},
+      {"value": "Q3175", "count": 1},
+      {"value": "Q22966910", "count": 1},
+      {"value": "Q63524", "count": 1},
+      {"value": "Q22996661", "count": 1},
+      {"value": "Q3197265", "count": 1},
+      {"value": "Q22968462", "count": 1},
+      {"value": "Q22967082", "count": 1},
+      {"value": "Q3402357", "count": 1},
+      {"value": "Q17190256", "count": 1},
+      {"value": "Q22979294", "count": 1},
+      {"value": "Q2968705", "count": 1},
+      {"value": "Q3443010", "count": 1},
+      {"value": "Q841763", "count": 1},
+      {"value": "Q2956593", "count": 1},
+      {"value": "Q990908", "count": 1},
+      {"value": "Q22968504", "count": 1},
+      {"value": "Q2969896", "count": 1},
+      {"value": "Q2969357", "count": 1},
+      {"value": "Q1993975", "count": 1},
+      {"value": "Q22967499", "count": 1},
+      {"value": "Q2968228", "count": 1},
+      {"value": "Q3397492", "count": 1},
+      {"value": "Q2957476", "count": 1},
+      {"value": "Q3280088", "count": 1},
+      {"value": "Q3076252", "count": 1},
+      {"value": "Q2968054", "count": 1},
+      {"value": "Q10141", "count": 1},
+      {"value": "Q2450180", "count": 1},
+      {"value": "Q3495969", "count": 1},
+      {"value": "Q55072128", "count": 1},
+      {"value": "Q2971586", "count": 1},
+      {"value": "Q2968004", "count": 1},
+      {"value": "Q1283154", "count": 1},
+      {"value": "Q17609196", "count": 1},
+      {"value": "Q22966875", "count": 1},
+      {"value": "Q22966874", "count": 1},
+      {"value": "Q3471734", "count": 1},
+      {"value": "Q3527839", "count": 1},
+      {"value": "Q3580681", "count": 1},
+      {"value": "Q3320413", "count": 1},
+      {"value": "Q1307212", "count": 1},
+      {"value": "Q22968610", "count": 1},
+      {"value": "Q2970049", "count": 1},
+      {"value": "Q2971406", "count": 1},
+      {"value": "Q2956795", "count": 1},
+      {"value": "Q22968586", "count": 1},
+      {"value": "Q2878116", "count": 1},
+      {"value": "Q22968221", "count": 1},
+      {"value": "Q22967175", "count": 1},
+      {"value": "Q22967264", "count": 1},
+      {"value": "Q3361199", "count": 1},
+      {"value": "Q1775457", "count": 1},
+      {"value": "Q2970404", "count": 1},
+      {"value": "Q2968621", "count": 1},
+      {"value": "Q2887170", "count": 1},
+      {"value": "Q2957367", "count": 1}
+    ],
+    "count": 123
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "castle", "count": 29},
+      {"value": "archaeological_site", "count": 12},
+      {"value": "fort", "count": 11},
+      {"value": "yes", "count": 8},
+      {"value": "ruins", "count": 6},
+      {"value": "building", "count": 5},
+      {"value": "city_gate", "count": 5},
+      {"value": "boundary_stone", "count": 4},
+      {"value": "memorial", "count": 3},
+      {"value": "stone", "count": 3},
+      {"value": "monastery", "count": 3},
+      {"value": "monument", "count": 3},
+      {"value": "wayside_shrine", "count": 2},
+      {"value": "abbey", "count": 1},
+      {"value": "milestone", "count": 1},
+      {"value": "wayside_cross", "count": 1},
+      {"value": "bridge", "count": 1},
+      {"value": "manor", "count": 1},
+      {"value": "locomotive", "count": 1},
+      {"value": "church", "count": 1},
+      {"value": "wayside_chapel", "count": 1},
+      {"value": "fountain", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "house", "count": 1},
+      {"value": "aircraft", "count": 1}
+    ],
+    "count": 106
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA38000005", "count": 1},
+      {"value": "PA00116403", "count": 1},
+      {"value": "PA00116360", "count": 1},
+      {"value": "PA00116648", "count": 1},
+      {"value": "PA00116870", "count": 1},
+      {"value": "PA00117116", "count": 1},
+      {"value": "PA00117995", "count": 1},
+      {"value": "PA00117078", "count": 1},
+      {"value": "PA00116683", "count": 1},
+      {"value": "PA00118163", "count": 1},
+      {"value": "PA00116602", "count": 1},
+      {"value": "PA00117572", "count": 1},
+      {"value": "PA00116610", "count": 1},
+      {"value": "PA00117446", "count": 1},
+      {"value": "PA26000031", "count": 1},
+      {"value": "PA00118061", "count": 1},
+      {"value": "PA00116704", "count": 1},
+      {"value": "PA00118183", "count": 1},
+      {"value": "PA00117528", "count": 1},
+      {"value": "PA00118169", "count": 1},
+      {"value": "PA00118170", "count": 1},
+      {"value": "PA00118164", "count": 1},
+      {"value": "PA00118173", "count": 1},
+      {"value": "PA00117817", "count": 1},
+      {"value": "PA00117593", "count": 1},
+      {"value": "PA00118182", "count": 1},
+      {"value": "PA00116458", "count": 1},
+      {"value": "PA00116345", "count": 1},
+      {"value": "PA00116452", "count": 1},
+      {"value": "PA00116451", "count": 1},
+      {"value": "PA00118223", "count": 1},
+      {"value": "PA38000025", "count": 1},
+      {"value": "PA00118243", "count": 1},
+      {"value": "PA00118060", "count": 1},
+      {"value": "PA00117262", "count": 1},
+      {"value": "PA00118392", "count": 1},
+      {"value": "PA00118454", "count": 1},
+      {"value": "PA00118172", "count": 1},
+      {"value": "PA42000026", "count": 1},
+      {"value": "PA00116684", "count": 1},
+      {"value": "PA74000012", "count": 1},
+      {"value": "PA42000001", "count": 1},
+      {"value": "PA00117489", "count": 1},
+      {"value": "PA00117487", "count": 1},
+      {"value": "PA00125742", "count": 1},
+      {"value": "PA42000023", "count": 1},
+      {"value": "PA00117076", "count": 1},
+      {"value": "PA00118305", "count": 1},
+      {"value": "PA00118421", "count": 1},
+      {"value": "PA00117090", "count": 1},
+      {"value": "PA00118256", "count": 1},
+      {"value": "PA00117316", "count": 1},
+      {"value": "PA00116816", "count": 1},
+      {"value": "PA00118230", "count": 1},
+      {"value": "PA38000029", "count": 1},
+      {"value": "PA00118225", "count": 1},
+      {"value": "PA00118242", "count": 1},
+      {"value": "PA00117004", "count": 1},
+      {"value": "PA00116817", "count": 1},
+      {"value": "PA00118266", "count": 1},
+      {"value": "PA00118304", "count": 1},
+      {"value": "PA00116961", "count": 1},
+      {"value": "PA69000001", "count": 1},
+      {"value": "PA00117771", "count": 1},
+      {"value": "PA00117441", "count": 1},
+      {"value": "PA00116693;PA00116651", "count": 1},
+      {"value": "PA00117058", "count": 1},
+      {"value": "PA00116650", "count": 1},
+      {"value": "PA00118233", "count": 1},
+      {"value": "PA00116621", "count": 1},
+      {"value": "PA00118107", "count": 1},
+      {"value": "PA00117605", "count": 1},
+      {"value": "PA00117490", "count": 1},
+      {"value": "PA00118227", "count": 1},
+      {"value": "PA00118216", "count": 1},
+      {"value": "PA00116291", "count": 1},
+      {"value": "PA00117020", "count": 1},
+      {"value": "PA00117019", "count": 1},
+      {"value": "PA00117988", "count": 1},
+      {"value": "PA00116622", "count": 1},
+      {"value": "PA00116727", "count": 1},
+      {"value": "PA00116318", "count": 1},
+      {"value": "PA00118437", "count": 1},
+      {"value": "PA00118329", "count": 1},
+      {"value": "PA07000007", "count": 1},
+      {"value": "PA00117290", "count": 1},
+      {"value": "PA00118307", "count": 1},
+      {"value": "PA07000010", "count": 1},
+      {"value": "PA00118058", "count": 1},
+      {"value": "PA00117444", "count": 1},
+      {"value": "PA00117533", "count": 1},
+      {"value": "PA00116966", "count": 1},
+      {"value": "PA00117427", "count": 1},
+      {"value": "PA00116757", "count": 1},
+      {"value": "PA00116798", "count": 1},
+      {"value": "PA26000003", "count": 1}
+    ],
+    "count": 96
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [
+      {"value": "mhs", "count": 93},
+      {"value": "whc", "count": 2},
+      {"value": "mhsh", "count": 1}
+    ],
+    "count": 96
+  },
+  {
+    "key": "heritage",
+    "tags": [
+      {"value": "2", "count": 47},
+      {"value": "3", "count": 42},
+      {"value": "1", "count": 2}
+    ],
+    "count": 91
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1875", "count": 3},
+      {"value": "1840", "count": 3},
+      {"value": "1862", "count": 3},
+      {"value": "1939", "count": 2},
+      {"value": "1928-09-08", "count": 2},
+      {"value": "1926", "count": 2},
+      {"value": "1929-10-11", "count": 2},
+      {"value": "1927", "count": 2},
+      {"value": "1984-10-08", "count": 2},
+      {"value": "1984-12-28", "count": 2},
+      {"value": "1982-10-11", "count": 1},
+      {"value": "1991-07-22", "count": 1},
+      {"value": "1914", "count": 1},
+      {"value": "1934-06-26", "count": 1},
+      {"value": "1982", "count": 1},
+      {"value": "1983-04-12", "count": 1},
+      {"value": "2010", "count": 1},
+      {"value": "1986-04-24", "count": 1},
+      {"value": "1943-09-15", "count": 1},
+      {"value": "1941-08-07", "count": 1},
+      {"value": "1947-06-23", "count": 1},
+      {"value": "1942", "count": 1},
+      {"value": "1906-08-09", "count": 1},
+      {"value": "2007-05-23", "count": 1},
+      {"value": "1984-12-21", "count": 1},
+      {"value": "1920-10-20", "count": 1},
+      {"value": "1992-03-19", "count": 1},
+      {"value": "1986-04-21", "count": 1},
+      {"value": "30/11/2007", "count": 1},
+      {"value": "1926-01-12", "count": 1},
+      {"value": "2008-05-15", "count": 1},
+      {"value": "1962-09-27", "count": 1},
+      {"value": "1975-11-21", "count": 1},
+      {"value": "2005-07-18", "count": 1},
+      {"value": "1931-01-12", "count": 1},
+      {"value": "1997-03-03", "count": 1},
+      {"value": "1910-06-10", "count": 1},
+      {"value": "1926-03-27", "count": 1},
+      {"value": "1890-07-07", "count": 1},
+      {"value": "1974", "count": 1},
+      {"value": "1900-02-16", "count": 1},
+      {"value": "2009-03-13", "count": 1},
+      {"value": "1982-02-24", "count": 1},
+      {"value": "1925", "count": 1},
+      {"value": "1952-04-17", "count": 1},
+      {"value": "1944", "count": 1},
+      {"value": "1996", "count": 1},
+      {"value": "1926-06-07", "count": 1},
+      {"value": "1949", "count": 1},
+      {"value": "1890-12-20", "count": 1},
+      {"value": "1908-09-09", "count": 1},
+      {"value": "1982-05-07", "count": 1},
+      {"value": "1990", "count": 1},
+      {"value": "1881-08-10", "count": 1},
+      {"value": "1983-03-21", "count": 1},
+      {"value": "1889-12-21", "count": 1},
+      {"value": "1978-09-07", "count": 1},
+      {"value": "1983-06-27", "count": 1},
+      {"value": "1983-10-20", "count": 1},
+      {"value": "1959", "count": 1},
+      {"value": "1990-12-20", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "1968-11-06", "count": 1},
+      {"value": "1956-10-13", "count": 1},
+      {"value": "2006-05-23", "count": 1},
+      {"value": "1983-03-22", "count": 1},
+      {"value": "1970", "count": 1},
+      {"value": "1981", "count": 1},
+      {"value": "1969-09-23", "count": 1},
+      {"value": "1924-03-22", "count": 1},
+      {"value": "1915", "count": 1},
+      {"value": "1997-10-24", "count": 1}
+    ],
+    "count": 85
+  },
+  {
+    "key": "attraction",
+    "tags": [
+      {"value": "animal", "count": 28},
+      {"value": "summer_toboggan", "count": 12},
+      {"value": "carousel", "count": 10},
+      {"value": "roller_coaster", "count": 1},
+      {"value": "maze", "count": 1}
+    ],
+    "count": 52
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.caves-cathedrales.fr/", "count": 2},
+      {"value": "http://www.libre-envol.com", "count": 2},
+      {"value": "http://www.parc-airsoft-generation.com/", "count": 1},
+      {"value": "http://www.orgnac.com", "count": 1},
+      {
+        "value": "http://www.cityaventure.com/parc/parc-d-attraction-ste-foy/",
+        "count": 1
+      },
+      {"value": "www.grottesaintmarcel.com/", "count": 1},
+      {"value": "http://www.volerieduforez.fr/", "count": 1},
+      {"value": "ardelaine.fr", "count": 1},
+      {"value": "http://www.bourricot.com/barroudane/", "count": 1},
+      {"value": "http://www.zoo-dinosaures.com/", "count": 1},
+      {"value": "http://www.ladiana.com", "count": 1},
+      {"value": "http://www.visites-nature-vercors.com/choranche/", "count": 1},
+      {"value": "http://www.avengrottelaforestiere.com", "count": 1},
+      {"value": "http://www.bateau-a-roue.com/", "count": 1},
+      {
+        "value": "http://www.patrimoine-ardeche.com/visites/balmes_montbrun_n.htm",
+        "count": 1
+      },
+      {
+        "value": "http://www.chablais.fr/maj/geoparc/Les-dunes-d-Excenevex.mp4",
+        "count": 1
+      },
+      {"value": "http://www.lejardinduboismarquis.com/", "count": 1},
+      {"value": "https://miniworldlyon.com", "count": 1},
+      {"value": "http://www.lesamanins.com/", "count": 1},
+      {"value": "http://verticalp-emosson.ch", "count": 1},
+      {"value": "http://www.acroparc.com/", "count": 1},
+      {"value": "http://www.freewebs.com/quadrome/", "count": 1},
+      {"value": "http://fermedelhermitage.fr/", "count": 1},
+      {"value": "https://mont-blanc.musilac.com/fr", "count": 1},
+      {"value": "https://aix-les-bains.musilac.com", "count": 1},
+      {"value": "https://www.lesbateauxlyonnais.com/", "count": 1},
+      {"value": "http://www.casamaures.org", "count": 1},
+      {"value": "http://www.casinograndcercle.com/", "count": 1},
+      {"value": "http://www.jardin-decouvertes.com/", "count": 1},
+      {"value": "http://www.mairie-satillieu.fr/", "count": 1},
+      {"value": "http://chateaudanjou.com/", "count": 1},
+      {"value": "http://www.chateau-de-miolans.com/", "count": 1},
+      {"value": "http://lacheze.voila.net/", "count": 1},
+      {"value": "http://www.thermes-challes.com/", "count": 1},
+      {"value": "http://www.aravis-parc-d-aventures.fr/", "count": 1},
+      {"value": "http://www.labyleo.com/", "count": 1},
+      {"value": "http://www.edenparc.eu", "count": 1},
+      {
+        "value": "http://www.saint-maurice-de-remens.fr/un-chacircteau--un-petit-prince--un-projet.html",
+        "count": 1
+      },
+      {"value": "http://www.larochedeglun.fr/Espaces-culturels", "count": 1},
+      {"value": "http://www.citeduchocolat.com", "count": 1},
+      {"value": "http://www.abbayedaulps.fr/", "count": 1},
+      {"value": "http://confiserielousucreu.fr/", "count": 1},
+      {"value": "http://www.cascade-seythenex.fr", "count": 1},
+      {"value": "http://www.facteurcheval.com", "count": 1}
+    ],
+    "count": 46
+  },
+  {
+    "key": "natural",
+    "tags": [
+      {"value": "cave_entrance", "count": 10},
+      {"value": "stone", "count": 7},
+      {"value": "spring", "count": 5},
+      {"value": "tree", "count": 4},
+      {"value": "rock", "count": 3},
+      {"value": "bare_rock", "count": 2},
+      {"value": "arch", "count": 1},
+      {"value": "peak", "count": 1},
+      {"value": "cliff", "count": 1},
+      {"value": "wetland", "count": 1},
+      {"value": "wood", "count": 1},
+      {"value": "grassland", "count": 1},
+      {"value": "water", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "place_of_worship", "count": 13},
+      {"value": "fountain", "count": 6},
+      {"value": "drinking_water", "count": 3},
+      {"value": "theatre", "count": 3},
+      {"value": "monastery", "count": 2},
+      {"value": "lavoir", "count": 2},
+      {"value": "community_centre", "count": 1},
+      {"value": "townhall", "count": 1},
+      {"value": "marketplace", "count": 1},
+      {"value": "clock", "count": 1},
+      {"value": "casino", "count": 1},
+      {"value": "toilets", "count": 1},
+      {"value": "arts_centre", "count": 1},
+      {"value": "quad_rental", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C20", "count": 5},
+      {"value": "C17", "count": 3},
+      {"value": "C13", "count": 3},
+      {"value": "C15", "count": 3},
+      {"value": "C12", "count": 3},
+      {"value": "C16", "count": 2},
+      {"value": "C14", "count": 2},
+      {"value": "1879", "count": 1},
+      {"value": "18 avril 2018", "count": 1},
+      {"value": "1438", "count": 1},
+      {"value": "C11", "count": 1},
+      {"value": "~C16", "count": 1},
+      {"value": "C18", "count": 1},
+      {"value": "1971", "count": 1},
+      {"value": "1965", "count": 1},
+      {"value": "1580", "count": 1},
+      {"value": "1876", "count": 1},
+      {"value": "1889", "count": 1},
+      {"value": "12 juillet", "count": 1}
+    ],
+    "count": 33
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "track", "count": 10},
+      {"value": "garden", "count": 4},
+      {"value": "park", "count": 2},
+      {"value": "carousel", "count": 1},
+      {"value": "nature_reserve", "count": 1},
+      {"value": "pitch", "count": 1},
+      {"value": "swimming_pool", "count": 1},
+      {"value": "bandstand", "count": 1},
+      {"value": "sports_centre", "count": 1},
+      {"value": "maze", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "1.8", "count": 12},
+      {"value": "60", "count": 1},
+      {"value": "40 m", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "43", "count": 1},
+      {"value": "51", "count": 1},
+      {"value": "34.5", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "12 m", "count": 1},
+      {"value": "1.2", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Musilac mont blanc Lieu du festival de musique durant le mois d'avril.",
+        "count": 1
+      },
+      {"value": "Écroulement remarquable", "count": 1},
+      {"value": "Lavoir typique des Monts d'Or", "count": 1},
+      {
+        "value": "Une flamme permanente issue d'une poche de gaz naturel.",
+        "count": 1
+      },
+      {"value": "Une des Sept Merveilles du Dauphiné", "count": 1},
+      {
+        "value": "Ancien déneigeur de la ligne St-Gervais − Chamonix − Vallorcine. À l'abandon",
+        "count": 1
+      },
+      {
+        "value": "Exposition de vieilles machines agricoles rénovées",
+        "count": 1
+      },
+      {"value": "Caborne typique des Monts d'Or", "count": 1},
+      {
+        "value": "Le château de Bocsozel est une ancienne maison forte, du xiie siècle, dont les ruines se dressent sur la commune de Mottier dans le département de l'Isère en région Rhône-Alpes. Le site est labellisé Patrimoine en Isère.",
+        "count": 1
+      },
+      {"value": "Conférence 25 info 35", "count": 1},
+      {
+        "value": "Rendu célèbre par Hérault de Séchelles sous la Révolution - Habité par Pie VII (1804) et Napoléon 1er (1805)",
+        "count": 1
+      },
+      {
+        "value": "Festival de musique Musilac Période: Mois de juillet",
+        "count": 1
+      },
+      {"value": "Point d'embarcadère de croisières à Lyon", "count": 1},
+      {"value": "Église du XIIIe siècle", "count": 1},
+      {"value": "Jardin et villa de style orientaliste", "count": 1},
+      {
+        "value": "Ancien Château, deux salles à visiter: la Chambre de la Marquise et le Grand Salon (Tapisseries sur Don Quichotte)",
+        "count": 1
+      },
+      {"value": "Édifice roman fin du XIè début du XIIè siècle", "count": 1},
+      {"value": "Bibliothèque communale", "count": 1},
+      {"value": "Cercle de pierres", "count": 1},
+      {
+        "value": "Ancienne chapelle des Capucins, dépendant actuellement de la Direction Départementale de l'Equipement de la Drôme",
+        "count": 1
+      }
+    ],
+    "count": 20
+  },
+  {
+    "key": "religion",
+    "tags": [{"value": "christian", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "toboggan", "count": 10},
+      {"value": "climbing_adventure", "count": 2},
+      {"value": "climbing", "count": 1},
+      {"value": "free_flying", "count": 1},
+      {"value": "paintball", "count": 1},
+      {"value": "ski_jump_take_off", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "entrance", "count": 4},
+      {"value": "ditch", "count": 3},
+      {"value": "fence", "count": 3},
+      {"value": "sally_port", "count": 2},
+      {"value": "city_wall", "count": 2},
+      {"value": "gate", "count": 1},
+      {"value": "wall", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "waterway",
+    "tags": [
+      {"value": "waterfall", "count": 15},
+      {"value": "rapids", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "monorail", "count": 8},
+      {"value": "miniature", "count": 6},
+      {"value": "roundhouse", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "ruins",
+    "tags": [{"value": "yes", "count": 13}, {"value": "castle", "count": 2}],
+    "count": 15
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 9},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 3}
+    ],
+    "count": 15
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 13}], "count": 13},
+  {"key": "oneway", "tags": [{"value": "yes", "count": 12}], "count": 12},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "sbarramento anticarro della seconda guerra mondiale",
+        "count": 3
+      },
+      {"value": "vestige d'une ancienne cheminée volcanique", "count": 1},
+      {"value": "Manège pour enfants", "count": 1},
+      {
+        "value": "La version du taurobole située ici n'est qu'une copie moderne",
+        "count": 1
+      },
+      {
+        "value": "Visible uniquement en Mars et Avril lorsque le niveau lacustre est suffisament bas",
+        "count": 1
+      },
+      {"value": "since 1636!", "count": 1},
+      {
+        "value": "Musilac mont blanc Lieu du festival de musique durant le mois d'avril.",
+        "count": 1
+      },
+      {
+        "value": "Festival de musique Musilac Période: Mois de juillet",
+        "count": 1
+      },
+      {"value": "visits", "count": 1},
+      {
+        "value": "Caborne restaurée en 2016 http://www.leprogres.fr/rhone/2016/02/25/la-cabane-pointue-retrouve-son-air-de-jeunesse",
+        "count": 1
+      }
+    ],
+    "count": 12
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 11}], "count": 11},
+  {
+    "key": "incline",
+    "tags": [{"value": "up", "count": 6}, {"value": "down", "count": 4}],
+    "count": 10
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 38 65 10", "count": 1},
+      {"value": "+33477975914", "count": 1},
+      {"value": "+33 (0) 4 75 66 63 08", "count": 1},
+      {"value": "+33 4 75 38 63 08", "count": 1},
+      {"value": "+33 681 557 494", "count": 1},
+      {"value": "+33 81 557 494", "count": 1},
+      {"value": "+33 4 75 34 96 64", "count": 1},
+      {"value": "+33 4 79 71 06 20", "count": 1},
+      {"value": "+33 4 75 09 27 27", "count": 1},
+      {"value": "+33 6 27 66 05 53", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La Diana", "count": 1},
+      {"value": "Club Alpin Français", "count": 1},
+      {"value": "Geopark", "count": 1},
+      {"value": "Chalet Charcot", "count": 1},
+      {"value": "USMB", "count": 1},
+      {"value": "propriété privée", "count": 1},
+      {"value": "Aartu d'artik", "count": 1},
+      {"value": "Scène nationale de Chambéry et de la Savoie", "count": 1},
+      {
+        "value": "Association La Casamaures d'hier et d'aujourd'hui",
+        "count": 1
+      },
+      {"value": "Valrhona", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "piste:type", "tags": [{"value": "sled", "count": 10}], "count": 10},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "raceway", "count": 3},
+      {"value": "tertiary", "count": 2},
+      {"value": "unclassified", "count": 1},
+      {"value": "residential", "count": 1},
+      {"value": "bridleway", "count": 1},
+      {"value": "path", "count": 1},
+      {"value": "footway", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "tower", "count": 8},
+      {"value": "water_well", "count": 1},
+      {"value": "watermill", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "aerialway",
+    "tags": [
+      {"value": "drag_lift", "count": 7},
+      {"value": "platter", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "castle_type",
+    "tags": [
+      {"value": "stately", "count": 3},
+      {"value": "fortress", "count": 2},
+      {"value": "defensive", "count": 2},
+      {"value": "manor", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "no", "count": 3},
+      {"value": "2€", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 6}], "count": 6},
+  {
+    "key": "ref:FR:CEF",
+    "tags": [
+      {"value": "73065_01", "count": 1},
+      {"value": "07292_02", "count": 1},
+      {"value": "69238_01", "count": 1},
+      {"value": "42095_04", "count": 1},
+      {"value": "73065_06", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1238", "count": 1},
+      {"value": "675", "count": 1},
+      {"value": "700", "count": 1},
+      {"value": "2400", "count": 1},
+      {"value": "2913", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 2},
+      {"value": "customers", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "alcohol", "count": 2},
+      {"value": "deli", "count": 1},
+      {"value": "winery", "count": 1},
+      {"value": "confectionery", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Halles Sainte-Claire Grenoble.JPG", "count": 1},
+      {"value": "File:Firminy-Château_des_Bruneaux-20110415.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Saint-Maurice-de-R%C3%A9mens_-_juillet_2014_(2).JPG",
+        "count": 1
+      },
+      {"value": "File:La Bénisson-Dieu - abbaye.jpg", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "libreenvol74@gmail.com", "count": 2},
+      {"value": "volerieduforez@gmail.com", "count": 1},
+      {"value": "confiserielousucreu@gmail.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "paved", "count": 2},
+      {"value": "asphalt", "count": 1},
+      {"value": "paving_stones", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "garden:type",
+    "tags": [{"value": "botanical", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "maxspeed",
+    "tags": [{"value": "30", "count": 2}, {"value": "80", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_geodesie.asp?num_site=38269A&X=920017&Y=6426839",
+        "count": 1
+      },
+      {
+        "value": "http://www.chagnon42.fr/fr/information/32358/la-pierre-romaine",
+        "count": 1
+      },
+      {"value": "http://www.mercurol.fr/la-tour-de-mercurol.html", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic:civilization",
+    "tags": [
+      {"value": "ancient_roman", "count": 1},
+      {"value": "medieval", "count": 1},
+      {"value": "celtic", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "site_type",
+    "tags": [
+      {"value": "megalith", "count": 2},
+      {"value": "roman_villa", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "medieval", "count": 2}, {"value": "roman", "count": 1}],
+    "count": 3
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "memorial", "tags": [{"value": "statue", "count": 2}], "count": 2},
+  {
+    "key": "information",
+    "tags": [{"value": "board", "count": 1}, {"value": "map", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "architect",
+    "tags": [{"value": "Le Corbusier", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "architect:wikipedia",
+    "tags": [{"value": "Le Corbusier", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "whc:inscription_date",
+    "tags": [{"value": "2016", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "D 538B", "count": 1}, {"value": "D 209", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "tower:type",
+    "tags": [
+      {"value": "defensive", "count": 1},
+      {"value": "bell_tower", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "leaf_type",
+    "tags": [{"value": "broadleaved", "count": 2}],
+    "count": 2
+  },
+  {"key": "genus:fr", "tags": [{"value": "Tilleul", "count": 2}], "count": 2},
+  {"key": "genus", "tags": [{"value": "Tilia", "count": 2}], "count": 2},
+  {
+    "key": "religious_rank",
+    "tags": [{"value": "abbey", "count": 2}],
+    "count": 2
+  },
+  {"key": "tracks", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {"key": "usage", "tags": [{"value": "tourism", "count": 2}], "count": 2},
+  {
+    "key": "megalith_type",
+    "tags": [
+      {"value": "dolmen", "count": 1},
+      {"value": "stone_circle", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "protected_area", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "protection_title",
+    "tags": [{"value": "Sites classés", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "381850788D", "count": 1}],
+    "count": 1
+  },
+  {"key": "maxspeed:type", "tags": [{"value": "sign", "count": 1}], "count": 1},
+  {"key": "maxweight", "tags": [{"value": "3.5", "count": 1}], "count": 1},
+  {"key": "board_type", "tags": [{"value": "nature", "count": 1}], "count": 1},
+  {"key": "smoothness", "tags": [{"value": "bad", "count": 1}], "count": 1},
+  {
+    "key": "geological",
+    "tags": [{"value": "palaeontological_site", "count": 1}],
+    "count": 1
+  },
+  {"key": "abandoned", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "cycleway:both", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "conifer", "count": 1}], "count": 1},
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.9c", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "recreation_ground", "count": 1}],
+    "count": 1
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "distillery", "count": 1}], "count": 1},
+  {"key": "wetland", "tags": [{"value": "bog", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [
+      {"value": "Category:Tourbière de Gimel, Saint-Régis-du-Coin", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "water", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "display", "tags": [{"value": "sundial", "count": 1}], "count": 1},
+  {"key": "rock", "tags": [{"value": "hoodoo", "count": 1}], "count": 1},
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:La_Voulte-sur-Rh%C3%B4ne_-_fontaine_01.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "free_flying:school",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "width", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "maze", "tags": [{"value": "labyrinth", "count": 1}], "count": 1},
+  {"key": "drinking_water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "exact park area to be determined", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "statue", "count": 1}],
+    "count": 1
+  },
+  {"key": "accomodation", "tags": [{"value": "hotel", "count": 1}], "count": 1},
+  {"key": "map_type", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [{"value": "Auvergne, Velay, Forez.", "count": 1}],
+    "count": 1
+  },
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "tower:construction",
+    "tags": [{"value": "freestanding", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "cycleway:left",
+    "tags": [{"value": "opposite_lane", "count": 1}],
+    "count": 1
+  },
+  {"key": "circumference", "tags": [{"value": "6.5", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "26 m", "count": 1}], "count": 1},
+  {"key": "hgv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "transport", "count": 1}], "count": 1}
+]

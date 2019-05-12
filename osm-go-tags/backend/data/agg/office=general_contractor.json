@@ -1,0 +1,54 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "general_contractor", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 40 98 54 97", "count": 1},
+      {"value": "+33 3 87 37 16 93", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.maisonsdelavenir.com/agences/agence-ancenis/",
+        "count": 1
+      },
+      {"value": "http://real-projets.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 3 87 37 21 93", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:wire_transfer",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIREN",
+    "tags": [{"value": "507 752 517", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "507 752 517 00049", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "4399C", "count": 1}], "count": 1}
+]

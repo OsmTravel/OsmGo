@@ -1,0 +1,21 @@
+[
+  {"key": "ref:mhs", "tags": [{"value": "PA00080409", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "dolmen", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3034059", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Dolmen de Villard", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1900", "count": 1}],
+    "count": 1
+  }
+]

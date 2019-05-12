@@ -1,0 +1,43 @@
+[
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA38000008", "count": 1},
+      {"value": "PA00118305", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "abbey", "count": 2}], "count": 2},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22996664", "count": 1},
+      {"value": "Q63524", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1998-02-12", "count": 1},
+      {"value": "1875", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Abbaye d'Hautecombe", "count": 1}],
+    "count": 1
+  }
+]

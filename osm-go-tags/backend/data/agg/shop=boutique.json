@@ -1,0 +1,49 @@
+[
+  {"key": "shop", "tags": [{"value": "boutique", "count": 32}], "count": 32},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 24 10 42", "count": 1},
+      {"value": "+33 4 77700218", "count": 1},
+      {"value": "+33 4 50 70 94 59", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "clothes",
+    "tags": [{"value": "hats", "count": 1}, {"value": "children", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.brin-atelier.com/", "count": 1},
+      {"value": "http://www.cousubois.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "Articles de l'Inde", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {"value": "https://www.facebook.com/boutique.fantasia.69/", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "dressmaker", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "catherine.gaudillet@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "step_count", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "payment:cards", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "2", "count": 1}], "count": 1}
+]

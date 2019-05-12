@@ -1,0 +1,26 @@
+[
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "works", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1987-02-02", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118276", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.modane.fr/La-Rizerie-Place-du-17-septembre.html",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q22968554", "count": 1}], "count": 1}
+]

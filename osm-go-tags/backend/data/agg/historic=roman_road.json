@@ -1,0 +1,180 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "roman_road", "count": 191}],
+    "count": 191
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "track", "count": 74},
+      {"value": "secondary", "count": 27},
+      {"value": "primary", "count": 21},
+      {"value": "residential", "count": 20},
+      {"value": "tertiary", "count": 17},
+      {"value": "unclassified", "count": 12},
+      {"value": "service", "count": 9},
+      {"value": "path", "count": 4},
+      {"value": "no", "count": 1}
+    ],
+    "count": 185
+  },
+  {
+    "key": "maxspeed",
+    "tags": [{"value": "50", "count": 43}, {"value": "30", "count": 5}],
+    "count": 48
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 26}, {"value": "no", "count": 21}],
+    "count": 47
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 24},
+      {"value": "dirt", "count": 15},
+      {"value": "mud", "count": 4},
+      {"value": "rock", "count": 1},
+      {"value": "gravel", "count": 1},
+      {"value": "paved", "count": 1}
+    ],
+    "count": 46
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 14", "count": 14},
+      {"value": "D 341", "count": 12},
+      {"value": "VR 17", "count": 6},
+      {"value": "D 27", "count": 2},
+      {"value": "Roman Road", "count": 2},
+      {"value": "D 139", "count": 1},
+      {"value": "JC3", "count": 1},
+      {"value": "CR 155", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "tracktype",
+    "tags": [
+      {"value": "grade1", "count": 12},
+      {"value": "grade2", "count": 8},
+      {"value": "grade3", "count": 3},
+      {"value": "grade4", "count": 3}
+    ],
+    "count": 26
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "2", "count": 14},
+      {"value": "5", "count": 5},
+      {"value": "1", "count": 4},
+      {"value": "4", "count": 2}
+    ],
+    "count": 25
+  },
+  {"key": "old_ref", "tags": [{"value": "N 341", "count": 12}], "count": 12},
+  {"key": "wikidata", "tags": [{"value": "Q2961670", "count": 9}], "count": 9},
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "20%", "count": 3},
+      {"value": "13%", "count": 2},
+      {"value": "16%", "count": 2},
+      {"value": "moderate", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "lanes:forward",
+    "tags": [{"value": "3", "count": 3}, {"value": "2", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "cycleway:right",
+    "tags": [{"value": "lane", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "no", "count": 4}, {"value": "yes", "count": 1}],
+    "count": 5
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 5}], "count": 5},
+  {
+    "key": "lanes:backward",
+    "tags": [{"value": "2", "count": 3}, {"value": "3", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "turn:lanes:backward",
+    "tags": [
+      {"value": "left|through|through;right", "count": 1},
+      {"value": "left;through|through;right", "count": 1},
+      {"value": "left|through|through", "count": 1},
+      {"value": "left;through|through", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "route", "tags": [{"value": "hiking", "count": 3}], "count": 3},
+  {"key": "type", "tags": [{"value": "route", "count": 3}], "count": 3},
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "turn:lanes:forward",
+    "tags": [
+      {"value": "through|through|right", "count": 1},
+      {"value": "left;through|", "count": 1},
+      {"value": "left|through|", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "trail_visibility",
+    "tags": [{"value": "nil", "count": 1}, {"value": "none", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "motorcar",
+    "tags": [{"value": "agricultural", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle",
+    "tags": [{"value": "agricultural", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "access:conditional",
+    "tags": [{"value": "destination", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "administrative", "count": 1}],
+    "count": 1
+  },
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "222650050F", "count": 1}],
+    "count": 1
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "smoothness", "tags": [{"value": "bad", "count": 1}], "count": 1},
+  {
+    "key": "ford",
+    "tags": [{"value": "stepping_stones", "count": 1}],
+    "count": 1
+  },
+  {"key": "admin_level", "tags": [{"value": "9", "count": 1}], "count": 1},
+  {
+    "key": "bicycle:backward",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

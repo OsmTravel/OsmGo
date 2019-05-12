@@ -1,0 +1,108 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "car_wash", "count": 295}],
+    "count": 295
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 51}], "count": 51},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Total", "count": 7},
+      {"value": "Groupement des Mousquetaires", "count": 5},
+      {"value": "E-Leclerc Genay", "count": 1},
+      {"value": "Eléphant Bleu", "count": 1},
+      {"value": "8 à Huit", "count": 1},
+      {"value": "Hydrostar", "count": 1},
+      {"value": "Otarie", "count": 1},
+      {"value": "Total Access", "count": 1},
+      {"value": "groupe Hypromat", "count": 1},
+      {"value": "Esso", "count": 1},
+      {"value": "Carrefour", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "King Car", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "self_service",
+    "tags": [{"value": "yes", "count": 20}, {"value": "no", "count": 1}],
+    "count": 21
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Total Wash", "count": 3},
+      {"value": "Total", "count": 3},
+      {"value": "Agip", "count": 2},
+      {"value": "eni wash", "count": 1},
+      {"value": "Eléphant Bleu", "count": 1},
+      {"value": "L'Éléphant Bleu", "count": 1},
+      {"value": "Éléphant Bleu", "count": 1},
+      {"value": "Total Access", "count": 1},
+      {"value": "L'Éléphant", "count": 1},
+      {"value": "Hydrostar", "count": 1},
+      {"value": "Carrefour", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "King Car", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "automated",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.avia-france.fr/", "count": 1},
+      {"value": "www.lavatrans.com", "count": 1},
+      {"value": "https://www.elephantbleu.fr/2619-soyons.html", "count": 1},
+      {"value": "www.magasins-u.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 25 18 62", "count": 1},
+      {"value": "+33 4 75 66 96 69", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Spécifique poids-lourds", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "lavage manuel avec brosses et jet", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [{"value": "Q2529029", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Système U", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cards", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "truck_wash", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

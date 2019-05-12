@@ -1,0 +1,9 @@
+[
+  {"key": "amenity", "tags": [{"value": "dietician", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Consultation sur rendez-vous", "count": 1}],
+    "count": 1
+  }
+]

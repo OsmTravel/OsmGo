@@ -1,0 +1,621 @@
+[
+  {"key": "tourism", "tags": [{"value": "museum", "count": 340}], "count": 340},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.musee-paul-dini.com/", "count": 2},
+      {
+        "value": "http://www.paysvoironnais.info/musee-mainssieux/voiron/musee.html",
+        "count": 2
+      },
+      {"value": "https://www.museededie.org/", "count": 1},
+      {"value": "http://www.musee-hector-berlioz.fr/", "count": 1},
+      {"value": "http://www.musee-hebert.fr/", "count": 1},
+      {"value": "http://microcosm.web.cern.ch", "count": 1},
+      {"value": "http://www.organe.org", "count": 1},
+      {"value": "http://www.musee-archeologique-grenoble.fr/", "count": 1},
+      {"value": "http://www.mimlyon.com", "count": 1},
+      {"value": "http://i-ac.eu/", "count": 1},
+      {"value": "http://www.memorial-loire.fr", "count": 1},
+      {"value": "http://www.lacitedeleau.fr/", "count": 1},
+      {"value": "http://www.musee-eau.com/", "count": 1},
+      {"value": "http://trainchatillon.com", "count": 1},
+      {"value": "http://www.arche-des-metiers.com/", "count": 1},
+      {"value": "http://www.centrenaturemontagnarde.org/", "count": 1},
+      {"value": "http://www.chateaudesbruneaux.fr", "count": 1},
+      {"value": "http://aconit.org", "count": 1},
+      {"value": "http://www.standard216.com/", "count": 1},
+      {"value": "http://www.chambery.fr/90-la-galerie-eureka.htm", "count": 1},
+      {"value": "http://www.musee-africain-lyon.org/", "count": 1},
+      {"value": "http://www.musees-vienne.fr/", "count": 1},
+      {
+        "value": "http://www.jeangauthier.com/spiritueux/fr/10/musee-de-l-alambic.html",
+        "count": 1
+      },
+      {"value": "http://www.musee-alambic.com/", "count": 1},
+      {"value": "http://www.musee-moutiers.fr", "count": 1},
+      {"value": "http://musee-des-berthalais.fr/", "count": 1},
+      {"value": "http://www.chateaumuseeboen.fr/", "count": 1},
+      {
+        "value": "http://www.villeneuvedeberg.fr/culture-loisirs/musee/musee-des-arts-et-des-traditions-populaires-du-pays-de-berg.php",
+        "count": 1
+      },
+      {"value": "http://patrimoinearmenien.org/", "count": 1},
+      {"value": "http://www.lavanaude.org", "count": 1},
+      {"value": "http://www.araire.org/", "count": 1},
+      {"value": "http://www.pascalis.com/visitez-pascalis", "count": 1},
+      {"value": "http://museealicetaverne.fr", "count": 1},
+      {"value": "http://www.mmi-lyon.fr/", "count": 1},
+      {"value": "http://www.musee-oceanie.fr", "count": 1},
+      {"value": "http://www.maisondesmetiers.fr", "count": 1},
+      {"value": "http://www.mineralogica.com/", "count": 1},
+      {"value": "http://www.musee-grande-chartreuse.fr/en/", "count": 1},
+      {"value": "http://institut-lumiere.org", "count": 1},
+      {"value": "http://www.taverne-gutenberg.com", "count": 1},
+      {"value": "http://www.mam-st-etienne.fr", "count": 1},
+      {"value": "https://www.maisondescanuts.fr/", "count": 1},
+      {"value": "http://lagaredesramieres.com/", "count": 1},
+      {"value": "http://www.museelacdepaladru.fr", "count": 1},
+      {"value": "http://www.hameauduvin.com", "count": 1},
+      {
+        "value": "http://www.montmelian.com/culture/musee-regional-de-la-vigne-et-du/",
+        "count": 1
+      },
+      {"value": "http://www.museedegrenoble.fr/", "count": 1},
+      {
+        "value": "https://www.grenoble.fr/lieu/731/137-la-plateforme.htm",
+        "count": 1
+      },
+      {"value": "http://www.resistance-en-isere.fr/", "count": 1},
+      {
+        "value": "http://www.grenoble.fr/639-museum-de-grenoble.htm",
+        "count": 1
+      },
+      {"value": "http://magasin-cnac.org/", "count": 1},
+      {"value": "http://www.musee-savoisien.fr", "count": 1},
+      {"value": "http://www.musee-art-industrie.saint-etienne.fr/", "count": 1},
+      {"value": "http://maisonbarberine.over-blog.com/", "count": 1},
+      {
+        "value": "http://tourisme-saintfelicien.fr/noesit/!/fiche/maison-charles-forot-333398",
+        "count": 1
+      },
+      {"value": "http://www.ot-cruas.fr/musee_auclair.php", "count": 1},
+      {"value": "http://lacasemate.fr", "count": 1},
+      {"value": "http://www.soyons.fr/le-musee", "count": 1},
+      {"value": "http://www.paccard.com/musee/", "count": 1},
+      {"value": "http://www.meacmtl.com/", "count": 1},
+      {"value": "http://www.ardeche-miniatures.com/", "count": 1},
+      {"value": "http://www.magiedesautomates.com/", "count": 1},
+      {"value": "http://www.musees-gallo-romains.com/", "count": 1},
+      {"value": "http://www.museedevalence.fr/", "count": 1},
+      {"value": "http://www.lesclevos.com/", "count": 1},
+      {
+        "value": "https://www.ville-bron.fr/annuaires/annuaire-des-equipements-culturels/maison-des-arts",
+        "count": 1
+      },
+      {"value": "http://www.abbayedaulps.fr/", "count": 1},
+      {"value": "www.musee-docteur-merieux.com", "count": 1},
+      {
+        "value": "http://www.vienne-tourisme.com/fiche-presentation_patrimoine_culturel-59-FR-U-38AASOR100164-PATRIMOINE.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.isere-tourisme.com/patrimoine-culturel/la-villa-de-licinius",
+        "count": 1
+      },
+      {"value": "http://www.musicmecalesgets.org/", "count": 1},
+      {
+        "value": "http://www.ville-romans.fr/decouvrir/le-musee-de-la-chaussure",
+        "count": 1
+      },
+      {"value": "http://www.maisondepaysenbresse.com", "count": 1},
+      {"value": "http://www.museeduchapeau.com", "count": 1},
+      {
+        "value": "http://www.ardeche.fr/213-museal-musee-archeologique-d-alba.htm",
+        "count": 1
+      },
+      {"value": "http://www.ecomusee-usson-en-forez.fr/", "count": 1},
+      {"value": "http://www.cavernedupontdarc.fr/", "count": 1},
+      {"value": "http://www.museum-ardeche.fr/", "count": 1},
+      {"value": "http://www.museedesconfluences.fr", "count": 1},
+      {"value": "http://ecomusee-bois-foret.com/", "count": 1},
+      {"value": "http://www.bresse-sougey.net", "count": 1}
+    ],
+    "count": 83
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22968221", "count": 2},
+      {"value": "Q3330757", "count": 2},
+      {"value": "Q821617", "count": 1},
+      {"value": "Q7736814", "count": 1},
+      {"value": "Q10143", "count": 1},
+      {"value": "Q3329436", "count": 1},
+      {"value": "Q8397", "count": 1},
+      {"value": "Q3329424", "count": 1},
+      {"value": "Q3330257", "count": 1},
+      {"value": "Q3151912", "count": 1},
+      {"value": "Q3330491", "count": 1},
+      {"value": "Q3330493", "count": 1},
+      {"value": "Q2971465", "count": 1},
+      {"value": "Q40002294", "count": 1},
+      {"value": "Q2450180", "count": 1},
+      {"value": "Q2858640", "count": 1},
+      {"value": "Q16010419", "count": 1},
+      {"value": "Q3329362", "count": 1},
+      {"value": "Q15402843", "count": 1},
+      {"value": "Q15406293", "count": 1},
+      {"value": "Q2845788", "count": 1},
+      {"value": "Q3329628", "count": 1},
+      {"value": "Q16335746", "count": 1},
+      {"value": "Q18414857", "count": 1},
+      {"value": "Q19845673", "count": 1},
+      {"value": "Q16335530", "count": 1},
+      {"value": "Q3329906", "count": 1},
+      {"value": "Q3151766", "count": 1},
+      {"value": "Q3348487", "count": 1},
+      {"value": "Q3329590", "count": 1},
+      {"value": "Q28216487", "count": 1},
+      {"value": "Q1952944", "count": 1},
+      {"value": "Q3329021", "count": 1},
+      {"value": "Q3329777", "count": 1},
+      {"value": "Q9494", "count": 1},
+      {"value": "Q22966993", "count": 1},
+      {"value": "Q22996921", "count": 1},
+      {"value": "Q3278804", "count": 1},
+      {"value": "Q2942523", "count": 1},
+      {"value": "Q3330799", "count": 1},
+      {"value": "Q3001655", "count": 1},
+      {"value": "Q22967604", "count": 1},
+      {"value": "Q3287029", "count": 1},
+      {"value": "Q3330414", "count": 1},
+      {"value": "Q15968440", "count": 1},
+      {"value": "Q3329161", "count": 1},
+      {"value": "Q509", "count": 1},
+      {"value": "Q967049", "count": 1},
+      {"value": "Q2243758", "count": 1},
+      {"value": "Q3068912", "count": 1},
+      {"value": "Q3068935", "count": 1},
+      {"value": "Q3330655", "count": 1},
+      {"value": "Q8348", "count": 1},
+      {"value": "Q3584158", "count": 1},
+      {"value": "Q3402367", "count": 1},
+      {"value": "Q21592055", "count": 1},
+      {"value": "Q3552683", "count": 1},
+      {"value": "Q21481650", "count": 1},
+      {"value": "Q20751541", "count": 1},
+      {"value": "Q3330146", "count": 1},
+      {"value": "Q3330816", "count": 1},
+      {"value": "Q15718649", "count": 1},
+      {"value": "Q30739605", "count": 1},
+      {"value": "Q2969174", "count": 1},
+      {"value": "Q19951965", "count": 1},
+      {"value": "Q8352", "count": 1},
+      {"value": "Q3591598", "count": 1},
+      {"value": "Q511", "count": 1}
+    ],
+    "count": 70
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Musée Paul-Dini de Villefranche-sur-Saône", "count": 2},
+      {"value": "fr:Musée Mainssieux", "count": 2},
+      {"value": "fr:Musée gallo-romain de Saint-Romain-en-Gal", "count": 2},
+      {"value": "fr:Musée paléoécologique de Cerin", "count": 2},
+      {"value": "fr:Musée de l'Imprimerie (Lyon)", "count": 1},
+      {"value": "fr:Institut d'art contemporain de Villeurbanne", "count": 1},
+      {
+        "value": "fr:Musée du train miniature de Châtillon-sur-Chalaronne",
+        "count": 1
+      },
+      {"value": "fr:Musée du vieux Saint-Étienne", "count": 1},
+      {"value": "fr:Château des Bruneaux", "count": 1},
+      {"value": "fr:Château de la Bastie d'Urfé", "count": 1},
+      {
+        "value": "fr:Apothicairerie de l'hôtel-Dieu de Bourg-en-Bresse",
+        "count": 1
+      },
+      {
+        "value": "fr:Musée du lapidaire et des pierres fines et précieuses de Mijoux",
+        "count": 1
+      },
+      {"value": "fr:Musée Testut-Latarjet", "count": 1},
+      {
+        "value": "fr:Musée d'histoire de la médecine et de la pharmacie de Lyon",
+        "count": 1
+      },
+      {"value": "fr:Musée des Verts", "count": 1},
+      {
+        "value": "fr:Ancien hospice de Montluel et son apothicairerie",
+        "count": 1
+      },
+      {"value": "fr:Musée d'art et d'histoire locale de Montluel", "count": 1},
+      {"value": "fr:Musée africain de Lyon", "count": 1},
+      {"value": "fr:Musée de la vigne de Vaux-en-Bugey", "count": 1},
+      {"value": "fr:Musée du car de Vanosc", "count": 1},
+      {"value": "fr:Musée des mariniers", "count": 1},
+      {"value": "fr:Musée de la Grande Chartreuse", "count": 1},
+      {"value": "fr:Musée de l'Ancien Évêché", "count": 1},
+      {
+        "value": "fr:Musée de la Résistance et de la Déportation de l'Isère",
+        "count": 1
+      },
+      {"value": "fr:Muséum d'histoire naturelle de Grenoble", "count": 1},
+      {"value": "fr:Magasin (centre d'art contemporain)", "count": 1},
+      {"value": "fr:Musée de la mine de Saint-Étienne", "count": 1},
+      {"value": "fr:Musée du Vieux Pérouges", "count": 1},
+      {"value": "fr:Cathédrale Vieux-Saint-Vincent de Mâcon", "count": 1},
+      {"value": "fr:Musée savoisien", "count": 1},
+      {"value": "fr:Couvent de la Visitation de Romans-sur-Isère", "count": 1},
+      {"value": "en:The Globe of Science and Innovation", "count": 1},
+      {"value": "fr:Musée d'art contemporain de Lyon", "count": 1},
+      {"value": "fr:Manufacture d'armes de Saint-Étienne", "count": 1},
+      {"value": "fr:Cité du design (Saint-Étienne)", "count": 1},
+      {"value": "fr:Musée d'art et d'industrie de Saint-Étienne", "count": 1},
+      {"value": "fr:Musée du cheminot d'Ambérieu-en-Bugey", "count": 1},
+      {"value": "fr:CCSTI de Grenoble", "count": 1},
+      {"value": "fr:Demeure du Chaos", "count": 1},
+      {"value": "fr:Musée de la viscose", "count": 1},
+      {"value": "fr:Musée Géo-Charles", "count": 1},
+      {"value": "fr:Musée gallo-romain de Fourvière", "count": 1},
+      {"value": "fr:Les Charmettes", "count": 1},
+      {"value": "fr:Château de Tournon", "count": 1},
+      {"value": "fr:Ferme de la Forêt", "count": 1},
+      {"value": "fr:Ferme du Clos Parchet", "count": 1},
+      {"value": "fr:Musée municipal de Bourg-en-Bresse", "count": 1},
+      {"value": "fr:Musée archéologique de Grenoble", "count": 1},
+      {"value": "fr:Église Saint-Pierre de Vienne (Isère)", "count": 1},
+      {"value": "fr:Presbytère du curé d'Ars", "count": 1},
+      {"value": "fr:Saint-Georges-d'Hurtières", "count": 1},
+      {"value": "fr:Petit Palais de Conflans", "count": 1},
+      {"value": "fr:Usine électrique la Grande Vapeur", "count": 1},
+      {"value": "fr:Musée des Tissus et des Arts décoratifs", "count": 1},
+      {"value": "fr:Musée des miniatures et décors de cinéma", "count": 1},
+      {"value": "fr:Maison des pays de Bresse", "count": 1},
+      {"value": "fr:Chazelles-sur-Lyon#Atelier-Musée du chapeau", "count": 1},
+      {"value": "fr:Musée régional de Préhistoire", "count": 1},
+      {"value": "fr:Château de Désaignes", "count": 1},
+      {"value": "fr:Caverne du Pont-d'Arc", "count": 1},
+      {"value": "fr:Musée des Confluences", "count": 1},
+      {"value": "fr:Etablissements C.J. Bonnet", "count": 1},
+      {"value": "fr:Musée des beaux-arts de Lyon", "count": 1}
+    ],
+    "count": 67
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 28 62 04", "count": 1},
+      {"value": "+33 4 78 61 60 98", "count": 1},
+      {"value": "+33 4 76 44 78 68", "count": 1},
+      {"value": "+33 4 74 55 03 54", "count": 1},
+      {"value": "+33 4 75 20 24 56", "count": 1},
+      {"value": "+33 4 50 58 32 13", "count": 1},
+      {"value": "+33 4 76 48 43 60", "count": 1},
+      {"value": "+33 4 79 60 04 25", "count": 1},
+      {"value": "+33 4 74 78 71 04", "count": 1},
+      {"value": "+33 4 77 24 08 12", "count": 1},
+      {"value": "+33 4 75 80 13 00", "count": 1},
+      {"value": "+33 4 75 34 79 81", "count": 1},
+      {"value": "+33 4 78810779", "count": 1},
+      {"value": "+33478486432", "count": 1},
+      {"value": "+33 4 76 88 60 45", "count": 1},
+      {"value": "+33478781895", "count": 1},
+      {"value": "+33 4 75 60 96 58", "count": 1},
+      {"value": "+33 4 76 63 44 44", "count": 1},
+      {"value": "+33 4 76 42 26 82", "count": 1},
+      {"value": "+33 4 77 43 83 26", "count": 1},
+      {"value": "+33 4 76 44 88 80", "count": 1},
+      {"value": "+33 4 76 95 40 14", "count": 1},
+      {"value": "+33 4 72 38 49 30", "count": 1},
+      {"value": "+33475792080", "count": 1},
+      {"value": "+33 4 74 85 20 35", "count": 1},
+      {"value": "+33 4 74 87 72 05", "count": 1},
+      {"value": "+33 4 50 79 85 75", "count": 1},
+      {"value": "+33477942329", "count": 1},
+      {"value": "+33 4 75 52 45 15", "count": 1},
+      {"value": "+33 4 75 94 39 40", "count": 1},
+      {"value": "+33 4 28 38 11 90", "count": 1},
+      {"value": "+33 4 50 32 18 10", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 15},
+      {"value": "limited", "count": 6},
+      {"value": "no", "count": 2}
+    ],
+    "count": 23
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 12}, {"value": "3", "count": 10}],
+    "count": 22
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118240", "count": 1},
+      {"value": "PA00117192", "count": 1},
+      {"value": "PA00117365", "count": 1},
+      {"value": "PA00117196", "count": 1},
+      {"value": "PA42000039", "count": 1},
+      {"value": "PA00116459", "count": 1},
+      {"value": "PA00113319", "count": 1},
+      {"value": "PA00118222", "count": 1},
+      {"value": "PA00117028", "count": 1},
+      {"value": "PA00117870", "count": 1},
+      {"value": "PA42000025", "count": 1},
+      {"value": "PA00117202", "count": 1},
+      {"value": "PA00116828", "count": 1},
+      {"value": "PA00116387", "count": 1},
+      {"value": "PA74000010", "count": 1},
+      {"value": "PA00117326", "count": 1},
+      {"value": "PA00116295", "count": 1},
+      {"value": "PA00118181", "count": 1},
+      {"value": "PA00116445", "count": 1},
+      {"value": "PA00118395", "count": 1},
+      {"value": "PA00116703", "count": 1},
+      {"value": "PA01000011", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 22}],
+    "count": 22
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "CPPJ", "count": 2},
+      {"value": "Amic Cerin-Marchamp", "count": 2},
+      {"value": "Communauté d'agglomération du bassin d'Annonay", "count": 1},
+      {"value": "Veolia Eau", "count": 1},
+      {"value": "CMB", "count": 1},
+      {
+        "value": "http://haute-savoie.ialpes.com/musees/musee-departemental-resistance-thones.htm",
+        "count": 1
+      },
+      {"value": "La Vanaude", "count": 1},
+      {"value": "Ville de Montélimar", "count": 1},
+      {"value": "Saint-Étienne Métropole", "count": 1},
+      {"value": "CERN", "count": 1},
+      {"value": "Mairie de Saint-Jean-de-Bournay", "count": 1},
+      {"value": "Ville de Grenoble", "count": 1},
+      {"value": "Régie Municipale des Remontées Mécaniques", "count": 1},
+      {"value": "Ville de Lyon", "count": 1},
+      {"value": "La Cité du Design", "count": 1},
+      {"value": "Ville de Saint-Étienne", "count": 1},
+      {"value": "Mairie de Pellafol", "count": 1},
+      {"value": "Roannais Agglomération", "count": 1},
+      {"value": "Ecomusée Du Bois Et De La Forêt", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1862", "count": 2},
+      {"value": "1905-03-10", "count": 1},
+      {"value": "1989-01-30", "count": 1},
+      {"value": "1944-01-24", "count": 1},
+      {"value": "1921-11-24", "count": 1},
+      {"value": "2000-09-12", "count": 1},
+      {"value": "1911-08-08", "count": 1},
+      {"value": "1978-06-23", "count": 1},
+      {"value": "1964-09-23", "count": 1},
+      {"value": "1992-07-23", "count": 1},
+      {"value": "1927-07-12", "count": 1},
+      {"value": "1930", "count": 1},
+      {"value": "2007-09-19", "count": 1},
+      {"value": "1966", "count": 1},
+      {"value": "1904-12-07", "count": 1},
+      {"value": "1988", "count": 1},
+      {"value": "1986-04-21", "count": 1},
+      {"value": "1933", "count": 1},
+      {"value": "2003-01-31", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "castle", "count": 5},
+      {"value": "building", "count": 3},
+      {"value": "church", "count": 1},
+      {"value": "monastery", "count": 1},
+      {"value": "farm", "count": 1},
+      {"value": "industrial", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 3}],
+    "count": 11
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1980", "count": 1},
+      {"value": "2014", "count": 1},
+      {"value": "C20", "count": 1},
+      {"value": "2015-04-10", "count": 1},
+      {"value": "1637", "count": 1},
+      {"value": "2014-12-19", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Website invalide (http://www.trient.ch/centralecff.htm)",
+        "count": 1
+      },
+      {
+        "value": "Plus tard si possible, ajouter les horaires d'ouverture qui sont assez compliqués.",
+        "count": 1
+      },
+      {
+        "value": "Du 1er octobre au 31 mai  : mardi de 14h à 18h, du mercredi au vendredi de 10h à 12h et de 14h à 18h, samedi de 10h à 12h30. Du 1er juin au 30 septembre : ouvert du lundi au samedi de 10h à 12h et de 14h à 18h30.",
+        "count": 1
+      },
+      {
+        "value": "Fermé temporairement cf. site internet\nRéouverture prévue en 2020",
+        "count": 1
+      },
+      {"value": "Musée de Cires Grévin", "count": 1},
+      {
+        "value": "Cessation d'activité en 1940. Ruine rénové à partir de 2012 et inauguré le 1er juillet 2017",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Ancienne maison Stendhal Grenoble.JPG", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Vaux-en-Bugey_(32).JPG",
+        "count": 1
+      },
+      {"value": "File:Ancien musée-bibliothèque - Grenoble.JPG", "count": 1},
+      {"value": "File:Museum d'histoire naturelle -- Grenoble.JPG", "count": 1},
+      {
+        "value": "http://fr.wikipedia.org/wiki/Fichier:Couriot-Puit-chevalement.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Musée_des_confluences_février_2014.jpg",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "ouverture: mi-avril à fin octobre : dimanches et jours fériés de 14h à 18h",
+        "count": 1
+      },
+      {"value": "Histoire de Noirétable", "count": 1},
+      {"value": "Maison de Jean-Jacques Rousseau", "count": 1},
+      {
+        "value": "Avec film \"Vin, tourisme et gastronomie au Pays de Brillat-Savarin\"",
+        "count": 1
+      },
+      {
+        "value": "Ouverture aux visiteurs individuels et familles le mercredi de 14h30 à 17h30 départs en visites commentées à 14h45 et 16h15 Ouverture groupes du lundi au vendredi (sur réservation).",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "wikimedia_commons",
+    "tags": [
+      {"value": "Category:Château de la Bastie d'Urfé", "count": 1},
+      {"value": "Category:Chevalement, Puits Couriot", "count": 1},
+      {
+        "value": "Category:Manufacture Nationale d'Armes de Saint-Étienne",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "galerie.eureka@ccsti-chambery.org", "count": 1},
+      {"value": "contact@chateaumuseeboen.fr", "count": 1},
+      {"value": "anneduboeuf@hameauduboeuf.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "arts_centre", "count": 2},
+      {"value": "public_building", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 75 20 81 80", "count": 1},
+      {"value": "+33 4 77 43 83 29", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "subject",
+    "tags": [
+      {"value": "aeronautics", "count": 1},
+      {"value": "industry", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "roof:levels",
+    "tags": [{"value": "0", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "collection_times",
+    "tags": [{"value": "Sa 14:30", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "disused:amenity",
+    "tags": [{"value": "townhall", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "railway", "tags": [{"value": "station", "count": 1}], "count": 1},
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "survey:date", "tags": [{"value": "2012", "count": 1}], "count": 1},
+  {"key": "fixme", "tags": [{"value": "fix name", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1},
+  {"key": "community", "tags": [{"value": "BSCM", "count": 1}], "count": 1},
+  {
+    "key": "community:fr",
+    "tags": [{"value": "Bénédictines du Sacré-Cœur de Montmartre", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {"key": "castle_type", "tags": [{"value": "palace", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "guide", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "park", "count": 1}], "count": 1}
+]

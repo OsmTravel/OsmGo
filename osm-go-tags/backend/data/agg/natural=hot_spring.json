@@ -1,0 +1,58 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "hot_spring", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "water_characteristic",
+    "tags": [
+      {"value": "mineral", "count": 1},
+      {"value": "sulfurous", "count": 1},
+      {"value": "hot_water", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "drinking_water",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "tourism", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Des bulles de gaz carboniques remontent de cette source. Les couleurs des roches sont magnifiques, à voir !",
+        "count": 1
+      },
+      {
+        "value": "Suurce thermale du Par 82℃ débit 5000Hl en 24h \"La plus chaude d Europe",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00094281", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [{"value": "File:Bagnères-de-Luchon Thermes 4723.JPG", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1977-10-06", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "water_temperature",
+    "tags": [{"value": "38 °C", "count": 1}],
+    "count": 1
+  }
+]

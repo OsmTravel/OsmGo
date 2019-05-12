@@ -1,0 +1,105 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "greengrocer", "count": 183}],
+    "count": 183
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33477549719", "count": 1},
+      {"value": "+33 4 76 71 74 73", "count": 1},
+      {"value": "+33 4 74 84 62 89", "count": 1},
+      {"value": "+33 4 78 56 69 72", "count": 1},
+      {"value": "+33 9 83 28 02 54", "count": 1},
+      {"value": "+33478052637", "count": 1},
+      {"value": "+33477542205", "count": 1},
+      {"value": "+33 4 75 56 11 99", "count": 1},
+      {"value": "+33 4 75 45 34 92", "count": 1},
+      {"value": "+33 4 75 21 28 91", "count": 1},
+      {"value": "+33 6 68458665", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.maisonlacroix.com/", "count": 1},
+      {"value": "http://www.fermedechosal.org/", "count": 1},
+      {"value": "http://www.cerise-et-potiron.fr/", "count": 1},
+      {"value": "http://www.lasuperhalle.fr/", "count": 1},
+      {"value": "http://www.sive-natura.com/", "count": 1},
+      {"value": "http://www.cueillettefraisochamp.fr/", "count": 1},
+      {"value": "http://www.lafermedumonniati.ch/", "count": 1},
+      {"value": "http://auprimeurduchantre.fr/", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Nadine et Olivier POUCHOT", "count": 1},
+      {"value": "Frais et Compagnie", "count": 1},
+      {"value": "Cerise et potiron", "count": 1},
+      {"value": "TOPI Ylber", "count": 1},
+      {"value": "EARL Les Jardins de Noyarey", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "organic",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "only", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Primeur Sivé Natura : large sélection de fruits et légumes bio, locaux et régionaux.",
+        "count": 1
+      },
+      {
+        "value": "Aussi produits laitiers, charcuterie halal et produits orientaux",
+        "count": 1
+      },
+      {"value": "Livraisons mercredi, jeudi et samedi", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 1},
+      {"value": "2017-07-04", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "info@lafermedumonniati.ch", "count": 1},
+      {"value": "remyvouslivre@orange. fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "diet:vegetarian",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "discount", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "works", "count": 1}], "count": 1},
+  {"key": "levels", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

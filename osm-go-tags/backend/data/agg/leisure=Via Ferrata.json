@@ -1,0 +1,8 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "Via Ferrata", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "climbing", "count": 1}], "count": 1}
+]

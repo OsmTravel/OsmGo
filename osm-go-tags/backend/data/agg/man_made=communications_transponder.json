@@ -1,0 +1,32 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "communications_transponder", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "TK1VHF", "count": 1}, {"value": "GB3GU", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "communications_transponder:tone",
+    "tags": [{"value": "71.9 Hz", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "communications_transponder:frequency",
+    "tags": [{"value": "433.3250 MHz", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tower:type",
+    "tags": [{"value": "communication", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "GSM-R", "count": 1}],
+    "count": 1
+  }
+]

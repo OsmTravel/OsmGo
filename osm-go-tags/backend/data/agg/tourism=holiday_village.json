@@ -1,0 +1,53 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "holiday_village", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://chadenas-vacances.com/", "count": 1},
+      {"value": "www.domaine-pignada.com", "count": 1},
+      {"value": "http://www.loubercail.com", "count": 1},
+      {"value": "http://www.centre-vacances-pyrenees.com/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "VVF Villages", "count": 1},
+      {"value": "Vacances Lagrange", "count": 1},
+      {"value": "Goélia", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {
+    "key": "landuse",
+    "tags": [{"value": "residential", "count": 2}],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 2}], "count": 2},
+  {"key": "stars", "tags": [{"value": "3", "count": 2}], "count": 2},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "H59", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 92 43 05 08", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@espaces-vacances.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "leisure", "tags": [{"value": "park", "count": 1}], "count": 1},
+  {"key": "hide", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1}
+]

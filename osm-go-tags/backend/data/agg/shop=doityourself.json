@@ -1,0 +1,208 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "doityourself", "count": 302}],
+    "count": 302
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Groupement des Mousquetaires", "count": 23},
+      {"value": "Mr.Bricolage", "count": 5},
+      {"value": "BigMat", "count": 2},
+      {"value": "L'Entrepôt du Bricolage", "count": 2},
+      {"value": "Brico Dépôt", "count": 1},
+      {"value": "independant", "count": 1},
+      {"value": "Kiloutou", "count": 1},
+      {"value": "Delmonico Dorel", "count": 1},
+      {"value": "Bricorama", "count": 1},
+      {"value": "Inkoozing", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "Mr. Bricolage", "count": 1},
+      {"value": "Bricomarché", "count": 1},
+      {"value": "Manu Roche", "count": 1},
+      {"value": "Saint-Maclou", "count": 1},
+      {"value": "Groupe Point.P", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Castorama", "count": 12},
+      {"value": "Leroy Merlin", "count": 11},
+      {"value": "Brico Dépôt", "count": 4},
+      {"value": "Bigmat", "count": 1},
+      {"value": "Gedimat", "count": 1},
+      {"value": "Bricomarché", "count": 1},
+      {"value": "Biocoop", "count": 1},
+      {"value": "Mr. Bricolage", "count": 1},
+      {"value": "Samse", "count": 1}
+    ],
+    "count": 33
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q966971", "count": 12},
+      {"value": "Q889624", "count": 8},
+      {"value": "Q2889702", "count": 4}
+    ],
+    "count": 24
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Castorama", "count": 12},
+      {"value": "fr:Leroy Merlin", "count": 8},
+      {"value": "fr:Brico Dépôt", "count": 4}
+    ],
+    "count": 24
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.bricodepot.fr", "count": 2},
+      {"value": "http://www.leclercbrico.fr", "count": 1},
+      {"value": "http://etsgauthiercharant.wixsite.com/gauthier", "count": 1},
+      {"value": "http://www.leroymerlin.fr", "count": 1},
+      {"value": "http://www.inkoozing.fr", "count": 1},
+      {"value": "http://www.affutagedulignon.fr", "count": 1},
+      {"value": "http://www.girardon-mions.com/contact", "count": 1},
+      {"value": "https://www.bricomarche.com/", "count": 1},
+      {"value": "http://carobidules.canalblog.com/", "count": 1},
+      {"value": "http://www.bmlmateriaux.fr", "count": 1},
+      {
+        "value": "http://magasins.castorama.fr/4218-castorama-metz-tessy",
+        "count": 1
+      },
+      {"value": "http://www.pointp.fr", "count": 1},
+      {"value": "http://www.bricolage-civrieux.fr/fr", "count": 1},
+      {"value": "https://www.formesactives.fr", "count": 1},
+      {
+        "value": "https://agences.samse.fr/materiaux/saint-martin-d-heres/41",
+        "count": 1
+      },
+      {"value": "http://www.mr-bricolage.fr/", "count": 1},
+      {
+        "value": "http://magasins.bricomarche.com/minisite/points-de-vente/magasin-bricolage/dav%C3%A9zieux/20078",
+        "count": 1
+      },
+      {"value": "http://www.gedimat.fr/", "count": 1},
+      {"value": "http://www.castorama.fr/", "count": 1},
+      {"value": "http://www.ads-briconautes.fr/", "count": 1},
+      {"value": "http://www.kiloutou.fr/agence/beynost/0810", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 55 97 17", "count": 1},
+      {"value": "+33 4 50 27 26 20", "count": 1},
+      {"value": "+33 4 74 59 01 87", "count": 1},
+      {"value": "+33 4 50 48 86 46", "count": 1},
+      {"value": "+33 4 77 24 09 14", "count": 1},
+      {"value": "+33472475130", "count": 1},
+      {"value": "+33 4 75 36 40 06", "count": 1},
+      {"value": "+33 4 37 20 14 02", "count": 1},
+      {"value": "+33478486857", "count": 1},
+      {"value": "+33 4 78 55 10 07", "count": 1},
+      {"value": "+33 4 75 36 24 69", "count": 1},
+      {"value": "+33 4 76 84 40 40", "count": 1},
+      {"value": "+33 4 69854807", "count": 1},
+      {"value": "+33 4 79 63 31 22", "count": 1},
+      {"value": "+33 4 79 34 47 52", "count": 1},
+      {"value": "+33 4 79 63 31 64", "count": 1},
+      {"value": "+33 4 79 63 83 18", "count": 1},
+      {"value": "+33 4 76 63 95 00", "count": 1},
+      {"value": "+33 4 78 68 36 42", "count": 1},
+      {"value": "+33 4 76 34 67 03", "count": 1}
+    ],
+    "count": 20
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {"key": "wall", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "aubenas@yesss-fr.com", "count": 1},
+      {"value": "etsgauthier.charantonnay@orange.fr", "count": 1},
+      {"value": "affutagedulignon@gmail.com", "count": 1},
+      {"value": "contact@bmlmateriaux.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "brand:website",
+    "tags": [{"value": "http://www.bricodepot.fr", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Association de créateurs, professionnels et amateurs, atelier de sérigraphie.",
+        "count": 1
+      },
+      {
+        "value": "Fournitures bois et dérivés : panneaux, parquet, menuiseries, produits d'isolation...",
+        "count": 1
+      },
+      {"value": "Matériaux - bricolage", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 3}], "count": 3},
+  {"key": "landuse", "tags": [{"value": "retail", "count": 3}], "count": 3},
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 75 36 52 71", "count": 1},
+      {"value": "+33 4 74 53 46 42", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "craft", "tags": [{"value": "handicraft", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Maisons et Ossatures en Bois", "count": 1},
+      {
+        "value": "Website invalide (http://www.bricomarche.com/points-de-vente/magasin-bricolage/le-touvet.html)",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "toilets", "count": 1}, {"value": "school", "count": 1}],
+    "count": 2
+  },
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 2}], "count": 2},
+  {
+    "key": "barrier",
+    "tags": [{"value": "wall", "count": 1}, {"value": "fence", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3117467", "count": 1}], "count": 1},
+  {"key": "rental", "tags": [{"value": "machines", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "doityourself",
+    "tags": [{"value": "renting", "count": 1}],
+    "count": 1
+  },
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Groupe Lapeyre", "count": 1}],
+    "count": 1
+  }
+]

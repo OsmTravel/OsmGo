@@ -1,0 +1,8 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "fish_passage", "count": 2}],
+    "count": 2
+  },
+  {"key": "waterway", "tags": [{"value": "fish_pass", "count": 1}], "count": 1}
+]

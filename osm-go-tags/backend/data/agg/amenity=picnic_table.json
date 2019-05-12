@@ -1,0 +1,22 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "picnic_table", "count": 25}],
+    "count": 25
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "picnic_table", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "picnic_site", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "designated", "count": 1}],
+    "count": 1
+  }
+]

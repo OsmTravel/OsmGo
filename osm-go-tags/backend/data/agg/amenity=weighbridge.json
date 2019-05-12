@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "weighbridge", "count": 11}],
+    "count": 11
+  },
+  {"key": "highway", "tags": [{"value": "service", "count": 1}], "count": 1}
+]

@@ -1,0 +1,15 @@
+[
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "Quel tag pour une fourrière?", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "car_pound", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Fourrière Municipale", "count": 1}],
+    "count": 1
+  }
+]

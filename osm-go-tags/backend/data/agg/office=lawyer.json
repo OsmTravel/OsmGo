@@ -1,0 +1,57 @@
+[
+  {"key": "office", "tags": [{"value": "lawyer", "count": 39}], "count": 39},
+  {
+    "key": "lawyer",
+    "tags": [
+      {"value": "notary", "count": 5},
+      {"value": "barrister", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 86 56 56", "count": 1},
+      {"value": "+33 4 74 78 05 58", "count": 1},
+      {"value": "+33 4 74 85 04 97", "count": 1},
+      {"value": "+33 4 74 57 22 94", "count": 1},
+      {"value": "+33 4 75 45 12 04", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "notaire", "count": 1},
+      {"value": "huissier de justice", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.avocats-vienne.com/", "count": 1},
+      {
+        "value": "http://www.lacimade.org/wp-content/uploads/2014/11/permanences-lyon-et-agglom%C3%A9ration-septembre-2015.pdf",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 76 86 56 57", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "etude.denfertrochereau@notaires.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Notaire.", "count": 1}],
+    "count": 1
+  }
+]

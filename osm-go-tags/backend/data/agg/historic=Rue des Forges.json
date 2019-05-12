@@ -1,0 +1,13 @@
+[
+  {"key": "oneway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "highway",
+    "tags": [{"value": "unclassified", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "Rue des Forges", "count": 1}],
+    "count": 1
+  }
+]

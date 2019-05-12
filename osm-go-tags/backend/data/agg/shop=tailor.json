@@ -1,0 +1,45 @@
+[
+  {"key": "shop", "tags": [{"value": "tailor", "count": 29}], "count": 29},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 46 49 93", "count": 1},
+      {"value": "+33 6 70 89 48 21", "count": 1},
+      {"value": "+33980800909", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.etopf.com", "count": 1},
+      {
+        "value": "https://www.tailorcorner.fr/magasin-costume-chemise/Lyon/Store-Lyon-Brotteaux/9",
+        "count": 1
+      },
+      {"value": "https://www.costumesspinelli.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "craft", "tags": [{"value": "dressmaker", "count": 2}], "count": 2},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Olivier BOUGARDIER", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Lounge - Boutique, élégance masculine & Fine-Bar En savoir plus : http://www.lileelegante.fr/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

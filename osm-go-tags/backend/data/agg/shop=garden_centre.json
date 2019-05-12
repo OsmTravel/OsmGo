@@ -1,0 +1,117 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "garden_centre", "count": 196}],
+    "count": 196
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Gamm Vert", "count": 10},
+      {"value": "Botanic", "count": 3},
+      {"value": "Jardiland", "count": 1},
+      {"value": "Botanique", "count": 1},
+      {"value": "Gamm vert", "count": 1},
+      {"value": "Delbard", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.gammvert.fr", "count": 5},
+      {"value": "http://www.botanic.com", "count": 2},
+      {"value": "https://www.lesjardinsdelise-charantonnay.fr/", "count": 1},
+      {"value": "http://www.maillot-bonsai.com", "count": 1},
+      {
+        "value": "http://www.gammvert.fr/magasin-st-donat-sur-lherbasse.html",
+        "count": 1
+      },
+      {"value": "http://www.jardiland.com", "count": 1},
+      {
+        "value": "http://www.rustica.fr/annuaire-jardin/professionnels/agri-sud-est-74160.html",
+        "count": 1
+      },
+      {"value": "http://coopthones.free.fr/", "count": 1},
+      {"value": "https://www.botanic.com/stores/storedetails/VIB", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 9}], "count": 9},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 59 09 82", "count": 1},
+      {"value": "+33 4 50 35 07 69", "count": 1},
+      {"value": "+33 4 50 02 01 87", "count": 1},
+      {"value": "+33 4 75 44 04 00", "count": 1},
+      {"value": "+33 4 75 35 68 40", "count": 1},
+      {"value": "+33 4 75 35 80 05", "count": 1},
+      {"value": "+33 4 74 76 03 44", "count": 1},
+      {"value": "+33 4 77 24 00 38", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "EIRL Les Jardins d'Elise", "count": 1},
+      {"value": "Jardiland", "count": 1},
+      {"value": "Indépendant", "count": 1},
+      {"value": "Villaverde", "count": 1},
+      {"value": "Cholat", "count": 1},
+      {"value": "Bonfils", "count": 1},
+      {"value": "Gamm Vert", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "retail", "count": 3}, {"value": "grass", "count": 1}],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "flower", "count": 1},
+      {"value": "gardener", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 50 35 64 39", "count": 1},
+      {"value": "+33 4 75 35 80 06", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Jardinnier;Horticulteur", "count": 1},
+      {
+        "value": "Alimentation animale, jardinage et entretien des espaces verts.\n\nPoules, chats, chiens, etc.\n\nOuvert du Lundi au Samedi.\n\nMatin: 8h30 - 12h00\nAprès-midi: 14h00 - 18h00\n\nLe Samedi Fermeture à 16h00. ",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "pepiniere",
+    "tags": [{"value": "le jardin de rochevieille", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "2016", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "aubenas@faure-jardinage.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "2", "count": 1}], "count": 1}
+]

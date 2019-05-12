@@ -1,0 +1,31 @@
+[
+  {"key": "shop", "tags": [{"value": "winery", "count": 17}], "count": 17},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.jaboulet-philippe-vincent.fr/", "count": 1},
+      {"value": "http://www.domainedelavillerouge.fr", "count": 1},
+      {"value": "http://www.domaineremizieres.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:electronic_purses",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 75 84 70 40", "count": 1}],
+    "count": 1
+  }
+]

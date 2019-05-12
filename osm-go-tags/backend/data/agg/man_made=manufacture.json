@@ -1,0 +1,12 @@
+[
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.bugatti.com/molsheim/atelier/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "manufacture", "count": 1}],
+    "count": 1
+  }
+]

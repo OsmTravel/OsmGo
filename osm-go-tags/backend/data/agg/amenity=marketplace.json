@@ -1,0 +1,182 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "marketplace", "count": 224}],
+    "count": 224
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Grenoble Alpes Métropole", "count": 37},
+      {"value": "SED 74", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q999238", "count": 37}],
+    "count": 37
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Marché alimentaire et de produits manufacturés", "count": 4},
+      {"value": "Marché alimentaire, de producteurs bio et locaux", "count": 3},
+      {"value": "Marché de producteurs bio et locaux", "count": 3},
+      {"value": "Marché alimentaire", "count": 3},
+      {"value": "Marché alimentaire et de producteurs locaux", "count": 2},
+      {
+        "value": "Marché alimentaire, de producteurs bio et locaux, et de produits manufacturés",
+        "count": 1
+      },
+      {"value": "Marché de producteur le mercredi", "count": 1},
+      {"value": "Marché Bio", "count": 1},
+      {
+        "value": "Marché tous les samedi de l'année. Vente de produits frais et locaux.",
+        "count": 1
+      },
+      {
+        "value": "Marché de producteurs biologiques : viande, fromage, légumes, fruits, vin, bière, épicerie, pain, oeufs, champignons, chocolat, etc.",
+        "count": 1
+      },
+      {"value": "Marché alimentaire et produits manufacturés", "count": 1},
+      {"value": "marché alimentaire, producteurs locaux et bio", "count": 1},
+      {"value": "Marché alimentaire, de producteurs locaux et bio", "count": 1},
+      {
+        "value": "Marché alimentaire, de producteurs locaux et de produits manufacturés",
+        "count": 1
+      },
+      {"value": "marché de producteurs locaux", "count": 1},
+      {"value": "Marché alimentaire de producteurs locaux", "count": 1},
+      {"value": "marché alimentaire", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "organic",
+    "tags": [
+      {"value": "yes", "count": 19},
+      {"value": "only", "count": 3},
+      {"value": "no", "count": 1}
+    ],
+    "count": 23
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 16}], "count": 16},
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "highway", "tags": [{"value": "pedestrian", "count": 8}], "count": 8},
+  {
+    "key": "fixme",
+    "tags": [{"value": "emplacement exact", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q19958902", "count": 1},
+      {"value": "Q22979290", "count": 1},
+      {"value": "Q3126130", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Uniquement l'été", "count": 1},
+      {"value": "Mardi-Dimanche", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "parking", "tags": [{"value": "surface", "count": 2}], "count": 2},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA38000025", "count": 1},
+      {"value": "PA00116368", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "surface", "tags": [{"value": "compacted", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Halles de Châtillon-sur-Chalaronne", "count": 1},
+      {"value": "fr:Marché couvert (Villefranche)", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2007-05-23", "count": 1},
+      {"value": "1988", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "maxstay", "tags": [{"value": "90", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [{"value": "File:Halles Sainte-Claire Grenoble.JPG", "count": 1}],
+    "count": 1
+  },
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "marketplace", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.laravoirepaysanne.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "45", "count": 1}], "count": 1},
+  {
+    "key": "capacity:disabled",
+    "tags": [{"value": "3", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "YahooApplet 1.0", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-12-06", "count": 1}],
+    "count": 1
+  },
+  {"key": "date", "tags": [{"value": "1852", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "square", "count": 1}], "count": 1},
+  {"key": "end_date", "tags": [{"value": "1933", "count": 1}], "count": 1},
+  {
+    "key": "architect",
+    "tags": [{"value": "Albin Decoeur", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "https://laruchequiditoui.fr/fr/assemblies/11552", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "742500360N", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "residential", "count": 1}], "count": 1}
+]

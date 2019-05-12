@@ -1,0 +1,74 @@
+[
+  {"key": "shop", "tags": [{"value": "no", "count": 21}], "count": 21},
+  {"key": "amenity", "tags": [{"value": "fuel", "count": 20}], "count": 20},
+  {"key": "fuel:diesel", "tags": [{"value": "yes", "count": 16}], "count": 16},
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Esso", "count": 6},
+      {"value": "Independent", "count": 3},
+      {"value": "Elan", "count": 1},
+      {"value": "AS24", "count": 1},
+      {"value": "Leclerc", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "E. Leclerc", "count": 3},
+      {"value": "Esso", "count": 2},
+      {"value": "Spar", "count": 1},
+      {"value": "Communauté des communes du Vercors", "count": 1},
+      {"value": "Total", "count": 1},
+      {"value": "Leclerc", "count": 1},
+      {"value": "Esso Express", "count": 1},
+      {"value": "Groupement des Mousquetaires", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "ref:FR:prix-carburants",
+    "tags": [
+      {"value": "69004002", "count": 1},
+      {"value": "74200006", "count": 1},
+      {"value": "69420002", "count": 1},
+      {"value": "26140004", "count": 1},
+      {"value": "26000008", "count": 1},
+      {"value": "69009003", "count": 1},
+      {"value": "42100005", "count": 1},
+      {"value": "69200005", "count": 1},
+      {"value": "26400004", "count": 1},
+      {"value": "74200014", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "vending", "tags": [{"value": "fuel", "count": 2}], "count": 2},
+  {"key": "fuel:cng", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "fuel", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fuel:GNR_diesel",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:maestro",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "designated", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "fuel:adblue", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

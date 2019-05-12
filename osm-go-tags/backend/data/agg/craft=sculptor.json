@@ -1,0 +1,24 @@
+[
+  {"key": "craft", "tags": [{"value": "sculptor", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Atelier de sculpture de bois flottés - Anne-Marie Roussel",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "gallery", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 32 81 85", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.artsurbois.com", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "supermarket", "count": 6}],
+    "count": 6
+  },
+  {"key": "drive_through", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {"key": "shop", "tags": [{"value": "supermarket", "count": 6}], "count": 6},
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Intermarché", "count": 3},
+      {"value": "fr:Système U", "count": 2},
+      {"value": "fr:Carrefour (enseigne)", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Anjou Beaulieu", "count": 1},
+      {"value": "Soc Hypermarché Normandie Picardie", "count": 1},
+      {"value": "Saratoga", "count": 1},
+      {"value": "Carrefour Hypermarchés", "count": 1},
+      {"value": "Bretarraine SAS", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 35 18 34 34", "count": 1},
+      {"value": "+33 2 35 70 80 44", "count": 1},
+      {"value": "+33 32 35", "count": 1},
+      {"value": "+33 2 99 43 72 47", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.intermarche.com", "count": 2},
+      {"value": "http://www.magasins-u.com", "count": 1},
+      {"value": "http://www.carrefour.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "payment:checks", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "organic", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "delivery", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "educational_institution", "count": 24}],
+    "count": 24
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 20 54 41", "count": 1},
+      {"value": "+33 4 74 95 24 12", "count": 1},
+      {"value": "+33 475781026", "count": 1},
+      {"value": "+33 4 74 56 55 74", "count": 1},
+      {"value": "+33 4 78 49 99 59", "count": 1},
+      {"value": "+33 4 75 71 18 60", "count": 1},
+      {"value": "+33 4 77768003", "count": 1},
+      {"value": "+33 4 77659524", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.abc-coursparticuliers.com/", "count": 1},
+      {"value": "http://www.ccinordisere.fr/", "count": 1},
+      {"value": "http://atelierdu8.over-blog.com", "count": 1},
+      {"value": "http://www.etudierendromeardeche.fr", "count": 1},
+      {"value": "http://www.cours-du-rhone.fr/", "count": 1},
+      {"value": "http://www.mondy.fr", "count": 1},
+      {"value": "tutoratlyonsud.univ-lyon1.fr", "count": 1},
+      {"value": "https://www.ccm-paces.fr/", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "school:FR",
+    "tags": [
+      {"value": "primaire", "count": 1},
+      {"value": "maternelle", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "school", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "http://ecolebilingue74.fr/v2/fr/", "count": 1},
+      {"value": "École primaire", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "fixme", "tags": [{"value": "position", "count": 1}], "count": 1},
+  {"key": "ref:uai", "tags": [{"value": "0420825U", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "ABC cours particuliers", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "public", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:UAI", "tags": [{"value": "0421662D", "count": 1}], "count": 1}
+]

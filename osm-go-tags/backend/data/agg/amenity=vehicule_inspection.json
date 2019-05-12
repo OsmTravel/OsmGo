@@ -1,0 +1,13 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "vehicule_inspection", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "33467844810", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "www.autosecurite.com", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {"key": "amenity", "tags": [{"value": "fountain", "count": 5}], "count": 5},
+  {"key": "historic", "tags": [{"value": "fountain", "count": 5}], "count": 5},
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 3}, {"value": "2", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1929-06-25", "count": 1},
+      {"value": "1973", "count": 1},
+      {"value": "1992-05-18", "count": 1},
+      {"value": "1982-05-07", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116426", "count": 1},
+      {"value": "PA00116567", "count": 1},
+      {"value": "PA00118152", "count": 1},
+      {"value": "PA00118233", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2934450", "count": 1},
+      {"value": "Q3075983", "count": 1},
+      {"value": "Q22968363", "count": 1},
+      {"value": "Q3076252", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Calvaire-fontaine de Miribel", "count": 1},
+      {"value": "fr:Fontaine-lavoir de Collonges", "count": 1},
+      {"value": "fr:Fontaine des Jacobins", "count": 1},
+      {"value": "fr:Fontaine des éléphants", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

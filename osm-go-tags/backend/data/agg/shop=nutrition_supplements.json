@@ -1,0 +1,40 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "nutrition_supplements", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 52 40 20 43", "count": 1},
+      {"value": "+33 4 75 55 50 67", "count": 1},
+      {"value": "+33437411045", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/pages/NutriStore/518269188302038",
+        "count": 1
+      },
+      {
+        "value": "http://www.naturhouse.fr/liste-centres/713-st-symphorien/",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "compléments alimentaires; conseils en naturopathie (non médical)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

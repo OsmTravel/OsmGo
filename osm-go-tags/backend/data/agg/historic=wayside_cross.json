@@ -1,0 +1,905 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "wayside_cross", "count": 2627}],
+    "count": 2627
+  },
+  {
+    "key": "religion",
+    "tags": [
+      {"value": "christian", "count": 887},
+      {"value": "catholic", "count": 2}
+    ],
+    "count": 889
+  },
+  {
+    "key": "denomination",
+    "tags": [
+      {"value": "catholic", "count": 857},
+      {"value": "roman_catholic", "count": 3}
+    ],
+    "count": 860
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3003299", "count": 1},
+      {"value": "Q2427038", "count": 1},
+      {"value": "Q3003631", "count": 1},
+      {"value": "Q3003409", "count": 1},
+      {"value": "Q2934464", "count": 1},
+      {"value": "Q15954075", "count": 1},
+      {"value": "Q31635172", "count": 1},
+      {"value": "Q22967226", "count": 1},
+      {"value": "Q22967056", "count": 1},
+      {"value": "Q22967052", "count": 1},
+      {"value": "Q22967219", "count": 1},
+      {"value": "Q22968582", "count": 1},
+      {"value": "Q22968424", "count": 1},
+      {"value": "Q3003377", "count": 1},
+      {"value": "Q44072460", "count": 1},
+      {"value": "Q51070920", "count": 1},
+      {"value": "Q54810958", "count": 1},
+      {"value": "Q22968369", "count": 1},
+      {"value": "Q2069467", "count": 1},
+      {"value": "Q2400269", "count": 1},
+      {"value": "Q22967216", "count": 1},
+      {"value": "Q3003456", "count": 1},
+      {"value": "Q22966763", "count": 1},
+      {"value": "Q3003391", "count": 1},
+      {"value": "Q22967131", "count": 1},
+      {"value": "Q31660508", "count": 1},
+      {"value": "Q22967446", "count": 1},
+      {"value": "Q3003609", "count": 1},
+      {"value": "Q3003440", "count": 1},
+      {"value": "Q2934465", "count": 1},
+      {"value": "Q22967154", "count": 1},
+      {"value": "Q22967199", "count": 1},
+      {"value": "Q3342293", "count": 1},
+      {"value": "Q22967209", "count": 1},
+      {"value": "Q22967208", "count": 1},
+      {"value": "Q22967207", "count": 1},
+      {"value": "Q22968186", "count": 1},
+      {"value": "Q22967237", "count": 1},
+      {"value": "Q22967297", "count": 1},
+      {"value": "Q22967281", "count": 1},
+      {"value": "Q22967408", "count": 1},
+      {"value": "Q22967386", "count": 1},
+      {"value": "Q22967342", "count": 1},
+      {"value": "Q22967317", "count": 1},
+      {"value": "Q22967409", "count": 1},
+      {"value": "Q22967373", "count": 1},
+      {"value": "Q22967366", "count": 1},
+      {"value": "Q22967358", "count": 1},
+      {"value": "Q22967341", "count": 1},
+      {"value": "Q22967242", "count": 1},
+      {"value": "Q22967304", "count": 1},
+      {"value": "Q22967298", "count": 1},
+      {"value": "Q22967269", "count": 1},
+      {"value": "Q22967228", "count": 1},
+      {"value": "Q3003460", "count": 1},
+      {"value": "Q3003442", "count": 1},
+      {"value": "Q2934475", "count": 1},
+      {"value": "Q3003274", "count": 1},
+      {"value": "Q22967252", "count": 1},
+      {"value": "Q22967332", "count": 1},
+      {"value": "Q22968174", "count": 1},
+      {"value": "Q3003286", "count": 1},
+      {"value": "Q3003453", "count": 1},
+      {"value": "Q17172602", "count": 1},
+      {"value": "Q55129746", "count": 1}
+    ],
+    "count": 65
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C16", "count": 13},
+      {"value": "C17", "count": 8},
+      {"value": "C15", "count": 6},
+      {"value": "1994", "count": 2},
+      {"value": "1939", "count": 2},
+      {"value": "2013", "count": 2},
+      {"value": "C18", "count": 2},
+      {"value": "C12", "count": 2},
+      {"value": "C19", "count": 2},
+      {"value": "1988", "count": 1},
+      {"value": "1984", "count": 1},
+      {"value": "1911", "count": 1},
+      {"value": "2010", "count": 1},
+      {"value": "1703", "count": 1},
+      {"value": "1987", "count": 1},
+      {"value": "2009", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "1811", "count": 1},
+      {"value": "1900", "count": 1},
+      {"value": "1995", "count": 1},
+      {"value": "1804", "count": 1},
+      {"value": "1868", "count": 1},
+      {"value": "1576", "count": 1},
+      {"value": "1820", "count": 1},
+      {"value": "C14", "count": 1},
+      {"value": "1933", "count": 1},
+      {"value": "1991", "count": 1},
+      {"value": "1961", "count": 1},
+      {"value": "1920", "count": 1},
+      {"value": "1844", "count": 1},
+      {"value": "1865", "count": 1},
+      {"value": "1874", "count": 1},
+      {"value": "1821", "count": 1}
+    ],
+    "count": 63
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "688", "count": 2},
+      {"value": "1039", "count": 2},
+      {"value": "3116", "count": 1},
+      {"value": "1547", "count": 1},
+      {"value": "1900", "count": 1},
+      {"value": "1676", "count": 1},
+      {"value": "1634", "count": 1},
+      {"value": "1691", "count": 1},
+      {"value": "2340", "count": 1},
+      {"value": "1635", "count": 1},
+      {"value": "1978", "count": 1},
+      {"value": "1560", "count": 1},
+      {"value": "1582", "count": 1},
+      {"value": "794", "count": 1},
+      {"value": "1324.5", "count": 1},
+      {"value": "1080.81", "count": 1},
+      {"value": "126.51", "count": 1},
+      {"value": "531.18", "count": 1},
+      {"value": "1870.78", "count": 1},
+      {"value": "1726.45", "count": 1},
+      {"value": "2060.84", "count": 1},
+      {"value": "1003.13", "count": 1},
+      {"value": "3482.79", "count": 1},
+      {"value": "1977.4", "count": 1},
+      {"value": "2754.4", "count": 1},
+      {"value": "995.3", "count": 1},
+      {"value": "2580", "count": 1},
+      {"value": "811", "count": 1},
+      {"value": "2635", "count": 1},
+      {"value": "1822", "count": 1},
+      {"value": "1717", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "3098", "count": 1},
+      {"value": "1865", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "2335", "count": 1},
+      {"value": "2343", "count": 1},
+      {"value": "1985", "count": 1},
+      {"value": "451", "count": 1},
+      {"value": "1340", "count": 1},
+      {"value": "1032", "count": 1},
+      {"value": "784", "count": 1},
+      {"value": "939", "count": 1},
+      {"value": "983", "count": 1},
+      {"value": "236.12", "count": 1},
+      {"value": "2686", "count": 1},
+      {"value": "2008", "count": 1},
+      {"value": "861", "count": 1},
+      {"value": "514", "count": 1},
+      {"value": "1512", "count": 1},
+      {"value": "2447", "count": 1},
+      {"value": "2040", "count": 1},
+      {"value": "648", "count": 1},
+      {"value": "560", "count": 1},
+      {"value": "849", "count": 1},
+      {"value": "1026", "count": 1},
+      {"value": "2024", "count": 1},
+      {"value": "1679", "count": 1},
+      {"value": "1744", "count": 1},
+      {"value": "1307", "count": 1}
+    ],
+    "count": 62
+  },
+  {
+    "key": "heritage",
+    "tags": [
+      {"value": "3", "count": 36},
+      {"value": "2", "count": 18},
+      {"value": "no", "count": 3}
+    ],
+    "count": 57
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 56}],
+    "count": 56
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117471", "count": 1},
+      {"value": "PA00118413", "count": 1},
+      {"value": "PA00116391", "count": 1},
+      {"value": "PA00117513", "count": 1},
+      {"value": "PA00117494", "count": 1},
+      {"value": "PA00117283", "count": 1},
+      {"value": "PA00117280", "count": 1},
+      {"value": "PA00117483", "count": 1},
+      {"value": "PA00118303", "count": 1},
+      {"value": "PA00118229", "count": 1},
+      {"value": "PA00116539", "count": 1},
+      {"value": "PA00118157", "count": 1},
+      {"value": "PA00116610", "count": 1},
+      {"value": "PA00117480", "count": 1},
+      {"value": "PA00116815", "count": 1},
+      {"value": "PM07000224", "count": 1},
+      {"value": "PA00116806", "count": 1},
+      {"value": "PA00116805", "count": 1},
+      {"value": "PA00117351", "count": 1},
+      {"value": "PA00117702", "count": 1},
+      {"value": "PA00116696", "count": 1},
+      {"value": "PA00116394", "count": 1},
+      {"value": "PA00116392", "count": 1},
+      {"value": "PA00117424", "count": 1},
+      {"value": "PA00117463", "count": 1},
+      {"value": "PA00118363", "count": 1},
+      {"value": "PA00117473", "count": 1},
+      {"value": "PA00117472", "count": 1},
+      {"value": "PA00118414", "count": 1},
+      {"value": "PA00118022", "count": 1},
+      {"value": "PA00117505", "count": 1},
+      {"value": "PA00117565", "count": 1},
+      {"value": "PA00117549", "count": 1},
+      {"value": "PA00117671", "count": 1},
+      {"value": "PA00117652", "count": 1},
+      {"value": "PA00117615", "count": 1},
+      {"value": "PA00117586", "count": 1},
+      {"value": "PA00117672", "count": 1},
+      {"value": "PA00117641", "count": 1},
+      {"value": "PA00117632", "count": 1},
+      {"value": "PA00117626", "count": 1},
+      {"value": "PA00117614", "count": 1},
+      {"value": "PA00117510", "count": 1},
+      {"value": "PA00117573", "count": 1},
+      {"value": "PA00117566", "count": 1},
+      {"value": "PA00117536", "count": 1},
+      {"value": "PA00117496", "count": 1},
+      {"value": "PA00118465", "count": 1},
+      {"value": "PA00118423", "count": 1},
+      {"value": "PA00118406", "count": 1},
+      {"value": "PA00116638", "count": 1},
+      {"value": "PA00117521", "count": 1},
+      {"value": "PA00117606", "count": 1},
+      {"value": "PA00118017", "count": 1},
+      {"value": "PA00118337", "count": 1},
+      {"value": "PA00118429", "count": 1}
+    ],
+    "count": 56
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1926-01-07", "count": 6},
+      {"value": "1949-12-29", "count": 6},
+      {"value": "1949-12-16", "count": 5},
+      {"value": "1943-06-09", "count": 2},
+      {"value": "1932", "count": 2},
+      {"value": "1932-05-11", "count": 1},
+      {"value": "1914-04-03", "count": 1},
+      {"value": "1940-11-23", "count": 1},
+      {"value": "1991-07-22", "count": 1},
+      {"value": "1933-05-22", "count": 1},
+      {"value": "1954", "count": 1},
+      {"value": "1949", "count": 1},
+      {"value": "1911-02-11", "count": 1},
+      {"value": "1926-01-19", "count": 1},
+      {"value": "1927", "count": 1},
+      {"value": "1927-11-08", "count": 1},
+      {"value": "1951-02-13", "count": 1},
+      {"value": "1944", "count": 1},
+      {"value": "1942-11-21", "count": 1},
+      {"value": "1972-10-19", "count": 1},
+      {"value": "1942-03-23", "count": 1},
+      {"value": "1955-07-04", "count": 1},
+      {"value": "1984-02-28", "count": 1},
+      {"value": "1972-05-16", "count": 1},
+      {"value": "1911-06-02", "count": 1},
+      {"value": "1946-03-08", "count": 1},
+      {"value": "1951-11-02", "count": 1},
+      {"value": "1958-02-27", "count": 1},
+      {"value": "1906-03-30", "count": 1},
+      {"value": "1906-03-07", "count": 1},
+      {"value": "1988-10-11", "count": 1},
+      {"value": "1983-01-20", "count": 1},
+      {"value": "1972-06-28", "count": 1},
+      {"value": "1928-02-27", "count": 1},
+      {"value": "1926-04-12", "count": 1},
+      {"value": "1906-03-23", "count": 1}
+    ],
+    "count": 52
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Calvaire : Croix : Centre - Point vu en place en 2002",
+        "count": 2
+      },
+      {"value": "Monument historique", "count": 1},
+      {
+        "value": "Calvaire : Socle : Premiere marche : Angle Sud : Rivet scellé : Tête de clou ? 10mm - Point vu en place en 2000",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix : Axe (altitude sommet marche supérieure) - Point vu en place en 2001",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix : Axe à la base - Support en mauvais état, point exploitable en 2001",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix : Centre - Point vu en place en 2001",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix : Axe à la base - Point abandonné car présumé déplacé.",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix en bois : Centre - Point abandonné car présumé déplacé.",
+        "count": 1
+      },
+      {
+        "value": "Croix métallique : Centre - Point vu en place en 2003",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix : Axe et base - Support en mauvais état, point exploitable en 1983",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix : Centre - Point vu en place en 1971",
+        "count": 1
+      },
+      {
+        "value": "Croix en fer : Centre - Point vu en place en 2003",
+        "count": 1
+      },
+      {
+        "value": "Croix métallique : Centre - Point vu en place en 1979",
+        "count": 1
+      },
+      {"value": "Croix en bois vu en place en novembre 2016", "count": 1},
+      {
+        "value": "Calvaire : Socle : Axe et sommet - Point vu en place en 2004",
+        "count": 1
+      },
+      {"value": "1858", "count": 1},
+      {
+        "value": "Calvaire: Axe à la base - Point vu en place en 2003",
+        "count": 1
+      },
+      {
+        "value": "Croix métallique : Centre - Point vu en place en 1981",
+        "count": 1
+      },
+      {
+        "value": "Calvaire : Croix en bois : Axe à la base - Point vu en place en 2000",
+        "count": 1
+      },
+      {"value": "fr:Croix de l’Église Nord-Est", "count": 1},
+      {"value": "fr:Croix de l’Église Sud-Est", "count": 1},
+      {
+        "value": "fr:Mémorial à Édouard Anselme, Antoine Guichardon et René Troussel abattus le 27 août 1944.",
+        "count": 1
+      },
+      {"value": "Croix du Farget", "count": 1},
+      {"value": "fr:Croix en métal", "count": 1},
+      {"value": "fr:Croix en pierre", "count": 1},
+      {
+        "value": "Calvaire : Socle : Repère en bronze scellé - Support en mauvais état, point exploitable en 2001",
+        "count": 1
+      },
+      {
+        "value": "Croix du Crêt de la Goutte Remise à monsieur le maire de Confort (26 Août 1998) - Pierre Pautry Credo 1996 - Famille Zuccone en homage à ses bergers",
+        "count": 1
+      },
+      {"value": "Croix monumentale", "count": 1},
+      {"value": "Croix Monumentale", "count": 1},
+      {"value": "Calvaire sculpté dans la pierre", "count": 1},
+      {"value": "Croix en pierre", "count": 1},
+      {"value": "Vierge", "count": 1},
+      {
+        "value": "Croix de chemin en pierre provenant de l'ancien cimetiere de Farlon",
+        "count": 1
+      },
+      {"value": "Croix de chemin en bois sculpté", "count": 1},
+      {"value": "croix de l'entrée nord", "count": 1},
+      {"value": "croix de l'entrée sud", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "survey_point", "count": 19},
+      {"value": "cross", "count": 11},
+      {"value": "water_tap", "count": 1},
+      {"value": "wayside_cross", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Saint-Maurice-de-R%C3%A9mens_-_juillet_2014_(18).JPG",
+        "count": 1
+      },
+      {
+        "value": "http://www.petit-patrimoine.com/photos_pp/photo_pp_final/thumbs/sem_2012_1/73040_5_photo5_g.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:North_east_cross_Saint-Maurice_church.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_%C3%A0_Saint-Maurice-de-Beynost,_pr%C3%A8s_de_l%27%C3%A9glise_Saint-Maurice.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_anciennement_mont%C3%A9e_P%C3%A9coud.JPG",
+        "count": 1
+      },
+      {"value": "File:Croix_du_cimetière_de_Genevrey_à_Vif.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_Rue_des_Rapettes_(Tramoyes)_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_comm%C3%A9moratif_entre_Tramoyes_et_Saint-Andr%C3%A9-de-Corcy.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Calvaire_du_cimeti%C3%A8re_du_Mas_Rillier.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monast%C3%A8re_royal_de_Brou_-_2014_Juin_(9).JPG",
+        "count": 1
+      },
+      {"value": "File:Croix de mission aux Saillants du Gua.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Leyment_-_juillet_2014_(1).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Saint-Maurice-de-R%C3%A9mens_-_cross.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Eglise_Saint-Hugues-de-Chartreuse,_France-7447.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_de_l%27%C3%A9glise_%C3%A0_Saint-Maurice-de-R%C3%A9mens.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_de_mission_au_Mas_Rillier.JPG",
+        "count": 1
+      },
+      {
+        "value": "http://commons.wikimedia.org/wiki/File:Croix_de_mission_de_Neyron-le-Bas.jpeg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Varambon_(3).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_de_l%27%C3%A9glise_sainte-%C3%89lisabeth_%28Lyon%29.jpg",
+        "count": 1
+      },
+      {
+        "value": "File:Croix_de_l'ancien_cimetière_de_Genevrey_à_Vif.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_du_cimeti%C3%A8re_des_%C3%89chets.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cimeti%C3%A8re_de_Dagneux_-_octobre_2016_(10).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cemetery_of_Saint-Andr%C3%A9-de-Corcy_-_november_2016_(1).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_(Grande_Rue)_%C3%A0_Mollon.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Croix_(1920)_%C3%A0_Mollon.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cimeti%C3%A8re_de_Villefranche-sur-Sa%C3%B4ne_(Rh%C3%B4ne,_France)_-_novembre_2017_-_7.JPG",
+        "count": 1
+      }
+    ],
+    "count": 26
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "7313203 - B", "count": 1},
+      {"value": "croix des missionaires", "count": 1},
+      {"value": "0704101 - 1", "count": 1},
+      {"value": "0720601 - A", "count": 1},
+      {"value": "0734902 - B", "count": 1},
+      {"value": "2616301 - 1", "count": 1},
+      {"value": "3828401 - 1", "count": 1},
+      {"value": "3841801 -", "count": 1},
+      {"value": "3843902 - D", "count": 1},
+      {"value": "3855102 - 1", "count": 1},
+      {"value": "4217201 - A", "count": 1},
+      {"value": "7304707 - B", "count": 1},
+      {"value": "0104401 - B", "count": 1},
+      {"value": "7408506 - D", "count": 1},
+      {"value": "7410202 - C", "count": 1},
+      {"value": "7418903 - D", "count": 1},
+      {"value": "6914801 - C", "count": 1},
+      {"value": "2625101 - C", "count": 1},
+      {"value": "II", "count": 1},
+      {"value": "III", "count": 1},
+      {"value": "V", "count": 1},
+      {"value": "VII", "count": 1},
+      {"value": "X", "count": 1},
+      {"value": "XI", "count": 1},
+      {"value": "XII", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Croix du Crestet", "count": 1},
+      {"value": "fr:Pierre-sur-Haute", "count": 1},
+      {"value": "fr:Croix de Verrières", "count": 1},
+      {"value": "fr:Calvaire de Curtafond", "count": 1},
+      {
+        "value": "fr:Église de l'Assomption-de-la-Vierge de Montarcher",
+        "count": 1
+      },
+      {"value": "fr:Croix", "count": 1},
+      {"value": "fr:Croix en fer forgé et son socle de granit", "count": 1},
+      {"value": "fr:Croix de Rignieux-le-Franc", "count": 1},
+      {"value": "fr:Calvaire de Mogneneins", "count": 1},
+      {"value": "fr:Croix de chemin de Satillieu", "count": 1},
+      {"value": "fr:Croix de Veyrines", "count": 1},
+      {"value": "fr:Croix de Saint-Symphorien-de-Mahun", "count": 1},
+      {"value": "fr:Croix du chef-lieu", "count": 1},
+      {"value": "fr:Croix de chemin de Feillens", "count": 1},
+      {"value": "fr:Calvaire de Dingier", "count": 1},
+      {"value": "fr:Croix de Bellevaux", "count": 1},
+      {"value": "fr:Croix hosannière", "count": 1},
+      {"value": "fr:Croix de chemin de Villard", "count": 1},
+      {"value": "fr:Croix de chemin de La Roche-sur-Foron", "count": 1},
+      {"value": "fr:Calvaire de Megève", "count": 1},
+      {"value": "fr:Croix Rouge de Baix", "count": 1},
+      {"value": "fr:Croix d'Alex", "count": 1},
+      {"value": "fr:Croix de chemin de Saint-Cergues", "count": 1},
+      {"value": "fr:Croix monumentale", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 17
+      },
+      {
+        "value": "alti était 1904, changée en 1900 par mesures (base de la croix)",
+        "count": 1
+      },
+      {
+        "value": "Croix qui vient cartainement du repère géodésique 3839602-D où il ne reste qu'un tas de cailloux",
+        "count": 1
+      },
+      {"value": "position à préciser", "count": 1},
+      {"value": "position aproximative à qq mètres près", "count": 1},
+      {
+        "value": "En mémoire de la première ascension effectuée en 1877 par Alexis Pellier",
+        "count": 1
+      }
+    ],
+    "count": 22
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {"value": "Croix Souvenir Rajon Joachim - 1875", "count": 1},
+      {"value": "CAF", "count": 1},
+      {"value": "1855", "count": 1},
+      {
+        "value": "A la mémoire de Mathieu Vincendet, mort accidentellement le 1er septembre 1920 dans sa 44eme année, Priez pour lui",
+        "count": 1
+      },
+      {"value": "Jubilé 2000", "count": 1},
+      {"value": "Souvenir de la mission de ...", "count": 1},
+      {"value": "Mission 1853", "count": 1},
+      {"value": "Mission 1870", "count": 1},
+      {"value": "Victimes de la catastrophe du 16 août 1964", "count": 1},
+      {"value": "André Brun, mort pour la France 1944", "count": 1},
+      {"value": "5 Juin 1897", "count": 1},
+      {"value": "1887", "count": 1},
+      {
+        "value": "À la mémoire de Jean-François Marie Drevet 1821-1913",
+        "count": 1
+      },
+      {"value": "Crvx Ave Spes Vnica", "count": 1},
+      {"value": "Reconstruction de la croix - Pâques 2000", "count": 1},
+      {"value": "Varzeron 1804 - 2003", "count": 1},
+      {
+        "value": "En Mémoire des Membres du Secours en Montagne et du C.A.F. Thônes-Aravis\n27 Août 1995",
+        "count": 1
+      },
+      {"value": "CRUX AVE", "count": 1},
+      {"value": "O CRUX AVE 1920", "count": 1},
+      {"value": "Croix de Chamberot", "count": 1},
+      {"value": "Croix de Montauban 2005", "count": 1},
+      {
+        "value": "Saint Mamert, évêque de Vienne au Vème siècle, est le fondateur des Rogations, processions organisées pour invoquer la protection des récoltes. La croix, précédemment implantée au sommet de la colline pour protéger le Val d'Ozon, a été relevée en 2007.",
+        "count": 1
+      }
+    ],
+    "count": 22
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "metal", "count": 7},
+      {"value": "wood", "count": 5},
+      {"value": "stone", "count": 4},
+      {"value": "concrete", "count": 1},
+      {"value": "steel", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3843902",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0104401",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0720601",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0734902",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=2616301",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3828401",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3840702",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3841801",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0704101",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3855102",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=4217201",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7304707",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7313203",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7408506",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7410202",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7418901",
+        "count": 1
+      }
+    ],
+    "count": 16
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "2", "count": 5},
+      {"value": "3", "count": 4},
+      {"value": "5", "count": 3},
+      {"value": "2.5", "count": 1},
+      {"value": "3.5", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "viewpoint", "count": 8},
+      {"value": "artwork", "count": 4},
+      {"value": "attraction", "count": 1},
+      {"value": "information", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "place_of_worship", "count": 7},
+      {"value": "fountain", "count": 2},
+      {"value": "tourism", "count": 1},
+      {"value": "post_box", "count": 1},
+      {"value": "drinking_water", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "natural", "tags": [{"value": "peak", "count": 10}], "count": 10},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "emplacement peut-être à affiner", "count": 1},
+      {"value": "Position exacte à vérifier, gps dans les choux", "count": 1},
+      {"value": "emplacement exact à repérer au gps", "count": 1},
+      {
+        "value": "localisation imprécise, elle se situe dans l'église d'après la page Wikipédia",
+        "count": 1
+      },
+      {"value": "vérifier date", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {"value": "à replacer", "count": 1},
+      {"value": "A placer", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "colour",
+    "tags": [
+      {"value": "gray", "count": 3},
+      {"value": "black", "count": 2},
+      {"value": "white", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "place_of_workship:type",
+    "tags": [{"value": "cross", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "jhuNsP9SXy5omAK_XcBI8A", "count": 1},
+      {"value": "HMDZnhmGYGIvXgYgZmGFqg", "count": 1},
+      {"value": "TGGnLf1mcJEYdmkZsZWrXw", "count": 1},
+      {"value": "zfV1qy0qmC99qBBZPDVDtg", "count": 1},
+      {"value": "vT0fLhkeJ0OkiDvxQR3Hbw", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "mini_roundabout", "count": 2},
+      {"value": "bus_stop", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wayside_cross",
+    "tags": [{"value": "virgin", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "statue", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "place",
+    "tags": [
+      {"value": "locality", "count": 1},
+      {"value": "hamlet", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "landmark", "tags": [{"value": "cross", "count": 2}], "count": 2},
+  {
+    "key": "date",
+    "tags": [{"value": "1925", "count": 1}, {"value": "1932", "count": 1}],
+    "count": 2
+  },
+  {"key": "memorial", "tags": [{"value": "plaque", "count": 1}], "count": 1},
+  {"key": "summit:cross", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "naptan:AtcoCode",
+    "tags": [{"value": "Croix des Terments", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_hydrant", "count": 1}],
+    "count": 1
+  },
+  {"key": "pilgrimage", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "inscription:fr",
+    "tags": [{"value": "Mission 1897 - Donnée par Jorsin Octavie", "count": 1}],
+    "count": 1
+  },
+  {"key": "FIXME", "tags": [{"value": "check name", "count": 1}], "count": 1},
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "denotation",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "STAS", "count": 1}], "count": 1},
+  {
+    "key": "public_transport",
+    "tags": [{"value": "platform", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 79 01 04 82", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "lesmenuires@sogevab.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 01 08 83", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "multi", "count": 1}], "count": 1},
+  {
+    "key": "leisure",
+    "tags": [{"value": "sports_centre", "count": 1}],
+    "count": 1
+  }
+]

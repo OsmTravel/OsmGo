@@ -1,0 +1,59 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "funeral_directors", "count": 64}],
+    "count": 64
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 24 09 02", "count": 1},
+      {"value": "+33 4 76 72 37 18", "count": 1},
+      {"value": "+33 4 74 59 99 04", "count": 1},
+      {"value": "+33 4 74 85 03 88", "count": 1},
+      {"value": "+33 4 75 96 81 19", "count": 1},
+      {"value": "+33 4 78 94 14 14", "count": 1},
+      {"value": "+33 4 77220066", "count": 1},
+      {"value": "+33 4 37250208", "count": 1},
+      {"value": "+33 4 78 202442", "count": 1},
+      {"value": "+33 4 72330813", "count": 1},
+      {"value": "+33478545826", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.pfg.fr/", "count": 1},
+      {"value": "http://www.constant-pierrelatte.fr/", "count": 1},
+      {"value": "http://www.pompes-funebres-astree.fr", "count": 1},
+      {"value": "http://www.pompesfunebresrozier.com/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 75 98 92 35", "count": 1},
+      {"value": "+33 4 77 24 05 64", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "constalb@wanadoo.fr", "count": 1},
+      {"value": "pfastree@orange.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "religion", "tags": [{"value": "muslim", "count": 2}], "count": 2},
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "main", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Commune de Thônex", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {"key": "craft", "tags": [{"value": "stonemason", "count": 6}], "count": 6},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Constructeur de maisons individuelles", "count": 1},
+      {"value": "Maçonnerie Générale Revètements de sols", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 2}], "count": 2}
+]

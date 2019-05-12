@@ -1,0 +1,34 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "access_point", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Parc du Chemin de l'île", "count": 5}],
+    "count": 5
+  },
+  {"key": "phone", "tags": [{"value": "+33141872860", "count": 5}], "count": 5},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "12", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "08", "count": 1},
+      {"value": "07", "count": 1},
+      {"value": "05", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "emergency_telephone_code",
+    "tags": [{"value": "112", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "public_building", "count": 1}],
+    "count": 1
+  }
+]

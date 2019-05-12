@@ -1,0 +1,9 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "trampoline_park", "count": 3}],
+    "count": 3
+  },
+  {"key": "operator", "tags": [{"value": "Factory", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1}
+]

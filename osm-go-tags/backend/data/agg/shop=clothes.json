@@ -1,0 +1,871 @@
+[
+  {"key": "shop", "tags": [{"value": "clothes", "count": 1626}], "count": 1626},
+  {
+    "key": "clothes",
+    "tags": [
+      {"value": "women", "count": 103},
+      {"value": "men", "count": 34},
+      {"value": "underwear", "count": 34},
+      {"value": "children", "count": 31},
+      {"value": "sports", "count": 9},
+      {"value": "wedding", "count": 8},
+      {"value": "lingerie", "count": 6},
+      {"value": "denim", "count": 5},
+      {"value": "women;men", "count": 4},
+      {"value": "hats", "count": 4},
+      {"value": "children;babies", "count": 3},
+      {"value": "underwear;women", "count": 3},
+      {"value": "sport", "count": 2},
+      {"value": "second_hand", "count": 2},
+      {"value": "leather", "count": 2},
+      {"value": "women;men;accessories", "count": 2},
+      {"value": "bicycle", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "fashion;women", "count": 1},
+      {"value": "rockabilly", "count": 1},
+      {"value": "cap", "count": 1},
+      {"value": "babies;men;women;shoes;underwear", "count": 1},
+      {"value": "women;children;underwear", "count": 1},
+      {"value": "ties", "count": 1},
+      {"value": "women;men;denim", "count": 1},
+      {"value": "costumes", "count": 1},
+      {"value": "workwear", "count": 1},
+      {"value": "women; fashion", "count": 1},
+      {"value": "babies", "count": 1},
+      {"value": "japanese", "count": 1},
+      {"value": "women;children;men", "count": 1},
+      {"value": "gloves", "count": 1},
+      {"value": "women;men;children;Metal;Ghoti;Gothic;Punk;Rock", "count": 1},
+      {"value": "women;men;babies;children", "count": 1},
+      {"value": "women;children", "count": 1},
+      {"value": "underwear;women;men", "count": 1},
+      {"value": "children;underwear;babies;women", "count": 1},
+      {"value": "babies;children", "count": 1},
+      {"value": "women;men;denim;fashion", "count": 1},
+      {"value": "women;fashion", "count": 1},
+      {"value": "martial arts", "count": 1},
+      {"value": "children;women", "count": 1}
+    ],
+    "count": 278
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 20 54 41", "count": 2},
+      {"value": "+33 4 74 85 77 23", "count": 2},
+      {"value": "+33 4 74 85 38 95", "count": 2},
+      {"value": "+33 4 72 30 85 77", "count": 1},
+      {"value": "+33 4 74 85 02 72", "count": 1},
+      {"value": "+33 4 74 53 69 42", "count": 1},
+      {"value": "+33 4 74 85 08 20", "count": 1},
+      {"value": "+33 4 74 85 07 66", "count": 1},
+      {"value": "+33 4 37 02 20 07", "count": 1},
+      {"value": "+33 4 74 56 02 01", "count": 1},
+      {"value": "+33 4 74 53 98 72", "count": 1},
+      {"value": "+33 4 74 48 24 71", "count": 1},
+      {"value": "+33 4 74 85 24 18", "count": 1},
+      {"value": "+33 4 74 31 65 75", "count": 1},
+      {"value": "+33 4 74 85 07 75", "count": 1},
+      {"value": "+33 4 74 85 30 97", "count": 1},
+      {"value": "+33 4 26 05 31 87", "count": 1},
+      {"value": "+33 4 74 53 43 23", "count": 1},
+      {"value": "+33 4 74 85 65 59", "count": 1},
+      {"value": "+33 4 74 85 29 26", "count": 1},
+      {"value": "+33 4 74 53 04 55", "count": 1},
+      {"value": "+33 4 77 54 24 77", "count": 1},
+      {"value": "+33 4 26 05 27 11", "count": 1},
+      {"value": "+33 9 83 80 57 13", "count": 1},
+      {"value": "+33 4 76 56 17 87", "count": 1},
+      {"value": "+33 4 74 85 32 01", "count": 1},
+      {"value": "+33 9 67 13 09 27", "count": 1},
+      {"value": "+33 4 74 31 92 92", "count": 1},
+      {"value": "+33 9 67 26 34 33", "count": 1},
+      {"value": "+33 4 74 85 53 83", "count": 1},
+      {"value": "+33 4 74 85 36 08", "count": 1},
+      {"value": "+33 4 74 58 51 40", "count": 1},
+      {"value": "+33 4 74 56 27 72", "count": 1},
+      {"value": "+33 4 74 87 27 83", "count": 1},
+      {"value": "+33 4 74 58 59 32", "count": 1},
+      {"value": "+33 4 74 85 16 61", "count": 1},
+      {"value": "+33 4 74 85 03 32", "count": 1},
+      {"value": "+33 4 76 51 02 59", "count": 1},
+      {"value": "+33 4 50 02 01 53", "count": 1},
+      {"value": "+33 4 74 85 03 00", "count": 1},
+      {"value": "+33 4 74 54 02 62", "count": 1},
+      {"value": "+33 4 74 59 85 81", "count": 1},
+      {"value": "+33 4 74 85 88 49", "count": 1},
+      {"value": "+33 4 74 59 98 12", "count": 1},
+      {"value": "+33 4 74 85 11 33", "count": 1},
+      {"value": "+33 4 82 53 58 46", "count": 1},
+      {"value": "+33 9 81 18 55 67", "count": 1},
+      {"value": "+33 4 74 53 03 75", "count": 1},
+      {"value": "+33 4 74 85 45 17", "count": 1},
+      {"value": "+33 4 74 85 72 58", "count": 1},
+      {"value": "+33 4 74 85 02 69", "count": 1},
+      {"value": "+33 4 74 85 68 25", "count": 1},
+      {"value": "+33 4 74 53 15 29", "count": 1},
+      {"value": "+33 4 74 48 63 26", "count": 1},
+      {"value": "+33 4 74 53 12 85", "count": 1},
+      {"value": "+33 4 74 78 06 82", "count": 1},
+      {"value": "+33 4 74 79 80 02", "count": 1},
+      {"value": "+33 4 74 78 49 45", "count": 1},
+      {"value": "+33 4 74 31 92 99", "count": 1},
+      {"value": "+33 4 74 31 70 44", "count": 1},
+      {"value": "+33 4 74 16 29 45", "count": 1},
+      {"value": "+33 4 74 78 86 41", "count": 1},
+      {"value": "+33 4 74 87 05 46", "count": 1},
+      {"value": "+33 4 74 54 06 25", "count": 1},
+      {"value": "+33 4 74 53 12 11", "count": 1},
+      {"value": "+33 9 64 10 07 96", "count": 1},
+      {"value": "+33 9 67 31 74 36", "count": 1},
+      {"value": "+33 4 74 58 15 24", "count": 1},
+      {"value": "+33 4 74 78 03 97", "count": 1},
+      {"value": "+33 4 74 85 32 18", "count": 1},
+      {"value": "+33 4 74 79 85 88", "count": 1},
+      {"value": "+33 4 74 78 18 57", "count": 1},
+      {"value": "+33 9 67 31 35 42", "count": 1},
+      {"value": "+33 4 74 84 99 06", "count": 1},
+      {"value": "+33 6 41 61 42 36", "count": 1},
+      {"value": "+33 4 74 58 41 88", "count": 1},
+      {"value": "+33 4 78 71 73 04", "count": 1},
+      {"value": "+33 4 76 54 53 97", "count": 1},
+      {"value": "+33450047029", "count": 1},
+      {"value": "+33 4 78 52 92 50", "count": 1},
+      {"value": "+33 4 78 93 72 27", "count": 1},
+      {"value": "+33 9 53 41 83 68", "count": 1},
+      {"value": "+33 4 74 87 98 51", "count": 1},
+      {"value": "+33 8 11 87 29 72", "count": 1},
+      {"value": "+33 4 78 51 12 53", "count": 1},
+      {"value": "+33 4 76 46 02 94", "count": 1},
+      {"value": "+33 4 37 24 11 09", "count": 1},
+      {"value": "+33478444788", "count": 1},
+      {"value": "+33477542369", "count": 1},
+      {"value": "+33478191262", "count": 1},
+      {"value": "+33 4 74372833", "count": 1},
+      {"value": "+33 4 75 43 06 24", "count": 1},
+      {"value": "+33 4 75 45 28 34", "count": 1},
+      {"value": "+33 4 72 16 75 20", "count": 1},
+      {"value": "+33 4 76 55 82 63", "count": 1},
+      {"value": "+33478372150", "count": 1},
+      {"value": "+33 4 78309322", "count": 1},
+      {"value": "+33633613520", "count": 1},
+      {"value": "+33 4 50 88 53 51", "count": 1},
+      {"value": "+33 472 77 66 50", "count": 1},
+      {"value": "+33 4 76 34 23 99", "count": 1},
+      {"value": "+33 4 76 26 26 16", "count": 1},
+      {"value": "+33 4 50 04 98 02", "count": 1},
+      {"value": "+33 4 50 79 61 47", "count": 1},
+      {"value": "+33 4 50 38 01 63", "count": 1},
+      {"value": "+33 4 50 83 06 90", "count": 1},
+      {"value": "+33 4 50 87 02 61", "count": 1},
+      {"value": "+33 980 65 58 68", "count": 1},
+      {"value": "+33 4 76 56 13 98", "count": 1},
+      {"value": "+33 478 91 69 97", "count": 1},
+      {"value": "+33 4 26 09 53 91", "count": 1},
+      {"value": "+33 4 78 52 33 62", "count": 1},
+      {"value": "+33 4 72 74 98 19", "count": 1},
+      {"value": "+33 4 72 83 70 26", "count": 1},
+      {"value": "+33 9 72 46 54 83", "count": 1},
+      {"value": "+33 4 72 83 52 40", "count": 1},
+      {"value": "+33 4 78 52 85 72", "count": 1},
+      {"value": "+33 4 72 37 69 12", "count": 1},
+      {"value": "+33 4 78 37 07 29", "count": 1},
+      {"value": "+33 4 78 24 31 56", "count": 1},
+      {"value": "+33 4 72 75 90 93", "count": 1},
+      {"value": "+33 4 72 74 92 32", "count": 1},
+      {"value": "+33 4 72 75 04 37", "count": 1},
+      {"value": "+33 4 72 74 49 38", "count": 1},
+      {"value": "+33 4 78 24 82 07", "count": 1},
+      {"value": "+33437220537", "count": 1},
+      {"value": "+33 7 60 59 61 55", "count": 1},
+      {"value": "+33 9 84 32 78 05", "count": 1},
+      {"value": "+33 4 75 33 60 70", "count": 1},
+      {"value": "+33476182143", "count": 1},
+      {"value": "+33438370326", "count": 1},
+      {"value": "+33 4 76 23 50 96", "count": 1},
+      {"value": "+33 4 76 40 32 63", "count": 1},
+      {"value": "0811 655 445", "count": 1},
+      {"value": "+33 4 76 22 11 71", "count": 1},
+      {"value": "+33 4 76 22 85 69", "count": 1},
+      {"value": "+33 4 76 09 89 68", "count": 1},
+      {"value": "+33 4 76 22 87 33", "count": 1},
+      {"value": "+33 4 76 23 53 95", "count": 1},
+      {"value": "+33 4 76 48 53 03", "count": 1},
+      {"value": "+33 4 76 84 10 45", "count": 1},
+      {"value": "+33 4 76 70 48 38", "count": 1},
+      {"value": "+33 4 76 21 40 81", "count": 1},
+      {"value": "+33 4 76 48 66 95", "count": 1},
+      {"value": "+33 4 76 22 42 83", "count": 1},
+      {"value": "+33 4 76 21 08 23", "count": 1},
+      {"value": "+33 4 76 40 47 14", "count": 1},
+      {"value": "+33 4 38 70 15 45", "count": 1},
+      {"value": "+33 4 38 12 33 60", "count": 1},
+      {"value": "+33 4 76 33 81 71", "count": 1},
+      {"value": "+33 4 76 09 51 46", "count": 1},
+      {"value": "+33 4 76 23 15 37", "count": 1},
+      {"value": "+33 4 76 40 61 14", "count": 1},
+      {"value": "+33 4 76 33 65 24", "count": 1},
+      {"value": "+33 4 76 40 62 37", "count": 1},
+      {"value": "+33 4 38 49 16 92", "count": 1},
+      {"value": "+33 4 76 09 22 08", "count": 1},
+      {"value": "+33 4 76 49 39 73", "count": 1},
+      {"value": "+33 4 76 23 53 90", "count": 1},
+      {"value": "+33 4 76 23 50 31", "count": 1},
+      {"value": "+33 4 76 48 04 92", "count": 1},
+      {"value": "+33 9 62 12 21 24", "count": 1},
+      {"value": "+33 4 76 22 78 19", "count": 1},
+      {"value": "+33 4 76 22 16 29", "count": 1},
+      {"value": "+33 4 76 70 42 49", "count": 1},
+      {"value": "+33 4 76 09 88 46", "count": 1},
+      {"value": "+33 4 76 70 21 56", "count": 1},
+      {"value": "+33 4 38 70 24 20", "count": 1},
+      {"value": "+33476493928", "count": 1},
+      {"value": "+33 4 38 21 16 40", "count": 1},
+      {"value": "+33 4 76 29 13 52", "count": 1}
+    ],
+    "count": 174
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.boutiques-marine.com/", "count": 3},
+      {"value": "http://fr.benetton.com/", "count": 3},
+      {"value": "http://www.okaidi.fr/", "count": 2},
+      {"value": "http://www.lepharedelabaleine.com/", "count": 2},
+      {"value": "http://www.lesroisetlesreines.fr/", "count": 2},
+      {"value": "http://www.mistigriff.fr", "count": 2},
+      {"value": "https://www.genkishops.com/", "count": 2},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Celio-Club",
+        "count": 2
+      },
+      {"value": "https://vienne.kangouroukids.fr/", "count": 1},
+      {"value": "http://www.by-johanne.com/", "count": 1},
+      {"value": "http://www.boutique-aurora.com/accueil.html", "count": 1},
+      {"value": "http://www.z-enfant.com/", "count": 1},
+      {
+        "value": "http://www.monweekendavienne.com/pays-viennois/vienne/planete-chic#.VeHA4t-oEpg",
+        "count": 1
+      },
+      {"value": "http://www.sergeblanco.com/", "count": 1},
+      {"value": "http://www.lanza-boutique.com", "count": 1},
+      {"value": "http://www.ptitesmains.fr/", "count": 1},
+      {"value": "http://www.bavardagedefilles.com/", "count": 1},
+      {"value": "http://www.diesel.com/", "count": 1},
+      {"value": "http://www.mado-et-les-autres.com/", "count": 1},
+      {
+        "value": "https://www.lafeemaraboutee.fr/fr/la-fee-maraboutee-vienne-831.html",
+        "count": 1
+      },
+      {"value": "http://www.laspid.com/", "count": 1},
+      {"value": "http://www.artsmartiaux-lyon.com", "count": 1},
+      {"value": "http://laportedelorient.com/", "count": 1},
+      {"value": "http://www.frisson-lingerie.com/dessous7/fr/", "count": 1},
+      {"value": "http://www.ledressingdebea.info/", "count": 1},
+      {"value": "http://www.asitis.fr/", "count": 1},
+      {"value": "http://www.devred.com/", "count": 1},
+      {"value": "http://www.promod.fr/", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/Melys-Boutique_2059.asp",
+        "count": 1
+      },
+      {
+        "value": "http://www.vienne-online.com/sites/vahe/index.html",
+        "count": 1
+      },
+      {"value": "http://www.ddp.fr/", "count": 1},
+      {"value": "http://www.urban-dress.fr/", "count": 1},
+      {"value": "http://valentin-valentine.fr/", "count": 1},
+      {"value": "http://www.kookai.fr", "count": 1},
+      {"value": "http://www.graindemalice.fr/", "count": 1},
+      {"value": "http://www.ikks.com/", "count": 1},
+      {"value": "http://street-wave.com/", "count": 1},
+      {"value": "http://toutlmondeenparle.fr/", "count": 1},
+      {"value": "http://www.valege.com/", "count": 1},
+      {"value": "http://www.cache-cache.fr/", "count": 1},
+      {"value": "http://www.pantashop.fr/", "count": 1},
+      {"value": "http://www.sudexpress.com/", "count": 1},
+      {
+        "value": "http://www.vienne-online.com/sites/aetc-tendances/",
+        "count": 1
+      },
+      {"value": "http://magasins.1-2-3.fr/", "count": 1},
+      {"value": "http://www.boutique-lolita.com/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Librairie-Les-Bulles-de-Vienne/550439561671412",
+        "count": 1
+      },
+      {"value": "http://www.ullapopken.fr/", "count": 1},
+      {"value": "http://www.etam.com/lingerie.html", "count": 1},
+      {"value": "https://www.sergent-major.com/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/PINK-Rococo/1407699022780987",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/pages/LE-DEPOT-De-Camille/842865289080312",
+        "count": 1
+      },
+      {"value": "http://www.advice-shop.com", "count": 1},
+      {"value": "http://www.chapellerie-laparisienne.fr/", "count": 1},
+      {"value": "www.boutiquedesiderata.fr", "count": 1},
+      {"value": "http://www.caroll.com/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Kiff%C3%A7a-Boutiques-Vienne-et-Saint-Vallier/149463927587",
+        "count": 1
+      },
+      {"value": "http://www.princesseboutique.com/", "count": 1},
+      {"value": "http://www.c-and-a.com/fr/fr/shop/index.html", "count": 1},
+      {"value": "https://www.gemo.fr/", "count": 1},
+      {"value": "http://fr.shop-orchestra.com/", "count": 1},
+      {"value": "http://alliance-elixir.com/", "count": 1},
+      {"value": "https://www.primark.com/fr/magasin/lyon", "count": 1},
+      {"value": "http://www.auxclasseslaborieuses26.com/", "count": 1},
+      {
+        "value": "http://www.petitemendigote.fr/fr/nos-boutiques/nos-boutiques",
+        "count": 1
+      },
+      {
+        "value": "https://www.defursac.fr/fr/boutiques/boutique-de-fursac-lyon.html",
+        "count": 1
+      },
+      {"value": "https://www.poil-de-chameau.com/", "count": 1},
+      {"value": "http://gaspardetsimone.com", "count": 1},
+      {
+        "value": "https://magasin.vertbaudet.fr/102742-magasin-vertbaudet-annecy",
+        "count": 1
+      },
+      {"value": "https://www.loding.fr", "count": 1},
+      {"value": "http://www.laremise-asso.org/", "count": 1},
+      {"value": "http://www.celio.com/", "count": 1},
+      {"value": "www.celio.com", "count": 1},
+      {"value": "www.cache-cache.fr", "count": 1},
+      {"value": "fr.tommy.com/", "count": 1},
+      {"value": "www.superdry.fr", "count": 1},
+      {"value": "http://www.zgeneration.com/fr/", "count": 1},
+      {"value": "https://www.lateliere.org/", "count": 1},
+      {"value": "http://www.metallianstore.com/", "count": 1},
+      {"value": "http://www.emmaus-lyon.org/trouver-lyon", "count": 1},
+      {"value": "http://boutique-lyon.smart.fr/lyautey/", "count": 1},
+      {
+        "value": "https://magasin.cyrillus.fr/103381-cyrillus-lyon-saxe",
+        "count": 1
+      },
+      {
+        "value": "http://www.sergent-major.com/les-boutiques/France/boutique-lyon-saxe",
+        "count": 1
+      },
+      {"value": "http://www.karlmarcjohn.com/eboutique_fr/lyon-2", "count": 1},
+      {
+        "value": "https://www.boutique-arthur.com/fr/store-boutique-arthur-lyon----28.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.petit-bateau.fr/s/boutique/056-petit-bateau-lyon-saxe.html",
+        "count": 1
+      },
+      {"value": "http://www.absorba.com/boutique/absorba-lyon/", "count": 1},
+      {
+        "value": "https://www.despetitshauts.com/fr/lyon-6-eme-193.html",
+        "count": 1
+      },
+      {
+        "value": "https://ba-sh.com/fr/fr/storelocator?StoreID=LYONSAXE",
+        "count": 1
+      },
+      {
+        "value": "http://stores.ikks.com/fr-fr/boutique/lyon/ikks-women-men-lyon-saxe/536c8f21e0bbafaa06e12a891a359fa3",
+        "count": 1
+      },
+      {"value": "https://www.thekooples.com/fr/boutiques", "count": 1},
+      {"value": "https://fr.maje.com/fr/boutiques/", "count": 1},
+      {"value": "https://www.cinelle-boutique.com/", "count": 1},
+      {"value": "https://boutiquelibertie.com/", "count": 1},
+      {"value": "http://shonerequest.com/", "count": 1},
+      {"value": "http://www.jacquelineriu.fr/", "count": 1},
+      {
+        "value": "https://www.gemo.fr/magasin/GEMO_DAVEZIEUX_Chaussures_&_V%C3%AAtements/GEMO_2683",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/mim-mim-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/arc-en-ciel-arc-en-ciel-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/camaieu-camaieu-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/blue-store-blue-store-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Orchestra",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/H-M",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Morgan",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/IKKS-Women-Junior",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Kaporal",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Caroll",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Armand-Thiery-Femme",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Bonobo",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Desigual",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Christine-Laure",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Bizzbee",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Brice",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Zara",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Cache-Cache",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Urban-Culture",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Bershka",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Pull-Bear",
+        "count": 1
+      },
+      {"value": "http://www.camaieu.fr/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/1.2.3",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Promod",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Bocage",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Pimkie",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Okaidi",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Naf-Naf",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Grain-de-Malice",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Armand-Thiery-Homme",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Orcanta",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/IKKS-Junior",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Calzedonia",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Jules",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Darjeeling",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Chevignon",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Undiz",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/RougeGorge",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Mango",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Un-Jour-Ailleurs",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/New-Look",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Jennyfer",
+        "count": 1
+      }
+    ],
+    "count": 148
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 53},
+      {"value": "1", "count": 43},
+      {"value": "2;3", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "0;1;2", "count": 1}
+    ],
+    "count": 99
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 56},
+      {"value": "no", "count": 18},
+      {"value": "limited", "count": 10}
+    ],
+    "count": 84
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 71}], "count": 71},
+  {"key": "room", "tags": [{"value": "shop", "count": 69}], "count": 69},
+  {
+    "key": "second_hand",
+    "tags": [
+      {"value": "no", "count": 45},
+      {"value": "yes", "count": 5},
+      {"value": "only", "count": 3},
+      {"value": "clothes", "count": 1}
+    ],
+    "count": 54
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 34},
+      {"value": "2018-02-24", "count": 4},
+      {"value": "2017-07-19", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Z", "count": 2},
+      {"value": "Devred", "count": 2},
+      {"value": "Camaïeu", "count": 2},
+      {"value": "X and O", "count": 1},
+      {"value": "Armand Thiery", "count": 1},
+      {"value": "Jacqueline Riu", "count": 1},
+      {"value": "Caroll", "count": 1},
+      {"value": "Jules", "count": 1},
+      {"value": "Groupe Casino", "count": 1},
+      {"value": "Okaïdi", "count": 1},
+      {"value": "Le Phare de la baleine", "count": 1},
+      {"value": "Mado et les autres", "count": 1},
+      {"value": "La Fée Maraboutée", "count": 1},
+      {"value": "Promod", "count": 1},
+      {"value": "Kookai", "count": 1},
+      {"value": "Grain de malice", "count": 1},
+      {"value": "Ikks", "count": 1},
+      {"value": "La Halle", "count": 1},
+      {"value": "Cache Cache", "count": 1},
+      {"value": "Pantashop", "count": 1},
+      {"value": "Sud express", "count": 1},
+      {"value": "1.2.3", "count": 1},
+      {"value": "La Parisienne", "count": 1},
+      {"value": "Orthopédie Stendhal", "count": 1},
+      {"value": "Du Pareil au Meme", "count": 1},
+      {"value": "Orhan Ciftci", "count": 1},
+      {"value": "Kangourou Kids", "count": 1},
+      {"value": "Mango", "count": 1},
+      {"value": "Etam", "count": 1},
+      {"value": "Celio", "count": 1},
+      {"value": "Zara", "count": 1},
+      {"value": "Emmaüs", "count": 1},
+      {"value": "BLDM", "count": 1},
+      {"value": "Valège", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Kiabi", "count": 21},
+      {"value": "Intersport", "count": 1},
+      {"value": "Monoprix", "count": 1},
+      {"value": "Primark", "count": 1},
+      {"value": "Verbaudet", "count": 1},
+      {"value": "Levi's", "count": 1},
+      {"value": "Caroll", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Kiabi", "count": 21},
+      {"value": "fr:Monoprix (France)", "count": 1},
+      {"value": "fr:Primark", "count": 1},
+      {"value": "fr:Camaïeu (entreprise)", "count": 1},
+      {"value": "fr:Tati", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q3196299", "count": 21},
+      {"value": "Q523234", "count": 2},
+      {"value": "Q3321241", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "58200170701806", "count": 1},
+      {"value": "44492821200034", "count": 1},
+      {"value": "38379698400136", "count": 1},
+      {"value": "49952014600022", "count": 1},
+      {"value": "39348991900281", "count": 1},
+      {"value": "47756787900234", "count": 1},
+      {"value": "82524619200017", "count": 1},
+      {"value": "30970699200679", "count": 1},
+      {"value": "47836214800015", "count": 1},
+      {"value": "52806543600032", "count": 1},
+      {"value": "44492821200026", "count": 1},
+      {"value": "68542060600376", "count": 1},
+      {"value": "30529134601295", "count": 1},
+      {"value": "33888018001320", "count": 1},
+      {"value": "30263931500118", "count": 1},
+      {"value": "38283669000018", "count": 1},
+      {"value": "409 215 548 00028", "count": 1},
+      {"value": "398 110 445 00036", "count": 1},
+      {"value": "318 148 467 00075", "count": 1},
+      {"value": "345 086 177 02461", "count": 1},
+      {"value": "491 753 869 00016", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "brand:website",
+    "tags": [{"value": "http://kiabi.com", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Friperie Vintage", "count": 1},
+      {
+        "value": "Impression et flocage de t-shirts personnalisés et accessoires",
+        "count": 1
+      },
+      {"value": "Costumes de mariage", "count": 1},
+      {"value": "rain coats", "count": 1},
+      {"value": "Détail de matériel ski et alpinisme", "count": 1},
+      {"value": "Vente de laine", "count": 1},
+      {"value": "Prêt-à-porter de grande taille", "count": 1},
+      {"value": "Robes de mariée", "count": 1},
+      {"value": "Vêtements de 0 à 16 ans", "count": 1},
+      {"value": "lingerie", "count": 1},
+      {"value": "Vêtements asiatiques", "count": 1},
+      {
+        "value": "Vêtements et chaussures de travail pour professionnels + vêtements classiques hommes.",
+        "count": 1
+      },
+      {"value": "Mode, coiffure et café", "count": 1},
+      {"value": "Dépôt vente de vêtements homme femmes.", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "L'élément n'existe pas ou plus", "count": 8},
+      {"value": "La position de l'élément n'est pas bonne", "count": 1},
+      {
+        "value": "Ce magasin n'est plus référencé sur le site de la marque, il est donc probable qu'il n'existe plus.",
+        "count": 1
+      },
+      {"value": "absent", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "organic",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "lepoildechameau@gmail.com", "count": 1},
+      {"value": "gaspardetsimone@gmail.com", "count": 1},
+      {"value": "art.monie@orange.fr", "count": 1},
+      {"value": "orders@metallianstore.com", "count": 1},
+      {"value": "dons@emmaus-lyon.org", "count": 1},
+      {"value": "absorba.lyon@gz-store.com", "count": 1},
+      {"value": "contact@cinelle-boutique.com", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Kiabi", "count": 1},
+      {"value": "fr:Devred 1902", "count": 1},
+      {"value": "fr:Tati", "count": 1},
+      {"value": "fr:Galeries Lafayette", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "craft", "tags": [{"value": "dressmaker", "count": 4}], "count": 4},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Tendre-Passion-372640719448122",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/Lidéal-470087166508547", "count": 1},
+      {"value": "https://www.facebook.com/ptitsreveurs69/", "count": 1},
+      {"value": "https://www.facebook.com/MontSport2016/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {"value": "Dépôt vente de vêtements.", "count": 2},
+      {
+        "value": "Magasin de vente de vêtements et accessoires orientaux.",
+        "count": 1
+      },
+      {
+        "value": "Magasin de vente de sous-vêtements masculins et féminins.",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3196299", "count": 1},
+      {"value": "Q3025542", "count": 1},
+      {"value": "Q523234", "count": 1},
+      {"value": "Q3094686", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "spécialisé dans le cuir", "count": 1},
+      {
+        "value": "The object dispappeared or never happened to be there",
+        "count": 1
+      },
+      {"value": "Précédemment: \"Orange\"", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "women", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "female", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "cafe", "count": 1},
+      {"value": "kindergarten", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "start_date", "tags": [{"value": "1975", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "disused:shop",
+    "tags": [{"value": "clothes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q3561446", "count": 1}],
+    "count": 1
+  },
+  {"key": "step_count", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "operator:wikipedia",
+    "tags": [{"value": "fr:Vivarte", "count": 1}],
+    "count": 1
+  },
+  {"key": "male", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "construction_date",
+    "tags": [{"value": "1925", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1},
+  {"key": "cloth", "tags": [{"value": "costumes", "count": 1}], "count": 1},
+  {"key": "cafe", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1}
+]

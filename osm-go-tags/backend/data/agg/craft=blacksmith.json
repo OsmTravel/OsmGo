@@ -1,0 +1,13 @@
+[
+  {"key": "craft", "tags": [{"value": "blacksmith", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "Ferronnerie d'art", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.adobati.fr", "count": 1}],
+    "count": 1
+  }
+]

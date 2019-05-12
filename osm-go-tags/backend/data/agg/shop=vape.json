@@ -1,0 +1,34 @@
+[
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Petit magasin au décor design épuré spécialisé en cigarettes électroniques, accessoires et liquides parfumés.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "09 80 78 48 02", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "vape", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "https://smoky-shop.com", "count": 1}],
+    "count": 1
+  }
+]

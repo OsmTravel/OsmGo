@@ -1,0 +1,264 @@
+[
+  {"key": "man_made", "tags": [{"value": "works", "count": 384}], "count": 384},
+  {"key": "wall", "tags": [{"value": "no", "count": 29}], "count": 29},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "EDF", "count": 6},
+      {"value": "Grofillex", "count": 2},
+      {"value": "Reynaud Daniel", "count": 1},
+      {"value": "Areva NC", "count": 1},
+      {"value": "Bayer SAS", "count": 1},
+      {"value": "Lignatec", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "industrial", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.cemexbetons.fr", "count": 1},
+      {"value": "http://www.chillet.fr", "count": 1},
+      {"value": "http://www.isea-france.fr/", "count": 1},
+      {"value": "http://somafi.net/", "count": 1},
+      {"value": "http://reseau-jade.fr/", "count": 1},
+      {"value": "http://alka-charpente.fr/", "count": 1},
+      {"value": "http://www.deux-ponts.fr", "count": 1},
+      {"value": "http://www.lignatech.fr/", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Cochonou", "count": 1},
+      {"value": "fr:Usine Georges-Besse", "count": 1},
+      {"value": "fr:Usine Electricfil de Beynost", "count": 1},
+      {"value": "fr:Cuivrerie de Cerdon", "count": 1},
+      {"value": "fr:Superphénix", "count": 1},
+      {"value": "fr:Schappe de Saint-Rambert", "count": 1},
+      {"value": "fr:Anciennes usines Marrel", "count": 1},
+      {"value": "fr:Usine chimique de Balan", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2981260", "count": 1},
+      {"value": "Q3552651", "count": 1},
+      {"value": "Q3007050", "count": 1},
+      {"value": "Q1739389", "count": 1},
+      {"value": "Q17494065", "count": 1},
+      {"value": "Q19753094", "count": 1},
+      {"value": "Q16511667", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 22 58 77 07", "count": 1},
+      {"value": "+33478484436", "count": 1},
+      {"value": "+33 4 78 08 34 31", "count": 1},
+      {"value": "+33478874000", "count": 1},
+      {"value": "+33 4 38 24 14 24", "count": 1},
+      {"value": "+33 6 10 37 63 11", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1984", "count": 3},
+      {"value": "C19", "count": 1},
+      {"value": "1983", "count": 1},
+      {"value": "1985", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "generator:output:electricity",
+    "tags": [{"value": "915 MW", "count": 4}, {"value": "1242 MW", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "power",
+    "tags": [
+      {"value": "generator", "count": 4},
+      {"value": "plant", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 4}, {"value": "wall", "count": 1}],
+    "count": 5
+  },
+  {"key": "generator:type", "tags": [{"value": "PWR", "count": 4}], "count": 4},
+  {
+    "key": "ref:FR:RTE_nom",
+    "tags": [
+      {"value": "CRUAS 4", "count": 1},
+      {"value": "CRUAS 3", "count": 1},
+      {"value": "CRUAS 1", "count": 1},
+      {"value": "CRUAS 2", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref:EU:ENTSOE_EIC",
+    "tags": [
+      {"value": "17W100P100P0119K", "count": 1},
+      {"value": "17W100P100P0118M", "count": 1},
+      {"value": "17W100P100P0115S", "count": 1},
+      {"value": "17W100P100P0116Q", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "butcher", "count": 2},
+      {"value": "outdoor", "count": 1},
+      {"value": "greengrocer", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "generator:method",
+    "tags": [{"value": "fission", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "generator:plant",
+    "tags": [{"value": "output", "count": 4}],
+    "count": 4
+  },
+  {"key": "hazard", "tags": [{"value": "nuclear", "count": 3}], "count": 3},
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00135641", "count": 1},
+      {"value": "PA01000037", "count": 1},
+      {"value": "PA00117684", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1995-09-25", "count": 1},
+      {"value": "2013", "count": 1},
+      {"value": "1992", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 2}, {"value": "2", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "product",
+    "tags": [
+      {"value": "uranium", "count": 1},
+      {"value": "lifting_handling_equipment", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@deux-ponts.fr", "count": 1},
+      {"value": "contact@lignatech.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "butcher", "tags": [{"value": "pork", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Uranium refinery : nuclear fuel", "count": 1},
+      {
+        "value": "Uranium refinery : uranium hexafluoride, nuclear fuel",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "industrial", "tags": [{"value": "factory", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Enrichissement de l'Uranium", "count": 1},
+      {
+        "value": "Entreprise d'étude, conception et réalisation de maisons pour particuliers et architectes en ossature bois.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "window_construction", "count": 1},
+      {"value": "sawmill", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "disused:power",
+    "tags": [{"value": "generator", "count": 1}],
+    "count": 1
+  },
+  {"key": "created_by", "tags": [{"value": "JOSM", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [{"value": "http://www.mgicoutier.com/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "plant:output:electricity",
+    "tags": [{"value": "15 MW", "count": 1}],
+    "count": 1
+  },
+  {"key": "produce", "tags": [{"value": "uranium", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "end_date", "tags": [{"value": "1998", "count": 1}], "count": 1},
+  {"key": "works:type", "tags": [{"value": "sawmill", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Schappe_de_Saint-Rambert_16.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Bâtiment récent. Forme exacte du bâti à corriger dès qu'il apparaitra au cadastre.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "TCL", "count": 1}], "count": 1},
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1}
+]

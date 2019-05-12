@@ -1,0 +1,32 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "conference_centre", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.espacetetedor.com/", "count": 1},
+      {"value": "http://www.valpre.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Pôle Optique & Vision;ARUFOG", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 72 18 05 05", "count": 1}],
+    "count": 1
+  },
+  {"key": "stars", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "hotel", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  }
+]

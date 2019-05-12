@@ -1,0 +1,12 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "energy_supplier", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 1 60 19 62 31", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "Magasin_de_fenêtres", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.demafenetre.fr", "count": 1}],
+    "count": 1
+  }
+]

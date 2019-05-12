@@ -1,0 +1,710 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "coastline", "count": 7087}],
+    "count": 7087
+  },
+  {
+    "key": "place",
+    "tags": [
+      {"value": "islet", "count": 1508},
+      {"value": "island", "count": 50},
+      {"value": "locality", "count": 2}
+    ],
+    "count": 1560
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "rock", "count": 392},
+      {"value": "bare_rock", "count": 76},
+      {"value": "cobblestone", "count": 23},
+      {"value": "pebblestone", "count": 10},
+      {"value": "grass", "count": 1},
+      {"value": "boulder", "count": 1}
+    ],
+    "count": 503
+  },
+  {
+    "key": "boundary",
+    "tags": [
+      {"value": "administrative", "count": 187},
+      {"value": "national_park", "count": 3},
+      {"value": "protected_area", "count": 2}
+    ],
+    "count": 192
+  },
+  {
+    "key": "admin_level",
+    "tags": [
+      {"value": "4", "count": 182},
+      {"value": "8", "count": 3},
+      {"value": "7", "count": 2}
+    ],
+    "count": 187
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Île Calseraigne", "count": 2},
+      {"value": "es:Isla de la Horadada", "count": 2},
+      {"value": "fr:Île des Rimains", "count": 2},
+      {"value": "es:Islas de Poo", "count": 2},
+      {"value": "fr:Mez de Goëlo", "count": 2},
+      {"value": "fr:Île du Large", "count": 1},
+      {"value": "en:Ortac", "count": 1},
+      {"value": "en:Alderney", "count": 1},
+      {"value": "fr:Île Dumet", "count": 1},
+      {"value": "fr:Île Saint-Michel", "count": 1},
+      {"value": "fr:Île Verte (Finistère)", "count": 1},
+      {"value": "fr:Île Maudez", "count": 1},
+      {"value": "fr:Île Saint-Gildas", "count": 1},
+      {"value": "fr:Île Béniguet", "count": 1},
+      {"value": "fr:Bréhat", "count": 1},
+      {"value": "fr:Île Milliau", "count": 1},
+      {"value": "fr:Île-Grande", "count": 1},
+      {"value": "fr:Île Callot", "count": 1},
+      {"value": "fr:Île de Sieck", "count": 1},
+      {"value": "fr:Île Trébéron", "count": 1},
+      {"value": "fr:Île des Morts (Finistère)", "count": 1},
+      {"value": "fr:Île de Térénez", "count": 1},
+      {"value": "fr:Île Ar-Morbic", "count": 1},
+      {"value": "fr:Île Logodec", "count": 1},
+      {"value": "fr:Tombelaine", "count": 1},
+      {"value": "fr:Île de la Pierre Percée", "count": 1},
+      {"value": "fr:Île Sainte-Marguerite", "count": 1},
+      {"value": "es:La Campanuca", "count": 1},
+      {"value": "es:Isla de la Torre", "count": 1},
+      {"value": "fr:Île Piana (Lavezzi)", "count": 1},
+      {"value": "de:Île d’If", "count": 1},
+      {"value": "fr:Île de l'Érevine", "count": 1},
+      {"value": "fr:Île de Bagaud", "count": 1},
+      {"value": "it:Isola delle Rocche", "count": 1},
+      {"value": "fr:Île des Vieilles", "count": 1},
+      {"value": "fr:Île Perdue", "count": 1},
+      {"value": "fr:Grain de sable (rocher)", "count": 1},
+      {"value": "it:Isola di Pianosa (Toscana)", "count": 1},
+      {"value": "it:Isolotto della Scarpa", "count": 1},
+      {"value": "it:Isolotto della Scola", "count": 1},
+      {"value": "it:Isola di Montecristo", "count": 1},
+      {"value": "it:Isola della Cappa", "count": 1},
+      {"value": "it:Isola della Peraiola", "count": 1},
+      {"value": "fr:Île des Embiez", "count": 1},
+      {"value": "fr:Île du Grand Gaou", "count": 1},
+      {"value": "fr:Île du Petit Gaou", "count": 1},
+      {"value": "fr:Îles d'Endoume", "count": 1},
+      {"value": "fr:Île Degaby", "count": 1},
+      {"value": "fr:Tatihou", "count": 1},
+      {"value": "fr:Île du Grand Rouveau", "count": 1},
+      {"value": "fr:Fort de Brescou", "count": 1},
+      {"value": "it:Scoglietto di Portoferraio", "count": 1},
+      {"value": "it:Scoglio d'Africa", "count": 1},
+      {"value": "it:Isola di Palmaiola", "count": 1},
+      {"value": "it:Isola di Cerboli", "count": 1},
+      {"value": "fr:Île de Planier", "count": 1},
+      {"value": "fr:Île Louët", "count": 1},
+      {"value": "fr:Île Maïre", "count": 1},
+      {"value": "fr:Île de Riou", "count": 1},
+      {"value": "fr:Île Tiboulen de Maïre", "count": 1},
+      {"value": "en:Herm", "count": 1},
+      {"value": "fr:Île de Cavallo", "count": 1},
+      {"value": "fr:Île Jarre", "count": 1},
+      {"value": "fr:Île Lavrec", "count": 1},
+      {"value": "fr:Île Melon", "count": 1},
+      {"value": "en:Jethou", "count": 1},
+      {"value": "en:Brecqhou", "count": 1},
+      {"value": "fr:Île des Landes", "count": 1},
+      {"value": "en:Crevichon", "count": 1},
+      {"value": "fr:Île de Terre", "count": 1},
+      {"value": "es:Isla de la Hierba", "count": 1},
+      {"value": "fr:Rocher de Bizeux", "count": 1},
+      {"value": "fr:Île du Guesclin", "count": 1},
+      {"value": "fr:Île Tristan", "count": 1},
+      {"value": "it:Isola dei Topi", "count": 1},
+      {"value": "fr:Rocher de la Vierge de Biarritz", "count": 1},
+      {"value": "it:Faraglione dell'isola del Giglio", "count": 1},
+      {"value": "fr:Étretat#l.27Arche et l.27Aiguille", "count": 1},
+      {"value": "it:Isola Corbella", "count": 1},
+      {"value": "en:La Motte, Jersey", "count": 1},
+      {"value": "fr:Mont-Tombe", "count": 1},
+      {"value": "en:Burhou", "count": 1},
+      {"value": "en:Bendor", "count": 1},
+      {"value": "fr:Île Forana", "count": 1},
+      {"value": "fr:Île de Maestro Maria", "count": 1},
+      {"value": "fr:Île Pietricaggiosa", "count": 1},
+      {"value": "fr:Île Roscana", "count": 1},
+      {"value": "fr:Méaban", "count": 1},
+      {"value": "fr:Île Brannec", "count": 1},
+      {"value": "fr:Île de Lerne", "count": 1},
+      {"value": "fr:Île Tascon", "count": 1},
+      {"value": "fr:Pladic", "count": 1},
+      {"value": "fr:La Dervenn", "count": 1},
+      {"value": "fr:Île Creïzic", "count": 1},
+      {"value": "fr:Île du Charles", "count": 1},
+      {"value": "fr:Le Petit Huernic", "count": 1},
+      {"value": "fr:Île Irus", "count": 1},
+      {"value": "fr:Île de Mancel", "count": 1},
+      {"value": "fr:Île de Béchit", "count": 1},
+      {"value": "fr:Enézy", "count": 1},
+      {"value": "fr:Île Iluric", "count": 1},
+      {"value": "fr:Île-aux-Moines", "count": 1},
+      {"value": "fr:Boëdic", "count": 1},
+      {"value": "fr:Île des Œufs", "count": 1},
+      {"value": "fr:Île Godec", "count": 1},
+      {"value": "fr:Île de Boëd", "count": 1},
+      {"value": "fr:Govihan", "count": 1},
+      {"value": "fr:Stibiden", "count": 1},
+      {"value": "fr:Île Bailleron", "count": 1},
+      {"value": "fr:Île de la Jument", "count": 1},
+      {"value": "fr:Penn Bleï", "count": 1},
+      {"value": "fr:Corn Bihan", "count": 1},
+      {"value": "fr:Île Quistinic", "count": 1},
+      {"value": "fr:Île de Sein", "count": 1},
+      {"value": "fr:Kélaourou", "count": 1},
+      {"value": "fr:Île de Balanec", "count": 1},
+      {"value": "fr:Île aux Chrétiens", "count": 1},
+      {"value": "fr:Ledenez Vraz", "count": 1},
+      {"value": "fr:Île de Trielen", "count": 1},
+      {"value": "fr:Île de Litiry", "count": 1},
+      {"value": "fr:Quéménès", "count": 1},
+      {"value": "fr:Morgol", "count": 1},
+      {"value": "fr:Île de Béniguet (Molène)", "count": 1},
+      {"value": "fr:Île Glazic", "count": 1},
+      {"value": "fr:Île Valhuec", "count": 1},
+      {"value": "fr:Île de Roëlan", "count": 1},
+      {"value": "fr:Île Thinic", "count": 1},
+      {"value": "fr:Îlot de Guernic", "count": 1},
+      {"value": "fr:Téviec", "count": 1},
+      {"value": "fr:Île aux Moutons", "count": 1},
+      {"value": "fr:Île de Guiriden", "count": 1},
+      {"value": "fr:Île de Brilimec", "count": 1},
+      {"value": "fr:Île de Brunec", "count": 1},
+      {"value": "fr:Île du Loc'h", "count": 1},
+      {"value": "fr:Île de Guiautec", "count": 1},
+      {"value": "fr:Les Évens", "count": 1},
+      {"value": "en:Les Casquets", "count": 1}
+    ],
+    "count": 142
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3307738", "count": 2},
+      {"value": "Q9009899", "count": 2},
+      {"value": "Q898856", "count": 1},
+      {"value": "Q904566", "count": 1},
+      {"value": "Q2670037", "count": 1},
+      {"value": "Q953452", "count": 1},
+      {"value": "Q945712", "count": 1},
+      {"value": "Q2084749", "count": 1},
+      {"value": "Q179313", "count": 1},
+      {"value": "Q3593067", "count": 1},
+      {"value": "Q3593246", "count": 1},
+      {"value": "Q3593463", "count": 1},
+      {"value": "Q3593173", "count": 1},
+      {"value": "Q9009732", "count": 1},
+      {"value": "Q292522", "count": 1},
+      {"value": "Q3593432", "count": 1},
+      {"value": "Q3593329", "count": 1},
+      {"value": "Q21880677", "count": 1},
+      {"value": "Q3593168", "count": 1},
+      {"value": "Q208114", "count": 1},
+      {"value": "Q15070128", "count": 1},
+      {"value": "Q3803284", "count": 1},
+      {"value": "Q203169", "count": 1},
+      {"value": "Q1674458", "count": 1},
+      {"value": "Q15070147", "count": 1},
+      {"value": "Q835755", "count": 1},
+      {"value": "Q1229122", "count": 1},
+      {"value": "Q1054703", "count": 1},
+      {"value": "Q34790836", "count": 1},
+      {"value": "Q21099785", "count": 1},
+      {"value": "Q3593407", "count": 1},
+      {"value": "Q21099804", "count": 1},
+      {"value": "Q3593108", "count": 1},
+      {"value": "Q47155", "count": 1},
+      {"value": "Q24939916", "count": 1},
+      {"value": "Q3090839", "count": 1},
+      {"value": "Q16555194", "count": 1},
+      {"value": "Q202023", "count": 1},
+      {"value": "Q651388", "count": 1},
+      {"value": "Q2989520", "count": 1},
+      {"value": "Q16942837", "count": 1},
+      {"value": "Q16942826", "count": 1},
+      {"value": "Q21427788", "count": 1},
+      {"value": "Q21427891", "count": 1},
+      {"value": "Q3593315", "count": 1},
+      {"value": "Q3593239", "count": 1},
+      {"value": "Q3390809", "count": 1},
+      {"value": "Q3208251", "count": 1},
+      {"value": "Q3055560", "count": 1},
+      {"value": "Q71356", "count": 1},
+      {"value": "Q2923079", "count": 1},
+      {"value": "Q3593341", "count": 1},
+      {"value": "Q3593005", "count": 1},
+      {"value": "Q3374754", "count": 1},
+      {"value": "Q2997428", "count": 1},
+      {"value": "Q3593184", "count": 1},
+      {"value": "Q228472", "count": 1},
+      {"value": "Q20971095", "count": 1},
+      {"value": "Q3593331", "count": 1},
+      {"value": "Q20971075", "count": 1},
+      {"value": "Q3228806", "count": 1},
+      {"value": "Q3593419", "count": 1},
+      {"value": "Q3593385", "count": 1},
+      {"value": "Q3296892", "count": 1},
+      {"value": "Q3324047", "count": 1},
+      {"value": "Q3593346", "count": 1},
+      {"value": "Q21027230", "count": 1},
+      {"value": "Q21027234", "count": 1},
+      {"value": "Q3593408", "count": 1},
+      {"value": "Q3593240", "count": 1},
+      {"value": "Q3593607", "count": 1},
+      {"value": "Q150308", "count": 1},
+      {"value": "Q3593285", "count": 1},
+      {"value": "Q3593376", "count": 1},
+      {"value": "Q23055710", "count": 1},
+      {"value": "Q3593342", "count": 1},
+      {"value": "Q3593492", "count": 1},
+      {"value": "Q3593375", "count": 1},
+      {"value": "Q1048187", "count": 1}
+    ],
+    "count": 81
+  },
+  {
+    "key": "city:left",
+    "tags": [
+      {"value": "Rio", "count": 13},
+      {"value": "Campo nell'Elba", "count": 10},
+      {"value": "Portoferraio", "count": 10},
+      {"value": "Marciana", "count": 8},
+      {"value": "Capraia Isola", "count": 7},
+      {"value": "Capoliveri", "count": 5},
+      {"value": "Ventimiglia", "count": 4},
+      {"value": "Porto Azzurro", "count": 3},
+      {"value": "Marciana Marina", "count": 2},
+      {"value": "Sanremo", "count": 2},
+      {"value": "Riva Ligure", "count": 1},
+      {"value": "Cipressa", "count": 1},
+      {"value": "Costarainera", "count": 1},
+      {"value": "Imperia", "count": 1},
+      {"value": "Cervo", "count": 1},
+      {"value": "Ospedaletti", "count": 1},
+      {"value": "San Lorenzo al Mare", "count": 1},
+      {"value": "Santo Stefano al Mare", "count": 1},
+      {"value": "Camporosso", "count": 1},
+      {"value": "Vallecrosia", "count": 1},
+      {"value": "Taggia", "count": 1},
+      {"value": "San Bartolomeo al Mare", "count": 1},
+      {"value": "Bordighera", "count": 1},
+      {"value": "Diano Marina", "count": 1}
+    ],
+    "count": 78
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "pier", "count": 43},
+      {"value": "breakwater", "count": 11},
+      {"value": "groyne", "count": 7},
+      {"value": "jetty", "count": 4},
+      {"value": "embankment", "count": 4},
+      {"value": "quay", "count": 3},
+      {"value": "dam", "count": 2},
+      {"value": "cross", "count": 1}
+    ],
+    "count": 75
+  },
+  {
+    "key": "mooring",
+    "tags": [{"value": "yes", "count": 71}, {"value": "ferry", "count": 1}],
+    "count": 72
+  },
+  {
+    "key": "province:left",
+    "tags": [{"value": "Livorno", "count": 60}],
+    "count": 60
+  },
+  {
+    "key": "region:left",
+    "tags": [{"value": "Toscana", "count": 60}],
+    "count": 60
+  },
+  {
+    "key": "is_in:region",
+    "tags": [
+      {"value": "Principado de Asturias", "count": 35},
+      {"value": "Channel Islands", "count": 7},
+      {"value": "Cantabria", "count": 3}
+    ],
+    "count": 45
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "bare_rock", "count": 24},
+      {"value": "forest", "count": 7},
+      {"value": "island", "count": 5},
+      {"value": "grass", "count": 3},
+      {"value": "heath", "count": 1}
+    ],
+    "count": 40
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "J'ai choisi le cadastre en remplacement de l'ancienne source (Landsat je pense ?) qui semble plus précise. Mais je n'en suis pas certain, vivement une source sat de bonne qualité",
+        "count": 12
+      },
+      {
+        "value": "Improved SW tip of the island using landsat; Updated based on Yahoo WMS",
+        "count": 5
+      },
+      {"value": "Guessed by tanjeff according to coast path", "count": 2},
+      {
+        "value": "the alt_name could also be written \"Calseraigne\" (althought it means \"calanque sereine\")",
+        "count": 2
+      },
+      {"value": "water-MP", "count": 2},
+      {"value": "en manuel + cadastre", "count": 1},
+      {"value": "La Croix a disparu vers 2008", "count": 1},
+      {
+        "value": "Modified base PGS data with landsat to get a better fit",
+        "count": 1
+      },
+      {"value": "Toponyme d'après Albert", "count": 1},
+      {"value": "coastline might be wrong", "count": 1},
+      {
+        "value": "for spelling see http://www.rando-patrimoine.corsica/Bonifacio-Bunifaziu_a134.html",
+        "count": 1
+      },
+      {
+        "value": "moved to the place of an existing coastline and copied tags from existing object because this shape looks more detailed",
+        "count": 1
+      },
+      {
+        "value": "la limite de commune semble assez loin du rivage, j'ai donc laissé l'ancien tracé",
+        "count": 1
+      },
+      {
+        "value": "la commune n'étant pas vectorisée au cadastre, la source me semble douteuse",
+        "count": 1
+      },
+      {
+        "value": "coastline could be improved using JOSM and Cadastre plugin",
+        "count": 1
+      },
+      {
+        "value": "changed to reflect GPS road trace (used Landsat to line up)",
+        "count": 1
+      },
+      {
+        "value": "Mont Saint-Michel in two WHC heritage site. \"Chemins de Saint-Jacques-de-Compostelle en France\" (ref 868-023) : just the island.\"Mont-Saint-Michel et sa baie\" (ref 80): not just for the island but for the whole bay (see relation 2832365)",
+        "count": 1
+      },
+      {"value": "corriger les relations!", "count": 1},
+      {
+        "value": "Cette île fait partie du domaine maritime et d'aucune commune",
+        "count": 1
+      },
+      {"value": "source:name:br M. Madeg, An Enezeier, p. 35", "count": 1},
+      {"value": "source:name:br M. Madeg, An Enezeier, p. 65", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "is_in:continent",
+    "tags": [{"value": "Europe", "count": 38}],
+    "count": 38
+  },
+  {
+    "key": "is_in:province",
+    "tags": [
+      {"value": "Asturias", "count": 35},
+      {"value": "Cantabria", "count": 3}
+    ],
+    "count": 38
+  },
+  {
+    "key": "is_in:country",
+    "tags": [{"value": "España", "count": 38}],
+    "count": 38
+  },
+  {
+    "key": "is_in",
+    "tags": [
+      {
+        "value": "Avilés;Asturias;Principado de Asturias;España;Europe",
+        "count": 21
+      },
+      {"value": "Noja;Santander;Cantabria;España;Europe", "count": 3},
+      {
+        "value": "Castro Urdiales;Cantabria;Cantabria;España;Europe",
+        "count": 3
+      },
+      {"value": "Asturias,Spain,Europe", "count": 2},
+      {"value": "Bermeo", "count": 1}
+    ],
+    "count": 30
+  },
+  {"key": "type", "tags": [{"value": "boundary", "count": 23}], "count": 23},
+  {
+    "key": "is_in:city",
+    "tags": [{"value": "Avilés", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "boulder", "count": 12},
+      {"value": "masonry", "count": 4},
+      {"value": "concrete", "count": 2}
+    ],
+    "count": 18
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Potlatch 0.7b", "count": 6},
+      {"value": "almien_coastlines", "count": 4},
+      {"value": "Potlatch 0.10f", "count": 3},
+      {"value": "Potlatch 0.9c", "count": 1},
+      {"value": "JOSM", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "garmin_type",
+    "tags": [{"value": "0x32", "count": 7}, {"value": "0x28", "count": 6}],
+    "count": 13
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "private", "count": 4},
+      {"value": "fee", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "population",
+    "tags": [
+      {"value": "0", "count": 8},
+      {"value": "507", "count": 1},
+      {"value": "3", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "retaining_wall", "count": 7},
+      {"value": "city_wall", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {
+        "value": "à améliorer le jour où des photos sat de meilleure résolution seront disponibles",
+        "count": 3
+      },
+      {
+        "value": "ceci n'est pas la ligne côtière, juste une limite administrative maritime",
+        "count": 2
+      },
+      {
+        "value": "je suis surpris de la source \"cadastre\" car le cadastre vecteur (de 2010) n'indique pas le rivage, mais la donnée semble de bonne qualité",
+        "count": 1
+      },
+      {
+        "value": "Approximatif : faire coïncider avec la côte réelle",
+        "count": 1
+      },
+      {
+        "value": "Le tracé de côte du cadastre semble meilleur que l'ancien tracé, mais c'est toujours pas parfait, je note des erreurs allant jusqu'a 10m, à améliorer avec des photos sat",
+        "count": 1
+      }
+    ],
+    "count": 8
+  },
+  {"key": "seamark:type", "tags": [{"value": "rock", "count": 7}], "count": 7},
+  {
+    "key": "leisure",
+    "tags": [{"value": "nature_reserve", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Réserve Naturelle", "count": 5},
+      {
+        "value": "L'Île-aux-Moines [ilomwan] est une commune française, située dans le département du Morbihan en région Bretagne. Elle est constituée de l'île aux Moines, la plus grande île du golfe du Morbihan. Le nom breton de la commune est Enizenac'h.",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "29221B054K", "count": 1},
+      {"value": "29101B044W", "count": 1},
+      {"value": "29040B023N", "count": 1},
+      {"value": "29040B053W", "count": 1},
+      {"value": "29040B022M", "count": 1},
+      {"value": "29040B087H", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "history",
+    "tags": [
+      {"value": "Retrieved from v1", "count": 3},
+      {"value": "retrieved using undelete JOSM plugin", "count": 2},
+      {"value": "Retrieved from v11", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lesilespaulricard.com/", "count": 4},
+      {
+        "value": "http://patrimoine.region-bretagne.fr/gertrude-diffusion/dossier/espace-insulaire-ile-d-aval/80733e6a-b547-4a96-b3c1-551a8c96141a",
+        "count": 1
+      },
+      {"value": "http://www.ot-montsaintmichel.com", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "heritage",
+    "tags": [
+      {"value": "2", "count": 3},
+      {"value": "3", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00091296", "count": 1},
+      {"value": "IA29001813", "count": 1},
+      {"value": "PA00090767", "count": 1},
+      {"value": "PA00091711", "count": 1},
+      {"value": "PA00091712", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 4}, {"value": "whc", "count": 1}],
+    "count": 5
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 5}], "count": 5},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1927-06-24", "count": 1},
+      {"value": "1975-06-13", "count": 1},
+      {"value": "1927-05-03", "count": 1},
+      {"value": "1930-05-17", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "designation",
+    "tags": [{"value": "rocks", "count": 3}, {"value": "Rocks", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "merge with extents of Bilbao Port", "count": 1},
+      {
+        "value": "Position et forme approximatives (nouvelle digue absente de GéoLittoral V2)",
+        "count": 1
+      },
+      {"value": "Location and shape approximate", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "is_in:municipality",
+    "tags": [{"value": "Noja", "count": 3}],
+    "count": 3
+  },
+  {"key": "border_type", "tags": [{"value": "region", "count": 3}], "count": 3},
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-250235", "count": 1},
+      {"value": "FR-36036", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "CLC:code",
+    "tags": [{"value": "322", "count": 1}, {"value": "321", "count": 1}],
+    "count": 2
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 2}], "count": 2},
+  {"key": "waterway", "tags": [{"value": "dam", "count": 2}], "count": 2},
+  {"key": "maritime", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "id_spn", "tags": [{"value": "FR1100353", "count": 1}], "count": 1},
+  {
+    "key": "valid_from",
+    "tags": [{"value": "1997-08-27", "count": 1}],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "protect_class", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {"key": "ref:whc", "tags": [{"value": "868-023", "count": 1}], "count": 1},
+  {
+    "key": "whc:inscription_date",
+    "tags": [{"value": "1998", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "protection_title",
+    "tags": [
+      {"value": "Terrain acquis par le Conservatoire du Littoral", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "highway", "tags": [{"value": "path", "count": 1}], "count": 1},
+  {
+    "key": "Url:Merimee",
+    "tags": [
+      {
+        "value": "http://patrimoine.region-bretagne.fr/sdx/sribzh/main.xsp?execute=show_document&id=MERIMEEIA29001813",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "two_sided", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "start_date",
+    "tags": [{"value": "2016-10-21", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ajout",
+    "tags": [{"value": "également natural=scrub, mais conflit", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "protected_area",
+    "tags": [{"value": "habitat", "count": 1}],
+    "count": 1
+  },
+  {"key": "tidal", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "coastline", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

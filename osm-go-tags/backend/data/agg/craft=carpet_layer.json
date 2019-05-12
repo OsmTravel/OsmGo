@@ -1,0 +1,48 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "carpet_layer", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 43 02 85 05", "count": 1},
+      {"value": "+33 3 21 87 27 28", "count": 1},
+      {"value": "+33 21 95 52 23", "count": 1},
+      {"value": "+33 4 92 87 50 32", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "carpet", "count": 1},
+      {"value": "furniture", "count": 1},
+      {"value": "interior_decoration", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.saint-maclou.com/storelocator/index/view/id/98/",
+        "count": 1
+      },
+      {"value": "http://www.maxy-moquettes-manosque.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 3 21 87 51 40", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "4333Z", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "61652057300018", "count": 1}],
+    "count": 1
+  }
+]

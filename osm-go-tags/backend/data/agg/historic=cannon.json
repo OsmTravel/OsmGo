@@ -1,0 +1,58 @@
+[
+  {"key": "historic", "tags": [{"value": "cannon", "count": 79}], "count": 79},
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "WNW", "count": 2},
+      {"value": "SE", "count": 2},
+      {"value": "ESE", "count": 2},
+      {"value": "WSW", "count": 2},
+      {"value": "S", "count": 2},
+      {"value": "N", "count": 2},
+      {"value": "ENE", "count": 2},
+      {"value": "SW", "count": 2},
+      {"value": "NE", "count": 2},
+      {"value": "NW", "count": 2},
+      {"value": "NNW", "count": 2},
+      {"value": "W", "count": 1},
+      {"value": "E", "count": 1},
+      {"value": "SSE", "count": 1}
+    ],
+    "count": 25
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Canon de 95mm sur affut de côte", "count": 1},
+      {"value": "Cannon DCA de la seconde guerre mondiale", "count": 1},
+      {"value": "WW2 AC 37mm French", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Canon de 380 mm/45 Modèle 1935", "count": 2},
+      {"value": "fr:28-cm-Kanone 5 (E)", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "inscription", "tags": [{"value": "1692", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ecole-navale.fr/Focus-des-mois-d-avril-et-mai-la",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [{"value": "File:Canon Richelieu Brest.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q4031110", "count": 1}], "count": 1}
+]

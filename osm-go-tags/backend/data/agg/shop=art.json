@@ -1,0 +1,41 @@
+[
+  {"key": "shop", "tags": [{"value": "art", "count": 28}], "count": 28},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ruesdudeveloppementdurable.fr/", "count": 1},
+      {"value": "http://latelierducoin.over-blog.net", "count": 1},
+      {"value": "http://morearttea.com/", "count": 1},
+      {"value": "http://cptludd.fr", "count": 1},
+      {"value": "http://www.atelierlacote.fr/", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "community_centre", "count": 1},
+      {"value": "arts_centre", "count": 1},
+      {"value": "cafe", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "tourism", "tags": [{"value": "gallery", "count": 2}], "count": 2},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "Rues du Développement Durable", "count": 1}],
+    "count": 1
+  },
+  {"key": "craft", "tags": [{"value": "leather", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Gallerie - Atelier de travail du cuir", "count": 1}],
+    "count": 1
+  }
+]

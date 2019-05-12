@@ -1,0 +1,40 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "research_institute", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.gipsa-lab.grenoble-inp.fr/", "count": 1},
+      {"value": "http://www-leca.ujf-grenoble.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [{"value": "http://www.ill.eu", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Grenoble Image Parole Signal Automatique, CNRS/INP/UGA",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 51 46 73", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "LECA CNRS UMR 5553", "count": 1}],
+    "count": 1
+  }
+]

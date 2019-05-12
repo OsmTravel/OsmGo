@@ -1,0 +1,5 @@
+[
+  {"key": "ele", "tags": [{"value": "1130", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "shelter", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "lean_to", "count": 1}], "count": 1}
+]

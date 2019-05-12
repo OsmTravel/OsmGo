@@ -1,0 +1,31 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "confectionery", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "chocolate", "count": 1},
+      {"value": "bakery", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Pâtissier-Chocolatier", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Le Comptoir de Mathilde", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "joel.guintrand@sfr.fr", "count": 1}],
+    "count": 1
+  }
+]

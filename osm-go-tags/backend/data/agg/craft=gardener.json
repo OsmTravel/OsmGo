@@ -1,0 +1,38 @@
+[
+  {"key": "craft", "tags": [{"value": "gardener", "count": 12}], "count": 12},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 85 13 60 84", "count": 1},
+      {"value": "+33478444625", "count": 1},
+      {"value": "+33 6 64 79 50 52", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Création et entretien d'espaces verts", "count": 1},
+      {"value": "Création -  entretien espaces verts", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "lacldeschamps69@yahoo.fr", "count": 1},
+      {"value": "natureetpaysage@yahoo.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.la-cle-des-champs.com", "count": 1},
+      {"value": "www.natureetpaysage.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 2}], "count": 2},
+  {"key": "shop", "tags": [{"value": "garden_centre", "count": 1}], "count": 1}
+]

@@ -1,0 +1,32 @@
+[
+  {"key": "shop", "tags": [{"value": "disused", "count": 27}], "count": 27},
+  {"key": "level", "tags": [{"value": "0", "count": 19}], "count": 19},
+  {"key": "room", "tags": [{"value": "shop", "count": 18}], "count": 18},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "34", "count": 1},
+      {"value": "43", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "31", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "53", "count": 1},
+      {"value": "54", "count": 1},
+      {"value": "27", "count": 1},
+      {"value": "22", "count": 1},
+      {"value": "32", "count": 1},
+      {"value": "28", "count": 1},
+      {"value": "29", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "disused:shop",
+    "tags": [
+      {"value": "convenience", "count": 1},
+      {"value": "bakery", "count": 1}
+    ],
+    "count": 2
+  }
+]

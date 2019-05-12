@@ -1,0 +1,8 @@
+[
+  {
+    "key": "level",
+    "tags": [{"value": "-2", "count": 2}, {"value": "-3", "count": 2}],
+    "count": 4
+  },
+  {"key": "amenity", "tags": [{"value": "point chaud", "count": 4}], "count": 4}
+]

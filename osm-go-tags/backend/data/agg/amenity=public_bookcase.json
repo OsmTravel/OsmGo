@@ -1,0 +1,119 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "public_bookcase", "count": 68}],
+    "count": 68
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Bibliothèque municipale", "count": 5},
+      {"value": "3 Chêne Culture", "count": 5},
+      {"value": "Fonds Decitre", "count": 3},
+      {"value": "3 Chêne-Culture", "count": 1},
+      {"value": "Ville de Saint-Jean-de-Moirans", "count": 1},
+      {"value": "savoie-récup", "count": 1},
+      {"value": "Maison Pour Tous - Salle des Rancy", "count": 1},
+      {"value": "Conseil de quartier Mutualité Préfecture Moncey", "count": 1},
+      {"value": "SavoieRécup", "count": 1},
+      {"value": "Le conseil municipal enfants de Les Marches", "count": 1},
+      {"value": "Boîte à Lire", "count": 1},
+      {"value": "Centre social et culturel du Parmelan", "count": 1},
+      {"value": "Associative", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "public_bookcase:type",
+    "tags": [
+      {"value": "phone_box", "count": 6},
+      {"value": "reading_box", "count": 5},
+      {"value": "metal_cabinet", "count": 2},
+      {"value": "wooden_cabinet", "count": 2},
+      {"value": "shelf", "count": 1},
+      {"value": "shelter", "count": 1},
+      {"value": "refrigerator", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.3chene-culture.ch/?page_id=676", "count": 6},
+      {
+        "value": "http://fonds.decitre.org/nos-actions-innovantes/boites-a-lire/",
+        "count": 3
+      },
+      {
+        "value": "http://www.mairie4.lyon.fr/actualite/conseils-de-quartier/apicq-la-boite-a-lire-arrive-sur-la-place-guichard-3eme-.html",
+        "count": 1
+      }
+    ],
+    "count": 10
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://mapillary.com/map/im/O9Enl31GfXyhWkLaAkahLg",
+        "count": 1
+      },
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Public_bookcase_-_Chamb%C3%A9ry_.jpg/320px-Public_bookcase_-_Chamb%C3%A9ry_.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Bo%C3%AEte_%C3%A0_livres_au_hameau_des_%C3%89chets_%C3%A0_Miribel_(Ain).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Beynost_(Ain,_France)_-_oct_2017_-_bo%C3%AEte_%C3%A0_livres.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Bo%C3%AEte_%C3%A0_livres_%C3%A0_Miribel_(Ain)_-_quartier_Saint-Martin_-_1.JPG",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Système d'échange libre de livres", "count": 3},
+      {
+        "value": "Microbibliothèque avec 3 catégories: 3-6 ans, 7-10 ans, Ados",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q53733828", "count": 1},
+      {"value": "Q55333255", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "second_hand", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "support", "tags": [{"value": "tree", "count": 1}], "count": 1},
+  {
+    "key": "brand",
+    "tags": [{"value": "Livres Voyageurs", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "50", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [{"value": "dons échange lecture partage", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "File:Public_bookcase_-_Chambéry_.jpg", "count": 1}],
+    "count": 1
+  }
+]

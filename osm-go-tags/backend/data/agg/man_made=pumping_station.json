@@ -1,0 +1,27 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "pumping_station", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "eau du Grand Lyon", "count": 1},
+      {"value": "CNR", "count": 1},
+      {"value": "Veolia", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "owner",
+    "tags": [{"value": "Métropole de Lyon", "count": 1}],
+    "count": 1
+  },
+  {"key": "substance", "tags": [{"value": "water", "count": 1}], "count": 1},
+  {
+    "key": "pumping_station",
+    "tags": [{"value": "water", "count": 1}],
+    "count": 1
+  }
+]

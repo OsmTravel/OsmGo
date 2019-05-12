@@ -1,0 +1,20 @@
+[
+  {"key": "amenity", "tags": [{"value": "tea", "count": 5}], "count": 5},
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "salon de thé", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "transient", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Ongoing transformation", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "old_amenity",
+    "tags": [{"value": "fast_food", "count": 1}],
+    "count": 1
+  }
+]

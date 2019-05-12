@@ -1,0 +1,8 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "ventilation", "count": 4}],
+    "count": 4
+  },
+  {"key": "surface", "tags": [{"value": "metal_grid", "count": 3}], "count": 3}
+]

@@ -1,0 +1,83 @@
+[
+  {"key": "amenity", "tags": [{"value": "lavoir", "count": 136}], "count": 136},
+  {
+    "key": "shelter",
+    "tags": [{"value": "yes", "count": 53}, {"value": "no", "count": 5}],
+    "count": 58
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 56}], "count": 56},
+  {
+    "key": "water",
+    "tags": [{"value": "yes", "count": 41}, {"value": "no", "count": 9}],
+    "count": 50
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "yes", "count": 39}, {"value": "no", "count": 3}],
+    "count": 42
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "no", "count": 6},
+      {"value": "conditional", "count": 2}
+    ],
+    "count": 14
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "attraction", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C19", "count": 1},
+      {"value": "1460", "count": 1},
+      {"value": "1885", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:FR:ROE",
+    "tags": [
+      {"value": "ROE63525", "count": 1},
+      {"value": "ROE63832", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "waterway", "tags": [{"value": "weir", "count": 2}], "count": 2},
+  {"key": "disused", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "date",
+    "tags": [{"value": "1864", "count": 1}, {"value": "1865", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Cuve en bois", "count": 1}],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1946-09-20", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00116674", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "lavoir", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q22966753", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "File:Lavoir_de_la_chanaz.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "natural", "tags": [{"value": "spring", "count": 1}], "count": 1}
+]

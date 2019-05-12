@@ -1,0 +1,8 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 642015954", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "gîte rural", "count": 1}], "count": 1}
+]

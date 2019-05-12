@@ -1,0 +1,63 @@
+[
+  {"key": "shop", "tags": [{"value": "car_service", "count": 15}], "count": 15},
+  {
+    "key": "car_service",
+    "tags": [{"value": "inspection", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Dekra", "count": 1},
+      {"value": "Securitest", "count": 1},
+      {"value": "Autosur", "count": 1},
+      {"value": "Bosch Service", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 31 67 44", "count": 1},
+      {"value": "+33 4 77 24 01 35", "count": 1},
+      {"value": "+33 4 80 80 65 60", "count": 1},
+      {"value": "+33 4 76 08 24 04", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.securitest.fr/centres/detail_centre/03823/0/0/38",
+        "count": 1
+      },
+      {"value": "http://www.controle-technique-boen.securitest.fr", "count": 1},
+      {"value": "http://www.hrg-auto-controle.fr/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Auto Control", "count": 1},
+      {"value": "Securitest", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Contrôle technique des véhicules", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 24 01 16", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "04204@securitest.org", "count": 1}],
+    "count": 1
+  }
+]

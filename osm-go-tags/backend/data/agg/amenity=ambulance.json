@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "ambulance", "count": 2}], "count": 2},
+  {"key": "phone", "tags": [{"value": "+33467240790", "count": 1}], "count": 1}
+]

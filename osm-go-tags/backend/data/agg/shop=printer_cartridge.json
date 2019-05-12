@@ -1,0 +1,33 @@
+[
+  {
+    "key": "email",
+    "tags": [
+      {"value": "rennes.antrain@kerink.fr", "count": 1},
+      {"value": "rennes.tronjolly@kerink.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 99 63 17 08", "count": 1},
+      {"value": "+33 2 23 40 16 63", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "printer_cartridge", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.kerink.fr", "count": 1}],
+    "count": 1
+  }
+]

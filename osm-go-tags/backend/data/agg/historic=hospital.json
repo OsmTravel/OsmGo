@@ -1,0 +1,48 @@
+[
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 2}, {"value": "3", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {"key": "historic", "tags": [{"value": "hospital", "count": 3}], "count": 3},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1984", "count": 1},
+      {"value": "1980", "count": 1},
+      {"value": "1982", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118091", "count": 1},
+      {"value": "PA00116298", "count": 1},
+      {"value": "PA00116369", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22968256", "count": 1},
+      {"value": "Q3145122", "count": 1},
+      {"value": "Q3140937", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Hôpital-hospice de Bâgé-le-Châtel", "count": 1},
+      {"value": "fr:Hospice de Châtillon-sur-Chalaronne", "count": 1}
+    ],
+    "count": 2
+  }
+]

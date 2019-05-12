@@ -1,0 +1,26 @@
+[
+  {"key": "shop", "tags": [{"value": "baby_goods", "count": 30}], "count": 30},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.aubert.com/", "count": 1},
+      {"value": "http://www.b-a-b.fr", "count": 1},
+      {
+        "value": "https://www.facebook.com/Dépôt-vente-Cookies-1511081869168436/",
+        "count": 1
+      },
+      {"value": "https://www.bebe9.com/magasin/lyon.html", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 51 26 61", "count": 1},
+      {"value": "+33478482691", "count": 1},
+      {"value": "+33 4 78 61 23 65", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "scientific_station", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {"key": "board_type", "tags": [{"value": "science", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "board", "count": 1}], "count": 1},
+  {
+    "key": "scientific_station:type",
+    "tags": [{"value": "stream_gauge", "count": 1}],
+    "count": 1
+  }
+]

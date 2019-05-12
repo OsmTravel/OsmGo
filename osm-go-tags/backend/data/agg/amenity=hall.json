@@ -1,0 +1,6 @@
+[
+  {"key": "ele", "tags": [{"value": "224.4", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "hall", "count": 1}], "count": 1}
+]

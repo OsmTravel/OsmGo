@@ -1,0 +1,13 @@
+[
+  {"key": "craft", "tags": [{"value": "printer", "count": 3}], "count": 3},
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "computer", "count": 1},
+      {"value": "copyshop", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

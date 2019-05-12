@@ -1,0 +1,8 @@
+[
+  {"key": "man_made", "tags": [{"value": "mill", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "moulin à huile", "count": 1}],
+    "count": 1
+  }
+]

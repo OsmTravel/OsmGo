@@ -1,0 +1,27 @@
+[
+  {"key": "shop", "tags": [{"value": "food", "count": 6}], "count": 6},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://aufumetsavoyard.com/", "count": 1},
+      {"value": "https://www.aupaysducitron.fr/", "count": 1},
+      {"value": "http://www.paniers-motterains.com/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "association Supercagette", "count": 1},
+      {"value": "Zeste de Lyon", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "cuisine", "tags": [{"value": "italian", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 26 63 56 80", "count": 1}],
+    "count": 1
+  }
+]

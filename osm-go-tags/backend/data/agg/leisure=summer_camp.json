@@ -1,0 +1,51 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "summer_camp", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "chenesdemamre.com/", "count": 1},
+      {"value": "http://www.colonie-st-augustin.org", "count": 1},
+      {"value": "https://www.latrace.net/", "count": 1},
+      {"value": "http://www.centre-vacances-apas-provence.com", "count": 1},
+      {
+        "value": "http://www.aroeven-grenoble.org/classes-de-decouverte/bellevaux",
+        "count": 1
+      },
+      {"value": "https://www.camping-valdie.fr/", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 59 37 05", "count": 1},
+      {"value": "+33 4 76 64 73 45", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La Trace (association)", "count": 1},
+      {"value": "Annemasse Agglo", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "yes", "count": 1}, {"value": "camp_site", "count": 1}],
+    "count": 2
+  },
+  {"key": "ele", "tags": [{"value": "1020", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,52 @@
+[
+  {"key": "shop", "tags": [{"value": "frozen_food", "count": 60}], "count": 60},
+  {"key": "brand", "tags": [{"value": "Picard", "count": 53}], "count": 53},
+  {
+    "key": "brand:wikidata",
+    "tags": [{"value": "Q3382454", "count": 52}],
+    "count": 52
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Picard Surgelés", "count": 50}],
+    "count": 50
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Picard", "count": 17},
+      {"value": "Thiriet", "count": 1},
+      {"value": "Picard Surgelés", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://magasins.picard.fr/2653-picard-lyon-lafayette",
+        "count": 1
+      },
+      {"value": "http://magasins.picard.fr/2687-picard-valence", "count": 1},
+      {"value": "http://www.picard.fr/", "count": 1},
+      {"value": "http://magasins.picard.fr/2920-picard-ste-helene", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33475783161", "count": 1},
+      {"value": "+33 4 75 44 34 05", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:meal_voucher",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1}
+]

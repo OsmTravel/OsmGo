@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "parking_exit", "count": 1}],
+    "count": 1
+  },
+  {"key": "parking", "tags": [{"value": "underground", "count": 1}], "count": 1}
+]

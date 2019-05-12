@@ -1,0 +1,482 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "fountain", "count": 1528}],
+    "count": 1528
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "no", "count": 81},
+      {"value": "yes", "count": 64},
+      {"value": "unwatched", "count": 7},
+      {"value": "unknown", "count": 4},
+      {"value": "conditional", "count": 2},
+      {"value": "none", "count": 1}
+    ],
+    "count": 159
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q21619435", "count": 2},
+      {"value": "Q20653418", "count": 1},
+      {"value": "Q22967054", "count": 1},
+      {"value": "Q16855008", "count": 1},
+      {"value": "Q3076131", "count": 1},
+      {"value": "Q3076137", "count": 1},
+      {"value": "Q3076118", "count": 1},
+      {"value": "Q2934450", "count": 1},
+      {"value": "Q22967057", "count": 1},
+      {"value": "Q22966836", "count": 1},
+      {"value": "Q3076168", "count": 1},
+      {"value": "Q3075983", "count": 1},
+      {"value": "Q22966877", "count": 1},
+      {"value": "Q22968659", "count": 1},
+      {"value": "Q22967005", "count": 1},
+      {"value": "Q22968363", "count": 1},
+      {"value": "Q22967090", "count": 1},
+      {"value": "Q22968627", "count": 1},
+      {"value": "Q3076251", "count": 1},
+      {"value": "Q22968382", "count": 1},
+      {"value": "Q22968383", "count": 1},
+      {"value": "Q22966841", "count": 1},
+      {"value": "Q22966743", "count": 1},
+      {"value": "Q20895375", "count": 1},
+      {"value": "Q3076132", "count": 1},
+      {"value": "Q20895361", "count": 1},
+      {"value": "Q22967004", "count": 1},
+      {"value": "Q22967088", "count": 1},
+      {"value": "Q22968425", "count": 1},
+      {"value": "Q3076113", "count": 1},
+      {"value": "Q22967369", "count": 1},
+      {"value": "Q22968623", "count": 1},
+      {"value": "Q10144", "count": 1},
+      {"value": "Q3076252", "count": 1},
+      {"value": "Q3464260", "count": 1},
+      {"value": "Q19365652", "count": 1},
+      {"value": "Q22967006", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 36}],
+    "count": 36
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1961-05-23", "count": 3},
+      {"value": "1929-06-25", "count": 2},
+      {"value": "1928-09-08", "count": 2},
+      {"value": "1980-12-31", "count": 2},
+      {"value": "1925-04-30", "count": 1},
+      {"value": "1930-04-14", "count": 1},
+      {"value": "1942-11-16", "count": 1},
+      {"value": "1943-06-09", "count": 1},
+      {"value": "1978-09-07", "count": 1},
+      {"value": "1931-10-07", "count": 1},
+      {"value": "1973", "count": 1},
+      {"value": "1926", "count": 1},
+      {"value": "1941-03-26", "count": 1},
+      {"value": "2015-01-16", "count": 1},
+      {"value": "1992-05-18", "count": 1},
+      {"value": "1943-06-10", "count": 1},
+      {"value": "1943-01-18", "count": 1},
+      {"value": "1988", "count": 1},
+      {"value": "1926-07-13", "count": 1},
+      {"value": "1946-11-23", "count": 1},
+      {"value": "1982", "count": 1},
+      {"value": "1924-03-06", "count": 1},
+      {"value": "1943-01-28", "count": 1},
+      {"value": "1984-08-29", "count": 1},
+      {"value": "1982-12-06", "count": 1},
+      {"value": "1930-10-16", "count": 1},
+      {"value": "1995-09-29", "count": 1},
+      {"value": "1982-05-07", "count": 1},
+      {"value": "1926-07-09", "count": 1},
+      {"value": "1942-10-12", "count": 1},
+      {"value": "1975-07-28", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 28}, {"value": "2", "count": 8}],
+    "count": 36
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118179", "count": 1},
+      {"value": "PA00118366", "count": 1},
+      {"value": "PA74000025", "count": 1},
+      {"value": "PA00116397", "count": 1},
+      {"value": "PA00116870", "count": 1},
+      {"value": "PA00118458", "count": 1},
+      {"value": "PA00116426", "count": 1},
+      {"value": "PA00117284", "count": 1},
+      {"value": "PA00116977", "count": 1},
+      {"value": "PA00118449", "count": 1},
+      {"value": "PA00116567", "count": 1},
+      {"value": "PA00117024", "count": 1},
+      {"value": "PA00118369", "count": 1},
+      {"value": "PA00117217", "count": 1},
+      {"value": "PA00118152", "count": 1},
+      {"value": "PA00117330", "count": 1},
+      {"value": "PA00118348", "count": 1},
+      {"value": "PA00118178", "count": 1},
+      {"value": "PA00117282", "count": 1},
+      {"value": "PA00116982", "count": 1},
+      {"value": "PA00116665", "count": 1},
+      {"value": "PA00117157", "count": 1},
+      {"value": "PA00116406", "count": 1},
+      {"value": "PA00117156", "count": 1},
+      {"value": "PA00117216", "count": 1},
+      {"value": "PA00117328", "count": 1},
+      {"value": "PA00118232", "count": 1},
+      {"value": "PA00116639", "count": 1},
+      {"value": "PA00117636", "count": 1},
+      {"value": "PA00118347", "count": 1},
+      {"value": "PA00118120", "count": 1},
+      {"value": "PA00118233", "count": 1},
+      {"value": "PA00116401", "count": 1},
+      {"value": "PA00118459", "count": 1},
+      {"value": "PA00117807", "count": 1},
+      {"value": "PA00117218", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C18", "count": 6},
+      {"value": "1823", "count": 2},
+      {"value": "1923", "count": 1},
+      {"value": "1779", "count": 1},
+      {"value": "1915", "count": 1},
+      {"value": "1894", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "2015", "count": 1},
+      {"value": "1743", "count": 1},
+      {"value": "C19", "count": 1},
+      {"value": "C17", "count": 1},
+      {"value": "C16", "count": 1},
+      {"value": "1888", "count": 1},
+      {"value": "12/11/1984", "count": 1},
+      {"value": "1491", "count": 1},
+      {"value": "2013-05-04", "count": 1},
+      {"value": "1982", "count": 1},
+      {"value": "1850", "count": 1},
+      {"value": "Fin du 19e siècle", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "yes", "count": 13},
+      {"value": "fountain", "count": 5},
+      {"value": "wayside_cross", "count": 2},
+      {"value": "lavoir", "count": 1},
+      {"value": "memorial", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Fontaine des Jacobins", "count": 1},
+      {"value": "fr:Fontaine de Bonneville", "count": 1},
+      {"value": "fr:Le Buisson ardent (Böhmer)", "count": 1},
+      {"value": "fr:Fontaine de Ferney-Voltaire", "count": 1},
+      {"value": "fr:Fontaine de La Voulte-sur-Rhône", "count": 1},
+      {"value": "fr:Calvaire-fontaine de Miribel", "count": 1},
+      {"value": "fr:Fontaine (bassin)", "count": 1},
+      {"value": "fr:Fontaine de Taninges", "count": 1},
+      {"value": "fr:Fontaine-lavoir de Collonges", "count": 1},
+      {"value": "fr:Fontaine de Chamonix-Mont-Blanc", "count": 1},
+      {"value": "fr:Fontaine des trois ordres", "count": 1},
+      {"value": "fr:Ici (sculpture)", "count": 1},
+      {"value": "fr:Fontaine et vieux lavoir à arcades", "count": 1},
+      {"value": "fr:Fontaine de Gex", "count": 1},
+      {"value": "fr:Fontaine de Baix", "count": 1},
+      {"value": "fr:Fontaine Bartholdi", "count": 1},
+      {"value": "fr:Fontaine des éléphants", "count": 1},
+      {"value": "fr:Sainte-Fontaine", "count": 1},
+      {"value": "fr:Fontaine de Thonon-les-Bains", "count": 1},
+      {"value": "fr:Fontaine de la place du Maréchal-Lyautey", "count": 1},
+      {"value": "fr:Melchior Joseph Marmonnier", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "7 - Lavoir du pont de l'Eyrard", "count": 1},
+      {"value": "7303421 - B", "count": 1},
+      {"value": "1 - Place Victor Jat", "count": 1},
+      {"value": "3 - Pailler", "count": 1},
+      {"value": "13 - Bascule", "count": 1},
+      {"value": "5 - rue du 19 mars 1962", "count": 1},
+      {"value": "4 - ancienne école", "count": 1},
+      {"value": "2 - église", "count": 1},
+      {"value": "8 - Abbé Cuchet", "count": 1},
+      {"value": "9 - Léon Porte", "count": 1},
+      {"value": "6 - Carrefour Jat-Porte", "count": 1},
+      {"value": "11 - Fontaine de l'Argentier", "count": 1},
+      {"value": "14 - Clairfontaine", "count": 1},
+      {"value": "15 - Chemin de la Vigne", "count": 1},
+      {"value": "17 - Chemin de la Source", "count": 1},
+      {"value": "10 - Noyers", "count": 1},
+      {"value": "12 - Lavoir du Maupas", "count": 1},
+      {"value": "7bis - Chateau Gaché", "count": 1},
+      {"value": "16 - Fontaine Anthoard", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "water", "count": 10}, {"value": "spring", "count": 6}],
+    "count": 16
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "artwork", "count": 7},
+      {"value": "attraction", "count": 6},
+      {"value": "picnic_site", "count": 1},
+      {"value": "information", "count": 1}
+    ],
+    "count": 15
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 14}], "count": 14},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Fontaine : Margelle : Repère en bronze PM scellé - Point vu en place en 2003",
+        "count": 1
+      },
+      {"value": "Eau non potable", "count": 1},
+      {"value": "fr:Fontaine près de la croix de la commune.", "count": 1},
+      {"value": "Fontaine", "count": 1},
+      {
+        "value": "Plaque \"Alfred Fredet 1829 - 1904 Créateur - industriel - bienfaiteur\" sur la fontaine",
+        "count": 1
+      },
+      {
+        "value": "fontaine du début du 17è, restaurée dernièrement, non potable",
+        "count": 1
+      },
+      {
+        "value": "créée en 1614, restaurée dernièrement, non potable",
+        "count": 1
+      },
+      {"value": "La Fontaine des Chaberts", "count": 1},
+      {"value": "jets d'eau de rafraichissements pour les enfants", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://findafountain.org/system/215/original/france-samoens-samoens-outdoor-fountain.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Fontaine_du_Bichet_(Saint-Maurice-de-Beynost,_2014).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://framapic.org/rrAziby0bHX7/tfH1M8wFrzLI.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Statue-fontaine,_place_de_la_Mairie,_Hauterives.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Fontaine_au_d%C3%A9but_de_la_rue_du_Palais_Id%C3%A9al.JPG",
+        "count": 1
+      },
+      {"value": "File:Fontaine église Chichilianne.jpg", "count": 1},
+      {"value": "File:38544_Fontaines_Jouvenet_1.JPG", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Villa_Monderoux_(1).JPG",
+        "count": 1
+      },
+      {"value": "File:Fontaine_du_Jeu_de_Paume.jpg", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "kerb", "count": 7}, {"value": "wall", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 1
+      },
+      {
+        "value": "Coulée à la fonderie d'Art du Val d'Osne à la fin du XIXe siècle, la statue est retrouvée dans les dépôts des services de la Voirie et posée en 1923 à son emplacement actuel. Nommé aussi \"L'enfant à la cruche ».",
+        "count": 1
+      },
+      {"value": "a priori tarie", "count": 1},
+      {"value": "ancien lavoir", "count": 1},
+      {"value": "Coulé à la Fonderie du Val d'Osne en 1850", "count": 1},
+      {"value": "Artiste : Charles Robert CHAMPAGNY", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "artwork_type",
+    "tags": [
+      {"value": "statue", "count": 4},
+      {"value": "sculpture", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "drinking_water:legal",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "water",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1035.92", "count": 1},
+      {"value": "1021", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Editop", "count": 2},
+      {"value": "Potlatch 0.10b", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "water_well", "count": 2},
+      {"value": "survey_point", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "https://fr.wikipedia.org/wiki/Pailhar%C3%A8s#/media/File:Vierge_de_Pailhar%C3%A8s.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:La_Voulte-sur-Rh%C3%B4ne_-_fontaine_01.JPG",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.lyon-france.com/Que-faire/Culture-loisirs/Sites-monuments-historiques/Monuments-historiques/La-Fontaine-et-les-statues-d-Ipousteguy",
+        "count": 1
+      },
+      {
+        "value": "samuelhuet.com/graisivaudan/marmonie/marmonie.html",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "basin", "count": 2}], "count": 2},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "height",
+    "tags": [{"value": "6", "count": 1}, {"value": "0.2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Voir si mérimé est ici", "count": 1},
+      {"value": "A placer", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "gpxicon",
+    "tags": [{"value": "Drinking Water", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "year_of_construction",
+    "tags": [{"value": "1902", "count": 1}],
+    "count": 1
+  },
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-09-21", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "artist:wikipedia",
+    "tags": [{"value": "fr:Mathurin Moreau", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "artist", "tags": [{"value": "Ipoustéguy", "count": 1}], "count": 1},
+  {
+    "key": "highway",
+    "tags": [{"value": "mini_roundabout", "count": 1}],
+    "count": 1
+  },
+  {"key": "monument", "tags": [{"value": "statue", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7303421",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

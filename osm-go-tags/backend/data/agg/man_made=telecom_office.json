@@ -1,0 +1,20 @@
+[
+  {
+    "key": "telecom",
+    "tags": [{"value": "central_office", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "telecom_office", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Orange", "count": 9},
+      {"value": "France Telecom", "count": 1}
+    ],
+    "count": 10
+  }
+]

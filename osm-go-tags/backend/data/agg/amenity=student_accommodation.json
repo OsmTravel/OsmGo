@@ -1,0 +1,13 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "student_accommodation", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "302", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Crous de Lyon", "count": 1}],
+    "count": 1
+  }
+]

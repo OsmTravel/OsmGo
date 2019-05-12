@@ -1,0 +1,47 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "rest_area", "count": 135}],
+    "count": 135
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 79}], "count": 79},
+  {
+    "key": "toilets",
+    "tags": [{"value": "yes", "count": 13}, {"value": "no", "count": 1}],
+    "count": 14
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q24276573", "count": 1},
+      {"value": "Q24206328", "count": 1},
+      {"value": "Q43402092", "count": 1},
+      {"value": "Q24276667", "count": 1},
+      {"value": "Q24276662", "count": 1},
+      {"value": "Q24276661", "count": 1},
+      {"value": "Q24276572", "count": 1},
+      {"value": "Q24276666", "count": 1},
+      {"value": "Q24206329", "count": 1},
+      {"value": "Q42857031", "count": 1},
+      {"value": "Q24276566", "count": 1},
+      {"value": "Q24276567", "count": 1},
+      {"value": "Q24276465", "count": 1},
+      {"value": "Q24276563", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "picnic_site", "count": 1},
+      {"value": "viewpoint", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "drinking_water", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

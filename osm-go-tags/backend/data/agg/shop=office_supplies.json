@@ -1,0 +1,12 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "office_supplies", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.bureau-vallee.fr/", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,209 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "parking_entrance", "count": 596}],
+    "count": 596
+  },
+  {
+    "key": "parking",
+    "tags": [
+      {"value": "underground", "count": 277},
+      {"value": "multi-storey", "count": 55},
+      {"value": "surface", "count": 16}
+    ],
+    "count": 348
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 245},
+      {"value": "yes", "count": 20},
+      {"value": "customers", "count": 17},
+      {"value": "no", "count": 6},
+      {"value": "permissive", "count": 3},
+      {"value": "motorcar", "count": 1}
+    ],
+    "count": 292
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "yes", "count": 39},
+      {"value": "no", "count": 27},
+      {"value": "3€30", "count": 1}
+    ],
+    "count": 67
+  },
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "1.9", "count": 9},
+      {"value": "2", "count": 7},
+      {"value": "1.90", "count": 4},
+      {"value": "1.9 m", "count": 4},
+      {"value": "1.95", "count": 2},
+      {"value": "2.1", "count": 2},
+      {"value": "2.20", "count": 1},
+      {"value": "2.55", "count": 1},
+      {"value": "2.05", "count": 1},
+      {"value": "2.3", "count": 1},
+      {"value": "2.10", "count": 1},
+      {"value": "2.00", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "entrance",
+    "tags": [
+      {"value": "exit", "count": 13},
+      {"value": "main", "count": 8},
+      {"value": "yes", "count": 6},
+      {"value": "emergency", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 12},
+      {"value": "1", "count": 7},
+      {"value": "-1", "count": 5},
+      {"value": "-1;0", "count": 3},
+      {"value": "-3;-2;-1;0", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "concrete", "count": 10},
+      {"value": "paved", "count": 8},
+      {"value": "asphalt", "count": 6},
+      {"value": "gravel", "count": 1},
+      {"value": "compacted", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "covered",
+    "tags": [{"value": "yes", "count": 18}, {"value": "no", "count": 6}],
+    "count": 24
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "gate", "count": 14},
+      {"value": "lift_gate", "count": 5},
+      {"value": "door", "count": 2},
+      {"value": "toll_booth", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 9},
+      {"value": "private", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "502", "count": 3},
+      {"value": "727", "count": 2},
+      {"value": "778", "count": 2},
+      {"value": "250", "count": 2},
+      {"value": "243", "count": 1},
+      {"value": "230", "count": 1},
+      {"value": "153", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 12}], "count": 12},
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 5},
+      {"value": "-1", "count": 5},
+      {"value": "-3;-2;-1;0", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "supervised",
+    "tags": [{"value": "no", "count": 6}, {"value": "yes", "count": 4}],
+    "count": 10
+  },
+  {
+    "key": "smoothness",
+    "tags": [{"value": "excellent", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Effia", "count": 3},
+      {"value": "LPA", "count": 2},
+      {"value": "Vinci Park", "count": 1},
+      {"value": "VINCI Park", "count": 1},
+      {"value": "Pierre et Vacance", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "capacity:disabled",
+    "tags": [
+      {"value": "9", "count": 3},
+      {"value": "yes", "count": 3},
+      {"value": "18", "count": 2}
+    ],
+    "count": 8
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 6},
+      {"value": "yes", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "park_ride",
+    "tags": [{"value": "yes", "count": 6}, {"value": "no", "count": 1}],
+    "count": 7
+  },
+  {"key": "car", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "motorcar", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "motorcycle", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "highway", "tags": [{"value": "elevator", "count": 4}], "count": 4},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "P -3", "count": 1},
+      {"value": "P -1", "count": 1},
+      {"value": "P -2", "count": 1},
+      {"value": "P -4", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.lpa.fr/se-garer-dans-un-parc/tous-les-parcs/bonnel-servient",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "2.0", "count": 1}], "count": 1},
+  {"key": "disabled", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "maxstay", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

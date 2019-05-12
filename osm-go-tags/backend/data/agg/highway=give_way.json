@@ -1,0 +1,91 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "give_way", "count": 3827}],
+    "count": 3827
+  },
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "forward", "count": 875},
+      {"value": "backward", "count": 429},
+      {"value": "189", "count": 2},
+      {"value": "304", "count": 1},
+      {"value": "300", "count": 1},
+      {"value": "85", "count": 1},
+      {"value": "353", "count": 1},
+      {"value": "336", "count": 1},
+      {"value": "251", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "252", "count": 1},
+      {"value": "173", "count": 1},
+      {"value": "225", "count": 1},
+      {"value": "95", "count": 1},
+      {"value": "288", "count": 1},
+      {"value": "247", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "356", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "168", "count": 1},
+      {"value": "130", "count": 1},
+      {"value": "174", "count": 1},
+      {"value": "357", "count": 1},
+      {"value": "148", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "185", "count": 1},
+      {"value": "59", "count": 1},
+      {"value": "333", "count": 1},
+      {"value": "161", "count": 1},
+      {"value": "259", "count": 1},
+      {"value": "238", "count": 1},
+      {"value": "209", "count": 1},
+      {"value": "254", "count": 1},
+      {"value": "180", "count": 1},
+      {"value": "258", "count": 1},
+      {"value": "26", "count": 1}
+    ],
+    "count": 1339
+  },
+  {
+    "key": "traffic_sign",
+    "tags": [
+      {"value": "FR:AB3a", "count": 253},
+      {"value": "give_way", "count": 10}
+    ],
+    "count": 263
+  },
+  {
+    "key": "traffic_signals:direction",
+    "tags": [
+      {"value": "forward", "count": 6},
+      {"value": "backward", "count": 3}
+    ],
+    "count": 9
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0016", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "give_way:direction",
+    "tags": [
+      {"value": "forward", "count": 1},
+      {"value": "backward", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "stop", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {
+    "key": "traffic_sign:backward",
+    "tags": [{"value": "give_way", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2018-06-05", "count": 1}],
+    "count": 1
+  },
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {"key": "crossing_ref", "tags": [{"value": "zebra", "count": 1}], "count": 1}
+]

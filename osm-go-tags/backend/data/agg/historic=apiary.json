@@ -1,0 +1,15 @@
+[
+  {"key": "barrier", "tags": [{"value": "wall", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "apiary", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "apiary", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "A historic apiary which has been restored and now has bees again",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,1326 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "artwork", "count": 870}],
+    "count": 870
+  },
+  {
+    "key": "artwork_type",
+    "tags": [
+      {"value": "mural", "count": 298},
+      {"value": "sculpture", "count": 205},
+      {"value": "statue", "count": 147},
+      {"value": "painting", "count": 4},
+      {"value": "graffiti", "count": 4},
+      {"value": "bust", "count": 3},
+      {"value": "sundial", "count": 2},
+      {"value": "renovation", "count": 2},
+      {"value": "installation", "count": 2},
+      {"value": "fountain", "count": 2},
+      {"value": "architecture", "count": 1},
+      {"value": "stele", "count": 1},
+      {"value": "landart", "count": 1},
+      {"value": "bench", "count": 1},
+      {"value": "wood", "count": 1},
+      {"value": "mosaic", "count": 1},
+      {"value": "land_art", "count": 1},
+      {"value": "Statue_forgée", "count": 1}
+    ],
+    "count": 677
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2006", "count": 10},
+      {"value": "1984", "count": 9},
+      {"value": "2000", "count": 9},
+      {"value": "1993", "count": 7},
+      {"value": "1995", "count": 7},
+      {"value": "2003", "count": 7},
+      {"value": "1988", "count": 6},
+      {"value": "2012", "count": 6},
+      {"value": "2007", "count": 6},
+      {"value": "1989", "count": 6},
+      {"value": "2005", "count": 6},
+      {"value": "2008", "count": 5},
+      {"value": "2017-06", "count": 5},
+      {"value": "2017", "count": 5},
+      {"value": "2015", "count": 4},
+      {"value": "2011", "count": 4},
+      {"value": "1996", "count": 4},
+      {"value": "1998", "count": 4},
+      {"value": "1951", "count": 4},
+      {"value": "2015-05", "count": 3},
+      {"value": "1979", "count": 3},
+      {"value": "1992", "count": 3},
+      {"value": "2010", "count": 3},
+      {"value": "1872", "count": 3},
+      {"value": "2014-12", "count": 3},
+      {"value": "2009", "count": 3},
+      {"value": "2002", "count": 2},
+      {"value": "1823", "count": 2},
+      {"value": "1997", "count": 2},
+      {"value": "2014", "count": 2},
+      {"value": "1912", "count": 2},
+      {"value": "1902", "count": 2},
+      {"value": "2004", "count": 2},
+      {"value": "2013", "count": 2},
+      {"value": "1990", "count": 2},
+      {"value": "1991", "count": 2},
+      {"value": "2018-05", "count": 2},
+      {"value": "1999", "count": 2},
+      {"value": "2011-12", "count": 2},
+      {"value": "1969", "count": 2},
+      {"value": "2015-06", "count": 2},
+      {"value": "2016", "count": 2},
+      {"value": "2016-05", "count": 2},
+      {"value": "1980", "count": 2},
+      {"value": "1882", "count": 1},
+      {"value": "1977", "count": 1},
+      {"value": "1875", "count": 1},
+      {"value": "2016/02/22", "count": 1},
+      {"value": "2016-06", "count": 1},
+      {"value": "1993-06-28", "count": 1},
+      {"value": "1983", "count": 1},
+      {"value": "1898", "count": 1},
+      {"value": "1953", "count": 1},
+      {"value": "1982", "count": 1},
+      {"value": "1986", "count": 1},
+      {"value": "1948", "count": 1},
+      {"value": "Fin XIXème siècle", "count": 1},
+      {"value": "1802", "count": 1},
+      {"value": "2017-06-05", "count": 1},
+      {"value": "1909", "count": 1},
+      {"value": "1868", "count": 1},
+      {"value": "1861", "count": 1},
+      {"value": "2017-07", "count": 1},
+      {"value": "1985", "count": 1},
+      {"value": "1930", "count": 1},
+      {"value": "1880", "count": 1},
+      {"value": "1904", "count": 1},
+      {"value": "1919", "count": 1},
+      {"value": "1949", "count": 1},
+      {"value": "1974", "count": 1},
+      {"value": "2001", "count": 1},
+      {"value": "1937", "count": 1},
+      {"value": "2018-06-16", "count": 1},
+      {"value": "1967", "count": 1},
+      {"value": "1863", "count": 1},
+      {"value": "1888", "count": 1},
+      {"value": "1973", "count": 1},
+      {"value": "12/11/1984", "count": 1},
+      {"value": "1986,1997,2012", "count": 1},
+      {"value": "1993, 2013", "count": 1},
+      {"value": "1929-04-07", "count": 1},
+      {"value": "1970", "count": 1},
+      {"value": "1915", "count": 1},
+      {"value": "1968", "count": 1},
+      {"value": "1929", "count": 1},
+      {"value": "1994", "count": 1},
+      {"value": "1982, 2013", "count": 1},
+      {"value": "2013-09-01", "count": 1},
+      {"value": "?", "count": 1},
+      {"value": "1899", "count": 1},
+      {"value": "1983-12-18", "count": 1},
+      {"value": "24/05/2006", "count": 1},
+      {"value": "2013-11", "count": 1},
+      {"value": "2011-06", "count": 1},
+      {"value": "1934-06", "count": 1},
+      {"value": "2014-09", "count": 1},
+      {"value": "1887", "count": 1},
+      {"value": "1971", "count": 1},
+      {"value": "1907", "count": 1},
+      {"value": "2015-01", "count": 1},
+      {"value": "2015-11", "count": 1},
+      {"value": "2015-04", "count": 1},
+      {"value": "1931", "count": 1},
+      {"value": "1825", "count": 1},
+      {"value": "1975", "count": 1},
+      {"value": "1978", "count": 1},
+      {"value": "1946", "count": 1},
+      {"value": "2017-10", "count": 1},
+      {"value": "1920", "count": 1},
+      {"value": "2017-06-06", "count": 1}
+    ],
+    "count": 237
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Mur d'enceinte hopital St Jean de Dieu", "count": 6},
+      {"value": "fr:Statue de la Vierge", "count": 5},
+      {
+        "value": "facades revisité avec des toits ajoutés et des mansardes",
+        "count": 3
+      },
+      {"value": "Trompe l’œil balcon avec personnages", "count": 3},
+      {"value": "Hommage posthume aux createurs de roses lyonnais", "count": 3},
+      {"value": "fr:Statue de la Vierge Marie", "count": 2},
+      {"value": "Vierge", "count": 2},
+      {
+        "value": "24 croquis de \"Carnets de voyages\" pour une promenade à traver les 100 ans de l'arrondissement",
+        "count": 2
+      },
+      {
+        "value": "fr:La statue de la Vierge qui était supportée par le piédestal fut volée en 1988.",
+        "count": 1
+      },
+      {"value": "fr:Statue du Général Miribel", "count": 1},
+      {"value": "fr:Buste du Facteur Cheval", "count": 1},
+      {"value": "fr:Plaque de l'échangeur Charles-de-Gaulle", "count": 1},
+      {"value": "Statue of Virgin Mary", "count": 1},
+      {"value": "Un cerf de bronze sur un rocher", "count": 1},
+      {"value": "Statue de la Vierge", "count": 1},
+      {"value": "fr:Statue de la Vierge à l'Enfant", "count": 1},
+      {"value": "Buste d'Ambroise Courtois", "count": 1},
+      {
+        "value": "Voté par le Conseil municipal en octobre 1930, le buste est inauguré le 5 juillet 1931.",
+        "count": 1
+      },
+      {"value": "Plaque en hommage à Louis Braille", "count": 1},
+      {"value": "Philis de La Charce", "count": 1},
+      {"value": "Humanoïde à tête de renard transportant un livre", "count": 1},
+      {
+        "value": "Un ours marchant sur une boulle, en pierre, incrustré dans le mur de l'imeuble au niveau du premier étage",
+        "count": 1
+      },
+      {"value": "Pélican", "count": 1},
+      {"value": "scuplture mobile / mobile artwork", "count": 1},
+      {
+        "value": "Oeuvre métallique réalisée par les élèves du lycée professionnel Fernand Forest.",
+        "count": 1
+      },
+      {"value": "Deux mimes debout en marinière", "count": 1},
+      {"value": "fruits", "count": 1},
+      {
+        "value": "\"#Inencadrable\" - \"Que se dressent les printemps révolutionnaires\" - Jeune femme au bas du visage masqué par un foulard rose",
+        "count": 1
+      },
+      {
+        "value": "Femme portant un gilet de sauvetage et relachant une colombe blanche, sur fond noir.",
+        "count": 1
+      },
+      {"value": "Oiseau bleu poursuivi par une femme volante.", "count": 1},
+      {
+        "value": "humanoIde à tête d'oiseau portant un mécanisme compliqué couleur bronze (tout le reste du dessin est en noir, au trait)",
+        "count": 1
+      },
+      {
+        "value": "\"Liberté d'expression\" peint en faux-trompe-l'oeil",
+        "count": 1
+      },
+      {
+        "value": "Fresque multi-auteurs ; nptamment un \"motard\" en costume rouge chevauchant un animal quadrupède noir à queue fourchue.",
+        "count": 1
+      },
+      {"value": "Darth Vader (Dark Vador)", "count": 1},
+      {
+        "value": "Parcours symbolique d'une lettre et d'un message électronique",
+        "count": 1
+      },
+      {
+        "value": "Série de fenetres dessinées en trompe-l'oeil sur le mur aveugle du théatre municipal",
+        "count": 1
+      },
+      {
+        "value": "Ara en vol passant devant une plaque \"Rue du fer à cheval\"",
+        "count": 1
+      },
+      {"value": "Vasque Commémoration Jeux Olympiques 1968", "count": 1},
+      {
+        "value": "Ensemble de 6 statues en acier inoxydable : natation, handball, football, tennis, basket et boules",
+        "count": 1
+      },
+      {"value": "statue de la Vierge Marie", "count": 1},
+      {"value": "Buste style mythologique sur colonne en béton.", "count": 1},
+      {"value": "un poisson bleu porte une maison sur son dos", "count": 1},
+      {
+        "value": "Le 'V' de Vernaison sert de support aux tabagnons des deux jouteurs, celui de gauche restant campé tandis que l'autre est déséquilibré par son adversaire.",
+        "count": 1
+      },
+      {"value": "Sculpture d'un randonneur", "count": 1},
+      {
+        "value": "Representation de grands noms de la recherche medicale",
+        "count": 1
+      },
+      {"value": "deux mains tendues l'une vers l'autre !", "count": 1},
+      {"value": "dedicace liée au mur à coté", "count": 1},
+      {
+        "value": "Representation de Lyon la ville lumiere par François Schuiten",
+        "count": 1
+      },
+      {"value": "Mur peint terrasse bistro", "count": 1},
+      {"value": "Scene d'un theatre", "count": 1},
+      {"value": "Camionette Disques Wem", "count": 1},
+      {
+        "value": "Representation de grands chefs français : Alain Chapel, François Bise, Jacques Pic, Jean Troisgros, Fernand et Mado Point, Mere Brasier",
+        "count": 1
+      },
+      {"value": "Representation de Paul Bocuse lui-même", "count": 1},
+      {
+        "value": "Trompe-l’œil d'un echafaudage de pose d'un décor de théâtre se levant sur l'intérieur de l'hôtel de la Cour des Loges",
+        "count": 1
+      },
+      {
+        "value": "Representation d'un enfant naissant dans le monde moderne",
+        "count": 1
+      },
+      {"value": "Representation a la memoire de Jean Moulin", "count": 1},
+      {"value": "Mur d'enceinte et cuves peintes", "count": 1},
+      {"value": "Portraits de 31 celebrites lyonnaises", "count": 1},
+      {
+        "value": "mur bibliotheque en reference a des auteurs ayant vecu a Lyon",
+        "count": 1
+      },
+      {"value": "Voiture Lada avec personnages", "count": 1},
+      {
+        "value": "de l'auteur Joost Swarte : sur 1 poutre, clown et femme en patins",
+        "count": 1
+      },
+      {"value": "Paquebot et 2 mystérieux passants", "count": 1},
+      {"value": "Joueur de banjo attaqué par deux oiseaux.", "count": 1},
+      {"value": "Porche avec chemin petit village", "count": 1},
+      {"value": "Etang de La Dombes", "count": 1},
+      {"value": "Vue sur cours d'enfants jouant", "count": 1},
+      {"value": "Enfants au bord d'un etang", "count": 1},
+      {"value": "Pterodactile tenant une fourchette en son bec", "count": 1},
+      {"value": "Mur peint", "count": 1},
+      {"value": "cité", "count": 1},
+      {
+        "value": "mode du théâtre et des artistes. personnages représentés : Jean Daste, Dee Dee Bridgewater et Miles Davis, C Mourguet.",
+        "count": 1
+      },
+      {
+        "value": "Mur peint de 25 m de long, 40 m², sur le cinématographe et particulièrement Charlie Chaplin. En 2 parties, l'une sur les murs extérieurs de la résidence représente ses silhouettes en train de marcher et l'autre à l'intérieur une peinture avec le Kid.",
+        "count": 1
+      },
+      {
+        "value": "Représente une ville moderne toutes en perspectives, comme s’il s’agissait d’un plan d’architecte",
+        "count": 1
+      },
+      {
+        "value": "Trompe l’œil pour les personnages aux différentes fenêtres et mur peint pour le reste de la réalisation",
+        "count": 1
+      },
+      {
+        "value": "Cinéma et Polar : F. Blanche, B. Blier, P. Noiret, B. Tavernier, L. Ventura.",
+        "count": 1
+      },
+      {
+        "value": "Le thème traite des arts de la rue , funambule , jongleur ...",
+        "count": 1
+      },
+      {
+        "value": "Habillage du mur de protection des transformateurs",
+        "count": 1
+      },
+      {"value": "Mains tendues comme chapelle sixtine", "count": 1},
+      {
+        "value": "Commande Tram SYTRAL, évoque la source cachée de la Rize",
+        "count": 1
+      },
+      {
+        "value": "Commande Tram SYTRAL, Des motifs, surfeurs, nageurs, baigneurs, qui font référence au Grand Large, le centre de loisirs aquatiques de Meyzieu.",
+        "count": 1
+      },
+      {"value": "vue sous arche : pont et riviere", "count": 1},
+      {"value": "mur d'enceinte de l'usine chimique Arkema", "count": 1},
+      {"value": "Plot de chantier géant", "count": 1},
+      {"value": "Trompe l’œil Arche acces parc champestre", "count": 1},
+      {"value": "Trompe l’œil d'une forge ancienne", "count": 1},
+      {"value": "Trompe l’œil Relais de la diligence", "count": 1},
+      {"value": "fr:Statue de Mathieu Jaboulay assis", "count": 1},
+      {"value": "representation d'imagerie medicale au microscope", "count": 1},
+      {"value": "alliance entre le végétal et la peinture murale", "count": 1},
+      {"value": "Bistro campagnard", "count": 1},
+      {"value": "Personages du roman Clochemerle dans le style", "count": 1},
+      {"value": "mémoire du patrimoine rural vourlois", "count": 1},
+      {"value": "fresque de 80 m2 sur le thème du sport", "count": 1},
+      {"value": "Champs de roses en diagonale sur pignon immeuble", "count": 1},
+      {"value": "Enorme rose sur pignon immeuble", "count": 1},
+      {
+        "value": "sur le mur de l’école élémentaire Jean-Macé/Marc Bloch",
+        "count": 1
+      },
+      {"value": "Visages fantastiques", "count": 1},
+      {"value": "Fresque 450m2 de visages d'enfants", "count": 1},
+      {"value": "ombres des personnages stylisés", "count": 1},
+      {"value": "Dombes et coteaux du beaujolais", "count": 1},
+      {"value": "Vue des coteaux de Saone", "count": 1},
+      {
+        "value": "inspiré par Plan de Lyon avec basilique sur parchemin en 1550",
+        "count": 1
+      },
+      {
+        "value": "cortège d’hommes, de femmes et d’enfants représentant les corps de métier dans leur diversité sociale",
+        "count": 1
+      },
+      {
+        "value": "des sportifs de toutes sortes courrent le long du périphérique",
+        "count": 1
+      },
+      {
+        "value": "Fresque issue d'un echange franco/mexicain entre populart et Arte Acà",
+        "count": 1
+      },
+      {
+        "value": "Fresque de lierre et fleurs sur la residence etudiante coréalisée avec ECohlCité",
+        "count": 1
+      },
+      {
+        "value": "La fabrique de la soie : flotage, effilage, moulinage.",
+        "count": 1
+      },
+      {
+        "value": "Fresques côte à côte \"4 ambiances du monde\" : Amsterdam, Barcelonne, Chine, Maroc. Réalisée par ECohlCité",
+        "count": 1
+      },
+      {"value": "vision d'une eruption solaire vue de l'espace", "count": 1},
+      {
+        "value": "Une cascade chute entre 2 immeubles au design fantastique et exuberant",
+        "count": 1
+      },
+      {"value": "Chateau d'eau hommage departement Drome", "count": 1},
+      {
+        "value": "imagerie naive : un canuts descend des escaliers croix-roussiens en portant un rouleau de tissus",
+        "count": 1
+      },
+      {"value": "Panthères marchant sur des rebords de fenètres", "count": 1},
+      {"value": "Le Château de Saint-Priest et le tramway", "count": 1},
+      {
+        "value": "La Confluence, vue de La Mulatiere depuis quai Jean-Jacques Rousseau, avec des joutes devant le pont SNCF",
+        "count": 1
+      },
+      {
+        "value": "Portrait du physicien André-Marie Ampère, et d'une bobine et d'une boussole symbolisant l'électro magnétisme",
+        "count": 1
+      },
+      {
+        "value": "Hommage aux rosiéristes de Champagne-au-Mont d’Or",
+        "count": 1
+      },
+      {
+        "value": "Des animaux loufoques mènent leur petite vie à la lisière d’une forêt imaginaire",
+        "count": 1
+      },
+      {"value": "Hommage à Le Corbusier", "count": 1},
+      {
+        "value": "Hommage à Diego Rivera, mur nord style préhispanique, mur sud contemporain mexicain",
+        "count": 1
+      },
+      {"value": "Des commerces autour d'une place de village", "count": 1},
+      {
+        "value": "Des marcheurs de tous ages sur un portrait de fond d'Ambroise Paré",
+        "count": 1
+      },
+      {
+        "value": "Une superposition de cartes postales sur un fond années 1900",
+        "count": 1
+      },
+      {"value": "Les vieux métiers", "count": 1}
+    ],
+    "count": 142
+  },
+  {
+    "key": "artist:wikipedia",
+    "tags": [
+      {"value": "fr:CitéCréation", "count": 41},
+      {"value": "fr:Cité de la Création", "count": 30},
+      {"value": "en:Richard Serra", "count": 1},
+      {"value": "fr:Jean-Baptiste Larrivé", "count": 1},
+      {"value": "fr:Joseph Lamberton", "count": 1},
+      {"value": "fr:Mathurin Moreau", "count": 1},
+      {"value": "fr:Ivan Avoscan", "count": 1},
+      {"value": "en:Ulrich Rückriem", "count": 1},
+      {"value": "fr:Anne et Patrick Poirier", "count": 1},
+      {"value": "fr:Guillaume Bottazzi", "count": 1},
+      {"value": "fr:César (sculpteur)", "count": 1},
+      {"value": "fr:Roger Groslon", "count": 1},
+      {"value": "fr:Cité de la création", "count": 1}
+    ],
+    "count": 82
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Liste de murs peints lyonnais", "count": 25},
+      {"value": "fr:Les Habitants (Veilhan)", "count": 6},
+      {"value": "fr:Peinture murale", "count": 4},
+      {"value": "fr:Georges Salendre", "count": 2},
+      {"value": "fr:Cité de la Création", "count": 2},
+      {"value": "fr:Ici (sculpture)", "count": 1},
+      {"value": "fr:Signe infini", "count": 1},
+      {"value": "fr:Statue équestre de Louis XIV (Lyon)", "count": 1},
+      {"value": "fr:Deux arcs de 201,55°", "count": 1},
+      {"value": "fr:Truck (Wurm)", "count": 1},
+      {"value": "fr:Taillefer (sommet)#La statue de saint Éloi", "count": 1},
+      {"value": "fr:La Cascade de Beynost", "count": 1},
+      {"value": "fr:Adolphe Messimy", "count": 1},
+      {"value": "fr:François de Sales", "count": 1},
+      {"value": "fr:Monument des maquis de l'Ain", "count": 1},
+      {"value": "fr:De l'en-dessous", "count": 1},
+      {"value": "fr:Philibert et Marguerite", "count": 1},
+      {"value": "fr:Sans titre (Ulrich Rückriem)", "count": 1},
+      {"value": "fr:Monument à Edgar Quinet", "count": 1},
+      {"value": "fr:World Markets", "count": 1},
+      {"value": "fr:Sculpture (Philolaos)", "count": 1},
+      {"value": "fr:Génération, Hommage à Saint-Exupéry", "count": 1},
+      {"value": "fr:Vierge de la Libération de Varces", "count": 1},
+      {"value": "fr:Veilleur de pierre", "count": 1},
+      {"value": "fr:Jean Vuarnet", "count": 1},
+      {
+        "value": "fr:Immeuble, 20 rue Samaritaine (Bourg-en-Bresse)",
+        "count": 1
+      },
+      {"value": "fr:Chateau de Saint-André", "count": 1},
+      {"value": "fr:Sully Prudhomme", "count": 1},
+      {"value": "fr:Sculpture tricéphale (Lugrin)", "count": 1},
+      {"value": "fr:La Fugue du Bugey", "count": 1},
+      {"value": "fr:Johnny Hallyday", "count": 1},
+      {"value": "fr:Ivan Avoscan", "count": 1},
+      {"value": "fr:Fontaine Bartholdi", "count": 1},
+      {"value": "fr:La Colonne brisée", "count": 1},
+      {"value": "fr:Statue du Christ-Roi (Les Houches)", "count": 1},
+      {
+        "value": "fr:Monument national à la Résistance du plateau des Glières",
+        "count": 1
+      },
+      {"value": "fr:Centauresse et Faune", "count": 1},
+      {"value": "fr:Fresque des Lyonnais", "count": 1},
+      {"value": "fr:Murs peints Lyonnais", "count": 1},
+      {"value": "fr:Le Patineur (César)", "count": 1},
+      {"value": "fr:Mémorial lyonnais du génocide arménien", "count": 1},
+      {"value": "fr:Guillaume Bottazzi", "count": 1},
+      {"value": "fr:Porte du soleil (sculpture)", "count": 1},
+      {"value": "fr:Bourse du travail de Lyon", "count": 1},
+      {"value": "fr:Monument des enfants du Rhône", "count": 1},
+      {
+        "value": "fr:Fresque de Saint Christophe de Saint-Sorlin-en-Bugey",
+        "count": 1
+      }
+    ],
+    "count": 80
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Musée urbain Tony Garnier", "count": 29},
+      {"value": "SAFIR - Street Art Festival In Roche", "count": 14},
+      {"value": "La Fresque du Demi-Millenaire", "count": 6},
+      {"value": "Promenades en fresques", "count": 6},
+      {"value": "La Residence de La Sarra", "count": 3},
+      {"value": "Murs peints : Boulevard de la BD", "count": 1},
+      {"value": "SAFIR 2016 (Street Art Festival In Roche)", "count": 1}
+    ],
+    "count": 60
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://cite-creation.com/", "count": 23},
+      {
+        "value": "https://citecreation.fr/realisation/residence-de-la-sarra-lyon-france/",
+        "count": 3
+      },
+      {
+        "value": "http://bonjour-lyon.fr/2011/08/photo-rond-point-villeurbanne/",
+        "count": 2
+      },
+      {"value": "http://www.a-fresco.com/", "count": 2},
+      {"value": "http://artdekaley.blogspot.fr/p/street-art.html", "count": 2},
+      {
+        "value": "http://www.lesrivesdesaone.com/concepteurs-artistes/",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/fr/oeuvres/fille-du-printemps-rnst/",
+        "count": 1
+      },
+      {
+        "value": "https://www.streetartfest.org/oeuvres/food-for-thought-how-nosm/food-for-thought-how-nosm-2/",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/fr/oeuvres/belle-mecanique-snek/",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/fr/oeuvres/monkey-bird/#infos",
+        "count": 1
+      },
+      {
+        "value": "https://www.streetartfest.org/oeuvres/the-wire-seth/",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/fr/oeuvres/gymnase-hoche-brknwrld/",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/fr/oeuvres/veks-van-hillik-la-tortue/",
+        "count": 1
+      },
+      {
+        "value": "https://www.streetartfest.org/oeuvres/rue-beethowen-ekis-boye/",
+        "count": 1
+      },
+      {"value": "www.cite-creation.com", "count": 1},
+      {
+        "value": "https://citecreation.fr/realisation/restaurant-historique-paul-bocuse/",
+        "count": 1
+      },
+      {"value": "http://www.gerard-gasquet.com/", "count": 1},
+      {
+        "value": "http://www.cadrans-solaires.fr/cadran-annecy.html",
+        "count": 1
+      },
+      {"value": "http://tomassi.chez-alice.fr/", "count": 1},
+      {
+        "value": "https://citecreation.fr/realisation/fresque-vegetale-lumiere/",
+        "count": 1
+      },
+      {"value": "www.7e-sens.fr", "count": 1},
+      {
+        "value": "http://www.guillaume.bottazzi.org/fr/art-public/villeurbanne.html",
+        "count": 1
+      },
+      {"value": "http://www.vlg.fr/patrimoine", "count": 1},
+      {"value": "http://paulsiche.free.fr", "count": 1},
+      {"value": "http://www.pascal-camacho.com", "count": 1},
+      {"value": "http://www.ecohlcite.com/", "count": 1},
+      {"value": "http://www.haut-les-murs.com/", "count": 1},
+      {
+        "value": "https://sorrygraffiti.blogspot.fr/p/fresques-sur-commande.html",
+        "count": 1
+      }
+    ],
+    "count": 55
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://www.archives-numerisees.ain.fr/archives/visu/41339/1/dao/0",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Le_Veilleur_de_pierre_place_Bellecour.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35739924716/",
+        "count": 1
+      },
+      {
+        "value": "http://www.jgmgalerie.com/cms/_clientdata/cms/jgmgallery/_images/5181648834c84aea06db1f.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://perlbal.hi-pi.com/blog-images/115784/gd/131377055178/Arc-de-201-5.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://dvalot.free.fr/pictures/sculptures/Grand_Pingouin_DSC_7427.htm",
+        "count": 1
+      },
+      {
+        "value": "http://www.wikiphidias.fr/index.php?option=com_wrapper&view=wrapper&Itemid=79",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Statue_de_la_Vierge_pr%C3%A8s_de_l%27%C3%A9glise.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Buste_du_G%C3%A9n%C3%A9ral_Messimy_(Meximieux).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Pedestal_of_the_virgin_statue_(Saint-Maurice-de-Beynost).JPG",
+        "count": 1
+      },
+      {
+        "value": "http://commons.wikimedia.org/wiki/File:Hotel_ville_echirolles_2007.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.monweekendalyon.com/var/ezflow_site/storage/images/images-sitra/node_165168/1130062-1-fre-FR/image_format_626x312.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Plaque_de_l%27%C3%A9changeur_Charles-de-Gaulles_%C3%A0_Villeurbanne.JPG",
+        "count": 1
+      },
+      {
+        "value": "http://publicartmuseum.net/w/images/e/e7/4D14695.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_%C3%A0_Edgar_Quinet_%C3%A0_Bourg-en-Bresse.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://bonjour-lyon.fr/wp-content/uploads/2012/01/6659565717_a41d41d97f_z.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://bonjour-lyon.fr/wp-content/uploads/2013/02/Habitants-cit%C3%A9-internationale-lyon.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.arter.net/wp-content/uploads/2011/06/6-388x580.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.culture.lyon.fr/static/culture/contenu/equipements/musee/world_markets2.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:La_seconde_%C3%A9glise_de_Beynost_et_arbres.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Leyment_-_juillet_2014_(12).JPG",
+        "count": 1
+      },
+      {
+        "value": "http://www.olats.org/schoffer/archives/img/tourdain.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Varambon_(10).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Varambon_(7).JPG",
+        "count": 1
+      },
+      {
+        "value": "http://dvalot.free.fr/pictures/sculptures/Sculptures_boulevard_Duchere_DSCN6786.htm",
+        "count": 1
+      },
+      {
+        "value": "https://framapic.org/u2kaU88WMSuY/orYeMOAmvMif.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Parc_de_la_T%C3%AAte_d%27Or_Vue_sur_le_lac7.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSz9WY8bLJNBBvnz6WO1KbzM13uJuwp4EzGADec4qWM78Xqf40U",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Buste_d%27Ambroise_Courtois_sur_la_place.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35463768292/",
+        "count": 1
+      },
+      {
+        "value": "https://www.streetartnews.net/wp-content/uploads/2016/06/IMG_0747-e1466254223581.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Plaque_de_la_statue_%22Chemin_du_Bac%22_%C3%A0_Oullins_(Rh%C3%B4ne,_France).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Memorial_to_Laurent_Mourguet_-_DSC05585.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35501248901/",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/wp-content/uploads/2017/06/La-fille-du-printemps-RNST.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.streetartfest.org/wp-content/uploads/2017/06/goin.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35630566566/",
+        "count": 1
+      },
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/C215_-_Grenoble%2C_Juin_2016.jpg/1280px-C215_-_Grenoble%2C_Juin_2016.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35592520866/",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35283193710/",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/34829102064/",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/34829060244/",
+        "count": 1
+      },
+      {
+        "value": "https://www.flickr.com/photos/156017218@N06/35283155450/",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Statue_de_la_Vierge_%C3%A0_Mollon_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://framapic.org/dP2q7lmKHVBb/n6tDakbZqwYk.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_des_Gli%C3%A8res2.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Lyon_Armenian_Genocide_Memorial2.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_aux_morts_-_Guerre_de_1870-71_-_Parc_de_la_T%C3%AAte_d%27Or_(Lyon-France).JPG",
+        "count": 1
+      },
+      {"value": "http://www.panoramio.com/photo/39051055", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Fresco_of_Saint_Christopher_of_Saint-Sorlin-en-Bugey.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Mur_comm%C3%A9morant_la_ville_romaine.jpg",
+        "count": 1
+      },
+      {"value": "File:Vasque olympique de 1968 (b).JPG", "count": 1}
+    ],
+    "count": 52
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q17351164", "count": 6},
+      {"value": "Q18352932", "count": 1},
+      {"value": "Q17357148", "count": 1},
+      {"value": "Q16869150", "count": 1},
+      {"value": "Q17347187", "count": 1},
+      {"value": "Q17347219", "count": 1},
+      {"value": "Q27910451", "count": 1},
+      {"value": "Q17177178", "count": 1},
+      {"value": "Q17640196", "count": 1},
+      {"value": "Q15726574", "count": 1},
+      {"value": "Q17278441", "count": 1},
+      {"value": "Q365771", "count": 1},
+      {"value": "Q231256", "count": 1},
+      {"value": "Q27056234", "count": 1},
+      {"value": "Q17347007", "count": 1},
+      {"value": "Q17370280", "count": 1},
+      {"value": "Q17347210", "count": 1},
+      {"value": "Q17334600", "count": 1},
+      {"value": "Q17651309", "count": 1},
+      {"value": "Q18001861", "count": 1},
+      {"value": "Q27910465", "count": 1},
+      {"value": "Q19334937", "count": 1},
+      {"value": "Q3558012", "count": 1},
+      {"value": "Q20653418", "count": 1},
+      {"value": "Q1685900", "count": 1},
+      {"value": "Q22966693", "count": 1},
+      {"value": "Q2970484", "count": 1},
+      {"value": "Q42247", "count": 1},
+      {"value": "Q29383887", "count": 1},
+      {"value": "Q3476530", "count": 1},
+      {"value": "Q54548785", "count": 1},
+      {"value": "Q10144", "count": 1},
+      {"value": "Q22979291", "count": 1},
+      {"value": "Q22967002", "count": 1},
+      {"value": "Q55130418", "count": 1},
+      {"value": "Q14922289", "count": 1},
+      {"value": "Q17341699", "count": 1},
+      {"value": "Q19318054", "count": 1}
+    ],
+    "count": 43
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "memorial", "count": 22},
+      {"value": "monument", "count": 5},
+      {"value": "wayside_cross", "count": 4},
+      {"value": "yes", "count": 2},
+      {"value": "wayside_shrine", "count": 2}
+    ],
+    "count": 35
+  },
+  {
+    "key": "artist:website",
+    "tags": [{"value": "http://cite-creation.com/", "count": 33}],
+    "count": 33
+  },
+  {
+    "key": "support",
+    "tags": [
+      {"value": "wall", "count": 10},
+      {"value": "gate", "count": 10},
+      {"value": "metallic_curtain", "count": 3},
+      {"value": "ground", "count": 1},
+      {"value": "wooden_shutter", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "cadran solaire", "count": 2},
+      {
+        "value": "Au moment de son installation la jambe de la statue est accidentellement brisée. La trace est toujours visible.",
+        "count": 1
+      },
+      {
+        "value": "Fonte de Jean-Marc Bonnard, professeur à l'école des Beaux-Arts de Saint-Étienne. Posée en 1991 pour remplacer la « sphinge » posée en 1916 et volée en 1990.",
+        "count": 1
+      },
+      {
+        "value": "Créée à la fonderie Barthélémy à Crest (Drôme), elle est l'oeuvre d'Hervé Audouard, professeur de sculpture.",
+        "count": 1
+      },
+      {"value": "material is Pierre de Lens", "count": 1},
+      {
+        "value": "Déplacée et cachée pendant la Seconde Guerre mondiale, elle n'est pas fondue pour les besoins de l'économie de guerre allemande.",
+        "count": 1
+      },
+      {
+        "value": "Le Monument est inauguré en 1989. C'est une sculpture de Toros. La ceinture de la robe flottant au vent dessine les monts Ararat qui séparent l'Arménie de la Turquie. Le bloc marqué de la croix à droite est fait en khatchkar, une pierre d'Arménie.",
+        "count": 1
+      },
+      {
+        "value": "Monument commémoratif des mineurs morts lors de la Première Guerre mondiale.",
+        "count": 1
+      },
+      {"value": "2 statues de biches", "count": 1},
+      {"value": "Don de la SNCF", "count": 1},
+      {"value": "Sculpture sans titre", "count": 1},
+      {"value": "On the roof of the basilica", "count": 1},
+      {
+        "value": "Monument célèbre à Saint-Étienne du sculpteur Corns, datant du 1802. Avec ses airs de mausolée romain, le monument du Babet marque de sa présence le plus ancien quartier de la ville de Saint-Étienne, le Panassa.",
+        "count": 1
+      },
+      {
+        "value": "L'auteur a été formé à l'École des Beaux Arts de Dakar.",
+        "count": 1
+      },
+      {
+        "value": "La statue est installée dans le bassin le 5 août 1949 puis déposée plus tard sur la pelouse.",
+        "count": 1
+      },
+      {
+        "value": "L'original en marbre, remarqué par l'impératrice Eugénie au salon de 1865, entre au musée du Louvre le 27 janvier 1926. Aussi connue sous le nom de la Fileuse.",
+        "count": 1
+      },
+      {
+        "value": "En 1873, Régis Taravellier propriétaire du magasin le Sapeur a l'idée de faire poser ce personnage afin de dissimuler une cheminée disgracieuse. Le sapeur est désormais posé devant l'Hôtel de Villeneuve.",
+        "count": 1
+      },
+      {
+        "value": "Œuvre commandée sur le catalogue de la fonderie d'Art du Val d'Osne et réalisée pour cette dernière par la fonderie Durenne à Sommevoire. Asclépios (ou Esculape chez les Romains) est le dieu de la médecine.",
+        "count": 1
+      },
+      {"value": "Grenoble Street Art Fest 2018", "count": 1},
+      {
+        "value": "façade refaite en 2014, l'ancienne version presentait une savoyarde et un cuistot",
+        "count": 1
+      },
+      {"value": "Position exacte a confirmer sur vue satellite", "count": 1},
+      {"value": "anciennement attribué à \"Pablito Zago\"", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "stone", "count": 5},
+      {"value": "wood", "count": 4},
+      {"value": "steel", "count": 4},
+      {"value": "metal", "count": 2},
+      {"value": "acier inox", "count": 1},
+      {"value": "resine,inox", "count": 1},
+      {"value": "marble", "count": 1},
+      {"value": "glass", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.patrimoine-lyon.org/la-presqu-ile/terreaux---cordeliers-2/l-hotel-de-ville",
+        "count": 4
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=32363",
+        "count": 1
+      },
+      {
+        "value": "http://www.petit-patrimoine.com/fiche-petit-patrimoine.php?id_pp=69290_1;http://michel.lalos.free.fr/cadrans_solaires/autres_depts/rhone/st_priest/cs_69_st_priest_pg.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.ville-saint-priest.fr/Art-dans-la-ville.2064.0.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28097",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28042",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28118",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28113",
+        "count": 1
+      },
+      {
+        "value": "http://www.nathalietalec.com/creation-grants/gimme-shelter-2013/",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28103",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28123",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=32371",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=32381",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=32392",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=32404",
+        "count": 1
+      },
+      {
+        "value": "http://www.trompe-l-oeil.info/Murspeints/details.php?image_id=28139",
+        "count": 1
+      }
+    ],
+    "count": 19
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 12}, {"value": "limited", "count": 1}],
+    "count": 13
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "wall", "count": 12}, {"value": "gate", "count": 1}],
+    "count": 13
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fountain", "count": 7},
+      {"value": "clock", "count": 2},
+      {"value": "cafe", "count": 1},
+      {"value": "shelter", "count": 1},
+      {"value": "place_of_worship", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "2.5", "count": 2},
+      {"value": "6", "count": 1},
+      {"value": "2.7 m", "count": 1},
+      {"value": "4.1 m", "count": 1},
+      {"value": "5 m", "count": 1},
+      {"value": "27", "count": 1},
+      {"value": "25", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "2.4 m", "count": 1},
+      {"value": "5", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "concrete", "count": 11},
+      {"value": "metal", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {
+        "value": "Oeuvre du sculpteur oullinois Robert Magand, créée en 1982 puis rénovée par l'artiste, inaugurée le 30 juin 2011 par François-Noel Buffet, Sénateur-Maire.",
+        "count": 1
+      },
+      {
+        "value": "Dauphiné; 45° de Latitude Nord; Ici Commence le Midi",
+        "count": 1
+      },
+      {
+        "value": "La société des mines de la Loire à ses collaborateurs morts, victimes de la guerre et du devoir.",
+        "count": 1
+      },
+      {
+        "value": "Il n'y a pas d'idéal plus noble que celui d'une société où le travail sera souverain.",
+        "count": 1
+      },
+      {
+        "value": "Ici, le 8 avril 1350 a été célébré le mariage du futur Roi de France Charles V Le Sage avec Jeanne de Bourbon",
+        "count": 1
+      },
+      {
+        "value": "Jean Moulin 1899 1943 Unificateur de la Résistance",
+        "count": 1
+      },
+      {
+        "value": "Meules ayant servi au broyage et à l'affinage du Bleu d'Outremer de 1831 à 1967 pour la fabrication du Bleu Guimet",
+        "count": 1
+      },
+      {
+        "value": "Femme nue, femme noire, je chante ta beauté qui passe. Forme que je fixe dans l'éternel avant que le destin jaloux ne te réduise en cendres pour nourrir les racines de la vie.",
+        "count": 1
+      },
+      {
+        "value": "Jouteurs en acier inoxidable. Ces jouteurs, emblème d'un des sports les plus anciens de la Vallée du Rhône ont été offerts le 27 août 1997 par Michel JACQUET à la commune de Vernaison.",
+        "count": 1
+      },
+      {"value": "Aux enfants du Rhône défenseurs de la Patrie", "count": 1},
+      {
+        "value": "VASQUE DE 10EME JEUX OLYMPIQUES D'HIVER DE GRENOBLE DU 6 AU 18 FEVRIER 1968",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {
+    "key": "memorial",
+    "tags": [
+      {"value": "statue", "count": 5},
+      {"value": "bust", "count": 3},
+      {"value": "war_memorial", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "subject:wikidata",
+    "tags": [
+      {"value": "Q7742", "count": 1},
+      {"value": "Q6029519", "count": 1},
+      {"value": "Q2908", "count": 1},
+      {"value": "Q1441510", "count": 1},
+      {"value": "Q632", "count": 1},
+      {"value": "Q3588534", "count": 1},
+      {"value": "Q12688", "count": 1},
+      {"value": "Q957988", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "religion",
+    "tags": [
+      {"value": "christian", "count": 4},
+      {"value": "catholic", "count": 2}
+    ],
+    "count": 6
+  },
+  {
+    "key": "subject:wikipedia",
+    "tags": [
+      {"value": "fr:Sphinx (mythologie égyptienne)", "count": 1},
+      {"value": "fr:Francis Garnier", "count": 1},
+      {"value": "fr:Jean Moulin", "count": 1},
+      {"value": "fr:Émile Girodet", "count": 1},
+      {"value": "fr:Jean Jaurès", "count": 1},
+      {"value": "fr:José Frappa", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 6}], "count": 6},
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116328", "count": 1},
+      {"value": "PA00116352", "count": 1},
+      {"value": "PA00118403", "count": 1},
+      {"value": "PA00118120", "count": 1},
+      {"value": "PA38000027", "count": 1},
+      {"value": "PA00117214", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1950-03-13", "count": 1},
+      {"value": "1862", "count": 1},
+      {"value": "1954-10-11", "count": 1},
+      {"value": "1995-09-29", "count": 1},
+      {"value": "2007-09-14", "count": 1},
+      {"value": "1989-01-23", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 3}, {"value": "2", "count": 3}],
+    "count": 6
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "artist",
+    "tags": [{"value": "Lucien Pascal", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "author",
+    "tags": [
+      {"value": "Antoine Sartorio", "count": 2},
+      {"value": "Geneviève Dumont", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wall",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-09-27", "count": 1},
+      {"value": "2017-07-18", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "display", "tags": [{"value": "sundial", "count": 2}], "count": 2},
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "http://upload.wikimedia.org/wikipedia/commons/2/2c/Grenoble_-_Chevalier_Bayard.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Madone_du_Ch%C3%A2telet_%C3%A0_Saint_D%C3%A9sirat.jpg",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 1}, {"value": "6", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "artist:wikidata",
+    "tags": [{"value": "Q3168102", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "hazard",
+    "tags": [{"value": "wild_animals", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "lwoVETxvbRlvCsHIZYkvlw", "count": 1}],
+    "count": 1
+  },
+  {"key": "pilgrimage", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "statue_type", "tags": [{"value": "virgin", "count": 1}], "count": 1},
+  {
+    "key": "description:en",
+    "tags": [{"value": "2 persons and a dog, real size", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "2 personnages et un chien, taille réelle", "count": 1}],
+    "count": 1
+  },
+  {"key": "type", "tags": [{"value": "sculpture", "count": 1}], "count": 1},
+  {
+    "key": "artwork_subject",
+    "tags": [{"value": "Saint Michael and the dragon", "count": 1}],
+    "count": 1
+  },
+  {"key": "artwork", "tags": [{"value": "sculpture", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "0.6 m", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "stone", "count": 1}], "count": 1},
+  {
+    "key": "title",
+    "tags": [{"value": "Break the Rules", "count": 1}],
+    "count": 1
+  },
+  {"key": "bench", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "à localiser precisemment", "count": 1}],
+    "count": 1
+  },
+  {"key": "date", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "visibility", "tags": [{"value": "area", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 34 68 16", "count": 1}],
+    "count": 1
+  },
+  {"key": "drinking_water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "shelter_type",
+    "tags": [{"value": "weather_shelter", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "sundial_type",
+    "tags": [{"value": "equatorial", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "religious", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "garden", "count": 1}], "count": 1},
+  {
+    "key": "megalith_type",
+    "tags": [{"value": "menhir", "count": 1}],
+    "count": 1
+  },
+  {"key": "site_type", "tags": [{"value": "megalith", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "0.6 m", "count": 1}], "count": 1}
+]

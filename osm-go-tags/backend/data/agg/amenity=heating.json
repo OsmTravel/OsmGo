@@ -1,0 +1,5 @@
+[
+  {"key": "amenity", "tags": [{"value": "heating", "count": 8}], "count": 8},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "heating", "tags": [{"value": "radiator", "count": 1}], "count": 1}
+]

@@ -1,0 +1,9 @@
+[
+  {
+    "key": "advertising",
+    "tags": [{"value": "small_billboard", "count": 4}],
+    "count": 4
+  },
+  {"key": "faces", "tags": [{"value": "1", "count": 3}], "count": 3},
+  {"key": "luminous", "tags": [{"value": "no", "count": 3}], "count": 3}
+]

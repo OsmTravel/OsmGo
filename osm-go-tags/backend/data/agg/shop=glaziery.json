@@ -1,0 +1,25 @@
+[
+  {"key": "shop", "tags": [{"value": "glaziery", "count": 12}], "count": 12},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 9 50 51 89 14", "count": 1},
+      {"value": "+33 4 77 24 07 42", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://fermetures-stores.com/", "count": 1},
+      {"value": "http://loiodice-echirolles.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "operator", "tags": [{"value": "MERLE", "count": 1}], "count": 1},
+  {
+    "key": "craft",
+    "tags": [{"value": "sun_protection", "count": 1}],
+    "count": 1
+  }
+]

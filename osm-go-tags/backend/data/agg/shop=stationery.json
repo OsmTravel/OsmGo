@@ -1,0 +1,94 @@
+[
+  {"key": "shop", "tags": [{"value": "stationery", "count": 69}], "count": 69},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 42 49 81", "count": 2},
+      {"value": "+33 4 74 85 07 94", "count": 1},
+      {"value": "+33 4 28 70 14 41", "count": 1},
+      {"value": "+33 4 77 97 36 27", "count": 1},
+      {"value": "+33 4 50 37 26 60", "count": 1},
+      {"value": "+33 4 50 37 24 53", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lapapetheque.fr/", "count": 1},
+      {"value": "http://www.burotech.fr/", "count": 1},
+      {"value": "http://aufondducoffre.fr", "count": 1},
+      {"value": "www.bureau-vallee.fr", "count": 1},
+      {
+        "value": "http://lateliergeant.geant-beaux-arts.fr/vos-magasins/lyon-vos-magasins/informations-generales-du-magasin-de-lyon/",
+        "count": 1
+      },
+      {"value": "http://www.revillod74.fr/", "count": 1},
+      {
+        "value": "http://www.calipage.fr/distributeurs/afficheMagasin/573-ets_r_neveu_et_fils.html",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 77 58 87 83", "count": 1},
+      {"value": "+33 4 50 92 41 06", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "au_fond_du_coffre@yahoo.fr", "count": 1},
+      {"value": "papeterieservet@gmail.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Buro+", "count": 1}, {"value": "Calipage", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "service:bicycle:second_hand",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service:bicycle:repair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service:bicycle:retail",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q18385014", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Bureau Vallée", "count": 1}],
+    "count": 1
+  },
+  {"key": "stationery", "tags": [{"value": "art", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "library", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Batiment pas encore au cadastre ni imagerie 11/2016",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

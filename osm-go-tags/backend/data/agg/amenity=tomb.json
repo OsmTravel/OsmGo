@@ -1,0 +1,13 @@
+[
+  {
+    "key": "FIXME",
+    "tags": [
+      {
+        "value": "amenity unknown, check if historic=tomb fits better",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "tomb", "count": 1}], "count": 1}
+]

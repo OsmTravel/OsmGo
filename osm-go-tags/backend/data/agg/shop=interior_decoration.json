@@ -1,0 +1,133 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "interior_decoration", "count": 140}],
+    "count": 140
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.tapisserie-rideaux-grenoble.fr/", "count": 1},
+      {"value": "https://www.figuline-deco.fr/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/CREADECO-by-Johanna/272246486128638",
+        "count": 1
+      },
+      {"value": "http://www.legrenierdurfe.fr/", "count": 1},
+      {"value": "http://lehangartdescreateurs.blogspot.fr", "count": 1},
+      {"value": "http://www.lafoirfouille.fr/", "count": 1},
+      {"value": "http://clems-cuisine.fr", "count": 1},
+      {"value": "http://homesweet-home.fr", "count": 1},
+      {"value": "http://www.pagesjaunes.fr/pros/52485887", "count": 1},
+      {"value": "http://www.unbrindebonheur.fr/", "count": 1},
+      {"value": "http://www.rainbowstudio.fr", "count": 1},
+      {"value": "cibnico@hotmail.com", "count": 1},
+      {"value": "http://www.eminza.com/", "count": 1},
+      {"value": "www.touzeau.com", "count": 1},
+      {
+        "value": "http://www.flamant.com/flamant/stores/lyon-flamant-lyon-opening-soon-0",
+        "count": 1
+      },
+      {"value": "https://www.figuline-deco.fr", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Nature-Decouvertes",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/CASA",
+        "count": 1
+      }
+    ],
+    "count": 18
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 19 76 27 05", "count": 1},
+      {"value": "+33 6 11 11 16 93", "count": 1},
+      {"value": "+33 4 74 53 47 44", "count": 1},
+      {"value": "+33 4 74 85 60 14", "count": 1},
+      {"value": "+33 4 74 85 18 94", "count": 1},
+      {"value": "+33 4 50 49 17 36", "count": 1},
+      {"value": "+33 4 77 76 95 19", "count": 1},
+      {"value": "+33 4 72 49 02 49", "count": 1},
+      {"value": "+33 4 74 53 62 77", "count": 1},
+      {"value": "+33 6 07 12 11 98", "count": 1},
+      {"value": "+33 6 76 72 25 61", "count": 1},
+      {"value": "+33 4 50 38 13 89", "count": 1},
+      {"value": "+33 4 37 24 25 12", "count": 1},
+      {"value": "+33 4 74 85 69 82", "count": 1},
+      {"value": "+33 4 76 23 51 70", "count": 1},
+      {"value": "+33 4 76 40 68 24", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 7}, {"value": "yes", "count": 3}],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Linge de maison", "count": 2},
+      {"value": "Décoration et autres gourmandises à déguster", "count": 1},
+      {"value": "Linge de Maison", "count": 1},
+      {"value": "Cadeaux & Décoration", "count": 1},
+      {"value": "Quand la déco se fait cadeau", "count": 1},
+      {"value": "Tapisser-décorateur", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 3}], "count": 3},
+  {"key": "indoor", "tags": [{"value": "room", "count": 2}], "count": 2},
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {"key": "level", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "creadeco.byjohanna@orange.fr", "count": 1},
+      {"value": "contactfrance@touzeau.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "FIXME",
+    "tags": [{"value": "aménagement maison", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 50 92 02 13", "count": 1}],
+    "count": 1
+  },
+  {"key": "currency:XLT", "tags": [{"value": "CARN", "count": 1}], "count": 1},
+  {
+    "key": "payment:cash:XLT-CARN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "50791951200024", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Kéria Luminaire", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Casa (enseigne)", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q1991755", "count": 1}], "count": 1},
+  {"key": "disused:shop", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

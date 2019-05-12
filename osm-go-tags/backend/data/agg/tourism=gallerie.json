@@ -1,0 +1,8 @@
+[
+  {"key": "tourism", "tags": [{"value": "gallerie", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [{"value": "http://artiempo.fr/", "count": 1}],
+    "count": 1
+  }
+]

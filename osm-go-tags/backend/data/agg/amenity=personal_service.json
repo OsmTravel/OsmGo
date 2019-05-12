@@ -1,0 +1,29 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "personal_service", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.domidom.fr", "count": 3},
+      {"value": "lyon.generaledesservices.com", "count": 1},
+      {"value": "www.domicile-clean.fr", "count": 1},
+      {
+        "value": "www.vivaservices.fr/Aide-a-domicile/Contact/Demande-de-devis,i98.html",
+        "count": 1
+      },
+      {
+        "value": "www.domicile-clean.fr/service-domicile/domicile-clean-montelimar/367",
+        "count": 1
+      },
+      {"value": "http://www.free-dom.fr/saint-etienne", "count": 1},
+      {"value": "http://www.free-dom.fr/lyon", "count": 1},
+      {"value": "http://www.free-dom.fr/valence", "count": 1},
+      {"value": "www.eliane-medium.fr/", "count": 1}
+    ],
+    "count": 11
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

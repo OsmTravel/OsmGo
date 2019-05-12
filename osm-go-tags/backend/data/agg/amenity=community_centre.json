@@ -1,0 +1,502 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "community_centre", "count": 1102}],
+    "count": 1102
+  },
+  {
+    "key": "sport",
+    "tags": [{"value": "multi", "count": 105}, {"value": "yoga", "count": 1}],
+    "count": 106
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Saint-Maurice-de-Beynost", "count": 4},
+      {"value": "Ville de Saint-Étienne", "count": 3},
+      {"value": "UFOLEP", "count": 3},
+      {"value": "Mairie", "count": 3},
+      {"value": "Municipalité d'Ambilly", "count": 3},
+      {"value": "Mairie de Marnand", "count": 2},
+      {"value": "Commune de Montagny", "count": 2},
+      {"value": "Mairie de St Georges", "count": 1},
+      {"value": "Ville de Nantua", "count": 1},
+      {"value": "crefad", "count": 1},
+      {"value": "Centre Municipal d'activités", "count": 1},
+      {"value": "Mairie Lyon 9e", "count": 1},
+      {"value": "Lémandragore", "count": 1},
+      {"value": "Crefad Loire", "count": 1},
+      {"value": "Mairie de Thizy-les-Bourgs", "count": 1},
+      {"value": "Mairie de Samoëns", "count": 1},
+      {"value": "Mairie des Gets", "count": 1},
+      {"value": "Fédération Léo Lagrange", "count": 1},
+      {"value": "Mairie Villefontaine", "count": 1},
+      {"value": "Mairie de Villeurbanne", "count": 1},
+      {"value": "Mairei d'Aizac", "count": 1},
+      {"value": "Mairie de Veyras", "count": 1},
+      {"value": "Mairie de Saint-Priest", "count": 1},
+      {"value": "Mairie de Grenoble", "count": 1},
+      {"value": "Commune de Romagnieu", "count": 1},
+      {"value": "Ville de St Martin d'Hères", "count": 1},
+      {"value": "Paroisse catholique Saint-Claire en Dauphinée", "count": 1},
+      {
+        "value": "CCAS (Centre Communal d’Action Sociale) Saint Martin d'Uriage",
+        "count": 1
+      },
+      {"value": "Ville de Villars", "count": 1},
+      {"value": "BNP Paribas", "count": 1},
+      {"value": "Mairie de Seyssins", "count": 1},
+      {"value": "Ville de Saint Martin d'Heres", "count": 1},
+      {"value": "Mairie de Chabeuil", "count": 1},
+      {"value": "Ville de Firminy", "count": 1},
+      {"value": "Église Protestante Unie de France", "count": 1},
+      {"value": "Ville de Chambéry", "count": 1},
+      {"value": "PNR des Monts d'Ardèche", "count": 1},
+      {
+        "value": "Direction du Développement Social et de la Vie Associative (DDSVA)",
+        "count": 1
+      },
+      {"value": "Maubec", "count": 1},
+      {"value": "Commune de Saint Maximin", "count": 1},
+      {"value": "Ville De Saint-Galmier", "count": 1},
+      {"value": "Ville de Trept", "count": 1},
+      {"value": "Ville de Saint-Just-Saint-Rambert", "count": 1},
+      {"value": "Municipalité de Ville-la-Grand", "count": 1},
+      {"value": "Ville d'Aix-les-Bains", "count": 1},
+      {"value": "Mairie de Cruet", "count": 1},
+      {"value": "Rues du Développement Durable", "count": 1},
+      {"value": "Mairie de Gaillard", "count": 1},
+      {"value": "CCAS", "count": 1},
+      {"value": "Mairie de Pallud", "count": 1},
+      {"value": "Association Animation Jeunesse et Culture", "count": 1},
+      {"value": "Mairie Moulin Cherier", "count": 1},
+      {"value": "Mairie de Modane", "count": 1},
+      {"value": "Mairie de Charvieu-Chavagneux", "count": 1},
+      {"value": "commune d'Epersy", "count": 1},
+      {"value": "Mairie de Saint Haon Le Vieux", "count": 1},
+      {"value": "Mairie de Savas-Mépin", "count": 1},
+      {"value": "Mairie de Beauvoir de Marc", "count": 1},
+      {"value": "Mairie de Dagneux", "count": 1},
+      {"value": "Mairie de Noyarey", "count": 1},
+      {"value": "Voreppe", "count": 1},
+      {"value": "CCAS de Grenoble", "count": 1}
+    ],
+    "count": 75
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ligue-enseignement73.org/livret-d-accueil-chalet-de-l-aurore-la-feclaz",
+        "count": 3
+      },
+      {"value": "http://www.centre-animation-st-jean.com/", "count": 1},
+      {"value": "http://www.albeaulieu.fr", "count": 1},
+      {"value": "http://www.ruesdudeveloppementdurable.fr/", "count": 1},
+      {
+        "value": "http://www.thizy.fr/fr/salle-municipale/138/salle-fetes",
+        "count": 1
+      },
+      {"value": "http://www.maison-cretderoch.com/", "count": 1},
+      {"value": "http://www.mjcporteslesvalence.fr/", "count": 1},
+      {"value": "http://www.librepc.com/altnet", "count": 1},
+      {"value": "http://www.nantua.fr/culture/espace-malraux/", "count": 1},
+      {"value": "http://www.st-etienne-handisport.com", "count": 1},
+      {"value": "www.lemandragore.fr", "count": 1},
+      {
+        "value": "https://www.facebook.com/Maison-de-Quartier-St-Nicolas-Romans-355603851256641/",
+        "count": 1
+      },
+      {"value": "http://champis.fr/La-salle-TOINOU", "count": 1},
+      {"value": "http://www.lac-de-devesset.fr/pioullouse.htm", "count": 1},
+      {"value": "http://www.chemin-neuf.fr", "count": 1},
+      {"value": "https://epn.mjcbron.fr/", "count": 1},
+      {"value": "http://www.leplateau-mistral.fr", "count": 1},
+      {"value": "http://www.casadobrasil.fr", "count": 1},
+      {"value": "https://www.karnaval.fr/", "count": 1},
+      {"value": "http://www.activroyans.fr", "count": 1},
+      {"value": "http://www.avie73.fr", "count": 1},
+      {
+        "value": "http://www.mairie-villefontaine.fr/Familles/Activites-des-centres-sociaux/La-Maison-Pour-Tous-des-Roches-Centre-social-Abdellatif-Loukili",
+        "count": 1
+      },
+      {
+        "value": "http://www.ville-saint-priest.fr/Maisons-de-Quartiers.1764.0.html",
+        "count": 1
+      },
+      {"value": "http://www.clarlyonbasket.com/", "count": 1},
+      {"value": "http:www.lescheraines.fr", "count": 1},
+      {"value": "http://lacdessapins.cyber-base.org", "count": 1},
+      {
+        "value": "http://www.grenoble.fr/lieu/3202/137-salle-polyvalente-mistral.htm",
+        "count": 1
+      },
+      {"value": "http://www.salledesrancy.com/", "count": 1},
+      {"value": "http://lescarres-asso.com", "count": 1},
+      {"value": "https://piaj-smu.blogspot.fr/", "count": 1},
+      {
+        "value": "http://www.mairie-annonay.fr/Centre-Municipal-de-Deomas.html",
+        "count": 1
+      },
+      {"value": "http://mjcstmarcel.free.fr/", "count": 1},
+      {
+        "value": "http://www.lyon.fr/lieu/sport/gymnase-de-la-martiniere.html",
+        "count": 1
+      },
+      {"value": "http://www.escdd.fr", "count": 1},
+      {
+        "value": "http://www.charpey.fr/salle-des-fetes/salle-des-fetes-1/",
+        "count": 1
+      },
+      {"value": "www.mairie-thones.fr", "count": 1},
+      {
+        "value": "http://www.ville-saint-priest.fr/Vie-associative.1847.0.html",
+        "count": 1
+      },
+      {"value": "http://www.mjcetoile.fr", "count": 1},
+      {"value": "http://centresocialtournon.free.fr", "count": 1},
+      {
+        "value": "http://www.vaulx-en-velin.net/Mairie2/Vie-associative-Vie-sociale",
+        "count": 1
+      },
+      {"value": "http://www.mjc-3cm.org", "count": 1},
+      {"value": "http://www.mairie-caillouxsurfontaines.fr/", "count": 1},
+      {
+        "value": "http://saint-romain-de-lerps.fr/Location-salle-des-sapins",
+        "count": 1
+      },
+      {"value": "http://mpt-biviers.com", "count": 1},
+      {"value": "http://www.coux.fr/Salle-des-Fetes-Lou-Fabricou", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/SALLE-De-Reception-Levasion/432109850223346",
+        "count": 1
+      },
+      {"value": "http://labatysse.wix.com", "count": 1},
+      {
+        "value": "http://www.gilhocsurormeze.fr/Gilhoc-sur-Ormeze-commune-d-ardeche-canton-de-Lamastre/salle-des-fetes-tarifs-et-reservation.html",
+        "count": 1
+      },
+      {"value": "http://st-haon-le-vieux.fr/salle-danimation/", "count": 1},
+      {"value": "http://noyarey.fr", "count": 1},
+      {"value": "https://www.maisondesessarts.fr/", "count": 1}
+    ],
+    "count": 53
+  },
+  {
+    "key": "wall",
+    "tags": [{"value": "no", "count": 31}, {"value": "yes", "count": 1}],
+    "count": 32
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 79 26 16", "count": 1},
+      {"value": "+33 6 09 45 27 66", "count": 1},
+      {"value": "+33 4 74 85 00 06", "count": 1},
+      {"value": "+33 4 74 75 07 16", "count": 1},
+      {"value": "+33450745684", "count": 1},
+      {"value": "+33 4 75 72 47 70", "count": 1},
+      {"value": "+33 4 72 81 76 87", "count": 1},
+      {"value": "+33 4 76 96 75 75", "count": 1},
+      {"value": "+33 9 53 16 14 80", "count": 1},
+      {"value": "+33 4 74 96 08 00", "count": 1},
+      {"value": "+33 4 78210042", "count": 1},
+      {"value": "+33 4 79 63 32 64", "count": 1},
+      {"value": "+33 953000320", "count": 1},
+      {"value": "+33 4 50 23 43 48", "count": 1},
+      {"value": "+33 4 50 32 11 36", "count": 1},
+      {"value": "+33 4 72234820", "count": 1},
+      {"value": "+33 4 75 60 64 73", "count": 1},
+      {"value": "+33 4 75 07 01 81", "count": 1},
+      {"value": "+33 4 78 80 44 35", "count": 1},
+      {"value": "+33 4 78 22 01 08", "count": 1},
+      {"value": "+33 4 50 95 02 72", "count": 1},
+      {"value": "+33 4 74 04 02 57", "count": 1},
+      {"value": "+33 4 77 64 42 81", "count": 1},
+      {"value": "+33 4 76 53 82 01", "count": 1},
+      {"value": "+33 4 78705594", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "community_centre:for",
+    "tags": [
+      {"value": "child", "count": 14},
+      {"value": "juvenile", "count": 4},
+      {"value": "senior", "count": 3},
+      {"value": "child; juvenile; adult; family", "count": 1},
+      {"value": "multigeneration", "count": 1},
+      {"value": "child;juvenile", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 18},
+      {"value": "limited", "count": 4},
+      {"value": "no", "count": 2}
+    ],
+    "count": 24
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Réfectoire et salle de Réunions", "count": 3},
+      {"value": "Club de Basket-Ball", "count": 1},
+      {"value": "Centre Culturel", "count": 1},
+      {
+        "value": "Altnet est la partie visible d’un projet de pôle culturel qui se dessine dans le premier arrondissement de Lyon, autour des notions d’alternative sociale, de réappropriation technologique, d’éducation populaire, de recherche et d’innovation sociale.",
+        "count": 1
+      },
+      {"value": "Centre de Loisirs", "count": 1},
+      {
+        "value": "Association de coopération culturelle franco-maghrébine",
+        "count": 1
+      },
+      {"value": "Atelier associatif de bricolage", "count": 1},
+      {"value": "Centre Social Autogéré", "count": 1},
+      {"value": "Union de quartier Berriat Saint-Bruno Europole", "count": 1},
+      {
+        "value": "Mise à disposition de salles de réunion et de conférence par la Mairie de Chabeuil",
+        "count": 1
+      },
+      {"value": "M.J.C. de Saint-Héand", "count": 1},
+      {
+        "value": "MJC (Maison de la Jeunesse et de la Culture), salle de spectacles",
+        "count": 1
+      },
+      {"value": "Salle des fêtes", "count": 1},
+      {"value": "Salle de Réception", "count": 1},
+      {"value": "Salle paroissiale", "count": 1},
+      {
+        "value": "La salle Auguste Mudry est une salle qui peut convenir pour une réunion ou pour salle de spectacle",
+        "count": 1
+      }
+    ],
+    "count": 18
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "concrete", "count": 13},
+      {"value": "asphalt", "count": 3},
+      {"value": "sand", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "info.clar.basket@gmail.com", "count": 1},
+      {"value": "infos@lemandragore.fr", "count": 1},
+      {"value": "contact@saudadedobrasil.fr", "count": 1},
+      {"value": "association.avie@gmail.com", "count": 1},
+      {"value": "labaf@gresille.org", "count": 1},
+      {"value": "mdq-zodiac@leolagrange.org", "count": 1},
+      {"value": "cyberbase@mjcbron.fr", "count": 1},
+      {"value": "lescarres@lescarres-asso.com", "count": 1},
+      {"value": "vieassociative@mairie-saint-priest.fr", "count": 1},
+      {"value": "mjcetoile@free.fr", "count": 1},
+      {"value": "ddsva@mairie-vaulxenvelin.fr", "count": 1},
+      {"value": "verger.essenciel@gmail.com", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "sports_centre", "count": 5},
+      {"value": "pitch", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Portugais de Saint-Maurice-de-Beynost", "count": 1},
+      {"value": "Salle au 1er étage", "count": 1},
+      {"value": "n°14 de la rue des Ecoles", "count": 1},
+      {"value": "salle des fêtes", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "terminal", "count": 1},
+      {"value": "service", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "community_center n'est pas le bon tag étant donné que la salle est privée mais je n'ai pas trouvé un tag qui conviendrait mieux",
+        "count": 1
+      },
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "Bâtiment récent. Forme exacte du bâti à corriger dès qu'il apparaitra au cadastre.",
+        "count": 1
+      },
+      {"value": "Name (salle des fêtes?)", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q42948237", "count": 1},
+      {"value": "Q28132307", "count": 1},
+      {"value": "Q55021363", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "gallery", "count": 1},
+      {"value": "attraction", "count": 1},
+      {"value": "information", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "office", "tags": [{"value": "association", "count": 3}], "count": 3},
+  {"key": "area", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2004-05-15", "count": 1},
+      {"value": "2006", "count": 1},
+      {"value": "1973", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.leprogres.fr/loire-42/2018/02/10/saint-etienne-un-atelier-de-bricolage-dans-la-rue-de-la-ville",
+        "count": 1
+      },
+      {"value": "https://www.communecter.org/#saintrochSeveille", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Château de Déomas", "count": 1},
+      {"value": "fr:Gare d'Aubenas", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "smoking",
+    "tags": [{"value": "no", "count": 1}, {"value": "outside", "count": 1}],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "roof:levels",
+    "tags": [{"value": "0", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "grass", "count": 1},
+      {"value": "allotments", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "community_centre",
+    "tags": [
+      {"value": "environment_centre", "count": 1},
+      {"value": "community_hall", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {
+    "key": "entrance",
+    "tags": [{"value": "yes", "count": 1}, {"value": "main", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "Cantine de l'école", "count": 1},
+      {
+        "value": "batiment ajouté de mémoire, à modifier lorsque l'imagerie sera dispo",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 78 80 44 36", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "stop_position", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "60", "count": 1}], "count": 1},
+  {"key": "disused:shop", "tags": [{"value": "none", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "manor", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "carpenter", "count": 1}], "count": 1},
+  {
+    "key": "social_facility",
+    "tags": [{"value": "outreach", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic:railway",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "public", "count": 1}],
+    "count": 1
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "club", "tags": [{"value": "sport", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Gare_Divonne-les-Bains_01.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "746", "count": 1}], "count": 1},
+  {
+    "key": "social_facility:for",
+    "tags": [{"value": "child;unemployed", "count": 1}],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "art", "count": 1}], "count": 1},
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "+33 6 22346001", "count": 1}],
+    "count": 1
+  }
+]

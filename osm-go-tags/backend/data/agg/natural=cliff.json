@@ -1,0 +1,357 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "cliff", "count": 5438}],
+    "count": 5438
+  },
+  {"key": "sport", "tags": [{"value": "climbing", "count": 61}], "count": 61},
+  {"key": "area", "tags": [{"value": "yes", "count": 33}], "count": 33},
+  {
+    "key": "boundary",
+    "tags": [
+      {"value": "administrative", "count": 17},
+      {"value": "protected_area", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "la position de la falaise est supposée être celle de la frontière de commune",
+        "count": 6
+      },
+      {
+        "value": "mappé la plus grande falaise. au niv du sommet de la Dent, il y a un promontoire qui décale le début de la falaise.",
+        "count": 3
+      },
+      {
+        "value": "Site école d'escalade, plusieurs secteurs sont disponible, la plupart des relais sont équipés et chaînés. Les cotations vont du 3 au 7",
+        "count": 2
+      },
+      {
+        "value": "la position de la falaise est supposée être celle de la frontière de commune + confirmation bing",
+        "count": 1
+      },
+      {
+        "value": "Il fauderait affiner le tracé avec des traces GPS",
+        "count": 1
+      },
+      {
+        "value": "Site d'escalade http://www.camptocamp.org/sites/102917/fr/champfromier",
+        "count": 1
+      },
+      {"value": "Site d'escalade", "count": 1},
+      {
+        "value": "Imagerie aérienne fortement décallée par rapport aux repères géodésiques et cadastre.",
+        "count": 1
+      },
+      {
+        "value": "Bing décallée du coté de la falaise. Merci de caler sur des traces gps.",
+        "count": 1
+      },
+      {
+        "value": "il semblerait bien que cette limite soit aussi celle de la falaise du bas. (note ancienne)",
+        "count": 1
+      }
+    ],
+    "count": 18
+  },
+  {
+    "key": "CLC:code",
+    "tags": [
+      {"value": "332", "count": 4},
+      {"value": "321", "count": 4},
+      {"value": "313", "count": 4},
+      {"value": "311", "count": 3},
+      {"value": "312", "count": 1},
+      {"value": "322", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-186066", "count": 3},
+      {"value": "FR-187059", "count": 3},
+      {"value": "FR-185023", "count": 3},
+      {"value": "FR-183144", "count": 1},
+      {"value": "FR-179243", "count": 1},
+      {"value": "FR-183588", "count": 1},
+      {"value": "FR-185719", "count": 1},
+      {"value": "FR-193538", "count": 1},
+      {"value": "FR-185248", "count": 1},
+      {"value": "FR-177682", "count": 1},
+      {"value": "FR-185927", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "admin_level",
+    "tags": [{"value": "8", "count": 13}, {"value": "6", "count": 4}],
+    "count": 17
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 17}], "count": 17},
+  {
+    "key": "height",
+    "tags": [
+      {"value": "40", "count": 3},
+      {"value": "20", "count": 3},
+      {"value": "50", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "90", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "150", "count": 1},
+      {"value": "200", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10f", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Tracé avec Bing, mais dans le secteur, on dirait qu'il y a entre 20 et 40m d'erreur, à afiner avec autre chose ?",
+        "count": 3
+      },
+      {
+        "value": "position approximative car difficile à repérer sur l'image satellite et le signal satellite passe mal dans les gorges",
+        "count": 2
+      },
+      {
+        "value": "le cadastre semble suivre la falaise ou la crête, mais avec un bon décallage, il faudrait chercher une autre source",
+        "count": 1
+      },
+      {"value": "approximatif", "count": 1},
+      {"value": "à vérifier que c'est bien une falaise", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "j'ai réalisé le tracé avec bing, sauf que dans le secteur, il y a un décallage, donc je tente de tracer puis décaller",
+        "count": 1
+      }
+    ],
+    "count": 10
+  },
+  {
+    "key": "climbing:sport",
+    "tags": [
+      {"value": "yes", "count": 7},
+      {"value": "58", "count": 1},
+      {"value": "11", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "climbing:rock",
+    "tags": [
+      {"value": "limestone", "count": 7},
+      {"value": "granite", "count": 1},
+      {"value": "schist", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "climbing:orientation",
+    "tags": [
+      {"value": "S", "count": 2},
+      {"value": "WSW", "count": 2},
+      {"value": "N", "count": 2},
+      {"value": "E", "count": 1},
+      {"value": "SE", "count": 1},
+      {"value": "W", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Belvédère de Lassy", "count": 1},
+      {"value": "Carrière de pierres lithographiques", "count": 1},
+      {"value": "Site d'Escalade", "count": 1},
+      {"value": "Site d'escalade de thorrenc", "count": 1},
+      {"value": "Difficulté AD+", "count": 1},
+      {"value": "Difficulté PD+", "count": 1},
+      {"value": "Site aménagé par la FFME (www.ffme.fr)", "count": 1},
+      {"value": "Sport climbing crag", "count": 1},
+      {"value": "Escalade", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.camptocamp.org/waypoints/231881/fr/rocher-du-bret",
+        "count": 2
+      },
+      {"value": "http://www.ffme.fr/site/falaise-fiche/1261.html", "count": 2},
+      {
+        "value": "http://www.camptocamp.org/sites/103306/fr/saleve-canape",
+        "count": 1
+      },
+      {"value": "http://www.ffme.fr/site/falaise-fiche/1767.html", "count": 1},
+      {
+        "value": "https://www.camptocamp.org/waypoints/102961/fr/l-ecoutoux",
+        "count": 1
+      },
+      {"value": "http://www.ffme.fr/site/falaise-fiche/2705.html", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "950", "count": 2},
+      {"value": "700", "count": 1},
+      {"value": "1850", "count": 1},
+      {"value": "690", "count": 1},
+      {"value": "1500", "count": 1},
+      {"value": "1750", "count": 1},
+      {"value": "1800", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "climbing:length:min",
+    "tags": [
+      {"value": "10", "count": 3},
+      {"value": "8", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "15", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "climbing:length:max",
+    "tags": [
+      {"value": "20", "count": 2},
+      {"value": "100", "count": 1},
+      {"value": "40", "count": 1},
+      {"value": "29", "count": 1},
+      {"value": "33", "count": 1},
+      {"value": "25", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "climbing:grade:french:max",
+    "tags": [
+      {"value": "6c", "count": 1},
+      {"value": "5c", "count": 1},
+      {"value": "8b", "count": 1},
+      {"value": "8a+", "count": 1},
+      {"value": "6c+", "count": 1},
+      {"value": "7b", "count": 1},
+      {"value": "6", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "climbing:grade:french:min",
+    "tags": [
+      {"value": "4a", "count": 2},
+      {"value": "4c", "count": 1},
+      {"value": "3b", "count": 1},
+      {"value": "6b", "count": 1},
+      {"value": "4b", "count": 1},
+      {"value": "4", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "climbing:toprope",
+    "tags": [{"value": "yes", "count": 4}, {"value": "5", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "border_type",
+    "tags": [{"value": "departement", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "viewpoint", "count": 2},
+      {"value": "attraction", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "climbing:bolted",
+    "tags": [
+      {"value": "2", "count": 2},
+      {"value": "1", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "climbing", "tags": [{"value": "sport", "count": 3}], "count": 3},
+  {"key": "oneway", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "climbing:trad", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "via_ferrata_scale",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {"key": "via_ferrata", "tags": [{"value": "cable", "count": 2}], "count": 2},
+  {
+    "key": "highway",
+    "tags": [{"value": "via_ferrata", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.camptocamp.org/sites/102295/fr/la-culaz",
+        "count": 1
+      },
+      {
+        "value": "http://www.camptocamp.org/sites/181902/fr/blocs-de-la-madeleine",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "layer", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {"key": "climbing:length", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {
+    "key": "climbing:quality",
+    "tags": [{"value": "solid", "count": 1}],
+    "count": 1
+  },
+  {"key": "cliff", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 40 63 26", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "free", "count": 1}], "count": 1},
+  {"key": "direction", "tags": [{"value": "SW", "count": 1}], "count": 1},
+  {
+    "key": "climbing:grade:french:mean",
+    "tags": [{"value": "6", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "climbing:boulder",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "mountain_pass", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q30739854", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Chateau de La Corbière", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "embankment", "count": 1}], "count": 1}
+]

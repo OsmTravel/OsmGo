@@ -1,0 +1,81 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "artifact", "count": 97}],
+    "count": 97
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 59},
+      {"value": "1", "count": 33},
+      {"value": "-1", "count": 1}
+    ],
+    "count": 93
+  },
+  {"key": "indoor", "tags": [{"value": "yes", "count": 78}], "count": 78},
+  {"key": "airplane", "tags": [{"value": "yes", "count": 63}], "count": 63},
+  {
+    "key": "artifact",
+    "tags": [
+      {"value": "potery", "count": 3},
+      {"value": "press", "count": 1},
+      {"value": "ship", "count": 1},
+      {"value": "bed", "count": 1},
+      {"value": "loom", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {"value": "Presse de conditionnement de toiles, fin 18e", "count": 1},
+      {"value": "Maquette du négrier nantais \"l'Aurore\"", "count": 1},
+      {"value": "Lit Clot", "count": 1},
+      {"value": "Métier à Tisser", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.collections.musee-bretagne.fr/ark:/83011/FLMo5201",
+        "count": 2
+      },
+      {
+        "value": "http://www.collections.musee-bretagne.fr/ark:/83011/FLMjo221397",
+        "count": 1
+      },
+      {
+        "value": "http://www.collections.musee-bretagne.fr/ark:/83011/FLMjo134372",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref:ark",
+    "tags": [
+      {"value": "/83011/FLMjo221397", "count": 1},
+      {"value": "/83011/FLMjo134372", "count": 1},
+      {"value": "/83011/FLMo5201", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "scale",
+    "tags": [{"value": "1:36", "count": 1}, {"value": "8:10", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "wood;metal", "count": 1},
+      {"value": "wood", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "reproduction", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "replication", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,186 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "employment_agency", "count": 210}],
+    "count": 210
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.appelmedical.com/", "count": 3},
+      {"value": "http://www.groupeadequat.fr/", "count": 2},
+      {"value": "http://www.tridentt.fr", "count": 1},
+      {"value": "http://www.adecco.fr/", "count": 1},
+      {"value": "https://www.familycare-services.fr/", "count": 1},
+      {
+        "value": "http://www.pole-emploi.fr/annuaire/grenoble-europole-38013",
+        "count": 1
+      },
+      {"value": "http://www.isactys.com", "count": 1},
+      {"value": "http://www.isere.fr", "count": 1},
+      {"value": "http://www.adecco.fr/Pages/default.aspx", "count": 1},
+      {"value": "http://www.manpower.fr/", "count": 1},
+      {
+        "value": "https://www.randstad.fr/agence/1387/Randstad_Lyon",
+        "count": 1
+      },
+      {
+        "value": "https://www.randstad.fr/agence/1400/Randstad_Lyon",
+        "count": 1
+      },
+      {"value": "http://www.cnarm.fr/articles/agence-lyon,8.htm", "count": 1},
+      {
+        "value": "http://www.interim74.com/index.php/interim74/cogeSelect",
+        "count": 1
+      },
+      {
+        "value": "http://www.pole-emploi.fr/annuaire/valence-victor-hugo-26015",
+        "count": 1
+      },
+      {
+        "value": "https://www.lipinterim.fr/agences/40-lip-industrie-dutrievoz",
+        "count": 1
+      },
+      {
+        "value": "https://www.sovitrat.fr/nos-agences/le-reseau/rhone-alpes/agence-interim-villeurbanne-av-dutrievoz/",
+        "count": 1
+      }
+    ],
+    "count": 20
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 37 33 13", "count": 1},
+      {"value": "+33 4 74 78 35 40", "count": 1},
+      {"value": "+33 4 74 78 33 66", "count": 1},
+      {"value": "+33 4 74 53 80 40", "count": 1},
+      {"value": "+33 4 76 95 24 87", "count": 1},
+      {"value": "3949 (candidat), 3995 (employeur)", "count": 1},
+      {"value": "Candidat : 3949 Employeur : 3995", "count": 1},
+      {"value": "+33 4 78 83 60 93", "count": 1},
+      {"value": "+33 4 57 38 43 00", "count": 1},
+      {"value": "+33 4 76 39 76 76", "count": 1},
+      {"value": "+33 4 78 92 48 24", "count": 1},
+      {"value": "+33 4 56 44 00 00", "count": 1},
+      {"value": "+33 4 72 82 07 23", "count": 1},
+      {"value": "+33 4 78 17 39 69", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Manpower", "count": 3},
+      {"value": "Pôle Emploi", "count": 2},
+      {"value": "Adéquat", "count": 1},
+      {"value": "Assadia", "count": 1},
+      {"value": "Randstat", "count": 1},
+      {"value": "Adecco", "count": 1},
+      {"value": "Adequat", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.nounouadom.com/agence/nounou-adom-saint-etienne.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.assadia.fr/agence_details.php?agence=LOIRE",
+        "count": 1
+      },
+      {
+        "value": "http://www.sovitrat.fr/le-reseau/le-reseau/rhone-alpes/agence-interim-st-etienne/",
+        "count": 1
+      },
+      {
+        "value": "http://www.welljob.fr/fr/agences?action=detail&ag_id=a5e14d3a-d816-11e2-94cc-001132163de5",
+        "count": 1
+      },
+      {
+        "value": "http://www.network-interim.com/les-agences/agence-de-travail-temporaire-de-saint-etienne.html",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "AMAD", "count": 1},
+      {"value": "Atout", "count": 1},
+      {"value": "Illico", "count": 1},
+      {"value": "Adecco", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Pôle emploi de Mâcon, Maison de l'emploi, 1000 avenue Maréchal de Lattre de Tassigny, 71000, MACON (géocodé au village)",
+        "count": 1
+      },
+      {"value": "Services à domicile", "count": 1},
+      {"value": "Précédemment: \"La Compagnie des Aspirateurs\"", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Agence de travail temporaire spécialisée dans le médical/la santé",
+        "count": 1
+      },
+      {"value": "Interim, Recrutement", "count": 1},
+      {"value": "Logistique;Transport;Commerce", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q1472539", "count": 1},
+      {"value": "Q2985513", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Manpower (entreprise)", "count": 1},
+      {
+        "value": "fr:Comité national d'accueil et d'actions pour les Réunionnais en mobilité",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 78 92 48 25", "count": 1},
+      {"value": "+33 4 78 17 39 60", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "dutrievoz@lipinterim.fr", "count": 1},
+      {"value": "agence01@sovitrat.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "is_in",
+    "tags": [{"value": "N°28, Immeuble Ecran", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

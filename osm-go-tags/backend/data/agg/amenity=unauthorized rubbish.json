@@ -1,0 +1,13 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "unauthorized rubbish", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "FR:Décharge saiuvage", "count": 1}],
+    "count": 1
+  },
+  {"key": "waste", "tags": [{"value": "plastic", "count": 1}], "count": 1}
+]

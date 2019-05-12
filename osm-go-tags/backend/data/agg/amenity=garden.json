@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "garden", "count": 10}], "count": 10},
+  {"key": "access", "tags": [{"value": "private", "count": 8}], "count": 8}
+]

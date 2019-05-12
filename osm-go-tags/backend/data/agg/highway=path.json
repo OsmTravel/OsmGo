@@ -1,0 +1,2590 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "path", "count": 55032}],
+    "count": 55032
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "ground", "count": 4985},
+      {"value": "unpaved", "count": 1724},
+      {"value": "dirt", "count": 780},
+      {"value": "gravel", "count": 745},
+      {"value": "grass", "count": 704},
+      {"value": "asphalt", "count": 700},
+      {"value": "paved", "count": 420},
+      {"value": "compacted", "count": 181},
+      {"value": "earth", "count": 153},
+      {"value": "wood", "count": 132},
+      {"value": "concrete", "count": 115},
+      {"value": "cobblestone", "count": 73},
+      {"value": "fine_gravel", "count": 55},
+      {"value": "mud", "count": 43},
+      {"value": "sand", "count": 40},
+      {"value": "pebblestone", "count": 34},
+      {"value": "paving_stones", "count": 27},
+      {"value": "snow", "count": 22},
+      {"value": "rocky", "count": 18},
+      {"value": "grass_paver", "count": 13},
+      {"value": "rock", "count": 12},
+      {"value": "terre", "count": 9},
+      {"value": "stone", "count": 9},
+      {"value": "metal", "count": 7},
+      {"value": "concrete:plates", "count": 5},
+      {"value": "ice", "count": 3},
+      {"value": "sett", "count": 3},
+      {"value": "steel", "count": 2},
+      {"value": "concrete:lanes", "count": 1},
+      {"value": "gro", "count": 1},
+      {"value": "ground,_rocks,_sheet", "count": 1},
+      {"value": "pebblestone; grass; pebblestone", "count": 1},
+      {"value": "ground; wood", "count": 1},
+      {"value": "ground‬", "count": 1},
+      {"value": "woodchips", "count": 1},
+      {"value": "grass;unpaved", "count": 1},
+      {"value": "grass;pebblestone", "count": 1},
+      {"value": "ground;dirt", "count": 1},
+      {"value": "gravel;earth", "count": 1},
+      {"value": "rocks", "count": 1},
+      {"value": "clay", "count": 1},
+      {"value": "dirt_stones_and_mud", "count": 1},
+      {"value": "bois", "count": 1},
+      {"value": "sillon", "count": 1},
+      {"value": "ground,_gravel", "count": 1},
+      {"value": "rocheux/felsig", "count": 1}
+    ],
+    "count": 11032
+  },
+  {
+    "key": "sac_scale",
+    "tags": [
+      {"value": "mountain_hiking", "count": 4492},
+      {"value": "hiking", "count": 3008},
+      {"value": "demanding_mountain_hiking", "count": 830},
+      {"value": "alpine_hiking", "count": 206},
+      {"value": "demanding_alpine_hiking", "count": 124},
+      {"value": "difficult_alpine_hiking", "count": 37},
+      {"value": "demanding_mountain_hiking;mountain_hiking", "count": 2},
+      {"value": "demanding_mountain_hiking; alpine_hiking", "count": 1},
+      {"value": "T2", "count": 1},
+      {"value": "mountain_hiking; demanding_alpine_hiking", "count": 1},
+      {"value": "light", "count": 1}
+    ],
+    "count": 8703
+  },
+  {
+    "key": "trail_visibility",
+    "tags": [
+      {"value": "good", "count": 2551},
+      {"value": "excellent", "count": 2204},
+      {"value": "intermediate", "count": 1656},
+      {"value": "bad", "count": 1101},
+      {"value": "horrible", "count": 216},
+      {"value": "no", "count": 82},
+      {"value": "excellent;good", "count": 1},
+      {"value": "horrible; bad; horrible", "count": 1},
+      {"value": "bad;excellent", "count": 1}
+    ],
+    "count": 7813
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 3750},
+      {"value": "designated", "count": 2479},
+      {"value": "no", "count": 132},
+      {"value": "permissive", "count": 68},
+      {"value": "official", "count": 43},
+      {"value": "private", "count": 23},
+      {"value": "destination", "count": 8},
+      {"value": "discouraged", "count": 2}
+    ],
+    "count": 6505
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "designated", "count": 2122},
+      {"value": "yes", "count": 1738},
+      {"value": "no", "count": 912},
+      {"value": "permissive", "count": 134},
+      {"value": "private", "count": 22},
+      {"value": "dismount", "count": 17},
+      {"value": "official", "count": 8},
+      {"value": "destination", "count": 5},
+      {"value": "unknown", "count": 1},
+      {"value": "yes (VTT)", "count": 1}
+    ],
+    "count": 4960
+  },
+  {
+    "key": "mtb:scale",
+    "tags": [
+      {"value": "1", "count": 1239},
+      {"value": "2", "count": 770},
+      {"value": "0", "count": 664},
+      {"value": "3", "count": 533},
+      {"value": "4", "count": 204},
+      {"value": "5", "count": 84},
+      {"value": "1+", "count": 50},
+      {"value": "6", "count": 46},
+      {"value": "0+", "count": 37},
+      {"value": "1-", "count": 33},
+      {"value": "2+", "count": 17},
+      {"value": "2-", "count": 14},
+      {"value": "0-", "count": 4},
+      {"value": "3-", "count": 2},
+      {"value": "1;2", "count": 2},
+      {"value": "1;3", "count": 1},
+      {"value": "2;1", "count": 1}
+    ],
+    "count": 3701
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "1", "count": 1089},
+      {"value": "0.5", "count": 667},
+      {"value": "2", "count": 456},
+      {"value": "3", "count": 146},
+      {"value": "0.3", "count": 111},
+      {"value": "1.5", "count": 76},
+      {"value": "0.2", "count": 69},
+      {"value": "0.7", "count": 57},
+      {"value": ".5", "count": 55},
+      {"value": "0.4", "count": 51},
+      {"value": "0.50", "count": 49},
+      {"value": "0.8", "count": 36},
+      {"value": "4", "count": 28},
+      {"value": "0", "count": 23},
+      {"value": "0.30", "count": 23},
+      {"value": "0.6", "count": 18},
+      {"value": "2.5", "count": 17},
+      {"value": "0.40", "count": 12},
+      {"value": "5", "count": 8},
+      {"value": "1.50", "count": 7},
+      {"value": "-1", "count": 7},
+      {"value": "0.5 m", "count": 5},
+      {"value": "1.2", "count": 4},
+      {"value": "0.70", "count": 3},
+      {"value": "1,50", "count": 3},
+      {"value": "1.9", "count": 2},
+      {"value": "0.9", "count": 2},
+      {"value": "1.00", "count": 2},
+      {"value": "0,5", "count": 2},
+      {"value": "1.3", "count": 2},
+      {"value": "6", "count": 2},
+      {"value": "2.00", "count": 1},
+      {"value": "3.5", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "2 m", "count": 1},
+      {"value": "50", "count": 1},
+      {"value": "0.80", "count": 1},
+      {"value": "moins de 1 mètre", "count": 1},
+      {"value": "3 m", "count": 1},
+      {"value": "2.50", "count": 1},
+      {"value": "0.35", "count": 1},
+      {"value": "0,50;1", "count": 1},
+      {"value": "60cm", "count": 1},
+      {"value": "80cm", "count": 1},
+      {"value": "4m", "count": 1},
+      {"value": "0.50 m", "count": 1},
+      {"value": "0.1", "count": 1},
+      {"value": "1.80", "count": 1},
+      {"value": "-2", "count": 1},
+      {"value": "1 m", "count": 1},
+      {"value": "2.3", "count": 1},
+      {"value": "1.50 m", "count": 1}
+    ],
+    "count": 3053
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "bad", "count": 546},
+      {"value": "good", "count": 236},
+      {"value": "intermediate", "count": 224},
+      {"value": "very_bad", "count": 216},
+      {"value": "very_horrible", "count": 196},
+      {"value": "horrible", "count": 190},
+      {"value": "impassable", "count": 156},
+      {"value": "excellent", "count": 94}
+    ],
+    "count": 1858
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "down", "count": 772},
+      {"value": "up", "count": 660},
+      {"value": "10%", "count": 78},
+      {"value": "15%", "count": 38},
+      {"value": "0%", "count": 36},
+      {"value": "20%", "count": 19},
+      {"value": "yes", "count": 13},
+      {"value": "-20%", "count": 13},
+      {"value": "25%", "count": 11},
+      {"value": "0", "count": 11},
+      {"value": "10°", "count": 10},
+      {"value": "20", "count": 10},
+      {"value": "16", "count": 9},
+      {"value": "-14%", "count": 7},
+      {"value": "-10%", "count": 7},
+      {"value": "10", "count": 7},
+      {"value": "-25%", "count": 6},
+      {"value": "30%", "count": 6},
+      {"value": "steep", "count": 5},
+      {"value": "-30%", "count": 5},
+      {"value": "40%", "count": 4},
+      {"value": "-20", "count": 4},
+      {"value": "12%", "count": 4},
+      {"value": "30", "count": 3},
+      {"value": "18", "count": 3},
+      {"value": "40", "count": 3},
+      {"value": "8", "count": 2},
+      {"value": "15", "count": 2},
+      {"value": "25", "count": 2},
+      {"value": "-15%", "count": 2},
+      {"value": "12", "count": 2},
+      {"value": "8%", "count": 2},
+      {"value": "-7%", "count": 2},
+      {"value": "-5%", "count": 2},
+      {"value": "-30", "count": 2},
+      {"value": "-16", "count": 2},
+      {"value": "5%", "count": 2},
+      {"value": "-10%;-25%", "count": 2},
+      {"value": "-21%", "count": 1},
+      {"value": "55%", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "28", "count": 1},
+      {"value": "24%", "count": 1},
+      {"value": "-43%", "count": 1},
+      {"value": "-15", "count": 1},
+      {"value": "15%;-15%", "count": 1},
+      {"value": "-10°", "count": 1},
+      {"value": "-16%", "count": 1},
+      {"value": "22%", "count": 1},
+      {"value": "7%", "count": 1},
+      {"value": "-8%", "count": 1},
+      {"value": "-35%", "count": 1},
+      {"value": "14%", "count": 1},
+      {"value": "26°", "count": 1}
+    ],
+    "count": 1784
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "no", "count": 1325}, {"value": "yes", "count": 439}],
+    "count": 1764
+  },
+  {
+    "key": "mtb:scale:uphill",
+    "tags": [
+      {"value": "2", "count": 311},
+      {"value": "1", "count": 256},
+      {"value": "3", "count": 250},
+      {"value": "5", "count": 242},
+      {"value": "4", "count": 231},
+      {"value": "0", "count": 199},
+      {"value": "2+", "count": 22},
+      {"value": "2-", "count": 9},
+      {"value": "3-", "count": 4},
+      {"value": "3+", "count": 3},
+      {"value": "1+", "count": 3},
+      {"value": "1;4", "count": 2},
+      {"value": "5; 1; 5", "count": 1}
+    ],
+    "count": 1533
+  },
+  {
+    "key": "bridge",
+    "tags": [
+      {"value": "yes", "count": 1494},
+      {"value": "boardwalk", "count": 4},
+      {"value": "viaduct", "count": 2},
+      {"value": "no", "count": 2},
+      {"value": "aqueduct", "count": 1},
+      {"value": "suspension", "count": 1},
+      {"value": "trestle", "count": 1}
+    ],
+    "count": 1505
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 1188},
+      {"value": "-1", "count": 152},
+      {"value": "2", "count": 20},
+      {"value": "0", "count": 7},
+      {"value": "-2", "count": 4},
+      {"value": "4", "count": 1},
+      {"value": "-3", "count": 1},
+      {"value": "5", "count": 1}
+    ],
+    "count": 1374
+  },
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "no", "count": 818},
+      {"value": "yes", "count": 453},
+      {"value": "permissive", "count": 29},
+      {"value": "private", "count": 17},
+      {"value": "designated", "count": 5},
+      {"value": "unknown", "count": 2},
+      {"value": "Non spécifié", "count": 1}
+    ],
+    "count": 1325
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 1113},
+      {"value": "yes", "count": 87},
+      {"value": "permissive", "count": 31},
+      {"value": "private", "count": 28},
+      {"value": "destination", "count": 5},
+      {"value": "agricultural", "count": 4},
+      {"value": "designated", "count": 4},
+      {"value": "forestry", "count": 3}
+    ],
+    "count": 1275
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 395},
+      {"value": "private", "count": 310},
+      {"value": "no", "count": 240},
+      {"value": "permissive", "count": 154},
+      {"value": "destination", "count": 15},
+      {"value": "students", "count": 14},
+      {"value": "designated", "count": 12},
+      {"value": "agricultural", "count": 12},
+      {"value": "customers", "count": 11},
+      {"value": "forestry", "count": 10},
+      {"value": "unknown", "count": 3},
+      {"value": "public", "count": 2},
+      {"value": "psv", "count": 1}
+    ],
+    "count": 1179
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "no", "count": 825}, {"value": "yes", "count": 213}],
+    "count": 1038
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 653},
+      {"value": "continue", "count": 36},
+      {
+        "value": "This way lacks of precision due to very poor GPS signal, please refine and remove this tag when other source become available",
+        "count": 21
+      },
+      {"value": "to be continued", "count": 9},
+      {"value": "à compléter", "count": 7},
+      {"value": "Exact routing needed", "count": 6},
+      {"value": "name", "count": 5},
+      {"value": "path continues", "count": 5},
+      {"value": "to be reviewed, to be continued", "count": 5},
+      {"value": "sections du TMB oui/non ?", "count": 4},
+      {"value": "complete me", "count": 4},
+      {"value": "A Tracer au GPS", "count": 4},
+      {"value": "continue?", "count": 3},
+      {
+        "value": "Traveled this path twice with a GPS and the margin is sometimes 25m. Please adjust the path with your own GPS.",
+        "count": 3
+      },
+      {"value": "tracé très imprécis (de mémoire)", "count": 3},
+      {"value": "Vérifier tout le chemin", "count": 3},
+      {"value": "mtb:scale assumed from 'black' name", "count": 2},
+      {"value": "GPS log interrupted :-(", "count": 2},
+      {"value": "a verifier, suivi dans la neige", "count": 2},
+      {"value": "à vérifier", "count": 2},
+      {
+        "value": "Provient du cadastre - existence sur le terrain douteuse",
+        "count": 2
+      },
+      {"value": "Chemin vers ND du pré à compléter", "count": 2},
+      {"value": "Improve smoothness", "count": 2},
+      {
+        "value": "La seule trace GPS est imprécise, et Bing n'aide pas dans les pierriers.",
+        "count": 2
+      },
+      {
+        "value": "à vérifier, j'ai juste parcouru en hiver, avec neige",
+        "count": 2
+      },
+      {
+        "value": "gros gros doute sur la qualité de la trace, le pas de la mort suit le pied de la fallaise, quelque chose ne correspond pas",
+        "count": 2
+      },
+      {
+        "value": "vérifier continuité, sur l'ortho IGN la trace se perd",
+        "count": 2
+      },
+      {"value": "partie haute à vérifier, chemin sous la neige", "count": 2},
+      {
+        "value": "tracé très approximatif sur souvenirs (pas de GPS)",
+        "count": 2
+      },
+      {"value": "à retracer quand la forêt aura été mise en état", "count": 2},
+      {"value": "stub", "count": 2},
+      {"value": "t'existe vraiment toi ?", "count": 1},
+      {
+        "value": "le tracé de la \"track\" est supposée du passage des skieurs de randonnées mais à vérifier",
+        "count": 1
+      },
+      {"value": "TODO: due to signal loss track was uncomplete", "count": 1},
+      {
+        "value": "il doit y avoir un problème, le chemin que j'ai arpenté peut vaguement être classé en track, mais c'est des cailloux",
+        "count": 1
+      },
+      {
+        "value": "Y'a vraiment un chemin là ? je veux dire, un truc qui se voit autre que l'alpage ? à la montée, je n'ai pas vu et on ne voit rien sur les photos sat. Variante dré dans'l pentu ?",
+        "count": 1
+      },
+      {"value": "Sentier ou piste", "count": 1},
+      {
+        "value": "parcouru en raquette, pas sûr qu'il y est un chemin, ne pas héstez à me supprimer",
+        "count": 1
+      },
+      {
+        "value": "impossible, même avec deux gps d'avoir une bonne trace ici, une gps très bon sous arbre serait le bienvenu pour le pas de la mort",
+        "count": 1
+      },
+      {"value": "le chemin continue", "count": 1},
+      {
+        "value": "à re-vérfier depuis le paquet de traveaux dans le coin",
+        "count": 1
+      },
+      {
+        "value": "ce morceau est à revérifier, le chemin n'étant pas visible où nous étions",
+        "count": 1
+      },
+      {
+        "value": "please validate track as in my opinion, this way doesn't exist",
+        "count": 1
+      },
+      {"value": "à vérifier sur le terrain", "count": 1},
+      {"value": "à vérifier, trace peu visible sur bing", "count": 1},
+      {"value": "fixme", "count": 1},
+      {"value": "this could be part of Roc'n'Bob (toboggan run)", "count": 1},
+      {"value": "incomplete", "count": 1},
+      {"value": "vérifier type voie", "count": 1},
+      {
+        "value": "tracée avec bing, une vérif sur le terrain est souhaitée",
+        "count": 1
+      },
+      {
+        "value": "supposé par bing sous la forêt mais incertain, à reprendre",
+        "count": 1
+      },
+      {"value": "to be completed", "count": 1},
+      {"value": "accuracy", "count": 1},
+      {"value": "approximativ", "count": 1},
+      {"value": "chemin non trouvé, on a juste traversé le champs", "count": 1},
+      {
+        "value": "j'ai juste remarqué l'entrée du chemin depuis le champs",
+        "count": 1
+      },
+      {
+        "value": "je n'ai pas du tout vu ce chemin de retour, il existe vraiment ? ou c'est du \"dré dans l'pentu\" ?",
+        "count": 1
+      },
+      {
+        "value": "à refaire, je ne suis pas passé par ce bout (cf trace)",
+        "count": 1
+      },
+      {"value": "need verified", "count": 1},
+      {"value": "resurveyed", "count": 1},
+      {"value": "très mauvaise qualité", "count": 1},
+      {
+        "value": "à vérifier sur le terrain pour confirmer les vues sat",
+        "count": 1
+      },
+      {
+        "value": "ce \"trou de l'agneau\" est un passage naturel, dans une faille de rocher, presque 20m en dessous du sommet, autant dire que le signal gps la dedans c'est mauvais. Donc, le tracé, issue de plusieurs trace fait ce qu'il peut...",
+        "count": 1
+      },
+      {
+        "value": "qualité en core pire, vraiment trop d'arbres pour une bonne reception",
+        "count": 1
+      },
+      {"value": "reception très mauvaise en forêt, à amélirer", "count": 1},
+      {
+        "value": "cours d'eau d'après le cadastre ; peu crédible ; vérifier",
+        "count": 1
+      },
+      {
+        "value": "Semble très imprécis en forêt, à améliorer avec nouvelle trace gps",
+        "count": 1
+      },
+      {"value": "à continuer direction RF du Creux du loup", "count": 1},
+      {
+        "value": "j'ai un doute sur la partie où ce chemin longue la route",
+        "count": 1
+      },
+      {
+        "value": "Au sud, il y a plusieur épingles à cheveux mais je doute avoir le bon compte !",
+        "count": 1
+      },
+      {"value": "préciser tracé par gps", "count": 1},
+      {"value": "ça ne ressemble pas à du path depuis bing...", "count": 1},
+      {"value": "resurvey exact position", "count": 1},
+      {"value": "existence douteuse, vérifier sur le terrain", "count": 1},
+      {"value": "trace à vérifier", "count": 1},
+      {"value": "verifier sentier avec GPS", "count": 1},
+      {"value": "vérifier la position de la passerelle", "count": 1},
+      {"value": "chemin à vérifier aux abord du lac du haut", "count": 1},
+      {"value": "complet me", "count": 1},
+      {"value": "à vérifier, tarcé uniquement avec bing", "count": 1},
+      {
+        "value": "à vérifier car sur bing on ne voit pas de trackk ici, plutôt un path non ?",
+        "count": 1
+      },
+      {"value": "à refaire l'arrivée à arbarétan", "count": 1},
+      {"value": "pont ou pas ?", "count": 1},
+      {
+        "value": "to continue (-> La Bâtie, les Guillots, le Combet)",
+        "count": 1
+      },
+      {
+        "value": "perdu la trace à cause de la neige et bing n'aide pas",
+        "count": 1
+      },
+      {
+        "value": "Ce sentier n'est pas balisé et se \"perd\" dans la forêt voir historique",
+        "count": 1
+      },
+      {"value": "de souvenir, non parcouru, mais quasi-sur", "count": 1},
+      {"value": "ce chemin mériterait vraiment une autre trace", "count": 1},
+      {"value": "Coupes de bois qui rend le parcours difficile", "count": 1},
+      {
+        "value": "à vérifier car cul de sac ? et non visible sur bing",
+        "count": 1
+      },
+      {"value": "à compléter aux extrémités", "count": 1},
+      {"value": "à confirmer le tracé en été", "count": 1},
+      {"value": "this path continues. shortcut to trou du glas ?", "count": 1},
+      {
+        "value": "ne pas hésitez à changer la classification, j'ai fais sous la neige, les repères sont faussés",
+        "count": 1
+      },
+      {
+        "value": "une autre trace complémentaire permetrait plus de précision dans les parties pentues qui traverse les torrents",
+        "count": 1
+      },
+      {
+        "value": "ce \"chemin\" est un classique de ski de rando, toutefois, existe-t-il en tant que chemin d'été ? pas sûr...",
+        "count": 1
+      },
+      {"value": "forme approximative, à améliorer avec un gps", "count": 1},
+      {
+        "value": "tracé sous les arbres et en lisière approximatif (de mémoire)",
+        "count": 1
+      },
+      {
+        "value": "tracé à confirmer, car fait avec bing, + mes souvenirs, donc ça devrait aller, mais une trace gps pour confirmer serait bien",
+        "count": 1
+      },
+      {"value": "reprise du tracé très imprécis", "count": 1},
+      {"value": "une trace de plus serait bien pour améliorer", "count": 1},
+      {
+        "value": "en forêt, la précision de ce chemin à l'air vraiment médiocre, mais avec bing on ne voit pas tout",
+        "count": 1
+      },
+      {"value": "très mauvaise qualité sur certaines portions", "count": 1},
+      {
+        "value": "j'ai une photo qui permet de voir le départ de ce sentier que je n'ai pas emprunté",
+        "count": 1
+      },
+      {
+        "value": "non parcouru, juste pour indiquer que ça continue par là, vers le pas de la porte",
+        "count": 1
+      },
+      {
+        "value": "À vérifier sur place, l'imagerie strava indique une boucle sur le sud.",
+        "count": 1
+      },
+      {"value": "Draw it with a GPS", "count": 1},
+      {
+        "value": "a re-vérifier, surtout proche route, il y avait de la neige, dur à distinguer",
+        "count": 1
+      },
+      {"value": "needs better accuracy", "count": 1},
+      {"value": "A continuer", "count": 1},
+      {
+        "value": "tracé approximatif, j'ai juste vu des gens descendre",
+        "count": 1
+      },
+      {
+        "value": "Near the parking for the forest I am sure this is a path, and pretty sure it doesn't join the roundabout like that",
+        "count": 1
+      },
+      {"value": "tracé uniquement avec bing, à vérifier donc", "count": 1},
+      {"value": "inexistant; not found", "count": 1},
+      {"value": "continue; resurvey", "count": 1},
+      {
+        "value": "tracé à détailler sur place, seuls les points de départ et d'arrivée sont corrects",
+        "count": 1
+      },
+      {"value": "che significa \"sentiero T\" ??", "count": 1},
+      {"value": "Tracé incertain", "count": 1},
+      {
+        "value": "Tronçon a repérer par temps sec pour trouver la trace principale.",
+        "count": 1
+      },
+      {"value": "trace", "count": 1},
+      {
+        "value": "À requalifier suite à modification du way initial",
+        "count": 1
+      },
+      {"value": "existe?", "count": 1},
+      {"value": "type voie à vérifier", "count": 1},
+      {"value": "vérifier si ce chemin existe", "count": 1},
+      {"value": "tracktype", "count": 1},
+      {"value": "à continuer ?", "count": 1},
+      {"value": "à continuer...", "count": 1},
+      {
+        "value": "faire relevé GPS pour vérifier ce qui existe encore",
+        "count": 1
+      },
+      {"value": "Vérifier que ce chemin existe réellement.", "count": 1},
+      {"value": "contnue", "count": 1},
+      {"value": "À re-repérer, gps peu précis", "count": 1},
+      {
+        "value": "approximatif car déscendu en ski, mais il existe bien un chemin (cf panneaux) à vérifier",
+        "count": 1
+      },
+      {"value": "vérifier continuité sur le terrain", "count": 1},
+      {"value": "area not visible in Bing", "count": 1},
+      {"value": "Tracé approximatif", "count": 1},
+      {
+        "value": "Départ du sentier uniquement, destination à préciser",
+        "count": 1
+      },
+      {"value": "Départ du sentier uniquement, tracé à préciser", "count": 1},
+      {"value": "to be continue", "count": 1},
+      {
+        "value": "to be reviewed, not sure on the part which join the road",
+        "count": 1
+      },
+      {
+        "value": "Chemin non mappé sur le terrain, uniquement l'entrée et la sortie mappées",
+        "count": 1
+      },
+      {"value": "à controler, car parcouru avec plein de neige", "count": 1},
+      {"value": "à affiner", "count": 1},
+      {"value": "to be continued ...", "count": 1},
+      {
+        "value": "à vérifier car de souvenir ça passe, mais je ne suis plus certain",
+        "count": 1
+      },
+      {"value": "Esiste?", "count": 1},
+      {
+        "value": "piste cyclable + voie piéton à continuer en direction du bourg",
+        "count": 1
+      },
+      {
+        "value": "ça serait pas un chemin de bestiaux ça ? ça ne va nulle part et ça ne vient de nulle part... peu d'utilité",
+        "count": 1
+      },
+      {"value": "à préciser au gps", "count": 1},
+      {"value": "not checked where this goes", "count": 1},
+      {
+        "value": "ce chemin était noté track avant, alors certes j'ai oublié les photos, mais je suis quasi certain qu'il est trop court pour laisser passer un 4x4 alors que l'autre chemin lui, noté path et plus large. Mais une 3ème source ne serait pas de refus",
+        "count": 1
+      },
+      {
+        "value": "track pour le cadastre, path sur le terrain ? à vérifier",
+        "count": 1
+      },
+      {"value": "resurvey + continue", "count": 1},
+      {"value": "finish me", "count": 1},
+      {"value": "position estimated", "count": 1},
+      {"value": "Signalétique SENTIER et non Chemin", "count": 1},
+      {
+        "value": "Vérifier si l'accès est toujour possible après la réhabilitation du site",
+        "count": 1
+      },
+      {"value": "Exact route needed", "count": 1},
+      {"value": "vérifier (pas recroisé)", "count": 1},
+      {"value": "supposé, longeur 60m. Supposed, length is 60m.", "count": 1},
+      {
+        "value": "ce chemin n'est pas visible sur les photos sat, et la dernière fois, 2013 que je suis passé, je n'ais rien vu de tel. Quelqu'un peu confirmer ?",
+        "count": 1
+      },
+      {
+        "value": "Le code fantoir ne fonctionne pas sur le parc (signalitique existe)",
+        "count": 1
+      },
+      {"value": "survey", "count": 1},
+      {"value": "chemin introuvable en arrivant par l’ouest.", "count": 1},
+      {
+        "value": "classification highway à vérifier - repérage sous la neige",
+        "count": 1
+      },
+      {"value": "tracé approximatif", "count": 1},
+      {"value": "Vérifier si toujours praticable", "count": 1},
+      {"value": "trace à completer et corriger car trop de neige", "count": 1},
+      {"value": "tracé à préciser", "count": 1},
+      {"value": "verify: I did not see this during local survey", "count": 1},
+      {"value": "vérifier gps", "count": 1},
+      {
+        "value": "connection to way not correct.\nhttps://www.openstreetmap.org/way/69601197",
+        "count": 1
+      },
+      {
+        "value": "il parait qu'en 2018, le GR a été détourné et passe maintenant devant la fontaine plus au N-E",
+        "count": 1
+      },
+      {
+        "value": "This part of the track could be 30 meters north. To verify",
+        "count": 1
+      },
+      {"value": "chemin present sur le cadastre mais à confirmer", "count": 1},
+      {"value": "vérifier l'ouverture à la circulation", "count": 1}
+    ],
+    "count": 945
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "no", "count": 655},
+      {"value": "yes", "count": 66},
+      {"value": "designated", "count": 3},
+      {"value": "limited", "count": 3},
+      {"value": "discouraged", "count": 1}
+    ],
+    "count": 728
+  },
+  {
+    "key": "stm",
+    "tags": [
+      {"value": "50down", "count": 329},
+      {"value": "50up", "count": 155},
+      {"value": "25down", "count": 143},
+      {"value": "25up", "count": 37},
+      {"value": "no", "count": 1}
+    ],
+    "count": 665
+  },
+  {
+    "key": "oneway",
+    "tags": [
+      {"value": "yes", "count": 355},
+      {"value": "no", "count": 237},
+      {"value": "-1", "count": 1},
+      {"value": "bicycle", "count": 1}
+    ],
+    "count": 594
+  },
+  {
+    "key": "tracktype",
+    "tags": [
+      {"value": "grade3", "count": 140},
+      {"value": "grade2", "count": 84},
+      {"value": "grade4", "count": 76},
+      {"value": "grade5", "count": 69},
+      {"value": "grade1", "count": 47}
+    ],
+    "count": 416
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Voie verte", "count": 19},
+      {"value": "quai bas: layer = -1", "count": 15},
+      {"value": "Chemin Rural", "count": 11},
+      {"value": "fixme", "count": 8},
+      {"value": "tracé selon cadastre à vérifier", "count": 8},
+      {"value": "exploit forest", "count": 7},
+      {"value": "Accès interdit par des panneaux et grilles", "count": 6},
+      {"value": "ancien tracé voie ferrée", "count": 6},
+      {"value": "to be continued", "count": 6},
+      {"value": "Voie Verte", "count": 5},
+      {"value": "vérifier continuité", "count": 5},
+      {"value": "double sens", "count": 4},
+      {"value": "portions manquantes", "count": 4},
+      {"value": "chemin rural", "count": 4},
+      {"value": "FIXME", "count": 4},
+      {"value": "Balisage traits blanc et jaune", "count": 4},
+      {"value": "passage sur trottoir", "count": 4},
+      {
+        "value": "Trace imprécise, a confirmer avec une autre trace GPS",
+        "count": 4
+      },
+      {
+        "value": "FIXME : ce chemin du cadastre existe-t-il toujours ?",
+        "count": 3
+      },
+      {"value": "accès 35 rue de la Libération", "count": 3},
+      {"value": "Accès à la Via Ferrata du Jalouvre", "count": 3},
+      {"value": "mauvaise précision", "count": 3},
+      {"value": "A continuer avec Trace GPS", "count": 3},
+      {"value": "Balisage: VTT FFC n°1, Randonée Blanc-Jaune", "count": 3},
+      {"value": "Balisage Randonée Blanc-Jaune, VTT n°1 et n°6", "count": 3},
+      {"value": "Chemein de la Serraz à Plan Villars", "count": 3},
+      {
+        "value": "ce chemin marque la frontière avec la réserve naturelle des hauts de chartreuse, il est donc dans la relation correspondant - en bordure de ce chemin, son noté des marques régulières indiquant la réserve naturelle",
+        "count": 3
+      },
+      {
+        "value": "This path was tracked under heavy winter conditions, so the REAL path might go somewhere else",
+        "count": 3
+      },
+      {"value": "todo: maybe track + refine", "count": 3},
+      {"value": "A reconnaitre le type", "count": 2},
+      {
+        "value": "trace GPS peu précise sous les arbres... A ajuster",
+        "count": 2
+      },
+      {"value": "Route Nouveau", "count": 2},
+      {"value": "knowledge 2014-12", "count": 2},
+      {
+        "value": "ce n'est pas une blague, c'est son nom, mais son tracé serait vraiment à re-re-vérifier",
+        "count": 2
+      },
+      {"value": "bing map décallée. Voir traces gps", "count": 2},
+      {
+        "value": "Chemin public cadastré, mais cloture à deux endroits",
+        "count": 2
+      },
+      {
+        "value": "itinéraire raquettes, a priori existe aussi en été, à confirmer",
+        "count": 2
+      },
+      {"value": "Winter snow shoe trail", "count": 2},
+      {"value": "le GR passe désormais par là", "count": 2},
+      {"value": "track on the ridge, taken in winter", "count": 2},
+      {"value": "Très exposé, dangereux", "count": 2},
+      {"value": "Besoin d'une trace GPS pour continuer le tracé", "count": 2},
+      {
+        "value": "l'imagerie Bing est très décallée. Merci de caller sur des traces gps et pas sur l'imagerie.",
+        "count": 2
+      },
+      {
+        "value": "bande cyclable sur trottoir partagée avec les piétons",
+        "count": 2
+      },
+      {"value": "Tunnel de carrière", "count": 2},
+      {"value": "Tracé du KV du Sénépi", "count": 2},
+      {
+        "value": "Accès à la combe du Four. Le sentier s'efface doucement. À parcourir encore pour tenter de retrouver le sentier. Combe paumatoire en sud, énormément de déchets de bucheronnage. Balisage blanc, resemblant plus à de la délimitation forestière",
+        "count": 2
+      },
+      {"value": "railway converted into a pedestrian track", "count": 2},
+      {
+        "value": "Départ depuis la route de Limargue impossible à trouver (2018)",
+        "count": 1
+      },
+      {"value": "The path visibility is poor", "count": 1},
+      {"value": "ancien track forestier", "count": 1},
+      {"value": "le nombre de virage a été compté et correspond", "count": 1},
+      {
+        "value": "tags supposés d'après les autres que son auteur a voulu mettre",
+        "count": 1
+      },
+      {"value": "track en train de se transformer en footway", "count": 1},
+      {
+        "value": "le nombre de virage n'est pas farfelu, je l'ai ait compté (sauf 1-2 en haut)",
+        "count": 1
+      },
+      {
+        "value": "je confirme qu'on ne peut pas passer en voiture, deux gros blocs de rocher bloquent l'entrée nord",
+        "count": 1
+      },
+      {"value": "ma trace suit le chemin à 10m au dessus", "count": 1},
+      {"value": "pont très très basique (un poteau renversé)", "count": 1},
+      {
+        "value": "Sentier Aproximatif sur certaine portion, prevoir une trace GPS à l'occasion",
+        "count": 1
+      },
+      {"value": "Ancien Chemin d'exploitation sans issue", "count": 1},
+      {"value": "Partie incertaine", "count": 1},
+      {"value": "en bas, j'ai compté les virages !", "count": 1},
+      {
+        "value": "le chemin suit le crête quasiment tout le temps, la limite cadastre devrait être collée",
+        "count": 1
+      },
+      {"value": "nombreux obstacles arbres couchés", "count": 1},
+      {"value": "impraticable", "count": 1},
+      {"value": "small shortcut in the field", "count": 1},
+      {"value": "FIXME: mapped under snow - may need corrections", "count": 1},
+      {
+        "value": "L'imagerie BING est décallé d'une 20aine de metres, le tracé est bon",
+        "count": 1
+      },
+      {"value": "unofficial path", "count": 1},
+      {"value": "nombre de virages au début comptés !", "count": 1},
+      {
+        "value": "Nothing here according to aerial photo, to be confirmed IRL",
+        "count": 1
+      },
+      {
+        "value": "le nombre de virages ne sont pas des blagues, je les aient notés un à un (certes, leur position en forêt reste sans doute approximative)",
+        "count": 1
+      },
+      {"value": "FIXME a verifier", "count": 1},
+      {
+        "value": "itinéraire raquette nommé \"les crêtes\", rien n'est visible au sol en été, mais bien utile pour couper avec panneau raquette qui l'indique",
+        "count": 1
+      },
+      {
+        "value": "ce chemin est indiqué sur les cartes IGN mais il est très mal entretenu, à flanc, glissant et impossible ou presque à trouver dans la forêt",
+        "count": 1
+      },
+      {
+        "value": "GPS reception not very accurate on the day of survey. trace might need tweaking",
+        "count": 1
+      },
+      {"value": "à completer vers le sud", "count": 1},
+      {"value": "à completer vers l'ouest", "count": 1},
+      {"value": "marquage blanc", "count": 1},
+      {
+        "value": "attention, bing est mauvais vers les lances de malissard, décallage de ~30m",
+        "count": 1
+      },
+      {"value": "chemin pas clair à voir !", "count": 1},
+      {"value": "Sur base d'une trace GPS peu précise", "count": 1},
+      {
+        "value": "Ropes, crampons and care required! Snow steps in Winter",
+        "count": 1
+      },
+      {"value": "marquage jaune", "count": 1},
+      {"value": "Ballade à pied l'hiver", "count": 1},
+      {"value": "Not permitted in winter or high-wind", "count": 1},
+      {"value": "non parcouru (racourcis ?)", "count": 1},
+      {"value": "Pont en bois", "count": 1},
+      {"value": "accès barré (au 14 juin 2013)", "count": 1},
+      {"value": "FIXME- trace en sous-bois à vérifier", "count": 1},
+      {"value": "sentier vers Col de l'Aupet", "count": 1},
+      {
+        "value": "chemin très peu marqué sur la fin, arbres en travers",
+        "count": 1
+      },
+      {"value": "sometimes difficult to find", "count": 1},
+      {
+        "value": "L'imagerie bing est en désaccord de 50m avec ma trace et les photos semble être callée étrangement à cet endroit, je choisi de croire en ma trace",
+        "count": 1
+      },
+      {"value": "recopie de limie cadastrale", "count": 1},
+      {"value": "mauvaise qualité de trace gps source", "count": 1},
+      {
+        "value": "Accuracy very limited due to GPS in cayon, traced based also on Bing",
+        "count": 1
+      },
+      {
+        "value": "Cette portion de route a été abandonnée et bloquée à la circulation depuis le rond-point.",
+        "count": 1
+      },
+      {
+        "value": "per favore controllare con gps e foto PCN e suddividere la way in tratte di tag ben definite, non tre valori di ta sula stessa traccia (non si capisce niente)",
+        "count": 1
+      },
+      {"value": "chemin non tracé mais accessible à pied de facto", "count": 1},
+      {"value": "FIXME Piste ? Sentier ?", "count": 1},
+      {
+        "value": "ancienne psite forestière, visiblement interdite d'accès (le sentier passe en contrebas, loupé lors de la rando)",
+        "count": 1
+      },
+      {"value": "Limite onf", "count": 1},
+      {"value": "sentier non praticable en vélo trop de buissons", "count": 1},
+      {"value": "Fix_Me", "count": 1},
+      {
+        "value": "ein neuer Weg der in Papierkarten nur selten enthalten ist aber einen schönen Aufstieg ermöglicht.",
+        "count": 1
+      },
+      {"value": "Trace à vérifier", "count": 1},
+      {"value": "chemin en forêt, gps peut être imparfait", "count": 1},
+      {"value": "FIXME A préciser et completer", "count": 1},
+      {"value": "out-of-order", "count": 1},
+      {
+        "value": "chemin privé avec divers panneaux interdits + aux risques et périls des usagers",
+        "count": 1
+      },
+      {"value": "Une partie du pont manquait en août 2013.", "count": 1},
+      {"value": "Liaison Balme à Colon - passage de Tencovaz", "count": 1},
+      {"value": "to check IRL", "count": 1},
+      {"value": "Accrobatique, ne pas avoir le vertige", "count": 1},
+      {"value": "balisage peinture jaune et cairns", "count": 1},
+      {
+        "value": "Pierrier sans sentier tracé, mais pas de difficulté technique particulière",
+        "count": 1
+      },
+      {
+        "value": "signalisation incohérente (interdite aux 2 roues d'un côté/piste cyclable de l'autre)",
+        "count": 1
+      },
+      {"value": "Unmaintained trail. Barely passable", "count": 1},
+      {"value": "Exposé", "count": 1},
+      {"value": "accès interdit, danger d'éboulement", "count": 1},
+      {
+        "value": "A continuer avec Trace GPS, visibilité en sous bois correct, presence de cairn sur le chemin",
+        "count": 1
+      },
+      {
+        "value": "segregated=yes car marqué pictogramme \"cycle\" côté est...",
+        "count": 1
+      },
+      {"value": "maybe a track rather than a path?", "count": 1},
+      {
+        "value": "Le tracé est approximatif, nécessiterait un relevé GPS !",
+        "count": 1
+      },
+      {
+        "value": "nombre de virages dans la cheminée approximatif, mais bien 10 voire plus",
+        "count": 1
+      },
+      {
+        "value": "Passage équipé avec échelles, cordes, barres, marches, etc.",
+        "count": 1
+      },
+      {
+        "value": "chemin sur pilotis permettant d'observer la tourbière environnante",
+        "count": 1
+      },
+      {
+        "value": "Coté pente montante, des signes réguliers indique \"réserve naturelle\" sur cette portion, ce bout de chemin sert donc de limite",
+        "count": 1
+      },
+      {"value": "Trace GPS", "count": 1},
+      {"value": "Municipal park, closed at night", "count": 1},
+      {
+        "value": "Vérifier si toujours existant : Aire de jeu et Espace canin sont totalement juxtaposés côté rue des 2 amants...",
+        "count": 1
+      },
+      {"value": "retour école d'escalade après l'Arête à Jojo", "count": 1},
+      {"value": "sans interet en vtt trop de pierre", "count": 1},
+      {"value": "Balisage Randonée Blanc-Jaune, VTT n°2", "count": 1},
+      {
+        "value": "Non visible sur le terrain (local survey 2015-08-03)",
+        "count": 1
+      },
+      {"value": "terre herbe en devers", "count": 1},
+      {
+        "value": "si si, j'ai compté les virages sur cette portion (si je ne me suis pas trompé)",
+        "count": 1
+      },
+      {
+        "value": "accès interdit, peu respecté, pour cause d'éboulement",
+        "count": 1
+      },
+      {"value": "Currently (Jan 2016) closed for repair", "count": 1},
+      {"value": "En prévision ViaRhôna", "count": 1},
+      {"value": "chemin raquette", "count": 1},
+      {
+        "value": "Passage dans une petite prairie, où le chemin n'est pas marqué.",
+        "count": 1
+      },
+      {"value": "Balisage Randonée Blanc-Jaune", "count": 1},
+      {"value": "Tracé à préciser", "count": 1},
+      {"value": "voie verte", "count": 1},
+      {"value": "accès lotissement", "count": 1},
+      {"value": "inexistant; not found", "count": 1},
+      {"value": "épingles T4 en VTT", "count": 1},
+      {
+        "value": "Attention, l'eau a fortement creusé et c'est devenu un fossé.",
+        "count": 1
+      },
+      {
+        "value": "tracé approximatif sentier jusqu'au col de Pennes",
+        "count": 1
+      },
+      {
+        "value": "continuité aléatoire, chemin quasi abandonné avec des dévers lors du franchissement de la ravine",
+        "count": 1
+      },
+      {
+        "value": "bizarrement en double sens - panneau piste cyclable aux deux bouts",
+        "count": 1
+      },
+      {"value": "le chemin continue, vérifier jusqu'où", "count": 1},
+      {"value": "sehr starkverwachsen, presque impassable", "count": 1},
+      {"value": "chemin suivi en hiver", "count": 1},
+      {
+        "value": "Chemin déplacé un peu plus bas, le passage est trop dangereux",
+        "count": 1
+      },
+      {
+        "value": "diverticule pour éviter éboulement sur sentier (survey 2015)",
+        "count": 1
+      },
+      {"value": "public d'après le cadastre...", "count": 1},
+      {
+        "value": "continuité aléatoire, chemin quasi abandonné avec des dévers lors du franchissement de la ravine, 3 arbres couchés  sur le sentier gênent la progression dans le premier franchissement de la ravine",
+        "count": 1
+      },
+      {
+        "value": "Ce tronçon est bien une petite passerelle en bois étroite, passage de véhicule à moteur impossible, même si les chemins y menant le sont.",
+        "count": 1
+      },
+      {"value": "chemin abandonné, en cours de disparition", "count": 1},
+      {
+        "value": "cette partie comporte des bois en travers, ce ne sont pas de vrais escaliers je laisse en path",
+        "count": 1
+      },
+      {"value": "Tracé à définir plus précisément", "count": 1},
+      {"value": "Sentier secondaire, pas le GR", "count": 1},
+      {"value": "2015 : n'est plus entretenu, chablis", "count": 1},
+      {"value": "Fixme", "count": 1},
+      {
+        "value": "La Zone du paravalanche de Taconnaz est extrêmement dangereuse.",
+        "count": 1
+      },
+      {
+        "value": "Attention lorsque l'on est dans le couloir d'avalanches, zone dangereuse",
+        "count": 1
+      },
+      {"value": "ce chemin longe la falaise mais ne va nul part", "count": 1},
+      {
+        "value": "Bing décallée du coté de la falaise. Merci de caler sur des traces gps.",
+        "count": 1
+      },
+      {
+        "value": "Bing décallée du coté de la falaise. Merci de caler sur les traces gps.",
+        "count": 1
+      },
+      {"value": "Accès au pré", "count": 1},
+      {"value": "closed in winter, turned in skiing piste", "count": 1},
+      {"value": "passage cable et échelles", "count": 1},
+      {"value": "les virages ont été comptés !", "count": 1},
+      {"value": "pas entretenu, vérifier continuité", "count": 1},
+      {
+        "value": "This new junction should be refined with a GPS because bing is outdated",
+        "count": 1
+      },
+      {
+        "value": "Chemin Privé non Tracé, Disparut sur le Cadastre, Mais bien Existant sur le Terrain",
+        "count": 1
+      },
+      {"value": "Ce chemin existe-t-il vraiment?", "count": 1},
+      {"value": "virages compté sur moitiée haute", "count": 1},
+      {"value": "chemin en ré-enroncement actif (2016)", "count": 1},
+      {
+        "value": "approximatif car neige cachant en partie le chemin",
+        "count": 1
+      },
+      {"value": "Fixme: route 12?", "count": 1},
+      {
+        "value": "piste cyclable Via Rhôna goudronné au printemps 2016",
+        "count": 1
+      },
+      {
+        "value": "le sac_scale est choisi en fonction de topos lus sur internet",
+        "count": 1
+      },
+      {"value": "not complete", "count": 1},
+      {"value": "Equipé d'un câble", "count": 1},
+      {
+        "value": "ce passage permet aux vélos d'aller tout droit de l'Ouest vers l'Est sur le Quai Ganbetta, contrairement aux voitures.",
+        "count": 1
+      },
+      {
+        "value": "problème réception GPS durant la trace, je repasserai ASAP",
+        "count": 1
+      },
+      {
+        "value": "actuellement (sept 2016) très mal entretenu (ronces) : difficile",
+        "count": 1
+      },
+      {
+        "value": "le cadastre annonce une route départementale : c'est une erreur, c'est un chemin de rando",
+        "count": 1
+      },
+      {"value": "Nom sur panneau local \"Chemin du Garon\"", "count": 1},
+      {"value": "direction Platary", "count": 1},
+      {"value": "Rue de l'Église", "count": 1},
+      {"value": "Rue de la Mairie", "count": 1},
+      {"value": "Sentier très escarpé (plus de 100 de dénivelé)", "count": 1},
+      {"value": "survey needed", "count": 1},
+      {"value": "balisage deux traits rouge sur fond blanc", "count": 1},
+      {
+        "value": "Part visiblement vers le pas de la Biche, à mapper.",
+        "count": 1
+      },
+      {
+        "value": "le chemin suit la crête, qui est donc la nouvelle frontière entre comune",
+        "count": 1
+      },
+      {"value": "Waymarked as GR5 (2017)", "count": 1},
+      {
+        "value": "Le chemin nécessite un débrousaillage. Il n'est pas possible de rejoindre facilement le chemin du bas.",
+        "count": 1
+      },
+      {"value": "supposé, longeur 60m. Supposed, length is 60m.", "count": 1},
+      {"value": "précision faible", "count": 1},
+      {"value": "Nouveau Ete 2017!", "count": 1},
+      {"value": "Montée déconseillée aux enfants selon un panneau", "count": 1},
+      {"value": "Imprecise, needs GPS survey", "count": 1},
+      {"value": "todo: check and better mapping", "count": 1},
+      {"value": "To check IRL", "count": 1},
+      {"value": "todo: check", "count": 1},
+      {
+        "value": "There is no bridge. Can be difficult / impossible to cross after heavy rain.",
+        "count": 1
+      },
+      {"value": "Vérifier le type et périmètre", "count": 1},
+      {"value": "FIXME (Broken Bing)", "count": 1}
+    ],
+    "count": 361
+  },
+  {
+    "key": "piste:type",
+    "tags": [
+      {"value": "nordic", "count": 156},
+      {"value": "downhill", "count": 74},
+      {"value": "skitour", "count": 57},
+      {"value": "hike", "count": 32},
+      {"value": "snowshoes", "count": 8},
+      {"value": "sled", "count": 1},
+      {"value": "snow_shoes", "count": 1},
+      {"value": "connection", "count": 1}
+    ],
+    "count": 330
+  },
+  {
+    "key": "footway",
+    "tags": [
+      {"value": "sidewalk", "count": 206},
+      {"value": "crossing", "count": 98},
+      {"value": "hiking", "count": 2}
+    ],
+    "count": 306
+  },
+  {
+    "key": "ski",
+    "tags": [
+      {"value": "no", "count": 203},
+      {"value": "yes", "count": 28},
+      {"value": "designated", "count": 18},
+      {"value": "private", "count": 4},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 255
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "VV3", "count": 10},
+      {"value": "VV2", "count": 9},
+      {"value": "VV8", "count": 9},
+      {"value": "TMB", "count": 8},
+      {"value": "GR 9", "count": 8},
+      {"value": "GR 96", "count": 6},
+      {"value": "C 2", "count": 6},
+      {"value": "C 9", "count": 5},
+      {"value": "581", "count": 5},
+      {"value": "EN1", "count": 5},
+      {"value": "VV5", "count": 5},
+      {"value": "EN8", "count": 5},
+      {"value": "13", "count": 5},
+      {"value": "VV4", "count": 5},
+      {"value": "C 3", "count": 5},
+      {"value": "C 1", "count": 4},
+      {"value": "DH8", "count": 4},
+      {"value": "806", "count": 4},
+      {"value": "584", "count": 4},
+      {"value": "12-TMB", "count": 4},
+      {"value": "VV7", "count": 4},
+      {"value": "111", "count": 3},
+      {"value": "GR 65", "count": 3},
+      {"value": "C 4", "count": 3},
+      {"value": "14", "count": 3},
+      {"value": "C 6", "count": 3},
+      {"value": "GPS", "count": 3},
+      {"value": "C 7", "count": 3},
+      {"value": "FR-Cadastre", "count": 3},
+      {"value": "8", "count": 3},
+      {"value": "582", "count": 3},
+      {"value": "9D", "count": 2},
+      {"value": "C2", "count": 2},
+      {"value": "224", "count": 2},
+      {"value": "20", "count": 2},
+      {"value": "C 25", "count": 2},
+      {"value": "XC8", "count": 2},
+      {"value": "DH5", "count": 2},
+      {"value": "D 218", "count": 2},
+      {"value": "GR50", "count": 2},
+      {"value": "525", "count": 2},
+      {"value": "122", "count": 1},
+      {"value": "12D-12E", "count": 1},
+      {"value": "12e", "count": 1},
+      {"value": "C 10", "count": 1},
+      {"value": "14a-14b", "count": 1},
+      {"value": "12E", "count": 1},
+      {"value": "CR 60", "count": 1},
+      {"value": "C 5", "count": 1},
+      {"value": "EN5", "count": 1},
+      {"value": "C 06", "count": 1},
+      {"value": "R 14", "count": 1},
+      {"value": "VC 15", "count": 1},
+      {"value": "C 16", "count": 1},
+      {"value": "12D", "count": 1},
+      {"value": "222", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "CR 5", "count": 1},
+      {"value": "806 A", "count": 1},
+      {"value": "Own mesure", "count": 1},
+      {"value": "315A", "count": 1},
+      {"value": "308", "count": 1},
+      {"value": "VV1", "count": 1},
+      {"value": "VC218", "count": 1},
+      {"value": "VC202", "count": 1},
+      {"value": "CR 64", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "CR 3", "count": 1},
+      {"value": "R 3", "count": 1},
+      {"value": "XC11", "count": 1},
+      {"value": "C 21", "count": 1},
+      {"value": "CR 2", "count": 1},
+      {"value": "GR91", "count": 1},
+      {"value": "C 17", "count": 1},
+      {"value": "C 23", "count": 1},
+      {"value": "accès privé", "count": 1},
+      {"value": "805", "count": 1},
+      {"value": "C 44", "count": 1},
+      {"value": "XC9", "count": 1},
+      {"value": "554", "count": 1},
+      {"value": "C 33", "count": 1},
+      {"value": "581 A", "count": 1},
+      {"value": "709", "count": 1},
+      {"value": "R 1", "count": 1},
+      {"value": "Chemin Rural n° 31", "count": 1},
+      {"value": "VC 13", "count": 1},
+      {"value": "12C", "count": 1},
+      {"value": "D 44", "count": 1},
+      {"value": "11A", "count": 1},
+      {"value": "727A", "count": 1},
+      {"value": "727", "count": 1},
+      {"value": "812", "count": 1},
+      {"value": "118", "count": 1},
+      {"value": "VC 250", "count": 1},
+      {"value": "813", "count": 1},
+      {"value": "DH7", "count": 1},
+      {"value": "DH8b", "count": 1},
+      {"value": "FR cadastre", "count": 1},
+      {"value": "FR cadastre et terrain", "count": 1},
+      {"value": "FR cadatre", "count": 1},
+      {"value": "Fr Cadastre,  Bing aerial imagery, terrain", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "558", "count": 1},
+      {"value": "802", "count": 1},
+      {"value": "C 18", "count": 1},
+      {"value": "224A", "count": 1},
+      {"value": "316", "count": 1},
+      {"value": "315B", "count": 1},
+      {"value": "111A", "count": 1},
+      {"value": "116", "count": 1},
+      {"value": "CD 10", "count": 1},
+      {"value": "VC 5", "count": 1},
+      {"value": "C 13", "count": 1},
+      {"value": "582 A", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "20b", "count": 1},
+      {"value": "le Bret", "count": 1}
+    ],
+    "count": 246
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 193},
+      {"value": "building_passage", "count": 26},
+      {"value": "no", "count": 9},
+      {"value": "culvert", "count": 3}
+    ],
+    "count": 231
+  },
+  {
+    "key": "snowmobile",
+    "tags": [
+      {"value": "no", "count": 216},
+      {"value": "yes", "count": 6},
+      {"value": "private", "count": 4}
+    ],
+    "count": 226
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [
+      {"value": "easy", "count": 77},
+      {"value": "intermediate", "count": 48},
+      {"value": "novice", "count": 33},
+      {"value": "advanced", "count": 27},
+      {"value": "freeride", "count": 4},
+      {"value": "GPS+Bing", "count": 1}
+    ],
+    "count": 190
+  },
+  {
+    "key": "mtb:scale:imba",
+    "tags": [
+      {"value": "1", "count": 62},
+      {"value": "2", "count": 60},
+      {"value": "0", "count": 26},
+      {"value": "3", "count": 15},
+      {"value": "4", "count": 12}
+    ],
+    "count": 175
+  },
+  {
+    "key": "mtb:type",
+    "tags": [
+      {"value": "downhill", "count": 80},
+      {"value": "freeride", "count": 34},
+      {"value": "allmountain", "count": 20},
+      {"value": "crosscountry", "count": 12}
+    ],
+    "count": 146
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [
+      {"value": "classic;skating", "count": 78},
+      {"value": "classic+skating", "count": 38},
+      {"value": "backcountry", "count": 12},
+      {"value": "classic", "count": 8},
+      {"value": "no", "count": 1},
+      {"value": "skating", "count": 1}
+    ],
+    "count": 138
+  },
+  {
+    "key": "ford",
+    "tags": [
+      {"value": "yes", "count": 106},
+      {"value": "intermittent", "count": 1},
+      {"value": "gué", "count": 1},
+      {"value": "level_crossing", "count": 1},
+      {"value": "stream", "count": 1}
+    ],
+    "count": 110
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Rho-Replanette", "count": 13},
+      {
+        "value": "Ancienne Ligne de Collonges - Fort-l'Écluse à Divonne-les-Bains (frontière)",
+        "count": 4
+      },
+      {"value": "sentier aménagé", "count": 3},
+      {
+        "value": "Délicat, voire dangereux par conditions enneigées",
+        "count": 3
+      },
+      {"value": "Voie Verte", "count": 3},
+      {
+        "value": "Montée équipée : marches et main-courante façon via-ferrata",
+        "count": 3
+      },
+      {"value": "Marquage rouge", "count": 2},
+      {
+        "value": "Passage technique avec ligne de vie, risque de chute de pierre, mais peu long",
+        "count": 2
+      },
+      {"value": "chemin communal", "count": 2},
+      {
+        "value": "Un petit pas d'escalade pour atteindre le rocher, se méfier si le rocher est mouillé",
+        "count": 2
+      },
+      {
+        "value": "marquage flêches vertes au début, puis traits bleus",
+        "count": 2
+      },
+      {"value": "Ancienne voie de roulage du niveau 480", "count": 2},
+      {"value": "ancien chemin du Bec du Corbeau", "count": 2},
+      {
+        "value": "Chemin bien visible mais en cours d'embroussaillement.",
+        "count": 2
+      },
+      {"value": "Ancienne Ligne du Coteau à Montchanin", "count": 2},
+      {"value": "Liaison", "count": 1},
+      {
+        "value": "Très délicat, voire dangereux par conditions enneigées",
+        "count": 1
+      },
+      {
+        "value": "Un panneau indique \"accès interdit\" \"zone privée\" mais la nature de cette interdiction est tout particulièrement douteuse, récente (2014) et sans doute le fait d'un riverain ne souhaitant pas le passage de cycliste.",
+        "count": 1
+      },
+      {"value": "très humide", "count": 1},
+      {"value": "Sentier peu entretenu", "count": 1},
+      {
+        "value": "Chemin difficile à suivre avec quelques kerns, mais difficile de se tromper par temps clair",
+        "count": 1
+      },
+      {
+        "value": "Pas sans grande difficulté en l'abscence de neige, plus délicat avec",
+        "count": 1
+      },
+      {
+        "value": "passage à flan de falaise, lignes de vie, passerelles",
+        "count": 1
+      },
+      {"value": "this is the second, more easy path", "count": 1},
+      {"value": "Chemin impassable quand le lac est au plus haut", "count": 1},
+      {
+        "value": "On a cherché tout ce qu'on a pu, mais ça fini pas bien ce chemin",
+        "count": 1
+      },
+      {"value": "Une ligne de vie, mais rien de bien difficile", "count": 1},
+      {"value": "Ancienne voie de roulage du niveau 630", "count": 1},
+      {"value": "pont de neige", "count": 1},
+      {"value": "vieux pont", "count": 1},
+      {"value": "Accès à Les Travaux d'Hercule", "count": 1},
+      {"value": "Pont de rondins", "count": 1},
+      {"value": "Ancienne Route de Venon", "count": 1},
+      {
+        "value": "Très dur à suivre en forêt car non marqué, limite pas à considérer comme un chemin",
+        "count": 1
+      },
+      {"value": "Combe avalancheuse, prudence en hiver", "count": 1},
+      {"value": "Ancienne voie de roulage du niveau", "count": 1},
+      {
+        "value": "Bien visible au tout début, se perd complètement dans les arcosses et les rododandrons, j'ai fouillé et fouillé, on ne sait pas du tout où ça continue",
+        "count": 1
+      },
+      {"value": "Petit pas d'escalade assez facile à franchir", "count": 1},
+      {"value": "Accès au Refuge", "count": 1},
+      {"value": "Ancienne Voie du Tramway", "count": 1},
+      {
+        "value": "Passage en vire avec risque de chute et sol parfois glissant",
+        "count": 1
+      },
+      {"value": "Pont emporté par une crue", "count": 1},
+      {
+        "value": "Un chemin commence mais disparait quasiment à l'arrivée dans la forêt, on retrouve des restes d'un ancien chemin, mais très dur à suivre",
+        "count": 1
+      },
+      {
+        "value": "Très très mal entretenu, des arcosses en travers, il ne doit vraiment pas être utilisé souvent sur cette partie",
+        "count": 1
+      },
+      {"value": "ancien chemin non entretenu", "count": 1},
+      {"value": "Chemin au cadastre et réputé accessible", "count": 1},
+      {"value": "Avec un sécateur, ça passera mieux !", "count": 1},
+      {
+        "value": "racourcis un peu marqué au début, invisible ensuite, mais difficile de se perdre sur cet alpage !",
+        "count": 1
+      },
+      {
+        "value": "Pour être précis, à vélo, il faut \"sauter\" le trottoir (d'Ouest en Est) ou monter le trottoir dans l'autre sens. Ou simplement rester sur le trottoir",
+        "count": 1
+      },
+      {
+        "value": "Sujets au vertige s'abstenir. Préférez la montée, et par temps sec.",
+        "count": 1
+      },
+      {"value": "Chemin couvert de ronces. Sécateur conseillé", "count": 1},
+      {
+        "value": "Les cyclistes doivent ralentir pour passer entre les poteaux.",
+        "count": 1
+      },
+      {
+        "value": "Morceau subsistant de l'ancien Chemin de Chambéry à Montagnole (via Jacob-Bellecombette).",
+        "count": 1
+      },
+      {"value": "Bionnassay climbing access path", "count": 1},
+      {"value": "Chemin de la Crête de Sénépy", "count": 1},
+      {"value": "dangereux suite aux éboulements", "count": 1},
+      {
+        "value": "Morceau subsistant de l'ancien Chemin du Cesolet, entre le chemin de Chambéry à Saint-Cassin (devenu route de Saint-Cassin) et le chemin de Chambéry à Montagnole (via Jacob-Bellecombette).",
+        "count": 1
+      },
+      {"value": "Balisage local: 8", "count": 1},
+      {"value": "Chemin recouvert par les cultures en été.", "count": 1},
+      {"value": "Inondable", "count": 1},
+      {
+        "value": "Sentier très peu fréquenté. Végétation assez dense.",
+        "count": 1
+      },
+      {
+        "value": "sentier visible due aux traces de pas et de velos, mais non entretenu.",
+        "count": 1
+      },
+      {"value": "Accès Via Ferrata du Mont", "count": 1},
+      {"value": "Cool path for bike!", "count": 1},
+      {
+        "value": "A l'arrivée sur les pierres, le chemin se perd complètement, mais il ne reste plus beaucoup pour atteindre le lac Piéru. Faudrait poser des kerns !",
+        "count": 1
+      },
+      {"value": "Entrée du Château", "count": 1},
+      {"value": "sentier caillouteux", "count": 1}
+    ],
+    "count": 99
+  },
+  {
+    "key": "motorcar",
+    "tags": [
+      {"value": "no", "count": 79},
+      {"value": "yes", "count": 5},
+      {"value": "private", "count": 3},
+      {"value": "designated", "count": 2},
+      {"value": "agricultural", "count": 2}
+    ],
+    "count": 91
+  },
+  {
+    "key": "trailblazed",
+    "tags": [
+      {"value": "yes", "count": 41},
+      {"value": "no", "count": 33},
+      {"value": "hiking", "count": 7},
+      {"value": "yellow", "count": 7},
+      {"value": "true", "count": 1}
+    ],
+    "count": 89
+  },
+  {
+    "key": "hiking",
+    "tags": [
+      {"value": "yes", "count": 87},
+      {"value": "unclassified", "count": 2}
+    ],
+    "count": 89
+  },
+  {
+    "key": "route",
+    "tags": [
+      {"value": "hiking", "count": 47},
+      {"value": "mtb", "count": 31},
+      {"value": "ski", "count": 4},
+      {"value": "foot", "count": 3},
+      {"value": "fitness_trail", "count": 1}
+    ],
+    "count": 86
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "abandoned", "count": 81},
+      {"value": "disused", "count": 3},
+      {"value": "dismantled", "count": 1}
+    ],
+    "count": 85
+  },
+  {
+    "key": "embankment",
+    "tags": [
+      {"value": "yes", "count": 63},
+      {"value": "no", "count": 4},
+      {"value": "levee", "count": 1}
+    ],
+    "count": 68
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {"value": "à continuer", "count": 38},
+      {
+        "value": "Classification unclear: Way is at least path, but several segments are also track or residential",
+        "count": 3
+      },
+      {"value": "yes", "count": 2},
+      {"value": "direction ? stream or river ?", "count": 2},
+      {"value": "path ou track? parcouru en hiver", "count": 2},
+      {"value": "To be completed up to the Col de Bérard", "count": 2},
+      {"value": "accuracy", "count": 2},
+      {"value": "Probablement chemin en terre", "count": 1},
+      {"value": "vérifier si c'est un chemin", "count": 1},
+      {"value": "to be continued", "count": 1},
+      {"value": "à vérifier si le chemin continue", "count": 1},
+      {"value": "perte de signal GPS sur toute une section", "count": 1},
+      {"value": "à continuer (chemn ?)", "count": 1},
+      {"value": "parcouru en hiver, très approximatif", "count": 1},
+      {"value": "à vérifier", "count": 1},
+      {"value": "chemin non parcouru", "count": 1},
+      {"value": "Inaccurate", "count": 1},
+      {"value": "mapped under snow", "count": 1},
+      {"value": "add appropriate sac_scale or so", "count": 1},
+      {"value": "connexions", "count": 1},
+      {"value": "to continue on both sides", "count": 1}
+    ],
+    "count": 65
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "385300051C", "count": 5},
+      {"value": "381930098U", "count": 3},
+      {"value": "012490253P", "count": 3},
+      {"value": "381510018P", "count": 2},
+      {"value": "383590028W", "count": 1},
+      {"value": "692350032N", "count": 1},
+      {"value": "385650471G", "count": 1},
+      {"value": "382790245E", "count": 1},
+      {"value": "692900178H", "count": 1},
+      {"value": "385330050N", "count": 1},
+      {"value": "730230035A", "count": 1},
+      {"value": "385070035K", "count": 1},
+      {"value": "692040166U", "count": 1},
+      {"value": "690270063B", "count": 1},
+      {"value": "690670730C", "count": 1},
+      {"value": "422220227V", "count": 1},
+      {"value": "421680074N", "count": 1},
+      {"value": "690640251V", "count": 1},
+      {"value": "692410050G", "count": 1},
+      {"value": "691190205F", "count": 1},
+      {"value": "380860038U", "count": 1},
+      {"value": "384570165U", "count": 1},
+      {"value": "014420027E", "count": 1},
+      {"value": "070420813D", "count": 1},
+      {"value": "381380525X", "count": 1},
+      {"value": "691410686H", "count": 1},
+      {"value": "692650034K", "count": 1},
+      {"value": "382290717K", "count": 1},
+      {"value": "691160062N", "count": 1},
+      {"value": "692410386X", "count": 1},
+      {"value": "692080025Y", "count": 1},
+      {"value": "691190228F", "count": 1},
+      {"value": "691410573K", "count": 1},
+      {"value": "691170072V", "count": 1},
+      {"value": "380860046C", "count": 1},
+      {"value": "692530038S", "count": 1},
+      {"value": "380610014B", "count": 1},
+      {"value": "383720530K", "count": 1},
+      {"value": "691840120F", "count": 1},
+      {"value": "692280020F", "count": 1},
+      {"value": "692380350W", "count": 1},
+      {"value": "692380119V", "count": 1},
+      {"value": "692380945T", "count": 1},
+      {"value": "690240150J", "count": 1},
+      {"value": "691250371K", "count": 1},
+      {"value": "382940580D", "count": 1},
+      {"value": "382150155K", "count": 1},
+      {"value": "381100250V", "count": 1},
+      {"value": "385440557S", "count": 1},
+      {"value": "011030050D", "count": 1},
+      {"value": "384620260A", "count": 1},
+      {"value": "383140390K", "count": 1},
+      {"value": "014420001B", "count": 1},
+      {"value": "380910102S", "count": 1},
+      {"value": "732230500L", "count": 1}
+    ],
+    "count": 64
+  },
+  {
+    "key": "mtb",
+    "tags": [
+      {"value": "yes", "count": 49},
+      {"value": "designated", "count": 6},
+      {"value": "permissive", "count": 3},
+      {"value": "no", "count": 3},
+      {"value": "---", "count": 2}
+    ],
+    "count": 63
+  },
+  {
+    "key": "cutting",
+    "tags": [
+      {"value": "yes", "count": 54},
+      {"value": "no", "count": 6},
+      {"value": "both", "count": 1}
+    ],
+    "count": 61
+  },
+  {
+    "key": "marked_trail",
+    "tags": [
+      {"value": "yellow and red", "count": 19},
+      {"value": "yellow", "count": 13},
+      {"value": "red", "count": 12},
+      {"value": "blue", "count": 6},
+      {"value": "orange", "count": 2},
+      {"value": "yellow or orange", "count": 2},
+      {"value": "yellow and red ; orange", "count": 2},
+      {"value": "green", "count": 2},
+      {"value": "yellow and red;blue", "count": 1}
+    ],
+    "count": 59
+  },
+  {
+    "key": "horse_scale",
+    "tags": [
+      {"value": "common", "count": 28},
+      {"value": "demanding", "count": 16},
+      {"value": "impossible", "count": 8},
+      {"value": "dangerous", "count": 2}
+    ],
+    "count": 54
+  },
+  {
+    "key": "noexit",
+    "tags": [{"value": "yes", "count": 41}, {"value": "no", "count": 7}],
+    "count": 48
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "none", "count": 24},
+      {"value": "both", "count": 14},
+      {"value": "right", "count": 3}
+    ],
+    "count": 41
+  },
+  {
+    "key": "motorcycle",
+    "tags": [{"value": "no", "count": 33}, {"value": "yes", "count": 6}],
+    "count": 39
+  },
+  {"key": "type", "tags": [{"value": "route", "count": 39}], "count": 39},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "biathlon", "count": 14},
+      {"value": "climbing", "count": 11},
+      {"value": "skiing", "count": 6},
+      {"value": "mountainering", "count": 3},
+      {"value": "via_ferrata", "count": 1},
+      {"value": "mtb", "count": 1},
+      {"value": "boules", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "visibility",
+    "tags": [
+      {"value": "good", "count": 17},
+      {"value": "bad", "count": 7},
+      {"value": "intermediate", "count": 5},
+      {"value": "horrible", "count": 2},
+      {"value": "no", "count": 1},
+      {"value": "very_good", "count": 1},
+      {"value": "poor", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "alley", "count": 15},
+      {"value": "parking_aisle", "count": 12},
+      {"value": "driveway", "count": 5}
+    ],
+    "count": 32
+  },
+  {
+    "key": "mtb:scale:color",
+    "tags": [
+      {"value": "red", "count": 14},
+      {"value": "blue", "count": 10},
+      {"value": "black", "count": 2},
+      {"value": "green", "count": 1}
+    ],
+    "count": 27
+  },
+  {"key": "lcn", "tags": [{"value": "yes", "count": 25}], "count": 25},
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "nox", "count": 4},
+      {"value": "nox : ...", "count": 4},
+      {"value": "recorded in winter", "count": 3},
+      {
+        "value": "chemin plus entretenu, cheminement parfois peu évident",
+        "count": 2
+      },
+      {
+        "value": "chemin non entretenu (nombreux arbres couchés en travers) semble se terminer en cul de sac",
+        "count": 1
+      },
+      {"value": "mtb not recommended", "count": 1},
+      {
+        "value": "\"un contributeur dit que c'est un path un autre un track, j'ai fusionné et choisi ce qui semble être sur bing\" : the ifn map says the east one is a track, the small passover is a path",
+        "count": 1
+      },
+      {"value": "cet un terrain avec cheval", "count": 1},
+      {"value": "nox :...", "count": 1},
+      {"value": "access to ice falls", "count": 1},
+      {"value": "Chemin étroit et peu fréquenté, sans issue", "count": 1},
+      {"value": "advanced hiking with technical passages", "count": 1},
+      {"value": "Access blocked by fence", "count": 1},
+      {"value": "simplified!", "count": 1},
+      {"value": "faire un reléve gps du chemin", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "30", "count": 9},
+      {"value": "20", "count": 5},
+      {"value": "50", "count": 4},
+      {"value": "10", "count": 3},
+      {"value": "3", "count": 1},
+      {"value": "5", "count": 1}
+    ],
+    "count": 23
+  },
+  {"key": "flood_prone", "tags": [{"value": "yes", "count": 21}], "count": 21},
+  {
+    "key": "lanes",
+    "tags": [{"value": "1", "count": 18}, {"value": "2", "count": 2}],
+    "count": 20
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 10},
+      {"value": "-1", "count": 7},
+      {"value": "0", "count": 1}
+    ],
+    "count": 18
+  },
+  {"key": "piste:oneway", "tags": [{"value": "yes", "count": 18}], "count": 18},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "2062", "count": 2},
+      {"value": "647", "count": 1},
+      {"value": "1109", "count": 1},
+      {"value": "1664", "count": 1},
+      {"value": "1750", "count": 1},
+      {"value": "485", "count": 1},
+      {"value": "784", "count": 1},
+      {"value": "1826", "count": 1},
+      {"value": "1150", "count": 1},
+      {"value": "688.74", "count": 1},
+      {"value": "1597", "count": 1},
+      {"value": "1254", "count": 1},
+      {"value": "1515 mètres -1530 mètres", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "1713", "count": 1},
+      {"value": "700 m", "count": 1}
+    ],
+    "count": 17
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 17}], "count": 17},
+  {
+    "key": "vehicle",
+    "tags": [{"value": "no", "count": 15}, {"value": "private", "count": 1}],
+    "count": 16
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "wood", "count": 11},
+      {"value": "stone", "count": 3},
+      {"value": "metal", "count": 2}
+    ],
+    "count": 16
+  },
+  {
+    "key": "bridge:structure",
+    "tags": [
+      {"value": "beam", "count": 5},
+      {"value": "floating", "count": 5},
+      {"value": "simple-suspension", "count": 3},
+      {"value": "arch", "count": 2},
+      {"value": "humpback", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "inline_skates",
+    "tags": [{"value": "yes", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "class:bicycle:mtb",
+    "tags": [
+      {"value": "-1", "count": 6},
+      {"value": "1", "count": 4},
+      {"value": "2", "count": 2},
+      {"value": "-2", "count": 1},
+      {"value": "-3", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "roller_ski",
+    "tags": [{"value": "designated", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 11},
+      {"value": "Potlatch alpha", "count": 1},
+      {"value": "Potlatch 0.7b", "count": 1},
+      {"value": "Potlatch 0.10f", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "symbol",
+    "tags": [
+      {"value": "blue_bar", "count": 6},
+      {"value": "blue round", "count": 6},
+      {"value": "white yellow", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "emergency", "tags": [{"value": "yes", "count": 13}], "count": 13},
+  {
+    "key": "oneway:bicycle",
+    "tags": [{"value": "yes", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "mtb:description",
+    "tags": [
+      {"value": "Tour des Balmes Dauphinoises - Boucle Rouge", "count": 3},
+      {"value": "DH amménagée", "count": 3},
+      {"value": "Piste de bleu", "count": 3},
+      {"value": "DH du pendu", "count": 2}
+    ],
+    "count": 11
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Passerelle himalayenne du Drac", "count": 2},
+      {"value": "fr:Pont Raymond Barre", "count": 2},
+      {"value": "fr:Aqueduc Romain Briord", "count": 1},
+      {"value": "fr:Pont sur la Durèze (vieux)", "count": 1},
+      {"value": "fr:Pont du Diable (Thueyts)", "count": 1},
+      {"value": "fr:Pont de Rochemaure", "count": 1},
+      {"value": "fr:Piste de la Sarra", "count": 1},
+      {"value": "fr:Passerelle de la paix", "count": 1},
+      {"value": "it:Ferrovia del Moncenisio", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "sac_scale_ref",
+    "tags": [
+      {"value": "T2", "count": 6},
+      {"value": "T3", "count": 2},
+      {"value": "T5", "count": 1},
+      {"value": "T1", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "safety_rope",
+    "tags": [{"value": "yes", "count": 9}, {"value": "50 m", "count": 1}],
+    "count": 10
+  },
+  {
+    "key": "waterway",
+    "tags": [
+      {"value": "dam", "count": 5},
+      {"value": "drain", "count": 2},
+      {"value": "weir", "count": 1},
+      {"value": "stream", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22968564", "count": 1},
+      {"value": "Q2859240", "count": 1},
+      {"value": "Q22967164", "count": 1},
+      {"value": "Q3397106", "count": 1},
+      {"value": "Q22968414", "count": 1},
+      {"value": "Q3368308", "count": 1},
+      {"value": "Q22967042", "count": 1},
+      {"value": "Q22967039", "count": 1},
+      {"value": "Q22967038", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "snowshoe",
+    "tags": [{"value": "yes", "count": 8}, {"value": "designated", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "pathtype",
+    "tags": [
+      {"value": "grade2", "count": 4},
+      {"value": "grade5", "count": 4},
+      {"value": "grade4", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "bicycle_road", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 4}, {"value": "2", "count": 4}],
+    "count": 8
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118279", "count": 1},
+      {"value": "PA00116351", "count": 1},
+      {"value": "PA00117434", "count": 1},
+      {"value": "PA00116760", "count": 1},
+      {"value": "PA00118213", "count": 1},
+      {"value": "PA00117269", "count": 1},
+      {"value": "PA00117267", "count": 1},
+      {"value": "PA00117266", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "2", "count": 3},
+      {"value": "1.80", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "1.8", "count": 1},
+      {"value": "2.7", "count": 1},
+      {"value": "1.2", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1923-05-01", "count": 2},
+      {"value": "1985-12-17", "count": 1},
+      {"value": "1904-08-08", "count": 1},
+      {"value": "1949", "count": 1},
+      {"value": "1980-12-01", "count": 1},
+      {"value": "1927-10-28", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "surface:de", "tags": [{"value": "felsig", "count": 7}], "count": 7},
+  {"key": "surface:fr", "tags": [{"value": "rocheux", "count": 7}], "count": 7},
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "track", "count": 2},
+      {"value": "link", "count": 1},
+      {"value": "lane", "count": 1},
+      {"value": "crossing", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "history",
+    "tags": [
+      {"value": "Retrieved from v1", "count": 5},
+      {"value": "Retrieved from v11", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "osmc:symbol",
+    "tags": [
+      {"value": "blue:blue_round", "count": 6},
+      {"value": "white:yellow", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "end_date:railway",
+    "tags": [
+      {"value": "~1985", "count": 3},
+      {"value": "1954", "count": 2},
+      {"value": "~1998", "count": 1},
+      {"value": "2005", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "crossing",
+    "tags": [{"value": "zebra", "count": 6}, {"value": "bridge", "count": 1}],
+    "count": 7
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "via_ferrata_scale",
+    "tags": [{"value": "0", "count": 4}, {"value": "2", "count": 3}],
+    "count": 7
+  },
+  {
+    "key": "start_date:railway",
+    "tags": [{"value": "1899", "count": 4}, {"value": "1882", "count": 3}],
+    "count": 7
+  },
+  {
+    "key": "colour",
+    "tags": [
+      {"value": "red", "count": 4},
+      {"value": "white", "count": 1},
+      {"value": "#FF0000", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "administrative", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.uriage-les-bains.com/Documents/LesSentiers_08Cabanes.pdf",
+        "count": 2
+      },
+      {"value": "http://www.camptocamp.org/routes/54040", "count": 1},
+      {"value": "http://www.camptocamp.org/routes/56220", "count": 1},
+      {
+        "value": "http://savoie-route.fr/fr/chantiers/tunnel-du-chat",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "bridge", "count": 2},
+      {"value": "aqueduct", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "ruins", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "admin_level",
+    "tags": [{"value": "8", "count": 4}, {"value": "4", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2015-10-08", "count": 2},
+      {"value": "1736", "count": 1},
+      {"value": "2015", "count": 1},
+      {"value": "2016-05-01", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "traffic_sign",
+    "tags": [{"value": "FR:C115", "count": 5}],
+    "count": 5
+  },
+  {"key": "oneway:foot", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "floodable", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "mapillary:W",
+    "tags": [
+      {"value": "hoQR39eV0LZqRPQTs6GrIQ", "count": 2},
+      {"value": "Lvar-WSeT0GYPNdoFTTnKw", "count": 1},
+      {"value": "aQHWfEMr0SGWqjKmxghwpA", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "track_visibility",
+    "tags": [{"value": "bad", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {"key": "tactile_paving", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "slope",
+    "tags": [{"value": "up", "count": 3}, {"value": "down", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "hazard",
+    "tags": [
+      {"value": "rock_slide", "count": 2},
+      {"value": "animal_crossing", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "51", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "1.2", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "path",
+    "tags": [
+      {"value": "hiking", "count": 1},
+      {"value": "sidewalk", "count": 1},
+      {"value": "crossing", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "est_width", "tags": [{"value": "0.3", "count": 3}], "count": 3},
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "jq-bnWhEvrao6Lm8SvmJsQ", "count": 1},
+      {"value": "9k4tTiBeqdnWTIh4riPZRg", "count": 1},
+      {"value": "sBrDBphY0cmca05mXtQMqg", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ladder",
+    "tags": [{"value": "yes", "count": 2}, {"value": "30 m", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "location",
+    "tags": [{"value": "underground", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "depth",
+    "tags": [{"value": "0", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "pier", "count": 1},
+      {"value": "breakwater", "count": 1},
+      {"value": "bridge", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "mapillary:N",
+    "tags": [
+      {"value": "k7hASDkZME0T1r98_SSJ3Q", "count": 1},
+      {"value": "dx1yb6T9Ibgo2d_59kLAHw", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "maxwidth",
+    "tags": [{"value": "1", "count": 1}, {"value": "1.8 m", "count": 1}],
+    "count": 2
+  },
+  {"key": "motorhome", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "edf", "count": 1},
+      {"value": "Funivie Monte Bianco", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "surf", "tags": [{"value": "ground", "count": 2}], "count": 2},
+  {"key": "network", "tags": [{"value": "lwn", "count": 2}], "count": 2},
+  {
+    "key": "note:FR",
+    "tags": [
+      {
+        "value": "Sentier banalisé (vélo/piéton) cartographié à part car murail de séperation en béton. De l'autre côté ce n'est par le même car absence de barriere physique avec la chaussée principale.",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {"key": "handrail", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "ramp:bicycle", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "snowshoes", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "hgv", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "distance", "tags": [{"value": "6", "count": 2}], "count": 2},
+  {"key": "goods", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "tourism",
+    "tags": [{"value": "attraction", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Albert_Geoffray_Tramoyes.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://drive.google.com/open?id=0B21ibLLg56fMUUR1ODVPc05iRXM",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "maxweight",
+    "tags": [{"value": "3", "count": 1}, {"value": "3.5", "count": 1}],
+    "count": 2
+  },
+  {"key": "indistinct", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "rungs",
+    "tags": [{"value": "20 m", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "proposed",
+    "tags": [{"value": "path", "count": 1}, {"value": "cycleway", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "backrest",
+    "tags": [{"value": "Chemin d'Aisinadas", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "agricultural",
+    "tags": [{"value": "destination", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "class:bicycle:mtb:technical",
+    "tags": [{"value": "3", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "access:conditional",
+    "tags": [
+      {"value": "yes @ Dec-Mar", "count": 1},
+      {"value": "no @ week 42-23", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "length",
+    "tags": [{"value": "0.5", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "mapillary:NE",
+    "tags": [{"value": "a5X4unzw7H34mzo00f8HPA", "count": 2}],
+    "count": 2
+  },
+  {"key": "TODO", "tags": [{"value": "ref & name", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2012-08-28", "count": 1}],
+    "count": 1
+  },
+  {"key": "climb", "tags": [{"value": "12%", "count": 1}], "count": 1},
+  {"key": "shared", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ramp", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0001", "count": 1}],
+    "count": 1
+  },
+  {"key": "complete", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "chemin", "tags": [{"value": "136730127", "count": 1}], "count": 1},
+  {"key": "project", "tags": [{"value": "cycleway", "count": 1}], "count": 1},
+  {"key": "dog", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "atv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:E",
+    "tags": [{"value": "YRAyyG7kOH_IkAc2k50zWQ", "count": 1}],
+    "count": 1
+  },
+  {"key": "border_type", "tags": [{"value": "region", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "passing_places",
+    "tags": [{"value": "true", "count": 1}],
+    "count": 1
+  },
+  {"key": "aerialway", "tags": [{"value": "platter", "count": 1}], "count": 1},
+  {"key": "signed", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "abandoned", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "via_ferrata", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "animal_crossing",
+    "tags": [{"value": "wild", "count": 1}],
+    "count": 1
+  },
+  {"key": "piste:ref", "tags": [{"value": "80", "count": 1}], "count": 1},
+  {"key": "old_ref", "tags": [{"value": "D 218", "count": 1}], "count": 1},
+  {
+    "key": "check_date",
+    "tags": [{"value": "2015-03-22", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "opening_date",
+    "tags": [{"value": "2017-12-31", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "playground",
+    "tags": [{"value": "exercise", "count": 1}],
+    "count": 1
+  },
+  {"key": "handrail:right", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "handrail:left", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "danger", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "disused:highway",
+    "tags": [{"value": "track", "count": 1}],
+    "count": 1
+  },
+  {"key": "supervised", "tags": [{"value": "ground", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "block", "count": 1}], "count": 1},
+  {
+    "key": "traffic_calming",
+    "tags": [{"value": "hump", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:SW",
+    "tags": [{"value": "TkMbtbfST4LDOD4VwwaQoQ", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "key",
+    "tags": [{"value": "return: Via Ferrata du Rocher du Vent", "count": 1}],
+    "count": 1
+  },
+  {"key": "CLC:code", "tags": [{"value": "312", "count": 1}], "count": 1},
+  {"key": "CLC:id", "tags": [{"value": "FR-185632", "count": 1}], "count": 1},
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 1}], "count": 1},
+  {
+    "key": "gps",
+    "tags": [
+      {
+        "value": "cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2010",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "cables", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "track", "count": 1}], "count": 1},
+  {"key": "cycleway:both", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "maxspeed:type",
+    "tags": [{"value": "FR:urban", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling_type",
+    "tags": [{"value": "container", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "cycleway:surface",
+    "tags": [{"value": "asphalt", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:glass",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "assisted_trail", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "square", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "recycling", "count": 1}], "count": 1}
+]

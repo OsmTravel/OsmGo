@@ -1,0 +1,67 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "bicycle_repair_station", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "service:bicycle:pump",
+    "tags": [{"value": "yes", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "service:bicycle:chain_tool",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "À pinces et à vélo", "count": 1},
+      {"value": "Cycles et sports", "count": 1},
+      {"value": "Carbone Zero", "count": 1},
+      {"value": "Ocivélo", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cycleservice.fr", "count": 1},
+      {"value": "http://romans.fubicy.org/", "count": 1},
+      {"value": "http://ocivelo.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "shop", "tags": [{"value": "bicycle", "count": 2}], "count": 2},
+  {
+    "key": "service:bicycle:diy",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "pompe gratuite à l'extérieur", "count": 1},
+      {
+        "value": "Association d'usager du vélo, atelier d'auto-réparation cycle, vélo-école, balade, bourse aux vélos, etc.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "service:bicycle:second_hand",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Fubicy", "count": 1}], "count": 1},
+  {"key": "phone", "tags": [{"value": "+33477211829", "count": 1}], "count": 1},
+  {
+    "key": "recycling:bicycles",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

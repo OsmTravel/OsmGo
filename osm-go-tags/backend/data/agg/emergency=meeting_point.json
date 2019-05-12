@@ -1,0 +1,13 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "meeting_point", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "highway",
+    "tags": [{"value": "street_lamp", "count": 2}],
+    "count": 2
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

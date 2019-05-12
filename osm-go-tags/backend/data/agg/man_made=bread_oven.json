@@ -1,0 +1,8 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "bread_oven", "count": 2}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "ruins", "count": 1}], "count": 1}
+]

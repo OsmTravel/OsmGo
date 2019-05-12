@@ -1,0 +1,78 @@
+[
+  {"key": "shop", "tags": [{"value": "hardware", "count": 86}], "count": 86},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78286692", "count": 1},
+      {"value": "+33 4 75 64 12 22", "count": 1},
+      {"value": "+33 4 76 34 38 67", "count": 1},
+      {"value": "+33 4 74 53 61 39", "count": 1},
+      {"value": "+33 4 26 78 35 35", "count": 1},
+      {"value": "+33 4 77 24 02 25", "count": 1},
+      {"value": "+33478445795", "count": 1},
+      {"value": "+41227511707", "count": 1},
+      {"value": "+33 4 76 51 23 23", "count": 1},
+      {"value": "+33 4 76 26 51 36", "count": 1},
+      {"value": "+33 4 50 39 18 25", "count": 1},
+      {"value": "+33 9 80 66 71 27", "count": 1},
+      {"value": "+33 4 79 28 70 03", "count": 1},
+      {"value": "+33 4 75 35 68 40", "count": 1},
+      {"value": "+33476627275", "count": 1},
+      {"value": "+33476371075", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.richardson.fr/", "count": 2},
+      {"value": "http://www.terreaux-bricolage-lyon.fr/", "count": 1},
+      {"value": "https://www.afdb.fr/agences.html", "count": 1},
+      {"value": "http://www.polycar-quincaillerie.fr", "count": 1},
+      {"value": "http://www.bricadrog.fr/", "count": 1},
+      {"value": "http://www.motoculture-boen.fr", "count": 1},
+      {"value": "http://www.quincaillerie-droguerie-menage.fr", "count": 1},
+      {"value": "http://www.qmprolians.fr", "count": 1},
+      {"value": "http://www.coditherm.com", "count": 1},
+      {"value": "www.idconseils.fr", "count": 1},
+      {"value": "http://quincaillerie-gresset.fr/", "count": 1},
+      {"value": "www.pointp.fr", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/38-energie-38-energie-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {"value": "http://www.bricomarche.com", "count": 1}
+    ],
+    "count": 15
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Prolians", "count": 1},
+      {"value": "Arnaud Paul", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "quentin.albrieux@wanadoo.fr", "count": 1},
+      {"value": "pdv04729@mousquetaire.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "it", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "http://quincailleriedumeuble-replumaz.com/", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "key_cutter", "count": 1}], "count": 1}
+]

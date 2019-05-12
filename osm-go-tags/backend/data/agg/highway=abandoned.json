@@ -1,0 +1,6 @@
+[
+  {"key": "highway", "tags": [{"value": "abandoned", "count": 5}], "count": 5},
+  {"key": "access", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

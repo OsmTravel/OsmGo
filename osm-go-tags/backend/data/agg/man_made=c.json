@@ -1,0 +1,9 @@
+[
+  {
+    "key": "cutline",
+    "tags": [{"value": "section", "count": 1}, {"value": "border", "count": 1}],
+    "count": 2
+  },
+  {"key": "highway", "tags": [{"value": "path", "count": 2}], "count": 2},
+  {"key": "man_made", "tags": [{"value": "c", "count": 2}], "count": 2}
+]

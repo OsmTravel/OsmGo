@@ -1,0 +1,248 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "vending_machine", "count": 587}],
+    "count": 587
+  },
+  {
+    "key": "vending",
+    "tags": [
+      {"value": "public_transport_tickets", "count": 260},
+      {"value": "parking_tickets", "count": 142},
+      {"value": "excrement_bags", "count": 40},
+      {"value": "condoms", "count": 34},
+      {"value": "food", "count": 19},
+      {"value": "drinks", "count": 16},
+      {"value": "coffee", "count": 10},
+      {"value": "drinks;snacks", "count": 9},
+      {"value": "food;drinks", "count": 8},
+      {"value": "milk", "count": 6},
+      {"value": "photos", "count": 6},
+      {"value": "hot_drinks", "count": 4},
+      {"value": "drinks;food", "count": 3},
+      {"value": "pizza", "count": 2},
+      {"value": "parcel_pickup", "count": 2},
+      {"value": "informatique/telephonie", "count": 1},
+      {"value": "drinks, snacks, sandwiches", "count": 1},
+      {"value": "newspapers", "count": 1},
+      {"value": "parcel_pickup;parcel_mail_in", "count": 1},
+      {"value": "drinks;sweets", "count": 1},
+      {"value": "tea", "count": 1},
+      {"value": "bread", "count": 1},
+      {"value": "gas", "count": 1},
+      {"value": "admission_tickets", "count": 1},
+      {"value": "bicycle_tube", "count": 1},
+      {"value": "cheese", "count": 1}
+    ],
+    "count": 572
+  },
+  {
+    "key": "payment:coins",
+    "tags": [{"value": "yes", "count": 281}, {"value": "no", "count": 8}],
+    "count": 289
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "TAG", "count": 158},
+      {"value": "Grandes Lignes", "count": 38},
+      {"value": "TER", "count": 17},
+      {"value": "TER Rhône-Alpes", "count": 11},
+      {"value": "TCL", "count": 10},
+      {"value": "Transisère", "count": 6},
+      {"value": "TGV", "count": 4},
+      {"value": "SNCF Réseau", "count": 2},
+      {"value": "TER Auvergne-Rhône-Alpes", "count": 1}
+    ],
+    "count": 247
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 235}, {"value": "no", "count": 5}],
+    "count": 240
+  },
+  {
+    "key": "payment:notes",
+    "tags": [{"value": "no", "count": 207}, {"value": "yes", "count": 14}],
+    "count": 221
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SNCF", "count": 74},
+      {"value": "Mairie de Megeve", "count": 39},
+      {"value": "Selecta", "count": 15},
+      {"value": "Le Grand Lyon", "count": 15},
+      {"value": "CROUS", "count": 12},
+      {"value": "Durex", "count": 9},
+      {"value": "SAGS", "count": 5},
+      {"value": "Toutounet", "count": 3},
+      {"value": "Photomaton", "count": 3},
+      {"value": "Manix", "count": 2},
+      {"value": "Selectra", "count": 2},
+      {"value": "Pharmacie Daviet", "count": 1},
+      {"value": "Abricolis", "count": 1},
+      {"value": "Lyon Parc Auto", "count": 1},
+      {"value": "Total", "count": 1},
+      {"value": "La Poste", "count": 1},
+      {"value": "InPost", "count": 1},
+      {"value": "TER Rhône-Alpes", "count": 1},
+      {"value": "Kusmi Tea", "count": 1},
+      {"value": "UHV", "count": 1},
+      {"value": "GAEC Le Verger", "count": 1},
+      {"value": "SATVAC", "count": 1},
+      {"value": "Cooperative de moutier", "count": 1},
+      {"value": "Cooperative", "count": 1},
+      {"value": "Ville d'Alberville", "count": 1},
+      {"value": "Belle Savoie Express", "count": 1},
+      {"value": "selectra", "count": 1},
+      {"value": "cooperative du beaufort du canton d'Aime", "count": 1},
+      {"value": "TCL", "count": 1},
+      {"value": "Crédit Agricole", "count": 1}
+    ],
+    "count": 198
+  },
+  {
+    "key": "currency:EUR",
+    "tags": [{"value": "yes", "count": 122}],
+    "count": 122
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 87},
+      {"value": "-1", "count": 8},
+      {"value": "1", "count": 4},
+      {"value": "-0.5", "count": 4},
+      {"value": "2", "count": 1}
+    ],
+    "count": 104
+  },
+  {
+    "key": "payment:cash",
+    "tags": [{"value": "no", "count": 37}, {"value": "yes", "count": 26}],
+    "count": 63
+  },
+  {
+    "key": "currency:others",
+    "tags": [{"value": "no", "count": 62}],
+    "count": 62
+  },
+  {
+    "key": "colour",
+    "tags": [
+      {"value": "white", "count": 19},
+      {"value": "blue", "count": 10},
+      {"value": "yellow", "count": 8},
+      {"value": "purple", "count": 2}
+    ],
+    "count": 39
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 7}],
+    "count": 15
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 13}], "count": 13},
+  {
+    "key": "payment:visa",
+    "tags": [{"value": "yes", "count": 10}, {"value": "no", "count": 2}],
+    "count": 12
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 9}, {"value": "no", "count": 2}],
+    "count": 11
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "0", "count": 9}, {"value": "-1", "count": 1}],
+    "count": 10
+  },
+  {
+    "key": "payment:electronic_purses",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 2}],
+    "count": 10
+  },
+  {"key": "payment:none", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "payment:account_cards",
+    "tags": [{"value": "no", "count": 4}, {"value": "yes", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "payment:cryptocurrencies",
+    "tags": [{"value": "no", "count": 4}],
+    "count": 4
+  },
+  {"key": "drink:raw_milk", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "payment:discover_card",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:american_express",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Borne de rechargement de carte técély", "count": 1},
+      {"value": "Supermarché automatique", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "waste_basket", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "ref",
+    "tags": [{"value": "1065", "count": 1}, {"value": "1067", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "4 x normal coffee machine, 1 x Starbucks", "count": 1},
+      {
+        "value": "un automate qui fabrique et vend du pain croustillant 24h/24",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "payment:laser", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "payment:maestro", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "payment:diners_club",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {"key": "atm", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "drink", "tags": [{"value": "coffee", "count": 1}], "count": 1},
+  {"key": "bin", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "surveillance",
+    "tags": [{"value": "outdoor", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "shop", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "5", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "pizza", "count": 1}], "count": 1},
+  {"key": "payment", "tags": [{"value": "none", "count": 1}], "count": 1},
+  {"key": "industrial", "tags": [{"value": "bakery", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Finagaz", "count": 1}], "count": 1},
+  {"key": "dispensing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

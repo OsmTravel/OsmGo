@@ -1,0 +1,28 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "real_estate_agent", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.seniorsappart.com", "count": 6},
+      {"value": "www.novilis.fr", "count": 2},
+      {"value": "www.provence-home.com", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 8}],
+    "count": 8
+  },
+  {"key": "wifi", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  }
+]

@@ -1,0 +1,611 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "cycleway", "count": 4354}],
+    "count": 4354
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 987},
+      {"value": "designated", "count": 493},
+      {"value": "no", "count": 105},
+      {"value": "permissive", "count": 58},
+      {"value": "unknown", "count": 1}
+    ],
+    "count": 1644
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 1058},
+      {"value": "paved", "count": 104},
+      {"value": "gravel", "count": 90},
+      {"value": "fine_gravel", "count": 64},
+      {"value": "compacted", "count": 60},
+      {"value": "concrete", "count": 41},
+      {"value": "dirt", "count": 40},
+      {"value": "pebblestone", "count": 24},
+      {"value": "earth", "count": 19},
+      {"value": "unpaved", "count": 18},
+      {"value": "ground", "count": 17},
+      {"value": "paving_stones", "count": 14},
+      {"value": "cobblestone", "count": 10},
+      {"value": "sand", "count": 4},
+      {"value": "grass", "count": 4},
+      {"value": "wood", "count": 2},
+      {"value": "metal", "count": 1},
+      {"value": "asphalt_no_1", "count": 1},
+      {"value": "asphalt;fine_gravel", "count": 1}
+    ],
+    "count": 1572
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 949}, {"value": "no", "count": 367}],
+    "count": 1316
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 492},
+      {"value": "designated", "count": 379},
+      {"value": "permissive", "count": 16},
+      {"value": "dismount", "count": 1}
+    ],
+    "count": 888
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "no", "count": 441}, {"value": "yes", "count": 238}],
+    "count": 679
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 267},
+      {"value": "-1", "count": 110},
+      {"value": "2", "count": 12},
+      {"value": "-2", "count": 1}
+    ],
+    "count": 390
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 332},
+      {"value": "destination", "count": 17},
+      {"value": "permissive", "count": 8},
+      {"value": "yes", "count": 6},
+      {"value": "private", "count": 3},
+      {"value": "emergency", "count": 1}
+    ],
+    "count": 367
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "abandoned", "count": 313},
+      {"value": "dismantled", "count": 5}
+    ],
+    "count": 318
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 296}, {"value": "viaduct", "count": 12}],
+    "count": 308
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 225}, {"value": "no", "count": 82}],
+    "count": 307
+  },
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "no", "count": 166},
+      {"value": "yes", "count": 85},
+      {"value": "permissive", "count": 6},
+      {"value": "designated", "count": 5}
+    ],
+    "count": 262
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "2", "count": 128},
+      {"value": "1", "count": 65},
+      {"value": "3", "count": 26},
+      {"value": "1.5", "count": 11},
+      {"value": "4", "count": 6},
+      {"value": "3m", "count": 3},
+      {"value": "2.5", "count": 3},
+      {"value": "2.5 m", "count": 1},
+      {"value": "1.4", "count": 1},
+      {"value": "0.70", "count": 1},
+      {"value": "2,30", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 247
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "excellent", "count": 156},
+      {"value": "good", "count": 69},
+      {"value": "intermediate", "count": 7},
+      {"value": "bad", "count": 1}
+    ],
+    "count": 233
+  },
+  {
+    "key": "tracktype",
+    "tags": [
+      {"value": "grade1", "count": 47},
+      {"value": "grade2", "count": 42},
+      {"value": "grade3", "count": 20},
+      {"value": "grade4", "count": 20},
+      {"value": "grade5", "count": 10}
+    ],
+    "count": 139
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "track", "count": 114},
+      {"value": "lane", "count": 5},
+      {"value": "shared", "count": 5},
+      {"value": "opposite", "count": 1},
+      {"value": "no", "count": 1},
+      {"value": "opposite_track", "count": 1},
+      {"value": "oneway=no", "count": 1}
+    ],
+    "count": 128
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 110},
+      {"value": "building_passage", "count": 2}
+    ],
+    "count": 112
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 73},
+      {"value": "no", "count": 26},
+      {"value": "private", "count": 4},
+      {"value": "permissive", "count": 4},
+      {"value": "destination", "count": 3},
+      {"value": "customers", "count": 1}
+    ],
+    "count": 111
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "quai bas: layer = -1", "count": 40},
+      {
+        "value": "piste cyclable Via Rhôna goudronné au printemps 2016",
+        "count": 23
+      },
+      {"value": "Voie Verte", "count": 14},
+      {"value": "Voie verte", "count": 2},
+      {
+        "value": "[lapinos03] désactivé car ne correspond en rien aux photos satellite (à vérifier sur terrain)",
+        "count": 2
+      },
+      {
+        "value": "D'aprés cadastre, devrait être \"impasse du Gavyo\"",
+        "count": 2
+      },
+      {"value": "fixme", "count": 1},
+      {
+        "value": "www.dailymotion.com/video/x15juv1_inauguration-de-la-passerelle-modes-doux-de-decines_news",
+        "count": 1
+      }
+    ],
+    "count": 85
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "none", "count": 20},
+      {"value": "both", "count": 17},
+      {"value": "right", "count": 16},
+      {"value": "separate", "count": 1}
+    ],
+    "count": 54
+  },
+  {
+    "key": "mtb:scale",
+    "tags": [
+      {"value": "0", "count": 22},
+      {"value": "1", "count": 11},
+      {"value": "2", "count": 4},
+      {"value": "1+", "count": 2}
+    ],
+    "count": 39
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "VV2", "count": 10},
+      {"value": "D 15", "count": 5},
+      {"value": "D 315", "count": 4},
+      {"value": "VV1", "count": 3},
+      {"value": "D 386", "count": 3},
+      {"value": "D 342", "count": 3},
+      {"value": "VC 12", "count": 2},
+      {"value": "D 60b", "count": 2},
+      {"value": "D 307", "count": 2},
+      {"value": "D 101", "count": 1},
+      {"value": "A 450", "count": 1},
+      {"value": "VV5", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 36}, {"value": "no", "count": 1}],
+    "count": 37
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2016-05-01", "count": 21},
+      {"value": "2017-10-01", "count": 3},
+      {"value": "2015-12-01", "count": 2},
+      {"value": "2018-06-01", "count": 1},
+      {"value": "2018-03-01", "count": 1},
+      {"value": "1904-11-03", "count": 1},
+      {"value": "2016-10-01", "count": 1},
+      {"value": "C17", "count": 1},
+      {"value": "2018-03", "count": 1},
+      {"value": "2016", "count": 1},
+      {"value": "1898", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "footway",
+    "tags": [
+      {"value": "sidewalk", "count": 19},
+      {"value": "crossing", "count": 12}
+    ],
+    "count": 31
+  },
+  {"key": "sport", "tags": [{"value": "cycling", "count": 28}], "count": 28},
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "30", "count": 21},
+      {"value": "10", "count": 3},
+      {"value": "50", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "up", "count": 16},
+      {"value": "down", "count": 7},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "mtb:type",
+    "tags": [{"value": "downhill", "count": 23}],
+    "count": 23
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Ancienne Ligne de Chalon-sur-Saône à Bourg-en-Bresse",
+        "count": 6
+      },
+      {
+        "value": "Ancienne Ligne de Firminy à Saint-Rambert-d'Albon",
+        "count": 4
+      },
+      {"value": "Voie Verte", "count": 2},
+      {
+        "value": "Un pont en bois très mal fichu pour les rollers, obligé de marcher sinon on tombe",
+        "count": 1
+      },
+      {"value": "Piste Cyclable du Lac de Saint-André", "count": 1},
+      {"value": "Communément appelé \"Voie Verte de l'Ondaine\"", "count": 1},
+      {
+        "value": "Ancienne Ligne de Collonges - Fort-l'Écluse à Divonne-les-Bains (frontière)",
+        "count": 1
+      },
+      {"value": "Itinéraire VTT", "count": 1},
+      {
+        "value": "Chemin de terre pour VTT en montée mais pas trés dur",
+        "count": 1
+      },
+      {
+        "value": "Descente raide par moment des vignes vers le village Délicat en VTT beaucoup de pierres mais sans probléme",
+        "count": 1
+      }
+    ],
+    "count": 19
+  },
+  {
+    "key": "lanes",
+    "tags": [{"value": "2", "count": 10}, {"value": "1", "count": 8}],
+    "count": 18
+  },
+  {"key": "emergency", "tags": [{"value": "yes", "count": 17}], "count": 17},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 7},
+      {"value": "Potlatch 0.10", "count": 2},
+      {"value": "Potlatch 0.9c", "count": 2},
+      {"value": "Editop", "count": 1},
+      {"value": "Potlatch 0.6b", "count": 1},
+      {"value": "Potlatch 0.8a", "count": 1},
+      {"value": "Potlatch 0.10f", "count": 1}
+    ],
+    "count": 15
+  },
+  {"key": "oneway:foot", "tags": [{"value": "no", "count": 14}], "count": 14},
+  {
+    "key": "maxweight",
+    "tags": [
+      {"value": "5", "count": 7},
+      {"value": "2", "count": 5},
+      {"value": "3.5", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "bicycle_road", "tags": [{"value": "yes", "count": 12}], "count": 12},
+  {
+    "key": "embankment",
+    "tags": [
+      {"value": "yes", "count": 10},
+      {"value": "both_sides", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "start_date:railway",
+    "tags": [
+      {"value": "1878", "count": 6},
+      {"value": "1885", "count": 4},
+      {"value": "1904-05-01", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "end_date:railway",
+    "tags": [
+      {"value": "1951", "count": 6},
+      {"value": "1953", "count": 4},
+      {"value": "1962-11-14", "count": 1}
+    ],
+    "count": 11
+  },
+  {"key": "vehicle", "tags": [{"value": "no", "count": 10}], "count": 10},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "au 8 mai 2016 il est dificile de dire si cette voie va être une piste cyclable ou si le traffic des voitures sera également autorisé",
+        "count": 4
+      },
+      {"value": "assez étrange comme piste cyclable", "count": 1},
+      {"value": "Redessiner à partir gps ou imagerie à jour.", "count": 1},
+      {"value": "a confirmer mise en service", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "C'est tracé vraiment de souvenir, ça mériterait de repasser sur place, indiqué vraiment par rapport à la ligne de bus comment ça passe",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {"key": "cutting", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "ncn_ref",
+    "tags": [
+      {"value": "véloroute", "count": 5},
+      {"value": "V60", "count": 1},
+      {"value": "véloroute léman méditerranée", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://meximieux.cyclable.free.fr/index.php?page", "count": 4},
+      {
+        "value": "http://www.cg71.fr/se-divertir/balades-et-randonnees/voies-vertes-et-voie-bleue",
+        "count": 2
+      },
+      {"value": "http://www.viarhona.com/", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "lcn", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "trail_visibility",
+    "tags": [{"value": "excellent", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "1.8", "count": 2},
+      {"value": "4.2", "count": 2},
+      {"value": "3.6", "count": 2}
+    ],
+    "count": 6
+  },
+  {"key": "sac_scale", "tags": [{"value": "hiking", "count": 5}], "count": 5},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "-1", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "mtb:scale:uphill", "tags": [{"value": "0", "count": 4}], "count": 4},
+  {
+    "key": "crossing",
+    "tags": [
+      {"value": "traffic_signals", "count": 2},
+      {"value": "uncontrolled", "count": 1},
+      {"value": "zebra", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "mtb:scale:imba", "tags": [{"value": "0", "count": 4}], "count": 4},
+  {"key": "flood_prone", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "381510096Z", "count": 1},
+      {"value": "385530054F", "count": 1},
+      {"value": "380040080W", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "motorcar",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "oneway:bicycle", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0001", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Passerelle de Decines", "count": 1},
+      {"value": "fr:Pont Raymond Barre", "count": 1},
+      {"value": "fr:Pont Vieux (Cluses)", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "traffic_calming",
+    "tags": [{"value": "table", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2015-05-25", "count": 3}],
+    "count": 3
+  },
+  {"key": "ford", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "colour", "tags": [{"value": "green", "count": 2}], "count": 2},
+  {"key": "covered", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3396690", "count": 1},
+      {"value": "Q3396774", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "smoothness:date",
+    "tags": [{"value": "2018-05", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ramp:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "length", "tags": [{"value": "140", "count": 1}], "count": 1},
+  {"key": "snowmobile", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "ref:sandre", "tags": [{"value": "D 307", "count": 1}], "count": 1},
+  {"key": "hgv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "noexit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "hgv:conditional",
+    "tags": [
+      {
+        "value": "no @ (Feb 10,17,24 07:00-18:00,22:00-24:00; Mar 3,10 07:00-18:00,22:00-24:00; Jul 21,28 07:00-19:00; Aug 4,11,18 07:00-19:00 AND weight>7.5)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "suspension", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "bridge", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1975-06-03", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118378", "count": 1}], "count": 1},
+  {"key": "segregation", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "mtb", "tags": [{"value": "designated", "count": 1}], "count": 1},
+  {
+    "key": "was:highway",
+    "tags": [{"value": "unclassified", "count": 1}],
+    "count": 1
+  },
+  {"key": "ski", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "moped", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "cycleway:foot",
+    "tags": [{"value": "designated", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motor_vehicle:emergency",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "manufacturer",
+    "tags": [
+      {"value": "Forges de Franche-Comté - Ateliers de Fraisans", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "construction",
+    "tags": [{"value": "cycleway", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "end_date",
+    "tags": [{"value": "1962-11-14", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Nouvelle piste cyclable", "count": 1}],
+    "count": 1
+  },
+  {"key": "maxwidth", "tags": [{"value": "1.8", "count": 1}], "count": 1}
+]

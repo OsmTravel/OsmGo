@@ -1,0 +1,38 @@
+[
+  {"key": "shop", "tags": [{"value": "trade", "count": 11}], "count": 11},
+  {
+    "key": "trade",
+    "tags": [
+      {"value": "building_supplies", "count": 3},
+      {"value": "gold", "count": 1},
+      {"value": "plastics", "count": 1},
+      {"value": "wood", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Commerce de fournitures et équipements professionnels",
+        "count": 1
+      },
+      {"value": "Alimentation générale, vente en gros et demi-gros", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 44 28 60", "count": 1},
+      {"value": "+33 4 74 57 47 18", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.orencash.net/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

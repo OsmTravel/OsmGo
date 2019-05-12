@@ -1,0 +1,32 @@
+[
+  {"key": "man_made", "tags": [{"value": "cairn", "count": 28}], "count": 28},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "2391", "count": 1},
+      {"value": "2403", "count": 1},
+      {"value": "1790", "count": 1},
+      {"value": "1907", "count": 1},
+      {"value": "3357", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "natural", "tags": [{"value": "peak", "count": 4}], "count": 4},
+  {
+    "key": "height",
+    "tags": [{"value": "2", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {"key": "wikidata", "tags": [{"value": "Q31652151", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.camptocamp.org/summits/38030/fr/ouille-noire",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "summit:cross", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://farm1.staticflickr.com/754/31543228434_174589b996_z_d.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://farm1.staticflickr.com/325/32346683836_054ab1e250_z_d.jpg",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "project",
+    "tags": [{"value": "Causses&Cévennes", "count": 2}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "sheepfold", "count": 2}], "count": 2},
+  {"key": "operator", "tags": [{"value": "shepherds", "count": 2}], "count": 2},
+  {
+    "key": "wall_type",
+    "tags": [{"value": "dry_stone", "count": 2}],
+    "count": 2
+  },
+  {"key": "historic:fr", "tags": [{"value": "Enclos", "count": 2}], "count": 2},
+  {
+    "key": "historic:description:fr",
+    "tags": [
+      {
+        "value": "Parcelle entourée d'un mur bâti en pierre sèche destinée à rassembler les brebis",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "wall", "count": 1}], "count": 1}
+]

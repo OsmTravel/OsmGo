@@ -1,0 +1,23 @@
+[
+  {"key": "man_made", "tags": [{"value": "city_wall", "count": 7}], "count": 7},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "pedestrian", "count": 2},
+      {"value": "footway", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "fixme - il faudra peut etre doubler le chemin et le mur",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "citywalls", "count": 1}], "count": 1}
+]

@@ -1,0 +1,2559 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "secondary", "count": 26391}],
+    "count": 26391
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 2", "count": 369},
+      {"value": "D 4", "count": 332},
+      {"value": "D 5", "count": 307},
+      {"value": "D 8", "count": 251},
+      {"value": "D 9", "count": 248},
+      {"value": "D 902", "count": 248},
+      {"value": "D 7", "count": 243},
+      {"value": "D 3", "count": 234},
+      {"value": "D 538", "count": 221},
+      {"value": "D 12", "count": 220},
+      {"value": "D 933", "count": 201},
+      {"value": "D 14", "count": 200},
+      {"value": "D 578", "count": 191},
+      {"value": "D 28", "count": 190},
+      {"value": "D 6", "count": 189},
+      {"value": "D 30", "count": 183},
+      {"value": "D 22", "count": 175},
+      {"value": "D 518", "count": 170},
+      {"value": "D 19", "count": 169},
+      {"value": "D 10", "count": 168},
+      {"value": "D 13", "count": 165},
+      {"value": "D 51", "count": 159},
+      {"value": "D 523", "count": 155},
+      {"value": "D 67", "count": 148},
+      {"value": "D 531", "count": 145},
+      {"value": "D 526", "count": 144},
+      {"value": "D 1", "count": 141},
+      {"value": "D 912", "count": 139},
+      {"value": "D 16", "count": 138},
+      {"value": "D 201", "count": 136},
+      {"value": "D 925", "count": 136},
+      {"value": "D 18", "count": 135},
+      {"value": "D 36", "count": 134},
+      {"value": "D 117", "count": 133},
+      {"value": "D 11", "count": 130},
+      {"value": "D 125", "count": 117},
+      {"value": "D 990", "count": 116},
+      {"value": "D 315", "count": 114},
+      {"value": "D 17", "count": 113},
+      {"value": "D 991", "count": 112},
+      {"value": "D 1506", "count": 111},
+      {"value": "D 26", "count": 111},
+      {"value": "D 24", "count": 109},
+      {"value": "D 66", "count": 107},
+      {"value": "D 149", "count": 106},
+      {"value": "D 73", "count": 106},
+      {"value": "D 504", "count": 105},
+      {"value": "D 71", "count": 104},
+      {"value": "D 907", "count": 104},
+      {"value": "D 70", "count": 103},
+      {"value": "D 992", "count": 103},
+      {"value": "D 311", "count": 101},
+      {"value": "D 15", "count": 101},
+      {"value": "D 82", "count": 100},
+      {"value": "D 911", "count": 100},
+      {"value": "D 579", "count": 98},
+      {"value": "D 88", "count": 95},
+      {"value": "D 904", "count": 94},
+      {"value": "D 111", "count": 93},
+      {"value": "D 102", "count": 91},
+      {"value": "D 106", "count": 89},
+      {"value": "D 76", "count": 89},
+      {"value": "D 29", "count": 86},
+      {"value": "D 921", "count": 86},
+      {"value": "D 37", "count": 85},
+      {"value": "D 909", "count": 84},
+      {"value": "D 112", "count": 84},
+      {"value": "D 32", "count": 83},
+      {"value": "D 43", "count": 82},
+      {"value": "D 280", "count": 82},
+      {"value": "D 312", "count": 81},
+      {"value": "D 269", "count": 80},
+      {"value": "D 540", "count": 79},
+      {"value": "D 65", "count": 79},
+      {"value": "D 59", "count": 79},
+      {"value": "D 524", "count": 79},
+      {"value": "D 213", "count": 78},
+      {"value": "D 21", "count": 78},
+      {"value": "D 512", "count": 77},
+      {"value": "D 532", "count": 77},
+      {"value": "D 35", "count": 76},
+      {"value": "D 27", "count": 76},
+      {"value": "D 50", "count": 75},
+      {"value": "D 34", "count": 75},
+      {"value": "D 519", "count": 75},
+      {"value": "D 25", "count": 73},
+      {"value": "D 119", "count": 72},
+      {"value": "D 1075", "count": 71},
+      {"value": "D 61", "count": 70},
+      {"value": "D 529", "count": 70},
+      {"value": "D 502", "count": 70},
+      {"value": "D 103", "count": 68},
+      {"value": "D 31", "count": 67},
+      {"value": "D 52", "count": 67},
+      {"value": "D 68", "count": 67},
+      {"value": "D 54", "count": 66},
+      {"value": "D 313", "count": 65},
+      {"value": "D 984", "count": 64},
+      {"value": "D 40", "count": 63},
+      {"value": "D 489", "count": 62},
+      {"value": "D 211", "count": 61},
+      {"value": "D 926", "count": 60},
+      {"value": "D 20", "count": 60},
+      {"value": "D 49", "count": 59},
+      {"value": "D 53", "count": 59},
+      {"value": "D 101", "count": 58},
+      {"value": "D 546", "count": 58},
+      {"value": "D 903", "count": 57},
+      {"value": "D 108", "count": 57},
+      {"value": "D 5B", "count": 56},
+      {"value": "D 525", "count": 56},
+      {"value": "D 906", "count": 55},
+      {"value": "D 483", "count": 54},
+      {"value": "D 147", "count": 54},
+      {"value": "D 93", "count": 53},
+      {"value": "D 432", "count": 51},
+      {"value": "D 1087", "count": 49},
+      {"value": "D 913", "count": 49},
+      {"value": "D 458", "count": 49},
+      {"value": "D 64", "count": 49},
+      {"value": "D 121", "count": 48},
+      {"value": "D 215", "count": 48},
+      {"value": "D 55", "count": 48},
+      {"value": "D 35b", "count": 47},
+      {"value": "D 204", "count": 47},
+      {"value": "D 337", "count": 47},
+      {"value": "D 114", "count": 47},
+      {"value": "D 290", "count": 47},
+      {"value": "D 927", "count": 46},
+      {"value": "D 206", "count": 46},
+      {"value": "D 74", "count": 46},
+      {"value": "D 936", "count": 46},
+      {"value": "D 542", "count": 46},
+      {"value": "D 45", "count": 45},
+      {"value": "D 41", "count": 44},
+      {"value": "D 520", "count": 42},
+      {"value": "D 261", "count": 41},
+      {"value": "D 38", "count": 41},
+      {"value": "D 308", "count": 40},
+      {"value": "D 60", "count": 40},
+      {"value": "D 56", "count": 39},
+      {"value": "D 1512", "count": 39},
+      {"value": "D 39", "count": 38},
+      {"value": "D 218B", "count": 38},
+      {"value": "D 503", "count": 38},
+      {"value": "D 1532", "count": 38},
+      {"value": "115", "count": 38},
+      {"value": "D 148", "count": 37},
+      {"value": "D 540a", "count": 37},
+      {"value": "D 113", "count": 37},
+      {"value": "D 128", "count": 37},
+      {"value": "D 517", "count": 36},
+      {"value": "D 269A", "count": 36},
+      {"value": "D 923", "count": 36},
+      {"value": "D 44", "count": 36},
+      {"value": "D 530", "count": 36},
+      {"value": "D 33", "count": 35},
+      {"value": "D 901", "count": 35},
+      {"value": "D 592", "count": 34},
+      {"value": "D 116", "count": 34},
+      {"value": "D 122", "count": 34},
+      {"value": "112", "count": 34},
+      {"value": "D 124", "count": 34},
+      {"value": "D 42", "count": 33},
+      {"value": "D 46", "count": 33},
+      {"value": "D 72", "count": 33},
+      {"value": "D 525a", "count": 32},
+      {"value": "D 2005", "count": 32},
+      {"value": "D 269Z", "count": 31},
+      {"value": "D 221", "count": 31},
+      {"value": "D 522", "count": 30},
+      {"value": "D 632", "count": 30},
+      {"value": "D 135", "count": 30},
+      {"value": "D 143", "count": 29},
+      {"value": "D 165", "count": 29},
+      {"value": "106", "count": 29},
+      {"value": "D 996", "count": 28},
+      {"value": "D 1205", "count": 28},
+      {"value": "D 317", "count": 28},
+      {"value": "D 844", "count": 28},
+      {"value": "D 80", "count": 28},
+      {"value": "D 126", "count": 28},
+      {"value": "103", "count": 27},
+      {"value": "D 1a", "count": 27},
+      {"value": "D 558", "count": 27},
+      {"value": "D 916", "count": 26},
+      {"value": "D 488", "count": 26},
+      {"value": "D 94", "count": 26},
+      {"value": "D 95", "count": 26},
+      {"value": "D 48e", "count": 26},
+      {"value": "D 105", "count": 25},
+      {"value": "D 909a", "count": 25},
+      {"value": "D 90", "count": 25},
+      {"value": "D 69", "count": 25},
+      {"value": "D 207", "count": 25},
+      {"value": "D 496", "count": 25},
+      {"value": "D 91", "count": 25},
+      {"value": "D 1007", "count": 25},
+      {"value": "D 109", "count": 24},
+      {"value": "D 203", "count": 24},
+      {"value": "D 218a", "count": 23},
+      {"value": "D 1091B", "count": 23},
+      {"value": "D 23", "count": 23},
+      {"value": "D 539", "count": 23},
+      {"value": "D 15E", "count": 23},
+      {"value": "D 81", "count": 23},
+      {"value": "D 3088", "count": 22},
+      {"value": "D 536", "count": 22},
+      {"value": "D 498", "count": 22},
+      {"value": "D 100", "count": 22},
+      {"value": "D 63", "count": 21},
+      {"value": "D 50f", "count": 21},
+      {"value": "D 106B", "count": 21},
+      {"value": "D 921d", "count": 21},
+      {"value": "D 65b", "count": 21},
+      {"value": "D 318", "count": 21},
+      {"value": "D 87A", "count": 21},
+      {"value": "D 87", "count": 21},
+      {"value": "D 520b", "count": 20},
+      {"value": "D 85", "count": 20},
+      {"value": "D 520c", "count": 20},
+      {"value": "D 269D", "count": 20},
+      {"value": "D 237", "count": 20},
+      {"value": "D 16a", "count": 20},
+      {"value": "101", "count": 20},
+      {"value": "107", "count": 20},
+      {"value": "D 104a", "count": 19},
+      {"value": "D 279", "count": 19},
+      {"value": "D 208", "count": 19},
+      {"value": "D 500", "count": 18},
+      {"value": "D 157", "count": 18},
+      {"value": "D 105f", "count": 18},
+      {"value": "D 578a", "count": 18},
+      {"value": "D 83", "count": 18},
+      {"value": "D 219", "count": 18},
+      {"value": "D 590", "count": 18},
+      {"value": "D 250", "count": 18},
+      {"value": "D 942", "count": 17},
+      {"value": "D 523a", "count": 17},
+      {"value": "D 358", "count": 17},
+      {"value": "D 534", "count": 17},
+      {"value": "102", "count": 17},
+      {"value": "D 107", "count": 17},
+      {"value": "D 11B", "count": 16},
+      {"value": "D 914", "count": 16},
+      {"value": "113", "count": 16},
+      {"value": "D 218", "count": 16},
+      {"value": "D 216", "count": 16},
+      {"value": "D 590a", "count": 16},
+      {"value": "111", "count": 16},
+      {"value": "D 11M", "count": 16},
+      {"value": "D 78a", "count": 15},
+      {"value": "D 538a", "count": 15},
+      {"value": "D 22a", "count": 15},
+      {"value": "D 153", "count": 15},
+      {"value": "D 378", "count": 15},
+      {"value": "D 520A", "count": 15},
+      {"value": "D 243", "count": 15},
+      {"value": "D 916a", "count": 15},
+      {"value": "D 487", "count": 15},
+      {"value": "D 89", "count": 14},
+      {"value": "D 921e", "count": 14},
+      {"value": "D 807", "count": 14},
+      {"value": "D 281", "count": 14},
+      {"value": "D 325", "count": 14},
+      {"value": "D 532a", "count": 14},
+      {"value": "D 160", "count": 14},
+      {"value": "D 208a", "count": 13},
+      {"value": "D 101f", "count": 13},
+      {"value": "D 37B", "count": 13},
+      {"value": "D 79", "count": 13},
+      {"value": "D 1206", "count": 13},
+      {"value": "D 501", "count": 13},
+      {"value": "D 72a", "count": 13},
+      {"value": "D 8A", "count": 13},
+      {"value": "D 8b", "count": 13},
+      {"value": "N 85", "count": 13},
+      {"value": "D 1201", "count": 12},
+      {"value": "D 1084", "count": 12},
+      {"value": "D 520C", "count": 12},
+      {"value": "D 45E2", "count": 12},
+      {"value": "D 269E", "count": 12},
+      {"value": "D 239", "count": 12},
+      {"value": "D 190", "count": 12},
+      {"value": "D 104", "count": 12},
+      {"value": "D 907A", "count": 12},
+      {"value": "D 120", "count": 12},
+      {"value": "D 91a", "count": 12},
+      {"value": "D 984b", "count": 12},
+      {"value": "D 2082", "count": 11},
+      {"value": "D 211F", "count": 11},
+      {"value": "D 4b", "count": 11},
+      {"value": "110", "count": 11},
+      {"value": "D 234", "count": 11},
+      {"value": "D 933a", "count": 11},
+      {"value": "D 98", "count": 11},
+      {"value": "D 8a", "count": 11},
+      {"value": "D 3487", "count": 11},
+      {"value": "D 11k", "count": 11},
+      {"value": "D 199", "count": 11},
+      {"value": "D 537", "count": 11},
+      {"value": "D 75", "count": 10},
+      {"value": "D 285c", "count": 10},
+      {"value": "D 32a", "count": 10},
+      {"value": "D 1212A", "count": 10},
+      {"value": "D 54b", "count": 10},
+      {"value": "D 86K", "count": 10},
+      {"value": "D 578B", "count": 10},
+      {"value": "D 201c", "count": 10},
+      {"value": "D 106d", "count": 10},
+      {"value": "D 339", "count": 10},
+      {"value": "D 638", "count": 9},
+      {"value": "D 519C", "count": 9},
+      {"value": "D 78", "count": 9},
+      {"value": "D 1082", "count": 9},
+      {"value": "121", "count": 9},
+      {"value": "N 7", "count": 9},
+      {"value": "D25", "count": 9},
+      {"value": "D 48", "count": 9},
+      {"value": "D 2b", "count": 9},
+      {"value": "D 7A", "count": 9},
+      {"value": "D 106G", "count": 9},
+      {"value": "D 686", "count": 9},
+      {"value": "D 984c", "count": 9},
+      {"value": "D 81A", "count": 9},
+      {"value": "D 131", "count": 9},
+      {"value": "D 285", "count": 8},
+      {"value": "D 520a", "count": 8},
+      {"value": "D 111A", "count": 8},
+      {"value": "D 97A", "count": 8},
+      {"value": "D 12c", "count": 8},
+      {"value": "D 206a", "count": 8},
+      {"value": "D 29D", "count": 8},
+      {"value": "D 51a", "count": 8},
+      {"value": "D 1079", "count": 8},
+      {"value": "D 259", "count": 8},
+      {"value": "D 86b", "count": 8},
+      {"value": "D 20a", "count": 8},
+      {"value": "D 101e", "count": 8},
+      {"value": "D 1508", "count": 8},
+      {"value": "D 484", "count": 8},
+      {"value": "D 142", "count": 8},
+      {"value": "D 933c", "count": 8},
+      {"value": "D 73a", "count": 8},
+      {"value": "D 12.2", "count": 8},
+      {"value": "D 987", "count": 8},
+      {"value": "D 2201", "count": 8},
+      {"value": "D 6E", "count": 8},
+      {"value": "D 386", "count": 8},
+      {"value": "D 220", "count": 8},
+      {"value": "203", "count": 8},
+      {"value": "D 541", "count": 8},
+      {"value": "D 222", "count": 8},
+      {"value": "D 270", "count": 7},
+      {"value": "D 14a", "count": 7},
+      {"value": "D 17a", "count": 7},
+      {"value": "D 201D", "count": 7},
+      {"value": "D 82c", "count": 7},
+      {"value": "D 5E", "count": 7},
+      {"value": "D 976", "count": 7},
+      {"value": "D 1982", "count": 7},
+      {"value": "105", "count": 7},
+      {"value": "D 59E", "count": 7},
+      {"value": "D 224", "count": 7},
+      {"value": "D 209", "count": 7},
+      {"value": "D 878", "count": 7},
+      {"value": "D 102c", "count": 7},
+      {"value": "D 1091A", "count": 7},
+      {"value": "114", "count": 7},
+      {"value": "D 82M", "count": 7},
+      {"value": "D 110", "count": 7},
+      {"value": "D 517a", "count": 7},
+      {"value": "D 47", "count": 7},
+      {"value": "D 225", "count": 7},
+      {"value": "D29", "count": 7},
+      {"value": "D 8E1", "count": 7},
+      {"value": "D 66A", "count": 7},
+      {"value": "D 149E", "count": 7},
+      {"value": "D 134", "count": 7},
+      {"value": "D 921f", "count": 6},
+      {"value": "D 52N", "count": 6},
+      {"value": "D 406", "count": 6},
+      {"value": "D 73B", "count": 6},
+      {"value": "D 202", "count": 6},
+      {"value": "D 11m", "count": 6},
+      {"value": "D 210", "count": 6},
+      {"value": "D 72c", "count": 6},
+      {"value": "D 3007", "count": 6},
+      {"value": "D 991b", "count": 6},
+      {"value": "D 101a", "count": 6},
+      {"value": "D 578A", "count": 6},
+      {"value": "D 937", "count": 6},
+      {"value": "D 154D", "count": 6},
+      {"value": "D 371", "count": 6},
+      {"value": "D 2E1", "count": 6},
+      {"value": "D 946", "count": 6},
+      {"value": "D 303", "count": 6},
+      {"value": "D 30E", "count": 6},
+      {"value": "D 175", "count": 6},
+      {"value": "D 73E", "count": 6},
+      {"value": "D 211a", "count": 6},
+      {"value": "D 284", "count": 6},
+      {"value": "D 903b", "count": 6},
+      {"value": "D 10a", "count": 6},
+      {"value": "D 28f", "count": 6},
+      {"value": "D 43a", "count": 6},
+      {"value": "D 124z", "count": 6},
+      {"value": "D 174", "count": 6},
+      {"value": "D 44a", "count": 6},
+      {"value": "D 132", "count": 6},
+      {"value": "D 145", "count": 6},
+      {"value": "D 49e", "count": 5},
+      {"value": "D 51b", "count": 5},
+      {"value": "D 129", "count": 5},
+      {"value": "D 1085B", "count": 5},
+      {"value": "D 242", "count": 5},
+      {"value": "D 59a", "count": 5},
+      {"value": "D 590A", "count": 5},
+      {"value": "D 22C", "count": 5},
+      {"value": "D 578Bis", "count": 5},
+      {"value": "D 101c", "count": 5},
+      {"value": "D 821", "count": 5},
+      {"value": "D 86", "count": 5},
+      {"value": "D 8e", "count": 5},
+      {"value": "D 210a", "count": 5},
+      {"value": "D 164a", "count": 5},
+      {"value": "D 2203", "count": 5},
+      {"value": "D 984e", "count": 5},
+      {"value": "D 63A", "count": 5},
+      {"value": "D 99", "count": 5},
+      {"value": "D 75e", "count": 5},
+      {"value": "D 57", "count": 5},
+      {"value": "D 223", "count": 5},
+      {"value": "D 154", "count": 4},
+      {"value": "D 19c", "count": 4},
+      {"value": "D 169", "count": 4},
+      {"value": "D 156", "count": 4},
+      {"value": "D 269F", "count": 4},
+      {"value": "D 281A", "count": 4},
+      {"value": "D 23E", "count": 4},
+      {"value": "D 215A", "count": 4},
+      {"value": "D 6D", "count": 4},
+      {"value": "D 506", "count": 4},
+      {"value": "D 19a", "count": 4},
+      {"value": "D 307", "count": 4},
+      {"value": "D 43e1", "count": 4},
+      {"value": "D 490", "count": 4},
+      {"value": "D 50D", "count": 4},
+      {"value": "D 62", "count": 4},
+      {"value": "D 495", "count": 4},
+      {"value": "D3", "count": 4},
+      {"value": "D 87a", "count": 4},
+      {"value": "D 6a", "count": 4},
+      {"value": "D 45a", "count": 4},
+      {"value": "D 86i", "count": 4},
+      {"value": "D 991c", "count": 4},
+      {"value": "D 619", "count": 4},
+      {"value": "109", "count": 4},
+      {"value": "D 102b", "count": 4},
+      {"value": "D 400", "count": 3},
+      {"value": "D 214", "count": 3},
+      {"value": "D 338", "count": 3},
+      {"value": "D 70e", "count": 3},
+      {"value": "D 857", "count": 3},
+      {"value": "D 1179", "count": 3},
+      {"value": "D 2508", "count": 3},
+      {"value": "D 91b", "count": 3},
+      {"value": "D 9a", "count": 3},
+      {"value": "D 178", "count": 3},
+      {"value": "D 88.1", "count": 3},
+      {"value": "D 32c", "count": 3},
+      {"value": "D 86k", "count": 3},
+      {"value": "D 390", "count": 3},
+      {"value": "D 40a", "count": 3},
+      {"value": "D 991a", "count": 3},
+      {"value": "D 436", "count": 3},
+      {"value": "D 520D", "count": 3},
+      {"value": "D 6.3", "count": 3},
+      {"value": "D 9E3", "count": 3},
+      {"value": "D 54e", "count": 3},
+      {"value": "D 116b", "count": 3},
+      {"value": "D 37c", "count": 3},
+      {"value": "D 211e", "count": 3},
+      {"value": "D 802", "count": 3},
+      {"value": "D 137", "count": 3},
+      {"value": "D 1203", "count": 3},
+      {"value": "D 84", "count": 3},
+      {"value": "D 31j", "count": 3},
+      {"value": "D 18A", "count": 3},
+      {"value": "D 520E", "count": 3},
+      {"value": "D 921A", "count": 3},
+      {"value": "D 574", "count": 3},
+      {"value": "CD 3", "count": 3},
+      {"value": "D 4g", "count": 3},
+      {"value": "D 12e", "count": 3},
+      {"value": "D 32b", "count": 3},
+      {"value": "D 53c", "count": 3},
+      {"value": "D 26c", "count": 3},
+      {"value": "D 21a", "count": 3},
+      {"value": "D 316", "count": 3},
+      {"value": "D 71a", "count": 3},
+      {"value": "D 41a", "count": 3},
+      {"value": "D 167", "count": 3},
+      {"value": "D 60e2", "count": 3},
+      {"value": "D 974", "count": 3},
+      {"value": "D 16b", "count": 3},
+      {"value": "D 37b", "count": 3},
+      {"value": "D 984d", "count": 3},
+      {"value": "D 97", "count": 3},
+      {"value": "D 285a", "count": 3},
+      {"value": "RD 19", "count": 2},
+      {"value": "D 341", "count": 2},
+      {"value": "D123b", "count": 2},
+      {"value": "D 123b", "count": 2},
+      {"value": "D211", "count": 2},
+      {"value": "D 227", "count": 2},
+      {"value": "D 1982.1", "count": 2},
+      {"value": "D 342", "count": 2},
+      {"value": "D 242a", "count": 2},
+      {"value": "D 37E", "count": 2},
+      {"value": "D 18G", "count": 2},
+      {"value": "Avenue de Saint-Simond", "count": 2},
+      {"value": "D 921c", "count": 2},
+      {"value": "D 557", "count": 2},
+      {"value": "D 498.1", "count": 2},
+      {"value": "D", "count": 2},
+      {"value": "D 269B", "count": 2},
+      {"value": "D 401", "count": 2},
+      {"value": "D 88a", "count": 2},
+      {"value": "C 37", "count": 2},
+      {"value": "D 211A", "count": 2},
+      {"value": "D 201H", "count": 2},
+      {"value": "D 18E", "count": 2},
+      {"value": "D 58", "count": 2},
+      {"value": "D 31h", "count": 2},
+      {"value": "D 60b", "count": 2},
+      {"value": "D 5.5", "count": 2},
+      {"value": "D 101.3", "count": 2},
+      {"value": "D 151", "count": 2},
+      {"value": "D 81a", "count": 2},
+      {"value": "D 3008", "count": 2},
+      {"value": "D 26b", "count": 2},
+      {"value": "D 205", "count": 2},
+      {"value": "CD 32", "count": 2},
+      {"value": "D 321", "count": 2},
+      {"value": "D 103a", "count": 2},
+      {"value": "D 20b", "count": 2},
+      {"value": "D 65i", "count": 2},
+      {"value": "D 218C", "count": 2},
+      {"value": "D20", "count": 2},
+      {"value": "D 39a", "count": 2},
+      {"value": "D 39c", "count": 2},
+      {"value": "D 920", "count": 2},
+      {"value": "D 102A", "count": 2},
+      {"value": "D 2a", "count": 2},
+      {"value": "D 11a", "count": 2},
+      {"value": "D 147E", "count": 2},
+      {"value": "D 250a", "count": 2},
+      {"value": "D 292", "count": 2},
+      {"value": "D 984C", "count": 1},
+      {"value": "D 535", "count": 1},
+      {"value": "D 378A", "count": 1},
+      {"value": "D 414", "count": 1},
+      {"value": "D 97b", "count": 1},
+      {"value": "D 1498", "count": 1},
+      {"value": "D 124Z", "count": 1},
+      {"value": "D 241", "count": 1},
+      {"value": "D 52c", "count": 1},
+      {"value": "D 52C", "count": 1},
+      {"value": "D 482", "count": 1},
+      {"value": "201", "count": 1},
+      {"value": "D 523B", "count": 1},
+      {"value": "D 28c", "count": 1},
+      {"value": "D41", "count": 1},
+      {"value": "D 4a", "count": 1},
+      {"value": "D 921b", "count": 1},
+      {"value": "A404", "count": 1},
+      {"value": "D 995", "count": 1},
+      {"value": "D 280H", "count": 1},
+      {"value": "D 906a", "count": 1},
+      {"value": "D 103A", "count": 1},
+      {"value": "C 8", "count": 1},
+      {"value": "D 31i", "count": 1},
+      {"value": "N 510", "count": 1},
+      {"value": "A 404", "count": 1},
+      {"value": "D 614", "count": 1},
+      {"value": "D 81B", "count": 1},
+      {"value": "D 28b", "count": 1},
+      {"value": "D 984f", "count": 1},
+      {"value": "D 478", "count": 1},
+      {"value": "D 106A", "count": 1},
+      {"value": "D 12d", "count": 1},
+      {"value": "D 219A", "count": 1},
+      {"value": "D 35c", "count": 1},
+      {"value": "D 64a", "count": 1},
+      {"value": "D 77", "count": 1},
+      {"value": "D 17C", "count": 1},
+      {"value": "D 92", "count": 1},
+      {"value": "D 608", "count": 1},
+      {"value": "D 257", "count": 1},
+      {"value": "D44", "count": 1},
+      {"value": "D 927a", "count": 1},
+      {"value": "D 164", "count": 1},
+      {"value": "D4", "count": 1},
+      {"value": "D 34.1", "count": 1},
+      {"value": "D 576", "count": 1},
+      {"value": "D 72d", "count": 1},
+      {"value": "D 31j bis", "count": 1},
+      {"value": "D 322", "count": 1},
+      {"value": "D 520e", "count": 1},
+      {"value": "D 130", "count": 1},
+      {"value": "D 914a", "count": 1},
+      {"value": "D 458B", "count": 1},
+      {"value": "D 32E", "count": 1},
+      {"value": "D 73b", "count": 1},
+      {"value": "D 73J", "count": 1},
+      {"value": "D 54E", "count": 1},
+      {"value": "D 79b", "count": 1},
+      {"value": "D 991d", "count": 1},
+      {"value": "D 528", "count": 1},
+      {"value": "D 112 - D269", "count": 1},
+      {"value": "Route des Gorges du Sierroz", "count": 1},
+      {"value": "D 324", "count": 1},
+      {"value": "D 32 a", "count": 1},
+      {"value": "Route de Pont-Pierre", "count": 1},
+      {"value": "D 50b", "count": 1},
+      {"value": "D 15c", "count": 1},
+      {"value": "D 467", "count": 1},
+      {"value": "D45", "count": 1},
+      {"value": "D 614B", "count": 1},
+      {"value": "D 52M", "count": 1},
+      {"value": "D 273", "count": 1},
+      {"value": "D40.1", "count": 1},
+      {"value": "R 48", "count": 1},
+      {"value": "D 2532N", "count": 1},
+      {"value": "D12c", "count": 1},
+      {"value": "D 51A", "count": 1},
+      {"value": "D 30d", "count": 1},
+      {"value": "D 232", "count": 1},
+      {"value": "D8", "count": 1},
+      {"value": "D15", "count": 1},
+      {"value": "D 71m", "count": 1},
+      {"value": "D 60E2", "count": 1},
+      {"value": "D5", "count": 1}
+    ],
+    "count": 19160
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "50", "count": 5493},
+      {"value": "80", "count": 1832},
+      {"value": "30", "count": 1298},
+      {"value": "70", "count": 1165},
+      {"value": "60", "count": 98},
+      {"value": "90", "count": 46},
+      {"value": "40", "count": 37},
+      {"value": "45", "count": 5},
+      {"value": "20", "count": 3},
+      {"value": "FR:urban", "count": 3},
+      {"value": "70;90", "count": 2},
+      {"value": "50,90", "count": 2}
+    ],
+    "count": 9984
+  },
+  {
+    "key": "oneway",
+    "tags": [
+      {"value": "yes", "count": 8140},
+      {"value": "no", "count": 996},
+      {"value": "-1", "count": 13},
+      {"value": "alternating", "count": 5}
+    ],
+    "count": 9154
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 6285},
+      {"value": "paved", "count": 180},
+      {"value": "concrete", "count": 7},
+      {"value": "ground", "count": 3},
+      {"value": "paving_stones", "count": 2},
+      {"value": "sett", "count": 1}
+    ],
+    "count": 6478
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "2", "count": 2002},
+      {"value": "1", "count": 703},
+      {"value": "3", "count": 250},
+      {"value": "4", "count": 85},
+      {"value": "5", "count": 17}
+    ],
+    "count": 3057
+  },
+  {
+    "key": "junction",
+    "tags": [
+      {"value": "roundabout", "count": 2359},
+      {"value": "circular", "count": 7}
+    ],
+    "count": 2366
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 2021},
+      {"value": "-1", "count": 114},
+      {"value": "2", "count": 57},
+      {"value": "0", "count": 15},
+      {"value": "-2", "count": 4},
+      {"value": "-3", "count": 2}
+    ],
+    "count": 2213
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 2118}, {"value": "viaduct", "count": 7}],
+    "count": 2125
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "lane", "count": 1049},
+      {"value": "no", "count": 71},
+      {"value": "share_busway", "count": 49},
+      {"value": "track", "count": 45},
+      {"value": "shared_lane", "count": 19},
+      {"value": "opposite_lane", "count": 9},
+      {"value": "opposite", "count": 5},
+      {"value": "opposite_track", "count": 4},
+      {"value": "opposite_share_busway", "count": 3}
+    ],
+    "count": 1254
+  },
+  {
+    "key": "lit",
+    "tags": [
+      {"value": "yes", "count": 717},
+      {"value": "no", "count": 96},
+      {"value": "automatic", "count": 4}
+    ],
+    "count": 817
+  },
+  {
+    "key": "old_ref",
+    "tags": [
+      {"value": "N 506", "count": 111},
+      {"value": "N 84", "count": 79},
+      {"value": "N 75", "count": 71},
+      {"value": "N 6", "count": 69},
+      {"value": "N 491", "count": 55},
+      {"value": "N 83", "count": 53},
+      {"value": "N 436", "count": 49},
+      {"value": "N 92", "count": 42},
+      {"value": "N 512", "count": 39},
+      {"value": "N 532", "count": 38},
+      {"value": "N 396", "count": 28},
+      {"value": "D 1", "count": 18},
+      {"value": "N 82", "count": 14},
+      {"value": "N 509", "count": 13},
+      {"value": "D 125", "count": 12},
+      {"value": "N 84b", "count": 12},
+      {"value": "N 86", "count": 11},
+      {"value": "N 84c", "count": 10},
+      {"value": "D483;N 83", "count": 9},
+      {"value": "D 483", "count": 8},
+      {"value": "N 461", "count": 7},
+      {"value": "N 79", "count": 6},
+      {"value": "N508", "count": 4},
+      {"value": "N 513", "count": 4},
+      {"value": "N201", "count": 4},
+      {"value": "N 491a", "count": 3},
+      {"value": "N 508", "count": 3},
+      {"value": "N 514", "count": 3},
+      {"value": "N 84d", "count": 3},
+      {"value": "N 206", "count": 3},
+      {"value": "N 201", "count": 2},
+      {"value": "N 433", "count": 2},
+      {"value": "N 102", "count": 2},
+      {"value": "N 7", "count": 1}
+    ],
+    "count": 788
+  },
+  {
+    "key": "cycleway:right",
+    "tags": [
+      {"value": "lane", "count": 435},
+      {"value": "no", "count": 77},
+      {"value": "share_busway", "count": 66},
+      {"value": "track", "count": 26},
+      {"value": "shared_lane", "count": 6},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 611
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "260580195A", "count": 38},
+      {"value": "385530146F", "count": 21},
+      {"value": "691120465U", "count": 16},
+      {"value": "422185692C", "count": 14},
+      {"value": "010210115F", "count": 14},
+      {"value": "382050530L", "count": 14},
+      {"value": "262811394J", "count": 12},
+      {"value": "382360012N", "count": 11},
+      {"value": "740110250H", "count": 10},
+      {"value": "381790150L", "count": 10},
+      {"value": "693873405U", "count": 10},
+      {"value": "381854040N", "count": 9},
+      {"value": "383830097S", "count": 9},
+      {"value": "384490378K", "count": 8},
+      {"value": "382150131J", "count": 7},
+      {"value": "730082020Y", "count": 7},
+      {"value": "383760150E", "count": 6},
+      {"value": "262810260B", "count": 6},
+      {"value": "383720540W", "count": 6},
+      {"value": "692270120U", "count": 6},
+      {"value": "383170175N", "count": 6},
+      {"value": "381510105J", "count": 6},
+      {"value": "380250010D", "count": 5},
+      {"value": "380530340R", "count": 5},
+      {"value": "422070030W", "count": 4},
+      {"value": "384780030F", "count": 4},
+      {"value": "380040163L", "count": 4},
+      {"value": "692481067G", "count": 4},
+      {"value": "381930282U", "count": 4},
+      {"value": "382280065F", "count": 4},
+      {"value": "382560295J", "count": 4},
+      {"value": "691410265A", "count": 4},
+      {"value": "382750428W", "count": 4},
+      {"value": "383370109E", "count": 4},
+      {"value": "731410680N", "count": 4},
+      {"value": "381100130P", "count": 3},
+      {"value": "012320085F", "count": 3},
+      {"value": "692280400U", "count": 3},
+      {"value": "690101102E", "count": 3},
+      {"value": "380820850U", "count": 3},
+      {"value": "840690683U", "count": 3},
+      {"value": "384150460X", "count": 3},
+      {"value": "690560081V", "count": 3},
+      {"value": "262810670X", "count": 3},
+      {"value": "260450071X", "count": 3},
+      {"value": "731600175G", "count": 3},
+      {"value": "385550930Z", "count": 3},
+      {"value": "384590090D", "count": 3},
+      {"value": "730230070N", "count": 3},
+      {"value": "380220280K", "count": 3},
+      {"value": "422183320Z", "count": 3},
+      {"value": "730652030L", "count": 3},
+      {"value": "421860545X", "count": 3},
+      {"value": "010470057E", "count": 3},
+      {"value": "421470220N", "count": 3},
+      {"value": "384570371T", "count": 3},
+      {"value": "382920160F", "count": 3},
+      {"value": "730651510W", "count": 3},
+      {"value": "380430500H", "count": 3},
+      {"value": "384210072Z", "count": 3},
+      {"value": "012830550P", "count": 3},
+      {"value": "384500520K", "count": 3},
+      {"value": "382230900K", "count": 3},
+      {"value": "692380560Z", "count": 2},
+      {"value": "382770970B", "count": 2},
+      {"value": "385441900B", "count": 2},
+      {"value": "422186390L", "count": 2},
+      {"value": "384070138G", "count": 2},
+      {"value": "381820100U", "count": 2},
+      {"value": "383860045X", "count": 2},
+      {"value": "383860001Z", "count": 2},
+      {"value": "381540025J", "count": 2},
+      {"value": "690510300E", "count": 2},
+      {"value": "380820050Z", "count": 2},
+      {"value": "690920293U", "count": 2},
+      {"value": "013860066R", "count": 2},
+      {"value": "380530490D", "count": 2},
+      {"value": "692431380U", "count": 2},
+      {"value": "383460790F", "count": 2},
+      {"value": "692381020Z", "count": 2},
+      {"value": "730230077W", "count": 2},
+      {"value": "380220040Z", "count": 2},
+      {"value": "385540081F", "count": 2},
+      {"value": "381090050G", "count": 2},
+      {"value": "730652340Y", "count": 2},
+      {"value": "385430050V", "count": 2},
+      {"value": "422900465H", "count": 2},
+      {"value": "692020030E", "count": 2},
+      {"value": "385370153H", "count": 2},
+      {"value": "422900545V", "count": 2},
+      {"value": "383700210W", "count": 2},
+      {"value": "381660166K", "count": 2},
+      {"value": "384860450C", "count": 2},
+      {"value": "690510220T", "count": 2},
+      {"value": "692280275H", "count": 2},
+      {"value": "383930015J", "count": 2},
+      {"value": "384860721X", "count": 1},
+      {"value": "381440013P", "count": 1},
+      {"value": "422183765H", "count": 1},
+      {"value": "010810060K", "count": 1},
+      {"value": "383860950F", "count": 1},
+      {"value": "263620665P", "count": 1},
+      {"value": "691250410C", "count": 1},
+      {"value": "692270180J", "count": 1},
+      {"value": "692270200F", "count": 1},
+      {"value": "384860900S", "count": 1},
+      {"value": "692270400Y", "count": 1},
+      {"value": "690640400G", "count": 1},
+      {"value": "691840230A", "count": 1},
+      {"value": "692280160H", "count": 1},
+      {"value": "742580511T", "count": 1},
+      {"value": "380750800V", "count": 1},
+      {"value": "4221885435Y", "count": 1},
+      {"value": "422185435Y", "count": 1},
+      {"value": "380730042E", "count": 1},
+      {"value": "421860270Y", "count": 1},
+      {"value": "383970376J", "count": 1},
+      {"value": "012630140F", "count": 1},
+      {"value": "691560097C", "count": 1},
+      {"value": "011140010M", "count": 1},
+      {"value": "384800480L", "count": 1},
+      {"value": "380750062T", "count": 1},
+      {"value": "384060065G", "count": 1},
+      {"value": "013880120R", "count": 1},
+      {"value": "731440400W", "count": 1},
+      {"value": "691790073B", "count": 1},
+      {"value": "381900440D", "count": 1},
+      {"value": "010740068Z", "count": 1},
+      {"value": "690660594J", "count": 1},
+      {"value": "384490180V", "count": 1},
+      {"value": "692000024G", "count": 1},
+      {"value": "012570106V", "count": 1},
+      {"value": "385442150Y", "count": 1},
+      {"value": "385270215U", "count": 1},
+      {"value": "012830460S", "count": 1},
+      {"value": "692640210F", "count": 1},
+      {"value": "014271120H", "count": 1},
+      {"value": "385440040E", "count": 1},
+      {"value": "383391785T", "count": 1},
+      {"value": "382460325K", "count": 1},
+      {"value": "383860570T", "count": 1},
+      {"value": "014270160P", "count": 1},
+      {"value": "690640301Z", "count": 1},
+      {"value": "692480400G", "count": 1},
+      {"value": "011850040L", "count": 1},
+      {"value": "692380340K", "count": 1},
+      {"value": "260490089Z", "count": 1},
+      {"value": "690730052P", "count": 1},
+      {"value": "382150156L", "count": 1},
+      {"value": "384420025G", "count": 1},
+      {"value": "421820022W", "count": 1},
+      {"value": "383860720F", "count": 1},
+      {"value": "384070008R", "count": 1},
+      {"value": "383990510W", "count": 1},
+      {"value": "010740396F", "count": 1},
+      {"value": "383000024Y", "count": 1},
+      {"value": "385630355P", "count": 1},
+      {"value": "261140820L", "count": 1},
+      {"value": "690060550X", "count": 1},
+      {"value": "422185593V", "count": 1},
+      {"value": "010730075L", "count": 1},
+      {"value": "692280190R", "count": 1},
+      {"value": "731280234K", "count": 1},
+      {"value": "383370225F", "count": 1},
+      {"value": "262811210J", "count": 1},
+      {"value": "731700235D", "count": 1},
+      {"value": "692280075R", "count": 1},
+      {"value": "385441820P", "count": 1},
+      {"value": "383470084J", "count": 1},
+      {"value": "381380500V", "count": 1},
+      {"value": "383780006P", "count": 1},
+      {"value": "012570024F", "count": 1},
+      {"value": "691250500A", "count": 1},
+      {"value": "380860318Y", "count": 1},
+      {"value": "385610200E", "count": 1},
+      {"value": "385610128B", "count": 1},
+      {"value": "731570330N", "count": 1},
+      {"value": "382920150V", "count": 1},
+      {"value": "381470360D", "count": 1},
+      {"value": "382460090E", "count": 1},
+      {"value": "382460350M", "count": 1},
+      {"value": "381480850G", "count": 1},
+      {"value": "381480230H", "count": 1},
+      {"value": "381580767Y", "count": 1},
+      {"value": "385610182K", "count": 1},
+      {"value": "012180040T", "count": 1},
+      {"value": "380481350K", "count": 1},
+      {"value": "691840360S", "count": 1},
+      {"value": "691840066X", "count": 1},
+      {"value": "381810272K", "count": 1},
+      {"value": "690520132T", "count": 1},
+      {"value": "692380380D", "count": 1},
+      {"value": "692270280T", "count": 1},
+      {"value": "692270160M", "count": 1},
+      {"value": "692060083V", "count": 1},
+      {"value": "381300625R", "count": 1},
+      {"value": "380940111N", "count": 1},
+      {"value": "380690061T", "count": 1},
+      {"value": "010440042B", "count": 1},
+      {"value": "422340180S", "count": 1},
+      {"value": "422188616F", "count": 1},
+      {"value": "381930237V", "count": 1},
+      {"value": "380860254D", "count": 1},
+      {"value": "381571184F", "count": 1},
+      {"value": "423080009J", "count": 1},
+      {"value": "381760175B", "count": 1},
+      {"value": "381540060X", "count": 1},
+      {"value": "382070250Y", "count": 1},
+      {"value": "260830013U", "count": 1},
+      {"value": "013860121A", "count": 1},
+      {"value": "733030289J", "count": 1}
+    ],
+    "count": 565
+  },
+  {
+    "key": "maxspeed:type",
+    "tags": [
+      {"value": "sign", "count": 262},
+      {"value": "FR:rural", "count": 65},
+      {"value": "FR:urban", "count": 62},
+      {"value": "FR:zone30", "count": 20}
+    ],
+    "count": 409
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 210},
+      {"value": "no", "count": 155},
+      {"value": "use_sidepath", "count": 15},
+      {"value": "designated", "count": 5},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 386
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "both", "count": 98},
+      {"value": "no", "count": 83},
+      {"value": "none", "count": 80},
+      {"value": "right", "count": 68},
+      {"value": "left", "count": 27},
+      {"value": "separate", "count": 9}
+    ],
+    "count": 365
+  },
+  {
+    "key": "maxweight",
+    "tags": [
+      {"value": "3.5", "count": 100},
+      {"value": "7.5", "count": 47},
+      {"value": "19", "count": 38},
+      {"value": "12", "count": 25},
+      {"value": "17", "count": 4},
+      {"value": "38", "count": 3},
+      {"value": "26", "count": 2},
+      {"value": "5.5", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "6", "count": 2},
+      {"value": "3.5T", "count": 2},
+      {"value": "16", "count": 1},
+      {"value": "19 t", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "20", "count": 1}
+    ],
+    "count": 231
+  },
+  {
+    "key": "cycleway:both",
+    "tags": [
+      {"value": "no", "count": 218},
+      {"value": "lane", "count": 6},
+      {"value": "shared_lane", "count": 1}
+    ],
+    "count": 225
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "no", "count": 132},
+      {"value": "yes", "count": 77},
+      {"value": "designated", "count": 16}
+    ],
+    "count": 225
+  },
+  {
+    "key": "cycleway:left",
+    "tags": [
+      {"value": "lane", "count": 106},
+      {"value": "share_busway", "count": 61},
+      {"value": "opposite_share_busway", "count": 11},
+      {"value": "opposite_lane", "count": 9},
+      {"value": "track", "count": 8},
+      {"value": "shared_lane", "count": 4},
+      {"value": "yes", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 202
+  },
+  {
+    "key": "lanes:forward",
+    "tags": [
+      {"value": "1", "count": 102},
+      {"value": "2", "count": 77},
+      {"value": "3", "count": 9}
+    ],
+    "count": 188
+  },
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "3.5", "count": 43},
+      {"value": "4.1", "count": 22},
+      {"value": "4.3", "count": 16},
+      {"value": "4.2", "count": 15},
+      {"value": "4.5", "count": 11},
+      {"value": "4", "count": 9},
+      {"value": "4.4", "count": 7},
+      {"value": "3.9", "count": 6},
+      {"value": "4.6", "count": 5},
+      {"value": "2.6", "count": 5},
+      {"value": "3.1", "count": 5},
+      {"value": "3.8", "count": 5},
+      {"value": "3.2", "count": 4},
+      {"value": "4.0", "count": 4},
+      {"value": "default", "count": 3},
+      {"value": "3.7", "count": 3},
+      {"value": "3.6", "count": 2},
+      {"value": "1.9", "count": 2},
+      {"value": "2.5", "count": 2},
+      {"value": "2.8", "count": 2},
+      {"value": "3.20", "count": 1},
+      {"value": "4.35", "count": 1},
+      {"value": "3.90", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "3.4", "count": 1},
+      {"value": "2.9", "count": 1},
+      {"value": "D 13", "count": 1},
+      {"value": "3.5;4.6", "count": 1},
+      {"value": "3.0", "count": 1},
+      {"value": "3.4;4.5", "count": 1}
+    ],
+    "count": 181
+  },
+  {
+    "key": "lanes:backward",
+    "tags": [
+      {"value": "1", "count": 113},
+      {"value": "2", "count": 53},
+      {"value": "3", "count": 11}
+    ],
+    "count": 177
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Numérotation métrique (origine côté St-Nizier)", "count": 15},
+      {
+        "value": "converti au feeling, à vérfifier si tertiary ne serait pas plus approprié",
+        "count": 14
+      },
+      {"value": "Numérotation métrique (origine St Nizier)", "count": 14},
+      {"value": "Joyeuse-Valgorge", "count": 13},
+      {"value": "départementale déclassée en 1999", "count": 12},
+      {"value": "Numérotation métrique (origine côté Lans)", "count": 9},
+      {
+        "value": "Il est très difficile d'obtenir un signal GPS clair car la route est en forêt, mais c'est mieux que rien en attendant. Mais à reprendre ultérieurement avec un meilleur outils",
+        "count": 9
+      },
+      {"value": "FIXME tertiary?", "count": 8},
+      {"value": "ce n'est pas un pont mais un barrage", "count": 7},
+      {
+        "value": "FIXME départementale classée en 1999 sans numéro ?",
+        "count": 6
+      },
+      {
+        "value": "Ne peut pas être considéré comme rond pont a mon avis. Circulation par feu, pas adapté pour faire demi tour par exemple (croisement avec voitures ayant feu vert, pas d'indication de tram...)",
+        "count": 6
+      },
+      {"value": "to be refined with GPS trace", "count": 5},
+      {
+        "value": "Avenue d'après Fantoir/castre, Boulevard d'après contributeurs OSM",
+        "count": 5
+      },
+      {"value": "Ce n'est pas un rond point", "count": 4},
+      {"value": "FIXME - pas sur qu'il soit bien rond", "count": 4},
+      {"value": "mise en service 27/03/2013", "count": 3},
+      {
+        "value": "Merci de ne PAS modifier en \"Route de Bourg-en-Bresse\"",
+        "count": 3
+      },
+      {"value": "change ref suite contournement 27/03/2013", "count": 3},
+      {
+        "value": "part of \"Route Touristique des Côtes du Rhône\"; no relation available so far",
+        "count": 3
+      },
+      {
+        "value": "nommage selon bulletin officiel departement isere n°275 Arrêté n° 2013-3471 du 26 mars 2013",
+        "count": 3
+      },
+      {"value": "début et fin de pont relevé au GPS", "count": 2},
+      {
+        "value": "route coupée début mai 2016 suite à coulées de boue (causées par des pluies sur l'éboulement du Granier)",
+        "count": 2
+      },
+      {
+        "value": "C'est ici que passe le trafic en été. Et en hivers???",
+        "count": 2
+      },
+      {"value": "previous road replaced with more precise one", "count": 2},
+      {"value": "Les vans - Col de Mayrand", "count": 2},
+      {"value": "Reste à 90 en 2018", "count": 2},
+      {
+        "value": "tracé du carrefour comme recommandé sur http://wiki.openstreetmap.org/wiki/Lanes_and_complex_intersections_visual_approach",
+        "count": 2
+      },
+      {
+        "value": "Trace gps médiocre a cause des arbres, à améliorer",
+        "count": 1
+      },
+      {"value": "longueur 178 m", "count": 1},
+      {"value": "longueur 503  m", "count": 1},
+      {
+        "value": "D44 à un bout, D44a à l'autre bout de la section. D44 le plus probable pour assurer la continuité",
+        "count": 1
+      },
+      {
+        "value": "Bloqué par des éboulements en mars puis avril 2018",
+        "count": 1
+      },
+      {"value": "longueur 96 m", "count": 1},
+      {"value": "remise double sens normal depuis 14/07/2013", "count": 1},
+      {
+        "value": "Ceci n'est pas un rond-point (pas de priorité à gauche)",
+        "count": 1
+      },
+      {"value": "ce ne sont pas 2 rd pt mais bien 1 seul 8!", "count": 1},
+      {
+        "value": "Route non déneigé l'hiver, risque de chute de pierre vers le col de la Bataille",
+        "count": 1
+      }
+    ],
+    "count": 170
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 147},
+      {"value": "building_passage", "count": 14},
+      {"value": "avalanche_protector", "count": 5},
+      {"value": "no", "count": 1}
+    ],
+    "count": 167
+  },
+  {
+    "key": "access:conditional",
+    "tags": [
+      {"value": "no @ week 42-23", "count": 32},
+      {"value": "no @ week 46-20", "count": 29},
+      {"value": "no @ week 45-20", "count": 23},
+      {"value": "no @ week 44-22", "count": 19},
+      {"value": "no @ week 46-21", "count": 17},
+      {"value": "no @ week 44-21", "count": 13},
+      {"value": "no @ Dec-Apr", "count": 10},
+      {"value": "no @ Dec-Mar", "count": 6},
+      {"value": "no @ Nov-Jun", "count": 5},
+      {"value": "no @ (dec-apr)", "count": 4},
+      {"value": "no @ week 44-17", "count": 1},
+      {"value": "no @ Nov-Apr", "count": 1}
+    ],
+    "count": 160
+  },
+  {
+    "key": "traffic_calming",
+    "tags": [
+      {"value": "table", "count": 134},
+      {"value": "hump", "count": 16},
+      {"value": "chicane", "count": 5},
+      {"value": "island", "count": 4}
+    ],
+    "count": 159
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "good", "count": 77},
+      {"value": "excellent", "count": 77}
+    ],
+    "count": 154
+  },
+  {
+    "key": "horse",
+    "tags": [{"value": "no", "count": 132}, {"value": "yes", "count": 18}],
+    "count": 150
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "7", "count": 46},
+      {"value": "4", "count": 31},
+      {"value": "10", "count": 16},
+      {"value": "3.5", "count": 16},
+      {"value": "6", "count": 13},
+      {"value": "5", "count": 9},
+      {"value": "5.5", "count": 7},
+      {"value": "3", "count": 4},
+      {"value": "205", "count": 1}
+    ],
+    "count": 143
+  },
+  {
+    "key": "trolley_wire",
+    "tags": [{"value": "yes", "count": 139}],
+    "count": 139
+  },
+  {
+    "key": "seasonal",
+    "tags": [{"value": "yes", "count": 135}, {"value": "no", "count": 1}],
+    "count": 136
+  },
+  {
+    "key": "destination",
+    "tags": [
+      {"value": "Villeurbanne Charpennes;Villeurbanne Gratte-Ciel", "count": 3},
+      {
+        "value": "Valeille;Saint-Cyr les Vignes;Bellegarde en Forez",
+        "count": 3
+      },
+      {
+        "value": "Boulevard Périphérique, porte de Saint-Clair;Villeurbanne Charpennes et Tonkin",
+        "count": 3
+      },
+      {"value": "Leschaux", "count": 3},
+      {"value": "Beaucroissant;Izeaux;Sillans", "count": 2},
+      {"value": "Annemasse;Reignier", "count": 2},
+      {"value": "Part-Dieu", "count": 2},
+      {"value": "Saint Cassien;Réaumont", "count": 2},
+      {"value": "Sisteron;Les Omergues;Montfroc", "count": 2},
+      {"value": "A410;Annecy;La Roche/Foron", "count": 2},
+      {"value": "Le Bourg-d'Oisans;Villard-Notre-Dame", "count": 2},
+      {"value": "Salten Donzy;Thiers;Clermont-Ferrand;Feurs", "count": 2},
+      {"value": "Chamboeuf;Saint-Galmier;Chazelles sur Lyon", "count": 2},
+      {"value": "Lyon Centre;Monplaisir", "count": 2},
+      {"value": "A72;Veauche;Saint-Etienne", "count": 2},
+      {"value": "Annecy;Cruseilles", "count": 2},
+      {"value": "Eydoche;La Tour du Pin", "count": 2},
+      {"value": "Porte du Vinatier", "count": 2},
+      {
+        "value": "Gap;Valbonnais;Plan d'eau;Alpe du Gd Serre;P Centre Ville",
+        "count": 1
+      },
+      {"value": "AUTRES DIRECTIONS;Stade de Rugby", "count": 1},
+      {"value": "La Roche", "count": 1},
+      {"value": "A 7; [Bis] Montpellier;Bollène", "count": 1},
+      {"value": "Caluire", "count": 1},
+      {"value": "Gap;Corps;Mens", "count": 1},
+      {"value": "Beaufort;Cormet de Roselend", "count": 1},
+      {"value": "Vaulx en Velin - Centre", "count": 1},
+      {"value": "Thorens;Groisy;Villy le Pelloux", "count": 1},
+      {"value": "Lyon;Vienne", "count": 1},
+      {"value": "Pierrelatte;Bourg St Andéol", "count": 1},
+      {"value": "Panissières;Tarare", "count": 1},
+      {"value": "Bourg en Bresse;Frangy", "count": 1},
+      {"value": "Montélimar;Les Granges-G.;Grignan;Valréas", "count": 1},
+      {"value": "Villeurbanne", "count": 1},
+      {"value": "St Paul 3 Chx;Bollène", "count": 1},
+      {"value": "A 7 (Avignon);St Paul-3-Chx;Bollène", "count": 1},
+      {"value": "Saint-Bonnet les Oules;Saint-Héand", "count": 1},
+      {"value": "A 7 (Avignon);Bollène", "count": 1},
+      {"value": "Genas-centre", "count": 1},
+      {
+        "value": "Saint Égrève;Le Fontanil Cornillon;Espace cap 38;Z.I. Saint Martin le Vinoux;P+R Saint Égrève",
+        "count": 1
+      },
+      {"value": "La Garde;L'Alpe d'Huez", "count": 1},
+      {"value": "Autres Directions", "count": 1},
+      {
+        "value": "Saint-Galmier;Veauche;Saint-Bonnet les Oules;La Fouillouse;Parc de l'Orme les Sources;Parc de Milieu",
+        "count": 1
+      },
+      {"value": "Les Menuires;Val Thorens", "count": 1},
+      {
+        "value": "A72;Andrézieux-Bouthéon;Saint-Etienne;Parc de l'Orme les sources",
+        "count": 1
+      },
+      {
+        "value": "Saint-Bonnet les Oules;Veauche Cité Saint-Laurent;Saint Galmier;Zone Artisanale du Milieu",
+        "count": 1
+      },
+      {"value": "Chazelles sur Lyon;Centre Ville", "count": 1},
+      {"value": "Veauche;Office de Tourisme", "count": 1},
+      {
+        "value": "Lyon Centre;Monplaisir;Sans Souci;Institut Lumière",
+        "count": 1
+      },
+      {
+        "value": "CHANOS-CURSON;St DONAT-SUR-L'HERBASSE;BEAUMONT-MONTEUX;TAIN L'HERMITAGE;Stade de Rugby",
+        "count": 1
+      },
+      {"value": "Veauche", "count": 1},
+      {
+        "value": "Toutes directions;Porte de Saint-Clair;Villeurbanne Tonkin",
+        "count": 1
+      },
+      {"value": "Chazelles sur Lyon", "count": 1},
+      {"value": "Vancia;Rillieux la Pape", "count": 1},
+      {"value": "Grignon", "count": 1},
+      {
+        "value": "Heyrieux;Pont de Chéruy;L'Isle d'Abeau - Chesnes;Saint Quentin Fallavier;Parc d'activités de Chesnes",
+        "count": 1
+      },
+      {"value": "Val Thorens", "count": 1},
+      {"value": "Saint-Martin de Belleville;Moutiers", "count": 1},
+      {"value": "Pierrelatte", "count": 1},
+      {"value": "Lyon Centre", "count": 1},
+      {"value": "A 7;Bollène", "count": 1},
+      {"value": "Chassieu-centre;Bron", "count": 1},
+      {"value": "A72;Andrézieux-Bouthéon;Saint-Etienne", "count": 1},
+      {"value": "La Roche/F.;Menthonnex en B.", "count": 1},
+      {"value": "Annemasse;Vovray en B.", "count": 1},
+      {"value": "Talloires", "count": 1},
+      {"value": "La Roche/F.", "count": 1},
+      {"value": "Villeurbanne - Cusset", "count": 1},
+      {"value": "Annemasse;Reignier;Pers Jussy", "count": 1},
+      {"value": "Voiron;Grenoble;La Frette;Rives", "count": 1},
+      {
+        "value": "Lyon;Bourgoin Jallieu;Champier;Eydoche;La Tour du Pin",
+        "count": 1
+      },
+      {
+        "value": "Nantoin;La Côte Saint-André; Saint Jean de Bournay",
+        "count": 1
+      },
+      {"value": "Charnècles;Saint Cassien;Réaumont", "count": 1},
+      {"value": "A48;Lyon;Grenoble;Colombe;Apprieu;Lac de Paladru", "count": 1},
+      {"value": "Charnècles", "count": 1},
+      {
+        "value": "Lyon;Saint-Barthélemy-Lestra;Saint-Martin-Lestra;Sainte-Foy-l'Argentière;L'Arbresle",
+        "count": 1
+      },
+      {
+        "value": "A72;Andrézieux-Bouthéon;Saint-Etienne;Zone Industrielle de la Plaine",
+        "count": 1
+      },
+      {"value": "Thiers;Clermont-Ferrand;Feurs", "count": 1},
+      {"value": "Salt en Donzy", "count": 1},
+      {"value": "Salt en Donzy;Valeille", "count": 1},
+      {
+        "value": "Bellegarde en Forez;Montrond les Bains;Centre Ville;Gendarmerie",
+        "count": 1
+      },
+      {
+        "value": "Centre de Secours;Bellegarde en Forez;Centre Médical",
+        "count": 1
+      },
+      {"value": "Saint-Galmier;Veauche Saint-Laurent", "count": 1},
+      {"value": "Veauche;Saint Etienne", "count": 1},
+      {"value": "Frangy;Cercier", "count": 1},
+      {"value": "Allonzier", "count": 1},
+      {"value": "La Balme de Sillingy;Choisy", "count": 1},
+      {"value": "Lyon;Villeurbanne", "count": 1},
+      {"value": "A410;Annecy;La Roche sur Foron", "count": 1},
+      {"value": "Charette;Crèmieu", "count": 1},
+      {"value": "La Murette;Apprieu;Lac de Paladru;Agnelas", "count": 1},
+      {
+        "value": "Charnecles;Rives;St Cassien;Reaumont;St Blaise au B.",
+        "count": 1
+      },
+      {
+        "value": "Barret-de-Lioure;Montbrun-les-Bains;Ferrassières;Sault",
+        "count": 1
+      },
+      {"value": "Séderon", "count": 1},
+      {
+        "value": "La Garde Adhémar;Pierrelatte;St Paul 3 Chx;Bollène",
+        "count": 1
+      },
+      {
+        "value": "Les Granges G.;Grignan;Valréas;St Paul 3 Chx;Bollène",
+        "count": 1
+      },
+      {"value": "Vaulx en Velin", "count": 1},
+      {
+        "value": "A72;Andrézieux-Bouthéon;Saint-Etienne;Zone Industrielle de la Plaine;Gymnase Marcel Pagnol",
+        "count": 1
+      }
+    ],
+    "count": 119
+  },
+  {
+    "key": "railway",
+    "tags": [{"value": "abandoned", "count": 116}],
+    "count": 116
+  },
+  {
+    "key": "maxspeed:forward",
+    "tags": [
+      {"value": "70", "count": 29},
+      {"value": "80", "count": 28},
+      {"value": "50", "count": 15},
+      {"value": "90", "count": 14},
+      {"value": "30", "count": 14},
+      {"value": "1", "count": 1}
+    ],
+    "count": 101
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 85},
+      {"value": "no", "count": 3},
+      {"value": "destination", "count": 2},
+      {"value": "permissive", "count": 2},
+      {"value": "designated", "count": 2},
+      {"value": "unknown", "count": 1}
+    ],
+    "count": 95
+  },
+  {
+    "key": "turn:lanes",
+    "tags": [
+      {"value": "left|through;right", "count": 10},
+      {"value": "left|through", "count": 9},
+      {"value": "left|through|through;right", "count": 8},
+      {"value": "left|through|through", "count": 5},
+      {"value": "through|right", "count": 5},
+      {"value": "right", "count": 4},
+      {"value": "through|through|right", "count": 4},
+      {"value": "|slight_right", "count": 3},
+      {"value": "left|", "count": 3},
+      {"value": "left", "count": 3},
+      {"value": "left;through|right", "count": 3},
+      {"value": "left|through|right", "count": 3},
+      {"value": "||merge_to_left", "count": 2},
+      {"value": "through|slight_right", "count": 2},
+      {"value": "left|left|through", "count": 2},
+      {"value": "left|left", "count": 2},
+      {"value": "through;left|through|right", "count": 2},
+      {"value": "left;through|through;right|right", "count": 1},
+      {"value": "left|none", "count": 1},
+      {"value": "through|through|right|right", "count": 1},
+      {"value": "||right", "count": 1},
+      {"value": "left;through|through|through|through", "count": 1},
+      {"value": "left;through|through|through;right", "count": 1},
+      {"value": "merge_to_right|none", "count": 1},
+      {"value": "through|through|through;right|through;right", "count": 1},
+      {"value": "through|through;right|right", "count": 1},
+      {"value": "left|left;through|right", "count": 1},
+      {"value": "through|through;right|none", "count": 1},
+      {"value": "left;through|through;right", "count": 1},
+      {"value": "through;left|through", "count": 1},
+      {"value": "through|right|right", "count": 1},
+      {"value": "through|through|through;right", "count": 1},
+      {"value": "through", "count": 1},
+      {"value": "left;through|right;through", "count": 1},
+      {"value": "through|merge_to_left", "count": 1},
+      {"value": "left|right", "count": 1},
+      {"value": "slight_left|through", "count": 1},
+      {"value": "|merge_to_left", "count": 1},
+      {"value": "through|left|", "count": 1},
+      {"value": "left|through;right|through", "count": 1}
+    ],
+    "count": 93
+  },
+  {
+    "key": "busway:left",
+    "tags": [
+      {"value": "opposite_lane", "count": 63},
+      {"value": "lane", "count": 26}
+    ],
+    "count": 89
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Should be joining the roundabout more to the north, with a bridge iirc",
+        "count": 20
+      },
+      {"value": "Signalétique: Route du Villard", "count": 12},
+      {"value": "Signalétique: Rue Capitaine Baud (sans \"du\")", "count": 9},
+      {"value": "acheminement vélo (pour ViaRhôna)", "count": 6},
+      {"value": "position,ref,etc", "count": 5},
+      {"value": "ne correspond pas au cadastre, qui a juste ?", "count": 4},
+      {"value": "Signalétique ChalonS et no Chalon", "count": 4},
+      {
+        "value": "Nom était : Rue de Beaufort à la Bâthie, sauf que l'hôte des ancolies indique sur leur site \"Route du grand Mont",
+        "count": 3
+      },
+      {
+        "value": "Signalétique: Route de la Croix Tourmente et non Croix DE Tourmente",
+        "count": 3
+      },
+      {
+        "value": "Cette portion est-elle vraiment double voie, mes souvenirs sont flou, mais il ne me semble pas ?",
+        "count": 2
+      },
+      {"value": "maxheight", "count": 2},
+      {"value": "Refine with a GPS trace", "count": 2},
+      {"value": "cycleway à vérifier sur terrain", "count": 2},
+      {"value": "pas de signalitique sur le terrain", "count": 2},
+      {
+        "value": "Signalétique Confirmée : Route de Vienne (IGN est faux)",
+        "count": 1
+      },
+      {"value": "la limite d69 et d12 m'est inconnue", "count": 1},
+      {
+        "value": "Signalétique: Route de la Côte, et non de la Côte St André (BANO)",
+        "count": 1
+      },
+      {"value": "name", "count": 1},
+      {
+        "value": "Limites des la zone à 30 à vérifier + dodane à placer",
+        "count": 1
+      },
+      {
+        "value": "Le périmètre de la Route St Just Chaleysin a été défini ici en rapport avec les numéros d'adresse (repère N°1575)",
+        "count": 1
+      },
+      {"value": "paravalanche", "count": 1},
+      {"value": "Access restricted .. how?", "count": 1},
+      {
+        "value": "changement récent à préciser sur le terrain avec des traces GPS",
+        "count": 1
+      },
+      {"value": "Signalitique", "count": 1},
+      {"value": "y'a un truc louche avec les oneway", "count": 1}
+    ],
+    "count": 87
+  },
+  {
+    "key": "maxspeed:backward",
+    "tags": [
+      {"value": "90", "count": 27},
+      {"value": "50", "count": 18},
+      {"value": "70", "count": 16},
+      {"value": "80", "count": 13},
+      {"value": "30", "count": 11},
+      {"value": "2", "count": 1}
+    ],
+    "count": 86
+  },
+  {
+    "key": "busway",
+    "tags": [
+      {"value": "lane", "count": 53},
+      {"value": "opposite_lane", "count": 27},
+      {"value": "right", "count": 1},
+      {"value": "opposite", "count": 1}
+    ],
+    "count": 82
+  },
+  {
+    "key": "oneway:bicycle",
+    "tags": [{"value": "no", "count": 76}, {"value": "yes", "count": 4}],
+    "count": 80
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Editop", "count": 25},
+      {"value": "Potlatch 0.9c", "count": 10},
+      {"value": "Potlatch 0.10f", "count": 9},
+      {"value": "Potlatch 0.8a", "count": 9},
+      {"value": "JOSM", "count": 5},
+      {"value": "Potlatch 0.7b", "count": 4},
+      {"value": "Potlatch 0.10", "count": 3},
+      {"value": "Potlatch 0.10b", "count": 2},
+      {"value": "Potlatch 0.10c", "count": 2},
+      {"value": "Potlatch alpha", "count": 1},
+      {"value": "Potlatch 0.4c", "count": 1},
+      {"value": "Potlatch 0.6c", "count": 1},
+      {"value": "Potlatch 0.6b", "count": 1},
+      {"value": "Merkaartor 0.11", "count": 1},
+      {"value": "Potlatch 0.7", "count": 1},
+      {"value": "Tways 0.2", "count": 1},
+      {"value": "osm2go v0.7.9", "count": 1}
+    ],
+    "count": 77
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "up", "count": 45},
+      {"value": "down", "count": 7},
+      {"value": "-8%", "count": 5},
+      {"value": "-10%", "count": 5},
+      {"value": "8%", "count": 3},
+      {"value": "9%", "count": 1},
+      {"value": "-9%", "count": 1},
+      {"value": "10%", "count": 1}
+    ],
+    "count": 68
+  },
+  {
+    "key": "embankment",
+    "tags": [
+      {"value": "yes", "count": 61},
+      {"value": "1", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 64
+  },
+  {
+    "key": "busway:right",
+    "tags": [{"value": "lane", "count": 63}],
+    "count": 63
+  },
+  {"key": "access:winter", "tags": [{"value": "no", "count": 63}], "count": 63},
+  {"key": "oneway:psv", "tags": [{"value": "no", "count": 57}], "count": 57},
+  {
+    "key": "hgv:conditional",
+    "tags": [
+      {
+        "value": "no @ (Feb 10,17,24 07:00-18:00,22:00-24:00; Mar 3,10 07:00-18:00,22:00-24:00; Jul 21,28 07:00-19:00; Aug 4,11,18 07:00-19:00 AND weight>7.5)",
+        "count": 52
+      }
+    ],
+    "count": 52
+  },
+  {
+    "key": "maxlength",
+    "tags": [{"value": "12", "count": 46}, {"value": "10", "count": 1}],
+    "count": 47
+  },
+  {
+    "key": "turn:lanes:forward",
+    "tags": [
+      {"value": "left|through", "count": 10},
+      {"value": "left|through;right", "count": 5},
+      {"value": "left|", "count": 4},
+      {"value": "slight_left|none", "count": 3},
+      {"value": "merge_to_right|through", "count": 3},
+      {"value": "left|through|right", "count": 3},
+      {"value": "left|right", "count": 2},
+      {"value": "left|through|through;right", "count": 1},
+      {"value": "through|right", "count": 1},
+      {"value": "|merge_to_left", "count": 1},
+      {"value": "|slight_right", "count": 1},
+      {"value": "left|through;right|none", "count": 1},
+      {"value": "through;left|through|right", "count": 1},
+      {"value": "through", "count": 1},
+      {"value": "left;through|through;right|right", "count": 1},
+      {"value": "left|through|through", "count": 1},
+      {"value": "merge_to_right|", "count": 1},
+      {"value": "left|none", "count": 1},
+      {"value": "right;left", "count": 1},
+      {"value": "left;through;right", "count": 1},
+      {"value": "through|through;right", "count": 1},
+      {"value": "left;right", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "zone:maxspeed",
+    "tags": [{"value": "FR:30", "count": 38}],
+    "count": 38
+  },
+  {
+    "key": "overtaking",
+    "tags": [{"value": "no", "count": 32}, {"value": "yes", "count": 5}],
+    "count": 37
+  },
+  {
+    "key": "bus:lanes",
+    "tags": [
+      {"value": "yes|yes|designated", "count": 18},
+      {"value": "yes|designated", "count": 17},
+      {"value": "designated|yes|yes", "count": 1},
+      {"value": "yes|yes|yes|designated", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "access:lanes",
+    "tags": [
+      {"value": "yes|yes|no", "count": 18},
+      {"value": "yes|no", "count": 17},
+      {"value": "yes|yes|yes|no", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "boundary",
+    "tags": [
+      {"value": "administrative", "count": 21},
+      {"value": "political", "count": 13}
+    ],
+    "count": 34
+  },
+  {
+    "key": "loc_ref",
+    "tags": [{"value": "Route de Montélier", "count": 30}],
+    "count": 30
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "yes", "count": 16}, {"value": "no", "count": 10}],
+    "count": 26
+  },
+  {
+    "key": "history",
+    "tags": [{"value": "Retrieved from v1", "count": 26}],
+    "count": 26
+  },
+  {
+    "key": "turn:lanes:backward",
+    "tags": [
+      {"value": "left|through", "count": 4},
+      {"value": "slight_left|none", "count": 4},
+      {"value": "merge_to_right|through", "count": 3},
+      {"value": "merge_to_right|", "count": 2},
+      {"value": "left|through|through;right", "count": 2},
+      {"value": "through|right", "count": 2},
+      {"value": "through", "count": 2},
+      {"value": "through|through", "count": 1},
+      {"value": "left", "count": 1},
+      {"value": "|slight_right", "count": 1},
+      {"value": "left|through;right", "count": 1},
+      {"value": "left|through|through", "count": 1},
+      {"value": "left|right", "count": 1}
+    ],
+    "count": 25
+  },
+  {"key": "trolleybus", "tags": [{"value": "yes", "count": 24}], "count": 24},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Route d'Annecy à Grenoble par le Revard et la Chartreuse",
+        "count": 16
+      },
+      {
+        "value": "Ancienne Ligne de Pouilly-sous-Charlieu à Clermain",
+        "count": 4
+      },
+      {
+        "value": "Tunnel construit a la base pour la ligne \"Lalevade d'ardeche-Brive charensac\" (La Transcevenol) inachevé",
+        "count": 1
+      },
+      {"value": "Closed in Winter", "count": 1},
+      {
+        "value": "Route victime d'un glissement de terrain, fermée à toute circulation",
+        "count": 1
+      }
+    ],
+    "count": 23
+  },
+  {
+    "key": "admin_level",
+    "tags": [
+      {"value": "8", "count": 19},
+      {"value": "4", "count": 2},
+      {"value": "7", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "hgv",
+    "tags": [{"value": "no", "count": 17}, {"value": "delivery", "count": 5}],
+    "count": 22
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Boulevard des Canuts", "count": 6},
+      {"value": "fr:Viaduc de Gières", "count": 2},
+      {"value": "fr:Pont de Seyssel", "count": 2},
+      {"value": "fr:Rue Gabriel-Péri (Villeurbanne)", "count": 2},
+      {"value": "fr:Pont de la Vierge noire", "count": 2},
+      {"value": "fr:Pont Saint-Laurent (Saône)", "count": 2},
+      {"value": "fr:Avenue des Frères-Lumière", "count": 1},
+      {"value": "fr:Grand Pont (Ardèche)", "count": 1},
+      {"value": "fr:Pont de Fleurville", "count": 1},
+      {"value": "fr:Pont Paul-Bocuse", "count": 1},
+      {"value": "fr:Pont de la sucrerie", "count": 1},
+      {"value": "fr:Pont de Neuville-sur-Ain", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "yes", "count": 14},
+      {"value": "private", "count": 4},
+      {"value": "designated", "count": 2},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "bicycle:lanes",
+    "tags": [
+      {"value": "yes|yes|designated", "count": 11},
+      {"value": "yes|designated", "count": 7},
+      {"value": "yes|yes|yes|designated", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "parking:lane:both",
+    "tags": [
+      {"value": "no_stopping", "count": 8},
+      {"value": "parallel", "count": 6},
+      {"value": "no", "count": 4}
+    ],
+    "count": 18
+  },
+  {"key": "int_ref", "tags": [{"value": "E 712", "count": 17}], "count": 17},
+  {"key": "nat_ref", "tags": [{"value": "102", "count": 17}], "count": 17},
+  {
+    "key": "lanes:psv:backward",
+    "tags": [{"value": "1", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "destination:backward",
+    "tags": [
+      {"value": "Saint-Fons", "count": 2},
+      {"value": "Annemasse;Reignier", "count": 1},
+      {"value": "Corbas", "count": 1},
+      {"value": "Ornon;Valbonnais;La Mure", "count": 1},
+      {"value": "Col de la Colombière;Le Grand Bornand", "count": 1},
+      {"value": "CHANOS-CURSON", "count": 1},
+      {"value": "Annemasse;Cruseilles", "count": 1},
+      {"value": "Albertville;Col des Aravis", "count": 1},
+      {"value": "La Roche/F.", "count": 1},
+      {"value": "Bonneville;Col de la Colombière;Le Grand Bornand", "count": 1},
+      {"value": "Col de la Colombière;Le Reposoir;Le Chinaillon", "count": 1},
+      {"value": "Cruseilles;Allonzier la Caille", "count": 1},
+      {"value": "Samoëns;Verchaix", "count": 1},
+      {"value": "Samoëns", "count": 1}
+    ],
+    "count": 15
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {
+    "key": "rcrc_ref",
+    "tags": [
+      {"value": "6b", "count": 10},
+      {"value": "11b", "count": 3},
+      {"value": "2c", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 12}, {"value": "no", "count": 1}],
+    "count": 13
+  },
+  {
+    "key": "busway:left:surface",
+    "tags": [{"value": "paving_stones", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "cutting",
+    "tags": [{"value": "yes", "count": 12}, {"value": "no", "count": 1}],
+    "count": 13
+  },
+  {
+    "key": "destination:forward",
+    "tags": [
+      {"value": "Annecy;Thônes;La Clusaz", "count": 2},
+      {"value": "Mésigny", "count": 1},
+      {"value": "Bonneville", "count": 1},
+      {"value": "A41 (Genève);Copponex;Frangy", "count": 1},
+      {"value": "Frangy;Copponex", "count": 1},
+      {
+        "value": "BOURG-LES-VALENCE;St MARCEL LES VALENCE;PONT DE L'ISÈRE;ALIXAN",
+        "count": 1
+      },
+      {"value": "Taninges", "count": 1},
+      {"value": "Cruseilles;Allonzier la Caille", "count": 1},
+      {
+        "value": "Périphérique; Caluire - Centre; Maison de quartier",
+        "count": 1
+      },
+      {"value": "Col de la Croix Fry;Manigod", "count": 1},
+      {"value": "Albertville;Flumet;Col des Aravis", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "political_division",
+    "tags": [{"value": "canton", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3397146", "count": 2},
+      {"value": "Q3397305", "count": 2},
+      {"value": "Q3396724", "count": 2},
+      {"value": "Q17291492", "count": 1},
+      {"value": "Q2103626", "count": 1},
+      {"value": "Q15261099", "count": 1},
+      {"value": "Q3396959", "count": 1},
+      {"value": "Q2874094", "count": 1},
+      {"value": "Q22967040", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "maxspeed:hgv", "tags": [{"value": "40", "count": 11}], "count": 11},
+  {
+    "key": "FIXME",
+    "tags": [
+      {
+        "value": "début de la zone 30 à l'entrée dans la Tronche. Fin ?",
+        "count": 7
+      },
+      {"value": "maxspeed 70 ou 90 ?", "count": 2},
+      {"value": "Avenue Jean Jaurès", "count": 1},
+      {"value": "bizarre d'avoir 3metre de D4 au milieu de la D13", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2015-04", "count": 8},
+      {"value": "C14", "count": 1},
+      {"value": "1770", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "access:lanes:forward",
+    "tags": [
+      {"value": "yes|no", "count": 8},
+      {"value": "yes|yes|no", "count": 2}
+    ],
+    "count": 10
+  },
+  {
+    "key": "toll",
+    "tags": [{"value": "conditionnal=yes @ spring", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "bus:lanes:forward",
+    "tags": [
+      {"value": "yes|designated", "count": 8},
+      {"value": "yes|yes|designated", "count": 2}
+    ],
+    "count": 10
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "Le nom initialement \"Rue de Collières\" avait été modifié en \"Rue Collière\" : j'ai rétabil la 1ère forme après vérification sur le terrain",
+        "count": 10
+      }
+    ],
+    "count": 10
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 8},
+      {"value": "-1", "count": 1},
+      {"value": "+1", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "railway:start_date",
+    "tags": [{"value": "1926", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "destination:lanes",
+    "tags": [
+      {
+        "value": "Saint Galmier;Veauche Saint-Laurent|Saint-Bonnet les Oules;Parc de l'Orme la source;Parc du Milieu",
+        "count": 2
+      },
+      {
+        "value": "A72;Montbrison;Saint-Just Saint-Rambert|La Fouillouse;Andrézieux Bouthéon;Aérodrome Bouthéon",
+        "count": 1
+      },
+      {
+        "value": "Centre Ville|Centre Ville|Gare SNCF;Lyon|Gare SNCF;Lyon",
+        "count": 1
+      },
+      {
+        "value": "Lyon;Valence;Saint-Égrève|Lyon;Valence;Saint-Égrève|Centre ville; Parking Gare,Minatec;Europole;Ecole D'electronique",
+        "count": 1
+      },
+      {"value": "Fontaine;Sassenage|Lyon;Valence;Saint-Égrève |", "count": 1},
+      {"value": "Feurs|Salt en Donzy", "count": 1},
+      {
+        "value": "Valeille;Virigneux|Bellegarde en Forez;Saint-Cyr les Vignes",
+        "count": 1
+      },
+      {
+        "value": "Saint-Galmier;Veauche Saint-Laurent;Parc l'Orme les sources;Parc de Milieu|Veauche;La Fouillouse;Aéroport de Saint-Étienne-Bouthéon",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "parking:lane:left",
+    "tags": [
+      {"value": "parallel", "count": 7},
+      {"value": "no_parking", "count": 1},
+      {"value": "diagonal", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "railway:end_date",
+    "tags": [{"value": "1952", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "transit:lanes",
+    "tags": [
+      {"value": "leave|continue", "count": 2},
+      {"value": "||end", "count": 2},
+      {"value": "new_on_left", "count": 1},
+      {"value": "||leave", "count": 1},
+      {"value": "fork", "count": 1},
+      {"value": "|end", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "transit:lanes:backward",
+    "tags": [
+      {"value": "leave|continue", "count": 4},
+      {"value": "end|", "count": 2},
+      {"value": "new_on_left|continue", "count": 1},
+      {"value": "fork", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "converted_by",
+    "tags": [
+      {"value": "Editop_2_OSM_v0016", "count": 6},
+      {"value": "downtown", "count": 2}
+    ],
+    "count": 8
+  },
+  {
+    "key": "bicycle:lanes:forward",
+    "tags": [
+      {"value": "yes|designated", "count": 7},
+      {"value": "yes|yes|designated", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "parking:lane:right",
+    "tags": [
+      {"value": "parallel", "count": 6},
+      {"value": "no_parking", "count": 2}
+    ],
+    "count": 8
+  },
+  {"key": "narrow", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "bicycle:forward", "tags": [{"value": "no", "count": 7}], "count": 7},
+  {
+    "key": "restriction",
+    "tags": [{"value": "no_left_turn", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "bus:lanes:backward",
+    "tags": [
+      {"value": "yes|designated", "count": 5},
+      {"value": "designated", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "622", "count": 4},
+      {"value": "646", "count": 1},
+      {"value": "840", "count": 1},
+      {"value": "320", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "access:lanes:backward",
+    "tags": [{"value": "yes|no", "count": 5}, {"value": "no", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "piste:type",
+    "tags": [{"value": "downhill", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [{"value": "novice", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "bus",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 3}],
+    "count": 6
+  },
+  {
+    "key": "sidewalk:surface",
+    "tags": [{"value": "asphalt", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "psv",
+    "tags": [
+      {"value": "yes", "count": 4},
+      {"value": "no", "count": 1},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "transit:lanes:forward",
+    "tags": [
+      {"value": "leave|continue", "count": 3},
+      {"value": "end|", "count": 1},
+      {"value": "fork", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "hazard",
+    "tags": [{"value": "animal_crossing", "count": 5}],
+    "count": 5
+  },
+  {"key": "hazmat", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "cycleway:right:lane",
+    "tags": [
+      {"value": "advisory", "count": 3},
+      {"value": "pictogram", "count": 1},
+      {"value": "exclusive", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "lanes:psv", "tags": [{"value": "1", "count": 5}], "count": 5},
+  {"key": "noexit", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116790;PA00116876", "count": 1},
+      {"value": "PA00116558", "count": 1},
+      {"value": "PA00117268", "count": 1},
+      {"value": "PA00113335", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "maxwidth",
+    "tags": [{"value": "3.5", "count": 3}, {"value": "2.5", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "footway:right",
+    "tags": [{"value": "sidewalk", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "lanes:psv:forward",
+    "tags": [{"value": "1", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "start_date:railway",
+    "tags": [{"value": "1889", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "ref:FR:FANTOIR:right",
+    "tags": [
+      {"value": "380630018X", "count": 1},
+      {"value": "380300148G", "count": 1},
+      {"value": "260580295J", "count": 1},
+      {"value": "381380205Z", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "direction", "tags": [{"value": "backward", "count": 4}], "count": 4},
+  {
+    "key": "parking:condition:left",
+    "tags": [{"value": "ticket", "count": 3}, {"value": "free", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "bicycle:lanes:backward",
+    "tags": [
+      {"value": "yes|designated", "count": 2},
+      {"value": "designated", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "end_date:railway",
+    "tags": [{"value": "1972", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "avalanche_protector:left",
+    "tags": [{"value": "open", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "lanes:bus:backward",
+    "tags": [{"value": "1", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "footway:right:surface",
+    "tags": [{"value": "asphalt", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "avz",
+    "tags": [{"value": "154", "count": 2}, {"value": "153", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "cycleway:both:lane",
+    "tags": [{"value": "advisory", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "footway:right:width",
+    "tags": [{"value": "1.4", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "footway:right:smoothness",
+    "tags": [{"value": "good", "count": 3}],
+    "count": 3
+  },
+  {"key": "tourist_bus", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "footway:right:wheelchair",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "goods", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "footway:left:width",
+    "tags": [{"value": "1.5", "count": 2}, {"value": "1.8", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "footway:left:wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 2}, {"value": "3", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "construction",
+    "tags": [{"value": "secondary", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "footway:left:surface",
+    "tags": [{"value": "asphalt", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "border_type",
+    "tags": [
+      {"value": "region", "count": 2},
+      {"value": "arrondissement", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "flood_prone", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "parking:condition:both",
+    "tags": [{"value": "ticket", "count": 2}, {"value": "free", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "footway:left:smoothness",
+    "tags": [{"value": "bad", "count": 2}, {"value": "good", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "parking:condition:right",
+    "tags": [{"value": "ticket", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "bicycle:backward",
+    "tags": [
+      {"value": "use_sidepath", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "ssvz", "tags": [{"value": "826", "count": 2}], "count": 2},
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "arch", "count": 1}, {"value": "beam", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1987", "count": 1},
+      {"value": "1923-05-01", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "service", "tags": [{"value": "driveway", "count": 2}], "count": 2},
+  {"key": "ford", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "cycleway:right:oneway",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "bus_bay",
+    "tags": [{"value": "left", "count": 1}, {"value": "right", "count": 1}],
+    "count": 2
+  },
+  {"key": "oneway:bus", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "placement",
+    "tags": [
+      {"value": "transition", "count": 1},
+      {"value": "right_of:1", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "priority", "tags": [{"value": "forward", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "cs_dir:backward", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "cs_dir:forward", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Fermé en Hiver", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "Pédibus",
+    "tags": [{"value": "ligne Val d'Or/Valjoly", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "3.5", "count": 1}], "count": 1},
+  {"key": "lanes:bus", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "note:FR",
+    "tags": [
+      {
+        "value": "ce segment en en double-sens depuis la Rue Feuillat, mais NE REJOINT PAS la Rue Jules Verne",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [{"value": "File:Pont de Parassat 2011-03-17.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "footway:left", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "maxspeed:lanes",
+    "tags": [{"value": "90|90|50", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "Category:Pont de Fleurville", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toll:conditional",
+    "tags": [{"value": "yes @ spring", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "destination:lanes:backward",
+    "tags": [{"value": "Chazelles sur Lyon;Centre Ville", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "destination:lanes:forward",
+    "tags": [
+      {
+        "value": "Chamboeuf;Aveizieux|A72;Veauche;Saint-Etienne;Rivas;Craintilleux",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "hazard:animal_crossing",
+    "tags": [{"value": "wild", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "bridge", "count": 1}], "count": 1},
+  {
+    "key": "destination:ref",
+    "tags": [{"value": "D 546", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [{"value": "classic", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR:left",
+    "tags": [{"value": "383370225F", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motor_vehicle:conditional",
+    "tags": [{"value": "no @ Sa", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "placement:end",
+    "tags": [{"value": "right_of:1", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "overtaking:backward",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "voltage", "tags": [{"value": "750", "count": 1}], "count": 1}
+]

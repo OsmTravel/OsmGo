@@ -1,0 +1,108 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "first_aid", "count": 34}],
+    "count": 34
+  },
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "first_aid", "count": 22}],
+    "count": 22
+  },
+  {
+    "key": "opening_days",
+    "tags": [{"value": "summer", "count": 17}],
+    "count": 17
+  },
+  {
+    "key": "firstaid:care",
+    "tags": [{"value": "beach_safety", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "emergency",
+    "tags": [
+      {"value": "water_rescue_station", "count": 10},
+      {"value": "lifeguard_tower", "count": 3},
+      {"value": "lifeguard_base", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "ref:FR:ref_plage",
+    "tags": [
+      {"value": "Gâvres-Océan", "count": 1},
+      {"value": "Les Grands Sables", "count": 1},
+      {"value": "Toulhars", "count": 1},
+      {"value": "Les Patis", "count": 1},
+      {"value": "Les Mouettes", "count": 1},
+      {"value": "Locmaria", "count": 1},
+      {"value": "Port Mélite", "count": 1},
+      {"value": "Le Stole", "count": 1},
+      {"value": "Le Perello", "count": 1},
+      {"value": "Les Kaolins", "count": 1},
+      {"value": "Lannénec", "count": 1},
+      {"value": "Pen er Malo", "count": 1},
+      {"value": "Le Loc'h", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "RIB",
+    "tags": [{"value": "yes", "count": 6}, {"value": "no", "count": 5}],
+    "count": 11
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 2}
+    ],
+    "count": 11
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "SNSM", "count": 8}, {"value": "CRS", "count": 1}],
+    "count": 9
+  },
+  {"key": "permanent", "tags": [{"value": "no", "count": 9}], "count": 9},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "first_aid:care",
+    "tags": [
+      {"value": "beach_satety", "count": 1},
+      {"value": "beach_safety", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "emergency_service",
+    "tags": [{"value": "water", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ville-manosque.fr/", "count": 1},
+      {"value": "http://www.oraison.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 92 87 41 01", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q584914", "count": 1}],
+    "count": 1
+  }
+]

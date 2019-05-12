@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "printer_ink", "count": 3}], "count": 3},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "https://pointdencre.fr/index.php/component/gmapfp/129-point-dencre-saint-etienne?view=gmapfp",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {"key": "historic", "tags": [{"value": "manor", "count": 15}], "count": 15},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Maison forte de Loche", "count": 1},
+      {"value": "fr:Palais Delphinal (ancien)", "count": 1},
+      {"value": "fr:Hôtel de la Teyssonnière", "count": 1},
+      {"value": "fr:Château de Déomas", "count": 1},
+      {"value": "fr:Manoir de Marmont", "count": 1},
+      {"value": "fr:Château des Bruneaux", "count": 1},
+      {"value": "fr:Manoir de la Rigaudière", "count": 1},
+      {"value": "fr:Château du Bérouze", "count": 1},
+      {"value": "fr:Hôtel Marron de Meillonnas", "count": 1},
+      {"value": "fr:Château de Rossillon", "count": 1},
+      {"value": "fr:Villa Beaulieu", "count": 1},
+      {"value": "fr:Hôtel du Mont-Joly", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3280178", "count": 1},
+      {"value": "Q2984007", "count": 1},
+      {"value": "Q3146049", "count": 1},
+      {"value": "Q3286234", "count": 1},
+      {"value": "Q2971465", "count": 1},
+      {"value": "Q3286354", "count": 1},
+      {"value": "Q2971644", "count": 1},
+      {"value": "Q3145587", "count": 1},
+      {"value": "Q2247151", "count": 1},
+      {"value": "Q3558460", "count": 1},
+      {"value": "Q3146293", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1946-04-09", "count": 1},
+      {"value": "1996", "count": 1},
+      {"value": "1947-07-28", "count": 1},
+      {"value": "1992-07-23", "count": 1},
+      {"value": "1975-11-21", "count": 1},
+      {"value": "1994-08-17", "count": 1},
+      {"value": "1942-07-11", "count": 1},
+      {"value": "2005", "count": 1},
+      {"value": "1994", "count": 1},
+      {"value": "1997-11-18", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117049", "count": 1},
+      {"value": "PA01000002", "count": 1},
+      {"value": "PA00116323", "count": 1},
+      {"value": "PA00116616", "count": 1},
+      {"value": "PA00117487", "count": 1},
+      {"value": "PA00132830", "count": 1},
+      {"value": "PA00116341", "count": 1},
+      {"value": "PA01000015", "count": 1},
+      {"value": "PA00132809", "count": 1},
+      {"value": "PA74000001", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 9}, {"value": "2", "count": 1}],
+    "count": 10
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "community_centre", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.mairie-annonay.fr/Centre-Municipal-de-Deomas.html",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Firminy-Château_des_Bruneaux-20110415.jpg", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1}
+]

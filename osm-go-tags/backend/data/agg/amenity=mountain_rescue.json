@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "mountain_rescue", "count": 35}],
+    "count": 35
+  },
+  {
+    "key": "proposed:amenity",
+    "tags": [{"value": "ski_patrol", "count": 14}],
+    "count": 14
+  }
+]

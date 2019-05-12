@@ -1,0 +1,19 @@
+[
+  {"key": "shop", "tags": [{"value": "religion", "count": 3}], "count": 3},
+  {
+    "key": "religion",
+    "tags": [
+      {"value": "christian", "count": 2},
+      {"value": "muslim", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "denomination",
+    "tags": [
+      {"value": "protestant", "count": 1},
+      {"value": "jehovahs_witness", "count": 1}
+    ],
+    "count": 2
+  }
+]

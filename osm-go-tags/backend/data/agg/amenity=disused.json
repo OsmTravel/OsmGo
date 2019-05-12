@@ -1,0 +1,15 @@
+[
+  {"key": "amenity", "tags": [{"value": "disused", "count": 1}], "count": 1},
+  {
+    "key": "disused",
+    "tags": [{"value": "post_office", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "La Poste", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:LaPoste",
+    "tags": [{"value": "16905A", "count": 1}],
+    "count": 1
+  }
+]

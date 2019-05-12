@@ -1,0 +1,8 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "breakwater", "count": 1}],
+    "count": 1
+  },
+  {"key": "natural", "tags": [{"value": "rocks", "count": 1}], "count": 1}
+]

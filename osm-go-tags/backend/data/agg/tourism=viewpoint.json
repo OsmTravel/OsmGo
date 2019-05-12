@@ -1,0 +1,659 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "viewpoint", "count": 1413}],
+    "count": 1413
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "699", "count": 2},
+      {"value": "1492", "count": 2},
+      {"value": "210", "count": 1},
+      {"value": "933", "count": 1},
+      {"value": "2204", "count": 1},
+      {"value": "882", "count": 1},
+      {"value": "754", "count": 1},
+      {"value": "2351", "count": 1},
+      {"value": "1312", "count": 1},
+      {"value": "983", "count": 1},
+      {"value": "1774", "count": 1},
+      {"value": "920", "count": 1},
+      {"value": "1347.1630859", "count": 1},
+      {"value": "718", "count": 1},
+      {"value": "1900", "count": 1},
+      {"value": "2236", "count": 1},
+      {"value": "679", "count": 1},
+      {"value": "688", "count": 1},
+      {"value": "2340", "count": 1},
+      {"value": "2338", "count": 1},
+      {"value": "450", "count": 1},
+      {"value": "445", "count": 1},
+      {"value": "1925", "count": 1},
+      {"value": "3321", "count": 1},
+      {"value": "1040", "count": 1},
+      {"value": "1820", "count": 1},
+      {"value": "918.418", "count": 1},
+      {"value": "1557", "count": 1},
+      {"value": "740", "count": 1},
+      {"value": "2677", "count": 1},
+      {"value": "2075", "count": 1},
+      {"value": "1324.5", "count": 1},
+      {"value": "2793.08", "count": 1},
+      {"value": "519.5", "count": 1},
+      {"value": "1406.55", "count": 1},
+      {"value": "1972.65", "count": 1},
+      {"value": "632.5", "count": 1},
+      {"value": "669.51", "count": 1},
+      {"value": "1730.75", "count": 1},
+      {"value": "1750.1", "count": 1},
+      {"value": "1765.4", "count": 1},
+      {"value": "2000.3", "count": 1},
+      {"value": "1545", "count": 1},
+      {"value": "1209", "count": 1},
+      {"value": "2364", "count": 1},
+      {"value": "610", "count": 1},
+      {"value": "1744", "count": 1},
+      {"value": "511", "count": 1},
+      {"value": "1901", "count": 1},
+      {"value": "3337", "count": 1},
+      {"value": "962", "count": 1},
+      {"value": "344", "count": 1},
+      {"value": "707", "count": 1},
+      {"value": "2115", "count": 1},
+      {"value": "2411", "count": 1},
+      {"value": "1839", "count": 1},
+      {"value": "915", "count": 1},
+      {"value": "1050", "count": 1},
+      {"value": "1410", "count": 1},
+      {"value": "877", "count": 1},
+      {"value": "1623", "count": 1},
+      {"value": "480", "count": 1},
+      {"value": "830", "count": 1},
+      {"value": "1522", "count": 1},
+      {"value": "1525", "count": 1},
+      {"value": "2342", "count": 1},
+      {"value": "1551", "count": 1},
+      {"value": "1838", "count": 1},
+      {"value": "423", "count": 1},
+      {"value": "1675", "count": 1},
+      {"value": "1259", "count": 1},
+      {"value": "723", "count": 1},
+      {"value": "2208", "count": 1},
+      {"value": "1077", "count": 1},
+      {"value": "930", "count": 1},
+      {"value": "1123", "count": 1},
+      {"value": "630", "count": 1},
+      {"value": "940", "count": 1},
+      {"value": "2589", "count": 1},
+      {"value": "2909", "count": 1},
+      {"value": "1160", "count": 1},
+      {"value": "494", "count": 1},
+      {"value": "1371", "count": 1},
+      {"value": "1530", "count": 1},
+      {"value": "1601", "count": 1},
+      {"value": "275", "count": 1},
+      {"value": "1343", "count": 1},
+      {"value": "1031", "count": 1},
+      {"value": "1234", "count": 1},
+      {"value": "785", "count": 1},
+      {"value": "2285", "count": 1},
+      {"value": "1446", "count": 1},
+      {"value": "271", "count": 1},
+      {"value": "1168", "count": 1},
+      {"value": "310", "count": 1},
+      {"value": "2042", "count": 1},
+      {"value": "1700", "count": 1},
+      {"value": "1913", "count": 1},
+      {"value": "1146", "count": 1},
+      {"value": "1191", "count": 1},
+      {"value": "840", "count": 1},
+      {"value": "350", "count": 1},
+      {"value": "710", "count": 1},
+      {"value": "315", "count": 1},
+      {"value": "1045", "count": 1},
+      {"value": "567", "count": 1},
+      {"value": "985", "count": 1},
+      {"value": "674", "count": 1},
+      {"value": "1102m", "count": 1},
+      {"value": "1105", "count": 1},
+      {"value": "1753", "count": 1},
+      {"value": "810", "count": 1},
+      {"value": "300", "count": 1},
+      {"value": "715", "count": 1}
+    ],
+    "count": 116
+  },
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "270", "count": 6},
+      {"value": "180", "count": 5},
+      {"value": "E", "count": 4},
+      {"value": "150", "count": 3},
+      {"value": "W", "count": 3},
+      {"value": "360", "count": 2},
+      {"value": "90-270", "count": 2},
+      {"value": "N", "count": 2},
+      {"value": "295", "count": 2},
+      {"value": "NE", "count": 2},
+      {"value": "SW", "count": 2},
+      {"value": "S", "count": 2},
+      {"value": "45-135", "count": 2},
+      {"value": "100", "count": 2},
+      {"value": "NNE", "count": 2},
+      {"value": "90", "count": 2},
+      {"value": "250", "count": 2},
+      {"value": "225-315", "count": 1},
+      {"value": "90-225", "count": 1},
+      {"value": "north", "count": 1},
+      {"value": "225-359", "count": 1},
+      {"value": "45-180", "count": 1},
+      {"value": "190-350", "count": 1},
+      {"value": "0-180", "count": 1},
+      {"value": "280", "count": 1},
+      {"value": "0", "count": 1},
+      {"value": "WNW", "count": 1},
+      {"value": "130", "count": 1},
+      {"value": "225-45", "count": 1},
+      {"value": "0-360", "count": 1},
+      {"value": "NE-SW", "count": 1},
+      {"value": "80-220", "count": 1},
+      {"value": "ESE", "count": 1},
+      {"value": "315-135", "count": 1},
+      {"value": "35-145", "count": 1},
+      {"value": "180-270", "count": 1},
+      {"value": "135-270", "count": 1},
+      {"value": "S-NW", "count": 1},
+      {"value": "SW-NW", "count": 1},
+      {"value": "210", "count": 1},
+      {"value": "105", "count": 1},
+      {"value": "S-E", "count": 1},
+      {"value": "310", "count": 1},
+      {"value": "-104", "count": 1},
+      {"value": "160", "count": 1}
+    ],
+    "count": 73
+  },
+  {
+    "key": "map_type",
+    "tags": [
+      {"value": "toposcope", "count": 54},
+      {"value": "topo", "count": 5}
+    ],
+    "count": 59
+  },
+  {
+    "key": "information",
+    "tags": [
+      {"value": "map", "count": 54},
+      {"value": "orientation_map", "count": 3},
+      {"value": "guidepost", "count": 1},
+      {"value": "board", "count": 1}
+    ],
+    "count": 59
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "poste d'observation naturaliste ouvert", "count": 3},
+      {
+        "value": "Borne en granit gravée IGN - Point vu en place en 2005",
+        "count": 2
+      },
+      {"value": "Avec table d'orientation", "count": 1},
+      {
+        "value": "Croix métallique : Centre - Point vu en place en 2003",
+        "count": 1
+      },
+      {
+        "value": "Rocher : Piquet en fer : Axe et sommet - Point vu en place en 1950",
+        "count": 1
+      },
+      {
+        "value": "Tour métallique : Balustrade : Axe et sommet - Point vu en place en 1953",
+        "count": 1
+      },
+      {
+        "value": "Borne en granit gravée IGN (1949) - Point vu en place en 1950",
+        "count": 1
+      },
+      {
+        "value": "Borne en granit gravée IGN (1949) - Point vu en place en 1972",
+        "count": 1
+      },
+      {
+        "value": "Clocher : Boule : Centre - Point vu en place en 2000",
+        "count": 1
+      },
+      {
+        "value": "Rocher : Croix gravée : Repère en bronze G.M. centre - Point vu en place en 1961",
+        "count": 1
+      },
+      {"value": "Vallée du Jabron", "count": 1},
+      {
+        "value": "Table d'orientation : Croix gravée : Centre - Point vu en place en 1979",
+        "count": 1
+      },
+      {
+        "value": "Monument : Pilier : Repère en bronze PM - Point vu en place en 2004",
+        "count": 1
+      },
+      {
+        "value": "vue sur les champs de lavandes fleuris (mi-juin a juillet)",
+        "count": 1
+      },
+      {
+        "value": "Il s'agit de la première intersection le long de la boucle Grigny Grigny  le long du Rhône  Vue sur le Rhône et les signes",
+        "count": 1
+      },
+      {"value": "Réintroduction de Vautours", "count": 1},
+      {
+        "value": "Vu sur la chaine des Alpes et le Mont Blanc par temps clair ainsi que sur les Monts d'Or",
+        "count": 1
+      },
+      {"value": "arbre formant une arche", "count": 1},
+      {
+        "value": "point de vue sur les gorges de la Loire et la retenue de Grangent",
+        "count": 1
+      },
+      {
+        "value": "Vue, du nord au sud, sur le Grand-Colombier, le Valromey, la Vallée du Rhône, la chaîne de l'Épine et sur certains massifs alpins.",
+        "count": 1
+      },
+      {"value": "Cascade et marmite", "count": 1},
+      {"value": "Vue sur le Mont Blanc", "count": 1},
+      {
+        "value": "A la mémoire de François de Quinsonas, dit \"Lieutenant Fiancey\", mort le 27 juillet 1944",
+        "count": 1
+      },
+      {"value": "the culmination point of the via ferrata", "count": 1},
+      {"value": "Table d'orientation", "count": 1},
+      {"value": "Vue sur le Mont-Blanc", "count": 1},
+      {"value": "Emblème de Pralognan la Vanoise", "count": 1},
+      {"value": "poste d'observation naturaliste camouflé", "count": 1},
+      {
+        "value": "Table d'orientation du site du Signal de Saint-André-la-Côte ",
+        "count": 1
+      },
+      {
+        "value": "Views of Mont Blanc, Vallée du Rhône - Vue NE/E/SE",
+        "count": 1
+      },
+      {
+        "value": "Probablement le plus beau point de vue sur le Château de Couzan",
+        "count": 1
+      },
+      {"value": "Vue sur le Léman", "count": 1},
+      {"value": "Table à carte du massif de la chartreuse", "count": 1},
+      {"value": "Point de vue sur le lac Genin", "count": 1},
+      {"value": "Point de vue sur Oyonnax", "count": 1},
+      {"value": "avec banc", "count": 1},
+      {
+        "value": "Vu à 360° sur les Monts du Lyonnais, Lyon, les Monts-d'Or, le Bugey, la Chartreuse, Belledonne",
+        "count": 1
+      },
+      {
+        "value": "Nice panoramic view around the \"plaine de Roanne.",
+        "count": 1
+      },
+      {"value": "belvédère d'observation du site archéologique", "count": 1},
+      {"value": "pont de l'Abîme", "count": 1},
+      {"value": "Observatoire naturaliste", "count": 1},
+      {"value": "Vue sur le lac Léman", "count": 1},
+      {"value": "Beautiful view on La Souche Church", "count": 1},
+      {
+        "value": "View on La Faye mountain, Montbrun-les-bains on the left and Ferrassières on the right",
+        "count": 1
+      },
+      {
+        "value": "View on Montbrun-les-Bains valley, the Buc mountain, la Faye, Reilhanette and Toulourenc valley",
+        "count": 1
+      },
+      {
+        "value": "View upon Ferrassières and the heights of plateau d'Albion",
+        "count": 1
+      },
+      {"value": "View on Montbrun valley from La Fayette mountain", "count": 1}
+    ],
+    "count": 50
+  },
+  {
+    "key": "natural",
+    "tags": [
+      {"value": "peak", "count": 32},
+      {"value": "saddle", "count": 4},
+      {"value": "cliff", "count": 2},
+      {"value": "spring", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 11
+      },
+      {"value": "alti relevée au GPS - bonne qualité", "count": 2},
+      {
+        "value": "Attention aux photos de Bing 2015, elles sont toutes déformées au niveau de la crète, préférer un positionnement GPS plutôt que de se baser sur ces images aériennes",
+        "count": 1
+      },
+      {"value": "Téléscope gratuit", "count": 1},
+      {"value": "Fixme", "count": 1},
+      {"value": "Table d'orientation", "count": 1},
+      {
+        "value": "Panorama des Préalpes du Chablais, Bornes-Aravis, Massif de Platé, Mont-Blanc et Dents du Midi",
+        "count": 1
+      },
+      {"value": "Origine cadastre mais repositionné avec Bing", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "survey_point", "count": 8},
+      {"value": "tower", "count": 4},
+      {"value": "pier", "count": 3},
+      {"value": "cross", "count": 1},
+      {"value": "toposcope", "count": 1},
+      {"value": "platform", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "wayside_cross", "count": 8},
+      {"value": "ruins", "count": 2},
+      {"value": "monument", "count": 2},
+      {"value": "memorial", "count": 2},
+      {"value": "bridge", "count": 1},
+      {"value": "tower", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3637370", "count": 1},
+      {"value": "Q1758703", "count": 1},
+      {"value": "Q31634194", "count": 1},
+      {"value": "Q3578842", "count": 1},
+      {"value": "Q3006348", "count": 1},
+      {"value": "Q3413465", "count": 1},
+      {"value": "Q3325416", "count": 1},
+      {"value": "Q19371162", "count": 1},
+      {"value": "Q3437350", "count": 1},
+      {"value": "Q3322161", "count": 1},
+      {"value": "Q19544006", "count": 1},
+      {"value": "Q24929376", "count": 1},
+      {"value": "Q3322307", "count": 1},
+      {"value": "Q3220977", "count": 1},
+      {"value": "Q22967042", "count": 1},
+      {"value": "Q22966999", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "69238A - 1", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "3828902 - 1", "count": 1},
+      {"value": "3837902 - 1", "count": 1},
+      {"value": "38471A - 1", "count": 1},
+      {"value": "3855001 - 1", "count": 1},
+      {"value": "0104401 - B", "count": 1},
+      {"value": "7128903 - A", "count": 1},
+      {"value": "7413605 - A", "count": 1},
+      {"value": "7416004 - A", "count": 1},
+      {"value": "7419103 - D", "count": 1},
+      {"value": "7427601 - B", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_point.asp?num_site=69238A&no_ptg=01&numero_f50=2932",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0104401",
+        "count": 1
+      },
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_point.asp?num_site=3837902&no_ptg=01&numero_f50=3134",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=38471A",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3855001",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=3828902",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7128903",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7413605",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7416004",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=7419103",
+        "count": 1
+      },
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_point.asp?num_site=7427601&no_ptg=03&numero_f50=3529",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "no", "count": 3},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "amenity", "tags": [{"value": "bench", "count": 8}], "count": 8},
+  {
+    "key": "created_by",
+    "tags": [{"value": "JOSM", "count": 3}, {"value": "Editop", "count": 3}],
+    "count": 6
+  },
+  {"key": "mountain_pass", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1997", "count": 1},
+      {"value": "1964", "count": 1},
+      {"value": "1957", "count": 1},
+      {"value": "1938", "count": 1},
+      {"value": "2013", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Écoutoux", "count": 1},
+      {"value": "fr:Quatre Têtes", "count": 1},
+      {"value": "fr:Cascade de Cerveyrieu", "count": 1},
+      {"value": "it:Becca della Traversière", "count": 1},
+      {"value": "fr:Rocher de Lorzier", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Département de l'Isère", "count": 4},
+      {"value": "Parc naturel régional du Pilat", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "wood", "count": 2},
+      {"value": "metal", "count": 1},
+      {"value": "stone", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "aerialway", "tags": [{"value": "station", "count": 3}], "count": 3},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "rest_area", "count": 1},
+      {"value": "footway", "count": 1},
+      {"value": "pedestrian", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "backrest", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "place",
+    "tags": [
+      {"value": "locality", "count": 2},
+      {"value": "village", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "hiking", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "Vue",
+    "tags": [
+      {"value": "360°", "count": 1},
+      {"value": "St Pierre de Chartreuse", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "bench", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "ncU2qc576671YyGAKKXbuA", "count": 1},
+      {"value": "B-f5ryYwO9tbS4UEFvHBqg", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "colour", "tags": [{"value": "brown", "count": 2}], "count": 2},
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1923-05-01", "count": 1},
+      {"value": "1937-05-19", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117269", "count": 1},
+      {"value": "PA00117211", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "tower:type",
+    "tags": [{"value": "observation", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://c2.staticflickr.com/2/1740/28862081208_9d7bc7ada6_k.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://c2.staticflickr.com/2/1728/40925295010_cb4409c2d0_h.jpg",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "seats", "tags": [{"value": "6", "count": 1}], "count": 1},
+  {"key": "waterway", "tags": [{"value": "waterfall", "count": 1}], "count": 1},
+  {
+    "key": "ref:sandre",
+    "tags": [{"value": "06830011", "count": 1}],
+    "count": 1
+  },
+  {"key": "inscription", "tags": [{"value": "CAF", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "Par temps clair, ont peux voir le Mont-Blanc", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "map_size", "tags": [{"value": "region", "count": 1}], "count": 1},
+  {"key": "fixme", "tags": [{"value": "position", "count": 1}], "count": 1},
+  {
+    "key": "aerialway:access",
+    "tags": [{"value": "exit", "count": 1}],
+    "count": 1
+  },
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "orientation_table",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "attraction",
+    "tags": [{"value": "viewpoint", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "free_flying:site",
+    "tags": [{"value": "takeoff", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "free_flying", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "ski", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "memorial", "tags": [{"value": "statue", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "bird_hide", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "8", "count": 1}], "count": 1},
+  {
+    "key": "tower:construction",
+    "tags": [{"value": "stone", "count": 1}],
+    "count": 1
+  },
+  {"key": "summit:cross", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

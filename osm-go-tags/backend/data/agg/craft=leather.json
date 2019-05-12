@@ -1,0 +1,9 @@
+[
+  {"key": "craft", "tags": [{"value": "leather", "count": 2}], "count": 2},
+  {"key": "shop", "tags": [{"value": "art", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Gallerie - Atelier de travail du cuir", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {"key": "office", "tags": [{"value": "architect", "count": 34}], "count": 34},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.iltec.fr", "count": 1},
+      {"value": "http://www.micaelbroux.com/", "count": 1},
+      {"value": "http://www.sudarchitectes.com/", "count": 1},
+      {"value": "http://www.tekhne-architectes.com/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 29 72 84", "count": 1},
+      {"value": "+33 9 80 69 00 14", "count": 1},
+      {"value": "+33 4 78 64 07 07", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Building engineering", "count": 2}],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1}
+]

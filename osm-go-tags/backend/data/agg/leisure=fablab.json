@@ -1,0 +1,14 @@
+[
+  {"key": "leisure", "tags": [{"value": "fablab", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Association Limouzi", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.limouzi.org", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

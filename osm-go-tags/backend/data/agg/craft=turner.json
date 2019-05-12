@@ -1,0 +1,18 @@
+[
+  {"key": "craft", "tags": [{"value": "turner", "count": 4}], "count": 4},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "42058743800029", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 553 656 323", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://mzr85.fr/", "count": 1}],
+    "count": 1
+  }
+]

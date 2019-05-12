@@ -1,0 +1,13 @@
+[
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Positionné depuis carte topo, pour identification sur terrain",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "natural", "tags": [{"value": "Megalith", "count": 1}], "count": 1}
+]

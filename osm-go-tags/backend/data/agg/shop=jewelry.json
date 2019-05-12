@@ -1,0 +1,224 @@
+[
+  {"key": "shop", "tags": [{"value": "jewelry", "count": 277}], "count": 277},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.guildedesorfevres.fr/", "count": 4},
+      {"value": "http://www.ericduny.com/", "count": 2},
+      {"value": "www.heureetmontres.com/", "count": 2},
+      {"value": "www.juliendorcel.com/fr-fr/bijouterie/aubenas", "count": 1},
+      {"value": "http://www.yvescaire.com", "count": 1},
+      {"value": "http://www.maier.fr/", "count": 1},
+      {"value": "http://www.vivre-vienne.fr/Nylabijoux_2124.asp", "count": 1},
+      {"value": "http://www.obobijoux-vienne.fr/", "count": 1},
+      {"value": "http://www.bijouterie-fournier.com/", "count": 1},
+      {"value": "http://www.bijouxetmineraux.com/", "count": 1},
+      {"value": "http://www.bijouterie-laurent.fr/", "count": 1},
+      {"value": "http://www.bijouteriepupier.fr/", "count": 1},
+      {"value": "http://www.bijouterie-jade-or-chambery.fr/", "count": 1},
+      {"value": "www.sesam-bijoux.fr", "count": 1},
+      {
+        "value": "http://www.juliendorcel.com/fr-fr/bijouterie/montelimar",
+        "count": 1
+      },
+      {"value": "www.juliendorcel.com/fr-fr/bijouterie/roanne", "count": 1},
+      {"value": "http://www.vienne-online.com/sites/l-etincelle/", "count": 1},
+      {"value": "bijouterie-crepier.fr", "count": 1},
+      {"value": "www.juliendorcel.com/fr-fr/bijouterie/moutiers", "count": 1},
+      {
+        "value": "www.juliendorcel.com/fr-fr/bijouterie/albertville",
+        "count": 1
+      },
+      {
+        "value": "http://www.vienne-online.com/sites/l-annexe/index.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.juliendorcel.com/fr-FR/bijouterie/lyon/julien-d-orcel-lyon",
+        "count": 1
+      },
+      {"value": "http://ericduny.com", "count": 1},
+      {"value": "https://planete-cristal.net", "count": 1},
+      {"value": "http://www.cre-or.fr", "count": 1},
+      {"value": "http://jaeger-lecoultre-lyon.fr/", "count": 1},
+      {"value": "https://www.contal-musique.com/", "count": 1},
+      {"value": "http://www.murial.fr", "count": 1},
+      {"value": "http://www.bijoux-anais-et-louise.com/fr/", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/cleor-cleor-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/orland-orland-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Cleor",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Claire-s",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Swarovski",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Services/Montre-Service",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Pandora",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Histoire-d-Or-Montres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Histoire-d-Or-Bijouterie",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Agatha",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Louis-Pion",
+        "count": 1
+      }
+    ],
+    "count": 45
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74372501", "count": 1},
+      {"value": "+33 4 74 85 02 24", "count": 1},
+      {"value": "+33 4 74 15 06 34", "count": 1},
+      {"value": "+33 4 74 58 77 76", "count": 1},
+      {"value": "+33 4 74 85 20 72", "count": 1},
+      {"value": "+33 4 74 85 04 45", "count": 1},
+      {"value": "+33 4 74 85 06 34", "count": 1},
+      {"value": "+33 9 83 34 60 86", "count": 1},
+      {"value": "+33 4 74 59 51 62", "count": 1},
+      {"value": "+33 4 74 85 08 24", "count": 1},
+      {"value": "+33 4 69 32 44 31", "count": 1},
+      {"value": "+33 4 74 59 91 58", "count": 1},
+      {"value": "+33 4 77 24 65 91", "count": 1},
+      {"value": "+33 4 77 24 05 40", "count": 1},
+      {"value": "+33 4 77 24 21 68", "count": 1},
+      {"value": "+33 4 79 70 52 37", "count": 1},
+      {"value": "+33478484184", "count": 1},
+      {"value": "+33 4 74 85 10 02", "count": 1},
+      {"value": "+33479832217", "count": 1},
+      {"value": "+33 4 50 16 27 59", "count": 1},
+      {"value": "+33 4 78 92 90 00", "count": 1},
+      {"value": "+33 4 78 85 66 65", "count": 1},
+      {"value": "+33 4 72 61 98 51", "count": 1},
+      {"value": "+33 4 75 29 47 51", "count": 1},
+      {"value": "+33476425539", "count": 1},
+      {"value": "+33476513274", "count": 1},
+      {"value": "+33 4 76 48 30 84", "count": 1},
+      {"value": "+33 4 76 21 87 07", "count": 1},
+      {"value": "+33 4 76 48 71 38", "count": 1},
+      {"value": "+33 4 76 40 23 11", "count": 1},
+      {"value": "+33 9 67 72 01 58", "count": 1},
+      {"value": "+33 4 76 40 30 63", "count": 1},
+      {"value": "+33 4 76 23 17 08", "count": 1},
+      {"value": "+33 4 76 23 51 52", "count": 1},
+      {"value": "+33 4 76 22 00 25", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 10},
+      {"value": "0", "count": 9},
+      {"value": "2", "count": 1}
+    ],
+    "count": 20
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 16}], "count": 16},
+  {"key": "room", "tags": [{"value": "shop", "count": 15}], "count": 15},
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 4},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 2}
+    ],
+    "count": 9
+  },
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "jeweller", "count": 3},
+      {"value": "pottery", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Nouveaux Bijoutiers", "count": 1},
+      {"value": "E.Leclerc", "count": 1},
+      {"value": "Loubet", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "bijouteriepupier@orange.fr", "count": 1},
+      {"value": "cre-or@orange.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Bijouterie", "count": 1},
+      {
+        "value": "Vente bijoux pierres fine, minéraux, pierres roulées, lithothérapie (sur RdV).",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Magasin de vente de montres et de piles pour montres.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "brand",
+    "tags": [{"value": "Julien d'Orcel", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "contact@bijoux-anais-et-louise.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

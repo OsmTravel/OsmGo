@@ -1,0 +1,47 @@
+[
+  {"key": "shop", "tags": [{"value": "antiques", "count": 34}], "count": 34},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 21 90 55 32", "count": 1},
+      {"value": "+33 4 50 35 17 35", "count": 1},
+      {"value": "+33 4 74372536", "count": 1},
+      {"value": "+33 6 09 36 75 09; +33 6 09 36 75 09", "count": 1},
+      {"value": "+33 4 78 24 08 39", "count": 1},
+      {"value": "+33 6 07 70 88 44", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://commerces.viennagglo.fr/fleur-de-miel-vienne.html",
+        "count": 1
+      },
+      {"value": "http://m.justeautrement.fr/", "count": 1},
+      {"value": "http://www.anne-et-thierry.com/", "count": 1},
+      {"value": "http://www.pucesducanal.com/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Numismatique + Change", "count": 1},
+      {"value": "Showroom Restauration de meubles anciens", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "lacour.charp@gmail.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 24 18 63", "count": 1}],
+    "count": 1
+  }
+]

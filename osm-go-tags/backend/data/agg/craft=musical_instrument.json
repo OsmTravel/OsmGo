@@ -1,0 +1,72 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "musical_instrument", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Luthier", "count": 2},
+      {
+        "value": "Lutherie, réparations, réglages, câblage, pièces détachées",
+        "count": 1
+      },
+      {"value": "P. Martin Luthier", "count": 1},
+      {"value": "Atelie de Lutherie", "count": 1},
+      {
+        "value": "Atelier spécialisé dans l'entretien et la réparation des instruments à vent.",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "musical_instrument", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.atelierdelaguitare.fr/", "count": 1},
+      {"value": "http://www.atelier-quatuor-luthier.fr", "count": 1},
+      {"value": "http://www.violon-toulouse.com", "count": 1},
+      {"value": "http://www.annelauremusique.fr/", "count": 1},
+      {"value": "https://www.beaufort-luthier.com/", "count": 1},
+      {"value": "http://www.luthier-deloffre.fr/", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33561123044", "count": 1},
+      {"value": "+33 5 61 12 46 46", "count": 1},
+      {"value": "+33381813098", "count": 1},
+      {"value": "+33381813704", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "musical_instrument",
+    "tags": [{"value": "strings", "count": 2}, {"value": "wind", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "repair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "only", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Jean-Yves Chouteau", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:bitcoin",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "survey:date", "tags": [{"value": "2017-08", "count": 1}], "count": 1}
+]

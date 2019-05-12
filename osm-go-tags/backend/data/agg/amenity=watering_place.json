@@ -1,0 +1,36 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "watering_place", "count": 75}],
+    "count": 75
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 16},
+      {"value": "no", "count": 3},
+      {"value": "conditional", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "drinking_water:legal",
+    "tags": [{"value": "no", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Abreuvoir", "count": 1},
+      {
+        "value": "eau pas trop potable car il y a souvent des troupeaux en amont de la source",
+        "count": 1
+      },
+      {"value": "Troupeau en amont, pas forcément la meilleure eau", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

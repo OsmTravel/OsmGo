@@ -1,0 +1,18 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "occupational_therapist", "count": 3}],
+    "count": 3
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "occupational", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

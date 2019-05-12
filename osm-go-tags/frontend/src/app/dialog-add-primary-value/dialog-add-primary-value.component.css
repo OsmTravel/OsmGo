@@ -1,0 +1,22 @@
+.content{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.newpValue{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 60%
+}
+
+.diffsPvalue{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 25%;
+    max-width: 25%;
+}

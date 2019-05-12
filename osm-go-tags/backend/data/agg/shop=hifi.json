@@ -1,0 +1,40 @@
+[
+  {"key": "shop", "tags": [{"value": "hifi", "count": 58}], "count": 58},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 84 96 44", "count": 1},
+      {"value": "+33 4 74 85 23 04", "count": 1},
+      {"value": "+33 4 78 95 04 82", "count": 1},
+      {"value": "+33 4 78 24 53 43", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.proxiconfort-samelec.fr/", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/Image-et-Musique_2347.asp",
+        "count": 1
+      },
+      {
+        "value": "http://magasins.connexion.fr/fr_FR/boutique/france/auvergne-rhone-alpes/rhone/lyon/lyon-foch/380",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Enceintes hifi sur mesure mail : lelabo@riseup.com",
+        "count": 1
+      },
+      {"value": "Réparation TV hifi video antenne", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

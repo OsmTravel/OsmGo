@@ -1,0 +1,8 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "cooling_tower", "count": 6}],
+    "count": 6
+  },
+  {"key": "height", "tags": [{"value": "128", "count": 4}], "count": 4}
+]

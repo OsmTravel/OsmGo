@@ -1,0 +1,9 @@
+[
+  {
+    "key": "public_transport",
+    "tags": [{"value": "prived", "count": 1}],
+    "count": 1
+  },
+  {"key": "railway", "tags": [{"value": "prived", "count": 1}], "count": 1},
+  {"key": "train", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

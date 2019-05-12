@@ -1,0 +1,95 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "golf_course", "count": 91}],
+    "count": 91
+  },
+  {"key": "sport", "tags": [{"value": "golf", "count": 30}], "count": 30},
+  {
+    "key": "golf",
+    "tags": [
+      {"value": "hole", "count": 7},
+      {"value": "driving_range", "count": 1},
+      {"value": "practice_range", "count": 1},
+      {"value": "practice", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "3", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "18", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.golfalpedhuez.com/", "count": 1},
+      {"value": "http://www.golfhotelcharmeil.com/", "count": 1},
+      {"value": "http://www.lesgets.com/golf", "count": 1},
+      {"value": "http://www.golf-morzine-avoriaz.com/", "count": 1},
+      {"value": "http://golf-mornex.com", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Blue Green", "count": 2},
+      {"value": "Camping de Lalouvesc", "count": 1},
+      {"value": "Nicolas Outters", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3110187", "count": 1},
+      {"value": "Q3110170", "count": 1},
+      {"value": "Q19951046", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "surface", "tags": [{"value": "grass", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Golf de Chamonix", "count": 1},
+      {"value": "fr:Golf d'Aix-les-Bains", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 74 17 08", "count": 1},
+      {"value": "033.450.36.58.20", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Driving range", "count": 1},
+      {"value": "18 trous, par 70, 5502 m", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "par", "tags": [{"value": "72", "count": 1}], "count": 1},
+  {"key": "hole", "tags": [{"value": "9", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "golfavoriaz@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "grass", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "hotel", "count": 1}], "count": 1}
+]

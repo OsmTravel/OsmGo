@@ -1,0 +1,11 @@
+[
+  {"key": "amenity", "tags": [{"value": "piano", "count": 11}], "count": 11},
+  {"key": "access", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {"key": "operator", "tags": [{"value": "SNCF", "count": 10}], "count": 10},
+  {
+    "key": "fixme",
+    "tags": [{"value": "position estimated", "count": 8}],
+    "count": 8
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

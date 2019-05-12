@@ -1,0 +1,926 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "supermarket", "count": 1480}],
+    "count": 1480
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Carrefour", "count": 143},
+      {"value": "Groupement des Mousquetaires", "count": 116},
+      {"value": "Casino", "count": 92},
+      {"value": "Lidl", "count": 66},
+      {"value": "Système U", "count": 38},
+      {"value": "E. Leclerc", "count": 37},
+      {"value": "Spar", "count": 25},
+      {"value": "Super U", "count": 24},
+      {"value": "Leader Price", "count": 24},
+      {"value": "Groupe Casino", "count": 14},
+      {"value": "Auchan", "count": 13},
+      {"value": "Aldi", "count": 12},
+      {"value": "Grand Frais", "count": 10},
+      {"value": "Biocoop", "count": 10},
+      {"value": "8 à Huit", "count": 10},
+      {"value": "Sherpa", "count": 9},
+      {"value": "Franprix", "count": 9},
+      {"value": "Vival", "count": 8},
+      {"value": "Netto", "count": 8},
+      {"value": "DIA France", "count": 7},
+      {"value": "Dia France", "count": 7},
+      {"value": "Proxi", "count": 6},
+      {"value": "Dia", "count": 6},
+      {"value": "Intermarché", "count": 6},
+      {"value": "Simply Market", "count": 5},
+      {"value": "Carrefour Market", "count": 4},
+      {"value": "Thiriet", "count": 3},
+      {"value": "Norma", "count": 3},
+      {"value": "Colruyt", "count": 2},
+      {"value": "Géant Casino", "count": 2},
+      {"value": "Groupe Auchan", "count": 2},
+      {"value": "L'Eau Vive", "count": 2},
+      {"value": "DIA", "count": 2},
+      {"value": "Shopi", "count": 2},
+      {"value": "U Express", "count": 2},
+      {"value": "Monoprix", "count": 1},
+      {"value": "magasins-U", "count": 1},
+      {"value": "Migros", "count": 1},
+      {"value": "Dai France", "count": 1},
+      {"value": "Alissas Distribution", "count": 1},
+      {"value": "Vert la Terre", "count": 1},
+      {"value": "Aquarius", "count": 1},
+      {"value": "Jaudis", "count": 1},
+      {"value": "proxy super", "count": 1},
+      {"value": "Utile", "count": 1},
+      {"value": "SAS Blaisani", "count": 1},
+      {"value": "Bouzar", "count": 1},
+      {"value": "Cora", "count": 1},
+      {"value": "Carrefour Contact", "count": 1},
+      {"value": "Magasins U", "count": 1},
+      {"value": "Denner", "count": 1},
+      {"value": "Denis Mosnier", "count": 1},
+      {"value": "Virginie Vilquin", "count": 1},
+      {"value": "U EXPRESS", "count": 1},
+      {"value": "Markal", "count": 1},
+      {"value": "Chrono Drive", "count": 1},
+      {"value": "Batavia", "count": 1},
+      {"value": "Le Vert de Terre", "count": 1},
+      {"value": "Carrefour France", "count": 1},
+      {"value": "Satoriz", "count": 1},
+      {"value": "Grain d'orge", "count": 1},
+      {"value": "Jacquier Fabien", "count": 1},
+      {"value": "Intermarche", "count": 1},
+      {"value": "Chronodrive", "count": 1},
+      {"value": "Carrefour Market -fermé-", "count": 1},
+      {"value": "Carrefour Marché Plus", "count": 1},
+      {"value": "Gérantès", "count": 1},
+      {"value": "Inter IKEA Systems B.V.", "count": 1},
+      {"value": "Carrefour Champion", "count": 1},
+      {"value": "Atac", "count": 1},
+      {"value": "La Vie Claire", "count": 1},
+      {"value": "SAS Cajura", "count": 1},
+      {"value": "M. et Mme GELPI", "count": 1},
+      {"value": "Coridis", "count": 1},
+      {"value": "Biocoop Lyon Bellecour", "count": 1}
+    ],
+    "count": 769
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Carrefour Market", "count": 112},
+      {"value": "Lidl", "count": 100},
+      {"value": "Carrefour", "count": 27},
+      {"value": "Biocoop", "count": 17},
+      {"value": "Monoprix", "count": 17},
+      {"value": "La Vie Claire", "count": 12},
+      {"value": "Casino", "count": 9},
+      {"value": "Carrefour Montagne", "count": 7},
+      {"value": "E. Leclerc", "count": 6},
+      {"value": "Intermarché", "count": 5},
+      {"value": "Franprix", "count": 4},
+      {"value": "Carrefour City", "count": 4},
+      {"value": "Auchan", "count": 3},
+      {"value": "Leader Price", "count": 3},
+      {"value": "Intermarché Express", "count": 2},
+      {"value": "L'Eau Vive", "count": 1},
+      {"value": "Simply Market", "count": 1},
+      {"value": "Auchan Supermarché", "count": 1},
+      {"value": "Mobilier de France", "count": 1},
+      {"value": "Naturalia", "count": 1},
+      {"value": "Cora Drive", "count": 1},
+      {"value": "Dia", "count": 1},
+      {"value": "Monop'", "count": 1},
+      {"value": "U Express", "count": 1},
+      {"value": "Carrefour Express", "count": 1},
+      {"value": "IKEA", "count": 1},
+      {"value": "Super U", "count": 1},
+      {"value": "Bi1", "count": 1},
+      {"value": "Cora", "count": 1}
+    ],
+    "count": 342
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q2689639", "count": 112},
+      {"value": "Q151954", "count": 100},
+      {"value": "Q217599", "count": 24},
+      {"value": "Q3321241", "count": 17},
+      {"value": "Q3213589", "count": 12},
+      {"value": "Q2940193", "count": 7},
+      {"value": "Q1273376", "count": 6},
+      {"value": "Q2529029", "count": 3},
+      {"value": "Q2904039", "count": 3},
+      {"value": "Q3337081", "count": 1},
+      {"value": "Q2940187", "count": 1},
+      {"value": "Q2940190", "count": 1},
+      {"value": "Q3153200", "count": 1},
+      {"value": "Q686643", "count": 1}
+    ],
+    "count": 289
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Lidl", "count": 100},
+      {"value": "fr:Monoprix (France)", "count": 17},
+      {"value": "fr:La Vie claire", "count": 12},
+      {"value": "fr:Carrefour Montagne", "count": 7},
+      {"value": "fr:E.Leclerc", "count": 6},
+      {"value": "fr:Biocoop", "count": 4},
+      {"value": "fr:Système U", "count": 3},
+      {"value": "fr:Carrefour Market", "count": 2},
+      {"value": "fr:Carrefour (enseigne)", "count": 2},
+      {"value": "fr:Franprix", "count": 2},
+      {"value": "fr:Leader Price", "count": 1},
+      {"value": "https://fr.wikipedia.org/wiki/Biocoop", "count": 1},
+      {"value": "Q2904039", "count": 1},
+      {"value": "fr:Naturalia", "count": 1},
+      {"value": "fr:Carrefour Express", "count": 1},
+      {"value": "fr:Intermarché", "count": 1},
+      {"value": "fr:Cora (grande distribution)", "count": 1}
+    ],
+    "count": 162
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.eau-vive.com/", "count": 5},
+      {"value": "http://www.carrefour.fr", "count": 2},
+      {"value": "http://www.supercasino.fr/", "count": 2},
+      {"value": "http://www.dia.fr", "count": 2},
+      {"value": "www.dia.fr", "count": 2},
+      {"value": "http://www.bio-c-bon.eu/fr", "count": 2},
+      {"value": "http://www.lidl.fr", "count": 2},
+      {
+        "value": "http://magasins.naturalia.fr/produits-bio/lyon-grolee/3867",
+        "count": 1
+      },
+      {"value": "http://www.carrefour.fr/magasin/lyon-part-dieu", "count": 1},
+      {
+        "value": "https://www.auchan.fr/magasins/supermarche-la-duchere-lyon/sl-1171",
+        "count": 1
+      },
+      {
+        "value": "https://www.auchan.fr/magasins/supermarche-lyon-felix-faure/sl-1357",
+        "count": 1
+      },
+      {"value": "http://www.bioasis-biocoop.fr/", "count": 1},
+      {
+        "value": "http://www.carrefour.fr/magasin/market-villeurbanne",
+        "count": 1
+      },
+      {
+        "value": "https://www.magasins-u.com/uexpress-lyoncroixrousse",
+        "count": 1
+      },
+      {"value": "http://biogone.biocoop.net/", "count": 1},
+      {
+        "value": "http://www.carrefour.fr/magasin/market-tournon-sur-rhone",
+        "count": 1
+      },
+      {
+        "value": "https://www.monoprix.fr/mono-lyon-guillotiere-lyon-69007-s",
+        "count": 1
+      },
+      {
+        "value": "http://www.carrefour.fr/magasin/market-cruseilles",
+        "count": 1
+      },
+      {
+        "value": "http://magasins.supercasino.fr/supermarche/grenoble/CS164",
+        "count": 1
+      },
+      {
+        "value": "https://www.franprix.fr/magasins/villeurbanne_m6738",
+        "count": 1
+      },
+      {"value": "http://www.biocoop-faubourg-mache.com/", "count": 1},
+      {"value": "http://bioplaisirtassin.biocoop.net/", "count": 1},
+      {"value": "http://www.biocooplyonbellecour.com/", "count": 1},
+      {
+        "value": "https://www.auchan.fr/magasins/supermarche-garibaldi-lyon/sl-1159",
+        "count": 1
+      },
+      {"value": "http://www.eau-vive.com", "count": 1},
+      {"value": "http://lemondeallantvert.biocoop.net/", "count": 1},
+      {"value": "http://www.biocooplyonsaxe.fr/", "count": 1},
+      {"value": "www.franprix.fr", "count": 1},
+      {"value": "http://www.baraban.fr", "count": 1},
+      {"value": "http://www.intermarche.com/", "count": 1},
+      {
+        "value": "http://bio-c-bon.eu/fr/nos_magasins/bio-c-bon-grenoble",
+        "count": 1
+      },
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Ardeche/BIOCOOP-LA-MAISON-DU-BIO",
+        "count": 1
+      },
+      {"value": "www.magasins-u.com", "count": 1},
+      {"value": "http://www.carrefour.fr/magasin/city-lyon-jaures", "count": 1},
+      {"value": "http://www.coradrive.fr/amphion", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/authentiquescootershop",
+        "count": 1
+      },
+      {"value": "http://mamiemarie.com", "count": 1},
+      {
+        "value": "https://www.leaderprice.fr/magasin/lyon-la-fayette",
+        "count": 1
+      },
+      {"value": "www.casino-proximite.fr", "count": 1},
+      {"value": "https://www.ekosystm.com/", "count": 1},
+      {"value": "http://aixlesbains.biocoop.net/", "count": 1},
+      {
+        "value": "http://www.satoriz.fr/satoriz/magasin-satoriz-saint-etienne",
+        "count": 1
+      },
+      {
+        "value": "http://www.spar.fr/rhone-alpes-magasin-spar-rhone-69/commerce-st-germain-au-mont-d-or-groupe-casino/magasin-tt157.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.intermarche.com/home/magasins/accueil/loire/roche-la-moliere-10473.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.intermarche.com/home/magasins/accueil/rhone/villeurbanne-07042.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.coursesu.com/lyoncroixrousse/AccueilMagasin/_mag",
+        "count": 1
+      },
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Loire/BIOCOCCINELLE",
+        "count": 1
+      },
+      {"value": "http://www.forezbio.com/", "count": 1},
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Loire/LE-CHOU-RAVI",
+        "count": 1
+      },
+      {
+        "value": "https://www.intermarche.com/home/magasins/accueil/rhone/lyon-06813.html?pdv_id=10405",
+        "count": 1
+      },
+      {
+        "value": "http://www.satoriz.fr/?satoriz=magasin-satoriz-lyon-caluire",
+        "count": 1
+      },
+      {"value": "http://www.cashbio.fr", "count": 1},
+      {"value": "www.laviesaine74.com", "count": 1},
+      {
+        "value": "https://www.monoprix.fr/monop-lyon-bellecour-lyon-69002-s",
+        "count": 1
+      },
+      {"value": "http://valence.biocoop.net/", "count": 1},
+      {"value": "http://www.carrefour.fr/magasin/city-lyon-janin", "count": 1},
+      {
+        "value": "http://magasins.supercasino.fr/supermarche/villefontaine/CS326",
+        "count": 1
+      },
+      {
+        "value": "http://www.auchandrive.fr/drive/nos-drives/p/guilherand-granges-872",
+        "count": 1
+      },
+      {
+        "value": "https://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Rhone/BIOCOOP-LES-TERREAUX",
+        "count": 1
+      },
+      {"value": "http://orexisbio.com/", "count": 1},
+      {"value": "http://www.biocooplyonlumiere.fr/", "count": 1},
+      {"value": "http://www.biocoop-portedesalpes.fr/", "count": 1},
+      {"value": "http://biocoopmontsdor.biocoop.net/", "count": 1},
+      {
+        "value": "http://magasins.naturalia.fr/produits-bio/lyon-vitton/3937",
+        "count": 1
+      },
+      {"value": "https://www.goutabio.com", "count": 1},
+      {
+        "value": "http://magasins.naturalia.fr/produits-bio/lyon-bonnefoi/3946",
+        "count": 1
+      },
+      {
+        "value": "https://magasins.supercasino.fr/supermarche/lyon-mermoz/CS995",
+        "count": 1
+      },
+      {
+        "value": "http://magasins.naturalia.fr/produits-bio/lyon-celestins/3889",
+        "count": 1
+      },
+      {"value": "http://www.satoriz-montdor.fr/", "count": 1},
+      {
+        "value": "https://www.magasins-u.com/uexpress-lyonsaintlouis",
+        "count": 1
+      },
+      {"value": "http://www.prairial.fr/", "count": 1},
+      {"value": "http://www.aquarius74.fr/", "count": 1},
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Savoie/L-ESPRIT-VERT",
+        "count": 1
+      },
+      {"value": "http://www.le-vert-de-terre.fr/", "count": 1},
+      {"value": "https://www.biocoopdugroscaillou.fr", "count": 1},
+      {
+        "value": "https://www.monoprix.fr/jsp/monoprixandme/magasin/store.jsp?storeId=100464",
+        "count": 1
+      },
+      {
+        "value": "https://www.lesarcs.com/alimentation/8-a-huit.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/civrieux-dazergues.html",
+        "count": 1
+      },
+      {"value": "www.rize.fr", "count": 1},
+      {"value": "www.carrefour.fr/magasin/market-saint-priest", "count": 1},
+      {
+        "value": "https://www.auchan.fr/magasins/supermarche-city-lyon-universite/sl-1380",
+        "count": 1
+      },
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Loire/BIOCOOP-AU-P-TIT-BIONHEUR",
+        "count": 1
+      },
+      {"value": "http://denner.ch", "count": 1},
+      {"value": "http://lesgatobio.biocoop.net", "count": 1},
+      {"value": "http://www.nossosupermarche.com", "count": 1},
+      {"value": "http://www.lepicerieaufournil.fr", "count": 1},
+      {"value": "http://www.magasin-bio-crest.fr/", "count": 1},
+      {"value": "http://epicerienouvelle.com/", "count": 1},
+      {
+        "value": "https://www.biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Ain/BIOCOOP-MAG-BIO-EDEN",
+        "count": 1
+      },
+      {"value": "http://magbio.biocoop.net/", "count": 1},
+      {"value": "http://terranatmeximieux.biocoop.net", "count": 1},
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Rhone/BIOCOOP-DU-GRAND-LARGE",
+        "count": 1
+      },
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Ardeche/BIOCOOP-TAIN-TOURNON",
+        "count": 1
+      },
+      {
+        "value": "https://magasins.supercasino.fr/supermarche/salaise/CS551",
+        "count": 1
+      },
+      {"value": "https://www.coursesu.com/home", "count": 1},
+      {"value": "www.biofrais.com", "count": 1},
+      {
+        "value": "https://magasins.supercasino.fr/supermarche/sathonay/CS858",
+        "count": 1
+      },
+      {
+        "value": "https://www.magasins-u.com/uexpress-saintetiennemontplaisir",
+        "count": 1
+      },
+      {"value": "http://www.biocoopromans.com/", "count": 1},
+      {"value": "http://www.e-leclerc.com/pont-de-beauvoisin", "count": 1},
+      {
+        "value": "https://www.sherpa.net/trouver-un-magasin/votre-magasin-sherpa/?id_store=36",
+        "count": 1
+      },
+      {"value": "http://www.auchandrive.fr/", "count": 1},
+      {
+        "value": "https://www.chronodrive.com/magasins-chronodrive/drive-magasin-1057-seyssinet-pariset",
+        "count": 1
+      },
+      {"value": "www.biocoop-casabio.com", "count": 1},
+      {"value": "http://www.superu-saintdonat.com/", "count": 1},
+      {"value": "http://legrandchamp.biocoop.net/", "count": 1},
+      {"value": "http://www.ikea.com/fr/", "count": 1},
+      {"value": "http://www.carrefour.fr/magasin/villeurbanne", "count": 1},
+      {"value": "https://www.magasins-u.com/superu-villeurbanne", "count": 1},
+      {"value": "http://www.norma.fr/", "count": 1},
+      {"value": "https://magasins.spar.fr/fr/s/spar-boege", "count": 1},
+      {
+        "value": "https://www.auchan.fr/magasins/supermarche-caluire/sl-1158",
+        "count": 1
+      },
+      {
+        "value": "http://www.intermarche.com/magasin_infos_pratiques/sas-maxeli-touvet-38660",
+        "count": 1
+      },
+      {
+        "value": "http://www.carrefour.fr/magasin/market-saint-genis-pouilly",
+        "count": 1
+      },
+      {"value": "http://www.magasins-u.com/superu-montluel", "count": 1},
+      {"value": "https://www.monoprix.fr", "count": 1},
+      {"value": "http://www.superu-cognin.com", "count": 1},
+      {
+        "value": "https://www.intermarche.com/home/magasins/accueil/isere/chapareillan-07867.html",
+        "count": 1
+      },
+      {"value": "http://www.eau-vive.com/pa371/magasin?lieuID=1", "count": 1},
+      {"value": "www.e-leclerc.com", "count": 1},
+      {"value": "http://www.netto.fr", "count": 1},
+      {"value": "http://www.carrefour.fr/magasin/market-thones", "count": 1},
+      {
+        "value": "https://magasins.geantcasino.fr/magasin/saint-martin-d-heres/CG336",
+        "count": 1
+      },
+      {"value": "http://drive.intermarche.com/", "count": 1},
+      {"value": "http://www.lavieclaire.com", "count": 1},
+      {
+        "value": "https://www.intermarche.com/home/magasins/accueil/lozere/langogne-10214.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/meylan.html",
+        "count": 1
+      },
+      {"value": "www.intermarche.com", "count": 1},
+      {
+        "value": "http://www.colruyt.fr/colruytfr/static/magasin.shtml#4875",
+        "count": 1
+      },
+      {
+        "value": "https://www.grandfrais.com/ferney-voltaire/magasin-211.html",
+        "count": 1
+      },
+      {"value": "https://www.intermarche.com", "count": 1},
+      {
+        "value": "https://www.magasins-u.com/uexpress-chateauneufdurhone",
+        "count": 1
+      }
+    ],
+    "count": 142
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 100},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 4}
+    ],
+    "count": 109
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 37 51 16 97", "count": 1},
+      {"value": "+33 4 76 86 57 00", "count": 1},
+      {"value": "+33 4 79 59 93 25", "count": 1},
+      {"value": "+33 4 78 69 20 19", "count": 1},
+      {"value": "+33 4 75 02 99 32", "count": 1},
+      {"value": "+33 4 74 42 54 73", "count": 1},
+      {"value": "+33 4 37 42 84 00", "count": 1},
+      {"value": "+33 4 78989074", "count": 1},
+      {"value": "+33 4 37 47 27 15", "count": 1},
+      {"value": "+33 4 50 65 69 69", "count": 1},
+      {"value": "+33 4 78 68 09 87", "count": 1},
+      {"value": "+33 478 03 24 79", "count": 1},
+      {"value": "+33 4 78 34 23 59", "count": 1},
+      {"value": "+33 4 78 42 09 46", "count": 1},
+      {"value": "+33 4 74 76 26 43", "count": 1},
+      {"value": "+33 4 78 93 15 37", "count": 1},
+      {"value": "+33475708200", "count": 1},
+      {"value": "+33 4 72 76 59 17", "count": 1},
+      {"value": "+33 4 78 36 67 84", "count": 1},
+      {"value": "+33 4 74 85 38 23", "count": 1},
+      {"value": "+33 4 76 54 10 55", "count": 1},
+      {"value": "+33 4 72 71 43 55", "count": 1},
+      {"value": "+33 4 50 81 45 00", "count": 1},
+      {"value": "+33 4 77 33 14 14", "count": 1},
+      {"value": "+33 4 78 44 28 20", "count": 1},
+      {"value": "+33 4 76 51 00 95", "count": 1},
+      {"value": "+33 4 37 72 40 00", "count": 1},
+      {"value": "+33 4 75 36 41 20", "count": 1},
+      {"value": "+33 4 77 49 03 85", "count": 1},
+      {"value": "+33 4 77 90 38 47", "count": 1},
+      {"value": "+33437401388", "count": 1},
+      {"value": "+33478052178", "count": 1},
+      {"value": "+33450350818", "count": 1},
+      {"value": "0800005435", "count": 1},
+      {"value": "+33 4 72 40 02 24", "count": 1},
+      {"value": "+33 9 67 11 69 46", "count": 1},
+      {"value": "+33 4 72 45 88 50", "count": 1},
+      {"value": "+33 4 78 28 52 52", "count": 1},
+      {"value": "+33450413006", "count": 1},
+      {"value": "+33 4 74 71 86 39", "count": 1},
+      {"value": "+33 4 37 51 58 24", "count": 1},
+      {"value": "+33 4 26 07 19 19", "count": 1},
+      {"value": "+33 4 37 66 10 70", "count": 1},
+      {"value": "+33 4 78 38 12 55", "count": 1},
+      {"value": "+33 4 78 71 01 20", "count": 1},
+      {"value": "+33 4 78 35 66 69", "count": 1},
+      {"value": "+33 4 78 27 93 96", "count": 1},
+      {"value": "+33 4 37 24 10 22", "count": 1},
+      {"value": "+33 428700032", "count": 1},
+      {"value": "+33 4 75 66 96 69", "count": 1},
+      {"value": "+33 4 78 72 62 83", "count": 1},
+      {"value": "+33 4 78 26 26 27", "count": 1},
+      {"value": "+33 4 50 25 98 18", "count": 1},
+      {"value": "+33 4 79 05 42 78", "count": 1},
+      {"value": "+33 4 74 34 63 51", "count": 1},
+      {"value": "+33 4 37 40 87 75", "count": 1},
+      {"value": "+33 4 78 78 86 70", "count": 1},
+      {"value": "+33 4 78 64 63 83", "count": 1},
+      {"value": "+33472101285", "count": 1},
+      {"value": "+33 9 81628353", "count": 1},
+      {"value": "+33 4 78202000", "count": 1},
+      {"value": "+33 4 77 55 19 61", "count": 1},
+      {"value": "+33 4 78 22 16 67", "count": 1},
+      {"value": "+33 4 77 58 83 48", "count": 1},
+      {"value": "+33 4 37251950", "count": 1},
+      {"value": "+33469226859", "count": 1},
+      {"value": "+33 4 75 25 34 38", "count": 1},
+      {"value": "+33 4 75 83 19 43", "count": 1},
+      {"value": "+33 4 78723685", "count": 1},
+      {"value": "+33450490910", "count": 1},
+      {"value": "+33 4 76 91 76 20", "count": 1},
+      {"value": "+33 4 79 07 89 11", "count": 1},
+      {"value": "+334 38 12 33 11", "count": 1},
+      {"value": "+33 4 38 75 04 90", "count": 1},
+      {"value": "+33450401314", "count": 1},
+      {"value": "+33 4 72 65 87 79", "count": 1},
+      {"value": "+33 4 50 39 10 49", "count": 1},
+      {"value": "+33 4 50 42 24 60", "count": 1},
+      {"value": "+33 4 74 81 21 60", "count": 1},
+      {"value": "+33476511950", "count": 1},
+      {"value": "+33 4 76 34 38 30", "count": 1},
+      {"value": "+33 4 77 97 38 80", "count": 1},
+      {"value": "+33 4 79 88 08 80", "count": 1},
+      {"value": "+33 4 50 38 36 32", "count": 1},
+      {"value": "+33 4 76 62 97 77", "count": 1},
+      {"value": "+33 4 74 40 48 00", "count": 1},
+      {"value": "+33 4 50 02 09 35", "count": 1},
+      {"value": "+33 4 79 00 73 37", "count": 1},
+      {"value": "+33 4 76 15 04 00", "count": 1},
+      {"value": "+33474067528", "count": 1},
+      {"value": "+33 4 78 73 06 96", "count": 1},
+      {"value": "+33 4 66 69 02 00", "count": 1},
+      {"value": "+33476540908", "count": 1},
+      {"value": "+33 4 77 01 01 59", "count": 1},
+      {"value": "+33450429092", "count": 1},
+      {"value": "+33 4 50 28 72 02", "count": 1},
+      {"value": "+33475 232175", "count": 1},
+      {"value": "+33475520069", "count": 1}
+    ],
+    "count": 98
+  },
+  {
+    "key": "organic",
+    "tags": [{"value": "only", "count": 91}, {"value": "yes", "count": 6}],
+    "count": 97
+  },
+  {
+    "key": "brand:website",
+    "tags": [
+      {"value": "http://www.lidl.fr", "count": 47},
+      {"value": "http://www.coradrive.fr", "count": 1},
+      {"value": "https://www.biocoop.fr", "count": 1},
+      {"value": "http://www.lidl.fr/", "count": 1},
+      {"value": "http://cora.fr/", "count": 1}
+    ],
+    "count": 51
+  },
+  {
+    "key": "bulk_purchase",
+    "tags": [{"value": "yes", "count": 33}, {"value": "only", "count": 1}],
+    "count": 34
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 15},
+      {"value": "-1", "count": 2},
+      {"value": "1", "count": 1},
+      {"value": "2", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "drive_through",
+    "tags": [{"value": "yes", "count": 7}, {"value": "only", "count": 6}],
+    "count": 13
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 11}], "count": 11},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "FIXME vérifier localisation dans cette rue", "count": 1},
+      {
+        "value": "Plus de 13 000 références alimentaires disponibles. Service de livraison à domicile gratuit à partir de 70 euros d'achats. Venez au magasin, réservez votre livraison au 1/4 heure prêt, faites vos courses et repartez tranquille.",
+        "count": 1
+      },
+      {
+        "value": "Ouverture : Tous les jours de 07h30 à 12h30 et de 15h00 à 19h30 et le dimanche de 08h00 à 12h00 Détails : Superette, livraison à domicile, dépôt de pain, fleurs et boucheri-rôtisserie",
+        "count": 1
+      },
+      {"value": "précédemment: \"La Halle aux Vêtements\"", "count": 1},
+      {"value": "Convenience", "count": 1},
+      {
+        "value": "Lebanese specialties, also restaurant and take away",
+        "count": 1
+      },
+      {
+        "value": "A l'intérieur de Decathlon Village via Entrée Sud",
+        "count": 1
+      },
+      {"value": "Supermarché", "count": 1},
+      {"value": "Après rénovation Intermarché en 2015", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Groupe Casino", "count": 3},
+      {"value": "fr:Leader Price", "count": 3},
+      {"value": "fr:Enseignes du groupe Casino", "count": 1},
+      {"value": "fr:La Vie claire", "count": 1},
+      {"value": "fr:Franprix", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2670967", "count": 3},
+      {"value": "Q2181426", "count": 3},
+      {"value": "Q1380537", "count": 1},
+      {"value": "Q3213589", "count": 1},
+      {"value": "Q2420096", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Magasin de vente au détail des produits issus du terroir des paysans ardéchois",
+        "count": 1
+      },
+      {"value": "Épicerie local, 100%bio, vrac.", "count": 1},
+      {"value": "Boucherie & Market (épicerie, surgelé)", "count": 1},
+      {"value": "Supermarché portugais", "count": 1},
+      {
+        "value": "Magasin de fruits et légumes locaux et de saison, issus d'une agriculture raisonnée limitant engrais chimiques et pesticides.\nVend également quelques produits laitiers, de la charcuterie et des oeufs.\nLes samedis, vente de pains.",
+        "count": 1
+      },
+      {"value": "Food/produit menager/", "count": 1},
+      {"value": "supérette halal", "count": 1},
+      {"value": "Grande distribution", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "retail", "count": 5},
+      {"value": "commercial", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "CS995", "count": 1},
+      {"value": "06813", "count": 1},
+      {"value": "10453", "count": 1},
+      {"value": "50332", "count": 1},
+      {"value": "48", "count": 1},
+      {"value": "6877", "count": 1},
+      {"value": "10465", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 6}, {"value": "no", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "room", "count": 5}, {"value": "area", "count": 1}],
+    "count": 6
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 6}], "count": 6},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@biocooplyonbellecour.com", "count": 1},
+      {"value": "kackar@bbox.fr", "count": 1},
+      {"value": "contact@biofrais.com", "count": 1},
+      {"value": "montchavin@sherpa.net", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "currency:XLT",
+    "tags": [
+      {"value": "GONT", "count": 2},
+      {"value": "LIEN", "count": 1},
+      {"value": "CARN", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 4}], "count": 4},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "200", "count": 1},
+      {"value": "-1", "count": 1},
+      {"value": "519", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "2", "count": 1},
+      {"value": "0", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2016", "count": 2},
+      {"value": "2017-03-10", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33478054750", "count": 1},
+      {"value": "+33 4 77 97 38 80", "count": 1},
+      {"value": "+33 4 66 69 02 00", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "members", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "delivery",
+    "tags": [{"value": "yes", "count": 1}, {"value": "only", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "payment:cash:XLT-GONT",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:NAF",
+    "tags": [{"value": "4711B", "count": 1}, {"value": "4729Z", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "81129286100010", "count": 1},
+      {"value": "81273488700027", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "discount", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "drive_in",
+    "tags": [{"value": "yes", "count": 1}, {"value": "only", "count": 1}],
+    "count": 2
+  },
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "l'Intermarché et sa station ont été déplacé. En l'attente d'une photo aérienne à jour il faudra relever GPS les voies et contours approx du bâti",
+        "count": 1
+      },
+      {
+        "value": "Vérifier le nom, il se peut qu'il soit changé en DKMarket",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "operator:wikipedia",
+    "tags": [{"value": "fr:Cora (grande distribution)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "change:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "change:XLT-GONT",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:cash:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1},
+  {"key": "franchise", "tags": [{"value": "Biocoop", "count": 1}], "count": 1},
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q686643", "count": 1}],
+    "count": 1
+  },
+  {"key": "diet:kosher", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "indoor", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [{"value": "via Parking", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "butcher", "tags": [{"value": "halal", "count": 1}], "count": 1},
+  {"key": "owner", "tags": [{"value": "S.A. Clauber", "count": 1}], "count": 1},
+  {
+    "key": "change:XLT-CARN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:cash:XLT-CARN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "atm", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-06-04", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "muslim", "count": 1}], "count": 1},
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "shop", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:bank_card",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "end_date", "tags": [{"value": "2018", "count": 1}], "count": 1},
+  {"key": "roof:material", "tags": [{"value": "grass", "count": 1}], "count": 1}
+]

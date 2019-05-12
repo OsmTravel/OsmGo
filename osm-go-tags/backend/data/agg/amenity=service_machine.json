@@ -1,0 +1,14 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "service_machine", "count": 2}],
+    "count": 2
+  },
+  {"key": "operator", "tags": [{"value": "CPAM", "count": 2}], "count": 2},
+  {"key": "payment:none", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "vending",
+    "tags": [{"value": "attestations; mise à jour carte vitale", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,655 @@
+[
+  {
+    "key": "public_transport",
+    "tags": [{"value": "station", "count": 289}],
+    "count": 289
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "station", "count": 204},
+      {"value": "halt", "count": 11}
+    ],
+    "count": 215
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SNCF", "count": 169},
+      {"value": "PAC", "count": 3},
+      {"value": "Compagnie du Mont-Blanc", "count": 3},
+      {"value": "Transdev", "count": 2},
+      {"value": "SBB", "count": 2},
+      {"value": "TMR", "count": 2},
+      {"value": "Méribel-Alpina", "count": 2},
+      {"value": "Keolis Lyon", "count": 1},
+      {"value": "TCL", "count": 1},
+      {"value": "S3V", "count": 1},
+      {"value": "Mont Blanc Bus", "count": 1},
+      {"value": "VFD", "count": 1},
+      {"value": "SNCF Réseau", "count": 1},
+      {"value": "SGLM", "count": 1},
+      {"value": "Connex", "count": 1}
+    ],
+    "count": 191
+  },
+  {
+    "key": "uic_ref",
+    "tags": [
+      {"value": "8774633", "count": 2},
+      {"value": "8776175", "count": 1},
+      {"value": "8772619", "count": 1},
+      {"value": "8772672", "count": 1},
+      {"value": "8772671", "count": 1},
+      {"value": "8772373", "count": 1},
+      {"value": "8774727", "count": 1},
+      {"value": "8501026", "count": 1},
+      {"value": "8772374", "count": 1},
+      {"value": "8772371", "count": 1},
+      {"value": "8772376", "count": 1},
+      {"value": "8772378", "count": 1},
+      {"value": "8772379", "count": 1},
+      {"value": "8772375", "count": 1},
+      {"value": "8772615", "count": 1},
+      {"value": "8773450", "count": 1},
+      {"value": "8774300", "count": 1},
+      {"value": "8772372", "count": 1},
+      {"value": "8774769", "count": 1},
+      {"value": "8774161", "count": 1},
+      {"value": "8774562", "count": 1},
+      {"value": "8501428", "count": 1},
+      {"value": "8774567", "count": 1},
+      {"value": "8772356", "count": 1},
+      {"value": "8772256", "count": 1},
+      {"value": "8772122", "count": 1},
+      {"value": "8772240", "count": 1},
+      {"value": "8772243", "count": 1},
+      {"value": "8772319", "count": 1},
+      {"value": "8772202", "count": 1},
+      {"value": "8774558", "count": 1},
+      {"value": "8772352", "count": 1},
+      {"value": "8772370", "count": 1},
+      {"value": "8774541", "count": 1},
+      {"value": "8774700", "count": 1},
+      {"value": "8776290", "count": 1},
+      {"value": "8772128", "count": 1},
+      {"value": "8774107", "count": 1},
+      {"value": "8772115", "count": 1},
+      {"value": "8774733", "count": 1},
+      {"value": "8772339", "count": 1},
+      {"value": "8774670", "count": 1},
+      {"value": "8776100", "count": 1},
+      {"value": "8774582", "count": 1},
+      {"value": "8776165", "count": 1},
+      {"value": "8774620", "count": 1},
+      {"value": "8774143", "count": 1},
+      {"value": "8774142", "count": 1},
+      {"value": "8774687", "count": 1},
+      {"value": "8774538", "count": 1},
+      {"value": "8774759", "count": 1},
+      {"value": "8772272", "count": 1},
+      {"value": "8530823", "count": 1},
+      {"value": "8774735", "count": 1},
+      {"value": "8774564", "count": 1},
+      {"value": "8774371", "count": 1},
+      {"value": "8501568", "count": 1},
+      {"value": "8776110", "count": 1},
+      {"value": "8774172", "count": 1},
+      {"value": "8774113", "count": 1},
+      {"value": "8776126", "count": 1},
+      {"value": "8776178", "count": 1},
+      {"value": "8774610", "count": 1},
+      {"value": "8776184", "count": 1},
+      {"value": "8774756", "count": 1},
+      {"value": "8776400", "count": 1},
+      {"value": "8774543", "count": 1},
+      {"value": "8776429", "count": 1},
+      {"value": "8772254", "count": 1},
+      {"value": "8774753", "count": 1},
+      {"value": "8774732", "count": 1},
+      {"value": "8774651", "count": 1},
+      {"value": "8772335", "count": 1},
+      {"value": "8774614", "count": 1},
+      {"value": "8774674", "count": 1},
+      {"value": "8776113", "count": 1},
+      {"value": "8772126", "count": 1},
+      {"value": "8776116", "count": 1},
+      {"value": "8774678", "count": 1},
+      {"value": "8774676", "count": 1},
+      {"value": "8774677", "count": 1},
+      {"value": "8774671", "count": 1},
+      {"value": "8774724", "count": 1},
+      {"value": "8772690", "count": 1},
+      {"value": "8772153", "count": 1},
+      {"value": "8774637", "count": 1},
+      {"value": "8776124", "count": 1},
+      {"value": "8774634", "count": 1},
+      {"value": "8772670", "count": 1},
+      {"value": "8774631", "count": 1},
+      {"value": "8774100", "count": 1},
+      {"value": "8774630", "count": 1},
+      {"value": "8774641", "count": 1},
+      {"value": "8774624", "count": 1},
+      {"value": "8772258", "count": 1},
+      {"value": "8772151", "count": 1},
+      {"value": "8776302", "count": 1},
+      {"value": "8774728", "count": 1},
+      {"value": "8772353", "count": 1},
+      {"value": "8772354", "count": 1},
+      {"value": "8772338", "count": 1},
+      {"value": "8772129", "count": 1},
+      {"value": "8772155", "count": 1},
+      {"value": "8772160", "count": 1},
+      {"value": "8772174", "count": 1},
+      {"value": "8772142", "count": 1},
+      {"value": "8774125", "count": 1},
+      {"value": "8774128", "count": 1},
+      {"value": "8772265", "count": 1},
+      {"value": "8772267", "count": 1},
+      {"value": "8774122", "count": 1},
+      {"value": "8776171", "count": 1},
+      {"value": "8776172", "count": 1},
+      {"value": "8774147", "count": 1},
+      {"value": "8774145", "count": 1},
+      {"value": "8774149", "count": 1},
+      {"value": "8774162", "count": 1},
+      {"value": "8776430", "count": 1},
+      {"value": "8774500", "count": 1},
+      {"value": "8774720", "count": 1},
+      {"value": "8776174", "count": 1},
+      {"value": "8774111", "count": 1},
+      {"value": "8774611", "count": 1},
+      {"value": "8774757", "count": 1},
+      {"value": "8774374", "count": 1},
+      {"value": "8774169", "count": 1},
+      {"value": "8772643", "count": 1},
+      {"value": "8774559", "count": 1},
+      {"value": "8772150", "count": 1},
+      {"value": "8774114", "count": 1},
+      {"value": "8772345", "count": 1},
+      {"value": "8772349", "count": 1},
+      {"value": "8774721", "count": 1},
+      {"value": "8774722", "count": 1},
+      {"value": "8772358", "count": 1},
+      {"value": "8772220", "count": 1},
+      {"value": "8772223", "count": 1},
+      {"value": "8776123", "count": 1},
+      {"value": "8776168", "count": 1},
+      {"value": "8772357", "count": 1},
+      {"value": "8776187", "count": 1},
+      {"value": "8776181", "count": 1},
+      {"value": "8774600", "count": 1},
+      {"value": "8774150", "count": 1},
+      {"value": "8772270", "count": 1},
+      {"value": "8772350", "count": 1},
+      {"value": "8774375", "count": 1},
+      {"value": "8772850", "count": 1},
+      {"value": "8501566", "count": 1},
+      {"value": "8772229", "count": 1},
+      {"value": "8772117", "count": 1},
+      {"value": "8772100", "count": 1},
+      {"value": "8772124", "count": 1},
+      {"value": "8772271", "count": 1},
+      {"value": "8772274", "count": 1},
+      {"value": "8720855", "count": 1},
+      {"value": "8772152", "count": 1},
+      {"value": "8772156", "count": 1},
+      {"value": "8772154", "count": 1},
+      {"value": "8756691", "count": 1},
+      {"value": "8772144", "count": 1},
+      {"value": "8772148", "count": 1},
+      {"value": "8772173", "count": 1},
+      {"value": "8772170", "count": 1},
+      {"value": "8530832", "count": 1},
+      {"value": "8501552", "count": 1},
+      {"value": "8772141", "count": 1}
+    ],
+    "count": 168
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3096043", "count": 2},
+      {"value": "Q2035203", "count": 1},
+      {"value": "Q3098172", "count": 1},
+      {"value": "Q3096977", "count": 1},
+      {"value": "Q3097592", "count": 1},
+      {"value": "Q1989588", "count": 1},
+      {"value": "Q3097985", "count": 1},
+      {"value": "Q3097484", "count": 1},
+      {"value": "Q3096591", "count": 1},
+      {"value": "Q2859532", "count": 1},
+      {"value": "Q1949828", "count": 1},
+      {"value": "Q2522225", "count": 1},
+      {"value": "Q2008", "count": 1},
+      {"value": "Q1992", "count": 1},
+      {"value": "Q3096946", "count": 1},
+      {"value": "Q3097047", "count": 1},
+      {"value": "Q3097685", "count": 1},
+      {"value": "Q3097926", "count": 1},
+      {"value": "Q5854748", "count": 1},
+      {"value": "Q2418969", "count": 1},
+      {"value": "Q2085825", "count": 1},
+      {"value": "Q2059990", "count": 1},
+      {"value": "Q3497346", "count": 1},
+      {"value": "Q3497352", "count": 1},
+      {"value": "Q3497329", "count": 1},
+      {"value": "Q2444752", "count": 1},
+      {"value": "Q2016", "count": 1},
+      {"value": "Q1983989", "count": 1},
+      {"value": "Q3097931", "count": 1},
+      {"value": "Q2388669", "count": 1},
+      {"value": "Q2448329", "count": 1},
+      {"value": "Q2500969", "count": 1},
+      {"value": "Q2381767", "count": 1},
+      {"value": "Q1916822", "count": 1},
+      {"value": "Q1870688", "count": 1},
+      {"value": "Q3097566", "count": 1},
+      {"value": "Q3097131", "count": 1},
+      {"value": "Q3096593", "count": 1},
+      {"value": "Q2068835", "count": 1},
+      {"value": "Q2378019", "count": 1},
+      {"value": "Q3097389", "count": 1},
+      {"value": "Q919584", "count": 1},
+      {"value": "Q2250995", "count": 1},
+      {"value": "Q3097727", "count": 1},
+      {"value": "Q743022", "count": 1},
+      {"value": "Q3096976", "count": 1},
+      {"value": "Q2055245", "count": 1},
+      {"value": "Q3097597", "count": 1},
+      {"value": "Q2174337", "count": 1},
+      {"value": "Q3096585", "count": 1},
+      {"value": "Q2752803", "count": 1},
+      {"value": "Q2072293", "count": 1},
+      {"value": "Q2758131", "count": 1},
+      {"value": "Q3095873", "count": 1},
+      {"value": "Q2121593", "count": 1},
+      {"value": "Q3097504", "count": 1},
+      {"value": "Q3096488", "count": 1},
+      {"value": "Q2801473", "count": 1},
+      {"value": "Q2085568", "count": 1},
+      {"value": "Q2199856", "count": 1},
+      {"value": "Q2203719", "count": 1},
+      {"value": "Q2211818", "count": 1},
+      {"value": "Q2351956", "count": 1},
+      {"value": "Q2104220", "count": 1},
+      {"value": "Q2043382", "count": 1},
+      {"value": "Q2049910", "count": 1},
+      {"value": "Q2059", "count": 1},
+      {"value": "Q3096190", "count": 1},
+      {"value": "Q776088", "count": 1},
+      {"value": "Q3097467", "count": 1}
+    ],
+    "count": 71
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "TCL", "count": 43},
+      {"value": "TER Rhône-Alpes", "count": 8},
+      {"value": "Transisère", "count": 4},
+      {"value": "SNCF Réseau", "count": 4},
+      {"value": "TER", "count": 3},
+      {"value": "Verticalp Emosson", "count": 3},
+      {"value": "STAS", "count": 2},
+      {"value": "SGLM", "count": 1},
+      {"value": "Lyon-Saint-Paul - Montbrison", "count": 1},
+      {"value": "TAG", "count": 1},
+      {"value": "CFF", "count": 1}
+    ],
+    "count": 71
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Gare de Bourg-en-Bresse", "count": 2},
+      {"value": "fr:Gare de Valence-Ville", "count": 1},
+      {"value": "fr:Gare des Échets", "count": 1},
+      {"value": "fr:Gare de Marlieux - Châtillon", "count": 1},
+      {"value": "fr:Gare de Saint-Paul-de-Varax", "count": 1},
+      {"value": "fr:Gare de Servas - Lent", "count": 1},
+      {"value": "fr:Gare de Villars-les-Dombes", "count": 1},
+      {"value": "fr:Gare de Saint-André-de-Corcy", "count": 1},
+      {"value": "fr:Gare de Perrignier", "count": 1},
+      {"value": "fr:Gare d'Évian-les-Bains", "count": 1},
+      {"value": "fr:Gare de Montluel", "count": 1},
+      {"value": "fr:Gare de Lyon-Part-Dieu", "count": 1},
+      {"value": "fr:Gare de Miribel", "count": 1},
+      {"value": "fr:Gare de Sathonay - Rillieux", "count": 1},
+      {"value": "fr:Debourg (métro de Lyon)", "count": 1},
+      {"value": "fr:Station Place Jean Jaurès", "count": 1},
+      {"value": "fr:Gare d'Oullins (métro de Lyon)", "count": 1},
+      {"value": "fr:Bellecour (métro de Lyon)", "count": 1},
+      {"value": "fr:Station Vieux Lyon - Cathédrale Saint-Jean", "count": 1},
+      {"value": "fr:Station Vaulx-en-Velin - La Soie", "count": 1},
+      {"value": "fr:Hôtel de Ville - Louis Pradel (métro de Lyon)", "count": 1},
+      {"value": "fr:Charpennes - Charles Hernu (métro de Lyon)", "count": 1},
+      {"value": "fr:Station Stade de Gerland", "count": 1},
+      {"value": "fr:Monplaisir - Lumière (métro de Lyon)", "count": 1},
+      {"value": "fr:Masséna (métro de Lyon)", "count": 1},
+      {"value": "fr:Valmy (métro de Lyon)", "count": 1},
+      {"value": "fr:Gare de Vaise (métro de Lyon)", "count": 1},
+      {"value": "fr:Flachet - Alain Gilles (métro de Lyon)", "count": 1},
+      {"value": "fr:Jean Macé (métro de Lyon)", "count": 1},
+      {"value": "fr:Croix-Paquet (métro de Lyon)", "count": 1},
+      {
+        "value": "fr:Minimes - Théâtres Romains (funiculaire de Lyon)",
+        "count": 1
+      },
+      {"value": "fr:Saint-Just (funiculaire de Lyon)", "count": 1},
+      {"value": "fr:Fourvière (funiculaire de Lyon)", "count": 1},
+      {"value": "fr:Gare de Culoz", "count": 1},
+      {"value": "fr:Gare de Lyon-Saint-Paul", "count": 1},
+      {"value": "fr:Gare de Saint-Marcel-en-Dombes", "count": 1},
+      {"value": "fr:Gare de Seyssel - Corbonod", "count": 1},
+      {"value": "fr:Gare de Brignais", "count": 1},
+      {"value": "fr:Gare de Thonon-les-Bains", "count": 1},
+      {"value": "fr:Gare d'Ambérieu-en-Bugey", "count": 1},
+      {"value": "fr:Centre d’échanges de Perrache", "count": 1},
+      {"value": "fr:Gare de Loriol", "count": 1},
+      {"value": "fr:Gare de Saint-Georges-de-Commiers", "count": 1},
+      {"value": "fr:Gare de Montélimar", "count": 1},
+      {"value": "fr:Gare de Donzère", "count": 1},
+      {"value": "fr:Gare de Rumilly", "count": 1},
+      {"value": "fr:Gare de Saint-Vallier-sur-Rhône", "count": 1},
+      {"value": "fr:Gare d'Albigny - Neuville", "count": 1},
+      {"value": "fr:Gare de Livron", "count": 1},
+      {"value": "fr:Gare de Saint-Maurice-de-Beynost", "count": 1},
+      {"value": "fr:Gare de Beynost", "count": 1},
+      {"value": "fr:Gare de Pont-de-Beauvoisin", "count": 1},
+      {"value": "fr:Gare de Pierrelatte", "count": 1},
+      {"value": "fr:Gare de Bellegarde", "count": 1},
+      {"value": "fr:Gare de Chindrieux", "count": 1},
+      {"value": "fr:Gare de Saint-Rambert-en-Bugey", "count": 1},
+      {"value": "fr:Gare de Bons-en-Chablais", "count": 1},
+      {"value": "fr:Gare d'Écully-la-Demi-Lune", "count": 1},
+      {"value": "fr:Gare de Meximieux - Pérouges", "count": 1},
+      {"value": "fr:Gare de La Valbonne", "count": 1},
+      {"value": "fr:Gare de Francheville", "count": 1},
+      {"value": "fr:Gare de Tenay - Hauteville", "count": 1},
+      {"value": "fr:Gare de Lyon-Vaise", "count": 1},
+      {"value": "fr:Gare de Chaponost", "count": 1},
+      {"value": "fr:Gare d'Alaï", "count": 1},
+      {"value": "fr:Gare de Casino-Lacroix-Laval", "count": 1},
+      {"value": "fr:Gare de Dardilly-les-Mouilles", "count": 1},
+      {"value": "fr:Cordeliers (métro de Lyon)", "count": 1},
+      {"value": "fr:Place Jean Jaurès (métro de Lyon)", "count": 1},
+      {"value": "fr:Gare de Régny", "count": 1}
+    ],
+    "count": 71
+  },
+  {"key": "station", "tags": [{"value": "subway", "count": 49}], "count": 49},
+  {"key": "subway", "tags": [{"value": "yes", "count": 43}], "count": 43},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "bus_station", "count": 26},
+      {"value": "public_building", "count": 8},
+      {"value": "shelter", "count": 3},
+      {"value": "parking", "count": 2}
+    ],
+    "count": 39
+  },
+  {"key": "train", "tags": [{"value": "yes", "count": 23}], "count": 23},
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 17},
+      {"value": "limited", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 20
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 20}], "count": 20},
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1", "count": 7},
+      {"value": "-2", "count": 5},
+      {"value": "1", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "-3", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "railway:ref:DB",
+    "tags": [
+      {"value": "XFLPD", "count": 1},
+      {"value": "XFMLU", "count": 1},
+      {"value": "XFCOF", "count": 1},
+      {"value": "XFGIV", "count": 1},
+      {"value": "XFGIC", "count": 1},
+      {"value": "XFCSR", "count": 1},
+      {"value": "XFLPR", "count": 1},
+      {"value": "XFMCI", "count": 1},
+      {"value": "XFMIR", "count": 1},
+      {"value": "XFSRI", "count": 1},
+      {"value": "XFVEY", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "aerialway",
+    "tags": [{"value": "yes", "count": 7}, {"value": "station", "count": 2}],
+    "count": 9
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 9}], "count": 9},
+  {
+    "key": "platforms",
+    "tags": [
+      {"value": "2", "count": 3},
+      {"value": "1", "count": 3},
+      {"value": "7", "count": 1},
+      {"value": "3", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "max_level",
+    "tags": [{"value": "-1", "count": 5}, {"value": "0", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "min_level",
+    "tags": [
+      {"value": "-2", "count": 4},
+      {"value": "-1", "count": 2},
+      {"value": "-3", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "424", "count": 1},
+      {"value": "390", "count": 1},
+      {"value": "1116", "count": 1},
+      {"value": "144", "count": 1},
+      {"value": "1129", "count": 1},
+      {"value": "1812", "count": 1},
+      {"value": "1821", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "railway:ref",
+    "tags": [
+      {"value": "GEAP", "count": 1},
+      {"value": "BGB", "count": 1},
+      {"value": "STGI", "count": 1},
+      {"value": "LYD", "count": 1},
+      {"value": "LPR", "count": 1},
+      {"value": "AMB", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 3}, {"value": "-1", "count": 3}],
+    "count": 6
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "roof:levels",
+    "tags": [
+      {"value": "1", "count": 3},
+      {"value": "2", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "bus",
+    "tags": [{"value": "yes", "count": 3}, {"value": "designaed", "count": 1}],
+    "count": 4
+  },
+  {"key": "bench", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "roof:shape",
+    "tags": [
+      {"value": "hipped", "count": 1},
+      {"value": "gabled", "count": 1},
+      {"value": "dome", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "aerialway:access",
+    "tags": [{"value": "entry", "count": 2}, {"value": "exit", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Gare_de_Miribel_-_petit_matin_-_mai_2014_-_2.JPG",
+        "count": 1
+      },
+      {"value": "File:Gare Saint-Georges de Commmiers SGLM16.jpg", "count": 1},
+      {"value": "File:Gare_de_Vif.JPG", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {"key": "information", "tags": [{"value": "office", "count": 2}], "count": 2},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2009", "count": 1},
+      {"value": "1982-10-11", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA01000031", "count": 1},
+      {"value": "PA00117088", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Gare fermée, desservie uniquement lors des foires de Beaucroissant.",
+        "count": 1
+      },
+      {"value": "Bâtiment fermé au public", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "C19", "count": 1}, {"value": "1855", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "shelter_type",
+    "tags": [{"value": "public_transport", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ter-sncf.com/Region/rhone_alpes/gare/Les%20Echets.aspx",
+        "count": 1
+      },
+      {"value": "http://www.chatelard.net", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "heritage", "tags": [{"value": "3", "count": 2}], "count": 2},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "bus_stop", "count": 1},
+      {"value": "pedestrian", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "location",
+    "tags": [{"value": "underground", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "disused:railway",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {"key": "psv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourist_bus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref", "tags": [{"value": "8772142", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "25", "count": 1}], "count": 1},
+  {"key": "iata", "tags": [{"value": "XHK", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "ticket", "count": 1}], "count": 1},
+  {
+    "key": "ref:Transisère",
+    "tags": [{"value": "14607", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "importance",
+    "tags": [{"value": "national", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:operator",
+    "tags": [{"value": "SBB", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "usage", "tags": [{"value": "main", "count": 1}], "count": 1}
+]

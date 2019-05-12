@@ -1,0 +1,104 @@
+[
+  {"key": "shop", "tags": [{"value": "pet", "count": 47}], "count": 47},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Nutrition animal : chat, chien, animaux de la ferme.",
+        "count": 1
+      },
+      {"value": "toilettage pour chiens et chats", "count": 1},
+      {"value": "toilettage de chiens, de chats", "count": 1},
+      {"value": "Antenne locale de la SPA.", "count": 1},
+      {
+        "value": "Élevage et dressage de chiens de chasse (Beagles); Pension pour chiens.",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 02 01 87", "count": 1},
+      {"value": "+33 4 74 85 38 31", "count": 1},
+      {"value": "+33 4 74 78 04 49", "count": 1},
+      {"value": "+33 6 50 14 13 94", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://coopthones.free.fr", "count": 1},
+      {"value": "http://www.pastor-toilettage.com/", "count": 1},
+      {"value": "http://www.capanimal.fr/", "count": 1},
+      {
+        "value": "http://drome-elevage-dressage-beagles-chiens-courants.com/",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Magasin de toilettage d'animaux.", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Sylvana Mignonneau Morel", "count": 1},
+      {"value": "Société Protectrice des Animaux", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "animal_training", "count": 1},
+      {"value": "animal_shelter", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "entrance", "tags": [{"value": "main", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Services pour animaux", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/De-la-truffe-a-la-griffe-141842272541340/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "animal", "tags": [{"value": "wellness", "count": 1}], "count": 1},
+  {
+    "key": "animal_training",
+    "tags": [{"value": "dog", "count": 1}],
+    "count": 1
+  },
+  {"key": "pet", "tags": [{"value": "dog", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1}
+]

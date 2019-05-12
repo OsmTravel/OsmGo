@@ -1,0 +1,225 @@
+[
+  {"key": "amenity", "tags": [{"value": "atm", "count": 674}], "count": 674},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La Banque Postale", "count": 83},
+      {"value": "Crédit Agricole", "count": 72},
+      {"value": "Caisse d'Épargne", "count": 37},
+      {"value": "Société Générale", "count": 35},
+      {"value": "LCL", "count": 26},
+      {"value": "Crédit Mutuel", "count": 25},
+      {"value": "BNP Paribas", "count": 25},
+      {"value": "CIC", "count": 21},
+      {"value": "Banque Populaire", "count": 14},
+      {"value": "Caisse d'Epargne", "count": 7},
+      {"value": "Caisse d'épargne", "count": 6},
+      {"value": "Banque de Savoie", "count": 5},
+      {"value": "BCGE", "count": 4},
+      {"value": "Banque Rhône-Alpes", "count": 4},
+      {"value": "Carrefour", "count": 3},
+      {"value": "La Poste", "count": 3},
+      {"value": "Le Crédit Lyonnais", "count": 2},
+      {"value": "Crédit agricole", "count": 2},
+      {"value": "Groupama", "count": 2},
+      {"value": "Banque Populaire des Alpes", "count": 2},
+      {"value": "Societe Generale", "count": 2},
+      {"value": "Crédit Lyonnais", "count": 2},
+      {"value": "Banque Laydernier", "count": 2},
+      {"value": "HSBC", "count": 1},
+      {"value": "Société Génrale", "count": 1},
+      {"value": "Groupement des Mousquetaires", "count": 1},
+      {"value": "Carrefour Banque", "count": 1},
+      {"value": "Banque Accord", "count": 1},
+      {"value": "Credit agricole des Savoie", "count": 1},
+      {"value": "Carrefour Market", "count": 1},
+      {"value": "credit mutuel", "count": 1},
+      {"value": "caisse d'épargne", "count": 1},
+      {"value": "CIC - Lyonnaise de banque", "count": 1},
+      {"value": "Banque Palatine", "count": 1},
+      {"value": "Lyonnaise de Banque", "count": 1},
+      {"value": "Crédit agricole des Savoie", "count": 1},
+      {"value": "Banque Révillon", "count": 1},
+      {"value": "Crédit Industriel et Commercial", "count": 1},
+      {"value": "BCP", "count": 1},
+      {"value": "Crédit Agricole Sud Est", "count": 1},
+      {"value": "Crédit Agricole Des Savoies", "count": 1},
+      {"value": "Credit Agricole", "count": 1},
+      {"value": "UBS", "count": 1},
+      {"value": "Crédit Mutuel ", "count": 1},
+      {"value": "Crédit mutuel", "count": 1},
+      {"value": "La Poste Suisse SA", "count": 1},
+      {"value": "Raiffeisen", "count": 1},
+      {"value": "Crédit Agricole des Savoie", "count": 1},
+      {"value": "Banque Chabrières", "count": 1},
+      {"value": "la poste", "count": 1},
+      {"value": "Crédit Agricole Loire Haute-Loire", "count": 1},
+      {"value": "Banque populaire", "count": 1},
+      {"value": "Banque Postale", "count": 1},
+      {"value": "credit agricole", "count": 1},
+      {"value": "Le crédit Lyonnais", "count": 1},
+      {"value": "Credit agricole", "count": 1},
+      {"value": "Le Crédit Industriel et Commercial", "count": 1}
+    ],
+    "count": 418
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 44},
+      {"value": "limited", "count": 6},
+      {"value": "no", "count": 2}
+    ],
+    "count": 52
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Crédit Agricole", "count": 11},
+      {"value": "Société Générale", "count": 8},
+      {"value": "La Poste", "count": 3},
+      {"value": "La Banque Postale", "count": 3},
+      {"value": "LCL", "count": 3},
+      {"value": "Caisse d'Épargne", "count": 2},
+      {"value": "CIC", "count": 2},
+      {"value": "Caisse D'Epargne", "count": 1},
+      {"value": "Banque Populaire", "count": 1},
+      {"value": "UBS", "count": 1},
+      {"value": "BNP", "count": 1},
+      {"value": "BNP Paribas", "count": 1},
+      {"value": "Raiffeisen", "count": 1},
+      {"value": "Caisse Épargne", "count": 1},
+      {"value": "Credit Agricole", "count": 1},
+      {"value": "Crédit Mutuel", "count": 1},
+      {"value": "Banque Rhône-Alpes", "count": 1}
+    ],
+    "count": 42
+  },
+  {"key": "currency:EUR", "tags": [{"value": "yes", "count": 41}], "count": 41},
+  {
+    "key": "drive_through",
+    "tags": [{"value": "no", "count": 20}, {"value": "yes", "count": 4}],
+    "count": 24
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "La Banque Postale", "count": 4},
+      {"value": "Crédit Mutuel", "count": 3},
+      {"value": "Société Générale", "count": 1},
+      {"value": "BNP Paribas", "count": 1},
+      {"value": "Banque Populaire", "count": 1},
+      {"value": "Banque Postale", "count": 1},
+      {"value": "Crédit Agricole", "count": 1},
+      {"value": "LCL", "count": 1},
+      {"value": "La Poste", "count": 1},
+      {"value": "Credit Mutuel", "count": 1},
+      {"value": "La banque postale", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 12}, {"value": "1", "count": 2}],
+    "count": 14
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Accessible 24/7", "count": 1},
+      {"value": "collected via on the ground survey by Alex-7", "count": 1},
+      {
+        "value": "2 x ATM for CHF and EUR withdrawal. Just before on the left of the security checkpoint",
+        "count": 1
+      },
+      {
+        "value": "1 x ATM after the security checkpoint for CHF and EUR withdrawal.",
+        "count": 1
+      },
+      {"value": "5 x ATM at the arrivals", "count": 1},
+      {"value": "2 x ATM", "count": 1},
+      {"value": "Extérieur, accessible 24/24", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "currency:CHF", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q590952", "count": 5},
+      {"value": "Q270363", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Crédit agricole", "count": 5},
+      {"value": "fr:Société générale", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "outdoor", "count": 3}, {"value": "indoor", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 4}],
+    "count": 4
+  },
+  {"key": "atm", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.ca-centrest.fr/banque-assurance/lyon/lyon-brotteaux.html",
+        "count": 1
+      },
+      {"value": "http://www.bcge.ch", "count": 1},
+      {"value": "www.labanquepostale.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10f", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "layer -1 ?", "count": 1},
+      {
+        "value": "Vérifier l'existence suite fermeture d'après changeset 60027907",
+        "count": 1
+      },
+      {"value": "A placer correctement", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "shop", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 1}, {"value": "No", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Crédit mutuel", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q642627", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

@@ -1,0 +1,180 @@
+[
+  {"key": "highway", "tags": [{"value": "road", "count": 713}], "count": 713},
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 24},
+      {"value": "sand", "count": 14},
+      {"value": "gravel", "count": 3},
+      {"value": "fine_gravel", "count": 2},
+      {"value": "cobblestone", "count": 2},
+      {"value": "paved", "count": 2},
+      {"value": "compacted", "count": 2},
+      {"value": "grass", "count": 1},
+      {"value": "ground", "count": 1}
+    ],
+    "count": 51
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 20},
+      {"value": "no", "count": 9},
+      {"value": "permissive", "count": 1},
+      {"value": "destination", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 14}, {"value": "no", "count": 7}],
+    "count": 21
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "yes", "count": 9},
+      {"value": "no", "count": 6},
+      {"value": "private", "count": 3}
+    ],
+    "count": 18
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 12},
+      {"value": "no", "count": 3},
+      {"value": "private", "count": 1},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 10},
+      {"value": "no", "count": 3},
+      {"value": "private", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 5},
+      {"value": "does this road really exist?", "count": 1},
+      {"value": "Est-ce encore un étang ?", "count": 1},
+      {"value": "route toujours existante ? à supprimer si non.", "count": 1},
+      {"value": "path ?", "count": 1},
+      {"value": "A Vérifier le type et la qualité", "count": 1},
+      {"value": "probablement Piste", "count": 1},
+      {"value": "Probablement track", "count": 1},
+      {"value": "la circulation est-elle ouverte au public ?", "count": 1},
+      {"value": "check road type", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 12},
+      {"value": "-1", "count": 1},
+      {"value": "2", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 13}], "count": 13},
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "yes", "count": 8},
+      {"value": "no", "count": 3},
+      {"value": "private", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Manque nom de rue", "count": 1},
+      {"value": "Voir type de voie", "count": 1},
+      {"value": "à vérifier", "count": 1},
+      {
+        "value": "Classifier cette voie dans le prolongement de la rue de moretang. Est utilisée en hiver comme piste de fond et raquette",
+        "count": 1
+      },
+      {"value": "Track à préciser", "count": 1},
+      {"value": "Vérifier cette voie impasse des muriers", "count": 1},
+      {"value": "Vérifier nature et jonction du chemin", "count": 1},
+      {"value": "vérifiier les nouvelles voies", "count": 1},
+      {
+        "value": "vérifier sur terrain le type de voie, dans le doute je met access no",
+        "count": 1
+      },
+      {"value": "Départ sentier", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "384220121Y", "count": 1},
+      {"value": "385441240J", "count": 1},
+      {"value": "730081490X", "count": 1},
+      {"value": "260580368N", "count": 1},
+      {"value": "384640627R", "count": 1},
+      {"value": "381100240J", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "tracktype",
+    "tags": [{"value": "grade3", "count": 3}, {"value": "grade1", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "30", "count": 2},
+      {"value": "5", "count": 1},
+      {"value": "20", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "C 1", "count": 2},
+      {"value": "C 4", "count": 1},
+      {"value": "C 11", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "lanes", "tags": [{"value": "1", "count": 3}], "count": 3},
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "building_passage", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "note:fr",
+    "tags": [
+      {"value": "Chemin de la Combe à vérifier", "count": 1},
+      {"value": "sentier à reconnaitre", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "old_highway",
+    "tags": [{"value": "residential", "count": 1}],
+    "count": 1
+  },
+  {"key": "service", "tags": [{"value": "driveway", "count": 1}], "count": 1},
+  {"key": "cycleway", "tags": [{"value": "lane", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "construction", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "4", "count": 1}], "count": 1}
+]

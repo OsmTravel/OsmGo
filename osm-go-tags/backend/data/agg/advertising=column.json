@@ -1,0 +1,23 @@
+[
+  {
+    "key": "advertising",
+    "tags": [{"value": "column", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "3", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 10
+  }
+]

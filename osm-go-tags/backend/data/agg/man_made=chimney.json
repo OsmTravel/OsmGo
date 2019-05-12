@@ -1,0 +1,44 @@
+[
+  {"key": "man_made", "tags": [{"value": "chimney", "count": 52}], "count": 52},
+  {"key": "level", "tags": [{"value": "1", "count": 6}], "count": 6},
+  {
+    "key": "height",
+    "tags": [
+      {"value": "10", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "30", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Cheminée d'équilibre", "count": 2},
+      {
+        "value": "Grande cheminée datant de 1863 et appartenant à la société Arcelo-Mittal",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "historic", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "ref:mhs", "tags": [{"value": "PA00116548", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "note", "tags": [{"value": "industrial", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Ferme de Cossiat", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1925-04-30", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3068870", "count": 1}], "count": 1}
+]

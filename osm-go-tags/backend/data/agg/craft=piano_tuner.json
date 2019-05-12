@@ -1,0 +1,14 @@
+[
+  {"key": "craft", "tags": [{"value": "piano_tuner", "count": 1}], "count": 1},
+  {
+    "key": "musical_instrument",
+    "tags": [{"value": "piano", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "musical_instrument", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1}
+]

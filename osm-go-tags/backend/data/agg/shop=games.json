@@ -1,0 +1,36 @@
+[
+  {"key": "shop", "tags": [{"value": "games", "count": 11}], "count": 11},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://les7royaumes.com/", "count": 1},
+      {"value": "http://la-diag.com/blog", "count": 1},
+      {"value": "http://www.lesartsfrontieres.fr/", "count": 1},
+      {"value": "http://onyris-games.com", "count": 1},
+      {"value": "http://www.ludocortex.fr/", "count": 1},
+      {"value": "http://www.jeudubazar.com/", "count": 1},
+      {"value": "https://www.lodysseedescoccinelles.com", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 54 58 35", "count": 1},
+      {"value": "+33 4 75 42 29 96", "count": 1},
+      {"value": "+33 4 50 75 45 57", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Jeux de rôle, salle de jeux, librairie.", "count": 1},
+      {
+        "value": "Librairie spécialisée en BD, Mangas et Comics;Magasin de jeux de société, jeux spécialisé, Salle de jeux",
+        "count": 1
+      }
+    ],
+    "count": 2
+  }
+]

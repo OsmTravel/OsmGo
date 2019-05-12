@@ -1,0 +1,245 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "nature_reserve", "count": 51}],
+    "count": 51
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "protected_area", "count": 35}],
+    "count": 35
+  },
+  {
+    "key": "protect_class",
+    "tags": [
+      {"value": "4", "count": 28},
+      {"value": "1", "count": 3},
+      {"value": "3", "count": 2},
+      {"value": "5", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "protection_title",
+    "tags": [
+      {"value": "Réserve naturelle régionale", "count": 9},
+      {"value": "Réserve naturelle nationale", "count": 8},
+      {"value": "Réserve biologique dirigée", "count": 3},
+      {"value": "Réserve biologique intégrale", "count": 3}
+    ],
+    "count": 23
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q17243802", "count": 1},
+      {"value": "Q19792231", "count": 1},
+      {"value": "Q3457467", "count": 1},
+      {"value": "Q3457448", "count": 1},
+      {"value": "Q19760796", "count": 1},
+      {"value": "Q3457566", "count": 1},
+      {"value": "Q3457527", "count": 1},
+      {"value": "Q15588920", "count": 1},
+      {"value": "Q17275526", "count": 1},
+      {"value": "Q17279029", "count": 1},
+      {"value": "Q17166761", "count": 1},
+      {"value": "Q3457426", "count": 1},
+      {"value": "Q19951253", "count": 1},
+      {"value": "Q18515612", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "valid_from",
+    "tags": [
+      {"value": "1999-12-28", "count": 2},
+      {"value": "2009-01-01", "count": 2},
+      {"value": "1961-03-15", "count": 1},
+      {"value": "1993-12-22", "count": 1},
+      {"value": "1980-01-17", "count": 1},
+      {"value": "1974-12-26", "count": 1},
+      {"value": "1977-11-02", "count": 1},
+      {"value": "1980-09-10", "count": 1},
+      {"value": "1974-05-15", "count": 1},
+      {"value": "1998-12-10", "count": 1},
+      {"value": "1995-08-30", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "ref:inpn",
+    "tags": [
+      {"value": "FR3600047", "count": 1},
+      {"value": "FR3600115", "count": 1},
+      {"value": "FR3600043", "count": 1},
+      {"value": "FR3600001", "count": 1},
+      {"value": "FR9300167", "count": 1},
+      {"value": "FR9300069", "count": 1},
+      {"value": "FR9300063", "count": 1},
+      {"value": "FR9300066", "count": 1},
+      {"value": "FR9300068", "count": 1},
+      {"value": "FR9300065", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "id_spn",
+    "tags": [
+      {"value": "FR3600021", "count": 1},
+      {"value": "FR3600013", "count": 1},
+      {"value": "FR2300174", "count": 1},
+      {"value": "FR2300172", "count": 1},
+      {"value": "FR2400202", "count": 1},
+      {"value": "FR2400213", "count": 1},
+      {"value": "FR2400165", "count": 1},
+      {"value": "FR2300144", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "access", "tags": [{"value": "no", "count": 8}], "count": 8},
+  {
+    "key": "website:regulation",
+    "tags": [
+      {
+        "value": "http://www.legifrance.gouv.fr/jo_pdf.do?cidTexte=JPDF1209198000002143",
+        "count": 1
+      },
+      {
+        "value": "http://www.legifrance.gouv.fr/jo_pdf.do?cidTexte=JPDF0401197500000229",
+        "count": 1
+      },
+      {
+        "value": "http://www.legifrance.gouv.fr/jo_pdf.do?cidTexte=JPDF2505197400005703",
+        "count": 1
+      },
+      {
+        "value": "http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000518213",
+        "count": 1
+      },
+      {
+        "value": "http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000348218",
+        "count": 1
+      },
+      {
+        "value": "http://www.legifrance.gouv.fr/affichTexte.do?cidTexte=JORFTEXT000000352726",
+        "count": 1
+      },
+      {
+        "value": "http://www.legifrance.gouv.fr/jo_pdf.do?cidTexte=JPDF1511197700005418",
+        "count": 1
+      },
+      {
+        "value": "http://www.bulletin-officiel.developpement-durable.gouv.fr/fiches/BO20108/met_20100008_0100_0007.pdf",
+        "count": 1
+      }
+    ],
+    "count": 8
+  },
+  {"key": "year_import", "tags": [{"value": "2010", "count": 7}], "count": 7},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.maisondesetangsduforez.com/2013-08-01-15-57-47/la-reserve-de-biterne.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.cen-isere.org/les-autres-sites-en-gestion/etang-de-mai/",
+        "count": 1
+      },
+      {
+        "value": "http://www.cen-isere.org/les-autres-sites-en-gestion/marais-de-cras/",
+        "count": 1
+      },
+      {
+        "value": "http://www.cen-isere.org/les-autres-sites-en-gestion/marais-de-la-leze/",
+        "count": 1
+      },
+      {
+        "value": "http://www.cen-isere.org/les-autres-sites-en-gestion/marais-goureux/",
+        "count": 1
+      },
+      {
+        "value": "http://www.cen-isere.org/les-autres-sites-en-gestion/marais-des-engenieres/",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "ref:FR:inpn",
+    "tags": [
+      {"value": "FR3600036", "count": 1},
+      {"value": "FR9300164", "count": 1},
+      {"value": "FR9300139", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.loire.fr/jcms/lw_934318/natura-2000-sur-le-territoire",
+        "count": 1
+      },
+      {
+        "value": "http://www.mairie-chaponnay.fr/8-actualites/766-tout-savoir-sur-la-zone-humide",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Réserve naturelle du Bout-du-Lac", "count": 1},
+      {
+        "value": "fr:Réserve naturelle nationale du delta de la Dranse",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "forest", "count": 1},
+      {"value": "conservation", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {
+        "value": "Fédération Départementale des Chasseurs de la Loire",
+        "count": 1
+      },
+      {"value": "Ville de Chaponnay", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Code national : FR3800198\nCode international : 146955\nhttps://www.protectedplanet.net/marais-de-montfort-biotope-protection-order",
+        "count": 1
+      },
+      {"value": "Conservatoire du Littoral", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "natural", "tags": [{"value": "water", "count": 1}], "count": 1},
+  {"key": "waterway", "tags": [{"value": "waterfall", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "islet", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "ref:bag", "tags": [{"value": "FR3800198", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "1991", "count": 1}], "count": 1},
+  {
+    "key": "geological",
+    "tags": [{"value": "palaeontological_site", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {"key": "shop", "tags": [{"value": "aquarium", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [{"value": "selling aquarium stuff", "count": 1}],
+    "count": 1
+  }
+]

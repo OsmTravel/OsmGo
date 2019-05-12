@@ -1,0 +1,48 @@
+[
+  {"key": "leisure", "tags": [{"value": "dance", "count": 20}], "count": 20},
+  {
+    "key": "dance:teaching",
+    "tags": [{"value": "yes", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 55 55", "count": 1},
+      {"value": "+33 4 78 21 48 74", "count": 1},
+      {"value": "+33478211510", "count": 1},
+      {"value": "+33 4 78 84 12 13", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.danse-vienne.fr/", "count": 1},
+      {"value": "http://www.gvrdanse.fr/", "count": 1},
+      {"value": "http://www.polepik.fr", "count": 1},
+      {"value": "http://www.danse-maryclair.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "École de danse", "count": 1},
+      {"value": "Centre de Développement Chorégraphique", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "dance:style", "tags": [{"value": "salsa", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "dancing_school", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "info@polepik.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "dance", "count": 1}], "count": 1}
+]

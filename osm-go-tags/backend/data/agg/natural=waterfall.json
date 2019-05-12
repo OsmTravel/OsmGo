@@ -1,0 +1,12 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "waterfall", "count": 11}],
+    "count": 11
+  },
+  {"key": "sport", "tags": [{"value": "ice_climbing", "count": 3}], "count": 3},
+  {"key": "leisure", "tags": [{"value": "common", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "75", "count": 1}], "count": 1},
+  {"key": "waterway", "tags": [{"value": "waterfall", "count": 1}], "count": 1},
+  {"key": "location", "tags": [{"value": "underwater", "count": 1}], "count": 1}
+]

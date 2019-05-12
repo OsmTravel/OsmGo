@@ -1,0 +1,8 @@
+[
+  {"key": "shop", "tags": [{"value": "phone", "count": 6}], "count": 6},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "terminal", "count": 1}],
+    "count": 1
+  }
+]

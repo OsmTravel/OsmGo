@@ -1,0 +1,36 @@
+[
+  {"key": "office", "tags": [{"value": "therapist", "count": 6}], "count": 6},
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Delphine Tourne", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapist", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "physiotherapy", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.naturhouse.fr/liste-centres/579-chassagny", "count": 1}
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "optometrist", "count": 23}],
+    "count": 23
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 2}], "count": 2},
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "ophthalmology", "count": 2}],
+    "count": 2
+  }
+]

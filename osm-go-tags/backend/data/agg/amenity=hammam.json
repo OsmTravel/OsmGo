@@ -1,0 +1,10 @@
+[
+  {"key": "amenity", "tags": [{"value": "hammam", "count": 2}], "count": 2},
+  {"key": "male", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "female", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "hammam pour femmmes", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "childcare", "count": 64}],
+    "count": 64
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Communauté de Communes de la Semine", "count": 1},
+      {"value": "Association pour les Bébés de Cordon", "count": 1},
+      {"value": "Association Les Mini Zen", "count": 1},
+      {"value": "MEB", "count": 1},
+      {"value": "CCAS Tassin la Demi-Lune", "count": 1},
+      {"value": "Grandir", "count": 1},
+      {"value": "Leo Lagrange", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 9 72 15 73 62", "count": 1},
+      {"value": "+33476465460", "count": 1},
+      {"value": "+33 4 76 21 96 06", "count": 1},
+      {"value": "+33 4 79 60 02 98", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://garderiedesneiges-saintnicolas.com/", "count": 1},
+      {"value": "http://maisonenfancebachelard.fr", "count": 1},
+      {"value": "http://www.mairie-crest.fr/-Petite-enfance-.html", "count": 1},
+      {"value": "https://www.grandir.com/fr/nurseries/nursery/158", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {"key": "ele", "tags": [{"value": "519", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [{"value": "http://www.ccpsg.fr/1-21790-Veauche.php", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Jardin d’enfants associatif", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "brand",
+    "tags": [{"value": "Les petits chaperons rouges", "count": 1}],
+    "count": 1
+  }
+]

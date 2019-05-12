@@ -1,0 +1,128 @@
+[
+  {"key": "amenity", "tags": [{"value": "embassy", "count": 78}], "count": 78},
+  {
+    "key": "country",
+    "tags": [
+      {"value": "DZ", "count": 3},
+      {"value": "CI", "count": 2},
+      {"value": "PT", "count": 2},
+      {"value": "TN", "count": 2},
+      {"value": "SE", "count": 2},
+      {"value": "CZ", "count": 2},
+      {"value": "MX", "count": 1},
+      {"value": "VN", "count": 1},
+      {"value": "AL", "count": 1},
+      {"value": "EE", "count": 1},
+      {"value": "IS", "count": 1},
+      {"value": "IT", "count": 1},
+      {"value": "UA", "count": 1},
+      {"value": "EC", "count": 1},
+      {"value": "FI", "count": 1},
+      {"value": "GR", "count": 1},
+      {"value": "GN", "count": 1},
+      {"value": "GE", "count": 1},
+      {"value": "LT", "count": 1},
+      {"value": "MG", "count": 1},
+      {"value": "MY", "count": 1},
+      {"value": "MT", "count": 1},
+      {"value": "NO", "count": 1},
+      {"value": "PL", "count": 1},
+      {"value": "RO", "count": 1},
+      {"value": "RU", "count": 1},
+      {"value": "SK", "count": 1},
+      {"value": "TH", "count": 1},
+      {"value": "TR", "count": 1},
+      {"value": "MC", "count": 1},
+      {"value": "AM", "count": 1},
+      {"value": "IE", "count": 1},
+      {"value": "KR", "count": 1},
+      {"value": "SM", "count": 1},
+      {"value": "JP", "count": 1},
+      {"value": "NL", "count": 1},
+      {"value": "PH", "count": 1},
+      {"value": "SC", "count": 1},
+      {"value": "US", "count": 1},
+      {"value": "BR", "count": 1},
+      {"value": "BF", "count": 1},
+      {"value": "BJ", "count": 1},
+      {"value": "KH", "count": 1},
+      {"value": "CA", "count": 1},
+      {"value": "CL", "count": 1},
+      {"value": "DK", "count": 1},
+      {"value": "GA", "count": 1},
+      {"value": "GT", "count": 1},
+      {"value": "KZ", "count": 1},
+      {"value": "XK", "count": 1},
+      {"value": "LU", "count": 1},
+      {"value": "MA", "count": 1},
+      {"value": "NI", "count": 1},
+      {"value": "PY", "count": 1},
+      {"value": "PE", "count": 1},
+      {"value": "SV", "count": 1},
+      {"value": "SN", "count": 1},
+      {"value": "TD", "count": 1},
+      {"value": "TG", "count": 1},
+      {"value": "SI", "count": 1},
+      {"value": "DE", "count": 1},
+      {"value": "CN", "count": 1},
+      {"value": "AT", "count": 1},
+      {"value": "BE", "count": 1},
+      {"value": "DO", "count": 1},
+      {"value": "ES", "count": 1},
+      {"value": "LV", "count": 1},
+      {"value": "YE", "count": 1},
+      {"value": "MU", "count": 1}
+    ],
+    "count": 76
+  },
+  {
+    "key": "diplomatic",
+    "tags": [
+      {"value": "consulate", "count": 5},
+      {"value": "honorary_consulate", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 3}, {"value": "limited", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.mzv.cz/", "count": 1},
+      {"value": "http://www.consulat-lyon-algerie.fr/", "count": 1},
+      {"value": "http://diplomatie.belgium.be/", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 2}], "count": 2},
+  {
+    "key": "wheelchair:description",
+    "tags": [{"value": "accessible RDC", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "is this really an embassy (or ambassador’s residence, consulate)?",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 72 83 85 50", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "2013", "count": 1}], "count": 1}
+]

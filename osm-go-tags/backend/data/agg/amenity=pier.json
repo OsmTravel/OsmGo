@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "pier", "count": 3}], "count": 3},
+  {"key": "float", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

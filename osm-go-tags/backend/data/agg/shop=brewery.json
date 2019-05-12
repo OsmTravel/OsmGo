@@ -1,0 +1,4 @@
+[
+  {"key": "shop", "tags": [{"value": "brewery", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1}
+]

@@ -1,0 +1,33 @@
+[
+  {"key": "shop", "tags": [{"value": "photo", "count": 39}], "count": 39},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.foci-saintpriest.fr", "count": 1},
+      {"value": "http://www.attrapelumiere.fr", "count": 1},
+      {"value": "https://www.photoconcept.fr/", "count": 1},
+      {"value": "www.cote-audition-guy-sublet.fr", "count": 1},
+      {"value": "www.studio6x9.com", "count": 1},
+      {"value": "www.planete-photo.fr", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33476547429", "count": 1},
+      {"value": "+620336795", "count": 1},
+      {"value": "+33 4 76 34 93 63", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "limited", "count": 1}],
+    "count": 2
+  },
+  {"key": "craft", "tags": [{"value": "photographer", "count": 2}], "count": 2},
+  {"key": "brand", "tags": [{"value": "Foci", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1}
+]

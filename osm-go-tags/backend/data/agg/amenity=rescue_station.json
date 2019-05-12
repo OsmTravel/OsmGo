@@ -1,0 +1,24 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "rescue_station", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "water_rescue_station", "count": 1}],
+    "count": 1
+  },
+  {"key": "seasonal", "tags": [{"value": "summer", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "10h - 18h du 15 Juin au 15 Septembre", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Protection Civile du Bas-Rhin", "count": 1}],
+    "count": 1
+  }
+]

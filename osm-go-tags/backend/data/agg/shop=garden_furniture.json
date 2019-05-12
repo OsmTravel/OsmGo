@@ -1,0 +1,27 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "garden_furniture", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "palmareal@outlook.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 84008717", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.palmareal-viveros.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Pépinière", "count": 1}],
+    "count": 1
+  }
+]

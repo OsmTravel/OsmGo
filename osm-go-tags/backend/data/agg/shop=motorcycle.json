@@ -1,0 +1,247 @@
+[
+  {"key": "shop", "tags": [{"value": "motorcycle", "count": 85}], "count": 85},
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Honda", "count": 5},
+      {"value": "BMW", "count": 3},
+      {"value": "KTM", "count": 3},
+      {"value": "independent", "count": 2},
+      {"value": "Yamaha", "count": 2},
+      {"value": "Suzuki", "count": 2},
+      {"value": "Triumph", "count": 2},
+      {"value": "Kawasaki", "count": 2},
+      {"value": "Ducati", "count": 1},
+      {"value": "KTM, Honda", "count": 1},
+      {"value": "KTM, Kawasaki, Beta, Polaris, Dafy Moto", "count": 1},
+      {"value": "YAMAHA", "count": 1},
+      {"value": "Harley-Davidson", "count": 1},
+      {"value": "Dafy Moto", "count": 1},
+      {"value": "BMW;Harley Davidson;Honda", "count": 1},
+      {"value": "Honda;Yamaha;Triumph;BMW", "count": 1},
+      {"value": "MV Agusta;Zero", "count": 1},
+      {"value": "Zero;Benelli", "count": 1},
+      {"value": "Suzuki, Kawazaki, Piaggio", "count": 1},
+      {"value": "Suzuki;Triumph;Aprilia;Moto Guzzi", "count": 1},
+      {
+        "value": "Honda, Aprilia, Suzuki, Kawasaki,Moto Guzzi, Dafy",
+        "count": 1
+      },
+      {"value": "Aprillia;Gilera;Piaggio;Vespa", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.harley-lyon.com/", "count": 1},
+      {"value": "http://bonneton2roues.net", "count": 1},
+      {"value": "http://motostop01.com", "count": 1},
+      {"value": "http://www.altitude-moto.com", "count": 1},
+      {"value": "http://www.moto-pack.com", "count": 1},
+      {"value": "http://www.couleurs-moto.com", "count": 1},
+      {"value": "http://www.ktmonline.fr", "count": 1},
+      {"value": "http://www.come-bike.com", "count": 1},
+      {"value": "http://www.triumph-lyon.com/", "count": 1},
+      {"value": "http://www.alexismotos.com/", "count": 1},
+      {"value": "http://www.kawasaki-lyon.com/", "count": 1},
+      {"value": "https://www.ktmlyon.fr/", "count": 1},
+      {"value": "http://www.bmwhelicemotos.com/contact-helice-69/", "count": 1},
+      {"value": "http://www.ducatilyon.fr/", "count": 1},
+      {"value": "http://www.stefmoto.com/", "count": 1},
+      {
+        "value": "https://www.dafy-moto.com/magasin/dafy-moto-lyon-dardilly.html",
+        "count": 1
+      },
+      {"value": "https://www.moto-plaisir.fr", "count": 1},
+      {"value": "http://www.location-moto-26-07.fr", "count": 1},
+      {"value": "http://www.motoracingservice.fr", "count": 1},
+      {"value": "http://www.comasmotos.com/", "count": 1},
+      {
+        "value": "https://reseau.maxxess.fr/notre-reseau-de-magasins-maxxess/maxxess-valence-26",
+        "count": 1
+      },
+      {"value": "http://motolabo.fr", "count": 1},
+      {"value": "http://www.betemps-sports.com", "count": 1},
+      {"value": "http://www.runmotos.fr", "count": 1},
+      {"value": "http://www.la-scooteria.com", "count": 1},
+      {"value": "http://honda-moto.fr", "count": 1},
+      {"value": "http://www.honda-moto.fr", "count": 1},
+      {"value": "https://www.kangou2roues.com", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 68 84 54", "count": 1},
+      {"value": "+33 4 75 35 05 12", "count": 1},
+      {"value": "+33 4 79 85 91 40", "count": 1},
+      {"value": "+33 4 50 99 23 80", "count": 1},
+      {"value": "+33 438372767", "count": 1},
+      {"value": "+33 450521304", "count": 1},
+      {"value": "+33 4 75891676", "count": 1},
+      {"value": "+33 4 76291764", "count": 1},
+      {"value": "+33 476054609", "count": 1},
+      {"value": "+33 4 27 46 23 60", "count": 1},
+      {"value": "+33 4 72 52 76 76", "count": 1},
+      {"value": "+33 4 78 66 47 47", "count": 1},
+      {"value": "+33 4 81 65 33 40", "count": 1},
+      {"value": "+33 4 74 30 12 44", "count": 1},
+      {"value": "+33 4 72 52 14 41", "count": 1},
+      {"value": "+33 4 78 35 46 15", "count": 1},
+      {"value": "+33 4 86 15 40 24", "count": 1},
+      {"value": "+33 4 75 02 64 70", "count": 1},
+      {"value": "+33 952520510", "count": 1},
+      {"value": "+33 4 75830175", "count": 1},
+      {"value": "+33 4 76 09 31 83", "count": 1},
+      {"value": "+33 479682300", "count": 1},
+      {"value": "+33 4 79 96 45 52", "count": 1},
+      {"value": "+33 4 76 46 68 66", "count": 1},
+      {"value": "+33 4 78 43 85 43", "count": 1},
+      {"value": "+33 6 11 26 28 09", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "motorcycle:sales",
+    "tags": [
+      {"value": "yes", "count": 14},
+      {"value": "yes;used", "count": 2},
+      {"value": "no", "count": 2},
+      {"value": "brand", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "motorcycle:repair",
+    "tags": [{"value": "yes", "count": 12}, {"value": "no", "count": 2}],
+    "count": 14
+  },
+  {
+    "key": "motorcycle:rental",
+    "tags": [
+      {"value": "yes", "count": 12},
+      {"value": "yes;trailer", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "second_hand", "tags": [{"value": "yes", "count": 13}], "count": 13},
+  {
+    "key": "motorcycle:parts",
+    "tags": [{"value": "yes", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "motorcycle:clothes",
+    "tags": [{"value": "yes", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "sale",
+    "tags": [{"value": "yes", "count": 7}, {"value": "brand", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "KTM & Honda dealer", "count": 1},
+      {"value": "KTM, Kawasaki, Beta, Polaris, Dafy Moto", "count": 1},
+      {"value": "KTM dealer", "count": 1},
+      {
+        "value": "Location moto en Rhône-Alpes, des motos équipées de valises top-case, poignées chauffantes, bulles hautes, béquille centrale",
+        "count": 1
+      },
+      {
+        "value": "Concessionnaire MV Agusta et ZERO Motocycles. MRS entretien BULLIT Motorcycles, MV Agusta, Harley-Davidson, BMW, Aprilia, Moto Guzzi, Ducati",
+        "count": 1
+      },
+      {
+        "value": "dédié à l’accessoire de la moto et l’équipement du motard. Casque, blouson, botte, gant, tout-terrain, pneu, atelier",
+        "count": 1
+      },
+      {
+        "value": "Atelier dirigé par Jacky Provent, plusieur fois meilleur mécanicien Honda France et Europe.",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "raffin.motos@wanadoo.fr", "count": 1},
+      {"value": "motopack@wanadoo.fr", "count": 1},
+      {"value": "couleursmoto@wanadoo.fr", "count": 1},
+      {"value": "contact@universalride.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "razmotte", "count": 1},
+      {"value": "Honda", "count": 1},
+      {"value": "Maxxess", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "parts",
+    "tags": [{"value": "yes", "count": 2}, {"value": "off", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "clothes",
+    "tags": [{"value": "yes", "count": 2}, {"value": "off", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "rental",
+    "tags": [{"value": "off", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "repair",
+    "tags": [{"value": "off", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "motorcycle:tyres",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "fixme", "tags": [{"value": "resurvey", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 75 93 37 78", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:type",
+    "tags": [{"value": "standard;dualsport;scooter", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "https://www.easyrenter.fr/fr/destinations/france/rhone-alpes/drome/valence.html",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:logistics",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "logistics", "count": 1}], "count": 1}
+]

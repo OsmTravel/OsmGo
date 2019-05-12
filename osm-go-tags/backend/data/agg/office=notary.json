@@ -1,0 +1,41 @@
+[
+  {"key": "office", "tags": [{"value": "notary", "count": 17}], "count": 17},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "scp.pissard@notaires.fr", "count": 1},
+      {"value": "helene.geraud@notaires.fr", "count": 1},
+      {"value": "sge@notaires.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 49 20 75", "count": 1},
+      {"value": "+33 7 51 62 63 60", "count": 1},
+      {"value": "+33 4 74 59 01 31", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 50 49 15 71", "count": 1},
+      {"value": "+33 4 74 59 18 58", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Florent CHARLES", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://lechner-resillot-moine.notaires.fr/", "count": 1}
+    ],
+    "count": 1
+  }
+]

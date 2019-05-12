@@ -1,0 +1,57 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "blood_donation", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://dondesang.efs.sante.fr/", "count": 1},
+      {"value": "http://dondusang.net", "count": 1},
+      {"value": "http://dondesang.efs.sante.fr", "count": 1},
+      {"value": "www.dondusang.net", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 800 109 900", "count": 1},
+      {"value": "+33 4 77 81 42 43", "count": 1},
+      {"value": "+33 8 00 10 99 00", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "EFS", "count": 1},
+      {"value": "Établissement Français du Sang", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "blood:plasma", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "blood:platelets",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "blood:whole", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "donation:compensation",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 1}], "count": 1},
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "department", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_specialty:blood_bank",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {"key": "amenity", "tags": [{"value": "tabac", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 2 99 09 17 87", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:MontfortCommunaute:OC",
+    "tags": [{"value": "48", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "newsagent", "count": 1}], "count": 1},
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

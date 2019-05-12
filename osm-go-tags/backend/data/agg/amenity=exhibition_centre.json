@@ -1,0 +1,39 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "exhibition_centre", "count": 20}],
+    "count": 20
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.eurexpo.com/", "count": 1},
+      {"value": "http://www.savoiexpo.com", "count": 1},
+      {"value": "http://www.foire-dauphine.com/", "count": 1},
+      {"value": "http://www.alpexpo.com", "count": 1},
+      {"value": "http://www.rochexpo.com", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 02 00 0", "count": 1},
+      {"value": "+33 4 76 39 66 00", "count": 1},
+      {"value": "+33 4 50 03 03 37", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Eurexpo", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "info@rochexpo.com", "count": 1}],
+    "count": 1
+  }
+]

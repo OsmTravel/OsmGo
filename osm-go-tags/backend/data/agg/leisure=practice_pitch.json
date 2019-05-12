@@ -1,0 +1,9 @@
+[
+  {"key": "sport", "tags": [{"value": "basketball", "count": 2}], "count": 2},
+  {
+    "key": "leisure",
+    "tags": [{"value": "practice_pitch", "count": 2}],
+    "count": 2
+  },
+  {"key": "hoops", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

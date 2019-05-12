@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "washtub", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

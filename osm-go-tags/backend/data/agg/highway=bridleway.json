@@ -1,0 +1,109 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "bridleway", "count": 265}],
+    "count": 265
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "ground", "count": 24},
+      {"value": "dirt", "count": 13},
+      {"value": "unpaved", "count": 7},
+      {"value": "grass", "count": 5},
+      {"value": "gravel", "count": 4},
+      {"value": "cobblestone", "count": 1},
+      {"value": "wood", "count": 1}
+    ],
+    "count": 55
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 44},
+      {"value": "no", "count": 3},
+      {"value": "designated", "count": 2}
+    ],
+    "count": 49
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 21},
+      {"value": "dismount", "count": 5},
+      {"value": "no", "count": 2},
+      {"value": "yes (VTT)", "count": 1}
+    ],
+    "count": 29
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 11},
+      {"value": "yes", "count": 10},
+      {"value": "customers", "count": 3},
+      {"value": "no", "count": 2}
+    ],
+    "count": 26
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 15},
+      {"value": "yes", "count": 2},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 19
+  },
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 2},
+      {"value": "permissive", "count": 1},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 15
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 5}, {"value": "-1", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "3", "count": 3},
+      {"value": "0.5", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "sac_scale", "tags": [{"value": "hiking", "count": 3}], "count": 3},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "service",
+    "tags": [{"value": "parking_aisle", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "tracktype",
+    "tags": [{"value": "grade1", "count": 1}, {"value": "grade5", "count": 1}],
+    "count": 2
+  },
+  {"key": "motorcycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "oneway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "sidewalk", "tags": [{"value": "none", "count": 1}], "count": 1},
+  {"key": "mtb:scale", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "motorcar", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "incline", "tags": [{"value": "up", "count": 1}], "count": 1},
+  {
+    "key": "leisure",
+    "tags": [{"value": "horse_riding", "count": 1}],
+    "count": 1
+  }
+]

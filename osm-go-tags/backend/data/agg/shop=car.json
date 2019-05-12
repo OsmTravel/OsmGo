@@ -1,0 +1,247 @@
+[
+  {"key": "shop", "tags": [{"value": "car", "count": 483}], "count": 483},
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Renault", "count": 33},
+      {"value": "Citroën", "count": 20},
+      {"value": "Peugeot", "count": 17},
+      {"value": "Volkswagen", "count": 5},
+      {"value": "Nissan", "count": 5},
+      {"value": "Audi", "count": 4},
+      {"value": "Ford", "count": 4},
+      {"value": "Opel", "count": 4},
+      {"value": "Toyota", "count": 3},
+      {"value": "Porsche", "count": 3},
+      {"value": "Dacia", "count": 3},
+      {"value": "BMW;Mini", "count": 3},
+      {"value": "Mercedes-Benz", "count": 2},
+      {"value": "BMW", "count": 2},
+      {"value": "Kia; Mitsubishi; Mazda", "count": 1},
+      {"value": "Seat", "count": 1},
+      {"value": "Škoda", "count": 1},
+      {"value": "Volvo;Land Rover", "count": 1},
+      {"value": "WolksWagen", "count": 1},
+      {"value": "New Holland", "count": 1},
+      {"value": "Mercedes Benz", "count": 1},
+      {"value": "Audi;Škoda;Volkswagen", "count": 1},
+      {"value": "Fiat;Alpha Romeo;Opel", "count": 1},
+      {"value": "Lexus", "count": 1},
+      {"value": "Mini", "count": 1},
+      {"value": "Chevrolet; Opel; Corvette", "count": 1},
+      {"value": "Distinxion", "count": 1},
+      {"value": "Citroën;Renault", "count": 1},
+      {"value": "Citroen", "count": 1},
+      {"value": "Mitsubishi;Suzuki", "count": 1},
+      {"value": "Volvo", "count": 1},
+      {"value": "Alpha Romé;Lancia;Fiat;Hyunday", "count": 1},
+      {"value": "Honda;Subaru", "count": 1},
+      {"value": "Fiat", "count": 1},
+      {"value": "Audi;Volkswagen", "count": 1},
+      {"value": "Kia,Jeep,Subaru,Lancia", "count": 1},
+      {"value": "Mercedes", "count": 1},
+      {"value": "mithsubishi", "count": 1},
+      {"value": "Jaguar,Volvo,Land Rover", "count": 1},
+      {"value": "Chevrolet;Opel", "count": 1},
+      {"value": "Skoda", "count": 1}
+    ],
+    "count": 135
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Renault", "count": 21},
+      {"value": "Citroën", "count": 12},
+      {"value": "Peugeot", "count": 7},
+      {"value": "Opel", "count": 5},
+      {"value": "Bürstner", "count": 4},
+      {"value": "Volkswagen", "count": 3},
+      {"value": "Nissan", "count": 3},
+      {"value": "BMW", "count": 3},
+      {"value": "Citroen", "count": 3},
+      {"value": "Aramis auto", "count": 2},
+      {"value": "Suzuki", "count": 2},
+      {"value": "Ford", "count": 2},
+      {"value": "Aramisauto", "count": 2},
+      {"value": "Jean Lain", "count": 2},
+      {"value": "BMW;Mini", "count": 2},
+      {"value": "Groupe Thivolle", "count": 2},
+      {"value": "Distinxion", "count": 1},
+      {"value": "Mini", "count": 1},
+      {"value": "multi", "count": 1},
+      {"value": "Notin", "count": 1},
+      {"value": "Mercedes-Benz", "count": 1},
+      {"value": "Kia Motors", "count": 1},
+      {"value": "Jeanlain", "count": 1},
+      {"value": "Tinland", "count": 1},
+      {"value": "Gounon S.A", "count": 1},
+      {"value": "Rubini", "count": 1},
+      {"value": "Sadal Citroën", "count": 1},
+      {"value": "Euromaster", "count": 1},
+      {"value": "Mazda", "count": 1},
+      {"value": "Fiat", "count": 1},
+      {"value": "Mitsubishi", "count": 1},
+      {"value": "PSA", "count": 1},
+      {"value": "Lancia;Mazda", "count": 1},
+      {"value": "Renault Dacia", "count": 1},
+      {"value": "M. Rageys Jean-Jacques", "count": 1},
+      {"value": "Robert Bel SAS", "count": 1}
+    ],
+    "count": 95
+  },
+  {
+    "key": "second_hand",
+    "tags": [{"value": "yes", "count": 18}, {"value": "only", "count": 11}],
+    "count": 29
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78780860", "count": 1},
+      {"value": "+33 4 72 26 11 39", "count": 1},
+      {"value": "+33 4 76 48 58 99", "count": 1},
+      {"value": "+33 9 52 23 86 79", "count": 1},
+      {"value": "+33 4 77 24 01 29", "count": 1},
+      {"value": "+33 6 45598632", "count": 1},
+      {"value": "+33 4 72 09 02 09", "count": 1},
+      {"value": "+33478484156", "count": 1},
+      {"value": "+33478484026", "count": 1},
+      {"value": "+33 4 78 20 23 92", "count": 1},
+      {"value": "+33478484141", "count": 1},
+      {"value": "+33478444334", "count": 1},
+      {"value": "+33478486237", "count": 1},
+      {"value": "+33 4 76 96 05 16", "count": 1},
+      {"value": "+33 4 75 59 72 00", "count": 1},
+      {"value": "+33 4 78000807", "count": 1},
+      {"value": "+33 4 50 56 37 34", "count": 1},
+      {"value": "+33 4 78 26 94 58", "count": 1},
+      {"value": "+33 9 66 97 42 72", "count": 1},
+      {"value": "+33 4 76 96 63 67", "count": 1},
+      {"value": "+33472281120;+33486877960", "count": 1},
+      {"value": "+33 4 37 46 17 50", "count": 1},
+      {"value": "+33476426464", "count": 1},
+      {"value": "+33 4 76 43 70 74", "count": 1},
+      {"value": "+33477542062", "count": 1},
+      {"value": "+33 4 75 47 13 23", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "repair", "count": 12},
+      {"value": "dealer;repair", "count": 6},
+      {"value": "dealer", "count": 3},
+      {"value": "tire", "count": 1},
+      {"value": "dealer;parts;repair", "count": 1},
+      {"value": "tyres", "count": 1},
+      {"value": "fuel", "count": 1},
+      {"value": "dealer;tyres;repair", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.percevaliere-auto.fr", "count": 1},
+      {"value": "http://www.richarddrevet.net/", "count": 1},
+      {"value": "www.gta38.com", "count": 1},
+      {"value": "http://www.albatros-mathian.fr/", "count": 1},
+      {
+        "value": "http://www.ad-auto.fr/garage/garage-ad-expert-gfr-auto/",
+        "count": 1
+      },
+      {
+        "value": "https://www.renault-retail-group.fr/concessions-renault/details/98-concession-renault-lyon-est-vaulx-en-velin.html",
+        "count": 1
+      },
+      {"value": "www.help-car.fr", "count": 1},
+      {"value": "http://www.chevillardauto.fr", "count": 1},
+      {"value": "http://www.ewigo-lyon6.fr/", "count": 1},
+      {
+        "value": "https://www.bymycar.fr/concessions/ford-limonest-lyon-bymycar-30",
+        "count": 1
+      },
+      {"value": "http://www.auto-nautic.fr", "count": 1},
+      {"value": "http://www.reseau.citroen.fr/grenoble-seyssinet", "count": 1},
+      {"value": "http://www.seyssinetalpesauto.fr/", "count": 1},
+      {
+        "value": "http://www.jeanlain.com/fr/accueil/tout-l-univers/jean-lain-automobiles/les-sites-jean-lain/enseigne/587606d58ce644b05ce7cff1/jean-lain-lexus-seyssinet",
+        "count": 1
+      },
+      {"value": "http://www.mions-car.com/", "count": 1},
+      {"value": "http://www.delorme-automobile.com/nissan/", "count": 1},
+      {"value": "http://www.frachon-automobiles.fr", "count": 1},
+      {"value": "http://www.centreporsche.fr/grenoble", "count": 1},
+      {"value": "https://www.autos.fr/jugand", "count": 1},
+      {"value": "www.arodauto.com", "count": 1},
+      {"value": "www.ora7.fr", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 6}, {"value": "limited", "count": 2}],
+    "count": 8
+  },
+  {"key": "landuse", "tags": [{"value": "retail", "count": 6}], "count": 6},
+  {"key": "wall", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "citroen.geze@orange.fr", "count": 1},
+      {"value": "contact@chevillardauto.fr", "count": 1},
+      {"value": "contact@ewigo-lyon6.fr", "count": 1},
+      {"value": "direction@frachon-automobiles.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 3}], "count": 3},
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 78 21 19 65", "count": 1},
+      {"value": "+33476447940", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Achat vente accessoires et pneus 4x4 et véhicules d'occasion",
+        "count": 1
+      },
+      {"value": "Vente et Achat de Véhicules d'Occassion", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "resurvey", "count": 1}], "count": 1},
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {"key": "note", "tags": [{"value": "car_dealer", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.felix-faure-automobiles.com/content/13-concession-volvo-et-land-rover-felix-faure-automobiles-saint-etienne",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {
+    "key": "is_in",
+    "tags": [{"value": "SAINT-JULIEN-EN-SAINT-ALBAN", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {"key": "natural", "tags": [{"value": "tree_group", "count": 4}], "count": 4},
+  {
+    "key": "leaf_type",
+    "tags": [{"value": "broadleaved", "count": 4}],
+    "count": 4
+  },
+  {"key": "landuse", "tags": [{"value": "forest", "count": 1}], "count": 1}
+]

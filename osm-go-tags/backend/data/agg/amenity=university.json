@@ -1,0 +1,273 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "university", "count": 170}],
+    "count": 170
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Université Claude Bernard - Lyon 1", "count": 9},
+      {"value": "Université Grenoble Alpes", "count": 7},
+      {"value": "Université Jean Monnet", "count": 6},
+      {"value": "Université Lumière - Lyon 2", "count": 2},
+      {"value": "Université Jean Moulin - Lyon 3", "count": 2},
+      {"value": "École Normale Supérieure de Lyon", "count": 2},
+      {"value": "Université de Savoie", "count": 2},
+      {
+        "value": "Ministère de l'Éducation nationale, de l'Enseignement supérieur et de la Recherche",
+        "count": 2
+      },
+      {"value": "École Centrale de Lyon", "count": 1},
+      {"value": "Institut d'Études Politiques de Lyon", "count": 1},
+      {"value": "Ecole Centrale de Lyon", "count": 1},
+      {"value": "École de management de Lyon", "count": 1},
+      {"value": "Université de Lyon", "count": 1},
+      {"value": "Université Claude Bernard Lyon 1", "count": 1},
+      {"value": "Météo-France", "count": 1},
+      {"value": "Université Lyon 2", "count": 1},
+      {"value": "Université Savoie Mont BLanc", "count": 1},
+      {"value": "Croix-Rouge Française", "count": 1},
+      {
+        "value": "Institut National des Sciences Appliquées de Lyon",
+        "count": 1
+      },
+      {"value": "Université Joseph Fourier", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ens-lyon.eu/", "count": 1},
+      {"value": "http://isfa.fr/", "count": 1},
+      {"value": "http://www.cervi-lyon.inserm.fr/", "count": 1},
+      {"value": "http://www.cefam.fr/", "count": 1},
+      {"value": "http://www-verimag.imag.fr/", "count": 1},
+      {"value": "http://www-ljk.imag.fr/", "count": 1},
+      {"value": "http://www.liglab.fr/", "count": 1},
+      {"value": "http://maimosine.fr/", "count": 1},
+      {"value": "https://www.issep.fr/", "count": 1},
+      {"value": "http://lyon.supinfo.com/", "count": 1},
+      {"value": "http://www.univ-lyon3.fr/", "count": 1},
+      {"value": "https://iut1.ujf-grenoble.fr/", "count": 1},
+      {"value": "http://lapp.in2p3.fr/", "count": 1},
+      {"value": "http://www.universite-lyon.fr/", "count": 1},
+      {"value": "http://iut.univ-lyon1.fr/", "count": 1},
+      {"value": "http://iramedias.univ-st-etienne.fr/", "count": 1},
+      {"value": "http://www.egc2607.fr/", "count": 1},
+      {"value": "http://www.ucly.fr/", "count": 1},
+      {"value": "http://www.univ-catholyon.fr/", "count": 1},
+      {"value": "http://www.u-grenoble3.fr/", "count": 1},
+      {"value": "http://www.upi-lyon.com/", "count": 1},
+      {"value": "http://irfss-rhone-alpes.croix-rouge.fr/", "count": 1},
+      {"value": "http://www.cnsmd-lyon.fr", "count": 1},
+      {"value": "http://ensimag.grenoble-inp.fr/", "count": 1},
+      {"value": "http://phitem.ujf-grenoble.fr/", "count": 1},
+      {"value": "http://www.upmf-grenoble.fr/", "count": 1},
+      {"value": "http://lyon-sud.univ-lyon1.fr/", "count": 1},
+      {"value": "https://dsda.univ-grenoble-alpes.fr/", "count": 1},
+      {"value": "http://esisar.grenoble-inp.fr/", "count": 1},
+      {"value": "http://dsda.univ-grenoble-alpes.fr/", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Université catholique de Lyon", "count": 2},
+      {"value": "fr:Institut de la communication et des médias", "count": 1},
+      {"value": "fr:Manufacture des tabacs de Lyon", "count": 1},
+      {"value": "fr:École centrale de Lyon", "count": 1},
+      {"value": "fr:Institut de géographie alpine", "count": 1},
+      {
+        "value": "fr:Laboratoire d'Annecy de physique des particules",
+        "count": 1
+      },
+      {
+        "value": "fr:École nationale supérieure des mines de Saint-Étienne (Mines Saint-Étienne)",
+        "count": 1
+      },
+      {
+        "value": "fr:Institut des sciences sociales, économiques et politiques",
+        "count": 1
+      },
+      {"value": "en:École normale supérieure de Lyon", "count": 1},
+      {"value": "fr:P4 Jean Mérieux", "count": 1},
+      {"value": "fr:École polytechnique de l'université Lyon-I", "count": 1},
+      {
+        "value": "fr:École nationale supérieure en systèmes avancés et réseaux",
+        "count": 1
+      },
+      {
+        "value": "fr:Institut national des sciences appliquées de Lyon",
+        "count": 1
+      },
+      {
+        "value": "fr:École nationale supérieure des sciences de l'information et des bibliothèques",
+        "count": 1
+      },
+      {"value": "fr:ENSIMAG", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 8}, {"value": "limited", "count": 2}],
+    "count": 10
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 85 73 63", "count": 1},
+      {"value": "+33 (0)7 84 95 56 22", "count": 1},
+      {"value": "+33 4 37 65 40 30", "count": 1},
+      {"value": "+33 4 76 57 50 00", "count": 1},
+      {"value": "+33472655353", "count": 1},
+      {"value": "+33472192626", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "school:FR",
+    "tags": [{"value": "IUT", "count": 3}, {"value": "ESPE", "count": 3}],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3359520", "count": 1},
+      {"value": "Q3395840", "count": 1},
+      {"value": "Q3214403", "count": 1},
+      {"value": "Q3152671", "count": 1},
+      {"value": "Q8618", "count": 1},
+      {"value": "Q1633859", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "fence", "count": 3},
+      {"value": "wall", "count": 1},
+      {"value": "wire_fence", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Laboratoire Jean Kuntzmann", "count": 1},
+      {"value": "Laboratoire d'Informatique de Grenoble", "count": 1},
+      {
+        "value": "Maison de la Modélisation et de la Simulation, Nanosciences et Environnement",
+        "count": 1
+      },
+      {"value": "Bâtiment R", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "todo: déménagé vers telecom saint étienne ?", "count": 1},
+      {
+        "value": "Mesures Physiques (MPh) Métiers du Multimédia et de l'Internet (MMI)",
+        "count": 1
+      },
+      {"value": "only the 1st floor (ground level doesn't exists)", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "public", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "yes", "count": 2}, {"value": "wlan", "count": 1}],
+    "count": 3
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@issep.fr", "count": 1},
+      {"value": "scolarite.iut@univ-lyon1.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "26690027300175", "count": 1},
+      {"value": "26690027300183", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [
+      {"value": "690787742", "count": 1},
+      {"value": "690787817", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "type:FR:FINESS", "tags": [{"value": "300", "count": 2}], "count": 2},
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch alpha", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "roof:material",
+    "tags": [{"value": "slate", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "ref", "tags": [{"value": "R", "count": 1}], "count": 1},
+  {
+    "key": "fence_type",
+    "tags": [{"value": "chain_link", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "min_height", "tags": [{"value": "3m", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "2018", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [{"value": "http://ensimag.grenoble-inp.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "observatory", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2007-05-09", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "observatory:type",
+    "tags": [{"value": "astronomical", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA69000033", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:shape", "tags": [{"value": "mansard", "count": 1}], "count": 1}
+]

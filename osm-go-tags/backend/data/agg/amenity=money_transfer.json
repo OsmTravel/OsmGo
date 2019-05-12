@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "money_transfer", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "https://www.moneygram.com/", "count": 2}],
+    "count": 2
+  }
+]

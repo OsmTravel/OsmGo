@@ -1,0 +1,43 @@
+[
+  {"key": "amenity", "tags": [{"value": "healthcare", "count": 4}], "count": 4},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "lesbainsdenahla.com", "count": 1},
+      {"value": "http://kinephysio.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "kinesiology", "count": 1},
+      {"value": "learning_disorder", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 2}], "count": 2},
+  {
+    "key": "image",
+    "tags": [
+      {"value": "http://lesbainsdenahla.com/img/lbdn-photo.jpg", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Delphine Tourne", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "massage", "count": 1}], "count": 1},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapist", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 49 47 06", "count": 1}],
+    "count": 1
+  }
+]

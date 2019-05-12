@@ -1,0 +1,89 @@
+[
+  {"key": "craft", "tags": [{"value": "winery", "count": 40}], "count": 40},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.domainedubane.com/", "count": 1},
+      {"value": "http://buffavent.com", "count": 1},
+      {"value": "http://www.vins-domainedescollines.com/", "count": 1},
+      {"value": "http://cerdon-sandrine-bigot.com/", "count": 1},
+      {"value": "http://www.vigneantan.com", "count": 1},
+      {"value": "http://domainedesvigneaux.com", "count": 1},
+      {"value": "http://www.peylong.com/", "count": 1},
+      {"value": "http://cave-saint-desirat.com/", "count": 1},
+      {"value": "http://www.domainedechasselvins.com", "count": 1},
+      {"value": "http://www.leboucetlatreille.fr/", "count": 1},
+      {"value": "http://www.lasuzienne.com", "count": 1},
+      {"value": "http://www.lachambre.fr", "count": 1},
+      {"value": "http://www.la-cote-roannaise.com", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 36 92 47", "count": 1},
+      {"value": "+33475365048", "count": 1},
+      {"value": "+33475525191", "count": 1},
+      {"value": "+33 4 72 26 07 53", "count": 1},
+      {"value": "+33 4 75 04 48 38", "count": 1},
+      {"value": "+33 4 77 64 23 81", "count": 1},
+      {"value": "+33 4 77 64 45 56", "count": 1},
+      {"value": "+33 4 77 64 42 88", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Christelle et Fabien Lombard", "count": 1},
+      {"value": "Sandrine Bigot", "count": 1},
+      {"value": "Denis et Bernadette Fortin", "count": 1},
+      {"value": "Rémy Dirrig", "count": 1},
+      {"value": "Cédric Chignard", "count": 1},
+      {"value": "Messerli Fils", "count": 1},
+      {"value": "Dominique & Alain de Valence", "count": 1},
+      {"value": "Jean-François Pras", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "alcohol", "count": 5}, {"value": "wine", "count": 1}],
+    "count": 6
+  },
+  {"key": "alcohol", "tags": [{"value": "wine", "count": 2}], "count": 2},
+  {"key": "drink:wine", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "tourism",
+    "tags": [{"value": "wine_cellar", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:en",
+    "tags": [{"value": "organic and natural wines", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Vins biologiques et naturels", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Le Château de La Chambre, Chambre d'hôtes et producteur de vin Situé au cœur de la Côte Roannaise, est construit sur les premières assises des monts de la Madeleine et jouit ainsi des avantages que lui procure le voisinage de la plaine et de la montagne.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@lachambre.fr", "count": 1}],
+    "count": 1
+  }
+]

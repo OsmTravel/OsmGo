@@ -1,0 +1,16 @@
+[
+  {"key": "barrier", "tags": [{"value": "gate", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "barrier", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1941-12-15", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00101870", "count": 1}], "count": 1}
+]

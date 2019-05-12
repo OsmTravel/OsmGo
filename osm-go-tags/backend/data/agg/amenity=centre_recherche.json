@@ -1,0 +1,22 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "centre_recherche", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Orange Lab de Caen,travaille activement au développement des outils telecom de demain",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 2 31 93 57 26", "count": 1}],
+    "count": 1
+  }
+]

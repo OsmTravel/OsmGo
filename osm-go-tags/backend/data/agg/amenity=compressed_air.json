@@ -1,0 +1,36 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "compressed_air", "count": 26}],
+    "count": 26
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 11}, {"value": "yes", "count": 1}],
+    "count": 12
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "yes", "count": 2}, {"value": "permissive", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "valves",
+    "tags": [
+      {"value": "dunlop;regina;schrader;sclaverand", "count": 2},
+      {"value": "schrader", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "service:bicycle:pump",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Total Access", "count": 1}],
+    "count": 1
+  }
+]

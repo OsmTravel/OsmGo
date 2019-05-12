@@ -1,0 +1,27 @@
+[
+  {
+    "key": "email",
+    "tags": [{"value": "contact@gaia-energies.org", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "energy_information", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "community", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 84 21 10 69", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://gaia-energies.org", "count": 1}],
+    "count": 1
+  }
+]

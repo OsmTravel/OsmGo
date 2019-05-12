@@ -1,0 +1,8 @@
+[
+  {"key": "natural", "tags": [{"value": "mushroom", "count": 2}], "count": 2},
+  {
+    "key": "species:fr",
+    "tags": [{"value": "Pied de mouton", "count": 2}],
+    "count": 2
+  }
+]

@@ -1,0 +1,470 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "living_street", "count": 2211}],
+    "count": 2211
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "20", "count": 349},
+      {"value": "30", "count": 92},
+      {"value": "50", "count": 27},
+      {"value": "10", "count": 12},
+      {"value": "15", "count": 2}
+    ],
+    "count": 482
+  },
+  {
+    "key": "oneway",
+    "tags": [
+      {"value": "yes", "count": 321},
+      {"value": "no", "count": 136},
+      {"value": "-1", "count": 3}
+    ],
+    "count": 460
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 283},
+      {"value": "paved", "count": 18},
+      {"value": "sett", "count": 12},
+      {"value": "paving_stones", "count": 11},
+      {"value": "concrete", "count": 6},
+      {"value": "gravel", "count": 6},
+      {"value": "cobblestone", "count": 3},
+      {"value": "grass", "count": 3},
+      {"value": "compacted", "count": 3},
+      {"value": "unpaved", "count": 2},
+      {"value": "fine_gravel", "count": 1},
+      {"value": "good", "count": 1},
+      {"value": "concrete:lanes", "count": 1}
+    ],
+    "count": 350
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 145},
+      {"value": "yes", "count": 26},
+      {"value": "destination", "count": 16},
+      {"value": "no", "count": 13},
+      {"value": "permissive", "count": 9}
+    ],
+    "count": 209
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 116},
+      {"value": "permissive", "count": 18},
+      {"value": "designated", "count": 6},
+      {"value": "private", "count": 6},
+      {"value": "dismount", "count": 1}
+    ],
+    "count": 147
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 102},
+      {"value": "permissive", "count": 20},
+      {"value": "designated", "count": 14}
+    ],
+    "count": 136
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "opposite", "count": 95},
+      {"value": "no", "count": 12},
+      {"value": "opposite_lane", "count": 9},
+      {"value": "lane", "count": 1}
+    ],
+    "count": 117
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "yes", "count": 52},
+      {"value": "no", "count": 15},
+      {"value": "permissive", "count": 14},
+      {"value": "private", "count": 7},
+      {"value": "destination", "count": 3},
+      {"value": "delivery", "count": 1}
+    ],
+    "count": 92
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "alley", "count": 62},
+      {"value": "driveway", "count": 12},
+      {"value": "parking_aisle", "count": 11}
+    ],
+    "count": 85
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "384210095Z", "count": 3},
+      {"value": "381856620T", "count": 2},
+      {"value": "38544A083W", "count": 2},
+      {"value": "422183910R", "count": 2},
+      {"value": "381790515H", "count": 2},
+      {"value": "690090079X", "count": 2},
+      {"value": "380630070D", "count": 1},
+      {"value": "384210560E", "count": 1},
+      {"value": "014270520F", "count": 1},
+      {"value": "385441200R", "count": 1},
+      {"value": "385440444U", "count": 1},
+      {"value": "385440060B", "count": 1},
+      {"value": "382290275E", "count": 1},
+      {"value": "385440978Z", "count": 1},
+      {"value": "385440917H", "count": 1},
+      {"value": "385440234R", "count": 1},
+      {"value": "385440273H", "count": 1},
+      {"value": "385442003N", "count": 1},
+      {"value": "385440963H", "count": 1},
+      {"value": "385440994S", "count": 1},
+      {"value": "384210210Z", "count": 1},
+      {"value": "383990080D", "count": 1},
+      {"value": "382810038W", "count": 1},
+      {"value": "382810055P", "count": 1},
+      {"value": "381856110N", "count": 1},
+      {"value": "385400320B", "count": 1},
+      {"value": "382900195C", "count": 1},
+      {"value": "381810350V", "count": 1},
+      {"value": "38181A073N", "count": 1},
+      {"value": "690920240L", "count": 1},
+      {"value": "690090249G", "count": 1},
+      {"value": "384210150J", "count": 1},
+      {"value": "383480945R", "count": 1},
+      {"value": "383480715R", "count": 1},
+      {"value": "383480725B", "count": 1},
+      {"value": "010050358P", "count": 1},
+      {"value": "383470042N", "count": 1},
+      {"value": "690960332U", "count": 1},
+      {"value": "382490115U", "count": 1},
+      {"value": "381890640A", "count": 1},
+      {"value": "383370010X", "count": 1},
+      {"value": "382810062X", "count": 1},
+      {"value": "381890215N", "count": 1},
+      {"value": "741910092D", "count": 1},
+      {"value": "731810680P", "count": 1},
+      {"value": "690920554C", "count": 1},
+      {"value": "692640393E", "count": 1},
+      {"value": "691150180W", "count": 1},
+      {"value": "691150093B", "count": 1},
+      {"value": "01940198U", "count": 1},
+      {"value": "01940192M", "count": 1},
+      {"value": "385160240U", "count": 1},
+      {"value": "690090265Z", "count": 1},
+      {"value": "690090165R", "count": 1},
+      {"value": "690090051S", "count": 1},
+      {"value": "690090180G", "count": 1},
+      {"value": "742500600Z", "count": 1},
+      {"value": "385170230D", "count": 1},
+      {"value": "385400235J", "count": 1},
+      {"value": "383740810F", "count": 1},
+      {"value": "380630040W", "count": 1},
+      {"value": "38455A080E", "count": 1},
+      {"value": "381470371R", "count": 1},
+      {"value": "385410010K", "count": 1},
+      {"value": "383720390H", "count": 1},
+      {"value": "380140220E", "count": 1},
+      {"value": "381890220U", "count": 1},
+      {"value": "38281A010K", "count": 1},
+      {"value": "383990206R", "count": 1},
+      {"value": "383350490C", "count": 1},
+      {"value": "382810029L", "count": 1},
+      {"value": "381060123Z", "count": 1},
+      {"value": "421871910B", "count": 1},
+      {"value": "383700230T", "count": 1},
+      {"value": "730111000B", "count": 1},
+      {"value": "384860290D", "count": 1}
+    ],
+    "count": 83
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 68}], "count": 68},
+  {
+    "key": "lanes",
+    "tags": [{"value": "1", "count": 54}, {"value": "2", "count": 4}],
+    "count": 58
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 56}, {"value": "no", "count": 1}],
+    "count": 57
+  },
+  {
+    "key": "zone:maxspeed",
+    "tags": [{"value": "FR:30", "count": 32}, {"value": "FR:20", "count": 2}],
+    "count": 34
+  },
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "yes", "count": 20},
+      {"value": "no", "count": 6},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 28
+  },
+  {
+    "key": "cycleway:left",
+    "tags": [
+      {"value": "opposite", "count": 17},
+      {"value": "opposite_lane", "count": 6},
+      {"value": "shared_lane", "count": 2},
+      {"value": "share_busway", "count": 2},
+      {"value": "lane", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "oneway:bicycle",
+    "tags": [{"value": "no", "count": 25}],
+    "count": 25
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Va prochainement devenir une rue piétonne, dans le cadre de CVCM",
+        "count": 16
+      },
+      {
+        "value": "gros doutes sur l'exactitude du tracé et surtout sur la pertinence de living_street",
+        "count": 1
+      },
+      {"value": "nom chemin du... selon paneau local", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "no", "count": 10},
+      {"value": "both", "count": 4},
+      {"value": "none", "count": 2},
+      {"value": "left", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 128", "count": 3},
+      {"value": "D 269B", "count": 1},
+      {"value": "D 3", "count": 1},
+      {"value": "D 128b", "count": 1},
+      {"value": "C 22", "count": 1},
+      {"value": "D 35c", "count": 1},
+      {"value": "D 106", "count": 1},
+      {"value": "D 1206", "count": 1},
+      {"value": "D 531", "count": 1},
+      {"value": "D 200", "count": 1},
+      {"value": "D 78", "count": 1},
+      {"value": "D 77", "count": 1},
+      {"value": "D 30d", "count": 1},
+      {"value": "D 991d", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 11}, {"value": "-1", "count": 4}],
+    "count": 15
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "excellent", "count": 7},
+      {"value": "bad", "count": 4},
+      {"value": "intermediate", "count": 1},
+      {"value": "rough", "count": 1},
+      {"value": "good", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 13}], "count": 13},
+  {
+    "key": "piste:type",
+    "tags": [{"value": "downhill", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [{"value": "easy", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 11}, {"value": "boardwalk", "count": 1}],
+    "count": 12
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "building_passage", "count": 3}
+    ],
+    "count": 9
+  },
+  {
+    "key": "maxspeed:type",
+    "tags": [
+      {"value": "FR:zone30", "count": 6},
+      {"value": "sign", "count": 1},
+      {"value": "FR:urban", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "cycleway:right",
+    "tags": [
+      {"value": "lane", "count": 4},
+      {"value": "opposite", "count": 1},
+      {"value": "shared_lane", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "history",
+    "tags": [
+      {"value": "Retrieved from v2", "count": 6},
+      {"value": "Retrieved from v3", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "parking:lane:left",
+    "tags": [
+      {"value": "diagonal", "count": 3},
+      {"value": "no_parking", "count": 2},
+      {"value": "parallel", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 6}],
+    "count": 6
+  },
+  {"key": "construction", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {"key": "covered", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "amenity", "tags": [{"value": "parking", "count": 4}], "count": 4},
+  {
+    "key": "maxweight",
+    "tags": [{"value": "3.5", "count": 3}, {"value": "7.5t", "count": 1}],
+    "count": 4
+  },
+  {"key": "taxi", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "delivery", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "parking:lane:right",
+    "tags": [
+      {"value": "parallel", "count": 2},
+      {"value": "perpendicular", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "railway", "tags": [{"value": "abandoned", "count": 3}], "count": 3},
+  {
+    "key": "motorcar",
+    "tags": [{"value": "no", "count": 1}, {"value": "private", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "parking:condition:right",
+    "tags": [{"value": "ticket", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Editop", "count": 1},
+      {"value": "Merkaartor 0.11", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "cutting", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "trolley_wire", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "maxweight:conditional",
+    "tags": [{"value": "none @ delivery", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "name", "count": 1},
+      {
+        "value": "Vérifier direction sens unique voiture/vélo: SU de Martinière à Blandan et double sens cyclable sans bande",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "cycleway:both", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "motor_vehicle:conditional",
+    "tags": [{"value": "no @ Sa", "count": 1}],
+    "count": 1
+  },
+  {"key": "psv:backward", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "busway",
+    "tags": [{"value": "opposite_lane", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "parking:condition:time_interval",
+    "tags": [{"value": "Mo-Tu 00:00-24:00;Th-Sa 00:00-24:00", "count": 1}],
+    "count": 1
+  },
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "900", "count": 1}], "count": 1},
+  {"key": "supervised", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "vehicle",
+    "tags": [{"value": "destination", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "parking:condition:both",
+    "tags": [{"value": "free", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Rue Victor-Hugo (Lyon)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Zone de Rencontre (décret n° 2008-754 du 30 juillet 2008)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "est_width", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "segregated", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "traffic_calming",
+    "tags": [{"value": "table", "count": 1}],
+    "count": 1
+  }
+]

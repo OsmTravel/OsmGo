@@ -1,0 +1,132 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "nightclub", "count": 110}],
+    "count": 110
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.next-lounge.com/", "count": 1},
+      {"value": "http://www.loftclub.fr/", "count": 1},
+      {"value": "http://www.popplage.com/", "count": 1},
+      {
+        "value": "https://m.facebook.com/profile.php?id=691164247647685",
+        "count": 1
+      },
+      {"value": "http://www.fox-club-latino.com/", "count": 1},
+      {"value": "http://www.lavenue45.com", "count": 1},
+      {"value": "http://www.bar-labaiedesanges.fr", "count": 1},
+      {"value": "http://lebaronnightclub.fr/home.php", "count": 1},
+      {"value": "http://www.clubnumberone.com/", "count": 1},
+      {"value": "http://www.la-belle-electrique.com/", "count": 1},
+      {"value": "http://www.smac07.com", "count": 1},
+      {"value": "http://www.espace-palace.com", "count": 1},
+      {"value": "http://nikyz.com", "count": 1},
+      {"value": "http://www.cabaret-elegance.fr", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 23 82 17 92", "count": 1},
+      {"value": "+33 4 50 49 18 02", "count": 1},
+      {"value": "+33 4 78 69 42 77", "count": 1},
+      {"value": "+33 6 67 25 57 02", "count": 1},
+      {"value": "+33 6 68 40 50 30", "count": 1},
+      {"value": "+33 9 50 78 07 12", "count": 1},
+      {"value": "+33 4 50 19 19 73", "count": 1},
+      {"value": "+33 6 51 74 38 75", "count": 1},
+      {"value": "+33 4 69 98 00 38 (mardi/vendredi 13h-18h)", "count": 1},
+      {"value": "+33 4 75 33 15 54", "count": 1},
+      {"value": "+33 4 79 62 31 46", "count": 1},
+      {"value": "+33 4 79 35 16 76", "count": 1},
+      {"value": "+33 4 77 67 67 67", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 4}, {"value": "yes", "count": 4}],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Website invalide (http://www.leretro26.fr/)", "count": 1},
+      {"value": "music venue", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La SMAC07", "count": 1},
+      {"value": "SARL Le Dancing", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "gay",
+    "tags": [{"value": "yes", "count": 1}, {"value": "welcome", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {"value": "Salle de concert - Bar", "count": 1},
+      {"value": "Ecole de danse.", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "isolated", "count": 1},
+      {"value": "outside", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Cabaret", "count": 1},
+      {
+        "value": "Ses missions de service public à l'oeuvre sur le territoire - l’organisation de concerts et de festivals;- le soutien à la création par l’accueil d’artistes en résidence;- l’accompagnement de la pratique musicale et des projets musicaux;la réalisati",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Bar à hôtesses la semaine, bar dansant avec DJ le week-end.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "hammam", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "cuisine", "tags": [{"value": "regional", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "barlebaron@yahoo.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 50 49 19 67", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "10pin", "count": 1}], "count": 1}
+]

@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "port", "count": 2}], "count": 2},
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1}
+]

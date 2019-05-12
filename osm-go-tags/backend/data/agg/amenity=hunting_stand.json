@@ -1,0 +1,56 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "hunting_stand", "count": 58}],
+    "count": 58
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "half", "count": 6},
+      {"value": "2", "count": 5},
+      {"value": "3", "count": 4},
+      {"value": "4", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "6", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "2 ?", "count": 1},
+      {"value": "19", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "18", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "hide",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "shelter",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "1 place", "count": 1},
+      {
+        "value": "N° incertain : sur un arbre proche, pas directement sur l'affut. Autre chose ?",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "lockable", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "sport", "tags": [{"value": "shooting", "count": 1}], "count": 1},
+  {"key": "ladder", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

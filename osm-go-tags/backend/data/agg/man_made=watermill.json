@@ -1,0 +1,66 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "watermill", "count": 24}],
+    "count": 24
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "ruins", "count": 6},
+      {"value": "watermill", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA01000014", "count": 1},
+      {"value": "PA01000032", "count": 1},
+      {"value": "PA38000005", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3325614", "count": 1},
+      {"value": "Q3325578", "count": 1},
+      {"value": "Q22996661", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2005-05-30", "count": 1},
+      {"value": "1997-03-03", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Moulin de Crève-Cœur", "count": 1},
+      {"value": "fr:Moulin Girard", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "watermill:disused",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  }
+]

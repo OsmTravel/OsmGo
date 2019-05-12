@@ -1,0 +1,9 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "pumping_station", "count": 2}],
+    "count": 2
+  },
+  {"key": "type", "tags": [{"value": "wastewater", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "wire_fence", "count": 1}], "count": 1}
+]

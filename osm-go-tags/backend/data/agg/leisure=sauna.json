@@ -1,0 +1,39 @@
+[
+  {"key": "leisure", "tags": [{"value": "sauna", "count": 81}], "count": 81},
+  {"key": "access", "tags": [{"value": "private", "count": 69}], "count": 69},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "swingerclub", "count": 1},
+      {"value": "public_bath", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lespadespins-davezieux.fr/", "count": 1},
+      {"value": "https://www.nomad-et-sens.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "massage", "count": 1}, {"value": "beauty", "count": 1}],
+    "count": 2
+  },
+  {"key": "note", "tags": [{"value": "Hammam", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Espace bien-être Spa Hamman", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "1980", "count": 1}], "count": 1},
+  {"key": "bath:type", "tags": [{"value": "hammam", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "SARL AMAN-IMAN", "count": 1}],
+    "count": 1
+  }
+]

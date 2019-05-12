@@ -1,0 +1,9 @@
+[
+  {"key": "man_made", "tags": [{"value": "reservoir", "count": 7}], "count": 7},
+  {"key": "natural", "tags": [{"value": "water", "count": 1}], "count": 1},
+  {
+    "key": "emergency",
+    "tags": [{"value": "water_tank", "count": 1}],
+    "count": 1
+  }
+]

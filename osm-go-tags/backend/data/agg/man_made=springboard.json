@@ -1,0 +1,9 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "springboard", "count": 1}],
+    "count": 1
+  },
+  {"key": "material", "tags": [{"value": "wood", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "cycling", "count": 1}], "count": 1}
+]

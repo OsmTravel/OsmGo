@@ -1,0 +1,52 @@
+[
+  {"key": "healthcare", "tags": [{"value": "clinic", "count": 7}], "count": 7},
+  {"key": "amenity", "tags": [{"value": "clinic", "count": 6}], "count": 6},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 90 38 42", "count": 1},
+      {"value": "+41 22 719 74 00", "count": 1},
+      {"value": "+41 22 782 58 48", "count": 1},
+      {"value": "+33 4 72 83 49 17", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cliniquedumail.fr/meylan.php", "count": 1},
+      {"value": "https://www.la-tour.ch", "count": 1},
+      {"value": "https://xray-radiologie.ch", "count": 1},
+      {"value": "https://www.cerk.fr/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "radiology", "count": 1},
+      {"value": "ophthalmology", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 76 90 13 23", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality:radiology",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality:mammography",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality:ultrasonography",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

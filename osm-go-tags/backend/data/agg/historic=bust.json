@@ -1,0 +1,13 @@
+[
+  {"key": "historic", "tags": [{"value": "bust", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [
+      {
+        "value": "À la mémoire de Daviais Jean-Baptiste\nNé à Rezé le 21 juillet 1878\nDéporté politique au camp de Dachau, Allemagne où il est mort victime de la barbarie nazie e, janvier 1945\nPrésident - fondateur des amicales laïques de la Loire-Inférieure",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {"key": "amenity", "tags": [{"value": "fablab", "count": 5}], "count": 5},
+  {
+    "key": "leisure",
+    "tags": [{"value": "hackerspace", "count": 4}],
+    "count": 4
+  },
+  {"key": "network", "tags": [{"value": "FabLab", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://mysunlab.org", "count": 1},
+      {"value": "https://atallier.eu/", "count": 1},
+      {"value": "http://www.fablab-descartes.com/", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "shop", "tags": [{"value": "computer", "count": 1}], "count": 1},
+  {"key": "hazard", "tags": [{"value": "robot", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@mysunlab.org", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "Viroflay", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 1 60 53 62 45", "count": 1}],
+    "count": 1
+  },
+  {"key": "workshop", "tags": [{"value": "fablab", "count": 1}], "count": 1},
+  {
+    "key": "craft",
+    "tags": [{"value": "electronics_repair", "count": 1}],
+    "count": 1
+  }
+]

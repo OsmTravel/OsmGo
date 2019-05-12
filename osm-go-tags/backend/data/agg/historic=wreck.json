@@ -1,0 +1,37 @@
+[
+  {"key": "historic", "tags": [{"value": "wreck", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Fixeme : what tag to use ? See Tag:historic=wreck, OpenSeaMap/Wrecks, Tag:sport=scuba_diving in the wiki",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:depth",
+    "tags": [{"value": "42", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:type:wreck",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "seamark:type", "tags": [{"value": "wreck", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "scuba_diving", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3080563", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:France (bateau à aubes)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wreck:date_sunk",
+    "tags": [{"value": "1971-03-12", "count": 1}],
+    "count": 1
+  },
+  {"key": "wreck:depth", "tags": [{"value": "42", "count": 1}], "count": 1}
+]

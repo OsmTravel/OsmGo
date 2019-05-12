@@ -1,0 +1,59 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "tree_row", "count": 4615}],
+    "count": 4615
+  },
+  {
+    "key": "leaf_type",
+    "tags": [
+      {"value": "broadleaved", "count": 519},
+      {"value": "needleleaved", "count": 56},
+      {"value": "mixed", "count": 8}
+    ],
+    "count": 583
+  },
+  {
+    "key": "leaf_cycle",
+    "tags": [
+      {"value": "deciduous", "count": 395},
+      {"value": "evergreen", "count": 52},
+      {"value": "mixed", "count": 5}
+    ],
+    "count": 452
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "10", "count": 9},
+      {"value": "6", "count": 5},
+      {"value": "8", "count": 4},
+      {"value": "5", "count": 2}
+    ],
+    "count": 20
+  },
+  {
+    "key": "genus:fr",
+    "tags": [
+      {"value": "Platane", "count": 4},
+      {"value": "accacia", "count": 4}
+    ],
+    "count": 8
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "postions exactes des arbres", "count": 4},
+      {"value": "chemins sur le cadastre", "count": 3}
+    ],
+    "count": 7
+  },
+  {"key": "genus", "tags": [{"value": "Platanus", "count": 6}], "count": 6},
+  {"key": "wall", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "denotation", "tags": [{"value": "urban", "count": 3}], "count": 3},
+  {"key": "waterway", "tags": [{"value": "drain", "count": 2}], "count": 2},
+  {"key": "barrier", "tags": [{"value": "hedge", "count": 2}], "count": 2},
+  {"key": "trees_number", "tags": [{"value": "5", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "track", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "forest", "count": 1}], "count": 1}
+]

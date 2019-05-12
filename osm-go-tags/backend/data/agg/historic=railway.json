@@ -1,0 +1,22 @@
+[
+  {"key": "railway", "tags": [{"value": "rail", "count": 29}], "count": 29},
+  {"key": "historic", "tags": [{"value": "railway", "count": 29}], "count": 29},
+  {
+    "key": "railway:preserved",
+    "tags": [{"value": "yes", "count": 29}],
+    "count": 29
+  },
+  {"key": "gauge", "tags": [{"value": "1000", "count": 26}], "count": 26},
+  {"key": "electrified", "tags": [{"value": "no", "count": 19}], "count": 19},
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "2", "count": 5},
+      {"value": "1", "count": 4},
+      {"value": "-1", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

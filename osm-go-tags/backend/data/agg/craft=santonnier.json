@@ -1,0 +1,9 @@
+[
+  {"key": "craft", "tags": [{"value": "santonnier", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "2341Z", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "322195082", "count": 1}],
+    "count": 1
+  }
+]

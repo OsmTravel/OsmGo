@@ -1,0 +1,78 @@
+[
+  {"key": "amenity", "tags": [{"value": "prison", "count": 16}], "count": 16},
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "wall", "count": 3},
+      {"value": "fence", "count": 3},
+      {"value": "retaining_wall", "count": 1},
+      {"value": "city_wall", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Maison d'arrêt de Villefranche-sur-Saône", "count": 1},
+      {"value": "fr:Centre de rétention administrative en France", "count": 1},
+      {"value": "fr:Maison d'arrêt de Lyon-Corbas", "count": 1},
+      {
+        "value": "fr:Centre pénitentiaire de Saint-Quentin-Fallavier",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.annuaires.justice.gouv.fr/etablissements-penitentiaires-10113/direction-interregionale-de-lyon-10125/grenoble-ma-10775.html",
+        "count": 1
+      },
+      {"value": "http://www.annuaires.justice.gouv.fr/", "count": 1},
+      {
+        "value": "http://www.annuaires.justice.gouv.fr/etablissements-penitentiaires-10113/direction-interregionale-de-lyon-10125/saint-quentin-fallavier-10778.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.annuaires.justice.gouv.fr/etablissements-penitentiaires-10113/direction-interregionale-de-lyon-10125/grenoble-10774.html",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3279241", "count": 1},
+      {"value": "Q24934095", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Bad wikipedia link: Centre de rétention administrative en France",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Prison pour mineur de Meyzieu", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "owner",
+    "tags": [{"value": "Administration Pénitentiaire", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 95 95 10", "count": 1}],
+    "count": 1
+  }
+]

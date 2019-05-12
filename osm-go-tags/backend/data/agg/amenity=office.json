@@ -1,0 +1,20 @@
+[
+  {"key": "shop", "tags": [{"value": "computer", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "it", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "office", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.befox.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Entreprise du Numérique Libre. Créateur de sites internet.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

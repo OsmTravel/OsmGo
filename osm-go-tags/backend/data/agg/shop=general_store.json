@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "general_store", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.conforama.fr/magasins-conforama/VELIZY?lat=0&long=0&name=VELIZY",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

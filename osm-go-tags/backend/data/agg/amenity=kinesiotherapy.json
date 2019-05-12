@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "kinesiotherapy", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_specialty",
+    "tags": [{"value": "manual_therapy", "count": 1}],
+    "count": 1
+  }
+]

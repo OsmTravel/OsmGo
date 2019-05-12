@@ -1,0 +1,71 @@
+[
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116296", "count": 1},
+      {"value": "PA00116904", "count": 1},
+      {"value": "PA00116444", "count": 1},
+      {"value": "PA00117774", "count": 1},
+      {"value": "PA00116575", "count": 1},
+      {"value": "PA00116347", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 4}, {"value": "2", "count": 2}],
+    "count": 6
+  },
+  {"key": "historic", "tags": [{"value": "chapel", "count": 6}], "count": 6},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2957153", "count": 1},
+      {"value": "Q22966787", "count": 1},
+      {"value": "Q2957229", "count": 1},
+      {"value": "Q3580426", "count": 1},
+      {"value": "Q2957216", "count": 1},
+      {"value": "Q2957174", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Chapelle d'Épaisse", "count": 1},
+      {"value": "fr:Chapelle inférieure de Chantemerle-les-Blés", "count": 1},
+      {"value": "fr:Chapelle de Mornay", "count": 1},
+      {"value": "fr:Église Notre-Dame-du-Son de Saint-Paul", "count": 1},
+      {"value": "fr:Chapelle de Marcilleux", "count": 1},
+      {"value": "fr:Chapelle de Châtillon-de-Cornelle", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1982", "count": 2},
+      {"value": "1926-07-13", "count": 1},
+      {"value": "1981-02-06", "count": 1},
+      {"value": "1944", "count": 1},
+      {"value": "1986", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "place_of_worship", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 3}],
+    "count": 3
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 3}], "count": 3}
+]

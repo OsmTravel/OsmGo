@@ -1,0 +1,27 @@
+[
+  {"key": "craft", "tags": [{"value": "optician", "count": 5}], "count": 5},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 93 01 29", "count": 1},
+      {"value": "+33 4 77 24 01 95", "count": 1},
+      {"value": "+33477325877", "count": 1},
+      {"value": "+33 4 72901923", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "shop", "tags": [{"value": "optician", "count": 4}], "count": 4},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.optiqueberjallienne.fr/", "count": 1},
+      {"value": "http://www.optiqueboen.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "optiquebellevue3@wanadoo.fr", "count": 1}],
+    "count": 1
+  }
+]

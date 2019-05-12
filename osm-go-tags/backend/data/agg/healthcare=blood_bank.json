@@ -1,0 +1,12 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "blood_bank", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Etablissement Français du Sang", "count": 1}],
+    "count": 1
+  }
+]

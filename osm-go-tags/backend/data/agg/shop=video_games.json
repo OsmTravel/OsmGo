@@ -1,0 +1,85 @@
+[
+  {"key": "shop", "tags": [{"value": "video_games", "count": 24}], "count": 24},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://fr-fr.facebook.com/noloadingvienne", "count": 1},
+      {"value": "http://www.games-workshop.com/", "count": 1},
+      {"value": "http://www.gamespirit.fr/", "count": 1},
+      {"value": "http://lyon-bron.metropolis-bowling-laser.com/", "count": 1},
+      {
+        "value": "https://www.micromania.fr/magasin/345/caluire.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/micromania-micromania-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Micromania",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 20 44 95", "count": 1},
+      {"value": "+33 4 78 60 32 20", "count": 1},
+      {"value": "+33 4 72749228", "count": 1},
+      {"value": "+33476254669", "count": 1},
+      {"value": "+33 4 38 70 02 04", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 3}, {"value": "1", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Micromania", "count": 2},
+      {"value": "Dock Games", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@gamespirit.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "second_hand", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.gamecash.fr/magasin-gamecash-saint-etienne-m111.html",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Aussi billard, jeux d'arcades, bar.", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "theme_park", "count": 1}], "count": 1},
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Micromania", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "amusement_arcade", "count": 1}],
+    "count": 1
+  }
+]

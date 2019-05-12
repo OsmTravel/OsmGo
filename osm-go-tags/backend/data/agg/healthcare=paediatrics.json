@@ -1,0 +1,17 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "paediatrics", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 1 42 81 90 96", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Département des Landes", "count": 1}],
+    "count": 1
+  }
+]

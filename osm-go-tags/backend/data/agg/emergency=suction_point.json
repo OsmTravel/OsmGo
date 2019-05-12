@@ -1,0 +1,8 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "suction_point", "count": 5}],
+    "count": 5
+  },
+  {"key": "note", "tags": [{"value": "déversoir", "count": 1}], "count": 1}
+]

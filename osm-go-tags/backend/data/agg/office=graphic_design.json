@@ -1,0 +1,12 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 65 71 29", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "graphic_design", "count": 1}],
+    "count": 1
+  }
+]

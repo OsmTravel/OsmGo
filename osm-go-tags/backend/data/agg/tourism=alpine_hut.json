@@ -1,0 +1,614 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "alpine_hut", "count": 278}],
+    "count": 278
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1190", "count": 4},
+      {"value": "1620", "count": 3},
+      {"value": "2516", "count": 3},
+      {"value": "1735", "count": 2},
+      {"value": "2110", "count": 2},
+      {"value": "2523", "count": 2},
+      {"value": "1350", "count": 2},
+      {"value": "2032", "count": 2},
+      {"value": "2352", "count": 2},
+      {"value": "1600", "count": 2},
+      {"value": "1974", "count": 1},
+      {"value": "1981", "count": 1},
+      {"value": "2135", "count": 1},
+      {"value": "2112", "count": 1},
+      {"value": "2841", "count": 1},
+      {"value": "2431", "count": 1},
+      {"value": "1446", "count": 1},
+      {"value": "2487", "count": 1},
+      {"value": "2233", "count": 1},
+      {"value": "2500", "count": 1},
+      {"value": "3364", "count": 1},
+      {"value": "981", "count": 1},
+      {"value": "2270", "count": 1},
+      {"value": "2430", "count": 1},
+      {"value": "1870", "count": 1},
+      {"value": "2260", "count": 1},
+      {"value": "1265", "count": 1},
+      {"value": "2771", "count": 1},
+      {"value": "1461", "count": 1},
+      {"value": "1187", "count": 1},
+      {"value": "2136", "count": 1},
+      {"value": "1400", "count": 1},
+      {"value": "1800", "count": 1},
+      {"value": "1338", "count": 1},
+      {"value": "1490", "count": 1},
+      {"value": "2606", "count": 1},
+      {"value": "2410", "count": 1},
+      {"value": "1734", "count": 1},
+      {"value": "2747", "count": 1},
+      {"value": "1873", "count": 1},
+      {"value": "2595", "count": 1},
+      {"value": "2062", "count": 1},
+      {"value": "2687", "count": 1},
+      {"value": "1836", "count": 1},
+      {"value": "1911", "count": 1},
+      {"value": "2210", "count": 1},
+      {"value": "2591", "count": 1},
+      {"value": "1365", "count": 1},
+      {"value": "1110", "count": 1},
+      {"value": "2020", "count": 1},
+      {"value": "1608", "count": 1},
+      {"value": "2806", "count": 1},
+      {"value": "2363", "count": 1},
+      {"value": "1900", "count": 1},
+      {"value": "1502", "count": 1},
+      {"value": "2114", "count": 1},
+      {"value": "1500", "count": 1},
+      {"value": "1952", "count": 1},
+      {"value": "1827", "count": 1},
+      {"value": "1700", "count": 1},
+      {"value": "3073", "count": 1},
+      {"value": "1425", "count": 1},
+      {"value": "2007", "count": 1},
+      {"value": "1810", "count": 1},
+      {"value": "1470", "count": 1},
+      {"value": "3051", "count": 1},
+      {"value": "1706", "count": 1},
+      {"value": "1970", "count": 1},
+      {"value": "2760", "count": 1},
+      {"value": "1481", "count": 1},
+      {"value": "1909", "count": 1},
+      {"value": "2191", "count": 1},
+      {"value": "1610", "count": 1},
+      {"value": "1671", "count": 1},
+      {"value": "1533", "count": 1},
+      {"value": "2164", "count": 1},
+      {"value": "1554", "count": 1},
+      {"value": "2240", "count": 1},
+      {"value": "1550", "count": 1},
+      {"value": "2056", "count": 1},
+      {"value": "1830", "count": 1},
+      {"value": "3382", "count": 1},
+      {"value": "3329", "count": 1},
+      {"value": "1763", "count": 1},
+      {"value": "2029", "count": 1},
+      {"value": "2354", "count": 1},
+      {"value": "1839", "count": 1},
+      {"value": "1996", "count": 1},
+      {"value": "2412", "count": 1},
+      {"value": "2443", "count": 1},
+      {"value": "3613", "count": 1},
+      {"value": "2350m", "count": 1},
+      {"value": "1573", "count": 1},
+      {"value": "2009", "count": 1},
+      {"value": "1491", "count": 1},
+      {"value": "2577", "count": 1},
+      {"value": "1200", "count": 1},
+      {"value": "1164", "count": 1},
+      {"value": "1368", "count": 1},
+      {"value": "1886", "count": 1},
+      {"value": "2711", "count": 1},
+      {"value": "2280", "count": 1},
+      {"value": "1776", "count": 1},
+      {"value": "1924", "count": 1},
+      {"value": "1750", "count": 1},
+      {"value": "3835", "count": 1},
+      {"value": "3167", "count": 1},
+      {"value": "1564", "count": 1},
+      {"value": "1360", "count": 1},
+      {"value": "2578", "count": 1},
+      {"value": "3092", "count": 1},
+      {"value": "1458", "count": 1},
+      {"value": "1902", "count": 1},
+      {"value": "2750", "count": 1},
+      {"value": "2520", "count": 1},
+      {"value": "2680", "count": 1},
+      {"value": "1380", "count": 1},
+      {"value": "2060", "count": 1},
+      {"value": "2182", "count": 1}
+    ],
+    "count": 133
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3423176", "count": 1},
+      {"value": "Q2017305", "count": 1},
+      {"value": "Q3423244", "count": 1},
+      {"value": "Q3423222", "count": 1},
+      {"value": "Q3423197", "count": 1},
+      {"value": "Q1578333", "count": 1},
+      {"value": "Q3423171", "count": 1},
+      {"value": "Q3423247", "count": 1},
+      {"value": "Q888827", "count": 1},
+      {"value": "Q3423215", "count": 1},
+      {"value": "Q3423262", "count": 1},
+      {"value": "Q3423241", "count": 1},
+      {"value": "Q3423253", "count": 1},
+      {"value": "Q3423122", "count": 1},
+      {"value": "Q3423219", "count": 1},
+      {"value": "Q3423260", "count": 1},
+      {"value": "Q795094", "count": 1},
+      {"value": "Q3423181", "count": 1},
+      {"value": "Q3935593", "count": 1},
+      {"value": "Q263991", "count": 1},
+      {"value": "Q3423233", "count": 1},
+      {"value": "Q3423267", "count": 1},
+      {"value": "Q1724323", "count": 1},
+      {"value": "Q888836", "count": 1},
+      {"value": "Q795215", "count": 1},
+      {"value": "Q3423257", "count": 1},
+      {"value": "Q3423127", "count": 1},
+      {"value": "Q677748", "count": 1},
+      {"value": "Q3423188", "count": 1},
+      {"value": "Q968328", "count": 1},
+      {"value": "Q3423201", "count": 1},
+      {"value": "Q3423198", "count": 1},
+      {"value": "Q16510603", "count": 1},
+      {"value": "Q888850", "count": 1},
+      {"value": "Q788233", "count": 1},
+      {"value": "Q3423256", "count": 1},
+      {"value": "Q942684", "count": 1},
+      {"value": "Q3423196", "count": 1},
+      {"value": "Q2028701", "count": 1},
+      {"value": "Q3423232", "count": 1},
+      {"value": "Q3423193", "count": 1},
+      {"value": "Q16595084", "count": 1},
+      {"value": "Q3423199", "count": 1},
+      {"value": "Q3423175", "count": 1},
+      {"value": "Q3423208", "count": 1},
+      {"value": "Q3423184", "count": 1},
+      {"value": "Q3423239", "count": 1},
+      {"value": "Q3423183", "count": 1},
+      {"value": "Q3423248", "count": 1},
+      {"value": "Q3423228", "count": 1},
+      {"value": "Q3423238", "count": 1},
+      {"value": "Q764686", "count": 1},
+      {"value": "Q3423192", "count": 1},
+      {"value": "Q3423169", "count": 1},
+      {"value": "Q3423249", "count": 1},
+      {"value": "Q1984983", "count": 1},
+      {"value": "Q1546323", "count": 1},
+      {"value": "Q945294", "count": 1},
+      {"value": "Q795102", "count": 1},
+      {"value": "Q843853", "count": 1},
+      {"value": "Q1152206", "count": 1},
+      {"value": "Q3935411", "count": 1},
+      {"value": "Q3423255", "count": 1},
+      {"value": "Q1756017", "count": 1},
+      {"value": "Q3423178", "count": 1},
+      {"value": "Q16510594", "count": 1}
+    ],
+    "count": 66
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Club Alpin Français", "count": 10},
+      {"value": "CAF", "count": 8},
+      {"value": "Eric Chattard", "count": 4},
+      {"value": "privé", "count": 1},
+      {"value": "CAI", "count": 1},
+      {"value": "commune de pinsot", "count": 1},
+      {"value": "Mairie de Vallorcine", "count": 1},
+      {
+        "value": "Fédération Française des Clubs Alpins et de Montagne",
+        "count": 1
+      },
+      {"value": "Club Alpin Léman", "count": 1},
+      {"value": "Les Amis de la Nature de Thonon et du Chablais", "count": 1},
+      {"value": "Patrice et Cécile Lavocat", "count": 1},
+      {"value": "Michel & Martine Gayet", "count": 1},
+      {"value": "Bruno Pezet", "count": 1},
+      {"value": "Club Alpin Français section de Chamonix", "count": 1},
+      {"value": "Régina Bibollet", "count": 1},
+      {"value": "Jean-Pierre Baud", "count": 1},
+      {"value": "Refuge Lo Tsamou", "count": 1},
+      {"value": "RCS Grenoble", "count": 1},
+      {"value": "Madeleine Vénéra", "count": 1},
+      {"value": "Marie Palamara", "count": 1},
+      {"value": "Section de Genève du Club Alpin Suisse", "count": 1},
+      {"value": "Lionel Didier", "count": 1},
+      {"value": "Compagnie des Guides de Chamonix", "count": 1},
+      {"value": "Commune de Bozel", "count": 1},
+      {"value": "Louison Brunet & Benoit Michon", "count": 1},
+      {"value": "Compagnie des guides de Chamonix", "count": 1},
+      {"value": "Nathalie et Benoît Bouvet", "count": 1},
+      {"value": "Roland et Elisabeth Mogenier", "count": 1},
+      {"value": "Mr et Mme Michel NACHON", "count": 1},
+      {"value": "Dominique et Doriane Rabot", "count": 1},
+      {"value": "Claudius Felisaz", "count": 1},
+      {"value": "Dominique Navillod", "count": 1}
+    ],
+    "count": 51
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Refuge de Platé", "count": 1},
+      {"value": "fr:Refuge du Plan de l'Aiguille", "count": 1},
+      {"value": "fr:Refuge de la Charpoua", "count": 1},
+      {"value": "fr:Refuge de Leschaux", "count": 1},
+      {"value": "fr:Refuge du Mont-Thabor", "count": 1},
+      {"value": "fr:Refuge Durier", "count": 1},
+      {"value": "fr:Refuge des Aiguilles d'Arves", "count": 1},
+      {"value": "fr:Refuge d'Argentière", "count": 1},
+      {"value": "it:Rifugio Pian della Ballotta", "count": 1},
+      {"value": "fr:Refuge des Conscrits", "count": 1},
+      {"value": "fr:Refuge du Châtelleret", "count": 1},
+      {"value": "it:Rifugio Luigi Vaccarone", "count": 1},
+      {"value": "en:Couvercle Hut", "count": 1},
+      {"value": "fr:Refuge de Véran", "count": 1},
+      {"value": "fr:Refuge de la Dent d'Oche", "count": 1},
+      {"value": "fr:Refuge du Grenairon", "count": 1},
+      {"value": "it:Rifugio Francesco Gonella", "count": 1},
+      {"value": "it:Rifugio Gabriele Boccalatte e Mario Piolti", "count": 1},
+      {"value": "fr:Refuge Alfred Wills", "count": 1},
+      {"value": "fr:Refuge du Requin", "count": 1},
+      {"value": "en:Grands Mulets Hut", "count": 1},
+      {"value": "fr:Refuge de Tré la Tête", "count": 1},
+      {"value": "fr:Refuge du Carro", "count": 1},
+      {"value": "fr:Refuge du Folly", "count": 1},
+      {"value": "it:Rifugio Torino", "count": 1},
+      {"value": "fr:Refuge du Col de la Croix du Bonhomme", "count": 1},
+      {"value": "en:Cosmiques Hut", "count": 1},
+      {"value": "fr:Refuge Albert Ier", "count": 1},
+      {"value": "fr:Refuge du Goûter", "count": 1},
+      {"value": "fr:Refuge de Tête Rousse", "count": 1},
+      {"value": "it:Rifugio Avanzà", "count": 1},
+      {"value": "fr:Refuge du Promontoire", "count": 1},
+      {"value": "fr:Refuge Robert Blanc", "count": 1},
+      {"value": "fr:Refuge de Presset", "count": 1},
+      {"value": "fr:Refuge de Plan Glacier", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.rivobruenti.fr", "count": 4},
+      {"value": "http://refugedelapra.com/", "count": 1},
+      {"value": "http://ruitor.com/", "count": 1},
+      {"value": "http://www.refuge7.com/", "count": 1},
+      {
+        "value": "http://www.refuges.info/point/3738/cabane-non-gardee/Pilat-Velay-Vivarais/Chalet-Bourguisan-G-Duclos/",
+        "count": 1
+      },
+      {"value": "https://cimalpes.ski/fr/", "count": 1},
+      {"value": "http://www.refugedesmarches.com", "count": 1},
+      {"value": "http://www.rifugiovaccarone.eu/", "count": 1},
+      {"value": "http://www.rifugiogonella.com/", "count": 1},
+      {"value": "http://refugedurequin.ffcam.fr/", "count": 1},
+      {"value": "http://www.refuge-nantborrant.com/", "count": 1},
+      {"value": "http://www.trelatete.com/", "count": 1},
+      {"value": "http://refugearpettaz.com/", "count": 1},
+      {"value": "http://www.les-mouterres.com/", "count": 1},
+      {"value": "http://www.refugelanova.com/", "count": 1},
+      {"value": "http://www.giteleschuss.com/", "count": 1},
+      {"value": "http://lerefugedubonhomme.free.fr", "count": 1},
+      {
+        "value": "http://www.ot-bozel.com/refuge-le-mont-jovet.html",
+        "count": 1
+      },
+      {"value": "http://www.refuge-balme-tarentaise.fr", "count": 1},
+      {"value": "http://chaletdescontamines.ffcam.fr/", "count": 1},
+      {"value": "http://refugealbert1er.ffcam.fr/", "count": 1},
+      {"value": "http://www.refugedelafare.com/", "count": 1},
+      {"value": "www.refugedugouter.ffcam.fr", "count": 1},
+      {"value": "www.refugeteterousse.ffcam.fr", "count": 1},
+      {"value": "http://refugedemiage.com/", "count": 1},
+      {"value": "http://www.auberge-bionnassay.com", "count": 1},
+      {"value": "http://planlombardie.fr/", "count": 1},
+      {"value": "http://refugerobertblanc.fr/", "count": 1},
+      {"value": "http://www.cabaneduvieux.ch", "count": 1},
+      {"value": "http://refugeplanglacier.fr", "count": 1},
+      {"value": "http://www.refuge-terre-rouge.fr/fr/index.aspx", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 14 57 03 95", "count": 4},
+      {"value": "+33 4 76 80 24 12", "count": 1},
+      {"value": "+33 4 77 39 60 40", "count": 1},
+      {"value": "+33 4 77 76 83 86", "count": 1},
+      {"value": "+33 4 79 08 21 09", "count": 1},
+      {"value": "+33 4 79 05 02 26", "count": 1},
+      {"value": "+33 9 01 22 32 26", "count": 1},
+      {"value": "+39 348 7932330", "count": 1},
+      {"value": "+33 4 79 31 47 91", "count": 1},
+      {"value": "+33 4 76 80 24 05", "count": 1},
+      {"value": "+33 479890715", "count": 1},
+      {"value": "+33 4 76 80 46 60", "count": 1},
+      {"value": "+33 4 50 54 40 16", "count": 1},
+      {"value": "+33479081120", "count": 1},
+      {"value": "+33 4 50 47 00 88", "count": 1},
+      {"value": "+33 6 74 85 12 77", "count": 1},
+      {"value": "+33 4 50 54 40 93", "count": 1},
+      {"value": "+33 4 50 58 24 97", "count": 1},
+      {"value": "+33 4 50 53 49 14", "count": 1},
+      {"value": "+33 4 79 07 24 22", "count": 1},
+      {"value": "0793429566", "count": 1},
+      {"value": "+33 7 78 69 59 05", "count": 1},
+      {"value": "+33 9 88 18 79 03", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "no", "count": 22},
+      {"value": "yes", "count": 1},
+      {"value": "wlan", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "15", "count": 3},
+      {"value": "120", "count": 2},
+      {"value": "30", "count": 2},
+      {"value": "12", "count": 2},
+      {"value": "25", "count": 1},
+      {"value": "68", "count": 1},
+      {"value": "49", "count": 1},
+      {"value": "23", "count": 1},
+      {"value": "45", "count": 1},
+      {"value": "70", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "53", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "140", "count": 1},
+      {"value": "50", "count": 1},
+      {"value": "40", "count": 1},
+      {"value": "72", "count": 1},
+      {"value": "28", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "beds",
+    "tags": [
+      {"value": "25", "count": 2},
+      {"value": "20", "count": 2},
+      {"value": "35", "count": 2},
+      {"value": "54", "count": 2},
+      {"value": "58", "count": 2},
+      {"value": "28", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "52", "count": 1},
+      {"value": "27", "count": 1},
+      {"value": "73", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "70", "count": 1},
+      {"value": "74", "count": 1},
+      {"value": "97", "count": 1},
+      {"value": "41", "count": 1},
+      {"value": "32", "count": 1},
+      {"value": "18", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "shower",
+    "tags": [{"value": "yes", "count": 14}, {"value": "no", "count": 4}],
+    "count": 18
+  },
+  {
+    "key": "reservation",
+    "tags": [
+      {"value": "required", "count": 7},
+      {"value": "yes", "count": 6},
+      {"value": "recommended", "count": 3}
+    ],
+    "count": 16
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "shelter", "count": 9},
+      {"value": "restaurant", "count": 6}
+    ],
+    "count": 15
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1994", "count": 1},
+      {"value": "1970", "count": 1},
+      {"value": "1937", "count": 1},
+      {"value": "1910", "count": 1},
+      {"value": "1908", "count": 1},
+      {"value": "1995", "count": 1},
+      {"value": "1934", "count": 1},
+      {"value": "1924", "count": 1},
+      {"value": "1926", "count": 1},
+      {"value": "1981", "count": 1},
+      {"value": "2012-09-08", "count": 1},
+      {"value": "26 mai 2017", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@rivobruenti.fr", "count": 4},
+      {"value": "chaletdescontamines@ffcam.fr", "count": 1},
+      {"value": "giteleschuss@wanadoo.fr", "count": 1},
+      {"value": "chalet@cimalpes.com", "count": 1},
+      {"value": "bea.corbin@orange.fr", "count": 1},
+      {"value": "refugedugouter@ffcam.fr", "count": 1},
+      {"value": "refugeteterousse@ffcam.fr", "count": 1},
+      {"value": "contact@refuge-terre-rouge.fr", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "rooms",
+    "tags": [
+      {"value": "2", "count": 4},
+      {"value": "3", "count": 3},
+      {"value": "5", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "13", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "fermé l'hiver (constaté 02/2015)", "count": 1},
+      {
+        "value": "en fait, le refuge n'est pas rectangulaire... à revoir",
+        "count": 1
+      },
+      {
+        "value": "En hiver, le refuge peut accueillir jusqu’à 30 personnes réparties sur 2 dortoirs",
+        "count": 1
+      },
+      {
+        "value": "Vieux chalet d'alpage rénové et transformé en refuge en 1970",
+        "count": 1
+      },
+      {"value": "Fermé de 2015 à 2017-07 pour travaux", "count": 1},
+      {
+        "value": "Reconstruit en 1984 suite à un incendie provoqué par la foudre",
+        "count": 1
+      },
+      {"value": "gîte et couvert", "count": 1},
+      {"value": "Chalet transformé en refuge en 1926", "count": 1},
+      {"value": "Chalet d'alpage transformé en refuge", "count": 1},
+      {"value": "Refuge d'hiver", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Manned refuge providing food and bunks from Jun-Sep, also accessible in winter",
+        "count": 1
+      },
+      {"value": "chiuso - closed - fermé", "count": 1},
+      {"value": "un poel une table des bancs", "count": 1},
+      {"value": "30 more places available as \"not guarded", "count": 1},
+      {"value": "Un coin dortoire et un coin buvette+restauration", "count": 1},
+      {"value": "Reservation only via website.", "count": 1},
+      {"value": "Refuge non gardé des Rochilles", "count": 1},
+      {
+        "value": "Refuge tout neuf et moderne. 36 places en chambres et dortoirs. Douche, eau potable, gardé mai - septembre.  http://refuge-lotsamou.com/le-refuge.html ",
+        "count": 1
+      },
+      {"value": "refuge accueillant jusqu'à 40 personnes.", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 5},
+      {"value": "private", "count": 1},
+      {"value": "public", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "toilets",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "drinking_water",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 1}],
+    "count": 5
+  },
+  {"key": "cuisine", "tags": [{"value": "regional", "count": 4}], "count": 4},
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "l'altitude est approximative", "count": 1},
+      {
+        "value": "ce bâtiment a disparu du cadastre (2018). Existe-t-il encore réellement sur le terrain ? à vérifier",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://www.vanoise-refugelaleisse.com/", "count": 1},
+      {"value": "http://www.refugecretdupoulet.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "winter_room",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "matress", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:NE",
+    "tags": [{"value": "B7H2TjXcElIvUfFGLFHXuw", "count": 1}],
+    "count": 1
+  },
+  {"key": "beverage", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10f", "count": 1}],
+    "count": 1
+  },
+  {"key": "heating", "tags": [{"value": "fireplace", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "E0BsuVxfD4rTznHVEt6nLg", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:N",
+    "tags": [{"value": "R8w-LccAY3qaVsBhWHMl0w", "count": 1}],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "capacity:winter_room",
+    "tags": [{"value": "16", "count": 1}],
+    "count": 1
+  }
+]

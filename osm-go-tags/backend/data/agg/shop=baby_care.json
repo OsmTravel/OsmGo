@@ -1,0 +1,8 @@
+[
+  {"key": "shop", "tags": [{"value": "baby_care", "count": 4}], "count": 4},
+  {
+    "key": "website",
+    "tags": [{"value": "http://babystroc.fr/", "count": 1}],
+    "count": 1
+  }
+]

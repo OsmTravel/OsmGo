@@ -1,0 +1,10 @@
+[
+  {
+    "key": "note",
+    "tags": [{"value": "Manège pour enfants", "count": 1}],
+    "count": 1
+  },
+  {"key": "leisure", "tags": [{"value": "carousel", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "attraction", "tags": [{"value": "carousel", "count": 1}], "count": 1}
+]

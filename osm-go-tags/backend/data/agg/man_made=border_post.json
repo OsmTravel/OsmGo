@@ -1,0 +1,44 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "border_post", "count": 45}],
+    "count": 45
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "FL 82", "count": 1},
+      {"value": "FL 67", "count": 1},
+      {"value": "FL 78", "count": 1},
+      {"value": "FL 77", "count": 1},
+      {"value": "FL 68", "count": 1},
+      {"value": "FL 76", "count": 1},
+      {"value": "FL 79", "count": 1},
+      {"value": "FL 81", "count": 1},
+      {"value": "FL 75", "count": 1},
+      {"value": "FL 80", "count": 1},
+      {"value": "FL 66", "count": 1},
+      {"value": "FL 83", "count": 1},
+      {"value": "FL 74", "count": 1},
+      {"value": "FL 73", "count": 1},
+      {"value": "FL 85", "count": 1},
+      {"value": "FL 71", "count": 1},
+      {"value": "FL 70", "count": 1},
+      {"value": "FL 72", "count": 1},
+      {"value": "FL 65", "count": 1},
+      {"value": "FL 69", "count": 1},
+      {"value": "165", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "boundary_stone", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "most Southerly part of GDL", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "building_materials", "count": 3}],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

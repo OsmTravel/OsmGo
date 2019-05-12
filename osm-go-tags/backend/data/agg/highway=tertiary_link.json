@@ -1,0 +1,186 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "tertiary_link", "count": 432}],
+    "count": 432
+  },
+  {
+    "key": "oneway",
+    "tags": [
+      {"value": "yes", "count": 362},
+      {"value": "no", "count": 12},
+      {"value": "-1", "count": 5}
+    ],
+    "count": 379
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 137},
+      {"value": "paved", "count": 1}
+    ],
+    "count": 138
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "50", "count": 44},
+      {"value": "30", "count": 29},
+      {"value": "80", "count": 12},
+      {"value": "60", "count": 6},
+      {"value": "70", "count": 3},
+      {"value": "40", "count": 1}
+    ],
+    "count": 95
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 15", "count": 4},
+      {"value": "D 590", "count": 3},
+      {"value": "D 153", "count": 3},
+      {"value": "D 16b", "count": 3},
+      {"value": "D 341", "count": 3},
+      {"value": "D 71d", "count": 3},
+      {"value": "D 58", "count": 3},
+      {"value": "D 126", "count": 2},
+      {"value": "D 12c", "count": 2},
+      {"value": "D 40B", "count": 2},
+      {"value": "D 20a", "count": 2},
+      {"value": "D 16c", "count": 2},
+      {"value": "D 53", "count": 2},
+      {"value": "D 143", "count": 2},
+      {"value": "D 65e", "count": 2},
+      {"value": "D 82", "count": 2},
+      {"value": "D 82i", "count": 2},
+      {"value": "D 18", "count": 2},
+      {"value": "D 52h", "count": 2},
+      {"value": "D 203", "count": 2},
+      {"value": "D 106", "count": 1},
+      {"value": "D 40e", "count": 1},
+      {"value": "D 140", "count": 1},
+      {"value": "D 71C", "count": 1},
+      {"value": "D 1", "count": 1},
+      {"value": "D 82d", "count": 1},
+      {"value": "D 197A", "count": 1},
+      {"value": "D 16d", "count": 1},
+      {"value": "D 44", "count": 1},
+      {"value": "D 531", "count": 1},
+      {"value": "D 9E", "count": 1},
+      {"value": "D 93", "count": 1},
+      {"value": "D 6b", "count": 1}
+    ],
+    "count": 61
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "1", "count": 42},
+      {"value": "2", "count": 11},
+      {"value": "3", "count": 3}
+    ],
+    "count": 56
+  },
+  {
+    "key": "sidewalk",
+    "tags": [{"value": "no", "count": 19}, {"value": "right", "count": 6}],
+    "count": 25
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 24}], "count": 24},
+  {
+    "key": "smoothness",
+    "tags": [{"value": "excellent", "count": 23}],
+    "count": 23
+  },
+  {
+    "key": "cycleway",
+    "tags": [{"value": "lane", "count": 10}, {"value": "no", "count": 1}],
+    "count": 11
+  },
+  {"key": "cycleway:both", "tags": [{"value": "no", "count": 7}], "count": 7},
+  {
+    "key": "maxspeed:type",
+    "tags": [{"value": "FR:urban", "count": 6}, {"value": "sign", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "placement",
+    "tags": [{"value": "transition", "count": 6}],
+    "count": 6
+  },
+  {"key": "trolley_wire", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {"key": "horse", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "voltage", "tags": [{"value": "750", "count": 4}], "count": 4},
+  {
+    "key": "cycleway:right",
+    "tags": [{"value": "lane", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "old_ref",
+    "tags": [{"value": "D 123", "count": 2}, {"value": "D 82", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "busway",
+    "tags": [{"value": "opposite_lane", "count": 3}],
+    "count": 3
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 3}], "count": 3},
+  {"key": "bridge", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "bicycle", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "turn:lanes",
+    "tags": [
+      {"value": "left|through", "count": 1},
+      {"value": "through|through|right", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "foot", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [{"value": "acheminement vélo (pour ViaRhôna)", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "départementale déclassée en 1999", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "zone:maxspeed",
+    "tags": [{"value": "FR:30", "count": 2}],
+    "count": 2
+  },
+  {"key": "trolleybus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "FIXME",
+    "tags": [{"value": "really completely cyleway (check end)", "count": 1}],
+    "count": 1
+  },
+  {"key": "TODO", "tags": [{"value": "FIXME", "count": 1}], "count": 1},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "destination",
+    "tags": [{"value": "Dolomieu;Ets Mallein;Camping à la Ferme", "count": 1}],
+    "count": 1
+  },
+  {"key": "service", "tags": [{"value": "driveway", "count": 1}], "count": 1},
+  {"key": "lanes:forward", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "maxspeed:forward",
+    "tags": [{"value": "50", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "history",
+    "tags": [{"value": "Retrieved from v2", "count": 1}],
+    "count": 1
+  }
+]

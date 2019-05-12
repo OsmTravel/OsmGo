@@ -1,0 +1,27 @@
+[
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 3 29 51 01 74", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "craft",
+    "tags": [{"value": "plastic_injection", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@platexsa.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 29 41 46 58", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.platexsa.fr", "count": 1}],
+    "count": 1
+  }
+]

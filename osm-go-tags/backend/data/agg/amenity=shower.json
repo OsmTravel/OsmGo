@@ -1,0 +1,38 @@
+[
+  {"key": "amenity", "tags": [{"value": "shower", "count": 23}], "count": 23},
+  {
+    "key": "access",
+    "tags": [
+      {"value": "customers", "count": 6},
+      {"value": "yes", "count": 2},
+      {"value": "private", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "male",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 2}],
+    "count": 5
+  },
+  {"key": "female", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {"key": "supervised", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "unisex", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Ville de Saint-Étienne", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Has warm water.", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

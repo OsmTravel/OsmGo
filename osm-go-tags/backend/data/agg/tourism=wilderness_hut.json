@@ -1,0 +1,290 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "wilderness_hut", "count": 126}],
+    "count": 126
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1998", "count": 2},
+      {"value": "1570", "count": 2},
+      {"value": "1610", "count": 2},
+      {"value": "1770", "count": 2},
+      {"value": "1630", "count": 2},
+      {"value": "1754", "count": 1},
+      {"value": "1920", "count": 1},
+      {"value": "1665", "count": 1},
+      {"value": "1560", "count": 1},
+      {"value": "2100", "count": 1},
+      {"value": "1940", "count": 1},
+      {"value": "1574", "count": 1},
+      {"value": "1621", "count": 1},
+      {"value": "1500", "count": 1},
+      {"value": "1685", "count": 1},
+      {"value": "1546", "count": 1},
+      {"value": "1816", "count": 1},
+      {"value": "1411", "count": 1},
+      {"value": "1552", "count": 1},
+      {"value": "1627", "count": 1},
+      {"value": "1520", "count": 1},
+      {"value": "1350", "count": 1},
+      {"value": "1895", "count": 1},
+      {"value": "1617", "count": 1},
+      {"value": "1530", "count": 1},
+      {"value": "1837", "count": 1},
+      {"value": "1335", "count": 1},
+      {"value": "1778", "count": 1},
+      {"value": "1820", "count": 1},
+      {"value": "1695", "count": 1},
+      {"value": "1809", "count": 1},
+      {"value": "2900", "count": 1},
+      {"value": "1772", "count": 1},
+      {"value": "1484", "count": 1},
+      {"value": "1774", "count": 1},
+      {"value": "2010", "count": 1},
+      {"value": "1846", "count": 1},
+      {"value": "1984", "count": 1},
+      {"value": "1956", "count": 1},
+      {"value": "1620", "count": 1},
+      {"value": "1380", "count": 1},
+      {"value": "1660", "count": 1},
+      {"value": "1573", "count": 1},
+      {"value": "1793", "count": 1},
+      {"value": "1439", "count": 1},
+      {"value": "1740", "count": 1},
+      {"value": "1515", "count": 1},
+      {"value": "1381", "count": 1},
+      {"value": "1465", "count": 1},
+      {"value": "1853", "count": 1},
+      {"value": "1355 m", "count": 1},
+      {"value": "1727", "count": 1},
+      {"value": "1986", "count": 1},
+      {"value": "1553", "count": 1},
+      {"value": "1300", "count": 1},
+      {"value": "1748", "count": 1},
+      {"value": "2645", "count": 1},
+      {"value": "1109", "count": 1},
+      {"value": "1850", "count": 1},
+      {"value": "1331", "count": 1},
+      {"value": "1222", "count": 1},
+      {"value": "1799", "count": 1},
+      {"value": "2154", "count": 1},
+      {"value": "1448", "count": 1},
+      {"value": "1854", "count": 1},
+      {"value": "1753", "count": 1},
+      {"value": "1122", "count": 1},
+      {"value": "1360", "count": 1},
+      {"value": "1690", "count": 1},
+      {"value": "1542", "count": 1},
+      {"value": "1974", "count": 1},
+      {"value": "1543", "count": 1},
+      {"value": "1810", "count": 1},
+      {"value": "2040", "count": 1},
+      {"value": "1760", "count": 1},
+      {"value": "1718", "count": 1},
+      {"value": "1653", "count": 1},
+      {"value": "1783", "count": 1},
+      {"value": "2330", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "8", "count": 8},
+      {"value": "10", "count": 6},
+      {"value": "6", "count": 5},
+      {"value": "5", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "16", "count": 2},
+      {"value": "9", "count": 2},
+      {"value": "14", "count": 2},
+      {"value": "20", "count": 2},
+      {"value": "15", "count": 2},
+      {"value": "3", "count": 2},
+      {"value": "12", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "19", "count": 1},
+      {"value": "2", "count": 1}
+    ],
+    "count": 41
+  },
+  {"key": "shower", "tags": [{"value": "no", "count": 34}], "count": 34},
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 25},
+      {"value": "private", "count": 3},
+      {"value": "no", "count": 1},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "1 Poêle", "count": 3},
+      {"value": "Poêle + Réserve de bois", "count": 3},
+      {"value": "Refuge non gardé", "count": 2},
+      {"value": "1 Poêle + Panneau Solaire", "count": 1},
+      {"value": "Poêle, matelas", "count": 1},
+      {
+        "value": "High altitude shelter. 8 beds (matress, blanket). No heating, no cooking, no light. Property of CAI Susa. ",
+        "count": 1
+      },
+      {"value": "Cheminée, matelas", "count": 1},
+      {"value": "Matelas, Poêle (Cuisinière)", "count": 1},
+      {"value": "8 matelas, cheminée", "count": 1},
+      {"value": "3 matelas + 1 cheminée", "count": 1},
+      {
+        "value": "En cours de rénovation par la commune du Mont-Sappey",
+        "count": 1
+      },
+      {"value": "10 matelas", "count": 1},
+      {"value": "Abri d'observation en bois", "count": 1},
+      {"value": "Cheminée, matelas, quelques couvertures", "count": 1},
+      {"value": "Poêle, Matelas,", "count": 1},
+      {
+        "value": "1 Poêle + 6 matelas + 2 tapis de sol + couverture. Islolatiàn ok au RDC",
+        "count": 1
+      },
+      {
+        "value": "Occupé par le bergerJuillet - Septembre (potentiellement fermé donc), 2 matelas + 1 poêle / peu de bois à proximité",
+        "count": 1
+      },
+      {"value": "cabane avec poêle, scie, casseroles", "count": 1},
+      {"value": "1 poêle + 3 matelas", "count": 1},
+      {
+        "value": "Gazinière, poêle, 6 matelas, quelques couvertures",
+        "count": 1
+      },
+      {"value": "cabane avec poêle, scie, casserole et 1 matelas", "count": 1},
+      {"value": "Poêle", "count": 1},
+      {"value": "open to everyone, first come, first served", "count": 1},
+      {"value": "6 matelas", "count": 1}
+    ],
+    "count": 29
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 14},
+      {"value": "no", "count": 9},
+      {"value": "seasonal", "count": 5}
+    ],
+    "count": 28
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 25}, {"value": "yes", "count": 2}],
+    "count": 27
+  },
+  {
+    "key": "toilets",
+    "tags": [{"value": "no", "count": 21}, {"value": "yes", "count": 5}],
+    "count": 26
+  },
+  {
+    "key": "reservation",
+    "tags": [
+      {"value": "no", "count": 23},
+      {"value": "required", "count": 1},
+      {"value": "recommended", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 26
+  },
+  {"key": "amenity", "tags": [{"value": "shelter", "count": 22}], "count": 22},
+  {
+    "key": "mattress",
+    "tags": [
+      {"value": "no", "count": 10},
+      {"value": "yes", "count": 5},
+      {"value": "1", "count": 1}
+    ],
+    "count": 16
+  },
+  {"key": "locked", "tags": [{"value": "no", "count": 13}], "count": 13},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Conseil Général de la Drôme", "count": 3},
+      {"value": "Commune de Presle", "count": 2},
+      {"value": "Jérôme Felisaz", "count": 1},
+      {"value": "Club Alpin Léman", "count": 1},
+      {"value": "Commune de Saint-Alban d'Hurtières", "count": 1},
+      {"value": "ONF", "count": 1},
+      {"value": "Club de spéléologie Saint Exupéry du Valais", "count": 1},
+      {"value": "Commune du Verneil", "count": 1},
+      {"value": "Joseph Meynet", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "fireplace", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "beds",
+    "tags": [
+      {"value": "15", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "2", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Au GPS j'ai environ 1990m, sur la cabane il est indiqué 1998",
+        "count": 1
+      },
+      {"value": "Cabane de berger", "count": 1},
+      {
+        "value": "Abri entièrement refait à neuf en 2012 par des bénévoles de Sixt-Fer-à-Cheval",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "heating",
+    "tags": [{"value": "yes", "count": 2}, {"value": "fireplace", "count": 1}],
+    "count": 3
+  },
+  {"key": "stove", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "shelter_type",
+    "tags": [
+      {"value": "building", "count": 1},
+      {"value": "basic_hut", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "bin", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "lockable", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "bench", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "private", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [{"value": "Entretenu par la commune de Chapareillan", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.bivouak.net/bivouak/bivouak.php?id_bivouak=453&id_sport=2",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "internet_access", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "fort", "count": 1}], "count": 1},
+  {"key": "water_supply", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

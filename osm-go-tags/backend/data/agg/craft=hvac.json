@@ -1,0 +1,27 @@
+[
+  {"key": "craft", "tags": [{"value": "hvac", "count": 12}], "count": 12},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "ambiance-et-flamme.fr", "count": 1},
+      {"value": "www.couleursdefeu.fr", "count": 1},
+      {"value": "www.ateliercoenergies.fr", "count": 1},
+      {"value": "http://www.debeaux-chauffage-26.fr/", "count": 1},
+      {"value": "www.poeleconcept.com", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "craft", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 59 74 35", "count": 1},
+      {"value": "+33 4 76 72 52 08", "count": 1}
+    ],
+    "count": 2
+  }
+]

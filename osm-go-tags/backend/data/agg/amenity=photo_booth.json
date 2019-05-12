@@ -1,0 +1,30 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "photo_booth", "count": 12}],
+    "count": 12
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 6}], "count": 6},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Photomaton", "count": 5},
+      {"value": "Casino", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "brand", "tags": [{"value": "Photomaton", "count": 3}], "count": 3},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "note", "tags": [{"value": "Photomaton", "count": 1}], "count": 1},
+  {"key": "biometric", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "real_estate_promoter", "count": 1}],
+    "count": 1
+  },
+  {"key": "old_office", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-11-18", "count": 1}],
+    "count": 1
+  }
+]

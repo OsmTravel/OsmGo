@@ -1,0 +1,16 @@
+[
+  {"key": "shop", "tags": [{"value": "gold", "count": 9}], "count": 9},
+  {"key": "level", "tags": [{"value": "-1", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-27", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.osprey.fr/fr/magasins/dinard-6.html", "count": 1}
+    ],
+    "count": 1
+  }
+]

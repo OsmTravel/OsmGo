@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "water_sports", "count": 9}], "count": 9},
+  {
+    "key": "operator",
+    "tags": [{"value": "Traversaz Jean Marie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.koralp.com/", "count": 1}],
+    "count": 1
+  }
+]

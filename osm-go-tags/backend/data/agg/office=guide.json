@@ -1,0 +1,15 @@
+[
+  {"key": "office", "tags": [{"value": "guide", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [{"value": "Encadrement sorties vtt électriques.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.velectrip.net/", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "museum", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1}
+]

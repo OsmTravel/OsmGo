@@ -1,0 +1,45 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "dentist", "count": 15}],
+    "count": 15
+  },
+  {"key": "amenity", "tags": [{"value": "dentist", "count": 13}], "count": 13},
+  {
+    "key": "shop",
+    "tags": [{"value": "medical_supply", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "general", "count": 1},
+      {"value": "dentistry", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.cabinetdentairemetztessy.com/", "count": 1},
+      {"value": "http://www.docteur-archer.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 69 46 13", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality:fr",
+    "tags": [{"value": "Chirurgien-Dentiste", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Mutualité Française Loire", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

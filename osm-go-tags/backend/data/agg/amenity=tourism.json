@@ -1,0 +1,44 @@
+[
+  {"key": "ref", "tags": [{"value": "2616301 - 1", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=2616301",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "tourism", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "wayside_cross", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "survey_point", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Calvaire : Croix : Axe à la base - Support en mauvais état, point exploitable en 2001",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

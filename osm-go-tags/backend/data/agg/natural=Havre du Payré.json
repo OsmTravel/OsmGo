@@ -1,0 +1,8 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "Havre du Payré", "count": 1}],
+    "count": 1
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1}
+]

@@ -1,0 +1,143 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "milestone", "count": 40}],
+    "count": 40
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {"value": "5.5", "count": 2},
+      {"value": "10", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "7.5", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "6.5", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "3.5", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "20", "count": 1},
+      {"value": "8.5", "count": 1},
+      {"value": "22", "count": 1},
+      {"value": "23", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "19", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "21", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "format",
+    "tags": [
+      {"value": "bell", "count": 14},
+      {"value": "squared_stone", "count": 12}
+    ],
+    "count": 26
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "19", "count": 2},
+      {"value": "18", "count": 2},
+      {"value": "24", "count": 1},
+      {"value": "25", "count": 1},
+      {"value": "20", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "22", "count": 1},
+      {"value": "23", "count": 1},
+      {"value": "38", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "10", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "height",
+    "tags": [{"value": "0.4", "count": 14}, {"value": "0.2", "count": 1}],
+    "count": 15
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22967204", "count": 2},
+      {"value": "Q2911130", "count": 1},
+      {"value": "Q2911169", "count": 1},
+      {"value": "Q2911134", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 3}, {"value": "2", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1926-01-12", "count": 2},
+      {"value": "1934-09-03", "count": 2},
+      {"value": "1935-10-08", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116403", "count": 1},
+      {"value": "PA00116786", "count": 1},
+      {"value": "PA00117469", "count": 1},
+      {"value": "PA00117548", "count": 1},
+      {"value": "PA00102055", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Quelle relation ? borne limite ou borne de distance ?",
+        "count": 4
+      },
+      {"value": "A positionner plus précisément", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 5}],
+    "count": 5
+  },
+  {"key": "material", "tags": [{"value": "stone", "count": 4}], "count": 4},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Borne au Lion", "count": 1},
+      {"value": "fr:Borne milliaire de Saint-Germain", "count": 1},
+      {"value": "fr:Borne de La Boissière", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "C15", "count": 2}, {"value": "C17", "count": 1}],
+    "count": 3
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "note", "tags": [{"value": "A positionner", "count": 1}], "count": 1},
+  {"key": "distance", "tags": [{"value": "4.542", "count": 1}], "count": 1},
+  {"key": "pk", "tags": [{"value": "4.542", "count": 1}], "count": 1}
+]

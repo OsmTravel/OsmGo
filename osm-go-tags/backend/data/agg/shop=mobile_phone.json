@@ -1,0 +1,148 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "mobile_phone", "count": 118}],
+    "count": 118
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 14},
+      {"value": "2", "count": 2},
+      {"value": "1", "count": 2}
+    ],
+    "count": 18
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.allopsm.fr/", "count": 1},
+      {
+        "value": "https://agence.orange.fr/5648-boutique-orange-vienne",
+        "count": 1
+      },
+      {"value": "http://www.numeriks.fr", "count": 1},
+      {"value": "http://www.orange.fr/", "count": 1},
+      {"value": "http://www.bouyguestelecom.fr/", "count": 1},
+      {"value": "https://fr-fr.facebook.com/vivremobiletain", "count": 1},
+      {"value": "http://www.sfr.fr/", "count": 1},
+      {"value": "http://www.radisvalence.fr/", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/espace-sfr-sfr-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/orange-orange-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/tech-mobile-tech-mobile-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Espace-SFR",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Orange",
+        "count": 1
+      }
+    ],
+    "count": 13
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 10}], "count": 10},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Orange", "count": 4},
+      {"value": "SFR", "count": 2},
+      {"value": "Bouygues", "count": 2},
+      {"value": "Free", "count": 1},
+      {"value": "Vincendon", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 78 48 88", "count": 1},
+      {"value": "+33 4 74 56 70 27", "count": 1},
+      {"value": "+33 4 37 02 22 55", "count": 1},
+      {"value": "+33 4 75 83 40 74", "count": 1},
+      {"value": "+33 9 53 94 52 88", "count": 1},
+      {"value": "+33 4 27 89 95 32", "count": 1},
+      {"value": "+33438370722", "count": 1},
+      {"value": "+33438240770", "count": 1},
+      {"value": "+33 4 38 49 19 97", "count": 1},
+      {"value": "10 14", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 9}], "count": 9},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Téléphonie mobile, internet, relais colis", "count": 1},
+      {"value": "Service et centre de réparation", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "repair",
+    "tags": [
+      {"value": "mobilephone", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "L'élément n'existe pas ou plus", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Orange", "count": 1}], "count": 1},
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "cuisine",
+    "tags": [{"value": "international", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "telecommunication", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "380 129 866 46850", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "270.1", "count": 1}], "count": 1},
+  {"key": "ele:msl", "tags": [{"value": "270.1", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "5 m", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "1900", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "vienne@numeriks.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Magasin de vente de téléphones mobiles, accessoires, forfaits et cartes prépayées, fournisseur d'accès internet.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

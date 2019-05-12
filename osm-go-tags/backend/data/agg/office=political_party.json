@@ -1,0 +1,59 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "political_party", "count": 17}],
+    "count": 17
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 77 50 00", "count": 1},
+      {"value": "+33 4 74 53 28 57", "count": 1},
+      {"value": "+33 6 65 86 47 42", "count": 1},
+      {"value": "+33 7 88 35 67 14", "count": 1},
+      {"value": "+33 6 52 45 89 73", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.fn42.fr", "count": 3},
+      {"value": "www.fn69.fr", "count": 1},
+      {"value": "http://erwannbinet.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "political_party:abbreviation",
+    "tags": [
+      {"value": "EELV", "count": 1},
+      {"value": "UMP", "count": 1},
+      {"value": "PCF", "count": 1},
+      {"value": "FN", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "limited", "count": 1}],
+    "count": 4
+  },
+  {"key": "wikidata", "tags": [{"value": "Q205150", "count": 4}], "count": 4},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Front national (parti français)", "count": 4}],
+    "count": 4
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Permanence parlementaire du député de la 8e circonscription de l'Isère, Erwann Binet.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,297 @@
+[
+  {"key": "shop", "tags": [{"value": "shoes", "count": 353}], "count": 353},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.paraboot.com", "count": 1},
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_SAINT_PERAY-p2290",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_VALENCE-p2305",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_MONTELIMAR-p2306",
+        "count": 1
+      },
+      {"value": "http://www.minelli.fr/", "count": 1},
+      {"value": "http://www.texto-france.com/", "count": 1},
+      {"value": "http://www.pirouette-chaussures.com/", "count": 1},
+      {"value": "http://boutiques-blason.com/site/", "count": 1},
+      {"value": "http://paul-et-nany.com", "count": 1},
+      {"value": "https://www.action.com/", "count": 1},
+      {"value": "http://www.lahalle.com/chaussures/", "count": 1},
+      {"value": "http://www.sanmarina.fr/", "count": 1},
+      {"value": "http://scarpadeltempio.com/", "count": 1},
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_CROLLES-p2325",
+        "count": 1
+      },
+      {"value": "http://www.chaussure-de-danse.com/", "count": 1},
+      {"value": "http://www.chaussea.com/fr/", "count": 1},
+      {
+        "value": "https://www.eram.fr/magasin/france/lyon/01943-eram-lyon-republique/",
+        "count": 1
+      },
+      {"value": "http://www.palaisdelachaussure.com/", "count": 1},
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_BEYNOST-p1793",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_SAINT_ETIENNE-p2328",
+        "count": 1
+      },
+      {"value": "http://www.tadima.fr/", "count": 1},
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_LIMONEST-p2354",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_GRENOBLE-p2324",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_ROANNE-p2327",
+        "count": 1
+      },
+      {"value": "http://www.pataugas.com/", "count": 1},
+      {"value": "https://www.heyraud.fr/", "count": 1},
+      {
+        "value": "http://magasin.minelli.fr/155481-minelli-annemasse",
+        "count": 1
+      },
+      {"value": "https://www.vans.fr/", "count": 1},
+      {"value": "https://www.paul-et-nany.com/", "count": 1},
+      {
+        "value": "http://mellowyellow.com/fr/boutiques/lyon-6e-collections-femme-et-enfant",
+        "count": 1
+      },
+      {"value": "http://cordoan.fr/", "count": 1},
+      {"value": "https://www.cinelle-boutique.com/", "count": 1},
+      {
+        "value": "https://www.lahalle.com/magasins/rhone/lyon/la-halle-aux-chaussures-lyon-lumiere-hom-enf-040657",
+        "count": 1
+      },
+      {
+        "value": "https://www.lahalle.com/magasins/rhone/lyon/la-halle-aux-chaussures-lyon-lumiere-femme-040984",
+        "count": 1
+      },
+      {"value": "https://www.courir.com", "count": 1},
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_ANNECY-p2362",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_MIONS-p2355",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_THONON-p2361",
+        "count": 1
+      },
+      {
+        "value": "http://www.besson-chaussures.com/fr/BESSON_CHAUSSURES_Magasin_SAINT_EGREVE-p2323",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/alaska-bijoux-alaska-bijoux-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Eram",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Andre",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Minelli",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/San-Marina",
+        "count": 1
+      }
+    ],
+    "count": 44
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 8 25351134", "count": 3},
+      {"value": "+33 4 78 50 96 35", "count": 1},
+      {"value": "+33 4 74 85 08 12", "count": 1},
+      {"value": "+33 4 74 31 94 76", "count": 1},
+      {"value": "+33 4 74 15 93 22", "count": 1},
+      {"value": "+33 4 74 84 99 17", "count": 1},
+      {"value": "+33 4 74 78 05 97", "count": 1},
+      {"value": "+33 4 74 53 04 08", "count": 1},
+      {"value": "+33 9 84 58 30 86", "count": 1},
+      {"value": "+33 4 74 16 82 44", "count": 1},
+      {"value": "+33 4 74 31 64 70", "count": 1},
+      {"value": "+33 4 74 53 15 68", "count": 1},
+      {"value": "+33 4 74 57 03 09", "count": 1},
+      {"value": "+33 4 74 31 79 04", "count": 1},
+      {"value": "+33 6 89 36 48 32", "count": 1},
+      {"value": "+33 4 74 53 00 40", "count": 1},
+      {"value": "+33477543104", "count": 1},
+      {"value": "+33 4 78 24 97 03", "count": 1},
+      {"value": "+33953961007", "count": 1},
+      {"value": "+33 4 50 92 83 78", "count": 1},
+      {"value": "+33 4 72 73 39 64", "count": 1},
+      {"value": "+33 4 78 52 28 32", "count": 1},
+      {"value": "+33 4 78 41 47 19", "count": 1},
+      {"value": "+33 4 78 52 96 49", "count": 1},
+      {"value": "+33 9 50 48 20 86", "count": 1},
+      {"value": "+33 4 74 03 81 93", "count": 1},
+      {"value": "+33 4 76 33 84 56", "count": 1},
+      {"value": "+33 4 38 49 98 87", "count": 1},
+      {"value": "+33 4 76 09 62 26", "count": 1},
+      {"value": "+33 4 76 21 09 89", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 3}
+    ],
+    "count": 19
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Besson Chaussures", "count": 13},
+      {"value": "La Halle", "count": 2},
+      {"value": "Éram", "count": 1},
+      {"value": "Minelli", "count": 1},
+      {"value": "Arbell", "count": 1},
+      {"value": "Courir", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [{"value": "Q2899930", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Besson Chaussures", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "brand:website",
+    "tags": [{"value": "http://www.besson-chaussures.com", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 7}, {"value": "1", "count": 4}],
+    "count": 11
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Minelli", "count": 1},
+      {"value": "Texto", "count": 1},
+      {"value": "ACTION FRANCE SAS", "count": 1},
+      {"value": "Flammier", "count": 1},
+      {"value": "La Halle aux Chaussures", "count": 1},
+      {"value": "San Marina", "count": 1},
+      {"value": "Pataugas", "count": 1},
+      {"value": "Heyraud", "count": 1},
+      {"value": "Le Chausseur des Gones", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 9}], "count": 9},
+  {"key": "room", "tags": [{"value": "shop", "count": 9}], "count": 9},
+  {
+    "key": "shoes",
+    "tags": [{"value": "children", "count": 5}, {"value": "women", "count": 3}],
+    "count": 8
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "47777744500032", "count": 1},
+      {"value": "40406711800061", "count": 1},
+      {"value": "341 886 695 00061", "count": 1},
+      {"value": "477 777 445 00016", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 2},
+      {"value": "2017-07-19", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "second_hand", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@paraboot.com", "count": 1},
+      {"value": "cordoan@orange.fr", "count": 1},
+      {"value": "contact@cinelle-boutique.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q3561446", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator:wikipedia",
+    "tags": [{"value": "fr:Vivarte", "count": 2}],
+    "count": 2
+  },
+  {"key": "female", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "male",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "name", "count": 1},
+      {
+        "value": "Deux magasins sont présents dans Part-Dieu, un nommé \"haut\" et l'autre \"bas\"",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Magasin de chaussures pour enfants", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "5 avril 2018", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "facebook",
+    "tags": [{"value": "https://www.facebook.com/picktheshoes69/", "count": 1}],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Chaussure Enfant du 16 au 40", "count": 1}],
+    "count": 1
+  }
+]

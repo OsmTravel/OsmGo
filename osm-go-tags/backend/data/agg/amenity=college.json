@@ -1,0 +1,320 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "college", "count": 185}],
+    "count": 185
+  },
+  {
+    "key": "operator:type",
+    "tags": [
+      {"value": "private", "count": 40},
+      {"value": "public", "count": 8}
+    ],
+    "count": 48
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ifc.fr/centre-de-formation/saint%20etienne/actualites",
+        "count": 1
+      },
+      {"value": "http://www.esadse.fr", "count": 1},
+      {
+        "value": "http://www.cours-galien.fr/centres/grenoble/presentation.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.cfai-dauphine.fr/fr/etablissements/moirans-vie-cfai.html",
+        "count": 1
+      },
+      {"value": "http://www.telecom-st-etienne.fr/", "count": 1},
+      {"value": "http://www.ecoles-conde.com/", "count": 1},
+      {
+        "value": "https://www.essca.fr/lessca/les-sites-du-groupe/essca-lyon",
+        "count": 1
+      },
+      {
+        "value": "http://www.saint-michel-enseignement.com/a-sme-i-f-m-k-presentation/",
+        "count": 1
+      },
+      {"value": "http://www.ecole-ier.com/", "count": 1},
+      {"value": "http://www.coursdiderot.com/", "count": 1},
+      {"value": "http://www.ecoris.com/ecole/ecoris-albertville/", "count": 1},
+      {"value": "http://www.maestris-valence.com/", "count": 1},
+      {"value": "http://www.poudriere.eu/", "count": 1},
+      {"value": "http://www.institut-marc-perrot.fr/", "count": 1},
+      {"value": "http://www.cido.fr", "count": 1},
+      {"value": "http://etudes-plus.fr", "count": 1},
+      {"value": "http://ireis.org", "count": 1},
+      {"value": "http://www.lasalle42.fr/enseignement-superieur", "count": 1},
+      {"value": "http://www.st-etienne.archi.fr", "count": 1},
+      {"value": "http://stetienne.centremediplus.fr/", "count": 1},
+      {"value": "https://wildcodeschool.fr", "count": 1},
+      {"value": "http://egc.ccinordisere.fr", "count": 1},
+      {
+        "value": "https://www.ccinordisere.fr/18-formation-continue.htm",
+        "count": 1
+      },
+      {
+        "value": "https://www.fonction-publique.gouv.fr/score/fiche-ecole/ecole-nationale-des-finances-publiques-enfip-69-lyon",
+        "count": 1
+      },
+      {"value": "http://www.grenoble-em.com", "count": 1},
+      {"value": "https://www.ira-lyon.gouv.fr/", "count": 1},
+      {"value": "http://www.ensp.interieur.gouv.fr/", "count": 1},
+      {"value": "http://irfss-rhone-alpes.croix-rouge.fr/", "count": 1},
+      {"value": "https://ifts-asso.com/", "count": 1},
+      {"value": "http://houches.ujf-grenoble.fr/", "count": 1},
+      {"value": "http://www.essse.fr/", "count": 1},
+      {"value": "http://www.esa.sante.defense.gouv.fr/", "count": 1},
+      {"value": "http://www.vatel.com/fr/", "count": 1},
+      {"value": "http://www.ensba-lyon.fr/", "count": 1},
+      {"value": "https://www.cpe.fr/", "count": 1},
+      {"value": "http://www.intefp.travail-emploi.gouv.fr", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "École de la Deuxième Chance - France", "count": 8},
+      {"value": "CCI Lyon Métropole", "count": 3},
+      {"value": "Grenoble INP", "count": 3},
+      {"value": "Université Claude Bernard - Lyon 1", "count": 2},
+      {"value": "Université de Savoie", "count": 1},
+      {"value": "Croix-Rouge française", "count": 1},
+      {"value": "École de management de Lyon", "count": 1},
+      {"value": "Paris Tech", "count": 1},
+      {"value": "Société MédiPlus", "count": 1},
+      {"value": "École Nationale des Travaux Publics de l'État", "count": 1},
+      {"value": "Chambre de Commerce et d'Industrie de l'Isère", "count": 1},
+      {"value": "Université Jean Moulin - Lyon 3", "count": 1},
+      {"value": "Université Jean Monnet", "count": 1},
+      {"value": "Le groupe Vatel", "count": 1},
+      {"value": "Université de Grenoble", "count": 1},
+      {"value": "Grenoble-INP", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 10 13 70", "count": 1},
+      {"value": "+33 4 76 03 15 99", "count": 1},
+      {"value": "+33 4 76 35 85 00", "count": 1},
+      {"value": "+33 4 74 79 07 90", "count": 1},
+      {"value": "+33 4 78 42 92 39", "count": 1},
+      {"value": "+33 4 77 45 10 41", "count": 1},
+      {"value": "+33 4 50 46 38 24", "count": 1},
+      {"value": "+33 4 78 69 10 80", "count": 1},
+      {"value": "+33 477428281", "count": 1},
+      {"value": "+33 4 77 33 65 64", "count": 1},
+      {"value": "+33 4 76 41 00 00", "count": 1},
+      {"value": "+33 4 77 43 54 30", "count": 1},
+      {"value": "+33 4 77 92 11 50", "count": 1},
+      {"value": "+33 4 77 37 21 18", "count": 1},
+      {"value": "+33 4 76 70 60 60", "count": 1},
+      {"value": "+33 4 77 81 02 00", "count": 1},
+      {"value": "+33 4 76 42 22 31", "count": 1},
+      {"value": "+33 4 74 43 67 00", "count": 1},
+      {"value": "+334 78 38 21 92", "count": 1},
+      {"value": "+33 4 72431700", "count": 1},
+      {"value": "+33 4 78 87 47 47", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "ref:UAI",
+    "tags": [
+      {"value": "0690723L", "count": 1},
+      {"value": "0422187Z", "count": 1},
+      {"value": "0383361X", "count": 1},
+      {"value": "0011294B", "count": 1},
+      {"value": "0382666S", "count": 1},
+      {"value": "0383395J", "count": 1},
+      {"value": "0383190L", "count": 1},
+      {"value": "0381512M", "count": 1},
+      {"value": "0740048A", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {
+        "value": "fr:École supérieure des sciences commerciales d'Angers",
+        "count": 1
+      },
+      {"value": "fr:École d’agriculture de Cibeins", "count": 1},
+      {"value": "fr:École nationale supérieure de la Police", "count": 1},
+      {"value": "fr:École de santé des armées", "count": 1},
+      {
+        "value": "fr:École nationale supérieure des beaux-arts de Lyon",
+        "count": 1
+      },
+      {"value": "fr:GreEn-ER", "count": 1},
+      {"value": "fr:Domaine universitaire de Grenoble", "count": 1},
+      {
+        "value": "fr:École supérieure chimie physique électronique de Lyon",
+        "count": 1
+      }
+    ],
+    "count": 8
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://reseau-e2c.fr/wp-content/uploads/2017/04/E2C-Isère-300x198.jpg",
+        "count": 3
+      },
+      {
+        "value": "https://reseau-e2c.fr/wp-content/uploads/2017/06/LOGO-E2C-LYON-METROPOLE-300x233.jpg",
+        "count": 2
+      },
+      {
+        "value": "https://reseau-e2c.fr/wp-content/uploads/2017/04/E2C-Savoie-217x300.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://reseau-e2c.fr/wp-content/uploads/2017/04/Logo-E2C-Loire-bis-300x157.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://reseau-e2c.fr/wp-content/uploads/2017/04/Logo-E2C-Drome-Ardeche.png",
+        "count": 1
+      }
+    ],
+    "count": 8
+  },
+  {
+    "key": "brand",
+    "tags": [{"value": "École de la deuxième chance", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 4}, {"value": "yes", "count": 3}],
+    "count": 7
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "grenoble@cours-galien.fr", "count": 1},
+      {"value": "grenoble@aries-esi.net", "count": 1},
+      {"value": "contact@afpi-cfai38.com", "count": 1},
+      {"value": "l : contact@afpi-cfai38.com", "count": 1},
+      {"value": "ier.74@wanadoo.fr", "count": 1},
+      {"value": "intefp.accueil@travail.gouv.fr", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3578499", "count": 1},
+      {"value": "Q28370827", "count": 1},
+      {"value": "Q839224", "count": 1},
+      {"value": "Q3578232", "count": 1},
+      {"value": "Q3578245", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "no", "count": 1},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "roof:shape",
+    "tags": [{"value": "mansard", "count": 3}, {"value": "flat", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Ecole privée d'esthétique et de coiffure", "count": 1},
+      {
+        "value": "Etablissement d'Enseignement Supérieur Privé pour la préparation au concours de Première Année Commune aux Etudes de Santé (PACES)",
+        "count": 1
+      },
+      {"value": "Ecole privée d'informatique", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 76 35 85 19", "count": 1},
+      {"value": "+33 4 74 79 07 91", "count": 1},
+      {"value": "+33 4 50 46 37 85", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "position imprécise", "count": 1},
+      {"value": "position dans le bâtiment à améliorer", "count": 1},
+      {"value": "A localiser précisemment", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "school:FR",
+    "tags": [{"value": "IFSI", "count": 1}, {"value": "engineer", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "roof:levels",
+    "tags": [{"value": "1", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "roof:material",
+    "tags": [{"value": "slate", "count": 2}],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 2}], "count": 2},
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "government", "count": 1}], "count": 1},
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q3003244", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Website invalide (http://vallon.creps-sudest.sports.gouv.fr/)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "K", "count": 1}], "count": 1},
+  {
+    "key": "design",
+    "tags": [{"value": "Enseignement Supérieur", "count": 1}],
+    "count": 1
+  },
+  {"key": "fence_type", "tags": [{"value": "wire", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "military", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "suburb", "count": 1}], "count": 1}
+]

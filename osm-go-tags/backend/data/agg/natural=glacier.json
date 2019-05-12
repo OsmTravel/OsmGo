@@ -1,0 +1,154 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "glacier", "count": 480}],
+    "count": 480
+  },
+  {"key": "CLC:code", "tags": [{"value": "335", "count": 121}], "count": 121},
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-260192", "count": 18},
+      {"value": "FR-259687", "count": 13},
+      {"value": "FR-165645", "count": 13},
+      {"value": "FR-158174", "count": 7},
+      {"value": "FR-163203", "count": 5},
+      {"value": "FR-158796", "count": 3},
+      {"value": "FR-161600", "count": 3},
+      {"value": "FR-162549", "count": 3},
+      {"value": "FR-162950", "count": 3},
+      {"value": "FR-259626", "count": 2},
+      {"value": "FR-157777", "count": 2},
+      {"value": "FR-164727", "count": 2},
+      {"value": "FR-259771", "count": 2},
+      {"value": "FR-173836", "count": 2},
+      {"value": "FR-184087", "count": 2},
+      {"value": "FR-169745", "count": 1},
+      {"value": "FR-162386", "count": 1},
+      {"value": "FR-175336", "count": 1},
+      {"value": "FR-173670", "count": 1},
+      {"value": "FR-160424", "count": 1},
+      {"value": "FR-148605", "count": 1},
+      {"value": "FR-259649", "count": 1},
+      {"value": "FR-162647", "count": 1},
+      {"value": "FR-165080", "count": 1},
+      {"value": "FR-166021", "count": 1},
+      {"value": "FR-168009", "count": 1},
+      {"value": "FR-168041", "count": 1},
+      {"value": "FR-169834", "count": 1},
+      {"value": "FR-157424", "count": 1},
+      {"value": "FR-169916", "count": 1},
+      {"value": "FR-165516", "count": 1},
+      {"value": "FR-165578", "count": 1},
+      {"value": "FR-165948", "count": 1},
+      {"value": "FR-166289", "count": 1},
+      {"value": "FR-166310", "count": 1},
+      {"value": "FR-259773", "count": 1},
+      {"value": "FR-168065", "count": 1},
+      {"value": "FR-259785", "count": 1},
+      {"value": "FR-259794", "count": 1},
+      {"value": "FR-172594", "count": 1},
+      {"value": "FR-172929", "count": 1},
+      {"value": "FR-164468", "count": 1},
+      {"value": "FR-173726", "count": 1},
+      {"value": "FR-173493", "count": 1},
+      {"value": "FR-165717", "count": 1},
+      {"value": "FR-260689", "count": 1},
+      {"value": "FR-181464", "count": 1},
+      {"value": "FR-160645", "count": 1},
+      {"value": "FR-260742", "count": 1},
+      {"value": "FR-260758", "count": 1},
+      {"value": "FR-158529", "count": 1},
+      {"value": "FR-259652", "count": 1},
+      {"value": "FR-169881", "count": 1},
+      {"value": "FR-168746", "count": 1},
+      {"value": "FR-172050", "count": 1},
+      {"value": "FR-183575", "count": 1}
+    ],
+    "count": 121
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 111}], "count": 111},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q34836053", "count": 1},
+      {"value": "Q674490", "count": 1},
+      {"value": "Q3108344", "count": 1},
+      {"value": "Q3108367", "count": 1},
+      {"value": "Q3108330", "count": 1},
+      {"value": "Q2419346", "count": 1},
+      {"value": "Q2366090", "count": 1},
+      {"value": "Q3108378", "count": 1},
+      {"value": "Q3108366", "count": 1},
+      {"value": "Q34835264", "count": 1},
+      {"value": "Q3108336", "count": 1},
+      {"value": "Q34835639", "count": 1},
+      {"value": "Q3108359", "count": 1},
+      {"value": "Q34835527", "count": 1},
+      {"value": "Q34834754", "count": 1},
+      {"value": "Q18214370", "count": 1},
+      {"value": "Q3108353", "count": 1},
+      {"value": "Q34835396", "count": 1},
+      {"value": "Q583591", "count": 1},
+      {"value": "Q34835232", "count": 1},
+      {"value": "Q34835716", "count": 1},
+      {"value": "Q35439503", "count": 1},
+      {"value": "Q34834848", "count": 1},
+      {"value": "Q34835167", "count": 1},
+      {"value": "Q34835361", "count": 1},
+      {"value": "Q34835701", "count": 1},
+      {"value": "Q34835922", "count": 1},
+      {"value": "Q34834865", "count": 1},
+      {"value": "Q34835904", "count": 1},
+      {"value": "Q34836508", "count": 1},
+      {"value": "Q34836620", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "glacier:type",
+    "tags": [
+      {"value": "mountain", "count": 17},
+      {"value": "valley", "count": 6},
+      {"value": "icefall", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "superficie attuale molto ridotta, vedi foto pcn", "count": 1},
+      {"value": "not exact", "count": 1},
+      {
+        "value": "existait toujours le 07/2011 mais il ne reste presque plus rien, à moitié caché sous les cailloux",
+        "count": 1
+      },
+      {"value": "Glacier du type rocheux", "count": 1},
+      {"value": "Position approximative", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "it:Ghiacciaio di Pré de Bar", "count": 1},
+      {"value": "it:Ghiacciaio della Lex Blanche", "count": 1},
+      {"value": "it:Ghiacciaio del Dôme", "count": 1},
+      {"value": "en:Mer de Glace", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "glacier:status",
+    "tags": [
+      {"value": "marked_retreat", "count": 2},
+      {"value": "slight_retreat", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10f", "count": 1}],
+    "count": 1
+  }
+]

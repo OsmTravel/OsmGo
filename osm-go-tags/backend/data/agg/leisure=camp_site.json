@@ -1,0 +1,14 @@
+[
+  {
+    "key": "note",
+    "tags": [
+      {"value": "1965 : EUF BLR Vauban", "count": 1},
+      {"value": "1962 : EUF BLR Vauban", "count": 1},
+      {"value": "Rassemblement National EEUF 07/1982", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "scout", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "leisure", "tags": [{"value": "camp_site", "count": 3}], "count": 3},
+  {"key": "using", "tags": [{"value": "temporary", "count": 2}], "count": 2}
+]

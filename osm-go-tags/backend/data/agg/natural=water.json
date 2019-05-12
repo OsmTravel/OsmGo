@@ -1,0 +1,742 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "water", "count": 15964}],
+    "count": 15964
+  },
+  {
+    "key": "water",
+    "tags": [
+      {"value": "pond", "count": 1324},
+      {"value": "reservoir", "count": 554},
+      {"value": "lake", "count": 541},
+      {"value": "wastewater", "count": 63},
+      {"value": "river", "count": 62},
+      {"value": "stream", "count": 44},
+      {"value": "canal", "count": 28},
+      {"value": "basin", "count": 26},
+      {"value": "oxbow", "count": 9},
+      {"value": "pool", "count": 7},
+      {"value": "lock", "count": 2},
+      {"value": "lake;pond", "count": 2},
+      {"value": "intermittent", "count": 2},
+      {"value": "piscine", "count": 2},
+      {"value": "shallow", "count": 2},
+      {"value": "Piscine", "count": 2},
+      {"value": "stream_pool", "count": 1},
+      {"value": "Chateau_d'eau", "count": 1},
+      {"value": "Lavoir", "count": 1},
+      {"value": "Etang", "count": 1},
+      {"value": "lac_artificiel", "count": 1},
+      {"value": "tidal", "count": 1},
+      {"value": "lagoon", "count": 1},
+      {"value": "Tourbierre", "count": 1},
+      {"value": "reflecting_pool", "count": 1},
+      {"value": "fish_pass", "count": 1},
+      {"value": "Lieu_de_délassement", "count": 1},
+      {"value": "salt", "count": 1}
+    ],
+    "count": 2682
+  },
+  {
+    "key": "CLC:code",
+    "tags": [
+      {"value": "512", "count": 208},
+      {"value": "231", "count": 11},
+      {"value": "211", "count": 11},
+      {"value": "231; 211", "count": 1},
+      {"value": "311", "count": 1},
+      {"value": "211; 231; 211", "count": 1}
+    ],
+    "count": 233
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-138188", "count": 11},
+      {"value": "FR-137103", "count": 11},
+      {"value": "FR-136409", "count": 9},
+      {"value": "FR-138088", "count": 8},
+      {"value": "FR-136914", "count": 7},
+      {"value": "FR-137851", "count": 7},
+      {"value": "FR-140771", "count": 5},
+      {"value": "FR-136743", "count": 5},
+      {"value": "FR-136481", "count": 5},
+      {"value": "FR-137776", "count": 5},
+      {"value": "FR-138367", "count": 5},
+      {"value": "FR-137384", "count": 4},
+      {"value": "FR-138856", "count": 4},
+      {"value": "FR-138034", "count": 4},
+      {"value": "FR-139660", "count": 4},
+      {"value": "FR-139610", "count": 4},
+      {"value": "FR-140109", "count": 4},
+      {"value": "FR-160507", "count": 4},
+      {"value": "FR-134857", "count": 4},
+      {"value": "FR-134565", "count": 4},
+      {"value": "FR-153670", "count": 4},
+      {"value": "FR-137042", "count": 4},
+      {"value": "FR-136851", "count": 4},
+      {"value": "FR-139889", "count": 4},
+      {"value": "FR-135820", "count": 3},
+      {"value": "FR-195700", "count": 3},
+      {"value": "FR-140277", "count": 3},
+      {"value": "FR-142215", "count": 3},
+      {"value": "FR-156407", "count": 3},
+      {"value": "FR-150620", "count": 3},
+      {"value": "FR-134892", "count": 3},
+      {"value": "FR-137850", "count": 3},
+      {"value": "FR-151484", "count": 3},
+      {"value": "FR-152448", "count": 3},
+      {"value": "FR-140912", "count": 3},
+      {"value": "FR-135556", "count": 3},
+      {"value": "FR-138336", "count": 3},
+      {"value": "FR-153578", "count": 3},
+      {"value": "FR-139042", "count": 2},
+      {"value": "FR-124402", "count": 2},
+      {"value": "FR-135536", "count": 2},
+      {"value": "FR-137714", "count": 2},
+      {"value": "FR-135875", "count": 2},
+      {"value": "FR-170313", "count": 2},
+      {"value": "FR-132606/2", "count": 2},
+      {"value": "FR-143364", "count": 2},
+      {"value": "FR-129477", "count": 1},
+      {"value": "FR-142844", "count": 1},
+      {"value": "FR-135907", "count": 1},
+      {"value": "FR-136709", "count": 1},
+      {"value": "FR-154650", "count": 1},
+      {"value": "FR-260054", "count": 1},
+      {"value": "FR-146850", "count": 1},
+      {"value": "FR-197179", "count": 1},
+      {"value": "FR-143318", "count": 1},
+      {"value": "FR-138495", "count": 1},
+      {"value": "FR-150551", "count": 1},
+      {"value": "FR-184037", "count": 1},
+      {"value": "FR-150999", "count": 1},
+      {"value": "FR-165288", "count": 1},
+      {"value": "FR-132622", "count": 1},
+      {"value": "FR-137755", "count": 1},
+      {"value": "FR-131873;FR-132791", "count": 1},
+      {"value": "FR-258919", "count": 1},
+      {"value": "FR-128934", "count": 1},
+      {"value": "FR-130026", "count": 1},
+      {"value": "FR-137062", "count": 1},
+      {"value": "FR-132606/1", "count": 1},
+      {"value": "FR-129109", "count": 1},
+      {"value": "FR-157991", "count": 1},
+      {"value": "FR-124142", "count": 1},
+      {"value": "FR-137971", "count": 1},
+      {"value": "FR-138718", "count": 1},
+      {"value": "FR-135613", "count": 1},
+      {"value": "FR-137079", "count": 1},
+      {"value": "FR-137370", "count": 1},
+      {"value": "FR-137158", "count": 1},
+      {"value": "FR-154104", "count": 1},
+      {"value": "FR-154495", "count": 1},
+      {"value": "FR-140931", "count": 1},
+      {"value": "FR-136368", "count": 1},
+      {"value": "FR-135932", "count": 1},
+      {"value": "FR-154689", "count": 1},
+      {"value": "FR-144450", "count": 1},
+      {"value": "FR-132873", "count": 1},
+      {"value": "FR-137293", "count": 1},
+      {"value": "FR-159406", "count": 1},
+      {"value": "FR-133558", "count": 1},
+      {"value": "FR-132606/1; FR-137755; FR-132606/1", "count": 1},
+      {"value": "FR-137396", "count": 1},
+      {"value": "FR-135281", "count": 1}
+    ],
+    "count": 233
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 231}], "count": 231},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Potlatch alpha", "count": 61},
+      {"value": "JOSM", "count": 19},
+      {"value": "Potlatch 0.4b", "count": 13},
+      {"value": "Editop", "count": 5},
+      {"value": "Potlatch 0.8c", "count": 4},
+      {"value": "Potlatch 0.10f", "count": 3},
+      {"value": "Potlatch 0.5", "count": 1},
+      {"value": "Merkaartor 0.13", "count": 1}
+    ],
+    "count": 107
+  },
+  {
+    "key": "intermittent",
+    "tags": [{"value": "yes", "count": 78}, {"value": "no", "count": 9}],
+    "count": 87
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "basin", "count": 58},
+      {"value": "reservoir", "count": 18},
+      {"value": "bassin", "count": 2},
+      {"value": "Zone de réserve de vie sauvage", "count": 1},
+      {"value": "aquaculture", "count": 1}
+    ],
+    "count": 80
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1974", "count": 2},
+      {"value": "2126", "count": 2},
+      {"value": "2116", "count": 2},
+      {"value": "2007", "count": 2},
+      {"value": "2005", "count": 1},
+      {"value": "2027", "count": 1},
+      {"value": "2212", "count": 1},
+      {"value": "2045", "count": 1},
+      {"value": "2162", "count": 1},
+      {"value": "1906", "count": 1},
+      {"value": "1952", "count": 1},
+      {"value": "2258", "count": 1},
+      {"value": "2588", "count": 1},
+      {"value": "2378", "count": 1},
+      {"value": "1917", "count": 1},
+      {"value": "2350", "count": 1},
+      {"value": "1499", "count": 1},
+      {"value": "1673", "count": 1},
+      {"value": "2299", "count": 1},
+      {"value": "2098", "count": 1},
+      {"value": "2776", "count": 1},
+      {"value": "2036", "count": 1},
+      {"value": "2108", "count": 1},
+      {"value": "2439", "count": 1},
+      {"value": "1600", "count": 1},
+      {"value": "1819", "count": 1},
+      {"value": "2180", "count": 1},
+      {"value": "1909", "count": 1},
+      {"value": "1725", "count": 1},
+      {"value": "2445", "count": 1},
+      {"value": "2643", "count": 1},
+      {"value": "2565", "count": 1},
+      {"value": "2470", "count": 1},
+      {"value": "2410", "count": 1},
+      {"value": "2683", "count": 1},
+      {"value": "1818", "count": 1},
+      {"value": "2800", "count": 1},
+      {"value": "1570", "count": 1},
+      {"value": "2206", "count": 1},
+      {"value": "2243", "count": 1},
+      {"value": "2084", "count": 1},
+      {"value": "2120", "count": 1},
+      {"value": "2769", "count": 1},
+      {"value": "2199", "count": 1},
+      {"value": "1753", "count": 1},
+      {"value": "2138", "count": 1},
+      {"value": "1972", "count": 1},
+      {"value": "2089", "count": 1},
+      {"value": "2317", "count": 1},
+      {"value": "1765", "count": 1},
+      {"value": "2784", "count": 1},
+      {"value": "2768", "count": 1},
+      {"value": "2895", "count": 1},
+      {"value": "2095", "count": 1},
+      {"value": "2150", "count": 1},
+      {"value": "2450", "count": 1},
+      {"value": "2535", "count": 1},
+      {"value": "1993", "count": 1},
+      {"value": "2186", "count": 1},
+      {"value": "2169", "count": 1},
+      {"value": "2170", "count": 1},
+      {"value": "1942", "count": 1},
+      {"value": "2550", "count": 1},
+      {"value": "1955", "count": 1},
+      {"value": "2497", "count": 1},
+      {"value": "2422", "count": 1},
+      {"value": "2758", "count": 1},
+      {"value": "1880", "count": 1},
+      {"value": "366", "count": 1},
+      {"value": "380", "count": 1},
+      {"value": "1930", "count": 1},
+      {"value": "2385", "count": 1},
+      {"value": "2204", "count": 1},
+      {"value": "1470", "count": 1}
+    ],
+    "count": 78
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 73},
+      {"value": "no", "count": 3},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 77
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "swimming_pool", "count": 31},
+      {"value": "fishing", "count": 4},
+      {"value": "sports_centre", "count": 3},
+      {"value": "marina", "count": 3},
+      {"value": "nature_reserve", "count": 1},
+      {"value": "playground", "count": 1}
+    ],
+    "count": 43
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Oyeu", "count": 6},
+      {"value": "fr:Lac d'Avoriaz", "count": 2},
+      {"value": "fr:Lac de la Case", "count": 2},
+      {"value": "fr:Lac des Plagnes", "count": 1},
+      {"value": "fr:Lac du Mont-Cenis", "count": 1},
+      {"value": "de:Lac d’Émosson", "count": 1},
+      {"value": "fr:Lac d'Arvouin", "count": 1},
+      {"value": "fr:Lac d'Issarlès", "count": 1},
+      {"value": "fr:Lacs du Domènon", "count": 1},
+      {"value": "en:Lac de Roy", "count": 1},
+      {"value": "fr:Lac de Gers", "count": 1},
+      {"value": "fr:Lac de la Vogealle", "count": 1},
+      {"value": "fr:Lac du Brévent", "count": 1},
+      {"value": "en:Lac de l'Aiguillette", "count": 1},
+      {"value": "fr:Lac Cornu (Haute-Savoie)", "count": 1},
+      {"value": "fr:Lac Noir d'en Bas", "count": 1},
+      {"value": "fr:Lac de Montriond", "count": 1},
+      {"value": "fr:Lac du Chambon", "count": 1},
+      {"value": "fr:Lac de Vonnes", "count": 1},
+      {"value": "fr:Lac Vert (Chablais)", "count": 1},
+      {"value": "fr:Lac de Chésery", "count": 1},
+      {"value": "fr:Réservoir du Grand-Large", "count": 1},
+      {"value": "fr:Lac Lérié", "count": 1},
+      {"value": "fr:Lac des Confins", "count": 1},
+      {"value": "fr:Lac de Sylans", "count": 1},
+      {"value": "it:Lago Verney", "count": 1},
+      {"value": "it:Lago della Vecchia (Alpi Cozie)", "count": 1},
+      {"value": "fr:Lac de Darbon", "count": 1},
+      {"value": "fr:Lac de Pététoz", "count": 1},
+      {"value": "fr:Lac de Belledonne", "count": 1},
+      {"value": "fr:Lac de Nantua", "count": 1},
+      {"value": "fr:Étang du Grand-Turlet", "count": 1},
+      {"value": "fr:Lac de Lovenex", "count": 1},
+      {"value": "fr:Lac des Chambres", "count": 1},
+      {"value": "fr:Lac des Sapins", "count": 1}
+    ],
+    "count": 42
+  },
+  {
+    "key": "waterway",
+    "tags": [
+      {"value": "riverbank", "count": 30},
+      {"value": "reservoir", "count": 6},
+      {"value": "dam", "count": 2},
+      {"value": "lake", "count": 1},
+      {"value": "lock", "count": 1},
+      {"value": "pond", "count": 1}
+    ],
+    "count": 41
+  },
+  {
+    "key": "boat",
+    "tags": [
+      {"value": "no", "count": 35},
+      {"value": "private", "count": 3},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3215579", "count": 1},
+      {"value": "Q3215558", "count": 1},
+      {"value": "Q16507854", "count": 1},
+      {"value": "Q1336068", "count": 1},
+      {"value": "Q3215704", "count": 1},
+      {"value": "Q6467991", "count": 1},
+      {"value": "Q23892375", "count": 1},
+      {"value": "Q3215317", "count": 1},
+      {"value": "Q3215532", "count": 1},
+      {"value": "Q3215446", "count": 1},
+      {"value": "Q6467817", "count": 1},
+      {"value": "Q3215668", "count": 1},
+      {"value": "Q282976", "count": 1},
+      {"value": "Q23013037", "count": 1},
+      {"value": "Q3215701", "count": 1},
+      {"value": "Q6468006", "count": 1},
+      {"value": "Q3215096", "count": 1},
+      {"value": "Q3215491", "count": 1},
+      {"value": "Q3215677", "count": 1},
+      {"value": "Q46994092", "count": 1},
+      {"value": "Q3215655", "count": 1},
+      {"value": "Q27918384", "count": 1},
+      {"value": "Q3215307", "count": 1},
+      {"value": "Q3215547", "count": 1},
+      {"value": "Q35701915", "count": 1},
+      {"value": "Q962918", "count": 1},
+      {"value": "Q3215433", "count": 1},
+      {"value": "Q3215440", "count": 1},
+      {"value": "Q16653030", "count": 1},
+      {"value": "Q3215522", "count": 1},
+      {"value": "Q35721435", "count": 1},
+      {"value": "Q3215495", "count": 1},
+      {"value": "Q3215561", "count": 1},
+      {"value": "Q3215473", "count": 1},
+      {"value": "Q6467948", "count": 1},
+      {"value": "Q508239", "count": 1},
+      {"value": "Q2407808", "count": 1},
+      {"value": "Q11651694", "count": 1},
+      {"value": "Q3215095", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "reservoir_type",
+    "tags": [
+      {"value": "water_storage", "count": 14},
+      {"value": "sewage", "count": 13},
+      {"value": "tailings", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "confirmé avion 2011", "count": 4},
+      {
+        "value": "le cadastre semble faux pour les lacs, cf ma trace",
+        "count": 2
+      },
+      {"value": "http://wiki.openstreetmap.org/wiki/Key:water", "count": 2},
+      {"value": "bassin des sources de la Petite Veuse", "count": 2},
+      {
+        "value": "Aucun cours d'eau ne s'en écoule en surface, tout semble être sous-terrain, et même à son plus haut niveau marqué sur la végétation, il ne doit pas s'écouler en surface",
+        "count": 1
+      },
+      {
+        "value": "Approvisionnement en eau pour la neige artificielle",
+        "count": 1
+      },
+      {"value": "bassin des sources", "count": 1},
+      {
+        "value": "Lligne de rive basée sur l'orthophoto Métropole 2012 avec un niveau bas, le + habituel. Sur la photo 2015 le niveau est au + haut possible (voir traces sur le déversoir).",
+        "count": 1
+      },
+      {
+        "value": "Barrage remis en eau en 2014 après travaux remise en etat, vu de visu en 07-2016",
+        "count": 1
+      },
+      {
+        "value": "si si, voir ma trace, j'ai fais pile poil le tour -- j'ai tracé la hauteur maximum d'eau",
+        "count": 1
+      },
+      {
+        "value": "Il semble y avoir un petit décallage de 2 ou 3 metres en tre bing et spot",
+        "count": 1
+      },
+      {
+        "value": "J'avoue que ça peut surprendre, mais ce lac s'écoule par deux cotés ! (Une construction humaine semble indique que ça a été fait pour)",
+        "count": 1
+      },
+      {"value": "To check this is not so visible on BING", "count": 1},
+      {"value": "not a lot of water but visible on Bing", "count": 1},
+      {"value": "Nouveau Lac issu de la fonte galcière", "count": 1},
+      {
+        "value": "Comité d'entreprise Rhonatrans. Propriété Privée. Défense d'entrer",
+        "count": 1
+      },
+      {"value": "Beaume sur le panneau EDF", "count": 1},
+      {"value": "forme confirmée avec bing", "count": 1},
+      {"value": "Coulé à la Fonderie du Val d'Osne en 1850", "count": 1},
+      {"value": "Artiste : Charles Robert CHAMPAGNY", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1", "count": 13},
+      {"value": "-4", "count": 3},
+      {"value": "-2", "count": 3},
+      {"value": "1", "count": 2},
+      {"value": "-5", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "motorboat",
+    "tags": [{"value": "no", "count": 10}, {"value": "yes", "count": 4}],
+    "count": 14
+  },
+  {
+    "key": "golf",
+    "tags": [{"value": "water_hazard", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "swimming", "count": 9},
+      {"value": "scuba_diving", "count": 1},
+      {"value": "fishing", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 5},
+      {"value": "name=Lac des Sources Inférieures ??", "count": 1},
+      {
+        "value": "la partie qui longue le chemin est faite au GPS, le Nord est extrapolée",
+        "count": 1
+      },
+      {
+        "value": "J'ai fais le tour avec mon gps, précision ~5m le cadastre ne semble pas juste",
+        "count": 1
+      },
+      {"value": "tracé approximatif à affiner + tard", "count": 1},
+      {"value": "yes", "count": 1},
+      {
+        "value": "taille et emplacement estimés d'après photos, à affiner qd orthophoto disponible",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {"key": "ship", "tags": [{"value": "no", "count": 10}], "count": 10},
+  {"key": "amenity", "tags": [{"value": "fountain", "count": 10}], "count": 10},
+  {
+    "key": "covered",
+    "tags": [{"value": "no", "count": 6}, {"value": "yes", "count": 4}],
+    "count": 10
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1951", "count": 1},
+      {"value": "2013", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "1972", "count": 1},
+      {"value": "2007", "count": 1},
+      {"value": "1996", "count": 1},
+      {"value": "2014", "count": 1},
+      {"value": "1850", "count": 1},
+      {"value": "Fin du 19e siècle", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "kerb", "count": 7},
+      {"value": "fence", "count": 1},
+      {"value": "wall", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Complètement à sec le 09/2010", "count": 1},
+      {"value": "mare de crocodiles", "count": 1},
+      {
+        "value": "Niveau de hautes eaux (déversoir) : marnage important d'environ 15 m.",
+        "count": 1
+      },
+      {"value": "canal d'amenée", "count": 1},
+      {"value": "Mare pédagogique", "count": 1},
+      {"value": "Parfois à sec", "count": 1},
+      {"value": "Lône", "count": 1},
+      {"value": "bassin d'orage routier", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "basin",
+    "tags": [
+      {"value": "infiltration", "count": 5},
+      {"value": "detention", "count": 1},
+      {"value": "retention", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "1", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "4 bis", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "7", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "EDF", "count": 4},
+      {"value": "Electricité d'Emosson S.A.", "count": 1},
+      {"value": "Mairie de Cognin", "count": 1},
+      {"value": "véolia", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "note:qadastre", "tags": [{"value": "v0.2", "count": 6}], "count": 6},
+  {"key": "area", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {"key": "fishing", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "78000", "count": 1},
+      {"value": "22000", "count": 1},
+      {"value": "32000", "count": 1},
+      {"value": "4600", "count": 1},
+      {"value": "45000", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "seasonal", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "canoe", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "emergency",
+    "tags": [
+      {"value": "water_tank", "count": 3},
+      {"value": "fire_water_pond", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "storage_tank", "count": 1},
+      {"value": "reservoir", "count": 1},
+      {"value": "reservoir_covered", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.lacdechampos.com/", "count": 1},
+      {"value": "http://pontremble.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "depth",
+    "tags": [{"value": "7.3", "count": 1}, {"value": "19", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:%C3%89tang_Beaubertas_%C3%A0_Montluel_(pr%C3%A8s_Mionnay_et_Tramoyes).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Etang_Grand_Turlet.JPG",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "38462B056K", "count": 1},
+      {"value": "42006B076B", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "lock", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "salt", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "scuba_diving:entry:shore",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:difficulty",
+    "tags": [{"value": "1", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "history",
+    "tags": [{"value": "Retrieved from v5", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:entry:ladder",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:type:biology",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:type:training",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:access_easyness",
+    "tags": [{"value": "1", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "protected_area", "count": 1}],
+    "count": 1
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:sandre",
+    "tags": [{"value": "V6011040", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "-1", "count": 1}], "count": 1},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note:access",
+    "tags": [{"value": "AM N°8 du 04/05/2009", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.loire.fr/jcms/lw_934318/natura-2000-sur-le-territoire",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "maxdepth", "tags": [{"value": "17m", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Réserve lagunaire", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "leaf_type",
+    "tags": [{"value": "broadleaved", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:depth",
+    "tags": [{"value": "17", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:maxdepth",
+    "tags": [{"value": "17", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "0.2", "count": 1}], "count": 1}
+]

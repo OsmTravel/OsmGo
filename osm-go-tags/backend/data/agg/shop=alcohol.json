@@ -1,0 +1,270 @@
+[
+  {"key": "shop", "tags": [{"value": "alcohol", "count": 251}], "count": 251},
+  {
+    "key": "alcohol",
+    "tags": [{"value": "wine", "count": 64}, {"value": "beer", "count": 1}],
+    "count": 65
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.caves-cathedrales.fr/", "count": 2},
+      {"value": "http://www.etablissements-martiniere.fr", "count": 2},
+      {"value": "http://www.peylong.com/", "count": 1},
+      {"value": "http://www.louis-claude-desvignes.com/", "count": 1},
+      {"value": "hautesglaces.com", "count": 1},
+      {"value": "http://lesfleursdumalt.fr/", "count": 1},
+      {"value": "http://plus.google.com/101152843387133286197", "count": 1},
+      {"value": "http://www.nicolas.com/", "count": 1},
+      {"value": "http://www.intercaves.fr/", "count": 1},
+      {"value": "http://www.passe-simple-aperitifs.com", "count": 1},
+      {"value": "https://levindesalpes.fr/", "count": 1},
+      {"value": "http://lepromenoirdesvins.com", "count": 1},
+      {"value": "http://cellierneuvillois.fr/", "count": 1},
+      {"value": "http://www.domainedebayanne.com/", "count": 1},
+      {"value": "http://www.boissonsdumonde.fr/", "count": 1},
+      {"value": "http://closdescimes.fr", "count": 1},
+      {"value": "http://www.lechanson.fr", "count": 1},
+      {"value": "http://www.caviste-annecy.com/", "count": 1},
+      {"value": "http://www.vins-cotes-forez.com/", "count": 1},
+      {
+        "value": "https://epiceriecomptoir.com/boutiques/lepicerie-comptoir-croix-rousse",
+        "count": 1
+      },
+      {"value": "http://buffavent.com", "count": 1},
+      {"value": "http://cavesdescharpennes.fr/", "count": 1},
+      {"value": "http://banastouetfourquet.fr/", "count": 1},
+      {"value": "http://www.jean-marc-burgaud.com/", "count": 1},
+      {
+        "value": "https://www.nicolas.com/fr/magasins/VALENCE/s/00006161.html",
+        "count": 1
+      },
+      {"value": "http://www.lacavedevalence.com/", "count": 1},
+      {"value": "http://www.chateauneufdupeuple.com/", "count": 1},
+      {"value": "http://www.vinscharlety.fr/", "count": 1},
+      {"value": "http://www.lamiduvigneron.com/", "count": 1},
+      {"value": "www.mille-et-une-bieres.fr", "count": 1},
+      {"value": "https://whiskylodge.com/", "count": 1},
+      {
+        "value": "http://www.guyot-vins.com/caves/cave.php?cave_id=8",
+        "count": 1
+      },
+      {"value": "https://www.vinsnature.fr/boutiques.html", "count": 1},
+      {"value": "http://www.lavieillereserve.com/", "count": 1},
+      {"value": "http://distillerie-vercors.com/", "count": 1},
+      {"value": "http://www.vignesetvinsfazeli.fr", "count": 1},
+      {"value": "https://magasin.vandb.fr/176-v-and-b-st-priest", "count": 1},
+      {"value": "http://www.mandrin.biz/", "count": 1},
+      {"value": "https://magasin.vandb.fr/766496-v-and-b-valence", "count": 1},
+      {"value": "http://cave-saint-desirat.com/", "count": 1},
+      {"value": "http://www.cellier-st-martin-grenoble.com/", "count": 1},
+      {"value": "http://champvigny.ch/", "count": 1},
+      {"value": "http://www.jullien-freres-caves.fr/", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 44 16 67", "count": 1},
+      {"value": "+33 4 78 89 95 26", "count": 1},
+      {"value": "+33 4 77 24 31 22", "count": 1},
+      {"value": "+33 4 76 43 04 39", "count": 1},
+      {"value": "+33 4 74 85 40 81", "count": 1},
+      {"value": "+33 4 75 47 07 00", "count": 1},
+      {"value": "+33 4 76 75 51 53", "count": 1},
+      {"value": "+33 4 76 45 04 93", "count": 1},
+      {"value": "+33 4 50 51 65 67", "count": 1},
+      {"value": "+33 4 77 24 38 54", "count": 1},
+      {"value": "+33 9 81918662", "count": 1},
+      {"value": "+33478486133", "count": 1},
+      {"value": "+33478443310", "count": 1},
+      {"value": "+33477542575", "count": 1},
+      {"value": "+33 4 75 56 49 18", "count": 1},
+      {"value": "+33 4 74 59 51 46", "count": 1},
+      {"value": "+33 4 76 34 14 60", "count": 1},
+      {"value": "+33 9 83 84 37 79", "count": 1},
+      {"value": "+33 4 74 98 16 15", "count": 1},
+      {"value": "+33679554168", "count": 1},
+      {"value": "+33475371900", "count": 1},
+      {"value": "+334 50 51 43 43", "count": 1},
+      {"value": "+33 4 78203217", "count": 1},
+      {"value": "+33 4 72099721", "count": 1},
+      {"value": "+33 4 78 42 44 98", "count": 1},
+      {"value": "+33 474509083", "count": 1},
+      {"value": "+33954393728", "count": 1},
+      {"value": "+33 4 72906577", "count": 1},
+      {"value": "+33 4 38 37 19 67", "count": 1},
+      {"value": "+33476422939", "count": 1},
+      {"value": "+33 4 77 75 02 07", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 3},
+      {"value": "limited", "count": 3}
+    ],
+    "count": 17
+  },
+  {
+    "key": "drink:wine",
+    "tags": [{"value": "yes", "count": 10}, {"value": "retail", "count": 2}],
+    "count": 12
+  },
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "winery", "count": 5},
+      {"value": "distillery", "count": 2},
+      {"value": "brewery", "count": 2}
+    ],
+    "count": 9
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "pub", "count": 4},
+      {"value": "restaurant", "count": 2},
+      {"value": "yes", "count": 1},
+      {"value": "bar", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "drink:beer", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@banastouetfourquet.fr", "count": 1},
+      {"value": "info@ets-martiniere.fr", "count": 1},
+      {"value": "elinoix@gmail.com", "count": 1},
+      {"value": "toussieu@milleetunebieres.com", "count": 1},
+      {"value": "contact@whiskylodge.com", "count": 1},
+      {"value": "contact@cellier-st-martin-grenoble.com", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Casino", "count": 2},
+      {"value": "Patricia", "count": 1},
+      {"value": "Christelle et Fabien Lombard", "count": 1},
+      {"value": "Franck Peillot", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 2},
+      {"value": "yes", "count": 1},
+      {"value": "wine_cellar", "count": 1},
+      {"value": "gallery", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Vente de vin et bière", "count": 1},
+      {
+        "value": "Website invalide (http://www.visitez.leschopesdumoulin.com/)",
+        "count": 1
+      },
+      {"value": "Distillerie", "count": 1},
+      {"value": "Absinth", "count": 1},
+      {"value": "Good wines and food to take away", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Caviste Bière", "count": 1},
+      {"value": "Caviste", "count": 1},
+      {"value": "Mariano, Aux Caves du Portugal", "count": 1},
+      {"value": "le comptoir de la bière pression à emporter", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "drive_through", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 2},
+      {"value": "2017-11", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 77 24 39 75", "count": 1},
+      {"value": "+33478485830", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {"key": "man_made", "tags": [{"value": "winery", "count": 2}], "count": 2},
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "cave à vins et spiritueux", "count": 1},
+      {"value": "fabrication de bière", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "drink:whisky", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "drink", "tags": [{"value": "wine", "count": 2}], "count": 2},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "50", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "tapas", "count": 1}], "count": 1},
+  {"key": "organic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "natural",
+    "tags": [{"value": "cave_entrance", "count": 1}],
+    "count": 1
+  },
+  {"key": "distillery", "tags": [{"value": "whisky", "count": 1}], "count": 1},
+  {
+    "key": "facebook",
+    "tags": [{"value": "https://www.facebook.com/LaBonneCave", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "2016", "count": 1}], "count": 1},
+  {
+    "key": "mobile",
+    "tags": [{"value": "+33 6 15635122", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Guyot", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "payment:american_express",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "product", "tags": [{"value": "whisky", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "farmyard", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

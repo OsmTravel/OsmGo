@@ -1,0 +1,13 @@
+[
+  {"key": "office", "tags": [{"value": "shared", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [
+      {
+        "value": "l’Association de Gestion de la Maison de la Mécanique AGMM",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

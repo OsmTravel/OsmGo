@@ -1,0 +1,335 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "pipeline", "count": 810}],
+    "count": 810
+  },
+  {
+    "key": "location",
+    "tags": [
+      {"value": "underground", "count": 465},
+      {"value": "overground", "count": 160},
+      {"value": "indoor", "count": 37},
+      {"value": "bridge", "count": 25},
+      {"value": "overhead", "count": 20},
+      {"value": "covered", "count": 1},
+      {"value": "outdoor", "count": 1}
+    ],
+    "count": 709
+  },
+  {
+    "key": "substance",
+    "tags": [
+      {"value": "water", "count": 440},
+      {"value": "gas", "count": 165},
+      {"value": "gaz", "count": 19},
+      {"value": "oil", "count": 17},
+      {"value": "ethylene", "count": 2},
+      {"value": "saline_water", "count": 1}
+    ],
+    "count": 644
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "EDF", "count": 367},
+      {"value": "GRTGaz", "count": 73},
+      {"value": "GRTgaz", "count": 64},
+      {"value": "CNR", "count": 23},
+      {"value": "Société du Pipeline Sud-Européen", "count": 10},
+      {"value": "Sorea", "count": 7},
+      {"value": "Émosson SA", "count": 6},
+      {"value": "Emosson SA", "count": 3},
+      {"value": "Gaz de France", "count": 2},
+      {"value": "SBB-CFF", "count": 2},
+      {"value": "Synergie Maurienne", "count": 2},
+      {"value": "SPMR", "count": 2},
+      {"value": "edf", "count": 1},
+      {"value": "Hydrea", "count": 1},
+      {"value": "GEGrenoble", "count": 1},
+      {"value": "Fhyt", "count": 1},
+      {"value": "Forces du Bacheux", "count": 1},
+      {"value": "Atofina", "count": 1},
+      {"value": "Total", "count": 1},
+      {"value": "SAPPRO", "count": 1},
+      {"value": "Coexhye", "count": 1},
+      {"value": "Teinture Munas", "count": 1},
+      {"value": "GRT gaz", "count": 1},
+      {"value": "FHYT", "count": 1}
+    ],
+    "count": 573
+  },
+  {
+    "key": "waterway",
+    "tags": [
+      {"value": "pressurised", "count": 238},
+      {"value": "drain", "count": 67},
+      {"value": "penstock", "count": 11},
+      {"value": "canal", "count": 10},
+      {"value": "ditch", "count": 1}
+    ],
+    "count": 327
+  },
+  {
+    "key": "usage",
+    "tags": [
+      {"value": "penstock", "count": 200},
+      {"value": "transmission", "count": 97},
+      {"value": "tailrace", "count": 18},
+      {"value": "headrace", "count": 9}
+    ],
+    "count": 324
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-2", "count": 111},
+      {"value": "-1", "count": 96},
+      {"value": "-3", "count": 37},
+      {"value": "1", "count": 22},
+      {"value": "-5", "count": 17},
+      {"value": "2", "count": 14}
+    ],
+    "count": 297
+  },
+  {
+    "key": "type",
+    "tags": [
+      {"value": "water", "count": 76},
+      {"value": "fuel", "count": 5},
+      {"value": "oil", "count": 3},
+      {"value": "ethylene", "count": 2},
+      {"value": "gas", "count": 1},
+      {"value": "gaz chlorure de vinyle (CVM)", "count": 1}
+    ],
+    "count": 88
+  },
+  {"key": "direction", "tags": [{"value": "both", "count": 49}], "count": 49},
+  {
+    "key": "diameter",
+    "tags": [
+      {"value": "800", "count": 5},
+      {"value": "1.20m", "count": 4},
+      {"value": "4000", "count": 3},
+      {"value": "250", "count": 3},
+      {"value": "DN600", "count": 3},
+      {"value": "4300", "count": 2},
+      {"value": "2600", "count": 2},
+      {"value": "1200", "count": 2},
+      {"value": "2200", "count": 2},
+      {"value": "300", "count": 2},
+      {"value": "2800", "count": 2},
+      {"value": "3500", "count": 2},
+      {"value": "2.8m", "count": 2},
+      {"value": "5750", "count": 2},
+      {"value": "500", "count": 2},
+      {"value": "600 mm", "count": 1},
+      {"value": "4800", "count": 1},
+      {"value": "2m", "count": 1},
+      {"value": "100", "count": 1},
+      {"value": "5m", "count": 1},
+      {"value": "450", "count": 1},
+      {"value": "125", "count": 1},
+      {"value": "2500", "count": 1},
+      {"value": "1500", "count": 1},
+      {"value": "1800", "count": 1}
+    ],
+    "count": 48
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Conduite forcée", "count": 21},
+      {"value": "conduite forcée", "count": 4},
+      {
+        "value": "Canalisation Gaz Haute Pression de Brignais à Irigny",
+        "count": 3
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de Vourles à St Genis Laval",
+        "count": 1
+      },
+      {"value": "de Saint-Fons à Balan", "count": 1},
+      {"value": "Conduite forcée enterrée des Clavaux", "count": 1},
+      {
+        "value": "Canalisation Gaz Haute Pression de Mornant à Brignais",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de St Priest DP / Chassieu ZI",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de Brignais à Chaponost/Brindas",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de St Fons à Lyon la mouche",
+        "count": 1
+      },
+      {
+        "value": "ancienne conduite forcée alimentant l'usine électrique de Champ I",
+        "count": 1
+      },
+      {"value": "Canalisation Gaz Haute Pression vers Rhodia", "count": 1},
+      {"value": "Canalisation Gaz Haute Pression de Vourles ZA", "count": 1},
+      {
+        "value": "Canalisation Gaz Haute Pression Poste distribution Chaponost",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de Chaponost/Brindas à Marcy l'étoile",
+        "count": 1
+      },
+      {"value": "Canalisation Gaz Haute Pression de Genas à Bron", "count": 1},
+      {"value": "Canalisation Gaz Haute Pression de Genas à Mions", "count": 1},
+      {
+        "value": "Canalisation Gaz Haute Pression de Mornant à Givors",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de Genas vers Meyzieu",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de Mornant à Rive-de-Giers",
+        "count": 1
+      },
+      {
+        "value": "Canalisation Gaz Haute Pression de Feyzin à Pierre Benite",
+        "count": 1
+      }
+    ],
+    "count": 46
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 36},
+      {"value": "culvert", "count": 3},
+      {"value": "flooded", "count": 1}
+    ],
+    "count": 40
+  },
+  {"key": "material", "tags": [{"value": "metal", "count": 35}], "count": 35},
+  {
+    "key": "bridge",
+    "tags": [{"value": "aqueduct", "count": 11}, {"value": "yes", "count": 8}],
+    "count": 19
+  },
+  {
+    "key": "pipeline",
+    "tags": [
+      {"value": "substation", "count": 16},
+      {"value": "marker", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "3286", "count": 1},
+      {"value": "3273", "count": 1},
+      {"value": "302C", "count": 1},
+      {"value": "3025", "count": 1},
+      {"value": "328B", "count": 1},
+      {"value": "3463", "count": 1},
+      {"value": "3082", "count": 1},
+      {"value": "569J", "count": 1},
+      {"value": "328C", "count": 1},
+      {"value": "3282", "count": 1},
+      {"value": "3464", "count": 1},
+      {"value": "3462", "count": 1},
+      {"value": "3812", "count": 1},
+      {"value": "Etrez - Tersanne", "count": 1},
+      {"value": "SPSE PL3", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "industrial", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "pipeline:diameter",
+    "tags": [
+      {"value": "600", "count": 3},
+      {"value": "450", "count": 2},
+      {"value": "800", "count": 2},
+      {"value": "200", "count": 2},
+      {"value": "250", "count": 1},
+      {"value": "100", "count": 1},
+      {"value": "150", "count": 1},
+      {"value": "400", "count": 1},
+      {"value": "323.8", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "pipeline:pressure",
+    "tags": [
+      {"value": "80", "count": 7},
+      {"value": "67.7", "count": 4},
+      {"value": "240", "count": 1},
+      {"value": "64", "count": 1},
+      {"value": "70.5", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 13}], "count": 13},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 13}], "count": 13},
+  {
+    "key": "disused",
+    "tags": [{"value": "yes", "count": 10}, {"value": "no", "count": 1}],
+    "count": 11
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "tracé très approximatif. Nécessite des noeuds pipeline=marker pour positionner",
+        "count": 5
+      },
+      {"value": "approximate route", "count": 2},
+      {"value": "position", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "-1", "count": 5}, {"value": "2", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "1953", "count": 4}, {"value": "1948", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "FIXME;TODO: Approximatif: DICRIM", "count": 1},
+      {"value": "FIXME;TODO: Approximatif: DICRIM - TO CONTINUE", "count": 1},
+      {
+        "value": "ce n'est pas pour amener de l'eau potable, c'est pour produire de l'énergie (une conduite forcée)",
+        "count": 1
+      },
+      {
+        "value": "Circule dans la galerie de resitution de l'usine de Villarodin",
+        "count": 1
+      },
+      {"value": "Tuyau bonna en galerie", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "disused:type", "tags": [{"value": "water", "count": 3}], "count": 3},
+  {"key": "area", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "pressure",
+    "tags": [{"value": "67.7", "count": 1}, {"value": "80", "count": 1}],
+    "count": 2
+  },
+  {"key": "surface", "tags": [{"value": "grass", "count": 1}], "count": 1}
+]

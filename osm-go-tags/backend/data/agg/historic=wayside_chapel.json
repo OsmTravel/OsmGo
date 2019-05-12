@@ -1,0 +1,9 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "wayside_chapel", "count": 2}],
+    "count": 2
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1}
+]

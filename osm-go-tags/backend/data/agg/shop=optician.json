@@ -1,0 +1,238 @@
+[
+  {"key": "shop", "tags": [{"value": "optician", "count": 465}], "count": 465},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 79 29 57", "count": 1},
+      {"value": "+33 4 72 77 56 18", "count": 1},
+      {"value": "+33 4 78 28 41 70", "count": 1},
+      {"value": "+33 4 78200662", "count": 1},
+      {"value": "+33 4 74 93 01 29", "count": 1},
+      {"value": "+33 4 74 85 17 72", "count": 1},
+      {"value": "+33 4 27 46 99 20", "count": 1},
+      {"value": "+33476870197", "count": 1},
+      {"value": "+33 4 74 85 13 97", "count": 1},
+      {"value": "+33 4 74 85 16 78", "count": 1},
+      {"value": "+33 4 74 78 86 60", "count": 1},
+      {"value": "+33 4 74 31 62 51", "count": 1},
+      {"value": "+33 4 79 25 27 90", "count": 1},
+      {"value": "+33 4 74 57 71 98", "count": 1},
+      {"value": "+33 4 74 85 25 46", "count": 1},
+      {"value": "+33 4 77 24 01 95", "count": 1},
+      {"value": "+33 4 77 24 04 50", "count": 1},
+      {"value": "+33 4 76 46 20 99", "count": 1},
+      {"value": "+33 4 76 62 81 48", "count": 1},
+      {"value": "+33477325877", "count": 1},
+      {"value": "+33 9 84 55 04 41", "count": 1},
+      {"value": "+33 4 50 49 05 57", "count": 1},
+      {"value": "+33478194810", "count": 1},
+      {"value": "+33478445304", "count": 1},
+      {"value": "+33478169183", "count": 1},
+      {"value": "+33472310145", "count": 1},
+      {"value": "+33450405450", "count": 1},
+      {"value": "+33 4 76 08 46 67", "count": 1},
+      {"value": "+33 4 72901923", "count": 1},
+      {"value": "+33 4 78 23 51 13", "count": 1},
+      {"value": "+33 4 50 38 75 56", "count": 1},
+      {"value": "+33 4 50 79 32 17", "count": 1},
+      {"value": "+33 4 50 70 87 60", "count": 1},
+      {"value": "+33 478 85 77 28", "count": 1},
+      {"value": "+33 4 50 92 00 00", "count": 1},
+      {"value": "+41227150515", "count": 1},
+      {"value": "+33 4 78 84 67 30", "count": 1},
+      {"value": "+33 4 75 02 65 18", "count": 1},
+      {"value": "+33476544173", "count": 1},
+      {"value": "+33 4 76 29 09 09", "count": 1},
+      {"value": "+33 4 76 48 78 93", "count": 1},
+      {"value": "+33 4 76 33 22 44", "count": 1}
+    ],
+    "count": 42
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.vue-dailleurs.fr", "count": 2},
+      {"value": "http://viryoptique-viry.monopticien.com", "count": 1},
+      {
+        "value": "http://www.generale-optique.com/opticiens/departement/69--rhone/magasin/caluire_89.aspx",
+        "count": 1
+      },
+      {"value": "http://www.optiqueberjallienne.fr/", "count": 1},
+      {"value": "http://opticiens.optic2000.com/PICARD-SARL", "count": 1},
+      {
+        "value": "http://opticien.optical-center.fr/3432-optical-center-vienne",
+        "count": 1
+      },
+      {"value": "http://www.opticiens-atol.com/", "count": 1},
+      {"value": "http://www.opticien-mutualiste.fr/", "count": 1},
+      {"value": "http://www.lynx-optique.com/", "count": 1},
+      {"value": "http://www.alainafflelou.fr/", "count": 1},
+      {"value": "http://www.krys.com/", "count": 1},
+      {
+        "value": "http://uac-stjuststrambert.fr/quartie-st-just/optique-coudour/",
+        "count": 1
+      },
+      {"value": "http://www.optiqueboen.fr/", "count": 1},
+      {"value": "www.visionunik.fr", "count": 1},
+      {"value": "www.optimomes-lunettes.fr", "count": 1},
+      {"value": "https://www.optic2000.com", "count": 1},
+      {
+        "value": "http://www.krys.com/krys_shopfinder/shop/index/site_code/362/",
+        "count": 1
+      },
+      {"value": "http://www.philippebernardopticien.fr", "count": 1},
+      {"value": "krys.com", "count": 1},
+      {"value": "http://www.optical-center.com", "count": 1},
+      {"value": "http://www.krys.com", "count": 1},
+      {
+        "value": "https://www.krys.com/opticien/france/haute-savoie/opticien-annecy/annecy-parmelan",
+        "count": 1
+      },
+      {"value": "https://optique-terreaux.com/", "count": 1},
+      {
+        "value": "https://www.lesopticiensmutualistes.fr/coscommercestore/les-opticiens-mutualistes-annemasse",
+        "count": 1
+      },
+      {"value": "lissac-l-opticien-annemasse.webnode.fr", "count": 1},
+      {
+        "value": "http://opticien.optical-center.fr/3552-optical-center-annemasse",
+        "count": 1
+      },
+      {
+        "value": "https://www.opticiens-atol.com/trouver-opticien/villeurbanne-28-avenue-henri-barbusse",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/alain-afflelou-alain-afflelou-geant-saint-martin-dheres",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Generale-d-Optique",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Les-Lunettes-selon-Evioo",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Krys",
+        "count": 1
+      }
+    ],
+    "count": 32
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 19},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 2}
+    ],
+    "count": 24
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Optic 2000", "count": 2},
+      {"value": "Alain Afflelou", "count": 2},
+      {"value": "Atol", "count": 2},
+      {"value": "Krys", "count": 1},
+      {"value": "Sophie Lamy", "count": 1},
+      {"value": "M. Bernard Philippe", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "Optique Ballandras", "count": 1},
+      {"value": "Vuaillat-Dollé", "count": 1},
+      {"value": "P. MAILLARD", "count": 1},
+      {"value": "Jean Christophe Romand", "count": 1},
+      {"value": "Kriss", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 8}, {"value": "1", "count": 3}],
+    "count": 11
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 7}], "count": 7},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "optic2000.37@gmail.com", "count": 1},
+      {"value": "grenoble-thiers@krys.com", "count": 1},
+      {"value": "optiquebellevue3@wanadoo.fr", "count": 1},
+      {"value": "optique.terreaux@gmail.com", "count": 1},
+      {"value": "lom.annemasse@harmonie-santeservices.fr", "count": 1},
+      {"value": "lissac.annemasse@gmail.com", "count": 1},
+      {"value": "comvilleurbanne@opticienmutualiste.fr", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 6}], "count": 6},
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 78209285", "count": 1},
+      {"value": "+33 4 76 13 25 91", "count": 1},
+      {"value": "+33 4 72 07 75 01", "count": 1},
+      {"value": "+33 4 50 38 76 69", "count": 1},
+      {"value": "+33 4 50 79 22 72", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "craft", "tags": [{"value": "optician", "count": 4}], "count": 4},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 2},
+      {"value": "2017-06-27", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "50436405000014", "count": 1},
+      {"value": "37856520400021", "count": 1},
+      {"value": "803 823 954 00018", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Optic 2000", "count": 1},
+      {"value": "Lissac", "count": 1},
+      {"value": "Atol", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Krys", "count": 1},
+      {"value": "fr:Optical Center", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3119538", "count": 1},
+      {"value": "Q3354448", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "facebook",
+    "tags": [{"value": "https://www.facebook.com/vuedailleurs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Optique et Audition", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cards", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "branch", "tags": [{"value": "Optic 2000", "count": 1}], "count": 1}
+]

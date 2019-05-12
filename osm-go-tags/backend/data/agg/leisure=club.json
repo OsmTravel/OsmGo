@@ -1,0 +1,15 @@
+[
+  {"key": "leisure", "tags": [{"value": "club", "count": 2}], "count": 2},
+  {"key": "amenity", "tags": [{"value": "library", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.pignonsurrue.org/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 77 97 39 13", "count": 1}],
+    "count": 1
+  }
+]

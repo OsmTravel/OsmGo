@@ -1,0 +1,61 @@
+[
+  {"key": "leisure", "tags": [{"value": "piste", "count": 16}], "count": 16},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "free_flying", "count": 15},
+      {"value": "shooting", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "free_flying:site",
+    "tags": [
+      {"value": "takeoff", "count": 8},
+      {"value": "landing", "count": 7}
+    ],
+    "count": 15
+  },
+  {
+    "key": "free_flying:official",
+    "tags": [{"value": "yes", "count": 10}, {"value": "no", "count": 1}],
+    "count": 11
+  },
+  {
+    "key": "free_flying:tandem",
+    "tags": [{"value": "yes", "count": 10}],
+    "count": 10
+  },
+  {"key": "network", "tags": [{"value": "FFVL", "count": 9}], "count": 9},
+  {
+    "key": "free_flying:paragliding",
+    "tags": [{"value": "yes", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1095", "count": 1},
+      {"value": "1270", "count": 1},
+      {"value": "1180", "count": 1},
+      {"value": "450", "count": 1},
+      {"value": "1500", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "free_flying:hanggliding",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "ref:FFVL",
+    "tags": [
+      {"value": "74D033A", "count": 1},
+      {"value": "74A037A", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "grass", "count": 1}], "count": 1},
+  {"key": "distance", "tags": [{"value": "50", "count": 1}], "count": 1}
+]

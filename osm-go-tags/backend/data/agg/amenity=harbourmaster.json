@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "harbourmaster", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "seamark:type",
+    "tags": [{"value": "building", "count": 1}],
+    "count": 1
+  }
+]

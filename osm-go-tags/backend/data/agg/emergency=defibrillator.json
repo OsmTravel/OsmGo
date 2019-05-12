@@ -1,0 +1,173 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "defibrillator", "count": 278}],
+    "count": 278
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "yes", "count": 49}, {"value": "no", "count": 8}],
+    "count": 57
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 12},
+      {"value": "permissive", "count": 5},
+      {"value": "7/7 - 24/24 - sous le préau de la mairie", "count": 1},
+      {"value": "private", "count": 1},
+      {"value": "restricted", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "defibrillator:location",
+    "tags": [
+      {"value": "At the entrance of building 969", "count": 1},
+      {"value": "To your left as you enter behind the counter", "count": 1},
+      {
+        "value": "Across from the bank, at the right-hand pillar as you go up the stairs to the amphitheatre",
+        "count": 1
+      },
+      {"value": "To your left as you go up to INTERFON", "count": 1},
+      {
+        "value": "to the left of the CERN shop, at the Microcosm entrance",
+        "count": 1
+      },
+      {"value": "upper level, next to the pharmacy and telephone", "count": 1},
+      {"value": "At the ground floor where the two buildings meet", "count": 1},
+      {"value": "To the left at the hostel reception", "count": 1},
+      {"value": "At the Restaurant 3 entrance", "count": 1},
+      {"value": "65 / R - 031", "count": 1},
+      {"value": "3125 / U0-202", "count": 1},
+      {"value": "867 / R-253", "count": 1},
+      {"value": "Près de l'escalier et de l'accès au quai", "count": 1},
+      {"value": "Extérieur", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Mairie", "count": 3},
+      {"value": "Eovi-Mcd", "count": 1},
+      {"value": "SNCF", "count": 1},
+      {"value": "IFRA", "count": 1},
+      {"value": "Maison de la Solidarité", "count": 1},
+      {"value": "Centre Nautique Laure Manaudou", "count": 1},
+      {"value": "Enedis", "count": 1},
+      {"value": "Maison de retraité privée - Les Opalines", "count": 1},
+      {"value": "Les Opticiens Mutualistes", "count": 1},
+      {"value": "Pharmacie Mutualiste", "count": 1},
+      {"value": "Mairie de Saint-Chamond", "count": 1},
+      {"value": "Salle Aristide Briand", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 9},
+      {"value": "no", "count": 2},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Dans le hall, à gauche du comptoir d'information", "count": 1},
+      {"value": "Sur façade NE, extérieur", "count": 1},
+      {"value": "Outside, near the ski lending shop", "count": 1},
+      {"value": "Outside, near the principal entry", "count": 1},
+      {
+        "value": "Défibrillateur situé sur la façade de l'office de tourisme, accessible 24h/24.",
+        "count": 1
+      },
+      {
+        "value": "Défibrillateur situé à l’accueil du magasin, accessible aux heures d'ouverture.",
+        "count": 1
+      },
+      {
+        "value": "défibrillateur situé a l'entrée de la Mairie (Guichet Unique) accessible aux heures d'ouverture (lun-ven 8h00-12h00/13h30 17h30 sam 9h/12h (état civil).",
+        "count": 1
+      },
+      {
+        "value": "Contre le mur à droite en entrant dans le magasin, derrière le bureau du gardien",
+        "count": 1
+      },
+      {"value": "DAE WC aire repos Voreppe A 48", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Défibrillateur Automatisé Externe (DAE)", "count": 1},
+      {"value": "accés en extérieur", "count": 1},
+      {"value": "Niveau 2, à proximité du bureau du proviseur", "count": 1},
+      {
+        "value": "Dans un préfabriqué de toilettes publiques sur de l'aire de repos de Voreppe (A 48).",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Is this still here now that the globe is closed / under construction?",
+        "count": 1
+      },
+      {"value": "This has been moved. To where?", "count": 1},
+      {"value": "Position approximative", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "public_building", "count": 1},
+      {"value": "toilets", "count": 1},
+      {"value": "doctors", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "location",
+    "tags": [{"value": "indoor", "count": 1}, {"value": "outdoor", "count": 1}],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "car_repair", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "ngo", "count": 1}], "count": 1},
+  {
+    "key": "defibrilator:location",
+    "tags": [{"value": "sur mur extérieur - on the outside wall", "count": 1}],
+    "count": 1
+  },
+  {"key": "unisex", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Cordieux_(Montluel)_-_oct_2016_(8).JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description:en",
+    "tags": [{"value": "Automated External Defibrillator (AED)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2018-06-05", "count": 1}],
+    "count": 1
+  }
+]

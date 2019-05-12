@@ -1,0 +1,18 @@
+[
+  {"key": "amenity", "tags": [{"value": "spa", "count": 8}], "count": 8},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 33 04 91", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.thermes-saint-gervais.com/", "count": 1}],
+    "count": 1
+  }
+]

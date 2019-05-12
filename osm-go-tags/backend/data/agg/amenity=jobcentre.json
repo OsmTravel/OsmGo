@@ -1,0 +1,27 @@
+[
+  {"key": "amenity", "tags": [{"value": "jobcentre", "count": 8}], "count": 8},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33228050300", "count": 1},
+      {"value": "+33228050555", "count": 1},
+      {"value": "+33563582409", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "employment_agency", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "check if it is amenity tag to use", "count": 1}],
+    "count": 1
+  }
+]

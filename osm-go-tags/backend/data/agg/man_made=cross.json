@@ -1,0 +1,69 @@
+[
+  {"key": "man_made", "tags": [{"value": "cross", "count": 84}], "count": 84},
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "wayside_cross", "count": 11},
+      {"value": "memorial", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "religion",
+    "tags": [{"value": "christian", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Grande Croix de Fer", "count": 1},
+      {
+        "value": "A la mémoire de François de Quinsonas, dit \"Lieutenant Fiancey\", mort le 27 juillet 1944",
+        "count": 1
+      },
+      {"value": "Croix Souvenir de mission 1900", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "position exacte à préciser", "count": 1},
+      {"value": "emplacement exact à repérer au gps", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "summit:cross", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "network", "tags": [{"value": "Ruban", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "peak", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "place_of_worship", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "place_of_workship:type",
+    "tags": [{"value": "cross", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "2015", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [{"value": "in Memoriam L Giraud 1859_1926 1891_1979", "count": 1}],
+    "count": 1
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "bus_stop", "count": 1}], "count": 1},
+  {
+    "key": "public_transport",
+    "tags": [{"value": "stop_position", "count": 1}],
+    "count": 1
+  }
+]

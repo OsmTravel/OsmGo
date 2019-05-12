@@ -1,0 +1,9 @@
+[
+  {"key": "shop", "tags": [{"value": "radiotechnics", "count": 5}], "count": 5},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.simradio.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

@@ -1,0 +1,34 @@
+[
+  {"key": "leisure", "tags": [{"value": "fishing", "count": 16}], "count": 16},
+  {"key": "natural", "tags": [{"value": "water", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Site de pêche", "count": 1},
+      {
+        "value": "Pour les passionnés et amateurs de pêche, découvrez le lac de Thuy, empoissonné chaque semaine.\nLe vendredi est réservé à la mouche fouettée. Tables de pique-nique à disposition. Vente des permis de pêche au magasin Chasse-Pêche ou en cas de fermeture[..]",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "fishing", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "man_made", "tags": [{"value": "pier", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.thones-peche.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "basin", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 50 02 08 07", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "capacity:disabled", "tags": [{"value": "2", "count": 1}], "count": 1}
+]

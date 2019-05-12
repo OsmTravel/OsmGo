@@ -1,0 +1,17 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "baking_oven", "count": 31}],
+    "count": 31
+  },
+  {"key": "oven", "tags": [{"value": "wood_fired", "count": 13}], "count": 13},
+  {
+    "key": "start_date",
+    "tags": [{"value": "1867", "count": 1}, {"value": "1838", "count": 1}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "energy", "tags": [{"value": "wood", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

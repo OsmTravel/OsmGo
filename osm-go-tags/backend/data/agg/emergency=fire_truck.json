@@ -1,0 +1,14 @@
+[
+  {"key": "highway", "tags": [{"value": "service", "count": 6}], "count": 6},
+  {
+    "key": "service",
+    "tags": [{"value": "emergency_access", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_truck", "count": 6}],
+    "count": 6
+  },
+  {"key": "oneway", "tags": [{"value": "yes", "count": 4}], "count": 4}
+]

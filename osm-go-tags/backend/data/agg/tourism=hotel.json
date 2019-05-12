@@ -1,0 +1,1631 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "hotel", "count": 1674}],
+    "count": 1674
+  },
+  {
+    "key": "stars",
+    "tags": [
+      {"value": "2", "count": 209},
+      {"value": "3", "count": 172},
+      {"value": "4", "count": 68},
+      {"value": "1", "count": 18},
+      {"value": "5", "count": 12},
+      {"value": "6", "count": 1}
+    ],
+    "count": 480
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.fahrenheitseven.com", "count": 2},
+      {"value": "http://www.leshautsdevalmeinier.fr/fr/", "count": 2},
+      {"value": "https://www.hotelparksaone.com/fr/", "count": 1},
+      {"value": "http://www.radissonblu.fr/hotel-lyon", "count": 1},
+      {
+        "value": "https://www.accorhotels.com/gb/hotel-2057-mercure-lyon-centre-saxe-lafayette-hotel/",
+        "count": 1
+      },
+      {
+        "value": "www.ibishotel.com/fr/hotel-0618-ibis-lyon-gare-la-part-dieu/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.republikhotel.com/", "count": 1},
+      {"value": "http://www.hoteldesrempartslyon.com/en", "count": 1},
+      {"value": "http://www.hotelannecy.fr/", "count": 1},
+      {"value": "http://www.chateau-des-avenieres.com/", "count": 1},
+      {"value": "http://hotelpeyrus.fr/", "count": 1},
+      {
+        "value": "http://www.ibis.com/fr/hotel-7391-ibis-lyon-est-chaponnay/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.hotelalize.com", "count": 1},
+      {"value": "http://www.hotelvermont.com", "count": 1},
+      {"value": "https://www.lancolie.com/", "count": 1},
+      {"value": "http://www.christophe-marguin.com", "count": 1},
+      {"value": "http://hotel-gallia.com", "count": 1},
+      {"value": "http://www.hotel-lux.com/", "count": 1},
+      {"value": "http://www.angecouronne.com/", "count": 1},
+      {"value": "http://www.hotel-abricotine.com/", "count": 1},
+      {"value": "http://www.hotelroyaloursblanc.com", "count": 1},
+      {"value": "http://www.alpages-hotel.com/", "count": 1},
+      {
+        "value": "http://www.isere-tourisme.com/HOT/Hotel-Restaurant-le-Terminus/Le-Bourg-d-Oisans/fiche-1104-1-sitraHOT240949.html",
+        "count": 1
+      },
+      {"value": "http://www.hotelalpazur.com/", "count": 1},
+      {
+        "value": "http://www.hotel-grandes-rousses-alpe-huez.federal-hotel.com/",
+        "count": 1
+      },
+      {"value": "http://www.hotel-auberge-du-golf.com/", "count": 1},
+      {"value": "http://www.hotel-lecastel.fr/", "count": 1},
+      {"value": "http://www.hotel-les-2-coteaux-26.com/", "count": 1},
+      {"value": "http://www.pavillon-ermitage.com", "count": 1},
+      {"value": "http://www.hotel-belalp.fr/", "count": 1},
+      {"value": "http://www.hotel-savoy-aixlesbains.com/", "count": 1},
+      {"value": "http://www.bristolsavoie.com/fr/nosec/hotel.html", "count": 1},
+      {"value": "http://www.chateau-hotel-coudree.com", "count": 1},
+      {
+        "value": "https://www.hotel-bb.com/fr/hotels/lyon-centre-gambetta.htm",
+        "count": 1
+      },
+      {"value": "http://www.hoteldescongres.com/", "count": 1},
+      {"value": "http://www.courdesloges.com/", "count": 1},
+      {
+        "value": "http://www.etaphotel.com/fr/hotel-1434-ibis-budget-vienne-sud-ex-etap-hotel/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.hoteldesvoyageurs-desaignes.com/", "count": 1},
+      {
+        "value": "http://www.sofitel.com/fr/hotel-0553-sofitel-lyon-bellecour/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.hoteldesnegociants.fr/", "count": 1},
+      {"value": "http://www.hotel-lamastre.com/", "count": 1},
+      {
+        "value": "http://www.mercure.com/fr/hotel-5934-hotel-mercure-lyon-est-chaponnay/index.shtml",
+        "count": 1
+      },
+      {"value": "www.laterrasse-marnand.com", "count": 1},
+      {"value": "http://www.lessiresdesemur.fr", "count": 1},
+      {"value": "http://www.sphinx-hotel.fr", "count": 1},
+      {"value": "http://www.hotel-lyon.fr/terreaux/", "count": 1},
+      {"value": "http://www.lyon-ouest-hotel.com/", "count": 1},
+      {"value": "http://www.aubergedechateauneuf.fr/", "count": 1},
+      {"value": "http://www.hotel-champlong.com/", "count": 1},
+      {"value": "http://www.jeunesse-et-famille.com", "count": 1},
+      {"value": "http://www.hotel-le-provence.com", "count": 1},
+      {"value": "http://www.hotel-restaurant-delas.com", "count": 1},
+      {"value": "http://www.hotel-la-residence.com", "count": 1},
+      {"value": "http://www.parkandsuites.com/", "count": 1},
+      {"value": "http://www.dockouest.com/", "count": 1},
+      {"value": "http://www.aufaisandore.com/", "count": 1},
+      {"value": "www.le-vieux-tilleul.fr/", "count": 1},
+      {"value": "http://www.la-pinede.fr/", "count": 1},
+      {
+        "value": "https://www.kyriad.com/fr/hotels/kyriad-prestige-lyon-est-saint-priest-eurexpo",
+        "count": 1
+      },
+      {"value": "http://www.chateau-chapeau-cornu.fr", "count": 1},
+      {"value": "http://le-carmel.com/en", "count": 1},
+      {"value": "http://petit-saint-bernard.com/", "count": 1},
+      {"value": "http://hotel-vienne.fr/", "count": 1},
+      {"value": "http://hotel-peisey-vallandry.com/", "count": 1},
+      {"value": "http://www.centre-vacances-peisey-vigogne.com/", "count": 1},
+      {"value": "http://www.patio-terreaux.com/", "count": 1},
+      {
+        "value": "http://www.residhome.com/hotel-residence-aparthotel-prevessinmoens-192.html",
+        "count": 1
+      },
+      {"value": "http://www.apparthotel-annecy.com/en/", "count": 1},
+      {"value": "http://www.hotelazurlyon.com/", "count": 1},
+      {"value": "http://www.hotelainaylyon.com/", "count": 1},
+      {"value": "http://www.hotel-le-chateau.com/", "count": 1},
+      {
+        "value": "http://www.kyriad.com/en/hotels/kyriad-chambery-centre-curial",
+        "count": 1
+      },
+      {"value": "http://www.aubergelasarrazine.fr", "count": 1},
+      {"value": "http://www.hotel-oustalet.com", "count": 1},
+      {
+        "value": "http://www.bestwestern.fr/de/hotel-Macon,BEST-WESTERN-Hotel-d-Europe-et-d-Angleterre,93792",
+        "count": 1
+      },
+      {"value": "http://www.aubergede30pas.com/", "count": 1},
+      {"value": "https://www.premiereclasse.com", "count": 1},
+      {"value": "http://www.aubergedesavoie.com/", "count": 1},
+      {"value": "http://www.hotelterminus-moutiers.com", "count": 1},
+      {"value": "http://www.hoteldudoron.fr/", "count": 1},
+      {"value": "http://www.hotelbeaufort.com/", "count": 1},
+      {
+        "value": "http://www.mercure.com/fr/hotel-0652-mercure-grenoble-centre-alpotel/index.shtml",
+        "count": 1
+      },
+      {"value": "http://solneige.com/", "count": 1},
+      {"value": "https://www.hotel-foch.fr/", "count": 1},
+      {"value": "http://www.lesminesdor.net/", "count": 1},
+      {"value": "http://www.hotel-de-france-isere.com/", "count": 1},
+      {"value": "http://www.hotel-archimbaud.com/", "count": 1},
+      {"value": "http://www.moulindelabrevette.com", "count": 1},
+      {"value": "aubergedemens.fr", "count": 1},
+      {
+        "value": "http://la-source-doree.fr/ferme-auberge-gastronomique/",
+        "count": 1
+      },
+      {"value": "http://www.hotel-aubenas.com/", "count": 1},
+      {"value": "http://lacascade-restaurant73.fr", "count": 1},
+      {"value": "http://www.hotel-ardeche-sud.com", "count": 1},
+      {
+        "value": "http://www.appartcity.com/apparthotel-lyon-part-dieu-garibaldi/_R_12_17_/accueil-residence.htm",
+        "count": 1
+      },
+      {
+        "value": "http://www.bestwestern.fr/fr/hotel-Lyon,Best-Western-Hotel-Charlemagne,93451",
+        "count": 1
+      },
+      {"value": "http://www.les-mille-et-une-yourtes.com/", "count": 1},
+      {"value": "http://www.hoteldudauphine-lyon.fr/", "count": 1},
+      {"value": "hoteldelamarne.fr", "count": 1},
+      {"value": "hotel-des-savoies.fr", "count": 1},
+      {"value": "bestwestern.fr", "count": 1},
+      {"value": "hotelo-lyon.com", "count": 1},
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=0568", "count": 1},
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=4095", "count": 1},
+      {
+        "value": "http://www.hotel-bb.com/fr/hotels/saint-etienne-monthieu.htm",
+        "count": 1
+      },
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=4557", "count": 1},
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=4529", "count": 1},
+      {
+        "value": "http://www.hotel-bb.com/fr/-/hotelByName.htm?id=4093",
+        "count": 1
+      },
+      {
+        "value": "http://www.hotel-bb.com/fr/hotels/lyon-venissieux.htm",
+        "count": 1
+      },
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id", "count": 1},
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=0455", "count": 1},
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=4575", "count": 1},
+      {"value": "http://www.rodetseve.com", "count": 1},
+      {"value": "http://www.hotel-les-clarines.fr/", "count": 1},
+      {"value": "http://gite-a-lyon.fr/", "count": 1},
+      {"value": "http://www.hotelfurania.com", "count": 1},
+      {"value": "http://www.auberge-du-lyonnais.com/", "count": 1},
+      {"value": "www.hoteldusimplon.com", "count": 1},
+      {"value": "http://www.chateauderochegude.com", "count": 1},
+      {"value": "http://www.hotel-restaurant-thonon.com/", "count": 1},
+      {"value": "www.le-saint-vincent.fr/", "count": 1},
+      {
+        "value": "http://www.comfort-drome.fr/-Cat-Hotel-Bourg-de-Peage-.html",
+        "count": 1
+      },
+      {"value": "http://www.maritonnes.com", "count": 1},
+      {"value": "http://www.clairplume.com", "count": 1},
+      {"value": "http://www.institut-hotel.fr/", "count": 1},
+      {"value": "http://www.hotel-vieuxmoulin.com/", "count": 1},
+      {"value": "http://www.lescornettes.com/", "count": 1},
+      {"value": "http://www.gentianettes.fr", "count": 1},
+      {"value": "http://www.hotel-ensoleille.com/", "count": 1},
+      {"value": "http://www.gite-la-fruitire-solaison.fr/", "count": 1},
+      {"value": "https://www.operalia-lescedres.fr", "count": 1},
+      {"value": "http://www.hotel-restaurant-lhorizon.fr", "count": 1},
+      {"value": "http://www.restaurant-bonnier.fr", "count": 1},
+      {"value": "http://www.hotel-relaisdesbergers.com", "count": 1},
+      {"value": "http://www.hotel-chateau-blanchard.com", "count": 1},
+      {"value": "www.hotel-restaurantducentre.com", "count": 1},
+      {
+        "value": "http://www.choicehotels.fr/fr/quality-suites-lyon-confluence-lyon-hotel-fr466",
+        "count": 1
+      },
+      {"value": "lecottagemorzine.com", "count": 1},
+      {"value": "hotelequipe.fr", "count": 1},
+      {"value": "http://www.hotelvalence.com/", "count": 1},
+      {"value": "https://www.hoteltetedor.fr/", "count": 1},
+      {"value": "http://www.ain-dependances.fr", "count": 1},
+      {"value": "http://www.villa-elisa-m.com/", "count": 1},
+      {"value": "http://hotel-lerelax.com/", "count": 1},
+      {"value": "http://domainedescedres.com/", "count": 1},
+      {"value": "hotel-crolles.com", "count": 1},
+      {
+        "value": "http://www.novotel.com/fr/hotel-0455-novotel-valence-sud/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.allobroges.com/plan/", "count": 1},
+      {"value": "http://www.jardinduchateau.sitew.com/", "count": 1},
+      {"value": "http://www.loftsandlakes.com/", "count": 1},
+      {
+        "value": "http://www.hotel-valence.com/Home.2.0.html?&no_cache=1",
+        "count": 1
+      },
+      {
+        "value": "http://michelchabran.com/hotel-michel-chabran-valence-rhone-alpes-drome-pont-de-l-isere/",
+        "count": 1
+      },
+      {
+        "value": "http://www.hotel-restaurant-central.fr/;http://www.hotel-restaurant-central.fr",
+        "count": 1
+      },
+      {"value": "http://www.hotel-restaurant-seyssel.com/", "count": 1},
+      {"value": "http://www.hotel-ancolie.com", "count": 1},
+      {"value": "http://www.lek2altitude.com/fr/", "count": 1},
+      {"value": "www.savoie-hotel.net", "count": 1},
+      {"value": "http://www.hoteldesallies.com", "count": 1},
+      {"value": "http://www.dauly-lyon.com/", "count": 1},
+      {"value": "http://www.novotel.com", "count": 1},
+      {
+        "value": "http://www.accorhotels.com/gb/hotel-7325-novotel-lyon-confluence/index.shtml",
+        "count": 1
+      },
+      {"value": "www.rockypop-chamonix.com", "count": 1},
+      {"value": "http://www.chezjeannotcorbas.com/", "count": 1},
+      {"value": "https://aka-lodge.fr/", "count": 1},
+      {"value": "http://www.auberge-de-thoire.com/", "count": 1},
+      {"value": "www.lestresoms.com", "count": 1},
+      {"value": "http://www.hotel-lahuchette.com", "count": 1},
+      {"value": "http://www.les-grillons.com/fr/les-gites", "count": 1},
+      {"value": "http://www.adonis-grandgeneve.com", "count": 1},
+      {"value": "http://www.villaflorentine.com/", "count": 1},
+      {
+        "value": "https://www.campanile.com/fr/hotels/campanile-lyon-est-aeroport-saint-exupery",
+        "count": 1
+      },
+      {"value": "http://abnb.me/EVmg/LaO14p5mOF", "count": 1},
+      {"value": "http://abnb.me/EVmg/hivBzUzmOF", "count": 1},
+      {"value": "http://abnb.me/EVmg/vmCtiJGnOF", "count": 1},
+      {"value": "http://www.hotel-arcadien.com", "count": 1},
+      {"value": "www.hotel-bb.com/fr/hotels/lyon-ouest-tassin.htm", "count": 1},
+      {"value": "http://www.balladins-grenoble.com/", "count": 1},
+      {
+        "value": "ihg.com/holidayinn/hotels/us/en/tassin-la-demi-lune/lysvv/hoteldetail",
+        "count": 1
+      },
+      {"value": "https://www.georgesblanc.com/fr/", "count": 1},
+      {"value": "https://www.qualitysuites-lyon.fr/", "count": 1},
+      {
+        "value": "https://www.accorhotels.com/fr/hotel-3739-ibis-budget-lyon-gerland/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.magdeleine-hotel.fr/", "count": 1},
+      {"value": "http://www.hotel-le-felicien.fr/", "count": 1},
+      {"value": "http://www.moulindelere.com", "count": 1},
+      {"value": "http://www.campinglepontet.fr/index.html", "count": 1},
+      {"value": "http://www.bastide-de-fontaille.be", "count": 1},
+      {"value": "http://auberge-bon-accueil.business.site/", "count": 1},
+      {"value": "http://www.lechristiania-hotel.com", "count": 1},
+      {"value": "http://www.hotel-gloria-grenoble.com", "count": 1},
+      {"value": "http://www.hotel-trianon.com/", "count": 1},
+      {"value": "http://www.hotelannecy.com/", "count": 1},
+      {"value": "http://www.shgeneva.com", "count": 1},
+      {"value": "www.belambra.fr", "count": 1},
+      {"value": "http://www.hotelviallet.com/", "count": 1},
+      {"value": "http://www.auberge-des-montauds.fr", "count": 1},
+      {"value": "http://www.bruyeres-hotel-menuires.com", "count": 1},
+      {
+        "value": "http://www.hotel-bb.com/fr/-/hotelByName.htm?id=4195",
+        "count": 1
+      },
+      {"value": "http://www.hotel-des-facultes.com/", "count": 1},
+      {"value": "http://www.hotellesdiguieres.com", "count": 1},
+      {"value": "http://www.patrickhotel-grenoble.com", "count": 1},
+      {
+        "value": "http://www.mercure.com/fr/hotel-2947-mercure-grenoble-grand-hotel-president/index.shtml",
+        "count": 1
+      },
+      {"value": "www.seiglieres.fr", "count": 1},
+      {"value": "http://www.hotel-les-playes.com/", "count": 1},
+      {"value": "https://www.hotel-oreeparc.com/", "count": 1},
+      {
+        "value": "http://www.comfort-drome.fr/-Comfort-Hotel-Romans-sur-Isere-.html",
+        "count": 1
+      },
+      {"value": "http://www.hotel-crequi.com/", "count": 1},
+      {"value": "http://www.hotelwilson-lyon.com/", "count": 1},
+      {"value": "http://www.campanile-lyon-centre.fr/", "count": 1},
+      {"value": "http://www.apparthotel-lyon.com/fr/", "count": 1},
+      {
+        "value": "http://www.odalys-vacances.com/location-vacances-Lyon.html",
+        "count": 1
+      },
+      {"value": "http://www.lamascotte-hotelrestaurant.com", "count": 1},
+      {"value": "http://www.lestroisroses.com/", "count": 1},
+      {"value": "http://www.hotel-la-siesta.eu", "count": 1},
+      {"value": "http://www.campanile.com", "count": 1},
+      {"value": "www.laflechedor.com", "count": 1},
+      {"value": "http://www.hotelespritmontagne.com/", "count": 1},
+      {"value": "www.evianroyalresort.com", "count": 1},
+      {"value": "http://www.hotel-thonon.com/index.html", "count": 1},
+      {"value": "https://restaurant-chartron.com/", "count": 1},
+      {"value": "http://www.hotelaixlesbains.com/", "count": 1},
+      {"value": "http://www.hotel-amys.com", "count": 1},
+      {"value": "http://www.radissonblu.com/hotel-aixlesbains", "count": 1},
+      {"value": "www.soleiletjardin.com", "count": 1},
+      {"value": "http://hotel-aixlesbains.info", "count": 1},
+      {"value": "http://hotel-baud.com", "count": 1},
+      {"value": "http://www.campanile.fr/fr/default.aspx", "count": 1},
+      {"value": "http://www.chris-tal.com", "count": 1},
+      {
+        "value": "http://www.relais-routiers.com/Relais_Routiers_recherche.asp?nrelais=AVR31063",
+        "count": 1
+      },
+      {"value": "www.lecordonant.fr", "count": 1},
+      {"value": "http://www.hotel-deslacs-chamonix.com", "count": 1},
+      {
+        "value": "http://www.langleyhotels.eu/en/our-hotels/hotel-gustavia/",
+        "count": 1
+      },
+      {"value": "https://www.hotel-aiguilledumidi.com/", "count": 1},
+      {"value": "http://www.verthotel.com/", "count": 1},
+      {
+        "value": "http://www.atrium-hotel.fr/hotel-valence/index.html",
+        "count": 1
+      },
+      {"value": "http://www.chalet-montana.com/", "count": 1},
+      {"value": "http://www.golfhotelcharmeil.com/", "count": 1},
+      {"value": "https://www.hoteldelavilleon.com/", "count": 1},
+      {"value": "https://www.laboheme-ardeche.com/", "count": 1},
+      {"value": "http://www.hotel-amandiers.com", "count": 1},
+      {"value": "http://www.residence-la-reserve.com/", "count": 1},
+      {"value": "http://www.hotelmedicis.fr/", "count": 1},
+      {"value": "http://www.hotel-termignon.com/", "count": 1},
+      {
+        "value": "http://www.accorhotels.com/fr/hotel-2548-ibis-budget-chambery-centre-ville-ex-etap-hotel/index.shtml",
+        "count": 1
+      },
+      {"value": "http://www.lesavoy-hotel.com/", "count": 1},
+      {
+        "value": "http://www.ibis.com/fr/hotel-0644-ibis-valence-sud/index.shtml",
+        "count": 1
+      },
+      {
+        "value": "http://www.hotel-bb.com/fr/-/hotelByName.htm?id=4220",
+        "count": 1
+      },
+      {"value": "http://www.boisjoly.com/", "count": 1},
+      {"value": "www.premiereclasse.com", "count": 1},
+      {"value": "http://www.lapyramide.com/", "count": 1},
+      {"value": "http://www.labouledeneige.com/", "count": 1},
+      {"value": "http://www.hotel-lyon-est.com", "count": 1},
+      {"value": "http://www.mercure.com", "count": 1},
+      {"value": "http://www.hotel-restaurant-cirius.com/", "count": 1},
+      {"value": "http://www.relaisdesalpes.fr", "count": 1},
+      {"value": "http://www.hotellechalet.fr/en/", "count": 1},
+      {"value": "http://www.hoteloberland.com/", "count": 1},
+      {"value": "http://users.skynet.be/milan/", "count": 1},
+      {"value": "http://hotel-saint-romain.fr/", "count": 1},
+      {"value": "http://www.village-tipi.com/", "count": 1},
+      {"value": "auberge-charix.fr", "count": 1},
+      {"value": "http://www.hotelbellevue73.com/", "count": 1},
+      {"value": "www.mmv.fr", "count": 1},
+      {"value": "www.residhotel.com", "count": 1},
+      {
+        "value": "http://www.bisanne1500.fr/fr/hotel-cascade-102.html",
+        "count": 1
+      },
+      {"value": "http://relais-500-de-vienne.com/", "count": 1},
+      {"value": "http://www.hotel-campanile-valence.fr/", "count": 1},
+      {"value": "http://www.la-gabetiere.com/", "count": 1},
+      {"value": "http://lericcoty.fr/", "count": 1},
+      {"value": "http://www.hotel-lepaquis.fr/fr/index.php", "count": 1},
+      {"value": "mountainsunltd.com", "count": 1},
+      {
+        "value": "http://www3.hilton.com/en/hotels/france/hilton-evian-les-bains-XEBHIHI/index.html?WT.mc_id=zELWAKN0EMEA1HI2DMH3LocalSearch4DGGenericx6XEBHIHI",
+        "count": 1
+      },
+      {"value": "http://www.chateaudescomtesdechalles.com/", "count": 1},
+      {"value": "http://www.hotel-manigod-croix-fry.fr/", "count": 1},
+      {"value": "http://www.comborciere.com", "count": 1},
+      {
+        "value": "http://www.lagrange-vacances.com/home.php3?p=6&rcre=L_COMB_TOUSSU_FRA_O_H_2_SA&lang=a&crx=CFRA",
+        "count": 1
+      },
+      {"value": "www.arcalod.com/", "count": 1},
+      {"value": "www.hotel-savoie-lemargeriaz.com", "count": 1},
+      {"value": "http://www.lafermedenoemie.com", "count": 1},
+      {"value": "http://www.cartusia-hotel.com/", "count": 1},
+      {"value": "http://www.lyonhotel-leroyal.com/default.html", "count": 1},
+      {"value": "http://www.lacharpiniere.com", "count": 1},
+      {"value": "http://www.o2-saone.fr/", "count": 1},
+      {"value": "http://aubergedugrandchamp.jimdo.com", "count": 1},
+      {"value": "www.lesaveilles.com", "count": 1},
+      {"value": "http://www.hotel-restaurant-du-tilleul.com/", "count": 1},
+      {"value": "www.le-menuire.fr", "count": 1},
+      {"value": "http://www.hotelbellier.com/", "count": 1},
+      {"value": "http://www.hotel-les-ancolies.com", "count": 1},
+      {"value": "www.hotel-chautagne.com", "count": 1},
+      {"value": "http://www.airelles.fr/", "count": 1},
+      {"value": "http://www.lesducsdesavoie.com/", "count": 1},
+      {"value": "http://www.chevalblanc.com/", "count": 1},
+      {"value": "http://www.vtf-vacances.com", "count": 1},
+      {"value": "http://www.lechassemontagne.com/", "count": 1},
+      {"value": "http://www.warwick-reine-astrid-lyon.fr/fr/", "count": 1},
+      {"value": "http://www.au-sans-souci.com/", "count": 1},
+      {"value": "http://www.hotel-ferrat.fr/", "count": 1},
+      {"value": "http://chateaudherbelon.com/", "count": 1},
+      {"value": "http://www.lahaltedumoulin.com/", "count": 1},
+      {"value": "http://www.leslans.com/", "count": 1},
+      {"value": "http://blog.hotelicietla.com/", "count": 1},
+      {"value": "www.hotelgaisoleil.com", "count": 1},
+      {
+        "value": "http://www.probtp.com/probtp/web/node1_13112/haute-savoie-les-carroz-d-araches",
+        "count": 1
+      },
+      {"value": "http://leclosduchene.com/", "count": 1},
+      {"value": "http://www.leschaletsdeflorence.fr", "count": 1},
+      {
+        "value": "http://www.madamevacances.com/vacances-au-ski/alpes-du-nord/saint-gervais-les-bains/residence-le-grand-panorama.html",
+        "count": 1
+      },
+      {"value": "http://www.liberty-mont-blanc.com", "count": 1},
+      {"value": "http://hotel-le-regina.com/", "count": 1},
+      {"value": "http://www.coin-savoyard.com/", "count": 1},
+      {"value": "http://www.hotel-azalees.com", "count": 1},
+      {"value": "http://www.hotel-plaisance.com/", "count": 1},
+      {"value": "http://www.park-hotel-grenoble.fr", "count": 1},
+      {"value": "http://www.hotel-cervolan.fr/", "count": 1},
+      {"value": "chabriol.com", "count": 1},
+      {
+        "value": "https://www.appartcity.com/fr/appart-hotel/lyon-cite-internationale-a-caluire-et-cuire.html",
+        "count": 1
+      },
+      {"value": "http://www.okkohotels.com/hotels/grenoble", "count": 1},
+      {"value": "http://www.leboutdulac.com/", "count": 1},
+      {"value": "http://www.valpre.com", "count": 1},
+      {"value": "http://www.valpre.com/", "count": 1},
+      {"value": "http://www.clubmed.fr", "count": 1},
+      {"value": "http://aubergedelacouronne.fr", "count": 1},
+      {"value": "http://www.lerobinson.fr/", "count": 1},
+      {"value": "www.villaaugusta.fr", "count": 1},
+      {"value": "lacroixdesavoie.fr", "count": 1},
+      {
+        "value": "https://www.hotel-bb.com/fr/hotels/lyon-caluire-cite-internationale.htm",
+        "count": 1
+      },
+      {"value": "http://www.aubergelechaudron.com", "count": 1},
+      {"value": "http://www.aubergedemontpezat.com/", "count": 1},
+      {"value": "www.hotel-bb.com/fr/-/hotelByName.htm?id=4704", "count": 1},
+      {
+        "value": "http://www.premiereclasse.com/fr/hotels/premiere-classe-valence-sud",
+        "count": 1
+      },
+      {
+        "value": "http://www.bestwestern.fr/fr/hotel-Voiron,Best-Western-Palladior-Voiron,93656",
+        "count": 1
+      },
+      {"value": "http://www.hotel-neiges-de-france.com/fr/", "count": 1},
+      {"value": "www.commanderie.fr", "count": 1},
+      {
+        "value": "http://www.residences-tempologis.com/fr/residence/5/grenoble-centre",
+        "count": 1
+      },
+      {
+        "value": "http://www.kyriad.com/fr/hotels/kyriad-valence-nord",
+        "count": 1
+      },
+      {"value": "http://www.pontduchalon.com", "count": 1},
+      {
+        "value": "http://www.ibis.com/fr/hotel-0623-ibis-montelimar-nord/",
+        "count": 1
+      },
+      {"value": "http://www.hotel-grillons.com", "count": 1},
+      {"value": "http://www.leschataigniers.fr/", "count": 1}
+    ],
+    "count": 339
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33674093719", "count": 3},
+      {"value": "+33 474509050", "count": 2},
+      {"value": "+33 4 72 18 05 05", "count": 2},
+      {"value": "+33437236400", "count": 1},
+      {"value": "+33472619090", "count": 1},
+      {"value": "+33 4 78 95 42 11", "count": 1},
+      {"value": "+33 4 78 42 27 78", "count": 1},
+      {"value": "+33 4 78 42 00 46", "count": 1},
+      {"value": "+33 4 50 44 02 23", "count": 1},
+      {"value": "+33 4 37 23 10 40", "count": 1},
+      {"value": "+33 4 75 35 29 36", "count": 1},
+      {"value": "+33 4 76 43 12 91", "count": 1},
+      {"value": "+33 4 50 02 36 22", "count": 1},
+      {"value": "+33 4 50 44 28 98", "count": 1},
+      {"value": "+33 4 78 91 80 04", "count": 1},
+      {"value": "+33 4 76 87 39 21", "count": 1},
+      {"value": "+33 4 76 46 18 92", "count": 1},
+      {"value": "+33 4 76 46 41 89", "count": 1},
+      {"value": "+33 4 74 66 42 00", "count": 1},
+      {"value": "+33 4 75 07 44 60", "count": 1},
+      {"value": "+33 4 76 11 07 99", "count": 1},
+      {"value": "+33 4 76 80 00 26", "count": 1},
+      {"value": "+33 4 75 84 73 82", "count": 1},
+      {"value": "+33 4 75 08 65 00", "count": 1},
+      {"value": "+33 4 76 96 10 27", "count": 1},
+      {"value": "+33 4 79 35 13 33", "count": 1},
+      {"value": "+33 4 79 35 08 14", "count": 1},
+      {"value": "+33 4 50 72 62 33", "count": 1},
+      {"value": "+33 4 72 77 44 44", "count": 1},
+      {"value": "+33 4 77 56 08 99", "count": 1},
+      {"value": "+33 4 75 04 28 59", "count": 1},
+      {"value": "+33 8 92 70 09 68", "count": 1},
+      {"value": "+33 4 75 06 61 48", "count": 1},
+      {"value": "+33 4 72 41 20 20", "count": 1},
+      {"value": "+33 4 75 06 12 20", "count": 1},
+      {"value": "+33 4 75 06 41 53", "count": 1},
+      {"value": "+33 4 75 37 42 43", "count": 1},
+      {"value": "+33 4 37 23 61 61", "count": 1},
+      {"value": "+33 4 74 64 19 22", "count": 1},
+      {"value": "+33 4 75 52 34 21", "count": 1},
+      {"value": "+33 4 78 35 94 97", "count": 1},
+      {"value": "+33 4 77 69 78 78", "count": 1},
+      {"value": "+33479086039", "count": 1},
+      {"value": "+33 4 66 69 46 06", "count": 1},
+      {"value": "+33 4 79 62 37 26", "count": 1},
+      {"value": "+33 4 76 30 00 42", "count": 1},
+      {"value": "+33 4 76 30 00 03", "count": 1},
+      {"value": "+33 4 78 42 63 28", "count": 1},
+      {"value": "+33 4 76 95 20 02", "count": 1},
+      {"value": "+33 4 74 37 76 89", "count": 1},
+      {"value": "+33 4 72 27 75 00", "count": 1},
+      {"value": "+33 4 75 35 25 88", "count": 1},
+      {"value": "+33 4 74 27 79 00", "count": 1},
+      {"value": "+33 4 79 06 80 48", "count": 1},
+      {"value": "+33 4 74 85 02 04", "count": 1},
+      {"value": "+33 4 79 07 93 09", "count": 1},
+      {"value": "+33 4 79 07 92 47", "count": 1},
+      {"value": "+33 4 78 19 19 00", "count": 1},
+      {"value": "+33 4 72 40 45 45", "count": 1},
+      {"value": "+33 4 50 99 46 46", "count": 1},
+      {"value": "+33 4 78 72 48 84", "count": 1},
+      {"value": "+33 4 50 88 50 00", "count": 1},
+      {"value": "+33 4 78 37 10 44", "count": 1},
+      {"value": "+33 4 78 37 21 68", "count": 1},
+      {"value": "+33 4 78 42 43 42", "count": 1},
+      {"value": "+33 4 75 08 60 22", "count": 1},
+      {"value": "+33 4 79361364", "count": 1},
+      {"value": "+33 3 85 38 27 94", "count": 1},
+      {"value": "+33 4 72891089", "count": 1},
+      {"value": "+33 4 76 87 88 41", "count": 1},
+      {"value": "+33 4 50 93 21 28", "count": 1},
+      {"value": "+33 4 50 79 03 60", "count": 1},
+      {"value": "+33 6 14 83 84 35", "count": 1},
+      {"value": "+33 4 75 71 81 18", "count": 1},
+      {"value": "+33 3 85 36 49 27", "count": 1},
+      {"value": "+33 4 76 34 81 00", "count": 1},
+      {"value": "+33 4 50 33 54 54", "count": 1},
+      {"value": "+33 4 72 84 94 01", "count": 1},
+      {"value": "+33 4 75 35 92 98", "count": 1},
+      {"value": "+33 4 79 05 23 77", "count": 1},
+      {"value": "+33 4 75 54 50 12", "count": 1},
+      {"value": "+33 4 50 69 31 03", "count": 1},
+      {"value": "+33 4 72 60 83 83", "count": 1},
+      {"value": "+33 4 72777000", "count": 1},
+      {"value": "+33 4 74 92 33 14", "count": 1},
+      {"value": "+33 4 78 37 24 19", "count": 1},
+      {"value": "+33 4 78 37 07 46", "count": 1},
+      {"value": "+33 4 78 37 66 94", "count": 1},
+      {"value": "+33 4 78 37 34 71", "count": 1},
+      {"value": "+33 4 78 37 39 03", "count": 1},
+      {"value": "+33603567195", "count": 1},
+      {"value": "+33 4 79 54 80 80", "count": 1},
+      {"value": "+33 4 78 83 24 12", "count": 1},
+      {"value": "+33 6 61 87 88 24", "count": 1},
+      {"value": "+33 4 50 51 26 10", "count": 1},
+      {"value": "+33 478 37 41 00", "count": 1},
+      {"value": "+33 4 75 97 21 10", "count": 1},
+      {"value": "+33 4 50 73 70 77", "count": 1},
+      {"value": "+33 450 406387", "count": 1},
+      {"value": "+334 75 05 10 60", "count": 1},
+      {"value": "+33 4 75 91 81 30", "count": 1},
+      {"value": "+33476463644", "count": 1},
+      {"value": "+33 4 50 73 50 24", "count": 1},
+      {"value": "+33478447272", "count": 1},
+      {"value": "+33478489206", "count": 1},
+      {"value": "+33478485122", "count": 1},
+      {"value": "+33477542888", "count": 1},
+      {"value": "+33 4 74361007", "count": 1},
+      {"value": "+33 4 50 60 12 04", "count": 1},
+      {"value": "+33 2 8000250", "count": 1},
+      {"value": "+33 4 37 23 16 04", "count": 1},
+      {"value": "+33 4 50 79 01 03", "count": 1},
+      {"value": "+33 4 50 79 11 43", "count": 1},
+      {"value": "+33 4 56 58 97 97", "count": 1},
+      {"value": "+33 9 70 35 65 63", "count": 1},
+      {"value": "+33474217956", "count": 1},
+      {"value": "+33671346190", "count": 1},
+      {"value": "+33 450 45 03 11", "count": 1},
+      {"value": "+33 667 919 423", "count": 1},
+      {"value": "+33 4 75 43 00 87", "count": 1},
+      {"value": "+33 4 77 64 25 39", "count": 1},
+      {"value": "+33450561656", "count": 1},
+      {"value": "+33 4 79 55 05 00", "count": 1},
+      {"value": "+33450033501", "count": 1},
+      {"value": "+33 4 50 79 13 05", "count": 1},
+      {"value": "+33479014646", "count": 1},
+      {"value": "+33 450490355", "count": 1},
+      {"value": "+33 4 78493835", "count": 1},
+      {"value": "+33 4 50 79 25 26", "count": 1},
+      {"value": "+33 4 50 79 03 21", "count": 1},
+      {"value": "+33 4 50 79 15 76", "count": 1},
+      {"value": "+33 4 74 39 00 09", "count": 1},
+      {"value": "+33 4 78 26 04 37", "count": 1},
+      {"value": "+33450335454", "count": 1},
+      {"value": "+33 4 78 37 57 31", "count": 1},
+      {"value": "+33483300000", "count": 1},
+      {"value": "+33 4 37 42 22 68", "count": 1},
+      {"value": "+33 4 74 49 22 05", "count": 1},
+      {"value": "+334 50 51 43 84", "count": 1},
+      {"value": "+33385310355", "count": 1},
+      {"value": "+33475211334", "count": 1},
+      {"value": "+33 4 50 85 06 70", "count": 1},
+      {"value": "+33 4 78 40 40 11", "count": 1},
+      {"value": "+33 4 72 56 56 56", "count": 1},
+      {"value": "+33 479041600", "count": 1},
+      {"value": "+33 4 78646869", "count": 1},
+      {"value": "+33476952147", "count": 1},
+      {"value": "+33 4 78 37 50 50", "count": 1},
+      {"value": "+33 474509090", "count": 1},
+      {"value": "+33 4 27 02 70 04", "count": 1},
+      {"value": "+33475986304", "count": 1},
+      {"value": "+33 4 75 02 33 53", "count": 1},
+      {"value": "+33 4 75 09 14 73", "count": 1},
+      {"value": "0033624241789", "count": 1},
+      {"value": "+33 4 76 46 12 93", "count": 1},
+      {"value": "+33 4 76 46 21 62", "count": 1},
+      {"value": "+33 4 50 45 04 56", "count": 1},
+      {"value": "+33 4 79 00 62 30", "count": 1},
+      {"value": "+33 4 79 09 35 35", "count": 1},
+      {"value": "+33 479381047", "count": 1},
+      {"value": "+33479000404", "count": 1},
+      {"value": "+33 4 78 72 22 65", "count": 1},
+      {"value": "+33 4 38 70 19 50", "count": 1},
+      {"value": "+33 4 76 21 26 63", "count": 1},
+      {"value": "+33 4 76 56 26 56", "count": 1},
+      {"value": "+33 4 75 70 26 12", "count": 1},
+      {"value": "+33 4 75 05 10 20", "count": 1},
+      {"value": "+33 4 78 60 20 47", "count": 1},
+      {"value": "+33 4 78 60 03 09", "count": 1},
+      {"value": "+33 4 75 33 07 90;+33 4 75 67 57 19", "count": 1},
+      {"value": "+33 4 50 70 36 70", "count": 1},
+      {"value": "+33 4 75 45 11 82", "count": 1},
+      {"value": "+33 4 79 61 48 32", "count": 1},
+      {"value": "+33 4 79 34 19 19", "count": 1},
+      {"value": "+33 4 79 35 74 74", "count": 1},
+      {"value": "+33 4 75 53 02 07", "count": 1},
+      {"value": "+33 4 78 02 44 90", "count": 1},
+      {"value": "+33 4 79 35 13 89", "count": 1},
+      {"value": "+33 4 50 39 20 15", "count": 1},
+      {"value": "+33 4 50 54 50 55", "count": 1},
+      {"value": "+33 4 50 58 34 56", "count": 1},
+      {"value": "+33 4 75 84 66 86", "count": 1},
+      {"value": "+33 4 50530208", "count": 1},
+      {"value": "+33 4 75 55 53 62", "count": 1},
+      {"value": "+33 4 75 34 95 42", "count": 1},
+      {"value": "+33486154444", "count": 1},
+      {"value": "+33 4 75 08 07 78", "count": 1},
+      {"value": "+33 )4 75 06 97 50", "count": 1},
+      {"value": "+33 4 75 08 02 50", "count": 1},
+      {"value": "+33 4 75 07 24 10", "count": 1},
+      {"value": "+33 4 55 40 85 21", "count": 1},
+      {"value": "+33 4 50 40 30 20", "count": 1},
+      {"value": "+33 479055150", "count": 1},
+      {"value": "+33 4 79 26 40 00", "count": 1},
+      {"value": "+33 4 75 44 42 54", "count": 1},
+      {"value": "08 92 78 80 28", "count": 1},
+      {"value": "+33 4 50 46 43 33", "count": 1},
+      {"value": "+33 (0)4 50 41 01 96", "count": 1},
+      {"value": "+33 4 74 53 01 96", "count": 1},
+      {"value": "+33 4 78 83 73 48", "count": 1},
+      {"value": "+33450344458", "count": 1},
+      {"value": "+33 4 78 55 90 90", "count": 1},
+      {"value": "+33 4 74 22 44 88", "count": 1},
+      {"value": "+33 4 77 54 89 22", "count": 1},
+      {"value": "+33 4 76 80 01 23", "count": 1},
+      {"value": "+33475797400", "count": 1},
+      {"value": "+33 6 69 07 60 79", "count": 1},
+      {"value": "+33 4 79 05 20 64", "count": 1},
+      {"value": "+33 4 76 11 35 07", "count": 1},
+      {"value": "+33 4 76 79 24 69", "count": 1},
+      {"value": "+33 2 27 10 95 00", "count": 1},
+      {"value": "+33 4 79 36 20 05", "count": 1},
+      {"value": "+33 4 75 82 92 97", "count": 1},
+      {"value": "+33 4 74 58 01 31", "count": 1},
+      {"value": "+33 4 79 06 37 33", "count": 1},
+      {"value": "+33 4 50 84 60 00", "count": 1},
+      {"value": "+33 4 79 72 72 72", "count": 1},
+      {"value": "+33 450449027", "count": 1},
+      {"value": "+33 479 54 81 53", "count": 1},
+      {"value": "+33 4 79 25 82 09", "count": 1},
+      {"value": "+33 6 80 00 02 40", "count": 1},
+      {"value": "+33 4 76 88 83 18", "count": 1},
+      {"value": "+33 4 50 56 90 67", "count": 1},
+      {"value": "+33 4 76 34 21 08", "count": 1},
+      {"value": "+33 476300043", "count": 1},
+      {"value": "+33 4 79 00 60 33", "count": 1},
+      {"value": "+33479381067", "count": 1},
+      {"value": "+33 4 79 88 42 86", "count": 1},
+      {"value": "+33 4 79 00 38 38", "count": 1},
+      {"value": "+33 4 79 08 03 00", "count": 1},
+      {"value": "+33 4 79 00 50 50", "count": 1},
+      {"value": "+33 4 50 75 80 66", "count": 1},
+      {"value": "+33 4 76 34 03 60", "count": 1},
+      {"value": "+33 4 76 34 42 70", "count": 1},
+      {"value": "+33 4 76 34 02 03", "count": 1},
+      {"value": "+33 4 50 84 70 89", "count": 1},
+      {"value": "+33 4 50 79 00 90", "count": 1},
+      {"value": "+33 4 37 55 09 09", "count": 1},
+      {"value": "+33 4 76 34 41 71", "count": 1},
+      {"value": "+33 4 50 90 90 00", "count": 1},
+      {"value": "+33 4 50 05 87 00", "count": 1},
+      {"value": "+33 6 72 39 86 92", "count": 1},
+      {"value": "+33 4 50 58 67 60", "count": 1},
+      {"value": "+33 4 50 93 45 21", "count": 1},
+      {"value": "+33 4 50 58 60 27", "count": 1},
+      {"value": "+33 4 75 08 05 23", "count": 1},
+      {"value": "+33 4 74 65 33 52", "count": 1},
+      {"value": "+33 4 76 85 81 23", "count": 1},
+      {"value": "+33 4 79 52 03 10", "count": 1},
+      {"value": "+33 4 79 41 69 00", "count": 1},
+      {"value": "+33 (0)6 77 06 49 90", "count": 1},
+      {"value": "+33 4 50 74 70 98", "count": 1},
+      {"value": "+33 4 78 42 56 51", "count": 1},
+      {"value": "+33 4 75 36 96 77", "count": 1},
+      {"value": "+33 4 75545043", "count": 1},
+      {"value": "+33 4 75 97 29 29", "count": 1},
+      {"value": "+33 4 50 90 00 26", "count": 1},
+      {"value": "+33 8 92 68 70 76", "count": 1},
+      {"value": "+33 4 79 70 43 18", "count": 1},
+      {"value": "+33 4 27 52 06 80", "count": 1},
+      {"value": "+33 4 76064747", "count": 1},
+      {"value": "+33 4 79 72 72 45", "count": 1},
+      {"value": "+33 4 76 25 34 58", "count": 1},
+      {"value": "+33 4 76 12 95 50", "count": 1},
+      {"value": "+33 4 75 45 62 13", "count": 1},
+      {"value": "+33 4 50 60 70 31", "count": 1},
+      {"value": "+33 4 75 66 39 60", "count": 1},
+      {"value": "+33 4 75 66 60 08", "count": 1}
+    ],
+    "count": 272
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "restaurant", "count": 174},
+      {"value": "bar", "count": 6},
+      {"value": "cafe", "count": 4},
+      {"value": "pub", "count": 2},
+      {"value": "bar;restaurant", "count": 2},
+      {"value": "restaurant;nightclub", "count": 1},
+      {"value": "hotel", "count": 1},
+      {"value": "conference_centre", "count": 1}
+    ],
+    "count": 191
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 137},
+      {"value": "yes", "count": 45},
+      {"value": "wired", "count": 1}
+    ],
+    "count": 183
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Pierre & Vacances", "count": 10},
+      {"value": "Ibis", "count": 7},
+      {"value": "Best Western", "count": 7},
+      {"value": "Campanile", "count": 6},
+      {"value": "Best Mont Blanc", "count": 5},
+      {"value": "Ibis Budget", "count": 5},
+      {"value": "Odalys", "count": 5},
+      {"value": "Accor Hotels", "count": 5},
+      {"value": "Accor", "count": 5},
+      {"value": "Mercure", "count": 4},
+      {"value": "Kyriad", "count": 3},
+      {"value": "Belambra Clubs", "count": 2},
+      {"value": "CGH", "count": 2},
+      {"value": "Les Chalets de Chamrousse", "count": 2},
+      {"value": "Evian Resort", "count": 2},
+      {"value": "Espace 2", "count": 2},
+      {"value": "Radisson Blu", "count": 2},
+      {"value": "Club Méditerranée", "count": 2},
+      {"value": "SAS FAHRENHEIT SEVEN VAL THORENS", "count": 1},
+      {"value": "Residhome", "count": 1},
+      {"value": "Golden Tulip", "count": 1},
+      {"value": "Hôtels & Altitude", "count": 1},
+      {"value": "Odalys Vacances", "count": 1},
+      {
+        "value": "Contact Hôtel, L'Hôtellerie Familiale, Moulin Etape",
+        "count": 1
+      },
+      {"value": "L'Esprit Blanc", "count": 1},
+      {"value": "Hôtel de la Marne", "count": 1},
+      {"value": "Hôtel des Savoies", "count": 1},
+      {"value": "VTF", "count": 1},
+      {"value": "Jean louis LONG", "count": 1},
+      {"value": "Isabelle et Philippe", "count": 1},
+      {"value": "NH Hotel Group", "count": 1},
+      {"value": "Paire ficout", "count": 1},
+      {"value": "Indépendant", "count": 1},
+      {"value": "Marthe", "count": 1},
+      {"value": "Annick et Christian Deffert", "count": 1},
+      {"value": "M. Saint Marcel", "count": 1},
+      {"value": "Véronique et Pascal Droux", "count": 1},
+      {"value": "Dirk De Proost", "count": 1},
+      {"value": "Ibis Hotels", "count": 1},
+      {"value": "TEMMOS", "count": 1},
+      {"value": "Citotel", "count": 1},
+      {"value": "Groupe Réside Etudes", "count": 1},
+      {"value": "Accord", "count": 1},
+      {"value": "Accorhotels", "count": 1},
+      {"value": "Orange", "count": 1},
+      {"value": "Chris-Tal SAS", "count": 1},
+      {"value": "Langley Hotels & Resorts", "count": 1},
+      {"value": "Groupe Saint-André", "count": 1},
+      {"value": "SAS FAHRENHEIT SEVEN COURCHEVEL", "count": 1},
+      {"value": "Marriott", "count": 1},
+      {"value": "Kriad", "count": 1},
+      {"value": "AEC Vacances", "count": 1},
+      {"value": "Belambra", "count": 1},
+      {"value": "Village Club du Soleil", "count": 1},
+      {"value": "Federal Hôtel", "count": 1},
+      {"value": "l'Auberge", "count": 1},
+      {"value": "Guy Sari", "count": 1},
+      {"value": "Mountain Sun", "count": 1},
+      {"value": "Hilton Worldwide", "count": 1},
+      {"value": "Chaine Thermale du Soleil", "count": 1},
+      {"value": "Lagrange", "count": 1},
+      {"value": "Inter Hotel", "count": 1},
+      {"value": "Boscolo Hotels", "count": 1},
+      {"value": "VVF", "count": 1},
+      {"value": "Accor Hôtels", "count": 1},
+      {"value": "Balladins", "count": 1},
+      {"value": "Vacanciel", "count": 1},
+      {"value": "accor", "count": 1},
+      {"value": "Vacances Tourisme Familes", "count": 1},
+      {"value": "Vacances Loisirs Activ'", "count": 1},
+      {"value": "Alpine Elements LTD", "count": 1},
+      {"value": "Simply Morzine", "count": 1},
+      {"value": "BTP Vacances", "count": 1},
+      {"value": "Madame Vacances", "count": 1},
+      {"value": "Comfort Suites", "count": 1},
+      {"value": "Okko", "count": 1},
+      {"value": "Comfort Inn", "count": 1},
+      {"value": "Augustins de l'Assomption", "count": 1},
+      {"value": "ClubMed", "count": 1},
+      {"value": "Aurélie & Sébastien", "count": 1}
+    ],
+    "count": 138
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 72},
+      {"value": "no", "count": 21},
+      {"value": "limited", "count": 9},
+      {"value": "2", "count": 4},
+      {"value": "3", "count": 1}
+    ],
+    "count": 107
+  },
+  {
+    "key": "rooms",
+    "tags": [
+      {"value": "7", "count": 5},
+      {"value": "15", "count": 4},
+      {"value": "26", "count": 3},
+      {"value": "16", "count": 3},
+      {"value": "9", "count": 3},
+      {"value": "43", "count": 3},
+      {"value": "23", "count": 2},
+      {"value": "5", "count": 2},
+      {"value": "25", "count": 2},
+      {"value": "10", "count": 2},
+      {"value": "18", "count": 2},
+      {"value": "245", "count": 2},
+      {"value": "80", "count": 2},
+      {"value": "14", "count": 2},
+      {"value": "47", "count": 2},
+      {"value": "32", "count": 2},
+      {"value": "8", "count": 2},
+      {"value": "59", "count": 2},
+      {"value": "49", "count": 2},
+      {"value": "54", "count": 2},
+      {"value": "6", "count": 2},
+      {"value": "24", "count": 2},
+      {"value": "50", "count": 2},
+      {"value": "12", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "0", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "19", "count": 1},
+      {"value": "52", "count": 1},
+      {"value": "107", "count": 1},
+      {"value": "78", "count": 1},
+      {"value": "60", "count": 1},
+      {"value": "39", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "37", "count": 1},
+      {"value": "133", "count": 1},
+      {"value": "45", "count": 1},
+      {"value": "36", "count": 1},
+      {"value": "62", "count": 1},
+      {"value": "158", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "138", "count": 1},
+      {"value": "71", "count": 1},
+      {"value": "31", "count": 1},
+      {"value": "64", "count": 1},
+      {"value": "108", "count": 1},
+      {"value": "69", "count": 1},
+      {"value": "42", "count": 1},
+      {"value": "170", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "99", "count": 1},
+      {"value": "88", "count": 1},
+      {"value": "22", "count": 1},
+      {"value": "248", "count": 1},
+      {"value": "27", "count": 1},
+      {"value": "135", "count": 1},
+      {"value": "61", "count": 1},
+      {"value": "174", "count": 1},
+      {"value": "102", "count": 1},
+      {"value": "28", "count": 1}
+    ],
+    "count": 95
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [
+      {"value": "no", "count": 80},
+      {"value": "yes", "count": 5},
+      {"value": "customers", "count": 1}
+    ],
+    "count": 86
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "aline.chaberty@orange.fr", "count": 3},
+      {"value": "reservation@georgesblanc.com", "count": 2},
+      {
+        "value": "reception@hotel-lyon-vaise.fr <reception@hotel-lyon-vaise.fr",
+        "count": 1
+      },
+      {"value": "contact@angecouronne.com", "count": 1},
+      {"value": "firmhotel@wanadoo.fr", "count": 1},
+      {"value": "reception@sphinx-hotel.fr", "count": 1},
+      {"value": "hotel.champlong@wanadoo.fr", "count": 1},
+      {"value": "delas-hotel-restaurant@wanadoo.fr", "count": 1},
+      {"value": "resto@aufaisandore.com", "count": 1},
+      {"value": "reception@chapeau-cornu.fr", "count": 1},
+      {"value": "contact@vigogne-vacances.com", "count": 1},
+      {"value": "reservation@lyon.boscolo.com", "count": 1},
+      {"value": "info.annecy@privilodges.com", "count": 1},
+      {"value": "contact@hotelainaylyon.com", "count": 1},
+      {"value": "chambery.centre@kyriad.fr", "count": 1},
+      {"value": "info@hotel-europeangleterre-macon.com", "count": 1},
+      {"value": "lyon.saintpriest@premiereclasse.fr", "count": 1},
+      {"value": "mailto:contact@moulindelabrevette.com", "count": 1},
+      {"value": "contact@lacascade-restaurant73.fr", "count": 1},
+      {"value": "contact@closdesoliviers.fr", "count": 1},
+      {"value": "lyon-garibaldi@appartcity.com", "count": 1},
+      {"value": "hotel.du.simplon@wanadoo.fr", "count": 1},
+      {"value": "info@clairplume.com", "count": 1},
+      {"value": "contact@lescornettes.com", "count": 1},
+      {"value": "accueil@operalia-lescedres.fr", "count": 1},
+      {"value": "hotel-restaurant-lhorizon@outlook.fr", "count": 1},
+      {"value": "h.beau-sejour@laposte.net", "count": 1},
+      {"value": "contact@ain-dependances.fr", "count": 1},
+      {"value": "auberge.anglefort01@gmail.com", "count": 1},
+      {"value": "reception.lesmenuires-valmonts@groupepvcp.com", "count": 1},
+      {"value": "savoiehotel@orange.fr", "count": 1},
+      {"value": "hotel-des-allies@orange.fr", "count": 1},
+      {"value": "h1357@accor.com", "count": 1},
+      {"value": "contact@aka-lodge.fr", "count": 1},
+      {"value": "aubergedethoire@orange.fr", "count": 1},
+      {"value": "info@lestresoms.com", "count": 1},
+      {"value": "lahuchette@wanadoo.fr", "count": 1},
+      {"value": "resa@adonis-grandgeneve.com", "count": 1},
+      {"value": "h2057@accor.com", "count": 1},
+      {"value": "reservations@hotel-arcadien.com", "count": 1},
+      {"value": "contact@republikhotel.com", "count": 1},
+      {"value": "info@lancolie.com", "count": 1},
+      {"value": "georgesblanc.com", "count": 1},
+      {"value": "contact@masdefanny.com", "count": 1},
+      {"value": "bastidedefontaille.ardeche@gmail.com", "count": 1},
+      {"value": "contact@hotelviallet.com", "count": 1},
+      {"value": "valtho@fahrenheitseven.com", "count": 1},
+      {"value": "lyon.bergesdurhone@campanile.fr", "count": 1},
+      {"value": "info@laflechedor.com", "count": 1},
+      {"value": "info@hotelespritmontagne.com", "count": 1},
+      {"value": "hotelcotesudleman@gmail.com", "count": 1},
+      {"value": "hotelbellevue.trevignin@orange.fr", "count": 1},
+      {"value": "info@logesdupark.fr", "count": 1},
+      {"value": "carreaix@orange.fr", "count": 1},
+      {"value": "info@chris-tal.com", "count": 1},
+      {"value": "info@hotel-deslacs-chamonix.com", "count": 1},
+      {"value": "courch@fahrenheitseven.com", "count": 1},
+      {"value": "outa@hotel-termignon.com", "count": 1},
+      {"value": "sh7415@ptitdej-hotel.com", "count": 1},
+      {"value": "contact@boisjoly.com", "count": 1},
+      {"value": "h1187@accor.com", "count": 1},
+      {"value": "h8717@accor.com", "count": 1},
+      {"value": "hotelbellevue73@orange.fr", "count": 1},
+      {"value": "info@hotel-lepaquis.fr", "count": 1},
+      {"value": "evianlesbains.reservations@hilton.com", "count": 1},
+      {"value": "lesrosieres@orange.fr", "count": 1},
+      {"value": "hotel.lemargeriaz02@orange.fr", "count": 1},
+      {"value": "hotel.cartusia@wanadoo.fr", "count": 1},
+      {"value": "auberge@gmx.fr", "count": 1},
+      {"value": "contact@hotel-restaurant-du-tilleul.com", "count": 1},
+      {"value": "info@le-menuire.fr", "count": 1},
+      {"value": "info@hotel-les-ancolies.com", "count": 1},
+      {"value": "info@hotel-chautagne.com", "count": 1},
+      {"value": "infos@hotelicietla.com", "count": 1},
+      {"value": "chaletsflorence@orange.fr", "count": 1},
+      {"value": "resa@park-hotel-grenoble.fr", "count": 1},
+      {"value": "reservation@chabriol.com", "count": 1},
+      {"value": "contact@villaaugusta.fr", "count": 1},
+      {"value": "contact@hotel-voiron.fr", "count": 1},
+      {"value": "resa@commanderie.fr", "count": 1},
+      {"value": "accueil@hotel-grillons.com", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "no", "count": 36},
+      {"value": "outside", "count": 14},
+      {"value": "yes", "count": 3},
+      {"value": "separated", "count": 2},
+      {"value": "isolated", "count": 1}
+    ],
+    "count": 56
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 00 65 40", "count": 1},
+      {"value": "+33472611754", "count": 1},
+      {"value": "+33 4 75 08 66 05", "count": 1},
+      {"value": "+33 4 79 88 40 10", "count": 1},
+      {"value": "+33 4 79 61 42 71", "count": 1},
+      {"value": "+33 4 77 89 00 69", "count": 1},
+      {"value": "+33 4 75 37 61 12", "count": 1},
+      {"value": "+33 4 77 69 35 45", "count": 1},
+      {"value": "+33 4 74 92 39 41", "count": 1},
+      {"value": "+33 4 79 07 94 52", "count": 1},
+      {"value": "+33 4 79 07 52 24", "count": 1},
+      {"value": "+33 4 78 37 52 55", "count": 1},
+      {"value": "+33 4 78 42 51 26", "count": 1},
+      {"value": "+33 4 72 77 51 90", "count": 1},
+      {"value": "+33 3 85 39 22 54", "count": 1},
+      {"value": "+33 3 85 30 66 91", "count": 1},
+      {"value": "+33 4 78 60 01 69", "count": 1},
+      {"value": "+33 4 78429484", "count": 1},
+      {"value": "+33 478 37 12 72", "count": 1},
+      {"value": "+33477543603", "count": 1},
+      {"value": "+33450490623", "count": 1},
+      {"value": "+33 4 74 39 13 66", "count": 1},
+      {"value": "+33450455068", "count": 1},
+      {"value": "+33 4 75 07 47 97", "count": 1},
+      {"value": "+33 4 79 09 36 36", "count": 1},
+      {"value": "+33 4 50 70 31 05", "count": 1},
+      {"value": "+33 4 50 54 45 77", "count": 1},
+      {"value": "+33 4 75 55 53 68", "count": 1},
+      {"value": "+33 4 50 40 76 33", "count": 1},
+      {"value": "+33 479591788", "count": 1},
+      {"value": "+33 (0)4 50 42 48 47", "count": 1},
+      {"value": "+33 4 77 54 84 32", "count": 1},
+      {"value": "+33475791615", "count": 1},
+      {"value": "+33 4 74 58 08 98", "count": 1},
+      {"value": "+33 4 79 06 36 59", "count": 1},
+      {"value": "+33 4 79 72 83 83", "count": 1},
+      {"value": "+33 4 79 25 85 50", "count": 1},
+      {"value": "+33 4 76 88 83 30", "count": 1},
+      {"value": "+33 476300612", "count": 1},
+      {"value": "+33 4 76 34 47 47", "count": 1},
+      {"value": "+33 4 50 90 31 57", "count": 1},
+      {"value": "+33 9 70 80 51 16", "count": 1},
+      {"value": "+33 4 50 58 42 92", "count": 1},
+      {"value": "+33 4 76 46 49 88", "count": 1},
+      {"value": "+33 4 79 52 05 43", "count": 1},
+      {"value": "+33 4 50 04 09 12", "count": 1}
+    ],
+    "count": 46
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "french", "count": 25},
+      {"value": "regional", "count": 15},
+      {"value": "pizza", "count": 1},
+      {"value": "regional_,_french", "count": 1},
+      {"value": "organic", "count": 1}
+    ],
+    "count": 43
+  },
+  {"key": "beverage", "tags": [{"value": "yes", "count": 25}], "count": 25},
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 16}, {"value": "no", "count": 1}],
+    "count": 17
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Accor", "count": 5},
+      {"value": "Ibis", "count": 2},
+      {"value": "Première Classe", "count": 2},
+      {"value": "Fahrenheit Seven", "count": 2},
+      {"value": "Best Western", "count": 1},
+      {"value": "Quality Suites", "count": 1},
+      {"value": "Camping Le Pontent", "count": 1},
+      {"value": "Sejours et Affaires", "count": 1},
+      {"value": "Appart'City", "count": 1},
+      {"value": "Comfort Suite", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Changed from amenity:hotel", "count": 5},
+      {"value": "6000, route de Chamrousse", "count": 1},
+      {
+        "value": "may be holiday apartments, Logis sign at entrance",
+        "count": 1
+      },
+      {"value": "Logis de France", "count": 1},
+      {
+        "value": "Hotel building bridges road. Previous cadastre import buildings had *no* similarities with reality.",
+        "count": 1
+      },
+      {"value": "On upper floors of Tour LCL", "count": 1},
+      {
+        "value": "The object dispappeared or never happened to be there",
+        "count": 1
+      },
+      {
+        "value": "Ancienne usine d'embouteillage de la source Graziella. Batiment de style anglo-normand construit par Henri Jacobi et classé à l'inventaire du patrimoine local",
+        "count": 1
+      },
+      {"value": "ouvert été/hiver sauf hors-saison", "count": 1},
+      {
+        "value": "C'était noté \"camping\" avant, mais c'est pas parce qu'il y a des tentes (tipi) que c'est un camping. Les tipis sont a demeure sur place, ne venez pas avec votre tente !",
+        "count": 1
+      },
+      {
+        "value": "http://www.pss-archi.eu/immeubles/FR-74008-16605.html",
+        "count": 1
+      },
+      {"value": "Sert aussi de presse et dépôt de pain", "count": 1},
+      {
+        "value": "le chateau de candie existe deja et ce n'est pas une auberge de jeunesse mais un hotel 4 etoiles",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Hôtel-Restaurant", "count": 2},
+      {
+        "value": "Hôtel 4 étoiles de 52 chambres, deux restaurants, terrasse et parc arboré, piscines, véritable spa avec espace détente, boutique, espaces affaires, salons de banquet et gala. Cette bâtisse de charme des années 30, restaurée en 2015, 15 min à pied du lac",
+        "count": 1
+      },
+      {"value": "Hôtel-restaurant", "count": 1},
+      {
+        "value": "In the centre of Lyon, the 4-star Mercure Lyon Centre Saxe Lafayette hotel is a 10 minute walk from the La Part Dieu business district.",
+        "count": 1
+      },
+      {"value": "(Adresse GPS : Zone Hôtelière)", "count": 1},
+      {"value": "Hôtel de caractère", "count": 1},
+      {
+        "value": "Grand chalet de pierre et de bois, l'hôtel l'Ancolie se situe à 50 mètres de la télécabine qui, en 7 minutes, vous dépose au coeur du fabuleux domaine skiable de la Plagne.",
+        "count": 1
+      },
+      {"value": "Hôte, bar et restaurant", "count": 1},
+      {"value": "Centre de Balnéothérapie", "count": 1},
+      {
+        "value": "Situé à Villard sur Doron sur la Départementale menant à Beaufort et à la station des Saisies, l’hôtel La Cascade propose un hébergement de 14 lits et un restaurant.",
+        "count": 1
+      },
+      {"value": "Hotel & Spa Relais et Chateaux", "count": 1},
+      {
+        "value": "Situé à seulement 20 mn de Grenoble, au coeur du Parc de la Chartreuse, l'hôtel restaurant Cartusia vous accueille avec l'esprit \"Nature\". 28 chambres sont à votre disposition, avec téléphone, ADSL avec borne WIFI, bain ou douche.",
+        "count": 1
+      },
+      {
+        "value": "En plus de faire restaurant, gîte d'étape, et hôtel, ils proposent petite épicerie et paniers pique-nique végétariens ou non. Sur commande: brioches & pain campagnard maison le dimanche.",
+        "count": 1
+      },
+      {"value": "Toute la cuisine est faite maison", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 6},
+      {"value": "iLOE 1.9", "count": 3},
+      {"value": "Potlatch 0.10f", "count": 2},
+      {"value": "Potlatch 0.10", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3146051", "count": 1},
+      {"value": "Q2362949", "count": 1},
+      {"value": "Q18547785", "count": 1},
+      {"value": "Q794939", "count": 1},
+      {"value": "Q53911368", "count": 1},
+      {"value": "Q3147425", "count": 1},
+      {"value": "Q26932331", "count": 1},
+      {"value": "Q1414722", "count": 1},
+      {"value": "Q3230437", "count": 1},
+      {"value": "Q2962896", "count": 1},
+      {"value": "Q19006803", "count": 1}
+    ],
+    "count": 11
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 9}], "count": 9},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1500", "count": 1},
+      {"value": "350", "count": 1},
+      {"value": "1238", "count": 1},
+      {"value": "1075", "count": 1},
+      {"value": "2150", "count": 1},
+      {"value": "1835", "count": 1},
+      {"value": "1810", "count": 1},
+      {"value": "1000", "count": 1},
+      {"value": "1600", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "35", "count": 2},
+      {
+        "value": "Hôtel: 10 rooms, Restaurant: 50 inside, 25 outside",
+        "count": 1
+      },
+      {"value": "23", "count": 1},
+      {"value": "80", "count": 1},
+      {"value": "120", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "77", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Villa Florentine", "count": 1},
+      {"value": "fr:Ibis Styles", "count": 1},
+      {"value": "fr:Christophe Marguin", "count": 1},
+      {"value": "fr:B&B Hotels", "count": 1},
+      {"value": "fr:Campanile (chaîne d'hôtels)", "count": 1},
+      {"value": "fr:Hôtel de la Villeon", "count": 1},
+      {"value": "fr:Valpré-Lyon", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://www.gabelouhotel.com/", "count": 1},
+      {"value": "http://www.relaisdesvieillespostes.fr", "count": 1},
+      {"value": "http://www.perebise.com/", "count": 1},
+      {"value": "http://www.hotelseyssel.fr/", "count": 1},
+      {"value": "http://www.hotel-le-beausejour.fr/", "count": 1},
+      {"value": "http://www.lamerejacquet.com/", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "absent", "count": 1},
+      {"value": "projet demolition et construction chalets", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "basé sur les photos et les coordonnées (fausses) de leur site + description \"à l'entrée\". je soupçonne que l'on voit des parasols, alors je vais dire que c'est ce bâtiment, mais à vérifier",
+        "count": 1
+      },
+      {
+        "value": "position et contours approximatifs déduit de photos terrain. à recaller avec le cadastre 2017",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {"value": "3 chambres équipées", "count": 1},
+      {"value": "bathing room not accessible", "count": 1},
+      {"value": "exept the car park", "count": 1},
+      {"value": "room & restaurant accessible, with private park", "count": 1},
+      {
+        "value": "Le restaurant est totalement accessible, mais l'hôtel ne dispose pas d’ascenseur.",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "beds",
+    "tags": [
+      {"value": "16", "count": 1},
+      {"value": "25", "count": 1},
+      {"value": "182", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "104", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "restaurant",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "gastronomic", "count": 2}
+    ],
+    "count": 5
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "payment:maestro",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "swimming_pool",
+    "tags": [{"value": "yes", "count": 3}, {"value": "outdoor", "count": 1}],
+    "count": 4
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "parking",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "underground", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/pages/Domaine-des-Aveni%C3%A8res/115049748515848",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/LE-RELAIS-DES-BERGERS-119751714780594/",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/Le-Moulinage-Chabriol-255421187806793/",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "entrance",
+    "tags": [{"value": "main", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "1926", "count": 1}, {"value": "1950", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "residential", "count": 1},
+      {"value": "commercial", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "convenience", "count": 2}], "count": 2},
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "golf_course", "count": 1},
+      {"value": "garden", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "designated", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "pets", "tags": [{"value": "allowed", "count": 2}], "count": 2},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 1},
+      {"value": "2017-11", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "television", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "meeting_room", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "colour", "tags": [{"value": "brown", "count": 2}], "count": 2},
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Best Western", "count": 1},
+      {"value": "Ibis", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "roof:shape",
+    "tags": [{"value": "gambrel", "count": 1}, {"value": "flat", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "garden", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "diet:vegetarian",
+    "tags": [{"value": "limited", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "payment:american_express",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "payment:amex", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "ref:mhs", "tags": [{"value": "PA00116831", "count": 1}], "count": 1},
+  {"key": "payment:cards", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:ssid",
+    "tags": [{"value": "Logis de France", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description:en",
+    "tags": [{"value": "3 rooms", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description:de",
+    "tags": [{"value": "3 Zimmer", "count": 1}],
+    "count": 1
+  },
+  {"key": "breakfast", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "pub", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "32075403900016", "count": 1}],
+    "count": 1
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:INSEE:city",
+    "tags": [{"value": "84150", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tennis", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "golf", "count": 1}], "count": 1},
+  {
+    "key": "opening_day",
+    "tags": [{"value": "Toute l'année.", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1982-12-06", "count": 1}],
+    "count": 1
+  },
+  {"key": "wifi", "tags": [{"value": "customers", "count": 1}], "count": 1},
+  {"key": "delivery", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "sells:coffee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sells:drink", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description:FR",
+    "tags": [
+      {
+        "value": "L' Hôtel du Midi, établissement entièrement rénové en 2010, allie modernité, confort et douceur de vivre.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "sells:tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "lastcheck",
+    "tags": [{"value": "2017-03-29", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "disused:railway",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "21", "count": 1}], "count": 1},
+  {"key": "city", "tags": [{"value": "Visan", "count": 1}], "count": 1},
+  {"key": "step_count", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Ibis (chaîne d'hôtels)", "count": 1}],
+    "count": 1
+  },
+  {"key": "type", "tags": [{"value": "building", "count": 1}], "count": 1},
+  {"key": "community", "tags": [{"value": "AA", "count": 1}], "count": 1},
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {"key": "sells:drinks", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

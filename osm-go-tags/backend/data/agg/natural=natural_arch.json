@@ -1,0 +1,13 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "natural_arch", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q20204974", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "de:Porte du Diable", "count": 1}],
+    "count": 1
+  }
+]

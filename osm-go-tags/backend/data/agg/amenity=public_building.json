@@ -1,0 +1,288 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "public_building", "count": 668}],
+    "count": 668
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 45}], "count": 45},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Inforoutes", "count": 28},
+      {"value": "SNCF", "count": 7},
+      {"value": "CG74", "count": 2},
+      {"value": "CFV", "count": 1},
+      {"value": "SGLM", "count": 1}
+    ],
+    "count": 39
+  },
+  {
+    "key": "ref:inforoutes",
+    "tags": [
+      {"value": "ccm", "count": 22},
+      {"value": "papi", "count": 5},
+      {"value": "visio", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "ref:FR:DUI",
+    "tags": [
+      {"value": "2763", "count": 1},
+      {"value": "3989", "count": 1},
+      {"value": "2769", "count": 1},
+      {"value": "5753", "count": 1},
+      {"value": "4311", "count": 1},
+      {"value": "5762", "count": 1},
+      {"value": "9843", "count": 1},
+      {"value": "10801", "count": 1},
+      {"value": "2767", "count": 1},
+      {"value": "2754", "count": 1},
+      {"value": "6911", "count": 1},
+      {"value": "2759", "count": 1},
+      {"value": "7537", "count": 1},
+      {"value": "3920", "count": 1},
+      {"value": "7542", "count": 1},
+      {"value": "9854", "count": 1},
+      {"value": "9899", "count": 1},
+      {"value": "2770", "count": 1},
+      {"value": "5755", "count": 1},
+      {"value": "5771", "count": 1},
+      {"value": "10720", "count": 1},
+      {"value": "10721", "count": 1},
+      {"value": "8311", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 20 92 65", "count": 1},
+      {"value": "+33 4 75 58 29 13", "count": 1},
+      {"value": "+33472220586", "count": 1},
+      {"value": "+33 4 75 56 99 44", "count": 1},
+      {"value": "+33 4 75 55 70 83", "count": 1},
+      {"value": "+33 4 77 24 29 44", "count": 1},
+      {"value": "3646", "count": 1},
+      {"value": "+33 4 75 41 01 82", "count": 1},
+      {"value": "+33 4 75 81 25 07", "count": 1},
+      {"value": "+33478207600", "count": 1},
+      {"value": "+33 4 75 88 11 27", "count": 1},
+      {"value": "+33 4 50674170", "count": 1},
+      {"value": "+33 4 50 67 41 73", "count": 1},
+      {"value": "+33 4 72794141", "count": 1},
+      {"value": "+33 4 75 42 87 58", "count": 1},
+      {"value": "+33 4 75 79 21 81", "count": 1},
+      {"value": "+33 4 78205819", "count": 1},
+      {"value": "+33 4 72230061", "count": 1},
+      {"value": "+33478218498", "count": 1},
+      {"value": "+33 4 75 43 22 05", "count": 1},
+      {"value": "+33 4 75 42 32 00", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "office",
+    "tags": [
+      {"value": "government", "count": 6},
+      {"value": "administrative", "count": 3},
+      {"value": "association", "count": 2},
+      {"value": "administration", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ville-saint-priest.fr/Modes-de-garde.2112.0.html#multi-accueils-municipaux",
+        "count": 7
+      },
+      {"value": "http://ccm.bergetcoiron.inforoutes.fr", "count": 1},
+      {"value": "http://www.parcdesexpositionsdevalence.com/", "count": 1},
+      {"value": "http://www.cc-bassin-annonay.fr/", "count": 1},
+      {"value": "http://www.cdos74.org", "count": 1},
+      {"value": "http://www.poleyrieux.com/", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q593110", "count": 1},
+      {"value": "Q1983989", "count": 1},
+      {"value": "Q3096593", "count": 1},
+      {"value": "Q22967447", "count": 1},
+      {"value": "Q3096976", "count": 1},
+      {"value": "Q3097597", "count": 1},
+      {"value": "Q3096585", "count": 1},
+      {"value": "Q3146060", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 5},
+      {"value": "no", "count": 2},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "station", "count": 8}],
+    "count": 8
+  },
+  {"key": "railway", "tags": [{"value": "station", "count": 8}], "count": 8},
+  {
+    "key": "kindergarten:FR",
+    "tags": [{"value": "crèche_collective", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "uic_ref",
+    "tags": [
+      {"value": "8774670", "count": 1},
+      {"value": "8774610", "count": 1},
+      {"value": "8774634", "count": 1},
+      {"value": "8774631", "count": 1},
+      {"value": "8774641", "count": 1},
+      {"value": "8774624", "count": 1},
+      {"value": "8774611", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "- accès internet - initiations tous niveaux - bureautique, photo numérique Le centre multimédia est un service public où chacun peut apprendre à se servir de l’informatique et d’internet.",
+        "count": 1
+      },
+      {"value": "Crèche en délégation de service public", "count": 1},
+      {"value": "Santé - centre de planification - DOSI", "count": 1},
+      {"value": "Commissariat déménagé place Louis Pradel", "count": 1},
+      {"value": "Direction enfance - enseignement - jeunesse", "count": 1},
+      {"value": "new buildings for 2012", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "multi", "count": 3},
+      {"value": "swimming", "count": 1},
+      {"value": "bike", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Accès à internet est gratuit et illimité pour toutes et tous à l’Espace Public Numérique (EPN) à Alboussière. Labellisé Maison de services au public (aide et accompagnement dans les démarches administratives \"en ligne\". Ateliers numériques.",
+        "count": 1
+      },
+      {"value": "Mairie - Annexe Casanova", "count": 1},
+      {"value": "Caisse Primaire d'Assurance Maladie", "count": 1},
+      {"value": "Mairie - Annexe Belledonne", "count": 1},
+      {"value": "École de musique, ancienne école de filles", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "service", "count": 3}, {"value": "public", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "catégorisation OSM précise ?", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {"value": "size and position?", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "leisure", "tags": [{"value": "pitch", "count": 3}], "count": 3},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {
+        "value": "fr:Communauté d'agglomération du Bassin d'Annonay",
+        "count": 1
+      },
+      {
+        "value": "fr:Communauté de communes de Miribel et du Plateau",
+        "count": 1
+      },
+      {"value": "fr:Hôtel de préfecture de l'Ain", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "official", "count": 2}], "count": 2},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "created_by", "tags": [{"value": "Editop", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://www.cdos74.org/wp-content/uploads/2015/04/en-tete-cdos-2015.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "disused:railway",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "hautesavoie@franceolympique.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "fax", "tags": [{"value": "+33 4 50673698", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "30", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [{"value": "région Rhône-Alpes", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "museum", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "aeroway", "tags": [{"value": "terminal", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1958-12-23", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117704", "count": 1}], "count": 1},
+  {
+    "key": "emergency",
+    "tags": [{"value": "defibrillator", "count": 1}],
+    "count": 1
+  },
+  {"key": "surface", "tags": [{"value": "concrete", "count": 1}], "count": 1},
+  {
+    "key": "note:fr",
+    "tags": [
+      {"value": "Emplacement temporaire pour une durée d'un an", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "architect",
+    "tags": [{"value": "Antonin Chomel;Pierre Verrier", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "1934", "count": 1}], "count": 1},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

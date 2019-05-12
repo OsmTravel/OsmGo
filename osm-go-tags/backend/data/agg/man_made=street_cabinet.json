@@ -1,0 +1,497 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "street_cabinet", "count": 461}],
+    "count": 461
+  },
+  {
+    "key": "street_cabinet",
+    "tags": [
+      {"value": "telecom", "count": 206},
+      {"value": "power", "count": 175},
+      {"value": "cable_tv", "count": 30},
+      {"value": "gas", "count": 10},
+      {"value": "postal_service", "count": 7},
+      {"value": "gaz", "count": 7},
+      {"value": "traffic_control", "count": 4},
+      {"value": "street_lighting", "count": 3},
+      {"value": "traffic_lights", "count": 1},
+      {"value": "gas_management", "count": 1}
+    ],
+    "count": 444
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Enedis", "count": 152},
+      {"value": "Orange", "count": 136},
+      {"value": "orange", "count": 15},
+      {"value": "GRDF", "count": 9},
+      {"value": "EDF", "count": 5},
+      {"value": "La Poste", "count": 4},
+      {"value": "ESSeyssel", "count": 4},
+      {"value": "GrDF", "count": 3},
+      {"value": "Mairie Annecy", "count": 2},
+      {"value": "RTE", "count": 1},
+      {"value": "Numericable", "count": 1},
+      {"value": "GRTGaz", "count": 1},
+      {"value": "E.D.F", "count": 1},
+      {"value": "Synergie Maurienne", "count": 1},
+      {"value": "SIEA", "count": 1},
+      {"value": "GRT gaz", "count": 1},
+      {"value": "GRTgaz", "count": 1}
+    ],
+    "count": 338
+  },
+  {
+    "key": "telecom",
+    "tags": [
+      {"value": "connection_point", "count": 81},
+      {"value": "connection", "count": 75},
+      {"value": "central_office", "count": 1}
+    ],
+    "count": 157
+  },
+  {
+    "key": "power",
+    "tags": [{"value": "substation", "count": 156}],
+    "count": 156
+  },
+  {
+    "key": "substation",
+    "tags": [
+      {"value": "minor_distribution", "count": 133},
+      {"value": "distribution", "count": 21},
+      {"value": "measurement", "count": 1}
+    ],
+    "count": 155
+  },
+  {
+    "key": "telecom:medium",
+    "tags": [
+      {"value": "fibre", "count": 119},
+      {"value": "copper", "count": 25},
+      {"value": "coaxial", "count": 1}
+    ],
+    "count": 145
+  },
+  {
+    "key": "voltage",
+    "tags": [
+      {"value": "20000;400", "count": 118},
+      {"value": "20000", "count": 20},
+      {"value": "400", "count": 1}
+    ],
+    "count": 139
+  },
+  {
+    "key": "location",
+    "tags": [
+      {"value": "green", "count": 61},
+      {"value": "pavement", "count": 18},
+      {"value": "grass", "count": 12},
+      {"value": "kiosk", "count": 10},
+      {"value": "greee", "count": 1},
+      {"value": "outdoor", "count": 1}
+    ],
+    "count": 103
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "ITA PT002228", "count": 2},
+      {"value": "ITA PT 1087", "count": 1},
+      {"value": "BUISSIERES", "count": 1},
+      {"value": "ITA PT002221", "count": 1},
+      {"value": "Stade de la Vallée", "count": 1},
+      {"value": "GI131592", "count": 1},
+      {"value": "SR MARCONNET", "count": 1},
+      {"value": "ITA PT 0003", "count": 1},
+      {"value": "C 059", "count": 1},
+      {"value": "711.982.?", "count": 1},
+      {"value": "ITA PT 0086", "count": 1},
+      {"value": "SR GRENETTE", "count": 1},
+      {"value": "ITA PT 0084", "count": 1},
+      {"value": "ITA PT 0089", "count": 1},
+      {"value": "ITA PT 0087", "count": 1},
+      {"value": "ITA PT 0034", "count": 1},
+      {"value": "TJ La Poste", "count": 1},
+      {"value": "ITA PT 0088", "count": 1},
+      {"value": "ITA PT 0090", "count": 1},
+      {"value": "ITA PT 0033", "count": 1},
+      {"value": "ITA PT 0032", "count": 1},
+      {"value": "513", "count": 1},
+      {"value": "ITA PT 0031", "count": 1},
+      {"value": "ITA PT 0030", "count": 1},
+      {"value": "ITA PT 0147", "count": 1},
+      {"value": "GAMBETTA", "count": 1},
+      {"value": "ITA PT 0067", "count": 1},
+      {"value": "ITA PT 0012", "count": 1},
+      {"value": "ITA PT 0056", "count": 1},
+      {"value": "ITA PT 0017", "count": 1},
+      {"value": "ITA PT 0024", "count": 1},
+      {"value": "ITA PT 0138", "count": 1},
+      {"value": "ITA PT 0119", "count": 1},
+      {"value": "ITA PT 0134", "count": 1},
+      {"value": "SR HOUILLE BLANCHE", "count": 1},
+      {"value": "ITA PT 1071", "count": 1},
+      {"value": "ITA PT 1109", "count": 1},
+      {"value": "ITA PT 1075", "count": 1},
+      {"value": "22015", "count": 1},
+      {"value": "ITA PT 1045", "count": 1},
+      {"value": "ITA PT 1029", "count": 1},
+      {"value": "ITA PT 0933", "count": 1},
+      {"value": "ITA PT 0944", "count": 1},
+      {"value": "ITA PT 0949", "count": 1},
+      {"value": "52042", "count": 1},
+      {"value": "C01666", "count": 1},
+      {"value": "C0255G", "count": 1},
+      {"value": "ITA PT002231", "count": 1},
+      {"value": "C0283G", "count": 1},
+      {"value": "PAB0118", "count": 1},
+      {"value": "C756$", "count": 1},
+      {"value": "ITA PT002230", "count": 1},
+      {"value": "PAB0094", "count": 1},
+      {"value": "ITA PT002205", "count": 1},
+      {"value": "ITA PT002431", "count": 1},
+      {"value": "ITA PT1034", "count": 1},
+      {"value": "ITA PT002233", "count": 1},
+      {"value": "ITA PT002725", "count": 1},
+      {"value": "ITA PT 1098", "count": 1},
+      {"value": "ITA PT002720", "count": 1},
+      {"value": "NRA/P1F", "count": 1},
+      {"value": "ITA PT002206", "count": 1},
+      {"value": "ITA PT002974", "count": 1},
+      {"value": "ITA PT000027", "count": 1},
+      {"value": "AIX PT000473", "count": 1},
+      {"value": "AIX PT000474", "count": 1},
+      {"value": "AIX PT000471", "count": 1},
+      {"value": "NRO_01108_00002", "count": 1},
+      {"value": "ITA PT0085", "count": 1},
+      {"value": "ITA PT002232", "count": 1},
+      {"value": "Baraques", "count": 1},
+      {"value": "Le Raffet", "count": 1},
+      {"value": "Vahille", "count": 1},
+      {"value": "Lautheal", "count": 1},
+      {"value": "ITA PT003504", "count": 1},
+      {"value": "ITA PT003499", "count": 1},
+      {"value": "FI 38421-0016", "count": 1},
+      {"value": "VAI PT002173 FI-69389-004P", "count": 1},
+      {"value": "VAI PT001895 FI-69389-004J", "count": 1},
+      {"value": "FICOMA 09004", "count": 1},
+      {"value": "VAI PT002053 FI-69389-004G", "count": 1},
+      {"value": "ITA PT002448", "count": 1},
+      {"value": "ABV PT000694", "count": 1},
+      {"value": "ABV PT000666", "count": 1},
+      {"value": "Les Hubas", "count": 1},
+      {"value": "Chaudeval", "count": 1},
+      {"value": "Les Fayes", "count": 1},
+      {"value": "Bouchillon", "count": 1},
+      {"value": "PAS MIL S1 ND100", "count": 1},
+      {"value": "60035", "count": 1},
+      {"value": "241", "count": 1},
+      {"value": "VAI PT000266 FI-69389-004R", "count": 1},
+      {"value": "73144P0023", "count": 1},
+      {"value": "4922", "count": 1}
+    ],
+    "count": 95
+  },
+  {
+    "key": "ref:ERDF:gdo",
+    "tags": [
+      {"value": "None", "count": 33},
+      {"value": "38172P0014", "count": 1},
+      {"value": "74242P0046", "count": 1},
+      {"value": "74311P0068", "count": 1},
+      {"value": "74311R0063", "count": 1},
+      {"value": "74201P0016", "count": 1},
+      {"value": "74116P0037", "count": 1},
+      {"value": "73144P0550", "count": 1},
+      {"value": "74311P0001", "count": 1},
+      {"value": "01357P0014", "count": 1},
+      {"value": "74057P0013", "count": 1},
+      {"value": "74201P0500", "count": 1},
+      {"value": "73212P0500", "count": 1},
+      {"value": "73007P0007", "count": 1},
+      {"value": "73241P0025", "count": 1},
+      {"value": "74233P0017", "count": 1},
+      {"value": "74233P0023", "count": 1},
+      {"value": "74239P0012", "count": 1},
+      {"value": "74233P0027", "count": 1},
+      {"value": "74233P0026", "count": 1},
+      {"value": "74145P0500", "count": 1},
+      {"value": "74242P0033", "count": 1},
+      {"value": "38244P1000", "count": 1},
+      {"value": "38244P0011", "count": 1},
+      {"value": "38536P0028", "count": 1},
+      {"value": "38238P0007", "count": 1},
+      {"value": "38238P0030", "count": 1},
+      {"value": "38238P0028", "count": 1},
+      {"value": "38238P0024", "count": 1},
+      {"value": "38238P0013", "count": 1},
+      {"value": "74242P0054", "count": 1},
+      {"value": "26138P0019", "count": 1},
+      {"value": "74010P0566", "count": 1},
+      {"value": "74267P0036", "count": 1},
+      {"value": "38139P0028", "count": 1},
+      {"value": "74116P0041", "count": 1},
+      {"value": "74040P0502", "count": 1},
+      {"value": "74040P0501", "count": 1},
+      {"value": "38105P0025", "count": 1},
+      {"value": "38395P6000", "count": 1},
+      {"value": "38563P0141", "count": 1},
+      {"value": "38262P0213", "count": 1}
+    ],
+    "count": 74
+  },
+  {
+    "key": "ref:FR:ARCEP",
+    "tags": [
+      {"value": "FI-74010-0008", "count": 1},
+      {"value": "FI-69384-0061", "count": 1},
+      {"value": "FI-69384-005S", "count": 1},
+      {"value": "FI-69384-0062", "count": 1},
+      {"value": "FI-69384-005Q", "count": 1},
+      {"value": "FI-69384-0060", "count": 1},
+      {"value": "FI-69384-005R", "count": 1},
+      {"value": "FI-74010-002N", "count": 1},
+      {"value": "FI-74010-002O", "count": 1},
+      {"value": "FI-74010-000L", "count": 1},
+      {"value": "FI-74010-000D", "count": 1},
+      {"value": "FI-74010-000M", "count": 1},
+      {"value": "FI-74010-000E", "count": 1},
+      {"value": "FI-74010-000C", "count": 1},
+      {"value": "FI-69384-005E", "count": 1},
+      {"value": "FI-69384-005P", "count": 1},
+      {"value": "FI-69384-005Y", "count": 1},
+      {"value": "FI-69384-005V", "count": 1},
+      {"value": "FI-74010-000Q", "count": 1},
+      {"value": "FI-74010-0005", "count": 1},
+      {"value": "FI-74010-000J", "count": 1},
+      {"value": "FI-74010-000I", "count": 1},
+      {"value": "FI-74010-0007", "count": 1},
+      {"value": "FI-69384-005Z", "count": 1},
+      {"value": "FI-74010-000F", "count": 1},
+      {"value": "FI-74010-000H", "count": 1},
+      {"value": "FI-74010-000K", "count": 1},
+      {"value": "FI-74010-000P", "count": 1},
+      {"value": "FI-74010-000O", "count": 1},
+      {"value": "FI-38185-00ZB", "count": 1},
+      {"value": "FI-38185-00ZO", "count": 1},
+      {"value": "FI-38185-00ZT", "count": 1},
+      {"value": "FI-38185-00ZC", "count": 1},
+      {"value": "FI-38185-00XL", "count": 1},
+      {"value": "FI-38185-00XH", "count": 1},
+      {"value": "FI-38563-000B", "count": 1},
+      {"value": "FI-38185-00XS", "count": 1},
+      {"value": "FI-38185-00XP", "count": 1},
+      {"value": "FI-38185-00XJ", "count": 1},
+      {"value": "FI-38185-00PC", "count": 1},
+      {"value": "FI-38185-00TO", "count": 1},
+      {"value": "FI-38185-00PY", "count": 1},
+      {"value": "FI-38185-00SI", "count": 1},
+      {"value": "FI-38185-00W6", "count": 1},
+      {"value": "FI-38185-00ZA", "count": 1},
+      {"value": "FI-74010-0009", "count": 1}
+    ],
+    "count": 46
+  },
+  {
+    "key": "medium",
+    "tags": [{"value": "copper", "count": 20}, {"value": "fiber", "count": 17}],
+    "count": 37
+  },
+  {
+    "key": "ref:FR:Orange",
+    "tags": [
+      {"value": "PT004910", "count": 1},
+      {"value": "PT005718", "count": 1},
+      {"value": "PT005697", "count": 1},
+      {"value": "PT005662", "count": 1},
+      {"value": "PT005665", "count": 1},
+      {"value": "PT005667", "count": 1},
+      {"value": "PT005976", "count": 1},
+      {"value": "PT0156", "count": 1},
+      {"value": "PT0142", "count": 1},
+      {"value": "PT0134", "count": 1},
+      {"value": "PT0008", "count": 1},
+      {"value": "PT0006", "count": 1},
+      {"value": "PT005668", "count": 1},
+      {"value": "PT005685", "count": 1},
+      {"value": "PT005694", "count": 1},
+      {"value": "PT005666", "count": 1},
+      {"value": "PT005660", "count": 1},
+      {"value": "PT004908", "count": 1},
+      {"value": "PT004909", "count": 1},
+      {"value": "PT004911", "count": 1},
+      {"value": "PT004796", "count": 1},
+      {"value": "PT004662", "count": 1},
+      {"value": "PT0054", "count": 1},
+      {"value": "PT004793", "count": 1},
+      {"value": "PT004661", "count": 1},
+      {"value": "PT004792", "count": 1},
+      {"value": "PT006391", "count": 1},
+      {"value": "PT006947", "count": 1},
+      {"value": "PT006390", "count": 1},
+      {"value": "PT006775", "count": 1},
+      {"value": "PT007104", "count": 1},
+      {"value": "PT004912", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "ref:FR:Orange:NRO",
+    "tags": [
+      {"value": "CXR", "count": 11},
+      {"value": "PAS", "count": 10},
+      {"value": "DRA", "count": 5},
+      {"value": "74010ILE", "count": 3},
+      {"value": "VOI", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "manufacturer",
+    "tags": [
+      {"value": "Idea Optical", "count": 16},
+      {"value": "ideaoptical", "count": 4},
+      {"value": "Areva", "count": 1},
+      {"value": "Triax", "count": 1},
+      {"value": "Idea optical", "count": 1},
+      {"value": "FARECO", "count": 1}
+    ],
+    "count": 24
+  },
+  {"key": "hinge", "tags": [{"value": "horizontal", "count": 22}], "count": 22},
+  {
+    "key": "ref:FR:PTT",
+    "tags": [
+      {"value": "ALL", "count": 1},
+      {"value": "SEM", "count": 1},
+      {"value": "TAB", "count": 1},
+      {"value": "74250P1F", "count": 1},
+      {"value": "GAL", "count": 1},
+      {"value": "TRE", "count": 1},
+      {"value": "FIE", "count": 1},
+      {"value": "JAR", "count": 1},
+      {"value": "NAR", "count": 1},
+      {"value": "DEC", "count": 1},
+      {"value": "ER", "count": 1},
+      {"value": "SA", "count": 1},
+      {"value": "AS", "count": 1},
+      {"value": "KC", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "voltage:primary",
+    "tags": [{"value": "20000", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "transformer",
+    "tags": [{"value": "distribution", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "voltage:secondary",
+    "tags": [{"value": "400", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Armoire de distribution sans transformation", "count": 2},
+      {"value": "Boitier de protection cathodique", "count": 1},
+      {"value": "FI-73065-001B", "count": 1},
+      {
+        "value": "Not sure of the exact position, did not have my GPS running during the walk ...",
+        "count": 1
+      },
+      {"value": "Fibre optique", "count": 1},
+      {"value": "Plaque d'identification arrachée (au 20180823)", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ref:FR:PTT:NRA",
+    "tags": [
+      {"value": "74010GLI", "count": 2},
+      {"value": "74010ILE", "count": 2},
+      {"value": "74268SEY", "count": 1},
+      {"value": "69384CXR", "count": 1},
+      {"value": "740104DSD", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "colour",
+    "tags": [{"value": "green", "count": 4}, {"value": "gray", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2017-10", "count": 2},
+      {"value": "2013-05", "count": 1},
+      {"value": "2017", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "substance",
+    "tags": [
+      {"value": "gas", "count": 2},
+      {"value": "minor_distribution", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "design:ref",
+    "tags": [{"value": "RC", "count": 2}, {"value": "PSSA", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "VAI PT002139 FI-69389-0042", "count": 1},
+      {"value": "Eclairage ville de Lyon", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Ref à déterminer", "count": 1},
+      {"value": "A vérifier sur le terrain", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "pipeline",
+    "tags": [{"value": "substation", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "connection_point",
+    "tags": [{"value": "primary", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q1431486", "count": 1}],
+    "count": 1
+  },
+  {"key": "owner", "tags": [{"value": "SIEA", "count": 1}], "count": 1},
+  {
+    "key": "remotely_controllable",
+    "tags": [{"value": "radio", "count": 1}],
+    "count": 1
+  },
+  {"key": "count", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [{"value": "double cabinet", "count": 1}],
+    "count": 1
+  }
+]

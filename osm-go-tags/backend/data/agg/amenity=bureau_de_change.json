@@ -1,0 +1,31 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "bureau_de_change", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 3}, {"value": "1", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "automatic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 38 49 25 51", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://orencash.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "atm", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

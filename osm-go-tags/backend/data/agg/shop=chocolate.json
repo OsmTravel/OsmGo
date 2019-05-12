@@ -1,0 +1,100 @@
+[
+  {"key": "shop", "tags": [{"value": "chocolate", "count": 61}], "count": 61},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://reaute-chocolat.com/", "count": 1},
+      {"value": "http://www.chocolat-voisin.com/boutiques/", "count": 1},
+      {"value": "http://www.jeff-de-bruges.com/", "count": 1},
+      {
+        "value": "https://m.facebook.com/Caract%C3%A8re-chocolat-2082082238685493",
+        "count": 1
+      },
+      {"value": "https://fr-fr.facebook.com/lagateriebachelier", "count": 1},
+      {"value": "http://chocolatiersdart.com/", "count": 1},
+      {"value": "http://www.glaciernardone.com/", "count": 1},
+      {"value": "http://www.pierrechauvet.com/", "count": 1},
+      {
+        "value": "https://www.chocolats-pralus.com/fr/boutiques-pralus.html",
+        "count": 1
+      },
+      {"value": "https://www.chocolatsleonidas-lyon.fr/", "count": 1},
+      {"value": "http://www.valrhona.com/", "count": 1},
+      {"value": "https://www.pateatartiner.fr/", "count": 1},
+      {"value": "https://www.faconchocolat.fr/", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 74 15 28", "count": 1},
+      {"value": "+33 4 78 68 21 47", "count": 1},
+      {"value": "+33 4 74 85 91 28", "count": 1},
+      {"value": "+33 4 74 59 84 16", "count": 1},
+      {"value": "+33 4 74 85 32 59", "count": 1},
+      {"value": "+33 4 78 28 29 09", "count": 1},
+      {"value": "+33 4 78 56 81 52", "count": 1},
+      {"value": "+33 4 75 55 47 78", "count": 1},
+      {"value": "+33474099381", "count": 1},
+      {"value": "+33 4 69 55 25 63", "count": 1},
+      {"value": "+33 4 75 25 01 94", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "René Nardone", "count": 1},
+      {"value": "Jeff de Bruges", "count": 1},
+      {"value": "SAS TRIPH", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "confiserie des arcades\n", "count": 1},
+      {
+        "value": "Artisan chocolatier-glacier-pâtissier, salon de thé",
+        "count": 1
+      },
+      {
+        "value": "Accès à un petit musée du chocolat aux horaire d'ouverture du magasin.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "2", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "pastry_shop", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "organic", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "ice_cream", "count": 1}], "count": 1},
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Leonidas (chocolat)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "craft",
+    "tags": [{"value": "confectionery", "count": 1}],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "fair_trade", "tags": [{"value": "only", "count": 1}], "count": 1}
+]

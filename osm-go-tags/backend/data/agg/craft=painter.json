@@ -1,0 +1,43 @@
+[
+  {"key": "craft", "tags": [{"value": "painter", "count": 21}], "count": 21},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Artiste peintre décorateur - peintures déoratives",
+        "count": 1
+      },
+      {
+        "value": "Peintures Plâtrerie Décoration Revètements des sols",
+        "count": 1
+      },
+      {
+        "value": "Galerie associative et atelier de création (vêtements, bijoux et accessoires)",
+        "count": 1
+      },
+      {"value": "Peintures et Revêtements", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 42 71 32 61", "count": 1},
+      {"value": "+33 6 30 86 97 09", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "tourism", "tags": [{"value": "gallery", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://fr-fr.facebook.com/Atelier-AnBerto-275176714627/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

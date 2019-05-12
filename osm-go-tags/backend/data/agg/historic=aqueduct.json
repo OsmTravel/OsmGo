@@ -1,0 +1,51 @@
+[
+  {"key": "historic", "tags": [{"value": "aqueduct", "count": 8}], "count": 8},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2859234", "count": 5},
+      {"value": "Q22967084", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Aqueduc des monts d'Or", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 2}, {"value": "2", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1991-02-18", "count": 2},
+      {"value": "1946-04-19", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118149", "count": 2},
+      {"value": "PA00117319", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "-1", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "spring", "count": 1}], "count": 1},
+  {"key": "bridge", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "path", "count": 1}], "count": 1}
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "travel_agency", "count": 121}],
+    "count": 121
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 12 01 03", "count": 2},
+      {"value": "+33 4 37 02 25 01", "count": 1},
+      {"value": "+33 4 74 53 75 90", "count": 1},
+      {"value": "+33480420070;+33615151483", "count": 1},
+      {"value": "+33 4 50 20 87 93", "count": 1},
+      {"value": "+33 4 50 43 99 99", "count": 1},
+      {"value": "+33 4 50 70 09 19", "count": 1},
+      {"value": "+33 4 75 29 74 74", "count": 1},
+      {"value": "+33 4 74 20 96 00", "count": 1},
+      {"value": "+33 4 75 33 31 24", "count": 1},
+      {"value": "+33 479591056", "count": 1},
+      {"value": "+33 4 79591056", "count": 1},
+      {"value": "+33618192000", "count": 1},
+      {"value": "+33 4 57 39 62 35", "count": 1},
+      {"value": "+33 4 26 10 12 12", "count": 1},
+      {"value": "+33 4 72 14 67 00", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.pretapartir.fr/", "count": 5},
+      {"value": "http://www.saintfrancoislongchamp.com", "count": 2},
+      {
+        "value": "http://azur-vacances.fr/contact-agence-de-saint-etienne",
+        "count": 1
+      },
+      {"value": "http://vanille-voyage.fr/", "count": 1},
+      {"value": "http://www.akaina.fr", "count": 1},
+      {"value": "http://www.absolu-voyages.com/", "count": 1},
+      {"value": "https://www.takamaka.fr/fr/", "count": 1},
+      {"value": "http://www.nouvelles-frontieres.fr/", "count": 1},
+      {"value": "http://ensolia.com/", "count": 1},
+      {
+        "value": "http://www.tcl.fr/Tarifs/Les-points-de-vente/Agences-Commerciales",
+        "count": 1
+      },
+      {
+        "value": "https://www.tunisair.com/site/publish/content/article.asp?ID=207",
+        "count": 1
+      },
+      {"value": "https://agence.clubmed.fr/voyage/lyon-6e/LYON2", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Selectour Afat", "count": 4},
+      {"value": "SNCF", "count": 4},
+      {"value": "E. Leclerc", "count": 2},
+      {"value": "Seléctour Afat", "count": 1},
+      {"value": "FRAM", "count": 1},
+      {"value": "Massif Central Randonnées+", "count": 1},
+      {"value": "Keolis Lyon", "count": 1},
+      {"value": "Philibert Voyages", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 4},
+      {"value": "no", "count": 3},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Club Med", "count": 1},
+      {"value": "SNCF", "count": 1},
+      {"value": "Havas Voyage", "count": 1},
+      {"value": "Eurolines", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 3}, {"value": "1", "count": 1}],
+    "count": 4
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Séjours de vacances adaptés pour adultes déficients intellectuels",
+        "count": 1
+      },
+      {"value": "Faure Tourisme", "count": 1},
+      {"value": "Organisateur de séjours", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {
+        "value": "Bâtiment accessible (porte de plus de 80cm de large) et de plain pied, banque d'accueil avec comptoir à hauteur entre 70 et 80 cm, boucle audio magnétique.",
+        "count": 1
+      },
+      {
+        "value": "Bâtiment accessible en autonomie (porte de plus de 80 cm de large), de plain pied, banque d'accueil avec comptoir à hauteur (75 cm), boucle audio magnétique. WC accessible (siège à hauteur de fauteuil, possibilité de faire une rotation, barre d'appui)",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "shop", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "indoor", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2018-02-15", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "association", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Précédemment : Paradox", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "grenoble@takamaka.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 1}],
+    "count": 1
+  }
+]

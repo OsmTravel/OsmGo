@@ -1,0 +1,158 @@
+[
+  {"key": "craft", "tags": [{"value": "brewery", "count": 50}], "count": 50},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "restaurant", "count": 15},
+      {"value": "pub", "count": 3},
+      {"value": "cafe", "count": 2},
+      {"value": "bar", "count": 1}
+    ],
+    "count": 21
+  },
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 18}], "count": 18},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.lapiece.ch/", "count": 1},
+      {"value": "brasserie-du-chardon.com", "count": 1},
+      {"value": "http://www.brasserielacanaille.com", "count": 1},
+      {"value": "http://www.sottai-malte.fr", "count": 1},
+      {"value": "https://www.facebook.com/aubureaugerland/", "count": 1},
+      {"value": "http://www.lafarlodoise.fr", "count": 1},
+      {"value": "http://www.brasserie-chavant-lyon.fr/", "count": 1},
+      {"value": "http://www.diplomatico.fr/", "count": 1},
+      {"value": "http://www.brasseriedupilat.com", "count": 1},
+      {"value": "http://www.lagrivoise.fr/", "count": 1},
+      {"value": "http://www.mandrin.biz/", "count": 1},
+      {
+        "value": "http://www.fermedelaquintilliere.com/bieres-busard/",
+        "count": 1
+      },
+      {"value": "http://terredebieres.fr/", "count": 1},
+      {"value": "http://www.camping-valleedudoux.fr/", "count": 1},
+      {"value": "https://www.brasserie-du-slalom.fr", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 51 56 17", "count": 1},
+      {"value": "+33 4 78 37 41 80", "count": 1},
+      {"value": "+33973108472", "count": 1},
+      {"value": "+33 4 78373864", "count": 1},
+      {"value": "+33 4 78420826", "count": 1},
+      {"value": "+33 4 72 94 49 73", "count": 1},
+      {"value": "+33 6 59 07 93 90", "count": 1},
+      {"value": "+33 4 75 30 70 76; +33 6 75 54 33 75", "count": 1},
+      {"value": "+33 4 38 37 19 67", "count": 1},
+      {"value": "+33 4 79 08 16 74", "count": 1},
+      {"value": "+33 4 50 58 61 29", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "french", "count": 4},
+      {"value": "regional", "count": 2},
+      {"value": "pizza", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "beverages", "count": 2},
+      {"value": "alcohol", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "outside", "count": 1},
+      {"value": "no", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Brasserie-La-Farlodoise-499695766774468/",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/BrasserieDuSlalom/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Sottai Malté - Micro Brasserie associative", "count": 1},
+      {"value": "Camping de la Vallée du Doux", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Brasserie artisanale. Vente directe sur rendez-vous au +41 77 453 88 65. Plus d'infos sur https://www.lapiece.ch/",
+        "count": 1
+      },
+      {"value": "Paysan brasseur", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "organic",
+    "tags": [{"value": "yes", "count": 1}, {"value": "only", "count": 1}],
+    "count": 2
+  },
+  {"key": "product", "tags": [{"value": "beer", "count": 2}], "count": 2},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "no", "count": 1}, {"value": "wlan", "count": 1}],
+    "count": 2
+  },
+  {"key": "drink:beer", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "802 874 909 00012", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "brasserie@brasseriedupilat.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 51 58 45", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "to place more precisely, on the 4 Côte Chausson", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "brewery",
+    "tags": [
+      {
+        "value": "Grande Chantourne;Chènevière;Craponette;Barbulle;Tête Rousse;Roche Noire;brassin éphémère",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "alcohol", "tags": [{"value": "beer", "count": 1}], "count": 1},
+  {"key": "outdoor_seating", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

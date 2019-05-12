@@ -1,0 +1,41 @@
+[
+  {"key": "highway", "tags": [{"value": "services", "count": 77}], "count": 77},
+  {"key": "area", "tags": [{"value": "yes", "count": 44}], "count": 44},
+  {"key": "toilets", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q24206417", "count": 2},
+      {"value": "Q24276719", "count": 1},
+      {"value": "Q24276664", "count": 1},
+      {"value": "Q24276673", "count": 1},
+      {"value": "Q43250672", "count": 1},
+      {"value": "Q24206415", "count": 1},
+      {"value": "Q24276568", "count": 1},
+      {"value": "Q24276569", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "hgv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "motorcycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "GROS chgts suite travaux, à reprendre avec imagerie Métropole 2015 à jour. Scinder les aires (vers nord/vers sud, aucune liaison) ? Pas trop ma partie...",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "foot", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "Périph’+", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Reservé aux Poids-Lourds", "count": 1}],
+    "count": 1
+  },
+  {"key": "motorcar", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

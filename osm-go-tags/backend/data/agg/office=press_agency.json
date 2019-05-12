@@ -1,0 +1,9 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "press_agency", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q21122664", "count": 1}], "count": 1}
+]

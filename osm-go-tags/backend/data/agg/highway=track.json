@@ -1,0 +1,2587 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "track", "count": 116456}],
+    "count": 116456
+  },
+  {
+    "key": "tracktype",
+    "tags": [
+      {"value": "grade3", "count": 10684},
+      {"value": "grade2", "count": 10246},
+      {"value": "grade1", "count": 5860},
+      {"value": "grade4", "count": 5502},
+      {"value": "grade5", "count": 2942},
+      {"value": "grade5;grade4", "count": 1},
+      {"value": "grade4; grade3", "count": 1},
+      {"value": "grade", "count": 1},
+      {"value": "$", "count": 1}
+    ],
+    "count": 35238
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "ground", "count": 4752},
+      {"value": "gravel", "count": 2547},
+      {"value": "dirt", "count": 1468},
+      {"value": "grass", "count": 1419},
+      {"value": "unpaved", "count": 927},
+      {"value": "asphalt", "count": 531},
+      {"value": "compacted", "count": 357},
+      {"value": "paved", "count": 281},
+      {"value": "earth", "count": 136},
+      {"value": "cobblestone", "count": 107},
+      {"value": "pebblestone", "count": 105},
+      {"value": "concrete", "count": 67},
+      {"value": "fine_gravel", "count": 59},
+      {"value": "sand", "count": 57},
+      {"value": "mud", "count": 32},
+      {"value": "wood", "count": 13},
+      {"value": "sett", "count": 10},
+      {"value": "stone", "count": 9},
+      {"value": "grass_paver", "count": 8},
+      {"value": "paving_stones", "count": 5},
+      {"value": "rock", "count": 5},
+      {"value": "concrete:plates", "count": 3},
+      {"value": "gravel; ground", "count": 2},
+      {"value": "rocky", "count": 2},
+      {"value": "clay", "count": 2},
+      {"value": "metal", "count": 2},
+      {"value": "gravel_and_grass", "count": 2},
+      {"value": "ground;gravel", "count": 1},
+      {"value": "grass;ground", "count": 1},
+      {"value": "goudron", "count": 1},
+      {"value": "concrete:lanes", "count": 1},
+      {"value": "unhewn_cobblestone", "count": 1},
+      {"value": "dirt_grass", "count": 1},
+      {"value": "grass_dirt", "count": 1},
+      {"value": "gravel;asphalt", "count": 1},
+      {"value": "rocheux/felsig", "count": 1}
+    ],
+    "count": 12917
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 3649},
+      {"value": "yes", "count": 666},
+      {"value": "no", "count": 444},
+      {"value": "agricultural", "count": 433},
+      {"value": "permissive", "count": 220},
+      {"value": "destination", "count": 189},
+      {"value": "forestry", "count": 121},
+      {"value": "designated", "count": 30},
+      {"value": "customers", "count": 21},
+      {"value": "unknown", "count": 17},
+      {"value": "public", "count": 2},
+      {"value": "delivery", "count": 1},
+      {"value": "not in winter", "count": 1},
+      {"value": "discouraged", "count": 1},
+      {"value": "pr", "count": 1}
+    ],
+    "count": 5796
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 2780},
+      {"value": "designated", "count": 83},
+      {"value": "no", "count": 46},
+      {"value": "permissive", "count": 33},
+      {"value": "private", "count": 18},
+      {"value": "official", "count": 9},
+      {"value": "designated;yes", "count": 3},
+      {"value": "destination", "count": 2}
+    ],
+    "count": 2974
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "bad", "count": 854},
+      {"value": "very_bad", "count": 640},
+      {"value": "horrible", "count": 502},
+      {"value": "very_horrible", "count": 310},
+      {"value": "intermediate", "count": 161},
+      {"value": "good", "count": 88},
+      {"value": "impassable", "count": 14},
+      {"value": "excellent", "count": 4},
+      {"value": "impossible", "count": 1}
+    ],
+    "count": 2574
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 2154},
+      {"value": "no", "count": 178},
+      {"value": "designated", "count": 56},
+      {"value": "private", "count": 42},
+      {"value": "permissive", "count": 39},
+      {"value": "dismount", "count": 15},
+      {"value": "destination", "count": 5}
+    ],
+    "count": 2489
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 1079},
+      {"value": "yes", "count": 508},
+      {"value": "private", "count": 274},
+      {"value": "permissive", "count": 107},
+      {"value": "agricultural", "count": 87},
+      {"value": "forestry", "count": 68},
+      {"value": "destination", "count": 47},
+      {"value": "designated", "count": 32},
+      {"value": "delivery", "count": 2},
+      {"value": "emergency", "count": 1},
+      {"value": "moto enduro-quad", "count": 1},
+      {"value": "official", "count": 1},
+      {"value": "motos", "count": 1},
+      {"value": "motos enduro- quad", "count": 1}
+    ],
+    "count": 2209
+  },
+  {
+    "key": "bridge",
+    "tags": [
+      {"value": "yes", "count": 1974},
+      {"value": "no", "count": 11},
+      {"value": "viaduct", "count": 5},
+      {"value": "culvert", "count": 2},
+      {"value": "low_water_crossing", "count": 2},
+      {"value": "trestle", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 1996
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 1710},
+      {"value": "-1", "count": 182},
+      {"value": "2", "count": 56},
+      {"value": "0", "count": 4},
+      {"value": "-3", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "5", "count": 1},
+      {"value": "-4", "count": 1},
+      {"value": "-2", "count": 1},
+      {"value": "-5", "count": 1}
+    ],
+    "count": 1960
+  },
+  {
+    "key": "mtb:scale",
+    "tags": [
+      {"value": "0", "count": 903},
+      {"value": "1", "count": 532},
+      {"value": "2", "count": 153},
+      {"value": "3", "count": 73},
+      {"value": "0+", "count": 45},
+      {"value": "4", "count": 41},
+      {"value": "1-", "count": 28},
+      {"value": "5", "count": 11},
+      {"value": "6", "count": 4},
+      {"value": "1+", "count": 3},
+      {"value": "Très roulant", "count": 3},
+      {"value": "1;3", "count": 2},
+      {"value": "2+", "count": 2}
+    ],
+    "count": 1800
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "2", "count": 598},
+      {"value": "3", "count": 539},
+      {"value": "1", "count": 103},
+      {"value": "2.5", "count": 68},
+      {"value": "4", "count": 65},
+      {"value": "1.5", "count": 46},
+      {"value": "5", "count": 30},
+      {"value": "0.5", "count": 17},
+      {"value": "3.5", "count": 7},
+      {"value": "0", "count": 6},
+      {"value": "2.50", "count": 5},
+      {"value": "2.20", "count": 4},
+      {"value": "6", "count": 4},
+      {"value": "1.50", "count": 4},
+      {"value": "0.50", "count": 4},
+      {"value": "-1", "count": 3},
+      {"value": "6.2", "count": 3},
+      {"value": "10", "count": 3},
+      {"value": "2,5", "count": 2},
+      {"value": "0.8", "count": 2},
+      {"value": "unkown", "count": 1},
+      {"value": "2 m", "count": 1},
+      {"value": "3.50", "count": 1},
+      {"value": "1800", "count": 1},
+      {"value": "0.4", "count": 1},
+      {"value": "3m", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "1.80", "count": 1},
+      {"value": "1.20", "count": 1}
+    ],
+    "count": 1522
+  },
+  {
+    "key": "sac_scale",
+    "tags": [
+      {"value": "hiking", "count": 830},
+      {"value": "mountain_hiking", "count": 442},
+      {"value": "demanding_mountain_hiking", "count": 20},
+      {"value": "alpine_hiking", "count": 9}
+    ],
+    "count": 1301
+  },
+  {
+    "key": "piste:type",
+    "tags": [
+      {"value": "nordic", "count": 639},
+      {"value": "downhill", "count": 505},
+      {"value": "hike", "count": 39},
+      {"value": "connection", "count": 8},
+      {"value": "skitour", "count": 7},
+      {"value": "yes", "count": 4},
+      {"value": "hiking", "count": 3},
+      {"value": "snowshoes", "count": 2},
+      {"value": "sleigh", "count": 1}
+    ],
+    "count": 1208
+  },
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "yes", "count": 964},
+      {"value": "no", "count": 117},
+      {"value": "private", "count": 34},
+      {"value": "permissive", "count": 17},
+      {"value": "designated", "count": 3},
+      {"value": "unknown", "count": 1},
+      {"value": "destination", "count": 1},
+      {"value": "Non spécifié", "count": 1}
+    ],
+    "count": 1138
+  },
+  {
+    "key": "trail_visibility",
+    "tags": [
+      {"value": "excellent", "count": 569},
+      {"value": "good", "count": 291},
+      {"value": "intermediate", "count": 93},
+      {"value": "bad", "count": 33},
+      {"value": "horrible", "count": 3},
+      {"value": "no", "count": 3}
+    ],
+    "count": 992
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [
+      {"value": "easy", "count": 448},
+      {"value": "intermediate", "count": 177},
+      {"value": "novice", "count": 162},
+      {"value": "advanced", "count": 59},
+      {"value": "GPS+Bing", "count": 12},
+      {"value": "fixme", "count": 4},
+      {"value": "freeride", "count": 2},
+      {"value": "expert", "count": 2}
+    ],
+    "count": 866
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "up", "count": 255},
+      {"value": "down", "count": 227},
+      {"value": "10%", "count": 28},
+      {"value": "0%", "count": 25},
+      {"value": "-10%", "count": 22},
+      {"value": "15%", "count": 16},
+      {"value": "0", "count": 11},
+      {"value": "16", "count": 8},
+      {"value": "-16", "count": 7},
+      {"value": "-20%", "count": 7},
+      {"value": "20%", "count": 7},
+      {"value": "yes", "count": 6},
+      {"value": "5%", "count": 6},
+      {"value": "18", "count": 5},
+      {"value": "25%", "count": 5},
+      {"value": "12%", "count": 4},
+      {"value": "20", "count": 4},
+      {"value": "-15", "count": 4},
+      {"value": "35", "count": 3},
+      {"value": "7", "count": 3},
+      {"value": "15", "count": 3},
+      {"value": "10", "count": 3},
+      {"value": "25", "count": 3},
+      {"value": "30", "count": 3},
+      {"value": "30%", "count": 3},
+      {"value": "10°", "count": 2},
+      {"value": "-25%", "count": 2},
+      {"value": "-15%", "count": 2},
+      {"value": "-20", "count": 2},
+      {"value": "7%", "count": 2},
+      {"value": "-5%", "count": 2},
+      {"value": "steep", "count": 1},
+      {"value": "22%", "count": 1},
+      {"value": "17", "count": 1},
+      {"value": "-18", "count": 1},
+      {"value": "45%", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "24%", "count": 1},
+      {"value": "up_10%", "count": 1},
+      {"value": "-14%", "count": 1},
+      {"value": "15°", "count": 1},
+      {"value": "2%", "count": 1},
+      {"value": "-30%", "count": 1},
+      {"value": "14", "count": 1}
+    ],
+    "count": 693
+  },
+  {
+    "key": "mtb:scale:uphill",
+    "tags": [
+      {"value": "0", "count": 181},
+      {"value": "1", "count": 174},
+      {"value": "2", "count": 145},
+      {"value": "3", "count": 62},
+      {"value": "4", "count": 17},
+      {"value": "1+", "count": 15},
+      {"value": "2-", "count": 10},
+      {"value": "5", "count": 10},
+      {"value": "2+", "count": 4},
+      {"value": "1-", "count": 2},
+      {"value": "3+", "count": 2},
+      {"value": "3-", "count": 2},
+      {"value": "0+", "count": 1}
+    ],
+    "count": 625
+  },
+  {
+    "key": "motorcar",
+    "tags": [
+      {"value": "no", "count": 234},
+      {"value": "agricultural", "count": 122},
+      {"value": "yes", "count": 120},
+      {"value": "private", "count": 48},
+      {"value": "forestry", "count": 25},
+      {"value": "designated", "count": 16},
+      {"value": "permissive", "count": 15},
+      {"value": "destination", "count": 13},
+      {"value": "unknown", "count": 5},
+      {"value": "official", "count": 1}
+    ],
+    "count": 599
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "C 1", "count": 22},
+      {"value": "C 9", "count": 22},
+      {"value": "C 2", "count": 20},
+      {"value": "C 4", "count": 16},
+      {"value": "C 8", "count": 14},
+      {"value": "C 7", "count": 13},
+      {"value": "C 12", "count": 11},
+      {"value": "C 11", "count": 11},
+      {"value": "VC 6", "count": 9},
+      {"value": "C 6", "count": 8},
+      {"value": "CR 1", "count": 7},
+      {"value": "C 13", "count": 7},
+      {"value": "C 14", "count": 6},
+      {"value": "C 19", "count": 6},
+      {"value": "VC 3", "count": 5},
+      {"value": "CR 3", "count": 5},
+      {"value": "20", "count": 5},
+      {"value": "C 5", "count": 5},
+      {"value": "CR 12", "count": 5},
+      {"value": "CR 20", "count": 4},
+      {"value": "CR 63", "count": 4},
+      {"value": "CR 7", "count": 4},
+      {"value": "R 7", "count": 4},
+      {"value": "D 74", "count": 4},
+      {"value": "TMB", "count": 4},
+      {"value": "CR54", "count": 4},
+      {"value": "584", "count": 4},
+      {"value": "GR 549", "count": 3},
+      {"value": "9", "count": 3},
+      {"value": "C 17", "count": 3},
+      {"value": "C 28", "count": 3},
+      {"value": "CR 8", "count": 3},
+      {"value": "KE 68 B6.2", "count": 3},
+      {"value": "R 15", "count": 3},
+      {"value": "GR 93", "count": 3},
+      {"value": "VC7", "count": 3},
+      {"value": "VC 5", "count": 3},
+      {"value": "CR 6", "count": 3},
+      {"value": "CR 25", "count": 3},
+      {"value": "C 3", "count": 3},
+      {"value": "C 10", "count": 3},
+      {"value": "29", "count": 3},
+      {"value": "Cadastre", "count": 3},
+      {"value": "CR48", "count": 3},
+      {"value": "VC 1", "count": 3},
+      {"value": "VC50", "count": 3},
+      {"value": "VC 2", "count": 3},
+      {"value": "CR 13", "count": 3},
+      {"value": "CR49", "count": 3},
+      {"value": "CR 19", "count": 3},
+      {"value": "CC5", "count": 3},
+      {"value": "C 210", "count": 3},
+      {"value": "C 15", "count": 3},
+      {"value": "C 22", "count": 3},
+      {"value": "CR 15", "count": 3},
+      {"value": "CR 10", "count": 3},
+      {"value": "CR 21", "count": 2},
+      {"value": "CR 22", "count": 2},
+      {"value": "C 26", "count": 2},
+      {"value": "CR 24", "count": 2},
+      {"value": "C 24", "count": 2},
+      {"value": "D 664", "count": 2},
+      {"value": "chemin vicinal 40", "count": 2},
+      {"value": "C 16", "count": 2},
+      {"value": "R 6", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "22", "count": 2},
+      {"value": "25", "count": 2},
+      {"value": "CR 18", "count": 2},
+      {"value": "CR 37", "count": 2},
+      {"value": "CR 9", "count": 2},
+      {"value": "D 309A", "count": 2},
+      {"value": "D 77", "count": 2},
+      {"value": "C 115", "count": 2},
+      {"value": "C 23", "count": 2},
+      {"value": "VC5", "count": 2},
+      {"value": "VC6", "count": 2},
+      {"value": "VC 12", "count": 2},
+      {"value": "581", "count": 2},
+      {"value": "CR 55", "count": 2},
+      {"value": "GR 76", "count": 2},
+      {"value": "VC 14", "count": 2},
+      {"value": "CR 49", "count": 2},
+      {"value": "CR 54", "count": 2},
+      {"value": "D 108", "count": 2},
+      {"value": "D 106d", "count": 2},
+      {"value": "C 214", "count": 2},
+      {"value": "CR 53", "count": 2},
+      {"value": "CR 46", "count": 2},
+      {"value": "C 211", "count": 2},
+      {"value": "CR 4", "count": 2},
+      {"value": "CR 58", "count": 2},
+      {"value": "GR 76D", "count": 2},
+      {"value": "Chemin rural nº8", "count": 2},
+      {"value": "CR 45", "count": 2},
+      {"value": "D 159", "count": 2},
+      {"value": "Chemin Rural", "count": 2},
+      {"value": "FR cadastre", "count": 2},
+      {"value": "Fr cadastre, bin aerial imagerie, IGN", "count": 2},
+      {"value": "Fr cadastre, bing aerial imagery, IGN 3430 OT", "count": 2},
+      {"value": "Chemin rural n°42", "count": 1},
+      {"value": "Chemin rural n°44", "count": 1},
+      {"value": "Chemin rural n°38", "count": 1},
+      {"value": "SR 4", "count": 1},
+      {"value": "GR54", "count": 1},
+      {"value": "CR 42", "count": 1},
+      {"value": "CR 39", "count": 1},
+      {"value": "CR 40", "count": 1},
+      {"value": "CR 71", "count": 1},
+      {"value": "C 48", "count": 1},
+      {"value": "Chemin du loup", "count": 1},
+      {"value": "CR 41", "count": 1},
+      {"value": "Chemin Rural n° 15", "count": 1},
+      {"value": "V.C. n°5", "count": 1},
+      {"value": "VC26", "count": 1},
+      {"value": "CR 31", "count": 1},
+      {"value": "TRONROUT0000000006988178", "count": 1},
+      {"value": "Chemin rural n°5", "count": 1},
+      {"value": "CR 30", "count": 1},
+      {"value": "VC3", "count": 1},
+      {"value": "chemin vicinal 44", "count": 1},
+      {"value": "CR 70", "count": 1},
+      {"value": "R 17", "count": 1},
+      {"value": "C 42", "count": 1},
+      {"value": "D 86", "count": 1},
+      {"value": "D 7", "count": 1},
+      {"value": "D 1206", "count": 1},
+      {"value": "EN1", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "VC 43", "count": 1},
+      {"value": "C 18", "count": 1},
+      {"value": "GR 65", "count": 1},
+      {"value": "COMMUNALE", "count": 1},
+      {"value": "VC 18", "count": 1},
+      {"value": "C4", "count": 1},
+      {"value": "VC n°8 des Clos à Sinnard", "count": 1},
+      {"value": "C11", "count": 1},
+      {"value": "C2", "count": 1},
+      {"value": "C 114", "count": 1},
+      {"value": "CR 29", "count": 1},
+      {"value": "CR 47", "count": 1},
+      {"value": "C8", "count": 1},
+      {"value": "CR 50", "count": 1},
+      {"value": "D 123", "count": 1},
+      {"value": "C 35", "count": 1},
+      {"value": "C 13 Bis", "count": 1},
+      {"value": "C 02", "count": 1},
+      {"value": "VC30", "count": 1},
+      {"value": "VC1", "count": 1},
+      {"value": "VC 33", "count": 1},
+      {"value": "C 4 Bis", "count": 1},
+      {"value": "C 32", "count": 1},
+      {"value": "D 79", "count": 1},
+      {"value": "Font Gouzon", "count": 1},
+      {"value": "VC 13", "count": 1},
+      {"value": "CR 32", "count": 1},
+      {"value": "CR 69", "count": 1},
+      {"value": "CR 16", "count": 1},
+      {"value": "VC33", "count": 1},
+      {"value": "9D", "count": 1},
+      {"value": "VC36", "count": 1},
+      {"value": "CR 17", "count": 1},
+      {"value": "C 100", "count": 1},
+      {"value": "chemin vicinal 14", "count": 1},
+      {"value": "DFCI A69", "count": 1},
+      {"value": "VC9", "count": 1},
+      {"value": "VC 19", "count": 1},
+      {"value": "C7", "count": 1},
+      {"value": "C13", "count": 1},
+      {"value": "CE 17", "count": 1},
+      {"value": "CR 60", "count": 1},
+      {"value": "CR 36", "count": 1},
+      {"value": "Chemin Rural n°10", "count": 1},
+      {"value": "VC nº 7", "count": 1},
+      {"value": "VC 109", "count": 1},
+      {"value": "VC4", "count": 1},
+      {"value": "D 54", "count": 1},
+      {"value": "CR46", "count": 1},
+      {"value": "Chemin Rural n°14", "count": 1},
+      {"value": "Chemin Rural n° 3", "count": 1},
+      {"value": "CR7", "count": 1},
+      {"value": "D 203", "count": 1},
+      {"value": "R 1", "count": 1},
+      {"value": "C 30", "count": 1},
+      {"value": "BU 33", "count": 1},
+      {"value": "2-TMB", "count": 1},
+      {"value": "C 212", "count": 1},
+      {"value": "CR 26", "count": 1},
+      {"value": "CR 33", "count": 1},
+      {"value": "C 236", "count": 1},
+      {"value": "C 229", "count": 1},
+      {"value": "VC N°15", "count": 1},
+      {"value": "CR 28", "count": 1},
+      {"value": "C 217", "count": 1},
+      {"value": "C 33", "count": 1},
+      {"value": "GR 96", "count": 1},
+      {"value": "581 A", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "C 126", "count": 1},
+      {"value": "Chemin d'Izernore", "count": 1},
+      {"value": "VC8", "count": 1},
+      {"value": "VC104", "count": 1},
+      {"value": "VC 7", "count": 1},
+      {"value": "Chemin rural dit de Pre Colomb", "count": 1},
+      {"value": "SR 3", "count": 1},
+      {"value": "Chemin rural n°20", "count": 1},
+      {"value": "582", "count": 1},
+      {"value": "Chemin rural n°13", "count": 1},
+      {"value": "VC 16", "count": 1},
+      {"value": "Chemin rural n°21", "count": 1},
+      {"value": "C 21", "count": 1},
+      {"value": "C 201", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "C 101", "count": 1},
+      {"value": "R 25", "count": 1},
+      {"value": "D 545", "count": 1},
+      {"value": "CR 5", "count": 1},
+      {"value": "CR 44", "count": 1},
+      {"value": "VC nº 16", "count": 1},
+      {"value": "VC nº 23", "count": 1},
+      {"value": "V.C.nº3", "count": 1},
+      {"value": "Chemin rural n°34", "count": 1},
+      {"value": "CR 35", "count": 1},
+      {"value": "Chemin rural n°46", "count": 1},
+      {"value": "FR cadastre, bing aerial imagery", "count": 1},
+      {"value": "C 43", "count": 1},
+      {"value": "C 20", "count": 1},
+      {"value": "n°2 - bleu", "count": 1},
+      {"value": "D 604", "count": 1},
+      {"value": "VC41", "count": 1},
+      {"value": "TRONROUT0000000006987434", "count": 1}
+    ],
+    "count": 535
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [
+      {"value": "classic;skating", "count": 312},
+      {"value": "classic+skating", "count": 137},
+      {"value": "classic", "count": 24},
+      {"value": "backcountry", "count": 20},
+      {"value": "skating", "count": 9},
+      {"value": "no", "count": 1}
+    ],
+    "count": 503
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "691220012H", "count": 3},
+      {"value": "012320300P", "count": 3},
+      {"value": "381550007K", "count": 3},
+      {"value": "741730542W", "count": 3},
+      {"value": "383470380F", "count": 3},
+      {"value": "383380725V", "count": 3},
+      {"value": "382500100Y", "count": 2},
+      {"value": "380940087M", "count": 2},
+      {"value": "385420070W", "count": 2},
+      {"value": "013281040B", "count": 2},
+      {"value": "381620205V", "count": 2},
+      {"value": "381310215R", "count": 2},
+      {"value": "383930048V", "count": 2},
+      {"value": "690550197A", "count": 2},
+      {"value": "012710205S", "count": 2},
+      {"value": "691190080V", "count": 2},
+      {"value": "741730265V", "count": 2},
+      {"value": "741730067E", "count": 2},
+      {"value": "692650134U", "count": 2},
+      {"value": "385080185U", "count": 2},
+      {"value": "381300062D", "count": 2},
+      {"value": "013390186A", "count": 2},
+      {"value": "383870429K", "count": 1},
+      {"value": "692650014N", "count": 1},
+      {"value": "383810450J", "count": 1},
+      {"value": "262810365R", "count": 1},
+      {"value": "691250450W", "count": 1},
+      {"value": "691250280L", "count": 1},
+      {"value": "690470078F", "count": 1},
+      {"value": "380280028K", "count": 1},
+      {"value": "692280330T", "count": 1},
+      {"value": "381800530V", "count": 1},
+      {"value": "381800085L", "count": 1},
+      {"value": "010970102L", "count": 1},
+      {"value": "011120026N", "count": 1},
+      {"value": "382810018Z", "count": 1},
+      {"value": "382750010S", "count": 1},
+      {"value": "385240005D", "count": 1},
+      {"value": "381510355F", "count": 1},
+      {"value": "382800025L", "count": 1},
+      {"value": "384860420V", "count": 1},
+      {"value": "260580671T", "count": 1},
+      {"value": "383520148G", "count": 1},
+      {"value": "384670065S", "count": 1},
+      {"value": "380040192T", "count": 1},
+      {"value": "381720030L", "count": 1},
+      {"value": "381720007L", "count": 1},
+      {"value": "383390310P", "count": 1},
+      {"value": "383391600S", "count": 1},
+      {"value": "381810014E", "count": 1},
+      {"value": "010430717P", "count": 1},
+      {"value": "384850300U", "count": 1},
+      {"value": "013660012U", "count": 1},
+      {"value": "014420038S", "count": 1},
+      {"value": "014420001B", "count": 1},
+      {"value": "01313A085Y", "count": 1},
+      {"value": "385120630K", "count": 1},
+      {"value": "380240033H", "count": 1},
+      {"value": "380240015N", "count": 1},
+      {"value": "385500040D", "count": 1},
+      {"value": "384810050P", "count": 1},
+      {"value": "383390680S", "count": 1},
+      {"value": "382050438L", "count": 1},
+      {"value": "385610035A", "count": 1},
+      {"value": "380470030E", "count": 1},
+      {"value": "692880161Y", "count": 1},
+      {"value": "380350180V", "count": 1},
+      {"value": "690510125P", "count": 1},
+      {"value": "381090140E", "count": 1},
+      {"value": "691410067K", "count": 1},
+      {"value": "692190250V", "count": 1},
+      {"value": "383150221X", "count": 1},
+      {"value": "010680077K", "count": 1},
+      {"value": "013860019P", "count": 1},
+      {"value": "012710155M", "count": 1},
+      {"value": "384340800J", "count": 1},
+      {"value": "381710086B", "count": 1},
+      {"value": "692180040W", "count": 1},
+      {"value": "691190063B", "count": 1},
+      {"value": "691790197L", "count": 1},
+      {"value": "692010049E", "count": 1},
+      {"value": "382640100M", "count": 1},
+      {"value": "381310067E", "count": 1},
+      {"value": "380670510P", "count": 1},
+      {"value": "382640270X", "count": 1},
+      {"value": "383380163J", "count": 1},
+      {"value": "741730304M", "count": 1},
+      {"value": "692190327D", "count": 1},
+      {"value": "380750055K", "count": 1},
+      {"value": "691190133C", "count": 1},
+      {"value": "384510341L", "count": 1},
+      {"value": "380810700K", "count": 1},
+      {"value": "385370053Z", "count": 1},
+      {"value": "013780023D", "count": 1},
+      {"value": "690800132W", "count": 1},
+      {"value": "380350300A", "count": 1},
+      {"value": "010040262P", "count": 1},
+      {"value": "384010196W", "count": 1},
+      {"value": "383740181X", "count": 1},
+      {"value": "382380015H", "count": 1},
+      {"value": "381240634B", "count": 1},
+      {"value": "692230028L", "count": 1},
+      {"value": "383891120C", "count": 1},
+      {"value": "383470053A", "count": 1},
+      {"value": "690230167G", "count": 1},
+      {"value": "010820111L", "count": 1},
+      {"value": "385610008W", "count": 1},
+      {"value": "422720021D", "count": 1},
+      {"value": "013780121K", "count": 1},
+      {"value": "690310131H", "count": 1},
+      {"value": "422900490K", "count": 1},
+      {"value": "691190145R", "count": 1},
+      {"value": "691190100S", "count": 1},
+      {"value": "691190199Z", "count": 1},
+      {"value": "012570020B", "count": 1},
+      {"value": "381551115P", "count": 1},
+      {"value": "692650104L", "count": 1},
+      {"value": "692980050J", "count": 1},
+      {"value": "263300138F", "count": 1},
+      {"value": "014140032G", "count": 1},
+      {"value": "690800023C", "count": 1},
+      {"value": "380750105P", "count": 1},
+      {"value": "690800150R", "count": 1},
+      {"value": "385551230A", "count": 1},
+      {"value": "383240095W", "count": 1},
+      {"value": "384340170Z", "count": 1},
+      {"value": "383780015Z", "count": 1},
+      {"value": "382610122Z", "count": 1},
+      {"value": "382380076Z", "count": 1},
+      {"value": "380352100G", "count": 1},
+      {"value": "691560033H", "count": 1},
+      {"value": "383480255R", "count": 1},
+      {"value": "384550651F", "count": 1},
+      {"value": "013030007M", "count": 1},
+      {"value": "382210043M", "count": 1},
+      {"value": "382210002T", "count": 1},
+      {"value": "385150350T", "count": 1},
+      {"value": "383430250G", "count": 1},
+      {"value": "383470035F", "count": 1},
+      {"value": "691410745X", "count": 1},
+      {"value": "691410686H", "count": 1},
+      {"value": "691560098D", "count": 1},
+      {"value": "691100287J", "count": 1},
+      {"value": "691410189T", "count": 1},
+      {"value": "741730354S", "count": 1},
+      {"value": "690470060L", "count": 1},
+      {"value": "691260026F", "count": 1},
+      {"value": "691190197X", "count": 1},
+      {"value": "382600020T", "count": 1},
+      {"value": "384570155H", "count": 1},
+      {"value": "690860086V", "count": 1},
+      {"value": "385610029U", "count": 1},
+      {"value": "692130092Z", "count": 1},
+      {"value": "692130096D", "count": 1},
+      {"value": "691790012K", "count": 1},
+      {"value": "383230248S", "count": 1},
+      {"value": "692650013M", "count": 1},
+      {"value": "384270240F", "count": 1},
+      {"value": "381710045G", "count": 1},
+      {"value": "380860136A", "count": 1},
+      {"value": "380860066Z", "count": 1},
+      {"value": "380860438D", "count": 1},
+      {"value": "380860357R", "count": 1},
+      {"value": "690970410Z", "count": 1},
+      {"value": "012610300N", "count": 1},
+      {"value": "691150034M", "count": 1},
+      {"value": "380860432X", "count": 1},
+      {"value": "382360071C", "count": 1},
+      {"value": "384490471L", "count": 1},
+      {"value": "012610400X", "count": 1},
+      {"value": "384400058B", "count": 1},
+      {"value": "384570255S", "count": 1},
+      {"value": "421950285A", "count": 1},
+      {"value": "261660490B", "count": 1},
+      {"value": "380640110T", "count": 1},
+      {"value": "380640210B", "count": 1},
+      {"value": "380240039P", "count": 1},
+      {"value": "383480175D", "count": 1},
+      {"value": "690090069L", "count": 1},
+      {"value": "692340048K", "count": 1},
+      {"value": "691790068W", "count": 1},
+      {"value": "691790285G", "count": 1},
+      {"value": "011050165V", "count": 1},
+      {"value": "692520126S", "count": 1},
+      {"value": "012610385F", "count": 1},
+      {"value": "013620575Y", "count": 1},
+      {"value": "692370038L", "count": 1},
+      {"value": "692890172F", "count": 1},
+      {"value": "692890450H", "count": 1},
+      {"value": "380480820J", "count": 1},
+      {"value": "692901354L", "count": 1},
+      {"value": "690900024K", "count": 1},
+      {"value": "380210225E", "count": 1},
+      {"value": "380860050G", "count": 1},
+      {"value": "012750526Y", "count": 1},
+      {"value": "384490116A", "count": 1},
+      {"value": "010640028Z", "count": 1},
+      {"value": "691260027G", "count": 1},
+      {"value": "690830066Z", "count": 1},
+      {"value": "692901088X", "count": 1},
+      {"value": "692280030S", "count": 1},
+      {"value": "741640508Y", "count": 1},
+      {"value": "381710176Z", "count": 1},
+      {"value": "741730211L", "count": 1},
+      {"value": "741730325K", "count": 1},
+      {"value": "741730404W", "count": 1},
+      {"value": "741730343E", "count": 1},
+      {"value": "741730394K", "count": 1},
+      {"value": "741730406Y", "count": 1},
+      {"value": "690090111G", "count": 1},
+      {"value": "741730388D", "count": 1},
+      {"value": "382300905K", "count": 1},
+      {"value": "741730426V", "count": 1},
+      {"value": "741730191P", "count": 1},
+      {"value": "741730612X", "count": 1},
+      {"value": "690720189T", "count": 1},
+      {"value": "383470070U", "count": 1},
+      {"value": "383470290H", "count": 1},
+      {"value": "382300201V", "count": 1},
+      {"value": "384400255R", "count": 1},
+      {"value": "384400257T", "count": 1},
+      {"value": "384400036C", "count": 1},
+      {"value": "381370246Y", "count": 1},
+      {"value": "381710035W", "count": 1},
+      {"value": "383870014J", "count": 1},
+      {"value": "383870372Y", "count": 1},
+      {"value": "732500075G", "count": 1},
+      {"value": "384270012H", "count": 1},
+      {"value": "690800128S", "count": 1},
+      {"value": "385620505G", "count": 1},
+      {"value": "013780113B", "count": 1},
+      {"value": "382750065B", "count": 1},
+      {"value": "382750022E", "count": 1},
+      {"value": "382750028L", "count": 1},
+      {"value": "382750311U", "count": 1},
+      {"value": "382750060W", "count": 1},
+      {"value": "382750046F", "count": 1},
+      {"value": "382750044D", "count": 1},
+      {"value": "260060103B", "count": 1},
+      {"value": "380860046C", "count": 1},
+      {"value": "383830074S", "count": 1},
+      {"value": "382210203L", "count": 1},
+      {"value": "383620102N", "count": 1},
+      {"value": "385170116E", "count": 1},
+      {"value": "385170354N", "count": 1},
+      {"value": "381540041B", "count": 1},
+      {"value": "382560560X", "count": 1},
+      {"value": "010900250C", "count": 1},
+      {"value": "380650345U", "count": 1},
+      {"value": "382810017Y", "count": 1},
+      {"value": "384550050C", "count": 1},
+      {"value": "383810180R", "count": 1},
+      {"value": "381800040M", "count": 1},
+      {"value": "382710100G", "count": 1},
+      {"value": "691540063Z", "count": 1},
+      {"value": "380910102S", "count": 1},
+      {"value": "38369A030Z", "count": 1},
+      {"value": "691770094H", "count": 1},
+      {"value": "383430440N", "count": 1},
+      {"value": "381880027N", "count": 1},
+      {"value": "383570155T", "count": 1},
+      {"value": "381650025L", "count": 1},
+      {"value": "690280013T", "count": 1},
+      {"value": "691190065D", "count": 1},
+      {"value": "691190088D", "count": 1},
+      {"value": "691190205F", "count": 1},
+      {"value": "691190005N", "count": 1},
+      {"value": "381620260E", "count": 1},
+      {"value": "382640140F", "count": 1},
+      {"value": "690970485F", "count": 1},
+      {"value": "380640560G", "count": 1},
+      {"value": "383860700J", "count": 1},
+      {"value": "383860790G", "count": 1},
+      {"value": "384880010R", "count": 1},
+      {"value": "010900180B", "count": 1},
+      {"value": "382280010W", "count": 1},
+      {"value": "012690479Y", "count": 1},
+      {"value": "690230100J", "count": 1},
+      {"value": "421680074N", "count": 1},
+      {"value": "384800330Y", "count": 1},
+      {"value": "691410104A", "count": 1},
+      {"value": "690510017X", "count": 1},
+      {"value": "690470047X", "count": 1},
+      {"value": "381310202B", "count": 1},
+      {"value": "382810011S", "count": 1},
+      {"value": "691790029D", "count": 1},
+      {"value": "691790018S", "count": 1},
+      {"value": "692190580D", "count": 1},
+      {"value": "692190610L", "count": 1},
+      {"value": "692190460Y", "count": 1},
+      {"value": "692280020F", "count": 1},
+      {"value": "692280085B", "count": 1},
+      {"value": "692370080G", "count": 1},
+      {"value": "692410055M", "count": 1},
+      {"value": "692280460J", "count": 1},
+      {"value": "692130254A", "count": 1},
+      {"value": "692380125B", "count": 1},
+      {"value": "692270186R", "count": 1},
+      {"value": "691100378H", "count": 1},
+      {"value": "691100057J", "count": 1},
+      {"value": "691930115L", "count": 1},
+      {"value": "691930131D", "count": 1},
+      {"value": "690800011P", "count": 1},
+      {"value": "690800306K", "count": 1},
+      {"value": "690800116D", "count": 1},
+      {"value": "690800190J", "count": 1},
+      {"value": "690800135Z", "count": 1},
+      {"value": "690800022B", "count": 1},
+      {"value": "690800008L", "count": 1},
+      {"value": "383930047U", "count": 1},
+      {"value": "690800131V", "count": 1},
+      {"value": "690800077L", "count": 1},
+      {"value": "010220050F", "count": 1},
+      {"value": "690240082K", "count": 1},
+      {"value": "690240112T", "count": 1},
+      {"value": "690240236C", "count": 1},
+      {"value": "690590340N", "count": 1},
+      {"value": "690590317N", "count": 1},
+      {"value": "691210003C", "count": 1},
+      {"value": "690200028U", "count": 1},
+      {"value": "690200128C", "count": 1},
+      {"value": "690200135K", "count": 1},
+      {"value": "690200155G", "count": 1},
+      {"value": "381300695S", "count": 1},
+      {"value": "691250170S", "count": 1},
+      {"value": "691250370J", "count": 1},
+      {"value": "690520009J", "count": 1},
+      {"value": "690090113J", "count": 1},
+      {"value": "692481054T", "count": 1},
+      {"value": "381300036A", "count": 1},
+      {"value": "692431199X", "count": 1},
+      {"value": "692230125S", "count": 1},
+      {"value": "692230136D", "count": 1},
+      {"value": "692230115F", "count": 1},
+      {"value": "692340062A", "count": 1},
+      {"value": "692340017B", "count": 1},
+      {"value": "692340046H", "count": 1},
+      {"value": "690730046H", "count": 1},
+      {"value": "690730032T", "count": 1},
+      {"value": "692650106N", "count": 1},
+      {"value": "692650090W", "count": 1},
+      {"value": "692650144E", "count": 1},
+      {"value": "692650011K", "count": 1},
+      {"value": "692650033J", "count": 1},
+      {"value": "692650115Y", "count": 1},
+      {"value": "421970073L", "count": 1},
+      {"value": "383780090F", "count": 1},
+      {"value": "691360313Z", "count": 1},
+      {"value": "384800360F", "count": 1},
+      {"value": "013630071W", "count": 1},
+      {"value": "381310066D", "count": 1},
+      {"value": "382470280G", "count": 1},
+      {"value": "690990036J", "count": 1},
+      {"value": "690990154M", "count": 1},
+      {"value": "012750728T", "count": 1},
+      {"value": "383320131A", "count": 1},
+      {"value": "383480247G", "count": 1},
+      {"value": "013281070J", "count": 1},
+      {"value": "384800220D", "count": 1},
+      {"value": "385350080M", "count": 1},
+      {"value": "381930175C", "count": 1},
+      {"value": "381930072R", "count": 1},
+      {"value": "382150105F", "count": 1},
+      {"value": "381900900D", "count": 1},
+      {"value": "381090128S", "count": 1},
+      {"value": "385420370X", "count": 1},
+      {"value": "385420230V", "count": 1},
+      {"value": "384150160W", "count": 1},
+      {"value": "383920085P", "count": 1},
+      {"value": "381900420G", "count": 1},
+      {"value": "383391365L", "count": 1},
+      {"value": "384620230T", "count": 1},
+      {"value": "732230400C", "count": 1},
+      {"value": "383890221A", "count": 1},
+      {"value": "385320015E", "count": 1},
+      {"value": "380350700K", "count": 1},
+      {"value": "383461610X", "count": 1},
+      {"value": "383460660P", "count": 1},
+      {"value": "382380187V", "count": 1},
+      {"value": "382380196E", "count": 1},
+      {"value": "382380055B", "count": 1},
+      {"value": "382380062J", "count": 1},
+      {"value": "384590160E", "count": 1},
+      {"value": "420510064L", "count": 1},
+      {"value": "383520182U", "count": 1},
+      {"value": "383391165U", "count": 1},
+      {"value": "383390300D", "count": 1},
+      {"value": "421680353S", "count": 1},
+      {"value": "380480915M", "count": 1},
+      {"value": "421670028T", "count": 1},
+      {"value": "422710102W", "count": 1},
+      {"value": "01446B122X", "count": 1},
+      {"value": "382150058E", "count": 1},
+      {"value": "381100275X", "count": 1},
+      {"value": "381100300Z", "count": 1},
+      {"value": "381100215G", "count": 1},
+      {"value": "381100010J", "count": 1},
+      {"value": "381100045X", "count": 1},
+      {"value": "381100015P", "count": 1},
+      {"value": "010900220V", "count": 1},
+      {"value": "381310173V", "count": 1},
+      {"value": "380350590R", "count": 1},
+      {"value": "381300694R", "count": 1},
+      {"value": "382910563Y", "count": 1},
+      {"value": "383391395U", "count": 1},
+      {"value": "380040100T", "count": 1},
+      {"value": "380040166P", "count": 1},
+      {"value": "380040168S", "count": 1},
+      {"value": "380040131B", "count": 1},
+      {"value": "381370313W", "count": 1},
+      {"value": "381551430G", "count": 1},
+      {"value": "382390603T", "count": 1},
+      {"value": "382390243B", "count": 1},
+      {"value": "381870057A", "count": 1},
+      {"value": "382640220T", "count": 1},
+      {"value": "382640110Y", "count": 1},
+      {"value": "381060135M", "count": 1},
+      {"value": "013570051A", "count": 1},
+      {"value": "011990117J", "count": 1},
+      {"value": "420370050G", "count": 1},
+      {"value": "420370115C", "count": 1},
+      {"value": "422900350H", "count": 1},
+      {"value": "381710212N", "count": 1},
+      {"value": "692900567F", "count": 1},
+      {"value": "692900882Y", "count": 1},
+      {"value": "692900959G", "count": 1},
+      {"value": "692901379N", "count": 1},
+      {"value": "384370080N", "count": 1},
+      {"value": "380750098G", "count": 1},
+      {"value": "380750092A", "count": 1},
+      {"value": "380750220P", "count": 1},
+      {"value": "012940250R", "count": 1},
+      {"value": "011170134J", "count": 1},
+      {"value": "010150020D", "count": 1},
+      {"value": "691590031T", "count": 1},
+      {"value": "012710005Z", "count": 1},
+      {"value": "014440202L", "count": 1},
+      {"value": "014420029G", "count": 1},
+      {"value": "010820037F", "count": 1},
+      {"value": "013310039A", "count": 1},
+      {"value": "013310021F", "count": 1},
+      {"value": "012280006M", "count": 1},
+      {"value": "012140079C", "count": 1},
+      {"value": "012140100A", "count": 1},
+      {"value": "383470255V", "count": 1},
+      {"value": "690090109E", "count": 1},
+      {"value": "422900450S", "count": 1},
+      {"value": "422900343A", "count": 1},
+      {"value": "421950195C", "count": 1},
+      {"value": "422791690M", "count": 1},
+      {"value": "380040014Z", "count": 1},
+      {"value": "073390275C", "count": 1}
+    ],
+    "count": 480
+  },
+  {
+    "key": "motorcycle",
+    "tags": [
+      {"value": "no", "count": 193},
+      {"value": "yes", "count": 136},
+      {"value": "agricultural", "count": 79},
+      {"value": "private", "count": 36},
+      {"value": "forestry", "count": 8},
+      {"value": "unknown", "count": 6},
+      {"value": "destination", "count": 4},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 464
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 234},
+      {"value": "continue", "count": 60},
+      {"value": "Probablement Chemin", "count": 4},
+      {"value": "portion supposée car non parcourue", "count": 4},
+      {"value": "à améliorer aux ambranchements chemins", "count": 4},
+      {"value": "vérifier la jonction entre elles", "count": 3},
+      {
+        "value": "il doit y avoir un problème, le chemin que j'ai arpenté peut vaguement être classé en track, mais c'est des cailloux",
+        "count": 3
+      },
+      {"value": "différence importante avec le cadastre", "count": 3},
+      {"value": "Vérifier l'accessibilité de cette piste.", "count": 3},
+      {"value": "nature du sol à vérifier", "count": 3},
+      {
+        "value": "le nom est inventé en fonction de ce qu'on rejoint, une confirmation officielle serait attendue",
+        "count": 3
+      },
+      {"value": "name", "count": 2},
+      {
+        "value": "en forêt, la précision de ce chemin à l'air vraiment médiocre, mais avec bing on ne voit pas tout",
+        "count": 2
+      },
+      {"value": "depuis cadastre, à vérifier", "count": 2},
+      {
+        "value": "le stop visible sur l'orthophoto met un doute sur la nature \"track\" de cette voie. semble avoir été goudronnée depuis son ajout.",
+        "count": 2
+      },
+      {
+        "value": "A verifier sur le terrain pour voir si la piste continue dans le bois",
+        "count": 2
+      },
+      {
+        "value": "très approximatif, nombre de virages comptés mais pas de réception gps",
+        "count": 2
+      },
+      {"value": "Vérifier le nom", "count": 2},
+      {"value": "à voir sur le terrain", "count": 2},
+      {
+        "value": "croisement ruisseau/track de souvenirs vagues, est-ce que ça se croise vraiment ? je ne m'en souviens pas",
+        "count": 2
+      },
+      {"value": "to be continued", "count": 2},
+      {"value": "survey", "count": 2},
+      {
+        "value": "tronçon douteux, vérifier terrain. Au mieux path & visibilty=bad",
+        "count": 1
+      },
+      {"value": "TODO", "count": 1},
+      {"value": "forme à vérifier à l'Est, j'ai un doute", "count": 1},
+      {"value": "Changement du code fantoir erroné", "count": 1},
+      {"value": "This has moved. Survey needed", "count": 1},
+      {"value": "existence à confirmer", "count": 1},
+      {
+        "value": "cadastre and gps do not agree, I'm beliving in me !",
+        "count": 1
+      },
+      {"value": "this could be part of Roc'n'Bob (toboggan run)", "count": 1},
+      {
+        "value": "continue (non parcouru, mais ça continue vers le haut et vers l'Est)",
+        "count": 1
+      },
+      {
+        "value": "je ne sais pas où ça fini, un autre randonneur me l'a dit",
+        "count": 1
+      },
+      {
+        "value": "je l'ai parcouru, mais mon gps n'avait plus de pile, donc il faudrait refaire le tracé",
+        "count": 1
+      },
+      {"value": "roulabilité supposée", "count": 1},
+      {
+        "value": "GPS de mauvaise qualité et en forêt, reconstitué approximativement de mémoire et avec des bouts de traces A/R",
+        "count": 1
+      },
+      {"value": "to check IRL because BING is not sufficiant", "count": 1},
+      {
+        "value": "vu sur le terrain, mais je me demande bien où ça peut continuer",
+        "count": 1
+      },
+      {
+        "value": "ma trave et yahoo ne sont pas d'accord sur ce coin",
+        "count": 1
+      },
+      {"value": "à refaire cette jonction", "count": 1},
+      {
+        "value": "à revérifier, tout ça était sous la neige à mon passage",
+        "count": 1
+      },
+      {"value": "Signalitique de terrain = Chemin de la Ligne", "count": 1},
+      {"value": "complete me", "count": 1},
+      {"value": "chemin de terre en bas", "count": 1},
+      {
+        "value": "track ? bing ne semble pas l'indiqué, path non ? à vérifier sur le terrain",
+        "count": 1
+      },
+      {"value": "tracé à vérifier / préciser", "count": 1},
+      {
+        "value": "exact position? (please update from aerial photo or good GPS trace)",
+        "count": 1
+      },
+      {"value": "to continue", "count": 1},
+      {
+        "value": "To check IRL as this is not clealy visible on Bing",
+        "count": 1
+      },
+      {
+        "value": "vraiment une drôle de tête ce racourcis... et invisible sur bing en plus à controler",
+        "count": 1
+      },
+      {"value": "A reconnaître", "count": 1},
+      {
+        "value": "A verifier sur le terrain comme ce n est pas visible sur Bing Sat",
+        "count": 1
+      },
+      {
+        "value": "a verifier sur le terrain si la piste est tjs praticable car ce n est pas tres clair sur Bing",
+        "count": 1
+      },
+      {
+        "value": "a verifier sur le terrain car non visible sur Bing Sat'",
+        "count": 1
+      },
+      {"value": "verifier l'accès à la piste: privé? barrière?", "count": 1},
+      {"value": "incomplete", "count": 1},
+      {"value": "approximatif, jonction loupée", "count": 1},
+      {"value": "à vérifier: OK tracé GPS le 14/09/2013", "count": 1},
+      {"value": "à préciser type", "count": 1},
+      {"value": "find du chemin de terre à l'Est à confirmer", "count": 1},
+      {"value": "les coordonnees ne sont pas exactes", "count": 1},
+      {"value": "à vérifier avec un GPS", "count": 1},
+      {"value": "tracé depuis Bing, certaines portions à revoir", "count": 1},
+      {"value": "does this track really exist? is it public?", "count": 1},
+      {
+        "value": "seems misaligned & goes over far too much of golf course",
+        "count": 1
+      },
+      {"value": "Track guessed by BingMaps", "count": 1},
+      {
+        "value": "oui, un track non connecté, c'est louche, je crois qu'il se poursuit en fait vers le sud, et se trouve en parallèle du path, mais y étant passé l'hiver, avec la neige, dur à certifier",
+        "count": 1
+      },
+      {
+        "value": "à vérifier, la source indiquait \"bing\" mais sur bing, il n'y a justement pas de track de visible là, mais 30m à coté, qui est le plus à jour ?",
+        "count": 1
+      },
+      {"value": "pavé ou non à vérifier", "count": 1},
+      {"value": "resurvey (semble ne pas exister sur le terrain)", "count": 1},
+      {
+        "value": "sous la neige, je ne peux dire où s'arrete le bitume",
+        "count": 1
+      },
+      {"value": "pas bien vu sur Bing; à voir sur le terrain", "count": 1},
+      {"value": "Noua n'avons pas d'\"accord avec GR", "count": 1},
+      {
+        "value": "Semble très imprécis en forêt, à améliorer avec nouvelle trace gps",
+        "count": 1
+      },
+      {
+        "value": "sous la neige, je ne peux dire où s'arrete le bitume, je suppose que c'est un niveau de la source captée",
+        "count": 1
+      },
+      {"value": "ça ne va pas... reprise du cadastre ?", "count": 1},
+      {"value": "vérifier partie basse de ce chemin", "count": 1},
+      {"value": "resurvey + continue", "count": 1},
+      {"value": "complete", "count": 1},
+      {"value": "Les panneaux indiquent Chemin SOUS les Vignes", "count": 1},
+      {"value": "Tracé à vérifier en direction des 3 fontaines...", "count": 1},
+      {"value": "continue vers rocher de l'Aulp", "count": 1},
+      {"value": "continue vers grotte de la Fétoure", "count": 1},
+      {
+        "value": "je ne me rappelle plus exactement si c'était un chemin ou une piste...",
+        "count": 1
+      },
+      {
+        "value": "Tracé à affiner dans la forêt, réception GPS moyenne...",
+        "count": 1
+      },
+      {"value": "À vérifier", "count": 1},
+      {"value": "Name?", "count": 1},
+      {"value": "tracktype", "count": 1},
+      {
+        "value": "vérifier sur le terrain qu'il est accessible à tous",
+        "count": 1
+      },
+      {
+        "value": "À vérifier, 3 traces gps très éloignés les unes des autres",
+        "count": 1
+      },
+      {
+        "value": "pas vraiment officiel sur le terrain, mais logique pour son affectation",
+        "count": 1
+      },
+      {
+        "value": "vérifier continuité, sur l'ortho IGN la trace se perd",
+        "count": 1
+      },
+      {"value": "Accent sur le E à vérifier", "count": 1},
+      {"value": "Début de trace visible, à compléter", "count": 1},
+      {"value": "Probablement un track", "count": 1},
+      {"value": "to be reviewed, to be continued", "count": 1},
+      {"value": "tracé à préciser", "count": 1},
+      {"value": "VictouroU ou VictouroN", "count": 1},
+      {"value": "Il existe bien signalétique", "count": 1},
+      {"value": "à continuer", "count": 1},
+      {"value": "incomplet et imprecis", "count": 1},
+      {"value": "tracktype ?", "count": 1},
+      {"value": "tracé à améliorer (source unique = cadastre)", "count": 1},
+      {
+        "value": "ne sais pas quand se transforme en chemin forestier",
+        "count": 1
+      },
+      {"value": "Signalétiques Chemin DES Gaudoux", "count": 1},
+      {"value": "stub", "count": 1},
+      {
+        "value": "Signalétique EYDERAN contrairement à la couche cadastrale le fantoir est OK",
+        "count": 1
+      },
+      {"value": "resurvey, tracé d'aprés le cadastre", "count": 1},
+      {
+        "value": "vérifier l'absence de revètement sur cette partie",
+        "count": 1
+      },
+      {"value": "vérifier l'existence (nouvelle cloture)", "count": 1},
+      {
+        "value": "j'ai vraiment un doute dessus, cadastre le montre, mais pas vu",
+        "count": 1
+      },
+      {"value": "approximatif", "count": 1},
+      {"value": "cotinue", "count": 1},
+      {
+        "value": "Vérifier continuités, invisibles sur photo aérienne",
+        "count": 1
+      },
+      {
+        "value": "Vérifier continuité au nord, invisible sur photo aérienne",
+        "count": 1
+      },
+      {"value": "tronçon douteux, vérifier terrain", "count": 1},
+      {
+        "value": "A verifier sur le terrain si la route est vraiment accessible aux voitures",
+        "count": 1
+      },
+      {"value": "A vérifier", "count": 1}
+    ],
+    "count": 441
+  },
+  {
+    "key": "stm",
+    "tags": [
+      {"value": "50up", "count": 158},
+      {"value": "50down", "count": 121},
+      {"value": "class4", "count": 71},
+      {"value": "25up", "count": 44},
+      {"value": "25down", "count": 33}
+    ],
+    "count": 427
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "no", "count": 263}, {"value": "yes", "count": 78}],
+    "count": 341
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "no", "count": 260}, {"value": "yes", "count": 8}],
+    "count": 268
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 249},
+      {"value": "no", "count": 10},
+      {"value": "building_passage", "count": 6},
+      {"value": "culvert", "count": 3}
+    ],
+    "count": 268
+  },
+  {
+    "key": "area",
+    "tags": [{"value": "yes", "count": 245}, {"value": "no", "count": 3}],
+    "count": 248
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "FIXME: incomplete", "count": 17},
+      {"value": "chemin rural", "count": 11},
+      {
+        "value": "tracé incertain car levé GPS en hivers avec neige",
+        "count": 10
+      },
+      {"value": "FIXME", "count": 8},
+      {"value": "fixme", "count": 5},
+      {"value": "Balisage traits blanc et jaune", "count": 5},
+      {"value": "trace exacte à affiner", "count": 4},
+      {
+        "value": "Piste de ski de fond définitivement supprimée en 2010?",
+        "count": 4
+      },
+      {"value": "nature du terrain à vérifier", "count": 3},
+      {
+        "value": "Les images bing ne sont pas alignées sur cette zone, merci de vérifier avec une source bien calée avant de faire des modifications (strava, BD Ortho)",
+        "count": 3
+      },
+      {"value": "not sure if it was track or path", "count": 3},
+      {
+        "value": "nice, easy 4x4; Danger of Flash Floods near Methamis",
+        "count": 3
+      },
+      {"value": "a peu près", "count": 3},
+      {"value": "il reste du goudron par endroits", "count": 3},
+      {
+        "value": "to check IRL as this is not visble on Sat pictures",
+        "count": 3
+      },
+      {"value": "Balisage: VTT FFC n°1, Randonée Blanc-Jaune", "count": 3},
+      {"value": "estimé", "count": 3},
+      {
+        "value": "sur ces portions de chemin forestier, je suppose, vu qu'il s'agit d'un chemin de débardage de bois que c'est lui la limite de la réserve naturelle",
+        "count": 3
+      },
+      {"value": "type à vérifier sur place", "count": 3},
+      {"value": "chemin en forêt, gps peut être imparfait", "count": 2},
+      {"value": "unofficial path", "count": 2},
+      {
+        "value": "Source trace GPS 24/12/2011 Zed42; Balisage traits blanc et jaune",
+        "count": 2
+      },
+      {"value": "to be continued", "count": 2},
+      {"value": "chemin au cadastre, réputé accessible", "count": 2},
+      {"value": "sans doute un track", "count": 2},
+      {
+        "value": "\"de les\" c'est ce qui est marqué sur le panneau",
+        "count": 2
+      },
+      {"value": "to check IRL", "count": 2},
+      {
+        "value": "ce sentier traverse des espaces cloturé pour bétail",
+        "count": 2
+      },
+      {"value": "ViaRhôna", "count": 2},
+      {"value": "this is a water passage only for jeeps and tanks", "count": 2},
+      {"value": "To check IRL", "count": 2},
+      {"value": "to be cheked IRL", "count": 2},
+      {"value": "Chemin Rural", "count": 2},
+      {"value": "Aerial image not accurate as of 2014", "count": 2},
+      {"value": "To check IRL as this is not so visible on Bing", "count": 2},
+      {"value": "ancien chemin forestier", "count": 2},
+      {
+        "value": "Check IRL if this is a track like it seems on aerial imagery",
+        "count": 2
+      },
+      {
+        "value": "todo: what should be it's access= (used to be \"no\")",
+        "count": 2
+      },
+      {"value": "à vérifier sur place", "count": 2},
+      {"value": "FIXME (Broken Bing)", "count": 2},
+      {"value": "Balisage Randonée Blanc-Jaune", "count": 2},
+      {"value": "Balisage: Randonée Blanc-Jaune", "count": 2},
+      {"value": "Balisage Randonée Blanc-Jaune, VTT n°2", "count": 2},
+      {"value": "test", "count": 2},
+      {
+        "value": "il n'y pas de ruisseau en dessous, c'est une passerelle par dessus le vide pour tenir la route",
+        "count": 1
+      },
+      {"value": "ne continue pas au Nord, cadastre pas à jour", "count": 1},
+      {
+        "value": "en travaux au moment de mon passage. Va être asphalté ?",
+        "count": 1
+      },
+      {"value": "survey", "count": 1},
+      {
+        "value": "This bridge is at a higher level than the one beside",
+        "count": 1
+      },
+      {"value": "To be checked IRL, Bing is not so clear", "count": 1},
+      {
+        "value": "To check IRL due to a lot of trees preventing tagging check  from Bing",
+        "count": 1
+      },
+      {
+        "value": "to check IRL because not visible on Bing Aerial due to wood",
+        "count": 1
+      },
+      {
+        "value": "to be checked IRL because this is not so clear on Bing Aerial",
+        "count": 1
+      },
+      {
+        "value": "to check IRL : bing and cadastre are not so coherent",
+        "count": 1
+      },
+      {"value": "très mauvaise trace GPS", "count": 1},
+      {"value": "a vérifier", "count": 1},
+      {"value": "séparation chemin/route à confirmer", "count": 1},
+      {
+        "value": "pavée au début de sa partie Sud, je ne sais pas si c'est le cas tout le long",
+        "count": 1
+      },
+      {"value": "very bad concrete", "count": 1},
+      {"value": "FIXME very bad concrete", "count": 1},
+      {
+        "value": "L'accès est-il possible en véhicules motorisé, y a-t-il des barrières aux accès ?",
+        "count": 1
+      },
+      {"value": "not finished", "count": 1},
+      {
+        "value": "sisi ! et même très bonne surface... mais sur 30m !",
+        "count": 1
+      },
+      {"value": "Chemin forestier roulant en VTT", "count": 1},
+      {"value": "ce chemin semble être sur la crête", "count": 1},
+      {"value": "Continue vers les chalets du Criou", "count": 1},
+      {"value": "verifier existence", "count": 1},
+      {"value": "Nom sur panneau local \"Chemin du Garon\"", "count": 1},
+      {"value": "Balisage VTT FCC n°1, Randonée Blanc-Jaune", "count": 1},
+      {"value": "Existe t'il encore ?", "count": 1},
+      {"value": "incomplete", "count": 1},
+      {"value": "Un sentier à reconnaitre Sentier de la diligence", "count": 1},
+      {"value": "water 1 m deep", "count": 1},
+      {"value": "mixed surface sometimes asphalted", "count": 1},
+      {
+        "value": "Cette partie de chemin est goudronée. Ce n'est pas une erreur.",
+        "count": 1
+      },
+      {"value": "nom de la rue ?", "count": 1},
+      {
+        "value": "accès interdit pour chute de pierres, mais fréquentée quand même",
+        "count": 1
+      },
+      {
+        "value": "To Check IRL if track continue like indicated in Cadastre",
+        "count": 1
+      },
+      {
+        "value": "To check IRL as Bing sat is not so clear compared to cadastre",
+        "count": 1
+      },
+      {
+        "value": "to check IRL as this is not so visible on Bing Sat",
+        "count": 1
+      },
+      {"value": "to confirm IRL", "count": 1},
+      {"value": "to confirm IRL as this is not so visible on Bing", "count": 1},
+      {"value": "To be confirmed IRL this is a track", "count": 1},
+      {"value": "tracé selon cadastre à vérifier", "count": 1},
+      {
+        "value": "track seems abandoned and unaccessible on december 2013",
+        "count": 1
+      },
+      {
+        "value": "chemin fermé temporairement par arreté municipal, cause danger effondrement",
+        "count": 1
+      },
+      {
+        "value": "Bing imagery is misaligned here. This track is very well gps-aligned. Please don't displace.",
+        "count": 1
+      },
+      {"value": "route forestière à tracer au GPS", "count": 1},
+      {"value": "Probablement piste", "count": 1},
+      {
+        "value": "ce chemin semble avoir été supprimé lors de la création du parking (à supprimer après vérif)",
+        "count": 1
+      },
+      {"value": "Fix_Me", "count": 1},
+      {"value": "To be completed", "count": 1},
+      {"value": "to be checked IRL", "count": 1},
+      {"value": "Joyeuse-Valgorge", "count": 1},
+      {"value": "Da completare in direzione ovest", "count": 1},
+      {
+        "value": "Piste d’accès chantier interdit a toute personne non autorisé. Zone dangereuse",
+        "count": 1
+      },
+      {
+        "value": "Zone dangereuse, voie d’accès chantier interdit aux personnes non autorisées.",
+        "count": 1
+      },
+      {"value": "To be checked IRL", "count": 1},
+      {"value": "vérifier les restrictions et nature", "count": 1},
+      {"value": "08/2018: galleria riaperta al transito", "count": 1},
+      {"value": "panneau piste interdite à 150 à cause éboulement", "count": 1},
+      {
+        "value": "FIXME Reprendre une trace GPS car mauvaise récepetion lors du relevé, trace à compléter",
+        "count": 1
+      },
+      {"value": "à vérifier", "count": 1},
+      {
+        "value": "way continues beyound the camping, details unknown",
+        "count": 1
+      },
+      {"value": "\"sauf ayants droits\"", "count": 1},
+      {"value": "nature à vérifier sur place", "count": 1},
+      {"value": "Bing est décalé de 15 à 30m", "count": 1},
+      {
+        "value": "Ancien Chemin de Fer Monnetier-Mairie - Les Treize-Arbres",
+        "count": 1
+      },
+      {
+        "value": "passage en septembre 2014, route barrée, sur refuges.info il est indiqué qu'elle est interdite au public",
+        "count": 1
+      },
+      {
+        "value": "Attention, beaucoup de trace GPS semble indiquer un léger décallage du cadastre",
+        "count": 1
+      },
+      {"value": "Marquage: Randonée Blanc-Jaune", "count": 1},
+      {"value": "Balisage: VTT FFC n°6, Randonée Blanc-Jaune", "count": 1},
+      {"value": "double sens", "count": 1},
+      {"value": "Chemin rural accaparé par les riverains", "count": 1},
+      {"value": "Balisage: VTT FFC n°6", "count": 1},
+      {"value": "FIXME A verifier sur le terain", "count": 1},
+      {"value": "GPS seul, donc fixme=resurvey", "count": 1},
+      {"value": "Way to the Funival", "count": 1},
+      {"value": "portion à confirmer, non visible depuis bing.", "count": 1},
+      {
+        "value": "à terminer: piste puis sentier jusqu'au col de Pennes",
+        "count": 1
+      },
+      {"value": "important décalage bing. Recaler sur Traces gps.", "count": 1},
+      {"value": "Besoin de trace GPS pour la suite", "count": 1},
+      {"value": "sans issue", "count": 1},
+      {"value": "le chemin passe sur un pont", "count": 1},
+      {"value": "accès réservé edf", "count": 1},
+      {"value": "parcouru l'hiver", "count": 1},
+      {
+        "value": "chemin au cadastre mais indiqué interdit, tête de mort",
+        "count": 1
+      },
+      {
+        "value": "Il n'y a vraiment pas de revêtement à la route à cet endroit (08/16)",
+        "count": 1
+      },
+      {"value": "Rue du Puits", "count": 1},
+      {"value": "mauvaise précision", "count": 1},
+      {
+        "value": "D'aprés cadastre, devrait être \"impasse du Gavyo\"",
+        "count": 1
+      },
+      {
+        "value": "déviation pendant travaux sur la D531 (constat le 24/09/17)",
+        "count": 1
+      },
+      {"value": "précision faible", "count": 1},
+      {
+        "value": "Orthographe vérifié sur le terrain (plaque). Ne pas remettre \"Laleau\"",
+        "count": 1
+      },
+      {
+        "value": "Orthographe vérifié sur le terrain (plaque). Ne pas remettre \"de Luminière\"",
+        "count": 1
+      },
+      {"value": "interdit à tous véhicules à moteur", "count": 1}
+    ],
+    "count": 239
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "abandoned", "count": 231},
+      {"value": "razed", "count": 4},
+      {"value": "dismantled", "count": 1},
+      {"value": "turntable", "count": 1}
+    ],
+    "count": 237
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "80", "count": 90},
+      {"value": "30", "count": 51},
+      {"value": "50", "count": 49},
+      {"value": "20", "count": 18},
+      {"value": "5", "count": 5},
+      {"value": "15", "count": 4},
+      {"value": "25", "count": 3},
+      {"value": "10", "count": 3},
+      {"value": "35", "count": 2},
+      {"value": "0", "count": 1},
+      {"value": "70", "count": 1},
+      {"value": "40", "count": 1}
+    ],
+    "count": 228
+  },
+  {
+    "key": "lanes",
+    "tags": [{"value": "1", "count": 208}, {"value": "2", "count": 5}],
+    "count": 213
+  },
+  {
+    "key": "ford",
+    "tags": [
+      {"value": "yes", "count": 140},
+      {"value": "stepping_stones", "count": 1},
+      {"value": "seasonal", "count": 1},
+      {"value": "intermittent", "count": 1}
+    ],
+    "count": 143
+  },
+  {
+    "key": "noexit",
+    "tags": [{"value": "yes", "count": 115}, {"value": "no", "count": 1}],
+    "count": 116
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "driveway", "count": 62},
+      {"value": "alley", "count": 29},
+      {"value": "parking_aisle", "count": 12},
+      {"value": "private", "count": 1},
+      {"value": "emergency_access", "count": 1}
+    ],
+    "count": 105
+  },
+  {
+    "key": "piste:oneway",
+    "tags": [{"value": "yes", "count": 99}, {"value": "no", "count": 5}],
+    "count": 104
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "no", "count": 83},
+      {"value": "yes", "count": 14},
+      {"value": "designated", "count": 1},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 99
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "yes", "count": 97}, {"value": "no", "count": 1}],
+    "count": 98
+  },
+  {
+    "key": "vehicle",
+    "tags": [
+      {"value": "no", "count": 55},
+      {"value": "agricultural", "count": 15},
+      {"value": "private", "count": 8},
+      {"value": "forestry", "count": 5},
+      {"value": "destination", "count": 4},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 88
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "none", "count": 66},
+      {"value": "both", "count": 14},
+      {"value": "private", "count": 3},
+      {"value": "no", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "embankment",
+    "tags": [{"value": "yes", "count": 68}, {"value": "no", "count": 8}],
+    "count": 76
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Ancienne Voie du Tramway", "count": 21},
+      {
+        "value": "Ancienne Ligne de Chalon-sur-Saône à Bourg-en-Bresse",
+        "count": 8
+      },
+      {"value": "Rho-Replanette", "count": 7},
+      {"value": "Anciens chemins forestier de débardage de bois", "count": 4},
+      {
+        "value": "Ancienne Ligne de Firminy à Saint-Rambert-d'Albon",
+        "count": 4
+      },
+      {"value": "digue", "count": 3},
+      {"value": "Chemin Rural de Chalmazel à Moriere", "count": 2},
+      {"value": "Access \"Camping des Grottes", "count": 2},
+      {"value": "Risque d'éboulement", "count": 2},
+      {
+        "value": "L'accès par ce coté est à éviter, sauf pour les personnes se rendant au plan d'eau",
+        "count": 1
+      },
+      {"value": "Ancienne Ligne de Lyon-Saint-Paul à Montbrison", "count": 1},
+      {"value": "chemin détruit par exploitation forestière", "count": 1},
+      {"value": "Route empierrée", "count": 1},
+      {"value": "Route à 1 chaussée", "count": 1},
+      {"value": "De Montanges à Giron", "count": 1},
+      {
+        "value": "Tout juste bon pour amener du bois au chalet des mouilles en tracteur",
+        "count": 1
+      },
+      {
+        "value": "Un panneau au parking indique \"voie sans issue\"",
+        "count": 1
+      },
+      {"value": "Du bourg au cimetière", "count": 1},
+      {"value": "praticable en voiture (si pas de neige)", "count": 1},
+      {"value": "Vers le Grandd Ratz", "count": 1},
+      {"value": "Piste DFCI", "count": 1},
+      {
+        "value": "Non, c'est pas une blague, l'espèce de piste creusée se transorme en lit de ruisseau !",
+        "count": 1
+      },
+      {
+        "value": "Bien que je la note en \"track\" sont état avancé de défonce par la neige et la pluie font qu'il me semble très difficile de passer, même en tracteur",
+        "count": 1
+      },
+      {"value": "tracktype à affiner", "count": 1},
+      {"value": "Végétation abondante !", "count": 1},
+      {
+        "value": "accès bloqué, décision du conseil municipal de Saint Martin d'Uriage 2015",
+        "count": 1
+      },
+      {
+        "value": "Chemin de terre et de pierre quelques racines suffisament large pour un 4X4  et SUV",
+        "count": 1
+      },
+      {
+        "value": "Chemin de liaison entre Avenue Moutet et rue E. Ollivier (Ecole des Méannes)",
+        "count": 1
+      },
+      {"value": "Chemin de la Crête de Sénépy", "count": 1},
+      {
+        "value": "Ce chemin est noté sur le cadastre, mais semble avoir été \"privatisé\"",
+        "count": 1
+      },
+      {
+        "value": "Chemin idéal pour une petite pause avec votre voiture ou camping-car, avec vue sur la pleine de Roanne quant il y a moins de feuilles en hiver.",
+        "count": 1
+      }
+    ],
+    "count": 75
+  },
+  {
+    "key": "mtb:scale:imba",
+    "tags": [
+      {"value": "1", "count": 27},
+      {"value": "0", "count": 24},
+      {"value": "2", "count": 16},
+      {"value": "4", "count": 3},
+      {"value": "3", "count": 3}
+    ],
+    "count": 73
+  },
+  {
+    "key": "mtb:type",
+    "tags": [
+      {"value": "allmountain", "count": 44},
+      {"value": "downhill", "count": 23},
+      {"value": "crosscountry", "count": 2}
+    ],
+    "count": 69
+  },
+  {
+    "key": "ski",
+    "tags": [{"value": "no", "count": 53}, {"value": "yes", "count": 12}],
+    "count": 65
+  },
+  {"key": "mtb", "tags": [{"value": "yes", "count": 62}], "count": 62},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 28},
+      {"value": "Editop", "count": 7},
+      {"value": "Potlatch alpha", "count": 5},
+      {"value": "Potlatch 0.10f", "count": 5},
+      {"value": "Potlatch 0.4c", "count": 4},
+      {"value": "Potlatch 0.10b", "count": 3},
+      {"value": "Potlatch 0.10", "count": 3},
+      {"value": "Potlatch 0.9c", "count": 3},
+      {"value": "Merkaartor 0.11", "count": 1},
+      {"value": "Potlatch 0.7", "count": 1},
+      {"value": "Potlatch 0.8a", "count": 1}
+    ],
+    "count": 61
+  },
+  {
+    "key": "snowmobile",
+    "tags": [{"value": "no", "count": 56}, {"value": "yes", "count": 4}],
+    "count": 60
+  },
+  {
+    "key": "admin_level",
+    "tags": [
+      {"value": "8", "count": 48},
+      {"value": "6", "count": 6},
+      {"value": "9", "count": 3},
+      {"value": "4", "count": 3}
+    ],
+    "count": 60
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "administrative", "count": 59}],
+    "count": 59
+  },
+  {
+    "key": "maxweight",
+    "tags": [
+      {"value": "3.5", "count": 10},
+      {"value": "5.5", "count": 10},
+      {"value": "8", "count": 4},
+      {"value": "13", "count": 4},
+      {"value": "10", "count": 4},
+      {"value": "5", "count": 3},
+      {"value": "2 T", "count": 3},
+      {"value": "1", "count": 2},
+      {"value": "6", "count": 2},
+      {"value": "1.5", "count": 2},
+      {"value": "19", "count": 2},
+      {"value": "0.200", "count": 1},
+      {"value": "0.5", "count": 1},
+      {"value": "0.2", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "10 t", "count": 1}
+    ],
+    "count": 52
+  },
+  {
+    "key": "agricultural",
+    "tags": [
+      {"value": "yes", "count": 47},
+      {"value": "permissive", "count": 1},
+      {"value": "destination", "count": 1},
+      {"value": "no", "count": 1},
+      {"value": "official", "count": 1}
+    ],
+    "count": 51
+  },
+  {
+    "key": "route",
+    "tags": [
+      {"value": "hiking", "count": 24},
+      {"value": "mtb", "count": 9},
+      {"value": "piste", "count": 4},
+      {"value": "ski", "count": 3}
+    ],
+    "count": 40
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "no", "count": 33}, {"value": "yes", "count": 3}],
+    "count": 36
+  },
+  {
+    "key": "trailblazed",
+    "tags": [
+      {"value": "yes", "count": 21},
+      {"value": "hiking", "count": 6},
+      {"value": "yellow", "count": 5},
+      {"value": "foot", "count": 3},
+      {"value": "no", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "marked_trail",
+    "tags": [
+      {"value": "yellow", "count": 9},
+      {"value": "blue", "count": 8},
+      {"value": "yellow and red", "count": 7},
+      {"value": "red", "count": 6},
+      {"value": "yellow and red;blue", "count": 1},
+      {"value": "blue, green", "count": 1},
+      {"value": "yellow;red", "count": 1}
+    ],
+    "count": 33
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {"value": "à continuer", "count": 12},
+      {"value": "to continue", "count": 9},
+      {"value": "to be continued", "count": 5},
+      {"value": "à vérifier", "count": 1},
+      {
+        "value": "état réel à vérifier sur le terrain, débouché inféreur non trouvé",
+        "count": 1
+      },
+      {"value": "connexion avec chemin", "count": 1},
+      {"value": "same position as another highway", "count": 1},
+      {"value": "identify correct speed or accees tag", "count": 1},
+      {"value": "continue", "count": 1},
+      {"value": "Chemin du Col de la Faita", "count": 1}
+    ],
+    "count": 33
+  },
+  {
+    "key": "cutting",
+    "tags": [{"value": "yes", "count": 20}, {"value": "no", "count": 10}],
+    "count": 30
+  },
+  {
+    "key": "piste:ref",
+    "tags": [
+      {"value": "84", "count": 7},
+      {"value": "82", "count": 4},
+      {"value": "92", "count": 3},
+      {"value": "133", "count": 3},
+      {"value": "120", "count": 3},
+      {"value": "83", "count": 2},
+      {"value": "94", "count": 1},
+      {"value": "79", "count": 1},
+      {"value": "134", "count": 1},
+      {"value": "S 14", "count": 1},
+      {"value": "S 06", "count": 1},
+      {"value": "96", "count": 1}
+    ],
+    "count": 28
+  },
+  {"key": "type", "tags": [{"value": "route", "count": 23}], "count": 23},
+  {"key": "hiking", "tags": [{"value": "yes", "count": 22}], "count": 22},
+  {
+    "key": "traffic_sign",
+    "tags": [{"value": "FR:B0", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "no", "count": 12},
+      {"value": "lane", "count": 2},
+      {"value": "road", "count": 2},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "motocross", "count": 6},
+      {"value": "skiing", "count": 6},
+      {"value": "bmx", "count": 3},
+      {"value": "cycling", "count": 1}
+    ],
+    "count": 16
+  },
+  {"key": "oneway:ski", "tags": [{"value": "yes", "count": 16}], "count": 16},
+  {
+    "key": "history",
+    "tags": [{"value": "Retrieved from v1", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "material",
+    "tags": [
+      {"value": "wood", "count": 10},
+      {"value": "concrete", "count": 3},
+      {"value": "metal", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "start_date:railway",
+    "tags": [
+      {"value": "1878", "count": 8},
+      {"value": "1885", "count": 3},
+      {"value": "1876", "count": 1},
+      {"value": "1869", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-184955", "count": 3},
+      {"value": "FR-188168", "count": 3},
+      {"value": "FR-179535", "count": 2},
+      {"value": "FR-187440", "count": 2},
+      {"value": "FR-185023", "count": 1},
+      {"value": "FR-187864", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "end_date:railway",
+    "tags": [
+      {"value": "1951", "count": 8},
+      {"value": "1987", "count": 3},
+      {"value": "1953", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 12}], "count": 12},
+  {
+    "key": "CLC:code",
+    "tags": [
+      {"value": "211", "count": 4},
+      {"value": "312", "count": 4},
+      {"value": "311", "count": 3},
+      {"value": "313", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "hgv",
+    "tags": [{"value": "no", "count": 10}, {"value": "private", "count": 1}],
+    "count": 11
+  },
+  {
+    "key": "psv",
+    "tags": [
+      {"value": "yes", "count": 8},
+      {"value": "no", "count": 2},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "maxwidth",
+    "tags": [
+      {"value": "2.3", "count": 5},
+      {"value": "2", "count": 3},
+      {"value": "2.5", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "piste:lit",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "colour",
+    "tags": [
+      {"value": "green", "count": 5},
+      {"value": "red", "count": 2},
+      {"value": "black", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "floodable", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "class:bicycle:mtb",
+    "tags": [{"value": "0", "count": 5}, {"value": "-1", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Pas de Morgins", "count": 3},
+      {"value": "fr:Pont Romain (Les Clefs)", "count": 1},
+      {"value": "fr:Pont de Grésin", "count": 1},
+      {"value": "fr:Pont de Bouringe", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "ref:RFF:ligne",
+    "tags": [{"value": "795000", "count": 6}],
+    "count": 6
+  },
+  {"key": "cycleway:both", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "visibility",
+    "tags": [
+      {"value": "horrible", "count": 3},
+      {"value": "intermediate", "count": 2},
+      {"value": "poor", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "flood_prone", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "goods",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "agricultural", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "horse_scale",
+    "tags": [
+      {"value": "common", "count": 2},
+      {"value": "demanding", "count": 2},
+      {"value": "dangerous", "count": 1},
+      {"value": "critical", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "motorhome", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {"key": "atv", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {"key": "gauge", "tags": [{"value": "1435", "count": 5}], "count": 5},
+  {"key": "covered", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "border_type",
+    "tags": [
+      {"value": "region", "count": 3},
+      {"value": "departement", "count": 2}
+    ],
+    "count": 5
+  },
+  {"key": "sac_scale_ref", "tags": [{"value": "T2", "count": 5}], "count": 5},
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "slipway", "count": 3},
+      {"value": "track", "count": 1},
+      {"value": "swimming_pool", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "seasonal", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "2.5", "count": 2},
+      {"value": "3.3", "count": 1},
+      {"value": "10", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "-1", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3396705", "count": 1},
+      {"value": "Q3396982", "count": 1},
+      {"value": "Q3396880", "count": 1},
+      {"value": "Q22967382", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C15", "count": 1},
+      {"value": "1911", "count": 1},
+      {"value": "1949", "count": 1},
+      {"value": "C12", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "piste:priority",
+    "tags": [{"value": "1", "count": 2}, {"value": "4", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "old_ref",
+    "tags": [
+      {"value": "D 106", "count": 3},
+      {"value": "Voie Communale N°204 de Cassioz", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "motor_vehicle:conditional",
+    "tags": [
+      {"value": "yes @ disabled", "count": 3},
+      {"value": "destination", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "maxspeed:type",
+    "tags": [{"value": "sign", "count": 3}, {"value": "FR:rural", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "beam", "count": 4}],
+    "count": 4
+  },
+  {"key": "waterway", "tags": [{"value": "dam", "count": 3}], "count": 3},
+  {
+    "key": "winter_road",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "paved", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.uriage-les-bains.com/Documents/Circuit%20des%20Gardes%20N9.pdf",
+        "count": 2
+      },
+      {
+        "value": "http://www.uriage-les-bains.com/Documents/LesSentiers_08Cabanes.pdf",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "oi2FlcTX85hVm8s2NQnY4A", "count": 1},
+      {"value": "vaSxSNprnigoIoBC0i2ZzA", "count": 1},
+      {"value": "Jy6RUbOFAsBXJbNU7iJYVg", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "bridge", "count": 2},
+      {"value": "monument", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "railway:start_date",
+    "tags": [{"value": "1926", "count": 2}, {"value": "1932", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 3}],
+    "count": 3
+  },
+  {"key": "private", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "railway:end_date",
+    "tags": [{"value": "1952", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "access:conditional",
+    "tags": [
+      {"value": "no @ Dec-Mar", "count": 1},
+      {"value": "no@Feb-Sep 2018", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "depth",
+    "tags": [{"value": "1m", "count": 1}, {"value": "0.3", "count": 1}],
+    "count": 2
+  },
+  {"key": "proposed", "tags": [{"value": "cycleway", "count": 2}], "count": 2},
+  {
+    "key": "TODO",
+    "tags": [
+      {"value": "continues", "count": 1},
+      {"value": "ref & name", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "toll", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "construction",
+    "tags": [
+      {"value": "piste forestière en construction", "count": 1},
+      {"value": "track", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "access:bicycle", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "handrail:left", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "CHECKME", "count": 1},
+      {
+        "value": "moonrider_ka separated the district line from the track",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118374", "count": 1},
+      {"value": "PA00117648", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1947-08-29", "count": 1},
+      {"value": "1921-03-16", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Émosson SA", "count": 2}],
+    "count": 2
+  },
+  {"key": "tourist_bus", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "note:access",
+    "tags": [{"value": "AM N°8 du 04/05/2009", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "footway",
+    "tags": [{"value": "crossing", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "boat", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "postal_code", "tags": [{"value": "38790", "count": 1}], "count": 1},
+  {
+    "key": "surface:condition",
+    "tags": [{"value": "uneven", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0001", "count": 1}],
+    "count": 1
+  },
+  {"key": "handrail:right", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "Tag", "tags": [{"value": "Yellow tag", "count": 1}], "count": 1},
+  {"key": "motorboat", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:W",
+    "tags": [{"value": "1D7X9hc3m1cvPGe0DkODZA", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "osmc:symbol",
+    "tags": [{"value": "yellow:yellow:green_lower", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "pier", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Pont_de_Bouringe-4.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "Category:Pont de Bouringe", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mtb:scale:color",
+    "tags": [{"value": "blue", "count": 1}],
+    "count": 1
+  },
+  {"key": "hazard", "tags": [{"value": "rock_slide", "count": 1}], "count": 1},
+  {"key": "Interdiction", "tags": [{"value": "+ 3T5", "count": 1}], "count": 1},
+  {"key": "bicycle_road", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internal:trace",
+    "tags": [{"value": "bad_gps", "count": 1}],
+    "count": 1
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "CODEVOIE_D",
+    "tags": [{"value": "26207B035", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "CODEVOIE_G",
+    "tags": [{"value": "26207B035", "count": 1}],
+    "count": 1
+  },
+  {"key": "INSEECOM_D", "tags": [{"value": "26207", "count": 1}], "count": 1},
+  {
+    "key": "bridge:material",
+    "tags": [{"value": "wood", "count": 1}],
+    "count": 1
+  },
+  {"key": "date", "tags": [{"value": "10/11/2012", "count": 1}], "count": 1},
+  {
+    "key": "quality",
+    "tags": [{"value": "géoréférencement cadastre raster", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "verification",
+    "tags": [{"value": "contrôle croisé", "count": 1}],
+    "count": 1
+  },
+  {"key": "INSEECOM_G", "tags": [{"value": "26207", "count": 1}], "count": 1},
+  {"key": "pedestrians", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "ditch", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "1.80", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bus", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "was:highway",
+    "tags": [{"value": "footway", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "subway",
+    "tags": [{"value": "chemin du canal", "count": 1}],
+    "count": 1
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "zone:maxspeed",
+    "tags": [{"value": "FR:20", "count": 1}],
+    "count": 1
+  },
+  {"key": "was:surface", "tags": [{"value": "paved", "count": 1}], "count": 1},
+  {
+    "key": "mtb:description",
+    "tags": [{"value": "Piste de bleu", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR:left",
+    "tags": [{"value": "384220370U", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR:right",
+    "tags": [{"value": "385290580G", "count": 1}],
+    "count": 1
+  },
+  {"key": "maxaxleload", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "surf", "tags": [{"value": "ground", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:N",
+    "tags": [{"value": "cdGtiP8EA44HbpCSkzENgg", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "1363", "count": 1}], "count": 1},
+  {"key": "hov", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:ITFF",
+    "tags": [{"value": "07348.1", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "bridge:description",
+    "tags": [{"value": "Viaduc de 110m de long et 9 arches", "count": 1}],
+    "count": 1
+  },
+  {"key": "distance", "tags": [{"value": "6", "count": 1}], "count": 1},
+  {"key": "ele:local", "tags": [{"value": "1825", "count": 1}], "count": 1},
+  {"key": "surface:de", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {"key": "golf_cart", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:SW",
+    "tags": [{"value": "UtGBVqqMumflbmQQOhXm0A", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:E",
+    "tags": [{"value": "koD5-8diOGoTApB2X8-l_A", "count": 1}],
+    "count": 1
+  },
+  {"key": "nudism", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "brownfield", "count": 1}], "count": 1},
+  {"key": "deck", "tags": [{"value": "plank", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {"key": "crossing", "tags": [{"value": "zebra", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "horrible", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "tree_row", "count": 1}], "count": 1},
+  {"key": "est_width", "tags": [{"value": "0.5 m", "count": 1}], "count": 1},
+  {"key": "electrified", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

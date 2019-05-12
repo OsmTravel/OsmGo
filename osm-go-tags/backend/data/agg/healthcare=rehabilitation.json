@@ -1,0 +1,18 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "rehabilitation", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "physiatry", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "Capio", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.ssr-bayard.fr/", "count": 1}],
+    "count": 1
+  }
+]

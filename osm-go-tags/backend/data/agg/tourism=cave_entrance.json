@@ -1,0 +1,12 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "cave_entrance", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "cave_entrance", "count": 1}],
+    "count": 1
+  }
+]

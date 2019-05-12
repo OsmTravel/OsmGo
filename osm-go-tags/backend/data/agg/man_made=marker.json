@@ -1,0 +1,11 @@
+[
+  {"key": "man_made", "tags": [{"value": "marker", "count": 6}], "count": 6},
+  {"key": "marker", "tags": [{"value": "pipeline", "count": 4}], "count": 4},
+  {"key": "pipeline", "tags": [{"value": "gaz", "count": 4}], "count": 4},
+  {
+    "key": "note",
+    "tags": [{"value": "marqueur de gazoduc", "count": 2}],
+    "count": 2
+  },
+  {"key": "ref", "tags": [{"value": "23", "count": 1}], "count": 1}
+]

@@ -1,0 +1,90 @@
+[
+  {"key": "craft", "tags": [{"value": "caterer", "count": 63}], "count": 63},
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "italian", "count": 2},
+      {"value": "regional", "count": 2},
+      {"value": "asian", "count": 2},
+      {"value": "regional;french", "count": 2},
+      {"value": "international", "count": 1},
+      {"value": "local", "count": 1},
+      {"value": "pizza", "count": 1},
+      {"value": "mediterranean", "count": 1},
+      {"value": "cake", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72280931", "count": 1},
+      {"value": "+33 4 76 84 18 06", "count": 1},
+      {"value": "+33 4 74 87 35 79", "count": 1},
+      {"value": "+33 4 77 24 11 62", "count": 1},
+      {"value": "+33 6 63 71 58 17", "count": 1},
+      {"value": "+33 4 76 89 18 47", "count": 1},
+      {"value": "+33648685198", "count": 1},
+      {"value": "+33476772226", "count": 1},
+      {"value": "+33 684 93 61 15", "count": 1},
+      {"value": "+33 4 78 89 96 79", "count": 1},
+      {"value": "+33 4 75 05 97 10", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "butcher", "count": 6}, {"value": "pastry", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "restaurant", "count": 5},
+      {"value": "fast_food", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.euro-traiteur.fr/", "count": 1},
+      {"value": "http://www.feed-traiteur.com/", "count": 1},
+      {"value": "http://www.retourdumarche.fr", "count": 1},
+      {"value": "https://www.facebook.com/BounskTraiteur/", "count": 1},
+      {"value": "http://www.laboutiquenosbonsplats.com/", "count": 1},
+      {"value": "http://traiteur-escoffine.fr/", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "takeaway",
+    "tags": [{"value": "yes", "count": 4}, {"value": "only", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Cuisinier Traiteur", "count": 1},
+      {"value": "Cuisine centrale", "count": 1},
+      {"value": "Spécialités Arméniennes & Libanaises", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "delivery", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "sanaa.eh@gmail.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "bar", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "restaurant", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Yann GUERIN", "count": 1}],
+    "count": 1
+  },
+  {"key": "butcher", "tags": [{"value": "halal", "count": 1}], "count": 1},
+  {"key": "organic", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

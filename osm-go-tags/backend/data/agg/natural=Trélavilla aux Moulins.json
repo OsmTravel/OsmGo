@@ -1,0 +1,15 @@
+[
+  {"key": "ele", "tags": [{"value": "470", "count": 1}], "count": 1},
+  {"key": "hiking", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "Trélavilla aux Moulins", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "information", "count": 1}], "count": 1}
+]

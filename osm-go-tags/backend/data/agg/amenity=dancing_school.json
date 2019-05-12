@@ -1,0 +1,27 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "dancing_school", "count": 33}],
+    "count": 33
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "dance", "count": 1},
+      {"value": "sports_centre", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "salle de danse J et Marius Gros", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.gvrdanse.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "dance:teaching", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "multi", "count": 1}], "count": 1}
+]

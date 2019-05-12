@@ -1,0 +1,24 @@
+[
+  {"key": "man_made", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "barrier", "tags": [{"value": "city_wall", "count": 2}], "count": 2},
+  {"key": "material", "tags": [{"value": "stone", "count": 2}], "count": 2},
+  {"key": "wall", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "operator", "tags": [{"value": "SIEA", "count": 1}], "count": 1},
+  {"key": "owner", "tags": [{"value": "SIEA", "count": 1}], "count": 1},
+  {
+    "key": "ref",
+    "tags": [{"value": "NRO_01108_00001", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "street_cabinet",
+    "tags": [{"value": "telecom", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "telecom:medium",
+    "tags": [{"value": "fibre", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

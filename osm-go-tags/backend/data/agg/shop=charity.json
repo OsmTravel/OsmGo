@@ -1,0 +1,94 @@
+[
+  {"key": "shop", "tags": [{"value": "charity", "count": 28}], "count": 28},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Foyer Notre-Dame des Sans-Abri", "count": 5},
+      {"value": "Secours Catholique", "count": 4},
+      {"value": "Emmaüs", "count": 3},
+      {"value": "association Nuances", "count": 1},
+      {"value": "Restos du Coeur", "count": 1},
+      {"value": "Secours Populaire", "count": 1},
+      {
+        "value": "Association Animation et Familles du Pôle Gériatrique du CHU Hôpital de la Charité (AAF)",
+        "count": 1
+      },
+      {
+        "value": "Action pour la jeunesse, l'enfance et la famille de la loire et de la haute-loire (AJEF 42-43)",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.fndsa.org/", "count": 4},
+      {"value": "http://www.emmaus-lyon.org/acheter/", "count": 1},
+      {"value": "http://emmaus-stetienne.over-blog.com/", "count": 1},
+      {
+        "value": "http://www.fndsa.org/bric-a-brac/bric-a-brac-decines.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.fndsa.org/bric-a-brac/bric-a-brac-rue-de-toulon.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.fndsa.org/bric-a-brac/bric-a-brac-oullins.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.fndsa.org/bric-a-brac/bric-a-brac-lyon-vaise.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.emmaus-grenoble.fr/acc%C3%A8s-aux-3-sites/sassenage/",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {
+    "key": "second_hand",
+    "tags": [{"value": "only", "count": 7}, {"value": "yes", "count": 4}],
+    "count": 11
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 78 10 90", "count": 1},
+      {"value": "+33 9 70 71 11 95", "count": 1},
+      {"value": "+33 4 72 73 09 27", "count": 1},
+      {"value": "+33 4 72 07 94 89", "count": 1},
+      {"value": "+33 4 72 66 95 02", "count": 1},
+      {"value": "+33 4 78 47 13 47", "count": 1},
+      {"value": "+33 4 37 70 80 45", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Emmaüs France", "count": 2}],
+    "count": 2
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3053001", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "boutique solidaire de vêtements", "count": 1}],
+    "count": 1
+  },
+  {"key": "clothes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "fair_trade", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {
+    "key": "start_date",
+    "tags": [{"value": "2015-08-25", "count": 1}],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "Caritas", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "grenoble.emmaus@orange.fr", "count": 1}],
+    "count": 1
+  }
+]

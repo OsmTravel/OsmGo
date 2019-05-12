@@ -1,0 +1,36 @@
+[
+  {"key": "craft", "tags": [{"value": "glaziery", "count": 5}], "count": 5},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 29 92 47", "count": 1},
+      {"value": "+33 4 78 22 31 82", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Traitement des vitrages automobiles et du bâtiment",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 28 29 08 53", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Denis Charignon", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.miroiterie-charignon.fr", "count": 1}],
+    "count": 1
+  }
+]

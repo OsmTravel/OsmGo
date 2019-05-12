@@ -1,0 +1,98 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "city_gate", "count": 22}],
+    "count": 22
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117057", "count": 1},
+      {"value": "PA00117515", "count": 1},
+      {"value": "PA00118061", "count": 1},
+      {"value": "PA00118183", "count": 1},
+      {"value": "PA00118182", "count": 1},
+      {"value": "PA00116934", "count": 1},
+      {"value": "PA00116370", "count": 1},
+      {"value": "PA00117743", "count": 1},
+      {"value": "PA00118466", "count": 1},
+      {"value": "PA00118467", "count": 1},
+      {"value": "PA00117624", "count": 1},
+      {"value": "PA00117640", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 8}, {"value": "2", "count": 3}],
+    "count": 11
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1926", "count": 2},
+      {"value": "1928-09-08", "count": 2},
+      {"value": "1862", "count": 1},
+      {"value": "1926-07-17", "count": 1},
+      {"value": "1934-03-13", "count": 1},
+      {"value": "1943", "count": 1},
+      {"value": "1981", "count": 1},
+      {"value": "1925-12-04", "count": 1},
+      {"value": "1929-08-09", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "entrance", "count": 8},
+      {"value": "sally_port", "count": 2}
+    ],
+    "count": 10
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22967246", "count": 1},
+      {"value": "Q3399103", "count": 1},
+      {"value": "Q22968224", "count": 1},
+      {"value": "Q22966804", "count": 1},
+      {"value": "Q22966898", "count": 1},
+      {"value": "Q22967478", "count": 1},
+      {"value": "Q3399047", "count": 1},
+      {"value": "Q3399097", "count": 1},
+      {"value": "Q22967353", "count": 1},
+      {"value": "Q22967372", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 5}], "count": 5},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Porte de Villars", "count": 1},
+      {"value": "fr:Porte de Genève", "count": 1},
+      {"value": "fr:Porte de Thonon", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "medieval", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "C14", "count": 1}, {"value": "C15", "count": 1}],
+    "count": 2
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

@@ -1,0 +1,141 @@
+[
+  {"key": "shop", "tags": [{"value": "florist", "count": 458}], "count": 458},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33478445057", "count": 1},
+      {"value": "+33 4 78 33 13 84", "count": 1},
+      {"value": "+33 4 76 54 30 65", "count": 1},
+      {"value": "+33478051988", "count": 1},
+      {"value": "+33 4 76 72 77 72", "count": 1},
+      {"value": "+33 4 74 20 45 10", "count": 1},
+      {"value": "+33 4 74 85 04 25", "count": 1},
+      {"value": "+33 6 13 65 20 58", "count": 1},
+      {"value": "+33 4 78 96 26 39", "count": 1},
+      {"value": "+33 4 76 96 69 60", "count": 1},
+      {"value": "+33 4 77 79 97 85", "count": 1},
+      {"value": "+33 4 74 85 46 66", "count": 1},
+      {"value": "+33 9 64 48 66 97", "count": 1},
+      {"value": "+33 4 77 24 01 48", "count": 1},
+      {"value": "+33 4 77 24 11 25", "count": 1},
+      {"value": "+33 4 72 02 74 86", "count": 1},
+      {"value": "+33 4 50 92 15 90", "count": 1},
+      {"value": "+33 4 72 77 58 04", "count": 1},
+      {"value": "+33478190018", "count": 1},
+      {"value": "+33478486031", "count": 1},
+      {"value": "+33 4 79 72 81 27", "count": 1},
+      {"value": "+33456300109", "count": 1},
+      {"value": "+33 4 76 34 75 43", "count": 1},
+      {"value": "+33 4 50 39 11 59", "count": 1},
+      {"value": "+33 4 75 40 18 41", "count": 1},
+      {"value": "+33 4 50 23 77 32", "count": 1},
+      {"value": "+33 6 69 95 13 07", "count": 1},
+      {"value": "+33 4 50 84 28 03", "count": 1},
+      {"value": "+33 4 37255518", "count": 1},
+      {"value": "+33 4 78 93 23 95", "count": 1},
+      {"value": "+33 4 50 92 11 80", "count": 1},
+      {"value": "+33 4 50 71 01 33", "count": 1},
+      {"value": "+33 4 79 28 72 42", "count": 1},
+      {"value": "+33476443308", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://auxmyosotis.over-blog.com", "count": 1},
+      {"value": "http://www.emiliencoralie.com/", "count": 1},
+      {"value": "http://www.flore-nature.com/", "count": 1},
+      {"value": "floregrenoble.com", "count": 1},
+      {"value": "http://la.bougainvillee.monsite-orange.fr/", "count": 1},
+      {"value": "http://www.brin-de-folie.com/", "count": 1},
+      {"value": "http://www.atelier-floral-26.fr/", "count": 1},
+      {"value": "http://www.fleuriste-annemasse.fr/", "count": 1},
+      {
+        "value": "http://www.carrefleurs.com/index.php?option=com_content&view=article&id=124&Itemid=490",
+        "count": 1
+      },
+      {"value": "www.cotefleurscreation.fr", "count": 1},
+      {"value": "http://jardineriedujangoux.jdea.fr/", "count": 1},
+      {"value": "http://www.unetealacampagne.com/", "count": 1},
+      {"value": "http://www.annecy-donzier-fleurs.fr/", "count": 1},
+      {"value": "http://www.jourdefleuraison.fr/", "count": 1},
+      {"value": "http://www.burdin-fleurs-interflora.fr/", "count": 1},
+      {"value": "https://www.monceaufleurs.com", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/harry-flor-harry-flor-geant-saint-martin-dheres",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 8},
+      {"value": "limited", "count": 4},
+      {"value": "no", "count": 4}
+    ],
+    "count": 16
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 6}], "count": 6},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Interflora", "count": 2},
+      {"value": "Pascale et Antoine Navarro", "count": 1},
+      {"value": "Karine", "count": 1},
+      {"value": "S.A.R.L Masolpassion", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "fixme", "count": 1},
+      {"value": "Précédemment: \"Vertige\"", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "Retrait au volant possible.", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Interflora", "count": 1}], "count": 1},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Aux-Myosotis-318333961683559/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 76 54 34 51", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "check name", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [{"value": "Member of Interflora Fleurop", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "comment:fr",
+    "tags": [{"value": "Membre d'Interflora Fleurop", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "annfleurs@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "delivery", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

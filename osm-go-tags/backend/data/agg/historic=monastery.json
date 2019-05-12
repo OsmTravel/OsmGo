@@ -1,0 +1,210 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "monastery", "count": 28}],
+    "count": 28
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22967251", "count": 1},
+      {"value": "Q22967182", "count": 1},
+      {"value": "Q3001656", "count": 1},
+      {"value": "Q22967250", "count": 1},
+      {"value": "Q22996900", "count": 1},
+      {"value": "Q22967388", "count": 1},
+      {"value": "Q2820458", "count": 1},
+      {"value": "Q3330799", "count": 1},
+      {"value": "Q2820731", "count": 1},
+      {"value": "Q18156193", "count": 1},
+      {"value": "Q10140", "count": 1},
+      {"value": "Q3001621", "count": 1},
+      {"value": "Q15138983", "count": 1},
+      {"value": "Q22996904", "count": 1},
+      {"value": "Q2961254", "count": 1},
+      {"value": "Q2820726", "count": 1},
+      {"value": "Q2961274", "count": 1},
+      {"value": "Q2961278", "count": 1},
+      {"value": "Q2961297", "count": 1},
+      {"value": "Q3320413", "count": 1},
+      {"value": "Q2969517", "count": 1},
+      {"value": "Q22967307", "count": 1},
+      {"value": "Q1307212", "count": 1},
+      {"value": "Q2967820", "count": 1},
+      {"value": "Q1775457", "count": 1},
+      {"value": "Q2961292", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 25}],
+    "count": 25
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116896", "count": 1},
+      {"value": "PA00117450", "count": 1},
+      {"value": "PA00118456", "count": 1},
+      {"value": "PA00117519", "count": 1},
+      {"value": "PA42000019", "count": 1},
+      {"value": "PA00117654", "count": 1},
+      {"value": "PA26000006", "count": 1},
+      {"value": "PA00118222", "count": 1},
+      {"value": "PA00118445", "count": 1},
+      {"value": "PA00117367", "count": 1},
+      {"value": "PA00117791", "count": 1},
+      {"value": "PA00116859", "count": 1},
+      {"value": "PA42000024", "count": 1},
+      {"value": "PA00117520", "count": 1},
+      {"value": "PA00132938", "count": 1},
+      {"value": "PA74000002", "count": 1},
+      {"value": "PA00116600", "count": 1},
+      {"value": "PA00116312", "count": 1},
+      {"value": "PA00118422", "count": 1},
+      {"value": "PA00116318", "count": 1},
+      {"value": "PA01000007", "count": 1},
+      {"value": "PA00117577", "count": 1},
+      {"value": "PA00118437", "count": 1},
+      {"value": "PA00117547", "count": 1},
+      {"value": "PA00117427", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 15}, {"value": "2", "count": 6}],
+    "count": 21
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1932-10-04", "count": 1},
+      {"value": "1981-04-23", "count": 1},
+      {"value": "1973-04-18", "count": 1},
+      {"value": "2003-09-28", "count": 1},
+      {"value": "1999-04-28", "count": 1},
+      {"value": "1911-08-08", "count": 1},
+      {"value": "1944-02-24", "count": 1},
+      {"value": "1989-05-03", "count": 1},
+      {"value": "1978-05-22", "count": 1},
+      {"value": "1985-09-19", "count": 1},
+      {"value": "2005-04-26", "count": 1},
+      {"value": "1964-06-11", "count": 1},
+      {"value": "1995", "count": 1},
+      {"value": "1997-02-17", "count": 1},
+      {"value": "1996", "count": 1},
+      {"value": "1947", "count": 1},
+      {"value": "1862", "count": 1},
+      {"value": "1997", "count": 1},
+      {"value": "1945-10-16", "count": 1},
+      {"value": "1983-03-21", "count": 1},
+      {"value": "1840", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Abbaye de Sixt", "count": 1},
+      {"value": "fr:Couvent de la Visitation de Thonon-les-Bains", "count": 1},
+      {"value": "fr:Musée savoisien", "count": 1},
+      {"value": "fr:Abbaye de Talloires", "count": 1},
+      {"value": "fr:Couvent des Cordeliers de Moirans", "count": 1},
+      {
+        "value": "fr:Conservatoire national supérieur musique et danse de Lyon",
+        "count": 1
+      },
+      {"value": "fr:Couvent Saint-Roch de Viviers", "count": 1},
+      {"value": "fr:Abbaye de Bouchet", "count": 1},
+      {"value": "fr:Chartreuse d'Arvières", "count": 1},
+      {"value": "fr:Abbaye Sainte-Anne de Bonlieu-sur-Roubion", "count": 1},
+      {"value": "fr:Chartreuse de Pierre-Châtel", "count": 1},
+      {"value": "fr:Chartreuse de Portes", "count": 1},
+      {"value": "fr:Chartreuse du Reposoir", "count": 1},
+      {"value": "fr:Monastère royal de Brou", "count": 1},
+      {"value": "fr:Château de La Bruyère (Saint-Bernard)", "count": 1},
+      {"value": "fr:Abbaye d'Aulps", "count": 1},
+      {"value": "fr:Château-prieuré de Pommiers-en-Forez", "count": 1},
+      {"value": "fr:Abbaye de la Bénisson-Dieu", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C17", "count": 2},
+      {"value": "C18", "count": 2},
+      {"value": "C15", "count": 2},
+      {"value": "C13", "count": 2},
+      {"value": "C11", "count": 2},
+      {"value": "C12", "count": 2},
+      {"value": "C16", "count": 1},
+      {"value": "C14", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "monastery:type",
+    "tags": [{"value": "convent", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 3},
+      {"value": "museum", "count": 1},
+      {"value": "chalet", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "place_of_worship", "count": 4},
+      {"value": "monastery", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "religious_rank",
+    "tags": [{"value": "abbey", "count": 5}],
+    "count": 5
+  },
+  {"key": "ruins", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Couvent des Cordeliers.jpg", "count": 1},
+      {"value": "File:Couvent des Cordeliers de Moirans.JPG", "count": 1},
+      {"value": "File:La Bénisson-Dieu - abbaye.jpg", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 3}],
+    "count": 3
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.musee-savoisien.fr", "count": 1},
+      {"value": "http://www.abbayedaulps.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Fermé temporairement cf. site internet\nRéouverture prévue en 2020",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

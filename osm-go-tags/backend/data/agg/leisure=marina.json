@@ -1,0 +1,157 @@
+[
+  {"key": "leisure", "tags": [{"value": "marina", "count": 90}], "count": 90},
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "430", "count": 2},
+      {"value": "20", "count": 1},
+      {"value": "420", "count": 1},
+      {"value": "850", "count": 1},
+      {"value": "235", "count": 1},
+      {"value": "64", "count": 1},
+      {"value": "116", "count": 1},
+      {"value": "94", "count": 1},
+      {"value": "798", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "seamark:type",
+    "tags": [{"value": "harbour", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "seamark:harbour:category",
+    "tags": [{"value": "marina", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://port-de-roanne.fr", "count": 1},
+      {"value": "http://www.drome-portdeplaisance.com/", "count": 1},
+      {"value": "http://www.port-de-bully.fr", "count": 1},
+      {"value": "http://condrieu-les-roches.fr/", "count": 1},
+      {"value": "http://clubvoilenantua.jimdo.com", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "concrete", "count": 3},
+      {"value": "asphalt", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 72 59 96", "count": 1},
+      {"value": "+33 4 75 81 18 93", "count": 1},
+      {"value": "+33 4 74 56 30 53", "count": 1},
+      {"value": "+33 4 74 75 13 36", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "harbour", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "harbour:category",
+    "tags": [{"value": "marina", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "maxdraft",
+    "tags": [
+      {"value": "1.8", "count": 1},
+      {"value": "1.5", "count": 1},
+      {"value": "2.2", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "natural", "tags": [{"value": "water", "count": 3}], "count": 3},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Lyonnaise des Eaux", "count": 1},
+      {"value": "La Guingette", "count": 1},
+      {"value": "SYRIPEL", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "port.plaisance@drome.cci.fr", "count": 1},
+      {"value": "syripel@orange.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "maxlength",
+    "tags": [{"value": "20", "count": 1}, {"value": "38.5", "count": 1}],
+    "count": 2
+  },
+  {"key": "maxspeed", "tags": [{"value": "3", "count": 2}], "count": 2},
+  {"key": "mooring", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "harbour:information",
+    "tags": [{"value": "Capacité: 100 places", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "harbour:toilets",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "harbour:visitor_berth",
+    "tags": [{"value": "400", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "harbour:water_tap",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "sailing", "count": 1}], "count": 1},
+  {
+    "key": "harbour:electricity",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3398601", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Port de l'Épervière", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "harbour:pump-out",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "harbour:fuel_station",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "waterway", "tags": [{"value": "riverbank", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {
+    "key": "harbour:laundrette",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "harbour_master", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 74 87 62 93", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "harbour:restaurant",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "flagpole", "count": 88}],
+    "count": 88
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "France", "count": 3},
+      {"value": "Allemagne", "count": 2},
+      {"value": "Les Menuieres", "count": 1},
+      {"value": "Savoie", "count": 1},
+      {"value": "Belgique", "count": 1},
+      {"value": "Espagne", "count": 1},
+      {"value": "Autriche", "count": 1},
+      {"value": "Luxembourg", "count": 1},
+      {"value": "Pays-Bas", "count": 1},
+      {"value": "Union Européenne", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "flag", "tags": [{"value": "france", "count": 10}], "count": 10},
+  {
+    "key": "flag_type",
+    "tags": [{"value": "governmental", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2006-09-18", "count": 1}],
+    "count": 1
+  }
+]

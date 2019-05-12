@@ -1,0 +1,371 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "surveillance", "count": 1187}],
+    "count": 1187
+  },
+  {
+    "key": "surveillance",
+    "tags": [
+      {"value": "public", "count": 664},
+      {"value": "outdoor", "count": 330},
+      {"value": "indoor", "count": 12},
+      {"value": "traffic", "count": 6},
+      {"value": "camera", "count": 1}
+    ],
+    "count": 1013
+  },
+  {
+    "key": "camera:type",
+    "tags": [
+      {"value": "dome", "count": 497},
+      {"value": "fixed", "count": 304},
+      {"value": "panning", "count": 10}
+    ],
+    "count": 811
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 573}, {"value": "guard", "count": 3}],
+    "count": 576
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Le Grand Lyon", "count": 231},
+      {"value": "SNCF", "count": 17},
+      {"value": "Préfecture du Rhône", "count": 16},
+      {"value": "CIC", "count": 13},
+      {"value": "Caisse d'Épargne", "count": 10},
+      {"value": "BNP Paribas", "count": 7},
+      {"value": "Sport dans la Ville", "count": 7},
+      {"value": "La Poste", "count": 7},
+      {"value": "Carrefour", "count": 6},
+      {"value": "Groupama", "count": 5},
+      {"value": "Crédit Mutuel", "count": 5},
+      {"value": "LPA", "count": 5},
+      {"value": "Grand Lyon", "count": 4},
+      {"value": "Total", "count": 4},
+      {"value": "private", "count": 4},
+      {"value": "Commissariat", "count": 4},
+      {"value": "Commissariat de Police du 7e", "count": 4},
+      {"value": "Mosquée Eyüp Sultan", "count": 4},
+      {"value": "EDF", "count": 4},
+      {"value": "Area", "count": 3},
+      {"value": "Mairie de Cessy", "count": 3},
+      {"value": "Galeries Lafayette", "count": 3},
+      {"value": "Collège Georges Clémenceau", "count": 3},
+      {"value": "Ville de Grenoble", "count": 3},
+      {"value": "Christian Bourgeois - Meyers", "count": 2},
+      {"value": "Bayer", "count": 2},
+      {"value": "Caisse d'Epargne", "count": 2},
+      {"value": "CPE Lyon", "count": 2},
+      {"value": "Palais de Justice Historique de Lyon", "count": 2},
+      {"value": "LCL", "count": 2},
+      {"value": "Les Hospices Civil de Lyon", "count": 2},
+      {"value": "université Claude Bernard Lyon 1", "count": 2},
+      {"value": "Orange", "count": 2},
+      {"value": "BP", "count": 1},
+      {"value": "La Banque Postale", "count": 1},
+      {"value": "Avia", "count": 1},
+      {"value": "Bar@Mix", "count": 1},
+      {"value": "csu", "count": 1},
+      {"value": "EuroCave", "count": 1},
+      {"value": "Decathlon", "count": 1},
+      {"value": "Mosquée Badr Eddine", "count": 1},
+      {"value": "Banque Rhône-Alpes", "count": 1},
+      {"value": "Crédit Agricole", "count": 1},
+      {"value": "Banque Populaire", "count": 1},
+      {"value": "Banque Palatine", "count": 1},
+      {"value": "Société Générale", "count": 1},
+      {"value": "Super U", "count": 1},
+      {"value": "Wash'n Dry", "count": 1},
+      {"value": "Park&Suites Confort", "count": 1},
+      {"value": "Private", "count": 1},
+      {"value": "Merck", "count": 1},
+      {"value": "Préfecture", "count": 1},
+      {"value": "CNR - IRPI", "count": 1},
+      {"value": "Mercure", "count": 1},
+      {"value": "CSU", "count": 1},
+      {"value": "Banque Rhônes-Alped", "count": 1}
+    ],
+    "count": 413
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [
+      {"value": "town", "count": 170},
+      {"value": "traffic", "count": 144},
+      {"value": "building", "count": 43},
+      {"value": "parking", "count": 17},
+      {"value": "street", "count": 11},
+      {"value": "shop", "count": 9},
+      {"value": "entrance", "count": 6},
+      {"value": "bank", "count": 4},
+      {"value": "parking;road", "count": 1},
+      {"value": "atm", "count": 1}
+    ],
+    "count": 406
+  },
+  {
+    "key": "camera:mount",
+    "tags": [
+      {"value": "pole", "count": 201},
+      {"value": "wall", "count": 149},
+      {"value": "gantry", "count": 24},
+      {"value": "ceiling", "count": 8},
+      {"value": "bridge", "count": 2},
+      {"value": "street_lamp", "count": 1}
+    ],
+    "count": 385
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "5", "count": 65},
+      {"value": "6", "count": 17},
+      {"value": "3", "count": 8},
+      {"value": "1-30", "count": 5},
+      {"value": "0-20", "count": 5},
+      {"value": "2.5", "count": 5},
+      {"value": "1-20", "count": 5},
+      {"value": "1-5", "count": 3},
+      {"value": "4", "count": 3},
+      {"value": "0-40", "count": 3},
+      {"value": "0-30", "count": 3},
+      {"value": "8", "count": 2},
+      {"value": "10", "count": 2},
+      {"value": "7", "count": 2},
+      {"value": "0-10", "count": 2},
+      {"value": "1-3", "count": 1},
+      {"value": "1 - 20", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "0-3", "count": 1},
+      {"value": "0-5", "count": 1}
+    ],
+    "count": 136
+  },
+  {
+    "key": "camera:direction",
+    "tags": [
+      {"value": "270", "count": 8},
+      {"value": "90", "count": 7},
+      {"value": "200", "count": 6},
+      {"value": "0", "count": 6},
+      {"value": "150", "count": 5},
+      {"value": "30", "count": 5},
+      {"value": "330", "count": 5},
+      {"value": "180", "count": 5},
+      {"value": "20", "count": 5},
+      {"value": "210", "count": 4},
+      {"value": "340", "count": 4},
+      {"value": "135", "count": 3},
+      {"value": "45", "count": 3},
+      {"value": "300", "count": 3},
+      {"value": "160", "count": 3},
+      {"value": "360", "count": 3},
+      {"value": "190", "count": 2},
+      {"value": "10", "count": 2},
+      {"value": "-10", "count": 2},
+      {"value": "260", "count": 2},
+      {"value": "80", "count": 2},
+      {"value": "NW", "count": 2},
+      {"value": "170", "count": 2},
+      {"value": "120", "count": 2},
+      {"value": "-110", "count": 2},
+      {"value": "225", "count": 2},
+      {"value": "315", "count": 2},
+      {"value": "60", "count": 1},
+      {"value": "W", "count": 1},
+      {"value": "E", "count": 1},
+      {"value": "63", "count": 1},
+      {"value": "320", "count": 1},
+      {"value": "100", "count": 1},
+      {"value": "0 - 360", "count": 1},
+      {"value": "SW", "count": 1},
+      {"value": "350", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "240", "count": 1},
+      {"value": "280", "count": 1},
+      {"value": "125", "count": 1},
+      {"value": "285", "count": 1},
+      {"value": "-60", "count": 1},
+      {"value": "-150", "count": 1},
+      {"value": "230", "count": 1},
+      {"value": "210;30", "count": 1},
+      {"value": "70", "count": 1}
+    ],
+    "count": 117
+  },
+  {
+    "key": "camera:angle",
+    "tags": [
+      {"value": "15", "count": 56},
+      {"value": "90", "count": 11},
+      {"value": "10", "count": 10},
+      {"value": "270", "count": 2},
+      {"value": "45", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "50", "count": 1},
+      {"value": "270°", "count": 1},
+      {"value": "180", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "street_lamp", "count": 6},
+      {"value": "traffic_signals", "count": 3}
+    ],
+    "count": 9
+  },
+  {"key": "network", "tags": [{"value": "TCL", "count": 7}], "count": 7},
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "laundry", "count": 5},
+      {"value": "furniture", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "-1", "count": 4}, {"value": "1", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "payment:coins",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "surveillance bureau tabac", "count": 2},
+      {"value": "camera under the bridge", "count": 2},
+      {"value": "surveillance sortie service Spar", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "payment:notes",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 24 28 12 16", "count": 1},
+      {"value": "+33 4 76 47 01 41", "count": 1},
+      {"value": "+33 6 84 43 50 71", "count": 1},
+      {"value": "+33 4 76 82 76 31", "count": 1},
+      {"value": "+33 6 61 46 00 58", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "please check position", "count": 3},
+      {
+        "value": "Vérifier l'existence suite fermeture d'après changeset 60027907",
+        "count": 2
+      }
+    ],
+    "count": 5
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 4}], "count": 4},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://m.webcam-hd.com/mont-jura/la-faucille-coeur-de-station",
+        "count": 1
+      },
+      {
+        "value": "http://www.crous-grenoble.fr/logement/residence-condillac-b/",
+        "count": 1
+      },
+      {
+        "value": "http://www.washndry-concept.com/laverie/laverie-lile-verte-grenoble/",
+        "count": 1
+      },
+      {"value": "http://bessanese.panomax.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://pv.viewsurf.com/?id=72", "count": 1},
+      {
+        "value": "http://www.webcam-ski.com/webcams/interfaces/bessans/interface.php?pk_interface=99&m=images&r=panoramique#depart",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "FIXME",
+    "tags": [{"value": "not exact position", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "waste_basket", "count": 1},
+      {"value": "parking", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "bollard", "count": 2}], "count": 2},
+  {"key": "vehicle", "tags": [{"value": "bus", "count": 1}], "count": 1},
+  {"key": "vending", "tags": [{"value": "food", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "residence.condillac@crous-grenoble.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:ep_moneo",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "camera", "tags": [{"value": "panning", "count": 1}], "count": 1},
+  {"key": "direction", "tags": [{"value": "0, 180", "count": 1}], "count": 1},
+  {"key": "tower:height", "tags": [{"value": "20", "count": 1}], "count": 1},
+  {
+    "key": "tower:type",
+    "tags": [{"value": "communication", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "park_ride", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  }
+]

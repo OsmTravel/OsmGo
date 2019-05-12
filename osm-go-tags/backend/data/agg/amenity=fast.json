@@ -1,0 +1,9 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 84 47 20 58", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "fast", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "kebab", "count": 1}], "count": 1}
+]

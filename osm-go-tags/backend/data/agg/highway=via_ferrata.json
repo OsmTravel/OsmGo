@@ -1,0 +1,100 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "via_ferrata", "count": 84}],
+    "count": 84
+  },
+  {
+    "key": "via_ferrata_scale",
+    "tags": [
+      {"value": "2", "count": 36},
+      {"value": "3", "count": 22},
+      {"value": "4", "count": 8},
+      {"value": "5", "count": 2},
+      {"value": "1", "count": 2},
+      {"value": "6", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 72
+  },
+  {"key": "oneway", "tags": [{"value": "yes", "count": 50}], "count": 50},
+  {"key": "foot", "tags": [{"value": "yes", "count": 23}], "count": 23},
+  {
+    "key": "sac_scale",
+    "tags": [
+      {"value": "difficult_alpine_hiking", "count": 12},
+      {"value": "hiking", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "simple-suspension", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Variante Facile", "count": 2},
+      {"value": "Difficulté AD+", "count": 1},
+      {"value": "Difficulté PD+", "count": 1},
+      {
+        "value": "Matériel obligatoire : casque, baudrier spécial, double longe reliée à un absorbeur de choc, frein ou amortisseur. ",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 4}], "count": 4},
+  {"key": "incline", "tags": [{"value": "up", "count": 4}], "count": 4},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "via_ferrata", "count": 2},
+      {"value": "climbing", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Il y avait comme nom \"via ferrata\" mais je suppose fortement que ça n'est pas son nom mais une manière de renseigner le fait que s'en est une",
+        "count": 1
+      },
+      {"value": "resurveyed", "count": 1},
+      {"value": "Location approximate", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "aerialway", "tags": [{"value": "zip_line", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "fixme", "count": 1},
+      {"value": "Cotation : PD Durée : 1h30 Aller-Retour", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "via_ferrata", "tags": [{"value": "cable", "count": 2}], "count": 2},
+  {"key": "natural", "tags": [{"value": "cliff", "count": 2}], "count": 2},
+  {
+    "key": "ele",
+    "tags": [{"value": "1250", "count": 1}, {"value": "1800", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "cable_number",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {"key": "ladder", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "location",
+    "tags": [{"value": "Location approximate", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "110 m", "count": 1}], "count": 1}
+]

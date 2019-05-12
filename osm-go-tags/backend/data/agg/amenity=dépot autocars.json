@@ -1,0 +1,17 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 68 39 11 96", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "dépot autocars", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.asperi.fr", "count": 1}],
+    "count": 1
+  }
+]

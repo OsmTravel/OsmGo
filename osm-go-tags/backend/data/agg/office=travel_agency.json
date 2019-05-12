@@ -1,0 +1,20 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "travel_agency", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:NAF",
+    "tags": [{"value": "7912Z", "count": 1}, {"value": "7911Z", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "57215890503127", "count": 1},
+      {"value": "30601612200054", "count": 1}
+    ],
+    "count": 2
+  }
+]

@@ -1,0 +1,15 @@
+[
+  {"key": "natural", "tags": [{"value": "shoal", "count": 5}], "count": 5},
+  {"key": "maxdraft", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {"key": "tidal", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Profondeur exacte du haut fond inconnue, mais le nom laisse supposer qu'il y a peu...",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

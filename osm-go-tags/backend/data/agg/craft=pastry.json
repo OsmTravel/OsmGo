@@ -1,0 +1,10 @@
+[
+  {"key": "craft", "tags": [{"value": "pastry", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "F2MC", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 2 35 70 98 31", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "bakery", "count": 1}], "count": 1}
+]

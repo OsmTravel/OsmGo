@@ -1,0 +1,5 @@
+[
+  {"key": "man_made", "tags": [{"value": "winery", "count": 6}], "count": 6},
+  {"key": "shop", "tags": [{"value": "alcohol", "count": 2}], "count": 2},
+  {"key": "alcohol", "tags": [{"value": "wine", "count": 2}], "count": 2}
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "key": "note",
+    "tags": [
+      {"value": "panneau publicitaire pour le gîte du lac de Gers", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "direction", "tags": [{"value": "E", "count": 1}], "count": 1},
+  {"key": "advertising", "tags": [{"value": "sign", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:E",
+    "tags": [{"value": "y75oRBeJ-kCQvrzk5eJ8eA", "count": 1}],
+    "count": 1
+  }
+]

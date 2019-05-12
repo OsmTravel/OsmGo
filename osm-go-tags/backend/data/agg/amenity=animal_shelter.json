@@ -1,0 +1,70 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "animal_shelter", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "animal_shelter",
+    "tags": [
+      {"value": "bird;mammal", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "bird", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "animal_shelter:release",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {
+        "value": "Société Protectrice des Animaux Saint-Étienne Loire",
+        "count": 1
+      },
+      {
+        "value": "Association Centre de Soins pour Oiseaux Sauvages du Lyonnais",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.spa42.fr/", "count": 1},
+      {"value": "http://csosl.free.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "association", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Centre de Sauvegarde de la Faune Sauvage", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Refuge pour Animaux", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "animal_shelter:adoption",
+    "tags": [{"value": "dog", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "pet", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@csol.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 05 78 85", "count": 1}],
+    "count": 1
+  }
+]

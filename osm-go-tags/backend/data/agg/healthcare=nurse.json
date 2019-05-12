@@ -1,0 +1,8 @@
+[
+  {"key": "healthcare", "tags": [{"value": "nurse", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 34 49 37", "count": 1}],
+    "count": 1
+  }
+]

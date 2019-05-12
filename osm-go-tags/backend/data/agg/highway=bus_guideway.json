@@ -1,0 +1,10 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "bus_guideway", "count": 5}],
+    "count": 5
+  },
+  {"key": "access", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "bus", "tags": [{"value": "designated", "count": 3}], "count": 3},
+  {"key": "oneway", "tags": [{"value": "yes", "count": 3}], "count": 3}
+]

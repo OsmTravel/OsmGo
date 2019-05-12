@@ -1,0 +1,4 @@
+[
+  {"key": "craft", "tags": [{"value": "cider", "count": 5}], "count": 5},
+  {"key": "shop", "tags": [{"value": "cider", "count": 1}], "count": 1}
+]

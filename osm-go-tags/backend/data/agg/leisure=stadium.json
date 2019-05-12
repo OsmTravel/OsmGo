@@ -1,0 +1,174 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "stadium", "count": 149}],
+    "count": 149
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "soccer", "count": 24},
+      {"value": "rugby_union", "count": 12},
+      {"value": "multi", "count": 11},
+      {"value": "skiing", "count": 10},
+      {"value": "basketball", "count": 5},
+      {"value": "rugby", "count": 4},
+      {"value": "tennis", "count": 4},
+      {"value": "athletics", "count": 4},
+      {"value": "ski", "count": 3},
+      {"value": "soccer;athletics", "count": 2},
+      {"value": "football", "count": 2},
+      {"value": "basketball;soccer", "count": 1},
+      {"value": "cycling", "count": 1},
+      {"value": "ski_jump_take_off", "count": 1},
+      {"value": "american_football", "count": 1},
+      {"value": "water_jousting", "count": 1},
+      {"value": "biathlon", "count": 1}
+    ],
+    "count": 87
+  },
+  {
+    "key": "piste:type",
+    "tags": [
+      {"value": "downhill", "count": 15},
+      {"value": "nordic", "count": 1},
+      {"value": "half_pipe", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Stade Charles-Mathon", "count": 1},
+      {"value": "fr:Stade de Gerland", "count": 1},
+      {"value": "fr:Vélodrome Georges-Préveral", "count": 1},
+      {"value": "fr:Stade Marcel-Verchère", "count": 1},
+      {"value": "fr:Stade municipal de Péronnas", "count": 1},
+      {"value": "fr:Parc des Sports (Annecy)", "count": 1},
+      {"value": "fr:Astroballe", "count": 1},
+      {"value": "fr:Ekinox", "count": 1},
+      {"value": "fr:Parc Olympique lyonnais", "count": 1},
+      {"value": "fr:Stade Geoffroy-Guichard", "count": 1},
+      {"value": "fr:Stade de Balmont", "count": 1},
+      {"value": "fr:Stade Georges-Pompidou", "count": 1},
+      {"value": "fr:Stade Albert-Serraz", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3495553", "count": 1},
+      {"value": "Q1980", "count": 1},
+      {"value": "Q3495731", "count": 1},
+      {"value": "Q17561477", "count": 1},
+      {"value": "Q428115", "count": 1},
+      {"value": "Q8546", "count": 1},
+      {"value": "Q19406957", "count": 1},
+      {"value": "Q8507", "count": 1},
+      {"value": "Q3496015", "count": 1},
+      {"value": "Q3495603", "count": 1},
+      {"value": "Q3495491", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [
+      {"value": "intermediate", "count": 8},
+      {"value": "easy", "count": 2}
+    ],
+    "count": 10
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "41842", "count": 1},
+      {"value": "5559", "count": 1},
+      {"value": "11500", "count": 1},
+      {"value": "4800", "count": 1},
+      {"value": "15714", "count": 1},
+      {"value": "3548", "count": 1},
+      {"value": "58000", "count": 1},
+      {"value": "5010", "count": 1},
+      {"value": "41500", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "ASVEL Lyon-Villeurbanne", "count": 1},
+      {"value": "US Bressane", "count": 1},
+      {"value": "FC Bourg Péronnas", "count": 1},
+      {"value": "Évian Thonon Gaillard FC;FC Annecy", "count": 1},
+      {"value": "JL Bourg", "count": 1},
+      {"value": "Olympique Lyonnais", "count": 1},
+      {"value": "LOU (Lyon Olympique Universitaire)", "count": 1},
+      {"value": "AS Saint-Étienne", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 4}], "count": 4},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.usbparugby.com/", "count": 1},
+      {"value": "http://www.fcbourgperonnas.fr/", "count": 1},
+      {"value": "http://www.groupama-stadium.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "permissive", "count": 2}], "count": 2},
+  {"key": "surface", "tags": [{"value": "grass", "count": 2}], "count": 2},
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "start_date", "tags": [{"value": "1894", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "range", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [{"value": "File:Velodrome parc tete d'or 2.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117986", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1967-10-04", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [{"value": "classic", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "landuse",
+    "tags": [{"value": "recreation_ground", "count": 1}],
+    "count": 1
+  },
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 22 12 33", "count": 1}],
+    "count": 1
+  },
+  {"key": "fixme", "tags": [{"value": "shape", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "underground", "count": 1}], "count": 1}
+]

@@ -1,0 +1,6 @@
+[
+  {"key": "emergency", "tags": [{"value": "siren", "count": 5}], "count": 5},
+  {"key": "amenity", "tags": [{"value": "townhall", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "tower", "count": 1}], "count": 1}
+]

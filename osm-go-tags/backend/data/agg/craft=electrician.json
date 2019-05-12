@@ -1,0 +1,73 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "electrician", "count": 25}],
+    "count": 25
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Philippe Michaud", "count": 1},
+      {"value": "Sylvain BOUTTE", "count": 1},
+      {"value": "EDF", "count": 1},
+      {"value": "ERBOL SAS", "count": 1},
+      {"value": "Jean-Marc Chion", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.xjmedia.fr/electricitedulac/", "count": 1},
+      {
+        "value": "https://particuliers.edf.com/boutiques-54297.html",
+        "count": 1
+      },
+      {"value": "www.emi-services.fr", "count": 1},
+      {
+        "value": "http://votre-electricien.fr/annibale-gallois-electricite/",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 63 73 26 14", "count": 1},
+      {"value": "+33 4 27118268", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Dépannage, contrôle d'accès, interphonie, chauffage, climatisation, ventilation, réseaux informatiques et téléphoniques, détection incendie",
+        "count": 1
+      },
+      {"value": "Génie climatique", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 2}], "count": 2},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "412 635 450 00015", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

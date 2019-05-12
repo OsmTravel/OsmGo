@@ -1,0 +1,113 @@
+[
+  {"key": "man_made", "tags": [{"value": "pier", "count": 797}], "count": 797},
+  {
+    "key": "floating",
+    "tags": [{"value": "yes", "count": 81}, {"value": "no", "count": 1}],
+    "count": 82
+  },
+  {
+    "key": "mooring",
+    "tags": [
+      {"value": "yes", "count": 20},
+      {"value": "no", "count": 4},
+      {"value": "private", "count": 4},
+      {"value": "guest", "count": 2},
+      {"value": "commercial", "count": 1}
+    ],
+    "count": 31
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 26}], "count": 26},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "footway", "count": 21},
+      {"value": "path", "count": 1},
+      {"value": "track", "count": 1}
+    ],
+    "count": 23
+  },
+  {"key": "float", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "wood", "count": 9},
+      {"value": "cobblestone", "count": 1},
+      {"value": "ground", "count": 1},
+      {"value": "concrete", "count": 1},
+      {"value": "asphalt", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 5},
+      {"value": "customers", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "3", "count": 3},
+      {"value": "4", "count": 2},
+      {"value": "5", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [{"value": "Embarcadère de la navette du canal", "count": 2}],
+    "count": 2
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "leisure", "tags": [{"value": "fishing", "count": 2}], "count": 2},
+  {"key": "covered", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "construction", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "network",
+    "tags": [{"value": "Navette du canal de Jonage", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "5/6", "count": 1}, {"value": "2/6", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "site",
+    "tags": [{"value": "http://www.grand-parc.fr/navette/", "count": 2}],
+    "count": 2
+  },
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "rowing", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "to be checked - hack to allow routering", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "smoothness",
+    "tags": [{"value": "excellent", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Niveau d'eau maximum du lac : cote 232 au cadastre",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "fishing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

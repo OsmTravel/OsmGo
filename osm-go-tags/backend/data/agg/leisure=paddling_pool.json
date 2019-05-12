@@ -1,0 +1,18 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "paddling_pool", "count": 15}],
+    "count": 15
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "basin", "count": 6}, {"value": "bassin", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Pataugeoire", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

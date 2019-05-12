@@ -1,0 +1,13 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "language_school", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.wallstreetinstitute.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

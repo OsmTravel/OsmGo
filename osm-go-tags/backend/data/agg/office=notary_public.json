@@ -1,0 +1,9 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "notary_public", "count": 3}],
+    "count": 3
+  },
+  {"key": "fax", "tags": [{"value": "+33321037442", "count": 1}], "count": 1},
+  {"key": "phone", "tags": [{"value": "+33321046097", "count": 1}], "count": 1}
+]

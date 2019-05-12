@@ -1,0 +1,37 @@
+[
+  {"key": "amenity", "tags": [{"value": "flowerpot", "count": 8}], "count": 8},
+  {"key": "colour", "tags": [{"value": "red", "count": 4}], "count": 4},
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "AfzO78wHeELmMFDKpJWd6A", "count": 2},
+      {"value": "VKIKnpMMwTQTCEtwocHtxA", "count": 1},
+      {"value": "l5geU0K8KFFBAuZ2tr0rKg", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "The object dispappeared or never happened to be there",
+        "count": 1
+      },
+      {"value": "Pot de fleurs", "count": 1},
+      {"value": "Pots de fleurs superposés", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2018-03-19", "count": 2}],
+    "count": 2
+  },
+  {"key": "material", "tags": [{"value": "plastic", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "Ville d'Orange", "count": 2}],
+    "count": 2
+  },
+  {"key": "fixme", "tags": [{"value": "absent", "count": 1}], "count": 1}
+]

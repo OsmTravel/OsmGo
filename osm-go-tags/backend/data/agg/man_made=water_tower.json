@@ -1,0 +1,56 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "water_tower", "count": 279}],
+    "count": 279
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "SIEP Dombes-Saône", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "370", "count": 1},
+      {"value": "1000", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "500", "count": 1},
+      {"value": "1500", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Chateau_d_eau_Duch%C3%A8re_Lyon.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_d%27eau_Saint-Maurice-de-R%C3%A9mens.JPG",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "height",
+    "tags": [{"value": "40 m", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "communication:microwave",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:anfr", "tags": [{"value": "472973", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q55396660", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "383", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Château d'eau de La Duchère", "count": 1}],
+    "count": 1
+  }
+]

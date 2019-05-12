@@ -1,0 +1,29 @@
+[
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "pedestrian", "count": 1},
+      {"value": "primary", "count": 1},
+      {"value": "unclassified", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "Dove Street", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "paving_stones", "count": 1},
+      {"value": "asphalt", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "oneway", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "dismount", "count": 1}], "count": 1},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "ref", "tags": [{"value": "A3", "count": 1}], "count": 1}
+]

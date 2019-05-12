@@ -1,0 +1,470 @@
+[
+  {"key": "leisure", "tags": [{"value": "park", "count": 2481}], "count": 2481},
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 62},
+      {"value": "yes", "count": 7},
+      {"value": "customers", "count": 7},
+      {"value": "no", "count": 2},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 79
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q30328403", "count": 1},
+      {"value": "Q3363879", "count": 1},
+      {"value": "Q3364294", "count": 1},
+      {"value": "Q3364150", "count": 1},
+      {"value": "Q3363913", "count": 1},
+      {"value": "Q3364195", "count": 1},
+      {"value": "Q3363815", "count": 1},
+      {"value": "Q3363787", "count": 1},
+      {"value": "Q3162489", "count": 1},
+      {"value": "Q3162534", "count": 1},
+      {"value": "Q3226091", "count": 1},
+      {"value": "Q2382114", "count": 1},
+      {"value": "Q3162667", "count": 1},
+      {"value": "Q3364192", "count": 1},
+      {"value": "Q3364131", "count": 1},
+      {"value": "Q8387", "count": 1},
+      {"value": "Q3991", "count": 1},
+      {"value": "Q55396512", "count": 1},
+      {"value": "Q7136394", "count": 1},
+      {"value": "Q8670", "count": 1},
+      {"value": "Q17000301", "count": 1},
+      {"value": "Q17636368", "count": 1},
+      {"value": "Q17636366", "count": 1},
+      {"value": "Q16668920", "count": 1},
+      {"value": "Q17319801", "count": 1},
+      {"value": "Q16668902", "count": 1},
+      {"value": "Q9504", "count": 1},
+      {"value": "Q32945386", "count": 1},
+      {"value": "Q2969309", "count": 1},
+      {"value": "Q30328324", "count": 1},
+      {"value": "Q29812485", "count": 1},
+      {"value": "Q42876337", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Les jardins de la Galaure", "count": 2},
+      {"value": "fr:Grand parc de Miribel-Jonage", "count": 1},
+      {"value": "fr:Parc de Parilly", "count": 1},
+      {"value": "fr:Parc de Lacroix-Laval", "count": 1},
+      {"value": "fr:Parc de la Cerisaie", "count": 1},
+      {"value": "fr:Parc Francis-Popy", "count": 1},
+      {"value": "fr:Jardin des Chartreux", "count": 1},
+      {"value": "fr:Le Pâquier (Annecy)", "count": 1},
+      {"value": "fr:Parc du Vivier", "count": 1},
+      {"value": "fr:Parc Jacob-Kaplan", "count": 1},
+      {"value": "fr:Parc de Gerland", "count": 1},
+      {"value": "fr:Parc des berges du Rhône", "count": 1},
+      {"value": "fr:Parc Édouard-Glissant", "count": 1},
+      {"value": "fr:Jardin Claudius Montessuit", "count": 1},
+      {"value": "fr:Parc René-Dumont", "count": 1},
+      {"value": "fr:Parc du Brûlet", "count": 1},
+      {"value": "fr:Parc botanique de la Teyssonnière", "count": 1},
+      {"value": "fr:Jardin Rosa Mir", "count": 1},
+      {"value": "fr:Parc des Hauteurs#Le jardin de la Visitation", "count": 1},
+      {"value": "fr:Jardin du Palais Saint-Pierre", "count": 1},
+      {"value": "fr:Parc Sergent Blandan", "count": 1},
+      {"value": "fr:Parc de la Tête d'Or", "count": 1},
+      {"value": "fr:Château de Genoud", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 15}, {"value": "wall", "count": 5}],
+    "count": 20
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.gaillard.fr/environnement-developpement/jardins-parcs-et-squares/le-parc-du-petit-vallard/",
+        "count": 1
+      },
+      {"value": "http://www.aravis-paintball.com", "count": 1},
+      {"value": "www.parc-foret-aventure.com/", "count": 1},
+      {"value": "https://www.larboretum.com/", "count": 1},
+      {
+        "value": "http://www.gre-mag.fr/dossiers/flaubert-naissance-dun-parc/",
+        "count": 1
+      },
+      {
+        "value": "http://www.ville-saint-priest.fr/Le-Parc-du-Fort.1846.0.html",
+        "count": 1
+      },
+      {"value": "http://www.parcdelateyssonniere.fr/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Incroyables-Comestibles-Annecy/214370905418229",
+        "count": 1
+      },
+      {
+        "value": "http://www.mairie-neuvecelle.fr/le-parc-clair-matin",
+        "count": 1
+      },
+      {"value": "http://www.brindgre.org/les-jardins", "count": 1},
+      {"value": "http://mairielozanne.fr", "count": 1},
+      {"value": "http://www.vlg.fr/patrimoine", "count": 1},
+      {
+        "value": "http://www.ville-crangevrier.fr/Cadre-de-vie-et-Eco-citoyennete/La-ville-en-vert/Decouvrez-la-ville-cote-nature",
+        "count": 1
+      },
+      {
+        "value": "https://www.grenoble.fr/lieu/358/137-parc-ampere-vallier.htm",
+        "count": 1
+      },
+      {"value": "http://www.bresse-sougey.net", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "grass", "count": 4},
+      {"value": "forest", "count": 3},
+      {"value": "village_green", "count": 3},
+      {"value": "landfill", "count": 1},
+      {"value": "plant_nursery", "count": 1},
+      {"value": "residential", "count": 1},
+      {"value": "meadow", "count": 1},
+      {"value": "recreation_ground", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "693842244V", "count": 1},
+      {"value": "421870208B", "count": 1},
+      {"value": "381853735G", "count": 1},
+      {"value": "382420088V", "count": 1},
+      {"value": "38022A200T", "count": 1},
+      {"value": "692660753M", "count": 1},
+      {"value": "741730208H", "count": 1},
+      {"value": "010040470R", "count": 1},
+      {"value": "693845250M", "count": 1},
+      {"value": "385380443U", "count": 1},
+      {"value": "692900779L", "count": 1},
+      {"value": "260960079J", "count": 1},
+      {"value": "420711000S", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "grass", "count": 9},
+      {"value": "paved", "count": 1},
+      {"value": "asphalt", "count": 1},
+      {"value": "compacted", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Stand here for the first 2 steps of the earthcache\nRester ici pour les 2 premières étapes de le earthcache",
+        "count": 1
+      },
+      {
+        "value": "Here are the terracettes.\nStand here for the other steps of the earthcache\n\nVoici les terracettes .\nTenez ici pour les autres étapes du earthcache",
+        "count": 1
+      },
+      {"value": "Âgé de plus de 400 ans ", "count": 1},
+      {
+        "value": "Situé à quelques pas de la mairie, d’une superficie de près de 7000 m2, il est sans doute le plus beau parc public de la ville. Il abrite un magnifique jardin à la Française autour de deux grands bassins et une partie plus naturelle très typique.",
+        "count": 1
+      },
+      {
+        "value": "Autour de la bibliothèque municipale, plus d’une soixantaine d’espèces d’arbres (très beaux cèdres de l’Atlas, de l’Himalaya, un cyprès de Lawson et surtout un magnifique sapin rouge de Californie).",
+        "count": 1
+      },
+      {
+        "value": "Le plus ancien des parcs d’Annonay. Au coeur de la ville, il entoure la Chambre de Commerce et d’Industrie, on peut y admirer l’oeuvre des jardiniers municipaux.Tout près : La rue Sadi Carnot, la Bibliothèque, le boulevard de la République, le quartier de",
+        "count": 1
+      },
+      {"value": "Accès : public petit squere devant une école", "count": 1},
+      {"value": "Promenade plantée, et squares  accès : public", "count": 1},
+      {"value": "Réceptions, Séminaires", "count": 1},
+      {
+        "value": "Espace Hannibal - Jeux pour enfants, terrains de pétanque, barbecues, tables de pic-nique,...",
+        "count": 1
+      }
+    ],
+    "count": 10
+  },
+  {
+    "key": "CLC:code",
+    "tags": [
+      {"value": "231", "count": 6},
+      {"value": "512", "count": 1},
+      {"value": "141", "count": 1},
+      {"value": "131", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 9}], "count": 9},
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-147386", "count": 1},
+      {"value": "FR-155013", "count": 1},
+      {"value": "FR-165318", "count": 1},
+      {"value": "FR-147713", "count": 1},
+      {"value": "FR-130614", "count": 1},
+      {"value": "FR-135445", "count": 1},
+      {"value": "FR-133668", "count": 1},
+      {"value": "FR-134644", "count": 1},
+      {"value": "FR-129321", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "swimming", "count": 5},
+      {"value": "tennis", "count": 1},
+      {"value": "golf", "count": 1},
+      {"value": "soccer", "count": 1},
+      {"value": "bowls", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "picnic_site", "count": 3},
+      {"value": "attraction", "count": 2},
+      {"value": "camp_site", "count": 1},
+      {"value": "theme_park", "count": 1},
+      {"value": "museum", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Le Parc Mandela est l'appelation du parc A VENIR (annoncé 1er semestre 2016)",
+        "count": 1
+      },
+      {"value": "en cours d'aménagement (mars 2012)", "count": 1},
+      {"value": "Étendu en 2008", "count": 1},
+      {"value": "11 879 m²", "count": 1},
+      {
+        "value": "Réserve Naturelle Régionale des gorges de la Loire",
+        "count": 1
+      },
+      {"value": "Parc partly designed by gardener Lenotre", "count": 1},
+      {"value": "limite sud du parc ???", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1857", "count": 1},
+      {"value": "1931", "count": 1},
+      {"value": "2015", "count": 1},
+      {"value": "2009", "count": 1},
+      {"value": "1981", "count": 1},
+      {"value": "2013", "count": 1},
+      {"value": "1996", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 6}, {"value": "no", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "no", "count": 3},
+      {"value": "dismount", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 2},
+      {"value": "-1", "count": 2},
+      {"value": "5", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "frontière approx", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "passer sur le terrain pr noter le nom et mettre détails alentours (chemins, toilettes, eau...)",
+        "count": 1
+      },
+      {"value": "Ajouter leisure=playground", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "2.5", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "1.5", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Mairie de Gaillard", "count": 1},
+      {"value": "Mairie de Mens", "count": 1},
+      {"value": "IndianaAdventures", "count": 1},
+      {"value": "Ville de Modane", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "dog",
+    "tags": [
+      {"value": "designated;clean", "count": 2},
+      {"value": "leashed", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fence_type",
+    "tags": [{"value": "metal", "count": 2}, {"value": "wire", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117880", "count": 1},
+      {"value": "PA73000014", "count": 1},
+      {"value": "PA01000018", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1987-12-24", "count": 1},
+      {"value": "2008-04-23", "count": 1},
+      {"value": "2006", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "grassland", "count": 2}, {"value": "wood", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "foot",
+    "tags": [{"value": "designated", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 2}, {"value": "2", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "area:highway",
+    "tags": [{"value": "pedestrian", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "yes", "count": 1},
+      {"value": "archaeological_site", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 7 78 69 24 90", "count": 1},
+      {"value": "+33 4 76210861", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "construction",
+    "tags": [
+      {"value": "residential", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.voiron.fr/Domaine-de-la-Brunerie-_r506.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.saint-etienne.fr/d%C3%A9couvrir-sortir/sports/base-nautique-saint-victor-sur-loire/base-nautique-saint-victor-sur-loire",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "motorcycle", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "moped", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "nudism", "tags": [{"value": "obligatory", "count": 1}], "count": 1},
+  {
+    "key": "check_date",
+    "tags": [{"value": "2018-02-14", "count": 1}],
+    "count": 1
+  },
+  {"key": "free_dogs", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "date", "tags": [{"value": "2000s", "count": 1}], "count": 1},
+  {
+    "key": "piste:type",
+    "tags": [{"value": "playground", "count": 1}],
+    "count": 1
+  },
+  {"key": "mofa", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "disabled", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "is_in",
+    "tags": [{"value": "Base Nautique de Saint-Victor-sur-Loire", "count": 1}],
+    "count": 1
+  },
+  {"key": "landcover", "tags": [{"value": "grass", "count": 1}], "count": 1},
+  {"key": "access:dogs", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "footway", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "square", "count": 1}], "count": 1}
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "recreation_ground", "count": 71}],
+    "count": 71
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "soccer", "count": 1},
+      {"value": "basketball", "count": 1},
+      {"value": "swimming", "count": 1},
+      {"value": "multi", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "piste sécurité routière", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "picnic_site", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "692900777J", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "519", "count": 1}], "count": 1}
+]

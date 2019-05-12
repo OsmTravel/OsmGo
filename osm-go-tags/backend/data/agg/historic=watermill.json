@@ -1,0 +1,22 @@
+[
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "watermill", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "watermill", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2005-05-30", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA01000014", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3325614", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Moulin de Crève-Cœur", "count": 1}],
+    "count": 1
+  }
+]

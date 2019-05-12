@@ -1,0 +1,242 @@
+[
+  {"key": "shop", "tags": [{"value": "butcher", "count": 701}], "count": 701},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 37 06 88", "count": 1},
+      {"value": "+33 478 84 02 88", "count": 1},
+      {"value": "+33 4 75 30 14 22", "count": 1},
+      {"value": "+33 4 76 75 22 16", "count": 1},
+      {"value": "+33 4 74 30 11 74", "count": 1},
+      {"value": "+33 4 74 51 33 13", "count": 1},
+      {"value": "+33 4 76 72 50 05", "count": 1},
+      {"value": "+33 4 78 47 29 10", "count": 1},
+      {"value": "+33 4 76 26 35 18", "count": 1},
+      {"value": "+33 4 78 61 16 70", "count": 1},
+      {"value": "+33 4 78 24 49 62", "count": 1},
+      {"value": "+33 4 76 95 10 16", "count": 1},
+      {"value": "+33 4 74 85 15 92", "count": 1},
+      {"value": "+33 4 74 85 19 15", "count": 1},
+      {"value": "+33 4 74 85 01 72", "count": 1},
+      {"value": "+33 6 40 09 28 25", "count": 1},
+      {"value": "+33 4 76 08 01 25", "count": 1},
+      {"value": "+33 4 74 85 08 46", "count": 1},
+      {"value": "+33 4 78 69 31 90", "count": 1},
+      {"value": "+33 4 79 71 96 92", "count": 1},
+      {"value": "+33475833767", "count": 1},
+      {"value": "+33 4 77 24 08 45", "count": 1},
+      {"value": "+33 4 77 24 03 84", "count": 1},
+      {"value": "+33 4 50 77 27 27", "count": 1},
+      {"value": "+33 4 79 55 51 41", "count": 1},
+      {"value": "+33 4 78 69 95 08", "count": 1},
+      {"value": "+33 4 76 71 70 42", "count": 1},
+      {"value": "+33 4 50 92 04 55", "count": 1},
+      {"value": "+33 4 77192070", "count": 1},
+      {"value": "+33 4 78 32 11 49", "count": 1},
+      {"value": "+33970359702", "count": 1},
+      {"value": "+33478484436", "count": 1},
+      {"value": "+33477542163", "count": 1},
+      {"value": "+33 4 76 90 70 89", "count": 1},
+      {"value": "+33 4 79000430", "count": 1},
+      {"value": "+33478486132", "count": 1},
+      {"value": "+33478874000", "count": 1},
+      {"value": "+33 4 79 56 54 79", "count": 1},
+      {"value": "+33 4 76 34 60 38", "count": 1},
+      {"value": "+33476772064", "count": 1},
+      {"value": "+33475853647", "count": 1},
+      {"value": "+33 4 75 45 11 18", "count": 1},
+      {"value": "+33 4 74 75 72 43", "count": 1},
+      {"value": "+33 4 79 25 50 29", "count": 1},
+      {"value": "+33 4 78 22 20 56", "count": 1},
+      {"value": "+33 4 50 92 24 80", "count": 1},
+      {"value": "+33 4 50 37 24 23", "count": 1},
+      {"value": "+33 4 75 29 90 30", "count": 1},
+      {"value": "+33 4 37 48 44 31", "count": 1},
+      {"value": "+33 4 76 08 40 94", "count": 1},
+      {"value": "+33 4 50 44 11 30", "count": 1},
+      {"value": "+33 4 79 00 64 07", "count": 1},
+      {"value": "+33 4 75 93 33 93", "count": 1}
+    ],
+    "count": 53
+  },
+  {
+    "key": "butcher",
+    "tags": [
+      {"value": "halal", "count": 20},
+      {"value": "pork", "count": 5},
+      {"value": "poultry", "count": 1},
+      {"value": "beef;pork;", "count": 1},
+      {"value": "beef;lamb;pork;veal", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 15},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 2}
+    ],
+    "count": 22
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.chillet.fr", "count": 1},
+      {"value": "http://www.bayle-boucher-saint-etienne.fr/", "count": 1},
+      {"value": "http://www.boucherie-triperie-avenel.fr", "count": 1},
+      {"value": "https://maisonmoraud-lyon7.weboucherie.fr/", "count": 1},
+      {"value": "www.guerra-lavigne.com", "count": 1},
+      {"value": "lafermedesbruneaux.jimdo.com", "count": 1},
+      {
+        "value": "http://www.boucherie-charcuterie-crest-voland.fr/",
+        "count": 1
+      },
+      {"value": "http://www.boucherie-piot-charvolin.com", "count": 1},
+      {"value": "http://www.boucheriesagne.com", "count": 1},
+      {"value": "http://la-belle-en-cuisse.fr/", "count": 1},
+      {"value": "http://www.villard-traiteur.fr", "count": 1},
+      {"value": "boucheriedemars.e-monsite.com", "count": 1},
+      {"value": "http://www.teyssier-salaisons.com/index.php", "count": 1},
+      {"value": "https://www.biolal.com/", "count": 1},
+      {"value": "https://www.boucheriedusaleve.fr/", "count": 1},
+      {"value": "http://www.charcuteriemoulin.com", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Boucherie Moirans", "count": 1},
+      {"value": "Michaël Paturel", "count": 1},
+      {"value": "SCIANDRA", "count": 1},
+      {"value": "M. Piot Frédéric", "count": 1},
+      {"value": "Bolomey Père et Fils", "count": 1},
+      {"value": "Marcel Charrière", "count": 1},
+      {"value": "Les bouchers de l'Herbasse", "count": 1},
+      {"value": "Patrick Baussion", "count": 1},
+      {"value": "Isabelle et Gilles Penin", "count": 1},
+      {"value": "Claude Desfonds", "count": 1},
+      {"value": "Mr et Mme Valençot", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Boucherie Charcuterie", "count": 1},
+      {
+        "value": "Boucherie - Charcuterie - Volailles - Plats cuisinés - Rôtisserie",
+        "count": 1
+      },
+      {"value": "Boucherie/charcuterie", "count": 1},
+      {
+        "value": "CTIVITE AGRICOLE-ELEVAGE BOVIN - VIANDE - VENTE DIRECTE",
+        "count": 1
+      },
+      {
+        "value": "Gestion financière abattoir industriel - boucherie",
+        "count": 1
+      },
+      {"value": "Boucherie;Charrcuterie", "count": 1},
+      {"value": "Charcuterie traiteur", "count": 1},
+      {"value": "Artisan boucher-charcutier-traiteur", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "craft", "tags": [{"value": "caterer", "count": 6}], "count": 6},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 5}, {"value": "1", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "teyssier.verdun@orange.fr", "count": 1},
+      {"value": "casula.boucherie73@gmail.com", "count": 1},
+      {"value": "contact@guerra-lavigne.com", "count": 1},
+      {"value": "teyssier.07160@orange.fr", "count": 1},
+      {"value": "contact@boucheriedusaleve.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "organic",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "traiteur", "count": 1},
+      {"value": "charcuterie; traiteur", "count": 1},
+      {"value": "boucherie-traiteur", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "diet:halal", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Piot-Charvolin-1661902757376260/",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/villardtraiteur/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "man_made", "tags": [{"value": "works", "count": 2}], "count": 2},
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "sandwich", "count": 1},
+      {"value": "regional;french", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "origin", "tags": [{"value": "turkish", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "258", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Cochonou", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-09-27", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "49292648000012", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "atm", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "bank", "count": 1}], "count": 1},
+  {"key": "produce", "tags": [{"value": "eggs/cow", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q2981260", "count": 1}], "count": 1}
+]

@@ -1,0 +1,8 @@
+[
+  {"key": "amenity", "tags": [{"value": "casino", "count": 1}], "count": 1},
+  {
+    "key": "leisure",
+    "tags": [{"value": "adult_gaming_centre", "count": 1}],
+    "count": 1
+  }
+]

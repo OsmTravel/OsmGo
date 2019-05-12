@@ -1,0 +1,71 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "electronics_repair", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 09 67 83", "count": 1},
+      {"value": "+33 4 75 55 14 78", "count": 1},
+      {"value": "+33 4 72 33 40 22", "count": 1},
+      {"value": "+33 4 76 85 45 50", "count": 1},
+      {"value": "+33 6 95012341", "count": 1},
+      {"value": "+33 8 11 03 17 00", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.pro-electro.com/", "count": 1},
+      {"value": "http://www.8fablab.fr", "count": 1},
+      {"value": "http://www.abconsole.com/", "count": 1},
+      {"value": "https://pcreparegrenoble.wordpress.com/", "count": 1},
+      {"value": "http://sav-canon.fr/eos-sud.html", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Fnac", "count": 1},
+      {"value": "AB Console", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "hazard", "tags": [{"value": "robot", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "electronics", "count": 1}], "count": 1},
+  {
+    "key": "electronics_repair",
+    "tags": [{"value": "appliance", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "identity",
+    "tags": [{"value": "p2p_economy commons", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "hackerspace", "count": 1}],
+    "count": 1
+  },
+  {"key": "workshop", "tags": [{"value": "fablab", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Réparation et reconditionnement de téléphones portables.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "sav.canon.sud@mysav.fr", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "shelter", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "tiles_oven", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "shelter_type",
+    "tags": [{"value": "weather_shelter", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Chateau dit \"de la Couaille\", enceinte datent de l'age de fer.\nVoir http://gallica.bnf.fr/ark:/12148/bpt6k5603688s/f295.image",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "Le_Chateau", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "iron-age", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://gallica.bnf.fr/ark:/12148/bpt6k5603688s/f295.image",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

@@ -1,0 +1,535 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "toilets", "count": 2461}],
+    "count": 2461
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "no", "count": 510},
+      {"value": "yes", "count": 58},
+      {"value": "Yes", "count": 1},
+      {"value": "0.50€", "count": 1},
+      {"value": "none", "count": 1}
+    ],
+    "count": 571
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 195},
+      {"value": "public", "count": 95},
+      {"value": "customers", "count": 53},
+      {"value": "private", "count": 11},
+      {"value": "key", "count": 10},
+      {"value": "permissive", "count": 9},
+      {"value": "no", "count": 7},
+      {"value": "destination", "count": 2}
+    ],
+    "count": 382
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 205},
+      {"value": "no", "count": 105},
+      {"value": "limited", "count": 23},
+      {"value": "designated", "count": 1},
+      {"value": "yess", "count": 1}
+    ],
+    "count": 335
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 144},
+      {"value": "no", "count": 37},
+      {"value": "seasonal", "count": 2}
+    ],
+    "count": 183
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Grand-Lyon", "count": 124},
+      {"value": "Ville d'Albertville", "count": 5},
+      {"value": "Camping La Nublière", "count": 3},
+      {"value": "Sibra", "count": 3},
+      {"value": "WC Public", "count": 3},
+      {"value": "Le Grand Lyon", "count": 2},
+      {"value": "JC Decaux", "count": 2},
+      {"value": "Semitag", "count": 2},
+      {"value": "STGM", "count": 1},
+      {"value": "SFTO", "count": 1},
+      {"value": "CMB", "count": 1},
+      {"value": "Shell", "count": 1},
+      {"value": "TCL", "count": 1},
+      {"value": "Grand Lyon", "count": 1},
+      {"value": "Vinci Autoroute", "count": 1},
+      {"value": "Roannais agglomération", "count": 1},
+      {"value": "Camping d'Hermance", "count": 1},
+      {"value": "Municipalité", "count": 1},
+      {"value": "Burzet", "count": 1},
+      {"value": "CERN", "count": 1},
+      {"value": "Bus station", "count": 1},
+      {"value": "Groupe URD", "count": 1},
+      {"value": "Parking", "count": 1},
+      {"value": "Le Schuss", "count": 1},
+      {"value": "Dans la bibliothèque", "count": 1},
+      {"value": "Ville de Tassin la Demi-Lune", "count": 1},
+      {"value": "Public", "count": 1},
+      {"value": "Municipality", "count": 1},
+      {"value": "public", "count": 1},
+      {"value": "Office de Tourisme Sud Ardèche Rhône et Villages", "count": 1},
+      {"value": "GPM2", "count": 1},
+      {"value": "WC de l'ancienne école", "count": 1},
+      {"value": "Commune", "count": 1},
+      {"value": "SNCF", "count": 1}
+    ],
+    "count": 170
+  },
+  {
+    "key": "toilets:disposal",
+    "tags": [
+      {"value": "flush", "count": 134},
+      {"value": "pitlatrine", "count": 12},
+      {"value": "chemical", "count": 4},
+      {"value": "dry toilet", "count": 2},
+      {"value": "dry_toilet", "count": 2},
+      {"value": "bucket", "count": 2}
+    ],
+    "count": 156
+  },
+  {
+    "key": "unisex",
+    "tags": [{"value": "yes", "count": 142}, {"value": "no", "count": 4}],
+    "count": 146
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "\"ref\" = \"code Identifiant des données de Lyon DSIT\"",
+        "count": 125
+      },
+      {"value": "toilettes sèches", "count": 2},
+      {"value": "Locked/Verrouillées", "count": 1},
+      {"value": "0.2", "count": 1},
+      {"value": "level 1 Gondola Station", "count": 1},
+      {"value": "0.2E", "count": 1},
+      {"value": "FIXME ?", "count": 1},
+      {"value": "Fermé pour cause de dégradations répétées", "count": 1},
+      {"value": "fermé", "count": 1},
+      {"value": "0.20€", "count": 1},
+      {"value": "dry toilets/ n°2", "count": 1},
+      {"value": "Vétustes", "count": 1},
+      {"value": "no seating", "count": 1},
+      {
+        "value": "position might be wrong (between here and 100m north west)",
+        "count": 1
+      },
+      {"value": "0,20 €", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 141
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "W78123", "count": 1},
+      {"value": "W23435", "count": 1},
+      {"value": "W86785", "count": 1},
+      {"value": "W53488", "count": 1},
+      {"value": "W26925", "count": 1},
+      {"value": "W34191", "count": 1},
+      {"value": "W02674", "count": 1},
+      {"value": "W57835", "count": 1},
+      {"value": "W56615", "count": 1},
+      {"value": "W53666", "count": 1},
+      {"value": "W44423", "count": 1},
+      {"value": "W11310", "count": 1},
+      {"value": "W55207", "count": 1},
+      {"value": "W49624", "count": 1},
+      {"value": "W26341", "count": 1},
+      {"value": "W22514", "count": 1},
+      {"value": "W58548", "count": 1},
+      {"value": "W58465", "count": 1},
+      {"value": "W75702", "count": 1},
+      {"value": "W12914", "count": 1},
+      {"value": "W76693", "count": 1},
+      {"value": "W56880", "count": 1},
+      {"value": "W44624", "count": 1},
+      {"value": "W96469", "count": 1},
+      {"value": "W86641", "count": 1},
+      {"value": "W56571", "count": 1},
+      {"value": "W26431", "count": 1},
+      {"value": "W68517", "count": 1},
+      {"value": "W42872", "count": 1},
+      {"value": "W86314", "count": 1},
+      {"value": "W30428", "count": 1},
+      {"value": "W73242", "count": 1},
+      {"value": "W54174", "count": 1},
+      {"value": "W29103", "count": 1},
+      {"value": "W65186", "count": 1},
+      {"value": "W54342", "count": 1},
+      {"value": "W63121", "count": 1},
+      {"value": "W89606", "count": 1},
+      {"value": "W07425", "count": 1},
+      {"value": "W79367", "count": 1},
+      {"value": "W44147", "count": 1},
+      {"value": "W47112", "count": 1},
+      {"value": "W77598", "count": 1},
+      {"value": "W53641", "count": 1},
+      {"value": "W65533", "count": 1},
+      {"value": "W90913", "count": 1},
+      {"value": "W25384", "count": 1},
+      {"value": "W26468", "count": 1},
+      {"value": "W86375", "count": 1},
+      {"value": "W84825", "count": 1},
+      {"value": "W54882", "count": 1},
+      {"value": "W57005", "count": 1},
+      {"value": "W53875", "count": 1},
+      {"value": "W17291", "count": 1},
+      {"value": "W17341", "count": 1},
+      {"value": "W47097", "count": 1},
+      {"value": "W93105", "count": 1},
+      {"value": "W33613", "count": 1},
+      {"value": "W66754", "count": 1},
+      {"value": "W98193", "count": 1},
+      {"value": "W21026", "count": 1},
+      {"value": "W44533", "count": 1},
+      {"value": "W81366", "count": 1},
+      {"value": "W45570", "count": 1},
+      {"value": "W66696", "count": 1},
+      {"value": "W92310", "count": 1},
+      {"value": "W70776", "count": 1},
+      {"value": "W04873", "count": 1},
+      {"value": "W84434", "count": 1},
+      {"value": "W17231", "count": 1},
+      {"value": "W48862", "count": 1},
+      {"value": "W94238", "count": 1},
+      {"value": "W36623", "count": 1},
+      {"value": "W47137", "count": 1},
+      {"value": "W56803", "count": 1},
+      {"value": "W85552", "count": 1},
+      {"value": "W31731", "count": 1},
+      {"value": "W66688", "count": 1},
+      {"value": "W48241", "count": 1},
+      {"value": "W82733", "count": 1},
+      {"value": "W57545", "count": 1},
+      {"value": "W60255", "count": 1},
+      {"value": "W26549", "count": 1},
+      {"value": "W43618", "count": 1},
+      {"value": "W97166", "count": 1},
+      {"value": "W85716", "count": 1},
+      {"value": "W85893", "count": 1},
+      {"value": "W84692", "count": 1},
+      {"value": "W30058", "count": 1},
+      {"value": "W46618", "count": 1},
+      {"value": "W68660", "count": 1},
+      {"value": "W16981", "count": 1},
+      {"value": "W53688", "count": 1},
+      {"value": "W19605", "count": 1},
+      {"value": "W82879", "count": 1},
+      {"value": "W68346", "count": 1},
+      {"value": "W38139", "count": 1},
+      {"value": "W81636", "count": 1},
+      {"value": "W47323", "count": 1},
+      {"value": "W54510", "count": 1},
+      {"value": "W99556", "count": 1},
+      {"value": "W02744", "count": 1},
+      {"value": "W11372", "count": 1},
+      {"value": "W88157", "count": 1},
+      {"value": "W41488", "count": 1},
+      {"value": "W34554", "count": 1},
+      {"value": "W24456", "count": 1},
+      {"value": "W29748", "count": 1},
+      {"value": "W42672", "count": 1},
+      {"value": "W74415", "count": 1},
+      {"value": "W82106", "count": 1},
+      {"value": "W27599", "count": 1},
+      {"value": "W16491", "count": 1},
+      {"value": "W15281", "count": 1},
+      {"value": "W62416", "count": 1},
+      {"value": "W34142", "count": 1},
+      {"value": "W33335", "count": 1},
+      {"value": "W41405", "count": 1},
+      {"value": "W01077", "count": 1},
+      {"value": "W45508", "count": 1},
+      {"value": "W51315", "count": 1},
+      {"value": "W22584", "count": 1},
+      {"value": "W78378", "count": 1},
+      {"value": "W89529", "count": 1},
+      {"value": "W33315", "count": 1}
+    ],
+    "count": 125
+  },
+  {
+    "key": "male",
+    "tags": [{"value": "yes", "count": 71}, {"value": "no", "count": 11}],
+    "count": 82
+  },
+  {
+    "key": "female",
+    "tags": [{"value": "yes", "count": 58}, {"value": "no", "count": 13}],
+    "count": 71
+  },
+  {
+    "key": "toilets:position",
+    "tags": [
+      {"value": "seated", "count": 25},
+      {"value": "seated;urinal", "count": 21},
+      {"value": "squat", "count": 12},
+      {"value": "urinal", "count": 11}
+    ],
+    "count": 69
+  },
+  {
+    "key": "diaper",
+    "tags": [
+      {"value": "no", "count": 49},
+      {"value": "yes", "count": 1},
+      {"value": "room", "count": 1}
+    ],
+    "count": 51
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 44}], "count": 44},
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 16},
+      {"value": "1", "count": 6},
+      {"value": "-1", "count": 4},
+      {"value": "2", "count": 2},
+      {"value": "1.5", "count": 1}
+    ],
+    "count": 29
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "yes", "count": 14}, {"value": "room", "count": 9}],
+    "count": 23
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Toilettes sèches", "count": 3},
+      {"value": "toilettes sèches", "count": 2},
+      {"value": "Toilette Ecologique", "count": 2},
+      {"value": "Toilettes publiques", "count": 2},
+      {"value": "toilettes pour les conducteurs Semitag", "count": 2},
+      {"value": "03-MAR-11 11:53:12", "count": 1},
+      {"value": "27-FEB-11 14:30:01", "count": 1},
+      {"value": "Toilette Sèche", "count": 1},
+      {"value": "28-FEB-11 12:41:44", "count": 1},
+      {"value": "28-FEB-11 13:52:30", "count": 1},
+      {"value": "02-MAR-11 14:20:28", "count": 1},
+      {"value": "02-MAR-11 13:29:57", "count": 1},
+      {"value": "Dans la gare routière souterraine", "count": 1},
+      {
+        "value": "Public toilets sometimes closed for the winter season",
+        "count": 1
+      },
+      {
+        "value": "Toilettes publiques à coté de la police minicipale",
+        "count": 1
+      },
+      {"value": "Table à Langer", "count": 1},
+      {"value": "Sanitaire", "count": 1}
+    ],
+    "count": 23
+  },
+  {"key": "room", "tags": [{"value": "toilets", "count": 12}], "count": 12},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "4357", "count": 1},
+      {"value": "2542.312988", "count": 1},
+      {"value": "1945.819580", "count": 1},
+      {"value": "2723.520020", "count": 1},
+      {"value": "2098.187012", "count": 1},
+      {"value": "2200.326660", "count": 1},
+      {"value": "2104.195557", "count": 1},
+      {"value": "1838", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 5},
+      {"value": "iLOE 1.9", "count": 2},
+      {"value": "Potlatch 0.10f", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "cmt",
+    "tags": [
+      {"value": "27-FEB-11 14:30:01", "count": 1},
+      {"value": "28-FEB-11 12:41:44", "count": 1},
+      {"value": "28-FEB-11 13:52:30", "count": 1},
+      {"value": "02-MAR-11 14:20:28", "count": 1},
+      {"value": "02-MAR-11 13:29:57", "count": 1},
+      {"value": "03-MAR-11 11:53:12", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "sym", "tags": [{"value": "Restroom", "count": 6}], "count": 6},
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1", "count": 3},
+      {"value": "1", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "shower",
+    "tags": [{"value": "hot", "count": 4}, {"value": "yes", "count": 1}],
+    "count": 5
+  },
+  {"key": "supervised", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "location",
+    "tags": [
+      {"value": "underground", "count": 2},
+      {"value": "indoor", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "gender",
+    "tags": [{"value": "male", "count": 3}, {"value": "female", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "toilets:urinal",
+    "tags": [
+      {"value": "4", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "2", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "toilets:wc",
+    "tags": [{"value": "2", "count": 2}, {"value": "3", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "washing",
+    "tags": [{"value": "2", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "position", "count": 1},
+      {"value": "Emplacement ?", "count": 1},
+      {"value": "Il y a surement des douches ici.", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "toilets:handwashing",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "public", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "capacity", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {"key": "foot", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "doityourself", "count": 1},
+      {"value": "ticket", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "rental", "tags": [{"value": "ski", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "EMMX7rdskFPwNkM470xmfg", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {
+        "value": "vérifier emplacement proche de la vente de forfaits",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "Fee", "tags": [{"value": "0,20", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {
+        "value": "Verrou et poignet moyennement accessible. Toilette avec barre d'appui.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "seamark:small_craft_facility:category",
+    "tags": [{"value": "toilets", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2015-04-01", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monderoux_-_4.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "seats", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "pissoir", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "seamark:type",
+    "tags": [{"value": "small_craft_facility", "count": 1}],
+    "count": 1
+  },
+  {"key": "dog", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "opening_date",
+    "tags": [{"value": "2018-04-16", "count": 1}],
+    "count": 1
+  },
+  {"key": "comment", "tags": [{"value": "men only", "count": 1}], "count": 1},
+  {
+    "key": "emergency",
+    "tags": [{"value": "defibrillator", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "boules", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "pitch", "count": 1}], "count": 1},
+  {"key": "dryer", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "washing_machine", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "park_ride", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "floor", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

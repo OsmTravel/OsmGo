@@ -1,0 +1,14 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "war_memorial", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "fr:Mémorial de fusillés les 19-20-21 mars 1944", "count": 1}
+    ],
+    "count": 1
+  }
+]

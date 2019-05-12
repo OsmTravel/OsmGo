@@ -1,0 +1,9 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "vacuum_cleaner", "count": 6}],
+    "count": 6
+  },
+  {"key": "operator", "tags": [{"value": "Dutal", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

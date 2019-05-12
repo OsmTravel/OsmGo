@@ -1,0 +1,151 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "bridge", "count": 201}],
+    "count": 201
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 87}, {"value": "2", "count": 3}],
+    "count": 90
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3397236", "count": 2},
+      {"value": "Q3368269", "count": 1},
+      {"value": "Q28573101", "count": 1},
+      {"value": "Q28573111", "count": 1},
+      {"value": "Q3556673", "count": 1},
+      {"value": "Q3396594", "count": 1},
+      {"value": "Q3368274", "count": 1},
+      {"value": "Q3396474", "count": 1},
+      {"value": "Q27094242", "count": 1},
+      {"value": "Q3397554", "count": 1},
+      {"value": "Q3368281", "count": 1},
+      {"value": "Q3396675", "count": 1},
+      {"value": "Q3368293", "count": 1},
+      {"value": "Q3396503", "count": 1},
+      {"value": "Q3396601", "count": 1},
+      {"value": "Q3556601", "count": 1},
+      {"value": "Q3396690", "count": 1},
+      {"value": "Q3368319", "count": 1},
+      {"value": "Q3396621", "count": 1},
+      {"value": "Q3397146", "count": 1},
+      {"value": "Q15576219", "count": 1},
+      {"value": "Q3396750", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Pont de l'Île Barbe", "count": 2},
+      {"value": "fr:Passerelle de l'Homme de la Roche", "count": 1},
+      {"value": "fr:Viaduc de la Quarantaine", "count": 1},
+      {"value": "fr:Pont Kitchener-Marchand", "count": 1},
+      {"value": "fr:Passerelle Paul Couturier.", "count": 1},
+      {"value": "fr:Pont Bonaparte", "count": 1},
+      {"value": "fr:Pont Maréchal Juin", "count": 1},
+      {"value": "fr:Pont de la Feuillée", "count": 1},
+      {"value": "fr:Passerelle Saint-Vincent", "count": 1},
+      {"value": "fr:Passerelle Masaryk", "count": 1},
+      {"value": "fr:Pont Pasteur", "count": 1},
+      {"value": "fr:Pont Clemenceau (Lyon)", "count": 1},
+      {"value": "fr:Pont Kœnig", "count": 1},
+      {"value": "fr:Viaduc de Perrache", "count": 1},
+      {"value": "fr:Pont Raymond Barre", "count": 1},
+      {"value": "fr:Passerelle du Palais de Justice", "count": 1},
+      {"value": "fr:Pont Raymond-Poincaré", "count": 1},
+      {"value": "fr:Pont Lesdiguières du Pont-de-Claix", "count": 1},
+      {"value": "fr:Pont de Seyssel", "count": 1},
+      {"value": "fr:Pont de Croix-Luizet", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 4}, {"value": "viaduct", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "arch", "count": 3}, {"value": "beam", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "primary", "count": 1},
+      {"value": "unclassified", "count": 1},
+      {"value": "path", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 1},
+      {"value": "paving_stones", "count": 1},
+      {"value": "pebblestone", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "historic", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "parking", "count": 1},
+      {"value": "shelter", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Travaux de décembre 2017 à ?", "count": 1},
+      {
+        "value": "This is the original bridge - only useable by foot or bike",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Passage de faune sauvage", "count": 1},
+      {"value": "Pont construit en 1608-1610 à une arche", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "1947", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1898-05-27", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117241", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Pont_de_Croix-Luizet_%C3%A0_Villeurbanne.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "maxheight", "tags": [{"value": "1.9", "count": 1}], "count": 1}
+]

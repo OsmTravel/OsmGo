@@ -1,0 +1,10 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "telecommunication", "count": 14}],
+    "count": 14
+  },
+  {"key": "function", "tags": [{"value": "retail", "count": 4}], "count": 4},
+  {"key": "shop", "tags": [{"value": "mobile_phone", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Orange", "count": 1}], "count": 1}
+]

@@ -1,0 +1,55 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "medical_supply", "count": 38}],
+    "count": 38
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.bastide-vienne.com/", "count": 1},
+      {"value": "http://www.servi-cal.com/", "count": 1},
+      {"value": "http://www.espacemedical.eu/", "count": 1},
+      {"value": "http://www.comeda.net/", "count": 1},
+      {"value": "http://www.lamaisondumedical.com/", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 56 00 00", "count": 1},
+      {"value": "+33 4 74 85 73 13", "count": 1},
+      {"value": "+33 4 77 24 28 87", "count": 1},
+      {"value": "+33 4 74 85 41 80", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "healthcare", "tags": [{"value": "dentist", "count": 2}], "count": 2},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 24 15 09", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Vente et location de matériel médical", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "biology", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Cabinet infirmier", "count": 1}],
+    "count": 1
+  }
+]

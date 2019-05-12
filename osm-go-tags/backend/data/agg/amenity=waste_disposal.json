@@ -1,0 +1,124 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "waste_disposal", "count": 413}],
+    "count": 413
+  },
+  {
+    "key": "waste",
+    "tags": [
+      {"value": "trash", "count": 38},
+      {"value": "grey_water", "count": 4},
+      {"value": "container", "count": 2},
+      {"value": "recycling", "count": 1},
+      {"value": "organic", "count": 1}
+    ],
+    "count": 46
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "CCMPCVV", "count": 23},
+      {"value": "Communauté de Communes du Lac d'Aiguebelette", "count": 3},
+      {"value": "dechetterie", "count": 1},
+      {"value": "communauté de communes du Cœur des Bauges", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "recycling_type",
+    "tags": [{"value": "container", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "recycling:glass",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "recycling:paper",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Molok", "count": 1},
+      {"value": "Bing imagery is outdated", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "caravan_site", "count": 1},
+      {"value": "picnic_site", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "waste_type",
+    "tags": [{"value": "underfloor_container", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Local Poubelles", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:glass_bottles",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "sanitary_dump_station",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:cartons",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:plastic",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:magazines",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:newspaper",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:paper_packaging",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:plastic_bottles",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:plastic_packaging",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "ruins", "count": 1}], "count": 1},
+  {
+    "key": "location",
+    "tags": [{"value": "underground", "count": 1}],
+    "count": 1
+  }
+]

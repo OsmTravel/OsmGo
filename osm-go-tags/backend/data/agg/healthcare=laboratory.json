@@ -1,0 +1,55 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "laboratory", "count": 18}],
+    "count": 18
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.cbm69.fr/", "count": 1},
+      {
+        "value": "http://www.unilians.fr/laboratoire-unilians-st-symphorien-coise",
+        "count": 1
+      },
+      {
+        "value": "http://www.bionecy.fr/laboratoire/site-des-carres-annecy-le-vieux",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "biology", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 78 89 73 46", "count": 1},
+      {"value": "+33478445155", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 89 76 76", "count": 1},
+      {"value": "+33478190034", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Laboratoire de Biologie Médicale", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

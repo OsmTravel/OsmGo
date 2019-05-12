@@ -1,0 +1,235 @@
+[
+  {"key": "natural", "tags": [{"value": "spring", "count": 550}], "count": 550},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "2127", "count": 2},
+      {"value": "1306", "count": 2},
+      {"value": "1725", "count": 1},
+      {"value": "2178", "count": 1},
+      {"value": "2053", "count": 1},
+      {"value": "2068", "count": 1},
+      {"value": "2070", "count": 1},
+      {"value": "2072", "count": 1},
+      {"value": "1425", "count": 1},
+      {"value": "1527", "count": 1},
+      {"value": "1265", "count": 1},
+      {"value": "1871", "count": 1},
+      {"value": "2128", "count": 1},
+      {"value": "2133", "count": 1},
+      {"value": "1544", "count": 1},
+      {"value": "468.1", "count": 1},
+      {"value": "1221", "count": 1},
+      {"value": "2173", "count": 1},
+      {"value": "1507", "count": 1},
+      {"value": "1617", "count": 1},
+      {"value": "1914", "count": 1},
+      {"value": "1732", "count": 1},
+      {"value": "1667", "count": 1},
+      {"value": "1326", "count": 1},
+      {"value": "1726", "count": 1},
+      {"value": "1254", "count": 1},
+      {"value": "1622", "count": 1},
+      {"value": "1690", "count": 1},
+      {"value": "1082", "count": 1},
+      {"value": "1829", "count": 1},
+      {"value": "1869", "count": 1},
+      {"value": "1291", "count": 1},
+      {"value": "1310", "count": 1},
+      {"value": "1692", "count": 1},
+      {"value": "1466", "count": 1},
+      {"value": "1350", "count": 1},
+      {"value": "2092", "count": 1},
+      {"value": "1691", "count": 1},
+      {"value": "1828", "count": 1},
+      {"value": "1990", "count": 1},
+      {"value": "1505", "count": 1},
+      {"value": "885", "count": 1},
+      {"value": "1220", "count": 1},
+      {"value": "1935", "count": 1},
+      {"value": "1100", "count": 1},
+      {"value": "1300", "count": 1},
+      {"value": "1280", "count": 1}
+    ],
+    "count": 49
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 18},
+      {"value": "conditional", "count": 17},
+      {"value": "no", "count": 7}
+    ],
+    "count": 42
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "drinking_water", "count": 13},
+      {"value": "fountain", "count": 6},
+      {"value": "lavoir", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "intermittent",
+    "tags": [{"value": "yes", "count": 9}, {"value": "no", "count": 1}],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Pas évident de récupérer l'eau", "count": 2},
+      {
+        "value": "Il s'agit d'une source captée sans doute, avec tuyau et receptacle, à sec le 21/07/2014",
+        "count": 1
+      },
+      {
+        "value": "Coule très lentement au goutte à goutte depuis la roche",
+        "count": 1
+      },
+      {
+        "value": "Source multi-siphons explorée en plongée (encore en cours)",
+        "count": 1
+      },
+      {"value": "La source est au fond de la grotte des fées", "count": 1},
+      {
+        "value": "Source captée transportée par tuyau à l'abri juste en dessous",
+        "count": 1
+      },
+      {"value": "Source guérisseuse par ablution", "count": 1},
+      {"value": "Chambre de source privée", "count": 1},
+      {"value": "Source d'eau potable", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "drinking_water:legal",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "sur cadastre, donc méfiance", "count": 1},
+      {"value": "coordonnées+alti relevées au GPX (précision 5m)", "count": 1},
+      {
+        "value": "la source précédente, du cadastre devait indiquer une ancienne source, là, c'était sec et l'eau sortait bien plus bas",
+        "count": 1
+      },
+      {"value": "autre relevé d'alti, un autre jour : 1882m", "count": 1},
+      {
+        "value": "Sly: cadastre indique +haut encore.Du mal à comprendre vue la falaise qui surplombe cette source presque intégralement souterraine. * Rép. Al-Hun: à l'étiage vasque à env. 20m de l'entrée, elle-même ss surplomb falaise.Mais l'orientation paraît trop au Nd",
+        "count": 1
+      },
+      {"value": "toponymie incertaine (bivouak.net)", "count": 1},
+      {
+        "value": "2 altitudes mesurées 2 jours différents : 1079 et 1084 -- la source se trouve sous l'abri, qui est un gros rocher",
+        "count": 1
+      },
+      {"value": "A repositionner plus precisement", "count": 1},
+      {"value": "Potabilité non-contrôlée", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 5},
+      {"value": "viewpoint", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "je ne sais pas comment indiqué que la source est au fond de la grotte des fées",
+        "count": 1
+      },
+      {"value": "vérifier alti et position", "count": 1},
+      {"value": "eau potable ?", "count": 1},
+      {"value": "resurvey", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "sport", "tags": [{"value": "scuba_diving", "count": 3}], "count": 3},
+  {
+    "key": "scuba_diving:type:speleology",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "water",
+    "tags": [{"value": "spring", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {"key": "landuse", "tags": [{"value": "basin", "count": 2}], "count": 2},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3491876", "count": 1},
+      {"value": "Q2859234", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "waterway",
+    "tags": [
+      {"value": "waterfall", "count": 1},
+      {"value": "stream", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "water_tap", "count": 1},
+      {"value": "water_well", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Source de la Doye", "count": 1},
+      {"value": "fr:Aqueduc des monts d'Or", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "start_date", "tags": [{"value": "1893", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "www.grottocenter.org/html/file_De.php?category=entry&id=412",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1},
+  {"key": "ele:accuracy", "tags": [{"value": "1.0", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref", "tags": [{"value": "07735X0017/S", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "aqueduct", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1991-02-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118149", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1}
+]

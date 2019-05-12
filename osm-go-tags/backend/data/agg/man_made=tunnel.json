@@ -1,0 +1,9 @@
+[
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "layer",
+    "tags": [{"value": "-1", "count": 6}, {"value": "-3", "count": 3}],
+    "count": 9
+  },
+  {"key": "man_made", "tags": [{"value": "tunnel", "count": 9}], "count": 9}
+]

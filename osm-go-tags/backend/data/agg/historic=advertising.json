@@ -1,0 +1,17 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "advertising", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "advertising",
+    "tags": [{"value": "wall_painting", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "inscription",
+    "tags": [{"value": "Vins à la Commission A. Laget Courtier", "count": 1}],
+    "count": 1
+  }
+]

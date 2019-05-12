@@ -1,0 +1,210 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "construction", "count": 244}],
+    "count": 244
+  },
+  {
+    "key": "construction",
+    "tags": [
+      {"value": "secondary", "count": 26},
+      {"value": "unclassified", "count": 25},
+      {"value": "path", "count": 24},
+      {"value": "residential", "count": 23},
+      {"value": "primary", "count": 13},
+      {"value": "service", "count": 10},
+      {"value": "footway", "count": 3},
+      {"value": "track", "count": 2},
+      {"value": "tertiary", "count": 2},
+      {"value": "cycleway", "count": 2},
+      {"value": "trunk", "count": 2},
+      {"value": "pedestrian", "count": 1},
+      {"value": "steps", "count": 1},
+      {"value": "trunk_link", "count": 1}
+    ],
+    "count": 135
+  },
+  {
+    "key": "piste:type",
+    "tags": [{"value": "nordic", "count": 56}],
+    "count": 56
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [
+      {"value": "classic+skating", "count": 31},
+      {"value": "classic;skating", "count": 10},
+      {"value": "backcountry", "count": 9},
+      {"value": "skating", "count": 5}
+    ],
+    "count": 55
+  },
+  {"key": "winter_road", "tags": [{"value": "yes", "count": 38}], "count": 38},
+  {"key": "oneway", "tags": [{"value": "yes", "count": 32}], "count": 32},
+  {
+    "key": "piste:difficulty",
+    "tags": [
+      {"value": "easy", "count": 16},
+      {"value": "novice", "count": 7},
+      {"value": "intermediate", "count": 6}
+    ],
+    "count": 29
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 20},
+      {"value": "gravel", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 2", "count": 4},
+      {"value": "D 1006", "count": 4},
+      {"value": "D 984c", "count": 4},
+      {"value": "D 15c", "count": 3},
+      {"value": "D 328", "count": 1},
+      {"value": "D 14", "count": 1},
+      {"value": "D 14a", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "opening_date",
+    "tags": [
+      {"value": "2018-08-30", "count": 10},
+      {"value": "2020-07-01", "count": 4},
+      {"value": "2019-02-14", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "50", "count": 10},
+      {"value": "80", "count": 3},
+      {"value": "30", "count": 1},
+      {"value": "20", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 11},
+      {"value": "continue", "count": 3}
+    ],
+    "count": 14
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 8},
+      {"value": "private", "count": 2},
+      {"value": "destination", "count": 2}
+    ],
+    "count": 12
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "eternally under construction: nordic ski trails - only present during the winter ski season",
+        "count": 6
+      },
+      {
+        "value": "fermé jusque fin 2018 (prévisionnel) suite acte de vandalisme",
+        "count": 1
+      },
+      {"value": "fermeture temporaire ou définitive (01/2012)", "count": 1},
+      {"value": "GPS seul", "count": 1},
+      {"value": "Le Nom changera peut etre plustard...", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1", "count": 6},
+      {"value": "1", "count": 3},
+      {"value": "-1;0", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "fixme:note",
+    "tags": [{"value": "GPS seul", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2015-02-15", "count": 8}],
+    "count": 8
+  },
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "check_date",
+    "tags": [
+      {"value": "2017-06-01", "count": 2},
+      {"value": "2017-12-25", "count": 1},
+      {"value": "2019-02-14", "count": 1},
+      {"value": "2018-07-15", "count": 1},
+      {"value": "2018-04-27", "count": 1},
+      {"value": "2018-12-05", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note:fr",
+    "tags": [
+      {
+        "value": "eternellement en construction! : pistes de ski nordique - présentes uniquement pendant la saison de ski hivernale",
+        "count": 6
+      }
+    ],
+    "count": 6
+  },
+  {"key": "smoothness", "tags": [{"value": "good", "count": 6}], "count": 6},
+  {"key": "bridge", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "foot",
+    "tags": [{"value": "designated", "count": 3}, {"value": "yes", "count": 2}],
+    "count": 5
+  },
+  {"key": "lanes", "tags": [{"value": "2", "count": 4}], "count": 4},
+  {"key": "old_ref", "tags": [{"value": "N 6", "count": 4}], "count": 4},
+  {"key": "bicycle", "tags": [{"value": "designated", "count": 4}], "count": 4},
+  {
+    "key": "segregated",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "maxheight", "tags": [{"value": "4.3", "count": 2}], "count": 2},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 2}],
+    "count": 2
+  },
+  {"key": "maxspeed:type", "tags": [{"value": "sign", "count": 2}], "count": 2},
+  {
+    "key": "sidewalk",
+    "tags": [{"value": "right", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "-1;0", "count": 1}, {"value": "-1", "count": 1}],
+    "count": 2
+  },
+  {"key": "busway", "tags": [{"value": "lane", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "cycleway",
+    "tags": [{"value": "share_busway", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,21 @@
+[
+  {"key": "shop", "tags": [{"value": "haberdashery", "count": 5}], "count": 5},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "\"Mercerie créative\"", "count": 1},
+      {"value": "cours, ateliers DIY, mercerie créative", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 75 80 71 69", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://mamiedanslesorties.fr/", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {"key": "craft", "tags": [{"value": "jeweller", "count": 6}], "count": 6},
+  {"key": "shop", "tags": [{"value": "jewelry", "count": 3}], "count": 3},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 20 72", "count": 1},
+      {"value": "+33 4 77 24 21 68", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.yvescaire.com", "count": 1},
+      {"value": "http://www.bijouteriepupier.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "bijouteriepupier@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "repair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

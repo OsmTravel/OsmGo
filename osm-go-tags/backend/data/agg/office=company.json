@@ -1,0 +1,604 @@
+[
+  {"key": "office", "tags": [{"value": "company", "count": 518}], "count": 518},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.alphageo.fr", "count": 3},
+      {"value": "http://www.groupeperraud.com/", "count": 3},
+      {"value": "www.lesservicesdemagali.fr/", "count": 2},
+      {"value": "http://www.satoriandpartners.com", "count": 1},
+      {"value": "http://www.col-inn.net/", "count": 1},
+      {"value": "http://www.bsm-platrerie-peinture.fr/", "count": 1},
+      {"value": "http://www.woopa.coop", "count": 1},
+      {"value": "http://www.absalto.com/", "count": 1},
+      {"value": "http://www.leadformance.com/", "count": 1},
+      {
+        "value": "www.free-dom.fr/Amberieu-en-bugey/index-amberieu-en-bugey.php#",
+        "count": 1
+      },
+      {"value": "http://www.free-dom.fr/valence", "count": 1},
+      {"value": "www.free-dom.fr/La%20Mure/index-la-mure.php", "count": 1},
+      {"value": "www.free-dom.fr/LyonNord/index-Lyon-Nord.php", "count": 1},
+      {"value": "www.free-dom.fr/Grenoble/index-grenoble.php", "count": 1},
+      {"value": "http://www.scoop-grenoble.fr/", "count": 1},
+      {"value": "http://www.webu.coop", "count": 1},
+      {
+        "value": "http://www.azae.com/index-des-agences-par-ville/agence-azae-villeurbanne-69100-104.html/",
+        "count": 1
+      },
+      {"value": "www.ldlc.com", "count": 1},
+      {"value": "http://www.thecoffret.com", "count": 1},
+      {"value": "http://www.almacg.fr/", "count": 1},
+      {
+        "value": "www.petits-fils.com/nos-agences/agence-de-villeurbanne/",
+        "count": 1
+      },
+      {"value": "www.vivaservices-saint-priest.fr", "count": 1},
+      {"value": "http://s2itec.fr", "count": 1},
+      {"value": "www.shiva.fr/menage-repassage-domicile/annecy", "count": 1},
+      {"value": "www.shiva.fr", "count": 1},
+      {"value": "https://domclic.fr/", "count": 1},
+      {"value": "www.sintec-ingenierie.com", "count": 1},
+      {"value": "http://www.snowsat.com", "count": 1},
+      {"value": "www.essentiel-domicile.fr", "count": 1},
+      {"value": "http://www.urvika.com/", "count": 1},
+      {"value": "lyon6.apef-services.fr/", "count": 1},
+      {"value": "chambery.apef-services.fr/", "count": 1},
+      {"value": "http://www.fecou.com", "count": 1},
+      {
+        "value": "http://www.naturhouse.fr/liste-centres/501-lyon-4",
+        "count": 1
+      },
+      {"value": "http://www.dronealps.com", "count": 1},
+      {"value": "www.vivaservices-villefranche.fr/", "count": 1},
+      {"value": "http://www.voyageurs-du-temps.fr/", "count": 1},
+      {"value": "www.karldifoggia.fr/", "count": 1},
+      {
+        "value": "www.azae.com/agence-azae-lyon-centre-69001-105.html",
+        "count": 1
+      },
+      {"value": "http://cycleco.eu/", "count": 1},
+      {"value": "www.petits-fils.com", "count": 1},
+      {"value": "aubenas.centreservices.fr/accueil.php", "count": 1},
+      {"value": "www.pepinieresvernein.fr/", "count": 1},
+      {"value": "essentiel-domicile.fr/craponne/", "count": 1},
+      {
+        "value": "www.naturhouse.fr/liste-centres/128-villefranche-sur-saone",
+        "count": 1
+      },
+      {"value": "http://lyon.centreservices.fr/accueil.php", "count": 1},
+      {"value": "https://rhone-alpes.enercoop.fr/", "count": 1},
+      {"value": "www.idealbox.fr/", "count": 1},
+      {"value": "http://www.renovation-lepetitcastor.fr/", "count": 1},
+      {"value": "www.aspiration-husky-38.fr/", "count": 1},
+      {"value": "www.aspiration-husky-26-07.fr/", "count": 1},
+      {"value": "http://www.cgi.fr", "count": 1},
+      {
+        "value": "www.family-sphere.com/details-family+sphere+a+valence-5127.html",
+        "count": 1
+      },
+      {"value": "http://www.gimel.fr", "count": 1},
+      {"value": "http://samaro.fr/", "count": 1},
+      {"value": "http://www.cotierefermetures.fr/", "count": 1},
+      {"value": "http://www.lastephanoise.com/", "count": 1},
+      {"value": "http://www.medelpharm.com/", "count": 1},
+      {"value": "http://cavagnolo-accordeon.com/", "count": 1},
+      {"value": "http://www.weltek.fr/", "count": 1},
+      {"value": "http://iabsis.com", "count": 1},
+      {"value": "www.free-dom.fr/free-dom-chambery", "count": 1},
+      {"value": "http://www.zapilou.com", "count": 1},
+      {"value": "http://www.lumapps.com/", "count": 1},
+      {"value": "www.environ-alpes.fr/", "count": 1},
+      {"value": "www.profilmanagercoach.com/", "count": 1},
+      {"value": "http://lapousada.org/", "count": 1},
+      {"value": "www.camaieu-peinture-annecy.fr", "count": 1},
+      {"value": "https://www.troccauris.com", "count": 1},
+      {"value": "http://www.editions-lescuyer.fr/", "count": 1},
+      {"value": "www.jardinerie-jean-gerard.fr", "count": 1},
+      {"value": "http://www.dealabs.com/", "count": 1},
+      {"value": "http://www.la-peniche.fr", "count": 1},
+      {"value": "http://www.gosense.com", "count": 1},
+      {"value": "http://www.adompourvous.fr", "count": 1},
+      {"value": "http://www.cap-berriat.com/", "count": 1},
+      {"value": "http://www.lapousada.org", "count": 1},
+      {"value": "http://www.groupe38.fr", "count": 1},
+      {"value": "http://www.tronico-alcen.com", "count": 1},
+      {"value": "http://www.labonnefabrique.fr", "count": 1},
+      {"value": "http://cartodia.fr/", "count": 1},
+      {"value": "http://www.atout-terrain.net/fr/", "count": 1},
+      {"value": "http://www.stid-serrurerie-metallerie.fr/", "count": 1},
+      {"value": "http://www.jrh.fr", "count": 1},
+      {"value": "https://www.sutunam.com", "count": 1},
+      {"value": "http://www.sigma-beton.fr/", "count": 1},
+      {"value": "http://www.grap.coop", "count": 1},
+      {
+        "value": "https://www.demenagerseul.com/agences-demenagement/mions-st-priest/rhone-alpes/69780/rhone-agc126.html",
+        "count": 1
+      },
+      {"value": "http://www.flowmanagement.fr", "count": 1},
+      {"value": "http://www.rfi-informatique.fr/", "count": 1},
+      {"value": "https://www.alpixel.fr", "count": 1},
+      {"value": "https://carbonbee.fr/", "count": 1},
+      {"value": "https://www.fongecif-ara.fr/", "count": 1},
+      {"value": "http://www.tordjmanmetal.fr/contact-pro", "count": 1},
+      {"value": "http://www.copas-systemes.fr", "count": 1},
+      {"value": "https://www.pagesjaunes.fr/pros/05845596?portal", "count": 1},
+      {"value": "http://www.korigan.fr", "count": 1},
+      {"value": "http://www.lizeo-group.com/", "count": 1},
+      {"value": "https://www.arkane-studios.com", "count": 1},
+      {"value": "http://arcoop.fr/", "count": 1},
+      {"value": "https://kabolt.fr", "count": 1},
+      {"value": "https://vivacy.eu", "count": 1},
+      {"value": "http://www.beal-planet.com", "count": 1},
+      {"value": "https://www.direct-prevention.fr/", "count": 1},
+      {"value": "http://www.ifpenergiesnouvelles.fr/", "count": 1},
+      {"value": "https://yurplan.com/", "count": 1},
+      {"value": "https://www.segeco.fr/", "count": 1},
+      {"value": "http://www.cedrat-technologies.com/", "count": 1},
+      {"value": "http://www.scop.org/", "count": 1},
+      {"value": "http://www.smile.fr/", "count": 1},
+      {"value": "http://enalean.com", "count": 1},
+      {"value": "http://www.tecsup.fr/", "count": 1},
+      {"value": "http://rouxcabrero.fayat.com/", "count": 1},
+      {"value": "http://www.portrevel.com/", "count": 1},
+      {"value": "http://www.lyoncityboat.com/", "count": 1},
+      {"value": "http://www.oros.com", "count": 1},
+      {"value": "http://www.solaris-developpement.fr/", "count": 1},
+      {"value": "https://maconneriechatain.fr", "count": 1},
+      {"value": "http://naturamole-green.com", "count": 1},
+      {"value": "http://www.ret.fr/", "count": 1},
+      {"value": "http://www.mobalpa.fr/", "count": 1},
+      {"value": "http://www.arkiane.com", "count": 1},
+      {"value": "http://www.solystic.com/", "count": 1},
+      {"value": "http://www.ldlc.com/", "count": 1},
+      {"value": "www.enertech.fr", "count": 1}
+    ],
+    "count": 130
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 84718625", "count": 1},
+      {"value": "+33 9 54 12 42 12", "count": 1},
+      {"value": "+33 4 76 84 25 84", "count": 1},
+      {"value": "+33 9 80 81 36 99", "count": 1},
+      {"value": "+33 4 74 79 93 54", "count": 1},
+      {"value": "+33 4 74 78 82 00", "count": 1},
+      {"value": "+33 4 74 85 21 81", "count": 1},
+      {"value": "+33 4 74 31 99 91", "count": 1},
+      {"value": "+33 4 37 45 33 33", "count": 1},
+      {"value": "+33 4 76 40 86 86", "count": 1},
+      {"value": "+33 9 72 11 74 58", "count": 1},
+      {"value": "+33 4 72 35 80 30", "count": 1},
+      {"value": "+33 4 82 82 60 90", "count": 1},
+      {"value": "+33 4 78 38 65 70", "count": 1},
+      {"value": "+33631913484", "count": 1},
+      {"value": "+33 4 74 56 01 48", "count": 1},
+      {"value": "+33 4 56 40 04 20", "count": 1},
+      {"value": "+33 4 78 76 16 16", "count": 1},
+      {"value": "+33 4 69 64 60 00", "count": 1},
+      {"value": "+33 1 34213447", "count": 1},
+      {"value": "+33 4 78024890", "count": 1},
+      {"value": "+33 4 72 88 07 50", "count": 1},
+      {"value": "+33 4 26 68 06 80", "count": 1},
+      {"value": "+33 4 78 55 07 43", "count": 1},
+      {"value": "+33 4 37 85 54 27", "count": 1},
+      {"value": "+33 9 80 76 10 08", "count": 1},
+      {"value": "+33 6 66 05 31 55", "count": 1},
+      {"value": "+33 4 78206168", "count": 1},
+      {"value": "+33 4 76 49 07 72", "count": 1},
+      {"value": "+33 9 83 20 11 36", "count": 1},
+      {"value": "+33 4 76 48 55 55", "count": 1},
+      {"value": "+33 4 76 96 60 79", "count": 1},
+      {"value": "+33 4 13 41 60 46", "count": 1},
+      {"value": "+33 4 76 70 97 97", "count": 1},
+      {"value": "+33 4 76 22 48 19", "count": 1},
+      {"value": "+33 4 72091610", "count": 1},
+      {"value": "+33 4 37450404", "count": 1},
+      {"value": "+33 6 84737151", "count": 1},
+      {"value": "+33 4 50 88 12 50", "count": 1},
+      {"value": "+33 4 72230257", "count": 1},
+      {"value": "+33 4 72818439", "count": 1},
+      {"value": "+33 9 72 32 33 17", "count": 1},
+      {"value": "+33 4 78202927", "count": 1},
+      {"value": "+33699456927", "count": 1},
+      {"value": "+33476215009", "count": 1},
+      {"value": "+33479542066", "count": 1},
+      {"value": "+33 4 72 82 50 50", "count": 1},
+      {"value": "+33476788686", "count": 1},
+      {"value": "+33476989111", "count": 1},
+      {"value": "+33 4 72898300", "count": 1},
+      {"value": "+33 4 75 44 44 44", "count": 1},
+      {"value": "+33 4 79 33 37 18", "count": 1},
+      {"value": "+33 4 63 05 95 30", "count": 1},
+      {"value": "+33 4 78 62 99 01", "count": 1},
+      {"value": "+33 4 75 23 53 45", "count": 1},
+      {"value": "+33 9 72 57 28 50", "count": 1},
+      {"value": "+33689967761", "count": 1},
+      {"value": "+33450317181", "count": 1},
+      {"value": "+33 4 74 78 88 88", "count": 1},
+      {"value": "+33474729353", "count": 1},
+      {"value": "+33 4 72096278", "count": 1},
+      {"value": "+33 4 37 51 15 15", "count": 1},
+      {"value": "+33 4 37 23 56 69", "count": 1},
+      {"value": "+33 4 76 03 30 35", "count": 1},
+      {"value": "+33 4 76 84 27 27", "count": 1},
+      {"value": "+33 4 76 23 00 00", "count": 1},
+      {"value": "+33 4 38 12 44 11", "count": 1},
+      {"value": "+33 4 38 12 81 07", "count": 1},
+      {"value": "+33 4 76 70 80 50", "count": 1},
+      {"value": "+33 4 75 60 03 48", "count": 1},
+      {"value": "+33 4 74 59 03 09", "count": 1},
+      {"value": "+33 4 76 72 74 74", "count": 1},
+      {"value": "+33 4 76 30 19 02", "count": 1},
+      {"value": "+33 4 50 32 17 17", "count": 1},
+      {"value": "+33 4 76 25 34 73", "count": 1},
+      {"value": "+33 4 76 35 80 80", "count": 1}
+    ],
+    "count": 76
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Constructeur de maisons individuelles", "count": 2},
+      {
+        "value": "Isolation Bardage Peinture Décoration Traitements spéciaux",
+        "count": 1
+      },
+      {
+        "value": "Maintenance, réparation, reconstruction et vente de marchines tournantes électriques, systèmes électroniques industriels, moteurs brushless",
+        "count": 1
+      },
+      {
+        "value": "Réception ferme à 13:30 du lun au jeu, à 12:00 le ven ; Expédition ferme à 17:00 du lun au jeu, à 15:30 le ven",
+        "count": 1
+      },
+      {
+        "value": "Site communautaire de troc et d'échange d'objets et services entre particuliers. Notre objectif: faciliter les échanges grâce au cauris !",
+        "count": 1
+      },
+      {
+        "value": "Déménagement national, Déménagement international",
+        "count": 1
+      },
+      {
+        "value": "La Bonne Fabrique : activités collaboratives et rencontres intergénérationnelles",
+        "count": 1
+      },
+      {
+        "value": "Bureau d'études dédié à la géomatique et spécialiste de l'Open Source",
+        "count": 1
+      },
+      {
+        "value": "Société d’Accélération du Transfert de Technologies",
+        "count": 1
+      },
+      {"value": "Location de box.", "count": 1},
+      {"value": "Emballages et produits alimentaires.", "count": 1},
+      {"value": "Négoce de matériel d'imprimerie.", "count": 1},
+      {"value": "Société d'injection plastique.", "count": 1},
+      {
+        "value": "Réparation, vente et maintenance sur site : pompes, surpresseurs, moteurs électriques, réducteurs, ventilation, CTA, aérothermes...",
+        "count": 1
+      },
+      {"value": "En partenariat avec Locations Mingat", "count": 1},
+      {"value": "Cabinet de maîtrise d'œuvre en bâtiment", "count": 1},
+      {"value": "Nettoyage général", "count": 1},
+      {
+        "value": "Fromagerie, Fabrication de fromages, Affinage de fromages, Distributeur de lait entier en self service.",
+        "count": 1
+      },
+      {"value": "Votre conseiller Stores et Fermetures", "count": 1},
+      {
+        "value": "Peintures Plâtrerie Décoration Revètements des sols",
+        "count": 1
+      },
+      {"value": "Maçonnerie Générale Revètements de sols", "count": 1},
+      {"value": "Alpes Plomberie Services", "count": 1},
+      {"value": "Traitements & Gestion du courrier", "count": 1},
+      {"value": "Maintenance Informatique", "count": 1},
+      {
+        "value": "Imagerie agronomique; Bureau d'étude; Laboratoire",
+        "count": 1
+      },
+      {"value": "Conseil Mobilité Patrimoine Communication", "count": 1},
+      {"value": "La Mobilité Partagée", "count": 1},
+      {"value": "Garde d'enfants à domicile", "count": 1},
+      {"value": "Langues et Traduction", "count": 1},
+      {"value": "Gestion des amendes etc.", "count": 1},
+      {"value": "Prépas moto pièces d'occasions", "count": 1},
+      {
+        "value": "Fabricant de menuiserie PVC, Vitrerie, Miroiterie",
+        "count": 1
+      },
+      {"value": "Créateur d'Intérieur", "count": 1},
+      {"value": "Génie climatique", "count": 1},
+      {"value": "Location de salles", "count": 1},
+      {"value": "Etanchéïté", "count": 1},
+      {
+        "value": "écrivain pour les autres : écrivain public, formateur, coach, éditeur, animateur d'atelier d'écriture",
+        "count": 1
+      },
+      {
+        "value": "Commerce de gros de fournitures pour la plomberie et le chauffage",
+        "count": 1
+      },
+      {"value": "Entreprise générale du batiment", "count": 1},
+      {"value": "Studio de développement de jeux vidéo.", "count": 1},
+      {
+        "value": "Entreprise de sécurité incendie, spécialisée dans la protection incendie et la maintenance d'extincteurs pour les professionnels.",
+        "count": 1
+      },
+      {"value": "Recyclage déchets, revalorisation", "count": 1},
+      {"value": "Entreprise d'électricité et de chauffage", "count": 1},
+      {"value": "Hygiène Nettoyage Le Service Propreté", "count": 1},
+      {
+        "value": "Dépannage d'imprimantes ; Matériel de photocopieurs, de reprographie ",
+        "count": 1
+      },
+      {"value": "Entreprises de peinture ; Plaques de plâtre", "count": 1}
+    ],
+    "count": 47
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "claix@alphageo.fr", "count": 1},
+      {"value": "contact@editions-lescuyer.fr", "count": 1},
+      {"value": "contact@sutunam.com", "count": 1},
+      {"value": "restolyonpack@gmail.com", "count": 1},
+      {"value": "contact@edouard-maintenance.com", "count": 1},
+      {"value": "contact@grap.coop", "count": 1},
+      {"value": "mionsstpriest@demenagerseul.com", "count": 1},
+      {"value": "info@flomanagement.fr", "count": 1},
+      {"value": "grenoble@alphageo.fr", "count": 1},
+      {"value": "vizille@alphageo.fr", "count": 1},
+      {"value": "accueil@cap-berriat.com", "count": 1},
+      {"value": "contact@cebedoc.com", "count": 1},
+      {"value": "tordjmanmetal.lyon@gmail.com", "count": 1},
+      {"value": "cabinetj-barral@wanadoo.fr", "count": 1},
+      {"value": "contact@korigan.fr", "count": 1},
+      {"value": "arcoop@archer.fr", "count": 1},
+      {"value": "contact@kabolt.fr", "count": 1},
+      {"value": "contact@multipeda.fr", "count": 1},
+      {"value": "contact@segeco.fr", "count": 1},
+      {"value": "maconneriechatain@wanadoo.fr", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "painter", "count": 4},
+      {"value": "stonemason", "count": 2},
+      {"value": "plumber", "count": 2},
+      {"value": "window_construction", "count": 2},
+      {"value": "electrician", "count": 2},
+      {"value": "carpenter", "count": 1},
+      {"value": "printer", "count": 1},
+      {"value": "metal_construction", "count": 1},
+      {"value": "locksmith", "count": 1},
+      {"value": "roofer", "count": 1},
+      {"value": "builder", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 9},
+      {"value": "no", "count": 4},
+      {"value": "limited", "count": 3}
+    ],
+    "count": 16
+  },
+  {
+    "key": "smoking",
+    "tags": [{"value": "outside", "count": 6}, {"value": "no", "count": 6}],
+    "count": 12
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 6},
+      {"value": "0", "count": 2},
+      {"value": "4", "count": 1},
+      {"value": "1,_2", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 1 34213160", "count": 1},
+      {"value": "+33 4 78029103", "count": 1},
+      {"value": "+33 4 78217847", "count": 1},
+      {"value": "+33 4 78201345", "count": 1},
+      {"value": "+33 4 72 89 10 31", "count": 1},
+      {"value": "+33 4 78 62 91 64", "count": 1},
+      {"value": "+33 4 75 05 38 10", "count": 1},
+      {"value": "09 70 06 50 87", "count": 1},
+      {"value": "+33 4 74 59 15 57", "count": 1},
+      {"value": "+33 4 76 30 82 05", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "healthcare", "count": 2},
+      {"value": "doctors", "count": 1},
+      {"value": "personal_service", "count": 1},
+      {"value": "coworking_space", "count": 1},
+      {"value": "parking", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "copyshop", "count": 1},
+      {"value": "radiotechnics", "count": 1},
+      {"value": "locksmith", "count": 1},
+      {"value": "boat", "count": 1},
+      {"value": "garden_centre", "count": 1},
+      {"value": "car_repair", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "coworking", "count": 1},
+      {"value": "Position approximative", "count": 1},
+      {
+        "value": "Éditeur de logiciels d'entreprise notamment la plateforme de GED collaborative GoFAST Conseil en stratégie IT et Opensource",
+        "count": 1
+      },
+      {
+        "value": "Agence de création de sites et d'applications web",
+        "count": 1
+      },
+      {"value": "Désamiantage", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Groupe LDLC", "count": 1},
+      {"value": "fr:Enercoop", "count": 1},
+      {"value": "en:Port Revel", "count": 1},
+      {"value": "fr:Mobalpa", "count": 1},
+      {"value": "fr:BioMérieux", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3117461", "count": 1},
+      {"value": "Q1021074", "count": 1},
+      {"value": "Q3317571", "count": 1},
+      {"value": "Q2904021", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "industrial", "count": 3},
+      {"value": "commercial", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {"value": "6ème étage", "count": 1},
+      {"value": "Accès d'un seul côté en fauteuil roulant.", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-05", "count": 1},
+      {"value": "2017-10-15", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "kinesiology", "count": 1},
+      {"value": "learning_disorder", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "second_hand", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "company",
+    "tags": [{"value": "engineering", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://www.domadelis.com/setville/st-etienne", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "payment:bitcoin",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:en",
+    "tags": [
+      {
+        "value": "Agronomic imaging; Consulting & Design House; Research Lab",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "indoor", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "office", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Météo France", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Plâtrerie, peinture, décoration, ravalement de façades",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "emergency",
+    "tags": [{"value": "ambulance_station", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "works", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1}
+]

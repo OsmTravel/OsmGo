@@ -1,0 +1,47 @@
+[
+  {"key": "leisure", "tags": [{"value": "resort", "count": 9}], "count": 9},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.les-tilleuls-ayn.com/", "count": 1},
+      {
+        "value": "http://www.vvf-villages.fr/location-vacances/vacances-montbrun-les-bains-vvf-villages.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.vvf-villages.fr/location-vacances/vacances-die-vvf-villages.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.vvf-villages.fr/villages-vacances-hiver/vvf-village-ski-montchavin-la-plagne.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.vvf-villages.fr/villages-vacances/vacances-evian-vvf-villages.html",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 79 28 72 02", "count": 1},
+      {"value": "+33 4 75 28 82 35", "count": 1},
+      {"value": "+33 4 75 22 06 88", "count": 1},
+      {"value": "+33 4 50 83 17 00", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "VVF Villages", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "residential", "count": 1}], "count": 1}
+]

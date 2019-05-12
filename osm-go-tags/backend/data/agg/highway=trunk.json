@@ -1,0 +1,510 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "trunk", "count": 1417}],
+    "count": 1417
+  },
+  {
+    "key": "oneway",
+    "tags": [
+      {"value": "yes", "count": 1338},
+      {"value": "no", "count": 23},
+      {"value": "-1", "count": 1}
+    ],
+    "count": 1362
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "N 7", "count": 137},
+      {"value": "N 88", "count": 127},
+      {"value": "N 90", "count": 113},
+      {"value": "N 205", "count": 104},
+      {"value": "D 383", "count": 86},
+      {"value": "N 87", "count": 67},
+      {"value": "D 3508", "count": 61},
+      {"value": "N 201", "count": 57},
+      {"value": "N 346", "count": 42},
+      {"value": "D 1206", "count": 41},
+      {"value": "D 301", "count": 34},
+      {"value": "N 532", "count": 33},
+      {"value": "D 119", "count": 29},
+      {"value": "D 903", "count": 28},
+      {"value": "D 302", "count": 26},
+      {"value": "D 1203", "count": 25},
+      {"value": "N 82", "count": 24},
+      {"value": "D 884", "count": 22},
+      {"value": "D 498", "count": 21},
+      {"value": "D 1508", "count": 21},
+      {"value": "D 1212", "count": 19},
+      {"value": "N 481", "count": 19},
+      {"value": "D 916", "count": 16},
+      {"value": "D 1091", "count": 16},
+      {"value": "D 1005", "count": 16},
+      {"value": "N 488", "count": 13},
+      {"value": "D 1201", "count": 13},
+      {"value": "D 6", "count": 13},
+      {"value": "N 85", "count": 11},
+      {"value": "D 1501", "count": 11},
+      {"value": "D 820", "count": 8},
+      {"value": "D 532c", "count": 7},
+      {"value": "D 532", "count": 6},
+      {"value": "D 288", "count": 6},
+      {"value": "N 543", "count": 5},
+      {"value": "D 1407", "count": 4},
+      {"value": "A 450", "count": 3},
+      {"value": "D 201", "count": 3},
+      {"value": "A 430", "count": 3},
+      {"value": "D 517", "count": 2},
+      {"value": "T4", "count": 1}
+    ],
+    "count": 1293
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "90", "count": 609},
+      {"value": "110", "count": 259},
+      {"value": "70", "count": 183},
+      {"value": "80", "count": 74},
+      {"value": "50", "count": 50},
+      {"value": "30", "count": 8}
+    ],
+    "count": 1183
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "2", "count": 612},
+      {"value": "3", "count": 166},
+      {"value": "1", "count": 158},
+      {"value": "4", "count": 34},
+      {"value": "5", "count": 3},
+      {"value": "6", "count": 2}
+    ],
+    "count": 975
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 309},
+      {"value": "-1", "count": 46},
+      {"value": "2", "count": 11},
+      {"value": "-2", "count": 4},
+      {"value": "-3", "count": 2},
+      {"value": "3", "count": 1}
+    ],
+    "count": 373
+  },
+  {"key": "motorroad", "tags": [{"value": "yes", "count": 338}], "count": 338},
+  {
+    "key": "int_ref",
+    "tags": [
+      {"value": "E 25", "count": 106},
+      {"value": "E 712", "count": 63},
+      {"value": "E 713", "count": 54},
+      {"value": "E 70;E 712", "count": 42},
+      {"value": "E 15", "count": 42},
+      {"value": "E 70", "count": 29}
+    ],
+    "count": 336
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 310}, {"value": "viaduct", "count": 11}],
+    "count": 321
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 215},
+      {"value": "paved", "count": 5}
+    ],
+    "count": 220
+  },
+  {
+    "key": "hgv:conditional",
+    "tags": [
+      {
+        "value": "no @ (Feb 10,17,24 07:00-18:00,22:00-24:00; Mar 3,10 07:00-18:00,22:00-24:00; Jul 21,28 07:00-19:00; Aug 4,11,18 07:00-19:00 AND weight>7.5)",
+        "count": 180
+      }
+    ],
+    "count": 180
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 113}, {"value": "no", "count": 51}],
+    "count": 164
+  },
+  {
+    "key": "bicycle",
+    "tags": [{"value": "no", "count": 117}, {"value": "yes", "count": 9}],
+    "count": 126
+  },
+  {"key": "operator", "tags": [{"value": "ATMB", "count": 104}], "count": 104},
+  {
+    "key": "maxspeed:conditional",
+    "tags": [
+      {"value": "80 @ (weight>3.5)", "count": 89},
+      {"value": "70 @ (weight>12)", "count": 1}
+    ],
+    "count": 90
+  },
+  {
+    "key": "old_ref",
+    "tags": [
+      {"value": "N 6", "count": 19},
+      {"value": "A 48", "count": 19},
+      {"value": "N 212", "count": 19},
+      {"value": "N 508", "count": 18},
+      {"value": "N 91", "count": 15}
+    ],
+    "count": 90
+  },
+  {"key": "foot", "tags": [{"value": "no", "count": 85}], "count": 85},
+  {
+    "key": "toll",
+    "tags": [{"value": "no", "count": 42}, {"value": "yes", "count": 37}],
+    "count": 79
+  },
+  {
+    "key": "destination",
+    "tags": [
+      {"value": "Meylan-Centre", "count": 3},
+      {"value": "Paris;Grenoble par RN;Chambéry par RN", "count": 3},
+      {"value": "Annecy;Aix les Bains;Chambéry", "count": 3},
+      {"value": "Bourg en Bresse;Bellegarde;Frangy", "count": 2},
+      {"value": "Bourg en Bresse;Epagny", "count": 2},
+      {"value": "Vénissieux;Corbas;Z.I. Lyon Sud-Est", "count": 2},
+      {"value": "Echirolles;Chambery;Albertville;Turin-Milan;A 41", "count": 2},
+      {"value": "Marseille", "count": 2},
+      {"value": "Pringy;La Roche/Foron;Thônes", "count": 2},
+      {"value": "Annecy;Annecy le Vieux", "count": 2},
+      {"value": "Vénissieux;Saint-Priest;Feyzin", "count": 2},
+      {
+        "value": "Montbrison;Bonson;Saint-Just-Saint-Rambert;Parc les Plaines",
+        "count": 2
+      },
+      {"value": "La Roche/Foron", "count": 2},
+      {"value": "Marseille;Grenoble;Chambéry", "count": 1},
+      {"value": "Annecy le Vieux;Chamonix;Genève", "count": 1},
+      {"value": "Autres Directions;Saint Égrève-Nord", "count": 1},
+      {"value": "Bourg;Genève;Paris", "count": 1},
+      {"value": "Lyon - centre", "count": 1},
+      {
+        "value": "Grenoble-Bastille;Grenoble-Gares;Saint Martin le Vinoux;Europole",
+        "count": 1
+      },
+      {"value": "Gap;Briançon;Vizille;Stations de l'Oisans", "count": 1},
+      {
+        "value": "Aix les Bains par RN;Bourg en B. par RN;Le Bourget du Lac;Savoie Technolac",
+        "count": 1
+      },
+      {"value": "Saint Martin le Vinoux;Grenoble-Bastille", "count": 1},
+      {"value": "A41;Geneve;Lyon;Chamonix;Pringy;Cruseilles", "count": 1},
+      {"value": "Saint Priest;Chambéry;Grenoble", "count": 1},
+      {"value": "Genève Chamonix", "count": 1},
+      {"value": "Rocade Sud", "count": 1},
+      {"value": "Vénissieux", "count": 1},
+      {"value": "La Tronche", "count": 1},
+      {"value": "A41;Autres Directions", "count": 1},
+      {"value": "Aix-les-Bains;Chambéry", "count": 1},
+      {"value": "Poisy;Bourg en Bresse", "count": 1},
+      {"value": "Porte de la Pape;Roanne;Paris", "count": 1},
+      {"value": "ZI de Vovray", "count": 1},
+      {"value": "Aime;Bourg St Maurice", "count": 1},
+      {"value": "Moutiers;Tarentaise", "count": 1},
+      {"value": "Grenoble;Chambéry", "count": 1}
+    ],
+    "count": 52
+  },
+  {
+    "key": "cycleway",
+    "tags": [{"value": "lane", "count": 47}, {"value": "no", "count": 4}],
+    "count": 51
+  },
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 49}], "count": 49},
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "4.5", "count": 31},
+      {"value": "4.3", "count": 13},
+      {"value": "4.7", "count": 2},
+      {"value": "2", "count": 2}
+    ],
+    "count": 48
+  },
+  {"key": "horse", "tags": [{"value": "no", "count": 47}], "count": 47},
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "designated", "count": 36},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "turn:lanes",
+    "tags": [
+      {"value": "||merge_to_left", "count": 12},
+      {"value": "||slight_right", "count": 8},
+      {"value": "through|through|slight_right", "count": 4},
+      {"value": "merge_to_right||", "count": 1},
+      {"value": "||right", "count": 1},
+      {"value": "|slight_right", "count": 1},
+      {"value": "merge_to_right||slight_right|slight_right", "count": 1},
+      {
+        "value": "slight_left|slight_left|slight_right|slight_right",
+        "count": 1
+      },
+      {"value": "merge_to_right|", "count": 1},
+      {"value": "none|none|merge_to_left", "count": 1},
+      {"value": "|||slight_right", "count": 1}
+    ],
+    "count": 32
+  },
+  {"key": "maxweight", "tags": [{"value": "19", "count": 18}], "count": 18},
+  {
+    "key": "maxspeed:hgv",
+    "tags": [
+      {"value": "70", "count": 9},
+      {"value": "30", "count": 4},
+      {"value": "50", "count": 3},
+      {"value": "25", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "placement",
+    "tags": [
+      {"value": "right_of:1", "count": 8},
+      {"value": "transition", "count": 4},
+      {"value": "middle_of:2", "count": 4}
+    ],
+    "count": 16
+  },
+  {"key": "embankment", "tags": [{"value": "yes", "count": 16}], "count": 16},
+  {
+    "key": "transit:lanes",
+    "tags": [
+      {"value": "||end", "count": 7},
+      {"value": "||leave", "count": 7},
+      {"value": "|leave", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "destination:lanes",
+    "tags": [
+      {
+        "value": "Paris;Marseille;Saint Étienne;Pierre Bénite;Saint Fons-centre;Port Édouard Herriot|Paris;Marseille;Saint Étienne;Pierre Bénite;Saint Fons-centre;Port Édouard Herriot|Lyon-centre;Porte de Gerland|Lyon-centre;Porte de Gerland",
+        "count": 5
+      },
+      {
+        "value": "Firminy;Le Puy en Velay;St-Etienne Beaulieu/Bellevue|Firminy;Le Puy en Velay;St-Etienne Beaulieu/Bellevue|St-Etienne Centre/La Terrasse;Roanne;Clermont-Ferrand|St-Etienne Centre/La Terrasse;Roanne;Clermont-Ferrand",
+        "count": 2
+      },
+      {"value": "Seyssins|Gap", "count": 1},
+      {"value": "Seyssins|Gap|Lyon", "count": 1},
+      {
+        "value": "Saint-Etienne Centre;Saint-Jean Bonnefonds;Monthieu|Roanne;Clermont-Ferrand;La Terrasse;Aérodrome Bouthéon",
+        "count": 1
+      },
+      {"value": "Rocade Sud|La Tronche", "count": 1},
+      {"value": "Grenoble;Lyon|Marseille|Marseille", "count": 1},
+      {"value": "La Tronche|Turin-Milan|Turin-Milan", "count": 1},
+      {"value": "La Tronche|Turin-Milan", "count": 1},
+      {"value": "||Grenoble - Gares;Europole;Polygone Scientifique", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "smoothness",
+    "tags": [{"value": "excellent", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "16", "count": 4},
+      {"value": "10", "count": 3},
+      {"value": "8", "count": 2},
+      {"value": "5.5", "count": 1},
+      {"value": "7.5", "count": 1},
+      {"value": "11", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "La signalisation voie express (panneau C107) commence après",
+        "count": 6
+      },
+      {
+        "value": "nommage selon bulletin officiel departement isere n°275 Arrêté n° 2013-3471 du 26 mars 2013",
+        "count": 2
+      },
+      {"value": "Primary car panneau C108", "count": 2},
+      {
+        "value": "interdiction aux vélos, piétons: http://www.bison-fute.gouv.fr/tunnel-du-frejus-73-categorie-c,langen.html",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {
+    "key": "lanes:forward",
+    "tags": [{"value": "2", "count": 6}, {"value": "1", "count": 5}],
+    "count": 11
+  },
+  {
+    "key": "maxspeed:forward",
+    "tags": [
+      {"value": "90", "count": 5},
+      {"value": "80", "count": 3},
+      {"value": "70", "count": 1},
+      {"value": "50", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "maxspeed:backward",
+    "tags": [{"value": "80", "count": 5}, {"value": "90", "count": 5}],
+    "count": 10
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0016", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Viaduc des Égratz", "count": 4},
+      {"value": "it:Traforo stradale del Frejus", "count": 1},
+      {"value": "fr:Tunnel du Fréjus", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "designated", "count": 4},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 6
+  },
+  {"key": "hazmat", "tags": [{"value": "E", "count": 5}], "count": 5},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "destination:ref:lanes",
+    "tags": [{"value": "D383|D383||", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "destination:ref",
+    "tags": [
+      {"value": "A48", "count": 2},
+      {"value": "D 301", "count": 2},
+      {"value": "N201", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "hazmat:conditional",
+    "tags": [
+      {
+        "value": "no @ ( UN2919 or UN3291 orUN3331 or UN3359 or UN3373 )",
+        "count": 5
+      }
+    ],
+    "count": 5
+  },
+  {"key": "cutting", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "sidewalk",
+    "tags": [{"value": "both", "count": 3}, {"value": "none", "count": 1}],
+    "count": 4
+  },
+  {"key": "motorcar", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "385441639T", "count": 4}],
+    "count": 4
+  },
+  {"key": "start_date", "tags": [{"value": "1977", "count": 4}], "count": 4},
+  {"key": "end_date", "tags": [{"value": "1981", "count": 4}], "count": 4},
+  {
+    "key": "cycleway:right",
+    "tags": [{"value": "lane", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "incline",
+    "tags": [{"value": "7%", "count": 2}, {"value": "-7%", "count": 1}],
+    "count": 3
+  },
+  {"key": "maxspeed:type", "tags": [{"value": "sign", "count": 2}], "count": 2},
+  {
+    "key": "maxspeed:lanes",
+    "tags": [
+      {"value": "110|110|110|90", "count": 1},
+      {"value": "110|110|50", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "beam", "count": 2}],
+    "count": 2
+  },
+  {"key": "maxspeed:wet", "tags": [{"value": "70", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "Longueur : 1100m", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "transit",
+    "tags": [{"value": "||leave", "count": 1}, {"value": "||end", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "destination:forward",
+    "tags": [{"value": "Albertville;Chambéry;Poisy", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "destination:backward",
+    "tags": [{"value": "Thônes, Annecy le Vieux;Thônes", "count": 2}],
+    "count": 2
+  },
+  {"key": "overtaking:hgv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "oneway:bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "access:lanes",
+    "tags": [{"value": "yes|yes|yes|escape", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "placement:start",
+    "tags": [{"value": "middle_of:2", "count": 1}],
+    "count": 1
+  },
+  {"key": "width:start", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "width:end", "tags": [{"value": "11", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "lanes:backward", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "placement:end",
+    "tags": [{"value": "right_of:1", "count": 1}],
+    "count": 1
+  }
+]

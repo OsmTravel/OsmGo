@@ -1,0 +1,741 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "townhall", "count": 2334}],
+    "count": 2334
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 108},
+      {"value": "no", "count": 27},
+      {"value": "limited", "count": 10}
+    ],
+    "count": 145
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.valence.fr/", "count": 3},
+      {"value": "http://www.andance.fr/", "count": 1},
+      {"value": "www.ville-tarare.fr", "count": 1},
+      {"value": "http://www.thurins-commune.fr", "count": 1},
+      {"value": "http://www.mariac.fr", "count": 1},
+      {
+        "value": "http://www.ville-lecheylard.fr/cheylard/fr/1/accueil.html",
+        "count": 1
+      },
+      {"value": "http://www.villeneuvedeberg.fr/", "count": 1},
+      {"value": "http://laviolle.com/", "count": 1},
+      {"value": "https://boree.fr/", "count": 1},
+      {"value": "http://www.saint-sigismond.fr", "count": 1},
+      {"value": "http://mairie.smdlc.free.fr/", "count": 1},
+      {"value": "http://www.entredeuxguiers.fr", "count": 1},
+      {"value": "http://www.ville-roussillon-isere.fr", "count": 1},
+      {"value": "http://www.toulaud.fr/", "count": 1},
+      {"value": "http://saint-apollinaire-de-rias.fr/", "count": 1},
+      {"value": "http://www.thorrenc.fr/", "count": 1},
+      {"value": "http://www.mairie-chanoscurson.fr/", "count": 1},
+      {"value": "http://champis.fr/", "count": 1},
+      {"value": "http://www.mairie-montvalezan.fr/", "count": 1},
+      {"value": "http://www.coise.fr/", "count": 1},
+      {"value": "http://www.valence.fr", "count": 1},
+      {"value": "http://www.noiretable.fr", "count": 1},
+      {"value": "http://www.brussieu.com/", "count": 1},
+      {"value": "http://www.neuvillesursaone.fr/", "count": 1},
+      {"value": "http://www.ville-caluire.fr/", "count": 1},
+      {"value": "http://www.fabras.com/", "count": 1},
+      {
+        "value": "https://lannuaire.service-public.fr/auvergne-rhone-alpes/ain/mairie-01228-01",
+        "count": 1
+      },
+      {"value": "http://www.champdieu.eu", "count": 1},
+      {"value": "www.mairie9.lyon.fr", "count": 1},
+      {"value": "http://www.saint-symphorien-sur-coise.fr/", "count": 1},
+      {"value": "http://www.saint-martin-en-haut.fr", "count": 1},
+      {"value": "http://www.pomeys.fr", "count": 1},
+      {"value": "http://www.soucieu-en-jarrest.fr", "count": 1},
+      {"value": "http://www.duerne.fr/", "count": 1},
+      {"value": "http://www.chambles.fr", "count": 1},
+      {"value": "http://www.nurieux-volognat.fr/", "count": 1},
+      {"value": "https://www.lantenay.fr", "count": 1},
+      {"value": "http://saint-romain-en-gal.reseaudesvilles.fr/", "count": 1},
+      {"value": "http://www.eygluy-escoulin.fr", "count": 1},
+      {"value": "http://www.maringes.fr", "count": 1},
+      {"value": "http://www.vesseaux.fr", "count": 1},
+      {
+        "value": "https://www.lyon.fr/lieu/mairies/mairie-du-5e-annexe-vieux-lyon",
+        "count": 1
+      },
+      {"value": "lescheraines.fr", "count": 1},
+      {"value": "https://www.arbusigny.fr/", "count": 1},
+      {"value": "https://www.sallanches.fr", "count": 1},
+      {"value": "http://www.mairie-lansenvercors.fr/", "count": 1},
+      {"value": "http://www.mairie-montmiral.fr/", "count": 1},
+      {"value": "http://www.ayn.fr", "count": 1},
+      {"value": "http://www.nancesensavoie.fr/", "count": 1},
+      {"value": "http://www.mairiechamrousse.com", "count": 1},
+      {"value": "http://www.pinsot.fr/", "count": 1},
+      {"value": "http://ville-pontcharra.fr", "count": 1},
+      {"value": "http://davezieux.fr/", "count": 1},
+      {"value": "http://www.mairie-annonay.fr/", "count": 1},
+      {"value": "http://www.larajasse.fr", "count": 1},
+      {"value": "http://www.mairie-privas.fr/", "count": 1},
+      {"value": "http://www.charmessurrhone.fr/", "count": 1},
+      {"value": "http://www.aubenas.fr/", "count": 1},
+      {"value": "http://www.saint-georges-les-bains.fr/", "count": 1},
+      {"value": "http://www.sarras.fr/", "count": 1},
+      {"value": "http://saint-desirat.fr/", "count": 1},
+      {"value": "http://www.charpey.fr/", "count": 1},
+      {"value": "http://www.stjulienenvercors.fr/", "count": 1},
+      {"value": "http://www.etrembieres.f", "count": 1},
+      {"value": "http://www.mairie-charavines.fr", "count": 1},
+      {"value": "http://www.mairie-thones.fr/", "count": 1},
+      {"value": "http://ternay.fr/", "count": 1},
+      {"value": "http://www.lesollieressureyrieux.fr/", "count": 1},
+      {"value": "http://villeurbanne.fr/", "count": 1},
+      {"value": "http://www.ville-tain.fr/", "count": 1},
+      {"value": "http://www.chambery.fr/", "count": 1},
+      {"value": "http://www.mairie-satillieu.fr/", "count": 1},
+      {"value": "http://www.ville-tournon-sur-rhone.fr/", "count": 1},
+      {"value": "http://www.livron-sur-drome.fr/", "count": 1},
+      {"value": "http://www.perly-certoux.ch/", "count": 1},
+      {"value": "http://www.alixan-mairie.com/", "count": 1},
+      {"value": "http://www.mairie9.lyon.fr/page/accueil_9.html", "count": 1},
+      {"value": "www.roybon.fr", "count": 1},
+      {"value": "http://www.lemps-ardeche.fr/", "count": 1},
+      {"value": "http://www.mairie-riverie.fr", "count": 1},
+      {"value": "http://www.mairie-villefontaine.fr/", "count": 1},
+      {"value": "www.rivedegier.fr", "count": 1},
+      {"value": "https://www.vieudizenave.fr/", "count": 1},
+      {"value": "http://saint-romain-de-lerps.fr/", "count": 1},
+      {"value": "http://www.stjeanchambre.com/", "count": 1},
+      {"value": "http://www.pelussin.fr", "count": 1},
+      {"value": "http://www.boucieuleroi.com", "count": 1},
+      {"value": "http://www.lavoultesurrhone.fr/", "count": 1},
+      {"value": "http://mariedecole.fr", "count": 1},
+      {"value": "www.mollans.info", "count": 1},
+      {"value": "http://www.ville-pierrelatte.fr/", "count": 1},
+      {"value": "http://www.cruseilles.fr", "count": 1},
+      {"value": "http://www.jonzier-epagny.fr/Francais", "count": 1},
+      {"value": "http://www.labridoire.fr", "count": 1},
+      {"value": "http://www.mairie-barraux.com/", "count": 1},
+      {"value": "http://www.echallon.fr/", "count": 1},
+      {"value": "http://www.massieu38.fr/", "count": 1},
+      {"value": "http://commune-rochefort-savoie.org/", "count": 1},
+      {"value": "http://www.saint-maurice-en-chalencon.fr/", "count": 1},
+      {"value": "http://www.veyrier.ch/", "count": 1},
+      {"value": "http://renaison.fr/", "count": 1},
+      {"value": "http://www.etables.fr/", "count": 1},
+      {"value": "http://coux.fr/", "count": 1},
+      {"value": "http://www.vion-ardeche.fr/", "count": 1},
+      {"value": "http://www.lamastre.fr/", "count": 1},
+      {"value": "http://www.gravieres.fr/", "count": 1},
+      {"value": "http://mairielozanne.fr", "count": 1},
+      {"value": "http://www.boen.fr", "count": 1},
+      {"value": "http://www.annemasse.fr", "count": 1},
+      {"value": "http://www.peyrus.fr", "count": 1},
+      {"value": "https://www.balazuc.fr", "count": 1},
+      {"value": "http://www.cherier.fr", "count": 1},
+      {"value": "http://www.sainthaonlechatel.fr/", "count": 1},
+      {"value": "http://www.ambilly.fr", "count": 1},
+      {"value": "http://www.la-baume-dhostun.fr", "count": 1},
+      {"value": "http://www.desaignes.fr/", "count": 1},
+      {"value": "http://gilhocsurormeze.fr/", "count": 1},
+      {"value": "http://www.saint-julien-labrousse.fr/", "count": 1},
+      {"value": "http://www.ville-challesleseaux.com", "count": 1}
+    ],
+    "count": 121
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 79 20 00", "count": 3},
+      {"value": "+33478484287", "count": 1},
+      {"value": "+33 4 75 23 04 81", "count": 1},
+      {"value": "+33478819990", "count": 1},
+      {"value": "+33 4 75 29 11 40", "count": 1},
+      {"value": "+33 4 75 29 07 10", "count": 1},
+      {"value": "+33 4 76 80 11 39", "count": 1},
+      {"value": "+33 4 76 66 05 05", "count": 1},
+      {"value": "+33 4 76 83 06 37", "count": 1},
+      {"value": "+33 4 74 29 01 00", "count": 1},
+      {"value": "3631", "count": 1},
+      {"value": "+33 4 76 30 20 18", "count": 1},
+      {"value": "+33 4 77 24 70 12", "count": 1},
+      {"value": "+33 4 72 08 70 00", "count": 1},
+      {"value": "+33 4 74 51 21 62", "count": 1},
+      {"value": "+33 4 74 75 71 74", "count": 1},
+      {"value": "+33477971729", "count": 1},
+      {"value": "+33 4 78 83 98 22", "count": 1},
+      {"value": "+33478443757", "count": 1},
+      {"value": "+33478486101", "count": 1},
+      {"value": "+33478484225", "count": 1},
+      {"value": "+33478052633", "count": 1},
+      {"value": "+33478486260", "count": 1},
+      {"value": "+33477523890", "count": 1},
+      {"value": "+33 4 74 76 00 64", "count": 1},
+      {"value": "+33 4 74314380", "count": 1},
+      {"value": "+33 4 79 36 01 66", "count": 1},
+      {"value": "+33 4 79 63 32 64", "count": 1},
+      {"value": "+33 4 50 94 50 01", "count": 1},
+      {"value": "+33 4 50 91 27 27", "count": 1},
+      {"value": "+33 4 76 95 40 44", "count": 1},
+      {"value": "+33 9 62 58 75 66", "count": 1},
+      {"value": "+33 4 79 28 73 88", "count": 1},
+      {"value": "+33 9 67 00 41 05", "count": 1},
+      {"value": "+33 4 76 97 11 65", "count": 1},
+      {"value": "+33 4 76 70 53 53", "count": 1},
+      {"value": "+33 4 75 69 32 50", "count": 1},
+      {"value": "+33478484198", "count": 1},
+      {"value": "+33 4 74 79 22 60", "count": 1},
+      {"value": "+33 4 75 34 23 20", "count": 1},
+      {"value": "+33 4 50 92 04 01", "count": 1},
+      {"value": "+33 4 50 02 91 72", "count": 1},
+      {"value": "+33 4 72 49 81 81", "count": 1},
+      {"value": "+33 4 75 34 96 64", "count": 1},
+      {"value": "+41 22 721 02 50", "count": 1},
+      {"value": "+33 4 74 58 47 14", "count": 1},
+      {"value": "+33 4 75 47 02 62", "count": 1},
+      {"value": "+33 4 72 19 81 81", "count": 1},
+      {"value": "+33 4 76 36 21 79", "count": 1},
+      {"value": "+33478818242", "count": 1},
+      {"value": "+33474927280", "count": 1},
+      {"value": "+33 4 77 83 07 80", "count": 1},
+      {"value": "+33 4 76347228", "count": 1},
+      {"value": "+33 4 75 28 70 15", "count": 1},
+      {"value": "+33 4 75 28 74 96", "count": 1},
+      {"value": "+33 4 50 32 10 33", "count": 1},
+      {"value": "+33 4 50 35 24 39", "count": 1},
+      {"value": "+33 4 76 31 11 13", "count": 1},
+      {"value": "+33 4 76 34 00 73", "count": 1},
+      {"value": "+33 4 74 76 48 51", "count": 1},
+      {"value": "+33476075279", "count": 1},
+      {"value": "+33 4 76 32 87 33", "count": 1},
+      {"value": "+33 4 75 36 41 08", "count": 1},
+      {"value": "+33 4 75 58 11 74", "count": 1},
+      {"value": "+41 22 899 10 10", "count": 1},
+      {"value": "+33 4 75 07 43 48", "count": 1},
+      {"value": "+33 4 77 76 03 79", "count": 1},
+      {"value": "+33 4 78 43 71 74", "count": 1},
+      {"value": "+33 4 77 97 72 40", "count": 1},
+      {"value": "+33 4 50 95 07 00", "count": 1},
+      {"value": "+33 4 75 37 75 08", "count": 1},
+      {"value": "+33 4 77 63 14 67", "count": 1},
+      {"value": "+33 4 77 64 40 62", "count": 1},
+      {"value": "+33 4 50 38 05 26", "count": 1},
+      {"value": "+33 4 79 72 80 91", "count": 1}
+    ],
+    "count": 77
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 28 97 86", "count": 1},
+      {"value": "+33478443003", "count": 1},
+      {"value": "+33 4 76 66 05 13", "count": 1},
+      {"value": "+33 4 78 91 75 43", "count": 1},
+      {"value": "+33477970222", "count": 1},
+      {"value": "+33478443758", "count": 1},
+      {"value": "+33478485605", "count": 1},
+      {"value": "+33478443078", "count": 1},
+      {"value": "+33478051491", "count": 1},
+      {"value": "+33478485781", "count": 1},
+      {"value": "+33477520718", "count": 1},
+      {"value": "+33 4 74314384", "count": 1},
+      {"value": "+33 4 79 36 04 73", "count": 1},
+      {"value": "+33 4 50 94 59 80", "count": 1},
+      {"value": "+33 4 75 29 25 22", "count": 1},
+      {"value": "+33 4 79 36 01 88", "count": 1},
+      {"value": "+33 4 76 97 34 99", "count": 1},
+      {"value": "+33 4 50 87 29 88", "count": 1},
+      {"value": "+33 4 76 36 27 48", "count": 1},
+      {"value": "+33478818732", "count": 1},
+      {"value": "+33 4 75 28 79 11", "count": 1},
+      {"value": "+33 9 75 51 72 36", "count": 1},
+      {"value": "+33 4 50 44 07 36", "count": 1},
+      {"value": "022/899.10.20", "count": 1},
+      {"value": "+33 4 77 24 09 06", "count": 1},
+      {"value": "+33 4 50 95 07 01", "count": 1},
+      {"value": "+33 4 50 95 27 19", "count": 1},
+      {"value": "+33 4 79 72 58 50", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@sallanches.fr", "count": 1},
+      {"value": "mairie.coise@cc-hauts-du-lyonnais.fr", "count": 1},
+      {"value": "mairie@champdieu.fr", "count": 1},
+      {"value": "contact@saint-symphorien-sur-coise.fr", "count": 1},
+      {
+        "value": "mairie.saint-martin-en-haut@cc-hauts-du-lyonnais.fr",
+        "count": 1
+      },
+      {"value": "mairie.pomeys@cc-hauts-du-lyonnais.fr", "count": 1},
+      {"value": "contact@soucieu-en-jarrest.fr", "count": 1},
+      {"value": "mairie.duerne@cc-hauts-du-lyonnais.fr", "count": 1},
+      {"value": "mairie@chambles.fr", "count": 1},
+      {"value": "www.mairie-maringes@wanadoo.fr", "count": 1},
+      {"value": "mairie.lepinlelac@wanadoo.fr", "count": 1},
+      {"value": "mairie.arbusigny@wanadoo.fr", "count": 1},
+      {"value": "mairie.mariac@inforoutes.fr", "count": 1},
+      {"value": "nances.mairie@wanadoo.fr", "count": 1},
+      {"value": "contact@dullin.fr", "count": 1},
+      {"value": "mairie.larajasse@cc-hauts-du-lyonnais.fr", "count": 1},
+      {"value": "mairie.beaurepaire@territoire-de-beaurepaire.fr", "count": 1},
+      {"value": "mairie.stjulienenvercors@wanadoo.fr", "count": 1},
+      {"value": "mairie-roybon@wanadoo.fr", "count": 1},
+      {"value": "mairie.pierrelongue@wanadoo.fr", "count": 1},
+      {"value": "mairie@cruseilles.fr", "count": 1},
+      {"value": "info@veyrier.ch", "count": 1},
+      {"value": "accueil@boen.fr", "count": 1},
+      {"value": "balazuc.mairie@orange.fr", "count": 1},
+      {"value": "mairie.challes-les-eaux@wanadoo.fr", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3146123", "count": 1},
+      {"value": "Q3146133", "count": 1},
+      {"value": "Q273935", "count": 1},
+      {"value": "Q2315399", "count": 1},
+      {"value": "Q22968583", "count": 1},
+      {"value": "Q522234", "count": 1},
+      {"value": "Q22965819", "count": 1},
+      {"value": "Q1389036", "count": 1},
+      {"value": "Q3577849", "count": 1},
+      {"value": "Q22968459", "count": 1},
+      {"value": "Q375570", "count": 1},
+      {"value": "Q17630209", "count": 1},
+      {"value": "Q22966956", "count": 1},
+      {"value": "Q3146211", "count": 1},
+      {"value": "Q15950694", "count": 1},
+      {"value": "Q3402357", "count": 1},
+      {"value": "Q22968257", "count": 1},
+      {"value": "Q13517465", "count": 1},
+      {"value": "Q22968561", "count": 1},
+      {"value": "Q22967348", "count": 1}
+    ],
+    "count": 20
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 19}], "count": 19},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Hôtel de ville d'Aix-les-Bains", "count": 1},
+      {"value": "fr:Hôtel de ville de Bourg-en-Bresse", "count": 1},
+      {"value": "fr:Le Cheylard", "count": 1},
+      {"value": "fr:Ancienne abbaye, actuellement hôtel de ville", "count": 1},
+      {"value": "fr:Chapelle des Dix Mille Martyrs (ancienne)", "count": 1},
+      {"value": "fr:Neuville-sur-Saône", "count": 1},
+      {"value": "fr:Saint-Romain-en-Gal", "count": 1},
+      {"value": "fr:École de filles de Pérouges", "count": 1},
+      {"value": "fr:Hôtel de ville d'Évian-les-Bains", "count": 1},
+      {"value": "fr:Mariac", "count": 1},
+      {"value": "fr:Hôtel de ville de Bellegarde-sur-Valserine", "count": 1},
+      {"value": "fr:Thônes", "count": 1},
+      {"value": "fr:Hôtel de ville de Villeurbanne", "count": 1},
+      {"value": "fr:Hôtel de Simiane", "count": 1},
+      {"value": "fr:Presbytère (ancien château)", "count": 1},
+      {"value": "fr:Maison forte de Chanaz", "count": 1},
+      {"value": "fr:Petit séminaire de Meximieux", "count": 1},
+      {"value": "fr:Annemasse", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 17}],
+    "count": 17
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117145", "count": 1},
+      {"value": "PA00116324", "count": 1},
+      {"value": "PA00118306", "count": 1},
+      {"value": "PA00113327", "count": 1},
+      {"value": "PA00116449", "count": 1},
+      {"value": "PA00118254", "count": 1},
+      {"value": "PA00118397", "count": 1},
+      {"value": "PA00118171", "count": 1},
+      {"value": "PA00117247", "count": 1},
+      {"value": "PA00118150", "count": 1},
+      {"value": "PA00082196", "count": 1},
+      {"value": "PA00116816", "count": 1},
+      {"value": "PA00118092", "count": 1},
+      {"value": "PA00117000", "count": 1},
+      {"value": "PA00118248", "count": 1},
+      {"value": "PA00118278", "count": 1},
+      {"value": "PA00117622", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1983-10-03", "count": 1},
+      {"value": "1932-10-04", "count": 1},
+      {"value": "1928-04-29", "count": 1},
+      {"value": "1941", "count": 1},
+      {"value": "1929-10-11", "count": 1},
+      {"value": "1930-10-16", "count": 1},
+      {"value": "1981-12-29", "count": 1},
+      {"value": "1890-07-07", "count": 1},
+      {"value": "1981-10-15", "count": 1},
+      {"value": "1991-04-29", "count": 1},
+      {"value": "1913-12-01", "count": 1},
+      {"value": "1974", "count": 1},
+      {"value": "1926-02-18", "count": 1},
+      {"value": "1979-02-13", "count": 1},
+      {"value": "1980-08-22", "count": 1},
+      {"value": "1949-09-08", "count": 1},
+      {"value": "1925-12-04", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 13}, {"value": "2", "count": 3}],
+    "count": 16
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "building", "count": 8},
+      {"value": "yes", "count": 4},
+      {"value": "castle", "count": 2},
+      {"value": "monument", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Saint-Étienne", "count": 6},
+      {"value": "La Poste", "count": 2},
+      {"value": "Mairie Annexe de Villeurbanne", "count": 1},
+      {"value": "Ville de Grenoble", "count": 1},
+      {"value": "commune de Grâne", "count": 1},
+      {"value": "Commune de Lozanne", "count": 1},
+      {"value": "Commune", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "13/04/2017: rénovation de la mairie actuelle en cours - déplacement de la mairie pour un an à peu près",
+        "count": 1
+      },
+      {
+        "value": "E-mail : accueil@ville-lecheylard.fr Fax : +33 4 75 29 12 00",
+        "count": 1
+      },
+      {"value": "situation : PLACE DE L EGLISE", "count": 1},
+      {
+        "value": "Mairie au rez de chaussée, salle polyvallente au 1er étage",
+        "count": 1
+      },
+      {"value": "N°14 Place ...", "count": 1},
+      {
+        "value": "nouveaux horaires d'ouverture du secrétariat valables à partir du 01/01/2017",
+        "count": 1
+      },
+      {"value": "Ancien Château de Publier", "count": 1},
+      {"value": "Ancienne fruitière", "count": 1},
+      {
+        "value": "Jours et heures d'ouverture de la mairie : Lundi de 10h à 12h Mardi, mercredi et jeudi de 14h à 17h",
+        "count": 1
+      },
+      {"value": "nouvelle mairie", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Mairie de Chichilianne.jpg", "count": 1},
+      {
+        "value": "http://commons.wikimedia.org/wiki/File:Cheignieu_02.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Leyment_-_juillet_2014_(2).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Varambon_(11).JPG",
+        "count": 1
+      },
+      {"value": "File:Mairie du Gua.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Mairie_de_Saint-Jean-de-Niost.JPG",
+        "count": 1
+      },
+      {"value": "File:Mairie_vif_Isère.JPG", "count": 1},
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/2/25/Renaison_Mairie.JPG",
+        "count": 1
+      }
+    ],
+    "count": 8
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "administrative", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 2},
+      {"value": "Potlatch 0.8a", "count": 1},
+      {"value": "Potlatch 0.9a", "count": 1},
+      {"value": "Editop", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 3}, {"value": "yes", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "townhall:type",
+    "tags": [{"value": "village", "count": 3}, {"value": "city", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 2},
+      {"value": "3", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/SaintSymphorienSurCoise/",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/mairiestmartinenhaut/", "count": 1},
+      {"value": "https://www.facebook.com/communededuerne", "count": 1},
+      {"value": "https://www.facebook.com/maringesloire", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C19", "count": 1},
+      {"value": "C17", "count": 1},
+      {"value": "1901", "count": 1},
+      {"value": "C15", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "roof:levels",
+    "tags": [{"value": "1", "count": 2}, {"value": "0", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "à placer plus précisement", "count": 1},
+      {"value": "position", "count": 1},
+      {"value": "localisation", "count": 1},
+      {"value": "Bâti tracé sur Bing absent du cadastre ???", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "700", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "370", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "roof:shape",
+    "tags": [
+      {"value": "hipped", "count": 1},
+      {"value": "pyramidal", "count": 1},
+      {"value": "gabled", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "photo",
+    "tags": [
+      {"value": "http://i.imgur.com/TdFRQXt.jpg", "count": 1},
+      {"value": "http://i.imgur.com/yMtL9uT.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Mairie_Andance_2011-08-31-031.jpg",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Ancienne auberge des frères Paris", "count": 1},
+      {
+        "value": "Du Lundi au Vendredi 09h00 - 12h00 13h00 - 17h00.",
+        "count": 1
+      },
+      {
+        "value": "Ancien Château, deux salles à visiter: la Chambre de la Marquise et le Grand Salon (Tapisseries sur Don Quichotte)",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair:description:fr",
+    "tags": [
+      {
+        "value": "Seul l'ascenseur qui n'est pas aux normes peut être emprunté par les fauteuils roulants. Les sanitaires ne sont pas accessibles aux fauteuils roulants.",
+        "count": 1
+      },
+      {
+        "value": "Inaccèssible - Largeur de vantail du RDC inférieur à 90 cm",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {"value": "localisation", "count": 1},
+      {
+        "value": "tagguer : Dispensaire, Centre médical et social, Centre communal d'action sociale",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "access:deaf",
+    "tags": [{"value": "limited", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "access:mental_disabled",
+    "tags": [{"value": "no", "count": 1}, {"value": "limited", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "levels",
+    "tags": [{"value": "3", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "blind:description:fr",
+    "tags": [
+      {
+        "value": "Bâtiment non accessible aux aveugles et aux malvoyants.",
+        "count": 1
+      },
+      {
+        "value": "Difficile d'accès - Absence de repères visuels et tactiles pour les malvoyants",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "osmuid", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "deaf:description:fr",
+    "tags": [
+      {
+        "value": "Bâtiment difficile d'accès aux sourds, ascenseur non conforme.",
+        "count": 1
+      },
+      {
+        "value": "Inaccèssible - Pas de vision directe ni de dispositif permettant de visualiser le visiteur à l'entrée",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "handrail",
+    "tags": [{"value": "2", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 2}],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "public", "count": 2}], "count": 2},
+  {
+    "key": "access:blind",
+    "tags": [{"value": "no", "count": 1}, {"value": "limited", "count": 1}],
+    "count": 2
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "school:FR", "tags": [{"value": "primaire", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:LaPoste",
+    "tags": [{"value": "01084A", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "municipal:facilities:fr",
+    "tags": [{"value": "administratifs", "count": 1}],
+    "count": 1
+  },
+  {"key": "emergency", "tags": [{"value": "siren", "count": 1}], "count": 1},
+  {"key": "oneway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "11.4", "count": 1}], "count": 1},
+  {
+    "key": "public:equipement",
+    "tags": [{"value": "administrative", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "380970405V", "count": 1}],
+    "count": 1
+  },
+  {"key": "end_date", "tags": [{"value": "1928", "count": 1}], "count": 1},
+  {"key": "roof:colour", "tags": [{"value": "acaabf", "count": 1}], "count": 1},
+  {
+    "key": "roof:material",
+    "tags": [{"value": "metal", "count": 1}],
+    "count": 1
+  },
+  {"key": "maxspeed", "tags": [{"value": "30", "count": 1}], "count": 1},
+  {"key": "ref:UAI", "tags": [{"value": "0010161V", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "Bâtiment non accessible aux malvoyants, PMR et handicapés mentaux.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

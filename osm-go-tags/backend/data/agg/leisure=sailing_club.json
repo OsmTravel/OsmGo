@@ -1,0 +1,44 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "sailing_club", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.snbsm.com", "count": 1},
+      {"value": "http://www.cardinalesud.fr/", "count": 1},
+      {"value": "http://www.snonantes.com/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 99401145", "count": 1},
+      {"value": "+33 2 40 50 81 51", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "sport", "tags": [{"value": "sailing", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [{"value": "snbsm.voilelegere@wanadoo.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "-1", "count": 1}], "count": 1},
+  {"key": "club", "tags": [{"value": "sport", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Porte drapeau de la voile à Nantes depuis 130 ans, le SNO Nantes sera ravi de vous accueillir en compétition et en loisir, de l'Optimist à l'habitable.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "1882", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,151 @@
+[
+  {"key": "shop", "tags": [{"value": "ticket", "count": 114}], "count": 114},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SNCF", "count": 14},
+      {"value": "Transdev Haute-Savoie;Philibert;Loyet;Francony", "count": 1},
+      {"value": "Compagnie du Mont Blanc", "count": 1},
+      {"value": "Transdev", "count": 1},
+      {"value": "Visites Nature Vercors", "count": 1},
+      {"value": "SAT", "count": 1},
+      {"value": "SMTC", "count": 1},
+      {"value": "S3V", "count": 1},
+      {"value": "SEM7L", "count": 1},
+      {"value": "Compagnie du Mont-Blanc", "count": 1},
+      {"value": "SNCF; Transisère; LER; Aérocar", "count": 1},
+      {"value": "Sibra", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "information",
+    "tags": [{"value": "office", "count": 18}],
+    "count": 18
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 18}],
+    "count": 18
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 9}, {"value": "-1", "count": 1}],
+    "count": 10
+  },
+  {
+    "key": "room",
+    "tags": [{"value": "shop", "count": 6}, {"value": "office", "count": 2}],
+    "count": 8
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "indoor",
+    "tags": [{"value": "room", "count": 5}, {"value": "yes", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Vend des titres TAG, SNCF, TER Rhône-Alpes et Métrovélo. Rensignements Citélib et Stationement Ville de Grenoble",
+        "count": 3
+      },
+      {
+        "value": "Agence commerciale Transisère. Vend également des titres TAG, SNCF, LER PACA et navettes aéroports.",
+        "count": 1
+      },
+      {
+        "value": "Information et vente pour réseaux TER, TAG, Transisère, LER PACA, Navettes Aéroports...",
+        "count": 1
+      },
+      {
+        "value": "Information et vente pour réseaux TGV, Intercités...",
+        "count": 1
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "STAS", "count": 1},
+      {"value": "Sibra", "count": 1},
+      {"value": "stas, TIL", "count": 1},
+      {"value": "TER;TGV", "count": 1},
+      {"value": "Lihsa;Ouibus;Flixbus", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "ski_rental", "count": 1},
+      {"value": "fast_food", "count": 1},
+      {"value": "toilets", "count": 1},
+      {"value": "bus_station", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "tickets:public_transport",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "tactile_paving",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.sat-annemasse.com", "count": 1},
+      {"value": "http://www.chavade.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "layer -1 ?", "count": 1},
+      {
+        "value": "Le bâtiment est bien plus grand que ce qui est noté sur le cadastre.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "rental", "tags": [{"value": "ski", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [{"value": "Vente de forfaits de ski l'hiver", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "tickets:ski-pass",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "drinking_water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "ski", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "emergency", "tags": [{"value": "official", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "cHDC-eFugdmjgT_LogPLDg", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

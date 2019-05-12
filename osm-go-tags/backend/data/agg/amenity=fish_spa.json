@@ -1,0 +1,13 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 26 60 43 58", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "fish_spa", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.afleurdepeau-fishspa.com/", "count": 1}],
+    "count": 1
+  }
+]

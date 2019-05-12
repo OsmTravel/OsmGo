@@ -1,0 +1,28 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "health_facility", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "laboratory", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "biology", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "type:FR:FINESS",
+    "tags": [{"value": "610", "count": 2}, {"value": "611", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Laboratoire de Biologie Médicale", "count": 2}],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,5 @@
+[
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "heritage", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "laundry", "count": 1}], "count": 1}
+]

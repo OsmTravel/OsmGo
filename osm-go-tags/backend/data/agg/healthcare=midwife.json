@@ -1,0 +1,19 @@
+[
+  {"key": "healthcare", "tags": [{"value": "midwife", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 68 38 44", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Aurore Huet", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "https://sagefemme-msg.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1}
+]

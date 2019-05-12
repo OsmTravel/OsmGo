@@ -1,0 +1,18 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 82 62 97 10", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "bank", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.saas-finances.com/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Courtier en assurance", "count": 1}],
+    "count": 1
+  }
+]

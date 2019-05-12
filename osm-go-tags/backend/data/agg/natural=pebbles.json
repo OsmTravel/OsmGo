@@ -1,0 +1,8 @@
+[
+  {"key": "natural", "tags": [{"value": "pebbles", "count": 65}], "count": 65},
+  {
+    "key": "place",
+    "tags": [{"value": "island", "count": 2}, {"value": "islet", "count": 1}],
+    "count": 3
+  }
+]

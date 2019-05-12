@@ -1,0 +1,541 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "drinking_water", "count": 2167}],
+    "count": 2167
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Veolia Eau", "count": 77},
+      {"value": "SG2A Hacienda", "count": 7},
+      {"value": "ADOMA", "count": 4},
+      {"value": "Lyonnaise des Eaux", "count": 3},
+      {"value": "Communauté d'Agglomeration d'Annecy", "count": 2},
+      {"value": "Mairie de Villeurbanne", "count": 1},
+      {"value": "Mairie de Chambéry", "count": 1}
+    ],
+    "count": 95
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "V19780", "count": 2},
+      {"value": "V6429", "count": 1},
+      {"value": "V897", "count": 1},
+      {"value": "A34", "count": 1},
+      {"value": "V2261", "count": 1},
+      {"value": "V59185", "count": 1},
+      {"value": "1075", "count": 1},
+      {"value": "V15211", "count": 1},
+      {"value": "V10143", "count": 1},
+      {"value": "V10272", "count": 1},
+      {"value": "V59916", "count": 1},
+      {"value": "V21776", "count": 1},
+      {"value": "V15089", "count": 1},
+      {"value": "V57442", "count": 1},
+      {"value": "L373", "count": 1},
+      {"value": "V58295", "count": 1},
+      {"value": "V14989", "count": 1},
+      {"value": "V6670", "count": 1},
+      {"value": "V19013", "count": 1},
+      {"value": "V59902", "count": 1},
+      {"value": "V599", "count": 1},
+      {"value": "V8527", "count": 1},
+      {"value": "V59588", "count": 1},
+      {"value": "V809", "count": 1},
+      {"value": "V10225", "count": 1},
+      {"value": "V57441", "count": 1},
+      {"value": "V58674", "count": 1},
+      {"value": "V4279", "count": 1},
+      {"value": "V6570", "count": 1},
+      {"value": "V16044", "count": 1},
+      {"value": "V54901", "count": 1},
+      {"value": "V54785", "count": 1},
+      {"value": "V5945", "count": 1},
+      {"value": "V21184", "count": 1},
+      {"value": "V16119", "count": 1},
+      {"value": "V57859", "count": 1},
+      {"value": "V5620", "count": 1},
+      {"value": "V6079", "count": 1},
+      {"value": "V6258", "count": 1},
+      {"value": "V19983", "count": 1},
+      {"value": "V9150", "count": 1},
+      {"value": "V6094", "count": 1},
+      {"value": "V9847", "count": 1},
+      {"value": "V59751", "count": 1},
+      {"value": "V15349", "count": 1},
+      {"value": "V11627", "count": 1},
+      {"value": "V11753", "count": 1},
+      {"value": "V57210", "count": 1},
+      {"value": "V11726", "count": 1},
+      {"value": "V14725", "count": 1},
+      {"value": "V7919", "count": 1},
+      {"value": "V9739", "count": 1},
+      {"value": "V2778", "count": 1},
+      {"value": "V11324", "count": 1},
+      {"value": "V16388", "count": 1},
+      {"value": "V16410", "count": 1},
+      {"value": "V21521", "count": 1},
+      {"value": "V15335", "count": 1},
+      {"value": "V14244", "count": 1},
+      {"value": "V57399", "count": 1},
+      {"value": "V18095", "count": 1},
+      {"value": "V18204", "count": 1},
+      {"value": "V18200", "count": 1},
+      {"value": "V18782", "count": 1},
+      {"value": "V57446", "count": 1},
+      {"value": "V57655", "count": 1},
+      {"value": "V15619", "count": 1},
+      {"value": "V18365", "count": 1},
+      {"value": "V19686", "count": 1},
+      {"value": "V57251", "count": 1},
+      {"value": "V19307", "count": 1},
+      {"value": "V19301", "count": 1},
+      {"value": "V19399", "count": 1},
+      {"value": "V19463", "count": 1},
+      {"value": "V16177", "count": 1},
+      {"value": "V59225", "count": 1},
+      {"value": "V21546", "count": 1},
+      {"value": "V57652", "count": 1},
+      {"value": "L379", "count": 1},
+      {"value": "L375", "count": 1},
+      {"value": "B11", "count": 1}
+    ],
+    "count": 82
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "no", "count": 70}, {"value": "yes", "count": 10}],
+    "count": 80
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1108", "count": 3},
+      {"value": "1050", "count": 3},
+      {"value": "1040", "count": 2},
+      {"value": "1610", "count": 2},
+      {"value": "738", "count": 1},
+      {"value": "800", "count": 1},
+      {"value": "463", "count": 1},
+      {"value": "1763", "count": 1},
+      {"value": "2170", "count": 1},
+      {"value": "1854", "count": 1},
+      {"value": "1695", "count": 1},
+      {"value": "1620", "count": 1},
+      {"value": "1574", "count": 1},
+      {"value": "414", "count": 1},
+      {"value": "1012", "count": 1},
+      {"value": "462", "count": 1},
+      {"value": "687", "count": 1},
+      {"value": "2523", "count": 1},
+      {"value": "2363", "count": 1},
+      {"value": "1687", "count": 1},
+      {"value": "1636", "count": 1},
+      {"value": "1810", "count": 1},
+      {"value": "766", "count": 1},
+      {"value": "1086", "count": 1},
+      {"value": "1425", "count": 1},
+      {"value": "1287", "count": 1},
+      {"value": "1622", "count": 1},
+      {"value": "1840", "count": 1},
+      {"value": "1538", "count": 1},
+      {"value": "1682", "count": 1},
+      {"value": "1306", "count": 1},
+      {"value": "1036", "count": 1},
+      {"value": "982", "count": 1},
+      {"value": "855", "count": 1},
+      {"value": "1498", "count": 1},
+      {"value": "790", "count": 1},
+      {"value": "1598", "count": 1},
+      {"value": "1509", "count": 1},
+      {"value": "598", "count": 1},
+      {"value": "1317", "count": 1},
+      {"value": "599", "count": 1},
+      {"value": "2179", "count": 1},
+      {"value": "1992", "count": 1},
+      {"value": "813", "count": 1},
+      {"value": "812", "count": 1},
+      {"value": "1540", "count": 1},
+      {"value": "1691", "count": 1},
+      {"value": "1828", "count": 1},
+      {"value": "1038", "count": 1},
+      {"value": "1200", "count": 1},
+      {"value": "940", "count": 1},
+      {"value": "1007", "count": 1},
+      {"value": "1008", "count": 1},
+      {"value": "860", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "1853", "count": 1},
+      {"value": "1653", "count": 1},
+      {"value": "1350", "count": 1},
+      {"value": "1310", "count": 1},
+      {"value": "1074", "count": 1},
+      {"value": "1081", "count": 1},
+      {"value": "1210", "count": 1},
+      {"value": "1455", "count": 1},
+      {"value": "1600", "count": 1},
+      {"value": "1450", "count": 1},
+      {"value": "1130", "count": 1},
+      {"value": "1201", "count": 1},
+      {"value": "2031", "count": 1}
+    ],
+    "count": 74
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "water_tap", "count": 61},
+      {"value": "water_well", "count": 1},
+      {"value": "tap", "count": 1}
+    ],
+    "count": 63
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Fontaine d'eau potable", "count": 4},
+      {"value": "Fontaine Bayard", "count": 3},
+      {"value": "Coule même l'hiver", "count": 2},
+      {"value": "Fontaine", "count": 2},
+      {"value": "robinet sur evier", "count": 1},
+      {"value": "Source captée avec un tuyau", "count": 1},
+      {"value": "basin fed by a source in the garage of the above", "count": 1},
+      {
+        "value": "pour bestiaux plutôt, on on peut quand même y remplir une gourde",
+        "count": 1
+      },
+      {
+        "value": "Il s'agit d'une source captée sans doute, avec tuyau et receptacle, à sec le 21/07/2014",
+        "count": 1
+      },
+      {
+        "value": "La tradition locale indique que l'eau de la source est miraculeuse.",
+        "count": 1
+      },
+      {"value": "Point d'eau non controlé", "count": 1},
+      {
+        "value": "c'est aussi une jolie fontaine en plus d'être potable",
+        "count": 1
+      },
+      {"value": "Ouvert l'été, à vérifier si potable", "count": 1},
+      {"value": "Vérifier si potable", "count": 1},
+      {"value": "\"1862\"", "count": 1},
+      {"value": "roofed", "count": 1},
+      {"value": "between the tables of a bar", "count": 1},
+      {"value": "bouton discret à gauche pour faire couler l'eau", "count": 1},
+      {"value": "Eau non contrôlée", "count": 1},
+      {"value": "Coule en novembre", "count": 1},
+      {"value": "Gratuite", "count": 1},
+      {
+        "value": "Prévu pour les bêtes (non humaines !), rien n'empêche nous aussi de nous y abreuver (et en plus elle est bonne)",
+        "count": 1
+      },
+      {"value": "eau non surveillée", "count": 1},
+      {
+        "value": "Bassin public de village sousmis à arrété municipal - Lavage de véhicule interdit",
+        "count": 1
+      },
+      {"value": "Bassin public de village", "count": 1},
+      {"value": "fontaine de Béguère", "count": 1},
+      {
+        "value": "Caché par la végétation en été et je soupconne que ce soit l'eau du Lac... Prévoir des pastilles pour les estomacs fragile",
+        "count": 1
+      },
+      {"value": "Coulait en hiver 2016", "count": 1},
+      {"value": "Robinet sur le mur ouest du bâtiment", "count": 1},
+      {"value": "Local dans le mur du cimetiére", "count": 1},
+      {
+        "value": "point d'eau en bordure du bâtiment, accessible aux clients SNCF voie D",
+        "count": 1
+      },
+      {"value": "Point d'eau potable en façade du lavoire", "count": 1},
+      {
+        "value": "ressemble à un captage pour bêtes, j'en ai bu sans problème, mais j'ignore si c'est permanent, en tout cas, ça coulait en Mai malgré la neige",
+        "count": 1
+      },
+      {"value": "Running water", "count": 1},
+      {"value": "robinet exterieur", "count": 1},
+      {"value": "fontaine à manivelle", "count": 1},
+      {"value": "2 éviers", "count": 1},
+      {"value": "fontaine", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 28}, {"value": "limited", "count": 4}],
+    "count": 32
+  },
+  {
+    "key": "drinking_water",
+    "tags": [
+      {"value": "yes", "count": 21},
+      {"value": "conditional", "count": 3},
+      {"value": "uncontrolled", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1995", "count": 4},
+      {"value": "2001", "count": 4},
+      {"value": "1999", "count": 2},
+      {"value": "1992", "count": 2},
+      {"value": "1997", "count": 2},
+      {"value": "2002", "count": 1},
+      {"value": "2009", "count": 1},
+      {"value": "2008", "count": 1},
+      {"value": "1994", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "1988", "count": 1},
+      {"value": "2015-04-01", "count": 1},
+      {"value": "1991", "count": 1},
+      {"value": "1996", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "caravan_site", "count": 13},
+      {"value": "attraction", "count": 3},
+      {"value": "information", "count": 1},
+      {"value": "picnic_site", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "yes", "count": 14}, {"value": "no", "count": 3}],
+    "count": 17
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "Annee de pose : inconnue", "count": 6},
+      {"value": "Annee de pose : 2006", "count": 1},
+      {"value": "Captage d'eau", "count": 1},
+      {"value": "Annee de pose : 2011", "count": 1},
+      {"value": "Annee de pose : 1998", "count": 1},
+      {"value": "Annee de pose : 2005", "count": 1},
+      {"value": "Annee de pose : 1999", "count": 1},
+      {"value": "Annee de pose : 1995", "count": 1},
+      {"value": "Annee de pose : 2002", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "power_supply", "tags": [{"value": "yes", "count": 13}], "count": 13},
+  {"key": "tents", "tags": [{"value": "no", "count": 13}], "count": 13},
+  {"key": "natural", "tags": [{"value": "spring", "count": 13}], "count": 13},
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "16", "count": 5},
+      {"value": "20", "count": 2},
+      {"value": "52", "count": 1},
+      {"value": "46", "count": 1},
+      {"value": "26", "count": 1},
+      {"value": "50", "count": 1},
+      {"value": "14", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "owner", "tags": [{"value": "Grand Lyon", "count": 11}], "count": 11},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Oui oui ! Il y a pas moins de 3 sources disponibles autour du refuge",
+        "count": 3
+      },
+      {"value": "Temporaire ?", "count": 1},
+      {
+        "value": "altitude de 1687 confirmée par deux fois à 1 an d'écart",
+        "count": 1
+      },
+      {"value": "nom non officiel, inventé par moi", "count": 1},
+      {"value": "point d'eau", "count": 1},
+      {"value": "Still working in Sept. 2014", "count": 1},
+      {"value": "en panne", "count": 1},
+      {"value": "Coupé l'hivers", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "customers", "count": 2},
+      {"value": "free", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "la précision est à 10 metres", "count": 1},
+      {"value": "Emplacement exact à confirmer", "count": 1},
+      {"value": "Position à affiner", "count": 1},
+      {"value": "Position à vérifier", "count": 1},
+      {"value": "position estimated", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {"value": "position exacte à affiner", "count": 1},
+      {"value": "position exacte", "count": 1},
+      {
+        "value": "Avec à la fin du projet (S1 2017) 14 Habitations...à voir comment tagguer celà dans OSM",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "bottle",
+    "tags": [{"value": "no", "count": 5}, {"value": "yes", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Potlatch 0.9b", "count": 2},
+      {"value": "Potlatch 0.10b", "count": 1},
+      {"value": "Potlatch 0.9a", "count": 1},
+      {"value": "Potlatch 0.10c", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "drinking_water:legal",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "hedge", "count": 2}, {"value": "fence", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "Q7wrq-r3wfTO-3SjqiH-OQ", "count": 1},
+      {"value": "VbkqWCEx4txLqWalZjnh7w", "count": 1},
+      {"value": "pf6vyhuZaHnU8eyUKHB9sQ", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://lagardeenoisans.pagesperso-orange.fr/inventairefontaines.html",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "designation",
+    "tags": [
+      {"value": "Bassin d'Excuvilly", "count": 1},
+      {"value": "Fontaine de Choully", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "cold_water", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "stateofrepair", "tags": [{"value": "ok", "count": 2}], "count": 2},
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {"key": "watering_place", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Champignon de la Versoie", "count": 1},
+      {"value": "fr:Buvette Cachat", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "wayside_cross", "count": 1},
+      {"value": "memorial", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q16024860", "count": 1},
+      {"value": "Q22967056", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "water_supply", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "seasonal", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_hydrant", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fire_hydrant:type",
+    "tags": [{"value": "pillar", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [{"value": "File:Fontaine à Ruthière.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "hiking", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "waterway", "tags": [{"value": "basin", "count": 1}], "count": 1},
+  {"key": "tap", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "disused:amenity",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:E",
+    "tags": [{"value": "NvEGcqJT1W5s2HFkegieog", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:S",
+    "tags": [{"value": "Eea5Wg4c1BLe6xDPDSkTOQ", "count": 1}],
+    "count": 1
+  },
+  {"key": "pump", "tags": [{"value": "manual", "count": 1}], "count": 1},
+  {"key": "animals", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fire_hydrant:position",
+    "tags": [{"value": "green", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117283", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1943-06-09", "count": 1}],
+    "count": 1
+  }
+]

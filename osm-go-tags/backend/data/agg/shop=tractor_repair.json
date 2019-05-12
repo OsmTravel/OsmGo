@@ -1,0 +1,16 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "tractor_repair", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "New Holland", "count": 2},
+      {"value": "Case", "count": 1},
+      {"value": "John Deere", "count": 1}
+    ],
+    "count": 4
+  }
+]

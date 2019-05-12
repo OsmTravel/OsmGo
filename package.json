@@ -10,9 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sprites": "node  ./misc/mapStyle/generateSprite.js"
+    "sprites": "node  ./osm-go-tags/backend/sprties.js"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^7.2.12",
     "@angular/core": "^7.2.12",

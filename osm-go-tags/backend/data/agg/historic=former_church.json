@@ -1,0 +1,47 @@
+[
+  {"key": "amenity", "tags": [{"value": "cinema", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "check disabled access", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "former_church", "count": 1}],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "above museum, access by internal staircase", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 5 62082660", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://marciac.cine.allocine.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {
+        "value": "Acces 1er etage via Territoir de Jazz (40m) . Boucle magnetique (\"T\" Loop) en Salle. [En: Step-free to pay desk, lift to 1st floor via Territoir du Jazz (40m). Excellent Hearing Loop (use \"T\")",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

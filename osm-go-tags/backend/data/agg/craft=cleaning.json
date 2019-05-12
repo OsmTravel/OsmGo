@@ -1,0 +1,8 @@
+[
+  {"key": "craft", "tags": [{"value": "cleaning", "count": 5}], "count": 5},
+  {
+    "key": "description",
+    "tags": [{"value": "Nettoyage", "count": 1}],
+    "count": 1
+  }
+]

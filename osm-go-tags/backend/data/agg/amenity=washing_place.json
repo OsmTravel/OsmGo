@@ -1,0 +1,40 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "washing_place", "count": 167}],
+    "count": 167
+  },
+  {
+    "key": "water",
+    "tags": [{"value": "yes", "count": 156}, {"value": "no", "count": 9}],
+    "count": 165
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 154},
+      {"value": "private", "count": 8},
+      {"value": "no", "count": 2}
+    ],
+    "count": 164
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "lavoir", "count": 162},
+      {"value": "monument", "count": 1}
+    ],
+    "count": 163
+  },
+  {
+    "key": "shelter",
+    "tags": [{"value": "no", "count": 80}, {"value": "yes", "count": 78}],
+    "count": 158
+  },
+  {
+    "key": "wall",
+    "tags": [{"value": "no", "count": 57}, {"value": "yes", "count": 22}],
+    "count": 79
+  },
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,31 @@
+[
+  {"key": "amenity", "tags": [{"value": "insurance", "count": 4}], "count": 4},
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Axa", "count": 3},
+      {"value": "fr:Groupama", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "office", "tags": [{"value": "insurance", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 99 79 19 00", "count": 1},
+      {"value": "+33 2 99 43 75 04", "count": 1},
+      {"value": "+33 2 35 71 24 37", "count": 1},
+      {"value": "+33 2 23 46 79 59", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.axa.fr", "count": 3},
+      {"value": "http://www.groupama.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

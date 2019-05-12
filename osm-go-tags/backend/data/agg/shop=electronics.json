@@ -1,0 +1,148 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "electronics", "count": 136}],
+    "count": 136
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 71 71 52", "count": 1},
+      {"value": "+33 4 76 50 95 30", "count": 1},
+      {"value": "+33 825 85 08 50", "count": 1},
+      {"value": "+33 4 78629434", "count": 1},
+      {"value": "+33 4 76 51 58 99", "count": 1},
+      {"value": "+33 4 75 81 85 40", "count": 1},
+      {"value": "+33 4 75 29 74 75", "count": 1},
+      {"value": "+33 4 77 24 16 32", "count": 1},
+      {"value": "+33 4 76 09 67 83", "count": 1},
+      {"value": "+33 4 77333523", "count": 1},
+      {"value": "+33 9 69 32 10 20", "count": 1},
+      {"value": "+33 8 25 85 08 50", "count": 1},
+      {"value": "+33472310779", "count": 1},
+      {"value": "+33477547371", "count": 1},
+      {"value": "+33 4 75 59 52 41", "count": 1},
+      {"value": "+33 4 78202147", "count": 1},
+      {"value": "+33438751950", "count": 1},
+      {"value": "+33450980670", "count": 1},
+      {"value": "+33 4 76 42 10 65", "count": 1},
+      {"value": "+33 4 75 39 63 24", "count": 1},
+      {"value": "+33 4 76 23 51 90", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.boulanger.com/", "count": 1},
+      {"value": "http://www.pixmania.com", "count": 1},
+      {"value": "http://www.agelectronique.fr/", "count": 1},
+      {"value": "http://www.elecomac.com", "count": 1},
+      {"value": "http://www.sarl-faure.com/", "count": 1},
+      {"value": "http://www.pro-electro.com/", "count": 1},
+      {"value": "www.atout-informatique.com/", "count": 1},
+      {"value": "http://www.envie-rhone.com/", "count": 1},
+      {
+        "value": "http://magasins.boulanger.com/11462-boulanger-lyon-les-cordeliers",
+        "count": 1
+      },
+      {"value": "http://www.proxiconfort-gvs.fr", "count": 1},
+      {"value": "http://www.scie-crel.com/", "count": 1},
+      {"value": "http://www.procie-saint-priest.com", "count": 1},
+      {"value": "http://www.futureland.fr", "count": 1},
+      {"value": "http://electrodepot.fr", "count": 1},
+      {"value": "http://magasin.darty.com/188267-darty-davezieux", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Mood",
+        "count": 1
+      }
+    ],
+    "count": 16
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 8}, {"value": "limited", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Pro&Cie", "count": 1},
+      {"value": "Envie", "count": 1},
+      {"value": "M. Viricel Jean-Luc", "count": 1},
+      {"value": "MDA", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Image, son, électro-ménager, cuisine", "count": 1},
+      {"value": "Distribution de matériel électrique", "count": 1},
+      {"value": "Informatique d'occasion garantie 1 an", "count": 1},
+      {
+        "value": "Commerce de produits électro-ménagers, Hi-Fi, vidéo Réparation, dépannages, installation d'antennes et paraboles, etc.",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 2}, {"value": "1", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Darty", "count": 2},
+      {"value": "fr:Boulanger (entreprise)", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "second_hand",
+    "tags": [{"value": "yes", "count": 2}, {"value": "only", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@agelectronique.fr", "count": 1},
+      {"value": "sarl-faure@wanadoo.fr", "count": 1},
+      {"value": "aed.stmartindheres@sonepar.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2439098", "count": 2},
+      {"value": "Q2921695", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "ele", "tags": [{"value": "117", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Darty", "count": 1}], "count": 1},
+  {
+    "key": "craft",
+    "tags": [{"value": "electronics_repair", "count": 1}],
+    "count": 1
+  },
+  {"key": "repair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 76 44 37 77", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {
+    "key": "electronics_repair",
+    "tags": [{"value": "appliance", "count": 1}],
+    "count": 1
+  }
+]

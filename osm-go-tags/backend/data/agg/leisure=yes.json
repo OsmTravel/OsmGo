@@ -1,0 +1,47 @@
+[
+  {"key": "leisure", "tags": [{"value": "yes", "count": 12}], "count": 12},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.panglosslabs.org/", "count": 1},
+      {"value": "http://www.eyrieuxsport.fr/", "count": 1},
+      {"value": "http://www.aravis-parc-d-aventures.fr/", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "workshop", "tags": [{"value": "fablab", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "bicycle_rental;boat_rental", "count": 1}],
+    "count": 1
+  },
+  {"key": "bicycle_rental", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contacteznous@panglosslabs.org", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "sport",
+    "tags": [{"value": "bicycle;canoe", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 50 32 17 50", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Ouvert depuis l'an 2000 à Thônes, au coeur du massif des Aravis, l'Aravis Parc d'Aventures propose des parcours accrobatiques en forêt de 4 niveaux différents.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "canoe_rental", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

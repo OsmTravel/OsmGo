@@ -1,0 +1,35 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "lighthouse", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "seamark:type",
+    "tags": [
+      {"value": "light_major", "count": 1},
+      {"value": "signal_station_warning", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "seamark:light:colour",
+    "tags": [{"value": "red", "count": 1}, {"value": "orange", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "seamark:light:character",
+    "tags": [{"value": "Q", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "seamark:light:exhibition",
+    "tags": [{"value": "storm", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "seamark:signal_station_warning:category",
+    "tags": [{"value": "storm", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {"key": "foot", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Interdit sauf véhicules incendie RP (Rhône Poulenc ?)",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "swing_gate", "count": 2}], "count": 2},
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "vehicle", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "emergency",
+    "tags": [{"value": "destination", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "swing_gate:type",
+    "tags": [{"value": "single", "count": 2}],
+    "count": 2
+  }
+]

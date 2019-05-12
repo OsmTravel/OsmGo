@@ -1,0 +1,37 @@
+[
+  {"key": "shop", "tags": [{"value": "seafood", "count": 34}], "count": 34},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 24 19 66", "count": 1},
+      {"value": "+33 4 75 43 69 70", "count": 1},
+      {"value": "+33 6 15 73 80 74", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "cuisine",
+    "tags": [{"value": "french", "count": 1}, {"value": "seafood", "count": 1}],
+    "count": 2
+  },
+  {"key": "operator", "tags": [{"value": "Mompelat", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Marché couvert, poissonnerie, chocolatier, café thé, crémerie, épicerie fine italienne, primeurs, pâtisserie, pizzerias, boulangerie, boucherie, caviste, restaurant, fleuriste",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://sasgrandguillaume.fr/grandguillaume/", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1}
+]

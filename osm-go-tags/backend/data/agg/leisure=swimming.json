@@ -1,0 +1,9 @@
+[
+  {"key": "amenity", "tags": [{"value": "shelter", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "please verify position", "count": 1}],
+    "count": 1
+  },
+  {"key": "leisure", "tags": [{"value": "swimming", "count": 1}], "count": 1}
+]

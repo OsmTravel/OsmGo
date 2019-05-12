@@ -1,0 +1,309 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "crossing", "count": 39950}],
+    "count": 39950
+  },
+  {
+    "key": "crossing",
+    "tags": [
+      {"value": "uncontrolled", "count": 10407},
+      {"value": "traffic_signals", "count": 3316},
+      {"value": "zebra", "count": 2469},
+      {"value": "island", "count": 420},
+      {"value": "unmarked", "count": 125},
+      {"value": "no", "count": 7},
+      {"value": "yes", "count": 3},
+      {"value": "pedestrian", "count": 2},
+      {"value": "island;uncontrolled", "count": 1},
+      {"value": "uncontrolled;zebra", "count": 1},
+      {"value": "traffic_lights", "count": 1},
+      {"value": "pavement", "count": 1}
+    ],
+    "count": 16753
+  },
+  {
+    "key": "crossing_ref",
+    "tags": [
+      {"value": "zebra", "count": 10555},
+      {"value": "pelican", "count": 6},
+      {"value": "toucan", "count": 3},
+      {"value": "tiger", "count": 3}
+    ],
+    "count": 10567
+  },
+  {
+    "key": "tactile_paving",
+    "tags": [
+      {"value": "yes", "count": 3597},
+      {"value": "no", "count": 1496},
+      {"value": "incorrect", "count": 11},
+      {"value": "bad", "count": 6},
+      {"value": "half", "count": 1},
+      {"value": "yes/both", "count": 1},
+      {"value": "yes;no", "count": 1}
+    ],
+    "count": 5113
+  },
+  {
+    "key": "sloped_curb",
+    "tags": [
+      {"value": "yes", "count": 1555},
+      {"value": "no", "count": 103},
+      {"value": "both", "count": 25}
+    ],
+    "count": 1683
+  },
+  {
+    "key": "supervised",
+    "tags": [
+      {"value": "no", "count": 1585},
+      {"value": "yes", "count": 13},
+      {"value": "Lu-Ve 08:30,11:30,13:30,15:45", "count": 2}
+    ],
+    "count": 1600
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 408},
+      {"value": "designated", "count": 41},
+      {"value": "no", "count": 11},
+      {"value": "dismount", "count": 3},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 465
+  },
+  {
+    "key": "traffic_calming",
+    "tags": [
+      {"value": "table", "count": 138},
+      {"value": "hump", "count": 124},
+      {"value": "bump", "count": 30},
+      {"value": "cushion", "count": 16},
+      {"value": "yes", "count": 11},
+      {"value": "choker", "count": 7},
+      {"value": "island", "count": 2},
+      {"value": "chicane", "count": 2},
+      {"value": "speed_table", "count": 1}
+    ],
+    "count": 331
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 103},
+      {"value": "no", "count": 25},
+      {"value": "limited", "count": 3}
+    ],
+    "count": 131
+  },
+  {
+    "key": "button_operated",
+    "tags": [
+      {"value": "yes", "count": 65},
+      {"value": "no", "count": 2},
+      {"value": "ye", "count": 1}
+    ],
+    "count": 68
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 15},
+      {"value": "2018-08-01", "count": 13},
+      {"value": "2018-06-24", "count": 5},
+      {"value": "2018-06-05", "count": 5},
+      {"value": "2018-02-15", "count": 4},
+      {"value": "2017-09-27", "count": 3},
+      {"value": "2017-09-21", "count": 3},
+      {"value": "2018-02-24", "count": 2},
+      {"value": "2018-07-27", "count": 2},
+      {"value": "2018-01-19", "count": 1},
+      {"value": "2017-07-19", "count": 1},
+      {"value": "2018-04-27", "count": 1},
+      {"value": "2018-06-06", "count": 1},
+      {"value": "2018-08-09", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "kerb",
+    "tags": [
+      {"value": "lowered", "count": 16},
+      {"value": "raised", "count": 3},
+      {"value": "no", "count": 2},
+      {"value": "flush_[road_hump]", "count": 1},
+      {"value": "flush", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 21}, {"value": "2", "count": 2}],
+    "count": 23
+  },
+  {"key": "railway", "tags": [{"value": "crossing", "count": 18}], "count": 18},
+  {
+    "key": "segregated",
+    "tags": [{"value": "yes", "count": 14}, {"value": "no", "count": 3}],
+    "count": 17
+  },
+  {
+    "key": "horse",
+    "tags": [{"value": "no", "count": 13}, {"value": "yes", "count": 3}],
+    "count": 16
+  },
+  {
+    "key": "traffic_signals:sound",
+    "tags": [{"value": "yes", "count": 13}, {"value": "no", "count": 1}],
+    "count": 14
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "stop_position", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "foot",
+    "tags": [{"value": "designated", "count": 6}, {"value": "no", "count": 4}],
+    "count": 10
+  },
+  {"key": "footway", "tags": [{"value": "sidewalk", "count": 9}], "count": 9},
+  {
+    "key": "traffic_sign",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "city_limit", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "crossing:island",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "maxspeed",
+    "tags": [{"value": "50", "count": 5}, {"value": "30", "count": 1}],
+    "count": 6
+  },
+  {"key": "sed", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "passage surélevé", "count": 1},
+      {"value": "Vérifier l'existence suite travaux côté nord rue", "count": 1},
+      {"value": "Vérifier existence/position de ce croisement", "count": 1},
+      {"value": "Position très approximative", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 4}], "count": 4},
+  {
+    "key": "traffic_signals:vibration",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 3},
+      {"value": "Merkaartor 0.13", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "traffic_signals:direction",
+    "tags": [
+      {"value": "forward", "count": 3},
+      {"value": "backward", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Bing imagery is outdated", "count": 2},
+      {"value": "Please do not move.", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "TCL", "count": 2},
+      {"value": "Alpe d'Huez", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0016", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "bollard",
+    "tags": [{"value": "fixed", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "layer", "tags": [{"value": "2", "count": 2}], "count": 2},
+  {
+    "key": "ele",
+    "tags": [{"value": "849.00", "count": 1}, {"value": "332.0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "cycleway",
+    "tags": [{"value": "asl", "count": 1}, {"value": "lane", "count": 1}],
+    "count": 2
+  },
+  {"key": "maxheight", "tags": [{"value": "4.2", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "french", "count": 1}], "count": 1},
+  {
+    "key": "crossing:bollard",
+    "tags": [{"value": "contrasted", "count": 1}],
+    "count": 1
+  },
+  {"key": "direction", "tags": [{"value": "backward", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "bicycle", "count": 1}], "count": 1},
+  {
+    "key": "crossing:barrier",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "maxweight", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "BEV manquant côté \"est\" du passage piéton. Zebra existant 2 potelets réfléchissants côté est 2 potelets côté ouest",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "blind:description",
+    "tags": [{"value": "zone pédotactive des 2 côtés de la rue", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "CD84", "count": 1}], "count": 1},
+  {"key": "ref", "tags": [{"value": "11", "count": 1}], "count": 1},
+  {"key": "ref:highway", "tags": [{"value": "D938", "count": 1}], "count": 1},
+  {"key": "road:separated", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "side", "tags": [{"value": "right", "count": 1}], "count": 1},
+  {
+    "key": "traffic_signals",
+    "tags": [{"value": "signal", "count": 1}],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "gate", "count": 1}], "count": 1},
+  {"key": "sac_scale", "tags": [{"value": "hiking", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "25", "count": 1}], "count": 1}
+]

@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "heat", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 61 10 59 58", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "old_shop",
+    "tags": [{"value": "mobile_phone", "count": 1}],
+    "count": 1
+  }
+]

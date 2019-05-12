@@ -1,0 +1,22 @@
+[
+  {"key": "craft", "tags": [{"value": "locksmith", "count": 10}], "count": 10},
+  {
+    "key": "shop",
+    "tags": [{"value": "locksmith", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 27 33 75", "count": 1},
+      {"value": "+33 4 76 26 43 06", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Toutes fermetures du bâtiment", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

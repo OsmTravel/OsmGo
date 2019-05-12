@@ -1,0 +1,42 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "window_construction", "count": 28}],
+    "count": 28
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33478443354", "count": 1},
+      {"value": "+33478445522", "count": 1},
+      {"value": "+33 4 72506029", "count": 1},
+      {"value": "+33 4 72175886", "count": 1},
+      {"value": "+33 4 76 49 03 27", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Fabricant installateur/rénovation : portes, fenêtres, volets, aluminium & PVC",
+        "count": 1
+      },
+      {"value": "Fabricant de menuiserie PVC, Vitrerie, Miroiterie", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 2}], "count": 2},
+  {"key": "fax", "tags": [{"value": "+33478445498", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.trois-baies.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Grosfillex", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "works", "count": 1}], "count": 1}
+]

@@ -1,0 +1,133 @@
+[
+  {"key": "natural", "tags": [{"value": "stone", "count": 114}], "count": 114},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 7},
+      {"value": "artwork", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "climbing:boulder",
+    "tags": [{"value": "yes", "count": 6}],
+    "count": 6
+  },
+  {"key": "sport", "tags": [{"value": "climbing", "count": 6}], "count": 6},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "675", "count": 1},
+      {"value": "1646", "count": 1},
+      {"value": "1776", "count": 1},
+      {"value": "490", "count": 1},
+      {"value": "1450", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Site escalade", "count": 1},
+      {"value": "site escalade", "count": 1},
+      {
+        "value": "La Pierre d'Orthaz était un lieu mythique, nombre de personnes y bivouquaient à l'époque. Il s'agit d'un bloc ératique d'escalade, présentant plusieurs face de niveau d'escalade différent.",
+        "count": 1
+      },
+      {"value": "Bloc erratique", "count": 1},
+      {
+        "value": "Un panneau d'indication parle d'une pierre représentant la géologie du Vercors, le mot menhir est employé dans le texte mais cette pierre ne semble pas être un vrai menhir (absente du site t4t35.fr)",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q16303800", "count": 1},
+      {"value": "Q19406859", "count": 1},
+      {"value": "Q20895567", "count": 1},
+      {"value": "Q181292", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "stone", "count": 3},
+      {"value": "boundary_stone", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Le Gros Caillou", "count": 1},
+      {"value": "fr:Chaise du Seigneur", "count": 1},
+      {"value": "fr:Cheminée de fée", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA38000026", "count": 1},
+      {"value": "PA00117313", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "climbing", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "leisure",
+    "tags": [{"value": "sports_centre", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "information",
+    "tags": [
+      {"value": "guidepost", "count": 1},
+      {"value": "board", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "heritage", "tags": [{"value": "2", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "Un cerf de bronze sur un rocher", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Chozeau_-_Chaise_du_Seigneur-001.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "protected", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "board_type", "tags": [{"value": "nature", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [{"value": "Jardin du souvenir", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1926-03-29", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "statue", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele:unknown", "tags": [{"value": "1030", "count": 1}], "count": 1}
+]

@@ -1,0 +1,40 @@
+[
+  {"key": "amenity", "tags": [{"value": "training", "count": 6}], "count": 6},
+  {
+    "key": "training",
+    "tags": [
+      {"value": "dance", "count": 2},
+      {"value": "cooking", "count": 1},
+      {"value": "computer,management", "count": 1},
+      {"value": "language", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 13 05 15", "count": 1},
+      {"value": "+33 4 78 20 12 22", "count": 1},
+      {"value": "+33 6 67840505", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.orsys.fr/?ville=LYON&pays=france", "count": 1},
+      {"value": "http://www.mb-studio.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Cours de cuisine, cours d'œnologie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 72 33 17 01", "count": 1}],
+    "count": 1
+  }
+]

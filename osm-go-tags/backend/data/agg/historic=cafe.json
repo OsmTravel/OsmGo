@@ -1,0 +1,24 @@
+[
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1},
+  {"key": "cuisine", "tags": [{"value": "regional", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "cafe", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2010-01-29", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA01000033", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q15952063", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Le Café français", "count": 1}],
+    "count": 1
+  }
+]

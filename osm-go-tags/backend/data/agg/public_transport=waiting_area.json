@@ -1,0 +1,49 @@
+[
+  {
+    "key": "public_transport",
+    "tags": [{"value": "waiting_area", "count": 26}],
+    "count": 26
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "area", "count": 22}, {"value": "room", "count": 3}],
+    "count": 25
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 13},
+      {"value": "0", "count": 5},
+      {"value": "-1", "count": 2},
+      {"value": "2", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "level:ref",
+    "tags": [
+      {"value": "Hall 1", "count": 6},
+      {"value": "Hall 2", "count": 6},
+      {"value": "Hall 3", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Espace d'attente Hall 1", "count": 6},
+      {"value": "Espace d'attente Hall 2", "count": 6},
+      {"value": "Hall des voyageurs", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "ele", "tags": [{"value": "38", "count": 12}], "count": 12},
+  {"key": "wall", "tags": [{"value": "no", "count": 12}], "count": 12},
+  {"key": "layer", "tags": [{"value": "0", "count": 12}], "count": 12},
+  {"key": "area", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "landuse",
+    "tags": [{"value": "construction", "count": 1}],
+    "count": 1
+  }
+]

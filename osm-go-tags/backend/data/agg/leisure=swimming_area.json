@@ -1,0 +1,13 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "swimming_area", "count": 4}],
+    "count": 4
+  },
+  {"key": "sport", "tags": [{"value": "swimming", "count": 3}], "count": 3},
+  {
+    "key": "supervised",
+    "tags": [{"value": "interval", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "radiology", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_facility",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_specialty:radiology",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_specialty:diagnostic_radiology",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

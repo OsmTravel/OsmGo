@@ -1,0 +1,587 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "car_repair", "count": 1002}],
+    "count": 1002
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Renault", "count": 44},
+      {"value": "Citroën", "count": 15},
+      {"value": "Peugeot", "count": 14},
+      {"value": "Speedy", "count": 3},
+      {"value": "Opel", "count": 3},
+      {"value": "Feu vert", "count": 2},
+      {"value": "Dacia", "count": 1},
+      {"value": "Audi;Volkswagen", "count": 1},
+      {"value": "Massey Fergusson", "count": 1},
+      {"value": "Citröen", "count": 1},
+      {"value": "Renault Trucks", "count": 1},
+      {"value": "Suzuki", "count": 1},
+      {"value": "Opel + Bosch", "count": 1},
+      {"value": "Chevrolet", "count": 1},
+      {"value": "Pieces Autos", "count": 1},
+      {"value": "Toute Marque", "count": 1},
+      {"value": "Point S", "count": 1},
+      {"value": "Roady", "count": 1},
+      {"value": "VW", "count": 1},
+      {"value": "Euromaster", "count": 1},
+      {"value": "SiliGom", "count": 1},
+      {"value": "Mercedes-Benz", "count": 1},
+      {"value": "Renaud", "count": 1},
+      {"value": "Dacia;Renault", "count": 1},
+      {"value": "Citroen", "count": 1},
+      {"value": "Fiat", "count": 1},
+      {"value": "Massa Pneus", "count": 1},
+      {"value": "Carglass", "count": 1}
+    ],
+    "count": 103
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33479221493", "count": 1},
+      {"value": "+33 4 74 59 00 20", "count": 1},
+      {"value": "+33 4 78 93 36 11", "count": 1},
+      {"value": "+33 4 78 94 26 48", "count": 1},
+      {"value": "+33 4 77 61 05 90", "count": 1},
+      {"value": "+33 4 76 08 37 98", "count": 1},
+      {"value": "+33 4 78 59 62 15", "count": 1},
+      {"value": "+33476423472", "count": 1},
+      {"value": "+33 4 74 51 38 59", "count": 1},
+      {"value": "+33 4 76 71 35 74", "count": 1},
+      {"value": "+33 4 76 30 01 13", "count": 1},
+      {"value": "+33 4 76 27 27 44", "count": 1},
+      {"value": "+33 4 76 53 11 34", "count": 1},
+      {"value": "+33 4 76 42 80 74", "count": 1},
+      {"value": "+33476513636", "count": 1},
+      {"value": "+33 4 76 51 67 98", "count": 1},
+      {"value": "+33 4 38 92 03 54", "count": 1},
+      {"value": "+33 4 76 95 93 53", "count": 1},
+      {"value": "+33 4 74 78 24 24", "count": 1},
+      {"value": "+33 4 74 78 40 55", "count": 1},
+      {"value": "+33 4 77 32 43 49", "count": 1},
+      {"value": "+33 4 74 59 03 10", "count": 1},
+      {"value": "+33 4 74 56 53 23", "count": 1},
+      {"value": "+33 4 76 96 44 16", "count": 1},
+      {"value": "+33 4 78 52 64 67", "count": 1},
+      {"value": "+33 4 57 40 40 15", "count": 1},
+      {"value": "+33 4 74 87 42 84", "count": 1},
+      {"value": "+33 4 74 53 10 40", "count": 1},
+      {"value": "+33 4 74 31 90 14", "count": 1},
+      {"value": "+33 4 74 96 73 73", "count": 1},
+      {"value": "+33 4 77 24 01 70", "count": 1},
+      {"value": "+33 4 75 39 58 12", "count": 1},
+      {"value": "+33 476937190", "count": 1},
+      {"value": "+33 4 76 44 35 53", "count": 1},
+      {"value": "+41 22 771 39 19", "count": 1},
+      {"value": "+33478445395", "count": 1},
+      {"value": "+33478489639", "count": 1},
+      {"value": "+33478480612", "count": 1},
+      {"value": "+33478563637", "count": 1},
+      {"value": "+33478489416", "count": 1},
+      {"value": "+33478486855", "count": 1},
+      {"value": "+33476482520", "count": 1},
+      {"value": "+33475616362", "count": 1},
+      {"value": "+33684451956", "count": 1},
+      {"value": "+33 4 77 50 60 66", "count": 1},
+      {"value": "+33 4 38 49 04 80", "count": 1},
+      {"value": "+33 4 76 42 29 94", "count": 1},
+      {"value": "+33 4 50 02 85 18", "count": 1},
+      {"value": "+33 4 74 70 19 77", "count": 1},
+      {"value": "+33 6 13 77 81 09", "count": 1},
+      {"value": "+33 4 76 49 14 14", "count": 1},
+      {"value": "+33 4 76 84 05 84", "count": 1},
+      {"value": "+33 9 81 98 42 88", "count": 1},
+      {"value": "+33 4 78218022", "count": 1},
+      {"value": "+33478218916", "count": 1},
+      {"value": "+33478216033", "count": 1},
+      {"value": "+33 4 76 34 45 08", "count": 1},
+      {"value": "+33450974800", "count": 1},
+      {"value": "+33 4 72 71 04 04", "count": 1},
+      {"value": "+33 4 72337371", "count": 1},
+      {"value": "+33476673030", "count": 1},
+      {"value": "+33 4 72289090", "count": 1},
+      {"value": "+33 4 75 46 51 24", "count": 1},
+      {"value": "+33 4 75 96 16 78", "count": 1},
+      {"value": "+33 4 76 56 02 94", "count": 1},
+      {"value": "+33 4 76 27 24 16", "count": 1},
+      {"value": "+33 4 37 42 09 90", "count": 1},
+      {"value": "+33475887468", "count": 1},
+      {"value": "+339 50 96 34 80", "count": 1},
+      {"value": "+33 4 78 78 39 39", "count": 1},
+      {"value": "+33 4 79 61 45 62", "count": 1},
+      {"value": "+33 4 78 27 84 98", "count": 1},
+      {"value": "+33 4 75 35 16 47", "count": 1},
+      {"value": "+33 4 75 37 10 94", "count": 1},
+      {"value": "+33 4 79 24 27 98", "count": 1},
+      {"value": "+33 4 76 08 00 20", "count": 1},
+      {"value": "+33 4 74 59 02 09", "count": 1},
+      {"value": "+33475406269", "count": 1},
+      {"value": "+33 4 50 35 60 00", "count": 1},
+      {"value": "+33 4 72 24 77 02", "count": 1},
+      {"value": "+33 4 78 84 42 94", "count": 1},
+      {"value": "+33 4 79 25 75 95", "count": 1},
+      {"value": "+33 4 50 39 12 68", "count": 1},
+      {"value": "+33 4 75 44 24 43", "count": 1},
+      {"value": "+33 4 50 42 07 85", "count": 1},
+      {"value": "+33 4 76 42 64 68", "count": 1},
+      {"value": "+33 4 76 54 36 83", "count": 1},
+      {"value": "+33 4 50 56 71 96", "count": 1},
+      {"value": "+33 4 76 30 01 10", "count": 1},
+      {"value": "+33 4 75 36 46 02", "count": 1},
+      {"value": "+33 4 76 34 46 08", "count": 1},
+      {"value": "+33478835730", "count": 1},
+      {"value": "+33 4 76 22 65 14", "count": 1}
+    ],
+    "count": 93
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Renault", "count": 13},
+      {"value": "Citroën", "count": 7},
+      {"value": "Peugeot", "count": 6},
+      {"value": "Speedy", "count": 4},
+      {"value": "Carglass", "count": 3},
+      {"value": "AD", "count": 3},
+      {"value": "Midas", "count": 3},
+      {"value": "Distinxion", "count": 2},
+      {"value": "Top Garage", "count": 2},
+      {"value": "Volkswagen", "count": 2},
+      {"value": "Auto Distribution", "count": 2},
+      {"value": "AD Auto", "count": 2},
+      {"value": "DEKRA", "count": 1},
+      {"value": "France Pare Brise", "count": 1},
+      {"value": "PAD", "count": 1},
+      {"value": "Norisko", "count": 1},
+      {"value": "PSA", "count": 1},
+      {"value": "Point S", "count": 1},
+      {"value": "AD Carrosserie", "count": 1},
+      {"value": "Olivier Guyot", "count": 1},
+      {"value": "Nicolas Cohen", "count": 1},
+      {"value": "Alesina", "count": 1},
+      {"value": "Carbone", "count": 1},
+      {"value": "Emmanuel Penilla", "count": 1},
+      {"value": "Quemin Denis Sarl", "count": 1},
+      {"value": "TopGarage", "count": 1},
+      {"value": "Autocontrol", "count": 1},
+      {"value": "M. NOYER Gérard", "count": 1},
+      {"value": "Patrick Pivato", "count": 1},
+      {"value": "Autosur", "count": 1},
+      {"value": "First stop", "count": 1},
+      {"value": "Dacia", "count": 1},
+      {"value": "First Stop", "count": 1},
+      {"value": "ISOCAR - Garage Pirrera", "count": 1},
+      {"value": "Sami Yildirim", "count": 1},
+      {"value": "De Simoné", "count": 1},
+      {"value": "André Emmanuel Guichard", "count": 1},
+      {"value": "Topgom", "count": 1},
+      {"value": "Feu Vert", "count": 1},
+      {"value": "Philippe Bourgeois", "count": 1},
+      {"value": "Renaut", "count": 1},
+      {"value": "Euromaster", "count": 1},
+      {"value": "Franck Fontaine", "count": 1},
+      {"value": "Jacinto", "count": 1},
+      {"value": "Franck VEYRENC", "count": 1},
+      {"value": "Auto Primo", "count": 1},
+      {"value": "Vulco", "count": 1},
+      {"value": "Groupement des Mousquetaires", "count": 1}
+    ],
+    "count": 85
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.autossimo.com/garagetechauto", "count": 1},
+      {"value": "http://www.garage-drome-hermitage.fr/", "count": 1},
+      {"value": "http://www.garagelombard.fr/", "count": 1},
+      {"value": "http://autob2-citroen.fr/", "count": 1},
+      {
+        "value": "https://www.feuvert.fr/centres-auto/st-martin-d-heres/feu-vert-grenoble-stmdheres/193.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.feuvert.fr/centres-auto/feu-vert-bourgoin.html",
+        "count": 1
+      },
+      {"value": "http://www.auto-nautic.fr", "count": 1},
+      {"value": "http://www.autoscanner-bourgoin.securitest.fr/", "count": 1},
+      {
+        "value": "http://www.franceparebrise.org/fpb/voir_centre.php?ctr=38s",
+        "count": 1
+      },
+      {"value": "http://www.speedy.fr/", "count": 1},
+      {
+        "value": "http://centres-auto.speedy.fr/garage/villefranche-sur-saone-69400/847",
+        "count": 1
+      },
+      {"value": "http://www.carrosseriedepannagedelapyramide.fr/", "count": 1},
+      {"value": "http://agents.peugeot.fr/st-georges-d-esperanche", "count": 1},
+      {"value": "http://www.jgc-pneu.fr/", "count": 1},
+      {"value": "http://www.franceparebrise.org/fpb/", "count": 1},
+      {"value": "http://www.decorial.com/", "count": 1},
+      {"value": "http://www.worldauto.fr", "count": 1},
+      {"value": "http://centredelta07.com/", "count": 1},
+      {"value": "pros.lacentrale.fr/C025806/", "count": 1},
+      {"value": "musieges-pneus.eurotyre.fr/", "count": 1},
+      {"value": "le-teil-pneus.eurotyre.fr/", "count": 1},
+      {"value": "www.citroen-fondmotors.fr/", "count": 1},
+      {"value": "www.garage-cheminal.fr", "count": 1},
+      {"value": "www.intertrade-vsp.com/", "count": 1},
+      {"value": "http://www.garagedesrois.ch", "count": 1},
+      {"value": "http://www.garage-poyard-pomeys.fr", "count": 1},
+      {"value": "http://www.garage-colline-thurins.fr", "count": 1},
+      {"value": "www.gta-automobiles.com", "count": 1},
+      {"value": "https://peugeot-oullins.fr", "count": 1},
+      {"value": "www.auto-motive-concept.fr", "count": 1},
+      {"value": "www.brunelin.com", "count": 1},
+      {"value": "www.garage-timmermans-coteau.fr", "count": 1},
+      {
+        "value": "http://concessions.peugeot.fr/peugeotretailbusiness",
+        "count": 1
+      },
+      {"value": "http://renault.fr", "count": 1},
+      {"value": "http://www.triniane-racing.com", "count": 1},
+      {"value": "www.reseau.citroen.fr/vsl", "count": 1},
+      {"value": "https://www.autos.fr/bonomi", "count": 1},
+      {"value": "http://www.garage-thones.fr/", "count": 1},
+      {"value": "http://www.garagesecond.com", "count": 1},
+      {
+        "value": "http://www.rapidparebrise-le-pont-de-beauvoisin.fr/",
+        "count": 1
+      },
+      {"value": "http://www.securitest.fr", "count": 1},
+      {"value": "http://www.garage-tci.com", "count": 1},
+      {"value": "http://www.firststop.fr", "count": 1},
+      {"value": "http://garage-sage-lyon.renault.fr", "count": 1},
+      {"value": "http://www.midas.fr", "count": 1},
+      {
+        "value": "http://controle-technique.autosur.com/363025-autosur-grignan",
+        "count": 1
+      },
+      {"value": "http://www.aplusglass.com/centre-fontaine-38600/", "count": 1},
+      {"value": "http://www.carrosseriedesvans.fr", "count": 1},
+      {"value": "http://autopia-association.wixsite.com", "count": 1},
+      {"value": "http://www.6eme-avenue.com", "count": 1},
+      {"value": "https://concessions.peugeot.fr/gerland-lyon", "count": 1},
+      {"value": "http://lyon-pneus.eurotyre.fr/", "count": 1},
+      {"value": "https://www.prestigegaribaldi.fr/", "count": 1},
+      {"value": "http://www.garage-olympic.fr/", "count": 1},
+      {"value": "http://www.piecesdetacheesauto.net/", "count": 1},
+      {"value": "http://www.le-garage.fr/", "count": 1},
+      {"value": "http://www.roady.fr/centre-automobile/megale", "count": 1},
+      {
+        "value": "http://centres.euromaster.fr/33831-euromaster-voiron-centre-auto-vl-voiture",
+        "count": 1
+      },
+      {"value": "http://topgom-voiron.fr", "count": 1},
+      {"value": "https://www.autos.fr/distributeur/domancy", "count": 1},
+      {"value": "http://www.firststop.fr/", "count": 1},
+      {
+        "value": "https://www.psa-retail.com/fr/citroen/lyon/psa-retail-lyon-ecully/",
+        "count": 1
+      },
+      {
+        "value": "https://www.ad.fr/garage/ad-carrosserie-chenal-max/",
+        "count": 1
+      },
+      {"value": "http://www.garagemichaud-renault.fr", "count": 1},
+      {"value": "heritageauto.fr", "count": 1},
+      {"value": "http://www.carglass.fr/centres/voiron/", "count": 1},
+      {
+        "value": "https://centre.midas.fr/9734-midas-grenoble-grand-place",
+        "count": 1
+      }
+    ],
+    "count": 67
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "repair", "count": 8},
+      {"value": "dealer;parts;tyres;repair", "count": 3},
+      {"value": "repair;tyres", "count": 3},
+      {"value": "tyres;repair", "count": 1},
+      {"value": "dealer;parts", "count": 1},
+      {"value": "dealer", "count": 1},
+      {"value": "body", "count": 1},
+      {"value": "dealer;repair;parts;tyres;electrical", "count": 1},
+      {"value": "windshield", "count": 1},
+      {"value": "dealer;repair", "count": 1},
+      {"value": "repair;wash", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 14},
+      {"value": "limited", "count": 4},
+      {"value": "no", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "fsfsaintpriest@firststop.fr", "count": 1},
+      {"value": "garage-leportailrouge@orange.fr", "count": 1},
+      {"value": "royalauto39@gmail.com", "count": 1},
+      {"value": "legrandbec@wanadoo.fr", "count": 1},
+      {"value": "t.c.i38100@gmail.com", "count": 1},
+      {"value": "jacky-caillon@wanadoo.fr", "count": 1},
+      {"value": "loriolauto@orange.fr", "count": 1},
+      {"value": "fontaine@aplusglass.com", "count": 1},
+      {"value": "marketing@emeraudes.net.bmw.fr", "count": 1},
+      {"value": "clinicauto.aubenas@points.fr", "count": 1},
+      {"value": "garage.eco@wanadoo.fr", "count": 1},
+      {"value": "carrosserie.chenal@wanadoo.fr", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Nettoyage Automobile", "count": 1},
+      {
+        "value": "Agent Ligier - vente et réparation toutes marques",
+        "count": 1
+      },
+      {"value": "Mécanique automobile", "count": 1},
+      {"value": "Centre Auto", "count": 1},
+      {"value": "Autoradio Hi-Fi, jantes", "count": 1},
+      {"value": "Garage Mécanique auto Carosserie Peinture", "count": 1},
+      {"value": "concessionnaire Citroën", "count": 1},
+      {
+        "value": "Aussi achat et vente véhicules neufs et occasion toutes marques",
+        "count": 1
+      },
+      {"value": "Contrôle Technique", "count": 1},
+      {"value": "Réparations toutes marques", "count": 1},
+      {"value": "SAS JMG", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "service:vehicle:car_repair",
+    "tags": [{"value": "yes", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 76 51 18 04", "count": 1},
+      {"value": "+33 4 76 30 08 09", "count": 1},
+      {"value": "+33476638339", "count": 1},
+      {"value": "+33 4 75 93 07 12", "count": 1},
+      {"value": "+33 4 75 39 49 68", "count": 1},
+      {"value": "+33 4 79 24 54 73", "count": 1},
+      {"value": "+33475406251", "count": 1},
+      {"value": "+33 4 78 85 36 11", "count": 1},
+      {"value": "+33 5 05 65 95 04", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fuel", "count": 3},
+      {"value": "parking", "count": 3},
+      {"value": "vehicle_inspection", "count": 1},
+      {"value": "car_rental", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 6}],
+    "count": 6
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Feu Vert (entreprise)", "count": 2},
+      {"value": "fr:Carglass", "count": 1},
+      {"value": "fr:Midas (entreprise)", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "service:vehicle:repairs",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3070922", "count": 2},
+      {"value": "Q1035997", "count": 1},
+      {"value": "Q3312613", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "parking", "tags": [{"value": "surface", "count": 3}], "count": 3},
+  {
+    "key": "service:vehicle:tyres",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "industrial", "count": 2},
+      {"value": "retail", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 2},
+      {"value": "customers", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "service:vehicle:inspection",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "service:vehicle:oil_change",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "roof:shape",
+    "tags": [
+      {"value": "half-hipped", "count": 1},
+      {"value": "flat", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "service:vehicle:body_repair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "fuel:diesel", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "service:vehicle:new_car_sales",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "fix name", "count": 1}, {"value": "name", "count": 1}],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Renault", "count": 1},
+      {"value": "Eurorepar", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "service:vehicle:diagnostics",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service:vehicle:brakes",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "branch", "tags": [{"value": "Peugeot", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "second_hand", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "4520A", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "31573855900030", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "defibrillator", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:maestro",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fuel:HGV_diesel",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "currency:XLT", "tags": [{"value": "GONT", "count": 1}], "count": 1},
+  {
+    "key": "service:vehicle:used_car_sales",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {
+    "key": "service:vehicle:car_parts",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:cash:XLT-GONT",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Réparation de pare brise.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service:vehicle:paint",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {"key": "repair", "tags": [{"value": "glass", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {
+    "key": "service:vehicle:glass",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

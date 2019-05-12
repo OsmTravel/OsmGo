@@ -1,0 +1,85 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "veterinary", "count": 185}],
+    "count": 185
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 35 16 68", "count": 1},
+      {"value": "+33 4 76 87 44 66", "count": 1},
+      {"value": "+33 4 78 55 02 85", "count": 1},
+      {"value": "+33 4 74 85 05 38", "count": 1},
+      {"value": "+33 4 76 43 03 72", "count": 1},
+      {"value": "+33 4 76 98 81 60", "count": 1},
+      {"value": "+33 4 75 07 00 69", "count": 1},
+      {"value": "+33 4 77 24 05 31", "count": 1},
+      {"value": "+33 4 75 35 10 55", "count": 1},
+      {"value": "+33 4 75 36 67 20", "count": 1},
+      {"value": "+33 4 74 53 37 44", "count": 1},
+      {"value": "+33664860050", "count": 1},
+      {"value": "+33478443366", "count": 1},
+      {"value": "+33474482843", "count": 1},
+      {"value": "+33478361818", "count": 1},
+      {"value": "+33 4 74 87 84 92", "count": 1},
+      {"value": "+33 4 76 07 87 98", "count": 1},
+      {"value": "+33475025522", "count": 1},
+      {"value": "+33 9 66 96 76 50", "count": 1},
+      {"value": "+33 4 78 20 21 28", "count": 1},
+      {"value": "+33 4 50 38 69 89", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.vetelis.fr/", "count": 1},
+      {"value": "http://cliniquelesanimos.chezmonveto.com/", "count": 1},
+      {"value": "http://www.cabinetveterinairedelisle.fr/", "count": 1},
+      {"value": "http://vet-taurobole.fr", "count": 1},
+      {"value": "http://cabinetveterinaire-jacquessterckx.fr/", "count": 1},
+      {"value": "http://www.cliniqueveterinairekarsenty.fr/", "count": 1},
+      {"value": "http://www.veterinairedomicile.fr", "count": 1},
+      {"value": "http://www.cliniquelecolomby.fr/", "count": 1},
+      {"value": "http://www.cliniqueveterinairedesbarques.com", "count": 1},
+      {"value": "http://vet-albizia.chezmonveto.com", "count": 1},
+      {"value": "www.veterinaire-revols.com", "count": 1},
+      {"value": "http://cliniqueveterinairedevillars.com", "count": 1},
+      {"value": "http://clinvet-abergeries.chezmonveto.com/", "count": 1},
+      {"value": "http://clinique-veterinaire-des-arcades.com/", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "Mo-Fr: 08:30-12:00, 14:00-18:30; Sa 08:30-12:00", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@veterinairedomicile.fr", "count": 1},
+      {"value": "contact@vetelis.fr", "count": 1},
+      {"value": "contact@veterinaire-revols.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Godbille Nathalie", "count": 1},
+      {"value": "François Jacob", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "mobile phone: +33 6 75 06 16 66", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

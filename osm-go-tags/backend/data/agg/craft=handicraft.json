@@ -1,0 +1,65 @@
+[
+  {"key": "craft", "tags": [{"value": "handicraft", "count": 13}], "count": 13},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.inkoozing.fr", "count": 1},
+      {"value": "http://carobidules.canalblog.com/", "count": 1},
+      {"value": "http://bonlutherie.fr", "count": 1},
+      {"value": "http://www.tonnard-guitares.com", "count": 1},
+      {"value": "http://www.pagesjaunes.fr/pros/51290673", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Luthier : fabrication, réparation, réglages de guitares et bases",
+        "count": 2
+      },
+      {
+        "value": "Association de créateurs, professionnels et amateurs, atelier de sérigraphie.",
+        "count": 1
+      },
+      {
+        "value": "Boutique et showroom d'une association composée de créatrices textile, de costumières, d'un photographe et d'une brodeuse d'art",
+        "count": 1
+      },
+      {"value": "Association d'artisants et producteurs du Trièves", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Inkoozing", "count": 1},
+      {"value": "association Popeline et Crinoline", "count": 1},
+      {"value": "independant", "count": 1},
+      {"value": "Hervé Tonnard", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "doityourself", "count": 2},
+      {"value": "musical_instrument", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 30 80 90", "count": 1},
+      {"value": "+33 6 65 37 60 05", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "note", "tags": [{"value": "Menuiserie", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "IE3OTHpG9Yhvus4nuF_O4w", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {"key": "craft", "tags": [{"value": "ironwork", "count": 1}], "count": 1},
+  {"key": "phone", "tags": [{"value": "+33434223756", "count": 1}], "count": 1},
+  {
+    "key": "phone:mobile",
+    "tags": [{"value": "+33613206108", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.pro-metaux-ferronnerie.fr", "count": 1}],
+    "count": 1
+  }
+]

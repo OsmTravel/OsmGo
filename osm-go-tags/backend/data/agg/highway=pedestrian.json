@@ -1,0 +1,826 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "pedestrian", "count": 5757}],
+    "count": 5757
+  },
+  {
+    "key": "area",
+    "tags": [{"value": "yes", "count": 1853}, {"value": "no", "count": 2}],
+    "count": 1855
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 500},
+      {"value": "paving_stones", "count": 249},
+      {"value": "concrete", "count": 171},
+      {"value": "paved", "count": 145},
+      {"value": "sett", "count": 99},
+      {"value": "compacted", "count": 66},
+      {"value": "cobblestone", "count": 40},
+      {"value": "gravel", "count": 27},
+      {"value": "fine_gravel", "count": 24},
+      {"value": "concrete:plates", "count": 21},
+      {"value": "unpaved", "count": 12},
+      {"value": "sand", "count": 10},
+      {"value": "wood", "count": 8},
+      {"value": "pebblestone", "count": 6},
+      {"value": "ground", "count": 6},
+      {"value": "grass", "count": 5},
+      {"value": "dirt", "count": 3},
+      {"value": "metal_grid", "count": 2},
+      {"value": "unhewn_cobblestone", "count": 1},
+      {"value": "ice", "count": 1},
+      {"value": "Asphalt_Détérioré", "count": 1},
+      {"value": "clay", "count": 1}
+    ],
+    "count": 1398
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 466},
+      {"value": "designated", "count": 63},
+      {"value": "no", "count": 34},
+      {"value": "permissive", "count": 25},
+      {"value": "dismount", "count": 25},
+      {"value": "opposite", "count": 1},
+      {"value": "difficile", "count": 1},
+      {"value": "private", "count": 1},
+      {"value": "dismounted", "count": 1}
+    ],
+    "count": 617
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 336}, {"value": "no", "count": 28}],
+    "count": 364
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 215},
+      {"value": "designated", "count": 59},
+      {"value": "permissive", "count": 6},
+      {"value": "private", "count": 3},
+      {"value": "destination", "count": 1}
+    ],
+    "count": 284
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 155},
+      {"value": "building_passage", "count": 122}
+    ],
+    "count": 277
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1", "count": 120},
+      {"value": "1", "count": 112},
+      {"value": "2", "count": 5},
+      {"value": "0", "count": 3},
+      {"value": "-5", "count": 1},
+      {"value": "+1", "count": 1}
+    ],
+    "count": 242
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 131}, {"value": "no", "count": 73}],
+    "count": 204
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 119},
+      {"value": "private", "count": 33},
+      {"value": "destination", "count": 25},
+      {"value": "yes", "count": 6},
+      {"value": "delivery", "count": 4},
+      {"value": "permissive", "count": 3},
+      {"value": "designated", "count": 2},
+      {"value": "http://map.comlu.com", "count": 1}
+    ],
+    "count": 193
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 45},
+      {"value": "yes", "count": 27},
+      {"value": "permissive", "count": 26},
+      {"value": "private", "count": 26},
+      {"value": "destination", "count": 25},
+      {"value": "designated", "count": 6},
+      {"value": "residents", "count": 6},
+      {"value": "delivery", "count": 3},
+      {"value": "pedestrian", "count": 1}
+    ],
+    "count": 165
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "741730204D", "count": 4},
+      {"value": "741730166M", "count": 4},
+      {"value": "741730320E", "count": 3},
+      {"value": "741730600J", "count": 2},
+      {"value": "730650773V", "count": 2},
+      {"value": "263620980G", "count": 2},
+      {"value": "381850515G", "count": 2},
+      {"value": "693876830S", "count": 2},
+      {"value": "741730333U", "count": 2},
+      {"value": "741730140J", "count": 2},
+      {"value": "6902641751F", "count": 2},
+      {"value": "730651700C", "count": 1},
+      {"value": "741730090E", "count": 1},
+      {"value": "741730220W", "count": 1},
+      {"value": "385440092L", "count": 1},
+      {"value": "012830326W", "count": 1},
+      {"value": "693875986Z", "count": 1},
+      {"value": "381580377Z", "count": 1},
+      {"value": "385620005N", "count": 1},
+      {"value": "010040431Y", "count": 1},
+      {"value": "422180485T", "count": 1},
+      {"value": "385441280C", "count": 1},
+      {"value": "385442020G", "count": 1},
+      {"value": "385441805Y", "count": 1},
+      {"value": "422184890F", "count": 1},
+      {"value": "262812720A", "count": 1},
+      {"value": "263628270F", "count": 1},
+      {"value": "741730060X", "count": 1},
+      {"value": "741730180C", "count": 1},
+      {"value": "741730080U", "count": 1},
+      {"value": "741730547B", "count": 1},
+      {"value": "741730460G", "count": 1},
+      {"value": "741730400S", "count": 1},
+      {"value": "693874860A", "count": 1},
+      {"value": "730110950X", "count": 1},
+      {"value": "263624040H", "count": 1},
+      {"value": "384500216E", "count": 1},
+      {"value": "385400070E", "count": 1},
+      {"value": "421871470Y", "count": 1},
+      {"value": "730081750E", "count": 1},
+      {"value": "741730160F", "count": 1},
+      {"value": "261980742L", "count": 1},
+      {"value": "692560356Z", "count": 1},
+      {"value": "692130175P", "count": 1},
+      {"value": "690720153D", "count": 1},
+      {"value": "692280090G", "count": 1},
+      {"value": "730653900U", "count": 1},
+      {"value": "011140066Y", "count": 1},
+      {"value": "011140037S", "count": 1},
+      {"value": "381510795J", "count": 1},
+      {"value": "692900071S", "count": 1},
+      {"value": "692190230Y", "count": 1},
+      {"value": "692901320Z", "count": 1},
+      {"value": "261140020S", "count": 1},
+      {"value": "381853253H", "count": 1},
+      {"value": "6902641176F", "count": 1},
+      {"value": "384210094Y", "count": 1},
+      {"value": "741730241U", "count": 1},
+      {"value": "6902641750E", "count": 1},
+      {"value": "381853735G", "count": 1},
+      {"value": "741730132A", "count": 1},
+      {"value": "6902640740G", "count": 1},
+      {"value": "741730100R", "count": 1},
+      {"value": "262200090G", "count": 1},
+      {"value": "385530195J", "count": 1},
+      {"value": "692870796T", "count": 1},
+      {"value": "013730037R", "count": 1},
+      {"value": "691490946F", "count": 1},
+      {"value": "070760715Z", "count": 1},
+      {"value": "381500288M", "count": 1},
+      {"value": "385090128C", "count": 1},
+      {"value": "742750840B", "count": 1},
+      {"value": "742750390M", "count": 1},
+      {"value": "381856670X", "count": 1},
+      {"value": "741730131Z", "count": 1},
+      {"value": "741730108Z", "count": 1},
+      {"value": "262810271N", "count": 1},
+      {"value": "741730537R", "count": 1},
+      {"value": "741730010T", "count": 1},
+      {"value": "741730521Y", "count": 1},
+      {"value": "385442010W", "count": 1},
+      {"value": "741730531J", "count": 1},
+      {"value": "741730067E", "count": 1},
+      {"value": "385441385S", "count": 1},
+      {"value": "383180005Z", "count": 1},
+      {"value": "380530920W", "count": 1},
+      {"value": "385530098D", "count": 1},
+      {"value": "385610038D", "count": 1},
+      {"value": "383620113A", "count": 1},
+      {"value": "381510861F", "count": 1},
+      {"value": "381240590D", "count": 1},
+      {"value": "380010114W", "count": 1},
+      {"value": "690640315P", "count": 1},
+      {"value": "385410035M", "count": 1},
+      {"value": "381510776N", "count": 1},
+      {"value": "385610133G", "count": 1},
+      {"value": "382210186T", "count": 1},
+      {"value": "383590122Y", "count": 1},
+      {"value": "691410270F", "count": 1},
+      {"value": "691410320K", "count": 1},
+      {"value": "691410184M", "count": 1},
+      {"value": "691410046M", "count": 1},
+      {"value": "691410150A", "count": 1},
+      {"value": "690090078W", "count": 1},
+      {"value": "692180020Z", "count": 1},
+      {"value": "263200081M", "count": 1},
+      {"value": "381390840K", "count": 1},
+      {"value": "382950200L", "count": 1},
+      {"value": "381380440E", "count": 1},
+      {"value": "692900719W", "count": 1},
+      {"value": "731440210P", "count": 1},
+      {"value": "380530674D", "count": 1},
+      {"value": "381300675V", "count": 1},
+      {"value": "380150326R", "count": 1},
+      {"value": "385530222N", "count": 1},
+      {"value": "385530106M", "count": 1},
+      {"value": "383890160J", "count": 1},
+      {"value": "385190111R", "count": 1},
+      {"value": "385370054A", "count": 1},
+      {"value": "385370450F", "count": 1},
+      {"value": "014190021Y", "count": 1},
+      {"value": "383070380E", "count": 1},
+      {"value": "382180126R", "count": 1},
+      {"value": "383320062A", "count": 1},
+      {"value": "692900560Y", "count": 1},
+      {"value": "382390040F", "count": 1},
+      {"value": "381853517V", "count": 1},
+      {"value": "381540060X", "count": 1},
+      {"value": "012830908D", "count": 1},
+      {"value": "381510858C", "count": 1},
+      {"value": "011170131F", "count": 1},
+      {"value": "010970079L", "count": 1},
+      {"value": "013860087N", "count": 1},
+      {"value": "010680074G", "count": 1},
+      {"value": "263200027D", "count": 1}
+    ],
+    "count": 151
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "intermediate", "count": 44},
+      {"value": "good", "count": 40},
+      {"value": "excellent", "count": 27},
+      {"value": "bad", "count": 5}
+    ],
+    "count": 116
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "no", "count": 84}, {"value": "yes", "count": 9}],
+    "count": 93
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 90}, {"value": "covered", "count": 1}],
+    "count": 91
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "30", "count": 42},
+      {"value": "20", "count": 15},
+      {"value": "10", "count": 15},
+      {"value": "50", "count": 2}
+    ],
+    "count": 74
+  },
+  {
+    "key": "covered",
+    "tags": [
+      {"value": "yes", "count": 53},
+      {"value": "building_passage", "count": 6},
+      {"value": "arcade", "count": 4},
+      {"value": "colonnade", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 66
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "no", "count": 24},
+      {"value": "opposite", "count": 23},
+      {"value": "track", "count": 11},
+      {"value": "lane", "count": 4},
+      {"value": "opposite_lane", "count": 1}
+    ],
+    "count": 63
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "2", "count": 12},
+      {"value": "1", "count": 8},
+      {"value": "3", "count": 5},
+      {"value": "1.5", "count": 4},
+      {"value": "4.5", "count": 3},
+      {"value": "4", "count": 3},
+      {"value": "10", "count": 2},
+      {"value": "5", "count": 2},
+      {"value": "8", "count": 1},
+      {"value": "2.50", "count": 1},
+      {"value": ".7", "count": 1}
+    ],
+    "count": 42
+  },
+  {"key": "emergency", "tags": [{"value": "yes", "count": 35}], "count": 35},
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "yes", "count": 18},
+      {"value": "no", "count": 15},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "quai bas: layer = -1", "count": 13},
+      {"value": "Accès limité le week end", "count": 3},
+      {
+        "value": "Réamenagement en cours jusqu'a 2018, Bat B10 detruit, galerie marchande en cratere a construire.",
+        "count": 3
+      },
+      {
+        "value": "FIXME zone piétonne, autorisé au véhicule à moteur pour les riverains uniquement (il semble) en tout cas on a pas pu passer nous )",
+        "count": 3
+      },
+      {"value": "Bus uniquement", "count": 2},
+      {"value": "Une seule voiture à la fois ! One car at once !", "count": 1},
+      {
+        "value": "Orsolles: Medieval name of Saint Vallier / nom medieval de Saint Vallier",
+        "count": 1
+      },
+      {"value": "Comme dans l'axe, je retire layer=1", "count": 1},
+      {"value": "Tracé en gros à l'oeil", "count": 1},
+      {"value": "area?", "count": 1},
+      {"value": "approximate position", "count": 1},
+      {"value": "a explorer", "count": 1},
+      {"value": "Aire pietonne (panneau B54)", "count": 1},
+      {"value": "FIXME place réaménagée (entre 2011..2013 ?)", "count": 1},
+      {
+        "value": "ce chemin entre les Allées du Grande Camp et du Lac n'est plus interdit aux vélos, apparement depuis quelques mois déjà (Mai 2014)",
+        "count": 1
+      }
+    ],
+    "count": 34
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 24},
+      {"value": "designated", "count": 5},
+      {"value": "limited", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q20664350", "count": 3},
+      {"value": "Q27832190", "count": 2},
+      {"value": "Q2055975", "count": 1},
+      {"value": "Q3390431", "count": 1},
+      {"value": "Q1506", "count": 1},
+      {"value": "Q19958902", "count": 1},
+      {"value": "Q18736620", "count": 1},
+      {"value": "Q23773322", "count": 1},
+      {"value": "Q3389820", "count": 1},
+      {"value": "Q4258", "count": 1},
+      {"value": "Q8430", "count": 1},
+      {"value": "Q22968662", "count": 1},
+      {"value": "Q3389838", "count": 1},
+      {"value": "Q3452068", "count": 1},
+      {"value": "Q9516", "count": 1},
+      {"value": "Q27832223", "count": 1},
+      {"value": "Q34801114", "count": 1},
+      {"value": "Q3390131", "count": 1},
+      {"value": "Q3396730", "count": 1},
+      {"value": "Q9517", "count": 1},
+      {"value": "Q22966861", "count": 1},
+      {"value": "Q55130397", "count": 1},
+      {"value": "Q28763168", "count": 1},
+      {"value": "Q4250", "count": 1},
+      {"value": "Q30034922", "count": 1},
+      {"value": "Q3389901", "count": 1},
+      {"value": "Q21328497", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Potlatch 0.9c", "count": 14},
+      {"value": "Editop", "count": 5},
+      {"value": "JOSM", "count": 3},
+      {"value": "Tways 0.2", "count": 2},
+      {"value": "Potlatch 0.6c", "count": 2},
+      {"value": "Potlatch 0.10f", "count": 2}
+    ],
+    "count": 28
+  },
+  {
+    "key": "access:conditional",
+    "tags": [
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00 ; Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 23
+      },
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00; Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 3
+      },
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00;Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 2
+      }
+    ],
+    "count": 28
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Place Charles-Béraudier", "count": 3},
+      {"value": "fr:Rue Saint-Jean (Lyon)", "count": 2},
+      {"value": "fr:Passerelle Seguin", "count": 2},
+      {"value": "fr:Rue du Bœuf", "count": 2},
+      {"value": "fr:Place des Terreaux", "count": 1},
+      {"value": "fr:Place Saint-Léger (Chambéry)", "count": 1},
+      {"value": "fr:Place Gabriel-Rambaud", "count": 1},
+      {"value": "fr:Place Carnot", "count": 1},
+      {"value": "fr:Pont de la Caille", "count": 1},
+      {"value": "fr:Rue de Gadagne", "count": 1},
+      {"value": "fr:Place Saint-Jean (Lyon)", "count": 1},
+      {"value": "fr:Rue des Trois-Maries", "count": 1},
+      {"value": "fr:Place Sathonay", "count": 1},
+      {
+        "value": "fr:Parc des Hauteurs#La passerelle des Quatre-vents",
+        "count": 1
+      },
+      {"value": "fr:Pont Saint-Martin (Vienne)", "count": 1},
+      {"value": "fr:Place Antoine-Vollon (Lyon)", "count": 1},
+      {"value": "fr:Montée du Gourguillon", "count": 1},
+      {"value": "fr:Château Vieux (ancien château Delphinal)", "count": 1},
+      {"value": "fr:Place Meissonier (Lyon)", "count": 1},
+      {"value": "fr:Place de la République (Lyon)", "count": 1},
+      {"value": "fr:Place Ampère", "count": 1},
+      {"value": "fr:Place Joannès-Ambre", "count": 1},
+      {"value": "fr:Place de la Croix-Rousse", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "alley", "count": 15},
+      {"value": "driveway", "count": 6},
+      {"value": "parking_aisle", "count": 5}
+    ],
+    "count": 26
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Un escalier sur le tracé", "count": 6},
+      {
+        "value": "ce passage là et plutôt un trottoir qu'une zone piétonne, peut etre les tags seraient à revoir un jour",
+        "count": 4
+      },
+      {"value": "resurvey", "count": 2},
+      {"value": "Est-ce que le Mulet passe vraiement par là ?", "count": 1},
+      {
+        "value": "passage sans doute supprimé, à vérifier sur le terrain",
+        "count": 1
+      },
+      {
+        "value": "Vérifier le nom de la rue sur le terrain: le cadastre est incohérent entre le nom dessiné et l'adresse des parcelles",
+        "count": 1
+      },
+      {
+        "value": "ReVerifier le nom de la place car diffère avec le cadastre",
+        "count": 1
+      },
+      {"value": "Délimitations exactes", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "motorcar",
+    "tags": [{"value": "no", "count": 12}, {"value": "private", "count": 5}],
+    "count": 17
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "none", "count": 8},
+      {"value": "both", "count": 7},
+      {"value": "separate", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 9},
+      {"value": "1", "count": 4},
+      {"value": "-1", "count": 3}
+    ],
+    "count": 16
+  },
+  {
+    "key": "oneway:bicycle",
+    "tags": [{"value": "no", "count": 15}],
+    "count": 15
+  },
+  {
+    "key": "lanes",
+    "tags": [{"value": "1", "count": 12}, {"value": "4", "count": 2}],
+    "count": 14
+  },
+  {
+    "key": "converted_by",
+    "tags": [
+      {"value": "Editop_2_OSM_v0016", "count": 10},
+      {"value": "Editop_2_OSM_v0001", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "marketplace", "count": 8},
+      {"value": "parking", "count": 2}
+    ],
+    "count": 10
+  },
+  {
+    "key": "psv",
+    "tags": [{"value": "yes", "count": 8}, {"value": "permissive", "count": 2}],
+    "count": 10
+  },
+  {"key": "tracktype", "tags": [{"value": "grade2", "count": 10}], "count": 10},
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "3", "count": 5},
+      {"value": "2.9", "count": 2},
+      {"value": "2.1", "count": 1},
+      {"value": "3.1", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 95P", "count": 2},
+      {"value": "D 105a", "count": 2},
+      {"value": "D 531", "count": 1},
+      {"value": "C 12", "count": 1},
+      {"value": "D 9", "count": 1},
+      {"value": "D 907", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "area:highway",
+    "tags": [{"value": "pedestrian", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "village_green", "count": 7}],
+    "count": 7
+  },
+  {"key": "taxi", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "vehicle",
+    "tags": [
+      {"value": "no", "count": 4},
+      {"value": "restricted", "count": 1},
+      {"value": "permissive", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "1983", "count": 3},
+      {"value": "2016", "count": 2},
+      {"value": "1839-07-11", "count": 1},
+      {"value": "2014-04-09", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "maxweight",
+    "tags": [
+      {"value": "7.5", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "12 t", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "10", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "down", "count": 4},
+      {"value": "up", "count": 1},
+      {"value": "-3%", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "cycleway:both", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117077", "count": 2},
+      {"value": "PA00118386", "count": 1},
+      {"value": "PA00117345", "count": 1},
+      {"value": "PA00117003", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 4}, {"value": "3", "count": 1}],
+    "count": 5
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "piste:type",
+    "tags": [{"value": "nordic", "count": 2}, {"value": "sled", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "hour_on:delivery",
+    "tags": [{"value": "11:00:00", "count": 3}],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "hour_off:delivery",
+    "tags": [{"value": "06:00:00", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "railway",
+    "tags": [{"value": "abandoned", "count": 2}, {"value": "tram", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1966", "count": 1},
+      {"value": "1924-03-06", "count": 1},
+      {"value": "1983", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "-201708 aire piétonne-", "count": 1},
+      {"value": "Désiré Pérenon Artisan zingueur 1875-1972", "count": 1},
+      {"value": "Terrasse", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "place", "tags": [{"value": "square", "count": 3}], "count": 3},
+  {"key": "mtb", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "biathlon", "count": 1},
+      {"value": "boules", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "old_oneway", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "piste:difficulty",
+    "tags": [{"value": "novice", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {"value": "Trace de la correct ?", "count": 1},
+      {"value": "Trace de Rue d'Horloge correct ?", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "leisure", "tags": [{"value": "common", "count": 2}], "count": 2},
+  {
+    "key": "bridge:support",
+    "tags": [{"value": "abutment", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "fixme", "count": 1},
+      {"value": "cadastre 2010 faux pour limites batiments gare", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "bench", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "network", "tags": [{"value": "TCL", "count": 2}], "count": 2},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "old_ref",
+    "tags": [{"value": "Rue du Vieux Marché", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "colonnade:right",
+    "tags": [{"value": "open", "count": 2}],
+    "count": 2
+  },
+  {"key": "oneway:foot", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "cutting", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "capacity:disabled",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "toll", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "psv:oneway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "narrow", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "trolley_wire", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "hiking", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "embankment", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "passing_places", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "multipolygon", "count": 1}], "count": 1},
+  {"key": "motorcycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "electrified",
+    "tags": [{"value": "contact_line", "count": 1}],
+    "count": 1
+  },
+  {"key": "frequency", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "voltage", "tags": [{"value": "600", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 1}], "count": 1},
+  {
+    "key": "ramp:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "cycleway:left",
+    "tags": [{"value": "opposite_lane", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {"key": "ramp", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "private", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "piste:grooming",
+    "tags": [{"value": "classic+skating", "count": 1}],
+    "count": 1
+  },
+  {"key": "material", "tags": [{"value": "concrete", "count": 1}], "count": 1},
+  {
+    "key": "note:en",
+    "tags": [
+      {
+        "value": "this pathway is no longer banned to cyclistes, apparenly since a few months already (May 2014)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "motor_vehicle:conditional",
+    "tags": [{"value": "no @ (11:00-06:00)", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "only", "count": 1}], "count": 1}
+]

@@ -1,0 +1,56 @@
+[
+  {"key": "shop", "tags": [{"value": "tea", "count": 16}], "count": 16},
+  {"key": "level", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lushan.fr", "count": 1},
+      {"value": "http://www.originesteaandcoffee.com/", "count": 1},
+      {"value": "http://latheiereflottante.e-monsite.com/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 15 29 50", "count": 1},
+      {"value": "+33 4 37 28 94 00", "count": 1},
+      {"value": "+33 4 79 79 84 60", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "cafe", "count": 1},
+      {"value": "restaurant", "count": 1},
+      {"value": "bar", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "cuisine", "tags": [{"value": "tea", "count": 1}], "count": 1},
+  {"key": "note", "tags": [{"value": "Salon de Thé", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Torréfaction - Café - Thé - Cadeaux", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:maestro",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "post_office:type",
+    "tags": [{"value": "post_partner", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {"key": "man_made", "tags": [{"value": "antenna", "count": 58}], "count": 58},
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "yes", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "tower:type",
+    "tags": [{"value": "communication", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "communication:radio",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "25", "count": 2},
+      {"value": "20", "count": 1},
+      {"value": "32", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "communication:television",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "https://www.matnt.tdf.fr/", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Radar aérien", "count": 1},
+      {"value": "3 antennes implantées sur le toit du bâtiment", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "communication:gsm",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "communication:mobile",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "vao5CKCaBRZNyNP6SDzpNA", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "communication:Secours_en_montagne",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "type", "tags": [{"value": "communication", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "relais pour réseaux tel mobile", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "La Poste Francaise", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Antenne_mobile_Saint-Maurice-de-R%C3%A9mens.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

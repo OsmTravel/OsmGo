@@ -1,0 +1,147 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "sanitary_dump_station", "count": 55}],
+    "count": 55
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "yes", "count": 12},
+      {"value": "no", "count": 9},
+      {"value": "?", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "water_point",
+    "tags": [{"value": "yes", "count": 16}, {"value": "no", "count": 3}],
+    "count": 19
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "public", "count": 5},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Camping La Nublière", "count": 2},
+      {"value": "Le Val d'Ambin", "count": 1},
+      {"value": "Roannais agglomération", "count": 1},
+      {"value": "Mairie Renaison", "count": 1},
+      {"value": "Flot Bleu", "count": 1},
+      {"value": "Public", "count": 1},
+      {"value": "Relais Flot Bleu", "count": 1},
+      {"value": "Mairie", "count": 1},
+      {"value": "AREA", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "sanitary_dump_station:accepted",
+    "tags": [
+      {"value": "black_water;grey_water;tank_chemicals", "count": 3},
+      {"value": "black_water;tank_chemicals", "count": 3}
+    ],
+    "count": 6
+  },
+  {
+    "key": "sanitary_dump_station:chemical_toilet",
+    "tags": [{"value": "yes", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "caravan_site", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "sanitary_dump_station:grey_water",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "sanitary_dump_station:gravity",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "sanitary_dump_station:basin",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "sanitary_dump_station:fee",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "sanitary_dump_station",
+    "tags": [{"value": "public", "count": 3}],
+    "count": 3
+  },
+  {"key": "payment:token", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "sanitary_dump_station:suction",
+    "tags": [{"value": "no", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Bing imagery is outdated", "count": 1},
+      {"value": "water was not available in winter", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Euro Relais", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:payment:en",
+    "tags": [
+      {
+        "value": "Payment tokens available from local shops in Le Bessat",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.camping-bramansvanoise.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:payment:fr",
+    "tags": [
+      {
+        "value": "Jetons disponible auprès des commercants au Bessat",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "sanitary_dump_station:round_drain",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "charge", "tags": [{"value": "2.5€", "count": 1}], "count": 1},
+  {"key": "payment", "tags": [{"value": "token", "count": 1}], "count": 1},
+  {"key": "water_supply", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "I dont know the real position and fee", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "euro-relais", "count": 1}], "count": 1}
+]

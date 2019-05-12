@@ -1,0 +1,55 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapist", "count": 25}],
+    "count": 25
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 59 58 47", "count": 3},
+      {"value": "+33 4 76 49 47 06", "count": 1},
+      {"value": "+33 4 79 33 53 11", "count": 1},
+      {"value": "+33 4 75 59 71 22", "count": 1},
+      {"value": "+33 4 76 34 43 67", "count": 1},
+      {"value": "+41 22 782 43 43", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "physiotherapy", "count": 2},
+      {"value": "osteopathy", "count": 1},
+      {"value": "osteopathy;naturopathy", "count": 1},
+      {"value": "psychology", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "doctors", "count": 2},
+      {"value": "physiotherapist", "count": 1},
+      {"value": "healthcare", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://kinephysio.fr/", "count": 1},
+      {"value": "http://www.villeurbanne-osteopathe.fr", "count": 1},
+      {"value": "physio-centre.ch", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "office", "tags": [{"value": "therapist", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Delphine Tourne", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "osteo", "count": 1}], "count": 1}
+]

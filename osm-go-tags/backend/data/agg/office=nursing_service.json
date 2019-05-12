@@ -1,0 +1,16 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "nursing_service", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+337 78 63 11 82", "count": 1},
+      {"value": "+33 9 53 69 56 81", "count": 1},
+      {"value": "+33 4 75 59 51 17", "count": 1}
+    ],
+    "count": 3
+  }
+]

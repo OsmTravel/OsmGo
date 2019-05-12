@@ -1,0 +1,19 @@
+[
+  {"key": "highway", "tags": [{"value": "yes", "count": 16}], "count": 16},
+  {"key": "area", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {"key": "surface", "tags": [{"value": "gravel", "count": 2}], "count": 2},
+  {"key": "hiking", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "information",
+    "tags": [{"value": "guidepost", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "bridge", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

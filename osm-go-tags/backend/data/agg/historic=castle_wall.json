@@ -1,0 +1,9 @@
+[
+  {"key": "barrier", "tags": [{"value": "wall", "count": 3}], "count": 3},
+  {
+    "key": "historic",
+    "tags": [{"value": "castle_wall", "count": 3}],
+    "count": 3
+  },
+  {"key": "ruins", "tags": [{"value": "yes", "count": 2}], "count": 2}
+]

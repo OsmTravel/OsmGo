@@ -1,0 +1,33 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "designated", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "service", "count": 5},
+      {"value": "unclassified", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "emergency_access", "count": 2},
+      {"value": "driveway", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "access",
+    "tags": [{"value": "no", "count": 2}, {"value": "customers", "count": 1}],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1},
+  {"key": "oneway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "psv", "tags": [{"value": "official", "count": 1}], "count": 1}
+]

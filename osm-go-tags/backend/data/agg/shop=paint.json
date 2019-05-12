@@ -1,0 +1,38 @@
+[
+  {"key": "shop", "tags": [{"value": "paint", "count": 21}], "count": 21},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.2colors.fr", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/Entreprise-Paillaret-et-Fils_2261.asp",
+        "count": 1
+      },
+      {
+        "value": "https://www.zolpan.fr/Magasins/magasin-zolpan-lyon",
+        "count": 1
+      },
+      {
+        "value": "https://www.tollens.com/magasins-tollens/69-rhone/lyon-vaise",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Zolpan", "count": 1},
+      {"value": "Couleurs de Tollens", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 85 03 79", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "JefcoSylco", "count": 1}], "count": 1}
+]

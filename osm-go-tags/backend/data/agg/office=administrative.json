@@ -1,0 +1,118 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "administrative", "count": 60}],
+    "count": 60
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Saint-Étienne", "count": 9},
+      {"value": "URSSAF", "count": 1},
+      {"value": "CPAM", "count": 1},
+      {"value": "Charlieu-Belmont Communauté", "count": 1},
+      {"value": "http://www.saint-etienne-metropole.fr/", "count": 1},
+      {"value": "Communauté d'agglomération Arlysère", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "townhall", "count": 7},
+      {"value": "public_building", "count": 3},
+      {"value": "social_facility", "count": 1}
+    ],
+    "count": 11
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 91 78 64", "count": 1},
+      {"value": "3960", "count": 1},
+      {"value": "+33 4 76 57 45 00", "count": 1},
+      {"value": "+33 4 72 84 78 90", "count": 1},
+      {"value": "+33 4 72 77 15 40", "count": 1},
+      {"value": "3646", "count": 1},
+      {"value": "+33 4 77222288", "count": 1},
+      {"value": "+33 4 57 38 49 60", "count": 1},
+      {"value": "+33 4 75 88 50 70", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.rhone.fr/mdr", "count": 1},
+      {"value": "http://www.ameli.fr/", "count": 1},
+      {"value": "http://www.grenoble-inp.fr/", "count": 1},
+      {"value": "www.ofii.fr/", "count": 1},
+      {
+        "value": "https://www.grenoble.fr/lieu/865/137-service-initiatives-emploi-grenoble-sud.htm",
+        "count": 1
+      },
+      {"value": "http://www.drome.cci.fr/", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Caisse Primaire d'Assurance Maladie", "count": 4},
+      {"value": "Caisse d'Allocations Familiales", "count": 2}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Institut polytechnique de Grenoble", "count": 1},
+      {"value": "fr:Communauté de communes de la Semine", "count": 1},
+      {"value": "fr:Chambre de commerce et d'industrie de la Drôme", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q1665121", "count": 1},
+      {"value": "Q2987872", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "https://www.saint-etienne.fr/saint%C3%A9-vous/jeunesse/pr%C3%A9sentation-lespace-info-jeunes-saint-%C3%A9tienne",
+        "count": 1
+      },
+      {
+        "value": "http://www.charlieubelmont.com/services-a-la-population/maison-des-services/",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "social_facility",
+    "tags": [{"value": "outreach", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "save.grenoblesud@lametro.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "30", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [{"value": "région Rhône-Alpes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "519", "count": 1}], "count": 1}
+]

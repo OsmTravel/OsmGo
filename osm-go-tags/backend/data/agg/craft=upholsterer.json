@@ -1,0 +1,28 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "upholsterer", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 56 72 11", "count": 1},
+      {"value": "+33478833744", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "furniture", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.calicocoon.com/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Réfection de sièges, tissus, cours, stages", "count": 1}
+    ],
+    "count": 1
+  }
+]

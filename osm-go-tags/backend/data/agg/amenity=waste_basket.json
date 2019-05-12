@@ -1,0 +1,139 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "waste_basket", "count": 4212}],
+    "count": 4212
+  },
+  {
+    "key": "waste",
+    "tags": [
+      {"value": "trash", "count": 51},
+      {"value": "dog_excrement", "count": 2},
+      {"value": "poubelle dans parc", "count": 1}
+    ],
+    "count": 54
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 10},
+      {"value": "-0.5", "count": 5},
+      {"value": "1", "count": 4},
+      {"value": "-1", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Grand Lyon", "count": 7},
+      {"value": "UHV", "count": 2},
+      {"value": "SNCF", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Essai pour nouveaux tag public_transport", "count": 8},
+      {
+        "value": "The object dispappeared or never happened to be there",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-09-27", "count": 4},
+      {"value": "2017-07-18", "count": 2},
+      {"value": "2018-08-01", "count": 1},
+      {"value": "2018-06-30", "count": 1},
+      {"value": "2018-08-25", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "pole", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "line_map",
+    "tags": [{"value": "geographic", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "network_map",
+    "tags": [{"value": "no", "count": 7}, {"value": "geographic", "count": 1}],
+    "count": 8
+  },
+  {"key": "time_tables", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "disused", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "4225 02", "count": 1},
+      {"value": "4225 03", "count": 1},
+      {"value": "4225 01", "count": 1},
+      {"value": "4226 01", "count": 1},
+      {"value": "29C120", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "TAG", "count": 2}, {"value": "Sibra", "count": 1}],
+    "count": 3
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "ele:msl",
+    "tags": [{"value": "325.9", "count": 1}, {"value": "322.2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ele",
+    "tags": [{"value": "325.9", "count": 1}, {"value": "322.2", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "recycling:paper",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "vending",
+    "tags": [{"value": "excrement_bags", "count": 2}],
+    "count": 2
+  },
+  {"key": "fixme", "tags": [{"value": "absent", "count": 1}], "count": 1},
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "public", "count": 1}],
+    "count": 1
+  },
+  {"key": "camera:type", "tags": [{"value": "dome", "count": 1}], "count": 1},
+  {
+    "key": "highway",
+    "tags": [{"value": "street_lamp", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "rJcOPstT5KZfgwjz-NGK1A", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "surveillance", "count": 1}],
+    "count": 1
+  }
+]

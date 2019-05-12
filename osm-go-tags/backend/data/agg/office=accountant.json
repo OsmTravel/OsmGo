@@ -1,0 +1,47 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "accountant", "count": 32}],
+    "count": 32
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 68 73 76", "count": 1},
+      {"value": "+33 4 74 53 67 67", "count": 1},
+      {"value": "+33 4 77 97 51 05", "count": 1},
+      {"value": "+33 4 77 32 26 21", "count": 1},
+      {"value": "+33 (0)5 62 30 69 95", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.mireillecourbis.com", "count": 1},
+      {"value": "http://www.caconsultants.fr", "count": 1},
+      {"value": "http://www.cabinetmeyrieux.fr", "count": 1},
+      {"value": "http://fidsudcdba.fr/", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Société d'Expertise Comptable", "count": 1},
+      {"value": "Bureaux", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "cabinetmeyrieux@cabinetmeyrieux.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1}
+]

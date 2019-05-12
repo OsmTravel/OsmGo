@@ -1,0 +1,19 @@
+[
+  {"key": "leisure", "tags": [{"value": "park", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Petit parc historique fleurie et entretenu, aire de jeux pour enfants, endroit agréable pour la détente.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "Maison_historique_du_gardien_du_parc", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

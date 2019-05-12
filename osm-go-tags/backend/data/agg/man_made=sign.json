@@ -1,0 +1,9 @@
+[
+  {
+    "key": "hazard",
+    "tags": [{"value": "animal_crossing", "count": 3}],
+    "count": 3
+  },
+  {"key": "man_made", "tags": [{"value": "sign", "count": 3}], "count": 3},
+  {"key": "traffic_sign", "tags": [{"value": "A15b", "count": 3}], "count": 3}
+]

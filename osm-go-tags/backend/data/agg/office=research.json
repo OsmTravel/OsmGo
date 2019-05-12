@@ -1,0 +1,87 @@
+[
+  {"key": "office", "tags": [{"value": "research", "count": 34}], "count": 34},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.irstea.fr", "count": 2},
+      {"value": "http://umr5023.univ-lyon1.fr/", "count": 1},
+      {"value": "http://tima.imag.fr/", "count": 1},
+      {"value": "http://www.g-scop.grenoble-inp.fr/", "count": 1},
+      {"value": "http://www.mom.fr/", "count": 1},
+      {"value": "http://lpmmc.grenoble.cnrs.fr", "count": 1},
+      {"value": "http://www.cern.ch", "count": 1},
+      {"value": "http://www.citi-lab.fr", "count": 1},
+      {"value": "https://www.inria.fr/", "count": 1},
+      {"value": "http://www.ec-lyon.fr/recherche/laboratoires/inl", "count": 1},
+      {"value": "http://atlas.web.cern.ch/", "count": 1},
+      {"value": "https://www.univ-st-etienne.fr/fr/gate-lse.html", "count": 1},
+      {"value": "http://www.lsm.fr", "count": 1},
+      {"value": "http://www.bioaster.org", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 43 64 15", "count": 1},
+      {"value": "+33 4 76 57 43 20", "count": 1},
+      {"value": "+33 4 72 71 58 00", "count": 1},
+      {"value": "+33 4 56 38 47 00", "count": 1},
+      {"value": "+33 4 72 18 60 43", "count": 1},
+      {"value": "+33 4 79 79 20 00", "count": 1},
+      {"value": "+33 4 79 05 22 57", "count": 1},
+      {"value": "+33 4 69 84 26 00", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "citi@insa-lyon.fr", "count": 1},
+      {"value": "info@ines-solaire.org", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "limited", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Institut des nanotechnologies de Lyon", "count": 1},
+      {"value": "fr:Laboratoire souterrain de Modane", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "foot", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {
+    "key": "motor_vehicle",
+    "tags": [{"value": "private", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "-83Tkf1BBpm8LvJC1_rTcg", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1;2", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Université Jean Monnet", "count": 1}],
+    "count": 1
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "research_institution",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "1260 m", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "gate", "count": 1}], "count": 1}
+]

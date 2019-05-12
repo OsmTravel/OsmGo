@@ -1,0 +1,133 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "elevator", "count": 178}],
+    "count": 178
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "-1;0", "count": 19},
+      {"value": "0;-1", "count": 15},
+      {"value": "0;1", "count": 15},
+      {"value": "0;-1;-2", "count": 2},
+      {"value": "-1;0;2", "count": 1},
+      {"value": "0;1;2", "count": 1},
+      {"value": "-3;-2;-1;0", "count": 1},
+      {"value": "0;2", "count": 1},
+      {"value": "0,1", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "0", "count": 1},
+      {"value": "0;1;2;3", "count": 1},
+      {"value": "0;-2", "count": 1},
+      {"value": "-2;0", "count": 1}
+    ],
+    "count": 62
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 25},
+      {"value": "designated", "count": 20}
+    ],
+    "count": 45
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "subway_entrance", "count": 27},
+      {"value": "funicular_entrance", "count": 2}
+    ],
+    "count": 29
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "customers", "count": 4},
+      {"value": "yes", "count": 3},
+      {"value": "permissive", "count": 3},
+      {"value": "delivery", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "yes", "count": 6}, {"value": "area", "count": 2}],
+    "count": 8
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1;0", "count": 4},
+      {"value": "-3;-2;-1;0", "count": 1},
+      {"value": "0,1", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "network", "tags": [{"value": "TCL", "count": 4}], "count": 4},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "1244737", "count": 1},
+      {"value": "1244734", "count": 1},
+      {"value": "1244733", "count": 1},
+      {"value": "1244732", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "parking_entrance", "count": 4}],
+    "count": 4
+  },
+  {"key": "levels", "tags": [{"value": "-1;0", "count": 3}], "count": 3},
+  {
+    "key": "entrance",
+    "tags": [{"value": "service", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "bicycle",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "repeat_on",
+    "tags": [{"value": "0;1", "count": 1}, {"value": "-2-0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "tactile_writing:braille:lg",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "parking",
+    "tags": [{"value": "underground", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {
+    "key": "cmt",
+    "tags": [
+      {
+        "value": "pls check if there ist an option to get of on each level",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Orona", "count": 1}], "count": 1},
+  {"key": "goods", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "Effia", "count": 1}], "count": 1},
+  {
+    "key": "elevator:access",
+    "tags": [{"value": "private", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

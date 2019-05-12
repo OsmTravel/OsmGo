@@ -1,0 +1,33 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "ski_school", "count": 30}],
+    "count": 30
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "ESF", "count": 4},
+      {"value": "Ecole du Ski Français", "count": 1},
+      {"value": "Prosneige", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "sport", "tags": [{"value": "skiing", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.foyerskirevard.com/Pages/Foyer_Ski_fond_Revard_Ecole_Ski_Nordique_raquette_Savoie_Grand_Revard_Rhone_Alpes_cours_de_ski.aspx",
+        "count": 1
+      },
+      {"value": "https://www.esf-saintnicolas.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10f", "count": 1}],
+    "count": 1
+  }
+]

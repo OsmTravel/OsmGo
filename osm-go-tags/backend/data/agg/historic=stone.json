@@ -1,0 +1,27 @@
+[
+  {"key": "historic", "tags": [{"value": "stone", "count": 7}], "count": 7},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 3}], "count": 3},
+  {"key": "natural", "tags": [{"value": "stone", "count": 3}], "count": 3},
+  {"key": "board_type", "tags": [{"value": "nature", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "board", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "0.25", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1907-01-28", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118462", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3387777", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Pierre des Sacrifices", "count": 1}],
+    "count": 1
+  },
+  {"key": "format", "tags": [{"value": "obelisk", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,109 @@
+[
+  {"key": "shop", "tags": [{"value": "toys", "count": 122}], "count": 122},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.adm-albatros.fr", "count": 1},
+      {"value": "http://www.modelpro.fr/", "count": 1},
+      {"value": "http://spoutlink.blogspirit.com/", "count": 1},
+      {"value": "http://www.archi-chouette.fr/", "count": 1},
+      {"value": "http://www.vienne-modelisme.com/", "count": 1},
+      {
+        "value": "https://www.lagranderecre.fr/magasin-jouets-la-grande-recre-grenoble-38100.html",
+        "count": 1
+      },
+      {"value": "http://poissondavril38.com/", "count": 1},
+      {"value": "http://atelierdegavroche.com/", "count": 1},
+      {"value": "www.maxitoys.fr", "count": 1},
+      {"value": "http://www.lepetittrainbleu.fr/", "count": 1},
+      {"value": "http://www.jeuxdumonde.com/", "count": 1},
+      {"value": "http://www.ptitloustic.com/", "count": 1},
+      {"value": "http://lechatbleu26.canalblog.com/", "count": 1},
+      {"value": "http://www.lescontreesdujeu.fr/", "count": 1},
+      {"value": "https://www.syndromepeterpan.fr/", "count": 1},
+      {"value": "https://www.joueclub.fr/", "count": 1},
+      {"value": "http://en-jeu-local.fr/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Oxybul-Eveil-Jeux",
+        "count": 1
+      }
+    ],
+    "count": 18
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 53 25 62", "count": 1},
+      {"value": "+33 4 76 96 48 68", "count": 1},
+      {"value": "+33 4 74 85 57 03", "count": 1},
+      {"value": "+33 4 76 84 04 16", "count": 1},
+      {"value": "+33 4 74 58 17 12", "count": 1},
+      {"value": "+33 4 72 27 84 51", "count": 1},
+      {"value": "+33 4 74 85 33 33", "count": 1},
+      {"value": "+33478190621", "count": 1},
+      {"value": "+33 4 75 55 27 60", "count": 1},
+      {"value": "+33 4 57 29 05 40", "count": 1},
+      {"value": "+33 4 76 09 65 59", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "limited", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Loolaï Productions", "count": 1},
+      {"value": "Alice Terech", "count": 1},
+      {"value": "Groupement des Mousquetaires", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {"key": "indoor", "tags": [{"value": "room", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:La Grande Récré (magasin)", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "King Jouet", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Jouets, peluche, jeux en bois et arts du cirque.", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3209556", "count": 1}], "count": 1},
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Latelier-de-Gavroche-103322500146807/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

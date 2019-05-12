@@ -1,0 +1,119 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "speed_camera", "count": 259}],
+    "count": 259
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "80", "count": 14},
+      {"value": "110", "count": 8},
+      {"value": "70", "count": 7},
+      {"value": "90", "count": 7},
+      {"value": "50", "count": 6},
+      {"value": "130", "count": 3},
+      {"value": "100", "count": 1},
+      {"value": "FR:urban", "count": 1}
+    ],
+    "count": 47
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "reperage local 2011/01 + bing", "count": 3},
+      {"value": "knowledge 2011/02 + bing", "count": 3},
+      {"value": "radar tronçon", "count": 2},
+      {"value": "Localisation precise à l'arret photo+bing", "count": 2},
+      {"value": "knowledge 2011/11 + bing", "count": 2},
+      {"value": "radar deplace, nouveau reperage+bing", "count": 1},
+      {"value": "knowledge 2011/01", "count": 1},
+      {"value": "knowledge 2011/01 + bing", "count": 1},
+      {"value": "securite-routiere.gouv 2011/02 reperage+bing", "count": 1},
+      {"value": "GPS + BingSat, position env. 45.4596,4.4866", "count": 1},
+      {"value": "radar feu rouge", "count": 1},
+      {"value": "GPS en roulant, preciser position", "count": 1},
+      {"value": "GPS + BingSat, position env. 45.4343,4.4300", "count": 1},
+      {
+        "value": "Radar feu rouge présent 2011/07, position env. 45.7693,4.8603",
+        "count": 1
+      },
+      {
+        "value": "Radar feu rouge présent 2011/07, position env. 45.7789,4.8671",
+        "count": 1
+      },
+      {
+        "value": "GPS + BingSat, Position confirmée  env. 45.7006,4.8356",
+        "count": 1
+      },
+      {"value": "GPS + BingSat, position env. 45.5749,4.7176", "count": 1},
+      {"value": "GPS + BingSat, position env. 45.4203,4.4105", "count": 1},
+      {
+        "value": "GPS + BingSat, position env. 45.78318,5.15951 détection deux sens de circulation",
+        "count": 1
+      },
+      {"value": "présent en 2012/04 position Bing+GPS", "count": 1},
+      {"value": "radar fixe present le 2012/06/03", "count": 1},
+      {"value": "Radar de feu rouge, cf la relation", "count": 1},
+      {"value": "GPS + BingSat", "count": 1},
+      {
+        "value": "GPS + BingSat, position valide 2011/07 (env. 45.8847,4.9150)",
+        "count": 1
+      }
+    ],
+    "count": 31
+  },
+  {
+    "key": "enforcement",
+    "tags": [
+      {"value": "maxspeed", "count": 5},
+      {"value": "traffic_signals", "count": 4}
+    ],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "End of section", "count": 2},
+      {"value": "détection double sens", "count": 1},
+      {"value": "Begin of section", "count": 1},
+      {"value": "Bebin of section", "count": 1},
+      {"value": "Radar Fixe", "count": 1},
+      {"value": "Radar de chantier", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "type", "tags": [{"value": "enforcement", "count": 5}], "count": 5},
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "90", "count": 1},
+      {"value": "222", "count": 1},
+      {"value": "292", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "4.1 km from N portal", "count": 1},
+      {"value": "2.1 km from N portal", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2017-10-03", "count": 1},
+      {"value": "2017-11", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "PK", "tags": [{"value": "35.692", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "-2", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "Radar pedagogique", "count": 1}],
+    "count": 1
+  }
+]

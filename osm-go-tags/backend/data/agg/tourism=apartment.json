@@ -1,0 +1,122 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "apartment", "count": 75}],
+    "count": 75
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "CGH", "count": 3},
+      {"value": "Pierre & Vacances", "count": 3},
+      {"value": "Odalys", "count": 2},
+      {"value": "Maeva", "count": 1},
+      {"value": "Votre Maison de Vacances SARL", "count": 1},
+      {"value": "Votre Maison de Vacances SARL - M. Eric LATARCHE", "count": 1},
+      {"value": "Pierre et Vacances Premium", "count": 1},
+      {"value": "interhome", "count": 1},
+      {"value": "Odalys vacances", "count": 1},
+      {"value": "Madame Vacances", "count": 1},
+      {"value": "Simply Morzine", "count": 1},
+      {"value": "CGH Residences", "count": 1},
+      {"value": "Pierre et Vacances", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.gites-lolive.com/", "count": 1},
+      {"value": "http://www.pierreetvacances.com/", "count": 1},
+      {
+        "value": "http://www.cgh-residences.com/ete/residence/residence-le-jhana.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.cgh-residences.com/ete/residence/residence-le-nevada.html",
+        "count": 1
+      },
+      {"value": "http://www.maeva.com/", "count": 1},
+      {"value": "http://www.rourinlesechamps.fr", "count": 1},
+      {
+        "value": "http://www.cgh-residences.com/ete/residence/residence-la-ferme-du-val-claret.html",
+        "count": 1
+      },
+      {"value": "https://www.pierreetvacances.com", "count": 1},
+      {
+        "value": "http://www.les-balcons.com/presentation/les-balcons-de-val-thorens.html",
+        "count": 1
+      },
+      {"value": "https://www.madamevacances.com/", "count": 1},
+      {"value": "chant-au-vent.com", "count": 1},
+      {
+        "value": "http://www.les-balcons.com/presentation/les-balcons-platinium.html",
+        "count": 1
+      }
+    ],
+    "count": 12
+  },
+  {
+    "key": "stars",
+    "tags": [{"value": "4", "count": 6}, {"value": "2", "count": 2}],
+    "count": 8
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 6}, {"value": "yes", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "rooms",
+    "tags": [
+      {"value": "5", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "178", "count": 1},
+      {"value": "1", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33627698365", "count": 2},
+      {"value": "+33 4 79 00 90 70", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "smoking",
+    "tags": [{"value": "outside", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "votremaisondevacances@gmail.com", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Chalet à 300 metres des pistes pour 12/14 personnes",
+        "count": 1
+      },
+      {"value": "location de vacances pour 16 personnes", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "ele", "tags": [{"value": "1335", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "ski", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "number_of_apartments",
+    "tags": [{"value": "55", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,174 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "boundary_stone", "count": 171}],
+    "count": 171
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Bornes en pierre marquant la frontière Savoie/Isère - Indique \"1822\"",
+        "count": 7
+      },
+      {
+        "value": "Bornes en pierre marquant la frontière Savoie/Dauphiné",
+        "count": 2
+      },
+      {
+        "value": "Borne frontière No 28 - Point vu en place en 1972",
+        "count": 1
+      },
+      {
+        "value": "Borne frontière No 29 en marbre - Point vu en place en 1948",
+        "count": 1
+      },
+      {
+        "value": "Borne n°179 datée de 1816. Attention, située dans une réserve naturelle fermée au public.",
+        "count": 1
+      }
+    ],
+    "count": 12
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {"value": "No. 223, 1863, Vaud - France", "count": 1},
+      {"value": "No. 226, 1863, Vaud - France", "count": 1},
+      {"value": "No. 227, 1863, Vaud - France", "count": 1},
+      {"value": "No. 225, 1863, Vaud - France", "count": 1},
+      {"value": "No. 224, 1863, France - Vaud", "count": 1},
+      {"value": "222 F S 1993", "count": 1},
+      {"value": "1983 F S 221", "count": 1},
+      {"value": "France / Italia", "count": 1},
+      {"value": "Auvergne, Velay, Forez.", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "30", "count": 1},
+      {"value": "29", "count": 1},
+      {"value": "0509314 - 1", "count": 1},
+      {"value": "05093L - 1", "count": 1},
+      {"value": "71", "count": 1},
+      {"value": "123", "count": 1},
+      {"value": "32", "count": 1},
+      {"value": "28", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1821", "count": 1},
+      {"value": "1824", "count": 1},
+      {"value": "1758", "count": 1},
+      {"value": "1673", "count": 1},
+      {"value": "1637", "count": 1},
+      {"value": "3103.71", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 4}], "count": 4},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 2
+      },
+      {"value": "Une copie de l'original.", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1926", "count": 1},
+      {"value": "1971-06-14", "count": 1},
+      {"value": "1974-09-03", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116360", "count": 1},
+      {"value": "PA00118382", "count": 1},
+      {"value": "PA00116840", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 2}, {"value": "3", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=0509314",
+        "count": 1
+      },
+      {
+        "value": "http://geodesie.ign.fr/fiches/index.php?module=e&action=fichepdf&source=carte&sit_no=05093L",
+        "count": 1
+      },
+      {
+        "value": "http://www.chagnon42.fr/fr/information/32358/la-pierre-romaine",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2911144", "count": 1},
+      {"value": "Q2911143", "count": 1},
+      {"value": "Q2911172", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Borne au Lion", "count": 1},
+      {"value": "fr:Borne frontière de Cordon", "count": 1},
+      {"value": "fr:Borne milliaire de Vagnas", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "survey_point", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "peak", "count": 1}, {"value": "stone", "count": 1}],
+    "count": 2
+  },
+  {"key": "year", "tags": [{"value": "1861", "count": 1}], "count": 1},
+  {
+    "key": "format",
+    "tags": [{"value": "squared_stone", "count": 1}],
+    "count": 1
+  },
+  {"key": "material", "tags": [{"value": "stone", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "r-NOsOUZZTDIgtEVL8Nt3w", "count": 1}],
+    "count": 1
+  },
+  {"key": "site_type", "tags": [{"value": "tumulus", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "C", "count": 1}], "count": 1}
+]

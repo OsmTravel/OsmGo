@@ -1,0 +1,301 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "charging_station", "count": 180}],
+    "count": 180
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "sde07", "count": 30},
+      {"value": "Freshmile", "count": 16},
+      {"value": "Sodetrel Mobilité", "count": 16},
+      {"value": "Tesla Motors", "count": 6},
+      {"value": "SDED", "count": 5},
+      {"value": "Tesla Motors Inc.", "count": 4},
+      {"value": "Saint-Étienne Métropole", "count": 2},
+      {"value": "SYANE", "count": 2},
+      {"value": "Service public Des Energies dans la Drôme", "count": 2},
+      {"value": "Super U", "count": 1},
+      {"value": "Loire-Forez", "count": 1},
+      {"value": "CNR", "count": 1},
+      {"value": "Chez Momo", "count": 1},
+      {"value": "REThones", "count": 1},
+      {"value": "EFFIA", "count": 1},
+      {"value": "Intermarché", "count": 1},
+      {"value": "E. Leclerc", "count": 1},
+      {"value": "Renault", "count": 1},
+      {"value": "Satar (corbas)", "count": 1},
+      {"value": "Savajols", "count": 1},
+      {"value": "SEDI", "count": 1},
+      {"value": "sded", "count": 1},
+      {"value": "Evlink", "count": 1},
+      {"value": "sded 26", "count": 1},
+      {
+        "value": "Syndicat des Energies du Département de l'Isère (SEDI)",
+        "count": 1
+      },
+      {"value": "Sédi", "count": 1},
+      {"value": "Nissan", "count": 1},
+      {"value": "SDED 26", "count": 1},
+      {"value": "Syndicat Départemental d'Energie de la Drôme", "count": 1},
+      {"value": "BOUYGUES ENERGIES ET SERVICES", "count": 1},
+      {"value": "Syndicat des Energies du Département de l'Isère", "count": 1},
+      {"value": "Groupe Bolloré", "count": 1},
+      {"value": "Syane", "count": 1},
+      {"value": "La Ferme de Cupelin", "count": 1},
+      {"value": "eborn", "count": 1}
+    ],
+    "count": 109
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "2", "count": 71},
+      {"value": "1", "count": 20},
+      {"value": "4", "count": 7},
+      {"value": "3", "count": 3},
+      {"value": "10", "count": 1}
+    ],
+    "count": 102
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "yes", "count": 59},
+      {"value": "no", "count": 2},
+      {"value": "", "count": 1}
+    ],
+    "count": 62
+  },
+  {
+    "key": "authentication:membership_card",
+    "tags": [{"value": "yes", "count": 50}],
+    "count": 50
+  },
+  {
+    "key": "car",
+    "tags": [{"value": "yes", "count": 43}, {"value": "no", "count": 4}],
+    "count": 47
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.sde07.orios-infos.com/", "count": 24},
+      {"value": "http://www.e-totem.fr", "count": 2},
+      {"value": "http://www.sedi.fr", "count": 2},
+      {
+        "value": "http://www.teslamotors.com/chassesurrhonesupercharger",
+        "count": 1
+      },
+      {"value": "http://www.teslamotors.com/archampssupercharger", "count": 1},
+      {
+        "value": "https://www.tesla.com/findus#/bounds/46.353585,4.853693,46.3263209,4.8108741,d?place=maconfrsupercharger&search=store,service,supercharger,destination%20charger",
+        "count": 1
+      },
+      {"value": "http://www.eborn.orios-infos.com", "count": 1},
+      {
+        "value": "https://www.tesla.com/findus/location/supercharger/chamberysupercharger",
+        "count": 1
+      }
+    ],
+    "count": 33
+  },
+  {
+    "key": "socket:schuko",
+    "tags": [{"value": "2", "count": 28}, {"value": "4", "count": 1}],
+    "count": 29
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Corri-dor", "count": 16},
+      {"value": "eborn", "count": 4},
+      {"value": "e-Totem", "count": 3},
+      {"value": "Bluely", "count": 2},
+      {"value": "Eborn", "count": 2},
+      {"value": "Alizé Liberté", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "socket:chademo",
+    "tags": [{"value": "1", "count": 22}, {"value": "2", "count": 1}],
+    "count": 23
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "A7", "count": 7},
+      {"value": "A89", "count": 2},
+      {"value": "A72", "count": 2},
+      {"value": "A43", "count": 2},
+      {"value": "A42", "count": 2},
+      {"value": "A6", "count": 1},
+      {"value": "CNR6900700001", "count": 1},
+      {"value": "CNR2650000001", "count": 1},
+      {
+        "value": "Pas sûr de l'alée sur laquelle la borne est présente",
+        "count": 1
+      },
+      {"value": "CNR0725000001", "count": 1},
+      {
+        "value": "Position exacte, capacité, opérateur etc à préciser. Je l'ai vue en passant le 7 avril 2018",
+        "count": 1
+      },
+      {"value": "A43 - Aire de Manissieux 69800 Saint-Priest", "count": 1},
+      {"value": "61 rue de la R�publique Barberaz, France 73000", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "FLBM, GCBV", "count": 1},
+      {"value": "BYXA, AEVM", "count": 1},
+      {"value": "DDVX, CUGX", "count": 1},
+      {"value": "EHBA, EBYX", "count": 1},
+      {"value": "PUVY, PUKN", "count": 1},
+      {"value": "FCVW, ELJX", "count": 1},
+      {"value": "FHWR, FJWK", "count": 1},
+      {"value": "LYHQ, MUQN", "count": 1},
+      {"value": "PLHJ, PNRN", "count": 1},
+      {"value": "PDMM, PEWX", "count": 1},
+      {"value": "AZEX", "count": 1},
+      {"value": "NDJF, NLRW", "count": 1},
+      {"value": "KDTE, LASG", "count": 1},
+      {"value": "LKXQ, LXLN", "count": 1},
+      {"value": "QYJR, QPMB", "count": 1},
+      {"value": "TFKG, REMS", "count": 1},
+      {"value": "FR*S38*P38530*A", "count": 1},
+      {"value": "FR*S74*P74064*A", "count": 1},
+      {
+        "value": "FR*A15*E01089*001*1;FR*A15*E01089*001*2;FR*A15*E01089*001*3;FR*A15*E01089*001*4",
+        "count": 1
+      },
+      {"value": "FR*S38*P38193*A", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "socket:chademo:output",
+    "tags": [{"value": "50kW", "count": 19}],
+    "count": 19
+  },
+  {
+    "key": "amperage",
+    "tags": [
+      {"value": "125", "count": 16},
+      {"value": "32", "count": 2},
+      {"value": "10", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "authentication:nfc",
+    "tags": [{"value": "yes", "count": 18}],
+    "count": 18
+  },
+  {
+    "key": "ref:FR:CORRIDOR",
+    "tags": [
+      {"value": "FR*E04*P*OAZS*149*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*72*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*171*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*61*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*58*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*2*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*53*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*151*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*177*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*189*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*81*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*55*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*69*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*7*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*4*_*_*_", "count": 1},
+      {"value": "FR*E04*P*OAZS*142*_*_*_", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "charging_station:output",
+    "tags": [{"value": "50kW", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "authentication:app",
+    "tags": [{"value": "yes", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "bicycle",
+    "tags": [{"value": "no", "count": 10}, {"value": "yes", "count": 5}],
+    "count": 15
+  },
+  {"key": "access", "tags": [{"value": "customers", "count": 10}], "count": 10},
+  {
+    "key": "capacity:car",
+    "tags": [
+      {"value": "2", "count": 4},
+      {"value": "3", "count": 2},
+      {"value": "1", "count": 2},
+      {"value": "4", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "socket:tesla_supercharger",
+    "tags": [
+      {"value": "8", "count": 3},
+      {"value": "6", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "10", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "A placer", "count": 8}, {"value": "place", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "voltage",
+    "tags": [{"value": "230", "count": 3}, {"value": "500V", "count": 3}],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Mo-Fr 04:30-19:00, Sa 04:30-12:00", "count": 1},
+      {"value": "2 cars can load at the same time.", "count": 1},
+      {
+        "value": "borne de recharge pour véhicules électriques, associée à deux places de parking réservées, sur le parking de l'Intermarché",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "parking:fee", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "scooter", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "truck",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "construction", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "power", "tags": [{"value": "22 kW", "count": 1}], "count": 1},
+  {"key": "socket:typee", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "socket:cee_blue", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "FIXME",
+    "tags": [{"value": "position à revoir", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "authentication:phone_call",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

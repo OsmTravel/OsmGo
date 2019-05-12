@@ -1,0 +1,8 @@
+[
+  {"key": "historic", "tags": [{"value": "megalith", "count": 1}], "count": 1},
+  {
+    "key": "megalith_type",
+    "tags": [{"value": "dolmen", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,802 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "pitch", "count": 12259}],
+    "count": 12259
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "tennis", "count": 4308},
+      {"value": "soccer", "count": 2919},
+      {"value": "boules", "count": 966},
+      {"value": "multi", "count": 772},
+      {"value": "basketball", "count": 655},
+      {"value": "equestrian", "count": 348},
+      {"value": "skateboard", "count": 218},
+      {"value": "handball", "count": 170},
+      {"value": "rugby_union", "count": 159},
+      {"value": "table_tennis", "count": 139},
+      {"value": "athletics", "count": 70},
+      {"value": "golf", "count": 53},
+      {"value": "beachvolleyball", "count": 46},
+      {"value": "volleyball", "count": 44},
+      {"value": "free_flying", "count": 39},
+      {"value": "archery", "count": 38},
+      {"value": "rugby_league", "count": 33},
+      {"value": "shooting", "count": 32},
+      {"value": "rugby", "count": 23},
+      {"value": "baseball", "count": 22},
+      {"value": "bmx", "count": 20},
+      {"value": "climbing", "count": 17},
+      {"value": "football", "count": 14},
+      {"value": "bowls", "count": 13},
+      {"value": "model_aerodrome", "count": 13},
+      {"value": "soccer;basketball", "count": 13},
+      {"value": "motocross", "count": 10},
+      {"value": "badminton", "count": 10},
+      {"value": "chess", "count": 9},
+      {"value": "basketball;soccer", "count": 8},
+      {"value": "fencing", "count": 7},
+      {"value": "team_handball", "count": 6},
+      {"value": "basketball;handball", "count": 6},
+      {"value": "american_football", "count": 6},
+      {"value": "motor", "count": 6},
+      {"value": "swimming", "count": 6},
+      {"value": "squash", "count": 4},
+      {"value": "hockey", "count": 4},
+      {"value": "roller_skating", "count": 4},
+      {"value": "ultralight_aviation", "count": 4},
+      {"value": "petanque", "count": 4},
+      {"value": "climbing_adventure", "count": 3},
+      {"value": "skating", "count": 3},
+      {"value": "basketball;soccer;handball", "count": 3},
+      {"value": "motoball", "count": 3},
+      {"value": "soccer;basketball;handball", "count": 3},
+      {"value": "handball;basketball", "count": 3},
+      {"value": "shooting_range", "count": 3},
+      {"value": "basketball;team_handball", "count": 3},
+      {"value": "boules;pétanque", "count": 3},
+      {"value": "karting", "count": 2},
+      {"value": "soccer;rugby", "count": 2},
+      {"value": "running", "count": 2},
+      {"value": "ski_jump_take_off", "count": 2},
+      {"value": "fitness", "count": 2},
+      {"value": "table_soccer", "count": 2},
+      {"value": "racquet", "count": 2},
+      {"value": "cycling", "count": 2},
+      {"value": "model_aérodrome", "count": 2},
+      {"value": "skiing", "count": 2},
+      {"value": "beach_soccer", "count": 1},
+      {"value": "volleyball;handball;tennis;basketball", "count": 1},
+      {"value": "volleyball;tennis;handball", "count": 1},
+      {"value": "billiards", "count": 1},
+      {"value": "futsal", "count": 1},
+      {"value": "athletics; soccer", "count": 1},
+      {"value": "football;athletics", "count": 1},
+      {"value": "paintball", "count": 1},
+      {"value": "basketball; tennis", "count": 1},
+      {"value": "pelota", "count": 1},
+      {"value": "soccer;tennis;boules", "count": 1},
+      {"value": "pingpong", "count": 1},
+      {"value": "fitness;musculation", "count": 1},
+      {"value": "basketball; handball", "count": 1},
+      {"value": "basketball;volleyball", "count": 1},
+      {"value": "waterskiing", "count": 1},
+      {"value": "exercise", "count": 1},
+      {"value": "Terrain_de_sports_privé", "count": 1},
+      {"value": "handball; basketball", "count": 1},
+      {"value": "cricket", "count": 1},
+      {"value": "skakeboard", "count": 1},
+      {"value": "10pin", "count": 1},
+      {"value": "multi;basketball", "count": 1},
+      {"value": "dirt_bike", "count": 1},
+      {"value": "free_flying;vol_libre", "count": 1},
+      {"value": "athletics;running;football;handball;basketball", "count": 1},
+      {"value": "roller_hockey", "count": 1},
+      {"value": "ice_hockey;ice_skating", "count": 1},
+      {"value": "field_hockey", "count": 1},
+      {"value": "mini_tennis", "count": 1},
+      {"value": "biathlon", "count": 1},
+      {"value": "fencing;escrime;escalade;boxe;handball;badminton", "count": 1},
+      {"value": "Slackline", "count": 1},
+      {"value": "Bike;Pumptrack", "count": 1},
+      {"value": "gymnastics", "count": 1},
+      {"value": "ice_hockey", "count": 1},
+      {"value": "handball;soccer;basketball", "count": 1},
+      {"value": "pump_track", "count": 1},
+      {"value": "basketball;football", "count": 1},
+      {"value": "horse_racing", "count": 1},
+      {"value": "skateboard; roller_skating", "count": 1},
+      {"value": "multi;football;handball;basketball", "count": 1},
+      {"value": "croquet", "count": 1},
+      {"value": "handball;football", "count": 1},
+      {"value": "basketball; football; handball", "count": 1},
+      {"value": "soccer; basketball", "count": 1}
+    ],
+    "count": 11331
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "grass", "count": 636},
+      {"value": "asphalt", "count": 616},
+      {"value": "sand", "count": 340},
+      {"value": "concrete", "count": 156},
+      {"value": "clay", "count": 131},
+      {"value": "artificial_turf", "count": 98},
+      {"value": "compacted", "count": 42},
+      {"value": "hard", "count": 41},
+      {"value": "gravel", "count": 39},
+      {"value": "ground", "count": 25},
+      {"value": "paved", "count": 18},
+      {"value": "fine_gravel", "count": 17},
+      {"value": "decoturf", "count": 15},
+      {"value": "dirt", "count": 14},
+      {"value": "tartan", "count": 14},
+      {"value": "earth", "count": 10},
+      {"value": "greenset", "count": 7},
+      {"value": "unpaved", "count": 4},
+      {"value": "grass_paver", "count": 3},
+      {"value": "ashes", "count": 2},
+      {"value": "cobblestone", "count": 2},
+      {"value": "synthetic", "count": 2},
+      {"value": "wood", "count": 1},
+      {"value": "acrylic", "count": 1},
+      {"value": "plastic", "count": 1},
+      {"value": "Synthetic", "count": 1},
+      {"value": "gore", "count": 1},
+      {"value": "terre", "count": 1},
+      {"value": "s", "count": 1},
+      {"value": "artificial_turf;sand", "count": 1},
+      {"value": "dirt;sand", "count": 1},
+      {"value": "gravier", "count": 1},
+      {"value": "Synthétique_avec_sable", "count": 1},
+      {"value": "bitume", "count": 1}
+    ],
+    "count": 2244
+  },
+  {
+    "key": "boules",
+    "tags": [
+      {"value": "lyonnaise", "count": 286},
+      {"value": "petanque", "count": 118},
+      {"value": "yes", "count": 3}
+    ],
+    "count": 407
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 196},
+      {"value": "customers", "count": 72},
+      {"value": "yes", "count": 19},
+      {"value": "permissive", "count": 17},
+      {"value": "public", "count": 3},
+      {"value": "destination", "count": 1}
+    ],
+    "count": 308
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 134}, {"value": "no", "count": 120}],
+    "count": 254
+  },
+  {
+    "key": "golf",
+    "tags": [
+      {"value": "green", "count": 59},
+      {"value": "driving_range", "count": 1}
+    ],
+    "count": 60
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 52}], "count": 52},
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "grass", "count": 39},
+      {"value": "recreation_ground", "count": 3},
+      {"value": "yes", "count": 1},
+      {"value": "meadow", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Boulodrome couvert", "count": 5},
+      {"value": "demi-terrain avec mur", "count": 2},
+      {"value": "Plateau EPS, Terrain de handball / basket", "count": 2},
+      {"value": "City-Stade", "count": 2},
+      {"value": "aire de pétanque", "count": 1},
+      {"value": "BMX Free Style Vert'", "count": 1},
+      {"value": "Beaumarchais Basket Lyon Métropole", "count": 1},
+      {"value": "Musculation, fitness", "count": 1},
+      {"value": "Halle couverte", "count": 1},
+      {
+        "value": "Tennis Privé Maison de Quartier Jean Macé / Martyrs",
+        "count": 1
+      },
+      {"value": "Salle multisports et Salle annexe (danse)", "count": 1},
+      {"value": "Salle multisports", "count": 1},
+      {"value": "Plateau EPS, Trrain multisport", "count": 1},
+      {
+        "value": "Terrain de match de l'équipe de football américain des Gones de Lyon",
+        "count": 1
+      },
+      {"value": "Terrain d'entrainement", "count": 1},
+      {"value": "Rampe de Skate", "count": 1},
+      {"value": "Salle de tennis", "count": 1},
+      {"value": "Practice", "count": 1},
+      {
+        "value": "Salle multisports, Grande Salle, Gymnase intercommunal",
+        "count": 1
+      },
+      {"value": "Décollage parapente et deltaplane", "count": 1},
+      {"value": "Terrain de hand de l'école", "count": 1},
+      {"value": "City Stade", "count": 1},
+      {"value": "Saut en longueur", "count": 1},
+      {"value": "Carrière 40X60", "count": 1},
+      {"value": "Carrière 40X20", "count": 1},
+      {"value": "Carrière", "count": 1},
+      {
+        "value": "Les heures d'ouverture autorisent le vol des appareils électriques peu bruyants, les autre appareils doivent respecter les horaires de service.",
+        "count": 1
+      },
+      {
+        "value": "Attention cet atterrissage fait aussi office de pente école. Attention atterrissage turbulent par vent de Sud.",
+        "count": 1
+      },
+      {"value": "terrain de jeux non officiel", "count": 1},
+      {"value": "Plateau EPS", "count": 1},
+      {"value": "city-stade", "count": 1},
+      {"value": "Ancien revêtement Synthétique qui se dégrade", "count": 1},
+      {"value": "rail, rampes.", "count": 1},
+      {"value": "Skate park de flachet", "count": 1},
+      {
+        "value": "crée le 19 novembre 2016 ,pump track en boucle ,libre d'utilisation , port du casque obligatoire ",
+        "count": 1
+      },
+      {"value": "Stade de foot de l'équipe de commelle", "count": 1},
+      {"value": "Terrain d'aéromodélisme", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.tc-lac.com/", "count": 7},
+      {
+        "value": "http://federation.ffvl.fr/sites_pratique/voir/1252",
+        "count": 3
+      },
+      {
+        "value": "https://intranet.ffvl.fr/sites_pratique/voir/1235",
+        "count": 2
+      },
+      {
+        "value": "https://intranet.ffvl.fr/sites_pratique/voir/13252",
+        "count": 2
+      },
+      {"value": "http://bicrosscrangevrier.weebly.com/", "count": 1},
+      {"value": "http://www.pioupiou.fr/fr/289", "count": 1},
+      {
+        "value": "http://m.webcam-hd.com/thollon-les-memises/front-de-neige",
+        "count": 1
+      },
+      {"value": "http://www.parc-airsoft-generation.com/", "count": 1},
+      {"value": "http://www.beaumarchaisbasket-lyonmetropole.fr", "count": 1},
+      {"value": "https://cimes-aventure.fr/", "count": 1},
+      {
+        "value": "http://lesailesdulac.free.fr/joomla/index.php?option=com_content&view=article&id=8&Itemid=10",
+        "count": 1
+      },
+      {"value": "http://abcdavezieux.free.fr/", "count": 1},
+      {"value": "https://www.gonesfootus.fr/", "count": 1},
+      {"value": "http://www.centretoutterrain.com", "count": 1},
+      {"value": "http://leludobowling.fr/", "count": 1},
+      {"value": "http://www.tennislyon1.fr/", "count": 1},
+      {
+        "value": "http://www.camptocamp.org/sites/102885/fr/le-crot",
+        "count": 1
+      },
+      {
+        "value": "http://m.webcam-hd.com/mont-jura/la-faucille-1540",
+        "count": 1
+      },
+      {"value": "http://www.cvld.ch/", "count": 1},
+      {"value": "http://www.jarrier.fr/zonetourisme", "count": 1},
+      {"value": "http://www.aeromodelisme-aubenas.fr/", "count": 1},
+      {"value": "http://svtp.free.fr/", "count": 1},
+      {"value": "www.leolagrange-decines.asso.fr", "count": 1},
+      {
+        "value": "http://www.camptocamp.org/sites/102763/fr/sainte-foy-la-sassiere",
+        "count": 1
+      },
+      {
+        "value": "http://www.camptocamp.org/sites/313593/fr/falaise-du-chatelard-de-montvalezan",
+        "count": 1
+      },
+      {"value": "https://www.amcol.fr/", "count": 1},
+      {"value": "https://www.rhonealpesparamoteur.com", "count": 1},
+      {"value": "http://saffiotipatrick.wixsite.com/vl38", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "free_flying:site",
+    "tags": [
+      {"value": "takeoff", "count": 22},
+      {"value": "landing", "count": 13},
+      {"value": "training;toplanding", "count": 1}
+    ],
+    "count": 36
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 35}], "count": 35},
+  {
+    "key": "free_flying:paragliding",
+    "tags": [{"value": "yes", "count": 29}, {"value": "no", "count": 3}],
+    "count": 32
+  },
+  {
+    "key": "hoops",
+    "tags": [
+      {"value": "2", "count": 16},
+      {"value": "1", "count": 5},
+      {"value": "4", "count": 5},
+      {"value": "3", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "type",
+    "tags": [
+      {"value": "lyonnaise", "count": 14},
+      {"value": "petanque", "count": 9},
+      {"value": "site", "count": 1},
+      {"value": "paintball", "count": 1},
+      {"value": "range", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "4", "count": 3},
+      {"value": "2", "count": 3},
+      {"value": "3", "count": 3},
+      {"value": "1", "count": 3},
+      {"value": "6", "count": 2},
+      {"value": "9", "count": 2},
+      {"value": "8", "count": 2},
+      {"value": "7", "count": 2},
+      {"value": "5", "count": 2},
+      {"value": "10", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "wall",
+    "tags": [{"value": "no", "count": 22}, {"value": "yes", "count": 1}],
+    "count": 23
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SOGEVAB", "count": 10},
+      {"value": "CHA", "count": 5},
+      {"value": "Sous le Vent du Pilat", "count": 3},
+      {"value": "Municipalité d'Annemasse", "count": 1},
+      {"value": "Paintball PARK", "count": 1},
+      {"value": "Ain Sud Foot", "count": 1},
+      {"value": "Bicross Club de Cran-Gevrier", "count": 1},
+      {"value": "Hôtel Les Glaciers", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1000", "count": 4},
+      {"value": "950", "count": 2},
+      {"value": "1280", "count": 2},
+      {"value": "1300", "count": 1},
+      {"value": "1135", "count": 1},
+      {"value": "895", "count": 1},
+      {"value": "305", "count": 1},
+      {"value": "460", "count": 1},
+      {"value": "960", "count": 1},
+      {"value": "1400", "count": 1},
+      {"value": "757", "count": 1},
+      {"value": "519", "count": 1},
+      {"value": "540", "count": 1},
+      {"value": "1335", "count": 1},
+      {"value": "1250", "count": 1},
+      {"value": "600", "count": 1},
+      {"value": "1050", "count": 1},
+      {"value": "250", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "fence_type",
+    "tags": [
+      {"value": "chain_link", "count": 18},
+      {"value": "metal", "count": 3},
+      {"value": "chain", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "free_flying:official",
+    "tags": [{"value": "yes", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "ref:FFVL",
+    "tags": [
+      {"value": "74D001C", "count": 2},
+      {"value": "38A022D", "count": 1},
+      {"value": "38D012A", "count": 1},
+      {"value": "38D020B", "count": 1},
+      {"value": "73D018A", "count": 1},
+      {"value": "73A018A", "count": 1},
+      {"value": "38D022A", "count": 1},
+      {"value": "74D015A", "count": 1},
+      {"value": "38A012A", "count": 1},
+      {"value": "38D022B", "count": 1},
+      {"value": "74A015A", "count": 1},
+      {"value": "38A020B", "count": 1},
+      {"value": "38A022C", "count": 1},
+      {"value": "38A022E", "count": 1},
+      {"value": "38D020C", "count": 1},
+      {"value": "74A033A", "count": 1},
+      {"value": "38D022C", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Quel sport ?", "count": 2},
+      {
+        "value": "deltalab www.deltalab.ch aile delta deltaplane parapente",
+        "count": 1
+      },
+      {"value": "Couenne 16 voies 4a à 6a", "count": 1},
+      {"value": "et foot", "count": 1},
+      {"value": "cours au-dessus du garage", "count": 1},
+      {"value": "Cours couverts", "count": 1},
+      {"value": "football et basket-ball", "count": 1},
+      {"value": "Couenne 34 voies 4c à 7c+ Rocher : Shiste", "count": 1},
+      {
+        "value": "Couenne 22 voies 4c à 6c+ et un 8a+ Rocher : gneiss",
+        "count": 1
+      },
+      {"value": "covered", "count": 1},
+      {"value": "exact position to be refined using GPS", "count": 1},
+      {
+        "value": "pour l'accés en delta, demander a Alvéole-Parapente 61 ,rue du Serpaton 38650 Monestier-de-Clermont 06.89.54.15.90 07.81.74.08.97 alveole.parapente@gmail.com",
+        "count": 1
+      },
+      {"value": "Bing image obsolete", "count": 1},
+      {"value": "spot de slackline permanent", "count": 1},
+      {"value": "runway", "count": 1},
+      {"value": "mini soccer", "count": 1},
+      {"value": "position approximative", "count": 1}
+    ],
+    "count": 18
+  },
+  {"key": "network", "tags": [{"value": "FFVL", "count": 17}], "count": 17},
+  {
+    "key": "covered",
+    "tags": [{"value": "yes", "count": 14}, {"value": "no", "count": 2}],
+    "count": 16
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "2", "count": 10},
+      {"value": "3", "count": 2},
+      {"value": "1", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "10", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "2", "count": 10},
+      {"value": "6", "count": 4},
+      {"value": "13", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "free_flying:hanggliding",
+    "tags": [{"value": "yes", "count": 13}, {"value": "no", "count": 2}],
+    "count": 15
+  },
+  {
+    "key": "free_flying:tandem",
+    "tags": [{"value": "yes", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "limited", "count": 2},
+      {"value": "no", "count": 2}
+    ],
+    "count": 10
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0001", "count": 9}],
+    "count": 9
+  },
+  {"key": "IDENT", "tags": [{"value": "tennis", "count": 9}], "count": 9},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "public_building", "count": 3},
+      {"value": "community_centre", "count": 2},
+      {"value": "bench", "count": 1},
+      {"value": "toilets", "count": 1},
+      {"value": "dojo", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "CLC:code",
+    "tags": [{"value": "231", "count": 5}, {"value": "211", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-135445", "count": 2},
+      {"value": "FR-139743", "count": 1},
+      {"value": "FR-126739", "count": 1},
+      {"value": "FR-127060", "count": 1},
+      {"value": "FR-142365", "count": 1},
+      {"value": "FR-143453", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 7}], "count": 7},
+  {
+    "key": "quantity",
+    "tags": [{"value": "2", "count": 5}, {"value": "4", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "free_flying:rigid",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 2}],
+    "count": 6
+  },
+  {"key": "fenced", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "pitch",
+    "tags": [
+      {"value": "training_wall", "count": 2},
+      {"value": "soccer", "count": 1},
+      {"value": "trial", "count": 1},
+      {"value": "wall", "count": 1},
+      {"value": "half_court", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 4}, {"value": "yes", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3209509", "count": 1},
+      {"value": "Q2314527", "count": 1},
+      {"value": "Q28465030", "count": 1},
+      {"value": "Q27043751", "count": 1},
+      {"value": "Q203451", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 42 87 97", "count": 1},
+      {"value": "+33 4 76 15 24 65", "count": 1},
+      {"value": "+33 4 38 86 41 73", "count": 1},
+      {"value": "+33478490269", "count": 1},
+      {"value": "+33 4 77 64 40 62", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:FR",
+    "tags": [
+      {"value": "93153", "count": 1},
+      {"value": "93155", "count": 1},
+      {"value": "93158", "count": 1},
+      {"value": "93112", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "indoor", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 3}, {"value": "2", "count": 1}],
+    "count": 4
+  },
+  {"key": "material", "tags": [{"value": "metal", "count": 4}], "count": 4},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 3},
+      {"value": "Localisation à vérifier", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "local_ref",
+    "tags": [
+      {"value": "LF7340", "count": 1},
+      {"value": "LF2629", "count": 1},
+      {"value": "LF6954", "count": 1},
+      {"value": "LF3873", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "aeroway", "tags": [{"value": "airstrip", "count": 4}], "count": 4},
+  {
+    "key": "shooting",
+    "tags": [
+      {"value": "biathlon", "count": 2},
+      {"value": "paintball", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "free_flying:site_orientation",
+    "tags": [
+      {"value": "N,NE,E", "count": 1},
+      {"value": "NW", "count": 1},
+      {"value": "SE", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "disused:leisure",
+    "tags": [{"value": "yes", "count": 2}, {"value": "pitch", "count": 1}],
+    "count": 3
+  },
+  {"key": "natural", "tags": [{"value": "sand", "count": 2}], "count": 2},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 1},
+      {"value": "Merkaartor 0.11", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "traffic_calming",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Parc_de_la_Villa_Monderoux_(1).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Skatepark_Miribel_(Ain)_-_2016.jpg",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "piste:type",
+    "tags": [
+      {"value": "ice_skate", "count": 1},
+      {"value": "ski_jump", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://www.paintballpark.fr/", "count": 1},
+      {"value": "http://if38.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "roof", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Association Grenoble Baseball Softball", "count": 1},
+      {"value": "fr:Juninho Pernambucano", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [{"value": "skating", "count": 1}],
+    "count": 1
+  },
+  {"key": "boat", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "designated", "count": 1}], "count": 1},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "piste:oneway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "seasonal", "tags": [{"value": "summer", "count": 1}], "count": 1},
+  {"key": "lanes", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "distance", "tags": [{"value": "50", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "261070170K", "count": 1}],
+    "count": 1
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "site", "tags": [{"value": "piste", "count": 1}], "count": 1},
+  {"key": "pitch:count", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "tennis", "tags": [{"value": "rooftop", "count": 1}], "count": 1},
+  {"key": "drinking_water", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "lines:basketball",
+    "tags": [{"value": "white", "count": 1}],
+    "count": 1
+  },
+  {"key": "club", "tags": [{"value": "sport", "count": 1}], "count": 1},
+  {"key": "checked", "tags": [{"value": "2016-06-12", "count": 1}], "count": 1},
+  {"key": "archery", "tags": [{"value": "FITA", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "climbing", "tags": [{"value": "sport", "count": 1}], "count": 1},
+  {
+    "key": "climbing:grade:french:max",
+    "tags": [{"value": "8a", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "leodecines@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "service_times",
+    "tags": [
+      {
+        "value": "Mo-Fr 09:00-12:00,14:00-20:00; Sa 09:00-12:00,15:00-19:00; Su 10:00-12:00",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "TvREcjGYRMp_e57j6uzuxg", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "climbing:grade:french:min",
+    "tags": [{"value": "4a", "count": 1}],
+    "count": 1
+  },
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "free_flying",
+    "tags": [{"value": "paragliding", "count": 1}],
+    "count": 1
+  },
+  {"key": "soccer", "tags": [{"value": "five_a_side", "count": 1}], "count": 1},
+  {"key": "smoothness", "tags": [{"value": "good", "count": 1}], "count": 1}
+]

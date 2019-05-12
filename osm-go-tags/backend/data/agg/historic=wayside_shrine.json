@@ -1,0 +1,241 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "wayside_shrine", "count": 377}],
+    "count": 377
+  },
+  {
+    "key": "religion",
+    "tags": [
+      {"value": "christian", "count": 169},
+      {"value": "catholic", "count": 1}
+    ],
+    "count": 170
+  },
+  {
+    "key": "denomination",
+    "tags": [
+      {"value": "catholic", "count": 126},
+      {"value": "roman_catholic", "count": 6}
+    ],
+    "count": 132
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "place_of_worship", "count": 30}],
+    "count": 30
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22968398", "count": 1},
+      {"value": "Q2387849", "count": 1},
+      {"value": "Q22967489", "count": 1},
+      {"value": "Q13518652", "count": 1},
+      {"value": "Q17429873", "count": 1},
+      {"value": "Q22967292", "count": 1},
+      {"value": "Q20895583", "count": 1},
+      {"value": "Q2957448", "count": 1},
+      {"value": "Q23012177", "count": 1},
+      {"value": "Q2957376", "count": 1},
+      {"value": "Q22967197", "count": 1},
+      {"value": "Q22966838", "count": 1},
+      {"value": "Q22966839", "count": 1},
+      {"value": "Q2957233", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00118195", "count": 1},
+      {"value": "PA00118415", "count": 1},
+      {"value": "PA00117756", "count": 1},
+      {"value": "PA00118310", "count": 1},
+      {"value": "PA00117560", "count": 1},
+      {"value": "PA00117372", "count": 1},
+      {"value": "PA00116739", "count": 1},
+      {"value": "PA73000002", "count": 1},
+      {"value": "PA00117462", "count": 1},
+      {"value": "PA00116979", "count": 1},
+      {"value": "PA00116980", "count": 1},
+      {"value": "PA00118302", "count": 1},
+      {"value": "PA73000013", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1987-06-09", "count": 1},
+      {"value": "1964-05-20", "count": 1},
+      {"value": "1987", "count": 1},
+      {"value": "1964", "count": 1},
+      {"value": "1991-01-29", "count": 1},
+      {"value": "1982-04-30", "count": 1},
+      {"value": "1996-08-22", "count": 1},
+      {"value": "1948", "count": 1},
+      {"value": "1978-03-30", "count": 1},
+      {"value": "1949", "count": 1},
+      {"value": "2006-10-24", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 8}, {"value": "2", "count": 3}],
+    "count": 11
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Lanterne des morts de Nonglard", "count": 1},
+      {"value": "fr:Chapelle du Calvaire de Payzac", "count": 1},
+      {
+        "value": "fr:Chapelle Notre-Dame-de-Lorette de Sainte-Julie",
+        "count": 1
+      },
+      {"value": "fr:Chapelle Saint-Nicolas-du-Port", "count": 1},
+      {"value": "fr:Chapelle Saint-Just de Saint-Just-Chaleyssin", "count": 1},
+      {"value": "fr:Bessans#La Chapelle Saint-Antoine", "count": 1},
+      {"value": "fr:Chapelle Notre-Dame-de-l'Orme", "count": 1},
+      {"value": "fr:Église Sainte-Foy (ruines)", "count": 1},
+      {"value": "fr:Chapelle Notre-Dame de la Vie", "count": 1},
+      {"value": "fr:Église Saint-Apollinaire de Meximieux", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2013", "count": 1},
+      {"value": "1926", "count": 1},
+      {"value": "1848", "count": 1},
+      {"value": "1895", "count": 1},
+      {"value": "1900", "count": 1},
+      {"value": "C17", "count": 1},
+      {"value": "1814", "count": 1},
+      {"value": "C19", "count": 1},
+      {"value": "1880", "count": 1},
+      {"value": "C16", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1303", "count": 1},
+      {"value": "843", "count": 1},
+      {"value": "1622", "count": 1},
+      {"value": "1550", "count": 1},
+      {"value": "1828", "count": 1},
+      {"value": "2014", "count": 1},
+      {"value": "940", "count": 1},
+      {"value": "887", "count": 1},
+      {"value": "1358", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "oratoire", "count": 2},
+      {
+        "value": "un peu en retrait de la route, ouverture opposée à la route",
+        "count": 1
+      },
+      {"value": "ouverture opposée au chemin, coté sud", "count": 1},
+      {"value": "alti relevée au GPS - bonne qualité", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "position", "count": 2},
+      {"value": "emplacement exact à vérifier au gps.", "count": 1},
+      {"value": "emplacement exact à vérifier, gps HS.", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "artwork", "count": 2},
+      {"value": "attraction", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {"value": "Ave Maria", "count": 1},
+      {
+        "value": "Au pied des Aiguilles d'Arves la beauté fait signe (paroles du père Louis Bellet, curé de Albiez de 1971 à 2013)",
+        "count": 1
+      },
+      {
+        "value": "En mémoire de l'aparition de la Ste Vierge à la Salette le 19 7bre 1846",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Oratoire à Clelles.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Chapelle_de_Sainte-Julie.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:%C3%89glise_Saint-Apollinaire_de_Meximieux_-_6.JPG",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "place", "tags": [{"value": "locality", "count": 2}], "count": 2},
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "8-6vUrlHT6TMfSefjaVWLQ", "count": 1},
+      {"value": "GPfcxb5NGvJv940aHmDj-g", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "information", "tags": [{"value": "map", "count": 1}], "count": 1},
+  {"key": "date", "tags": [{"value": "1748", "count": 1}], "count": 1},
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "statue", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "sculpture", "count": 1}], "count": 1},
+  {"key": "memorial", "tags": [{"value": "statue", "count": 1}], "count": 1},
+  {"key": "map_type", "tags": [{"value": "toposcope", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Rosaire", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Madone_du_Ch%C3%A2telet_%C3%A0_Saint_D%C3%A9sirat.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

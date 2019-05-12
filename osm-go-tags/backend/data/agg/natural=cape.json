@@ -1,0 +1,75 @@
+[
+  {"key": "natural", "tags": [{"value": "cape", "count": 206}], "count": 206},
+  {"key": "place", "tags": [{"value": "locality", "count": 82}], "count": 82},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3393723", "count": 1},
+      {"value": "Q1500472", "count": 1},
+      {"value": "Q175676", "count": 1},
+      {"value": "Q6507067", "count": 1},
+      {"value": "Q2937138", "count": 1},
+      {"value": "Q858102", "count": 1},
+      {"value": "Q2308353", "count": 1},
+      {"value": "Q1798855", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Pointe du Grouin", "count": 1},
+      {"value": "fr:Pointe du Raz", "count": 1},
+      {"value": "en:Le Hocq", "count": 1},
+      {"value": "fr:Cap de Carteret", "count": 1},
+      {"value": "fr:Cap Corse", "count": 1},
+      {"value": "fr:Pointe Saint-Mathieu", "count": 1},
+      {"value": "fr:Cap de la Hague", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 4}], "count": 4},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "La pointe la plus à l'ouest de la France continentale",
+        "count": 1
+      },
+      {
+        "value": "P. Pondaven, Etre an Aberig hag Aod Vras lambaol, p. 43",
+        "count": 1
+      },
+      {
+        "value": "P. Pondaven, Etre an Aberig hag Aod Vraz Lambaol, p. 79",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "ele",
+    "tags": [{"value": "51", "count": 1}, {"value": "61", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "cape, rock, peak ?", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "is_in:country",
+    "tags": [{"value": "France", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Le \"Museau de Chien\" en provençal (surtout vu du sud-ouest)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

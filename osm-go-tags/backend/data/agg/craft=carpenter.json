@@ -1,0 +1,128 @@
+[
+  {"key": "craft", "tags": [{"value": "carpenter", "count": 61}], "count": 61},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.metaportail.fr", "count": 1},
+      {"value": "https://www.facebook.com/alticelli", "count": 1},
+      {"value": "www.chassis-or.com", "count": 1},
+      {"value": "www.veranda-vmp.com", "count": 1},
+      {"value": "www.t2mchassieu.com/", "count": 1},
+      {"value": "www.energiefenetres.fr/", "count": 1},
+      {"value": "www.eg-fermetures-roannaises.fr/", "count": 1},
+      {"value": "www.alpes-serrurerie.fr/", "count": 1},
+      {"value": "www.afs74.fr", "count": 1},
+      {"value": "www.somafi.net", "count": 1},
+      {"value": "www.baticime.fr", "count": 1},
+      {"value": "www.couvretoit.eu", "count": 1},
+      {"value": "www.menuiserie-gattoyves.com/", "count": 1},
+      {"value": "www.hanottebois.com/", "count": 1},
+      {"value": "www.toiture-rhonealpes.com", "count": 1},
+      {"value": "http://www.kioneo.fr/particulier-accueil.html", "count": 1},
+      {"value": "http://www.m-menuiseries.com", "count": 1},
+      {"value": "http://www.spiralecreation.com/", "count": 1},
+      {"value": "http://chesneau-charpentier-maçon-38.com/", "count": 1},
+      {"value": "http://www.menuisier-die.com/", "count": 1},
+      {"value": "http://www.menuiserie-gardette.com/", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 43 73 78", "count": 1},
+      {"value": "+33 4 79 63 71 34", "count": 1},
+      {"value": "+33 4 79 61 88 90", "count": 1},
+      {"value": "+33 4 75 84 00 99", "count": 1},
+      {"value": "+33 4 74 59 18 94", "count": 1},
+      {"value": "+33 4 77 63 30 06", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Fabrication et pose d'escaliers bois", "count": 1},
+      {
+        "value": "Menuiserie Charpente Couverture Ebenisterie Agencement",
+        "count": 1
+      },
+      {"value": "Atelier associatif de bricolage", "count": 1},
+      {"value": "Créateur d'Intérieur", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Brico Dépôt", "count": 1},
+      {"value": "Crefad Loire", "count": 1},
+      {"value": "Yves Chesneau Sarl", "count": 1},
+      {"value": "Ets Corgier Ruivard", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "carpenter",
+    "tags": [
+      {"value": "cabinetmaker", "count": 2},
+      {"value": "luthier", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wifi", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "1969", "count": 1}], "count": 1},
+  {"key": "disused:shop", "tags": [{"value": "none", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.leprogres.fr/loire-42/2018/02/10/saint-etienne-un-atelier-de-bricolage-dans-la-rue-de-la-ville",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {"key": "currency:XLT", "tags": [{"value": "GONT", "count": 1}], "count": 1},
+  {
+    "key": "payment:cash:XLT-GONT",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "4332C", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "51762452400024", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@m-menuiseries.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "community_centre", "count": 1}],
+    "count": 1
+  }
+]

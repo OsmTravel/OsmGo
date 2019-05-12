@@ -1,0 +1,44 @@
+[
+  {"key": "shop", "tags": [{"value": "tiles", "count": 22}], "count": 22},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 3 44 82 40 22", "count": 1},
+      {"value": "+33 2 99 23 70 00", "count": 1},
+      {"value": "+33 3 86 57 17 41", "count": 1},
+      {"value": "+33 3 20 74 10 66", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.carrelages-de-st-samson.com", "count": 1},
+      {"value": "http://www.carrelagedupontroyal.com/", "count": 1},
+      {"value": "top-carrelages.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "BROSSETTE.NEVERS@SAINT-GOBAIN.COM", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 3 86 59 43 26", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Magasin de carrelages, pierres et dalles", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "DG Carrelages", "count": 1}],
+    "count": 1
+  },
+  {"key": "industrial", "tags": [{"value": "tiles", "count": 1}], "count": 1}
+]

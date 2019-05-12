@@ -1,0 +1,786 @@
+[
+  {"key": "emergency", "tags": [{"value": "yes", "count": 363}], "count": 363},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "track", "count": 97},
+      {"value": "service", "count": 85},
+      {"value": "pedestrian", "count": 35},
+      {"value": "cycleway", "count": 17},
+      {"value": "path", "count": 13},
+      {"value": "residential", "count": 8},
+      {"value": "unclassified", "count": 7},
+      {"value": "tertiary", "count": 1},
+      {"value": "motorway_link", "count": 1}
+    ],
+    "count": 264
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 110},
+      {"value": "destination", "count": 7},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 118
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 59},
+      {"value": "compacted", "count": 10},
+      {"value": "gravel", "count": 5},
+      {"value": "paved", "count": 5},
+      {"value": "concrete", "count": 4},
+      {"value": "paving_stones", "count": 3},
+      {"value": "pebblestone", "count": 2},
+      {"value": "grass_paver", "count": 1},
+      {"value": "wood", "count": 1},
+      {"value": "cobblestone", "count": 1},
+      {"value": "ground", "count": 1}
+    ],
+    "count": 92
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 60},
+      {"value": "designated", "count": 24},
+      {"value": "dismount", "count": 2},
+      {"value": "no", "count": 2},
+      {"value": "destination", "count": 1}
+    ],
+    "count": 89
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 72},
+      {"value": "private", "count": 8},
+      {"value": "permissive", "count": 3},
+      {"value": "designated", "count": 3},
+      {"value": "destination", "count": 2}
+    ],
+    "count": 88
+  },
+  {
+    "key": "piste:grooming",
+    "tags": [
+      {"value": "classic;skating", "count": 72},
+      {"value": "classic+skating", "count": 3},
+      {"value": "backcountry", "count": 2},
+      {"value": "skating", "count": 2}
+    ],
+    "count": 79
+  },
+  {
+    "key": "piste:type",
+    "tags": [{"value": "nordic", "count": 79}],
+    "count": 79
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [
+      {"value": "easy", "count": 41},
+      {"value": "intermediate", "count": 17},
+      {"value": "novice", "count": 14},
+      {"value": "advanced", "count": 5}
+    ],
+    "count": 77
+  },
+  {
+    "key": "tracktype",
+    "tags": [
+      {"value": "grade3", "count": 32},
+      {"value": "grade2", "count": 22},
+      {"value": "grade4", "count": 19}
+    ],
+    "count": 73
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 40},
+      {"value": "designated", "count": 24},
+      {"value": "no", "count": 3},
+      {"value": "official", "count": 3},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 71
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "hospital", "count": 63},
+      {"value": "doctors", "count": 2},
+      {"value": "clinic", "count": 1},
+      {"value": "rescue", "count": 1}
+    ],
+    "count": 67
+  },
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [
+      {"value": "740000294", "count": 1},
+      {"value": "070000013", "count": 1},
+      {"value": "070780424", "count": 1},
+      {"value": "420000010", "count": 1},
+      {"value": "380785956", "count": 1},
+      {"value": "690780655", "count": 1},
+      {"value": "260000286", "count": 1},
+      {"value": "740780424", "count": 1},
+      {"value": "690000575", "count": 1},
+      {"value": "380000042", "count": 1},
+      {"value": "380000174", "count": 1},
+      {"value": "070000179", "count": 1},
+      {"value": "420010050", "count": 1},
+      {"value": "420011413", "count": 1},
+      {"value": "740781166", "count": 1},
+      {"value": "260000138", "count": 1},
+      {"value": "010000024", "count": 1},
+      {"value": "690780416", "count": 1},
+      {"value": "690784152", "count": 1},
+      {"value": "070000609", "count": 1},
+      {"value": "380782722", "count": 1},
+      {"value": "730004298", "count": 1},
+      {"value": "690783154", "count": 1},
+      {"value": "690780093", "count": 1},
+      {"value": "690007539", "count": 1},
+      {"value": "010780195", "count": 1},
+      {"value": "730000031", "count": 1},
+      {"value": "260000146", "count": 1},
+      {"value": "730000098", "count": 1},
+      {"value": "690784137", "count": 1},
+      {"value": "260000203", "count": 1},
+      {"value": "010000032", "count": 1},
+      {"value": "010005239", "count": 1},
+      {"value": "260000120", "count": 1},
+      {"value": "740014345", "count": 1},
+      {"value": "740000302", "count": 1},
+      {"value": "380000406", "count": 1},
+      {"value": "420000267", "count": 1},
+      {"value": "690780648", "count": 1},
+      {"value": "420000226", "count": 1},
+      {"value": "690807367", "count": 1},
+      {"value": "420782310", "count": 1},
+      {"value": "010780203", "count": 1},
+      {"value": "690000013", "count": 1},
+      {"value": "690780382", "count": 1},
+      {"value": "690780390", "count": 1},
+      {"value": "420785354", "count": 1},
+      {"value": "690782834", "count": 1},
+      {"value": "740000328", "count": 1},
+      {"value": "380000034", "count": 1},
+      {"value": "420780637", "count": 1},
+      {"value": "730000262", "count": 1},
+      {"value": "420780504", "count": 1},
+      {"value": "740781224", "count": 1},
+      {"value": "380012658", "count": 1},
+      {"value": "380020123", "count": 1},
+      {"value": "380000026", "count": 1},
+      {"value": "730000247", "count": 1},
+      {"value": "730000080", "count": 1},
+      {"value": "730000049", "count": 1},
+      {"value": "690000625", "count": 1}
+    ],
+    "count": 61
+  },
+  {
+    "key": "type:FR:FINESS",
+    "tags": [
+      {"value": "355", "count": 34},
+      {"value": "365", "count": 19},
+      {"value": "101", "count": 6},
+      {"value": "129", "count": 1},
+      {"value": "114", "count": 1}
+    ],
+    "count": 61
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 8 25 08 25 69", "count": 3},
+      {"value": "+33 4 74 73 10 01", "count": 1},
+      {"value": "+33 8 26 30 07 26", "count": 1},
+      {"value": "+33 4 77 44 30 00", "count": 1},
+      {"value": "+33 8 25 56 56 38", "count": 1},
+      {"value": "+33 8 26 96 99 99", "count": 1},
+      {"value": "+33 4 75 22 55 00", "count": 1},
+      {"value": "+33 8 26 88 88 88", "count": 1},
+      {"value": "+33 4 74 09 25 03", "count": 1},
+      {"value": "+33 4 76 32 64 32", "count": 1},
+      {"value": "+33 4 74 31 33 33", "count": 1},
+      {"value": "+33 4 75 67 35 00", "count": 1},
+      {"value": "+33 4 77 12 12 12", "count": 1},
+      {"value": "+33 8 26 30 42 42", "count": 1},
+      {"value": "+33 4 50 53 84 00", "count": 1},
+      {"value": "+33 4 75 53 40 00", "count": 1},
+      {"value": "+33 4 74 45 46 47", "count": 1},
+      {"value": "+33 4 72 89 80 00", "count": 1},
+      {"value": "+33 4 75 20 20 00", "count": 1},
+      {"value": "+33 4 75 35 60 60", "count": 1},
+      {"value": "+33 4 76 76 75 75", "count": 1},
+      {"value": "+33 4 79 26 80 80", "count": 1},
+      {"value": "+33 4 72 36 60 00", "count": 1},
+      {"value": "+33 4 74 45 64 45", "count": 1},
+      {"value": "+33 4 79 96 50 50", "count": 1},
+      {"value": "+33 4 75 25 37 00", "count": 1},
+      {"value": "+33 4 79 88 61 61", "count": 1},
+      {"value": "+33 4 50 01 80 00", "count": 1},
+      {"value": "+33 4 79 42 59 59", "count": 1},
+      {"value": "+33 4 75 23 80 00", "count": 1},
+      {"value": "+33 4 75 05 75 05", "count": 1},
+      {"value": "+33 8 26 30 00 74", "count": 1},
+      {"value": "+33 4 50 49 65 65", "count": 1},
+      {"value": "+33 4 76 67 14 91", "count": 1},
+      {"value": "+33 4 77 27 54 54", "count": 1},
+      {"value": "+33 4 72 17 26 26", "count": 1},
+      {"value": "+33 4 77 96 78 00", "count": 1},
+      {"value": "+33 8 26 96 90 00", "count": 1},
+      {"value": "+33 8 26 46 45 00", "count": 1},
+      {"value": "+33 4 74 38 95 95", "count": 1},
+      {"value": "+33 4 78 07 30 30", "count": 1},
+      {"value": "+33 4 78 49 05 60", "count": 1},
+      {"value": "+33 8 26 28 29 30", "count": 1},
+      {"value": "+33 4 77 82 80 00", "count": 1},
+      {"value": "+33 8 2610 12 01", "count": 1},
+      {"value": "+33 4 50 83 20 00", "count": 1},
+      {"value": "+33 4 69 15 70 00", "count": 1},
+      {"value": "+33 4 77 31 19 19", "count": 1},
+      {"value": "+33 4 79 89 55 55", "count": 1},
+      {"value": "+33 4 77 92 22 22", "count": 1},
+      {"value": "+33 4 50 47 30 30", "count": 1},
+      {"value": "+33 4 76 70 70 00", "count": 1},
+      {"value": "+33 4 74 29 28 28", "count": 1},
+      {"value": "+33 4 76 81 42 00", "count": 1},
+      {"value": "+33 4 79 41 79 79", "count": 1},
+      {"value": "+33 4 79 20 60 20", "count": 1},
+      {"value": "+33 4 79 09 60 60", "count": 1},
+      {"value": "+33 4 74 05 46 46", "count": 1}
+    ],
+    "count": 60
+  },
+  {
+    "key": "operator:type",
+    "tags": [
+      {"value": "public", "count": 40},
+      {"value": "private", "count": 19}
+    ],
+    "count": 59
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "no", "count": 56}, {"value": "yes", "count": 3}],
+    "count": 59
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ch-metropole-savoie.fr/chc/c_5038/accueil",
+        "count": 2
+      },
+      {
+        "value": "https://www.lyonaeroports.com/shopping-services/sante-et-bien-etre/services-medicaux",
+        "count": 2
+      },
+      {"value": "http://www.lhopitalnordouest.fr/", "count": 2},
+      {"value": "http://www.chi-mont-blanc.fr/", "count": 2},
+      {"value": "http://www.hopitaux-drome-nord.fr/v002/index.php", "count": 2},
+      {"value": "http://www.ch-forez.fr/", "count": 2},
+      {"value": "http://www.cham-savoie.fr/", "count": 2},
+      {"value": "http://www.ch-die.fr/", "count": 1},
+      {
+        "value": "http://www.clinique-generale.net/fr/documents/p_accueil.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.generale-de-sante.fr/hopital-prive-drome-ardeche-guilherand-granges-valence",
+        "count": 1
+      },
+      {"value": "http://www.chpb.fr/", "count": 1},
+      {"value": "http://www.ch-vienne.fr/", "count": 1},
+      {"value": "http://ch-ardeche-nord.fr/", "count": 1},
+      {
+        "value": "http://www.mutualite-loire.com/index.php/nos-etablissements/chirurgie/la-clinique-mutualiste-chirurgicale",
+        "count": 1
+      },
+      {
+        "value": "http://hopital-prive-de-la-loire-saint-etienne.ramsaygds.fr/",
+        "count": 1
+      },
+      {
+        "value": "http://hopital-centre-hospitalier-urgences-maternite-chirurgie.c-h-v-a.fr/",
+        "count": 1
+      },
+      {"value": "http://www.ch-montelimar.fr/", "count": 1},
+      {"value": "http://www.ch-bourg-en-bresse.fr/", "count": 1},
+      {"value": "www.ghm-lesportesdusud.fr", "count": 1},
+      {"value": "www.chu-lyon.fr/fr/hopital-de-la-croix-rousse", "count": 1},
+      {"value": "http://www.ch-ardeche-meridionale.fr", "count": 1},
+      {"value": "http://www.chu-grenoble.fr/", "count": 1},
+      {"value": "medipole-de-savoie.fr", "count": 1},
+      {
+        "value": "http://www.chu-lyon.fr/fr/hopital-femme-mere-enfant",
+        "count": 1
+      },
+      {
+        "value": "http://clinique-convert-bourg-en-bresse.ramsaygds.fr/",
+        "count": 1
+      },
+      {"value": "http://www.ch-roanne.fr/", "count": 1},
+      {"value": "http://www.ch-crest.fr/", "count": 1},
+      {"value": "http://www.chu-lyon.fr", "count": 1},
+      {"value": "http://www.ch-rumilly.fr/", "count": 1},
+      {
+        "value": "http://hopital-belley.fr/wd150awp/wd150awp.exe/connect/chbelley",
+        "count": 1
+      },
+      {"value": "http://www.ch-hautbugey.fr/", "count": 1},
+      {
+        "value": "http://hopital-prive-pays-de-savoie-annemasse.ramsaygds.fr/",
+        "count": 1
+      },
+      {"value": "www.ch-annecygenevois.fr/fr", "count": 1},
+      {"value": "http://www.ch-voiron.fr/", "count": 1},
+      {"value": "https://clinique-cedres.capio.fr/", "count": 1},
+      {"value": "http://clinique-sauvegarde.capio.fr/", "count": 1},
+      {"value": "https://polyclinique-beaujolais.capio.fr/", "count": 1},
+      {"value": "http://www.clinique-renaison.fr/", "count": 1},
+      {"value": "http://www.ch-givors.fr/", "count": 1},
+      {"value": "http://clinique-grand-large.fr/", "count": 1},
+      {"value": "http://www.clinique-lyon-nord.fr/", "count": 1},
+      {"value": "http://www.chu-st-etienne.fr/", "count": 1},
+      {"value": "http://clinique-tonkin.capio.fr/", "count": 1},
+      {"value": "www.hopitauxduleman.fr", "count": 1},
+      {"value": "http://www.ch-bourgoin.fr/", "count": 1},
+      {"value": "http://www.hopitaldugier.fr/", "count": 1},
+      {"value": "http://www.hpel.fr/", "count": 1},
+      {"value": "http://www.clinique-du-parc.fr/", "count": 1},
+      {"value": "https://www.ghm-grenoble.fr/", "count": 1},
+      {"value": "http://www.cliniquedescotesdurhone.fr/", "count": 1},
+      {"value": "https://www.ch-lamure.fr/", "count": 1}
+    ],
+    "count": 58
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 42 59 96", "count": 1},
+      {"value": "+33 4 75 20 21 90", "count": 1},
+      {"value": "+33 4 75 44 19 83", "count": 1},
+      {"value": "+33 4 77 44 31 98", "count": 1},
+      {"value": "+33 4 56 58 10 00", "count": 1},
+      {"value": "+33 4 72 78 71 56", "count": 1},
+      {"value": "+33 4 75 22 55 05", "count": 1},
+      {"value": "+33 4 50 33 04 09", "count": 1},
+      {"value": "+33 4 74 09 25 00", "count": 1},
+      {"value": "+33 4 76 32 64 87", "count": 1},
+      {"value": "+33 4 74 31 32 04", "count": 1},
+      {"value": "+33 4 75 67 35 90", "count": 1},
+      {"value": "+33 4 77 48 10 20", "count": 1},
+      {"value": "+33 4 77 42 29 29", "count": 1},
+      {"value": "+33 4 50 53 84 74", "count": 1},
+      {"value": "+33 4 75 53 40 03", "count": 1},
+      {"value": "+33 4 74 45 41 14", "count": 1},
+      {"value": "+33 4 72 89 80 01", "count": 1},
+      {"value": "+33 4 72 07 18 96", "count": 1},
+      {"value": "+33 4 75 35 61 40", "count": 1},
+      {"value": "+33 4 76 76 52 59", "count": 1},
+      {"value": "+33 4 27 85 62 86", "count": 1},
+      {"value": "+33 4 74 45 26 56", "count": 1},
+      {"value": "+33 4 79 96 56 82", "count": 1},
+      {"value": "+33 4 75 25 37 15", "count": 1},
+      {"value": "+33 4 79 88 61 86", "count": 1},
+      {"value": "+33 4 78 86 56 66", "count": 1},
+      {"value": "+33 4 50 01 17 59", "count": 1},
+      {"value": "+33 4 75 23 07 45", "count": 1},
+      {"value": "+33 4 74 73 10 02", "count": 1},
+      {"value": "+33 4 75 05 75 99", "count": 1},
+      {"value": "+33 4 50 83 47 16", "count": 1},
+      {"value": "+33 4 50 49 66 70", "count": 1},
+      {"value": "+33 4 76 67 15 97", "count": 1},
+      {"value": "+33 4 77 27 52 21", "count": 1},
+      {"value": "+33 4 72 17 26 02", "count": 1},
+      {"value": "+33 4 77 96 78 98", "count": 1},
+      {"value": "+33 4 74 65 66 68", "count": 1},
+      {"value": "+33 4 77 44 45 45", "count": 1},
+      {"value": "+33 4 74 38 95 29", "count": 1},
+      {"value": "+33 4 78 07 30 04", "count": 1},
+      {"value": "+33 4 78 49 22 82", "count": 1},
+      {"value": "+33 4 72 01 38 14", "count": 1},
+      {"value": "+33 4 77 82 80 05", "count": 1},
+      {"value": "+33 4 72 82 66 50", "count": 1},
+      {"value": "+33 4 50 83 22 61", "count": 1},
+      {"value": "+33 4 69 15 70 13", "count": 1},
+      {"value": "+33 4 77 29 35 06", "count": 1},
+      {"value": "+33 4 79 37 48 10", "count": 1},
+      {"value": "+33 4 77 92 21 05", "count": 1},
+      {"value": "+33 4 50 47 30 11", "count": 1},
+      {"value": "+33 4 76 47 66 94", "count": 1},
+      {"value": "+33 4 76 30 94 43", "count": 1},
+      {"value": "+33 4 79 07 53 02", "count": 1},
+      {"value": "+33 4 79 20 60 10", "count": 1},
+      {"value": "+33 4 79 09 60 09", "count": 1},
+      {"value": "+33 4 74 05 33 64", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "emergency_access", "count": 35},
+      {"value": "driveway", "count": 10},
+      {"value": "bus", "count": 1},
+      {"value": "alley", "count": 1},
+      {"value": "parking_aisle", "count": 1}
+    ],
+    "count": 48
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 24}, {"value": "no", "count": 11}],
+    "count": 35
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "gate", "count": 14},
+      {"value": "lift_gate", "count": 6},
+      {"value": "chain", "count": 2},
+      {"value": "swing_gate", "count": 2},
+      {"value": "fence", "count": 2},
+      {"value": "cycle_barrier", "count": 1},
+      {"value": "drop_bollard", "count": 1},
+      {"value": "entrance", "count": 1},
+      {"value": "bollard", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "access:conditional",
+    "tags": [
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00 ; Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 19
+      },
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00; Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 3
+      },
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00;Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 2
+      }
+    ],
+    "count": 24
+  },
+  {
+    "key": "vehicle",
+    "tags": [
+      {"value": "no", "count": 12},
+      {"value": "destination", "count": 2},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "good", "count": 6},
+      {"value": "intermediate", "count": 6},
+      {"value": "excellent", "count": 1},
+      {"value": "very_bad", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "quai bas: layer = -1", "count": 6},
+      {"value": "Bing imagery is outdated", "count": 2},
+      {"value": "Voie Verte", "count": 2},
+      {
+        "value": "ce chemin entre les Allées du Grande Camp et du Lac n'est plus interdit aux vélos, apparement depuis quelques mois déjà (Mai 2014)",
+        "count": 1
+      },
+      {
+        "value": "Construction d'un nouvel hôpital. Ouverture prévue fin 2019",
+        "count": 1
+      },
+      {"value": "Import du cadastre quand disponible", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "50", "count": 8},
+      {"value": "10", "count": 2},
+      {"value": "90", "count": 1},
+      {"value": "30", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Groupe Capio", "count": 3},
+      {"value": "Ramsay Générale de Santé", "count": 2},
+      {"value": "Groupe Ramsay Générale de Santé", "count": 2},
+      {"value": "Capio", "count": 1},
+      {"value": "Hospices Civils de Lyon", "count": 1},
+      {"value": "Groupe Vivalto Santé", "count": 1},
+      {"value": "Noalys", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "psv",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "designated", "count": 3},
+      {"value": "no", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "no", "count": 6},
+      {"value": "share_busway", "count": 3},
+      {"value": "shared", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "-1", "count": 6}, {"value": "1", "count": 3}],
+    "count": 9
+  },
+  {
+    "key": "horse",
+    "tags": [{"value": "no", "count": 6}, {"value": "yes", "count": 3}],
+    "count": 9
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "width",
+    "tags": [
+      {"value": "2", "count": 2},
+      {"value": "3", "count": 2},
+      {"value": "4 m", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "2.5", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "agricultural",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "destination", "count": 2},
+      {"value": "no", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "691160310H", "count": 2},
+      {"value": "385300051C", "count": 2},
+      {"value": "381930133G", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 1}],
+    "count": 5
+  },
+  {"key": "hov", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "building_passage", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "motorcar",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "no", "count": 1},
+      {"value": "destination", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "26690027300100", "count": 1},
+      {"value": "26690027300217", "count": 1},
+      {"value": "15100002300433", "count": 1},
+      {"value": "26690027300969", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Urgences communes limitrophes, parking gratuit P2 Minute.",
+        "count": 2
+      },
+      {"value": "Voie Verte", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {"value": "Hôpital Privé de l'Est Lyonnais", "count": 1},
+      {"value": "HopitalCroixRousse.HCL", "count": 1},
+      {"value": "Centre Hospitalier de Givors", "count": 1},
+      {"value": "Clinique des Côtes du Rhône", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q18579512", "count": 1},
+      {"value": "Q3145307", "count": 1},
+      {"value": "Q3145366", "count": 1},
+      {"value": "Q3145268", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "old_ref", "tags": [{"value": "N 6", "count": 3}], "count": 3},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 2},
+      {"value": "rough contour", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "incline",
+    "tags": [{"value": "up", "count": 2}, {"value": "down", "count": 1}],
+    "count": 3
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "sidewalk", "tags": [{"value": "right", "count": 3}], "count": 3},
+  {
+    "key": "hgv",
+    "tags": [{"value": "destination", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Pont d'Herbens", "count": 1},
+      {"value": "fr:Hôpital de la Croix-Rousse", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "goods",
+    "tags": [{"value": "no", "count": 1}, {"value": "destination", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "swing_gate:type",
+    "tags": [{"value": "single", "count": 2}],
+    "count": 2
+  },
+  {"key": "lanes", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "doctor", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@clinique-generale.fr", "count": 1},
+      {"value": "clinique-mutualiste@mutualite-loire.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "ref", "tags": [{"value": "D 506", "count": 2}], "count": 2},
+  {"key": "area", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "maxweight",
+    "tags": [{"value": "5", "count": 1}, {"value": "3.5", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "motorcycle",
+    "tags": [{"value": "no", "count": 1}, {"value": "destination", "count": 1}],
+    "count": 2
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117813", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "8610Z", "count": 1}], "count": 1},
+  {
+    "key": "emmergencie",
+    "tags": [{"value": "from 8am to 8 pm", "count": 1}],
+    "count": 1
+  },
+  {"key": "destination", "tags": [{"value": "Tarare", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "1895", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "83.72 m", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1967-12-13", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note:en",
+    "tags": [
+      {
+        "value": "this pathway is no longer banned to cyclistes, apparenly since a few months already (May 2014)",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "9 m", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [{"value": "http://www.chu-lyon.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "busway", "tags": [{"value": "lane", "count": 1}], "count": 1},
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "first_aid", "count": 1}],
+    "count": 1
+  },
+  {"key": "material", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {"key": "bollard", "tags": [{"value": "rising", "count": 1}], "count": 1},
+  {"key": "tourist_bus", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "maxheight", "tags": [{"value": "3.6", "count": 1}], "count": 1}
+]

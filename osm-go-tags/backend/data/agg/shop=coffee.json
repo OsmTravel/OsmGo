@@ -1,0 +1,57 @@
+[
+  {"key": "shop", "tags": [{"value": "coffee", "count": 17}], "count": 17},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 68 06 73", "count": 1},
+      {"value": "+33 4 74 85 16 03", "count": 1},
+      {"value": "+33 4 75 43 12 36", "count": 1},
+      {"value": "+33 9 52 97 52 95", "count": 1},
+      {"value": "+33 4 78 39 71 58", "count": 1},
+      {"value": "+33 800 55 52 53", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://jaunecerise.fr/", "count": 2},
+      {"value": "http://www.cafes-pierre-soral.com/", "count": 1},
+      {"value": "http://www.bongoocafe.com", "count": 1},
+      {"value": "https://www.nespresso.com/boutiques-fr/lyon-saxe", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Atout Grain", "count": 1},
+      {
+        "value": "Torréfacteur. Boutique de café, thé et produits locaux.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-19", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "cafe", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "magasin thés/cafés", "count": 1}],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@bongoocafe.com", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {"key": "footway", "tags": [{"value": "crossing", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "footway", "count": 1}], "count": 1},
+  {
+    "key": "crossing",
+    "tags": [{"value": "uncontrolled", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "fo", "count": 1}], "count": 1}
+]

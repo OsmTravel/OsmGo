@@ -1,0 +1,76 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "raceway", "count": 165}],
+    "count": 165
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "motor", "count": 38},
+      {"value": "karting", "count": 29},
+      {"value": "motocross", "count": 22},
+      {"value": "toboggan", "count": 7},
+      {"value": "bobsleigh", "count": 4},
+      {"value": "cycling", "count": 1},
+      {"value": "bmx", "count": 1},
+      {"value": "modelisme", "count": 1}
+    ],
+    "count": 103
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 34},
+      {"value": "ground", "count": 7},
+      {"value": "dirt", "count": 7},
+      {"value": "clay", "count": 3},
+      {"value": "dirt;sand", "count": 1}
+    ],
+    "count": 52
+  },
+  {"key": "oneway", "tags": [{"value": "yes", "count": 23}], "count": 23},
+  {
+    "key": "area",
+    "tags": [{"value": "no", "count": 16}, {"value": "yes", "count": 3}],
+    "count": 19
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 13},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "leisure", "tags": [{"value": "track", "count": 12}], "count": 12},
+  {"key": "layer", "tags": [{"value": "1", "count": 8}], "count": 8},
+  {"key": "bridge", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "lanes", "tags": [{"value": "1", "count": 7}], "count": 7},
+  {"key": "incline", "tags": [{"value": "down", "count": 7}], "count": 7},
+  {"key": "piste:type", "tags": [{"value": "sled", "count": 7}], "count": 7},
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "private", "count": 2},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "attraction",
+    "tags": [{"value": "summer_toboggan", "count": 3}],
+    "count": 3
+  },
+  {"key": "lit", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 3}], "count": 3},
+  {"key": "motor_vehicle", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Association Sportive de Karting de Villars", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "mtb:scale", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

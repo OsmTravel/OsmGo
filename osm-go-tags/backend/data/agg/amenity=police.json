@@ -1,0 +1,239 @@
+[
+  {"key": "amenity", "tags": [{"value": "police", "count": 477}], "count": 477},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Gendarmerie Nationale", "count": 45},
+      {"value": "Gendarmerie nationale", "count": 11},
+      {"value": "Police nationale", "count": 7},
+      {"value": "Police Nationale", "count": 2},
+      {"value": "Ville d'Échirolles", "count": 1},
+      {"value": "Mairie de Trévoux", "count": 1},
+      {"value": "Ville d'Annecy-le-Vieux", "count": 1},
+      {"value": "Ministère de l'Intérieur", "count": 1}
+    ],
+    "count": 69
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 95 60 17", "count": 1},
+      {"value": "+41 22 427 68 30", "count": 1},
+      {"value": "+33 4 50 24 52 40", "count": 1},
+      {"value": "+33 4 50 49 20 44", "count": 1},
+      {"value": "+33 4 75 00 70 70", "count": 1},
+      {"value": "+33 4 78200095", "count": 1},
+      {"value": "+33 4 72 84 95 45", "count": 1},
+      {"value": "+33 4 78 42 26 56", "count": 1},
+      {"value": "+33 4 74 78 30 17", "count": 1},
+      {"value": "+33 4 37 60 25 30", "count": 1},
+      {"value": "+33 4 74 56 10 26", "count": 1},
+      {"value": "+33 4 77 24 08 29", "count": 1},
+      {"value": "+33 4 50 94 00 09", "count": 1},
+      {"value": "+33 4 79 37 94 17", "count": 1},
+      {"value": "+33 4 79 28 50 17", "count": 1},
+      {"value": "+33 4 50 32 44 44", "count": 1},
+      {"value": "+33 4 50 03 00 15", "count": 1},
+      {"value": "+33 4 50 44 10 08", "count": 1},
+      {"value": "+33 4 75 89 22 22", "count": 1},
+      {"value": "+33 4 77 67 06 22", "count": 1},
+      {"value": "+33 3 85 23 81 20", "count": 1},
+      {"value": "+33 4 74 69 68 67", "count": 1},
+      {"value": "+33 4 75 66 60 07", "count": 1},
+      {"value": "+33 4 74 67 02 17", "count": 1},
+      {"value": "+33 4 79 07 04 25", "count": 1},
+      {"value": "+33 4 77 58 12 88", "count": 1},
+      {"value": "+33 4 75 68 81 53", "count": 1},
+      {"value": "+33 4 74 75 20 22", "count": 1},
+      {"value": "+33 4 50 04 33 55", "count": 1},
+      {"value": "+33477512084", "count": 1},
+      {"value": "+33 4 78 50 30 33", "count": 1},
+      {"value": "+33 4 72 38 83 50", "count": 1},
+      {"value": "+33 4 76 55 20 17", "count": 1},
+      {"value": "+33 4 75 35 03 68", "count": 1},
+      {"value": "+33 4 79 24 00 15", "count": 1},
+      {"value": "+33 4 75 23 08 23", "count": 1},
+      {"value": "+33 4 75 88 02 10", "count": 1},
+      {"value": "+33 4 74 77 47 33", "count": 1},
+      {"value": "+33 4 75 36 40 80", "count": 1},
+      {"value": "+33 4 50 89 57 20", "count": 1},
+      {"value": "+33 4 50 18 49 90", "count": 1},
+      {"value": "+33 4 74 86 20 17", "count": 1},
+      {"value": "+33 4 76 65 30 17", "count": 1},
+      {"value": "+33 4 77 68 16 44", "count": 1},
+      {"value": "+33 4 75 62 01 98", "count": 1},
+      {"value": "+33 4 78 02 71 20", "count": 1},
+      {"value": "+33 4 78 44 00 64", "count": 1},
+      {"value": "+33 4 74 69 32 78", "count": 1}
+    ],
+    "count": 48
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "email",
+    "tags": [
+      {
+        "value": "bta.bourg-st-maurice@gendarmerie.interieur.gouv.fr",
+        "count": 1
+      },
+      {
+        "value": "bta.st-julien-en-genevois@gendarmerie.interieur.gouv.fr",
+        "count": 1
+      },
+      {"value": "policemunicipale@mairie-saint-priest.fr", "count": 1},
+      {"value": "cob.boen@gendarmerie.interieur.gouv.fr", "count": 1},
+      {
+        "value": "cob-st.genest.malifaux@gendarmerie.interieur.gouv.fr",
+        "count": 1
+      },
+      {"value": "bta.moutiers@gendarmerie.interieur.gouv.fr", "count": 1},
+      {"value": "bta.roussillon@gendarmerie.interieur.gouv.fr", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "police:FR",
+    "tags": [
+      {"value": "gendarmerie", "count": 4},
+      {"value": "police", "count": 3}
+    ],
+    "count": 7
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "3826101 - B", "count": 1},
+      {
+        "value": "Brigade territoriale autonome de Bourg-Saint-Maurice",
+        "count": 1
+      },
+      {
+        "value": "Brigade territoriale autonome de Saint-Julien-en-Genevois",
+        "count": 1
+      },
+      {"value": "Commissariat de police d'Aubenas", "count": 1},
+      {"value": "Brigade territoriale autonome de Moûtiers", "count": 1},
+      {"value": "Brigade territoriale autonome de Roussillon", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 1
+      },
+      {"value": "Ouvert uniquement en hiver", "count": 1},
+      {"value": "14 Rue Roger Salengro 69740 GENAS", "count": 1},
+      {"value": "Poste de Gendarmerie", "count": 1},
+      {"value": "Gendarmerie", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "landuse", "tags": [{"value": "military", "count": 5}], "count": 5},
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 07 34 90", "count": 1},
+      {"value": "+33 4 50 49 66 95", "count": 1},
+      {"value": "+33 4 79 24 73 39", "count": 1},
+      {"value": "+33 4 74 73 97 45", "count": 1},
+      {"value": "+33 4 74 29 86 41", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 2},
+      {"value": "Editop", "count": 1},
+      {"value": "Potlatch 0.10a", "count": 1},
+      {"value": "Potlatch 0.10b", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 3}, {"value": "wall", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "police",
+    "tags": [
+      {"value": "station", "count": 1},
+      {"value": "community", "count": 1},
+      {"value": "gendarmerie", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Clocher : Centre croix - Point vu en place en 2003",
+        "count": 1
+      },
+      {"value": "Direction mondiale d'Interpol", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Interpol", "count": 1},
+      {"value": "fr:Fort Montluc", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_point.asp?num_site=3826101&no_ptg=03&numero_f50=3232",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description",
+    "tags": [{"value": "À côté du supermarché Lidl", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "275.68", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "service_times",
+    "tags": [
+      {
+        "value": "Mo-Fr 00:00-03:00,07:00-24:00; Sa 00:00-03:00,08:00-24:00; Su 07:00-14:30",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "construction_date",
+    "tags": [{"value": "1910", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "fence_type",
+    "tags": [{"value": "chain_link", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1}
+]

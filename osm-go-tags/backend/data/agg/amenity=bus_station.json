@@ -1,0 +1,130 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "bus_station", "count": 114}],
+    "count": 114
+  },
+  {
+    "key": "public_transport",
+    "tags": [
+      {"value": "station", "count": 26},
+      {"value": "platform", "count": 2},
+      {"value": "stop_position", "count": 1}
+    ],
+    "count": 29
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Transisère", "count": 9},
+      {"value": "STAS", "count": 2},
+      {"value": "TAG", "count": 1},
+      {"value": "Lihsa;Ouibus;Flixbus", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Transdev", "count": 2},
+      {"value": "Autocars Gineys", "count": 1},
+      {"value": "Transdev Crolard", "count": 1},
+      {"value": "SAT - Mont Blanc", "count": 1},
+      {"value": "Mont Blanc Bus", "count": 1},
+      {"value": "VFD", "count": 1},
+      {"value": "Bertolami", "count": 1},
+      {"value": "Transdev Haute-Savoie;Philibert;Loyet;Francony", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 2},
+      {"value": "3", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 2}, {"value": "-1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "102;104;119;122;123", "count": 1},
+      {"value": "18;28;30;34;37", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 34 40 09", "count": 1},
+      {"value": "+33 4 50 02 00 11", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "yes", "count": 1}, {"value": "ticket", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.vfd.fr/", "count": 1},
+      {
+        "value": "http://www.transdevhautesavoie.com/fr/annecy-la-clusaz-grand-bornand",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Transport public routier de voyageurs", "count": 1},
+      {
+        "value": "Horaires :\nOuvert du lundi au vendredi, 08h30 - 12h00 puis 14h00 - 18h00. Ouvert le samedi de 8h30 à 12h00.\nHoraires : http://www.thones-valsulens.com/fr/acces-transports/acces-et-transports.htm  (Ligne L62/63)",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "ele", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bench", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Centre d’échanges de Perrache", "count": 1}],
+    "count": 1
+  },
+  {"key": "uic_ref", "tags": [{"value": "8772255", "count": 1}], "count": 1},
+  {"key": "route_ref", "tags": [{"value": "1;2", "count": 1}], "count": 1},
+  {
+    "key": "ref:Transisère",
+    "tags": [{"value": "14607", "count": 1}],
+    "count": 1
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1},
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {
+    "key": "tickets:public_transport",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

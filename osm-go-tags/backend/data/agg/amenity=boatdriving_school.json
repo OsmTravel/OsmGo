@@ -1,0 +1,28 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "boatdriving_school", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 40 12 08 80", "count": 1},
+      {"value": "+33 2 40 74 38 53", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ocean-formation.com", "count": 1},
+      {"value": "http://www.bateau-ecole-lorleach.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "plorleach@hotmail.fr", "count": 1}],
+    "count": 1
+  }
+]

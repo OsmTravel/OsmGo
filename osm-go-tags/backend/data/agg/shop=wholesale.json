@@ -1,0 +1,35 @@
+[
+  {"key": "shop", "tags": [{"value": "wholesale", "count": 12}], "count": 12},
+  {
+    "key": "wholesale",
+    "tags": [
+      {"value": "food", "count": 2},
+      {"value": "clothes", "count": 1},
+      {"value": "greengrocer", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "pharmacy", "count": 1},
+      {"value": "grocery", "count": 1},
+      {"value": "hardware", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "négoce d'animaux vivants (porcs)", "count": 1},
+      {"value": "Commerce de plants de pommes de terre", "count": 1},
+      {
+        "value": "entreposage et stockage de produits alimentaires secs",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "organic", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.naturdis.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

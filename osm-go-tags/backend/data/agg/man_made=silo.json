@@ -1,0 +1,31 @@
+[
+  {"key": "man_made", "tags": [{"value": "silo", "count": 103}], "count": 103},
+  {"key": "wall", "tags": [{"value": "no", "count": 9}], "count": 9},
+  {"key": "layer", "tags": [{"value": "1", "count": 3}], "count": 3},
+  {"key": "content", "tags": [{"value": "silage", "count": 1}], "count": 1},
+  {
+    "key": "brand",
+    "tags": [{"value": "Ets P. Bernard", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "File:Silo de la minoterie du Trièves à Clelles.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/St-Jeure_d'Ay_coop%C3%A9rative.jpg/1920px-St-Jeure_d'Ay_coop%C3%A9rative.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

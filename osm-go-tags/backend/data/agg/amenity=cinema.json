@@ -1,0 +1,340 @@
+[
+  {"key": "amenity", "tags": [{"value": "cinema", "count": 233}], "count": 233},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.allocine.fr/seance/salle_gen_csalle=W7429.html",
+        "count": 1
+      },
+      {
+        "value": "https://kinepolis.fr/cinemas/kinepolis-bourgoin-jallieu",
+        "count": 1
+      },
+      {
+        "value": "http://www.cinemasgaumontpathe.com/cinemas/cinema-pathe-carre-de-soie/",
+        "count": 1
+      },
+      {"value": "http://www.rexneuville.com/", "count": 1},
+      {"value": "http://www.forum-cinemas.com/", "count": 1},
+      {"value": "http://www.cinebellecombe.tk/", "count": 1},
+      {"value": "http://www.laligue38.org/cinema-le-melies", "count": 1},
+      {"value": "http://www.ccc-grenoble.fr", "count": 1},
+      {"value": "http://lenavire.fr/crest/", "count": 1},
+      {"value": "http://www.amphi-vienne.fr/", "count": 1},
+      {"value": "http://cinema-laturbine.fr/", "count": 1},
+      {"value": "http://cinemameribel.fr", "count": 1},
+      {"value": "http://atmosphere.cine.allocine.fr/", "count": 1},
+      {"value": "http://www.cinemaparadiso.fr/", "count": 1},
+      {"value": "http://www.lemelies.com", "count": 1},
+      {"value": "https://www.ugc.fr/cinema.html?code=PARTD", "count": 1},
+      {"value": "http://cinemachantelouve.fr", "count": 1},
+      {"value": "http://www.ville-venissieux.fr/cinema", "count": 1},
+      {"value": "http://aquarium-cine-cafe.fr/", "count": 1},
+      {"value": "http://www.cinema-annemasse.fr/", "count": 1},
+      {"value": "http://www.cineactuel.fr", "count": 1},
+      {"value": "http://www.mairiedesamoens.fr/cinema.aspx", "count": 1},
+      {"value": "http://www.letelepherique.org/", "count": 1},
+      {"value": "http://www.la-mouche.fr/", "count": 1},
+      {"value": "http://www.cine-villages-doussard.fr/", "count": 1},
+      {"value": "http://rex-peage.fr/", "count": 1},
+      {"value": "http://www.cinemachallenger.fr/", "count": 1},
+      {
+        "value": "https://www.rillieuxlapape.fr/culture-et-patrimoine/cine-rillieux-416.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.la-plagne.com/equipement/1/167250-cinema-montchavin-la-plagne.html",
+        "count": 1
+      }
+    ],
+    "count": 29
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 24},
+      {"value": "no", "count": 3},
+      {"value": "limited", "count": 2}
+    ],
+    "count": 29
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33146372824", "count": 3},
+      {"value": "+33892696696", "count": 2},
+      {"value": "+33 4 78 70 40 47", "count": 1},
+      {"value": "+33476872898", "count": 1},
+      {"value": "+33476479931", "count": 1},
+      {"value": "+33 4 77 24 15 50", "count": 1},
+      {"value": "+33474532365", "count": 1},
+      {"value": "+33478444480", "count": 1},
+      {"value": "+33 474190740", "count": 1},
+      {"value": "+33 4 50 92 10 20", "count": 1},
+      {"value": "+33892680342", "count": 1},
+      {"value": "+33477321000", "count": 1},
+      {"value": "+33 4 78 86 82 28", "count": 1},
+      {"value": "+33 4 50 43 28 00", "count": 1},
+      {"value": "+33 4 74 86 20 53", "count": 1},
+      {"value": "+33 9 63 07 62 16", "count": 1},
+      {"value": "+33475282272", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q1544011", "count": 8},
+      {"value": "Q1643241", "count": 4},
+      {"value": "Q2931406", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Pathé", "count": 8},
+      {"value": "fr:Union générale cinématographique", "count": 4},
+      {"value": "fr:Circuit Georges-Raymond", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Pathé", "count": 8},
+      {"value": "UGC", "count": 4},
+      {"value": "CGR cinémas", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "brand:website",
+    "tags": [
+      {"value": "http://www.pathe.com/", "count": 8},
+      {"value": "http://ugc.fr", "count": 4},
+      {"value": "http://www.cgrcinemas.fr/", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "screen",
+    "tags": [
+      {"value": "1", "count": 2},
+      {"value": "8", "count": 2},
+      {"value": "2", "count": 2},
+      {"value": "6", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "11", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Pathé", "count": 3},
+      {"value": "Kinepolis", "count": 1},
+      {"value": "Cinéma Vox de Chamonix", "count": 1},
+      {"value": "Le Navire", "count": 1},
+      {"value": "Office du Tourisme", "count": 1},
+      {"value": "UGC", "count": 1},
+      {"value": "Gaumont Pathé", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Pathé-Bellecour", "count": 1},
+      {"value": "fr:Comœdia", "count": 1},
+      {"value": "fr:Ciné Duchère", "count": 1},
+      {"value": "fr:Cinéma Saint-Denis", "count": 1},
+      {"value": "fr:Cinéma-Opéra", "count": 1},
+      {"value": "fr:Pathé-Vaise", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2991569", "count": 1},
+      {"value": "Q2973074", "count": 1},
+      {"value": "Q2973119", "count": 1},
+      {"value": "Q2973099", "count": 1},
+      {"value": "Q47008365", "count": 1},
+      {"value": "Q3368729", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "location approximate", "count": 1},
+      {"value": "resurvey", "count": 1},
+      {
+        "value": "approximated: check real location 61 rue Inkermann",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "4 salles", "count": 1},
+      {
+        "value": "Association consistant en un ciné-club (diffusion de films et documentaire), un vidéo-club (location de DVD), un bar (boissons et nourriture), et proposant des ateliers de cinéma.",
+        "count": 1
+      },
+      {"value": "Cinéma municipal, 1 salle", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "drive_in", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 1},
+      {"value": "Potlatch 0.8a", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Foyer-Cinema-St-Symphorien-sur-Coise-251711554882582",
+        "count": 1
+      },
+      {"value": "Ciné-Rillieux-412575502157414", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "1", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:ep_moneo",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:maestro",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "deaf:description:en",
+    "tags": [
+      {
+        "value": "This cinema regularily offers movies with subtitles",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "deaf:description:fr",
+    "tags": [
+      {
+        "value": "Cinéma spécialisé dans les films d’auteur en version originale sous-titrée, des films documentaires, des reprises, des festivals, des soirée-débats, des rencontres avec les réalisateurs…",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://fr.wikipedia.org/wiki/Fichier:Cin%C3%A9_Duch%C3%A8re_Lyon.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "1965", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "postal_code", "tags": [{"value": "74700", "count": 1}], "count": 1},
+  {"key": "fax", "tags": [{"value": "+33 474190740", "count": 1}], "count": 1},
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q3368727", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:american_express",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@la-mouche.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "4.5 m", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2003-07-03", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA69000017", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "S'appelle réellement \"Le cinéma\"", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

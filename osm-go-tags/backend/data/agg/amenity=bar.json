@@ -1,0 +1,657 @@
+[
+  {"key": "amenity", "tags": [{"value": "bar", "count": 1413}], "count": 1413},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 59 39 85", "count": 1},
+      {"value": "+33 4 78 39 08 13", "count": 1},
+      {"value": "+33 4 74 60 24 73", "count": 1},
+      {"value": "+33 4 75 07 00 86", "count": 1},
+      {"value": "+33 4 76 95 20 02", "count": 1},
+      {"value": "+33 4 78 83 20 45", "count": 1},
+      {"value": "+33478190393", "count": 1},
+      {"value": "+33478519480", "count": 1},
+      {"value": "+33 4 50 02 10 20", "count": 1},
+      {"value": "+33 4 78 93 72 99", "count": 1},
+      {"value": "+33 4 75 30 79 06", "count": 1},
+      {"value": "+33 4 75 29 60 84", "count": 1},
+      {"value": "+33 4 76 73 01 39", "count": 1},
+      {"value": "+33 4 79 68 91 15", "count": 1},
+      {"value": "+33 4 74372168", "count": 1},
+      {"value": "+33 4 76 88 81 04", "count": 1},
+      {"value": "+33 4 78717871", "count": 1},
+      {"value": "+33 4 78 27 73 88", "count": 1},
+      {"value": "+33 4 75 37 52 90", "count": 1},
+      {"value": "+33 4 76 17 16 30", "count": 1},
+      {"value": "+33 4 72 00 80 53", "count": 1},
+      {"value": "+33 9 81 81 59 50", "count": 1},
+      {"value": "+33475805633", "count": 1},
+      {"value": "+33 4 74 62 93 98", "count": 1},
+      {"value": "+33 4 74 85 13 31", "count": 1},
+      {"value": "+33 4 74 31 64 49", "count": 1},
+      {"value": "+33 4 74 31 57 54", "count": 1},
+      {"value": "+33 4 72 00 80 08", "count": 1},
+      {"value": "+33 4 74 68 08 70", "count": 1},
+      {"value": "+33 4 74 53 05 74", "count": 1},
+      {"value": "+33 4 74 85 61 04", "count": 1},
+      {"value": "+33 4 74 85 39 49", "count": 1},
+      {"value": "+33 4 74 31 76 97", "count": 1},
+      {"value": "+33 4 74 48 60 74", "count": 1},
+      {"value": "+33 4 74 31 56 67", "count": 1},
+      {"value": "+33 4 75 58 63 18", "count": 1},
+      {"value": "+33 4 50 96 64 34", "count": 1},
+      {"value": "+33476703758", "count": 1},
+      {"value": "+33 4 26 05 32 56", "count": 1},
+      {"value": "+33 4 75 29 87 66", "count": 1},
+      {"value": "+33 4 74 85 06 40", "count": 1},
+      {"value": "+33 4 74 31 94 19", "count": 1},
+      {"value": "+33 4 74 53 90 04", "count": 1},
+      {"value": "+33 9 84 08 29 23", "count": 1},
+      {"value": "+33 4 74 85 07 72", "count": 1},
+      {"value": "+33 4 78 28 51 95", "count": 1},
+      {"value": "+33 4 79 44 14 72", "count": 1},
+      {"value": "+33 4 77 24 01 15", "count": 1},
+      {"value": "+33 4 77 24 11 94", "count": 1},
+      {"value": "+33 4 77 24 05 62", "count": 1},
+      {"value": "+33 4 77 24 03 25", "count": 1},
+      {"value": "+33 4 77 97 88 29", "count": 1},
+      {"value": "+33 4 77 24 08 53", "count": 1},
+      {"value": "+33 4 78 42 24 37", "count": 1},
+      {"value": "+33 4 78 92 87 87", "count": 1},
+      {"value": "+33 4 50 37 53 99", "count": 1},
+      {"value": "+33 6 79 56 70 49", "count": 1},
+      {"value": "+33 4 75 35 01 07", "count": 1},
+      {"value": "+33 6 37 23 02 33", "count": 1},
+      {"value": "+33 4 74 50 80 72", "count": 1},
+      {"value": "+33 4 50 45 02 23", "count": 1},
+      {"value": "+33 4 74 53 17 63", "count": 1},
+      {"value": "+33 6 76 85 00 31", "count": 1},
+      {"value": "+33 4 50 28 62 40", "count": 1},
+      {"value": "+33 9 82 33 33 02", "count": 1},
+      {"value": "+33478070525", "count": 1},
+      {"value": "+33477378750", "count": 1},
+      {"value": "+33478484260", "count": 1},
+      {"value": "+33 4 79 63 30 15", "count": 1},
+      {"value": "+33 6 87 77 46 12", "count": 1},
+      {"value": "+33 478950728", "count": 1},
+      {"value": "+33 4 78 60 87 86", "count": 1},
+      {"value": "+33 4 75 43 08 12", "count": 1},
+      {"value": "+33 6 63 21 70 96", "count": 1},
+      {"value": "+33 4 75 43 01 14", "count": 1},
+      {"value": "+33475440267", "count": 1},
+      {"value": "+33 6 77 89 20 77", "count": 1},
+      {"value": "+33 4 50 45 47 05", "count": 1},
+      {"value": "+33 4 78 28 42 06", "count": 1},
+      {"value": "+33 4 76 21 48 88", "count": 1},
+      {"value": "+33 4 78 37 38 94", "count": 1},
+      {"value": "+33 475400483", "count": 1},
+      {"value": "+33 4 78201623", "count": 1},
+      {"value": "+33427823818", "count": 1},
+      {"value": "+33 9 81 77 10 65", "count": 1},
+      {"value": "+33490280100", "count": 1},
+      {"value": "+33 4 72 70 88 77", "count": 1},
+      {"value": "+33 4 78 36 75 51", "count": 1},
+      {"value": "+33 6 50 74 59 71", "count": 1},
+      {"value": "+33 4 78 93 45 99", "count": 1},
+      {"value": "+33 6 82 54 02 80", "count": 1},
+      {"value": "+33 4 50 37 45 49", "count": 1},
+      {"value": "+336 50 88 03 50", "count": 1},
+      {"value": "+33 4 37 92 03 88", "count": 1},
+      {"value": "+339.81.00.58.55", "count": 1},
+      {"value": "+33 4 79 25 27 50", "count": 1},
+      {"value": "+33437220569", "count": 1},
+      {"value": "+33474706618", "count": 1},
+      {"value": "+33 4 76 79 87 86", "count": 1},
+      {"value": "+33 4 50 75 29 94", "count": 1},
+      {"value": "+33 4 50 36 23 70", "count": 1},
+      {"value": "+33 4 74 31 92 52", "count": 1},
+      {"value": "+33 4 74 22 55 59", "count": 1},
+      {"value": "+33474534989", "count": 1},
+      {"value": "+33 4 79 36 78 22", "count": 1},
+      {"value": "+33 4 79 36 18 32", "count": 1},
+      {"value": "+33 479 54 81 53", "count": 1},
+      {"value": "+33 4 74 76 01 35", "count": 1}
+    ],
+    "count": 108
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "hotel-chevalnoir.fr", "count": 1},
+      {"value": "http://www.selcius.fr", "count": 1},
+      {"value": "http://latelierdescanulars.over-blog.com/", "count": 1},
+      {"value": "http://nakamal.fr/", "count": 1},
+      {"value": "brasserie-du-chardon.com", "count": 1},
+      {"value": "http://lebrindezinc.com", "count": 1},
+      {"value": "www.lesirius.com", "count": 1},
+      {"value": "https://fr-fr.facebook.com/barlamigraine/", "count": 1},
+      {"value": "http://www.ayersrocklyon.com/", "count": 1},
+      {"value": "http://www.aromo-lyon.com/", "count": 1},
+      {"value": "www.glacierbeatrix.fr", "count": 1},
+      {"value": "http://www.bieristan.fr/", "count": 1},
+      {"value": "http://www.nouaiborfa.fr/", "count": 1},
+      {"value": "http://www.barberousse.com/ville/lyon", "count": 1},
+      {"value": "http://www.baravinmaispasque.fr", "count": 1},
+      {"value": "http://www.baratapasvilleurbanne69.fr", "count": 1},
+      {"value": "http://www.mamamia-vienne.com/", "count": 1},
+      {"value": "http://www.bacchus-pool.fr/", "count": 1},
+      {"value": "http://www.masefee.fr/", "count": 1},
+      {"value": "http://www.lacaudalie.fr/", "count": 1},
+      {"value": "http://www.axa.fr/", "count": 1},
+      {
+        "value": "http://www.vienne-online.com/sites/bar-bulle/index.html",
+        "count": 1
+      },
+      {"value": "http://www.ludj.fr", "count": 1},
+      {"value": "http://monkeychamonix.com/", "count": 1},
+      {"value": "http://www.labobine.net/", "count": 1},
+      {"value": "https://fr-fr.facebook.com/LaBarCarOlle", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/pages/Bar-LE-ROCHER/256487171079",
+        "count": 1
+      },
+      {
+        "value": "https://fr-fr.facebook.com/pages/BAR-DU-TEMPLE/224672194264297",
+        "count": 1
+      },
+      {
+        "value": "https://fr-fr.facebook.com/pages/Bar-Toutatis/322076517813450",
+        "count": 1
+      },
+      {"value": "http://www.laclefdevoute.fr", "count": 1},
+      {"value": "http://www.camping-sougey.com", "count": 1},
+      {"value": "http://le-florian.fr", "count": 1},
+      {"value": "http://legrandcafefrancais.blogspot.fr/", "count": 1},
+      {"value": "http://openmindsvalence.fr/", "count": 1},
+      {"value": "https://www.facebook.com/lagrooverie", "count": 1},
+      {"value": "www.latabledutrusquin.fr/fr", "count": 1},
+      {
+        "value": "http://restaurant-bar-diner-affaires-reception-repas-groupe.restaurant-telegraphe.com/",
+        "count": 1
+      },
+      {"value": "pickmeup.fr", "count": 1},
+      {"value": "http://www.harmoniedesvins.fr/", "count": 1},
+      {"value": "http://www.restaurant-crolles.fr/fr", "count": 1},
+      {"value": "http://www.le-synesthete.fr", "count": 1},
+      {"value": "http://oenothequedelyon.fr", "count": 1},
+      {"value": "https://www.facebook.com/brasseriepub/", "count": 1},
+      {"value": "http://remue-meninges.com", "count": 1},
+      {"value": "http://www.sonic-lyon.fr/", "count": 1},
+      {
+        "value": "https://www.facebook.com/Bar-Le-Parisien-1430550057254771",
+        "count": 1
+      },
+      {"value": "http://www.leclosromain.com/fr", "count": 1},
+      {"value": "http://www.comptoirdalain.com/", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/pages/Penny-Kennys-Irish-Pub/221228901305501",
+        "count": 1
+      },
+      {"value": "http://www.sbeer.fr/", "count": 1},
+      {"value": "http://lorangerie-bar.fr/", "count": 1},
+      {"value": "https://alternatiba.eu/rhone/alternatibar/", "count": 1},
+      {"value": "http://www.lecampingmoto.net", "count": 1},
+      {"value": "http://annecyhostel.fr/", "count": 1},
+      {"value": "http://www.lespralins.com", "count": 1},
+      {"value": "http://www.bar-la-tenaille-lyon.fr/", "count": 1},
+      {"value": "https://m.facebook.com/barlekaz1", "count": 1},
+      {"value": "http://www.macanudo.fr/", "count": 1},
+      {"value": "http://www.arcaneum-bar.fr/", "count": 1},
+      {"value": "https://brasserieplatypus.com/", "count": 1},
+      {"value": "http://www.lefantomedelopera.fr/", "count": 1},
+      {"value": "http://la-premiere-plantation.business.site/", "count": 1},
+      {"value": "http://www.les-barjaqueurs.com/", "count": 1},
+      {"value": "https://payetabiere.fr/https://payetabiere.fr/", "count": 1},
+      {"value": "https://www.ninkasi.fr/lieux/la-soie.html", "count": 1},
+      {"value": "http://le21plat.fr", "count": 1},
+      {"value": "http://amicale.online/", "count": 1},
+      {"value": "www.whynot-bar.com", "count": 1},
+      {"value": "http://pretextedunjour.jpn-online.ch/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Le-Duplex/204249686269416",
+        "count": 1
+      },
+      {"value": "http://rignat.unblog.fr/", "count": 1},
+      {"value": "www.arcalod.com/", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Bar-La-Cigale/249472535172105?nr",
+        "count": 1
+      }
+    ],
+    "count": 73
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [
+      {"value": "yes", "count": 59},
+      {"value": "no", "count": 10},
+      {"value": "terrace", "count": 1},
+      {"value": "yes(only_summer)", "count": 1}
+    ],
+    "count": 71
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 24},
+      {"value": "no", "count": 18},
+      {"value": "limited", "count": 15}
+    ],
+    "count": 57
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "outside", "count": 34},
+      {"value": "no", "count": 18},
+      {"value": "isolated", "count": 2},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 55
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 17},
+      {"value": "no", "count": 13},
+      {"value": "yes", "count": 2},
+      {"value": "customers", "count": 1}
+    ],
+    "count": 33
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Salon de thé, \"bar à cicha\"", "count": 1},
+      {"value": "bar à shisha", "count": 1},
+      {"value": "Bar Brasserie, bière artisanale", "count": 1},
+      {"value": "Bar-PMU", "count": 1},
+      {"value": "Bar à cocktails", "count": 1},
+      {"value": "Wine Bar à Vin - Restauration", "count": 1},
+      {"value": "Snack - Bar - Glacier", "count": 1},
+      {"value": "Bar à tapas.", "count": 1},
+      {"value": "Hôtel-restaurant", "count": 1},
+      {"value": "Bar Débit de boissons licence 4", "count": 1},
+      {"value": "Bar à Vins", "count": 1},
+      {"value": "fr:brasserie", "count": 1},
+      {"value": "bar . librairie", "count": 1},
+      {"value": "Bar à chicha", "count": 1},
+      {"value": "Multi-commerce", "count": 1},
+      {"value": "Salon de thé, bar à shischa", "count": 1},
+      {"value": "Bar - Tabac", "count": 1},
+      {"value": "Café lecture", "count": 1},
+      {
+        "value": "C'est un magasin qui fait bar, boulangerie et épicerie.",
+        "count": 1
+      },
+      {
+        "value": "Bar à cocktails, large choix de bière et de whisky.",
+        "count": 1
+      },
+      {"value": "Christian Maroud", "count": 1},
+      {"value": "Motorcycle toolshop, excursions", "count": 1},
+      {"value": "Bar à bières.", "count": 1},
+      {"value": "bar restaurant", "count": 1},
+      {
+        "value": "Nous vous invitons à découvrir Paye Ta Bière, un concept sympa et original autour de la bière artisanale à Grenoble que nous avons pensé pour vous. Pour être tout à fait complet, Paye Ta Bière met à l’honneur la bière artisanale de la région Rhône-Alpes s",
+        "count": 1
+      },
+      {"value": "Boissons, glaces", "count": 1},
+      {"value": "Bar associatif", "count": 1},
+      {"value": "Bureau de tabac - Journaux", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "brewery",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "chouffe", "count": 1},
+      {
+        "value": "Faro;Chimay;Kriek;Kriek Lindemans;Leffe;Mandrin;Stella Artois",
+        "count": 1
+      },
+      {"value": "pale ryder;Affligem;Punk Ipa", "count": 1},
+      {"value": "tripel_karmeliet;chimay;Chouffe;Val Dieu", "count": 1},
+      {"value": "yes;café;tabac", "count": 1},
+      {
+        "value": "Grande Chantourne;Chènevière;Craponette;Barbulle;Tête Rousse;Roche Noire;brassin éphémère",
+        "count": 1
+      },
+      {
+        "value": "Chouffe;Cuvée des trolls;Maredsous;Chimay;paix-Dieu ;Duvel ;malheur 12;ename;caracole;corne;Arend;ara bier;moinette;Orval ;carolus;troubadour",
+        "count": 1
+      },
+      {"value": "La Veuve Noire", "count": 1},
+      {"value": "Duvel", "count": 1},
+      {"value": "leffe;chouffe;chimay;tripel_karmeliet", "count": 1},
+      {"value": "Delirium Tremens;Chouffe;Saison Dupont", "count": 1},
+      {
+        "value": "Agrivore; Voie Maltée première gelée; Salève Vieux continent; Quinarelle; Pleine Lune; Galibier Avalanche; Brasserie du Lion Epautre; B. P. Triple; Grihète ambrée; Voie Maltée Bière de soif",
+        "count": 1
+      },
+      {
+        "value": "Affligem Tripel;Affligem;Chouffe;Edelweiss;Tripel Karmeliet;Fisher",
+        "count": 1
+      },
+      {"value": "Carlsberg;Grimbergen;Grimbergen blanche", "count": 1},
+      {"value": "chouffe;kronenbourg;grimbergen", "count": 1},
+      {"value": "La Grihète", "count": 1},
+      {"value": "pelforth;affligem;Edelweiss", "count": 1},
+      {"value": "Affligem", "count": 1},
+      {"value": "leffe", "count": 1},
+      {"value": "bières_locales", "count": 1},
+      {"value": "various", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "newsagent", "count": 8},
+      {"value": "kiosk", "count": 5},
+      {"value": "convenience", "count": 3},
+      {"value": "tobacco", "count": 3},
+      {"value": "books", "count": 1},
+      {"value": "tea", "count": 1},
+      {"value": "farm", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "alcohol", "count": 1}
+    ],
+    "count": 24
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "french", "count": 5},
+      {"value": "pizza", "count": 2},
+      {"value": "american;mexican", "count": 1},
+      {"value": "sandwich;hotdog;pancake;deli;sausage;coffee_shop", "count": 1},
+      {"value": "coffee_shop", "count": 1},
+      {"value": "ice_cream;pizza;sandwich", "count": 1},
+      {"value": "sandwich", "count": 1},
+      {"value": "italian", "count": 1},
+      {"value": "breakfast;tapas", "count": 1},
+      {"value": "international", "count": 1},
+      {"value": "latin_american", "count": 1},
+      {"value": "deli;tapas", "count": 1},
+      {"value": "italian_pizza;pizza", "count": 1},
+      {"value": "brasserie", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Salon de thé sans alcool", "count": 2},
+      {"value": "L'orthographe est bonne !", "count": 1},
+      {"value": "Bar PMU", "count": 1},
+      {"value": "Bar à vin", "count": 1},
+      {"value": "Uniquement un salon de thé & Narguilé", "count": 1},
+      {"value": "2ème étage", "count": 1},
+      {"value": "Chez Tyson", "count": 1},
+      {"value": "Bar à vins", "count": 1},
+      {
+        "value": "The club is open until 1am only if there is a concert.",
+        "count": 1
+      },
+      {"value": "Licence IV", "count": 1},
+      {
+        "value": "Restauration du mois de Mai au mois de Septembre, Reservation fortement recommandé car très populaire. L'excellente qualité de la cuisine et du service en font un lieu très prisé.",
+        "count": 1
+      },
+      {"value": "Précédemment: \"Record Prestige\"", "count": 1},
+      {"value": "Relais Poste", "count": 1},
+      {"value": "Salon de Thé", "count": 1},
+      {"value": "tapas / wine", "count": 1},
+      {"value": "Fermé juin 2018", "count": 1},
+      {"value": "dispose d'un DSA", "count": 1}
+    ],
+    "count": 18
+  },
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 15}], "count": 15},
+  {
+    "key": "wifi",
+    "tags": [
+      {"value": "yes", "count": 6},
+      {"value": "free", "count": 4},
+      {"value": "no", "count": 3}
+    ],
+    "count": 13
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "hotel", "count": 6},
+      {"value": "guest_house", "count": 3},
+      {"value": "camp_site", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@selcius.fr", "count": 1},
+      {"value": "danielterret@hotmail.fr", "count": 1},
+      {"value": "brindeprod@yahoo.com", "count": 1},
+      {"value": "au.biju@hotmail.fr", "count": 1},
+      {"value": "contact@remue-meninges.com", "count": 1},
+      {"value": "lespralins@gmail.com", "count": 1},
+      {"value": "cellierdestempliers@orange.fr", "count": 1},
+      {"value": "contact@brasserieplatypus.com", "count": 1},
+      {"value": "contact@payetabiere", "count": 1},
+      {"value": "jcporcelli@pretextedunjour.fr", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 7}, {"value": "yes", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "49000006400017", "count": 1},
+      {"value": "79942081500026", "count": 1},
+      {"value": "81217259100016", "count": 1},
+      {"value": "48922372700012", "count": 1},
+      {"value": "79165424700018", "count": 1},
+      {"value": "52295957600011", "count": 1},
+      {"value": "81396604100028", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "food", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "gambling",
+    "tags": [{"value": "yes", "count": 3}, {"value": "PMU", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 3}, {"value": "1", "count": 2}],
+    "count": 5
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "117", "count": 1},
+      {"value": "258", "count": 1},
+      {"value": "1590", "count": 1},
+      {"value": "1274", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "PONS & Cie", "count": 1},
+      {"value": "Sami", "count": 1},
+      {"value": "Jean-Yves Wiart", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "payment:notes",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "diet:vegetarian",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-09-27", "count": 2},
+      {"value": "2018-06-24", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {"value": "Bar à vins", "count": 1},
+      {"value": "Bar PMU.", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "terrace", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "billiards", "count": 1},
+      {"value": "table_soccer, table_tennis, billiards", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/BAR-LE-DERBY-220880398387339/",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/le21plat/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "restaurant", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "motorcycle:theme",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:bitcoin",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "craft", "tags": [{"value": "brewery", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description",
+    "tags": [{"value": "Porte étroite mais sans marche", "count": 1}],
+    "count": 1
+  },
+  {"key": "shisha", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "delivery", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "takeaway", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shop:bakery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shop:pastry", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "diet:vegan", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "fixme", "tags": [{"value": "resurvey", "count": 1}], "count": 1},
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "musical_instrument:piano",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "swimming_pool", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle_friendly",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "customers", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://gefelepots.weebly.com/uploads/1/3/7/5/13752773/logo-2_6_orig.png",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "services",
+    "tags": [{"value": "location tireuses à bières", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "NINKASI", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q51036245", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "association", "count": 1}], "count": 1},
+  {"key": "music", "tags": [{"value": "reggae", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 74 60 24 73", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:american_express",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "drink:beer", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "drink:wine", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "stars", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "sells:tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

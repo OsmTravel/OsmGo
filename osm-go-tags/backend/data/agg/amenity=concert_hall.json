@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "concert_hall", "count": 3}],
+    "count": 3
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3503698", "count": 1}], "count": 1}
+]

@@ -1,0 +1,5 @@
+[
+  {"key": "man_made", "tags": [{"value": "dyke", "count": 5}], "count": 5},
+  {"key": "natural", "tags": [{"value": "shingle", "count": 2}], "count": 2},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

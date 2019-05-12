@@ -1,0 +1,88 @@
+[
+  {"key": "highway", "tags": [{"value": "stop", "count": 5955}], "count": 5955},
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "forward", "count": 1321},
+      {"value": "backward", "count": 730}
+    ],
+    "count": 2051
+  },
+  {
+    "key": "traffic_sign",
+    "tags": [{"value": "FR:AB4", "count": 121}, {"value": "stop", "count": 14}],
+    "count": 135
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "stas", "count": 49}, {"value": "STAS", "count": 3}],
+    "count": 52
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Veolia Transport", "count": 52}],
+    "count": 52
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "stop_position", "count": 52}],
+    "count": 52
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 52}], "count": 52},
+  {
+    "key": "stop",
+    "tags": [{"value": "minor", "count": 7}, {"value": "all", "count": 4}],
+    "count": 11
+  },
+  {
+    "key": "traffic_signals:direction",
+    "tags": [
+      {"value": "forward", "count": 9},
+      {"value": "backward", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "crossing",
+    "tags": [
+      {"value": "uncontrolled", "count": 4},
+      {"value": "zebra", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "crossing_ref", "tags": [{"value": "zebra", "count": 4}], "count": 4},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "The object dispappeared or never happened to be there",
+        "count": 1
+      },
+      {"value": "Bing imagery is outdated", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2018-01-19", "count": 1},
+      {"value": "2018-06-05", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "fixme", "tags": [{"value": "absent", "count": 1}], "count": 1},
+  {
+    "key": "traffic_sign:backward",
+    "tags": [{"value": "FR:AB4", "count": 1}],
+    "count": 1
+  },
+  {"key": "supervised", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "maxspeed", "tags": [{"value": "50", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {
+    "key": "stop:direction",
+    "tags": [{"value": "forward", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "official", "count": 1}], "count": 1}
+]

@@ -1,0 +1,5 @@
+[
+  {"key": "shop", "tags": [{"value": "insurance", "count": 9}], "count": 9},
+  {"key": "brand", "tags": [{"value": "Aviva", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

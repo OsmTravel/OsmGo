@@ -1,0 +1,241 @@
+[
+  {"key": "leisure", "tags": [{"value": "track", "count": 371}], "count": 371},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "athletics", "count": 106},
+      {"value": "running", "count": 60},
+      {"value": "cycling", "count": 22},
+      {"value": "toboggan", "count": 15},
+      {"value": "bmx", "count": 13},
+      {"value": "motocross", "count": 11},
+      {"value": "equestrian", "count": 10},
+      {"value": "karting", "count": 8},
+      {"value": "model_car_racing", "count": 5},
+      {"value": "bobsleigh", "count": 4},
+      {"value": "climbing", "count": 3},
+      {"value": "skiing", "count": 3},
+      {"value": "motor", "count": 2},
+      {"value": "horse_racing", "count": 2},
+      {"value": "skateboard", "count": 2},
+      {"value": "roller_skating", "count": 2},
+      {"value": "model_aerodrome", "count": 1},
+      {"value": "Luge", "count": 1},
+      {"value": "dog_racing", "count": 1},
+      {"value": "water_ski", "count": 1},
+      {"value": "multi", "count": 1},
+      {"value": "Modèle Réduit", "count": 1},
+      {"value": "rc_car", "count": 1},
+      {"value": "mtb", "count": 1},
+      {"value": "10pin", "count": 1},
+      {"value": "pumptrack", "count": 1},
+      {"value": "luge", "count": 1}
+    ],
+    "count": 279
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 25},
+      {"value": "metal", "count": 12},
+      {"value": "tartan", "count": 11},
+      {"value": "sand", "count": 7},
+      {"value": "dirt", "count": 7},
+      {"value": "ground", "count": 7},
+      {"value": "grass", "count": 6},
+      {"value": "gravel", "count": 4},
+      {"value": "unpaved", "count": 4},
+      {"value": "earth", "count": 2},
+      {"value": "paved", "count": 2},
+      {"value": "clay", "count": 1},
+      {"value": "compacted", "count": 1}
+    ],
+    "count": 89
+  },
+  {
+    "key": "area",
+    "tags": [{"value": "no", "count": 20}, {"value": "yes", "count": 17}],
+    "count": 37
+  },
+  {
+    "key": "piste:type",
+    "tags": [
+      {"value": "sled", "count": 26},
+      {"value": "downhill", "count": 1},
+      {"value": "nordic", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 26}, {"value": "no", "count": 1}],
+    "count": 27
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "light_rail", "count": 12},
+      {"value": "monorail", "count": 7}
+    ],
+    "count": 19
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 13}, {"value": "-1", "count": 2}],
+    "count": 15
+  },
+  {
+    "key": "incline",
+    "tags": [{"value": "down", "count": 8}, {"value": "up", "count": 6}],
+    "count": 14
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "raceway", "count": 12},
+      {"value": "track", "count": 1},
+      {"value": "path", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "attraction",
+    "tags": [{"value": "summer_toboggan", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "attraction", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 2}],
+    "count": 10
+  },
+  {
+    "key": "aerialway",
+    "tags": [{"value": "drag_lift", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "1", "count": 4},
+      {"value": "5", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "4", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Sert de bassin de rétention des eaux en cas de fortes pluies.",
+        "count": 1
+      },
+      {"value": "Plus entretenu depuis longtemps. Accès libre.", "count": 1},
+      {
+        "value": "position estimated. Please change if bing is updated to show the new bmx tracks",
+        "count": 1
+      },
+      {
+        "value": "piste olympique de luge (JO 1968) - équipement désaffecté",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Tour de piste = 200 m", "count": 2},
+      {"value": "Parcours de cross", "count": 1},
+      {
+        "value": "Parcours de VTT Trial (Mountainbike obstacle course)",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 2},
+      {"value": "building_passage", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.kartingvalence.com/", "count": 1},
+      {"value": "http://bunnyspark.e-monsite.com/", "count": 1},
+      {"value": "http://www.crangevriervtt.fr/le-terrain/", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {
+        "value": "position is approximate;find a good way to tag a luge on rails track (all-year)",
+        "count": 3
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "EXO38", "count": 1},
+      {"value": "Chronokart", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "cycling", "tags": [{"value": "mtb", "count": 2}], "count": 2},
+  {"key": "start_date", "tags": [{"value": "1998", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "On dirait un terrain de foot sur la photo satellite",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "landuse", "tags": [{"value": "grass", "count": 1}], "count": 1},
+  {"key": "phone", "tags": [{"value": "+33672408520", "count": 1}], "count": 1},
+  {"key": "length", "tags": [{"value": "6000", "count": 1}], "count": 1},
+  {"key": "foot", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "piste:difficulty",
+    "tags": [{"value": "intermediate", "count": 1}],
+    "count": 1
+  },
+  {"key": "comment", "tags": [{"value": "lift", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "area", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [{"value": "http://lalaupie.com/Sport/index.html", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "athletics:long_jump",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "athletics:triple_jump",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "designated", "count": 1}], "count": 1}
+]

@@ -1,0 +1,21 @@
+[
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "office", "count": 2}],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "chiropodist", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Denis Gehenot", "count": 1},
+      {"value": "Isabelle Begué", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 5 61 59 97 97", "count": 2}],
+    "count": 2
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {"key": "amenity", "tags": [{"value": "alpine_hut", "count": 1}], "count": 1},
+  {"key": "phone", "tags": [{"value": "+33475389192", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.roussetdulac.com/", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,266 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "playground", "count": 2460}],
+    "count": 2460
+  },
+  {
+    "key": "playground",
+    "tags": [
+      {"value": "springy", "count": 25},
+      {"value": "structure", "count": 18},
+      {"value": "playhouse", "count": 12},
+      {"value": "slide", "count": 11},
+      {"value": "climbingframe", "count": 10},
+      {"value": "swing", "count": 9},
+      {"value": "roundabout", "count": 6},
+      {"value": "seesaw", "count": 4},
+      {"value": "climbingwall", "count": 4},
+      {"value": "zipwire", "count": 3},
+      {"value": "exercise", "count": 3},
+      {"value": "basketswing", "count": 2},
+      {"value": "water", "count": 1},
+      {"value": "sandpit", "count": 1},
+      {"value": "trampoline", "count": 1},
+      {"value": "hopscotch", "count": 1},
+      {"value": "slide;climbingframe", "count": 1}
+    ],
+    "count": 112
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 20},
+      {"value": "yes", "count": 18},
+      {"value": "customers", "count": 11},
+      {"value": "designated", "count": 2},
+      {"value": "destination", "count": 1},
+      {"value": "permissive", "count": 1}
+    ],
+    "count": 53
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 29},
+      {"value": "limited", "count": 4},
+      {"value": "no", "count": 4}
+    ],
+    "count": 37
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "tartan", "count": 8},
+      {"value": "gravel", "count": 5},
+      {"value": "wood", "count": 4},
+      {"value": "ground", "count": 3},
+      {"value": "grass", "count": 3},
+      {"value": "asphalt", "count": 2},
+      {"value": "rubbercrumb", "count": 2},
+      {"value": "fine_gravel", "count": 1},
+      {"value": "synthetic", "count": 1},
+      {"value": "sand", "count": 1},
+      {"value": "woodchips", "count": 1},
+      {"value": "rubber", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 17}, {"value": "hedge", "count": 1}],
+    "count": 18
+  },
+  {
+    "key": "min_age",
+    "tags": [
+      {"value": "3", "count": 6},
+      {"value": "1", "count": 4},
+      {"value": "6", "count": 4},
+      {"value": "2", "count": 2},
+      {"value": "15", "count": 1},
+      {"value": "4", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Commune de Villefontaine", "count": 4},
+      {"value": "McDonalds", "count": 1},
+      {"value": "SNCF", "count": 1},
+      {"value": "Mairie de Saint-vallier", "count": 1},
+      {"value": "École maternelle des Clarines", "count": 1},
+      {"value": "Auberge du Lac Genin", "count": 1},
+      {"value": "Croq'Nuage", "count": 1},
+      {"value": "mairie", "count": 1},
+      {"value": "La Compagnie de Phalsbourg", "count": 1},
+      {"value": "Ville de Saint-Étienne", "count": 1},
+      {"value": "Mairie de Saint-Vallier", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "max_age",
+    "tags": [
+      {"value": "12", "count": 4},
+      {"value": "6", "count": 2},
+      {"value": "14", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "0", "count": 1},
+      {"value": "7", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Structure géante de jeux pour enfants entièrement en bois",
+        "count": 1
+      },
+      {"value": "Aire de Jeux pour Enfants", "count": 1},
+      {"value": "Jeux enfants (petits) du Parc Beylier", "count": 1},
+      {"value": "Jeux enfants (grands) du Parc Beylier", "count": 1},
+      {
+        "value": "Aire de jeux pou enfants, légèrement boisée, contenant un toboggan et un bac à sable.",
+        "count": 1
+      },
+      {"value": "Pour les Enfants de 18 Mois à 6 Ans", "count": 1},
+      {"value": "balançoire remplacée en ~2015", "count": 1},
+      {"value": "toboggan", "count": 1},
+      {"value": "balençoire supprimée en ~2014", "count": 1},
+      {"value": "tyrolienne", "count": 1},
+      {
+        "value": "Jeux en bois (passerelles) et musicaux (soufflerie métallique), parcours",
+        "count": 1
+      }
+    ],
+    "count": 11
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "recreation_ground", "count": 5},
+      {"value": "grass", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Revoir contour avec prochaine édition BDOrtho", "count": 2},
+      {"value": "6 to 12 years old children", "count": 1},
+      {"value": "quai bas: layer = -1", "count": 1},
+      {"value": "Vetuste", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "Potlatch 0.10f", "count": 2},
+      {"value": "iLOE 1.9", "count": 1},
+      {"value": "JOSM", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 2},
+      {"value": "-1", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "area", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "wall", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "piste:type",
+    "tags": [{"value": "sled", "count": 2}, {"value": "nordic", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.maxsye.fr/", "count": 1},
+      {"value": "http://www.tim-aventure.fr/", "count": 1},
+      {
+        "value": "http://www.ardechepleincoeur.com/s-eclater/peche/353432-1750,aire-de-jeux-espace-des-grads.html",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "seasonal", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "playground:theme",
+    "tags": [
+      {"value": "train", "count": 1},
+      {"value": "fire_truck", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Convert to polygon and add barriers", "count": 1},
+      {"value": "resurvey", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "soccer", "count": 1},
+      {"value": "climbing_adventure", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "1.2", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "private", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access:dog", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "piste:difficulty",
+    "tags": [{"value": "novice", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee:price", "tags": [{"value": "2€", "count": 1}], "count": 1},
+  {"key": "fence_type", "tags": [{"value": "wire", "count": 1}], "count": 1},
+  {"key": "phone", "tags": [{"value": "+33450338888", "count": 1}], "count": 1},
+  {
+    "key": "start_date",
+    "tags": [{"value": "2015-02-01", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "1250", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "8jZB6xRHCB_9JE7eY6H6EA", "count": 1}],
+    "count": 1
+  },
+  {"key": "natural", "tags": [{"value": "water", "count": 1}], "count": 1},
+  {"key": "material", "tags": [{"value": "wood", "count": 1}], "count": 1},
+  {
+    "key": "opening_date",
+    "tags": [{"value": "2017-07-01", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

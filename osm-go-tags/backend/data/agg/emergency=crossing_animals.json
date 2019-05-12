@@ -1,0 +1,22 @@
+[
+  {
+    "key": "ref",
+    "tags": [{"value": "N 118", "count": 1}, {"value": "N 337", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "lanes",
+    "tags": [{"value": "2", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {"key": "oneway", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "highway", "tags": [{"value": "trunk", "count": 2}], "count": 2},
+  {
+    "key": "emergency",
+    "tags": [{"value": "crossing_animals", "count": 2}],
+    "count": 2
+  },
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {"key": "maxspeed", "tags": [{"value": "90", "count": 1}], "count": 1}
+]

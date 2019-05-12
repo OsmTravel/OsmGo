@@ -1,0 +1,5 @@
+[
+  {"key": "fuel", "tags": [{"value": "gas", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "cooking", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

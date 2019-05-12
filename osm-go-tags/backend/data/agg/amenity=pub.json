@@ -1,0 +1,306 @@
+[
+  {"key": "amenity", "tags": [{"value": "pub", "count": 397}], "count": 397},
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 14},
+      {"value": "no", "count": 13},
+      {"value": "limited", "count": 11}
+    ],
+    "count": 38
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lesfleursdumaltlebar.fr/", "count": 1},
+      {"value": "cafevatel.fr", "count": 1},
+      {"value": "http://www.lesberthom.com", "count": 1},
+      {"value": "http://thedogsbollocks.fr/", "count": 1},
+      {"value": "http://www.lesberthom.fr/", "count": 1},
+      {"value": "www.hotel-latoviere.fr", "count": 1},
+      {"value": "https://www.facebook.com/lemailys/", "count": 1},
+      {"value": "https://www.loopspub.com/", "count": 1},
+      {"value": "http://www.the-albion.fr", "count": 1},
+      {"value": "www.biere-leman.com", "count": 1},
+      {"value": "https://www.facebook.com/lediskret/", "count": 1},
+      {"value": "http://www.paddyscorner.com/", "count": 1},
+      {
+        "value": "http://www.ninkasi.fr/fr/ninkasi/croix-rousse.html",
+        "count": 1
+      },
+      {"value": "http://www.kingarthur.fr", "count": 1},
+      {"value": "http://www.edenrockcafe.com/", "count": 1},
+      {"value": "http://www.lesberthom.com/", "count": 1},
+      {"value": "http://www.perroquet-bourre.com/", "count": 1},
+      {"value": "https://www.cafejuliette.com/", "count": 1},
+      {"value": "http://www.bouiboui.com/", "count": 1},
+      {"value": "http://www.shamrock-pub-valthorens.com", "count": 1},
+      {"value": "https://brasserie-val-de-saone.business.site/", "count": 1},
+      {"value": "http://www.lecomptoirviking.fr/", "count": 1},
+      {"value": "http://www.obrasseur.com/", "count": 1},
+      {"value": "http://www.kellyslyon.com/", "count": 1},
+      {"value": "https://www.lapiece.ch/", "count": 1},
+      {"value": "https://galopin.pub/", "count": 1},
+      {"value": "https://lebaldesfringants.com/", "count": 1},
+      {"value": "http://www.cabana-cafe.com/", "count": 1},
+      {"value": "http://www.ninkasi.fr/", "count": 1},
+      {"value": "http://www.mandrin.biz/", "count": 1},
+      {"value": "https://magasin.vandb.fr/766496-v-and-b-valence", "count": 1},
+      {"value": "http://www.buvettesaintantoine.com/", "count": 1},
+      {"value": "http://www.hotelthelibertys.com", "count": 1},
+      {"value": "auberge-charix.fr", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "brewery",
+    "tags": [
+      {"value": "Super Bock ", "count": 1},
+      {
+        "value": "Brewdog Punk IPA;Brooklyn Lager;Carlsberg;Guinness;Judas",
+        "count": 1
+      },
+      {"value": "affligem", "count": 1},
+      {"value": "leffe;Hoegaarden;Stella Artois", "count": 1},
+      {"value": "kronenbourg;affligem;Murphy's Irish Stout", "count": 1},
+      {
+        "value": "Maredsous;Tripel Karmeliet;Kwak;Chouffe;Cuvée Des Trolls;Vedett IPA",
+        "count": 1
+      },
+      {"value": "Cuvée des trolls", "count": 1},
+      {"value": "chouffe;tripel_karmeliet;chimay", "count": 1},
+      {"value": "Tripel Karmeliet;Kriek;Guinness;Hobgobelin", "count": 1},
+      {"value": "grimbergen", "count": 1},
+      {"value": "Tripel Karmeliet;Kwak", "count": 1},
+      {"value": "ninkasi blonde;Ninkasi ambrée", "count": 1},
+      {
+        "value": "Leffe ruby;Grimbergen blanche;Grimbergen double ambrée;Fleuron",
+        "count": 1
+      },
+      {"value": "Grimbergen blanche;Grimbergen blonde", "count": 1},
+      {"value": "Kilkenny;Guinness", "count": 1},
+      {"value": "Chouffe", "count": 1},
+      {"value": "Brewdog Punk IPA", "count": 1},
+      {"value": "Guinness", "count": 1},
+      {
+        "value": "Grimbergen;Grimbergen_blanche;Grimbergen_fruits_rouges",
+        "count": 1
+      },
+      {"value": "guinness;Kilkenny", "count": 1},
+      {"value": "Hoegaarden", "count": 1},
+      {
+        "value": "Heineken ;Affligem;Edelweiss;Affligem Tripel;Affligem_rouge;Mutzig old lager",
+        "count": 1
+      },
+      {"value": "guinness;tripel_karmeliet;carlsberg;grimbergen", "count": 1},
+      {"value": "Erdinger;Faro;Fuller's;Tripel Karmeliet;Kwak", "count": 1},
+      {
+        "value": "Guinness;Warsteiner;Kilkenny;Wendelinus;König Ludwig;Barbãr",
+        "count": 1
+      },
+      {
+        "value": "Maredsous;Rochefort;Trappistes Rochefort 6;Tripel Karmeliet;Vedett",
+        "count": 1
+      },
+      {
+        "value": "Chouffe;Rince Cochon;Cuvée Des Trolls;Chimay;Delirium Tremens",
+        "count": 1
+      },
+      {
+        "value": "Kilkenny;Kronenbourg;Grimbergen;Strongbow;Cervoise;Picon;Guinness",
+        "count": 1
+      }
+    ],
+    "count": 28
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33472656416", "count": 1},
+      {"value": "+33472002391", "count": 1},
+      {"value": "+33 4 72 00 80 53", "count": 1},
+      {"value": "+33 4 78 28 43 51", "count": 1},
+      {"value": "+33 4 78 42 75 01", "count": 1},
+      {"value": "+33 4 78 52 83 80", "count": 1},
+      {"value": "+33 4 76 01 81 17", "count": 1},
+      {"value": "+33 4 78 72 77 60", "count": 1},
+      {"value": "+33 6 52 76 86 60", "count": 1},
+      {"value": "+33 4 78 84 82 81", "count": 1},
+      {"value": "+33 4 78601162", "count": 1},
+      {"value": "+33 4 78 38 28 18", "count": 1},
+      {"value": "+33 6 68 68 03 12", "count": 1},
+      {"value": "+33 4 78 01 85 67", "count": 1},
+      {"value": "+33 4 79 00 03 53", "count": 1},
+      {"value": "+33 4 72 80 99 78", "count": 1},
+      {"value": "+33 4 74 65 10 62", "count": 1},
+      {"value": "+33 4 50 42 49 88", "count": 1},
+      {"value": "+33 4 78 37 36 32", "count": 1},
+      {"value": "+33 4 78855331", "count": 1},
+      {"value": "+33 4 50 51 12 93", "count": 1},
+      {"value": "+33970952778", "count": 1},
+      {"value": "+33479324947", "count": 1},
+      {"value": "+33 4 50 45 88 83", "count": 1},
+      {"value": "+33 4 38 37 19 67", "count": 1},
+      {"value": "+33 4 78 42 56 72", "count": 1},
+      {"value": "+33 4 74 68 36 13", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "no", "count": 12},
+      {"value": "wlan", "count": 10},
+      {"value": "yes", "count": 2}
+    ],
+    "count": 24
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 14},
+      {"value": "Potlatch 0.8a", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "outside", "count": 8},
+      {"value": "no", "count": 6},
+      {"value": "dedicated", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "french", "count": 3},
+      {"value": "pizza", "count": 1},
+      {"value": "tapas;fine_dining", "count": 1},
+      {"value": "sandwich", "count": 1},
+      {"value": "regional", "count": 1},
+      {"value": "burger", "count": 1},
+      {"value": "ice_cream", "count": 1},
+      {"value": "fine_dining", "count": 1},
+      {"value": "coffee_shop", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 9}, {"value": "no", "count": 2}],
+    "count": 11
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Irish Pub", "count": 2},
+      {"value": "Bar à concert", "count": 1},
+      {"value": "Hôte, bar et restaurant", "count": 1},
+      {"value": "PMU", "count": 1},
+      {"value": "bar restaurant", "count": 1},
+      {
+        "value": "Brasserie artisanale. Vente directe sur rendez-vous au +41 77 453 88 65. Plus d'infos sur https://www.lapiece.ch/",
+        "count": 1
+      },
+      {"value": "discothèque", "count": 1},
+      {"value": "Bar Tabac Presse", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Happy Hours : 19h-21h (en semaine)", "count": 1},
+      {"value": "Précédemment: \"L'Assomoir\"", "count": 1},
+      {
+        "value": "Website invalide (http://www.visitez.leschopesdumoulin.com/)",
+        "count": 1
+      },
+      {
+        "value": "Website invalide (http://www.cafe-bayard.com/) sessions musique irlandaise mardi soir",
+        "count": 1
+      },
+      {"value": "Claims to be the highest pub in Europe", "count": 1},
+      {"value": "plus de 250 bières", "count": 1},
+      {"value": "précédemment: \"Badaboum\"", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "alcohol", "count": 4},
+      {"value": "newsagent", "count": 2},
+      {"value": "bakery", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "food",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "hotel", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@lecomptoirviking.fr", "count": 1},
+      {"value": "info@obrasseur.com", "count": 1},
+      {"value": "info@hotelthelibertys.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "craft", "tags": [{"value": "brewery", "count": 3}], "count": 3},
+  {"key": "sport", "tags": [{"value": "billiards", "count": 2}], "count": 2},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "Ninkasi", "count": 1}, {"value": "Accor", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "payment:cash:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "gambling", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "Etablissement fermé", "count": 1}],
+    "count": 1
+  },
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "main", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "-1", "count": 1}], "count": 1},
+  {"key": "wifi", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "currency:XLT", "tags": [{"value": "LIEN", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Ninkasi Kao", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 74 65 09 70", "count": 1}],
+    "count": 1
+  },
+  {"key": "stars", "tags": [{"value": "2", "count": 1}], "count": 1}
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "marketplace", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00116368", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "marketplace", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3126130", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Halles de Châtillon-sur-Chalaronne", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1988", "count": 1}],
+    "count": 1
+  }
+]

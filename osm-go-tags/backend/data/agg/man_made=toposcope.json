@@ -1,0 +1,12 @@
+[
+  {"key": "information", "tags": [{"value": "map", "count": 3}], "count": 3},
+  {"key": "man_made", "tags": [{"value": "toposcope", "count": 3}], "count": 3},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "information", "count": 2},
+      {"value": "viewpoint", "count": 1}
+    ],
+    "count": 3
+  }
+]

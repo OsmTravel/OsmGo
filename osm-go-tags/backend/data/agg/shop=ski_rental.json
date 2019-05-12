@@ -1,0 +1,5 @@
+[
+  {"key": "shop", "tags": [{"value": "ski_rental", "count": 2}], "count": 2},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

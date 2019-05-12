@@ -1,0 +1,91 @@
+[
+  {"key": "man_made", "tags": [{"value": "adit", "count": 35}], "count": 35},
+  {"key": "disused", "tags": [{"value": "yes", "count": 16}], "count": 16},
+  {
+    "key": "operator",
+    "tags": [{"value": "Vicat", "count": 13}, {"value": "EDF", "count": 1}],
+    "count": 14
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 8}, {"value": "no", "count": 4}],
+    "count": 12
+  },
+  {"key": "ruins", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "collapsed", "tags": [{"value": "yes", "count": 7}], "count": 7},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3314839", "count": 1},
+      {"value": "Q3314927", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "start_date", "tags": [{"value": "C19", "count": 2}], "count": 2},
+  {
+    "key": "ele",
+    "tags": [{"value": "483", "count": 1}, {"value": "330", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA07000018", "count": 1},
+      {"value": "PA00135634", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Mine de Champgontier", "count": 1},
+      {"value": "fr:Mines de fer de Saint-Priest", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2010-12-07", "count": 1},
+      {"value": "1995-07-17", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [{"value": "Altitude historique", "count": 2}],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "gate", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [{"value": "Ciments de la Porte de France", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Ancienne mine", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.chagnon42.fr/fr/information/32110/la-cave-cure",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "archaeological_site", "count": 1}],
+    "count": 1
+  }
+]

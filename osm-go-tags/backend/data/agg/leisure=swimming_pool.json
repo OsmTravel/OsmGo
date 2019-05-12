@@ -1,0 +1,326 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "swimming_pool", "count": 49876}],
+    "count": 49876
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 46547},
+      {"value": "customers", "count": 111},
+      {"value": "no", "count": 48},
+      {"value": "yes", "count": 30},
+      {"value": "permissive", "count": 7},
+      {"value": "public", "count": 7},
+      {"value": "destination", "count": 3},
+      {"value": "N", "count": 2},
+      {"value": "designated", "count": 1},
+      {"value": "sw", "count": 1},
+      {"value": "ppour", "count": 1}
+    ],
+    "count": 46758
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "swimming", "count": 279},
+      {"value": "diving", "count": 2},
+      {"value": "table_soccer, table_tennis, billiards", "count": 1},
+      {"value": "bowling", "count": 1}
+    ],
+    "count": 283
+  },
+  {
+    "key": "covered",
+    "tags": [{"value": "no", "count": 55}, {"value": "yes", "count": 36}],
+    "count": 91
+  },
+  {
+    "key": "note:qadastre",
+    "tags": [{"value": "v0.2", "count": 63}],
+    "count": 63
+  },
+  {"key": "natural", "tags": [{"value": "water", "count": 31}], "count": 31},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Eyrieux Camping", "count": 3},
+      {"value": "Camping du Domaine de la Belonne", "count": 1},
+      {"value": "piscine municipale", "count": 1},
+      {"value": "Ville de Trévoux", "count": 1},
+      {"value": "Communauté de Communes de la Semine", "count": 1},
+      {"value": "MGM constructeur", "count": 1},
+      {"value": "Hotel la vanoise", "count": 1},
+      {"value": "Régie communale", "count": 1},
+      {"value": "Les Aveilles", "count": 1},
+      {"value": "Valvital", "count": 1},
+      {"value": "Mairie", "count": 1},
+      {"value": "CAPI", "count": 1},
+      {"value": "Labellemontagne", "count": 1},
+      {"value": "Public", "count": 1},
+      {"value": "Montélimar Agglomération", "count": 1},
+      {"value": "Chateau de Candie", "count": 1},
+      {"value": "Camping Le Chaudebry", "count": 1},
+      {"value": "Votre Maison de Vacances SARL", "count": 1},
+      {"value": "Camping de l'ecluse", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "water",
+    "tags": [
+      {"value": "swimming_pool", "count": 8},
+      {"value": "swimming-pool", "count": 5},
+      {"value": "swim", "count": 1},
+      {"value": "piscine", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "surface",
+    "tags": [{"value": "concrete", "count": 10}, {"value": "sand", "count": 1}],
+    "count": 11
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "basin", "count": 7},
+      {"value": "reservoir", "count": 3}
+    ],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Bassin ludique de natation", "count": 2},
+      {"value": "Motorcycle toolshop, excursions", "count": 1},
+      {"value": "Bassin de 25M", "count": 1},
+      {"value": "Piscine Tournesol", "count": 1},
+      {
+        "value": "Profondeur max : 4.40m\nUn petit plongeoir.\nUn grand plongeoir de 3m de haut.",
+        "count": 1
+      },
+      {"value": "Profondeur min : 0m\nProfondeur max : 1.60m", "count": 1},
+      {"value": "Bassin sportif de natation 25 M", "count": 1},
+      {"value": "Petit bassin", "count": 1},
+      {"value": "Bassin de 25 M", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "yes", "count": 2},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.montbonnot.fr/annuaire/243/275-la-piscine-des-pupilles-de-l-air.htm",
+        "count": 1
+      },
+      {
+        "value": "http://www.ville-saint-priest.fr/Piscine-Ulysse-Coeur.2127.0.html",
+        "count": 1
+      },
+      {"value": "http://www.lecampingmoto.net", "count": 1},
+      {"value": "www.lesaveilles.com", "count": 1},
+      {
+        "value": "http://lesmenuires.com/ete/activites/espace-aqualudique-wellness/",
+        "count": 1
+      },
+      {
+        "value": "http://www.ville-seyssinet-pariset.fr/piscine-municipale",
+        "count": 1
+      },
+      {"value": "http://www.saint-felicien.fr", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "wall",
+    "tags": [{"value": "no", "count": 6}, {"value": "yes", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Ouverture juillet et août", "count": 1},
+      {"value": "Ouvert l'été uniquement !", "count": 1},
+      {"value": "piscine du camping le Barutel", "count": 1},
+      {"value": "slides", "count": 1},
+      {"value": "Bad weather roof", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 90 87 77", "count": 1},
+      {"value": "+33 4 78 20 10 03", "count": 1},
+      {"value": "+33 475400483", "count": 1},
+      {"value": "+33 4 76 96 78 76", "count": 1},
+      {"value": "+33 4 75 42 25 67", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "swimming_pool", "count": 3},
+      {"value": "bar", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "location",
+    "tags": [{"value": "outdoor", "count": 3}, {"value": "indoor", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "length",
+    "tags": [{"value": "25", "count": 2}, {"value": "50", "count": 1}],
+    "count": 3
+  },
+  {"key": "private", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "emprise réelle. Tracé sur l'imagerie lors des travaux",
+        "count": 1
+      },
+      {
+        "value": "Bâtiment récent. Forme exacte du bâti à corriger dès qu'il apparaitra au cadastre.",
+        "count": 1
+      },
+      {"value": "décalage important avec le cadastre 2017", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 2}, {"value": "-1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 1},
+      {"value": "permissive", "count": 1},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "roof:shape", "tags": [{"value": "dome", "count": 3}], "count": 3},
+  {"key": "roof:height", "tags": [{"value": "6", "count": 3}], "count": 3},
+  {
+    "key": "cover",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "diving_board",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "depth_max:meter",
+    "tags": [{"value": "4.40", "count": 1}, {"value": "1.60", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "depth_min:meter",
+    "tags": [{"value": "1.70", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "camp_site", "count": 1},
+      {"value": "attraction", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA42000023", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "519", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2005-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "converted_by",
+    "tags": [{"value": "Editop_2_OSM_v0001", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "C20", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3389225", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Piscine de Firminy-Vert", "count": 1}],
+    "count": 1
+  },
+  {"key": "horse", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {
+    "key": "FIXME",
+    "tags": [{"value": "access=customers?", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "piscine@seyssinet-pariset.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "basin", "tags": [{"value": "detention", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "highway", "tags": [{"value": "track", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "6", "count": 1}], "count": 1},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle_friendly",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:theme",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "terrace", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "swimming_pool",
+    "tags": [{"value": "rooftop", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "nudism", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "king", "tags": [{"value": "paddling_pool", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  }
+]

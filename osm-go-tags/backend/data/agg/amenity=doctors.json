@@ -1,0 +1,352 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "doctors", "count": 444}],
+    "count": 444
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 34 18 32", "count": 2},
+      {"value": "+33478484332", "count": 1},
+      {"value": "+33 4 37550369", "count": 1},
+      {"value": "+33 4 74 59 16 60", "count": 1},
+      {"value": "+33 4 50 34 41 88", "count": 1},
+      {"value": "+33 6 61 12 00 51", "count": 1},
+      {"value": "+33 4 76 73 06 56", "count": 1},
+      {"value": "+33 4 74 85 09 78", "count": 1},
+      {"value": "+33 4 74 85 09 97", "count": 1},
+      {"value": "+33 4 74 85 28 18", "count": 1},
+      {"value": "+33 4 37 02 21 02", "count": 1},
+      {"value": "+33 4 74 31 91 11", "count": 1},
+      {"value": "+33 4 74 31 90 97", "count": 1},
+      {"value": "+33 4 75 26 69 84", "count": 1},
+      {"value": "+33 4 74 85 48 12", "count": 1},
+      {"value": "+33 4 74 59 79 06", "count": 1},
+      {"value": "+33 4 79 25 16 17", "count": 1},
+      {"value": "+33 4 74 19 28 81", "count": 1},
+      {"value": "+33 4 77 97 72 60", "count": 1},
+      {"value": "+33 4 77 24 21 90", "count": 1},
+      {"value": "+33 4 77 24 08 11", "count": 1},
+      {"value": "+33 4 75 39 76 44", "count": 1},
+      {"value": "+33 4 75 93 44 55", "count": 1},
+      {"value": "+33 4 75 36 32 84", "count": 1},
+      {"value": "+33 4 75 38 01 06", "count": 1},
+      {"value": "+33 4 75 85 73 80", "count": 1},
+      {"value": "+33 6 79 73 10 75", "count": 1},
+      {"value": "+33478835151", "count": 1},
+      {"value": "+33437201980", "count": 1},
+      {"value": "+33 4 77 93 93 75", "count": 1},
+      {"value": "+41 22 771 26 00", "count": 1},
+      {"value": "+33 4 76 63 19 60", "count": 1},
+      {"value": "+33 4 79 05 91 96", "count": 1},
+      {"value": "+33 4 76 09 42 67", "count": 1},
+      {"value": "+33477320345", "count": 1},
+      {"value": "+33476515276", "count": 1},
+      {"value": "+33450843996", "count": 1},
+      {"value": "+33 6 15 46 31 02", "count": 1},
+      {"value": "+33 4 76 87 27 12", "count": 1},
+      {"value": "+33 4 78 00 36 47", "count": 1},
+      {"value": "+41227986763", "count": 1},
+      {"value": "+33 4 76 82 76 88", "count": 1},
+      {"value": "+33 4 74721494", "count": 1},
+      {"value": "+33 4 78209820", "count": 1},
+      {"value": "+33 4 78200158", "count": 1},
+      {"value": "+33 4 74074657", "count": 1},
+      {"value": "+33 4 37250111", "count": 1},
+      {"value": "+33 6 60613530", "count": 1},
+      {"value": "+33 4 78 93 48 84", "count": 1},
+      {"value": "+33 4 77 33 30 30", "count": 1},
+      {"value": "+33 4 75 39 29 50", "count": 1},
+      {"value": "+33 4 72 33 00 33", "count": 1},
+      {"value": "+33 4 78 93 27 57", "count": 1},
+      {"value": "+33 4 78 23 72 00", "count": 1},
+      {"value": "+33 4 74 53 57 12", "count": 1},
+      {"value": "+33 4 76 34 03 31", "count": 1},
+      {"value": "+33 4 77 24 19 06", "count": 1},
+      {"value": "+33450740542", "count": 1}
+    ],
+    "count": 59
+  },
+  {
+    "key": "healthcare",
+    "tags": [
+      {"value": "doctor", "count": 38},
+      {"value": "alternative", "count": 3},
+      {"value": "centre", "count": 3},
+      {"value": "physiotherapist", "count": 2},
+      {"value": "laboratory", "count": 1},
+      {"value": "psychotherapist", "count": 1},
+      {"value": "yes", "count": 1},
+      {"value": "generalist", "count": 1},
+      {"value": "audiologist", "count": 1},
+      {"value": "midwife", "count": 1}
+    ],
+    "count": 52
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "general", "count": 9},
+      {"value": "radiology", "count": 6},
+      {"value": "kinesitherapy", "count": 4},
+      {"value": "osteopathy", "count": 3},
+      {"value": "applied_kinesiology", "count": 2},
+      {"value": "orthophonist", "count": 2},
+      {"value": "otolaryngology", "count": 2},
+      {"value": "gynaecology", "count": 2},
+      {"value": "biology", "count": 1},
+      {"value": "general practioner", "count": 1},
+      {"value": "physiotherapy", "count": 1},
+      {"value": "rheumatology", "count": 1},
+      {"value": "cardiology", "count": 1},
+      {"value": "paediatrics", "count": 1},
+      {"value": "psychiatry", "count": 1},
+      {"value": "kinesitherapy;podiatrist;pedicure", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.osteole.fr", "count": 1},
+      {"value": "http://www.lsoigne.fr/", "count": 1},
+      {"value": "www.ond-optic.fr", "count": 1},
+      {
+        "value": "www.naturhouse.fr/liste-centres/193-aix-les-bains",
+        "count": 1
+      },
+      {"value": "https://www.sos-medecin-lyon.fr/", "count": 1},
+      {
+        "value": "www.naturhouse.fr/liste-centres/546-thonon-les-bains",
+        "count": 1
+      },
+      {"value": "http://naissanceplus.fr/", "count": 1},
+      {
+        "value": "http://bonneval.haute-maurienne-vanoise.com/pratique/services-et-artisans?categories%5B%5D=2726",
+        "count": 1
+      },
+      {"value": "http://www.groupe-chirurgical-thiers.fr", "count": 1},
+      {
+        "value": "https://www.docvadis.fr/eliane.duperray/index.html",
+        "count": 1
+      },
+      {"value": "https://centre-sante.univ-grenoble-alpes.fr", "count": 1},
+      {"value": "http://www.ortheasante.com", "count": 1},
+      {"value": "http://www.laser-esthetique-verdandornier.com/", "count": 1},
+      {
+        "value": "http://oosteo.com/osteopathe-saint-etienne-42100-130",
+        "count": 1
+      },
+      {"value": "http://oosteo.com/osteopathe-vienne-38200-215", "count": 1},
+      {"value": "http://oosteo.com/osteopathe-lyon-69009-469", "count": 1},
+      {"value": "http://www.osteopathe-grenoble38.com", "count": 1},
+      {"value": "http://www.accolab.com/", "count": 1},
+      {
+        "value": "http://www.chu-st-etienne.fr/Reseau/CentreDeSoin/MaisonMedicale/sosmedecins.asp",
+        "count": 1
+      },
+      {"value": "http://www.cc-valdeligne.fr/?La-maison-de-soins", "count": 1},
+      {
+        "value": "http://www.ch-valence.fr/services/maison-medicale-de-garde",
+        "count": 1
+      },
+      {
+        "value": "https://www.lyonaeroports.com/shopping-services/sante-et-bien-etre/services-medicaux",
+        "count": 1
+      },
+      {"value": "www.radiologie-lac-annecy.fr/", "count": 1},
+      {"value": "http://www.fdgl.fr/content/view/24/", "count": 1},
+      {"value": "http://www.cmm07.fr/", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 17},
+      {"value": "no", "count": 3},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Laboratoire d'Analyses de Biologie Médicale", "count": 1},
+      {"value": "Laboratoire de Biologie Médicale", "count": 1},
+      {"value": "Laboratoire d'Analyses Médicales", "count": 1},
+      {"value": "Services à domicile", "count": 1},
+      {"value": "healthcare:speciality=gynaecology", "count": 1},
+      {"value": "cabinet de soins infirmiers", "count": 1},
+      {"value": "Antenne Presqu'île", "count": 1},
+      {"value": "Orthopédie générale", "count": 1},
+      {"value": "fr:Osthéopathie", "count": 1},
+      {"value": "Coralie ROTIVAL et Mathilde VIEUX", "count": 1},
+      {"value": "Kinésithérapie", "count": 1},
+      {"value": "Médecine générale", "count": 1},
+      {"value": "Raphaël MONNIER et David CROZIER.", "count": 1},
+      {"value": "Le n° de mobile est accessible 7j/7.", "count": 1},
+      {
+        "value": "Médecins de garde Consultations sur rdv uniquement 7j/7 9h-23h30 Visites à domicile personnes grabataires",
+        "count": 1
+      },
+      {
+        "value": "La maison médicale de garde est installée près des urgences, des médecins généralistes assurent des consultations à titre privé sans rendez-vous. Les médecins généralistes vous établiront une feuille de soins pour votre remboursement. ",
+        "count": 1
+      },
+      {
+        "value": "Urgences communes limitrophes, parking gratuit P2 Minute.",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "emergency",
+    "tags": [
+      {"value": "no", "count": 4},
+      {"value": "yes", "count": 2},
+      {"value": "defibrillator", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Delphine Tourne", "count": 1},
+      {"value": "Sandrine Rougerie", "count": 1},
+      {"value": "Rouquier Puech", "count": 1},
+      {"value": "CHU Saint-Etienne", "count": 1},
+      {"value": "Docteur Nicolas Bogaert", "count": 1},
+      {"value": "Groupe Capio", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Médecin généraliste, Cabinet infirmier, Ostéopathe, Kinésithérapeute.",
+        "count": 2
+      },
+      {"value": "Tel number : +33 (0) 450 925 598", "count": 1},
+      {"value": "Précédemment: \"Centre Services\"", "count": 1},
+      {"value": "Ancienne mairie de Publier", "count": 1},
+      {"value": "ophtalmologiste", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "office",
+    "tags": [
+      {"value": "therapist", "count": 1},
+      {"value": "company", "count": 1},
+      {"value": "ngo", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "info@santetravail73.org", "count": 1},
+      {"value": "corenc.kine@free.fr", "count": 1},
+      {"value": "docteurlormant@gmail.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 77 97 72 69", "count": 1},
+      {"value": "+33 4 75 93 35 04", "count": 1},
+      {"value": "+33 4 75 38 02 09", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "dispensing",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "1", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "entrance",
+    "tags": [{"value": "yes", "count": 1}, {"value": "main", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "yes", "count": 1},
+      {"value": "hairdresser", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:electronic_purses",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "private", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Cabinet de masseurs kinésithérapeutes.", "count": 1}],
+    "count": 1
+  },
+  {"key": "doctors", "tags": [{"value": "podologue", "count": 1}], "count": 1},
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "519", "count": 1}], "count": 1},
+  {
+    "key": "payment:cryptocurrencies",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Placé d'après une note ; Passage avec escaliers", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "health_facility",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "hipped", "count": 1}], "count": 1},
+  {
+    "key": "roof:material",
+    "tags": [{"value": "roof_tiles", "count": 1}],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "created_by", "tags": [{"value": "iLOE 1.9", "count": 1}], "count": 1}
+]

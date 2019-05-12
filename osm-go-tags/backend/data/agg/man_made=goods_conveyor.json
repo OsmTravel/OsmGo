@@ -1,0 +1,17 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "goods_conveyor", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Bande transporteuse (Conveyor belt) -> type n'existant pas dans la DB.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

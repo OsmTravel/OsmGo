@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "dairy", "count": 7}], "count": 7},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 50 58 34 28", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "produce",
+    "tags": [{"value": "cheese;egg;milk", "count": 1}],
+    "count": 1
+  }
+]

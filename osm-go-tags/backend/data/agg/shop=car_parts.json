@@ -1,0 +1,83 @@
+[
+  {"key": "shop", "tags": [{"value": "car_parts", "count": 66}], "count": 66},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 53 13 25", "count": 1},
+      {"value": "+33 4 77197076", "count": 1},
+      {"value": "+33 4 82317285", "count": 1},
+      {"value": "+33 4 78 03 59 07", "count": 1},
+      {"value": "+33 4 76 66 18 86", "count": 1},
+      {"value": "+33 4 75 59 74 06", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Feu Vert", "count": 1},
+      {"value": "Auto Securité", "count": 1},
+      {"value": "Groupement des Mousquetaires", "count": 1},
+      {"value": "CL.CO SAS", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.groupe-autodistribution.com/", "count": 1},
+      {"value": "http://www.casse-auto-park-autos38.fr/", "count": 1},
+      {"value": "http://www.rhonedistributionsud.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Les Pros de la Pièce Auto", "count": 1},
+      {"value": "La Pièce Auto Hard Discount", "count": 1},
+      {
+        "value": "Ventes de pièces automobiles neuves toutes marques",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "autoselection38210@hotmail.fr", "count": 1},
+      {"value": "contact@api-valence.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 2}], "count": 2},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "https://www.carter-cash.com/magasin/saint-etienne-42000-M042",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "service:vehicle:inspection",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q1035997", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Carglass", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "façade Art Nouveau", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "motor", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

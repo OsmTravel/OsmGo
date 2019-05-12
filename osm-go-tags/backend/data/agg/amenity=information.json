@@ -1,0 +1,26 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "information", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "7-108", "count": 1}, {"value": "7-541", "count": 1}],
+    "count": 2
+  },
+  {"key": "network", "tags": [{"value": "Vélo'v", "count": 2}], "count": 2},
+  {"key": "operator", "tags": [{"value": "JCDecaux", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Avenue Jean Jaurès 30m avant angle avenue Tony Garnier",
+        "count": 1
+      },
+      {"value": "Panneau d'information Vélo'v", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "information", "tags": [{"value": "board", "count": 1}], "count": 1}
+]

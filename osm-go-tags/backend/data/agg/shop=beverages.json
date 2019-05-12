@@ -1,0 +1,92 @@
+[
+  {"key": "shop", "tags": [{"value": "beverages", "count": 46}], "count": 46},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.brasserielacanaille.com", "count": 1},
+      {"value": "http://apericerie.fr/", "count": 1},
+      {"value": "http://www.domainedesesserts.ch/", "count": 1},
+      {"value": "http://www.brasserie-artisanale-la-manivelle.fr", "count": 1},
+      {"value": "http://www.vinavoce.com/fr/", "count": 1},
+      {
+        "value": "https://m.facebook.com/Wigis-coffee-1549385762002092/?locale2=fr_FR",
+        "count": 1
+      },
+      {
+        "value": "http://www.rhonetourisme.com/fr/Vins-gastronomie/Vins/Liste-complete-Beaujolais/La-cave-du-pere-Manu-69074-Office-de-Tourisme-Beaujolais-des-Pierres-Dorees",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "drink:beer",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "bottled", "count": 1},
+      {"value": "retail", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 48 44 90", "count": 1},
+      {"value": "0041227541247", "count": 1},
+      {"value": "+33450817694", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "drink:wine",
+    "tags": [{"value": "bottled", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "craft", "tags": [{"value": "brewery", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "comboire@lesroismalts.fr", "count": 1},
+      {"value": "les.esserts@bluewin.ch", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "restaurant", "count": 1},
+      {"value": "cafe", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "organic", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Bière artisanale de Die", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "cuisine",
+    "tags": [{"value": "regional;french", "count": 1}],
+    "count": 1
+  },
+  {"key": "delivery", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "tag", "tags": [{"value": "Cave", "count": 1}], "count": 1},
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  }
+]

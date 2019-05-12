@@ -1,0 +1,75 @@
+[
+  {"key": "healthcare", "tags": [{"value": "yes", "count": 9}], "count": 9},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "cabinet de soins infirmiers", "count": 1},
+      {
+        "value": "Service de soins infirmiers à domicile, SSIAD du Rhône",
+        "count": 1
+      },
+      {
+        "value": "Urgences communes limitrophes, parking gratuit P2 Minute.",
+        "count": 1
+      },
+      {
+        "value": "Maison d'accueil spécialisé pour les personnes handicapées",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://pourvous.croix-rouge.fr/service-de-soins-infirmiers-domicile-de-villeurbanne",
+        "count": 1
+      },
+      {
+        "value": "https://www.lyonaeroports.com/shopping-services/sante-et-bien-etre/services-medicaux",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "ssiadpa.villeurbanne@croix-rouge.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 472 84 11 12", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "biology", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Croix-Rouge française", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 478 85 74 27", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_facility",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {"key": "emergency", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "first_aid", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

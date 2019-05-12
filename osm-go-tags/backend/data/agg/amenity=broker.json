@@ -1,0 +1,19 @@
+[
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 254 073 592", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 254 070 980", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "broker", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Transitaire", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {"key": "natural", "tags": [{"value": "valley", "count": 33}], "count": 33},
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q4007327", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "it:Val Cenischia", "count": 1}],
+    "count": 1
+  }
+]

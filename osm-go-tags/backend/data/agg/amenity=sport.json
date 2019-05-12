@@ -1,0 +1,5 @@
+[
+  {"key": "amenity", "tags": [{"value": "sport", "count": 2}], "count": 2},
+  {"key": "leisure", "tags": [{"value": "pitch", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "water_ski", "count": 1}], "count": 1}
+]

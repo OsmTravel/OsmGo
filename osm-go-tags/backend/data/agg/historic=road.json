@@ -1,0 +1,13 @@
+[
+  {"key": "historic", "tags": [{"value": "road", "count": 6}], "count": 6},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "track", "count": 3},
+      {"value": "unclassified", "count": 1},
+      {"value": "residential", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "tracktype", "tags": [{"value": "grade5", "count": 1}], "count": 1}
+]

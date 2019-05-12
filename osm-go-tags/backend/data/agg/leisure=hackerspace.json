@@ -1,0 +1,104 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "hackerspace", "count": 23}],
+    "count": 23
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://LaboVilleurbanne.fr", "count": 1},
+      {"value": "http://fablab.lacasemate.fr", "count": 1},
+      {"value": "http://l0ad.org/", "count": 1},
+      {"value": "http://chantierlibre.org", "count": 1},
+      {"value": "https://labolyon.fr/", "count": 1},
+      {"value": "http://fabmstic.imag.fr", "count": 1},
+      {"value": "http://fablac.fr", "count": 1},
+      {"value": "https://www.erasme.org/-UrbanLab-288-", "count": 1},
+      {"value": "https://www.lamyne.org/", "count": 1},
+      {"value": "http://air.imag.fr/", "count": 1},
+      {"value": "http://caplab07.fr/", "count": 1},
+      {"value": "http://www.leprototype.info/", "count": 1},
+      {"value": "http://www.8fablab.fr", "count": 1},
+      {"value": "http://deltalabprototype.fr", "count": 1},
+      {"value": "http://fablab74.com/fablab74/", "count": 1},
+      {"value": "http://www.fablab-lyon.fr/", "count": 1},
+      {"value": "http://www.logre.eu/", "count": 1},
+      {
+        "value": "http://www.mjc-pontdusonnant.net/sciences-et-techniques/lus/",
+        "count": 1
+      }
+    ],
+    "count": 18
+  },
+  {"key": "workshop", "tags": [{"value": "fablab", "count": 18}], "count": 18},
+  {
+    "key": "hazard",
+    "tags": [
+      {"value": "robot", "count": 8},
+      {"value": "playing_children", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 62 63 08", "count": 1},
+      {"value": "+33 4 26 64 36 16", "count": 1},
+      {"value": "+33 4 75 55 14 78", "count": 1},
+      {"value": "+33 4 78 64 17 04", "count": 1},
+      {"value": "+33 4 76 42 70 85", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "FabLab en Roannais", "count": 1},
+      {
+        "value": "Laboratoire de recherche et d'expérimentation citoyen des transitions.",
+        "count": 1
+      },
+      {
+        "value": "Le LOV est une association Villeurbannaise gérant un hacklab.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "team@lamyne.org", "count": 1},
+      {"value": "Contact@LaboVilleurbanne.fr", "count": 1},
+      {"value": "fabriquedobjetslibres@gmail.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Université de Lyon", "count": 1},
+      {"value": "LIG", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:cash:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "currency:XLT", "tags": [{"value": "LIEN", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q54942149", "count": 1}], "count": 1},
+  {
+    "key": "craft",
+    "tags": [{"value": "electronics_repair", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "identity",
+    "tags": [{"value": "p2p_economy commons", "count": 1}],
+    "count": 1
+  }
+]

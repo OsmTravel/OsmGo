@@ -1,0 +1,154 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "car_rental", "count": 118}],
+    "count": 118
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Hertz", "count": 6},
+      {"value": "Avis", "count": 6},
+      {"value": "Europcar", "count": 5},
+      {"value": "Sixt", "count": 2},
+      {"value": "Réseau Citiz", "count": 2},
+      {"value": "AVIS", "count": 1},
+      {"value": "Rent Car", "count": 1},
+      {"value": "ADA", "count": 1},
+      {"value": "Groupe Bolloré", "count": 1},
+      {"value": "Citélib", "count": 1},
+      {"value": "Car2go", "count": 1},
+      {"value": "Hertz, Europecar, Avis, Sixt", "count": 1},
+      {"value": "Mingat", "count": 1},
+      {"value": "hertz", "count": 1},
+      {"value": "Ucar", "count": 1},
+      {"value": "Jean Lain automobiles", "count": 1},
+      {"value": "FranceCars", "count": 1},
+      {"value": "Renault", "count": 1},
+      {"value": "Enterprise Rent-a-Car", "count": 1},
+      {"value": "Intérmarché", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Avis", "count": 3},
+      {"value": "ADA", "count": 3},
+      {"value": "Hertz", "count": 2},
+      {"value": "Europcar", "count": 2},
+      {"value": "Rent A Car", "count": 2},
+      {"value": "Rent à Car", "count": 1},
+      {"value": "BTP", "count": 1},
+      {"value": "Bluely", "count": 1},
+      {"value": "Ada", "count": 1},
+      {"value": "Car Go", "count": 1},
+      {"value": "Sixt", "count": 1},
+      {"value": "Mingat", "count": 1},
+      {"value": "Ucar", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.ada.fr/location-voiture-lyon-gare-tvg.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.sixt.fr/location-voiture/france/saint-etienne",
+        "count": 1
+      },
+      {"value": "https://www.bluely.eu/", "count": 1},
+      {"value": "https://www.cargo.rent", "count": 1},
+      {"value": "http://citelib.com/", "count": 1},
+      {"value": "http://www.europcar.fr/", "count": 1},
+      {
+        "value": "https://www.rentacar.fr/agences/st-martin-d-heres/560-saint-martin-d-heres-selfcar",
+        "count": 1
+      },
+      {
+        "value": "https://www.sixt.fr/location-voiture/france/lyon/lyon-st-exupery-aeroport",
+        "count": 1
+      },
+      {"value": "http://www.mingat.com/agence/pierre-benite/", "count": 1},
+      {"value": "http://taxistransoisans.com", "count": 1},
+      {"value": "http://www.mingat.com/agence/mions/", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33478379393", "count": 1},
+      {"value": "+33 4 76 40 91 61", "count": 1},
+      {"value": "+33 4 74 78 00 78", "count": 1},
+      {"value": "+33 4 79 24 07 75", "count": 1},
+      {"value": "+33 4 79 68 98 46", "count": 1},
+      {"value": "+33 4 76 03 01 01", "count": 1},
+      {"value": "+33 4 76 51 32 33", "count": 1},
+      {"value": "+33 4 72 39 10 30", "count": 1},
+      {"value": "0820007498", "count": 1},
+      {"value": "+33609383838", "count": 1},
+      {"value": "+33 4 78202927", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "limited", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "capacity",
+    "tags": [{"value": "2", "count": 2}, {"value": "1", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "room",
+    "tags": [{"value": "shop", "count": 3}, {"value": "office", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "-1", "count": 3}, {"value": "0", "count": 1}],
+    "count": 4
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "matériel de travaux publics", "count": 1},
+      {"value": "Parking number P51", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 68 97 33", "count": 1},
+      {"value": "+33 4 78201345", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "height", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "car_repair", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {
+    "key": "network",
+    "tags": [{"value": "Europcar;AVIS;Enterprise;Hertz;Sixt", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q791136", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "transoisans@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Avis (entreprise)", "count": 1}],
+    "count": 1
+  }
+]

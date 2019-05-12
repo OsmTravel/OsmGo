@@ -1,0 +1,8 @@
+[
+  {"key": "amenity", "tags": [{"value": "art_school", "count": 1}], "count": 1},
+  {
+    "key": "facebook",
+    "tags": [{"value": "lapetiteecoledart.rodez", "count": 1}],
+    "count": 1
+  }
+]

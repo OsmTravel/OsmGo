@@ -1,0 +1,13 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "retirement_home", "count": 17}],
+    "count": 17
+  },
+  {"key": "emergency", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Maison de retraite", "count": 1}],
+    "count": 1
+  }
+]

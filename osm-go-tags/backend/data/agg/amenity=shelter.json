@@ -1,0 +1,564 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "shelter", "count": 2319}],
+    "count": 2319
+  },
+  {
+    "key": "shelter_type",
+    "tags": [
+      {"value": "public_transport", "count": 1851},
+      {"value": "weather_shelter", "count": 47},
+      {"value": "basic_hut", "count": 29},
+      {"value": "picnic_shelter", "count": 19},
+      {"value": "lean_to", "count": 9},
+      {"value": "wildlife_hide", "count": 9},
+      {"value": "rock_shelter", "count": 2},
+      {"value": "roof", "count": 2},
+      {"value": "sun_shelter", "count": 2},
+      {"value": "field_shelter", "count": 2},
+      {"value": "animal_shelter", "count": 1},
+      {"value": "basic", "count": 1},
+      {"value": "building", "count": 1},
+      {"value": "book_share", "count": 1},
+      {"value": "abandonné", "count": 1}
+    ],
+    "count": 1977
+  },
+  {
+    "key": "bench",
+    "tags": [{"value": "yes", "count": 1400}, {"value": "no", "count": 6}],
+    "count": 1406
+  },
+  {
+    "key": "wall",
+    "tags": [{"value": "no", "count": 1240}, {"value": "yes", "count": 3}],
+    "count": 1243
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "TAG", "count": 369},
+      {"value": "Sibra", "count": 130},
+      {"value": "Pays Voironnais Mobilité", "count": 50},
+      {"value": "TCL", "count": 35},
+      {"value": "Transisère", "count": 29},
+      {"value": "Voironnais", "count": 7},
+      {"value": "Grésivaudan", "count": 3},
+      {"value": "TouGo", "count": 2},
+      {"value": "Montenbus", "count": 2},
+      {"value": "Lihsa", "count": 2},
+      {"value": "TER Rhône-Alpes", "count": 1},
+      {"value": "Chamonix Bus", "count": 1},
+      {"value": "STAC", "count": 1},
+      {"value": "CFF", "count": 1},
+      {"value": "TransIsère", "count": 1}
+    ],
+    "count": 634
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Essai pour nouveaux tag public_transport", "count": 57},
+      {"value": "FIXME Essai pour nouveaux tag public_transport", "count": 11},
+      {"value": "no mattresses included, fire not allowed", "count": 1},
+      {"value": "skibus gratuit", "count": 1},
+      {"value": "check coordinates!", "count": 1},
+      {"value": "un abri 4 places contre la pluie, rien de plus", "count": 1},
+      {"value": "fonction supposée par le dessin sur les murs", "count": 1},
+      {
+        "value": "edificio storico (1887) in comodato al CAAI per 30 anni vedi anche http://camoscibianchi.wordpress.com/2012/09/10/il-rifugio-eugenio-ferreri/#comment-3808",
+        "count": 1
+      },
+      {"value": "Cabane de berger", "count": 1},
+      {"value": "Open, 4 places", "count": 1},
+      {"value": "Fermé au public, seul l'auvent peut être utilisé", "count": 1}
+    ],
+    "count": 77
+  },
+  {
+    "key": "network_map",
+    "tags": [{"value": "geographic", "count": 68}],
+    "count": 68
+  },
+  {
+    "key": "line_map",
+    "tags": [
+      {"value": "geographic", "count": 51},
+      {"value": "linear", "count": 13},
+      {"value": "schematic", "count": 4}
+    ],
+    "count": 68
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "870", "count": 2},
+      {"value": "1630", "count": 2},
+      {"value": "1248", "count": 2},
+      {"value": "1653", "count": 2},
+      {"value": "3460", "count": 1},
+      {"value": "2030", "count": 1},
+      {"value": "3040", "count": 1},
+      {"value": "1446", "count": 1},
+      {"value": "1411", "count": 1},
+      {"value": "1998", "count": 1},
+      {"value": "1750", "count": 1},
+      {"value": "1665", "count": 1},
+      {"value": "1635", "count": 1},
+      {"value": "1409", "count": 1},
+      {"value": "3678", "count": 1},
+      {"value": "1560", "count": 1},
+      {"value": "2350", "count": 1},
+      {"value": "1602", "count": 1},
+      {"value": "1778", "count": 1},
+      {"value": "2207", "count": 1},
+      {"value": "1220", "count": 1},
+      {"value": "2297", "count": 1},
+      {"value": "1967", "count": 1},
+      {"value": "1745", "count": 1},
+      {"value": "2136", "count": 1},
+      {"value": "1790", "count": 1},
+      {"value": "725", "count": 1},
+      {"value": "1085", "count": 1},
+      {"value": "1335", "count": 1},
+      {"value": "3820", "count": 1},
+      {"value": "2670", "count": 1},
+      {"value": "1045", "count": 1},
+      {"value": "1500", "count": 1},
+      {"value": "1546", "count": 1},
+      {"value": "1510", "count": 1},
+      {"value": "1310", "count": 1},
+      {"value": "982", "count": 1},
+      {"value": "4362", "count": 1},
+      {"value": "2164", "count": 1},
+      {"value": "1992", "count": 1},
+      {"value": "1130", "count": 1},
+      {"value": "1072", "count": 1},
+      {"value": "1600", "count": 1},
+      {"value": "1774", "count": 1},
+      {"value": "3600", "count": 1},
+      {"value": "1727", "count": 1},
+      {"value": "1553", "count": 1},
+      {"value": "2645", "count": 1},
+      {"value": "1740", "count": 1},
+      {"value": "1880", "count": 1},
+      {"value": "3219", "count": 1},
+      {"value": "1129", "count": 1},
+      {"value": "860", "count": 1},
+      {"value": "2958", "count": 1},
+      {"value": "1693", "count": 1},
+      {"value": "1705", "count": 1},
+      {"value": "2510", "count": 1},
+      {"value": "1217", "count": 1}
+    ],
+    "count": 62
+  },
+  {"key": "time_tables", "tags": [{"value": "yes", "count": 51}], "count": 51},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "wilderness_hut", "count": 22},
+      {"value": "alpine_hut", "count": 9},
+      {"value": "picnic_site", "count": 4},
+      {"value": "information", "count": 1},
+      {"value": "lean_to", "count": 1},
+      {"value": "artwork", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "11061", "count": 2},
+      {"value": "07178", "count": 2},
+      {"value": "10985", "count": 1},
+      {"value": "07181", "count": 1},
+      {"value": "10206", "count": 1},
+      {"value": "05542", "count": 1},
+      {"value": "10283", "count": 1},
+      {"value": "10339", "count": 1},
+      {"value": "10212", "count": 1},
+      {"value": "Cabane des Chasseurs", "count": 1},
+      {"value": "10993", "count": 1},
+      {"value": "10328", "count": 1},
+      {"value": "10236", "count": 1},
+      {"value": "10286", "count": 1},
+      {"value": "11272;11273", "count": 1},
+      {"value": "10870", "count": 1},
+      {"value": "10185", "count": 1},
+      {"value": "07179", "count": 1},
+      {"value": "10948", "count": 1},
+      {"value": "10188", "count": 1},
+      {"value": "10899", "count": 1},
+      {"value": "15140", "count": 1},
+      {"value": "10190", "count": 1},
+      {"value": "11304", "count": 1},
+      {"value": "10778;10777", "count": 1},
+      {"value": "10728", "count": 1},
+      {"value": "fg", "count": 1},
+      {"value": "06525", "count": 1},
+      {"value": "10338", "count": 1},
+      {"value": "10999", "count": 1},
+      {"value": "006-11", "count": 1},
+      {"value": "07206", "count": 1},
+      {"value": "07205", "count": 1},
+      {"value": "113-00", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 25},
+      {"value": "-1", "count": 8},
+      {"value": "1", "count": 2}
+    ],
+    "count": 35
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Arrêt Scolaire", "count": 3},
+      {"value": "1 Poêle", "count": 2},
+      {"value": "Arrêt non desservi à partir de septembre 2018", "count": 2},
+      {"value": "Quai 12", "count": 1},
+      {"value": "Quai 7", "count": 1},
+      {"value": "Quai 16", "count": 1},
+      {"value": "Quai 17", "count": 1},
+      {"value": "Quai 6", "count": 1},
+      {"value": "Quai 8", "count": 1},
+      {"value": "Quai 3", "count": 1},
+      {"value": "Quai 4", "count": 1},
+      {"value": "Quai 1", "count": 1},
+      {"value": "Quai 5", "count": 1},
+      {"value": "Quai 2", "count": 1},
+      {"value": "Ancien abri bus", "count": 1},
+      {"value": "Quai 14", "count": 1},
+      {
+        "value": "Le quai est bien palcé sur la gauche dans le sens de la voie !",
+        "count": 1
+      },
+      {"value": "Lignes 14, 17 et K", "count": 1},
+      {"value": "Ligne 2", "count": 1},
+      {"value": "Ligne 8", "count": 1},
+      {"value": "Quai 13", "count": 1},
+      {
+        "value": "The roof Isolation is distroyed. But apart from that a nice open hut to spend a night.",
+        "count": 1
+      },
+      {"value": "Abri extrêmement sommaire", "count": 1},
+      {
+        "value": "Un haut-vent pour se protéger de la pluie, sinon bâtiment fermé et privé",
+        "count": 1
+      },
+      {"value": "salle hors sac", "count": 1},
+      {"value": "Abri pour Grand Tetras", "count": 1},
+      {
+        "value": "1 Poêle + 6 matelas + 2 tapis de sol + couverture. Islolatiàn ok au RDC",
+        "count": 1
+      },
+      {"value": "Salle hors sacs", "count": 1},
+      {"value": "cabane avec poêle, scie, casseroles", "count": 1},
+      {"value": "cabane avec poêle, scie, casserole et 1 matelas", "count": 1},
+      {"value": "Pièce en libre accés en dessous du refuge", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "JCDecaux", "count": 15},
+      {"value": "SYTRAL", "count": 5},
+      {"value": "SNCF", "count": 4},
+      {"value": "CAAI Occidentale Torino", "count": 1},
+      {"value": "ONF Valbonnais", "count": 1},
+      {
+        "value": "Club Alpino Italiano Sezione di Torino - CAAI (in comodato d'uso)",
+        "count": 1
+      },
+      {"value": "Club Alpino Italiano - CAI Uget Torino", "count": 1},
+      {"value": "Transdev Savoie", "count": 1},
+      {"value": "TMR", "count": 1},
+      {"value": "Club Alpino Accademico Italiano", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "bin",
+    "tags": [{"value": "yes", "count": 19}, {"value": "no", "count": 9}],
+    "count": 28
+  },
+  {
+    "key": "fireplace",
+    "tags": [{"value": "no", "count": 21}, {"value": "yes", "count": 7}],
+    "count": 28
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "6", "count": 5},
+      {"value": "4", "count": 2},
+      {"value": "20", "count": 2},
+      {"value": "8", "count": 2},
+      {"value": "10", "count": 2},
+      {"value": "3", "count": 2},
+      {"value": "5-6 places", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "15", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "shelter",
+    "tags": [
+      {"value": "yes", "count": 16},
+      {"value": "weather_shelter", "count": 1},
+      {"value": "rock_shelter", "count": 1},
+      {"value": "Turtle_Florida", "count": 1},
+      {"value": "rain_shelter", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "waiting_time",
+    "tags": [{"value": "dynamic", "count": 20}],
+    "count": 20
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 10}, {"value": "0", "count": 8}],
+    "count": 18
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 15}], "count": 15},
+  {
+    "key": "public_transport",
+    "tags": [
+      {"value": "platform", "count": 7},
+      {"value": "station", "count": 3},
+      {"value": "stop_position", "count": 3}
+    ],
+    "count": 13
+  },
+  {
+    "key": "toilets",
+    "tags": [{"value": "no", "count": 9}, {"value": "yes", "count": 3}],
+    "count": 12
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "yes", "count": 7},
+      {"value": "private", "count": 3},
+      {"value": "permissive", "count": 2}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q650959", "count": 2},
+      {"value": "Q2389442", "count": 1},
+      {"value": "Q3640537", "count": 1},
+      {"value": "Q3423215", "count": 1},
+      {"value": "Q3935483", "count": 1},
+      {"value": "Q2904977", "count": 1},
+      {"value": "Q3423267", "count": 1},
+      {"value": "Q1610145", "count": 1},
+      {"value": "Q3423208", "count": 1},
+      {"value": "Q3935619", "count": 1},
+      {"value": "Q3640573", "count": 1}
+    ],
+    "count": 12
+  },
+  {"key": "shower", "tags": [{"value": "no", "count": 12}], "count": 12},
+  {"key": "bus", "tags": [{"value": "yes", "count": 11}], "count": 11},
+  {
+    "key": "drinking_water",
+    "tags": [{"value": "yes", "count": 6}, {"value": "no", "count": 4}],
+    "count": 10
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Gare de Vions - Chanaz", "count": 2},
+      {"value": "it:Bivacco della Brenva", "count": 1},
+      {"value": "it:Bivacco Ettore Canzio", "count": 1},
+      {"value": "it:Bivacco Corrado Alberico - Luigi Borgna", "count": 1},
+      {"value": "it:Rifugio Eugenio Ferreri", "count": 1},
+      {"value": "it:Bivacco Soardi - Fassero", "count": 1},
+      {"value": "en:Vallot Hut", "count": 1},
+      {"value": "it:Rifugio Santa Maria", "count": 1},
+      {"value": "it:Bivacco Adolfo Hess", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 9}, {"value": "2 €", "count": 1}],
+    "count": 10
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "bus_stop", "count": 6},
+      {"value": "unclassified", "count": 1},
+      {"value": "platform", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "locked", "tags": [{"value": "no", "count": 8}], "count": 8},
+  {
+    "key": "mattress",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "1", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "reservation", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "wildlife_hide",
+    "tags": [{"value": "birds", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "File:Abri de la gare de Saint-Georges-de-Commiers.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Villa_Monderoux_(8).JPG",
+        "count": 1
+      },
+      {
+        "value": "File:Gare de Clelles abri voyageurs quai sud 2014-07-05.jpg",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "local_ref", "tags": [{"value": "114", "count": 3}], "count": 3},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "uic_ref",
+    "tags": [
+      {"value": "8501566", "count": 1},
+      {"value": "8772229", "count": 1},
+      {"value": "8772141", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "railway", "tags": [{"value": "halt", "count": 3}], "count": 3},
+  {"key": "leisure", "tags": [{"value": "bird_hide", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.promo-grimpe.com/html/gazon.htm", "count": 1},
+      {
+        "value": "http://archives.grenoble-montagne.com/modules/smartsection3/item.php?itemid=98",
+        "count": 1
+      },
+      {
+        "value": "http://www.clubalpinoaccademico.it/?attachment_id=601",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "tiles_oven", "count": 1},
+      {"value": "lavoir", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "ref:station", "tags": [{"value": "9", "count": 2}], "count": 2},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "time_tables:TAG",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "time_tables:Transisère",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "je ne sais pas de quel coté du refuge il est", "count": 1},
+      {"value": "resurvey", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "map_size", "tags": [{"value": "city", "count": 1}], "count": 1},
+  {"key": "private", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "map", "count": 1}], "count": 1},
+  {"key": "map_type", "tags": [{"value": "scheme", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "date", "tags": [{"value": "1873", "count": 1}], "count": 1},
+  {"key": "water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:E",
+    "tags": [{"value": "WI4_RMPfDcKBayL9T7VeYA", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary:N",
+    "tags": [{"value": "RRCiMdDLxx1O7ZvA3E9UJw", "count": 1}],
+    "count": 1
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "bridge", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [{"value": "Entretenu par la commune de Chapareillan", "count": 1}],
+    "count": 1
+  },
+  {"key": "material", "tags": [{"value": "stone", "count": 1}], "count": 1},
+  {
+    "key": "advertising",
+    "tags": [{"value": "poster_box", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "oven", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "abandoned:railway",
+    "tags": [{"value": "station", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "9SesmzYtc6FFi5qYrEd-mQ", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "water_supply", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "isolation", "tags": [{"value": "very_bad", "count": 1}], "count": 1},
+  {"key": "condition", "tags": [{"value": "good", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "hunt", "count": 1}], "count": 1},
+  {"key": "build", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

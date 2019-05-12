@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "cafe", "count": 7}], "count": 7},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-10", "count": 1},
+      {"value": "2017-07-27", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "old_shop", "tags": [{"value": "photo", "count": 1}], "count": 1},
+  {"key": "created_by", "tags": [{"value": "iLOE 1.9", "count": 1}], "count": 1}
+]

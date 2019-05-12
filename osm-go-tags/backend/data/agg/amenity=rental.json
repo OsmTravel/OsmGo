@@ -1,0 +1,7 @@
+[
+  {"key": "amenity", "tags": [{"value": "rental", "count": 3}], "count": 3},
+  {"key": "shop", "tags": [{"value": "rental", "count": 2}], "count": 2},
+  {"key": "rental", "tags": [{"value": "ski", "count": 1}], "count": 1},
+  {"key": "ski", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "snowshoe", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

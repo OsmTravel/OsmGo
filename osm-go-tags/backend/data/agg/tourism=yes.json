@@ -1,0 +1,288 @@
+[
+  {"key": "tourism", "tags": [{"value": "yes", "count": 34}], "count": 34},
+  {
+    "key": "natural",
+    "tags": [
+      {"value": "tree", "count": 12},
+      {"value": "rock", "count": 1},
+      {"value": "cliff", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "leaf_type",
+    "tags": [
+      {"value": "broadleaved", "count": 10},
+      {"value": "needleleaved", "count": 2}
+    ],
+    "count": 12
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "~C16", "count": 6},
+      {"value": "~C17", "count": 1},
+      {"value": "~1390", "count": 1},
+      {"value": "1601", "count": 1},
+      {"value": "C11", "count": 1}
+    ],
+    "count": 10
+  },
+  {"key": "genus", "tags": [{"value": "Tilia", "count": 9}], "count": 9},
+  {"key": "genus:fr", "tags": [{"value": "Tilleul", "count": 9}], "count": 9},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "place_of_worship", "count": 3},
+      {"value": "pub", "count": 1},
+      {"value": "bicycle_rental;boat_rental", "count": 1},
+      {"value": "lavoir", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Sapin de taille immense (5m de cironférence de tronc) dont l'âge est éstimé à plus de 400 ans",
+        "count": 1
+      },
+      {
+        "value": "Sapin de taille immense (5m de cironférence de tronc) dont l'âge est estimé à plus de 400 ans",
+        "count": 1
+      },
+      {
+        "value": "Label \"Arbre remarquable de France\" par l'association A.R.B.R.E.S",
+        "count": 1
+      },
+      {"value": "Aire Camping-Cars", "count": 1},
+      {
+        "value": "Ancien moulin ruiné avec trois meules bien visibles",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2968658", "count": 1},
+      {"value": "Q3162380", "count": 1},
+      {"value": "Q3580698", "count": 1},
+      {"value": "Q3583571", "count": 1},
+      {"value": "Q22967159", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cheminferhautforez.com/", "count": 1},
+      {"value": "http://www.eyrieuxsport.fr/", "count": 1},
+      {
+        "value": "http://www.mnhn.fr/fr/visitez/lieux/jardin-alpin-jaysinia",
+        "count": 1
+      },
+      {"value": "http://www.atteleesduvalday.fr/", "count": 1},
+      {"value": "https://www.latrace.net/", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Château de Bressieux", "count": 1},
+      {"value": "fr:Jardin botanique alpin La Jaÿsinia", "count": 1},
+      {"value": "fr:Église Notre-Dame de Veyrines", "count": 1},
+      {"value": "fr:Église Saint-Pierre-aux-Liens de Quintenas", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117129", "count": 1},
+      {"value": "PA00116807", "count": 1},
+      {"value": "PA00116752", "count": 1},
+      {"value": "PA00117429", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 50 82 03", "count": 1},
+      {"value": "+33 4 50 34 49 86", "count": 1},
+      {"value": "+33 4 75 33 15 04", "count": 1},
+      {"value": "+33 4 76 64 73 45", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 3}, {"value": "3", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "circumference",
+    "tags": [
+      {"value": "5.6", "count": 1},
+      {"value": "10.2", "count": 1},
+      {"value": "9.2", "count": 1},
+      {"value": "6.9", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1904-08-16", "count": 1},
+      {"value": "1939", "count": 1},
+      {"value": "1910-03-21", "count": 1},
+      {"value": "1987-11-03", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "yes", "count": 1},
+      {"value": "garden", "count": 1},
+      {"value": "summer_camp", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "denotation",
+    "tags": [
+      {"value": "natural_monument", "count": 2},
+      {"value": "Arbre âgé de 300 ans", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "species:fr",
+    "tags": [
+      {"value": "Sapin pectiné", "count": 2},
+      {"value": "Mûrier blanc", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "species",
+    "tags": [
+      {"value": "Abies alba", "count": 2},
+      {"value": "Morus alba", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Website invalide (http://www.visitez.leschopesdumoulin.com/)",
+        "count": 1
+      },
+      {
+        "value": "Label \"Arbre remarquable de France\" par l'association A.R.B.R.E.S",
+        "count": 1
+      },
+      {"value": "Le jardin est fermé en période de chute de neige", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 3}], "count": 3},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Chemin de Fer du Haut-Forez", "count": 1},
+      {"value": "La Trace (association)", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "bicycle;canoe", "count": 1},
+      {"value": "equestrian", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "historic",
+    "tags": [{"value": "ruins", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 2}],
+    "count": 2
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "unclassified", "count": 1},
+      {"value": "path", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "bicycle_rental", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "canoe_rental", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "20 m", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "jardin.botanique.jaysinia@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "railway", "tags": [{"value": "station", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "alcohol", "count": 1}], "count": 1},
+  {
+    "key": "trail_visibility",
+    "tags": [{"value": "intermediate", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "water", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Bonson-20110209-Chapelle Notre-Dame.jpg", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "1020", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "lanes", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "historic:civilization",
+    "tags": [{"value": "medieval", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Les tags sont à revoir : c'est une ferme mais aussi un camping et chambre d'hôte. À défaut de mieux, j'ai mis \"tourism=yes\"",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "maxweight", "tags": [{"value": "10", "count": 1}], "count": 1},
+  {"key": "ruins", "tags": [{"value": "castle", "count": 1}], "count": 1}
+]

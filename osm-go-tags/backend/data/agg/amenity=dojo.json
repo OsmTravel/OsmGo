@@ -1,0 +1,49 @@
+[
+  {"key": "amenity", "tags": [{"value": "dojo", "count": 81}], "count": 81},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "judo", "count": 5},
+      {"value": "multi", "count": 2},
+      {"value": "karate;aikido;tai-chi-chuan;qi-gong", "count": 1},
+      {"value": "aikido;iaido;judo;jodo", "count": 1},
+      {"value": "aikido;jodo;iaido", "count": 1},
+      {"value": "karate", "count": 1},
+      {"value": "gymnastics", "count": 1},
+      {"value": "judo;karate;aïkido", "count": 1},
+      {"value": "fencing;table_tennis;tennis", "count": 1}
+    ],
+    "count": 14
+  },
+  {"key": "surface", "tags": [{"value": "concrete", "count": 3}], "count": 3},
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "sports_centre", "count": 1},
+      {"value": "pitch", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://dojobushido42.free.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "health_specialty:yoga",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "floor", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://omss42.fr/index.php?option=com_zoo&task=item&item_id=147&Itemid=835",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

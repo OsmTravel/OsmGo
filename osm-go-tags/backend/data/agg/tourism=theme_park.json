@@ -1,0 +1,120 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "theme_park", "count": 30}],
+    "count": 30
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/La-For%C3%AAt-d%C3%89meraude-Parc-Acrobatique-Forestier-1100389116641828/",
+        "count": 1
+      },
+      {"value": "http://www.les-acrobois.com", "count": 1},
+      {"value": "http://www.islacooldouce.fr", "count": 1},
+      {"value": "http://www.maxaventure.fr/", "count": 1},
+      {"value": "http://lyon-bron.metropolis-bowling-laser.com/", "count": 1},
+      {"value": "http://www.astroval-observatoire.fr", "count": 1},
+      {"value": "http://www.accroforest.com", "count": 1},
+      {"value": "https://www.vanciaventure.com/", "count": 1},
+      {"value": "http://www.lafermeauxcrocodiles.com/", "count": 1},
+      {"value": "http://www.salva-terra.com", "count": 1},
+      {"value": "paintball-42.com", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 79 87 67 31", "count": 1},
+      {"value": "+33 4 72 25 58 83", "count": 1},
+      {"value": "+33 4 72749228", "count": 1},
+      {"value": "+33 4 38869194", "count": 1},
+      {"value": "+33 6 19 13 69 38", "count": 1},
+      {"value": "+33 6 58934876", "count": 1},
+      {"value": "+33474703192", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Potager en 88 carrés cultivé en bio, 88 square garden",
+        "count": 1
+      },
+      {"value": "Aussi billard, jeux d'arcades, bar.", "count": 1},
+      {"value": "Acrrobranche;Laser Game", "count": 1},
+      {
+        "value": "Les horaires enregistrés sont généraux : pour les vacances scolaires, jours fériés et mois de mars & novembre voir le site web",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "water_park", "count": 2},
+      {"value": "park", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Mairie de Saint-Pierre-de-Chartreuse", "count": 1},
+      {"value": "SARL VanciAventure", "count": 1},
+      {"value": "rfdf", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Observatoire astronomique de la Lèbe", "count": 1},
+      {"value": "fr:La Ferme aux crocodiles", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q18537962", "count": 1},
+      {"value": "Q2262801", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "climbing_adventure", "count": 1},
+      {"value": "paintball", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "video_games", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "880", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "38022A200T", "count": 1}],
+    "count": 1
+  },
+  {"key": "hazard", "tags": [{"value": "crocodile", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@salva-terra.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Salva-Terra-268251489222/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

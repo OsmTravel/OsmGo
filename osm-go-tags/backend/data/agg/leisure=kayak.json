@@ -1,0 +1,13 @@
+[
+  {"key": "leisure", "tags": [{"value": "kayak", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 79 21 03 77", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.aquattitude.com/contact.html", "count": 1}],
+    "count": 1
+  }
+]

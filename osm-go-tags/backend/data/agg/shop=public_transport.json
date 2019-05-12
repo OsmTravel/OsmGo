@@ -1,0 +1,35 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "public_transport", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Réseau Mistral", "count": 1},
+      {"value": "Bibus", "count": 1},
+      {"value": "Beauvaisis Mobilités", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 94 03 87 03", "count": 1},
+      {"value": "+33 2 98 80 30 30", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url:public_trasport-tickets",
+    "tags": [{"value": "http://www.bibus.fr/1/213.aspx", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.bibus.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

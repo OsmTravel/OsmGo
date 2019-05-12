@@ -1,0 +1,10 @@
+[
+  {"key": "amenity", "tags": [{"value": "biergarten", "count": 9}], "count": 9},
+  {"key": "cuisine", "tags": [{"value": "german", "count": 1}], "count": 1},
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1}
+]

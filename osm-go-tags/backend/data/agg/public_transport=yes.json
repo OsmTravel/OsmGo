@@ -1,0 +1,16 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "ferry_terminal", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "373", "count": 1}], "count": 1},
+  {"key": "ferry", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "CGN", "count": 1}], "count": 1},
+  {
+    "key": "public_transport",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "uic_ref", "tags": [{"value": "8501232", "count": 1}], "count": 1}
+]

@@ -1,0 +1,233 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "monitoring_station", "count": 52}],
+    "count": 52
+  },
+  {
+    "key": "monitoring:weather",
+    "tags": [{"value": "yes", "count": 21}],
+    "count": 21
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Réseau FRIPON", "count": 3},
+      {"value": "Air Rhône-Alpes", "count": 2},
+      {"value": "EDF", "count": 2},
+      {"value": "Meteo France", "count": 2},
+      {"value": "Météo-France", "count": 1},
+      {"value": "Météo France", "count": 1},
+      {"value": "EDF EN France", "count": 1},
+      {"value": "EvK2Cnr", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "air-rhonealpes.fr", "count": 4},
+      {"value": "https://www.fripon.org", "count": 3},
+      {
+        "value": "http://www.meteofrance.com/previsions-meteo-montagne/alpes-du-nord/",
+        "count": 1
+      },
+      {
+        "value": "http://www.air-rhonealpes.fr/fiche-station/grenoble-grands-boulevards",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "monitoring:air_quality",
+    "tags": [{"value": "yes", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "display",
+    "tags": [{"value": "no", "count": 6}, {"value": "digital", "count": 2}],
+    "count": 8
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "15046", "count": 1},
+      {"value": "FRRA10", "count": 1},
+      {"value": "FRRA09", "count": 1},
+      {"value": "FRRA07", "count": 1},
+      {"value": "Chambéry Pasteur", "count": 1},
+      {"value": "Chambéry Trafic", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "recording:automated",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "4750", "count": 1},
+      {"value": "214", "count": 1},
+      {"value": "309", "count": 1},
+      {"value": "908", "count": 1},
+      {"value": "1895", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "recording",
+    "tags": [{"value": "yes", "count": 4}, {"value": "remote", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "monitoring:water_level",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Caméra du réseau de surveillance d'activité météoritique FRIPON",
+        "count": 3
+      },
+      {"value": "Station météo", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Perhaps not very accurate position?", "count": 1},
+      {
+        "value": "https://oscar.wmo.int/surface/index.html#/search/station/stationReportDetails/2522",
+        "count": 1
+      },
+      {"value": "thermomètre, anémomètre, pluviomètre.", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "weather:radar", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://www.fripon.org/IMG/jpg/stations/RT_FRRA10.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.fripon.org/IMG/jpg/stations/RT_FRRA09.jpg",
+        "count": 1
+      },
+      {
+        "value": "http://www.fripon.org/IMG/jpg/stations/RT_FRRA07.jpg",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "monitoring:meteoric_activity",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "wikidata", "tags": [{"value": "Q21427321", "count": 3}], "count": 3},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:FRIPON", "count": 3}],
+    "count": 3
+  },
+  {"key": "start_date", "tags": [{"value": "2016", "count": 2}], "count": 2},
+  {"key": "visibility", "tags": [{"value": "street", "count": 2}], "count": 2},
+  {
+    "key": "monitoring:bicycle",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 2}], "count": 2},
+  {
+    "key": "recording:remote",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "date", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "amenity", "tags": [{"value": "clock", "count": 2}], "count": 2},
+  {"key": "support", "tags": [{"value": "pole", "count": 2}], "count": 2},
+  {
+    "key": "ref:wmo",
+    "tags": [{"value": "07569", "count": 1}, {"value": "07381", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "weather:wind_vane",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "thermometer", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "weather:anemometer",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:precipitation:rain",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:particulate_matter",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "Nivôse", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "tower", "count": 1}], "count": 1},
+  {
+    "key": "display:digital",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:wind",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:water_level:zero",
+    "tags": [{"value": "153", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recording:manually",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:water_quality",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:temperature",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "ref:wigos",
+    "tags": [{"value": "0-20000-0-07468", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:groundwater",
+    "tags": [{"value": "level", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "monitoring:meteorology",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

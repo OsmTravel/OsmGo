@@ -1,0 +1,13 @@
+[
+  {"key": "rental", "tags": [{"value": "motorboat", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "motorboat_rental", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.leboat.com", "count": 1}],
+    "count": 1
+  }
+]

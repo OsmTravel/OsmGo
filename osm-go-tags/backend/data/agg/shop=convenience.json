@@ -1,0 +1,978 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "convenience", "count": 1357}],
+    "count": 1357
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Casino", "count": 109},
+      {"value": "Vival", "count": 35},
+      {"value": "Total", "count": 28},
+      {"value": "Spar", "count": 23},
+      {"value": "Proxi", "count": 22},
+      {"value": "Carrefour", "count": 19},
+      {"value": "Sherpa", "count": 19},
+      {"value": "Système U", "count": 12},
+      {"value": "Shell", "count": 8},
+      {"value": "BP", "count": 8},
+      {"value": "Cocci Market", "count": 7},
+      {"value": "Agip", "count": 6},
+      {"value": "Franprix", "count": 6},
+      {"value": "8 à Huit", "count": 6},
+      {"value": "L'Eau Vive", "count": 6},
+      {"value": "Leader Price", "count": 4},
+      {"value": "La Poste", "count": 3},
+      {"value": "La Vie Claire", "count": 2},
+      {"value": "Petit Casino", "count": 2},
+      {"value": "Avia", "count": 2},
+      {"value": "Elan", "count": 2},
+      {"value": "AGIP", "count": 2},
+      {"value": "Groupement des Mousquetaires", "count": 2},
+      {"value": "Mon sac en vrac", "count": 1},
+      {"value": "Aviva", "count": 1},
+      {"value": "Auchan", "count": 1},
+      {"value": "Julo", "count": 1},
+      {"value": "Fromagerie", "count": 1},
+      {"value": "Florene GRANGE", "count": 1},
+      {"value": "Epicerie Fine", "count": 1},
+      {"value": "Shopi", "count": 1},
+      {"value": "U", "count": 1},
+      {"value": "Garage Vicard", "count": 1},
+      {"value": "AVIA", "count": 1},
+      {"value": "Mickael Meneghini", "count": 1},
+      {"value": "Esso", "count": 1},
+      {"value": "Biocoop", "count": 1},
+      {"value": "Zeeman", "count": 1},
+      {"value": "Coccimarket", "count": 1},
+      {"value": "SCOP La Bonne Pioche", "count": 1},
+      {"value": "Biomonde", "count": 1},
+      {"value": "Casino France", "count": 1},
+      {"value": "Didier Lhopital", "count": 1},
+      {"value": "Couleur Café", "count": 1},
+      {"value": "Proxy", "count": 1},
+      {"value": "SARL Karedemir", "count": 1},
+      {"value": "Systeme U", "count": 1},
+      {"value": "Satoriz", "count": 1},
+      {"value": "Garage Salva", "count": 1},
+      {"value": "Cerise et Potiron", "count": 1},
+      {"value": "Socar", "count": 1},
+      {"value": "Total Market", "count": 1},
+      {"value": "Jean-Yves Wiart", "count": 1},
+      {"value": "Paolo Giiordano", "count": 1},
+      {"value": "Thiriet", "count": 1},
+      {"value": "Maison et Chocolat", "count": 1}
+    ],
+    "count": 366
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fuel", "count": 125},
+      {"value": "restaurant", "count": 4},
+      {"value": "bar", "count": 3},
+      {"value": "fast_food", "count": 3},
+      {"value": "post_office", "count": 2},
+      {"value": "post_box", "count": 1}
+    ],
+    "count": 138
+  },
+  {
+    "key": "fuel:diesel",
+    "tags": [{"value": "yes", "count": 123}],
+    "count": 123
+  },
+  {
+    "key": "ref:FR:prix-carburants",
+    "tags": [
+      {"value": "38080006", "count": 2},
+      {"value": "1430003", "count": 1},
+      {"value": "26620001", "count": 1},
+      {"value": "73140007", "count": 1},
+      {"value": "42650001", "count": 1},
+      {"value": "69800012", "count": 1},
+      {"value": "73540003", "count": 1},
+      {"value": "1430005", "count": 1},
+      {"value": "69220007", "count": 1},
+      {"value": "69220010", "count": 1},
+      {"value": "42390001", "count": 1},
+      {"value": "74600010", "count": 1},
+      {"value": "42440008", "count": 1},
+      {"value": "26270005", "count": 1},
+      {"value": "69800013", "count": 1},
+      {"value": "42440006", "count": 1},
+      {"value": "26730005", "count": 1},
+      {"value": "38330004", "count": 1},
+      {"value": "73182002", "count": 1},
+      {"value": "69360011", "count": 1},
+      {"value": "74130004", "count": 1},
+      {"value": "26300003", "count": 1},
+      {"value": "69400004", "count": 1},
+      {"value": "26730006", "count": 1},
+      {"value": "38190004", "count": 1},
+      {"value": "38970000", "count": 1},
+      {"value": "69100022", "count": 1},
+      {"value": "74440002", "count": 1},
+      {"value": "73390008", "count": 1},
+      {"value": "38660001", "count": 1},
+      {"value": "73300002", "count": 1},
+      {"value": "38250001", "count": 1},
+      {"value": "69380009", "count": 1},
+      {"value": "38260003", "count": 1},
+      {"value": "38210001", "count": 1},
+      {"value": "1120008", "count": 1},
+      {"value": "74250001", "count": 1},
+      {"value": "1120007", "count": 1},
+      {"value": "69220003", "count": 1},
+      {"value": "42680001", "count": 1},
+      {"value": "69730001", "count": 1},
+      {"value": "74350003", "count": 1},
+      {"value": "69380010", "count": 1},
+      {"value": "69170004", "count": 1},
+      {"value": "73500002", "count": 1},
+      {"value": "69651001", "count": 1},
+      {"value": "1210002", "count": 1},
+      {"value": "1390008", "count": 1},
+      {"value": "42300003", "count": 1},
+      {"value": "69720004", "count": 1},
+      {"value": "73600006", "count": 1},
+      {"value": "69270004", "count": 1},
+      {"value": "42510004", "count": 1},
+      {"value": "38260004", "count": 1},
+      {"value": "42140001", "count": 1},
+      {"value": "1340005", "count": 1},
+      {"value": "74450001", "count": 1},
+      {"value": "74800001", "count": 1},
+      {"value": "74570006", "count": 1},
+      {"value": "42220001", "count": 1},
+      {"value": "74130013", "count": 1},
+      {"value": "38380002", "count": 1},
+      {"value": "42470001", "count": 1},
+      {"value": "1100006", "count": 1},
+      {"value": "69850001", "count": 1},
+      {"value": "73100003", "count": 1},
+      {"value": "69360016", "count": 1},
+      {"value": "69360010", "count": 1},
+      {"value": "69960005", "count": 1},
+      {"value": "69320003", "count": 1},
+      {"value": "1250005", "count": 1},
+      {"value": "38080005", "count": 1},
+      {"value": "1250002", "count": 1},
+      {"value": "26800002", "count": 1},
+      {"value": "26780002", "count": 1},
+      {"value": "26780004", "count": 1},
+      {"value": "73290004", "count": 1},
+      {"value": "42370004", "count": 1},
+      {"value": "42120004", "count": 1},
+      {"value": "69650001", "count": 1},
+      {"value": "74320005", "count": 1},
+      {"value": "26600013", "count": 1},
+      {"value": "26600011", "count": 1},
+      {"value": "38760003", "count": 1},
+      {"value": "1500003", "count": 1},
+      {"value": "38850002", "count": 1},
+      {"value": "69340003", "count": 1},
+      {"value": "74700004", "count": 1},
+      {"value": "74300010", "count": 1},
+      {"value": "69700011", "count": 1},
+      {"value": "69320007", "count": 1},
+      {"value": "38260002", "count": 1},
+      {"value": "74200005", "count": 1},
+      {"value": "26140002", "count": 1},
+      {"value": "1390009", "count": 1},
+      {"value": "38340010", "count": 1},
+      {"value": "69360012", "count": 1},
+      {"value": "69360013", "count": 1},
+      {"value": "38340011", "count": 1},
+      {"value": "69800016", "count": 1},
+      {"value": "69680002", "count": 1},
+      {"value": "7300006", "count": 1},
+      {"value": "74300008", "count": 1},
+      {"value": "1500006", "count": 1},
+      {"value": "69210003", "count": 1},
+      {"value": "73202001", "count": 1},
+      {"value": "69550002", "count": 1},
+      {"value": "42600004", "count": 1},
+      {"value": "73800001", "count": 1},
+      {"value": "73190002", "count": 1},
+      {"value": "73420005", "count": 1},
+      {"value": "38480007", "count": 1},
+      {"value": "38480005", "count": 1},
+      {"value": "73390007", "count": 1},
+      {"value": "38530003", "count": 1},
+      {"value": "42600008", "count": 1},
+      {"value": "42600005", "count": 1},
+      {"value": "74520002", "count": 1},
+      {"value": "26140005", "count": 1},
+      {"value": "74520008", "count": 1},
+      {"value": "73100012", "count": 1}
+    ],
+    "count": 122
+  },
+  {
+    "key": "compressed_air",
+    "tags": [{"value": "yes", "count": 110}],
+    "count": 110
+  },
+  {
+    "key": "organic",
+    "tags": [{"value": "only", "count": 73}, {"value": "yes", "count": 29}],
+    "count": 102
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.casino-proximite.fr/Vival", "count": 1},
+      {"value": "http://daybyday-shop.com/magasin/grenoble", "count": 1},
+      {"value": "http://www.lavieclaire.com/magasin-bio/bron.html", "count": 1},
+      {"value": "http://episol.fr", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-vendome.html",
+        "count": 1
+      },
+      {"value": "https://lelefan.org/", "count": 1},
+      {"value": "http://www.lebiocal.fr", "count": 1},
+      {"value": "http://www.lamarmitedesadrets.fr/", "count": 1},
+      {"value": "http://www.harmonie-bio.fr/", "count": 1},
+      {
+        "value": "http://www.carrefour.fr/magasin/city-la-talaudiere",
+        "count": 1
+      },
+      {"value": "http://www.carrefour.fr/magasin/city-thones", "count": 1},
+      {"value": "https://www.franprix.fr/magasins/lyon_m6828", "count": 1},
+      {"value": "https://fr-fr.facebook.com/paniersympaBourdeaux/", "count": 1},
+      {"value": "http://www.epiceriepop.com/", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-vaise.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.vival.fr/rhone-alpes-magasin-vival-rhone-69/commerce-venissieux-69200groupe-casino/magasin-e0958.html",
+        "count": 1
+      },
+      {"value": "http://www.delautrecotedelarue.net/", "count": 1},
+      {
+        "value": "www.casino-proximite.fr/Vival/Pages/Implantation.aspx",
+        "count": 1
+      },
+      {
+        "value": "http://annuaire.casino-proximite.fr/petit-casino/commerce-petit-casino-st-donat-sur-l-herbasse-franchise-st-donat-sur-l-herbasse-groupe-casino/magasin-11.html",
+        "count": 1
+      },
+      {"value": "http://www.huitahuit.com", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-lafayette.html",
+        "count": 1
+      },
+      {"value": "http://epicerie.locavore.fr/", "count": 1},
+      {
+        "value": "https://www.casinoshop.fr/rhone-alpes-magasin-casino-shop-rhone-69/commerce-lyon-69001groupe-casino/magasin-c4288.html",
+        "count": 1
+      },
+      {"value": "http://www.carrefour.fr/", "count": 1},
+      {
+        "value": "http://www.casino-proximite.fr/leader-price-express/50-54-cours-romestang-vienne/magasin-e7059.html",
+        "count": 1
+      },
+      {"value": "http://www.zeeman.com/home.aspx?lang=fr-FR", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/La-Petite-Italie_2259.asp",
+        "count": 1
+      },
+      {"value": "http://grenoble-lafontaine.eau-vive.com/", "count": 1},
+      {"value": "http://www.eau-vive.com/nos-magasins__lyon3.html", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-point-du-jour.html",
+        "count": 1
+      },
+      {"value": "http://biomonde42.fr", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/Autour-des-Saveurs-Bio_2076.asp",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-rockfeller.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.casino-proximite.fr/petit-casino/1-avenue-gambetta-st-cyr-au-mont-d-or/magasin-c4206.html",
+        "count": 1
+      },
+      {
+        "value": "http://annuaire.casino-proximite.fr/vival/commerce-vival-vienne-franchise-vienne-groupe-casino/magasin-4553.html",
+        "count": 1
+      },
+      {"value": "http://www.artisansdumonde.org/", "count": 1},
+      {"value": "http://www.sherpa.net/", "count": 1},
+      {"value": "https://www.epicerie-arax.com/", "count": 1},
+      {"value": "https://www.meli-melo-longes.com/", "count": 1},
+      {"value": "http://ferme-la.e-monsite.com", "count": 1},
+      {"value": "http://www.caroppi.com/", "count": 1},
+      {"value": "http://www.maisondolive.fr/", "count": 1},
+      {
+        "value": "http://biocoop.fr/magasins-bio/Trouver-mon-magasin-Biocoop/Auvergne-Rhone-Alpes/Loire/BIOCOOP-LES-ARCADES",
+        "count": 1
+      },
+      {"value": "https://www.franprix.fr/magasins/lyon_m8613", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-gerland.html",
+        "count": 1
+      },
+      {"value": "http://unmondevegan.fr/", "count": 1},
+      {"value": "http://www.lepisanpriot.fr/", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/oullins.html",
+        "count": 1
+      },
+      {"value": "https://alasource-lyon.com/", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/bron-centre.html",
+        "count": 1
+      },
+      {"value": "http://www.aqui-portugal.net/", "count": 1},
+      {
+        "value": "http://www.sherpa.net/trouver-un-magasin/votre-magasin-sherpa/?id_store",
+        "count": 1
+      },
+      {
+        "value": "http://www.casino-proximite.fr/casino-shop/21-rue-madier-de-montjau-21-rue-madier-de-montjau-valence/magasin-c9676.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.casino-proximite.fr/casino-shop/13-rue-de-brest-lyon/magasin-tz011.html",
+        "count": 1
+      },
+      {"value": "http://www.hallebiotaintournon.fr/", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-gentil.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-saxe.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-croix-rousse.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/villeurbanne.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/decines-charpieu.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/ecully.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/champagne-au-mont-dor.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/brignais.html",
+        "count": 1
+      },
+      {"value": "http://www.grain-grenier.fr/", "count": 1},
+      {"value": "www.aupluspre.fr", "count": 1},
+      {
+        "value": "http://www.franprix.fr/lyon/16-rue-felix-jacquier/69006/6879/",
+        "count": 1
+      },
+      {
+        "value": "http://www.franprix.fr/lyon/30-av-du-marechal-foch/69006/5559/",
+        "count": 1
+      },
+      {
+        "value": "http://www.sherpa.net/trouver-un-magasin/votre-magasin-sherpa/73-savoie/val-cenis-lanslevillard/89",
+        "count": 1
+      },
+      {"value": "http://laressource.fr/", "count": 1},
+      {
+        "value": "http://www.lacroissanterie.fr/trouver-restaurant/store/156/RELAIS%20TOTAL%20PIERRE%20BENITE",
+        "count": 1
+      },
+      {"value": "http://www.bulko-lyon.com/", "count": 1},
+      {
+        "value": "https://www.vival.fr/rhone-alpes-magasin-vival-rhone-69/commerce-villeurbanne-69100groupe-casino/magasin-e0771.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.carrefour.fr/magasin/city-lyon-duquesne",
+        "count": 1
+      },
+      {"value": "http://lelocal-epicerie.fr/", "count": 1},
+      {"value": "http://www.carandache.ch", "count": 1},
+      {"value": "https://cuisineitinerante.com", "count": 1},
+      {
+        "value": "http://www.lavieclaire.com/magasin-bio/lyon-andre-philip.html",
+        "count": 1
+      },
+      {"value": "http://www.mangiabuono.fr", "count": 1},
+      {"value": "http://www.cattin-freres.fr", "count": 1},
+      {"value": "https://merebrazier-epicerie.com/", "count": 1},
+      {"value": "http://auptitbocal.fr/", "count": 1},
+      {"value": "https://www.gaiachablais.com", "count": 1},
+      {"value": "http://www.o-lusitano69.com/", "count": 1},
+      {"value": "http://crocbauges.canalblog.com/", "count": 1},
+      {"value": "https://alpar.fr/", "count": 1},
+      {"value": "http://daybyday-shop.com/magasin/annecy", "count": 1},
+      {"value": "http://www.bionacelle.fr/", "count": 1},
+      {"value": "http://daybyday-shop.com/magasin/valence", "count": 1},
+      {"value": "https://epicerieetcie.com", "count": 1},
+      {"value": "http://daybyday-shop.com/magasin/lyon", "count": 1},
+      {
+        "value": "http://www.carrefour.fr/magasin/express-saint-priest",
+        "count": 1
+      },
+      {"value": "http://oclico.com/", "count": 1},
+      {"value": "http://rignat.unblog.fr/", "count": 1},
+      {"value": "http://www.lahaltedumoulin.com/", "count": 1},
+      {"value": "https://lebocalenvrac.fr/", "count": 1},
+      {"value": "http://courtcircuit.org/", "count": 1},
+      {"value": "http://www.aubergelechaudron.com", "count": 1}
+    ],
+    "count": 97
+  },
+  {"key": "hgv:lanes", "tags": [{"value": "yes", "count": 96}], "count": 96},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33478486223", "count": 1},
+      {"value": "+33 4 72 12 10 59", "count": 1},
+      {"value": "+33 4 78 54 61 09", "count": 1},
+      {"value": "+33476539502", "count": 1},
+      {"value": "+33 4 78 24 02 37", "count": 1},
+      {"value": "+33 7 83 66 34 03", "count": 1},
+      {"value": "+33 6 11 32 46 74", "count": 1},
+      {"value": "+33 4 50 02 85 06", "count": 1},
+      {"value": "+33 4 78 86 90 19", "count": 1},
+      {"value": "+33475969283", "count": 1},
+      {"value": "+33 4 74 30 19 29", "count": 1},
+      {"value": "+33 4 72 19 78 68", "count": 1},
+      {"value": "+33 4 72 74 26 30", "count": 1},
+      {"value": "+33 6 88 68 74 83", "count": 1},
+      {"value": "+33 4 74 85 06 88", "count": 1},
+      {"value": "+33 4 74 78 22 05", "count": 1},
+      {"value": "+33 4 37 02 23 50", "count": 1},
+      {"value": "+33 4 69 01 00 01", "count": 1},
+      {"value": "+33 4 37 02 01 39", "count": 1},
+      {"value": "+33 4 37 57 07 07", "count": 1},
+      {"value": "+33 4 78 59 78 12", "count": 1},
+      {"value": "+33 4 74 59 95 81", "count": 1},
+      {"value": "+33 4 78 00 74 66", "count": 1},
+      {"value": "+33 4 74 85 42 21", "count": 1},
+      {"value": "+33 4 74 85 60 80", "count": 1},
+      {"value": "+33 4 27 87 68 07", "count": 1},
+      {"value": "+33 4 74 56 66 80", "count": 1},
+      {"value": "+33 4 85 02 40 48", "count": 1},
+      {"value": "+33 4 50 58 13 35", "count": 1},
+      {"value": "+33 4 76 87 23 37", "count": 1},
+      {"value": "+33 4 77 24 03 27", "count": 1},
+      {"value": "+33 4 76 34 67 61", "count": 1},
+      {"value": "+33 4 72 67 00 94", "count": 1},
+      {"value": "+33 4 72 25 43 72", "count": 1},
+      {"value": "+33 4 26 00 04 97", "count": 1},
+      {"value": "+33 6 23 84 32 92", "count": 1},
+      {"value": "+33 4 76 40 98 48", "count": 1},
+      {"value": "+33 9 84 21 45 67", "count": 1},
+      {"value": "+33477319665;+33622142452", "count": 1},
+      {"value": "+33 9 54 82 91 60", "count": 1},
+      {"value": "+33 4 78 96 42 04", "count": 1},
+      {"value": "+33476942717", "count": 1},
+      {"value": "+33472482002", "count": 1},
+      {"value": "+33 4 37 41 53 42", "count": 1},
+      {"value": "+33477542015", "count": 1},
+      {"value": "+33 4 72 37 36 56", "count": 1},
+      {"value": "+33 6 37 19 06 26", "count": 1},
+      {"value": "+33 4 79253592", "count": 1},
+      {"value": "+33478190618", "count": 1},
+      {"value": "+33 4 79 63 30 15", "count": 1},
+      {"value": "+33472310085", "count": 1},
+      {"value": "+33472669762", "count": 1},
+      {"value": "+33 9 87 27 05 09", "count": 1},
+      {"value": "+33 4 74372535", "count": 1},
+      {"value": "+33 4 72360169", "count": 1},
+      {"value": "+33475715587", "count": 1},
+      {"value": "+33 4 74 31 74 92", "count": 1},
+      {"value": "+33 4 75 55 79 38", "count": 1},
+      {"value": "+33 4 72 15 70 66", "count": 1},
+      {"value": "+33 4 72 43 04 43", "count": 1},
+      {"value": "+33 4 78 69 20 93", "count": 1},
+      {"value": "+33 4 72 43 00 95", "count": 1},
+      {"value": "+33 4 72 02 03 77", "count": 1},
+      {"value": "+33 4 72 17 10 87", "count": 1},
+      {"value": "+33 4 72 09 00 60", "count": 1},
+      {"value": "+33 4 72 31 03 18", "count": 1},
+      {"value": "+33 4 72 88 40 90", "count": 1},
+      {"value": "+33475501862", "count": 1},
+      {"value": "+33 4 78281602", "count": 1},
+      {"value": "+33 4 79 20 64 06", "count": 1},
+      {"value": "+33 4 72 39 60 00", "count": 1},
+      {"value": "+33475582886", "count": 1},
+      {"value": "+33 4 37 45 11 87", "count": 1},
+      {"value": "+33 4 30 09 10 14", "count": 1},
+      {"value": "+33 4 50 37 77 41", "count": 1},
+      {"value": "+33 6 07 38 86 29", "count": 1},
+      {"value": "+41228690101", "count": 1},
+      {"value": "+33 4 75 56 66 64", "count": 1},
+      {"value": "+33 4 75 55 36 40", "count": 1},
+      {"value": "+33986716945", "count": 1},
+      {"value": "+33 4 79 63 39 41", "count": 1},
+      {"value": "+33 6 87 34 32 00", "count": 1},
+      {"value": "+33 4 72 20 05 05", "count": 1},
+      {"value": "+33 4 76 34 38 40", "count": 1},
+      {"value": "+33 4 79 34 23 52", "count": 1},
+      {"value": "+33 4 56 81 49 89;+33 6 88 01 18 18", "count": 1},
+      {"value": "+33 4 78029816", "count": 1},
+      {"value": "+33 4 78214643", "count": 1},
+      {"value": "+33 4 74 22 55 59", "count": 1},
+      {"value": "+33 4 50 84 70 89", "count": 1},
+      {"value": "+33626014454", "count": 1},
+      {"value": "+33 4 79 70 43 18", "count": 1}
+    ],
+    "count": 92
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "La Vie Claire", "count": 25},
+      {"value": "Total", "count": 16},
+      {"value": "Avia", "count": 7},
+      {"value": "BP", "count": 4},
+      {"value": "Esso", "count": 4},
+      {"value": "Petit Casino", "count": 3},
+      {"value": "Total Access", "count": 3},
+      {"value": "Vival", "count": 2},
+      {"value": "Shell", "count": 2},
+      {"value": "Franprix", "count": 2},
+      {"value": "Casino", "count": 2},
+      {"value": "Proxi", "count": 1},
+      {"value": "Auchan", "count": 1},
+      {"value": "Biomonde", "count": 1},
+      {"value": "Biocoop", "count": 1},
+      {"value": "Casino Shop", "count": 1},
+      {"value": "Dari Market", "count": 1},
+      {"value": "La Croissanterie", "count": 1},
+      {"value": "Agip", "count": 1},
+      {"value": "Carrefour City", "count": 1},
+      {"value": "Independent", "count": 1},
+      {"value": "Carrefour Market", "count": 1},
+      {"value": "Monop'daily", "count": 1},
+      {"value": "Naturalia", "count": 1},
+      {"value": "E. Leclerc", "count": 1}
+    ],
+    "count": 84
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 83}], "count": 83},
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 54},
+      {"value": "no", "count": 17},
+      {"value": "limited", "count": 6}
+    ],
+    "count": 77
+  },
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "fuel", "count": 76}],
+    "count": 76
+  },
+  {"key": "vending", "tags": [{"value": "fuel", "count": 74}], "count": 74},
+  {"key": "fuel:lpg", "tags": [{"value": "yes", "count": 55}], "count": 55},
+  {
+    "key": "is_in",
+    "tags": [
+      {"value": "A-43", "count": 4},
+      {"value": "A-72", "count": 3},
+      {"value": "A-46", "count": 3},
+      {"value": "A-7", "count": 3},
+      {"value": "A-6", "count": 3},
+      {"value": "A-40", "count": 2},
+      {"value": "A40", "count": 2},
+      {"value": "A43", "count": 2},
+      {"value": "VILLARS", "count": 1},
+      {"value": "Lus-la-Croix-Haute", "count": 1},
+      {"value": "LA-BÂTHIE", "count": 1},
+      {"value": "A-49", "count": 1},
+      {"value": "A-41", "count": 1},
+      {"value": "ST-JEAN-DE-BONNEFONDS", "count": 1},
+      {"value": "A-48", "count": 1},
+      {"value": "ALBERTVILLE", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q3213589", "count": 25},
+      {"value": "Q2529029", "count": 2},
+      {"value": "Q3337081", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:La Vie claire", "count": 25},
+      {"value": "fr:Système U", "count": 2},
+      {"value": "fr:Naturalia", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "bulk_purchase",
+    "tags": [{"value": "only", "count": 19}, {"value": "yes", "count": 3}],
+    "count": 22
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 19}], "count": 19},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "C'est un magasin qui fait bar, boulangerie et épicerie.",
+        "count": 1
+      },
+      {
+        "value": "Épicerie à la fois locavore (qui privilégie des produits issus d’une agriculture locale, dans un rayon de 200km autour de Lyon), et zéro déchet (pour réduire au maximum les emballages).",
+        "count": 1
+      },
+      {"value": "Alimentation générale", "count": 1},
+      {"value": "Fromagerie Cremerie Vente Epicerie fine", "count": 1},
+      {"value": "\"Épicerie Bio Locale et Solidaire\"", "count": 1},
+      {"value": "Rayon boucherie", "count": 1},
+      {"value": "Précédemment: \"La Poste\"", "count": 1},
+      {"value": "Produits régionaux", "count": 1},
+      {"value": "Fruits et Légumes, Vin en Vrac", "count": 1},
+      {"value": "produits exotiques", "count": 1},
+      {"value": "Re-Découvrez une alimentation locale", "count": 1},
+      {"value": "Aussi boucherie.", "count": 1},
+      {"value": "Magasin éco-responsable de produits en vrac", "count": 1},
+      {"value": "Epicerie bio", "count": 1},
+      {"value": "Produits Fermiers", "count": 1},
+      {"value": "Magasin de producteurs", "count": 1},
+      {
+        "value": "En plus de faire restaurant, gîte d'étape, et hôtel, ils proposent petite épicerie et paniers pique-nique végétariens ou non. Sur commande: brioches & pain campagnard maison le dimanche.",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "pizza", "count": 3},
+      {"value": "japanese", "count": 1},
+      {"value": "american", "count": 1},
+      {"value": "african", "count": 1},
+      {"value": "malagasy;african", "count": 1},
+      {"value": "asian", "count": 1},
+      {"value": "portuguese", "count": 1},
+      {"value": "italian", "count": 1},
+      {"value": "indian", "count": 1},
+      {"value": "rotisserie", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Autorise l'affichage d'informations locales.", "count": 1},
+      {"value": "Produits importés d'Angleterre à profusion", "count": 1},
+      {"value": "précédemment: \"Épicerie\"", "count": 1},
+      {
+        "value": "FIXME pas de GPL durant les travaux ou définitivement ?",
+        "count": 1
+      },
+      {
+        "value": "Bar-restaurant- épicerie- dépôt de pain- journaux et relais poste",
+        "count": 1
+      },
+      {
+        "value": "Vente directe de produits fermiers et produits bio",
+        "count": 1
+      },
+      {"value": "Spécialités russes et des pays de l'est", "count": 1},
+      {"value": "Fermé 2 semaines pour travaux", "count": 1},
+      {"value": "Sert aussi de presse et dépôt de pain", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 7}, {"value": "2", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "epicerie@locavore.fr", "count": 1},
+      {"value": "lemeli-melo@orange.fr", "count": 1},
+      {"value": "feclaz@sherpa.net", "count": 1},
+      {"value": "hello@mangiabuono.fr", "count": 1},
+      {"value": "lepicerieduvillage@orange.fr", "count": 1},
+      {"value": "contact@crocbauges.com", "count": 1},
+      {"value": "arbuservices74930@gmail.com", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 7}], "count": 7},
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "53482485900019", "count": 1},
+      {"value": "49185804900027", "count": 1},
+      {"value": "44297626200042", "count": 1},
+      {"value": "830 782 017 00016", "count": 1},
+      {"value": "81172643900011", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "currency:XLT",
+    "tags": [
+      {"value": "CARN", "count": 2},
+      {"value": "GONT", "count": 2},
+      {"value": "LIEN", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "brand/name=Casino Shop/Petit Casino/Casino ?", "count": 1},
+      {"value": "tag 'local' origin of products", "count": 1},
+      {
+        "value": "je n'ai pas trouvé de tag pour la vente de produits locaux",
+        "count": 1
+      },
+      {
+        "value": "basé sur les photos et les coordonnées (fausses) de leur site + description \"à l'entrée\". je soupçonne que l'on voit des parasols, alors je vais dire que c'est ce bâtiment, mais à vérifier",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref:FR:NAF",
+    "tags": [{"value": "4711B", "count": 3}, {"value": "5621Z", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "origin",
+    "tags": [
+      {"value": "asian", "count": 2},
+      {"value": "asian,chinese", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:notes",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 2}], "count": 2},
+  {
+    "key": "payment:cash:XLT-GONT",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "post_office:type",
+    "tags": [{"value": "post_partner", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:LaPoste",
+    "tags": [{"value": "07306A", "count": 1}, {"value": "04523A", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fuel:GTL_diesel",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {"value": "https://www.facebook.com/pg/RaphaelGDL", "count": 1},
+      {"value": "https://www.facebook.com/ellepreserveladrome/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ele",
+    "tags": [{"value": "1250", "count": 1}, {"value": "1000", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fuel:HGV_diesel",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:cash:XLT-CARN",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 1},
+      {"value": "Potlatch 0.10a", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "tourism", "tags": [{"value": "hotel", "count": 2}], "count": 2},
+  {"key": "indoor", "tags": [{"value": "room", "count": 2}], "count": 2},
+  {
+    "key": "payment:coins",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "drive_through", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "main", "count": 1}], "count": 1},
+  {"key": "ref", "tags": [{"value": "A1R0B2", "count": 1}], "count": 1},
+  {"key": "sells:drinks", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "change:XLT-CARN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cards", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "key_cutter", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {"value": "A ramp is available on demand (ring button)", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 9 89 21 45 67", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description:fr",
+    "tags": [{"value": "rampe d'accès disponible : sonner", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:cash:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "diet:dairy_free",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "diet:gluten_free",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "diet:lactose_free",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "diet:vegan", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {
+    "key": "diet:vegetarian",
+    "tags": [{"value": "only", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://www.sherpa.net/wp-content/themes/sherpa/images/img-logo.png",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3481967", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Sherpa (enseigne)", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop:bakery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shop:pastry", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note:fr",
+    "tags": [{"value": "Ancien bâtiment de mairie de Thil.", "count": 1}],
+    "count": 1
+  },
+  {"key": "vending:toys", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "vending:books", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:ep_moneo",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "beverage", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "hgv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "culture", "tags": [{"value": "african", "count": 1}], "count": 1},
+  {"key": "payment:dkv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:uta", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "monument", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "asian", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "opening_time", "tags": [{"value": "7/7", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "gabled", "count": 1}], "count": 1},
+  {"key": "frozen", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {"key": "rooms", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIREN",
+    "tags": [{"value": "534824859", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "wifi", "tags": [{"value": "free", "count": 1}], "count": 1},
+  {
+    "key": "owner",
+    "tags": [{"value": "Monsieur Jean Pierre FILLON", "count": 1}],
+    "count": 1
+  }
+]

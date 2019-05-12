@@ -1,0 +1,38 @@
+[
+  {"key": "shop", "tags": [{"value": "vacant", "count": 105}], "count": 105},
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 5}], "count": 5},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "This shop is vacant. Before it was a greengrocer named \"Les Petites Halles\".",
+        "count": 1
+      },
+      {"value": "Anciennement Les Rois et les Reines", "count": 1},
+      {"value": "Ancien garage Dacia", "count": 1},
+      {
+        "value": "Remplacé par un cabinet médical, mais enseigne Natur House toujours présente.",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "note:fr",
+    "tags": [{"value": "Anciennement La Gâterie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "L'élément n'existe pas ou plus", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1}
+]

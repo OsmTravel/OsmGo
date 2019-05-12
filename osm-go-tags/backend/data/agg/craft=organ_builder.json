@@ -1,0 +1,17 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "organ_builder", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 88 27 14 89", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.kernpipeorgan.com", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "animal_boarding", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "animal_boarding",
+    "tags": [
+      {"value": "cat", "count": 1},
+      {"value": "horse", "count": 1},
+      {"value": "dog", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "landuse",
+    "tags": [{"value": "farmyard", "count": 1}, {"value": "grass", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "horse_riding", "count": 1}],
+    "count": 1
+  }
+]

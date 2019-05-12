@@ -1,0 +1,18 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "salle jean-baptiste clément", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "travaux d'accessibilité des toilettes sont prévus en 2016",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

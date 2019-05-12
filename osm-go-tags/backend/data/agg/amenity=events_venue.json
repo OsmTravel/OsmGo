@@ -1,0 +1,15 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "events_venue", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.domainedebel.fr", "count": 1},
+      {"value": "http://www.leclos-talanconnais.fr/", "count": 1}
+    ],
+    "count": 2
+  }
+]

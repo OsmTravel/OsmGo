@@ -1,0 +1,41 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "dog_park", "count": 215}],
+    "count": 215
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 23}], "count": 23},
+  {
+    "key": "area",
+    "tags": [{"value": "yes", "count": 6}, {"value": "no", "count": 2}],
+    "count": 8
+  },
+  {
+    "key": "dog",
+    "tags": [{"value": "leashed", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "yes", "count": 1}, {"value": "private", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Municipalité de Villeurbanne", "count": 1},
+      {"value": "Les Annema'Chiens Citoyens", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2017-11-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "surface", "tags": [{"value": "gravel", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "supervised", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {"key": "note", "tags": [{"value": "canisite", "count": 1}], "count": 1}
+]

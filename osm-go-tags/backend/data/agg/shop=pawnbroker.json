@@ -1,0 +1,9 @@
+[
+  {"key": "shop", "tags": [{"value": "pawnbroker", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [{"value": "Boutique qui rachète de l'or", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

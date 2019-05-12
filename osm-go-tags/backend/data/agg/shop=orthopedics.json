@@ -1,0 +1,9 @@
+[
+  {"key": "shop", "tags": [{"value": "orthopedics", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.orthopedie-perier.com/", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1}
+]

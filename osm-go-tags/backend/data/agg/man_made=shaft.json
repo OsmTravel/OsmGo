@@ -1,0 +1,20 @@
+[
+  {
+    "key": "barrier",
+    "tags": [{"value": "wall", "count": 3}, {"value": "fence", "count": 1}],
+    "count": 4
+  },
+  {"key": "man_made", "tags": [{"value": "shaft", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Cheminée d'équilibrage de la centrale hydroélectique de Grand'Maison",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "EDF", "count": 1}], "count": 1},
+  {"key": "depth", "tags": [{"value": "75m", "count": 1}], "count": 1}
+]

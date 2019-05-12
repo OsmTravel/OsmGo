@@ -1,0 +1,13 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "emergency_bay", "count": 303}],
+    "count": 303
+  },
+  {"key": "maxspeed", "tags": [{"value": "70", "count": 1}], "count": 1},
+  {
+    "key": "traffic_sign",
+    "tags": [{"value": "maxspeed", "count": 1}],
+    "count": 1
+  }
+]

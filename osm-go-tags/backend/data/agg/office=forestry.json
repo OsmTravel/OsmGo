@@ -1,0 +1,22 @@
+[
+  {"key": "office", "tags": [{"value": "forestry", "count": 5}], "count": 5},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.onf.fr/", "count": 1},
+      {"value": "http://www.onf.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "office", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Office National des Forêts", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 2 41 32 67 38", "count": 1}],
+    "count": 1
+  }
+]

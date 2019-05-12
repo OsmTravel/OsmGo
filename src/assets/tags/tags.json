@@ -124,7 +124,13 @@
         "icon": "mi-airport",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["shop#travel_agency#operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "shop#travel_agency#operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "estate_agent",
@@ -134,7 +140,13 @@
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
         "deprecated": true,
-        "presets": ["shop#estate_agent#operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "shop#estate_agent#operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "insurance",
@@ -144,7 +156,13 @@
         "markerColor": "#A23337",
         "alert": "Préférez la catégorie 'Bureau'",
         "deprecated": true,
-        "presets": ["operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "jewelry",
@@ -153,7 +171,13 @@
         "icon": "mi-jewelry-store",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "butcher",
@@ -162,7 +186,14 @@
         "icon": "custom-butcher",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["butcher", "organic", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "butcher",
+          "organic",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "bakery",
@@ -171,7 +202,14 @@
         "icon": "mi-bakery",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["pastry_shop", "organic", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "pastry_shop",
+          "organic",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "art",
@@ -207,7 +245,15 @@
         "icon": "mi-hair-care",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "male", "female", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "male",
+          "female",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "confectionery",
@@ -216,7 +262,13 @@
         "icon": "fa-birthday-cake",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "florist",
@@ -225,7 +277,13 @@
         "icon": "mi-florist",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "mall",
@@ -243,7 +301,14 @@
         "icon": "mi-car-repair",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "brand", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "department_store",
@@ -270,7 +335,13 @@
         "icon": "maki-library-15",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["lottery", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "lottery",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "laundry",
@@ -279,7 +350,13 @@
         "icon": "maki-laundry-15",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["self_service", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "self_service",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "books",
@@ -288,7 +365,13 @@
         "icon": "maki-library-15",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["second_hand", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "second_hand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "organic",
@@ -307,7 +390,14 @@
         "icon": "mi-climbing",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["operator", "brand", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "operator",
+          "brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "food",
@@ -353,7 +443,13 @@
         "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["second_hand", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "second_hand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "beverages",
@@ -587,7 +683,13 @@
         "icon": "fa-newspaper-o",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["tobacco", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "tobacco",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "bed",
@@ -1305,7 +1407,14 @@
         "icon": "maki-bank-15",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["brand", "operator", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "brand",
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "bar",
@@ -1314,7 +1423,13 @@
         "icon": "maki-bar-15",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["tobacco","wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "tobacco",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "pub",
@@ -1323,7 +1438,13 @@
         "icon": "fa-beer",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["tobacco","wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "tobacco",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "library",
@@ -1548,7 +1669,13 @@
         "icon": "fa-child",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["nursery", "wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "nursery",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "deprecated": true
       },
       {
@@ -1668,9 +1795,7 @@
         "markerColor": "#1B75BB",
         "alert": "",
         "presets": ["bicycle_parking", "operator", "capacity", "covered"],
-        "default_values": [
-          {"key": "bicycle_parking", "value": "stands"}
-        ]
+        "default_values": [{"key": "bicycle_parking", "value": "stands"}]
       },
       {
         "key": "pharmacy",
@@ -1679,7 +1804,13 @@
         "icon": "mi-pharmacy",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["dispensing", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "dispensing",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "marketplace",
@@ -1703,9 +1834,7 @@
           "recycling:plastic",
           "recycling:paper"
         ],
-        "default_values": [
-          {"key": "recycling_type", "value": "container"}
-        ]
+        "default_values": [{"key": "recycling_type", "value": "container"}]
       },
       {
         "key": "police",
@@ -1741,7 +1870,13 @@
         "icon": "mi-restaurant",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["cuisine", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "fast_food",
@@ -1750,7 +1885,13 @@
         "icon": "mi-food",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["cuisine", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "gym",
@@ -1913,7 +2054,14 @@
         "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["social_facility", "social_facility:for", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "social_facility",
+          "social_facility:for",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "parking_entrance",
@@ -2048,7 +2196,7 @@
         "icon": "maki-swimming-15",
         "markerColor": "#EF9228",
         "alert": "leisure=swimming_pool",
-        "deprecated":true,
+        "deprecated": true,
         "presets": []
       },
       {
@@ -3497,7 +3645,13 @@
         "icon": "",
         "markerColor": "#F5BB3A",
         "alert": "",
-        "presets": ["religion","wheelchair", "phone", "website", "opening_hours"]
+        "presets": [
+          "religion",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
       },
       {
         "key": "research",

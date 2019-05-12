@@ -1,0 +1,134 @@
+[
+  {"key": "shop", "tags": [{"value": "chemist", "count": 71}], "count": 71},
+  {
+    "key": "dispensing",
+    "tags": [{"value": "yes", "count": 22}, {"value": "no", "count": 11}],
+    "count": 33
+  },
+  {"key": "amenity", "tags": [{"value": "pharmacy", "count": 19}], "count": 19},
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [
+      {"value": "690011234", "count": 1},
+      {"value": "420007841", "count": 1},
+      {"value": "380007187", "count": 1},
+      {"value": "420008294", "count": 1},
+      {"value": "740003462", "count": 1},
+      {"value": "690017587", "count": 1},
+      {"value": "690012166", "count": 1},
+      {"value": "690009667", "count": 1},
+      {"value": "420008195", "count": 1},
+      {"value": "420007825", "count": 1},
+      {"value": "690009550", "count": 1},
+      {"value": "420008427", "count": 1},
+      {"value": "420008393", "count": 1},
+      {"value": "070003033", "count": 1},
+      {"value": "070003066", "count": 1},
+      {"value": "730005733", "count": 1},
+      {"value": "420008161", "count": 1},
+      {"value": "380008383", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 12 41", "count": 1},
+      {"value": "+33 4 78 59 29 51", "count": 1},
+      {"value": "+33 4 78 51 09 87", "count": 1},
+      {"value": "+33 4 78 43 38 01", "count": 1},
+      {"value": "+33 4 74 53 37 33", "count": 1},
+      {"value": "+33 4 74 87 53 63", "count": 1},
+      {"value": "+33 4 78 33 59 54", "count": 1},
+      {"value": "+33 4 74 85 03 79", "count": 1},
+      {"value": "+33 4 74 20 16 88", "count": 1},
+      {"value": "+33 4 74 85 34 51", "count": 1},
+      {"value": "+33 4 90 35 02 23", "count": 1},
+      {"value": "+33 4 72 40 95 45", "count": 1},
+      {"value": "+33 4 76 29 06 79", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.marionnaud.fr/", "count": 3},
+      {"value": "https://pharmaciedemarlioz.pharminfo.fr/", "count": 1},
+      {"value": "http://yves-rocher.fr/vienne", "count": 1},
+      {
+        "value": "http://www.vivre-vienne.fr/Entreprise-Paillaret-et-Fils_2261.asp",
+        "count": 1
+      },
+      {"value": "http://www.naturhouse.fr/", "count": 1},
+      {"value": "http://www.shopcoiffure.eu/", "count": 1},
+      {
+        "value": "www.naturhouse.fr/liste-centres/202-annecy-chambery",
+        "count": 1
+      },
+      {"value": "http://www.pharmacie-ecusson.com/", "count": 1},
+      {"value": "https://prome-negoce.com/", "count": 1},
+      {"value": "http://www.tonin.fr", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Parashop",
+        "count": 1
+      }
+    ],
+    "count": 13
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Marionnaud", "count": 2},
+      {"value": "E.Leclerc", "count": 2},
+      {"value": "Yves Rocher", "count": 1},
+      {"value": "Shop coiffure", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 3}, {"value": "1", "count": 1}],
+    "count": 4
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {"key": "type:FR:FINESS", "tags": [{"value": "620", "count": 2}], "count": 2},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.acerola-fr.com/PBCPPlayer.asp?ID=1385211",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "naturopathy", "count": 1}],
+    "count": 1
+  },
+  {"key": "shopping", "tags": [{"value": "pharmacy", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "418 313 136 00024", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Produits et petits matériels de propreté", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Magasin de diététique.", "count": 1}],
+    "count": 1
+  }
+]

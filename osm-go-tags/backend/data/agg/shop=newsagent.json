@@ -1,0 +1,156 @@
+[
+  {"key": "shop", "tags": [{"value": "newsagent", "count": 421}], "count": 421},
+  {
+    "key": "tobacco",
+    "tags": [{"value": "yes", "count": 111}, {"value": "no", "count": 1}],
+    "count": 112
+  },
+  {
+    "key": "gambling",
+    "tags": [{"value": "yes", "count": 37}, {"value": "Loto", "count": 1}],
+    "count": 38
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "cafe", "count": 13},
+      {"value": "bar", "count": 8},
+      {"value": "pub", "count": 2},
+      {"value": "post_office", "count": 2},
+      {"value": "restaurant", "count": 1},
+      {"value": "bank", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 53 15 21", "count": 1},
+      {"value": "+33 4 74 85 50 92", "count": 1},
+      {"value": "+33 4 74 85 44 30", "count": 1},
+      {"value": "+33 4 74 85 13 72", "count": 1},
+      {"value": "+33 4 74 85 66 86", "count": 1},
+      {"value": "+33 4 74 53 05 74", "count": 1},
+      {"value": "+33 4 74 59 89 21", "count": 1},
+      {"value": "+33 4 74 85 05 05", "count": 1},
+      {"value": "+33 4 74 85 04 17", "count": 1},
+      {"value": "+33476384296", "count": 1},
+      {"value": "+33 4 77 76 25 32", "count": 1},
+      {"value": "+33 4 50 42 14 28", "count": 1},
+      {"value": "+33 4 50 74 20 76", "count": 1},
+      {"value": "+33 4 75 44 01 20", "count": 1},
+      {"value": "+33 8 99 23 69 28", "count": 1},
+      {"value": "+33 9 53 19 62 82", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 7},
+      {"value": "no", "count": 2},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Maison de la Presse/Tabac/Loto", "count": 1},
+      {"value": "Cadeaux;Tabac;Presse;Papéterie", "count": 1},
+      {"value": "Tabac;Loto;Pmu;Bar", "count": 1},
+      {"value": "Bar - Tabac", "count": 1},
+      {"value": "Tabac-Presse", "count": 1},
+      {"value": "Tabac,Presse", "count": 1},
+      {"value": "Tabac-presse.", "count": 1},
+      {
+        "value": "Vente de tabac, presse, journaux, produits régionaux, liqueurs...",
+        "count": 1
+      },
+      {"value": "Bureau de tabac - Journaux", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 6}, {"value": "1", "count": 1}],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La Poste", "count": 2},
+      {"value": "Maison de la presse", "count": 1},
+      {"value": "DUCHESNE", "count": 1},
+      {"value": "Isabelle Schmidt", "count": 1},
+      {"value": "La Cascade", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "presse; souvenir; quincaillerie", "count": 1},
+      {
+        "value": "Vérifier que la vente du journal est possible. Se sont surtout les bureaux chambériens de ce journal",
+        "count": 1
+      },
+      {"value": "Relais Poste", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "lottery", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "ref:FR:LaPoste",
+    "tags": [{"value": "07269A", "count": 1}, {"value": "13893A", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:SIREN",
+    "tags": [{"value": "320988793", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.maisondelapresse.tm.fr/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "post_office:type",
+    "tags": [{"value": "post_partner", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "4726Z", "count": 1}], "count": 1},
+  {"key": "wifi", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "32098879300107", "count": 1}],
+    "count": 1
+  },
+  {"key": "gift", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "stationery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "brewery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "terrace", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "newspaper", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "tabaco", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "outdoor_seating", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "aeroway", "tags": [{"value": "terminal", "count": 1}], "count": 1}
+]

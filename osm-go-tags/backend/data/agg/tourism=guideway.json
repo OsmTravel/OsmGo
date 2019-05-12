@@ -1,0 +1,5 @@
+[
+  {"key": "support", "tags": [{"value": "pole", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "guideway", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "tourism", "count": 1}], "count": 1}
+]

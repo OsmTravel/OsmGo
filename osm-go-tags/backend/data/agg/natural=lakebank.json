@@ -1,0 +1,18 @@
+[
+  {"key": "natural", "tags": [{"value": "lakebank", "count": 28}], "count": 28},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Niveau d'eau maximum du lac : cote 232 au cadastre",
+        "count": 3
+      },
+      {
+        "value": "I suppose this represent the max water level, not the current water level",
+        "count": 2
+      }
+    ],
+    "count": 5
+  },
+  {"key": "place", "tags": [{"value": "island", "count": 1}], "count": 1}
+]

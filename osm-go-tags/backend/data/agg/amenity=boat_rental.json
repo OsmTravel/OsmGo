@@ -1,0 +1,89 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "boat_rental", "count": 19}],
+    "count": 19
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://evalocation.com", "count": 1},
+      {"value": "http://asso.ffv.fr/treffort", "count": 1},
+      {"value": "http://www.castor-canoe.com/", "count": 1},
+      {"value": "http://www.ecole-de-voile-grenoble.com/", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "canoe_rental", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "kayak_rental", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Ponton V-Boat - Location bateaux, pédalos, paddle board, ski nautique et wakeboard",
+        "count": 1
+      },
+      {
+        "value": " Ski nautique, Wakeboard, Wakesurf, Wakeskate...  Que vous soyez débutant ou expert, rejoignez un moniteur diplômé d'état qui vous fera bénéficier de ses connaissances et partagera avec vous sa passion pour le ski nautique, le wakeboard, le wakesurf, le w",
+        "count": 1
+      },
+      {"value": "Location de pédalos et paddles", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "sport",
+    "tags": [{"value": "sailing", "count": 2}, {"value": "canoe", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 7 68 57 24 60", "count": 1},
+      {"value": "+33 7 69 08 12 45", "count": 1},
+      {"value": "+33 4 76 34 19 99", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "sailboat_rental",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "treffortvoile@gmail.com", "count": 1},
+      {"value": "contact@srvg.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "club", "tags": [{"value": "sport", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ponton V-Boat", "count": 1},
+      {"value": "L'Hirondelle", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "pedalboat_rental",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "rental", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "boat:type", "tags": [{"value": "canoe", "count": 1}], "count": 1},
+  {
+    "key": "motorboat_rental",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "phone:mobile",
+    "tags": [{"value": "+33 6 14 32 61 41", "count": 1}],
+    "count": 1
+  }
+]

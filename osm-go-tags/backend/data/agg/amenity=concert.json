@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "concert", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "main", "count": 1}], "count": 1}
+]

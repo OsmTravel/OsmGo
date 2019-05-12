@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "clinic", "count": 1}], "count": 1},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "centre_de_santé", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "doctor", "count": 1}],
+    "count": 1
+  }
+]

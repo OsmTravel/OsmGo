@@ -1,0 +1,52 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "water_park", "count": 42}],
+    "count": 42
+  },
+  {"key": "sport", "tags": [{"value": "swimming", "count": 10}], "count": 10},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.centreaquatique-aquagaron.fr/", "count": 2},
+      {"value": "http://www.aald.fr", "count": 1},
+      {"value": "http://www.islacooldouce.fr", "count": 1},
+      {"value": "http://www.piscine-laperledeau.com/", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "customers", "count": 1},
+      {"value": "permissive", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "tourism", "tags": [{"value": "theme_park", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Le Pommier", "count": 1},
+      {"value": "AquaGaron", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "water_slide", "tags": [{"value": "racer", "count": 1}], "count": 1},
+  {"key": "water_park", "tags": [{"value": "outdoor", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "grassland", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {
+    "key": "fence_type",
+    "tags": [{"value": "chain_link", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 75 36 38 80", "count": 1}],
+    "count": 1
+  }
+]

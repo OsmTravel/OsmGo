@@ -1,0 +1,399 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "monument", "count": 219}],
+    "count": 219
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3399041", "count": 1},
+      {"value": "Q15950343", "count": 1},
+      {"value": "Q2698412", "count": 1},
+      {"value": "Q2984303", "count": 1},
+      {"value": "Q50355245", "count": 1},
+      {"value": "Q19833234", "count": 1},
+      {"value": "Q22967321", "count": 1},
+      {"value": "Q22966823", "count": 1},
+      {"value": "Q2105024", "count": 1},
+      {"value": "Q22968574", "count": 1},
+      {"value": "Q2940800", "count": 1},
+      {"value": "Q22967138", "count": 1},
+      {"value": "Q3374648", "count": 1},
+      {"value": "Q22966780", "count": 1},
+      {"value": "Q767620", "count": 1},
+      {"value": "Q3397492", "count": 1},
+      {"value": "Q3517516", "count": 1},
+      {"value": "Q3075754", "count": 1},
+      {"value": "Q3361199", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 17}],
+    "count": 17
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1840", "count": 2},
+      {"value": "1992-03-19", "count": 1},
+      {"value": "1942-08-09", "count": 1},
+      {"value": "1947", "count": 1},
+      {"value": "1975-05-13", "count": 1},
+      {"value": "1978-09-04", "count": 1},
+      {"value": "1927-08-24", "count": 1},
+      {"value": "1925-09-18", "count": 1},
+      {"value": "1952-07-22", "count": 1},
+      {"value": "1908/10/14", "count": 1},
+      {"value": "2007-08-02", "count": 1},
+      {"value": "1969", "count": 1},
+      {"value": "1852-03-22", "count": 1},
+      {"value": "1927", "count": 1},
+      {"value": "1996", "count": 1},
+      {"value": "1969-09-23", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117262", "count": 1},
+      {"value": "PA69000039", "count": 1},
+      {"value": "PA00118365", "count": 1},
+      {"value": "PA00117765", "count": 1},
+      {"value": "PA00117591", "count": 1},
+      {"value": "PA00116956", "count": 1},
+      {"value": "PA00116344", "count": 1},
+      {"value": "PA00117199", "count": 1},
+      {"value": "PA00118293", "count": 1},
+      {"value": "PA00117361", "count": 1},
+      {"value": "PA00117094", "count": 1},
+      {"value": "PA00116894", "count": 1},
+      {"value": "PA00117318", "count": 1},
+      {"value": "PA00116693;PA00116651", "count": 1},
+      {"value": "PA00117348", "count": 1},
+      {"value": "PA07000003", "count": 1},
+      {"value": "PA00116966", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 9}, {"value": "2", "count": 7}],
+    "count": 16
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Casamaures", "count": 1},
+      {"value": "fr:Horloge monumentale de Tassin-la-Demi-Lune", "count": 1},
+      {"value": "fr:Colonne de Charles-Félix", "count": 1},
+      {"value": "fr:Monument à Ampère", "count": 1},
+      {"value": "fr:Fortin , dit Fortin de Rancé", "count": 1},
+      {"value": "fr:Halles du Grand-Serre", "count": 1},
+      {"value": "fr:Porte des Jacobins", "count": 1},
+      {"value": "fr:Porte de France (Grenoble)", "count": 1},
+      {"value": "fr:Théâtre des Cérémonies", "count": 1},
+      {"value": "fr:Pendentif de Valence", "count": 1},
+      {
+        "value": "fr:Monument national à la Résistance du plateau des Glières",
+        "count": 1
+      },
+      {"value": "fr:Cirque romain de Vienne", "count": 1},
+      {"value": "fr:Pont du Roi", "count": 1},
+      {"value": "fr:Temple d'Auguste et de Livie", "count": 1},
+      {"value": "fr:Fonderie de La Voulte-sur-Rhône", "count": 1},
+      {"value": "fr:Palais idéal", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "artwork", "count": 5},
+      {"value": "attraction", "count": 3},
+      {"value": "viewpoint", "count": 2},
+      {"value": "billetterie", "count": 1},
+      {"value": "patrimoine", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C17", "count": 2},
+      {"value": "1888", "count": 1},
+      {"value": "1912", "count": 1},
+      {"value": "1619", "count": 1},
+      {"value": "1973", "count": 1},
+      {"value": "1879", "count": 1},
+      {"value": "1898", "count": 1},
+      {"value": "1915", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 1
+      },
+      {"value": "inscription en béton", "count": 1},
+      {"value": "on the roof", "count": 1},
+      {"value": "visits", "count": 1},
+      {
+        "value": "Statue de Notre dame de la Salette, vue panoramique sur la plaine de Roanne.",
+        "count": 1
+      },
+      {
+        "value": "Inauguré le 20 mai 1989 par Félix Faure, président de la République, ce monument est le fruit d'une souscription auprès des Stéphanois.",
+        "count": 1
+      },
+      {
+        "value": "Le monument s'élève au centre d'un triangle sur lequel sont inscrits les trois pays du Maghreb, Algérie, Maroc, Tunisie, et honore les morts de la Loire en Afrique du Nord. A côté, une plaque rend hommage aux rapatriés d'Algérie.",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Statue : Sommet - Point vu en place en 2003", "count": 1},
+      {"value": "Madone", "count": 1},
+      {"value": "Notre-Dame du Pic, protégez Lucenay", "count": 1},
+      {"value": "fr:Borne avec inscription", "count": 1},
+      {
+        "value": "Jarnioux à ses Enfants Morts Pour la Patrie - 1914 - 1918",
+        "count": 1
+      },
+      {"value": "casemate enterrée dépassant en 3 endroits", "count": 1},
+      {"value": "Jardin et villa de style orientaliste", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "memorial",
+    "tags": [
+      {"value": "war_memorial", "count": 3},
+      {"value": "bust", "count": 1},
+      {"value": "statue", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Monument_Charles_De_Gaulle_-_Vif.jpg", "count": 1},
+      {
+        "value": "File:Monument aux morts de Notre-Dame-de-Commiers.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Porte_de_France_-_Grenoble_-_2011.jpg",
+        "count": 1
+      },
+      {"value": "File:Voreppe-egliseRomane.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Monument_des_Gli%C3%A8res2.jpg",
+        "count": 1
+      },
+      {"value": "File:Pyramide_de_Vienne_(Isère).jpg", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "artwork_type",
+    "tags": [
+      {"value": "statue", "count": 4},
+      {"value": "sculpture", "count": 2}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.culture.gouv.fr/public/mistral/palissy_fr?ACTION=CHERCHER&FIELD_1=REF&VALUE_1=PM74000065",
+        "count": 1
+      },
+      {"value": "https://www.sallanches.fr", "count": 1},
+      {"value": "http://www.casamaures.org", "count": 1},
+      {
+        "value": "http://www.patrimoine-ardeche.com/visites/la_voulte_n.htm",
+        "count": 1
+      },
+      {"value": "http://www.facteurcheval.com", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "bank", "count": 1},
+      {"value": "clock", "count": 1},
+      {"value": "townhall", "count": 1},
+      {"value": "place_of_worship", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "industrial", "count": 1},
+      {"value": "cemetery", "count": 1},
+      {"value": "religious", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 3}], "count": 3},
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "La Banque Postale", "count": 1},
+      {"value": "Association La Casamaures d'hier et d'aujourd'hui", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "subject:wikidata",
+    "tags": [{"value": "Q957988", "count": 1}, {"value": "Q9202", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "subject:wikipedia",
+    "tags": [
+      {"value": "fr:José Frappa", "count": 1},
+      {"value": "fr:Statue de la Liberté", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ele",
+    "tags": [{"value": "1570.3", "count": 1}, {"value": "757", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {
+        "value": "Bascule (vieille balance municipale) protégée et exposée par la commune",
+        "count": 1
+      },
+      {
+        "value": "Fondateur de l’œuvre des enfants à la montagne et à la mer __ Pasteur de l'église réformée de Saint-Étienne __ Pionnier de la ligue de la moralité publique __",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "height",
+    "tags": [{"value": "21", "count": 1}, {"value": "12 m", "count": 1}],
+    "count": 2
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 2}], "count": 2},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "73123A - 1", "count": 1},
+      {"value": "D 209", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "highway",
+    "tags": [{"value": "tertiary", "count": 1}, {"value": "track", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "artist:wikipedia",
+    "tags": [{"value": "fr:Auguste Bartholdi", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "estate_agent", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@sallanches.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_point.asp?num_site=73123A&no_ptg=02&numero_f50=3531",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "CLC:id", "tags": [{"value": "FR-161197", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note:fr",
+    "tags": [
+      {
+        "value": "Import CLC: ajustez le tag landuse avec soit industrial, soit retail après contrôle",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "CLC:code", "tags": [{"value": "121", "count": 1}], "count": 1},
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "convenience", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "Category:Porte de France (Grenoble)", "count": 1}],
+    "count": 1
+  },
+  {"key": "visibility", "tags": [{"value": "street", "count": 1}], "count": 1},
+  {
+    "key": "monument:size",
+    "tags": [{"value": "medium", "count": 1}],
+    "count": 1
+  },
+  {"key": "display", "tags": [{"value": "analog", "count": 1}], "count": 1},
+  {
+    "key": "monument",
+    "tags": [{"value": "war_memorial", "count": 1}],
+    "count": 1
+  },
+  {"key": "maxspeed", "tags": [{"value": "80", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "tower", "count": 1}], "count": 1},
+  {
+    "key": "historic:civilization",
+    "tags": [{"value": "ancient_roman", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "principate", "count": 1}],
+    "count": 1
+  },
+  {"key": "length", "tags": [{"value": "26 m", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 50 91 27 27", "count": 1}],
+    "count": 1
+  }
+]

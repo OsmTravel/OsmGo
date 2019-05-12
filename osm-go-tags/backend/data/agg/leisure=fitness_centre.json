@@ -1,0 +1,121 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "fitness_centre", "count": 71}],
+    "count": 71
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.purpilateslyon.com", "count": 1},
+      {"value": "https://www.npacenter.com/", "count": 1},
+      {"value": "http://www.energyfive.fr", "count": 1},
+      {"value": "http://www.ave-sport.fr/", "count": 1},
+      {"value": "http://www.vie-en-yoga.com", "count": 1},
+      {"value": "http://bron.genaeclub.com/", "count": 1},
+      {"value": "http://www.edifice-sportclub.fr/", "count": 1},
+      {"value": "http://www.fikop.com", "count": 1},
+      {"value": "http://www.eclipse-vienne.fr/fr/index.php", "count": 1},
+      {"value": "https://www.crossfitenyeto.com/", "count": 1},
+      {
+        "value": "https://www.keepcool.fr/salle-de-sport/villeurbanne-charpennes/",
+        "count": 1
+      },
+      {"value": "https://www.neoness.fr/clubs/lyon/lyon-part-dieu", "count": 1},
+      {"value": "http://www.moana-club.com/", "count": 1},
+      {
+        "value": "https://www.l-appart.net/clubs/lappart-villeurbanne-lyon-tete-d-or",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/crossfitcustomannemasse", "count": 1},
+      {"value": "https://keepcool.fr", "count": 1},
+      {"value": "http://www.inaout.fr/", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 05 91 70", "count": 1},
+      {"value": "+33 4 78 24 85 93", "count": 1},
+      {"value": "+33478448784", "count": 1},
+      {"value": "+33476716307", "count": 1},
+      {"value": "+33 4 78525995", "count": 1},
+      {"value": "+33 7 60512194", "count": 1},
+      {"value": "+33 6 63 18 97 94", "count": 1},
+      {"value": "+33 6 65 23 11 16", "count": 1},
+      {"value": "+33 4 74 57 45 92", "count": 1},
+      {"value": "+33 6 13 34 04 79", "count": 1},
+      {"value": "+33 6 77 46 63 76", "count": 1},
+      {"value": "+33 4 78 89 98 36", "count": 1},
+      {"value": "+33428000500", "count": 1},
+      {"value": "+33 4 69 85 37 21", "count": 1},
+      {"value": "+33 4 77 37 61 03", "count": 1},
+      {"value": "+33 6 87 75 53 45", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "fitness", "count": 5},
+      {"value": "gymnastics;fitness", "count": 2},
+      {"value": "weightlifting", "count": 1},
+      {"value": "pilates", "count": 1},
+      {"value": "fitness;exercise", "count": 1},
+      {"value": "yoga", "count": 1},
+      {"value": "Salle de sport", "count": 1},
+      {"value": "multi", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "centre.vie.en.yoga@free.fr", "count": 1},
+      {"value": "emilie@yogilude.fr", "count": 1},
+      {"value": "contact@labulle.yoga", "count": 1},
+      {"value": "info@yogaowl.fr", "count": 1},
+      {"value": "info@pilateslyon.com", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Fitness House", "count": 1},
+      {"value": "Neoness", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/EnergyFive-801928993222404/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [{"value": "https://fr-fr.facebook.com/edificesport/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 78 89 98 36", "count": 1}],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Keep Cool", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

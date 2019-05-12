@@ -1,0 +1,224 @@
+[
+  {"key": "man_made", "tags": [{"value": "mast", "count": 239}], "count": 239},
+  {
+    "key": "tower:type",
+    "tags": [
+      {"value": "communication", "count": 138},
+      {"value": "lighting", "count": 19},
+      {"value": "telecommunication", "count": 1}
+    ],
+    "count": 158
+  },
+  {
+    "key": "communication:mobile_phone",
+    "tags": [
+      {"value": "yes", "count": 87},
+      {"value": "gsm;umts", "count": 6},
+      {"value": "gsm;umts;lte", "count": 1}
+    ],
+    "count": 94
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Orange", "count": 11},
+      {
+        "value": "Direction Interdépartementale des Routes Centres Est",
+        "count": 8
+      },
+      {"value": "TDF", "count": 4},
+      {"value": "Enedis", "count": 4},
+      {"value": "free", "count": 2},
+      {"value": "tdf", "count": 1},
+      {"value": "orange", "count": 1},
+      {"value": "Bouygues Telecom", "count": 1},
+      {"value": "Alsatis", "count": 1},
+      {"value": "Free", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "communication:microwave",
+    "tags": [{"value": "yes", "count": 29}, {"value": "no", "count": 1}],
+    "count": 30
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "25", "count": 5},
+      {"value": "40", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "21.5", "count": 1},
+      {"value": "20", "count": 1},
+      {"value": "3", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "tower:construction",
+    "tags": [
+      {"value": "lattice", "count": 5},
+      {"value": "pole", "count": 4},
+      {"value": "mast", "count": 2},
+      {"value": "freestanding", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "575613", "count": 1},
+      {"value": "23166", "count": 1},
+      {"value": "753441", "count": 1},
+      {"value": "TP132504H5", "count": 1},
+      {"value": "69136-001-01", "count": 1},
+      {"value": "19436H3", "count": 1},
+      {"value": "26686 H3", "count": 1},
+      {"value": "30823", "count": 1},
+      {"value": "38492A", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Mat en bois supportant une antenne ERDF pour l'élever au dessus du bosquet",
+        "count": 2
+      },
+      {"value": "SITE : LA RAVOIRE BOIGE N° G2R : 730467", "count": 1},
+      {
+        "value": "Mat à bois supportant une antenne ERDF pour l'élever au dessus du bosquet",
+        "count": 1
+      },
+      {
+        "value": "N° Identification 1487703 Description du support Pylône tubulaire / 17,0 m / Adresse LE MOUCHEROTTE, LE RELAIS Code Postal / Commune 38250 SAINT-NIZIER-DU-MOUCHEROTTE",
+        "count": 1
+      },
+      {
+        "value": "N° Identification 472193 Description du support Pylône autostable / 40,0 m /  Adresse LA REVOLLIERE Code Postal / Commune 38134 SAINT-JULIEN-DE-RAZ",
+        "count": 1
+      },
+      {
+        "value": "N° Identification 478905 Description du support Pylône autostable / 26,0 m /  Adresse LA COURBASSIÈRE Code Postal / Commune 38134 SAINT-JULIEN-DE-RAZ",
+        "count": 1
+      },
+      {"value": "from 5mn gps averaging waypoint recording", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "ref:fr:ANFR",
+    "tags": [
+      {"value": "587424", "count": 1},
+      {"value": "908500", "count": 1},
+      {"value": "855005", "count": 1},
+      {"value": "1293354", "count": 1},
+      {"value": "812979", "count": 1},
+      {"value": "676299", "count": 1},
+      {"value": "1440762", "count": 1},
+      {"value": "504508;1449152", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "ref:FR:anfr",
+    "tags": [
+      {"value": "1854246", "count": 1},
+      {"value": "1854240", "count": 1},
+      {"value": "1854236", "count": 1},
+      {"value": "1854234", "count": 1},
+      {"value": "1854232", "count": 1},
+      {"value": "1854230", "count": 1},
+      {"value": "1854228", "count": 1},
+      {"value": "1854226", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "traffic", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "public", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "[Pylône Radio] N° Identification 1487703", "count": 1},
+      {"value": "Antenne mobile Free mobile", "count": 1},
+      {"value": "Antenne mobile SFR", "count": 1},
+      {"value": "Antenne mobile Bouygues Telecom", "count": 1},
+      {"value": "Antenne mobile Orange", "count": 1},
+      {"value": "SFR - 194606", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "communication:television",
+    "tags": [{"value": "yes", "count": 3}, {"value": "dvb-t", "count": 2}],
+    "count": 5
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "ref:FR:ANFR",
+    "tags": [
+      {"value": "706651", "count": 1},
+      {"value": "594414", "count": 1},
+      {"value": "770898", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "MCC", "tags": [{"value": "208", "count": 3}], "count": 3},
+  {
+    "key": "MNC",
+    "tags": [{"value": "10", "count": 2}, {"value": "20", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "communication:radio",
+    "tags": [{"value": "fm", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "free-mobile", "count": 1},
+      {"value": "Orange France", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "communication:gsm-r",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "is_in", "tags": [{"value": "Lyon", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2013-08-19", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.cartoradio.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "communication:bos",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "1608", "count": 1}], "count": 1},
+  {
+    "key": "communication:gsm",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

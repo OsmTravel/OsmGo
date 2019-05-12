@@ -1,0 +1,14 @@
+[
+  {
+    "key": "description",
+    "tags": [
+      {"value": "agence spécialisée dans l'art contemporain", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "artistic_production", "count": 1}],
+    "count": 1
+  }
+]

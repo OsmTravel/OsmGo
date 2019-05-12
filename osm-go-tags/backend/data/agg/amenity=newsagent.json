@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "newsagent", "count": 1}], "count": 1},
+  {"key": "Amenity", "tags": [{"value": "pub", "count": 1}], "count": 1}
+]

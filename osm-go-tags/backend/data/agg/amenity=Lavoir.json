@@ -1,0 +1,6 @@
+[
+  {"key": "amenity", "tags": [{"value": "Lavoir", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "water", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

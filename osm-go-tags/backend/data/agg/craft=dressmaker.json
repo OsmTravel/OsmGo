@@ -1,0 +1,56 @@
+[
+  {"key": "craft", "tags": [{"value": "dressmaker", "count": 25}], "count": 25},
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "clothes", "count": 4},
+      {"value": "tailor", "count": 2},
+      {"value": "fabric", "count": 1},
+      {"value": "boutique", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 53 91 59", "count": 1},
+      {"value": "+33 4 74 54 12 35", "count": 1},
+      {"value": "+33 9 52 21 50 15", "count": 1},
+      {"value": "+33 4 77700218", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ptitesmains.fr/", "count": 1},
+      {"value": "http://www.servet.fr", "count": 1},
+      {"value": "http://www.cousubois.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "clothes",
+    "tags": [
+      {"value": "children", "count": 1},
+      {"value": "second_hand", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Retouches de Vêtements - Particuliers - Professionnels",
+        "count": 1
+      },
+      {"value": "Retouches vêtements", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "catherine.gaudillet@orange.fr", "count": 1}],
+    "count": 1
+  }
+]

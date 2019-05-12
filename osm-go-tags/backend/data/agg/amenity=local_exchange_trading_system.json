@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "local_exchange_trading_system", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://besansel.fr/", "count": 1}],
+    "count": 1
+  }
+]

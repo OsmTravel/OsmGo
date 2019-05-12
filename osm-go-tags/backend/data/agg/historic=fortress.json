@@ -1,0 +1,5 @@
+[
+  {"key": "historic", "tags": [{"value": "fortress", "count": 2}], "count": 2},
+  {"key": "ruins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "~560", "count": 1}], "count": 1}
+]

@@ -1,0 +1,111 @@
+[
+  {"key": "shop", "tags": [{"value": "outdoor", "count": 103}], "count": 103},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.technique-extreme.com", "count": 3},
+      {"value": "http://www.auvieuxcampeur.fr", "count": 2},
+      {"value": "www.natureetdecouvertes.com", "count": 1},
+      {"value": "http:// thoirette-peche.weebly.com", "count": 1},
+      {"value": "http://www.ravanel-sportshop.com", "count": 1},
+      {"value": "http://www.loca-skis.com/", "count": 1},
+      {"value": "https://www.auvieuxcampeur.fr/boutiques/Lyon", "count": 1},
+      {"value": "www.cham3s.com", "count": 1},
+      {"value": "skiflash.fr", "count": 1},
+      {"value": "https://www.omnisport-lyon.fr/", "count": 1},
+      {"value": "http://montchavin.laplagne-intersport.com/", "count": 1},
+      {"value": "http://www.montchavin-sporteam.com/", "count": 1},
+      {"value": "http://www.sportatoutprix.fr", "count": 1},
+      {"value": "http://www.ekosport.fr", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Skimium", "count": 4},
+      {"value": "Skiset", "count": 2},
+      {"value": "Au Vieux Campeur Paris - de Rorthays & Cie", "count": 1},
+      {"value": "Taber", "count": 1},
+      {"value": "Intersport", "count": 1},
+      {"value": "Twinner", "count": 1},
+      {"value": "Gozzi Sports", "count": 1},
+      {"value": "SkiSet", "count": 1},
+      {"value": "Sport 2000", "count": 1},
+      {"value": "Sarl Climbing Technology", "count": 1},
+      {"value": "Rossignol", "count": 1},
+      {"value": "Skimium.com", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33476058302", "count": 1},
+      {"value": "+33 4 50 53 02 17", "count": 1},
+      {"value": "+33474768599", "count": 1},
+      {"value": "+33 4 50 53 02 49", "count": 1},
+      {"value": "+33 4 72 73 42 19", "count": 1},
+      {"value": "+33 479 09 12 13", "count": 1},
+      {"value": "+33 479 07 51 76", "count": 1},
+      {"value": "+33 4 26 63 07 03", "count": 1},
+      {"value": "+33 4 79 07 83 21", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 3}], "count": 3},
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Couchage, nourriture et hygiène", "count": 1},
+      {"value": "Location de ski", "count": 1},
+      {
+        "value": "Vente / Location du matériel de montagne ETE/HIVER. (ski, Randonnée...)",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "thoirette.peche@yahoo.fr", "count": 1},
+      {"value": "info@montchavin-sporteam.com", "count": 1},
+      {"value": "contact@climbingtechnology.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Sport 2000", "count": 1},
+      {"value": "Nature & Découvertes", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "works", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "2015", "count": 1}], "count": 1}
+]

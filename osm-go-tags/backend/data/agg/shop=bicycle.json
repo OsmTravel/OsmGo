@@ -1,0 +1,416 @@
+[
+  {"key": "shop", "tags": [{"value": "bicycle", "count": 226}], "count": 226},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.cyclable.com", "count": 3},
+      {"value": "http://www.ptitvelo.net/", "count": 2},
+      {"value": "http://www.cyclesveran.fr", "count": 2},
+      {"value": "http://ateliervelo.free.fr", "count": 1},
+      {"value": "http://www.carbone-zero.fr/", "count": 1},
+      {"value": "www.espace-cycles.fr", "count": 1},
+      {"value": "http://www.espacevelo.fr", "count": 1},
+      {"value": "http://www.sodicycle.com/", "count": 1},
+      {"value": "https://www.velostation.com/-Lyon-Saxe-", "count": 1},
+      {
+        "value": "https://www.velonaute.com/content/49-Velonaute-magasin-specialise-velos-randonnee-voyage-vtc",
+        "count": 1
+      },
+      {"value": "http://www.sodicycle.com", "count": 1},
+      {"value": "http://www.cyclesmanudany.com/", "count": 1},
+      {"value": "http://www.velostation.com/-Lyon-Saint-Paul-", "count": 1},
+      {"value": "http://www.dilullo.fr/dilullo/Amberieu.html", "count": 1},
+      {
+        "value": "http://www.sport2000.fr/magasin/sport-2000/sport-2000-amberieu-en-bugey.html",
+        "count": 1
+      },
+      {"value": "http://www.fb.com/bikeandbuddies", "count": 1},
+      {"value": "http://www.cyclin-saint-etienne.fr/", "count": 1},
+      {"value": "https://saint-etienne.cyclable.com/", "count": 1},
+      {"value": "http://www.cycles-bruno-sancassiani.com/", "count": 1},
+      {"value": "http://lecyclub.org/Lecyclub.org/Atelier.html", "count": 1},
+      {"value": "http://www.velosport.fr", "count": 1},
+      {"value": "https://lyon7.cyclable.com/", "count": 1},
+      {"value": "http://cycles-laurent-marcon.com/", "count": 1},
+      {"value": "http://www.thollot2roues.com", "count": 1},
+      {"value": "http://www.culturevelo.com", "count": 1},
+      {"value": "http://www.espace-granger.com", "count": 1},
+      {"value": "http://www.cycles-boisselier-42.com", "count": 1},
+      {"value": "www.zeveloshop.com", "count": 1},
+      {"value": "http://www.velo-dayak.fr/", "count": 1},
+      {
+        "value": "http://www.vienne-tourisme.com/fiche-presentation_loisir-175-FR-L-sitraLOI633143-NATURE.html",
+        "count": 1
+      },
+      {"value": "http://www.cycles-bentoline.com", "count": 1},
+      {"value": "http://www.velo-oxygen.fr/", "count": 1},
+      {"value": "http://www.la-bicycletterie.com/", "count": 1},
+      {"value": "http://www.tournon-cycles.fr/", "count": 1},
+      {"value": "http://cyclolivine.fr", "count": 1},
+      {"value": "http://www.cycles73.com/", "count": 1},
+      {"value": "http://montelovelo.fr/", "count": 1},
+      {"value": "http://www.cycloutil.com", "count": 1},
+      {"value": "http://autourducycle.wordpress.com/", "count": 1},
+      {
+        "value": "https://www.velonaute.com/content/11-velonaute-freres-lumiere-magasin-velos-fitness-gravelbikes-Lyon",
+        "count": 1
+      },
+      {"value": "http://www.loisirs-vtt.fr/", "count": 1},
+      {"value": "http://www.bikers-insalyon.fr/", "count": 1},
+      {"value": "http://www.ciclofficina.fr/", "count": 1},
+      {"value": "http://pmpv-bikeshop.com", "count": 1},
+      {
+        "value": "http://www.totalquad.fr/concession-boen-sur-lignon.php",
+        "count": 1
+      },
+      {"value": "https://lyon6.cyclable.com/", "count": 1},
+      {"value": "http://ernestos-cyclery.com", "count": 1},
+      {"value": "http://lyon-oullins.cyclable.com/", "count": 1},
+      {"value": "http://velo-epli.fr/", "count": 1},
+      {"value": "http://romans.fubicy.org/", "count": 1},
+      {"value": "http://www.bikecityzen.com", "count": 1},
+      {
+        "value": "https://www.facebook.com/pg/Atelier-V%C3%A9lo-de-Pierre-B%C3%A9nite-274922476018176/",
+        "count": 1
+      },
+      {"value": "http://www.ebike-center.ch/", "count": 1},
+      {"value": "http://www.bike-surgery.fr", "count": 1},
+      {"value": "http://villeurbanne.cyclable.com/", "count": 1},
+      {"value": "http://www.rentmybike.eu/", "count": 1},
+      {
+        "value": "https://www.velonaute.com/content/88-velonaute-tassin-ecully-magasin-velo-electrique",
+        "count": 1
+      },
+      {"value": "http://www.ateliertitane.fr", "count": 1},
+      {"value": "http://www.altermove.com", "count": 1},
+      {"value": "http://newteon.com", "count": 1},
+      {"value": "https://www.cyclociel.com/", "count": 1},
+      {"value": "http://www.cycleservice.fr", "count": 1},
+      {"value": "http://metabikes.fr/", "count": 1},
+      {"value": "http://www.roule-co.org", "count": 1},
+      {"value": "http://www.ecox.fr/nos-magasins/ecox-lyon", "count": 1},
+      {"value": "http://naturavelo.com/", "count": 1},
+      {"value": "https://lyon4.cyclable.com/", "count": 1},
+      {"value": "https://www.facebook.com/mecavelolyon/", "count": 1},
+      {
+        "value": "https://www.velonaute.com/content/9-magasin-velos-moustache-lyon",
+        "count": 1
+      },
+      {"value": "https://bouticycle.com/", "count": 1},
+      {"value": "http://ocivelo.fr", "count": 1},
+      {"value": "http://www.revv-valence.org/", "count": 1},
+      {"value": "http://www.loriginalbicyclestore.com/", "count": 1},
+      {"value": "https://nicodincycles.fr/", "count": 1},
+      {"value": "http://apie-asso.net/index.html", "count": 1},
+      {"value": "http://www.cycles-moulin.fr", "count": 1},
+      {"value": "http://latelierducycliste.com/", "count": 1},
+      {"value": "www.cyclesdguedon.com", "count": 1},
+      {"value": "http://www.pinsello.com", "count": 1},
+      {"value": "http://www.hyperbike.fr/", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 10 02 02", "count": 1},
+      {"value": "+33 4 78 39 39 39", "count": 1},
+      {"value": "+33 4 76 21 46 01", "count": 1},
+      {"value": "+33 4 74 34 06 26", "count": 1},
+      {"value": "+33 4 50 49 26 07", "count": 1},
+      {"value": "+33 4 76 24 56 37", "count": 1},
+      {"value": "+33 4 72 70 34 61", "count": 1},
+      {"value": "+33 4 78 95 39 77", "count": 1},
+      {"value": "+33474607064", "count": 1},
+      {"value": "+33 4 72 00 91 44", "count": 1},
+      {"value": "+33 4 74 38 23 00", "count": 1},
+      {"value": "+33 4 74 38 94 50", "count": 1},
+      {"value": "+33 4 78 53 29 13", "count": 1},
+      {"value": "+33 4 78 34 44 76", "count": 1},
+      {"value": "+33 4 76 22 83 79", "count": 1},
+      {"value": "09 84 36 84 43", "count": 1},
+      {"value": "+33 4 74 53 80 30", "count": 1},
+      {"value": "+33 4 76 71 42 48", "count": 1},
+      {"value": "+33 4 37 92 04 96", "count": 1},
+      {"value": "+33 9 86 41 37 00", "count": 1},
+      {"value": "+33 6 01 78 39 67", "count": 1},
+      {"value": "+33 4 79 34 62 07", "count": 1},
+      {"value": "+33 4 76 49 31 06", "count": 1},
+      {"value": "+33 4 75 28 08 01", "count": 1},
+      {"value": "+33 9 84 43 50 49", "count": 1},
+      {"value": "+33 4 69 67 60 08", "count": 1},
+      {"value": "+33 6 08 21 51 24", "count": 1},
+      {"value": "+33 4 77 24 02 25", "count": 1},
+      {"value": "+33 4 37 28 04 03", "count": 1},
+      {"value": "+33 4 69 84 68 64", "count": 1},
+      {"value": "+33 4 72756748", "count": 1},
+      {"value": "+33 4 78 53 97 01", "count": 1},
+      {"value": "+33 6 58 73 39 42", "count": 1},
+      {"value": "+33753872549", "count": 1},
+      {"value": "+33 4 57 37 69 95", "count": 1},
+      {"value": "+33 7 83 36 40 41", "count": 1},
+      {"value": "+33479716627", "count": 1},
+      {"value": "+33 4 82 53 96 69", "count": 1},
+      {"value": "+33 9 50 20 29 77", "count": 1},
+      {"value": "+33 4 78545144", "count": 1},
+      {"value": "+33 9 81 29 44 18", "count": 1},
+      {"value": "+33 4 78 34 77 21", "count": 1},
+      {"value": "+33 4 78 36 94 66", "count": 1},
+      {"value": "+33 4 85 29 00 45", "count": 1},
+      {"value": "+33477211829", "count": 1},
+      {"value": "+33 9 80 91 94 97", "count": 1},
+      {"value": "+33 9 82 39 28 26", "count": 1},
+      {"value": "+33 4 74 64 09 16", "count": 1},
+      {"value": "+33474932361", "count": 1},
+      {"value": "+33 6 72 98 39 35", "count": 1},
+      {"value": "+33475948755", "count": 1},
+      {"value": "+33 4 75 62 45 54", "count": 1},
+      {"value": "+33 4 76 54 61 09", "count": 1},
+      {"value": "+33 4 72 36 83 28", "count": 1},
+      {"value": "+33 4 76 43 93 98", "count": 1},
+      {"value": "+33478226615", "count": 1},
+      {"value": "+33 4 74 77 49 17", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "service:bicycle:repair",
+    "tags": [{"value": "yes", "count": 54}],
+    "count": 54
+  },
+  {
+    "key": "service:bicycle:retail",
+    "tags": [{"value": "yes", "count": 49}, {"value": "no", "count": 2}],
+    "count": 51
+  },
+  {
+    "key": "service:bicycle:diy",
+    "tags": [{"value": "yes", "count": 19}, {"value": "no", "count": 1}],
+    "count": 20
+  },
+  {
+    "key": "service:bicycle:second_hand",
+    "tags": [{"value": "yes", "count": 18}, {"value": "no", "count": 2}],
+    "count": 20
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 8},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 4}
+    ],
+    "count": 17
+  },
+  {
+    "key": "service:bicycle:rental",
+    "tags": [{"value": "yes", "count": 15}, {"value": "no", "count": 2}],
+    "count": 17
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Atelier Association de Réparation Cycles", "count": 1},
+      {"value": "atelier participatif", "count": 1},
+      {"value": "Atelier Association Réparation de Cycles", "count": 1},
+      {
+        "value": "Fabricant de cadre titane sur mesure pour le cycle. Soudure titane.",
+        "count": 1
+      },
+      {"value": "Atelier d'auto-réparation de cycles", "count": 1},
+      {"value": "Les magasins du vélo électrique", "count": 1},
+      {
+        "value": "Magasin de cycles et vélos. Atelier réparation de vélos. Vente de vélos électrique.",
+        "count": 1
+      },
+      {
+        "value": "Atelier Association de Réparation et de Vente de Cycles d'Occasion",
+        "count": 1
+      },
+      {
+        "value": "Association d'usager du vélo, atelier d'auto-réparation cycle, vélo-école, balade, bourse aux vélos, etc.",
+        "count": 1
+      },
+      {
+        "value": "Propose aussi marquage anti-vol, et location de tandems.",
+        "count": 1
+      }
+    ],
+    "count": 10
+  },
+  {
+    "key": "service:bicycle:pump",
+    "tags": [{"value": "yes", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Saint-Etienne Métropole", "count": 1},
+      {"value": "À pinces et à vélo", "count": 1},
+      {"value": "Florent GIBERT", "count": 1},
+      {"value": "Vélonaute", "count": 1},
+      {"value": "Cycles et sports", "count": 1},
+      {"value": "Ocivélo", "count": 1},
+      {"value": "Semitag", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "second_hand",
+    "tags": [
+      {"value": "only", "count": 3},
+      {"value": "yes", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "cycles.coquemont@wanadoo.fr", "count": 1},
+      {"value": "j2psport@wanadoo.fr", "count": 1},
+      {"value": "contact@ciclofficina.fr", "count": 1},
+      {"value": "ateliervelopierrebenite@gmail.com", "count": 1},
+      {"value": "bikesurgery.shop@gmail.com", "count": 1},
+      {"value": "lyon@ecox.fr", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "service", "tags": [{"value": "repair", "count": 5}], "count": 5},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "bicycle_repair_station", "count": 2},
+      {"value": "cafe", "count": 2},
+      {"value": "bicycle_rental", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "service:bicycle:chain_tool",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "service:bicycle:parts",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Intersport", "count": 1},
+      {"value": "Fubicy", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "service:bicycle:sales",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "service:bicycle:bicycle",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "Avril 2017", "count": 1},
+      {"value": "2017", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "service:bicycle:Bicycle_Sales_and_Service",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:cash:XLT-CARN",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "currency:XLT", "tags": [{"value": "CARN", "count": 2}], "count": 2},
+  {
+    "key": "service:bicycle:cleaning",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "service:bicycle:tools",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "identity", "tags": [{"value": "commons", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "crossing", "count": 1}], "count": 1},
+  {
+    "key": "provides",
+    "tags": [
+      {
+        "value": "learning_opportunities;objects_of_utility;participation",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "Vélivert", "count": 1}], "count": 1},
+  {
+    "key": "service:bicycle:bike",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Spécialiste vélo : Gitane, Definitive Gitane, Bianchi, Puch, Spectra.  etspiasentin@free.fr",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "490", "count": 1}], "count": 1},
+  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "crossing",
+    "tags": [{"value": "uncontrolled", "count": 1}],
+    "count": 1
+  },
+  {"key": "crossing_ref", "tags": [{"value": "zebra", "count": 1}], "count": 1},
+  {
+    "key": "service:bicycle:recumbent",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:bicycles",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "repair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "interaction",
+    "tags": [
+      {"value": "rebuying_reselling;cousing;diy_and_dit;gifting", "count": 1}
+    ],
+    "count": 1
+  }
+]

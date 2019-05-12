@@ -1,0 +1,643 @@
+[
+  {"key": "amenity", "tags": [{"value": "cafe", "count": 1208}], "count": 1208},
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "french", "count": 173},
+      {"value": "coffee_shop", "count": 16},
+      {"value": "sandwich", "count": 13},
+      {"value": "regional", "count": 13},
+      {"value": "pizza", "count": 10},
+      {"value": "ice_cream", "count": 6},
+      {"value": "burger", "count": 6},
+      {"value": "crepe", "count": 4},
+      {"value": "italian", "count": 4},
+      {"value": "cafe", "count": 3},
+      {"value": "cake", "count": 2},
+      {"value": "american", "count": 2},
+      {"value": "international", "count": 2},
+      {"value": "tea", "count": 2},
+      {"value": "ice_cream;coffee_shop", "count": 2},
+      {"value": "brasserie", "count": 2},
+      {"value": "coffee_shop;bagels", "count": 1},
+      {"value": "spanish", "count": 1},
+      {"value": "thé,chinois", "count": 1},
+      {"value": "Bar", "count": 1},
+      {"value": "french,_tapas", "count": 1},
+      {"value": "sandwich, ice_cream", "count": 1},
+      {"value": "french;irish", "count": 1},
+      {"value": "kebab", "count": 1},
+      {"value": "Bar_à_bières", "count": 1},
+      {"value": "coffee_shop;Salon_de_Thé", "count": 1},
+      {"value": "cake;brunch", "count": 1},
+      {"value": "asian", "count": 1},
+      {"value": "african", "count": 1},
+      {"value": "crêpes, café, chocolat", "count": 1},
+      {"value": "peruvian", "count": 1},
+      {"value": "maghreb", "count": 1},
+      {"value": "coffee_shop;tea", "count": 1},
+      {"value": "coffee_shop;tea;breakfast", "count": 1},
+      {"value": "coffee_shop;vegetarian;tea;breakfast", "count": 1},
+      {"value": "cake;coffee_shop", "count": 1},
+      {"value": "francaise", "count": 1},
+      {"value": "chocolate", "count": 1},
+      {"value": "vegan;cake;tea;coffee_shop;breakfast;pancake", "count": 1},
+      {"value": "bagel;salad;coffee_shop;salads;bagels;tea", "count": 1},
+      {"value": "crepe;sandwich;breakfast;coffee_shop", "count": 1},
+      {"value": "Café, bar, restauration le midi.", "count": 1},
+      {"value": "they have food and drinks", "count": 1},
+      {"value": "pastry", "count": 1}
+    ],
+    "count": 288
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 71}, {"value": "no", "count": 7}],
+    "count": 78
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 25 77 61 41", "count": 1},
+      {"value": "+33 4 37 65 09 71", "count": 1},
+      {"value": "+33 4 78 95 24 57", "count": 1},
+      {"value": "+33 4 79 56 62 59", "count": 1},
+      {"value": "+33 4 78 95 14 93", "count": 1},
+      {"value": "+33478007794", "count": 1},
+      {"value": "+33 9 54 36 61 29", "count": 1},
+      {"value": "+33 4 72 10 03 28", "count": 1},
+      {"value": "+33478298508", "count": 1},
+      {"value": "+33 4 78 69 95 56", "count": 1},
+      {"value": "+33 4 78 39 50 66", "count": 1},
+      {"value": "+33 4 76 34 52 41", "count": 1},
+      {"value": "+33 4 37 70 12 08", "count": 1},
+      {"value": "+33 4 78 58 33 30", "count": 1},
+      {"value": "+33 4 78 23 72 63", "count": 1},
+      {"value": "+33 4 78 37 94 13", "count": 1},
+      {"value": "+33 4 72 72 07 83", "count": 1},
+      {"value": "+33 4 72 07 75 49", "count": 1},
+      {"value": "+33 4 72 07 89 96", "count": 1},
+      {"value": "+33 4 78 03 54 10", "count": 1},
+      {"value": "+33 4 78 03 51 84", "count": 1},
+      {"value": "+33 4 72 56 11 92", "count": 1},
+      {"value": "+33 4 78 72 41 33", "count": 1},
+      {"value": "+33 4 74 85 02 03", "count": 1},
+      {"value": "+33 4 38 37 18 36", "count": 1},
+      {"value": "+33 4 72 13 00 95", "count": 1},
+      {"value": "+33 6 62 84 30 70", "count": 1},
+      {"value": "+33 4 78 03 13 83", "count": 1},
+      {"value": "+41 22 771 21 81", "count": 1},
+      {"value": "+33 4 72 73 24 60", "count": 1},
+      {"value": "+33 4 79 54 27 19", "count": 1},
+      {"value": "+33 4 79 81 41 71", "count": 1},
+      {"value": "+33 4 78 24 37 54", "count": 1},
+      {"value": "+33 4 50 38 50 06", "count": 1},
+      {"value": "+33 9 73 11 85 75", "count": 1},
+      {"value": "+33 4 78 37 61 32", "count": 1},
+      {"value": "+33 4 78 95 04 95", "count": 1},
+      {"value": "+33 4 78 28 07 93", "count": 1},
+      {"value": "3631", "count": 1},
+      {"value": "+33 4 77 64 13 60", "count": 1},
+      {"value": "+33 4 50 99 21 64", "count": 1},
+      {"value": "+33975421878", "count": 1},
+      {"value": "+33 4 82 39 11 04", "count": 1},
+      {"value": "+33 4 75 40 18 11", "count": 1},
+      {"value": "+33 4 75 43 30 43", "count": 1},
+      {"value": "+33 4 75 43 09 22", "count": 1},
+      {"value": "+33 4 75 44 21 62", "count": 1},
+      {"value": "+33475933805", "count": 1},
+      {"value": "+33 6 67 81 22 26", "count": 1},
+      {"value": "+33450055495", "count": 1},
+      {"value": "+33 6 37 85 18 30", "count": 1},
+      {"value": "+33 4 56 71 36 41", "count": 1},
+      {"value": "+33 6 63 11 40 36", "count": 1},
+      {"value": "+33 4 56 49 29 32", "count": 1},
+      {"value": "+33 9 81 73 29 04", "count": 1},
+      {"value": "+33 7 8 1925825", "count": 1},
+      {"value": "+33 4 78870645", "count": 1},
+      {"value": "+33472266321", "count": 1},
+      {"value": "+33475350244", "count": 1},
+      {"value": "+33 4 72 27 80 22", "count": 1},
+      {"value": "+33981393535", "count": 1},
+      {"value": "+33 4 75 84 65 09", "count": 1},
+      {"value": "+33478032612", "count": 1},
+      {"value": "+33 4 75 52 61 30", "count": 1},
+      {"value": "+33 4 76 92 40 02", "count": 1},
+      {"value": "+33475834502", "count": 1},
+      {"value": "+33 9 54 30 87 24", "count": 1},
+      {"value": "+33 4 46 67 03", "count": 1},
+      {"value": "+33 4 77 93 68 94", "count": 1},
+      {"value": "+33 4 76 44 02 78", "count": 1},
+      {"value": "+33 4 78 29 66 62", "count": 1},
+      {"value": "+33 4 76 34 68 16", "count": 1},
+      {"value": "+33 4 75 87 17 40", "count": 1}
+    ],
+    "count": 73
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.starbucks.fr/", "count": 4},
+      {
+        "value": "http://www.bdfugue.com/librairie-bdfugue-grenoble/",
+        "count": 1
+      },
+      {"value": "http://www.lesnegociants.com/", "count": 1},
+      {"value": "http://associationlepassage.fr", "count": 1},
+      {"value": "http://www.ninkasi.fr/fr/ninkasi/sans-souci.html", "count": 1},
+      {
+        "value": "https://www.restaurants.mcdonalds.fr/mcdonalds-villeurbanne-charpennes",
+        "count": 1
+      },
+      {"value": "https://www.delautrecotedupont.net/", "count": 1},
+      {"value": "http://www.kaffeeberlin.com/", "count": 1},
+      {"value": "http://lepicerie-lyon8.fr/", "count": 1},
+      {"value": "http://www.bistrotjutard.com/", "count": 1},
+      {"value": "https://www.le-court-circuit.fr/", "count": 1},
+      {"value": "http://www.le-magelia.fr", "count": 1},
+      {"value": "http://www.debitdejeux.fr", "count": 1},
+      {"value": "https://linstant-patisserie.fr/", "count": 1},
+      {"value": "www.lebistrotdupotager.com", "count": 1},
+      {"value": "https://lebistrotdelaplace.wordpress.com/", "count": 1},
+      {"value": "http://www.lakolok.fr/", "count": 1},
+      {"value": "http://l.antiseche.free.fr/", "count": 1},
+      {"value": "http://www.indocafe.fr/", "count": 1},
+      {"value": "http://www.delipat.com/", "count": 1},
+      {"value": "http://www.maison-charrie.com/", "count": 1},
+      {"value": "http://www.candycookieboulevard.fr/", "count": 1},
+      {"value": "http://www.johnnyskitchen.fr/", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/Leffet-Caf%C3%A9-809883752434995/",
+        "count": 1
+      },
+      {"value": "www.kotopo.net", "count": 1},
+      {"value": "http://www.restaurant-tarteline.fr", "count": 1},
+      {"value": "http://www.celsiuscafe.com/", "count": 1},
+      {"value": "http://cafealaffut.wordpress.com/", "count": 1},
+      {"value": "http://toitoilezinc.fr/", "count": 1},
+      {"value": "http://www.lantreautre.fr", "count": 1},
+      {"value": "http://www.terre-adelice.eu/glacierlyon.php", "count": 1},
+      {
+        "value": "https://www.facebook.com/pages/Caf%C3%A9-du-march%C3%A9/514756015237597",
+        "count": 1
+      },
+      {
+        "value": "http://www.cafemokxa.com/content/2-coffee-shop-lyon-specialty-coffee-france",
+        "count": 1
+      },
+      {"value": "http://morearttea.com/", "count": 1},
+      {"value": "https://www.ninkasi.fr/lieux/guillotiere.html", "count": 1},
+      {"value": "http://www.lecafedesarts38.fr", "count": 1},
+      {"value": "http://www.lapouleperchee.fr/", "count": 1},
+      {"value": "http://www.lafourmiliere-cafe.fr/", "count": 1},
+      {"value": "http://www.larchipeldesmots.fr/", "count": 1},
+      {"value": "http://lecausetoujours.fr/", "count": 1},
+      {"value": "https://sites.google.com/site/larretpublic/", "count": 1},
+      {"value": "http://lambassa.de/", "count": 1},
+      {"value": "http://www.cafe-victor-hugo-valence.fr/contact", "count": 1},
+      {"value": "https://fr-fr.facebook.com/cafedulouvre", "count": 1},
+      {"value": "http://vintagebyfabichka.com", "count": 1},
+      {"value": "http://www.cafebunna.com/", "count": 1},
+      {
+        "value": "https://www.facebook.com/Le-Cafe-Curt-159034960793260",
+        "count": 1
+      },
+      {"value": "http://bar-a-cafe-atypique.fr/", "count": 1},
+      {"value": "http://cafejadore.fr", "count": 1},
+      {"value": "https://sofffa.com", "count": 1},
+      {"value": "http://www.starbucks.fr", "count": 1},
+      {"value": "http://www.kaovacafe.fr/", "count": 1},
+      {"value": "https://facebook.com/chacunsatasse/", "count": 1},
+      {"value": "http://noze-cafe.fr", "count": 1},
+      {"value": "https://www.anticafe.eu/lyon", "count": 1},
+      {"value": "http://www.limonade-marinette.fr", "count": 1},
+      {
+        "value": "https://www.facebook.com/Aussie-Frenchi-519100941783174/",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/NuageCafeLyon/", "count": 1},
+      {"value": "http://www.rakwe.fr", "count": 1},
+      {"value": "https://archijeux.org/", "count": 1},
+      {"value": "http://www.cafes-etienne.com/", "count": 1},
+      {"value": "http://biscuithe.com", "count": 1},
+      {"value": "http://www.little-petitsgateaux.com", "count": 1},
+      {"value": "www.aubergedutremplin.fr", "count": 1},
+      {"value": "http://letheacoudre-grenoble.fr/", "count": 1},
+      {
+        "value": "https://www.starbucks.fr/store-locator/store/1020080/lyon-hcl-hospital-avenue-rockfeller-lyon-v-69003-fr",
+        "count": 1
+      },
+      {"value": "http://www.comcom-paysdecorps.com", "count": 1},
+      {"value": "http://www.cafeducol.com", "count": 1},
+      {"value": "http://restaurantbarchezpaulette.fr", "count": 1}
+    ],
+    "count": 72
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 38},
+      {"value": "no", "count": 15},
+      {"value": "yes", "count": 9},
+      {"value": "terminal", "count": 1}
+    ],
+    "count": 63
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 33},
+      {"value": "no", "count": 17},
+      {"value": "limited", "count": 9}
+    ],
+    "count": 59
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "outside", "count": 32},
+      {"value": "no", "count": 23},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 56
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "newsagent", "count": 13},
+      {"value": "bakery", "count": 8},
+      {"value": "gift", "count": 2},
+      {"value": "kiosk", "count": 2},
+      {"value": "bicycle", "count": 2},
+      {"value": "cheese", "count": 1},
+      {"value": "art", "count": 1},
+      {"value": "clothes", "count": 1},
+      {"value": "tea", "count": 1},
+      {"value": "hairdresser", "count": 1},
+      {"value": "tobacco", "count": 1},
+      {"value": "coffee", "count": 1},
+      {"value": "confectionery", "count": 1},
+      {"value": "beverages", "count": 1},
+      {"value": "books", "count": 1}
+    ],
+    "count": 37
+  },
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 31}], "count": 31},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "café associatif", "count": 2},
+      {
+        "value": "Café et lieu culturel (soirées à thèmes, expositions, DJ).",
+        "count": 1
+      },
+      {"value": "bar-tabac-loto", "count": 1},
+      {
+        "value": "Espace culturel international et cours de langues ; accès uniquement aux membres sur adhésion sur place.",
+        "count": 1
+      },
+      {"value": "Café social interactif", "count": 1},
+      {"value": "Artisan Glacier - Salon de Thé", "count": 1},
+      {"value": "Brasserie", "count": 1},
+      {"value": "Glacier, Cocktails, Brasserie", "count": 1},
+      {"value": "Bar-Tabac-PMU", "count": 1},
+      {"value": "Café associatif", "count": 1},
+      {"value": "Café, brasserie, restaurant", "count": 1},
+      {"value": "Bar - Déjeuner - Sandwichs", "count": 1},
+      {"value": "Bar-Restaurant", "count": 1},
+      {"value": "bar-brasserie", "count": 1},
+      {"value": "Bar Fédératif", "count": 1},
+      {
+        "value": "Bistro \"Le Passage\" : Bar sans alcool géré par une association",
+        "count": 1
+      },
+      {"value": "Salon de thé, torréfacteur, pâtisserie maison.", "count": 1},
+      {
+        "value": "L’anticafé est un endroit calme et spacieux vous permettant de : - consommer les boissons et encas à volonté ; - travailler, seul ou à plusieurs, avec des boxs dédiés et un accès Wifi ; - vous reposer, discuter, etc. Le tout pour seulement 5 € par heure !",
+        "count": 1
+      },
+      {"value": "Casse-croute - Repas sur commande", "count": 1},
+      {"value": "café restaurant", "count": 1},
+      {"value": "Café, bar, restaurant", "count": 1},
+      {"value": "Salon de thé", "count": 1},
+      {"value": "Café bibliothèque", "count": 1},
+      {
+        "value": "Coffee machines only. Swiss Francs and credit cards accepted.",
+        "count": 1
+      },
+      {"value": "Salon de thé et galerie d'art", "count": 1},
+      {
+        "value": "Bar, tabac, restauration, presse, dépôt de pain, relais poste, épicerie et brasserie.",
+        "count": 1
+      }
+    ],
+    "count": 27
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 23}, {"value": "1", "count": 3}],
+    "count": 26
+  },
+  {"key": "gambling", "tags": [{"value": "yes", "count": 20}], "count": 20},
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 14}, {"value": "yes", "count": 1}],
+    "count": 15
+  },
+  {
+    "key": "diet:vegetarian",
+    "tags": [{"value": "yes", "count": 10}, {"value": "limited", "count": 1}],
+    "count": 11
+  },
+  {
+    "key": "brewery",
+    "tags": [
+      {"value": "Chouffe", "count": 2},
+      {"value": "Ninkasi", "count": 1},
+      {"value": "Berliner Pilsener;Weltenburger;tap 6", "count": 1},
+      {"value": "La voie maltée;Mandrin", "count": 1},
+      {"value": "Stella", "count": 1},
+      {"value": "L'Agrivoise; La Grihète", "count": 1},
+      {"value": "Grihète;Pleine Lune", "count": 1},
+      {"value": "Grimbergen", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Starbucks", "count": 5},
+      {"value": "KaleiDiescope", "count": 1},
+      {"value": "BD Fugue", "count": 1},
+      {"value": "La Poste", "count": 1},
+      {"value": "individually owned", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "hotel", "count": 4},
+      {"value": "hostel", "count": 3},
+      {"value": "artwork", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "salon de thé", "count": 1},
+      {"value": "Précédemment: \"Bar des Amis\"", "count": 1},
+      {"value": "Bar à vins", "count": 1},
+      {"value": "Boulangerie - Patisserie - Tea-Room", "count": 1},
+      {"value": "tres bon coupe de glace", "count": 1},
+      {"value": "Salon de Thé et narguilé", "count": 1},
+      {"value": "Salon de thé & atelier (tricot, couture…)", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "wifi",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q17131199", "count": 1},
+      {"value": "Q27732004", "count": 1},
+      {"value": "Q46637335", "count": 1},
+      {"value": "Q22968650", "count": 1},
+      {"value": "Q52158829", "count": 1},
+      {"value": "Q22967002", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "entrance",
+    "tags": [{"value": "yes", "count": 4}, {"value": "main", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Starbucks", "count": 2},
+      {"value": "McCafé", "count": 1},
+      {"value": "BD Fugue", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "lepicerielyon8@gmail.com", "count": 1},
+      {"value": "patisserielinstant@gmail.com", "count": 1},
+      {"value": "grenoble@bdfugue.com", "count": 1},
+      {"value": "nuage.cafe.lyon@gmail.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "room",
+    "tags": [
+      {"value": "restaurant", "count": 3},
+      {"value": "shop", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "diet:vegan",
+    "tags": [
+      {"value": "no", "count": 2},
+      {"value": "yes", "count": 1},
+      {"value": "only", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 3}], "count": 3},
+  {
+    "key": "takeaway",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "organic", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1984-12-21", "count": 1},
+      {"value": "1989-01-23", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-08-05", "count": 1},
+      {"value": "2017-09-27", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "cafe", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "currency:XLT",
+    "tags": [{"value": "LIEN", "count": 1}, {"value": "CARN", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117784", "count": 1},
+      {"value": "PA00117214", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 2}], "count": 2},
+  {"key": "craft", "tags": [{"value": "brewery", "count": 2}], "count": 2},
+  {
+    "key": "ele",
+    "tags": [{"value": "258", "count": 1}, {"value": "2054", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "service:bicycle:repair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "L'élément n'existe pas ou plus", "count": 1},
+      {"value": "Vérifier les horaires", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:cash:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "clothes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "books", "tags": [{"value": "comic", "count": 1}], "count": 1},
+  {"key": "arts_centre", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:cash:XLT-CARN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Café du Rhône", "count": 1}],
+    "count": 1
+  },
+  {"key": "disused:cafe", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "start_date",
+    "tags": [{"value": "2015-04-25", "count": 1}],
+    "count": 1
+  },
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:LaPoste",
+    "tags": [{"value": "13020A", "count": 1}],
+    "count": 1
+  },
+  {"key": "dispensing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:FINESS",
+    "tags": [{"value": "690015821", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:cryptocurrencies",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Starbucks", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "office",
+    "tags": [{"value": "advertising_agency", "count": 1}],
+    "count": 1
+  },
+  {"key": "delivery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "lottery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "Owner of Bar lets 2 dogs run free who attack bycycle riders  and does nothing about it.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "hazard", "tags": [{"value": "dogs", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "Auberge du Termplin", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "diet",
+    "tags": [{"value": "Classic French brasserie cuisine", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {"value": "Plein centre ville, personnel accueillant", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "terrace", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "9pin", "count": 1}], "count": 1},
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "painting", "count": 1}],
+    "count": 1
+  },
+  {"key": "rental", "tags": [{"value": "snowshoe", "count": 1}], "count": 1},
+  {"key": "food", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:ssid",
+    "tags": [{"value": "freebox_causetoujours", "count": 1}],
+    "count": 1
+  }
+]

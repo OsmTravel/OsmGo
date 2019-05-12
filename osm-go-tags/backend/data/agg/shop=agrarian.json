@@ -1,0 +1,21 @@
+[
+  {"key": "shop", "tags": [{"value": "agrarian", "count": 7}], "count": 7},
+  {
+    "key": "agrarian",
+    "tags": [
+      {"value": "Produits_agricoles", "count": 1},
+      {"value": "tools", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 77 66 85 31", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://fermedeboisy.fr/", "count": 1}],
+    "count": 1
+  }
+]

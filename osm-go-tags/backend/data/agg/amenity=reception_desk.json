@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "reception_desk", "count": 3}],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2}
+]

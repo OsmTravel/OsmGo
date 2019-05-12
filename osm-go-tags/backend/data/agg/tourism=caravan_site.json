@@ -1,0 +1,328 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "caravan_site", "count": 195}],
+    "count": 195
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "yes", "count": 28},
+      {"value": "no", "count": 25},
+      {"value": "?", "count": 1},
+      {"value": "unknown", "count": 1},
+      {"value": "May-Sep", "count": 1}
+    ],
+    "count": 56
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "16", "count": 7},
+      {"value": "20", "count": 6},
+      {"value": "10", "count": 5},
+      {"value": "6", "count": 3},
+      {"value": "5", "count": 3},
+      {"value": "15", "count": 2},
+      {"value": "26", "count": 2},
+      {"value": "3", "count": 2},
+      {"value": "50", "count": 2},
+      {"value": "120", "count": 2},
+      {"value": "25", "count": 2},
+      {"value": "46", "count": 1},
+      {"value": "80", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "52", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "86", "count": 1},
+      {"value": "30", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "parking", "count": 18},
+      {"value": "drinking_water", "count": 13},
+      {"value": "sanitary_dump_station", "count": 5},
+      {"value": "waste_disposal", "count": 1},
+      {"value": "parking_space", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SG2A Hacienda", "count": 18},
+      {"value": "ADOMA", "count": 6},
+      {"value": "Mairie de Chambéry", "count": 1},
+      {"value": "Mairie de Villeurbanne", "count": 1},
+      {"value": "Mairie de Trévoux", "count": 1},
+      {"value": "Commune Veyrier-du-Lac", "count": 1},
+      {"value": "non designé avant refection en 2015", "count": 1},
+      {"value": "Le Bourget du Lac", "count": 1},
+      {"value": "Municipalité d'Excenevex", "count": 1},
+      {"value": "Public", "count": 1},
+      {"value": "Camping-Car Park", "count": 1}
+    ],
+    "count": 33
+  },
+  {
+    "key": "power_supply",
+    "tags": [
+      {"value": "yes", "count": 25},
+      {"value": "no", "count": 4},
+      {"value": "unknown", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "owner",
+    "tags": [
+      {"value": "Grand Lyon", "count": 18},
+      {"value": "Communauté Communes Vallée du Garon", "count": 1},
+      {
+        "value": "Communauté de communes Beaujolais Saône Pierres Dorées",
+        "count": 1
+      },
+      {"value": "Communauté Communes Est Lyonnais", "count": 1},
+      {"value": "Communauté de Communes Vallons du Lyonnais", "count": 1},
+      {"value": "Communauté de Communes Est Lyonnais", "count": 1},
+      {"value": "Communauté de Communes Beaujolais Val de Saone", "count": 1},
+      {"value": "Communauté de Communes Pays de Tarare", "count": 1},
+      {"value": "Communauté Communes Portes Ouest de la Dombes", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "tents",
+    "tags": [{"value": "no", "count": 19}, {"value": "yes", "count": 1}],
+    "count": 20
+  },
+  {
+    "key": "sanitary_dump_station",
+    "tags": [
+      {"value": "yes", "count": 15},
+      {"value": "no", "count": 4},
+      {"value": "customers", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 7}, {"value": "hedge", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "no", "count": 6}, {"value": "wlan", "count": 3}],
+    "count": 9
+  },
+  {
+    "key": "parking",
+    "tags": [
+      {"value": "surface", "count": 6},
+      {"value": "multi-storey", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lauribert.com", "count": 1},
+      {"value": "https://www.campingparc-beaujolais.com/", "count": 1},
+      {
+        "value": "http://www.camping-car-park.com/fr/aire-camping-car-park/la-roche-de-glun",
+        "count": 1
+      },
+      {"value": "port-de-roanne.fr", "count": 1},
+      {"value": "http://www.campingmontchavin.com/fr/", "count": 1},
+      {"value": "http://www.campinglagoule.com/", "count": 1},
+      {"value": "http://www.morgins-loisirs.ch/index.php/camping", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "public", "count": 3},
+      {"value": "permissive", "count": 2},
+      {"value": "yes", "count": 2}
+    ],
+    "count": 7
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "gravel", "count": 3},
+      {"value": "asphalt", "count": 1},
+      {"value": "paved", "count": 1},
+      {"value": "compacted", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "water_point",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33474653348", "count": 1},
+      {"value": "+33 4 76 34 62 96", "count": 1},
+      {"value": "+33 4 77 72 59 96", "count": 1},
+      {"value": "+33 4 79 07 83 23", "count": 1},
+      {"value": "+41-79-301-3333", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Point de service gratuit", "count": 1},
+      {
+        "value": "> 20 Plätze, Ver-,Entsorgung, Strom, Sommer geschlossen",
+        "count": 1
+      },
+      {
+        "value": "Vidanges,  eau, stationnement et WC gratuit. Nuit au calme, ballade et bbq possible autour de l'étang.",
+        "count": 1
+      },
+      {"value": "Emplacement Camping Car", "count": 1},
+      {"value": "4 €", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "maxstay",
+    "tags": [
+      {"value": "3h", "count": 1},
+      {"value": "12h", "count": 1},
+      {"value": "48", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "fee, power_supply", "count": 1},
+      {
+        "value": "limites de surface a confirmer, ainsi que voie d'acces",
+        "count": 1
+      },
+      {
+        "value": "Avec à la fin du projet (S1 2017) 14 Habitations...à voir comment tagguer celà dans OSM",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "motorhome",
+    "tags": [{"value": "designated", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "sanitary_dump_station:chemical_toilet",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "sanitary_dump_station:grey_water",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "drinking_water", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "stars",
+    "tags": [{"value": "4", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.loiretourisme.com/fiche/138544/aire-de-services-et-de-stationnement-camping-car",
+        "count": 1
+      },
+      {
+        "value": "http://www.i-campingcar.fr/aires.php?ville=la%20feclaz",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "charge",
+    "tags": [{"value": "3€/24h", "count": 1}, {"value": "4 €", "count": 1}],
+    "count": 2
+  },
+  {"key": "park_ride", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "sanitary_dump_station:basin",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "water", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "euro-relais", "count": 1}], "count": 1},
+  {"key": "dogs", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone:mobile",
+    "tags": [{"value": "+33 6 08 26 35 60", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:token", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "fermé en septembre 2012, refection en cours", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "des que 2016 on a separee le Camping Municipal en * camp_site (camping, tentes, caravanes dans le sud) et * caravan_site (camping_car dans le nord). I y a seulement un access dans le nord!",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 71 17 04", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "port.roanne@lyonnaise-des-eaux.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "ft_symbol", "tags": [{"value": "344", "count": 1}], "count": 1},
+  {
+    "key": "camp_site",
+    "tags": [{"value": "camp_pitch", "count": 1}],
+    "count": 1
+  },
+  {"key": "caravans", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

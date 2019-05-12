@@ -1,0 +1,4539 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "parking_space", "count": 3031}],
+    "count": 3031
+  },
+  {
+    "key": "capacity:disabled",
+    "tags": [
+      {"value": "1", "count": 1685},
+      {"value": "2", "count": 165},
+      {"value": "3", "count": 17},
+      {"value": "4", "count": 14},
+      {"value": "yes", "count": 14},
+      {"value": "5", "count": 4},
+      {"value": "6", "count": 3},
+      {"value": "16", "count": 1}
+    ],
+    "count": 1903
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 1674},
+      {"value": "designated", "count": 203},
+      {"value": "bad", "count": 6},
+      {"value": "1", "count": 1}
+    ],
+    "count": 1884
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Emplacement stationnement PMR", "count": 1500},
+      {"value": "electric car", "count": 1},
+      {
+        "value": "Place de Parking PMR inutilisable, un potelet barre le cheminement vers le trottoir.",
+        "count": 1
+      },
+      {"value": "Parking privé", "count": 1},
+      {"value": "Point arrêt-minute covoiturage", "count": 1},
+      {"value": "Emplacement Camping Car", "count": 1},
+      {"value": "Réservé Gendarmerie", "count": 1},
+      {"value": "Place handicapé", "count": 1}
+    ],
+    "count": 1507
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Position réelle, coherente envers data.grandlyon.com DSIT-2016-07",
+        "count": 424
+      },
+      {
+        "value": "Position réelle, décalée envers data.grandlyon.com DSIT-2016-07",
+        "count": 28
+      },
+      {
+        "value": "Position réelle, décalée autre coté rue envers data.grandlyon.com DSIT-2016-07",
+        "count": 3
+      },
+      {"value": "Bing imagery is outdated", "count": 2},
+      {
+        "value": "cette position vraie est coherente envers ref1358 opendata.grandlyon",
+        "count": 2
+      },
+      {
+        "value": "position réelle, coherente envers ref 1012 opendata.grandlyon",
+        "count": 2
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 672 opendata.grandlyon",
+        "count": 2
+      },
+      {
+        "value": "position réelle, coherente envers ref 1128 opendata.grandlyon",
+        "count": 2
+      },
+      {
+        "value": "position réelle, coherente envers ref 1137 opendata.grandlyon",
+        "count": 2
+      },
+      {
+        "value": "position réelle, coherente envers ref 1156 opendata.grandlyon",
+        "count": 2
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 985 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1361 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1298 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1236 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1278 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1259 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1310 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1311 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1219 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1275 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1312 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1281 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1282 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position est issue de ref1357 opendata.grandlyon sans verif possible sur othophoto 2015",
+        "count": 1
+      },
+      {
+        "value": "cette position est issue de ref1356 opendata.grandlyon sans verif possible sur othophoto 2015",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1359 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1222 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1314 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref284 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1315 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position est issue de ref1324 opendata.grandlyon sans verif possible sur othophoto 2015",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1322 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position est issue de ref1320 opendata.grandlyon sans verif possible sur othophoto 2015",
+        "count": 1
+      },
+      {
+        "value": "cette position est issue de ref1325 opendata.grandlyon sans verif possible sur othophoto 2015",
+        "count": 1
+      },
+      {
+        "value": "cette position est issue de ref1323 opendata.grandlyon sans verif possible sur othophoto 2015",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref913 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref924 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1116 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref944 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref982 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref.gid921 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref604 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref605 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref564 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref574 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref570 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref581 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref535 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1240 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1255 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1296 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1252 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1277 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref565 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1235 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref448 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref419 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref350 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 875 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref379 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref249 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref248 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref437 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref389 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref221 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref631 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref255 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref262 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref665 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid295 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid257 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid347 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid256 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid438 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid405 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid306 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid388 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref220 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid296 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid266 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid322 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid263 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid323 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid250 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid342 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid340 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid410 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid313 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid1338 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid226 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid328 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid265 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid267 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid326 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid278 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid399 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid367 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid283 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid366 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid239 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid427 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid393 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid390 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid253 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid1346 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid282 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid238 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid299 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid259 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid261 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid281 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid240 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid1093 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid1030 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid1196 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid1195 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid1205 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid1130 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid397 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid335 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid315 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid216 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid254 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid280 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid222 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid320 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid232 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid431 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente par rapport ref.gid223 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1269 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1276 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1268 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1271 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1233 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1274 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1273 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1270 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1272 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1299 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1301 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1302 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1300 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1307 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1306 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1303 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1304 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1305 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1243 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1313 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1309 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref1308 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref.709 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref663 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref660 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref674 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref737 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref633 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref611 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref746 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 409 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 288 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref425 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref.gid297 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 359 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 365 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 450 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 317 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 362 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 274 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 273 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 348 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 346 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 236 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 339 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 287 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 446 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 788 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 661 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 662 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 725 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 795 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 708 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 634 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 729 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 787 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 756 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 703 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 798 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 632 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 503 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1267 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1263 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1266 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1321 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1316 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1317 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1319 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1381 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1297 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1251 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1284 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1247 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1291 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1293 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1279 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1294 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1295 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1265 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1220 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1280 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1288 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1244 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1230 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 595 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 592 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 583 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 603 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 537 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 536 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 594 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 560 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 597 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 582 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 557 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 556 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 569 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 607 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 573 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1223 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1260 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1242 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1237 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1238 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1229 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1239 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1248 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1283 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1231 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1285 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1232 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1234 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1264 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1249 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1289 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1241 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1287 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1228 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1250 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1221 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1150 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 361 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 218 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 277 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 436 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 435 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 434 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 429 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 305 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 269 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 217 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 404 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 352 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 251 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 316 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 219 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 461 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 492 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 507 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 488 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 486 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 481 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 504 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 530 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 473 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 467 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 506 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 520 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 519 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 517 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 494 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 521 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 497 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 478 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 505 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 484 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 496 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 483 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 487 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 466 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 771 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 615 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 783 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 784 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "une seule place ; position vraie est coherente envers ref 731 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 794 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 739 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 620 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 720 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 745 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 621 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 772 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid224 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 616 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 612 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 740 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 757 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 760 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 743 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 617 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 715 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 676 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 677 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 675 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 666 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 758 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 684 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 698 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 797 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 639 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 762 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 761 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 626 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 642 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 793 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 637 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1364 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1055 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1345 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1045 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1070 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1117 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1202 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1084 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1351 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1110 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1216 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1122 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1341 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1194 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 991 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 922 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 983 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 899 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 992 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1009 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 11 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 477 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1226 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 480 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 495 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 456 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 457 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 455 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 555 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 590 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 567 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 553 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 580 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1286 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 69 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 587 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 602 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1001 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 993 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 999 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 928 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 838 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1005 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 817 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 933 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 947 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1167 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1175 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1174 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 927 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1000 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 837 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 802 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 981 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 806 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 949 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 863 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 957 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1003 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1157 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1155 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1160 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1097 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1209 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1134 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1165 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1077 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1052 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1096 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1046 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1139 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1085 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1031 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1017 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1109 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1144 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1082 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1129 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1217 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1218 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1215 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1078 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1211 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1153 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1161 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1140 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1147 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1107 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1158 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 873 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 872 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 943 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 994 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 995 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 824 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 883 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 821 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 941 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 919 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 898 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 859 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid332 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 996 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 942 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 885 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 862 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 820 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 882 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 881 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 961 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 810 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 825 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 965 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1011 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 1355 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1057 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1086 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1162 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1151 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1136 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1172 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1059 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref 1026 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 447 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 747 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 681 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 792 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 791 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 790 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 658 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 683 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 649 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 786 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 781 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 754 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 744 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 640 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 738 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 657 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 638 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 690 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 730 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 643 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 732 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 635 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 656 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 774 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 691 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 704 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 722 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 619 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 735 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 770 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 705 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 763 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 778 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 718 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 706 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 767 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 750 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 641 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 655 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 659 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 678 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 668 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 654 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 799 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 755 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 636 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 721 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 707 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 776 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 765 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 613 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 653 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 647 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 713 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 673 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 614 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 471 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 510 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 465 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 525 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 527 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 501 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 479 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 512 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 526 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 533 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 18 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 523 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 75 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 86 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 68 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 79 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 41 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 28 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 54 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 10 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 561 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 591 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 579 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 598 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 546 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 542 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 578 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 540 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 577 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 589 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 539 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 584 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 97 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 176 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 171 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 177 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 178 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 184 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 183 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente avec ref 196 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 475 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 518 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 493 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 470 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 454 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 453 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 44 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 81 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 458 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 485 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 502 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 476 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 459 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 491 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1327 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 490 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 509 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 464 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 508 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 789 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 697 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 689 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 701 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 694 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 630 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 650 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 702 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 766 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 462 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 463 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 474 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 482 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 468 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 514 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 524 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 515 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 452 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 73 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 451 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 511 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 499 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 500 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 469 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1333 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 489 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 472 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 498 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 516 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 534 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est décalée par rapport ref 208 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref.gid228 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1108 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1170 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1087 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1178 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1133 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1253 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1163 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1352 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est cohérente envers ref1225 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1138 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1192 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1018 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1032 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1064 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1111 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1024 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1188 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1015 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1197 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1198 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1025 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1019 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1104 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1190 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1177 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1199 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1152 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1154 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1189 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1073 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1095 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1336 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1339 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1069 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 805 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1007 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 923 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 892 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 842 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 964 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1013 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 950 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 962 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 853 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 870 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 855 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 159 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 163 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 954 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1126 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1050 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 989 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1143 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 959 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 869 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 990 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 834 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1022 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1362 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 860 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 937 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 918 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1169 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1125 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1193 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1106 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1187 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1134 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1043 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1123 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1122 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1121 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1036 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1042 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1027 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1081 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1212 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1141 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1038 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1146 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1094 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1176 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1207 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1035 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1142 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1131 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1164 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1115 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1091 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1167 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1049 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1181 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1105 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 341 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 432 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 325 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 303 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 416 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 418 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1330 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 293 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 420 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 301 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 378 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 433 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 364 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 292 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 373 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1014 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1051 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 392 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 357 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 395 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1331 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 211 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 307 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 243 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 318 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 235 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 304 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1020 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 252 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1135 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1101 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1113 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1039 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1074 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1072 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1071 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1023 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1159 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1185 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1044 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1089 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1048 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1147 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1054 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1053 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 327 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1079 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1148 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 333 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 242 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 396 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 440 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 336 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 422 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 331 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 321 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 377 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 24128 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 421 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 298 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 244 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 245 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 375 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 413 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 311 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 349 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 237 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1090 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1076 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1208 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1088 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1066 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1080 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1184 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1041 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1119 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1075 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 411 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 310 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 1040 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 246 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 444 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 209 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 294 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 391 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 442 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 443 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 428 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1348 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 247 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 439 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 403 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 344 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 345 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 401 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 402 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 338 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 882 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 836 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 300 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 407 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 406 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 889 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 840 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 974 data.grandlyon.com",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 888 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 890 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 815 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 865 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 935 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 975 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 814 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 867 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 960 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 946 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 945 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 864 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 987 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 906 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 868 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 972 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 953 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 963 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 828 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 976 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 988 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 977 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 984 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 909 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 901 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 998 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 1363 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 938 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, décalée par rapport ref 866 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 801 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 800 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 884 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 289 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 358 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 308 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 279 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 354 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 398 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 383 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 229 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 854 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 394 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 812 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 803 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 973 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 839 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 956 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 903 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 861 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 876 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "position réelle, coherente envers ref 871 opendata.grandlyon",
+        "count": 1
+      },
+      {"value": "Pas sûr du nombre de voies", "count": 1},
+      {"value": "Après rénovation Intermarché en 2015", "count": 1},
+      {
+        "value": "Position réelle cohérente envers opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 1083 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref1360 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 680 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "cette position vraie est coherente envers ref 682 opendata.grandlyon",
+        "count": 1
+      },
+      {
+        "value": "2 places de parking réservées à la charge de voitures électriques",
+        "count": 1
+      }
+    ],
+    "count": 1311
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "1147", "count": 2},
+      {"value": "1156", "count": 2},
+      {"value": "1122", "count": 2},
+      {"value": "11", "count": 2},
+      {"value": "1167", "count": 2},
+      {"value": "1134", "count": 2},
+      {"value": "1358", "count": 2},
+      {"value": "855", "count": 2},
+      {"value": "882", "count": 2},
+      {"value": "10", "count": 2},
+      {"value": "1128", "count": 2},
+      {"value": "1137", "count": 2},
+      {"value": "961", "count": 1},
+      {"value": "1310", "count": 1},
+      {"value": "1311", "count": 1},
+      {"value": "1219", "count": 1},
+      {"value": "1275", "count": 1},
+      {"value": "1312", "count": 1},
+      {"value": "1281", "count": 1},
+      {"value": "1282", "count": 1},
+      {"value": "1357", "count": 1},
+      {"value": "1356", "count": 1},
+      {"value": "1359", "count": 1},
+      {"value": "1222", "count": 1},
+      {"value": "1314", "count": 1},
+      {"value": "875", "count": 1},
+      {"value": "1315", "count": 1},
+      {"value": "1324", "count": 1},
+      {"value": "1322", "count": 1},
+      {"value": "1320", "count": 1},
+      {"value": "1325", "count": 1},
+      {"value": "1323", "count": 1},
+      {"value": "913", "count": 1},
+      {"value": "924", "count": 1},
+      {"value": "1116", "count": 1},
+      {"value": "944", "count": 1},
+      {"value": "982", "count": 1},
+      {"value": "921", "count": 1},
+      {"value": "604", "count": 1},
+      {"value": "605", "count": 1},
+      {"value": "564", "count": 1},
+      {"value": "574", "count": 1},
+      {"value": "570", "count": 1},
+      {"value": "581", "count": 1},
+      {"value": "535", "count": 1},
+      {"value": "1240", "count": 1},
+      {"value": "1255", "count": 1},
+      {"value": "1296", "count": 1},
+      {"value": "1252", "count": 1},
+      {"value": "1277", "count": 1},
+      {"value": "565", "count": 1},
+      {"value": "1235", "count": 1},
+      {"value": "448", "count": 1},
+      {"value": "419", "count": 1},
+      {"value": "350", "count": 1},
+      {"value": "379", "count": 1},
+      {"value": "249", "count": 1},
+      {"value": "248", "count": 1},
+      {"value": "437", "count": 1},
+      {"value": "389", "count": 1},
+      {"value": "221", "count": 1},
+      {"value": "631", "count": 1},
+      {"value": "255", "count": 1},
+      {"value": "262", "count": 1},
+      {"value": "665", "count": 1},
+      {"value": "295", "count": 1},
+      {"value": "257", "count": 1},
+      {"value": "347", "count": 1},
+      {"value": "256", "count": 1},
+      {"value": "438", "count": 1},
+      {"value": "405", "count": 1},
+      {"value": "306", "count": 1},
+      {"value": "388", "count": 1},
+      {"value": "220", "count": 1},
+      {"value": "296", "count": 1},
+      {"value": "266", "count": 1},
+      {"value": "322", "count": 1},
+      {"value": "263", "count": 1},
+      {"value": "323", "count": 1},
+      {"value": "250", "count": 1},
+      {"value": "342", "count": 1},
+      {"value": "340", "count": 1},
+      {"value": "410", "count": 1},
+      {"value": "313", "count": 1},
+      {"value": "1338", "count": 1},
+      {"value": "226", "count": 1},
+      {"value": "328", "count": 1},
+      {"value": "265", "count": 1},
+      {"value": "267", "count": 1},
+      {"value": "326", "count": 1},
+      {"value": "278", "count": 1},
+      {"value": "399", "count": 1},
+      {"value": "367", "count": 1},
+      {"value": "283", "count": 1},
+      {"value": "366", "count": 1},
+      {"value": "239", "count": 1},
+      {"value": "427", "count": 1},
+      {"value": "393", "count": 1},
+      {"value": "390", "count": 1},
+      {"value": "253", "count": 1},
+      {"value": "1346", "count": 1},
+      {"value": "282", "count": 1},
+      {"value": "238", "count": 1},
+      {"value": "299", "count": 1},
+      {"value": "259", "count": 1},
+      {"value": "261", "count": 1},
+      {"value": "281", "count": 1},
+      {"value": "240", "count": 1},
+      {"value": "1093", "count": 1},
+      {"value": "1030", "count": 1},
+      {"value": "1334", "count": 1},
+      {"value": "1196", "count": 1},
+      {"value": "1195", "count": 1},
+      {"value": "1205", "count": 1},
+      {"value": "1130", "count": 1},
+      {"value": "397", "count": 1},
+      {"value": "335", "count": 1},
+      {"value": "315", "count": 1},
+      {"value": "216", "count": 1},
+      {"value": "254", "count": 1},
+      {"value": "280", "count": 1},
+      {"value": "222", "count": 1},
+      {"value": "320", "count": 1},
+      {"value": "232", "count": 1},
+      {"value": "431", "count": 1},
+      {"value": "223", "count": 1},
+      {"value": "1269", "count": 1},
+      {"value": "1276", "count": 1},
+      {"value": "1268", "count": 1},
+      {"value": "1271", "count": 1},
+      {"value": "1233", "count": 1},
+      {"value": "1274", "count": 1},
+      {"value": "1273", "count": 1},
+      {"value": "1270", "count": 1},
+      {"value": "1272", "count": 1},
+      {"value": "1299", "count": 1},
+      {"value": "1301", "count": 1},
+      {"value": "1302", "count": 1},
+      {"value": "1300", "count": 1},
+      {"value": "1307", "count": 1},
+      {"value": "1306", "count": 1},
+      {"value": "1303", "count": 1},
+      {"value": "1304", "count": 1},
+      {"value": "1305", "count": 1},
+      {"value": "1243", "count": 1},
+      {"value": "1313", "count": 1},
+      {"value": "1309", "count": 1},
+      {"value": "1308", "count": 1},
+      {"value": "709", "count": 1},
+      {"value": "663", "count": 1},
+      {"value": "660", "count": 1},
+      {"value": "674", "count": 1},
+      {"value": "737", "count": 1},
+      {"value": "633", "count": 1},
+      {"value": "611", "count": 1},
+      {"value": "746", "count": 1},
+      {"value": "409", "count": 1},
+      {"value": "288", "count": 1},
+      {"value": "425", "count": 1},
+      {"value": "297", "count": 1},
+      {"value": "359", "count": 1},
+      {"value": "365", "count": 1},
+      {"value": "450", "count": 1},
+      {"value": "317", "count": 1},
+      {"value": "362", "count": 1},
+      {"value": "274", "count": 1},
+      {"value": "273", "count": 1},
+      {"value": "348", "count": 1},
+      {"value": "346", "count": 1},
+      {"value": "236", "count": 1},
+      {"value": "339", "count": 1},
+      {"value": "287", "count": 1},
+      {"value": "446", "count": 1},
+      {"value": "788", "count": 1},
+      {"value": "661", "count": 1},
+      {"value": "662", "count": 1},
+      {"value": "725", "count": 1},
+      {"value": "795", "count": 1},
+      {"value": "708", "count": 1},
+      {"value": "634", "count": 1},
+      {"value": "729", "count": 1},
+      {"value": "787", "count": 1},
+      {"value": "756", "count": 1},
+      {"value": "703", "count": 1},
+      {"value": "798", "count": 1},
+      {"value": "632", "count": 1},
+      {"value": "503", "count": 1},
+      {"value": "1267", "count": 1},
+      {"value": "1263", "count": 1},
+      {"value": "1266", "count": 1},
+      {"value": "1321", "count": 1},
+      {"value": "1316", "count": 1},
+      {"value": "1317", "count": 1},
+      {"value": "1319", "count": 1},
+      {"value": "1381", "count": 1},
+      {"value": "1297", "count": 1},
+      {"value": "1251", "count": 1},
+      {"value": "1284", "count": 1},
+      {"value": "1247", "count": 1},
+      {"value": "1291", "count": 1},
+      {"value": "1293", "count": 1},
+      {"value": "1279", "count": 1},
+      {"value": "1294", "count": 1},
+      {"value": "1295", "count": 1},
+      {"value": "1265", "count": 1},
+      {"value": "1220", "count": 1},
+      {"value": "1280", "count": 1},
+      {"value": "1288", "count": 1},
+      {"value": "1244", "count": 1},
+      {"value": "1230", "count": 1},
+      {"value": "595", "count": 1},
+      {"value": "592", "count": 1},
+      {"value": "583", "count": 1},
+      {"value": "603", "count": 1},
+      {"value": "537", "count": 1},
+      {"value": "536", "count": 1},
+      {"value": "594", "count": 1},
+      {"value": "560", "count": 1},
+      {"value": "597", "count": 1},
+      {"value": "582", "count": 1},
+      {"value": "557", "count": 1},
+      {"value": "556", "count": 1},
+      {"value": "569", "count": 1},
+      {"value": "607", "count": 1},
+      {"value": "573", "count": 1},
+      {"value": "1223", "count": 1},
+      {"value": "1260", "count": 1},
+      {"value": "1242", "count": 1},
+      {"value": "1237", "count": 1},
+      {"value": "1238", "count": 1},
+      {"value": "1229", "count": 1},
+      {"value": "1239", "count": 1},
+      {"value": "1248", "count": 1},
+      {"value": "1283", "count": 1},
+      {"value": "1231", "count": 1},
+      {"value": "1285", "count": 1},
+      {"value": "1232", "count": 1},
+      {"value": "1234", "count": 1},
+      {"value": "1264", "count": 1},
+      {"value": "1249", "count": 1},
+      {"value": "1289", "count": 1},
+      {"value": "1241", "count": 1},
+      {"value": "1287", "count": 1},
+      {"value": "1228", "count": 1},
+      {"value": "1250", "count": 1},
+      {"value": "1221", "count": 1},
+      {"value": "1150", "count": 1},
+      {"value": "361", "count": 1},
+      {"value": "218", "count": 1},
+      {"value": "277", "count": 1},
+      {"value": "436", "count": 1},
+      {"value": "435", "count": 1},
+      {"value": "434", "count": 1},
+      {"value": "429", "count": 1},
+      {"value": "305", "count": 1},
+      {"value": "269", "count": 1},
+      {"value": "1329", "count": 1},
+      {"value": "217", "count": 1},
+      {"value": "404", "count": 1},
+      {"value": "352", "count": 1},
+      {"value": "251", "count": 1},
+      {"value": "316", "count": 1},
+      {"value": "219", "count": 1},
+      {"value": "461", "count": 1},
+      {"value": "492", "count": 1},
+      {"value": "507", "count": 1},
+      {"value": "513", "count": 1},
+      {"value": "488", "count": 1},
+      {"value": "486", "count": 1},
+      {"value": "481", "count": 1},
+      {"value": "504", "count": 1},
+      {"value": "530", "count": 1},
+      {"value": "473", "count": 1},
+      {"value": "467", "count": 1},
+      {"value": "506", "count": 1},
+      {"value": "520", "count": 1},
+      {"value": "519", "count": 1},
+      {"value": "517", "count": 1},
+      {"value": "494", "count": 1},
+      {"value": "521", "count": 1},
+      {"value": "497", "count": 1},
+      {"value": "478", "count": 1},
+      {"value": "505", "count": 1},
+      {"value": "484", "count": 1},
+      {"value": "496", "count": 1},
+      {"value": "483", "count": 1},
+      {"value": "487", "count": 1},
+      {"value": "466", "count": 1},
+      {"value": "771", "count": 1},
+      {"value": "615", "count": 1},
+      {"value": "783", "count": 1},
+      {"value": "784", "count": 1},
+      {"value": "731", "count": 1},
+      {"value": "794", "count": 1},
+      {"value": "739", "count": 1},
+      {"value": "620", "count": 1},
+      {"value": "720", "count": 1},
+      {"value": "745", "count": 1},
+      {"value": "621", "count": 1},
+      {"value": "772", "count": 1},
+      {"value": "679", "count": 1},
+      {"value": "616", "count": 1},
+      {"value": "612", "count": 1},
+      {"value": "782", "count": 1},
+      {"value": "740", "count": 1},
+      {"value": "757", "count": 1},
+      {"value": "760", "count": 1},
+      {"value": "743", "count": 1},
+      {"value": "617", "count": 1},
+      {"value": "715", "count": 1},
+      {"value": "676", "count": 1},
+      {"value": "677", "count": 1},
+      {"value": "675", "count": 1},
+      {"value": "666", "count": 1},
+      {"value": "758", "count": 1},
+      {"value": "684", "count": 1},
+      {"value": "698", "count": 1},
+      {"value": "797", "count": 1},
+      {"value": "639", "count": 1},
+      {"value": "762", "count": 1},
+      {"value": "761", "count": 1},
+      {"value": "626", "count": 1},
+      {"value": "642", "count": 1},
+      {"value": "793", "count": 1},
+      {"value": "637", "count": 1},
+      {"value": "696", "count": 1},
+      {"value": "1364", "count": 1},
+      {"value": "1055", "count": 1},
+      {"value": "1345", "count": 1},
+      {"value": "1045", "count": 1},
+      {"value": "1070", "count": 1},
+      {"value": "1117", "count": 1},
+      {"value": "1202", "count": 1},
+      {"value": "1084", "count": 1},
+      {"value": "1351", "count": 1},
+      {"value": "1110", "count": 1},
+      {"value": "1216", "count": 1},
+      {"value": "224", "count": 1},
+      {"value": "1341", "count": 1},
+      {"value": "1194", "count": 1},
+      {"value": "991", "count": 1},
+      {"value": "922", "count": 1},
+      {"value": "983", "count": 1},
+      {"value": "899", "count": 1},
+      {"value": "992", "count": 1},
+      {"value": "1009", "count": 1},
+      {"value": "228", "count": 1},
+      {"value": "477", "count": 1},
+      {"value": "1226", "count": 1},
+      {"value": "480", "count": 1},
+      {"value": "495", "count": 1},
+      {"value": "456", "count": 1},
+      {"value": "457", "count": 1},
+      {"value": "455", "count": 1},
+      {"value": "555", "count": 1},
+      {"value": "590", "count": 1},
+      {"value": "567", "count": 1},
+      {"value": "553", "count": 1},
+      {"value": "580", "count": 1},
+      {"value": "1286", "count": 1},
+      {"value": "69", "count": 1},
+      {"value": "587", "count": 1},
+      {"value": "602", "count": 1},
+      {"value": "1001", "count": 1},
+      {"value": "993", "count": 1},
+      {"value": "999", "count": 1},
+      {"value": "928", "count": 1},
+      {"value": "838", "count": 1},
+      {"value": "1005", "count": 1},
+      {"value": "817", "count": 1},
+      {"value": "933", "count": 1},
+      {"value": "947", "count": 1},
+      {"value": "284", "count": 1},
+      {"value": "1175", "count": 1},
+      {"value": "1174", "count": 1},
+      {"value": "927", "count": 1},
+      {"value": "1000", "count": 1},
+      {"value": "837", "count": 1},
+      {"value": "802", "count": 1},
+      {"value": "981", "count": 1},
+      {"value": "806", "count": 1},
+      {"value": "949", "count": 1},
+      {"value": "863", "count": 1},
+      {"value": "957", "count": 1},
+      {"value": "1003", "count": 1},
+      {"value": "1157", "count": 1},
+      {"value": "1155", "count": 1},
+      {"value": "1160", "count": 1},
+      {"value": "1097", "count": 1},
+      {"value": "1209", "count": 1},
+      {"value": "1253", "count": 1},
+      {"value": "1165", "count": 1},
+      {"value": "1077", "count": 1},
+      {"value": "1052", "count": 1},
+      {"value": "1096", "count": 1},
+      {"value": "1046", "count": 1},
+      {"value": "1139", "count": 1},
+      {"value": "1085", "count": 1},
+      {"value": "1031", "count": 1},
+      {"value": "1017", "count": 1},
+      {"value": "1109", "count": 1},
+      {"value": "1144", "count": 1},
+      {"value": "1082", "count": 1},
+      {"value": "1129", "count": 1},
+      {"value": "1217", "count": 1},
+      {"value": "1218", "count": 1},
+      {"value": "1215", "count": 1},
+      {"value": "1078", "count": 1},
+      {"value": "1211", "count": 1},
+      {"value": "1153", "count": 1},
+      {"value": "1161", "count": 1},
+      {"value": "1140", "count": 1},
+      {"value": "1225", "count": 1},
+      {"value": "1107", "count": 1},
+      {"value": "1158", "count": 1},
+      {"value": "873", "count": 1},
+      {"value": "872", "count": 1},
+      {"value": "943", "count": 1},
+      {"value": "994", "count": 1},
+      {"value": "995", "count": 1},
+      {"value": "824", "count": 1},
+      {"value": "883", "count": 1},
+      {"value": "821", "count": 1},
+      {"value": "941", "count": 1},
+      {"value": "919", "count": 1},
+      {"value": "898", "count": 1},
+      {"value": "859", "count": 1},
+      {"value": "985", "count": 1},
+      {"value": "996", "count": 1},
+      {"value": "942", "count": 1},
+      {"value": "1360", "count": 1},
+      {"value": "862", "count": 1},
+      {"value": "820", "count": 1},
+      {"value": "1361", "count": 1},
+      {"value": "881", "count": 1},
+      {"value": "332", "count": 1},
+      {"value": "810", "count": 1},
+      {"value": "825", "count": 1},
+      {"value": "965", "count": 1},
+      {"value": "1011", "count": 1},
+      {"value": "1355", "count": 1},
+      {"value": "1057", "count": 1},
+      {"value": "1086", "count": 1},
+      {"value": "1162", "count": 1},
+      {"value": "1151", "count": 1},
+      {"value": "1136", "count": 1},
+      {"value": "1172", "count": 1},
+      {"value": "1059", "count": 1},
+      {"value": "1026", "count": 1},
+      {"value": "447", "count": 1},
+      {"value": "747", "count": 1},
+      {"value": "681", "count": 1},
+      {"value": "792", "count": 1},
+      {"value": "791", "count": 1},
+      {"value": "790", "count": 1},
+      {"value": "658", "count": 1},
+      {"value": "683", "count": 1},
+      {"value": "649", "count": 1},
+      {"value": "786", "count": 1},
+      {"value": "781", "count": 1},
+      {"value": "754", "count": 1},
+      {"value": "744", "count": 1},
+      {"value": "640", "count": 1},
+      {"value": "738", "count": 1},
+      {"value": "657", "count": 1},
+      {"value": "638", "count": 1},
+      {"value": "690", "count": 1},
+      {"value": "730", "count": 1},
+      {"value": "643", "count": 1},
+      {"value": "732", "count": 1},
+      {"value": "635", "count": 1},
+      {"value": "656", "count": 1},
+      {"value": "774", "count": 1},
+      {"value": "691", "count": 1},
+      {"value": "704", "count": 1},
+      {"value": "722", "count": 1},
+      {"value": "619", "count": 1},
+      {"value": "735", "count": 1},
+      {"value": "770", "count": 1},
+      {"value": "705", "count": 1},
+      {"value": "763", "count": 1},
+      {"value": "778", "count": 1},
+      {"value": "718", "count": 1},
+      {"value": "706", "count": 1},
+      {"value": "767", "count": 1},
+      {"value": "750", "count": 1},
+      {"value": "641", "count": 1},
+      {"value": "655", "count": 1},
+      {"value": "659", "count": 1},
+      {"value": "678", "count": 1},
+      {"value": "668", "count": 1},
+      {"value": "672", "count": 1},
+      {"value": "654", "count": 1},
+      {"value": "799", "count": 1},
+      {"value": "755", "count": 1},
+      {"value": "636", "count": 1},
+      {"value": "721", "count": 1},
+      {"value": "707", "count": 1},
+      {"value": "776", "count": 1},
+      {"value": "765", "count": 1},
+      {"value": "613", "count": 1},
+      {"value": "653", "count": 1},
+      {"value": "647", "count": 1},
+      {"value": "713", "count": 1},
+      {"value": "673", "count": 1},
+      {"value": "614", "count": 1},
+      {"value": "471", "count": 1},
+      {"value": "510", "count": 1},
+      {"value": "465", "count": 1},
+      {"value": "525", "count": 1},
+      {"value": "527", "count": 1},
+      {"value": "501", "count": 1},
+      {"value": "479", "count": 1},
+      {"value": "512", "count": 1},
+      {"value": "526", "count": 1},
+      {"value": "533", "count": 1},
+      {"value": "18", "count": 1},
+      {"value": "523", "count": 1},
+      {"value": "75", "count": 1},
+      {"value": "86", "count": 1},
+      {"value": "68", "count": 1},
+      {"value": "79", "count": 1},
+      {"value": "41", "count": 1},
+      {"value": "28", "count": 1},
+      {"value": "54", "count": 1},
+      {"value": "1298", "count": 1},
+      {"value": "561", "count": 1},
+      {"value": "591", "count": 1},
+      {"value": "579", "count": 1},
+      {"value": "598", "count": 1},
+      {"value": "546", "count": 1},
+      {"value": "542", "count": 1},
+      {"value": "578", "count": 1},
+      {"value": "540", "count": 1},
+      {"value": "577", "count": 1},
+      {"value": "589", "count": 1},
+      {"value": "539", "count": 1},
+      {"value": "584", "count": 1},
+      {"value": "97", "count": 1},
+      {"value": "176", "count": 1},
+      {"value": "171", "count": 1},
+      {"value": "177", "count": 1},
+      {"value": "178", "count": 1},
+      {"value": "184", "count": 1},
+      {"value": "183", "count": 1},
+      {"value": "196", "count": 1},
+      {"value": "475", "count": 1},
+      {"value": "518", "count": 1},
+      {"value": "493", "count": 1},
+      {"value": "470", "count": 1},
+      {"value": "454", "count": 1},
+      {"value": "453", "count": 1},
+      {"value": "44", "count": 1},
+      {"value": "81", "count": 1},
+      {"value": "458", "count": 1},
+      {"value": "485", "count": 1},
+      {"value": "502", "count": 1},
+      {"value": "476", "count": 1},
+      {"value": "459", "count": 1},
+      {"value": "491", "count": 1},
+      {"value": "1327", "count": 1},
+      {"value": "490", "count": 1},
+      {"value": "509", "count": 1},
+      {"value": "464", "count": 1},
+      {"value": "508", "count": 1},
+      {"value": "789", "count": 1},
+      {"value": "697", "count": 1},
+      {"value": "689", "count": 1},
+      {"value": "701", "count": 1},
+      {"value": "694", "count": 1},
+      {"value": "630", "count": 1},
+      {"value": "650", "count": 1},
+      {"value": "702", "count": 1},
+      {"value": "766", "count": 1},
+      {"value": "462", "count": 1},
+      {"value": "463", "count": 1},
+      {"value": "474", "count": 1},
+      {"value": "482", "count": 1},
+      {"value": "468", "count": 1},
+      {"value": "514", "count": 1},
+      {"value": "524", "count": 1},
+      {"value": "515", "count": 1},
+      {"value": "452", "count": 1},
+      {"value": "73", "count": 1},
+      {"value": "451", "count": 1},
+      {"value": "511", "count": 1},
+      {"value": "499", "count": 1},
+      {"value": "500", "count": 1},
+      {"value": "469", "count": 1},
+      {"value": "1333", "count": 1},
+      {"value": "489", "count": 1},
+      {"value": "472", "count": 1},
+      {"value": "498", "count": 1},
+      {"value": "516", "count": 1},
+      {"value": "534", "count": 1},
+      {"value": "208", "count": 1},
+      {"value": "1236", "count": 1},
+      {"value": "1108", "count": 1},
+      {"value": "1170", "count": 1},
+      {"value": "1098", "count": 1},
+      {"value": "1087", "count": 1},
+      {"value": "1178", "count": 1},
+      {"value": "1133", "count": 1},
+      {"value": "1118", "count": 1},
+      {"value": "1214", "count": 1},
+      {"value": "1278", "count": 1},
+      {"value": "1163", "count": 1},
+      {"value": "1352", "count": 1},
+      {"value": "1259", "count": 1},
+      {"value": "1138", "count": 1},
+      {"value": "1192", "count": 1},
+      {"value": "1018", "count": 1},
+      {"value": "1032", "count": 1},
+      {"value": "1064", "count": 1},
+      {"value": "1171", "count": 1},
+      {"value": "1111", "count": 1},
+      {"value": "1024", "count": 1},
+      {"value": "1188", "count": 1},
+      {"value": "1015", "count": 1},
+      {"value": "1197", "count": 1},
+      {"value": "1198", "count": 1},
+      {"value": "1025", "count": 1},
+      {"value": "1019", "count": 1},
+      {"value": "1104", "count": 1},
+      {"value": "1190", "count": 1},
+      {"value": "1177", "count": 1},
+      {"value": "1199", "count": 1},
+      {"value": "1152", "count": 1},
+      {"value": "1154", "count": 1},
+      {"value": "1189", "count": 1},
+      {"value": "1073", "count": 1},
+      {"value": "1095", "count": 1},
+      {"value": "1336", "count": 1},
+      {"value": "1339", "count": 1},
+      {"value": "1069", "count": 1},
+      {"value": "805", "count": 1},
+      {"value": "1007", "count": 1},
+      {"value": "923", "count": 1},
+      {"value": "892", "count": 1},
+      {"value": "842", "count": 1},
+      {"value": "964", "count": 1},
+      {"value": "1013", "count": 1},
+      {"value": "950", "count": 1},
+      {"value": "962", "count": 1},
+      {"value": "853", "count": 1},
+      {"value": "870", "count": 1},
+      {"value": "159", "count": 1},
+      {"value": "163", "count": 1},
+      {"value": "954", "count": 1},
+      {"value": "1126", "count": 1},
+      {"value": "1050", "count": 1},
+      {"value": "989", "count": 1},
+      {"value": "1143", "count": 1},
+      {"value": "959", "count": 1},
+      {"value": "869", "count": 1},
+      {"value": "990", "count": 1},
+      {"value": "834", "count": 1},
+      {"value": "1022", "count": 1},
+      {"value": "1362", "count": 1},
+      {"value": "860", "count": 1},
+      {"value": "937", "count": 1},
+      {"value": "918", "count": 1},
+      {"value": "1169", "count": 1},
+      {"value": "1125", "count": 1},
+      {"value": "1193", "count": 1},
+      {"value": "1106", "count": 1},
+      {"value": "1187", "count": 1},
+      {"value": "1043", "count": 1},
+      {"value": "1123", "count": 1},
+      {"value": "1121", "count": 1},
+      {"value": "1036", "count": 1},
+      {"value": "1042", "count": 1},
+      {"value": "1027", "count": 1},
+      {"value": "1081", "count": 1},
+      {"value": "1212", "count": 1},
+      {"value": "1141", "count": 1},
+      {"value": "1038", "count": 1},
+      {"value": "1146", "count": 1},
+      {"value": "1094", "count": 1},
+      {"value": "1176", "count": 1},
+      {"value": "1207", "count": 1},
+      {"value": "1035", "count": 1},
+      {"value": "1142", "count": 1},
+      {"value": "1131", "count": 1},
+      {"value": "1164", "count": 1},
+      {"value": "1115", "count": 1},
+      {"value": "1091", "count": 1},
+      {"value": "1049", "count": 1},
+      {"value": "1181", "count": 1},
+      {"value": "1105", "count": 1},
+      {"value": "341", "count": 1},
+      {"value": "432", "count": 1},
+      {"value": "325", "count": 1},
+      {"value": "303", "count": 1},
+      {"value": "416", "count": 1},
+      {"value": "418", "count": 1},
+      {"value": "1330", "count": 1},
+      {"value": "293", "count": 1},
+      {"value": "420", "count": 1},
+      {"value": "301", "count": 1},
+      {"value": "378", "count": 1},
+      {"value": "433", "count": 1},
+      {"value": "364", "count": 1},
+      {"value": "292", "count": 1},
+      {"value": "373", "count": 1},
+      {"value": "1014", "count": 1},
+      {"value": "1051", "count": 1},
+      {"value": "392", "count": 1},
+      {"value": "357", "count": 1},
+      {"value": "395", "count": 1},
+      {"value": "1331", "count": 1},
+      {"value": "211", "count": 1},
+      {"value": "307", "count": 1},
+      {"value": "243", "count": 1},
+      {"value": "318", "count": 1},
+      {"value": "235", "count": 1},
+      {"value": "304", "count": 1},
+      {"value": "1020", "count": 1},
+      {"value": "252", "count": 1},
+      {"value": "1135", "count": 1},
+      {"value": "1101", "count": 1},
+      {"value": "1113", "count": 1},
+      {"value": "1039", "count": 1},
+      {"value": "1074", "count": 1},
+      {"value": "1072", "count": 1},
+      {"value": "1071", "count": 1},
+      {"value": "1023", "count": 1},
+      {"value": "1159", "count": 1},
+      {"value": "1185", "count": 1},
+      {"value": "1044", "count": 1},
+      {"value": "1089", "count": 1},
+      {"value": "1048", "count": 1},
+      {"value": "1054", "count": 1},
+      {"value": "1053", "count": 1},
+      {"value": "327", "count": 1},
+      {"value": "1079", "count": 1},
+      {"value": "1148", "count": 1},
+      {"value": "333", "count": 1},
+      {"value": "242", "count": 1},
+      {"value": "396", "count": 1},
+      {"value": "440", "count": 1},
+      {"value": "336", "count": 1},
+      {"value": "422", "count": 1},
+      {"value": "331", "count": 1},
+      {"value": "321", "count": 1},
+      {"value": "377", "count": 1},
+      {"value": "241", "count": 1},
+      {"value": "421", "count": 1},
+      {"value": "298", "count": 1},
+      {"value": "244", "count": 1},
+      {"value": "245", "count": 1},
+      {"value": "375", "count": 1},
+      {"value": "413", "count": 1},
+      {"value": "311", "count": 1},
+      {"value": "349", "count": 1},
+      {"value": "237", "count": 1},
+      {"value": "1090", "count": 1},
+      {"value": "1076", "count": 1},
+      {"value": "1208", "count": 1},
+      {"value": "1088", "count": 1},
+      {"value": "1066", "count": 1},
+      {"value": "1080", "count": 1},
+      {"value": "1184", "count": 1},
+      {"value": "1041", "count": 1},
+      {"value": "1058", "count": 1},
+      {"value": "1183", "count": 1},
+      {"value": "1119", "count": 1},
+      {"value": "1075", "count": 1},
+      {"value": "411", "count": 1},
+      {"value": "310", "count": 1},
+      {"value": "1040", "count": 1},
+      {"value": "1132", "count": 1},
+      {"value": "441", "count": 1},
+      {"value": "246", "count": 1},
+      {"value": "444", "count": 1},
+      {"value": "209", "count": 1},
+      {"value": "294", "count": 1},
+      {"value": "391", "count": 1},
+      {"value": "442", "count": 1},
+      {"value": "443", "count": 1},
+      {"value": "428", "count": 1},
+      {"value": "1348", "count": 1},
+      {"value": "247", "count": 1},
+      {"value": "439", "count": 1},
+      {"value": "403", "count": 1},
+      {"value": "344", "count": 1},
+      {"value": "372", "count": 1},
+      {"value": "345", "count": 1},
+      {"value": "401", "count": 1},
+      {"value": "402", "count": 1},
+      {"value": "338", "count": 1},
+      {"value": "360", "count": 1},
+      {"value": "836", "count": 1},
+      {"value": "300", "count": 1},
+      {"value": "407", "count": 1},
+      {"value": "406", "count": 1},
+      {"value": "889", "count": 1},
+      {"value": "840", "count": 1},
+      {"value": "1012", "count": 1},
+      {"value": "974", "count": 1},
+      {"value": "888", "count": 1},
+      {"value": "890", "count": 1},
+      {"value": "815", "count": 1},
+      {"value": "865", "count": 1},
+      {"value": "935", "count": 1},
+      {"value": "975", "count": 1},
+      {"value": "814", "count": 1},
+      {"value": "867", "count": 1},
+      {"value": "960", "count": 1},
+      {"value": "946", "count": 1},
+      {"value": "945", "count": 1},
+      {"value": "864", "count": 1},
+      {"value": "987", "count": 1},
+      {"value": "906", "count": 1},
+      {"value": "868", "count": 1},
+      {"value": "972", "count": 1},
+      {"value": "953", "count": 1},
+      {"value": "963", "count": 1},
+      {"value": "828", "count": 1},
+      {"value": "976", "count": 1},
+      {"value": "988", "count": 1},
+      {"value": "977", "count": 1},
+      {"value": "984", "count": 1},
+      {"value": "909", "count": 1},
+      {"value": "901", "count": 1},
+      {"value": "998", "count": 1},
+      {"value": "1363", "count": 1},
+      {"value": "938", "count": 1},
+      {"value": "866", "count": 1},
+      {"value": "801", "count": 1},
+      {"value": "800", "count": 1},
+      {"value": "884", "count": 1},
+      {"value": "289", "count": 1},
+      {"value": "302", "count": 1},
+      {"value": "358", "count": 1},
+      {"value": "308", "count": 1},
+      {"value": "279", "count": 1},
+      {"value": "354", "count": 1},
+      {"value": "398", "count": 1},
+      {"value": "383", "count": 1},
+      {"value": "229", "count": 1},
+      {"value": "854", "count": 1},
+      {"value": "394", "count": 1},
+      {"value": "812", "count": 1},
+      {"value": "803", "count": 1},
+      {"value": "973", "count": 1},
+      {"value": "839", "count": 1},
+      {"value": "956", "count": 1},
+      {"value": "903", "count": 1},
+      {"value": "861", "count": 1},
+      {"value": "876", "count": 1},
+      {"value": "871", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "16", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "1201", "count": 1},
+      {"value": "1083", "count": 1},
+      {"value": "680", "count": 1},
+      {"value": "682", "count": 1}
+    ],
+    "count": 882
+  },
+  {
+    "key": "parking_space",
+    "tags": [
+      {"value": "disabled", "count": 310},
+      {"value": "surface", "count": 1},
+      {"value": "parent", "count": 1},
+      {"value": "carpool", "count": 1}
+    ],
+    "count": 313
+  },
+  {
+    "key": "parking",
+    "tags": [{"value": "surface", "count": 306}],
+    "count": 306
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "2", "count": 50},
+      {"value": "1", "count": 42},
+      {"value": "3", "count": 25},
+      {"value": "4", "count": 25},
+      {"value": "5", "count": 17},
+      {"value": "6", "count": 14},
+      {"value": "10", "count": 13},
+      {"value": "8", "count": 9},
+      {"value": "108", "count": 8},
+      {"value": "9", "count": 5},
+      {"value": "7", "count": 5},
+      {"value": "20", "count": 5},
+      {"value": "12", "count": 4},
+      {"value": "13", "count": 3},
+      {"value": "11", "count": 3},
+      {"value": "30", "count": 2},
+      {"value": "23", "count": 2},
+      {"value": "18", "count": 2},
+      {"value": "16", "count": 2},
+      {"value": "19", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "128", "count": 1},
+      {"value": "25", "count": 1},
+      {"value": "28", "count": 1}
+    ],
+    "count": 241
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 67},
+      {"value": "yes", "count": 52},
+      {"value": "permissive", "count": 17},
+      {"value": "private", "count": 15},
+      {"value": "customers", "count": 13},
+      {"value": "disabled", "count": 3},
+      {"value": "delivery", "count": 1}
+    ],
+    "count": 168
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 71},
+      {"value": "grass", "count": 29},
+      {"value": "paved", "count": 15},
+      {"value": "grass_paver", "count": 8},
+      {"value": "gravel", "count": 3},
+      {"value": "ground", "count": 1},
+      {"value": "unpaved", "count": 1},
+      {"value": "concrete", "count": 1},
+      {"value": "compacted", "count": 1}
+    ],
+    "count": 130
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 79}, {"value": "yes", "count": 5}],
+    "count": 84
+  },
+  {
+    "key": "access:disabled",
+    "tags": [
+      {"value": "designated", "count": 39},
+      {"value": "yes", "count": 13},
+      {"value": "1", "count": 1}
+    ],
+    "count": 53
+  },
+  {
+    "key": "disabled",
+    "tags": [
+      {"value": "designated", "count": 37},
+      {"value": "yes", "count": 7}
+    ],
+    "count": 44
+  },
+  {"key": "access:role", "tags": [{"value": "no", "count": 37}], "count": 37},
+  {
+    "key": "access:conditional",
+    "tags": [{"value": "designated @ disabled", "count": 37}],
+    "count": 37
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "existence et position a confirmer sur place", "count": 11},
+      {"value": "existance et position a confirmer", "count": 7},
+      {"value": "existence et position sur place a confirmer", "count": 7},
+      {"value": "a confirmer sur place existence et position", "count": 4},
+      {"value": "verifier nombre emplacements", "count": 1},
+      {"value": "verifier si encore presente apres travaux", "count": 1},
+      {"value": "Position approximative", "count": 1},
+      {"value": "tags", "count": 1},
+      {"value": "capacity=4?", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "no", "count": 16}, {"value": "yes", "count": 12}],
+    "count": 28
+  },
+  {"key": "supervised", "tags": [{"value": "no", "count": 22}], "count": 22},
+  {
+    "key": "covered",
+    "tags": [{"value": "no", "count": 19}, {"value": "yes", "count": 1}],
+    "count": 20
+  },
+  {"key": "bus", "tags": [{"value": "yes", "count": 16}], "count": 16},
+  {
+    "key": "stay",
+    "tags": [
+      {"value": "0", "count": 6},
+      {"value": "180", "count": 2},
+      {"value": "15", "count": 1},
+      {"value": "30+", "count": 1},
+      {"value": "30-180", "count": 1},
+      {"value": "90", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "maxstay",
+    "tags": [
+      {"value": "0", "count": 5},
+      {"value": "2 hours", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "60", "count": 1},
+      {"value": "120", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "smoothness",
+    "tags": [{"value": "excellent", "count": 4}, {"value": "good", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2013", "count": 1},
+      {"value": "2018-06-17", "count": 1},
+      {"value": "2018-03-14", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "electric_vehicle",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "motorcycle",
+    "tags": [{"value": "permissive", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.eborn.orios-infos.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "Tag&Car", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "permissive", "count": 1}], "count": 1},
+  {
+    "key": "service",
+    "tags": [{"value": "parking_aisle", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "caravan_site", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "parking_space:disabled",
+    "tags": [{"value": "1", "count": 1}],
+    "count": 1
+  },
+  {"key": "psv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tourist_bus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "access:internet_order_withdrawal",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "opening_date",
+    "tags": [{"value": "2018-04-16", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "key": "fixme",
+    "tags": [{"value": "make relation", "count": 2}],
+    "count": 2
+  },
+  {"key": "is_in", "tags": [{"value": "Europe", "count": 2}], "count": 2},
+  {
+    "key": "natural",
+    "tags": [{"value": "mountain_range", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [{"value": "Q12431", "count": 1}, {"value": "Q187843", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "en:Pyrenees", "count": 1},
+      {"value": "fr:Massif des Vosges", "count": 1}
+    ],
+    "count": 2
+  }
+]

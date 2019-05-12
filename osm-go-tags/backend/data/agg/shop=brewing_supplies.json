@@ -1,0 +1,23 @@
+[
+  {
+    "key": "email",
+    "tags": [{"value": "dijon@lodyseedubrasseur.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "microbrewery", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 9 54 79 76 72", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "brewing_supplies", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "https://www.lodysseedubrasseur.fr", "count": 1}],
+    "count": 1
+  }
+]

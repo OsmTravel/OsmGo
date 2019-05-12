@@ -1,0 +1,277 @@
+[
+  {
+    "key": "advertising",
+    "tags": [{"value": "billboard", "count": 493}],
+    "count": 493
+  },
+  {
+    "key": "support",
+    "tags": [
+      {"value": "trunk", "count": 146},
+      {"value": "pole", "count": 136},
+      {"value": "wall", "count": 73},
+      {"value": "posts", "count": 14},
+      {"value": "tarp", "count": 2},
+      {"value": "gate", "count": 1},
+      {"value": "mast", "count": 1}
+    ],
+    "count": 373
+  },
+  {
+    "key": "size",
+    "tags": [
+      {"value": "4.4*3.4", "count": 172},
+      {"value": "3.5*2.5", "count": 141},
+      {"value": "4*3", "count": 11},
+      {"value": "3.2*2.6", "count": 8},
+      {"value": "4*2", "count": 8},
+      {"value": "4*1.5", "count": 7},
+      {"value": "2*2", "count": 5},
+      {"value": "6*1.5", "count": 2},
+      {"value": "3*1", "count": 2},
+      {"value": "3.2*2.5", "count": 2},
+      {"value": "2*5", "count": 1},
+      {"value": "3.6*33", "count": 1},
+      {"value": "1*3", "count": 1},
+      {"value": "5*4", "count": 1},
+      {"value": "2.5*4", "count": 1},
+      {"value": "5*2", "count": 1},
+      {"value": "6*4", "count": 1},
+      {"value": "6*2", "count": 1},
+      {"value": "5*1.5", "count": 1},
+      {"value": "2*1.5", "count": 1},
+      {"value": "4*1", "count": 1},
+      {"value": "3*1.5", "count": 1},
+      {"value": "1*1", "count": 1},
+      {"value": "5*3", "count": 1},
+      {"value": "3*7", "count": 1}
+    ],
+    "count": 373
+  },
+  {
+    "key": "display_surface",
+    "tags": [
+      {"value": "12", "count": 183},
+      {"value": "8", "count": 156},
+      {"value": "6", "count": 6},
+      {"value": "4", "count": 5},
+      {"value": "3", "count": 3},
+      {"value": "9", "count": 2},
+      {"value": "1", "count": 1},
+      {"value": "24", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "7.5", "count": 1},
+      {"value": "4.5", "count": 1},
+      {"value": "21", "count": 1}
+    ],
+    "count": 361
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "5", "count": 164},
+      {"value": "6", "count": 97},
+      {"value": "4", "count": 53},
+      {"value": "3", "count": 12},
+      {"value": "7", "count": 10},
+      {"value": "7.5", "count": 9},
+      {"value": "10", "count": 2},
+      {"value": "3.5", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "4.5", "count": 1},
+      {"value": "6.5", "count": 1},
+      {"value": "350", "count": 1},
+      {"value": "4.4", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "2.15", "count": 1}
+    ],
+    "count": 355
+  },
+  {
+    "key": "sides",
+    "tags": [{"value": "2", "count": 188}, {"value": "1", "count": 137}],
+    "count": 325
+  },
+  {
+    "key": "visibility",
+    "tags": [{"value": "street", "count": 266}, {"value": "area", "count": 58}],
+    "count": 324
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 173}, {"value": "no", "count": 126}],
+    "count": 299
+  },
+  {
+    "key": "orientation",
+    "tags": [
+      {"value": "front", "count": 218},
+      {"value": "3", "count": 48},
+      {"value": "medium", "count": 11},
+      {"value": "reverse", "count": 10},
+      {"value": "parallel", "count": 5},
+      {"value": "2", "count": 4},
+      {"value": "multi", "count": 2}
+    ],
+    "count": 298
+  },
+  {
+    "key": "land_property",
+    "tags": [
+      {"value": "private", "count": 286},
+      {"value": "public", "count": 10},
+      {"value": "?", "count": 1}
+    ],
+    "count": 297
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "JCDecaux", "count": 56},
+      {"value": "PAP", "count": 44},
+      {"value": "Avenir", "count": 43},
+      {"value": "?", "count": 18},
+      {"value": "ClearChannel", "count": 16},
+      {"value": "Exterion (CBS Outdoor)", "count": 8},
+      {"value": "Giraudy", "count": 8},
+      {"value": "FG", "count": 7},
+      {"value": "Exterion", "count": 4},
+      {"value": "ClearChannel Outdoor", "count": 4},
+      {"value": "Clear Channel Communications", "count": 3},
+      {"value": "Avenir Conso", "count": 3},
+      {"value": "Mairie de Sixt", "count": 3},
+      {"value": "Avenir Empreinte", "count": 2},
+      {"value": "Le Dauphiné", "count": 2},
+      {"value": "Avenir Traffic", "count": 2},
+      {"value": "Grill de Moirans", "count": 2},
+      {"value": "Ville de Grenoble", "count": 2},
+      {"value": "Z. I. Argentière", "count": 1},
+      {"value": "Les Serres du Dauphiné", "count": 1},
+      {"value": "SMTC", "count": 1},
+      {"value": "Lidl", "count": 1},
+      {"value": "Lola", "count": 1},
+      {"value": "La Rampe", "count": 1},
+      {"value": "Novak", "count": 1},
+      {"value": "Gamm Vert", "count": 1},
+      {"value": "Carré Bleu", "count": 1},
+      {"value": "Campanile", "count": 1},
+      {"value": "Becker", "count": 1},
+      {"value": "Lavage automobile", "count": 1},
+      {"value": "CBS", "count": 1},
+      {"value": "Montbonnot Saint-Martin", "count": 1},
+      {"value": "Carrefour Market", "count": 1},
+      {"value": "Experion", "count": 1},
+      {"value": "ZA des Essarts", "count": 1},
+      {"value": "Darty", "count": 1},
+      {"value": "Loxam", "count": 1}
+    ],
+    "count": 246
+  },
+  {
+    "key": "animated",
+    "tags": [
+      {"value": "no", "count": 146},
+      {"value": "winding_posters", "count": 63},
+      {"value": "winding_posters:3", "count": 8},
+      {"value": "trivision_blades", "count": 6},
+      {"value": "screen", "count": 1},
+      {"value": "digital_messages", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 226
+  },
+  {
+    "key": "legal_type:FR",
+    "tags": [
+      {"value": "publicité", "count": 160},
+      {"value": "enseigne", "count": 34},
+      {"value": "enseigne:temporaire", "count": 3},
+      {"value": "JEI", "count": 1},
+      {"value": "publicité:mobilier_urbain:information", "count": 1}
+    ],
+    "count": 199
+  },
+  {
+    "key": "message",
+    "tags": [
+      {"value": "commercial", "count": 190},
+      {"value": "municipality", "count": 3},
+      {"value": "map_information", "count": 2},
+      {"value": "cultural_event", "count": 1},
+      {"value": "information", "count": 1}
+    ],
+    "count": 197
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "advertising", "count": 196}],
+    "count": 196
+  },
+  {
+    "key": "luminous",
+    "tags": [{"value": "yes", "count": 103}, {"value": "no", "count": 44}],
+    "count": 147
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 116}, {"value": "no", "count": 1}],
+    "count": 117
+  },
+  {
+    "key": "legal_status:FR",
+    "tags": [
+      {"value": "à vérifier", "count": 49},
+      {"value": "OK", "count": 3},
+      {"value": "KO : visible d'une autoroute", "count": 3},
+      {"value": "ko: sur mur de soutènement transport ferroviaire", "count": 1}
+    ],
+    "count": 56
+  },
+  {
+    "key": "direction",
+    "tags": [
+      {"value": "270;90", "count": 2},
+      {"value": "90", "count": 2},
+      {"value": "ENE", "count": 1},
+      {"value": "90;270", "count": 1},
+      {"value": "-240", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Panneaux de promotion des activités de la commune de Sixt",
+        "count": 3
+      }
+    ],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "billboard", "count": 2}], "count": 2},
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {"key": "information", "tags": [{"value": "board", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Panneau publicitaire sans doute privé, mais qui déborde sur le domaine public...",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "board_type", "tags": [{"value": "notice", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [
+      {"value": "Fromage Frais;Fermiers;Fabrication - Vente", "count": 1}
+    ],
+    "count": 1
+  }
+]

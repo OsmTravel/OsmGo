@@ -1,0 +1,19 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "toy_library", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://42.lesfrancas.net/spip.php?rubrique19", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Les Francas dans la Loire", "count": 1}],
+    "count": 1
+  }
+]

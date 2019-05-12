@@ -1,0 +1,41 @@
+[
+  {"key": "office", "tags": [{"value": "cooperative", "count": 3}], "count": 3},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 2 99 23 73 73", "count": 1},
+      {"value": "+33 5 59 52 56 03", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://invivo-group.com/", "count": 1},
+      {"value": "alb-formation.eu", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "SCOP - Centre de formation et de conseil\nDynamiseur d’économie locale depuis 1996",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "info@alb-formation.eu", "count": 1}],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "cooperative",
+    "tags": [{"value": "agricultural", "count": 1}],
+    "count": 1
+  }
+]

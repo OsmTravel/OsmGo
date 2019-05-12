@@ -1,0 +1,17 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "wildlife_hide", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "wildlife_hide",
+    "tags": [{"value": "birds", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "palissade", "count": 1}],
+    "count": 1
+  }
+]

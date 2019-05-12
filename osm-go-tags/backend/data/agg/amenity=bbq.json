@@ -1,0 +1,29 @@
+[
+  {"key": "amenity", "tags": [{"value": "bbq", "count": 80}], "count": 80},
+  {
+    "key": "fuel",
+    "tags": [
+      {"value": "wood", "count": 6},
+      {"value": "charcoal", "count": 2},
+      {"value": "coal", "count": 1},
+      {"value": "wood;charcoal", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "covered",
+    "tags": [{"value": "no", "count": 8}, {"value": "yes", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "sol en béton, barbecue autorisé au sol entre des pierres, grille disponible",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "customers", "count": 1}], "count": 1}
+]

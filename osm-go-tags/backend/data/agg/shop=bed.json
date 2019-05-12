@@ -1,0 +1,35 @@
+[
+  {"key": "shop", "tags": [{"value": "bed", "count": 39}], "count": 39},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33476547199", "count": 1},
+      {"value": "+33616406034", "count": 1},
+      {"value": "+33 4 75 83 38 64", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.maisondelaliterie.fr/magasins/mdl-st-martin-dheres_161.html",
+        "count": 1
+      },
+      {"value": "https://www.leroidumatelas.fr/drome/valence", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Chaîne multimarque proposant literies, matelas de fabrication européenne, sommiers et articles autour du lit.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "mattress", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

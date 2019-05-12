@@ -1,0 +1,19 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "shopping_centre", "count": 2}],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "3D view of the outside and the inside", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "916920360L", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1}
+]

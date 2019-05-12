@@ -1,0 +1,26 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "bird_hide", "count": 23}],
+    "count": 23
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "amenity", "tags": [{"value": "shelter", "count": 3}], "count": 3},
+  {
+    "key": "shelter_type",
+    "tags": [{"value": "wildlife_hide", "count": 2}],
+    "count": 2
+  },
+  {"key": "operator", "tags": [{"value": "ONF", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "palissade", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wildlife_hide",
+    "tags": [{"value": "birds", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 1}], "count": 1}
+]

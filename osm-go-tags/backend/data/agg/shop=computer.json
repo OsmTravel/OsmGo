@@ -1,0 +1,235 @@
+[
+  {"key": "shop", "tags": [{"value": "computer", "count": 125}], "count": 125},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.e-network.fr", "count": 2},
+      {"value": "www.ldlc.com", "count": 2},
+      {"value": "http://site.perrier-informatique.fr/", "count": 1},
+      {"value": "http://www.cyber69.fr/", "count": 1},
+      {"value": "http://sstinformatique.fr", "count": 1},
+      {"value": "https://demo-tic.org", "count": 1},
+      {"value": "http://vienne-informatique.com/", "count": 1},
+      {"value": "https://www.disweb.fr/", "count": 1},
+      {"value": "http://www.alteck.fr/", "count": 1},
+      {
+        "value": "http://www.trira.com/index.php/professionnel/commerce-solidaire",
+        "count": 1
+      },
+      {
+        "value": "https://www.ldlc.com/magasins-ldlc/magasin-470060/69-ldlc-lyon-saxe-gambetta/",
+        "count": 1
+      },
+      {"value": "https://creation-site-web-grenoble.fr/", "count": 1},
+      {"value": "http://www.ncsinformatique.com/", "count": 1},
+      {
+        "value": "https://www.ldlc.com/magasins-ldlc/magasin-470048/69-ldlc-villeurbanne/",
+        "count": 1
+      },
+      {"value": "http://www.afb-group.fr/", "count": 1},
+      {"value": "http://logisciel.com", "count": 1},
+      {"value": "http://www.librepc.com", "count": 1},
+      {"value": "http://vertigemicro.com/", "count": 1},
+      {"value": "http://www.befox.fr", "count": 1},
+      {"value": "http://www.microtek.fr/", "count": 1},
+      {"value": "http://www.omega-info.com", "count": 1},
+      {"value": "http://systemepc.fr/", "count": 1},
+      {"value": "http://www.aamset.com/", "count": 1},
+      {"value": "http://www.grenobleinformatique.fr", "count": 1},
+      {"value": "http://bourg-en-bresse.docteur-it.com", "count": 1},
+      {"value": "http://annemasse.cartridgeworld.fr/", "count": 1},
+      {"value": "http://www.revillod74.fr/", "count": 1},
+      {
+        "value": "http://www.ldlc.com/magasins-ldlc/magasin-470055/38-ldlc-vienne/",
+        "count": 1
+      },
+      {"value": "https://www.password.fr/agence-lyon", "count": 1},
+      {"value": "http://captolinux.com/", "count": 1},
+      {"value": "http://www.dami.com/", "count": 1},
+      {"value": "http://trira.com", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 43 80 40", "count": 2},
+      {"value": "+33 4 57 93 24 32", "count": 1},
+      {"value": "+33 4 27 46 32 79", "count": 1},
+      {"value": "+33 4 76 34 98 66", "count": 1},
+      {"value": "+33 4 26 74 90 12", "count": 1},
+      {"value": "+33 6 38 81 55 83", "count": 1},
+      {"value": "+33 4 74 85 59 65", "count": 1},
+      {"value": "+33 4 74 31 05 86", "count": 1},
+      {"value": "+33 4 28 30 00 66", "count": 1},
+      {"value": "+33 4 76 88 61 28", "count": 1},
+      {"value": "+33 4 69 67 29 23", "count": 1},
+      {"value": "+33 4 76 19 05 35", "count": 1},
+      {"value": "+33 4 77 24 22 38", "count": 1},
+      {"value": "+33 4 77 24 11 28", "count": 1},
+      {"value": "+33 9 53 00 03 20", "count": 1},
+      {"value": "+33 4 50244209", "count": 1},
+      {"value": "+33 9 67 18 06 54", "count": 1},
+      {"value": "+33 4 76 34 91 32", "count": 1},
+      {"value": "+33 4 75 86 08 88", "count": 1},
+      {"value": "+33950297791", "count": 1},
+      {"value": "+33 4 78 58 02 84", "count": 1},
+      {"value": "+334 76 01 03 76", "count": 1},
+      {"value": "+33 4 76 70 06 70", "count": 1},
+      {"value": "+33474222336", "count": 1},
+      {"value": "+33 4 50 75 03 62", "count": 1},
+      {"value": "+33 4 50 37 26 60", "count": 1},
+      {"value": "+33 4 81 43 11 11", "count": 1},
+      {"value": "+33 9 53 99 18 80", "count": 1},
+      {"value": "+33 4 74 59 45 19", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 13},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 2}
+    ],
+    "count": 20
+  },
+  {"key": "repair", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Boutique Logiciels Libres. Installation dépannage Logiciels Libres et GNU/Linux",
+        "count": 1
+      },
+      {
+        "value": "Demo-TIC est une association de producteurs et d’usagers de services informatiques en Logiciels Libres pour les particuliers et pour les professionnels",
+        "count": 1
+      },
+      {"value": "Apple Premium Service Provider", "count": 1},
+      {
+        "value": "Entreprise du Numérique Libre. Créateur de sites internet.",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Demo-TIC", "count": 1},
+      {"value": "Dukic", "count": 1},
+      {"value": "Plateforme PIHC", "count": 1},
+      {"value": "Quentin Ballefin", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "office",
+    "tags": [
+      {"value": "it", "count": 2},
+      {"value": "advertising_agency", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@demo-tic.org", "count": 1},
+      {"value": "contact@agencecerf.com", "count": 1},
+      {"value": "contact@omega-info.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "office", "count": 1},
+      {"value": "internet_cafe", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "phone:mobile",
+    "tags": [
+      {"value": "0660861077", "count": 1},
+      {"value": "+33 6 89 18 42 39", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Groupe LDLC", "count": 2}],
+    "count": 2
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3117461", "count": 2}], "count": 2},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "brand",
+    "tags": [{"value": "LDLC", "count": 1}, {"value": "Macintosh", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "computer:repair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "craft", "tags": [{"value": "printer", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "Services informatiques.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:cryptocurrencies",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cairn", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 50 92 41 06", "count": 1}],
+    "count": 1
+  },
+  {"key": "computer:parts", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "computer:sales", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://static4.pagesjaunes.fr/media/vignette/AAA2BEEEHE2B-C10004.gif",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

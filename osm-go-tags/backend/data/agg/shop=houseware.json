@@ -1,0 +1,54 @@
+[
+  {"key": "shop", "tags": [{"value": "houseware", "count": 34}], "count": 34},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://pineauvacher.free.fr/index.php", "count": 1},
+      {"value": "www.deshoulieres.com", "count": 1},
+      {"value": "http://www.proxiconfort-lapras.fr/", "count": 1},
+      {"value": "www.centrakor.com", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/La-Chaise-Longue",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 32 30", "count": 1},
+      {"value": "+33 4 50 45 11 06", "count": 1},
+      {"value": "+33 4 77 24 01 31", "count": 1},
+      {"value": "+33 4 38 49 06 08", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "précédemment: \"Art Color\"", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "houseware",
+    "tags": [{"value": "sewing_machine", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Meubles, déco, arts de la table, rangement, entretien, loisirs et jeux",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "payment:coins", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "Savec", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

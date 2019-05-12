@@ -1,0 +1,23 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "psychotherapist", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 61 12 00 51", "count": 1}],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Psychothérapie\nGestalt-thérapie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "humanistic", "count": 1}],
+    "count": 1
+  }
+]

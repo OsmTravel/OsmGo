@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "parking", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "lookout", "count": 1}], "count": 1}
+]

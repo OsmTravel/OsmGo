@@ -1,0 +1,211 @@
+[
+  {"key": "tourism", "tags": [{"value": "hostel", "count": 114}], "count": 114},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ranchrocherroux.fr/", "count": 1},
+      {
+        "value": "http://webitea-38-gdf-francais.gl.itea.fr/gite-etape-sejour-gite-comm.-de-villard-reymond-.-a-villard-reymond-dans-OISANS-551025.html",
+        "count": 1
+      },
+      {"value": "www.chaletarc.co.uk", "count": 1},
+      {"value": "http://www.masdupasdelane.fr/", "count": 1},
+      {"value": "http://slo-hostel.com/", "count": 1},
+      {"value": "http://www.coolandbed.com", "count": 1},
+      {"value": "www.fermerobin.fr", "count": 1},
+      {"value": "https://www.awayhostel.com/", "count": 1},
+      {"value": "http://www.medille.com/", "count": 1},
+      {"value": "http://www.cis-st-etienne.com/fr/#", "count": 1},
+      {"value": "http://annecyhostel.fr/", "count": 1},
+      {
+        "value": "http://webitea-38-gdf-francais.gl.itea.fr/gite-rural-breymand-germain-a-saint-simeon-de-bressieux-dans-PLAINES-ET-COLLINES-457200.html",
+        "count": 1
+      },
+      {"value": "www.velogitevalence.fr", "count": 1},
+      {"value": "http://www.chambres-d-hotes-bourdeaux.fr/", "count": 1},
+      {"value": "http://www.gitedefontlargias.com", "count": 1},
+      {
+        "value": "http://www.hifrance.org/auberge-de-jeunesse/annecy.html",
+        "count": 1
+      },
+      {"value": "http://lamaisonrouge-backpackerhostel.fr/", "count": 1},
+      {"value": "http://www.a-mipente.com/", "count": 1},
+      {"value": "http://www.skistation.fr/", "count": 1},
+      {"value": "http://www.fuaj.org/", "count": 1},
+      {"value": "http://www.auberge-ailloud.fr/", "count": 1},
+      {
+        "value": "http://www.lafrancedunordausud.fr/residence-du-telepherique_66.html",
+        "count": 1
+      },
+      {"value": "http://www.laclochequirit.com", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 80 53 43", "count": 1},
+      {"value": "+33 6 73 24 93 60", "count": 1},
+      {"value": "+33 4 78 59 06 90", "count": 1},
+      {"value": "+33 4 26 18 05 28", "count": 1},
+      {"value": "+33 6 75 84 77 43", "count": 1},
+      {"value": "+33 4 75 45 29 04", "count": 1},
+      {"value": "+33 4 78 98 53 20", "count": 1},
+      {"value": "+334 75 29 24 79", "count": 1},
+      {"value": "+33953120290", "count": 1},
+      {"value": "+33475273244", "count": 1},
+      {"value": "+33 4 76 80 97 40", "count": 1},
+      {"value": "+33621254347", "count": 1},
+      {"value": "+33475536810", "count": 1},
+      {"value": "+33683026545", "count": 1},
+      {"value": "+33 4 66 46 60 54", "count": 1},
+      {"value": "+33 4 50453319", "count": 1},
+      {"value": "+33 783 952 766", "count": 1},
+      {"value": "+33 4 76 09 26 44", "count": 1},
+      {"value": "+33 4 50 53 20 25", "count": 1},
+      {"value": "+33 4 50 32 79 42", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Tremplin Sport Formation", "count": 1},
+      {"value": "Association de la Maison Rouge", "count": 1},
+      {"value": "Les Compagnons des Jours Heureux", "count": 1},
+      {"value": "Odalys", "count": 1},
+      {"value": "ResidHotel", "count": 1},
+      {"value": "Département de l'Indre", "count": 1},
+      {"value": "FUAJ", "count": 1},
+      {"value": "Ufoval", "count": 1},
+      {"value": "Fédérations des Oeuvres Laïques de Haute-Savoie", "count": 1},
+      {"value": "Cap France", "count": 1},
+      {"value": "Association Activité Découverte et Nature", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 7},
+      {"value": "yes", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "no", "count": 3},
+      {"value": "outside", "count": 2},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 5}, {"value": "yes", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "beds",
+    "tags": [
+      {"value": "29", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "84", "count": 1},
+      {"value": "17", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "info@annecyhostel.com", "count": 1},
+      {"value": "velogitevalence@gmail.com", "count": 1},
+      {"value": "lesnuiteesdudetour26@gmail.com", "count": 1},
+      {"value": "veronique@skistation.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "cafe", "count": 3},
+      {"value": "restaurant", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "rooms",
+    "tags": [
+      {"value": "20", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "17", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "1921", "count": 1}, {"value": "1982", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "nice hostel with friendly staff. clean and comfortable in addition to the dormitories, there are also two double bedrooms (a regular and a superior) which resemble hotel rooms.",
+        "count": 1
+      },
+      {"value": "hostel is ok?", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ele",
+    "tags": [{"value": "720m", "count": 1}, {"value": "1050", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "capacity:beds",
+    "tags": [{"value": "7", "count": 1}, {"value": "8", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Centre d'accueil Familial Eterlou", "count": 1},
+      {"value": "Appart Hotel", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.isere-tourisme.com/sitra/collectifs/ornon/gite-les-filons-91-1-sitraHCO317120.html",
+        "count": 1
+      },
+      {"value": "http://www.gite-jacobine-chartreuse.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "tents", "tags": [{"value": "Yes", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "75", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:type",
+    "tags": [{"value": "Wi-Fi", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "stars", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "rental", "tags": [{"value": "snowshoe", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

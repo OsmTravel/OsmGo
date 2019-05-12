@@ -1,0 +1,5 @@
+[
+  {"key": "highway", "tags": [{"value": "path", "count": 3}], "count": 3},
+  {"key": "historic", "tags": [{"value": "trench", "count": 3}], "count": 3},
+  {"key": "military", "tags": [{"value": "trench", "count": 3}], "count": 3}
+]

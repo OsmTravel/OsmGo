@@ -1,0 +1,105 @@
+[
+  {"key": "tourism", "tags": [{"value": "gallery", "count": 48}], "count": 48},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://culture.vienne.fr/lieux/centre-dart-contemporain",
+        "count": 1
+      },
+      {"value": "http://www.ruesdudeveloppementdurable.fr/", "count": 1},
+      {"value": "http://revesdafrique42.canalblog.com", "count": 1},
+      {"value": "http://www.collectifnoiretblanc.fr", "count": 1},
+      {"value": "http://leslimbes.wordpress.com", "count": 1},
+      {"value": "http://latelierducoin.over-blog.net", "count": 1},
+      {"value": "http://www.fedoraartgallery.com/", "count": 1},
+      {
+        "value": "http://www.vienne-tourisme.com/galerie-test-du-bailler-vienne.html",
+        "count": 1
+      },
+      {"value": "http://viennart.fr", "count": 1},
+      {"value": "https://fr-fr.facebook.com/ricardo.ponce.7", "count": 1},
+      {
+        "value": "http://www.domainedecoucouzac.fr/rp/exposition-coucouz-art",
+        "count": 1
+      },
+      {
+        "value": "https://fr-fr.facebook.com/Atelier-AnBerto-275176714627/",
+        "count": 1
+      },
+      {"value": "http://xn--lavinagaleriecaf-qqb.fr/", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 54 51 37", "count": 1},
+      {"value": "+33 6 58 17 34 40", "count": 1},
+      {"value": "+33 6 12 85 22 35", "count": 1},
+      {"value": "+33 4 76 34 14 60", "count": 1},
+      {"value": "+33 6 42 71 32 61", "count": 1},
+      {"value": "+33 6 46 68 48 79", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Art Pluriel Galerie", "count": 2},
+      {"value": "Rues du Développement Durable", "count": 1},
+      {"value": "Librairie de Paris", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "boutique d'art, salon de thé", "count": 1},
+      {
+        "value": "Atelier d'artiste (peinture, sculpture). Ouvert les jours d'expositions.",
+        "count": 1
+      },
+      {
+        "value": "Galerie associative et atelier de création (vêtements, bijoux et accessoires)",
+        "count": 1
+      },
+      {"value": "Galerie d'expositions temporaires", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "arts_centre", "count": 2},
+      {"value": "community_centre", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "shop",
+    "tags": [{"value": "art", "count": 2}, {"value": "alcohol", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "sculptor", "count": 1},
+      {"value": "painter", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "books", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tobacco", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "Peinture,_dessin,_céramique.", "count": 1}],
+    "count": 1
+  },
+  {"key": "alcohol", "tags": [{"value": "wine", "count": 1}], "count": 1}
+]

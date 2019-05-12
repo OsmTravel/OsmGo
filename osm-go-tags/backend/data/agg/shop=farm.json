@@ -1,0 +1,225 @@
+[
+  {"key": "shop", "tags": [{"value": "farm", "count": 98}], "count": 98},
+  {
+    "key": "organic",
+    "tags": [
+      {"value": "yes", "count": 7},
+      {"value": "only", "count": 5},
+      {"value": "no", "count": 2}
+    ],
+    "count": 14
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.magasin-de-producteurs.fr/shop.php?id_shop=319",
+        "count": 1
+      },
+      {"value": "http://udalc.pagesperso-orange.fr", "count": 1},
+      {"value": "http://www.marie-les-epices.com", "count": 1},
+      {"value": "http://auxchampsdesvolonteux.fr/", "count": 1},
+      {"value": "http://www.lacueillettedenoyarey.com/", "count": 1},
+      {"value": "https://www.chevreriegabote.com/", "count": 1},
+      {"value": "http://www.drive-vindryproducteur.com", "count": 1},
+      {"value": "http://champdesgrames.fr", "count": 1},
+      {"value": "http://lafermeducaban.fr/", "count": 1},
+      {"value": "http://www.uniferme.fr/", "count": 1},
+      {"value": "http://www.gaecdesaulnes.org", "count": 1},
+      {"value": "http://www.fermedesmaquis.fr/", "count": 1},
+      {"value": "http://www.brinsdeterroir.fr/", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "produce",
+    "tags": [
+      {"value": "cheese", "count": 3},
+      {"value": "wine", "count": 2},
+      {"value": "egg", "count": 1},
+      {"value": "vegetables", "count": 1},
+      {"value": "meat", "count": 1},
+      {"value": "pork", "count": 1},
+      {"value": "egg;vegetables;poultry", "count": 1},
+      {"value": "cheese;milk", "count": 1},
+      {"value": "goat cheese", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ludovic et Marie GROS", "count": 1},
+      {"value": " GAEC Les Déplaudes de Tartaras", "count": 1},
+      {"value": "GAEC du Vieux Cluzel", "count": 1},
+      {"value": "Chizat", "count": 1},
+      {"value": "Lay t'motiv", "count": 1},
+      {"value": "Coullet", "count": 1},
+      {"value": "Aline et Julien Saillet", "count": 1},
+      {"value": "Gaec de la Ferme du caban", "count": 1},
+      {"value": "Association de producteurs", "count": 1},
+      {"value": "Grandjacques", "count": 1},
+      {"value": "Grenoble Alpes Métropole", "count": 1},
+      {"value": "Ferme des Clarines", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Vente directe, produits fermiers", "count": 2},
+      {
+        "value": "harcuteries, escargots, fromages vache et chèvre, fruits, foie gras et produits du canard, volailles, farine, confitures, produits laitiers, viandes(agneaux et broutards), vin, légumes, miels et produits de la ruche, lentille, glace, bière.",
+        "count": 1
+      },
+      {"value": "Élevage de chèvres, fabrication de fromages", "count": 1},
+      {
+        "value": "Vente de fromages et lait de brebis. Produits de la ferme",
+        "count": 1
+      },
+      {"value": "vente de fromage de chèvre fermiers", "count": 1},
+      {
+        "value": "Vente de produit de la ferme. Fromage, Lait, Etc...",
+        "count": 1
+      },
+      {"value": "Fromagerie", "count": 1},
+      {"value": "En été vente de Beaufort", "count": 1},
+      {"value": "La ferme en paille", "count": 1},
+      {"value": "Fromages de chèvre", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 95 38 02", "count": 1},
+      {"value": "+33478054626", "count": 1},
+      {"value": "+33478819438", "count": 1},
+      {"value": "+33426181717", "count": 1},
+      {"value": "+33 4 77 73 15 08", "count": 1},
+      {"value": "+33 4 74 56 87 27", "count": 1},
+      {"value": "+33 4 75 38 91 54", "count": 1},
+      {"value": "+33475940093", "count": 1},
+      {"value": "+33 4 78 44 05 07", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "product",
+    "tags": [
+      {"value": "safran", "count": 1},
+      {"value": "wine", "count": 1},
+      {"value": "dairy", "count": 1},
+      {"value": "cheese", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.pleinchampsorbiers.com/component/content/article/79-nos-fermes/74-fe-gaec-les-deplaude-de-tartaras-anne-deplaude.html",
+        "count": 1
+      },
+      {
+        "value": "http://produitsfermiersloire.com/index.php?6f944f9f617509bafc84fa5dbff91ccc=e10b12015947a1f618fe357418c1a72c&option=com_content&view=article&id=21&Itemid=17&id_producteur=27",
+        "count": 1
+      },
+      {
+        "value": "http://laytmotivbarasso.wixsite.com/cafeculturelasso/blank-2",
+        "count": 1
+      },
+      {
+        "value": "http://www.monpanierfermier.com/index.php?option=com_content&task=view&id=12&Itemid=8&id_circuit=4&type_circuit=ruse_collectif",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1030 m", "count": 1},
+      {"value": "1590", "count": 1},
+      {"value": "1750", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "office", "tags": [{"value": "association", "count": 1}], "count": 1},
+  {
+    "key": "payment:cash:XLT-LIEN",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "currency:XLT", "tags": [{"value": "LIEN", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "bergeriedumoulin@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "2003", "count": 1}], "count": 1},
+  {
+    "key": "payment:maestro",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:ep_moneo",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "alcohol", "tags": [{"value": "wine", "count": 1}], "count": 1},
+  {
+    "key": "post_office:type",
+    "tags": [{"value": "post_partner", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "des paniers de paysans locaux distribués chaque semaine",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "amenity", "tags": [{"value": "bar", "count": 1}], "count": 1},
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:cheque", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "farmyard", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

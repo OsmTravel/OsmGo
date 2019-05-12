@@ -1,0 +1,17 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "social_centre", "count": 12}],
+    "count": 12
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Local de l'Accorderie du Bugey", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "La Corde Alliée", "count": 1}],
+    "count": 1
+  }
+]

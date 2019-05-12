@@ -1,0 +1,8 @@
+[
+  {"key": "female", "tags": [{"value": "only", "count": 1}], "count": 1},
+  {
+    "key": "leisure",
+    "tags": [{"value": "turkish_bath", "count": 1}],
+    "count": 1
+  }
+]

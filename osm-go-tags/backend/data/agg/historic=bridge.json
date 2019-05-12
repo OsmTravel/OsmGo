@@ -1,0 +1,233 @@
+[
+  {"key": "historic", "tags": [{"value": "bridge", "count": 26}], "count": 26},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22966811", "count": 2},
+      {"value": "Q22996889", "count": 2},
+      {"value": "Q3397448", "count": 1},
+      {"value": "Q3396909", "count": 1},
+      {"value": "Q22967196", "count": 1},
+      {"value": "Q3558061", "count": 1},
+      {"value": "Q3396705", "count": 1},
+      {"value": "Q3397595", "count": 1},
+      {"value": "Q22975797", "count": 1},
+      {"value": "Q22967465", "count": 1},
+      {"value": "Q22967042", "count": 1},
+      {"value": "Q22967382", "count": 1},
+      {"value": "Q3396774", "count": 1},
+      {"value": "Q22967346", "count": 1},
+      {"value": "Q22967279", "count": 1},
+      {"value": "Q22967039", "count": 1},
+      {"value": "Q22967038", "count": 1},
+      {"value": "Q3396724", "count": 1},
+      {"value": "Q22967288", "count": 1},
+      {"value": "Q22967043", "count": 1},
+      {"value": "Q22995245", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 23}],
+    "count": 23
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116943", "count": 2},
+      {"value": "PA00117648", "count": 1},
+      {"value": "PA00117270", "count": 1},
+      {"value": "PA00116683", "count": 1},
+      {"value": "PA00117461", "count": 1},
+      {"value": "PA00118285", "count": 1},
+      {"value": "PA00118374", "count": 1},
+      {"value": "PA00118389", "count": 1},
+      {"value": "PA00132954", "count": 1},
+      {"value": "PA00117726", "count": 1},
+      {"value": "PA00116645", "count": 1},
+      {"value": "PA00117269", "count": 1},
+      {"value": "PA00118378", "count": 1},
+      {"value": "PA00117620", "count": 1},
+      {"value": "PA00117546", "count": 1},
+      {"value": "PA00117267", "count": 1},
+      {"value": "PA00117266", "count": 1},
+      {"value": "PA00113335", "count": 1},
+      {"value": "PA00117556", "count": 1},
+      {"value": "PA42000008", "count": 1},
+      {"value": "PA00135647", "count": 1},
+      {"value": "PA42000009", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1923-05-01", "count": 3},
+      {"value": "1985-12-23", "count": 2},
+      {"value": "2001-10-04", "count": 2},
+      {"value": "1984-12-05", "count": 1},
+      {"value": "1980-11-13", "count": 1},
+      {"value": "1947-08-29", "count": 1},
+      {"value": "1974-08-20", "count": 1},
+      {"value": "1994-08-19", "count": 1},
+      {"value": "1934-11-15", "count": 1},
+      {"value": "1962-09-27", "count": 1},
+      {"value": "1921-03-16", "count": 1},
+      {"value": "1975-06-03", "count": 1},
+      {"value": "1925-12-04", "count": 1},
+      {"value": "1943-01-11", "count": 1},
+      {"value": "1927-10-28", "count": 1},
+      {"value": "1928-10-19", "count": 1},
+      {"value": "1938-08-08", "count": 1},
+      {"value": "1995-03-21", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 14}, {"value": "2", "count": 8}],
+    "count": 22
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 19}], "count": 19},
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "residential", "count": 4},
+      {"value": "tertiary", "count": 3},
+      {"value": "track", "count": 2},
+      {"value": "path", "count": 2},
+      {"value": "footway", "count": 2},
+      {"value": "unclassified", "count": 1},
+      {"value": "cycleway", "count": 1},
+      {"value": "service", "count": 1},
+      {"value": "secondary", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 14}, {"value": "2", "count": 2}],
+    "count": 16
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C19", "count": 5},
+      {"value": "C15", "count": 3},
+      {"value": "C14", "count": 2},
+      {"value": "C13", "count": 1},
+      {"value": "C16", "count": 1},
+      {"value": "C18", "count": 1},
+      {"value": "C12", "count": 1},
+      {"value": "C17", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {
+        "value": "fr:Compagnie du chemin de fer de Saint-Étienne à la Loire",
+        "count": 2
+      },
+      {"value": "fr:Pont de Chambonas", "count": 1},
+      {"value": "fr:Vieux-Pont (Moûtiers)", "count": 1},
+      {"value": "fr:Pont Romain (Les Clefs)", "count": 1},
+      {"value": "fr:Pont sur l'Eau Morte", "count": 1},
+      {"value": "fr:Pont du Gua", "count": 1},
+      {"value": "fr:Pont Vieux (Cluses)", "count": 1},
+      {"value": "fr:Pont Saint-Laurent (Saône)", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 3},
+      {"value": "cobblestone", "count": 1},
+      {"value": "unpaved", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "maxspeed",
+    "tags": [{"value": "30", "count": 3}, {"value": "50", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 86i", "count": 1},
+      {"value": "D 94", "count": 1},
+      {"value": "D 1079", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "maxweight",
+    "tags": [{"value": "3.5", "count": 2}, {"value": "7.5", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [{"value": "designated", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "bridge:structure",
+    "tags": [{"value": "suspension", "count": 2}],
+    "count": 2
+  },
+  {"key": "lit", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 1},
+      {"value": "viewpoint", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "maxspeed:type", "tags": [{"value": "sign", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Charlieu-Ancien pont de pierre-20110330.jpg", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "disused:waterway",
+    "tags": [{"value": "canal", "count": 1}],
+    "count": 1
+  },
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "aujourd'hui détruit, soubassements visibles", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sidewalk", "tags": [{"value": "none", "count": 1}], "count": 1},
+  {"key": "railway", "tags": [{"value": "abandoned", "count": 1}], "count": 1},
+  {
+    "key": "smoothness",
+    "tags": [{"value": "very_bad", "count": 1}],
+    "count": 1
+  },
+  {"key": "old_ref", "tags": [{"value": "N 79", "count": 1}], "count": 1},
+  {"key": "cycleway", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

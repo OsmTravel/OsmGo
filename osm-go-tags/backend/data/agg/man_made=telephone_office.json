@@ -1,0 +1,141 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "telephone_office", "count": 254}],
+    "count": 254
+  },
+  {
+    "key": "telecom",
+    "tags": [
+      {"value": "central_office", "count": 246},
+      {"value": "exchange", "count": 7}
+    ],
+    "count": 253
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Orange", "count": 152},
+      {"value": "France Telecom", "count": 100},
+      {"value": "orange", "count": 1}
+    ],
+    "count": 253
+  },
+  {
+    "key": "ref:FR:PTT",
+    "tags": [
+      {"value": "07235SEU", "count": 2},
+      {"value": "26165LIV", "count": 1},
+      {"value": "73167SFL", "count": 1},
+      {"value": "38185PAS", "count": 1},
+      {"value": "74010ILE", "count": 1},
+      {"value": "38412WLP", "count": 1},
+      {"value": "73206PRA", "count": 1},
+      {"value": "26379GRB", "count": 1},
+      {"value": "74217PRI", "count": 1},
+      {"value": "74011POM", "count": 1},
+      {"value": "74076CHO", "count": 1},
+      {"value": "74268VIY", "count": 1},
+      {"value": "74268SEY", "count": 1},
+      {"value": "74068CHS", "count": 1},
+      {"value": "38422WMU", "count": 1},
+      {"value": "07236SFE", "count": 1},
+      {"value": "42172PLA", "count": 1},
+      {"value": "38486S8S", "count": 1},
+      {"value": "74063CHL", "count": 1},
+      {"value": "74281THO", "count": 1},
+      {"value": "01004AMG", "count": 1},
+      {"value": "26010ANY", "count": 1},
+      {"value": "74286VAC", "count": 1},
+      {"value": "73301TIN", "count": 1},
+      {"value": "26113DID", "count": 1},
+      {"value": "74280THN", "count": 1},
+      {"value": "69297TNY", "count": 1},
+      {"value": "74153LUC", "count": 1},
+      {"value": "01033BEL", "count": 1},
+      {"value": "74245SMB", "count": 1},
+      {"value": "73215ROC", "count": 1},
+      {"value": "74143HOU", "count": 1},
+      {"value": "84138VAL", "count": 1},
+      {"value": "69384CXR", "count": 1},
+      {"value": "38517TUL", "count": 1},
+      {"value": "73280SOA", "count": 1},
+      {"value": "42218FAU", "count": 1},
+      {"value": "74250SPF", "count": 1},
+      {"value": "74006AZR", "count": 1},
+      {"value": "38511TOU", "count": 1},
+      {"value": "38053BGN", "count": 1},
+      {"value": "74258SAM", "count": 1},
+      {"value": "38553VIL", "count": 1},
+      {"value": "07293SRO", "count": 1},
+      {"value": "69201SFA", "count": 1},
+      {"value": "73057BR3", "count": 1},
+      {"value": "38503TER", "count": 1},
+      {"value": "07259SJA", "count": 1},
+      {"value": "42240JEE", "count": 1},
+      {"value": "38218MA8", "count": 1},
+      {"value": "73094CRV", "count": 1},
+      {"value": "74043BCH", "count": 1},
+      {"value": "73238GER", "count": 1},
+      {"value": "38534VEN", "count": 1},
+      {"value": "38006CD2", "count": 1},
+      {"value": "38006AVA", "count": 1},
+      {"value": "74104DSD", "count": 1},
+      {"value": "38269MUR", "count": 1},
+      {"value": "26208MOI", "count": 1},
+      {"value": "26006ALX", "count": 1},
+      {"value": "01306PDV", "count": 1},
+      {"value": "73116TS2", "count": 1},
+      {"value": "38193ISL", "count": 1},
+      {"value": "01079CVA", "count": 1},
+      {"value": "74268P6Z", "count": 1},
+      {"value": "01087CX2", "count": 1},
+      {"value": "26078CHH", "count": 1},
+      {"value": "07307SNL", "count": 1},
+      {"value": "26063BUI", "count": 1},
+      {"value": "73244STJ", "count": 1},
+      {"value": "74010GLI", "count": 1},
+      {"value": "42274PG7", "count": 1}
+    ],
+    "count": 73
+  },
+  {
+    "key": "telecom:medium",
+    "tags": [{"value": "copper", "count": 53}],
+    "count": 53
+  },
+  {
+    "key": "communication:microwave",
+    "tags": [{"value": "yes", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "pas38", "count": 1},
+      {"value": "VIG38", "count": 1},
+      {"value": "384714", "count": 1},
+      {"value": "ita73", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "communication:mobile_phone",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Centre principal d'exploitation", "count": 1},
+      {"value": "Centrale ADSL - NRA Bons", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "power", "tags": [{"value": "substation", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Répartiteur téléphonique", "count": 1}],
+    "count": 1
+  }
+]

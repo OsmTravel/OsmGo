@@ -1,0 +1,45 @@
+[
+  {"key": "shop", "tags": [{"value": "fuel", "count": 5}], "count": 5},
+  {
+    "key": "vending_machine",
+    "tags": [{"value": "fuel", "count": 3}],
+    "count": 3
+  },
+  {"key": "fuel:diesel", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "hgv:lanes", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Total", "count": 2},
+      {"value": "Groupement des Mousquetaires", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:FR:prix-carburants",
+    "tags": [
+      {"value": "78530001", "count": 1},
+      {"value": "77330002", "count": 1},
+      {"value": "77330004", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "fuel", "count": 3}], "count": 3},
+  {"key": "vending", "tags": [{"value": "fuel", "count": 3}], "count": 3},
+  {"key": "compressed_air", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "brand", "tags": [{"value": "Total", "count": 1}], "count": 1},
+  {"key": "fuel:lpg", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "is_in",
+    "tags": [{"value": "OZOIR-LA-FERRIÈRE", "count": 1}],
+    "count": 1
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Bois de chauffage", "count": 1}],
+    "count": 1
+  },
+  {"key": "fuel", "tags": [{"value": "wood", "count": 1}], "count": 1}
+]

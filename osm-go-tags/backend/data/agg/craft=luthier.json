@@ -1,0 +1,14 @@
+[
+  {"key": "craft", "tags": [{"value": "luthier", "count": 5}], "count": 5},
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [{"value": "http://ettori-luthier.com/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 9 50 52 60 82", "count": 1}],
+    "count": 1
+  }
+]

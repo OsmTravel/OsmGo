@@ -1,0 +1,138 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "music_school", "count": 24}],
+    "count": 24
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Association Musicole", "count": 1},
+      {"value": "Mairie de Gaillard", "count": 1},
+      {"value": "Mairie de Saint-Chamond", "count": 1},
+      {"value": "Ville de Claix", "count": 1},
+      {"value": "Communes d'Échirolles et Le Pont de claix", "count": 1},
+      {"value": "Ville de Ferney-Voltaire", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://music-creation.fr/", "count": 1},
+      {"value": "http://cpmt.free.fr/", "count": 1},
+      {"value": "https://www.em7.fr/", "count": 1},
+      {"value": "http://emfv.wordpress-hebergement.fr/", "count": 1},
+      {"value": "http://www.sim-jeanwiener.fr/", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 02 18 05", "count": 1},
+      {"value": "+33 476 98 46 71", "count": 1},
+      {"value": "+33 4 75 41 07 33", "count": 1},
+      {"value": "+33 4 76 99 25 25", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Ecole de musique.\nAssociations culturelles, de loisirs.",
+        "count": 1
+      },
+      {
+        "value": "Formation musicale : cours particuliers et ensembles (harmonie, orchestres, chorale)",
+        "count": 1
+      },
+      {
+        "value": "ancienne minoterie transformée en centre artistique et école de musique",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "education", "tags": [{"value": "music", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "em7.lyon@gmail.com", "count": 1},
+      {"value": "ecole@emfv-claix.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "ele", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "access", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access:blind", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access:deaf", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "blind:description:fr",
+    "tags": [
+      {"value": "Accessible aux aveugles et aux malvoyants.", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "deaf:description:fr",
+    "tags": [{"value": "Accessible aux sourds et malentendants.", "count": 1}],
+    "count": 1
+  },
+  {"key": "handrail", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "mental_disabled:description:fr",
+    "tags": [{"value": "Accessible aux handicapés mentaux.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "municipal:facilities:fr",
+    "tags": [{"value": "culturels", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "association", "count": 1}], "count": 1},
+  {
+    "key": "photo",
+    "tags": [{"value": "http://i.imgur.com/OaEKX9o.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.ferney-voltaire.fr/24-conservatoire.htm",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "walking_disability:description:fr",
+    "tags": [
+      {
+        "value": "Inaccessible aux fauteuils roulants. Accessible aux PMR.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q2994548", "count": 1}], "count": 1},
+  {
+    "key": "access:mental_disabled",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

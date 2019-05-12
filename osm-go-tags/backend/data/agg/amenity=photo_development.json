@@ -1,0 +1,9 @@
+[
+  {"key": "level", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "photo_development", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "Photomaton", "count": 1}], "count": 1}
+]

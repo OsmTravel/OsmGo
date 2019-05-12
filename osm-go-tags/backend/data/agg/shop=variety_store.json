@@ -1,0 +1,145 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "variety_store", "count": 177}],
+    "count": 177
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "GiFi", "count": 19},
+      {"value": "NOZ", "count": 3},
+      {"value": "HEMA", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q3105439", "count": 19},
+      {"value": "Q3345688", "count": 2},
+      {"value": "Q903805", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "GiFi", "count": 7},
+      {"value": "Ben Njima Jalel", "count": 1},
+      {"value": "AXA", "count": 1},
+      {"value": "Honda", "count": 1},
+      {"value": "Vente de voitures", "count": 1},
+      {"value": "Pro&Cie", "count": 1},
+      {"value": "Nautikart", "count": 1},
+      {"value": "Sherpa", "count": 1},
+      {"value": "Groupe U", "count": 1},
+      {"value": "M. DESPERT Thierry", "count": 1},
+      {"value": "La Poste", "count": 1},
+      {"value": "Casino", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 36 92 48", "count": 1},
+      {"value": "+33 4 76 42 24 35", "count": 1},
+      {"value": "+33 4 50 91 73 27", "count": 1},
+      {"value": "+33 4 77 76 72 06", "count": 1},
+      {"value": "+33 4 78 55 57 43", "count": 1},
+      {"value": "+33 4 78 55 67 21", "count": 1},
+      {"value": "+33 4 78 55 37 60", "count": 1},
+      {"value": "+33478190241", "count": 1},
+      {"value": "+33 4 82780745", "count": 1},
+      {"value": "+33 4 72 88 47 67", "count": 1},
+      {"value": "+33 4 37 24 05 55", "count": 1},
+      {"value": "+33475521872", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.tereo-piscines.fr/", "count": 1},
+      {"value": "http://www.forezcombustibleseco.fr/", "count": 1},
+      {
+        "value": "http://magasins.pearl.fr/magasin-lyon-presentation.html",
+        "count": 1
+      },
+      {"value": "http://mikado.lafayette.free.fr", "count": 1},
+      {"value": "http://www.centrakor.com", "count": 1},
+      {"value": "https://www.stokomani.fr/", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Boutique Amérindienne", "count": 1},
+      {"value": "fr:Institut de beauté", "count": 1},
+      {"value": "fr:Toilettage pour chiens.", "count": 1},
+      {"value": "Service à la personne", "count": 1},
+      {"value": "Boutique du vendeur en ligne", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "brand:website",
+    "tags": [
+      {"value": "http://www.nozarrivages.com/", "count": 3},
+      {"value": "https://www.hema.fr/", "count": 1},
+      {"value": "http://www.gifi.fr/", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [{"value": "fr:Noz", "count": 3}, {"value": "fr:HEMA", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Bureau de tabac", "count": 1},
+      {"value": "Nutrition et diététique", "count": 1},
+      {"value": "réparation de chaises", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [{"value": "cotiereservices@sfr.Fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "terminal", "count": 1}],
+    "count": 1
+  },
+  {"key": "service:fax", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "service:phone", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "service:copy", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "post_office", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "post_office:type",
+    "tags": [{"value": "post_partner", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:LaPoste",
+    "tags": [{"value": "01085A", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {"key": "craft", "tags": [{"value": "pottery", "count": 25}], "count": 25},
+  {
+    "key": "shop",
+    "tags": [{"value": "craft", "count": 1}, {"value": "jewelry", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.vercoceram.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "lapoteriedanne-marie@hotmail.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33478878171", "count": 1}], "count": 1}
+]

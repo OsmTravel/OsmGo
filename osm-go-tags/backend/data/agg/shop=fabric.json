@@ -1,0 +1,68 @@
+[
+  {"key": "shop", "tags": [{"value": "fabric", "count": 53}], "count": 53},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 59 96 14", "count": 1},
+      {"value": "+33 4 74 57 35 22", "count": 1},
+      {"value": "+33 4 74 85 50 49", "count": 1},
+      {"value": "+33 4 74 53 56 85", "count": 1},
+      {"value": "+33 4 50 49 03 98", "count": 1},
+      {"value": "+33 4 77 24 03 69", "count": 1},
+      {"value": "+33 4 77 24 07 80", "count": 1},
+      {"value": "+33 9 52 21 50 15", "count": 1},
+      {"value": "+33 9 54 79 89 89", "count": 1},
+      {"value": "+33 4 38 12 00 14", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.atoutsimprim-vienne.com/", "count": 1},
+      {
+        "value": "http://magasins.mondialtissus.fr/tissu-mercerie/lyon-villeurbanne/M226",
+        "count": 1
+      },
+      {"value": "http://www.decorial.com/", "count": 1},
+      {"value": "http://www.depointsencroix.com/", "count": 1},
+      {"value": "www.annelacastagne.fr", "count": 1},
+      {"value": "http://www.servet.fr", "count": 1},
+      {"value": "https://www.linvosges.com/fr/nos-magasins/lyon/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Shopping/Phildar",
+        "count": 1
+      }
+    ],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Mercirie - Bonneterie - Couture - Retouche", "count": 1},
+      {
+        "value": "Retouches de Vêtements - Particuliers - Professionnels",
+        "count": 1
+      },
+      {
+        "value": "Mercerie : pelotes, accessoires travaux d'aiguille, couture, patchwork, point de croix, canevas, broderie",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Ets Filhol", "count": 1}],
+    "count": 1
+  },
+  {"key": "craft", "tags": [{"value": "dressmaker", "count": 1}], "count": 1},
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

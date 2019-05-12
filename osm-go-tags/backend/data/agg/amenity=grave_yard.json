@@ -1,0 +1,54 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "grave_yard", "count": 250}],
+    "count": 250
+  },
+  {
+    "key": "religion",
+    "tags": [
+      {"value": "christian", "count": 77},
+      {"value": "multifaith", "count": 1}
+    ],
+    "count": 78
+  },
+  {
+    "key": "denomination",
+    "tags": [
+      {"value": "catholic", "count": 43},
+      {"value": "old_catholic", "count": 1},
+      {"value": "protestant", "count": 1}
+    ],
+    "count": 45
+  },
+  {"key": "barrier", "tags": [{"value": "wall", "count": 7}], "count": 7},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Cimetière privé", "count": 3},
+      {"value": "cimetière privé", "count": 1},
+      {
+        "value": "Cimetière canadien des accidentés de l'Obiou 13 novembre 1950",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {"key": "material", "tags": [{"value": "stone", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "cemetery", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1944/10/16", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118159", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q22968370", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

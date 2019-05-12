@@ -1,0 +1,647 @@
+[
+  {"key": "shop", "tags": [{"value": "bakery", "count": 2266}], "count": 2266},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 23 40 75", "count": 2},
+      {"value": "+33478588355", "count": 2},
+      {"value": "+33476425082", "count": 1},
+      {"value": "+33 4 37 26 02 00", "count": 1},
+      {"value": "+33 4 76 51 91 96", "count": 1},
+      {"value": "+33 4 76 95 40 20", "count": 1},
+      {"value": "+33 4 76 07 77 88", "count": 1},
+      {"value": "+33 9 84 45 97 59", "count": 1},
+      {"value": "+33 4 76 42 03 39", "count": 1},
+      {"value": "+33 4 75 08 63 67", "count": 1},
+      {"value": "+33478052471", "count": 1},
+      {"value": "+33 4 76 30 28 96", "count": 1},
+      {"value": "+33 4 78 75 55 98", "count": 1},
+      {"value": "+33476420834", "count": 1},
+      {"value": "+33 4 76 21 51 50", "count": 1},
+      {"value": "+33 4 50 95 74 00", "count": 1},
+      {"value": "+33 4 74 60 25 30", "count": 1},
+      {"value": "+33 4 50 22 42 48", "count": 1},
+      {"value": "+33 4 74 22 50 80", "count": 1},
+      {"value": "+33 4 74 30 11 43", "count": 1},
+      {"value": "+33472009419", "count": 1},
+      {"value": "+33 4 76 72 70 32", "count": 1},
+      {"value": "+33487246417", "count": 1},
+      {"value": "+33 4 76 96 91 76", "count": 1},
+      {"value": "+33 4 76 47 98 10", "count": 1},
+      {"value": "+33 4 56 14 06 39", "count": 1},
+      {"value": "+33 4 76 34 41 62", "count": 1},
+      {"value": "+33 4 50 02 93 19", "count": 1},
+      {"value": "+33 4 75 45 25 94", "count": 1},
+      {"value": "+33 4 50 40 52 55", "count": 1},
+      {"value": "022 788 05 04", "count": 1},
+      {"value": "+33 4 74 53 20 90", "count": 1},
+      {"value": "+33 4 74 79 94 57", "count": 1},
+      {"value": "+33 4 74 85 06 23", "count": 1},
+      {"value": "+33 4 50 70 96 71", "count": 1},
+      {"value": "+33474980101", "count": 1},
+      {"value": "+33 4 78 15 93 64", "count": 1},
+      {"value": "+33 4 76 47 84 49", "count": 1},
+      {"value": "+33 4 74 85 02 01", "count": 1},
+      {"value": "+33 4 74 85 25 97", "count": 1},
+      {"value": "+33 4 77 39 16 43", "count": 1},
+      {"value": "+33 4 74 31 57 13", "count": 1},
+      {"value": "+33474936486", "count": 1},
+      {"value": "+33 4 74 53 20 36", "count": 1},
+      {"value": "+33 4 75 29 12 72", "count": 1},
+      {"value": "+33 6 89 41 65 61", "count": 1},
+      {"value": "+33 4 74 85 02 63", "count": 1},
+      {"value": "+33 4 74 85 36 90", "count": 1},
+      {"value": "+33 4 76 97 53 96", "count": 1},
+      {"value": "+33 4 75 47 08 67", "count": 1},
+      {"value": "+33 4 78 49 27 69", "count": 1},
+      {"value": "+41 22 771 21 81", "count": 1},
+      {"value": "+33 6 86 55 16 37", "count": 1},
+      {"value": "+33 4 37 57 75 97", "count": 1},
+      {"value": "+33 4 79 88 98 38", "count": 1},
+      {"value": "+33 4 77 66 12 24", "count": 1},
+      {"value": "+33 4 77 24 09 90", "count": 1},
+      {"value": "+33 4 77 24 02 47", "count": 1},
+      {"value": "+33 4 77 24 07 54", "count": 1},
+      {"value": "+33 4 77 24 07 13", "count": 1},
+      {"value": "+33 9 67 17 34 47", "count": 1},
+      {"value": "+33 4 75 56 20 06", "count": 1},
+      {"value": "+33 4 50 27 56 59", "count": 1},
+      {"value": "+33 4 50 45 54 39", "count": 1},
+      {"value": "+33450232503", "count": 1},
+      {"value": "+33 4 76 59 02 53", "count": 1},
+      {"value": "+33 9 61 36 08 07", "count": 1},
+      {"value": "+33 4 78 32 48 54", "count": 1},
+      {"value": "+33 4 50 41 67 72", "count": 1},
+      {"value": "+33 4 50 34 40 31", "count": 1},
+      {"value": "+33 4 76 81 08 07", "count": 1},
+      {"value": "+33 4 78 93 33 81", "count": 1},
+      {"value": "+33478484289", "count": 1},
+      {"value": "+33478484408", "count": 1},
+      {"value": "+33478565045", "count": 1},
+      {"value": "+33478485274", "count": 1},
+      {"value": "+33 4 79 71 16 91", "count": 1},
+      {"value": "+33478486314", "count": 1},
+      {"value": "+33478445343", "count": 1},
+      {"value": "+33 4 72255335", "count": 1},
+      {"value": "+33 4 79 59 22 94", "count": 1},
+      {"value": "+33 4 75 43 08 84", "count": 1},
+      {"value": "+33 4 75 44 03 37", "count": 1},
+      {"value": "+33 4 75 43 05 28", "count": 1},
+      {"value": "+33 4 76 45 08 33", "count": 1},
+      {"value": "+33476771346", "count": 1},
+      {"value": "+33 4 77 50 60 66", "count": 1},
+      {"value": "+33 9 83 38 68 49", "count": 1},
+      {"value": "+33 4 74 75 74 06", "count": 1},
+      {"value": "+33476428403", "count": 1},
+      {"value": "+33476498068", "count": 1},
+      {"value": "+33 9 73625363", "count": 1},
+      {"value": "+33 9 67345089", "count": 1},
+      {"value": "+33 4 78 37 74 51", "count": 1},
+      {"value": "+33 4 77 22 07 33", "count": 1},
+      {"value": "+33 4 78 22 21 19", "count": 1},
+      {"value": "+33 4 78 22 21 82", "count": 1},
+      {"value": "+33 9 84 28 26 87", "count": 1},
+      {"value": "+33 4 78 94 99 65", "count": 1},
+      {"value": "+33 4 74639281", "count": 1},
+      {"value": "+33 4 78 93 42 97", "count": 1},
+      {"value": "+33 4 78 89 05 06", "count": 1},
+      {"value": "+33 4 78 74 01 54", "count": 1},
+      {"value": "+33 4 76 34 99 75", "count": 1},
+      {"value": "+33474931670", "count": 1},
+      {"value": "+334 76 22 61 07", "count": 1},
+      {"value": "+33 4 75 43 58 21", "count": 1},
+      {"value": "+33 474509081", "count": 1},
+      {"value": "+33 4 50 44 12 16", "count": 1},
+      {"value": "+33 4 76 98 08 49", "count": 1},
+      {"value": "+33 4 78 23 84 21", "count": 1},
+      {"value": "+33 4 79889270", "count": 1},
+      {"value": "+33 4 76 72 51 31", "count": 1},
+      {"value": "+33 9 72 47 50 07", "count": 1},
+      {"value": "+33 8 90 21 05 82", "count": 1},
+      {"value": "+33 4 75 07 81 40", "count": 1},
+      {"value": "+33 9 72 83 54 80", "count": 1},
+      {"value": "+33 4 74 31 94 93", "count": 1},
+      {"value": "+33 4 76 97 69 10", "count": 1},
+      {"value": "3631", "count": 1},
+      {"value": "+33 4 75 36 40 70", "count": 1},
+      {"value": "+33 4 75 36 31 02", "count": 1},
+      {"value": "+33 4 74 89 57 13", "count": 1},
+      {"value": "+33 4 75 43 38 22", "count": 1},
+      {"value": "+33 4 76 22 49 67", "count": 1},
+      {"value": "+33 4 50 10 89 60", "count": 1}
+    ],
+    "count": 128
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 81},
+      {"value": "no", "count": 32},
+      {"value": "limited", "count": 11}
+    ],
+    "count": 124
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.marieblachere.com/", "count": 3},
+      {"value": "http://www.epicuriasucresale.com/", "count": 2},
+      {"value": "https://pan-et-gato.fr/", "count": 1},
+      {"value": "www.latalemelerie.com/", "count": 1},
+      {"value": "https://www.facebook.com/SARL.COUTO/", "count": 1},
+      {"value": "http://www.fournillumiere.fr/", "count": 1},
+      {"value": "www.latalemelerie.com", "count": 1},
+      {"value": "http://maisonguitel.fr", "count": 1},
+      {"value": "http://plus.google.com/101310405931210576639", "count": 1},
+      {"value": "http://www.ronjat.com/", "count": 1},
+      {"value": "http://www.maison-henon.com/nos-boutiques/", "count": 1},
+      {"value": "http://www.lamiecaline.com/fr/", "count": 1},
+      {"value": "http://www.jacopain.fr", "count": 1},
+      {"value": "http://aucoeurdeladombes.com", "count": 1},
+      {
+        "value": "http://www.delices-viennois.com/site/patisserie-vienne.php",
+        "count": 1
+      },
+      {"value": "http://www.patisserie-chocolaterie-pepin.com/", "count": 1},
+      {"value": "http://www.brocard-patissier.com/", "count": 1},
+      {"value": "http://www.lepaindupeuil.fr/", "count": 1},
+      {"value": "http://www.rondedespains.com/", "count": 1},
+      {
+        "value": "http://uac-stjuststrambert.fr/quartie-st-just/le-tourment-damour/",
+        "count": 1
+      },
+      {
+        "value": "http://uac-stjuststrambert.fr/quartie-st-just/boulangerie-landes/",
+        "count": 1
+      },
+      {"value": "www.boulangerie-girouettes.c.la", "count": 1},
+      {"value": "http://villeurbanne.lamiecaline.com/fr/", "count": 1},
+      {"value": "http://www.aucomptoirduchocolat.fr/", "count": 1},
+      {
+        "value": "https://www.facebook.com/Tartine-Bonne-Humeur-621000874672395/",
+        "count": 1
+      },
+      {"value": "http://www.patisserie-boulangerie-bettant.fr/", "count": 1},
+      {"value": "http://annecy-2.moulindepaiou.com/", "count": 1},
+      {"value": "http://www.latalemelerie.com/", "count": 1},
+      {
+        "value": "http://www.banette.fr/boulangerie/miralles-st-priest.html",
+        "count": 1
+      },
+      {"value": "http://epi-de-ble.fr", "count": 1},
+      {"value": "http://maison-manival.com/", "count": 1},
+      {"value": "http://www.pascalis.com/", "count": 1},
+      {"value": "http://www.maison-jacquard.fr/", "count": 1},
+      {"value": "http://www.nivon.com/", "count": 1},
+      {"value": "http://www.patisserie-giraud.fr/", "count": 1},
+      {"value": "http://www.lamiecyclette.fr/", "count": 1},
+      {"value": "http://www.paul.fr", "count": 1},
+      {
+        "value": "https://www.facebook.com/Boulangerie-F%C3%A9licie-et-Michel-1840123982885631",
+        "count": 1
+      },
+      {"value": "http://www.k2bboulangerie.com/", "count": 1},
+      {
+        "value": "https://fidelite.briochedoree.fr/restaurants/restaurant/95-LYON-Lyon+-+87-+rue+de+la+Republique",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/SG-GourmandS-1395239947391717/",
+        "count": 1
+      },
+      {"value": "http://www.lapausegourmandeduroyans.fr/", "count": 1},
+      {"value": "https://www.festivaldespains.com/", "count": 1},
+      {"value": "https://www.maison-jaume.fr/", "count": 1},
+      {"value": "http://lepaindescairns.fr", "count": 1},
+      {
+        "value": "https://www.la-plagne.com/commerce-et-service/1/167569-le-matafan-boulangerie.html",
+        "count": 1
+      },
+      {"value": "http://www.paul.fr/", "count": 1},
+      {"value": "http://tendances-gourmets.com/", "count": 1},
+      {
+        "value": "https://fr-fr.facebook.com/Boulangeriedelafayette/",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/Les-Petits-Pains-de-Manon-698055423558090/",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/Autant-De-Pains-Faventines-991606304294487/",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Restaurants/La-Croissanterie",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Restaurants/Brioche-Doree",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Restaurants/Brioche-Doree-Kiosque",
+        "count": 1
+      }
+    ],
+    "count": 57
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Banette", "count": 6},
+      {"value": "Fagès", "count": 1},
+      {"value": "Boulangerie", "count": 1},
+      {"value": "Collin", "count": 1},
+      {"value": "Coccimarket", "count": 1},
+      {"value": "SARL Chavarot", "count": 1},
+      {"value": "Jeanneret Benedict et Yaima", "count": 1},
+      {"value": "La Mie Câline", "count": 1},
+      {"value": "SAS MEYRAND", "count": 1},
+      {"value": "Isabelle et Benoît", "count": 1},
+      {"value": "Lucien", "count": 1},
+      {"value": "Bettant", "count": 1},
+      {"value": "La Brioche Dorée", "count": 1},
+      {"value": "Victouron Christian", "count": 1},
+      {"value": "Chez Bebert", "count": 1},
+      {"value": "Chevallier", "count": 1},
+      {"value": "Noël Jourdin", "count": 1},
+      {"value": "Nathalie & Stephane BAUDOUIN", "count": 1},
+      {"value": "Saifi Tahar", "count": 1},
+      {"value": "Tranchand", "count": 1},
+      {"value": "Stéphane Cassat", "count": 1},
+      {"value": "DELHOMME", "count": 1},
+      {"value": "MAGAT", "count": 1},
+      {"value": "Olivier Martineau", "count": 1},
+      {"value": "Philippe Carra", "count": 1},
+      {"value": "Bernard Lambert", "count": 1},
+      {"value": "Cherryne & Pef", "count": 1},
+      {"value": "Passet", "count": 1},
+      {"value": "Duranton", "count": 1},
+      {"value": "Carine & Cyril Auclair", "count": 1},
+      {"value": "Anthony et Géraldine Desarmeaux", "count": 1},
+      {"value": "Paul", "count": 1},
+      {"value": "Au Pain Naturel", "count": 1},
+      {"value": "Bernard Freyssinet", "count": 1},
+      {"value": "Saad Aloui", "count": 1},
+      {"value": "Jean-Michel Laporte", "count": 1},
+      {"value": "Lacroix Christophe", "count": 1},
+      {"value": "PAUL", "count": 1},
+      {"value": "Christophe Suchel", "count": 1},
+      {"value": "Le Moulin de Bruno", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "pastry_shop",
+    "tags": [{"value": "yes", "count": 35}, {"value": "no", "count": 1}],
+    "count": 36
+  },
+  {
+    "key": "organic",
+    "tags": [{"value": "yes", "count": 26}, {"value": "only", "count": 5}],
+    "count": 31
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Boulangerie Patisserie", "count": 1},
+      {"value": "Artisan Boulanger Pâtissier", "count": 1},
+      {"value": "Sandwichs - Kebab - Pain", "count": 1},
+      {"value": "Boulangerie - Pâtisserie", "count": 1},
+      {"value": "Pâtisserie - Boulangerie", "count": 1},
+      {"value": "Artisan Boulanger", "count": 1},
+      {"value": "Boulangerie;Pâtisserie", "count": 1},
+      {"value": "Sandwichs;Pâtisserie", "count": 1},
+      {"value": "Boulanger - Pâtisser", "count": 1},
+      {
+        "value": "Pâtisseries, bagels, sandwiches quiches et salades, tout fait maison, toute la journée",
+        "count": 1
+      },
+      {"value": "Pains et patisseries à partir de farine bio", "count": 1},
+      {
+        "value": "Artisan pâtissier, chocolatier, glacier + salon de thé",
+        "count": 1
+      },
+      {
+        "value": "Boulangerie-pâtisserie avec spécialités locales : Suisse, Pogne, Saint-Genix.",
+        "count": 1
+      },
+      {"value": "Pâtissier, chocolatier, pâtisserie, traiteur.", "count": 1},
+      {
+        "value": "Aussi pâtisserie, chocolaterie, snacking, glacier",
+        "count": 1
+      },
+      {
+        "value": "Notre artisan, boulanger, pâtissier, glacier vous propose tous les jours viennoiseries, pains de différentes sortes, gâteau pour les gourmands ! Alors n'hésitez pas à pousser sa porte.\n\nLa boulangerie fait aussi salon de thé, des crêpes, le petit déjeuner",
+        "count": 1
+      },
+      {
+        "value": "Fournil boulanger. Pain au levain, viennoiseries et spécialités gourmandes.",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "cafe", "count": 8},
+      {"value": "restaurant", "count": 3},
+      {"value": "parking", "count": 1},
+      {"value": "pub", "count": 1},
+      {"value": "fast_food", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "sandwich", "count": 6},
+      {"value": "pizza", "count": 2},
+      {"value": "hamburgers_arabes", "count": 1},
+      {"value": "coffee_shop", "count": 1},
+      {"value": "burger", "count": 1},
+      {"value": "desert;bakeshop", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 8}, {"value": "1", "count": 3}],
+    "count": 11
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "kamil.bulut@wanadoo.fr", "count": 1},
+      {"value": "contact.couto@free.fr", "count": 1},
+      {"value": "lepaindupeuil@orange.fr", "count": 1},
+      {"value": "bcmdchocolat@sfr.fr", "count": 1},
+      {"value": "paiou.annecy@moulindepaiou.com", "count": 1},
+      {"value": "aucoeurdeladombes@gmail.com", "count": 1},
+      {"value": "info@festivaldespains.com", "count": 1},
+      {"value": "boulangeriegendrot@gmail.com", "count": 1},
+      {"value": "contact@lepaindescairns.fr", "count": 1},
+      {"value": "lespetitspainsdemanon@orange.fr", "count": 1},
+      {"value": "joel.guintrand@sfr.fr", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "terminal de cuisson", "count": 2},
+      {"value": "Pain et patisseries", "count": 1},
+      {"value": "Boulangerie Bio", "count": 1},
+      {"value": "Artisan : Alexandre Dulière", "count": 1},
+      {"value": "Boulangerie - Patisserie - Tea-Room", "count": 1},
+      {
+        "value": "They also sell other food like butter, cheese and spaghetti - but to quite high prices, since it us seemingly the only shop around.",
+        "count": 1
+      },
+      {
+        "value": "atelier fabrication de pain sans point de vente sur place",
+        "count": 1
+      },
+      {"value": "Boulangerie, patiserie, salon du thé", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "pastry", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 4}, {"value": "yes", "count": 1}],
+    "count": 5
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 5}], "count": 5},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 4}, {"value": "yes", "count": 1}],
+    "count": 5
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "room",
+    "tags": [
+      {"value": "shop", "count": 2},
+      {"value": "restaurant", "count": 2}
+    ],
+    "count": 4
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Banette", "count": 1},
+      {"value": "La Mie Câline", "count": 1},
+      {"value": "Florentine", "count": 1},
+      {"value": "Marie Blachère", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 1},
+      {"value": "Potlatch 0.10a", "count": 1},
+      {"value": "Potlatch 0.10f", "count": 1},
+      {"value": "iLOE 1.9", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "baker", "count": 2},
+      {"value": "confectionery", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "diet:vegetarian",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-05", "count": 1},
+      {"value": "2017-07-18", "count": 1},
+      {"value": "2018-03-13", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "currency:XLT",
+    "tags": [{"value": "CARN", "count": 2}, {"value": "GONT", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "indoor", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q46725733", "count": 1},
+      {"value": "Q15953205", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "produced_on_site",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/La-boulangerie-du-coin-1454418228178750/",
+        "count": 1
+      },
+      {"value": "https://www.facebook.com/festivaldespainsofficiel", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 1},
+      {"value": "à placer", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "surveillance:type",
+    "tags": [{"value": "camera", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "shop", "count": 2}],
+    "count": 2
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "52889450400026", "count": 1},
+      {"value": "40467773400026", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ele",
+    "tags": [{"value": "218", "count": 1}, {"value": "258", "count": 1}],
+    "count": 2
+  },
+  {"key": "ref:FR:NAF", "tags": [{"value": "1071C", "count": 2}], "count": 2},
+  {
+    "key": "payment:cash:XLT-CARN",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "convenience", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "oven", "tags": [{"value": "wood_fired", "count": 1}], "count": 1},
+  {
+    "key": "payment:visa_debit",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:operator",
+    "tags": [{"value": "Cigale", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:ssid",
+    "tags": [{"value": "Cigale", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "comment",
+    "tags": [{"value": "feu de bois", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "drive_in", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:visa_electron",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "chocolate", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "FIXME",
+    "tags": [{"value": "Pas sur du nom", "count": 1}],
+    "count": 1
+  },
+  {"key": "network", "tags": [{"value": "Banette", "count": 1}], "count": 1},
+  {"key": "nudism", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "railway",
+    "tags": [{"value": "subway_entrance", "count": 1}],
+    "count": 1
+  },
+  {"key": "drive_through", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2004-05-03", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:cash:XLT-GONT",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA73000007", "count": 1}], "count": 1},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "6", "count": 1}], "count": 1},
+  {
+    "key": "mobile",
+    "tags": [{"value": "+33 6 79 51 86 02", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "sandwich", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "bakehouse", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "second_day", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "end_date", "tags": [{"value": "2018-05", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "retail", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Pâtisserie Le Fidèle Berger", "count": 1}],
+    "count": 1
+  }
+]

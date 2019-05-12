@@ -1,0 +1,12 @@
+[
+  {"key": "shop", "tags": [{"value": "truck_repair", "count": 3}], "count": 3},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Rouzau", "count": 1},
+      {"value": "Renault Truck", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "brand", "tags": [{"value": "Iribus", "count": 1}], "count": 1}
+]

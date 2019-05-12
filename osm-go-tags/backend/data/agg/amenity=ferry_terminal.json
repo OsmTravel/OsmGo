@@ -1,0 +1,87 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "ferry_terminal", "count": 57}],
+    "count": 57
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "CGN", "count": 36},
+      {"value": "Compagnie des Bateaux du Lac d'Annecy", "count": 8},
+      {"value": "Compagnie des Bateaux du lac d'Annecy", "count": 1}
+    ],
+    "count": 45
+  },
+  {
+    "key": "public_transport",
+    "tags": [
+      {"value": "stop_position", "count": 40},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 41
+  },
+  {"key": "ele", "tags": [{"value": "373", "count": 36}], "count": 36},
+  {"key": "ferry", "tags": [{"value": "yes", "count": 36}], "count": 36},
+  {
+    "key": "uic_ref",
+    "tags": [
+      {"value": "8501234", "count": 1},
+      {"value": "8501227", "count": 1},
+      {"value": "8530763", "count": 1},
+      {"value": "8501228", "count": 1},
+      {"value": "8501321", "count": 1},
+      {"value": "8501245", "count": 1},
+      {"value": "8501075", "count": 1},
+      {"value": "8501071", "count": 1},
+      {"value": "8501074", "count": 1},
+      {"value": "8501313", "count": 1},
+      {"value": "8501243", "count": 1},
+      {"value": "8501318", "count": 1},
+      {"value": "8501248", "count": 1},
+      {"value": "8501077", "count": 1},
+      {"value": "8501312", "count": 1},
+      {"value": "8501078", "count": 1},
+      {"value": "8501317", "count": 1},
+      {"value": "8501079", "count": 1},
+      {"value": "8501233", "count": 1},
+      {"value": "8501247", "count": 1},
+      {"value": "8501316", "count": 1},
+      {"value": "8501322", "count": 1},
+      {"value": "8501072", "count": 1},
+      {"value": "8501314", "count": 1},
+      {"value": "8501311", "count": 1},
+      {"value": "8501244", "count": 1},
+      {"value": "8501239", "count": 1},
+      {"value": "8501242", "count": 1},
+      {"value": "8501231", "count": 1},
+      {"value": "8501315", "count": 1},
+      {"value": "8501232", "count": 1},
+      {"value": "8501235", "count": 1},
+      {"value": "8501238", "count": 1},
+      {"value": "8501240", "count": 1},
+      {"value": "8501237", "count": 1},
+      {"value": "8501319", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.annecy-croisieres.com", "count": 8},
+      {"value": "la-mira.com", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {"key": "cargo", "tags": [{"value": "passengers", "count": 3}], "count": 3},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 34 14 56", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,9 @@
+[
+  {"key": "man_made", "tags": [{"value": "crane", "count": 6}], "count": 6},
+  {"key": "crane:mobile", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "crane:type",
+    "tags": [{"value": "portal_crane", "count": 1}],
+    "count": 1
+  }
+]

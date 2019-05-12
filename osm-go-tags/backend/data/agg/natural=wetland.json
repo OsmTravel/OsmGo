@@ -1,0 +1,182 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "wetland", "count": 1171}],
+    "count": 1171
+  },
+  {
+    "key": "wetland",
+    "tags": [
+      {"value": "marsh", "count": 262},
+      {"value": "reedbed", "count": 99},
+      {"value": "swamp", "count": 90},
+      {"value": "bog", "count": 87},
+      {"value": "wet_meadow", "count": 54},
+      {"value": "tidalflat", "count": 8}
+    ],
+    "count": 600
+  },
+  {"key": "CLC:code", "tags": [{"value": "411", "count": 44}], "count": 44},
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 44}], "count": 44},
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-147144", "count": 2},
+      {"value": "FR-149034", "count": 2},
+      {"value": "FR-155095", "count": 1},
+      {"value": "FR-150057", "count": 1},
+      {"value": "FR-145228", "count": 1},
+      {"value": "FR-164315", "count": 1},
+      {"value": "FR-147734", "count": 1},
+      {"value": "FR-147735", "count": 1},
+      {"value": "FR-150164", "count": 1},
+      {"value": "FR-150332", "count": 1},
+      {"value": "FR-150971", "count": 1},
+      {"value": "FR-150864", "count": 1},
+      {"value": "FR-151879", "count": 1},
+      {"value": "FR-151835", "count": 1},
+      {"value": "FR-152105", "count": 1},
+      {"value": "FR-152277", "count": 1},
+      {"value": "FR-152911", "count": 1},
+      {"value": "FR-153518", "count": 1},
+      {"value": "FR-153906", "count": 1},
+      {"value": "FR-154159", "count": 1},
+      {"value": "FR-160219", "count": 1},
+      {"value": "FR-128692", "count": 1},
+      {"value": "FR-155653", "count": 1},
+      {"value": "FR-155860", "count": 1},
+      {"value": "FR-160572", "count": 1},
+      {"value": "FR-162774", "count": 1},
+      {"value": "FR-164127", "count": 1},
+      {"value": "FR-164801", "count": 1},
+      {"value": "FR-205520", "count": 1},
+      {"value": "FR-127996", "count": 1},
+      {"value": "FR-126510", "count": 1},
+      {"value": "FR-128731", "count": 1},
+      {"value": "FR-130876", "count": 1},
+      {"value": "FR-132479", "count": 1},
+      {"value": "FR-135778", "count": 1},
+      {"value": "FR-135965", "count": 1},
+      {"value": "FR-150037", "count": 1},
+      {"value": "FR-141995", "count": 1},
+      {"value": "FR-140003", "count": 1},
+      {"value": "FR-146852", "count": 1},
+      {"value": "FR-148220", "count": 1},
+      {"value": "FR-130615", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "forest", "count": 9},
+      {"value": "grass", "count": 4},
+      {"value": "basin", "count": 3},
+      {"value": "meadow", "count": 2},
+      {"value": "farmland", "count": 1}
+    ],
+    "count": 19
+  },
+  {"key": "seasonal", "tags": [{"value": "yes", "count": 19}], "count": 19},
+  {"key": "managed", "tags": [{"value": "no", "count": 14}], "count": 14},
+  {
+    "key": "leaf_cycle",
+    "tags": [{"value": "deciduous", "count": 9}],
+    "count": 9
+  },
+  {
+    "key": "leaf_type",
+    "tags": [{"value": "broadleaved", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "2172", "count": 2},
+      {"value": "2116", "count": 1},
+      {"value": "1794", "count": 1},
+      {"value": "1790", "count": 1},
+      {"value": "376", "count": 1},
+      {"value": "1365", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Espace Naturel Sensible du marais de Pravet", "count": 1},
+      {"value": "bassin écrêteur de crue", "count": 1},
+      {"value": "Ancien canal d'amenée d'eau", "count": 1},
+      {"value": "ancien canal d'amenée", "count": 1},
+      {
+        "value": "Officiellement \"Atterro du Marais\" il est souvent appelé \"attérro d'Aiguebelette\" ou encore \"Attérro de l'Épine\" car c'est plus précis. Son nom vient du fait qu'il s'agit d'un Marais dont le niveau d'humidité varie selon la saison",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "très approximatif, à améliorer", "count": 2},
+      {"value": "C'est entre flaques, marais, ruisseaux", "count": 1},
+      {
+        "value": "Ce ne sont pas des zones humides, les dolines ne sont pas innondées",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "contour à préciser", "count": 1},
+      {"value": "Fixme", "count": 1},
+      {
+        "value": "La taille du lac est variable selon les années/saisons.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "basin",
+    "tags": [
+      {"value": "detention", "count": 2},
+      {"value": "infiltration", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "water",
+    "tags": [{"value": "lake", "count": 1}, {"value": "natural", "count": 1}],
+    "count": 2
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [
+      {"value": "Category:Tourbière de Gimel, Saint-Régis-du-Coin", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "advertising", "tags": [{"value": "board", "count": 1}], "count": 1},
+  {"key": "permanent", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://lesailesdulac.free.fr/joomla/index.php?option=com_content&view=article&id=8&Itemid=10",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "message", "tags": [{"value": "political", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Lande tourbeuse des Oignons", "count": 1}],
+    "count": 1
+  },
+  {"key": "intermittent", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,224 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "arts_centre", "count": 162}],
+    "count": 162
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.lepruniersauvage.com", "count": 1},
+      {"value": "http://www.gene-et-tics.com", "count": 1},
+      {"value": "http://www.boulangerieduprado.org/", "count": 1},
+      {
+        "value": "http://www.lapetiteacademie.net/academies/vienne/",
+        "count": 1
+      },
+      {"value": "http://www.atelier-vert-lumiere.com", "count": 1},
+      {"value": "http://mjcjeanmace.fr", "count": 1},
+      {"value": "http://periscope-lyon.com/", "count": 1},
+      {
+        "value": "http://culture.vienne.fr/lieux/centre-dart-contemporain",
+        "count": 1
+      },
+      {"value": "http://www.sixiemecontinent.net/", "count": 1},
+      {"value": "http://www.lacascadeclownetcirque.fr/", "count": 1},
+      {"value": "http://echirolles-centredugraphisme.com/", "count": 1},
+      {"value": "http://www.briscope.fr", "count": 1},
+      {"value": "http://www.lassautdelamenuiserie.com", "count": 1},
+      {"value": "http://www.epiceriemoderne.com/", "count": 1},
+      {"value": "http://www.chateaudurozier.fr/", "count": 1},
+      {"value": "www.mjcannonay.org", "count": 1},
+      {"value": "http://lacasemate.fr", "count": 1},
+      {
+        "value": "http://www.saintsymphoriendozon.fr/index.php/Saison-culturelle?idpage=101&idmetacontenu=",
+        "count": 1
+      },
+      {"value": "http://www.lesclevos.com/", "count": 1},
+      {"value": "www.letoboggan.com", "count": 1},
+      {
+        "value": "http://www.lyon.fr/lieu/culture/salons-dexposition-du-palais-bondy.html",
+        "count": 1
+      },
+      {"value": "http://www.lescarabee.net/", "count": 1},
+      {"value": "http://radiant-bellevue.fr/", "count": 1},
+      {"value": "http://www.halle-tony-garnier.fr/", "count": 1},
+      {
+        "value": "http://www.ville-claix.fr/france/DT1455182578/page/Le-Declic.html",
+        "count": 1
+      }
+    ],
+    "count": 25
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33475692906", "count": 1},
+      {"value": "+33 6 83 04 33 88", "count": 1},
+      {"value": "+33 4 74 54 51 37", "count": 1},
+      {"value": "+33 4 75 54 40 46", "count": 1},
+      {"value": "+33 4 76 23 64 65", "count": 1},
+      {"value": "+33 4 72 89 98 70", "count": 1},
+      {"value": "+334 77 28 66 09", "count": 1},
+      {"value": "+33 4 78 38 89 29", "count": 1},
+      {"value": "+33 4 76 44 88 80", "count": 1},
+      {"value": "+33 4 75 55 58 04", "count": 1},
+      {"value": "+33 4 72 10 30 30", "count": 1},
+      {"value": "+33 4 72 10 22 19", "count": 1},
+      {"value": "+33475271043", "count": 1},
+      {"value": "+33 4 72 76 85 85", "count": 1},
+      {"value": "+33 476 98 45 74", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {
+        "value": "fr:Conservatoire à rayonnement régional de Saint-Étienne",
+        "count": 1
+      },
+      {"value": "fr:CCSTI de Grenoble", "count": 1},
+      {"value": "fr:Maison de la culture de Firminy-Vert", "count": 1},
+      {"value": "fr:Palais Bondy", "count": 1},
+      {"value": "fr:Radiant Bellevue", "count": 1},
+      {"value": "fr:Halle Tony Garnier", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2925643", "count": 1},
+      {"value": "Q15968440", "count": 1},
+      {"value": "Q3279767", "count": 1},
+      {"value": "Q3360825", "count": 1},
+      {"value": "Q16510545", "count": 1},
+      {"value": "Q4233", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "gallery", "count": 2},
+      {"value": "museum", "count": 2},
+      {"value": "attraction", "count": 1},
+      {"value": "information", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Espace dédié à l'art de rue, au spectacle vivant et aux expositions.",
+        "count": 1
+      },
+      {"value": "Salle de spectacles", "count": 1},
+      {"value": "École de Danse", "count": 1},
+      {"value": "Halle polyvalente du Polygone", "count": 1},
+      {
+        "value": "Le Radiant Bellevue, est un complexe culturel de la ville de Caluire-et-Cuire dans la métropole de Lyon.",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Saint-Étienne", "count": 1},
+      {"value": "Association Regards et Mouvements", "count": 1},
+      {"value": "Association Cultur'Act", "count": 1},
+      {"value": "Ville deSaint-Étienne", "count": 1},
+      {"value": "Ville de Gières", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 2}, {"value": "2", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "periscope.lyon@gmail.com", "count": 1},
+      {"value": "accueil@lacasacadeclownetcirque.fr", "count": 1},
+      {"value": "centregraphisme@wanadoo.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117489", "count": 1},
+      {"value": "PA00117728", "count": 1},
+      {"value": "PA00117810", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1984-10-08", "count": 1},
+      {"value": "1982-07-12", "count": 1},
+      {"value": "1975-05-16", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "comment",
+    "tags": [{"value": "Ecole de cirque", "count": 1}],
+    "count": 1
+  },
+  {"key": "fee", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "art", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.dynamiquesartsvivants.fr/Hostellerie-de-Pontempeyrat",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "building", "count": 1}], "count": 1},
+  {"key": "step_count", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Site d'Annemasse", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "C20", "count": 1}], "count": 1},
+  {
+    "key": "community_centre:for",
+    "tags": [{"value": "senior", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "Salle_concert",
+    "tags": [{"value": "Centre Bernard Taillefer", "count": 1}],
+    "count": 1
+  }
+]

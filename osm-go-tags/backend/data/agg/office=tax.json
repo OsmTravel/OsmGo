@@ -1,0 +1,21 @@
+[
+  {"key": "office", "tags": [{"value": "tax", "count": 9}], "count": 9},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "ele", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 50 32 75 10", "count": 1}],
+    "count": 1
+  },
+  {"key": "smoking", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.impots.gouv.fr/portal/dgi/public/contactspart",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

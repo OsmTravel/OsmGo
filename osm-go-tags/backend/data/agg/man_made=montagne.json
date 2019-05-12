@@ -1,0 +1,9 @@
+[
+  {
+    "key": "description",
+    "tags": [{"value": "pis peric", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "montagne", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "viewpoint", "count": 1}], "count": 1}
+]

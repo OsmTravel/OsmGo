@@ -1,0 +1,16 @@
+[
+  {"key": "office", "tags": [{"value": "surveyor", "count": 15}], "count": 15},
+  {"key": "note", "tags": [{"value": "géomètre", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ref:FR:SIREN", "tags": [{"value": "?", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "49293632300012", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2006-07-01", "count": 1}],
+    "count": 1
+  }
+]

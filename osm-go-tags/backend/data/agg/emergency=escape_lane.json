@@ -1,0 +1,8 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "escape_lane", "count": 1}],
+    "count": 1
+  },
+  {"key": "highway", "tags": [{"value": "service", "count": 1}], "count": 1}
+]

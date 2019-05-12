@@ -1,0 +1,317 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "advertising", "count": 253}],
+    "count": 253
+  },
+  {
+    "key": "advertising",
+    "tags": [
+      {"value": "billboard", "count": 196},
+      {"value": "board", "count": 24},
+      {"value": "totem", "count": 23},
+      {"value": "poster_box", "count": 8}
+    ],
+    "count": 251
+  },
+  {
+    "key": "sides",
+    "tags": [{"value": "2", "count": 130}, {"value": "1", "count": 119}],
+    "count": 249
+  },
+  {
+    "key": "size",
+    "tags": [
+      {"value": "3.5*2.5", "count": 77},
+      {"value": "4.4*3.4", "count": 69},
+      {"value": "4*3", "count": 11},
+      {"value": "1.2*6.5", "count": 10},
+      {"value": "3.2*2.6", "count": 8},
+      {"value": "1.3*2.15", "count": 8},
+      {"value": "1*4", "count": 8},
+      {"value": "1.5*1", "count": 6},
+      {"value": "4*1.5", "count": 6},
+      {"value": "2*2", "count": 5},
+      {"value": "4*2", "count": 4},
+      {"value": "1.2*1.2+2*1.2", "count": 3},
+      {"value": "1.2*1.7", "count": 3},
+      {"value": "1*1.5", "count": 3},
+      {"value": "1*5", "count": 3},
+      {"value": "3*1", "count": 2},
+      {"value": "2*1.2", "count": 2},
+      {"value": "6*1.5", "count": 2},
+      {"value": "2*5", "count": 1},
+      {"value": "5*1.5", "count": 1},
+      {"value": "2*1.5", "count": 1},
+      {"value": "1*8", "count": 1},
+      {"value": "4*1", "count": 1},
+      {"value": "3*1.5", "count": 1},
+      {"value": "1*1", "count": 1},
+      {"value": "1.2*1", "count": 1},
+      {"value": "(1.2*1.2)+(2*1.2)", "count": 1},
+      {"value": "1.5*0.75", "count": 1},
+      {"value": "3*7", "count": 1},
+      {"value": "6*4", "count": 1},
+      {"value": "1.2*1.2", "count": 1},
+      {"value": "3.2*2.5", "count": 1},
+      {"value": "2.5*4", "count": 1},
+      {"value": "3.6*2.9", "count": 1},
+      {"value": "(2*1.2)+(1.2*1.2)", "count": 1},
+      {"value": "2.0*1.2", "count": 1},
+      {"value": "6*2", "count": 1}
+    ],
+    "count": 249
+  },
+  {
+    "key": "land_property",
+    "tags": [
+      {"value": "private", "count": 211},
+      {"value": "public", "count": 37}
+    ],
+    "count": 248
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "no", "count": 169}, {"value": "yes", "count": 78}],
+    "count": 247
+  },
+  {
+    "key": "message",
+    "tags": [
+      {"value": "commercial", "count": 220},
+      {"value": "opinions;non_profit", "count": 10},
+      {"value": "municipality", "count": 6},
+      {"value": "information", "count": 4},
+      {"value": "other", "count": 3},
+      {"value": "non_profit", "count": 1},
+      {"value": "cultural_event", "count": 1},
+      {"value": "municipality;opinions;non_profit", "count": 1},
+      {"value": "map_information", "count": 1}
+    ],
+    "count": 247
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "6", "count": 88},
+      {"value": "5", "count": 50},
+      {"value": "4", "count": 41},
+      {"value": "2", "count": 14},
+      {"value": "6.5", "count": 11},
+      {"value": "7.5", "count": 9},
+      {"value": "2.15", "count": 8},
+      {"value": "3", "count": 7},
+      {"value": "7", "count": 5},
+      {"value": "2.5", "count": 4},
+      {"value": "10", "count": 2},
+      {"value": "2.3", "count": 2},
+      {"value": "8", "count": 1},
+      {"value": "4.4", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "3.5", "count": 1},
+      {"value": "4.5", "count": 1}
+    ],
+    "count": 246
+  },
+  {
+    "key": "orientation",
+    "tags": [
+      {"value": "front", "count": 212},
+      {"value": "parallel", "count": 16},
+      {"value": "medium", "count": 7},
+      {"value": "multi", "count": 5},
+      {"value": "3", "count": 3},
+      {"value": "reverse", "count": 2}
+    ],
+    "count": 245
+  },
+  {
+    "key": "legal_type:FR",
+    "tags": [
+      {"value": "publicité", "count": 171},
+      {"value": "enseigne", "count": 51},
+      {"value": "opinions/associations", "count": 12},
+      {"value": "préenseigne", "count": 5},
+      {"value": "enseigne:temporaire", "count": 3},
+      {"value": "JEI", "count": 1},
+      {"value": "publicité:mobilier_urbain:information", "count": 1}
+    ],
+    "count": 244
+  },
+  {
+    "key": "display_surface",
+    "tags": [
+      {"value": "8", "count": 92},
+      {"value": "12", "count": 81},
+      {"value": "7.8", "count": 10},
+      {"value": "4", "count": 9},
+      {"value": "2", "count": 8},
+      {"value": "1.5", "count": 7},
+      {"value": "6", "count": 6},
+      {"value": "3", "count": 3},
+      {"value": "2.4", "count": 3},
+      {"value": "3.84", "count": 3},
+      {"value": "9", "count": 2},
+      {"value": "1.44", "count": 2},
+      {"value": "10", "count": 2},
+      {"value": "5", "count": 1},
+      {"value": "7.5", "count": 1},
+      {"value": "4.5", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "1.2", "count": 1},
+      {"value": "3.88", "count": 1},
+      {"value": "1,125", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "2.,04", "count": 1},
+      {"value": "2.04", "count": 1},
+      {"value": "24", "count": 1}
+    ],
+    "count": 239
+  },
+  {
+    "key": "animated",
+    "tags": [
+      {"value": "no", "count": 184},
+      {"value": "winding_posters", "count": 41},
+      {"value": "screen", "count": 2},
+      {"value": "trivision_blades", "count": 2},
+      {"value": "winding_posters:3", "count": 1},
+      {"value": "digital_information", "count": 1},
+      {"value": "digital_prices", "count": 1},
+      {"value": "digital_messages", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 234
+  },
+  {
+    "key": "visibility",
+    "tags": [
+      {"value": "street", "count": 150},
+      {"value": "area", "count": 58},
+      {"value": "house", "count": 12}
+    ],
+    "count": 220
+  },
+  {
+    "key": "support",
+    "tags": [
+      {"value": "pole", "count": 83},
+      {"value": "trunk", "count": 74},
+      {"value": "wall", "count": 45},
+      {"value": "post", "count": 14},
+      {"value": "tarp", "count": 2},
+      {"value": "fence", "count": 1}
+    ],
+    "count": 219
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "JCDecaux", "count": 38},
+      {"value": "PAP", "count": 25},
+      {"value": "Avenir", "count": 24},
+      {"value": "?", "count": 12},
+      {"value": "Ville de Grenoble", "count": 10},
+      {"value": "FG", "count": 7},
+      {"value": "Exterion (CBS Outdoor)", "count": 6},
+      {"value": "ClearChannel Outdoor", "count": 3},
+      {"value": "ClearChannel", "count": 2},
+      {"value": "Grill de Moirans", "count": 2},
+      {"value": "SuperU", "count": 2},
+      {"value": "Le Dauphiné", "count": 2},
+      {"value": "Renault", "count": 2},
+      {"value": "Carré Bleu", "count": 2},
+      {"value": "BP", "count": 1},
+      {"value": "Total", "count": 1},
+      {"value": "La Rampe", "count": 1},
+      {"value": "Novak", "count": 1},
+      {"value": "Gamm Vert", "count": 1},
+      {"value": "Citroën", "count": 1},
+      {"value": "Centr'Alp", "count": 1},
+      {"value": "Campanile", "count": 1},
+      {"value": "Becker", "count": 1},
+      {"value": "Centre auto", "count": 1},
+      {"value": "Lavage automobile", "count": 1},
+      {"value": "Loxam", "count": 1},
+      {"value": "MacDonalds", "count": 1},
+      {"value": "Montbonnot Saint-Martin", "count": 1},
+      {"value": "MNEI", "count": 1},
+      {"value": "Giraudy", "count": 1},
+      {"value": "Carrières & Chaux", "count": 1},
+      {"value": "Golf de Bresson", "count": 1},
+      {"value": "Au sans souci", "count": 1},
+      {"value": "station total", "count": 1},
+      {"value": "ZA des Essarts", "count": 1},
+      {"value": "Pays Voironnais", "count": 1},
+      {"value": "Les Serres du Dauphiné", "count": 1},
+      {"value": "Darty", "count": 1},
+      {"value": "Lidl", "count": 1}
+    ],
+    "count": 162
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 140},
+      {"value": "public", "count": 11},
+      {"value": "no", "count": 1}
+    ],
+    "count": 152
+  },
+  {
+    "key": "luminous",
+    "tags": [{"value": "yes", "count": 68}, {"value": "no", "count": 57}],
+    "count": 125
+  },
+  {
+    "key": "legal_status:FR",
+    "tags": [
+      {"value": "à vérifier", "count": 58},
+      {"value": "légal", "count": 11},
+      {"value": "OK", "count": 7},
+      {"value": "KO : visible d'une autoroute", "count": 3},
+      {"value": "ko: sur mur de soutènement transport ferroviaire", "count": 1},
+      {"value": "illégal", "count": 1}
+    ],
+    "count": 81
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "advertising", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "message:front",
+    "tags": [{"value": "commercial", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "message:opposite",
+    "tags": [
+      {"value": "municipality", "count": 4},
+      {"value": "commercial", "count": 2}
+    ],
+    "count": 6
+  },
+  {"key": "type:FR", "tags": [{"value": "publicité", "count": 2}], "count": 2},
+  {"key": "ref", "tags": [{"value": "?", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "board", "count": 1}], "count": 1},
+  {"key": "direction", "tags": [{"value": "ENE", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [
+      {"value": "Fromage Frais;Fermiers;Fabrication - Vente", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "message:reverse",
+    "tags": [{"value": "commercial", "count": 1}],
+    "count": 1
+  }
+]

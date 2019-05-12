@@ -1,0 +1,14 @@
+[
+  {"key": "colour", "tags": [{"value": "yellow", "count": 1}], "count": 1},
+  {"key": "emergency", "tags": [{"value": "pilla", "count": 1}], "count": 1},
+  {
+    "key": "fire_hydrant:type",
+    "tags": [{"value": "underground", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fire_hydrant:position",
+    "tags": [{"value": "gravel", "count": 1}],
+    "count": 1
+  }
+]

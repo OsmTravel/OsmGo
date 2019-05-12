@@ -1,0 +1,19 @@
+[
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 3 89 52 66 69", "count": 1}],
+    "count": 1
+  },
+  {"key": "craft", "tags": [{"value": "pipefitter", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 3 89 52 75 90", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.depra-ventilation.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "De Pra", "count": 1}], "count": 1}
+]

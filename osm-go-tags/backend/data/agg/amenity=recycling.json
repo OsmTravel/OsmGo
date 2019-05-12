@@ -1,0 +1,829 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "recycling", "count": 5295}],
+    "count": 5295
+  },
+  {
+    "key": "recycling_type",
+    "tags": [
+      {"value": "container", "count": 3657},
+      {"value": "centre", "count": 309},
+      {"value": "underground", "count": 9},
+      {"value": "underfloor-container", "count": 5},
+      {"value": "shredder", "count": 1},
+      {"value": "Carton", "count": 1}
+    ],
+    "count": 3982
+  },
+  {
+    "key": "recycling:glass_bottles",
+    "tags": [{"value": "yes", "count": 1811}, {"value": "no", "count": 17}],
+    "count": 1828
+  },
+  {
+    "key": "recycling:glass",
+    "tags": [{"value": "yes", "count": 1495}, {"value": "no", "count": 81}],
+    "count": 1576
+  },
+  {
+    "key": "recycling:paper",
+    "tags": [{"value": "yes", "count": 1341}, {"value": "no", "count": 115}],
+    "count": 1456
+  },
+  {
+    "key": "recycling:cans",
+    "tags": [{"value": "yes", "count": 815}, {"value": "no", "count": 92}],
+    "count": 907
+  },
+  {
+    "key": "recycling:clothes",
+    "tags": [{"value": "yes", "count": 367}, {"value": "no", "count": 169}],
+    "count": 536
+  },
+  {
+    "key": "recycling:plastic_bottles",
+    "tags": [{"value": "yes", "count": 427}, {"value": "no", "count": 25}],
+    "count": 452
+  },
+  {
+    "key": "recycling:plastic",
+    "tags": [{"value": "yes", "count": 370}, {"value": "no", "count": 66}],
+    "count": 436
+  },
+  {
+    "key": "recycling:cardboard",
+    "tags": [{"value": "yes", "count": 366}, {"value": "no", "count": 28}],
+    "count": 394
+  },
+  {
+    "key": "recycling:waste",
+    "tags": [{"value": "yes", "count": 312}, {"value": "no", "count": 38}],
+    "count": 350
+  },
+  {
+    "key": "recycling:plastic_packaging",
+    "tags": [{"value": "yes", "count": 273}, {"value": "no", "count": 28}],
+    "count": 301
+  },
+  {
+    "key": "location",
+    "tags": [
+      {"value": "underground", "count": 130},
+      {"value": "overground", "count": 109}
+    ],
+    "count": 239
+  },
+  {
+    "key": "recycling:scrap_metal",
+    "tags": [{"value": "yes", "count": 144}, {"value": "no", "count": 55}],
+    "count": 199
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Chrysalide Ressourcerie", "count": 23},
+      {"value": "COPAVO", "count": 14},
+      {"value": "Saint-Étienne Métropole", "count": 14},
+      {"value": "Le Relais", "count": 13},
+      {"value": "Next Textiles Association", "count": 11},
+      {"value": "Les Compostiers", "count": 9},
+      {"value": "sirtom-maurienne", "count": 6},
+      {"value": "La Metro", "count": 6},
+      {"value": "Public", "count": 4},
+      {"value": "Grenoble Alpes Métropole", "count": 4},
+      {"value": "SMND", "count": 3},
+      {"value": "Syndicat Mixte Nord-Dauphiné", "count": 2},
+      {"value": "Cmne de St Clair du Rhône", "count": 2},
+      {"value": "SIMIGEDA", "count": 2},
+      {"value": "Communauté de Communes du Lac d'Aiguebelette", "count": 2},
+      {"value": "Le relais", "count": 2},
+      {"value": "Sitom", "count": 2},
+      {"value": "La Métro", "count": 2},
+      {"value": "Emmaüs", "count": 2},
+      {"value": "Chrysalise Ressourcerie", "count": 1},
+      {"value": "Municipalité - Agenda 21", "count": 1},
+      {"value": "Pays Voironnais", "count": 1},
+      {"value": "Compostons Collectif", "count": 1},
+      {"value": "Association la Ressourcerie Verte", "count": 1},
+      {"value": "SITOM", "count": 1},
+      {"value": "Re'Cycle'Art", "count": 1},
+      {"value": "ecotextile", "count": 1},
+      {"value": "intercommunalité", "count": 1},
+      {"value": "Écotextile", "count": 1},
+      {"value": "FRAPNA Loire", "count": 1},
+      {"value": "Commune de Vaujany", "count": 1},
+      {"value": "Colonne à verres", "count": 1},
+      {
+        "value": "Grenoble Alpes Métropole (communauté d'agglomération)",
+        "count": 1
+      },
+      {"value": "Grenoble-Alpes Métropole", "count": 1},
+      {"value": "Annemasse - Les Voirons Agglomération", "count": 1},
+      {"value": "communauté de communes Le Grésivaudan", "count": 1},
+      {"value": "SIRCTOM", "count": 1},
+      {"value": "Derichebourg", "count": 1},
+      {"value": "SICTOM du Guiers", "count": 1},
+      {"value": "Communauté de Communes du Massif du Vercors", "count": 1},
+      {"value": "sidomsa", "count": 1},
+      {"value": "SICTOM", "count": 1},
+      {"value": "SIRTOM Vacheresse – Chevenoz", "count": 1},
+      {"value": "CCPC", "count": 1},
+      {"value": "Chrysalide", "count": 1},
+      {"value": "CCPMB", "count": 1},
+      {"value": "Métropole de Lyon", "count": 1},
+      {"value": "Viennagglo", "count": 1},
+      {"value": "Charlieu-Belmont Communauté", "count": 1},
+      {"value": "Communauté de communes du Pays de Gex", "count": 1},
+      {"value": "Sictom du Guiers", "count": 1},
+      {"value": "SMICTOM", "count": 1},
+      {"value": "Tri selectif", "count": 1},
+      {
+        "value": "Communauté Université Grenoble Alpes, direction de l'aménagement durable",
+        "count": 1
+      },
+      {
+        "value": "Syndicat Intercommunal Rhodanien de Collecte et de Traitement des Ordures Ménagères",
+        "count": 1
+      },
+      {"value": "Ville de Feyzin", "count": 1},
+      {"value": "SICTOBA", "count": 1}
+    ],
+    "count": 161
+  },
+  {
+    "key": "recycling:batteries",
+    "tags": [{"value": "yes", "count": 91}, {"value": "no", "count": 62}],
+    "count": 153
+  },
+  {
+    "key": "recycling:magazines",
+    "tags": [{"value": "yes", "count": 117}, {"value": "no", "count": 21}],
+    "count": 138
+  },
+  {
+    "key": "recycling:cartons",
+    "tags": [{"value": "yes", "count": 114}, {"value": "no", "count": 23}],
+    "count": 137
+  },
+  {
+    "key": "recycling:newspaper",
+    "tags": [{"value": "yes", "count": 117}, {"value": "no", "count": 20}],
+    "count": 137
+  },
+  {
+    "key": "recycling:green_waste",
+    "tags": [{"value": "yes", "count": 71}, {"value": "no", "count": 44}],
+    "count": 115
+  },
+  {
+    "key": "recycling:paper_packaging",
+    "tags": [{"value": "yes", "count": 87}, {"value": "no", "count": 22}],
+    "count": 109
+  },
+  {
+    "key": "recycling:books",
+    "tags": [{"value": "yes", "count": 49}, {"value": "no", "count": 28}],
+    "count": 77
+  },
+  {
+    "key": "recycling:electrical_appliances",
+    "tags": [{"value": "no", "count": 42}, {"value": "yes", "count": 32}],
+    "count": 74
+  },
+  {
+    "key": "recycling:wood",
+    "tags": [{"value": "no", "count": 40}, {"value": "yes", "count": 20}],
+    "count": 60
+  },
+  {
+    "key": "recycling:small_appliances",
+    "tags": [{"value": "no", "count": 33}, {"value": "yes", "count": 22}],
+    "count": 55
+  },
+  {
+    "key": "recycling:aluminium",
+    "tags": [{"value": "yes", "count": 41}],
+    "count": 41
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.agglo-st-etienne.fr", "count": 11},
+      {"value": "http://www.lescompostiers.org/", "count": 2},
+      {
+        "value": "http://www.grandlyon.com/services/carte-et-horaires-des-decheteries.html",
+        "count": 1
+      },
+      {"value": "http://www.chrysalide-ressourcerie.org", "count": 1},
+      {"value": "www.chomat-arrosage.fr", "count": 1},
+      {"value": "http://laressourcerieverte.com/", "count": 1},
+      {"value": "http://www.sitom-sud-rhone.com/", "count": 1},
+      {"value": "http://www.compostaction.org/", "count": 1},
+      {"value": "https://www.facebook.com/compostbajatiere/", "count": 1},
+      {"value": "http://www.lerelais.org/", "count": 1},
+      {
+        "value": "http://www.mairie-crest.fr/Nouveau-compost-collectif-a-Crest.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.cc-miribel.fr/tri-des-dechets/decheterie-et-encombrants",
+        "count": 1
+      },
+      {
+        "value": "http://www.lescompostiers.org/compost/square-deperet",
+        "count": 1
+      },
+      {"value": "http://www.ecotextile.tm.fr/", "count": 1},
+      {"value": "http://www.sictom-guiers.fr/", "count": 1},
+      {"value": "http://www.vercors.org/STEP.html", "count": 1},
+      {"value": "http://www.ccvt.fr/Horaires.html", "count": 1},
+      {
+        "value": "http://www.cc-lavalliere.fr/Dechets/dechetterie.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lebiot.fr/DECHETTERIE-INTERCOMMUNALE-DE-LA",
+        "count": 1
+      },
+      {
+        "value": "http://www.rhonecrussol.fr/dechets/dechetterie/4-dechetteries-a-votre-disposition.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.lyon.fr/lieu/cadre-de-vie/decheterie-de-caluire.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.grandlyon.com/decheteries/decheterie-a-feyzin.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.cc-trieves.fr/services-aux-habitants/dechets/que-faire-de-vos-dechets/83-les-dechetteries",
+        "count": 1
+      },
+      {"value": "www.communaute-univ-grenoble-alpes.fr", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "fence", "count": 29},
+      {"value": "cycle_barrier", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "recycling:beverage_cartons",
+    "tags": [{"value": "yes", "count": 30}],
+    "count": 30
+  },
+  {
+    "key": "recycling:organic",
+    "tags": [{"value": "yes", "count": 29}],
+    "count": 29
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 22},
+      {"value": "limited", "count": 3},
+      {"value": "no", "count": 3}
+    ],
+    "count": 28
+  },
+  {
+    "key": "recycling:shoes",
+    "tags": [{"value": "yes", "count": 20}, {"value": "no", "count": 2}],
+    "count": 22
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "bacs à compost", "count": 6},
+      {"value": "Composteur du jardin partagé le Doua Vert", "count": 1},
+      {"value": "Déchetterie", "count": 1},
+      {
+        "value": "Cote à cote en trouve des conteneurs enfoncé dans le sol pour : ordures classiques, à recycler, et verre",
+        "count": 1
+      },
+      {"value": "Accès DANS le groupe scolaire", "count": 1},
+      {
+        "value": "Collecte et revente de matériaux et d'outillage pour le bricolage, la construction, le jardinage et les loisirs créatifs : mercredi de 14h à 19h, samedi de 10h à 13h. Ateliers de partage de savoir-faire : jeudi soirs et le samedi.",
+        "count": 1
+      },
+      {"value": "Composte collectif de quartier", "count": 1},
+      {"value": "collecte et recyclage des huiles de friture", "count": 1},
+      {
+        "value": "Recyclage de déchets verts et vente de compost en direct",
+        "count": 1
+      },
+      {
+        "value": "Le capot s'ouvre pour passer tout un sac d'un coup, pas obligatoire de mettre bouteille par bouteille",
+        "count": 1
+      },
+      {
+        "value": "Horaires :     du lundi au vendredi : 13h30-18h00     samedi : 8h00-12h00 et 13h30-18h00     dimanche et jours fériés : fermé",
+        "count": 1
+      },
+      {"value": "Fermée les jours fériés", "count": 1},
+      {"value": "Communauté de communes du Pays de Gex", "count": 1},
+      {"value": "Site de compostage de Saint-Martin de la Cluze", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "not exactly here", "count": 9},
+      {"value": "resurvey", "count": 4},
+      {"value": "type de produits recyclés", "count": 1},
+      {
+        "value": "A Vérifier, mais je ne me souviens pas l'avoir vu la dernière que j'y suis passé (Novembre 2016)",
+        "count": 1
+      },
+      {"value": "Placé d'après une note", "count": 1},
+      {
+        "value": "position approximative à préciser dès que visible sur images ou cadastre",
+        "count": 1
+      }
+    ],
+    "count": 17
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 9},
+      {"value": "Potlatch 0.10f", "count": 3},
+      {"value": "Potlatch 0.10a", "count": 1},
+      {"value": "Potlatch 0.10b", "count": 1},
+      {"value": "iLOE 1.9", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76935498", "count": 1},
+      {"value": "+33 8 10 11 88 35", "count": 1},
+      {"value": "0781911003", "count": 1},
+      {"value": "+33 4 69 28 62 09", "count": 1},
+      {"value": "+33 4 72319088", "count": 1},
+      {"value": "+33474777661", "count": 1},
+      {"value": "+33 4 76 40 78 49", "count": 1},
+      {"value": "+33 6 07 48 23 19", "count": 1},
+      {"value": "+33 4 76 68 70 94", "count": 1},
+      {"value": "+33 4 76 78 80 16", "count": 1},
+      {"value": "0800069038", "count": 1},
+      {"value": "+33 4 50 72 91 83", "count": 1},
+      {"value": "+33 4 78 70 63 03", "count": 1},
+      {"value": "+33 4 76 82 40 55", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "N°8 - Pompiers", "count": 1},
+      {"value": "N°6 - Place du 14 Juillet", "count": 1},
+      {"value": "N°2 - Route de Mérindol", "count": 1},
+      {"value": "3824", "count": 1},
+      {"value": "N°12 - Col de Veaux", "count": 1},
+      {"value": "N°5 - Rue du faubourg", "count": 1},
+      {"value": "N°7 - Hôtel Saint-Marc", "count": 1},
+      {"value": "N°4 - Le Portalet", "count": 1},
+      {"value": "N°9 - Route d'Entrechaux", "count": 1},
+      {"value": "N°15 - Four à Chaux", "count": 1},
+      {"value": "N°10 - Chemin des Chabrols", "count": 1},
+      {"value": "N°11 - Route des 3 Rivières", "count": 1},
+      {"value": "N°3 - Route de Nyons", "count": 1},
+      {"value": "N°1 - Aygemarse", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "PIles usagées (Carrefour Market). Dans le hall d'entrée du supermarché",
+        "count": 1
+      },
+      {"value": "coté Ouest de la route", "count": 1},
+      {"value": "Emballages recyclables & ordures ménagères", "count": 1},
+      {"value": "Souvent déplacé", "count": 1},
+      {
+        "value": "Recyclerie. Réparation, réutilisation et revente d'objets recyclés.",
+        "count": 1
+      },
+      {"value": "association Tremplin", "count": 1},
+      {
+        "value": "rajouter heures ouverture samedi fonction saison Sa 1/11 to 31/03  9h-12h 14h-18h   1/04 to 31/10 9h-18h",
+        "count": 1
+      },
+      {"value": "5 containers", "count": 1},
+      {"value": "accès sur le parking (privé) de l'évéché", "count": 1},
+      {"value": "Bacs compostage.", "count": 1},
+      {
+        "value": "Nouvelle implementation de la dechetterie apres agrandissement",
+        "count": 1
+      },
+      {"value": "Fermée les jours fériés", "count": 1},
+      {"value": "Du 1er avril au 30 septembre : fermeture à 19h", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "recycling:general_waste",
+    "tags": [{"value": "yes", "count": 10}],
+    "count": 10
+  },
+  {"key": "type", "tags": [{"value": "compost", "count": 8}], "count": 8},
+  {
+    "key": "recycling:metal",
+    "tags": [{"value": "yes", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "recycling:engine_oil",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "recycling:electrical_items",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "recycling:garden_waste",
+    "tags": [{"value": "yes", "count": 6}],
+    "count": 6
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 6}], "count": 6},
+  {
+    "key": "recycling:rubble",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  },
+  {"key": "recycling:PET", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "recycling:fluorescent_tubes",
+    "tags": [{"value": "yes", "count": 5}],
+    "count": 5
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "recycling:light_bulbs",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "fence_type",
+    "tags": [
+      {"value": "chain_link", "count": 3},
+      {"value": "metal", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "739", "count": 1},
+      {"value": "586", "count": 1},
+      {"value": "881.4", "count": 1},
+      {"value": "302.7", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 2}, {"value": "-1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Le Relais", "count": 2},
+      {"value": "Gecco", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "recycling:paint",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "huiletic@gecco.fr", "count": 1},
+      {"value": "contact@sitom-sudrhone.com", "count": 1},
+      {"value": "contact@sictom-guiers.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "recycling:furniture",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "recycling:low_energy_bulbs",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "recycling:white_goods",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "recycling:printer_cartridges",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "recycling:newspapers",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "recycling:beverage_carton",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "maxlength",
+    "tags": [{"value": "5.5 m", "count": 1}, {"value": "5", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "recycling:car_batteries",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "recycling:computers",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "recycling:tyres",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "maxweight",
+    "tags": [{"value": "3.5 t", "count": 1}, {"value": "3500", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Composteurs de quartier", "count": 1},
+      {"value": "STAS", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "highway",
+    "tags": [{"value": "bus_stop", "count": 1}, {"value": "path", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "ekFaXyDjEa6D3xOjahZT9Q", "count": 1},
+      {"value": "xCeZQ_-PLcHlDSGQmEnFJQ", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "recycling:compost",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Site de compostage à Clelles.jpg", "count": 1},
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:D%C3%A9ch%C3%A8terie_de_Miribel.JPG",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "collection_times",
+    "tags": [
+      {"value": "24/7", "count": 1},
+      {
+        "value": "Apr-Sep Mo 14:00-18:30; Apr-Sep Tu-Sa 09:30-12:00,14:00-18:30; Oct-Mar Mo 14:00-17:00; Oct-Mar Tu-Sa 09:30-12:00,14:00-17:00",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "maxheight",
+    "tags": [{"value": "2.6 m", "count": 1}, {"value": "2.5", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ele:msl",
+    "tags": [{"value": "881.4", "count": 1}, {"value": "302.7", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "recycling:textiles",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "recycling:cooking_oil",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {"value": "Vermicompost", "count": 1},
+      {"value": "Lombricompost collectif", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "industrial", "count": 1},
+      {"value": "landfill", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "recycling:oil", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "recycling:printer_inkjet_cartridges",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:Planche_de_Bois",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "foot", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "recycling:organic_waste",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:greenwaste",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "underground", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "start_date",
+    "tags": [{"value": "2015-04-01", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:waste_oil",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:bottles",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "bench", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fire_hydrant:type",
+    "tags": [{"value": "pillar", "count": 1}],
+    "count": 1
+  },
+  {"key": "handrail:left", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-07-18", "count": 1}],
+    "count": 1
+  },
+  {"key": "recycling:iron", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "recycling:grass",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:steel",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:electronics",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:electical_items",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "recycling:all", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 50 72 14 59", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:mobile_phones",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:aerosol_cans",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:bicycles",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "platform", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:hardcore",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:hazardous_waste",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:bulbs",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:carton",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:motor_oil",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:housewares",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:wood_waste",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:bulky_refuse",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:plasterboard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:special_waste",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:fire_extinguishers",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "recycling:polystyrene_foam",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

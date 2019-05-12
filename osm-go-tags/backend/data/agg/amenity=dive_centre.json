@@ -1,0 +1,43 @@
+[
+  {"key": "office", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "dive_centre", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:nitrox",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:rental",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:air_fill",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:education",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:organisation",
+    "tags": [{"value": "PADI", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:organization",
+    "tags": [{"value": "CMAS", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "scuba_diving:equipment_service",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {"key": "man_made", "tags": [{"value": "beacon", "count": 6}], "count": 6},
+  {
+    "key": "frequency",
+    "tags": [
+      {"value": "109.5 MHz", "count": 1},
+      {"value": "116.6", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Pylône métallique, Antenne", "count": 1}],
+    "count": 1
+  },
+  {"key": "type", "tags": [{"value": "LOC 18", "count": 1}], "count": 1},
+  {
+    "key": "aeroway",
+    "tags": [{"value": "navigationaid", "count": 1}],
+    "count": 1
+  },
+  {"key": "airmark", "tags": [{"value": "beacon", "count": 1}], "count": 1},
+  {
+    "key": "beacon:type",
+    "tags": [{"value": "VOR;DME", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "PAS", "count": 1}], "count": 1},
+  {
+    "key": "tower:type",
+    "tags": [{"value": "communication", "count": 1}],
+    "count": 1
+  }
+]

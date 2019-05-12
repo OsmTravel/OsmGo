@@ -1,0 +1,22 @@
+[
+  {"key": "amenity", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Local des services technique de La Terrasse", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "alcohol", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 77 24 31 22", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.passe-simple-aperitifs.com", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "orienteering", "count": 1}], "count": 1}
+]

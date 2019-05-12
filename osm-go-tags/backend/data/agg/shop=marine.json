@@ -1,0 +1,8 @@
+[
+  {"key": "shop", "tags": [{"value": "marine", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.coper-marine.com/", "count": 1}],
+    "count": 1
+  }
+]

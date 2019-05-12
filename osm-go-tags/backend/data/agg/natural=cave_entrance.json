@@ -1,0 +1,271 @@
+[
+  {
+    "key": "natural",
+    "tags": [{"value": "cave_entrance", "count": 500}],
+    "count": 500
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3117227", "count": 1},
+      {"value": "Q3117131", "count": 1},
+      {"value": "Q3117183", "count": 1},
+      {"value": "Q790408", "count": 1},
+      {"value": "Q1837168", "count": 1},
+      {"value": "Q3557941", "count": 1},
+      {"value": "Q3117144", "count": 1},
+      {"value": "Q2403244", "count": 1},
+      {"value": "Q3117153", "count": 1},
+      {"value": "Q3117202", "count": 1},
+      {"value": "Q3111639", "count": 1},
+      {"value": "Q3117111", "count": 1},
+      {"value": "Q3117155", "count": 1},
+      {"value": "Q2663452", "count": 1},
+      {"value": "Q3117092", "count": 1},
+      {"value": "Q2377720", "count": 1},
+      {"value": "Q3117205", "count": 1},
+      {"value": "Q3117138", "count": 1},
+      {"value": "Q22966924", "count": 1},
+      {"value": "Q2592438", "count": 1},
+      {"value": "Q3111600", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Grotte du Colombier", "count": 1},
+      {"value": "fr:Goule de Foussoubie", "count": 1},
+      {"value": "fr:Aven d'Orgnac", "count": 1},
+      {"value": "fr:Grotte de Saint-Marcel", "count": 1},
+      {"value": "fr:Vieille Église (La Balme-de-Thuy)", "count": 1},
+      {"value": "fr:Grotte de Louoï", "count": 1},
+      {"value": "fr:Grotte du Déroc", "count": 1},
+      {"value": "fr:Grotte de Mézelet", "count": 1},
+      {"value": "fr:Grotte dite de la Vacheresse", "count": 1},
+      {"value": "fr:Grotte de la Bonne-Femme", "count": 1},
+      {"value": "fr:Grotte d'Ebbou dite de Chamas", "count": 1},
+      {"value": "fr:Toulourenc#Hydrographie", "count": 1},
+      {"value": "fr:Grotte de Néron", "count": 1},
+      {"value": "fr:Gouffre Berger", "count": 1},
+      {"value": "fr:Grotte Chabot", "count": 1},
+      {"value": "fr:Grotte de la Tête du Lion", "count": 1},
+      {"value": "fr:Grotte des Deux Ouvertures", "count": 1},
+      {"value": "fr:Grotte de Lievrin", "count": 1},
+      {"value": "en:Gouffre Jean-Bernard", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "no", "count": 14}, {"value": "yes", "count": 2}],
+    "count": 16
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "no", "count": 7},
+      {"value": "yes", "count": 5},
+      {"value": "permissive", "count": 2},
+      {"value": "customers", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116842", "count": 1},
+      {"value": "PA00116349", "count": 1},
+      {"value": "PA00118362", "count": 1},
+      {"value": "PA00135639", "count": 1},
+      {"value": "PA00135638", "count": 1},
+      {"value": "PA00135640", "count": 1},
+      {"value": "PA00135637", "count": 1},
+      {"value": "PA00116648", "count": 1},
+      {"value": "PA00116821", "count": 1},
+      {"value": "PA00102945", "count": 1},
+      {"value": "PA00116649", "count": 1},
+      {"value": "PA00116872", "count": 1},
+      {"value": "PA00116350", "count": 1},
+      {"value": "PA00117107", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1555", "count": 1},
+      {"value": "1695", "count": 1},
+      {"value": "1110", "count": 1},
+      {"value": "1625", "count": 1},
+      {"value": "1117", "count": 1},
+      {"value": "1253", "count": 1},
+      {"value": "1291", "count": 1},
+      {"value": "1350", "count": 1},
+      {"value": "1490", "count": 1},
+      {"value": "262", "count": 1},
+      {"value": "1680", "count": 1},
+      {"value": "1400", "count": 1},
+      {"value": "2001", "count": 1},
+      {"value": "550", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 10}, {"value": "3", "count": 4}],
+    "count": 14
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1995-08-25", "count": 3},
+      {"value": "1913-06-13", "count": 2},
+      {"value": "1990-08-10", "count": 2},
+      {"value": "1934-06-26", "count": 1},
+      {"value": "1979-02-19", "count": 1},
+      {"value": "1995", "count": 1},
+      {"value": "1947-06-19", "count": 1},
+      {"value": "1965", "count": 1},
+      {"value": "1903-02-05", "count": 1},
+      {"value": "1964-06-15", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 10},
+      {"value": "cave_entrance", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "archaeological_site", "count": 7},
+      {"value": "yes", "count": 2},
+      {"value": "memorial", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "A la foi une entrée de grotte et une source d'eau",
+        "count": 1
+      },
+      {"value": "tunnel d'assèchement de Drom", "count": 1},
+      {
+        "value": "Grille fermant l'accès de la grotte pour protéger une prise d'eau\n",
+        "count": 1
+      },
+      {"value": "Entrée sous un très vaste porche", "count": 1},
+      {"value": "Initiation spéléologie", "count": 1},
+      {"value": "Deep pit near the path", "count": 1},
+      {"value": "Dolmen naturel en bordure du GR 9.", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.orgnac.com", "count": 1},
+      {"value": "www.grottesaintmarcel.com/", "count": 1},
+      {"value": "http://www.caves-cathedrales.fr/", "count": 1},
+      {"value": "http://www.avengrottelaforestiere.com", "count": 1},
+      {
+        "value": "http://www.legrandbornand.com/les-grottes-de-montarquis.html",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "petite grotte qui est plutôt un trou, et qui fait glacière",
+        "count": 1
+      },
+      {
+        "value": "Exsurgence de la rivière souterraine (3 siphons jusqu'au regard des Grottes de Banges)",
+        "count": 1
+      },
+      {"value": "Regard sur la rivière souterraine", "count": 1},
+      {"value": "Préciser l'emplacement par relevé GPS", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "I'm not sure wheter the name is correct", "count": 1},
+      {
+        "value": "j'ai fouillé fouillé, mais y'a rien qui ressemble à un trou par là, la position est elle bonne ?",
+        "count": 1
+      },
+      {"value": "position approximative à recaler sur le terrain", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "site_type",
+    "tags": [{"value": "petroglyph", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "scuba_diving:type:speleology",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "scuba_diving", "count": 2},
+      {"value": "scuba_diving;speleology", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 38 65 10", "count": 1},
+      {"value": "+33 4 75 38 63 08", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "scuba_diving:maxdepth",
+    "tags": [{"value": "30", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.plongeesout.com/sites/provence/vaucluse/anges.htm",
+        "count": 1
+      },
+      {
+        "value": "http://www.grottocenter.org/html/file_Fr.php?lang=Fr&check_lang_auto=false&category=entry&id=23394",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "shop", "tags": [{"value": "alcohol", "count": 1}], "count": 1},
+  {"key": "ford", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "noexit", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "climbing", "count": 1}], "count": 1},
+  {"key": "depth", "tags": [{"value": "1602", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "gate", "count": 1}], "count": 1}
+]

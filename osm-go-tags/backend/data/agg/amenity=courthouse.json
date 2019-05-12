@@ -1,0 +1,47 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "courthouse", "count": 35}],
+    "count": 35
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 14 84", "count": 1},
+      {"value": "+33 4 74 59 10 80", "count": 1},
+      {"value": "+33 4 74 59 68 80", "count": 1},
+      {"value": "+33 4 74 78 81 81", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.greffe-tc-vienne.fr/", "count": 1},
+      {"value": "http://lyon.cour-administrative-appel.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "fence_type", "tags": [{"value": "bars", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2006", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA01000017", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3365506", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Parlement de Dombes", "count": 1}],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "parliament", "count": 1}], "count": 1}
+]

@@ -1,0 +1,20 @@
+[
+  {"key": "shop", "tags": [{"value": "hgv", "count": 2}], "count": 2},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "vente de pièces détachées pour camions et matériel de travaux publics",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "parts", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Mercedes", "count": 1}], "count": 1},
+  {
+    "key": "service",
+    "tags": [{"value": "dealer;repair", "count": 1}],
+    "count": 1
+  }
+]

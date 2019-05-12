@@ -1,0 +1,28 @@
+[
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic",
+    "tags": [{"value": "archaeological_site", "count": 1}],
+    "count": 1
+  },
+  {"key": "man_made", "tags": [{"value": "villa", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1875", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00104265", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3558914", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Villa gallo-romaine de la Coue d'Auzenat", "count": 1}
+    ],
+    "count": 1
+  }
+]

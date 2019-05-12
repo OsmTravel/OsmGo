@@ -1,0 +1,23 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "community_centre:for=multigeneration", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "contact@escn58.info", "count": 1}],
+    "count": 1
+  },
+  {"key": "fax", "tags": [{"value": "09.72.42.41.16", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "03.86.58.21.10", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://escn58.info", "count": 1}],
+    "count": 1
+  }
+]

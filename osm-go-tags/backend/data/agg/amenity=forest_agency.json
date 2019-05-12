@@ -1,0 +1,8 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "forest_agency", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "ONF", "count": 1}], "count": 1}
+]

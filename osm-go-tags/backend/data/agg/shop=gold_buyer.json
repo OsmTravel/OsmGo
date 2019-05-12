@@ -1,0 +1,13 @@
+[
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Buys gold, coins and jewellery - presumably any precious metal.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "gold_buyer", "count": 1}], "count": 1}
+]

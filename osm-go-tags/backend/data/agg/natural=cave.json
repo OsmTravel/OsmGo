@@ -1,0 +1,15 @@
+[
+  {"key": "natural", "tags": [{"value": "cave", "count": 11}], "count": 11},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "should be perhaps natural=cave_entrance ?", "count": 2},
+      {"value": "complete me^^", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "layer", "tags": [{"value": "-1", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "5", "count": 1}], "count": 1},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

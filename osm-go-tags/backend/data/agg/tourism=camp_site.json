@@ -1,0 +1,1236 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "camp_site", "count": 864}],
+    "count": 864
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "www.ardeche-camping-canoe.com", "count": 1},
+      {"value": "http://www.ardechois-camping.fr", "count": 1},
+      {"value": "www.ile-de-la-comtesse.com", "count": 1},
+      {"value": "https://www.camping-lac-bleu.com/", "count": 1},
+      {"value": "https://www.camping-beaujolais.com/fr", "count": 1},
+      {"value": "http://www.lesranchisses.fr/", "count": 1},
+      {"value": "http://www.campinglaravoire.com/", "count": 1},
+      {"value": "http://www.camping-les-eymes.com/", "count": 1},
+      {"value": "http://www.campingourson.com/", "count": 1},
+      {"value": "http://www.campinglesjorets.fr", "count": 1},
+      {"value": "https://www.camping-montelimar.com/", "count": 1},
+      {"value": "http://www.campingdesgrandscols.com", "count": 1},
+      {"value": "http://www.pralognan.com", "count": 1},
+      {"value": "www.rivesdusoleil.com", "count": 1},
+      {"value": "www.camping-champ-dete.com", "count": 1},
+      {"value": "http://camping-vercors-choranche.fr", "count": 1},
+      {"value": "www.campingchalaronne.com", "count": 1},
+      {"value": "http://www.campingdesbarolles.fr", "count": 1},
+      {"value": "http://www.campingrochecondrie.com", "count": 1},
+      {"value": "http://www.camping-les-voiliers.fr/", "count": 1},
+      {"value": "http://www.camping-les3rivieres.com", "count": 1},
+      {"value": "http://www.camping-lepradal.com", "count": 1},
+      {"value": "https://www.camping-lapiboure.com", "count": 1},
+      {"value": "http://www.couspeau.fr", "count": 1},
+      {"value": "http://www.camping-moulin-de-gournier.com/", "count": 1},
+      {"value": "http://www.camping-laprade-ardeche.com/", "count": 1},
+      {
+        "value": "https://www.lac-du-bourget-camping-le-bel-air.com/",
+        "count": 1
+      },
+      {"value": "http://www.actinidias.com/", "count": 1},
+      {"value": "http://www.camping-aubergedudoux.com", "count": 1},
+      {"value": "http://www.campingviaduc-ardeche.com/", "count": 1},
+      {"value": "http://www.lac-de-devesset.fr/camping.htm", "count": 1},
+      {"value": "http://www.oasisardeche.com/", "count": 1},
+      {"value": "http://lelaisseraller.free.fr", "count": 1},
+      {"value": "http://www.camping-lesoleilrouge.com/", "count": 1},
+      {"value": "http://www.campingderetourtour.com/", "count": 1},
+      {"value": "www.domaineprovencal.com", "count": 1},
+      {"value": "marieclaudebasset.free.fr", "count": 1},
+      {"value": "www.domainedugrandbois.com", "count": 1},
+      {"value": "www.valdromesoleil.com", "count": 1},
+      {"value": "http://www.camping-stnazaire.fr", "count": 1},
+      {"value": "http://www.camping-chataigniers-ardeche.fr/", "count": 1},
+      {"value": "http://www.conjux.fr", "count": 1},
+      {"value": "http://www.lebioley.com", "count": 1},
+      {
+        "value": "www.valromey-retord.fr/servlet.php?Destination=SeLogerSolo&NumFiche=82",
+        "count": 1
+      },
+      {"value": "http://www.camping-les-airelles.eu/", "count": 1},
+      {
+        "value": "http://www.lanarce.fr/public/?code=le-camping-municipal",
+        "count": 1
+      },
+      {"value": "http://www.campingdomainebeausejour.com", "count": 1},
+      {"value": "http://www.campinglaplainedelaloire.fr/", "count": 1},
+      {"value": "http://www.campinglessables.fr/", "count": 1},
+      {"value": "https://www.laboheme-ardeche.com/camping/", "count": 1},
+      {"value": "http://www.camping-les-foulons.com/", "count": 1},
+      {"value": "http://www.campingroybon.com/", "count": 1},
+      {"value": "http://larobertanne.sitego.fr", "count": 1},
+      {"value": "http://www.camping-chasselouve.com/", "count": 1},
+      {"value": "http://camping-arclusaz.fr", "count": 1},
+      {"value": "http://www.campinglaferme.com/", "count": 1},
+      {"value": "http://www.campingenardeche.com", "count": 1},
+      {"value": "www.st-etienne-du-bois.fr/spip.php?article107", "count": 1},
+      {"value": "http://www.camping-maclas.fr/", "count": 1},
+      {
+        "value": "http://www.saint-julien-molin-molette.fr/Camping-du-Val-Ternay",
+        "count": 1
+      },
+      {"value": "http://www.camping-le-clapas.com/", "count": 1},
+      {"value": "http://cslyon.nature.free.fr", "count": 1},
+      {"value": "http://www.lecampingdelaplage.com", "count": 1},
+      {
+        "value": "www.ain-tourisme.com/fiches/Chaleins/Aire-naturelle/Aire-Naturelle-du-Pigeonnier/62523",
+        "count": 1
+      },
+      {
+        "value": "www.ain-tourisme.com/fiches/Chaleins/Aire-naturelle/Mme-THETE-Simone/310376",
+        "count": 1
+      },
+      {
+        "value": "www.ain-tourisme.com/fiches/Chaley/Camping/Camping-Municipal-Au-pre-commun/100750",
+        "count": 1
+      },
+      {"value": "champdor.jimdo.com/le-camping-municipal/", "count": 1},
+      {"value": "www.gites-refuges.com/v2/detail-1183.htm", "count": 1},
+      {"value": "rochet.josiane.perso.sfr.fr", "count": 1},
+      {"value": "www.ferme-equestre-malafretaz.com", "count": 1},
+      {"value": "www.camping-nantua.fr", "count": 1},
+      {
+        "value": "www.ain-tourisme.com/fiches/Port/Camping/Camping-du-Lac/101969",
+        "count": 1
+      },
+      {
+        "value": "www.gites-de-france-ain.com/camping-curnillon-gilbert-a-relevant-dans-DOMBES-G319624.html",
+        "count": 1
+      },
+      {
+        "value": "www.ain-tourisme.com/fiches/Saint-Rambert-en-Bugey/Camping/Camping-l-Ermitage/100131",
+        "count": 1
+      },
+      {
+        "value": "www.bresse-revermont.fr/preparerson-sejour/ou-dormir/campings/?camping-municipal-de-simandres-s144825",
+        "count": 1
+      },
+      {
+        "value": "www.ain-tourisme.com/fiches/Thezillieu/Camping/Camping-Municipal-Le-Genevray/131403",
+        "count": 1
+      },
+      {"value": "http://www.camping-de-mars.com/", "count": 1},
+      {"value": "http://www.camping-la-vignasse.com/", "count": 1},
+      {
+        "value": "http://www.sources-lac-annecy.com/ou-dormir/campings-hotellerie-de-plein-air/135332-1395,aire-naturelle-du-val-tamie.html",
+        "count": 1
+      },
+      {"value": "http://www.lechambron.com/", "count": 1},
+      {"value": "http://www.camping-bozel.com", "count": 1},
+      {"value": "http://www.roulottesetcompagnies.fr/", "count": 1},
+      {"value": "http://www.campinglegrandcalme", "count": 1},
+      {"value": "http://www.bastier.eu/", "count": 1},
+      {"value": "http://www.campingfrankrijk.f2s.com/", "count": 1},
+      {"value": "http://www.plandufernuy.com", "count": 1},
+      {"value": "http://www.lecampingmoto.net", "count": 1},
+      {"value": "http://www.campinglepilat.com/", "count": 1},
+      {
+        "value": "http://www.chateauneufdurhone.fr/index.php/decouvrir/camping",
+        "count": 1
+      },
+      {"value": "www.lesgrandspres-dromeprovencale.com", "count": 1},
+      {"value": "http://info@le-coterat.nl", "count": 1},
+      {"value": "http://www.campingsaumont.com/", "count": 1},
+      {"value": "http://www.fermedepommerol.com", "count": 1},
+      {"value": "http://www.camping-moulin-drome.fr/", "count": 1},
+      {"value": "http://www.goutelavie.com", "count": 1},
+      {"value": "http://www.chamonix-camping.com", "count": 1},
+      {"value": "www.lenidduparc.com", "count": 1},
+      {"value": "http://www.camping-belleroche.com/", "count": 1},
+      {"value": "www.lac-cormoranche.com", "count": 1},
+      {
+        "value": "www.ars-village.fr/Visiter-Ars/Hebergement-et-restauration/Camping-municipal",
+        "count": 1
+      },
+      {
+        "value": "www.amberieux-en-dombes.fr/camping-d-amberieux-en-dombes.html",
+        "count": 1
+      },
+      {"value": "http://www.lesvoilesdugrandlarge.com", "count": 1},
+      {"value": "www.camping-seyssel.com", "count": 1},
+      {"value": "http://www.camping-albanou.com/", "count": 1},
+      {"value": "http://www.camping-tournon.fr/", "count": 1},
+      {"value": "http://www.grandlierne.com/", "count": 1},
+      {"value": "http://www.campinglepastural.com/", "count": 1},
+      {"value": "http://www.camping-valleebleue.com/", "count": 1},
+      {"value": "http://www.rives-de-condrieu.fr/", "count": 1},
+      {
+        "value": "https://www.burzet.fr/hebergement/camping-municipal-rieu-sepoux",
+        "count": 1
+      },
+      {"value": "www.camping-peyroche.fr", "count": 1},
+      {"value": "http://www.ville-charlieu.fr/sejourner/camping", "count": 1},
+      {"value": "http://www.temps-libre.fr/", "count": 1},
+      {"value": "www.regniere.com", "count": 1},
+      {"value": "www.lesgeorennes.com", "count": 1},
+      {"value": "www.campinglechassezac.com", "count": 1},
+      {"value": "http://www.lesclorinthes.com", "count": 1},
+      {"value": "http://www.camping-au-joyeux-reveil.fr", "count": 1},
+      {"value": "http://www.camping-du-vercors.fr", "count": 1},
+      {"value": "http://www.camping-les-buissonnets.com/", "count": 1},
+      {"value": "http://www.campinglacdecarouge.fr/", "count": 1},
+      {"value": "http://www.camping-leplan-allemont.com/", "count": 1},
+      {"value": "http://www.camping-roubine.com/", "count": 1},
+      {"value": "http://www.la-ferme-du-villard.com", "count": 1},
+      {"value": "http://www.domaine-de-gil.com/", "count": 1},
+      {"value": "https://www.campingideal.com/", "count": 1},
+      {"value": "http://www.campinglaserraz.com", "count": 1},
+      {"value": "www.campinglagrangedupin.fr", "count": 1},
+      {"value": "http://www.campingdelaborie.com/", "count": 1},
+      {"value": "http://www.sud-ardeche-camping.fr/", "count": 1},
+      {"value": "www.campingdelecluse.com", "count": 1},
+      {"value": "http://www.domaine-la-garenne.com/", "count": 1},
+      {"value": "http://www.camping-valleedudoux.fr/", "count": 1},
+      {"value": "http://www.campingdelardeche-vallonpontdarc.com/", "count": 1},
+      {"value": "www.camping-montmerle.fr", "count": 1},
+      {"value": "http://www.camping-challesleseaux.com/", "count": 1},
+      {
+        "value": "/www.ain-tourisme.com/fiches/Thoissey/Camping/Camping-de-Thoissey/193773",
+        "count": 1
+      },
+      {"value": "www.camping-renom.com", "count": 1},
+      {"value": "http://www.lesrivesdelardeche.com", "count": 1},
+      {
+        "value": "www.camping-indigo.com/fr/camping-indigo-divonne-le-fleutron",
+        "count": 1
+      },
+      {"value": "http://www.chataigneraie.com", "count": 1},
+      {"value": "http://www.campingleboisjoli.com/fr/index.aspx", "count": 1},
+      {"value": "http://www.lesblachas.com", "count": 1},
+      {"value": "http://www.camping-le-chauvieux.com/", "count": 1},
+      {"value": "http://www.internationalcamping07.com/", "count": 1},
+      {"value": "http://www.camping-valdecoise.com/", "count": 1},
+      {"value": "http://www.campingvalserine.fr", "count": 1},
+      {"value": "http://campinglesrichardes.free.fr/", "count": 1},
+      {"value": "http://www.camping-les-balmasses.com/", "count": 1},
+      {"value": "www.campinglereclus.com", "count": 1},
+      {"value": "http://www.camping-lacs-savoie.com/", "count": 1},
+      {"value": "http://www.camping-portes-du-trieves.com", "count": 1},
+      {"value": "http://www.lesbordsduguiers.com/", "count": 1},
+      {"value": "http://www.camping-lac-vercors.com/", "count": 1},
+      {"value": "http://www.lachapouliere.com/", "count": 1},
+      {"value": "http://www.camping-clair-matin.com/", "count": 1},
+      {"value": "http://www.ideal-camping.fr/", "count": 1},
+      {"value": "camping-les-ripettes.pagesperso-orange.fr", "count": 1},
+      {"value": "www.le-sagittaire.com", "count": 1},
+      {"value": "http://www.campinglemasduserre.com/", "count": 1},
+      {"value": "https://sites.google.com/campinglerocheyrol.net/", "count": 1},
+      {"value": "http://www.loree-de-provence.com/", "count": 1},
+      {"value": "camping-templiers-ardeche.com", "count": 1},
+      {"value": "www.campingilechambod.com", "count": 1},
+      {"value": "http://www.campinghirondelle.com", "count": 1},
+      {"value": "http://www.camping-la-chareyrasse.com/", "count": 1},
+      {"value": "http://www.camping-lesacacias.com/", "count": 1},
+      {"value": "http://www.camping-esquiras.com/", "count": 1},
+      {"value": "http://www.lesoleilfruite.com", "count": 1},
+      {"value": "http://www.campingduboisdelateppe.fr/", "count": 1},
+      {"value": "www.camping-mepillat.fr", "count": 1},
+      {"value": "www.chatillon-sur-chalaronne.fr/-Camping-.html", "count": 1},
+      {"value": "http://www.campinglescale.com/", "count": 1},
+      {"value": "http://www.campingchante-merle.fr/", "count": 1},
+      {"value": "www.camping-ain-bugey.com", "count": 1},
+      {"value": "www.campingvalleedelain.com", "count": 1},
+      {
+        "value": "http://www.coin-tranquille.com/content/fr/accueil/1/",
+        "count": 1
+      },
+      {"value": "http://www.lebardou.com/", "count": 1},
+      {"value": "www.kanopee-village.com", "count": 1},
+      {
+        "value": "www.ain-tourisme.com/fiches/Songieu/Camping/Camping-Municipal/111626",
+        "count": 1
+      },
+      {"value": "http://www.camping-le-cheylard.com/", "count": 1},
+      {
+        "value": "http://www.savoie-mont-blanc.com/offre/fiche/camping-d-ete-la-grange-au-frene/210456",
+        "count": 1
+      },
+      {"value": "www.camp-inter.fr", "count": 1},
+      {"value": "http://www.campingchamplachevre.com", "count": 1},
+      {"value": "www.cc-chalamont.com/Base_loisir/hebergement", "count": 1},
+      {"value": "http://www.camping-chatelet.com", "count": 1},
+      {"value": "http://www.campinglepontdulez.com", "count": 1},
+      {"value": "www.camping-modane.com", "count": 1},
+      {"value": "http://www.camping-garrigon.com", "count": 1},
+      {"value": "http://www.campingvirieu.com/camping-france.html", "count": 1},
+      {"value": "http://www.camping-la-teyre.fr", "count": 1},
+      {"value": "http://www.campingdelaroutebleue.com", "count": 1},
+      {"value": "http://www.lepelly.com/", "count": 1},
+      {"value": "http://www.legalloromain.net/", "count": 1},
+      {
+        "value": "www.ain-tourisme.com/fiches/Journans/Camping/Camping-Municipal/100754",
+        "count": 1
+      },
+      {"value": "www.camping-savoie.com", "count": 1},
+      {"value": "campingpontdain.e-monsite.com", "count": 1},
+      {"value": "www.bregnier-cordon.fr/tourisme-et-loisirs.html", "count": 1},
+      {"value": "www.camping-ain-lariviere.fr", "count": 1},
+      {"value": "www.camping-alpes.net", "count": 1},
+      {"value": "http://www.camping-le-vaugrais.fr", "count": 1},
+      {"value": "http://www.saint-felicien.fr", "count": 1},
+      {"value": "http://www.ardechecamping.fr", "count": 1},
+      {
+        "value": "http://www.savoie-mont-blanc.com/offre/fiche/camping-le-pre/74356",
+        "count": 1
+      },
+      {
+        "value": "www.ain-tourisme.com/fiches/Champagne-en-Valromey/Camping/Camping-Municipal/85169",
+        "count": 1
+      },
+      {"value": "http://www.camping-du-lac-anthy.com/", "count": 1},
+      {"value": "https://www.campinglagarenne-ardeche.fr/fr/", "count": 1},
+      {"value": "http://www.camping-le-panoramic.com/", "count": 1},
+      {"value": "http://www.camping-samoens.com", "count": 1},
+      {"value": "http://www.camping-bellevue-leshouches.com/", "count": 1},
+      {"value": "http://www.camping-les-arches.com", "count": 1},
+      {"value": "http://www.camping-ardeche-lesilons.com", "count": 1},
+      {"value": "http://www.campingledaxia.com/", "count": 1},
+      {"value": "http://www.campingleslucs.fr/", "count": 1},
+      {"value": "http://www.campingrouveyrolle.fr/", "count": 1},
+      {"value": "camping-pontdemaisoneuve.fr", "count": 1},
+      {"value": "http://www.campinglesfontaines.com", "count": 1},
+      {"value": "http://www.basenaturevercors.org/", "count": 1},
+      {"value": "www.messimysursaone.fr/spip.php?article10", "count": 1},
+      {"value": "www.meillonnas.fr/camping", "count": 1},
+      {"value": "www.camping-ain.fr", "count": 1},
+      {"value": "www.camping-ain-jura.com", "count": 1},
+      {"value": "www.camping-alboussiere.fr", "count": 1},
+      {"value": "http://www.savoie-camping.com", "count": 1},
+      {"value": "http://www.campinglesbordsdulacdissarles.fr/", "count": 1},
+      {"value": "http://www.camping-trieves.com/", "count": 1},
+      {"value": "http://www.camping-isertan.com", "count": 1},
+      {
+        "value": "www.ain-tourisme.com/fiches/Mantenay-Montlin/Camping/Camping-du-Coq/101698",
+        "count": 1
+      },
+      {"value": "http://www.camping-bramansvanoise.com/", "count": 1},
+      {
+        "value": "http://www.lebeaufortain.com/fr/hebergements/campingscaravaning--73AACAM100132--camping-des-glieres.html",
+        "count": 1
+      },
+      {"value": "http://www.campinglesamis.com", "count": 1},
+      {"value": "http://www.campinglepontet.fr", "count": 1},
+      {
+        "value": "http://www.larippe.ch/net/net_larippe.asp?NoOFS=5726&Sty=&NumStr=37",
+        "count": 1
+      },
+      {"value": "www.camping-cyclamens.com", "count": 1},
+      {"value": "http://www.camping-du-pont.fr/", "count": 1},
+      {"value": "http://campingdelaclairette.com", "count": 1},
+      {"value": "http://www.camping-glandasse.com/accueil.php", "count": 1},
+      {"value": "www.claire-riviere.com", "count": 1},
+      {"value": "https://www.charmessurrhone.fr/", "count": 1},
+      {"value": "http://camping-dherbelon.com/", "count": 1},
+      {"value": "http://www.leverdille.com/", "count": 1},
+      {
+        "value": "http://hieressuramby.fr/vie-locale/camping-municipal",
+        "count": 1
+      },
+      {"value": "http://camping-lechaudebry.com", "count": 1},
+      {"value": "http://www.naturisme-csmb.eu/", "count": 1},
+      {"value": "http://campinglesmazes.com", "count": 1},
+      {"value": "www.camping-les12cols.fr", "count": 1},
+      {"value": "http://www.lachapellesaintclaude.com", "count": 1},
+      {"value": "http://www.vacances-camping-lac-leman.fr/", "count": 1},
+      {"value": "http://www.paradis-des-dombes.com", "count": 1},
+      {"value": "www.lesterresdesimondon.com", "count": 1},
+      {"value": "http://www.camping-le-large.com/", "count": 1},
+      {"value": "http://www.campingcoeurardeche.com/", "count": 1},
+      {"value": "http://www.domainedesplantas.com/", "count": 1},
+      {"value": "http://www.camping-lecastelet.com/", "count": 1},
+      {"value": "http://campingleceytrou.free.fr/", "count": 1},
+      {
+        "value": "www.ain-tourisme.com/fiches/Saint-Maurice-de-Gourdans/Camping/Camping-Sous-le-Moulin/116192",
+        "count": 1
+      },
+      {"value": "http://www.camping-plage-ain.fr/", "count": 1},
+      {"value": "http://www.onclaire.com/", "count": 1},
+      {"value": "http://www.ardeche-camping.fr/", "count": 1},
+      {"value": "http://www.masdechampel.com/", "count": 1},
+      {"value": "www.eyrieuxcamping.com", "count": 1},
+      {"value": "campingchavannes.over-blog.com", "count": 1},
+      {"value": "https://www.lacdechampos.com/", "count": 1},
+      {"value": "https://www.campingdechanaz.com", "count": 1},
+      {"value": "http://www.lesrivesdelaygues.com", "count": 1},
+      {"value": "https://campingetguinguette.jimdo.com", "count": 1},
+      {"value": "http://www.acacias-camping.com", "count": 1},
+      {"value": "http://www.domainedecoucouzac.fr/", "count": 1},
+      {"value": "http://camping-crosdegeorand.wifeo.com/", "count": 1},
+      {"value": "https://www.camping-eden-savoie.com/", "count": 1},
+      {"value": "domainedeladombes.com", "count": 1},
+      {"value": "http://camping-les4saisons.com/", "count": 1},
+      {"value": "http://www.campingdulion.com/", "count": 1},
+      {"value": "http://www.camping-la-turelure.com", "count": 1},
+      {"value": "http://www.campingpleinsud.fr/", "count": 1},
+      {"value": "https://www.camping-valdie.fr/", "count": 1},
+      {"value": "http://www.camping-riou.com/", "count": 1},
+      {"value": "http://www.campinglafermedulac.fr", "count": 1},
+      {
+        "value": "http://camping-a-la-ferme-de-bresillas.business.site/",
+        "count": 1
+      },
+      {"value": "https://www.la-chato.fr/", "count": 1},
+      {
+        "value": "http://www.accueil-paysan.com/fr/catalog/structure/170/",
+        "count": 1
+      },
+      {
+        "value": "http://www.accueil-paysan.com/fr/catalog/structure/65/",
+        "count": 1
+      }
+    ],
+    "count": 282
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 63 02 88", "count": 2},
+      {"value": "+33 4 74 64 05 29", "count": 1},
+      {"value": "+33 4 79 87 23 33", "count": 1},
+      {"value": "+33 450 443018", "count": 1},
+      {"value": "+33474671287", "count": 1},
+      {"value": "+33 4 75 88 31 97", "count": 1},
+      {"value": "+33 450 44 37 80", "count": 1},
+      {"value": "+33 4 79 26 05 63", "count": 1},
+      {"value": "+33 6 82111409", "count": 1},
+      {"value": "+33 4 79 08 71 54", "count": 1},
+      {"value": "+33 3 85 30 33 65", "count": 1},
+      {"value": "+33 3 85 23 96 10", "count": 1},
+      {"value": "+33 4 74 04 94 15", "count": 1},
+      {"value": "+33 4 78 56 05 56", "count": 1},
+      {"value": "+33 4 75 52 74 66", "count": 1},
+      {"value": "+33 4 90 30 44 62", "count": 1},
+      {"value": "+33 4 90 46 01 72", "count": 1},
+      {"value": "+33475372516", "count": 1},
+      {"value": "+33 4 75 90 11 18", "count": 1},
+      {"value": "+33 4 75 27 22 84", "count": 1},
+      {"value": "+33 4 75 53 30 14", "count": 1},
+      {"value": "+33 4 79 63 31 60", "count": 1},
+      {"value": "+33 4 75 36 83 54", "count": 1},
+      {"value": "+33 4 75 06 74 49", "count": 1},
+      {"value": "+33 4 75 30 00 37", "count": 1},
+      {"value": "+33 4 75 34 56 23", "count": 1},
+      {"value": "+33 4 79 20 50 99", "count": 1},
+      {"value": "+33630570843", "count": 1},
+      {"value": "+33 4 74 30 25 63", "count": 1},
+      {"value": "+33 4 75 26 42 99", "count": 1},
+      {"value": "+33 4 79 54 25 40", "count": 1},
+      {"value": "+33 4 79097889", "count": 1},
+      {"value": "+33 4 79 87 23 98", "count": 1},
+      {"value": "+33 4 75 38 92 49", "count": 1},
+      {"value": "+33 4 66 69 47 87", "count": 1},
+      {"value": "+33 6 24 49 22 79", "count": 1},
+      {"value": "+33 4 75 08 20 05", "count": 1},
+      {"value": "+33 4 79 24 41 41", "count": 1},
+      {"value": "+33 4 75 08 02 50", "count": 1},
+      {"value": "+33 4 75 08 22 72", "count": 1},
+      {"value": "+33 6 70 75 37 62", "count": 1},
+      {"value": "+33 4 75 93 22 62", "count": 1},
+      {"value": "+33 4 79 28 53 39", "count": 1},
+      {"value": "+33 450 443 310", "count": 1},
+      {"value": "+33 4 75 89 22 86", "count": 1},
+      {"value": "+33 4 74 30 50 65", "count": 1},
+      {"value": "+33 6 63 37 01 23", "count": 1},
+      {"value": "+33 6 82 47 75 09", "count": 1},
+      {"value": "+33 4 75 37 14 76", "count": 1},
+      {"value": "+33 4 74 00 88 46", "count": 1},
+      {"value": "+33 4 75 36 40 59", "count": 1},
+      {"value": "+33 4 74 67 82 56", "count": 1},
+      {"value": "+33 4 74 67 82 85", "count": 1},
+      {"value": "+33 4 74 36 41 27", "count": 1},
+      {"value": "+33 4 74 36 48 15", "count": 1},
+      {"value": "+33 4 74 38 57 12", "count": 1},
+      {"value": "+33 4 74 75 86 34", "count": 1},
+      {"value": "+33 4 74 30 81 19", "count": 1},
+      {"value": "+33 4 74 75 02 09", "count": 1},
+      {"value": "+33 4 74 75 31 19", "count": 1},
+      {"value": "+33 4 74 76 01 63", "count": 1},
+      {"value": "+33 4 74 55 25 44", "count": 1},
+      {"value": "+33 4 74 36 32 97", "count": 1},
+      {"value": "+33 4 74 25 81 90", "count": 1},
+      {"value": "+33 4 74 37 56 48", "count": 1},
+      {"value": "+33 4 74 25 87 55", "count": 1},
+      {"value": "+33 4 74 50 15 08", "count": 1},
+      {"value": "+33 4 77 97 39 96", "count": 1},
+      {"value": "+33 4 75 88 05 44", "count": 1},
+      {"value": "+33 9 86 77 31 34", "count": 1},
+      {"value": "+33475213597", "count": 1},
+      {"value": "+33 450 443030", "count": 1},
+      {"value": "+33 4 50 32 49 97", "count": 1},
+      {"value": "+33450531430", "count": 1},
+      {"value": "+33649231034", "count": 1},
+      {"value": "+33687104256", "count": 1},
+      {"value": "+33450024475", "count": 1},
+      {"value": "+33 475400483", "count": 1},
+      {"value": "+33 4 75 90 80 96", "count": 1},
+      {"value": "+33475764615", "count": 1},
+      {"value": "+33 4 75 88 02 22", "count": 1},
+      {"value": "+33 4 75 66 61 87", "count": 1},
+      {"value": "+33 4 75 49 94 36", "count": 1},
+      {"value": "+33 4 77 97 56 62", "count": 1},
+      {"value": "+33475272563", "count": 1},
+      {"value": "+33 4 75 53 37 21", "count": 1},
+      {"value": "+33 4 50 53 44 03", "count": 1},
+      {"value": "+33 4 74 98 00 21", "count": 1},
+      {"value": "+33 450 454830", "count": 1},
+      {"value": "+33 3 85 23 97 10", "count": 1},
+      {"value": "+33 4 74 00 77 23", "count": 1},
+      {"value": "+33 4 74 00 83 40", "count": 1},
+      {"value": "+33 4 78314216", "count": 1},
+      {"value": "+33 4 50 48 56 40", "count": 1},
+      {"value": "+33 4 75 66 00 97", "count": 1},
+      {"value": "+33 4 75 08 05 28", "count": 1},
+      {"value": "+33 4 75 59 83 14", "count": 1},
+      {"value": "+33 4 75 37 60 28", "count": 1},
+      {"value": "+33 4 75 39 79 39", "count": 1},
+      {"value": "+33 4 77 72 86 01", "count": 1},
+      {"value": "+33 7 81 17 23 15", "count": 1},
+      {"value": "+33 4 75 39 60 71", "count": 1},
+      {"value": "+33 4 75 25 05 28", "count": 1},
+      {"value": "+33 4 79285816", "count": 1},
+      {"value": "+33 4 76 96 43 73", "count": 1},
+      {"value": "+33 4 75 27 20 90", "count": 1},
+      {"value": "+33 4 75 94 63 63", "count": 1},
+      {"value": "+33 450 443297", "count": 1},
+      {"value": "+33 4 74 51 34 14", "count": 1},
+      {"value": "+33 4 75 39 72 26", "count": 1},
+      {"value": "+33 4 27 52 96 64", "count": 1},
+      {"value": "+33 4 77 39 72 97;+33 6 70 55 36 56", "count": 1},
+      {"value": "+33 4 78 98 06 32", "count": 1},
+      {"value": "+33 4 75 68 62 26", "count": 1},
+      {"value": "+33 4 75 93 99 16", "count": 1},
+      {"value": "+33 450 607212", "count": 1},
+      {"value": "+33 4 75 88 04 73", "count": 1},
+      {"value": "+33 4 74 69 34 40", "count": 1},
+      {"value": "+33 9 66 97 21 28", "count": 1},
+      {"value": "+33 4 74 04 04 25", "count": 1},
+      {"value": "+33 4 74 50 02 75", "count": 1},
+      {"value": "+33 4 75 87 21 39", "count": 1},
+      {"value": "+33 4 50 20 01 95", "count": 1},
+      {"value": "+33 4 75 31 43 33", "count": 1},
+      {"value": "+33 4 79 38 33 88", "count": 1},
+      {"value": "+33 4 75 88 05 37", "count": 1},
+      {"value": "+33 4 75 88 00 99", "count": 1},
+      {"value": "+33 4 50 56 20 88", "count": 1},
+      {"value": "+33 4 79 06 26 60", "count": 1},
+      {"value": "+33 4 79 20 52 77", "count": 1},
+      {"value": "+33 4 50 42 84 57", "count": 1},
+      {"value": "+33 4 79 41 01 05", "count": 1},
+      {"value": "+33 9 62 08 28 65", "count": 1},
+      {"value": "+33 4 75 39 64 98", "count": 1},
+      {"value": "+33 4 76 97 55 19", "count": 1},
+      {"value": "+33 4 76 97 50 23", "count": 1},
+      {"value": "+33 3 85 30 66 58", "count": 1},
+      {"value": "+33 4 75 94 06 43", "count": 1},
+      {"value": "+33 4 75 28 10 78", "count": 1},
+      {"value": "+33 4 74 37 25 41", "count": 1},
+      {"value": "+33 4 75 21 82 08", "count": 1},
+      {"value": "+33 4 75 36 88 75", "count": 1},
+      {"value": "+33 4 75 88 04 16", "count": 1},
+      {"value": "+33 4 75 84 19 70", "count": 1},
+      {"value": "+33 4 76 31 10 57", "count": 1},
+      {"value": "+33 4 74 52 97 24", "count": 1},
+      {"value": "+33 4 74 55 04 79", "count": 1},
+      {"value": "+33 4 77 96 08 69", "count": 1},
+      {"value": "+33 4 75 07 49 73", "count": 1},
+      {"value": "+33 4 74 36 13 45", "count": 1},
+      {"value": "+33 4 74 35 72 11", "count": 1},
+      {"value": "+33 4 75 37 71 91", "count": 1},
+      {"value": "+33 4 74 08 44 83", "count": 1},
+      {"value": "+33 4 79 87 71 38", "count": 1},
+      {"value": "+33 4 75 29 15 67", "count": 1},
+      {"value": "+33 4 50 59 28 47", "count": 1},
+      {"value": "+33 4 74 30 35 16", "count": 1},
+      {"value": "+33 4 50 72 52 60", "count": 1},
+      {"value": "+33 4 50 72 73 39", "count": 1},
+      {"value": "+33 4 50 72 62 70", "count": 1},
+      {"value": "+33 4 79 05 00 23", "count": 1},
+      {"value": "+33 4 75 85 84 14", "count": 1},
+      {"value": "+33 4 90 28 72 94", "count": 1},
+      {"value": "+33 4 79 87 82 02", "count": 1},
+      {"value": "+33 6 22 62 48 47", "count": 1},
+      {"value": "+33 682 921618", "count": 1},
+      {"value": "+33 4 50 34 12 17", "count": 1},
+      {"value": "+33 4 74 51 64 45", "count": 1},
+      {"value": "+33 4 79 42 12 03", "count": 1},
+      {"value": "+33 4 74 39 05 23", "count": 1},
+      {"value": "+33 4 79 87 26 89", "count": 1},
+      {"value": "+33 4 79 87 19 00", "count": 1},
+      {"value": "+33 4 79 87 37 34", "count": 1},
+      {"value": "+33 4 75 06 16 70", "count": 1},
+      {"value": "+33 4 50 79 24 76", "count": 1},
+      {"value": "+33 4 79 87 61 40", "count": 1},
+      {"value": "+33 450 72 36 58", "count": 1},
+      {"value": "+33 4 75 62 24 62", "count": 1},
+      {"value": "+33 4 50 52 43 09", "count": 1},
+      {"value": "+33475367519", "count": 1},
+      {"value": "+33 4 75 49 55 43", "count": 1},
+      {"value": "+33 4 75 90 06 69", "count": 1},
+      {"value": "+33 4 74 56 39 20", "count": 1},
+      {"value": "+33 450 443122", "count": 1},
+      {"value": "+33 4 74 67 80 77", "count": 1},
+      {"value": "+33 4 74 42 32 42", "count": 1},
+      {"value": "+33 4 37 86 47 13", "count": 1},
+      {"value": "+33 4 74 76 80 97", "count": 1},
+      {"value": "+33 475582091", "count": 1},
+      {"value": "+33 4 79 63 80 00", "count": 1},
+      {"value": "+33 4 66 46 85 72", "count": 1},
+      {"value": "+33 4 76 34 00 38", "count": 1},
+      {"value": "+33 4 79 08 75 24", "count": 1},
+      {"value": "+33 4 74 52 66 91", "count": 1},
+      {"value": "+33 4 79 05 03 05", "count": 1},
+      {"value": "+33 4 79 38 02 97", "count": 1},
+      {"value": "+33479381207", "count": 1},
+      {"value": "+33 4 50 47 04 04", "count": 1},
+      {"value": "+33 4 79 54 80 19;+33 7 86 86 03 58", "count": 1},
+      {"value": "+33 4 75 21 72 70", "count": 1},
+      {"value": "+33 4 75 21 74 48", "count": 1},
+      {"value": "+33 4 75 22 02 50", "count": 1},
+      {"value": "+33 4 74 61 93 00", "count": 1},
+      {"value": "+33 4 75 60 96 62", "count": 1},
+      {"value": "+33 4 76 34 05 47", "count": 1},
+      {"value": "+33 4 75 36 80 87", "count": 1},
+      {"value": "+33 475 371 552", "count": 1},
+      {"value": "+33612050176", "count": 1},
+      {"value": "+33 4 37 86 55 87", "count": 1},
+      {"value": "+33 450 603697", "count": 1},
+      {"value": "+33 450601866", "count": 1},
+      {"value": "+33 4 28 45 94 07", "count": 1},
+      {"value": "+33 4 75 07 65 75", "count": 1},
+      {"value": "+33 4 74 98 15 66", "count": 1},
+      {"value": "+33 475 66 24 31", "count": 1},
+      {"value": "+33 4 75 66 21 53", "count": 1},
+      {"value": "+33 4 74 61 88 35", "count": 1},
+      {"value": "+33 4 74 35 82 93", "count": 1},
+      {"value": "+33 475645198", "count": 1},
+      {"value": "+33 4 75 66 23 23", "count": 1},
+      {"value": "+33 4 75 66 30 08", "count": 1},
+      {"value": "+33 6 07 90 46 42", "count": 1},
+      {"value": "+33475983750", "count": 1},
+      {"value": "+33695390472", "count": 1},
+      {"value": "+33 4 78400124", "count": 1},
+      {"value": "+33 4 75 08 83 90", "count": 1},
+      {"value": "+33 4 66 25 15 29", "count": 1},
+      {"value": "+33475389383", "count": 1},
+      {"value": "+33 4 74 30 32 32", "count": 1},
+      {"value": "+33 4 75 40 46 61", "count": 1},
+      {"value": "+33 4 75 30 29 28", "count": 1},
+      {"value": "+33 4 79 28 13 48", "count": 1},
+      {"value": "+33 618 671 679", "count": 1},
+      {"value": "+33 476 381 876", "count": 1},
+      {"value": "+33647986420", "count": 1},
+      {"value": "+33 4 50 77 03 14", "count": 1}
+    ],
+    "count": 237
+  },
+  {
+    "key": "stars",
+    "tags": [
+      {"value": "3", "count": 89},
+      {"value": "2", "count": 58},
+      {"value": "4", "count": 32},
+      {"value": "1", "count": 10},
+      {"value": "5", "count": 6}
+    ],
+    "count": 195
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 63},
+      {"value": "no", "count": 14},
+      {"value": "yes", "count": 10}
+    ],
+    "count": 87
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@domaine-la-garenne.com", "count": 1},
+      {"value": "contact@camping-lac-bleu.com", "count": 1},
+      {"value": "contact@campingourson.com", "count": 1},
+      {"value": "campingrochecondrie@wanadoo.fr", "count": 1},
+      {"value": "3riv@free.fr", "count": 1},
+      {"value": "contact@camping-lapiboure.com", "count": 1},
+      {"value": "raoul.arroyo@orange.fr", "count": 1},
+      {"value": "+33475067918", "count": 1},
+      {"value": "lac.de.devesset@wanadoo.fr", "count": 1},
+      {"value": "contact@domaineprovencal.com", "count": 1},
+      {"value": "http://www.camping-stnazaire.fr", "count": 1},
+      {"value": "info@campingroybon.com", "count": 1},
+      {"value": "http://farconnetjl.monsite-orange.fr/", "count": 1},
+      {"value": "info@campinglaferme.com", "count": 1},
+      {"value": "domainedejossoin@gmail.com", "count": 1},
+      {"value": "cslyon@laposte.net", "count": 1},
+      {"value": "contact@lecampingdelaplage.com", "count": 1},
+      {"value": "kalou_64@hotmail.fr", "count": 1},
+      {"value": "campinglavignasse@gmail.com", "count": 1},
+      {"value": "info@campingletaillefer.com", "count": 1},
+      {"value": "foyerfondtamie@orange.fr", "count": 1},
+      {"value": "camping.lechevalu.bozel@gmail.com", "count": 1},
+      {"value": "info@campinglegrandcalme.com", "count": 1},
+      {"value": "fernuy@capfun.com", "count": 1},
+      {"value": "labelonne@hotmail.fr", "count": 1},
+      {"value": "camping.saumont@wanadoo.fr", "count": 1},
+      {"value": "camping@ville-annecy.fr", "count": 1},
+      {"value": "reception@lesvoilesdugrandlarge.com", "count": 1},
+      {"value": "reception@camping-peyroche.com", "count": 1},
+      {"value": "philippe@le-crestois.fr", "count": 1},
+      {"value": "roubine.ardeche@wanadoo.fr", "count": 1},
+      {"value": "jpcintrat@orange.fr", "count": 1},
+      {"value": "camping-de-laborie@wanadoo.fr", "count": 1},
+      {"value": "reception@lesranchisses.fr", "count": 1},
+      {"value": "camping.le.lanfonnet@wanadoo.fr", "count": 1},
+      {"value": "campingvallonpontdarc@gmail.com", "count": 1},
+      {"value": "moulinsoph@aol.com", "count": 1},
+      {"value": "Contact@chataigneraie.com", "count": 1},
+      {"value": "commune.beaufort@wanadoo.fr", "count": 1},
+      {"value": "camping.chauvieux@wanadoo.fr", "count": 1},
+      {"value": "inter.camp@wanadoo.fr", "count": 1},
+      {"value": "campingvalserine@gmail.com", "count": 1},
+      {"value": "campinglesrichardes@free.fr", "count": 1},
+      {"value": "les.2b@hotmail.fr", "count": 1},
+      {"value": "contact@camping-clair-matin.com", "count": 1},
+      {"value": "michel.vanniere@wanadoo.fr", "count": 1},
+      {"value": "esquiras@orange.fr", "count": 1},
+      {"value": "contact@lesoleilfruite.com", "count": 1},
+      {"value": "campingchantemerle@wanadoo.fr", "count": 1},
+      {"value": "camp.inter@wanadoo.fr", "count": 1},
+      {"value": "campingvirieu@orange.fr", "count": 1},
+      {"value": "camping@sixtferacheval.net", "count": 1},
+      {"value": "contact@camping-la-riviere.fr", "count": 1},
+      {"value": "info@camping-alpes.net", "count": 1},
+      {"value": "camping.anthy@gmail.com", "count": 1},
+      {"value": "camping@alboussoere.fr", "count": 1},
+      {"value": "info@campinglesamis.com", "count": 1},
+      {"value": "contact@camping-cyclamens.com", "count": 1},
+      {"value": "camping-glandasse@wanadoo.fr", "count": 1},
+      {"value": "camping.charmessurrhone@laposte.net", "count": 1},
+      {"value": "campingdherbelon@wanadoo.fr", "count": 1},
+      {"value": "contact@lachapellesaintclaude.com", "count": 1},
+      {"value": "info@masdechampel.com", "count": 1},
+      {"value": "info@eyrieuxcamping.com", "count": 1},
+      {"value": "camping.aygues@wanadoo.fr", "count": 1},
+      {"value": "enest@hotmail.fr", "count": 1}
+    ],
+    "count": 66
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Municipalité", "count": 25},
+      {"value": "Brigitte et Jean Wilkens", "count": 2},
+      {"value": "Groupement des Campeurs Universitaires", "count": 2},
+      {"value": "INDIGO", "count": 1},
+      {"value": "Jacquemet Mireille", "count": 1},
+      {"value": "Jean Cretin", "count": 1},
+      {"value": "Gilbert Curnillon", "count": 1},
+      {"value": "Louis CHATARD", "count": 1},
+      {"value": "Henri MARCHAND", "count": 1},
+      {"value": "Tohapi", "count": 1},
+      {"value": "Huttopia", "count": 1},
+      {"value": "Municipalté", "count": 1},
+      {"value": "Burzet", "count": 1},
+      {"value": "Mairie de Charlieu", "count": 1},
+      {"value": "FranceLoc", "count": 1},
+      {"value": "Fabrice Hilaire", "count": 1},
+      {"value": "Municiplaité", "count": 1},
+      {"value": "M. et Mme Jean et Marie-Agnès CURTET HOORNAERT", "count": 1},
+      {"value": "Indigo", "count": 1},
+      {"value": "Rene Mansey", "count": 1},
+      {"value": "VivaCamp", "count": 1},
+      {"value": "Les Amis de la nature", "count": 1},
+      {"value": "SARL Au Bien Hêtre", "count": 1},
+      {"value": "Commune de La Rippe", "count": 1},
+      {"value": "Campéole", "count": 1},
+      {"value": "La Croix Bleue", "count": 1},
+      {"value": "Vernoux-en-Vivarais", "count": 1},
+      {"value": "Camping communal", "count": 1},
+      {"value": "Sunelia", "count": 1},
+      {"value": "Ville de Buis-les-Baronnies", "count": 1},
+      {"value": "Accueil Paysan", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "100", "count": 4},
+      {"value": "30", "count": 3},
+      {"value": "50", "count": 3},
+      {"value": "55", "count": 3},
+      {"value": "25", "count": 3},
+      {"value": "60", "count": 2},
+      {"value": "24", "count": 2},
+      {"value": "80", "count": 2},
+      {"value": "108", "count": 1},
+      {"value": "53", "count": 1},
+      {"value": "116", "count": 1},
+      {"value": "537", "count": 1},
+      {"value": "200", "count": 1},
+      {"value": "82", "count": 1},
+      {"value": "160", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "104", "count": 1},
+      {"value": "144", "count": 1},
+      {"value": "72", "count": 1},
+      {"value": "54", "count": 1},
+      {"value": "26", "count": 1},
+      {"value": "152", "count": 1},
+      {"value": "120", "count": 1},
+      {"value": "33", "count": 1},
+      {"value": "101", "count": 1},
+      {"value": "35", "count": 1},
+      {"value": "40", "count": 1},
+      {"value": "36", "count": 1}
+    ],
+    "count": 42
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [
+      {"value": "no", "count": 29},
+      {"value": "yes", "count": 12},
+      {"value": "Yes", "count": 1}
+    ],
+    "count": 42
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 19},
+      {"value": "no", "count": 5},
+      {"value": "limited", "count": 4}
+    ],
+    "count": 28
+  },
+  {
+    "key": "fee",
+    "tags": [{"value": "yes", "count": 23}, {"value": "no", "count": 3}],
+    "count": 26
+  },
+  {
+    "key": "tents",
+    "tags": [
+      {"value": "yes", "count": 24},
+      {"value": "25", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "caravans",
+    "tags": [{"value": "yes", "count": 21}, {"value": "no", "count": 4}],
+    "count": 25
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 50 41 68 77", "count": 1},
+      {"value": "+33 4 75 88 32 73", "count": 1},
+      {"value": "+33 4 75 39 79 40", "count": 1},
+      {"value": "+33 4 75 39 76 35", "count": 1},
+      {"value": "+33 4 75 27 02 13", "count": 1},
+      {"value": "+33 4 75 39 72 26", "count": 1},
+      {"value": "+33 4 75 68 60 02", "count": 1},
+      {"value": "+33 4 75 88 11 76", "count": 1},
+      {"value": "+33 4 75 03 84 67", "count": 1},
+      {"value": "+33 4 75 36 83 54", "count": 1},
+      {"value": "+33 4 79 41 01 05", "count": 1},
+      {"value": "+33 4 74 54 20 00", "count": 1},
+      {"value": "+33 4 75 39 64 98", "count": 1},
+      {"value": "+33 4 75 21 82 85", "count": 1},
+      {"value": "+33 4 75 78 05 85", "count": 1},
+      {"value": "+33 4 75 07 45 15", "count": 1},
+      {"value": "+33 4 50 89 51 02", "count": 1},
+      {"value": "+33 4 50 79 24 76", "count": 1},
+      {"value": "+33 4 75 66 23 16", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "camping réservé personnel EDF", "count": 1},
+      {
+        "value": "L'aire de bivouac dédiée se situe au N-O du refuge (~100m), toilettes libre accès. Situé sur une pente herbeuse.",
+        "count": 1
+      },
+      {
+        "value": "Du 15/05 au 15/09. En mai, juin et septembre, uniquement les week-ends.",
+        "count": 1
+      },
+      {
+        "value": "Gîtes Chambres Yourtes Camping à la ferme Ferme écologique",
+        "count": 1
+      },
+      {"value": "Motorcycle toolshop, excursions", "count": 1},
+      {"value": "Village de vacances avec cabanes, huttes...", "count": 1},
+      {
+        "value": "Rest of the area is not allowed, because of nature risk.",
+        "count": 1
+      },
+      {
+        "value": "small camp site with small hotel/apartment. lovely and peacefull place",
+        "count": 1
+      },
+      {"value": "Ouverture du 25 juin 2016 au 13 sept 2016", "count": 1},
+      {"value": "Ouvert du 27 Avril au 30 Septembre", "count": 1},
+      {
+        "value": "Le Camping municipal de Beaufort vous accueille dans un endroit calme et reposant dans un site verdoyant. Il est situé à environ 10 minutes à pied du village de Beaufort (commerces boulangeries, superettes, ...) et de la base de loisirs.",
+        "count": 1
+      },
+      {"value": "fr:Aire d'Accueil des Gens du Voyage", "count": 1},
+      {
+        "value": "Ouverture du 23 avril au 2 octobre 2016. Horaires d'accueil en basse saison 10H à 12H et 14H à 18H (15H à 19H le week-end et jours fériés) en haute saison 9H à 12H30 et 14H à 20H. Wifi, laverie, Aire de repos",
+        "count": 1
+      },
+      {
+        "value": "Le camping Les Glières vous accueille, calme et tranquillité, à vocation familiale situé aux portes du Beaufortain, le long de la route départementale d’Albertville à Beaufort, à 10 min d’Albertville et à 10 min de Beaufort",
+        "count": 1
+      },
+      {"value": "Ouvet du 12 juin au 15 septembre", "count": 1},
+      {
+        "value": "Aux Contamines, dans le Val Montjoie, au pied du Mont-Blanc, sur le passage du GR5 et du TMB. Camping, Caravaneige, Gîte et Chalets.",
+        "count": 1
+      },
+      {"value": "Ouvert toute l'année", "count": 1}
+    ],
+    "count": 17
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 14}], "count": 14},
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 10},
+      {"value": "Potlatch 0.10f", "count": 2},
+      {"value": "Potlatch 0.5d", "count": 1},
+      {"value": "Potlatch 0.4a", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "sanitary_dump_station",
+    "tags": [
+      {"value": "customers", "count": 6},
+      {"value": "yes", "count": 4},
+      {"value": "no", "count": 3}
+    ],
+    "count": 13
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Acces par Choranche", "count": 1},
+      {"value": "Aire Naturelle", "count": 1},
+      {"value": "camping municipal", "count": 1},
+      {"value": "pas sûr de la position", "count": 1},
+      {
+        "value": "Terrain Camping cisconscrire le périmètre du ou des campings avec le nom.",
+        "count": 1
+      },
+      {"value": "tents site (not really a camping)", "count": 1},
+      {"value": "Camping caravaneige", "count": 1},
+      {"value": "maxtents: estimé", "count": 1},
+      {
+        "value": "Website incorrect (http://www.camping-larosiere.com/)",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "smoking",
+    "tags": [{"value": "yes", "count": 8}, {"value": "outside", "count": 1}],
+    "count": 9
+  },
+  {
+    "key": "nudism",
+    "tags": [{"value": "yes", "count": 7}, {"value": "obligatory", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "551", "count": 1},
+      {"value": "3167", "count": 1},
+      {"value": "386", "count": 1},
+      {"value": "940", "count": 1},
+      {"value": "1400", "count": 1},
+      {"value": "1185", "count": 1},
+      {"value": "360", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "village_green", "count": 4},
+      {"value": "recreation_ground", "count": 1},
+      {"value": "grass", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "fence", "count": 4}, {"value": "wall", "count": 1}],
+    "count": 5
+  },
+  {"key": "backcountry", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {"key": "drinking_water", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "camp_site",
+    "tags": [
+      {"value": "serviced", "count": 2},
+      {"value": "reception", "count": 1},
+      {"value": "camp_pitch", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "maxtents",
+    "tags": [
+      {"value": "50", "count": 1},
+      {"value": "43", "count": 1},
+      {"value": "32", "count": 1},
+      {"value": "80", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "swimming_pool", "count": 1},
+      {"value": "park", "count": 1},
+      {"value": "summer_camp", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "à vérifier sur place, j'ai quelques doute sur la précisions de ces infos trouvé sur le net",
+        "count": 1
+      },
+      {"value": "la zone précise à vérifier", "count": 1},
+      {"value": "zone approximative", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "scout", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "group_only",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 1},
+      {"value": "customers", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "shower", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "payment:visa",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "amenity",
+    "tags": [{"value": "bar", "count": 1}, {"value": "restaurant", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "internet_access:type",
+    "tags": [{"value": "Wi-Fi", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "payment:cash",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "dog",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "phone:mobile",
+    "tags": [
+      {"value": "+33687478450", "count": 1},
+      {"value": "+33 6 08233158", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "naturism",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "description:en",
+    "tags": [
+      {
+        "value": "Appartments Rooms Yurts Small Green Camping Eco Farm",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Gîtes Chambres Yourtes Camping à la ferme Ferme écologique",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description:nl",
+    "tags": [
+      {
+        "value": "Appartementen Kamers Yurts Kleine Groene Camping Eco Boerderij",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIREN",
+    "tags": [{"value": "511 375 396", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "511 375 396 000 47", "count": 1}],
+    "count": 1
+  },
+  {"key": "mobile", "tags": [{"value": "0689213735", "count": 1}], "count": 1},
+  {
+    "key": "network",
+    "tags": [{"value": "Accueil Paysan", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "motorcycle_friendly",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:theme",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:electronic_purses",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "des que 2016 on a separee le Camping Municipal en * camp_site (camping, tentes, caravanes dans le sud) et * caravan_site (camping_car dans le nord). I y a seulement un access dans le nord!",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "surface", "tags": [{"value": "snow", "count": 1}], "count": 1},
+  {
+    "key": "sport",
+    "tags": [{"value": "table_soccer, table_tennis, billiards", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:type",
+    "tags": [{"value": "public", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:de",
+    "tags": [
+      {
+        "value": "Appartments Zimmer Jurten Kleiner grüner Campingplatz Eco Farm",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "fence_type", "tags": [{"value": "metal", "count": 1}], "count": 1},
+  {
+    "key": "phone:winter",
+    "tags": [{"value": "+33479381465", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "wpt_symbol",
+    "tags": [{"value": "Campground", "count": 1}],
+    "count": 1
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "reservation", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "cabins", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "dryer", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "kitchen", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "payment:girocard",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "power_supply", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sauna", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "washing_machine", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "swimming_pool", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "camp_site:type:FR",
+    "tags": [{"value": "Aire Naturelle", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "terrace", "count": 1}],
+    "count": 1
+  }
+]

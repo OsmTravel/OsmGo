@@ -1,0 +1,56 @@
+[
+  {"key": "amenity", "tags": [{"value": "hydrant", "count": 35}], "count": 35},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Technically a fire_hydrant, but not for firefight nor emergency. Don't tag it back to fire_hydrant.",
+        "count": 21
+      },
+      {
+        "value": "Technicaly a fire_hydrant, but not for firefight nor emergency. Don't tag it back to fire_hydrant, thanks",
+        "count": 6
+      },
+      {
+        "value": "Not a _fire_ hydrant but a self-service water hydrant",
+        "count": 2
+      },
+      {"value": "peint en bleu", "count": 2},
+      {"value": "not a fire:hydrant", "count": 1},
+      {
+        "value": "Not a fire hydrant but a self-service water hydrant",
+        "count": 1
+      }
+    ],
+    "count": 33
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {
+    "key": "hydrant:type",
+    "tags": [{"value": "pillar", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "fire_hydrant:position",
+    "tags": [
+      {"value": "sidewalk", "count": 1},
+      {"value": "parking_lot", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "fire_hydrant", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "fire_hydrant:type",
+    "tags": [{"value": "pillar", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "223", "count": 1}, {"value": "156", "count": 1}],
+    "count": 2
+  }
+]

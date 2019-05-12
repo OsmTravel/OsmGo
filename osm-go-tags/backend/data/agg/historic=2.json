@@ -1,0 +1,49 @@
+[
+  {"key": "religion", "tags": [{"value": "christian", "count": 2}], "count": 2},
+  {
+    "key": "amenity",
+    "tags": [{"value": "place_of_worship", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "2", "count": 2}], "count": 2},
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00101337", "count": 1},
+      {"value": "PA00098842", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2109643", "count": 1},
+      {"value": "Q3580234", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1918-07-30", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "C16", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Église Notre-Dame-de-Recouvrance d'Orléans", "count": 1}
+    ],
+    "count": 1
+  }
+]

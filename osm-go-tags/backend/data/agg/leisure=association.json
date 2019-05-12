@@ -1,0 +1,19 @@
+[
+  {
+    "key": "email",
+    "tags": [{"value": "guerin.mickael@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "sport", "tags": [{"value": "sailing", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "association", "count": 1}], "count": 1},
+  {
+    "key": "leisure",
+    "tags": [{"value": "association", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.cerclevoilevioreau.fr", "count": 1}],
+    "count": 1
+  }
+]

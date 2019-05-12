@@ -1,0 +1,38 @@
+[
+  {"key": "highway", "tags": [{"value": "proposed", "count": 46}], "count": 46},
+  {
+    "key": "proposed",
+    "tags": [
+      {"value": "trunk", "count": 10},
+      {"value": "primary", "count": 8},
+      {"value": "residential", "count": 5},
+      {"value": "secondary", "count": 4},
+      {"value": "unclassified", "count": 2},
+      {"value": "path", "count": 1},
+      {"value": "cycleway", "count": 1},
+      {"value": "tertiary", "count": 1}
+    ],
+    "count": 32
+  },
+  {"key": "oneway", "tags": [{"value": "yes", "count": 10}], "count": 10},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "layer",
+    "tags": [{"value": "1", "count": 1}, {"value": "-1", "count": 1}],
+    "count": 2
+  },
+  {"key": "note", "tags": [{"value": "ViaRhôna", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1},
+  {"key": "bridge", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "toll", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "tunnel", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "C'est quoi? Projet de rond-point?", "count": 1}],
+    "count": 1
+  }
+]

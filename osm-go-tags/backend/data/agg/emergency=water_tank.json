@@ -1,0 +1,60 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "water_tank", "count": 32}],
+    "count": 32
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "reservoir_covered", "count": 11},
+      {"value": "storage_tank", "count": 1},
+      {"value": "reservoir", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "water_tank:volume",
+    "tags": [
+      {"value": "50000", "count": 2},
+      {"value": "120000", "count": 2},
+      {"value": "45000", "count": 1},
+      {"value": "160000", "count": 1},
+      {"value": "20", "count": 1},
+      {"value": "10", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "180-033", "count": 1},
+      {"value": "180-032", "count": 1},
+      {"value": "048", "count": 1},
+      {"value": "Prise sur le chemin des plantées", "count": 1},
+      {"value": "La prise est située sur la route des plantées", "count": 1},
+      {"value": "mare", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "natural", "tags": [{"value": "water", "count": 3}], "count": 3},
+  {
+    "key": "description",
+    "tags": [{"value": "duret", "count": 1}, {"value": "Etang", "count": 1}],
+    "count": 2
+  },
+  {"key": "landuse", "tags": [{"value": "reservoir", "count": 2}], "count": 2},
+  {"key": "operator", "tags": [{"value": "RTE", "count": 2}], "count": 2},
+  {
+    "key": "fixme",
+    "tags": [{"value": "mare privée a verifier", "count": 1}],
+    "count": 1
+  },
+  {"key": "capacity", "tags": [{"value": "35", "count": 1}], "count": 1},
+  {
+    "key": "location",
+    "tags": [{"value": "overground", "count": 1}],
+    "count": 1
+  },
+  {"key": "type", "tags": [{"value": "drain", "count": 1}], "count": 1}
+]

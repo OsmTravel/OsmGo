@@ -1,0 +1,22 @@
+[
+  {"key": "amenity", "tags": [{"value": "theatre", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "theatre", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1975-01-15", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00116346", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3527617", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Théâtre de Bourg-en-Bresse", "count": 1}],
+    "count": 1
+  }
+]

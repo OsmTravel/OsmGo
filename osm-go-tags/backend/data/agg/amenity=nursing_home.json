@@ -1,0 +1,58 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "nursing_home", "count": 32}],
+    "count": 32
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "public", "count": 1},
+      {"value": "Ville de Saint-Étienne", "count": 1},
+      {"value": "Oméris", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.epi2a.com/epi2a-etablissement.php?site=3",
+        "count": 1
+      },
+      {"value": "http://www.residence-joseph-forest.com/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.saint-etienne.fr/saint%C3%A9-vous/seniors/vivre-en-r%C3%A9sidence/r%C3%A9sidences-municipales-personnes-%C3%A2g%C3%A9es",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "38560A082A", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 97 75 20", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "hoplocal.boen@wanadoo.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 77 97 75 25", "count": 1}],
+    "count": 1
+  }
+]

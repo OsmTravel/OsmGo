@@ -1,0 +1,35 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "miniature_golf", "count": 52}],
+    "count": 52
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {"key": "sport", "tags": [{"value": "golf", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 23127526", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.seytroux.fr/Le-mini-golf-de-Seytroux-vous",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Suzanne Pin", "count": 1}],
+    "count": 1
+  }
+]

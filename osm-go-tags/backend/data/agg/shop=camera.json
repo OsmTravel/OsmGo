@@ -1,0 +1,16 @@
+[
+  {"key": "shop", "tags": [{"value": "camera", "count": 21}], "count": 21},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.photosaintcharles.com", "count": 1},
+      {"value": "http://www.camara.net", "count": 1},
+      {"value": "https://www.camara.net/lille", "count": 1},
+      {
+        "value": "http://fr.leica-camera.com/Stores-Revendeurs/Leica-Stores-dans-le-monde/Leica-Store-Lille",
+        "count": 1
+      }
+    ],
+    "count": 4
+  }
+]

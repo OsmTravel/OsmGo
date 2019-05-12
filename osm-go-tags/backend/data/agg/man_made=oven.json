@@ -1,0 +1,8 @@
+[
+  {"key": "man_made", "tags": [{"value": "oven", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "Haut fourneau", "count": 2}],
+    "count": 2
+  }
+]

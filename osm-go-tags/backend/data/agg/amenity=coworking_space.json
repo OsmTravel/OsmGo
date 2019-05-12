@@ -1,0 +1,123 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "coworking_space", "count": 28}],
+    "count": 28
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.tuba-lyon.com", "count": 1},
+      {"value": "http://www.cocoba.fr", "count": 1},
+      {"value": "http://polygones-lyon.fr/", "count": 1},
+      {"value": "http://www.laforgecollective.fr", "count": 1},
+      {"value": "http://lemug-coworking.fr", "count": 1},
+      {"value": "http://co-work.fr/", "count": 1},
+      {"value": "http://www.latrame07.fr/", "count": 1},
+      {"value": "http://latelier.in/", "count": 1},
+      {
+        "value": "http://www.la-cordee.net/cordee/la-cordee-perrache/",
+        "count": 1
+      },
+      {"value": "http://digital-valenceromans.fr/espacetotem/", "count": 1},
+      {"value": "http://www.labonnefabrique.fr", "count": 1},
+      {"value": "http://the7th-element.com/", "count": 1},
+      {"value": "http://etic.co/hevea/", "count": 1},
+      {"value": "http://epi-centre.fr/", "count": 1},
+      {"value": "http://www.melchiorcoworking.fr/", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "office",
+    "tags": [
+      {"value": "coworking", "count": 3},
+      {"value": "yes", "count": 1},
+      {"value": "association", "count": 1},
+      {"value": "company", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 2},
+      {"value": "yes", "count": 2},
+      {"value": "service", "count": 1},
+      {"value": "wlan;terminal", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Rues du Développement Durable", "count": 1},
+      {"value": "Mathieu Genty", "count": 1},
+      {"value": "Lyon Urban Data", "count": 1},
+      {"value": "La Cordée", "count": 1},
+      {"value": "#frenchtech Digital Valence Romans", "count": 1},
+      {"value": "Jonathan Hermeline", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "fee", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 21 43 80", "count": 1},
+      {"value": "+33 6 87 07 77 52", "count": 1},
+      {"value": "+33 4 79 28 68 62", "count": 1},
+      {"value": "+33 4 26 78 24 69", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "2", "count": 1}, {"value": "0", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "La Bonne Fabrique : activités collaboratives et rencontres intergénérationnelles",
+        "count": 1
+      },
+      {
+        "value": "Espace autogéré de travail dans le domaine agricole et de l'économie sociale et solidaire.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "designated", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [{"value": "http://lacartonnerie.blogspot.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "service:scan", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Tiers Lieu - Espace de Coworking et Télétravail", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "brand", "tags": [{"value": "Étic", "count": 1}], "count": 1},
+  {"key": "service:print", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "contact@polygones-lyon.fr", "count": 1}],
+    "count": 1
+  }
+]

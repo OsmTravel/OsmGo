@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "radar", "count": 2}], "count": 2},
+  {
+    "key": "highway",
+    "tags": [{"value": "speed_camera", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "speed 70", "count": 1}],
+    "count": 1
+  }
+]

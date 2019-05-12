@@ -1,0 +1,10 @@
+[
+  {"key": "historic", "tags": [{"value": "column", "count": 2}], "count": 2},
+  {
+    "key": "artwork_type",
+    "tags": [{"value": "statue", "count": 1}],
+    "count": 1
+  },
+  {"key": "statue", "tags": [{"value": "virgin", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "artwork", "count": 1}], "count": 1}
+]

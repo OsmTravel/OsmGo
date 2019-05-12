@@ -1,0 +1,87 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "place_of_worship", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3585914", "count": 1},
+      {"value": "Q18000018", "count": 1},
+      {"value": "Q19501228", "count": 1},
+      {"value": "Q22950520", "count": 1},
+      {"value": "Q3580987", "count": 1},
+      {"value": "Q22950457", "count": 1},
+      {"value": "Q22940798", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 7}], "count": 7},
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00106828", "count": 1},
+      {"value": "PA33000044", "count": 1},
+      {"value": "PA00097165", "count": 1},
+      {"value": "PA00099482", "count": 1},
+      {"value": "PA00099505", "count": 1},
+      {"value": "PA00099464", "count": 1},
+      {"value": "PA00097109", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 4}, {"value": "2", "count": 3}],
+    "count": 7
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "christian", "count": 4},
+      {"value": "C14", "count": 1},
+      {"value": "C13", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "place_of_worship", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1929-10-28", "count": 1},
+      {"value": "2001-05-03", "count": 1},
+      {"value": "1977-06-06", "count": 1},
+      {"value": "1952-06-18", "count": 1},
+      {"value": "1927-12-26", "count": 1},
+      {"value": "1992-01-24", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "denomination",
+    "tags": [{"value": "catholic", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Église des Grands-Carmes de Metz", "count": 1},
+      {"value": "fr:Chapelle Saint-Nicolas de Génissac", "count": 1},
+      {"value": "fr:Néron (Eure-et-Loir)", "count": 1},
+      {"value": "fr:Église Saint-Aubin de Pacy-sur-Eure", "count": 1},
+      {"value": "fr:La Ferté-Villeneuil", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "height", "tags": [{"value": "23", "count": 1}], "count": 1}
+]

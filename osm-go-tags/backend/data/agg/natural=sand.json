@@ -1,0 +1,8 @@
+[
+  {"key": "natural", "tags": [{"value": "sand", "count": 748}], "count": 748},
+  {"key": "golf", "tags": [{"value": "bunker", "count": 658}], "count": 658},
+  {"key": "sport", "tags": [{"value": "equestrian", "count": 2}], "count": 2},
+  {"key": "leisure", "tags": [{"value": "pitch", "count": 2}], "count": 2},
+  {"key": "surface", "tags": [{"value": "sand", "count": 2}], "count": 2},
+  {"key": "description", "tags": [{"value": "gravier", "count": 2}], "count": 2}
+]

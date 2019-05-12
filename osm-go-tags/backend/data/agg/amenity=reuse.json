@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "reuse", "count": 5}], "count": 5},
+  {"key": "reuse", "tags": [{"value": "fridge", "count": 2}], "count": 2},
+  {"key": "reuse:books", "tags": [{"value": "only", "count": 2}], "count": 2},
+  {"key": "access", "tags": [{"value": "permissive", "count": 1}], "count": 1},
+  {
+    "key": "facebook",
+    "tags": [
+      {"value": "https://www.facebook.com/events/1516976445013540", "count": 1}
+    ],
+    "count": 1
+  }
+]

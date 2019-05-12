@@ -1,0 +1,47 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "hearing_aids", "count": 66}],
+    "count": 66
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Amplifon", "count": 2},
+      {"value": "Audika", "count": 1},
+      {"value": "Audio 2000", "count": 1},
+      {"value": "Groupe Jean Rouquet", "count": 1},
+      {"value": "Entendre", "count": 1},
+      {"value": "Lyon audition", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 31 55 82", "count": 1},
+      {"value": "+33 4 74 79 05 26", "count": 1},
+      {"value": "+33 4 78 42 95 28", "count": 1},
+      {"value": "+33 4 37 57 19 01", "count": 1},
+      {"value": "+33 4 77 87 43 04", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.audika.com/", "count": 1},
+      {"value": "http://www.amplifon.fr/", "count": 1},
+      {
+        "value": "https://www.audika.fr/centres/rhone/audioprothesiste-audika-villeurbanne",
+        "count": 1
+      },
+      {
+        "value": "https://www.amplifon.com/web/fr/nous-trouver/-/store/amplifon-shop/563/amplifon+renaison/renaison/554+rue+du+college",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

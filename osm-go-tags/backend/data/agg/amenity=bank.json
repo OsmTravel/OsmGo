@@ -1,0 +1,430 @@
+[
+  {"key": "amenity", "tags": [{"value": "bank", "count": 1564}], "count": 1564},
+  {
+    "key": "brand",
+    "tags": [
+      {"value": "Crédit Agricole", "count": 306},
+      {"value": "Caisse d'Épargne", "count": 210},
+      {"value": "Crédit Mutuel", "count": 122},
+      {"value": "LCL", "count": 106},
+      {"value": "Société Générale", "count": 97},
+      {"value": "BNP Parisbas", "count": 87},
+      {"value": "CIC", "count": 86},
+      {"value": "Banque Populaire", "count": 80},
+      {"value": "Caisse d'Epargne", "count": 11},
+      {"value": "Crédit Coopératif", "count": 6},
+      {"value": "BNP Paribas", "count": 4},
+      {"value": "HSBC", "count": 2},
+      {"value": "Caisse d'épargne", "count": 2},
+      {"value": "Groupama", "count": 2},
+      {"value": "Banque Rhône-Alpes", "count": 1},
+      {"value": "Axa", "count": 1},
+      {"value": "BNP-Paribas", "count": 1},
+      {"value": "B", "count": 1},
+      {"value": "Crédit Agricole Sud Rhône Alpes", "count": 1},
+      {"value": "Crédit agricole", "count": 1}
+    ],
+    "count": 1127
+  },
+  {
+    "key": "brand:wikipedia",
+    "tags": [
+      {"value": "fr:Crédit agricole", "count": 283},
+      {"value": "fr:Groupe Caisse d'épargne", "count": 203},
+      {"value": "fr:Crédit mutuel", "count": 113},
+      {"value": "fr:Crédit lyonnais", "count": 105},
+      {"value": "fr:Société générale", "count": 91},
+      {"value": "fr:BNP Paribas", "count": 86},
+      {"value": "fr:Crédit industriel et commercial", "count": 76},
+      {"value": "fr:Banque populaire", "count": 74},
+      {"value": "fr:Crédit coopératif", "count": 6}
+    ],
+    "count": 1037
+  },
+  {
+    "key": "brand:wikidata",
+    "tags": [
+      {"value": "Q590952", "count": 283},
+      {"value": "Q1547738", "count": 203},
+      {"value": "Q642627", "count": 113},
+      {"value": "Q779722", "count": 105},
+      {"value": "Q270363", "count": 91},
+      {"value": "Q499707", "count": 86},
+      {"value": "Q746525", "count": 77},
+      {"value": "Q846647", "count": 73},
+      {"value": "Q3006190", "count": 6}
+    ],
+    "count": 1037
+  },
+  {
+    "key": "atm",
+    "tags": [{"value": "yes", "count": 991}, {"value": "no", "count": 31}],
+    "count": 1022
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Crédit Agricole", "count": 139},
+      {"value": "Caisse d'Épargne", "count": 63},
+      {"value": "Crédit Mutuel", "count": 57},
+      {"value": "LCL", "count": 55},
+      {"value": "Société Générale", "count": 54},
+      {"value": "Banque Populaire", "count": 53},
+      {"value": "BNP Paribas", "count": 37},
+      {"value": "CIC", "count": 33},
+      {"value": "Caisse d'Epargne", "count": 10},
+      {"value": "Banque de Savoie", "count": 8},
+      {"value": "Banque Rhône-Alpes", "count": 5},
+      {"value": "HSBC", "count": 5},
+      {"value": "La Banque Postale", "count": 4},
+      {"value": "Credit Agricole", "count": 3},
+      {"value": "Banque Palatine", "count": 3},
+      {"value": "Groupama", "count": 3},
+      {"value": "Le Crédit Lyonnais", "count": 3},
+      {"value": "L.C.L.", "count": 2},
+      {"value": "C.I.C.", "count": 2},
+      {"value": "La Poste", "count": 2},
+      {"value": "BPCE", "count": 1},
+      {"value": "Banque National de Paris", "count": 1},
+      {"value": "Caisse d'épargne", "count": 1},
+      {"value": "Caisse d'Epargne\"", "count": 1},
+      {"value": "Crédit Agricole Rhône-Alpes", "count": 1},
+      {"value": "Saisse d'Épargne", "count": 1},
+      {"value": "Crédit Coopératif", "count": 1},
+      {"value": "Banque Rhône Alpes", "count": 1},
+      {"value": "Crédit Agricole Sud Rhone Alpes", "count": 1},
+      {"value": "Crédit Agricole Centre Est", "count": 1},
+      {"value": "BNP Parisbas", "count": 1},
+      {"value": "Crédit-Agricole", "count": 1},
+      {"value": "Crédit Agricole Centre-Est", "count": 1},
+      {"value": "Crédit Agricole Loire Haute-Loire", "count": 1},
+      {"value": "Crédit Lyonnais", "count": 1},
+      {"value": "BNP", "count": 1},
+      {"value": "Credit Mutuel Dauphiné-Vivarais", "count": 1},
+      {"value": "Société Générale d'Aix les Bains", "count": 1},
+      {"value": "Banque Populaire des Alpes", "count": 1},
+      {"value": "CA-Centre France", "count": 1},
+      {"value": "BC Finance", "count": 1},
+      {"value": "Crédit agricole", "count": 1},
+      {"value": "Laydernier", "count": 1}
+    ],
+    "count": 564
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 145},
+      {"value": "no", "count": 8},
+      {"value": "limited", "count": 4}
+    ],
+    "count": 157
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.ca-sudrhonealpes.fr/", "count": 2},
+      {"value": "https://www.banque-rhone-alpes.fr/", "count": 2},
+      {
+        "value": "https://www.cic.fr/fr/banques/particuliers/Details.aspx?banque=10096&guichet=18135&bureau=00&type=branch&loca=BRON",
+        "count": 1
+      },
+      {"value": "http://www.credit-agricole.fr/", "count": 1},
+      {"value": "http://agence.lcl.fr/98408-lcl-lyon-jean-mace", "count": 1},
+      {"value": "https://www.creditmutuel.fr/groupe/fr/index.html", "count": 1},
+      {"value": "https://particuliers.secure.lcl.fr/index.html", "count": 1},
+      {
+        "value": "http://www.loirelyonnais.banquepopulaire.fr/portailinternet/Pages/default.aspx",
+        "count": 1
+      },
+      {"value": "http://www.bnpparibas.com/", "count": 1},
+      {"value": "https://www.cic.fr/", "count": 1},
+      {"value": "https://agence.lcl.fr/01058-lcl-villeurbanne-pv/", "count": 1},
+      {"value": "http://www.rsfinances.com/", "count": 1},
+      {"value": "http://www.creditfoncier.fr/", "count": 1},
+      {"value": "http://www.societegenerale.fr/", "count": 1},
+      {
+        "value": "http://agences.societegenerale.fr/banque-assurances/horaires-agence-societe-generale/lyon-victor-hugo-3000302001",
+        "count": 1
+      },
+      {
+        "value": "https://www.ca-centrest.fr/banque-assurance/lyon/lyon-part-dieu-les-halles.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.ca-centrest.fr/banque-assurance/lyon/lyon-brotteaux.html",
+        "count": 1
+      },
+      {"value": "www.lcl.fr", "count": 1},
+      {
+        "value": "https://agence.axa.fr/rhone-alpes/rhone/lyon-6/destandau-et-destandau-2",
+        "count": 1
+      },
+      {"value": "http://www.ca-sudrhonealpes.fr", "count": 1},
+      {
+        "value": "https://www.agences.caisse-epargne.fr/banque-assurance/agences/oullins-C69149",
+        "count": 1
+      },
+      {"value": "http://www.bnpparibas.com", "count": 1},
+      {"value": "https://www.loirelyonnais.banquepopulaire.fr/", "count": 1},
+      {"value": "https://www.caisse-epargne.fr/", "count": 1},
+      {
+        "value": "https://www.creditmutuel.fr/groupe/fr/banques/particuliers/menu-droite/Details.aspx?banque=10278&guichet=08917&bureau=00&type=branch&loca=annonay",
+        "count": 1
+      },
+      {
+        "value": "https://agences.banquepopulaire.fr/banque-assurance/agence-lyon-victor-hugo-id1390700028",
+        "count": 1
+      },
+      {
+        "value": "https://www.caisse-epargne.fr/rhone-alpes/particuliers",
+        "count": 1
+      },
+      {
+        "value": "https://www.ca-centrest.fr/banque-assurance/lyon/lyon-roosevelt.html",
+        "count": 1
+      },
+      {
+        "value": "http://agences.societegenerale.fr/banque-assurances/horaires-agence-societe-generale/caluire-montessuy-3000301185",
+        "count": 1
+      },
+      {"value": "www.ca-centrest.fr", "count": 1},
+      {
+        "value": "https://www.ca-sudrhonealpes.fr/banque-assurance/pont-de-claix/pont-de-claix.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Services/Caisse-d-Epargne-Rhone-Alpes",
+        "count": 1
+      },
+      {
+        "value": "https://www.ca-sudrhonealpes.fr/banque-assurance/st-martin-d-heres/st-martin-d-heres-croizat.html",
+        "count": 1
+      }
+    ],
+    "count": 35
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 8 20 82 00 01", "count": 3},
+      {"value": "+33 4 74 31 16 70", "count": 1},
+      {"value": "+33 4 75 29 71 10", "count": 1},
+      {"value": "+33 8 21 01 38 72", "count": 1},
+      {"value": "+33 4 72 71 54 10", "count": 1},
+      {"value": "+33 4 38 12 14 51", "count": 1},
+      {"value": "+33 8 10 04 49 57", "count": 1},
+      {"value": "+33 8 20 00 01 34", "count": 1},
+      {"value": "+33 4 74 78 87 35", "count": 1},
+      {"value": "+33 4 74 31 74 58", "count": 1},
+      {"value": "+33 8 20 30 10 31", "count": 1},
+      {"value": "+33 8 10 00 08 70", "count": 1},
+      {"value": "+33 4 74 53 82 70", "count": 1},
+      {"value": "+33 4 74 87 15 47", "count": 1},
+      {"value": "+33 4 74 85 31 03", "count": 1},
+      {"value": "+33 4 75 29 50 81", "count": 1},
+      {"value": "+33 437 57 18 19", "count": 1},
+      {"value": "+33 8 21 01 38 78", "count": 1},
+      {"value": "+33 4 50 49 62 21", "count": 1},
+      {"value": "+33 4 77 97 76 01", "count": 1},
+      {"value": "+33 8 20 82 04 03", "count": 1},
+      {"value": "+33472716830", "count": 1},
+      {"value": "+33478050678", "count": 1},
+      {"value": "+33472318109", "count": 1},
+      {"value": "+33478050245", "count": 1},
+      {"value": "+33 9 80 98 00 00", "count": 1},
+      {"value": "+33 820 02 52 02", "count": 1},
+      {"value": "+33 4 76 90 40 91", "count": 1},
+      {"value": "+33 4 78 52 09 23", "count": 1},
+      {"value": "+33 4 78 47 05 97", "count": 1},
+      {"value": "+33 476 28 91 89", "count": 1},
+      {"value": "+33 4 76 28 92 78", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "drive_through",
+    "tags": [{"value": "no", "count": 16}, {"value": "yes", "count": 5}],
+    "count": 21
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 7}, {"value": "1", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2018-06-24", "count": 2},
+      {"value": "2018-02-24", "count": 1},
+      {"value": "2017-07-18", "count": 1},
+      {"value": "2017-07-05", "count": 1},
+      {"value": "2017-09-27", "count": 1},
+      {"value": "2018-08-01", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 76 73 01 82", "count": 1},
+      {"value": "+33 4 75 29 50 88", "count": 1},
+      {"value": "+33 4 77 24 07 09", "count": 1},
+      {"value": "+33478051143", "count": 1},
+      {"value": "+33478053910", "count": 1},
+      {"value": "+33478050783", "count": 1},
+      {"value": "+33478190839", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "you can get cash from the Bar", "count": 1},
+      {"value": "Précédemment: \"Ravon Automobile\"", "count": 1},
+      {"value": "Précédemment: \"Fighter\"", "count": 1},
+      {"value": "Crédit Agricole", "count": 1},
+      {"value": "Caisse d'Epargne", "count": 1},
+      {"value": "Rénové en 2017", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q590952", "count": 2},
+      {"value": "Q746525", "count": 2},
+      {"value": "Q3125186", "count": 1},
+      {"value": "Q2874703", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Crédit agricole", "count": 2},
+      {"value": "fr:Crédit industriel et commercial", "count": 2},
+      {"value": "fr:HSBC France", "count": 1},
+      {"value": "fr:Axa Banque", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "brand:website",
+    "tags": [{"value": "https://www.credit-cooperatif.coop", "count": 6}],
+    "count": 6
+  },
+  {"key": "entrance", "tags": [{"value": "yes", "count": 5}], "count": 5},
+  {"key": "currency:EUR", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Caisse d'Epargne Loire Drôme Ardêche", "count": 1},
+      {"value": "BNP Paribas", "count": 1},
+      {"value": "BPCE", "count": 1},
+      {"value": "Caisse d'Épargne", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "bic",
+    "tags": [
+      {"value": "CMCIFR2A", "count": 1},
+      {"value": "CEPAFRPP382", "count": 1},
+      {"value": "SOGEFRPP", "count": 1},
+      {"value": "AGRIFRPP839", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "room", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "ref",
+    "tags": [{"value": "1058", "count": 1}, {"value": "1063", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "monument", "count": 1},
+      {"value": "building", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "butcher", "count": 1},
+      {"value": "newsagent", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "room",
+    "tags": [{"value": "office", "count": 1}, {"value": "shop", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Courtier en assurance", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:wikidata",
+    "tags": [{"value": "Q499707", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator:wikipedia",
+    "tags": [{"value": "fr:BNP Paribas", "count": 1}],
+    "count": 1
+  },
+  {"key": "children", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "ele", "tags": [{"value": "515", "count": 1}], "count": 1},
+  {"key": "disused:shop", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "branch",
+    "tags": [{"value": "Saint-Priest", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "insurance", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "not exactely here", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1975-07-28", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00116929", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "wall", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Agence Charles de Gaulle", "count": 1}],
+    "count": 1
+  },
+  {"key": "cuisine", "tags": [{"value": "pizza", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "stmartindherescroizat@ca-sudrhonealpes.fr", "count": 1}
+    ],
+    "count": 1
+  }
+]

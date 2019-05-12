@@ -1,0 +1,12 @@
+[
+  {"key": "leisure", "tags": [{"value": "sport", "count": 5}], "count": 5},
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "model_aerodrome", "count": 1},
+      {"value": "gymnastics", "count": 1},
+      {"value": "archery", "count": 1}
+    ],
+    "count": 3
+  }
+]

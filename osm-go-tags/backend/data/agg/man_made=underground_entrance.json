@@ -1,0 +1,17 @@
+[
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Entrée artificielle vers la riviere souterraine de Labouiche",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "underground_entrance", "count": 1}],
+    "count": 1
+  }
+]

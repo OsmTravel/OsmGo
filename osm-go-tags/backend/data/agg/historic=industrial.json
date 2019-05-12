@@ -1,0 +1,56 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "industrial", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116445", "count": 1},
+      {"value": "PA38000019", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3552683", "count": 1},
+      {"value": "Q22996674", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Usine électrique la Grande Vapeur", "count": 1},
+      {"value": "fr:Usine de moulinage de la soie de la Galicière", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1988", "count": 1},
+      {"value": "2004-02-03", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "tourism", "tags": [{"value": "museum", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.galiciere.org/", "count": 1}],
+    "count": 1
+  }
+]

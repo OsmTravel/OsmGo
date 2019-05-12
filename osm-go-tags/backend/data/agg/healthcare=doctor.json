@@ -1,0 +1,75 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "doctor", "count": 40}],
+    "count": 40
+  },
+  {"key": "amenity", "tags": [{"value": "doctors", "count": 38}], "count": 38},
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "general", "count": 7},
+      {"value": "kinesitherapy", "count": 3},
+      {"value": "radiology", "count": 3},
+      {"value": "osteopathy", "count": 2},
+      {"value": "otolaryngology", "count": 1},
+      {"value": "paediatrics", "count": 1},
+      {"value": "psychiatry", "count": 1},
+      {"value": "gynaecology", "count": 1},
+      {"value": "kinesitherapy;podiatrist;pedicure", "count": 1},
+      {
+        "value": "general;family_planning;orthophonist;dietitian;infirmier_d'état;nurses",
+        "count": 1
+      }
+    ],
+    "count": 21
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Rouquier Puech", "count": 1},
+      {"value": "CHU Saint-Etienne", "count": 1},
+      {"value": "Docteur Nicolas Bogaert", "count": 1},
+      {"value": "AGECSA", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 93 27 57", "count": 1},
+      {"value": "+33 4 76 33 06 15", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.lyonaeroports.com/shopping-services/sante-et-bien-etre/services-medicaux",
+        "count": 1
+      },
+      {
+        "value": "https://www.agecsa.fr/nos-5-centres-de-sante/centre-de-sante-mistral-eaux-claires/",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Urgences communes limitrophes, parking gratuit P2 Minute.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

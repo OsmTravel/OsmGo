@@ -1,0 +1,13 @@
+[
+  {"key": "tourism", "tags": [{"value": "theater", "count": 1}], "count": 1},
+  {
+    "key": "comment:fr",
+    "tags": [
+      {
+        "value": "inauguré le 5 novembre 1998; héberge aussi Radio Pulsar",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

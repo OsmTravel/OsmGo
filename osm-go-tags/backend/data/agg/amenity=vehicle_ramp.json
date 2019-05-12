@@ -1,0 +1,9 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "vehicle_ramp", "count": 4}],
+    "count": 4
+  },
+  {"key": "indoor", "tags": [{"value": "area", "count": 3}], "count": 3},
+  {"key": "level", "tags": [{"value": "-1;0", "count": 3}], "count": 3}
+]

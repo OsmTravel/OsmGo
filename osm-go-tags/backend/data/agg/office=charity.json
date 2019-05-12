@@ -1,0 +1,13 @@
+[
+  {"key": "office", "tags": [{"value": "charity", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Si fermé alors mettre les vêtements dans les bennes.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

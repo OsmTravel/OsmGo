@@ -1,0 +1,24 @@
+[
+  {"key": "shop", "tags": [{"value": "car_sharing", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 24 57 25", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "information", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://citelib.com/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Autopartage", "count": 1}],
+    "count": 1
+  },
+  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1}
+]

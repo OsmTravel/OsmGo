@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "music_venue", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.marchegare.fr/", "count": 1}],
+    "count": 1
+  }
+]

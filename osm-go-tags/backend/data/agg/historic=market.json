@@ -1,0 +1,18 @@
+[
+  {"key": "amenity", "tags": [{"value": "school", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "market", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2004-10-07", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA90000007", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "C16", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q22980762", "count": 1}], "count": 1}
+]

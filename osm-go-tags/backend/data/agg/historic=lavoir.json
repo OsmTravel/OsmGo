@@ -1,0 +1,38 @@
+[
+  {"key": "historic", "tags": [{"value": "lavoir", "count": 13}], "count": 13},
+  {"key": "wall", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "fountain", "count": 1},
+      {"value": "lavoir", "count": 1},
+      {"value": "shelter", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "water",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "shelter", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1929-06-25", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3219851", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Lavoir de Gex", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00116407", "count": 1}], "count": 1}
+]

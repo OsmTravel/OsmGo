@@ -1,0 +1,46 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "telephone_office", "count": 10}],
+    "count": 10
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "LN476", "count": 1},
+      {"value": "CAM44", "count": 1},
+      {"value": "LBL44", "count": 1},
+      {"value": "STL44", "count": 1},
+      {"value": "GEV44", "count": 1},
+      {"value": "CHE44", "count": 1},
+      {"value": "ISN76", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "operator", "tags": [{"value": "Orange", "count": 4}], "count": 4},
+  {
+    "key": "man_made",
+    "tags": [{"value": "telephone_office", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:PTT",
+    "tags": [
+      {"value": "21231STA", "count": 1},
+      {"value": "92050NAN", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "telecom",
+    "tags": [{"value": "central_office", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "telecom:medium",
+    "tags": [{"value": "copper", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "station", "count": 1}], "count": 1},
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1}
+]

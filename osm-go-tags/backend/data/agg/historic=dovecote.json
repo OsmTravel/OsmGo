@@ -1,0 +1,36 @@
+[
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116417", "count": 1},
+      {"value": "PA00125735", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 1}, {"value": "2", "count": 1}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "dovecote", "count": 2}], "count": 2},
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Tour de Cossieux", "count": 1},
+      {"value": "fr:Pigeonier du Moulin Grand", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1984", "count": 1}, {"value": "1993", "count": 1}],
+    "count": 2
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3533319", "count": 1}], "count": 1},
+  {"key": "man_made", "tags": [{"value": "dovecote", "count": 1}], "count": 1}
+]

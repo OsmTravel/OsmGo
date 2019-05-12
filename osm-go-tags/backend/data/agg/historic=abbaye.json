@@ -1,0 +1,48 @@
+[
+  {"key": "heritage", "tags": [{"value": "2", "count": 2}], "count": 2},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "abbaye", "count": 2}], "count": 2},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1947", "count": 1}, {"value": "1840", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00080199", "count": 1},
+      {"value": "PA00081416", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "museum", "count": 1},
+      {"value": "attraction", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q915291", "count": 1},
+      {"value": "Q306146", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Abbaye de Maubuisson", "count": 1},
+      {"value": "fr:Abbaye de Silvacane", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "amenity", "tags": [{"value": "monastery", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "C13", "count": 1}], "count": 1}
+]

@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "nursery", "count": 17}], "count": 17},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "File:Garderie \"Les ptits z'hêtres\" à Clelles.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

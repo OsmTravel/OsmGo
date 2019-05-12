@@ -1,0 +1,5 @@
+[
+  {"key": "amenity", "tags": [{"value": "mill", "count": 2}], "count": 2},
+  {"key": "place", "tags": [{"value": "hamlet", "count": 2}], "count": 2},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

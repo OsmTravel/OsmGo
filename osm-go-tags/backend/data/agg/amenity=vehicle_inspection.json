@@ -1,0 +1,96 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "vehicle_inspection", "count": 35}],
+    "count": 35
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33476226521", "count": 1},
+      {"value": "+33 4 78219545", "count": 1},
+      {"value": "+33478489524", "count": 1},
+      {"value": "+33478485821", "count": 1},
+      {"value": "+33476482520", "count": 1},
+      {"value": "+33478443297", "count": 1},
+      {"value": "+33 4 78213794", "count": 1},
+      {"value": "+33475373511", "count": 1},
+      {"value": "0479627500", "count": 1},
+      {"value": "+33 4 50 20 69 43", "count": 1},
+      {"value": "+33 4 72661215", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Contrôle technique automobile", "count": 3},
+      {
+        "value": "Contrôle technique de véhicules.Du lundi au vendredi, 08h00 - 18h00.",
+        "count": 1
+      },
+      {"value": "Contrôle Technique Automobile", "count": 1},
+      {
+        "value": "With or without appointment (FR: avec ou sans rendez-vous)CAR TECHNICAL CONTROL (FR: CONTROLE TECHNIQUE AUTOMOBILE)",
+        "count": 1
+      },
+      {"value": "Contrôle technique", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Norisko", "count": 1},
+      {"value": "Autosur", "count": 1},
+      {"value": "Securitest", "count": 1},
+      {"value": "Autovision", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.controle-technique-st-symphorien-sur-coise.securitest.fr",
+        "count": 1
+      },
+      {"value": "http://controle-technique-mornantais.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Contrôle technique", "count": 1},
+      {
+        "value": "With or without appointment (FR: avec ou sans rendez-vous)CAR TECHNICAL CONTROL (FR: CONTROLE TECHNIQUE AUTOMOBILE)",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "brand",
+    "tags": [{"value": "Norisko", "count": 1}, {"value": "Dekra", "count": 1}],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/pages/ACTM-Automobile-Contr%C3%B4le-Technique-Mornantais",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "actm69@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "car_repair", "count": 1}], "count": 1}
+]

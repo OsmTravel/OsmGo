@@ -1,0 +1,60 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "estate_agency", "count": 11}],
+    "count": 11
+  },
+  {
+    "key": "ref:FR:NAF",
+    "tags": [
+      {"value": "6831Z", "count": 8},
+      {"value": "6820A", "count": 1},
+      {"value": "68.31Z", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [
+      {"value": "50317081300052", "count": 1},
+      {"value": "50300695900012", "count": 1},
+      {"value": "80070619400035", "count": 1},
+      {"value": "32253270600171", "count": 1},
+      {"value": "32732546000043", "count": 1},
+      {"value": "44419312200561", "count": 1},
+      {"value": "81492786900010", "count": 1},
+      {"value": "66175006700240", "count": 1},
+      {"value": "40863683500030", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.orpi.com/agence.porteneuvethiers", "count": 1},
+      {"value": "http://www.agence-investimmo.fr/", "count": 1},
+      {"value": "agences-immouest.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 3 21 10 19 99", "count": 1},
+      {"value": "+33321918540", "count": 1},
+      {"value": "+321876200", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "office", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "investimmo@wanadoo.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIREN",
+    "tags": [{"value": "408636835", "count": 1}],
+    "count": 1
+  }
+]

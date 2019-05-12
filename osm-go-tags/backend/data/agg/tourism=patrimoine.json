@@ -1,0 +1,21 @@
+[
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "monument", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1840", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117094", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "patrimoine", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3374648", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Pendentif de Valence", "count": 1}],
+    "count": 1
+  }
+]

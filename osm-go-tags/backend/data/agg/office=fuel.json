@@ -1,0 +1,9 @@
+[
+  {"key": "office", "tags": [{"value": "fuel", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.td-distribution.fr/", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "Avia", "count": 1}], "count": 1}
+]

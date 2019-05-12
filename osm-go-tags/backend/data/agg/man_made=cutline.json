@@ -1,0 +1,36 @@
+[
+  {"key": "man_made", "tags": [{"value": "cutline", "count": 65}], "count": 65},
+  {
+    "key": "cutline",
+    "tags": [{"value": "border", "count": 16}, {"value": "piste", "count": 1}],
+    "count": 17
+  },
+  {
+    "key": "admin_level",
+    "tags": [{"value": "8", "count": 3}, {"value": "6", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "boundary",
+    "tags": [{"value": "administrative", "count": 4}],
+    "count": 4
+  },
+  {"key": "wood", "tags": [{"value": "coniferous", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "forest", "count": 1}], "count": 1},
+  {"key": "code:FRT", "tags": [{"value": "CHAULM&A", "count": 1}], "count": 1},
+  {
+    "key": "code:FRTNAT",
+    "tags": [{"value": "AS01306", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "trail_visibility",
+    "tags": [{"value": "intermediate", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "border_type",
+    "tags": [{"value": "departement", "count": 1}],
+    "count": 1
+  }
+]

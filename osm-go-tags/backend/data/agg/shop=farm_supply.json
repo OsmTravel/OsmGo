@@ -1,0 +1,14 @@
+[
+  {
+    "key": "description",
+    "tags": [{"value": "Vente - Réparation Machines Agricoles", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33296284431", "count": 1}], "count": 1},
+  {"key": "shop", "tags": [{"value": "farm_supply", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://campion.onlc.fr/", "count": 1}],
+    "count": 1
+  }
+]

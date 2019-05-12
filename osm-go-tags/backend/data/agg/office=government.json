@@ -1,0 +1,175 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "government", "count": 142}],
+    "count": 142
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.agglo-villefranche.fr/", "count": 1},
+      {"value": "lesgrandsateliers.org", "count": 1},
+      {
+        "value": "http://www.esrf.eu/UsersAndScience/Experiments/CRG/BM08",
+        "count": 1
+      },
+      {"value": "http://home.cern/", "count": 1},
+      {"value": "https://www.ccinordisere.fr/", "count": 1},
+      {
+        "value": "https://www.caf.fr/allocataires/caf-du-rhone/points-d-accueil/bron-permanence-administrative-sur-rendez-vous",
+        "count": 1
+      },
+      {"value": "http://www.cincinnativr.fr", "count": 1},
+      {
+        "value": "https://www.missions-locales.org/1-338-Fiche-Mission.php?id=41",
+        "count": 1
+      },
+      {"value": "https://www.ira-lyon.gouv.fr/", "count": 1},
+      {"value": "http://www.ladrome.fr/", "count": 1},
+      {"value": "http://www.isere.pref.gouv.fr/", "count": 1},
+      {
+        "value": "http://www.enroute.centre-est.developpement-durable.gouv.fr",
+        "count": 1
+      }
+    ],
+    "count": 12
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "Caisse Primaire d'Assurance Maladie", "count": 5},
+      {"value": "Caisse d'Allocations Familiales", "count": 4},
+      {"value": "La Drôme, le Département", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "public_building", "count": 6},
+      {"value": "administration", "count": 2},
+      {"value": "college", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 97 72 48", "count": 1},
+      {"value": "+33 4 74 60 11 87", "count": 1},
+      {"value": "+33 4 7688 2085", "count": 1},
+      {"value": "+33 4 78 50 71 89", "count": 1},
+      {"value": "+33 4 74 68 23 08", "count": 1},
+      {"value": "+33 4 78 62 39 89", "count": 1},
+      {"value": "+33 4 74 53 26 25", "count": 1},
+      {"value": "+33 4 69 16 62 00", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "government",
+    "tags": [
+      {"value": "tax", "count": 3},
+      {"value": "social_services", "count": 2},
+      {"value": "administrative", "count": 1},
+      {"value": "public_service", "count": 1},
+      {"value": "social_security", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Ecole primaire", "count": 1},
+      {
+        "value": "Pôle aménagement et développement durable, Direction des transports et de la mobilité, Direction de l'insertion et de l'emploi",
+        "count": 1
+      },
+      {
+        "value": "CAUE (Conseil d'Architecture, d'Urbanisme et de l'Environnement) http://www.caue74.fr/",
+        "count": 1
+      },
+      {"value": "Trésorerie des Impôts", "count": 1},
+      {"value": "Centre de permis de conduire", "count": 1},
+      {"value": "Entrelac coworking - 2ème étage", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Machine-Outils.", "count": 1},
+      {"value": "Ancienne école primaire publique", "count": 1},
+      {
+        "value": "http://www.pss-archi.eu/immeubles/FR-74012-30854.html",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "7", "count": 2}, {"value": "0", "count": 1}],
+    "count": 3
+  },
+  {"key": "admin_level", "tags": [{"value": "6", "count": 2}], "count": 2},
+  {
+    "key": "height",
+    "tags": [{"value": "0", "count": 1}, {"value": "8", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://www.rhone-alpes.direccte.gouv.fr/loire", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "811 377 324 00017", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "info@cincinnativr.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 77 97 72 49", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "street",
+    "tags": [{"value": "Chemin de la Pierre Blanche", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {
+        "value": "Communauté d'Agglomération Valence Romans Sud Rhône-Alpes",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3146060", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Hôtel de préfecture de l'Ain", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "construction_date",
+    "tags": [{"value": "1975", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "2009", "count": 1}], "count": 1}
+]

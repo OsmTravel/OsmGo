@@ -1,0 +1,24 @@
+[
+  {"key": "tourism", "tags": [{"value": "motel", "count": 12}], "count": 12},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Formule 1", "count": 1},
+      {"value": "Median", "count": 1},
+      {"value": "AccorHotels", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "stars", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1}
+]

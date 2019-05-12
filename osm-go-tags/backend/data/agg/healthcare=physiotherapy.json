@@ -1,0 +1,12 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapy", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 28 77 78", "count": 1}],
+    "count": 1
+  }
+]

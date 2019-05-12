@@ -1,0 +1,60 @@
+[
+  {"key": "shop", "tags": [{"value": "locksmith", "count": 30}], "count": 30},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 27 33 75", "count": 1},
+      {"value": "+33 478 84 24 71", "count": 1},
+      {"value": "+33 6 76 77 82 86", "count": 1},
+      {"value": "+33 4 78 89 32 05", "count": 1},
+      {"value": "+33476152811", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://osv-serrurier-vitrier-lyon.com/serrurerie/serrurier-lyon-2eme-arrondissement/",
+        "count": 1
+      },
+      {"value": "http://www.blondeau-serrurerie-ferney.fr", "count": 1},
+      {"value": "https://www.facebook.com/cssportes/", "count": 1},
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/cordonnerie-cle-minute-cordonnerie-cle-minute-geant-saint-martin-dheres",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "shoemaker", "count": 2},
+      {"value": "locksmith", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "OSV Serrurier Vitrier Lyon", "count": 1},
+      {"value": "M. Thierry Julien et M. Bertrand Colomb", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "serrurerie.blondeau@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

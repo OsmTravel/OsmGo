@@ -1,0 +1,23 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "ticket_validator", "count": 265}],
+    "count": 265
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "TER Auvergne-Rhône-Alpes", "count": 3},
+      {"value": "TAG", "count": 2},
+      {"value": "OùRA!", "count": 2},
+      {"value": "TER", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "level",
+    "tags": [{"value": "0", "count": 6}, {"value": "-1", "count": 2}],
+    "count": 8
+  },
+  {"key": "operator", "tags": [{"value": "SNCF", "count": 5}], "count": 5}
+]

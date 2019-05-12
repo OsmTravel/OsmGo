@@ -1,0 +1,133 @@
+[
+  {"key": "historic", "tags": [{"value": "house", "count": 25}], "count": 25},
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 16}, {"value": "2", "count": 1}],
+    "count": 17
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1947-07-28", "count": 2},
+      {"value": "2003-06-11", "count": 1},
+      {"value": "1947-09-10", "count": 1},
+      {"value": "1940-03-15", "count": 1},
+      {"value": "2009-09-17", "count": 1},
+      {"value": "1986-04-21", "count": 1},
+      {"value": "1984", "count": 1},
+      {"value": "1987-10-29", "count": 1},
+      {"value": "1950", "count": 1},
+      {"value": "1947-07-21", "count": 1},
+      {"value": "1994-08-19", "count": 1},
+      {"value": "1933", "count": 1},
+      {"value": "1972", "count": 1},
+      {"value": "1938", "count": 1},
+      {"value": "2005", "count": 1},
+      {"value": "1983-06-27", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117729", "count": 1},
+      {"value": "PA00118037", "count": 1},
+      {"value": "PA00116331", "count": 1},
+      {"value": "PA00116334", "count": 1},
+      {"value": "PA00116325", "count": 1},
+      {"value": "PA00116342", "count": 1},
+      {"value": "PA00116340", "count": 1},
+      {"value": "PA00116289", "count": 1},
+      {"value": "PA00116356", "count": 1},
+      {"value": "PA01000009", "count": 1},
+      {"value": "PA00116336", "count": 1},
+      {"value": "PA00132723", "count": 1},
+      {"value": "PA00116586", "count": 1},
+      {"value": "PA00116534", "count": 1},
+      {"value": "PA00116535", "count": 1},
+      {"value": "PA00116355", "count": 1},
+      {"value": "PA00117019", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3278823", "count": 1},
+      {"value": "Q22968198", "count": 1},
+      {"value": "Q22966696", "count": 1},
+      {"value": "Q3279627", "count": 1},
+      {"value": "Q15950652", "count": 1},
+      {"value": "Q15952634", "count": 1},
+      {"value": "Q15952637", "count": 1},
+      {"value": "Q3278554", "count": 1},
+      {"value": "Q3279088", "count": 1},
+      {"value": "Q3533324", "count": 1},
+      {"value": "Q22966699", "count": 1},
+      {"value": "Q22969371", "count": 1},
+      {"value": "Q3279017", "count": 1},
+      {"value": "Q3149047", "count": 1},
+      {"value": "Q3258036", "count": 1},
+      {"value": "Q2968381", "count": 1},
+      {"value": "Q22966874", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 17}],
+    "count": 17
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Maison-forte de Saint-Germain", "count": 1},
+      {"value": "fr:Villa Chapuis", "count": 1},
+      {"value": "fr:Maison, 15 rue Bourgmayer (Bourg-en-Bresse)", "count": 1},
+      {"value": "fr:Demeure Hugon (Bourg-en-Bresse)", "count": 1},
+      {"value": "fr:Hôtel de Loras", "count": 1},
+      {"value": "fr:Maison au 11 rue Teynière (Bourg-en-Bresse)", "count": 1},
+      {
+        "value": "fr:Maison au 30 rue de la République (Bourg-en-Bresse)",
+        "count": 1
+      },
+      {"value": "fr:Maison au lieu-dit la Suisse", "count": 1},
+      {"value": "fr:Maison La Rivette", "count": 1},
+      {"value": "fr:Tour de Deaul", "count": 1},
+      {
+        "value": "fr:Maison, 12 rue Maréchal-Foch (Bourg-en-Bresse)",
+        "count": 1
+      },
+      {"value": "fr:Maison Thermac", "count": 1},
+      {"value": "fr:Immeuble Dagallier", "count": 1},
+      {"value": "fr:Logis du gouverneur de Savoie", "count": 1},
+      {"value": "fr:Château d'Épierre (Cerdon)", "count": 1}
+    ],
+    "count": 15
+  },
+  {"key": "ruins", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 72 45 98", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Bibliothèque communale", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.larochedeglun.fr/Espaces-culturels", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "material", "tags": [{"value": "dry_stone", "count": 1}], "count": 1},
+  {
+    "key": "image",
+    "tags": [{"value": "File:Propriété_Les_Champollion.jpg", "count": 1}],
+    "count": 1
+  }
+]

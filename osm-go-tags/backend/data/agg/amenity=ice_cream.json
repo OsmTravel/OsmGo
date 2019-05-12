@@ -1,0 +1,52 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "ice_cream", "count": 29}],
+    "count": 29
+  },
+  {"key": "takeaway", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "shop", "tags": [{"value": "confectionery", "count": 2}], "count": 2},
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "limited", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://lasiberienne-glaces.com/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Restaurants/Amorino",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "terrace", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "Amorino", "count": 1}], "count": 1},
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "chocolate", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1},
+  {
+    "key": "ice_cream",
+    "tags": [{"value": "artisanal", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 38 70 20 08", "count": 1}],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1}
+]

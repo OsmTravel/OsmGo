@@ -1,0 +1,13 @@
+[
+  {"key": "genus", "tags": [{"value": "Tilia", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "20 m", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "tree", "count": 1}], "count": 1},
+  {"key": "genus:fr", "tags": [{"value": "Tilleul", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "tree", "count": 1}], "count": 1},
+  {
+    "key": "leaf_type",
+    "tags": [{"value": "broadleaved", "count": 1}],
+    "count": 1
+  },
+  {"key": "start_date", "tags": [{"value": "~C16", "count": 1}], "count": 1}
+]

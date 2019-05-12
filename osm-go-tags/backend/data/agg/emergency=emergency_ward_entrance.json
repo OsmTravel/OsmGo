@@ -1,0 +1,8 @@
+[
+  {
+    "key": "emergency",
+    "tags": [{"value": "emergency_ward_entrance", "count": 1}],
+    "count": 1
+  },
+  {"key": "entrance", "tags": [{"value": "emergency", "count": 1}], "count": 1}
+]

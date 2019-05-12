@@ -1,0 +1,20 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "breakwater", "count": 177}],
+    "count": 177
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "rock", "count": 42}, {"value": "rocks", "count": 1}],
+    "count": 43
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 6}], "count": 6},
+  {"key": "height", "tags": [{"value": "2", "count": 3}], "count": 3},
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "width", "tags": [{"value": "0.80", "count": 1}], "count": 1},
+  {"key": "bicycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "path", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "concrete", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
+]

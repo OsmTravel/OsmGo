@@ -1,0 +1,5 @@
+[
+  {"key": "height", "tags": [{"value": "2", "count": 2}], "count": 2},
+  {"key": "amenity", "tags": [{"value": "ladder", "count": 2}], "count": 2},
+  {"key": "material", "tags": [{"value": "metal", "count": 2}], "count": 2}
+]

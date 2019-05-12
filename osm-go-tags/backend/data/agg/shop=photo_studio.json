@@ -1,0 +1,14 @@
+[
+  {"key": "shop", "tags": [{"value": "photo_studio", "count": 5}], "count": 5},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.yannickguillaume.fr/index.php/fr/", "count": 1},
+      {
+        "value": "http://uac-stjuststrambert.fr/quartie-st-just/mademoiselle-hirondelle/",
+        "count": 1
+      }
+    ],
+    "count": 2
+  }
+]

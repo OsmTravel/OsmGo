@@ -1,0 +1,85 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "dentist", "count": 110}],
+    "count": 110
+  },
+  {
+    "key": "healthcare",
+    "tags": [{"value": "dentist", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 79 69 46 13", "count": 1},
+      {"value": "+33 4 74 65 35 68", "count": 1},
+      {"value": "+33 4 74 46 71 71", "count": 1},
+      {"value": "+33 4 74 16 06 07", "count": 1},
+      {"value": "+33 4 78 84 99 29", "count": 1},
+      {"value": "+33 4 75 26 83 64", "count": 1},
+      {"value": "+33 4 74 78 85 50", "count": 1},
+      {"value": "+33 4 75 36 44 46", "count": 1},
+      {"value": "+33 4 74 78 88 30", "count": 1},
+      {"value": "+33478443019", "count": 1},
+      {"value": "+33 4 75 61 56 30", "count": 1},
+      {"value": "+33 4 78 58 56 23", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.dentiste-philippe.com/", "count": 1},
+      {
+        "value": "http://www.mutualite-francaise-rhone.fr/index.shtml",
+        "count": 1
+      },
+      {"value": "Www.mathieudeudon.com", "count": 1},
+      {"value": "https://www.cabinetdentairemetztessy.com/", "count": 1},
+      {"value": "http://www.docteur-archer.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "limited", "count": 2}, {"value": "yes", "count": 2}],
+    "count": 4
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Docteur mathieu Deudon ", "count": 1},
+      {"value": "Laboratoire Prothèses Dentaires", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "general", "count": 1},
+      {"value": "dentistry", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "Mutuelles de France Réseau Santé", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Mutualité Française Loire", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality:fr",
+    "tags": [{"value": "Chirurgien-Dentiste", "count": 1}],
+    "count": 1
+  }
+]

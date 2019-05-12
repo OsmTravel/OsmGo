@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="marker-square-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="24px" height="36px" viewBox="-0.5 0.5 24 36" enable-background="new -0.5 0.5 24 36"
+	 xml:space="preserve">
+	<path fill="#1B75BB" d="M20.103,0.57H2.959c-1.893,0-3.365,0.487-3.365,2.472l-0.063,18.189c0,1.979,1.526,3.724,3.418,3.724h4.558
+		l4.01,11.545l3.966-11.545h4.56c1.894,0,3.488-1.744,3.488-3.724V4.166C23.531,2.18,21.996,0.57,20.103,0.57z"/>
+</svg>

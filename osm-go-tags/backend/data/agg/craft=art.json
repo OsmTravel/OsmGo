@@ -1,0 +1,13 @@
+[
+  {"key": "craft", "tags": [{"value": "art", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Village d'artistes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://centrale7.net/", "count": 1}],
+    "count": 1
+  }
+]

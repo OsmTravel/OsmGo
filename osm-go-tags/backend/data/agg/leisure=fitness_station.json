@@ -1,0 +1,99 @@
+[
+  {
+    "key": "leisure",
+    "tags": [{"value": "fitness_station", "count": 95}],
+    "count": 95
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "fitness", "count": 29},
+      {"value": "exercise", "count": 18}
+    ],
+    "count": 47
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "9", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "14", "count": 1},
+      {"value": "8", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "7", "count": 1},
+      {"value": "3", "count": 1},
+      {"value": "13", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "3A", "count": 1},
+      {"value": "4", "count": 1},
+      {"value": "15", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "5", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "mapillary",
+    "tags": [
+      {"value": "oXD4XJP9UAyCRAOrmGxTrA", "count": 3},
+      {"value": "1bShstmXlrk2NYZUxT11zA", "count": 1},
+      {"value": "xPQrfJZlV2e3NStlimtOBw", "count": 1},
+      {"value": "8sYGNUKhYrTn96R7X7tzbg", "count": 1},
+      {"value": "q9ukcECadk97UHqDJZO0WQ", "count": 1},
+      {"value": "6a39etWlv8rnaPZIlBm84g", "count": 1},
+      {"value": "Esa6WShdhPz8uZ-sJrHk4g", "count": 1},
+      {"value": "Bya1jXqKw3f5VK3U5cfemQ", "count": 1},
+      {"value": "MOPTiuVceIGGVydrN2--Ug", "count": 1},
+      {"value": "jTr-xWG1498b9zMOpAIQvw", "count": 1},
+      {"value": "X2NlKvYH7Z7CLgDW-tJlqQ", "count": 1},
+      {"value": "r2f-OpLsBUiIJ8AJIS279Q", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "fitness_station",
+    "tags": [
+      {"value": "push-up", "count": 1},
+      {"value": "abs_board", "count": 1},
+      {"value": "parallel_bars", "count": 1},
+      {"value": "balance_beam", "count": 1},
+      {"value": "giant_steps", "count": 1},
+      {"value": "horizontal_bar", "count": 1},
+      {"value": "wall", "count": 1},
+      {"value": "wall_bars", "count": 1},
+      {"value": "horizontal_ladder", "count": 1},
+      {"value": "climbing_pole", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Abdominaux", "count": 1},
+      {"value": "Saute mouton", "count": 1},
+      {"value": "Équilibre", "count": 1},
+      {"value": "Barres parallèles", "count": 1},
+      {"value": "Saut latéral", "count": 1},
+      {"value": "13 plots", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "bicycle", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "highway", "tags": [{"value": "footway", "count": 2}], "count": 2},
+  {"key": "surface", "tags": [{"value": "gravel", "count": 2}], "count": 2},
+  {"key": "mtb:scale", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.l-appart.net/clubs/lyon-carre-de-soie-69120",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "information", "tags": [{"value": "map", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "information", "count": 1}], "count": 1}
+]

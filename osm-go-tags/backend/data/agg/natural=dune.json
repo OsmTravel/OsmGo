@@ -1,0 +1,11 @@
+[
+  {"key": "natural", "tags": [{"value": "dune", "count": 25}], "count": 25},
+  {
+    "key": "leisure",
+    "tags": [{"value": "nature_reserve", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "surface", "tags": [{"value": "sand", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "military", "count": 1}], "count": 1}
+]

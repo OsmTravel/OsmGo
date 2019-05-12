@@ -1,0 +1,54 @@
+[
+  {"key": "shop", "tags": [{"value": "kitchen", "count": 84}], "count": 84},
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Schmidt", "count": 2},
+      {"value": "Mobalpa", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cuisineenscene.fr/", "count": 1},
+      {"value": "http://voglans.cuisines-schmidt.com/", "count": 1},
+      {
+        "value": "http://m.cuisineplaisir.fr/magasin/cuisine-plaisir-saint-fons",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "limited", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "created_by",
+    "tags": [{"value": "iLOE 1.9", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 9 81 72 51 46", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "http://www.conceptcuisine-br.fr/", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "794 390 096 00012", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q3007012", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Cuisinella", "count": 1}],
+    "count": 1
+  }
+]

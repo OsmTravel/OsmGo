@@ -1,0 +1,15 @@
+[
+  {"key": "shop", "tags": [{"value": "boat", "count": 2}], "count": 2},
+  {
+    "key": "email",
+    "tags": [{"value": "drivetbateaux@wanadoo.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 79 25 01 78", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {"key": "second_hand", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

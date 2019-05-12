@@ -1,0 +1,9 @@
+[
+  {"key": "craft", "tags": [{"value": "roofer", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Etanchéïté", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1}
+]

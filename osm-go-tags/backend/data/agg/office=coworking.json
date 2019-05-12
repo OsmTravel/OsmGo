@@ -1,0 +1,78 @@
+[
+  {"key": "office", "tags": [{"value": "coworking", "count": 12}], "count": 12},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 4}, {"value": "yes", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Grand espace de coworking avec une dynamique écoresponsable. Lieu ouvert à toute personne souhaitant disposer d'un espace de travail professionnel, collaboratif et convivial.",
+        "count": 1
+      },
+      {
+        "value": "Infolab et epace de coworking - est ouverte aux porteurs de projets, entrepreneurs, artistes, créatifs qui interviennent dans le numérique, l'innovation sociale, la culture, la transition énergétiques, la communication.",
+        "count": 1
+      },
+      {
+        "value": "LOBSTER est un espace de mutualisation créé pour et à l’initiative de professionnels de la musique.",
+        "count": 1
+      },
+      {
+        "value": "Espace de Coworking associatif des Balcons de Belledonne",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://www.ecoworking.fr/", "count": 1},
+      {"value": "http://www.la-coop.net", "count": 1},
+      {"value": "https://boostinlyon.fr/", "count": 1},
+      {"value": "http://www.lacocottedesadrets.fr", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [{"value": "coworking_space", "count": 3}],
+    "count": 3
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 76 49 07 72", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {
+        "value": "accessible et places de parking PMR disponibles à proximité https://frama.link/places-PMR",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "bienvenue@lacocottedesadrets.fr", "count": 1}],
+    "count": 1
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1}
+]

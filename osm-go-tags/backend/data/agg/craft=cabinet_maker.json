@@ -1,0 +1,12 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "cabinet_maker", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.atelierdesgambins.com/", "count": 1}],
+    "count": 1
+  }
+]

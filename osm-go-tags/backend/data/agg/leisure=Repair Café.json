@@ -1,0 +1,73 @@
+[
+  {
+    "key": "service:small_electronics_device:repair",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "description:fr",
+    "tags": [
+      {
+        "value": "Apportez un objet défaillant ou cassé pour le réparer gratuitement tout en bénéficiant de conseils de bricoleurs professionnels ou amateurs locaux dans différents domaines: cycles et vélos, objets électroniques, petit électroménager.",
+        "count": 1
+      },
+      {
+        "value": "Des bricoleurs bénévoles réparent petit électroménager, ordinateurs, vêtements... que tout le monde peut apporter.",
+        "count": 1
+      },
+      {
+        "value": "Réparation et diagnostic de petit électro-ménager, informatique, vêtements et vélos.",
+        "count": 1
+      },
+      {
+        "value": "Ateliers de réparation ouvert au public le dernier jeudi du mois (sauf vacances scolaires et jours fériés) de 18h30 à 20h30 à la Brasserie Saveur et Sillon.",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "repair",
+    "tags": [{"value": "assisted_self_service", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "Repair Café", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "service:computer:repair",
+    "tags": [{"value": "yes", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "service:bicycle:repair",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "office", "tags": [{"value": "association", "count": 3}], "count": 3},
+  {
+    "key": "service:camera:repair",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "service_times",
+    "tags": [
+      {"value": "Mo[3] 18:30-20:30", "count": 1},
+      {
+        "value": "Pas de permanence, pas de lieu fixe. En général un samedi matin par mois dans les communes du vignoble (9h30 - 12h30)",
+        "count": 1
+      },
+      {"value": "[Th] 18h30-20h30; SH PH Off", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "workshop", "count": 2}], "count": 2},
+  {
+    "key": "service:fabrik:repair",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  }
+]

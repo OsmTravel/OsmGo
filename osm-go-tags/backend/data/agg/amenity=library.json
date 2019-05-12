@@ -1,0 +1,623 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "library", "count": 616}],
+    "count": 616
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.bm-st-etienne.fr", "count": 6},
+      {"value": "www.bm-grenoble.fr", "count": 2},
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=206&Itemid=43",
+        "count": 2
+      },
+      {
+        "value": "http://www.musee-art-industrie.saint-etienne.fr/centre-de-documentation",
+        "count": 2
+      },
+      {"value": "http://mediathequestmartin.blogspot.fr", "count": 1},
+      {"value": "http://www.pignonsurrue.org/", "count": 1},
+      {"value": "http://www.biblioccpayscruseilles.net", "count": 1},
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=206&Itemid=40",
+        "count": 1
+      },
+      {"value": "http://www.loire.fr", "count": 1},
+      {"value": "http://www.archilibrairies.com/", "count": 1},
+      {
+        "value": "http://mediatheque.rivedegier.fr/OpacWebAloes/index.aspx",
+        "count": 1
+      },
+      {"value": "mollans.info/bibliotheque", "count": 1},
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=252&Itemid=54",
+        "count": 1
+      },
+      {
+        "value": "https://www.bm-lyon.fr/15-bibliotheques-et-un-bibliobus/bibliotheque-du-4e-croix-rousse",
+        "count": 1
+      },
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=226&Itemid=52",
+        "count": 1
+      },
+      {"value": "http://www.sevrier.fr/bibliotheque.htm", "count": 1},
+      {"value": "http://www.bibliomontblanc.com", "count": 1},
+      {"value": "http://www.bm-valence.fr/", "count": 1},
+      {"value": "http://cortecs.org", "count": 1},
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=213&Itemid=45",
+        "count": 1
+      },
+      {"value": "https://www.bm-grenoble.fr/667-saint-bruno.htm", "count": 1},
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=212&Itemid=42",
+        "count": 1
+      },
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=217&Itemid=65",
+        "count": 1
+      },
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=224&Itemid=47",
+        "count": 1
+      },
+      {"value": "http://www.stmartin-bellevue.fr/bibliotheque.htm", "count": 1},
+      {"value": "http://www.les-passeurs-dsv.fr/", "count": 1},
+      {
+        "value": "http://www.st-etienne-du-bois.fr/spip.php?rubrique193",
+        "count": 1
+      },
+      {"value": "http://mediatheques.valenceromansagglo.fr", "count": 1},
+      {
+        "value": "http://www.diocese-saintetienne.fr/Bibliotheque-Andrei-Roublev.html",
+        "count": 1
+      },
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=214&Itemid=46",
+        "count": 1
+      },
+      {"value": "http://www.memorial-loire.fr", "count": 1},
+      {
+        "value": "https://www.bm-lyon.fr/16-bibliotheques-et-un-bibliobus/bibliotheque-du-7e-guillotiere/",
+        "count": 1
+      },
+      {
+        "value": "http://www.bm-grenoble.fr/644-bibliotheque-arlequin.htm",
+        "count": 1
+      },
+      {
+        "value": "http://www.bm-lyon.fr/15-bibliotheques-et-un-bibliobus/Bibliotheque-du-9e-St-Rambert/",
+        "count": 1
+      },
+      {
+        "value": "http://www.ac-grenoble.fr/cio-annonaytournon/spip.php?article635",
+        "count": 1
+      },
+      {"value": "http://laroche.e-sezhame.fr/index", "count": 1},
+      {"value": "http://mairie-millery.fr/-Bibliotheque-.html", "count": 1},
+      {"value": "http://www.mediatheque-gilhoc.com/", "count": 1},
+      {
+        "value": "http://bibliotheques.agglo-annecy.fr/index.php?option=com_content&view=article&id=206&Itemid=41",
+        "count": 1
+      },
+      {"value": "http://bibliotheque-beauchastel.org/", "count": 1},
+      {
+        "value": "http://www.saint-georges-les-bains.fr/Bibliotheque",
+        "count": 1
+      },
+      {"value": "portaildoc.univ-lyon1.fr", "count": 1},
+      {"value": "http://www.mairie-gleize.fr", "count": 1},
+      {
+        "value": "http://www.cc-valsaixisable.fr/index.php?page=informations-pratiques",
+        "count": 1
+      },
+      {
+        "value": "http://www.ville-st-donat.fr/sport-culture-et-loisirs/mediatheque.html",
+        "count": 1
+      },
+      {
+        "value": "http://ccnoiretable.c3rb.org/index.php?option=com_content&view=article&id=38&Itemid=24",
+        "count": 1
+      },
+      {"value": "http://mediatheque.fleurie.fr/", "count": 1},
+      {"value": "http://80.11.155.134/", "count": 1},
+      {"value": "http://www.lebouquetdesbibliotheques.fr/", "count": 1},
+      {"value": "http://www.cedrats.org", "count": 1},
+      {
+        "value": "http://www.bm-saint-priest.fr/opacwebaloes/index.aspx?IdPage=954",
+        "count": 1
+      },
+      {
+        "value": "http://www.ucly.fr/bibliotheque-universitaire-campus-saint-paul-81055.kjsp",
+        "count": 1
+      },
+      {
+        "value": "http://www.bm-lyon.fr/16-bibliotheques-et-un-bibliobus/bibliotheque-du-6e/",
+        "count": 1
+      },
+      {"value": "http://ternay.fr", "count": 1},
+      {
+        "value": "http://www.mairie-lecoteau.fr/index.php/La-m%C3%A9diath%C3%A8que?idpage=99&afficheMenuContextuel=true",
+        "count": 1
+      },
+      {"value": "http://www.bibliotheque-diderot.fr/", "count": 1},
+      {
+        "value": "http://mediatheques.villeurbanne.fr/2016/05/mediatheque-du-tonkin/",
+        "count": 1
+      },
+      {
+        "value": "https://www.bm-lyon.fr/15-bibliotheques-et-un-bibliobus/bibliotheque-du-7e-jean-mace/",
+        "count": 1
+      },
+      {"value": "https://www.bm-grenoble.fr/", "count": 1},
+      {"value": "http://www.savoie-biblio.com", "count": 1},
+      {"value": "http://www.laturbine.fr/", "count": 1},
+      {
+        "value": "http://www.novalaise.fr/fr/education-culture/bibliotheque/bibliotheque.htm",
+        "count": 1
+      },
+      {"value": "http://archives.saint-etienne.fr", "count": 1},
+      {"value": "http://mediatheques.lesvallonsdelatour.fr", "count": 1},
+      {"value": "http://www.bm-chassieu.fr/", "count": 1},
+      {
+        "value": "https://www.bm-lyon.fr/15-bibliotheques-et-un-bibliobus/bibliotheque-du-1er/",
+        "count": 1
+      },
+      {"value": "http://portaildoc.univ-lyon1.fr/", "count": 1},
+      {"value": "http://scd.docinsa.insa-lyon.fr", "count": 1},
+      {
+        "value": "http://portaildoc.univ-lyon1.fr/bibliotheques/bibliotheques-d-education/bu-education-lyon-croix-rousse-742244.kjsp",
+        "count": 1
+      },
+      {"value": "http://oullins.bibli.fr/", "count": 1},
+      {"value": "https://www.bm-lyon.fr/", "count": 1},
+      {"value": "http://www.lecture.ain.ff", "count": 1},
+      {"value": "www.bm-challesleseaux.net", "count": 1},
+      {"value": "http://bibliothequelamuraz.wordpress.com", "count": 1},
+      {"value": "https://mediatheque.sallanches.fr/", "count": 1},
+      {"value": "http://mediatheque.ladrome.fr/crest/", "count": 1},
+      {
+        "value": "http://www.club-onlyou.com/Grand-Place/Services/Bibliotheque-Kateb-Yacine",
+        "count": 1
+      }
+    ],
+    "count": 85
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 78 35 43 81", "count": 2},
+      {"value": "+33 4 78 46 12 34", "count": 1},
+      {"value": "+33 4 50 33 87 00", "count": 1},
+      {"value": "+33  4 76 96 82 95", "count": 1},
+      {"value": "+334 38 12 25 41", "count": 1},
+      {"value": "+33 4 50 44 22 85", "count": 1},
+      {"value": "+33 4 77 43 35 20", "count": 1},
+      {"value": "+33 4 76 34 46 24", "count": 1},
+      {"value": "+33 4 77 83 07 50", "count": 1},
+      {"value": "+33 4 75 27 78 59", "count": 1},
+      {"value": "+33 4 50 66 29 36", "count": 1},
+      {"value": "+33 4 72 10 65 40", "count": 1},
+      {"value": "+33 4 50 22 50 74", "count": 1},
+      {"value": "+33 4 76 48 16 45", "count": 1},
+      {"value": "+33 4 50 52 68 80", "count": 1},
+      {"value": "+33 4 50 47 96 63", "count": 1},
+      {"value": "+33 4 75 79 23 70", "count": 1},
+      {"value": "+33 4 50 23 11 16", "count": 1},
+      {"value": "+33 4 50 33 87 19", "count": 1},
+      {"value": "+33 4 50 88 38 10", "count": 1},
+      {"value": "+33 4 50 24 06 34", "count": 1},
+      {"value": "+33 4 50 27 27 35", "count": 1},
+      {"value": "+33 4 50 09 73 48", "count": 1},
+      {"value": "+33 4 50 32 12 80", "count": 1},
+      {"value": "+33 4 79 24 59 83", "count": 1},
+      {"value": "+33 4 77 24 25 59", "count": 1},
+      {"value": "+33 4 76 22 92 10", "count": 1},
+      {"value": "+33 4 78 83 11 77", "count": 1},
+      {"value": "+33 4 75 36 40 00", "count": 1},
+      {"value": "+33 475332967", "count": 1},
+      {"value": "+33 4 50 33 87 41", "count": 1},
+      {"value": "+33478485929", "count": 1},
+      {"value": "+33474685663", "count": 1},
+      {"value": "+33 4 75 45 47 56", "count": 1},
+      {"value": "+33 477247753", "count": 1},
+      {"value": "+33 4 74 04 11 91", "count": 1},
+      {"value": "+33 4 78500736", "count": 1},
+      {"value": "+33 4 79 60 04 04", "count": 1},
+      {"value": "+33 4 78 29 90 67", "count": 1},
+      {"value": "+33 4 81922160", "count": 1},
+      {"value": "+33 4 74 20 38 51", "count": 1},
+      {"value": "+33 4 26 84 18 65", "count": 1},
+      {"value": "+33 4 78 88 03 41", "count": 1},
+      {"value": "+33 4 72 49 75 53", "count": 1},
+      {"value": "04 77 67 83 93", "count": 1},
+      {"value": "+33 4 37 37 65 00", "count": 1},
+      {"value": "+334 76 86 21 00", "count": 1},
+      {"value": "+33 4 76 32 24 51", "count": 1},
+      {"value": "+33 4 79 28 79 28", "count": 1},
+      {"value": "+33 4 72 43 28 30", "count": 1},
+      {"value": "+33 4 72 43 61 87", "count": 1},
+      {"value": "+33 4 72 07 30 93", "count": 1},
+      {"value": "+33 4 26 04 11 71", "count": 1},
+      {"value": "+33 4 74 45 22 06", "count": 1},
+      {"value": "+33 4 50 09 85 89", "count": 1},
+      {"value": "+33 4 79 72 62 35", "count": 1},
+      {"value": "+33 4 50 94 50 00", "count": 1},
+      {"value": "+33 4 50 42 12 42", "count": 1},
+      {"value": "+33 4 50 93 95 49", "count": 1},
+      {"value": "+33 4 75 25 60 50", "count": 1},
+      {"value": "+33 4 38 12 46 20", "count": 1}
+    ],
+    "count": 62
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Saint-Étienne", "count": 9},
+      {"value": "Ville de Lyon", "count": 6},
+      {"value": "Mairie", "count": 2},
+      {
+        "value": "Service Commun de Documentation de l’Université Claude",
+        "count": 1
+      },
+      {"value": "Conseil Général de la Loire", "count": 1},
+      {"value": "Ense³", "count": 1},
+      {"value": "Mairie de Cessy", "count": 1},
+      {
+        "value": "École Supérieure d'Art et de Design de Saint-Étienne",
+        "count": 1
+      },
+      {"value": "Valence Romans Agglo", "count": 1},
+      {"value": "Diocèse de Saint-Étienne", "count": 1},
+      {"value": "Saint-Étienne Métropole", "count": 1},
+      {"value": "Communauté de communes du pays de Cruseilles", "count": 1},
+      {"value": "Chavanoz", "count": 1},
+      {"value": "Municipalité d'Ambilly", "count": 1},
+      {"value": "Mairie de Modane", "count": 1},
+      {"value": "Ville de Grenoble", "count": 1},
+      {"value": "Cedrats", "count": 1},
+      {"value": "La Rochette", "count": 1},
+      {"value": "1155 route de Thonon", "count": 1},
+      {"value": "Mairie des Gets", "count": 1},
+      {"value": "Mairie de Montriond", "count": 1},
+      {"value": "Ville de Fontaine", "count": 1},
+      {"value": "Centre Culturel", "count": 1},
+      {"value": "Université Catholique de Lyon", "count": 1},
+      {"value": "Association Vie-tamine", "count": 1},
+      {"value": "Académie de Grenoble", "count": 1},
+      {"value": "Ville de Barberaz", "count": 1},
+      {"value": "Ville de Rumilly", "count": 1},
+      {"value": "Ville du Coteau", "count": 1},
+      {"value": "Mairie de Villeurbanne", "count": 1},
+      {"value": "Université Jean Monnet - Site Tréfilerie", "count": 1},
+      {"value": "INSA de Lyon", "count": 1},
+      {"value": "Université Lyon I", "count": 1},
+      {"value": "Centre Social", "count": 1},
+      {"value": "Université Savoie Mont Blanc", "count": 1},
+      {"value": "Ville d'Oullins", "count": 1},
+      {"value": "CAPI", "count": 1},
+      {"value": "Département de l'Ain", "count": 1},
+      {"value": "Commune d'Arvillard", "count": 1},
+      {"value": "Burzet", "count": 1},
+      {"value": "Loire-Forez", "count": 1},
+      {"value": "Commune de Saint-Genis-Pouilly", "count": 1},
+      {"value": "Mairie de Sallanches", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 48}, {"value": "limited", "count": 5}],
+    "count": 53
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "yes", "count": 13},
+      {"value": "wlan", "count": 11},
+      {"value": "no", "count": 6},
+      {"value": "public", "count": 1}
+    ],
+    "count": 31
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "bib9-duchere@bm-lyon.fr", "count": 2},
+      {"value": "bibliotheque.argonay@wanadoo.fr", "count": 1},
+      {"value": "bibliotheques@agglo-annecy.fr", "count": 1},
+      {"value": "bm.internationale@bm-grenoble.fr", "count": 1},
+      {"value": "mediathequedupercy@cdctrieves.fr", "count": 1},
+      {"value": "bibpringy@orange.fr", "count": 1},
+      {"value": "mediatheque.lmichel@mairie-meythet.fr", "count": 1},
+      {"value": "bibliotheque@seyssinet-pariset.fr", "count": 1},
+      {"value": "bibpom@wanadoo.fr", "count": 1},
+      {"value": "bibprairie@agglo-annecy.fr", "count": 1},
+      {"value": "bibromains@agglo-annecy.fr", "count": 1},
+      {"value": "biblilyaude@epagny74.fr", "count": 1},
+      {"value": "bibliotheque@metz-tessy.fr", "count": 1},
+      {"value": "bibnovel@agglo-annecy.fr", "count": 1},
+      {"value": "bibliotheque@stmartin-bellevue.fr", "count": 1},
+      {"value": "mediathequestmartin@wanadoo.fr", "count": 1},
+      {"value": "bibliotheque@mairie-gleize.fr", "count": 1},
+      {"value": "artotheque@mairie-saint-priest.fr", "count": 1},
+      {"value": "bibmath@univ-lyon1.fr", "count": 1},
+      {"value": "mediatheque@bievre-isere.com", "count": 1},
+      {"value": "biblio@univ-catholyon.fr", "count": 1},
+      {"value": "bm.etude@bm-grenoble.fr", "count": 1},
+      {"value": "busciences.info@univ-lyon1.fr", "count": 1},
+      {"value": "doc@insa-lyon.fr", "count": 1},
+      {"value": "bibliotheque.des.tilleuls@wanadoo.fr", "count": 1},
+      {"value": "bibliotheque.lamuraz@gmail.com", "count": 1},
+      {"value": "mediatheque@sallanches.fr", "count": 1}
+    ],
+    "count": 28
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "BRISE = Bibliothèques en Réseau Informatisé de Saint-Étienne",
+        "count": 13
+      },
+      {
+        "value": "Meme si c'est \"Bibliothèque municipale\" qui est au fronton, il vaut mieux le garder en alt_name parce qu'il n'est pas assez spécifique.",
+        "count": 1
+      }
+    ],
+    "count": 14
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "BRISE-Ville", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Gratuit. Réseau des bibliothèques du Haut-Chablais.",
+        "count": 2
+      },
+      {"value": "Gratuit. Réseau bibliothèques Haut-Chablais", "count": 1},
+      {"value": "Bibliothèque municipale", "count": 1},
+      {
+        "value": "Annexe de la Bibliothèque Roger-Martin du Gard de Saint-Fons",
+        "count": 1
+      },
+      {
+        "value": "Située au 1er étage de la Mairie. Réseau Bibliothèques du Haut-Chablais. Gratuit  ",
+        "count": 1
+      },
+      {"value": "Située au 1er étage de la Mairie. Gratuit", "count": 1},
+      {"value": "fr:Ancienne mairie de Marlieux", "count": 1},
+      {
+        "value": "Située sous la Mairie. Gratuit. Réseau Bibliothèques Haut-Chablais",
+        "count": 1
+      },
+      {"value": "Gratuit jusqu'à 14 ans. ", "count": 1},
+      {"value": "architecture, design, art", "count": 1},
+      {
+        "value": "Service du Département de l'Ain, la Direction de la Lecture Publique dispose d'un bâtiment central à Bourg-en-Bresse et d'annexes dans le reste du département.",
+        "count": 1
+      },
+      {"value": "mediathèque", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "1", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "1.75", "count": 1},
+      {"value": "1.5", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q16532538", "count": 1},
+      {"value": "Q8622", "count": 1},
+      {"value": "Q22967377", "count": 1},
+      {"value": "Q29548831", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "url",
+    "tags": [
+      {"value": "http://parlonzalabib.canalblog.com/", "count": 1},
+      {
+        "value": "http://www.ville-saint-priest.fr/Artotheque.1771.0.html",
+        "count": 1
+      },
+      {"value": "http://mediatheque.ville-st-maurice-exil.fr", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "books", "count": 1},
+      {"value": "video", "count": 1},
+      {"value": "stationery", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "room",
+    "tags": [{"value": "library", "count": 2}, {"value": "shop", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C13", "count": 1},
+      {"value": "1986", "count": 1},
+      {"value": "1641", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Bibliothèque municipale classée#Rhône-Alpes", "count": 1},
+      {"value": "fr:Bibliothèque Municipale de Chambéry", "count": 1},
+      {"value": "fr:Bibliothèque municipale de Lyon", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 1}, {"value": "public", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Ce n'est plus une bibliothèque (remplacée probablement pour la médiathèque du cairn) mais une \"maison de jeune\". Quel type d'objet utiliser ?",
+        "count": 1
+      },
+      {"value": "inaccurate position", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "mental_disabled:description:fr",
+    "tags": [{"value": "Accessible aux handicapés mentaux.", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "municipal:facilities:fr",
+    "tags": [{"value": "culturels", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "photo",
+    "tags": [{"value": "http://i.imgur.com/q10EbX4.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "club", "count": 1}], "count": 1},
+  {
+    "key": "walking_disability:description:fr",
+    "tags": [
+      {
+        "value": "Accès possible aux fauteuils roulants et aux PMR. Seule une partie de la médiathèque est accessible. Certains espace (musique/forum/exposition) sont difficiles d'accès ou inaccessibles.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "wheelchair:description:fr",
+    "tags": [
+      {
+        "value": "Seuls les sanitaires de l'espace roman (anciennement société) sont accessibles aux fauteuils roulants.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Le Rize Centre Mémoire et Société", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:isil",
+    "tags": [{"value": "FR-740106201", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "access:blind",
+    "tags": [{"value": "limited", "count": 1}],
+    "count": 1
+  },
+  {"key": "access:deaf", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:ssid",
+    "tags": [{"value": "Wifi Bibliothèque", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "air_conditioning",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "access:mental_disabled",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "blind:description:fr",
+    "tags": [
+      {
+        "value": "Accès possible aux aveugles et aux malvoyants - L'ascenseur n'est pas en conformité avec les normes en vigueur.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "is_in",
+    "tags": [{"value": "Saint-Étienne", "count": 1}],
+    "count": 1
+  },
+  {"key": "roof:levels", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "roof:material",
+    "tags": [{"value": "roof_tiles", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1978-07-12", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00117644", "count": 1}], "count": 1},
+  {
+    "key": "deaf:description:fr",
+    "tags": [
+      {
+        "value": "Accès possible aux sourds et aux malentendants - L'ascenseur n'est pas en conformité avec les normes en vigueur.",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "railing", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "toilets", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

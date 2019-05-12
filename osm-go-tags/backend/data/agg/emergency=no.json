@@ -1,0 +1,175 @@
+[
+  {"key": "emergency", "tags": [{"value": "no", "count": 66}], "count": 66},
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "hospital", "count": 46},
+      {"value": "doctors", "count": 4},
+      {"value": "retirement_home", "count": 1},
+      {"value": "social_facility", "count": 1},
+      {"value": "clinic", "count": 1}
+    ],
+    "count": 53
+  },
+  {"key": "agricultural", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "motorcar", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "paved", "count": 2},
+      {"value": "unpaved", "count": 1},
+      {"value": "asphalt", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "highway",
+    "tags": [{"value": "service", "count": 3}, {"value": "track", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "bicycle",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 59 16 60", "count": 1},
+      {"value": "+33 4 37 42 00 14", "count": 1},
+      {"value": "+33 4 79 39 04 80", "count": 1},
+      {"value": "+33 4 75 85 16 31", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "goods", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "hgv", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "hov", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "psv", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "access", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "motor_vehicle",
+    "tags": [{"value": "no", "count": 2}, {"value": "yes", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Chemin d'Espérance", "count": 1},
+      {"value": "Hospices Civils de Lyon", "count": 1},
+      {"value": "Association hospitalière Sainte-marie", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q24931545", "count": 1},
+      {"value": "Q22968426", "count": 1},
+      {"value": "Q54860066", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "horse",
+    "tags": [{"value": "yes", "count": 2}, {"value": "no", "count": 1}],
+    "count": 3
+  },
+  {"key": "motorcycle", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "vehicle", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.cheminsdesperance.org/ses-etablissements-et-services/43-20-etablissements-en-france/7-albertville.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.ahsm.eu/implantations/centre-de-soins-daccompagnement-et-de-prevention-en-addictologie-la-cerisaie-csapa",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "EHPAD", "count": 1},
+      {"value": "Centre Médico-Psychologique Adultes", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Centre Léon-Bérard", "count": 1},
+      {"value": "fr:Centre hospitalier Lyon Sud", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "healthcare", "tags": [{"value": "doctor", "count": 2}], "count": 2},
+  {"key": "tourist_bus", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "payment:cryptocurrencies",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:notes", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:coins", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "dispensing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fax",
+    "tags": [{"value": "+ 33 4 75 85 39 31", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1900-02-16", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00118235", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "cemetery", "count": 1}], "count": 1},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.uriage-les-bains.com/Documents/Circuit%20des%20Gardes%20N9.pdf",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "width", "tags": [{"value": "0.5", "count": 1}], "count": 1},
+  {
+    "key": "payment:electronic_purses",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "service", "tags": [{"value": "alley", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "cerisaie-inf@privas-groupe-sainte-marie.com", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "2", "count": 1}], "count": 1}
+]

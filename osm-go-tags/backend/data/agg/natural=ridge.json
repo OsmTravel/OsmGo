@@ -1,0 +1,20 @@
+[
+  {"key": "natural", "tags": [{"value": "ridge", "count": 45}], "count": 45},
+  {"key": "description", "tags": [{"value": "ravin", "count": 2}], "count": 2},
+  {
+    "key": "boundary",
+    "tags": [{"value": "administrative", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "admin_level",
+    "tags": [{"value": "7", "count": 1}, {"value": "8", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "border_type",
+    "tags": [{"value": "arrondissement", "count": 1}],
+    "count": 1
+  },
+  {"key": "arete", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

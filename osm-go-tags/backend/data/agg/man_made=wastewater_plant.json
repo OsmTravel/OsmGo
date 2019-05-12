@@ -1,0 +1,126 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "wastewater_plant", "count": 659}],
+    "count": 659
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "industrial", "count": 28},
+      {"value": "basin", "count": 4},
+      {"value": "reservoir", "count": 3},
+      {"value": "grass", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "fence", "count": 23},
+      {"value": "wall", "count": 1},
+      {"value": "hedge", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Commune de Sail-sous-Couzan", "count": 2},
+      {"value": "Chalet du Plan du Sel", "count": 2},
+      {"value": "CCCA", "count": 2},
+      {"value": "Stéphanoise des Eaux", "count": 2},
+      {"value": "communauté de communes du canton d'albens", "count": 1},
+      {"value": "Sivom de Montmélian", "count": 1},
+      {"value": "Syndicat d'Assainissement Des Îles", "count": 1},
+      {"value": "Communauté de Communes du Massif du Vercors", "count": 1},
+      {"value": "Lyonnaise des Eaux", "count": 1},
+      {"value": "Saint-Étienne Métropole", "count": 1},
+      {"value": "Veolia-Eau", "count": 1},
+      {"value": "Syndicat d'assainissement du Bréda (SABRE)", "count": 1},
+      {"value": "communauté de communes du canton d'Albens", "count": 1},
+      {"value": "Communauté d'agglomération du Pays voironnais", "count": 1},
+      {"value": "Syndicat des Eaux de L'Isable", "count": 1},
+      {"value": "Eau Claire", "count": 1},
+      {"value": "Mairie de Tramolé", "count": 1},
+      {"value": "Communauté urbaine de Lyon", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "ref:sandre",
+    "tags": [
+      {"value": "0442237S0002", "count": 1},
+      {"value": "0442218S0019", "count": 1},
+      {"value": "0442223S0001", "count": 1},
+      {"value": "0442195S0002", "count": 1},
+      {"value": "0442195S0001", "count": 1},
+      {"value": "0442189S0004", "count": 1},
+      {"value": "0442218S0020", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Épuration biologique du petit lait produit par la ferme d'alpage.",
+        "count": 4
+      }
+    ],
+    "count": 4
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "height",
+    "tags": [{"value": "2", "count": 1}, {"value": "1", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "Semble être une station d'épuration, mais n'apparait pas sur http://assainissement.developpement-durable.gouv.fr",
+        "count": 1
+      },
+      {"value": "Forme estimée", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Biologique avec nitrification, dénitrification et déphosphatation",
+        "count": 1
+      },
+      {"value": "à confirmer", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "fence_type", "tags": [{"value": "wire", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.vercors.org/STEP.html", "count": 1}],
+    "count": 1
+  },
+  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
+  {
+    "key": "inscription",
+    "tags": [{"value": "Assainissement relèvement des eaux usées", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "60901451003", "count": 1}], "count": 1},
+  {
+    "key": "nom",
+    "tags": [{"value": "Ancienne station d'épuration de Ferney", "count": 1}],
+    "count": 1
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "service", "count": 1}], "count": 1},
+  {
+    "key": "capacity:persons",
+    "tags": [{"value": "148333", "count": 1}],
+    "count": 1
+  }
+]

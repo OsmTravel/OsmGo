@@ -1,0 +1,40 @@
+[
+  {
+    "key": "craft",
+    "tags": [{"value": "photographer", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 20 20", "count": 1},
+      {"value": "+33 4 74 31 07 38", "count": 1},
+      {"value": "+33 6 21 56 23 74", "count": 1},
+      {"value": "+33 4 76 34 93 63", "count": 1},
+      {"value": "+33476255035", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.vienne-online.com/sites/phox/", "count": 1},
+      {"value": "http://www.nohajohanna-photographie.fr/", "count": 1},
+      {"value": "http://www.graindereve.com/", "count": 1},
+      {"value": "http://lucet-fabien.fr", "count": 1},
+      {"value": "www.planete-photo.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "shop", "tags": [{"value": "photo", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "M. Lucet Fabien", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "visee_photo@yahoo.fr", "count": 1}],
+    "count": 1
+  }
+]

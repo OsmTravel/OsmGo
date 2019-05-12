@@ -1,0 +1,4 @@
+[
+  {"key": "entrance", "tags": [{"value": "emergency", "count": 2}], "count": 2},
+  {"key": "emergency", "tags": [{"value": "exit", "count": 2}], "count": 2}
+]

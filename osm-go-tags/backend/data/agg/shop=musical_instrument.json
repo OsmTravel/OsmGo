@@ -1,0 +1,79 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "musical_instrument", "count": 46}],
+    "count": 46
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.pianos-lyon.com", "count": 2},
+      {"value": "http://www.latelierdemusique.fr/", "count": 1},
+      {"value": "www.bellecour-musiques.fr", "count": 1},
+      {"value": "http://www.laboiteamusique.com/", "count": 1},
+      {"value": "http://bonlutherie.fr", "count": 1},
+      {"value": "http://www.stars-music.fr/magasin-lyon.html", "count": 1},
+      {"value": "http://www.musicchange.com/", "count": 1},
+      {"value": "http://www.pascal-lavigne.fr", "count": 1},
+      {"value": "http://www.sgm01.com/", "count": 1},
+      {"value": "http://www.la-croche.com", "count": 1},
+      {"value": "http://www.baguetterie.fr/baguetterie_lyon", "count": 1},
+      {"value": "http://pop-musique-oyonnax.com", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 72 41 92 24", "count": 2},
+      {"value": "+33 4 74 85 52 37", "count": 1},
+      {"value": "+33 4 74 85 60 63", "count": 1},
+      {"value": "+33 4 72 56 27 00", "count": 1},
+      {"value": "+33 4 37 70 70 40", "count": 1},
+      {"value": "+33 4 76 70 01 68", "count": 1},
+      {"value": "+33 4 50 42 71 95", "count": 1},
+      {"value": "+33 4 74 77 09 90", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Luthier : fabrication, réparation, réglages de guitares et bases",
+        "count": 1
+      },
+      {
+        "value": "Instruments de musique pour débutant et professionnel. Piano, guitare, matériel dj, studio, sonorisation, casque, enceinte. Tout l'équipement pour jouer, composer, enregistrer votre musique.",
+        "count": 1
+      },
+      {"value": "Magasin de pianos", "count": 1},
+      {"value": "École de musique et vente d'instruments", "count": 1},
+      {"value": "Vente et location de pianos", "count": 1},
+      {"value": "Magasin de l'autre côté du square", "count": 1},
+      {"value": "Instruments à percussion", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "second_hand", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "craft",
+    "tags": [
+      {"value": "handicraft", "count": 1},
+      {"value": "piano_tuner", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 2}], "count": 2},
+  {"key": "wheelchair", "tags": [{"value": "limited", "count": 2}], "count": 2},
+  {
+    "key": "operator",
+    "tags": [{"value": "Star's Music", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "musical_instrument",
+    "tags": [{"value": "piano", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "social_facility", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "www.vaincrelautisme.org", "count": 1}],
+    "count": 1
+  }
+]

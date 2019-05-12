@@ -1,0 +1,79 @@
+[
+  {"key": "highway", "tags": [{"value": "corridor", "count": 52}], "count": 52},
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 15},
+      {"value": "2", "count": 3},
+      {"value": "1", "count": 2},
+      {"value": "-1", "count": 2}
+    ],
+    "count": 22
+  },
+  {
+    "key": "indoor",
+    "tags": [
+      {"value": "corridor", "count": 15},
+      {"value": "yes", "count": 5},
+      {"value": "room", "count": 1}
+    ],
+    "count": 21
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-5", "count": 5},
+      {"value": "-1", "count": 3},
+      {"value": "2", "count": 3},
+      {"value": "1", "count": 3},
+      {"value": "-3", "count": 1}
+    ],
+    "count": 15
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 9},
+      {"value": "building_passage", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "restricted", "count": 7},
+      {"value": "customers", "count": 1},
+      {"value": "private", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Please do not mark it as a highway=path/service/..., see: http://forum.openstreetmap.fr/viewtopic.php?f=2&t=227",
+        "count": 8
+      }
+    ],
+    "count": 8
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "en:Super Proton Synchrotron", "count": 1},
+      {"value": "en:Proton Synchrotron", "count": 1},
+      {"value": "en:Proton Synchrotron Booster", "count": 1},
+      {"value": "en:Large Hadron Collider", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "room",
+    "tags": [{"value": "corridor", "count": 2}, {"value": "hall", "count": 1}],
+    "count": 3
+  },
+  {"key": "operator", "tags": [{"value": "CERN", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q40605", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

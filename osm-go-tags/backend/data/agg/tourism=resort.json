@@ -1,0 +1,33 @@
+[
+  {"key": "tourism", "tags": [{"value": "resort", "count": 11}], "count": 11},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 79 06 56 44", "count": 1},
+      {"value": "+33 4 79 09 06 81", "count": 1},
+      {"value": "+33 4 79 00 01 39", "count": 1},
+      {"value": "+33 4 50 53 12 05", "count": 1},
+      {"value": "+33 4 50 54 07 11", "count": 1},
+      {"value": "+33 4 50 47 65 75", "count": 1},
+      {"value": "+33 4 79 06 03 80", "count": 1},
+      {"value": "+33 4 79 09 11 76", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "tignes@ucpa.asso.fr ", "count": 1},
+      {"value": "valthorens@ucpa.asso.fr ", "count": 1},
+      {"value": "chamonix@ucpa.asso.fr", "count": 1},
+      {"value": "argentiere@ucpa.asso.fr", "count": 1},
+      {"value": "flaine-lindars@ucpa.asso.fr", "count": 1},
+      {"value": "valdisere@ucpa.asso.fr", "count": 1},
+      {"value": "plagne-1800@ucpa.asso.fr", "count": 1}
+    ],
+    "count": 7
+  },
+  {"key": "brand", "tags": [{"value": "UCPA", "count": 4}], "count": 4},
+  {"key": "operator", "tags": [{"value": "UCPA", "count": 4}], "count": 4},
+  {"key": "sport", "tags": [{"value": "horse_racing", "count": 1}], "count": 1}
+]

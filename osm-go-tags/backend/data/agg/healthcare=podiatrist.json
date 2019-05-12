@@ -1,0 +1,12 @@
+[
+  {
+    "key": "healthcare",
+    "tags": [{"value": "podiatrist", "count": 6}],
+    "count": 6
+  },
+  {
+    "key": "description",
+    "tags": [{"value": "Pédicure, podologue", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 78 38 05 88", "count": 1}],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "cutlery", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "www.lacoutelleriedelyon.com", "count": 1}],
+    "count": 1
+  }
+]

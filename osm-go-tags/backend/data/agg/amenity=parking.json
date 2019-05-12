@@ -1,0 +1,1693 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "parking", "count": 26621}],
+    "count": 26621
+  },
+  {
+    "key": "parking",
+    "tags": [
+      {"value": "surface", "count": 11526},
+      {"value": "underground", "count": 332},
+      {"value": "multi-storey", "count": 157},
+      {"value": "rooftop", "count": 36},
+      {"value": "lane", "count": 29},
+      {"value": "garage_boxes", "count": 7},
+      {"value": "park_and_ride", "count": 6},
+      {"value": "garage", "count": 6},
+      {"value": "surface;underground", "count": 2},
+      {"value": "yes", "count": 2},
+      {"value": "ground;surface", "count": 1},
+      {"value": "underground;surface", "count": 1},
+      {"value": "carports", "count": 1},
+      {"value": "Parking de l'église", "count": 1},
+      {"value": "carpool", "count": 1},
+      {"value": "service", "count": 1},
+      {"value": "informal", "count": 1},
+      {"value": "parking", "count": 1},
+      {"value": "sheds", "count": 1}
+    ],
+    "count": 12112
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 2857},
+      {"value": "yes", "count": 1396},
+      {"value": "customers", "count": 937},
+      {"value": "permissive", "count": 251},
+      {"value": "destination", "count": 154},
+      {"value": "public", "count": 91},
+      {"value": "no", "count": 72},
+      {"value": "designated", "count": 12},
+      {"value": "hgv", "count": 3},
+      {"value": "not in winter", "count": 1},
+      {"value": "restricted", "count": 1},
+      {"value": "employees", "count": 1},
+      {"value": "Personnel", "count": 1},
+      {"value": "Medecin", "count": 1},
+      {"value": "Jour", "count": 1},
+      {"value": "PMR", "count": 1}
+    ],
+    "count": 5780
+  },
+  {
+    "key": "fee",
+    "tags": [
+      {"value": "no", "count": 4073},
+      {"value": "yes", "count": 428},
+      {"value": "2€30", "count": 6},
+      {"value": "3€30", "count": 5},
+      {"value": "1.60€/h", "count": 4},
+      {"value": "Mo-Sa 09:00-12:00, 14:00-18:30", "count": 4},
+      {"value": "free", "count": 2},
+      {"value": "Parking fee", "count": 1},
+      {"value": "interval", "count": 1},
+      {"value": "Yes", "count": 1},
+      {"value": "1° heure gratuite", "count": 1},
+      {"value": "privé", "count": 1},
+      {"value": "1 euro in July and August", "count": 1},
+      {
+        "value": "Interdit du mardi soir au mercredi soir et du vendredi soir au dimanche après-midi",
+        "count": 1
+      },
+      {"value": "Lu-Ve 09:00-12:00 14:00-19:00", "count": 1},
+      {"value": "9h - 17h30", "count": 1},
+      {"value": "no fee", "count": 1},
+      {"value": "May-Sep 09:30-12:30,14:15-19:30", "count": 1},
+      {"value": "Mo-Sa 09:00-12:00,14:00-18:30", "count": 1},
+      {"value": "Lu-Sa 09:00-12:00 14:00-19:00", "count": 1}
+    ],
+    "count": 4535
+  },
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "10", "count": 198},
+      {"value": "5", "count": 182},
+      {"value": "4", "count": 152},
+      {"value": "8", "count": 147},
+      {"value": "6", "count": 146},
+      {"value": "20", "count": 146},
+      {"value": "2", "count": 142},
+      {"value": "3", "count": 125},
+      {"value": "15", "count": 112},
+      {"value": "1", "count": 111},
+      {"value": "7", "count": 105},
+      {"value": "30", "count": 103},
+      {"value": "12", "count": 101},
+      {"value": "25", "count": 75},
+      {"value": "50", "count": 73},
+      {"value": "9", "count": 72},
+      {"value": "40", "count": 64},
+      {"value": "11", "count": 54},
+      {"value": "16", "count": 51},
+      {"value": "14", "count": 51},
+      {"value": "18", "count": 44},
+      {"value": "13", "count": 42},
+      {"value": "100", "count": 41},
+      {"value": "19", "count": 38},
+      {"value": "24", "count": 30},
+      {"value": "60", "count": 29},
+      {"value": "35", "count": 27},
+      {"value": "17", "count": 27},
+      {"value": "21", "count": 26},
+      {"value": "26", "count": 22},
+      {"value": "200", "count": 19},
+      {"value": "28", "count": 19},
+      {"value": "80", "count": 19},
+      {"value": "22", "count": 19},
+      {"value": "70", "count": 16},
+      {"value": "23", "count": 16},
+      {"value": "38", "count": 14},
+      {"value": "150", "count": 14},
+      {"value": "45", "count": 14},
+      {"value": "31", "count": 13},
+      {"value": "32", "count": 13},
+      {"value": "34", "count": 13},
+      {"value": "36", "count": 12},
+      {"value": "27", "count": 12},
+      {"value": "120", "count": 11},
+      {"value": "33", "count": 11},
+      {"value": "300", "count": 11},
+      {"value": "48", "count": 11},
+      {"value": "90", "count": 9},
+      {"value": "250", "count": 9},
+      {"value": "55", "count": 8},
+      {"value": "29", "count": 8},
+      {"value": "43", "count": 8},
+      {"value": "52", "count": 7},
+      {"value": "37", "count": 7},
+      {"value": "62", "count": 7},
+      {"value": "41", "count": 6},
+      {"value": "56", "count": 6},
+      {"value": "42", "count": 6},
+      {"value": "79", "count": 5},
+      {"value": "160", "count": 5},
+      {"value": "54", "count": 5},
+      {"value": "140", "count": 5},
+      {"value": "77", "count": 5},
+      {"value": "44", "count": 5},
+      {"value": "39", "count": 5},
+      {"value": "110", "count": 5},
+      {"value": "51", "count": 5},
+      {"value": "57", "count": 5},
+      {"value": "63", "count": 4},
+      {"value": "84", "count": 4},
+      {"value": "53", "count": 4},
+      {"value": "47", "count": 4},
+      {"value": "78", "count": 4},
+      {"value": "105", "count": 4},
+      {"value": "103", "count": 3},
+      {"value": "72", "count": 3},
+      {"value": "135", "count": 3},
+      {"value": "69", "count": 3},
+      {"value": "104", "count": 3},
+      {"value": "64", "count": 3},
+      {"value": "65", "count": 3},
+      {"value": "244", "count": 3},
+      {"value": "49", "count": 3},
+      {"value": "59", "count": 3},
+      {"value": "58", "count": 3},
+      {"value": "66", "count": 2},
+      {"value": "83", "count": 2},
+      {"value": "46", "count": 2},
+      {"value": "132", "count": 2},
+      {"value": "73", "count": 2},
+      {"value": "130", "count": 2},
+      {"value": "778", "count": 2},
+      {"value": "408", "count": 2},
+      {"value": "208", "count": 2},
+      {"value": "657", "count": 2},
+      {"value": "170", "count": 2},
+      {"value": "75", "count": 2},
+      {"value": "97", "count": 2},
+      {"value": "106", "count": 2},
+      {"value": "0", "count": 2},
+      {"value": "95", "count": 2},
+      {"value": "524", "count": 2},
+      {"value": "308", "count": 2},
+      {"value": "155", "count": 2},
+      {"value": "111", "count": 2},
+      {"value": "330", "count": 2},
+      {"value": "230", "count": 2},
+      {"value": "68", "count": 2},
+      {"value": "147", "count": 2},
+      {"value": "350", "count": 2},
+      {"value": "129", "count": 2},
+      {"value": "285", "count": 2},
+      {"value": "82", "count": 2},
+      {"value": "239", "count": 2},
+      {"value": "108", "count": 2},
+      {"value": "98", "count": 2},
+      {"value": "400", "count": 2},
+      {"value": "634", "count": 2},
+      {"value": "127", "count": 2},
+      {"value": "125", "count": 2},
+      {"value": "134", "count": 2},
+      {"value": "144", "count": 2},
+      {"value": "174", "count": 1},
+      {"value": "101", "count": 1},
+      {"value": "252", "count": 1},
+      {"value": "563", "count": 1},
+      {"value": "1000", "count": 1},
+      {"value": "839", "count": 1},
+      {"value": "718", "count": 1},
+      {"value": "387", "count": 1},
+      {"value": "274", "count": 1},
+      {"value": "954", "count": 1},
+      {"value": "178", "count": 1},
+      {"value": "217", "count": 1},
+      {"value": "490", "count": 1},
+      {"value": "706", "count": 1},
+      {"value": "289", "count": 1},
+      {"value": "348", "count": 1},
+      {"value": "495", "count": 1},
+      {"value": "345", "count": 1},
+      {"value": "389", "count": 1},
+      {"value": "245", "count": 1},
+      {"value": "1500", "count": 1},
+      {"value": "600", "count": 1},
+      {"value": "315", "count": 1},
+      {"value": "322", "count": 1},
+      {"value": "745", "count": 1},
+      {"value": "361", "count": 1},
+      {"value": "815", "count": 1},
+      {"value": "478", "count": 1},
+      {"value": "783", "count": 1},
+      {"value": ">100", "count": 1},
+      {"value": "1186", "count": 1},
+      {"value": "895", "count": 1},
+      {"value": "404", "count": 1},
+      {"value": "202", "count": 1},
+      {"value": "342", "count": 1},
+      {"value": "196", "count": 1},
+      {"value": "1023", "count": 1},
+      {"value": "715", "count": 1},
+      {"value": "private=yes", "count": 1},
+      {"value": "459", "count": 1},
+      {"value": "474", "count": 1},
+      {"value": "136", "count": 1},
+      {"value": "473", "count": 1},
+      {"value": "341", "count": 1},
+      {"value": "123", "count": 1},
+      {"value": "472", "count": 1},
+      {"value": "253", "count": 1},
+      {"value": "659", "count": 1},
+      {"value": "270", "count": 1},
+      {"value": "260", "count": 1},
+      {"value": "850", "count": 1},
+      {"value": "92", "count": 1},
+      {"value": "697", "count": 1},
+      {"value": "113", "count": 1},
+      {"value": "2000", "count": 1},
+      {"value": "175", "count": 1},
+      {"value": "267", "count": 1},
+      {"value": "146", "count": 1},
+      {"value": "1400", "count": 1},
+      {"value": "220", "count": 1},
+      {"value": "857", "count": 1},
+      {"value": "702", "count": 1},
+      {"value": "161", "count": 1},
+      {"value": "89", "count": 1},
+      {"value": "774", "count": 1},
+      {"value": "193", "count": 1},
+      {"value": "81", "count": 1},
+      {"value": "290", "count": 1},
+      {"value": "183", "count": 1},
+      {"value": "221", "count": 1},
+      {"value": "632", "count": 1},
+      {"value": "114", "count": 1},
+      {"value": "707", "count": 1},
+      {"value": "264", "count": 1},
+      {"value": "336", "count": 1},
+      {"value": "201", "count": 1},
+      {"value": "649", "count": 1},
+      {"value": "94", "count": 1},
+      {"value": ">20", "count": 1},
+      {"value": "180", "count": 1},
+      {"value": "825", "count": 1},
+      {"value": "326", "count": 1},
+      {"value": "107", "count": 1},
+      {"value": "410", "count": 1},
+      {"value": "1020", "count": 1},
+      {"value": "165", "count": 1},
+      {"value": "248", "count": 1},
+      {"value": "86", "count": 1},
+      {"value": "335", "count": 1},
+      {"value": "1200", "count": 1},
+      {"value": "154", "count": 1},
+      {"value": "115", "count": 1},
+      {"value": "173", "count": 1},
+      {"value": "407", "count": 1},
+      {"value": "456", "count": 1},
+      {"value": "333", "count": 1},
+      {"value": "148", "count": 1},
+      {"value": "1167", "count": 1},
+      {"value": "224", "count": 1},
+      {"value": "40 + 2 handicapés", "count": 1},
+      {"value": "306", "count": 1},
+      {"value": "500", "count": 1},
+      {"value": "340", "count": 1},
+      {"value": "30 places", "count": 1},
+      {"value": "85", "count": 1},
+      {"value": "452", "count": 1},
+      {"value": "3200", "count": 1},
+      {"value": "590", "count": 1},
+      {"value": "262", "count": 1},
+      {"value": "371", "count": 1},
+      {"value": "502", "count": 1},
+      {"value": "15-20", "count": 1},
+      {"value": "210", "count": 1},
+      {"value": "102", "count": 1},
+      {"value": "76", "count": 1},
+      {"value": "87", "count": 1},
+      {"value": "61", "count": 1},
+      {"value": "93", "count": 1},
+      {"value": "540", "count": 1},
+      {"value": "880", "count": 1},
+      {"value": "187", "count": 1},
+      {"value": "412", "count": 1},
+      {"value": "a", "count": 1},
+      {"value": "450", "count": 1},
+      {"value": "647", "count": 1},
+      {"value": "680", "count": 1},
+      {"value": "316", "count": 1},
+      {"value": "162", "count": 1},
+      {"value": "118", "count": 1},
+      {"value": "71", "count": 1},
+      {"value": "1700", "count": 1},
+      {"value": "206", "count": 1},
+      {"value": "67", "count": 1},
+      {"value": "88", "count": 1}
+    ],
+    "count": 3189
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 2237},
+      {"value": "gravel", "count": 205},
+      {"value": "concrete", "count": 152},
+      {"value": "ground", "count": 120},
+      {"value": "unpaved", "count": 87},
+      {"value": "paved", "count": 75},
+      {"value": "compacted", "count": 49},
+      {"value": "fine_gravel", "count": 34},
+      {"value": "grass", "count": 32},
+      {"value": "cobblestone", "count": 6},
+      {"value": "dirt", "count": 6},
+      {"value": "yes", "count": 4},
+      {"value": "earth", "count": 3},
+      {"value": "grass_paver", "count": 2},
+      {"value": "clay", "count": 2},
+      {"value": "paving_stones", "count": 2},
+      {"value": "pebblestone", "count": 2},
+      {"value": "stone", "count": 1},
+      {"value": "bare_rock", "count": 1}
+    ],
+    "count": 3020
+  },
+  {
+    "key": "park_ride",
+    "tags": [
+      {"value": "no", "count": 1190},
+      {"value": "yes", "count": 150},
+      {"value": "train", "count": 10},
+      {"value": "bus", "count": 9},
+      {"value": "bus;train", "count": 4},
+      {"value": "yes;bus;train", "count": 2},
+      {"value": "hov", "count": 2},
+      {"value": "carpool", "count": 1},
+      {"value": "oui;bus", "count": 1}
+    ],
+    "count": 1369
+  },
+  {
+    "key": "supervised",
+    "tags": [
+      {"value": "no", "count": 1219},
+      {"value": "yes", "count": 88},
+      {"value": "08:00-18:00", "count": 1}
+    ],
+    "count": 1308
+  },
+  {
+    "key": "capacity:disabled",
+    "tags": [
+      {"value": "1", "count": 345},
+      {"value": "yes", "count": 221},
+      {"value": "2", "count": 195},
+      {"value": "no", "count": 102},
+      {"value": "3", "count": 51},
+      {"value": "0", "count": 39},
+      {"value": "4", "count": 32},
+      {"value": "unknown", "count": 22},
+      {"value": "6", "count": 6},
+      {"value": "8", "count": 5},
+      {"value": "10", "count": 5},
+      {"value": "7", "count": 4},
+      {"value": "5", "count": 4},
+      {"value": "14", "count": 3},
+      {"value": "12", "count": 3},
+      {"value": "9", "count": 3},
+      {"value": "19", "count": 2},
+      {"value": "1 Handicapé", "count": 1},
+      {"value": "11", "count": 1},
+      {"value": "5 Handicapé", "count": 1},
+      {"value": "21", "count": 1},
+      {"value": "20", "count": 1},
+      {"value": "13", "count": 1}
+    ],
+    "count": 1048
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "excellent", "count": 403},
+      {"value": "good", "count": 77},
+      {"value": "bad", "count": 49},
+      {"value": "intermediate", "count": 24}
+    ],
+    "count": 553
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 315}, {"value": "no", "count": 171}],
+    "count": 486
+  },
+  {
+    "key": "maxstay",
+    "tags": [
+      {"value": "0", "count": 264},
+      {"value": "15 minutes", "count": 11},
+      {"value": "90", "count": 10},
+      {"value": "1.5 hours", "count": 10},
+      {"value": "1h30", "count": 8},
+      {"value": "1 hr", "count": 7},
+      {"value": "1 day", "count": 6},
+      {"value": "yes", "count": 5},
+      {"value": "15 min", "count": 4},
+      {"value": "no limit", "count": 4},
+      {"value": "1.5 hr", "count": 4},
+      {"value": "30", "count": 4},
+      {"value": "2 hr", "count": 4},
+      {"value": "20 min", "count": 3},
+      {"value": "120", "count": 3},
+      {"value": "180", "count": 3},
+      {"value": "illimited", "count": 2},
+      {"value": "2 h", "count": 2},
+      {"value": "24", "count": 2},
+      {"value": "2 hours", "count": 2},
+      {"value": "20", "count": 2},
+      {"value": "30 min", "count": 2},
+      {"value": "15", "count": 2},
+      {
+        "value": "90 minutes @ ( Mo-Fr 08:30-12:00, 14:00-19:00; Sa 08:30-12:00)",
+        "count": 2
+      },
+      {"value": "10 minutes", "count": 2},
+      {"value": "unlimited", "count": 1},
+      {"value": "5", "count": 1},
+      {"value": "25", "count": 1},
+      {"value": "Unlimited", "count": 1},
+      {"value": "40", "count": 1},
+      {"value": "50", "count": 1},
+      {"value": "48 hours", "count": 1},
+      {"value": "24h", "count": 1},
+      {"value": "4h", "count": 1},
+      {"value": "1.3 hr", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "no", "count": 1},
+      {"value": "4 hr", "count": 1},
+      {"value": "PT24H", "count": 1},
+      {"value": "1 hour", "count": 1},
+      {"value": "Closed at night", "count": 1},
+      {"value": "2h", "count": 1},
+      {"value": "1.5h", "count": 1},
+      {"value": "2 day", "count": 1},
+      {"value": "15 hr", "count": 1},
+      {"value": "1h", "count": 1},
+      {"value": "30 minutes", "count": 1},
+      {"value": "1 week", "count": 1},
+      {"value": "150", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "5 hr", "count": 1},
+      {"value": "10 min", "count": 1},
+      {"value": "20 minutes", "count": 1}
+    ],
+    "count": 397
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SAGS", "count": 16},
+      {"value": "LPA", "count": 15},
+      {"value": "Vinci Park", "count": 10},
+      {"value": "Public", "count": 10},
+      {"value": "Q-Park", "count": 5},
+      {"value": "Chavanoz", "count": 5},
+      {"value": "Effia", "count": 5},
+      {"value": "Carrefour", "count": 5},
+      {"value": "Fondation des parkings", "count": 5},
+      {"value": "Lidl", "count": 5},
+      {"value": "Hospices Civils de Lyon", "count": 5},
+      {"value": "Savoiexpo", "count": 5},
+      {"value": "Gifrer Barbezat", "count": 4},
+      {"value": "Mairie", "count": 4},
+      {"value": "Lyon Parc Auto", "count": 4},
+      {"value": "Groupement des Mousquetaires", "count": 4},
+      {"value": "Casino", "count": 4},
+      {"value": "La Compagnie de Phalsbourg", "count": 3},
+      {"value": "Vinci", "count": 3},
+      {"value": "CH Annecy Genevois", "count": 3},
+      {"value": "Excelvision", "count": 3},
+      {"value": "AREA", "count": 3},
+      {"value": "Intermarché", "count": 3},
+      {"value": "Carrefour Market", "count": 3},
+      {"value": "Hotel Melodie", "count": 3},
+      {"value": "EFFIA", "count": 2},
+      {"value": "Privé", "count": 2},
+      {"value": "Saint-Maclou", "count": 2},
+      {"value": "Commune de Saint-Genis-Pouilly", "count": 2},
+      {"value": "Openly", "count": 2},
+      {"value": "Auchan Supermarché Caluire", "count": 2},
+      {"value": "CAPI", "count": 2},
+      {"value": "Ville de Pierrelatte", "count": 2},
+      {"value": "Chateau de Candie", "count": 2},
+      {"value": "TCL", "count": 2},
+      {"value": "VINCI Park", "count": 2},
+      {"value": "ACCA", "count": 2},
+      {"value": "EIL", "count": 2},
+      {"value": "Lyon Parc Auto (LPA)", "count": 2},
+      {"value": "Private", "count": 2},
+      {"value": "Carrefour Market Villeurbanne", "count": 2},
+      {"value": "RMCS", "count": 1},
+      {"value": "public", "count": 1},
+      {"value": "King Jouet", "count": 1},
+      {"value": "Ville d'Aix-les-Bains", "count": 1},
+      {"value": "Cartusiana, Raidlight", "count": 1},
+      {"value": "La Poste", "count": 1},
+      {"value": "Lapeyre", "count": 1},
+      {"value": "Castorama", "count": 1},
+      {"value": "Franprix", "count": 1},
+      {"value": "Le Dégriffaire", "count": 1},
+      {"value": "La Maison Rouge", "count": 1},
+      {"value": "Centre de Transfusion", "count": 1},
+      {"value": "resaplace", "count": 1},
+      {"value": "BMW", "count": 1},
+      {"value": "Ville de Saint-Étienne", "count": 1},
+      {"value": "PETZL", "count": 1},
+      {"value": "La Scène du Golf", "count": 1},
+      {"value": "Leader Price", "count": 1},
+      {"value": "Poivre Rouge", "count": 1},
+      {"value": "Communauté de communes de Miribel et du Plateau", "count": 1},
+      {"value": "Gérantet", "count": 1},
+      {"value": "Mairie de Passy", "count": 1},
+      {"value": "ADAPEI", "count": 1},
+      {"value": "Vinci Autoroutes", "count": 1},
+      {"value": "Commune de Thônex", "count": 1},
+      {"value": "Cora", "count": 1},
+      {"value": "MGM constructeur", "count": 1},
+      {"value": "Mairie de St-Martin-d'Ardèche", "count": 1},
+      {"value": "Peisey", "count": 1},
+      {"value": "CAF - URSSAF", "count": 1},
+      {"value": "Les Castors du Crêt de Roc", "count": 1},
+      {"value": "SEDS", "count": 1},
+      {"value": "ADS", "count": 1},
+      {"value": "private", "count": 1},
+      {"value": "Emmaüs", "count": 1},
+      {"value": "Grumel", "count": 1},
+      {"value": "EFS", "count": 1},
+      {"value": "Burger King", "count": 1},
+      {"value": "Parking des Trois Oranges", "count": 1},
+      {"value": "Communauté de Communes du Genevois", "count": 1},
+      {"value": "Crédit Agricole", "count": 1},
+      {"value": "GVA", "count": 1},
+      {"value": "Ville de Challes-les-Eaux", "count": 1},
+      {"value": "McDonald", "count": 1},
+      {"value": "Saint-Etienne Métropôle", "count": 1},
+      {"value": "CCMP", "count": 1},
+      {"value": "Grand Lyon", "count": 1},
+      {"value": "Aéroport International de Genève", "count": 1},
+      {"value": "Speedy", "count": 1},
+      {"value": "Écomusée de la Combe de Savoie", "count": 1},
+      {"value": "Bosch", "count": 1},
+      {"value": "Ville de Vienne", "count": 1},
+      {"value": "Auberge de Thil", "count": 1},
+      {"value": "Le Palace", "count": 1},
+      {"value": "Eiffia", "count": 1},
+      {"value": "Auberge de Jeunesse", "count": 1},
+      {"value": "Detrois Immobilier", "count": 1},
+      {"value": "Ecuries Arnaud Thomas", "count": 1},
+      {"value": "Voyages BERTOLAMI", "count": 1},
+      {"value": "GVA Park", "count": 1},
+      {"value": "CPAM", "count": 1},
+      {"value": "Plage des Templiers", "count": 1},
+      {"value": "Thermes Chevalley", "count": 1},
+      {"value": "Non", "count": 1},
+      {
+        "value": "Fédération Départementale des Chasseurs de la Loire",
+        "count": 1
+      },
+      {"value": "Communauté de Communes de la Semine", "count": 1},
+      {"value": "LIDL", "count": 1},
+      {"value": "Commune", "count": 1},
+      {"value": "Chronodrive", "count": 1},
+      {"value": "Commune de Suze", "count": 1},
+      {"value": "Aravis Parc d'Aventures", "count": 1},
+      {"value": "Le copacabana", "count": 1},
+      {"value": "Novotel", "count": 1},
+      {"value": "Mairie de La Côte Saint André", "count": 1},
+      {"value": "SMTC", "count": 1},
+      {"value": "Forez Distribution", "count": 1},
+      {"value": "Alpespace", "count": 1},
+      {"value": "Immobilière France Régie", "count": 1},
+      {"value": "La Fruitière", "count": 1},
+      {"value": "Métropole de Lyon", "count": 1},
+      {"value": "Mairie d'Echenevex", "count": 1},
+      {"value": "Alt: 1725m", "count": 1},
+      {"value": "Alt: 1710m", "count": 1},
+      {"value": "Ville de Gex", "count": 1},
+      {"value": "La Désirade", "count": 1},
+      {"value": "Leclerc Holdis", "count": 1},
+      {"value": "Le Bacouni", "count": 1},
+      {"value": "Mairie de Saint-Chamond", "count": 1},
+      {"value": "Commune de Noyarey", "count": 1},
+      {"value": "INSA Lyon", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "Le Farto de Thônes", "count": 1},
+      {"value": "Fast Hôtel", "count": 1},
+      {"value": "Centre équestre", "count": 1},
+      {"value": "Société de Pêche", "count": 1},
+      {"value": "Hotel Rerstaurant Les Playes", "count": 1},
+      {"value": "Plateforme Chimique Du Pont De Claix", "count": 1},
+      {"value": "Plateforme chimique Du Pont De Claix", "count": 1},
+      {"value": "Les Margats", "count": 1},
+      {"value": "Bicross Club de Cran-Gevrier", "count": 1},
+      {"value": "Jardin des Cimes", "count": 1},
+      {"value": "commune de Passy", "count": 1},
+      {"value": "Opac du Rhône", "count": 1},
+      {"value": "Orange", "count": 1},
+      {"value": "QRO", "count": 1},
+      {"value": "Ecuries Lecomte Lievaux", "count": 1},
+      {"value": "Laboratoire Hautes Etudes", "count": 1},
+      {"value": "Crocodile", "count": 1},
+      {"value": "ville de Thonon", "count": 1},
+      {"value": "CMP Pneus", "count": 1},
+      {
+        "value": "Cabinet de kinésithérapie et de balnéothérapie des Erables",
+        "count": 1
+      },
+      {"value": "Ibis Styles", "count": 1},
+      {"value": "Wieber", "count": 1},
+      {"value": "Pharmacie Dessard", "count": 1},
+      {"value": "leroy Merlin", "count": 1},
+      {"value": "Eovi-Mcd", "count": 1},
+      {"value": "Place de la Calade", "count": 1},
+      {"value": "Place des Anciens Combattants", "count": 1},
+      {"value": "Place Saint-Exupéry", "count": 1},
+      {"value": "Bricomarché", "count": 1},
+      {"value": "Domaine Genoux", "count": 1},
+      {"value": "Centre commercial Renaison", "count": 1},
+      {"value": "Breuil Horticulture", "count": 1},
+      {"value": "EKLYA School of Business", "count": 1},
+      {"value": "http://www.urbispark.fr/html/lyon_park1.php", "count": 1},
+      {"value": "École Nationale des Travaux Publics de l'État", "count": 1},
+      {"value": "Golf de Flaine", "count": 1},
+      {"value": "E. Leclerc", "count": 1}
+    ],
+    "count": 295
+  },
+  {
+    "key": "motorcar",
+    "tags": [
+      {"value": "designated", "count": 261},
+      {"value": "yes", "count": 2},
+      {"value": "no", "count": 2}
+    ],
+    "count": 265
+  },
+  {
+    "key": "hgv",
+    "tags": [
+      {"value": "designated", "count": 207},
+      {"value": "yes", "count": 20},
+      {"value": "no", "count": 17},
+      {"value": "customers", "count": 1},
+      {"value": "official", "count": 1}
+    ],
+    "count": 246
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 169},
+      {"value": "designated", "count": 26},
+      {"value": "no", "count": 10},
+      {"value": "limited", "count": 6}
+    ],
+    "count": 211
+  },
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "1.9", "count": 36},
+      {"value": "2", "count": 23},
+      {"value": "2.1", "count": 9},
+      {"value": "1.8", "count": 6},
+      {"value": "1.90", "count": 5},
+      {"value": "2.2", "count": 5},
+      {"value": "1.95", "count": 4},
+      {"value": "2.10", "count": 3},
+      {"value": "1.98", "count": 2},
+      {"value": "2.20", "count": 2},
+      {"value": "1.9 m", "count": 2},
+      {"value": "2m", "count": 1},
+      {"value": "2.30", "count": 1},
+      {"value": "2.05", "count": 1},
+      {"value": "2.7", "count": 1},
+      {"value": "1.8 m", "count": 1},
+      {"value": "2.00", "count": 1},
+      {"value": "2.5", "count": 1}
+    ],
+    "count": 104
+  },
+  {
+    "key": "capacity:parent",
+    "tags": [
+      {"value": "no", "count": 65},
+      {"value": "unknown", "count": 12},
+      {"value": "yes", "count": 3},
+      {"value": "4", "count": 2},
+      {"value": "0", "count": 2},
+      {"value": "23", "count": 1}
+    ],
+    "count": 85
+  },
+  {
+    "key": "capacity:women",
+    "tags": [
+      {"value": "no", "count": 65},
+      {"value": "unknown", "count": 13},
+      {"value": "yes", "count": 2},
+      {"value": "0", "count": 2}
+    ],
+    "count": 82
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 36},
+      {"value": "Potlatch 0.10f", "count": 13},
+      {"value": "Editop", "count": 10},
+      {"value": "Potlatch 0.10b", "count": 4},
+      {"value": "Potlatch 0.10", "count": 4},
+      {"value": "Potlatch 0.9c", "count": 3},
+      {"value": "Potlatch 0.9a", "count": 2},
+      {"value": "Merkaartor 0.11", "count": 2},
+      {"value": "Potlatch 0.10a", "count": 2},
+      {"value": "Potlatch 0.7b", "count": 1},
+      {"value": "Potlatch 0.10e", "count": 1},
+      {"value": "Potlatch 0.7", "count": 1},
+      {"value": "Potlatch 0.4b", "count": 1},
+      {"value": "Potlatch 0.8a", "count": 1}
+    ],
+    "count": 81
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1180", "count": 3},
+      {"value": "1100", "count": 2},
+      {"value": "1050", "count": 2},
+      {"value": "1450", "count": 2},
+      {"value": "1014", "count": 1},
+      {"value": "559.609", "count": 1},
+      {"value": "1565", "count": 1},
+      {"value": "265", "count": 1},
+      {"value": "1995", "count": 1},
+      {"value": "1330", "count": 1},
+      {"value": "806", "count": 1},
+      {"value": "280", "count": 1},
+      {"value": "1135", "count": 1},
+      {"value": "762", "count": 1},
+      {"value": "1010", "count": 1},
+      {"value": "940", "count": 1},
+      {"value": "1640", "count": 1},
+      {"value": "1310", "count": 1},
+      {"value": "1360", "count": 1},
+      {"value": "1098", "count": 1},
+      {"value": "1459", "count": 1},
+      {"value": "1695", "count": 1},
+      {"value": "1515", "count": 1},
+      {"value": "2057", "count": 1},
+      {"value": "1631", "count": 1},
+      {"value": "874", "count": 1},
+      {"value": "1688", "count": 1},
+      {"value": "1108", "count": 1},
+      {"value": "1240", "count": 1},
+      {"value": "1270", "count": 1},
+      {"value": "809", "count": 1},
+      {"value": "558.8879395", "count": 1},
+      {"value": "2995", "count": 1},
+      {"value": "1383", "count": 1},
+      {"value": "1634", "count": 1},
+      {"value": "1170", "count": 1},
+      {"value": "1160", "count": 1},
+      {"value": "1130", "count": 1},
+      {"value": "965", "count": 1},
+      {"value": "1125", "count": 1},
+      {"value": "607.1938477", "count": 1},
+      {"value": "1290", "count": 1},
+      {"value": "1080", "count": 1},
+      {"value": "1532", "count": 1},
+      {"value": "850", "count": 1},
+      {"value": "1540", "count": 1},
+      {"value": "827", "count": 1},
+      {"value": "1358", "count": 1},
+      {"value": "990", "count": 1},
+      {"value": "1705", "count": 1},
+      {"value": "1709", "count": 1},
+      {"value": "1350", "count": 1},
+      {"value": "948", "count": 1},
+      {"value": "519", "count": 1},
+      {"value": "1448", "count": 1},
+      {"value": "1020", "count": 1},
+      {"value": "1176", "count": 1},
+      {"value": "1060.6923828", "count": 1},
+      {"value": "1129", "count": 1},
+      {"value": "490", "count": 1},
+      {"value": "1550", "count": 1},
+      {"value": "1580", "count": 1},
+      {"value": "535", "count": 1}
+    ],
+    "count": 68
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Bing imagery is outdated", "count": 5},
+      {"value": "Approximative Capacity", "count": 5},
+      {
+        "value": "Erection 2013 (2015:Google and Bing Images stiil out of date!)",
+        "count": 4
+      },
+      {
+        "value": "Ce parking fait double emploi avec les attributs parking:lane des rue adjacentes. Faut-il garder les deux ?",
+        "count": 2
+      },
+      {"value": "Tracé approximatif", "count": 2},
+      {"value": "capacité approximative (photo aérienne)", "count": 1},
+      {"value": "gratuit 1 heure", "count": 1},
+      {"value": "nombre de places approximative", "count": 1},
+      {
+        "value": "panneau non officiel \"Parking D. Misery 1944-2008\"",
+        "count": 1
+      },
+      {"value": "nom donnée avec le lieu dit du coin", "count": 1},
+      {
+        "value": "serait-une volonté de représenter le parking non loin ce trou ? - Maintenant, j'en suis presque sûr, c'est le parking du couvent",
+        "count": 1
+      },
+      {"value": "forme approximative", "count": 1},
+      {
+        "value": "pas vraiment un parking indiqué comme tel, mais petit renfoncement pour se garer sans gêner",
+        "count": 1
+      },
+      {"value": "une précédente altitude indiquait 1220", "count": 1},
+      {"value": "stationnement limité à 24h", "count": 1},
+      {
+        "value": "Le nom a été noté de mémoire, mais je me gourre peut-être",
+        "count": 1
+      },
+      {"value": "Fixme", "count": 1},
+      {
+        "value": "limité à 1/2h du mardi au dimanche midi, de 8h à 19h",
+        "count": 1
+      },
+      {"value": "Parking du bar du village", "count": 1},
+      {
+        "value": "réservé aux véhicules détenteurs d'un abonnement mensuel",
+        "count": 1
+      },
+      {"value": "Parking réservé au personnel", "count": 1},
+      {
+        "value": "Parking de co-voiturage qui était avant taggué en amenity=car_sharing mais d'après le wiki, ça n'est pas le tag le plus adapté à mon avis.",
+        "count": 1
+      },
+      {"value": "Fermé la nuit", "count": 1},
+      {"value": "Bing imagery outdated", "count": 1},
+      {"value": "Ouverture en 2016-05", "count": 1},
+      {"value": "Free between 08:00 and 20:00", "count": 1},
+      {"value": "Zone Bleue", "count": 1},
+      {"value": "eingezäunt zum Schutz vor Wiedevieh", "count": 1},
+      {
+        "value": "Emprise approximative, à précisier avec GPS ou imagerie",
+        "count": 1
+      },
+      {"value": "time limited", "count": 1},
+      {"value": "Place Plein Sud", "count": 1},
+      {"value": "nouveau parking construit en 2015", "count": 1},
+      {"value": "Stationnement < 30 minutes gratuit", "count": 1},
+      {
+        "value": "new parking area, built between Bing capture date and January 2016",
+        "count": 1
+      },
+      {"value": "Camping-car et caravane, arret minute uniquement", "count": 1},
+      {"value": "Capacité approximative", "count": 1},
+      {
+        "value": "Parking clientèle de l'Auberge du Bacouni. Demander l'ouverture au restaurant. Fermé la nuit",
+        "count": 1
+      },
+      {"value": "réservé CRS Secours Montagne", "count": 1},
+      {"value": "capacité exacte à vérifier", "count": 1},
+      {"value": "Merci de laisser les noeuds décollés du chemin.", "count": 1},
+      {"value": "Stationnement reservé aux taxis", "count": 1},
+      {
+        "value": "comptage approximatif sur orthophoto IGN en attente vérif terrain",
+        "count": 1
+      },
+      {
+        "value": "Parking informel (surface différente, poubelles présentes) mais pas de signalisation officielle",
+        "count": 1
+      },
+      {"value": "position approximative", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "caravan",
+    "tags": [
+      {"value": "designated", "count": 53},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 54
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "-1", "count": 19},
+      {"value": "1", "count": 15},
+      {"value": "0", "count": 5},
+      {"value": "-1,-2", "count": 5},
+      {"value": "2", "count": 2},
+      {"value": "-2", "count": 1}
+    ],
+    "count": 47
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "010040400P", "count": 2},
+      {"value": "013450155R", "count": 2},
+      {"value": "261981480N", "count": 1},
+      {"value": "742780235F", "count": 1},
+      {"value": "692641310B", "count": 1},
+      {"value": "420940380T", "count": 1},
+      {"value": "730081781N", "count": 1},
+      {"value": "070410017T", "count": 1},
+      {"value": "011990068F", "count": 1},
+      {"value": "261982100M", "count": 1},
+      {"value": "740120249C", "count": 1},
+      {"value": "740121030B", "count": 1},
+      {"value": "013630022T", "count": 1},
+      {"value": "380220120L", "count": 1},
+      {"value": "380630070D", "count": 1},
+      {"value": "383150271B", "count": 1},
+      {"value": "381040300A", "count": 1},
+      {"value": "380120035M", "count": 1},
+      {"value": "261982460D", "count": 1},
+      {"value": "384210430N", "count": 1},
+      {"value": "010410048W", "count": 1},
+      {"value": "380530744E", "count": 1},
+      {"value": "742430120H", "count": 1},
+      {"value": "263200016S", "count": 1},
+      {"value": "422650040E", "count": 1},
+      {"value": "070760714Y", "count": 1},
+      {"value": "073190759R", "count": 1},
+      {"value": "740640113D", "count": 1},
+      {"value": "380970048G", "count": 1},
+      {"value": "070610155F", "count": 1},
+      {"value": "260960045X", "count": 1},
+      {"value": "010680005G", "count": 1},
+      {"value": "010150370J", "count": 1},
+      {"value": "014130050F", "count": 1},
+      {"value": "013730033L", "count": 1},
+      {"value": "013730037R", "count": 1},
+      {"value": "012740098M", "count": 1},
+      {"value": "011090047Z", "count": 1}
+    ],
+    "count": 40
+  },
+  {"key": "noexit", "tags": [{"value": "yes", "count": 38}], "count": 38},
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Place PMR conforme avec un biseau de 13 cm de haut.",
+        "count": 3
+      },
+      {"value": "Gratuit la 1ère demi-heure", "count": 2},
+      {"value": "45 premières minutes gratuites", "count": 2},
+      {"value": "Disque Bleu Obligatoire", "count": 2},
+      {"value": "Départ Rando Cascade de Chorsin", "count": 1},
+      {"value": "Parking résident + restaurant Quick", "count": 1},
+      {"value": "Place réservée handicapés", "count": 1},
+      {"value": "à la limite de la route revêtue petit parking.", "count": 1},
+      {"value": "Parking pour les promeneurs", "count": 1},
+      {"value": "Dépose-minute gare Part-Dieu", "count": 1},
+      {"value": "accès via Rue de la Liberté", "count": 1},
+      {"value": "parking sur le toit du magasin", "count": 1},
+      {
+        "value": "Pas vraiment un parking, plutôt un peu de place en bordure de route",
+        "count": 1
+      },
+      {"value": "Pour les résidents", "count": 1},
+      {"value": "Parking professeurs", "count": 1},
+      {"value": "Départ de randonnée", "count": 1},
+      {"value": "Parking Administration", "count": 1},
+      {"value": "Parking Voitures de Location et public", "count": 1},
+      {"value": "dépose minute, 15 min gratuites", "count": 1},
+      {"value": "Obligatoire : disque bleu", "count": 1},
+      {"value": "Réservé abonés TCL", "count": 1},
+      {"value": "Parking Autocars et PMR", "count": 1},
+      {"value": "Fermé en hiver", "count": 1},
+      {
+        "value": "Parking Espace Hannibal gratuit.\nStationnement Camping-Car longue durée interdit (pour raisons de sécurité).",
+        "count": 1
+      },
+      {"value": "Parking départ Dolce Via", "count": 1},
+      {"value": "Parking accès Dolce Via ", "count": 1},
+      {"value": "Parking cimetière de Sainte-Consorce", "count": 1},
+      {"value": "Parking du restaurant \"La Saucisse\"", "count": 1},
+      {"value": "Disque Bleue Obligatoire", "count": 1},
+      {"value": "parking visiteur de la résidence de france", "count": 1},
+      {"value": "Place PMR", "count": 1},
+      {
+        "value": "24 premières heures gratuites. Accès par badge télépéage.",
+        "count": 1
+      }
+    ],
+    "count": 37
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "Verify parking name and number", "count": 4},
+      {"value": "tracé approximatif", "count": 4},
+      {"value": "shape", "count": 4},
+      {"value": "contour approximatif, à préciser", "count": 3},
+      {"value": "position", "count": 2},
+      {"value": "resurvey", "count": 2},
+      {
+        "value": "Je n ai une trace GPS que pour l allee centrale, a raffiner avec d autres traces",
+        "count": 1
+      },
+      {"value": "Approximative capacity=*", "count": 1},
+      {"value": "Où est le parking?", "count": 1},
+      {
+        "value": "Vérifier que l'accès est permis pour les véhicules autres que taxis",
+        "count": 1
+      },
+      {"value": "Zone à revoir", "count": 1},
+      {"value": "localisation à affiner", "count": 1},
+      {"value": "count capacity", "count": 1},
+      {"value": "parking probablement inexistant", "count": 1},
+      {
+        "value": "A ajuster au rythme des travaux, lignes de bus à revérifier",
+        "count": 1
+      },
+      {
+        "value": "bing pas à jour, mais le parking est bien opérationnel et la forme est \"de souvenir\"",
+        "count": 1
+      },
+      {"value": "Covoiturage", "count": 1},
+      {"value": "survey on site, but not very precise", "count": 1},
+      {
+        "value": "altitude et forme approximative, d'ailleurs c'est pas vraiment un parking officiel",
+        "count": 1
+      },
+      {
+        "value": "ce morceau était présent dans les sources d'origine, et il me semble plus être une erreur de saisie qu'un vrai \"trou\" à confirmer un jour",
+        "count": 1
+      },
+      {"value": "Name à vérifier", "count": 1},
+      {"value": "A affiner", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "bus",
+    "tags": [
+      {"value": "designated", "count": 18},
+      {"value": "yes", "count": 16},
+      {"value": "designaed", "count": 1}
+    ],
+    "count": 35
+  },
+  {
+    "key": "highway",
+    "tags": [
+      {"value": "service", "count": 17},
+      {"value": "living_street", "count": 4},
+      {"value": "residential", "count": 3},
+      {"value": "turning_circle", "count": 2},
+      {"value": "pedestrian", "count": 2},
+      {"value": "unclassified", "count": 1},
+      {"value": "track", "count": 1}
+    ],
+    "count": 30
+  },
+  {"key": "construction", "tags": [{"value": "yes", "count": 29}], "count": 29},
+  {
+    "key": "service",
+    "tags": [
+      {"value": "parking_aisle", "count": 13},
+      {"value": "driveway", "count": 13}
+    ],
+    "count": 26
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.lpa.fr/se-garer-dans-un-parc/tous-les-parcs/bonnel-servient",
+        "count": 2
+      },
+      {
+        "value": "http://www.sags.fr/parking-annemasse/liberation-40.html",
+        "count": 2
+      },
+      {
+        "value": "http://www.annecy.fr/333-le-stationnement-les-parkings-dans-la-ville-d-annecy.htm",
+        "count": 2
+      },
+      {
+        "value": "http://www.saint-genis-pouilly.fr/vie-pratique/transports/parkings.html",
+        "count": 2
+      },
+      {
+        "value": "http://www.vincipark.com/fr/parkings/bellecour-69000100",
+        "count": 1
+      },
+      {
+        "value": "http://www.sags.fr/parking-annemasse/chablais-park-285.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.geneve.ch/parkings/parkings/moillesulaz.asp",
+        "count": 1
+      },
+      {
+        "value": "http://www.sags.fr/parking-annemasse/hotel-de-ville--montessuit-41.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.geneve.ch/parkings/parkings/sousmoulin.asp",
+        "count": 1
+      },
+      {
+        "value": "http://www.vincipark.com/vincipark.nsf/fr/parcservice/pages/saint-etienne_les_ursules.htm",
+        "count": 1
+      },
+      {"value": "http://www.geneve.ch/parkings/parkings/pr_47.asp", "count": 1},
+      {"value": "http://www.geneve.ch/parkings/parkings/p26.asp", "count": 1},
+      {
+        "value": "https://www.q-park.fr/fr/se-garer-chez-q-park/parkings-par-ville/valence/parking-faventines",
+        "count": 1
+      },
+      {
+        "value": "https://www.q-park.fr/fr/se-garer-chez-q-park/parkings-par-ville/valence/parking-chamfort",
+        "count": 1
+      },
+      {
+        "value": "http://www.sags.fr/parking-annemasse/clemenceau-39.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.sags.fr/parking-annemasse/clos-fleury-37.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.geneve.ch/parkings/parkings/pr_vey.asp",
+        "count": 1
+      },
+      {"value": "www.resaplace.com", "count": 1},
+      {"value": "http://www.tag.fr/94-parkings-relais.htm#par1252", "count": 1},
+      {
+        "value": "http://www.sags.fr/parking-annemasse/place-des-marches-38.html",
+        "count": 1
+      },
+      {
+        "value": "https://www.q-park.fr/fr/se-garer-chez-q-park/parkings-par-ville/valence/parking-champ-de-mars",
+        "count": 1
+      },
+      {"value": "http://lescoteauxdusalin.fr", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "covered",
+    "tags": [{"value": "no", "count": 16}, {"value": "yes", "count": 9}],
+    "count": 25
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 24}], "count": 24},
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "P1", "count": 5},
+      {"value": "P2", "count": 5},
+      {"value": "P4", "count": 4},
+      {"value": "P3", "count": 3},
+      {"value": "P6", "count": 1},
+      {"value": "P7", "count": 1},
+      {"value": "P0", "count": 1},
+      {"value": "A", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "2", "count": 1}
+    ],
+    "count": 23
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "-1", "count": 8},
+      {"value": "0", "count": 6},
+      {"value": "1", "count": 3},
+      {"value": "2", "count": 3},
+      {"value": "-1;0;1", "count": 1},
+      {"value": "-3;-2;-1", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "caravan_site", "count": 18},
+      {"value": "picnic_site", "count": 1},
+      {"value": "information", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "converted_by",
+    "tags": [
+      {"value": "Editop_2_OSM_v0001", "count": 16},
+      {"value": "Editop_2_OSM_v0016", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 50 83 31 75", "count": 5},
+      {"value": "+41 22 827 44 90", "count": 4},
+      {"value": "+33 4 72 41 65 27", "count": 1},
+      {"value": "+41 22 717 70 99", "count": 1},
+      {"value": "+33 4 78 42 86 99", "count": 1},
+      {"value": "+33 4 50 84 06 54", "count": 1},
+      {"value": "+33 4 78 37 35 45", "count": 1},
+      {"value": "+33 4 78 18 97 09", "count": 1},
+      {"value": "+41 22 899 10 10", "count": 1},
+      {"value": "+33 4 76 34 40 42", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "parking:lane",
+    "tags": [
+      {"value": "perpendicular", "count": 12},
+      {"value": "parallel", "count": 3},
+      {"value": "right", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "area",
+    "tags": [{"value": "yes", "count": 14}, {"value": "square", "count": 1}],
+    "count": 15
+  },
+  {"key": "hiking", "tags": [{"value": "yes", "count": 15}], "count": 15},
+  {
+    "key": "barrier",
+    "tags": [
+      {"value": "fence", "count": 9},
+      {"value": "wall", "count": 2},
+      {"value": "hedge", "count": 1},
+      {"value": "retaining_wall", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "network",
+    "tags": [
+      {"value": "TAG", "count": 10},
+      {"value": "TCL", "count": 1},
+      {"value": "TAG/TER/Transisère", "count": 1},
+      {"value": "Lihsa", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "disabled",
+    "tags": [
+      {"value": "yes", "count": 8},
+      {"value": "1", "count": 3},
+      {"value": "4", "count": 2}
+    ],
+    "count": 13
+  },
+  {
+    "key": "psv",
+    "tags": [{"value": "yes", "count": 7}, {"value": "designated", "count": 2}],
+    "count": 9
+  },
+  {
+    "key": "stay",
+    "tags": [
+      {"value": "90", "count": 2},
+      {"value": "15", "count": 1},
+      {"value": "30-180", "count": 1},
+      {"value": "30-60", "count": 1},
+      {"value": "0", "count": 1},
+      {"value": "60", "count": 1},
+      {"value": "45", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "maxweight",
+    "tags": [
+      {"value": "3", "count": 2},
+      {"value": "3.5t", "count": 1},
+      {"value": "3.5", "count": 1},
+      {"value": "1.5", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "3.5 t", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "tourist_bus",
+    "tags": [{"value": "yes", "count": 5}, {"value": "designated", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "shop",
+    "tags": [
+      {"value": "car_repair", "count": 3},
+      {"value": "bakery", "count": 1},
+      {"value": "car", "count": 1},
+      {"value": "department_store", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "height",
+    "tags": [
+      {"value": "2", "count": 3},
+      {"value": "24.2", "count": 1},
+      {"value": "2.5", "count": 1},
+      {"value": "0", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "motorhome",
+    "tags": [{"value": "yes", "count": 3}, {"value": "no", "count": 2}],
+    "count": 5
+  },
+  {
+    "key": "description:en",
+    "tags": [
+      {"value": "45 first minutes free", "count": 2},
+      {"value": "Only with subscription", "count": 1},
+      {"value": "parking on the commercial center roof", "count": 1},
+      {"value": "visitor parking", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "fence_type",
+    "tags": [{"value": "metal", "count": 4}, {"value": "wire", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 2},
+      {"value": "private", "count": 1},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "toll", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Garage_h%C3%A9licoidal_2_-_Grenoble.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Place_Henri_Girousse_%C3%A0_Meximieux.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Nouveaux_parkings_du_stade_du_Forum.jpg",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/Category:Bois_du_Jussy#/media/File:Bois-du-Jussy-2.jpg",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Place de la Cathédrale (Belley)", "count": 1},
+      {"value": "fr:Place de la Croix-Rousse", "count": 1},
+      {"value": "fr:Garage hélicoïdal de Grenoble", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "CLC:year", "tags": [{"value": "2006", "count": 3}], "count": 3},
+  {
+    "key": "wheelchair:description",
+    "tags": [
+      {"value": "8 cars, level -1", "count": 1},
+      {"value": "1 place", "count": 1},
+      {"value": "lift", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "CLC:code",
+    "tags": [{"value": "211", "count": 2}, {"value": "112", "count": 1}],
+    "count": 3
+  },
+  {"key": "private", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "vehicle",
+    "tags": [
+      {"value": "private", "count": 1},
+      {"value": "no", "count": 1},
+      {"value": "bus", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3390351", "count": 1},
+      {"value": "Q21328497", "count": 1},
+      {"value": "Q3095274", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "CLC:id",
+    "tags": [
+      {"value": "FR-134656", "count": 1},
+      {"value": "FR-128743", "count": 1},
+      {"value": "FR-132606/1", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "tracktype", "tags": [{"value": "grade2", "count": 3}], "count": 3},
+  {
+    "key": "parking_space",
+    "tags": [{"value": "disabled", "count": 2}],
+    "count": 2
+  },
+  {"key": "hov", "tags": [{"value": "designated", "count": 2}], "count": 2},
+  {
+    "key": "carpool",
+    "tags": [{"value": "designated", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "bicycle", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 1}, {"value": "3", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "leisure",
+    "tags": [{"value": "common", "count": 1}, {"value": "fishing", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "bridge", "count": 1},
+      {"value": "surveillance", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "nudism", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "parking:condition:time_interval",
+    "tags": [
+      {"value": "Mo-Tu 00:00-24:00;Th-Sa 00:00-24:00", "count": 1},
+      {"value": "Sa 00:00-15:30", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "parking:condition:both",
+    "tags": [
+      {"value": "custumers", "count": 1},
+      {"value": "09:00-12:00,14:00-19:00", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116310", "count": 1},
+      {"value": "PA00117184", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.tcl.fr/var/tcl/storage/original/application/c3a1e37a5fc530c279971bbeb908bfff.pdf",
+        "count": 1
+      },
+      {
+        "value": "http://www.i-campingcar.fr/aires.php?ville=la%20feclaz",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "station", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "parking:condition",
+    "tags": [
+      {"value": "ticket", "count": 1},
+      {"value": "no_parking", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "maxspeed",
+    "tags": [{"value": "20", "count": 1}, {"value": "30", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1944", "count": 1},
+      {"value": "1989-07-31", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "opening_date",
+    "tags": [{"value": "2018-04-16", "count": 1}],
+    "count": 1
+  },
+  {"key": "foot", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "natural", "tags": [{"value": "bare_rock", "count": 1}], "count": 1},
+  {"key": "parking:levels", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {
+    "key": "capacity:bicycle",
+    "tags": [{"value": "44", "count": 1}],
+    "count": 1
+  },
+  {"key": "survey:date", "tags": [{"value": "2011", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "File:Garage hélicoidal 2 - Grenoble.JPG", "count": 1}],
+    "count": 1
+  },
+  {"key": "count", "tags": [{"value": "60", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description:fr",
+    "tags": [{"value": "8 places, niveau -1", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "parking:lane:both",
+    "tags": [{"value": "perpendicular", "count": 1}],
+    "count": 1
+  },
+  {"key": "atv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "motorcycle", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "hoops", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "brand", "tags": [{"value": "Speedy", "count": 1}], "count": 1},
+  {
+    "key": "access:disabled",
+    "tags": [{"value": "designated", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "designated", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "parking:condition:both:vehicles",
+    "tags": [{"value": "goods;hgv", "count": 1}],
+    "count": 1
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "description:fr",
+    "tags": [{"value": "Accès uniquement par abonnement", "count": 1}],
+    "count": 1
+  },
+  {"key": "map_size", "tags": [{"value": "city", "count": 1}], "count": 1},
+  {"key": "map_type", "tags": [{"value": "scheme", "count": 1}], "count": 1},
+  {"key": "information", "tags": [{"value": "map", "count": 1}], "count": 1},
+  {"key": "fence", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "capacity:bus", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "access:hgv", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "parking:condition:both:maxstay",
+    "tags": [{"value": "1.5 h", "count": 1}],
+    "count": 1
+  },
+  {"key": "FIXME", "tags": [{"value": "access?", "count": 1}], "count": 1},
+  {"key": "power_supply", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "capacity:charging",
+    "tags": [{"value": "2", "count": 1}],
+    "count": 1
+  },
+  {"key": "disabled_spaces", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "type", "tags": [{"value": "underground", "count": 1}], "count": 1},
+  {"key": "gpl", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "goods", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "oneway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "square", "count": 1}], "count": 1},
+  {"key": "free", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "seasonal", "tags": [{"value": "summer", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {
+    "key": "fixme:capacity",
+    "tags": [
+      {
+        "value": "j'ai pas compté précisément, c'est au jugé, c'est pas comme s'il y avait des lignes de séparations comme dans un super marché !",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "car_sharing", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "trailer", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "car", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "square", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "taxi", "tags": [{"value": "designated", "count": 1}], "count": 1}
+]

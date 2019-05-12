@@ -1,0 +1,55 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "mineshaft", "count": 19}],
+    "count": 19
+  },
+  {
+    "key": "mineshaft_type",
+    "tags": [{"value": "air", "count": 11}, {"value": "winding", "count": 2}],
+    "count": 13
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "start_date",
+    "tags": [{"value": "1928", "count": 1}, {"value": "C20", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "Category:Chevalement, Puits Couriot", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mine",
+    "tags": [{"value": "Mine de Saint Bel", "count": 1}],
+    "count": 1
+  },
+  {"key": "end_date", "tags": [{"value": "1972", "count": 1}], "count": 1},
+  {"key": "headframe", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "abandoned", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "reproduction du puits sainte marie", "count": 1}],
+    "count": 1
+  },
+  {"key": "depth", "tags": [{"value": "300", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2003-11-03", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA42000018", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q3410688", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Puits des Combes", "count": 1}],
+    "count": 1
+  }
+]

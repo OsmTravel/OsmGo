@@ -1,0 +1,112 @@
+[
+  {"key": "amenity", "tags": [{"value": "clinic", "count": 50}], "count": 50},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33472731276", "count": 1},
+      {"value": "+33 4 75 75 22 45", "count": 1},
+      {"value": "0826009007", "count": 1},
+      {"value": "+33 4 76 96 27 65", "count": 1},
+      {"value": "+41 22 719 74 00", "count": 1},
+      {"value": "+41 22 782 58 48", "count": 1},
+      {"value": "+33 4 72 83 49 17", "count": 1},
+      {"value": "+33 825 08 25 69", "count": 1},
+      {"value": "+33 4 74 600 600", "count": 1},
+      {"value": "+33 4 75 85 16 31", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.cdhs.fr/", "count": 1},
+      {"value": "http://laboratoire-bio-clinival.fr/", "count": 1},
+      {
+        "value": "https://www.vaccination-lyon.com/centre-vaccination-villeurbanne-lyon/",
+        "count": 1
+      },
+      {"value": "https://www.la-tour.ch", "count": 1},
+      {"value": "https://xray-radiologie.ch", "count": 1},
+      {"value": "https://www.cerk.fr/", "count": 1},
+      {
+        "value": "http://odontologie.univ-lyon1.fr/presentation/le-centre-de-soins-d-enseignement-et-de-recherche-dentaire/le-centre-de-soins-d-enseignement-et-de-recherche-dentaire-222099.kjsp",
+        "count": 1
+      },
+      {"value": "www.orpea.com/clinique-lyon-lumiere", "count": 1},
+      {
+        "value": "http://www.ahsm.eu/implantations/centre-de-soins-daccompagnement-et-de-prevention-en-addictologie-la-cerisaie-csapa",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "healthcare",
+    "tags": [
+      {"value": "clinic", "count": 6},
+      {"value": "plastic_surgery", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [
+      {"value": "radiology", "count": 1},
+      {"value": "ophthalmology", "count": 1},
+      {"value": "mental_health", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "emergency",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Labo d'analyses médicales.", "count": 1},
+      {"value": "Cabinet infirmier", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "J'ai édité le point en tant que \"clinic\", à défaut de mieux.",
+        "count": 1
+      },
+      {
+        "value": "Créer à la suite de la démolition du 50 galerie de l'arlequin",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "laboratory", "count": 1}],
+    "count": 1
+  },
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [
+      {"value": "cerisaie-inf@privas-groupe-sainte-marie.com", "count": 1}
+    ],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+ 33 4 75 85 39 31", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [{"value": "Association hospitalière Sainte-marie", "count": 1}],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1}
+]

@@ -1,0 +1,98 @@
+[
+  {"key": "historic", "tags": [{"value": "tomb", "count": 62}], "count": 62},
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q26997854", "count": 1},
+      {"value": "Q27048414", "count": 1},
+      {"value": "Q27037225", "count": 1},
+      {"value": "Q26965645", "count": 1},
+      {"value": "Q22996922", "count": 1},
+      {"value": "Q27032650", "count": 1},
+      {"value": "Q27049750", "count": 1},
+      {"value": "Q27114018", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Tombe_de_la_M%C3%A8re_Brazier_au_Mas_Rillier.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Tombe_de_l%27abb%C3%A9_Thomas_au_cimeti%C3%A8re_du_Mas_Rillier.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Grave_of_Jean-Marie_Chardon_(Saint-Maurice-de-Beynost).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Tombeau_des_familles_Togni_et_Simonet_(Tramoyes)_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Tombe_de_Joseph_Reveyron.JPG",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "tomb",
+    "tags": [
+      {"value": "vault", "count": 2},
+      {"value": "stone", "count": 1},
+      {"value": "tombstone", "count": 1},
+      {"value": "mausoleum", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "IA01000284", "count": 1},
+      {"value": "PA42000040", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {
+        "value": "À la mémoire de notre oncle\nIci repose Reverand\nDUBOURJAL\nFrançois-Marie\nde Mont-Saxonnez\nCuré de cette paroisse\nPendant 16 ans. Mort à l'âge\nde 59 ans le 31 octobre 1874\nEmportant les regrets de\nses fidèles paroissiens\nPriez pour lui",
+        "count": 1
+      },
+      {
+        "value": "EMILE GUIMET\nDECEDE LE 12 OCTOBRE 1918\nAGE DE 82 ANS",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "2011-02-17", "count": 1}],
+    "count": 1
+  },
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Tombe du Général Jean-Marie Degoutte", "count": 1}],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "cemetery", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [{"value": "Category:Tombeau Smith, Saint-Étienne", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,936 @@
+[
+  {
+    "key": "tourism",
+    "tags": [{"value": "guest_house", "count": 688}],
+    "count": 688
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.gites-de-france-drome.com/liste?lno=G256090,G256089",
+        "count": 2
+      },
+      {"value": "http://fermeauberge-linossier.com/", "count": 2},
+      {"value": "podico.com", "count": 2},
+      {"value": "http:// thoirette-peche.weebly.com", "count": 2},
+      {"value": "http://www.domaine-sapiniere.com", "count": 2},
+      {"value": "www.lesengrangeous.com", "count": 1},
+      {"value": "http://www.lafarella.com/", "count": 1},
+      {"value": "http://www.lesdenis.com/", "count": 1},
+      {
+        "value": "http://www.ot.payshermitage.com/hebergement.php?htype=Chambres%20dh%F4tes",
+        "count": 1
+      },
+      {
+        "value": "http://www.dromedescollines-tourisme.com/Fiche/Detail/276/Portail-touristique-de-la-Drome-des-Collines~Sejourner~Chambre-d-hotes/Chambre-d-h%C3%B4tes-le-Colombier",
+        "count": 1
+      },
+      {"value": "http://lamarronniere.canalblog.com/", "count": 1},
+      {"value": "http://www.le-tinal.com/", "count": 1},
+      {"value": "http://www.auberge-presles.com", "count": 1},
+      {"value": "www.alombredeskiwis.com", "count": 1},
+      {"value": "http://www.doorreis.com", "count": 1},
+      {"value": "http://www.couventdelatourette.fr", "count": 1},
+      {"value": "http://www.equitation-gite-ardeche.com/", "count": 1},
+      {"value": "http://www.chateauchavagnac.com/", "count": 1},
+      {"value": "http://my-gite-lesblaches-ardeche.fr/", "count": 1},
+      {"value": "http://longue-vie.fr/", "count": 1},
+      {"value": "http://montpoulet.e-monsite.com/", "count": 1},
+      {"value": "http://www.chateau-bellecombe.com/", "count": 1},
+      {"value": "http://www.fermedesautelievre.com", "count": 1},
+      {"value": "http://www.gite-lamaisonvieille.com", "count": 1},
+      {"value": "http://www.location-yourte-ardeche.fr", "count": 1},
+      {"value": "http://www.chantelouve-ardeche.fr", "count": 1},
+      {"value": "http://www.domaine-la-vieille.fr/", "count": 1},
+      {"value": "http://www.cremillieux.nl", "count": 1},
+      {"value": "http://gite-laterredubuisson.fr/", "count": 1},
+      {"value": "http://www.escapade-rochepaule.fr", "count": 1},
+      {"value": "http://www.lenomdelarose.com", "count": 1},
+      {"value": "http://www.loustau07.com", "count": 1},
+      {"value": "http://www.moulin-de-montabonnel.com/", "count": 1},
+      {"value": "http://www.chaumont-chambredhote.org/", "count": 1},
+      {"value": "http://www.grandchaleat.com/", "count": 1},
+      {"value": "http://jeaute.free.fr", "count": 1},
+      {"value": "http://www.levergier.com", "count": 1},
+      {"value": "http://www.lechateauduvergier.fr/", "count": 1},
+      {"value": "http://www.logisdupouchon.com", "count": 1},
+      {"value": "http://www.leveyrouxdelongefaye.com/", "count": 1},
+      {"value": "http://www.chateaudurbilhac.fr", "count": 1},
+      {"value": "http://legouy.e-monsite.com", "count": 1},
+      {"value": "http://www.o-doux-valoan.com", "count": 1},
+      {"value": "http://relaisdesmoines.fr", "count": 1},
+      {"value": "http://www.portedebesse.free.fr/", "count": 1},
+      {"value": "www.chambresdhotes-fr.com", "count": 1},
+      {"value": "http://le.bouteirou.free.fr/", "count": 1},
+      {"value": "http://www.lemasdutaillet.fr", "count": 1},
+      {"value": "http://lesgitesdulacdissarles.com", "count": 1},
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/la-ferme-des-buis-111217/",
+        "count": 1
+      },
+      {
+        "value": "http://www.boucieuleroi.com/article-hebergement_maison_pierre_vigne-45261760.html",
+        "count": 1
+      },
+      {"value": "www.leclosdesreves.com", "count": 1},
+      {"value": "http://www.etincelledereve.fr/", "count": 1},
+      {"value": "www.legitedechaturange.fr", "count": 1},
+      {
+        "value": "http://www.gites-de-france.com/location-vacances-Montferrat-Gite-38G256100.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.village-vacances.com/les-balcons-du-lac.php",
+        "count": 1
+      },
+      {
+        "value": "http://www.gites-de-france-loire.com/gite-rural-marcon-henri-a-roche-la-moliere-dans-St-ETIENNE-METROPOLE-4126.html",
+        "count": 1
+      },
+      {"value": "www.chambre-hote-drome.fr", "count": 1},
+      {"value": "http://www.gite-etape-ardeche.com/", "count": 1},
+      {"value": "http://relaisdestjean.free.fr", "count": 1},
+      {"value": "http://www.chateau-tanay.com", "count": 1},
+      {"value": "http://www.chez-soie.fr/", "count": 1},
+      {"value": "http://www.lestureaux.com/", "count": 1},
+      {"value": "http://auberge.lagrolle.free.fr/", "count": 1},
+      {"value": "http://www.larourie.fr", "count": 1},
+      {"value": "http://www.lepeyron.fr/", "count": 1},
+      {"value": "gite07@yahoo.fr", "count": 1},
+      {
+        "value": "http://www.gites-de-france-ardeche.com/en/recherche/guest-room-bb-chateau-de-lemps-lemps_ref28/",
+        "count": 1
+      },
+      {"value": "http://www.madeinchanos.com/", "count": 1},
+      {"value": "http://lacartara.fr/", "count": 1},
+      {"value": "https://www.ardeche-gitebonnefontaine.fr/", "count": 1},
+      {"value": "http://la-croix-du-verre.com/", "count": 1},
+      {"value": "http://www.entre-pierre-et-sens.fr/", "count": 1},
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/les-7-semaines-98349/",
+        "count": 1
+      },
+      {"value": "http://larnage-vacances.pagesperso-orange.fr/", "count": 1},
+      {
+        "value": "http://tourisme-saintfelicien.fr/noesit/!/fiche/marie-maisonnasse-162826",
+        "count": 1
+      },
+      {"value": "http://www.somarel.com/", "count": 1},
+      {"value": "http://www.gites-boucieu.com/", "count": 1},
+      {"value": "http://www.chateau-de-chitry.com", "count": 1},
+      {"value": "http://www.iletaitunesoie.com/", "count": 1},
+      {
+        "value": "http://www.restaurant-saveurs.fr/hotel-beau-sejour/",
+        "count": 1
+      },
+      {"value": "http://www.lecrouzat.fr/", "count": 1},
+      {"value": "http://buffavent.com", "count": 1},
+      {
+        "value": "http://www.gites-de-france.com/location-vacances-Tarentaise-Chambre-d-hotes-La-Maison-Du-Bachat-42G4757.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.chambres-hotes.fr/chambres-hotes_la-chambre-d-hote-du-petit-trot_saint-savin_35329.htm",
+        "count": 1
+      },
+      {"value": "http://www.maholyne.com/", "count": 1},
+      {"value": "http://chambre-hote-beauvoir-lyon.com/", "count": 1},
+      {"value": "http://www.legourguillon.fr/", "count": 1},
+      {"value": "http://www.lesareymond.com/", "count": 1},
+      {"value": "http://lepasdelane.com", "count": 1},
+      {"value": "gitedesfontaines.com", "count": 1},
+      {"value": "http://www.etape-cavaliere.com/", "count": 1},
+      {"value": "http://www.lemasdesmonedes.fr/", "count": 1},
+      {"value": "http://www.guesthousechamonix.com", "count": 1},
+      {"value": "http://www.chaletdelayodine.com/", "count": 1},
+      {
+        "value": "http://www.booking.com/hotel/fr/les-carres.en-gb.html",
+        "count": 1
+      },
+      {"value": "http://lautretemps-chambredhotes.com/", "count": 1},
+      {"value": "http://www.fayetardeche.com", "count": 1},
+      {"value": "www.le-mas-saint-michel.com", "count": 1},
+      {
+        "value": "http://www.gites-de-france.com/location-vacances-Soleymieu-Gite-La-Grange-38G494100.html",
+        "count": 1
+      },
+      {"value": "http://www.domainedevincenti.com", "count": 1},
+      {"value": "http://www.lagrandeterre.nl", "count": 1},
+      {"value": "http://www.chalet-argentiere.com", "count": 1},
+      {"value": "http://creps-rhonealpes.sports.gouv.fr/", "count": 1},
+      {
+        "value": "http://www.savoie-mont-blanc.com/offre/fiche/chalet-refuge-la-montagne/144855",
+        "count": 1
+      },
+      {"value": "http://www.adparady.fr/", "count": 1},
+      {"value": "http://www.lemoulindesaintjacques.com/", "count": 1},
+      {"value": "http://manoir-a-tarare.fr/", "count": 1},
+      {"value": "http://levirage.fr/", "count": 1},
+      {"value": "http://lacombenoireardeche.com/", "count": 1},
+      {"value": "http://maison-hote-lacour.com/", "count": 1},
+      {
+        "value": "http://www.accueilpaysandrome.com/?Aux-Chants-des-Anes",
+        "count": 1
+      },
+      {"value": "www.labuissounette.fr", "count": 1},
+      {"value": "http://www.legrandnoyer.ambronay.fr", "count": 1},
+      {"value": "http://gite-chambres-nyons.com", "count": 1},
+      {"value": "www.closduperret.fr", "count": 1},
+      {"value": "http://www.aubonheurdulac.com", "count": 1},
+      {"value": "http://www.latulipesauvage.com", "count": 1},
+      {"value": "http://lalaiteriedugontey.com", "count": 1},
+      {
+        "value": "http://www.accueil-paysan.com/fr/catalog/structure/274/",
+        "count": 1
+      },
+      {"value": "http://lepanicaut.com/", "count": 1},
+      {"value": "http://jmdo.com", "count": 1},
+      {"value": "https://www.chateau-de-riverie.fr/", "count": 1},
+      {
+        "value": "http://www.valence-romans-tourisme.com/fr/catalogue/activite/tous/peyrins-2987484/gite-le-colombier-445266/",
+        "count": 1
+      },
+      {"value": "http://restaurantdesbalmes.com/gite.html", "count": 1},
+      {"value": "http://www.authealamenthe.com/", "count": 1},
+      {
+        "value": "http://www.valence-romans-tourisme.com/fr/catalogue/activite/tous/romans-sur-isere-2983011/les-muriers-166589/",
+        "count": 1
+      },
+      {"value": "http://www.pouzin-architecte.com/", "count": 1},
+      {"value": "http://www.lapasserelle26.com/", "count": 1},
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/les-granges-lily-281864/",
+        "count": 1
+      },
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/chambres-dhotes-le-sud-4645174/",
+        "count": 1
+      },
+      {"value": "http://www.bastide-de-fontaille.be/", "count": 1},
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/chambres-dhotes-le-philosophe-207462/",
+        "count": 1
+      },
+      {"value": "http://www.lesdefendus.com/", "count": 1},
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/la-maison-dans-les-nuages-713802/",
+        "count": 1
+      },
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/la-pietra-529590/",
+        "count": 1
+      },
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/la-fougeraie-281054/",
+        "count": 1
+      },
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/les-vergers-du-puits-860704/",
+        "count": 1
+      },
+      {"value": "http://lhotedeladreyt.free.fr/", "count": 1},
+      {"value": "https://www.gite-ardeche-verte.com/", "count": 1},
+      {"value": "http://www.couette-et-tartine.fr/", "count": 1},
+      {"value": "http://www.domaine-plantat.com/", "count": 1},
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/m-et-mme-coelo-jean-claude-101398/",
+        "count": 1
+      },
+      {"value": "http://www.lepetitchantuzet.com", "count": 1},
+      {
+        "value": "https://www.gites-de-france-drome.com/fiche-hebergement-G71722.html",
+        "count": 1
+      },
+      {"value": "https://www.lecorral.fr/", "count": 1},
+      {
+        "value": "http://www.oliviervandenberg.com/domaine-du-moulin/",
+        "count": 1
+      },
+      {"value": "www.lesterresdesimondon.com", "count": 1},
+      {"value": "http://leterroirdesyzel.fr/", "count": 1},
+      {
+        "value": "https://www.facebook.com/groups/917506548282636/permalink/1739861459380470/?sale_post_id=1739861459380470",
+        "count": 1
+      },
+      {
+        "value": "https://www.ardeche-hermitage.com/fr/catalogue/activite/chambres-d-hotes/ferme-giraud-4895162/",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-grange-avrieux.com/index.php/accueil",
+        "count": 1
+      },
+      {"value": "ferme-de-chaleyre.com", "count": 1},
+      {"value": "https://www.domainedeblacons.fr/", "count": 1},
+      {"value": "https://www.lesmaisonsdubonheur.pro/", "count": 1},
+      {
+        "value": "http://www.valence-romans-tourisme.com/fr/catalogue/activite/tous/peyrins-2987484/gite-la-renaissante-525284/",
+        "count": 1
+      },
+      {"value": "http://lescimesdulac.jimdo.com/", "count": 1},
+      {
+        "value": "http://pays-lac-aiguebelette.com/noesit/!/fiche/la-buissonniere-84485/",
+        "count": 1
+      },
+      {"value": "http://www.abritel.fr/location-vacances/p591124", "count": 1},
+      {"value": "http://www.lanatase.com/", "count": 1},
+      {
+        "value": "http://bastidedelatour.free.fr/Bastide_De_La_Tour/Accueil.html",
+        "count": 1
+      },
+      {"value": "http://www.gitedepontgibaud.com/", "count": 1},
+      {"value": "http://www.gitechantdeleau.com/", "count": 1},
+      {"value": "http://www.gite-lesmesanges.com", "count": 1},
+      {
+        "value": "http://www.gites-de-france.com/location-vacances-villereversure-chambre-l-agnoblens-,gites01_b2011.1.G447501.H.html",
+        "count": 1
+      },
+      {"value": "http://gite-fagot.com", "count": 1},
+      {"value": "http://www.chambres-hotes-maurienne.info/", "count": 1},
+      {"value": "http://www.leberbois.com", "count": 1},
+      {"value": "http://nosgites.fr", "count": 1},
+      {
+        "value": "http://www.accueil-paysan.com/fr/catalog/structure/70/",
+        "count": 1
+      },
+      {
+        "value": "http://www.gites-de-france.com/location-vacances-Samoens-Gite-L-oratoire-olympia-74G258039.html",
+        "count": 1
+      },
+      {"value": "http://fermedesauches.free.fr/", "count": 1},
+      {"value": "http://www.les-petites-sources.com", "count": 1},
+      {"value": "http://villa.belle-vue.pagesperso-orange.fr/", "count": 1},
+      {"value": "http://www.domainedefoncin.fr", "count": 1},
+      {
+        "value": "http://www.lebeaufortain.com/fr/hebergements/chambres-dhotesgites--sitraHLO706113--la-ferme-du-molliet.html",
+        "count": 1
+      },
+      {"value": "http://la-combe-verte.perso.neuf.fr/", "count": 1},
+      {"value": "http://www.chateaudubesset.com", "count": 1},
+      {"value": "http://www.petitmarchand-ardeche.fr/", "count": 1},
+      {"value": "http://www.theolier.com/", "count": 1},
+      {"value": "http://latuilliere.fr/", "count": 1},
+      {"value": "http://www.chateaudesallues.com/", "count": 1},
+      {"value": "http://www.lechaletdeno.com/", "count": 1},
+      {"value": "http://www.masdescoccinellesmollans.com", "count": 1},
+      {"value": "http://www.chateaudechambost.com", "count": 1},
+      {
+        "value": "http://www.gites-de-france-ardeche.com/fr/catalogue/hebergement/reference/146-2016/",
+        "count": 1
+      },
+      {"value": "lebellacha.com", "count": 1},
+      {"value": "http://www.molliebon.fr", "count": 1},
+      {"value": "http://www.lacolonie.fr/", "count": 1},
+      {"value": "http://www.etape-pleincoeur.fr", "count": 1},
+      {"value": "www.lavignesurlefoin.com", "count": 1},
+      {"value": "http://www.gite-point-virgule.fr/", "count": 1},
+      {"value": "lesvoletsbleus-isere.fr", "count": 1},
+      {"value": "https://www.gites-aravis.fr", "count": 1},
+      {"value": "http://www.lamaisonduvernay.com/", "count": 1},
+      {"value": "www.relaisvillevieille.fr", "count": 1},
+      {"value": "murose.fr", "count": 1},
+      {"value": "http://www.motorhardfrance.com", "count": 1},
+      {"value": "le-scratch.weebly.com", "count": 1},
+      {"value": "http://www.legrandnoe.fr/", "count": 1},
+      {
+        "value": "https://www.gites-de-france.com/location-vacances-Vesseaux-Gite-Les-Hirondelles-07G339701.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.gites-de-charme-ardeche.com/bienvenue/",
+        "count": 1
+      },
+      {"value": "http://www.maisonseule.com/", "count": 1},
+      {"value": "http://www.maisonherold.com/", "count": 1},
+      {"value": "http://www.lamaisondesbadons.com/", "count": 1},
+      {"value": "http://www.chateaudubesset.nl/", "count": 1},
+      {"value": "http://www.auberge-ecole.fr/", "count": 1},
+      {"value": "http://bergerie-aulagner.fr/", "count": 1}
+    ],
+    "count": 213
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77 39 60 81", "count": 2},
+      {"value": "+33474768599", "count": 2},
+      {"value": "+33788107132", "count": 1},
+      {"value": "+33 4 75 07 35 44", "count": 1},
+      {"value": "+33 4 75 07 34 11", "count": 1},
+      {"value": "+33 6 75 98 56 53", "count": 1},
+      {"value": "+33 4 75 08 09 78", "count": 1},
+      {"value": "+33 6 81 39 00 91", "count": 1},
+      {"value": "+33 4 75 08 98 12", "count": 1},
+      {"value": "+33 4 76 36 04 75", "count": 1},
+      {"value": "+33 4 50 85 25 24", "count": 1},
+      {"value": "+33 4 75 62 42 12", "count": 1},
+      {"value": "+33 4 72 19 10 90", "count": 1},
+      {"value": "+33 4 75 08 33 08", "count": 1},
+      {"value": "+33 4 75 06 29 76", "count": 1},
+      {"value": "+33 4 75 06 69 30", "count": 1},
+      {"value": "+33 4 75 06 10 17", "count": 1},
+      {"value": "+33 4 75 06 76 04", "count": 1},
+      {"value": "+33 4 75 06 73 24", "count": 1},
+      {"value": "+33 6 23 02 23 48", "count": 1},
+      {"value": "+33 4 75 06 78 72", "count": 1},
+      {"value": "+33 4 75 08 44 93", "count": 1},
+      {"value": "+33 4 75 06 08 40", "count": 1},
+      {"value": "+33 4 75 30 54 67", "count": 1},
+      {"value": "+33 4 75 30 18 73", "count": 1},
+      {"value": "+33 4 75 30 58 95", "count": 1},
+      {"value": "+33 4 75 30 01 93", "count": 1},
+      {"value": "+33 4 75 65 15 34", "count": 1},
+      {"value": "+33 4 75 08 48 04", "count": 1},
+      {"value": "+33 4 75 34 35 14", "count": 1},
+      {"value": "+33 4 75 06 32 95", "count": 1},
+      {"value": "+33 4 50 56 61 83", "count": 1},
+      {"value": "+33 4 75 58 15 18", "count": 1},
+      {"value": "+33 4 74 98 17 74", "count": 1},
+      {"value": "+33 4 75 38 92 02", "count": 1},
+      {"value": "+33 4 66 69 41 15", "count": 1},
+      {"value": "+33 4 27 87 15 18", "count": 1},
+      {"value": "+33 7 89 37 24 04", "count": 1},
+      {"value": "+33 4 75 39 98 45", "count": 1},
+      {"value": "+33 4 75 02 36 97", "count": 1},
+      {"value": "+33 6 31 38 98 70", "count": 1},
+      {"value": "+33 4 74 61 88 67", "count": 1},
+      {"value": "+33 4 77 76 70 38", "count": 1},
+      {"value": "+33 6 64 09 82 37", "count": 1},
+      {"value": "+33 4 50 52 61 51", "count": 1},
+      {"value": "+33 4 75 06 80 08", "count": 1},
+      {"value": "+33 6 76 05 45 92", "count": 1},
+      {"value": "+33 6 19 81 30 65", "count": 1},
+      {"value": "+33 4 75 07 61 45", "count": 1},
+      {"value": "+33 4 75 07 26 29", "count": 1},
+      {"value": "+33 4 75 08 65 33", "count": 1},
+      {"value": "+33 4 75 07 45 61", "count": 1},
+      {"value": "+33 4 75 07 25 27", "count": 1},
+      {"value": "+33 4 75 07 31 39", "count": 1},
+      {"value": "+33 4 75 65 93 40", "count": 1},
+      {"value": "+33 4 75 07 61 36", "count": 1},
+      {"value": "+33 4 75 06 56 03", "count": 1},
+      {"value": "+33 6 84 52 90 48", "count": 1},
+      {"value": "+33 6 82 49 61 89", "count": 1},
+      {"value": "+33 4 79 52 22 43", "count": 1},
+      {"value": "+33 6 03 67 27 84", "count": 1},
+      {"value": "+33 6 66 66 11 17", "count": 1},
+      {"value": "+33 450260436", "count": 1},
+      {"value": "+33 4 50 26 04 36", "count": 1},
+      {"value": "+33476320178", "count": 1},
+      {"value": "+33 4 50 54 16 11", "count": 1},
+      {"value": "+33 4 76 45 24 89", "count": 1},
+      {"value": "+33479312250", "count": 1},
+      {"value": "+33 4 75 07 69 19", "count": 1},
+      {"value": "+33 4 75 39 12 19", "count": 1},
+      {"value": "+33 4 75 07 42 16", "count": 1},
+      {"value": "+33475285483", "count": 1},
+      {"value": "+33668020016", "count": 1},
+      {"value": "+33475881510", "count": 1},
+      {"value": "+33 4 76 34 63 53", "count": 1},
+      {"value": "+33 6 70 09 73 23", "count": 1},
+      {"value": "+33474793339", "count": 1},
+      {"value": "+33475081302", "count": 1},
+      {"value": "+33426814131", "count": 1},
+      {"value": "+33 4 50 22 85 92", "count": 1},
+      {"value": "+33476673606", "count": 1},
+      {"value": "+33474388195", "count": 1},
+      {"value": "+33475260246", "count": 1},
+      {"value": "+33475444285", "count": 1},
+      {"value": "+33 4 75 39 73 33", "count": 1},
+      {"value": "+33 4 78 19 71 76", "count": 1},
+      {"value": "+33 771031601", "count": 1},
+      {"value": "+33676352553", "count": 1},
+      {"value": "+33 476343948", "count": 1},
+      {"value": "+33475533620", "count": 1},
+      {"value": "+33768634957", "count": 1},
+      {"value": "+33475533694", "count": 1},
+      {"value": "+33 4 75 76 00 46", "count": 1},
+      {"value": "+33 4 77399578", "count": 1},
+      {"value": "+33 4 78482838", "count": 1},
+      {"value": "+33 4 75 02 44 18", "count": 1},
+      {"value": "+33 4 75 02 29 52", "count": 1},
+      {"value": "+33 6 08 34 22 10", "count": 1},
+      {"value": "+33 6 85 63 99 45", "count": 1},
+      {"value": "+33 6 80 55 94 83", "count": 1},
+      {"value": "+33 6 03 06 44 61", "count": 1},
+      {"value": "+33475071161", "count": 1},
+      {"value": "+33 6 32 34 83 91", "count": 1},
+      {"value": "+33 4 69 24 40 39", "count": 1},
+      {"value": "+32 4 73 73 65 02", "count": 1},
+      {"value": "+33 4 75 09 06 91", "count": 1},
+      {"value": "+33 4 75 06 68 67", "count": 1},
+      {"value": "+33 7 84 14 41 13", "count": 1},
+      {"value": "+33 9 65 23 59 55", "count": 1},
+      {"value": "+33 4 75 06 05 90", "count": 1},
+      {"value": "+33 4 75 06 03 16", "count": 1},
+      {"value": "+33 4 75 07 15 28", "count": 1},
+      {"value": "+33 6 83 59 47 79", "count": 1},
+      {"value": "+33 4 75 06 26 32", "count": 1},
+      {"value": "+33 4 75 45 02 84", "count": 1},
+      {"value": "+33 4 75 08 68 28", "count": 1},
+      {"value": "+33 4 75 08 32 07", "count": 1},
+      {"value": "+33 6 99 04 42 45", "count": 1},
+      {"value": "+33 4 75 07 65 75", "count": 1},
+      {"value": "+33 4 75 84 67 09", "count": 1},
+      {"value": "+33 6 31 78 93 74", "count": 1},
+      {"value": "+33 6 07 59 86 69", "count": 1},
+      {"value": "+33 673 42 23 44", "count": 1},
+      {"value": "+33469001420", "count": 1},
+      {"value": "+33 6 16 11 60 91", "count": 1},
+      {"value": "+33 4 79 69 54 83", "count": 1},
+      {"value": "+33 4 79 36 03 19", "count": 1},
+      {"value": "+33 4 50 54 64 06", "count": 1},
+      {"value": "+33 6 77 74 82 85", "count": 1},
+      {"value": "+33 4 76 88 83 16", "count": 1},
+      {"value": "+33 4 75 45 50 73", "count": 1},
+      {"value": "+33 450020100", "count": 1},
+      {"value": "+33450228592", "count": 1},
+      {"value": "+33 4 50 54 42 28", "count": 1},
+      {"value": "+33 3 84 42 72 41", "count": 1},
+      {"value": "+33 4 75 27 64 92", "count": 1},
+      {"value": "+33 4 75 27 67 04", "count": 1},
+      {"value": "+33475463920", "count": 1},
+      {"value": "+33 4 50 10 10 11", "count": 1},
+      {"value": "+33 4 75 27 92 85", "count": 1},
+      {"value": "+33 4 76 34 11 08", "count": 1},
+      {"value": "+33 4 76 80 13 92", "count": 1},
+      {"value": "+33 4 75 07 31 74", "count": 1},
+      {"value": "+33 4 74 00 73 13", "count": 1},
+      {"value": "+33 4 75 31 22 08", "count": 1},
+      {"value": "+33 4 75 06 06 80", "count": 1},
+      {"value": "+33 4 75 06 07 47", "count": 1},
+      {"value": "+33 4 75 07 63 47", "count": 1},
+      {"value": "+33 6 81 62 54 65", "count": 1},
+      {"value": "+33450020900", "count": 1},
+      {"value": "+33 4 75 28 16 32", "count": 1},
+      {"value": "+33 627819030", "count": 1},
+      {"value": "+33 4 75 28 73 55", "count": 1},
+      {"value": "+33479226438", "count": 1},
+      {"value": "+33 479410633", "count": 1},
+      {"value": "+33 4 79 36 30 52", "count": 1},
+      {"value": "+33 4 50 56 09 76", "count": 1},
+      {"value": "+33 6 12 07 47 78", "count": 1},
+      {"value": "+33 4 79 52 35 72", "count": 1},
+      {"value": "+33 4 50 73 02 79", "count": 1},
+      {"value": "+33 6 64 81 18 79", "count": 1},
+      {"value": "+33 750280814", "count": 1},
+      {"value": "+33 6 68 60 73 00", "count": 1},
+      {"value": "+33 4 77 63 32 29", "count": 1},
+      {"value": "+33 4 77 62 67 33", "count": 1},
+      {"value": "+33 4 75 39 35 33", "count": 1},
+      {"value": "+33 4 75 29 13 32", "count": 1},
+      {"value": "+33 4 75 29 17 32", "count": 1},
+      {"value": "+33 9 88 18 63 61", "count": 1}
+    ],
+    "count": 171
+  },
+  {
+    "key": "internet_access",
+    "tags": [
+      {"value": "wlan", "count": 40},
+      {"value": "yes", "count": 8},
+      {"value": "no", "count": 8},
+      {"value": "wired", "count": 1}
+    ],
+    "count": 57
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Gîtes de France", "count": 13},
+      {"value": "gites-de-france-drome", "count": 2},
+      {"value": "Eric et Roslina", "count": 2},
+      {"value": "Accueil Paysan", "count": 2},
+      {"value": "gite de La Chappinière", "count": 1},
+      {"value": "Jean JULLIEN", "count": 1},
+      {"value": "Gites de France", "count": 1},
+      {"value": "Helen Magnusson & Steve Dowse", "count": 1},
+      {"value": "Ardèche Bien-être - Schluter Pascal", "count": 1},
+      {"value": "Joke en Chris Hogemann", "count": 1},
+      {"value": "Maison d'hotes et gîte", "count": 1},
+      {"value": "Maeva", "count": 1},
+      {"value": "Mme Munari", "count": 1},
+      {"value": "PACLAZ", "count": 1},
+      {"value": "Chambre d'Hôte", "count": 1},
+      {"value": "Gite les chamois", "count": 1},
+      {"value": "Maeva et Dominique Bouachrine Pommat", "count": 1},
+      {"value": "CHAUVIN Muriel", "count": 1},
+      {"value": "Culture Loisirs Vacances Rhône-Alpes", "count": 1},
+      {"value": "Mireille & Pascal Laforce", "count": 1},
+      {"value": "CVM", "count": 1},
+      {"value": "IGESA", "count": 1},
+      {"value": "CléVacances", "count": 1},
+      {"value": "Liliane Berthet", "count": 1},
+      {"value": "Sean Dunning", "count": 1},
+      {"value": "Valérie Monet", "count": 1},
+      {"value": "Charlotte Duprey & Nicolas Alarcon", "count": 1},
+      {"value": "Pascal Billet", "count": 1},
+      {"value": "Mr. Tixier", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "thoirette.peche@yahoo.fr", "count": 2},
+      {"value": "info@domaine-sapiniere.com", "count": 2},
+      {"value": "leclosdesruynes@gmail.com", "count": 1},
+      {"value": "le-balcon-des-fees-ardeche@wandoo.fr", "count": 1},
+      {"value": "+33475063779", "count": 1},
+      {"value": "relaisdesmoines@wanadoo.fr", "count": 1},
+      {"value": "ph.cholat@free.fr", "count": 1},
+      {"value": "backdz@free.fr", "count": 1},
+      {"value": "gigajal@orange.fr", "count": 1},
+      {"value": "accueil@lestureaux.com", "count": 1},
+      {"value": "bachat@outlook.com", "count": 1},
+      {"value": "info@le-mas-saint-michel.com", "count": 1},
+      {"value": "info@lagrandeterre.nl", "count": 1},
+      {"value": "contact@charlet-argentiere.com", "count": 1},
+      {"value": "lafermeduteil@orange.fr", "count": 1},
+      {"value": "contact@alombredeskiwis.com", "count": 1},
+      {"value": "legrandnoyer@gmail.com", "count": 1},
+      {"value": "accueil@lafarella.com", "count": 1},
+      {"value": "la-vercorelle@orange.fr", "count": 1},
+      {"value": "mcarrato@orange.fr", "count": 1},
+      {"value": "contact@latulipesauvage.com", "count": 1},
+      {"value": "lalaiteriedugontey@gmail.com", "count": 1},
+      {"value": "contact@lemontellier.com", "count": 1},
+      {"value": "contact@chateau-de-riverie.fr", "count": 1},
+      {"value": "legrandbouveyron@gmail.com", "count": 1},
+      {"value": "info@lanatase.com", "count": 1},
+      {"value": "reservation@gite-fagot.com", "count": 1},
+      {"value": "no-made-attitude@wanadoo.fr", "count": 1},
+      {"value": "elina.aubert@orange.fr", "count": 1},
+      {"value": "rousset.denise@club-internet.fr", "count": 1},
+      {"value": "lechaletdeno@hotmail.fr", "count": 1},
+      {"value": "houssin.g@wanadoo.fr", "count": 1},
+      {"value": "infogite.philbab@orange.fr", "count": 1},
+      {"value": "contact@relaisdulacnoir.com", "count": 1},
+      {"value": "renseignements@etape-pleincoeur.fr", "count": 1}
+    ],
+    "count": 37
+  },
+  {
+    "key": "smoking",
+    "tags": [
+      {"value": "outside", "count": 17},
+      {"value": "no", "count": 10},
+      {"value": "separated", "count": 2},
+      {"value": "dedicated", "count": 1}
+    ],
+    "count": 30
+  },
+  {
+    "key": "rooms",
+    "tags": [
+      {"value": "3", "count": 7},
+      {"value": "4", "count": 6},
+      {"value": "2", "count": 5},
+      {"value": "5", "count": 3},
+      {"value": "8", "count": 1},
+      {"value": "1", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "18", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "no", "count": 12},
+      {"value": "yes", "count": 9},
+      {"value": "limited", "count": 3}
+    ],
+    "count": 24
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 22}],
+    "count": 22
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "restaurant", "count": 13},
+      {"value": "bar", "count": 3}
+    ],
+    "count": 16
+  },
+  {
+    "key": "stars",
+    "tags": [
+      {"value": "3", "count": 11},
+      {"value": "4", "count": 2},
+      {"value": "2", "count": 2}
+    ],
+    "count": 15
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Gîtes et animaux rigolos", "count": 1},
+      {"value": "Chambres et tables d'hôtes", "count": 1},
+      {"value": "5 chambres d'hotes", "count": 1},
+      {"value": "1 roulotte + 1 gîte", "count": 1},
+      {"value": "gîtes", "count": 1},
+      {"value": "Jeunesse adventiste Valence", "count": 1},
+      {"value": "Locations appartements", "count": 1},
+      {"value": "Romm from 200€ / week", "count": 1},
+      {
+        "value": "Road books available, Closed and safe parking, Kitchen,  Washing machine, Drying machine",
+        "count": 1
+      },
+      {
+        "value": "Rolande et Marcel on amenage a l'interieur d'un chalet d montagne ,situé plein sud ,a flanc de colline ,avec une vue panoramique sur le massif du beaufortain 5chambres d'hotes,une salle d'eau et un wc individuel.",
+        "count": 1
+      },
+      {"value": "Maison d'hôtes de Charme, B&B", "count": 1},
+      {"value": "3 clés Clevacances", "count": 1},
+      {"value": "2 persons room with bathroom half board 59 €", "count": 1}
+    ],
+    "count": 13
+  },
+  {"key": "historic", "tags": [{"value": "castle", "count": 8}], "count": 8},
+  {
+    "key": "beds",
+    "tags": [
+      {"value": "6", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "2", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "5", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Gîte d'etape", "count": 1},
+      {
+        "value": "An accommodation in a Renaissance tower in Vieux-Lyon. A delightful duplex and unique setting with a panoramic view through 17 windows and luxurious amenitiesA vacation rental with charm in Lyon",
+        "count": 1
+      },
+      {"value": "accommodation", "count": 1},
+      {
+        "value": "Very nice bed & breakfast. Clean & comfortable rooms Shower or bathtub Great breakfast",
+        "count": 1
+      },
+      {
+        "value": "Very nice bed and breakfast in a traditional chalet. Good view on the mountains and sunny. Ideal starting point for hikes in the region. Friendly and clean. Price: 65 Euro/night for two people including the breakfast (in 2015)",
+        "count": 1
+      },
+      {
+        "value": "Benvenuti motociclisti, Welcome bikers Bienvenue motard  Close park for bike parcheggio chiuso per moto",
+        "count": 1
+      },
+      {
+        "value": "Le 31 décembre 2016, les Franciscaines ont quitté la Maison St-Jean",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "guest_house",
+    "tags": [{"value": "bed_and_breakfast", "count": 6}],
+    "count": 6
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 6}], "count": 6},
+  {
+    "key": "capacity",
+    "tags": [
+      {"value": "6", "count": 2},
+      {"value": "4", "count": 1},
+      {"value": "100", "count": 1},
+      {"value": "10", "count": 1},
+      {"value": "12", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "cuisine",
+    "tags": [
+      {"value": "french;regional", "count": 2},
+      {"value": "korean", "count": 1},
+      {"value": "regional", "count": 1},
+      {"value": "french", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "450", "count": 2},
+      {"value": "973", "count": 1},
+      {"value": "1270", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2968903", "count": 1},
+      {"value": "Q2968339", "count": 1},
+      {"value": "Q2969773", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 75 07 39 90", "count": 1},
+      {"value": "+33 4 76 34 63 53", "count": 1},
+      {"value": "+33 4 50 54 69 41", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "c'est un gite d'étape", "count": 1},
+      {"value": "place+tourism = 2 nodes", "count": 1},
+      {"value": "right location?", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "Gîtes de France", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Château de Chavagnac", "count": 1},
+      {"value": "fr:Château d'Urbillac", "count": 1},
+      {"value": "fr:Château de Maisonseule", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.ladrometourisme.com/fr/je-prepare/hebergement/hebergement-collectif-gite-de-groupe-gite-detape--sitrahco130539--gite-de-sejour-st-pierre--beaumont-en-diois.html",
+        "count": 1
+      },
+      {"value": "www.gite-lesdiablotins.com", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "mobile",
+    "tags": [
+      {"value": "0614902130", "count": 1},
+      {"value": "+33 6 70023343", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "beverage", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "place", "tags": [{"value": "hamlet", "count": 2}], "count": 2},
+  {
+    "key": "ref",
+    "tags": [{"value": "256100", "count": 1}, {"value": "138150", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "motorcycle_friendly",
+    "tags": [{"value": "customary", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "billiards", "count": 1},
+      {"value": "skiing", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "outdoor_seating",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "takeaway",
+    "tags": [{"value": "no", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {"key": "breakfast", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "brand",
+    "tags": [{"value": "Gîtes de France", "count": 1}],
+    "count": 1
+  },
+  {"key": "delivery", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access:type",
+    "tags": [{"value": "Wi-Fi", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mapillary",
+    "tags": [{"value": "8qhlYatuIWf_8Iuc5t9cGg", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "community",
+    "tags": [{"value": "Sœurs de Saint-François d'Assise", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "community:gender",
+    "tags": [{"value": "female", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "payment:mastercard",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:visa", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wheelchair:description:en",
+    "tags": [{"value": "restaurant only", "count": 1}],
+    "count": 1
+  },
+  {"key": "restaurant", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "sells:drinks", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "piste:type", "tags": [{"value": "nordic", "count": 1}], "count": 1},
+  {"key": "drying:room", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "motorcycle:parking",
+    "tags": [{"value": "covered", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:theme",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "motorcycle:tools",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref:mhs", "tags": [{"value": "PA00116778", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1983", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone:mobile",
+    "tags": [{"value": "+33 6 07 69 00 34", "count": 1}],
+    "count": 1
+  }
+]

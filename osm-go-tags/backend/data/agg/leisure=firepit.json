@@ -1,0 +1,10 @@
+[
+  {"key": "leisure", "tags": [{"value": "firepit", "count": 7}], "count": 7},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Place pour feux dans les emplacements autorisés.", "count": 1}
+    ],
+    "count": 1
+  }
+]

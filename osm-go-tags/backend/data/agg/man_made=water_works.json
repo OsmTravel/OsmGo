@@ -1,0 +1,39 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "water_works", "count": 65}],
+    "count": 65
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Grenoble Alpes Métropole", "count": 2},
+      {"value": "SIERG", "count": 1},
+      {"value": "Syndicat Intercommunal des Eaux de la Dhuy", "count": 1},
+      {"value": "Chambéry Métropole", "count": 1},
+      {"value": "Le Grand Lyon", "count": 1},
+      {"value": "Veolia", "count": 1},
+      {"value": "Nantaise des Eaux", "count": 1}
+    ],
+    "count": 8
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 4}], "count": 4},
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 2}], "count": 2},
+  {
+    "key": "description",
+    "tags": [{"value": "relèvement des eaux usées", "count": 1}],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "316", "count": 1}], "count": 1},
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "fence_type",
+    "tags": [{"value": "chain_link", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fixme",
+    "tags": [{"value": "vérifier captage eau", "count": 1}],
+    "count": 1
+  }
+]

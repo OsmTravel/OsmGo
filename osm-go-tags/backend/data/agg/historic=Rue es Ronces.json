@@ -1,0 +1,9 @@
+[
+  {"key": "ref", "tags": [{"value": "A15", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "primary", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "Rue es Ronces", "count": 1}],
+    "count": 1
+  }
+]

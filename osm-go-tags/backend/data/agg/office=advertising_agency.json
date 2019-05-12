@@ -1,0 +1,70 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "advertising_agency", "count": 24}],
+    "count": 24
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Apple Premium Service Provider", "count": 1},
+      {
+        "value": "Agence de référencement web spécialisée dans l'acquisition de trafic organique depuis les moteurs de recherche.",
+        "count": 1
+      },
+      {"value": "Agence de communication", "count": 1},
+      {"value": "Marquage sur textile. Objets publicitaires", "count": 1},
+      {"value": "Entreprise de signalétique", "count": 1},
+      {"value": "Agence de communication numérique et graphisme", "count": 1},
+      {"value": "Agence de relations presse", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "https://creation-site-web-grenoble.fr/", "count": 2},
+      {"value": "http://www.oisiveraie.com", "count": 1},
+      {"value": "https://www.sesameweb.net/", "count": 1},
+      {"value": "http://www.theweblines.xyz", "count": 1},
+      {"value": "https://www.zedd.fr", "count": 1},
+      {"value": "https://www.charconet.com", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 19 05 35", "count": 2},
+      {"value": "+33 4 76 07 82 19", "count": 1},
+      {"value": "+33 6 01 26 58 93", "count": 1},
+      {"value": "+33 4 26 64 72 19", "count": 1},
+      {"value": "+33 4 72 90 10 85", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "contact@agencecerf.com", "count": 2},
+      {"value": "oisiveraie@oisiveraie.com", "count": 1},
+      {"value": "open@sesameweb.net", "count": 1},
+      {"value": "contact@zedd.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "limited", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Précédemment: \"Crédit Immobilier de France\"", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "shop", "tags": [{"value": "computer", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "cafe", "count": 1}], "count": 1}
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "travel_agent", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.thomascook.fr/", "count": 1},
+      {"value": "http://www.selectour.com/", "count": 1},
+      {"value": "http://www.havas-voyages.fr/", "count": 1},
+      {"value": "http://voyages.carrefour.fr/", "count": 1},
+      {"value": "lyon.takamaka.fr", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 78 36 00", "count": 1},
+      {"value": "+33 4 74 85 69 26", "count": 1},
+      {"value": "+33 4 74 53 22 90", "count": 1},
+      {"value": "+33 4 74 78 47 84", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Thomas Cook Voyages", "count": 1},
+      {"value": "Selectour", "count": 1},
+      {"value": "Havas Voyages", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Sport et Nature", "count": 1}],
+    "count": 1
+  }
+]

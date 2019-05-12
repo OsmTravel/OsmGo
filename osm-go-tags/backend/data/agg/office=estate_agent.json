@@ -1,0 +1,405 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "estate_agent", "count": 603}],
+    "count": 603
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.orpi.com/msmiribelimmobilier", "count": 1},
+      {"value": "http://www.immoplus-hidri.com/", "count": 1},
+      {"value": "http://www.maisons-liberte.com/", "count": 1},
+      {"value": "http://fr.foncia.com/", "count": 1},
+      {"value": "http://www.laforet.com/", "count": 1},
+      {"value": "http://www.lecercledesbatisseurs.fr", "count": 1},
+      {"value": "http://www.riv38immo.com/", "count": 1},
+      {"value": "http://www.vienne-immobilier.fr/", "count": 1},
+      {"value": "http://www.pavillons-creation.fr/", "count": 1},
+      {"value": "http://www.squarehabitat.fr/", "count": 1},
+      {"value": "http://www.bricerobert.com/", "count": 1},
+      {"value": "http://www.exclusif-habitat.fr/", "count": 1},
+      {"value": "http://www.mtv-construction.com/", "count": 1},
+      {"value": "http://www.era-immobilier-vienne.fr/", "count": 1},
+      {"value": "http://home-group-conseils.com/", "count": 1},
+      {"value": "http://agence-pyramide.fr/", "count": 1},
+      {"value": "http://www.sit-immobilier.com/", "count": 1},
+      {"value": "http://www.orpi.com/patrimoineimmobilier", "count": 1},
+      {"value": "http://www.orpi.com/ainagences", "count": 1},
+      {"value": "http://nei.fr/", "count": 1},
+      {"value": "http://www.orpi.com/vienne", "count": 1},
+      {
+        "value": "http://agence.foncia.com/grenoble-38000/agence-immobiliere/foncia-transaction-grenoble-2207",
+        "count": 1
+      },
+      {"value": "www.agencedufaucigny.com", "count": 1},
+      {"value": "http://www.orpi.com/stgeoirs", "count": 1},
+      {"value": "http://www.chastagnol.com/", "count": 1},
+      {
+        "value": "http://agence.foncia.com/lyon-69003/agence-immobiliere/foncia-transaction-lyon-1287",
+        "count": 1
+      },
+      {"value": "http://www.orpi.com/liondorimmo", "count": 1},
+      {"value": "http://www.orpi.com/liondorimmobilier", "count": 1},
+      {"value": "http://www.orpi.com/directhabitat", "count": 1},
+      {"value": "http://www.orpi.com/orpiloc", "count": 1},
+      {"value": "http://www.orpi.com/millet", "count": 1},
+      {"value": "www.orpi.com/immo.necplus", "count": 1},
+      {"value": "www.maisonsdz.fr", "count": 1},
+      {"value": "www.orpi.com/bruyereimmobilier", "count": 1},
+      {"value": "http://www.orpi.com/aldimmobilier", "count": 1},
+      {"value": "www.orpi.com/adlp2", "count": 1},
+      {"value": "www.orpi.com/rillieux", "count": 1},
+      {"value": "www.orpi.com/valdeguiers", "count": 1},
+      {"value": "www.orpi.com/caluire", "count": 1},
+      {"value": "https://www.orpi.com/daveauconseil", "count": 1},
+      {"value": "http://www.orpi.com/orpiloriol", "count": 1},
+      {"value": "http://www.orpi.com/bellevilletransactions", "count": 1},
+      {"value": "http://www.orpi.com/rooseveltimmo", "count": 1},
+      {"value": "http://www.orpi.com/keysolutions", "count": 1},
+      {"value": "http://www.orpi.com/larbresletransactions", "count": 1},
+      {"value": "http://www.orpi.com/fonsari", "count": 1},
+      {"value": "http://www.orpi.com/benoitimmo", "count": 1},
+      {"value": "http://www.orpi.com/montchatimmo", "count": 1},
+      {"value": "http://www.orpi.com/immobilieredumarche", "count": 1},
+      {"value": "http://www.orpi.com/abc", "count": 1},
+      {"value": "http://www.orpi.com/cotesaoneimmo", "count": 1},
+      {"value": "www.promotion-immobiliere-loire.fr/", "count": 1},
+      {"value": "http://www.orpi.com/lagrelleimmobilier", "count": 1},
+      {"value": "http://www.orpi.com/agencetronel", "count": 1},
+      {"value": "http://www.orpi.com/bellecour", "count": 1},
+      {"value": "http://www.orpi.com/dhimmo", "count": 1},
+      {"value": "http://www.orpi.com/jmvimmo38", "count": 1},
+      {"value": "www.stepimmo.fr/", "count": 1},
+      {"value": "www.solvimo.com", "count": 1},
+      {"value": "http://www.orpi.com/albertvilleimmo", "count": 1},
+      {"value": "http://www.orpi.com/orpicetrim", "count": 1},
+      {"value": "https://www.orpi.com/immosoie", "count": 1},
+      {"value": "http://www.orpi.com/immobilierdelainps", "count": 1},
+      {"value": "https://www.orpi.com/citeimmo", "count": 1},
+      {"value": "http://www.orpi.com/bdlconseilstransactions", "count": 1},
+      {"value": "http://www.orpi.com/meximieuxtransactions", "count": 1},
+      {"value": "http://www.orpi.com/gresivaudanimmobilierad", "count": 1},
+      {"value": "http://www.orpi.com/juquelchassieuimmo", "count": 1},
+      {"value": "http://www.orpi.com/clapeyrontransactions", "count": 1},
+      {"value": "http://www.orpi.com/ecully", "count": 1},
+      {"value": "http://www.orpi.com/immosaintnizier", "count": 1},
+      {"value": "http://www.orpi.com/vielfaure", "count": 1},
+      {"value": "http://www.orpi.com/neuvilletransactions", "count": 1},
+      {"value": "http://www.orpi.com/ainagenceshauteville", "count": 1},
+      {"value": "http://www.orpi.com/voltaireimmobilier", "count": 1},
+      {"value": "http://www.orpi.com/immobilieremajolane", "count": 1},
+      {"value": "www.orpi.com/lsiozon", "count": 1},
+      {"value": "http://www.orpi.com/pierrebenite.millet", "count": 1},
+      {"value": "http://www.orpi.com/afg-immobilier", "count": 1},
+      {"value": "http://www.orpi.com/immonecgestion", "count": 1},
+      {"value": "www.rezoximo.com/", "count": 1},
+      {"value": "http://www.orpi.com/geximmobilier", "count": 1},
+      {"value": "http://www.orpi.com/avi", "count": 1},
+      {"value": "http://www.immodefrance.com/", "count": 1},
+      {"value": "www.century21-immobiliere-jassans.com", "count": 1},
+      {"value": "http://www.orpi.com/agencepourpe", "count": 1},
+      {"value": "http://www.orpi.com/agencedelatour", "count": 1},
+      {"value": "http://www.orpi.com/immobilierdelain", "count": 1},
+      {"value": "http://www.orpi.com/cgpi", "count": 1},
+      {"value": "http://www.orpi.com/vercors", "count": 1},
+      {"value": "http://www.orpi.com/actif.brignais.immobilier", "count": 1},
+      {"value": "http://www.orpi.com/coteaux-immobilier", "count": 1},
+      {"value": "http://www.orpi.com/pontdarc", "count": 1},
+      {"value": "http://www.orpi.com/adlp", "count": 1},
+      {"value": "http://www.orpi.com/azergues.transactions", "count": 1},
+      {"value": "https://www.orpi.com/agence-part-dieu", "count": 1},
+      {"value": "https://www.orpi.com/axesimmobilier", "count": 1},
+      {"value": "www.orpi.com/patrimoineimmobilier/", "count": 1},
+      {"value": "http://www.orpi.com/duguesclin.transactions", "count": 1},
+      {"value": "http://www.orpi.com/agencestjames", "count": 1},
+      {"value": "http://www.orpi.com/montluel.transactions", "count": 1},
+      {"value": "http://www.orpi.com/badoil", "count": 1},
+      {"value": "https://www.orpi.com/immoparc", "count": 1},
+      {"value": "http://www.orpi.com/calade", "count": 1},
+      {"value": "http://www.orpi.com/viseo-immo", "count": 1},
+      {"value": "http://www.orpi.com/agenceeurimo", "count": 1},
+      {"value": "http://www.orpi.com/eurimo", "count": 1},
+      {"value": "http://www.orpi.com/verpimmo", "count": 1},
+      {"value": "www.dugourd-immo.fr", "count": 1},
+      {"value": "http://www.orpi.com/estivaletsautel2", "count": 1},
+      {"value": "http://www.orpi.com/agdelagare", "count": 1},
+      {"value": "http://www.orpi.com/cgpi.loe", "count": 1},
+      {"value": "http://www.orpi.com/estivaletsautel", "count": 1},
+      {"value": "http://www.orpi.com/valorisationimmobilier", "count": 1},
+      {"value": "www.affairimmo.com", "count": 1},
+      {"value": "www.regie-cotte-bouteillat.fr", "count": 1},
+      {"value": "https://www.2a-immo.fr/", "count": 1},
+      {
+        "value": "www.mdi74.com/mdi-74/entry-8-evian-les-bains.html",
+        "count": 1
+      },
+      {"value": "http://www.mdi74.com/mdi-74/entry-1-annecy.html", "count": 1},
+      {"value": "http://www.aravisgestion.com", "count": 1},
+      {"value": "http://www.at-synergies.fr", "count": 1},
+      {"value": "http://www.belimmobilier.net", "count": 1},
+      {"value": "http://www.orpi.com/millesimmo", "count": 1},
+      {"value": "www.agencesaulire.com", "count": 1},
+      {"value": "www.amourouximmobilier.fr", "count": 1},
+      {"value": "www.cabinet-tardy.fr/", "count": 1},
+      {"value": "www.demeures-familiales.fr", "count": 1},
+      {"value": "www.immobilier-roanne.fr/", "count": 1},
+      {"value": "www.lecercledesbatisseurs.fr", "count": 1},
+      {"value": "http://www.agence-immobiliere-lyonnaise.com", "count": 1},
+      {"value": "www.gie-adis.fr/", "count": 1},
+      {"value": "http://www.immo7.fr", "count": 1},
+      {"value": "www.maisons-ideales.com", "count": 1},
+      {"value": "www.diagotec.com", "count": 1},
+      {"value": "http://www.orpi.com/helvieimmo", "count": 1},
+      {"value": "www.maisons-barbier-ra.fr/", "count": 1},
+      {
+        "value": "www.guyhoquet-immobilier-saint-martin-dheres.com/",
+        "count": 1
+      },
+      {"value": "www.cocatriximmobilierannecy.com/", "count": 1},
+      {"value": "WWW.AGENCEBFM-IMMO.COM", "count": 1},
+      {"value": "http://www.orpi.com/sudimmo", "count": 1},
+      {"value": "http://www.orpi.com/positifimmobilier", "count": 1},
+      {"value": "www.immobilier-sornin.com/", "count": 1},
+      {
+        "value": "http://www.sergic.com/agence-immobiliere/agence-immobiliere-lyon-69002-2679",
+        "count": 1
+      },
+      {"value": "http://www.orpi.com/immoconfluence", "count": 1},
+      {"value": "http://www.orpi.com/agenceberry", "count": 1},
+      {"value": "www.orpi.com/jmv", "count": 1},
+      {"value": "http://www.orpi.com/kgi", "count": 1},
+      {"value": "http://www.orpi.com/mav", "count": 1},
+      {"value": "www.orpi.com/carredelest", "count": 1},
+      {"value": "http://www.groupe38.fr", "count": 1},
+      {"value": "http://www.orpi.com/adhocimmobilier", "count": 1},
+      {"value": "https://www.orpi.com/saxegambetta", "count": 1},
+      {"value": "https://www.orpi.com/monplaisirlumiere", "count": 1},
+      {"value": "https://www.immobilieredelest.fr", "count": 1},
+      {"value": "www.orpi.com/enclaveimmobilier", "count": 1},
+      {"value": "http://www.foncia.com", "count": 1},
+      {"value": "http://www.agencedespentes.fr/", "count": 1},
+      {"value": "http://www.orpi.com/afg", "count": 1},
+      {"value": "https://www.actimmo-savoie.fr", "count": 1},
+      {"value": "http://www.immo3concept.com/", "count": 1},
+      {"value": "http://www.pillet-chazelles.fr", "count": 1},
+      {
+        "value": "http://www.stephaneplazaimmobilier.com/agence/149597___/stephane-plaza-immobilier-saint-priest",
+        "count": 1
+      },
+      {"value": "http://www.centraleimmo.fr/", "count": 1},
+      {"value": "http://regiepozetto.fr/", "count": 1},
+      {"value": "http://www.ccimmo.com", "count": 1},
+      {"value": "www.jlp-immo.com", "count": 1},
+      {
+        "value": "www.kayaimmobilier.com/agence-immobiliere-annemasse-1000106/",
+        "count": 1
+      }
+    ],
+    "count": 167
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 77318888", "count": 1},
+      {"value": "+33 4 76 50 05 31", "count": 1},
+      {"value": "+33 8 00 88 17 51", "count": 1},
+      {"value": "+33 4 74 85 14 50", "count": 1},
+      {"value": "+33 4 74 31 43 43", "count": 1},
+      {"value": "+33 4 74 78 34 10", "count": 1},
+      {"value": "+33 7 71 67 51 24", "count": 1},
+      {"value": "+33 4 81 07 01 70", "count": 1},
+      {"value": "+33 4 74 58 62 48", "count": 1},
+      {"value": "+33 4 74 20 52 05", "count": 1},
+      {"value": "+33 4 74 78 14 14", "count": 1},
+      {"value": "+33 4 74 85 62 62", "count": 1},
+      {"value": "+33 4 74 54 14 00", "count": 1},
+      {"value": "+33 4 79 00 62 19", "count": 1},
+      {"value": "+33 4 74 85 50 25", "count": 1},
+      {"value": "+33 4 74 78 36 36", "count": 1},
+      {"value": "+33 4 37 02 20 11", "count": 1},
+      {"value": "+33 9 83 09 50 14", "count": 1},
+      {"value": "+33 4 74 78 41 78", "count": 1},
+      {"value": "+33 4 74 78 33 33", "count": 1},
+      {"value": "+33 4 76 89 20 76", "count": 1},
+      {"value": "+33 4 74 53 51 09", "count": 1},
+      {"value": "+33 4 74 85 14 14", "count": 1},
+      {"value": "+33 4 76 89 90 91", "count": 1},
+      {"value": "+33 4 50 87 02 92", "count": 1},
+      {"value": "+33477101622", "count": 1},
+      {"value": "+33 4 74 85 12 34", "count": 1},
+      {"value": "+33 4 77312032", "count": 1},
+      {"value": "+33 4 77222543", "count": 1},
+      {"value": "+33 4 37 28 37 20", "count": 1},
+      {"value": "+33 4 72 74 50 20", "count": 1},
+      {"value": "+33 4 50 27 97 07", "count": 1},
+      {"value": "+33478443192", "count": 1},
+      {"value": "+33478500684", "count": 1},
+      {"value": "+33479004189", "count": 1},
+      {"value": "+33478420286", "count": 1},
+      {"value": "+33983020257", "count": 1},
+      {"value": "+33472318990", "count": 1},
+      {"value": "+33 4 76 70 97 97", "count": 1},
+      {"value": "+33 4 78 18 19 30", "count": 1},
+      {"value": "+33 9 50 33 79 31", "count": 1},
+      {"value": "+33 4 50 84 34 34", "count": 1},
+      {"value": "+33476917171", "count": 1},
+      {"value": "+33477542873", "count": 1},
+      {"value": "+33477941773", "count": 1},
+      {"value": "+33 4 28296161", "count": 1},
+      {"value": "+33 4 72 72 03 69", "count": 1},
+      {"value": "+33 4 72 83 95 00", "count": 1},
+      {"value": "+33472439494", "count": 1},
+      {"value": "+4 7 8206163", "count": 1},
+      {"value": "+33 4 79 65 12 59", "count": 1},
+      {"value": "+334 50 78 27 44", "count": 1},
+      {"value": "+33 4 50 74 91 46", "count": 1}
+    ],
+    "count": 53
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Square Habitat", "count": 2},
+      {"value": "Real Estate", "count": 1},
+      {"value": "BNP Paribas", "count": 1},
+      {"value": "Foncia", "count": 1},
+      {"value": "Laforêt", "count": 1},
+      {"value": "Arthurimmo.com", "count": 1},
+      {"value": "AGDA Immobilier", "count": 1},
+      {"value": "Groupswiss Immobilier", "count": 1},
+      {"value": "Imogroup", "count": 1},
+      {"value": "Access Immobilier", "count": 1},
+      {"value": "Orpi", "count": 1},
+      {"value": "Est Métropole Habitat", "count": 1},
+      {"value": "Comparet", "count": 1},
+      {"value": "Citya", "count": 1},
+      {"value": "4807 Immobilier", "count": 1},
+      {"value": "Stéphane Plaza Immobilier", "count": 1},
+      {"value": "Century 21", "count": 1},
+      {"value": "AGDA", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 9},
+      {"value": "limited", "count": 2},
+      {"value": "no", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Agence immobilière", "count": 2},
+      {"value": "Sur rendez-vous l'après-midi", "count": 1},
+      {"value": "Administration d'immeubles", "count": 1},
+      {
+        "value": "The agency specialises in the purchase and the sale of real estate properties in the Chamonix Mont-Blanc valley. In all confidentiality and professionalism, you will meet advisers able to inform you in French, English, Italian or Spanish",
+        "count": 1
+      },
+      {"value": "Achat, Vente, Location, Gestion Locative", "count": 1},
+      {
+        "value": "Agence Immobilière - Rénovation, Pogrammes neufs, ancien, terrains",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "info@agencebfm.com", "count": 1},
+      {"value": "agence@ccimmo.com", "count": 1},
+      {"value": "contact@jlp.immo", "count": 1},
+      {"value": "fatih@kayaimmobilier.com", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "survey:date",
+    "tags": [
+      {"value": "2017-07-18", "count": 3},
+      {"value": "2017-09-27", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "fax",
+    "tags": [
+      {"value": "+33 4 79 00 75 76", "count": 1},
+      {"value": "+33  9 72 33 44 35", "count": 1},
+      {"value": "+33 4 72 83 95 09", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {"key": "entrance", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "description:fr",
+    "tags": [
+      {"value": "Constructeur de maisons individuelles.", "count": 2},
+      {
+        "value": "Agence immobilière et constructeur de maisons individuelles.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "shop", "tags": [{"value": "estate_agent", "count": 2}], "count": 2},
+  {"key": "wifi", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "https://www.squarehabitat.fr/sh-loire-haute-loire/agence-square-habitat-saint-etienne-ag-41.aspx",
+        "count": 1
+      },
+      {
+        "value": "https://www.facebook.com/StephanePlazaImmobilierStPriest/",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "brand", "tags": [{"value": "Foncia", "count": 1}], "count": 1},
+  {
+    "key": "location:email",
+    "tags": [{"value": "locations.regiepautet@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "location:phone",
+    "tags": [{"value": "+33 4 78204141", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "syndic:email",
+    "tags": [{"value": "regiepautet@orange.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "syndic:fax",
+    "tags": [{"value": "+33 4 78219444", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "syndic:phone",
+    "tags": [{"value": "+33 4 78200420", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "branch",
+    "tags": [{"value": "Saint-Priest", "count": 1}],
+    "count": 1
+  },
+  {"key": "historic", "tags": [{"value": "monument", "count": 1}], "count": 1},
+  {
+    "key": "note",
+    "tags": [{"value": "Ancienne gare de la Tour", "count": 1}],
+    "count": 1
+  }
+]

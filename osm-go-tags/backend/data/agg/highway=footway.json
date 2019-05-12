@@ -1,0 +1,1406 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "footway", "count": 50587}],
+    "count": 50587
+  },
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "asphalt", "count": 1768},
+      {"value": "paved", "count": 754},
+      {"value": "gravel", "count": 658},
+      {"value": "ground", "count": 475},
+      {"value": "concrete", "count": 413},
+      {"value": "fine_gravel", "count": 311},
+      {"value": "unpaved", "count": 247},
+      {"value": "compacted", "count": 216},
+      {"value": "paving_stones", "count": 118},
+      {"value": "grass", "count": 118},
+      {"value": "wood", "count": 95},
+      {"value": "dirt", "count": 94},
+      {"value": "concrete:plates", "count": 85},
+      {"value": "cobblestone", "count": 64},
+      {"value": "earth", "count": 49},
+      {"value": "sand", "count": 30},
+      {"value": "metal", "count": 15},
+      {"value": "grass_paver", "count": 9},
+      {"value": "pebblestone", "count": 9},
+      {"value": "mud", "count": 8},
+      {"value": "concrete:lanes", "count": 6},
+      {"value": "sett", "count": 5},
+      {"value": "indoor", "count": 2},
+      {"value": "rocky", "count": 2},
+      {
+        "value": "Chemin_en_terre,_particulièrement_raide_(fond_de_talweg)",
+        "count": 1
+      },
+      {"value": "very_good", "count": 1},
+      {"value": "meadow", "count": 1},
+      {"value": "stone", "count": 1},
+      {"value": "tartan", "count": 1},
+      {"value": "terre_et_cailloux", "count": 1},
+      {"value": "ice", "count": 1},
+      {"value": "chemin_en_terre", "count": 1},
+      {"value": "chemin_étroit_en_terre", "count": 1},
+      {"value": "exposed-aggregate_concrete_floor", "count": 1},
+      {"value": "stabilized", "count": 1},
+      {"value": "dirt/sand", "count": 1}
+    ],
+    "count": 5563
+  },
+  {
+    "key": "footway",
+    "tags": [
+      {"value": "crossing", "count": 2695},
+      {"value": "sidewalk", "count": 2565}
+    ],
+    "count": 5260
+  },
+  {
+    "key": "bicycle",
+    "tags": [
+      {"value": "yes", "count": 2182},
+      {"value": "no", "count": 586},
+      {"value": "permissive", "count": 233},
+      {"value": "dismount", "count": 200},
+      {"value": "designated", "count": 125},
+      {"value": "private", "count": 10},
+      {"value": "destination", "count": 3},
+      {"value": "dismonted", "count": 1}
+    ],
+    "count": 3340
+  },
+  {
+    "key": "foot",
+    "tags": [
+      {"value": "yes", "count": 1793},
+      {"value": "designated", "count": 243},
+      {"value": "permissive", "count": 97},
+      {"value": "private", "count": 62},
+      {"value": "no", "count": 11},
+      {"value": "destination", "count": 7},
+      {"value": "official", "count": 3},
+      {"value": "crossing", "count": 1}
+    ],
+    "count": 2217
+  },
+  {
+    "key": "lit",
+    "tags": [
+      {"value": "yes", "count": 1454},
+      {"value": "no", "count": 508},
+      {"value": "automatic", "count": 4}
+    ],
+    "count": 1966
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 1157},
+      {"value": "-1", "count": 514},
+      {"value": "0", "count": 68},
+      {"value": "2", "count": 67},
+      {"value": "-4", "count": 14},
+      {"value": "-2", "count": 8},
+      {"value": "0.5", "count": 6},
+      {"value": "3", "count": 5},
+      {"value": "-5", "count": 3},
+      {"value": "-3", "count": 3},
+      {"value": "-0.5", "count": 2},
+      {"value": "4", "count": 2},
+      {"value": "5", "count": 1},
+      {"value": "a", "count": 1},
+      {"value": "steps", "count": 1}
+    ],
+    "count": 1852
+  },
+  {
+    "key": "access",
+    "tags": [
+      {"value": "private", "count": 921},
+      {"value": "no", "count": 203},
+      {"value": "permissive", "count": 154},
+      {"value": "yes", "count": 138},
+      {"value": "destination", "count": 111},
+      {"value": "customers", "count": 42},
+      {"value": "designated", "count": 25},
+      {"value": "emergency", "count": 16},
+      {"value": "goods", "count": 1},
+      {"value": "yes|permissive", "count": 1}
+    ],
+    "count": 1612
+  },
+  {
+    "key": "bridge",
+    "tags": [
+      {"value": "yes", "count": 1202},
+      {"value": "boardwalk", "count": 13},
+      {"value": "viaduct", "count": 4},
+      {"value": "movable", "count": 2},
+      {"value": "aqueduct", "count": 2},
+      {"value": "covered", "count": 2},
+      {"value": "suspension", "count": 1},
+      {"value": "pontoon", "count": 1}
+    ],
+    "count": 1227
+  },
+  {
+    "key": "smoothness",
+    "tags": [
+      {"value": "excellent", "count": 588},
+      {"value": "intermediate", "count": 201},
+      {"value": "good", "count": 147},
+      {"value": "bad", "count": 113},
+      {"value": "very_bad", "count": 7},
+      {"value": "very_horrible", "count": 3},
+      {"value": "impassable", "count": 3},
+      {"value": "horrible", "count": 2},
+      {"value": "very_good", "count": 2}
+    ],
+    "count": 1066
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 670},
+      {"value": "building_passage", "count": 317},
+      {"value": "no", "count": 1},
+      {"value": "culvert", "count": 1}
+    ],
+    "count": 989
+  },
+  {
+    "key": "motor_vehicle",
+    "tags": [
+      {"value": "no", "count": 693},
+      {"value": "permissive", "count": 16},
+      {"value": "private", "count": 8},
+      {"value": "yes", "count": 7},
+      {"value": "designated", "count": 5},
+      {"value": "destination", "count": 2}
+    ],
+    "count": 731
+  },
+  {
+    "key": "width",
+    "tags": [
+      {"value": "1", "count": 280},
+      {"value": "2", "count": 172},
+      {"value": "3", "count": 57},
+      {"value": "1.5", "count": 51},
+      {"value": "0.5", "count": 32},
+      {"value": "4", "count": 14},
+      {"value": "0", "count": 10},
+      {"value": "0.8", "count": 7},
+      {"value": "6", "count": 6},
+      {"value": "0.4", "count": 6},
+      {"value": "5", "count": 5},
+      {"value": "2.5", "count": 5},
+      {"value": "0.6", "count": 3},
+      {"value": "0.50", "count": 3},
+      {"value": "0.3", "count": 3},
+      {"value": "-1", "count": 3},
+      {"value": "1.2", "count": 2},
+      {"value": "0.70", "count": 2},
+      {"value": "8", "count": 2},
+      {"value": "0.5 m", "count": 2},
+      {"value": "2m", "count": 1},
+      {"value": "1.20", "count": 1},
+      {"value": "0.40", "count": 1},
+      {"value": "1.3", "count": 1},
+      {"value": "2 m", "count": 1},
+      {"value": "30", "count": 1},
+      {"value": "1.50", "count": 1},
+      {"value": "3m", "count": 1},
+      {"value": "01.5", "count": 1},
+      {"value": "0.9", "count": 1},
+      {"value": "1.8", "count": 1},
+      {"value": "160 cm", "count": 1},
+      {"value": ".5", "count": 1},
+      {"value": ".3", "count": 1},
+      {"value": "0,50", "count": 1},
+      {"value": "0.30", "count": 1},
+      {"value": "2 mètres environ", "count": 1}
+    ],
+    "count": 682
+  },
+  {
+    "key": "horse",
+    "tags": [
+      {"value": "no", "count": 339},
+      {"value": "yes", "count": 206},
+      {"value": "permissive", "count": 30},
+      {"value": "private", "count": 5},
+      {"value": "designated", "count": 2}
+    ],
+    "count": 582
+  },
+  {
+    "key": "level",
+    "tags": [
+      {"value": "0", "count": 296},
+      {"value": "1", "count": 132},
+      {"value": "-1", "count": 86},
+      {"value": "2", "count": 18},
+      {"value": "0.5", "count": 7},
+      {"value": "0;1", "count": 6},
+      {"value": "-0.5", "count": 5},
+      {"value": "1;2", "count": 3},
+      {"value": "-2", "count": 3},
+      {"value": "3", "count": 2},
+      {"value": "-1;0", "count": 2},
+      {"value": "0;-1", "count": 1},
+      {"value": "0;-0.5", "count": 1},
+      {"value": "1.5", "count": 1}
+    ],
+    "count": 563
+  },
+  {
+    "key": "covered",
+    "tags": [
+      {"value": "yes", "count": 450},
+      {"value": "arcade", "count": 11},
+      {"value": "building_passage", "count": 10},
+      {"value": "colonnade", "count": 5}
+    ],
+    "count": 476
+  },
+  {
+    "key": "crossing",
+    "tags": [
+      {"value": "zebra", "count": 420},
+      {"value": "traffic_signals", "count": 8},
+      {"value": "uncontrolled", "count": 5},
+      {"value": "unmarked", "count": 3},
+      {"value": "bridge", "count": 2}
+    ],
+    "count": 438
+  },
+  {
+    "key": "area",
+    "tags": [{"value": "yes", "count": 345}, {"value": "no", "count": 4}],
+    "count": 349
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 221},
+      {"value": "no", "count": 40},
+      {"value": "designated", "count": 15},
+      {"value": "limited", "count": 10}
+    ],
+    "count": 286
+  },
+  {
+    "key": "segregated",
+    "tags": [{"value": "no", "count": 234}, {"value": "yes", "count": 40}],
+    "count": 274
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "up", "count": 148},
+      {"value": "down", "count": 92},
+      {"value": "-10%", "count": 4},
+      {"value": "5%", "count": 3},
+      {"value": "yes", "count": 1},
+      {"value": "90", "count": 1},
+      {"value": "20%", "count": 1},
+      {"value": "3%", "count": 1},
+      {"value": "10%", "count": 1},
+      {"value": "-12,5%", "count": 1},
+      {"value": "3,2%", "count": 1},
+      {"value": "10,1%", "count": 1}
+    ],
+    "count": 255
+  },
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [
+      {"value": "690520124J", "count": 5},
+      {"value": "261140200M", "count": 4},
+      {"value": "730081590F", "count": 4},
+      {"value": "690240470G", "count": 4},
+      {"value": "691460109J", "count": 3},
+      {"value": "422710126X", "count": 3},
+      {"value": "012620733E", "count": 3},
+      {"value": "381851761L", "count": 3},
+      {"value": "010810420B", "count": 3},
+      {"value": "691790175M", "count": 3},
+      {"value": "383990032B", "count": 3},
+      {"value": "381510852W", "count": 2},
+      {"value": "692380224J", "count": 2},
+      {"value": "69227A032T", "count": 2},
+      {"value": "692481019E", "count": 2},
+      {"value": "421860121L", "count": 2},
+      {"value": "691460080C", "count": 2},
+      {"value": "692431530G", "count": 2},
+      {"value": "692000075M", "count": 2},
+      {"value": "692870688A", "count": 1},
+      {"value": "383390065Y", "count": 1},
+      {"value": "691490483C", "count": 1},
+      {"value": "691250152X", "count": 1},
+      {"value": "260580254P", "count": 1},
+      {"value": "381300010X", "count": 1},
+      {"value": "6902641174D", "count": 1},
+      {"value": "01142A019V", "count": 1},
+      {"value": "692870533G", "count": 1},
+      {"value": "691520046P", "count": 1},
+      {"value": "692770639R", "count": 1},
+      {"value": "382810017Y", "count": 1},
+      {"value": "382290698P", "count": 1},
+      {"value": "381300237U", "count": 1},
+      {"value": "381510018P", "count": 1},
+      {"value": "691190225C", "count": 1},
+      {"value": "69122A036D", "count": 1},
+      {"value": "691890110Y", "count": 1},
+      {"value": "690101165Y", "count": 1},
+      {"value": "014570190S", "count": 1},
+      {"value": "692901029H", "count": 1},
+      {"value": "381510690V", "count": 1},
+      {"value": "383590123Z", "count": 1},
+      {"value": "381510850U", "count": 1},
+      {"value": "384570165U", "count": 1},
+      {"value": "381510770G", "count": 1},
+      {"value": "741080640K", "count": 1},
+      {"value": "381580817C", "count": 1},
+      {"value": "6902641832U", "count": 1},
+      {"value": "261140840H", "count": 1},
+      {"value": "261141132A", "count": 1},
+      {"value": "6902641177G", "count": 1},
+      {"value": "011050045P", "count": 1},
+      {"value": "381510089S", "count": 1},
+      {"value": "384570262Z", "count": 1},
+      {"value": "692641660G", "count": 1},
+      {"value": "011380198M", "count": 1},
+      {"value": "013780046D", "count": 1},
+      {"value": "6902640480Z", "count": 1},
+      {"value": "691160135T", "count": 1},
+      {"value": "692530025C", "count": 1},
+      {"value": "381510859D", "count": 1},
+      {"value": "012490251M", "count": 1},
+      {"value": "no", "count": 1},
+      {"value": "381510464Z", "count": 1},
+      {"value": "382290823A", "count": 1},
+      {"value": "6902640445L", "count": 1},
+      {"value": "385530054F", "count": 1},
+      {"value": "263600004E", "count": 1},
+      {"value": "741730116H", "count": 1},
+      {"value": "691940246Z", "count": 1},
+      {"value": "690390067D", "count": 1},
+      {"value": "385600395W", "count": 1},
+      {"value": "384220227N", "count": 1},
+      {"value": "382730110J", "count": 1},
+      {"value": "381510463Y", "count": 1},
+      {"value": "6902640075J", "count": 1},
+      {"value": "381510857B", "count": 1},
+      {"value": "381240680B", "count": 1},
+      {"value": "690490109F", "count": 1},
+      {"value": "692310101F", "count": 1},
+      {"value": "690830096U", "count": 1},
+      {"value": "690490084D", "count": 1},
+      {"value": "691190160G", "count": 1},
+      {"value": "690640811D", "count": 1},
+      {"value": "692530143F", "count": 1},
+      {"value": "690800056N", "count": 1},
+      {"value": "690510260L", "count": 1},
+      {"value": "69179A020N", "count": 1},
+      {"value": "010040251C", "count": 1},
+      {"value": "691790049A", "count": 1},
+      {"value": "691700017E", "count": 1},
+      {"value": "691700015C", "count": 1},
+      {"value": "691840060R", "count": 1},
+      {"value": "692190660R", "count": 1},
+      {"value": "692190497N", "count": 1},
+      {"value": "69228A110Y", "count": 1},
+      {"value": "692381303G", "count": 1},
+      {"value": "693875750T", "count": 1},
+      {"value": "692380500J", "count": 1},
+      {"value": "383590055A", "count": 1},
+      {"value": "691100075D", "count": 1},
+      {"value": "691100178R", "count": 1},
+      {"value": "691890251B", "count": 1},
+      {"value": "692350014U", "count": 1},
+      {"value": "692350002F", "count": 1},
+      {"value": "690310163T", "count": 1},
+      {"value": "383590125B", "count": 1},
+      {"value": "690240162X", "count": 1},
+      {"value": "692481030S", "count": 1},
+      {"value": "690240115W", "count": 1},
+      {"value": "690240202R", "count": 1},
+      {"value": "690240358K", "count": 1},
+      {"value": "690200045M", "count": 1},
+      {"value": "690520086T", "count": 1},
+      {"value": "690090078W", "count": 1},
+      {"value": "690090022K", "count": 1},
+      {"value": "381790043V", "count": 1},
+      {"value": "381853517V", "count": 1},
+      {"value": "691460111L", "count": 1},
+      {"value": "690560050L", "count": 1},
+      {"value": "690550029T", "count": 1},
+      {"value": "690390011T", "count": 1},
+      {"value": "692480969A", "count": 1},
+      {"value": "692481084A", "count": 1},
+      {"value": "692480861H", "count": 1},
+      {"value": "692431100P", "count": 1},
+      {"value": "692431180B", "count": 1},
+      {"value": "011050130G", "count": 1},
+      {"value": "692430930E", "count": 1},
+      {"value": "692340082X", "count": 1},
+      {"value": "381580570J", "count": 1},
+      {"value": "692250008F", "count": 1},
+      {"value": "692650125J", "count": 1},
+      {"value": "693843700C", "count": 1},
+      {"value": "013840140E", "count": 1},
+      {"value": "690990149G", "count": 1},
+      {"value": "012620043E", "count": 1},
+      {"value": "383350545M", "count": 1},
+      {"value": "385350070B", "count": 1},
+      {"value": "383220061D", "count": 1},
+      {"value": "38157A043K", "count": 1},
+      {"value": "381720105T", "count": 1},
+      {"value": "422720058U", "count": 1},
+      {"value": "422720029M", "count": 1},
+      {"value": "422720011T", "count": 1},
+      {"value": "422720034T", "count": 1},
+      {"value": "381930178F", "count": 1},
+      {"value": "381930334A", "count": 1},
+      {"value": "381580798G", "count": 1},
+      {"value": "421840797E", "count": 1},
+      {"value": "381300206K", "count": 1},
+      {"value": "381300078W", "count": 1},
+      {"value": "381551130F", "count": 1},
+      {"value": "385210110F", "count": 1},
+      {"value": "381540035V", "count": 1},
+      {"value": "383020260W", "count": 1},
+      {"value": "012830965R", "count": 1},
+      {"value": "382771050N", "count": 1},
+      {"value": "010820025T", "count": 1},
+      {"value": "012140064L", "count": 1},
+      {"value": "421471129B", "count": 1},
+      {"value": "42222228W", "count": 1},
+      {"value": "010080021K", "count": 1}
+    ],
+    "count": 198
+  },
+  {
+    "key": "service",
+    "tags": [
+      {"value": "alley", "count": 45},
+      {"value": "parking_aisle", "count": 43},
+      {"value": "driveway", "count": 27},
+      {"value": "grass", "count": 1},
+      {"value": "emergency_access", "count": 1}
+    ],
+    "count": 117
+  },
+  {
+    "key": "tracktype",
+    "tags": [
+      {"value": "grade2", "count": 60},
+      {"value": "grade1", "count": 19},
+      {"value": "grade4", "count": 14},
+      {"value": "grade3", "count": 14},
+      {"value": "grade5", "count": 8}
+    ],
+    "count": 115
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Bing imagery is outdated", "count": 13},
+      {"value": "Please cross silently to respect resident !", "count": 9},
+      {
+        "value": "Imagerie aérienne fortement décallée par rapport aux repères géodésiques et cadastre.",
+        "count": 6
+      },
+      {"value": "quai bas: layer = -1", "count": 5},
+      {
+        "value": "I didn't really have the time to track this properly; there plenty of paths up the hill, tunnels, stairs etc.",
+        "count": 4
+      },
+      {
+        "value": "le cadastre donne le mauvais nom par rapport à la plaque + fermé au public",
+        "count": 4
+      },
+      {"value": "Escaliers ? Vérifier", "count": 3},
+      {"value": "Contournement piéton pendant chantier T6", "count": 3},
+      {"value": "7 paliers", "count": 3},
+      {"value": "comprend des marches d'escalier ?", "count": 3},
+      {"value": "portion de piste de ski de fond en hiver", "count": 3},
+      {"value": "In winter", "count": 3},
+      {"value": "nécessaire pour un routage piéton sans rupture", "count": 3},
+      {
+        "value": "interdiction de circulation par arrété communal n°247 / 2010",
+        "count": 2
+      },
+      {"value": "Pente approximative", "count": 2},
+      {
+        "value": "nécessaire pour un routage correct et l'indication des escaliers",
+        "count": 2
+      },
+      {
+        "value": "Very narrow cycleway between a barrier and a wall, can't fix 2 bicycles side by side",
+        "count": 2
+      },
+      {"value": "\"cycles admis\"", "count": 2},
+      {"value": "Mix entre chemin et escalier", "count": 2},
+      {
+        "value": "Forte inclinaison, attention aux cyclistes chargés",
+        "count": 2
+      },
+      {"value": "Aire pietonne (panneau B54)", "count": 2},
+      {"value": "GPS seul", "count": 2},
+      {"value": "ex Rue des HBM", "count": 1},
+      {"value": "Through-town trail", "count": 1},
+      {"value": "Pont de Singe", "count": 1},
+      {"value": "sans issue ?", "count": 1},
+      {"value": "sentier effacé dans le pierrier ", "count": 1},
+      {"value": "former ford", "count": 1},
+      {"value": "escalier", "count": 1},
+      {"value": "absence to traversé pour cyclistes", "count": 1},
+      {"value": "Pont de pierre sur le LONGEVENT", "count": 1},
+      {"value": "interdit sauf agent SNCF", "count": 1},
+      {"value": "Ancien acces routier", "count": 1},
+      {
+        "value": "signalisation incohérente (interdit aux vélos d'un côté/autorisé aux vélos aux panneaux d'entrée du parc)",
+        "count": 1
+      },
+      {"value": "Allée 18 ?", "count": 1},
+      {"value": "surface of bridge is mostly destroyed", "count": 1},
+      {"value": "à finir", "count": 1},
+      {"value": "fixme", "count": 1},
+      {"value": "FIXME highway classification", "count": 1},
+      {"value": "à continuer et confirmer", "count": 1},
+      {"value": "open for school days", "count": 1},
+      {
+        "value": "very slippery path to a little rusted bridge on the nephaz river. Be very careful",
+        "count": 1
+      },
+      {"value": "be careful, only one person at a time", "count": 1},
+      {"value": "added for pedestrian routing across the place", "count": 1},
+      {"value": "Chemin rural", "count": 1},
+      {"value": "cadastre obsolete", "count": 1},
+      {
+        "value": "D'après cadastre, cette voie devrait être _impasse_ du pivoley.",
+        "count": 1
+      },
+      {"value": "ce n'est plus la voie verte", "count": 1},
+      {
+        "value": "Oui, ce chemin fini sur la plage au ras des flots, et le lacs à pour limite la laisse de haute eaux",
+        "count": 1
+      },
+      {"value": "position might be not 100% correct", "count": 1},
+      {"value": "créé mai 2017", "count": 1},
+      {"value": "tracé approximatif d'après photo aérienne", "count": 1},
+      {"value": "panneau B0 sauf services publics en haut", "count": 1},
+      {
+        "value": "c'est un très long passage piéton pour traverser le parking",
+        "count": 1
+      },
+      {
+        "value": "discouraged by a wall of earth - should not be part of a veloroute",
+        "count": 1
+      }
+    ],
+    "count": 113
+  },
+  {
+    "key": "created_by",
+    "tags": [
+      {"value": "JOSM", "count": 43},
+      {"value": "Editop", "count": 19},
+      {"value": "Potlatch 0.10f", "count": 14},
+      {"value": "Potlatch 0.9c", "count": 6},
+      {"value": "Merkaartor 0.11", "count": 6},
+      {"value": "Potlatch 0.7b", "count": 4},
+      {"value": "Potlatch 0.8b", "count": 4},
+      {"value": "Potlatch 0.5d", "count": 2},
+      {"value": "Potlatch 0.10", "count": 2},
+      {"value": "Potlatch 0.10b", "count": 2},
+      {"value": "Potlatch 0.10a", "count": 1},
+      {"value": "Potlatch 0.8a", "count": 1},
+      {"value": "Potlatch 0.8c", "count": 1},
+      {"value": "Potlatch 0.8", "count": 1},
+      {"value": "Potlatch 0.6c", "count": 1},
+      {"value": "Potlatch 0.10c", "count": 1},
+      {"value": "Potlatch 0.10e", "count": 1},
+      {"value": "Potlatch 0.9a", "count": 1}
+    ],
+    "count": 110
+  },
+  {
+    "key": "sac_scale",
+    "tags": [
+      {"value": "hiking", "count": 78},
+      {"value": "mountain_hiking", "count": 23},
+      {"value": "demanding_mountain_hiking", "count": 4},
+      {"value": "alpine_hiking", "count": 3}
+    ],
+    "count": 108
+  },
+  {
+    "key": "indoor",
+    "tags": [{"value": "yes", "count": 96}, {"value": "corridor", "count": 12}],
+    "count": 108
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "no", "count": 73}, {"value": "yes", "count": 32}],
+    "count": 105
+  },
+  {
+    "key": "sidewalk",
+    "tags": [
+      {"value": "none", "count": 57},
+      {"value": "both", "count": 20},
+      {"value": "right", "count": 4},
+      {"value": "separate", "count": 1},
+      {"value": "left", "count": 1},
+      {"value": "crossing", "count": 1}
+    ],
+    "count": 84
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "resurvey", "count": 45},
+      {"value": "to be checked - hack to permit routing", "count": 3},
+      {"value": "Escalier sur le chemin", "count": 3},
+      {"value": "Vérifier les droits d'accès", "count": 3},
+      {"value": "to be checked - hack to allow routering", "count": 2},
+      {"value": "Nom incomplet à la fin", "count": 2},
+      {"value": "resurvey exact position", "count": 1},
+      {
+        "value": "Emplacement très approximatif, mais il y a un chemin par ici",
+        "count": 1
+      },
+      {"value": "check highway type", "count": 1},
+      {"value": "Vérifier l'accessibilité de ce sentier.", "count": 1},
+      {"value": "does this highway really exist ?", "count": 1},
+      {
+        "value": "chemin que j'ai mis en tunnel pour corriger le chemin original",
+        "count": 1
+      },
+      {"value": "needs better accuracy", "count": 1},
+      {"value": "tracé approximatif", "count": 1},
+      {"value": "steps ?", "count": 1},
+      {"value": "Se prolonge peut-être ?", "count": 1},
+      {"value": "Placé d'après une note ; Passage avec escaliers", "count": 1},
+      {
+        "value": "I am not sure about the exact position of this line, someone could correct it with GPS",
+        "count": 1
+      },
+      {"value": "je me rappel plus comment ça se raccorde ici", "count": 1},
+      {"value": "Geometrie approximative", "count": 1},
+      {
+        "value": "passerelle en construction. A retracer avec le cadastre",
+        "count": 1
+      }
+    ],
+    "count": 73
+  },
+  {
+    "key": "railway",
+    "tags": [
+      {"value": "abandoned", "count": 43},
+      {"value": "platform", "count": 4},
+      {"value": "rail", "count": 3},
+      {"value": "razed", "count": 1}
+    ],
+    "count": 51
+  },
+  {
+    "key": "embankment",
+    "tags": [{"value": "yes", "count": 43}, {"value": "no", "count": 2}],
+    "count": 45
+  },
+  {
+    "key": "mtb:scale",
+    "tags": [
+      {"value": "0", "count": 22},
+      {"value": "1", "count": 7},
+      {"value": "2", "count": 5},
+      {"value": "0-", "count": 5},
+      {"value": "4", "count": 2},
+      {"value": "3", "count": 2},
+      {"value": "5", "count": 1}
+    ],
+    "count": 44
+  },
+  {
+    "key": "comment",
+    "tags": [
+      {
+        "value": "positionné suite visite sur place et reperage carreaux sol ou plafond ou pylones abris",
+        "count": 34
+      },
+      {"value": "fixme", "count": 1},
+      {"value": "mtb not recommended", "count": 1},
+      {"value": "Chemin non-pavé via propriété privée", "count": 1},
+      {"value": "Forte pente", "count": 1}
+    ],
+    "count": 38
+  },
+  {
+    "key": "trail_visibility",
+    "tags": [
+      {"value": "excellent", "count": 16},
+      {"value": "good", "count": 12},
+      {"value": "intermediate", "count": 7},
+      {"value": "bad", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "cycleway",
+    "tags": [
+      {"value": "track", "count": 10},
+      {"value": "crossing", "count": 8},
+      {"value": "no", "count": 7},
+      {"value": "lane", "count": 3},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 29
+  },
+  {
+    "key": "cycle",
+    "tags": [
+      {"value": "permissive", "count": 18},
+      {"value": "yes", "count": 6},
+      {"value": "no", "count": 2}
+    ],
+    "count": 26
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "D 7", "count": 6},
+      {"value": "C 6", "count": 3},
+      {"value": "GR 96", "count": 2},
+      {"value": "C 7", "count": 2},
+      {"value": "D 35", "count": 1},
+      {"value": "C 13", "count": 1},
+      {"value": "CR 3", "count": 1},
+      {"value": "C 15", "count": 1},
+      {"value": "PR7a", "count": 1},
+      {"value": "C 2", "count": 1},
+      {"value": "D 2", "count": 1},
+      {"value": "D 215b", "count": 1},
+      {"value": "GR9", "count": 1},
+      {"value": "Voie Communale nº3", "count": 1},
+      {"value": "VC nº 267", "count": 1},
+      {"value": "VC nº 245", "count": 1},
+      {"value": "C 205", "count": 1}
+    ],
+    "count": 26
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Ancienne Ligne de Chalon-sur-Saône à Bourg-en-Bresse",
+        "count": 2
+      },
+      {"value": "Ponton d'observation naturaliste", "count": 2},
+      {"value": "Accès village Nonières - raide et glissant", "count": 2},
+      {"value": "Traboule", "count": 2},
+      {"value": "passage piétons avec escalier", "count": 2},
+      {
+        "value": "Chemin de liaison entre Avenue Moutet et rue E. Ollivier (Ecole des Méannes)",
+        "count": 1
+      },
+      {
+        "value": "Ancien viaduc du CFDL (Chemins de fer départementaux de la Loire)",
+        "count": 1
+      },
+      {"value": "passerelle piétons", "count": 1},
+      {"value": "Chemin à créer", "count": 1},
+      {"value": "an old bridge", "count": 1},
+      {"value": "chemin piétons prioritaires, vélos autorisés", "count": 1},
+      {"value": "Pont suspendu", "count": 1},
+      {"value": "Rampe d'accès depuis place de stationement PMR", "count": 1},
+      {"value": "trap", "count": 1},
+      {
+        "value": "Passage entre rue Frédéric Mistral, Rue Maubant, Rue Terracher et Square Florian",
+        "count": 1
+      },
+      {"value": "Passage entre mur anti-bruit", "count": 1},
+      {"value": "1868-1954 Poète Bourguésan", "count": 1},
+      {"value": "sentier aménagé", "count": 1},
+      {"value": "Invisible", "count": 1},
+      {"value": "Chemin pour site escalade (L'île aux Razmokets)", "count": 1}
+    ],
+    "count": 25
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Longue traboule", "count": 9},
+      {"value": "fr:Chemin de fer du Mont-Revard", "count": 5},
+      {
+        "value": "fr:Compagnie du chemin de fer de Saint-Étienne à la Loire",
+        "count": 2
+      },
+      {"value": "fr:Passerelle piétonne des Bis", "count": 1},
+      {"value": "fr:Passerelle du Collège", "count": 1},
+      {"value": "fr:Pont des Amours", "count": 1},
+      {"value": "fr:Passerelle Paul-Couturier", "count": 1},
+      {"value": "fr:Pont romain du Pouzin", "count": 1},
+      {"value": "fr:Pont de Moulin sur Cance", "count": 1},
+      {"value": "fr:Passerelle de Trévoux", "count": 1},
+      {"value": "fr:Passerelle du Palais de Justice", "count": 1}
+    ],
+    "count": 24
+  },
+  {"key": "man_made", "tags": [{"value": "pier", "count": 21}], "count": 21},
+  {
+    "key": "cutting",
+    "tags": [
+      {"value": "yes", "count": 17},
+      {"value": "no", "count": 2},
+      {"value": "both", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "ford",
+    "tags": [{"value": "yes", "count": 16}, {"value": "stream", "count": 1}],
+    "count": 17
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "30", "count": 7},
+      {"value": "50", "count": 5},
+      {"value": "10", "count": 3},
+      {"value": "5", "count": 1},
+      {"value": "20", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "tactile_paving",
+    "tags": [
+      {"value": "yes", "count": 10},
+      {"value": "no", "count": 4},
+      {"value": "bad", "count": 2}
+    ],
+    "count": 16
+  },
+  {
+    "key": "piste:type",
+    "tags": [{"value": "downhill", "count": 13}, {"value": "hike", "count": 2}],
+    "count": 15
+  },
+  {
+    "key": "motorcar",
+    "tags": [
+      {"value": "no", "count": 11},
+      {"value": "private", "count": 1},
+      {"value": "destination", "count": 1},
+      {"value": "designated", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2962394", "count": 5},
+      {"value": "Q22996889", "count": 2},
+      {"value": "Q3397356", "count": 1},
+      {"value": "Q3368328", "count": 1},
+      {"value": "Q22967044", "count": 1},
+      {"value": "Q22966778", "count": 1},
+      {"value": "Q3368274", "count": 1},
+      {"value": "Q3397586", "count": 1},
+      {"value": "Q22966770", "count": 1}
+    ],
+    "count": 14
+  },
+  {
+    "key": "motorcycle",
+    "tags": [{"value": "no", "count": 12}, {"value": "yes", "count": 1}],
+    "count": 13
+  },
+  {
+    "key": "piste:difficulty",
+    "tags": [
+      {"value": "easy", "count": 11},
+      {"value": "novice", "count": 1},
+      {"value": "intermediate", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "vehicle",
+    "tags": [{"value": "no", "count": 11}, {"value": "private", "count": 1}],
+    "count": 12
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "2015-02-01", "count": 6},
+      {"value": "2006-09-18", "count": 3},
+      {"value": "C19", "count": 2}
+    ],
+    "count": 11
+  },
+  {
+    "key": "ramp:wheelchair",
+    "tags": [{"value": "no", "count": 7}, {"value": "yes", "count": 4}],
+    "count": 11
+  },
+  {"key": "construction", "tags": [{"value": "yes", "count": 11}], "count": 11},
+  {
+    "key": "step_count",
+    "tags": [
+      {"value": "3", "count": 3},
+      {"value": "283", "count": 3},
+      {"value": "20", "count": 1},
+      {"value": "6", "count": 1},
+      {"value": "9", "count": 1},
+      {"value": "19", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "conveying",
+    "tags": [
+      {"value": "forward", "count": 5},
+      {"value": "yes", "count": 3},
+      {"value": "no", "count": 1},
+      {"value": "backward", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "ramp",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "yes", "count": 3},
+      {"value": "separate", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "private",
+    "tags": [{"value": "yes", "count": 7}, {"value": "yez", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "lanes",
+    "tags": [{"value": "1", "count": 5}, {"value": "2", "count": 3}],
+    "count": 8
+  },
+  {"key": "handrail:right", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "flood_prone", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {
+    "key": "noexit",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "mtb:scale:uphill",
+    "tags": [
+      {"value": "1", "count": 4},
+      {"value": "3", "count": 2},
+      {"value": "0", "count": 2}
+    ],
+    "count": 8
+  },
+  {
+    "key": "access:conditional",
+    "tags": [
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00 ; Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 6
+      },
+      {
+        "value": "no @ (Apr 15-Oct 14 00:00-06:30,22:30-24:00;Oct 15-Apr 14 00:00-06:30,20:30-24:00)",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {"key": "ski", "tags": [{"value": "no", "count": 7}], "count": 7},
+  {"key": "snowmobile", "tags": [{"value": "no", "count": 7}], "count": 7},
+  {
+    "key": "handrail:center",
+    "tags": [{"value": "yes", "count": 7}],
+    "count": 7
+  },
+  {"key": "ramp:luggage", "tags": [{"value": "no", "count": 7}], "count": 7},
+  {
+    "key": "oneway:bicycle",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 2}],
+    "count": 7
+  },
+  {
+    "key": "handrail",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "boundary",
+    "tags": [
+      {"value": "administrative", "count": 4},
+      {"value": "political", "count": 2}
+    ],
+    "count": 6
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 6}],
+    "count": 6
+  },
+  {"key": "arcade:right", "tags": [{"value": "open", "count": 6}], "count": 6},
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2001-10-04", "count": 2},
+      {"value": "1923-05-01", "count": 1},
+      {"value": "1982", "count": 1},
+      {"value": "1998", "count": 1},
+      {"value": "1981-04-06", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117271", "count": 1},
+      {"value": "PA00116893", "count": 1},
+      {"value": "PA07000006", "count": 1},
+      {"value": "PA00116877", "count": 1},
+      {"value": "PA42000008", "count": 1},
+      {"value": "PA42000009", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 4}, {"value": "2", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "public_transport",
+    "tags": [{"value": "platform", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "SNCF", "count": 2},
+      {"value": "Département de l'Isère", "count": 2},
+      {"value": "Communauté de Communes du Canton Pont de Vaux", "count": 1}
+    ],
+    "count": 5
+  },
+  {"key": "admin_level", "tags": [{"value": "8", "count": 5}], "count": 5},
+  {
+    "key": "bridge:structure",
+    "tags": [
+      {"value": "suspension", "count": 3},
+      {"value": "arch", "count": 1},
+      {"value": "beam", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "kerb",
+    "tags": [{"value": "no", "count": 4}, {"value": "lowered", "count": 1}],
+    "count": 5
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "bridge", "count": 2},
+      {"value": "yes", "count": 1},
+      {"value": "archaeological_site", "count": 1},
+      {"value": "fo", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "exercise", "count": 2},
+      {"value": "ice_climbing", "count": 1},
+      {"value": "running", "count": 1},
+      {"value": "climbing_adventure", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "moped",
+    "tags": [{"value": "designated", "count": 3}, {"value": "no", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "motor_vehicle:conditional",
+    "tags": [{"value": "delivery @ (6:00-11:30)", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "FIXME",
+    "tags": [
+      {"value": "à continuer", "count": 1},
+      {"value": "to be continued", "count": 1},
+      {"value": "continue", "count": 1},
+      {"value": "check incline", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "route",
+    "tags": [
+      {"value": "running", "count": 2},
+      {"value": "mtb", "count": 1},
+      {"value": "foot", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "gauge", "tags": [{"value": "1435", "count": 4}], "count": 4},
+  {
+    "key": "goods",
+    "tags": [{"value": "no", "count": 3}, {"value": "private", "count": 1}],
+    "count": 4
+  },
+  {"key": "hgv", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {"key": "arcade:left", "tags": [{"value": "open", "count": 4}], "count": 4},
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "5", "count": 1},
+      {"value": "2", "count": 1},
+      {"value": "1880", "count": 1},
+      {"value": "1800", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Parc_de_Gerland_-_Tola_Vologe_(5).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Parc_de_Gerland_-_Tola_Vologe_(6).JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:--fr_Passerelle_de_l%27embouchure_de_La_Sereine_-_2.JPG",
+        "count": 1
+      },
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:ENS_la_Batie_ponton.jpg",
+        "count": 1
+      }
+    ],
+    "count": 4
+  },
+  {
+    "key": "ref:RFF:ligne",
+    "tags": [{"value": "795000", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://lescoteauxdusalin.fr", "count": 2},
+      {
+        "value": "http://www.culture.gouv.fr/public/mistral/merimee_fr?ACTION=CHERCHER&FIELD_1=REF&VALUE_1=PA07000006",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "leisure",
+    "tags": [
+      {"value": "fitness_station", "count": 2},
+      {"value": "park", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "usage", "tags": [{"value": "industrial", "count": 3}], "count": 3},
+  {
+    "key": "location",
+    "tags": [{"value": "underground", "count": 3}],
+    "count": 3
+  },
+  {"key": "train", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "bicycle_road", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {"key": "floating", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "toll",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "end_date:railway",
+    "tags": [{"value": "1951", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "bridge:movable",
+    "tags": [
+      {"value": "swing", "count": 1},
+      {"value": "drawbridge", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "material",
+    "tags": [{"value": "metal", "count": 1}, {"value": "steel", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "visibility",
+    "tags": [{"value": "poor", "count": 1}, {"value": "bad", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "destination",
+    "tags": [
+      {"value": "Rue du Soleil", "count": 1},
+      {"value": "Les Mugers", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "surface:fr", "tags": [{"value": "rocheux", "count": 2}], "count": 2},
+  {"key": "sac_scale_ref", "tags": [{"value": "T4", "count": 2}], "count": 2},
+  {"key": "surface:de", "tags": [{"value": "felsig", "count": 2}], "count": 2},
+  {"key": "uic_ref", "tags": [{"value": "8774762", "count": 2}], "count": 2},
+  {"key": "hiking", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "viewpoint", "count": 1},
+      {"value": "attraction", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "start_date:railway",
+    "tags": [{"value": "1878", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "political_division",
+    "tags": [{"value": "canton", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "colonnade:right",
+    "tags": [{"value": "open", "count": 2}],
+    "count": 2
+  },
+  {"key": "ramp:stroller", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "lcn", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "colonnade:left",
+    "tags": [{"value": "open", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "type",
+    "tags": [{"value": "track", "count": 1}, {"value": "route", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ruesdelyon.wysiup.net/PageRubrique.php?ID=1003976&rubID=1004159",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "restriction",
+    "tags": [{"value": "school_zone", "count": 2}],
+    "count": 2
+  },
+  {"key": "piste:oneway", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "psv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "maxheight", "tags": [{"value": "3.5", "count": 1}], "count": 1},
+  {
+    "key": "historic:railway",
+    "tags": [{"value": "narrow_gauge", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "was:highway",
+    "tags": [{"value": "footway", "count": 1}],
+    "count": 1
+  },
+  {"key": "est_width", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "trailblazed", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "mooring", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "handrail:left", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "cemetery", "count": 1}], "count": 1},
+  {"key": "mtb", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "junction",
+    "tags": [{"value": "roundabout", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "foot:conditional",
+    "tags": [{"value": "no @ (22:00-06:30)", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "photo",
+    "tags": [
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Cartoucherie-centre-BLV.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "narrow", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "disabled",
+    "tags": [{"value": "designated", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "marked_trail",
+    "tags": [{"value": "yellow and red", "count": 1}],
+    "count": 1
+  },
+  {"key": "mtb:scale:imba", "tags": [{"value": "2", "count": 1}], "count": 1},
+  {"key": "bollard", "tags": [{"value": "rising", "count": 1}], "count": 1},
+  {
+    "key": "access:foot",
+    "tags": [{"value": "private", "count": 1}],
+    "count": 1
+  },
+  {"key": "sour", "tags": [{"value": "IGN 2017", "count": 1}], "count": 1},
+  {
+    "key": "maxspeed:type",
+    "tags": [{"value": "FR:urban", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "crossing:island",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "traffic_sign", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "traffic_calming",
+    "tags": [{"value": "table", "count": 1}],
+    "count": 1
+  },
+  {"key": "supervised", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "historic:gauge", "tags": [{"value": "1000", "count": 1}], "count": 1}
+]

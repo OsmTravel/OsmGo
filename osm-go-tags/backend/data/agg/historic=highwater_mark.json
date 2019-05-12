@@ -1,0 +1,8 @@
+[
+  {"key": "date", "tags": [{"value": "12/07/1892", "count": 1}], "count": 1},
+  {
+    "key": "historic",
+    "tags": [{"value": "highwater_mark", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "observatory", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.savoie-astro.com", "count": 1},
+      {"value": "http://www.observatoire-cosmodrome.net/index.php", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "observatory:type",
+    "tags": [{"value": "astronomical", "count": 2}],
+    "count": 2
+  },
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Observatoire d'astronomie des Bauges", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Société astronomique du Léman - Haute-Savoie", "count": 1}
+    ],
+    "count": 1
+  }
+]

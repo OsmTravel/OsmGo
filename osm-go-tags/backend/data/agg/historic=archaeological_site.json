@@ -1,0 +1,635 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "archaeological_site", "count": 298}],
+    "count": 298
+  },
+  {
+    "key": "site_type",
+    "tags": [
+      {"value": "megalith", "count": 68},
+      {"value": "tumulus", "count": 16},
+      {"value": "fortification", "count": 11},
+      {"value": "bigstone", "count": 7},
+      {"value": "petroglyph", "count": 6},
+      {"value": "roman_villa", "count": 3},
+      {"value": "settlement", "count": 3},
+      {"value": "quarry", "count": 1},
+      {"value": "city", "count": 1},
+      {"value": "ruins", "count": 1}
+    ],
+    "count": 117
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3067", "count": 7},
+      {"value": "Q22968132", "count": 3},
+      {"value": "Q3107781", "count": 2},
+      {"value": "Q24940574", "count": 2},
+      {"value": "Q3485461", "count": 1},
+      {"value": "Q3557941", "count": 1},
+      {"value": "Q22966933", "count": 1},
+      {"value": "Q3517710", "count": 1},
+      {"value": "Q1328655", "count": 1},
+      {"value": "Q603603", "count": 1},
+      {"value": "Q2906747", "count": 1},
+      {"value": "Q3305887", "count": 1},
+      {"value": "Q2887696", "count": 1},
+      {"value": "Q3117187", "count": 1},
+      {"value": "Q3033998", "count": 1},
+      {"value": "Q22966736", "count": 1},
+      {"value": "Q22966737", "count": 1},
+      {"value": "Q22966739", "count": 1},
+      {"value": "Q22966740", "count": 1},
+      {"value": "Q22966741", "count": 1},
+      {"value": "Q3523832", "count": 1},
+      {"value": "Q22966943", "count": 1},
+      {"value": "Q3354389", "count": 1},
+      {"value": "Q1235875", "count": 1},
+      {"value": "Q15961431", "count": 1},
+      {"value": "Q6497135", "count": 1},
+      {"value": "Q3117092", "count": 1},
+      {"value": "Q805472", "count": 1},
+      {"value": "Q2377720", "count": 1},
+      {"value": "Q3117205", "count": 1},
+      {"value": "Q3558070", "count": 1},
+      {"value": "Q2935296", "count": 1},
+      {"value": "Q22967045", "count": 1},
+      {"value": "Q22980108", "count": 1},
+      {"value": "Q20565199", "count": 1},
+      {"value": "Q22967022", "count": 1},
+      {"value": "Q22967104", "count": 1},
+      {"value": "Q22967232", "count": 1},
+      {"value": "Q22998169", "count": 1},
+      {"value": "Q22998158", "count": 1},
+      {"value": "Q22968537", "count": 1},
+      {"value": "Q3034142", "count": 1},
+      {"value": "Q3034078", "count": 1},
+      {"value": "Q2943262", "count": 1},
+      {"value": "Q3398580", "count": 1},
+      {"value": "Q3387856", "count": 1},
+      {"value": "Q3387855", "count": 1},
+      {"value": "Q3387857", "count": 1},
+      {"value": "Q22998149", "count": 1},
+      {"value": "Q22998099", "count": 1},
+      {"value": "Q22980116", "count": 1},
+      {"value": "Q22980118", "count": 1},
+      {"value": "Q22980119", "count": 1},
+      {"value": "Q22998183", "count": 1},
+      {"value": "Q891063", "count": 1},
+      {"value": "Q19950903", "count": 1},
+      {"value": "Q3580418", "count": 1},
+      {"value": "Q3307556", "count": 1},
+      {"value": "Q10149", "count": 1},
+      {"value": "Q3558623", "count": 1},
+      {"value": "Q3175", "count": 1},
+      {"value": "Q3523831", "count": 1},
+      {"value": "Q3124", "count": 1},
+      {"value": "Q22968240", "count": 1},
+      {"value": "Q22968356", "count": 1},
+      {"value": "Q22968233", "count": 1},
+      {"value": "Q22967490", "count": 1},
+      {"value": "Q22967127", "count": 1},
+      {"value": "Q22969162", "count": 1},
+      {"value": "Q3471734", "count": 1},
+      {"value": "Q3527839", "count": 1},
+      {"value": "Q2969642", "count": 1},
+      {"value": "Q1775650", "count": 1},
+      {"value": "Q22968586", "count": 1},
+      {"value": "Q3473704", "count": 1},
+      {"value": "Q22968221", "count": 1},
+      {"value": "Q3078", "count": 1},
+      {"value": "Q42713703", "count": 1},
+      {"value": "Q22968514", "count": 1},
+      {"value": "Q2887170", "count": 1},
+      {"value": "Q28803317", "count": 1},
+      {"value": "Q42727684", "count": 1},
+      {"value": "Q42728301", "count": 1},
+      {"value": "Q42728186", "count": 1},
+      {"value": "Q42727928", "count": 1},
+      {"value": "Q42728390", "count": 1}
+    ],
+    "count": 96
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 86}],
+    "count": 86
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "2011-10-24", "count": 12},
+      {"value": "1900", "count": 6},
+      {"value": "1889", "count": 6},
+      {"value": "1905-08-12", "count": 3},
+      {"value": "1840", "count": 2},
+      {"value": "1983-04-12", "count": 2},
+      {"value": "1984", "count": 2},
+      {"value": "1991-02-18", "count": 2},
+      {"value": "1913-05-03", "count": 2},
+      {"value": "1992", "count": 2},
+      {"value": "1993", "count": 1},
+      {"value": "1946", "count": 1},
+      {"value": "2014-04-18", "count": 1},
+      {"value": "1910-03-21", "count": 1},
+      {"value": "1910-06-10", "count": 1},
+      {"value": "1992-12-22", "count": 1},
+      {"value": "1959-01-07", "count": 1},
+      {"value": "1986-08-11", "count": 1},
+      {"value": "1903-02-05", "count": 1},
+      {"value": "1964-06-15", "count": 1},
+      {"value": "1990-08-10", "count": 1},
+      {"value": "1994", "count": 1},
+      {"value": "1913-07-22", "count": 1},
+      {"value": "1978-12-06", "count": 1},
+      {"value": "1993-12-02", "count": 1},
+      {"value": "2004-06-30", "count": 1},
+      {"value": "1985-10-15", "count": 1},
+      {"value": "1984-12-26", "count": 1},
+      {"value": "1911-01-19", "count": 1},
+      {"value": "1979-02-19", "count": 1},
+      {"value": "1911-04-04", "count": 1},
+      {"value": "1991-02-22", "count": 1},
+      {"value": "1997-10-31", "count": 1},
+      {"value": "1996-02-22", "count": 1},
+      {"value": "2006", "count": 1},
+      {"value": "1920-12-20", "count": 1},
+      {"value": "1939-05-09", "count": 1},
+      {"value": "1994-02-21", "count": 1},
+      {"value": "2009", "count": 1},
+      {"value": "1989-09-19", "count": 1},
+      {"value": "2012-10-26", "count": 1},
+      {"value": "1987-02-18", "count": 1},
+      {"value": "1961-11-27", "count": 1},
+      {"value": "1985-12-20", "count": 1},
+      {"value": "1907-01-28", "count": 1},
+      {"value": "1945-02-22", "count": 1},
+      {"value": "1957-01-25", "count": 1},
+      {"value": "1888", "count": 1},
+      {"value": "2011-05-24", "count": 1},
+      {"value": "1983-10-20", "count": 1},
+      {"value": "1959", "count": 1},
+      {"value": "1984-11-26", "count": 1},
+      {"value": "1946-06-26", "count": 1},
+      {"value": "1956-10-13", "count": 1},
+      {"value": "1983-03-22", "count": 1},
+      {"value": "1982-03-15", "count": 1},
+      {"value": "1916-09-02", "count": 1}
+    ],
+    "count": 86
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117991", "count": 3},
+      {"value": "PA00117273", "count": 2},
+      {"value": "PA00118068", "count": 2},
+      {"value": "PA00118475", "count": 1},
+      {"value": "PA00118269", "count": 1},
+      {"value": "PA00118362", "count": 1},
+      {"value": "PA00117116", "count": 1},
+      {"value": "PA00116726", "count": 1},
+      {"value": "PA00118338", "count": 1},
+      {"value": "PA00116580", "count": 1},
+      {"value": "PA00125733", "count": 1},
+      {"value": "PA00116442", "count": 1},
+      {"value": "PA38000034", "count": 1},
+      {"value": "PA00116647", "count": 1},
+      {"value": "PA00116657", "count": 1},
+      {"value": "PA00116658", "count": 1},
+      {"value": "PA00116659", "count": 1},
+      {"value": "PA00116660", "count": 1},
+      {"value": "PA00116661", "count": 1},
+      {"value": "PA00118479", "count": 1},
+      {"value": "PA00117131", "count": 1},
+      {"value": "PA00116773", "count": 1},
+      {"value": "PA00116771", "count": 1},
+      {"value": "PA00117755", "count": 1},
+      {"value": "PA00102945", "count": 1},
+      {"value": "PA00116649", "count": 1},
+      {"value": "PA00116872", "count": 1},
+      {"value": "PA00132969", "count": 1},
+      {"value": "PA00116384", "count": 1},
+      {"value": "PA00116579", "count": 1},
+      {"value": "PA00116413", "count": 1},
+      {"value": "PA38000022", "count": 1},
+      {"value": "PA00117206", "count": 1},
+      {"value": "PA00117235", "count": 1},
+      {"value": "PA00117331", "count": 1},
+      {"value": "PA00117501", "count": 1},
+      {"value": "PA73000023", "count": 1},
+      {"value": "PA73000022", "count": 1},
+      {"value": "PA00118272", "count": 1},
+      {"value": "PA00116644", "count": 1},
+      {"value": "PA00116643", "count": 1},
+      {"value": "PA00118430", "count": 1},
+      {"value": "PA00135661", "count": 1},
+      {"value": "PA73000017", "count": 1},
+      {"value": "PA73000018", "count": 1},
+      {"value": "PA73000019", "count": 1},
+      {"value": "PA73000020", "count": 1},
+      {"value": "PA73000015", "count": 1},
+      {"value": "PA00116447", "count": 1},
+      {"value": "PA00116446", "count": 1},
+      {"value": "PA00116421", "count": 1},
+      {"value": "PA73000021", "count": 1},
+      {"value": "PA73000016", "count": 1},
+      {"value": "PA74000015", "count": 1},
+      {"value": "PA74000016", "count": 1},
+      {"value": "PA74000017", "count": 1},
+      {"value": "PA74000014", "count": 1},
+      {"value": "PA00116662", "count": 1},
+      {"value": "PA00118199", "count": 1},
+      {"value": "PA00132970", "count": 1},
+      {"value": "PA74000009", "count": 1},
+      {"value": "PA00117366", "count": 1},
+      {"value": "PA00117349", "count": 1},
+      {"value": "PA00117327", "count": 1},
+      {"value": "PA00118398", "count": 1},
+      {"value": "PA00117781", "count": 1},
+      {"value": "PA00118074", "count": 1},
+      {"value": "PA00118146", "count": 1},
+      {"value": "PA00118421", "count": 1},
+      {"value": "PA00117757", "count": 1},
+      {"value": "PA00117343", "count": 1},
+      {"value": "PA00125738", "count": 1},
+      {"value": "PA00118339", "count": 1},
+      {"value": "PA00117988", "count": 1},
+      {"value": "PA00116622", "count": 1},
+      {"value": "PA00118258", "count": 1},
+      {"value": "PA00116728", "count": 1},
+      {"value": "PA00118307", "count": 1},
+      {"value": "PA00116624", "count": 1},
+      {"value": "PA00118058", "count": 1},
+      {"value": "PA00117753", "count": 1},
+      {"value": "PA73000001", "count": 1}
+    ],
+    "count": 86
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 70}, {"value": "3", "count": 15}],
+    "count": 85
+  },
+  {
+    "key": "megalith_type",
+    "tags": [
+      {"value": "dolmen", "count": 63},
+      {"value": "menhir", "count": 6},
+      {"value": "grosssteingrab", "count": 1},
+      {"value": "stone_circle", "count": 1}
+    ],
+    "count": 71
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Aqueduc du Gier", "count": 9},
+      {"value": "fr:Tombeau de Turpio", "count": 3},
+      {"value": "fr:Gisement préhistorique de Sermoyer", "count": 2},
+      {"value": "fr:Aqueduc de la Brévenne", "count": 2},
+      {"value": "fr:Port de Tougues", "count": 1},
+      {"value": "fr:Éperon barré d'Hières-sur-Amby", "count": 1},
+      {"value": "fr:Temple romain d'Izernore", "count": 1},
+      {"value": "fr:Pierre-aux-Fées (Reignier)", "count": 1},
+      {"value": "fr:Oppidum de Jastres-Nord", "count": 1},
+      {"value": "fr:Bloc erratique sculpté d'Allinges", "count": 1},
+      {"value": "fr:Menhir de Pierrefiche", "count": 1},
+      {"value": "fr:Bastide de Gironville", "count": 1},
+      {"value": "fr:Grotte de la Colombière", "count": 1},
+      {"value": "fr:Dolmen de Champvermeil", "count": 1},
+      {"value": "fr:Thermes antiques de Faverges", "count": 1},
+      {"value": "fr:Oppidum de la Fare", "count": 1},
+      {"value": "fr:Dolmen du Calvaire", "count": 1},
+      {"value": "fr:Menhir de Montaberlet", "count": 1},
+      {"value": "fr:Mithra", "count": 1},
+      {"value": "fr:Grotte Chabot", "count": 1},
+      {"value": "fr:Balmes de Montbrun", "count": 1},
+      {"value": "fr:Grotte de la Tête du Lion", "count": 1},
+      {"value": "fr:Grotte des Deux Ouvertures", "count": 1},
+      {"value": "fr:Vieux Bourg de L'Abergement-Clémenciat", "count": 1},
+      {"value": "fr:Camp Portes", "count": 1},
+      {"value": "fr:Dolmen du Bois des Roches", "count": 1},
+      {"value": "fr:Dolmen de la Lauze", "count": 1},
+      {"value": "fr:Site sublacustre du Petit Port", "count": 1},
+      {"value": "fr:Cave aux Fées (Saint-Cergues)", "count": 1},
+      {"value": "fr:Pierre à bassins de Rosset", "count": 1},
+      {"value": "fr:Pierre à bassins de Bagneux", "count": 1},
+      {"value": "fr:Pierre à cupules de Magnieu", "count": 1},
+      {"value": "fr:Blocs cupulaires de La Roche", "count": 1},
+      {"value": "fr:Meulières de Saint-André-de-Boëge", "count": 1},
+      {"value": "fr:Théâtre antique de Vienne", "count": 1},
+      {"value": "fr:Jardin archéologique de Cybèle", "count": 1},
+      {"value": "fr:Villa La Sapinière", "count": 1},
+      {"value": "fr:Théâtre antique de Lyon", "count": 1},
+      {"value": "fr:Odéon antique de Lyon", "count": 1},
+      {"value": "fr:Thermes de Lugdunum", "count": 1},
+      {"value": "fr:Amphithéâtre des Trois Gaules", "count": 1},
+      {"value": "fr:Pierre de Chantelouve", "count": 1},
+      {"value": "fr:Vieille Église (La Balme-de-Thuy)", "count": 1},
+      {"value": "fr:Château d'Allinges-Neuf", "count": 1},
+      {"value": "fr:Château d'Allinges-Vieux", "count": 1},
+      {"value": "fr:Sanctuaire de Cybèle", "count": 1},
+      {"value": "fr:Théâtre gallo-romain d'Alba-la-Romaine", "count": 1},
+      {"value": "fr:Château de Langin", "count": 1},
+      {"value": "fr:Abbaye de Mazan", "count": 1},
+      {"value": "fr:Montagne des Gures#Archéologie", "count": 1},
+      {"value": "fr:Cromlech du Petit-Saint-Bernard", "count": 1},
+      {"value": "fr:Sarrazinière", "count": 1},
+      {"value": "fr:Musée gallo-romain de Saint-Romain-en-Gal", "count": 1},
+      {"value": "fr:Aqueduc de l'Yzeron", "count": 1},
+      {"value": "fr:Basilique funéraire Saint-Laurent de Choulans", "count": 1},
+      {"value": "fr:Château de Faucigny", "count": 1}
+    ],
+    "count": 68
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.arar.mom.fr/recherche-et-activites/axes-de-recherche/equipe-1/panossas",
+        "count": 2
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=9797",
+        "count": 1
+      },
+      {
+        "value": "http://www.culture.gouv.fr/public/mistral/merimee_fr?ACTION=CHERCHER&FIELD_1=REF&VALUE_1=PA00116773",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=9251",
+        "count": 1
+      },
+      {
+        "value": "http://t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=32521",
+        "count": 1
+      },
+      {
+        "value": "http://www.bsa-tourisme.fr/Le-Bas-relief-du-Dieu-Mithra",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=9780",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=9781",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=9782",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=33110",
+        "count": 1
+      },
+      {
+        "value": "http://www.culture.gouv.fr/public/mistral/merimee_fr?ACTION",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=10005",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=32779",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=9287",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=33258",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=28971",
+        "count": 1
+      },
+      {
+        "value": "http://www.patrimoine-ardeche.com/visites/balmes_montbrun_n.htm",
+        "count": 1
+      },
+      {
+        "value": "http://patrimoines.ain.fr/n/piste-d-empreintes-de-dinosaures-a-plagne/n:1176",
+        "count": 1
+      },
+      {
+        "value": "http://www.dromeprovencale.fr/visiter/la-sabliere-de-reauville-60082/",
+        "count": 1
+      },
+      {
+        "value": "http://www.culture.gouv.fr/public/mistral/merimee_fr?ACTION=CHERCHER&FIELD_1=REF&VALUE_1=PA00117273",
+        "count": 1
+      },
+      {
+        "value": "http://www.t4t35.fr/Megalithes/AfficheSite.aspx?NumSite=28959",
+        "count": 1
+      }
+    ],
+    "count": 22
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Pierre à cupules", "count": 2},
+      {"value": "Enceinte Gauloise", "count": 1},
+      {"value": "Ruines d'une motte castrale", "count": 1},
+      {"value": "Sanctuaire gallo-romain", "count": 1},
+      {"value": "Puits Gallo-Romain", "count": 1},
+      {
+        "value": "Site archéologique du Saut immergé dans le lac du Bourget",
+        "count": 1
+      },
+      {
+        "value": "Site archéologique de Hautecombe immergé dans le lac du Bourget",
+        "count": 1
+      },
+      {"value": "Dolmen", "count": 1},
+      {"value": "Cercle de pierres", "count": 1},
+      {"value": "Ruines d'un mausolée gallo-romain", "count": 1},
+      {"value": "église paléochrétienne", "count": 1},
+      {"value": "portique à colonnades", "count": 1},
+      {"value": "piscine", "count": 1},
+      {"value": "thermes", "count": 1},
+      {"value": "grenier à grain", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "tourism",
+    "tags": [{"value": "attraction", "count": 12}],
+    "count": 12
+  },
+  {"key": "ruins", "tags": [{"value": "yes", "count": 11}], "count": 11},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "immergé dans le lac, position obtenue par conversion des coordonnées de la fiche Mérimée",
+        "count": 4
+      },
+      {
+        "value": "immergé dans le lac d'Aiguebelette, position obtenue par conversion des coordonnées de la fiche Mérimée",
+        "count": 2
+      },
+      {"value": "entre le rdc et le 1er étage", "count": 1},
+      {"value": "Ancienne meulière et léproserie", "count": 1},
+      {
+        "value": "temporairement fermé (réouverture prévue en 2019) http://www.terrevalserine.fr/fr/dinoplagne/dinoplagne.htm",
+        "count": 1
+      }
+    ],
+    "count": 9
+  },
+  {
+    "key": "historic:civilization",
+    "tags": [
+      {"value": "ancient_roman", "count": 2},
+      {"value": "celtic", "count": 2},
+      {"value": "neolithic", "count": 1},
+      {"value": "modern", "count": 1},
+      {"value": "medieval", "count": 1},
+      {"value": "roman", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "cave_entrance", "count": 7}],
+    "count": 7
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "https://commons.wikimedia.org/wiki/File:Bas-relief Mithra à Bourg-Saint-Andéol.jpg",
+        "count": 1
+      },
+      {"value": "File:Vi ant téa.JPG", "count": 1},
+      {"value": "File:Jardin_archéologique_de_Cybèle._009.JPG", "count": 1},
+      {"value": "File:Odéon de Vienne.jpg", "count": 1},
+      {
+        "value": "https://upload.wikimedia.org/wikipedia/commons/b/b5/La-tuilerie-romaine-16.jpg",
+        "count": 1
+      }
+    ],
+    "count": 5
+  },
+  {
+    "key": "network",
+    "tags": [{"value": "Site archéologique du Vernai", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 3},
+      {"value": "limited", "count": 1},
+      {"value": "no", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "start_date",
+    "tags": [
+      {"value": "C11", "count": 1},
+      {"value": "2C", "count": 1},
+      {"value": "C", "count": 1},
+      {"value": "C19", "count": 1},
+      {"value": "C10", "count": 1}
+    ],
+    "count": 5
+  },
+  {
+    "key": "historic:era",
+    "tags": [{"value": "neolithic", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "fortification_type",
+    "tags": [{"value": "hill_fort", "count": 3}],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "adit", "count": 1},
+      {"value": "water_well", "count": 1},
+      {"value": "tower", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "A placer", "count": 2},
+      {"value": "Position à préciser", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "theatre", "count": 2},
+      {"value": "place_of_worship", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "bronze-age", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.chagnon42.fr/fr/information/32110/la-cave-cure",
+        "count": 1
+      },
+      {
+        "value": "http://www.mithraeum.eu/monumenta.php?mid=mithreum_de_bourg_saint_andeol",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {"key": "layer", "tags": [{"value": "-1", "count": 2}], "count": 2},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "nvMachaizm_yBlKm8CrLsA", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "ref:megalithic.co.uk",
+    "tags": [{"value": "43239", "count": 1}],
+    "count": 1
+  },
+  {"key": "ele", "tags": [{"value": "860", "count": 1}], "count": 1},
+  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "leisure", "tags": [{"value": "park", "count": 1}], "count": 1},
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 50 48 48 68", "count": 1}],
+    "count": 1
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "footway", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "basin", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [
+      {"value": "Category:Tuilerie romaine des Bois de Chancy", "count": 1}
+    ],
+    "count": 1
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 1}], "count": 1}
+]

@@ -1,0 +1,9 @@
+[
+  {"key": "craft", "tags": [{"value": "jewellery", "count": 1}], "count": 1},
+  {"key": "ref:FR:NAF", "tags": [{"value": "5630Z", "count": 1}], "count": 1},
+  {
+    "key": "ref:FR:SIRET",
+    "tags": [{"value": "79102367400017", "count": 1}],
+    "count": 1
+  }
+]

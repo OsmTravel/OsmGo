@@ -1,0 +1,225 @@
+[
+  {"key": "shop", "tags": [{"value": "laundry", "count": 250}], "count": 250},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 77 54 22 77", "count": 5},
+      {"value": "+33 6 11 95 30 30", "count": 4},
+      {"value": "+33 4 76 96 28 03", "count": 4},
+      {"value": "+33 6 68 59 08 74", "count": 2},
+      {"value": "+33 7 60 75 20 02", "count": 2},
+      {"value": "+33 4 76 22 87 06", "count": 1},
+      {"value": "+33 4 76 26 11 21", "count": 1},
+      {"value": "+33 4 79 00 67 31", "count": 1},
+      {"value": "+33 4 71 03 54 32", "count": 1},
+      {"value": "+33 4 76 50 96 57", "count": 1},
+      {"value": "+33 4 76 08 10 77", "count": 1},
+      {"value": "+33 6 69 44 38 02", "count": 1},
+      {"value": "+33 6 24 28 12 16", "count": 1},
+      {"value": "+33 6 84 77 04 46", "count": 1},
+      {"value": "+33 4 38 02 95 89", "count": 1},
+      {"value": "+33 6 84 43 50 71", "count": 1},
+      {"value": "+33 7 81 72 66 09", "count": 1},
+      {"value": "+33 4 76 54 90 00", "count": 1},
+      {"value": "+33 4 76 82 76 31", "count": 1},
+      {"value": "+33 6 61 46 00 58", "count": 1},
+      {"value": "+33 4 50 51 12 70", "count": 1},
+      {"value": "+33637144699", "count": 1},
+      {"value": "+33618192000", "count": 1},
+      {"value": "+33 4 76 47 01 41", "count": 1}
+    ],
+    "count": 36
+  },
+  {"key": "self_service", "tags": [{"value": "yes", "count": 26}], "count": 26},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://auclair-laverie.com/laverie-automatique-a-st-egreve.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.laverie-grenoble.fr/laverie-stalingrad",
+        "count": 1
+      },
+      {
+        "value": "http://www.laverie-grenoble.fr/laverie-d-echirolles",
+        "count": 1
+      },
+      {
+        "value": "http://www.washndry-concept.com/laverie/laverie-automatique-washn-dry-st-martin-dheres/",
+        "count": 1
+      },
+      {"value": "http://www.laverie-grenoble.fr/laverie-thiers-1", "count": 1},
+      {
+        "value": "http://pressing-isere.fr/sections/view.php/12/tout-propre",
+        "count": 1
+      },
+      {"value": "http://www.laverie-grenoble.fr/laverie-berriat", "count": 1},
+      {"value": "http://www.laverie-grenoble.fr/laverie-st-bruno", "count": 1},
+      {
+        "value": "https://www.washndry-concept.com/laverie/laverie-washn-dry-lyon-6eme/",
+        "count": 1
+      },
+      {
+        "value": "http://auclair-laverie.com/laverie-automatique-a-grenoble-ampere.html",
+        "count": 1
+      },
+      {"value": "http://www.laverie-grenoble.fr/laverie-irvoy", "count": 1},
+      {
+        "value": "http://www.laverie-grenoble.fr/laverie-jean-perrot",
+        "count": 1
+      },
+      {
+        "value": "http://www.laverie-grenoble.fr/laverie-de-fontaine",
+        "count": 1
+      },
+      {
+        "value": "http://auclair-laverie.com/laverie-automatique-a-grenoble-marie-reynoard.html",
+        "count": 1
+      },
+      {
+        "value": "http://auclair-laverie.com/laverie-automatique-a-voiron.html",
+        "count": 1
+      },
+      {
+        "value": "http://auclair-laverie.com/laverie-automatique-a-seyssinet.html",
+        "count": 1
+      },
+      {"value": "http://www.laverie-grenoble.fr/laverie-thiers", "count": 1},
+      {
+        "value": "http://www.crous-grenoble.fr/logement/residence-berlioz/",
+        "count": 1
+      },
+      {
+        "value": "http://www.crous-grenoble.fr/logement/residence-condillac-b/",
+        "count": 1
+      },
+      {
+        "value": "http://www.washndry-concept.com/laverie/laverie-lile-verte-grenoble/",
+        "count": 1
+      },
+      {"value": "www.kunz.fr", "count": 1},
+      {"value": "http://www.kunz.fr/", "count": 1},
+      {"value": "http://www.city-laverie.com/laverie-lyon-6", "count": 1},
+      {
+        "value": "http://auclair-laverie.com/laverie-automatique-a-grenoble-foch.html",
+        "count": 1
+      },
+      {
+        "value": "http://www.la-galerie.com/geant-saint-martin-dheres/boutiques/self-laverie-self-laverie-geant-saint-martin-dheres",
+        "count": 1
+      }
+    ],
+    "count": 25
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 11},
+      {"value": "no", "count": 10},
+      {"value": "limited", "count": 3}
+    ],
+    "count": 24
+  },
+  {
+    "key": "payment:coins",
+    "tags": [{"value": "yes", "count": 7}, {"value": "no", "count": 1}],
+    "count": 8
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Wash'N Dry", "count": 1},
+      {"value": "Free", "count": 1},
+      {"value": "Wash'n Dry", "count": 1},
+      {"value": "KIS Photo-Me Group", "count": 1},
+      {"value": "Camping La Nublière", "count": 1},
+      {"value": "Carrefour", "count": 1},
+      {"value": "Danube International", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "payment:notes",
+    "tags": [{"value": "yes", "count": 4}, {"value": "no", "count": 2}],
+    "count": 6
+  },
+  {
+    "key": "man_made",
+    "tags": [{"value": "surveillance", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "payment:debit_cards",
+    "tags": [{"value": "no", "count": 5}],
+    "count": 5
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "laverie automatique", "count": 1},
+      {"value": "Laverie Automatique", "count": 1},
+      {"value": "Pressing écologique", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "0", "count": 3}], "count": 3},
+  {"key": "access", "tags": [{"value": "private", "count": 2}], "count": 2},
+  {
+    "key": "payment:ep_moneo",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "residence.condillac@crous-grenoble.fr", "count": 1},
+      {"value": "aulavoirmb@wanadoo.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "indoor", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Pressing", "count": 1},
+      {"value": "7h 20h", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "floor", "tags": [{"value": "-1", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "not exactely here", "count": 1}],
+    "count": 1
+  },
+  {"key": "camera:type", "tags": [{"value": "dome", "count": 1}], "count": 1},
+  {"key": "laundry_service", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {
+    "key": "payment:credit_cards",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
+  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1},
+  {
+    "key": "network",
+    "tags": [{"value": "Laverie by KIS Wash", "count": 1}],
+    "count": 1
+  },
+  {"key": "organic", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "wlan", "count": 1}],
+    "count": 1
+  },
+  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
+  {"key": "vending", "tags": [{"value": "food", "count": 1}], "count": 1}
+]

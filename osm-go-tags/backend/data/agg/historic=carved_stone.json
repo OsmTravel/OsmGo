@@ -1,0 +1,12 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "carved_stone", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic:civilization",
+    "tags": [{"value": "breton", "count": 1}],
+    "count": 1
+  }
+]

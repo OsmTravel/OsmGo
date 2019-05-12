@@ -1,0 +1,36 @@
+[
+  {
+    "key": "level",
+    "tags": [{"value": "-1", "count": 2}, {"value": "1", "count": 1}],
+    "count": 3
+  },
+  {"key": "amenity", "tags": [{"value": "heater", "count": 3}], "count": 3},
+  {"key": "obstacle:blind", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "layer", "tags": [{"value": "-1", "count": 2}], "count": 2},
+  {"key": "support", "tags": [{"value": "ground", "count": 2}], "count": 2},
+  {"key": "material", "tags": [{"value": "metal", "count": 2}], "count": 2},
+  {
+    "key": "heating:type",
+    "tags": [{"value": "electric", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "mapillary:NE",
+    "tags": [
+      {"value": "t8r4aTE7skN9b5Nxvd8J4Q", "count": 1},
+      {"value": "HgbnHLzqG75N7bBTSuSiLA", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "mapillary:NW",
+    "tags": [{"value": "RNpiT-up3OM8B02-KlTVFQ", "count": 1}],
+    "count": 1
+  },
+  {"key": "operator", "tags": [{"value": "SNCF", "count": 1}], "count": 1},
+  {
+    "key": "mapillary:W",
+    "tags": [{"value": "7vwA8pOvVnmfPYfK1fptwA", "count": 1}],
+    "count": 1
+  }
+]

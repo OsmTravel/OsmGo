@@ -1,0 +1,40 @@
+[
+  {"key": "leisure", "tags": [{"value": "ice_rink", "count": 31}], "count": 31},
+  {
+    "key": "seasonal",
+    "tags": [{"value": "yes", "count": 11}, {"value": "no", "count": 1}],
+    "count": 12
+  },
+  {
+    "key": "sport",
+    "tags": [
+      {"value": "ice_skating", "count": 4},
+      {"value": "hockey", "count": 2},
+      {"value": "skating;hockey", "count": 1},
+      {"value": "hockey;skating", "count": 1},
+      {"value": "boules", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Patinoire Polesud", "count": 1},
+      {"value": "fr:Patinoire Charlemagne", "count": 1},
+      {"value": "fr:Patinoire André Ravix", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Ville de Lyon", "count": 1},
+      {"value": "Chambéry Métropole", "count": 1},
+      {"value": "Ours de Villard-de-Lans", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "wikidata", "tags": [{"value": "Q1141309", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "4200", "count": 1}], "count": 1},
+  {"key": "layer", "tags": [{"value": "1", "count": 1}], "count": 1}
+]

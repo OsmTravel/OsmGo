@@ -1,0 +1,1078 @@
+[
+  {
+    "key": "highway",
+    "tags": [{"value": "motorway", "count": 3140}],
+    "count": 3140
+  },
+  {
+    "key": "oneway",
+    "tags": [{"value": "yes", "count": 3121}, {"value": "no", "count": 19}],
+    "count": 3140
+  },
+  {
+    "key": "ref",
+    "tags": [
+      {"value": "A 7", "count": 525},
+      {"value": "A 40", "count": 474},
+      {"value": "A 43", "count": 422},
+      {"value": "A 41", "count": 217},
+      {"value": "A 47", "count": 148},
+      {"value": "A 42", "count": 147},
+      {"value": "A 89", "count": 141},
+      {"value": "A 46", "count": 130},
+      {"value": "A 72", "count": 110},
+      {"value": "A 6", "count": 109},
+      {"value": "A 432", "count": 108},
+      {"value": "A 48", "count": 98},
+      {"value": "A 51", "count": 75},
+      {"value": "A 480", "count": 74},
+      {"value": "A 49", "count": 70},
+      {"value": "A 39", "count": 48},
+      {"value": "A 404", "count": 48},
+      {"value": "A 406", "count": 39},
+      {"value": "A 410", "count": 32},
+      {"value": "A1", "count": 29},
+      {"value": "A 430", "count": 26},
+      {"value": "A 411", "count": 21},
+      {"value": "A 466", "count": 19},
+      {"value": "A 450", "count": 11},
+      {"value": "D 288", "count": 5},
+      {"value": "A 41s", "count": 2},
+      {"value": "N 205", "count": 1},
+      {"value": "T1", "count": 1}
+    ],
+    "count": 3130
+  },
+  {
+    "key": "toll",
+    "tags": [{"value": "yes", "count": 2172}, {"value": "no", "count": 889}],
+    "count": 3061
+  },
+  {
+    "key": "maxspeed",
+    "tags": [
+      {"value": "130", "count": 1395},
+      {"value": "110", "count": 887},
+      {"value": "90", "count": 476},
+      {"value": "70", "count": 189},
+      {"value": "50", "count": 20},
+      {"value": "100", "count": 18},
+      {"value": "signals", "count": 4},
+      {"value": "120", "count": 3},
+      {"value": "40", "count": 2},
+      {"value": "60", "count": 1},
+      {"value": "80", "count": 1},
+      {"value": "30", "count": 1}
+    ],
+    "count": 2997
+  },
+  {
+    "key": "int_ref",
+    "tags": [
+      {"value": "E 70", "count": 559},
+      {"value": "E 15", "count": 533},
+      {"value": "E 712", "count": 295},
+      {"value": "E 21;E 62", "count": 259},
+      {"value": "E 611", "count": 150},
+      {"value": "E 25", "count": 112},
+      {"value": "E 711;E 713", "count": 86},
+      {"value": "E 711", "count": 76},
+      {"value": "E 15;E 70", "count": 75},
+      {"value": "E 713", "count": 70},
+      {"value": "E 70;E 711", "count": 64},
+      {"value": "E 25;E 712", "count": 46},
+      {"value": "E 25;E 62", "count": 39},
+      {"value": "E 62", "count": 39},
+      {"value": "E 70;E 712", "count": 31},
+      {"value": "E 21", "count": 28},
+      {"value": "E 21;E 25", "count": 20},
+      {"value": "E 15;E 611", "count": 3}
+    ],
+    "count": 2485
+  },
+  {
+    "key": "surface",
+    "tags": [{"value": "asphalt", "count": 2403}],
+    "count": 2403
+  },
+  {
+    "key": "lanes",
+    "tags": [
+      {"value": "2", "count": 1201},
+      {"value": "3", "count": 867},
+      {"value": "4", "count": 238},
+      {"value": "1", "count": 41},
+      {"value": "5", "count": 11},
+      {"value": "6", "count": 4},
+      {"value": "14", "count": 3},
+      {"value": "10", "count": 3},
+      {"value": "7", "count": 2},
+      {"value": "11", "count": 2},
+      {"value": "15", "count": 2},
+      {"value": "27", "count": 2},
+      {"value": "21", "count": 2},
+      {"value": "16", "count": 1},
+      {"value": "12", "count": 1},
+      {"value": "13", "count": 1}
+    ],
+    "count": 2381
+  },
+  {
+    "key": "smoothness",
+    "tags": [{"value": "good", "count": 1832}],
+    "count": 1832
+  },
+  {
+    "key": "hgv:conditional",
+    "tags": [
+      {
+        "value": "no @ (Feb 10,17,24 07:00-18:00,22:00-24:00; Mar 3,10 07:00-18:00,22:00-24:00; Jul 21,28 07:00-19:00; Aug 4,11,18 07:00-19:00 AND weight>7.5)",
+        "count": 1126
+      },
+      {
+        "value": "no @ (Feb 10,17,24 07:00-18:00,22:00-24:00; Mar 07:00-18:00,22:00-24:00; Jul 21,28 07:00-19:00; Aug 4,11,18 07:00-19:00 AND weight>7.5)",
+        "count": 1
+      }
+    ],
+    "count": 1127
+  },
+  {
+    "key": "layer",
+    "tags": [
+      {"value": "1", "count": 677},
+      {"value": "2", "count": 59},
+      {"value": "-1", "count": 53},
+      {"value": "-2", "count": 4},
+      {"value": "3", "count": 2}
+    ],
+    "count": 795
+  },
+  {
+    "key": "shoulder:right",
+    "tags": [{"value": "yes", "count": 780}],
+    "count": 780
+  },
+  {
+    "key": "bridge",
+    "tags": [{"value": "yes", "count": 695}, {"value": "viaduct", "count": 50}],
+    "count": 745
+  },
+  {
+    "key": "destination",
+    "tags": [
+      {"value": "Turin-Milan;Genève;Chambéry;Annecy", "count": 14},
+      {"value": "Turin-Milan;Chamonix", "count": 10},
+      {"value": "Genève;Annecy;Aix-les-Bains", "count": 8},
+      {"value": "Lyon", "count": 8},
+      {"value": "Grenoble", "count": 8},
+      {"value": "Lyon-Centre", "count": 7},
+      {"value": "Montélimar-Nord;Valence;Lyon", "count": 7},
+      {"value": "Lyon;Grenoble;Annecy", "count": 7},
+      {"value": "Vienne;Lyon;Saint Étienne", "count": 6},
+      {
+        "value": "Valence-Nord;Bourg-lès-Valence;Lyon;Saint-Étienne",
+        "count": 6
+      },
+      {"value": "Lausanne;Genève-Cointrin;Genève-Centre", "count": 6},
+      {"value": "Valence;Grenoble;Lyon", "count": 5},
+      {"value": "Marseille;Valence;Grenoble;Lyon", "count": 5},
+      {"value": "Paris;Lyon-Centre", "count": 5},
+      {"value": "Bourg en Bresse;Genève", "count": 5},
+      {"value": "Paris;Villefranche-sur-Saône", "count": 5},
+      {"value": "Strasbourg;Paris;Grenoble;Lyon", "count": 5},
+      {"value": "Marseille;Valence;Vienne", "count": 4},
+      {"value": "Genève-Aéroport;Lausanne;Lyon;Paris", "count": 4},
+      {"value": "Lyon;Grenoble;Chambéry, Aix les Bains-Le Lac", "count": 4},
+      {"value": "Lyon;Saint Exupéry;L'Isle d'Abeau", "count": 4},
+      {"value": "Feyzin;Vénissieux;Lyon;Paris", "count": 4},
+      {"value": "Genève;Lyon;Chambéry", "count": 4},
+      {"value": "Lyon-Centre;Paris;Pierre-Bénite", "count": 4},
+      {"value": "Lyon;Genève", "count": 3},
+      {"value": "Lyon;Grenoble;Chambéry", "count": 3},
+      {"value": "Albertville;Tarentaise;Beaufortain;Val d'Arly", "count": 3},
+      {"value": "Strasbourg;Lyon;Voiron;Grenoble-Isère;Valence", "count": 3},
+      {"value": "Milan;Genève;Lyon;Grenoble", "count": 3},
+      {"value": "Paris;Strasbourg;Lons-Le-Saunier;Mâcon", "count": 3},
+      {"value": "Tain l'Hermitage;Romans;Valence;Marseille", "count": 3},
+      {"value": "Grenoble;Chambéry;Lyon;Saint Exupéry", "count": 3},
+      {"value": "Marseille;Saint-Étienne", "count": 3},
+      {"value": "Turin-Milan;Albertville;St Jean de Maurienne", "count": 3},
+      {"value": "Strasbourg;Genève;Chambéry;Lyon;Grenoble-Isère", "count": 3},
+      {"value": "A 406;Moulins;Lyon;Montceau les Mines;Mâcon-Sud", "count": 3},
+      {"value": "Bourg en Bresse;Genève;Strasbourg", "count": 3},
+      {"value": "Turin-Milan;St Jean de Maurienne;Maurienne", "count": 3},
+      {"value": "Grenoble-Centre;Lyon;Valence", "count": 2},
+      {"value": "Paris;Lyon par Nantua;Bourg en Bresse", "count": 2},
+      {
+        "value": "Lyon par Chambéry;Grenoble;Chambéry;Annecy;Cruseilles",
+        "count": 2
+      },
+      {"value": "Paris;Lyon;Genève", "count": 2},
+      {"value": "Paris;Roanne;Tassin;Part-Dieu", "count": 2},
+      {"value": "Milan;Chamonix Mt Blanc;Thonon-Evian;Annemasse", "count": 2},
+      {"value": "Paris;Lyon-Centre;La Mulatière", "count": 2},
+      {"value": "Lyon par Chambéry;Grenoble;Chambéry;Annecy", "count": 2},
+      {"value": "Turin-Milan;Chamonix;Annemasse", "count": 2},
+      {"value": "Grenoble;Genève;Lyon;Bourg-En-Bresse", "count": 2},
+      {"value": "Paris;Strasbourg;Bourg-en-Bresse", "count": 2},
+      {
+        "value": "Turin - Milan;Genève;Grenoble;Chambéry;L'Isle d'Abeau - Centre",
+        "count": 2
+      },
+      {"value": "Marseille;Grenoble;Lyon", "count": 2},
+      {"value": "Pont de Claix;Gap-Briançon;Sisteron", "count": 2},
+      {"value": "Lyon;Chambéry;Grenoble", "count": 2},
+      {"value": "Paris;Mâcon", "count": 2},
+      {"value": "Strasbourg;Genève;Bourg-en-Bresse", "count": 2},
+      {"value": "Milan;Annecy;Genève;Oyonnax", "count": 2},
+      {"value": "Chamonix;Genève;Annemasse;Annecy-Nord", "count": 2},
+      {"value": "Givors;Lyon;Saint-Étienne;Clermont-Ferrand;Paris", "count": 2},
+      {"value": "Lyon;Chambéry;Aix les Bains", "count": 2},
+      {"value": "A 410;Milan;Chamonix;Thonon-Evian;Annemasse", "count": 2},
+      {"value": "Milan;Genéve;Oyonnax", "count": 2},
+      {"value": "Rillieux;Villefranche sur Saône;Paris", "count": 1},
+      {"value": "Turin;Milan;Grenoble;Chambéry;L'Isle d'Abeau", "count": 1},
+      {"value": "Saint-Etienne;Lyon", "count": 1},
+      {"value": "Condrieu;Valence;Marseille", "count": 1},
+      {
+        "value": "Paris;Lyon par Nantua;Thonon-Evian;Genève;Annemasse",
+        "count": 1
+      },
+      {"value": "Turin-Milan;Chamonix;", "count": 1},
+      {"value": "Paris;Genève;Bourg en Bresse", "count": 1},
+      {"value": "Lyon-Est;Chambéry;Grenoble;Genève", "count": 1},
+      {"value": "Paris;Lyon;Genève;Annecy", "count": 1},
+      {"value": "Marseille;Clermont-Ferrand;Saint-Étienne", "count": 1},
+      {"value": "Marseille;Grenoble;Chambéry;Saint-Étienne", "count": 1},
+      {"value": "Turin-Milan;Genève;Albertville;Chambéry", "count": 1},
+      {"value": "Genève-Vallard;Gaillard", "count": 1},
+      {"value": "Turin;Milan;Chamonix", "count": 1},
+      {"value": "Paris", "count": 1},
+      {"value": "Paris;Strasbourg;Bourg-En-Bresse", "count": 1},
+      {"value": "Chanas;Valence;Marseille", "count": 1},
+      {"value": "Grenoble-Centre", "count": 1},
+      {"value": "Lyon;Saint-Étienne", "count": 1},
+      {
+        "value": "[Bis] Côte d'Azur;Espace Comboire;Pont de Claix;Gap - Briançon;Sisteron",
+        "count": 1
+      },
+      {"value": "Bron;Lyon", "count": 1},
+      {"value": "Paris;Strasbourg;Dijon;Bourg-Centre", "count": 1},
+      {"value": "Turin - Milan;Genève;Annecy;Chambéry", "count": 1},
+      {"value": "Annecy;Chambéry;Lyon", "count": 1},
+      {"value": "Chanas;Lyon;Saint-Étienne", "count": 1},
+      {"value": "Vienne;Lyon;Saint Étienne|", "count": 1},
+      {"value": "Lausanne;Gd-Saconnex;Fret-Cargo", "count": 1},
+      {"value": "Paris;Lausanne;Genève", "count": 1},
+      {
+        "value": "Paris;Lyon-Centre;Clermont-Ferrand;Saint Étienne;Givors",
+        "count": 1
+      },
+      {"value": "Strasbourg;Lyon;Voiron;Grenoble Isère;Valence", "count": 1},
+      {"value": "Turin-Milan;Albertville;Grenoble", "count": 1},
+      {"value": "Lyon;Valence", "count": 1},
+      {"value": "Paris;Châlon/Saône;Mâcon-Centre", "count": 1},
+      {"value": "Lyon-Centre;Pierre-Bénite;Hôpitaux sud", "count": 1},
+      {"value": "Paris;Bourg en Bresse;Villefranche sur Saône", "count": 1},
+      {"value": "Genève;Chamonix Mont Blanc", "count": 1},
+      {
+        "value": "Fontaine - centre;Grenoble - centre;Rocade Sud;Autres Directions",
+        "count": 1
+      },
+      {
+        "value": "Strasbourg;Lille;Paris par A 5;Dijon;Lons-Le-Saunier",
+        "count": 1
+      },
+      {"value": "Milan;Genève;Annecy", "count": 1},
+      {"value": "Genève;Chambéry;Annecy", "count": 1},
+      {"value": "Saint Exupéry;Grenoble;Chambéry;Lyon", "count": 1},
+      {"value": "Grenoble;Albertville;Turin", "count": 1},
+      {"value": "Pont de Claix;Briançon;Gap;Sisteron", "count": 1},
+      {"value": "Bordeaux;Clermont Ferrand;Thiers", "count": 1},
+      {"value": "Marseille;Valence;Grenoble", "count": 1},
+      {"value": "Claix;Varces;Sisteron;Aix en Pce;Nice", "count": 1},
+      {
+        "value": "Paris;Bourg-Genève;Aéroport Saint-Exupéry;Rocade Est",
+        "count": 1
+      },
+      {"value": "Marseille;Saint-Étienne;Lyon", "count": 1},
+      {
+        "value": "Villefranche sur S.;Macon;Paris;Limonest;Dardilly-porte de Lyon;Roanne",
+        "count": 1
+      },
+      {"value": "Milan;Genève;Lyon", "count": 1},
+      {
+        "value": "Grenoble-Bastille;Grenoble-Centre;Autres Directions",
+        "count": 1
+      },
+      {"value": "Marseille;Valence;Lyon;Bourgoin-Jallieu", "count": 1},
+      {"value": "Turin-Milan;Genève;Annecy;Chambéry", "count": 1},
+      {
+        "value": "Turin - Milan;Genève;Grenoble;Chambéry;Bourgoin-Jallieu - Centre",
+        "count": 1
+      },
+      {"value": "Marseille;Saint-Étienne;Z.I. Lyon Sud-Est", "count": 1},
+      {"value": "Lyon;Grenoble;Aix les Bains", "count": 1},
+      {"value": "Loriol;Valence;Lyon", "count": 1},
+      {
+        "value": "Voreppe;Grenoble Isère;Lyon;Bourg en Bresse;Valence",
+        "count": 1
+      },
+      {"value": "Turin-Milan;Chamonix;Geneve;Annemasse", "count": 1},
+      {"value": "Strasbourg;Lyon;Voiron;Aéroport Grenoble Isère", "count": 1},
+      {"value": "Turin-Milan;Chamonix;Genève-Vallard;Annemasse", "count": 1},
+      {"value": "Chamonix;Genève;Annecy", "count": 1},
+      {"value": "Grenoble-Centre;Villard de Lans;Lyon", "count": 1},
+      {"value": "Lyon;St Exupéry;Bourgoin-Jallieu", "count": 1},
+      {"value": "Genève;Chamonix;Annecy", "count": 1},
+      {"value": "Genève", "count": 1},
+      {"value": "Genève;Lausanne;Lyon;Paris;Annecy", "count": 1},
+      {"value": "Annecy;Lyon;Grenoble", "count": 1},
+      {"value": "Strasbourg;Genève;Bourg en Bresse;", "count": 1},
+      {"value": "Meyrin;Vernier", "count": 1},
+      {"value": "Paris;Lyon;Genève;Cluses;Annecy", "count": 1},
+      {"value": "Paris;Genève;Annecy", "count": 1},
+      {"value": "Chasse sur Rhône;Lyon;Saint-Étienne", "count": 1},
+      {"value": "Paris;Lyon;Bourg en Bresse", "count": 1},
+      {
+        "value": "Côte d'Azur;Grenoble-centre;Chambéry;Autres Directions",
+        "count": 1
+      },
+      {"value": "Genève;Annecy;Seynod-Centre", "count": 1},
+      {"value": "Turin-Milan;Genève;Chamonix;Annecy", "count": 1},
+      {"value": "Vienne;St Etienne", "count": 1},
+      {"value": "Turin - Milan;Genève;Grenoble;Chambéry", "count": 1},
+      {
+        "value": "Turin - Milan;Genève;Grenoble;Chambéry;L'Isle d'Abeau - Parc technologique",
+        "count": 1
+      },
+      {"value": "Lyon;Grenoble;Chambéry;Aix les Bains", "count": 1},
+      {"value": "Part-Dieu", "count": 1},
+      {"value": "Paris;Strasbourg;Genève;Bourg-en-Bresse", "count": 1},
+      {"value": "Lyon;Genève;Annecy", "count": 1},
+      {"value": "Grenoble;Chambéry;Saint Exupéry;Lyon", "count": 1},
+      {"value": "|||Montluel;La Boisse", "count": 1},
+      {"value": "Loriol;Privas;Montélimar;Avignon;Marseille", "count": 1},
+      {"value": "Montélimar-Nord;Montélimar;Avignon;Marseille", "count": 1},
+      {"value": "Avignon;Nîmes;Marseille", "count": 1},
+      {"value": "Lausanne;Versoix", "count": 1},
+      {
+        "value": "France;Genève-La Praille;Meyrin;Vernier;Genève-Aéroport",
+        "count": 1
+      },
+      {"value": "Lausanne;Genève-Aéroport", "count": 1},
+      {"value": "Grenoble;Chambéry", "count": 1},
+      {"value": "Saint Priest;Chambéry;Grenoble", "count": 1},
+      {"value": "Marseille;Grenoble", "count": 1}
+    ],
+    "count": 328
+  },
+  {
+    "key": "turn:lanes",
+    "tags": [
+      {"value": "|||merge_to_left", "count": 64},
+      {"value": "|||slight_right", "count": 59},
+      {"value": "||slight_right", "count": 29},
+      {"value": "||merge_to_left", "count": 22},
+      {"value": "none|none|none|merge_to_left", "count": 19},
+      {"value": "none|none|merge_to_left", "count": 18},
+      {"value": "none|none|slight_right", "count": 17},
+      {"value": "none|none|none|slight_right", "count": 11},
+      {"value": "through|through|through|slight_right", "count": 7},
+      {"value": "merge_to_right||", "count": 7},
+      {"value": "through|through|through|merge_to_left", "count": 6},
+      {"value": "through|through|slight_right", "count": 6},
+      {
+        "value": "slight_left|slight_left|slight_right|slight_right",
+        "count": 3
+      },
+      {"value": "||||merge_to_left", "count": 2},
+      {"value": "none|through;slight_right", "count": 2},
+      {"value": "merge_to_right|none", "count": 2},
+      {"value": "none|none|none|slight_right|slight_right", "count": 2},
+      {"value": "merge_to_right|none|none", "count": 2},
+      {"value": "through|through|slight_right|slight_right", "count": 2},
+      {"value": "|slight_right", "count": 1},
+      {"value": "none|none|none|merge_to_left;slight_right", "count": 1},
+      {"value": "|||merge_to_left;slight_right", "count": 1},
+      {"value": "|||merge_to_left|merge_to_left", "count": 1},
+      {"value": "slight_left|slight_left|slight_right", "count": 1},
+      {"value": "none|none|none|none|merge_to_left", "count": 1},
+      {"value": "merge_to_right|||slight_right", "count": 1},
+      {"value": "none|none|slight_right|slight_right", "count": 1},
+      {"value": "merge_to_right|", "count": 1},
+      {"value": "through|through|through|through", "count": 1},
+      {"value": "through|through|through|through|slight_right", "count": 1},
+      {"value": "||||slight_right", "count": 1},
+      {"value": "slight_left|slight_left|right", "count": 1},
+      {"value": "through|through;slight_right", "count": 1},
+      {"value": "merge_to_right|||", "count": 1}
+    ],
+    "count": 295
+  },
+  {
+    "key": "placement",
+    "tags": [
+      {"value": "middle_of:2", "count": 153},
+      {"value": "right_of:1", "count": 81},
+      {"value": "transition", "count": 5},
+      {"value": "right_of:2", "count": 3},
+      {"value": "middle_of:3", "count": 2}
+    ],
+    "count": 244
+  },
+  {
+    "key": "maxheight",
+    "tags": [
+      {"value": "4.5", "count": 161},
+      {"value": "4.7", "count": 24},
+      {"value": "4.4", "count": 5},
+      {"value": "4.6", "count": 2}
+    ],
+    "count": 192
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "ASF", "count": 164},
+      {"value": "APRR", "count": 19},
+      {"value": "ATMB", "count": 3}
+    ],
+    "count": 186
+  },
+  {
+    "key": "hazard",
+    "tags": [
+      {"value": "deer", "count": 101},
+      {"value": "animal_crossing", "count": 12}
+    ],
+    "count": 113
+  },
+  {
+    "key": "maxspeed:hgv",
+    "tags": [{"value": "80", "count": 105}, {"value": "70", "count": 7}],
+    "count": 112
+  },
+  {
+    "key": "lit",
+    "tags": [{"value": "yes", "count": 83}, {"value": "no", "count": 22}],
+    "count": 105
+  },
+  {
+    "key": "maxspeed:conditional",
+    "tags": [
+      {"value": "80 @ (weight>3.5)", "count": 55},
+      {"value": "70 @ (weight>3.5)", "count": 19},
+      {"value": "70 @ (weight>7.5)", "count": 12},
+      {"value": "70 @ (weight>12)", "count": 8},
+      {"value": "50 @ (weight>3.5)", "count": 5},
+      {"value": "70 @ (hazmat=yes)", "count": 2}
+    ],
+    "count": 101
+  },
+  {
+    "key": "destination:lanes",
+    "tags": [
+      {
+        "value": "Saint-Chamond;Lyon;Valence;Saint-Etienne-autres-quartiers|Saint-Chamond;Lyon;Valence;Saint-Etienne-autres-quartiers|Saint-Etienne-Centre;Stade Geoffroy Guichard;Cité du design;Zénith",
+        "count": 3
+      },
+      {"value": "||Saint-Trivier-de-Courtes;Coligny;Saint-Amour", "count": 3},
+      {
+        "value": "Paris;Strasbourg;Bourg-en-Bresse|Paris;Strasbourg;Bourg-en-Bresse|Milan;Genéve;Oyonnax|Milan;Genéve;Oyonnax",
+        "count": 3
+      },
+      {
+        "value": "Bron;Lyon|Bron;Lyon|Paris;Marseille;Saint-Étienne;Z.I. Lyon Sud-Est|Paris;Marseille;Saint-Étienne;Z.I. Lyon Sud-Est",
+        "count": 3
+      },
+      {
+        "value": "Paris;Strasbourg;Genève;Bourg-en-Bresse|Paris;Strasbourg;Genève;Bourg-en-Bresse|Saint Exupéry;Saint Laurent-de-Mure;Crémieu;Colombier-Saugnieu",
+        "count": 3
+      },
+      {
+        "value": "Part-Dieu|Marseille;Saint Étienne;Périphérique Sud;Porte de Parilly",
+        "count": 2
+      },
+      {
+        "value": "Marseille;Saint-Étienne;Lyon|Marseille;Saint-Étienne;Lyon|Turin;Milan;Grenoble;Chambéry;L'Isle d'Abeau|Turin;Milan;Grenoble;Chambéry;L'Isle d'Abeau",
+        "count": 2
+      },
+      {
+        "value": "Valence-Nord;Bourg-lès-Valence;Lyon;Saint-Étienne|Valence-Nord;Bourg-lès-Valence;Lyon;Saint-Étienne|Valence-Nord;Bourg-lès-Valence;Lyon;Saint-Étienne|Grenoble;Chambéry;Genève par Chambéry;Valence;Romans",
+        "count": 2
+      },
+      {
+        "value": "Grenoble;Genève;Lyon;Bourg-En-Bresse|Grenoble;Genève;Lyon;Bourg-En-Bresse;Macon",
+        "count": 2
+      },
+      {
+        "value": "Firminy;Annonay;Le Puy;Bellevue|Saint-Chamond;Lyon;Valence",
+        "count": 2
+      },
+      {
+        "value": "Paris;Strasbourg;Bourg-En-Bresse|Paris;Strasbourg;Bourg-En-Bresse|Lyon;Saint Exupéry|Lyon;Saint Exupéry",
+        "count": 2
+      },
+      {
+        "value": "Marseille;Saint-Étienne|Marseille;Saint-Étienne|Vénissieux;Corbas;Z.I. Lyon Sud-Est",
+        "count": 2
+      },
+      {
+        "value": "Strasbourg;Paris;Grenoble;Lyon|Strasbourg;Paris;Grenoble;Lyon|Mions-Centre",
+        "count": 2
+      },
+      {
+        "value": "Turin;Milan;Chambéry;Grenoble;L'Isle d'Abeau|Turin;Milan;Chambéry;Grenoble;L'Isle d'Abeau|Turin;Milan;Chambéry;Grenoble;L'Isle d'Abeau|Strasbourg;Saint Exupéry;Genève",
+        "count": 2
+      },
+      {
+        "value": "Marseille;Valence;Vienne|Marseille;Valence;Vienne|Clermont-Ferrand;Saint-Etienne;Givors;Chasse-sur-Rhone",
+        "count": 2
+      },
+      {
+        "value": "Strasbourg;Genève;Bourg-en-Bresse|Strasbourg;Genève;Bourg-en-Bresse|Strasbourg;Genève;Bourg-en-Bresse|Montluel;La Boisse",
+        "count": 2
+      },
+      {
+        "value": "Lyon|Lyon|Lyon|Marseille;Grenoble;Saint-Étienne;Saint Exupéry;Villefranche-sur-Saône",
+        "count": 2
+      },
+      {
+        "value": "Strasbourg;Lyon;Voiron;Grenoble Isère;Valence|Strasbourg;Lyon;Voiron;Grenoble Isère;Valence|Strasbourg;Lyon;Voiron;Grenoble Isère;Valence|Aire de Voreppe;Valence",
+        "count": 1
+      },
+      {
+        "value": "Genève;Lyon|Genève;Lyon;Strasbourg;Lons-le-Saunier",
+        "count": 1
+      },
+      {
+        "value": "Saint Exupéry;Grenoble;Chambéry;Lyon|Saint Exupéry;Grenoble;Chambéry;Lyon|Milan;Annecy;Genève;Oyonnax|Milan;Annecy;Genève;Oyonnax",
+        "count": 1
+      },
+      {"value": "Dijon;Strasbourg|Dijon;Strasbourg|Paris;Mâcon", "count": 1},
+      {
+        "value": "Grenoble;Genève;Lyon;Bourg-En-Bresse|Grenoble;Genève;Lyon;Bourg-En-Bresse|Mâcon",
+        "count": 1
+      },
+      {
+        "value": "Pont de Claix;Gap;Briançon;Sisteron|Pont de Claix;Gap;Briançon;Sisteron|Espace Comboire - nord",
+        "count": 1
+      },
+      {
+        "value": "Paris;Strasbourg;Bourg-En-Bresse|Paris;Strasbourg;Bourg-En-Bresse|Lyon;Saint Exupéry",
+        "count": 1
+      },
+      {
+        "value": "Saint-Chamond Stelytech;Lyon;Valence|Saint-Chamond Stelytech;Lyon;Valence|Saint-Chamond Centre;Parc du Pilat",
+        "count": 1
+      },
+      {
+        "value": "Lyon Centre|Paris;Strasbourg;Grenoble;Lyon-Est|Vienne;Valence;Marseille",
+        "count": 1
+      },
+      {
+        "value": "Clermont-Fd;St Étienne;Givors;Lyon - centre|Clermont-Fd;St Étienne;Givors;Lyon - centre|Clermont-Fd;St Étienne;Givors;Lyon - centre|Strasbourg;Paris;Grenoble;Lyon-Est",
+        "count": 1
+      },
+      {
+        "value": "Paris;Villefranche-sur-Saône|Paris;Villefranche-sur-Saône|Strasbourg;Genève;Bourg-en-Bresse;Lyon",
+        "count": 1
+      },
+      {
+        "value": "Grenoble-Centre|Autres directions|Autres directions",
+        "count": 1
+      },
+      {
+        "value": "Paris|Paris|Lyon;Strasbourg;Genève;Grenoble;Chambéry;Saint Exupery;Turin;Milan",
+        "count": 1
+      },
+      {
+        "value": "Marseille;Saint-Étienne;Z.I. Lyon Sud-Est|Marseille;Saint-Étienne;Z.I. Lyon Sud-Est|Saint-Priest-Bel Air",
+        "count": 1
+      },
+      {
+        "value": "Paris;Villefranche-sur-Saône|Paris;Villefranche-sur-Saône|Lyon|Strasbourg;Genève;Bourg-en-Bresse",
+        "count": 1
+      },
+      {
+        "value": "Part-Dieu|Marseille;Saint Étienne;Périphérique Sud;Porte de Parilly|Paris;Lyon-centre;Périphérique Nord;Porte de Montchat",
+        "count": 1
+      },
+      {
+        "value": "Paris;Strasbourg;Bourg-en-Bresse|Paris;Strasbourg;Bourg-en-Bresse|Milan;Genéve;Oyonnax",
+        "count": 1
+      },
+      {"value": "Turin - Milan|Turin - Milan|Valence;Grenoble|", "count": 1},
+      {"value": "Lyon|Lyon|Lyon|Paris;Strasbourg|Paris;Strasbourg", "count": 1},
+      {
+        "value": "Claix;Varces;Sisteron;Aix en Pce;Nice|Claix;Varces;Sisteron;Aix en Pce;Nice|Gap;Briançon;Vizille",
+        "count": 1
+      },
+      {"value": "Turin - Milan|Turin - Milan|Valence;Grenoble", "count": 1},
+      {
+        "value": "Milan;Genève;Lyon|Milan;Genève;Lyon|Strasbourg;Lons-Le-Saunier",
+        "count": 1
+      },
+      {
+        "value": "Strasbourg;Lyon;Voiron;Grenoble Isère;Valence|Strasbourg;Lyon;Voiron;Grenoble Isère;Valence|Aire de Voreppe;Valence|Lyon;Voiron;Voreppe",
+        "count": 1
+      },
+      {
+        "value": "Grenoble - Centre;Chambéry;Autres Directions|Grenoble - Centre;Chambéry;Autres Directions|Grenoble - Bastilles - Gares;Saint Martin le Vinoux;Europole|Grenoble - Bastilles - Gares;Saint Martin le Vinoux;Europole",
+        "count": 1
+      },
+      {
+        "value": "Grenoble - Centre;Chambéry;Autres Directions|Grenoble - Centre;Chambéry;Autres Directions|Grenoble - Bastilles - Gares;Saint Martin le Vinoux;Europole",
+        "count": 1
+      },
+      {
+        "value": "|||Montbrison;Saint-Just-Saint-Rambert;Saint-Galmier",
+        "count": 1
+      },
+      {
+        "value": "Saint-Etienne-Centre;Saint-Chamond;Lyon;Valence|Saint-Etienne-Centre;Saint-Chamond;Lyon;Valence|Saint-Etienne-Centre;Saint-Chamond;Lyon;Valence|Le Puy en Velay;Firminy;Roche-la-Molière;Villars;Saint-Etienne-Ouest",
+        "count": 1
+      },
+      {
+        "value": "Firminy;Annonay;Le Puy;Bellevue|Firminy;Annonay;Le Puy;Bellevue|Saint-Chamond;Lyon;Valence",
+        "count": 1
+      },
+      {
+        "value": "Firminy;Annonay;Le Puy;Bellevue|Saint-Chamond;Lyon;Valence|Saint-Jean Bonnefonds;Monthieu;Terrenoire",
+        "count": 1
+      },
+      {
+        "value": "Saint-Chamond;Lyon;Valence;Saint-Etienne-autres-quartiers|Saint-Chamond;Lyon;Valence;Saint-Etienne-autres-quartiers|Saint-Chamond;Lyon;Valence;Saint-Etienne-autres-quartiers|Saint-Priest en Jarest;Villars;La Terrasse",
+        "count": 1
+      },
+      {
+        "value": "Turin-Milan;Albertville;Grenoble|Turin-Milan;Albertville;Grenoble|Turin-Milan;Albertville;Grenoble|Aire de L'Ile Rose;Voreppe;[S 21]",
+        "count": 1
+      },
+      {
+        "value": "Turin-Milan;Albertville;Grenoble|Turin-Milan;Albertville;Grenoble|Turin-Milan;Albertville;Grenoble|Aire de L'Ile Rose|Voreppe;[S 21]",
+        "count": 1
+      },
+      {
+        "value": "Seyssinet Pariset;Grenoble - centre;Chambéry|Seyssinet Pariset;Grenoble - centre;Chambéry|Fontaine - centre",
+        "count": 1
+      },
+      {
+        "value": "Autres Directions;Chambéry|Grenoble - centre;Autres Directions;Chambéry|Seyssinet P.",
+        "count": 1
+      },
+      {
+        "value": "Espace Comboire;Pont de Claix;Gap - Briançon;Sisteron|Espace Comboire;Pont de Claix;Gap - Briançon;Sisteron|Chambéry;Échirolles",
+        "count": 1
+      },
+      {"value": "||Eaux Claires;Stade Lesdiguières;Grand'Place", "count": 1},
+      {
+        "value": "Chambéry;Gap - Briançon;Sisteron;Rocade - sud|Chambéry;Gap - Briançon;Sisteron;Rocade - sud|Grenoble - centre;P+R Vallier-Catane",
+        "count": 1
+      },
+      {
+        "value": "Pont de Claix;Sisteron;Gap;Briançon|Chambéry;Échirolles;Pont de Claix;Sisteron;Gap;Briançon",
+        "count": 1
+      },
+      {
+        "value": "Claix;Gap;Briançon;Sisteron;Nice|Claix;Gap;Briançon;Sisteron;Nice|Pont de Claix",
+        "count": 1
+      },
+      {"value": "||Espace Comboire - sud", "count": 1},
+      {
+        "value": "Grenoble;Chambéry;Lyon;Saint Exupéry|Grenoble;Chambéry;Lyon;Saint Exupéry|Chambéry par RN;Lagnieu;Ambérieu-en-Bugey",
+        "count": 1
+      },
+      {
+        "value": "Grenoble;Chambéry;Saint Exupéry;Lyon|Grenoble;Chambéry;Saint Exupéry;Lyon|Grenoble;Chambéry;Saint Exupéry;Lyon|Pérouges;Meximieux;Parc Industriel de la Plaine de l'Ain",
+        "count": 1
+      },
+      {"value": "|||Balan;Dagneux", "count": 1},
+      {
+        "value": "Marseille;Grenoble;Chambéry;Saint-Étienne|Marseille;Grenoble;Chambéry;Saint-Étienne|Saint Exupéry;Meyzieu;Pont-de-Chéruy;Charvieu-Chavagneux",
+        "count": 1
+      },
+      {
+        "value": "||Saint-Laurent-de-Mure;Crémieu;Colombier-Saugnieu",
+        "count": 1
+      },
+      {
+        "value": "Bron;Lyon|Bron;Lyon|Paris;Marseille;Saint-Étienne;Z.I. Lyon Sud-Est|Paris;Marseille;Saint-Étienne;Z.I. Lyon Sud-Est|",
+        "count": 1
+      },
+      {
+        "value": "||Mions-Centre;Z.I. Lyon Sud-Est-Pierres Blanches",
+        "count": 1
+      },
+      {
+        "value": "Marseille;Clermont-Ferrand;Saint-Étienne|Marseille;Clermont-Ferrand;Saint-Étienne|Ternay;Communay",
+        "count": 1
+      },
+      {
+        "value": "Chanas;Valence;Marseille|Chanas;Valence;Marseille|Chanas;Valence;Marseille|Ampuis;Condrieu",
+        "count": 1
+      },
+      {
+        "value": "Tain l'Hermitage;Romans;Valence;Marseille|Tain l'Hermitage;Romans;Valence;Marseille|Tain l'Hermitage;Romans;Valence;Marseille|Chanas;Annonay;Le Péage de Roussillon;Saint Rambert d'Albon;Beaurepaire",
+        "count": 1
+      },
+      {
+        "value": "Lyon;Saint-Étienne|Lyon;Saint-Étienne|Lyon;Saint-Étienne|Valence-Nord;Bourg-lès-Valence",
+        "count": 1
+      },
+      {"value": "|||aire de Bellevue", "count": 1},
+      {
+        "value": "Valence;Grenoble;Lyon|Valence;Grenoble;Lyon|Valence;Grenoble;Lyon|Privas;Loriol-sur-Drôme;Livron-sur-Drôme;La Voulte-sur-Rhone;Crest",
+        "count": 1
+      },
+      {
+        "value": "Montélimar-Nord;Montélimar;Avignon;Marseille|Montélimar-Nord;Montélimar;Avignon;Marseille|Montélimar-Nord;Montélimar;Avignon;Marseille|Privas;Loriol-sur-Drôme;Livron-sur-Drôme;La Voulte-sur-Rhône",
+        "count": 1
+      },
+      {
+        "value": "Avignon;Nîmes;Marseille|Avignon;Nîmes;Marseille|Avignon;Nîmes;Marseille|Montélimar;Le Teil;Dieulefit",
+        "count": 1
+      },
+      {"value": "|||aire de Bras de Zil", "count": 1},
+      {
+        "value": "Montélimar-Nord;Valence;Lyon|Montélimar-Nord;Valence;Lyon|Montélimar-Nord;Valence;Lyon|Montélimar;Aubenas;Le Puy;Viviers;Dieulefit",
+        "count": 1
+      },
+      {"value": "|||Viviers;Pierrelatte;Valréas;Nyons", "count": 1},
+      {
+        "value": "Chanas;Lyon;Saint-Étienne|Chanas;Lyon;Saint-Étienne|Chanas;Lyon;Saint-Étienne|Tournon",
+        "count": 1
+      },
+      {
+        "value": "Clermont-Fd;St Étienne;Givors;Lyon - centre|Clermont-Fd;St Étienne;Givors;Lyon - centre|Clermont-Fd;St Étienne;Givors;Lyon - centre|Strasbourg;Paris;Grenoble;Lyon-Est|Strasbourg;Paris;Grenoble;Lyon-Est",
+        "count": 1
+      }
+    ],
+    "count": 99
+  },
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Section d'autoroute officiellement déclassée depuis le 1/11/2017 mais rien n'a encore changé. Merci de transformer en trunk et changer les ref seulement lorsque cela sera effectif sur le terrain!",
+        "count": 85
+      },
+      {"value": "FIXME", "count": 7},
+      {
+        "value": "actual speed limit may change if sign at node 21670934 is reversed",
+        "count": 3
+      },
+      {"value": "N 489 en cours de conversion en A89", "count": 2}
+    ],
+    "count": 97
+  },
+  {
+    "key": "note:en",
+    "tags": [
+      {
+        "value": "Motorway section uclassified since 2017-11-01 but nothing has changed. Thank you to modify as truk or change ref only when this will be really done on the ground!",
+        "count": 85
+      }
+    ],
+    "count": 85
+  },
+  {
+    "key": "tunnel",
+    "tags": [
+      {"value": "yes", "count": 54},
+      {"value": "building_passage", "count": 13}
+    ],
+    "count": 67
+  },
+  {
+    "key": "old_ref",
+    "tags": [{"value": "A 41", "count": 34}, {"value": "A 72", "count": 23}],
+    "count": 57
+  },
+  {
+    "key": "maxspeed:lanes",
+    "tags": [
+      {"value": "130|130|130|90", "count": 25},
+      {"value": "130|130|90", "count": 12},
+      {"value": "110|110|110|90", "count": 5},
+      {"value": "|||90", "count": 3},
+      {"value": "90|90|70", "count": 3},
+      {"value": "110|110|90", "count": 3},
+      {"value": "130|130|130|70", "count": 2},
+      {"value": "|||70", "count": 1},
+      {"value": "||70", "count": 1}
+    ],
+    "count": 55
+  },
+  {"key": "bicycle", "tags": [{"value": "no", "count": 47}], "count": 47},
+  {
+    "key": "overtaking:hgv",
+    "tags": [{"value": "no", "count": 40}],
+    "count": 40
+  },
+  {"key": "shoulder", "tags": [{"value": "none", "count": 31}], "count": 31},
+  {
+    "key": "destination:ref",
+    "tags": [
+      {"value": "A 40", "count": 11},
+      {"value": "A48;E711;E713", "count": 6},
+      {"value": "A 43", "count": 3},
+      {"value": "A 42", "count": 2},
+      {"value": "A48", "count": 1},
+      {"value": "A48;E711", "count": 1},
+      {"value": "A480", "count": 1},
+      {"value": "A 6", "count": 1},
+      {"value": "D 383", "count": 1}
+    ],
+    "count": 27
+  },
+  {
+    "key": "maxspeed:trailer",
+    "tags": [{"value": "70", "count": 22}],
+    "count": 22
+  },
+  {
+    "key": "destination:ref:lanes",
+    "tags": [
+      {"value": "A 43|A 43|A 46|A 46", "count": 3},
+      {"value": "A 43|A 43|A 43|A 432", "count": 2},
+      {"value": "|D383", "count": 2},
+      {"value": "||D 301", "count": 2},
+      {"value": "A 7|A 7|A 47", "count": 2},
+      {"value": "A 42|A 42|A 40|A 40", "count": 1},
+      {"value": "A 7;A 47|A 7;A 47|A 7;A 47|A 46", "count": 1},
+      {"value": "A 432|A 432|A 42", "count": 1},
+      {"value": "A432|A432|A42|A42", "count": 1},
+      {"value": "A48;E711;E713|A48;E711;E713|A48;E711;E713|", "count": 1},
+      {"value": "A48;E711;E713|A48;E711;E713|A48;E711;E713||", "count": 1},
+      {"value": "A 42|A 42|A 42|A 432", "count": 1},
+      {"value": "A 43|A 43|A 46|A 46|", "count": 1},
+      {"value": "A 7;A 47|A 7;A 47|A 7;A 47|A 46|A 46", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "maxspeed:hazmat",
+    "tags": [{"value": "70", "count": 19}],
+    "count": 19
+  },
+  {
+    "key": "incline",
+    "tags": [
+      {"value": "-4%", "count": 8},
+      {"value": "-4.5%", "count": 5},
+      {"value": "5%", "count": 5},
+      {"value": "4%", "count": 1}
+    ],
+    "count": 19
+  },
+  {
+    "key": "change:lanes",
+    "tags": [
+      {"value": "not_left|yes|not_right|no", "count": 12},
+      {"value": "yes|not_right|not_left|yes", "count": 2},
+      {"value": "not_left|not_right|not_left|not_right", "count": 2},
+      {"value": "not_left|not_right|not_left|yes|not_right", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Tunnels de La Bussière et de Chalosset", "count": 4},
+      {"value": "fr:Tunnel du Mont-Blanc", "count": 2},
+      {"value": "fr:Viaduc Hélène-et-Victor-Basch", "count": 2},
+      {"value": "fr:Tunnel de Violay", "count": 2},
+      {"value": "fr:Viaduc de Miribel-Jonage", "count": 2},
+      {"value": "fr:Viaduc de la Côtière", "count": 2},
+      {"value": "fr:Viaduc de la Goutte Vignole", "count": 2}
+    ],
+    "count": 16
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3542193", "count": 4},
+      {"value": "Q3556521", "count": 2},
+      {"value": "Q3542158", "count": 2},
+      {"value": "Q18810235", "count": 2},
+      {"value": "Q3556653", "count": 2},
+      {"value": "Q3556657", "count": 2}
+    ],
+    "count": 14
+  },
+  {"key": "foot", "tags": [{"value": "no", "count": 14}], "count": 14},
+  {
+    "key": "history",
+    "tags": [
+      {"value": "Retrieved from v6", "count": 8},
+      {"value": "Retrieved from v9", "count": 2},
+      {"value": "Retrieved from v7", "count": 2}
+    ],
+    "count": 12
+  },
+  {"key": "embankment", "tags": [{"value": "yes", "count": 12}], "count": 12},
+  {
+    "key": "destination:int_ref:lanes",
+    "tags": [
+      {"value": "E 70;E 711|E 70;E 711||", "count": 3},
+      {"value": "E 15|E 15|E 70", "count": 2},
+      {"value": "E 15|E 15|E 15|E 713", "count": 2},
+      {"value": "||E 611", "count": 1},
+      {"value": "E 611|E 611|E 21;E 62|E 21;E 62", "count": 1},
+      {"value": "||E 611|E 611", "count": 1},
+      {"value": "E 70;E 711|E 70;E 711|||", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "length",
+    "tags": [
+      {"value": "1040", "count": 2},
+      {"value": "1900", "count": 2},
+      {"value": "1210", "count": 2},
+      {"value": "230", "count": 2},
+      {"value": "228", "count": 2}
+    ],
+    "count": 10
+  },
+  {"key": "covered", "tags": [{"value": "yes", "count": 8}], "count": 8},
+  {"key": "hgv", "tags": [{"value": "delivery", "count": 7}], "count": 7},
+  {
+    "key": "fixme",
+    "tags": [
+      {
+        "value": "la structure des ponts au dessus de l'arc est à confirmer",
+        "count": 4
+      },
+      {
+        "value": "Check if it goes from maxspeed 50 to 90 directly or through 70",
+        "count": 2
+      }
+    ],
+    "count": 6
+  },
+  {
+    "key": "transit",
+    "tags": [
+      {"value": "end||", "count": 2},
+      {"value": "join_to_right|", "count": 1},
+      {"value": "||join_with_right|join_with_left", "count": 1},
+      {"value": "fork", "count": 1},
+      {"value": "join_to_right||", "count": 1}
+    ],
+    "count": 6
+  },
+  {"key": "lanes:backward", "tags": [{"value": "1", "count": 5}], "count": 5},
+  {
+    "key": "lanes:forward",
+    "tags": [{"value": "1", "count": 3}, {"value": "2", "count": 2}],
+    "count": 5
+  },
+  {"key": "minspeed", "tags": [{"value": "50", "count": 4}], "count": 4},
+  {"key": "ssvz", "tags": [{"value": "997N", "count": 4}], "count": 4},
+  {
+    "key": "destination:symbol",
+    "tags": [{"value": "airport", "count": 4}],
+    "count": 4
+  },
+  {"key": "avz", "tags": [{"value": "200", "count": 4}], "count": 4},
+  {
+    "key": "cs_dir:forward",
+    "tags": [{"value": "2", "count": 3}, {"value": "1", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "hgv:lanes",
+    "tags": [{"value": "no|yes|yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "overtaking", "tags": [{"value": "no", "count": 3}], "count": 3},
+  {
+    "key": "note:fr",
+    "tags": [
+      {
+        "value": "actuelle limite de vitesse peut changer si paneaux à noeud 21670934 est retourné",
+        "count": 3
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.tunnelmb.net/v3.0/", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "access:lanes",
+    "tags": [
+      {"value": "yes|yes|escape", "count": 1},
+      {"value": "yes|yes|yes|escape", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "maxspeed:type", "tags": [{"value": "sign", "count": 2}], "count": 2},
+  {"key": "maxweight", "tags": [{"value": "7.5", "count": 2}], "count": 2},
+  {
+    "key": "ref:FR:FANTOIR",
+    "tags": [{"value": "730081905Y", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "note:FR",
+    "tags": [
+      {
+        "value": "absence de piste cyclable ou de sentier pedestre A PART car sidewalk=right & cycleway:right=yes implique déjà ceux-ci MAIS SANS BARRIERE PHYSIQE avec la chaussée pricipale. De l'autre côté ce n'est ^pas le même, car murail de séperation en béton",
+        "count": 1
+      },
+      {
+        "value": "Sentier banalisé (vélo/piéton) cartographié à part car murail de séperation en béton. De l'autre côté ce n'est par le même car absence de barriere physique avec la chaussée principale.",
+        "count": 1
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "destination:int_ref",
+    "tags": [{"value": "E 21;E 62", "count": 2}],
+    "count": 2
+  },
+  {"key": "lanes:psv", "tags": [{"value": "1", "count": 2}], "count": 2},
+  {
+    "key": "hazmat",
+    "tags": [{"value": "no", "count": 1}, {"value": "E", "count": 1}],
+    "count": 2
+  },
+  {"key": "vehicle", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "width",
+    "tags": [{"value": "30.5", "count": 1}, {"value": "28", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "url",
+    "tags": [{"value": "http://www.tunnelmb.net/", "count": 2}],
+    "count": 2
+  },
+  {"key": "nat_ref", "tags": [{"value": "T1", "count": 1}], "count": 1},
+  {"key": "horse", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "sidewalk", "tags": [{"value": "right", "count": 1}], "count": 1},
+  {"key": "cycleway:right", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "distance", "tags": [{"value": "500", "count": 1}], "count": 1},
+  {
+    "key": "hazmat:conditional",
+    "tags": [
+      {
+        "value": "no @ ( UN2919 or UN3291 orUN3331 or UN3359 or UN3373 )",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "traffic_sign",
+    "tags": [{"value": "overtaking", "count": 1}],
+    "count": 1
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {"key": "natural", "tags": [{"value": "beach", "count": 227}], "count": 227},
+  {
+    "key": "surface",
+    "tags": [
+      {"value": "sand", "count": 12},
+      {"value": "gravel", "count": 11},
+      {"value": "pebblestone", "count": 6},
+      {"value": "unpaved", "count": 2},
+      {"value": "paved", "count": 1},
+      {"value": "stone", "count": 1},
+      {"value": "pebbles", "count": 1},
+      {"value": "ground", "count": 1},
+      {"value": "grass", "count": 1}
+    ],
+    "count": 36
+  },
+  {
+    "key": "nudism",
+    "tags": [
+      {"value": "yes", "count": 4},
+      {"value": "permissive", "count": 2},
+      {"value": "obligatory", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.grand-parc.fr/pratique/guides-cartes-plans.asp",
+        "count": 2
+      },
+      {
+        "value": "http://www.grand-parc.fr/pratique/plans-du-grand-parc",
+        "count": 1
+      },
+      {
+        "value": "http://www.thononlesbains.com/fr/equipement/1/111342-plage-de-saint-disdille-plage-de-la-chataigneraie.html",
+        "count": 1
+      },
+      {"value": "http://www.grand-parc.fr/", "count": 1},
+      {
+        "value": "http://www.csalpesleman.com/bienvenue/club/plage/",
+        "count": 1
+      },
+      {
+        "value": "http://www.ladrome.fr/nos-actions/environnement/les-espaces-naturels-sensibles/les-ens-departementaux/ens-parc-de-lorient",
+        "count": 1
+      }
+    ],
+    "count": 7
+  },
+  {"key": "sport", "tags": [{"value": "swimming", "count": 4}], "count": 4},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Le Nacier, zone de baignade en période estivale.", "count": 1},
+      {
+        "value": "Arrete Municipal PM 2008-83 le 09 avril 2008 Mairie de Miribel",
+        "count": 1
+      },
+      {
+        "value": "La ville de Thonon possède une plage publique avec un arrêté municipal autorisant la pratique du naturisme sur une portion délimitée",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "access", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "note",
+    "tags": [
+      {
+        "value": "Sur l'orthophoto 2015 le lac est au maximum et la plage submergée : la photo 2012 est à un niveau plus habituel et plus pertinente.",
+        "count": 1
+      },
+      {"value": "inclut un secteur dédié aux naturistes", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://www.grand-parc.fr/image/visuel/fontanil.jpg",
+        "count": 1
+      },
+      {"value": "http://www.grand-parc.fr/image/visuel/morlet4.jpg", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 1}, {"value": "no", "count": 1}],
+    "count": 2
+  },
+  {"key": "supervised", "tags": [{"value": "no", "count": 2}], "count": 2},
+  {"key": "dog", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "leaf_type", "tags": [{"value": "mixed", "count": 1}], "count": 1},
+  {"key": "leaf_cycle", "tags": [{"value": "mixed", "count": 1}], "count": 1}
+]

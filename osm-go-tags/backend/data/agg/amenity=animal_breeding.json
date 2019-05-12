@@ -1,0 +1,21 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "animal_breeding", "count": 16}],
+    "count": 16
+  },
+  {
+    "key": "animal_breeding",
+    "tags": [
+      {"value": "cow", "count": 3},
+      {"value": "horse", "count": 2},
+      {"value": "poultry", "count": 2},
+      {"value": "snail", "count": 1},
+      {"value": "chicken", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "phone", "tags": [{"value": "+33613168070", "count": 1}], "count": 1},
+  {"key": "place", "tags": [{"value": "farm", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "farmyard", "count": 1}], "count": 1}
+]

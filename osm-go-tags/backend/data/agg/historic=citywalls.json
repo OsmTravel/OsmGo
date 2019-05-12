@@ -1,0 +1,81 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "citywalls", "count": 14}],
+    "count": 14
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 13}],
+    "count": 13
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116527", "count": 1},
+      {"value": "PA00116529", "count": 1},
+      {"value": "PA00116520", "count": 1},
+      {"value": "PA00117478", "count": 1},
+      {"value": "PA00116525", "count": 1},
+      {"value": "PA00116521", "count": 1},
+      {"value": "PA00116523", "count": 1},
+      {"value": "PA00116526", "count": 1},
+      {"value": "PA00116524", "count": 1},
+      {"value": "PA00116522", "count": 1},
+      {"value": "PA00116519", "count": 1},
+      {"value": "PA00116297", "count": 1},
+      {"value": "PA00117287", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1921-11-24", "count": 8},
+      {"value": "1924-03-22", "count": 1},
+      {"value": "1939-01-11", "count": 1},
+      {"value": "1929-10-11", "count": 1},
+      {"value": "1929", "count": 1},
+      {"value": "1942-02-12", "count": 1}
+    ],
+    "count": 13
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "2", "count": 10}, {"value": "3", "count": 3}],
+    "count": 13
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Remparts de Pérouges", "count": 7},
+      {"value": "fr:Maison Berges", "count": 1},
+      {"value": "fr:Maison Grezin", "count": 1},
+      {"value": "fr:Maison Moschard", "count": 1},
+      {"value": "fr:Enceinte de Bâgé-le-Châtel", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q3424623", "count": 4},
+      {"value": "Q22967214", "count": 1},
+      {"value": "Q3053726", "count": 1},
+      {"value": "Q2970677", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "C15", "count": 5}, {"value": "C13", "count": 1}],
+    "count": 6
+  },
+  {
+    "key": "image",
+    "tags": [{"value": "File:Le-Crozet-01.jpg", "count": 1}],
+    "count": 1
+  },
+  {"key": "height", "tags": [{"value": "4", "count": 1}], "count": 1},
+  {"key": "barrier", "tags": [{"value": "city_wall", "count": 1}], "count": 1}
+]

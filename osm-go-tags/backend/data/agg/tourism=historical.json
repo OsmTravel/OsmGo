@@ -1,0 +1,16 @@
+[
+  {"key": "tourism", "tags": [{"value": "historical", "count": 3}], "count": 3},
+  {"key": "barrier", "tags": [{"value": "wall", "count": 1}], "count": 1},
+  {
+    "key": "mapillary",
+    "tags": [{"value": "iWs5ifYA3xr0N1XoUhi0Sw", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "survey:date",
+    "tags": [{"value": "2017-03-09", "count": 1}],
+    "count": 1
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

@@ -1,0 +1,29 @@
+[
+  {"key": "historic", "tags": [{"value": "gallows", "count": 2}], "count": 2},
+  {
+    "key": "image",
+    "tags": [
+      {
+        "value": "http://commons.wikimedia.org/wiki/File:Natzweiler-Struthof_šibenice.JPG",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "http://www.struthof.fr/fr/le-kl-natzweiler/les-lieux-du-camp-central/la-potence/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q25391665", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Gibet de Croissy", "count": 1}],
+    "count": 1
+  }
+]

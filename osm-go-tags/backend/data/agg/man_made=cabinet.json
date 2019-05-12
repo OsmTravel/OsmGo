@@ -1,0 +1,18 @@
+[
+  {
+    "key": "telecom",
+    "tags": [{"value": "connection_point", "count": 5}],
+    "count": 5
+  },
+  {"key": "man_made", "tags": [{"value": "cabinet", "count": 5}], "count": 5},
+  {
+    "key": "operator",
+    "tags": [{"value": "Scientipolis", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "connection_point",
+    "tags": [{"value": "fiber", "count": 5}],
+    "count": 5
+  }
+]

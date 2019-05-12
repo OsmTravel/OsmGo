@@ -1,0 +1,63 @@
+[
+  {"key": "shop", "tags": [{"value": "second_hand", "count": 38}], "count": 38},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://la.ressource.over-blog.com/", "count": 1},
+      {"value": "http://auchiffonnier.blogspot.fr/", "count": 1},
+      {"value": "http://www.bazarsansfrontieres.fr/", "count": 1},
+      {"value": "https://www.facebook.com/ParlonsCash", "count": 1},
+      {"value": "https://www.cashexpress.fr/magasin-lyon,382.html", "count": 1},
+      {"value": "http://changedecap.fr", "count": 1},
+      {"value": "https://lesrecyclarts.blogspot.fr", "count": 1},
+      {"value": "http://www.chrysalide-ressourcerie.org/", "count": 1},
+      {"value": "http://troc-loire.dvif.fr", "count": 1}
+    ],
+    "count": 9
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Croix-Rouge Française", "count": 1},
+      {"value": "La Plateforme PIHC", "count": 1},
+      {"value": "Malika Oumhamed", "count": 1},
+      {"value": "La Baraque à Fripes", "count": 1},
+      {"value": "Chrysalide", "count": 1},
+      {"value": "ULISSE", "count": 1}
+    ],
+    "count": 6
+  },
+  {
+    "key": "second_hand",
+    "tags": [{"value": "only", "count": 3}, {"value": "yes", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "wheelchair",
+    "tags": [{"value": "yes", "count": 2}, {"value": "limited", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 76 17 14 92", "count": 1},
+      {"value": "+33 4 75 80 02 26", "count": 1},
+      {"value": "+33640219910", "count": 1}
+    ],
+    "count": 3
+  },
+  {"key": "level", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {"key": "repair", "tags": [{"value": "computer", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "social_facility", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "social_facility",
+    "tags": [{"value": "workshop", "count": 1}],
+    "count": 1
+  },
+  {"key": "note", "tags": [{"value": "Dépot vente", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "ngo", "count": 1}], "count": 1}
+]

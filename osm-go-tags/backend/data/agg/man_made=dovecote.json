@@ -1,0 +1,63 @@
+[
+  {"key": "man_made", "tags": [{"value": "dovecote", "count": 9}], "count": 9},
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 2}, {"value": "2", "count": 1}],
+    "count": 3
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1981-12-18", "count": 1},
+      {"value": "1993", "count": 1},
+      {"value": "1980-01-15", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117438", "count": 1},
+      {"value": "PA00125735", "count": 1},
+      {"value": "PA00117669", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://www.quincie-en-beaujolais.fr/spip.php?article29",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "C16", "count": 1}, {"value": "C19", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22967168", "count": 1},
+      {"value": "Q22967406", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Pigeonier du Moulin Grand", "count": 1},
+      {"value": "de:Taubenturm (Perrex)", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "historic", "tags": [{"value": "dovecote", "count": 1}], "count": 1}
+]

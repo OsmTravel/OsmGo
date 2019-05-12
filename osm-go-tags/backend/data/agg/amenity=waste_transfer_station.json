@@ -1,0 +1,19 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "waste_transfer_station", "count": 5}],
+    "count": 5
+  },
+  {
+    "key": "start_date",
+    "tags": [{"value": "2016-12-03", "count": 1}],
+    "count": 1
+  },
+  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "industrial", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "SITA - Suez Environnement", "count": 1}],
+    "count": 1
+  }
+]

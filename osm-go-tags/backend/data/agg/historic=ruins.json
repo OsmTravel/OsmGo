@@ -1,0 +1,439 @@
+[
+  {"key": "historic", "tags": [{"value": "ruins", "count": 841}], "count": 841},
+  {
+    "key": "ruins",
+    "tags": [
+      {"value": "yes", "count": 17},
+      {"value": "castle", "count": 13},
+      {"value": "farm", "count": 5},
+      {"value": "building", "count": 2},
+      {"value": "bunker", "count": 2},
+      {"value": "temple", "count": 1},
+      {"value": "chapel", "count": 1},
+      {"value": "tower", "count": 1}
+    ],
+    "count": 42
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q22966936", "count": 2},
+      {"value": "Q15940061", "count": 1},
+      {"value": "Q5118761", "count": 1},
+      {"value": "Q2970207", "count": 1},
+      {"value": "Q2970359", "count": 1},
+      {"value": "Q3533430", "count": 1},
+      {"value": "Q808958", "count": 1},
+      {"value": "Q2970401", "count": 1},
+      {"value": "Q2968658", "count": 1},
+      {"value": "Q5118719", "count": 1},
+      {"value": "Q15958380", "count": 1},
+      {"value": "Q22966921", "count": 1},
+      {"value": "Q3325578", "count": 1},
+      {"value": "Q22967163", "count": 1},
+      {"value": "Q22967225", "count": 1},
+      {"value": "Q1013499", "count": 1},
+      {"value": "Q1572876", "count": 1},
+      {"value": "Q22966714", "count": 1},
+      {"value": "Q3053752", "count": 1},
+      {"value": "Q3533279", "count": 1},
+      {"value": "Q22967130", "count": 1},
+      {"value": "Q3280173", "count": 1},
+      {"value": "Q3533688", "count": 1},
+      {"value": "Q2820432", "count": 1},
+      {"value": "Q3068853", "count": 1},
+      {"value": "Q3398967", "count": 1},
+      {"value": "Q2887009", "count": 1},
+      {"value": "Q3001729", "count": 1},
+      {"value": "Q3067", "count": 1},
+      {"value": "Q3402949", "count": 1},
+      {"value": "Q22975794", "count": 1},
+      {"value": "Q22966999", "count": 1},
+      {"value": "Q3582172", "count": 1},
+      {"value": "Q22967015", "count": 1},
+      {"value": "Q28469984", "count": 1},
+      {"value": "Q3533849", "count": 1},
+      {"value": "Q2971171", "count": 1},
+      {"value": "Q3558967", "count": 1},
+      {"value": "Q3402982", "count": 1}
+    ],
+    "count": 40
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Château de Bocsozel", "count": 1},
+      {"value": "fr:Barrière de l'Esseillon", "count": 1},
+      {"value": "fr:Château de Clermont (Isère)", "count": 1},
+      {"value": "fr:Château de Peychelard", "count": 1},
+      {"value": "fr:Château de Retourtour", "count": 1},
+      {"value": "fr:Tour carolingienne", "count": 1},
+      {"value": "fr:Château de Rochefort-sur-Séran", "count": 1},
+      {"value": "fr:Château de Bressieux", "count": 1},
+      {"value": "fr:Château d'Apremont (Vendée)", "count": 1},
+      {"value": "fr:Église Saint-Étienne de Montluel", "count": 1},
+      {"value": "fr:Moulin Girard", "count": 1},
+      {"value": "fr:Aqueduc romain du Gier", "count": 1},
+      {"value": "fr:Aqueduc romain", "count": 1},
+      {"value": "fr:Château de Pierregourde", "count": 1},
+      {"value": "fr:Abbaye de Saint-Sulpice", "count": 1},
+      {"value": "fr:Ruines de la maison Salomon", "count": 1},
+      {"value": "fr:Enceinte romaine de Vienne", "count": 1},
+      {"value": "fr:Tour de Beauvivier", "count": 1},
+      {"value": "fr:Maison forte de Cursinges", "count": 1},
+      {"value": "fr:Tour du Draillant", "count": 1},
+      {"value": "fr:Abbaye Saint-Pierre de Rompon", "count": 1},
+      {"value": "fr:Ferme Rudel", "count": 1},
+      {"value": "fr:Porte Saint-Pierre (Firminy)", "count": 1},
+      {"value": "fr:Basilique Saint-Just (Lyon)", "count": 1},
+      {"value": "fr:Couvent des Minimes de la Plaine", "count": 1},
+      {"value": "fr:Valchevrière", "count": 1},
+      {"value": "en:Aqueduct of the Gier", "count": 1},
+      {"value": "fr:Prieuré d'Aleyrac", "count": 1},
+      {"value": "fr:Église Saint-Julien-sur-Roche de Ramasse", "count": 1},
+      {"value": "fr:Château de Banne", "count": 1},
+      {"value": "fr:Château de Miribel", "count": 1},
+      {"value": "fr:Tour penchée de Soyons", "count": 1},
+      {"value": "fr:Château de la Bâtie (Vienne)", "count": 1},
+      {"value": "fr:Village d'Allan", "count": 1}
+    ],
+    "count": 34
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00117121", "count": 3},
+      {"value": "PA00118474", "count": 1},
+      {"value": "PA00117135", "count": 1},
+      {"value": "PA00117129", "count": 1},
+      {"value": "PA00117104", "count": 1},
+      {"value": "PA00117203", "count": 1},
+      {"value": "PA01000032", "count": 1},
+      {"value": "PA00117433", "count": 1},
+      {"value": "PA00117493", "count": 1},
+      {"value": "PA00132810", "count": 1},
+      {"value": "PA00116487", "count": 1},
+      {"value": "PA00132973", "count": 1},
+      {"value": "PA00117264", "count": 1},
+      {"value": "PA00117347", "count": 1},
+      {"value": "PA00118473", "count": 1},
+      {"value": "PA00117018", "count": 1},
+      {"value": "PA00116745", "count": 1},
+      {"value": "PA00116782", "count": 1},
+      {"value": "PA00117488", "count": 1},
+      {"value": "PA00117985", "count": 1},
+      {"value": "PA00117260", "count": 1},
+      {"value": "PA00116879", "count": 1},
+      {"value": "PA00132950", "count": 1},
+      {"value": "PA00117211", "count": 1},
+      {"value": "PA00116537", "count": 1},
+      {"value": "PA00117228", "count": 1},
+      {"value": "PA00116822", "count": 1},
+      {"value": "PA00117321", "count": 1},
+      {"value": "PA00117097", "count": 1},
+      {"value": "PA00117176", "count": 1}
+    ],
+    "count": 32
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 32}],
+    "count": 32
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1922-09-01", "count": 3},
+      {"value": "1989-09-19", "count": 2},
+      {"value": "1962", "count": 2},
+      {"value": "1990-07-16", "count": 2},
+      {"value": "1984-12-06", "count": 1},
+      {"value": "1957-02-14", "count": 1},
+      {"value": "1904-08-16", "count": 1},
+      {"value": "1994-11-17", "count": 1},
+      {"value": "1924-03-22", "count": 1},
+      {"value": "1994-03-01", "count": 1},
+      {"value": "1983-10-18", "count": 1},
+      {"value": "1927-05-31", "count": 1},
+      {"value": "1926-10-21", "count": 1},
+      {"value": "1927-07-27", "count": 1},
+      {"value": "1984-01-02", "count": 1},
+      {"value": "1982-05-17", "count": 1},
+      {"value": "1905", "count": 1},
+      {"value": "1994-05-19", "count": 1},
+      {"value": "1937-05-19", "count": 1},
+      {"value": "1945-07-12", "count": 1},
+      {"value": "1967-08-03", "count": 1},
+      {"value": "1927", "count": 1},
+      {"value": "1926-12-10", "count": 1},
+      {"value": "1943-06-01", "count": 1}
+    ],
+    "count": 29
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 16}, {"value": "2", "count": 13}],
+    "count": 29
+  },
+  {"key": "wall", "tags": [{"value": "no", "count": 22}], "count": 22},
+  {
+    "key": "note",
+    "tags": [
+      {"value": "Plus de murs entiers. Parfois juste la dalle", "count": 5},
+      {"value": "Traces visibles sur le chemin", "count": 3},
+      {"value": "Altitude historique", "count": 2},
+      {"value": "Ancient quarry of Saint-Restitut", "count": 2},
+      {
+        "value": "en ruine, mais pas tant que ça en fait, mais il me manque un tag pour le dire",
+        "count": 2
+      },
+      {"value": "J'ai noté deux bâtiments en bon état et 3 ruines", "count": 1},
+      {
+        "value": "Ne pas déplacer ce point, cf. - Do not move this node, see - http://wiki.openstreetmap.org/wiki/WikiProject_France/Repères_Géodésiques#Permanence_des_rep.C3.A8res",
+        "count": 1
+      },
+      {
+        "value": "source converted into a fountain during the first World War by prisionniers",
+        "count": 1
+      },
+      {"value": "Origine cadastre mais repositionné avec Bing", "count": 1},
+      {
+        "value": "This small circular ruins looks like a borie or a well - http://fr.wikipedia.org/wiki/Borie",
+        "count": 1
+      },
+      {"value": "pillar of the old bridge", "count": 1}
+    ],
+    "count": 20
+  },
+  {
+    "key": "man_made",
+    "tags": [
+      {"value": "tower", "count": 10},
+      {"value": "watermill", "count": 6},
+      {"value": "bread_oven", "count": 1}
+    ],
+    "count": 17
+  },
+  {
+    "key": "ele",
+    "tags": [
+      {"value": "1950", "count": 2},
+      {"value": "324", "count": 1},
+      {"value": "1077", "count": 1},
+      {"value": "1125", "count": 1},
+      {"value": "483", "count": 1},
+      {"value": "204.4", "count": 1},
+      {"value": "812", "count": 1},
+      {"value": "1240", "count": 1},
+      {"value": "1368", "count": 1},
+      {"value": "1680", "count": 1},
+      {"value": "300", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "historic:civilization",
+    "tags": [
+      {"value": "medieval", "count": 4},
+      {"value": "modern", "count": 4},
+      {"value": "roman", "count": 2},
+      {"value": "révolution_française", "count": 1}
+    ],
+    "count": 11
+  },
+  {
+    "key": "description",
+    "tags": [
+      {
+        "value": "Clocher : Toit : Axe et sommet - Point vu en place en 2001",
+        "count": 1
+      },
+      {
+        "value": "tour maîtresse circulaire haute de 20-25 m et de l'enceinte couronnant l'escarpement. Au XIIIe siècle, il est la possession des seigneurs de Beauvoir qui le tienne en fief du dauphin",
+        "count": 1
+      },
+      {
+        "value": "Ruines de la gare amont du petit téléphérique et du toboggan des anciennes carrières des Ciments de la Porte de France",
+        "count": 1
+      },
+      {
+        "value": "Ruines de la gare aval du petit téléphérique des anciennes carrières des Ciments de la Porte de France",
+        "count": 1
+      },
+      {
+        "value": "Le château de Bocsozel est une ancienne maison forte, du xiie siècle, dont les ruines se dressent sur la commune de Mottier dans le département de l'Isère en région Rhône-Alpes. Le site est labellisé Patrimoine en Isère.",
+        "count": 1
+      },
+      {"value": "Casermette L", "count": 1},
+      {
+        "value": "Ruines de la gare amont du téléphérique des anciennes carrières des Ciments de la Porte de France",
+        "count": 1
+      },
+      {
+        "value": "Ruines de la gare aval du téléphérique des anciennes carrières des Ciments de la Porte de France",
+        "count": 1
+      },
+      {
+        "value": "Cendrier de cheminée de l'ancienne Manufacture Nationale d'Armes de Saint-Étienne",
+        "count": 1
+      },
+      {"value": "Motte féodale", "count": 1}
+    ],
+    "count": 10
+  },
+  {
+    "key": "tourism",
+    "tags": [
+      {"value": "attraction", "count": 6},
+      {"value": "viewpoint", "count": 2},
+      {"value": "yes", "count": 1}
+    ],
+    "count": 9
+  },
+  {"key": "place", "tags": [{"value": "locality", "count": 8}], "count": 8},
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "no", "count": 5},
+      {"value": "yes", "count": 1},
+      {"value": "limited", "count": 1}
+    ],
+    "count": 7
+  },
+  {
+    "key": "barrier",
+    "tags": [{"value": "city_wall", "count": 3}, {"value": "wall", "count": 3}],
+    "count": 6
+  },
+  {
+    "key": "landuse",
+    "tags": [
+      {"value": "quarry", "count": 2},
+      {"value": "meadow", "count": 1},
+      {"value": "grass", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "tower:type",
+    "tags": [{"value": "defensive", "count": 4}],
+    "count": 4
+  },
+  {
+    "key": "amenity",
+    "tags": [
+      {"value": "place_of_worship", "count": 3},
+      {"value": "waste_disposal", "count": 1}
+    ],
+    "count": 4
+  },
+  {"key": "religion", "tags": [{"value": "christian", "count": 4}], "count": 4},
+  {
+    "key": "start_date",
+    "tags": [{"value": "1899", "count": 3}, {"value": "C12", "count": 1}],
+    "count": 4
+  },
+  {
+    "key": "image",
+    "tags": [
+      {"value": "File:Vestiges enceinte Cularo.JPG", "count": 1},
+      {"value": "File:Vou ves ro vi.JPG", "count": 1},
+      {"value": "File:Château de La Bâtie.jpg", "count": 1},
+      {"value": "Castrum-Romain-map.jpg", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "abandoned:aerialway",
+    "tags": [{"value": "station", "count": 4}],
+    "count": 4
+  },
+  {"key": "area", "tags": [{"value": "yes", "count": 4}], "count": 4},
+  {"key": "abandoned", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "denomination",
+    "tags": [
+      {"value": "catholic", "count": 2},
+      {"value": "roman_catholic", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "abandoned:military",
+    "tags": [{"value": "barracks", "count": 3}],
+    "count": 3
+  },
+  {"key": "layer", "tags": [{"value": "-1", "count": 2}], "count": 2},
+  {
+    "key": "access",
+    "tags": [{"value": "private", "count": 1}, {"value": "yes", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "ruined:amenity",
+    "tags": [{"value": "place_of_workship", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "url",
+    "tags": [
+      {
+        "value": "http://ancien-geodesie.ign.fr/fiche_point.asp?num_site=26106B&no_ptg=01&numero_f50=3037",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "ref", "tags": [{"value": "26106B - 1", "count": 1}], "count": 1},
+  {
+    "key": "fixme",
+    "tags": [{"value": "Emplacement approximatif", "count": 1}],
+    "count": 1
+  },
+  {"key": "shelter", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "religious_rank",
+    "tags": [{"value": "abbey", "count": 1}],
+    "count": 1
+  },
+  {"key": "two_sided", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.soyons.fr/la-tour-penchee", "count": 1}],
+    "count": 1
+  },
+  {"key": "FIXME", "tags": [{"value": "add name", "count": 1}], "count": 1},
+  {
+    "key": "created_by",
+    "tags": [{"value": "Potlatch 0.10b", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "historic:period",
+    "tags": [{"value": "1939 - 1945", "count": 1}],
+    "count": 1
+  },
+  {"key": "bridge", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "highway", "tags": [{"value": "path", "count": 1}], "count": 1},
+  {
+    "key": "wikimedia_commons",
+    "tags": [
+      {
+        "value": "File:Saint Étienne-Manufacture Nationale d'Armes-Cendrier de la cheminée-20130330.jpg",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "inscription",
+    "tags": [
+      {
+        "value": "Ancienne gare d'Anglefort construite en 1896 fermée en 2008",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {"key": "was:amenity", "tags": [{"value": "toilets", "count": 1}], "count": 1}
+]

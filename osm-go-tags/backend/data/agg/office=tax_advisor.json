@@ -1,0 +1,21 @@
+[
+  {"key": "office", "tags": [{"value": "tax_advisor", "count": 2}], "count": 2},
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.anafie.fr/", "count": 1},
+      {"value": "https://www.everestconseil.fr/", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "info@everestconseil.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "09 67 11 83 21", "count": 1}],
+    "count": 1
+  }
+]

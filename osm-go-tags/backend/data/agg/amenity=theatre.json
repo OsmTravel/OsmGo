@@ -1,0 +1,375 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "theatre", "count": 239}],
+    "count": 239
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "http://www.theatre-grenoble.fr/", "count": 1},
+      {"value": "http://www.larampe-echirolles.fr/", "count": 1},
+      {"value": "http://www.scene-7.fr/", "count": 1},
+      {"value": "http://rotonde-asso-insa.kazeo.com", "count": 1},
+      {"value": "http://www.espacegerson.com", "count": 1},
+      {"value": "http://www.lelysee.com/", "count": 1},
+      {"value": "http://www.labassecour.net/programme/", "count": 1},
+      {"value": "http://www.le-fil.com/", "count": 1},
+      {"value": "http://www.lamaisondeguignol.fr/", "count": 1},
+      {"value": "http://www.sallelebournot.fr/", "count": 1},
+      {"value": "http://choktheatre.org", "count": 1},
+      {"value": "http://limprimerie.org/", "count": 1},
+      {
+        "value": "https://sites.google.com/site/theatresouslecaillou/",
+        "count": 1
+      },
+      {"value": "http://complexedurire.com", "count": 1},
+      {"value": "http://www.la-belle-electrique.com/", "count": 1},
+      {
+        "value": "http://www.lyon.fr/lieu/culture/salle-moliere-salle-de-spectacle-municipale.html",
+        "count": 1
+      },
+      {"value": "https://tontonsflingueurs.com/", "count": 1},
+      {"value": "http://www.01marionnettes.fr", "count": 1},
+      {"value": "http://www.theatre-anagramme.fr/", "count": 1},
+      {"value": "https://theatre.gaisavoir.org/", "count": 1},
+      {"value": "http://improvidence.fr", "count": 1},
+      {"value": "https://treteauxdugrandvalcoise.wordpress.com/", "count": 1},
+      {"value": "http://www.zenith-saint-etienne.fr/", "count": 1},
+      {"value": "http://theatre.valence.fr/", "count": 1},
+      {"value": "http://www.comediedevalence.com/", "count": 1},
+      {"value": "http://comedypalace.fr/", "count": 1},
+      {"value": "http://www.auditorium-lyon.com/", "count": 1},
+      {"value": "www.maisondeladanse.com", "count": 1},
+      {"value": "https://www.lacomedie.fr/", "count": 1},
+      {"value": "http://www.operatheatredesaintetienne.fr", "count": 1},
+      {
+        "value": "http://ville-pontcharra.fr/vivre-a-pontcharra/culture-loisirs/coleo/",
+        "count": 1
+      },
+      {
+        "value": "http://www.davezieux.fr/-L-Espace-Montgolfier-Davezieux-.html",
+        "count": 1
+      },
+      {"value": "http://palaisdescongressudrhonealpes.com/", "count": 1},
+      {"value": "www.larampe-echirolles.fr", "count": 1},
+      {"value": "http://www.transbordeur.fr/", "count": 1},
+      {"value": "http://www.lux-valence.com/", "count": 1},
+      {"value": "http://theatredevienne.com/", "count": 1},
+      {"value": "http://www.theatredevillefranche.asso.fr", "count": 1},
+      {"value": "http://www.centrecharliechaplin.com/", "count": 1},
+      {"value": "http://www.tnp-villeurbanne.com/", "count": 1},
+      {"value": "http://lasource-fontaine.eu/", "count": 1},
+      {"value": "http://www.lebarondebayanne.com/", "count": 1}
+    ],
+    "count": 42
+  },
+  {
+    "key": "wheelchair",
+    "tags": [
+      {"value": "yes", "count": 18},
+      {"value": "limited", "count": 8},
+      {"value": "no", "count": 4}
+    ],
+    "count": 30
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {"value": "Scène nationale de Chambéry et de la Savoie", "count": 1},
+      {"value": "Commission de Gestion de la Rotonde", "count": 1},
+      {"value": "Maison du Crêt de Roch", "count": 1},
+      {"value": "Ville de Champ-sur-Drac", "count": 1},
+      {"value": "Ville du Chambon-Feugerolles", "count": 1},
+      {"value": "Ville de Saint-Priest", "count": 1},
+      {"value": "Compagnie Les Gens du Bitume", "count": 1},
+      {"value": "Il était une fois une marionnette...", "count": 1},
+      {"value": "Ville de Rumilly", "count": 1},
+      {"value": "Compagnie Kapibara", "count": 1},
+      {"value": "ZEN Gestion", "count": 1},
+      {"value": "LIMACE", "count": 1},
+      {"value": "Mairie de Seyssins", "count": 1},
+      {"value": "Savoiexpo", "count": 1},
+      {"value": "Commune de Bramans", "count": 1},
+      {"value": "Mairie de Lissieu", "count": 1},
+      {"value": "AMCC", "count": 1},
+      {"value": "Commune de Saint-Genis-Pouilly", "count": 1},
+      {"value": "Les Barbarins Fourchus", "count": 1},
+      {"value": "Ville de Rive de Gier", "count": 1},
+      {"value": "Ville de La Motte Servolex", "count": 1},
+      {"value": "Le Prunier Sauvage", "count": 1}
+    ],
+    "count": 22
+  },
+  {
+    "key": "wikidata",
+    "tags": [
+      {"value": "Q2991547", "count": 1},
+      {"value": "Q3527617", "count": 1},
+      {"value": "Q3469876", "count": 1},
+      {"value": "Q9496", "count": 1},
+      {"value": "Q2957115", "count": 1},
+      {"value": "Q22968449", "count": 1},
+      {"value": "Q2922453", "count": 1},
+      {"value": "Q49742710", "count": 1},
+      {"value": "Q8383", "count": 1},
+      {"value": "Q3527572", "count": 1},
+      {"value": "Q4221", "count": 1},
+      {"value": "Q22967624", "count": 1},
+      {"value": "Q3469883", "count": 1},
+      {"value": "Q3227778", "count": 1},
+      {"value": "Q3175", "count": 1},
+      {"value": "Q62554", "count": 1},
+      {"value": "Q3527693", "count": 1},
+      {"value": "Q3527870", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "wikipedia",
+    "tags": [
+      {"value": "fr:Théâtre des Célestins", "count": 1},
+      {"value": "fr:Théâtre de Bourg-en-Bresse", "count": 1},
+      {"value": "fr:Opéra de Lyon", "count": 1},
+      {"value": "fr:Bourse du travail de Lyon", "count": 1},
+      {"value": "fr:Auditorium Maurice-Ravel", "count": 1},
+      {"value": "fr:Maison de la danse", "count": 1},
+      {"value": "fr:Comédie de Saint-Étienne", "count": 1},
+      {"value": "fr:Théâtre municipal d'Évian-les-Bains", "count": 1},
+      {"value": "fr:Théâtre la Renaissance", "count": 1},
+      {"value": "fr:Salle Molière", "count": 1},
+      {"value": "fr:Salle Rameau", "count": 1},
+      {"value": "fr:Transbordeur (Lyon)", "count": 1},
+      {"value": "fr:Théâtre antique de Lyon", "count": 1},
+      {"value": "fr:Odéon antique de Lyon", "count": 1},
+      {"value": "fr:Scène nationale", "count": 1},
+      {"value": "fr:Théâtre de la Croix-Rousse", "count": 1},
+      {"value": "fr:Théâtre municipal de Vienne", "count": 1},
+      {"value": "fr:Théâtre de verdure de Montluel", "count": 1}
+    ],
+    "count": 18
+  },
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 75 86 14 50", "count": 1},
+      {"value": "+33 4 78 27 96 99", "count": 1},
+      {"value": "+33 4 27 44 34 38", "count": 1},
+      {"value": "+33 4 78 27 23 59", "count": 1},
+      {"value": "+33 4 72 10 30 30", "count": 1},
+      {"value": "+33629855150", "count": 1},
+      {"value": "+33 9 53 36 70 72", "count": 1},
+      {"value": "+33 4 76 54 03 08", "count": 1},
+      {"value": "+33 4 78 58 88 25", "count": 1},
+      {"value": "+33 4 75 78 41 70", "count": 1},
+      {"value": "+33 6 82 70 21 83", "count": 1},
+      {"value": "+334 78 95 95 95", "count": 1},
+      {"value": "+33 4 77 25 14 14", "count": 1},
+      {"value": "+33 4 75 33 12 12", "count": 1},
+      {"value": "+33 4 76 72 80 14", "count": 1},
+      {"value": "+33 4 75 82 44 15", "count": 1}
+    ],
+    "count": 16
+  },
+  {
+    "key": "theatre:genre",
+    "tags": [
+      {"value": "musical", "count": 5},
+      {"value": "music", "count": 2},
+      {"value": "chamber_music", "count": 2},
+      {"value": "puppet", "count": 1},
+      {"value": "cabaret", "count": 1},
+      {"value": "comedy", "count": 1}
+    ],
+    "count": 12
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [
+      {"value": "1975-01-15", "count": 1},
+      {"value": "1988-04-18", "count": 1},
+      {"value": "1984-12-21", "count": 1},
+      {"value": "1989-11-02", "count": 1},
+      {"value": "2014-03-17", "count": 1},
+      {"value": "1997", "count": 1},
+      {"value": "1981-12-23", "count": 1},
+      {"value": "1929-02-24", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "ref:mhs",
+    "tags": [
+      {"value": "PA00116346", "count": 1},
+      {"value": "PA00117179", "count": 1},
+      {"value": "PA00118243", "count": 1},
+      {"value": "PA00118106", "count": 1},
+      {"value": "PA74000020", "count": 1},
+      {"value": "PA69000003", "count": 1},
+      {"value": "PA00117877", "count": 1},
+      {"value": "PA00117350", "count": 1}
+    ],
+    "count": 8
+  },
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 8}],
+    "count": 8
+  },
+  {
+    "key": "toilets:wheelchair",
+    "tags": [{"value": "yes", "count": 5}, {"value": "no", "count": 3}],
+    "count": 8
+  },
+  {
+    "key": "heritage",
+    "tags": [{"value": "3", "count": 5}, {"value": "2", "count": 3}],
+    "count": 8
+  },
+  {
+    "key": "historic",
+    "tags": [
+      {"value": "archaeological_site", "count": 2},
+      {"value": "theatre", "count": 1},
+      {"value": "building", "count": 1}
+    ],
+    "count": 4
+  },
+  {
+    "key": "email",
+    "tags": [
+      {"value": "treteauxdugrandvalcoise@gmail.com", "count": 1},
+      {"value": "cgr.general@gmail.com", "count": 1},
+      {"value": "contact@espacegerson.com", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "walking_disability:description:fr",
+    "tags": [
+      {
+        "value": "Accès difficile pour les fauteuils roulants, présence d'une pente. Accessible aux PMR par l'entrée secondaire.",
+        "count": 1
+      },
+      {
+        "value": "Inaccessible aux fauteuils roulants et aux PMR en l'état. Entrée principale inaccessible, absence de mains courantes, l'ascenseur n'est pas en conformité avec les normes en vigueur.",
+        "count": 1
+      },
+      {
+        "value": "Accès difficile aux fauteuils roulants et aux PMR. Certaines salles sont inaccessibles.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {"key": "toilets", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "photo",
+    "tags": [
+      {"value": "http://i.imgur.com/jhZ4GGb.jpg", "count": 1},
+      {"value": "http://i.imgur.com/kOS0XWi.jpg", "count": 1},
+      {"value": "http://i.imgur.com/ys0vnJT.jpg", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "municipal:facilities:fr",
+    "tags": [{"value": "culturels", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "mental_disabled:description:fr",
+    "tags": [
+      {"value": "Accessible aux handicapés mentaux.", "count": 2},
+      {
+        "value": "Accessible aux handicapés mentaux par l'accès principal.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "deaf:description:fr",
+    "tags": [
+      {
+        "value": "Accessible aux sourds et malentendants par l'accès principal.",
+        "count": 1
+      },
+      {
+        "value": "Accessible aux sourds et malentendants. L'ascenseur n'est pas en conformité avec les normes en conformité avec les normes en vigueur.",
+        "count": 1
+      },
+      {"value": "Accessible aux sourds et malentendants.", "count": 1}
+    ],
+    "count": 3
+  },
+  {
+    "key": "blind:description:fr",
+    "tags": [
+      {"value": "Inaccessible aux aveugles et aux malvoyants.", "count": 2},
+      {
+        "value": "Inaccessible aux aveugles et aux malvoyants. Entrée principale inaccessible, absence de mains courantes sur les escaliers, l'ascenseur n'est pas en conformité avec les normes en vigueur.",
+        "count": 1
+      }
+    ],
+    "count": 3
+  },
+  {
+    "key": "access:mental_disabled",
+    "tags": [{"value": "yes", "count": 3}],
+    "count": 3
+  },
+  {"key": "tourism", "tags": [{"value": "attraction", "count": 3}], "count": 3},
+  {"key": "access", "tags": [{"value": "public", "count": 3}], "count": 3},
+  {
+    "key": "access:blind",
+    "tags": [{"value": "no", "count": 2}, {"value": "limited", "count": 1}],
+    "count": 3
+  },
+  {"key": "access:deaf", "tags": [{"value": "yes", "count": 3}], "count": 3},
+  {
+    "key": "fixme",
+    "tags": [
+      {"value": "meilleur clé pour décrire gradins en plein air ?", "count": 1},
+      {"value": "new building: update with cadastre", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "roof:shape",
+    "tags": [{"value": "round", "count": 1}, {"value": "hipped", "count": 1}],
+    "count": 2
+  },
+  {
+    "key": "description",
+    "tags": [
+      {"value": "magic shows", "count": 1},
+      {"value": "Châpiteau;salle de spectacle", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "way", "tags": [{"value": "60708167", "count": 1}], "count": 1},
+  {"key": "handrail", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "office", "tags": [{"value": "theatre", "count": 1}], "count": 1},
+  {"key": "roof:height", "tags": [{"value": "20", "count": 1}], "count": 1},
+  {"key": "roof:levels", "tags": [{"value": "1", "count": 1}], "count": 1},
+  {
+    "key": "roof:material",
+    "tags": [{"value": "roof_tiles", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "roof:orientation",
+    "tags": [{"value": "along", "count": 1}],
+    "count": 1
+  },
+  {"key": "is_in", "tags": [{"value": "Thoiry", "count": 1}], "count": 1},
+  {"key": "height", "tags": [{"value": "42", "count": 1}], "count": 1},
+  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "C19", "count": 1}], "count": 1},
+  {"key": "culture", "tags": [{"value": "music", "count": 1}], "count": 1},
+  {"key": "capacity", "tags": [{"value": "350", "count": 1}], "count": 1},
+  {"key": "covered", "tags": [{"value": "no", "count": 1}], "count": 1},
+  {"key": "flood_prone", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {"key": "theatre:type", "tags": [{"value": "amphi", "count": 1}], "count": 1}
+]

@@ -1,0 +1,31 @@
+[
+  {"key": "craft", "tags": [{"value": "builder", "count": 7}], "count": 7},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 6 79 37 53 03", "count": 1},
+      {"value": "+33 4 74 59 03 09", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "website",
+    "tags": [
+      {"value": "bauges-maison-bois.fr", "count": 1},
+      {"value": "https://maconneriechatain.fr", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "email",
+    "tags": [{"value": "maconneriechatain@wanadoo.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "fax",
+    "tags": [{"value": "+33 4 74 59 15 57", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "company", "count": 1}], "count": 1},
+  {"key": "start_date", "tags": [{"value": "1971", "count": 1}], "count": 1}
+]

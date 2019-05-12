@@ -1,0 +1,18 @@
+[
+  {
+    "key": "health_facility:type",
+    "tags": [{"value": "office", "count": 1}],
+    "count": 1
+  },
+  {"key": "office", "tags": [{"value": "dietitian", "count": 1}], "count": 1},
+  {
+    "key": "operator",
+    "tags": [{"value": "Stéphanie Massol", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 6 70 45 10 73", "count": 1}],
+    "count": 1
+  }
+]

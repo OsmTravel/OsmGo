@@ -1,0 +1,16 @@
+[
+  {"key": "craft", "tags": [{"value": "tailor", "count": 12}], "count": 12},
+  {
+    "key": "phone",
+    "tags": [
+      {"value": "+33 4 74 85 28 87", "count": 1},
+      {"value": "+33 4 78 72 56 75", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "tailor:alteration_service",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  }
+]

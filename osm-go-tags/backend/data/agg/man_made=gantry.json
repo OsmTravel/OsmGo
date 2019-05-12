@@ -1,0 +1,50 @@
+[
+  {
+    "key": "man_made",
+    "tags": [{"value": "gantry", "count": 144}],
+    "count": 144
+  },
+  {
+    "key": "gantry:type",
+    "tags": [
+      {"value": "destination_sign", "count": 66},
+      {"value": "traffic_information", "count": 42},
+      {"value": "signals", "count": 34}
+    ],
+    "count": 142
+  },
+  {"key": "layer", "tags": [{"value": "1", "count": 136}], "count": 136},
+  {
+    "key": "communication:microwave",
+    "tags": [{"value": "yes", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "operator",
+    "tags": [
+      {
+        "value": "Direction Interdépartementale des Routes Centres Est",
+        "count": 2
+      }
+    ],
+    "count": 2
+  },
+  {
+    "key": "ref:FR:anfr",
+    "tags": [
+      {"value": "1854242", "count": 1},
+      {"value": "1854238", "count": 1}
+    ],
+    "count": 2
+  },
+  {
+    "key": "surveillance",
+    "tags": [{"value": "public", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "surveillance:zone",
+    "tags": [{"value": "traffic", "count": 2}],
+    "count": 2
+  }
+]
