@@ -1019,8 +1019,8 @@
       },
       {
         "key": "cheese",
-        "lbl": "Fromager, vente de fromages",
-        "lbl_alt": "",
+        "lbl": "Fromager",
+        "lbl_alt": " Vente de fromages",
         "icon": "",
         "markerColor": "#A23337",
         "alert": "",
@@ -1075,7 +1075,7 @@
         "key": "party",
         "lbl": "Vente d'accessoires pour la fête",
         "lbl_alt": "",
-        "icon": "",
+        "icon": "dance-instructor",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"]
@@ -1355,6 +1355,33 @@
         "lbl": "ski",
         "lbl_alt": "Vente de ski",
         "icon": "mi-skiing",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "printer_ink",
+        "lbl": "Vente d'encre pour imprimante",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pasta",
+        "lbl": "Vente de pâtes fraiches",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tailor",
+        "lbl": "tailor",
+        "lbl_alt": "Tailleur",
+        "icon": "maki-clothing-store-15",
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
@@ -1670,7 +1697,8 @@
         "icon": "fa-bed",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": true
       },
       {
         "key": "kindergarten",
@@ -1909,8 +1937,9 @@
         "lbl_alt": "",
         "icon": "mi-physiotherapist",
         "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "alert": "Remplacé par : leisure=fitness_centre",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": true
       },
       {
         "key": "community_centre",
@@ -1933,8 +1962,8 @@
       },
       {
         "key": "hunting_stand",
-        "lbl": "Stand de tir",
-        "lbl_alt": "",
+        "lbl": "Emplacement de chasse",
+        "lbl_alt": "Tour de chasse ",
         "icon": "fa-crosshairs",
         "markerColor": "#EF9228",
         "alert": "",
@@ -1987,7 +2016,7 @@
       },
       {
         "key": "toilets",
-        "lbl": "Toilettes",
+        "lbl": "Toilettes publiques",
         "lbl_alt": "wc",
         "icon": "mi-toilet",
         "markerColor": "#EF9228",
@@ -3762,6 +3791,15 @@
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": []
+      },
+      {
+        "key": "surveyor",
+        "lbl": "Géomètre, topographes, arpenteur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
       }
     ]
   },
@@ -4347,6 +4385,15 @@
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
+      },
+      {
+        "key": "tower",
+        "lbl": "Tour",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
       }
     ]
   },
@@ -4379,6 +4426,15 @@
         "icon": "maki-water-15",
         "markerColor": "#009549",
         "alert": "Doit être une surface",
+        "presets": []
+      },
+      {
+        "key": "tree_row",
+        "lbl": "tree_row",
+        "lbl_alt": "Rangée d'arbres",
+        "icon": "maki-park-15",
+        "markerColor": "#009549",
+        "alert": "Doit uniquement être un ligne !",
         "presets": []
       }
     ]
@@ -4419,7 +4475,8 @@
       "steps",
       "pedestrian",
       "motorway_junction",
-      "platform"
+      "platform",
+      "corridor"
     ],
     "type": "highway",
     "lbl": "Voirie",
