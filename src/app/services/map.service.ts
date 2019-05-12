@@ -287,11 +287,7 @@ export class MapService {
 
   createDomMoveMarker(coord: number[], data) {
     const el = document.createElement('div');
-    el.className = 'extra-marker extra-marker-circle-black';
-    const icon = document.createElement('i');
-    icon.style.color = 'white';
-    icon.className = 'fa fa-arrows';
-    el.appendChild(icon);
+    el.className = 'moveMarkerIcon';
     const marker = new mapboxgl.Marker(el, { offset: [0, -15] }).setLngLat(coord);
     marker.data = data;
     return marker;
