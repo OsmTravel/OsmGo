@@ -1,7 +1,1 @@
-[
-  {
-    "key": "natural",
-    "tags": [{"value": "wild_animals", "count": 2}],
-    "count": 2
-  }
-]
+[{"key":"natural","tags":[{"value":"wild_animals","count":127}],"count":127},{"key":"hazard","tags":[{"value":"animal_crossing","count":4}],"count":4},{"key":"note","tags":[{"value":"5km","count":1}],"count":1},{"key":"ref","tags":[{"value":"FR:A15b","count":1}],"count":1},{"key":"highway","tags":[{"value":"traffic_sign","count":1}],"count":1},{"key":"distance","tags":[{"value":"5","count":1}],"count":1},{"key":"position","tags":[{"value":"right","count":1}],"count":1},{"key":"animal_crossing","tags":[{"value":"wild","count":1}],"count":1},{"key":"traffic_signals:direction","tags":[{"value":"forward","count":1}],"count":1}]

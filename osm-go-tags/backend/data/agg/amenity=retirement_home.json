@@ -1,13 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "retirement_home", "count": 17}],
-    "count": 17
-  },
-  {"key": "emergency", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {
-    "key": "description",
-    "tags": [{"value": "Maison de retraite", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"retirement_home","count":66}],"count":66},{"key":"type","tags":[{"value":"multipolygon","count":9}],"count":9},{"key":"operator","tags":[{"value":"Vaucluse Logement","count":1},{"value":"EHPAD","count":1},{"value":"Centre Communal d'Action Sociale de Marseille","count":1},{"value":"Domusvie","count":1}],"count":4},{"key":"phone","tags":[{"value":"+33321523090","count":1},{"value":"+33238533776","count":1},{"value":"+33 1 46263024","count":1},{"value":"+33 4 92 61 62 10","count":1}],"count":4},{"key":"social_facility:for","tags":[{"value":"senior","count":2}],"count":2},{"key":"wikipedia","tags":[{"value":"fr:Longpont-sur-Orge","count":1}],"count":1},{"key":"wall","tags":[{"value":"no","count":1}],"count":1},{"key":"healthcare","tags":[{"value":"hospital","count":1}],"count":1},{"key":"start_date","tags":[{"value":"1983","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.maisonretraite.com/","count":1}],"count":1},{"key":"social_facility","tags":[{"value":"group_home","count":1}],"count":1},{"key":"barrier","tags":[{"value":"fence","count":1}],"count":1},{"key":"fence_type","tags":[{"value":"hedge","count":1}],"count":1},{"key":"beds","tags":[{"value":"17","count":1}],"count":1},{"key":"ref:FR:FINESS","tags":[{"value":"450007695","count":1}],"count":1},{"key":"ref:FR:SIREN","tags":[{"value":"?","count":1}],"count":1},{"key":"capacity","tags":[{"value":"119","count":1}],"count":1},{"key":"description","tags":[{"value":"Maison de retraite","count":1}],"count":1},{"key":"historic","tags":[{"value":"castle","count":1}],"count":1}]

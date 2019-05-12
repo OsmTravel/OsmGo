@@ -1,15 +1,1 @@
-[
-  {"key": "office", "tags": [{"value": "reception", "count": 12}], "count": 12},
-  {
-    "key": "camp_site",
-    "tags": [{"value": "reception", "count": 3}],
-    "count": 3
-  },
-  {
-    "key": "tourism",
-    "tags": [{"value": "information", "count": 1}],
-    "count": 1
-  },
-  {"key": "access", "tags": [{"value": "customers", "count": 1}], "count": 1},
-  {"key": "amenity", "tags": [{"value": "bar", "count": 1}], "count": 1}
-]
+[{"key":"office","tags":[{"value":"reception","count":14}],"count":14},{"key":"camp_site","tags":[{"value":"reception","count":3}],"count":3},{"key":"tourism","tags":[{"value":"information","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.alpha-evenement.fr/","count":1}],"count":1},{"key":"access","tags":[{"value":"customers","count":1}],"count":1},{"key":"amenity","tags":[{"value":"bar","count":1}],"count":1},{"key":"roof:shape","tags":[{"value":"gabled","count":1}],"count":1}]

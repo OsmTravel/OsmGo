@@ -1,9 +1,1 @@
-[
-  {
-    "key": "tourism",
-    "tags": [{"value": "information", "count": 2}],
-    "count": 2
-  },
-  {"key": "advertising", "tags": [{"value": "public", "count": 2}], "count": 2},
-  {"key": "information", "tags": [{"value": "board", "count": 2}], "count": 2}
-]
+[{"key":"tourism","tags":[{"value":"information","count":2}],"count":2},{"key":"advertising","tags":[{"value":"public","count":2}],"count":2},{"key":"information","tags":[{"value":"board","count":2}],"count":2}]

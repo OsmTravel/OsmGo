@@ -1,12 +1,1 @@
-[
-  {
-    "key": "shop",
-    "tags": [{"value": "hairdresser_supply", "count": 2}],
-    "count": 2
-  },
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 4 74 85 64 38", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"hairdresser_supply","count":25}],"count":25},{"key":"phone","tags":[{"value":"+33 4 74 85 64 38","count":1},{"value":"+33 3 85 24 92 95","count":1},{"value":"+33561427027","count":1}],"count":3},{"key":"website","tags":[{"value":"https://www.laboutiqueducoiffeur.com/","count":1},{"value":"https://www.bleulibellule.com/","count":1},{"value":"http://www.labo-amouyal.fr/","count":1}],"count":3},{"key":"room","tags":[{"value":"shop","count":2}],"count":2},{"key":"survey:date","tags":[{"value":"2017-08","count":1}],"count":1},{"key":"ref:FR:NAF","tags":[{"value":"4777Z","count":1}],"count":1},{"key":"ref:FR:SIRET","tags":[{"value":"34283741601340","count":1}],"count":1},{"key":"indoor","tags":[{"value":"room","count":1}],"count":1},{"key":"level","tags":[{"value":"0","count":1}],"count":1}]

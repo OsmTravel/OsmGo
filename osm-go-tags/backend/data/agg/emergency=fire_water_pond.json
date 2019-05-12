@@ -1,11 +1,1 @@
-[
-  {
-    "key": "emergency",
-    "tags": [{"value": "fire_water_pond", "count": 3}],
-    "count": 3
-  },
-  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "landuse", "tags": [{"value": "reservoir", "count": 1}], "count": 1},
-  {"key": "natural", "tags": [{"value": "water", "count": 1}], "count": 1},
-  {"key": "water", "tags": [{"value": "reservoir", "count": 1}], "count": 1}
-]
+[{"key":"emergency","tags":[{"value":"fire_water_pond","count":21}],"count":21},{"key":"natural","tags":[{"value":"water","count":9}],"count":9},{"key":"landuse","tags":[{"value":"basin","count":5},{"value":"reservoir","count":2}],"count":7},{"key":"water","tags":[{"value":"pond","count":3},{"value":"reservoir","count":2}],"count":5},{"key":"intermittent","tags":[{"value":"no","count":4}],"count":4},{"key":"basin","tags":[{"value":"retention","count":2}],"count":2},{"key":"covered","tags":[{"value":"no","count":1},{"value":"yes","count":1}],"count":2},{"key":"note","tags":[{"value":"EAU NON POTABLE / PRODUIT CHIMIQUE","count":1}],"count":1},{"key":"water_tank:volume","tags":[{"value":"30000","count":1}],"count":1},{"key":"reservoir_type","tags":[{"value":"water_storage","count":1}],"count":1},{"key":"area","tags":[{"value":"yes","count":1}],"count":1},{"key":"image","tags":[{"value":"File:Emergency water tank.jpg","count":1}],"count":1},{"key":"ref","tags":[{"value":"1","count":1}],"count":1}]

@@ -1,7 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "snow_cannon", "count": 134}],
-    "count": 134
-  }
-]
+[{"key":"man_made","tags":[{"value":"snow_cannon","count":348}],"count":348},{"key":"seasonal","tags":[{"value":"winter","count":39}],"count":39},{"key":"snow_cannon","tags":[{"value":"lance","count":28},{"value":"fan","count":10}],"count":38},{"key":"piste:difficulty","tags":[{"value":"intermediate","count":5},{"value":"easy","count":4},{"value":"novice","count":4}],"count":13},{"key":"piste:type","tags":[{"value":"downhill","count":11},{"value":"snow_park","count":2}],"count":13},{"key":"route","tags":[{"value":"piste","count":13}],"count":13},{"key":"type","tags":[{"value":"route","count":10}],"count":10},{"key":"ref","tags":[{"value":"G","count":1},{"value":"L'","count":1},{"value":"L","count":1},{"value":"K","count":1},{"value":"H","count":1},{"value":"P","count":1},{"value":"O","count":1},{"value":"I","count":1},{"value":"J","count":1}],"count":9},{"key":"lit","tags":[{"value":"yes","count":3}],"count":3},{"key":"area","tags":[{"value":"yes","count":1}],"count":1},{"key":"piste:lit","tags":[{"value":"yes","count":1}],"count":1}]

@@ -1,7 +1,1 @@
-[
-  {
-    "key": "healthcare",
-    "tags": [{"value": "chiropractor", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"healthcare","tags":[{"value":"chiropractor","count":3}],"count":3},{"key":"amenity","tags":[{"value":"doctors","count":2}],"count":2},{"key":"healthcare:speciality","tags":[{"value":"chiropractic","count":1}],"count":1}]

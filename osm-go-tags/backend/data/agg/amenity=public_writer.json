@@ -1,8 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "books", "count": 1}], "count": 1},
-  {
-    "key": "amenity",
-    "tags": [{"value": "public_writer", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"books","count":1}],"count":1},{"key":"amenity","tags":[{"value":"public_writer","count":1}],"count":1}]

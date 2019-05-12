@@ -1,7 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "player_place", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"player_place","count":1}],"count":1}]

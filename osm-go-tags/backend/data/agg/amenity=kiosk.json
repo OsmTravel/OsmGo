@@ -1,8 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "kiosk", "count": 2}], "count": 2},
-  {
-    "key": "tickets:public_transport",
-    "tags": [{"value": "yes", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"kiosk","count":1}],"count":1}]

@@ -1,13 +1,1 @@
-[
-  {
-    "key": "healthcare",
-    "tags": [{"value": "optometrist", "count": 23}],
-    "count": 23
-  },
-  {"key": "amenity", "tags": [{"value": "doctors", "count": 2}], "count": 2},
-  {
-    "key": "healthcare:speciality",
-    "tags": [{"value": "ophthalmology", "count": 2}],
-    "count": 2
-  }
-]
+[{"key":"healthcare","tags":[{"value":"optometrist","count":27}],"count":27},{"key":"healthcare:speciality","tags":[{"value":"ophthalmology","count":3}],"count":3},{"key":"amenity","tags":[{"value":"doctors","count":2}],"count":2},{"key":"phone","tags":[{"value":"+33 4 65 09 20 00","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.pointvision.com/cavaillon/","count":1}],"count":1}]

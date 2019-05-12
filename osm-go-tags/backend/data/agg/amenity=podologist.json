@@ -1,5 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "podologist", "count": 2}], "count": 2},
-  {"key": "phone", "tags": [{"value": "+33240798646", "count": 1}], "count": 1},
-  {"key": "created_by", "tags": [{"value": "iLOE 1.9", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"podologist","count":2}],"count":2},{"key":"phone","tags":[{"value":"+33240798646","count":1}],"count":1},{"key":"created_by","tags":[{"value":"iLOE 1.9","count":1}],"count":1}]

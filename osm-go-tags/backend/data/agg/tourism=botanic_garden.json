@@ -1,14 +1,1 @@
-[
-  {"key": "leisure", "tags": [{"value": "garden", "count": 2}], "count": 2},
-  {
-    "key": "tourism",
-    "tags": [{"value": "botanic_garden", "count": 2}],
-    "count": 2
-  },
-  {
-    "key": "garden:type",
-    "tags": [{"value": "botanical", "count": 2}],
-    "count": 2
-  },
-  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1}
-]
+[{"key":"leisure","tags":[{"value":"garden","count":2}],"count":2},{"key":"tourism","tags":[{"value":"botanic_garden","count":2}],"count":2},{"key":"garden:type","tags":[{"value":"botanical","count":2}],"count":2},{"key":"access","tags":[{"value":"no","count":1}],"count":1}]

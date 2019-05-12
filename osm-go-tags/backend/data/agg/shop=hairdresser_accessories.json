@@ -1,12 +1,1 @@
-[
-  {"key": "indoor", "tags": [{"value": "room", "count": 1}], "count": 1},
-  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
-  {"key": "room", "tags": [{"value": "shop", "count": 1}], "count": 1},
-  {
-    "key": "shop",
-    "tags": [{"value": "hairdresser_accessories", "count": 1}],
-    "count": 1
-  },
-  {"key": "was:shop", "tags": [{"value": "shoes", "count": 1}], "count": 1},
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"indoor","tags":[{"value":"room","count":1}],"count":1},{"key":"level","tags":[{"value":"0","count":1}],"count":1},{"key":"room","tags":[{"value":"shop","count":1}],"count":1},{"key":"shop","tags":[{"value":"hairdresser_accessories","count":1}],"count":1},{"key":"was:shop","tags":[{"value":"shoes","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

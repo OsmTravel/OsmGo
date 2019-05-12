@@ -1,16 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "gold", "count": 9}], "count": 9},
-  {"key": "level", "tags": [{"value": "-1", "count": 1}], "count": 1},
-  {
-    "key": "survey:date",
-    "tags": [{"value": "2017-07-27", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [
-      {"value": "http://www.osprey.fr/fr/magasins/dinard-6.html", "count": 1}
-    ],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"gold","count":12}],"count":12},{"key":"survey:date","tags":[{"value":"2018-10-30","count":2},{"value":"2017-07-27","count":1},{"value":"2018-11-01","count":1},{"value":"2018-12-16","count":1}],"count":5},{"key":"website","tags":[{"value":"https://www.comptoirdachatoretargent.fr","count":2},{"value":"http://www.osprey.fr/fr/magasins/dinard-6.html","count":1},{"value":"https://www.lingor.fr","count":1},{"value":"https://www.goldmarket.fr","count":1}],"count":5},{"key":"brand","tags":[{"value":"Lingor","count":1},{"value":"Goldmarket","count":1},{"value":"Comptoir d'Achat Or & Argent","count":1}],"count":3},{"key":"phone","tags":[{"value":"+33 2 40 20 22 21","count":1},{"value":"+33 2 40 71 86 97","count":1},{"value":"+33 2 40 35 32 05","count":1}],"count":3},{"key":"email","tags":[{"value":"nantes@lingor.fr","count":1},{"value":"nantes@goldmarket.fr","count":1}],"count":2},{"key":"wheelchair","tags":[{"value":"yes","count":1},{"value":"no","count":1}],"count":2}]

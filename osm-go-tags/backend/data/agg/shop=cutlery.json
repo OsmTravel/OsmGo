@@ -1,13 +1,1 @@
-[
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 4 78 38 05 88", "count": 1}],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "cutlery", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "www.lacoutelleriedelyon.com", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"cutlery","count":3}],"count":3},{"key":"phone","tags":[{"value":"+33 4 78 38 05 88","count":1},{"value":"+33 2 51 82 27 67","count":1}],"count":2},{"key":"website","tags":[{"value":"www.lacoutelleriedelyon.com","count":1}],"count":1},{"key":"survey:date","tags":[{"value":"2018-09-10","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"no","count":1}],"count":1}]

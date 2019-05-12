@@ -14,7 +14,7 @@
     "lodash": "^4.17.10",
     "normalize-svg-coords": "^1.0.7",
     "normalize-svg-path": "^1.0.1",
-    "osm-read": "^0.6.0",
+    "osm-pbf-parser": "^2.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "request-promise-native": "^1.0.5",
@@ -34,7 +34,8 @@
     "babel-node": "babel-node --presets=latest",
     "start": "node  server.js",
     "build": "babel src -d dist",
-    "test": "nodemon  server.js"
+    "test": "nodemon  server.js",
+    "stats": "node --max-old-space-size=150024  generateTagsStats.js"
   },
   "author": "",
   "license": "ISC",

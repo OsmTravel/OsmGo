@@ -1,8 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "art_school", "count": 1}], "count": 1},
-  {
-    "key": "facebook",
-    "tags": [{"value": "lapetiteecoledart.rodez", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"art_school","count":2}],"count":2},{"key":"facebook","tags":[{"value":"lapetiteecoledart.rodez","count":1}],"count":1},{"key":"inscription","tags":[{"value":"Ateliers d'arts plastiques et de sérigraphie","count":1}],"count":1},{"key":"survey:date","tags":[{"value":"2018-10-28","count":1}],"count":1}]

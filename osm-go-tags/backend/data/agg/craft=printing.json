@@ -1,14 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "printing", "count": 5}], "count": 5},
-  {"key": "man_made", "tags": [{"value": "works", "count": 1}], "count": 1},
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 3 85280132", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.imprimerie-clayettoise.com", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"printing","count":5}],"count":5},{"key":"man_made","tags":[{"value":"works","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 3 85280132","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.imprimerie-clayettoise.com","count":1}],"count":1}]

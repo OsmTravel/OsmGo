@@ -1,4 +1,1 @@
-[
-  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "natural", "tags": [{"value": "landform", "count": 1}], "count": 1}
-]
+[{"key":"natural","tags":[{"value":"landform","count":2}],"count":2},{"key":"area","tags":[{"value":"yes","count":1}],"count":1}]

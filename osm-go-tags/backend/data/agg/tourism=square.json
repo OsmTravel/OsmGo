@@ -1,15 +1,1 @@
-[
-  {"key": "place", "tags": [{"value": "square", "count": 1}], "count": 1},
-  {
-    "key": "surface",
-    "tags": [{"value": "fine_gravel", "count": 1}],
-    "count": 1
-  },
-  {"key": "tourism", "tags": [{"value": "square", "count": 1}], "count": 1},
-  {"key": "wikidata", "tags": [{"value": "Q614", "count": 1}], "count": 1},
-  {
-    "key": "wikipedia",
-    "tags": [{"value": "en:Place Bellecour", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"place","tags":[{"value":"square","count":1}],"count":1},{"key":"surface","tags":[{"value":"fine_gravel","count":1}],"count":1},{"key":"tourism","tags":[{"value":"square","count":1}],"count":1},{"key":"wikidata","tags":[{"value":"Q614","count":1}],"count":1},{"key":"wikipedia","tags":[{"value":"en:Place Bellecour","count":1}],"count":1}]

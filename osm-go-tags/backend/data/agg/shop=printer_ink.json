@@ -1,13 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "printer_ink", "count": 3}], "count": 3},
-  {
-    "key": "url",
-    "tags": [
-      {
-        "value": "https://pointdencre.fr/index.php/component/gmapfp/129-point-dencre-saint-etienne?view=gmapfp",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"printer_ink","count":16}],"count":16},{"key":"phone","tags":[{"value":"+33 3 83310031","count":1},{"value":"+33 2 35 72 81 33","count":1},{"value":"+33 2 51 17 79 31","count":1},{"value":"+33563954416","count":1}],"count":4},{"key":"website","tags":[{"value":"http://metz.cartridgeworld.fr/","count":1},{"value":"http://prink.fr","count":1},{"value":"http://nantes.cartridgeworld.fr","count":1}],"count":3},{"key":"wheelchair","tags":[{"value":"no","count":2},{"value":"yes","count":1}],"count":3},{"key":"email","tags":[{"value":"rouen1@prink.fr","count":1},{"value":"cwnantes@cartridgeworld.fr","count":1}],"count":2},{"key":"survey:date","tags":[{"value":"2019-02-20","count":1}],"count":1},{"key":"url","tags":[{"value":"https://pointdencre.fr/index.php/component/gmapfp/129-point-dencre-saint-etienne?view=gmapfp","count":1}],"count":1},{"key":"ref:FR:SIRET","tags":[{"value":"50815607200011","count":1}],"count":1},{"key":"payment:cash","tags":[{"value":"yes","count":1}],"count":1},{"key":"brand","tags":[{"value":"Cartridge World","count":1}],"count":1},{"key":"fax","tags":[{"value":"+33 2 28 00 14 42","count":1}],"count":1},{"key":"operator","tags":[{"value":"Point d'encre","count":1}],"count":1}]

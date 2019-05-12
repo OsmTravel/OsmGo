@@ -1,8 +1,1 @@
-[
-  {"key": "rental", "tags": [{"value": "house", "count": 1}], "count": 1},
-  {
-    "key": "amenity",
-    "tags": [{"value": "house_rental", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"rental","tags":[{"value":"house","count":1}],"count":1},{"key":"amenity","tags":[{"value":"house_rental","count":1}],"count":1}]

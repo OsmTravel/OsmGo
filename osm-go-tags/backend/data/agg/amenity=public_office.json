@@ -1,12 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "public_office", "count": 2}],
-    "count": 2
-  },
-  {
-    "key": "station",
-    "tags": [{"value": "Gare de Lyon", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"public_office","count":2}],"count":2},{"key":"station","tags":[{"value":"Gare de Lyon","count":1}],"count":1}]

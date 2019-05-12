@@ -1,12 +1,1 @@
-[
-  {"key": "maze", "tags": [{"value": "labyrinth", "count": 1}], "count": 1},
-  {"key": "leisure", "tags": [{"value": "maze", "count": 1}], "count": 1},
-  {"key": "natural", "tags": [{"value": "wood", "count": 1}], "count": 1},
-  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.labyleo.com/", "count": 1}],
-    "count": 1
-  },
-  {"key": "attraction", "tags": [{"value": "maze", "count": 1}], "count": 1}
-]
+[{"key":"leisure","tags":[{"value":"maze","count":11}],"count":11},{"key":"tourism","tags":[{"value":"attraction","count":3}],"count":3},{"key":"website","tags":[{"value":"http://labyrinthe-des-volcans.com/","count":1},{"value":"http://www.labyleo.com/","count":1}],"count":2},{"key":"attraction","tags":[{"value":"maze","count":2}],"count":2},{"key":"description","tags":[{"value":"maze is constantly changing – there were at least 7 shapes","count":1}],"count":1},{"key":"maze","tags":[{"value":"labyrinth","count":1}],"count":1},{"key":"natural","tags":[{"value":"wood","count":1}],"count":1},{"key":"landuse","tags":[{"value":"leisure","count":1}],"count":1},{"key":"surface","tags":[{"value":"dirt/sand","count":1}],"count":1}]

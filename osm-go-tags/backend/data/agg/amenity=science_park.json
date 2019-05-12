@@ -1,10 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "science_park", "count": 2}],
-    "count": 2
-  },
-  {"key": "landuse", "tags": [{"value": "industrial", "count": 2}], "count": 2},
-  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"science_park","count":2}],"count":2},{"key":"landuse","tags":[{"value":"industrial","count":2}],"count":2},{"key":"area","tags":[{"value":"yes","count":1}],"count":1},{"key":"barrier","tags":[{"value":"fence","count":1}],"count":1}]

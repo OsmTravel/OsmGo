@@ -1,12 +1,1 @@
-[
-  {"key": "historic", "tags": [{"value": "razed", "count": 4}], "count": 4},
-  {
-    "key": "place",
-    "tags": [
-      {"value": "isolated_dwelling", "count": 1},
-      {"value": "locality", "count": 1}
-    ],
-    "count": 2
-  },
-  {"key": "windmill", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"razed","count":4}],"count":4},{"key":"place","tags":[{"value":"isolated_dwelling","count":1},{"value":"locality","count":1}],"count":2},{"key":"windmill","tags":[{"value":"yes","count":1}],"count":1}]

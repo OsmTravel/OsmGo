@@ -1,10 +1,1 @@
-[
-  {
-    "key": "access",
-    "tags": [{"value": "private", "count": 4}, {"value": "no", "count": 1}],
-    "count": 5
-  },
-  {"key": "barrier", "tags": [{"value": "gate", "count": 5}], "count": 5},
-  {"key": "man_made", "tags": [{"value": "porch", "count": 5}], "count": 5},
-  {"key": "entrance", "tags": [{"value": "main", "count": 4}], "count": 4}
-]
+[{"key":"access","tags":[{"value":"private","count":4},{"value":"no","count":1}],"count":5},{"key":"barrier","tags":[{"value":"gate","count":5}],"count":5},{"key":"man_made","tags":[{"value":"porch","count":5}],"count":5},{"key":"entrance","tags":[{"value":"main","count":4}],"count":4}]

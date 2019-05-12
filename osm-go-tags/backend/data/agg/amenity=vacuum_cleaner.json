@@ -1,9 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "vacuum_cleaner", "count": 6}],
-    "count": 6
-  },
-  {"key": "operator", "tags": [{"value": "Dutal", "count": 1}], "count": 1},
-  {"key": "fee", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"vacuum_cleaner","count":56}],"count":56},{"key":"fee","tags":[{"value":"yes","count":9},{"value":"no","count":1}],"count":10},{"key":"self_service","tags":[{"value":"yes","count":7}],"count":7},{"key":"operator","tags":[{"value":"washop","count":5},{"value":"Dutal","count":1}],"count":6},{"key":"automated","tags":[{"value":"no","count":5}],"count":5},{"key":"wall","tags":[{"value":"no","count":2}],"count":2},{"key":"description","tags":[{"value":"aspirateur libre service pour voiture tarif inconnu, pièce 1€ 2€ jetons","count":1}],"count":1},{"key":"brand","tags":[{"value":"WashTec","count":1}],"count":1},{"key":"access","tags":[{"value":"yes","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1},{"key":"colour","tags":[{"value":"orange","count":1}],"count":1}]

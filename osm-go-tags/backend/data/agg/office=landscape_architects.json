@@ -1,17 +1,1 @@
-[
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 2 35 32 82 27", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "office",
-    "tags": [{"value": "landscape_architects", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://arc-en-terre.fr/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"landscape_architects","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 2 35 32 82 27","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.arc-en-terre.fr/","count":1}],"count":1}]

@@ -1,12 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "assisted_living", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "social_facility:for",
-    "tags": [{"value": "senior", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"assisted_living","count":1}],"count":1},{"key":"social_facility:for","tags":[{"value":"senior","count":1}],"count":1}]

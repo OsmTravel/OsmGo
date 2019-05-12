@@ -1,4 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "poultry", "count": 4}], "count": 4},
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"poultry","count":4}],"count":4},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

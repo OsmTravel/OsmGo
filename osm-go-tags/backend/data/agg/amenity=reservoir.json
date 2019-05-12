@@ -1,4 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "reservoir", "count": 4}], "count": 4},
-  {"key": "water", "tags": [{"value": "reservoir", "count": 2}], "count": 2}
-]
+[{"key":"amenity","tags":[{"value":"reservoir","count":5}],"count":5},{"key":"water","tags":[{"value":"reservoir","count":2}],"count":2},{"key":"fixme","tags":[{"value":"tag","count":1}],"count":1}]

@@ -1,5 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "souvenirs", "count": 2}], "count": 2},
-  {"key": "step_count", "tags": [{"value": "2", "count": 1}], "count": 1},
-  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"souvenirs","count":4}],"count":4}]

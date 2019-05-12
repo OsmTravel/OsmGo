@@ -1,8 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "ventilation", "count": 4}],
-    "count": 4
-  },
-  {"key": "surface", "tags": [{"value": "metal_grid", "count": 3}], "count": 3}
-]
+[{"key":"man_made","tags":[{"value":"ventilation","count":5}],"count":5},{"key":"surface","tags":[{"value":"metal_grid","count":4}],"count":4},{"key":"type","tags":[{"value":"multipolygon","count":1}],"count":1}]

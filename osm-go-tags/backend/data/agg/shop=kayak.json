@@ -1,13 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "kayak", "count": 1}], "count": 1},
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 6 32921047", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.kayakarmor.fr/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"phone","tags":[{"value":"+33 6 32921047","count":1}],"count":1},{"key":"shop","tags":[{"value":"kayak","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.kayakarmor.fr/","count":1}],"count":1}]

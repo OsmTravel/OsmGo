@@ -1,9 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "locomotive", "count": 5}],
-    "count": 5
-  },
-  {"key": "heritage", "tags": [{"value": "yes", "count": 4}], "count": 4},
-  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"locomotive","count":13}],"count":13},{"key":"heritage","tags":[{"value":"yes","count":4}],"count":4},{"key":"tourism","tags":[{"value":"attraction","count":4}],"count":4},{"key":"wikipedia","tags":[{"value":"fr:BB 12000","count":1},{"value":"fr:TGV 001","count":1},{"value":"fr:Ancien tramway de Nantes","count":1},{"value":"fr:Liste des propriétés communales, services et écoles d’Hellemmes#La Locomotive","count":1}],"count":4},{"key":"start_date","tags":[{"value":"1954","count":1},{"value":"1914-11-27","count":1},{"value":"1937","count":1}],"count":3},{"key":"operator","tags":[{"value":"SNCF","count":1},{"value":"Tramways de Nantes","count":1}],"count":2},{"key":"wikidata","tags":[{"value":"Q24088466","count":1},{"value":"Q1049493","count":1}],"count":2},{"key":"locomotive:type","tags":[{"value":"electric","count":1},{"value":"steam","count":1}],"count":2},{"key":"end_date","tags":[{"value":"2000-01","count":1}],"count":1},{"key":"description","tags":[{"value":"Zur Erinnerung an die Grube Puits l'Hôpital 3","count":1}],"count":1},{"key":"voltage:primary","tags":[{"value":"25000","count":1}],"count":1},{"key":"voltage:secondary","tags":[{"value":"750","count":1}],"count":1},{"key":"image","tags":[{"value":"https://commons.wikimedia.org/wiki/File:Chez_puits_3_Spittel.jpg","count":1}],"count":1},{"key":"year","tags":[{"value":"1911","count":1}],"count":1},{"key":"ref","tags":[{"value":"144","count":1}],"count":1},{"key":"height","tags":[{"value":"3.5 m","count":1}],"count":1},{"key":"length","tags":[{"value":"9.65 m","count":1}],"count":1}]

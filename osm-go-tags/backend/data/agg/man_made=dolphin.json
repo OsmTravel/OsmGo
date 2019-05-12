@@ -1,1 +1,1 @@
-[{"key": "man_made", "tags": [{"value": "dolphin", "count": 42}], "count": 42}]
+[{"key":"man_made","tags":[{"value":"dolphin","count":170}],"count":170},{"key":"seamark:type","tags":[{"value":"mooring","count":32}],"count":32},{"key":"seamark:mooring:category","tags":[{"value":"dolphin","count":32}],"count":32},{"key":"ft_symbol","tags":[{"value":"352","count":20}],"count":20},{"key":"mooring","tags":[{"value":"yes","count":9},{"value":"commercial","count":4}],"count":13}]

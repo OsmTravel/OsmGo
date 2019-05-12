@@ -1,15 +1,1 @@
-[
-  {"key": "man_made", "tags": [{"value": "beehive", "count": 22}], "count": 22},
-  {"key": "landuse", "tags": [{"value": "apiary", "count": 1}], "count": 1},
-  {"key": "ref", "tags": [{"value": "01 - 00419", "count": 1}], "count": 1},
-  {
-    "key": "image",
-    "tags": [
-      {
-        "value": "https://commons.wikimedia.org/wiki/File:Parc_de_la_Villa_Monderoux_(2).JPG",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"man_made","tags":[{"value":"beehive","count":76}],"count":76},{"key":"capacity","tags":[{"value":"3","count":2},{"value":"6","count":1},{"value":"10","count":1},{"value":"5","count":1}],"count":5},{"key":"operator","tags":[{"value":"AREXA","count":1},{"value":"Amis de la cathédrale","count":1}],"count":2},{"key":"fixme","tags":[{"value":"si quelqu'un connait l'emplacement exacte","count":1},{"value":"si quelqu'un sait ou elle sont placés exactement et leur nombre","count":1}],"count":2},{"key":"note","tags":[{"value":"sur le toit","count":1},{"value":"6 ruches","count":1}],"count":2},{"key":"landuse","tags":[{"value":"apiary","count":2}],"count":2},{"key":"beehive","tags":[{"value":"6","count":1}],"count":1},{"key":"layer","tags":[{"value":"1","count":1}],"count":1},{"key":"ref","tags":[{"value":"01 - 00419","count":1}],"count":1},{"key":"image","tags":[{"value":"https://commons.wikimedia.org/wiki/File:Parc_de_la_Villa_Monderoux_(2).JPG","count":1}],"count":1},{"key":"level","tags":[{"value":"2","count":1}],"count":1},{"key":"start_date","tags":[{"value":"2019-04-16","count":1}],"count":1}]

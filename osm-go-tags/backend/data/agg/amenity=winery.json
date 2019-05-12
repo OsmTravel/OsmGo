@@ -1,1 +1,1 @@
-[{"key": "amenity", "tags": [{"value": "winery", "count": 2}], "count": 2}]
+[{"key":"amenity","tags":[{"value":"winery","count":9}],"count":9},{"key":"craft","tags":[{"value":"winery","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 5 56 62 02 08","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.dulac-seraphon.fr","count":1}],"count":1}]

@@ -1,7 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "station_radar", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"historic","tags":[{"value":"station_radar","count":1}],"count":1}]

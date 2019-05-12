@@ -1,17 +1,1 @@
-[
-  {
-    "key": "ref:mhs",
-    "tags": [
-      {"value": "IA00000474", "count": 1},
-      {"value": "IA00000407", "count": 1}
-    ],
-    "count": 2
-  },
-  {"key": "historic", "tags": [{"value": "stable", "count": 2}], "count": 2},
-  {
-    "key": "construction_date",
-    "tags": [{"value": "C17", "count": 1}],
-    "count": 1
-  },
-  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1}
-]
+[{"key":"ref:mhs","tags":[{"value":"IA00000474","count":1},{"value":"IA00000407","count":1}],"count":2},{"key":"historic","tags":[{"value":"stable","count":2}],"count":2},{"key":"construction_date","tags":[{"value":"C17","count":1}],"count":1},{"key":"wall","tags":[{"value":"no","count":1}],"count":1}]

@@ -1,16 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "bookmaker", "count": 25}], "count": 25},
-  {"key": "operator", "tags": [{"value": "PMU", "count": 3}], "count": 3},
-  {"key": "amenity", "tags": [{"value": "bar", "count": 3}], "count": 3},
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 2 97 34 01 44", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "outdoor_seating",
-    "tags": [{"value": "yes", "count": 1}],
-    "count": 1
-  },
-  {"key": "survey:date", "tags": [{"value": "2018-06", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"bookmaker","count":29}],"count":29},{"key":"operator","tags":[{"value":"PMU","count":3}],"count":3},{"key":"amenity","tags":[{"value":"bar","count":3}],"count":3},{"key":"phone","tags":[{"value":"+33 2 97 34 01 44","count":1},{"value":"+33 2 51 83 20 37","count":1}],"count":2},{"key":"survey:date","tags":[{"value":"2018-06","count":1},{"value":"2018-11-15","count":1}],"count":2},{"key":"outdoor_seating","tags":[{"value":"yes","count":1}],"count":1},{"key":"tobacco","tags":[{"value":"yes","count":1}],"count":1},{"key":"brand","tags":[{"value":"PMU","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.pmu.fr/","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

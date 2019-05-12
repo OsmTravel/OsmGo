@@ -1,11 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "dressmaker", "count": 7}], "count": 7},
-  {"key": "note", "tags": [{"value": "retouches", "count": 1}], "count": 1},
-  {
-    "key": "description",
-    "tags": [
-      {"value": "Atelier de couture, confection d'ameublement", "count": 1}
-    ],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"dressmaker","count":8}],"count":8},{"key":"note","tags":[{"value":"retouches","count":1}],"count":1},{"key":"description","tags":[{"value":"Atelier de couture, confection d'ameublement","count":1}],"count":1},{"key":"repair","tags":[{"value":"only","count":1}],"count":1}]

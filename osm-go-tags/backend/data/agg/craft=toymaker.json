@@ -1,8 +1,1 @@
-[
-  {
-    "key": "note",
-    "tags": [{"value": "Fabriquant de jouets", "count": 1}],
-    "count": 1
-  },
-  {"key": "craft", "tags": [{"value": "toymaker", "count": 1}], "count": 1}
-]
+[{"key":"note","tags":[{"value":"Fabriquant de jouets","count":1}],"count":1},{"key":"craft","tags":[{"value":"toymaker","count":1}],"count":1}]

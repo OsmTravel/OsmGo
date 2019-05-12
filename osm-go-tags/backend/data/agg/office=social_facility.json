@@ -1,12 +1,1 @@
-[
-  {
-    "key": "office",
-    "tags": [{"value": "social_facility", "count": 3}],
-    "count": 3
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "www.vaincrelautisme.org", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"social_facility","count":3}],"count":3},{"key":"website","tags":[{"value":"www.vaincrelautisme.org","count":1},{"value":"http://www.adhapservices.fr/aide-a-domicile-lhay-les-roses/","count":1}],"count":2},{"key":"phone","tags":[{"value":"+33141987960","count":1}],"count":1}]

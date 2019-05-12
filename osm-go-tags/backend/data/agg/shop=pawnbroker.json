@@ -1,9 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "pawnbroker", "count": 2}], "count": 2},
-  {
-    "key": "note",
-    "tags": [{"value": "Boutique qui rachète de l'or", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"pawnbroker","count":39}],"count":39},{"key":"wheelchair","tags":[{"value":"no","count":2},{"value":"yes","count":2}],"count":4},{"key":"phone","tags":[{"value":"+33 2 28 21 00 22","count":1},{"value":"+33 1 61 35 07 06","count":1},{"value":"+33 3 26 86 29 10","count":1},{"value":"+33385460952","count":1}],"count":4},{"key":"website","tags":[{"value":"https://www.cashexpress.fr/","count":1},{"value":"https://www.easycash.fr/","count":1},{"value":"https://www.cashconverters.fr/nos-magasins/magasin/128/chatenoy-le-royal.html","count":1}],"count":3},{"key":"brand","tags":[{"value":"Easy Cash","count":1},{"value":"Cash Converters","count":1}],"count":2},{"key":"brand:wikipedia","tags":[{"value":"en:Cash Converters","count":1}],"count":1},{"key":"level","tags":[{"value":"0","count":1}],"count":1},{"key":"note","tags":[{"value":"Boutique qui rachète de l'or","count":1}],"count":1},{"key":"old_shop","tags":[{"value":"clothes","count":1}],"count":1},{"key":"brand:wikidata","tags":[{"value":"Q5048645","count":1}],"count":1},{"key":"survey:date","tags":[{"value":"2018-09-22","count":1}],"count":1},{"key":"ref:FR:SIREN","tags":[{"value":"395161466","count":1}],"count":1},{"key":"ref:FR:SIRET","tags":[{"value":"39516146600028","count":1}],"count":1},{"key":"amenity","tags":[{"value":"bureau_de_change","count":1}],"count":1},{"key":"wall","tags":[{"value":"no","count":1}],"count":1},{"key":"email","tags":[{"value":"chatenoyleroyal@cashconverters.fr","count":1}],"count":1}]

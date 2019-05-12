@@ -1,9 +1,1 @@
-[
-  {"key": "historic", "tags": [{"value": "bnuker", "count": 16}], "count": 16},
-  {
-    "key": "barrier",
-    "tags": [{"value": "retaining_wall", "count": 4}],
-    "count": 4
-  },
-  {"key": "military", "tags": [{"value": "bunker", "count": 2}], "count": 2}
-]
+[{"key":"historic","tags":[{"value":"bnuker","count":16}],"count":16},{"key":"barrier","tags":[{"value":"retaining_wall","count":4}],"count":4},{"key":"military","tags":[{"value":"bunker","count":2}],"count":2}]

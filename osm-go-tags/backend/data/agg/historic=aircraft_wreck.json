@@ -1,18 +1,1 @@
-[
-  {
-    "key": "note",
-    "tags": [
-      {
-        "value": "Crash du 26 Janvier 1986 éparpillé sur une centaine de mètres. ",
-        "count": 1
-      }
-    ],
-    "count": 1
-  },
-  {
-    "key": "historic",
-    "tags": [{"value": "aircraft_wreck", "count": 1}],
-    "count": 1
-  },
-  {"key": "start_date", "tags": [{"value": "1986", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"aircraft_wreck","count":2}],"count":2},{"key":"note","tags":[{"value":"Crash du 26 Janvier 1986 éparpillé sur une centaine de mètres. ","count":1}],"count":1},{"key":"start_date","tags":[{"value":"1986","count":1}],"count":1},{"key":"seamark:type","tags":[{"value":"wreck","count":1}],"count":1}]

@@ -1,5 +1,1 @@
-[
-  {"key": "lawyer", "tags": [{"value": "notary", "count": 1}], "count": 1},
-  {"key": "office", "tags": [{"value": "lawyer", "count": 1}], "count": 1},
-  {"key": "amenity", "tags": [{"value": "notary", "count": 1}], "count": 1}
-]
+[{"key":"lawyer","tags":[{"value":"notary","count":1}],"count":1},{"key":"office","tags":[{"value":"lawyer","count":1}],"count":1},{"key":"amenity","tags":[{"value":"notary","count":1}],"count":1}]

@@ -1,13 +1,1 @@
-[
-  {
-    "key": "facebook",
-    "tags": [{"value": "PONEY-Village-276844152460657", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "leisure",
-    "tags": [{"value": "horse_rider", "count": 1}],
-    "count": 1
-  },
-  {"key": "sport", "tags": [{"value": "equestrian", "count": 1}], "count": 1}
-]
+[{"key":"facebook","tags":[{"value":"PONEY-Village-276844152460657","count":1}],"count":1},{"key":"leisure","tags":[{"value":"horse_rider","count":1}],"count":1},{"key":"sport","tags":[{"value":"equestrian","count":1}],"count":1}]

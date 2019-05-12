@@ -1,7 +1,1 @@
-[
-  {
-    "key": "craft",
-    "tags": [{"value": "chimney_sweeper", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"chimney_sweeper","count":5}],"count":5},{"key":"shop","tags":[{"value":"stove","count":1}],"count":1}]

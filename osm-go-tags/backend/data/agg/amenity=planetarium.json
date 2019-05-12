@@ -1,18 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "planetarium", "count": 3}],
-    "count": 3
-  },
-  {
-    "key": "wikipedia",
-    "tags": [{"value": "fr:Planétarium de Saint-Étienne", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.planetariumvv.com/", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"planetarium","count":18}],"count":18},{"key":"website","tags":[{"value":"https://www.espace-sciences.org/planetarium","count":1},{"value":"https://www.astrobasque.com/","count":1},{"value":"https://www.nantes.fr/le-planetarium","count":1},{"value":"https://sites.google.com/site/belfortastronomie/accueil","count":1},{"value":"http://www.planetarium-bretagne.fr","count":1},{"value":"http://www.planetariumvv.com/","count":1},{"value":"https://vegadelalyre.fr/","count":1}],"count":7},{"key":"wheelchair","tags":[{"value":"yes","count":6}],"count":6},{"key":"tourism","tags":[{"value":"attraction","count":3},{"value":"museum","count":1}],"count":4},{"key":"operator","tags":[{"value":"Société Astronomique de Touraine","count":1},{"value":"Société d'Astronomie Populaire de la Côte Basque","count":1},{"value":"Espace Mendès France","count":1}],"count":3},{"key":"phone","tags":[{"value":"+33 6 19 79 45 73","count":1},{"value":"+33 2 96 15 80 30","count":1},{"value":"+33 5 57 74 81 00","count":1}],"count":3},{"key":"wikipedia","tags":[{"value":"fr:Espace des sciences","count":1},{"value":"fr:Planétarium de Nantes","count":1},{"value":"fr:Planétarium de Saint-Étienne","count":1}],"count":3},{"key":"email","tags":[{"value":"animation@astrobasque.com","count":1},{"value":"vega.lyre.vayres@gmail.com","count":1}],"count":2},{"key":"wikidata","tags":[{"value":"Q3058190","count":1},{"value":"Q585479","count":1}],"count":2},{"key":"level","tags":[{"value":"0","count":2}],"count":2},{"key":"entrance","tags":[{"value":"main","count":1}],"count":1},{"key":"height","tags":[{"value":"12","count":1}],"count":1},{"key":"wheelchair:description","tags":[{"value":"Accessible mais attention tout de même il vaut mieux maîtriser sa conduite certains passages sont assez étroits surtout avec la foule.","count":1}],"count":1},{"key":"description","tags":[{"value":"Salle de spectacles avec scène centrale et images à 360 degrés ; plusieurs séances d'1h, tous les jours.","count":1}],"count":1}]

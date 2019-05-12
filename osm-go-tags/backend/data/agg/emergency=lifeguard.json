@@ -1,14 +1,1 @@
-[
-  {
-    "key": "emergency",
-    "tags": [{"value": "lifeguard", "count": 15}],
-    "count": 15
-  },
-  {"key": "operator", "tags": [{"value": "SNSM", "count": 3}], "count": 3},
-  {
-    "key": "emergency_service",
-    "tags": [{"value": "water", "count": 1}],
-    "count": 1
-  },
-  {"key": "ref", "tags": [{"value": "SNSM", "count": 1}], "count": 1}
-]
+[{"key":"emergency","tags":[{"value":"lifeguard","count":27}],"count":27},{"key":"operator","tags":[{"value":"SNSM","count":3}],"count":3},{"key":"ref","tags":[{"value":"7","count":1},{"value":"SNSM","count":1}],"count":2},{"key":"emergency_service","tags":[{"value":"water","count":1}],"count":1}]

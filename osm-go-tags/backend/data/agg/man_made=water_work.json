@@ -1,4 +1,1 @@
-[
-  {"key": "landuse", "tags": [{"value": "reservoir", "count": 1}], "count": 1},
-  {"key": "man_made", "tags": [{"value": "water_work", "count": 1}], "count": 1}
-]
+[{"key":"landuse","tags":[{"value":"reservoir","count":1}],"count":1},{"key":"man_made","tags":[{"value":"water_work","count":1}],"count":1}]

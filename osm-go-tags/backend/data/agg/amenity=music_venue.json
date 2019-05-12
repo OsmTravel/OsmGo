@@ -1,12 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "music_venue", "count": 2}],
-    "count": 2
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.marchegare.fr/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"music_venue","count":20}],"count":20},{"key":"website","tags":[{"value":"http://supersonic-club.fr/","count":1},{"value":"http://www.lemandala.com/","count":1},{"value":"http://aeronef.fr/","count":1},{"value":"http://www.citemusique-marseille.com/salle/la-cave/","count":1},{"value":"http://www.laseinemusicale.com","count":1}],"count":5},{"key":"operator","tags":[{"value":"Artefact PRL","count":1},{"value":"Grand Paris Sud Evry Sud Essonne","count":1},{"value":"Musique de nuit","count":1}],"count":3},{"key":"wheelchair","tags":[{"value":"yes","count":2}],"count":2},{"key":"description","tags":[{"value":"Salle de concert : Le ZINOR","count":1},{"value":"salle de concert, de spectacles, de conférences","count":1}],"count":2},{"key":"smoking","tags":[{"value":"isolated","count":1}],"count":1},{"key":"music_genre","tags":[{"value":"jazz","count":1}],"count":1},{"key":"outdoor_seating","tags":[{"value":"yes","count":1}],"count":1},{"key":"shop","tags":[{"value":"music","count":1}],"count":1},{"key":"start_date","tags":[{"value":"2016-01","count":1}],"count":1},{"key":"internet_access","tags":[{"value":"yes","count":1}],"count":1},{"key":"capacity","tags":[{"value":"250, 650 et 1200 places","count":1}],"count":1},{"key":"height","tags":[{"value":"17","count":1}],"count":1},{"key":"leisure","tags":[{"value":"social_club","count":1}],"count":1},{"key":"training","tags":[{"value":"music","count":1}],"count":1},{"key":"email","tags":[{"value":"contact@laseinemusicale.com","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 1 74 34 53 54","count":1}],"count":1},{"key":"wikidata","tags":[{"value":"Q19944990","count":1}],"count":1},{"key":"wikipedia","tags":[{"value":"fr:La Seine Musicale","count":1}],"count":1},{"key":"type","tags":[{"value":"site","count":1}],"count":1},{"key":"office","tags":[{"value":"association","count":1}],"count":1}]

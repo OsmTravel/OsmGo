@@ -1,15 +1,1 @@
-[
-  {"key": "natural", "tags": [{"value": "shoal", "count": 5}], "count": 5},
-  {"key": "maxdraft", "tags": [{"value": "1", "count": 2}], "count": 2},
-  {"key": "tidal", "tags": [{"value": "yes", "count": 2}], "count": 2},
-  {
-    "key": "note",
-    "tags": [
-      {
-        "value": "Profondeur exacte du haut fond inconnue, mais le nom laisse supposer qu'il y a peu...",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"natural","tags":[{"value":"shoal","count":13}],"count":13},{"key":"surface","tags":[{"value":"sand","count":5}],"count":5},{"key":"place","tags":[{"value":"islet","count":3}],"count":3},{"key":"tidal","tags":[{"value":"yes","count":3}],"count":3},{"key":"maxdraft","tags":[{"value":"1","count":2}],"count":2},{"key":"type","tags":[{"value":"multipolygon","count":2}],"count":2},{"key":"material","tags":[{"value":"sand","count":1}],"count":1},{"key":"water","tags":[{"value":"tidal","count":1}],"count":1},{"key":"note","tags":[{"value":"Profondeur exacte du haut fond inconnue, mais le nom laisse supposer qu'il y a peu...","count":1}],"count":1}]

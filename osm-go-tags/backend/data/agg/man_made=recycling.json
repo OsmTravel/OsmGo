@@ -1,5 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "recycling", "count": 1}], "count": 1},
-  {"key": "barrier", "tags": [{"value": "fence", "count": 1}], "count": 1},
-  {"key": "man_made", "tags": [{"value": "recycling", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"recycling","count":1}],"count":1},{"key":"barrier","tags":[{"value":"fence","count":1}],"count":1},{"key":"man_made","tags":[{"value":"recycling","count":1}],"count":1}]

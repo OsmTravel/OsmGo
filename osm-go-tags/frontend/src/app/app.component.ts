@@ -118,7 +118,7 @@ export class AppComponent implements OnInit {
     if (!statFinded || !statFinded[0]) {
       return 0;
     } else {
-      return ((statFinded[0]['count'] / this.tagsService.aggStats[key].sum) * 100).toFixed(2);
+      return ((statFinded[0]['count'] / this.tagsService.aggStats[key].sum) * 100).toFixed(3);
     }
   }
 

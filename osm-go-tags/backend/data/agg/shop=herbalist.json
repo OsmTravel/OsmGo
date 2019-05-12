@@ -1,15 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "herbalist", "count": 5}], "count": 5},
-  {"key": "description", "tags": [{"value": "Teas", "count": 1}], "count": 1},
-  {
-    "key": "survey:date",
-    "tags": [{"value": "2017-07-18", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 4 76 46 18 75", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"herbalist","count":43}],"count":43},{"key":"website","tags":[{"value":"https://www.herboristerie.com/","count":1},{"value":"www.hautdutot-plantes.com","count":1},{"value":"http://www.calebasse-verte.com","count":1},{"value":"https://www.naturhouse.fr/liste-centres/657-suresnes/","count":1},{"value":"http://lejardindemarianne.com/","count":1},{"value":"https://www.gaec-fermedubienetre.fr/","count":1},{"value":"https://www.herboristerie-larmignat.fr/shop2/","count":1},{"value":"http://www.herbiersouslarochette.com","count":1},{"value":"https://triangle-zen.fr/","count":1},{"value":"https://www.esprit-tisanes.fr","count":1},{"value":"https://www.metaldestrier.fr/lherboristerie-bio","count":1}],"count":11},{"key":"phone","tags":[{"value":"+33 3 55 56 20 75","count":1},{"value":"+33 3 29 61 40 85","count":1},{"value":"+33 4 76 46 18 75","count":1},{"value":"+33559301258","count":1},{"value":"+335 33 11 23 40","count":1},{"value":"+33 1 42975468","count":1},{"value":"+33549210828","count":1},{"value":"+33 3 84 47 38 85","count":1},{"value":"+33 6 87 15 26 66","count":1},{"value":"+33 6 95 72 29 79","count":1}],"count":10},{"key":"email","tags":[{"value":"contact@hautdutot-plantes.com","count":1},{"value":"contact@lejardindemarianne.com","count":1},{"value":"herbiersouslarochette@orange.fr","count":1},{"value":"contact@esprit-tisanes.fr","count":1},{"value":"contact@metaldestrier.fr","count":1}],"count":5},{"key":"amenity","tags":[{"value":"pharmacy","count":4},{"value":"cafe","count":1}],"count":5},{"key":"organic","tags":[{"value":"yes","count":2},{"value":"limited","count":1},{"value":"only","count":1}],"count":4},{"key":"ref:FR:FINESS","tags":[{"value":"310007125","count":1},{"value":"440017044","count":1},{"value":"130011927","count":1},{"value":"630004620","count":1}],"count":4},{"key":"dispensing","tags":[{"value":"yes","count":4}],"count":4},{"key":"wheelchair","tags":[{"value":"no","count":2},{"value":"yes","count":1}],"count":3},{"key":"survey:date","tags":[{"value":"2017-07-18","count":1},{"value":"2018-11-17","count":1}],"count":2},{"key":"description","tags":[{"value":"Teas","count":1},{"value":"Herboristerie bio","count":1}],"count":2},{"key":"brand","tags":[{"value":"Anton & Willem","count":1}],"count":1},{"key":"healthcare","tags":[{"value":"alternative","count":1}],"count":1},{"key":"healthcare:speciality","tags":[{"value":"dietitian","count":1}],"count":1},{"key":"craft","tags":[{"value":"distillery","count":1}],"count":1},{"key":"operator","tags":[{"value":"Thibaut Joliet et Marie Maisonneuve","count":1}],"count":1},{"key":"bulk_purchase","tags":[{"value":"yes","count":1}],"count":1}]

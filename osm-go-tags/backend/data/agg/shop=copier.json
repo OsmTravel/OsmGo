@@ -1,13 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "copier", "count": 1}], "count": 1},
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 2 51 40 69 67", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.matmond.eu/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"copier","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 2 51 40 69 67","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.matmond.eu/","count":1}],"count":1}]

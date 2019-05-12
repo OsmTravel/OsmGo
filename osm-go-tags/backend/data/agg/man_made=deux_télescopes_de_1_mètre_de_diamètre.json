@@ -1,12 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "deux_télescopes_de_1_mètre_de_diamètre", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "telescope:type",
-    "tags": [{"value": "infrared_interferometer", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"man_made","tags":[{"value":"deux_télescopes_de_1_mètre_de_diamètre","count":1}],"count":1},{"key":"telescope:type","tags":[{"value":"infrared_interferometer","count":1}],"count":1}]

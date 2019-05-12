@@ -1,4 +1,1 @@
-[
-  {"key": "closed", "tags": [{"value": "camp_site", "count": 1}], "count": 1},
-  {"key": "tourism", "tags": [{"value": "closed", "count": 1}], "count": 1}
-]
+[{"key":"closed","tags":[{"value":"camp_site","count":1}],"count":1},{"key":"tourism","tags":[{"value":"closed","count":1}],"count":1}]

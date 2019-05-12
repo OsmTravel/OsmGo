@@ -1,17 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "bridge_pier", "count": 3}],
-    "count": 3
-  },
-  {
-    "key": "note",
-    "tags": [
-      {
-        "value": "the new bridge has just one bridge pier instead of the two of the old bridge",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"man_made","tags":[{"value":"bridge_pier","count":3}],"count":3},{"key":"note","tags":[{"value":"the new bridge has just one bridge pier instead of the two of the old bridge","count":1}],"count":1}]

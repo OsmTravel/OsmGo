@@ -1,11 +1,1 @@
-[
-  {"key": "bench", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {"key": "highway", "tags": [{"value": "bus_stop", "count": 1}], "count": 1},
-  {
-    "key": "official_status",
-    "tags": [{"value": "unofficial", "count": 1}],
-    "count": 1
-  },
-  {"key": "public_transport", "tags": [{"value": "", "count": 1}], "count": 1},
-  {"key": "shelter", "tags": [{"value": "", "count": 1}], "count": 1}
-]
+[{"key":"bench","tags":[{"value":"no","count":1}],"count":1},{"key":"highway","tags":[{"value":"bus_stop","count":1}],"count":1},{"key":"official_status","tags":[{"value":"unofficial","count":1}],"count":1},{"key":"public_transport","tags":[{"value":"","count":1}],"count":1},{"key":"shelter","tags":[{"value":"","count":1}],"count":1}]

@@ -1,16 +1,1 @@
-[
-  {
-    "key": "FIXME",
-    "tags": [{"value": "position_estimated", "count": 1}],
-    "count": 1
-  },
-  {"key": "layer", "tags": [{"value": "0", "count": 1}], "count": 1},
-  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
-  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "barrier", "tags": [{"value": "block", "count": 1}], "count": 1},
-  {
-    "key": "advertising",
-    "tags": [{"value": "sculpture", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"advertising","tags":[{"value":"sculpture","count":1}],"count":1},{"key":"barrier","tags":[{"value":"block","count":1}],"count":1},{"key":"FIXME","tags":[{"value":"position_estimated","count":1}],"count":1},{"key":"indoor","tags":[{"value":"yes","count":1}],"count":1},{"key":"layer","tags":[{"value":"0","count":1}],"count":1}]

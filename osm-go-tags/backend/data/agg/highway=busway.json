@@ -1,13 +1,1 @@
-[
-  {"key": "access", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {"key": "bicycle", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {
-    "key": "cycleway:right",
-    "tags": [{"value": "share_busway", "count": 1}],
-    "count": 1
-  },
-  {"key": "highway", "tags": [{"value": "busway", "count": 1}], "count": 1},
-  {"key": "oneway", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "psv", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "surface", "tags": [{"value": "asphalt", "count": 1}], "count": 1}
-]
+[{"key":"highway","tags":[{"value":"busway","count":8}],"count":8},{"key":"oneway","tags":[{"value":"yes","count":6},{"value":"no","count":1}],"count":7},{"key":"service","tags":[{"value":"parking_aisle","count":3},{"value":"driveway","count":2}],"count":5},{"key":"busway","tags":[{"value":"yes","count":2},{"value":"highway","count":2},{"value":"lane","count":1}],"count":5},{"key":"psv","tags":[{"value":"bus","count":4}],"count":4},{"key":"motor_vehicle","tags":[{"value":"bus","count":2},{"value":"no","count":1}],"count":3},{"key":"bicycle","tags":[{"value":"no","count":1}],"count":1},{"key":"foot","tags":[{"value":"yes","count":1}],"count":1},{"key":"horse","tags":[{"value":"no","count":1}],"count":1},{"key":"maxspeed","tags":[{"value":"50","count":1}],"count":1},{"key":"surface","tags":[{"value":"asphalt","count":1}],"count":1}]

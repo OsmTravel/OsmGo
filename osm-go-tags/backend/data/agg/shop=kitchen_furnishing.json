@@ -1,12 +1,1 @@
-[
-  {
-    "key": "shop",
-    "tags": [{"value": "kitchen_furnishing", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "operator",
-    "tags": [{"value": "Villeroy & Boch", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"kitchen_furnishing","count":1}],"count":1},{"key":"operator","tags":[{"value":"Villeroy & Boch","count":1}],"count":1}]

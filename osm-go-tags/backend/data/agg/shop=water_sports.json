@@ -1,13 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "water_sports", "count": 9}], "count": 9},
-  {
-    "key": "operator",
-    "tags": [{"value": "Traversaz Jean Marie", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.koralp.com/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"water_sports","count":39}],"count":39},{"key":"website","tags":[{"value":"http://www.surf-longboard.com/","count":1},{"value":"https://www.grossiste-fete.fr/","count":1},{"value":"https://www.koralp.com/","count":1},{"value":"https://piscines-hydrosud.fr/","count":1},{"value":"http://vieux-boucau.ecoledesurf.com","count":1},{"value":"https://www.side-shore.com/","count":1},{"value":"https://www.bekayak.com/","count":1},{"value":"http://www.swelladdiction.com/","count":1},{"value":"https://www.loisirs3000.fr/","count":1},{"value":"http://bazantaycreation.fr","count":1}],"count":10},{"key":"phone","tags":[{"value":"+33 1 48 33 29 29","count":1},{"value":"+33 4 90 94 96 14","count":1},{"value":"+33 6 81 91 56 10","count":1},{"value":"+33 2 98 34 19 61","count":1},{"value":"+33 2 30 30 03 36","count":1},{"value":"+33 247 53 60 53","count":1}],"count":6},{"key":"operator","tags":[{"value":"http://www.pacific-palissades.com/","count":1},{"value":"Traversaz Jean Marie","count":1},{"value":"Limoges Usinage Mécanique","count":1}],"count":3},{"key":"description","tags":[{"value":"Ecole de kite surf","count":1}],"count":1}]

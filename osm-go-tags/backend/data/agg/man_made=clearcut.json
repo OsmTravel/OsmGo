@@ -1,4 +1,1 @@
-[
-  {"key": "natural", "tags": [{"value": "scrub", "count": 1}], "count": 1},
-  {"key": "man_made", "tags": [{"value": "clearcut", "count": 1}], "count": 1}
-]
+[{"key":"man_made","tags":[{"value":"clearcut","count":62}],"count":62},{"key":"natural","tags":[{"value":"scrub","count":18},{"value":"heath","count":16}],"count":34},{"key":"leaf_type","tags":[{"value":"broadleaved","count":1},{"value":"needleleaved","count":1}],"count":2},{"key":"fixme","tags":[{"value":"didn't pay attention where it starts exactly, before or after the cavern.","count":1},{"value":"zone perimeter to be enhanced","count":1}],"count":2},{"key":"leaf_cycle","tags":[{"value":"evergreen","count":1}],"count":1},{"key":"type","tags":[{"value":"multipolygon","count":1}],"count":1}]

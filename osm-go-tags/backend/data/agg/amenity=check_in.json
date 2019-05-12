@@ -1,5 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "check_in", "count": 12}], "count": 12},
-  {"key": "indoor", "tags": [{"value": "area", "count": 12}], "count": 12},
-  {"key": "level", "tags": [{"value": "1", "count": 12}], "count": 12}
-]
+[{"key":"amenity","tags":[{"value":"check_in","count":12}],"count":12},{"key":"indoor","tags":[{"value":"area","count":12}],"count":12},{"key":"level","tags":[{"value":"1","count":12}],"count":12}]

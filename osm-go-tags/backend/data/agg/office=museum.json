@@ -1,13 +1,1 @@
-[
-  {
-    "key": "description",
-    "tags": [
-      {
-        "value": "Accueil - Communication - Services aux publics - Direction - Conservation - Administration",
-        "count": 1
-      }
-    ],
-    "count": 1
-  },
-  {"key": "office", "tags": [{"value": "museum", "count": 1}], "count": 1}
-]
+[{"key":"description","tags":[{"value":"Accueil - Communication - Services aux publics - Direction - Conservation - Administration","count":1}],"count":1},{"key":"office","tags":[{"value":"museum","count":1}],"count":1}]

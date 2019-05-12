@@ -1,10 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "baby_hatch", "count": 6}], "count": 6},
-  {
-    "key": "operator",
-    "tags": [
-      {"value": "Centre d'Action Médico-Sociale Précoce (CAMSP)", "count": 1}
-    ],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"baby_hatch","count":6}],"count":6},{"key":"operator","tags":[{"value":"Centre d'Action Médico-Sociale Précoce (CAMSP)","count":1}],"count":1}]

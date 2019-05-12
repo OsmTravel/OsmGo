@@ -1,12 +1,1 @@
-[
-  {
-    "key": "healthcare",
-    "tags": [{"value": "Clinique", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 1 30 11 52 56", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"healthcare","tags":[{"value":"Clinique","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 1 30 11 52 56","count":1}],"count":1}]

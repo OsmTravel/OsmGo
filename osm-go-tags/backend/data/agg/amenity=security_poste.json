@@ -1,8 +1,1 @@
-[
-  {"key": "type", "tags": [{"value": "secours", "count": 1}], "count": 1},
-  {
-    "key": "amenity",
-    "tags": [{"value": "security_poste", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"type","tags":[{"value":"secours","count":1}],"count":1},{"key":"amenity","tags":[{"value":"security_poste","count":1}],"count":1}]

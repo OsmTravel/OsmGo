@@ -1,16 +1,1 @@
-[
-  {"key": "depth", "tags": [{"value": "65", "count": 1}], "count": 1},
-  {"key": "barrier", "tags": [{"value": "wall", "count": 1}], "count": 1},
-  {"key": "diameter", "tags": [{"value": "57", "count": 1}], "count": 1},
-  {
-    "key": "man_made",
-    "tags": [{"value": "ventilation_shaft", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "wikipedia",
-    "tags": [{"value": "fr:Puits de Sangatte", "count": 1}],
-    "count": 1
-  },
-  {"key": "start_date", "tags": [{"value": "1987", "count": 1}], "count": 1}
-]
+[{"key":"man_made","tags":[{"value":"ventilation_shaft","count":2}],"count":2},{"key":"depth","tags":[{"value":"65","count":1}],"count":1},{"key":"barrier","tags":[{"value":"wall","count":1}],"count":1},{"key":"diameter","tags":[{"value":"57","count":1}],"count":1},{"key":"wikipedia","tags":[{"value":"fr:Puits de Sangatte","count":1}],"count":1},{"key":"start_date","tags":[{"value":"1987","count":1}],"count":1},{"key":"level","tags":[{"value":"0;1","count":1}],"count":1}]

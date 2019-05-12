@@ -1,12 +1,1 @@
-[
-  {"key": "advertising", "tags": [{"value": "lboard", "count": 1}], "count": 1},
-  {"key": "animated", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {
-    "key": "legal_type",
-    "tags": [{"value": "associations", "count": 1}],
-    "count": 1
-  },
-  {"key": "lit", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {"key": "luminus", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {"key": "sides", "tags": [{"value": "1", "count": 1}], "count": 1}
-]
+[{"key":"advertising","tags":[{"value":"lboard","count":6}],"count":6},{"key":"tourism","tags":[{"value":"information","count":5}],"count":5},{"key":"information","tags":[{"value":"board","count":5}],"count":5},{"key":"website","tags":[{"value":"http://www.domainesud.fr/","count":2},{"value":"https://www.labellevigne.com/","count":1}],"count":3},{"key":"phone","tags":[{"value":"+33467667089","count":1},{"value":"+33616556507","count":1}],"count":2},{"key":"description","tags":[{"value":"Panneau d'affichage fixe","count":1}],"count":1},{"key":"board_type","tags":[{"value":"notice","count":1}],"count":1},{"key":"animated","tags":[{"value":"no","count":1}],"count":1},{"key":"legal_type","tags":[{"value":"associations","count":1}],"count":1},{"key":"lit","tags":[{"value":"no","count":1}],"count":1},{"key":"luminous","tags":[{"value":"no","count":1}],"count":1},{"key":"sides","tags":[{"value":"1","count":1}],"count":1}]

@@ -1,7 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "standing_stone", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"historic","tags":[{"value":"standing_stone","count":1}],"count":1}]

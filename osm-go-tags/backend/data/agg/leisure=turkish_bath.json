@@ -1,8 +1,1 @@
-[
-  {"key": "female", "tags": [{"value": "only", "count": 1}], "count": 1},
-  {
-    "key": "leisure",
-    "tags": [{"value": "turkish_bath", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"leisure","tags":[{"value":"turkish_bath","count":20}],"count":20},{"key":"operator","tags":[{"value":"La Compagnie des Thermes - Plombières-les-Bains","count":7},{"value":"El Houdaigui Lahibib","count":1}],"count":8},{"key":"wikidata","tags":[{"value":"Q22997857","count":1},{"value":"Q803871","count":1},{"value":"Q22997858","count":1}],"count":3},{"key":"website","tags":[{"value":"https://www.hammam-medina.com/","count":1},{"value":"http://www.soleil-de-lorient.com","count":1},{"value":"http://www.hammam-lesbainsdelorient-77.fr","count":1}],"count":3},{"key":"ref:mhs","tags":[{"value":"PA88000029","count":1},{"value":"PA88000028","count":1},{"value":"PA88000030","count":1}],"count":3},{"key":"mhs:inscription_date","tags":[{"value":"2001-04-10","count":2},{"value":"2001","count":1}],"count":3},{"key":"heritage","tags":[{"value":"3","count":3}],"count":3},{"key":"heritage:operator","tags":[{"value":"mhs","count":3}],"count":3},{"key":"phone","tags":[{"value":"+33 1 42 94 84 40","count":1},{"value":"+33 1 64 32 71 67","count":1}],"count":2},{"key":"url","tags":[{"value":"http://www.lorientespace.fr/","count":1}],"count":1},{"key":"female","tags":[{"value":"only","count":1}],"count":1},{"key":"location","tags":[{"value":"underground","count":1}],"count":1},{"key":"level","tags":[{"value":"0","count":1}],"count":1},{"key":"shop","tags":[{"value":"beauty","count":1}],"count":1},{"key":"start_date","tags":[{"value":"1772","count":1}],"count":1},{"key":"email","tags":[{"value":"lesbainsdelorient77@gmail.com","count":1}],"count":1}]

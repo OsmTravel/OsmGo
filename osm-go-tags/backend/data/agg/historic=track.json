@@ -1,16 +1,1 @@
-[
-  {"key": "historic", "tags": [{"value": "track", "count": 5}], "count": 5},
-  {
-    "key": "highway",
-    "tags": [
-      {"value": "unclassified", "count": 1},
-      {"value": "track", "count": 1},
-      {"value": "residential", "count": 1},
-      {"value": "path", "count": 1}
-    ],
-    "count": 4
-  },
-  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
-  {"key": "tracktype", "tags": [{"value": "grade2", "count": 1}], "count": 1},
-  {"key": "oneway", "tags": [{"value": "no", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"track","count":5}],"count":5},{"key":"highway","tags":[{"value":"unclassified","count":1},{"value":"track","count":1},{"value":"residential","count":1},{"value":"path","count":1}],"count":4},{"key":"access","tags":[{"value":"private","count":1}],"count":1},{"key":"tracktype","tags":[{"value":"grade2","count":1}],"count":1},{"key":"oneway","tags":[{"value":"no","count":1}],"count":1}]

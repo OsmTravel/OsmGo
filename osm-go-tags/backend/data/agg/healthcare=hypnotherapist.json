@@ -1,7 +1,1 @@
-[
-  {
-    "key": "healthcare",
-    "tags": [{"value": "hypnotherapist", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"healthcare","tags":[{"value":"hypnotherapist","count":3}],"count":3}]

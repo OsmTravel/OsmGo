@@ -1,13 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "language_school", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.wallstreetinstitute.fr", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"language_school","count":28}],"count":28},{"key":"website","tags":[{"value":"http://www.wallstreetinstitute.fr","count":3},{"value":"https://nnformationanglais.fr","count":1},{"value":"https://wallstreetenglish.fr/ecoles/cours-anglais-montpellier/","count":1},{"value":"http://www.ecoleopenworld.com/","count":1},{"value":"https://www.cavilam.com/","count":1},{"value":"http://www.skolanemsav.bzh/","count":1},{"value":"https://www.westmill.net/","count":1},{"value":"https://comenfrance.net/","count":1},{"value":"http://www.eife2f.com/","count":1}],"count":11},{"key":"language:fr","tags":[{"value":"yes","count":3},{"value":"main","count":3}],"count":6},{"key":"language:en","tags":[{"value":"main","count":4},{"value":"yes","count":1}],"count":5},{"key":"operator","tags":[{"value":"nadia","count":1},{"value":"Wall Street English","count":1},{"value":"Diaconnat","count":1},{"value":"Villenave-d'Ornon","count":1},{"value":"AEK","count":1}],"count":5},{"key":"phone","tags":[{"value":"+33 1 86 65 06 13","count":1},{"value":"+33 1 39 54 51 74","count":1},{"value":"+33 4 70 30 83 83","count":1},{"value":"+33 1 56 43 37 00","count":1},{"value":"+33 4 78 39 04 88","count":1}],"count":5},{"key":"wheelchair","tags":[{"value":"yes","count":3}],"count":3},{"key":"operator:type","tags":[{"value":"public","count":1},{"value":"private","count":1}],"count":2},{"key":"language:es","tags":[{"value":"yes","count":2}],"count":2},{"key":"language:br","tags":[{"value":"main","count":1}],"count":1},{"key":"office","tags":[{"value":"association","count":1}],"count":1},{"key":"email","tags":[{"value":"n.rodrigue@nnenglishsolutions.fr","count":1}],"count":1},{"key":"wikipedia","tags":[{"value":"fr:Skol an Emsav","count":1}],"count":1},{"key":"access","tags":[{"value":"customers","count":1}],"count":1},{"key":"language:de","tags":[{"value":"yes","count":1}],"count":1},{"key":"language:eu","tags":[{"value":"yes","count":1}],"count":1},{"key":"language:it","tags":[{"value":"yes","count":1}],"count":1},{"key":"language:pt","tags":[{"value":"yes","count":1}],"count":1},{"key":"language:zh","tags":[{"value":"yes","count":1}],"count":1},{"key":"level","tags":[{"value":"2","count":1}],"count":1},{"key":"wikimedia_commons","tags":[{"value":"File:Plaque de l'école interculturelle située Grande Rue des feuillants à Lyon.jpg","count":1}],"count":1},{"key":"wikidata","tags":[{"value":"Q3486349","count":1}],"count":1}]

@@ -1,16 +1,1 @@
-[
-  {
-    "key": "construction",
-    "tags": [{"value": "stop_position", "count": 5}],
-    "count": 5
-  },
-  {
-    "key": "public_transport",
-    "tags": [{"value": "construction", "count": 5}],
-    "count": 5
-  },
-  {"key": "network", "tags": [{"value": "RATP", "count": 2}], "count": 2},
-  {"key": "operator", "tags": [{"value": "RATP", "count": 2}], "count": 2},
-  {"key": "ref", "tags": [{"value": "T3b", "count": 2}], "count": 2},
-  {"key": "tram", "tags": [{"value": "yes", "count": 2}], "count": 2}
-]
+[{"key":"public_transport","tags":[{"value":"construction","count":8}],"count":8},{"key":"railway","tags":[{"value":"construction","count":4},{"value":"stop","count":1}],"count":5},{"key":"subway","tags":[{"value":"yes","count":3}],"count":3},{"key":"construction","tags":[{"value":"stop_position","count":3}],"count":3},{"key":"level","tags":[{"value":"-4","count":2},{"value":"-6","count":1}],"count":3},{"key":"area","tags":[{"value":"yes","count":3}],"count":3},{"key":"description","tags":[{"value":"Extension de quai en cours d'aménagement (30/03/2019)","count":2}],"count":2},{"key":"surface","tags":[{"value":"unpaved","count":2}],"count":2},{"key":"location","tags":[{"value":"underground","count":2}],"count":2},{"key":"fixme","tags":[{"value":"A faire absorber par le quai utilisé une fois l'aménagement terminé.","count":2}],"count":2},{"key":"train","tags":[{"value":"yes","count":1}],"count":1},{"key":"layer","tags":[{"value":"-8","count":1}],"count":1},{"key":"opening_date","tags":[{"value":"2022","count":1}],"count":1},{"key":"construction:railway","tags":[{"value":"station","count":1}],"count":1},{"key":"network","tags":[{"value":"Métro de Paris;RATP","count":1}],"count":1},{"key":"operator","tags":[{"value":"RATP","count":1}],"count":1},{"key":"tram","tags":[{"value":"yes","count":1}],"count":1}]

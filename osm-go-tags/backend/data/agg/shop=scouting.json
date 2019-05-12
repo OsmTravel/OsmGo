@@ -1,13 +1,1 @@
-[
-  {
-    "key": "description",
-    "tags": [
-      {
-        "value": "Mainly sells scouting badges, uniforms and gadgets. Opening times differ, depending on time of the year and occupation of campsite",
-        "count": 1
-      }
-    ],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "scouting", "count": 1}], "count": 1}
-]
+[{"key":"description","tags":[{"value":"Mainly sells scouting badges, uniforms and gadgets. Opening times differ, depending on time of the year and occupation of campsite","count":1}],"count":1},{"key":"shop","tags":[{"value":"scouting","count":1}],"count":1}]

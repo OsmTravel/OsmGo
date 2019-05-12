@@ -1,7 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "protected_building", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"historic","tags":[{"value":"protected_building","count":1}],"count":1}]

@@ -1,8 +1,1 @@
-[
-  {"key": "ref", "tags": [{"value": "15", "count": 1}], "count": 1},
-  {
-    "key": "amenity",
-    "tags": [{"value": "train_station", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"train_station","count":1}],"count":1},{"key":"ref","tags":[{"value":"15","count":1}],"count":1}]

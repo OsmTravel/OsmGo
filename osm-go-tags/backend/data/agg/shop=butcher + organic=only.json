@@ -1,13 +1,1 @@
-[
-  {
-    "key": "shop",
-    "tags": [{"value": "butcher + organic=only", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "www.biotroisfrontieres.fr", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "no", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"butcher + organic=only","count":1}],"count":1},{"key":"website","tags":[{"value":"www.biotroisfrontieres.fr","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"no","count":1}],"count":1}]

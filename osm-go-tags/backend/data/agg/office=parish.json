@@ -1,4 +1,1 @@
-[
-  {"key": "office", "tags": [{"value": "parish", "count": 1}], "count": 1},
-  {"key": "phone", "tags": [{"value": "+33297935432", "count": 1}], "count": 1}
-]
+[{"key":"office","tags":[{"value":"parish","count":16}],"count":16},{"key":"phone","tags":[{"value":"+33297935432","count":1},{"value":"+33 2 97 74 07 05","count":1}],"count":2},{"key":"website","tags":[{"value":"https://www.paroisses-pays-ploermel.fr","count":1}],"count":1},{"key":"denomination","tags":[{"value":"catholic","count":1}],"count":1},{"key":"religion","tags":[{"value":"christian","count":1}],"count":1},{"key":"amenity","tags":[{"value":"rectory","count":1}],"count":1}]

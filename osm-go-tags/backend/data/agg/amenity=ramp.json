@@ -1,4 +1,1 @@
-[
-  {"key": "sport", "tags": [{"value": "water_ski", "count": 1}], "count": 1},
-  {"key": "amenity", "tags": [{"value": "ramp", "count": 1}], "count": 1}
-]
+[{"key":"sport","tags":[{"value":"water_ski","count":1}],"count":1},{"key":"amenity","tags":[{"value":"ramp","count":1}],"count":1}]

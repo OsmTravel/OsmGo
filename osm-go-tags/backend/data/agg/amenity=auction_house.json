@@ -1,9 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "auction_house", "count": 1}],
-    "count": 1
-  },
-  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "phone", "tags": [{"value": "+33147250087", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"auction_house","count":1}],"count":1},{"key":"area","tags":[{"value":"yes","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33147250087","count":1}],"count":1}]

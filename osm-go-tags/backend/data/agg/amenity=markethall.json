@@ -1,5 +1,1 @@
-[
-  {"key": "wall", "tags": [{"value": "no", "count": 1}], "count": 1},
-  {"key": "amenity", "tags": [{"value": "markethall", "count": 1}], "count": 1},
-  {"key": "historic", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"wall","tags":[{"value":"no","count":1}],"count":1},{"key":"amenity","tags":[{"value":"markethall","count":1}],"count":1},{"key":"historic","tags":[{"value":"yes","count":1}],"count":1}]

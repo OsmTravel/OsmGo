@@ -1,14 +1,1 @@
-[
-  {"key": "ruins", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {
-    "key": "amenity",
-    "tags": [{"value": "Plaster_factory", "count": 1}],
-    "count": 1
-  },
-  {"key": "disused", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {
-    "key": "historic",
-    "tags": [{"value": "archaeological_site", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"ruins","tags":[{"value":"yes","count":1}],"count":1},{"key":"amenity","tags":[{"value":"Plaster_factory","count":1}],"count":1},{"key":"disused","tags":[{"value":"yes","count":1}],"count":1},{"key":"historic","tags":[{"value":"archaeological_site","count":1}],"count":1}]

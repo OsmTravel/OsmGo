@@ -1,4 +1,1 @@
-[
-  {"key": "sport", "tags": [{"value": "bmx", "count": 1}], "count": 1},
-  {"key": "leisure", "tags": [{"value": "*", "count": 1}], "count": 1}
-]
+[{"key":"sport","tags":[{"value":"bmx","count":1}],"count":1},{"key":"leisure","tags":[{"value":"*","count":1}],"count":1}]

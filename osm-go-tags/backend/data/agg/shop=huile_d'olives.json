@@ -1,17 +1,1 @@
-[
-  {
-    "key": "operator",
-    "tags": [{"value": "Domaine de Pierredon", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "shop",
-    "tags": [{"value": "huile_d'olives", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.moulin-pierredon.com/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"operator","tags":[{"value":"Domaine de Pierredon","count":1}],"count":1},{"key":"shop","tags":[{"value":"huile_d'olives","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.moulin-pierredon.com/","count":1}],"count":1}]

@@ -1,4 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "brickwork", "count": 1}], "count": 1},
-  {"key": "landuse", "tags": [{"value": "industrial", "count": 1}], "count": 1}
-]
+[{"key":"craft","tags":[{"value":"brickwork","count":1}],"count":1},{"key":"landuse","tags":[{"value":"industrial","count":1}],"count":1}]

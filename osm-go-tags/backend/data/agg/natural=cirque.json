@@ -1,4 +1,1 @@
-[
-  {"key": "natural", "tags": [{"value": "cirque", "count": 1}], "count": 1},
-  {"key": "wikidata", "tags": [{"value": "Q2974265", "count": 1}], "count": 1}
-]
+[{"key":"natural","tags":[{"value":"cirque","count":3}],"count":3},{"key":"wikidata","tags":[{"value":"Q2974265","count":1}],"count":1},{"key":"type","tags":[{"value":"label","count":1}],"count":1}]

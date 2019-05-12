@@ -1,7 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "railway_car", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"historic","tags":[{"value":"railway_car","count":3}],"count":3}]

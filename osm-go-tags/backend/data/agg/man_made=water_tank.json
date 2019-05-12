@@ -1,1 +1,1 @@
-[{"key": "man_made", "tags": [{"value": "water_tank", "count": 7}], "count": 7}]
+[{"key":"man_made","tags":[{"value":"water_tank","count":74}],"count":74},{"key":"content","tags":[{"value":"water","count":4}],"count":4},{"key":"area","tags":[{"value":"yes","count":4}],"count":4},{"key":"height","tags":[{"value":"40","count":1}],"count":1},{"key":"emergency","tags":[{"value":"water_tank","count":1}],"count":1},{"key":"water","tags":[{"value":"reservoir","count":1}],"count":1},{"key":"landuse","tags":[{"value":"basin","count":1}],"count":1}]

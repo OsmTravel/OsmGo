@@ -1,13 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "device_charging_station", "count": 1}],
-    "count": 1
-  },
-  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {
-    "key": "socket:device:USB-A",
-    "tags": [{"value": "yes", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"device_charging_station","count":1}],"count":1},{"key":"indoor","tags":[{"value":"yes","count":1}],"count":1},{"key":"socket:device:USB-A","tags":[{"value":"yes","count":1}],"count":1}]

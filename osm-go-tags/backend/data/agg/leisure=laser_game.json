@@ -1,13 +1,1 @@
-[
-  {"key": "leisure", "tags": [{"value": "laser_game", "count": 2}], "count": 2},
-  {
-    "key": "website",
-    "tags": [
-      {
-        "value": "https://www.facebook.com/Dark-laser-game-1078476962185247/",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"leisure","tags":[{"value":"laser_game","count":15}],"count":15},{"key":"website","tags":[{"value":"http://www.lasergame-evolution.com/","count":1},{"value":"https://dinard.laserquest.fr/","count":1},{"value":"https://www.cybergame-beauchamp.fr/","count":1},{"value":"https://www.lasergame-evolution.com/fr/clermont-ferrand/","count":1},{"value":"https://www.facebook.com/Dark-laser-game-1078476962185247/","count":1},{"value":"http://www.lasergame-evolution.com/fr/38/Saint-Nazaire/","count":1}],"count":6},{"key":"phone","tags":[{"value":"+33 5 58 47 56 16","count":1},{"value":"+33 2 40 900 900","count":1}],"count":2},{"key":"sport","tags":[{"value":"laser_tag","count":1},{"value":"shooting","count":1}],"count":2},{"key":"room","tags":[{"value":"leisure","count":1}],"count":1},{"key":"level","tags":[{"value":"1","count":1}],"count":1}]

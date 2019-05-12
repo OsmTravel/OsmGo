@@ -1,18 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "turner", "count": 4}], "count": 4},
-  {
-    "key": "ref:FR:SIRET",
-    "tags": [{"value": "42058743800029", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 553 656 323", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://mzr85.fr/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"turner","count":10}],"count":10},{"key":"phone","tags":[{"value":"+33 553 656 323","count":1},{"value":"+33 4 74 71 63 56","count":1},{"value":"+33 3 84 25 80 89","count":1}],"count":3},{"key":"ref:FR:SIRET","tags":[{"value":"42058743800029","count":1},{"value":"51490912600013","count":1},{"value":"33351432100020","count":1}],"count":3},{"key":"website","tags":[{"value":"http://jeanlouis-fayolle-sculpteur.fr/","count":1},{"value":"http://www.ets-buffet.fr","count":1},{"value":"http://mzr85.fr/","count":1}],"count":3},{"key":"heritage:operator","tags":[{"value":"mhs","count":1}],"count":1},{"key":"type","tags":[{"value":"multipolygon","count":1}],"count":1},{"key":"ref:mhs","tags":[{"value":"PA39000124","count":1}],"count":1},{"key":"heritage","tags":[{"value":"3","count":1}],"count":1},{"key":"email","tags":[{"value":"pnrichard@wanadoo.fr","count":1}],"count":1},{"key":"ref","tags":[{"value":"43980255400014","count":1}],"count":1},{"key":"mhs:inscription_date","tags":[{"value":"2015-12-18","count":1}],"count":1}]

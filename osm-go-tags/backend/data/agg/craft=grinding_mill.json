@@ -1,1 +1,1 @@
-[{"key": "craft", "tags": [{"value": "grinding_mill", "count": 1}], "count": 1}]
+[{"key":"craft","tags":[{"value":"grinding_mill","count":3}],"count":3},{"key":"grinding_mill","tags":[{"value":"apple_mill","count":2}],"count":2},{"key":"grinding_mill:FR","tags":[{"value":"gadage","count":2}],"count":2},{"key":"historic","tags":[{"value":"yes","count":2}],"count":2},{"key":"product","tags":[{"value":"juice","count":2}],"count":2}]

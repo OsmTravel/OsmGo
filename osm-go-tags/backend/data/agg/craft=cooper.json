@@ -1,8 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "cooper", "count": 1}], "count": 1},
-  {
-    "key": "ref:FR:SIRET",
-    "tags": [{"value": "90592001300042", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"cooper","count":1}],"count":1},{"key":"ref:FR:SIRET","tags":[{"value":"90592001300042","count":1}],"count":1}]

@@ -1,15 +1,1 @@
-[
-  {
-    "key": "leisure",
-    "tags": [{"value": "high_ropes_course", "count": 3}],
-    "count": 3
-  },
-  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "sport", "tags": [{"value": "climbing", "count": 1}], "count": 1},
-  {"key": "tourism", "tags": [{"value": "theme_park", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.sequoia-vertigo.com", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"leisure","tags":[{"value":"high_ropes_course","count":3}],"count":3},{"key":"area","tags":[{"value":"yes","count":1}],"count":1},{"key":"sport","tags":[{"value":"climbing","count":1}],"count":1},{"key":"tourism","tags":[{"value":"theme_park","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.sequoia-vertigo.com","count":1}],"count":1}]

@@ -1,8 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "cooling_tower", "count": 6}],
-    "count": 6
-  },
-  {"key": "height", "tags": [{"value": "128", "count": 4}], "count": 4}
-]
+[{"key":"man_made","tags":[{"value":"cooling_tower","count":37}],"count":37},{"key":"height","tags":[{"value":"165","count":4},{"value":"28","count":4},{"value":"166","count":4},{"value":"128","count":4},{"value":"100","count":2},{"value":"172","count":2},{"value":"179","count":2},{"value":"161","count":2},{"value":"180","count":2},{"value":"55","count":1}],"count":27},{"key":"operator","tags":[{"value":"EON","count":4},{"value":"SNET","count":1}],"count":5},{"key":"tower:type","tags":[{"value":"cooling","count":2}],"count":2},{"key":"type","tags":[{"value":"multipolygon","count":2}],"count":2},{"key":"start_date","tags":[{"value":"1971","count":1}],"count":1}]

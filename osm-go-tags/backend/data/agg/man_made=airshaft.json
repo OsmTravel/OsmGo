@@ -1,10 +1,1 @@
-[
-  {"key": "man_made", "tags": [{"value": "airshaft", "count": 4}], "count": 4},
-  {
-    "key": "image",
-    "tags": [
-      {"value": "http://www.flickr.com/photos/don-vip/5825627334/", "count": 1}
-    ],
-    "count": 1
-  }
-]
+[{"key":"man_made","tags":[{"value":"airshaft","count":4}],"count":4},{"key":"image","tags":[{"value":"http://www.flickr.com/photos/don-vip/5825627334/","count":1}],"count":1}]

@@ -1,8 +1,1 @@
-[
-  {"key": "office", "tags": [{"value": "fondation", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "https://www.raoul-follereau.org/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"fondation","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.raoul-follereau.org/","count":1}],"count":1}]

@@ -1,18 +1,1 @@
-[
-  {
-    "key": "craft",
-    "tags": [{"value": "stainless_Taler", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "description",
-    "tags": [{"value": "Maître verrier Vitraux et sablage", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "email",
-    "tags": [{"value": "gerald.franzetti@numericable.fr", "count": 1}],
-    "count": 1
-  },
-  {"key": "height", "tags": [{"value": "9 m", "count": 1}], "count": 1}
-]
+[{"key":"craft","tags":[{"value":"stainless_Taler","count":1}],"count":1},{"key":"description","tags":[{"value":"Maître verrier Vitraux et sablage","count":1}],"count":1},{"key":"email","tags":[{"value":"gerald.franzetti@numericable.fr","count":1}],"count":1},{"key":"height","tags":[{"value":"9 m","count":1}],"count":1}]

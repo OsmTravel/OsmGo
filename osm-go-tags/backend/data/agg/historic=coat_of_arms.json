@@ -1,16 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "coat_of_arms", "count": 3}],
-    "count": 3
-  },
-  {"key": "tourism", "tags": [{"value": "artwork", "count": 1}], "count": 1},
-  {"key": "start_date", "tags": [{"value": "2011", "count": 1}], "count": 1},
-  {"key": "artwork_type", "tags": [{"value": "stone", "count": 1}], "count": 1},
-  {
-    "key": "memorial:type",
-    "tags": [{"value": "stele", "count": 1}],
-    "count": 1
-  },
-  {"key": "direction", "tags": [{"value": "145", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"coat_of_arms","count":3}],"count":3},{"key":"tourism","tags":[{"value":"artwork","count":1}],"count":1},{"key":"start_date","tags":[{"value":"2011","count":1}],"count":1},{"key":"artwork_type","tags":[{"value":"stone","count":1}],"count":1},{"key":"memorial:type","tags":[{"value":"stele","count":1}],"count":1},{"key":"direction","tags":[{"value":"145","count":1}],"count":1}]

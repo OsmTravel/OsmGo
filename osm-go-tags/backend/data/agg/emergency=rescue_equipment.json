@@ -1,10 +1,1 @@
-[
-  {
-    "key": "emergency",
-    "tags": [{"value": "rescue_equipment", "count": 18}],
-    "count": 18
-  },
-  {"key": "highway", "tags": [{"value": "bus_stop", "count": 1}], "count": 1},
-  {"key": "network", "tags": [{"value": "TBK", "count": 1}], "count": 1},
-  {"key": "operator", "tags": [{"value": "TBK", "count": 1}], "count": 1}
-]
+[{"key":"emergency","tags":[{"value":"rescue_equipment","count":18}],"count":18},{"key":"highway","tags":[{"value":"bus_stop","count":1}],"count":1},{"key":"network","tags":[{"value":"TBK","count":1}],"count":1},{"key":"operator","tags":[{"value":"TBK","count":1}],"count":1}]

@@ -1,12 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "power:generator", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "description",
-    "tags": [{"value": "Bau 1949-1954; Abriss 1990", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"historic","tags":[{"value":"power:generator","count":1}],"count":1},{"key":"description","tags":[{"value":"Bau 1949-1954; Abriss 1990","count":1}],"count":1}]

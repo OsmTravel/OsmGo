@@ -1,7 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "social_facility=day_care", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"social_facility=day_care","count":1}],"count":1}]

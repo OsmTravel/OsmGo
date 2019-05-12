@@ -1,7 +1,1 @@
-[
-  {
-    "key": "leisure",
-    "tags": [{"value": "astronomical_observatory", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"leisure","tags":[{"value":"astronomical_observatory","count":1}],"count":1}]

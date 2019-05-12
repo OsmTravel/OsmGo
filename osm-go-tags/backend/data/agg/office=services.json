@@ -1,8 +1,1 @@
-[
-  {"key": "office", "tags": [{"value": "services", "count": 4}], "count": 4},
-  {
-    "key": "note",
-    "tags": [{"value": "Aide à domicile", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"services","count":3}],"count":3},{"key":"craft","tags":[{"value":"plumber","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 6 11 75 36 65","count":1}],"count":1}]

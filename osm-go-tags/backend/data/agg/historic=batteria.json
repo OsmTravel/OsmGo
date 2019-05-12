@@ -1,9 +1,1 @@
-[
-  {"key": "ele", "tags": [{"value": "2300", "count": 2}], "count": 2},
-  {"key": "historic", "tags": [{"value": "batteria", "count": 2}], "count": 2},
-  {
-    "key": "wikipedia",
-    "tags": [{"value": "it:Opere delle Quattro Sorelle", "count": 2}],
-    "count": 2
-  }
-]
+[{"key":"ele","tags":[{"value":"2300","count":2}],"count":2},{"key":"historic","tags":[{"value":"batteria","count":2}],"count":2},{"key":"wikipedia","tags":[{"value":"it:Opere delle Quattro Sorelle","count":2}],"count":2}]

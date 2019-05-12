@@ -1,7 +1,1 @@
-[
-  {
-    "key": "highway",
-    "tags": [{"value": "turning_loop", "count": 234}],
-    "count": 234
-  }
-]
+[{"key":"highway","tags":[{"value":"turning_loop","count":2189}],"count":2189},{"key":"noexit","tags":[{"value":"yes","count":6}],"count":6},{"key":"access","tags":[{"value":"private","count":3},{"value":"destination","count":3}],"count":6},{"key":"note","tags":[{"value":"bloc 01 _ N°001 à 009","count":1}],"count":1},{"key":"surface","tags":[{"value":"pebblestone","count":1}],"count":1},{"key":"junction","tags":[{"value":"roundabout","count":1}],"count":1},{"key":"crossing","tags":[{"value":"zebra","count":1}],"count":1},{"key":"natural","tags":[{"value":"tree","count":1}],"count":1}]

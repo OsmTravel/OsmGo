@@ -1,17 +1,1 @@
-[
-  {"key": "natural", "tags": [{"value": "peak", "count": 2}], "count": 2},
-  {
-    "key": "man_made",
-    "tags": [{"value": "summit_cross", "count": 2}],
-    "count": 2
-  },
-  {"key": "ele", "tags": [{"value": "1501", "count": 1}], "count": 1},
-  {"key": "ele:unknown", "tags": [{"value": "1718", "count": 1}], "count": 1},
-  {"key": "summit:cross", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "wikidata", "tags": [{"value": "Q1456446", "count": 1}], "count": 1},
-  {
-    "key": "wikipedia",
-    "tags": [{"value": "fr:Le Reculet", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"natural","tags":[{"value":"peak","count":2}],"count":2},{"key":"man_made","tags":[{"value":"summit_cross","count":2}],"count":2},{"key":"ele","tags":[{"value":"1501","count":1}],"count":1},{"key":"ele:unknown","tags":[{"value":"1718","count":1}],"count":1},{"key":"summit:cross","tags":[{"value":"yes","count":1}],"count":1},{"key":"wikidata","tags":[{"value":"Q1456446","count":1}],"count":1},{"key":"wikipedia","tags":[{"value":"fr:Le Reculet","count":1}],"count":1}]

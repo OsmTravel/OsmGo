@@ -1,4 +1,1 @@
-[
-  {"key": "man_made", "tags": [{"value": "pump", "count": 1}], "count": 1},
-  {"key": "pump", "tags": [{"value": "powered", "count": 1}], "count": 1}
-]
+[{"key":"man_made","tags":[{"value":"pump","count":1}],"count":1},{"key":"pump","tags":[{"value":"powered","count":1}],"count":1}]

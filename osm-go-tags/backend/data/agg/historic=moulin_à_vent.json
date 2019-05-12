@@ -1,8 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "moulin_à_vent", "count": 1}],
-    "count": 1
-  },
-  {"key": "inscription", "tags": [{"value": "non", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"moulin_à_vent","count":1}],"count":1},{"key":"inscription","tags":[{"value":"non","count":1}],"count":1}]

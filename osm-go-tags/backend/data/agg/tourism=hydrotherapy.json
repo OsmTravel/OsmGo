@@ -1,17 +1,1 @@
-[
-  {
-    "key": "image",
-    "tags": [
-      {
-        "value": "http://commons.wikimedia.org/wiki/File:Sulzbad.JPG",
-        "count": 1
-      }
-    ],
-    "count": 1
-  },
-  {
-    "key": "tourism",
-    "tags": [{"value": "hydrotherapy", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"image","tags":[{"value":"http://commons.wikimedia.org/wiki/File:Sulzbad.JPG","count":1}],"count":1},{"key":"tourism","tags":[{"value":"hydrotherapy","count":1}],"count":1}]

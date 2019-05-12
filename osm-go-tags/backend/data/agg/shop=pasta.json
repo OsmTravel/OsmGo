@@ -1,9 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "pasta", "count": 2}], "count": 2},
-  {"key": "cuisine", "tags": [{"value": "italian", "count": 1}], "count": 1},
-  {
-    "key": "description",
-    "tags": [{"value": "Pâtes fraiches. Spécialités italiennes", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"pasta","count":16}],"count":16},{"key":"email","tags":[{"value":"boiteapates-nantes@orange.fr","count":1},{"value":"pastandco@orange.fr","count":1}],"count":2},{"key":"phone","tags":[{"value":"+33 2 51 86 23 65","count":1},{"value":"+33 494 65 00 65","count":1}],"count":2},{"key":"website","tags":[{"value":"http://www.laboiteapates-nantes.fr","count":1},{"value":"http://pastandco-france.fr/","count":1}],"count":2},{"key":"cuisine","tags":[{"value":"italian","count":1}],"count":1},{"key":"description","tags":[{"value":"Pâtes fraiches. Spécialités italiennes","count":1}],"count":1},{"key":"origin","tags":[{"value":"mediterranean","count":1}],"count":1},{"key":"survey:date","tags":[{"value":"2019-03-20","count":1}],"count":1},{"key":"area","tags":[{"value":"yes","count":1}],"count":1},{"key":"indoor","tags":[{"value":"area","count":1}],"count":1}]

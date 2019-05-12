@@ -1,9 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "pancake", "count": 3}], "count": 3},
-  {"key": "amenity", "tags": [{"value": "restaurant", "count": 1}], "count": 1},
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 2 99 09 01 28", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"pancake","count":3}],"count":3},{"key":"amenity","tags":[{"value":"restaurant","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 2 99 09 01 28","count":1}],"count":1}]

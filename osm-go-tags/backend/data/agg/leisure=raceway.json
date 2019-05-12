@@ -1,4 +1,1 @@
-[
-  {"key": "leisure", "tags": [{"value": "raceway", "count": 1}], "count": 1},
-  {"key": "sport", "tags": [{"value": "motocross", "count": 1}], "count": 1}
-]
+[{"key":"leisure","tags":[{"value":"raceway","count":1}],"count":1},{"key":"sport","tags":[{"value":"motocross","count":1}],"count":1}]

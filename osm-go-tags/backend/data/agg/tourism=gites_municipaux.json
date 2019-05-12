@@ -1,8 +1,1 @@
-[
-  {"key": "operator", "tags": [{"value": "Mairie", "count": 1}], "count": 1},
-  {
-    "key": "tourism",
-    "tags": [{"value": "gites_municipaux", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"operator","tags":[{"value":"Mairie","count":1}],"count":1},{"key":"tourism","tags":[{"value":"gites_municipaux","count":1}],"count":1}]

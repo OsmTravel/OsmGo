@@ -1,4 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "view", "count": 4}], "count": 4},
-  {"key": "leisure", "tags": [{"value": "bird_hide", "count": 4}], "count": 4}
-]
+[{"key":"amenity","tags":[{"value":"view","count":4}],"count":4},{"key":"leisure","tags":[{"value":"bird_hide","count":4}],"count":4}]

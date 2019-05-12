@@ -1,8 +1,1 @@
-[
-  {"key": "sport", "tags": [{"value": "climbing", "count": 1}], "count": 1},
-  {
-    "key": "leisure",
-    "tags": [{"value": "Abseilstelle", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"sport","tags":[{"value":"climbing","count":1}],"count":1},{"key":"leisure","tags":[{"value":"Abseilstelle","count":1}],"count":1}]

@@ -1,12 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "feeding_point", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "description",
-    "tags": [{"value": "Distributeur de maïs pour sangliers", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"feeding_point","count":1}],"count":1},{"key":"description","tags":[{"value":"Distributeur de maïs pour sangliers","count":1}],"count":1}]

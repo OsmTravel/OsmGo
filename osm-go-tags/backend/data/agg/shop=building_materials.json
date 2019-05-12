@@ -1,8 +1,1 @@
-[
-  {
-    "key": "shop",
-    "tags": [{"value": "building_materials", "count": 3}],
-    "count": 3
-  },
-  {"key": "amenity", "tags": [{"value": "shop", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"building_materials","count":5}],"count":5},{"key":"amenity","tags":[{"value":"shop","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 2 54 35 03 24","count":1}],"count":1}]

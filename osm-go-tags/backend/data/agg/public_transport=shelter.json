@@ -1,7 +1,1 @@
-[
-  {
-    "key": "public_transport",
-    "tags": [{"value": "shelter", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"public_transport","tags":[{"value":"shelter","count":19}],"count":19},{"key":"bus","tags":[{"value":"yes","count":4}],"count":4},{"key":"highway","tags":[{"value":"bus_stop","count":2}],"count":2},{"key":"shelter","tags":[{"value":"yes","count":2}],"count":2},{"key":"amenity","tags":[{"value":"shelter","count":2}],"count":2},{"key":"wall","tags":[{"value":"no","count":1}],"count":1},{"key":"shelter_type","tags":[{"value":"public_transport","count":1}],"count":1}]

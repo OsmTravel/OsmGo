@@ -1,7 +1,1 @@
-[
-  {
-    "key": "office",
-    "tags": [{"value": "industrial_equipment", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"industrial_equipment","count":1}],"count":1}]

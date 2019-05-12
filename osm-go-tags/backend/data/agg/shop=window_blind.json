@@ -1,11 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "window_blind", "count": 5}], "count": 5},
-  {"key": "phone", "tags": [{"value": "+33478443591", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.boreal-verandas.com", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1},
-  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"window_blind","count":64}],"count":64},{"key":"website","tags":[{"value":"https://www.atplus.fr/","count":1},{"value":"https://www.komilfo.fr/","count":1},{"value":"https://www.boreal-verandas.com/","count":1},{"value":"http://www.lorraine-stores.fr/","count":1},{"value":"http://www.sinetyc.fr/nous-localiser/","count":1},{"value":"https://www.bplast.fr/agence/bplast-saint-malo/","count":1},{"value":"https://www.enderlin-stores.com","count":1},{"value":"https://www.monsieurstore.com/magasin/dijon-21300.html","count":1},{"value":"http://www.guermonprez.com/","count":1}],"count":9},{"key":"craft","tags":[{"value":"window_construction","count":7},{"value":"electrician","count":1}],"count":8},{"key":"phone","tags":[{"value":"+33467469232","count":1},{"value":"+33478443591","count":1},{"value":"+33 2 43 55 54 84","count":1},{"value":"+33 4 90 43 73 82","count":1},{"value":"+33 1.80.85.98.36","count":1},{"value":"+33 3 21 20 06 09","count":1},{"value":"+33 2 96 91 05 04","count":1},{"value":"+33320421920","count":1}],"count":8},{"key":"wheelchair","tags":[{"value":"no","count":2},{"value":"yes","count":1},{"value":"limited","count":1}],"count":4},{"key":"operator","tags":[{"value":"Coralie Bouchoucha","count":1},{"value":"Jean-Antoine Moueix","count":1},{"value":"Enderlin","count":1},{"value":"Le Volet Héninois","count":1}],"count":4},{"key":"fax","tags":[{"value":"+33478445366","count":1},{"value":"+33320421201","count":1}],"count":2},{"key":"email","tags":[{"value":"prohabitat75@gmail.com","count":1},{"value":"contact@guermonprez.com","count":1}],"count":2},{"key":"ref:FR:SIRET","tags":[{"value":"40752175600012","count":1}],"count":1},{"key":"description","tags":[{"value":"Cave à vin","count":1}],"count":1},{"key":"roof:shape","tags":[{"value":"flat","count":1}],"count":1}]

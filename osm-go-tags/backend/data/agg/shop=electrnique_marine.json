@@ -1,14 +1,1 @@
-[
-  {"key": "operator", "tags": [{"value": "AEMI Caen", "count": 1}], "count": 1},
-  {"key": "phone", "tags": [{"value": "+33321304949", "count": 1}], "count": 1},
-  {
-    "key": "shop",
-    "tags": [{"value": "electrnique_marine", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.aemi-marine.com/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"operator","tags":[{"value":"AEMI Caen","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33321304949","count":1}],"count":1},{"key":"shop","tags":[{"value":"electrnique_marine","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.aemi-marine.com/","count":1}],"count":1}]

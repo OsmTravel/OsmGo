@@ -1,9 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "waste_poop_dog", "count": 1}],
-    "count": 1
-  },
-  {"key": "colour", "tags": [{"value": "green", "count": 1}], "count": 1},
-  {"key": "covered", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"waste_poop_dog","count":1}],"count":1},{"key":"colour","tags":[{"value":"green","count":1}],"count":1},{"key":"covered","tags":[{"value":"yes","count":1}],"count":1}]

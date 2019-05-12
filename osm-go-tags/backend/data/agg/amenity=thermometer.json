@@ -1,15 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "thermometer", "count": 2}],
-    "count": 2
-  },
-  {"key": "access", "tags": [{"value": "private", "count": 1}], "count": 1},
-  {"key": "display", "tags": [{"value": "analog", "count": 1}], "count": 1},
-  {
-    "key": "support",
-    "tags": [{"value": "wall_mounted", "count": 1}],
-    "count": 1
-  },
-  {"key": "visibility", "tags": [{"value": "house", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"thermometer","count":2}],"count":2},{"key":"access","tags":[{"value":"private","count":1}],"count":1},{"key":"display","tags":[{"value":"analog","count":1}],"count":1},{"key":"support","tags":[{"value":"wall_mounted","count":1}],"count":1},{"key":"visibility","tags":[{"value":"house","count":1}],"count":1}]

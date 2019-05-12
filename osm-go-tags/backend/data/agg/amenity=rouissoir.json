@@ -1,5 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "rouissoir", "count": 3}], "count": 3},
-  {"key": "historic", "tags": [{"value": "ruins", "count": 3}], "count": 3},
-  {"key": "landuse", "tags": [{"value": "basin", "count": 3}], "count": 3}
-]
+[{"key":"amenity","tags":[{"value":"rouissoir","count":3}],"count":3},{"key":"historic","tags":[{"value":"ruins","count":3}],"count":3},{"key":"landuse","tags":[{"value":"basin","count":3}],"count":3}]

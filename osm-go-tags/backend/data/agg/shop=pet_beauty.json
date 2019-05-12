@@ -1,8 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "pet_beauty", "count": 2}], "count": 2},
-  {
-    "key": "website",
-    "tags": [{"value": "www.sweety-dog-86.com", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"pet_beauty","count":2}],"count":2},{"key":"website","tags":[{"value":"www.sweety-dog-86.com","count":1}],"count":1}]

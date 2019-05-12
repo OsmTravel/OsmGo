@@ -1,8 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "rest_home", "count": 1}], "count": 1},
-  {
-    "key": "ref:FR:FINESS",
-    "tags": [{"value": "670781087", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"rest_home","count":2}],"count":2},{"key":"ref:FR:FINESS","tags":[{"value":"670781087","count":1}],"count":1},{"key":"type","tags":[{"value":"multipolygon","count":1}],"count":1}]

@@ -1,8 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "floorer", "count": 3}], "count": 3},
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.solemo.fr/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"floorer","count":3}],"count":3},{"key":"website","tags":[{"value":"http://www.solemo.fr/","count":1}],"count":1}]

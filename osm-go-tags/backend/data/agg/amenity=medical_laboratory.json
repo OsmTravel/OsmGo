@@ -1,12 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "medical_laboratory", "count": 7}],
-    "count": 7
-  },
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.labo-du-quai.com/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"medical_laboratory","count":1}],"count":1},{"key":"healthcare","tags":[{"value":"laboratory","count":1}],"count":1},{"key":"type:FR:FINESS","tags":[{"value":"610","count":1}],"count":1}]

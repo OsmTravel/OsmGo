@@ -1,14 +1,1 @@
-[
-  {
-    "key": "historic",
-    "tags": [{"value": "memorial_site", "count": 2}],
-    "count": 2
-  },
-  {"key": "leisure", "tags": [{"value": "park", "count": 1}], "count": 1},
-  {
-    "key": "memorial:type",
-    "tags": [{"value": "war_memorial", "count": 1}],
-    "count": 1
-  },
-  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"historic","tags":[{"value":"memorial_site","count":2}],"count":2},{"key":"leisure","tags":[{"value":"park","count":1}],"count":1},{"key":"memorial:type","tags":[{"value":"war_memorial","count":1}],"count":1},{"key":"area","tags":[{"value":"yes","count":1}],"count":1}]

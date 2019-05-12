@@ -1,13 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "tax_office", "count": 4}], "count": 4},
-  {
-    "key": "fixme",
-    "tags": [
-      {
-        "value": "verifier si batiment present et si dispo sur cadastre-fr courant 2016",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"tax_office","count":4}],"count":4},{"key":"fixme","tags":[{"value":"verifier si batiment present et si dispo sur cadastre-fr courant 2016","count":1}],"count":1}]

@@ -1,17 +1,1 @@
-[
-  {
-    "key": "emergency",
-    "tags": [{"value": "dry_hydrant", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "fire_hydrant:position",
-    "tags": [{"value": "riverbank", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "fire_hydrant:pressure",
-    "tags": [{"value": "suction", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"emergency","tags":[{"value":"dry_hydrant","count":1}],"count":1},{"key":"fire_hydrant:position","tags":[{"value":"riverbank","count":1}],"count":1},{"key":"fire_hydrant:pressure","tags":[{"value":"suction","count":1}],"count":1}]

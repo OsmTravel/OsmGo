@@ -1,9 +1,1 @@
-[
-  {"key": "barrier", "tags": [{"value": "wall", "count": 3}], "count": 3},
-  {
-    "key": "historic",
-    "tags": [{"value": "castle_wall", "count": 3}],
-    "count": 3
-  },
-  {"key": "ruins", "tags": [{"value": "yes", "count": 2}], "count": 2}
-]
+[{"key":"historic","tags":[{"value":"castle_wall","count":22}],"count":22},{"key":"barrier","tags":[{"value":"city_wall","count":5},{"value":"wall","count":5}],"count":10},{"key":"ruins","tags":[{"value":"yes","count":3}],"count":3}]

@@ -1,8 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "espace robespierre", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"espace robespierre","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

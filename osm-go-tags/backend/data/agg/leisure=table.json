@@ -1,12 +1,1 @@
-[
-  {
-    "key": "sport",
-    "tags": [
-      {"value": "table_tennis", "count": 4},
-      {"value": "table_soccer", "count": 3}
-    ],
-    "count": 7
-  },
-  {"key": "leisure", "tags": [{"value": "table", "count": 7}], "count": 7},
-  {"key": "material", "tags": [{"value": "concrete", "count": 3}], "count": 3}
-]
+[{"key":"sport","tags":[{"value":"table_tennis","count":5},{"value":"table_soccer","count":2}],"count":7},{"key":"leisure","tags":[{"value":"table","count":7}],"count":7},{"key":"material","tags":[{"value":"concrete","count":3}],"count":3}]

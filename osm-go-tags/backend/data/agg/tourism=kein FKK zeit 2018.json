@@ -1,8 +1,1 @@
-[
-  {"key": "operator", "tags": [{"value": "Camping", "count": 1}], "count": 1},
-  {
-    "key": "tourism",
-    "tags": [{"value": "kein FKK zeit 2018", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"operator","tags":[{"value":"Camping","count":1}],"count":1},{"key":"tourism","tags":[{"value":"kein FKK zeit 2018","count":1}],"count":1}]

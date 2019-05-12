@@ -1,9 +1,1 @@
-[
-  {"key": "natural", "tags": [{"value": "massif", "count": 1}], "count": 1},
-  {"key": "wikidata", "tags": [{"value": "Q1276372", "count": 1}], "count": 1},
-  {
-    "key": "wikipedia",
-    "tags": [{"value": "fr:Monts du Cantal", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"natural","tags":[{"value":"massif","count":1}],"count":1},{"key":"wikidata","tags":[{"value":"Q1276372","count":1}],"count":1},{"key":"wikipedia","tags":[{"value":"fr:Monts du Cantal","count":1}],"count":1}]

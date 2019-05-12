@@ -1,4 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "photo_studio", "count": 4}], "count": 4},
-  {"key": "wheelchair", "tags": [{"value": "limited", "count": 1}], "count": 1}
-]
+[{"key":"craft","tags":[{"value":"photo_studio","count":4}],"count":4},{"key":"wheelchair","tags":[{"value":"limited","count":1}],"count":1}]

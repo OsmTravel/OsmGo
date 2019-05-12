@@ -1,13 +1,1 @@
-[
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 4 76 56 22 82", "count": 1}],
-    "count": 1
-  },
-  {"key": "office", "tags": [{"value": "design", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "http://www.colocarts.com", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"design","count":2}],"count":2},{"key":"phone","tags":[{"value":"+33 4 76 56 22 82","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.colocarts.com/","count":1}],"count":1}]

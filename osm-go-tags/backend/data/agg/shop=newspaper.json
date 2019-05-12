@@ -1,9 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "newspaper", "count": 4}], "count": 4},
-  {"key": "ref:FR:NAF", "tags": [{"value": "6512Z", "count": 1}], "count": 1},
-  {
-    "key": "ref:FR:SIRET",
-    "tags": [{"value": "78371199700156", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"newspaper","count":3}],"count":3},{"key":"ref:FR:NAF","tags":[{"value":"6512Z","count":1}],"count":1},{"key":"ref:FR:SIRET","tags":[{"value":"78371199700156","count":1}],"count":1}]

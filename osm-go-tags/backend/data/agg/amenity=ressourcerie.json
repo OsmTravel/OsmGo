@@ -1,7 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "ressourcerie", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"ressourcerie","count":1}],"count":1}]

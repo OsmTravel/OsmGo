@@ -1,12 +1,1 @@
-[
-  {
-    "key": "email",
-    "tags": [{"value": "conceptor@orange.fr", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "shop",
-    "tags": [{"value": "precious_metals", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"email","tags":[{"value":"conceptor@orange.fr","count":1}],"count":1},{"key":"shop","tags":[{"value":"precious_metals","count":1}],"count":1}]

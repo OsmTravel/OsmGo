@@ -1,9 +1,1 @@
-[
-  {"key": "ref:mhs", "tags": [{"value": "IA00000474", "count": 1}], "count": 1},
-  {"key": "historic", "tags": [{"value": "press", "count": 1}], "count": 1},
-  {
-    "key": "construction_date",
-    "tags": [{"value": "C17", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"ref:mhs","tags":[{"value":"IA00000474","count":1}],"count":1},{"key":"historic","tags":[{"value":"press","count":1}],"count":1},{"key":"construction_date","tags":[{"value":"C17","count":1}],"count":1}]

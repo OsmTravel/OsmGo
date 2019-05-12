@@ -1,13 +1,1 @@
-[
-  {
-    "key": "image",
-    "tags": [{"value": "http://www.panoramio.com/photo/5047934", "count": 1}],
-    "count": 1
-  },
-  {"key": "man_made", "tags": [{"value": "boat", "count": 1}], "count": 1},
-  {
-    "key": "seamark:type",
-    "tags": [{"value": "building", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"image","tags":[{"value":"http://www.panoramio.com/photo/5047934","count":1}],"count":1},{"key":"man_made","tags":[{"value":"boat","count":1}],"count":1},{"key":"seamark:type","tags":[{"value":"building","count":1}],"count":1}]

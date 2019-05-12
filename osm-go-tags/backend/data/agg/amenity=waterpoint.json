@@ -1,4 +1,1 @@
-[
-  {"key": "fee", "tags": [{"value": "yes", "count": 2}], "count": 2},
-  {"key": "amenity", "tags": [{"value": "waterpoint", "count": 2}], "count": 2}
-]
+[{"key":"fee","tags":[{"value":"yes","count":2}],"count":2},{"key":"amenity","tags":[{"value":"waterpoint","count":2}],"count":2}]

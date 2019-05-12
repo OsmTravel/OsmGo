@@ -1,6 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "doctors", "count": 1}], "count": 1},
-  {"key": "entrance", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "office", "tags": [{"value": "podologist", "count": 1}], "count": 1},
-  {"key": "phone", "tags": [{"value": "+33169058265", "count": 1}], "count": 1}
-]
+[{"key":"office","tags":[{"value":"podologist","count":2}],"count":2},{"key":"phone","tags":[{"value":"+33169058265","count":1},{"value":"+32 473 42 43 63","count":1}],"count":2},{"key":"amenity","tags":[{"value":"doctors","count":1}],"count":1},{"key":"entrance","tags":[{"value":"yes","count":1}],"count":1},{"key":"beauty","tags":[{"value":"pedicure","count":1}],"count":1},{"key":"health_facility:type","tags":[{"value":"office","count":1}],"count":1},{"key":"medical_system:western","tags":[{"value":"yes","count":1}],"count":1},{"key":"shop","tags":[{"value":"beauty","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.lamaisondespieds.be/","count":1}],"count":1}]

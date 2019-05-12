@@ -1,9 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "residential_home", "count": 2}],
-    "count": 2
-  },
-  {"key": "phone", "tags": [{"value": "+33240790039", "count": 1}], "count": 1},
-  {"key": "residents", "tags": [{"value": "seniors", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"residential_home","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33240790039","count":1}],"count":1}]

@@ -1,8 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "music_instrument", "count": 1}],
-    "count": 1
-  },
-  {"key": "instrument", "tags": [{"value": "piano", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"music_instrument","count":1}],"count":1},{"key":"instrument","tags":[{"value":"piano","count":1}],"count":1}]

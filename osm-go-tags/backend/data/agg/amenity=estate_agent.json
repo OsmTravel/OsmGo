@@ -1,7 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "estate_agent", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"estate_agent","count":2}],"count":2}]

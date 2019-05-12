@@ -1,11 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [
-      {"value": "toilets", "count": 2},
-      {"value": "sanitary_dump_station", "count": 1}
-    ],
-    "count": 3
-  },
-  {"key": "tourism", "tags": [{"value": "camping", "count": 3}], "count": 3}
-]
+[{"key":"tourism","tags":[{"value":"camping","count":5}],"count":5},{"key":"amenity","tags":[{"value":"toilets","count":2}],"count":2},{"key":"camp_site","tags":[{"value":"camp_pitch","count":2}],"count":2},{"key":"landcover","tags":[{"value":"grass","count":1}],"count":1}]

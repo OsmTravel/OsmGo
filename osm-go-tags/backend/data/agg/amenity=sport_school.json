@@ -1,8 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "sport_school", "count": 1}],
-    "count": 1
-  },
-  {"key": "phone", "tags": [{"value": "+33699689045", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"sport_school","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33699689045","count":1}],"count":1}]

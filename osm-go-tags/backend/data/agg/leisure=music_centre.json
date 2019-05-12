@@ -1,7 +1,1 @@
-[
-  {
-    "key": "leisure",
-    "tags": [{"value": "music_centre", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"leisure","tags":[{"value":"music_centre","count":1}],"count":1}]

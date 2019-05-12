@@ -1,17 +1,1 @@
-[
-  {
-    "key": "leisure",
-    "tags": [{"value": "toboggan_run", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "website",
-    "tags": [
-      {
-        "value": "http://www.lemarkstein.net/fr/bouger-lhiver/station-du-markstein/luge-sur-rails",
-        "count": 1
-      }
-    ],
-    "count": 1
-  }
-]
+[{"key":"leisure","tags":[{"value":"toboggan_run","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.lemarkstein.net/fr/bouger-lhiver/station-du-markstein/luge-sur-rails","count":1}],"count":1}]

@@ -1,15 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "signs", "count": 3}], "count": 3},
-  {
-    "key": "note",
-    "tags": [
-      {"value": "shop selling signs", "count": 1},
-      {
-        "value": "magasin d'enseignes et signalisation, valeur de shop=* à préciser",
-        "count": 1
-      }
-    ],
-    "count": 2
-  },
-  {"key": "phone", "tags": [{"value": "+33141109202", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"signs","count":4}],"count":4},{"key":"note","tags":[{"value":"shop selling signs","count":1},{"value":"magasin d'enseignes et signalisation, valeur de shop=* à préciser","count":1}],"count":2},{"key":"phone","tags":[{"value":"+33141109202","count":1}],"count":1},{"key":"operator","tags":[{"value":"Majuscule SARL","count":1}],"count":1},{"key":"ref:FR:SIREN","tags":[{"value":"313720294","count":1}],"count":1},{"key":"ref:FR:SIRET","tags":[{"value":"31372029400039","count":1}],"count":1},{"key":"website","tags":[{"value":"http://www.majuscule-reims.fr","count":1}],"count":1}]

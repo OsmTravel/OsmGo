@@ -1,8 +1,1 @@
-[
-  {
-    "key": "tourism",
-    "tags": [{"value": "apartments", "count": 16}],
-    "count": 16
-  },
-  {"key": "operator", "tags": [{"value": "Odalys", "count": 1}], "count": 1}
-]
+[{"key":"tourism","tags":[{"value":"apartments","count":19}],"count":19},{"key":"stars","tags":[{"value":"2","count":1}],"count":1}]

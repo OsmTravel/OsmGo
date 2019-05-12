@@ -1,12 +1,1 @@
-[
-  {
-    "key": "emergency",
-    "tags": [{"value": "fire_alarm_box", "count": 4}],
-    "count": 4
-  },
-  {
-    "key": "level",
-    "tags": [{"value": "0.5", "count": 2}, {"value": "0", "count": 2}],
-    "count": 4
-  }
-]
+[{"key":"emergency","tags":[{"value":"fire_alarm_box","count":4}],"count":4},{"key":"level","tags":[{"value":"0.5","count":2},{"value":"0","count":2}],"count":4}]

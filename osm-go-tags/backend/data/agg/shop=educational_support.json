@@ -1,7 +1,1 @@
-[
-  {
-    "key": "shop",
-    "tags": [{"value": "educational_support", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"educational_support","count":1}],"count":1}]

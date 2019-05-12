@@ -1,13 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "street_cabinet", "count": 2}],
-    "count": 2
-  },
-  {"key": "operator", "tags": [{"value": "La Poste", "count": 1}], "count": 1},
-  {
-    "key": "street_cabinet",
-    "tags": [{"value": "postal_service", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"amenity","tags":[{"value":"street_cabinet","count":2}],"count":2},{"key":"operator","tags":[{"value":"La Poste","count":1}],"count":1},{"key":"street_cabinet","tags":[{"value":"postal_service","count":1}],"count":1}]

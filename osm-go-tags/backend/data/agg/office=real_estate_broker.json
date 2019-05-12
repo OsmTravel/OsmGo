@@ -1,15 +1,1 @@
-[
-  {
-    "key": "office",
-    "tags": [{"value": "real_estate_broker", "count": 2}],
-    "count": 2
-  },
-  {
-    "key": "operator",
-    "tags": [
-      {"value": "Meilleurtaux.com", "count": 1},
-      {"value": "Meilleur Taux.com", "count": 1}
-    ],
-    "count": 2
-  }
-]
+[{"key":"office","tags":[{"value":"real_estate_broker","count":6}],"count":6},{"key":"survey:date","tags":[{"value":"2018-11-01","count":1},{"value":"2018-11-10","count":1},{"value":"2018-11-24","count":1},{"value":"2019-02-12","count":1}],"count":4},{"key":"website","tags":[{"value":"https://www.creditexpert.fr","count":1},{"value":"https://www.cafpi.fr/","count":1},{"value":"https://www.artemiscourtage.com","count":1}],"count":3},{"key":"operator","tags":[{"value":"Meilleurtaux.com","count":1},{"value":"Meilleur Taux.com","count":1}],"count":2},{"key":"brand","tags":[{"value":"Crédit Expert","count":1},{"value":"CAFPI","count":1}],"count":2},{"key":"phone","tags":[{"value":"+33 6 38 86 51 39","count":1},{"value":"+33 2 40 74 58 79","count":1}],"count":2},{"key":"mapillary","tags":[{"value":"ZLSEqrZumNtknqRSGIL1sg","count":1}],"count":1},{"key":"email","tags":[{"value":"david.pasquier@artemiscourtage.com","count":1}],"count":1}]

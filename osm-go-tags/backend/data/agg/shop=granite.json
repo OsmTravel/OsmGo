@@ -1,8 +1,1 @@
-[
-  {
-    "key": "note",
-    "tags": [{"value": "vend des pierres, granite…", "count": 1}],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "granite", "count": 1}], "count": 1}
-]
+[{"key":"note","tags":[{"value":"vend des pierres, granite…","count":1}],"count":1},{"key":"shop","tags":[{"value":"granite","count":1}],"count":1}]

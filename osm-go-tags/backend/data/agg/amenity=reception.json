@@ -1,6 +1,1 @@
-[
-  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
-  {"key": "indoor", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {"key": "amenity", "tags": [{"value": "reception", "count": 1}], "count": 1},
-  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"reception","count":2}],"count":2},{"key":"level","tags":[{"value":"0","count":1}],"count":1},{"key":"indoor","tags":[{"value":"yes","count":1}],"count":1},{"key":"information","tags":[{"value":"office","count":1}],"count":1}]

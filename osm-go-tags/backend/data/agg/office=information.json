@@ -1,7 +1,1 @@
-[
-  {"key": "information", "tags": [{"value": "office", "count": 1}], "count": 1},
-  {"key": "level", "tags": [{"value": "0", "count": 1}], "count": 1},
-  {"key": "office", "tags": [{"value": "information", "count": 1}], "count": 1},
-  {"key": "operator", "tags": [{"value": "SNCF", "count": 1}], "count": 1},
-  {"key": "tourism", "tags": [{"value": "information", "count": 1}], "count": 1}
-]
+[{"key":"office","tags":[{"value":"information","count":2}],"count":2},{"key":"tourism","tags":[{"value":"information","count":2}],"count":2},{"key":"information","tags":[{"value":"office","count":1}],"count":1},{"key":"level","tags":[{"value":"0","count":1}],"count":1},{"key":"operator","tags":[{"value":"SNCF","count":1}],"count":1}]

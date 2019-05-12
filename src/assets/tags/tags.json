@@ -1349,6 +1349,15 @@
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "ski",
+        "lbl": "ski",
+        "lbl_alt": "Vente de ski",
+        "icon": "mi-skiing",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
       }
     ]
   },
@@ -2343,6 +2352,15 @@
         "markerColor": "#EF9228",
         "alert": "",
         "presets": []
+      },
+      {
+        "key": "waste_disposal",
+        "lbl": "Point de dépôt d'ordures",
+        "lbl_alt": "",
+        "icon": "maki-waste-basket-15",
+        "markerColor": "#EF9228",
+        "alert": "Un emplacement où les plaisanciers, caravaniers etc. peuvent déposer leurs ordures ",
+        "presets": []
       }
     ]
   },
@@ -3257,6 +3275,15 @@
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "joiner",
+        "lbl": "Menuisier",
+        "lbl_alt": "Fabrication de meuble",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
       }
     ]
   },
@@ -3726,6 +3753,15 @@
         "alert": "Déprécié, utiliser : office=government.",
         "deprecated": true,
         "presets": []
+      },
+      {
+        "key": "moving_company",
+        "lbl": "Déménageur",
+        "lbl_alt": "",
+        "icon": "people-carry-solid",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
       }
     ]
   },
@@ -4179,6 +4215,15 @@
         "markerColor": "#C9BCF0",
         "alert": "",
         "presets": []
+      },
+      {
+        "key": "nurse",
+        "lbl": "Infirmier",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
       }
     ]
   },
@@ -4290,6 +4335,15 @@
         "lbl": "Bâtiment historique ",
         "lbl_alt": "",
         "icon": "fa-bank",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "manor",
+        "lbl": "Manoir",
+        "lbl_alt": "",
+        "icon": "",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": []
@@ -4450,6 +4504,15 @@
         "lbl": "_NC",
         "lbl_alt": "",
         "icon": "wiki_question",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "speed_display",
+        "lbl": "Radar pédagogique",
+        "lbl_alt": "",
+        "icon": "video-solid",
         "markerColor": "#0E5F71",
         "alert": "",
         "presets": []

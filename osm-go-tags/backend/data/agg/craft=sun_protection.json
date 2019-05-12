@@ -1,13 +1,1 @@
-[
-  {
-    "key": "craft",
-    "tags": [{"value": "sun_protection", "count": 1}],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "glaziery", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "http://loiodice-echirolles.com/", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"sun_protection","count":5}],"count":5},{"key":"shop","tags":[{"value":"yes","count":1},{"value":"glaziery","count":1}],"count":2},{"key":"website","tags":[{"value":"http://loiodice-echirolles.com/","count":1},{"value":"http://www.storest.fr/","count":1}],"count":2}]

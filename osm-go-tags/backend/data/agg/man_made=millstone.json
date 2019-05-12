@@ -1,4 +1,1 @@
-[
-  {"key": "tourism", "tags": [{"value": "attraction", "count": 1}], "count": 1},
-  {"key": "man_made", "tags": [{"value": "millstone", "count": 1}], "count": 1}
-]
+[{"key":"tourism","tags":[{"value":"attraction","count":1}],"count":1},{"key":"man_made","tags":[{"value":"millstone","count":1}],"count":1}]

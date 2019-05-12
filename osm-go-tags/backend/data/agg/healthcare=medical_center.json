@@ -1,12 +1,1 @@
-[
-  {
-    "key": "healthcare",
-    "tags": [{"value": "medical_center", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "healthcare:speciality",
-    "tags": [{"value": "general;physiotherapy", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"healthcare","tags":[{"value":"medical_center","count":2}],"count":2},{"key":"healthcare:speciality","tags":[{"value":"general;physiotherapy","count":1},{"value":"general","count":1}],"count":2}]

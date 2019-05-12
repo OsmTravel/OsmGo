@@ -1,7 +1,1 @@
-[
-  {
-    "key": "tourism",
-    "tags": [{"value": "belvédère St Joseph", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"tourism","tags":[{"value":"belvédère St Joseph","count":1}],"count":1}]

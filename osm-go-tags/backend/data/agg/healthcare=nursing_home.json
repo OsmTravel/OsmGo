@@ -1,7 +1,1 @@
-[
-  {
-    "key": "healthcare",
-    "tags": [{"value": "nursing_home", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"healthcare","tags":[{"value":"nursing_home","count":1}],"count":1}]

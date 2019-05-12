@@ -1,12 +1,1 @@
-[
-  {
-    "key": "office",
-    "tags": [{"value": "administration", "count": 8}],
-    "count": 8
-  },
-  {
-    "key": "amenity",
-    "tags": [{"value": "public_building", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"office","tags":[{"value":"administration","count":28}],"count":28},{"key":"amenity","tags":[{"value":"public_building","count":3}],"count":3},{"key":"note","tags":[{"value":"Bureau, pas d'ouverture au public.","count":1}],"count":1},{"key":"description","tags":[{"value":"La CCI Hérault est née en 2017 de la fusion des CCI de Béziers, Montpellier et Sète. Elle accompagne les entrepreneurs dans leurs parcours, de la création au développement, de la formation à la transmission ...","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 4 67 515 200","count":1}],"count":1},{"key":"website","tags":[{"value":"http://herault.cci.fr","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

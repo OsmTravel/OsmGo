@@ -1,16 +1,1 @@
-[
-  {
-    "key": "ele",
-    "tags": [
-      {"value": "3241", "count": 1},
-      {"value": "3409", "count": 1},
-      {"value": "3098", "count": 1}
-    ],
-    "count": 3
-  },
-  {
-    "key": "natural",
-    "tags": [{"value": "mountain_pass", "count": 3}],
-    "count": 3
-  }
-]
+[{"key":"ele","tags":[{"value":"3241","count":1},{"value":"3409","count":1},{"value":"3098","count":1}],"count":3},{"key":"natural","tags":[{"value":"mountain_pass","count":3}],"count":3}]

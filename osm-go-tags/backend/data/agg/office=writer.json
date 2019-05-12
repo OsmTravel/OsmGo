@@ -1,8 +1,1 @@
-[
-  {
-    "key": "description",
-    "tags": [{"value": "Ecrivain public. Assistante. Secrétariat", "count": 1}],
-    "count": 1
-  },
-  {"key": "office", "tags": [{"value": "writer", "count": 1}], "count": 1}
-]
+[{"key":"description","tags":[{"value":"Ecrivain public. Assistante. Secrétariat","count":1}],"count":1},{"key":"office","tags":[{"value":"writer","count":1}],"count":1}]

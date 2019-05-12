@@ -1,4 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "fairtrade", "count": 1}], "count": 1},
-  {"key": "fair_trade", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"fairtrade","count":1}],"count":1},{"key":"fair_trade","tags":[{"value":"yes","count":1}],"count":1}]

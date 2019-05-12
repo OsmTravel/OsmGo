@@ -1,8 +1,1 @@
-[
-  {"key": "phone", "tags": [{"value": "+33328231314", "count": 1}], "count": 1},
-  {
-    "key": "amenity",
-    "tags": [{"value": "emergency_access_point", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"phone","tags":[{"value":"+33328231314","count":1}],"count":1},{"key":"amenity","tags":[{"value":"emergency_access_point","count":1}],"count":1}]

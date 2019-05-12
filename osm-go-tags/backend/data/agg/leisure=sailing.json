@@ -1,8 +1,1 @@
-[
-  {
-    "key": "sport",
-    "tags": [{"value": "water jousting", "count": 1}],
-    "count": 1
-  },
-  {"key": "leisure", "tags": [{"value": "sailing", "count": 1}], "count": 1}
-]
+[{"key":"leisure","tags":[{"value":"sailing","count":3}],"count":3},{"key":"sport","tags":[{"value":"sailing","count":1},{"value":"water_jousting","count":1}],"count":2},{"key":"waterway","tags":[{"value":"boatyard","count":1}],"count":1}]

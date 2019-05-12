@@ -1,8 +1,1 @@
-[
-  {"key": "shop", "tags": [{"value": "glasses", "count": 1}], "count": 1},
-  {
-    "key": "lastcheck",
-    "tags": [{"value": "2016-04-04", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"shop","tags":[{"value":"glasses","count":1}],"count":1},{"key":"lastcheck","tags":[{"value":"2016-04-04","count":1}],"count":1}]

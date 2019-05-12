@@ -1,13 +1,1 @@
-[
-  {
-    "key": "highway",
-    "tags": [{"value": "emergency_bay", "count": 303}],
-    "count": 303
-  },
-  {"key": "maxspeed", "tags": [{"value": "70", "count": 1}], "count": 1},
-  {
-    "key": "traffic_sign",
-    "tags": [{"value": "maxspeed", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"highway","tags":[{"value":"emergency_bay","count":1310}],"count":1310},{"key":"ele","tags":[{"value":"208.743408","count":1},{"value":"253.925415","count":1}],"count":2},{"key":"maxspeed","tags":[{"value":"70","count":1}],"count":1},{"key":"traffic_sign","tags":[{"value":"maxspeed","count":1}],"count":1}]

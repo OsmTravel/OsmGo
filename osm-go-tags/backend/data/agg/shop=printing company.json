@@ -1,13 +1,1 @@
-[
-  {
-    "key": "company",
-    "tags": [{"value": "offset printing", "count": 1}],
-    "count": 1
-  },
-  {
-    "key": "shop",
-    "tags": [{"value": "printing company", "count": 1}],
-    "count": 1
-  },
-  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
-]
+[{"key":"company","tags":[{"value":"offset printing","count":1}],"count":1},{"key":"shop","tags":[{"value":"printing company","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

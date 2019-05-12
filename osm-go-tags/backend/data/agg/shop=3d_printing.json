@@ -1,10 +1,1 @@
-[
-  {
-    "key": "fixme",
-    "tags": [
-      {"value": "vérifier l'activité réelle (plus que un panneau)", "count": 1}
-    ],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "3d_printing", "count": 1}], "count": 1}
-]
+[{"key":"shop","tags":[{"value":"3d_printing","count":2}],"count":2},{"key":"fixme","tags":[{"value":"vérifier l'activité réelle (plus que un panneau)","count":1}],"count":1},{"key":"description","tags":[{"value":"3d printing, scanning and modeling","count":1}],"count":1},{"key":"email","tags":[{"value":"contact@3dimprime.fr","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 9 52 61 23 60","count":1}],"count":1},{"key":"website","tags":[{"value":"https://3dimprime.fr","count":1}],"count":1}]

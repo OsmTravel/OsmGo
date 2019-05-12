@@ -1,7 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "satellite_dish", "count": 2}],
-    "count": 2
-  }
-]
+[{"key":"man_made","tags":[{"value":"satellite_dish","count":6}],"count":6}]

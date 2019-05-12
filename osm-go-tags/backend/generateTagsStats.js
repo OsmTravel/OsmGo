@@ -1,8 +1,9 @@
 var fs = require('fs');
+var through = require('through2');
+var parseOSM = require('osm-pbf-parser');
 var _ = require('lodash');
-var osmread = require('osm-read');
-var stringify = require("json-stringify-pretty-compact")
-// osmread
+let pbfPath = 'data/pbf/france-latest.osm.pbf';
+
 
 const pKeys = [
     'advertising',
@@ -20,6 +21,7 @@ const pKeys = [
     'historic',
     'highway']
 
+let sumaryPk = {};
 let res = {}
 for (let i = 0; i < pKeys.length; i++) {
     res[pKeys[i]] = {};
@@ -83,13 +85,32 @@ function aggregate(_pkey, _pvalue, elements) {
 
 }
 
-let sumaryPk = {};
-let pbfPath = 'data/pbf/RA.osm.pbf';
-var parser = osmread.parse({
-    filePath: pbfPath,
-    endDocument: () => {
-        console.log('document end');
 
+var osm = parseOSM();
+fs.createReadStream(pbfPath)
+    .pipe(osm)
+    .pipe(through.obj(function (items, enc, next) {
+        items.forEach(function (item) {
+      
+            if (Object.entries(item.tags).length > 0){
+                // console.log(item);
+                let keys = Object.keys(item.tags)
+                let inter = _.intersection(pKeys, keys);
+        
+                for (let i = 0; i < inter.length; i++) {
+                    let pValue = item.tags[inter[i]];
+                    if (!/,/.test(pValue) && !/;/.test(pValue)) {
+                        if (!res[inter[i]][pValue]) {
+                            res[inter[i]][pValue] = []
+                        }
+                        res[inter[i]][pValue].push({ 'type': item.type, id: item.id, tags: item.tags })
+                    }
+                }
+            }
+        });
+        next();
+    }, (next) => {
+        console.log('Lecture fini')
         for (let pkey in res) {
             if (!sumaryPk[pkey]) {
                 sumaryPk[pkey] = { 'count': 0, 'sum': 0, 'values': [] };
@@ -104,57 +125,17 @@ var parser = osmread.parse({
                 sumaryPk[pkey].values.push({ 'value': pvalue, 'count': res[pkey][pvalue].length });
                 let aggPkeyPvalue = aggregate(pkey, pvalue, res[pkey][pvalue])
                 try {
-                    fs.writeFileSync(`data/agg/${pkey}=${pvalue}.json`, stringify(aggPkeyPvalue), 'utf8');
+                    fs.writeFileSync(`data/agg/${pkey}=${pvalue}.json`, JSON.stringify(aggPkeyPvalue), 'utf8');
                 } catch (error) {
-                    console.log('ohoh');
+                    console.log(`${pkey}=${pvalue}.json`, error);
                 }
 
             }
             sortByCount(sumaryPk[pkey].values)
         }
 
-        fs.writeFileSync(`data/stats.json`, stringify(sumaryPk), 'utf8');
-    },
-    node: (node) => {
-        let keys = Object.keys(node.tags)
-        let inter = _.intersection(pKeys, keys);
-
-        for (let i = 0; i < inter.length; i++) {
-
-            let pValue = node.tags[inter[i]];
-            if (!/,/.test(pValue) && !/;/.test(pValue)) {
-                if (!res[inter[i]][pValue]) {
-                    res[inter[i]][pValue] = []
-                }
-
-                res[inter[i]][pValue].push({ 'type': 'node', id: node.id, tags: node.tags })
-            }
-
-        }
-    },
-    way: function (way) {
-        let keys = Object.keys(way.tags)
-        let inter = _.intersection(pKeys, keys);
-
-        for (let i = 0; i < inter.length; i++) {
-            let pValue = way.tags[inter[i]];
-            if (!/,/.test(pValue) && !/;/.test(pValue)) {
-                if (!res[inter[i]][pValue]) {
-                    res[inter[i]][pValue] = []
-                }
-                res[inter[i]][pValue].push({ 'type': 'way', id: way.id, tags: way.tags })
-            }
-        }
-    },
-
-
-    error: function (msg) {
-        console.log('error: ' + msg);
-    }
-});
-
-// you can pause the parser
-parser.pause();
-
-// and resume it again
-parser.resume();
+        fs.writeFileSync(`data/stats.json`, JSON.stringify(sumaryPk), 'utf8');
+    }))
+  
+   
+;

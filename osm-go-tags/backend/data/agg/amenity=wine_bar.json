@@ -1,4 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "wine_bar", "count": 1}], "count": 1},
-  {"key": "sport", "tags": [{"value": "billiards", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"wine_bar","count":3}],"count":3},{"key":"wheelchair","tags":[{"value":"no","count":1}],"count":1}]

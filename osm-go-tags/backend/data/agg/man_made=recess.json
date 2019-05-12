@@ -1,4 +1,1 @@
-[
-  {"key": "man_made", "tags": [{"value": "recess", "count": 1}], "count": 1},
-  {"key": "material", "tags": [{"value": "dry_stone", "count": 1}], "count": 1}
-]
+[{"key":"man_made","tags":[{"value":"recess","count":1}],"count":1},{"key":"material","tags":[{"value":"dry_stone","count":1}],"count":1}]

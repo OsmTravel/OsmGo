@@ -1,7 +1,1 @@
-[
-  {
-    "key": "tourism",
-    "tags": [{"value": "accommodation", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"tourism","tags":[{"value":"accommodation","count":1}],"count":1}]

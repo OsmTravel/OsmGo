@@ -1,7 +1,1 @@
-[
-  {
-    "key": "man_made",
-    "tags": [{"value": "boat_passage", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"man_made","tags":[{"value":"boat_passage","count":1}],"count":1}]

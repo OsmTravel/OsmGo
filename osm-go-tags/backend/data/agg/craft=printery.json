@@ -1,8 +1,1 @@
-[
-  {"key": "craft", "tags": [{"value": "printery", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "www.creanog.com", "count": 1}],
-    "count": 1
-  }
-]
+[{"key":"craft","tags":[{"value":"printery","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.creanog.com/","count":1}],"count":1}]

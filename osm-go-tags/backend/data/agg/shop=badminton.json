@@ -1,8 +1,1 @@
-[
-  {
-    "key": "phone",
-    "tags": [{"value": "+33 3 88 84 87 07", "count": 1}],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "badminton", "count": 1}], "count": 1}
-]
+[{"key":"phone","tags":[{"value":"+33 3 88 84 87 07","count":1}],"count":1},{"key":"shop","tags":[{"value":"badminton","count":1}],"count":1}]

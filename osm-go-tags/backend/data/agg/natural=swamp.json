@@ -1,4 +1,1 @@
-[
-  {"key": "water", "tags": [{"value": "pond", "count": 1}], "count": 1},
-  {"key": "natural", "tags": [{"value": "swamp", "count": 1}], "count": 1}
-]
+[{"key":"water","tags":[{"value":"pond","count":1}],"count":1},{"key":"natural","tags":[{"value":"swamp","count":1}],"count":1}]

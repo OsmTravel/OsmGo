@@ -1,4 +1,1 @@
-[
-  {"key": "amenity", "tags": [{"value": "papour", "count": 1}], "count": 1},
-  {"key": "parking", "tags": [{"value": "surface", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"papour","count":1}],"count":1},{"key":"parking","tags":[{"value":"surface","count":1}],"count":1}]
