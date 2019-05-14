@@ -127,7 +127,6 @@ export class MainPage implements AfterViewInit {
   }
 
   onMapResized(e) {
-    console.log(e);
     if (this.mapService.map) {
       this.mapService.map.resize();
     }
