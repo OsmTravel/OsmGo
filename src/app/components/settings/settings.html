@@ -68,6 +68,18 @@
 		</ion-card-content>
 	</ion-card>
 
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>Ajouter une source</ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.addSurveySource" 
+				(ionChange)="addSurveySourceChange($event)"></ion-toggle>
+			</ion-item>
+			
+			<label class="hint">Ajouter la source "survey" à chaque modification</label>
+		</ion-card-content>
+	</ion-card>
+
 	<h4>Data</h4>
 	<ion-card>
 		<ion-card-header>
@@ -86,7 +98,7 @@
 	<ion-card>
 		<ion-card-content>
 			<ion-item>
-				<ion-label>Imagerie aérienne {{this.configService.config.baseMapSourceId}}</ion-label>
+				<ion-label>Imagerie aérienne </ion-label>
 				
 				<ion-select [(ngModel)]="this.configService.config.baseMapSourceId" (ionChange)="baseMapChange($event)">
 					<ion-select-option *ngFor="let baseMap of this.configService.baseMapSources" [value]="baseMap.id">

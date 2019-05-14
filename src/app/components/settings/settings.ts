@@ -64,4 +64,8 @@ export class SettingsPage {
     this.configService.setBaseSourceId(e.detail.value);
     this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
   }
+
+  addSurveySourceChange(e){
+    this.configService.setAddSurveySource(e.detail.checked);
+  }
 }

@@ -191,7 +191,7 @@ export class ModalsContentPage implements OnInit {
     const tagsNotNull = [];
     for (let i = 0; i < this.tags.length; i++) {
       if (this.tags[i].value) {
-        tagsNotNull.push({'key': this.tags[i].key, 'value': this.tags[i].value} );
+        tagsNotNull.push({ 'key': this.tags[i].key, 'value': this.tags[i].value });
       }
     }
     if (_.isEqual(tagsNotNull, this.originalTags)) {
@@ -288,6 +288,8 @@ export class ModalsContentPage implements OnInit {
     }
   }
 
+
+
   updateOsmElement() {
     this.typeFiche = 'Loading';
     // si les tags et la position n'ont pas changé, on ne fait rien!
@@ -352,6 +354,20 @@ export class ModalsContentPage implements OnInit {
     }
 
   }
+  addSurveySource(feature) {
+    if (!this.configService.getAddSurveySource()) {
+      return feature;
+    }
+
+    if (!feature.properties.tags['source']) {
+      feature.properties.tags['source'] = 'survey';
+    } else { // une source existe déjà...
+      if (!/survey/.test(feature.properties.tags['source'])) { // mais pas de survey...
+        feature.properties.tags['source'] = `survey; ${feature.properties.tags['source']}`;
+      }
+    }
+    return feature;
+  }
 
   pushTagsToFeature() {
     const tagObjects = {};
@@ -359,14 +375,13 @@ export class ModalsContentPage implements OnInit {
       tagObjects[this.tags[i].key] = this.tags[i].value;
     }
     this.feature.properties.tags = tagObjects;
+    this.feature = this.addSurveySource(this.feature);
   }
 
   moveOsmElement() {
     this.pushTagsToFeature();
     // on ferme la modal
     this.dismiss({ type: 'Move', 'geojson': this.feature, mode: this.mode });
-
-    // on emet l'evenement
   }
   async openPrimaryTagModal() {
     const data = { geojson: this.feature, configOfPrimaryKey: this.configOfPrimaryKey, primaryKey: this.primaryKey, tags: this.tags };
