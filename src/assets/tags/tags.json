@@ -3806,6 +3806,7 @@
   "man_made": {
     "type": "man_made",
     "lbl": "Édifice",
+    "exclude_way_values": ["embankment", "bridge"],
     "values": [
       {
         "key": "lighthouse",
@@ -4400,6 +4401,7 @@
   "natural": {
     "type": "natural",
     "lbl": "Naturel",
+    "exclude_way_values": ["bare_rock", "cliff", "wood", "shingle"], 
     "values": [
       {
         "key": "tree",
