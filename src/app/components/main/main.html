@@ -4,7 +4,7 @@
 <ion-content padding class="home" #mycontent>
 
 
-	<div id="map" style="height: 100%; width: 100%">
+	<div id="map" style="height: 100%; width: 100%" (resized)="onMapResized($event)">
 
 	
 		<ion-fab style="left: 0px;top: 0px; margin:6px;" >

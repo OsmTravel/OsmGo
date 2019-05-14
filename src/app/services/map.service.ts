@@ -379,7 +379,8 @@ export class MapService {
           doubleClickZoom: false,
           attributionControl: false,
           dragRotate: true,
-          trackResize: this.configService.platforms.includes('desktop') ? true : false,
+          trackResize: false,
+          // trackResize: this.configService.platforms.includes('desktop') ? true : false,
           // failIfMajorPerformanceCavea: false,
           pitch: 0,
           pitchWithRotate: false,
@@ -761,9 +762,7 @@ export class MapService {
 
     }
 
-    timer(500).subscribe(e => {
-      this.map.resize();
-    });
+
   }
 
 }
