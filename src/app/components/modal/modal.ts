@@ -191,7 +191,7 @@ export class ModalsContentPage implements OnInit {
     const tagsNotNull = [];
     for (let i = 0; i < this.tags.length; i++) {
       if (this.tags[i].value) {
-        tagsNotNull.push(this.tags[i]);
+        tagsNotNull.push({'key': this.tags[i].key, 'value': this.tags[i].value} );
       }
     }
     if (_.isEqual(tagsNotNull, this.originalTags)) {
@@ -290,6 +290,12 @@ export class ModalsContentPage implements OnInit {
 
   updateOsmElement() {
     this.typeFiche = 'Loading';
+    // si les tags et la position n'ont pas changé, on ne fait rien!
+    if (!this.dataIsChanged() && !this.newPosition) {
+      this.dismiss();
+      return;
+    }
+
     this.pushTagsToFeature(); // on pousse les tags dans la feature
 
     if (this.configService.getIsDelayed()) {
