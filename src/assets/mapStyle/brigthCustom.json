@@ -72,7 +72,7 @@
     "pitch": 0,
     "sources": {
         "composite": {
-            "url": "mapbox://mapbox.mapbox-streets-v7",
+            "url": "assets/mapStyle/mapbox.mapbox-streets-v7.json",
             "type": "vector"
         }
     },
