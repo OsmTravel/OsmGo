@@ -1702,7 +1702,7 @@
       },
       {
         "key": "kindergarten",
-        "lbl": "Jardin d'enfants",
+        "lbl": "Ecole maternelle",
         "lbl_alt": "crèches, haltes-garderies",
         "icon": "fa-child",
         "markerColor": "#EF9228",
@@ -1714,7 +1714,7 @@
           "website",
           "opening_hours"
         ],
-        "deprecated": true
+        "deprecated": false
       },
       {
         "key": "car_wash",
@@ -4401,7 +4401,7 @@
   "natural": {
     "type": "natural",
     "lbl": "Naturel",
-    "exclude_way_values": ["bare_rock", "cliff", "wood", "shingle"], 
+    "exclude_way_values": ["bare_rock", "cliff", "wood", "shingle"],
     "values": [
       {
         "key": "tree",
