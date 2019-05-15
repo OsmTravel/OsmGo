@@ -1,0 +1,4 @@
+[
+  {"key": "amenity", "tags": [{"value": "nomad_site", "count": 1}], "count": 1},
+  {"key": "landuse", "tags": [{"value": "residential", "count": 1}], "count": 1}
+]

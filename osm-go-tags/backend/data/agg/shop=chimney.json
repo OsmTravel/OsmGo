@@ -1,0 +1,12 @@
+[
+  {"key": "shop", "tags": [{"value": "chimney", "count": 10}], "count": 10},
+  {
+    "key": "description",
+    "tags": [
+      {"value": "Poêles et cheminées", "count": 1},
+      {"value": "Vente de poële de masse", "count": 1}
+    ],
+    "count": 2
+  },
+  {"key": "roof:shape", "tags": [{"value": "flat", "count": 1}], "count": 1}
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "physiotherapy", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapist", "count": 3}],
+    "count": 3
+  },
+  {
+    "key": "note",
+    "tags": [{"value": "kinésithérapie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "physiotherapy", "count": 1}],
+    "count": 1
+  }
+]

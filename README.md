@@ -25,14 +25,11 @@ Une documentation rapide est [disponible ici](https://github.com/DoFabien/OsmGo/
 ### Dev
 Osm Go! est une application *hybride* utilisant Ionic 4, donc Cordova et Angular 7. Pour le rendu de la carte, c'est l'excellent Mapbox GL JS qui est à la manœuvre
 
-#### Pré-requis
-Un système GNU/Linux (ex: Ubuntu) ou OSX. En effet, Osm Go! utilise Mapnik en version 4+, il sera donc [impossible](https://github.com/mapnik/node-mapnik/issues/848) de le compiler sur un poste Windows. 
-
 #### Installation 
 1) Installation des dépendences globales
 ```sh
-sudo npm install -g cordova
-sudo npm install -g ionic
+npm install -g cordova
+npm install -g ionic
 ```
 2) Clone et installation des dépendences
 ```sh

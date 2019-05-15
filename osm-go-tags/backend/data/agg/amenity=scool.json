@@ -1,0 +1,19 @@
+[
+  {"key": "amenity", "tags": [{"value": "scool", "count": 1}], "count": 1},
+  {
+    "key": "description",
+    "tags": [{"value": "Centre de formation pour Adultes", "count": 1}],
+    "count": 1
+  },
+  {"key": "school:FR", "tags": [{"value": "AFPA", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [
+      {
+        "value": "https://www.afpa.fr/centre/centre-de-marseille-st-jerome",
+        "count": 1
+      }
+    ],
+    "count": 1
+  }
+]

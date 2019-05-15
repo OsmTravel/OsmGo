@@ -1,0 +1,17 @@
+[
+  {"key": "man_made", "tags": [{"value": "dovecoat", "count": 5}], "count": 5},
+  {"key": "historic", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {"key": "ref:mhs", "tags": [{"value": "PA00078986", "count": 1}], "count": 1},
+  {"key": "heritage", "tags": [{"value": "3", "count": 1}], "count": 1},
+  {"key": "wikidata", "tags": [{"value": "Q22985072", "count": 1}], "count": 1},
+  {
+    "key": "heritage:operator",
+    "tags": [{"value": "mhs", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "mhs:inscription_date",
+    "tags": [{"value": "1981", "count": 1}],
+    "count": 1
+  }
+]

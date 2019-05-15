@@ -1,0 +1,13 @@
+[
+  {"key": "phone", "tags": [{"value": "+33549633410", "count": 1}], "count": 1},
+  {
+    "key": "shop",
+    "tags": [{"value": "Vente_de_menuiserie", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "http://www.plastibois-parthenay.fr", "count": 1}],
+    "count": 1
+  }
+]

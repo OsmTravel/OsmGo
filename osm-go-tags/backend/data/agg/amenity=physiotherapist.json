@@ -1,0 +1,12 @@
+[
+  {
+    "key": "amenity",
+    "tags": [{"value": "physiotherapist", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "healthcare",
+    "tags": [{"value": "physiotherapist", "count": 1}],
+    "count": 1
+  }
+]

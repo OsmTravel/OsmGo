@@ -1,0 +1,37 @@
+[
+  {"key": "payment:cash", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "info@vlh83.fr", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "internet_access:fee",
+    "tags": [{"value": "no", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "Natural swimming pol", "count": 1}],
+    "count": 1
+  },
+  {"key": "payment:ancv", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "internet_access",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "payment:wire_transfer",
+    "tags": [{"value": "yes", "count": 1}],
+    "count": 1
+  },
+  {"key": "rooms", "tags": [{"value": "6", "count": 1}], "count": 1},
+  {"key": "smoking", "tags": [{"value": "outside", "count": 1}], "count": 1},
+  {"key": "tourism", "tags": [{"value": "apartment", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "www.vlh83.fr", "count": 1}],
+    "count": 1
+  }
+]

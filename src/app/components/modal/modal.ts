@@ -175,10 +175,11 @@ export class ModalsContentPage implements OnInit {
 
   // les clés à exclure dans les "autres tags", (qui ne sont pas dans les presets donc)
   getExcludeKeysFromOtherTags(primaryKey, configOfPrimaryKey) {
-    if (!configOfPrimaryKey) {
-      return [];
-    }
     const res = [primaryKey, 'name'];
+    if (!configOfPrimaryKey) {
+      return res;
+    }
+
     const presetsIds = configOfPrimaryKey.presets;
     for (let i = 0; i < presetsIds.length; i++) {
       res.push(this.tagsService.presets[presetsIds[i]].key);
@@ -190,7 +191,7 @@ export class ModalsContentPage implements OnInit {
     const tagsNotNull = [];
     for (let i = 0; i < this.tags.length; i++) {
       if (this.tags[i].value) {
-        tagsNotNull.push(this.tags[i]);
+        tagsNotNull.push({ 'key': this.tags[i].key, 'value': this.tags[i].value });
       }
     }
     if (_.isEqual(tagsNotNull, this.originalTags)) {
@@ -287,8 +288,16 @@ export class ModalsContentPage implements OnInit {
     }
   }
 
+
+
   updateOsmElement() {
     this.typeFiche = 'Loading';
+    // si les tags et la position n'ont pas changé, on ne fait rien!
+    if (!this.dataIsChanged() && !this.newPosition) {
+      this.dismiss();
+      return;
+    }
+
     this.pushTagsToFeature(); // on pousse les tags dans la feature
 
     if (this.configService.getIsDelayed()) {
@@ -345,6 +354,20 @@ export class ModalsContentPage implements OnInit {
     }
 
   }
+  addSurveySource(feature) {
+    if (!this.configService.getAddSurveySource()) {
+      return feature;
+    }
+
+    if (!feature.properties.tags['source']) {
+      feature.properties.tags['source'] = 'survey';
+    } else { // une source existe déjà...
+      if (!/survey/.test(feature.properties.tags['source'])) { // mais pas de survey...
+        feature.properties.tags['source'] = `survey; ${feature.properties.tags['source']}`;
+      }
+    }
+    return feature;
+  }
 
   pushTagsToFeature() {
     const tagObjects = {};
@@ -352,14 +375,13 @@ export class ModalsContentPage implements OnInit {
       tagObjects[this.tags[i].key] = this.tags[i].value;
     }
     this.feature.properties.tags = tagObjects;
+    this.feature = this.addSurveySource(this.feature);
   }
 
   moveOsmElement() {
     this.pushTagsToFeature();
     // on ferme la modal
     this.dismiss({ type: 'Move', 'geojson': this.feature, mode: this.mode });
-
-    // on emet l'evenement
   }
   async openPrimaryTagModal() {
     const data = { geojson: this.feature, configOfPrimaryKey: this.configOfPrimaryKey, primaryKey: this.primaryKey, tags: this.tags };

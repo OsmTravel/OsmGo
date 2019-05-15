@@ -126,6 +126,13 @@ export class MainPage implements AfterViewInit {
 
   }
 
+  onMapResized(e) {
+    if (this.mapService.map) {
+      this.mapService.map.resize();
+    }
+
+  }
+
 
 
   presentConfirm() {

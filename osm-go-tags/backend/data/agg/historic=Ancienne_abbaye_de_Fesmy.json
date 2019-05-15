@@ -1,0 +1,13 @@
+[
+  {
+    "key": "historic",
+    "tags": [{"value": "Ancienne_abbaye_de_Fesmy", "count": 1}],
+    "count": 1
+  },
+  {"key": "wikidata", "tags": [{"value": "Q2820584", "count": 1}], "count": 1},
+  {
+    "key": "wikipedia",
+    "tags": [{"value": "fr:Abbaye de Fesmy", "count": 1}],
+    "count": 1
+  }
+]

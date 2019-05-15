@@ -1,0 +1,9 @@
+[
+  {
+    "key": "office",
+    "tags": [{"value": "courtier credit immobilier", "count": 1}],
+    "count": 1
+  },
+  {"key": "phone", "tags": [{"value": "+33185562234", "count": 1}], "count": 1},
+  {"key": "wheelchair", "tags": [{"value": "yes", "count": 1}], "count": 1}
+]

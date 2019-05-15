@@ -1,0 +1,12 @@
+[
+  {
+    "key": "shop",
+    "tags": [{"value": "Vente_de_vêtements", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "https://www.aux-travailleurs.fr", "count": 1}],
+    "count": 1
+  }
+]

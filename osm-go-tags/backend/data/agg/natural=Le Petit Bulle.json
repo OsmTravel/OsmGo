@@ -1,0 +1,18 @@
+[
+  {"key": "amenity", "tags": [{"value": "cafe", "count": 1}], "count": 1},
+  {
+    "key": "cuisine",
+    "tags": [{"value": "Café sourire - Jeux libres - Ateli Yeah!", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "natural",
+    "tags": [{"value": "Le Petit Bulle", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "website",
+    "tags": [{"value": "https://lepetitbulle.fr/", "count": 1}],
+    "count": 1
+  }
+]

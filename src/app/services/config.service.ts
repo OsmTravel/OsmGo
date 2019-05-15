@@ -30,7 +30,8 @@ export class ConfigService {
         baseMapSourceId: this.baseMapSources[0].id,
         filterWayByArea: true,
         filterWayByLength: true,
-        changeSetComment : 'Sortie avec Osm Go!'
+        changeSetComment : 'Sortie avec Osm Go!',
+        addSurveySource : true
     };
 
 
@@ -160,6 +161,15 @@ export class ConfigService {
 
     getFilterWayByLength() {
         return this.config.filterWayByLength;
+    }
+
+    setAddSurveySource(addSurveySource: boolean) {
+        this.config.addSurveySource = addSurveySource;
+        this.localStorage.set('config', this.config);
+    }
+
+    getAddSurveySource() {
+        return this.config.addSurveySource;
     }
 
 }

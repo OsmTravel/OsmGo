@@ -10,9 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sprites": "node  ./misc/mapStyle/generateSprite.js"
+    "sprites": "node  ./osm-go-tags/backend/sprties.js"
   },
-  "private": true,
   "dependencies": {
     "@angular/common": "^7.2.12",
     "@angular/core": "^7.2.12",
@@ -32,6 +31,7 @@
     "@ionic/angular": "^4.2.0",
     "@ionic/storage": "^2.2.0",
     "@turf/turf": "^5.1.6",
+    "angular-resize-event": "^1.0.0",
     "cordova-android": "7.1.4",
     "cordova-plugin-app-version": "0.1.9",
     "cordova-plugin-device": "^2.0.2",
@@ -62,7 +62,6 @@
     "@angular/compiler-cli": "^7.2.12",
     "@angular/language-service": "^7.2.12",
     "@ionic/angular-toolkit": "~1.3.0",
-    "@mapbox/spritezero": "^6.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^10.12.30",
@@ -77,6 +76,8 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
+    "spritesmith": "^3.3.1",
+    "svg2img": "^0.6.0",
     "ts-node": "^8.0.3",
     "tslint": "~5.12.0",
     "typescript": "~3.1.6",

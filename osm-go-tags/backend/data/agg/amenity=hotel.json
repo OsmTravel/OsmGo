@@ -1,0 +1,34 @@
+[
+  {"key": "amenity", "tags": [{"value": "hotel", "count": 1}], "count": 1},
+  {
+    "key": "email",
+    "tags": [{"value": "reservation@chabriol.com", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "facebook",
+    "tags": [
+      {
+        "value": "https://www.facebook.com/Le-Moulinage-Chabriol-255421187806793/",
+        "count": 1
+      }
+    ],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 (0)6 77 06 49 90", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "swimming_pool",
+    "tags": [{"value": "outdoor", "count": 1}],
+    "count": 1
+  },
+  {"key": "tourism", "tags": [{"value": "hotel", "count": 1}], "count": 1},
+  {
+    "key": "website",
+    "tags": [{"value": "chabriol.com", "count": 1}],
+    "count": 1
+  }
+]

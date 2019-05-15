@@ -1,0 +1,13 @@
+[
+  {"key": "shop", "tags": [{"value": "yes", "count": 2}], "count": 2},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "nutrition_counseling", "count": 2}],
+    "count": 2
+  },
+  {
+    "key": "healthcare:speciality",
+    "tags": [{"value": "nutrition", "count": 2}],
+    "count": 2
+  }
+]

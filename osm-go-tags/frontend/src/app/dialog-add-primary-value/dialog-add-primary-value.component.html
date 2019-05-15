@@ -1,0 +1,34 @@
+<div class="content">
+  <table class="diffsPvalue">
+    <tr>
+      <th>Value</th>
+      <th>Count</th>
+    </tr>
+
+    <tr *ngFor="let diff of diffs" (click)="selectValue(diff)">
+      <td>{{diff?.value}}</td>
+      <td>{{diff?.count}}</td>
+    </tr>
+
+  </table>
+
+  <div class="newpValue" *ngIf="this.newPvalue">
+    <label> {{this.newPvalue.key}}</label>
+
+    <mat-form-field style="width: 100%;">
+      <input matInput [(ngModel)]="this.newPvalue.lbl" placeholder="Label" style="font-weight: bolder; font-size: 1.5em;">
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%;">
+      <input matInput [(ngModel)]="this.newPvalue.lbl_alt" placeholder="Label alternatif" style="font-weight: bolder;">
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%;">
+      <input matInput [(ngModel)]="this.newPvalue.alert" placeholder="Alert" style="font-weight: bolder; color:red;">
+    </mat-form-field>
+
+    <button mat-button (click)="toOsmPage(pKey, newPvalue.key)"> OSM WIKI PAGE </button>
+
+    <button mat-button (click)="pushNewPValue(pKey,newPvalue)"> Valider</button>
+  </div>
+</div>

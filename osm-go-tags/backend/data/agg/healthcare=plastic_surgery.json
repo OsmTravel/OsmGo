@@ -1,0 +1,13 @@
+[
+  {"key": "amenity", "tags": [{"value": "clinic", "count": 1}], "count": 1},
+  {
+    "key": "healthcare",
+    "tags": [{"value": "plastic_surgery", "count": 1}],
+    "count": 1
+  },
+  {
+    "key": "phone",
+    "tags": [{"value": "+33 4 74 600 600", "count": 1}],
+    "count": 1
+  }
+]

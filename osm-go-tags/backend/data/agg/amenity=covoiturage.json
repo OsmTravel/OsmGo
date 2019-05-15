@@ -1,0 +1,10 @@
+[
+  {"key": "area", "tags": [{"value": "yes", "count": 1}], "count": 1},
+  {
+    "key": "amenity",
+    "tags": [{"value": "covoiturage", "count": 1}],
+    "count": 1
+  },
+  {"key": "carpool", "tags": [{"value": "designated", "count": 1}], "count": 1},
+  {"key": "operator", "tags": [{"value": "CD22", "count": 1}], "count": 1}
+]

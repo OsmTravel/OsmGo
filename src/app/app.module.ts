@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AngularResizedEventModule } from 'angular-resize-event';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
@@ -72,7 +73,8 @@ import 'moment/locale/fr';
     IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    AngularResizedEventModule
   ],
 
   providers: [
