@@ -1,6 +1,29 @@
+# 0.8.0
+## Divers
+    * Ajout et corrections de tags
+    * Par défaut, à la création ou à la modification d'un objet, une source "survey" est ajouté.
+        - Si il n'y a aucune "source" : source = survey
+        - Si il y a une source mais qu'il n'y a pas le mot "survey", : source : survey; {l'ancienne source}
+    * L'ajout de la source peut être désactivé dans les paramètres
+    * Suppression de dépendances et de fichiers qui n'étaient plus utilisés ou facilement remplaçable par plus simple (leaflet extra marker, etc.)
+    * La dépendance "sharp" a été remplacé par "svg2img", plus rapide et compatible Windows (pour la génération des sprites )
+    * mapbox.mapbox-streets-v7.json est désormais en local...
+
+### Fix    
+    * # 15 [Affichage de la carte](https://github.com/DoFabien/OsmGo/issues/15) devrait être fixé pour toutes les plateformes 
+    * Pour les tags non connus, le nom et et la clé principale apparaissait ce qui créait un doublon d'affichage
+    * Un objet qui n'a pas été modifié ne peut plus être envoyé à OSM
+
+
+### Osm Go Tags
+Introduction d'Osm Go tag qui est un outil d'aide a la création et a la modifications des tags et presets. Il est au stade embryonnaire mais peut déjà être utile. Il est sous forme d'une application web avec une partie frontend (angular) et backend (express).
+A terme, il pourra être utilisé pour faciliter la colaboration,  les traductions et eventuelemnt pouvoir personaliser ses popres tags par utilisateur.
+Un script permet de creer les statistiques d'utilisations des tags à partir d'un PBF ( actuelement sur le France).
+Plus de docs bientôt...
+
 # 0.7.3
 ## Divers 
-* Mapbox Gl js 0.54.0
+    * Mapbox Gl js 0.54.0
 
 ### Fix
     * # 15 [Affichage de la carte](https://github.com/DoFabien/OsmGo/issues/15)
