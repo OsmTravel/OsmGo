@@ -147,7 +147,6 @@ export class DataService {
     }
 
     cancelFeatureChange(feature) {
-
         const originalFeature = JSON.parse(JSON.stringify(feature.properties.originalData));
         this.deleteFeatureFromGeojsonChanged(feature);
         // this.deleteFeatureFromGeojson(feature);
@@ -155,6 +154,12 @@ export class DataService {
             this.addFeatureToGeojson(originalFeature);
         }
     }
+
+    // supprime l'intégralité des changements
+    resetGeojsonChanged(){
+        this.geojsonChanged = { 'type': 'FeatureCollection', 'features': [] };
+    }
+
 
     resetGeojsonData() {
         this.setGeojson({ 'type': 'FeatureCollection', 'features': [] });
