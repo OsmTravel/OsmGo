@@ -182,7 +182,9 @@ export class ModalsContentPage implements OnInit {
 
     const presetsIds = configOfPrimaryKey.presets;
     for (let i = 0; i < presetsIds.length; i++) {
-      res.push(this.tagsService.presets[presetsIds[i]].key);
+      if (this.tagsService.presets[presetsIds[i]].key){
+        res.push(this.tagsService.presets[presetsIds[i]].key);
+      }
     }
     return res;
   }
@@ -194,7 +196,15 @@ export class ModalsContentPage implements OnInit {
         tagsNotNull.push({ 'key': this.tags[i].key, 'value': this.tags[i].value });
       }
     }
-    if (_.isEqual(tagsNotNull, this.originalTags)) {
+
+    const originalTagsNotNull = [];
+    for (let i = 0; i < this.originalTags.length; i++) {
+      if (this.originalTags[i].value && this.originalTags[i].value !== '' ) {
+        originalTagsNotNull.push({ 'key': this.originalTags[i].key, 'value': this.originalTags[i].value });
+      }
+    }
+
+    if (_.isEqual(tagsNotNull, originalTagsNotNull)) {
       return false;
     }
     return true;
