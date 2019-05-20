@@ -235,6 +235,7 @@ export class PushDataToOsmPage implements AfterViewInit {
         for (let i = 0; i < featuresChanged.length; i++) {
             this.dataService.cancelFeatureChange(featuresChanged[i]);
         }
+        this.dataService.resetGeojsonChanged();
         this.summary = this.getSummary();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
         timer(100).subscribe(t => {
