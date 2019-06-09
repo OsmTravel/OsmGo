@@ -1399,7 +1399,8 @@
         "icon": "maki-embassy-15",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": false
       },
       {
         "key": "bus_station",
@@ -1408,7 +1409,8 @@
         "icon": "mi-bus-station",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair"]
+        "presets": ["wheelchair"],
+        "deprecated": false
       },
       {
         "key": "auditorium",

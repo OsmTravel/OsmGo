@@ -15,6 +15,7 @@ import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 
 import * as _ from 'lodash';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'modal',
@@ -52,7 +53,8 @@ export class ModalsContentPage implements OnInit {
     public alertService: AlertService,
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
-    private zone: NgZone
+    private zone: NgZone,
+    private translate: TranslateService
 
   ) {
 
@@ -86,18 +88,18 @@ export class ModalsContentPage implements OnInit {
 
   presentConfirm() {
     this.alertCtrl.create({
-      header: 'Vraiment?',
-      message: 'Supprimer cet élément?',
+      header: this.translate.instant('MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER'),
+      message: this.translate.instant('MODAL_SELECTED_ITEM.DELETE_CONFIRM_MESSAGE'),
       buttons: [
         {
-          text: 'Annuler',
+          text: this.translate.instant('SHARED.CANCEL'),
           role: 'cancel',
           handler: () => {
 
           }
         },
         {
-          text: 'Confirmer',
+          text: this.translate.instant('SHARED.CONFIRM'),
           handler: () => {
             this.deleteOsmElement();
           }
@@ -148,6 +150,7 @@ export class ModalsContentPage implements OnInit {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
       for (let i = 0; i < presetsIds.length; i++) {
         const preset = this.tagsService.getPresetsById(presetsIds[i]);
+        console.log(preset, presetsIds[i]);
 
         // le tag utilisant la clé du preset
         const tagOfPreset = this.tags.filter(tag => tag.key === preset.key)[0] || undefined;
@@ -419,17 +422,6 @@ export class ModalsContentPage implements OnInit {
 
   async openModalList(data) {
 
-    // const modal = this.modalCtrl.create(ModalSelectList, data);
-
-    // modal.onDidDismiss(_data => {
-    //   if (_data) {
-    //     this.tags.filter(tag => tag.key === _data.key)[0].value = _data.value;
-    //   }
-    // });
-
-    // modal.present();
-
-
     const modal = await this.modalCtrl.create({
       component: ModalSelectList,
       componentProps: data
@@ -465,17 +457,17 @@ export class ModalsContentPage implements OnInit {
 
   confirmAddSurveyDate() {
     this.alertCtrl.create({
-      header: `Objet vérifié ?`,
-      subHeader: `Ajouter le tag 'survey:date' à la date du jour`,
+      header: this.translate.instant('MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_HEADER'), 
+      subHeader: this.translate.instant('MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_MESSAGE'),
       buttons: [
         {
-          text: 'Non',
+          text: this.translate.instant('SHARED.NO'),
           role: 'cancel',
           handler: data => {
           }
         },
         {
-          text: 'Oui',
+          text: this.translate.instant('SHARED.YES'),
           handler: data => {
             this.addSurveyDate();
           }

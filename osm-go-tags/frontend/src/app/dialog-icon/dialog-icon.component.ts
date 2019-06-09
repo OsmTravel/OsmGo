@@ -29,7 +29,7 @@ export class DialogIconComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.tagService.iconsList$.subscribe(icons => {
+    this.tagService.iconsList$().subscribe(icons => {
       console.log(icons);
       this.iconList = icons;
     });

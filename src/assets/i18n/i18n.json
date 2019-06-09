@@ -1,0 +1,20 @@
+{
+    "tags": [
+        {
+            "language": "en",
+            "country": [
+                "GB"
+            ]
+        },
+        {
+            "language": "fr",
+            "country": [
+                "FR"
+            ]
+        }
+    ],
+    "interface": [
+        "en",
+        "fr"
+    ]
+}

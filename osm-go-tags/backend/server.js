@@ -7,13 +7,30 @@ const app = express();
 var stringify = require("json-stringify-pretty-compact")
 app.use(bodyParser.json());
 
-
+// let language = 'fr'
+// let country = 'FR'
 console.log('ok')
-const presetsPath = path.join(__dirname, '..', '..', 'src','assets','tags', 'presets.json');
-const tagsPath = path.join(__dirname, '..', '..', 'src','assets','tags', 'tags.json');
+
+const getPresetsPath = (language, country) => {
+    return path.join(__dirname, '..', '..', 'src','assets','i18n', language, country,  'presets.json');
+}
+
+const getTagsPath = (language, country) => {
+    return path.join(__dirname, '..', '..', 'src','assets','i18n', language, country, 'tags.json');
+}
+
+const getSpritesPngPath = (language, country) => {
+    return path.join(__dirname, '..', '..', 'src','assets','i18n', language, country, 'sprites.png');
+}
+
+const getSpritesJsonPath = (language, country) => {
+    return path.join(__dirname, '..', '..', 'src','assets','i18n', language, country, 'sprites.json');;
+}
+
+
+
 const svgIconsDirPath = path.join(__dirname, '..', '..', 'src','assets','mapStyle', 'IconsSVG');
-const spritesPngPath = path.join(__dirname, '..', '..', 'src','assets','mapStyle', 'sprites.png');
-const spritesJsonPath = path.join(__dirname, '..', '..', 'src','assets','mapStyle', 'sprites.json');
+
 
 function error(res, error) {
     res.setHeader('Content-Type', 'application/json');
@@ -21,12 +38,35 @@ function error(res, error) {
 }
 app.get('/', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
-    res.send({ text: 'Vous êtes à l\'accueil' });
+    res.send({ text: 'Hello :-)' });
 });
 
-app.get('/api/OsmGoTags', function (req, res) {
+app.get('/api/i18', async (req, res) => {
+    const dir = path.join(__dirname, '..', '..', 'src','assets','i18n');
+    const list = await fs.readdir(dir);
+    let i18 = {'tags' :[], 'interface':[] };
+
+    for (let file of list){
+        fileFullPath = path.resolve(dir, file);
+        const fileStat = await fs.stat(fileFullPath)
+        if (fileStat && fileStat.isDirectory()) {
+            const dirCountry = await fs.readdir(fileFullPath);
+            i18.tags = [...i18.tags, { 'language': file, 'country': dirCountry }]
+        } else {
+           if (path.extname(file) === '.json'){
+            i18.interface = [...i18.interface, file.replace('.json','') ]
+           } 
+        }
+    }
+    res.send(i18)
+})
+
+app.get('/api/OsmGoTags/:language/:country', function (req, res) {
+    let language = req.params.language;
+    let country = req.params.country;
+
     res.setHeader('Content-Type', 'application/json');
-    fs.readFile(tagsPath, 'utf8').then(data => {
+    fs.readFile(getTagsPath(language, country), 'utf8').then(data => {
         data = JSON.parse(data);
         res.send(data)
     })
@@ -36,9 +76,12 @@ app.get('/api/OsmGoTags', function (req, res) {
         })
 });
 
-app.get('/api/OsmGoPresets', function (req, res) {
+app.get('/api/OsmGoPresets/:language/:country', function (req, res) {
+    let language = req.params.language;
+    let country = req.params.country;
+
     res.setHeader('Content-Type', 'application/json');
-    fs.readFile(presetsPath, 'utf8').then(data => {
+    fs.readFile(getPresetsPath(language, country), 'utf8').then(data => {
         data = JSON.parse(data);
         res.send(data)
     })
@@ -68,9 +111,12 @@ app.get('/api/svgList', function (req, res) {
         })
 });
 
-app.get('/api/sprites/png', function (req, res) {
+app.get('/api/sprites/png/:language/:country',  (req, res) => {
+    let language = req.params.language;
+    let country = req.params.country;
+
     res.setHeader('Content-Type', 'image/png; charset=UTF-8');
-    fs.readFile(spritesPngPath).then(data => {
+    fs.readFile(getSpritesPngPath(language, country)).then(data => {
         res.send(data)
     })
         .catch(err => {
@@ -78,10 +124,13 @@ app.get('/api/sprites/png', function (req, res) {
         })
 });
 
-app.get('/api/sprites/json', function (req, res) {
+app.get('/api/sprites/json/:language/:country', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
 
-    fs.readFile(spritesJsonPath, 'utf8').then(data => {
+    let language = req.params.language;
+    let country = req.params.country;
+
+    fs.readFile(getSpritesJsonPath(language, country), 'utf8').then(data => {
         res.send(data)
     })
         .catch(err => {
@@ -137,20 +186,25 @@ app.get('/api/PkeyPvalueStat/:pkey/:pvalue/:key?', function (req, res) {
         })
 });
 
-app.get('/api/generateSprites', async (req, res) => {
-    await generateSprites.generateSprites()
+app.get('/api/generateSprites/:language/:country', async (req, res) => {
+    let language = req.params.language;
+    let country = req.params.country;
+    await generateSprites.generateSprites(language, country)
     res.send({"status":"ok"});
 })
 
-app.post('/api/tag/', function (req, res) {
+app.post('/api/tag/:language/:country', function (req, res) {
+    let language = req.params.language;
+    let country = req.params.country;
+
     res.setHeader('Content-Type', 'application/json');
     const pkey = req.body.pkey;
     const newPvalue = req.body.newPvalue;
-    fs.readFile(tagsPath, 'utf8')
+    fs.readFile(getTagsPath(language, country), 'utf8')
         .then(data => {
             let jsonTags = JSON.parse(data);
             jsonTags[pkey].values.push(newPvalue)
-            fs.writeFile( tagsPath, stringify(jsonTags), 'utf8')
+            fs.writeFile( getTagsPath(language, country), stringify(jsonTags), 'utf8')
             .then( write => {
                 res.send(write)
                 console.log(write) 
@@ -162,12 +216,14 @@ app.post('/api/tag/', function (req, res) {
 })
 
 
-app.post('/api/tag/:key/:value', function (req, res) {
+app.post('/api/tag/:language/:country/:key/:value', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
+    let language = req.params.language;
+    let country = req.params.country;
     let key = req.params.key;
     let value = req.params.value;
     // console.log(key , value);
-    fs.readFile(tagsPath, 'utf8')
+    fs.readFile(getTagsPath(language, country), 'utf8')
         .then(data => {
         let jsonTags = JSON.parse(data);
         // console.log(jsonTags[key])
@@ -177,7 +233,7 @@ app.post('/api/tag/:key/:value', function (req, res) {
     //    let currentTag =  jsonTags[key].values.filter( el => el.key === value)[0];
     //    currentTag = req.body;
 
-       fs.writeFile( tagsPath, stringify(jsonTags), 'utf8')
+       fs.writeFile( getTagsPath(language, country), stringify(jsonTags), 'utf8')
         .then( write => {
             res.send(write)
             console.log(write) 
@@ -194,13 +250,17 @@ app.post('/api/tag/:key/:value', function (req, res) {
         })
 });
 
-app.post('/api/presets/', function (req, res) {
+app.post('/api/presets/:language/:country', function (req, res) {
+    
+    let language = req.params.language;
+    let country = req.params.country;
+
     res.setHeader('Content-Type', 'application/json');
     // post input => { primary : {key, value}, oldId, newid, data:{preset...}}
 
     const isNewId = req.body.ids.oldId !== req.body.ids.newId;
     console.log(req.body.ids.newId);
-    fs.readFile(presetsPath, 'utf8')
+    fs.readFile(getPresetsPath(language, country), 'utf8')
         .then(data => {
         let jsonPresets = JSON.parse(data);
         const newId = req.body.ids.newId;
@@ -210,12 +270,12 @@ app.post('/api/presets/', function (req, res) {
         console.log(jsonPresets[newId]);
 
 
-       fs.writeFile( presetsPath, stringify(jsonPresets), 'utf8')
+       fs.writeFile( getPresetsPath(language, country), stringify(jsonPresets), 'utf8')
         .then( write => {
             if (!isNewId){
                 res.send(write)
             } else { // on trouve le tag pour remplacer l'id du old au new, sinon on le push
-                let tags = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));
+                let tags = JSON.parse(fs.readFileSync(getTagsPath(language, country), 'utf8'));
                 let currentTagIndex = tags[req.body.primary.key].values
                     .findIndex(el => el.key == req.body.primary.value )
 
@@ -231,7 +291,7 @@ app.post('/api/presets/', function (req, res) {
                     tags[req.body.primary.key].values[currentTagIndex].presets.push(req.body.ids.newId);
                 }
 
-                fs.writeFile( tagsPath, stringify(tags), 'utf8')
+                fs.writeFile( getTagsPath(language, country), stringify(tags), 'utf8')
                     .then( w => {
                         res.send(w);
                     });

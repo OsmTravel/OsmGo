@@ -40,7 +40,8 @@ export class ModalPrimaryTag implements OnInit {
     }
 
     ngOnInit() {
-        this.tagsService.getAllTags().subscribe(allTags => {
+        console.log(this.configService.config.languageTags, this.configService.config.countryTags);
+        this.tagsService.getAllTags(this.configService.config.languageTags, this.configService.config.countryTags).subscribe(allTags => {
             this.allTags = allTags;
 
             // tslint:disable-next-line:forin

@@ -1,15 +1,28 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { AppVersion } from '@ionic-native/app-version/ngx';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
     eventCloseGeolocPage = new EventEmitter();
 
-    constructor(public localStorage: Storage, private _appVersion: AppVersion) {
-        this.loadConfig();
+    constructor(public localStorage: Storage,
+        private http: HttpClient,
+        private translate: TranslateService,
+        private _appVersion: AppVersion) {
+
+         this.getI18nConfig$().subscribe(d => {
+            this.i18nConfig = d;
+            this.loadConfig();
+         });
+
+
     }
 
+    i18nConfig;
 
     eventConfigIsLoaded = new EventEmitter();
     freezeMapRenderer = false;
@@ -30,10 +43,14 @@ export class ConfigService {
         baseMapSourceId: this.baseMapSources[0].id,
         filterWayByArea: true,
         filterWayByLength: true,
-        changeSetComment : 'Sortie avec Osm Go!',
-        addSurveySource : true
+        changeSetComment: 'Sortie avec Osm Go!',
+        addSurveySource: true,
+        languageUi: window.navigator.language.split('-')[0],
+        languageTags: window.navigator.language.split('-')[0],
+        countryTags: window.navigator.language.split('-')[1].toUpperCase()
     };
 
+    currentTagsCountryChoice = [];
 
 
     geolocPageIsOpen = true;
@@ -48,19 +65,41 @@ export class ConfigService {
     appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: '0.0.0' };
 
 
+    getI18nConfig$() {
+        return this.http.get('./assets/i18n/i18n.json')
+    }
+
+ 
 
     loadConfig() {
-        this.localStorage.get('config').then(d => {
-            if (d) {
-                // tslint:disable-next-line:forin
-                for (const key in d) {
-                    this.config[key] = d[key];
+
+
+        return this.localStorage.get('config')
+            .then(d => {
+         
+                if (d) {
+                    // tslint:disable-next-line:forin
+                    for (const key in d) {
+                        this.config[key] = d[key];
+                    }
+                } else {
+                    this.localStorage.set('config', this.config);
                 }
-            } else {
-                this.localStorage.set('config', this.config);
-            }
-            this.eventConfigIsLoaded.emit(this.config);
-        });
+
+       
+                const currentTagsLanguage = this.i18nConfig.tags.find( l => l.language === this.config.languageTags);
+                if (!currentTagsLanguage){
+                    this.config.languageTags = 'en';
+                    this.config.countryTags = 'GB';
+                } else {
+              
+                    if(!currentTagsLanguage.country.includes(this.config.countryTags)){
+                        this.config.countryTags = currentTagsLanguage.country[0];
+                    }
+                }
+                this.currentTagsCountryChoice = this.i18nConfig.tags.find( l => l.language == this.config.languageTags).country;
+                this.eventConfigIsLoaded.emit(this.config);
+            });
     }
 
     loadAppVersion() {
@@ -170,6 +209,28 @@ export class ConfigService {
 
     getAddSurveySource() {
         return this.config.addSurveySource;
+    }
+
+    setUiLanguage(lang: string) {
+        this.config.languageUi = lang;
+        this.translate.use(lang);
+        this.localStorage.set('config', this.config);
+    }
+
+    getUiLanguage() {
+        return this.config.languageUi;
+    }
+
+    setLanguageTags(lang: string){
+        this.config.languageTags = lang;
+        this.currentTagsCountryChoice = this.i18nConfig.tags.find( l => l.language == lang).country;
+        this.config.countryTags = this.currentTagsCountryChoice[0];
+        this.localStorage.set('config', this.config);
+    }
+
+    setCountryTags(country:string){
+        this.config.countryTags = country;
+        this.localStorage.set('config', this.config);
     }
 
 }

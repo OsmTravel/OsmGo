@@ -1,11 +1,10 @@
 <ion-content padding>
 
-        <h1>Géolocalisation en cours ...</h1>
-
-  
+        <h1>{{ 'GEOLOCATION.GEOLOCATION_IN_PROGESS' | translate}}</h1>
+        
         <ion-button  class="buttonDontUseGeoloc" *ngIf="displayDontUseLocationButton"
           tappable ion-button (click)="locationService.dontUseLocation()"> 
-          Ne pas utiliser la geolocalisation
+          {{ 'GEOLOCATION.DO_NOT_USE_GEOLOCATION' | translate}}
         </ion-button>
 
 </ion-content>

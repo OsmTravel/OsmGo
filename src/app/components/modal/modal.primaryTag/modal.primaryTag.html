@@ -1,8 +1,12 @@
 <div *ngIf="!loading" style="height:100%; background-color: white;">
 
 	<div id="tab">
-		<ion-button  ion-button clear (click)="typeFiche = 'list'">Liste</ion-button>
-		<ion-button  ion-button clear (click)="typeFiche = 'custom'">Custom</ion-button>
+		<ion-button  ion-button clear (click)="typeFiche = 'list'">
+			{{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_LIST' | translate}}
+		</ion-button>
+		<ion-button  ion-button clear (click)="typeFiche = 'custom'">
+				{{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_CUSTOM' | translate}}
+		</ion-button>
 	</div>
 	<div *ngIf="typeFiche == 'list'">
 		<div id="searchSelect">
@@ -51,7 +55,9 @@
 		</div>
 
 		<div class="listTag" *ngIf="selectedKey === 'full' && searchText.length < 3 ">
-			<h4 style="text-align: center;">Veuillez entrer au moins 3 lettres dans la barre de recherche</h4>
+			<h4 style="text-align: center;">
+					{{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate}}
+				</h4>
 
 		</div>
 	</div>
@@ -79,8 +85,12 @@
 	</div>
 
 	<div id="footer">
-		<ion-button  *ngIf="typeFiche == 'custom'" ion-button (click)="summit(typeFiche)" [disabled]="(customValue == ''  || selectedKey =='bookmarks' || selectedKey =='full' ) && typeFiche == 'custom' ">Valider</ion-button>
-		<ion-button  ion-button color="danger" (click)="cancel()">Annuler</ion-button>
+		<ion-button  *ngIf="typeFiche == 'custom'" ion-button (click)="summit(typeFiche)" [disabled]="(customValue == ''  || selectedKey =='bookmarks' || selectedKey =='full' ) && typeFiche == 'custom' ">
+				{{ 'SHARED.VALIDATE' | translate}}
+		</ion-button>
+		<ion-button  ion-button color="danger" (click)="cancel()">
+			{{ 'SHARED.CANCEL' | translate}}
+		</ion-button>
 	</div>
 
 
@@ -89,7 +99,7 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-title>
-					Chargement...
+						{{ 'MODAL_SELECTED_ITEM.LOADING' | translate}}
 				</ion-title>
 			</ion-toolbar>
 		</ion-header>

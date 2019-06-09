@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,18 +20,29 @@ import { FilterByKeyLblPipe } from './pipe/filter-by-key-lbl.pipe';
 import { DialogIconComponent } from './dialog-icon/dialog-icon.component';
 import { FilterByNamePipe } from './pipe/filter-by-name.pipe';
 import { DialogAddPrimaryValueComponent } from './dialog-add-primary-value/dialog-add-primary-value.component';
+import { TagsComponent } from './tags/tags.component';
+import { HomeComponent } from './home/home.component';
 
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'tags', component: TagsComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent, DialogModifyPresetsAppComponent, KeyPipe, FilterByKeyLblPipe, 
-    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent
+    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { useHash: true } 
+    ),
     BrowserModule, HttpClientModule, BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule, MatFormFieldModule, FormsModule,
     MatDialogModule, MatStepperModule, MatGridListModule, MatSlideToggleModule, MatProgressSpinnerModule, 
-    MatTooltipModule, MatIconModule
+    MatTooltipModule, MatIconModule 
   ],
   providers: [],
   entryComponents: [DialogModifyPresetsAppComponent, DialogIconComponent, DialogAddPrimaryValueComponent],

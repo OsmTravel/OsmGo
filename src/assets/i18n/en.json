@@ -1,0 +1,116 @@
+{
+  "SHARED": {
+    "YES": "Yes",
+    "NO": "No",
+    "CANCEL": "Cancel",
+    "CONFIRM": "Confirm",
+    "ADD": "Add",
+    "VALIDATE": "Validate",
+    "OK":"Ok"
+  },
+  "MAIN":{
+    "EXIT_CONFIRM_HEADER": "Really ?",
+    "EXIT_CONFIRM_MESSAGE": "Do you really want to leave Osm Go! ?",
+    "START_SNACK_ITEMS_IN_MEMORY" :"items in memory",
+    "WHAT_ITEM" : "Which ?"
+
+  },
+  "MENU": {
+    "CONNECTION": "Login to OpenStreetMap",
+    "SETTINGS": "Settings",
+    "ABOUT": "About",
+    "DELETE_DATA": "Delete data",
+    "EXIT": "Exit",
+    "SIGN_OUT": "Logout"
+  },
+  "ABOUT": {
+    "ABOUT": "About",
+    "SOURCES": "Sources",
+    "DATA": "Data"
+  },
+  "GEOLOCATION": {
+    "GEOLOCATION_IN_PROGESS": "Geolocation in progress ...",
+    "DO_NOT_USE_GEOLOCATION": "Do not use geolocation"
+  },
+  "LOGIN": {
+    "LOGIN": "Login",
+    "USERNAME_PLACEHOLDER": "Email or user name OpenStreetMap",
+    "PASSWORD_PLACEHOLDER": "Password",
+    "LOGIN_BUTTON": "Log in"
+  },
+  "SEND_DATA": {
+    "SEND_DATA": "Send data",
+    "YOU_MUST_BE_LOGGED_IN": "Please log in to send your changes to OSM.",
+    "NUMBER_OF_ITEMS_TO_SEND": "Number of itmes :",
+    "ADDED_ITEMS": "Created",
+    "UPDATED_ITEMS": "Updated",
+    "DELETED_ITEMS": "Deleted",
+    "CHANGESET_COMMENT": "Changeset comment",
+    "TYPE": "Type",
+    "PRIMARY_KEY": "Primary key",
+    "NAME": "Name",
+    "ERROR": "Error",
+    "SEND": "Send !",
+    "DELETE": "Delete",
+    "DELETE_CONFIRM_HEADER": "Really ?",
+    "DELETE_CONFIRM_MESSAGE": "Delete all changes?",
+    "CLOSE": "Close"
+  },
+  "SETTINGS": {
+    "SETTINGS": "Settings",
+    "MAP": "Map",
+    "POSITION_TRACKING": "Position tracking",
+    "POSITION_TRACKING_HINT": "The map is centered on your position",
+    "ORIENTATION_TRACKING": "Orientation tracking",
+    "ORIENTATION_TRACKING_HINT": "The orientation of the map depends on the phone",
+    "HIDE_LARGE_POLYGON": "Hide polygons larger than than 5000 m²",
+    "HIDE_LARGE_POLYGON_HINT": "Polygons larger than 5000 m² will not be displayed. A marker will always symbolize the polygon",
+    "HIDE_LONG_LINE": "Hide lines longer than 200 m",
+    "HIDE_LONG_LINE_HINT": "Lines longer than 200 m will not be displayed. A marker will always symbolize the line",
+    "TAGS": "Tags",
+    "DEFAULT_TAGS_LIST": "List of default tags",
+    "TAGS_LIST_ALL": "All tags",
+    "TAGS_LIST_BOOKMARKS": "Bookmarks",
+    "TAGS_LIST_TYPE": "By type",
+    "DEFAULT_TAGS_LIST_HINT": "Default tag type when opening the selection window",
+    "ADD_SURVEY_SOURCE": "Add survey source",
+    "ADD_SURVEY_SOURCE_HINT": "Add survey source ",
+    "DATA": "Data",
+    "MARGIN": "Margin",
+    "MARGIN_HINT": "Distance around the current view where the data will be downloaded",
+    "AERIAL_IMAGERY": "Aerial imagery",
+    "AERIAL_IMAGERY_HINT": "Aerial imaging to use",
+    "DELAYED_MODE": "Deferred mode",
+    "DELAYED_MODE_HINT": "The modified items will be sent at once to your request (recommended mode)",
+    "LIVE_MODE_MUST_LOGIN": "You must be authenticated to switch",
+    "LIVE_MODE_ON": "Mode live On",
+    "LIVE_MODE_OFF": "Mode live Off",
+    "LIVE_MODE_HINT": "After each change, the item is sent to OpenStreetMap",
+    "LANGUAGE_AND_REGION": "Language & region",
+    "UI_LANGUAGE" : "User interface language",
+    "TAG_LANGUAGE": "Language of tags",
+    "TAG_COUNTRY": "Country",
+    "TAG_COUNTRY_HINT": "Tags and presets may vary by country"
+  },
+  "MODAL_SELECTED_ITEM":{
+    "PRIMARY_TAG_LIST": "Liste",
+    "PRIMARY_TAG_CUSTOM": "Custom",
+    "SEARCH_TAG_AT_LEAST_3_LETTERS": "Please enter at least 3 letters in the search bar",
+    "LOADING": "Loading...",
+    "META_VERSION": "Version :",
+    "META_BEING_CREATED" : "Being created",
+    "META_CREATED_AT_DATE" : "Added the :",
+    "META_UPDATED_AT_DATE" : "Updated the :",
+    "META_CREATED_AT_DATE_TIME_AGO" : "Added",
+    "META_UPDATED_AT_DATE_TIME_AGO" : "Updated",
+    "META_BY": "By :", 
+    "META_MYSELF" : "Myself",
+    "NO_NAME" : "No name",
+    "PLACEHOLDER_NAME": "Name",
+    "ADD_A_TAG": "Add a tag",
+    "DELETE_CONFIRM_HEADER": "Really ?",
+    "DELETE_CONFIRM_MESSAGE": "Delete this item ?",
+    "ADD_SURVEY_DATE_CONFIRM_HEADER": "Has the object been verified ?",
+    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add tag 'survey:date' at today's date"
+  }
+}

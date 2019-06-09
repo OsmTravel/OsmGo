@@ -30,6 +30,8 @@
     "@ionic-native/vibration": "^5.4.0",
     "@ionic/angular": "^4.2.0",
     "@ionic/storage": "^2.2.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@turf/turf": "^5.1.6",
     "angular-resize-event": "^1.0.0",
     "cordova-android": "7.1.4",
@@ -49,7 +51,7 @@
     "mapbox-gl": "^0.54.0",
     "moment": "^2.24.0",
     "ngx-moment": "^3.4.0",
-    "rxjs": "~6.3.3",
+    "rxjs": "^6.5.2",
     "zone.js": "~0.8.29"
   },
   "devDependencies": {

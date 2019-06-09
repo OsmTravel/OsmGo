@@ -15,51 +15,65 @@ const httpOptions = {
 })
 export class TagsService {
 
-  tagsConfig$: Observable<any>;
   presetsConfig = [];
-  presetsConfig$: Observable<any>;
-  iconsList$: Observable<any>;
   tagsConfig = {};
   aggStats;
   jsonSprites;
+  language ;
+  country;
 
 
 
   constructor(private http: HttpClient) {
+    console.log(this.language)
 
-    this.presetsConfig$ = this.http.get<any[]>('/api/OsmGoPresets').pipe(
+
+
+    // this.presetsConfig$.subscribe(data => {
+    //   this.presetsConfig = data;
+    // });
+
+
+
+  }
+
+
+
+  presetsConfig$() {
+    return this.http.get<any[]>(`/api/OsmGoPresets/${this.language}/${this.country}`)
+    .pipe(
       map((data) => {
         Object.keys(data).map(k => {
           data[k]['_id'] = k;
           return data[k];
         });
+        this.presetsConfig = data
         return data;
       }),
       shareReplay()
     );
+  }
 
-    this.presetsConfig$.subscribe(data => {
-      this.presetsConfig = data;
-    });
 
-    this.tagsConfig$ = this.http.get('/api/OsmGoTags').pipe(
-
+  tagsConfig$() {
+   return this.http.get(`/api/OsmGoTags/${this.language}/${this.country}`).pipe(
       map(res => res),
       shareReplay()
     );
+  }
 
-    this.iconsList$ = this.http.get<any[]>('/api/svgList').pipe(
+  iconsList$():Observable<any> {
+    return this.http.get<any[]>('/api/svgList').pipe(
       shareReplay()
     );
-
   }
 
-  generatesSprites() {
-    return this.http.get('/api/generateSprites');
+  generatesSprites(language, country) {
+    return this.http.get(`/api/generateSprites/${language}/${country}`);
   }
 
-  getPresetsConfig() {
-    return this.http.get('/api/OsmGoPresets');
+  getPresetsConfig(language, country) {
+    return this.http.get(`/api/OsmGoPresets/${language}/${country}`);
   }
   getGenericPresets() {
     const genericPresets = [];
@@ -80,7 +94,7 @@ export class TagsService {
   }
 
   getJsonSprite$() {
-    return this.http.get('/api/sprites/json');
+    return this.http.get(`/api/sprites/json/${this.language}/${this.country}`);
   }
   getPresetsKeyByPrimaryTag(key, value) {
     const keys = [];
@@ -110,29 +124,30 @@ export class TagsService {
 
 
   tagsUseThisPreset$(idPreset: string) {
-    return this.tagsConfig$
-      .pipe(
-        map(el => {
-          const keys = Object.keys(el);
-          let tags = [];
-          keys.map(key => {
-            tags = [...tags, ...el[key].values];
-          });
-          return tags.filter(tag => tag['presets'].indexOf(idPreset) !== -1);
-        }
-        ));
-  }
-
-
-
-  getTagsUseThisPreset(idPreset: string): Observable<string[]> {
-    return this.tagsConfig$.pipe(
-
+    return this.http.get(`/api/OsmGoTags/${this.language}/${this.country}`).pipe(
+      map(el => {
+        const keys = Object.keys(el);
+        let tags = [];
+        keys.map(key => {
+          tags = [...tags, ...el[key].values];
+        });
+        return tags.filter(tag => tag['presets'].indexOf(idPreset) !== -1);
+      }
+      ),
+      shareReplay()
     );
   }
 
+
+
+  // getTagsUseThisPreset(idPreset: string): Observable<string[]> {
+  //   return this.tagsConfig$.pipe(
+
+  //   );
+  // }
+
   updatePrimaryTag(pkey, value, data) {
-    return this.http.post<any>(`/api/tag/${pkey}/${value}`, data, httpOptions)
+    return this.http.post<any>(`/api/tag/${this.language}/${this.country}/${pkey}/${value}`, data, httpOptions)
       .pipe(
         // catchError( err => console.log(err))
       );
@@ -143,12 +158,12 @@ export class TagsService {
     console.log(oldId, newId);
     // { primary : {key, value}, oldId, newid, data:{preset...}}
     const params = { primary: { key: pkey, value: pvalue }, ids: { 'oldId': oldId, 'newId': newId }, data: data };
-    return this.http.post<any>(`/api/presets/`, params, httpOptions);
+    return this.http.post<any>(`/api/presets/${this.language}/${this.country}`, params, httpOptions);
   }
 
   postNewPvalue$(pkey, newPvalue) {
     const params = { pkey: pkey, newPvalue: newPvalue };
-    return this.http.post<any>(`/api/tag/`, params, httpOptions);
+    return this.http.post<any>(`/api/tag/${this.language}/${this.country}`, params, httpOptions);
   }
 
 }
