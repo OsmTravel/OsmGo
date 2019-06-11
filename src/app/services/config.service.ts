@@ -92,9 +92,8 @@ export class ConfigService {
                     this.config.languageTags = 'en';
                     this.config.countryTags = 'GB';
                 } else {
-              
-                    if(!currentTagsLanguage.country.includes(this.config.countryTags)){
-                        this.config.countryTags = currentTagsLanguage.country[0];
+                    if(!currentTagsLanguage.country.find( r => r.region === this.config.countryTags)){
+                        this.config.countryTags = currentTagsLanguage.country[0].region;
                     }
                 }
                 this.currentTagsCountryChoice = this.i18nConfig.tags.find( l => l.language == this.config.languageTags).country;
@@ -224,7 +223,7 @@ export class ConfigService {
     setLanguageTags(lang: string){
         this.config.languageTags = lang;
         this.currentTagsCountryChoice = this.i18nConfig.tags.find( l => l.language == lang).country;
-        this.config.countryTags = this.currentTagsCountryChoice[0];
+        this.config.countryTags = this.currentTagsCountryChoice[0].region;
         this.localStorage.set('config', this.config);
     }
 

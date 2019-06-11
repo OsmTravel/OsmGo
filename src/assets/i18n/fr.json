@@ -20,6 +20,8 @@
     "SETTINGS": "Paramètres",
     "ABOUT": "A propos",
     "DELETE_DATA": "Supprimer les données",
+    "DELETE_DATA_CONFIRM_HEADER": "Supprimer les données ?",
+    "DELETE_DATA_CONFIRM_MESSAGE": "Supprimer les données téléchargées? (conserve les modifications)",
     "EXIT": "Quitter",
     "SIGN_OUT": "Se déconnecter"
   },

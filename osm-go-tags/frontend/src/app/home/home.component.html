@@ -22,8 +22,8 @@
 <mat-form-field *ngIf="selectedLanguageTag">
   <mat-label>Region</mat-label>
   <mat-select (selectionChange)="countryChange($event)">
-    <mat-option *ngFor="let c of selectedLanguageTag.country" [value]="c">
-      {{c}}
+    <mat-option *ngFor="let c of selectedLanguageTag.country" [value]="c.region">
+      {{c.region}}
     </mat-option>
   </mat-select>
 </mat-form-field>

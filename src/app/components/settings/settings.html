@@ -164,8 +164,8 @@
 				<ion-label>{{'SETTINGS.TAG_COUNTRY' | translate }}</ion-label>
 				<ion-select [(ngModel)]="this.configService.config.countryTags" (ionChange)="countryTagsChange($event)">
 					<ion-select-option *ngFor="let country of this.configService.currentTagsCountryChoice" 
-						[value]="country">
-						{{country}}
+						[value]="country.region">
+						{{country.region}}
 					</ion-select-option>
 				</ion-select>
 			</ion-item>

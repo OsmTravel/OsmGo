@@ -20,6 +20,8 @@
     "SETTINGS": "Settings",
     "ABOUT": "About",
     "DELETE_DATA": "Delete data",
+    "DELETE_DATA_CONFIRM_HEADER": "Really ?",
+    "DELETE_DATA_CONFIRM_MESSAGE": "Delete downloaded data? (keep the changes)",
     "EXIT": "Exit",
     "SIGN_OUT": "Logout"
   },

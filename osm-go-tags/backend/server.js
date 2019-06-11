@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const path = require('path')
 const generateSprites = require('./generateSprite')
 const app = express();
-var stringify = require("json-stringify-pretty-compact")
+const stringify = require("json-stringify-pretty-compact")
+const crypto = require('crypto');
 app.use(bodyParser.json());
 
 // let language = 'fr'
@@ -51,9 +52,23 @@ app.get('/api/i18', async (req, res) => {
         const fileStat = await fs.stat(fileFullPath)
         if (fileStat && fileStat.isDirectory()) {
             const dirCountry = await fs.readdir(fileFullPath);
-            i18.tags = [...i18.tags, { 'language': file, 'country': dirCountry }]
+            let regions = [];
+
+            dirCountry.forEach( async region => {
+                const tagsPath = path.join(fileFullPath,region, "tags.json");
+                const tagsStr =  fs.readFileSync(tagsPath, 'utf8');
+                const tagsHash = crypto.createHash('md5').update(tagsStr).digest("hex");
+
+                const presetsPath = path.join(fileFullPath,region, "presets.json");
+                const presetsStr =  fs.readFileSync(presetsPath, 'utf8');
+                const presetsHash = crypto.createHash('md5').update(presetsStr).digest("hex");
+                console.log(presetsHash);
+                regions = [...regions, { region: region, tagsHash:tagsHash,presetsHash: presetsHash }]
+            })
+
+            i18.tags = [...i18.tags, { 'language': file, 'country': regions }]
         } else {
-           if (path.extname(file) === '.json'){
+           if (path.extname(file) === '.json' && file !== 'i18n.json'){
             i18.interface = [...i18.interface, file.replace('.json','') ]
            } 
         }

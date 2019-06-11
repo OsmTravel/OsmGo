@@ -150,7 +150,6 @@ export class ModalsContentPage implements OnInit {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
       for (let i = 0; i < presetsIds.length; i++) {
         const preset = this.tagsService.getPresetsById(presetsIds[i]);
-        console.log(preset, presetsIds[i]);
 
         // le tag utilisant la clé du preset
         const tagOfPreset = this.tags.filter(tag => tag.key === preset.key)[0] || undefined;
