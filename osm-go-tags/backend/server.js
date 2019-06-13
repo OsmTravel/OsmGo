@@ -28,6 +28,7 @@ const getSpritesJsonPath = (language, country) => {
     return path.join(__dirname, '..', '..', 'src','assets','i18n', language, country, 'sprites.json');;
 }
 
+const uiLanguagePath = path.join(__dirname, '..', '..', 'src','assets','i18n');
 
 
 const svgIconsDirPath = path.join(__dirname, '..', '..', 'src','assets','mapStyle', 'IconsSVG');
@@ -339,6 +340,29 @@ app.post('/api/presets/:language/:country', function (req, res) {
 
     console.log('BODY', req.body.ids)
 
+});
+
+/* UI TRANSLATION */
+app.get('/api/UiTranslation/:language/',  async (req, res) => {
+    let language = req.params.language;
+    res.setHeader('Content-Type', 'application/json');
+
+    const pathLCurrentLang = path.join(uiLanguagePath, `${language}.json`)
+
+    let str = fs.readFileSync(pathLCurrentLang, 'utf8')
+    const data = JSON.parse(str);
+    res.send(data)
+});
+
+app.post('/api/UiTranslation/:language/',  async (req, res) => {
+    let language = req.params.language;
+    res.setHeader('Content-Type', 'application/json');
+    const newTranslation = req.body.newTranslation;
+    // console.log(newTranslation);
+    const pathLCurrentLang = path.join(uiLanguagePath, `${language}.json`)
+    let str = stringify(newTranslation);
+    fs.writeFileSync(pathLCurrentLang, str,'utf8')
+    res.send(newTranslation)
 });
 
 

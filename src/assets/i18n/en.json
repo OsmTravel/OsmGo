@@ -6,14 +6,13 @@
     "CONFIRM": "Confirm",
     "ADD": "Add",
     "VALIDATE": "Validate",
-    "OK":"Ok"
+    "OK": "Ok"
   },
-  "MAIN":{
+  "MAIN": {
     "EXIT_CONFIRM_HEADER": "Really ?",
     "EXIT_CONFIRM_MESSAGE": "Do you really want to leave Osm Go! ?",
-    "START_SNACK_ITEMS_IN_MEMORY" :"items in memory",
-    "WHAT_ITEM" : "Which ?"
-
+    "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
+    "WHAT_ITEM": "Which ?"
   },
   "MENU": {
     "CONNECTION": "Login to OpenStreetMap",
@@ -25,11 +24,7 @@
     "EXIT": "Exit",
     "SIGN_OUT": "Logout"
   },
-  "ABOUT": {
-    "ABOUT": "About",
-    "SOURCES": "Sources",
-    "DATA": "Data"
-  },
+  "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
   "GEOLOCATION": {
     "GEOLOCATION_IN_PROGESS": "Geolocation in progress ...",
     "DO_NOT_USE_GEOLOCATION": "Do not use geolocation"
@@ -89,25 +84,25 @@
     "LIVE_MODE_OFF": "Mode live Off",
     "LIVE_MODE_HINT": "After each change, the item is sent to OpenStreetMap",
     "LANGUAGE_AND_REGION": "Language & region",
-    "UI_LANGUAGE" : "User interface language",
+    "UI_LANGUAGE": "User interface language",
     "TAG_LANGUAGE": "Language of tags",
     "TAG_COUNTRY": "Country",
     "TAG_COUNTRY_HINT": "Tags and presets may vary by country"
   },
-  "MODAL_SELECTED_ITEM":{
+  "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "Liste",
     "PRIMARY_TAG_CUSTOM": "Custom",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Please enter at least 3 letters in the search bar",
     "LOADING": "Loading...",
     "META_VERSION": "Version :",
-    "META_BEING_CREATED" : "Being created",
-    "META_CREATED_AT_DATE" : "Added the :",
-    "META_UPDATED_AT_DATE" : "Updated the :",
-    "META_CREATED_AT_DATE_TIME_AGO" : "Added",
-    "META_UPDATED_AT_DATE_TIME_AGO" : "Updated",
-    "META_BY": "By :", 
-    "META_MYSELF" : "Myself",
-    "NO_NAME" : "No name",
+    "META_BEING_CREATED": "Being created",
+    "META_CREATED_AT_DATE": "Added the :",
+    "META_UPDATED_AT_DATE": "Updated the :",
+    "META_CREATED_AT_DATE_TIME_AGO": "Added",
+    "META_UPDATED_AT_DATE_TIME_AGO": "Updated",
+    "META_BY": "By :",
+    "META_MYSELF": "Myself",
+    "NO_NAME": "No name",
     "PLACEHOLDER_NAME": "Name",
     "ADD_A_TAG": "Add a tag",
     "DELETE_CONFIRM_HEADER": "Really ?",

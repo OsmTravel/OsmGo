@@ -7,6 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
+  langageUiSelected;
+
   constructor(private http: HttpClient) { }
 
   getI18Config$() {

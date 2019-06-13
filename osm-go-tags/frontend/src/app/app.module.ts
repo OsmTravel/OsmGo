@@ -22,17 +22,20 @@ import { FilterByNamePipe } from './pipe/filter-by-name.pipe';
 import { DialogAddPrimaryValueComponent } from './dialog-add-primary-value/dialog-add-primary-value.component';
 import { TagsComponent } from './tags/tags.component';
 import { HomeComponent } from './home/home.component';
-
+import { TranslateUiComponent } from './translate-ui/translate-ui.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'tags', component: TagsComponent }
+  { path: 'tags', component: TagsComponent },
+  { path: 'translateUi', component: TranslateUiComponent }
+  
 ];
 
 @NgModule({
   declarations: [
     AppComponent, DialogModifyPresetsAppComponent, KeyPipe, FilterByKeyLblPipe, 
-    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent
+    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent, TranslateUiComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -42,7 +45,7 @@ const appRoutes: Routes = [
     BrowserModule, HttpClientModule, BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule, MatSelectModule, MatInputModule, MatFormFieldModule, FormsModule,
     MatDialogModule, MatStepperModule, MatGridListModule, MatSlideToggleModule, MatProgressSpinnerModule, 
-    MatTooltipModule, MatIconModule 
+    MatTooltipModule, MatIconModule , MatToolbarModule
   ],
   providers: [],
   entryComponents: [DialogModifyPresetsAppComponent, DialogIconComponent, DialogAddPrimaryValueComponent],

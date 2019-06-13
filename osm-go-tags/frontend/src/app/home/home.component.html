@@ -1,6 +1,19 @@
 <h1> interface translation</h1>
 
-<button mat-raised-button color="primary">Primary</button>
+<mat-form-field>
+  <mat-label>Language</mat-label>
+  <mat-select [(ngModel)]="dataService.langageUiSelected">
+    <mat-option *ngFor="let c of i18Config.interface" [value]="c">
+      {{c}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+<button mat-raised-button color="primary" 
+  [disabled]="!dataService.langageUiSelected"
+ (click)="goToTranslateUi()">Translate Ui</button>
 
 
 <h1> Tags & presets </h1>
@@ -28,4 +41,4 @@
   </mat-select>
 </mat-form-field>
 
-<button mat-raised-button (click)="goToTagsConfig()" color="primary">Config Tags</button>
+<button mat-raised-button [disabled]="!tagsService.country || !tagsService.language" (click)="goToTagsConfig()" color="primary">Config tags...</button>

@@ -41,6 +41,9 @@ export class HomeComponent implements OnInit {
     this.tagsService.country = e.value;
   }
 
+  goToTranslateUi(){
+    this.router.navigate(['/translateUi']);
+  }
 
   goToTagsConfig(){
     this.router.navigate(['/tags']);
