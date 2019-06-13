@@ -204,7 +204,15 @@ app.get('/api/PkeyPvalueStat/:pkey/:pvalue/:key?', function (req, res) {
 app.get('/api/generateSprites/:language/:country', async (req, res) => {
     let language = req.params.language;
     let country = req.params.country;
-    await generateSprites.generateSprites(language, country)
+
+    const config = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'src', 'assets', 'i18n', 'i18n.json'), 'utf8'))
+    const confTags = config.tags;
+
+    
+    console.log(confTags);
+
+
+    // await generateSprites.generateSprites(language, country)
     res.send({"status":"ok"});
 })
 
