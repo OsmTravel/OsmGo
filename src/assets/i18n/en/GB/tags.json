@@ -225,7 +225,7 @@
         "icon": "mi-art-gallery",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["art", "wheelchair", "phone", "website", "opening_hours"],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true
       },
       {
@@ -784,7 +784,7 @@
       },
       {
         "key": "swimming_pool",
-        "lbl": "Magasin de piscines",
+        "lbl": "Swimming Pool Shop",
         "lbl_alt": "",
         "icon": "maki-swimming-15",
         "markerColor": "#A23337",
@@ -970,7 +970,7 @@
       },
       {
         "key": "vacant",
-        "lbl": "Local vacant",
+        "lbl": "Empty Shop",
         "lbl_alt": "",
         "icon": "mi-storage",
         "markerColor": "#A23337",
@@ -1143,7 +1143,7 @@
         "lbl_alt": "alcohol, beer, booze, wine",
         "icon": "maki-alcohol-shop-15",
         "markerColor": "#A23337",
-        "alert": "Magasin de vente d'alcool propriété du gouvernement ou sous licence. N'existe pas en France",
+        "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true
       },
@@ -1446,7 +1446,7 @@
       },
       {
         "key": "yes",
-        "lbl": "_Not known",
+        "lbl": " Not known",
         "lbl_alt": "",
         "icon": "wiki_question",
         "markerColor": "#A23337",
@@ -1455,8 +1455,8 @@
       },
       {
         "key": "ski",
-        "lbl": "ski",
-        "lbl_alt": "Vente de ski",
+        "lbl": "Ski",
+        "lbl_alt": "",
         "icon": "mi-skiing",
         "markerColor": "#A23337",
         "alert": "",
@@ -1606,7 +1606,7 @@
       },
       {
         "key": "brothel",
-        "lbl": "Bordel",
+        "lbl": "Brothel",
         "lbl_alt": "",
         "icon": "",
         "markerColor": "#EF9228",
@@ -1900,7 +1900,7 @@
       },
       {
         "key": "nursing_home",
-        "lbl": "Maison de santé",
+        "lbl": "Nursing Home",
         "lbl_alt": "",
         "icon": "mi-health",
         "markerColor": "#EF9228",
@@ -2402,7 +2402,7 @@
       },
       {
         "key": "swimming_pool",
-        "lbl": "swimming_pool",
+        "lbl": "Swimming Pool",
         "lbl_alt": "",
         "icon": "maki-swimming-15",
         "markerColor": "#EF9228",
@@ -2491,8 +2491,8 @@
       },
       {
         "key": "dancing_school",
-        "lbl": "dancing_school",
-        "lbl_alt": "Ecole de danse",
+        "lbl": "Dancing School",
+        "lbl_alt": "",
         "icon": "dance-instructor",
         "markerColor": "#EF9228",
         "alert": "",
@@ -2676,7 +2676,7 @@
       },
       {
         "key": "lifeguard_tower",
-        "lbl": "Tour de sauveteur",
+        "lbl": "Lifeguard Tower",
         "lbl_alt": "",
         "icon": "maki-ranger-station-15",
         "markerColor": "#75030B",
@@ -2919,7 +2919,7 @@
       },
       {
         "key": "wildlife_hide",
-        "lbl": "Observatoire d'animaux",
+        "lbl": "Wildlife Hide",
         "lbl_alt": "",
         "icon": "fa-dove-solid",
         "markerColor": "#5B396C",
@@ -3067,8 +3067,8 @@
       },
       {
         "key": "table_tennis_table",
-        "lbl": "Table de ping-pong",
-        "lbl_alt": "pingpong, tenis de table",
+        "lbl": "Table Tennis Table",
+        "lbl_alt": "pingpong",
         "icon": "maki-tennis-15",
         "markerColor": "#5B396C",
         "alert": "",
@@ -3252,7 +3252,7 @@
       },
       {
         "key": "insulation",
-        "lbl": "Isolation thermique",
+        "lbl": "Insulation",
         "lbl_alt": "",
         "icon": "",
         "markerColor": "#5B396C",
@@ -3546,8 +3546,8 @@
       },
       {
         "key": "builder",
-        "lbl": "Entreprise du BTP",
-        "lbl_alt": " travaux de construction et de travaux publics",
+        "lbl": "Builder",
+        "lbl_alt": "",
         "icon": "",
         "markerColor": "#5B396C",
         "alert": "",
@@ -4061,7 +4061,7 @@
       },
       {
         "key": "travel_agent",
-        "lbl": "Agence de voyage",
+        "lbl": "Travel Agency",
         "lbl_alt": "",
         "icon": "mi-travel-agency",
         "markerColor": "#F5BB3A",
@@ -4093,7 +4093,7 @@
         "lbl_alt": "",
         "icon": "maki-town-hall-15",
         "markerColor": "#F5BB3A",
-        "alert": "Déprécié, use : office=government.",
+        "alert": "use : office=government.",
         "deprecated": true,
         "presets": []
       },
@@ -4145,7 +4145,7 @@
       },
       {
         "key": "advertising",
-        "lbl": "Dispositifs Publicitaires",
+        "lbl": "Advertising",
         "lbl_alt": "",
         "icon": "maki-monument-15",
         "markerColor": "#D3D3D3",
@@ -4391,8 +4391,8 @@
       },
       {
         "key": "snow_cannon",
-        "lbl": "Canon à neige",
-        "lbl_alt": "enneigeur",
+        "lbl": "Snow Cannon",
+        "lbl_alt": "",
         "icon": "mi-snow",
         "markerColor": "#D3D3D3",
         "alert": "",
@@ -4732,7 +4732,7 @@
       },
       {
         "key": "building",
-        "lbl": "Bâtiment historique ",
+        "lbl": "Historical Building",
         "lbl_alt": "",
         "icon": "fa-bank",
         "markerColor": "#FFBA0C",

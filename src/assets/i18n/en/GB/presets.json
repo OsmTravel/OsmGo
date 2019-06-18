@@ -396,10 +396,7 @@
       {"v": "milk", "lbl": "milk"},
       {"v": "newspapers", "lbl": "newspapers"},
       {"v": "parking_tickets", "lbl": "parking_tickets"},
-      {
-        "v": "public_transport_tickets",
-        "lbl": "public_transport_tickets"
-      },
+      {"v": "public_transport_tickets", "lbl": "public_transport_tickets"},
       {"v": "sweets", "lbl": "sweets"},
       {"v": "toys", "lbl": "toys"}
     ],

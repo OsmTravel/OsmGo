@@ -2,11 +2,12 @@
 
   <!-- Ajout d'un preset existant 1-->
   <mat-step *ngIf="typeModif === 'add'">
-    <h1>1</h1>
+    <h1 class="stepNumber">1</h1>
+
     <mat-form-field class="searchTermAddChooseTag">
       <input matInput [(ngModel)]="searchTextAddPreset">
-
     </mat-form-field>
+
     <table class="tbAddChooseTag">
       <tr>
         <th>key</th>
@@ -27,7 +28,7 @@
   </mat-step>
 
   <!-- UPDATE : Si le presets est utilisé par d'autres tag, on fait choisir -->
-  <mat-step *ngIf="typeModif === 'update' && tagsUseThisPreset.length > 1">
+  <mat-step *ngIf="typeModif === 'update' && tagsUseThisPreset &&tagsUseThisPreset.length > 1">
     <h1>2</h1>
     <div style="float: left; width: 50%;">
       <h5> {{presets.key}}</h5>

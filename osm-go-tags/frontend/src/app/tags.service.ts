@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, from, of } from 'rxjs';
+import { Observable, from, of, forkJoin } from 'rxjs';
 import { map, take, shareReplay, tap, filter, mergeAll, catchError, mapTo } from 'rxjs/operators';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class TagsService {
 
-  presetsConfig = [];
+  presetsConfig = {};
   tagsConfig = {};
   aggStats;
   jsonSprites;
@@ -26,43 +26,59 @@ export class TagsService {
 
   constructor(private http: HttpClient) {
     console.log(this.language)
-
-
-
-    // this.presetsConfig$.subscribe(data => {
-    //   this.presetsConfig = data;
-    // });
-
-
-
   }
-
 
 
   presetsConfig$() {
     return this.http.get<any[]>(`/api/OsmGoPresets/${this.language}/${this.country}`)
-    .pipe(
-      map((data) => {
-        Object.keys(data).map(k => {
-          data[k]['_id'] = k;
-          return data[k];
-        });
-        this.presetsConfig = data
-        return data;
-      }),
-      shareReplay()
-    );
+      .pipe(
+        map((data) => {
+          Object.keys(data).map(k => {
+            data[k]['_id'] = k;
+            return data[k];
+          });
+
+        }),
+        shareReplay()
+      );
   }
 
 
-  tagsConfig$() {
-   return this.http.get(`/api/OsmGoTags/${this.language}/${this.country}`).pipe(
-      map(res => res),
-      shareReplay()
-    );
+  tagsConfig$(language, country) {
+    return forkJoin(
+      this.http.get(`/api/OsmGoTags/${this.language}/${this.country}`).pipe(
+        shareReplay()
+      ),
+      this.getFullStat$(),
+      this.getPresetsConfig$(language, country)
+    )
+      .pipe(
+        map(data => {
+          const tags = data[0];
+          const tagInfo = data[1];
+          this.presetsConfig = data[2]
+
+          for ( let k in tags){
+            tags[k].values = tags[k].values.map(tag => {
+              // console.log(tag);
+              let count =0;
+              let percentage = 0;
+              let findedItem = tagInfo[k].values.find( item => item.value === tag.key)
+              if (findedItem){
+                count = findedItem.count;
+                percentage = Math.round((count / tagInfo[k].sum *100) *100000) /100000
+              }
+              // console.log(findedItem);
+              return {...tag, _count :count, _percentage:percentage} ;
+            })
+          }
+          this.tagsConfig = tags;
+          return tags;
+        })
+      )
   }
 
-  iconsList$():Observable<any> {
+  iconsList$(): Observable<any> {
     return this.http.get<any[]>('/api/svgList').pipe(
       shareReplay()
     );
@@ -72,8 +88,19 @@ export class TagsService {
     return this.http.get(`/api/generateSprites/${language}/${country}`);
   }
 
-  getPresetsConfig(language, country) {
-    return this.http.get(`/api/OsmGoPresets/${language}/${country}`);
+  getPresetsConfig$(language, country) {
+    return this.http.get(`/api/OsmGoPresets/${language}/${country}`)
+      .pipe(
+        map( data => {
+         
+           const withId = {}
+          for (let k in data){
+            withId[k] = {...data[k], _id: k}
+
+          }
+          return withId;
+        })
+      );
   }
   getGenericPresets() {
     const genericPresets = [];
@@ -90,7 +117,13 @@ export class TagsService {
   }
 
   getFullStat$() {
-    return this.http.get(`/api/PkeyStats`);
+    return this.http.get(`/api/PkeyStats`)
+      .pipe(
+        map(data => {
+          this.aggStats = data;
+          return data
+        })
+      );
   }
 
   getJsonSprite$() {
@@ -139,19 +172,21 @@ export class TagsService {
   }
 
 
-
-  // getTagsUseThisPreset(idPreset: string): Observable<string[]> {
-  //   return this.tagsConfig$.pipe(
-
-  //   );
-  // }
-
   updatePrimaryTag(pkey, value, data) {
     return this.http.post<any>(`/api/tag/${this.language}/${this.country}/${pkey}/${value}`, data, httpOptions)
       .pipe(
         // catchError( err => console.log(err))
       );
     // return this.http.get(`/api/PkeyPvalueStat/${pkey}/${value}`);
+  }
+
+  deleteTag(pkey, value){
+    return this.http.delete<any>(
+      `/api/tag/${this.language}/${this.country}/${pkey}/${value}`
+      )
+    .pipe(
+      // catchError( err => console.log(err))
+    );
   }
 
   postPrest(pkey, pvalue, oldId, newId, data) {

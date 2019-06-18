@@ -24,6 +24,7 @@ import { TagsComponent } from './tags/tags.component';
 import { HomeComponent } from './home/home.component';
 import { TranslateUiComponent } from './translate-ui/translate-ui.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { OrderByPipe } from './pipe/order-by.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,7 +36,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, DialogModifyPresetsAppComponent, KeyPipe, FilterByKeyLblPipe, 
-    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent, TranslateUiComponent
+    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent, TranslateUiComponent, OrderByPipe
   ],
   imports: [
     RouterModule.forRoot(

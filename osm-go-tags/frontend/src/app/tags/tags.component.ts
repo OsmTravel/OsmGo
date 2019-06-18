@@ -6,6 +6,7 @@ import { DialogModifyPresetsAppComponent } from '../dialog-modify-presets/dialog
 import { DialogIconComponent } from '../dialog-icon/dialog-icon.component';
 import { DialogAddPrimaryValueComponent } from '../dialog-add-primary-value/dialog-add-primary-value.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-tags',
@@ -19,6 +20,8 @@ export class TagsComponent implements OnInit {
   selectedPresetConfig;
   selectedPresetId;
   generatingSprites = false;
+  orderKey = 'key';
+  orderType = 'asc'
 
   constructor(
     public tagsService: TagsService,
@@ -40,19 +43,9 @@ export class TagsComponent implements OnInit {
       this.tagsService.jsonSprites = jsonSprite;
     });
 
-    this.tagsService.tagsConfig$().subscribe(data => {
-      this.tagsService.tagsConfig = data;
+    this.tagsService.tagsConfig$(this.tagsService.language,this.tagsService.country ).subscribe(data => {
+      // this.tagsService.tagsConfig = data;
       this.selectedTagKey = 'shop';
-    });
-
-    this.tagsService.presetsConfig$()
-      .subscribe( data => {
-        console.log(data);
-      })
-
-    this.tagsService.getFullStat$().subscribe(data => {
-      this.tagsService.aggStats = data;
-      console.log(data);
     });
   }
 
@@ -64,18 +57,21 @@ export class TagsComponent implements OnInit {
     });
   }
 
+  deleteTag(key, value){
+   
+    this.tagsService.deleteTag(key, value).subscribe( deleted => {
+      this.tagsService.tagsConfig[key].values = this.tagsService.tagsConfig[key].values.filter( f => f.key !== value);
+
+    });
+  }
+
   selectKeyTagChange(e) {
     this.selectedTagValueConfig = undefined;
     this.selectedPresetConfig = undefined;
     this.selectedPresetId = undefined;
-
-    console.log(e);
-    console.log(this.selectedTagKey);
   }
 
   tagValueConfigChange(t) {
-    console.log(t);
-
     this.selectedTagValueConfig = t;
     this.currentSprite = this.tagsService.jsonSprites['circle-' + t.markerColor + '-' + t.icon];
 
@@ -83,13 +79,11 @@ export class TagsComponent implements OnInit {
 
   presetSelect(preset) {
     this.selectedPresetId = preset;
-    // this.selectedPresetConfig = preset;
-    console.log(preset);
   }
 
 
   openPresetsDialog(typeModif: string, primaryKey: string, primaryValue: string, presets = null): void {
-    console.log('openPresetsDialog', typeModif, primaryKey, primaryValue, presets);
+   
     const dialogRef = this.dialog.open(DialogModifyPresetsAppComponent, {
       height: '80%',
       width: '80%',
@@ -97,8 +91,18 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      // console.log(result);
     });
+  }
+
+  deletePresetFromTag(primaryKey: string, primaryValue: string, presets ){
+    let currentTag =  this.tagsService.tagsConfig[primaryKey].values.find( e => e.key === primaryValue)
+    const idIndex = currentTag.presets.indexOf(presets._id)
+    currentTag.presets.splice(idIndex, 1);
+    this.tagsService.updatePrimaryTag(primaryKey, primaryValue, currentTag)
+      .subscribe(res => console.log(res));
+    // currentTag.presets.splice(1,presets._id)
+
   }
 
   openDialogIconsSelector(primaryKey: string, primaryValue: string) {
@@ -128,10 +132,8 @@ export class TagsComponent implements OnInit {
   }
 
   primaryTagHasChanged(e) {
-    console.log(this.selectedTagKey, this.selectedTagValueConfig);
     this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
       .subscribe(res => console.log(res));
-    console.log(e);
   }
 
   getCountPrimaryKey(key, value) {
@@ -150,6 +152,13 @@ export class TagsComponent implements OnInit {
     window.open(`https://wiki.openstreetmap.org/wiki/Tag:${key}=${value}`, '_blank');
   }
 
+
+  changeOrder(key){
+    this.orderKey = key;
+    if (this.orderKey === key){
+      this.orderType = ( this.orderType  === 'asc' ) ? 'desc' : 'asc'
+    }
+  }
 
 
 }

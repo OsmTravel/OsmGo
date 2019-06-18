@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.dataService.getI18Config$()
       .subscribe( i18 => {
-        console.log(i18)
+      
         this.i18Config = i18;
       })
   }

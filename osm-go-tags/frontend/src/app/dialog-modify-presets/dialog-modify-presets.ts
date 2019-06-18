@@ -30,29 +30,30 @@ export class DialogModifyPresetsAppComponent {
     public dialogRef: MatDialogRef<DialogModifyPresetsAppComponent>,
     @Inject(MAT_DIALOG_DATA) public data) {
 
-    this.presets = JSON.parse(JSON.stringify(data.presets));
-    console.log(this.data);
-    this.typeModif = data.type;
-    this.primaryKey = data.primaryKey;
-    this.primaryValue = data.primaryValue;
+      this.presets = JSON.parse(JSON.stringify(this.data.presets));
+      console.log(this.data);
+      this.typeModif = this.data.type;
+      this.primaryKey = this.data.primaryKey;
+      this.primaryValue = this.data.primaryValue;
+  
+      this.genericPresets = this.tagsService.getGenericPresets();
+  
+      this.tagsService.tagsUseThisPreset$(this.presets._id).subscribe(e => {
+        this.tagsUseThisPreset = e;
+        console.log('ohh', e);
+      });
+  
+  
+      this.tagsService.getPrsetsSummary(this.primaryKey, this.primaryValue).subscribe(e => {
+  
+        console.log(e);
+        this.statsTags = e;
+      });
+      
 
-    this.genericPresets = this.tagsService.getGenericPresets();
+  }
 
-    this.tagsService.tagsUseThisPreset$(this.presets._id).subscribe(e => {
-      this.tagsUseThisPreset = e;
-      console.log('ohh', e);
-    });
-
-
-    this.tagsService.getPrsetsSummary(this.primaryKey, this.primaryValue).subscribe(e => {
-
-      console.log(e);
-      this.statsTags = e;
-    });
-    // this.tagsUseThisPreset = tagsService.getTagsUseThisPreset(this.presets._id);
-    // if (this.tagsUseThisPreset.length <= 1) {
-    //   this.enableForm = true;
-    // }
+  ngOnInit(): void {
 
   }
 
@@ -97,14 +98,12 @@ export class DialogModifyPresetsAppComponent {
   }
 
   submit(newPreset) {
-    // if (this.typeModif === 'update') {
     const oldId = this.data.presets._id;
     const newId = this.presets._id;
 
-    // index du tag
+    // // index du tag
     const findedIndex = this.tagsService.tagsConfig[this.data.primaryKey].values
       .findIndex(tag => tag.key === this.data.primaryValue);
-
 
     const currentTag = this.tagsService.tagsConfig[this.data.primaryKey].values[findedIndex];
     const presetsList = currentTag.presets;

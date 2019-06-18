@@ -219,7 +219,7 @@
         "icon": "mi-art-gallery",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["art", "wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
       },
       {
         "key": "gift",

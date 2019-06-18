@@ -253,6 +253,9 @@ app.post('/api/tag/:language/:country/:key/:value', function (req, res) {
         // console.log(jsonTags[key])
         let findedIndex = jsonTags[key].values.findIndex( el => el.key === value );
         console.log('findedIndex',findedIndex);
+        console.log(req.body );
+        delete req.body._count;
+        delete req.body._percentage
         jsonTags[key].values[findedIndex] = req.body
     //    let currentTag =  jsonTags[key].values.filter( el => el.key === value)[0];
     //    currentTag = req.body;
@@ -274,7 +277,45 @@ app.post('/api/tag/:language/:country/:key/:value', function (req, res) {
         })
 });
 
-app.post('/api/presets/:language/:country', function (req, res) {
+
+
+app.delete('/api/tag/:language/:country/:key/:value',  (req, res) => {
+    
+    let language = req.params.language;
+    let country = req.params.country;
+    let key = req.params.key;
+    let value = req.params.value;
+    res.setHeader('Content-Type', 'application/json');
+   
+
+    fs.readFile(getTagsPath(language, country), 'utf8')
+    .then(data => {
+    let jsonTags = JSON.parse(data);
+    // console.log(jsonTags[key])
+    let findedIndex = jsonTags[key].values.findIndex( el => el.key === value );
+    jsonTags[key].values.splice(findedIndex,1);
+
+   fs.writeFile( getTagsPath(language, country), stringify(jsonTags), 'utf8')
+    .then( write => {
+     
+        res.send(stringify(jsonTags))
+        
+    } )
+    .catch( err => {
+        console.log(err);
+    })
+
+
+})
+    .catch(err => {
+        console.log(err);
+        res.send(error(res, err))
+    })
+
+
+});
+
+app.post('/api/presets/:language/:country',  (req, res) => {
     
     let language = req.params.language;
     let country = req.params.country;
@@ -283,17 +324,13 @@ app.post('/api/presets/:language/:country', function (req, res) {
     // post input => { primary : {key, value}, oldId, newid, data:{preset...}}
 
     const isNewId = req.body.ids.oldId !== req.body.ids.newId;
-    console.log(req.body.ids.newId);
     fs.readFile(getPresetsPath(language, country), 'utf8')
         .then(data => {
         let jsonPresets = JSON.parse(data);
         const newId = req.body.ids.newId;
-        console.log(newId);
         delete req.body.data._id
         jsonPresets[newId] = req.body.data
-        console.log(jsonPresets[newId]);
-
-
+  
        fs.writeFile( getPresetsPath(language, country), stringify(jsonPresets), 'utf8')
         .then( write => {
             if (!isNewId){
@@ -302,13 +339,8 @@ app.post('/api/presets/:language/:country', function (req, res) {
                 let tags = JSON.parse(fs.readFileSync(getTagsPath(language, country), 'utf8'));
                 let currentTagIndex = tags[req.body.primary.key].values
                     .findIndex(el => el.key == req.body.primary.value )
-
-                    console.log(currentTagIndex);
-                    console.log(tags[req.body.primary.key].values[currentTagIndex]);
-                    console.log(req.body.ids.newId);
-
                 const index = tags[req.body.primary.key].values[currentTagIndex].presets.indexOf(req.body.ids.oldId);
-                console.log('index', index);
+
                 if (index){
                     tags[req.body.primary.key].values[currentTagIndex].presets[index] = req.body.ids.newId
                 } else {
@@ -319,18 +351,11 @@ app.post('/api/presets/:language/:country', function (req, res) {
                     .then( w => {
                         res.send(w);
                     });
-                
             }
-            
-            console.log(write) 
         } )
         .catch( err => {
             console.log(err);
         })
-    console.log(req.body);
-        
-
-
     })
         .catch(err => {
             console.log(err);
