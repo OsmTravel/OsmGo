@@ -1,1 +1,25 @@
-{"tags":[{"language":"en","country":[{"region":"GB","tagsHash":"6b30997661a73e8374c00a3956335d2c","presetsHash":"fd47419b63607dc68a8ddac63636341c"}]},{"language":"fr","country":[{"region":"FR","tagsHash":"936ecc943c2d3c3d6d4523e921525c51","presetsHash":"acd9f2cbc86593cba04e8d7e54a35727"}]}],"interface":["en","fr"]}
+{
+  "tags": [
+    {
+      "language": "en",
+      "country": [
+        {
+          "region": "GB",
+          "tagsHash": "6b30997661a73e8374c00a3956335d2c",
+          "presetsHash": "fd47419b63607dc68a8ddac63636341c"
+        }
+      ]
+    },
+    {
+      "language": "fr",
+      "country": [
+        {
+          "region": "FR",
+          "tagsHash": "936ecc943c2d3c3d6d4523e921525c51",
+          "presetsHash": "acd9f2cbc86593cba04e8d7e54a35727"
+        }
+      ]
+    }
+  ],
+  "interface": ["de", "en", "fr"]
+}

@@ -375,16 +375,6 @@
         ]
       },
       {
-        "key": "organic",
-        "lbl": "Magasin bio",
-        "lbl_alt": "",
-        "icon": "mi-florist",
-        "markerColor": "#A23337",
-        "alert": "C'est une erreur, ne plus utiliser",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "deprecated": true
-      },
-      {
         "key": "outdoor",
         "lbl": "Magasin d'activités de plein air",
         "lbl_alt": "",
@@ -819,16 +809,6 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"]
       },
       {
-        "key": "fish",
-        "lbl": "Poissonnerie",
-        "lbl_alt": "",
-        "icon": "mi-fish-cleaning",
-        "markerColor": "#A23337",
-        "alert": "Utilisez : shop=seafood",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "deprecated": true
-      },
-      {
         "key": "funeral_directors",
         "lbl": "Pompes funèbres",
         "lbl_alt": "",
@@ -1069,7 +1049,8 @@
         "icon": "maki-alcohol-shop-15",
         "markerColor": "#A23337",
         "alert": "Magasin de vente d'alcool propriété du gouvernement ou sous licence. N'existe pas en France",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": true
       },
       {
         "key": "party",
@@ -1339,7 +1320,11 @@
         "icon": "fa-tractor-solid",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": false,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561458966059
       },
       {
         "key": "yes",
@@ -1352,12 +1337,17 @@
       },
       {
         "key": "ski",
-        "lbl": "ski",
-        "lbl_alt": "Vente de ski",
+        "lbl": "Vente de ski",
+        "lbl_alt": "",
         "icon": "mi-skiing",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": []
+        "presets": [],
+        "lastUpdate": {
+          "id": "183173",
+          "display_name": "Dof",
+          "time": 1561021061531
+        }
       },
       {
         "key": "printer_ink",
@@ -1376,17 +1366,9 @@
         "markerColor": "#A23337",
         "alert": "",
         "presets": []
-      },
-      {
-        "key": "tailor",
-        "lbl": "tailor",
-        "lbl_alt": "Tailleur",
-        "icon": "maki-clothing-store-15",
-        "markerColor": "#A23337",
-        "alert": "",
-        "presets": []
       }
-    ]
+    ],
+    "exclude_way_values": []
   },
   "amenity": {
     "type": "amenity",

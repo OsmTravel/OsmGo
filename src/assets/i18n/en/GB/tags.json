@@ -1442,7 +1442,11 @@
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561661777853,
+        "deprecated": false
       },
       {
         "key": "yes",
