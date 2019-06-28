@@ -22,7 +22,7 @@ import { FilterByNamePipe } from './pipe/filter-by-name.pipe';
 import { DialogAddPrimaryValueComponent } from './components/dialog-add-primary-value/dialog-add-primary-value.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { HomeComponent } from './components/home/home.component';
-import { TranslateUiComponent } from './translate-ui/translate-ui.component';
+import { TranslateUiComponent } from './components/translate-ui/translate-ui.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { OrderByPipe } from './pipe/order-by.pipe';
 import { AddUiLanguageComponent } from './components/add-ui-language/add-ui-language.component';

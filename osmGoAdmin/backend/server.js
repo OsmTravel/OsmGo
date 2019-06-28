@@ -11,8 +11,10 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 const jwt = require('jsonwebtoken');
+const Config = JSON.parse(fs.readFileSync( path.join(__dirname, 'config.json')));
 
-const JWTSECRET = 'DADA'
+
+const JWTSECRET = Config.jwtSecret
 app.use(bodyParser.json());
 
 // let language = 'fr'

@@ -1,5 +1,5 @@
 
-<mat-toolbar> {{dataService.langageUiSelected}}</mat-toolbar>
+<mat-toolbar  color="primary"> <button mat-button routerLink="/"> <mat-icon>home</mat-icon></button> {{dataService.langageUiSelected}}</mat-toolbar>
 
 <div class="dataTable">
     <table >
@@ -27,6 +27,6 @@
 </div>
 
 <div class="footer">
-    <button mat-button color="primary"
+    <button mat-raised-button color="primary"
     (click)="sendNewTranslation(translationData, dataService.langageUiSelected)">Send my translation</button>
 </div>

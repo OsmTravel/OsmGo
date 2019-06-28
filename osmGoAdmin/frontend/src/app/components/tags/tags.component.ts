@@ -23,6 +23,9 @@ export class TagsComponent implements OnInit {
   generatingSprites = false;
   orderKey = 'key';
   orderType = 'asc'
+  isDeleteConfirm = false;
+
+  newDefaultValue = { key:null, value: null}
 
   constructor(
     public tagsService: TagsService,
@@ -62,8 +65,9 @@ export class TagsComponent implements OnInit {
    
     this.tagsService.deleteTag(key, value).subscribe( deleted => {
       this.tagsService.tagsConfig[key].values = this.tagsService.tagsConfig[key].values.filter( f => f.key !== value);
-
     });
+
+    this.isDeleteConfirm = false;
   }
 
   selectKeyTagChange(e) {
@@ -175,5 +179,24 @@ export class TagsComponent implements OnInit {
     }
   }
 
+  deleteDefaultValue(item){
+    console.log(item);
+    this.selectedTagValueConfig.default_values = this.selectedTagValueConfig.default_values.filter( i => i.key !== item.key);
+    this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
+    .subscribe(res => console.log(res));
+    
+  }
 
+  addDefaultValue(newItem){
+    if (!this.selectedTagValueConfig.default_values ){
+      this.selectedTagValueConfig.default_values  = [];
+    }
+    this.selectedTagValueConfig.default_values = [...this.selectedTagValueConfig.default_values, newItem];
+    this.newDefaultValue = { key: null, value: null}
+
+    this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
+    .subscribe(res => console.log(res));
+
+    console.log(newItem);
+  }
 }

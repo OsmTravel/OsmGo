@@ -158,7 +158,7 @@
         "lbl_alt": "",
         "icon": "mi-insurance-agency",
         "markerColor": "#A23337",
-        "alert": "Préférez la catégorie 'Bureau'",
+        "alert": "Use Office",
         "deprecated": true,
         "presets": [
           "operator",
@@ -166,7 +166,10 @@
           "phone",
           "website",
           "opening_hours"
-        ]
+        ],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723611251
       },
       {
         "key": "jewelry",
@@ -221,12 +224,15 @@
       {
         "key": "art",
         "lbl": "Art Store",
-        "lbl_alt": "art*, exhibit*, gallery",
+        "lbl_alt": "art, exhibit, gallery",
         "icon": "mi-art-gallery",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723289412
       },
       {
         "key": "gift",
@@ -519,12 +525,15 @@
       },
       {
         "key": "fashion",
-        "lbl": "Fashion shop",
+        "lbl": "Fashion Shop",
         "lbl_alt": "",
         "icon": "mi-clothing-store",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723411506
       },
       {
         "key": "motorcycle",
@@ -734,13 +743,16 @@
       },
       {
         "key": "bed",
-        "lbl": "Bedding/Mattress Store",
-        "lbl_alt": "lit, matelas",
+        "lbl": "Bedding / Mattress Store",
+        "lbl_alt": "",
         "icon": "mi-lodging",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723321658
       },
       {
         "key": "window_blind",
@@ -765,12 +777,15 @@
       {
         "key": "vacuum_cleaner",
         "lbl": "Vacuum Cleaner Store",
-        "lbl_alt": "électroménager",
+        "lbl_alt": "",
         "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723860400
       },
       {
         "key": "tyres",
@@ -813,21 +828,27 @@
       },
       {
         "key": "model",
-        "lbl": "Magasin de modélisme",
-        "lbl_alt": "model réduit",
+        "lbl": "Model Shop",
+        "lbl_alt": "",
         "icon": "maki-rocket-15",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723729726
       },
       {
         "key": "lamps",
-        "lbl": "Vente de luminaires",
-        "lbl_alt": "lampes",
+        "lbl": "Lamps Store",
+        "lbl_alt": "selling lighting fixtures ",
         "icon": "fa-lightbulb-o",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723667277
       },
       {
         "key": "houseware",
@@ -870,16 +891,6 @@
         "fromid": true
       },
       {
-        "key": "fish",
-        "lbl": "Poissonnerie",
-        "lbl_alt": "",
-        "icon": "mi-fish-cleaning",
-        "markerColor": "#A23337",
-        "alert": "Utilisez : shop=seafood",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "deprecated": true
-      },
-      {
         "key": "funeral_directors",
         "lbl": "Funeral Home",
         "lbl_alt": "undertaker, memorial home",
@@ -902,12 +913,15 @@
       {
         "key": "hardware",
         "lbl": "Hardware Store",
-        "lbl_alt": "outillage, copie de clés",
+        "lbl_alt": "",
         "icon": "mi-hardware-store",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723570365
       },
       {
         "key": "supermarket",
@@ -931,12 +945,15 @@
       },
       {
         "key": "grocery",
-        "lbl": "Épicerie alimentation non périssable",
-        "lbl_alt": "",
+        "lbl": "Grocery",
+        "lbl_alt": "non-perishable food",
         "icon": "mi-convenience-store",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723545742
       },
       {
         "key": "massage",
@@ -1090,12 +1107,15 @@
       {
         "key": "cheese",
         "lbl": "Cheese Store",
-        "lbl_alt": " Vente de fromages",
+        "lbl_alt": "",
         "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723353067
       },
       {
         "key": "leather",
@@ -1210,12 +1230,15 @@
       {
         "key": "herbalist",
         "lbl": "Herbalist",
-        "lbl_alt": "Plante médicinale",
+        "lbl_alt": "",
         "icon": "fa-pagelines",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723577487
       },
       {
         "key": "chocolate",
@@ -1240,22 +1263,28 @@
       {
         "key": "watches",
         "lbl": "Watches Shop",
-        "lbl_alt": "Magasin vendant des montres",
+        "lbl_alt": "",
         "icon": "fa-clock-o",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723875573
       },
       {
         "key": "baby_goods",
         "lbl": "Baby Goods Store",
-        "lbl_alt": "Magasin vendant des objets pour bébé",
+        "lbl_alt": "",
         "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723299206
       },
       {
         "key": "erotic",
@@ -1270,12 +1299,15 @@
       {
         "key": "nutrition_supplements",
         "lbl": "Nutrition Supplements Store",
-        "lbl_alt": "compléments alimentaire",
+        "lbl_alt": "",
         "icon": "fa-capsules-solid",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723759774
       },
       {
         "key": "electrical",
@@ -1298,12 +1330,15 @@
       },
       {
         "key": "garden_furniture",
-        "lbl": "Equipement et mobilier de jardin ",
+        "lbl": "Garden Furniture",
         "lbl_alt": "",
         "icon": "maki-garden-center-15",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723448035
       },
       {
         "key": "anime",
@@ -1327,12 +1362,15 @@
       },
       {
         "key": "glaziery",
-        "lbl": "Vente de vitrages de fenêtres et de portes.",
-        "lbl_alt": "",
+        "lbl": "Glazing",
+        "lbl_alt": "glazing for windows and doors",
         "icon": "fa-door-closed-solid",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723495103
       },
       {
         "key": "gas",
@@ -1826,16 +1864,6 @@
         "fromid": true
       },
       {
-        "key": "hotel",
-        "lbl": "Hôtel",
-        "lbl_alt": "",
-        "icon": "fa-bed",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "deprecated": true
-      },
-      {
         "key": "kindergarten",
         "lbl": "Preschool/Kindergarten Grounds",
         "lbl_alt": "kindergarden, pre-school",
@@ -1907,15 +1935,6 @@
         "lbl": "Nursing Home",
         "lbl_alt": "",
         "icon": "mi-health",
-        "markerColor": "#EF9228",
-        "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
-      },
-      {
-        "key": "market",
-        "lbl": "Marché",
-        "lbl_alt": "",
-        "icon": "fa-apple",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"]
@@ -2104,16 +2123,6 @@
         "fromid": true
       },
       {
-        "key": "sauna",
-        "lbl": "Sauna",
-        "lbl_alt": "",
-        "icon": "mi-spa",
-        "markerColor": "#EF9228",
-        "alert": "Use leisure=sauna",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "deprecated": true
-      },
-      {
         "key": "hunting_stand",
         "lbl": "Hunting Stand",
         "lbl_alt": "game, gun, lookout, rifle, shoot*, wild, watch",
@@ -2300,12 +2309,15 @@
       {
         "key": "bureau_de_change",
         "lbl": "Currency Exchange",
-        "lbl_alt": "bureau de change, money changer",
+        "lbl_alt": "money changer",
         "icon": "maki-bank-15",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725700562
       },
       {
         "key": "bbq",
@@ -2426,12 +2438,15 @@
       {
         "key": "motorcycle_parking",
         "lbl": "Motorcycle Parking",
-        "lbl_alt": "stationnement de moto",
+        "lbl_alt": "",
         "icon": "fa-motorcycle",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725824361
       },
       {
         "key": "shower",
@@ -2476,12 +2491,15 @@
       {
         "key": "compressed_air",
         "lbl": "Compressed Air",
-        "lbl_alt": "Gonfleur de pneu",
+        "lbl_alt": "",
         "icon": "",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725727896
       },
       {
         "key": "watering_place",
@@ -2633,11 +2651,11 @@
           "fire_hydrant:position",
           "fire_hydrant:diameter"
         ],
-        "default_values": [
-          {"key": "name", "value": ""},
-          {"key": "fire_hydrant:type", "value": "pillar"}
-        ],
-        "fromid": true
+        "default_values": [{"key": "fire_hydrant:type", "value": "pillar"}],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726034409
       },
       {
         "key": "defibrillator",
@@ -2661,12 +2679,15 @@
       },
       {
         "key": "assembly_point",
-        "lbl": "Point de rassemblement",
+        "lbl": "Assembly Point",
         "lbl_alt": "",
         "icon": "fa-compress",
         "markerColor": "#75030B",
         "alert": "",
-        "presets": []
+        "presets": [],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725969498
       },
       {
         "key": "siren",
@@ -2845,12 +2866,15 @@
       {
         "key": "park",
         "lbl": "Park",
-        "lbl_alt": "esplanade, estate, forest, garden, grass, green, grounds, lawn, lot, meadow, parkland, place, playground, plaza, pleasure garden, recreation area, square, tract, village green, woodland",
+        "lbl_alt": "esplanade, estate, garden, grass, green, grounds, lawn, lot, meadow, parkland, place, playground, plaza",
         "icon": "maki-park-15",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726135409
       },
       {
         "key": "pitch",
@@ -3284,12 +3308,15 @@
       },
       {
         "key": "locksmith",
-        "lbl": "Serrurier",
+        "lbl": "Locksmith",
         "lbl_alt": "",
         "icon": "fa-key",
         "markerColor": "#5B396C",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726222875
       },
       {
         "key": "metal_construction",
@@ -3303,12 +3330,15 @@
       },
       {
         "key": "optician",
-        "lbl": "Opticien",
-        "lbl_alt": "",
+        "lbl": "Optician",
+        "lbl_alt": "glasses",
         "icon": "fa-glasses-solid",
         "markerColor": "#5B396C",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726255851
       },
       {
         "key": "painter",
@@ -3570,12 +3600,15 @@
       {
         "key": "electronics_repair",
         "lbl": "Electronics Repair Shop",
-        "lbl_alt": "Réparateur téléphone, ordinateurs, etc",
+        "lbl_alt": "",
         "icon": "fa-mobile-phone",
         "markerColor": "#5B396C",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726205833
       },
       {
         "key": "joiner",
@@ -3788,9 +3821,12 @@
         "lbl_alt": "",
         "icon": "fa-home",
         "markerColor": "#9D7178",
-        "alert": "Le bâtiment entier doit être voué à la location de vacances ",
+        "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726343392
       },
       {
         "key": "aquarium",
@@ -4036,12 +4072,15 @@
       },
       {
         "key": "tax",
-        "lbl": "Administration fiscale",
+        "lbl": "Fiscal authorities",
         "lbl_alt": "",
         "icon": "fa-dollar",
         "markerColor": "#F5BB3A",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726456694
       },
       {
         "key": "tax_advisor",
@@ -4093,13 +4132,16 @@
       },
       {
         "key": "administrative",
-        "lbl": "Administration",
+        "lbl": "Administrative",
         "lbl_alt": "",
         "icon": "maki-town-hall-15",
         "markerColor": "#F5BB3A",
         "alert": "use : office=government.",
         "deprecated": true,
-        "presets": []
+        "presets": [],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726409328
       },
       {
         "key": "moving_company",
@@ -4160,12 +4202,15 @@
       {
         "key": "cross",
         "lbl": "Summit Cross",
-        "lbl_alt": "Croix avec peu de valeur historique ou religieuse",
+        "lbl_alt": "",
         "icon": "fa-cross-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726508223
       },
       {
         "key": "flagpole",
@@ -4251,9 +4296,12 @@
         "lbl_alt": "berth, dock, jetty, landing, promenade, wharf",
         "icon": "",
         "markerColor": "#D3D3D3",
-        "alert": "Devrait être uniquement sous forme de polygone... ",
+        "alert": " ",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726544725
       },
       {
         "key": "wastewater_plant",
@@ -4271,9 +4319,13 @@
         "lbl_alt": "oil, natural gas, water, sewer, sewage",
         "icon": "",
         "markerColor": "#D3D3D3",
-        "alert": "Doit être un ligne...",
+        "alert": "Line...",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726570044
       },
       {
         "key": "tower",
@@ -4288,11 +4340,14 @@
       {
         "key": "reservoir_covered",
         "lbl": "Reservoir Covered",
-        "lbl_alt": "Château d'eau",
+        "lbl_alt": "",
         "icon": "maki-water-15",
         "markerColor": "#D3D3D3",
         "alert": "",
-        "presets": []
+        "presets": [],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726577462
       },
       {
         "key": "works",
@@ -4307,12 +4362,15 @@
       {
         "key": "mast",
         "lbl": "Mast",
-        "lbl_alt": "antenna, broadcast tower, cell phone tower, cell tower, communication mast, communication tower, guyed tower, mobile phone tower, radio mast, radio tower, television tower, transmission mast, transmission tower, tv tower",
+        "lbl_alt": "antenna, broadcast tower, cell phone tower, cell tower, communication mast, communication tower",
         "icon": "",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726527858
       },
       {
         "key": "street_cabinet",
@@ -4370,9 +4428,12 @@
         "lbl_alt": "",
         "icon": "maki-industry-15",
         "markerColor": "#D3D3D3",
-        "alert": "Ne taguer que si > 10m",
+        "alert": "Only if > 10m",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726491678
       },
       {
         "key": "adit",
@@ -4507,11 +4568,14 @@
       {
         "key": "doctor",
         "lbl": "Medecin",
-        "lbl_alt": "Docteur",
+        "lbl_alt": "",
         "icon": "maki-doctor-15",
         "markerColor": "#C9BCF0",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726676871
       },
       {
         "key": "hospital",
@@ -4568,9 +4632,12 @@
         "lbl_alt": "anxiety, counselor, depression, mental health, mind, suicide, therapist, therapy",
         "icon": "mi-health",
         "markerColor": "#C9BCF0",
-        "alert": "Ne pas confondre avec psychiatre",
+        "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726691718
       },
       {
         "key": "sophrologist",
@@ -4658,12 +4725,15 @@
       {
         "key": "archaeological_site",
         "lbl": "Archaeological Site",
-        "lbl_alt": "fouilles archéologiques",
+        "lbl_alt": "",
         "icon": "fa-archway-solid",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726700964
       },
       {
         "key": "castle",
@@ -4794,9 +4864,13 @@
         "lbl_alt": "",
         "icon": "maki-water-15",
         "markerColor": "#009549",
-        "alert": "Doit être une surface",
+        "alert": "Polygon only",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726832390
       },
       {
         "key": "tree_row",
@@ -4804,9 +4878,13 @@
         "lbl_alt": "",
         "icon": "maki-park-15",
         "markerColor": "#009549",
-        "alert": "Doit uniquement être un ligne !",
+        "alert": "Line only...",
         "presets": [],
-        "fromid": true
+        "fromid": true,
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726803604
       }
     ]
   },
@@ -4880,12 +4958,13 @@
         "lbl_alt": "light, stoplight, traffic light",
         "icon": "osm-traffic_light",
         "markerColor": "#0E5F71",
-        "alert": "Ne concerne que les feux pour les véhicules",
+        "alert": "",
         "presets": [],
-        "default_values": [
-          {"key": "fixme", "value": "Je devrais être sur un way !"}
-        ],
-        "fromid": true
+        "default_values": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561727342450
       },
       {
         "key": "stop",
@@ -4895,10 +4974,11 @@
         "markerColor": "#0E5F71",
         "alert": "",
         "presets": [],
-        "default_values": [
-          {"key": "fixme", "value": "Je devrais être sur un way !"}
-        ],
-        "fromid": true
+        "default_values": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561727354059
       },
       {
         "key": "give_way",

@@ -22,7 +22,7 @@
     </table>
     <div *ngIf= "(genericPresets | filterByKeyLbl : searchTextAddPreset).length == 0">
         <button mat-button (click)="newPreset(searchTextAddPreset.toLowerCase(), stepper)">
-            Ajouter <b> {{ searchTextAddPreset.toLowerCase() }} </b> comme nouveau preset
+            Add <b> {{ searchTextAddPreset.toLowerCase() }} </b> as new preset
           </button>
     </div>
   </mat-step>
@@ -48,14 +48,14 @@
 
 
     <div style="float: left; width: 50%;">
-      <span>Ce preset est utilisé par {{tagsUseThisPreset.length - 1}} autres tags</span>
+      <span>This preset is used  by {{tagsUseThisPreset.length - 1}} others tags</span>
 
-      <button mat-button class="fullWidth" (click)="confirmChangeForAllTag(stepper)">
-        Modifier pour tous les tags
+      <button mat-raised-button color="primary"  class="fullWidth" (click)="confirmChangeForAllTag(stepper)">
+        Update for all tags 
       </button>
 
-      <button mat-button class="fullWidth" (click)="changeIdForThisTag(stepper)">
-        Créer un preset pour ce tag uniquement
+      <button mat-raised-button color="primary"  class="fullWidth" (click)="changeIdForThisTag(stepper)">
+        Create a preset for only this tag 
       </button>
     </div>
 
@@ -95,12 +95,10 @@
     </div>
 
     <div style="float: left; width: 50%;">
-      <button class="fullWidth" mat-button (click)="submit(selectedPreset)">Utiliser ce preset générique</button>
-      <button class="fullWidth" mat-button (click)="confirmChangeForAllTag(stepper, selectedPreset)"> Modifier et utiliser
-        ce preset Générique</button>
-      <button class="fullWidth" mat-button (click)="changeIdForThisTag(stepper, selectedPreset)">Créér une copie de ce preset
-        spécifique a cet objet</button>
-      <button class="fullWidth" mat-button matStepperPrevious>Back</button>
+      <button class="fullWidth" mat-raised-button color="primary" (click)="submit(selectedPreset)"> Use this generic preset</button>
+      <button class="fullWidth" mat-raised-button color="primary"  (click)="confirmChangeForAllTag(stepper, selectedPreset)">  Edit and use this Generic preset</button>
+      <button class="fullWidth" mat-raised-button color="primary" (click)="changeIdForThisTag(stepper, selectedPreset)"> Create a copy of this specific preset for this object</button>
+      <button class="fullWidth" mat-raised-button color="primary"  matStepperPrevious>Back</button>
     </div>
   </mat-step>
 
@@ -117,8 +115,8 @@
         <mat-select [(value)]="presets.type">
           <mat-option value="text">Text</mat-option>
           <mat-option value="select">Select</mat-option>
-          <mat-option value="list">Liste</mat-option>
-          <mat-option value="number">Numéric</mat-option>
+          <mat-option value="list">List</mat-option>
+          <mat-option value="number">Number</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -149,8 +147,8 @@
     </table>
 
     <mat-dialog-actions>
-      <button mat-button mat-dialog-close>Annuler</button>
-      <button mat-button (click)="submit(presets)">Valider</button>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button (click)="submit(presets)">Submit</button>
     </mat-dialog-actions>
   </mat-step>
 </mat-horizontal-stepper>

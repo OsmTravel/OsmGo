@@ -74,3 +74,4 @@ typings/
 
 data/pbf/*.pbf
 tmp
+config.json

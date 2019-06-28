@@ -1,13 +1,18 @@
+mat-toolbar{
+  height: 64px;
+}
+
+
 .primaryKey{
     position: absolute;
-    top: 0;
+    top: 64px;
     left: 0;
     width: 49%;
     height: 64px;
    }
    .primaryValue{
      position: absolute;
-     top: 66px;
+     top: 130px;
      left: 0px;
      width: 49%;
      bottom: 0;
@@ -15,9 +20,11 @@
    }
    
    .presets{
+     overflow: auto;
      position: absolute;
+     bottom: 0;
      right: 0;
-     top: 0;
+     top: 64px;
      width: 49%;
    }
    
@@ -29,6 +36,9 @@
      background-color: red;
    }
    
+   .pointer{
+    cursor: pointer;
+   }
    /* .svg-icon g path {
      fill: #ffffff;
    } */
