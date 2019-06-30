@@ -13,6 +13,7 @@ const { JSDOM } = jsdom;
 const jwt = require('jsonwebtoken');
 const Config = JSON.parse(fs.readFileSync( path.join(__dirname, 'config.json')));
 
+const osmGoAssetsPath = Config.osmGoAssetsPath
 
 const JWTSECRET = Config.jwtSecret
 app.use(bodyParser.json());
@@ -21,19 +22,19 @@ app.use(bodyParser.json());
 // let country = 'FR'
 
 const getPresetsPath = (language, country) => {
-    return path.join(__dirname, '..', '..', 'src', 'assets', 'i18n', language, country, 'presets.json');
+    return path.join(osmGoAssetsPath, 'i18n', language, country, 'presets.json');
 }
 const getTagsPath = (language, country) => {
-    return path.join(__dirname, '..', '..', 'src', 'assets', 'i18n', language, country, 'tags.json');
+    return path.join(osmGoAssetsPath, 'i18n', language, country, 'tags.json');
 }
 const getSpritesPngPath = (language, country) => {
-    return path.join(__dirname, '..', '..', 'src', 'assets', 'i18n', language, country, 'sprites.png');
+    return path.join(osmGoAssetsPath, 'i18n', language, country, 'sprites.png');
 }
 const getSpritesJsonPath = (language, country) => {
-    return path.join(__dirname, '..', '..', 'src', 'assets', 'i18n', language, country, 'sprites.json');;
+    return path.join(osmGoAssetsPath, 'i18n', language, country, 'sprites.json');;
 }
-const uiLanguagePath = path.join(__dirname, '..', '..', 'src', 'assets', 'i18n');
-const svgIconsDirPath = path.join(__dirname, '..', '..', 'src', 'assets', 'mapStyle', 'IconsSVG');
+const uiLanguagePath = path.join(osmGoAssetsPath, 'i18n');
+const svgIconsDirPath = path.join(osmGoAssetsPath, 'mapStyle', 'IconsSVG');
 
 
 function error(res, error) {
@@ -46,7 +47,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api/i18', async (req, res) => {
-    const dir = path.join(__dirname, '..', '..', 'src', 'assets', 'i18n');
+    const dir = path.join(osmGoAssetsPath, 'i18n');
     const list = await fs.readdir(dir);
     let i18 = { 'tags': [], 'interface': [] };
 
@@ -604,6 +605,7 @@ const getUserFromOsmTokens = async (token, token_secret) => {
 }
 
 app.get('/api/auth/', async (req, res) => {
+    console.log(res);
     const token = req.query.token.replace(/"/g, '');
     const token_secret = req.query.token_secret.replace(/"/g, '');
     const user = await getUserFromOsmTokens(token, token_secret)

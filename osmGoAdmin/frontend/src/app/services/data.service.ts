@@ -44,7 +44,7 @@ export class DataService {
   }
 
   getI18Config$() {
-    return this.http.get<any>(`/api/i18/`)
+    return this.http.get<any>(`./api/i18/`)
     .pipe(
       map( i18 => {
         console.log(i18)
@@ -61,7 +61,7 @@ export class DataService {
       const headers = this.getHttpOption()
       console.log(headers);
       console.log(params);
-    return this.http.get<any>(`/api/addNewUILanguage`, {...headers ,params });
+    return this.http.get<any>(`./api/addNewUILanguage`, {...headers ,params });
   }
 
   addNewTagConfig$(language, country, fromLanguage='en',fromCountry='GB' ){
@@ -72,7 +72,7 @@ export class DataService {
     .set('fromCountry', fromCountry || 'GB');
     const headers = this.getHttpOption()
 
-    return this.http.get<any>(`/api/addNewConfiguration`, {...headers ,params });
+    return this.http.get<any>(`./api/addNewConfiguration`, {...headers ,params });
   }
 
   getTokensFromLocalStorage(){
@@ -111,7 +111,7 @@ export class DataService {
       .set('token', oauth_token )
       .set('token_secret', oauth_token_secret)
     
-    return this.http.get<any>(`/api/auth`, { params: params })
+    return this.http.get<any>(`./api/auth`, { params: params })
           .pipe(
             map(user => {
               localStorage.setItem('jwt_access_token',user.jwt);
@@ -132,7 +132,7 @@ export class DataService {
       new Promise ( (resolve, reject) => {
       this.auth.xhr({
         method: 'GET',
-        path: '/api/0.6/user/details'
+        path: './api/0.6/user/details'
       }, ((err, data) => {
         if (err){
           reject(err)

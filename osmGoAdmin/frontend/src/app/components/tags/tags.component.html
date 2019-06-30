@@ -46,7 +46,7 @@
         <div style="width: 32px;min-height: 32px;height: 100%;"
           [ngStyle]="{'background-color': primaryTagValueConfig.markerColor}">
           <img *ngIf="primaryTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon"
-            [src]="'/api/svg/'+ primaryTagValueConfig.icon" />
+            [src]="'./api/svg/'+ primaryTagValueConfig.icon" />
         </div>
       </td>
 
@@ -71,12 +71,12 @@
     [ngStyle]="{'background-color': selectedTagValueConfig.markerColor}"
     (click)="openDialogIconsSelector(selectedTagKey, selectedTagValueConfig.key)">
     <img *ngIf="selectedTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon"
-      [src]="'/api/svg/'+ selectedTagValueConfig.icon" />
+      [src]="'./api/svg/'+ selectedTagValueConfig.icon" />
 
 
   </div>
   <div *ngIf="selectedTagValueConfig.icon"> {{ selectedTagValueConfig.icon }}</div>
-  <!-- <img [style.width]="'24px'" [style.height]="'36px'" [style.background]= "'url(/api/sprites/png)'" 
+  <!-- <img [style.width]="'24px'" [style.height]="'36px'" [style.background]= "'url(./api/sprites/png)'" 
   [style.background-position] = "-currentSprite.x +'px '+ -currentSprite.y +'px'"
 > -->
 <button mat-raised-button style="margin: 5px; display:block" (click)="toOsmPage(selectedTagKey, selectedTagValueConfig.key)"> OSM WIKI</button>

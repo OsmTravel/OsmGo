@@ -29,7 +29,7 @@ export class TagsService {
   presetsConfig$() {
     // useless ?
 
-    return this.http.get<any[]>(`/api/OsmGoPresets/${this.language}/${this.country}`, this.dataService.getHttpOption())
+    return this.http.get<any[]>(`./api/OsmGoPresets/${this.language}/${this.country}`, this.dataService.getHttpOption())
       .pipe(
         map((data) => {
           Object.keys(data).map(k => {
@@ -45,7 +45,7 @@ export class TagsService {
 
   tagsConfig$(language, country) {
     return forkJoin(
-      this.http.get(`/api/OsmGoTags/${this.language}/${this.country}`, this.dataService.getHttpOption()).pipe(
+      this.http.get(`./api/OsmGoTags/${this.language}/${this.country}`, this.dataService.getHttpOption()).pipe(
         shareReplay()
       ),
       this.getFullStat$(),
@@ -78,17 +78,17 @@ export class TagsService {
   }
 
   iconsList$(): Observable<any> {
-    return this.http.get<any[]>('/api/svgList', this.dataService.getHttpOption()).pipe(
+    return this.http.get<any[]>('./api/svgList', this.dataService.getHttpOption()).pipe(
       shareReplay()
     );
   }
 
   generatesSprites(language, country) {
-    return this.http.get(`/api/generateSprites/${language}/${country}`, this.dataService.getHttpOption());
+    return this.http.get(`./api/generateSprites/${language}/${country}`, this.dataService.getHttpOption());
   }
 
   getPresetsConfig$(language, country) {
-    return this.http.get(`/api/OsmGoPresets/${language}/${country}`, this.dataService.getHttpOption())
+    return this.http.get(`./api/OsmGoPresets/${language}/${country}`, this.dataService.getHttpOption())
       .pipe(
         map( data => {
          
@@ -112,11 +112,11 @@ export class TagsService {
   }
 
   getPrsetsSummary(pkey, value) {
-    return this.http.get(`/api/PkeyPvalueStat/${pkey}/${value}`, this.dataService.getHttpOption());
+    return this.http.get(`./api/PkeyPvalueStat/${pkey}/${value}`, this.dataService.getHttpOption());
   }
 
   getFullStat$() {
-    return this.http.get(`/api/PkeyStats`, this.dataService.getHttpOption())
+    return this.http.get(`./api/PkeyStats`, this.dataService.getHttpOption())
       .pipe(
         map(data => {
           this.aggStats = data;
@@ -126,7 +126,7 @@ export class TagsService {
   }
 
   getJsonSprite$() {
-    return this.http.get(`/api/sprites/json/${this.language}/${this.country}`, this.dataService.getHttpOption());
+    return this.http.get(`./api/sprites/json/${this.language}/${this.country}`, this.dataService.getHttpOption());
   }
 
   getPresetsKeyByPrimaryTag(key, value) {
@@ -157,7 +157,7 @@ export class TagsService {
 
 
   tagsUseThisPreset$(idPreset: string) {
-    return this.http.get(`/api/OsmGoTags/${this.language}/${this.country}`, this.dataService.getHttpOption()).pipe(
+    return this.http.get(`./api/OsmGoTags/${this.language}/${this.country}`, this.dataService.getHttpOption()).pipe(
       map(el => {
         const keys = Object.keys(el);
         let tags = [];
@@ -173,16 +173,16 @@ export class TagsService {
 
 
   updatePrimaryTag(pkey, value, data) {
-    return this.http.post<any>(`/api/tag/${this.language}/${this.country}/${pkey}/${value}`, data, this.dataService.getHttpOption())
+    return this.http.post<any>(`./api/tag/${this.language}/${this.country}/${pkey}/${value}`, data, this.dataService.getHttpOption())
       .pipe(
         // catchError( err => console.log(err))
       );
-    // return this.http.get(`/api/PkeyPvalueStat/${pkey}/${value}`);
+    // return this.http.get(`./api/PkeyPvalueStat/${pkey}/${value}`);
   }
 
   deleteTag(pkey, value){
     return this.http.delete<any>(
-      `/api/tag/${this.language}/${this.country}/${pkey}/${value}`, this.dataService.getHttpOption()
+      `./api/tag/${this.language}/${this.country}/${pkey}/${value}`, this.dataService.getHttpOption()
       )
     .pipe(
       // catchError( err => console.log(err))
@@ -191,11 +191,11 @@ export class TagsService {
 
   postTagSettings$(pkey, lbl, exclude_way_values) {
     const data = { lbl, exclude_way_values }
-    return this.http.post<any>(`/api/tagSetting/${this.language}/${this.country}/${pkey}`, data , this.dataService.getHttpOption())
+    return this.http.post<any>(`./api/tagSetting/${this.language}/${this.country}/${pkey}`, data , this.dataService.getHttpOption())
       .pipe(
         // catchError( err => console.log(err))
       );
-    // return this.http.get(`/api/PkeyPvalueStat/${pkey}/${value}`);
+    // return this.http.get(`./api/PkeyPvalueStat/${pkey}/${value}`);
   }
 
  
@@ -204,12 +204,12 @@ export class TagsService {
     console.log(oldId, newId);
     // { primary : {key, value}, oldId, newid, data:{preset...}}
     const params = { primary: { key: pkey, value: pvalue }, ids: { 'oldId': oldId, 'newId': newId }, data: data };
-    return this.http.post<any>(`/api/presets/${this.language}/${this.country}`, params, this.dataService.getHttpOption());
+    return this.http.post<any>(`./api/presets/${this.language}/${this.country}`, params, this.dataService.getHttpOption());
   }
 
   postNewPvalue$(pkey, newPvalue) {
     console.log('new value')
     const params = { pkey: pkey, newPvalue: newPvalue };
-    return this.http.post<any>(`/api/tag/${this.language}/${this.country}`, params, this.dataService.getHttpOption());
+    return this.http.post<any>(`./api/tag/${this.language}/${this.country}`, params, this.dataService.getHttpOption());
   }
 }
