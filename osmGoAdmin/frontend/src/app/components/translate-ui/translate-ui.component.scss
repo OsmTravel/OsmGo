@@ -1,0 +1,26 @@
+th, td{
+    text-align: left;
+}
+
+
+
+.dataTable{
+    position: absolute;
+    top: 64px;
+    bottom: 64px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+}
+
+mat-toolbar{
+    position: absolute;
+    top: 0;
+    height: 64px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    height: 64px;
+}

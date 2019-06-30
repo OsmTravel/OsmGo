@@ -4,7 +4,7 @@
           <ion-icon name="arrow-back"></ion-icon> 
        </ion-buttons>
     <ion-title>
-      Envoyer les données
+      {{ 'SEND_DATA.SEND_DATA' | translate}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,20 +15,20 @@
 
   	<ion-card *ngIf="!osmApi.user_info.connected" color="danger" >
 				<ion-card-content>
-            Veuillez vous connecter pour envoyer vos modifications vers OSM. 
+            {{ 'SEND_DATA.YOU_MUST_BE_LOGGED_IN' | translate}}
 				</ion-card-content>
 			</ion-card>
 
   <ion-card>
     <ion-card-header>
-      Nombre d'éléments restant : {{summary.Total}}
+      {{'SEND_DATA.NUMBER_OF_ITEMS_TO_SEND' | translate}} {{summary.Total}}
     </ion-card-header>
     <ion-card-content>
       <table style="width:100%">
         <tr>
-          <th>Création</th>
-          <th>Modification</th>
-          <th>Suppression</th>
+          <th>{{ 'SEND_DATA.ADDED_ITEMS' | translate}}</th>
+          <th>{{ 'SEND_DATA.UPDATED_ITEMS' | translate}}</th>
+          <th>{{ 'SEND_DATA.DELETED_ITEMS' | translate}}</th>
         </tr>
         <tr>
           <td>{{summary.Create}}</td>
@@ -46,7 +46,7 @@
 
   <ion-card>
        <ion-card-header>
-      Commentaire du changeset
+          {{ 'SEND_DATA.CHANGESET_COMMENT' | translate}}
     </ion-card-header>
      <ion-card-content>
     <ion-item>
@@ -60,11 +60,11 @@
 
   <table style="width:100%">
     <tr>
-      <th style="width: 45px;">Type</th>
-      <th>Clé principale</th>
-      <th>Nom</th>
+      <th style="width: 45px;">{{ 'SEND_DATA.TYPE' | translate}}</th>
+      <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
+      <th>{{ 'SEND_DATA.NAME' | translate}}</th>
       <th style="width: 45px;"><ion-icon name="locate"></ion-icon></th>
-      <th style="width: 45px;">Erreur</th>
+      <th style="width: 45px;">{{ 'SEND_DATA.ERROR' | translate}}</th>
       
     </tr>
     <tr *ngFor="let item of featuresChanges">
@@ -93,8 +93,8 @@
 
 <ion-footer>
   <!--  [disabled]="summary.Total === 0 || isPushing" ion-button block  -->
-  <ion-button class="footerButton" color="danger" (click)="presentConfirm()">Supprimer</ion-button>
+  <ion-button class="footerButton" color="danger" (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
   <ion-button class="footerButton" 
               [disabled]="!osmApi.user_info.connected || summary.Total === 0"
-              (click)="pushDataToOsm(commentChangeset)">Envoyer !</ion-button>
+              (click)="pushDataToOsm(commentChangeset)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
 </ion-footer>

@@ -1,0 +1,59 @@
+<div *ngIf="!dataService.user">
+    <button mat-raised-button *ngIf="!dataService.user" (click)="login()" color="primary">login</button>
+    <h2> You must be logged in to openstreetmap to continue</h2>
+</div>
+
+<div *ngIf="dataService.user">
+    <button mat-raised-button  *ngIf="dataService.user"  (click)="logout()" color="warn">logout</button>
+    <h4> Hello <b>{{dataService.user.display_name }} !</b> </h4>
+ 
+
+  <h1> Interface translation</h1>
+
+  <mat-form-field *ngIf="dataService.i18Config">
+    <mat-label>Language</mat-label>
+    <mat-select [(ngModel)]="dataService.langageUiSelected">
+      <mat-option *ngFor="let c of dataService.i18Config.interface" [value]="c">
+        {{c}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+
+  <button mat-raised-button color="primary" 
+    [disabled]="!dataService.langageUiSelected"
+   (click)="goToTranslateUi()">Translate Ui</button>
+
+   <button mat-raised-button (click)="openAddLanguageUI()">Add new language</button>
+  
+  
+  <h1> Tags & presets </h1>
+  
+  
+  <mat-form-field *ngIf="dataService.i18Config" >
+    <mat-label>Language</mat-label>
+    <mat-select (selectionChange)="languageChange($event)">
+      <mat-option *ngFor="let c of dataService.i18Config.tags" [value]="c.language">
+        {{c.language}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <mat-form-field *ngIf="selectedLanguageTag">
+    <mat-label>Region</mat-label>
+    <mat-select (selectionChange)="countryChange($event)">
+      <mat-option *ngFor="let c of selectedLanguageTag.country" [value]="c.region">
+        {{c.region}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button mat-raised-button [disabled]="!tagsService.country || !tagsService.language" (click)="goToTagsConfig()" color="primary">
+    Configure...
+  </button>
+  
+  <button mat-raised-button (click)="openAddNewConfig()">Add new language/country</button>
+
+</div>
+
+

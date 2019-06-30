@@ -18,6 +18,7 @@ import { BBox } from '@turf/turf';
 import { timer } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -43,11 +44,11 @@ export class MainPage implements AfterViewInit {
     public platform: Platform,
     private alertCtrl: AlertController,
     private _ngZone: NgZone,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
 
-    this.tagsService.loadPresets().subscribe();
-    this.tagsService.loadTags();
+
 
     this.router.events.subscribe((e) => {
 
@@ -121,6 +122,12 @@ export class MainPage implements AfterViewInit {
 
   }
 
+  ngOnInit(): void {
+
+    // this.tagsService.loadPresets(this.configService.config.languageTags, this.configService.config.countryTags).subscribe();
+    // this.tagsService.loadTags(this.configService.config.languageTags, this.configService.config.countryTags);
+  }
+
   openMenu() {
     this.menuCtrl.open('menu1');
 
@@ -137,18 +144,18 @@ export class MainPage implements AfterViewInit {
 
   presentConfirm() {
     this.alertCtrl.create({
-      header: 'Vraiment?',
-      message: 'Voulez vous vraiment quitter Osm Go! ?',
+      header: this.translate.instant('MAIN.EXIT_CONFIRM_HEADER'),
+      message: this.translate.instant('MAIN.EXIT_CONFIRM_MESSAGE'),
       buttons: [
         {
-          text: 'Non',
-          role: 'cancel',
+          text: this.translate.instant('SHARED.NO'),
+          role: 'cancel', 
           handler: () => {
 
           }
         },
         {
-          text: 'Oui',
+          text: this.translate.instant('SHARED.YES'),
           handler: () => {
             window.navigator['app'].exitApp();
           }
@@ -211,8 +218,23 @@ export class MainPage implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.tagsService.loadTags();
-    this.mapService.eventDomMainReady.emit(document.getElementById('map'));
+    this.configService.loadConfig().then(e => {
+      this.translate.use(this.configService.config.languageUi);
+      // this.tagService.loadLastTagAdded();
+      this.tagsService.loadLastTagAdded$().subscribe(e =>
+       console.log
+      )
+      this.tagsService.loadBookMarks$().subscribe(e =>
+        console.log
+      )
+
+      this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
+        .subscribe();
+
+      
+      this.mapService.eventDomMainReady.emit(document.getElementById('map'));
+    })
+    
     this.alertService.eventDisplayToolTipRefreshData.subscribe(async e => {
 
       const toast = await this.toastCtrl.create({

@@ -8,6 +8,7 @@ import { MapService } from '../../services/map.service';
 import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { timer } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -32,34 +33,29 @@ export class PushDataToOsmPage implements AfterViewInit {
         public navCtrl: NavController,
         private alertCtrl: AlertController,
         private configService: ConfigService,
-        public platform: Platform
-        // public viewCtrl: ViewController
+        public platform: Platform,
+        private translate : TranslateService
     ) {
-        // this.platform.registerBackButtonAction(e => {
-        //     this.dismiss();
-        // });
+
         this.commentChangeset = this.configService.getChangeSetComment();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
     }
 
-    // dismiss(data = null) {
-    //     this.viewCtrl.dismiss(data);
-    // }
 
     presentConfirm() {
         this.alertCtrl.create({
-            header: 'Vraiment?',
-            message: 'Supprimer toutes les modifications?',
+            header: this.translate.instant('SEND_DATA.DELETE_CONFIRM_HEADER'),
+            message: this.translate.instant('SEND_DATA.DELETE_CONFIRM_MESSAGE'),
             buttons: [
                 {
-                    text: 'Annuler',
+                    text: this.translate.instant('SHARED.CANCEL'),
                     role: 'cancel',
                     handler: () => {
 
                     }
                 },
                 {
-                    text: 'Confirmer',
+                    text: this.translate.instant('SHARED.CONFIRM'),
                     handler: () => {
                         this.cancelAllFeatures();
                     }
@@ -77,7 +73,7 @@ export class PushDataToOsmPage implements AfterViewInit {
             message: error.error,
             buttons: [
                 {
-                    text: 'Fermer',
+                    text: this.translate.instant('SEND_DATA.CLOSE'),
                     role: 'cancel',
                     handler: () => {
 

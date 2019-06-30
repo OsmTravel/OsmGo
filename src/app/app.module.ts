@@ -50,9 +50,20 @@ import { Vibration } from '@ionic-native/vibration/ngx';
 
 import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
 import { MomentModule } from 'ngx-moment';
+import 'moment/locale/en-gb';
 import 'moment/locale/fr';
+
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [AppComponent, MainPage, LocationPage, AboutPage, LoginPage, MenuPage,
@@ -74,7 +85,14 @@ import 'moment/locale/fr';
     AppRoutingModule,
     HttpClientModule,
     MomentModule,
-    AngularResizedEventModule
+    AngularResizedEventModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
 
   providers: [
