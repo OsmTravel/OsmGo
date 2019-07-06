@@ -1,3 +1,10 @@
+# 0.9.0
+## Interface 
+    - i18n : English version as default language ! 
+
+## Divers
+    - OsmGoAdmin permet de traduire l'interface et de créer des configurations des tags & presets selon les langues/pays
+
 # 0.8.0
 ## Divers
     * Ajout et corrections de tags
@@ -15,9 +22,9 @@
     * Un objet qui n'a pas été modifié ne peut plus être envoyé à OSM
 
 
-### Osm Go Tags
+### Osm Go Admin
 Introduction d'Osm Go tag qui est un outil d'aide a la création et a la modifications des tags et presets. Il est au stade embryonnaire mais peut déjà être utile. Il est sous forme d'une application web avec une partie frontend (angular) et backend (express).
-A terme, il pourra être utilisé pour faciliter la colaboration,  les traductions et eventuelemnt pouvoir personaliser ses popres tags par utilisateur.
+A terme, il pourra être utilisé pour faciliter la collaboration,  les traductions et éventuellement pouvoir personaliser ses popres tags par utilisateur.
 Un script permet de creer les statistiques d'utilisations des tags à partir d'un PBF ( actuelement sur le France).
 Plus de docs bientôt...
 
