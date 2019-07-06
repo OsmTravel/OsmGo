@@ -17,7 +17,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 						</div>
 
 						<div class="buttonEdit2cols">
-							<i (click)="eventDeleteTag(tag)" class="fa fa-times fa-2x"></i>
+							<i (click)="eventDeleteTag()" class="fa fa-times fa-2x"></i>
 						</div>
 					</div>
 
