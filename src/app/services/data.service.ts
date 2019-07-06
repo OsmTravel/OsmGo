@@ -101,10 +101,8 @@ export class DataService {
         }
     }
     addFeatureToGeojsonChanged(feature) {
-
         this.geojsonChanged.features.push(feature);
         this.localStorage.set('geojsonChanged', this.geojsonChanged);
-
     }
 
     updateFeatureToGeojsonChanged(feature) {
