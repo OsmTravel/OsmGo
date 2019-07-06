@@ -1,0 +1,48 @@
+mat-toolbar{
+  height: 64px;
+}
+
+
+.primaryKey{
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 49%;
+    height: 64px;
+   }
+   .primaryValue{
+     position: absolute;
+     top: 130px;
+     left: 0px;
+     width: 49%;
+     bottom: 0;
+     overflow-y: auto;
+   }
+   
+   .presets{
+     overflow: auto;
+     position: absolute;
+     bottom: 0;
+     right: 0;
+     top: 64px;
+     width: 49%;
+   }
+   
+   th{
+     text-align: left;
+   }
+   
+   .selectedRow{
+     background-color: red;
+   }
+   
+   .pointer{
+    cursor: pointer;
+   }
+   /* .svg-icon g path {
+     fill: #ffffff;
+   } */
+   /* svg {
+     fill: #ffffff !important;
+   } */
+   

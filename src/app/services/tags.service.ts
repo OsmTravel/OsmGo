@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 
 
 import { Storage } from '@ionic/storage';
+import { ConfigService } from './config.service';
+import { from, forkJoin } from 'rxjs';
 
 
 
@@ -17,11 +19,9 @@ export class TagsService {
     primaryKeys = [];
 
 
-    constructor(private http: HttpClient, public localStorage: Storage) {
-        this.loadLastTagAdded();
-        this.loadBookMarks();
-        this.loadPrimaryKeys();
-
+    constructor(private http: HttpClient,
+        public localStorage: Storage,
+        public configService: ConfigService) {
     }
 
     // bookMarks
@@ -49,14 +49,19 @@ export class TagsService {
         this.localStorage.set('bookMarks', this.bookMarks);
     }
 
-    loadBookMarks() {
-        this.localStorage.get('bookMarks').then(d => {
-            if (d) {
-                this.bookMarks = d;
-            } else {
-                this.bookMarks = [];
-            }
-        });
+
+    loadBookMarks$() {
+        return from(this.localStorage.get('bookMarks'))
+            .pipe(
+                map(d => {
+                    if (d) {
+                        this.bookMarks = d;
+                    } else {
+                        this.bookMarks = [];
+                    }
+                    return this.bookMarks;
+                })
+            )
     }
 
 
@@ -68,30 +73,29 @@ export class TagsService {
         this.localStorage.set('lastTagAdded', lastTag);
         this.lastTagAdded = lastTag;
     }
-    loadLastTagAdded() {
-        this.localStorage.get('lastTagAdded').then(d => {
-            if (d) {
-                this.lastTagAdded = d;
-            } else {
-                this.lastTagAdded = null;
-            }
-        });
+
+    loadLastTagAdded$() {
+        return from(this.localStorage.get('lastTagAdded')).pipe(
+            map(d => {
+                if (d) {
+                    this.lastTagAdded = d;
+                } else {
+                    this.lastTagAdded = null;
+                }
+                return d
+            })
+        );
     }
 
-    loadPrimaryKeys() {
-        this.getAllTags().subscribe(allTags => {
-            for (const key in allTags) {
-                this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
-            }
-        });
-    }
+
+
 
     getPrimaryKeys() {
         return this.primaryKeys;
     }
 
-    getAllTags(): Observable<any> { // tags à plat ?
-        return this.http.get('assets/tags/tags.json')
+    getAllTags(language, country): Observable<any> { // tags à plat ?
+        return this.http.get(`assets/i18n/${language}/${country}/tags.json`)
             .pipe(
                 map(res => {
                     const tags = res;
@@ -117,11 +121,10 @@ export class TagsService {
 
 
 
-    loadTags() {
-        this.http.get('assets/tags/tags.json')
+    loadTags(language, country) {
+        this.http.get(`assets/i18n/${language}/${country}/tags.json`)
             .pipe(
                 map((res) => {
-                    // this.tags = res;
                     return res;
                 })
             )
@@ -158,8 +161,8 @@ export class TagsService {
         return res;
     }
 
-    loadPresets() {
-        return this.http.get('assets/tags/presets.json')
+    loadPresets(language, country) {
+        return this.http.get(`assets/i18n/${language}/${country}/presets.json`)
             .pipe(
                 map((p) => { // c'est moche... vivement rx6.
                     const json = p;
@@ -170,6 +173,19 @@ export class TagsService {
                     return this.presets;
                 })
             );
+    }
+
+    loadTagsAndPresets$(language, country) {
+        return forkJoin(
+            this.loadPresets(language, country),
+            this.getAllTags(language, country).pipe(
+                map(allTags => {
+                    for (const key in allTags) {
+                        this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
+                    }
+                })
+            )
+        )
     }
 
 

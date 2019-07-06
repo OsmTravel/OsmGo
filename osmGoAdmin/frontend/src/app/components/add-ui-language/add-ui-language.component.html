@@ -1,0 +1,10 @@
+
+<mat-form-field >
+    <input [(ngModel)]="newLanguage" matInput placeholder="Language (eg : en , fr, de, pt...)" >
+</mat-form-field>
+
+<button 
+(click)="addLanguage(newLanguage)"
+[disabled]='!newLanguage' 
+mat-raised-button color="primary">
+  Add this language</button>

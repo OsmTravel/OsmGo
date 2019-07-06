@@ -8,6 +8,7 @@ import { OsmApiService } from '../../services/osmApi.service';
 import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { AlertService } from '../../services/alert.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'menu',
@@ -28,6 +29,7 @@ export class MenuPage {
         public alertService: AlertService,
         private alertCtrl: AlertController,
         public platform: Platform,
+        private translate: TranslateService,
         private navCtrl: NavController
     ) {
 
@@ -44,18 +46,18 @@ export class MenuPage {
 
     deleteDatapresentConfirm() {
         this.alertCtrl.create({
-
-            message: 'Supprimer les données téléchargées? (conserve les modifications)',
+            header: this.translate.instant('MENU.DELETE_DATA_CONFIRM_HEADER'), 
+            message: this.translate.instant('MENU.DELETE_DATA_CONFIRM_MESSAGE'),
             buttons: [
                 {
-                    text: 'Annuler',
+                    text: this.translate.instant('SHARED.CANCEL'),
                     role: 'cancel',
                     handler: () => {
 
                     }
                 },
                 {
-                    text: 'Confirmer',
+                    text: this.translate.instant('SHARED.CONFIRM'),
                     handler: () => {
                         this.mapService.resetDataMap();
                         this.closeMenu();

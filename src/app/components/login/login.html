@@ -4,7 +4,7 @@
                 <ion-icon name="arrow-back"></ion-icon> 
              </ion-buttons>
     <ion-title>
-      Login
+      {{'LOGIN.LOGIN' | translate }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,23 +14,24 @@
 
         <ion-item>
                 <ion-input [(ngModel)]="username" 
-                placeholder="Email ou nom d'utilisateur OpenStreetMap" ></ion-input>
+                [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate " ></ion-input>
         </ion-item>
         
         <ion-item>
-            <ion-input [(ngModel)]="password" type="password" placeholder="Mot de passe"></ion-input>
+            <ion-input [(ngModel)]="password" type="password" 
+            [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate "></ion-input>
         </ion-item>
 
         <ion-card *ngIf="errorLogin" color="danger" >
             <ion-card-content>
                 {{errorLogin.error}} 
             </ion-card-content>
-          </ion-card>
+        </ion-card>
    
 
         <ion-button 
         style="margin-top: 16px; width: 100%;"
-        (click)="login()" block>Se connecter</ion-button>
+        (click)="login()" block>{{ 'LOGIN.LOGIN_BUTTON' | translate }}</ion-button>
 
 
 </ion-content>

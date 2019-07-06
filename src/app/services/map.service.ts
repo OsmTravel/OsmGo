@@ -1,7 +1,7 @@
 import { Vibration } from '@ionic-native/vibration/ngx';
 import { Injectable, EventEmitter, NgZone } from '@angular/core';
 import { Observable, timer } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+
 import { DataService } from './data.service';
 import { TagsService } from './tags.service';
 import { AlertService } from './alert.service';
@@ -16,6 +16,8 @@ import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
 // declare var mapboxgl: any;
 import * as mapboxgl from 'mapbox-gl';
+import { TranslateService } from '@ngx-translate/core';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({ providedIn: 'root' })
@@ -31,6 +33,7 @@ export class MapService {
     private zone: NgZone,
     private alertCtrl: AlertController,
     private http: HttpClient,
+    private translate: TranslateService,
     private vibration: Vibration) {
 
     this.domMarkerPosition = document.createElement('div');
@@ -318,10 +321,22 @@ export class MapService {
     }
   }
 
-  getMapStyle(): Observable<any> {
+  getMapStyle() {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .pipe(
-        map(res => res)
+        map(mapboxStyle => {
+          const path = window.location.href;
+          let spritesFullPath = `i18n/${this.configService.config.languageTags}/${this.configService.config.countryTags}/sprites`;
+          if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+            const basePath = path.split('#')[0];
+            spritesFullPath = `${basePath}assets/${spritesFullPath}`;
+          } else {
+            spritesFullPath = path.replace('/index.html', `/assets/${spritesFullPath}`);
+          }
+          mapboxStyle['sprite'] = spritesFullPath;
+          return mapboxStyle
+        }
+        )
       );
   }
 
@@ -358,17 +373,8 @@ export class MapService {
   initMap() {
 
     const that = this;
-    this.getMapStyle().subscribe(mapStyle => { // tricks pour donner le chemin complet des sprites pour MapboxGL >= 0.27
-      const path = window.location.href;
-      let spritesFullPath = 'mapStyle/sprites';
-      if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-        const basePath = path.split('#')[0];
-        spritesFullPath = `${basePath}assets/mapStyle/sprites`;
-      } else {
-        // file:///android_asset/www/index.html => file:///android_asset/www/assets/mapStyle/sprites
-        spritesFullPath = path.replace('/index.html', '/assets/mapStyle/sprites');
-      }
-      mapStyle.sprite = spritesFullPath;
+    this.getMapStyle().subscribe(mapStyle => {
+
       that.zone.runOutsideAngular(() => {
         this.map = new mapboxgl.Map({
           container: 'map',
@@ -380,8 +386,6 @@ export class MapService {
           attributionControl: false,
           dragRotate: true,
           trackResize: false,
-          // trackResize: this.configService.platforms.includes('desktop') ? true : false,
-          // failIfMajorPerformanceCavea: false,
           pitch: 0,
           pitchWithRotate: false,
           collectResourceTiming: false
@@ -475,8 +479,8 @@ export class MapService {
   diplayInitToast() {
     const data = this.dataService.getGeojson();
     if (data.features.length > 0) {
-      // Il y a des données stockées en mémoires...
-      this.alertService.eventNewAlert.emit(data.features.length + ' anciens objets chargés');
+      // Il y a des données stockées en mémoires... 
+      this.alertService.eventNewAlert.emit(data.features.length + ' ' + this.translate.instant('MAIN.START_SNACK_ITEMS_IN_MEMORY'));
     } else {
       // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
       this.alertService.eventDisplayToolTipRefreshData.emit();
@@ -674,18 +678,18 @@ export class MapService {
         });
         const alert = await this.alertCtrl.create(
           {
-            header: 'Le quel ?',
+            header: this.translate.instant('MAIN.WHAT_ITEM'),
             inputs: inputsParams,
             buttons: [
               {
-                text: 'Cancel',
+                text: this.translate.instant('SHARED.CANCEL'),
                 role: 'cancel',
                 cssClass: 'secondary',
                 handler: () => {
 
                 }
               }, {
-                text: 'Ok',
+                text: this.translate.instant('SHARED.OK'),
                 handler: (data: any) => {
                   const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
                   this.selectFeature(selectedFeature[0]);
@@ -737,9 +741,6 @@ export class MapService {
       });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
-      if (this.locationService.headingIsDisable) {
-        // this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
-      }
       this.addDomMarkerPosition();
 
       if (geojsonPos.features && geojsonPos.features[0].properties) {
@@ -755,11 +756,7 @@ export class MapService {
 
     // La localisation était déjà ready avnt que la carte ne soit chargée
     if (this.locationService.gpsIsReady) {
-      // if (this.locationService.headingIsDisable) {
-      //   this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
-      // }
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos());
-
     }
 
 

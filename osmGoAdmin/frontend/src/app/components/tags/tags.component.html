@@ -1,0 +1,174 @@
+
+<mat-toolbar color="primary">
+    <button mat-button routerLink="/"> <mat-icon>home</mat-icon></button>
+    {{this.tagsService.language }}-{{this.tagsService.country}}
+</mat-toolbar>
+
+<div class="primaryKey">
+  <mat-form-field>
+    <mat-select placeholder="Key" [(value)]="selectedTagKey" (selectionChange)="selectKeyTagChange($event)">
+      <mat-option *ngFor="let key of tagsService.tagsConfig | keys  " [value]="key">
+
+        {{tagsService.tagsConfig[key]?.lbl}}  ({{ key}})
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="openDialogAddPrimaryValue(selectedTagKey)"> <mat-icon>add </mat-icon>  Add tag </button>
+  <!-- <button mat-button [disabled]="generatingSprites" (click)="generatesSprites()">
+    {{ generatingSprites ? 'En cours de génération ...' :  'Générer les sprites' }}
+  </button> -->
+  <button mat-raised-button color="primary" (click)="openDialogSettingsPkey(selectedTagKey)"> 
+      <mat-icon>settings</mat-icon> 
+     {{ selectedTagKey}} 
+  </button>
+
+
+</div>
+
+
+<div class="primaryValue">
+  <table *ngIf="selectedTagKey" style="width: 100%;">
+    <tr>
+      <th>icon</th>
+      <th></th>
+      <th (click)="changeOrder('key')" class="pointer">Key</th>
+      <th (click)="changeOrder('lbl')" class="pointer">Label</th>
+      <th>Presets</th>
+      <th (click)="changeOrder('_count')" class="pointer" >count</th>
+      <th (click)="changeOrder('_percentage')" class="pointer">%</th>
+      <th (click)="changeOrder('time')" class="pointer"> time </th>
+    </tr>
+    <tr
+      *ngFor="let primaryTagValueConfig of tagsService.tagsConfig[selectedTagKey].values | orderBy:[ orderKey , orderType ]"
+      (click)="tagValueConfigChange(primaryTagValueConfig)" class="pointer" >
+      <td>
+        <div style="width: 32px;min-height: 32px;height: 100%;"
+          [ngStyle]="{'background-color': primaryTagValueConfig.markerColor}">
+          <img *ngIf="primaryTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon"
+            [src]="'./api/svg/'+ primaryTagValueConfig.icon" />
+        </div>
+      </td>
+
+      <td>
+        <mat-icon *ngIf="primaryTagValueConfig.deprecated"> warning</mat-icon>
+      </td>
+      <td>{{primaryTagValueConfig.key}}</td>
+      <td>{{primaryTagValueConfig.lbl}}</td>
+      <td>{{primaryTagValueConfig.presets.length}}</td>
+      <td> {{primaryTagValueConfig._count}}</td>
+      <td> {{primaryTagValueConfig._percentage }}</td>
+      <td> {{primaryTagValueConfig?.time | date:'short' }}</td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="presets" *ngIf="selectedTagValueConfig">
+
+  <h3>{{selectedTagValueConfig.key}}</h3>
+  <div style="width: 32px;height: 32px; display: inline-block"
+    [ngStyle]="{'background-color': selectedTagValueConfig.markerColor}"
+    (click)="openDialogIconsSelector(selectedTagKey, selectedTagValueConfig.key)">
+    <img *ngIf="selectedTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon"
+      [src]="'./api/svg/'+ selectedTagValueConfig.icon" />
+
+
+  </div>
+  <div *ngIf="selectedTagValueConfig.icon"> {{ selectedTagValueConfig.icon }}</div>
+  <!-- <img [style.width]="'24px'" [style.height]="'36px'" [style.background]= "'url(./api/sprites/png)'" 
+  [style.background-position] = "-currentSprite.x +'px '+ -currentSprite.y +'px'"
+> -->
+<button mat-raised-button style="margin: 5px; display:block" (click)="toOsmPage(selectedTagKey, selectedTagValueConfig.key)"> OSM WIKI</button>
+
+<mat-slide-toggle [(ngModel)]="isDeleteConfirm">delete this tag ?</mat-slide-toggle>
+
+<button mat-raised-button [disabled]='!isDeleteConfirm' (click)="deleteTag(selectedTagKey,selectedTagValueConfig.key )" color="warn">DELETE</button>
+
+
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.lbl" autocomplete="off" (change)="primaryTagHasChanged($event)" placeholder="Label"
+      style="font-weight: bolder; font-size: 1.5em;">
+
+  </mat-form-field>
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.lbl_alt" autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="alternative label / keywords">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%; color:red;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.alert"  autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="Alerte">
+  </mat-form-field>
+
+  <div style="margin:5px;">
+    <mat-slide-toggle [(ngModel)]="selectedTagValueConfig.deprecated"  (change)="primaryTagHasChanged($event)">
+      Deprecated / hidden ?
+    </mat-slide-toggle>
+    <span *ngIf="selectedTagValueConfig.deprecated" style="    font-weight: bold; color: red;">
+      This tag is deprecated (or hidden),  it will not appear in the proposalss
+    </span>
+  </div>
+
+
+  <h4>Presets</h4>
+
+  <table *ngIf="tagsService.presetsConfig  as presetsConfig">
+    <tr *ngFor="let presetId of selectedTagValueConfig.presets">
+      <td>{{ presetsConfig[presetId]?.key}}</td>
+      <td>{{presetsConfig[presetId]?.lbl}}</td>
+      <td>{{presetsConfig[presetId]?.type}}</td>
+      <td> <span *ngIf="['list', 'select'].includes(presetsConfig[presetId]?.type)"> {{presetsConfig[presetId]?.tags?.length}} </span></td>
+      <td><button mat-raised-button color="primary"
+          (click)="openPresetsDialog('update',selectedTagKey, selectedTagValueConfig.key, presetsConfig[presetId])">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+      <td><button mat-raised-button color="warn"
+        (click)="deletePresetFromTag(selectedTagKey, selectedTagValueConfig.key, presetsConfig[presetId])">
+        <mat-icon>delete_forever</mat-icon>
+      </button>
+    </td>
+    </tr>
+  </table>
+
+  <button mat-raised-button color="primary"
+  (click)="openPresetsDialog('add',selectedTagKey, selectedTagValueConfig.key,{type: 'text', lbl: '', tags: []})">
+  <mat-icon>add</mat-icon>
+  Add a preset</button>
+
+
+  <h4>Default Value</h4>
+  <div *ngIf="selectedTagValueConfig.default_values" >
+  
+    <div *ngFor="let item of selectedTagValueConfig.default_values">
+      {{ item.key }}
+      <mat-form-field>
+          <input matInput placeholder="Value" autocomplete="off" [(ngModel)]="item.value" (change)="primaryTagHasChanged($event)">
+      </mat-form-field>
+
+      <button mat-raised-button color="warn"
+        (click)="deleteDefaultValue(item)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <div>
+      <mat-form-field>
+          <input matInput placeholder="key" autocomplete="off" [(ngModel)]="newDefaultValue.key">
+      </mat-form-field>
+  
+      <mat-form-field>
+          <input matInput placeholder="value" autocomplete="off" [(ngModel)]="newDefaultValue.value">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary"
+      (click)="addDefaultValue(newDefaultValue)">
+      <mat-icon>add</mat-icon>
+      Add default value
+    </button>
+  </div>
+
+
+</div>

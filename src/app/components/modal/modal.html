@@ -4,7 +4,10 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-title>
-					{{(findElement(tags,{key:'name'}).value != '') ? findElement(tags,{key:'name'}).value : 'Sans nom' }}
+					{{(findElement(tags,{key:'name'}).value != '') ? 
+							findElement(tags,{key:'name'}).value : 
+							('MODAL_SELECTED_ITEM.NO_NAME' | translate)
+						}}
 				</ion-title>
 
 
@@ -78,7 +81,9 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-title>
-					<ion-input type="text" [placeholder]="'Nom'" [(ngModel)]="findElement(tags,{key : 'name'}).value"></ion-input>
+					<ion-input type="text" [placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate" 
+					[(ngModel)]="findElement(tags,{key : 'name'}).value"
+					autocapitalize="on" autocomplete="off"></ion-input>
 				</ion-title>
 			</ion-toolbar>
 
@@ -128,18 +133,23 @@
 
 			<ion-card *ngIf="displayAddTag">
 				<ion-card-header *ngIf="displayAddTag">
-					Ajouter un tag
+						{{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate}}
 				</ion-card-header>
 				<ion-card-content *ngIf="displayAddTag">
 					<ion-item>
 						<ion-label primary stacked>Key</ion-label>
-						<ion-input type="text" placeholder="Key" [(ngModel)]="newTag.key"></ion-input>
+						<ion-input type="text" placeholder="Key" 
+						autocapitalize="none" autocomplete="off"
+						[(ngModel)]="newTag.key"></ion-input>
 					</ion-item>
 					<ion-item>
 						<ion-label primary stacked>Value</ion-label>
-						<ion-input type="text" placeholder="value" [(ngModel)]="newTag.value"></ion-input>
+						<ion-input type="text" placeholder="value"
+						autocapitalize="none" autocomplete="off"
+						[(ngModel)]="newTag.value"></ion-input>
 					</ion-item>
-					<ion-button ion-button [disabled]="newTag.key == '' || newTag.value == ''" (click)="addTag()"> Ajouter
+					<ion-button ion-button [disabled]="newTag.key == '' || newTag.value == ''" (click)="addTag()"> 
+						{{ 'SHARED.ADD' | translate}}
 					</ion-button>
 				</ion-card-content>
 			</ion-card>

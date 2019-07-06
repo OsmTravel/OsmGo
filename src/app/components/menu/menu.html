@@ -13,27 +13,27 @@
 	<ion-content>
 	  <ion-list>
 		<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
-			Se connecter à OpenStreetMap
+			{{'MENU.CONNECTION' | translate }}
 		</ion-item>
 
 		<ion-item (click)="pushPage('/settings')">
-			Paramètres
+			{{'MENU.SETTINGS' | translate }}
 		</ion-item>
 
 		<ion-item (click)="pushPage('/about')">
-			À Propos
+			{{'MENU.ABOUT' | translate }}
 		</ion-item>
 
 		<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
-			Se déconnecter
+			{{'MENU.SIGN_OUT' | translate }} 
 		</ion-item>
 
 		<ion-item color="danger" (click)="deleteDatapresentConfirm()">
-			Supprimer les données
+			{{'MENU.DELETE_DATA' | translate }} 
 		</ion-item>
 
 		<ion-item  (click)="exit()"> 
-			Quitter
+			{{'MENU.EXIT' | translate }} 
 		</ion-item>
 	  </ion-list>
 	</ion-content>

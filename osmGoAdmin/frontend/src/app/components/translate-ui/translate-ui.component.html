@@ -1,0 +1,32 @@
+
+<mat-toolbar  color="primary"> <button mat-button routerLink="/"> <mat-icon>home</mat-icon></button> {{dataService.langageUiSelected}}</mat-toolbar>
+
+<div class="dataTable">
+    <table >
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Key</th>
+                <th>en</th>
+                <th><b> {{dataService.langageUiSelected}} </b></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of translationData">
+                <td>{{item.category}}</td>
+                <td>{{item.key}}</td>
+                <td>{{item.en}}</td>
+                <td>
+                    <mat-form-field style="min-width:  40em">
+                        <input matInput [(ngModel)]="item.translation">
+                    </mat-form-field>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<div class="footer">
+    <button mat-raised-button color="primary"
+    (click)="sendNewTranslation(translationData, dataService.langageUiSelected)">Send my translation</button>
+</div>

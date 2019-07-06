@@ -3,6 +3,9 @@ import { NavController, Platform } from '@ionic/angular';
 import { ConfigService } from '../../services/config.service';
 import { MapService } from '../../services/map.service';
 import { OsmApiService } from '../../services/osmApi.service';
+import { TranslateService } from '@ngx-translate/core';
+import { TagsService } from 'src/app/services/tags.service';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -17,6 +20,9 @@ export class SettingsPage {
     public configService: ConfigService,
     public mapService: MapService,
     public platform: Platform,
+    public tagsService: TagsService,
+    public dataService: DataService,
+
 
     public osmApi: OsmApiService) {
 
@@ -67,5 +73,36 @@ export class SettingsPage {
 
   addSurveySourceChange(e){
     this.configService.setAddSurveySource(e.detail.checked);
+  }
+
+  languageUiChange(e){
+    const newLlang = e.detail.value;
+    this.configService.setUiLanguage(newLlang);
+    
+  }
+
+  languageTagsChange(e){
+
+    const newLlang = e.detail.value;
+    this.configService.setLanguageTags(newLlang);
+
+    console.log(e);
+  }
+
+  countryTagsChange(e){
+    const newCountry = e.detail.value;
+    this.configService.setCountryTags(newCountry);
+    console.log(newCountry);
+        this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, newCountry)
+            .subscribe( e => {
+            
+                console.log('New Config Loaded!')
+                let newDataJson =  this.mapService.setIconStyle(this.dataService.getGeojson());
+                this.dataService.setGeojson(newDataJson);
+               this.mapService.eventMarkerReDraw.emit(newDataJson);
+               
+                
+                
+            });
   }
 }
