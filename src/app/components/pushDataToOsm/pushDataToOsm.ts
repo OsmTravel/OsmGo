@@ -125,7 +125,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         // this.dataService.deleteFeatureFromGeojson(featureChanged); //suppression des data
                         this.dataService.deleteFeatureFromGeojsonChanged(featureChanged);
 
-                        this.dataService.addFeatureToGeojson(newFeature); // creation du nouveau
+                        this.dataService.addFeatureToGeojson(newFeature); // creation du nouveau TODO
                         this.pushFeatureToOsm(this.dataService.getGeojsonChanged().features[this.index], this.changesetId, this.index);
                         this.featuresChanges = this.dataService.getGeojsonChanged().features;
                     },
@@ -216,12 +216,18 @@ export class PushDataToOsmPage implements AfterViewInit {
     }
 
     pushDataToOsm(commentChangeset) {
+        if (this.isPushing){
+            console.log('Already being sent')
+            return;
+        }
+
         this.isPushing = true;
         this.configService.setChangeSetComment(commentChangeset);
         // let featuresChanged = this.dataService.getGeojsonChanged().features;
         this.osmApi.getValidChangset(commentChangeset).subscribe(CS => {
             this.index = 0;
             this.changesetId = CS;
+            // TODO => observable, switchmap...
             this.pushFeatureToOsm(this.dataService.getGeojsonChanged().features[this.index], this.changesetId, this.index);
         });
     }
