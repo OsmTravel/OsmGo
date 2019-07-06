@@ -1,3 +1,7 @@
+# 0.9.1
+## Fix
+    - Il n'est plus possible d'envoyer 2 fois un même changeset... Cela pouvait créer des doublons ! 
+
 # 0.9.0
 ## Interface 
     - i18n : English version as default language ! 
