@@ -46,7 +46,8 @@ export class MapService {
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
     this.eventDomMainReady.subscribe(mes => {
-      mapboxgl.accessToken = 'pk.eyJ1IjoiZHozMTY0MjQiLCJhIjoiNzI3NmNkOTcyNWFlNGQxNzU2OTA1N2EzN2FkNWIwMTcifQ.NS8KWg47FzfLPlKY0JMNiQ';
+   
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
       this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
         if (this.map) {
           this.map.setZoom(19);
