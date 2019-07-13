@@ -1,3 +1,7 @@
+# 0.9.2
+## Fix
+    - Le token d'API Mapbox a changé ... (?)
+
 # 0.9.1
 ## Fix
     - Il n'est plus possible d'envoyer 2 fois un même changeset... Cela pouvait créer des doublons ! 
