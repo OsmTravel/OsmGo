@@ -169,6 +169,7 @@ export class OsmApiService {
             <changeset>
                 <tag k="created_by" v="${appVersion}"/>
                 <tag k="comment" v="${comment}"/>
+                <tag k="source" v="survey"/>
             </changeset>
         </osm>`;
 

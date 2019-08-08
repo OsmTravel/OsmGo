@@ -44,7 +44,6 @@ export class ConfigService {
         filterWayByArea: true,
         filterWayByLength: true,
         changeSetComment: 'Sortie avec Osm Go!',
-        addSurveySource: true,
         languageUi: window.navigator.language.split('-')[0],
         languageTags: window.navigator.language.split('-')[0],
         countryTags: window.navigator.language.split('-')[1].toUpperCase()
@@ -199,15 +198,6 @@ export class ConfigService {
 
     getFilterWayByLength() {
         return this.config.filterWayByLength;
-    }
-
-    setAddSurveySource(addSurveySource: boolean) {
-        this.config.addSurveySource = addSurveySource;
-        this.localStorage.set('config', this.config);
-    }
-
-    getAddSurveySource() {
-        return this.config.addSurveySource;
     }
 
     setUiLanguage(lang: string) {

@@ -71,8 +71,6 @@
     "TAGS_LIST_BOOKMARKS": "Favoris",
     "TAGS_LIST_TYPE": "Par type",
     "DEFAULT_TAGS_LIST_HINT": "Type de tag par défaut à l'ouverture de la fenêtre de sélection",
-    "ADD_SURVEY_SOURCE": "Ajouter une source",
-    "ADD_SURVEY_SOURCE_HINT": "Ajouter la source \"survey\" à chaque modification",
     "DATA": "Data",
     "MARGIN": "Marge",
     "MARGIN_HINT": "Distance autour de la vue courante où les données seront téléchargées",

@@ -71,8 +71,6 @@
     "TAGS_LIST_BOOKMARKS": "Bookmarks",
     "TAGS_LIST_TYPE": "By type",
     "DEFAULT_TAGS_LIST_HINT": "Default tag type when opening the selection window",
-    "ADD_SURVEY_SOURCE": "Add survey source",
-    "ADD_SURVEY_SOURCE_HINT": "Add survey source ",
     "DATA": "Data",
     "MARGIN": "Margin",
     "MARGIN_HINT": "Distance around the current view where the data will be downloaded",
