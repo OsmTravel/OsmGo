@@ -12,7 +12,8 @@
     "EXIT_CONFIRM_HEADER": "Vraiment ?",
     "EXIT_CONFIRM_MESSAGE": "Voulez vous vraiment quitter Osm Go! ?",
     "START_SNACK_ITEMS_IN_MEMORY": "objets en mémoire",
-    "WHAT_ITEM": "Le quel ?"
+    "WHAT_ITEM": "Le quel ?",
+    "LOAD_BBOX": "Charger les données de l'emprise ?"
   },
   "MENU": {
     "CONNECTION": "Se connecter à OpenStreetMap",
@@ -70,8 +71,6 @@
     "TAGS_LIST_BOOKMARKS": "Favoris",
     "TAGS_LIST_TYPE": "Par type",
     "DEFAULT_TAGS_LIST_HINT": "Type de tag par défaut à l'ouverture de la fenêtre de sélection",
-    "ADD_SURVEY_SOURCE": "Ajouter une source",
-    "ADD_SURVEY_SOURCE_HINT": "Ajouter la source \"survey\" à chaque modification",
     "DATA": "Data",
     "MARGIN": "Marge",
     "MARGIN_HINT": "Distance autour de la vue courante où les données seront téléchargées",
@@ -108,6 +107,8 @@
     "DELETE_CONFIRM_HEADER": "Vraiment ?",
     "DELETE_CONFIRM_MESSAGE": "Supprimer cet élément?",
     "ADD_SURVEY_DATE_CONFIRM_HEADER": "Objet vérifié ?",
-    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Ajouter le tag 'survey:date' à la date du jour"
+    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Ajouter le tag 'survey:date' à la date du jour",
+    "PRIMARY_TAG_BOOKMARKS": "Favoris",
+    "PRIMARY_TAG_FULL": "Tous les tags"
   }
 }

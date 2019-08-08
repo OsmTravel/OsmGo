@@ -239,7 +239,7 @@ export class MainPage implements AfterViewInit {
 
       const toast = await this.toastCtrl.create({
         position: 'bottom',
-        message: 'Charger les données de l\'emprise ?',
+        message: this.translate.instant('MAIN.LOAD_BBOX'),
         showCloseButton: true,
         duration: 6000,
         closeButtonText: 'Ok'

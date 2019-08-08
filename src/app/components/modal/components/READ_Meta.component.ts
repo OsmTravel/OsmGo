@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-
+import * as moment from 'moment';
+import { ConfigService } from 'src/app/services/config.service';
 @Component({
     selector: 'read-meta',
     template: `
@@ -23,12 +24,21 @@ import { Component, Input } from '@angular/core';
 
 			 {{  meta.timestamp | amTimeAgo}}
 			</span>
-			<br> {{ 'MODAL_SELECTED_ITEM.META_BY' | translate}} {{meta?.user ? meta?.user : 'Moi même'}}
+			<br> {{ 'MODAL_SELECTED_ITEM.META_BY' | translate}} {{meta?.user ? meta?.user : ('MODAL_SELECTED_ITEM.META_MYSELF' | translate) }}
 		</ion-card-content>
 	</ion-card>
   `
 })
 export class ReadMeta {
+
+	constructor( private configService: ConfigService){
+
+	}
+	
+	ngOnInit(): void {
+		moment.locale(this.configService.getUiLanguage()); // TODO Once...
+	}
+
     @Input() meta;
     @Input() displayCode;
 }
