@@ -366,20 +366,6 @@ export class ModalsContentPage implements OnInit {
     }
 
   }
-  addSurveySource(feature) {
-    if (!this.configService.getAddSurveySource()) {
-      return feature;
-    }
-
-    if (!feature.properties.tags['source']) {
-      feature.properties.tags['source'] = 'survey';
-    } else { // une source existe déjà...
-      if (!/survey/.test(feature.properties.tags['source'])) { // mais pas de survey...
-        feature.properties.tags['source'] = `survey; ${feature.properties.tags['source']}`;
-      }
-    }
-    return feature;
-  }
 
   pushTagsToFeature() {
     const tagObjects = {};
@@ -387,7 +373,6 @@ export class ModalsContentPage implements OnInit {
       tagObjects[this.tags[i].key] = this.tags[i].value;
     }
     this.feature.properties.tags = tagObjects;
-    this.feature = this.addSurveySource(this.feature);
   }
 
   moveOsmElement() {

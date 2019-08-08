@@ -1,3 +1,12 @@
+# 0.9.4
+## Fix
+    - Translation (#21, #22)
+    - Add source=survey to the changeset (instead of the object) (#23)
+
+## Miscellaneous
+    - Add link to this Github repository to About page (#24)
+    - Upgrade Mapbox Gl js 1.2.0
+
 # 0.9.2
 ## Fix
     - Le token d'API Mapbox a changé ... (?)

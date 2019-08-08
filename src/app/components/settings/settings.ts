@@ -71,10 +71,6 @@ export class SettingsPage {
     this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
   }
 
-  addSurveySourceChange(e){
-    this.configService.setAddSurveySource(e.detail.checked);
-  }
-
   languageUiChange(e){
     const newLlang = e.detail.value;
     this.configService.setUiLanguage(newLlang);

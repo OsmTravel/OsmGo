@@ -68,17 +68,7 @@
 		</ion-card-content>
 	</ion-card>
 
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-label>{{ 'SETTINGS.ADD_SURVEY_SOURCE' | translate}}</ion-label>
-				<ion-toggle [(ngModel)]="this.configService.config.addSurveySource" 
-				(ionChange)="addSurveySourceChange($event)"></ion-toggle>
-			</ion-item>
-			
-			<label class="hint">{{ 'SETTINGS.ADD_SURVEY_SOURCE_HINT' | translate}}</label>
-		</ion-card-content>
-	</ion-card>
+
 
 	<h4>{{ 'SETTINGS.DATA' | translate}}</h4>
 	<ion-card>
