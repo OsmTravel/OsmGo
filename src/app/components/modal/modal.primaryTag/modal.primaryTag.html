@@ -13,8 +13,8 @@
 			<div style="width: 45%; padding:8px;"> 
 				<ion-select class="select-md" style="width: 100%; min-width: 100%;padding-left:0;" 
 				[(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
-					<ion-select-option value="bookmarks"> Favoris </ion-select-option>
-					<ion-select-option value="full"> Tous les tags </ion-select-option>
+					<ion-select-option value="bookmarks"> {{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_BOOKMARKS' | translate}} </ion-select-option>
+					<ion-select-option value="full"> {{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_FULL' | translate}} </ion-select-option>
 					<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag.lbl}} ({{tag.key}})</ion-select-option>
 				</ion-select>
 			</div>

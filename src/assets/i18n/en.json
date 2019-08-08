@@ -12,7 +12,8 @@
     "EXIT_CONFIRM_HEADER": "Really ?",
     "EXIT_CONFIRM_MESSAGE": "Do you really want to leave Osm Go! ?",
     "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
-    "WHAT_ITEM": "Which ?"
+    "WHAT_ITEM": "Which ?",
+    "LOAD_BBOX": "Load data ?"
   },
   "MENU": {
     "CONNECTION": "Login to OpenStreetMap",
@@ -90,7 +91,7 @@
     "TAG_COUNTRY_HINT": "Tags and presets may vary by country"
   },
   "MODAL_SELECTED_ITEM": {
-    "PRIMARY_TAG_LIST": "Liste",
+    "PRIMARY_TAG_LIST": "List",
     "PRIMARY_TAG_CUSTOM": "Custom",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Please enter at least 3 letters in the search bar",
     "LOADING": "Loading...",
@@ -108,6 +109,9 @@
     "DELETE_CONFIRM_HEADER": "Really ?",
     "DELETE_CONFIRM_MESSAGE": "Delete this item ?",
     "ADD_SURVEY_DATE_CONFIRM_HEADER": "Has the object been verified ?",
-    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add tag 'survey:date' at today's date"
+    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add tag 'survey:date' at today's date",
+    "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
+    "PRIMARY_TAG_FULL": "Full"
+
   }
 }

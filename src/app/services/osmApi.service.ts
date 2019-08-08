@@ -22,7 +22,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
 
-    isDevServer = false; // dev serveur TODO
+    isDevServer = false;
     urlsOsm = {
         prod: { 'api': 'https://api.openstreetmap.org', 'overpass': 'https://overpass-api.de/api/interpreter' },
         dev: { 'api': 'https://master.apis.dev.openstreetmap.org', 'overpass': '' }
