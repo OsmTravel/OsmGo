@@ -16,10 +16,11 @@ import { ModalsContentPage } from '../modal/modal';
 import { BBox } from '@turf/turf';
 
 import { timer } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+import { Plugins } from '@capacitor/core';
+const { App } = Plugins;
 
 @Component({
   templateUrl: './main.html',
@@ -68,7 +69,10 @@ export class MainPage implements AfterViewInit {
       }
     });
 
-    this.platform.backButton.subscribe(async () => {
+
+    App.addListener('backButton', async () => {
+      // state.isActive contains the active state
+    
       if (this.router.url === '/main') {
         if (this.modalIsOpen) {
           return;
@@ -186,21 +190,6 @@ export class MainPage implements AfterViewInit {
           this.presentToast(err);
         });
   }
-
-
-
-  goToPage(pageName) {
-    // this.routerService.pushPage(pageName)
-
-  }
-  goToPushDataPage() {
-    if (this.osmApi.getUserInfo().connected) {
-      this.goToPage('pushDataToOsmPage');
-    } else {
-      this.goToPage('loginPage');
-    }
-  }
-
 
 
   presentToast(message) {

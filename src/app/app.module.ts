@@ -6,8 +6,7 @@ import { AngularResizedEventModule } from 'angular-resize-event';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,12 +42,7 @@ import { FilterNullValuePipe } from './pipes/filterNullValue.pipe';
 import { KeysPipe } from './pipes/keys.pipe';
 import { ToLowercasePipe } from './pipes/toLowercase.pipe';
 
-import { AppVersion } from '@ionic-native/app-version/ngx';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { DeviceOrientation } from '@ionic-native/device-orientation/ngx';
-import { Vibration } from '@ionic-native/vibration/ngx';
 
-import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -96,13 +90,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
 
   providers: [
-    AppVersion,
-    Geolocation,
-    DeviceOrientation,
-    Diagnostic,
-    StatusBar,
-    SplashScreen,
-    Vibration,
+  
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

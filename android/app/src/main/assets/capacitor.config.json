@@ -1,0 +1,8 @@
+{
+  "appId": "fr.dogeo.osmgo",
+  "appName": "Osm Go !",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/usr/bin/android-studio"
+}

@@ -1,13 +1,13 @@
-import { Vibration } from '@ionic-native/vibration/ngx';
 import { Injectable, EventEmitter, NgZone } from '@angular/core';
-import { Observable, timer } from 'rxjs';
-
 import { DataService } from './data.service';
 import { TagsService } from './tags.service';
 import { AlertService } from './alert.service';
 import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
+import { Plugins,HapticsImpactStyle } from '@capacitor/core';
+
+const { Haptics } = Plugins;
 
 import * as _ from 'lodash';
 
@@ -33,8 +33,8 @@ export class MapService {
     private zone: NgZone,
     private alertCtrl: AlertController,
     private http: HttpClient,
-    private translate: TranslateService,
-    private vibration: Vibration) {
+    private translate: TranslateService
+    ) {
 
     this.domMarkerPosition = document.createElement('div');
     this.domMarkerPosition.className = 'positionMarkersSize';
@@ -659,8 +659,9 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      this.vibration.vibrate(50);
-      // // sans duplicate (by id osm)
+      Haptics.impact({style: HapticsImpactStyle.Light})
+  
+      // sans duplicate (by id osm)
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
