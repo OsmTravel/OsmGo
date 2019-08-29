@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from '@ionic/angular';
+import { NavController, Platform, LoadingController } from '@ionic/angular';
+import { Plugins, AppState } from '@capacitor/core';
+
+const { App } = Plugins;
+
 import { ConfigService } from '../../services/config.service';
 import { MapService } from '../../services/map.service';
 import { OsmApiService } from '../../services/osmApi.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from 'src/app/services/tags.service';
 import { DataService } from 'src/app/services/data.service';
+import { IconService } from 'src/app/services/icon.service';
 
 
 @Component({
@@ -22,9 +27,9 @@ export class SettingsPage {
     public platform: Platform,
     public tagsService: TagsService,
     public dataService: DataService,
-
-
-    public osmApi: OsmApiService) {
+    public iconService : IconService,
+    public osmApi: OsmApiService,
+    public loadingController: LoadingController) {
 
   }
 
@@ -100,5 +105,35 @@ export class SettingsPage {
                 
                 
             });
+  }
+
+  async generateCahedIcon (){
+    const loading = await this.loadingController.create({
+      message: '........'
+    });
+    await loading.present();
+    const missingSprites:string[]  = await this.iconService.getMissingSpirtes();
+    for ( let missIcon of missingSprites){
+      console.log(missIcon);
+      let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
+      this.dataService.addIconCache(missIcon, uriIcon)
+
+    }
+    loading.dismiss();
+  }
+
+  async deleteCache (){
+    await this.dataService.clearCache();
+    App.exitApp();
+  }
+
+  async deleteIconCache(){
+    const loading = await this.loadingController.create({
+      message: '...'
+    });
+    let n = await this.dataService.clearIconCache();
+    console.log('deleted: ', n)
+    loading.dismiss();
+   
   }
 }

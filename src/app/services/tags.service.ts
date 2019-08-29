@@ -178,7 +178,8 @@ export class TagsService {
     loadTagsAndPresets$(language, country) {
         return forkJoin(
             this.loadPresets(language, country),
-            this.getAllTags(language, country).pipe(
+            this.getAllTags(language, country)
+            .pipe(
                 map(allTags => {
                     for (const key in allTags) {
                         this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });

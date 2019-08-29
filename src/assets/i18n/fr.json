@@ -13,7 +13,8 @@
     "EXIT_CONFIRM_MESSAGE": "Voulez vous vraiment quitter Osm Go! ?",
     "START_SNACK_ITEMS_IN_MEMORY": "objets en mémoire",
     "WHAT_ITEM": "Le quel ?",
-    "LOAD_BBOX": "Charger les données de l'emprise ?"
+    "LOAD_BBOX": "Charger les données de l'emprise ?",
+    "CREATING_MISSING_ICONS": "Création des icônes manquant..."
   },
   "MENU": {
     "CONNECTION": "Se connecter à OpenStreetMap",
@@ -86,7 +87,13 @@
     "UI_LANGUAGE": "Langue de l'interface",
     "TAG_LANGUAGE": "Langue des tags",
     "TAG_COUNTRY": "Pays",
-    "TAG_COUNTRY_HINT": "Les tags et les presets peuvent varier selon les pays"
+    "TAG_COUNTRY_HINT": "Les tags et les presets peuvent varier selon les pays",
+    "CACHE": "Gestion du cache",
+    "GENERATE_ICON_CACHE": "Générer le cache des icônes",
+    "DELETE_ICON_CACHE": "Supprimer le cache des icônes",
+
+    "DELETE_CACHE": "Supprimer tout le cache de l'application",
+    "DELETE_CACHE_HINT": "Supprime l'intégralité du cache (data, modification, icônes, login, etc)"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "Liste",
@@ -110,5 +117,6 @@
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Ajouter le tag 'survey:date' à la date du jour",
     "PRIMARY_TAG_BOOKMARKS": "Favoris",
     "PRIMARY_TAG_FULL": "Tous les tags"
+    
   }
 }

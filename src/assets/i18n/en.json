@@ -13,7 +13,8 @@
     "EXIT_CONFIRM_MESSAGE": "Do you really want to leave Osm Go! ?",
     "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
     "WHAT_ITEM": "Which ?",
-    "LOAD_BBOX": "Load data ?"
+    "LOAD_BBOX": "Load data ?",
+    "CREATING_MISSING_ICONS": "Creating missing icons..."
   },
   "MENU": {
     "CONNECTION": "Login to OpenStreetMap",
@@ -86,7 +87,14 @@
     "UI_LANGUAGE": "User interface language",
     "TAG_LANGUAGE": "Language of tags",
     "TAG_COUNTRY": "Country",
-    "TAG_COUNTRY_HINT": "Tags and presets may vary by country"
+    "TAG_COUNTRY_HINT": "Tags and presets may vary by country",
+    "CACHE": "Cache management",
+    "GENERATE_ICON_CACHE": "Generate the icon cache",
+    "DELETE_ICON_CACHE": "Delete icon cache",
+
+    "DELETE_CACHE": "Delete all application cache",
+    "DELETE_CACHE_HINT": "Delete all application cache (data, edit, icons, login, etc)"
+
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "List",

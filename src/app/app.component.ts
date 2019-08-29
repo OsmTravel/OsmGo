@@ -47,10 +47,5 @@ export class AppComponent {
         this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
       });
 
-
-
-
-
-
   }
 }

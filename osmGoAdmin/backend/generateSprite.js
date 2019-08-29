@@ -6,7 +6,7 @@ var svg2img = require('svg2img');
 
 const Spritesmith = require('spritesmith');
 
-exports.generateSprites = function (language, country) {
+exports.generateSprites = (language = 'fr', country = 'FR') => {
 
     const iconsSVGsPath = path.join(__dirname, '..', '..', 'src','assets','mapStyle','IconsSVG');
     const markersModelPath = path.join(__dirname, '.','data','SvgForSprites','markersModel');
@@ -16,7 +16,7 @@ exports.generateSprites = function (language, country) {
     const outputFolderSVG = path.join(__dirname, 'tmp', 'SVG');
     // const outputFolderIconsSVG = path.join(outputFolderSVG, icons);
 
-    const outPath = path.join(__dirname, '..', '..', 'src','assets','i18n', language, country) // les sprites en sorti
+    const outPath = path.join(__dirname, '..', '..', 'src','assets', 'mapStyle','sprites') // les sprites en sorti
 
 
     fs.removeSync(outputFolderSVG);

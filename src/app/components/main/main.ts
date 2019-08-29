@@ -1,7 +1,7 @@
 import { Component, NgZone, AfterViewInit } from '@angular/core';
 import {
   NavController, MenuController,
-  ModalController, ToastController, Platform, AlertController
+  ModalController, ToastController, Platform, AlertController, LoadingController
 } from '@ionic/angular';
 
 
@@ -20,6 +20,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { Plugins } from '@capacitor/core';
+import { IconService } from 'src/app/services/icon.service';
 const { App } = Plugins;
 
 @Component({
@@ -46,7 +47,9 @@ export class MainPage implements AfterViewInit {
     private alertCtrl: AlertController,
     private _ngZone: NgZone,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public iconService : IconService,
+    public loadingController: LoadingController
   ) {
 
 
@@ -127,9 +130,6 @@ export class MainPage implements AfterViewInit {
   }
 
   ngOnInit(): void {
-
-    // this.tagsService.loadPresets(this.configService.config.languageTags, this.configService.config.countryTags).subscribe();
-    // this.tagsService.loadTags(this.configService.config.languageTags, this.configService.config.countryTags);
   }
 
   openMenu() {
@@ -218,7 +218,29 @@ export class MainPage implements AfterViewInit {
       )
 
       this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
-        .subscribe();
+        .subscribe( async e => {
+
+            const missingIcons: string[] = await this.iconService.getMissingSpirtes();
+            console.log('Missing icons ', missingIcons.length)
+            if( missingIcons.length > 0){
+              const loading = await this.loadingController.create({
+                message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
+              });
+              await loading.present();
+              const missingSprites:string[]  = await this.iconService.getMissingSpirtes();
+              for ( let missIcon of missingSprites){
+                console.log(missIcon);
+                let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
+                this.dataService.addIconCache(missIcon, uriIcon)
+          
+              }
+              loading.dismiss();
+
+            } 
+       
+         
+         
+        });
 
       
       this.mapService.eventDomMainReady.emit(document.getElementById('map'));

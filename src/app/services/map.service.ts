@@ -5,11 +5,13 @@ import { AlertService } from './alert.service';
 import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
-import { Plugins,HapticsImpactStyle } from '@capacitor/core';
+import { Plugins, HapticsImpactStyle } from '@capacitor/core';
 
 const { Haptics } = Plugins;
 
 import * as _ from 'lodash';
+
+import * as svgToPng from 'save-svg-as-png'
 
 
 import { destination, point, Point, BBox } from '@turf/turf';
@@ -18,10 +20,27 @@ import { AlertController } from '@ionic/angular';
 import * as mapboxgl from 'mapbox-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
+import { IconService } from './icon.service';
+
+// const circleMarkerModelPath = `<path fill="{{color}}" d="M12,0C5.371,0,0,5.903,0,13.187c0,0.829,0.079,1.643,0.212,2.424c0.302,1.785,0.924,3.448,1.81,4.901
+// l0.107,0.163L11.965,36l9.952-15.393l0.045-0.064c0.949-1.555,1.595-3.343,1.875-5.269C23.934,14.589,24,13.899,24,13.187
+// C24,5.905,18.629,0,12,0z"/>`;
+
+// const squareMarkerModelPath = `<path fill="{{color}}" d="M20.103,0.57H2.959c-1.893,0-3.365,0.487-3.365,2.472l-0.063,18.189c0,1.979,1.526,3.724,3.418,3.724h4.558
+//  l4.01,11.545l3.966-11.545h4.56c1.894,0,3.488-1.744,3.488-3.724V4.166C23.531,2.18,21.996,0.57,20.103,0.57z"/>`
+
+// const pentaMarkerModelPath = `<polygon fill="{{color}}" points="0.5,11.516 6.516,-0.5 18.5,-0.5 24.5,11.5 12.5,35.5 	"/>`
+
+// const xmlHeader = '<svg version="1.1" id="marker-circle-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"  y="0px" width="24px" height="36px" viewBox="0 0 24 36" enable-background="new 0 0 24 36" xml:space="preserve">';
+
+// const xmlEnd = '</svg>'
+
 
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
+
+
 
   constructor(
     private _ngZone: NgZone,
@@ -33,8 +52,9 @@ export class MapService {
     private zone: NgZone,
     private alertCtrl: AlertController,
     private http: HttpClient,
-    private translate: TranslateService
-    ) {
+    private translate: TranslateService,
+    private iconService: IconService
+  ) {
 
     this.domMarkerPosition = document.createElement('div');
     this.domMarkerPosition.className = 'positionMarkersSize';
@@ -46,7 +66,6 @@ export class MapService {
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
     this.eventDomMainReady.subscribe(mes => {
-   
       mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
       this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
         if (this.map) {
@@ -96,6 +115,7 @@ export class MapService {
   markerLocation = undefined;
   layersAreLoaded = false;
 
+  markersLoaded = [];
 
   eventDomMainReady = new EventEmitter();
   eventCreateNewMap = new EventEmitter();
@@ -327,7 +347,8 @@ export class MapService {
       .pipe(
         map(mapboxStyle => {
           const path = window.location.href;
-          let spritesFullPath = `i18n/${this.configService.config.languageTags}/${this.configService.config.countryTags}/sprites`;
+          let spritesFullPath = `mapStyle/sprites/sprites`;
+          // http://localhost:8100/assets/mapStyle/sprites/sprites.json
           if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
             const basePath = path.split('#')[0];
             spritesFullPath = `${basePath}assets/${spritesFullPath}`;
@@ -395,9 +416,9 @@ export class MapService {
 
         this.map.addControl(new mapboxgl.NavigationControl());
 
-        this.map.on('load', () => {
-          this.mapIsLoaded();
+        this.map.on('load', async () => {
 
+          this.mapIsLoaded();
         });
 
         this.map.on('move', (e) => {
@@ -533,6 +554,32 @@ export class MapService {
     this.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
   }
 
+
+  addIconToMapFromURI(iconId, uri) {
+    if (!uri){
+      console.log(iconId);
+      return;
+    }
+
+    this.map.loadImage(uri, (error, image) => {
+      // console.log(iconId, image)
+      
+      this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
+      const ind = this.markersLoaded.findIndex(el => el.id === iconId);
+      this.markersLoaded[ind].loaded = true;
+      // console.log(this.markerLoaded[ind]); 
+
+      let notLoaded = this.markersLoaded.filter(el => el.loaded == false && (/^circle/.test(el.id) || /^square/.test(el.id) || /^penta/.test(el.id)))
+      // console.log('reste',  notLoaded.length ) 
+      // console.log(notLoaded);
+
+      if (!this.markersLoaded.find(el => el.loaded == false && (/^circle/.test(el.id) || /^square/.test(el.id) || /^penta/.test(el.id)))) {
+        console.log('redraw');
+        this.eventMarkerReDraw.emit(this.dataService.getGeojson());
+      }
+    })
+  }
+
   mapIsLoaded() {
     const that = this;
 
@@ -659,8 +706,9 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      Haptics.impact({style: HapticsImpactStyle.Light})
-  
+      console.log(features);
+      Haptics.impact({ style: HapticsImpactStyle.Light })
+
       // sans duplicate (by id osm)
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
@@ -713,7 +761,7 @@ export class MapService {
       this.positionIsFollow = false;
     });
 
-    this.map.on('rotate', e => {
+    this.map.on('rotate', async e => {
       if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
 
       } else { // la map reste fixe, l'icon tourne
@@ -727,6 +775,30 @@ export class MapService {
         this.configService.currentZoom = this.map.getZoom();
       });
     });
+
+
+    this.map.on('styleimagemissing', async e => {
+      const iconId = e.id;
+      if (this.markersLoaded.find(el => el.id == iconId)) {
+        return;
+      }
+
+      this.markersLoaded.push({ id: iconId, loaded: false });
+      let cachedUri = await this.dataService.getIconCache(iconId)
+
+      if (cachedUri) {
+        this.addIconToMapFromURI(iconId, cachedUri);
+      } else {
+        let uri = await this.iconService.generateMarkerByIconId(iconId);
+        if (uri){
+          this.addIconToMapFromURI(iconId, uri);
+          this.dataService.addIconCache(iconId, uri);
+        }
+        
+      }
+    })
+
+
 
     this.locationService.eventNewCompassHeading
       .subscribe(heading => {

@@ -13,7 +13,35 @@ export class DataService {
      constructor(public localStorage: Storage) {
       }
 
+    addIconCache(idIcon, uri){
+        this.localStorage.set(idIcon, uri);
+    }
 
+    getIconCache(idIcon) {
+        return this.localStorage.get(idIcon);
+    }
+
+  
+
+    async getKeysCacheIcon(){
+        let allKeys = await this.localStorage.keys();
+        return allKeys.filter( k => /^circle/.test(k) || /^square/.test(k) || /^penta/.test(k))
+    }
+
+    async clearIconCache(){
+        let keys = await this.getKeysCacheIcon();
+        let n = 0;
+        for (let key of keys){
+            console.log(key);
+            await this.localStorage.remove(key);
+            n++;
+        }
+        return n;
+    }
+
+    async clearCache(){
+        await this.localStorage.clear();
+    }
 
 
     setGeojsonBbox(geojsonBbox) {
