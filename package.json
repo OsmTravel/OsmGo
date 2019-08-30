@@ -11,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sprites": "node  ./osmGoAdmin/backend/sprites.js"
+    "sprites": "node  ./scripts/sprites.js"
   },
   "dependencies": {
     "@angular/common": "~8.1.2",
@@ -73,6 +73,7 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3",
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.19",
+    "svg2img": "^0.6.1"
   }
 }
