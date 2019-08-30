@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from 'hammerjs';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AngularResizedEventModule } from 'angular-resize-event';
@@ -59,6 +60,15 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
+export class CustomHammerConfig extends HammerGestureConfig{
+  overrides = {
+    'pan':{
+      direction :Hammer.DIRECTION_ALL
+    }
+  }
+
+}
+
 @NgModule({
   declarations: [AppComponent, MainPage, LocationPage, AboutPage, LoginPage, MenuPage,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
@@ -90,9 +100,8 @@ export function createTranslateLoader(http: HttpClient) {
   ],
 
   providers: [
-  
-
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
   ],
   bootstrap: [AppComponent]
 })

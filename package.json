@@ -35,6 +35,7 @@
     "@turf/turf": "^5.1.6",
     "angular-resize-event": "^1.0.0",
     "core-js": "^2.5.4",
+    "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
     "mapbox-gl": "^1.2.1",
     "moment": "^2.24.0",
