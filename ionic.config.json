@@ -1,7 +1,8 @@
 {
-  "name": "osmGoIonic4",
+  "name": "Osm Go",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }

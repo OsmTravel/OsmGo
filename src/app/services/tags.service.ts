@@ -16,6 +16,7 @@ export class TagsService {
     bookMarks = [];
     tags;
     presets = {};
+    basemaps;
     primaryKeys = [];
 
 
@@ -161,6 +162,16 @@ export class TagsService {
         return res;
     }
 
+    getBaseMaps(language, country) {
+        return this.http.get(`assets/i18n/${language}/${country}/basemap.json`)
+            .pipe(
+                map((p) => {
+                    this.configService.baseMapSources = p;
+                    return this.basemaps;
+                })
+            );
+    }
+
     loadPresets(language, country) {
         return this.http.get(`assets/i18n/${language}/${country}/presets.json`)
             .pipe(
@@ -178,7 +189,9 @@ export class TagsService {
     loadTagsAndPresets$(language, country) {
         return forkJoin(
             this.loadPresets(language, country),
-            this.getAllTags(language, country).pipe(
+            this.getAllTags(language, country),
+            this.getBaseMaps(language, country)
+            .pipe(
                 map(allTags => {
                     for (const key in allTags) {
                         this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });

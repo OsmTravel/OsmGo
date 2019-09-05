@@ -1,9 +1,12 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { AppVersion } from '@ionic-native/app-version/ngx';
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import { Plugins } from '@capacitor/core';
+import { environment } from '../../environments/environment.prod';
 
+const { Device } = Plugins;
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
@@ -11,13 +14,13 @@ export class ConfigService {
 
     constructor(public localStorage: Storage,
         private http: HttpClient,
-        private translate: TranslateService,
-        private _appVersion: AppVersion) {
+        private translate: TranslateService
+    ) {
 
-         this.getI18nConfig$().subscribe(d => {
+        this.getI18nConfig$().subscribe(d => {
             this.i18nConfig = d;
             this.loadConfig();
-         });
+        });
 
 
     }
@@ -28,10 +31,7 @@ export class ConfigService {
     freezeMapRenderer = false;
     platforms = [];
 
-    baseMapSources = [
-        { 'id': 'tmsIgn', 'label': 'Ortho IGN' },
-        { 'id': 'mapbox-satellite', 'label': 'Mapbox satellite' }
-    ];
+    baseMapSources ;
     currentZoom: number = undefined;
 
     config = {
@@ -40,10 +40,10 @@ export class ConfigService {
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
         isDelayed: true,
-        baseMapSourceId: this.baseMapSources[0].id,
+        baseMapSourceId: this.baseMapSources ? this.baseMapSources[0].id : null,
         filterWayByArea: true,
         filterWayByLength: true,
-        changeSetComment: 'Sortie avec Osm Go!',
+        changeSetComment: '',
         languageUi: window.navigator.language.split('-')[0],
         languageTags: window.navigator.language.split('-')[0],
         countryTags: window.navigator.language.split('-')[1].toUpperCase()
@@ -61,21 +61,21 @@ export class ConfigService {
         zoom: 4.8
     };
 
-    appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: '0.0.0' };
+    appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: environment.version || '0.0.0' };
 
 
     getI18nConfig$() {
         return this.http.get('./assets/i18n/i18n.json')
     }
 
- 
+
 
     loadConfig() {
 
 
         return this.localStorage.get('config')
             .then(d => {
-         
+
                 if (d) {
                     // tslint:disable-next-line:forin
                     for (const key in d) {
@@ -85,35 +85,26 @@ export class ConfigService {
                     this.localStorage.set('config', this.config);
                 }
 
-       
-                const currentTagsLanguage = this.i18nConfig.tags.find( l => l.language === this.config.languageTags);
-                if (!currentTagsLanguage){
+
+                const currentTagsLanguage = this.i18nConfig.tags.find(l => l.language === this.config.languageTags);
+                if (!currentTagsLanguage) {
                     this.config.languageTags = 'en';
                     this.config.countryTags = 'GB';
                 } else {
-                    if(!currentTagsLanguage.country.find( r => r.region === this.config.countryTags)){
+                    if (!currentTagsLanguage.country.find(r => r.region === this.config.countryTags)) {
                         this.config.countryTags = currentTagsLanguage.country[0].region;
                     }
                 }
-                this.currentTagsCountryChoice = this.i18nConfig.tags.find( l => l.language == this.config.languageTags).country;
+                this.currentTagsCountryChoice = this.i18nConfig.tags.find(l => l.language == this.config.languageTags).country;
                 this.eventConfigIsLoaded.emit(this.config);
             });
     }
 
     loadAppVersion() {
-
-        this._appVersion.getAppName().then(e => {
-            console.log(e);
-            this.appVersion.appName = e;
-        });
-        this._appVersion.getVersionCode().then(e => {
-            this.appVersion.appVersionCode = e.toString();
-        });
-        this._appVersion.getVersionNumber().then(e => {
-            this.appVersion.appVersionNumber = e;
-        });
-
-
+        Device.getInfo()
+            .then(e => {
+                this.appVersion.appVersionCode = e.appVersion || environment.version;
+            });
     }
 
     getAppVersion() {
@@ -210,14 +201,14 @@ export class ConfigService {
         return this.config.languageUi;
     }
 
-    setLanguageTags(lang: string){
+    setLanguageTags(lang: string) {
         this.config.languageTags = lang;
-        this.currentTagsCountryChoice = this.i18nConfig.tags.find( l => l.language == lang).country;
+        this.currentTagsCountryChoice = this.i18nConfig.tags.find(l => l.language == lang).country;
         this.config.countryTags = this.currentTagsCountryChoice[0].region;
         this.localStorage.set('config', this.config);
     }
 
-    setCountryTags(country:string){
+    setCountryTags(country: string) {
         this.config.countryTags = country;
         this.localStorage.set('config', this.config);
     }

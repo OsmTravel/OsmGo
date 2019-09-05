@@ -1,7 +1,7 @@
 import { Component, NgZone, AfterViewInit } from '@angular/core';
 import {
   NavController, MenuController,
-  ModalController, ToastController, Platform, AlertController
+  ModalController, ToastController, Platform, AlertController, LoadingController
 } from '@ionic/angular';
 
 
@@ -16,10 +16,12 @@ import { ModalsContentPage } from '../modal/modal';
 import { BBox } from '@turf/turf';
 
 import { timer } from 'rxjs';
-import { filter } from 'rxjs/operators';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
+import { Plugins } from '@capacitor/core';
+import { IconService } from 'src/app/services/icon.service';
+const { App } = Plugins;
 
 @Component({
   templateUrl: './main.html',
@@ -41,11 +43,13 @@ export class MainPage implements AfterViewInit {
     public locationService: LocationService,
     public alertService: AlertService,
     public configService: ConfigService,
-    public platform: Platform,
+
     private alertCtrl: AlertController,
     private _ngZone: NgZone,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public iconService : IconService,
+    public loadingController: LoadingController
   ) {
 
 
@@ -68,7 +72,10 @@ export class MainPage implements AfterViewInit {
       }
     });
 
-    this.platform.backButton.subscribe(async () => {
+
+    App.addListener('backButton', async () => {
+      // state.isActive contains the active state
+    
       if (this.router.url === '/main') {
         if (this.modalIsOpen) {
           return;
@@ -123,9 +130,6 @@ export class MainPage implements AfterViewInit {
   }
 
   ngOnInit(): void {
-
-    // this.tagsService.loadPresets(this.configService.config.languageTags, this.configService.config.countryTags).subscribe();
-    // this.tagsService.loadTags(this.configService.config.languageTags, this.configService.config.countryTags);
   }
 
   openMenu() {
@@ -188,21 +192,6 @@ export class MainPage implements AfterViewInit {
   }
 
 
-
-  goToPage(pageName) {
-    // this.routerService.pushPage(pageName)
-
-  }
-  goToPushDataPage() {
-    if (this.osmApi.getUserInfo().connected) {
-      this.goToPage('pushDataToOsmPage');
-    } else {
-      this.goToPage('loginPage');
-    }
-  }
-
-
-
   presentToast(message) {
     this.toastCtrl.create({
       message: message,
@@ -229,7 +218,29 @@ export class MainPage implements AfterViewInit {
       )
 
       this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
-        .subscribe();
+        .subscribe( async e => {
+
+            const missingIcons: string[] = await this.iconService.getMissingSpirtes();
+          
+            if( missingIcons.length > 0){
+              const loading = await this.loadingController.create({
+                message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
+              });
+              await loading.present();
+              const missingSprites:string[]  = await this.iconService.getMissingSpirtes();
+              for ( let missIcon of missingSprites){
+            
+                let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
+                this.dataService.addIconCache(missIcon, uriIcon)
+          
+              }
+              loading.dismiss();
+
+            } 
+       
+         
+         
+        });
 
       
       this.mapService.eventDomMainReady.emit(document.getElementById('map'));

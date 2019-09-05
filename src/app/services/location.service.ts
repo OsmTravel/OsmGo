@@ -1,18 +1,15 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';
-
-import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 import { distance, point } from '@turf/turf';
 import { ConfigService } from './config.service';
+import { Plugins, CallbackID } from '@capacitor/core';
+const { Geolocation, Motion } = Plugins;
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
     eventNewLocation = new EventEmitter();
     eventNewCompassHeading = new EventEmitter();
     eventStartCompassHeading = new EventEmitter();
-    eventPlatformReady = new EventEmitter();
     eventLocationIsReady = new EventEmitter();
     location;
     pointGeojson;
@@ -23,97 +20,101 @@ export class LocationService {
     subscriptionWatchLocation;
     forceOpen = false; // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
     headingIsDisable = false;
+    watchId: CallbackID;
 
     constructor(
-        private geolocation: Geolocation,
-        private deviceOrientation: DeviceOrientation,
-        private diagnostic: Diagnostic,
         public configService: ConfigService) {
+        this.getLocation2();
+        // this.getLocation3()
+    }
 
-        this.eventPlatformReady.subscribe(isVirtual => {
-            /*DEBUG ionic serve */
-            if (isVirtual) {
-                this.enableGeolocation();
-            } else {
 
-                this.diagnostic.registerLocationStateChangeHandler(data => {
-                    if (data === 'location_off') {
-                        this.disableGeolocation();
-                    } else {
-                        this.enableGeolocation();
-                    }
-                });
+    convertToCompassHeading2(alpha, beta, gamma) {
+        // Convert degrees to radians
+        var alphaRad = alpha * (Math.PI / 180);
+        var betaRad = beta * (Math.PI / 180);
+        var gammaRad = gamma * (Math.PI / 180);
 
-                this.diagnostic.isLocationAuthorized()
-                    .then(autorised => {
-                        if (autorised === false) {
-                            this.diagnostic.requestLocationAuthorization().then(e => {
-                                if (e === 'GRANTED') {
-                                    this.checkIfLocationIsAvailable();
-                                } else {
-                                    // l'utilisateur à refuser la geoloc ...
-                                    this.dontUseLocation();
-                                }
-                            });
+        // Calculate equation components
+        var cA = Math.cos(alphaRad);
+        var sA = Math.sin(alphaRad);
+        var cB = Math.cos(betaRad);
+        var sB = Math.sin(betaRad);
+        var cG = Math.cos(gammaRad);
+        var sG = Math.sin(gammaRad);
 
-                        } else {
-                            this.checkIfLocationIsAvailable();
-                        }
-                    });
-            }
-            this.heading();
+        // Calculate A, B, C rotation components
+        var rA = - cA * sG - sA * sB * cG;
+        var rB = - sA * sG + cA * sB * cG;
+        var rC = - cB * cG;
+
+        // Calculate compass heading
+        var compassHeading = Math.atan(rA / rB);
+
+        // Convert from half unit circle to whole unit circle
+        if (rB < 0) {
+            compassHeading += Math.PI;
+        } else if (rA < 0) {
+            compassHeading += 2 * Math.PI;
+        }
+
+        // Convert radians to degrees
+        compassHeading *= 180 / Math.PI;
+        return compassHeading;
+
+    }
+
+
+    async getLocation2() {
+
+        let location = await Geolocation.getCurrentPosition({
+            enableHighAccuracy: true,
+            timeout: 3000
         });
-    }
 
-    checkIfLocationIsAvailable() {
-        this.diagnostic.isLocationAvailable()
-            .then(isLocationAvailable => {
-                if (!isLocationAvailable) {
-                    this.diagnostic.switchToLocationSettings();
-                } else { // la loc est activé
-                    this.enableGeolocation();
+        this.configService.init.zoom = 19;
+        this.configService.init.lng = location.coords.longitude;
+        this.configService.init.lat = location.coords.latitude;
+        this.location = location;
+        this.eventNewLocation.emit(this.getGeojsonPos());
+
+        this.eventLocationIsReady.emit(location);
+        this.configService.geolocPageIsOpen = false;
+        this.configService.eventCloseGeolocPage.emit('gpsIsReady');
+        this.gpsIsReady = true;
+
+        this.heading();
+
+        try {
+            this.watchId = Geolocation.watchPosition({
+                enableHighAccuracy: true,
+                timeout: 3000,
+                requireAltitude: false
+            }, (position, err) => {
+                if (err) {
+                    console.log(err);
+                    return;
                 }
+
+              
+         
+                if (position && position.coords && !this.configService.freezeMapRenderer){
+
+                    const deltaLat = Math.abs(position.coords.latitude -  this.location.coords.latitude);
+                    const deltaLng = Math.abs(position.coords.longitude -  this.location.coords.longitude)
+                    const deltaAccuracy = Math.abs(position.coords.accuracy -  this.location.coords.accuracy)
+                    if (deltaLat > 0.00001 || deltaLng > 0.00001 || deltaAccuracy > 4){
+                        this.location = position;
+                        this.eventNewLocation.emit(this.getGeojsonPos());
+                    }
+
+                }
+               
+
             })
-            .catch(error => {
-
-            });
-    }
-
-    enableGeolocation() {
-
-        this.subscriptionWatchLocation = this.geolocation.watchPosition({ enableHighAccuracy: true })
-            .subscribe((data) => {
-                if (!data.coords) {
-                    return data;
-                }
-
-                if (!this.gpsIsReady) {
-                    this.configService.init.zoom = 19;
-                    this.configService.init.lng = data.coords.longitude;
-                    this.configService.init.lng = data.coords.latitude;
-                    this.eventLocationIsReady.emit(data);
-                    this.configService.geolocPageIsOpen = false;
-                    this.configService.eventCloseGeolocPage.emit('gpsIsReady');
-                    this.gpsIsReady = true;
-                }
-
-                let deltaDistance = Infinity;
-                if (this.location && this.location.coords && !this.configService.freezeMapRenderer) {
-                    const from = point([data.coords.longitude, data.coords.latitude]);
-                    const to = point([this.location.coords.longitude, this.location.coords.latitude]);
-                    deltaDistance = distance(from, to, { units: 'metres' }); // => m
-                } else {
-
-                }
-                // on ne déplace le marker que si la position a changé d'au moins 2 m
-                // Sinon ça regénère le rendu et ça fait chauffé le téléphone pour rien...
-                if (deltaDistance > 2 && !this.configService.freezeMapRenderer) {
-                    this.location = data;
-                    this.eventNewLocation.emit(this.getGeojsonPos());
-                }
-            }, error => {
-                console.log(error);
-            });
+        } catch (e) {
+            console.log(e);
+        }
 
     }
 
@@ -124,39 +125,23 @@ export class LocationService {
     heading() {
 
 
-        // window.addEventListener('compassneedscalibration',function(event) {
-        //     console.log('ask user to wave device in a figure-eight motion');
-        //        event.preventDefault();
-        // }, true);
+        Motion.addListener('orientation', (event) => {
+            const heading = this.convertToCompassHeading2(event.alpha, event.beta, event.gamma)
 
-        if (this.configService.platforms.indexOf('android') === -1) { // for testing : ionic Serve
-            this.headingIsDisable = true;
-            this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
-            this.eventNewCompassHeading.emit(this.compassHeading);
-        } else {
-            // // utilisation l'api native du navigateur
-            const options = {
-                frequency: 300
-            };
+            if (!this.configService.freezeMapRenderer && Math.abs(heading - this.compassHeading.magneticHeading) > 4) {
+                this.compassHeading = {
+                    magneticHeading: heading,
+                    trueHeading: heading,
+                    headingAccuracy: 0,
+                    timestamp: 0,
+                };
+                this.eventNewCompassHeading.emit(this.compassHeading);
 
-            navigator['compass'].watchHeading(data => {
-                if (this.gpsIsReady) {
-                    // si on a un mouvement d'au moins 4°
-                    if (Math.abs(data.magneticHeading - this.compassHeading.magneticHeading) > 4) {
-                        // near 360? TODO
-                        if (!this.configService.freezeMapRenderer) {
-                            this.compassHeading = data;
-                            this.eventNewCompassHeading.emit(data);
-                        }
+            }
 
-                    }
-                }
-            },
-                error => {
-                    console.log(error);
-                }, options);
-        }
+        });
     }
+
     getLocation() {
         return this.location;
     }

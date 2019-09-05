@@ -93,4 +93,7 @@ export class MenuPage {
         this.osmApi.resetUserInfo();
     }
 
+    swipe(e){
+        this.closeMenu() 
+    }
 }

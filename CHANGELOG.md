@@ -1,3 +1,13 @@
+# 0.10.0
+## Miscellaneous 
+    - Migrating from Cordova to Capacitor
+    - There is now only one sprite (instead of one sprite per country). This image is generated from the fr-FR configuration.
+    If an icon is missing, the application will dynamically generate it
+    - The list of base maps now depends on the configuartion of the countries (basemap.json)
+    - Upgrade Mapbox Gl js 1.3.0
+    - Swipe left on the menu => close
+    - First tests with PWA : https://osmgo.dogeo.fr
+
 # 0.9.4
 ## Fix
     - Translation (#21, #22)

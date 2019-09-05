@@ -61,13 +61,14 @@
 
 		</div>
 	</div>
-
+	
+	
 
 	<div *ngIf="typeFiche == 'custom'">
 		<div id="searchSelect">
 			<div style="width: 100%; padding:8px;">
 			
-			<ion-select style="width: 100%; min-width: 100%;"  placeholder="Séléctionner une catégorie"
+			<ion-select style="width: 100%; min-width: 100%;"  [placeholder]="'MODAL_SELECTED_ITEM.SELECT_CATEGORY' | translate"
 				[(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
 				<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag.lbl}} ({{tag.key}})</ion-select-option>
 			</ion-select>

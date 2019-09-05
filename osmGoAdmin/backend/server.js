@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs-extra');
 const bodyParser = require('body-parser');
 const path = require('path')
-const generateSprites = require('./generateSprite')
 const app = express();
 const stringify = require("json-stringify-pretty-compact")
 const crypto = require('crypto');
@@ -27,12 +26,7 @@ const getPresetsPath = (language, country) => {
 const getTagsPath = (language, country) => {
     return path.join(osmGoAssetsPath, 'i18n', language, country, 'tags.json');
 }
-const getSpritesPngPath = (language, country) => {
-    return path.join(osmGoAssetsPath, 'i18n', language, country, 'sprites.png');
-}
-const getSpritesJsonPath = (language, country) => {
-    return path.join(osmGoAssetsPath, 'i18n', language, country, 'sprites.json');;
-}
+
 const uiLanguagePath = path.join(osmGoAssetsPath, 'i18n');
 const svgIconsDirPath = path.join(osmGoAssetsPath, 'mapStyle', 'IconsSVG');
 
@@ -150,33 +144,6 @@ app.get('/api/svgList', function (req, res) {
                 .filter(name => excludeName.indexOf(name) == -1)
             )
         })
-        .catch(err => {
-            res.send(error(res, err))
-        })
-});
-
-app.get('/api/sprites/png/:language/:country', (req, res) => {
-    let language = req.params.language;
-    let country = req.params.country;
-
-    res.setHeader('Content-Type', 'image/png; charset=UTF-8');
-    fs.readFile(getSpritesPngPath(language, country)).then(data => {
-        res.send(data)
-    })
-        .catch(err => {
-            res.send(error(res, err))
-        })
-});
-
-app.get('/api/sprites/json/:language/:country', function (req, res) {
-    res.setHeader('Content-Type', 'application/json');
-
-    let language = req.params.language;
-    let country = req.params.country;
-
-    fs.readFile(getSpritesJsonPath(language, country), 'utf8').then(data => {
-        res.send(data)
-    })
         .catch(err => {
             res.send(error(res, err))
         })
@@ -331,21 +298,6 @@ app.get('/api/PkeyPvalueStat/:pkey/:pvalue/:key?', function (req, res) {
             res.send(error(res, err))
         })
 });
-
-app.get('/api/generateSprites/:language/:country', async (req, res) => {
-    console.log(req.headers);
-    const user = veritfyJWT(req.headers.authorization);
-    if (!user) {
-        res.status(401).send('unautorized')
-        return;
-    }
-
-    let language = req.params.language;
-    let country = req.params.country;
-
-    await generateSprites.generateSprites(language, country)
-    res.send({ "status": "ok" });
-})
 
 app.post('/api/tag/:language/:country', function (req, res) {
     const user = veritfyJWT(req.headers.authorization);

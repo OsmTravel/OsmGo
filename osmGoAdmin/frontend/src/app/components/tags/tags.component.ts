@@ -20,7 +20,6 @@ export class TagsComponent implements OnInit {
   selectedTagValueConfig = undefined;
   selectedPresetConfig;
   selectedPresetId;
-  generatingSprites = false;
   orderKey = 'key';
   orderType = 'asc'
   isDeleteConfirm = false;
@@ -43,21 +42,9 @@ export class TagsComponent implements OnInit {
     }
 
 
-    this.tagsService.getJsonSprite$().subscribe(jsonSprite => {
-      this.tagsService.jsonSprites = jsonSprite;
-    });
-
     this.tagsService.tagsConfig$(this.tagsService.language,this.tagsService.country ).subscribe(data => {
       // this.tagsService.tagsConfig = data;
       this.selectedTagKey = 'shop';
-    });
-  }
-
-  generatesSprites() {
-    this.generatingSprites = true;
-    this.tagsService.generatesSprites(this.tagsService.language, this.tagsService.country).subscribe(e => {
-      console.log(e);
-      this.generatingSprites = false;
     });
   }
 
@@ -78,8 +65,6 @@ export class TagsComponent implements OnInit {
 
   tagValueConfigChange(t) {
     this.selectedTagValueConfig = t;
-    this.currentSprite = this.tagsService.jsonSprites['circle-' + t.markerColor + '-' + t.icon];
-
   }
 
   presetSelect(preset) {

@@ -15,7 +15,6 @@ export class TagsService {
   presetsConfig = {};
   tagsConfig = {};
   aggStats;
-  jsonSprites;
   language ;
   country ;
 
@@ -62,13 +61,15 @@ export class TagsService {
               // console.log(tag);
               let count =0;
               let percentage = 0;
+              let description
               let findedItem = tagInfo[k].values.find( item => item.value === tag.key)
               if (findedItem){
                 count = findedItem.count;
-                percentage = Math.round((count / tagInfo[k].sum *100) *1000) /1000
+                percentage = (Math.round((findedItem.fraction ) *1000) /1000) * 100;
+                description = findedItem.description
               }
               // console.log(findedItem);
-              return {...tag, _count :count, _percentage:percentage} ;
+              return {...tag, _count :count, _percentage:percentage, _description:description} ;
             })
           }
           this.tagsConfig = tags;
@@ -81,10 +82,6 @@ export class TagsService {
     return this.http.get<any[]>('./api/svgList', this.dataService.getHttpOption()).pipe(
       shareReplay()
     );
-  }
-
-  generatesSprites(language, country) {
-    return this.http.get(`./api/generateSprites/${language}/${country}`, this.dataService.getHttpOption());
   }
 
   getPresetsConfig$(language, country) {
@@ -125,9 +122,6 @@ export class TagsService {
       );
   }
 
-  getJsonSprite$() {
-    return this.http.get(`./api/sprites/json/${this.language}/${this.country}`, this.dataService.getHttpOption());
-  }
 
   getPresetsKeyByPrimaryTag(key, value) {
     const keys = [];

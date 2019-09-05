@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from 'hammerjs';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AngularResizedEventModule } from 'angular-resize-event';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,12 +43,7 @@ import { FilterNullValuePipe } from './pipes/filterNullValue.pipe';
 import { KeysPipe } from './pipes/keys.pipe';
 import { ToLowercasePipe } from './pipes/toLowercase.pipe';
 
-import { AppVersion } from '@ionic-native/app-version/ngx';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { DeviceOrientation } from '@ionic-native/device-orientation/ngx';
-import { Vibration } from '@ionic-native/vibration/ngx';
 
-import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -59,10 +54,21 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MomentModule } from 'ngx-moment';
 import 'moment/locale/en-gb';
 import 'moment/locale/fr';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+export class CustomHammerConfig extends HammerGestureConfig{
+  overrides = {
+    'pan':{
+      direction :Hammer.DIRECTION_ALL
+    }
+  }
+
 }
 
 @NgModule({
@@ -92,19 +98,13 @@ export function createTranslateLoader(http: HttpClient) {
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
 
   providers: [
-    AppVersion,
-    Geolocation,
-    DeviceOrientation,
-    Diagnostic,
-    StatusBar,
-    SplashScreen,
-    Vibration,
-
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
   ],
   bootstrap: [AppComponent]
 })

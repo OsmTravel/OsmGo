@@ -32,7 +32,6 @@ export class OsmApiService {
 
     user_info = { user: '', password: '', uid: '', display_name: '', connected: false };
     changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
-    // changeSetComment = 'Sortie avec Osm Go!';
 
     eventNewPoint = new EventEmitter();
 
