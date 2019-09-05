@@ -30,10 +30,7 @@ export class ConfigService {
     freezeMapRenderer = false;
     platforms = [];
 
-    baseMapSources = [
-        { 'id': 'tmsIgn', 'label': 'Ortho IGN' },
-        { 'id': 'mapbox-satellite', 'label': 'Mapbox satellite' }
-    ];
+    baseMapSources ;
     currentZoom: number = undefined;
 
     config = {
@@ -42,10 +39,10 @@ export class ConfigService {
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
         isDelayed: true,
-        baseMapSourceId: this.baseMapSources[0].id,
+        baseMapSourceId: this.baseMapSources ? this.baseMapSources[0].id : null,
         filterWayByArea: true,
         filterWayByLength: true,
-        changeSetComment: 'Sortie avec Osm Go!',
+        changeSetComment: '',
         languageUi: window.navigator.language.split('-')[0],
         languageTags: window.navigator.language.split('-')[0],
         countryTags: window.navigator.language.split('-')[1].toUpperCase()

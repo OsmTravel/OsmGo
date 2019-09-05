@@ -221,7 +221,7 @@ export class MainPage implements AfterViewInit {
         .subscribe( async e => {
 
             const missingIcons: string[] = await this.iconService.getMissingSpirtes();
-            console.log('Missing icons ', missingIcons.length)
+          
             if( missingIcons.length > 0){
               const loading = await this.loadingController.create({
                 message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
@@ -229,7 +229,7 @@ export class MainPage implements AfterViewInit {
               await loading.present();
               const missingSprites:string[]  = await this.iconService.getMissingSpirtes();
               for ( let missIcon of missingSprites){
-                console.log(missIcon);
+            
                 let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
                 this.dataService.addIconCache(missIcon, uriIcon)
           

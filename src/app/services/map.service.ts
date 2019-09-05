@@ -225,14 +225,16 @@ export class MapService {
 
     if (isDisplay) {
       this.map.addLayer({
-        'id': 'lyr-basemap-satellite',
+        'id': 'basemap',
         'type': 'raster',
         'source': sourceName,
         'minzoom': 0
       }, 'bboxLayer');
       this.isDisplaySatelliteBaseMap = true;
     } else {
-      this.map.removeLayer('lyr-basemap-satellite');
+      if (this.map.getLayer('basemap')) {
+        this.map.removeLayer('basemap');
+      } 
       this.isDisplaySatelliteBaseMap = false;
     }
   }
@@ -593,19 +595,9 @@ export class MapService {
     this.map.addSource('ways_changed', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
     this.map.addSource('location_circle', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
 
-    // test Tile
-    this.map.addSource('tmsIgn', {
-      'type': 'raster',
-      // tslint:disable-next-line:max-line-length
-      'tiles': ['https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}'],
-      'tileSize': 256,
-      'maxzoom': 19
-    });
-    this.map.addSource('mapbox-satellite', {
-      'type': 'raster',
-      'url': 'mapbox://mapbox.satellite',
-      'tileSize': 256
-    });
+    for (let bm of this.configService.baseMapSources){
+      this.map.addSource(bm.id, bm);
+    }
 
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
