@@ -222,6 +222,10 @@ export class MapService {
 
 
   displaySatelliteBaseMap(sourceName, isDisplay: boolean) {
+    if (!this.configService.baseMapSources.find(b => b.id ===sourceName)) {
+      this.configService.setBaseSourceId(this.configService.baseMapSources[0].id)
+      sourceName = this.configService.baseMapSources[0].id;
+    }
 
     if (isDisplay) {
       this.map.addLayer({
@@ -698,7 +702,6 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      console.log(features);
       Haptics.impact({ style: HapticsImpactStyle.Light })
 
       // sans duplicate (by id osm)

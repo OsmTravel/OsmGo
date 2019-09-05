@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1004
+        targetSdkVersion 29
+        versionCode 1000
         versionName "0.10.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

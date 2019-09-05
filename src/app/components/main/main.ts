@@ -43,7 +43,7 @@ export class MainPage implements AfterViewInit {
     public locationService: LocationService,
     public alertService: AlertService,
     public configService: ConfigService,
-    public platform: Platform,
+
     private alertCtrl: AlertController,
     private _ngZone: NgZone,
     private router: Router,

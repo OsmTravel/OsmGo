@@ -44,7 +44,6 @@ export class AppComponent {
       .then(() => {
         this.configService.loadAppVersion();
         SplashScreen.hide();
-        this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
       });
 
   }
