@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { Plugins } from '@capacitor/core';
+import { environment } from '../../environments/environment.prod';
 
 const { Device } = Plugins;
 
@@ -60,7 +61,7 @@ export class ConfigService {
         zoom: 4.8
     };
 
-    appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: '0.0.0' };
+    appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: environment.version || '0.0.0' };
 
 
     getI18nConfig$() {
@@ -102,7 +103,7 @@ export class ConfigService {
     loadAppVersion() {
         Device.getInfo()
             .then(e => {
-                this.appVersion.appVersionCode = e.appVersion;
+                this.appVersion.appVersionCode = e.appVersion || environment.version;
             });
     }
 

@@ -54,6 +54,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MomentModule } from 'ngx-moment';
 import 'moment/locale/en-gb';
 import 'moment/locale/fr';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -96,7 +98,8 @@ export class CustomHammerConfig extends HammerGestureConfig{
         useFactory: (createTranslateLoader),
         deps: [HttpClient]
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
 
   providers: [
