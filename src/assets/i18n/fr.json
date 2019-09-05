@@ -116,7 +116,8 @@
     "ADD_SURVEY_DATE_CONFIRM_HEADER": "Objet vérifié ?",
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Ajouter le tag 'survey:date' à la date du jour",
     "PRIMARY_TAG_BOOKMARKS": "Favoris",
-    "PRIMARY_TAG_FULL": "Tous les tags"
+    "PRIMARY_TAG_FULL": "Tous les tags",
+    "SELECT_CATEGORY" : "Séléctionner une catégorie"
     
   }
 }

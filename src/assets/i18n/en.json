@@ -117,7 +117,8 @@
     "ADD_SURVEY_DATE_CONFIRM_HEADER": "Has the object been verified ?",
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add tag 'survey:date' at today's date",
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
-    "PRIMARY_TAG_FULL": "Full"
+    "PRIMARY_TAG_FULL": "Full",
+    "SELECT_CATEGORY" : "Select a category"
 
   }
 }
