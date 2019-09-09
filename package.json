@@ -3,11 +3,11 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "node ./incrementVersion.js && node ./osmGoAdmin/backend/updatei18nMetadata.js && ionic build --prod --release && npx cap copy && npx cap open android",
+    "build": "node ./incrementVersion.js && node ./osmGoAdmin/backend/updatei18nMetadata.js && ionic build --prod --release && npx cap sync && npx cap open android",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
