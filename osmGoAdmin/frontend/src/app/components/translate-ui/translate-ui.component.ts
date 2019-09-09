@@ -78,7 +78,8 @@ export class TranslateUiComponent implements OnInit {
   sendNewTranslation(data, lang){
     let  newTranslation = this.toI18Format(data);
     const params = { newTranslation: newTranslation};
-    this.http.post<any>(`api/UiTranslation/${lang}`, params, httpOptions)
+    
+    this.http.post<any>(`api/UiTranslation/${lang}`, params, this.dataService.getHttpOption())
     .pipe(    ).subscribe( e => {
       alert('Thank you !')
       console.log(e)

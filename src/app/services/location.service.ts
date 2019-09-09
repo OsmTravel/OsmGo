@@ -69,7 +69,8 @@ export class LocationService {
 
         let location = await Geolocation.getCurrentPosition({
             enableHighAccuracy: true,
-            timeout: 3000
+            timeout: 3000,
+            requireAltitude: false
         });
 
         this.configService.init.zoom = 19;
@@ -126,7 +127,10 @@ export class LocationService {
 
 
         Motion.addListener('orientation', (event) => {
+           
+    
             const heading = this.convertToCompassHeading2(event.alpha, event.beta, event.gamma)
+         
 
             if (!this.configService.freezeMapRenderer && Math.abs(heading - this.compassHeading.magneticHeading) > 4) {
                 this.compassHeading = {

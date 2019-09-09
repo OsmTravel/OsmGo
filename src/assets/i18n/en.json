@@ -40,7 +40,7 @@
   "SEND_DATA": {
     "SEND_DATA": "Send data",
     "YOU_MUST_BE_LOGGED_IN": "Please log in to send your changes to OSM.",
-    "NUMBER_OF_ITEMS_TO_SEND": "Number of itmes :",
+    "NUMBER_OF_ITEMS_TO_SEND": "Number of items :",
     "ADDED_ITEMS": "Created",
     "UPDATED_ITEMS": "Updated",
     "DELETED_ITEMS": "Deleted",
@@ -59,13 +59,13 @@
     "SETTINGS": "Settings",
     "MAP": "Map",
     "POSITION_TRACKING": "Position tracking",
-    "POSITION_TRACKING_HINT": "The map is centered on your position",
+    "POSITION_TRACKING_HINT": "The map is centered at your location",
     "ORIENTATION_TRACKING": "Orientation tracking",
     "ORIENTATION_TRACKING_HINT": "The orientation of the map depends on the phone",
-    "HIDE_LARGE_POLYGON": "Hide polygons larger than than 5000 m²",
-    "HIDE_LARGE_POLYGON_HINT": "Polygons larger than 5000 m² will not be displayed. A marker will always symbolize the polygon",
+    "HIDE_LARGE_POLYGON": "Hide polygons larger than 5000 m²",
+    "HIDE_LARGE_POLYGON_HINT": "Polygons larger than 5000 m² won't be displayed. A marker will always symbolize the polygon",
     "HIDE_LONG_LINE": "Hide lines longer than 200 m",
-    "HIDE_LONG_LINE_HINT": "Lines longer than 200 m will not be displayed. A marker will always symbolize the line",
+    "HIDE_LONG_LINE_HINT": "Lines longer than 200 m won't be displayed. A marker will always symbolize the line",
     "TAGS": "Tags",
     "DEFAULT_TAGS_LIST": "List of default tags",
     "TAGS_LIST_ALL": "All tags",
@@ -78,7 +78,7 @@
     "AERIAL_IMAGERY": "Aerial imagery",
     "AERIAL_IMAGERY_HINT": "Aerial imaging to use",
     "DELAYED_MODE": "Deferred mode",
-    "DELAYED_MODE_HINT": "The modified items will be sent at once to your request (recommended mode)",
+    "DELAYED_MODE_HINT": "The modified items will be sent when requested (recommended mode)",
     "LIVE_MODE_MUST_LOGIN": "You must be authenticated to switch",
     "LIVE_MODE_ON": "Mode live On",
     "LIVE_MODE_OFF": "Mode live Off",
@@ -91,10 +91,8 @@
     "CACHE": "Cache management",
     "GENERATE_ICON_CACHE": "Generate the icon cache",
     "DELETE_ICON_CACHE": "Delete icon cache",
-
     "DELETE_CACHE": "Delete all application cache",
-    "DELETE_CACHE_HINT": "Delete all application cache (data, edit, icons, login, etc)"
-
+    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, icons, login, etc)"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "List",
@@ -115,10 +113,8 @@
     "DELETE_CONFIRM_HEADER": "Really ?",
     "DELETE_CONFIRM_MESSAGE": "Delete this item ?",
     "ADD_SURVEY_DATE_CONFIRM_HEADER": "Has the object been verified ?",
-    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add tag 'survey:date' at today's date",
+    "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add today's date to tag 'survey:date'",
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
-    "PRIMARY_TAG_FULL": "Full",
-    "SELECT_CATEGORY" : "Select a category"
-
+    "PRIMARY_TAG_FULL": "Full"
   }
 }

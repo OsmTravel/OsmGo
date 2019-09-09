@@ -6,8 +6,8 @@ android {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 1003
-        versionName "0.10.0"
+        versionCode 1033
+        versionName "0.10.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -39,11 +39,3 @@ dependencies {
 
 apply from: 'capacitor.build.gradle'
 
-try {
-    def servicesJSON = file('google-services.json')
-    if (servicesJSON.text) {
-        apply plugin: 'com.google.gms.google-services'
-    }
-} catch(Exception e) {
-    logger.warn("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
-}
