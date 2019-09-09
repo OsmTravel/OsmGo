@@ -91,10 +91,8 @@
     "CACHE": "Cache management",
     "GENERATE_ICON_CACHE": "Generate the icon cache",
     "DELETE_ICON_CACHE": "Delete icon cache",
-
     "DELETE_CACHE": "Delete all application cache",
     "DELETE_CACHE_HINT": "Delete all application cache (data, edit, icons, login, etc)"
-
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "List",
@@ -118,7 +116,6 @@
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add tag 'survey:date' at today's date",
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
     "PRIMARY_TAG_FULL": "Full",
-    "SELECT_CATEGORY" : "Select a category"
-
+    "SELECT_CATEGORY": "Select a category"
   }
 }
