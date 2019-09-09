@@ -13,7 +13,7 @@
 <div class="listTag">
     <!-- radio-group [(ngModel)]="data.value" (ionChange)="selected($event)" -->
     <ion-list>
-        <ion-radio-group (ionChange)="selected($event)" [(ngModel)]="data.value">
+        <ion-radio-group (ionChange)="selected($event)" >
             <ion-item 
             *ngFor="let tag of data.preset.tags | filterByContent:['v','lbl']:searchText;">
                 <ion-label> 
