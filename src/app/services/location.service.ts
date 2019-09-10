@@ -20,7 +20,7 @@ export class LocationService {
     subscriptionWatchLocation;
     forceOpen = false; // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
     headingIsDisable = false;
-    watchId: CallbackID;
+    watchId;
 
     constructor(
         public configService: ConfigService) {
@@ -66,56 +66,59 @@ export class LocationService {
 
 
     async getLocation2() {
-
-        let location = await Geolocation.getCurrentPosition({
-            enableHighAccuracy: true,
-            timeout: 3000,
-            requireAltitude: false
-        });
-
-        this.configService.init.zoom = 19;
-        this.configService.init.lng = location.coords.longitude;
-        this.configService.init.lat = location.coords.latitude;
-        this.location = location;
-        this.eventNewLocation.emit(this.getGeojsonPos());
-
-        this.eventLocationIsReady.emit(location);
-        this.configService.geolocPageIsOpen = false;
-        this.configService.eventCloseGeolocPage.emit('gpsIsReady');
-        this.gpsIsReady = true;
-
-        this.heading();
-
-        try {
-            this.watchId = Geolocation.watchPosition({
-                enableHighAccuracy: true,
-                timeout: 3000,
-                requireAltitude: false
-            }, (position, err) => {
-                if (err) {
-                    console.log(err);
+        Geolocation.getCurrentPosition().then( p => {
+            this.watchId = navigator.geolocation.watchPosition(position => {
+                if (!this.gpsIsReady) {
+                     this.configService.init.zoom = 19;
+                    this.configService.init.lng = position.coords.longitude;
+                    this.configService.init.lat = position.coords.latitude;
+                    this.location = position;
+                    this.eventLocationIsReady.emit(location);
+                    this.configService.geolocPageIsOpen = false;
+                    this.configService.eventCloseGeolocPage.emit('gpsIsReady');
+                    this.eventNewLocation.emit(this.getGeojsonPos());
+                    this.gpsIsReady = true;
                     return;
                 }
-
-              
-         
-                if (position && position.coords && !this.configService.freezeMapRenderer){
-
-                    const deltaLat = Math.abs(position.coords.latitude -  this.location.coords.latitude);
-                    const deltaLng = Math.abs(position.coords.longitude -  this.location.coords.longitude)
-                    const deltaAccuracy = Math.abs(position.coords.accuracy -  this.location.coords.accuracy)
-                    if (deltaLat > 0.00001 || deltaLng > 0.00001 || deltaAccuracy > 4){
+    
+                if (!this.location || !this.location.coords) {
+                    this.eventNewLocation.emit(this.getGeojsonPos());
+    
+                }
+                else if (position && position.coords && !this.configService.freezeMapRenderer) {
+                    const deltaLat = Math.abs(position.coords.latitude - this.location.coords.latitude);
+                    const deltaLng = Math.abs(position.coords.longitude - this.location.coords.longitude)
+                    const deltaAccuracy = Math.abs(position.coords.accuracy - this.location.coords.accuracy)
+                    if (deltaLat > 0.00001 || deltaLng > 0.00001 || deltaAccuracy > 4) {
                         this.location = position;
                         this.eventNewLocation.emit(this.getGeojsonPos());
                     }
-
                 }
-               
+            }, err => {
+                console.log(err);
+            }, { enableHighAccuracy: true })
 
-            })
-        } catch (e) {
-            console.log(e);
-        }
+        })
+
+
+            
+       
+
+        this.heading();
+
+ 
+        // => {
+
+
+        //     if (err) {
+        //         console.log(err);
+        //         return;
+        //     }
+
+
+
+        // })
+
 
     }
 
@@ -127,10 +130,10 @@ export class LocationService {
 
 
         Motion.addListener('orientation', (event) => {
-           
-    
+
+
             const heading = this.convertToCompassHeading2(event.alpha, event.beta, event.gamma)
-         
+
 
             if (!this.configService.freezeMapRenderer && Math.abs(heading - this.compassHeading.magneticHeading) > 4) {
                 this.compassHeading = {
