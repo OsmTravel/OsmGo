@@ -44,9 +44,9 @@ export class ConfigService {
         filterWayByArea: true,
         filterWayByLength: true,
         changeSetComment: '',
-        languageUi: window.navigator.language.split('-')[0],
-        languageTags: window.navigator.language.split('-')[0],
-        countryTags: window.navigator.language.split('-')[1].toUpperCase()
+        languageUi: window.navigator.language.split('-')[0] || null,
+        languageTags: window.navigator.language.split('-')[0] || null,
+        countryTags: window.navigator.language.split('-')[1].toUpperCase() || null
     };
 
     currentTagsCountryChoice = [];
