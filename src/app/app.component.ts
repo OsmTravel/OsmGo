@@ -3,8 +3,9 @@ import { LocationService } from './services/location.service';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
-const { SplashScreen, Device } = Plugins;
+import { Device } from '@ionic-native/device/ngx';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+
 
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
@@ -20,30 +21,27 @@ export class AppComponent {
     private locationService: LocationService,
     public configService: ConfigService,
     private translate: TranslateService,
-    public tagService: TagsService
+    public tagService: TagsService,
+    private device: Device,
+    private splashScreen: SplashScreen
   ) {
 
 
     this.initializeApp();
   }
 
-  async initializeApp() {
+  initializeApp() {
     this.translate.setDefaultLang('en');
-    const info = await Device.getInfo();
-    console.log(info);
-
+    this.configService.device = this.device;
     this.configService.platforms = this.platform.platforms();
-
-    SplashScreen.show({
-      autoHide: false
-    });
-
-
-    ;
+  
+    this.splashScreen.show();
+   
     this.platform.ready()
       .then(() => {
         this.configService.loadAppVersion();
-        SplashScreen.hide();
+        this.splashScreen.hide();
+        this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
       });
 
   }

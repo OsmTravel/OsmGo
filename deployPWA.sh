@@ -12,10 +12,9 @@ ssh -p $serverPort $serverUser@$serverHost "
 mkdir -p $serverOsmGoPath
 
 "
-
+node ./incrementVersion.js
+node ./osmGoAdmin/backend/updatei18nMetadata.js
 ionic build --prod --service-worker
-npx cap copy web
-
 
 cd ./www
 

@@ -162,7 +162,7 @@ export class OsmApiService {
 
     createOSMChangeSet(comment): Observable<any> {
         const url = this.getUrlApi() + '/api/0.6/changeset/create';
-        const appVersion = `${this.configService.getAppVersion().appName} ${this.configService.getAppVersion().appVersionNumber}`;
+        const appVersion =  `${this.configService.getAppVersion().appName} ${this.configService.getAppVersion().appVersionNumber} ${this.configService.device.platform || ''}`;
         const content_put = `
         <osm>
             <changeset>

@@ -5,10 +5,8 @@ import { AlertService } from './alert.service';
 import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
-import { Plugins, HapticsImpactStyle } from '@capacitor/core';
-
-const { Haptics } = Plugins;
-
+import { Vibration } from '@ionic-native/vibration/ngx';
+import {debounceTime} from "rxjs/operators";
 import * as _ from 'lodash';
 
 import * as svgToPng from 'save-svg-as-png'
@@ -53,7 +51,8 @@ export class MapService {
     private alertCtrl: AlertController,
     private http: HttpClient,
     private translate: TranslateService,
-    private iconService: IconService
+    private iconService: IconService,
+    private vibration: Vibration
   ) {
 
     this.domMarkerPosition = document.createElement('div');
@@ -702,9 +701,11 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      Haptics.impact({ style: HapticsImpactStyle.Light })
-
-      // sans duplicate (by id osm)
+    
+      this.vibration.vibrate(50);
+      
+    
+      
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
@@ -796,6 +797,12 @@ export class MapService {
 
 
     this.locationService.eventNewCompassHeading
+      .pipe(
+        map((event: any) => {
+          return event;
+        }),
+        debounceTime(10)  
+      )
       .subscribe(heading => {
         if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
           this.map.rotateTo(heading.trueHeading);

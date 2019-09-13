@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, Platform, LoadingController } from '@ionic/angular';
-import { Plugins, AppState } from '@capacitor/core';
-
-const { App } = Plugins;
 
 import { ConfigService } from '../../services/config.service';
 import { MapService } from '../../services/map.service';
@@ -124,7 +121,8 @@ export class SettingsPage {
 
   async deleteCache (){
     await this.dataService.clearCache();
-    App.exitApp();
+    // TODO : exit app !
+    // App.exitApp();
   }
 
   async deleteIconCache(){
