@@ -767,9 +767,8 @@ export class MapService {
     });
 
     this.map.on('rotate', async e => {
-      if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
 
-      } else { // la map reste fixe, l'icon tourne
+      if (this.locationService.compassHeading.trueHeading && (!this.configService.config.lockMapHeading || !this.headingIsLocked)) { // on suit l'orientation, la map tourne
         const iconRotate = this.getIconRotate(this.locationService.compassHeading.trueHeading, this.map.getBearing());
         this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
       }
@@ -810,21 +809,24 @@ export class MapService {
         map((event: any) => {
           return event;
         }),
-        debounceTime(10)
+        debounceTime(30)
       )
       .subscribe(heading => {
-        if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
-          if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
-            this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
+        if (this.locationService.compassHeading.trueHeading) {
+
+          if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
+            if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
+              this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
+            }
+            this.map.rotateTo(heading.trueHeading);
+            // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
+            this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+
+          } else { // la map reste fixe, l'icon tourne
+
+            const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
+            this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
           }
-          this.map.rotateTo(heading.trueHeading);
-          // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
-          this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
-
-        } else { // la map reste fixe, l'icon tourne
-
-          const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
-          this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
         }
       });
 

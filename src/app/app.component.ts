@@ -41,7 +41,7 @@ export class AppComponent {
 
         this.configService.loadAppVersion();
         this.splashScreen.hide();
-        this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
+        this.locationService.eventPlatformReady.emit(); // object => == 1 => ionic serve ( ['core'])
       });
   }
 

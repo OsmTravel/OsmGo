@@ -1,7 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';
-import { Diagnostic } from '@ionic-native/diagnostic/ngx';
 
 import { ConfigService } from './config.service';
 
@@ -24,57 +23,16 @@ export class LocationService {
 
     constructor(
         private geolocation: Geolocation,
-        private diagnostic: Diagnostic,
         private deviceOrientation: DeviceOrientation,
         public configService: ConfigService) {
 
-        this.eventPlatformReady.subscribe(isVirtual => {
-            /*DEBUG ionic serve */
-            if (isVirtual) {
-                this.enableGeolocation();
-            } else {
-
-                this.diagnostic.registerLocationStateChangeHandler(data => {
-                    if (data === 'location_off') {
-                        this.disableGeolocation();
-                    } else {
-                        this.enableGeolocation();
-                    }
-                });
-
-                this.diagnostic.isLocationAuthorized()
-                    .then(autorised => {
-                        if (autorised === false) {
-                            this.diagnostic.requestLocationAuthorization().then(e => {
-                                if (e === 'GRANTED') {
-                                    this.checkIfLocationIsAvailable();
-                                } else {
-                                    // l'utilisateur à refuser la geoloc ...
-                                    this.dontUseLocation();
-                                }
-                            });
-
-                        } else {
-                            this.checkIfLocationIsAvailable();
-                        }
-                    });
-            }
+        this.eventPlatformReady.subscribe( () => {
+            this.enableGeolocation();
+ 
+              
+            
             this.heading();
         });
-    }
-
-    checkIfLocationIsAvailable() {
-        this.diagnostic.isLocationAvailable()
-            .then(isLocationAvailable => {
-                if (!isLocationAvailable) {
-                    this.diagnostic.switchToLocationSettings();
-                } else { // la loc est activé
-                    this.enableGeolocation();
-                }
-            })
-            .catch(error => {
-
-            });
     }
 
     enableGeolocation() {
@@ -110,6 +68,7 @@ export class LocationService {
                 }
 
             }, error => {
+                
                 console.log(error);
             });
 
@@ -174,8 +133,12 @@ export class LocationService {
         }
    
         else {
-            window.addEventListener("deviceorientation", (event) => {
+            window.addEventListener("deviceorientationabsolute", (event:any) => {
+                if (!event.alpha  || !event.beta || !event.gamma){
+                    return;
+                }
                 const compass = this.convertToCompassHeading(event.alpha, event.beta, event.gamma);
+              
                 let newCompassHeading = {
                     magneticHeading: compass,
                     trueHeading: compass,

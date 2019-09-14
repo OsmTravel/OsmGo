@@ -16,7 +16,7 @@ import { DeviceOrientation } from '@ionic-native/device-orientation/ngx'
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Vibration } from '@ionic-native/vibration/ngx';
 
-import { Diagnostic } from '@ionic-native/diagnostic/ngx';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -118,7 +118,6 @@ export class CustomHammerConfig extends HammerGestureConfig{
     DeviceOrientation,
     AppVersion,
     Device,
-    Diagnostic,
     Vibration,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
