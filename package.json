@@ -27,7 +27,7 @@
     "@ionic-native/app-version": "^5.13.0",
     "@ionic-native/core": "^5.13.0",
     "@ionic-native/device": "^5.13.0",
-    "@ionic-native/device-orientation": "^5.13.0",
+    "@ionic-native/device-orientation": "^5.14.0",
     "@ionic-native/diagnostic": "^5.13.0",
     "@ionic-native/geolocation": "^5.13.0",
     "@ionic-native/splash-screen": "^5.13.0",

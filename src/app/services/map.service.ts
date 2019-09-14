@@ -6,7 +6,7 @@ import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
 import { Vibration } from '@ionic-native/vibration/ngx';
-import {debounceTime} from "rxjs/operators";
+import { debounceTime } from "rxjs/operators";
 import * as _ from 'lodash';
 
 import * as svgToPng from 'save-svg-as-png'
@@ -60,7 +60,7 @@ export class MapService {
 
     this.arrowDirection = document.createElement('div');
 
-    this.arrowDirection.className = 'positionMarkersSize locationMapIcon';
+    this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
@@ -221,7 +221,7 @@ export class MapService {
 
 
   displaySatelliteBaseMap(sourceName, isDisplay: boolean) {
-    if (!this.configService.baseMapSources.find(b => b.id ===sourceName)) {
+    if (!this.configService.baseMapSources.find(b => b.id === sourceName)) {
       this.configService.setBaseSourceId(this.configService.baseMapSources[0].id)
       sourceName = this.configService.baseMapSources[0].id;
     }
@@ -237,7 +237,7 @@ export class MapService {
     } else {
       if (this.map.getLayer('basemap')) {
         this.map.removeLayer('basemap');
-      } 
+      }
       this.isDisplaySatelliteBaseMap = false;
     }
   }
@@ -245,13 +245,16 @@ export class MapService {
     this.map.setCenter(this.locationService.getCoordsPosition());
     if (this.configService.config.lockMapHeading) {
       this.headingIsLocked = true;
+    }
 
-    }
     if (this.configService.config.followPosition) {
-      this.positionIsFollow = true;
-      this.map.rotateTo(this.locationService.compassHeading.trueHeading);
-      this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+      if (this.locationService.compassHeading.trueHeading) {
+        this.positionIsFollow = true;
+        this.map.rotateTo(this.locationService.compassHeading.trueHeading);
+        this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+      }
     }
+
   }
   changeLocationRadius(newRadius: number, transition: boolean = false): void {
     const pxRadius = this.getPixelDistFromMeter(this.map, newRadius);
@@ -561,14 +564,14 @@ export class MapService {
 
 
   addIconToMapFromURI(iconId, uri) {
-    if (!uri){
+    if (!uri) {
       console.log(iconId);
       return;
     }
 
     this.map.loadImage(uri, (error, image) => {
       // console.log(iconId, image)
-      
+
       this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
       const ind = this.markersLoaded.findIndex(el => el.id === iconId);
       this.markersLoaded[ind].loaded = true;
@@ -598,7 +601,7 @@ export class MapService {
     this.map.addSource('ways_changed', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
     this.map.addSource('location_circle', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
 
-    for (let bm of this.configService.baseMapSources){
+    for (let bm of this.configService.baseMapSources) {
       this.map.addSource(bm.id, bm);
     }
 
@@ -701,11 +704,11 @@ export class MapService {
       if (!features.length) {
         return;
       }
-    
+
       this.vibration.vibrate(50);
-      
-    
-      
+
+
+
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
@@ -786,11 +789,11 @@ export class MapService {
         this.addIconToMapFromURI(iconId, cachedUri);
       } else {
         let uri = await this.iconService.generateMarkerByIconId(iconId);
-        if (uri){
+        if (uri) {
           this.addIconToMapFromURI(iconId, uri);
           this.dataService.addIconCache(iconId, uri);
         }
-        
+
       }
     })
 
@@ -801,10 +804,13 @@ export class MapService {
         map((event: any) => {
           return event;
         }),
-        debounceTime(10)  
+        debounceTime(10)
       )
       .subscribe(heading => {
         if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
+          if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
+            this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
+          }
           this.map.rotateTo(heading.trueHeading);
           // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
           this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
