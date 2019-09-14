@@ -10,7 +10,6 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
@@ -39,10 +38,12 @@ export class AppComponent {
    
     this.platform.ready()
       .then(() => {
+
         this.configService.loadAppVersion();
         this.splashScreen.hide();
         this.locationService.eventPlatformReady.emit(true); // object => == 1 => ionic serve ( ['core'])
       });
-
   }
+
+
 }

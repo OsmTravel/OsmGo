@@ -11,9 +11,8 @@ import { Component, Input } from '@angular/core';
 				<ion-card-content>
                     <p *ngIf="!displayCode && (tag | displayPresetLabel)">{{(tag | displayPresetLabel).lbl}}</p>
                     <p *ngIf="displayCode || !(tag | displayPresetLabel)">
-                        <i *ngIf="tag.preset?.type !== 'number'
-                        && tag.preset?.type !== 'text' "
-                        class="fa fa-code" aria-hidden="true"></i>
+                        <ion-icon name="code" *ngIf="tag.preset?.type !== 'number'
+                        && tag.preset?.type !== 'text' "></ion-icon>
                          {{tag.value}}
                     </p>
 

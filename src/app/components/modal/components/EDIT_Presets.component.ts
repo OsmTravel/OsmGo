@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                         <ion-card-header>
                         	<b *ngIf="!displayCode">{{tag.preset?.lbl}}</b>
                             <b *ngIf="displayCode">
-                            <i class="fa fa-code" ></i>
+                            <ion-icon name="code"></ion-icon>
                             {{tag.preset?.key}}</b>
                         </ion-card-header>
 
@@ -31,8 +31,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 									</ion-item>
                             </div>
                             <div class="buttonEdit2cols">
-								<ion-col width-10 class="ion-col10">
-								<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
+                                <ion-col width-10 class="ion-col10">
+                                <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
                                 </ion-col>
                             </div>
 						</div>
@@ -44,8 +44,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
                    <ion-card *ngIf="tag.preset?.type === 'list'">
                         <ion-card-header  (click)="emitOpenModal(tag)">
-                        	<b *ngIf="!displayCode">{{ tag.preset?.lbl }} <i  class="fa fa-cog"></i></b>
-						    <b *ngIf="displayCode"> <i class="fa fa-code" ></i> {{ tag.preset?.key }}</b>
+                            <b *ngIf="!displayCode">{{ tag.preset?.lbl }} 
+                            <ion-icon name="settings"></ion-icon>
+                            </b>
+       
+						    <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{ tag.preset?.key }}</b>
                         </ion-card-header>
 
                         <ion-card-content>
@@ -57,12 +60,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                                     </ion-item>
 
                                     <ion-item *ngIf="displayCode || !(tag | displayPresetLabel)" style="padding-left: 0px">
-                                         <ion-label color="primary"> <i class="fa fa-code"></i> </ion-label>
+                                         <ion-label color="primary"> <ion-icon name="code"></ion-icon> </ion-label>
 										<ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
                                     </ion-item>
                             </div>
                             <div class="buttonEdit2cols">
-									<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
+                                <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
 						    </div>
 						</div>
 
@@ -74,7 +77,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                     <ion-card *ngIf="tag.preset?.type === 'number'">
                         <ion-card-header>
                         	<b *ngIf="!displayCode">{{tag.preset?.lbl}}</b>
-						    <b *ngIf="displayCode"> <i class="fa fa-code" ></i> {{tag.preset?.key}}</b>
+						    <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{tag.preset?.key}}</b>
                         </ion-card-header>
 
                         <ion-card-content>
@@ -87,7 +90,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 
                             <div class="buttonEdit2cols">
-									<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
+                                <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
 							</div>
 
 					    </div>
@@ -99,7 +102,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                     <ion-card *ngIf="tag.preset?.type === 'text'">
                         <ion-card-header>
                             <b *ngIf="!displayCode">{{ tag.preset?.lbl }}</b>
-                            <b *ngIf="displayCode"> <i class="fa fa-code" ></i> {{ tag.preset?.key }}</b>
+                            <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{ tag.preset?.key }}</b>
                         </ion-card-header>
 
                         <ion-card-content>
@@ -110,7 +113,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 									</ion-item>
                             </div>
                             <div class="buttonEdit2cols">
-									<i (click)="tag.value = ''" class="fa fa-times fa-2x"></i>
+                                <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
 							</div>
 
 						</div>

@@ -22,7 +22,7 @@
 
 		<ion-fab style="left: 0; bottom: 0;  margin:6px;">
 			<ion-fab-button tappable  (click)="loadData()" arrow="true" event="press" [disabled]="mapService.loadingData || configService.currentZoom < 14">
-				<ion-icon [ngClass]="{'fa-spin' :mapService.loadingData}" name="refresh"></ion-icon>
+				<ion-icon [ngClass]="{'spin' :mapService.loadingData}" name="refresh"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 

@@ -14,7 +14,9 @@ mkdir -p $serverOsmGoPath
 "
 node ./incrementVersion.js
 node ./osmGoAdmin/backend/updatei18nMetadata.js
-ionic build --prod --service-worker
+
+rm -r www
+ng build --prod
 
 cd ./www
 

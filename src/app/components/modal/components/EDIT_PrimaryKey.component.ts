@@ -16,12 +16,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 							<div class="contentEdit2cols">
 								<p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
 								<p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
-									<i class="fa fa-code"></i>
+								<ion-icon name="code"></ion-icon>
                                 	{{primaryKey.value}}
                                 </p>
 							</div>
 							<div class="buttonEdit2cols">
-								<i class="fa fa-cog fa-2x"></i>
+								<ion-icon name="settings" style="width: 2em; height: 2em;"></ion-icon>
 							</div>
 				</div>
 

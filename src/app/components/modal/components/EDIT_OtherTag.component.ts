@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     template: `
    	    <ion-card>
 				<ion-card-header>
-				<i class="fa fa-code" aria-hidden="true"></i>	<b>{{tag.key}}</b>
+				<ion-icon name="code"></ion-icon>	<b>{{tag.key}}</b>
 				</ion-card-header>
 				<ion-card-content>
 				    <div class="wrapperEdit2cols">
@@ -17,7 +17,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 						</div>
 
 						<div class="buttonEdit2cols">
-							<i (click)="eventDeleteTag()" class="fa fa-times fa-2x"></i>
+							<ion-icon (click)="eventDeleteTag()" name="close" style="width: 2em; height: 2em;"></ion-icon>
 						</div>
 					</div>
 
