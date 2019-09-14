@@ -424,6 +424,12 @@ export class MapService {
 
         this.map.addControl(new mapboxgl.NavigationControl());
 
+        const scale = new mapboxgl.ScaleControl({
+          maxWidth: 100,
+          unit: 'metric'
+        });
+        this.map.addControl(scale);
+
         this.map.on('load', async () => {
 
           this.mapIsLoaded();
