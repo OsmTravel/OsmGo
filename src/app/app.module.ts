@@ -12,7 +12,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { Device } from '@ionic-native/device/ngx';
-import { DeviceOrientation } from '@ionic-native/device-orientation/ngx'
+
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Vibration } from '@ionic-native/vibration/ngx';
 
@@ -115,7 +115,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
     StatusBar,
     SplashScreen,
     Geolocation,
-    DeviceOrientation,
+  
     AppVersion,
     Device,
     Vibration,

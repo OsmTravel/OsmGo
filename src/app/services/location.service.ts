@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';
+
 
 import { ConfigService } from './config.service';
 
@@ -23,7 +23,6 @@ export class LocationService {
 
     constructor(
         private geolocation: Geolocation,
-        private deviceOrientation: DeviceOrientation,
         public configService: ConfigService) {
 
         this.eventPlatformReady.subscribe( () => {
@@ -115,24 +114,7 @@ export class LocationService {
 
     heading() {
   
-        if (this.configService.device.platform){
-            
-            const subscription = this.deviceOrientation.watchHeading({frequency: 300}).subscribe(
-                (data) => {
-                    if (!this.configService.freezeMapRenderer) {
-                        if (!this.compassHeading.magneticHeading || Math.abs(data.trueHeading - this.compassHeading.trueHeading) > 4) {
-                            // near 360? TODO
-                            if (!this.configService.freezeMapRenderer) {
-                                this.compassHeading = data;
-                                this.eventNewCompassHeading.emit(data);
-                            }
-                        }
-                    }
-                }
-              );
-        }
-   
-        else {
+    
             window.addEventListener("deviceorientationabsolute", (event:any) => {
                 if (!event.alpha  || !event.beta || !event.gamma){
                     return;
@@ -156,7 +138,7 @@ export class LocationService {
                     }
                 }
             }, true);
-        }
+        
      
 
     }
