@@ -3,6 +3,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 
 import { ConfigService } from './config.service';
+import { Statement } from '@angular/compiler';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
@@ -21,16 +23,39 @@ export class LocationService {
     forceOpen = false; // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
     headingIsDisable = false;
 
+    geolocationStatPermission: string = undefined;
+
     constructor(
         private geolocation: Geolocation,
-        public configService: ConfigService) {
+        public configService: ConfigService,
+        private androidPermissions: AndroidPermissions) {
 
-        this.eventPlatformReady.subscribe( () => {
+        this.eventPlatformReady.subscribe(() => {
             this.enableGeolocation();
- 
-              
-            
             this.heading();
+
+            if (this.configService.device.platform == 'Android') {
+                this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.ACCESS_COARSE_LOCATION).then(
+                    result => {
+                        if (!result.hasPermission) {
+                            this.geolocationStatPermission = 'denied'
+                        }
+                    },
+                    err => {
+                        console.log(err);
+                    }
+                );
+            } else {
+                navigator.permissions.query({ name: 'geolocation' })
+                    .then(perm => {
+                        this.geolocationStatPermission = perm.state
+                        if (perm.state == 'prompt') {
+                            perm.onchange = () => {
+                                this.geolocationStatPermission = perm.state
+                            }
+                        }
+                    })
+            }
         });
     }
 
@@ -67,7 +92,7 @@ export class LocationService {
                 }
 
             }, error => {
-                
+
                 console.log(error);
             });
 
@@ -113,33 +138,32 @@ export class LocationService {
     }
 
     heading() {
-  
-    
-            window.addEventListener("deviceorientationabsolute", (event:any) => {
-                if (!event.alpha  || !event.beta || !event.gamma){
-                    return;
-                }
-                const compass = this.convertToCompassHeading(event.alpha, event.beta, event.gamma);
-              
-                let newCompassHeading = {
-                    magneticHeading: compass,
-                    trueHeading: compass,
-                    headingAccuracy: null,
-                    timestamp: null,
-                }
-    
-                if (!this.configService.freezeMapRenderer) {
-                    if (!this.compassHeading.magneticHeading || Math.abs(compass - this.compassHeading.magneticHeading) > 4) {
-                        // near 360? TODO
-                        if (!this.configService.freezeMapRenderer) {
-                            this.compassHeading = newCompassHeading;
-                            this.eventNewCompassHeading.emit(newCompassHeading);
-                        }
+
+
+        window.addEventListener("deviceorientationabsolute", (event: any) => {
+            if (!event.alpha || !event.beta || !event.gamma) {
+                return;
+            }
+            const compass = this.convertToCompassHeading(event.alpha, event.beta, event.gamma);
+            let newCompassHeading = {
+                magneticHeading: compass,
+                trueHeading: compass,
+                headingAccuracy: null,
+                timestamp: null,
+            }
+
+            if (!this.configService.freezeMapRenderer) {
+                if (!this.compassHeading.magneticHeading || Math.abs(compass - this.compassHeading.magneticHeading) > 4) {
+                    // near 360? TODO
+                    if (!this.configService.freezeMapRenderer) {
+                        this.compassHeading = newCompassHeading;
+                        this.eventNewCompassHeading.emit(newCompassHeading);
                     }
                 }
-            }, true);
-        
-     
+            }
+        }, true);
+
+
 
     }
     getLocation() {

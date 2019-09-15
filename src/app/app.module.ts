@@ -15,7 +15,7 @@ import { Device } from '@ionic-native/device/ngx';
 
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Vibration } from '@ionic-native/vibration/ngx';
-
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 
 import { AppComponent } from './app.component';
@@ -115,7 +115,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
     StatusBar,
     SplashScreen,
     Geolocation,
-  
+    AndroidPermissions,
     AppVersion,
     Device,
     Vibration,

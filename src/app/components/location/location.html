@@ -2,9 +2,16 @@
 
         <h1>{{ 'GEOLOCATION.GEOLOCATION_IN_PROGESS' | translate}}</h1>
         
-        <ion-button  class="buttonDontUseGeoloc" *ngIf="displayDontUseLocationButton"
+        <ion-button  class="buttonDontUseGeoloc" *ngIf="displayDontUseLocationButton || locationService.geolocationStatPermission === 'denied'"
           tappable ion-button (click)="locationService.dontUseLocation()"> 
           {{ 'GEOLOCATION.DO_NOT_USE_GEOLOCATION' | translate}}
         </ion-button>
+
+     
+        <div *ngIf="locationService.geolocationStatPermission === 'denied'" >
+           <b style="color: red;"> {{ 'GEOLOCATION.YOU_SHOULD_ALLOW_GEOLOCATION' | translate}} </b> 
+        </div>
+
+  
 
 </ion-content>

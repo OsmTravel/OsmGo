@@ -29,7 +29,8 @@
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
   "GEOLOCATION": {
     "GEOLOCATION_IN_PROGESS": "Geolocation in progress ...",
-    "DO_NOT_USE_GEOLOCATION": "Do not use geolocation"
+    "DO_NOT_USE_GEOLOCATION": "Do not use geolocation",
+    "YOU_SHOULD_ALLOW_GEOLOCATION" : "You should allow geolocation ..."
   },
   "LOGIN": {
     "LOGIN": "Login",
