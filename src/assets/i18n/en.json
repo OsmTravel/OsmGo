@@ -93,7 +93,14 @@
     "GENERATE_ICON_CACHE": "Generate the icon cache",
     "DELETE_ICON_CACHE": "Delete icon cache",
     "DELETE_CACHE": "Delete all application cache",
-    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, icons, login, etc)"
+    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, icons, login, etc)",
+    "DISPLAY_OLD_TAGS_ICON" : "Show an icon on old objects",
+    "OLD_TAGS_ICON_RANGE_PART_1": "Last modification at least",
+    "OLD_TAGS_ICON_RANGE_PART_2": "years ago",
+    "OLD_TAGS_ICON_HINT" : "If the object is older, display on the map a small icon to the left of the marker",
+    "DISPLAY_FIXME_ICON" : "Display \"fixme\" icons",
+    "DISPLAY_FIXME_ICON_HINT" : "Displays an icon to the right of the marker to indicate the presence of a fixed tag"
+    
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "List",

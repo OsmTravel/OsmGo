@@ -594,6 +594,27 @@ export class MapService {
     })
   }
 
+
+  showOldTagIcon(maxYearAgo: number){
+    const OneYear = 31536000000;
+    const currentTime = new Date().getTime()
+    this.map.setFilter('icon-old', ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ]);
+    this.map.setLayoutProperty('icon-old', 'visibility', 'visible' )
+  }
+
+  hideOldTagIcon(){
+    this.map.setLayoutProperty('icon-old', 'visibility', 'none' )
+  }
+
+  showFixmeIcon( ){
+    this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible' ) 
+  }
+  hideFixmeIcon( ){
+    this.map.setLayoutProperty('icon-fixme', 'visibility', 'none' ) 
+  }
+
+
+
   mapIsLoaded() {
     const that = this;
 
@@ -678,8 +699,25 @@ export class MapService {
 
     });
 
+    this.map.addLayer({
+      'id': 'icon-old', 'type': 'symbol', 'source': 'data',
+      'layout': {
+        'icon-image': 'Old', 'icon-ignore-placement': true, 'icon-offset': [-13, -12],
+        'visibility': 'none'
+      }
+      // 'filter':  ['>', 1472210208000 , ['get', 'time'] ]
+    });
 
-    // defini le style du marker en arrière plan
+    this.map.addLayer({
+      'id': 'icon-fixme', 'type': 'symbol', 'source': 'data',
+      'layout': {
+        'icon-image': 'Fixme', 'icon-ignore-placement': true, 'icon-offset': [13, -12],
+        'visibility': 'none'
+      },
+      'filter':  ["any", ['get','fixme'] ] 
+      
+    });
+
     this.map.addLayer({
       'id': 'marker', 'type': 'symbol', 'minzoom': minzoom, 'source': 'data',
       'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] }
@@ -696,7 +734,18 @@ export class MapService {
         'icon-image': '{changeType}', 'icon-ignore-placement': true, 'icon-offset': [0, -35]
       }
     });
+
+
     this.layersAreLoaded = true;
+
+    let configOldTagIcon = this.configService.getOldTagsIcon();
+    if( configOldTagIcon.display){
+      this.showOldTagIcon(configOldTagIcon.year)
+    }
+   
+    if (this.configService.getDisplayFixmeIcon()){
+        this.showFixmeIcon();
+    }
 
     // value en m²!
     this.toogleMesureFilter(this.configService.getFilterWayByArea(), 'way_fill', 5000, this.map);
@@ -844,12 +893,10 @@ export class MapService {
       }
     });
 
-    // La localisation était déjà ready avnt que la carte ne soit chargée
+    // La localisation était déjà ready avnt que la carte ne soit chargée // TODO: forkjoin!
     if (this.locationService.gpsIsReady) {
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos());
     }
-
-
   }
 
 }

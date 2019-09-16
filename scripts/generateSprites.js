@@ -95,7 +95,7 @@ exports.generateSprites = (language = 'fr', country = 'FR') => {
 
 
     //copy whiteliste 
-    const whiteList = ['none', 'Delete', 'Create', 'Update'];
+    const whiteList = ['none', 'Delete', 'Create', 'Update', 'Old', 'Fixme'];
 
     for (let i = 0; i < whiteList.length; i++) {
         fs.copySync(path.join(iconsSVGsPath, whiteList[i] + '.svg'), path.join(outputFolderSVG, whiteList[i] + '.svg'));

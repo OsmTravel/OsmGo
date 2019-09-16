@@ -132,13 +132,24 @@ function getIconStyle(feature, tagsConfig) {
             feature.properties.icon = (configMarker.icon) ? configMarker.icon : ''
             feature.properties.marker = getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
             feature.properties.hexColor = configMarker.markerColor;
+       
 
         } else { // on ne connait pas la 'value', donc pas de config pour le marker
             feature.properties.icon = 'maki-circle-15'
             feature.properties.hexColor = '#000000';
             feature.properties.marker = getMarkerShape(feature) + '-#000000-';
         }
-    // }
+
+        if (feature.properties.meta.timestamp){
+            feature.properties.time = (new Date(feature.properties.meta.timestamp)).getTime();
+        }
+        if (feature.properties.tags.fixme){
+            feature.properties.fixme = true;
+            console.log(feature.properties.tags);
+        }
+            
+       
+        
     return feature;
 }
 

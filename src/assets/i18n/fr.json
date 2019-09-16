@@ -92,9 +92,14 @@
     "CACHE": "Gestion du cache",
     "GENERATE_ICON_CACHE": "Générer le cache des icônes",
     "DELETE_ICON_CACHE": "Supprimer le cache des icônes",
-
     "DELETE_CACHE": "Supprimer tout le cache de l'application",
-    "DELETE_CACHE_HINT": "Supprime l'intégralité du cache (data, modification, icônes, login, etc)"
+    "DELETE_CACHE_HINT": "Supprime l'intégralité du cache (data, modification, icônes, login, etc)",
+    "DISPLAY_OLD_TAGS_ICON" : "Afficher un icône sur les anciens objets",
+    "OLD_TAGS_ICON_RANGE_PART_1": "Dernière modification il y a au moins",
+    "OLD_TAGS_ICON_RANGE_PART_2": "ans",
+    "OLD_TAGS_ICON_HINT" : "Si l'objet est plus vieux, affiche sur la carte un petit icône à gauche du marqueur",
+    "DISPLAY_FIXME_ICON" : "Afficher un icône \"fixme\"",
+    "DISPLAY_FIXME_ICON_HINT" : "Affiche un icône à droite du marker pour indiquer la présence d'un tag fixme"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "Liste",

@@ -73,6 +73,39 @@ export class SettingsPage {
     this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
   }
 
+
+
+  displayOldTagIconChange(e){
+    
+    this.configService.setOldTagsIcon(e.detail.checked, this.configService.config.oldTagsIcon.year);
+    if (e.detail.checked){
+      this.mapService.showOldTagIcon(this.configService.config.oldTagsIcon.year);
+    } else {
+      this.mapService.hideOldTagIcon();
+    }
+    // this.mapService
+  }
+
+  yearOldTagIconChange(e){
+    console.log(e.detail.value)
+    this.configService.setOldTagsIcon(this.configService.config.oldTagsIcon.display, e.detail.value);
+    if (this.configService.config.oldTagsIcon.display){
+      this.mapService.showOldTagIcon(e.detail.value);
+    }
+  }
+
+  displayFixmeIconChange(e){
+    console.log(e.detail.checked);
+    this.configService.setDisplayFixmeIcon(e.detail.checked);
+    if (e.detail.checked){
+      this.mapService.showFixmeIcon();
+    } else {
+      console.log('hide fixme')
+      this.mapService.hideFixmeIcon();
+    }
+  }
+
+
   languageUiChange(e){
     const newLlang = e.detail.value;
     this.configService.setUiLanguage(newLlang);

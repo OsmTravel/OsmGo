@@ -47,7 +47,9 @@ export class ConfigService {
         changeSetComment: '',
         languageUi: window.navigator.language.split('-')[0] || null,
         languageTags: window.navigator.language.split('-')[0] || null,
-        countryTags: window.navigator.language.split('-')[1].toUpperCase() || null
+        countryTags: window.navigator.language.split('-')[1].toUpperCase() || null,
+        oldTagsIcon: { display: true, year: 4},
+        displayFixmeIcon : true
     };
 
     currentTagsCountryChoice = [];
@@ -210,6 +212,24 @@ export class ConfigService {
 
     setCountryTags(country: string) {
         this.config.countryTags = country;
+        this.localStorage.set('config', this.config);
+    }
+
+    getOldTagsIcon() {
+        return this.config.oldTagsIcon;
+    }
+
+    setOldTagsIcon( display: boolean, year: number){
+        this.config.oldTagsIcon = { display: display, year: year}
+        this.localStorage.set('config', this.config);
+    }
+
+    getDisplayFixmeIcon() {
+        return this.config.displayFixmeIcon;
+    }
+    
+    setDisplayFixmeIcon( display: boolean){
+        this.config.displayFixmeIcon = display
         this.localStorage.set('config', this.config);
     }
 
