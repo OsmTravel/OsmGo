@@ -1,3 +1,13 @@
+# 0.11.0
+## Miscellaneous
+    - Back to cordova (capacitor is buggy and we can't build an APK without Firebase, GMS, etc...)
+    - PWA improvement ( cache with serviceworker, icon, etc...)
+    - Download data : OverpassApi is too slow... => Api06 as default
+
+## Interface
+    - Display the geolocation status if denied
+    - Display an icon on map on old objects (4 y by default) and objects with "fixme" tag (you can disable & configure this)
+
 # 0.10.0
 ## Miscellaneous 
     - Migrating from Cordova to Capacitor

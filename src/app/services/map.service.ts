@@ -705,7 +705,6 @@ export class MapService {
         'icon-image': 'Old', 'icon-ignore-placement': true, 'icon-offset': [-13, -12],
         'visibility': 'none'
       }
-      // 'filter':  ['>', 1472210208000 , ['get', 'time'] ]
     });
 
     this.map.addLayer({
@@ -734,8 +733,7 @@ export class MapService {
         'icon-image': '{changeType}', 'icon-ignore-placement': true, 'icon-offset': [0, -35]
       }
     });
-
-
+    
     this.layersAreLoaded = true;
 
     let configOldTagIcon = this.configService.getOldTagsIcon();
