@@ -3,10 +3,9 @@ import { Storage } from '@ionic/storage';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { Plugins } from '@capacitor/core';
-import { environment } from '../../environments/environment.prod';
 
-const { Device } = Plugins;
+import { environment } from '../../environments/environment.prod';
+import { AppVersion } from '@ionic-native/app-version/ngx';
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
@@ -14,7 +13,8 @@ export class ConfigService {
 
     constructor(public localStorage: Storage,
         private http: HttpClient,
-        private translate: TranslateService
+        private translate: TranslateService,
+        private _appVersion: AppVersion
     ) {
 
         this.getI18nConfig$().subscribe(d => {
@@ -30,6 +30,7 @@ export class ConfigService {
     eventConfigIsLoaded = new EventEmitter();
     freezeMapRenderer = false;
     platforms = [];
+    device;
 
     baseMapSources ;
     currentZoom: number = undefined;
@@ -46,7 +47,9 @@ export class ConfigService {
         changeSetComment: '',
         languageUi: window.navigator.language.split('-')[0] || null,
         languageTags: window.navigator.language.split('-')[0] || null,
-        countryTags: window.navigator.language.split('-')[1].toUpperCase() || null
+        countryTags: window.navigator.language.split('-')[1].toUpperCase() || null,
+        oldTagsIcon: { display: true, year: 4},
+        displayFixmeIcon : true
     };
 
     currentTagsCountryChoice = [];
@@ -100,11 +103,10 @@ export class ConfigService {
             });
     }
 
-    loadAppVersion() {
-        Device.getInfo()
-            .then(e => {
-                this.appVersion.appVersionCode = e.appVersion || environment.version;
-            });
+    async loadAppVersion  () {
+            this.appVersion.appVersionNumber = await this._appVersion.getVersionNumber() || environment.version;
+            console.log(this.appVersion);
+            
     }
 
     getAppVersion() {
@@ -210,6 +212,24 @@ export class ConfigService {
 
     setCountryTags(country: string) {
         this.config.countryTags = country;
+        this.localStorage.set('config', this.config);
+    }
+
+    getOldTagsIcon() {
+        return this.config.oldTagsIcon;
+    }
+
+    setOldTagsIcon( display: boolean, year: number){
+        this.config.oldTagsIcon = { display: display, year: year}
+        this.localStorage.set('config', this.config);
+    }
+
+    getDisplayFixmeIcon() {
+        return this.config.displayFixmeIcon;
+    }
+    
+    setDisplayFixmeIcon( display: boolean){
+        this.config.displayFixmeIcon = display
         this.localStorage.set('config', this.config);
     }
 

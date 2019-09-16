@@ -3,6 +3,16 @@
   "index": "/index.html",
   "assetGroups": [
     {
+      "name": "i18n",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/i18n/**"
+        ]
+      }
+    },
+    {
       "name": "app",
       "installMode": "prefetch",
       "resources": {
@@ -10,18 +20,64 @@
           "/favicon.ico",
           "/index.html",
           "/*.css",
-          "/*.js"
+          "/*.js",
+          "/assets/osmtogeojson.js",
+
+          "/svg/md-menu.svg",
+          "/svg/md-refresh.svg",
+          "/svg/md-image.svg",
+          "/svg/md-arrow-back.svg",
+          "/svg/md-add.svg",
+          "/svg/md-locate.svg",
+          "/svg/md-close.svg",
+          "/svg/md-checkmark.svg",
+          "/svg/md-code.svg",
+          "/svg/md-move.svg",
+          "/svg/md-settings.svg",
+          "/svg/md-search.svg",
+          "/svg/md-code-working.svg",
+          "/svg/md-log-in.svg",
+          "/svg/md-star.svg",
+          "/*.png",
+
+          "/assets/mapStyle/IconsSVG/*.svg"
         ]
       }
-    }, {
+    }, 
+ 
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
         "files": [
           "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani|json)"
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "tilesMap",
+      "urls": [
+        "https://a.tiles.mapbox.com/**",
+        "https://b.tiles.mapbox.com/**",
+        "https://c.tiles.mapbox.com/**",
+
+        "https://api.mapbox.com/v4/**",
+
+        "https://wxs.ign.fr/pratique/geoportail/**",
+
+        "https://ecn.t0.tiles.virtualearth.net/**",
+        "https://ecn.t1.tiles.virtualearth.net/**",
+        "https://ecn.t2.tiles.virtualearth.net/**",
+        "https://ecn.t3.tiles.virtualearth.net/**"
+      ],
+      "cacheConfig": {
+        "maxSize": 1000,
+        "maxAge": "3d",
+        "strategy": "performance"
       }
     }
   ]

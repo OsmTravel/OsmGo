@@ -1,0 +1,5091 @@
+{
+  "advertising": {
+    "type": "advertising",
+    "lbl": "Advertising",
+    "values": [
+      {
+        "key": "billboard",
+        "lbl": "Billboard",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "board",
+        "lbl": "Board",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "poster_box",
+        "lbl": "Poster Box",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "totem",
+        "lbl": "Totem (>6.5m)",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "column",
+        "lbl": "Advertising Column",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "flag",
+        "lbl": "Flag",
+        "lbl_alt": "",
+        "icon": "maki-embassy-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sign",
+        "lbl": "Sign",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "screen",
+        "lbl": "Screen",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sculpture",
+        "lbl": "Sculpture ",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tarp",
+        "lbl": "Tarp",
+        "lbl_alt": "",
+        "icon": "maki-art-gallery-15",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "wall_painting",
+        "lbl": "Wall Painting",
+        "lbl_alt": "",
+        "icon": "mi-painter",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D73F29",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "shop": {
+    "type": "shop",
+    "lbl": "Shop",
+    "values": [
+      {
+        "key": "travel_agency",
+        "lbl": "Travel Agency",
+        "lbl_alt": "",
+        "icon": "mi-airport",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "shop#travel_agency#operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "deprecated": false,
+        "fromid": true
+      },
+      {
+        "key": "estate_agent",
+        "lbl": "Estate agent",
+        "lbl_alt": "",
+        "icon": "mi-real-estate-agency",
+        "markerColor": "#A23337",
+        "alert": "Use \"Office\"",
+        "deprecated": true,
+        "presets": [
+          "shop#estate_agent#operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ]
+      },
+      {
+        "key": "insurance",
+        "lbl": "Insurance",
+        "lbl_alt": "",
+        "icon": "mi-insurance-agency",
+        "markerColor": "#A23337",
+        "alert": "Use Office",
+        "deprecated": true,
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723611251
+      },
+      {
+        "key": "jewelry",
+        "lbl": "Jewelry Store",
+        "lbl_alt": "bracelet, diamond, earrings, gem, gold, jeweler, jewellery, jeweller, necklace, pins, ring, silver",
+        "icon": "mi-jewelry-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "butcher",
+        "lbl": "Fleischer",
+        "lbl_alt": "Fleisch, Wurst, Huhn, Rind, Lamm, Schwein, WIld, Geflügel",
+        "icon": "custom-butcher",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "butcher",
+          "organic",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true,
+        "_description": "A shop selling meat or meat products.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316639806
+      },
+      {
+        "key": "bakery",
+        "lbl": "Bäckerei",
+        "lbl_alt": "Brot, Kuchen, Gebäck, Brötchen",
+        "icon": "mi-bakery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "pastry_shop",
+          "organic",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true,
+        "_description": "A shop selling bread",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315701931
+      },
+      {
+        "key": "art",
+        "lbl": "Kunstgeschäft",
+        "lbl_alt": "Kunst, Gallerie, Gemälde",
+        "icon": "mi-art-gallery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315449494,
+        "_description": "A shop which sells works of art."
+      },
+      {
+        "key": "gift",
+        "lbl": "Gift Shop",
+        "lbl_alt": "souvenir",
+        "icon": "fa-gift",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "wine",
+        "lbl": "Wine Shop",
+        "lbl_alt": "",
+        "icon": "mi-liquor-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hairdresser",
+        "lbl": "Hairdresser",
+        "lbl_alt": "barber",
+        "icon": "mi-hair-care",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "operator",
+          "male",
+          "female",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "confectionery",
+        "lbl": "Candy Store",
+        "lbl_alt": "sweet",
+        "icon": "fa-birthday-cake",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "florist",
+        "lbl": "Florist",
+        "lbl_alt": "flower",
+        "icon": "mi-florist",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "mall",
+        "lbl": "Mall",
+        "lbl_alt": "shopping",
+        "icon": "mi-department-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "car_repair",
+        "lbl": "Car Repair Shop",
+        "lbl_alt": "automobile, automotive, garage, service",
+        "icon": "mi-car-repair",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "operator",
+          "brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "department_store",
+        "lbl": "Department Store",
+        "lbl_alt": "",
+        "icon": "mi-shopping-mall",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "garden_centre",
+        "lbl": "Garden Center",
+        "lbl_alt": "landscape, mulch, shrub, tree",
+        "icon": "maki-garden-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "kiosk",
+        "lbl": "Kiosk",
+        "lbl_alt": "",
+        "icon": "maki-library-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "lottery",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "laundry",
+        "lbl": "Laundry",
+        "lbl_alt": "",
+        "icon": "maki-laundry-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "self_service",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "books",
+        "lbl": "Bücherladen",
+        "lbl_alt": "Bücher",
+        "icon": "maki-library-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "second_hand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true,
+        "_description": "A shop selling books.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316395946
+      },
+      {
+        "key": "organic",
+        "lbl": "Organic Goods Store",
+        "lbl_alt": "",
+        "icon": "mi-florist",
+        "markerColor": "#A23337",
+        "alert": "C'est une erreur, ne plus utiliser",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": true,
+        "fromid": true
+      },
+      {
+        "key": "outdoor",
+        "lbl": "Outdoors Store",
+        "lbl_alt": "camping, climbing, hiking, outfitter, outdoor equipment, outdoor supplies",
+        "icon": "mi-climbing",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "operator",
+          "brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "furniture",
+        "lbl": "Furniture Store",
+        "lbl_alt": "chair, sofa, table",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "pet",
+        "lbl": "Pet Store",
+        "lbl_alt": "animal, cat, dog, fish, kitten, puppy, reptile",
+        "icon": "mi-pet-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "electronics",
+        "lbl": "Electronics Store",
+        "lbl_alt": "appliance, audio, blueray, camera, computer, dvd, home theater, radio, speaker, tv, video",
+        "icon": "mi-electronics-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "charity",
+        "lbl": "Charity Store",
+        "lbl_alt": "thrift, op shop, nonprofit",
+        "icon": "fa-hand-holding-heart-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "second_hand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "beverages",
+        "lbl": "Getränkemarkt",
+        "lbl_alt": "Getränke",
+        "icon": "mi-liquor-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A shop focused on selling alcoholic and non-alcoholic beverages.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316325590
+      },
+      {
+        "key": "doityourself",
+        "lbl": "DIY Store",
+        "lbl_alt": "",
+        "icon": "mi-hardware-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "shoes",
+        "lbl": "Shoe Store",
+        "lbl_alt": "boots, cleats, clogs, heels, loafers, oxfords, sneakers",
+        "icon": "osm-shoes",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "cosmetics",
+        "lbl": "Cosmetics Store",
+        "lbl_alt": "make-up, makeup",
+        "icon": "osm-perfumery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "toys",
+        "lbl": "Toy Store",
+        "lbl_alt": "games",
+        "icon": "maki-rocket-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "fashion",
+        "lbl": "Fashion Shop",
+        "lbl_alt": "",
+        "icon": "mi-clothing-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723411506
+      },
+      {
+        "key": "motorcycle",
+        "lbl": "Motorcycle Dealership",
+        "lbl_alt": "bike",
+        "icon": "fa-motorcycle",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "music",
+        "lbl": "Music Store",
+        "lbl_alt": "tape casettes, CDs, compact discs, vinyl records",
+        "icon": "fa-music",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "musical_instrument",
+        "lbl": "Musical Instrument Store",
+        "lbl_alt": "guitar",
+        "icon": "osm-musical_instrument",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "copyshop",
+        "lbl": "Copy Store",
+        "lbl_alt": "print, scan",
+        "icon": "mi-school",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "photo",
+        "lbl": "Photography Store",
+        "lbl_alt": "camera, film",
+        "icon": "mi-point-of-interest",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "farm",
+        "lbl": "Produce Stand",
+        "lbl_alt": "farm shop, farm stand",
+        "icon": "maki-farm-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "chemist",
+        "lbl": "Drugstore",
+        "lbl_alt": "apothecary, beauty, drug store, drugstore, gift, hair, med*, pharmacy, prescription, tooth",
+        "icon": "osm-chemist",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "beauty",
+        "lbl": "Schönheitssalon",
+        "lbl_alt": "Spa, Nagelstudio, Sonnenstudio, Shiatsu-Massage, Wellness",
+        "icon": "osm-beauty",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A non-hairdresser beauty shop, spa, nail salon, etc.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316306148
+      },
+      {
+        "key": "sports",
+        "lbl": "Sporting Goods Store",
+        "lbl_alt": "athletics",
+        "icon": "mi-tennis",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "carpet",
+        "lbl": "Carpet Store",
+        "lbl_alt": "rug",
+        "icon": "fa-scroll-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "mobile_phone",
+        "lbl": "Mobile Phone Store",
+        "lbl_alt": "",
+        "icon": "fa-mobile-phone",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "video",
+        "lbl": "Video Store",
+        "lbl_alt": "DVD, VHS, video casette",
+        "icon": "mi-movie-rental",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "car",
+        "lbl": "Autohändler",
+        "lbl_alt": "Auto, PKW",
+        "icon": "mi-car-dealer",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A place that primarily sells cars (automobiles)",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316622465
+      },
+      {
+        "key": "bicycle",
+        "lbl": "Fahrradladen",
+        "lbl_alt": "Fahrrad, Fahrradreperatur, Reperatur, Einrad, Dreirad",
+        "icon": "maki-bicycle-share-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A store where you can buy and/or repair your bike and buy accessories.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316383672
+      },
+      {
+        "key": "clothes",
+        "lbl": "Clothing Store",
+        "lbl_alt": "blouses, boutique, bras, clothes, dresses, fashion, pants, shirts, shorts, skirts, slacks, socks, suits, underwear",
+        "icon": "mi-clothing-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "general",
+        "lbl": "General Store",
+        "lbl_alt": "Village Shop",
+        "icon": "mi-shopping-mall",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hifi",
+        "lbl": "Hifi Store",
+        "lbl_alt": "audio, hi-fi, high fidelity, stereo, video",
+        "icon": "fa-headphones",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "computer",
+        "lbl": "Computer Store",
+        "lbl_alt": "desktop, laptop, hardware, operating system, software",
+        "icon": "fa-desktop",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "greengrocer",
+        "lbl": "Greengrocer",
+        "lbl_alt": "fruit, produce, vegetable",
+        "icon": "osm-greengrocer",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "newsagent",
+        "lbl": "Newspaper/Magazine Shop",
+        "lbl_alt": "",
+        "icon": "fa-newspaper-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [
+          "tobacco",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "bed",
+        "lbl": "Matratzengeschäft",
+        "lbl_alt": "Bettzeug, Matratzen",
+        "icon": "mi-lodging",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316318886,
+        "_description": "A shop that specialises in selling mattresses and other bedding products."
+      },
+      {
+        "key": "window_blind",
+        "lbl": "Window Blind Store",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "scuba_diving",
+        "lbl": "Scuba Diving Shop",
+        "lbl_alt": "diving, scuba",
+        "icon": "mi-scuba-diving",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "vacuum_cleaner",
+        "lbl": "Vacuum Cleaner Store",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723860400
+      },
+      {
+        "key": "tyres",
+        "lbl": "Tire Store",
+        "lbl_alt": "",
+        "icon": "maki-circle-stroked-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "swimming_pool",
+        "lbl": "Swimming Pool Shop",
+        "lbl_alt": "",
+        "icon": "maki-swimming-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "fishing",
+        "lbl": "Fishing Shop",
+        "lbl_alt": "bait, fishing line, flies, fly, lure, reel, rod, tackle",
+        "icon": "mi-fishing-pier",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "weapons",
+        "lbl": "Weapon Shop",
+        "lbl_alt": "ammo, gun, knife, knives",
+        "icon": "fa-crosshairs",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "model",
+        "lbl": "Model Shop",
+        "lbl_alt": "",
+        "icon": "maki-rocket-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723729726
+      },
+      {
+        "key": "lamps",
+        "lbl": "Lamps Store",
+        "lbl_alt": "selling lighting fixtures ",
+        "icon": "fa-lightbulb-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723667277
+      },
+      {
+        "key": "houseware",
+        "lbl": "Houseware Store",
+        "lbl_alt": "home, household, kitchenware",
+        "icon": "maki-laundry-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "optician",
+        "lbl": "Optician",
+        "lbl_alt": "eye, glasses",
+        "icon": "osm-optician",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "stationery",
+        "lbl": "Stationery Store",
+        "lbl_alt": "card, paper",
+        "icon": "fa-file-text",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "car_parts",
+        "lbl": "Fahrzeugteilegeschäft",
+        "lbl_alt": "Autoteile, Zubehör",
+        "icon": "mi-car-repair",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A place selling auto parts, auto accessories, motor oil, car chemicals, etc.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316693678
+      },
+      {
+        "key": "funeral_directors",
+        "lbl": "Funeral Home",
+        "lbl_alt": "undertaker, memorial home",
+        "icon": "mi-funeral-home",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "dry_cleaning",
+        "lbl": "Dry Cleaner",
+        "lbl_alt": "",
+        "icon": "maki-laundry-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hardware",
+        "lbl": "Hardware Store",
+        "lbl_alt": "",
+        "icon": "mi-hardware-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723570365
+      },
+      {
+        "key": "supermarket",
+        "lbl": "Supermarket",
+        "lbl_alt": "grocery, store, shop",
+        "icon": "mi-grocery-or-supermarket",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "convenience",
+        "lbl": "Convenience Store",
+        "lbl_alt": "",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "grocery",
+        "lbl": "Grocery",
+        "lbl_alt": "non-perishable food",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723545742
+      },
+      {
+        "key": "massage",
+        "lbl": "Massage Shop",
+        "lbl_alt": "",
+        "icon": "mi-spa",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "frame",
+        "lbl": "Framing Shop",
+        "lbl_alt": "art*, paint*, photo*, frame",
+        "icon": "fa-file-picture-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hearing_aids",
+        "lbl": "Hearing Aids Store",
+        "lbl_alt": "",
+        "icon": "mi-assistive-listening-system",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "vacant",
+        "lbl": "Empty Shop",
+        "lbl_alt": "",
+        "icon": "mi-storage",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "fabric",
+        "lbl": "Fabric Store",
+        "lbl_alt": "sew",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "variety_store",
+        "lbl": "Variety Store",
+        "lbl_alt": "",
+        "icon": "fa-krw",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bag",
+        "lbl": "Taschenladen",
+        "lbl_alt": "Handtaschen, Koffer, Taschen",
+        "icon": "mi-department-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A shop selling bags.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315646690
+      },
+      {
+        "key": "second_hand",
+        "lbl": "Consignment/Thrift Store",
+        "lbl_alt": "secondhand, second hand, resale, thrift, used",
+        "icon": "fa-krw",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "deli",
+        "lbl": "Deli",
+        "lbl_alt": "lunch, meat, sandwich",
+        "icon": "mi-convenience-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "kitchen",
+        "lbl": "Kitchen Design Store",
+        "lbl_alt": "cabinets, countertops, sinks",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "interior_decoration",
+        "lbl": "Interior Decoration Store",
+        "lbl_alt": "",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "tattoo",
+        "lbl": "Tattoo Parlor",
+        "lbl_alt": "ink",
+        "icon": "mi-hindu-temple",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "e-cigarette",
+        "lbl": "E-Cigarette Shop",
+        "lbl_alt": "electronic, vape, vaping, vapor",
+        "icon": "fa-magic",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "locksmith",
+        "lbl": "Locksmith",
+        "lbl_alt": "key, lockpick",
+        "icon": "fa-key",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bathroom_furnishing",
+        "lbl": "Badmöbelgeschäft",
+        "lbl_alt": "Badmöbel, Bad, Badausstattung",
+        "icon": "mi-plumber",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A shop selling bathroom furnishings.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568316023708
+      },
+      {
+        "key": "cheese",
+        "lbl": "Cheese Store",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723353067
+      },
+      {
+        "key": "leather",
+        "lbl": "Leather Store",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "video_games",
+        "lbl": "Video Game Store",
+        "lbl_alt": "",
+        "icon": "maki-gaming-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "curtain",
+        "lbl": "Curtain Store",
+        "lbl_alt": "drape*, window",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "antiques",
+        "lbl": "Antiquitätengeschäft",
+        "lbl_alt": "Antiquitäten, ",
+        "icon": "mi-furniture-store",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A shop where you can buy antiques",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315361880
+      },
+      {
+        "key": "alcohol",
+        "lbl": "Alkoholgeschäft",
+        "lbl_alt": "Alkohol, Wein, Whisky, Schnaps, Spirituosen",
+        "icon": "maki-alcohol-shop-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A shop selling alcoholic drinks",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315147256
+      },
+      {
+        "key": "party",
+        "lbl": "Party Supply Store",
+        "lbl_alt": "balloons, costumes, decorations, invitations",
+        "icon": "dance-instructor",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "coffee",
+        "lbl": "Coffee Store",
+        "lbl_alt": "torrefacteur",
+        "icon": "fa-coffee",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "seafood",
+        "lbl": "Seafood Shop",
+        "lbl_alt": "fishmonger",
+        "icon": "mi-fish-cleaning",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "pastry",
+        "lbl": "Pastry Shop",
+        "lbl_alt": "patisserie, cake shop, cakery",
+        "icon": "osm-confectionery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "tobacco",
+        "lbl": "Tobacco Shop",
+        "lbl_alt": "cigarettes, cigars",
+        "icon": "smoking-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "medical_supply",
+        "lbl": "Medical Supply Store",
+        "lbl_alt": "",
+        "icon": "mi-doctor",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "herbalist",
+        "lbl": "Herbalist",
+        "lbl_alt": "",
+        "icon": "fa-pagelines",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723577487
+      },
+      {
+        "key": "chocolate",
+        "lbl": "Chocolate Store",
+        "lbl_alt": "cocoa",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "dairy",
+        "lbl": "Dairy Store",
+        "lbl_alt": "milk, egg, cheese",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "watches",
+        "lbl": "Watches Shop",
+        "lbl_alt": "",
+        "icon": "fa-clock-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723875573
+      },
+      {
+        "key": "baby_goods",
+        "lbl": "Babygeschäft",
+        "lbl_alt": "Kinderwagen, Kinderbetten, Babybadewannen, Wiege, Spielzeug",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315574110,
+        "_description": "A shop where you can buy objects for babies, like clothes, prams, cots or baby's baths"
+      },
+      {
+        "key": "erotic",
+        "lbl": "Erotic Store",
+        "lbl_alt": "sex, porn",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "nutrition_supplements",
+        "lbl": "Nutrition Supplements Store",
+        "lbl_alt": "",
+        "icon": "fa-capsules-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723759774
+      },
+      {
+        "key": "electrical",
+        "lbl": "Vente de fournitures et d'appareils éléctriques",
+        "lbl_alt": "",
+        "icon": "fa-lightbulb-o",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "fireplace",
+        "lbl": "Fireplace Store",
+        "lbl_alt": "fireplace, stove, masonry heater",
+        "icon": "fa-fire",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "garden_furniture",
+        "lbl": "Garden Furniture",
+        "lbl_alt": "",
+        "icon": "maki-garden-center-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723448035
+      },
+      {
+        "key": "anime",
+        "lbl": "Anime-Geschäft",
+        "lbl_alt": "Manga, Japan, Cosplay, dakimakura",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "_description": "A shop that sells anime and related items.",
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568315260359
+      },
+      {
+        "key": "games",
+        "lbl": "Tabletop Game Store",
+        "lbl_alt": "board game, card game, dice game, game shop, live action role-playing game, miniatures wargame, strategy game",
+        "icon": "fa-chess-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "glaziery",
+        "lbl": "Glazing",
+        "lbl_alt": "glazing for windows and doors",
+        "icon": "fa-door-closed-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561723495103
+      },
+      {
+        "key": "gas",
+        "lbl": "Bottled Gas Shop",
+        "lbl_alt": "cng, lpg, natural gas, propane, refill, tank",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "ticket",
+        "lbl": "Ticket Seller",
+        "lbl_alt": "box office",
+        "icon": "fa-ticket-alt-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "frozen_food",
+        "lbl": "Frozen Food",
+        "lbl_alt": "",
+        "icon": "mi-snow",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "boutique",
+        "lbl": "Boutique",
+        "lbl_alt": "",
+        "icon": "maki-clothing-store-15",
+        "markerColor": "#A23337",
+        "alert": "shop=clothes + clothes=luxury ",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": true
+      },
+      {
+        "key": "perfumery",
+        "lbl": "Perfume Store",
+        "lbl_alt": "",
+        "icon": "osm-perfumery",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "paint",
+        "lbl": "Paint Store",
+        "lbl_alt": "",
+        "icon": "mi-painter",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "tea",
+        "lbl": "Tea Store",
+        "lbl_alt": "",
+        "icon": "osm-Tea-14",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "trade",
+        "lbl": "Trade Shop",
+        "lbl_alt": "",
+        "icon": "truck-loading-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "pet_grooming",
+        "lbl": "Pet Grooming Store",
+        "lbl_alt": "cat, dog",
+        "icon": "maki-dog-park-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "sewing",
+        "lbl": "Sewing Supply Shop",
+        "lbl_alt": "haberdashery",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "agrarian",
+        "lbl": "Geschäft für Landwirtschaft",
+        "lbl_alt": "Pestizide, Düngemittel, Saatgut, Futtermittel, landwirtschaftliche Geräte, Ersatzteile für Landmaschinen",
+        "icon": "fa-tractor-solid",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "339917",
+        "userName": "Hedaja",
+        "time": 1568314949143,
+        "deprecated": false,
+        "_description": "Shop selling products for agricultural use, such as pesticides (as in the picture), seeds, animal feed, etc."
+      },
+      {
+        "key": "yes",
+        "lbl": " Not known",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "ski",
+        "lbl": "Ski",
+        "lbl_alt": "",
+        "icon": "mi-skiing",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "printer_ink",
+        "lbl": "Printer Ink",
+        "lbl_alt": "A shop that sells or refills printer ink cartridges",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pasta",
+        "lbl": "Pasta Shop",
+        "lbl_alt": "(fresh) pasta, ravioli",
+        "icon": "",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "tailor",
+        "lbl": "Tailor",
+        "lbl_alt": "clothes, suit",
+        "icon": "maki-clothing-store-15",
+        "markerColor": "#A23337",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      }
+    ]
+  },
+  "amenity": {
+    "type": "amenity",
+    "lbl": "Amenity",
+    "values": [
+      {
+        "key": "embassy",
+        "lbl": "Ambassade",
+        "lbl_alt": "",
+        "icon": "maki-embassy-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": false
+      },
+      {
+        "key": "bus_station",
+        "lbl": "Bus Station",
+        "lbl_alt": "",
+        "icon": "mi-bus-station",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "deprecated": false
+      },
+      {
+        "key": "auditorium",
+        "lbl": "Auditorium",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "driving_school",
+        "lbl": "Driving School",
+        "lbl_alt": "",
+        "icon": "fa-car",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bench",
+        "lbl": "Bench",
+        "lbl_alt": "seat, chair",
+        "icon": "custom-bench",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["backrest", "seats"],
+        "fromid": true
+      },
+      {
+        "key": "bank",
+        "lbl": "Bank",
+        "lbl_alt": "credit union, check, deposit, fund, investment, repository, reserve, safe, savings, stock, treasury, trust, vault",
+        "icon": "maki-bank-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "brand",
+          "operator",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "bar",
+        "lbl": "Bar",
+        "lbl_alt": "dive, beer, bier, booze",
+        "icon": "maki-bar-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "tobacco",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "pub",
+        "lbl": "Pub",
+        "lbl_alt": "alcohol, drink, dive, beer, bier, booze",
+        "icon": "fa-beer",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "tobacco",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "library",
+        "lbl": "Library",
+        "lbl_alt": "book",
+        "icon": "mi-library",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "brothel",
+        "lbl": "Brothel",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "nightclub",
+        "lbl": "Nightclub",
+        "lbl_alt": "disco, night club, dancing, dance club",
+        "icon": "maki-music-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "post_box",
+        "lbl": "Mailbox",
+        "lbl_alt": "letter, post",
+        "icon": "mi-post-box",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "post_office",
+        "lbl": "Post Office",
+        "lbl_alt": "letter, mail",
+        "icon": "maki-post-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "public_building",
+        "lbl": "Public Building",
+        "lbl_alt": "",
+        "icon": "fa-building-o",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "cafe",
+        "lbl": "Cafe",
+        "lbl_alt": "bistro, coffee, tea",
+        "icon": "mi-cafe",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "fire_station",
+        "lbl": "Fire Station",
+        "lbl_alt": "",
+        "icon": "mi-fire-station",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["phone"],
+        "fromid": true
+      },
+      {
+        "key": "casino",
+        "lbl": "Casino",
+        "lbl_alt": "gambling, roulette, craps, poker, blackjack",
+        "icon": "mi-casino",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "arts_centre",
+        "lbl": "Arts Center",
+        "lbl_alt": "",
+        "icon": "mi-art-gallery",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "health_centre",
+        "lbl": "Health Centre",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "grave_yard",
+        "lbl": "Graveyard",
+        "lbl_alt": "",
+        "icon": "maki-cemetery-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "cinema",
+        "lbl": "Cinema",
+        "lbl_alt": "drive-in, film, flick, movie, theater, picture, show, screen",
+        "icon": "maki-cinema-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "clinic",
+        "lbl": "Clinic",
+        "lbl_alt": "medical, urgentcare",
+        "icon": "fa-hospital-o",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "waste_basket",
+        "lbl": "Waste Basket",
+        "lbl_alt": "bin, garbage, rubbish, litter, trash",
+        "icon": "maki-waste-basket-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "car_sharing",
+        "lbl": "Car Sharing",
+        "lbl_alt": "",
+        "icon": "maki-car-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "ice_cream",
+        "lbl": "Ice Cream Shop",
+        "lbl_alt": "gelato, sorbet, sherbet, frozen, yogurt",
+        "icon": "maki-ice-cream-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "crematorium",
+        "lbl": "Crematorium",
+        "lbl_alt": "cemetery, funeral",
+        "icon": "fa-fire",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "atm",
+        "lbl": "ATM",
+        "lbl_alt": "money, cash, machine",
+        "icon": "mi-atm",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "dentist",
+        "lbl": "Dentist",
+        "lbl_alt": "tooth, teeth",
+        "icon": "maki-dentist-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "drinking_water",
+        "lbl": "Drinking Water",
+        "lbl_alt": "potable water source, water fountain, drinking fountain, bubbler, water tap",
+        "icon": "maki-drinking-water-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "fountain",
+        "lbl": "Fountain",
+        "lbl_alt": "",
+        "icon": "osm-fountain",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "hospital",
+        "lbl": "Hospital Grounds",
+        "lbl_alt": "clinic, doctor, emergency room, health, infirmary, institution, sanatorium, sanitarium, sick, surgery, ward",
+        "icon": "mi-hospital",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "kindergarten",
+        "lbl": "Preschool/Kindergarten Grounds",
+        "lbl_alt": "kindergarden, pre-school",
+        "icon": "fa-child",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "nursery",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "deprecated": false,
+        "fromid": true
+      },
+      {
+        "key": "car_wash",
+        "lbl": "Car Wash",
+        "lbl_alt": "",
+        "icon": "mi-car-wash",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "place_of_worship",
+        "lbl": "Place of Worship",
+        "lbl_alt": "abbey, basilica, bethel, cathedral, chancel, chantry, chapel, church, fold, house of God, house of prayer, house of worship, minster, mission, mosque, oratory, parish, sacellum, sanctuary, shrine, synagogue, tabernacle, temple",
+        "icon": "pray-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "car_rental",
+        "lbl": "Car Rental",
+        "lbl_alt": "",
+        "icon": "mi-car-rental",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bicycle_rental",
+        "lbl": "Bicycle Rental",
+        "lbl_alt": "bike, bicycle, bikeshare, bike share, bicycle share, hub, dock",
+        "icon": "mi-bicycle-store",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "townhall",
+        "lbl": "Town Hall",
+        "lbl_alt": "village, city, government, courthouse, municipal",
+        "icon": "maki-town-hall-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "nursing_home",
+        "lbl": "Nursing Home",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "doctors",
+        "lbl": "Doctor",
+        "lbl_alt": "medic*, physician",
+        "icon": "maki-doctor-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "nursery",
+        "lbl": "Nurserie",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "Déprecated, use : amenity=kindergarten + nursery=yes.",
+        "deprecated": true,
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "courthouse",
+        "lbl": "Courthouse",
+        "lbl_alt": "",
+        "icon": "fa-balance-scale",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "park",
+        "lbl": "Parc",
+        "lbl_alt": "",
+        "icon": "maki-park-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "parking",
+        "lbl": "Parking Lot",
+        "lbl_alt": "automobile parking, car lot, car parking, rv parking, truck parking, vehicle parking",
+        "icon": "mi-parking",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bicycle_parking",
+        "lbl": "Bicycle Parking",
+        "lbl_alt": "bike",
+        "icon": "maki-bicycle-15",
+        "markerColor": "#1B75BB",
+        "alert": "",
+        "presets": ["bicycle_parking", "operator", "capacity", "covered"],
+        "default_values": [{"key": "bicycle_parking", "value": "stands"}],
+        "fromid": true
+      },
+      {
+        "key": "pharmacy",
+        "lbl": "Pharmacy Counter",
+        "lbl_alt": "apothecary, drug store, drugstore, med*, prescription",
+        "icon": "mi-pharmacy",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "dispensing",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "marketplace",
+        "lbl": "Marketplace",
+        "lbl_alt": "",
+        "icon": "osm-marketplace",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "recycling",
+        "lbl": "Recycling",
+        "lbl_alt": "glass",
+        "icon": "recycling",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "recycling_type",
+          "recycling:glass_bottles",
+          "recycling:plastic",
+          "recycling:paper"
+        ],
+        "default_values": [{"key": "recycling_type", "value": "container"}]
+      },
+      {
+        "key": "police",
+        "lbl": "Police",
+        "lbl_alt": "badge, constable, constabulary, cop, detective, fed, law, enforcement, officer, patrol",
+        "icon": "maki-police-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "prison",
+        "lbl": "Prison Grounds",
+        "lbl_alt": "cell, jail, correction",
+        "icon": "maki-prison-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "shelter",
+        "lbl": "Shelter",
+        "lbl_alt": "lean-to, gazebo, picnic",
+        "icon": "osm-shelter",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "restaurant",
+        "lbl": "Restaurant",
+        "lbl_alt": "bar, breakfast, cafe, café, canteen, coffee, dine, dining, dinner, drive-in, eat, grill, lunch, table",
+        "icon": "mi-restaurant",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "fast_food",
+        "lbl": "Fast Food",
+        "lbl_alt": "restaurant, takeaway",
+        "icon": "mi-food",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "gym",
+        "lbl": "Gym",
+        "lbl_alt": "",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#EF9228",
+        "alert": "Use  : leisure=fitness_centre",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "deprecated": true
+      },
+      {
+        "key": "community_centre",
+        "lbl": "Community Center",
+        "lbl_alt": "event, hall",
+        "icon": "osm-community_centre",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "hunting_stand",
+        "lbl": "Hunting Stand",
+        "lbl_alt": "game, gun, lookout, rifle, shoot*, wild, watch",
+        "icon": "fa-crosshairs",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "fuel",
+        "lbl": "Gas Station",
+        "lbl_alt": "petrol, fuel, gasoline, propane, diesel, lng, cng, biodiesel",
+        "icon": "maki-fuel-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "studio",
+        "lbl": "Studio",
+        "lbl_alt": "recording, radio, television",
+        "icon": "fa-headset-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "taxi",
+        "lbl": "Taxi Stand",
+        "lbl_alt": "cab",
+        "icon": "mi-taxi-stand",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "ferry_terminal",
+        "lbl": "Terminal de ferry",
+        "lbl_alt": "",
+        "icon": "mi-boat-tour",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "theatre",
+        "lbl": "Theater",
+        "lbl_alt": "theatre, performance, play, musical",
+        "icon": "maki-theatre-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "toilets",
+        "lbl": "Toilets",
+        "lbl_alt": "bathroom, restroom, outhouse, privy, head, lavatory, latrine, water closet, WC, W.C.",
+        "icon": "mi-toilet",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["fee", "male", "female", "wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "telephone",
+        "lbl": "Telephone",
+        "lbl_alt": "phone",
+        "icon": "maki-telephone-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "university",
+        "lbl": "University Grounds",
+        "lbl_alt": "college, graduate school, PhD program, master's degree program",
+        "icon": "mi-university",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "veterinary",
+        "lbl": "Veterinary",
+        "lbl_alt": "pet clinic, veterinarian, animal hospital, pet doctor",
+        "icon": "mi-veterinary-care",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "school",
+        "lbl": "School Grounds",
+        "lbl_alt": "academy, elementary school, middle school, high school",
+        "icon": "mi-school",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "college",
+        "lbl": "College Grounds",
+        "lbl_alt": "university, undergraduate school",
+        "icon": "fa-graduation-cap",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "swingerclub",
+        "lbl": "Swingerclub",
+        "lbl_alt": "",
+        "icon": "mi-toilet",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "vending_machine",
+        "lbl": "Vending Machine",
+        "lbl_alt": "",
+        "icon": "fa-hand-holding-usd-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["vending", "wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "social_facility",
+        "lbl": "Social Facility",
+        "lbl_alt": "",
+        "icon": "fa-hand-holding-heart-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [
+          "social_facility",
+          "social_facility:for",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "parking_entrance",
+        "lbl": "Parking Garage Entrance/Exit",
+        "lbl_alt": "",
+        "icon": "maki-parking-garage-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "dojo",
+        "lbl": "Dojo / Martial Arts Academy",
+        "lbl_alt": "martial arts, dojang",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "ticket_validator",
+        "lbl": "Ticket Validator",
+        "lbl_alt": "",
+        "icon": "fa-outdent",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bureau_de_change",
+        "lbl": "Currency Exchange",
+        "lbl_alt": "money changer",
+        "icon": "maki-bank-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725700562
+      },
+      {
+        "key": "bbq",
+        "lbl": "Barbecue/Grill",
+        "lbl_alt": "bbq, grill",
+        "icon": "maki-fire-station-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "music_school",
+        "lbl": "Music School",
+        "lbl_alt": "school of music",
+        "icon": "fa-music",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "language_school",
+        "lbl": "Language School",
+        "lbl_alt": "esl",
+        "icon": "fa-language",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "charging_station",
+        "lbl": "Charging Station",
+        "lbl_alt": "EV, Electric Vehicle, Supercharger",
+        "icon": "osm-charging_station",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "stripclub",
+        "lbl": "Stripclub",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "clock",
+        "lbl": "Clock",
+        "lbl_alt": "time",
+        "icon": "fa-clock-o",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "internet_cafe",
+        "lbl": "Internet Cafe",
+        "lbl_alt": "cybercafe, taxiphone, teleboutique, coffee, cafe, net, lanhouse",
+        "icon": "fa-internet-explorer",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "table",
+        "lbl": "Table",
+        "lbl_alt": "",
+        "icon": "maki-picnic-site-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "parking_space",
+        "lbl": "Parking Space",
+        "lbl_alt": "",
+        "icon": "maki-parking-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "swimming_pool",
+        "lbl": "Swimming Pool",
+        "lbl_alt": "",
+        "icon": "maki-swimming-15",
+        "markerColor": "#EF9228",
+        "alert": "Use leisure=swimming_pool",
+        "deprecated": true,
+        "presets": []
+      },
+      {
+        "key": "lavoir",
+        "lbl": "Lavoir",
+        "lbl_alt": "",
+        "icon": "mi-roofing-contractor",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "motorcycle_parking",
+        "lbl": "Motorcycle Parking",
+        "lbl_alt": "",
+        "icon": "fa-motorcycle",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725824361
+      },
+      {
+        "key": "shower",
+        "lbl": "Shower",
+        "lbl_alt": "rain closet",
+        "icon": "shower-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "public_bookcase",
+        "lbl": "Public Bookcase",
+        "lbl_alt": "library, bookcrossing",
+        "icon": "fa-book",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "vehicle_inspection",
+        "lbl": "Vehicle Inspection",
+        "lbl_alt": "car inspection",
+        "icon": "mi-car-repair",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "water_point",
+        "lbl": "RV Drinking Water",
+        "lbl_alt": "",
+        "icon": "maki-drinking-water-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "compressed_air",
+        "lbl": "Compressed Air",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725727896
+      },
+      {
+        "key": "watering_place",
+        "lbl": "Animal Watering Place",
+        "lbl_alt": "",
+        "icon": "maki-water-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "dancing_school",
+        "lbl": "Dancing School",
+        "lbl_alt": "",
+        "icon": "dance-instructor",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "photo_booth",
+        "lbl": "Photo Booth",
+        "lbl_alt": "photobooth, photo, booth, kiosk, camera",
+        "icon": "fa-camera",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "animal_breeding",
+        "lbl": "Animal Breeding Facility",
+        "lbl_alt": "breeding, bull, cat, cow, dog, horse, husbandry, kitten, livestock, pet breeding, puppy, reptile",
+        "icon": "maki-zoo-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "sanitary_dump_station",
+        "lbl": "RV Toilet Disposal",
+        "lbl_alt": "Motor Home, Camper, Sanitary, Dump Station, Elsan, CDP, CTDP, Chemical Toilet",
+        "icon": "",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "polling_station",
+        "lbl": "Polling Station",
+        "lbl_alt": "",
+        "icon": "fa-person-booth-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "coworking_space",
+        "lbl": "Coworking Space",
+        "lbl_alt": "",
+        "icon": "mi-place-of-worship",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "boat_rental",
+        "lbl": "Boat Rental",
+        "lbl_alt": "",
+        "icon": "mi-boating",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "monastery",
+        "lbl": "Monastery Grounds",
+        "lbl_alt": "abbey, basilica, bethel, cathedral, chancel, chantry, chapel, church, fold, house of God, house of prayer, house of worship, minster, mission, monastery, mosque, oratory, parish, sacellum, sanctuary, shrine, synagogue, tabernacle, temple",
+        "icon": "pray-solid",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "waste_disposal",
+        "lbl": "Garbage Dumpster",
+        "lbl_alt": "garbage, rubbish, litter, trash",
+        "icon": "maki-waste-basket-15",
+        "markerColor": "#EF9228",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      }
+    ]
+  },
+  "public_transport": {
+    "type": "public_transport",
+    "lbl": "Public transport",
+    "values": [
+      {
+        "key": "stop_position",
+        "lbl": "Transit Stopping Location",
+        "lbl_alt": "public transit, public transportation, transit, transportation",
+        "icon": "mi-bus-station",
+        "markerColor": "#C057A0",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "platform",
+        "lbl": "Transit Platform",
+        "lbl_alt": "platform, public transit, public transportation, transit, transportation",
+        "icon": "mi-bus-station",
+        "markerColor": "#C057A0",
+        "alert": "",
+        "presets": ["bench", "wheelchair", "shelter", "operator"],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#C057A0",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "emergency": {
+    "type": "urgence",
+    "lbl": "Emergency",
+    "values": [
+      {
+        "key": "fire_hydrant",
+        "lbl": "Fire Hydrant",
+        "lbl_alt": "fire plug, fire water well, hydrant",
+        "icon": "maki-fire-station-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [
+          "fire_hydrant:type",
+          "fire_hydrant:position",
+          "fire_hydrant:diameter"
+        ],
+        "default_values": [{"key": "fire_hydrant:type", "value": "pillar"}],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726034409
+      },
+      {
+        "key": "defibrillator",
+        "lbl": "Defibrillator",
+        "lbl_alt": "AED",
+        "icon": "fa-heartbeat",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "phone",
+        "lbl": "Emergency Phone",
+        "lbl_alt": "",
+        "icon": "maki-telephone-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "assembly_point",
+        "lbl": "Assembly Point",
+        "lbl_alt": "",
+        "icon": "fa-compress",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561725969498
+      },
+      {
+        "key": "siren",
+        "lbl": "Siren",
+        "lbl_alt": "air raid, loud, noise, storm, tornado, warning",
+        "icon": "osm-musical_instrument",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "lifeguard_tower",
+        "lbl": "Lifeguard Tower",
+        "lbl_alt": "",
+        "icon": "maki-ranger-station-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "life_ring",
+        "lbl": "Life Ring",
+        "lbl_alt": "life buoy, kisby ring, kisbie ring, perry buoy",
+        "icon": "life-ring-solid",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water_tank",
+        "lbl": "Emergency Water Tank",
+        "lbl_alt": "water tank, cistern, reservoir",
+        "icon": "maki-fire-station-15",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "fire_extinguisher",
+        "lbl": "Fire Extinguisher",
+        "lbl_alt": "",
+        "icon": "fa-fire-extinguisher",
+        "markerColor": "#75030B",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      }
+    ]
+  },
+  "leisure": {
+    "type": "leisure",
+    "lbl": "Leisure ",
+    "values": [
+      {
+        "key": "adult_gaming_centre",
+        "lbl": "Adult Gaming Center",
+        "lbl_alt": "gambling, slot machine",
+        "icon": "mi-casino",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "amusement_arcade",
+        "lbl": "Amusement Arcade",
+        "lbl_alt": "pay-to-play games, video games, driving simulators, pinball machines",
+        "icon": "fa-gamepad",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bandstand",
+        "lbl": "Bandstand",
+        "lbl_alt": "",
+        "icon": "maki-music-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "bird_hide",
+        "lbl": "Bird Hide",
+        "lbl_alt": "machan, ornithology",
+        "icon": "fa-dove-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "dance",
+        "lbl": "Dance Hall",
+        "lbl_alt": "ballroom, jive, swing, tango, waltz",
+        "icon": "dance-instructor",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "dog_park",
+        "lbl": "Dog Park",
+        "lbl_alt": "",
+        "icon": "maki-dog-park-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "firepit",
+        "lbl": "Firepit",
+        "lbl_alt": "fireplace, campfire",
+        "icon": "fa-fire",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "hackerspace",
+        "lbl": "Hackerspace",
+        "lbl_alt": "makerspace, hackspace, hacklab",
+        "icon": "fa-laptop-code-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "ice_rink",
+        "lbl": "Ice Rink",
+        "lbl_alt": "hockey, skating, curling",
+        "icon": "mi-ice-skating",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "marina",
+        "lbl": "Marina",
+        "lbl_alt": "boat",
+        "icon": "mi-boating",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "miniature_golf",
+        "lbl": "Miniature Golf",
+        "lbl_alt": "crazy golf, mini golf, putt-putt",
+        "icon": "maki-cricket-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "park",
+        "lbl": "Park",
+        "lbl_alt": "esplanade, estate, garden, grass, green, grounds, lawn, lot, meadow, parkland, place, playground, plaza",
+        "icon": "maki-park-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726135409
+      },
+      {
+        "key": "pitch",
+        "lbl": "Sport Pitch",
+        "lbl_alt": "field",
+        "icon": "maki-basketball-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "playground",
+        "lbl": "Playground",
+        "lbl_alt": "jungle gym, play area",
+        "icon": "maki-playground-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "sports_centre",
+        "lbl": "Sports Center / Complex",
+        "lbl_alt": "",
+        "icon": "fa-dribbble",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "stadium",
+        "lbl": "Stadium",
+        "lbl_alt": "",
+        "icon": "maki-stadium-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "summer_camp",
+        "lbl": "Summer Camp",
+        "lbl_alt": "",
+        "icon": "fa-child",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"]
+      },
+      {
+        "key": "swimming_pool",
+        "lbl": "Swimming Pool",
+        "lbl_alt": "dive, water, aquatics",
+        "icon": "maki-swimming-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "water_park",
+        "lbl": "Water Park",
+        "lbl_alt": "swim, pool, dive",
+        "icon": "mi-diving",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair"],
+        "fromid": true
+      },
+      {
+        "key": "wildlife_hide",
+        "lbl": "Wildlife Hide",
+        "lbl_alt": "",
+        "icon": "fa-dove-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sauna",
+        "lbl": "Sauna",
+        "lbl_alt": "",
+        "icon": "fa-hot-tub-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "garden",
+        "lbl": "Garden",
+        "lbl_alt": "",
+        "icon": "mi-florist",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "picnic_table",
+        "lbl": "Picnic Table",
+        "lbl_alt": "bench",
+        "icon": "maki-picnic-site-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "track",
+        "lbl": "Racetrack (Non-Motorsport)",
+        "lbl_alt": "cycle, dog, greyhound, horse, race*, track",
+        "icon": "maki-pitch-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "slipway",
+        "lbl": "Slipway",
+        "lbl_alt": "boat launch, boat ramp, boat landing",
+        "icon": "mi-boat-ramp",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "golf_course",
+        "lbl": "Golf Course",
+        "lbl_alt": "links",
+        "icon": "maki-golf-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "fitness_station",
+        "lbl": "Outdoor Fitness Station",
+        "lbl_alt": "exercise, fitness, gym, trim trail",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "horse_riding",
+        "lbl": "Horseback Riding Facility",
+        "lbl_alt": "equestrian, stable",
+        "icon": "fa-horse-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "fitness_centre",
+        "lbl": "Gym / Fitness Center",
+        "lbl_alt": "health, gym, leisure, studio",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "nature_reserve",
+        "lbl": "Nature Reserve",
+        "lbl_alt": "protected, wildlife",
+        "icon": "fa-otter-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "fishing",
+        "lbl": "Fishing Spot",
+        "lbl_alt": "angler",
+        "icon": "mi-fishing-pier",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "bowling_alley",
+        "lbl": "Bowling Alley",
+        "lbl_alt": "bowling center",
+        "icon": "mi-bowling-alley",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "escape_game",
+        "lbl": "Escape Room",
+        "lbl_alt": "escape game, escape the room, puzzle room, quest room",
+        "icon": "fa-key",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "table_tennis_table",
+        "lbl": "Table Tennis Table",
+        "lbl_alt": "pingpong",
+        "icon": "maki-tennis-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "craft": {
+    "type": "craft",
+    "lbl": "Craft",
+    "values": [
+      {
+        "key": "basket_maker",
+        "lbl": "Basket Maker",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "beekeeper",
+        "lbl": "Beekeeper",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "blacksmith",
+        "lbl": "Blacksmith",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "brewery",
+        "lbl": "Brewery",
+        "lbl_alt": "alcohol, beer, beverage, bier, booze, cider",
+        "icon": "maki-beer-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "boatbuilder",
+        "lbl": "Boat Builder",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "bookbinder",
+        "lbl": "Bookbinder",
+        "lbl_alt": "book repair",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "carpenter",
+        "lbl": "Carpenter",
+        "lbl_alt": "woodworker",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "caterer",
+        "lbl": "Caterer",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "clockmaker",
+        "lbl": "Clockmaker",
+        "lbl_alt": "",
+        "icon": "fa-clock-o",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "confectionery",
+        "lbl": "Candy Maker",
+        "lbl_alt": "sweet, candy",
+        "icon": "fa-birthday-cake",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "dressmaker",
+        "lbl": "Dressmaker",
+        "lbl_alt": "seamstress",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "electrician",
+        "lbl": "Electrician",
+        "lbl_alt": "power, wire",
+        "icon": "mi-electrician",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "floorer",
+        "lbl": "Floorer",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "gardener",
+        "lbl": "Gardener",
+        "lbl_alt": "landscaper, grounds keeper",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "glaziery",
+        "lbl": "Glaziery",
+        "lbl_alt": "glass, stained-glass, window",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "handicraft",
+        "lbl": "Handicraft",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hvac",
+        "lbl": "HVAC",
+        "lbl_alt": "heat*, vent*, air conditioning",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "insulation",
+        "lbl": "Insulation",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "jeweller",
+        "lbl": "Jeweller",
+        "lbl_alt": "",
+        "icon": "mi-jewelry-store",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "key_cutter",
+        "lbl": "Key Cutter",
+        "lbl_alt": "",
+        "icon": "fa-key",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "locksmith",
+        "lbl": "Locksmith",
+        "lbl_alt": "",
+        "icon": "fa-key",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726222875
+      },
+      {
+        "key": "metal_construction",
+        "lbl": "Metal Construction",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "optician",
+        "lbl": "Optician",
+        "lbl_alt": "glasses",
+        "icon": "fa-glasses-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726255851
+      },
+      {
+        "key": "painter",
+        "lbl": "Painter",
+        "lbl_alt": "",
+        "icon": "mi-painter",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "parquet_layer",
+        "lbl": "Parquet Layer",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "photographer",
+        "lbl": "Photographer",
+        "lbl_alt": "",
+        "icon": "maki-attraction-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "photographic_laboratory",
+        "lbl": "Photographic Laboratory",
+        "lbl_alt": "film",
+        "icon": "maki-attraction-15",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "plasterer",
+        "lbl": "Plasterer",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "plumber",
+        "lbl": "Plumber",
+        "lbl_alt": "pipe",
+        "icon": "mi-plumber",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "pottery",
+        "lbl": "Pottery",
+        "lbl_alt": "ceramic",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "rigger",
+        "lbl": "Rigger",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "roofer",
+        "lbl": "Roofer",
+        "lbl_alt": "",
+        "icon": "mi-roofing-contractor",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "saddler",
+        "lbl": "Saddler",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "sailmaker",
+        "lbl": "Sailmaker",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "sawmill",
+        "lbl": "Sawmill",
+        "lbl_alt": "lumber",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "sculptor",
+        "lbl": "Sculptor",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "shoemaker",
+        "lbl": "Shoemaker",
+        "lbl_alt": "cobbler",
+        "icon": "osm-shoes",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "stonemason",
+        "lbl": "Stonemason",
+        "lbl_alt": "masonry",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "chimney_sweeper",
+        "lbl": "Chimney Sweeper",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "tailor",
+        "lbl": "Tailleur",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "tiler",
+        "lbl": "Tiler",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "tinsmith",
+        "lbl": "Tinsmith",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "upholsterer",
+        "lbl": "Upholsterer",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "watchmaker",
+        "lbl": "Watchmaker",
+        "lbl_alt": "",
+        "icon": "fa-clock-o",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "window_construction",
+        "lbl": "Window Construction",
+        "lbl_alt": "glass",
+        "icon": "fa-door-closed-solid",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "winery",
+        "lbl": "Winery",
+        "lbl_alt": "",
+        "icon": "mi-liquor-store",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "builder",
+        "lbl": "Builder",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "distillery",
+        "lbl": "Distillery",
+        "lbl_alt": "alcohol, beverage, bourbon, booze, brandy, gin, hooch, liquor, mezcal, moonshine, rum, scotch, spirits, still, tequila, vodka, whiskey, whisky",
+        "icon": "mi-liquor-store",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "electronics_repair",
+        "lbl": "Electronics Repair Shop",
+        "lbl_alt": "",
+        "icon": "fa-mobile-phone",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726205833
+      },
+      {
+        "key": "joiner",
+        "lbl": "Joiner",
+        "lbl_alt": "furniture",
+        "icon": "",
+        "markerColor": "#5B396C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      }
+    ]
+  },
+  "tourism": {
+    "type": "tourism",
+    "lbl": "Tourism",
+    "values": [
+      {
+        "key": "alpine_hut",
+        "lbl": "Alpine Hut",
+        "lbl_alt": "climbing hut",
+        "icon": "mi-roofing-contractor",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "attraction",
+        "lbl": "Tourist Attraction",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "artwork",
+        "lbl": "Artwork",
+        "lbl_alt": "mural, sculpture, statue",
+        "icon": "mi-art-gallery",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "camp_site",
+        "lbl": "Campground",
+        "lbl_alt": "tent, rv",
+        "icon": "maki-campsite-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "caravan_site",
+        "lbl": "RV Park",
+        "lbl_alt": "Motor Home, Camper",
+        "icon": "fa-truck-solid",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "gallery",
+        "lbl": "Art Gallery",
+        "lbl_alt": "art*, exhibit*, paint*, photo*, sculpt*",
+        "icon": "mi-art-gallery",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hostel",
+        "lbl": "Hostel",
+        "lbl_alt": "",
+        "icon": "maki-lodging-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "hotel",
+        "lbl": "Hotel",
+        "lbl_alt": "",
+        "icon": "maki-lodging-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "information",
+        "lbl": "Information",
+        "lbl_alt": "",
+        "icon": "fa-info-circle",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "motel",
+        "lbl": "Motel",
+        "lbl_alt": "",
+        "icon": "maki-lodging-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "museum",
+        "lbl": "Museum",
+        "lbl_alt": "art*, exhibit*, gallery, foundation, hall, institution, paint*, photo*, sculpt*",
+        "icon": "mi-museum",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "picnic_site",
+        "lbl": "Picnic Site",
+        "lbl_alt": "camp",
+        "icon": "maki-picnic-site-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "theme_park",
+        "lbl": "Theme Park",
+        "lbl_alt": "",
+        "icon": "mi-amusement-park",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "viewpoint",
+        "lbl": "Viewpoint",
+        "lbl_alt": "",
+        "icon": "fa-eye",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "wilderness_hut",
+        "lbl": "Wilderness Hut",
+        "lbl_alt": "wilderness hut, backcountry hut, bothy",
+        "icon": "mi-roofing-contractor",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "zoo",
+        "lbl": "Zoo",
+        "lbl_alt": "animal",
+        "icon": "mi-zoo",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "guest_house",
+        "lbl": "Guest House",
+        "lbl_alt": "B&B, Bed and Breakfast",
+        "icon": "maki-lodging-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "chalet",
+        "lbl": "Holiday Cottage",
+        "lbl_alt": "holiday, holiday cottage, holiday home, vacation, vacation home",
+        "icon": "fa-home",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "apartment",
+        "lbl": "Guest Apartment / Condo",
+        "lbl_alt": "",
+        "icon": "fa-home",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726343392
+      },
+      {
+        "key": "aquarium",
+        "lbl": "Aquarium",
+        "lbl_alt": "fish, sea, water",
+        "icon": "maki-aquarium-15",
+        "markerColor": "#9D7178",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      }
+    ]
+  },
+  "office": {
+    "type": "office",
+    "lbl": "Office",
+    "values": [
+      {
+        "key": "accountant",
+        "lbl": "Accountant Office",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "advertising_agency",
+        "lbl": "Advertising Agency",
+        "lbl_alt": "ad, ad agency, advert agency, advertising, marketing",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "architect",
+        "lbl": "Architect Office",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "association",
+        "lbl": "Nonprofit Organization Office",
+        "lbl_alt": "association, non-profit, nonprofit, organization, society",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "company",
+        "lbl": "Corporate Office",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "educational_institution",
+        "lbl": "Educational Institution",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "employment_agency",
+        "lbl": "Employment Agency",
+        "lbl_alt": "job",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "estate_agent",
+        "lbl": "Real Estate Office",
+        "lbl_alt": "real estate",
+        "icon": "mi-real-estate-agency",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "forestry",
+        "lbl": "Forestry Office",
+        "lbl_alt": "forest, ranger",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "foundation",
+        "lbl": "Foundation Office",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "government",
+        "lbl": "Government Office",
+        "lbl_alt": "",
+        "icon": "maki-town-hall-15",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "guide",
+        "lbl": "Tour Guide Office",
+        "lbl_alt": "dive guide, mountain guide, tour guide",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "insurance",
+        "lbl": "Insurance Office",
+        "lbl_alt": "",
+        "icon": "mi-insurance-agency",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "it",
+        "lbl": "Information Technology Office",
+        "lbl_alt": "computer, information, software, technology",
+        "icon": "fa-laptop-code-solid",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "lawyer",
+        "lbl": "Law Office",
+        "lbl_alt": "",
+        "icon": "mi-lawyer",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "newspaper",
+        "lbl": "Newspaper Office",
+        "lbl_alt": "",
+        "icon": "fa-newspaper-o",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "ngo",
+        "lbl": "NGO Office",
+        "lbl_alt": "ngo, non government, non-government, organization, organisation",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "notary",
+        "lbl": "Notary Office",
+        "lbl_alt": "clerk, deeds, estate, signature, wills",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "political_party",
+        "lbl": "Political Party",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "private_investigator",
+        "lbl": "Private Investigator Office",
+        "lbl_alt": "PI, private eye, private detective",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "religion",
+        "lbl": "Religious Office",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": [
+          "religion",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
+        "fromid": true
+      },
+      {
+        "key": "research",
+        "lbl": "Research Office",
+        "lbl_alt": "",
+        "icon": "fa-brain-solid",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "tax",
+        "lbl": "Fiscal authorities",
+        "lbl_alt": "",
+        "icon": "fa-dollar",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726456694
+      },
+      {
+        "key": "tax_advisor",
+        "lbl": "Tax Advisor Office",
+        "lbl_alt": "tax, tax consultant",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "telecommunication",
+        "lbl": "Telecom Office",
+        "lbl_alt": "communication, internet, phone, voice",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "travel_agent",
+        "lbl": "Travel Agency",
+        "lbl_alt": "",
+        "icon": "mi-travel-agency",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "water_utility",
+        "lbl": "Water Utility Office",
+        "lbl_alt": "water board, utility",
+        "icon": "maki-water-15",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "administrative",
+        "lbl": "Administrative",
+        "lbl_alt": "",
+        "icon": "maki-town-hall-15",
+        "markerColor": "#F5BB3A",
+        "alert": "use : office=government.",
+        "deprecated": true,
+        "presets": [],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726409328
+      },
+      {
+        "key": "moving_company",
+        "lbl": "Moving Company Office",
+        "lbl_alt": "relocation",
+        "icon": "people-carry-solid",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "surveyor",
+        "lbl": "Surveyor Office",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#F5BB3A",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      }
+    ]
+  },
+  "man_made": {
+    "type": "man_made",
+    "lbl": "Man Made",
+    "exclude_way_values": ["embankment", "bridge"],
+    "values": [
+      {
+        "key": "lighthouse",
+        "lbl": "Lighthouse",
+        "lbl_alt": "",
+        "icon": "maki-lighthouse-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "communications_tower",
+        "lbl": "Communications Tower (+ 100m)",
+        "lbl_alt": "Émetteur de téléphonie mobile, mât de transmission",
+        "icon": "fa-broadcast-tower-solid",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "advertising",
+        "lbl": "Advertising",
+        "lbl_alt": "",
+        "icon": "maki-monument-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "deprecated": true
+      },
+      {
+        "key": "cross",
+        "lbl": "Summit Cross",
+        "lbl_alt": "",
+        "icon": "fa-cross-solid",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726508223
+      },
+      {
+        "key": "flagpole",
+        "lbl": "Flagpole",
+        "lbl_alt": "",
+        "icon": "fa-flag",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "surveillance",
+        "lbl": "Surveillance",
+        "lbl_alt": "anpr, alpr, camera, car plate recognition, cctv, guard, license plate recognition, monitoring, number plate recognition, security, video, webcam",
+        "icon": "video-solid",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "water_tower",
+        "lbl": "Water Tower",
+        "lbl_alt": "",
+        "icon": "osm-water-tower",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "water_well",
+        "lbl": "Water Well",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "water_tap",
+        "lbl": "Water tap",
+        "lbl_alt": "",
+        "icon": "maki-drinking-water-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "survey_point",
+        "lbl": "Survey Point",
+        "lbl_alt": "trig point, triangulation pillar, trigonometrical station",
+        "icon": "mi-cemetery",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "storage_tank",
+        "lbl": "Storage Tank",
+        "lbl_alt": "water, oil, gas, petrol",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "pier",
+        "lbl": "Pier",
+        "lbl_alt": "berth, dock, jetty, landing, promenade, wharf",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": " ",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726544725
+      },
+      {
+        "key": "wastewater_plant",
+        "lbl": "Wastewater Plant",
+        "lbl_alt": "sewage*, water treatment plant, reclamation plant",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "pipeline",
+        "lbl": "Pipeline",
+        "lbl_alt": "oil, natural gas, water, sewer, sewage",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "Line...",
+        "presets": [],
+        "fromid": true,
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726570044
+      },
+      {
+        "key": "tower",
+        "lbl": "Tower",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "reservoir_covered",
+        "lbl": "Reservoir Covered",
+        "lbl_alt": "",
+        "icon": "maki-water-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726577462
+      },
+      {
+        "key": "works",
+        "lbl": "Factory",
+        "lbl_alt": "assembly, build, brewery, car, plant, plastic, processing, manufacture, refinery",
+        "icon": "maki-industry-15",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "mast",
+        "lbl": "Mast",
+        "lbl_alt": "antenna, broadcast tower, cell phone tower, cell tower, communication mast, communication tower",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726527858
+      },
+      {
+        "key": "street_cabinet",
+        "lbl": "Street Cabinet",
+        "lbl_alt": "cable tv, monitoring box, technical box, telecommunications, traffic signal controls",
+        "icon": "fa-cube",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "silo",
+        "lbl": "Silo",
+        "lbl_alt": "grain, corn, wheat",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "monitoring_station",
+        "lbl": "Monitoring Station",
+        "lbl_alt": "weather, earthquake, seismology, air, gps",
+        "icon": "thermometer-half-solid",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "windmill",
+        "lbl": "Windmill",
+        "lbl_alt": "wind, wheel, mill",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "watermill",
+        "lbl": "Watermill",
+        "lbl_alt": "water, wheel, mill",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "chimney",
+        "lbl": "Chimney",
+        "lbl_alt": "",
+        "icon": "maki-industry-15",
+        "markerColor": "#D3D3D3",
+        "alert": "Only if > 10m",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726491678
+      },
+      {
+        "key": "adit",
+        "lbl": "Adit",
+        "lbl_alt": "cave, horizontal mine entrance, tunnel, underground",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "Doit être (quasiment) horizontale ",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "dovecote",
+        "lbl": "Dovecote",
+        "lbl_alt": "",
+        "icon": "fa-dove-solid",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "snow_cannon",
+        "lbl": "Snow Cannon",
+        "lbl_alt": "",
+        "icon": "mi-snow",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "pumping_station",
+        "lbl": "Pumping Station",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "crane",
+        "lbl": "Crane",
+        "lbl_alt": "",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "mineshaft",
+        "lbl": "Mineshaft",
+        "lbl_alt": "cave, mine shaft, tunnel, underground, vertical mine entrance",
+        "icon": "",
+        "markerColor": "#D3D3D3",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      }
+    ]
+  },
+  "healthcare": {
+    "type": "healthcare",
+    "lbl": "Healthcare",
+    "values": [
+      {
+        "key": "alternative",
+        "lbl": "Alternative Medicine",
+        "lbl_alt": "acupuncture, anthroposophical, applied kinesiology, aromatherapy, ayurveda, herbalism, homeopathy, hydrotherapy, hypnosis, naturopathy, osteopathy, reflexology, reiki, shiatsu, traditional, tuina, unani",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "audiologist",
+        "lbl": "Audiologist",
+        "lbl_alt": "ear, hearing, sound",
+        "icon": "mi-assistive-listening-system",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "blood_bank",
+        "lbl": "Blood Bank",
+        "lbl_alt": "",
+        "icon": "maki-blood-bank-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "blood_donation",
+        "lbl": "Blood Donor Center",
+        "lbl_alt": "blood bank, blood donation, blood transfusion, apheresis, plasmapheresis, plateletpheresis, stem cell donation",
+        "icon": "maki-blood-bank-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "centre",
+        "lbl": "Health Center",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "clinic",
+        "lbl": "Clinic",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "dentist",
+        "lbl": "Dentiste",
+        "lbl_alt": "",
+        "icon": "maki-dentist-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "doctor",
+        "lbl": "Medecin",
+        "lbl_alt": "",
+        "icon": "maki-doctor-15",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726676871
+      },
+      {
+        "key": "hospital",
+        "lbl": "Hôpital",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "midwife",
+        "lbl": "Midwife",
+        "lbl_alt": "baby, childbirth, delivery, labour, labor, pregnancy",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "occupational_therapist",
+        "lbl": "Occupational Therapist",
+        "lbl_alt": "therapist, therapy",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "physiotherapist",
+        "lbl": "Physiotherapist",
+        "lbl_alt": "physical, therapist, therapy",
+        "icon": "mi-physiotherapist",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "podiatrist",
+        "lbl": "Podiatrist",
+        "lbl_alt": "foot, feet, nails",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "psychotherapist",
+        "lbl": "Psychotherapist",
+        "lbl_alt": "anxiety, counselor, depression, mental health, mind, suicide, therapist, therapy",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726691718
+      },
+      {
+        "key": "sophrologist",
+        "lbl": "Sophrologist",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"]
+      },
+      {
+        "key": "speech_therapist",
+        "lbl": "Speech Therapist",
+        "lbl_alt": "speech, therapist, therapy, voice",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "laboratory",
+        "lbl": "Medical Laboratory",
+        "lbl_alt": "medical_laboratory, medical_lab, blood_check",
+        "icon": "microscope-solid",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "nurse",
+        "lbl": "Nurse",
+        "lbl_alt": "",
+        "icon": "mi-health",
+        "markerColor": "#C9BCF0",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "historic": {
+    "type": "historic",
+    "lbl": "Historic ",
+    "values": [
+      {
+        "key": "wayside_cross",
+        "lbl": "Wayside Cross",
+        "lbl_alt": "",
+        "icon": "maki-religious-christian-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "memorial",
+        "lbl": "Memorial",
+        "lbl_alt": "dedicatory, epitaph, remember, remembrance, memory, monument, stolperstein",
+        "icon": "maki-monument-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "monument",
+        "lbl": "Monument",
+        "lbl_alt": "",
+        "icon": "maki-museum-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "archaeological_site",
+        "lbl": "Archaeological Site",
+        "lbl_alt": "",
+        "icon": "fa-archway-solid",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726700964
+      },
+      {
+        "key": "castle",
+        "lbl": "Castle",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "fort",
+        "lbl": "Historic Fort",
+        "lbl_alt": "military",
+        "icon": "fa-empire",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "ruins",
+        "lbl": "Ruins",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "wayside_shrine",
+        "lbl": "Wayside Shrine",
+        "lbl_alt": "",
+        "icon": "maki-religious-christian-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "boundary_stone",
+        "lbl": "Boundary Stone",
+        "lbl_alt": "",
+        "icon": "mi-cemetery",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "tomb",
+        "lbl": "Tomb",
+        "lbl_alt": "",
+        "icon": "maki-cemetery-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "building",
+        "lbl": "Historical Building",
+        "lbl_alt": "",
+        "icon": "fa-bank",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "manor",
+        "lbl": "Manor House",
+        "lbl_alt": "Mansion, gentry, nobility, estate",
+        "icon": "",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "tower",
+        "lbl": "Tower",
+        "lbl_alt": "",
+        "icon": "maki-castle-15",
+        "markerColor": "#FFBA0C",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  },
+  "natural": {
+    "type": "natural",
+    "lbl": "Natural",
+    "exclude_way_values": ["bare_rock", "cliff", "wood", "shingle"],
+    "values": [
+      {
+        "key": "tree",
+        "lbl": "Tree",
+        "lbl_alt": "",
+        "icon": "maki-park-15",
+        "markerColor": "#009549",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#009549",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "water",
+        "lbl": "Water",
+        "lbl_alt": "",
+        "icon": "maki-water-15",
+        "markerColor": "#009549",
+        "alert": "Polygon only",
+        "presets": [],
+        "fromid": true,
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726832390
+      },
+      {
+        "key": "tree_row",
+        "lbl": "Tree Row",
+        "lbl_alt": "",
+        "icon": "maki-park-15",
+        "markerColor": "#009549",
+        "alert": "Line only...",
+        "presets": [],
+        "fromid": true,
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561726803604
+      }
+    ]
+  },
+  "highway": {
+    "exclude_way_values": [
+      "footway",
+      "motorway",
+      "trunk",
+      "trunk_link",
+      "primary",
+      "primary_link",
+      "secondary",
+      "secondary_link",
+      "tertiary",
+      "tertiary_link",
+      "unclassified",
+      "abandoned",
+      "residential",
+      "service",
+      "motorway_link",
+      "trunk_link",
+      "primary_link",
+      "secondary_link",
+      "tertiary_link",
+      "living_street",
+      "pedestrian",
+      "track",
+      "bus_guideway",
+      "escape",
+      "road",
+      "footway",
+      "bridleway",
+      "path",
+      "cycleway",
+      "proposed",
+      "construction",
+      "steps",
+      "pedestrian",
+      "motorway_junction",
+      "platform",
+      "corridor"
+    ],
+    "type": "highway",
+    "lbl": "Highway",
+    "values": [
+      {
+        "key": "street_lamp",
+        "lbl": "Street Lamp",
+        "lbl_alt": "streetlight, street light, lamp, light, gaslight",
+        "icon": "fa-lightbulb-o",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "crossing",
+        "lbl": "Crossing",
+        "lbl_alt": "",
+        "icon": "fa-align-justify",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": [],
+        "default_values": [
+          {"key": "fixme", "value": "Je devrais être sur un way !"}
+        ]
+      },
+      {
+        "key": "traffic_signals",
+        "lbl": "Traffic Signals",
+        "lbl_alt": "light, stoplight, traffic light",
+        "icon": "osm-traffic_light",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": [],
+        "default_values": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561727342450
+      },
+      {
+        "key": "stop",
+        "lbl": "Stop Sign",
+        "lbl_alt": "stop, halt, sign",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": [],
+        "default_values": [],
+        "fromid": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1561727354059
+      },
+      {
+        "key": "give_way",
+        "lbl": "Yield Sign",
+        "lbl_alt": "give way, yield, sign",
+        "icon": "",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": [],
+        "default_values": [
+          {"key": "fixme", "value": "Je devrais être sur un way !"}
+        ],
+        "fromid": true
+      },
+      {
+        "key": "speed_camera",
+        "lbl": "Speed Camera",
+        "lbl_alt": "",
+        "icon": "video-solid",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": [],
+        "fromid": true
+      },
+      {
+        "key": "bus_stop",
+        "lbl": "Bus Stop",
+        "lbl_alt": "",
+        "icon": "mi-bus-station",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "yes",
+        "lbl": "_NC",
+        "lbl_alt": "",
+        "icon": "wiki_question",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "speed_display",
+        "lbl": "Speed Display",
+        "lbl_alt": "",
+        "icon": "video-solid",
+        "markerColor": "#0E5F71",
+        "alert": "",
+        "presets": []
+      }
+    ]
+  }
+}

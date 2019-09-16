@@ -8,6 +8,15 @@ import { AngularResizedEventModule } from 'angular-resize-event';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AppVersion } from '@ionic-native/app-version/ngx';
+import { Device } from '@ionic-native/device/ngx';
+
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -103,6 +112,13 @@ export class CustomHammerConfig extends HammerGestureConfig{
   ],
 
   providers: [
+    StatusBar,
+    SplashScreen,
+    Geolocation,
+    AndroidPermissions,
+    AppVersion,
+    Device,
+    Vibration,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
   ],

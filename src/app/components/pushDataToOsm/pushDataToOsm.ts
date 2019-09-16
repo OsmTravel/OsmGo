@@ -118,6 +118,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
                         newFeature['properties']['meta']['uid'] = this.osmApi.getUserInfo().uid;
                         newFeature['properties']['meta']['timestamp'] = new Date().toISOString();
+                        newFeature['properties']['time'] = new Date().getTime();
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
                         this.summary.Total--;
@@ -149,6 +150,13 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
                         newFeature['properties']['meta']['uid'] = this.osmApi.getUserInfo().uid;
                         newFeature['properties']['meta']['timestamp'] = new Date().toISOString();
+                        newFeature['properties']['time'] = new Date().getTime();
+                        if (newFeature['properties']['tags']['fixme']){
+                            newFeature['properties']['fixme'] = true;
+                        } else {
+                            newFeature['properties']['fixme'] = false;
+                        }
+
                         delete newFeature['properties']['changeType'];
                         delete newFeature['properties']['originalData'];
 

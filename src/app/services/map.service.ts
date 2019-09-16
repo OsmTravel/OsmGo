@@ -5,10 +5,8 @@ import { AlertService } from './alert.service';
 import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
-import { Plugins, HapticsImpactStyle } from '@capacitor/core';
-
-const { Haptics } = Plugins;
-
+import { Vibration } from '@ionic-native/vibration/ngx';
+import { debounceTime } from "rxjs/operators";
 import * as _ from 'lodash';
 
 import * as svgToPng from 'save-svg-as-png'
@@ -53,7 +51,8 @@ export class MapService {
     private alertCtrl: AlertController,
     private http: HttpClient,
     private translate: TranslateService,
-    private iconService: IconService
+    private iconService: IconService,
+    private vibration: Vibration
   ) {
 
     this.domMarkerPosition = document.createElement('div');
@@ -61,7 +60,7 @@ export class MapService {
 
     this.arrowDirection = document.createElement('div');
 
-    this.arrowDirection.className = 'positionMarkersSize locationMapIcon';
+    this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
@@ -222,7 +221,7 @@ export class MapService {
 
 
   displaySatelliteBaseMap(sourceName, isDisplay: boolean) {
-    if (!this.configService.baseMapSources.find(b => b.id ===sourceName)) {
+    if (!this.configService.baseMapSources.find(b => b.id === sourceName)) {
       this.configService.setBaseSourceId(this.configService.baseMapSources[0].id)
       sourceName = this.configService.baseMapSources[0].id;
     }
@@ -238,7 +237,7 @@ export class MapService {
     } else {
       if (this.map.getLayer('basemap')) {
         this.map.removeLayer('basemap');
-      } 
+      }
       this.isDisplaySatelliteBaseMap = false;
     }
   }
@@ -246,13 +245,16 @@ export class MapService {
     this.map.setCenter(this.locationService.getCoordsPosition());
     if (this.configService.config.lockMapHeading) {
       this.headingIsLocked = true;
+    }
 
-    }
     if (this.configService.config.followPosition) {
-      this.positionIsFollow = true;
-      this.map.rotateTo(this.locationService.compassHeading.trueHeading);
-      this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+      if (this.locationService.compassHeading.trueHeading) {
+        this.positionIsFollow = true;
+        this.map.rotateTo(this.locationService.compassHeading.trueHeading);
+        this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+      }
     }
+
   }
   changeLocationRadius(newRadius: number, transition: boolean = false): void {
     const pxRadius = this.getPixelDistFromMeter(this.map, newRadius);
@@ -422,6 +424,12 @@ export class MapService {
 
         this.map.addControl(new mapboxgl.NavigationControl());
 
+        const scale = new mapboxgl.ScaleControl({
+          maxWidth: 100,
+          unit: 'metric'
+        });
+        this.map.addControl(scale);
+
         this.map.on('load', async () => {
 
           this.mapIsLoaded();
@@ -562,14 +570,14 @@ export class MapService {
 
 
   addIconToMapFromURI(iconId, uri) {
-    if (!uri){
+    if (!uri) {
       console.log(iconId);
       return;
     }
 
     this.map.loadImage(uri, (error, image) => {
       // console.log(iconId, image)
-      
+
       this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
       const ind = this.markersLoaded.findIndex(el => el.id === iconId);
       this.markersLoaded[ind].loaded = true;
@@ -586,6 +594,27 @@ export class MapService {
     })
   }
 
+
+  showOldTagIcon(maxYearAgo: number){
+    const OneYear = 31536000000;
+    const currentTime = new Date().getTime()
+    this.map.setFilter('icon-old', ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ]);
+    this.map.setLayoutProperty('icon-old', 'visibility', 'visible' )
+  }
+
+  hideOldTagIcon(){
+    this.map.setLayoutProperty('icon-old', 'visibility', 'none' )
+  }
+
+  showFixmeIcon( ){
+    this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible' ) 
+  }
+  hideFixmeIcon( ){
+    this.map.setLayoutProperty('icon-fixme', 'visibility', 'none' ) 
+  }
+
+
+
   mapIsLoaded() {
     const that = this;
 
@@ -599,7 +628,7 @@ export class MapService {
     this.map.addSource('ways_changed', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
     this.map.addSource('location_circle', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
 
-    for (let bm of this.configService.baseMapSources){
+    for (let bm of this.configService.baseMapSources) {
       this.map.addSource(bm.id, bm);
     }
 
@@ -670,8 +699,24 @@ export class MapService {
 
     });
 
+    this.map.addLayer({
+      'id': 'icon-old', 'type': 'symbol', 'source': 'data',
+      'layout': {
+        'icon-image': 'Old', 'icon-ignore-placement': true, 'icon-offset': [-13, -12],
+        'visibility': 'none'
+      }
+    });
 
-    // defini le style du marker en arrière plan
+    this.map.addLayer({
+      'id': 'icon-fixme', 'type': 'symbol', 'source': 'data',
+      'layout': {
+        'icon-image': 'Fixme', 'icon-ignore-placement': true, 'icon-offset': [13, -12],
+        'visibility': 'none'
+      },
+      'filter':  ["any", ['get','fixme'] ] 
+      
+    });
+
     this.map.addLayer({
       'id': 'marker', 'type': 'symbol', 'minzoom': minzoom, 'source': 'data',
       'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] }
@@ -688,7 +733,17 @@ export class MapService {
         'icon-image': '{changeType}', 'icon-ignore-placement': true, 'icon-offset': [0, -35]
       }
     });
+    
     this.layersAreLoaded = true;
+
+    let configOldTagIcon = this.configService.getOldTagsIcon();
+    if( configOldTagIcon.display){
+      this.showOldTagIcon(configOldTagIcon.year)
+    }
+   
+    if (this.configService.getDisplayFixmeIcon()){
+        this.showFixmeIcon();
+    }
 
     // value en m²!
     this.toogleMesureFilter(this.configService.getFilterWayByArea(), 'way_fill', 5000, this.map);
@@ -702,9 +757,11 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      Haptics.impact({ style: HapticsImpactStyle.Light })
 
-      // sans duplicate (by id osm)
+      this.vibration.vibrate(50);
+
+
+
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
@@ -757,9 +814,8 @@ export class MapService {
     });
 
     this.map.on('rotate', async e => {
-      if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
 
-      } else { // la map reste fixe, l'icon tourne
+      if (this.locationService.compassHeading.trueHeading && (!this.configService.config.lockMapHeading || !this.headingIsLocked)) { // on suit l'orientation, la map tourne
         const iconRotate = this.getIconRotate(this.locationService.compassHeading.trueHeading, this.map.getBearing());
         this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
       }
@@ -785,27 +841,39 @@ export class MapService {
         this.addIconToMapFromURI(iconId, cachedUri);
       } else {
         let uri = await this.iconService.generateMarkerByIconId(iconId);
-        if (uri){
+        if (uri) {
           this.addIconToMapFromURI(iconId, uri);
           this.dataService.addIconCache(iconId, uri);
         }
-        
+
       }
     })
 
 
 
     this.locationService.eventNewCompassHeading
+      .pipe(
+        map((event: any) => {
+          return event;
+        }),
+        debounceTime(30)
+      )
       .subscribe(heading => {
-        if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
-          this.map.rotateTo(heading.trueHeading);
-          // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
-          this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+        if (this.locationService.compassHeading.trueHeading) {
 
-        } else { // la map reste fixe, l'icon tourne
+          if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
+            if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
+              this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
+            }
+            this.map.rotateTo(heading.trueHeading);
+            // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
+            this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
 
-          const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
-          this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
+          } else { // la map reste fixe, l'icon tourne
+
+            const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
+            this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
+          }
         }
       });
 
@@ -823,12 +891,10 @@ export class MapService {
       }
     });
 
-    // La localisation était déjà ready avnt que la carte ne soit chargée
+    // La localisation était déjà ready avnt que la carte ne soit chargée // TODO: forkjoin!
     if (this.locationService.gpsIsReady) {
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos());
     }
-
-
   }
 
 }

@@ -162,7 +162,7 @@ export class OsmApiService {
 
     createOSMChangeSet(comment): Observable<any> {
         const url = this.getUrlApi() + '/api/0.6/changeset/create';
-        const appVersion = `${this.configService.getAppVersion().appName} ${this.configService.getAppVersion().appVersionNumber}`;
+        const appVersion =  `${this.configService.getAppVersion().appName} ${this.configService.getAppVersion().appVersionNumber} ${this.configService.device.platform || ''}`;
         const content_put = `
         <osm>
             <changeset>
@@ -515,7 +515,7 @@ export class OsmApiService {
         }
         const bboxArea = area(featureBbox);
 
-        if (useOverpassApi || bboxArea > 100000) { // si la surface est > 10000m² => overpass api
+        if (useOverpassApi) { //  overpass api
             const url = 'https://overpass-api.de/api/interpreter';
             return this.http.post(url, this.getUrlOverpassApi(bbox), { responseType: 'text' })
                 .pipe(
@@ -537,7 +537,7 @@ export class OsmApiService {
                         this.formatDataResult(osmData, this.dataService.getGeojson(), featureBbox, this.dataService.getGeojsonChanged());
                     }),
                     catchError((error: any) => {
-                        return throwError(error.message || 'Impossible de télécharger les données (api)');
+                        return throwError(error.error || 'Impossible de télécharger les données (api)');
                     }
                     )
                 );

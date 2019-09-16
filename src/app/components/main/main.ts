@@ -19,9 +19,8 @@ import { timer } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { Plugins } from '@capacitor/core';
 import { IconService } from 'src/app/services/icon.service';
-const { App } = Plugins;
+
 
 @Component({
   templateUrl: './main.html',
@@ -72,22 +71,22 @@ export class MainPage implements AfterViewInit {
       }
     });
 
-
-    App.addListener('backButton', async () => {
-      // state.isActive contains the active state
+    // TODO : back button
+    // App.addListener('backButton', async () => {
+    //   // state.isActive contains the active state
     
-      if (this.router.url === '/main') {
-        if (this.modalIsOpen) {
-          return;
-        }
-        const menuIsOpen = await this.menuCtrl.isOpen('menu1');
-        if (menuIsOpen) {
-          this.menuCtrl.close('menu1');
-        } else {
-          this.presentConfirm();
-        }
-      }
-    });
+    //   if (this.router.url === '/main') {
+    //     if (this.modalIsOpen) {
+    //       return;
+    //     }
+    //     const menuIsOpen = await this.menuCtrl.isOpen('menu1');
+    //     if (menuIsOpen) {
+    //       this.menuCtrl.close('menu1');
+    //     } else {
+    //       this.presentConfirm();
+    //     }
+    //   }
+    // });
 
     mapService.eventShowModal.subscribe(async (_data) => {
 

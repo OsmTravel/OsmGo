@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Calque_1"
+   x="0px"
+   y="0px"
+   width="15px"
+   height="15px"
+   viewBox="0 0 15 15"
+   enable-background="new 0 0 15 15"
+   xml:space="preserve"
+   sodipodi:docname="Fixme.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"><metadata
+   id="metadata13"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+   id="defs11" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1201"
+   inkscape:window-height="675"
+   id="namedview9"
+   showgrid="false"
+   inkscape:zoom="22.250293"
+   inkscape:cx="0.80166927"
+   inkscape:cy="7.6960823"
+   inkscape:window-x="2587"
+   inkscape:window-y="277"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Calque_1" />
+<circle
+   fill="#C62800"
+   stroke="#F2F2F2"
+   stroke-miterlimit="10"
+   cx="7.5"
+   cy="7.5"
+   r="7"
+   id="circle2"
+   style="fill:#fa0000;fill-opacity:0.89690721;stroke:#ffffff;stroke-opacity:1" />
+<g
+   enable-background="new    "
+   id="g6"
+   transform="translate(2)">
+	
+<g
+   aria-label="!"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:moderna;-inkscape-font-specification:moderna;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+   id="text822"
+   transform="matrix(0.310559,0,0,0.32515523,4.0030004,8.7876472)"><path
+     d="M 13.880339,2.6555082 H 8.4803388 V -18.104492 h 5.4000002 z m 0.6,4.96 q 0,1.36 -0.92,2.32 -0.92,0.9199998 -2.28,0.9199998 -1.3600002,0 -2.3200002,-0.9199998 -0.92,-0.96 -0.92,-2.32 0,-1.36 0.92,-2.28 0.96,-0.92 2.3200002,-0.92 1.32,0 2.24,0.96 0.96,0.92 0.96,2.24 z"
+     id="path824"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff" /></g></g>
+</svg>

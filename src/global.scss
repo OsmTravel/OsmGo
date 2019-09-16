@@ -56,3 +56,15 @@ z-index: -2 !important;
     display: block;
     text-align: center;
 }
+
+// scale 
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
+    float: none !important;
+    margin: auto !important;
+    margin-left: auto ;
+    margin-right: auto;
+}
+
+.mapboxgl-ctrl-bottom-left{
+    width: 100%;
+}

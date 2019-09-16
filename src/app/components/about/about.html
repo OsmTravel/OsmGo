@@ -10,21 +10,21 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="ion-padding">
   <ion-card>
     <ion-card-header> OSM Go !</ion-card-header>
     <ion-card-content>
-      Version : {{ configService.getAppVersion().appVersionCode}}
+      Version : {{ configService.getAppVersion().appVersionNumber}} {{this.configService.device.platform || ''}}
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-header> Sources</ion-card-header>
     <ion-card-content>
       {{'ABOUT.DATA' | translate }} : Openstreetmap<br> 
      Ortophoto : <a href="http://openstreetmap.fr/f/2016.05.20_OSM-FR_IGN_Ortho.pdf" target="_blank">IGN</a> 
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
 
   <ion-card>
     

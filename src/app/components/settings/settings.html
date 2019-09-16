@@ -8,8 +8,24 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="ion-padding">
 	<h4> {{ 'SETTINGS.MAP' | translate}} </h4>
+
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>{{ 'SETTINGS.AERIAL_IMAGERY' | translate}}</ion-label>
+
+				<ion-select [(ngModel)]="this.configService.config.baseMapSourceId" (ionChange)="baseMapChange($event)">
+					<ion-select-option *ngFor="let baseMap of this.configService.baseMapSources" [value]="baseMap.id">
+						{{baseMap.label}}
+					</ion-select-option>
+				</ion-select>
+			</ion-item>
+			<label class="hint">{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate}}</label>
+		</ion-card-content>
+	</ion-card>
+
 	<ion-card>
 		<ion-card-content>
 			<ion-item>
@@ -37,6 +53,39 @@
 		<ion-card-header> </ion-card-header>
 		<ion-card-content>
 			<ion-item>
+				<ion-label> {{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate}} </ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.oldTagsIcon.display"
+					(ionChange)="displayOldTagIconChange($event)"></ion-toggle>
+			</ion-item>
+
+			<ion-label>{{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_1' | translate}}  {{ this.configService.config.oldTagsIcon.year }} {{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_2' | translate}}  </ion-label>
+			<ion-range [(ngModel)]="this.configService.config.oldTagsIcon.year" debounce="300"
+				(ionChange)="yearOldTagIconChange($event)" min="0" max="10" step="0.5" pin>
+				<ion-label range-left>0</ion-label>
+				<ion-label range-right>10</ion-label>
+			</ion-range>
+
+			<label class="hint">{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}} </label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header> </ion-card-header>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>{{ 'SETTINGS.DISPLAY_FIXME_ICON' | translate}}</ion-label>
+				<ion-toggle [(ngModel)]="this.configService.config.displayFixmeIcon"
+					(ionChange)="displayFixmeIconChange($event)"></ion-toggle>
+			</ion-item>
+
+			<label class="hint"> {{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate}} </label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header> </ion-card-header>
+		<ion-card-content>
+			<ion-item>
 				<ion-label>{{ 'SETTINGS.HIDE_LARGE_POLYGON' | translate}} </ion-label>
 				<ion-toggle [(ngModel)]="this.configService.config.filterWayByArea"
 					(ionChange)="filterWayByArea($event)"></ion-toggle>
@@ -56,6 +105,8 @@
 			<label class="hint">{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate}}</label>
 		</ion-card-content>
 	</ion-card>
+
+
 
 	<h4>{{ 'SETTINGS.TAGS' | translate}}</h4>
 	<ion-card>
@@ -91,20 +142,6 @@
 		</ion-card-content>
 	</ion-card>
 
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-label>{{ 'SETTINGS.AERIAL_IMAGERY' | translate}}</ion-label>
-
-				<ion-select [(ngModel)]="this.configService.config.baseMapSourceId" (ionChange)="baseMapChange($event)">
-					<ion-select-option *ngFor="let baseMap of this.configService.baseMapSources" [value]="baseMap.id">
-						{{baseMap.label}}
-					</ion-select-option>
-				</ion-select>
-			</ion-item>
-			<label class="hint">{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate}}</label>
-		</ion-card-content>
-	</ion-card>
 
 
 	<ion-card>

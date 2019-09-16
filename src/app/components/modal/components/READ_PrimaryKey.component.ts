@@ -12,7 +12,7 @@ import { Component, Input } from '@angular/core';
         <ion-card-content>
             <p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
             <p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
-                <i class="fa fa-code" aria-hidden="true"></i>
+            <ion-icon name="code"></ion-icon>
                 {{primaryKey.value}}
             </p>
         </ion-card-content>

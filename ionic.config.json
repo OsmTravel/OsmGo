@@ -1,8 +1,7 @@
 {
   "name": "Osm Go",
   "integrations": {
-    "cordova": {},
-    "capacitor": {}
+    "cordova": {}
   },
   "type": "angular"
 }

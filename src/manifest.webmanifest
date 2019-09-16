@@ -1,8 +1,8 @@
 {
-  "name": "Osm Go ! (PWA)",
-  "short_name": "Osm Go ! (PWA)",
+  "name": "Osm Go! (PWA)",
+  "short_name": "Osm Go! (PWA)",
+  "orientation": "portrait",
   "theme_color": "#1976d2",
-  "version": "0.10.0",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
