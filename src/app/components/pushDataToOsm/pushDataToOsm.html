@@ -93,8 +93,10 @@
 
 <ion-footer>
   <!--  [disabled]="summary.Total === 0 || isPushing" ion-button block  -->
-  <ion-button class="footerButton" color="danger" (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
+  <ion-button class="footerButton" color="danger" 
+            [disabled]="isPushing"
+            (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
   <ion-button class="footerButton" 
-              [disabled]="!osmApi.user_info.connected || summary.Total === 0"
+              [disabled]="!osmApi.user_info.connected || summary.Total === 0  || isPushing"
               (click)="pushDataToOsm(commentChangeset)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
 </ion-footer>
