@@ -3,7 +3,6 @@
 
 <ion-content class="ion-padding home" #mycontent>
 
-
 	<div id="map" style="height: 100%; width: 100%" (resized)="onMapResized($event)">
 
 	
@@ -85,4 +84,4 @@
 	</div>
 </ion-content>
 
-<menu style="margin:0;" content="menu1"></menu>
+<menu-component [menuIsOpen]="menuIsOpen"  (closeEvent)="closeMenu()"> </menu-component>

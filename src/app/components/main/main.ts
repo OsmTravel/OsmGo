@@ -30,6 +30,7 @@ import { IconService } from 'src/app/services/icon.service';
 
 export class MainPage implements AfterViewInit {
   modalIsOpen = false;
+  menuIsOpen = false;
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -132,8 +133,13 @@ export class MainPage implements AfterViewInit {
   }
 
   openMenu() {
-    this.menuCtrl.open('menu1');
+    this.configService.freezeMapRenderer = true;
+    this.menuIsOpen = true;
+  }
 
+  closeMenu(){
+    this.configService.freezeMapRenderer = false;
+    this.menuIsOpen = false;
   }
 
   onMapResized(e) {

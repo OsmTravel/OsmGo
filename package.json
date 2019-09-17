@@ -14,6 +14,7 @@
     "sprites": "node  ./scripts/sprites.js"
   },
   "dependencies": {
+    "@angular/animations": "^8.2.6",
     "@angular/common": "~8.2.6",
     "@angular/compiler": "~8.2.6",
     "@angular/core": "~8.2.6",
