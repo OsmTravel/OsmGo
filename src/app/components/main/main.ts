@@ -132,6 +132,7 @@ export class MainPage implements AfterViewInit {
   }
 
   openMenu() {
+  	document.getElementsByClassName("menu-inner")[0].style.display = "block";
     this.menuCtrl.open('menu1');
 
   }

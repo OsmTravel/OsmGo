@@ -1,6 +1,6 @@
 <ion-menu side="start" swipeGesture="false"
 	contentId="menu1" menuId="menu1" 
-	(ionWillOpen)="menuOpened()" 
+	(ionWillOpen)="menuOpened()"
 	(ionWillClose)="menuClosed()"
 	type="overlay"
 	(swipeleft)="swipe($event)"
@@ -9,7 +9,7 @@
 	<ion-header>
 	  <ion-toolbar color="primary">
 			<ion-title>Osm Go !</ion-title>
-			<ion-menu-button class="menu-button">
+			<ion-menu-button class="menu-button" (click)="closeMenu()">
 				<ion-icon style="height: 56px;" name="arrow-back"></ion-icon> 
 			</ion-menu-button>
 	  </ion-toolbar>

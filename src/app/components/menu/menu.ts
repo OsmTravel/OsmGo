@@ -85,7 +85,9 @@ export class MenuPage {
     }
 
     closeMenu() {
-        this.menuCtrl.close();
+    	console.log("triggered");
+    	document.getElementsByClassName("menu-inner")[0].style.display = "none";
+        //this.menuCtrl.close();
     }
 
     logout() {
