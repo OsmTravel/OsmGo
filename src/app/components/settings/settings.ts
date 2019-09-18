@@ -87,7 +87,6 @@ export class SettingsPage {
   }
 
   yearOldTagIconChange(e){
-    console.log(e.detail.value)
     this.configService.setOldTagsIcon(this.configService.config.oldTagsIcon.display, e.detail.value);
     if (this.configService.config.oldTagsIcon.display){
       this.mapService.showOldTagIcon(e.detail.value);
@@ -95,14 +94,16 @@ export class SettingsPage {
   }
 
   displayFixmeIconChange(e){
-    console.log(e.detail.checked);
     this.configService.setDisplayFixmeIcon(e.detail.checked);
     if (e.detail.checked){
       this.mapService.showFixmeIcon();
     } else {
-      console.log('hide fixme')
       this.mapService.hideFixmeIcon();
     }
+  }
+
+  addSurveyDateChange(e){
+    this.configService.setAddSurveyDate(e.detail.checked);
   }
 
 
@@ -116,14 +117,12 @@ export class SettingsPage {
 
     const newLlang = e.detail.value;
     this.configService.setLanguageTags(newLlang);
-
-    console.log(e);
   }
 
   countryTagsChange(e){
     const newCountry = e.detail.value;
     this.configService.setCountryTags(newCountry);
-    console.log(newCountry);
+   
         this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, newCountry)
             .subscribe( e => {
             

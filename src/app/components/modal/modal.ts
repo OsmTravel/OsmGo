@@ -262,6 +262,10 @@ export class ModalsContentPage implements OnInit {
     this.typeFiche = 'Loading';
     this.tagsService.setLastTagAdded(this.primaryKey);
 
+    if(this.configService.getAddSurveyDate()){
+      this.addSurveyDate()
+    }
+
     this.pushTagsToFeature(); // on pousse les tags dans la feature
     if (this.configService.getIsDelayed()) {
       this.osmApi.createOsmNode(this.feature).subscribe(data => {
@@ -310,6 +314,10 @@ export class ModalsContentPage implements OnInit {
       return;
     }
 
+    if(this.configService.getAddSurveyDate()){
+      this.addSurveyDate()
+    }
+  
     this.pushTagsToFeature(); // on pousse les tags dans la feature
 
     if (this.configService.getIsDelayed()) {
@@ -454,6 +462,7 @@ export class ModalsContentPage implements OnInit {
           text: this.translate.instant('SHARED.YES'),
           handler: data => {
             this.addSurveyDate();
+            this.updateOsmElement();
           }
         }
       ]
@@ -484,7 +493,7 @@ export class ModalsContentPage implements OnInit {
       this.tags.push({ 'key': 'survey:date', 'value': isoDate });
     }
 
-    this.updateOsmElement();
+   
   }
 
 }
