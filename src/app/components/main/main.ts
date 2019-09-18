@@ -48,7 +48,7 @@ export class MainPage implements AfterViewInit {
     private _ngZone: NgZone,
     private router: Router,
     private translate: TranslateService,
-    public iconService : IconService,
+    public iconService: IconService,
     public loadingController: LoadingController
   ) {
 
@@ -75,7 +75,7 @@ export class MainPage implements AfterViewInit {
     // TODO : back button
     // App.addListener('backButton', async () => {
     //   // state.isActive contains the active state
-    
+
     //   if (this.router.url === '/main') {
     //     if (this.modalIsOpen) {
     //       return;
@@ -137,7 +137,7 @@ export class MainPage implements AfterViewInit {
     this.menuIsOpen = true;
   }
 
-  closeMenu(){
+  closeMenu() {
     this.configService.freezeMapRenderer = false;
     this.menuIsOpen = false;
   }
@@ -158,7 +158,7 @@ export class MainPage implements AfterViewInit {
       buttons: [
         {
           text: this.translate.instant('SHARED.NO'),
-          role: 'cancel', 
+          role: 'cancel',
           handler: () => {
 
           }
@@ -212,45 +212,55 @@ export class MainPage implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.configService.loadConfig().then(e => {
-      this.translate.use(this.configService.config.languageUi);
-      // this.tagService.loadLastTagAdded();
-      this.tagsService.loadLastTagAdded$().subscribe(e =>
-       console.log
-      )
-      this.tagsService.loadBookMarks$().subscribe(e =>
-        console.log
-      )
 
-      this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
-        .subscribe( async e => {
+    // TODO: Dirty... use rxjs mergemap ?
+    this.configService.getI18nConfig$().subscribe(i18nConfig => {
+
+      this.configService.i18nConfig = i18nConfig;
+      this.configService.loadConfig(i18nConfig).then(e => {
+        this.translate.use(this.configService.config.languageUi);
+
+        this.tagsService.loadLastTagAdded$().subscribe(e =>
+          console.log
+        )
+        this.tagsService.loadBookMarks$().subscribe(e =>
+          console.log
+        )
+
+        this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
+          .subscribe(async e => {
 
             const missingIcons: string[] = await this.iconService.getMissingSpirtes();
-          
-            if( missingIcons.length > 0){
+
+            if (missingIcons.length > 0) {
               const loading = await this.loadingController.create({
                 message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
               });
               await loading.present();
-              const missingSprites:string[]  = await this.iconService.getMissingSpirtes();
-              for ( let missIcon of missingSprites){
-            
+              const missingSprites: string[] = await this.iconService.getMissingSpirtes();
+              for (let missIcon of missingSprites) {
+
                 let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
                 this.dataService.addIconCache(missIcon, uriIcon)
-          
+
               }
               loading.dismiss();
 
-            } 
-       
-         
-         
-        });
+            }
 
-      
-      this.mapService.eventDomMainReady.emit(document.getElementById('map'));
-    })
-    
+
+
+          });
+
+
+        this.mapService.eventDomMainReady.emit(document.getElementById('map'));
+      })
+
+
+    });
+
+
+
     this.alertService.eventDisplayToolTipRefreshData.subscribe(async e => {
 
       const toast = await this.toastCtrl.create({

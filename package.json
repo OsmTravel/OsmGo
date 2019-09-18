@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

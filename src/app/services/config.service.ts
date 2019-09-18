@@ -17,10 +17,7 @@ export class ConfigService {
         private _appVersion: AppVersion
     ) {
 
-        this.getI18nConfig$().subscribe(d => {
-            this.i18nConfig = d;
-            this.loadConfig();
-        });
+   
 
 
     }
@@ -74,12 +71,10 @@ export class ConfigService {
 
 
 
-    loadConfig() {
-
+    loadConfig(_i18nConfig) {
 
         return this.localStorage.get('config')
             .then(d => {
-
                 if (d) {
                     // tslint:disable-next-line:forin
                     for (const key in d) {
@@ -89,18 +84,20 @@ export class ConfigService {
                     this.localStorage.set('config', this.config);
                 }
 
-
-                const currentTagsLanguage = this.i18nConfig.tags.find(l => l.language === this.config.languageTags);
-                if (!currentTagsLanguage) {
-                    this.config.languageTags = 'en';
-                    this.config.countryTags = 'GB';
-                } else {
-                    if (!currentTagsLanguage.country.find(r => r.region === this.config.countryTags)) {
-                        this.config.countryTags = currentTagsLanguage.country[0].region;
+                if (_i18nConfig){
+                    const currentTagsLanguage = _i18nConfig.tags.find(l => l.language === this.config.languageTags);
+                    if (!currentTagsLanguage) {
+                        this.config.languageTags = 'en';
+                        this.config.countryTags = 'GB';
+                    } else {
+                        if (!currentTagsLanguage.country.find(r => r.region === this.config.countryTags)) {
+                            this.config.countryTags = currentTagsLanguage.country[0].region;
+                        }
                     }
+                    this.currentTagsCountryChoice = _i18nConfig.tags.find(l => l.language == this.config.languageTags).country;
+                    this.eventConfigIsLoaded.emit(this.config);
                 }
-                this.currentTagsCountryChoice = this.i18nConfig.tags.find(l => l.language == this.config.languageTags).country;
-                this.eventConfigIsLoaded.emit(this.config);
+            
             });
     }
 
