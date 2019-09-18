@@ -49,7 +49,8 @@ export class ConfigService {
         languageTags: window.navigator.language.split('-')[0] || null,
         countryTags: window.navigator.language.split('-')[1].toUpperCase() || null,
         oldTagsIcon: { display: true, year: 4},
-        displayFixmeIcon : true
+        displayFixmeIcon : true,
+        addSurveyDate: true
     };
 
     currentTagsCountryChoice = [];
@@ -232,5 +233,15 @@ export class ConfigService {
         this.config.displayFixmeIcon = display
         this.localStorage.set('config', this.config);
     }
+
+    getAddSurveyDate() {
+        return this.config.addSurveyDate;
+    }
+    
+    setAddSurveyDate( add: boolean){
+        this.config.addSurveyDate = add
+        this.localStorage.set('config', this.config);
+    }
+    
 
 }

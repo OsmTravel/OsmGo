@@ -99,7 +99,9 @@
     "OLD_TAGS_ICON_RANGE_PART_2": "years ago",
     "OLD_TAGS_ICON_HINT" : "If the object is older, display on the map a small icon to the left of the marker",
     "DISPLAY_FIXME_ICON" : "Display \"fixme\" icons",
-    "DISPLAY_FIXME_ICON_HINT" : "Displays an icon to the right of the marker to indicate the presence of a fixed tag"
+    "DISPLAY_FIXME_ICON_HINT" : "Displays an icon to the right of the marker to indicate the presence of a fixed tag",
+    "ADD_SURVEY_DATE" : "Add today's date to tag 'survey:date",
+    "ADD_SURVEY_DATE_HINT" : "Add today's date to tag 'survey:date after adding/editing object"
     
   },
   "MODAL_SELECTED_ITEM": {
