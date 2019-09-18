@@ -1,48 +1,45 @@
-<ion-menu side="start" swipeGesture="false"
-	contentId="menu1" menuId="menu1" 
-	(ionWillOpen)="menuOpened()" 
-	(ionWillClose)="menuClosed()"
-	type="overlay"
-	(swipeleft)="swipe($event)"
->
-	
-	<ion-header>
-	  <ion-toolbar color="primary">
-			<ion-title>Osm Go !</ion-title>
-			<ion-menu-button class="menu-button">
-				<ion-icon style="height: 56px;" name="arrow-back"></ion-icon> 
-			</ion-menu-button>
-	  </ion-toolbar>
-	</ion-header>
-	<ion-content>
-	  <ion-list>
-		<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
-			{{'MENU.CONNECTION' | translate }}
-		</ion-item>
+<div id="menu" *ngIf="menuIsOpen" (swipeleft)="swipe($event)" @menuAnimation>
+	<div class="menuContent" *ngIf="menuIsOpen">
+		<ion-header>
+			<ion-toolbar color="primary">
+				<ion-title>Osm Go !</ion-title>
+				<div class="menu-button" (click)="closeMenu()">
+					<ion-ripple-effect></ion-ripple-effect>
+					<ion-icon style="height: 56px;" name="arrow-back"></ion-icon>
+				</div>
 
-		<ion-item (click)="pushPage('/settings')">
-			{{'MENU.SETTINGS' | translate }}
-		</ion-item>
+			</ion-toolbar>
+		</ion-header>
+		<ion-content>
+			<ion-list>
+				<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
+					{{'MENU.CONNECTION' | translate }}
+				</ion-item>
 
-		<ion-item (click)="pushPage('/about')">
-			{{'MENU.ABOUT' | translate }}
-		</ion-item>
+				<ion-item (click)="pushPage('/settings')">
+					{{'MENU.SETTINGS' | translate }}
+				</ion-item>
 
-		<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
-			{{'MENU.SIGN_OUT' | translate }} 
-		</ion-item>
+				<ion-item (click)="pushPage('/about')">
+					{{'MENU.ABOUT' | translate }}
+				</ion-item>
 
-		<ion-item color="danger" (click)="deleteDatapresentConfirm()">
-			{{'MENU.DELETE_DATA' | translate }} 
-		</ion-item>
+				<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
+					{{'MENU.SIGN_OUT' | translate }}
+				</ion-item>
 
-		<ion-item  (click)="exit()"> 
-			{{'MENU.EXIT' | translate }} 
-		</ion-item>
-	  </ion-list>
-	</ion-content>
-  </ion-menu>
-  
+				<ion-item color="danger" (click)="deleteDatapresentConfirm()">
+					{{'MENU.DELETE_DATA' | translate }}
+				</ion-item>
 
+				<ion-item (click)="exit()">
+					{{'MENU.EXIT' | translate }}
+				</ion-item>
+			</ion-list>
+		</ion-content>
+	</div>
 
- <ion-router-outlet style="z-index: -2;" id="menu1"></ion-router-outlet> 
+	<div class="backdrop" (click)="closeMenu()">
+	</div>
+
+</div>

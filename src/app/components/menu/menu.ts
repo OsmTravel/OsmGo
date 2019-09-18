@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { MenuController, AlertController, Platform, NavController } from '@ionic/angular';
+import { Component, Output, EventEmitter, Input} from '@angular/core';
+import {  AlertController, Platform, NavController } from '@ionic/angular';
 import { AboutPage } from '../about/about';
 import { PushDataToOsmPage } from '../pushDataToOsm/pushDataToOsm';
 
@@ -9,19 +9,22 @@ import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { AlertService } from '../../services/alert.service';
 import { TranslateService } from '@ngx-translate/core';
+import { menuAnimations } from './menu.animations';
 
 @Component({
-    selector: 'menu',
+    selector: 'menu-component',
     templateUrl: './menu.html',
-    styleUrls: ['./menu.scss']
+    styleUrls: ['./menu.scss'],
+    animations: menuAnimations
 })
 export class MenuPage {
 
-    @Input() content;
+    @Output() closeEvent = new EventEmitter();
+    @Input() menuIsOpen;
     aboutPage = AboutPage;
     pushDataToOsmPage = PushDataToOsmPage;
 
-    constructor(public menuCtrl: MenuController,
+    constructor(
         public mapService: MapService,
         public osmApi: OsmApiService,
         public dataService: DataService,
@@ -35,14 +38,7 @@ export class MenuPage {
 
 
     }
-    menuClosed() {
-        this.configService.freezeMapRenderer = false;
-    }
 
-    // Le menu est ouvert, on freeze le rendu de la carte
-    menuOpened() {
-        this.configService.freezeMapRenderer = true;
-    }
 
     deleteDatapresentConfirm() {
         this.alertCtrl.create({
@@ -85,7 +81,7 @@ export class MenuPage {
     }
 
     closeMenu() {
-        this.menuCtrl.close();
+        this.closeEvent.emit()
     }
 
     logout() {

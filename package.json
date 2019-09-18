@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,6 +14,7 @@
     "sprites": "node  ./scripts/sprites.js"
   },
   "dependencies": {
+    "@angular/animations": "^8.2.6",
     "@angular/common": "~8.2.6",
     "@angular/compiler": "~8.2.6",
     "@angular/core": "~8.2.6",

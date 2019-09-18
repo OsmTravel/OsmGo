@@ -99,7 +99,9 @@
     "OLD_TAGS_ICON_RANGE_PART_2": "ans",
     "OLD_TAGS_ICON_HINT" : "Si l'objet est plus vieux, affiche sur la carte un petit icône à gauche du marqueur",
     "DISPLAY_FIXME_ICON" : "Afficher un icône \"fixme\"",
-    "DISPLAY_FIXME_ICON_HINT" : "Affiche un icône à droite du marker pour indiquer la présence d'un tag fixme"
+    "DISPLAY_FIXME_ICON_HINT" : "Affiche un icône à droite du marker pour indiquer la présence d'un tag fixme",
+    "ADD_SURVEY_DATE" : "Ajouter le tag 'survey:date'",
+    "ADD_SURVEY_DATE_HINT" : "Ajouter le tag 'survey:date' à la date du jour pour chaque création/modification d'un objet"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "Liste",
