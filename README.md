@@ -23,7 +23,7 @@ A short and breaking down documentation can be found at the [repo wiki](https://
 
 
 ### Dev
-Osm Go! is a _hybrid_ application utilizing Ionic 4 and Cordova with Angular 7. It uses the map rendering engine Mapbox GL JS to display and run the in-app map.
+Osm Go! is a _hybrid_ application utilizing Ionic 4 and Cordova with Angular 8. It uses the map rendering engine Mapbox GL JS to display and run the in-app map.
 
 #### Installation 
 1) Install npm dependencies globally
@@ -37,7 +37,7 @@ https://github.com/DoFabien/OsmGo.git
 cd OsmGo
 npm install
 ```
-3) Test it
+3) Test it in a browser
 ```sh
 ionic serve 
 ```
@@ -58,3 +58,15 @@ ionic cordova run android
 The app hasn't been made available to iOS users yet. For this app to work in iOS extremely modifications needs to be done.
 I do not have an iPhone nor a Mac to develop nor to debug an iOS version of this app. You will need a Mac and a developer account for 100$ per year to develop iOS apps.
 If someone has all this and wants to make a port, I would be happy to help them.
+
+
+c## Contributing
+If you want to contribute to Osm Go! and make it better, your help is welcome !
+
+ 1. Create a personal fork of the project on Github.
+ 2. Clone your fork on your local machine
+ 3. Create a new branch to work on! Branch from develop (feature) or master (hotfix)
+ 4. Implement your feature and tests
+ 5. Push your branch to your fork on Github, the remote `origin`.
+ 6. From your fork open a pull request in the correct branch. 
+ 
