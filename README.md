@@ -1,16 +1,16 @@
 # Osm Go ! 
 
-### Cartographiez les tous! 
+### Mapping less frustrating! 
 
-On parle bien des POI ! 
-*OSM Go !* est une application mobile qui permet d'enrichir OpenStreetMap directement sur le terrain.
-Cartographiez votre environnement direct n'a jamais été aussi simple et rapide. Gardez les yeux ouverts et ayez le bon réflexe ! 
+It's all POI !
+_OSM Go !_ is an Android application for contributing to OpenStreetMap.
+Map your environment simple and fast directly from within the app. Keep your eyes wide open and contribute to OSM while on the run.
 
-L'APK peut se trouver dans la catégorie [releases de ce repo](https://github.com/DoFabien/OsmGo/releases) 
+The APK can be found in [the release list of this repository](https://github.com/DoFabien/OsmGo/releases) 
 
-L'application Android est disponible sur [GooglePlay](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
+The application on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
-Une documentation rapide est [disponible ici](https://github.com/DoFabien/OsmGo/wiki)
+A short and breaking down documentation can be found at the [repo wiki](https://github.com/DoFabien/OsmGo/wiki).
 
  <p align="center">
   <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-vt.png?raw=true"/>
@@ -23,39 +23,50 @@ Une documentation rapide est [disponible ici](https://github.com/DoFabien/OsmGo/
 
 
 ### Dev
-Osm Go! est une application *hybride* utilisant Ionic 4, donc Cordova et Angular 7. Pour le rendu de la carte, c'est l'excellent Mapbox GL JS qui est à la manœuvre
+Osm Go! is a _hybrid_ application utilizing Ionic 4 and Cordova with Angular 8. It uses the map rendering engine Mapbox GL JS to display and run the in-app map.
 
 #### Installation 
-1) Installation des dépendences globales
+1) Install npm dependencies globally
 ```sh
 npm install -g cordova
 npm install -g ionic
 ```
-2) Clone et installation des dépendences
+2) Clone this repo and install
 ```sh
 https://github.com/DoFabien/OsmGo.git
 cd OsmGo
 npm install
 ```
-3) Test dans le navigateur
+3) Test it in a browser
 ```sh
 ionic serve 
 ```
 
 #### Android
-Pour l'executer sur un smartphone Android, il faut installer et configurer tout l'environnement de developpement : JDK, Gradle, SDK d'Android, etc. Ça demande un peu de place sur le disque et pas mal de patience. En somme c'est du Java...
+Debugging the app on your Android smartphone requires you to set up the whole development environment JDK, Gradle, SDK Android etc. Please be patient! It's Java... :)
 
-1) Ajouter la platforme Android
+1) Add the android platform to ionic
 ```sh
 ionic cordova platform add android
 ```
-2) Executer l'app sur un smartphone connecté en USB, ou à défaut sur un emulateur 
+2) Connect your smartphone via USB and put it in debugging mode. Execute the following command from within terminal.
 ```sh
 ionic cordova run android
 ```
 
 #### iOS
-L'application devrait fonctionner sur iOS avec quelques modifications extrêmement mineures du code.
-Néanmoins, je n'ai pas d'iPhone, ni de Mac (pour faire une app ios, il faut un Mac...) et encore moins 100$/an à mettre pour avoir un compte développeur.
+The app hasn't been made available to iOS users yet. For this app to work in iOS extremely modifications needs to be done.
+I do not have an iPhone nor a Mac to develop nor to debug an iOS version of this app. You will need a Mac and a developer account for 100$ per year to develop iOS apps.
+If someone has all this and wants to make a port, I would be happy to help them.
 
-Si quelqu'un possède tout ça et souhaite porter l'app sur iOS, je serais heureux de l'aider.
+
+c## Contributing
+If you want to contribute to Osm Go! and make it better, your help is welcome !
+
+ 1. Create a personal fork of the project on Github.
+ 2. Clone your fork on your local machine
+ 3. Create a new branch to work on! Branch from develop (feature) or master (hotfix)
+ 4. Implement your feature and tests
+ 5. Push your branch to your fork on Github, the remote `origin`.
+ 6. From your fork open a pull request in the correct branch. 
+ 

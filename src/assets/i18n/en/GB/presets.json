@@ -364,7 +364,7 @@
   },
   "seats": {
     "type": "number",
-    "lbl": "Nimber of seats",
+    "lbl": "Number of seats",
     "tags": [],
     "key": "seats"
   },
