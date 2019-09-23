@@ -11,6 +11,7 @@ import { TagsService } from './tags.service';
 import { DataService } from './data.service';
 import { AlertService } from './alert.service';
 import { ConfigService } from './config.service';
+import * as _ from 'lodash';
 
 declare var osmtogeojson: any;
 
@@ -297,7 +298,7 @@ export class OsmApiService {
     /// CREATE NODE
 
     createOsmNode(_feature) {
-        const feature = JSON.parse(JSON.stringify(_feature));
+        const feature = _.cloneDeep(_feature);
         const d = new Date();
         const tmpId = 'tmp_' + d.getTime();
         feature.id = 'node/' + tmpId;
@@ -311,7 +312,7 @@ export class OsmApiService {
 
     }
     apiOsmCreateNode(_feature, changesetId) {
-        const feature = JSON.parse(JSON.stringify(_feature));
+        const feature =  _.cloneDeep(_feature);
         const url = this.getUrlApi() + '/api/0.6/node/create';
         const content_put = this.geojson2OsmCreate(feature, changesetId);
 
@@ -324,13 +325,16 @@ export class OsmApiService {
                 map(id => {
                     return id;
                 }),
-                catchError((error: any) => throwError(error.json().error || 'Impossible de créer l\'élément'))
+                catchError( error => {
+                    return throwError(error); 
+                })
+               
             );
     }
 
     // Update
     updateOsmElement(_feature, origineData) {
-        const feature = JSON.parse(JSON.stringify(_feature));
+        const feature = _.cloneDeep(_feature);
         const id = feature.id;
         if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
@@ -344,7 +348,7 @@ export class OsmApiService {
     }
 
     apiOsmUpdateOsmElement(_feature, changesetId) {
-        const feature = JSON.parse(JSON.stringify(_feature));
+        const feature = _.cloneDeep(_feature);
         const id = feature.id;
 
         const url = this.getUrlApi() + '/api/0.6/' + id;
@@ -360,13 +364,19 @@ export class OsmApiService {
                 map(data => {
                     this.mapService.eventOsmElementUpdated.emit(feature);
                     return data;
+                }),
+                catchError( error => {
+                    return throwError(error); 
                 })
+                
             );
     }
 
+  
+
     // Delete
     deleteOsmElement(_feature) {
-        const feature = JSON.parse(JSON.stringify(_feature));
+        const feature = _.cloneDeep(_feature);
         const id = feature.id;
 
         if (feature.properties.changeType) { // il a déjà été modifié
@@ -387,7 +397,7 @@ export class OsmApiService {
     }
 
     apiOsmDeleteOsmElement(_feature, changesetId) {
-        const feature = JSON.parse(JSON.stringify(_feature));
+        const feature = _.cloneDeep(_feature);
         const id = feature.id;
         const content_delete = this.geojson2OsmUpdate(feature, changesetId);
         const url = this.getUrlApi() + '/api/0.6/' + id;
@@ -397,16 +407,15 @@ export class OsmApiService {
             .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`);
 
         // TODO !
-        // return this.http.put(url, content_put, { headers: headers, responseType: 'text' })
 
-        // const headers = new Headers();
-        // headers.append('Authorization', 'Basic ' + btoa(this.getUserInfo().user + ':' + this.getUserInfo().password));
-        // return this.http.delete(url, { headers: headers, body: content_delete })
         return this.http.request('delete', url, { headers: headers, body: content_delete })
             .pipe(
                 map(data => {
                     this.mapService.eventOsmElementDeleted.emit(feature);
                     return data;
+                }),
+                catchError( error => {
+                    return throwError(error); 
                 })
             );
     }
@@ -436,7 +445,7 @@ export class OsmApiService {
 
         } else {
             const oldBbox = this.dataService.getGeojsonBbox();
-            const oldBboxFeature = JSON.parse(JSON.stringify(oldBbox.features[0]));
+            const oldBboxFeature = _.cloneDeep(oldBbox.features[0]);
 
             const resultUnion = union(newBoboxFeature, oldBboxFeature);
             resBbox = { 'type': 'FeatureCollection', 'features': [resultUnion] };

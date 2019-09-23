@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -70,6 +70,7 @@
     "@ionic/angular-toolkit": "~2.0.0",
     "@types/jasmine": "~3.4.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/lodash": "^4.14.139",
     "@types/node": "~12.7.5",
     "cheerio": "^1.0.0-rc.3",
     "codelyzer": "^5.0.0",
