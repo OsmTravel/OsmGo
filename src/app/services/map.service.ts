@@ -19,6 +19,7 @@ import * as mapboxgl from 'mapbox-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { IconService } from './icon.service';
+import { AlertInput } from '@ionic/core';
 
 // const circleMarkerModelPath = `<path fill="{{color}}" d="M12,0C5.371,0,0,5.903,0,13.187c0,0.829,0.079,1.643,0.212,2.424c0.302,1.785,0.924,3.448,1.81,4.901
 // l0.107,0.163L11.965,36l9.952-15.393l0.045-0.064c0.949-1.555,1.595-3.343,1.875-5.269C23.934,14.589,24,13.899,24,13.187
@@ -765,7 +766,7 @@ export class MapService {
       const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
-        const inputsParams = uniqFeaturesById.map((f, i) => {
+        const inputsParams: any = uniqFeaturesById.map((f, i) => {
           const tags = JSON.parse(f['properties'].tags);
           const pk = JSON.parse(f['properties'].primaryTag);
           const name = tags.name || '?';

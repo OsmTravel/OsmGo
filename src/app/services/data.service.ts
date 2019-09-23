@@ -40,7 +40,16 @@ export class DataService {
     }
 
     async clearCache(){
-        await this.localStorage.clear();
+        try {
+            await this.localStorage.clear();
+        } catch (error) {}
+
+        try{
+            const dbs = await window.indexedDB.deleteDatabase('_ionickv')
+        }
+        catch (error) { console.log(error)}
+        localStorage.clear();
+       
     }
 
 
@@ -116,7 +125,7 @@ export class DataService {
         return JSON.parse(JSON.stringify(this.geojsonChanged));
     }
 
-    setGeojsonChanged(geojson) {
+    setGeojsonChanged(geojson) { // TODO: Promise... Async await ? 
         this.geojsonChanged = geojson;
         this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
@@ -182,8 +191,9 @@ export class DataService {
     }
 
     // supprime l'intégralité des changements
-    resetGeojsonChanged(){
+    async resetGeojsonChanged(){
         this.geojsonChanged = { 'type': 'FeatureCollection', 'features': [] };
+        await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
 
