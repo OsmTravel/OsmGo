@@ -57,7 +57,6 @@ export class ModalsContentPage implements OnInit {
     private translate: TranslateService
 
   ) {
-
     this.newPosition = params.data.newPosition;
 
     this.feature = JSON.parse(JSON.stringify(params.data.data));
