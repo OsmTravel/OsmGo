@@ -1,0 +1,22 @@
+{
+    "env": {
+      "cjs": {
+        "presets": [
+          ["@babel/preset-env", {
+            "targets": {
+              "browsers": ["since 2018"]
+            }
+          }]
+        ]
+      },
+      "iife": {
+        "presets": [
+          ["@babel/preset-env", {
+            "targets": {
+              "browsers": ["> 0.5%"]
+            }
+          }]
+        ]
+      }
+    }
+  }

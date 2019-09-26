@@ -13,12 +13,9 @@ import { AlertService } from './alert.service';
 import { ConfigService } from './config.service';
 import * as _ from 'lodash';
 
-declare var osmtogeojson: any;
 
-import {
-    union, bboxPolygon, area, BBox
-} from '@turf/turf';
 
+import bboxPolygon  from '@turf/bbox-polygon'
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
@@ -207,6 +204,16 @@ export class OsmApiService {
         }
     }
 
+
+    escapeXmlValue(a){
+     return a
+     .replace(/&/g, '&amp;')
+     .replace(/'/g, "&apos;")
+     .replace(/"/g, '&quot;')
+     .replace(/</g, '&lt;')
+     .replace(/>/g, '&gt;')
+ }
+
     // GEOJSON => XML osm
     geojson2OsmCreate(geojson, id_changeset) {
         const tags_json = geojson.properties.tags;
@@ -215,10 +222,10 @@ export class OsmApiService {
         const node_header = `<node changeset="${id_changeset}" lat="${lat}" lon="${lng}">`;
         let tags_xml = '';
         for (const k in tags_json) {
-            if (k !== '' && tags_json[k] !== '') {
-                tags_xml += `<tag
-                k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
-                v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
+            if (k !== '' && tags_json[k] !== '') { // TODO: miss 
+                tags_xml += `<tag 
+                k="${this.escapeXmlValue(k.trim())}"
+                v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`;
             }
         }
         const xml = `<osm> ${node_header}  ${tags_xml} </node></osm>`;
@@ -244,8 +251,8 @@ export class OsmApiService {
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += `<tag
-                                    k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
-                                    v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
+                                    k="${this.escapeXmlValue(k.trim())}"
+                                    v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`;
 
                 }
             }
@@ -257,8 +264,8 @@ export class OsmApiService {
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += `<tag
-                    k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
-                    v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
+                    k="${this.escapeXmlValue(k.trim())}"
+                    v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`;
                 }
             }
             let nd_ref_xml = '';
@@ -273,8 +280,8 @@ export class OsmApiService {
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
                     tags_xml += `<tag
-                        k="${k.trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"
-                        v="${String(tags_json[k]).trim().replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"/>`;
+                        k="${this.escapeXmlValue(k.trim())}"
+                        v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`;
                 }
             }
             let rel_ref_xml = '';
@@ -420,7 +427,7 @@ export class OsmApiService {
             );
     }
 
-    getUrlOverpassApi(bbox: BBox) {
+    getUrlOverpassApi(bbox: any) {
 
         const OPapiBbox = bbox[1] + ',' + bbox[0] + ',' + bbox[3] + ',' + bbox[2];
         const keys = this.tagsService.getListOfPrimaryKey();
@@ -436,40 +443,28 @@ export class OsmApiService {
     }
 
 
-
-    setBbox(newBoboxFeature) {
-        let resBbox;
-        if (this.dataService.getGeojsonBbox().features.length === 0) {
-            resBbox = { 'type': 'FeatureCollection', 'features': [newBoboxFeature] };
-            this.dataService.setGeojsonBbox(resBbox);
-
-        } else {
-            const oldBbox = this.dataService.getGeojsonBbox();
-            const oldBboxFeature = _.cloneDeep(oldBbox.features[0]);
-
-            const resultUnion = union(newBoboxFeature, oldBboxFeature);
-            resBbox = { 'type': 'FeatureCollection', 'features': [resultUnion] };
-            this.dataService.setGeojsonBbox(resBbox);
-        }
-        this.mapService.eventNewBboxPolygon.emit(resBbox);
-    }
     /*
         Observable : Utilise un Web Worker pour, ajouter un point au polygon, definir le style, filtrer et fusionner les données
     */
-    formatOsmJsonData$(newGeojson, oldGeojson, featureBbox, geojsonChanged) {
+    formatOsmJsonData$(osmData, oldGeojson, featureBbox, geojsonChanged) {
         const that = this;
+       
+        const oldBbox = this.dataService.getGeojsonBbox();
+            const oldBboxFeature = _.cloneDeep(oldBbox.features[0]);
+            // console.log(oldBboxFeature);
+
         return from(
             new Promise((resolve, reject) => {
                 const workerFormatData = new Worker('assets/workers/worker-formatOsmData.js');
                 workerFormatData.postMessage({
                     tagsConfig: that.tagsService.getTags(),
-                    osmData: newGeojson,
+                    osmData: osmData,
                     oldGeojson: oldGeojson,
-                    featureBbox: featureBbox,
+                    oldBboxFeature: oldBboxFeature,
                     geojsonChanged: geojsonChanged
                 });
 
-                workerFormatData.onmessage = function (formatedData) {
+                workerFormatData.onmessage =  (formatedData) => {
                     workerFormatData.terminate();
                     if (formatedData.data) {
                         resolve(formatedData.data);
@@ -491,22 +486,18 @@ export class OsmApiService {
         * utilisation du webworker
     */
     formatDataResult(osmData, oldGeojson, featureBbox, geojsonChanged) {
-        const xml = new DOMParser().parseFromString(osmData, 'text/xml');
-        if (xml.getElementsByTagName('remark')[0]
-            && xml.getElementsByTagName('remark')[0]['textContent']) {
-            return { 'error': xml.getElementsByTagName('remark')[0]['textContent'] };
-        }
-        const geojson = osmtogeojson(xml).geojson;
-
-        return this.formatOsmJsonData$(geojson, oldGeojson, featureBbox, geojsonChanged)
+        
+        return this.formatOsmJsonData$(osmData, oldGeojson, featureBbox, geojsonChanged)
             .subscribe(newDataJson => {
                 // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
                 if (newDataJson['error']) {
                     throw (newDataJson['error']);
                 }
-                this.setBbox(featureBbox);
-                this.dataService.setGeojson(newDataJson);
-                this.mapService.eventMarkerReDraw.emit(newDataJson);
+ 
+                this.dataService.setGeojsonBbox(newDataJson['geojsonBbox']);
+                this.mapService.eventNewBboxPolygon.emit(newDataJson['geojsonBbox']);
+                this.dataService.setGeojson(newDataJson['geojson']);
+                this.mapService.eventMarkerReDraw.emit(newDataJson['geojson']);
                 this.mapService.loadingData = false;
             },
                 error => {
@@ -516,13 +507,12 @@ export class OsmApiService {
             );
     }
 
-    getDataFromBbox(bbox: BBox, useOverpassApi: boolean = false) {
+    getDataFromBbox(bbox: any, useOverpassApi: boolean = false) {
         const featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
             featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
             featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
-        const bboxArea = area(featureBbox);
 
         if (useOverpassApi) { //  overpass api
             const url = 'https://overpass-api.de/api/interpreter';
