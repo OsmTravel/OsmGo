@@ -9,8 +9,6 @@ import { Vibration } from '@ionic-native/vibration/ngx';
 import { debounceTime } from "rxjs/operators";
 import * as _ from 'lodash';
 
-import * as svgToPng from 'save-svg-as-png'
-
 
 import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
@@ -758,7 +756,7 @@ export class MapService {
       if (!features.length) {
         return;
       }
-
+      console.log(features);
       this.vibration.vibrate(50);
 
 

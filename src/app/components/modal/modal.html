@@ -24,7 +24,8 @@
 		<div class="content">
 			<read-meta *ngIf="feature.properties.meta" 
 					[meta]="feature.properties.meta"
-					[displayCode]="displayCode"> 
+					[displayCode]="displayCode"
+					[usedByWays]="feature.properties.usedByWays || null"> 
 			</read-meta>
 
 			<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.alert != ''" class="alertCard">
@@ -98,7 +99,8 @@
 		<div class="content">
 			<read-meta *ngIf="feature.properties.meta" 
 				[meta]="feature.properties.meta"
-				[displayCode]="displayCode"> 
+				[displayCode]="displayCode"
+				[usedByWays]="feature.properties.usedByWays || null"> 
 			</read-meta>
 			<!--Alert-->
 			<ion-card *ngIf="configOfPrimaryKey?.alert && configOfPrimaryKey?.alert != ''" class="alertCard">
@@ -171,6 +173,7 @@
 			</ion-fab-button>
 
 			<ion-fab-button  tappable *ngIf="feature.properties.type === 'node'" 
+			[disabled]="feature.properties.usedByWays"
 			(click)="moveOsmElement()" class="fabInlineMarginLess">
 				<ion-icon name="move"> </ion-icon>
 			</ion-fab-button>

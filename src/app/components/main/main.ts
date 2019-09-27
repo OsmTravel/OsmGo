@@ -13,7 +13,6 @@ import { LocationService } from '../../services/location.service';
 import { AlertService } from '../../services/alert.service';
 import { ConfigService } from '../../services/config.service';
 import { ModalsContentPage } from '../modal/modal';
-import { BBox } from '@turf/turf';
 
 import { timer } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
@@ -184,8 +183,8 @@ export class MainPage implements AfterViewInit {
     });
 
 
-    const bbox: BBox = this.mapService.getBbox();
-    this.osmApi.getDataFromBbox(bbox, false)
+    const bbox: any = this.mapService.getBbox();
+    this.osmApi.getDataFromBbox(bbox)
       .subscribe(data => { // data = geojson a partir du serveur osm
 
       },

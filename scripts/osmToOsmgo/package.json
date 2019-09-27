@@ -1,0 +1,36 @@
+{
+  "name": "osm-to-osmgo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-modules test.mjs ",
+    "js:esmbuild": "BABEL_ENV=cjs rollup --config",
+    "js:iifebuild": "BABEL_ENV=iife rollup --config",
+    "build": "npm run js:esmbuild && npm run js:iifebuild",
+    "watch": "BABEL_ENV=cjs rollup --config --watch"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@turf/area": "^6.0.1",
+    "@turf/bbox-polygon": "^6.0.1",
+    "@turf/boolean-point-in-polygon": "^6.0.1",
+    "@turf/length": "^6.0.2",
+    "@turf/point-on-feature": "^5.1.5",
+    "fast-xml-parser": "^3.12.20",
+    "lodash": "^4.17.15",
+    "martinez-polygon-clipping": "^0.5.0",
+    "save": "^2.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.2"
+  }
+}
