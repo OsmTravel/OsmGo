@@ -20,7 +20,7 @@ import bboxPolygon  from '@turf/bbox-polygon'
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
 
-    isDevServer = false;
+    isDevServer = true;
     urlsOsm = {
         prod: { 'api': 'https://api.openstreetmap.org' },
         dev: { 'api': 'https://master.apis.dev.openstreetmap.org' }

@@ -183,7 +183,22 @@ export class PushDataToOsmPage implements AfterViewInit {
                         });
             } else if
                 (featureChanged.properties.changeType === 'Delete') {
-                this.osmApi.apiOsmDeleteOsmElement(featureChanged, CS)
+                if (featureChanged.properties.usedByWays){
+                    let emptyFeaturetags = _.clone(featureChanged);
+                    emptyFeaturetags['properties']['tags']= {};
+
+                    this.osmApi.apiOsmUpdateOsmElement(emptyFeaturetags, CS)
+                    .subscribe(newVersion => {
+                        this.summary.Total--;
+                        this.summary.Delete--;
+                        this.dataService.deleteFeatureFromGeojsonChanged(featureChanged);
+                        this.featuresChanges = this.dataService.getGeojsonChanged().features;
+                        resolve(newVersion);
+                    })
+                   
+
+                }else {
+                    this.osmApi.apiOsmDeleteOsmElement(featureChanged, CS)
                     .subscribe(id => {
                         this.summary.Total--;
                         this.summary.Delete--;
@@ -197,6 +212,8 @@ export class PushDataToOsmPage implements AfterViewInit {
                             this.featuresChanges = this.dataService.getGeojsonChanged().features;
                             reject(error)
                         });
+                }
+            
             }
         })
     }
