@@ -184,7 +184,7 @@ export class MainPage implements AfterViewInit {
 
 
     const bbox: any = this.mapService.getBbox();
-    this.osmApi.getDataFromBbox(bbox, false)
+    this.osmApi.getDataFromBbox(bbox)
       .subscribe(data => { // data = geojson a partir du serveur osm
 
       },

@@ -22,8 +22,8 @@ export class OsmApiService {
 
     isDevServer = false;
     urlsOsm = {
-        prod: { 'api': 'https://api.openstreetmap.org', 'overpass': 'https://overpass-api.de/api/interpreter' },
-        dev: { 'api': 'https://master.apis.dev.openstreetmap.org', 'overpass': '' }
+        prod: { 'api': 'https://api.openstreetmap.org' },
+        dev: { 'api': 'https://master.apis.dev.openstreetmap.org' }
     };
 
 
@@ -427,22 +427,6 @@ export class OsmApiService {
             );
     }
 
-    getUrlOverpassApi(bbox: any) {
-
-        const OPapiBbox = bbox[1] + ',' + bbox[0] + ',' + bbox[3] + ',' + bbox[2];
-        const keys = this.tagsService.getListOfPrimaryKey();
-        let queryContent = '';
-        for (let i = 0; i < keys.length; i++) {
-            const key = keys[i];
-            queryContent = queryContent + 'node["' + key + '"](' + OPapiBbox + ');';
-            queryContent = queryContent + 'way["' + key + '"](' + OPapiBbox + ');';
-            queryContent = queryContent + 'relation["' + key + '"](' + OPapiBbox + ');';
-        }
-        const query = '[out:xml][timeout:25];(' + queryContent + ');out meta;>;out meta;';
-        return query;
-    }
-
-
     /*
         Observable : Utilise un Web Worker pour, ajouter un point au polygon, definir le style, filtrer et fusionner les données
     */
@@ -507,28 +491,13 @@ export class OsmApiService {
             );
     }
 
-    getDataFromBbox(bbox: any, useOverpassApi: boolean = false) {
+    getDataFromBbox(bbox: any) {
         const featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
             featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
             featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
 
-        if (useOverpassApi) { //  overpass api
-            const url = 'https://overpass-api.de/api/interpreter';
-            return this.http.post(url, this.getUrlOverpassApi(bbox), { responseType: 'text' })
-                .pipe(
-                    map((osmData) => {
-                        this.formatDataResult(osmData, this.dataService.getGeojson(), featureBbox, this.dataService.getGeojsonChanged());
-                    }),
-                    catchError((error: any) => {
-                        return throwError(error.message || 'Impossible de télécharger les données (overpassApi)');
-                    }
-                    )
-                );
-
-
-        } else {
             const url = this.getUrlApi() + '/api/0.6/map?bbox=' + bbox.join(',');
             return this.http.get(url, { responseType: 'text' })
                 .pipe(
@@ -541,6 +510,6 @@ export class OsmApiService {
                     )
                 );
 
-        }
+        
     }
 } // EOF Services
