@@ -82,6 +82,7 @@ export class ModalsContentPage implements OnInit {
 
 
   ngOnInit() { // override
+    console.log(this.feature);
     this.initComponent();
   }
 
