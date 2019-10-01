@@ -1,9 +1,9 @@
 {
   "cuisine": {
     "type": "list",
-    "lbl": "Cuisine",
+    "lbl": "cuisine",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "barbecue", "lbl": "Barbecue"},
       {"v": "steak_house", "lbl": "Beef Steak"},
       {"v": "burger", "lbl": "Burger"},
@@ -81,7 +81,7 @@
     "type": "select",
     "lbl": "Type",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "underground", "lbl": "underground"},
       {"v": "pillar", "lbl": "pillar"},
       {"v": "wall", "lbl": "wall"},
@@ -93,7 +93,7 @@
     "type": "select",
     "lbl": "Position",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "lane", "lbl": "lane"},
       {"v": "parking_lot", "lbl": "parking lot"},
       {"v": "sidewalk", "lbl": "sidewalk"},
@@ -118,7 +118,7 @@
     "type": "select",
     "lbl": "Type",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "stands", "lbl": "stands"},
       {"v": "shed", "lbl": "shed"},
       {"v": "lockers", "lbl": "lockers"},
@@ -138,7 +138,7 @@
     "type": "select",
     "lbl": "Covered",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -148,7 +148,7 @@
     "type": "select",
     "lbl": "Speciality",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "pork", "lbl": "pork"},
       {"v": "poultry", "lbl": "poultry"},
       {"v": "game", "lbl": "game"},
@@ -161,7 +161,7 @@
     "type": "select",
     "lbl": "organic",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"},
       {"v": "only", "lbl": "Only"}
@@ -172,7 +172,7 @@
     "type": "select",
     "lbl": "pastry",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"},
       {"v": "only", "lbl": "Only"}
@@ -183,7 +183,7 @@
     "type": "select",
     "lbl": "Homme",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -193,7 +193,7 @@
     "type": "select",
     "lbl": "Femme",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -203,7 +203,7 @@
     "type": "select",
     "lbl": "lottery",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -213,7 +213,7 @@
     "type": "select",
     "lbl": "Self service",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -223,7 +223,7 @@
     "type": "select",
     "lbl": "Second Hand",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -233,7 +233,7 @@
     "type": "select",
     "lbl": "Type",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "container", "lbl": "Container"},
       {"v": "centre", "lbl": "Centre"}
     ],
@@ -243,7 +243,7 @@
     "type": "select",
     "lbl": "Glass Bottles",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -253,7 +253,7 @@
     "type": "select",
     "lbl": "Papier",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -263,7 +263,7 @@
     "type": "select",
     "lbl": "Plastic",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -273,7 +273,7 @@
     "type": "select",
     "lbl": "Backrest",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -283,7 +283,7 @@
     "type": "select",
     "lbl": "Tobacco",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -293,7 +293,7 @@
     "type": "select",
     "lbl": "Bench",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -303,7 +303,7 @@
     "type": "select",
     "lbl": "Wheelchair",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"},
       {"v": "limited", "lbl": "Limited"},
@@ -315,7 +315,7 @@
     "type": "select",
     "lbl": "Fee",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"},
       {"v": "interval", "lbl": "interval"}
@@ -326,7 +326,7 @@
     "type": "select",
     "lbl": "Drive",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -336,7 +336,7 @@
     "type": "select",
     "lbl": "Dispensing",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -346,7 +346,7 @@
     "type": "select",
     "lbl": "Shelter",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -356,7 +356,7 @@
     "type": "select",
     "lbl": "Tactile_paving",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
@@ -372,7 +372,7 @@
     "type": "select",
     "lbl": "Religion",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "christian", "lbl": "Christian"},
       {"v": "jewish", "lbl": "Jewish"},
       {"v": "muslim", "lbl": "Muslim"},
@@ -384,7 +384,7 @@
     "type": "list",
     "lbl": "Vending",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "admission_tickets", "lbl": "admission tickets"},
       {"v": "bread", "lbl": "bread"},
       {"v": "cigarettes", "lbl": "cigarettes"},
@@ -406,7 +406,7 @@
     "type": "list",
     "lbl": "Social Facility",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "group_home", "lbl": "group home"},
       {"v": "assisted_living", "lbl": "assisted living"},
       {"v": "shelter", "lbl": "shelter"},
@@ -421,7 +421,7 @@
     "type": "list",
     "lbl": "social Facility for",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "abused", "lbl": "Abused"},
       {"v": "child", "lbl": "child"},
       {"v": "disabled", "lbl": "disabled"},
@@ -443,7 +443,7 @@
     "type": "select",
     "lbl": "Nursery",
     "tags": [
-      {"v": "", "lbl": " Not Known"},
+      {"v": "", "lbl": "unknown"},
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"}
     ],
