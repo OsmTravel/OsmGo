@@ -60,7 +60,7 @@
       {"v": "iranian", "lbl": "iranian"},
       {"v": "italian", "lbl": "italian"},
       {"v": "japanese", "lbl": "japanese"},
-      {"v": "latin_american", "lbl": "latin_american"},
+      {"v": "latin_american", "lbl": "latin-american"},
       {"v": "lebanese", "lbl": "lebanese"},
       {"v": "malagasy", "lbl": "malagasy"},
       {"v": "mexican", "lbl": "mexican"},
@@ -95,7 +95,7 @@
     "tags": [
       {"v": "", "lbl": " Not Known"},
       {"v": "lane", "lbl": "lane"},
-      {"v": "parking_lot", "lbl": "parking_lot"},
+      {"v": "parking_lot", "lbl": "parking lot"},
       {"v": "sidewalk", "lbl": "sidewalk"},
       {"v": "green", "lbl": "green"}
     ],
@@ -123,7 +123,7 @@
       {"v": "shed", "lbl": "shed"},
       {"v": "lockers", "lbl": "lockers"},
       {"v": "bollard", "lbl": "bollard"},
-      {"v": "wall_loops", "lbl": "wall_loops"},
+      {"v": "wall_loops", "lbl": "wall loops"},
       {"v": "informal", "lbl": "informal"}
     ],
     "key": "bicycle_parking"
@@ -234,8 +234,8 @@
     "lbl": "Type",
     "tags": [
       {"v": "", "lbl": " Not Known"},
-      {"v": "container", "lbl": "Conteneur"},
-      {"v": "centre", "lbl": "Déchèterie"}
+      {"v": "container", "lbl": "Container"},
+      {"v": "centre", "lbl": "Centre"}
     ],
     "key": "recycling_type"
   },
@@ -307,7 +307,7 @@
       {"v": "yes", "lbl": "Yes"},
       {"v": "no", "lbl": "No"},
       {"v": "limited", "lbl": "Limited"},
-      {"v": "designated", "lbl": "designated"}
+      {"v": "designated", "lbl": "Designated"}
     ],
     "key": "wheelchair"
   },
@@ -385,18 +385,18 @@
     "lbl": "Vending",
     "tags": [
       {"v": "", "lbl": " Not Known"},
-      {"v": "admission_tickets", "lbl": "admission_tickets"},
+      {"v": "admission_tickets", "lbl": "admission tickets"},
       {"v": "bread", "lbl": "bread"},
       {"v": "cigarettes", "lbl": "cigarettes"},
       {"v": "condoms", "lbl": "condoms"},
       {"v": "drinks", "lbl": "drinks"},
-      {"v": "excrement_bags", "lbl": "excrement_bags"},
+      {"v": "excrement_bags", "lbl": "excrement bags"},
       {"v": "food", "lbl": "food"},
-      {"v": "laundry_detergent", "lbl": "laundry_detergent"},
+      {"v": "laundry_detergent", "lbl": "laundry detergent"},
       {"v": "milk", "lbl": "milk"},
       {"v": "newspapers", "lbl": "newspapers"},
-      {"v": "parking_tickets", "lbl": "parking_tickets"},
-      {"v": "public_transport_tickets", "lbl": "public_transport_tickets"},
+      {"v": "parking_tickets", "lbl": "parking tickets"},
+      {"v": "public_transport_tickets", "lbl": "public transport tickets"},
       {"v": "sweets", "lbl": "sweets"},
       {"v": "toys", "lbl": "toys"}
     ],
@@ -407,13 +407,13 @@
     "lbl": "Social Facility",
     "tags": [
       {"v": "", "lbl": " Not Known"},
-      {"v": "group_home", "lbl": "group_home"},
-      {"v": "assisted_living", "lbl": "assisted_living"},
+      {"v": "group_home", "lbl": "group home"},
+      {"v": "assisted_living", "lbl": "assisted living"},
       {"v": "shelter", "lbl": "shelter"},
-      {"v": "ambulatory_care", "lbl": "ambulatory_care"},
+      {"v": "ambulatory_care", "lbl": "ambulatory care"},
       {"v": "outreach", "lbl": "outreach"},
       {"v": "workshop", "lbl": "workshop"},
-      {"v": "food_bank", "lbl": "food_bank"}
+      {"v": "food_bank", "lbl": "food bank"}
     ],
     "key": "social_facility"
   },
@@ -429,7 +429,7 @@
       {"v": "drug_addicted", "lbl": "drug addicted"},
       {"v": "homeless", "lbl": "homeless"},
       {"v": "juvenile", "lbl": "juvenile"},
-      {"v": "mental_health", "lbl": "mental_health"},
+      {"v": "mental_health", "lbl": "mental health"},
       {"v": "migrant", "lbl": "migrant"},
       {"v": "orphan", "lbl": "orphan"},
       {"v": "senior", "lbl": "senior"},
