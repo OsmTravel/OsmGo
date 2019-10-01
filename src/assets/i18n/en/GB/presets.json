@@ -4,82 +4,82 @@
     "lbl": "cuisine",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "barbecue", "lbl": "Barbecue"},
-      {"v": "steak_house", "lbl": "Beef Steak"},
-      {"v": "burger", "lbl": "Burger"},
-      {"v": "cake", "lbl": "Cake"},
-      {"v": "coffee_shop", "lbl": "Coffee Shop"},
-      {"v": "couscous", "lbl": "Couscous"},
-      {"v": "crepe", "lbl": "Crepe"},
-      {"v": "curry", "lbl": "Curry"},
-      {"v": "dessert", "lbl": "Dessert"},
-      {"v": "donut", "lbl": "Donut"},
-      {"v": "doughnut", "lbl": "Doughnut"},
-      {"v": "empanada", "lbl": "Empanada"},
-      {"v": "fish_and_chips", "lbl": "Fish And Chips"},
-      {"v": "friture", "lbl": "Friture"},
-      {"v": "ice_cream", "lbl": "Glasse"},
-      {"v": "kebab", "lbl": "Kebab"},
+      {"v": "barbecue", "lbl": "barbecue"},
+      {"v": "steak_house", "lbl": "beef steak"},
+      {"v": "burger", "lbl": "burger"},
+      {"v": "cake", "lbl": "cake"},
+      {"v": "coffee_shop", "lbl": "coffee shop"},
+      {"v": "couscous", "lbl": "couscous"},
+      {"v": "crepe", "lbl": "crepe"},
+      {"v": "curry", "lbl": "curry"},
+      {"v": "dessert", "lbl": "dessert"},
+      {"v": "donut", "lbl": "donut"},
+      {"v": "doughnut", "lbl": "doughnut"},
+      {"v": "empanada", "lbl": "empanada"},
+      {"v": "fish_and_chips", "lbl": "fish and chips"},
+      {"v": "friture", "lbl": "friture"},
+      {"v": "ice_cream", "lbl": "ice cream"},
+      {"v": "kebab", "lbl": "kebab"},
       {"v": "mediterranean", "lbl": "Mediterranean"},
-      {"v": "noodle", "lbl": "Noodle"},
-      {"v": "pancake", "lbl": "Pancake"},
-      {"v": "pasta", "lbl": "Pasta"},
-      {"v": "pizza", "lbl": "Pizza"},
+      {"v": "noodle", "lbl": "noodle"},
+      {"v": "pancake", "lbl": "pancake"},
+      {"v": "pasta", "lbl": "pasta"},
+      {"v": "pizza", "lbl": "pizza"},
       {"v": "seafood", "lbl": "seafood"},
       {"v": "chicken", "lbl": "chicken"},
       {"v": "sandwich", "lbl": "sandwich"},
-      {"v": "sushi", "lbl": "Sushi"},
-      {"v": "tapas", "lbl": "Tapas"},
+      {"v": "sushi", "lbl": "sushi"},
+      {"v": "tapas", "lbl": "tapas"},
       {"v": "pie", "lbl": "pie"},
-      {"v": "wings", "lbl": "Wings"},
-      {"v": "african", "lbl": "african"},
-      {"v": "german", "lbl": "german"},
-      {"v": "american", "lbl": "american"},
-      {"v": "arab", "lbl": "arab"},
-      {"v": "argentinian", "lbl": "argentinian"},
-      {"v": "asian", "lbl": "asian"},
-      {"v": "australian", "lbl": "australian"},
-      {"v": "baiana", "lbl": "baiana"},
-      {"v": "balkan", "lbl": "balkan"},
-      {"v": "basque", "lbl": "basque"},
-      {"v": "bavarian", "lbl": "bavarian"},
-      {"v": "belarusian", "lbl": "belarusian"},
-      {"v": "brazilian", "lbl": "brazilian"},
-      {"v": "cantonese", "lbl": "cantonese"},
-      {"v": "caribbean", "lbl": "caribbean"},
-      {"v": "chinese", "lbl": "chinese"},
-      {"v": "korean", "lbl": "korean"},
-      {"v": "croatian", "lbl": "croatian"},
-      {"v": "danish", "lbl": "danish"},
-      {"v": "spanish", "lbl": "spanish"},
-      {"v": "french", "lbl": "french"},
-      {"v": "greek", "lbl": "greek"},
-      {"v": "hungarian", "lbl": "hungarian"},
-      {"v": "indian", "lbl": "indian"},
+      {"v": "wings", "lbl": "wings"},
+      {"v": "african", "lbl": "African"},
+      {"v": "german", "lbl": "German"},
+      {"v": "american", "lbl": "American"},
+      {"v": "arab", "lbl": "Arab"},
+      {"v": "argentinian", "lbl": "Argentinian"},
+      {"v": "asian", "lbl": "Asian"},
+      {"v": "australian", "lbl": "Australian"},
+      {"v": "baiana", "lbl": "Baiana"},
+      {"v": "balkan", "lbl": "Balkan"},
+      {"v": "basque", "lbl": "Basque"},
+      {"v": "bavarian", "lbl": "Bavarian"},
+      {"v": "belarusian", "lbl": "Belarusian"},
+      {"v": "brazilian", "lbl": "Brazilian"},
+      {"v": "cantonese", "lbl": "Cantonese"},
+      {"v": "caribbean", "lbl": "Caribbean"},
+      {"v": "chinese", "lbl": "Chinese"},
+      {"v": "korean", "lbl": "Korean"},
+      {"v": "croatian", "lbl": "Croatian"},
+      {"v": "danish", "lbl": "Danish"},
+      {"v": "spanish", "lbl": "Spanish"},
+      {"v": "french", "lbl": "French"},
+      {"v": "greek", "lbl": "Greek"},
+      {"v": "hungarian", "lbl": "Hungarian"},
+      {"v": "indian", "lbl": "Indian"},
       {"v": "international", "lbl": "international"},
-      {"v": "iranian", "lbl": "iranian"},
-      {"v": "italian", "lbl": "italian"},
-      {"v": "japanese", "lbl": "japanese"},
-      {"v": "latin_american", "lbl": "latin-american"},
-      {"v": "lebanese", "lbl": "lebanese"},
-      {"v": "malagasy", "lbl": "malagasy"},
-      {"v": "mexican", "lbl": "mexican"},
-      {"v": "pakistani", "lbl": "pakistani"},
-      {"v": "peruvian", "lbl": "Cuisine Peruvianaise"},
-      {"v": "polish", "lbl": "polish"},
-      {"v": "portuguese", "lbl": "portuguese"},
+      {"v": "iranian", "lbl": "Iranian"},
+      {"v": "italian", "lbl": "Italian"},
+      {"v": "japanese", "lbl": "Japanese"},
+      {"v": "latin_american", "lbl": "Latin-American"},
+      {"v": "lebanese", "lbl": "Lebanese"},
+      {"v": "malagasy", "lbl": "Malagasy"},
+      {"v": "mexican", "lbl": "Mexican"},
+      {"v": "pakistani", "lbl": "Pakistani"},
+      {"v": "peruvian", "lbl": "Peruvian"},
+      {"v": "polish", "lbl": "Polish"},
+      {"v": "portuguese", "lbl": "Portuguese"},
       {"v": "regional", "lbl": "regional"},
-      {"v": "russian", "lbl": "russian"},
-      {"v": "czech", "lbl": "czech"},
-      {"v": "thai", "lbl": "thai"},
-      {"v": "turkish", "lbl": "turkish"},
-      {"v": "vietnamese", "lbl": "vietnamese"}
+      {"v": "russian", "lbl": "Russian"},
+      {"v": "czech", "lbl": "Czech"},
+      {"v": "thai", "lbl": "Thai"},
+      {"v": "turkish", "lbl": "Turkish"},
+      {"v": "vietnamese", "lbl": "Vietnamese"}
     ],
     "key": "cuisine"
   },
   "fire_hydrant:type": {
     "type": "select",
-    "lbl": "Type",
+    "lbl": "type",
     "tags": [
       {"v": "", "lbl": "unknown"},
       {"v": "underground", "lbl": "underground"},
@@ -91,7 +91,7 @@
   },
   "fire_hydrant:position": {
     "type": "select",
-    "lbl": "Position",
+    "lbl": "position",
     "tags": [
       {"v": "", "lbl": "unknown"},
       {"v": "lane", "lbl": "lane"},
@@ -103,20 +103,20 @@
   },
   "fire_hydrant:diameter": {
     "type": "number",
-    "lbl": "Diameter",
+    "lbl": "diameter",
     "tags": [],
     "key": "fire_hydrant:diameter"
   },
   "operator": {
     "type": "text",
-    "lbl": "Operator",
+    "lbl": "operator",
     "tags": [],
     "key": "operator"
   },
-  "brand": {"type": "text", "lbl": "Marque", "tags": [], "key": "brand"},
+  "brand": {"type": "text", "lbl": "brand", "tags": [], "key": "brand"},
   "bicycle_parking": {
     "type": "select",
-    "lbl": "Type",
+    "lbl": "type",
     "tags": [
       {"v": "", "lbl": "unknown"},
       {"v": "stands", "lbl": "stands"},
@@ -130,17 +130,17 @@
   },
   "capacity": {
     "type": "number",
-    "lbl": "Capacity",
+    "lbl": "capacity",
     "tags": [],
     "key": "capacity"
   },
   "covered": {
     "type": "select",
-    "lbl": "Covered",
+    "lbl": "covered",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "covered"
   },
@@ -162,8 +162,8 @@
     "lbl": "organic",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"},
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"},
       {"v": "only", "lbl": "Only"}
     ],
     "key": "organic"
@@ -173,8 +173,8 @@
     "lbl": "pastry",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"},
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"},
       {"v": "only", "lbl": "Only"}
     ],
     "key": "pastry_shop"
@@ -184,8 +184,8 @@
     "lbl": "Homme",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "male"
   },
@@ -194,8 +194,8 @@
     "lbl": "Femme",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "female"
   },
@@ -204,8 +204,8 @@
     "lbl": "lottery",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "lottery"
   },
@@ -214,8 +214,8 @@
     "lbl": "Self service",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "self_service"
   },
@@ -224,8 +224,8 @@
     "lbl": "Second Hand",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "second_hand"
   },
@@ -244,8 +244,8 @@
     "lbl": "Glass Bottles",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "recycling:glass_bottles"
   },
@@ -254,8 +254,8 @@
     "lbl": "Papier",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "recycling:paper"
   },
@@ -264,8 +264,8 @@
     "lbl": "Plastic",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "recycling:plastic"
   },
@@ -274,8 +274,8 @@
     "lbl": "Backrest",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "backrest"
   },
@@ -284,8 +284,8 @@
     "lbl": "Tobacco",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "tobacco"
   },
@@ -294,8 +294,8 @@
     "lbl": "Bench",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "bench"
   },
@@ -304,8 +304,8 @@
     "lbl": "Wheelchair",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"},
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"},
       {"v": "limited", "lbl": "Limited"},
       {"v": "designated", "lbl": "Designated"}
     ],
@@ -316,8 +316,8 @@
     "lbl": "Fee",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"},
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"},
       {"v": "interval", "lbl": "interval"}
     ],
     "key": "fee"
@@ -327,8 +327,8 @@
     "lbl": "Drive",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "drive_through"
   },
@@ -337,8 +337,8 @@
     "lbl": "Dispensing",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "dispensing"
   },
@@ -347,8 +347,8 @@
     "lbl": "Shelter",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "shelter"
   },
@@ -357,8 +357,8 @@
     "lbl": "Tactile_paving",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "tactile_paving"
   },
@@ -444,34 +444,34 @@
     "lbl": "Nursery",
     "tags": [
       {"v": "", "lbl": "unknown"},
-      {"v": "yes", "lbl": "Yes"},
-      {"v": "no", "lbl": "No"}
+      {"v": "yes", "lbl": "yes"},
+      {"v": "no", "lbl": "no"}
     ],
     "key": "nursery"
   },
   "shop#insurance#operator": {
     "type": "text",
-    "lbl": "Operator",
+    "lbl": "operator",
     "tags": [],
     "key": "operator"
   },
   "shop#travel_agency#operator": {
     "type": "text",
-    "lbl": "Operator",
+    "lbl": "operator",
     "tags": [],
     "key": "operator"
   },
   "shop#estate_agent#operator": {
     "type": "text",
-    "lbl": "Operator",
+    "lbl": "operator",
     "tags": [],
     "key": "operator"
   },
-  "phone": {"type": "text", "lbl": "Phone", "tags": [], "key": "phone"},
-  "website": {"type": "text", "lbl": "Website", "tags": [], "key": "website"},
+  "phone": {"type": "text", "lbl": "phone", "tags": [], "key": "phone"},
+  "website": {"type": "text", "lbl": "website", "tags": [], "key": "website"},
   "opening_hours": {
     "type": "text",
-    "lbl": "Opening hours",
+    "lbl": "opening hours",
     "tags": [],
     "key": "opening_hours"
   }
