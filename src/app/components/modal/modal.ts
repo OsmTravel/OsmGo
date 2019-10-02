@@ -14,7 +14,7 @@ import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 
-import * as _ from 'lodash';
+import {isEqual, findIndex } from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -206,7 +206,7 @@ export class ModalsContentPage implements OnInit {
       }
     }
 
-    if (_.isEqual(tagsNotNull, originalTagsNotNull)) {
+    if (isEqual(tagsNotNull, originalTagsNotNull)) {
       return false;
     }
     return true;
@@ -235,7 +235,7 @@ export class ModalsContentPage implements OnInit {
     }
   }
   deleteTag(tag) {
-    const idx = _.findIndex(this.tags, { key: tag.key });
+    const idx = findIndex(this.tags, { key: tag.key });
     if (idx !== -1) {
       this.tags.splice(idx, 1);
     }
@@ -247,7 +247,7 @@ export class ModalsContentPage implements OnInit {
 
   // renvoie l'élément du tableau correspondant  || TODO => pipe
   findElement(array, kv) { // {'user': 'fred'}
-    const idx = _.findIndex(array, kv);
+    const idx = findIndex(array, kv);
     if (idx !== -1) {
       return array[idx];
     }
@@ -402,7 +402,7 @@ export class ModalsContentPage implements OnInit {
       const _data = d.data;
       if (_data) {
         // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
-        const idx = _.findIndex(this.tags,
+        const idx = findIndex(this.tags,
           o => o.key === this.primaryKey.key && o.value === this.primaryKey.value);
 
         this.tags[idx] = JSON.parse(JSON.stringify(_data));

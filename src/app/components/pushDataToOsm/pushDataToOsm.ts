@@ -9,7 +9,7 @@ import { DataService } from '../../services/data.service';
 import { ConfigService } from '../../services/config.service';
 import { timer } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import * as _ from 'lodash';
+import { cloneDeep, clone } from 'lodash';
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -110,10 +110,10 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['type'] = 'Feature';
                         newFeature['id'] = 'node/' + id;
                         newFeature['properties'] = {};
-                        newFeature['geometry'] = _.cloneDeep(featureChanged.geometry);
+                        newFeature['geometry'] = cloneDeep(featureChanged.geometry);
                         newFeature['properties']['type'] = 'node';
                         newFeature['properties']['id'] = id;
-                        newFeature['properties']['tags'] = _.cloneDeep(featureChanged.properties.tags);
+                        newFeature['properties']['tags'] = cloneDeep(featureChanged.properties.tags);
                         newFeature['properties']['meta'] = {};
                         newFeature['properties']['meta']['version'] = 1;
                         newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
@@ -184,7 +184,7 @@ export class PushDataToOsmPage implements AfterViewInit {
             } else if
                 (featureChanged.properties.changeType === 'Delete') {
                 if (featureChanged.properties.usedByWays){
-                    let emptyFeaturetags = _.clone(featureChanged);
+                    let emptyFeaturetags = clone(featureChanged);
                     emptyFeaturetags['properties']['tags']= {};
 
                     this.osmApi.apiOsmUpdateOsmElement(emptyFeaturetags, CS)

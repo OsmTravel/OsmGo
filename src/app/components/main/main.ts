@@ -19,6 +19,8 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IconService } from 'src/app/services/icon.service';
+import { SwUpdate } from '@angular/service-worker';
+import { StatesService } from 'src/app/services/states.service';
 
 
 @Component({
@@ -30,6 +32,7 @@ import { IconService } from 'src/app/services/icon.service';
 export class MainPage implements AfterViewInit {
   modalIsOpen = false;
   menuIsOpen = false;
+  newVersion = false;
 
   constructor(public navCtrl: NavController,
     public modalCtrl: ModalController,
@@ -48,7 +51,9 @@ export class MainPage implements AfterViewInit {
     private router: Router,
     private translate: TranslateService,
     public iconService: IconService,
-    public loadingController: LoadingController
+    public loadingController: LoadingController,
+    private swUpdate: SwUpdate,
+    public statesService: StatesService
   ) {
 
 
@@ -129,11 +134,16 @@ export class MainPage implements AfterViewInit {
   }
 
   ngOnInit(): void {
+
+    this.swUpdate.available.subscribe(event => {
+      this.newVersion = true;
+    });
   }
 
   openMenu() {
     this.configService.freezeMapRenderer = true;
     this.menuIsOpen = true;
+    // history.pushState({menu:'open'}, 'menu')
   }
 
   closeMenu() {
@@ -278,5 +288,27 @@ export class MainPage implements AfterViewInit {
         }
       });
     });
+
+
+
+    window.addEventListener('load', (e) => {
+      console.log('load', e)
+      window.history.pushState({ noBackExitsApp: true }, '')
+    })
+
+    window.addEventListener('popstate', (e) => {
+      if (this.menuIsOpen) {
+        window.history.pushState({ noBackExitsApp: true }, '')
+        this.closeMenu();
+      } else if (this.modalIsOpen) {
+        window.history.pushState({ noBackExitsApp: true }, '')
+        this.modalCtrl.dismiss();
+      }else {
+        window.history.pushState({ noBackExitsApp: true }, '')
+      }
+    })
+
+
+
   }
 }

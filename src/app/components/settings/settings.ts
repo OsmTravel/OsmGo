@@ -153,8 +153,14 @@ export class SettingsPage {
 
   async deleteCache (){
     await this.dataService.clearCache();
-    // TODO : exit app !
-    // App.exitApp();
+      const cachesKeys = await caches.keys()
+      for (let key of cachesKeys){
+        await caches.delete(key)
+      }
+
+      const mainLocation = `${window.location.href.split('#')[0]}#/main`
+      window.location.replace(mainLocation);
+      window.location.reload(true);
   }
 
   async deleteIconCache(){

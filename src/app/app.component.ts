@@ -3,12 +3,16 @@ import { LocationService } from './services/location.service';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { Device } from '@ionic-native/device/ngx';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+
+import { Plugins } from '@capacitor/core';
+const { Device } = Plugins;
 
 
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
+import { PwaService } from './services/pwa.service';
+import { SwUpdate } from '@angular/service-worker';
+import { StatesService } from './services/states.service';
 
 @Component({
   selector: 'app-root',
@@ -21,28 +25,23 @@ export class AppComponent {
     public configService: ConfigService,
     private translate: TranslateService,
     public tagService: TagsService,
-    private device: Device,
-    private splashScreen: SplashScreen
+    public statesService: StatesService
+
   ) {
-
-
     this.initializeApp();
+
   }
 
-  initializeApp() {
+  async initializeApp() {
     this.translate.setDefaultLang('en');
-    this.configService.device = this.device;
+    this.configService.device = await Device.getInfo();
     this.configService.platforms = this.platform.platforms();
-  
-    this.splashScreen.show();
-   
-    this.platform.ready()
-      .then(() => {
+    this.configService.loadAppVersion();
 
-        this.configService.loadAppVersion();
-        this.splashScreen.hide();
-        this.locationService.eventPlatformReady.emit(); // object => == 1 => ionic serve ( ['core'])
-      });
+    this.platform.backButton
+    .subscribe(e => {
+      console.log(e)
+    })
   }
 
 

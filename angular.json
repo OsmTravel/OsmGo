@@ -1,5 +1,4 @@
 {
-
   "version": 1,
   "defaultProject": "app",
   "newProjectRoot": "projects",
@@ -30,6 +29,7 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               },
+              "src/.well-known/assetlinks.json",
               "src/manifest.webmanifest"
             ],
             "styles": [

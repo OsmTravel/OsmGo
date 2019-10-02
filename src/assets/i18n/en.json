@@ -23,8 +23,8 @@
     "DELETE_DATA": "Delete data",
     "DELETE_DATA_CONFIRM_HEADER": "Really ?",
     "DELETE_DATA_CONFIRM_MESSAGE": "Delete downloaded data? (keep the changes)",
-    "EXIT": "Exit",
-    "SIGN_OUT": "Logout"
+    "SIGN_OUT": "Logout",
+    "NEW_VERSION" : "A new version is ready !"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
   "GEOLOCATION": {

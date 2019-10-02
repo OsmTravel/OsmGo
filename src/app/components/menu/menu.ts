@@ -21,6 +21,7 @@ export class MenuPage {
 
     @Output() closeEvent = new EventEmitter();
     @Input() menuIsOpen;
+    @Input() newVersion;
     aboutPage = AboutPage;
     pushDataToOsmPage = PushDataToOsmPage;
 
@@ -68,9 +69,6 @@ export class MenuPage {
 
     }
 
-    exit() {
-        window.navigator['app'].exitApp();
-    }
     pushPage(path) {
         this.navCtrl.navigateForward(path);
         // this.routerService.pushPage(pageName);
@@ -91,5 +89,9 @@ export class MenuPage {
 
     swipe(e){
         this.closeMenu() 
+    }
+
+    reloadApp(){
+        window.location.reload()
     }
 }

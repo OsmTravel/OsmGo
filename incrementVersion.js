@@ -10,13 +10,3 @@ console.log('version : ', version);
 
 env = env.replace( /version:\s'[0-9]+\.[0-9]+\.[0-9]+'/g, `version: '${version}'` );
 fs.writeFileSync(envPath, env, 'utf8');
-
-
-let configXMLPath = path.join(__dirname, 'config.xml');
-let configXML = fs.readFileSync(configXMLPath, 'utf8');
-// console.log(buildGradle)
-let currentVersionCodeStr = configXML.match(/version="[0-9]+\.[0-9]+\.[0-9]+"/g);
-
-configXML = configXML.replace( /version="[0-9]+\.[0-9]+\.[0-9]+"/g, `version="${version}"` );
-console.log(currentVersionCodeStr, ' => ', version);
-fs.writeFileSync(configXMLPath, configXML, 'utf8');

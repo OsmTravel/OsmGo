@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "fr.dogeo.osmgo",
+                 "sha256_cert_fingerprints": ["24:43:BD:45:8D:C9:66:3A:2A:32:E4:26:F3:53:27:26:BA:F6:1A:F5:5B:8A:31:DC:7C:09:E3:39:2E:0D:AE:76"] }
+  }]

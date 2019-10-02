@@ -11,7 +11,7 @@ import { TagsService } from './tags.service';
 import { DataService } from './data.service';
 import { AlertService } from './alert.service';
 import { ConfigService } from './config.service';
-import * as _ from 'lodash';
+import { cloneDeep } from 'lodash';
 
 
 
@@ -305,7 +305,7 @@ export class OsmApiService {
     /// CREATE NODE
 
     createOsmNode(_feature) {
-        const feature = _.cloneDeep(_feature);
+        const feature = cloneDeep(_feature);
         const d = new Date();
         const tmpId = 'tmp_' + d.getTime();
         feature.id = 'node/' + tmpId;
@@ -319,7 +319,7 @@ export class OsmApiService {
 
     }
     apiOsmCreateNode(_feature, changesetId) {
-        const feature =  _.cloneDeep(_feature);
+        const feature =  cloneDeep(_feature);
         const url = this.getUrlApi() + '/api/0.6/node/create';
         const content_put = this.geojson2OsmCreate(feature, changesetId);
 
@@ -341,7 +341,7 @@ export class OsmApiService {
 
     // Update
     updateOsmElement(_feature, origineData) {
-        const feature = _.cloneDeep(_feature);
+        const feature = cloneDeep(_feature);
         const id = feature.id;
         if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
@@ -355,7 +355,7 @@ export class OsmApiService {
     }
 
     apiOsmUpdateOsmElement(_feature, changesetId) {
-        const feature = _.cloneDeep(_feature);
+        const feature = cloneDeep(_feature);
         const id = feature.id;
 
         const url = this.getUrlApi() + '/api/0.6/' + id;
@@ -383,7 +383,7 @@ export class OsmApiService {
 
     // Delete
     deleteOsmElement(_feature) {
-        const feature = _.cloneDeep(_feature);
+        const feature = cloneDeep(_feature);
         const id = feature.id;
 
         if (feature.properties.changeType) { // il a déjà été modifié
@@ -404,7 +404,7 @@ export class OsmApiService {
     }
 
     apiOsmDeleteOsmElement(_feature, changesetId) {
-        const feature = _.cloneDeep(_feature);
+        const feature = cloneDeep(_feature);
         const id = feature.id;
         const content_delete = this.geojson2OsmUpdate(feature, changesetId);
         const url = this.getUrlApi() + '/api/0.6/' + id;
@@ -434,7 +434,7 @@ export class OsmApiService {
         const that = this;
        
         const oldBbox = this.dataService.getGeojsonBbox();
-            const oldBboxFeature = _.cloneDeep(oldBbox.features[0]);
+            const oldBboxFeature = cloneDeep(oldBbox.features[0]);
             // console.log(oldBboxFeature);
 
         return from(
