@@ -44,7 +44,7 @@
     "core-js": "^3.2.1",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
-    "mapbox-gl": "^1.4.0",
+    "mapbox-gl": "^1.3.2",
     "moment": "^2.24.0",
     "ngx-moment": "^3.4.0",
     "rxjs": "~6.5.3",
