@@ -39,7 +39,9 @@ export class ConfigService {
         countryTags: window.navigator.language && window.navigator.language.split('-')[1] ? window.navigator.language.split('-')[1].toUpperCase() : null,
         oldTagsIcon: { display: true, year: 4},
         displayFixmeIcon : true,
-        addSurveyDate: true
+        addSurveyDate: true, 
+        isDevMode: false,
+        isDevServer: false
     };
 
     currentTagsCountryChoice = [];
@@ -232,5 +234,27 @@ export class ConfigService {
         this.localStorage.set('config', this.config);
     }
     
+    getIsDevMode() {
+        return this.config.isDevMode;
+    }
+
+    setIsDevMode(isDevMode: boolean) {
+        this.config.isDevMode = isDevMode;
+        this.localStorage.set('config', this.config);
+    }
+
+    getIsDevServer() {
+        return this.config.isDevServer;
+    }
+
+    async setIsDevServer(isDevServer: boolean) {
+        this.config.isDevServer = isDevServer;
+        await this.localStorage.set('config', this.config);
+        await this.localStorage.remove('geojson');
+        await this.localStorage.remove('geojsonBbox');
+        await this.localStorage.remove('user_info');
+        await this.localStorage.remove('geojsonChanged');
+        return isDevServer;
+    }
 
 }

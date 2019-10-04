@@ -172,4 +172,20 @@ export class SettingsPage {
     loading.dismiss();
    
   }
+
+  async changeIsDevServer(isDev : boolean){
+    await this.configService.setIsDevServer(isDev);
+    const mainLocation = `${window.location.origin}#/main`
+    window.location.replace(mainLocation);
+    window.location.reload(true);
+  }
+
+  async disableDevMode(e){
+    const isDevServer = this.configService.getIsDevServer();
+    this.configService.setIsDevMode(false);
+    if(isDevServer){
+      await this.changeIsDevServer(false);
+    }
+  }
+
 }

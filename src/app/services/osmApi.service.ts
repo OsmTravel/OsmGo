@@ -20,8 +20,6 @@ import bboxPolygon from '@turf/bbox-polygon'
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
 
-    isDevServer = false;
-
     oauthParam = {
         prod: {
             url: 'https://www.openstreetmap.org',
@@ -53,10 +51,11 @@ export class OsmApiService {
 
         const landing = `${window.location.origin}/assets/land.html`
 
+       
         this.auth = new osmAuth({
-            url: this.isDevServer ? this.oauthParam.dev.url : this.oauthParam.prod.url,
-            oauth_consumer_key: this.isDevServer ? this.oauthParam.dev.oauth_consumer_key : this.oauthParam.prod.oauth_consumer_key,
-            oauth_secret: this.isDevServer ? this.oauthParam.dev.oauth_secret : this.oauthParam.prod.oauth_secret,
+            url:  this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url,
+            oauth_consumer_key:  this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_consumer_key : this.oauthParam.prod.oauth_consumer_key,
+            oauth_secret:  this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_secret : this.oauthParam.prod.oauth_secret,
             auto: false, // show a login form if the user is not authenticated and
             landing: landing,
             windowType: 'newFullPage' // singlepage, popup, newFullPage
@@ -107,7 +106,7 @@ export class OsmApiService {
 
     // retourne l'URL de l'API (dev ou prod)
     getUrlApi() {
-        return this.isDevServer ? this.oauthParam.dev.url : this.oauthParam.prod.url;
+        return  this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url;
     }
 
     getUserInfo() {
