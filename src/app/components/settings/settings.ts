@@ -158,7 +158,7 @@ export class SettingsPage {
         await caches.delete(key)
       }
 
-      const mainLocation = `${window.location.href.split('#')[0]}#/main`
+      const mainLocation = `${window.location.origin}#/main`
       window.location.replace(mainLocation);
       window.location.reload(true);
   }

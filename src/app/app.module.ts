@@ -15,7 +15,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AboutPage } from './components/about/about';
 import { LocationPage } from './components/location/location';
-import { LoginPage } from './components/login/login';
 import { MainPage } from './components/main/main';
 import { MenuPage } from './components/menu/menu';
 import { ModalsContentPage } from './components/modal/modal';
@@ -73,7 +72,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
 }
 
 @NgModule({
-  declarations: [AppComponent, MainPage, LocationPage, AboutPage, LoginPage, MenuPage,
+  declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
     ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey,
 

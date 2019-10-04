@@ -341,12 +341,9 @@ export class MapService {
           const path = window.location.href;
           let spritesFullPath = `mapStyle/sprites/sprites`;
           // http://localhost:8100/assets/mapStyle/sprites/sprites.json
-          if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-            const basePath = path.split('#')[0];
-            spritesFullPath = `${basePath}assets/${spritesFullPath}`;
-          } else {
-            spritesFullPath = path.replace('/index.html', `/assets/${spritesFullPath}`);
-          }
+            const basePath = window.location.origin // path.split('#')[0];
+            spritesFullPath = `${basePath}/assets/${spritesFullPath}`;
+    
           mapboxStyle['sprite'] = spritesFullPath;
           return mapboxStyle
         }
