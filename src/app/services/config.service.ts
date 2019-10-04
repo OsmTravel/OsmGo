@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment.prod';
 import { StatesService } from './states.service';
@@ -14,21 +14,13 @@ export class ConfigService {
         private http: HttpClient,
         private translate: TranslateService,
         public stateService: StatesService
-  
-    ) {
-
-   
-
-
-    }
+    ) { }
 
     i18nConfig;
 
     eventConfigIsLoaded = new EventEmitter();
     freezeMapRenderer = false;
     platforms = [];
-    device;
-
     baseMapSources ;
     currentZoom: number = undefined;
 

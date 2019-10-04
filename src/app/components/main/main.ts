@@ -76,23 +76,6 @@ export class MainPage implements AfterViewInit {
       }
     });
 
-    // TODO : back button
-    // App.addListener('backButton', async () => {
-    //   // state.isActive contains the active state
-
-    //   if (this.router.url === '/main') {
-    //     if (this.modalIsOpen) {
-    //       return;
-    //     }
-    //     const menuIsOpen = await this.menuCtrl.isOpen('menu1');
-    //     if (menuIsOpen) {
-    //       this.menuCtrl.close('menu1');
-    //     } else {
-    //       this.presentConfirm();
-    //     }
-    //   }
-    // });
-
     mapService.eventShowModal.subscribe(async (_data) => {
 
       this.configService.freezeMapRenderer = true;
@@ -259,13 +242,8 @@ export class MainPage implements AfterViewInit {
 
               }
               loading.dismiss();
-
             }
-
-
-
           });
-
 
         this.mapService.eventDomMainReady.emit(document.getElementById('map'));
       })
@@ -297,7 +275,6 @@ export class MainPage implements AfterViewInit {
 
 
     window.addEventListener('load', (e) => {
-      console.log('load', e)
       window.history.pushState({ noBackExitsApp: true }, '')
     })
 

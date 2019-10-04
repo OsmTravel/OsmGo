@@ -4,14 +4,8 @@ import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 
-import { Plugins } from '@capacitor/core';
-const { Device } = Plugins;
-
-
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
-import { PwaService } from './services/pwa.service';
-import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from './services/states.service';
 
 @Component({
@@ -34,7 +28,6 @@ export class AppComponent {
 
   async initializeApp() {
     this.translate.setDefaultLang('en');
-    this.configService.device = await Device.getInfo();
     this.configService.platforms = this.platform.platforms();
     this.configService.loadAppVersion();
 

@@ -138,7 +138,7 @@ export class OsmApiService {
                     options: { header: { 'Content-Type': 'text/xml' } },
                 }, (err, details) => {
                     if (err) {
-                        observer.error(new Error(err));
+                        observer.error({ response: err.response || '??', status: err.status || 0  });
                     }
                     observer.next(details)
                 });
@@ -208,14 +208,13 @@ export class OsmApiService {
 
                 }, (err, details) => {
                     if (err) {
-                        observer.error(new Error(err));
+                        observer.error({ response: err.response || '??', status: err.status || 0  });
                     }
                     observer.next(details)
                 })
             }
         ).pipe(
             map((res) => {
-                console.log(res)
                 this.setChangeset(res.toString(), Date.now(), Date.now(), comment);
                 return res;
             })
@@ -339,7 +338,6 @@ export class OsmApiService {
 
 
     /// CREATE NODE
-
     createOsmNode(_feature) {
         const feature = cloneDeep(_feature);
         const d = new Date();
@@ -354,6 +352,7 @@ export class OsmApiService {
         return of(_feature);
 
     }
+
     apiOsmCreateNode(_feature, changesetId) {
         const feature = cloneDeep(_feature);
         const content_put = this.geojson2OsmCreate(feature, changesetId);
@@ -368,7 +367,7 @@ export class OsmApiService {
 
                 }, (err, details) => {
                     if (err) {
-                        observer.error(new Error(err));
+                        observer.error({ response: err.response || '??', status: err.status || 0  } );
                     }
                     observer.next(details)
                 })
@@ -413,7 +412,7 @@ export class OsmApiService {
 
                 }, (err, details) => {
                     if (err) {
-                        observer.error(new Error(err));
+                        observer.error({ response: err.response || '??', status: err.status || 0  } );
                     }
                     observer.next(details)
                 })
@@ -424,6 +423,7 @@ export class OsmApiService {
                 return data;
             }),
             catchError(error => {
+                console.log('llllllllaaa', error)
                 return throwError(error);
             })
         );
@@ -469,7 +469,8 @@ export class OsmApiService {
 
                 }, (err, details) => {
                     if (err) {
-                        observer.error(new Error(err));
+                        observer.error({ response: err.response || '??', status: err.status || 0  } );
+                        
                     }
                     observer.next(details)
                 })
@@ -488,12 +489,10 @@ export class OsmApiService {
     /*
         Observable : Utilise un Web Worker pour, ajouter un point au polygon, definir le style, filtrer et fusionner les données
     */
-    formatOsmJsonData$(osmData, oldGeojson, featureBbox, geojsonChanged) {
+    formatOsmJsonData$(osmData, oldGeojson, geojsonChanged) {
         const that = this;
-
         const oldBbox = this.dataService.getGeojsonBbox();
         const oldBboxFeature = cloneDeep(oldBbox.features[0]);
-        // console.log(oldBboxFeature);
 
         return from(
             new Promise((resolve, reject) => {
@@ -527,9 +526,9 @@ export class OsmApiService {
 
         * utilisation du webworker
     */
-    formatDataResult(osmData, oldGeojson, featureBbox, geojsonChanged) {
+    formatDataResult(osmData, oldGeojson, geojsonChanged) {
 
-        return this.formatOsmJsonData$(osmData, oldGeojson, featureBbox, geojsonChanged)
+        return this.formatOsmJsonData$(osmData, oldGeojson, geojsonChanged)
             .subscribe(newDataJson => {
                 // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
                 if (newDataJson['error']) {
@@ -560,14 +559,13 @@ export class OsmApiService {
         return this.http.get(url, { responseType: 'text' })
             .pipe(
                 map((osmData) => {
-                    this.formatDataResult(osmData, this.dataService.getGeojson(), featureBbox, this.dataService.getGeojsonChanged());
+                    this.formatDataResult(osmData, this.dataService.getGeojson(), this.dataService.getGeojsonChanged());
                 }),
                 catchError((error: any) => {
                     return throwError(error.error || 'Impossible de télécharger les données (api)');
                 }
                 )
             );
-
 
     }
 }

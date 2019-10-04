@@ -16,6 +16,7 @@ import { ModalSelectList } from './modalSelectList/modalSelectList';
 
 import {isEqual, findIndex } from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'modal',
@@ -58,7 +59,7 @@ export class ModalsContentPage implements OnInit {
 
   ) {
     this.newPosition = params.data.newPosition;
-    this.feature = JSON.parse(JSON.stringify(params.data.data));
+    this.feature = cloneDeep(params.data.data);
     this.mode = params.data.type; // Read, Create, Update
     this.origineData = params.data.origineData;
     this.typeFiche = 'Loading'; // Edit, Read, Loading
@@ -69,7 +70,7 @@ export class ModalsContentPage implements OnInit {
       this.tags.push({ key: tag, value: this.feature.properties.tags[tag] });
     }
     // clone
-    this.originalTags = JSON.parse(JSON.stringify(this.tags));
+    this.originalTags = cloneDeep(this.tags);
 
   }
 
@@ -118,7 +119,7 @@ export class ModalsContentPage implements OnInit {
         ) {
           continue;
         }
-        return JSON.parse(JSON.stringify(tags))[i];
+        return cloneDeep(tags)[i];
       }
     }
     return undefined;
@@ -399,8 +400,8 @@ export class ModalsContentPage implements OnInit {
         const idx = findIndex(this.tags,
           o => o.key === this.primaryKey.key && o.value === this.primaryKey.value);
 
-        this.tags[idx] = JSON.parse(JSON.stringify(_data));
-        this.primaryKey = JSON.parse(JSON.stringify(_data));
+        this.tags[idx] = cloneDeep(_data);
+        this.primaryKey = cloneDeep(_data); // TODO: WTF ?
         this.initComponent();
       }
     });

@@ -132,7 +132,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         resolve(newFeature)
                     },
                         async error => {
-                            featureChanged['error'] = error.error || error.error.message || 'oups';
+                            featureChanged['error'] = error.error || error.response || 'oups';
                             this.dataService.updateFeatureToGeojsonChanged(featureChanged);
                             this.featuresChanges = this.dataService.getGeojsonChanged().features;
                             reject(error);
@@ -172,7 +172,8 @@ export class PushDataToOsmPage implements AfterViewInit {
 
                     },
                         error => {
-                            featureChanged['error'] = error.error || error.error.message || 'oups';
+                         
+                            featureChanged['error'] = error.error || error.response || 'oups';
                             this.dataService.updateFeatureToGeojsonChanged(featureChanged);
                       
                             this.featuresChanges = this.dataService.getGeojsonChanged().features;
@@ -207,7 +208,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         resolve(id);
                     },
                         async error => {
-                            featureChanged['error'] = error.error || error.error.message || 'oups';
+                            featureChanged['error'] = error.error || error.response || 'oups';
                             this.dataService.updateFeatureToGeojsonChanged(featureChanged);
                             this.featuresChanges = this.dataService.getGeojsonChanged().features;
                             reject(error)

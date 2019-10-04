@@ -1,13 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Observable, pipe } from 'rxjs';
-import { map, take, catchError } from 'rxjs/operators';
+import { Observable, from, forkJoin } from 'rxjs';
+import { map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-
-
 import { Storage } from '@ionic/storage';
 import { ConfigService } from './config.service';
-import { from, forkJoin } from 'rxjs';
-
+import { cloneDeep } from 'lodash';
 
 
 @Injectable({ providedIn: 'root' })
@@ -147,7 +144,7 @@ export class TagsService {
 
 
     getTags() {
-        return JSON.parse(JSON.stringify(this.tags));
+        return cloneDeep(this.tags);
     }
 
     getFullTags() {
@@ -155,7 +152,7 @@ export class TagsService {
         const tags = this.getTags();
         for (const tagsObject in tags) {
             for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                const currentTag = JSON.parse(JSON.stringify(tags[tagsObject].values[i]));
+                const currentTag = cloneDeep(tags[tagsObject].values[i]);
                 res.push(currentTag);
             }
         }
@@ -191,13 +188,13 @@ export class TagsService {
             this.loadPresets(language, country),
             this.getAllTags(language, country),
             this.getBaseMaps(language, country)
-            .pipe(
-                map(allTags => {
-                    for (const key in allTags) {
-                        this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
-                    }
-                })
-            )
+                .pipe(
+                    map(allTags => {
+                        for (const key in allTags) {
+                            this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
+                        }
+                    })
+                )
         )
     }
 

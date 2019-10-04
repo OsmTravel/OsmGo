@@ -7,8 +7,7 @@ import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
 
 import { debounceTime } from "rxjs/operators";
-import { uniqBy } from 'lodash';
-
+import { uniqBy, cloneDeep } from 'lodash';
 
 import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
@@ -298,7 +297,7 @@ export class MapService {
 
 
   getBboxPolygon() {
-    return JSON.parse(JSON.stringify(this.bboxPolygon));
+    return cloneDeep(this.bboxPolygon);
   }
 
   createDomMoveMarker(coord: number[], data) {
