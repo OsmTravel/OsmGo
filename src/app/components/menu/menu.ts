@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, Input} from '@angular/core';
+import { Component, Output, EventEmitter, Input, NgZone} from '@angular/core';
 import {  AlertController, Platform, NavController } from '@ionic/angular';
 import { AboutPage } from '../about/about';
 import { PushDataToOsmPage } from '../pushDataToOsm/pushDataToOsm';
@@ -10,6 +10,7 @@ import { ConfigService } from '../../services/config.service';
 import { AlertService } from '../../services/alert.service';
 import { TranslateService } from '@ngx-translate/core';
 import { menuAnimations } from './menu.animations';
+import { concat} from 'rxjs';
 
 @Component({
     selector: 'menu-component',
@@ -34,7 +35,8 @@ export class MenuPage {
         private alertCtrl: AlertController,
         public platform: Platform,
         private translate: TranslateService,
-        private navCtrl: NavController
+        private navCtrl: NavController,
+        private zone:NgZone
     ) {
 
 
@@ -71,20 +73,41 @@ export class MenuPage {
 
     pushPage(path) {
         this.navCtrl.navigateForward(path);
-        // this.routerService.pushPage(pageName);
     }
-    setRootPage(pageName) {
-        // this.routerService.setRootPage(pageName);
 
-    }
 
     closeMenu() {
         this.closeEvent.emit()
     }
 
+    login(){
+        if (!this.osmApi.isAuthenticated()){
+            this.osmApi.login$()
+                .subscribe(e => {
+                    this.osmApi.getUserDetail()
+                    .subscribe( user => {
+                        this.zone.run(() => {
+                            this.osmApi.setUserInfo(user);
+                        });
+                      
+                    })
+                })
+            
+
+        } else {
+            this.osmApi.getUserDetail()
+            .subscribe( user=> {
+                this.osmApi.setUserInfo(user);
+            })
+
+        }
+
+        
+    }
+
     logout() {
         this.configService.setIsDelayed(true);
-        this.osmApi.resetUserInfo();
+        this.osmApi.logout();
     }
 
     swipe(e){

@@ -134,6 +134,11 @@ export class MainPage implements AfterViewInit {
   }
 
   ngOnInit(): void {
+    // sync user and isAuth
+    if (!this.osmApi.isAuthenticated() || !this.osmApi.getUserInfo().connected){
+      this.osmApi.resetUserInfo();
+      this.osmApi.logout()
+    }
 
     this.swUpdate.available.subscribe(event => {
       this.newVersion = true;

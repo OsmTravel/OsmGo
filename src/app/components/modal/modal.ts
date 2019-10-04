@@ -58,11 +58,9 @@ export class ModalsContentPage implements OnInit {
 
   ) {
     this.newPosition = params.data.newPosition;
-
     this.feature = JSON.parse(JSON.stringify(params.data.data));
     this.mode = params.data.type; // Read, Create, Update
     this.origineData = params.data.origineData;
-
     this.typeFiche = 'Loading'; // Edit, Read, Loading
 
     // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
@@ -73,16 +71,12 @@ export class ModalsContentPage implements OnInit {
     // clone
     this.originalTags = JSON.parse(JSON.stringify(this.tags));
 
-    // backButton
-    // this.platform.registerBackButtonAction(e => {
-    //   this.dismiss();
-    // });
   }
 
 
 
   ngOnInit() { // override
-    console.log(this.feature);
+    // console.log(this.feature);
     this.initComponent();
   }
 
@@ -283,7 +277,7 @@ export class ModalsContentPage implements OnInit {
             this.feature.properties.id = data;
             this.feature.properties.meta = {};
             this.feature.properties.meta['version'] = 1;
-            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().user;
+            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().display_name;
             this.feature.properties.meta['uid'] = this.osmApi.getUserInfo().uid;
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // style
@@ -329,7 +323,7 @@ export class ModalsContentPage implements OnInit {
         this.osmApi.apiOsmUpdateOsmElement(this.feature, CS)
           .subscribe(data => {
             this.feature.properties.meta.version++;
-            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().user;
+            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().display_name;
             this.feature.properties.meta['uid'] = this.osmApi.getUserInfo().uid;
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // création du style
