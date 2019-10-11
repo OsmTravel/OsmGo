@@ -31,7 +31,7 @@ for (let pk in osmgoTags) {
         if (_tPresets[iDkey]) {
             const idTag = _tPresets[iDkey];
             tag['lbl'] = idTag.name;
-            tag['lbl_alt'] = idTag.terms || '';
+            tag['terms'] = idTag.terms || '';
             tag['fromid'] = true;
         }
     }

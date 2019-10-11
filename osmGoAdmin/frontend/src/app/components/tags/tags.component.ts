@@ -44,7 +44,7 @@ export class TagsComponent implements OnInit {
 
     this.tagsService.tagsConfig$(this.tagsService.language,this.tagsService.country ).subscribe(data => {
       // this.tagsService.tagsConfig = data;
-      console.log(data);
+
       this.selectedTagKey = 'shop';
     });
   }
@@ -91,7 +91,7 @@ export class TagsComponent implements OnInit {
     const idIndex = currentTag.presets.indexOf(presets._id)
     currentTag.presets.splice(idIndex, 1);
     this.tagsService.updatePrimaryTag(primaryKey, primaryValue, currentTag)
-      .subscribe(res => console.log(res));
+      .subscribe();
     // currentTag.presets.splice(1,presets._id)
 
   }
@@ -105,7 +105,7 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+    
     });
   }
 
@@ -118,7 +118,7 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+
     });
   }
 
@@ -131,7 +131,7 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+    
     });
 
   }
@@ -166,7 +166,7 @@ export class TagsComponent implements OnInit {
   }
 
   deleteDefaultValue(item){
-    console.log(item);
+
     this.selectedTagValueConfig.default_values = this.selectedTagValueConfig.default_values.filter( i => i.key !== item.key);
     this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
     .subscribe(res => console.log(res));

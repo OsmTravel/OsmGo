@@ -34,7 +34,7 @@
       <th (click)="changeOrder('lbl')" class="pointer">Label</th>
       <th>Presets</th>
       <th (click)="changeOrder('_count')" class="pointer" >count</th>
-      <th (click)="changeOrder('_percentage')" class="pointer">%</th>
+      <!-- <th (click)="changeOrder('_percentage')" class="pointer">%</th> -->
       <th (click)="changeOrder('time')" class="pointer"> time </th>
     </tr>
     <tr
@@ -55,7 +55,7 @@
       <td>{{primaryTagValueConfig.lbl}}</td>
       <td>{{primaryTagValueConfig.presets.length}}</td>
       <td> {{primaryTagValueConfig._count}}</td>
-      <td> {{primaryTagValueConfig._percentage }}</td>
+      <!-- <td> {{primaryTagValueConfig._percentage }}</td> -->
       <td> {{primaryTagValueConfig?.time | date:'short' }}</td>
     </tr>
   </table>
@@ -92,14 +92,25 @@
       style="font-weight: bolder; font-size: 1.5em;">
 
   </mat-form-field>
+
   <mat-form-field style="width: 100%;">
-    <input matInput [(ngModel)]="selectedTagValueConfig.lbl_alt" autocomplete="off" (change)="primaryTagHasChanged($event)"
-      placeholder="alternative label / keywords">
+    <input matInput [(ngModel)]="selectedTagValueConfig.terms" autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="keywords">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.description" autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="description">
   </mat-form-field>
 
   <mat-form-field style="width: 100%; color:red;">
     <input matInput [(ngModel)]="selectedTagValueConfig.alert"  autocomplete="off" (change)="primaryTagHasChanged($event)"
       placeholder="Alerte">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%; color:orange;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.warning"  autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="Warning">
   </mat-form-field>
 
   <div style="margin:5px;">

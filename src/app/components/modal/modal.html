@@ -34,6 +34,12 @@
 				</ion-card-content>
 			</ion-card>
 
+			<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.warning != ''" class="warningtCard">
+				<ion-card-content>
+					{{configOfPrimaryKey?.warning}}
+				</ion-card-content>
+			</ion-card>
+
 
 			<!--Primary Key-->
  
