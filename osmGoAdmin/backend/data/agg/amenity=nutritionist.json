@@ -1,8 +1,1 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "nutritionist", "count": 1}],
-    "count": 1
-  },
-  {"key": "ref:FR:NAF", "tags": [{"value": "8690F", "count": 1}], "count": 1}
-]
+[{"key":"amenity","tags":[{"value":"nutritionist","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33467996938","count":1}],"count":1},{"key":"wheelchair","tags":[{"value":"yes","count":1}],"count":1}]

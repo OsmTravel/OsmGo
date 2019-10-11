@@ -1,1 +1,1 @@
-[{"key":"shop","tags":[{"value":"caterer","count":4}],"count":4},{"key":"cuisine","tags":[{"value":"french","count":1}],"count":1}]
+[{"key":"shop","tags":[{"value":"caterer","count":4}],"count":4},{"key":"cuisine","tags":[{"value":"french","count":1},{"value":"pizza","count":1},{"value":"lebanese","count":1}],"count":3},{"key":"craft","tags":[{"value":"caterer","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33760832231","count":1}],"count":1},{"key":"takeaway","tags":[{"value":"only","count":1}],"count":1}]

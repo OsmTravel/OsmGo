@@ -19,7 +19,8 @@ const pKeys = [
     'healthcare',
     'natural',
     'historic',
-    'highway']
+    'highway',
+    'club']
 
 let sumaryPk = {};
 let res = {}
@@ -87,19 +88,27 @@ function aggregate(_pkey, _pvalue, elements) {
 
 
 var osm = parseOSM();
+let c = 0;
 fs.createReadStream(pbfPath)
     .pipe(osm)
     .pipe(through.obj(function (items, enc, next) {
         items.forEach(function (item) {
-      
-            if (Object.entries(item.tags).length > 0){
-                // console.log(item);
+            
+            if (Object.entries(item.tags).length > 0 && item.type == 'node'){
+              
+            //    console.log(item.type);
                 let keys = Object.keys(item.tags)
                 let inter = _.intersection(pKeys, keys);
         
                 for (let i = 0; i < inter.length; i++) {
                     let pValue = item.tags[inter[i]];
                     if (!/,/.test(pValue) && !/;/.test(pValue)) {
+
+                        c++;
+                        if (c % 10000 === 0){
+                            console.log(item);
+                        }
+
                         if (!res[inter[i]][pValue]) {
                             res[inter[i]][pValue] = []
                         }

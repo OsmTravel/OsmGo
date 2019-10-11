@@ -1,1 +1,1 @@
-[{"key":"amenity","tags":[{"value":"binoculars","count":2}],"count":2},{"key":"tourism","tags":[{"value":"viewpoint","count":2}],"count":2},{"key":"fee","tags":[{"value":"no","count":1}],"count":1}]
+[{"key":"amenity","tags":[{"value":"binoculars","count":10}],"count":10},{"key":"fee","tags":[{"value":"yes","count":4},{"value":"no","count":2}],"count":6},{"key":"binoculars","tags":[{"value":"yes","count":4}],"count":4},{"key":"tourism","tags":[{"value":"viewpoint","count":2}],"count":2}]

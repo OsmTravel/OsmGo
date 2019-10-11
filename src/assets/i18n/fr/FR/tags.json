@@ -4562,5 +4562,343 @@
         "presets": []
       }
     ]
+  },
+  "club": {
+    "type": "club",
+    "lbl": "Club / association",
+    "values": [
+      {
+        "key": "amateur_radio",
+        "lbl": "Club radio amateur",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "art",
+        "lbl": "art",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "astronomy",
+        "lbl": "Club d'astronomie",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "automobile",
+        "lbl": "automobile",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bicycle",
+        "lbl": "Promouvoir l'usage du vélo",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "board_games",
+        "lbl": "Club de jeux de sociétés",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "card_games",
+        "lbl": "Club dédié aux jeux de cartes",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "charity",
+        "lbl": "Un club dédié aux activités caritatives",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "chess",
+        "lbl": "Club d'échecs",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "cinema",
+        "lbl": "Club de cinéma",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "culture",
+        "lbl": "culture",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "doityourself",
+        "lbl": "Club DIY",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "equestrian",
+        "lbl": "Club équestre",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ethnic",
+        "lbl": "ethnic",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fan",
+        "lbl": "Fan-club",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "filmmaking",
+        "lbl": "filmmaking",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fishing",
+        "lbl": "Club de pêche",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "game",
+        "lbl": "Club dédié aux jeux",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "history",
+        "lbl": "Club consacré à l'histoire et aux traditions",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hunting",
+        "lbl": "Club de chasse",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "linux",
+        "lbl": "Un Groupe d'Utilisateurs de Linux",
+        "lbl_alt": "GUL",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "motorcycle",
+        "lbl": "Club de motards",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "music",
+        "lbl": "Club de musique ou de chant",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "nature",
+        "lbl": "Club dédié à l'étude de la nature",
+        "lbl_alt": "champignons, rochers, fleurs, ornithologie",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "nudism",
+        "lbl": "Club naturiste",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "photography",
+        "lbl": "Club photo",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "politics",
+        "lbl": "politics",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "religion",
+        "lbl": "religion",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "scout",
+        "lbl": "scout",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "smoke",
+        "lbl": "smoke",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": [],
+        "_description": null,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570613912087
+      },
+      {
+        "key": "social",
+        "lbl": "social",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sport",
+        "lbl": "sport",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "surf_life_saving",
+        "lbl": "surf life_saving",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "theatre",
+        "lbl": "Club de théâtre",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": [],
+        "_description": null,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570613887249
+      },
+      {
+        "key": "veterans",
+        "lbl": "Club d'anciens combattants",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "youth_movement",
+        "lbl": "youth movement",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      }
+    ]
   }
 }

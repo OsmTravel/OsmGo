@@ -44,6 +44,7 @@ export class TagsComponent implements OnInit {
 
     this.tagsService.tagsConfig$(this.tagsService.language,this.tagsService.country ).subscribe(data => {
       // this.tagsService.tagsConfig = data;
+      console.log(data);
       this.selectedTagKey = 'shop';
     });
   }

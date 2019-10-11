@@ -42,7 +42,7 @@
       (click)="tagValueConfigChange(primaryTagValueConfig)" class="pointer" >
       <td>
         <div style="width: 32px;min-height: 32px;height: 100%;"
-          [ngStyle]="{'background-color': primaryTagValueConfig.markerColor}">
+          [ngStyle]="{'background-color': primaryTagValueConfig && primaryTagValueConfig.markerColor ? primaryTagValueConfig.markerColor : '#3f51b5'}">
           <img *ngIf="primaryTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon"
             [src]="'./api/svg/'+ primaryTagValueConfig.icon" />
         </div>

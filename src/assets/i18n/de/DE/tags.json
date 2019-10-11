@@ -5087,5 +5087,344 @@
         "presets": []
       }
     ]
+  },
+  "club": {
+    "type": "club",
+    "lbl": "Club / association",
+    "values": [
+      {
+        "key": "amateur_radio",
+        "lbl": "amateur radio",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "art",
+        "lbl": "art",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "astronomy",
+        "lbl": "astronomy",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "automobile",
+        "lbl": "automobile",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "bicycle",
+        "lbl": "bicycle",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "board_games",
+        "lbl": "board_games",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "card_games",
+        "lbl": "card_games",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "charity",
+        "lbl": "charity",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "chess",
+        "lbl": "chess",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "cinema",
+        "lbl": "cinema",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "culture",
+        "lbl": "culture",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "doityourself",
+        "lbl": "doityourself",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "equestrian",
+        "lbl": "equestrian",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "ethnic",
+        "lbl": "ethnic",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fan",
+        "lbl": "fan",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "filmmaking",
+        "lbl": "filmmaking",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "fishing",
+        "lbl": "fishing",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "freemasonry",
+        "lbl": "freemasonry",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "game",
+        "lbl": "game",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "history",
+        "lbl": "history",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "hunting",
+        "lbl": "hunting",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "linux",
+        "lbl": "linux",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "motorcycle",
+        "lbl": "motorcycle",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "music",
+        "lbl": "music",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "nature",
+        "lbl": "nature",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "nudism",
+        "lbl": "nudism",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "photography",
+        "lbl": "photography",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "politics",
+        "lbl": "politics",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "religion",
+        "lbl": "religion",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "scout",
+        "lbl": "scout",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "smoke",
+        "lbl": "smoke",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "social",
+        "lbl": "social",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "sport",
+        "lbl": "sport",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "surf_life_saving",
+        "lbl": "surf life_saving",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "theatre",
+        "lbl": "theatre",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "veterans",
+        "lbl": "veterans",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      },
+      {
+        "key": "youth_movement",
+        "lbl": "youth movement",
+        "lbl_alt": "",
+        "icon": "maki-circle-15",
+        "markerColor": "#3467eb",
+        "alert": "",
+        "presets": []
+      }
+    ]
   }
 }

@@ -55,6 +55,7 @@ export class TagsService {
           const tags = data[0];
           const tagInfo = data[1];
           this.presetsConfig = data[2]
+          console.log( Object.keys(tags))
 
           for ( let k in tags){
             tags[k].values = tags[k].values.map(tag => {
@@ -62,6 +63,9 @@ export class TagsService {
               let count =0;
               let percentage = 0;
               let description
+              if (!tagInfo[k]){
+                return {...tag, _count :null, _percentage:null} ;
+              }
               let findedItem = tagInfo[k].values.find( item => item.value === tag.key)
               if (findedItem){
                 count = findedItem.count;

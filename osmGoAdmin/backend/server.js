@@ -323,7 +323,6 @@ app.post('/api/tag/:language/:country', function (req, res) {
             fs.writeFile(getTagsPath(language, country), stringify(jsonTags), 'utf8')
                 .then(() => {
                     res.send(data)
-                    console.log(data)
                 })
                 .catch(err => {
                     console.log(err);
@@ -347,10 +346,6 @@ app.post('/api/tagSetting/:language/:country/:pkey',  (req, res) => {
    
     const lbl = req.body.lbl;
     const exclude_way_values = req.body.exclude_way_values
-
-    console.log(pkey, lbl, exclude_way_values, language, country)
- 
-    // const data = { ...newPvalue, userId: user.id, userName: user.display_name, time: new Date().getTime() }
 
     fs.readFile(getTagsPath(language, country), 'utf8')
         .then(jsonStr => {
@@ -400,7 +395,6 @@ app.post('/api/tag/:language/:country/:key/:value', function (req, res) {
             fs.writeFile(getTagsPath(language, country), stringify(jsonTags), 'utf8')
                 .then(() => {
                     res.send(data)
-                    console.log(data)
                 })
                 .catch(err => {
                     console.log(err);
@@ -552,7 +546,6 @@ const getUserFromOsmTokens = async (token, token_secret) => {
         id: u.getAttribute('id'),
     };
     const jwttoken = jwt.sign(user, JWTSECRET);
-    console.log({ ...user, jwt: jwttoken });
     return { ...user, jwt: jwttoken };
 }
 

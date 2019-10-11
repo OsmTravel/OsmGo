@@ -1,1 +1,1 @@
-[{"key":"healthcare","tags":[{"value":"center","count":1}],"count":1}]
+[{"key":"healthcare","tags":[{"value":"center","count":5}],"count":5},{"key":"amenity","tags":[{"value":"doctors","count":1}],"count":1},{"key":"type:FR:FINESS","tags":[{"value":"603","count":1}],"count":1},{"key":"phone","tags":[{"value":"+33 4 76 40 09 09","count":1}],"count":1},{"key":"website","tags":[{"value":"https://www.mt2i.org/","count":1}],"count":1},{"key":"healthcare:speciality","tags":[{"value":"psychiatry","count":1}],"count":1}]

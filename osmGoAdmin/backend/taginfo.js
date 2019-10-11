@@ -70,7 +70,8 @@ const generateKeyStatsFile = async () =>{
         'healthcare',
         'natural',
         'historic',
-        'highway'];
+        'highway',
+        'club'];
 
        const stats =  await getStatsByKeys(pKeys)
        fs.writeFileSync( path.join('.','data', 'stats.json'), JSON.stringify(stats), 'utf8');
