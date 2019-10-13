@@ -11,9 +11,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "publicité, 4x3, affiche, panneau d'affichage, billboard, advertising, advertisement",
+        "terms": "publicité,affiche, panneau d'affichage",
         "description": "Panneau publicitaire d'une façon générale : panneau scellé au sol, ou panneau mural, dans leurs formats classiques (3 m. de large sur 2 m. de haut, ou 4 m. de large sur 3 m. de haut), mais beaucoup d'autres formats.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570871979116
       },
       {
         "key": "board",
@@ -33,9 +36,12 @@
         "markerColor": "#D73F29",
         "alert": "",
         "presets": [],
-        "terms": "",
+        "terms": "MUPI, sucette",
         "description": "Caisson publicitaire double-face avec une surface d'affichage d'environ 2 m². En général éclairé de l'intérieur par transmission. Parfois appelé 'sucette' publicitaire, ou MUPI pour Mobilier Urbain pour l'Information.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872057091
       },
       {
         "key": "totem",
@@ -68,8 +74,11 @@
         "alert": "",
         "presets": [],
         "terms": "",
-        "description": "",
-        "warning": ""
+        "description": "Drapeau publicitaire",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872031233
       },
       {
         "key": "sign",
@@ -89,24 +98,16 @@
         "markerColor": "#D73F29",
         "alert": "",
         "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
+        "terms": "publicité",
+        "description": "Ecran publicitaire",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872091886
       },
       {
         "key": "sculpture",
         "lbl": "sculpture / objet 3D",
-        "icon": "maki-art-gallery-15",
-        "markerColor": "#D73F29",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
-      },
-      {
-        "key": "tarp",
-        "lbl": "tarp",
         "icon": "maki-art-gallery-15",
         "markerColor": "#D73F29",
         "alert": "",
@@ -158,9 +159,12 @@
         ],
         "deprecated": false,
         "fromid": true,
-        "terms": "Agence de voyage",
+        "terms": "Agence de voyage,  tour-opérateur, voyagiste",
         "description": "Agence de voyage",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872659328
       },
       {
         "key": "estate_agent",
@@ -250,12 +254,12 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "Boulangerie",
+        "terms": "patisserie, pain",
         "description": "Une boulangerie ou pâtisserie. Point de fabrication et de vente de pain",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570804157280
+        "time": 1570872218135
       },
       {
         "key": "art",
@@ -265,9 +269,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Galeriste,gallerie d'art,marchand d'art,magasin d'art,art,artiste,exposition",
-        "description": "Galeriste,gallerie d'art,marchand d'art,magasin d'art,art,artiste,exposition",
-        "warning": ""
+        "terms": "Galeriste,galerie d'art,marchand d'art,magasin d'art,art,artiste,exposition",
+        "description": "Galeriste, galerie d'art, marchand d'art,artiste,exposition ...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570806067602
       },
       {
         "key": "gift",
@@ -277,12 +284,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Boutique de souvenirs, anniversaire",
+        "terms": "Boutique de souvenirs, anniversaire, cartes de vœux",
         "description": "Un magasin vendant des cadeaux, cartes de vœux/anniversaire, ou souvenir de voyage.",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570805247982
+        "time": 1570872368418
       },
       {
         "key": "wine",
@@ -442,9 +449,12 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "Laverie",
-        "description": "Un magasin pour laver les vêtements ordinaires, une laverie",
-        "warning": ""
+        "terms": "Laverie automatique, lave linge",
+        "description": "Un magasin pour laver les vêtements ordinaires",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872314676
       },
       {
         "key": "books",
@@ -479,9 +489,12 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "Magasin de matériel de sports de plein air",
-        "description": "Magasin de matériel de sports de plein air",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873498185
       },
       {
         "key": "food",
@@ -527,9 +540,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Magasin d'électronique et d'électroménager",
-        "description": "Magasin d'électronique et d'électroménager",
-        "warning": ""
+        "terms": "tv, radio,  frigo, machine à lavé, refrigirateur, télévision",
+        "description": "Magasin d'électronique (tv, radio...) et d'électroménager (lave linge, refrigirateur, etc) ",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872833095
       },
       {
         "key": "charity",
@@ -596,9 +612,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vente de cosmétiques, Parfumerie",
+        "terms": "cosmétiques, Parfumerie",
         "description": "Vente de cosmétiques, Parfumerie",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873113267
       },
       {
         "key": "toys",
@@ -656,9 +675,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Magasin d'instruments de musique",
-        "description": "Magasin d'instruments de musique",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873449857
       },
       {
         "key": "copyshop",
@@ -705,8 +727,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Droguerie,pharmacie",
-        "description": "Boutique vendant des articles pour l'hygiène, des cosmétiques, des produits d'entretien",
-        "warning": ""
+        "description": "Boutique vendant des articles pour l'hygiène, des cosmétiques, compléments alimentaires ...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873327128
       },
       {
         "key": "beauty",
@@ -758,9 +783,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vente de téléphone portable, magasin de téléphones portables, cellulaires",
+        "terms": "Vente de téléphone portable, cellulaires, GSM",
         "description": "Une boutique qui vend principalement des téléphones portables et des accessoires.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872511980
       },
       {
         "key": "video",
@@ -783,11 +811,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "voiture",
-        "description": "Un magasin qui vend ou répare des voitures/bus/camions",
+        "description": "Un magasin qui vend des voitures/bus/camions",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570805181464
+        "time": 1570872276448
       },
       {
         "key": "bicycle",
@@ -929,9 +957,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vente de produits de nettoyage",
+        "terms": "aspirateur,nettoyage",
         "description": "Vente de produits de nettoyage",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873589895
       },
       {
         "key": "tyres",
@@ -1035,9 +1066,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Papeterie",
-        "description": "Papeterie",
-        "warning": ""
+        "terms": "stylos, papier, fournitures",
+        "description": "Magasin qui vend des stylos, du papier et diverses fournitures",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873240983
       },
       {
         "key": "car_parts",
@@ -1047,9 +1081,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Magasin de pièces automobiles",
+        "terms": "pièces automobiles, voiture, huiles",
         "description": "Magasin de pièces automobiles, accessoires, huiles de moteur, etc.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873368145
       },
       {
         "key": "funeral_directors",
@@ -1059,9 +1096,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Funérarium, Maison funéraire",
+        "terms": "Funérarium, Maison funéraire, centre funéraire, pompes funèbres",
         "description": "Offrir des services liés aux arrangements funéraires, appelé \"centre funéraire\", \"espace funéraire, \"maison funéraire\" ou \"pompes funèbres\".",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873063691
       },
       {
         "key": "dry_cleaning",
@@ -1169,9 +1209,12 @@
         "alert": "",
         "presets": ["wheelchair"],
         "fromid": true,
-        "terms": "",
+        "terms": "Local vacant",
         "description": "Magasin qui n'est pas utilisé actuellement.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872324898
       },
       {
         "key": "fabric",
@@ -1193,9 +1236,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Épicerie,hard-discount",
-        "description": "Épicerie,hard-discount",
-        "warning": ""
+        "terms": "Épicerie,hard-discount, camelote",
+        "description": "Hard-discount, tout à 2€ etc...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872476059
       },
       {
         "key": "bag",
@@ -1205,9 +1251,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vente de bagages",
+        "terms": "bagages, sacs, valises",
         "description": "Vente de bagages",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570806107352
       },
       {
         "key": "second_hand",
@@ -1229,9 +1278,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Epicerie fine, Traiteur",
-        "description": "Utilisé pour baliser un delicatessen.",
-        "warning": ""
+        "terms": "Epicerie fine",
+        "description": "Utilisé pour baliser un delicatessen, ou un lieu de restauration, essentiellement dans les pays anglo-saxons.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872612526
       },
       {
         "key": "kitchen",
@@ -1437,9 +1489,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Buraliste",
+        "terms": "Buraliste, cigarette",
         "description": "Buraliste",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570872353780
       },
       {
         "key": "medical_supply",
@@ -1449,9 +1504,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Magasin de matériel médical",
+        "terms": "fournitures médicales",
         "description": "Magasin de fournitures médicales",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873476329
       },
       {
         "key": "herbalist",
@@ -1509,9 +1567,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Magasin de puériculture",
+        "terms": "puériculture, poussettes",
         "description": "Une boutique où l'on peut acheter des objets pour les bébés, comme des vêtements, poussettes, des lits ou des bains de bébé",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570806086989
       },
       {
         "key": "erotic",
@@ -1568,20 +1629,26 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "terms": "",
-        "description": "",
-        "warning": ""
+        "description": "Vente de table d’extérieur, décorations, etc ",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873677417
       },
       {
         "key": "anime",
-        "lbl": "Boutique d'« animes »",
+        "lbl": "Boutique d'animes",
         "icon": "",
         "markerColor": "#A23337",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vente de mangas, de CD et DVD, déguisements, accessoires",
+        "terms": "manga, Bd, animé",
         "description": "Un magasin vendant des animé, manga, Bd",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873599648
       },
       {
         "key": "games",
@@ -1629,9 +1696,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Boutique de vente de billets,Billetterie",
+        "terms": "Boutique de vente de billets,Billetterie, concerts, évènements, transport public",
         "description": "Un endroit où on peut acheter des tickets (concerts, évènements, transport public, ...)",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873256625
       },
       {
         "key": "frozen_food",
@@ -1653,9 +1723,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "",
-        "description": "magasin de Haute couture",
-        "warning": ""
+        "terms": "Haute couture",
+        "description": "Magasin de Haute couture",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873438669
       },
       {
         "key": "perfumery",
@@ -1665,9 +1738,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Parfumerie",
-        "description": "Parfumerie",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873504634
       },
       {
         "key": "paint",
@@ -1782,8 +1858,11 @@
         "presets": [],
         "fromid": true,
         "terms": "imprimante,fax,encre,cartouche,impression",
-        "description": "imprimante,fax,encre,cartouche,impression",
-        "warning": ""
+        "description": "Spécialiste de vente d'encre pour imprimante",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873704746
       },
       {
         "key": "pasta",
@@ -1792,9 +1871,12 @@
         "markerColor": "#A23337",
         "alert": "",
         "presets": [],
-        "terms": "",
+        "terms": "ravioli",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873726406
       }
     ],
     "exclude_way_values": []
@@ -1849,8 +1931,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Auto-école, école de conduite, auto ecole, ecole de conduite, code de la route, permis de conduire, driving school",
-        "description": "Auto-école",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885749349
       },
       {
         "key": "bench",
@@ -1898,8 +1983,11 @@
         ],
         "fromid": true,
         "terms": "Bar, brasserie, café, pub",
-        "description": "Bar, brasserie, café, pub",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874377635
       },
       {
         "key": "pub",
@@ -1915,9 +2003,12 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "Pub",
-        "description": "Pub",
-        "warning": ""
+        "terms": "bar, bière",
+        "description": "Bar de type irlandais ou britannique servant essentiellement de la bière pression et du whisky",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885337642
       },
       {
         "key": "library",
@@ -1928,8 +2019,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Bibliothèque, Médiathèque",
-        "description": "Désigne une bibliothèque",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885624932
       },
       {
         "key": "brothel",
@@ -1966,9 +2060,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Boîte aux lettres",
+        "terms": "Boîte aux lettres, la poste, courrier",
         "description": "Une boîte aux lettres pour l'expédition du courrier.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873971861
       },
       {
         "key": "post_office",
@@ -1978,9 +2075,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Bureau de poste",
-        "description": "Un bureau de poste",
-        "warning": ""
+        "terms": "la poste",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874521045
       },
       {
         "key": "public_building",
@@ -2016,9 +2116,12 @@
         "alert": "",
         "presets": ["phone"],
         "fromid": true,
-        "terms": "pompiers, sapeurs-pompiers, station de pompiers, caserne de pompiers, arsenal, maison des pompes, centre de secours, service de secours, services de secours, services d'urgence, services d'intervention, sécurité civile, Service régional d'incendie, SRI, Service départemental d'incendie et de secours, SDIS, Service d'incendie et sauvetage, Service de défense incendie et secours, feu, incendie, urgence, intervention, fire station",
-        "description": "Utilisé pour montrer l'emplacement d'une caserne de pompiers",
-        "warning": ""
+        "terms": "station de pompiers, centre de secours, SRI, SDIS,  feu, incendie",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886026893
       },
       {
         "key": "casino",
@@ -2029,11 +2132,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "casino, jeux d'argent, jeux de hasard, roulette, craps, poker, blackjack, machine à sous",
-        "description": "",
+        "description": "Jeux d'argent, jeux de hasard, etc",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570801835112
+        "time": 1570886576527
       },
       {
         "key": "arts_centre",
@@ -2068,7 +2171,10 @@
         "fromid": true,
         "terms": "cimetière paroissial, lieu de sépulture, lieu de culte, cimetière, église, amenity grave yard, grave yard, graveyard, nécropole, ossuaire",
         "description": "Un cimetière proche d'un lieu de culte.",
-        "warning": ""
+        "warning": "Très rare en France",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886427817
       },
       {
         "key": "cinema",
@@ -2115,23 +2221,26 @@
         "presets": [],
         "fromid": true,
         "terms": "Autopartage, partage de voitures, car sharing",
-        "description": "Station de \"Carsharing\" (partage de voiture ou autopartage), où il est possible de récupérer une voiture louée par l'intermédiaire d'un système de carsharing. Il s'agit, très souvent, d'espace séparés sur un parking.",
+        "description": "Station de \"Carsharing\" (partage de voiture ou autopartage), où il est possible de récupérer une voiture louée. s'agit, très souvent, d'espace séparés sur un parking.",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570801809465
+        "time": 1570885941108
       },
       {
         "key": "ice_cream",
-        "lbl": "Magasin de crèmes glacées",
+        "lbl": "Magasin de glace",
         "icon": "maki-ice-cream-15",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Magasin de glaces",
-        "description": "Magasin de glaces",
-        "warning": ""
+        "terms": "glaces, glacier",
+        "description": "Magasin vendant des crèmes glacées, sorbets, etc...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886261969
       },
       {
         "key": "crematorium",
@@ -2142,8 +2251,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Crématorium, crematorium, crémation, incinération, incineration, four crématoire, four de crémation, funérailles, crematoria, cimetière",
-        "description": "A tag pour un Crématorium.",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886721305
       },
       {
         "key": "atm",
@@ -2153,9 +2265,12 @@
         "alert": "",
         "presets": ["wheelchair"],
         "fromid": true,
-        "terms": "distributeur de billets, distributeur automatique, distributeur automatique de billets, guichet automatique, DAB, GAB, billets de banque, retrait d'argent, retrait de liquide, guichet de retrait, retrait automatique, ATM, amenity atm",
-        "description": "Un appareil qui donne accès aux transactions financières",
-        "warning": ""
+        "terms": "dab",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874574386
       },
       {
         "key": "dentist",
@@ -2178,8 +2293,11 @@
         "presets": [],
         "fromid": true,
         "terms": "eau potable, robinet, boire, fontaine d'eau, fontaine à eau, distributeur d'eau, eau, fontaine, drinking water",
-        "description": "Pour indiquer l'emplacement d'un robinet ou autre accès à de l'eau potable",
-        "warning": ""
+        "description": "Emplacement d'un robinet ou autre accès à de l'eau potable",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874460433
       },
       {
         "key": "fountain",
@@ -2189,9 +2307,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Fontaine, fontaine d'ornement, fontaine décorative, fontaine sculpturale, fontaine récréative, grande fontaine, jet d'eau, jets d'eau, fontaine d'eau, fontaine d'eau non potable, eau non potable, non potable, fountain",
+        "terms": "Fontaine,  jet d'eau, jets d'eau",
         "description": "Une fontaine à fonction décorative / sculpturale / récréative.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874482529
       },
       {
         "key": "hospital",
@@ -2232,9 +2353,12 @@
         ],
         "deprecated": false,
         "fromid": true,
-        "terms": "école maternelle, école enfantine, jardin d'enfants, école primaire, école, écoliers,  petite section, moyenne section, grande section, PS-MS-GS, kindergarten, crèche, halte-garderie",
-        "description": "Lieu d'accueil de très jeunes enfants pour les préparer à l'enseignement élémentaire (pré-scolaire).",
-        "warning": ""
+        "terms": "école maternelle,  jardin d'enfants, école, ,petite section, moyenne section, grande section, crèche, halte-garderie",
+        "description": "Lieu d'accueil de très jeunes enfants pour les préparer à l'enseignement élémentaire (pré-scolaire). Peut être une école maternelle",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885240667
       },
       {
         "key": "car_wash",
@@ -2245,8 +2369,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Lavage de voiture, lave auto, station lavage, station-lavage, lave-auto, car wash",
-        "description": "Lavage de voiture, lave auto, station lavage, station-lavage, lave-auto, car wash",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885741926
       },
       {
         "key": "place_of_worship",
@@ -2256,9 +2383,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Édifice religieux",
+        "terms": "Édifice religieux, église, mosquée, synagogue",
         "description": "Lieu de culte, quelle que soit la religion ou sa subdivision.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885704766
       },
       {
         "key": "car_rental",
@@ -2277,15 +2407,18 @@
       },
       {
         "key": "bicycle_rental",
-        "lbl": "Location de vélos",
+        "lbl": "Location de vélos en libre service ",
         "icon": "mi-bicycle-store",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Location de vélo, Location de bicyclette, bicycle rental",
-        "description": "Un endroit où l'on peut emprunter ou rendre un vélo en location.",
-        "warning": ""
+        "terms": "Location de bicyclette, vélib, vélov",
+        "description": "type vélib, vélov, etc",
+        "warning": " ce \"tag\" ne s'applique pas aux boutiques de location de vélo : pour celles-ci, utilisez shop=bicycle.",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885509471
       },
       {
         "key": "townhall",
@@ -2295,9 +2428,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Mairie,Hôtel de ville,Maison commune",
+        "terms": "Maison commune",
         "description": "Désigne un bâtiment où l'administration d'une ville est située.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874502041
       },
       {
         "key": "nursing_home",
@@ -2330,9 +2466,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Docteur, médecin, medecin, cabinet médical, médecine générale, dermatologue, cardiologue, gynécologue, spécialiste, doctors, doctor",
+        "terms": "Docteur, médecin, , cabinet médical",
         "description": "Lieu où vous pouvez obtenir une consultation ou un bilan médical.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885155635
       },
       {
         "key": "nursery",
@@ -2354,9 +2493,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Palais de justice, cour de justice, cour d'assises, courthouse, court house",
-        "description": "Palais de justice, cour de justice, cour d'assises, courthouse, court house",
-        "warning": ""
+        "terms": "Palais de justice, cour de justice, cour d'assises",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886505649
       },
       {
         "key": "park",
@@ -2390,9 +2532,12 @@
         "presets": ["bicycle_parking", "operator", "capacity", "covered"],
         "default_values": [{"key": "bicycle_parking", "value": "stands"}],
         "fromid": true,
-        "terms": "Parc à vélos, Parking vélo, Parking à bicyclette, Stationnement à vélo, stationnement vélo, arceau à vélo, râtelier à vélo, rack à vélo, abri à vélo, vélo, velo, bicycle parking",
+        "terms": "Parc,  bicyclette, Stationnement, arceau à vélo, râtelier à vélo, rack, vélo",
         "description": "Emplacement pour garer son vélo.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570873936763
       },
       {
         "key": "pharmacy",
@@ -2408,13 +2553,16 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "pharmacie",
-        "description": "Une pharmacie. Un commerce qui vend des médicaments",
-        "warning": ""
+        "terms": "pharmacien, médicaments",
+        "description": "Un commerce qui vend des médicaments",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874038317
       },
       {
         "key": "marketplace",
-        "lbl": "Marché",
+        "lbl": "Place de marché",
         "icon": "osm-marketplace",
         "markerColor": "#EF9228",
         "alert": "",
@@ -2422,7 +2570,10 @@
         "fromid": true,
         "terms": "Marché, Place de marché",
         "description": "Un endroit ou on peut acheter des biens de consommation (nourriture, vêtements, bibelots).",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886079830
       },
       {
         "key": "recycling",
@@ -2438,9 +2589,12 @@
         ],
         "default_values": [{"key": "recycling_type", "value": "container"}],
         "fromid": true,
-        "terms": "",
-        "description": "Un nœud ou un polygone pour marquer les points de collecte en vue de recyclage et valorisation.",
-        "warning": ""
+        "terms": "collecte, déchetterie , vide verre, conteneur,",
+        "description": "Points de collecte en vue de recyclage et valorisation. Peut être une déchetterie ou un conteneur  ",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885084621
       },
       {
         "key": "police",
@@ -2450,9 +2604,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Police, Gendarmerie",
-        "description": "Utilisé pour marquer un poste ou commissariat de police.",
-        "warning": ""
+        "terms": "Police, Gendarmerie, commissariat",
+        "description": "Utilisé pour marquer un poste ou commissariat de police ou de gendarmerie.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885660470
       },
       {
         "key": "prison",
@@ -2463,8 +2620,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Prison, Terrains carcéraux, Pénitencier, Maison d'arrêt, Centre correctionnel, Centre de détention, Geôle.",
-        "description": "Prison, Terrains carcéraux, Pénitencier, Maison d'arrêt, Centre correctionnel, Centre de détention, Geôle.",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886776535
       },
       {
         "key": "shelter",
@@ -2492,9 +2652,12 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "Restaurant,brasserie",
-        "description": "lieu où on est généralement assis, où on achète des repas complets servis par des serveurs et qui a souvent l'autorisation de vendre des boissons alcoolisées.",
-        "warning": ""
+        "terms": "brasserie",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885078319
       },
       {
         "key": "fast_food",
@@ -2510,9 +2673,12 @@
           "opening_hours"
         ],
         "fromid": true,
-        "terms": "fast food, restauration rapide, service au comptoir, vente à emporter, à emporter, a emporter, burger, sandwich, kebab, panini, tacos",
+        "terms": "fast food, burger, sandwich, kebab, panini, tacos",
         "description": "Lieu spécialisé dans la restauration rapide à emporter ou au comptoir.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874342382
       },
       {
         "key": "gym",
@@ -2534,12 +2700,12 @@
         "alert": "",
         "presets": ["wheelchair"],
         "fromid": true,
-        "terms": "salle des fêtes, salle festive, centre communautaire, maison de quartier, maison des associations, salle des associations, centre d'animation, salle des fetes, salle des fètes, salle polyvalente, community centre",
-        "description": "Salle des fêtes, salle d'association, etc.",
+        "terms": "salle des fêtes, centre communautaire, salle polyvalente, community centre",
+        "description": "Salle des fêtes, salle d'association, salle polyvalente,  centre communautaire, etc.",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570801863364
+        "time": 1570885559933
       },
       {
         "key": "sauna",
@@ -2573,9 +2739,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "station-service, station service, station de carburant, station-essence, station essence, station d’essence, station à essence, essencerie, pompe à essence, pompe à carburant, carburant, essence, diesel, gpl, fuel",
-        "description": "Utilisé pour marquer les stations-service",
-        "warning": ""
+        "terms": "carburant, essence, station, pompe à essence, carburant, essence, diesel, gpl, fuel",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874558703
       },
       {
         "key": "studio",
@@ -2585,9 +2754,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Studio,Studio de télévision,Plateau de télévision,Studio de radio,Studio d'enregistrement",
-        "description": "Studio de télévision,de radio, d'enregistrement etc",
-        "warning": ""
+        "terms": "Studio,télévision,Plateau télévision,radio,enregistrement",
+        "description": "Studio de télévision,de radio, d'enregistrement, etc",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886480840
       },
       {
         "key": "taxi",
@@ -2634,8 +2806,11 @@
         "presets": ["fee", "male", "female", "wheelchair"],
         "fromid": true,
         "terms": "Toilettes, WC",
-        "description": "Toilettes publiques",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874052833
       },
       {
         "key": "telephone",
@@ -2645,9 +2820,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "numéro, téléphone",
-        "description": "Désigne un téléphone public",
-        "warning": ""
+        "terms": "cabine téléphonique",
+        "description": "Désigne un téléphone public, une cabine téléphonique",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885184112
       },
       {
         "key": "university",
@@ -2669,9 +2847,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vétérinaire",
+        "terms": "",
         "description": "Un lieu ou un vétérinaire pratique.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885891668
       },
       {
         "key": "school",
@@ -2681,9 +2862,12 @@
         "alert": "",
         "presets": ["school:FR", "wheelchair"],
         "fromid": true,
-        "terms": "école élémentaire, école primaire, école secondaire, collège, lycée, cycles primaires et secondaires, enseignements élémentaire et secondaire, \nenseignement élémentaire, enseignement secondaire, \nétablissement d'enseignement élémentaire, établissement d'enseignement secondaire,\nécole, écoliers, CP-CE1-CE2-CM1-CM2, ecole, college, lycee, school",
+        "terms": "école élémentaire, école primaire, secondaire, lycée, collège ",
         "description": "Établissement scolaire - élémentaire ou secondaire (6 à 18 ans)",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874011685
       },
       {
         "key": "college",
@@ -2716,9 +2900,12 @@
         "alert": "",
         "presets": ["vending", "wheelchair"],
         "fromid": true,
-        "terms": "distributeur automatique, machine, vente automatique, distributeur, guichet automatique, vending machine",
+        "terms": "machine, guichet automatique, canette, sac à caca de chien, préservatifs",
         "description": "Automates de vente et distributeurs automatiques",
-        "warning": "Ne pas confondre avec un distributeur de billet"
+        "warning": "Ne pas confondre avec un distributeur de billet",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570874440938
       },
       {
         "key": "social_facility",
@@ -2736,8 +2923,11 @@
         ],
         "fromid": true,
         "terms": "Assistance sociale, Services sociaux",
-        "description": "Un établissement qui fournit des services sociaux",
-        "warning": ""
+        "description": "Assistance sociale, Services sociaux, etc",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885728845
       },
       {
         "key": "parking_entrance",
@@ -2759,9 +2949,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "dojo, arts martiaux, art martial, tatami, judo, karate, aikido, aïkido, kendo, jujitsu, jujutsu, ju-jitsu, ju-jutsu, jūjutsu, jiu-jitsu, akhara, dojang, gelanggang, silat melayu, heya, sumo, kalari, kalaripayat, sasaran, pencak silat, wuguan, wushu, shorinji kempo, yoseikan budo, budo, aïkibudo, kenjutsu, bujutsu, katana, wakizashi, bokken, kobudo, bo-jutsu, bojustu, kendō, bō-jutsu, taijitsu, taijutsu",
-        "description": "dojo, arts martiaux, art martial, tatami, judo, karate, aikido, aïkido, kendo, jujitsu, jujutsu, ju-jitsu, ju-jutsu, jūjutsu, jiu-jitsu, akhara, dojang, gelanggang, silat melayu, heya, sumo, kalari, kalaripayat, sasaran, pencak silat, wuguan, wushu, shorinji kempo, yoseikan budo, budo, aïkibudo, kenjutsu, bujutsu, katana, wakizashi, bokken, kobudo, bo-jutsu, bojustu, kendō, bō-jutsu, taijitsu, taijutsu",
-        "warning": ""
+        "terms": "dojo, arts martiaux, art martial, tatami, judo, karate, aikido, aïkido, kendo, jujitsu",
+        "description": "Lieu de pratique d'arts martiaux",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886176602
       },
       {
         "key": "ticket_validator",
@@ -2791,7 +2984,7 @@
       },
       {
         "key": "bbq",
-        "lbl": "Barbecue, grill",
+        "lbl": "Barbecue",
         "icon": "maki-fire-station-15",
         "markerColor": "#EF9228",
         "alert": "",
@@ -2799,7 +2992,10 @@
         "fromid": true,
         "terms": "bbq, barbecue, grill, grillades, mechoui, méchoui, foyer, feu",
         "description": "Un barbecue fixe et permanent",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886106279
       },
       {
         "key": "music_school",
@@ -2809,9 +3005,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "École de musique",
-        "description": "École de musique",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886449921
       },
       {
         "key": "language_school",
@@ -2821,9 +3020,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "école de langues,langues étrangères",
-        "description": "école de langues,langues étrangères",
-        "warning": ""
+        "terms": "langues étrangères",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886736605
       },
       {
         "key": "charging_station",
@@ -2833,9 +3035,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Station de recharge, Borne de recharge, recharge électrique, recharge, batterie, charging station",
-        "description": "Station de recharge, Borne de recharge, recharge électrique, recharge, batterie, charging station",
-        "warning": ""
+        "terms": "Station, Borne, électrique, recharge, batterie, ",
+        "description": "Station de recharge pour les véhicules électriques",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885062809
       },
       {
         "key": "stripclub",
@@ -2857,8 +3062,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Horloge publique, pendule, heure, cadran solaire, clock",
-        "description": "Horloge publique, pendule, heure, cadran solaire, clock",
-        "warning": ""
+        "description": "Horloge publique, cadran solaire, etc...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885785513
       },
       {
         "key": "internet_cafe",
@@ -2868,9 +3076,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Café internet,Cybercafé",
-        "description": "Café internet,Cybercafé",
-        "warning": ""
+        "terms": "internet",
+        "description": "Café internet",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886550112
       },
       {
         "key": "table",
@@ -2938,21 +3149,27 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Parc à motos,Stationnement motos",
+        "terms": "Parc à motos,Stationnement motos, scooter",
         "description": "Un lieu pour stationner des véhicles deux roues motorisés",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885821472
       },
       {
         "key": "shower",
-        "lbl": "Douche",
+        "lbl": "Douche publique",
         "icon": "shower-solid",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "douche",
-        "description": "douche",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886094364
       },
       {
         "key": "public_bookcase",
@@ -2963,8 +3180,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Bibliothèque en libre service, Micro-bibliothèque, boîte à livres",
-        "description": "Un mobilier urbain contenant des livres. Prenez un livre, laissez-en un.",
-        "warning": ""
+        "description": "Boîte à livres. Un mobilier urbain contenant des livres. Prenez un livre, laissez-en un.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570885874451
       },
       {
         "key": "vehicle_inspection",
@@ -2975,8 +3195,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "centre de contrôle technique,contrôle technique",
-        "description": "Centre de contrôle technique",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886314677
       },
       {
         "key": "water_point",
@@ -2999,8 +3222,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Air comprimé, compressed air",
-        "description": "Une machine servant à gonfler des pneus (ex : motorcar, bicycle).",
-        "warning": ""
+        "description": "Une machine servant à gonfler des pneus (ex :  auto, vélo, etc).",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886371287
       },
       {
         "key": "watering_place",
@@ -3011,19 +3237,25 @@
         "presets": [],
         "fromid": true,
         "terms": "point d'eau, abreuvoir, auge, trou d'eau, eau, soif, animal, animaux, boire, fontaine, bassin, réservoir, amenity watering place, watering place",
-        "description": "point d'eau, abreuvoir, auge, trou d'eau, eau, soif, animal, animaux, boire, fontaine, bassin, réservoir, amenity watering place, watering place",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886294602
       },
       {
         "key": "dancing_school",
-        "lbl": "dancing_school",
+        "lbl": "Ecole de danse",
         "icon": "dance-instructor",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "terms": "Ecole de danse",
-        "description": "Ecole de danse",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886634679
       },
       {
         "key": "photo_booth",
@@ -3045,9 +3277,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "élevage, gavage, animal, porcherie, étable, vache, cheval, cochon, porc, mouton, chèvre, oiseau, poule, canard, oie, ferme, vacherie, bovin, ovin, caprin, équin, porcin, avicole, juvénile, bétail, betail, breeding",
+        "terms": "élevage, gavage, animal, porcherie, étable, vache, cheval, cochon, porc, mouton, chèvre, poule, canard, oie, ferme, vacherie,bétail",
         "description": "Une instalation où les animaux sont élevés, habituellement pour les vendre",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886685644
       },
       {
         "key": "sanitary_dump_station",
@@ -3087,19 +3322,22 @@
       },
       {
         "key": "boat_rental",
-        "lbl": "Location de bateau",
+        "lbl": "Location de bateaux",
         "icon": "mi-boating",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Location de bateaux, boat rental",
-        "description": "Location de bateaux, boat rental",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886527069
       },
       {
         "key": "monastery",
-        "lbl": "Terrain de monastère",
+        "lbl": "Monastère",
         "icon": "pray-solid",
         "markerColor": "#EF9228",
         "alert": "",
@@ -3107,7 +3345,10 @@
         "fromid": true,
         "terms": "monastère,abbaye,basilique,cathédrale,chapelle,église",
         "description": "Un monastère en fonction",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886704075
       },
       {
         "key": "waste_disposal",
@@ -3231,9 +3472,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "raid aérien, tempête, tornade, avertissement",
-        "description": "Une sirène est une alarme qui signale un danger tel qu'un raid aérien ou une tornade.",
-        "warning": ""
+        "terms": "alarme",
+        "description": "Une sirène est une alarme qui signale un danger",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886909022
       },
       {
         "key": "lifeguard_tower",
@@ -3243,20 +3487,26 @@
         "alert": "",
         "presets": [],
         "terms": "",
-        "description": "",
-        "warning": ""
+        "description": "Les sauveteurs vous surveillent d'ici !",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886953941
       },
       {
         "key": "life_ring",
-        "lbl": "Bouée de Sauvetage",
+        "lbl": "Bouée de sauvetage",
         "icon": "life-ring-solid",
         "markerColor": "#75030B",
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "bouée de sauvetage",
-        "description": "bouée de sauvetage",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886860069
       },
       {
         "key": "yes",
@@ -3279,8 +3529,11 @@
         "presets": [],
         "fromid": true,
         "terms": "réservoir d'eau de secours,secours,urgence,reservoir",
-        "description": "réservoir d'eau de secours,secours,urgence,reservoir",
-        "warning": ""
+        "description": "Réservoir d'eau de secours",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886835185
       },
       {
         "key": "fire_extinguisher",
@@ -3308,9 +3561,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Jeux pour adultes",
-        "description": "Jeux pour adultes",
-        "warning": ""
+        "terms": "",
+        "description": "Machine à sous, flipper, billard, simulateur de courses, etc...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887505754
       },
       {
         "key": "amusement_arcade",
@@ -3344,9 +3600,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Observatoire d'oiseaux",
-        "description": "Observatoire d'oiseaux",
-        "warning": ""
+        "terms": "oiseaux",
+        "description": "On regarde les oiseaux ici",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887259701
       },
       {
         "key": "dance",
@@ -3356,9 +3615,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "piste de danse,salle de bal,dancing",
-        "description": "piste de danse,salle de bal,dancing",
-        "warning": ""
+        "terms": "piste de danse,salle de bal",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887216968
       },
       {
         "key": "dog_park",
@@ -3369,12 +3631,15 @@
         "presets": [],
         "fromid": true,
         "terms": "Parc canin, parc à chiens",
-        "description": "Parc canin, zone désignée, avec ou sans une clôture, où les propriétaires de chiens sont autorisés à exercer leur animaux de compagnie",
-        "warning": ""
+        "description": "Parc à chiens où les propriétaires de chiens sont autorisés à les laisser libre",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887202427
       },
       {
         "key": "firepit",
-        "lbl": "Foyer",
+        "lbl": "Feu de camp",
         "icon": "fa-fire",
         "markerColor": "#5B396C",
         "alert": "",
@@ -3382,7 +3647,10 @@
         "fromid": true,
         "terms": "Emplacement de feu de camp",
         "description": "Un emplacement ou une structure permanente qui accueille des feux de camp.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887349985
       },
       {
         "key": "hackerspace",
@@ -3404,9 +3672,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Patinoire",
-        "description": "Patinoire",
-        "warning": ""
+        "terms": "glace, patin, hockey",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887398171
       },
       {
         "key": "marina",
@@ -3416,9 +3687,12 @@
         "alert": "",
         "presets": ["wheelchair"],
         "fromid": true,
-        "terms": "Marina",
-        "description": "Marina",
-        "warning": ""
+        "terms": "bateau",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887056339
       },
       {
         "key": "miniature_golf",
@@ -3428,9 +3702,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Mini golf",
-        "description": "Mini golf",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887354563
       },
       {
         "key": "park",
@@ -3465,8 +3742,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Aire de Jeu, Cour de récréation",
-        "description": "terrain de jeux destiné aux enfants",
-        "warning": ""
+        "description": "Terrain de jeux destiné aux enfants",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886988829
       },
       {
         "key": "sports_centre",
@@ -3476,9 +3756,12 @@
         "alert": "",
         "presets": ["wheelchair"],
         "fromid": true,
-        "terms": "complexe sportif,salle de sport",
+        "terms": "complexe sportif,salle de sport, gymnase",
         "description": "Un complexe sportif regroupe diverses installations dédiées à la pratique du sport.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887008131
       },
       {
         "key": "stadium",
@@ -3546,9 +3829,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Sauna",
-        "description": "Un sauna",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887367643
       },
       {
         "key": "yes",
@@ -3569,9 +3855,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Jardin",
+        "terms": "parc",
         "description": "Un endroit aménagé où les fleurs et autres plantes sont cultivées de manière structurée, à des fins décoratives, scientifiques, utilitaires, ...",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887091046
       },
       {
         "key": "picnic_table",
@@ -3581,13 +3870,16 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Table de pique-nique",
+        "terms": "banc, ",
         "description": "Une table avec des bancs pour la restauration et le repos",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570886974987
       },
       {
         "key": "track",
-        "lbl": "Piste de course (hors sports mécaniques)",
+        "lbl": "Piste de course ",
         "icon": "maki-pitch-15",
         "markerColor": "#5B396C",
         "alert": "",
@@ -3595,7 +3887,10 @@
         "fromid": true,
         "terms": "Piste hippique,piste d'athlétisme",
         "description": "Une piste pour la course à pied, le cyclisme et d'autres courses non motorisées telles que les chevaux, les lévriers.",
-        "warning": ""
+        "warning": "hors sports mécaniques)",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887273895
       },
       {
         "key": "slipway",
@@ -3626,12 +3921,15 @@
         "lbl": "Fitness en extérieur",
         "icon": "mi-physiotherapist",
         "markerColor": "#5B396C",
-        "alert": "En extérieur uniquement",
+        "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Équipements de fitness en extérieur",
+        "terms": "",
         "description": "Équipements de fitness en extérieur",
-        "warning": ""
+        "warning": "En extérieur uniquement",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887032913
       },
       {
         "key": "horse_riding",
@@ -3641,9 +3939,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Centre équestre, Écurie, Équitation.",
+        "terms": "Centre équestre, Écurie, Équitation, cheval, chevaux ",
         "description": "Une installation équestre où les personnes peuvent pratiquer l'équitation, habituellement dans leur temps libre, p. ex. un centre équestre. Pour une carrière, utiliser les étiquettes pour terrain de sport (pitch) et sport équestre (equestrian sport).",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887111427
       },
       {
         "key": "fitness_centre",
@@ -3654,8 +3955,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "salle de sport,salle de musculation",
-        "description": "Salle de sport",
-        "warning": ""
+        "description": "Salle de sport, de musculation",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887048327
       },
       {
         "key": "nature_reserve",
@@ -3701,9 +4005,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "escape game,escape room,puzzle room,quest room",
-        "description": "une salle où se déroule un jeu d'aventure physique dans lequel les joueurs résolvent une série d'énigmes à l'aide d'indices, de conseils et de stratégie pour atteindre des objectifs",
-        "warning": ""
+        "terms": "puzzle,room",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887326675
       },
       {
         "key": "table_tennis_table",
@@ -3730,9 +4037,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Vannier",
-        "description": "Vannier",
-        "warning": ""
+        "terms": "paniers, chapeaux",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888088814
       },
       {
         "key": "beekeeper",
@@ -3815,8 +4125,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Restaurateur",
-        "description": "Traiteur",
-        "warning": ""
+        "description": " Lieu de travail où l'on prépare des repas complets personnalisés à emporter ou livré à un groupe lors de rassemblements sociaux (réceptions, mariages, ...).",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887646839
       },
       {
         "key": "clockmaker",
@@ -3839,8 +4152,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Confiserie, confiseur, bonbons, fabricant de bonbons, biscuits, biscuiterie",
-        "description": "Confiserie",
-        "warning": ""
+        "description": "Confiserie, fabricant de bonbons, biscuits, biscuiterie",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887917011
       },
       {
         "key": "dressmaker",
@@ -3851,8 +4167,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Couturier, Tailleur, Designer textile",
-        "description": "Couturier/couturière",
-        "warning": ""
+        "description": "Couturier/couturière, Tailleur",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887680115
       },
       {
         "key": "electrician",
@@ -3892,7 +4211,7 @@
       },
       {
         "key": "glaziery",
-        "lbl": "Vitrerie",
+        "lbl": "Vitrier",
         "icon": "",
         "markerColor": "#5B396C",
         "alert": "",
@@ -3900,7 +4219,10 @@
         "fromid": true,
         "terms": "Vitrier",
         "description": "Vitrerie",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887938737
       },
       {
         "key": "handicraft",
@@ -3910,9 +4232,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Artisan",
+        "terms": "fait-main",
         "description": "Artisanat manuel (\"fait-main\")",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887695879
       },
       {
         "key": "hvac",
@@ -3980,9 +4305,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Construction métallique",
-        "description": "Constructions métalliques",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887897993
       },
       {
         "key": "optician",
@@ -3993,8 +4321,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "",
-        "description": "Opticien",
-        "warning": ""
+        "description": "Un endroit où les verres correcteurs de vision d'une personne sont conçus, ajustés et délivrés.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887874422
       },
       {
         "key": "painter",
@@ -4041,8 +4372,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Laboratoire photographique, Laboratoire de développement",
-        "description": "Laboratoire photographique",
-        "warning": ""
+        "description": "Laboratoire de développement photo",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888030813
       },
       {
         "key": "plasterer",
@@ -4064,9 +4398,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Plombier",
-        "description": "Plombier",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887658235
       },
       {
         "key": "pottery",
@@ -4076,9 +4413,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Potier",
-        "description": "Poterie",
-        "warning": ""
+        "terms": "poterie",
+        "description": "Fabrication de poterie",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887761113
       },
       {
         "key": "rigger",
@@ -4148,9 +4488,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Sculpteur",
-        "description": "Sculpteur",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887924033
       },
       {
         "key": "shoemaker",
@@ -4197,8 +4540,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "",
-        "description": "Tailleur",
-        "warning": ""
+        "description": "Artisan qui coupe et confectionne des vêtements sur mesure pour homme",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887740295
       },
       {
         "key": "tiler",
@@ -4245,8 +4591,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Horloger",
-        "description": "Horloger",
-        "warning": ""
+        "description": "Horloger spécialisé dans les montres",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887973463
       },
       {
         "key": "window_construction",
@@ -4273,7 +4622,7 @@
       },
       {
         "key": "winery",
-        "lbl": "Chai",
+        "lbl": "Producteur de vin / chai",
         "icon": "mi-liquor-store",
         "markerColor": "#5B396C",
         "alert": "",
@@ -4281,7 +4630,10 @@
         "fromid": true,
         "terms": "Cellier, Cave à vins",
         "description": "Chai, le lieu où le vin est produit",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887580899
       },
       {
         "key": "builder",
@@ -4314,9 +4666,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "réparation électronique, maintenance électronique, réparateur électronique, magasin d'électronique, réparation de téléphone, réparation d'appareil photo, réparation de téléviseur, réparation d'électroménager, réparation d'ordinateur, réparation de caméra, craft electronics repair, electronics repair, electronics, repair",
-        "description": "Réparation d'appareils électroniques",
-        "warning": ""
+        "terms": "réparation électronique, maintenance téléphone, d'appareil photo, téléviseur,  d'électroménager,  d'ordinateur, caméra",
+        "description": "Réparation d'appareils électroniques ",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570887839814
       },
       {
         "key": "joiner",
@@ -4356,9 +4711,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Attraction touristique",
+        "terms": "",
         "description": "Une attraction touristique",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888140200
       },
       {
         "key": "artwork",
@@ -4392,9 +4750,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Aire pour caravanes",
-        "description": "Aire pour caravanes",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888174687
       },
       {
         "key": "gallery",
@@ -4429,8 +4790,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "bâtiment d'hôtel,hotel",
-        "description": "Utilisé pour décrire un hotel.",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888125445
       },
       {
         "key": "information",
@@ -4464,9 +4828,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Musée",
-        "description": "Un musée.",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888169178
       },
       {
         "key": "picnic_site",
@@ -4547,9 +4914,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Chambre d'hôtes, Gîte",
+        "terms": "Chambre d'hôtes, Gîte, Bed & Breakfast",
         "description": "Chambres d'hôte et Bed & Breakfast",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888154237
       },
       {
         "key": "chalet",
@@ -4568,12 +4938,15 @@
         "lbl": "Location de vacances",
         "icon": "fa-home",
         "markerColor": "#9D7178",
-        "alert": "Le bâtiment entier doit être voué à la location de vacances ",
+        "alert": " ",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "appartement d'invité,condo,condominium",
         "description": "Meublé de tourisme de type appartement avec des installations de cuisine / salle de bain / WC autonomes.",
-        "warning": ""
+        "warning": "Le bâtiment entier doit être voué à la location de vacances",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888229195
       },
       {
         "key": "aquarium",
@@ -4602,8 +4975,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Comptable, Expert-comptable.",
-        "description": "Comptable, Expert-comptable.",
-        "warning": ""
+        "description": "Comptable et expert-comptable.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888369834
       },
       {
         "key": "advertising_agency",
@@ -4697,9 +5073,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Administration forestière",
-        "description": "Administration forestière",
-        "warning": ""
+        "terms": "ONF",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888495039
       },
       {
         "key": "foundation",
@@ -4721,9 +5100,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Bureau du gouvernement",
+        "terms": "Bureau du gouvernement, cg, municipal, region, departement, local",
         "description": "Un bureau d'une agence ou d'un département gouvernemental (supra)national, régional ou local.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888337028
       },
       {
         "key": "guide",
@@ -4734,8 +5116,11 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Bureau des guides",
-        "description": "Bureau des guides",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888470658
       },
       {
         "key": "insurance",
@@ -4829,9 +5214,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Enquêteur privé, Détective",
-        "description": "Enquêteur privé, Détective",
-        "warning": ""
+        "terms": "",
+        "description": "Détective privé",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888485793
       },
       {
         "key": "religion",
@@ -4870,9 +5258,12 @@
         "markerColor": "#F5BB3A",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "terms": "",
+        "terms": "impots, dgfip, taxe",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888423088
       },
       {
         "key": "tax_advisor",
@@ -4882,9 +5273,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Conseiller fiscal",
-        "description": "Conseiller fiscal",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888450035
       },
       {
         "key": "telecommunication",
@@ -4918,9 +5312,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Agence de l'eau, Compagnie des eaux",
-        "description": "Agence de l'eau, Compagnie des eaux",
-        "warning": ""
+        "terms": "Compagnie des eaux",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888464644
       },
       {
         "key": "yes",
@@ -4954,9 +5351,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Entreprise de déménagement",
-        "description": "Entreprise de déménagement",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888431065
       },
       {
         "key": "surveyor",
@@ -5019,9 +5419,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "croix sommitale,croix de sommet",
-        "description": "croix sommitale,croix de sommet",
-        "warning": ""
+        "terms": "croix sommitale,sommet, montagne",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888782481
       },
       {
         "key": "flagpole",
@@ -5044,8 +5447,11 @@
         "presets": [],
         "fromid": true,
         "terms": "caméra, vidéo",
-        "description": "Cet attribut marque une caméra de surveillance.",
-        "warning": ""
+        "description": "Caméra de surveillance.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888623501
       },
       {
         "key": "water_tower",
@@ -5062,14 +5468,17 @@
       {
         "key": "water_well",
         "lbl": "Puits",
-        "icon": "",
+        "icon": "maki-water-15",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": [],
         "fromid": true,
         "terms": "Puits",
         "description": "Un puits à eau est un forage vertical permettant l'exploitation d'une nappe d'eau souterraine, autrement dit un aquifère.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888598881
       },
       {
         "key": "water_tap",
@@ -5078,9 +5487,12 @@
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
+        "terms": "Eau potable, ",
+        "description": "Robinet d'eau, potable ou non, à pompe ou non, etc",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888945426
       },
       {
         "key": "yes",
@@ -5114,8 +5526,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Silo de stockage,réservoir,citerne",
-        "description": "Silo de stockage,réservoir,citerne",
-        "warning": ""
+        "description": "Silo de stockage, réservoir, citerne",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888829295
       },
       {
         "key": "pier",
@@ -5137,21 +5552,27 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Station d'épuration, Usine de traitement des eaux usées",
+        "terms": "Station d'épuration, Usine de traitement des eaux usées, step",
         "description": "Usines de traitement des eaux usées.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888793373
       },
       {
         "key": "pipeline",
         "lbl": "Pipeline",
         "icon": "",
         "markerColor": "#D3D3D3",
-        "alert": "Doit être un ligne...",
+        "alert": "",
         "presets": [],
         "fromid": true,
         "terms": "Pipeline, Gazoduc, Oleoduc",
         "description": "Pipeline, Gazoduc, Oleoduc",
-        "warning": ""
+        "warning": "Doit être un ligne...",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888990133
       },
       {
         "key": "tower",
@@ -5161,9 +5582,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Tour",
-        "description": "Tour",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888642764
       },
       {
         "key": "reservoir_covered",
@@ -5184,21 +5608,27 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Usine",
-        "description": "Usine",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888811381
       },
       {
         "key": "mast",
         "lbl": "Mât",
-        "icon": "",
+        "icon": "wifi-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
         "presets": [],
         "fromid": true,
         "terms": "communication,antenne,radio,télécommunication,téléphonie",
         "description": "Un mât est une structure verticale construite pour supporter, par exemple, des antennes.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888689750
       },
       {
         "key": "street_cabinet",
@@ -5232,9 +5662,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Station de surveillance, météorologie, sismologie, séisme, climat, pression, atmosphère.",
-        "description": "Une station qui surveille quelque chose",
-        "warning": ""
+        "terms": "météorologie, sismologie, séisme, climat, pression, atmosphère, pollution",
+        "description": "Une station qui surveille quelque chose (météo, pollution, etc)",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888757445
       },
       {
         "key": "windmill",
@@ -5303,8 +5736,11 @@
         "alert": "",
         "presets": [],
         "terms": "enneigeur",
-        "description": "enneigeur",
-        "warning": ""
+        "description": "Enneigeur",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888804122
       },
       {
         "key": "pumping_station",
@@ -5315,8 +5751,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Station de pompage,pompage,pompe",
-        "description": "Station de pompage,pompage,pompe",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570888978117
       },
       {
         "key": "crane",
@@ -5356,9 +5795,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Techniques de bien-être alternatives",
+        "terms": "rebouteur, acupuncteur, charlatant, etc",
         "description": "Techniques de bien-être alternatives",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889171433
       },
       {
         "key": "audiologist",
@@ -5368,9 +5810,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Audiologiste, Audiologue",
+        "terms": "Audiologiste, Audiologue, oreille, sourd",
         "description": "Audiologiste, Audiologue",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889258779
       },
       {
         "key": "blood_bank",
@@ -5391,9 +5836,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Centre de don du sang, Banque du sang",
-        "description": "Centre de don du sang, Banque du sang",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889285909
       },
       {
         "key": "centre",
@@ -5458,9 +5906,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Sage-femme, maïeuticienne",
-        "description": "Sage-femme, maïeuticienne",
-        "warning": ""
+        "terms": "Sage-femme, maïeuticienne, accouchement",
+        "description": "Maïeuticien",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889229463
       },
       {
         "key": "occupational_therapist",
@@ -5470,21 +5921,27 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Ergothérapeute",
-        "description": "Ergothérapeute",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889265321
       },
       {
         "key": "physiotherapist",
-        "lbl": "Physiothérapeute",
+        "lbl": "Kinésithérapeute",
         "icon": "mi-physiotherapist",
         "markerColor": "#C9BCF0",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Kinésithérapeute, kiné",
-        "description": "Kinésithérapeute, kiné",
-        "warning": ""
+        "terms": "kiné",
+        "description": "Un kiné...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889108433
       },
       {
         "key": "podiatrist",
@@ -5495,20 +5952,26 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Pédicure-podologue, podologue",
-        "description": "Pédicure-podologue, podologue",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889190398
       },
       {
         "key": "psychotherapist",
         "lbl": "Psychothérapeute",
         "icon": "mi-health",
         "markerColor": "#C9BCF0",
-        "alert": "Ne pas confondre avec psychiatre",
+        "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
         "terms": "Psychologue",
         "description": "Psychologue",
-        "warning": ""
+        "warning": "Ne pas confondre avec psychiatre",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889200711
       },
       {
         "key": "sophrologist",
@@ -5529,9 +5992,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Orthophoniste",
-        "description": "Orthophoniste",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889207136
       },
       {
         "key": "laboratory",
@@ -5541,9 +6007,12 @@
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Laboratoire de biologie médicale, Laboratoire d'analyses médicale",
-        "description": "fr=Laboratoire_de_biologie_médicale=laboratoire de biologie médicale Un laboratoire de biologie médicale, est un lieu permettant d'analyser des fluides corporels tels que le sang, l'urine, etc.",
-        "warning": ""
+        "terms": "analyses médicale",
+        "description": "Lieu permettant d'analyser des fluides corporels tels que le sang, l'urine, etc.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889056221
       },
       {
         "key": "yes",
@@ -5575,15 +6044,18 @@
     "values": [
       {
         "key": "wayside_cross",
-        "lbl": "Croix/Calvaire",
+        "lbl": "Croix / Calvaire",
         "icon": "maki-religious-christian-15",
         "markerColor": "#FFBA0C",
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Une croix au bord d'un chemin",
-        "description": "Croix historique, symbole de la foi chrétienne.",
-        "warning": ""
+        "terms": "",
+        "description": "Croix historique, symbole de la foi chrétienne, souvent au bord d'une route",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889339371
       },
       {
         "key": "memorial",
@@ -5606,8 +6078,11 @@
         "presets": [],
         "fromid": true,
         "terms": "Grand mémorial",
-        "description": "Un objet commémoratif de taille importante. Édifié en hommage à des personnes, à une ou plusieurs divinités, ou encore pour commémorer un ou des événement(s) historique(s).",
-        "warning": ""
+        "description": "Un objet commémoratif de taille importante.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889401059
       },
       {
         "key": "archaeological_site",
@@ -5629,9 +6104,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Château",
-        "description": "Château: bâtiment fortifié du Moyen-Âge et de l'époque moderne.",
-        "warning": ""
+        "terms": "",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889372545
       },
       {
         "key": "fort",
@@ -5642,8 +6120,11 @@
         "presets": [],
         "fromid": true,
         "terms": "fort historique,site historique,fort,fortifications,militaire",
-        "description": "Fort.",
-        "warning": ""
+        "description": "Fortifications historique",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889462819
       },
       {
         "key": "ruins",
@@ -5653,9 +6134,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Ruines",
-        "description": "Ruines historiques: restes de structures qui étaient autrefois complètes, mais qui sont tombées en ruine partielle ou complète.",
-        "warning": ""
+        "terms": "",
+        "description": "Restes de structures qui étaient autrefois complètes, mais qui sont tombées en ruine partielle ou complète.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889388018
       },
       {
         "key": "wayside_shrine",
@@ -5677,9 +6161,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Borne frontière",
-        "description": "Borne frontière: un marqueur physique qui identifie une frontière.",
-        "warning": ""
+        "terms": "",
+        "description": "Un marqueur physique qui identifie une frontière.",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889410738
       },
       {
         "key": "tomb",
@@ -5724,8 +6211,11 @@
         "presets": [],
         "fromid": true,
         "terms": "site historique,manoir,noble,maison",
-        "description": "site historique,manoir,noble,maison",
-        "warning": ""
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889440274
       },
       {
         "key": "tower",
@@ -5773,24 +6263,30 @@
         "lbl": "Eau",
         "icon": "maki-water-15",
         "markerColor": "#009549",
-        "alert": "Doit être une surface",
+        "alert": "",
         "presets": [],
         "fromid": true,
         "terms": "Eau",
         "description": "Désigne un plan d'eau, comme par exemple un lac ou un étang.",
-        "warning": ""
+        "warning": "Doit être une surface",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889486505
       },
       {
         "key": "tree_row",
         "lbl": "Rangée d'arbres",
         "icon": "maki-park-15",
         "markerColor": "#009549",
-        "alert": "Doit uniquement être un ligne !",
+        "alert": "",
         "presets": [],
         "fromid": true,
         "terms": "rangée d'arbres, alignement d'arbres, arbres alignés",
         "description": "Une rangée d'arbres",
-        "warning": ""
+        "warning": "Doit uniquement être un ligne !",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889490821
       }
     ]
   },
@@ -5844,9 +6340,12 @@
         "alert": "",
         "presets": [],
         "fromid": true,
-        "terms": "Réverbère",
-        "description": "Réverbère",
-        "warning": ""
+        "terms": "Réverbère, Lampadaire, Candélabre, eclairage",
+        "description": "Réverbère, lampadaire ...",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889586653
       },
       {
         "key": "crossing",
@@ -5860,15 +6359,18 @@
         ],
         "fromid": true,
         "terms": "",
-        "description": "Les piétons peuvent traverser la rue ici (par exemple passage piétons)",
-        "warning": ""
+        "description": "Les piétons peuvent traverser la rue ici ",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889515840
       },
       {
         "key": "traffic_signals",
         "lbl": "Feux tricolores",
         "icon": "osm-traffic_light",
         "markerColor": "#0E5F71",
-        "alert": "Ne concerne que les feux pour les véhicules",
+        "alert": "",
         "presets": [],
         "default_values": [
           {"key": "fixme", "value": "Je devrais être sur un way !"}
@@ -5876,7 +6378,10 @@
         "fromid": true,
         "terms": "Feux de circulation, Feux tricolores, Feux rouges",
         "description": "Un feu de circulation permettant la régulation du trafic routier.",
-        "warning": ""
+        "warning": "Ne concerne que les feux pour les véhicules",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889598094
       },
       {
         "key": "stop",
@@ -5973,14 +6478,17 @@
       },
       {
         "key": "art",
-        "lbl": "art",
+        "lbl": "Club artistique",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
         "terms": "",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889766072
       },
       {
         "key": "astronomy",
@@ -5995,14 +6503,17 @@
       },
       {
         "key": "automobile",
-        "lbl": "automobile",
+        "lbl": "Club d'automobile",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
         "terms": "",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889788647
       },
       {
         "key": "bicycle",
@@ -6071,17 +6582,6 @@
         "warning": ""
       },
       {
-        "key": "culture",
-        "lbl": "culture",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
-      },
-      {
         "key": "doityourself",
         "lbl": "Club DIY",
         "icon": "maki-circle-15",
@@ -6104,30 +6604,8 @@
         "warning": ""
       },
       {
-        "key": "ethnic",
-        "lbl": "ethnic",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
-      },
-      {
         "key": "fan",
         "lbl": "Fan-club",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
-      },
-      {
-        "key": "filmmaking",
-        "lbl": "filmmaking",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
@@ -6247,63 +6725,46 @@
         "warning": ""
       },
       {
-        "key": "politics",
-        "lbl": "politics",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
-      },
-      {
         "key": "religion",
-        "lbl": "religion",
+        "lbl": "Club religieux",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
         "terms": "",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889754501
       },
       {
         "key": "scout",
-        "lbl": "scout",
+        "lbl": "Club de scout",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
         "terms": "",
         "description": "",
-        "warning": ""
-      },
-      {
-        "key": "smoke",
-        "lbl": "smoke",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "_description": null,
+        "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570613912087,
-        "terms": "",
-        "description": "",
-        "warning": ""
+        "time": 1570889730157
       },
       {
         "key": "social",
-        "lbl": "social",
+        "lbl": "Club social",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
         "terms": "",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1570889778340
       },
       {
         "key": "sport",
@@ -6315,17 +6776,6 @@
         "fromid": true,
         "terms": "association sportive,sport,athlétisme",
         "description": "Un club pour la pratique ou le soutien d'un ou de plusieurs sports",
-        "warning": ""
-      },
-      {
-        "key": "surf_life_saving",
-        "lbl": "surf life_saving",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
         "warning": ""
       },
       {
@@ -6346,17 +6796,6 @@
       {
         "key": "veterans",
         "lbl": "Club d'anciens combattants",
-        "icon": "maki-circle-15",
-        "markerColor": "#3467eb",
-        "alert": "",
-        "presets": [],
-        "terms": "",
-        "description": "",
-        "warning": ""
-      },
-      {
-        "key": "youth_movement",
-        "lbl": "youth movement",
         "icon": "maki-circle-15",
         "markerColor": "#3467eb",
         "alert": "",
