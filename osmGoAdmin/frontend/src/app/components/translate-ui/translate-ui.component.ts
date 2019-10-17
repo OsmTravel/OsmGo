@@ -47,7 +47,6 @@ export class TranslateUiComponent implements OnInit {
             ]
         }
       }
-      // console.log(data);
     })
 
 
@@ -82,7 +81,6 @@ export class TranslateUiComponent implements OnInit {
     this.http.post<any>(`api/UiTranslation/${lang}`, params, this.dataService.getHttpOption())
     .pipe(    ).subscribe( e => {
       alert('Thank you !')
-      console.log(e)
     })
 
   }

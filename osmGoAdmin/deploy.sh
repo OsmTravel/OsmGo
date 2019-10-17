@@ -16,13 +16,13 @@ mkdir -p $serverOsmGoAdminAssets/mapStyle/IconsSVG
 "
 
 cd ./frontend
-npm run build
+npm run build --prod
 cd ./dist
 
 rsync -e "ssh -p $serverPort" -avz ./ $serverUser@$serverHost:$serverPathFrontend
 
 cd ../../../src/assets/i18n
-rsync -e "ssh -p $serverPort" -avz   ./ $serverUser@$serverHost:$serverOsmGoAdminAssets/i18n
+# rsync -e "ssh -p $serverPort" -avz   ./ $serverUser@$serverHost:$serverOsmGoAdminAssets/i18n
 
 cd ../mapStyle/IconsSVG
 rsync -e "ssh -p $serverPort" -avz   ./ $serverUser@$serverHost:$serverOsmGoAdminAssets/mapStyle/IconsSVG

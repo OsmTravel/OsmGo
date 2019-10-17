@@ -22,37 +22,29 @@ export class DialogAddPrimaryValueComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.data);
     if (this.tagsService.aggStats && this.tagsService.aggStats[this.data.primaryKey]) {
       const listAggPValues = this.tagsService.aggStats[this.data.primaryKey].values.map(val => val.value);
       const listOsmGoPValues = this.tagsService.tagsConfig[this.data.primaryKey].values.map(val => val.key);
       const diffsPvalues = _.difference(listAggPValues, listOsmGoPValues);
-      console.log(diffsPvalues);
       const diffs = diffsPvalues.map(pValue => {
         return this.tagsService.aggStats[this.data.primaryKey].values.filter(val => val.value === pValue)[0];
       });
       this.diffs = _.orderBy(diffs, ['count'], ['desc']);
-      console.log(this.diffs);
     }
   }
 
   selectValue(val) {
-    console.log(val);
     const defaultColor = this.tagsService.tagsConfig[this.data.primaryKey].values[0].markerColor;
     this.newPvalue = {
       key: val.value, lbl: val.value, lbl_alt: '', icon: '', markerColor: defaultColor,
       alert: '', presets: []
     };
-    console.log(this.newPvalue);
   }
 
   pushNewPValue(pKey, newPvalue) {
 
     this.tagsService.postNewPvalue$(pKey, newPvalue).subscribe(res => {
-      console.log(res);
       this.tagsService.tagsConfig[pKey].values = [...this.tagsService.tagsConfig[pKey].values, res]
-      // this.tagsService.tagsConfig[pKey].values.push(res);
-      console.log(this.tagsService.tagsConfig[pKey]);
       this.dialogRef.close(res);
     });
 

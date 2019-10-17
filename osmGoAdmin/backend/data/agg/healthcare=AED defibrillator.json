@@ -1,8 +1,0 @@
-[
-  {"key": "amenity", "tags": [{"value": "hospital", "count": 1}], "count": 1},
-  {
-    "key": "healthcare",
-    "tags": [{"value": "AED defibrillator", "count": 1}],
-    "count": 1
-  }
-]

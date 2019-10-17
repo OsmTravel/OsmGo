@@ -24,13 +24,12 @@ export class DialogIconComponent implements OnInit {
     currentTag['icon'] = iconName;
 
     this.tagService.updatePrimaryTag(this.data.primaryKey, this.data.primaryValue, currentTag)
-      .subscribe(res => console.log(res));
+      .subscribe();
     this.dialogRef.close(currentTag);
   }
 
   ngOnInit() {
     this.tagService.iconsList$().subscribe(icons => {
-      console.log(icons);
       this.iconList = icons;
     });
   }

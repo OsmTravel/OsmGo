@@ -8,6 +8,9 @@ const crypto = require('crypto');
 const rp = require('request-promise');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
+const cors = require('cors')
+
+app.use(cors())
 
 const jwt = require('jsonwebtoken');
 const Config = JSON.parse(fs.readFileSync( path.join(__dirname, 'config.json')));
@@ -25,6 +28,9 @@ const getPresetsPath = (language, country) => {
 }
 const getTagsPath = (language, country) => {
     return path.join(osmGoAssetsPath, 'i18n', language, country, 'tags.json');
+}
+const getBaseMapPath = (language, country) => {
+    return path.join(osmGoAssetsPath, 'i18n', language, country, 'basemap.json');
 }
 
 const uiLanguagePath = path.join(osmGoAssetsPath, 'i18n');
@@ -92,7 +98,6 @@ const veritfyJWT = (authorization) => {
         user = jwt.verify(jwtToken, JWTSECRET);
 
     } catch (err) {
-        console.log(jwtToken)
         console.log('JWT error', err)
         return null;
     }
@@ -120,6 +125,20 @@ app.get('/api/OsmGoPresets/:language/:country', function (req, res) {
 
     res.setHeader('Content-Type', 'application/json');
     fs.readFile(getPresetsPath(language, country), 'utf8').then(data => {
+        data = JSON.parse(data);
+        res.send(data)
+    })
+        .catch(err => {
+            res.send(error(res, err))
+        })
+});
+
+app.get('/api/OsmGoBaseMaps/:language/:country', function (req, res) {
+    let language = req.params.language;
+    let country = req.params.country;
+
+    res.setHeader('Content-Type', 'application/json');
+    fs.readFile(getBaseMapPath(language, country), 'utf8').then(data => {
         data = JSON.parse(data);
         res.send(data)
     })
@@ -173,7 +192,6 @@ const getLanguageRegistry = () => {
 
 
 app.get('/api/addNewUILanguage', async (req, res) => {
-    console.log(req.query);
     const user = veritfyJWT(req.headers.authorization);
     if (!user) {
         res.status(401).send('unautorized')
@@ -263,10 +281,12 @@ app.get('/api/addNewConfiguration', async (req, res) => {
 
 
 // retourne un json contenant les stats d'utilisations des pValue
-app.get('/api/PkeyStats/:pkey?', function (req, res) {
+app.get('/api/PkeyStats/:country/:pkey?', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     let pkey = req.params.pkey;
-    fs.readFile(path.join(__dirname, 'data', 'stats.json'), 'utf8').then(data => {
+    let country = req.params.country;
+
+    fs.readFile(path.join(__dirname, 'data', 'tagInfoLike', country, 'stats.json'), 'utf8').then(data => {
         data = JSON.parse(data);
         if (!pkey) {
             res.send(data)
@@ -275,20 +295,22 @@ app.get('/api/PkeyStats/:pkey?', function (req, res) {
         }
     })
         .catch(err => {
-            res.send(error(res, err))
+            res.send([])
+            // res.send(error(res, err))
         })
 });
 
-app.get('/api/PkeyPvalueStat/:pkey/:pvalue/:key?', function (req, res) {
+app.get('/api/TagInfoLike/:country/:pkey/:pvalue/:key?',  (req, res) => {
     res.setHeader('Content-Type', 'application/json');
     let pkey = req.params.pkey;
     let pvalue = req.params.pvalue;
     let key = req.params.key;
+    let country = req.params.country;
 
-    fs.readFile(path.join(__dirname, 'data', 'agg', `${pkey}=${pvalue}.json`), 'utf8').then(data => {
+    fs.readFile(path.join(__dirname, 'data', 'tagInfoLike', country, 'details', `${pkey}=${pvalue}.json`), 'utf8').then(data => {
         data = JSON.parse(data);
         if (key) {
-            res.send(data.filter(el => el.key === key))
+            res.send(data.find(el => el.key === key))
         } else {
             res.send(data)
         }
@@ -377,11 +399,10 @@ app.post('/api/tag/:language/:country/:key/:value', function (req, res) {
     let value = req.params.value;
 
     let data = req.body;
-    // console.log(key , value);
     fs.readFile(getTagsPath(language, country), 'utf8')
         .then(jsonTagsStr => {
             let jsonTags = JSON.parse(jsonTagsStr);
-            // console.log(jsonTags[key])
+     
             let findedIndex = jsonTags[key].values.findIndex(el => el.key === value);
 
             delete data._count;
@@ -422,7 +443,6 @@ app.delete('/api/tag/:language/:country/:key/:value', (req, res) => {
     fs.readFile(getTagsPath(language, country), 'utf8')
         .then(data => {
             let jsonTags = JSON.parse(data);
-            // console.log(jsonTags[key])
             let findedIndex = jsonTags[key].values.findIndex(el => el.key === value);
             jsonTags[key].values.splice(findedIndex, 1);
 
@@ -443,7 +463,6 @@ app.delete('/api/tag/:language/:country/:key/:value', (req, res) => {
 });
 
 app.post('/api/presets/:language/:country', (req, res) => {
-
     const user = veritfyJWT(req.headers.authorization);
     if (!user) {
         res.status(401).send('unautorized')
@@ -460,9 +479,12 @@ app.post('/api/presets/:language/:country', (req, res) => {
     fs.readFile(getPresetsPath(language, country), 'utf8')
         .then(data => {
             let jsonPresets = JSON.parse(data);
+            const d = req.body.data;
+           const newData = { type:d.type, lbl :d.lbl, tags : d.tags, key : d.key} ;
+
             const newId = req.body.ids.newId;
             delete req.body.data._id
-            jsonPresets[newId] = req.body.data
+            jsonPresets[newId] = newData
 
             fs.writeFile(getPresetsPath(language, country), stringify(jsonPresets), 'utf8')
                 .then(write => {
@@ -495,6 +517,9 @@ app.post('/api/presets/:language/:country', (req, res) => {
             res.send(error(res, err))
         })
 });
+
+
+
 
 /* UI TRANSLATION */
 app.get('/api/UiTranslation/:language/', async (req, res) => {

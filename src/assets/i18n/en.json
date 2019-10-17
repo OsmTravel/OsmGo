@@ -24,13 +24,13 @@
     "DELETE_DATA_CONFIRM_HEADER": "Really ?",
     "DELETE_DATA_CONFIRM_MESSAGE": "Delete downloaded data? (keep the changes)",
     "SIGN_OUT": "Logout",
-    "NEW_VERSION" : "A new version is ready !"
+    "NEW_VERSION": "A new version is ready !"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
   "GEOLOCATION": {
     "GEOLOCATION_IN_PROGESS": "Geolocation in progress ...",
     "DO_NOT_USE_GEOLOCATION": "Do not use geolocation",
-    "YOU_SHOULD_ALLOW_GEOLOCATION" : "You should allow geolocation ..."
+    "YOU_SHOULD_ALLOW_GEOLOCATION": "You should allow geolocation ..."
   },
   "LOGIN": {
     "LOGIN": "Login",
@@ -94,15 +94,14 @@
     "DELETE_ICON_CACHE": "Delete icon cache",
     "DELETE_CACHE": "Delete all application cache",
     "DELETE_CACHE_HINT": "Delete all application cache (data, edits, icons, login, etc)",
-    "DISPLAY_OLD_TAGS_ICON" : "Show an icon on old objects",
+    "DISPLAY_OLD_TAGS_ICON": "Show an icon on old objects",
     "OLD_TAGS_ICON_RANGE_PART_1": "Last modification at least",
     "OLD_TAGS_ICON_RANGE_PART_2": "years ago",
-    "OLD_TAGS_ICON_HINT" : "If the object is older, display on the map a small icon to the left of the marker",
-    "DISPLAY_FIXME_ICON" : "Display \"fixme\" icons",
-    "DISPLAY_FIXME_ICON_HINT" : "Displays an icon to the right of the marker to indicate the presence of a fixed tag",
-    "ADD_SURVEY_DATE" : "Add today's date to tag 'survey:date",
-    "ADD_SURVEY_DATE_HINT" : "Add today's date to tag 'survey:date after adding/editing object"
-    
+    "OLD_TAGS_ICON_HINT": "If the object is older, display on the map a small icon to the left of the marker",
+    "DISPLAY_FIXME_ICON": "Display \"fixme\" icons",
+    "DISPLAY_FIXME_ICON_HINT": "Displays an icon to the right of the marker to indicate the presence of a fixed tag",
+    "ADD_SURVEY_DATE": "Add today's date to tag 'survey:date",
+    "ADD_SURVEY_DATE_HINT": "Add today's date to tag 'survey:date after adding/editing object"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "List",
@@ -126,7 +125,7 @@
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Add today's date to tag 'survey:date'",
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
     "PRIMARY_TAG_FULL": "Full",
-    "SELECT_CATEGORY" : "Select a category",
+    "SELECT_CATEGORY": "Select a category",
     "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way"
   }
 }

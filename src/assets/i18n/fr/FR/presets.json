@@ -94,10 +94,10 @@
     "lbl": "Position",
     "tags": [
       {"v": "", "lbl": " NC"},
-      {"v": "lane", "lbl": "lane"},
-      {"v": "parking_lot", "lbl": "parking_lot"},
-      {"v": "sidewalk", "lbl": "sidewalk"},
-      {"v": "green", "lbl": "green"}
+      {"v": "lane", "lbl": "Sur la voie"},
+      {"v": "parking_lot", "lbl": "Dans un parking"},
+      {"v": "sidewalk", "lbl": "Sur un trottoir"},
+      {"v": "green", "lbl": "Sur un espace vert"}
     ],
     "key": "fire_hydrant:position"
   },
@@ -127,7 +127,7 @@
     "tags": [],
     "key": "operator"
   },
-  "brand": {"type": "text", "lbl": "Marque", "tags": [], "key": "brand"},
+  "brand": {"type": "text", "lbl": "Enseigne", "tags": [], "key": "brand"},
   "bicycle_parking": {
     "type": "select",
     "lbl": "Type",
@@ -163,11 +163,13 @@
     "lbl": "Spécialité",
     "tags": [
       {"v": "", "lbl": " NC"},
+      {"v": "beef", "lbl": "Bœuf "},
       {"v": "pork", "lbl": "Charcuterie"},
-      {"v": "poultry", "lbl": "Volailles"},
+      {"v": "horse", "lbl": "Cheval"},
       {"v": "game", "lbl": "Gibier"},
       {"v": "halal", "lbl": "Halal"},
-      {"v": "kosher", "lbl": "Kascher"}
+      {"v": "kosher", "lbl": "Kascher"},
+      {"v": "poultry", "lbl": "Volailles"}
     ],
     "key": "butcher"
   },
@@ -491,5 +493,341 @@
     "lbl": "Horaires d'ouverture",
     "tags": [],
     "key": "opening_hours"
+  },
+  "shop#bakery#operator": {
+    "type": "list",
+    "lbl": "Opérateur",
+    "tags": [
+      {"v": "Banette", "lbl": "Banette"},
+      {"v": "Ronde des Pains", "lbl": "Ronde des Pains"},
+      {"v": "Paul", "lbl": "Paul"},
+      {"v": "L'Épi du Rouergue", "lbl": "L'Épi du Rouergue"},
+      {"v": "Marie Blachère", "lbl": "Marie Blachère"},
+      {"v": "La Mie Câline", "lbl": "La Mie Câline"},
+      {"v": "Boulangerie Ange", "lbl": "Boulangerie Ange"},
+      {"v": "Ange", "lbl": "Ange"},
+      {"v": "Christine Carnet", "lbl": "Christine Carnet"},
+      {"v": "Eric Kayser", "lbl": "Eric Kayser"},
+      {"v": "CYPRES", "lbl": "CYPRES"},
+      {"v": "La Brioche Dorée", "lbl": "La Brioche Dorée"}
+    ],
+    "key": "operator"
+  },
+  "clothes": {
+    "type": "list",
+    "lbl": "Vetements",
+    "tags": [
+      {"v": "babies", "lbl": "Bébé"},
+      {"v": "hats", "lbl": "Chapeaux"},
+      {"v": "suits", "lbl": "Costumes"},
+      {"v": "children", "lbl": "Enfant"},
+      {"v": "women", "lbl": "Femme"},
+      {"v": "men", "lbl": "Homme"},
+      {"v": "underwear", "lbl": "Sous vêtements /Lingerie"},
+      {"v": "sports", "lbl": "Sports"}
+    ],
+    "key": "clothes"
+  },
+  "shop#clothes#brand": {
+    "type": "list",
+    "lbl": "Marque / Enseigne ",
+    "tags": [
+      {"v": "Kiabi", "lbl": "Kiabi"},
+      {"v": "Jules", "lbl": "Jules"},
+      {"v": "Sergent Major", "lbl": "Sergent Major"},
+      {"v": "Celio", "lbl": "Celio"},
+      {"v": "Zara", "lbl": "Zara"},
+      {"v": "Camaïeu", "lbl": "Camaïeu"},
+      {"v": "Brice", "lbl": "Brice"},
+      {"v": "Gémo", "lbl": "Gémo"},
+      {"v": "Etam", "lbl": "Etam"},
+      {"v": "H&M", "lbl": "H&M"},
+      {"v": "Armand Thiery", "lbl": "Armand Thiery"},
+      {"v": "Promod", "lbl": "Promod"},
+      {"v": "Orchestra", "lbl": "Orchestra"},
+      {"v": "Pimkie", "lbl": "Pimkie"},
+      {"v": "Bonobo", "lbl": "Bonobo"},
+      {"v": "Mango", "lbl": "Mango"},
+      {"v": "C&A", "lbl": "C&A"},
+      {"v": "Caroll", "lbl": "Caroll"},
+      {"v": "Jennyfer", "lbl": "Jennyfer"},
+      {"v": "Devred", "lbl": "Devred"},
+      {"v": "Zeeman", "lbl": "Zeeman"},
+      {"v": "Okaïdi", "lbl": "Okaïdi"},
+      {"v": "Naf Naf", "lbl": "Naf Naf"},
+      {"v": "Petit Bateau", "lbl": "Petit Bateau"},
+      {"v": "Cache Cache", "lbl": "Cache Cache"},
+      {"v": "Tati", "lbl": "Tati"},
+      {"v": "Esprit", "lbl": "Esprit"},
+      {"v": "Chanel", "lbl": "Chanel"},
+      {"v": "Lacoste", "lbl": "Lacoste"},
+      {"v": "Calzedonia", "lbl": "Calzedonia"},
+      {"v": "Levi's", "lbl": "Levi's"},
+      {"v": "Desigual", "lbl": "Desigual"},
+      {"v": "Hugo Boss", "lbl": "Hugo Boss"},
+      {"v": "Gap", "lbl": "Gap"},
+      {"v": "Burton", "lbl": "Burton"},
+      {"v": "United Colors of Benetton", "lbl": "United Colors of Benetton"},
+      {"v": "Uniqlo", "lbl": "Uniqlo"},
+      {"v": "Nike", "lbl": "Nike"},
+      {"v": "Superdry", "lbl": "Superdry"},
+      {"v": "Bershka", "lbl": "Bershka"},
+      {"v": "New Yorker", "lbl": "New Yorker"},
+      {"v": "Max Mara", "lbl": "Max Mara"},
+      {"v": "COS", "lbl": "COS"},
+      {"v": "Calvin Klein", "lbl": "Calvin Klein"}
+    ],
+    "key": "brand"
+  },
+  "shop#supermarket#operator": {
+    "type": "list",
+    "lbl": "Operateur",
+    "tags": [
+      {
+        "v": "Groupement des Mousquetaires",
+        "lbl": "Groupement des Mousquetaires"
+      },
+      {"v": "Carrefour", "lbl": "Carrefour"},
+      {"v": "Lidl", "lbl": "Lidl"},
+      {"v": "E. Leclerc", "lbl": "E. Leclerc"},
+      {"v": "Casino", "lbl": "Casino"},
+      {"v": "Groupe Casino", "lbl": "Groupe Casino"},
+      {"v": "Système U", "lbl": "Système U"},
+      {"v": "Aldi", "lbl": "Aldi"},
+      {"v": "Leader Price", "lbl": "Leader Price"},
+      {"v": "Super U", "lbl": "Super U"},
+      {"v": "Auchan", "lbl": "Auchan"},
+      {"v": "Spar", "lbl": "Spar"},
+      {"v": "Match", "lbl": "Match"},
+      {"v": "Biocoop", "lbl": "Biocoop"},
+      {"v": "Simply Market", "lbl": "Simply Market"},
+      {"v": "Franprix", "lbl": "Franprix"},
+      {"v": "Netto", "lbl": "Netto"},
+      {"v": "8 à Huit", "lbl": "8 à Huit"},
+      {"v": "Proxi", "lbl": "Proxi"},
+      {"v": "DIA France", "lbl": "DIA France"},
+      {"v": "Grand Frais", "lbl": "Grand Frais"}
+    ],
+    "key": "operator"
+  },
+  "shop#supermarket#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Lidl", "lbl": "Lidl"},
+      {"v": "Carrefour Market", "lbl": "Carrefour Market"},
+      {"v": "Super U", "lbl": "Super U"},
+      {"v": "E. Leclerc", "lbl": "E. Leclerc"},
+      {"v": "Leader Price", "lbl": "Leader Price"},
+      {"v": "Biocoop", "lbl": "Biocoop"},
+      {"v": "Franprix", "lbl": "Franprix"},
+      {"v": "E. Leclerc Drive", "lbl": "E. Leclerc Drive"},
+      {"v": "Carrefour", "lbl": "Carrefour"},
+      {"v": "Monoprix", "lbl": "Monoprix"},
+      {"v": "Carrefour City", "lbl": "Carrefour City"},
+      {"v": "U Express", "lbl": "U Express"},
+      {"v": "La Vie Claire", "lbl": "La Vie Claire"},
+      {"v": "Intermarché", "lbl": "Intermarché"},
+      {"v": "Aldi", "lbl": "Aldi"},
+      {"v": "Bio C' Bon", "lbl": "Bio C' Bon"},
+      {"v": "Carrefour Contact", "lbl": "Carrefour Contact"},
+      {"v": "Auchan", "lbl": "Auchan"},
+      {"v": "Intermarché Super", "lbl": "Intermarché Super"},
+      {"v": "Naturalia", "lbl": "Naturalia"},
+      {"v": "Hyper U", "lbl": "Hyper U"},
+      {"v": "Cora", "lbl": "Cora"},
+      {"v": "monop'", "lbl": "monop'"},
+      {"v": "Grand Frais", "lbl": "Grand Frais"},
+      {"v": "Netto", "lbl": "Netto"},
+      {"v": "G20", "lbl": "G20"},
+      {"v": "8 à Huit", "lbl": "8 à Huit"},
+      {"v": "Spar", "lbl": "Spar"},
+      {"v": "Satoriz", "lbl": "Satoriz"},
+      {"v": "Carrefour Express", "lbl": "Carrefour Express"},
+      {"v": "Casino", "lbl": "Casino"},
+      {"v": "E. Leclerc Express", "lbl": "E. Leclerc Express"},
+      {"v": "Dia", "lbl": "Dia"},
+      {"v": "Géant Casino", "lbl": "Géant Casino"},
+      {"v": "Carrefour Montagne", "lbl": "Carrefour Montagne"},
+      {"v": "Colruyt", "lbl": "Colruyt"},
+      {"v": "Le Grand Panier Bio", "lbl": "Le Grand Panier Bio"},
+      {"v": "Le Marché de Léopold", "lbl": "Le Marché de Léopold"},
+      {"v": "Paris Store", "lbl": "Paris Store"},
+      {"v": "Cora Drive", "lbl": "Cora Drive"},
+      {"v": "Norma", "lbl": "Norma"},
+      {"v": "Sherpa", "lbl": "Sherpa"},
+      {"v": "Marks and Spencer", "lbl": "Marks and Spencer"},
+      {"v": "Simply Market", "lbl": "Simply Market"},
+      {"v": "Proxi", "lbl": "Proxi"}
+    ],
+    "key": "brand"
+  },
+  "shop#hairdresser#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Jean Louis David", "lbl": "Jean Louis David"},
+      {"v": "Dessange", "lbl": "Dessange"},
+      {"v": "Franck Provost", "lbl": "Franck Provost"},
+      {"v": "Tchip", "lbl": "Tchip"},
+      {"v": "Camille Albane", "lbl": "Camille Albane"},
+      {"v": "Saint Algue", "lbl": "Saint Algue"},
+      {"v": "Diagonal", "lbl": "Diagonal"},
+      {"v": "Pascal Coste", "lbl": "Pascal Coste"},
+      {"v": "Redken", "lbl": "Redken"}
+    ],
+    "key": "brand"
+  },
+  "shop#car#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Alfa Romeo", "lbl": "Alfa Romeo"},
+      {"v": "Audi", "lbl": "Audi"},
+      {"v": "BMW", "lbl": "BMW"},
+      {"v": "Citroën", "lbl": "Citroën"},
+      {"v": "Dacia", "lbl": "Dacia"},
+      {"v": "Fiat", "lbl": "Fiat"},
+      {"v": "Ford", "lbl": "Ford"},
+      {"v": "Honda", "lbl": "Honda"},
+      {"v": "Hyundai", "lbl": "Hyundai"},
+      {"v": "Kia", "lbl": "Kia"},
+      {"v": "Lancia", "lbl": "Lancia"},
+      {"v": "Mazda", "lbl": "Mazda"},
+      {"v": "Mercedes-Benz", "lbl": "Mercedes-Benz"},
+      {"v": "Mini", "lbl": "Mini"},
+      {"v": "Nissan", "lbl": "Nissan"},
+      {"v": "Opel", "lbl": "Opel"},
+      {"v": "Peugeot", "lbl": "Peugeot"},
+      {"v": "Porsche", "lbl": "Porsche"},
+      {"v": "Renault", "lbl": "Renault"},
+      {"v": "Seat", "lbl": "Seat"},
+      {"v": "Suzuki", "lbl": "Suzuki"},
+      {"v": "Toyota", "lbl": "Toyota"},
+      {"v": "Volkswagen", "lbl": "Volkswagen"},
+      {"v": "Volvo", "lbl": "Volvo"},
+      {"v": "Škoda Auto", "lbl": "Škoda Auto"}
+    ],
+    "key": "brand"
+  },
+  "shop#car_repair#brand": {
+    "type": "list",
+    "lbl": "Marque",
+    "tags": [
+      {"v": "AD", "lbl": "AD"},
+      {"v": "Audi", "lbl": "Audi"},
+      {"v": "BestDrive", "lbl": "BestDrive"},
+      {"v": "Carglass", "lbl": "Carglass"},
+      {"v": "Citroën", "lbl": "Citroën"},
+      {"v": "Dacia", "lbl": "Dacia"},
+      {"v": "Elan", "lbl": "Elan"},
+      {"v": "Euromaster", "lbl": "Euromaster"},
+      {"v": "Feu Vert", "lbl": "Feu Vert"},
+      {"v": "Fiat", "lbl": "Fiat"},
+      {"v": "Ford", "lbl": "Ford"},
+      {"v": "Midas", "lbl": "Midas"},
+      {"v": "Motrio", "lbl": "Motrio"},
+      {"v": "Norauto", "lbl": "Norauto"},
+      {"v": "Opel", "lbl": "Opel"},
+      {"v": "Peugeot", "lbl": "Peugeot"},
+      {"v": "Point S", "lbl": "Point S"},
+      {"v": "Renault", "lbl": "Renault"},
+      {"v": "Roady", "lbl": "Roady"},
+      {"v": "Speedy", "lbl": "Speedy"},
+      {"v": "Toyota", "lbl": "Toyota"},
+      {"v": "Volkswagen", "lbl": "Volkswagen"}
+    ],
+    "key": "brand"
+  },
+  "tickets:public_transport": {
+    "type": "select",
+    "lbl": "Vente de titres de transport",
+    "tags": [
+      {"v": null, "lbl": " NC"},
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"}
+    ],
+    "key": "tickets:public_transport"
+  },
+  "shop#jewelry#brand": {
+    "type": "list",
+    "lbl": "Marque",
+    "tags": [
+      {"v": "Bijou Brigitte", "lbl": "Bijou Brigitte"},
+      {"v": "Cartier", "lbl": "Cartier"},
+      {"v": "Claire's", "lbl": "Claire's"},
+      {"v": "Histoire d'Or", "lbl": "Histoire d'Or"},
+      {"v": "Julien d'Orcel", "lbl": "Julien d'Orcel"},
+      {"v": "Pandora", "lbl": "Pandora"},
+      {"v": "Swarovski", "lbl": "Swarovski"},
+      {"v": "Tiffany & Company", "lbl": "Tiffany & Company"}
+    ],
+    "key": "brand"
+  },
+  "drink:beer": {
+    "type": "select",
+    "lbl": "Vente de bières",
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
+    "key": "drink:beer"
+  },
+  "drink:wine": {
+    "type": "select",
+    "lbl": "drink:wine",
+    "tags": [
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"},
+      {"v": null, "lbl": "NC"}
+    ],
+    "key": "drink:wine"
+  },
+  "shop#doityourself#brand": {
+    "type": "list",
+    "lbl": "Marque",
+    "tags": [
+      {"v": "Big Mat", "lbl": "Big Mat"},
+      {"v": "Brico Cash", "lbl": "Brico Cash"},
+      {"v": "Brico Dépôt", "lbl": "Brico Dépôt"},
+      {"v": "Brico Pro", "lbl": "Brico Pro"},
+      {"v": "Bricoman", "lbl": "Bricoman"},
+      {"v": "Bricomarché", "lbl": "Bricomarché"},
+      {"v": "Briconautes", "lbl": "Briconautes"},
+      {"v": "Bricorama", "lbl": "Bricorama"},
+      {"v": "Castorama", "lbl": "Castorama"},
+      {"v": "Kiloutou", "lbl": "Kiloutou"},
+      {"v": "L'Entrepôt du Bricolage", "lbl": "L'Entrepôt du Bricolage"},
+      {"v": "Leroy Merlin", "lbl": "Leroy Merlin"},
+      {"v": "Mr.Bricolage", "lbl": "Mr.Bricolage"},
+      {"v": "Point P", "lbl": "Point P"},
+      {"v": "Saint-Maclou", "lbl": "Saint-Maclou"},
+      {"v": "Weldom", "lbl": "Weldom"}
+    ],
+    "key": "brand"
+  },
+  "shop#bakery#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Banette", "lbl": "Banette"},
+      {"v": "Copaline", "lbl": "Copaline"},
+      {"v": "La Mie Câline", "lbl": "La Mie Câline"},
+      {"v": "La Tarte Tropézienne", "lbl": "La Tarte Tropézienne"},
+      {"v": "Marie Blachère", "lbl": "Marie Blachère"},
+      {"v": "Paul", "lbl": "Paul"},
+      {"v": "Ronde des Pains", "lbl": "Ronde des Pains"}
+    ],
+    "key": "brand"
+  },
+  "shop#books#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Cultura", "lbl": "Cultura"},
+      {"v": "Decitre", "lbl": "Decitre"},
+      {"v": "Fnac", "lbl": "Fnac"},
+      {"v": "France Loisirs", "lbl": "France Loisirs"},
+      {"v": "Furet du Nord", "lbl": "Furet du Nord"},
+      {"v": "Gibert Joseph", "lbl": "Gibert Joseph"}
+    ],
+    "key": "brand"
   }
 }

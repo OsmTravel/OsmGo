@@ -1,8 +1,0 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "harbourmaster", "count": 1}],
-    "count": 1
-  },
-  {"key": "office", "tags": [{"value": "Yes", "count": 1}], "count": 1}
-]

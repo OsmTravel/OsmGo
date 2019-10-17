@@ -34,8 +34,6 @@ const run = async () => {
             }
         }
     }
-
-    console.log(i18);
     fs.writeFileSync(path.join(osmGoAssetsPath, 'i18n', 'i18n.json'), JSON.stringify(i18))
 }
 

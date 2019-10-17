@@ -7,8 +7,6 @@ const country = 'DE';
 
 const idTranslation = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'id-translation', `${language}.json`), 'utf8'));
 
-// console.log(Object.keys(idTranslation));
-// return;
 const _tPresets = idTranslation[language].presets.presets;
 const _tFields = idTranslation[language].presets.fields;
 
@@ -37,7 +35,3 @@ for (let pk in osmgoTags) {
     }
 }
 fs.writeFileSync( osmgoTagsPath, stringify(osmgoTags), 'utf8');
-
-// for (let f in _tFields){
-//     console.log(f, _tFields[f]);
-// }

@@ -183,15 +183,12 @@ module.exports = function(o) {
 
             params.oauth_token = token('oauth_token');
 
-            console.log( params.oauth_token);
+
             params.oauth_signature = ohauth.signature(
                 o.oauth_secret,
                 oauth_token_secret,
                 ohauth.baseString(options.method, base_url, xtend(params, ohauth.stringQs(query)))
             );
-
-            console.log(params.oauth_signature );
-              console.log(options.method, url, params, options.content, options.options);
             return ohauth.xhr(options.method, url, params, options.content, options.options, done);
         }
 

@@ -6052,7 +6052,7 @@
       {
         "key": "amateur_radio",
         "lbl": "amateur radio",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6063,7 +6063,7 @@
       {
         "key": "art",
         "lbl": "art",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6074,7 +6074,7 @@
       {
         "key": "astronomy",
         "lbl": "astronomy",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6085,7 +6085,7 @@
       {
         "key": "automobile",
         "lbl": "automobile",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6096,7 +6096,7 @@
       {
         "key": "bicycle",
         "lbl": "bicycle",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6107,7 +6107,7 @@
       {
         "key": "board_games",
         "lbl": "board_games",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6118,7 +6118,7 @@
       {
         "key": "card_games",
         "lbl": "card_games",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6129,7 +6129,7 @@
       {
         "key": "charity",
         "lbl": "charity",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6140,7 +6140,7 @@
       {
         "key": "chess",
         "lbl": "chess",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6151,7 +6151,7 @@
       {
         "key": "cinema",
         "lbl": "cinema",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6162,7 +6162,7 @@
       {
         "key": "culture",
         "lbl": "culture",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6173,7 +6173,7 @@
       {
         "key": "doityourself",
         "lbl": "doityourself",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6184,7 +6184,7 @@
       {
         "key": "equestrian",
         "lbl": "equestrian",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6195,7 +6195,7 @@
       {
         "key": "ethnic",
         "lbl": "ethnic",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6206,7 +6206,7 @@
       {
         "key": "fan",
         "lbl": "fan",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6217,7 +6217,7 @@
       {
         "key": "filmmaking",
         "lbl": "filmmaking",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6228,7 +6228,7 @@
       {
         "key": "fishing",
         "lbl": "fishing",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6239,7 +6239,7 @@
       {
         "key": "freemasonry",
         "lbl": "freemasonry",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6250,7 +6250,7 @@
       {
         "key": "game",
         "lbl": "game",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6261,7 +6261,7 @@
       {
         "key": "history",
         "lbl": "history",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6272,7 +6272,7 @@
       {
         "key": "hunting",
         "lbl": "hunting",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6283,7 +6283,7 @@
       {
         "key": "linux",
         "lbl": "linux",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6294,7 +6294,7 @@
       {
         "key": "motorcycle",
         "lbl": "motorcycle",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6305,7 +6305,7 @@
       {
         "key": "music",
         "lbl": "music",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6316,7 +6316,7 @@
       {
         "key": "nature",
         "lbl": "nature",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6327,7 +6327,7 @@
       {
         "key": "nudism",
         "lbl": "nudism",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6338,7 +6338,7 @@
       {
         "key": "photography",
         "lbl": "photography",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6349,7 +6349,7 @@
       {
         "key": "politics",
         "lbl": "politics",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6360,7 +6360,7 @@
       {
         "key": "religion",
         "lbl": "religion",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6371,7 +6371,7 @@
       {
         "key": "scout",
         "lbl": "scout",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6382,7 +6382,7 @@
       {
         "key": "smoke",
         "lbl": "smoke",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6393,7 +6393,7 @@
       {
         "key": "social",
         "lbl": "social",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6404,7 +6404,7 @@
       {
         "key": "sport",
         "lbl": "Sportverein",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6416,7 +6416,7 @@
       {
         "key": "surf_life_saving",
         "lbl": "surf life_saving",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6427,7 +6427,7 @@
       {
         "key": "theatre",
         "lbl": "theatre",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6438,7 +6438,7 @@
       {
         "key": "veterans",
         "lbl": "veterans",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
@@ -6449,7 +6449,7 @@
       {
         "key": "youth_movement",
         "lbl": "youth movement",
-        "icon": "maki-circle-15",
+        "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],

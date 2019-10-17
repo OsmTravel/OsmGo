@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
 
   ) {
-    console.log(this.route.queryParams);
+
   }
 
   ngOnInit() {
@@ -55,7 +55,8 @@ export class HomeComponent implements OnInit {
   }
 
   goToTagsConfig() {
-    this.router.navigate(['/tags']);
+ 
+    this.router.navigate([`/tags/${this.tagsService.language}/${this.tagsService.country }`]);
   }
 
 
@@ -80,7 +81,6 @@ export class HomeComponent implements OnInit {
     }
     else {
       this.dataService.loginOsm$().subscribe( e => {
-        console.log(e);
         const oauth_token = e['oauth_token']
         const oauth_token_secret =e['oauth_token_secret']
         this.dataService.getJwtToken$(oauth_token, oauth_token_secret ).subscribe( jwt => {

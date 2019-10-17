@@ -1,22 +1,22 @@
 [
-   {
-        "id": "mapbox-satellite",
-        "label" : "Mapbox satellite ",
-        "type": "raster",
-        "url": "mapbox://mapbox.satellite",
-        "tileSize": 256
-    },
-    {
-        "id": "bing-maps",
-        "label" : "Bing maps",
-        "type": "raster",
-        "tiles": [
-            "https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-            "https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-            "https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-            "https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z"
-        ],
-        "maxzoom": 19,
-        "tileSize": 256
-    }   
+  {
+    "id": "mapbox-satellite",
+    "label": "Mapbox satellite ",
+    "type": "raster",
+    "url": "mapbox://mapbox.satellite",
+    "tileSize": 256
+  },
+  {
+    "id": "bing-maps",
+    "label": "Bing maps",
+    "type": "raster",
+    "tiles": [
+      "https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+      "https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+      "https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+      "https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z"
+    ],
+    "maxzoom": 19,
+    "tileSize": 256
+  }
 ]

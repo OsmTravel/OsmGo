@@ -1,8 +1,0 @@
-[
-  {"key": "natural", "tags": [{"value": "Bouessay", "count": 1}], "count": 1},
-  {
-    "key": "traffic_sign",
-    "tags": [{"value": "city_limit", "count": 1}],
-    "count": 1
-  }
-]

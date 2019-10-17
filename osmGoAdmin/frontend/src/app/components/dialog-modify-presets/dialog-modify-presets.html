@@ -1,35 +1,50 @@
-<mat-horizontal-stepper linear="isLinear" #stepper class="horizontal-stepper">
+<div style="width: 100%; height:100%;">
 
-  <!-- Ajout d'un preset existant 1-->
-  <mat-step *ngIf="typeModif === 'add'">
-    <h1 class="stepNumber">1</h1>
+<div class="step" *ngIf="step == 1">
+    <div style="overflow: auto;">
 
-    <mat-form-field class="searchTermAddChooseTag">
-      <input matInput [(ngModel)]="searchTextAddPreset">
-    </mat-form-field>
+      <mat-form-field class="searchTermAddChooseTag">
+        <input matInput [(ngModel)]="searchTextAddPreset">
+      </mat-form-field>
 
-    <table class="tbAddChooseTag">
-      <tr>
-        <th>key</th>
-        <th>Label</th>
-        <th>Type</th>
-      </tr>
-      <tr *ngFor="let preset of genericPresets | filterByKeyLbl : searchTextAddPreset" (click)="selectPresets(preset, stepper)">
-        <td> {{preset.key}} </td>
-        <td> {{preset.lbl}} </td>
-        <td> {{preset.type}} </td>
-      </tr>
-    </table>
-    <div *ngIf= "(genericPresets | filterByKeyLbl : searchTextAddPreset).length == 0">
-        <button mat-button (click)="newPreset(searchTextAddPreset.toLowerCase(), stepper)">
-            Add <b> {{ searchTextAddPreset.toLowerCase() }} </b> as new preset
-          </button>
+      <button class="btnAddPresets" *ngIf= "(genericPresets | filterByKeyLbl : searchTextAddPreset).length == 0" mat-button (click)="newPreset(searchTextAddPreset.toLowerCase())">
+          Add <b> {{ searchTextAddPreset.toLowerCase() }} </b> as new preset
+        </button>
+      
+
+      <table class="tbAddChooseTag">
+        <tr>
+          <th>key</th>
+          <th>Label</th>
+          <th>Type</th>
+        </tr>
+        <tr *ngFor="let preset of genericPresets | filterByKeyLbl : searchTextAddPreset"
+          (click)="selectPresets(preset)">
+          <td> {{preset.key}} </td>
+          <td> {{preset.lbl}} </td>
+          <td> {{preset.type}} </td>
+        </tr>
+      </table>
+
     </div>
-  </mat-step>
+
+    <div class="proposalTags">
+      OSM stats
+        <div *ngFor="let item of this.statsTags" (click)="searchTextAddPreset = item.key">
+            {{item.key}}  {{item.count}}
+          </div>
+    </div>
+
+    
+
+</div>
+  <!-- Ajout d'un preset existant 1-->
+
 
   <!-- UPDATE : Si le presets est utilisé par d'autres tag, on fait choisir -->
-  <mat-step *ngIf="typeModif === 'update' && tagsUseThisPreset &&tagsUseThisPreset.length > 1">
-    <h1>2</h1>
+  <div class="step" *ngIf="step == 2" >
+    <!-- *ngIf="typeModif === 'update' && tagsUseThisPreset && tagsUseThisPreset.length > 1" -->
+  
     <div style="float: left; width: 50%;">
       <h5> {{presets.key}}</h5>
       Type : {{presets.type}}
@@ -48,21 +63,20 @@
 
 
     <div style="float: left; width: 50%;">
-      <span>This preset is used  by {{tagsUseThisPreset.length - 1}} others tags</span>
+      <span>This preset is used by {{tagsUseThisPreset.length - 1}} others tags</span>
 
-      <button mat-raised-button color="primary"  class="fullWidth" (click)="confirmChangeForAllTag(stepper)">
-        Update for all tags 
+      <button mat-raised-button color="primary" class="fullWidth" (click)="confirmChangeForAllTag()">
+        Update for all tags
       </button>
 
-      <button mat-raised-button color="primary"  class="fullWidth" (click)="changeIdForThisTag(stepper)">
-        Create a preset for only this tag 
+      <button mat-raised-button color="primary" class="fullWidth" (click)="changeIdForThisTag()">
+        Create a preset for only this tag
       </button>
     </div>
 
-  </mat-step>
+  </div>
 
-  <mat-step *ngIf="typeModif === 'add'">
-    <h1>3</h1>
+  <div class="step" *ngIf="step == 3" >
     <div style="float: left; width: 50%;">
       <table>
         <tr>
@@ -95,60 +109,66 @@
     </div>
 
     <div style="float: left; width: 50%;">
-      <button class="fullWidth" mat-raised-button color="primary" (click)="submit(selectedPreset)"> Use this generic preset</button>
-      <button class="fullWidth" mat-raised-button color="primary"  (click)="confirmChangeForAllTag(stepper, selectedPreset)">  Edit and use this Generic preset</button>
-      <button class="fullWidth" mat-raised-button color="primary" (click)="changeIdForThisTag(stepper, selectedPreset)"> Create a copy of this specific preset for this object</button>
-      <button class="fullWidth" mat-raised-button color="primary"  matStepperPrevious>Back</button>
+      <button class="fullWidth" mat-raised-button color="primary" (click)="submit(selectedPreset)"> Use this generic
+        preset</button>
+      <button class="fullWidth" mat-raised-button color="primary"
+        (click)="confirmChangeForAllTag( selectedPreset)"> Edit and use this Generic preset</button>
+      <button class="fullWidth" mat-raised-button color="primary" (click)="changeIdForThisTag( selectedPreset)">
+        Create a copy of this specific preset for this object</button>
+      <!-- <button class="fullWidth" mat-raised-button color="primary" matStepperPrevious>Back</button> -->
     </div>
-  </mat-step>
+  </div>
 
 
-  <mat-step>
-    <h1>4</h1>
-    <div>
-      
-      <mat-form-field>
-        <input matInput placeholder="Label" [(ngModel)]="presets.lbl">
-      </mat-form-field>
+  <div class="step" *ngIf="step == 4" >
+    <div class="step4content">
 
-      <mat-form-field>
-        <mat-select [(value)]="presets.type">
-          <mat-option value="text">Text</mat-option>
-          <mat-option value="select">Select</mat-option>
-          <mat-option value="list">List</mat-option>
-          <mat-option value="number">Number</mat-option>
-        </mat-select>
-      </mat-form-field>
+
+    <div class="selectTypeEdit" > 
+        <div class="optionsTags">
+            <h4> Key : <a [href]="'https://wiki.openstreetmap.org/wiki/Key:'+this.presets.key"> {{this.presets.key}} </a></h4>
+            <div>id : {{this.presets._id}}</div>
+            <div>
+                <mat-form-field>
+                  <input matInput placeholder="Label" [(ngModel)]="presets.lbl">
+                </mat-form-field>
+          
+                <mat-form-field>
+                  <mat-select [(value)]="presets.type">
+                    <mat-option value="text">Text</mat-option>
+                    <mat-option value="select">Select</mat-option>
+                    <mat-option value="list">List</mat-option>
+                    <mat-option value="number">Number</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div class="tagsList" *ngIf="['list','select'].includes(presets.type)">
+                  <app-presets-options [selectedPreset] = presets (presetChange)="null"></app-presets-options>
+              </div>
+       
+        </div>
+       
+     
+    
+        <div class="proposalTags" *ngIf="['list','select'].includes(presets?.type)">
+    
+          <table>
+            <tr *ngFor="let tag of getProposalTags(presets.key)" (click)="addThisPresetOption(tag.value)">
+              <td>{{tag.value}}</td>
+              <td>{{tag.count}}</td>
+            </tr>
+          </table>
+        </div>
+
     </div>
-
-    <table *ngIf="['list','select'].indexOf(presets?.type) !== -1"> 
-      <tr *ngFor="let preset of presets.tags">
-        <td>{{preset.v === '' ? '#null#' : preset.v}}</td>
-        <td>
-          <mat-form-field>
-            <input matInput [(ngModel)]="preset.lbl">
-          </mat-form-field>
-        </td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>
-          <mat-form-field>
-            <input matInput [(ngModel)]="newValue.v">
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field>
-            <input matInput [(ngModel)]="newValue.lbl">
-          </mat-form-field>
-        </td>
-        <td> <button mat-button (click)="addNewValue(newValue)"> Add</button> </td>
-      </tr>
-    </table>
-
-    <mat-dialog-actions>
+  
+  </div>
+  <div class="actions">
       <button mat-button mat-dialog-close>Cancel</button>
       <button mat-button (click)="submit(presets)">Submit</button>
-    </mat-dialog-actions>
-  </mat-step>
-</mat-horizontal-stepper>
+  </div>
+
+  </div>
+  
+</div>
