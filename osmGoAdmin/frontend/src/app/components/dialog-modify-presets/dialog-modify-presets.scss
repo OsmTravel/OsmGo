@@ -13,6 +13,7 @@
   position: absolute;
   top: 0;
   height: 64px;
+  width: 128px;
 }
 
 .horizontal-stepper{
@@ -21,8 +22,45 @@
   height: 100%;
 }
 
-.stepNumber{
+.step{
+  position: relative;
+  height: 100%;
+    width: 100%;
+}
+
+.actions{
   position: absolute;
-  left:0;
-  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;;
+}
+
+.step4content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 56px;
+  overflow: auto;
+}
+
+.optionsTags{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+}
+.proposalTags{
+  position: absolute;
+  top: 0;
+  right: 0;
+ width: 35%;
+}
+
+.btnAddPresets{
+  position: absolute;
+  top: 0;
+  height: 64px;
+  left: 128px;
 }

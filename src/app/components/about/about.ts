@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { Platform, ModalController, NavController } from '@ionic/angular';
-
+import { ToastController } from '@ionic/angular';
 
 import { ConfigService } from '../../services/config.service';
 @Component({
@@ -12,14 +12,27 @@ export class AboutPage {
 
 
 
-  constructor(public configService: ConfigService, public platform: Platform,
+  constructor(
+    public configService: ConfigService, 
+    public platform: Platform,
     public viewCtrl: ModalController,
-    public navCtrl: NavController) {
+    public navCtrl: NavController,
+    public toastController: ToastController) {
+  }
 
-    // this.platform.registerBackButtonAction(e => {
-    //   this.dismiss();
-    // });
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'You have activated the developer mode!',
+      duration: 2000
+    });
+    toast.present();
+  }
 
+ async tap(e){
+    if (e.tapCount == 5){
+      await this.presentToast()
+      this.configService.setIsDevMode(true);
+    }
   }
 
   dismiss(data = null) {

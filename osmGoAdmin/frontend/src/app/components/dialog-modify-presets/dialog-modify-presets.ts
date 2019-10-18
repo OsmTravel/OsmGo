@@ -1,8 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { TagsService } from '../../services/tags.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { MatStepper } from '@angular/material';
-import { Observable } from 'rxjs';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 @Component({
   selector: 'app-dialog-modify-presets',
   templateUrl: 'dialog-modify-presets.html',
@@ -11,6 +10,7 @@ import { Observable } from 'rxjs';
 
 
 export class DialogModifyPresetsAppComponent {
+  step = 1;
   searchTextAddPreset = '';
   presets;
   genericPresets = [];
@@ -23,6 +23,7 @@ export class DialogModifyPresetsAppComponent {
   presetKeyIsFixed = false;
   statsTags;
   newValue = { 'v': '', 'lbl': '' };
+  proposalTags;
   // tagsUseThisPreset: Observable<any>;
 
   constructor(
@@ -31,22 +32,30 @@ export class DialogModifyPresetsAppComponent {
     @Inject(MAT_DIALOG_DATA) public data) {
 
       this.presets = JSON.parse(JSON.stringify(this.data.presets));
-      console.log(this.data);
       this.typeModif = this.data.type;
       this.primaryKey = this.data.primaryKey;
       this.primaryValue = this.data.primaryValue;
-  
+
       this.genericPresets = this.tagsService.getGenericPresets();
   
       this.tagsService.tagsUseThisPreset$(this.presets._id).subscribe(e => {
         this.tagsUseThisPreset = e;
-        console.log('ohh', e);
+        if(this.typeModif == 'add'){
+          this.step = 1;
+        } else if (this.typeModif == 'update') {
+          if (!/#/.test(this.presets._id)){
+            // is generic
+            this.step = 2;
+          } else {
+            this.step = 4;
+          }
+        } else{
+          this.step = 3;
+        }
       });
   
   
-      this.tagsService.getPrsetsSummary(this.primaryKey, this.primaryValue).subscribe(e => {
-  
-        console.log(e);
+      this.tagsService.getPresetsSummary(this.tagsService.country, this.primaryKey, this.primaryValue).subscribe(e => {
         this.statsTags = e;
       });
       
@@ -55,27 +64,42 @@ export class DialogModifyPresetsAppComponent {
 
   ngOnInit(): void {
 
+
+
+  }
+  getProposalTags(key){
+    // TODO: devrait être dans un pipe
+    let statTagKey = this.statsTags.find(s => s.key == this.presets.key) 
+    if (!statTagKey || ! statTagKey.tags){
+      return [];
+    }
+    const tagVused = this.presets.tags.map(t => t.v);
+    const proposalTags = statTagKey.tags.filter( t => !tagVused.includes(t.value));
+    return proposalTags
+    
+    
   }
 
   onNoClick(): void {
     this.dialogRef.close(this.presets);
   }
-  confirmChangeForAllTag(stepper, preset = null) {
+  confirmChangeForAllTag( preset = null) {
     if (preset) {
       this.presets = preset;
     }
 
-    stepper.next();
+      this.step = 4;
   }
 
-  changeIdForThisTag(stepper, preset) {
+  changeIdForThisTag( preset) {
     if (preset) {
       this.presets = preset;
     }
+
+
     const newId = this.data.primaryKey + '#' + this.data.primaryValue + '#' + this.presets.key;
     this.presets['_id'] = newId;
-    console.log(newId);
-    stepper.next();
+    this.step = 4;
   }
 
   addNewValue(newValue) {
@@ -83,18 +107,22 @@ export class DialogModifyPresetsAppComponent {
     this.newValue = { 'v': '', 'lbl': '' };
   }
 
-  selectPresets(selectedPreset, stepper: MatStepper) {
-    console.log(selectedPreset);
-    this.selectedPreset = selectedPreset;
-    this.presets = selectedPreset;
-    stepper.next();
+  addThisPresetOption(value){
+    this.presets.tags.push({ 'v': value, 'lbl': value});
   }
 
-  newPreset(newPresetValue: string, stepper: MatStepper) {
+  selectPresets(selectedPreset) {
+    this.selectedPreset = selectedPreset;
+    this.presets = selectedPreset;
+    if (this.typeModif == 'add'){
+      this.step = 3
+    }
+    
+  }
+
+  newPreset(newPresetValue: string) {
     this.presets = { type: 'text', tags: [], 'key': newPresetValue, 'lbl': newPresetValue, _id: newPresetValue };
-    console.log(newPresetValue);
-    console.log(this.presets);
-    stepper.next();
+    this.step++;
   }
 
   submit(newPreset) {
@@ -108,20 +136,18 @@ export class DialogModifyPresetsAppComponent {
     const currentTag = this.tagsService.tagsConfig[this.data.primaryKey].values[findedIndex];
     const presetsList = currentTag.presets;
     const indPreset = presetsList.indexOf(oldId);
-    // console.log(newId);
     // cas d'un ajout par exemple
     if (indPreset === -1) {
       presetsList.push(newId);
     } else if (oldId !== newId) { // => preset spécifique à ce tag
       // on remplace l'id a utiliser dans "tags"
       presetsList[indPreset] = newId;
-      // console.log(oldId, newId);
     }
 
     // ajout du preset dans "presets" (ou remplacement);
     this.tagsService.presetsConfig[newId] = this.presets;
-    this.tagsService.postPrest(this.data.primaryKey, currentTag.key, oldId, newId, newPreset )
-        .subscribe(d => console.log(d));
+    this.tagsService.postPreset(this.data.primaryKey, currentTag.key, oldId, newId, newPreset )
+        .subscribe();
 
     this.dialogRef.close(newPreset);
   }

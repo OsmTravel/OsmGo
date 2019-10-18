@@ -33,7 +33,6 @@ export class DataService {
   }
 
   getHttpOption(){
-    // console.log('jwt', this.jwt)
     if (!this.jwt){
       this.jwt = localStorage.getItem('jwt_access_token')
     }
@@ -47,7 +46,6 @@ export class DataService {
     return this.http.get<any>(`./api/i18/`)
     .pipe(
       map( i18 => {
-        console.log(i18)
         this.i18Config = i18;
       }
 
@@ -59,8 +57,6 @@ export class DataService {
     let params = new HttpParams()
       .set('lg', newLanguage);
       const headers = this.getHttpOption()
-      console.log(headers);
-      console.log(params);
     return this.http.get<any>(`./api/addNewUILanguage`, {...headers ,params });
   }
 
@@ -79,7 +75,6 @@ export class DataService {
     this.tokens['secret'] = localStorage.getItem('https://www.openstreetmap.orgoauth_token_secret');
     this.tokens['request_token_secret'] = localStorage.getItem('https://www.openstreetmap.orgoauth_request_token_secret');
     this.tokens['auth_token'] = localStorage.getItem('https://www.openstreetmap.orgoauth_token');
-    console.log(this.tokens);
     return this.tokens;
 
   }
@@ -96,9 +91,6 @@ export class DataService {
           localStorage.removeItem('https://www.openstreetmap.orgoauth_token_secret');
           localStorage.removeItem('https://www.openstreetmap.orgoauth_request_token_secret');
           localStorage.removeItem('https://www.openstreetmap.orgoauth_token');
-          console.log(cb)
-          console.log('loginOk');
-         
           resolve(cb)
         }
       })

@@ -1,9 +1,0 @@
-[
-  {"key": "natural", "tags": [{"value": "waterway", "count": 2}], "count": 2},
-  {"key": "waterway", "tags": [{"value": "dock", "count": 1}], "count": 1},
-  {
-    "key": "seamark:type",
-    "tags": [{"value": "harbour", "count": 1}],
-    "count": 1
-  }
-]

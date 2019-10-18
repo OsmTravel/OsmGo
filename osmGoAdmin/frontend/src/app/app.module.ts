@@ -28,17 +28,22 @@ import { OrderByPipe } from './pipe/order-by.pipe';
 import { AddUiLanguageComponent } from './components/add-ui-language/add-ui-language.component';
 import { AddNewConfigurationComponent } from './components/add-new-configuration/add-new-configuration.component';
 import { SettingPkeyComponent } from './components/setting-pkey/setting-pkey.component';
+import { PresetsComponent } from './components/presets/presets.component';
+
+import { PresetsOptionsComponent } from './components/presets-options/presets-options.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'tags', component: TagsComponent },
+  { path: 'tags/:language/:country', component: TagsComponent },
+  { path: 'presets/:language/:country', component: PresetsComponent },  
   { path: 'translateUi', component: TranslateUiComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent, DialogModifyPresetsAppComponent, KeyPipe, FilterByKeyLblPipe, 
-    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent, TranslateUiComponent, OrderByPipe, AddUiLanguageComponent, AddNewConfigurationComponent, SettingPkeyComponent,
+    DialogIconComponent, FilterByNamePipe, DialogAddPrimaryValueComponent, TagsComponent, HomeComponent, TranslateUiComponent, OrderByPipe, AddUiLanguageComponent, AddNewConfigurationComponent, SettingPkeyComponent, 
+    PresetsComponent, PresetsOptionsComponent,
   ],
   imports: [
     RouterModule.forRoot(

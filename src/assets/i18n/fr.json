@@ -23,14 +23,14 @@
     "DELETE_DATA": "Supprimer les données",
     "DELETE_DATA_CONFIRM_HEADER": "Supprimer les données ?",
     "DELETE_DATA_CONFIRM_MESSAGE": "Supprimer les données téléchargées? (conserve les modifications)",
-    "EXIT": "Quitter",
-    "SIGN_OUT": "Se déconnecter"
+    "SIGN_OUT": "Se déconnecter",
+    "NEW_VERSION": "Une nouvelle version est prête!"
   },
   "ABOUT": {"ABOUT": "A propos", "SOURCES": "Sources", "DATA": "Données"},
   "GEOLOCATION": {
     "GEOLOCATION_IN_PROGESS": "Géolocalisation en cours ...",
     "DO_NOT_USE_GEOLOCATION": "Ne pas utiliser la geolocalisation",
-    "YOU_SHOULD_ALLOW_GEOLOCATION" : "Vous devriez autoriser votre géolocalisation ..."
+    "YOU_SHOULD_ALLOW_GEOLOCATION": "Vous devriez autoriser votre géolocalisation ..."
   },
   "LOGIN": {
     "LOGIN": "Login",
@@ -94,14 +94,14 @@
     "DELETE_ICON_CACHE": "Supprimer le cache des icônes",
     "DELETE_CACHE": "Supprimer tout le cache de l'application",
     "DELETE_CACHE_HINT": "Supprime l'intégralité du cache (data, modification, icônes, login, etc)",
-    "DISPLAY_OLD_TAGS_ICON" : "Afficher un icône sur les anciens objets",
+    "DISPLAY_OLD_TAGS_ICON": "Afficher un icône sur les anciens objets",
     "OLD_TAGS_ICON_RANGE_PART_1": "Dernière modification il y a au moins",
     "OLD_TAGS_ICON_RANGE_PART_2": "ans",
-    "OLD_TAGS_ICON_HINT" : "Si l'objet est plus vieux, affiche sur la carte un petit icône à gauche du marqueur",
-    "DISPLAY_FIXME_ICON" : "Afficher un icône \"fixme\"",
-    "DISPLAY_FIXME_ICON_HINT" : "Affiche un icône à droite du marker pour indiquer la présence d'un tag fixme",
-    "ADD_SURVEY_DATE" : "Ajouter le tag 'survey:date'",
-    "ADD_SURVEY_DATE_HINT" : "Ajouter le tag 'survey:date' à la date du jour pour chaque création/modification d'un objet"
+    "OLD_TAGS_ICON_HINT": "Si l'objet est plus vieux, affiche sur la carte un petit icône à gauche du marqueur",
+    "DISPLAY_FIXME_ICON": "Afficher un icône \"fixme\"",
+    "DISPLAY_FIXME_ICON_HINT": "Affiche un icône à droite du marker pour indiquer la présence d'un tag fixme",
+    "ADD_SURVEY_DATE": "Ajouter le tag 'survey:date'",
+    "ADD_SURVEY_DATE_HINT": "Ajouter le tag 'survey:date' à la date du jour pour chaque création/modification d'un objet"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "Liste",
@@ -125,8 +125,7 @@
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Ajouter le tag 'survey:date' à la date du jour",
     "PRIMARY_TAG_BOOKMARKS": "Favoris",
     "PRIMARY_TAG_FULL": "Tous les tags",
-    "SELECT_CATEGORY" : "Séléctionner une catégorie",
+    "SELECT_CATEGORY": "Séléctionner une catégorie",
     "THIS_NODE_IS_USED_BY_A_WAY": "Ce nœud est utilisé par {x} chemin(s)"
-    
   }
 }

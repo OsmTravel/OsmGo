@@ -5,10 +5,9 @@ import { AlertService } from './alert.service';
 import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
-import { Vibration } from '@ionic-native/vibration/ngx';
-import { debounceTime } from "rxjs/operators";
-import * as _ from 'lodash';
 
+import { debounceTime } from "rxjs/operators";
+import { uniqBy, cloneDeep } from 'lodash';
 
 import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
@@ -18,21 +17,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { IconService } from './icon.service';
 import { AlertInput } from '@ionic/core';
-
-// const circleMarkerModelPath = `<path fill="{{color}}" d="M12,0C5.371,0,0,5.903,0,13.187c0,0.829,0.079,1.643,0.212,2.424c0.302,1.785,0.924,3.448,1.81,4.901
-// l0.107,0.163L11.965,36l9.952-15.393l0.045-0.064c0.949-1.555,1.595-3.343,1.875-5.269C23.934,14.589,24,13.899,24,13.187
-// C24,5.905,18.629,0,12,0z"/>`;
-
-// const squareMarkerModelPath = `<path fill="{{color}}" d="M20.103,0.57H2.959c-1.893,0-3.365,0.487-3.365,2.472l-0.063,18.189c0,1.979,1.526,3.724,3.418,3.724h4.558
-//  l4.01,11.545l3.966-11.545h4.56c1.894,0,3.488-1.744,3.488-3.724V4.166C23.531,2.18,21.996,0.57,20.103,0.57z"/>`
-
-// const pentaMarkerModelPath = `<polygon fill="{{color}}" points="0.5,11.516 6.516,-0.5 18.5,-0.5 24.5,11.5 12.5,35.5 	"/>`
-
-// const xmlHeader = '<svg version="1.1" id="marker-circle-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"  y="0px" width="24px" height="36px" viewBox="0 0 24 36" enable-background="new 0 0 24 36" xml:space="preserve">';
-
-// const xmlEnd = '</svg>'
-
-
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -51,7 +35,7 @@ export class MapService {
     private http: HttpClient,
     private translate: TranslateService,
     private iconService: IconService,
-    private vibration: Vibration
+
   ) {
 
     this.domMarkerPosition = document.createElement('div');
@@ -313,7 +297,7 @@ export class MapService {
 
 
   getBboxPolygon() {
-    return JSON.parse(JSON.stringify(this.bboxPolygon));
+    return cloneDeep(this.bboxPolygon);
   }
 
   createDomMoveMarker(coord: number[], data) {
@@ -356,12 +340,9 @@ export class MapService {
           const path = window.location.href;
           let spritesFullPath = `mapStyle/sprites/sprites`;
           // http://localhost:8100/assets/mapStyle/sprites/sprites.json
-          if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
-            const basePath = path.split('#')[0];
-            spritesFullPath = `${basePath}assets/${spritesFullPath}`;
-          } else {
-            spritesFullPath = path.replace('/index.html', `/assets/${spritesFullPath}`);
-          }
+            const basePath = window.location.origin // path.split('#')[0];
+            spritesFullPath = `${basePath}/assets/${spritesFullPath}`;
+    
           mapboxStyle['sprite'] = spritesFullPath;
           return mapboxStyle
         }
@@ -424,7 +405,7 @@ export class MapService {
         this.map.addControl(new mapboxgl.NavigationControl());
 
         const scale = new mapboxgl.ScaleControl({
-          maxWidth: 100,
+          maxWidth: 160,
           unit: 'metric'
         });
         this.map.addControl(scale);
@@ -438,6 +419,16 @@ export class MapService {
           if (this.markerMoving || this.markerMoveMoving) {
             this.eventMarkerMove.emit(this.map.getCenter());
           }
+        });
+
+        this.map.on('movestart', (e) => {
+          this.configService.freezeMapRenderer = true;
+        });
+
+        this.map.on('moveend', (e) => {
+    
+          this.configService.freezeMapRenderer = false;
+
         });
 
         this.map.on('zoom', (e) => {
@@ -756,12 +747,10 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      console.log(features);
-      this.vibration.vibrate(50);
 
+      window.navigator.vibrate(50);
 
-
-      const uniqFeaturesById = _.uniqBy(features, o => o['properties']['id']);
+      const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
         const inputsParams: any = uniqFeaturesById.map((f, i) => {
@@ -855,7 +844,7 @@ export class MapService {
         map((event: any) => {
           return event;
         }),
-        debounceTime(30)
+        debounceTime(75)
       )
       .subscribe(heading => {
         if (this.locationService.compassHeading.trueHeading) {

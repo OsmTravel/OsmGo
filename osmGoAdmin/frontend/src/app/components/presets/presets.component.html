@@ -1,0 +1,81 @@
+<mat-toolbar color="primary">
+        <button mat-button routerLink="/"> <mat-icon>home</mat-icon></button>
+        {{this.tagsService.language }}-{{this.tagsService.country}}
+        <button mat-button [routerLink]="'/tags/'+this.tagsService.language+'/'+this.tagsService.country"> Tags </button>
+    
+    </mat-toolbar>
+
+<div class="presetsList">
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>key</th>
+                <th>label</th>
+                <th>type</th>
+                <th>Tags used</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of presets" (click)="selectPreset(p)">
+                <td>{{p._id}}</td>
+                <td>{{p.key}}</td>
+                <td>{{p.lbl}}</td>
+                <td>{{p.type}}</td>
+                <td>{{p.usedByTagsCount}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="selectedPresets" *ngIf="selectedPreset">
+    <!-- {{selectedPreset | json}} -->
+    <!-- <button (click)="updatePreset(selectedPreset)">TEST</button>
+
+    <div class="selectedPresetdiv">
+        Id : {{selectedPreset._id}}
+    </div> -->
+    <div class="selectedPresetdiv">
+        Key : {{selectedPreset.key}}
+    </div>
+    <div class="selectedPresetdiv">
+            <mat-form-field>
+                    <input matInput placeholder="Label" autocomplete="off" [(ngModel)]="selectedPreset.lbl" (change)="labelChange()">
+            </mat-form-field>
+
+    </div>
+    <div class="selectedPresetdiv">
+        type : {{selectedPreset.type}}
+    </div>
+    <div class="selectedPresetdiv">
+        Is used by {{selectedPreset.usedByTagsCount}} tags
+    </div>
+
+    <div class="tagsList" *ngIf="['list','select'].includes(selectedPreset.type)">
+        <app-presets-options [selectedPreset] = selectedPreset (presetChange)="this.updatePreset($event)"></app-presets-options>
+    </div>
+
+
+
+    <div class="tagsUsed">
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>key</th>
+                    <th>Label</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tag of selectedPreset.usedByTags">
+                    <td>{{tag.pkey}}={{tag.key}}</td>
+                    <td>{{tag.lbl}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

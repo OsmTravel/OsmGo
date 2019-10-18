@@ -9,22 +9,12 @@ import { AngularResizedEventModule } from 'angular-resize-event';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
 
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AppVersion } from '@ionic-native/app-version/ngx';
-import { Device } from '@ionic-native/device/ngx';
-
-import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Vibration } from '@ionic-native/vibration/ngx';
-import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
-
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AboutPage } from './components/about/about';
 import { LocationPage } from './components/location/location';
-import { LoginPage } from './components/login/login';
 import { MainPage } from './components/main/main';
 import { MenuPage } from './components/menu/menu';
 import { ModalsContentPage } from './components/modal/modal';
@@ -82,7 +72,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
 }
 
 @NgModule({
-  declarations: [AppComponent, MainPage, LocationPage, AboutPage, LoginPage, MenuPage,
+  declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
     ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey,
 
@@ -114,13 +104,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
   ],
 
   providers: [
-    StatusBar,
-    SplashScreen,
-    Geolocation,
-    AndroidPermissions,
-    AppVersion,
-    Device,
-    Vibration,
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
   ],

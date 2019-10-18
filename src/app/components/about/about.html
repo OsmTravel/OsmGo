@@ -11,10 +11,10 @@
 
 
 <ion-content class="ion-padding">
-  <ion-card>
+  <ion-card (tap)="tap($event)" >
     <ion-card-header> OSM Go !</ion-card-header>
     <ion-card-content>
-      Version : {{ configService.getAppVersion().appVersionNumber}} {{this.configService.device.platform || ''}}
+      Version : {{ configService.getAppVersion().appVersionNumber}}
     </ion-card-content>
   </ion-card>
 

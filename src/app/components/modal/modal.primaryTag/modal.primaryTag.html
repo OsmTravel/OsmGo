@@ -28,7 +28,7 @@
 
 		<div class="listTag" *ngIf="selectedKey !== 'full' || (searchText.length > 2 && selectedKey === 'full' )">
 			<table class="tableListe">
-				<tr *ngFor="let tag of currentListOfTags | filterDeprecatedTag | filterByContent:['key','lbl','lbl_alt']:searchText;">
+				<tr *ngFor="let tag of currentListOfTags | filterDeprecatedTag | filterByContent:['key','lbl','terms']:searchText;">
 					<td style="width:16px;" [style.background-color]="tag.markerColor">
 						<img *ngIf="tag.icon == '' " src="assets/mapStyle/IconsSVG/maki-circle-15.svg" height="15px" width="15px" style="max-width: 16px;" />
 						<img *ngIf="tag.icon != '' " src="assets/mapStyle/IconsSVG/{{tag.icon}}.svg" height="15px" width="15px" style="max-width: 16px;" />
@@ -41,7 +41,7 @@
 					<td (click)="selected(tag)" [style.color]="(_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key) ? '#3b22dd' : 'black'">
 						<b>{{tag?.lbl}}</b>
 						<br> {{tag?.key}} ({{tag?.primaryKey }})
-						<br> <span style="font-size: 11px;font-style: italic;"> {{tag?.lbl_alt}}
+						<br> <span style="font-size: 11px;font-style: italic;"> {{tag?.description}}
 					</span>
 					</td>
 

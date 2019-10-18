@@ -1,8 +1,0 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "Eau_potable", "count": 1}],
-    "count": 1
-  },
-  {"key": "indoor", "tags": [{"value": "no", "count": 1}], "count": 1}
-]

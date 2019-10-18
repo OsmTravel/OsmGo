@@ -1,0 +1,1 @@
+[{"key":"amenity","tags":[{"value":"healthcare","count":7}],"count":7},{"key":"healthcare","tags":[{"value":"physiotherapist","count":1},{"value":"podiatrist","count":1},{"value":"optometrist","count":1}],"count":3},{"key":"health_specialty:physiotherapy","tags":[{"value":"yes","count":1}],"count":1},{"key":"disused","tags":[{"value":"yes","count":1}],"count":1}]

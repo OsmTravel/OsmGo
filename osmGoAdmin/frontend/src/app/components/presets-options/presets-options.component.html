@@ -1,0 +1,66 @@
+<table>
+    <thead>
+        <tr>
+            <th>
+                <mat-icon class="sortIcon" (click)="_orderBy('v')">sort_by_alpha</mat-icon>
+                Value
+            </th>
+            <th>
+                <mat-icon class="sortIcon" (click)="_orderBy('lbl')">sort_by_alpha</mat-icon>
+                Label
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let option of selectedPreset.tags ; let i = index">
+            <td>{{ (option.v && option.v !==null)  ?  option.v : '#null#'}}</td>
+            <td>
+                <mat-form-field>
+                    <input matInput placeholder="Label" autocomplete="off" [(ngModel)]="option.lbl">
+                </mat-form-field>
+            </td>
+            <td>
+                <button mat-raised-button color="warn" (click)="deleteOption(option)">
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+                <button class="buttonMove" mat-raised-button *ngIf="i > 0" (click)="optionChangeOrder(i, i-1)">
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+                </button>
+
+                <button class="buttonMove" mat-raised-button *ngIf="i < selectedPreset.tags.length -1"
+                    (click)="optionChangeOrder(i, i+1)">
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+
+                <button class="buttonMove" mat-raised-button *ngIf="i > 0" (click)="optionChangeOrder(i, 0)">
+                    <mat-icon>vertical_align_top</mat-icon>
+                </button>
+
+                <button class="buttonMove" mat-raised-button *ngIf="i < selectedPreset.tags.length -1"
+                    (click)="optionChangeOrder(i, selectedPreset.tags.length -1)">
+                    <mat-icon>vertical_align_bottom</mat-icon>
+                </button>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <mat-form-field>
+                    <input matInput placeholder="Value" autocomplete="off" [(ngModel)]="newPresetOption.v">
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field>
+                    <input matInput placeholder="Label" autocomplete="off" [(ngModel)]="newPresetOption.lbl">
+                </mat-form-field>
+
+            </td>
+            <td>
+                <button mat-raised-button color="primary" (click)="addOption(newPresetOption)">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

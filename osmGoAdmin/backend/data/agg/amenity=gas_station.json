@@ -1,9 +1,0 @@
-[
-  {
-    "key": "amenity",
-    "tags": [{"value": "gas_station", "count": 1}],
-    "count": 1
-  },
-  {"key": "brand", "tags": [{"value": "Shell", "count": 1}], "count": 1},
-  {"key": "operator", "tags": [{"value": "Shell", "count": 1}], "count": 1}
-]

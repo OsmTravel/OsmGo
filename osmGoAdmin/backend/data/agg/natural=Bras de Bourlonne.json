@@ -1,9 +1,0 @@
-[
-  {"key": "intermittent", "tags": [{"value": "yes", "count": 1}], "count": 1},
-  {
-    "key": "natural",
-    "tags": [{"value": "Bras de Bourlonne", "count": 1}],
-    "count": 1
-  },
-  {"key": "waterway", "tags": [{"value": "stream", "count": 1}], "count": 1}
-]

@@ -1,0 +1,1 @@
+[{"key":"bus","tags":[{"value":"yes","count":1}],"count":1},{"key":"highway","tags":[{"value":"bus_stop","count":1}],"count":1},{"key":"network","tags":[{"value":"VRB","count":1}],"count":1},{"key":"shelter","tags":[{"value":"no","count":1}],"count":1},{"key":"public_transport","tags":[{"value":"platform_exit_only","count":1}],"count":1}]

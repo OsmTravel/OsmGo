@@ -14,8 +14,9 @@ import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 
-import * as _ from 'lodash';
+import {isEqual, findIndex } from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
+import { cloneDeep } from 'lodash';
 
 @Component({
   selector: 'modal',
@@ -58,11 +59,9 @@ export class ModalsContentPage implements OnInit {
 
   ) {
     this.newPosition = params.data.newPosition;
-
-    this.feature = JSON.parse(JSON.stringify(params.data.data));
+    this.feature = cloneDeep(params.data.data);
     this.mode = params.data.type; // Read, Create, Update
     this.origineData = params.data.origineData;
-
     this.typeFiche = 'Loading'; // Edit, Read, Loading
 
     // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
@@ -71,18 +70,14 @@ export class ModalsContentPage implements OnInit {
       this.tags.push({ key: tag, value: this.feature.properties.tags[tag] });
     }
     // clone
-    this.originalTags = JSON.parse(JSON.stringify(this.tags));
+    this.originalTags = cloneDeep(this.tags);
 
-    // backButton
-    // this.platform.registerBackButtonAction(e => {
-    //   this.dismiss();
-    // });
   }
 
 
 
   ngOnInit() { // override
-    console.log(this.feature);
+    // console.log(this.feature);
     this.initComponent();
   }
 
@@ -124,7 +119,7 @@ export class ModalsContentPage implements OnInit {
         ) {
           continue;
         }
-        return JSON.parse(JSON.stringify(tags))[i];
+        return cloneDeep(tags)[i];
       }
     }
     return undefined;
@@ -206,7 +201,7 @@ export class ModalsContentPage implements OnInit {
       }
     }
 
-    if (_.isEqual(tagsNotNull, originalTagsNotNull)) {
+    if (isEqual(tagsNotNull, originalTagsNotNull)) {
       return false;
     }
     return true;
@@ -235,7 +230,7 @@ export class ModalsContentPage implements OnInit {
     }
   }
   deleteTag(tag) {
-    const idx = _.findIndex(this.tags, { key: tag.key });
+    const idx = findIndex(this.tags, { key: tag.key });
     if (idx !== -1) {
       this.tags.splice(idx, 1);
     }
@@ -247,7 +242,7 @@ export class ModalsContentPage implements OnInit {
 
   // renvoie l'élément du tableau correspondant  || TODO => pipe
   findElement(array, kv) { // {'user': 'fred'}
-    const idx = _.findIndex(array, kv);
+    const idx = findIndex(array, kv);
     if (idx !== -1) {
       return array[idx];
     }
@@ -283,7 +278,7 @@ export class ModalsContentPage implements OnInit {
             this.feature.properties.id = data;
             this.feature.properties.meta = {};
             this.feature.properties.meta['version'] = 1;
-            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().user;
+            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().display_name;
             this.feature.properties.meta['uid'] = this.osmApi.getUserInfo().uid;
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // style
@@ -329,7 +324,7 @@ export class ModalsContentPage implements OnInit {
         this.osmApi.apiOsmUpdateOsmElement(this.feature, CS)
           .subscribe(data => {
             this.feature.properties.meta.version++;
-            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().user;
+            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().display_name;
             this.feature.properties.meta['uid'] = this.osmApi.getUserInfo().uid;
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // création du style
@@ -402,11 +397,11 @@ export class ModalsContentPage implements OnInit {
       const _data = d.data;
       if (_data) {
         // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
-        const idx = _.findIndex(this.tags,
+        const idx = findIndex(this.tags,
           o => o.key === this.primaryKey.key && o.value === this.primaryKey.value);
 
-        this.tags[idx] = JSON.parse(JSON.stringify(_data));
-        this.primaryKey = JSON.parse(JSON.stringify(_data));
+        this.tags[idx] = cloneDeep(_data);
+        this.primaryKey = cloneDeep(_data); // TODO: WTF ?
         this.initComponent();
       }
     });

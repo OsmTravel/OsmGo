@@ -1,9 +1,0 @@
-[
-  {"key": "shop", "tags": [{"value": "camper_repair", "count": 2}], "count": 2},
-  {"key": "phone", "tags": [{"value": "+33380305537", "count": 1}], "count": 1},
-  {
-    "key": "website",
-    "tags": [{"value": "repcampingcar.e-monsite.com", "count": 1}],
-    "count": 1
-  }
-]

@@ -1,0 +1,34 @@
+.presetsList{
+    overflow: auto;
+    position: absolute;
+    top:64px;
+    bottom: 0;
+    left: 0;
+    width: 45%;
+    // background-color: red;
+}
+
+.selectedPresets{
+    overflow: auto;
+    position: absolute;
+    top:64px;
+    bottom: 0;
+    right:0;
+    width: 55%;
+    position: absolute;
+    // background-color: blue;
+}
+
+.selectedPresetSpan{
+    display: block;
+}
+
+.buttonMove{
+    padding: 2px;
+    min-width: 32px;
+}
+
+mat-toolbar{
+    height: 64px;
+  }
+  
