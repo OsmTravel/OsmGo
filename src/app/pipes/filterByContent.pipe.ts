@@ -11,14 +11,18 @@ export class FilterByContentPipe implements PipeTransform  {
 
         return items.filter(item => {
             for (let i = 0; i < keys.length; i++) {
+                if (!item[keys[i]]) {
+                    return false
+                }
+
                 if (patt.test(item[keys[i]])) {
                     return true;
                 } else if (  patt.test(item[keys[i]]
-                        .replace(/[û]/g, 'u')
-                        .replace(/[Àáàâ]/g, 'a')
-                        .replace(/[Ééèê]/g, 'e')
-                        .replace(/[íîï]/g, 'i')
-                        .replace(/[óô]/g, 'o')
+                        .replace(/[û]/gi, 'u')
+                        .replace(/[áàâ]/gi, 'a')
+                        .replace(/[éèêë]/gi, 'e')
+                        .replace(/[íîï]/gi, 'i')
+                        .replace(/[óô]/gi, 'o')
                         .replace(/ç/g, 'c'))) {
                     return true;
                 }

@@ -4,7 +4,7 @@ const fs = require('fs');
 const stringify = require("json-stringify-pretty-compact")
 
 // const serverApiUrl = 'http://localhost:8080/api/';
-const serverApiUrl = 'https://osmgo.dogeo.fr/admin/api/'
+const serverApiUrl = 'https://admin.osmgo.com/api/'
 
 const assetsFolderI18n = path.join(__dirname, '..', 'src', 'assets', 'i18n')
 

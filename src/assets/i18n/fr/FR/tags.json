@@ -1883,11 +1883,11 @@
         "deprecated": false,
         "userId": "183173",
         "userName": "Dof",
-        "time": 1561704199540,
+        "time": 1571326335390,
         "default_values": [],
         "fromid": true,
         "terms": "magasin de produit de la ferme,machines,pesticides,graines,engins agricoles",
-        "description": "Magasin vendant des produits à usage agricole, tels que pesticides, semences, nourritures pour animaux, etc.",
+        "description": "Magasin vendant des produits à usage agricole, tels que pesticides, semences, nourritures pour animaux, etc...",
         "warning": ""
       },
       {
@@ -2599,11 +2599,14 @@
         "icon": "mi-parking",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": ["wheelchair", "phone", "opening_hours"],
         "fromid": true,
         "terms": "Parking, Zone de Stationnement, Stationnement",
         "description": "Un lieu pour garer des voitures",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571314254178
       },
       {
         "key": "bicycle_parking",
