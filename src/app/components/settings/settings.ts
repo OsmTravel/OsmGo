@@ -153,8 +153,14 @@ export class SettingsPage {
 
   async deleteCache (){
     await this.dataService.clearCache();
-    // TODO : exit app !
-    // App.exitApp();
+      const cachesKeys = await caches.keys()
+      for (let key of cachesKeys){
+        await caches.delete(key)
+      }
+
+      const mainLocation = `${window.location.origin}#/main`
+      window.location.replace(mainLocation);
+      window.location.reload(true);
   }
 
   async deleteIconCache(){
@@ -166,4 +172,20 @@ export class SettingsPage {
     loading.dismiss();
    
   }
+
+  async changeIsDevServer(isDev : boolean){
+    await this.configService.setIsDevServer(isDev);
+    const mainLocation = `${window.location.origin}#/main`
+    window.location.replace(mainLocation);
+    window.location.reload(true);
+  }
+
+  async disableDevMode(e){
+    const isDevServer = this.configService.getIsDevServer();
+    this.configService.setIsDevMode(false);
+    if(isDevServer){
+      await this.changeIsDevServer(false);
+    }
+  }
+
 }

@@ -38,6 +38,9 @@
           "/svg/md-code-working.svg",
           "/svg/md-log-in.svg",
           "/svg/md-star.svg",
+          "/svg/md-help-circle",
+          "/svg/md-trash.svg",
+          "/svg/md-help-circle.svg",
           "/*.png",
 
           "/assets/mapStyle/IconsSVG/*.svg"
@@ -75,8 +78,8 @@
         "https://ecn.t3.tiles.virtualearth.net/**"
       ],
       "cacheConfig": {
-        "maxSize": 1000,
-        "maxAge": "3d",
+        "maxSize": 2000,
+        "maxAge": "30d",
         "strategy": "performance"
       }
     }

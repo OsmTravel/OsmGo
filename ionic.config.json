@@ -1,7 +1,6 @@
 {
   "name": "Osm Go",
   "integrations": {
-    "cordova": {}
   },
   "type": "angular"
 }

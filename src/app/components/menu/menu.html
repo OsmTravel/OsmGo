@@ -11,29 +11,38 @@
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			<ion-list>
-				<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
-					{{'MENU.CONNECTION' | translate }}
+			
+		
+			<ion-list style="padding-top:0;">
+				
+				<ion-item color="black" *ngIf="this.newVersion"  (click)="reloadApp()">		
+						<ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' | translate }}	
+				</ion-item>
+		
+				<!-- <ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
+					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
+				</ion-item> -->
+				<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="login()">
+					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
 				<ion-item (click)="pushPage('/settings')">
-					{{'MENU.SETTINGS' | translate }}
+					<ion-icon name="settings"></ion-icon>	{{'MENU.SETTINGS' | translate }}
 				</ion-item>
 
 				<ion-item (click)="pushPage('/about')">
-					{{'MENU.ABOUT' | translate }}
+					<ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' | translate }}
 				</ion-item>
 
+				<!-- <ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
+						<ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' | translate }}
+				</ion-item> -->
 				<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
-					{{'MENU.SIGN_OUT' | translate }}
+					<ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' | translate }}
 				</ion-item>
 
 				<ion-item color="danger" (click)="deleteDatapresentConfirm()">
-					{{'MENU.DELETE_DATA' | translate }}
-				</ion-item>
-
-				<ion-item (click)="exit()">
-					{{'MENU.EXIT' | translate }}
+						<ion-icon name="trash"></ion-icon>	{{'MENU.DELETE_DATA' | translate }}
 				</ion-item>
 			</ion-list>
 		</ion-content>

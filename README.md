@@ -1,16 +1,16 @@
-# Osm Go ! 
+# Osm Go! 
 
 ### Mapping less frustrating! 
 
-It's all POI !
-_OSM Go !_ is an Android application for contributing to OpenStreetMap.
+_Osm Go!_ is a **P**rogressive **W**eb **A**pplications for contributing to OpenStreetMap.
 Map your environment simply and fast, directly from the app. Keep your eyes wide open and contribute to OSM while on the run.
 
+You can install the PWA from [osmgo.com](https://osmgo.com])
 The APK can be found in [the release list of this repository](https://github.com/DoFabien/OsmGo/releases) 
 
-The application is also available on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
+The application is also available as a **T**rusted **W**eb **A**ctivities on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
-A short and breaking down documentation can be found at the [repo wiki](https://github.com/DoFabien/OsmGo/wiki).
+A short user documentation can be found [here](https://dofabien.github.io/OsmGo/).
 
  <p align="center">
   <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-vt.png?raw=true"/>
@@ -23,12 +23,11 @@ A short and breaking down documentation can be found at the [repo wiki](https://
 
 
 ### Dev
-Osm Go! is a _hybrid_ application using Ionic 4 and Cordova with Angular 8. It uses the map rendering engine Mapbox GL JS to display and run the in-app map.
+Osm Go! is a _PWA_ application using Ionic 4 and Angular 8. It uses the map rendering engine Mapbox GL JS to display and run the in-app map.
 
 #### Installation 
 1) Install npm dependencies globally
 ```sh
-npm install -g cordova
 npm install -g ionic
 ```
 2) Clone this repo and install
@@ -39,25 +38,12 @@ npm install
 ```
 3) Test it in a browser
 ```sh
-ionic serve 
+ng serve 
 ```
-
-#### Android
-Debugging the app on your Android smartphone requires you to set up the whole development environment JDK, Gradle, SDK Android etc. Please be patient! It's Java... :)
-
-1) Add the android platform to ionic
+4) Build (=> ./www)
 ```sh
-ionic cordova platform add android
+ng build --prod 
 ```
-2) Connect your smartphone via USB and put it in debugging mode. Execute the following command from within terminal.
-```sh
-ionic cordova run android
-```
-
-#### iOS
-The app is not available for iOS users yet. For this app to work in iOS lots of modifications needs to be done.
-I do not have an iPhone nor a Mac to develop nor to debug an iOS version of this app. You will need a Mac and a developer account for 100$ per year to develop iOS apps.
-If someone has all this and wants to make a port, I would be happy to help them.
 
 ## Contributing
 If you want to contribute to Osm Go! and make it better, your help is welcome !

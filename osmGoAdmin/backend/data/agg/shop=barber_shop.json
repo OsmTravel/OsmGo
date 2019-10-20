@@ -1,9 +1,0 @@
-[
-  {"key": "ref:FR:NAF", "tags": [{"value": "9602A", "count": 1}], "count": 1},
-  {
-    "key": "ref:FR:SIRET",
-    "tags": [{"value": "83459810400018", "count": 1}],
-    "count": 1
-  },
-  {"key": "shop", "tags": [{"value": "barber_shop", "count": 1}], "count": 1}
-]

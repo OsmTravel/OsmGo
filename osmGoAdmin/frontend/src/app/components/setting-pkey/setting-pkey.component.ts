@@ -21,8 +21,6 @@ export class SettingPkeyComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
- 
-    console.log(this.data)
     this.primaryKey = this.data.primaryKey
     this.tagsConfig = _.cloneDeep(this.tagsService.tagsConfig[this.primaryKey]);
     if ( !this.tagsConfig['exclude_way_values']){
@@ -37,11 +35,9 @@ export class SettingPkeyComponent implements OnInit {
       this.tagsConfig['exclude_way_values'].splice(index, 1)
     }
     
-    console.log(index);
   }
 
   addExcludeWay(value){
-    console.log(value);
     if (this.tagsConfig['exclude_way_values'].includes(value)){
       this.newExcludeWay = null
       return;
@@ -51,8 +47,6 @@ export class SettingPkeyComponent implements OnInit {
   }
 
   sendData(data){
-    console.log(data);
-
     this.tagsService.postTagSettings$(this.primaryKey, data.lbl, data.exclude_way_values  )
       .subscribe( e => {
         this.tagsService.tagsConfig[this.primaryKey]['lbl'] = data.lbl;

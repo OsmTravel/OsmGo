@@ -21,7 +21,7 @@ export class TagsService {
 
 
   constructor(private http: HttpClient, public dataService : DataService) {
-    console.log(this.language)
+  
   }
 
 
@@ -47,7 +47,7 @@ export class TagsService {
       this.http.get(`./api/OsmGoTags/${this.language}/${this.country}`, this.dataService.getHttpOption()).pipe(
         shareReplay()
       ),
-      this.getFullStat$(),
+      this.getFullStat$(country),
       this.getPresetsConfig$(language, country)
     )
       .pipe(
@@ -58,17 +58,19 @@ export class TagsService {
 
           for ( let k in tags){
             tags[k].values = tags[k].values.map(tag => {
-              // console.log(tag);
               let count =0;
               let percentage = 0;
               let description
+              if (!tagInfo[k]){
+                return {...tag, _count :null, _percentage:null} ;
+              }
               let findedItem = tagInfo[k].values.find( item => item.value === tag.key)
               if (findedItem){
                 count = findedItem.count;
                 percentage = (Math.round((findedItem.fraction ) *1000) /1000) * 100;
                 description = findedItem.description
               }
-              // console.log(findedItem);
+
               return {...tag, _count :count, _percentage:percentage, _description:description} ;
             })
           }
@@ -108,12 +110,16 @@ export class TagsService {
     return genericPresets;
   }
 
-  getPrsetsSummary(pkey, value) {
-    return this.http.get(`./api/PkeyPvalueStat/${pkey}/${value}`, this.dataService.getHttpOption());
+  getPresetsSummary(country, pkey, value) {
+    return this.http.get(`./api/TagInfoLike/${country}/${pkey}/${value}`, this.dataService.getHttpOption());
   }
 
-  getFullStat$() {
-    return this.http.get(`./api/PkeyStats`, this.dataService.getHttpOption())
+  getTagInfoTags$(country, pkey, value, key) {
+    return this.http.get(`./api/TagInfoLike/${country}/${pkey}/${value}/${key}`, this.dataService.getHttpOption());
+  }
+
+  getFullStat$(country) {
+    return this.http.get(`./api/PkeyStats/${country}`, this.dataService.getHttpOption())
       .pipe(
         map(data => {
           this.aggStats = data;
@@ -171,7 +177,7 @@ export class TagsService {
       .pipe(
         // catchError( err => console.log(err))
       );
-    // return this.http.get(`./api/PkeyPvalueStat/${pkey}/${value}`);
+
   }
 
   deleteTag(pkey, value){
@@ -189,20 +195,21 @@ export class TagsService {
       .pipe(
         // catchError( err => console.log(err))
       );
-    // return this.http.get(`./api/PkeyPvalueStat/${pkey}/${value}`);
+ 
   }
 
  
 
-  postPrest(pkey, pvalue, oldId, newId, data) {
-    console.log(oldId, newId);
+  postPreset(pkey, pvalue, oldId, newId, data) {
+
     // { primary : {key, value}, oldId, newid, data:{preset...}}
     const params = { primary: { key: pkey, value: pvalue }, ids: { 'oldId': oldId, 'newId': newId }, data: data };
     return this.http.post<any>(`./api/presets/${this.language}/${this.country}`, params, this.dataService.getHttpOption());
   }
 
+
   postNewPvalue$(pkey, newPvalue) {
-    console.log('new value')
+
     const params = { pkey: pkey, newPvalue: newPvalue };
     return this.http.post<any>(`./api/tag/${this.language}/${this.country}`, params, this.dataService.getHttpOption());
   }

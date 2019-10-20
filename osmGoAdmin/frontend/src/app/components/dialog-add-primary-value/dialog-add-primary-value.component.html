@@ -20,11 +20,19 @@
     </mat-form-field>
 
     <mat-form-field style="width: 100%;">
-      <input matInput [(ngModel)]="this.newPvalue.lbl_alt" placeholder="Label alternatif" style="font-weight: bolder;">
+      <input matInput [(ngModel)]="this.newPvalue.terms" placeholder="Search terms" style="font-weight: bolder;">
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%;">
+      <input matInput [(ngModel)]="this.newPvalue.description" placeholder="Description" style="font-weight: bolder;">
     </mat-form-field>
 
     <mat-form-field style="width: 100%;">
       <input matInput [(ngModel)]="this.newPvalue.alert" placeholder="Alert" style="font-weight: bolder; color:red;">
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%;">
+      <input matInput [(ngModel)]="this.newPvalue.warning" placeholder="Warning" style="font-weight: bolder; color:orange;">
     </mat-form-field>
 
     <button mat-button (click)="toOsmPage(pKey, newPvalue.key)"> OSM WIKI PAGE </button>

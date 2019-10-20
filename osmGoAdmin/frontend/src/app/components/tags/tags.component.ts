@@ -35,15 +35,18 @@ export class TagsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.tagsService.language =this.route.snapshot.paramMap.get("language")
+    this.tagsService.country =this.route.snapshot.paramMap.get("country")
+
     if (!this.tagsService.language || !this.tagsService.country){
       this.router.navigate(['/']);
-
       return
     }
 
 
     this.tagsService.tagsConfig$(this.tagsService.language,this.tagsService.country ).subscribe(data => {
       // this.tagsService.tagsConfig = data;
+
       this.selectedTagKey = 'shop';
     });
   }
@@ -80,17 +83,24 @@ export class TagsComponent implements OnInit {
       data: { type: typeModif, presets: presets, primaryKey: primaryKey, primaryValue: primaryValue }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      // console.log(result);
-    });
+    dialogRef.afterClosed()
+    .subscribe();
   }
 
   deletePresetFromTag(primaryKey: string, primaryValue: string, presets ){
     let currentTag =  this.tagsService.tagsConfig[primaryKey].values.find( e => e.key === primaryValue)
-    const idIndex = currentTag.presets.indexOf(presets._id)
-    currentTag.presets.splice(idIndex, 1);
-    this.tagsService.updatePrimaryTag(primaryKey, primaryValue, currentTag)
-      .subscribe(res => console.log(res));
+    if (currentTag){
+      console.log('id', presets._id);
+      console.log(currentTag.presets)
+      const idIndex = currentTag.presets.indexOf(presets._id)
+      if (!idIndex){
+        return;
+      }
+      currentTag.presets.splice(idIndex, 1);
+      this.tagsService.updatePrimaryTag(primaryKey, primaryValue, currentTag)
+        .subscribe();
+    }
+
     // currentTag.presets.splice(1,presets._id)
 
   }
@@ -104,7 +114,7 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+    
     });
   }
 
@@ -117,7 +127,7 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+
     });
   }
 
@@ -130,14 +140,14 @@ export class TagsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+    
     });
 
   }
 
   primaryTagHasChanged(e) {
     this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
-      .subscribe(res => console.log(res));
+      .subscribe();
   }
 
   getCountPrimaryKey(key, value) {
@@ -165,10 +175,10 @@ export class TagsComponent implements OnInit {
   }
 
   deleteDefaultValue(item){
-    console.log(item);
+
     this.selectedTagValueConfig.default_values = this.selectedTagValueConfig.default_values.filter( i => i.key !== item.key);
     this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
-    .subscribe(res => console.log(res));
+    .subscribe();
     
   }
 
@@ -180,8 +190,23 @@ export class TagsComponent implements OnInit {
     this.newDefaultValue = { key: null, value: null}
 
     this.tagsService.updatePrimaryTag(this.selectedTagKey, this.selectedTagValueConfig.key, this.selectedTagValueConfig)
-    .subscribe(res => console.log(res));
-
-    console.log(newItem);
+    .subscribe();
   }
+
+  optionChangeOrder(index, newIndex){
+    this.array_move(this.selectedTagValueConfig.presets, index,newIndex);
+    this.primaryTagHasChanged(null) 
+    // this.updatePreset(this.selectedPreset)
+  }
+
+
+  array_move(arr, old_index, new_index) {
+    if (new_index >= arr.length) {
+        var k = new_index - arr.length + 1;
+        while (k--) {
+            arr.push(undefined);
+        }
+    }
+    arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+};
 }

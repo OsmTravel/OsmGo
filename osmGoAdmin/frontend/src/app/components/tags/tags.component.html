@@ -2,6 +2,8 @@
 <mat-toolbar color="primary">
     <button mat-button routerLink="/"> <mat-icon>home</mat-icon></button>
     {{this.tagsService.language }}-{{this.tagsService.country}}
+    <button mat-button [routerLink]="'/presets/'+this.tagsService.language+'/'+this.tagsService.country"> Presets </button>
+
 </mat-toolbar>
 
 <div class="primaryKey">
@@ -34,15 +36,16 @@
       <th (click)="changeOrder('lbl')" class="pointer">Label</th>
       <th>Presets</th>
       <th (click)="changeOrder('_count')" class="pointer" >count</th>
-      <th (click)="changeOrder('_percentage')" class="pointer">%</th>
+      <!-- <th (click)="changeOrder('_percentage')" class="pointer">%</th> -->
       <th (click)="changeOrder('time')" class="pointer"> time </th>
     </tr>
     <tr
       *ngFor="let primaryTagValueConfig of tagsService.tagsConfig[selectedTagKey].values | orderBy:[ orderKey , orderType ]"
-      (click)="tagValueConfigChange(primaryTagValueConfig)" class="pointer" >
+      (click)="tagValueConfigChange(primaryTagValueConfig)" class="pointer" [ngClass]="{'selectedRow': selectedTagValueConfig && primaryTagValueConfig.key == selectedTagValueConfig.key}" >
       <td>
+        <!-- {{primaryTagValueConfig.key | json}} -->
         <div style="width: 32px;min-height: 32px;height: 100%;"
-          [ngStyle]="{'background-color': primaryTagValueConfig.markerColor}">
+          [ngStyle]="{'background-color': primaryTagValueConfig && primaryTagValueConfig.markerColor ? primaryTagValueConfig.markerColor : '#3f51b5'}">
           <img *ngIf="primaryTagValueConfig.icon" width="24px" height="24px" style="padding: 4px" class="svg-icon"
             [src]="'./api/svg/'+ primaryTagValueConfig.icon" />
         </div>
@@ -55,7 +58,7 @@
       <td>{{primaryTagValueConfig.lbl}}</td>
       <td>{{primaryTagValueConfig.presets.length}}</td>
       <td> {{primaryTagValueConfig._count}}</td>
-      <td> {{primaryTagValueConfig._percentage }}</td>
+      <!-- <td> {{primaryTagValueConfig._percentage }}</td> -->
       <td> {{primaryTagValueConfig?.time | date:'short' }}</td>
     </tr>
   </table>
@@ -77,11 +80,6 @@
 
 <button mat-raised-button style="margin: 5px; display:block" (click)="toOsmPage(selectedTagKey, selectedTagValueConfig.key)"> OSM WIKI</button>
 
-<div style="padding: 3px; background: #3f51b5;color: #fff;">
-  <h5 style="margin: 2px;">Tag Info description:</h5>
-  <span>{{selectedTagValueConfig._description}}</span>
-</div>
-
 <mat-slide-toggle [(ngModel)]="isDeleteConfirm">delete this tag ?</mat-slide-toggle>
 
 <button mat-raised-button [disabled]='!isDeleteConfirm' (click)="deleteTag(selectedTagKey,selectedTagValueConfig.key )" color="warn">DELETE</button>
@@ -92,14 +90,25 @@
       style="font-weight: bolder; font-size: 1.5em;">
 
   </mat-form-field>
+
   <mat-form-field style="width: 100%;">
-    <input matInput [(ngModel)]="selectedTagValueConfig.lbl_alt" autocomplete="off" (change)="primaryTagHasChanged($event)"
-      placeholder="alternative label / keywords">
+    <input matInput [(ngModel)]="selectedTagValueConfig.terms" autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="keywords">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.description" autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="description">
   </mat-form-field>
 
   <mat-form-field style="width: 100%; color:red;">
     <input matInput [(ngModel)]="selectedTagValueConfig.alert"  autocomplete="off" (change)="primaryTagHasChanged($event)"
       placeholder="Alerte">
+  </mat-form-field>
+
+  <mat-form-field style="width: 100%; color:orange;">
+    <input matInput [(ngModel)]="selectedTagValueConfig.warning"  autocomplete="off" (change)="primaryTagHasChanged($event)"
+      placeholder="Warning">
   </mat-form-field>
 
   <div style="margin:5px;">
@@ -115,7 +124,7 @@
   <h4>Presets</h4>
 
   <table *ngIf="tagsService.presetsConfig  as presetsConfig">
-    <tr *ngFor="let presetId of selectedTagValueConfig.presets">
+    <tr *ngFor="let presetId of selectedTagValueConfig.presets; let i = index">
       <td>{{ presetsConfig[presetId]?.key}}</td>
       <td>{{presetsConfig[presetId]?.lbl}}</td>
       <td>{{presetsConfig[presetId]?.type}}</td>
@@ -125,10 +134,25 @@
           <mat-icon>edit</mat-icon>
         </button>
       </td>
-      <td><button mat-raised-button color="warn"
+      <td>
+        
+        <button mat-raised-button color="warn"
         (click)="deletePresetFromTag(selectedTagKey, selectedTagValueConfig.key, presetsConfig[presetId])">
         <mat-icon>delete_forever</mat-icon>
       </button>
+
+      <button class="buttonMove" mat-raised-button  *ngIf="i > 0" 
+          (click)="optionChangeOrder(i, i-1)"> <mat-icon>keyboard_arrow_up</mat-icon> </button>
+
+      <button class="buttonMove" mat-raised-button  *ngIf="i < selectedTagValueConfig.presets.length -1" 
+      (click)="optionChangeOrder(i, i+1)"><mat-icon>keyboard_arrow_down</mat-icon> </button>
+
+      <button class="buttonMove" mat-raised-button *ngIf="i > 0" 
+          (click)="optionChangeOrder(i, 0)"><mat-icon>vertical_align_top</mat-icon></button>
+
+      <button class="buttonMove" mat-raised-button  *ngIf="i < selectedTagValueConfig.presets.length -1" 
+      (click)="optionChangeOrder(i, selectedTagValueConfig.presets.length -1)"><mat-icon>vertical_align_bottom</mat-icon></button>
+
     </td>
     </tr>
   </table>

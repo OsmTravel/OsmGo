@@ -1,0 +1,11 @@
+
+.buttonMove{
+    padding: 2px;
+    min-width: 32px;
+}
+
+.sortIcon{
+    cursor: pointer;
+    font-size: 1.2em;
+    vertical-align: middle;
+}

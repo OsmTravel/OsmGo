@@ -1,32 +1,32 @@
 [
-    {
-        "id": "tmsIgn",
-        "label": "Ortho IGN",
-        "type": "raster",
-        "tiles": [
-            "https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}"
-        ],
-        "tileSize": 256,
-        "maxzoom": 19
-    },
-   {
-        "id": "mapbox-satellite",
-        "label" : "satellite Mapbox",
-        "type": "raster",
-        "url": "mapbox://mapbox.satellite",
-        "tileSize": 256
-    },
-    {
-        "id": "bing-maps",
-        "label" : "Bing maps",
-        "type": "raster",
-        "tiles": [
-            "https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-            "https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-            "https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-            "https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z"
-        ],
-        "maxzoom": 19,
-        "tileSize": 256
-    }   
+  {
+    "id": "tmsIgn",
+    "label": "Ortho IGN",
+    "type": "raster",
+    "tiles": [
+      "https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}"
+    ],
+    "tileSize": 256,
+    "maxzoom": 19
+  },
+  {
+    "id": "mapbox-satellite",
+    "label": "satellite Mapbox",
+    "type": "raster",
+    "url": "mapbox://mapbox.satellite",
+    "tileSize": 256
+  },
+  {
+    "id": "bing-maps",
+    "label": "Bing maps",
+    "type": "raster",
+    "tiles": [
+      "https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+      "https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+      "https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+      "https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z"
+    ],
+    "maxzoom": 19,
+    "tileSize": 256
+  }
 ]

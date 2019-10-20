@@ -1,11 +1,10 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
-
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-
 import { environment } from '../../environments/environment.prod';
-import { AppVersion } from '@ionic-native/app-version/ngx';
+import { StatesService } from './states.service';
+
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
@@ -14,21 +13,14 @@ export class ConfigService {
     constructor(public localStorage: Storage,
         private http: HttpClient,
         private translate: TranslateService,
-        private _appVersion: AppVersion
-    ) {
-
-   
-
-
-    }
+        public stateService: StatesService
+    ) { }
 
     i18nConfig;
 
     eventConfigIsLoaded = new EventEmitter();
     freezeMapRenderer = false;
     platforms = [];
-    device;
-
     baseMapSources ;
     currentZoom: number = undefined;
 
@@ -44,10 +36,12 @@ export class ConfigService {
         changeSetComment: '',
         languageUi: window.navigator.language.split('-')[0] || null,
         languageTags: window.navigator.language.split('-')[0] || null,
-        countryTags: window.navigator.language.split('-')[1].toUpperCase() || null,
+        countryTags: window.navigator.language && window.navigator.language.split('-')[1] ? window.navigator.language.split('-')[1].toUpperCase() : null,
         oldTagsIcon: { display: true, year: 4},
         displayFixmeIcon : true,
-        addSurveyDate: true
+        addSurveyDate: true, 
+        isDevMode: false,
+        isDevServer: false
     };
 
     currentTagsCountryChoice = [];
@@ -102,7 +96,7 @@ export class ConfigService {
     }
 
     async loadAppVersion  () {
-            this.appVersion.appVersionNumber = await this._appVersion.getVersionNumber() || environment.version;
+            this.appVersion.appVersionNumber =  environment.version;
             console.log(this.appVersion);
             
     }
@@ -240,5 +234,27 @@ export class ConfigService {
         this.localStorage.set('config', this.config);
     }
     
+    getIsDevMode() {
+        return this.config.isDevMode;
+    }
+
+    setIsDevMode(isDevMode: boolean) {
+        this.config.isDevMode = isDevMode;
+        this.localStorage.set('config', this.config);
+    }
+
+    getIsDevServer() {
+        return this.config.isDevServer;
+    }
+
+    async setIsDevServer(isDevServer: boolean) {
+        this.config.isDevServer = isDevServer;
+        await this.localStorage.set('config', this.config);
+        await this.localStorage.remove('geojson');
+        await this.localStorage.remove('geojsonBbox');
+        await this.localStorage.remove('user_info');
+        await this.localStorage.remove('geojsonChanged');
+        return isDevServer;
+    }
 
 }

@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { cloneDeep } from 'lodash';
 
 
 @Injectable({ providedIn: 'root' })
@@ -68,7 +69,7 @@ export class DataService {
 
 
     setGeojsonWay(data) {
-        this.geojsonWay = JSON.parse(JSON.stringify(data));
+        this.geojsonWay = cloneDeep(data);
     }
     addFeatureToGeojsonWay(feature) {
         this.geojsonWay.features.push(feature);
@@ -79,7 +80,7 @@ export class DataService {
     }
 
     setGeojson(data) {
-        this.geojson = JSON.parse(JSON.stringify(data));
+        this.geojson = cloneDeep(data);
         this.localStorage.set('geojson', this.geojson);
     }
     addFeatureToGeojson(feature) {
@@ -113,7 +114,7 @@ export class DataService {
 
         for (let i = 0; i < features.length; i++) {
             if (features[i].properties.id === id) {
-                return JSON.parse(JSON.stringify(features[i]));
+                return cloneDeep(features[i]);
             }
         }
     }
@@ -122,7 +123,7 @@ export class DataService {
     /* Delayedd */
 
     getGeojsonChanged() {
-        return JSON.parse(JSON.stringify(this.geojsonChanged));
+        return cloneDeep(this.geojsonChanged);
     }
 
     setGeojsonChanged(geojson) { // TODO: Promise... Async await ? 
@@ -178,11 +179,11 @@ export class DataService {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             this.geojson.features.push(this.geojsonChanged.features[i]);
         }
-        return JSON.parse(JSON.stringify(this.geojson));
+        return cloneDeep(this.geojson);
     }
 
     cancelFeatureChange(feature) {
-        const originalFeature = JSON.parse(JSON.stringify(feature.properties.originalData));
+        const originalFeature = cloneDeep(feature.properties.originalData);
         this.deleteFeatureFromGeojsonChanged(feature);
         // this.deleteFeatureFromGeojson(feature);
         if (feature.properties.changeType !== 'Create') {

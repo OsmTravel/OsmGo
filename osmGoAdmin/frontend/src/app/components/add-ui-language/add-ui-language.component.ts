@@ -18,7 +18,7 @@ export class AddUiLanguageComponent implements OnInit {
   addLanguage(newLanguage){
     this.dataService.addNewUiLanguage$(newLanguage)
       .subscribe( l => {
-        console.log(l)
+       
       } )
   }
 

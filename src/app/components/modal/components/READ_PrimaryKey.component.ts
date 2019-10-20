@@ -11,6 +11,8 @@ import { Component, Input } from '@angular/core';
         </ion-card-header>
         <ion-card-content>
             <p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
+            <p class="description" *ngIf="!displayCode && configOfPrimaryKey && configOfPrimaryKey.description"> {{configOfPrimaryKey.description}}</p>
+           
             <p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
             <ion-icon name="code"></ion-icon>
                 {{primaryKey.value}}

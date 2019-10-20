@@ -1,9 +1,0 @@
-[
-  {"key": "office", "tags": [{"value": "dietetician", "count": 1}], "count": 1},
-  {"key": "ref:FR:SIRET", "tags": [{"value": "?", "count": 1}], "count": 1},
-  {
-    "key": "survey:date",
-    "tags": [{"value": "2018-07-07", "count": 1}],
-    "count": 1
-  }
-]

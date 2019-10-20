@@ -1,0 +1,1 @@
+[{"key":"amenity","tags":[{"value":"payment_terminal","count":4}],"count":4},{"key":"payment:cash","tags":[{"value":"yes","count":2}],"count":2},{"key":"payment:coins","tags":[{"value":"yes","count":2}],"count":2},{"key":"payment:credit_cards","tags":[{"value":"yes","count":1}],"count":1}]
