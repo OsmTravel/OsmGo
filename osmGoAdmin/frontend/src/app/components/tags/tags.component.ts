@@ -89,10 +89,18 @@ export class TagsComponent implements OnInit {
 
   deletePresetFromTag(primaryKey: string, primaryValue: string, presets ){
     let currentTag =  this.tagsService.tagsConfig[primaryKey].values.find( e => e.key === primaryValue)
-    const idIndex = currentTag.presets.indexOf(presets._id)
-    currentTag.presets.splice(idIndex, 1);
-    this.tagsService.updatePrimaryTag(primaryKey, primaryValue, currentTag)
-      .subscribe();
+    if (currentTag){
+      console.log('id', presets._id);
+      console.log(currentTag.presets)
+      const idIndex = currentTag.presets.indexOf(presets._id)
+      if (!idIndex){
+        return;
+      }
+      currentTag.presets.splice(idIndex, 1);
+      this.tagsService.updatePrimaryTag(primaryKey, primaryValue, currentTag)
+        .subscribe();
+    }
+
     // currentTag.presets.splice(1,presets._id)
 
   }

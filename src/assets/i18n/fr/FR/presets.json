@@ -3,77 +3,73 @@
     "type": "list",
     "lbl": "Type de cuisine",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "barbecue", "lbl": "Barbecue"},
       {"v": "steak_house", "lbl": "Beef Steak"},
       {"v": "burger", "lbl": "Burger"},
       {"v": "cake", "lbl": "Cake"},
-      {"v": "coffee_shop", "lbl": "Coffee Shop"},
       {"v": "couscous", "lbl": "Couscous"},
       {"v": "crepe", "lbl": "Crepe"},
+      {"v": "german", "lbl": "Cuisine Allemande"},
+      {"v": "belgian", "lbl": "Cuisine Belge"},
+      {"v": "iranian", "lbl": "Cuisine Iranienne"},
+      {"v": "african", "lbl": "Cuisine africaine"},
+      {"v": "american", "lbl": "Cuisine americaine"},
+      {"v": "arab", "lbl": "Cuisine arabe"},
+      {"v": "argentinian", "lbl": "Cuisine argentine"},
+      {"v": "asian", "lbl": "Cuisine asiatique"},
+      {"v": "australian", "lbl": "Cuisine australienne"},
+      {"v": "basque", "lbl": "Cuisine basque"},
+      {"v": "bavarian", "lbl": "Cuisine bavaroise"},
+      {"v": "brazilian", "lbl": "Cuisine brésilienne"},
+      {"v": "cantonese", "lbl": "Cuisine cantonaise "},
+      {"v": "caribbean", "lbl": "Cuisine caribéenne"},
+      {"v": "chinese", "lbl": "Cuisine chinoise"},
+      {"v": "korean", "lbl": "Cuisine coréeene"},
+      {"v": "croatian", "lbl": "Cuisine croate"},
+      {"v": "danish", "lbl": "Cuisine danoise"},
+      {"v": "balkan", "lbl": "Cuisine des Balkans"},
+      {"v": "spanish", "lbl": "Cuisine espagnole"},
+      {"v": "french", "lbl": "Cuisine française"},
+      {"v": "greek", "lbl": "Cuisine greque"},
+      {"v": "hungarian", "lbl": "Cuisine hongroise"},
+      {"v": "indian", "lbl": "Cuisine indienne"},
+      {"v": "international", "lbl": "Cuisine international"},
+      {"v": "italian", "lbl": "Cuisine italienne"},
+      {"v": "japanese", "lbl": "Cuisine japonaise"},
+      {"v": "latin_american", "lbl": "Cuisine latino américaine"},
+      {"v": "lebanese", "lbl": "Cuisine libanaise"},
+      {"v": "malagasy", "lbl": "Cuisine malgache"},
+      {"v": "mexican", "lbl": "Cuisine mexicaine"},
+      {"v": "pakistani", "lbl": "Cuisine pakistanaise"},
+      {"v": "polish", "lbl": "Cuisine polonaise"},
+      {"v": "portuguese", "lbl": "Cuisine portugaise"},
+      {"v": "peruvian", "lbl": "Cuisine péruvienne"},
+      {"v": "regional", "lbl": "Cuisine regionalaise"},
+      {"v": "czech", "lbl": "Cuisine tcheque"},
+      {"v": "thai", "lbl": "Cuisine thaïlandaise"},
+      {"v": "turkish", "lbl": "Cuisine turque"},
+      {"v": "russian", "lbl": "Cuisine tusse"},
+      {"v": "vietnamese", "lbl": "Cuisine vietnamienne"},
       {"v": "curry", "lbl": "Curry"},
       {"v": "dessert", "lbl": "Dessert"},
       {"v": "donut", "lbl": "Donut"},
-      {"v": "doughnut", "lbl": "Doughnut"},
       {"v": "empanada", "lbl": "Empanada"},
       {"v": "fish_and_chips", "lbl": "Fish And Chips"},
       {"v": "friture", "lbl": "Friture"},
-      {"v": "ice_cream", "lbl": "Glasse"},
+      {"v": "ice_cream", "lbl": "Glace"},
       {"v": "kebab", "lbl": "Kebab"},
-      {"v": "mediterranean", "lbl": "Mediterranean"},
+      {"v": "mediterranean", "lbl": "Méditerranéenne"},
       {"v": "noodle", "lbl": "Noodle"},
       {"v": "pancake", "lbl": "Pancake"},
       {"v": "pasta", "lbl": "Pasta"},
       {"v": "pizza", "lbl": "Pizza"},
+      {"v": "fish", "lbl": "Poisson"},
       {"v": "seafood", "lbl": "Poisson, fruits de mer"},
       {"v": "chicken", "lbl": "Poulet"},
       {"v": "sandwich", "lbl": "Sandwich"},
       {"v": "sushi", "lbl": "Sushi"},
       {"v": "tapas", "lbl": "Tapas"},
-      {"v": "pie", "lbl": "Tarte"},
-      {"v": "wings", "lbl": "Wings"},
-      {"v": "african", "lbl": "Cuisine Africaine"},
-      {"v": "german", "lbl": "Cuisine Allemande"},
-      {"v": "american", "lbl": "Cuisine Americaine"},
-      {"v": "arab", "lbl": "Cuisine Arabe"},
-      {"v": "argentinian", "lbl": "Cuisine Argentine"},
-      {"v": "asian", "lbl": "Cuisine Asiatique"},
-      {"v": "australian", "lbl": "Cuisine Australienne"},
-      {"v": "baiana", "lbl": "Cuisine Baiana"},
-      {"v": "balkan", "lbl": "Cuisine Balkan"},
-      {"v": "basque", "lbl": "Cuisine Basque"},
-      {"v": "bavarian", "lbl": "Cuisine Bavarian"},
-      {"v": "belarusian", "lbl": "Cuisine Belarusian"},
-      {"v": "brazilian", "lbl": "Cuisine Bresillienne"},
-      {"v": "cantonese", "lbl": "Cuisine Cantonaise "},
-      {"v": "caribbean", "lbl": "Cuisine Caribbean"},
-      {"v": "chinese", "lbl": "Cuisine Chinoise"},
-      {"v": "korean", "lbl": "Cuisine Coréeene"},
-      {"v": "croatian", "lbl": "Cuisine Croate"},
-      {"v": "danish", "lbl": "Cuisine Danoise"},
-      {"v": "spanish", "lbl": "Cuisine Espagnole"},
-      {"v": "french", "lbl": "Cuisine Française"},
-      {"v": "greek", "lbl": "Cuisine Greque"},
-      {"v": "hungarian", "lbl": "Cuisine Hongroise"},
-      {"v": "indian", "lbl": "Cuisine Indienne"},
-      {"v": "international", "lbl": "Cuisine International"},
-      {"v": "iranian", "lbl": "Cuisine Iranienne"},
-      {"v": "italian", "lbl": "Cuisine Italienne"},
-      {"v": "japanese", "lbl": "Cuisine Japonaise"},
-      {"v": "latin_american", "lbl": "Cuisine Latino américaine"},
-      {"v": "lebanese", "lbl": "Cuisine Libanaise"},
-      {"v": "malagasy", "lbl": "Cuisine Malgache"},
-      {"v": "mexican", "lbl": "Cuisine Mexicaine"},
-      {"v": "pakistani", "lbl": "Cuisine Pakistanaise"},
-      {"v": "peruvian", "lbl": "Cuisine Peruvianaise"},
-      {"v": "polish", "lbl": "Cuisine Polonaise"},
-      {"v": "portuguese", "lbl": "Cuisine Portugaise"},
-      {"v": "regional", "lbl": "Cuisine Regionalaise"},
-      {"v": "russian", "lbl": "Cuisine Russe"},
-      {"v": "czech", "lbl": "Cuisine Tcheque"},
-      {"v": "thai", "lbl": "Cuisine Thaïlandaise"},
-      {"v": "turkish", "lbl": "Cuisine Turque"},
-      {"v": "vietnamese", "lbl": "Cuisine Vietnamienne"}
+      {"v": "pie", "lbl": "Tarte"}
     ],
     "key": "cuisine"
   },
@@ -81,7 +77,6 @@
     "type": "select",
     "lbl": "Type",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "underground", "lbl": "Souterraine"},
       {"v": "pillar", "lbl": "Pilier / hors sol"},
       {"v": "wall", "lbl": "Mur"},
@@ -93,7 +88,6 @@
     "type": "select",
     "lbl": "Position",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "lane", "lbl": "Sur la voie"},
       {"v": "parking_lot", "lbl": "Dans un parking"},
       {"v": "sidewalk", "lbl": "Sur un trottoir"},
@@ -111,7 +105,6 @@
     "type": "select",
     "lbl": "Ecole FR",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "maternelle", "lbl": "Maternelle (petite à grande section)"},
       {"v": "primaire", "lbl": "Primaire (maternelle et élémentaire)"},
       {"v": "élémentaire", "lbl": "Élémentaire (CP à CM2)"},
@@ -132,7 +125,6 @@
     "type": "select",
     "lbl": "Type",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "stands", "lbl": "Arceau/Sheffield"},
       {"v": "shed", "lbl": "Abri dédié"},
       {"v": "lockers", "lbl": "Box individuel"},
@@ -151,18 +143,13 @@
   "covered": {
     "type": "select",
     "lbl": "Couvert",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "covered"
   },
   "butcher": {
     "type": "select",
     "lbl": "Spécialité",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "beef", "lbl": "Bœuf "},
       {"v": "pork", "lbl": "Charcuterie"},
       {"v": "horse", "lbl": "Cheval"},
@@ -177,7 +164,6 @@
     "type": "select",
     "lbl": "Biologique",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "yes", "lbl": "Oui"},
       {"v": "no", "lbl": "Non"},
       {"v": "only", "lbl": "Uniquement"}
@@ -188,7 +174,6 @@
     "type": "select",
     "lbl": "Pâtisseries",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "yes", "lbl": "Oui"},
       {"v": "no", "lbl": "Non"},
       {"v": "only", "lbl": "Uniquement"}
@@ -198,58 +183,37 @@
   "male": {
     "type": "select",
     "lbl": "Homme",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "male"
   },
   "female": {
     "type": "select",
     "lbl": "Femme",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "female"
   },
   "lottery": {
     "type": "select",
     "lbl": "Vente de jeux de hasard",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "lottery"
   },
   "self_service": {
     "type": "select",
     "lbl": "Self service",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "self_service"
   },
   "second_hand": {
     "type": "select",
     "lbl": "Articles d'occasion",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "second_hand"
   },
   "recycling_type": {
     "type": "select",
     "lbl": "Type",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "container", "lbl": "Conteneur"},
       {"v": "centre", "lbl": "Déchèterie"}
     ],
@@ -258,68 +222,43 @@
   "recycling:glass_bottles": {
     "type": "select",
     "lbl": "Bouteilles de verre et bocaux",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "recycling:glass_bottles"
   },
   "recycling:paper": {
     "type": "select",
     "lbl": "Papier",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "recycling:paper"
   },
   "recycling:plastic": {
     "type": "select",
     "lbl": "Plastique",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "recycling:plastic"
   },
   "backrest": {
     "type": "select",
     "lbl": "Dossier",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "backrest"
   },
   "tobacco": {
     "type": "select",
     "lbl": "Vente de cigarettes",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "tobacco"
   },
   "bench": {
     "type": "select",
     "lbl": "Banc",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "bench"
   },
   "wheelchair": {
     "type": "select",
     "lbl": "Accessible en fauteuil",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "yes", "lbl": "Oui"},
       {"v": "no", "lbl": "Non"},
       {"v": "limited", "lbl": "Limité"},
@@ -331,7 +270,6 @@
     "type": "select",
     "lbl": "Accès payant",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "yes", "lbl": "Oui"},
       {"v": "no", "lbl": "Non"},
       {"v": "interval", "lbl": "Selon l'heure"}
@@ -341,41 +279,25 @@
   "drive_through": {
     "type": "select",
     "lbl": "Drive",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "drive_through"
   },
   "dispensing": {
     "type": "select",
     "lbl": "Vente de médicaments sur ordonnance",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "dispensing"
   },
   "shelter": {
     "type": "select",
     "lbl": "Abri",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "shelter"
   },
   "tactile_paving": {
     "type": "select",
     "lbl": "Pavé tactile",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "tactile_paving"
   },
   "seats": {
@@ -388,7 +310,6 @@
     "type": "select",
     "lbl": "Religion",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "christian", "lbl": "Chrétienne"},
       {"v": "jewish", "lbl": "Judaïste"},
       {"v": "muslim", "lbl": "Islamique"},
@@ -400,7 +321,6 @@
     "type": "list",
     "lbl": "Objet vendu",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "admission_tickets", "lbl": "Tickets d'entrée"},
       {"v": "bread", "lbl": "Pains"},
       {"v": "cigarettes", "lbl": "Cigarettes"},
@@ -425,7 +345,6 @@
     "type": "list",
     "lbl": "Type de services sociaux",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "group_home", "lbl": "Résidence avec services sociaux et médicaux"},
       {"v": "assisted_living", "lbl": "Lieu de résidence collective"},
       {"v": "shelter", "lbl": "Refuge temporaire"},
@@ -440,7 +359,6 @@
     "type": "list",
     "lbl": "Destinataire des services",
     "tags": [
-      {"v": "", "lbl": " NC"},
       {"v": "abused", "lbl": "Victimes d'abus sexuels"},
       {"v": "child", "lbl": "Enfants"},
       {"v": "disabled", "lbl": "Handicapées physiques"},
@@ -461,11 +379,7 @@
   "nursery": {
     "type": "select",
     "lbl": "Garderie",
-    "tags": [
-      {"v": "", "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "nursery"
   },
   "shop#insurance#operator": {
@@ -530,7 +444,7 @@
   },
   "shop#clothes#brand": {
     "type": "list",
-    "lbl": "Marque / Enseigne ",
+    "lbl": "Enseigne ",
     "tags": [
       {"v": "Kiabi", "lbl": "Kiabi"},
       {"v": "Jules", "lbl": "Jules"},
@@ -829,5 +743,257 @@
       {"v": "Gibert Joseph", "lbl": "Gibert Joseph"}
     ],
     "key": "brand"
+  },
+  "shop#optician#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Alain Afflelou", "lbl": "Alain Afflelou"},
+      {"v": "Atol", "lbl": "Atol"},
+      {"v": "Grand Optical", "lbl": "Grand Optical"},
+      {"v": "Générale d'Optique", "lbl": "Générale d'Optique"},
+      {"v": "Krys", "lbl": "Krys"},
+      {"v": "Les Opticiens Mutualistes", "lbl": "Les Opticiens Mutualistes"},
+      {"v": "Lissac", "lbl": "Lissac"},
+      {"v": "Lunettes Pour Tous", "lbl": "Lunettes Pour Tous"},
+      {"v": "Optic 2000", "lbl": "Optic 2000"},
+      {"v": "Optical Center", "lbl": "Optical Center"}
+    ],
+    "key": "brand"
+  },
+  "shop#convenience#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "8 à Huit", "lbl": "8 à Huit"},
+      {"v": "Agip", "lbl": "Agip"},
+      {"v": "Avia", "lbl": "Avia"},
+      {"v": "BP", "lbl": "BP"},
+      {"v": "Bio C' Bon", "lbl": "Bio C' Bon"},
+      {"v": "Biocoop", "lbl": "Biocoop"},
+      {"v": "Carrefour Express", "lbl": "Carrefour Express"},
+      {"v": "Casino", "lbl": "Casino"},
+      {"v": "Esso", "lbl": "Esso"},
+      {"v": "Franprix", "lbl": "Franprix"},
+      {"v": "Intermarché Contact", "lbl": "Intermarché Contact"},
+      {"v": "La Vie Claire", "lbl": "La Vie Claire"},
+      {"v": "Marks and Spencer", "lbl": "Marks and Spencer"},
+      {"v": "Monoprix", "lbl": "Monoprix"},
+      {"v": "Naturalia", "lbl": "Naturalia"},
+      {"v": "Proxi", "lbl": "Proxi"},
+      {"v": "Satoriz", "lbl": "Satoriz"},
+      {"v": "Shell", "lbl": "Shell"},
+      {"v": "Spar", "lbl": "Spar"},
+      {"v": "Total", "lbl": "Total"},
+      {"v": "Total Access", "lbl": "Total Access"},
+      {"v": "Utile", "lbl": "Utile"},
+      {"v": "Vival", "lbl": "Vival"}
+    ],
+    "key": "brand"
+  },
+  "parking": {
+    "type": "list",
+    "lbl": "Type",
+    "tags": [
+      {"v": "surface", "lbl": "surface"},
+      {"v": "underground", "lbl": "underground"},
+      {"v": "multi-storey", "lbl": "multi-storey"},
+      {"v": "lane", "lbl": "lane"},
+      {"v": "rooftop", "lbl": "rooftop"},
+      {"v": "garage_boxes", "lbl": "garage_boxes"},
+      {"v": "sheds", "lbl": "sheds"},
+      {"v": "park_and_ride", "lbl": "park_and_ride"},
+      {"v": "layby", "lbl": "layby"}
+    ],
+    "key": "parking"
+  },
+  "access": {
+    "type": "select",
+    "lbl": "Restriction légale d'accès",
+    "tags": [
+      {"v": "private", "lbl": "Privé"},
+      {"v": "customers", "lbl": "Réservé aux clients"},
+      {"v": "delivery", "lbl": "Réservé aux livraisons."}
+    ],
+    "key": "access"
+  },
+  "material": {
+    "type": "list",
+    "lbl": "Matériau principal",
+    "tags": [
+      {"v": "wood", "lbl": "Bois"},
+      {"v": "metal", "lbl": "Métal"},
+      {"v": "stone", "lbl": "Pierre"},
+      {"v": "concrete", "lbl": "Béton"},
+      {"v": "plastic", "lbl": "Plastic"},
+      {"v": "steel", "lbl": "Acier"},
+      {"v": "granite", "lbl": "Granite"},
+      {"v": "marble", "lbl": "Marbre"},
+      {"v": "glass", "lbl": "Verre"}
+    ],
+    "key": "material"
+  },
+  "outdoor_seating": {
+    "type": "list",
+    "lbl": "Consommation en extérieure",
+    "tags": [
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"},
+      {"v": "terrace", "lbl": "Sur une terrasse"},
+      {"v": "garden", "lbl": "Dans un jardin"},
+      {"v": "patio", "lbl": "Dans un patio"},
+      {"v": "street", "lbl": "Dans une zone de la rue"},
+      {"v": "pedestrian_zone", "lbl": "Dans une zone piétonne"},
+      {"v": "sidewalk", "lbl": "Sur le trottoir"},
+      {"v": "balcony", "lbl": "Sur un balcon"},
+      {"v": "roof", "lbl": "Sur un toit"}
+    ],
+    "key": "outdoor_seating"
+  },
+  "takeaway": {
+    "type": "select",
+    "lbl": "A emporter",
+    "tags": [
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"},
+      {"v": "only", "lbl": "Uniquement"}
+    ],
+    "key": "takeaway"
+  },
+  "delivery": {
+    "type": "select",
+    "lbl": "Livraison",
+    "tags": [
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"},
+      {"v": "only", "lbl": "Uniquement"}
+    ],
+    "key": "delivery"
+  },
+  "internet_access": {
+    "type": "select",
+    "lbl": "Accès à Internet",
+    "tags": [
+      {"v": "wlan", "lbl": "Wifi"},
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"}
+    ],
+    "key": "internet_access"
+  },
+  "diet:vegetarian": {
+    "type": "select",
+    "lbl": "Produits végétariens",
+    "tags": [
+      {"v": "yes", "lbl": "Oui"},
+      {"v": "no", "lbl": "Non"},
+      {"v": "only", "lbl": "Uniquement"}
+    ],
+    "key": "diet:vegetarian"
+  },
+  "post_box:type": {
+    "type": "select",
+    "lbl": "Type",
+    "tags": [
+      {"v": "wall", "lbl": "Mural"},
+      {"v": "pillar", "lbl": "Pilier"},
+      {"v": "lamp", "lbl": "lamp"}
+    ],
+    "key": "post_box:type"
+  },
+  "amenity#bank#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "AXA", "lbl": "AXA"},
+      {"v": "BNP Paribas", "lbl": "BNP Paribas"},
+      {"v": "BRED", "lbl": "BRED"},
+      {"v": "Banque Populaire", "lbl": "Banque Populaire"},
+      {"v": "CIC", "lbl": "CIC"},
+      {"v": "Caisse d'Épargne", "lbl": "Caisse d'Épargne"},
+      {"v": "Crédit Agricole", "lbl": "Crédit Agricole"},
+      {"v": "Crédit Coopératif", "lbl": "Crédit Coopératif"},
+      {"v": "Crédit Mutuel", "lbl": "Crédit Mutuel"},
+      {"v": "Crédit du Nord", "lbl": "Crédit du Nord"},
+      {"v": "Groupama", "lbl": "Groupama"},
+      {"v": "HSBC", "lbl": "HSBC"},
+      {"v": "LCL", "lbl": "LCL"},
+      {"v": "La Banque Postale", "lbl": "La Banque Postale"},
+      {"v": "Société Générale", "lbl": "Société Générale"},
+      {
+        "v": "Société Marseillaise de Crédit",
+        "lbl": "Société Marseillaise de Crédit"
+      }
+    ],
+    "key": "brand"
+  },
+  "amenity#fast_food#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "Brioche Dorée", "lbl": "Brioche Dorée"},
+      {"v": "Burger King", "lbl": "Burger King"},
+      {"v": "Chipotle", "lbl": "Chipotle"},
+      {"v": "Domino's Pizza", "lbl": "Domino's Pizza"},
+      {"v": "Five Guys", "lbl": "Five Guys"},
+      {"v": "KFC", "lbl": "KFC"},
+      {"v": "McDonald's", "lbl": "McDonald's"},
+      {"v": "O'Tacos", "lbl": "O'Tacos"},
+      {"v": "Pret A Manger", "lbl": "Pret A Manger"},
+      {"v": "Quick", "lbl": "Quick"},
+      {"v": "Speed Burger", "lbl": "Speed Burger"},
+      {"v": "Subway", "lbl": "Subway"},
+      {"v": "Sushi Shop", "lbl": "Sushi Shop"}
+    ],
+    "key": "brand"
+  },
+  "brewery": {"type": "text", "lbl": "Bières", "tags": [], "key": "brewery"},
+  "fuel:lpg": {
+    "type": "select",
+    "lbl": "GPL",
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
+    "key": "fuel:lpg"
+  },
+  "car": {
+    "type": "select",
+    "lbl": "Pour voiture",
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
+    "key": "car"
+  },
+  "shop#shoes#brand": {
+    "type": "list",
+    "lbl": "Enseigne",
+    "tags": [
+      {"v": "André", "lbl": "André"},
+      {"v": "Bata", "lbl": "Bata"},
+      {"v": "Besson Chaussures", "lbl": "Besson Chaussures"},
+      {"v": "Chaussea", "lbl": "Chaussea"},
+      {"v": "Courir", "lbl": "Courir"},
+      {"v": "Foot Locker", "lbl": "Foot Locker"},
+      {"v": "Gabor", "lbl": "Gabor"},
+      {"v": "Geox", "lbl": "Geox"},
+      {"v": "La Halle", "lbl": "La Halle"},
+      {"v": "La Halle aux Chaussures", "lbl": "La Halle aux Chaussures"},
+      {"v": "Mephisto", "lbl": "Mephisto"},
+      {"v": "Minelli", "lbl": "Minelli"},
+      {"v": "Pittarosso", "lbl": "Pittarosso"},
+      {"v": "Salamander", "lbl": "Salamander"},
+      {"v": "San Marina", "lbl": "San Marina"},
+      {"v": "Tamaris", "lbl": "Tamaris"},
+      {"v": "UGG", "lbl": "UGG"},
+      {"v": "Vans", "lbl": "Vans"},
+      {"v": "Éram", "lbl": "Éram"}
+    ],
+    "key": "brand"
+  },
+  "parking_space": {
+    "type": "select",
+    "lbl": "Type de place",
+    "tags": [
+      {"v": "disabled", "lbl": "Désactivé"},
+      {"v": "delivery", "lbl": "Livraison"},
+      {"v": "bus", "lbl": "Bus"},
+      {"v": "car_rent", "lbl": "Voiture de location"}
+    ],
+    "key": "parking_space"
   }
 }

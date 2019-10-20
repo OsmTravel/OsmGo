@@ -15,6 +15,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 				<div class="wrapperEdit2cols">
 							<div class="contentEdit2cols">
 								<p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
+								<p class="description" *ngIf="!displayCode && configOfPrimaryKey && configOfPrimaryKey.description"> {{configOfPrimaryKey.description}}</p>
+
 								<p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
 								<ion-icon name="code"></ion-icon>
                                 	{{primaryKey.value}}

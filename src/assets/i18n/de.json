@@ -115,6 +115,7 @@
     "ADD_SURVEY_DATE_CONFIRM_HEADER": "Wurde dieses Objekt überprüft?",
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Tag 'survey:date' mit dem heutigen Datum hinzufügen",
     "PRIMARY_TAG_BOOKMARKS": "Favoriten",
-    "PRIMARY_TAG_FULL": "Voll"
+    "PRIMARY_TAG_FULL": "Voll",
+    "UNDEFINED_VALUE": "unknown"
   }
 }

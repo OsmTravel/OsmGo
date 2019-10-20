@@ -613,14 +613,20 @@
         "icon": "osm-shoes",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#shoes#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "fromid": true,
         "terms": "",
         "description": "",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570805091359
+        "time": 1571440173449
       },
       {
         "key": "cosmetics",
@@ -937,6 +943,7 @@
         "alert": "",
         "presets": [
           "tobacco",
+          "tickets:public_transport",
           "wheelchair",
           "phone",
           "website",
@@ -948,7 +955,7 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570805125937
+        "time": 1571440204227
       },
       {
         "key": "bed",
@@ -1092,11 +1099,20 @@
         "icon": "osm-optician",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#optician#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "fromid": true,
         "terms": "Opticien,Marchand de lunettes",
         "description": "Un magasin qui vend, ajuste et répare des lunettes et des lentilles de contact sur ordonnance.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571440023845
       },
       {
         "key": "stationery",
@@ -1178,6 +1194,7 @@
         "alert": "",
         "presets": [
           "shop#supermarket#brand",
+          "organic",
           "wheelchair",
           "phone",
           "website",
@@ -1189,7 +1206,7 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1571298387854
+        "time": 1571407515723
       },
       {
         "key": "convenience",
@@ -1197,14 +1214,14 @@
         "icon": "mi-convenience-store",
         "markerColor": "#A23337",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": ["wheelchair", "phone", "website"],
         "fromid": true,
         "terms": "supérette, Petite épicerie du coin",
         "description": "Épicerie ou supérette: petit commerce de proximité qui vend quelques produits que l'on trouve dans les supermarchés.",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570804200674
+        "time": 1571408345970
       },
       {
         "key": "grocery",
@@ -2043,12 +2060,16 @@
           "wheelchair",
           "phone",
           "website",
-          "opening_hours"
+          "amenity#bank#brand",
+          "amenity#bank#brand"
         ],
         "fromid": true,
         "terms": "Banque, Caisse populaire, bank",
         "description": "Un établissement financier où les consommateurs peuvent, en plus de d'autres services, déposer de l'argent et demander des prêts.",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571411294456
       },
       {
         "key": "bar",
@@ -2058,6 +2079,8 @@
         "alert": "",
         "presets": [
           "tobacco",
+          "outdoor_seating",
+          "brewery",
           "wheelchair",
           "phone",
           "website",
@@ -2069,7 +2092,7 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570874377635
+        "time": 1571411984191
       },
       {
         "key": "pub",
@@ -2079,10 +2102,13 @@
         "alert": "",
         "presets": [
           "tobacco",
+          "outdoor_seating",
+          "internet_access",
           "wheelchair",
           "phone",
           "website",
-          "opening_hours"
+          "opening_hours",
+          "brewery"
         ],
         "fromid": true,
         "terms": "bar, bière",
@@ -2090,7 +2116,7 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570885337642
+        "time": 1571412434175
       },
       {
         "key": "library",
@@ -2181,14 +2207,21 @@
         "icon": "mi-cafe",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "outdoor_seating",
+          "internet_access",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "fromid": true,
         "terms": "Café, salon de thé, brasserie, restaurant, cafe",
         "description": "Endroit généralement informel avec de quoi s'assoir, vendant des boissons et des repas légers et / ou des collations",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570801739509
+        "time": 1571412202056
       },
       {
         "key": "fire_station",
@@ -2398,15 +2431,18 @@
       },
       {
         "key": "hospital",
-        "lbl": "Terrains hospitaliers",
+        "lbl": "Hôpital",
         "icon": "mi-hospital",
         "markerColor": "#EF9228",
         "alert": "",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "fromid": true,
-        "terms": "Terrains d'hôpital, Hôpital",
-        "description": "Établissement où les malades et les blessés sont soignés. Cette image montre le rendu de mapnik.",
-        "warning": ""
+        "terms": "Terrains d'hôpital, centre hospitalier, CHU, CHRU",
+        "description": "",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571412728998
       },
       {
         "key": "hotel",
@@ -2463,14 +2499,20 @@
         "icon": "pray-solid",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "religion",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "fromid": true,
         "terms": "Édifice religieux, église, mosquée, synagogue",
-        "description": "Lieu de culte, quelle que soit la religion ou sa subdivision.",
+        "description": "Lieu de culte, quelle que soit la religion ou sa subdivision",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570885704766
+        "time": 1571410669993
       },
       {
         "key": "car_rental",
@@ -2493,14 +2535,14 @@
         "icon": "mi-bicycle-store",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": ["capacity"],
         "fromid": true,
         "terms": "Location de bicyclette, vélib, vélov",
-        "description": "type vélib, vélov, etc",
+        "description": "ex : vélib, vélov, etc",
         "warning": " ce \"tag\" ne s'applique pas aux boutiques de location de vélo : pour celles-ci, utilisez shop=bicycle.",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570885509471
+        "time": 1571412514260
       },
       {
         "key": "townhall",
@@ -2599,14 +2641,22 @@
         "icon": "mi-parking",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "opening_hours"],
+        "presets": [
+          "parking",
+          "fee",
+          "capacity",
+          "access",
+          "wheelchair",
+          "phone",
+          "opening_hours"
+        ],
         "fromid": true,
         "terms": "Parking, Zone de Stationnement, Stationnement",
         "description": "Un lieu pour garer des voitures",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1571314254178
+        "time": 1571408840591
       },
       {
         "key": "bicycle_parking",
@@ -2731,6 +2781,11 @@
         "alert": "",
         "presets": [
           "cuisine",
+          "outdoor_seating",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "internet_access",
           "wheelchair",
           "phone",
           "website",
@@ -2742,7 +2797,7 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570885078319
+        "time": 1571410539414
       },
       {
         "key": "fast_food",
@@ -2751,7 +2806,12 @@
         "markerColor": "#EF9228",
         "alert": "",
         "presets": [
+          "amenity#fast_food#brand",
           "cuisine",
+          "takeaway",
+          "outdoor_seating",
+          "drive_through",
+          "delivery",
           "wheelchair",
           "phone",
           "website",
@@ -2763,7 +2823,7 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570874342382
+        "time": 1571411841587
       },
       {
         "key": "gym",
@@ -2822,14 +2882,20 @@
         "icon": "maki-fuel-15",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "fuel:lpg",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "fromid": true,
         "terms": "carburant, essence, station, pompe à essence, carburant, essence, diesel, gpl, fuel",
         "description": "",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570874558703
+        "time": 1571412170578
       },
       {
         "key": "studio",
@@ -3440,12 +3506,15 @@
         "lbl": "Bac à déchets",
         "icon": "maki-waste-basket-15",
         "markerColor": "#EF9228",
-        "alert": "Un emplacement où les plaisanciers, caravaniers etc. peuvent déposer leurs ordures ",
+        "alert": "",
         "presets": [],
         "fromid": true,
         "terms": "bac à déchets, bac à ordures, benne à ordures, benne à déchets, container à déchets, container à ordures, déchets, ordures, poubelle, grande poubelle, tri sélectif, recyclage, waste disposal, wastedisposal, amenity waste disposal",
         "description": "Un emplacement où les plaisanciers, caravaniers etc. peuvent déposer leurs ordures (poubelles/ bacs à déchets).",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571412372236
       }
     ]
   },
@@ -6614,7 +6683,7 @@
       },
       {
         "key": "automobile",
-        "lbl": "Club d'automobile",
+        "lbl": "Club automobile",
         "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
@@ -6624,18 +6693,21 @@
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570889788647
+        "time": 1571440617115
       },
       {
         "key": "bicycle",
-        "lbl": "Promouvoir l'usage du vélo",
+        "lbl": "Association qui promeut l'usage du vélo",
         "icon": "",
         "markerColor": "#3467eb",
         "alert": "",
         "presets": [],
         "terms": "",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571440604243
       },
       {
         "key": "board_games",

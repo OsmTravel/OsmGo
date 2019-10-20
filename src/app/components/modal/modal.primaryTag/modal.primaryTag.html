@@ -40,7 +40,7 @@
 
 					<td (click)="selected(tag)" [style.color]="(_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key) ? '#3b22dd' : 'black'">
 						<b>{{tag?.lbl}}</b>
-						<br> {{tag?.key}} ({{tag?.primaryKey }})
+						<br> <span style="font-size: 0.8em;">{{tag?.primaryKey}}={{tag?.key}} </span> 
 						<br> <span style="font-size: 11px;font-style: italic;"> {{tag?.description}}
 					</span>
 					</td>

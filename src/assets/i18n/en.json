@@ -126,6 +126,7 @@
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
     "PRIMARY_TAG_FULL": "Full",
     "SELECT_CATEGORY": "Select a category",
-    "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way"
+    "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way",
+    "UNDEFINED_VALUE": "unknown"
   }
 }

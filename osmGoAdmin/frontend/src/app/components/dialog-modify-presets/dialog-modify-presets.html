@@ -7,7 +7,9 @@
         <input matInput [(ngModel)]="searchTextAddPreset">
       </mat-form-field>
 
-      <button class="btnAddPresets" *ngIf= "(genericPresets | filterByKeyLbl : searchTextAddPreset).length == 0" mat-button (click)="newPreset(searchTextAddPreset.toLowerCase())">
+
+      <button [disabled]="searchTextAddPreset.length == 0 || tagsService.presetsConfig[searchTextAddPreset]"
+      class="btnAddPresets" mat-button (click)="newPreset(searchTextAddPreset.toLowerCase())">
           Add <b> {{ searchTextAddPreset.toLowerCase() }} </b> as new preset
         </button>
       

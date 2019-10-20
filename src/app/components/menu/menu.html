@@ -13,8 +13,9 @@
 		<ion-content>
 			
 		
-			<ion-list>
-				<ion-item color="secondary" *ngIf="this.newVersion" (click)="reloadApp()">		
+			<ion-list style="padding-top:0;">
+				
+				<ion-item color="black" *ngIf="this.newVersion"  (click)="reloadApp()">		
 						<ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' | translate }}	
 				</ion-item>
 		
