@@ -2633,7 +2633,11 @@
         "presets": ["wheelchair"],
         "terms": "",
         "description": "",
-        "warning": ""
+        "warning": "",
+        "deprecated": true,
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571558680164
       },
       {
         "key": "parking",
