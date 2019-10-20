@@ -33,10 +33,12 @@
             android:name="asset_statements"
             android:value="${assetStatements}" />
 
-        <activity android:name="android.support.customtabs.trusted.LauncherActivity"
+        <activity
+            android:name="android.support.customtabs.trusted.LauncherActivity"
             android:screenOrientation="portrait"
             android:label="${launcherName}">
-            <meta-data android:name="android.support.customtabs.trusted.DEFAULT_URL"
+            <meta-data
+                android:name="android.support.customtabs.trusted.DEFAULT_URL"
                 android:value="${defaultUrl}" />
 
             <meta-data
@@ -48,12 +50,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="https"
-                    android:host="${hostName}"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="https"
+                    android:host="osmgo.com" />
             </intent-filter>
         </activity>
     </application>
