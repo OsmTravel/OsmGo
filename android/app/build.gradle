@@ -22,8 +22,8 @@ android {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1001
-        versionName "1.0"
+        versionCode 10002
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         manifestPlaceholders = [
                 // The hostname is used when building the intent-filter, so the TWA is able to
