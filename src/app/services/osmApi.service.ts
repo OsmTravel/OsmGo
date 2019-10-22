@@ -4,7 +4,7 @@ import { map, catchError } from 'rxjs/operators';
 
 import * as osmAuth from 'osm-auth';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 
 
@@ -34,7 +34,9 @@ export class OsmApiService {
         }
     }
 
-    user_info = { uid: '', display_name: '', connected: false };
+    authType = 'oauth'
+
+    user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
     changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     auth;
     eventNewPoint = new EventEmitter();
@@ -49,24 +51,11 @@ export class OsmApiService {
         private localStorage: Storage
     ) {
 
-        const landing = `${window.location.origin}/assets/land.html`
-
-       
-        this.auth = new osmAuth({
-            url:  this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url,
-            oauth_consumer_key:  this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_consumer_key : this.oauthParam.prod.oauth_consumer_key,
-            oauth_secret:  this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_secret : this.oauthParam.prod.oauth_secret,
-            auto: false, // show a login form if the user is not authenticated and
-            landing: landing,
-            windowType: 'newFullPage' // singlepage, popup, newFullPage
-        });
-
-
         this.localStorage.get('user_info').then(d => {
             if (d && d.connected) {
                 this.user_info = d;
             } else {
-                this.user_info = { uid: '', display_name: '', connected: false };
+                this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
             }
         });
 
@@ -77,6 +66,19 @@ export class OsmApiService {
                 this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.configService.getChangeSetComment() };
             }
         });
+    }
+
+    initAuth(){
+        const landing = `${window.location.origin}/assets/land.html`
+        this.auth = new osmAuth({
+            url: this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url,
+            oauth_consumer_key: this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_consumer_key : this.oauthParam.prod.oauth_consumer_key,
+            oauth_secret: this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_secret : this.oauthParam.prod.oauth_secret,
+            auto: false, // show a login form if the user is not authenticated and
+            landing: landing,
+            windowType: 'newFullPage' // singlepage, popup, newFullPage
+        });
+
     }
 
     login$(): Observable<any> {
@@ -95,18 +97,19 @@ export class OsmApiService {
 
     }
 
-    isAuthenticated():boolean{
+    isAuthenticated(): boolean {
         return this.auth.authenticated()
     }
 
     logout() {
-        this.auth.logout()
+        this.auth.logout();
+        this.localStorage.remove('changeset')
         this.resetUserInfo();
     }
 
     // retourne l'URL de l'API (dev ou prod)
     getUrlApi() {
-        return  this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url;
+        return this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url;
     }
 
     getUserInfo() {
@@ -114,47 +117,63 @@ export class OsmApiService {
     }
 
     setUserInfo(_user_info) {
-        this.user_info = {
-            uid: _user_info.uid,
-            display_name: _user_info.display_name,
-            connected: true
-        };
+        this.user_info = _user_info;
         this.localStorage.set('user_info', this.user_info);
     }
 
     resetUserInfo() {
-        this.user_info = {uid: '', display_name: '', connected: false };
+        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
         this.localStorage.set('user_info', this.user_info);
     }
 
     // DETAIL DE L'UTILISATEUR
-    getUserDetail(): Observable<any> {
-        return Observable.create(
-            observer => {
-                this.auth.xhr({
-                    method: 'GET',
-                    path: '/api/0.6/user/details',
-                    options: { header: { 'Content-Type': 'text/xml' } },
-                }, (err, details) => {
-                    if (err) {
-                        observer.error({ response: err.response || '??', status: err.status || 0  });
-                    }
-                    observer.next(details)
-                });
-            }).pipe(
-                map((res: Document) => {
-                    const xml = res
-                    const x_user = xml.getElementsByTagName('user')[0];
-                    const uid = x_user.getAttribute('id');
-                    const display_name = x_user.getAttribute('display_name');
-                    const _userInfo = { user: null, password: null, uid: uid, display_name: display_name, connected: true };
-                    this.setUserInfo(_userInfo);
-                    return _userInfo;
-                }),
-                catchError((error: any) => {
-                    return throwError(error);
+    getUserDetail(_user?, _password?, basicAuth = false): Observable<any> {
+        this.authType = basicAuth ? 'basic' : 'oauth';
+        const PATH_API = '/api/0.6/user/details'
+        let _observable;
+        if (this.authType === 'oauth') {
+            _observable = Observable.create(
+                observer => {
+                    this.auth.xhr({
+                        method: 'GET',
+                        path: PATH_API,
+                        options: { header: { 'Content-Type': 'text/xml' } },
+                    }, (err, details) => {
+                        if (err) {
+                            observer.error({ response: err.response || '??', status: err.status || 0 });
+                        }
+                        observer.next(details)
+                    });
                 })
-            );
+        } else {
+            const url = this.getUrlApi() + PATH_API;
+            // const headers = new Headers();
+            let headers = new HttpHeaders();
+            headers = headers
+                .set('Authorization', `Basic ${btoa(_user + ':' + _password)}`)
+                .set('Content-Type', 'text/xml');
+
+            _observable = this.http.get(url, { headers: headers, responseType: 'text' })
+                .pipe(
+                    map(res => new DOMParser().parseFromString(res, 'text/xml'))
+                )
+        }
+
+        return _observable.pipe(
+            map((res: Document) => {
+                const xml = res
+                const x_user = xml.getElementsByTagName('user')[0];
+                const uid = x_user.getAttribute('id');
+                const display_name = x_user.getAttribute('display_name');
+                const _userInfo = { user: _user, password: _password, _basicAuth: basicAuth, uid: uid, display_name: display_name, connected: true };
+                console.log(_userInfo)
+                this.setUserInfo(_userInfo);
+                return _userInfo;
+            }),
+            catchError((error: any) => {
+                return throwError(error);
+            })
+        );
 
     }
     // CHANGESET
@@ -196,23 +215,38 @@ export class OsmApiService {
             </changeset>
         </osm>`;
 
+        const PATH_API = `/api/0.6/changeset/create`
 
-        return Observable.create(
-            observer => {
-                this.auth.xhr({
-                    method: 'PUT',
-                    path: `/api/0.6/changeset/create`,
-                    options: { header: { 'Content-Type': 'text/xml' } },
-                    content: content_put
+        let _observable;
+        if (this.authType === 'oauth') {
+            _observable = Observable.create(
+                observer => {
+                    this.auth.xhr({
+                        method: 'PUT',
+                        path: PATH_API,
+                        options: { header: { 'Content-Type': 'text/xml' } },
+                        content: content_put
 
-                }, (err, details) => {
-                    if (err) {
-                        observer.error({ response: err.response || '??', status: err.status || 0  });
-                    }
-                    observer.next(details)
-                })
-            }
-        ).pipe(
+                    }, (err, details) => {
+                        if (err) {
+                            observer.error({ response: err.response || '??', status: err.status || 0 });
+                        }
+                        observer.next(details)
+                    })
+                }
+            )
+
+        } else {
+            const url = this.getUrlApi() + PATH_API;
+            let headers = new HttpHeaders();
+            headers = headers
+                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`)
+                .set('Content-Type', 'text/xml');
+
+            _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
+        }
+
+        return _observable.pipe(
             map((res) => {
                 this.setChangeset(res.toString(), Date.now(), Date.now(), comment);
                 return res;
@@ -355,23 +389,36 @@ export class OsmApiService {
     apiOsmCreateNode(_feature, changesetId) {
         const feature = cloneDeep(_feature);
         const content_put = this.geojson2OsmCreate(feature, changesetId);
+        const PATH_API = `/api/0.6/node/create`
+        let _observable;
+        if (this.authType === 'oauth') {
+            _observable = Observable.create(
+                observer => {
+                    this.auth.xhr({
+                        method: 'PUT',
+                        path: PATH_API,
+                        options: { header: { 'Content-Type': 'text/xml' } },
+                        content: content_put
 
-        return Observable.create(
-            observer => {
-                this.auth.xhr({
-                    method: 'PUT',
-                    path: `/api/0.6/node/create`,
-                    options: { header: { 'Content-Type': 'text/xml' } },
-                    content: content_put
+                    }, (err, details) => {
+                        if (err) {
+                            observer.error({ response: err.response || '??', status: err.status || 0 });
+                        }
+                        observer.next(details)
+                    })
+                }
+            )
+        } else {
 
-                }, (err, details) => {
-                    if (err) {
-                        observer.error({ response: err.response || '??', status: err.status || 0  } );
-                    }
-                    observer.next(details)
-                })
-            }
-        ).pipe(
+            const url = this.getUrlApi() + '/api/0.6/node/create';
+            let headers = new HttpHeaders();
+            headers = headers
+                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`);
+
+            _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
+        }
+
+        return _observable.pipe(
             map(id => {
                 return id;
             }),
@@ -400,29 +447,44 @@ export class OsmApiService {
         const feature = cloneDeep(_feature);
         const id = feature.id;
         const content_put = this.geojson2OsmUpdate(feature, changesetId);
+        const PATH_API = `/api/0.6/${id}`
+        let _observable;
+        if (this.authType === 'oauth') {
+            _observable = Observable.create(
+                observer => {
+                    this.auth.xhr({
+                        method: 'PUT',
+                        path: PATH_API,
+                        options: { header: { 'Content-Type': 'text/xml' } },
+                        content: content_put
 
-        return Observable.create(
-            observer => {
-                this.auth.xhr({
-                    method: 'PUT',
-                    path: `/api/0.6/${id}`,
-                    options: { header: { 'Content-Type': 'text/xml' } },
-                    content: content_put
+                    }, (err, details) => {
+                        if (err) {
+                            observer.error({ response: err.response || '??', status: err.status || 0 });
+                        }
+                        observer.next(details)
+                    })
+                }
+            )
 
-                }, (err, details) => {
-                    if (err) {
-                        observer.error({ response: err.response || '??', status: err.status || 0  } );
-                    }
-                    observer.next(details)
-                })
-            }
-        ).pipe(
+        } else {
+
+            const url = this.getUrlApi() + PATH_API
+
+            let headers = new HttpHeaders();
+            headers = headers
+                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`)
+                .set('Content-Type', 'text/xml');
+
+            _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
+        }
+
+        return _observable.pipe(
             map(data => {
                 this.mapService.eventOsmElementUpdated.emit(feature);
                 return data;
             }),
             catchError(error => {
-                console.log('llllllllaaa', error)
                 return throwError(error);
             })
         );
@@ -456,25 +518,37 @@ export class OsmApiService {
         const feature = cloneDeep(_feature);
         const id = feature.id;
         const content_delete = this.geojson2OsmUpdate(feature, changesetId);
+        const PATH_API = `/api/0.6/${id}`
+        let _observable;
+        if (this.authType === 'oauth') {
+            _observable = Observable.create(
+                observer => {
+                    this.auth.xhr({
+                        method: 'DELETE',
+                        path: PATH_API,
+                        options: { header: { 'Content-Type': 'text/xml' } },
+                        content: content_delete
 
+                    }, (err, details) => {
+                        if (err) {
+                            observer.error({ response: err.response || '??', status: err.status || 0 });
 
-        return Observable.create(
-            observer => {
-                this.auth.xhr({
-                    method: 'DELETE',
-                    path: `/api/0.6/${id}`,
-                    options: { header: { 'Content-Type': 'text/xml' } },
-                    content: content_delete
+                        }
+                        observer.next(details)
+                    })
+                }
+            )
+        } else {
+            const url = this.getUrlApi() + PATH_API
 
-                }, (err, details) => {
-                    if (err) {
-                        observer.error({ response: err.response || '??', status: err.status || 0  } );
-                        
-                    }
-                    observer.next(details)
-                })
-            }
-        ).pipe(
+            let headers = new HttpHeaders();
+            headers = headers
+                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`);
+
+            _observable = this.http.request('delete', url, { headers: headers, body: content_delete })
+        }
+
+        return _observable.pipe(
             map(data => {
                 this.mapService.eventOsmElementDeleted.emit(feature);
                 return data;

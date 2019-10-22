@@ -2,7 +2,7 @@
 	<div class="menuContent" *ngIf="menuIsOpen">
 		<ion-header>
 			<ion-toolbar color="primary">
-				<ion-title>Osm Go !</ion-title>
+				<ion-title>Osm Go!</ion-title>
 				<div class="menu-button" (click)="closeMenu()">
 					<ion-ripple-effect></ion-ripple-effect>
 					<ion-icon style="height: 56px;" name="arrow-back"></ion-icon>
@@ -19,10 +19,11 @@
 						<ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' | translate }}	
 				</ion-item>
 		
-				<!-- <ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="pushPage('/login')">
+				<ion-item *ngIf="configService.deviceInfo.platform != 'web' && !this.osmApi.user_info.connected"  (click)="pushPage('/login')">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
-				</ion-item> -->
-				<ion-item *ngIf="!this.osmApi.getUserInfo().connected" (click)="login()">
+				</ion-item>
+
+				<ion-item *ngIf="configService.deviceInfo.platform == 'web' && !this.osmApi.user_info.connected" (click)="login()">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
@@ -34,16 +35,17 @@
 					<ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' | translate }}
 				</ion-item>
 
-				<!-- <ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
-						<ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' | translate }}
-				</ion-item> -->
-				<ion-item *ngIf="this.osmApi.getUserInfo().connected" (click)="logout()">
+				<ion-item *ngIf="this.osmApi.user_info.connected" (click)="logout()">
 					<ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' | translate }}
 				</ion-item>
 
 				<ion-item color="danger" (click)="deleteDatapresentConfirm()">
 						<ion-icon name="trash"></ion-icon>	{{'MENU.DELETE_DATA' | translate }}
 				</ion-item>
+
+				<ion-item *ngIf= "configService.deviceInfo.platform != 'web'" (click)="exit()">
+					<ion-icon name="exit"></ion-icon>	{{'MENU.EXIT' | translate }} 
+			</ion-item>
 			</ion-list>
 		</ion-content>
 	</div>

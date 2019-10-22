@@ -1,61 +1,49 @@
-/*
- * Copyright 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "fr.dogeo.osmgo"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 10002
-        versionName "1.0.2"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 12021
+        versionName "0.12.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        manifestPlaceholders = [
-                // The hostname is used when building the intent-filter, so the TWA is able to
-                // handle Intents to open https://svgomg.firebaseapp.com.
-                hostName: "osmgo.com",
-                defaultUrl: "https://osmgo.com",
-                launcherName: "Osm Go!",
-                // This variable below expresses the relationship between the app and the site,
-                // as documented in the TWA documentation at
-                // https://developers.google.com/web/updates/2017/10/using-twa#set_up_digital_asset_links_in_an_android_app
-                // and is injected into the AndroidManifest.xml
-                assetStatements: '[{ "relation": ["delegate_permission/common.handle_all_urls"], ' +
-                        '"target": {"namespace": "web", "site": "https://osmgo.com"}}]'
-        ]
-
-        // This attribute sets the status bar color for the TWA. It can be either set here or in
-        // `res/values/colors.xml`. Setting in both places is an error and the app will not
-        // compile. If not set, the status bar color defaults to #FFFFFF - white.
-        resValue "color", "colorPrimary", "#272838"
     }
     buildTypes {
         release {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+}
+
+repositories {
+    maven {
+        url  "https://dl.bintray.com/ionic-team/capacitor"
+    }
+    flatDir{
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.github.GoogleChrome.custom-tabs-client:customtabs:e849e45c90'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation project(':capacitor-android')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':capacitor-cordova-android-plugins')
 }
+
+apply from: 'capacitor.build.gradle'
+
+// try {
+//     def servicesJSON = file('google-services.json')
+//     if (servicesJSON.text) {
+//         apply plugin: 'com.google.gms.google-services'
+//     }
+// } catch(Exception e) {
+    logger.warn("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+// }

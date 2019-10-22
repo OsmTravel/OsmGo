@@ -24,6 +24,7 @@
     "DELETE_DATA_CONFIRM_HEADER": "Really ?",
     "DELETE_DATA_CONFIRM_MESSAGE": "Delete downloaded data? (keep the changes)",
     "SIGN_OUT": "Logout",
+    "EXIT": "Exit",
     "NEW_VERSION": "A new version is ready !"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},

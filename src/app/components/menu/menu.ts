@@ -21,6 +21,7 @@ import { concat} from 'rxjs';
 export class MenuPage {
 
     @Output() closeEvent = new EventEmitter();
+    @Output() exitApp = new EventEmitter();
     @Input() menuIsOpen;
     @Input() newVersion;
     aboutPage = AboutPage;
@@ -116,5 +117,9 @@ export class MenuPage {
 
     reloadApp(){
         window.location.reload()
+    }
+
+    exit(){
+        this.exitApp.emit();
     }
 }

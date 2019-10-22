@@ -1,6 +1,7 @@
 {
-  "name": "Osm Go",
+  "name": "Osm Go!",
   "integrations": {
+    "capacitor": {}
   },
   "type": "angular"
 }

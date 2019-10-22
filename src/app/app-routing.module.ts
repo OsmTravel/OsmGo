@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainPage } from './components/main/main';
 import { SettingsPage } from './components/settings/settings';
+import { LoginPage } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'main' },
   { path: 'main', component: MainPage },
   { path: 'about', component: AboutPage },
   { path: 'settings', component: SettingsPage},
-  { path: 'pushData', component: PushDataToOsmPage}
+  { path: 'pushData', component: PushDataToOsmPage},
+  { path: 'login', component: LoginPage},
 
 ];
 

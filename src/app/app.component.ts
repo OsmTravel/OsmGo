@@ -7,6 +7,8 @@ import { Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
 import { StatesService } from './services/states.service';
+import { Plugins } from '@capacitor/core';
+const { Device, SplashScreen } = Plugins;
 
 @Component({
   selector: 'app-root',
@@ -26,15 +28,23 @@ export class AppComponent {
 
   }
 
+  ngAfterViewInit(): void {
+    SplashScreen.hide();
+  }
+
   async initializeApp() {
     this.translate.setDefaultLang('en');
     this.configService.platforms = this.platform.platforms();
+    this.configService.platforms
+
+    this.configService.deviceInfo = await Device.getInfo();
+
     this.configService.loadAppVersion();
 
     this.platform.backButton
-    .subscribe(e => {
-      console.log(e)
-    })
+      .subscribe(e => {
+
+      })
   }
 
 

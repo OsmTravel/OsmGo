@@ -22,6 +22,9 @@ import { IconService } from 'src/app/services/icon.service';
 import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from 'src/app/services/states.service';
 
+import { Plugins } from '@capacitor/core';
+
+const { App } = Plugins;
 
 @Component({
   templateUrl: './main.html',
@@ -118,10 +121,6 @@ export class MainPage implements AfterViewInit {
 
   ngOnInit(): void {
     // sync user and isAuth
-    if (!this.osmApi.isAuthenticated() || !this.osmApi.getUserInfo().connected){
-      this.osmApi.resetUserInfo();
-      this.osmApi.logout()
-    }
 
     this.swUpdate.available.subscribe(event => {
       this.newVersion = true;
@@ -211,42 +210,48 @@ export class MainPage implements AfterViewInit {
   ngAfterViewInit() {
 
     // TODO: Dirty... use rxjs mergemap ?
-    this.configService.getI18nConfig$().subscribe(i18nConfig => {
+
+    this.configService.getI18nConfig$().subscribe(async i18nConfig => {
 
       this.configService.i18nConfig = i18nConfig;
-      this.configService.loadConfig(i18nConfig).then(e => {
-        this.translate.use(this.configService.config.languageUi);
+      const e = await this.configService.loadConfig(i18nConfig)
 
-        this.tagsService.loadLastTagAdded$().subscribe(e =>
-          console.log
-        )
-        this.tagsService.loadBookMarks$().subscribe(e =>
-          console.log
-        )
+      this.osmApi.initAuth();
+      if (!this.osmApi.isAuthenticated() || !this.osmApi.getUserInfo().connected) {
+        this.osmApi.resetUserInfo();
+        this.osmApi.logout()
+      }
 
-        this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
-          .subscribe(async e => {
 
-            const missingIcons: string[] = await this.iconService.getMissingSpirtes();
+      this.translate.use(this.configService.config.languageUi);
 
-            if (missingIcons.length > 0) {
-              const loading = await this.loadingController.create({
-                message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
-              });
-              await loading.present();
-              const missingSprites: string[] = await this.iconService.getMissingSpirtes();
-              for (let missIcon of missingSprites) {
+      // TODO: switchmap
+      this.tagsService.loadLastTagAdded$().subscribe()
+      this.tagsService.loadBookMarks$().subscribe()
 
-                let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
-                this.dataService.addIconCache(missIcon, uriIcon)
+      this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
+        .subscribe(async e => {
 
-              }
-              loading.dismiss();
+          const missingIcons: string[] = await this.iconService.getMissingSpirtes();
+
+          if (missingIcons.length > 0) {
+            const loading = await this.loadingController.create({
+              message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
+            });
+            await loading.present();
+            const missingSprites: string[] = await this.iconService.getMissingSpirtes();
+            for (let missIcon of missingSprites) {
+
+              let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
+              this.dataService.addIconCache(missIcon, uriIcon)
+
             }
-          });
+            loading.dismiss();
+          }
+        });
 
-        this.mapService.eventDomMainReady.emit(document.getElementById('map'));
-      })
+      this.mapService.eventDomMainReady.emit(document.getElementById('map'));
+
 
 
     });
@@ -285,12 +290,14 @@ export class MainPage implements AfterViewInit {
       } else if (this.modalIsOpen) {
         window.history.pushState({ noBackExitsApp: true }, '')
         this.modalCtrl.dismiss();
-      }else {
+      } else {
         window.history.pushState({ noBackExitsApp: true }, '')
       }
     })
 
+  }
 
-
+  exitApp() {
+    App.exitApp()
   }
 }

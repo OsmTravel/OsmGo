@@ -2,7 +2,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 
 import { ConfigService } from './config.service';
+import { Plugins } from '@capacitor/core';
 
+const { Geolocation } = Plugins;
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
@@ -24,23 +26,7 @@ export class LocationService {
 
     constructor(
         public configService: ConfigService) {
-
         this.enableGeolocation();
-        
-        navigator.permissions.query({ name: 'geolocation' })
-            .then(perm => {
-             
-                this.geolocationStatPermission = perm.state
-                if (perm.state == 'prompt') {
-                    perm.onchange = () => {
-
-                        this.enableGeolocation();
-                        this.geolocationStatPermission = perm.state
-                    }
-                }
-            })
-
-
     }
 
     watchPosition() {
@@ -48,8 +34,6 @@ export class LocationService {
             this.subscriptionWatchLocation.clearwatch()
         }
         this.subscriptionWatchLocation = navigator.geolocation.watchPosition((position) => {
-
-
             if (!this.location) {
                 this.location = position;
                 this.eventNewLocation.emit(this.getGeojsonPos());
@@ -62,17 +46,7 @@ export class LocationService {
                     this.eventNewLocation.emit(this.getGeojsonPos());
                 }
             }
-            // if (position.coords.heading){
-            //     let newCompassHeading = {
-            //         magneticHeading: position.coords.heading,
-            //         trueHeading: position.coords.heading,
-            //         headingAccuracy: null,
-            //         timestamp: new Date().getTime(),
-            //     }
-            //     this.compassHeading = newCompassHeading;
-            //     this.eventNewCompassHeading.emit(newCompassHeading);
-            // }
-       
+
         },
             err => {
                 console.log(err);
@@ -82,27 +56,26 @@ export class LocationService {
     }
 
     enableGeolocation() {
-       
-        navigator.geolocation.getCurrentPosition((position) => {
-            this.heading();
-  
-            this.configService.init.zoom = 19;
-            this.configService.init.lng = position.coords.longitude;
-            this.configService.init.lng = position.coords.latitude;
-            this.eventLocationIsReady.emit(position);
-            this.configService.geolocPageIsOpen = false;
-            this.configService.eventCloseGeolocPage.emit('gpsIsReady');
-            this.gpsIsReady = true;
-            this.watchPosition()
-        },
-            (err) => {
-                console.log(err);
-            })
+        this.heading();
+        Geolocation.getCurrentPosition({ enableHighAccuracy: true, maximumAge: 3000 })
+            .then(position => {
+                this.configService.init.zoom = 19;
+                this.configService.init.lng = position.coords.longitude;
+                this.configService.init.lat = position.coords.latitude;
+                this.location = position;
+                this.eventNewLocation.emit(this.getGeojsonPos());
+
+                this.eventLocationIsReady.emit(position);
+                this.configService.geolocPageIsOpen = false;
+                this.configService.eventCloseGeolocPage.emit('gpsIsReady');
+                this.gpsIsReady = true;
+                this.watchPosition()
+            });
 
     }
 
     disableGeolocation() {
-        this.subscriptionWatchLocation.unsubscribe();
+        this.subscriptionWatchLocation.clearwatch();
     }
 
 
@@ -149,6 +122,7 @@ export class LocationService {
 
             // Convert radians to degrees
             compassHeading *= 180 / Math.PI;
+            console.log('apihtml',compassHeading);
 
 
             let newCompassHeading = {
@@ -157,7 +131,7 @@ export class LocationService {
                 headingAccuracy: null,
                 timestamp: new Date().getTime(),
             }
-            
+
 
             if (!this.configService.freezeMapRenderer) {
                 if (!this.compassHeading.magneticHeading || Math.abs(compassHeading - this.compassHeading.magneticHeading) > 4) {
