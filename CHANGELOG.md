@@ -1,10 +1,11 @@
-# 1.0.0
+# 0.12.0
 ## Features
  - osmgo.com ( translation interface : admin.osmgo.com )
- - Osm Go! is now a PWA ! Without Cordova or Capacitor, only browser APIs
+ - Add Capacitor instead of Cordova
+ - Osm Go! PWA is now fully operational ( tested on Chrome and Android 9) 
  - Osm Go has its own .osm converter! (./scripts/osmToOsmgo)
  - Data converter and all heavy calculation that run entirely in the background (in a webworker)
- - Osm Go now uses OAuth to log in
+ - Osm Go now uses OAuth to log in on web and PWA ( it still use basic authentification on Android app)
  - We can activate the "developer mode" and switch to the OSM dev server
    - To activate it, go to About page & tap 5 times on version card.  Now you can switch to the osm dev server in settings
 

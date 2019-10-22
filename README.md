@@ -2,13 +2,17 @@
 
 ### Mapping less frustrating! 
 
-_Osm Go!_ is a **P**rogressive **W**eb **A**pplications for contributing to OpenStreetMap.
+_Osm Go!_ is a Android application and a **P**rogressive **W**eb **A**pplications for contributing to OpenStreetMap.
+
 Map your environment simply and fast, directly from the app. Keep your eyes wide open and contribute to OSM while on the run.
 
-You can install the PWA from [osmgo.com](https://osmgo.com])
+
+You can install the PWA or just navigate on a web brower at **[osmgo.com](https://osmgo.com])**
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
+
 The APK can be found in [the release list of this repository](https://github.com/DoFabien/OsmGo/releases) 
 
-The application is also available as a **T**rusted **W**eb **A**ctivities on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
 A short user documentation can be found [here](https://dofabien.github.io/OsmGo/).
 

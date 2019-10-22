@@ -90,4 +90,9 @@
 	</div>
 </ion-content>
 
-<menu-component [menuIsOpen]="menuIsOpen" [newVersion]="newVersion"  (closeEvent)="closeMenu()"> </menu-component>
+<menu-component [menuIsOpen]="menuIsOpen" 
+[newVersion]="newVersion"  
+(closeEvent)="closeMenu()"
+(exitApp)= "exitApp()"
+
+> </menu-component>

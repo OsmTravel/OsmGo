@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "1.0.0",
+  "version": "0.12.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -12,7 +12,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sprites": "node  ./scripts/sprites.js",
-    "importTags": "node ./scripts/importTagsPresetsFromServer.js"
+    "importTags": "node ./scripts/importTagsPresetsFromServer.js",
+    "buildAndroid": "node ./incrementVersion.js && node ./osmGoAdmin/backend/updatei18nMetadata.js && ionic build --prod --release && npx cap sync && npx cap open android"
   },
   "dependencies": {
     "@angular/animations": "^8.2.8",
@@ -26,6 +27,8 @@
     "@angular/pwa": "^0.803.6",
     "@angular/router": "^8.2.8",
     "@angular/service-worker": "^8.2.8",
+    "@capacitor/android": "^1.2.1",
+    "@capacitor/core": "1.2.1",
     "@ionic/angular": "^4.10.0",
     "@ionic/storage": "^2.2.0",
     "@ngx-translate/core": "^11.0.1",
@@ -53,6 +56,7 @@
     "@angular/cli": "^8.3.6",
     "@angular/compiler-cli": "^8.2.8",
     "@angular/language-service": "^8.2.8",
+    "@capacitor/cli": "1.2.1",
     "@ionic/angular-toolkit": "~2.0.0",
     "@types/jasmine": "^3.4.1",
     "@types/jasminewd2": "^2.0.7",

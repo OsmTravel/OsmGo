@@ -6,7 +6,7 @@ import { LocationService } from './location.service';
 import { ConfigService } from './config.service';
 import { HttpClient } from '@angular/common/http';
 
-import { debounceTime } from "rxjs/operators";
+import { debounceTime, throttle, throttleTime } from "rxjs/operators";
 import { uniqBy, cloneDeep } from 'lodash';
 
 import { destination, point, Point, BBox } from '@turf/turf';
@@ -17,7 +17,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { IconService } from './icon.service';
 import { AlertInput } from '@ionic/core';
+import {
+  Plugins,
+  HapticsImpactStyle
+} from '@capacitor/core';
 
+const { Haptics } = Plugins;
 @Injectable({ providedIn: 'root' })
 export class MapService {
 
@@ -604,7 +609,6 @@ export class MapService {
   }
 
 
-
   mapIsLoaded() {
     const that = this;
 
@@ -748,7 +752,17 @@ export class MapService {
         return;
       }
 
-      window.navigator.vibrate(50);
+      if (this.configService.deviceInfo.platform === 'web'){
+        window.navigator.vibrate(50);
+      }else {
+    
+        Haptics.impact(  {
+          style: HapticsImpactStyle.Heavy
+        });
+    
+      }
+
+
 
       const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
 
@@ -844,15 +858,17 @@ export class MapService {
         map((event: any) => {
           return event;
         }),
-        debounceTime(75)
+        throttleTime(100)
       )
       .subscribe(heading => {
-        if (this.locationService.compassHeading.trueHeading) {
+        console.log(heading);
+        if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
+          console.log('okk')
+          this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
+        }
 
           if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
-            if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
-              this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
-            }
+          
             this.map.rotateTo(heading.trueHeading);
             // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
             this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
@@ -862,7 +878,7 @@ export class MapService {
             const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
             this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
           }
-        }
+   
       });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {

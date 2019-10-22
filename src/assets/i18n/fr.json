@@ -24,6 +24,7 @@
     "DELETE_DATA_CONFIRM_HEADER": "Supprimer les données ?",
     "DELETE_DATA_CONFIRM_MESSAGE": "Supprimer les données téléchargées? (conserve les modifications)",
     "SIGN_OUT": "Se déconnecter",
+    "EXIT": "Quitter",
     "NEW_VERSION": "Une nouvelle version est prête!"
   },
   "ABOUT": {"ABOUT": "A propos", "SOURCES": "Sources", "DATA": "Données"},
