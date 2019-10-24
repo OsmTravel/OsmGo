@@ -656,11 +656,7 @@
   "tickets:public_transport": {
     "type": "select",
     "lbl": "Vente de titres de transport",
-    "tags": [
-      {"v": null, "lbl": " NC"},
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "tickets:public_transport"
   },
   "shop#jewelry#brand": {
@@ -687,16 +683,12 @@
   "drink:wine": {
     "type": "select",
     "lbl": "drink:wine",
-    "tags": [
-      {"v": "yes", "lbl": "Oui"},
-      {"v": "no", "lbl": "Non"},
-      {"v": null, "lbl": "NC"}
-    ],
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
     "key": "drink:wine"
   },
   "shop#doityourself#brand": {
     "type": "list",
-    "lbl": "Marque",
+    "lbl": "Enseigne",
     "tags": [
       {"v": "Big Mat", "lbl": "Big Mat"},
       {"v": "Brico Cash", "lbl": "Brico Cash"},
@@ -995,5 +987,76 @@
       {"v": "car_rent", "lbl": "Voiture de location"}
     ],
     "key": "parking_space"
+  },
+  "surveillance": {
+    "type": "select",
+    "lbl": "Type de surveillance",
+    "tags": [
+      {"v": "public", "lbl": "Espace public "},
+      {"v": "outdoor", "lbl": "Extérieur (espace privé) "},
+      {"v": "indoor", "lbl": "En intérieur "},
+      {"v": "traffic", "lbl": "Trafic routier"}
+    ],
+    "key": "surveillance"
+  },
+  "surveillance:type": {
+    "type": "select",
+    "lbl": "Qui regarde ?",
+    "tags": [
+      {"v": "camera", "lbl": "Une caméra"},
+      {"v": "ALPR", "lbl": "ALPR"},
+      {"v": "guard", "lbl": "Un garde"}
+    ],
+    "key": "surveillance:type"
+  },
+  "camera:type": {
+    "type": "select",
+    "lbl": "Type de caméra",
+    "tags": [
+      {"v": "dome", "lbl": "Caméra dôme"},
+      {"v": "fixed", "lbl": "Caméra fixe"},
+      {"v": "panning", "lbl": "Caméra motorisé"}
+    ],
+    "key": "camera:type"
+  },
+  "camera:mount": {
+    "type": "select",
+    "lbl": "Montage",
+    "tags": [
+      {"v": "pole", "lbl": "Sur un poteau /mât"},
+      {"v": "wall", "lbl": "Sur un mur"},
+      {"v": "street_lamp", "lbl": "Sur un lampadaire"},
+      {"v": "ceiling", "lbl": "Au plafond"},
+      {"v": "roof", "lbl": "Sur un toit"},
+      {"v": "traffic_signals", "lbl": "Sur un feu de signalisation"},
+      {"v": "building", "lbl": "Sur un bâtiment"}
+    ],
+    "key": "camera:mount"
+  },
+  "surveillance:zone": {
+    "type": "list",
+    "lbl": "Zone sur laquelle porte la surveillance.",
+    "tags": [
+      {"v": "town", "lbl": "Surveillance de le ville"},
+      {"v": "traffic", "lbl": "Trafic routier"},
+      {"v": "building", "lbl": "Bâtiment"},
+      {"v": "parking", "lbl": "Parking"},
+      {"v": "entrance", "lbl": "Entrée de bâtiment"},
+      {"v": "bank", "lbl": "Banque"},
+      {"v": "shop", "lbl": "Un commerce"}
+    ],
+    "key": "surveillance:zone"
+  },
+  "camera:direction": {
+    "type": "text",
+    "lbl": "Direction",
+    "tags": [],
+    "key": "camera:direction"
+  },
+  "recycling:clothes": {
+    "type": "select",
+    "lbl": "Vêtements",
+    "tags": [{"v": "yes", "lbl": "Oui"}, {"v": "no", "lbl": "Non"}],
+    "key": "recycling:clothes"
   }
 }
