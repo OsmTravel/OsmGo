@@ -2042,11 +2042,14 @@
         "icon": "custom-bench",
         "markerColor": "#EF9228",
         "alert": "",
-        "presets": ["backrest", "seats"],
+        "presets": ["backrest", "seats", "material"],
         "fromid": true,
-        "terms": "Banc public, siège, bench",
-        "description": "Un endroit où les gens peuvent s’asseoir ; il y a de la place pour plusieurs personnes.",
-        "warning": ""
+        "terms": "Banc public, siège, chaise",
+        "description": "Un endroit où les gens peuvent s’asseoir",
+        "warning": "",
+        "userId": "183173",
+        "userName": "Dof",
+        "time": 1571921279856
       },
       {
         "key": "bank",
@@ -2724,7 +2727,8 @@
           "recycling_type",
           "recycling:glass_bottles",
           "recycling:plastic",
-          "recycling:paper"
+          "recycling:paper",
+          "recycling:clothes"
         ],
         "default_values": [{"key": "recycling_type", "value": "container"}],
         "fromid": true,
@@ -5628,14 +5632,23 @@
         "icon": "video-solid",
         "markerColor": "#D3D3D3",
         "alert": "",
-        "presets": [],
+        "presets": [
+          "surveillance",
+          "surveillance:type",
+          "camera:type",
+          "camera:mount",
+          "surveillance:zone",
+          "operator",
+          "camera:direction"
+        ],
         "fromid": true,
         "terms": "caméra, vidéo",
         "description": "Caméra de surveillance.",
         "warning": "",
         "userId": "183173",
         "userName": "Dof",
-        "time": 1570888623501
+        "time": 1571851258556,
+        "default_values": [{"key": "surveillance:type", "value": "camera"}]
       },
       {
         "key": "water_tower",
