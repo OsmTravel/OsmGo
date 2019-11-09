@@ -1,0 +1,83 @@
+[
+  {
+    "v": "Americas Best Value Inn",
+    "lbl": {"en": "Americas Best Value Inn"},
+    "tags": {
+      "brand": "Americas Best Value Inn",
+      "name": "Americas Best Value Inn",
+      "tourism": "motel"
+    }
+  },
+  {
+    "v": "Budget Host Inn",
+    "lbl": {"en": "Budget Host Inn"},
+    "countryCodes": ["us"],
+    "tags": {
+      "alt_name": "Budget Host",
+      "brand": "Budget Host Inn",
+      "brand:wikidata": "Q16954336",
+      "brand:wikipedia": "en:Budget Host",
+      "name": "Budget Host Inn",
+      "tourism": "motel"
+    }
+  },
+  {
+    "v": "Econo Lodge",
+    "lbl": {"en": "Econo Lodge"},
+    "tags": {
+      "brand": "Econo Lodge",
+      "brand:wikidata": "Q5333330",
+      "brand:wikipedia": "en:Econo Lodge",
+      "name": "Econo Lodge",
+      "tourism": "motel"
+    }
+  },
+  {
+    "v": "Knights Inn",
+    "lbl": {"en": "Knights Inn"},
+    "countryCodes": ["ca", "us"],
+    "tags": {
+      "brand": "Knights Inn",
+      "brand:wikidata": "Q6422409",
+      "brand:wikipedia": "en:Knights Inn",
+      "name": "Knights Inn",
+      "tourism": "motel"
+    }
+  },
+  {
+    "v": "Motel 6",
+    "lbl": {"en": "Motel 6"},
+    "countryCodes": ["ca", "us"],
+    "tags": {
+      "brand": "Motel 6",
+      "brand:wikidata": "Q2188884",
+      "brand:wikipedia": "en:Motel 6",
+      "name": "Motel 6",
+      "tourism": "motel"
+    }
+  },
+  {
+    "v": "Rodeway Inn",
+    "lbl": {"en": "Rodeway Inn"},
+    "countryCodes": ["ca", "us"],
+    "tags": {
+      "brand": "Rodeway Inn",
+      "brand:wikidata": "Q7356709",
+      "brand:wikipedia": "en:Rodeway Inn",
+      "name": "Rodeway Inn",
+      "tourism": "motel"
+    }
+  },
+  {
+    "v": "Super 8",
+    "lbl": {"en": "Super 8"},
+    "countryCodes": ["ca", "us"],
+    "tags": {
+      "brand": "Super 8",
+      "brand:wikidata": "Q5364003",
+      "brand:wikipedia": "en:Super 8 Motels",
+      "name": "Super 8",
+      "tourism": "motel"
+    }
+  }
+]

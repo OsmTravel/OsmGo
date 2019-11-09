@@ -1,0 +1,111 @@
+[
+  {
+    "v": "Cuisinella",
+    "lbl": {"en": "Cuisinella"},
+    "countryCodes": ["fr", "tn"],
+    "tags": {
+      "brand": "Cuisinella",
+      "brand:wikidata": "Q3007012",
+      "brand:wikipedia": "fr:Cuisinella",
+      "name": "Cuisinella",
+      "shop": "kitchen"
+    }
+  },
+  {
+    "v": "Ixina",
+    "lbl": {"en": "Ixina"},
+    "countryCodes": [
+      "ae",
+      "au",
+      "be",
+      "bf",
+      "bh",
+      "bj",
+      "ca",
+      "ci",
+      "cm",
+      "cn",
+      "cz",
+      "dz",
+      "ee",
+      "eg",
+      "fr",
+      "gh",
+      "hr",
+      "ke",
+      "kw",
+      "lu",
+      "ly",
+      "ma",
+      "mu",
+      "nl",
+      "pl",
+      "qa",
+      "ro",
+      "ru",
+      "sa",
+      "se",
+      "sn",
+      "tg",
+      "th",
+      "tn",
+      "vn"
+    ],
+    "tags": {
+      "brand": "Ixina",
+      "brand:wikidata": "Q3156424",
+      "brand:wikipedia": "fr:Ixina",
+      "name": "Ixina",
+      "shop": "kitchen"
+    }
+  },
+  {
+    "v": "Magnet",
+    "lbl": {"en": "Magnet"},
+    "countryCodes": ["gb"],
+    "matchNames": ["magnet kitchens"],
+    "tags": {
+      "brand": "Magnet",
+      "brand:wikidata": "Q6731427",
+      "brand:wikipedia": "en:Magnet Kitchens",
+      "name": "Magnet",
+      "shop": "kitchen"
+    }
+  },
+  {
+    "v": "Mobalpa",
+    "lbl": {"en": "Mobalpa"},
+    "countryCodes": ["be", "fr", "gb"],
+    "tags": {
+      "brand": "Mobalpa",
+      "brand:wikidata": "Q3317571",
+      "brand:wikipedia": "fr:Mobalpa",
+      "name": "Mobalpa",
+      "shop": "kitchen"
+    }
+  },
+  {
+    "v": "Schmidt",
+    "lbl": {"en": "Schmidt"},
+    "countryCodes": ["be", "es", "fr", "gb"],
+    "tags": {
+      "brand": "Schmidt",
+      "brand:wikidata": "Q3487620",
+      "brand:wikipedia": "de:Schmidt Groupe",
+      "name": "Schmidt",
+      "shop": "kitchen"
+    }
+  },
+  {
+    "v": "SoCoo'c",
+    "lbl": {"en": "SoCoo'c"},
+    "countryCodes": ["fr"],
+    "tags": {
+      "brand": "SoCoo'c",
+      "brand:wikidata": "Q62783840",
+      "brand:wikipedia": "fr:SoCoo'c",
+      "name": "SoCoo'c",
+      "shop": "kitchen"
+    }
+  }
+]

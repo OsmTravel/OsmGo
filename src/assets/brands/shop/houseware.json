@@ -1,0 +1,268 @@
+[
+  {
+    "v": "At Home",
+    "lbl": {"en": "At Home"},
+    "countryCodes": ["us"],
+    "matchNames": ["garden ridge"],
+    "tags": {
+      "brand": "At Home",
+      "brand:wikidata": "Q5522290",
+      "brand:wikipedia": "en:At Home (store)",
+      "name": "At Home",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Bed Bath & Beyond",
+    "lbl": {"en": "Bed Bath & Beyond"},
+    "countryCodes": ["ca", "mx", "nz", "us"],
+    "matchTags": ["shop/department_store"],
+    "tags": {
+      "brand": "Bed Bath & Beyond",
+      "brand:wikidata": "Q813782",
+      "brand:wikipedia": "en:Bed Bath & Beyond",
+      "name": "Bed Bath & Beyond",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Blokker",
+    "lbl": {"en": "Blokker"},
+    "countryCodes": ["be", "nl"],
+    "tags": {
+      "brand": "Blokker",
+      "brand:wikidata": "Q884934",
+      "brand:wikipedia": "en:Blokker Holding",
+      "name": "Blokker",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Cervera",
+    "lbl": {"en": "Cervera"},
+    "countryCodes": ["se"],
+    "tags": {
+      "brand": "Cervera",
+      "brand:wikidata": "Q10447179",
+      "brand:wikipedia": "sv:Cervera (företag)",
+      "name": "Cervera",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "HomeGoods",
+    "lbl": {"en": "HomeGoods"},
+    "countryCodes": ["us"],
+    "matchTags": ["shop/department_store"],
+    "tags": {
+      "brand": "HomeGoods",
+      "brand:wikidata": "Q5887941",
+      "brand:wikipedia": "en:HomeGoods",
+      "name": "HomeGoods",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Kitchen Collection",
+    "lbl": {"en": "Kitchen Collection"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Kitchen Collection",
+      "brand:wikidata": "Q64149036",
+      "name": "Kitchen Collection",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Lagerhaus",
+    "lbl": {"en": "Lagerhaus"},
+    "matchTags": ["shop/doityourself"],
+    "tags": {
+      "brand": "Lagerhaus",
+      "brand:wikidata": "Q10553211",
+      "brand:wikipedia": "sv:Lagerhaus",
+      "name": "Lagerhaus",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Lakeland",
+    "lbl": {"en": "Lakeland"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Lakeland",
+      "brand:wikidata": "Q16256199",
+      "brand:wikipedia": "en:Lakeland (company)",
+      "name": "Lakeland",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Le Creuset",
+    "lbl": {"en": "Le Creuset"},
+    "matchTags": ["shop/kitchen"],
+    "tags": {
+      "brand": "Le Creuset",
+      "brand:wikidata": "Q555861",
+      "brand:wikipedia": "en:Le Creuset",
+      "name": "Le Creuset",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Marskramer",
+    "lbl": {"en": "Marskramer"},
+    "countryCodes": ["nl"],
+    "tags": {
+      "brand": "Marskramer",
+      "brand:wikidata": "Q2305917",
+      "brand:wikipedia": "nl:Marskramer (warenhuis)",
+      "name": "Marskramer",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Old Time Pottery",
+    "lbl": {"en": "Old Time Pottery"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Old Time Pottery",
+      "brand:website": "http://www.oldtimepottery.com",
+      "brand:wikidata": "Q7085222",
+      "brand:wikipedia": "en:Old Time Pottery",
+      "name": "Old Time Pottery",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Stokes",
+    "lbl": {"en": "Stokes"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Stokes",
+      "brand:wikidata": "Q66481382",
+      "name": "Stokes",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Sur La Table",
+    "lbl": {"en": "Sur La Table"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Sur La Table",
+      "brand:wikidata": "Q7645220",
+      "brand:wikipedia": "en:Sur La Table",
+      "name": "Sur La Table",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Tescoma",
+    "lbl": {"en": "Tescoma"},
+    "tags": {"brand": "Tescoma", "name": "Tescoma", "shop": "houseware"}
+  },
+  {
+    "v": "The Container Store",
+    "lbl": {"en": "The Container Store"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "The Container Store",
+      "brand:wikidata": "Q7727445",
+      "brand:wikipedia": "en:The Container Store",
+      "name": "The Container Store",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Think Kitchen",
+    "lbl": {"en": "Think Kitchen"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Think Kitchen",
+      "brand:wikidata": "Q66481390",
+      "name": "Think Kitchen",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Tuesday Morning",
+    "lbl": {"en": "Tuesday Morning"},
+    "countryCodes": ["us"],
+    "matchTags": [
+      "shop/convenience",
+      "shop/department_store",
+      "shop/gift",
+      "shop/variety_store"
+    ],
+    "tags": {
+      "brand": "Tuesday Morning",
+      "brand:wikidata": "Q7851426",
+      "brand:wikipedia": "en:Tuesday Morning",
+      "name": "Tuesday Morning",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "WMF",
+    "lbl": {"en": "WMF"},
+    "countryCodes": ["at", "de"],
+    "tags": {
+      "brand": "WMF",
+      "brand:wikidata": "Q451423",
+      "brand:wikipedia": "en:WMF Group",
+      "name": "WMF",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Williams-Sonoma",
+    "lbl": {"en": "Williams-Sonoma"},
+    "countryCodes": ["ca", "us"],
+    "matchNames": ["william sonoma"],
+    "matchTags": ["shop/furniture"],
+    "tags": {
+      "brand": "Williams-Sonoma",
+      "brand:wikidata": "Q2581220",
+      "brand:wikipedia": "en:Williams-Sonoma",
+      "name": "Williams-Sonoma",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Xenos",
+    "lbl": {"en": "Xenos"},
+    "countryCodes": ["de", "nl"],
+    "tags": {
+      "brand": "Xenos",
+      "brand:wikidata": "Q16547960",
+      "brand:wikipedia": "nl:Xenos",
+      "name": "Xenos",
+      "shop": "houseware"
+    }
+  },
+  {
+    "v": "Еврочехол",
+    "lbl": {"en": "Еврочехол"},
+    "countryCodes": ["ru"],
+    "tags": {"brand": "Еврочехол", "name": "Еврочехол", "shop": "houseware"}
+  },
+  {
+    "v": "京王アートマン",
+    "lbl": {"en": "京王アートマン"},
+    "countryCodes": ["jp"],
+    "matchNames": ["アートマン"],
+    "matchTags": ["shop/variety_store"],
+    "tags": {
+      "brand": "京王アートマン",
+      "brand:en": "Keio Atman",
+      "brand:ja": "京王アートマン",
+      "brand:wikidata": "Q11374580",
+      "brand:wikipedia": "ja:京王アートマン",
+      "name": "京王アートマン",
+      "name:en": "Keio Atman",
+      "name:ja": "京王アートマン",
+      "shop": "houseware"
+    }
+  }
+]

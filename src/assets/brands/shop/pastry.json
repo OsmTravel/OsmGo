@@ -1,0 +1,41 @@
+[
+  {
+    "v": "Cookies by Design",
+    "lbl": {"en": "Cookies by Design"},
+    "countryCodes": ["us"],
+    "matchTags": ["shop/confectionery", "shop/gift"],
+    "tags": {
+      "brand": "Cookies by Design",
+      "brand:wikidata": "Q5167112",
+      "brand:wikipedia": "en:Cookies by Design",
+      "craft": "bakery",
+      "name": "Cookies by Design",
+      "shop": "pastry"
+    }
+  },
+  {
+    "v": "Namur",
+    "lbl": {"en": "Namur"},
+    "countryCodes": ["lu"],
+    "matchTags": ["shop/bakery", "shop/confectionery"],
+    "tags": {"brand": "Namur", "name": "Namur", "shop": "pastry"}
+  },
+  {
+    "v": "Oberweis",
+    "lbl": {"en": "Oberweis"},
+    "countryCodes": ["lu"],
+    "matchTags": ["shop/bakery", "shop/confectionery"],
+    "tags": {"brand": "Oberweis", "name": "Oberweis", "shop": "pastry"}
+  },
+  {
+    "v": "Smallcakes",
+    "lbl": {"en": "Smallcakes"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Smallcakes",
+      "brand:wikidata": "Q62384749",
+      "name": "Smallcakes",
+      "shop": "pastry"
+    }
+  }
+]

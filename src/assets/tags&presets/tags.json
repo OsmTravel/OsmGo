@@ -156,6 +156,7 @@
         "icon": "mi-airport",
         "markerColor": "#A23337",
         "presets": [
+          "shop#travel_agency#brand",
           "shop#travel_agency#operator",
           "wheelchair",
           "phone",
@@ -217,6 +218,7 @@
         "icon": "mi-jewelry-store",
         "markerColor": "#A23337",
         "presets": [
+          "shop#jewelry#brand",
           "operator",
           "wheelchair",
           "phone",
@@ -240,6 +242,7 @@
         "icon": "custom-butcher",
         "markerColor": "#A23337",
         "presets": [
+          "shop#butcher#brand",
           "butcher",
           "organic",
           "wheelchair",
@@ -264,6 +267,7 @@
         "icon": "mi-bakery",
         "markerColor": "#A23337",
         "presets": [
+          "shop#bakery#brand",
           "pastry_shop",
           "organic",
           "wheelchair",
@@ -287,7 +291,13 @@
         "key": "art",
         "icon": "mi-art-gallery",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#art#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Art Store",
           "fr": "Marchand d'art",
@@ -308,7 +318,13 @@
         "key": "gift",
         "icon": "fa-gift",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#gift#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Gift Shop",
           "fr": "Boutique de cadeaux",
@@ -347,6 +363,7 @@
         "icon": "mi-hair-care",
         "markerColor": "#A23337",
         "presets": [
+          "shop#hairdresser#brand",
           "operator",
           "male",
           "female",
@@ -375,6 +392,7 @@
         "icon": "fa-birthday-cake",
         "markerColor": "#A23337",
         "presets": [
+          "shop#confectionery#brand",
           "operator",
           "wheelchair",
           "phone",
@@ -398,6 +416,7 @@
         "icon": "mi-florist",
         "markerColor": "#A23337",
         "presets": [
+          "shop#florist#brand",
           "operator",
           "wheelchair",
           "phone",
@@ -442,8 +461,8 @@
         "icon": "mi-car-repair",
         "markerColor": "#A23337",
         "presets": [
+          "shop#car_repair#brand",
           "operator",
-          "brand",
           "wheelchair",
           "phone",
           "website",
@@ -469,7 +488,13 @@
         "key": "department_store",
         "icon": "mi-shopping-mall",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#department_store#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Department Store",
           "fr": "Grand magasin",
@@ -490,7 +515,13 @@
         "key": "garden_centre",
         "icon": "maki-garden-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#garden_centre#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Garden Center",
           "fr": "Magasin spécialiste du jardin",
@@ -512,6 +543,7 @@
         "icon": "maki-library-15",
         "markerColor": "#A23337",
         "presets": [
+          "shop#kiosk#brand",
           "lottery",
           "wheelchair",
           "phone",
@@ -558,6 +590,7 @@
         "icon": "maki-library-15",
         "markerColor": "#A23337",
         "presets": [
+          "shop#books#brand",
           "second_hand",
           "wheelchair",
           "phone",
@@ -601,8 +634,8 @@
         "icon": "mi-climbing",
         "markerColor": "#A23337",
         "presets": [
+          "shop#outdoor#brand",
           "operator",
-          "brand",
           "wheelchair",
           "phone",
           "website",
@@ -626,7 +659,13 @@
         "key": "furniture",
         "icon": "mi-furniture-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#furniture#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Furniture Store",
           "fr": "Magasin de meubles",
@@ -647,7 +686,13 @@
         "key": "pet",
         "icon": "mi-pet-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#pet#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Pet Store", "fr": "Animalerie", "de": "Tierhandlung"},
         "terms": {
           "en": "animal,cat,dog,fish,kitten,puppy,reptile",
@@ -664,7 +709,13 @@
         "key": "electronics",
         "icon": "mi-electronics-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#electronics#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Electronics Store",
           "fr": "Magasin d'électronique et d'électroménager",
@@ -686,6 +737,7 @@
         "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#A23337",
         "presets": [
+          "shop#charity#brand",
           "second_hand",
           "wheelchair",
           "phone",
@@ -712,7 +764,13 @@
         "key": "beverages",
         "icon": "mi-liquor-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#beverages#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Beverage Store",
           "fr": "Magasin de boissons",
@@ -733,7 +791,13 @@
         "key": "doityourself",
         "icon": "mi-hardware-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#doityourself#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "DIY Store",
           "fr": "Magasin de bricolage",
@@ -754,7 +818,13 @@
         "key": "shoes",
         "icon": "osm-shoes",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#shoes#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Shoe Store",
           "fr": "Magasin de chaussures",
@@ -770,7 +840,13 @@
         "key": "cosmetics",
         "icon": "osm-perfumery",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#cosmetics#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Cosmetics Store",
           "fr": "Magasin de cosmétiques",
@@ -791,7 +867,13 @@
         "key": "toys",
         "icon": "maki-rocket-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#toys#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Toy Store",
           "fr": "Magasin de jouets",
@@ -829,7 +911,13 @@
         "key": "motorcycle",
         "icon": "fa-motorcycle",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#motorcycle#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Motorcycle Dealership",
           "fr": "Vendeur de motos",
@@ -850,7 +938,13 @@
         "key": "music",
         "icon": "fa-music",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#music#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Music Store",
           "fr": "Magasin de musique",
@@ -871,7 +965,13 @@
         "key": "musical_instrument",
         "icon": "osm-musical_instrument",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#musical_instrument#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Musical Instrument Store",
           "fr": "Magasin d'instruments de musique",
@@ -890,7 +990,13 @@
         "key": "copyshop",
         "icon": "mi-school",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#copyshop#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Copy Store", "fr": "Reprographie", "de": "Kopierladen"},
         "terms": {
           "en": "print,scan",
@@ -907,7 +1013,13 @@
         "key": "photo",
         "icon": "mi-point-of-interest",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#photo#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Photography Store",
           "fr": "Tirage de photos",
@@ -949,7 +1061,13 @@
         "key": "chemist",
         "icon": "osm-chemist",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#chemist#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Drugstore", "fr": "Parapharmacie", "de": "Drogerie"},
         "terms": {
           "en": "apothecary,beauty,drug store,drugstore,gift,hair,med*,pharmacy,prescription,tooth",
@@ -966,7 +1084,13 @@
         "key": "beauty",
         "icon": "osm-beauty",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#beauty#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Beauty Shop",
           "fr": "Salon de beauté",
@@ -987,7 +1111,13 @@
         "key": "sports",
         "icon": "mi-tennis",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#sports#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Sporting Goods Store",
           "fr": "Magasin d'équipement sportif",
@@ -1003,7 +1133,13 @@
         "key": "carpet",
         "icon": "fa-scroll-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#carpet#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Carpet Store",
           "fr": "Magasin de tapis",
@@ -1024,7 +1160,13 @@
         "key": "mobile_phone",
         "icon": "fa-mobile-phone",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#mobile_phone#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Mobile Phone Store",
           "fr": "Magasin de téléphonie mobile",
@@ -1045,7 +1187,13 @@
         "key": "video",
         "icon": "mi-movie-rental",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#video#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Video Store", "fr": "Vidéo-club", "de": "Videothek"},
         "terms": {
           "en": "DVD,VHS,video casette",
@@ -1062,7 +1210,13 @@
         "key": "car",
         "icon": "mi-car-dealer",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#car#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Car Dealership",
           "fr": "Concessionnaire automobile",
@@ -1083,7 +1237,13 @@
         "key": "bicycle",
         "icon": "maki-bicycle-share-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#bicycle#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Bicycle Shop",
           "fr": "Magasin de vélos",
@@ -1104,7 +1264,13 @@
         "key": "clothes",
         "icon": "mi-clothing-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#clothes#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Clothing Store",
           "fr": "Magasin de vêtements",
@@ -1144,7 +1310,13 @@
         "key": "hifi",
         "icon": "fa-headphones",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#hifi#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Hifi Store",
           "fr": "Magasin de matériel hi-fi",
@@ -1165,7 +1337,13 @@
         "key": "computer",
         "icon": "fa-desktop",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#computer#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Computer Store",
           "fr": "Magasin d'informatique",
@@ -1184,7 +1362,13 @@
         "key": "greengrocer",
         "icon": "osm-greengrocer",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#greengrocer#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Greengrocer",
           "fr": "Marchand de fruits et légumes",
@@ -1206,6 +1390,7 @@
         "icon": "fa-newspaper-o",
         "markerColor": "#A23337",
         "presets": [
+          "shop#newsagent#brand",
           "tobacco",
           "wheelchair",
           "phone",
@@ -1232,7 +1417,13 @@
         "key": "bed",
         "icon": "mi-lodging",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#bed#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Bedding/Mattress Store",
           "fr": "Magasin de literie",
@@ -1295,7 +1486,13 @@
         "key": "vacuum_cleaner",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#vacuum_cleaner#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Vacuum Cleaner Store",
           "fr": "Magasin d'électroménager de nettoyage",
@@ -1315,7 +1512,13 @@
         "key": "tyres",
         "icon": "maki-circle-stroked-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#tyres#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Tire Store",
           "fr": "Magasin de pneus",
@@ -1336,7 +1539,13 @@
         "key": "swimming_pool",
         "icon": "maki-swimming-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#swimming_pool#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Pool Supply Store",
           "fr": "Magasin de matériel de piscine",
@@ -1419,7 +1628,13 @@
         "key": "houseware",
         "icon": "maki-laundry-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#houseware#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Houseware Store",
           "fr": "Magasin d’articles ménagers",
@@ -1440,7 +1655,13 @@
         "key": "optician",
         "icon": "osm-optician",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#optician#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Optician", "fr": "Opticien", "de": "Optiker"},
         "terms": {
           "en": "eye,glasses",
@@ -1457,7 +1678,13 @@
         "key": "stationery",
         "icon": "fa-file-text",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#stationery#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Stationery Store",
           "fr": "Papeterie",
@@ -1478,7 +1705,13 @@
         "key": "car_parts",
         "icon": "mi-car-repair",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#car_parts#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Car Parts Store",
           "fr": "Magasin de pièces automobiles",
@@ -1499,7 +1732,13 @@
         "key": "funeral_directors",
         "icon": "mi-funeral-home",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#funeral_directors#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Funeral Home",
           "fr": "Funérarium",
@@ -1520,7 +1759,13 @@
         "key": "dry_cleaning",
         "icon": "maki-laundry-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#dry_cleaning#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Dry Cleaner",
           "fr": "Pressing",
@@ -1541,7 +1786,13 @@
         "key": "hardware",
         "icon": "mi-hardware-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#hardware#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Hardware Store",
           "fr": "Quincaillerie",
@@ -1557,7 +1808,13 @@
         "key": "supermarket",
         "icon": "mi-grocery-or-supermarket",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#supermarket#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Supermarket", "fr": "Supermarché", "de": "Supermarkt"},
         "terms": {
           "en": "grocery,store,shop",
@@ -1574,7 +1831,13 @@
         "key": "convenience",
         "icon": "mi-convenience-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#convenience#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Convenience Store",
           "fr": "Épicerie / Supérette ",
@@ -1603,7 +1866,13 @@
         "key": "massage",
         "icon": "mi-spa",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#massage#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Massage Shop",
           "fr": "Salon de massage",
@@ -1624,7 +1893,13 @@
         "key": "frame",
         "icon": "fa-file-picture-o",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#frame#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Framing Shop",
           "fr": "Magasin d'encadrements",
@@ -1645,7 +1920,13 @@
         "key": "hearing_aids",
         "icon": "mi-assistive-listening-system",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#hearing_aids#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Hearing Aids Store",
           "fr": "Audioprothésiste",
@@ -1683,7 +1964,13 @@
         "key": "fabric",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#fabric#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Fabric Store",
           "fr": "Magasin de tissus",
@@ -1704,7 +1991,13 @@
         "key": "variety_store",
         "icon": "fa-krw",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#variety_store#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Variety Store",
           "fr": "Magasin à prix unique ou à bas prix",
@@ -1725,7 +2018,13 @@
         "key": "bag",
         "icon": "mi-department-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#bag#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Bag/Luggage Store",
           "fr": "Bagagerie",
@@ -1746,7 +2045,7 @@
         "key": "second_hand",
         "icon": "fa-krw",
         "markerColor": "#A23337",
-        "presets": ["wheelchair"],
+        "presets": ["shop#second_hand#brand", "wheelchair"],
         "lbl": {
           "en": "Consignment/Thrift Store",
           "fr": "Dépôt-vente/produits d'occasion",
@@ -1767,7 +2066,13 @@
         "key": "deli",
         "icon": "mi-convenience-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#deli#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Deli", "fr": "Épicerie de luxe", "de": "Feinkostladen"},
         "terms": {
           "en": "lunch,meat,sandwich",
@@ -1784,7 +2089,13 @@
         "key": "kitchen",
         "icon": "mi-furniture-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#kitchen#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Kitchen Design Store",
           "fr": "Cuisiniste",
@@ -1805,7 +2116,13 @@
         "key": "interior_decoration",
         "icon": "mi-furniture-store",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#interior_decoration#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Interior Decoration Store",
           "fr": "Magasin de décoration d'intérieur",
@@ -1847,7 +2164,13 @@
         "key": "e-cigarette",
         "icon": "fa-magic",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#e-cigarette#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "E-Cigarette Shop",
           "fr": "Magasin de cigarettes électroniques",
@@ -1939,7 +2262,13 @@
         "key": "video_games",
         "icon": "maki-gaming-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#video_games#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Video Game Store",
           "fr": "Magasin de location et vente de jeux vidéo",
@@ -1997,7 +2326,13 @@
         "key": "alcohol",
         "icon": "maki-alcohol-shop-15",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#alcohol#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Liquor Store",
           "fr": "Magasin de vente d'alcool",
@@ -2018,7 +2353,13 @@
         "key": "party",
         "icon": "dance-instructor",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#party#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Party Supply Store",
           "fr": "Magasin de matériel de fête",
@@ -2039,7 +2380,13 @@
         "key": "coffee",
         "icon": "fa-coffee",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#coffee#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Coffee Store",
           "fr": "Boutique de vente de cafés",
@@ -2060,7 +2407,13 @@
         "key": "seafood",
         "icon": "mi-fish-cleaning",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#seafood#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Seafood Shop",
           "fr": "Poissonnerie / Vente de fruits de mer",
@@ -2081,7 +2434,13 @@
         "key": "pastry",
         "icon": "osm-confectionery",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#pastry#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Pastry Shop", "fr": "Pâtisserie", "de": "Konditorei"},
         "terms": {
           "en": "patisserie,cake shop,cakery",
@@ -2098,7 +2457,13 @@
         "key": "tobacco",
         "icon": "smoking-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#tobacco#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Tobacco Shop",
           "fr": "Bureau de tabac",
@@ -2119,7 +2484,13 @@
         "key": "medical_supply",
         "icon": "mi-doctor",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#medical_supply#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Medical Supply Store",
           "fr": "Magasin de matériel médical",
@@ -2157,7 +2528,13 @@
         "key": "chocolate",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#chocolate#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Chocolate Store",
           "fr": "Chocolatier",
@@ -2193,7 +2570,13 @@
         "key": "watches",
         "icon": "fa-clock-o",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#watches#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Watches Shop",
           "fr": "Magasin de montres",
@@ -2214,7 +2597,13 @@
         "key": "baby_goods",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#baby_goods#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Baby Goods Store",
           "fr": "Magasin de produits pour bébés",
@@ -2235,7 +2624,13 @@
         "key": "erotic",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#erotic#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Erotic Store", "fr": "Sex-shop", "de": "Erotikgeschäft"},
         "terms": {
           "en": "sex,porn",
@@ -2252,7 +2647,13 @@
         "key": "nutrition_supplements",
         "icon": "fa-capsules-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#nutrition_supplements#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Nutrition Supplements Store",
           "fr": "Boutique de compléments alimentaires",
@@ -2272,7 +2673,13 @@
         "key": "electrical",
         "icon": "fa-lightbulb-o",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#electrical#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Vente de fournitures et d'appareils éléctriques"},
         "description": {"en": "Shop selling electrical supplies and devices"}
       },
@@ -2333,7 +2740,13 @@
         "key": "games",
         "icon": "fa-chess-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#games#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Tabletop Game Store",
           "fr": "Magasin de jeux de plateau",
@@ -2367,7 +2780,13 @@
         "key": "gas",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#gas#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Bottled Gas Shop",
           "fr": "Magasin de bouteilles de gaz",
@@ -2387,7 +2806,13 @@
         "key": "ticket",
         "icon": "fa-ticket-alt-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#ticket#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Ticket Seller",
           "fr": "Boutique de vente de billets",
@@ -2408,7 +2833,13 @@
         "key": "frozen_food",
         "icon": "mi-snow",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#frozen_food#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Frozen Food",
           "fr": "Surgelés",
@@ -2444,7 +2875,13 @@
         "key": "perfumery",
         "icon": "osm-perfumery",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#perfumery#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Perfume Store", "fr": "Parfumerie", "de": "Parfümerie"},
         "terms": {
           "en": "cologne,fragrance,purfume",
@@ -2456,7 +2893,13 @@
         "key": "paint",
         "icon": "mi-painter",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#paint#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Paint Store",
           "fr": "Magasin de peintures",
@@ -2477,7 +2920,13 @@
         "key": "tea",
         "icon": "osm-Tea-14",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#tea#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Tea Store",
           "fr": "Magasin de thés",
@@ -2498,7 +2947,13 @@
         "key": "trade",
         "icon": "truck-loading-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#trade#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Trade Shop", "fr": "Grossiste", "de": "Baustoffhandel"},
         "terms": {
           "en": "",
@@ -2557,7 +3012,13 @@
         "key": "agrarian",
         "icon": "fa-tractor-solid",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "shop#agrarian#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Farm Supply Shop",
           "fr": "Magasin d'agriculture",
@@ -2596,7 +3057,7 @@
         "key": "printer_ink",
         "icon": "",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#printer_ink#brand"],
         "lbl": {
           "en": "Printer Ink Store",
           "fr": "Vendeur d'encre pour imprimante",
@@ -2734,7 +3195,7 @@
         "icon": "maki-bank-15",
         "markerColor": "#EF9228",
         "presets": [
-          "brand",
+          "amenity#bank#brand",
           "operator",
           "wheelchair",
           "phone",
@@ -2758,6 +3219,7 @@
         "icon": "maki-bar-15",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#bar#brand",
           "tobacco",
           "wheelchair",
           "phone",
@@ -2780,6 +3242,7 @@
         "icon": "fa-beer",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#pub#brand",
           "tobacco",
           "wheelchair",
           "phone",
@@ -2858,7 +3321,7 @@
         "key": "post_box",
         "icon": "mi-post-box",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": ["amenity#post_box#brand"],
         "lbl": {
           "en": "Mailbox",
           "fr": "Boîte aux lettres",
@@ -2879,7 +3342,13 @@
         "key": "post_office",
         "icon": "maki-post-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#post_office#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Post Office",
           "fr": "Bureau de poste",
@@ -2906,7 +3375,13 @@
         "key": "cafe",
         "icon": "mi-cafe",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#cafe#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Cafe", "fr": "Café", "de": "Café"},
         "terms": {
           "en": "bistro,coffee,tea",
@@ -2943,7 +3418,13 @@
         "key": "casino",
         "icon": "mi-casino",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#casino#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Casino", "de": "Kasino"},
         "terms": {
           "en": "gambling,roulette,craps,poker,blackjack",
@@ -3010,7 +3491,13 @@
         "key": "cinema",
         "icon": "maki-cinema-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#cinema#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Cinema", "fr": "Cinéma", "de": "Kino"},
         "terms": {
           "en": "drive-in,film,flick,movie,theater,picture,show,screen",
@@ -3027,7 +3514,13 @@
         "key": "clinic",
         "icon": "fa-hospital-o",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#clinic#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Clinic",
           "fr": "Centre médical de taille moyenne, soins en ambulatoire",
@@ -3069,7 +3562,7 @@
         "key": "car_sharing",
         "icon": "maki-car-15",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": ["amenity#car_sharing#brand"],
         "lbl": {"en": "Car Sharing", "fr": "Autopartage", "de": "Carsharing"},
         "terms": {
           "en": "",
@@ -3086,7 +3579,13 @@
         "key": "ice_cream",
         "icon": "maki-ice-cream-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#ice_cream#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Ice Cream Shop",
           "fr": "Magasin de glace",
@@ -3143,7 +3642,13 @@
         "key": "dentist",
         "icon": "maki-dentist-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#dentist#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Dentist", "fr": "Dentiste", "de": "Zahnarzt"},
         "terms": {
           "en": "tooth,teeth",
@@ -3202,7 +3707,13 @@
         "key": "hospital",
         "icon": "mi-hospital",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#hospital#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Hospital Grounds", "fr": "Hôpital", "de": "Krankenhaus"},
         "terms": {
           "en": "clinic,doctor,emergency room,health,infirmary,institution,sanatorium,sanitarium,sick,surgery,ward",
@@ -3219,6 +3730,7 @@
         "icon": "fa-child",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#kindergarten#brand",
           "nursery",
           "wheelchair",
           "phone",
@@ -3283,7 +3795,13 @@
         "key": "car_rental",
         "icon": "mi-car-rental",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#car_rental#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Car Rental",
           "fr": "Location de voiture",
@@ -3304,7 +3822,13 @@
         "key": "bicycle_rental",
         "icon": "mi-bicycle-store",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#bicycle_rental#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Bicycle Rental",
           "fr": "Location de vélos en libre service ",
@@ -3365,7 +3889,13 @@
         "key": "doctors",
         "icon": "maki-doctor-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#doctors#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Doctor", "fr": "Médecin", "de": "Arzt"},
         "terms": {
           "en": "medic*,physician",
@@ -3417,7 +3947,13 @@
         "key": "parking",
         "icon": "mi-parking",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#parking#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Parking Lot", "fr": "Parking", "de": "Parkplatz"},
         "terms": {
           "en": "automobile parking,car lot,car parking,rv parking,truck parking,vehicle parking",
@@ -3456,6 +3992,7 @@
         "icon": "mi-pharmacy",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#pharmacy#brand",
           "dispensing",
           "wheelchair",
           "phone",
@@ -3500,6 +4037,7 @@
         "icon": "recycling",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#recycling#brand",
           "recycling_type",
           "recycling:glass_bottles",
           "recycling:plastic",
@@ -3575,6 +4113,7 @@
         "icon": "mi-restaurant",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#restaurant#brand",
           "cuisine",
           "wheelchair",
           "phone",
@@ -3598,6 +4137,7 @@
         "icon": "mi-food",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#fast_food#brand",
           "cuisine",
           "wheelchair",
           "phone",
@@ -3677,7 +4217,13 @@
         "key": "fuel",
         "icon": "maki-fuel-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#fuel#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Gas Station",
           "fr": "Station-service",
@@ -3792,7 +4338,13 @@
         "key": "university",
         "icon": "mi-university",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#university#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "University Grounds",
           "fr": "Université, enseignement supérieur universitaire - institution ou campus",
@@ -3813,7 +4365,13 @@
         "key": "veterinary",
         "icon": "mi-veterinary-care",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#veterinary#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Veterinary", "fr": "Vétérinaire", "de": "Tierarzt"},
         "terms": {
           "en": "pet clinic,veterinarian,animal hospital,pet doctor",
@@ -3829,7 +4387,7 @@
         "key": "school",
         "icon": "mi-school",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair"],
+        "presets": ["amenity#school#brand", "wheelchair"],
         "presetsByCountryCodes": [
           {"countryCodes": ["FR"], "preset": "school:FR"}
         ],
@@ -3884,7 +4442,7 @@
         "key": "vending_machine",
         "icon": "fa-hand-holding-usd-solid",
         "markerColor": "#EF9228",
-        "presets": ["vending", "wheelchair"],
+        "presets": ["amenity#vending_machine#brand", "vending", "wheelchair"],
         "lbl": {
           "en": "Vending Machine",
           "fr": "Distributeur automatique",
@@ -3915,6 +4473,7 @@
         "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#social_facility#brand",
           "social_facility",
           "social_facility:for",
           "wheelchair",
@@ -3994,7 +4553,13 @@
         "key": "bureau_de_change",
         "icon": "maki-bank-15",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#bureau_de_change#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Currency Exchange",
           "fr": "Bureau de change",
@@ -4047,7 +4612,13 @@
         "key": "language_school",
         "icon": "fa-language",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#language_school#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Language School",
           "fr": "École de langues",
@@ -4067,7 +4638,7 @@
         "key": "charging_station",
         "icon": "osm-charging_station",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": ["amenity#charging_station#brand"],
         "lbl": {
           "en": "Charging Station",
           "fr": "Borne de recharge",
@@ -4226,7 +4797,7 @@
         "key": "public_bookcase",
         "icon": "fa-book",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": ["amenity#public_bookcase#brand"],
         "lbl": {
           "en": "Public Bookcase",
           "fr": "Microbibliothèque",
@@ -4247,7 +4818,13 @@
         "key": "vehicle_inspection",
         "icon": "mi-car-repair",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "amenity#vehicle_inspection#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Vehicle Inspection",
           "fr": "Centre de contrôle technique",
@@ -4873,7 +5450,7 @@
         "key": "dog_park",
         "icon": "maki-dog-park-15",
         "markerColor": "#5B396C",
-        "presets": [],
+        "presets": ["leisure#dog_park#brand"],
         "lbl": {"en": "Dog Park", "fr": "Parc canin", "de": "Hundepark"},
         "terms": {
           "en": "",
@@ -5008,7 +5585,7 @@
         "key": "playground",
         "icon": "maki-playground-15",
         "markerColor": "#5B396C",
-        "presets": [],
+        "presets": ["leisure#playground#brand"],
         "lbl": {
           "en": "Playground",
           "fr": "Jeux pour enfants",
@@ -5029,7 +5606,7 @@
         "key": "sports_centre",
         "icon": "fa-dribbble",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair"],
+        "presets": ["leisure#sports_centre#brand", "wheelchair"],
         "lbl": {
           "en": "Sports Center / Complex",
           "fr": "Centre sportif",
@@ -5282,7 +5859,13 @@
         "key": "fitness_centre",
         "icon": "mi-physiotherapist",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "leisure#fitness_centre#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Gym / Fitness Center",
           "fr": "Centre de fitness / gym",
@@ -5345,7 +5928,7 @@
         "key": "bowling_alley",
         "icon": "mi-bowling-alley",
         "markerColor": "#5B396C",
-        "presets": [],
+        "presets": ["leisure#bowling_alley#brand"],
         "lbl": {"en": "Bowling Alley", "fr": "Bowling", "de": "Bowlingbahn"},
         "terms": {
           "en": "bowling center",
@@ -5362,7 +5945,13 @@
         "key": "escape_game",
         "icon": "fa-key",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "leisure#escape_game#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Escape Room", "fr": "Escape game"},
         "terms": {
           "en": "escape game,escape the room,puzzle room,quest room",
@@ -6105,7 +6694,13 @@
         "key": "window_construction",
         "icon": "fa-door-closed-solid",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "craft#window_construction#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Window Construction",
           "fr": "Construction de fenêtres",
@@ -6301,7 +6896,13 @@
         "key": "caravan_site",
         "icon": "fa-truck-solid",
         "markerColor": "#9D7178",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "tourism#caravan_site#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "RV Park",
           "fr": "Aire pour caravanes",
@@ -6358,7 +6959,13 @@
         "key": "hotel",
         "icon": "maki-lodging-15",
         "markerColor": "#9D7178",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "tourism#hotel#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Hotel", "fr": "Hôtel"},
         "terms": {"en": "", "fr": "bâtiment d'hôtel,hotel", "de": "Hotel"},
         "description": {
@@ -6387,7 +6994,13 @@
         "key": "motel",
         "icon": "maki-lodging-15",
         "markerColor": "#9D7178",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "tourism#motel#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {"en": "Motel"},
         "terms": {"en": "", "fr": "Motel", "de": "Motel"},
         "description": {
@@ -6724,7 +7337,13 @@
         "key": "employment_agency",
         "icon": "",
         "markerColor": "#F5BB3A",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "office#employment_agency#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Employment Agency",
           "fr": "Agence pour l'emploi",
@@ -6745,7 +7364,13 @@
         "key": "estate_agent",
         "icon": "mi-real-estate-agency",
         "markerColor": "#F5BB3A",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "office#estate_agent#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Real Estate Office",
           "fr": "Agence immobilière",
@@ -6832,7 +7457,13 @@
         "key": "insurance",
         "icon": "mi-insurance-agency",
         "markerColor": "#F5BB3A",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "office#insurance#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Insurance Office",
           "fr": "Agence d'assurance",
@@ -7042,7 +7673,13 @@
         "key": "tax_advisor",
         "icon": "",
         "markerColor": "#F5BB3A",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "office#tax_advisor#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Tax Advisor Office",
           "fr": "Conseiller fiscal",
@@ -7754,7 +8391,13 @@
         "key": "blood_donation",
         "icon": "maki-blood-bank-15",
         "markerColor": "#C9BCF0",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "healthcare#blood_donation#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Blood Donor Center",
           "fr": "Centre de don du sang",

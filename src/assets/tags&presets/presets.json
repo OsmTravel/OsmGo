@@ -850,60 +850,6 @@
       {"v": "sports", "lbl": {"fr": "Sports", "en": "sports"}}
     ]
   },
-  "shop#clothes#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne ", "en": "shop#clothes#brand"},
-    "options": [
-      {"v": "Kiabi", "lbl": {"en": "Kiabi"}},
-      {"v": "Jules", "lbl": {"en": "Jules"}},
-      {"v": "Sergent Major", "lbl": {"en": "Sergent Major"}},
-      {"v": "Celio", "lbl": {"en": "Celio"}},
-      {"v": "Zara", "lbl": {"en": "Zara"}},
-      {"v": "Camaïeu", "lbl": {"en": "Camaïeu"}},
-      {"v": "Brice", "lbl": {"en": "Brice"}},
-      {"v": "Gémo", "lbl": {"en": "Gémo"}},
-      {"v": "Etam", "lbl": {"en": "Etam"}},
-      {"v": "H&M", "lbl": {"en": "H&M"}},
-      {"v": "Armand Thiery", "lbl": {"en": "Armand Thiery"}},
-      {"v": "Promod", "lbl": {"en": "Promod"}},
-      {"v": "Orchestra", "lbl": {"en": "Orchestra"}},
-      {"v": "Pimkie", "lbl": {"en": "Pimkie"}},
-      {"v": "Bonobo", "lbl": {"en": "Bonobo"}},
-      {"v": "Mango", "lbl": {"en": "Mango"}},
-      {"v": "C&A", "lbl": {"en": "C&A"}},
-      {"v": "Caroll", "lbl": {"en": "Caroll"}},
-      {"v": "Jennyfer", "lbl": {"en": "Jennyfer"}},
-      {"v": "Devred", "lbl": {"en": "Devred"}},
-      {"v": "Zeeman", "lbl": {"en": "Zeeman"}},
-      {"v": "Okaïdi", "lbl": {"en": "Okaïdi"}},
-      {"v": "Naf Naf", "lbl": {"en": "Naf Naf"}},
-      {"v": "Petit Bateau", "lbl": {"en": "Petit Bateau"}},
-      {"v": "Cache Cache", "lbl": {"en": "Cache Cache"}},
-      {"v": "Tati", "lbl": {"en": "Tati"}},
-      {"v": "Esprit", "lbl": {"en": "Esprit"}},
-      {"v": "Chanel", "lbl": {"en": "Chanel"}},
-      {"v": "Lacoste", "lbl": {"en": "Lacoste"}},
-      {"v": "Calzedonia", "lbl": {"en": "Calzedonia"}},
-      {"v": "Levi's", "lbl": {"en": "Levi's"}},
-      {"v": "Desigual", "lbl": {"en": "Desigual"}},
-      {"v": "Hugo Boss", "lbl": {"en": "Hugo Boss"}},
-      {"v": "Gap", "lbl": {"en": "Gap"}},
-      {"v": "Burton", "lbl": {"en": "Burton"}},
-      {
-        "v": "United Colors of Benetton",
-        "lbl": {"en": "United Colors of Benetton"}
-      },
-      {"v": "Uniqlo", "lbl": {"en": "Uniqlo"}},
-      {"v": "Nike", "lbl": {"en": "Nike"}},
-      {"v": "Superdry", "lbl": {"en": "Superdry"}},
-      {"v": "Bershka", "lbl": {"en": "Bershka"}},
-      {"v": "New Yorker", "lbl": {"en": "New Yorker"}},
-      {"v": "Max Mara", "lbl": {"en": "Max Mara"}},
-      {"v": "COS", "lbl": {"en": "COS"}},
-      {"v": "Calvin Klein", "lbl": {"en": "Calvin Klein"}}
-    ]
-  },
   "shop#supermarket#operator": {
     "key": "operator",
     "type": "list",
@@ -935,135 +881,6 @@
       {"v": "Grand Frais", "lbl": {"en": "Grand Frais"}}
     ]
   },
-  "shop#supermarket#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#supermarket#brand"},
-    "options": [
-      {"v": "Lidl", "lbl": {"en": "Lidl"}},
-      {"v": "Carrefour Market", "lbl": {"en": "Carrefour Market"}},
-      {"v": "Super U", "lbl": {"en": "Super U"}},
-      {"v": "E. Leclerc", "lbl": {"en": "E. Leclerc"}},
-      {"v": "Leader Price", "lbl": {"en": "Leader Price"}},
-      {"v": "Biocoop", "lbl": {"en": "Biocoop"}},
-      {"v": "Franprix", "lbl": {"en": "Franprix"}},
-      {"v": "E. Leclerc Drive", "lbl": {"en": "E. Leclerc Drive"}},
-      {"v": "Carrefour", "lbl": {"en": "Carrefour"}},
-      {"v": "Monoprix", "lbl": {"en": "Monoprix"}},
-      {"v": "Carrefour City", "lbl": {"en": "Carrefour City"}},
-      {"v": "U Express", "lbl": {"en": "U Express"}},
-      {"v": "La Vie Claire", "lbl": {"en": "La Vie Claire"}},
-      {"v": "Intermarché", "lbl": {"en": "Intermarché"}},
-      {"v": "Aldi", "lbl": {"en": "Aldi"}},
-      {"v": "Bio C' Bon", "lbl": {"en": "Bio C' Bon"}},
-      {"v": "Carrefour Contact", "lbl": {"en": "Carrefour Contact"}},
-      {"v": "Auchan", "lbl": {"en": "Auchan"}},
-      {"v": "Intermarché Super", "lbl": {"en": "Intermarché Super"}},
-      {"v": "Naturalia", "lbl": {"en": "Naturalia"}},
-      {"v": "Hyper U", "lbl": {"en": "Hyper U"}},
-      {"v": "Cora", "lbl": {"en": "Cora"}},
-      {"v": "monop'", "lbl": {"en": "monop'"}},
-      {"v": "Grand Frais", "lbl": {"en": "Grand Frais"}},
-      {"v": "Netto", "lbl": {"en": "Netto"}},
-      {"v": "G20", "lbl": {"en": "G20"}},
-      {"v": "8 à Huit", "lbl": {"en": "8 à Huit"}},
-      {"v": "Spar", "lbl": {"en": "Spar"}},
-      {"v": "Satoriz", "lbl": {"en": "Satoriz"}},
-      {"v": "Carrefour Express", "lbl": {"en": "Carrefour Express"}},
-      {"v": "Casino", "lbl": {"en": "Casino"}},
-      {"v": "E. Leclerc Express", "lbl": {"en": "E. Leclerc Express"}},
-      {"v": "Dia", "lbl": {"en": "Dia"}},
-      {"v": "Géant Casino", "lbl": {"en": "Géant Casino"}},
-      {"v": "Carrefour Montagne", "lbl": {"en": "Carrefour Montagne"}},
-      {"v": "Colruyt", "lbl": {"en": "Colruyt"}},
-      {"v": "Le Grand Panier Bio", "lbl": {"en": "Le Grand Panier Bio"}},
-      {"v": "Le Marché de Léopold", "lbl": {"en": "Le Marché de Léopold"}},
-      {"v": "Paris Store", "lbl": {"en": "Paris Store"}},
-      {"v": "Cora Drive", "lbl": {"en": "Cora Drive"}},
-      {"v": "Norma", "lbl": {"en": "Norma"}},
-      {"v": "Sherpa", "lbl": {"en": "Sherpa"}},
-      {"v": "Marks and Spencer", "lbl": {"en": "Marks and Spencer"}},
-      {"v": "Simply Market", "lbl": {"en": "Simply Market"}},
-      {"v": "Proxi", "lbl": {"en": "Proxi"}}
-    ]
-  },
-  "shop#hairdresser#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#hairdresser#brand"},
-    "options": [
-      {"v": "Jean Louis David", "lbl": {"en": "Jean Louis David"}},
-      {"v": "Dessange", "lbl": {"en": "Dessange"}},
-      {"v": "Franck Provost", "lbl": {"en": "Franck Provost"}},
-      {"v": "Tchip", "lbl": {"en": "Tchip"}},
-      {"v": "Camille Albane", "lbl": {"en": "Camille Albane"}},
-      {"v": "Saint Algue", "lbl": {"en": "Saint Algue"}},
-      {"v": "Diagonal", "lbl": {"en": "Diagonal"}},
-      {"v": "Pascal Coste", "lbl": {"en": "Pascal Coste"}},
-      {"v": "Redken", "lbl": {"en": "Redken"}}
-    ]
-  },
-  "shop#car#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#car#brand"},
-    "options": [
-      {"v": "Alfa Romeo", "lbl": {"en": "Alfa Romeo"}},
-      {"v": "Audi", "lbl": {"en": "Audi"}},
-      {"v": "BMW", "lbl": {"en": "BMW"}},
-      {"v": "Citroën", "lbl": {"en": "Citroën"}},
-      {"v": "Dacia", "lbl": {"en": "Dacia"}},
-      {"v": "Fiat", "lbl": {"en": "Fiat"}},
-      {"v": "Ford", "lbl": {"en": "Ford"}},
-      {"v": "Honda", "lbl": {"en": "Honda"}},
-      {"v": "Hyundai", "lbl": {"en": "Hyundai"}},
-      {"v": "Kia", "lbl": {"en": "Kia"}},
-      {"v": "Lancia", "lbl": {"en": "Lancia"}},
-      {"v": "Mazda", "lbl": {"en": "Mazda"}},
-      {"v": "Mercedes-Benz", "lbl": {"en": "Mercedes-Benz"}},
-      {"v": "Mini", "lbl": {"en": "Mini"}},
-      {"v": "Nissan", "lbl": {"en": "Nissan"}},
-      {"v": "Opel", "lbl": {"en": "Opel"}},
-      {"v": "Peugeot", "lbl": {"en": "Peugeot"}},
-      {"v": "Porsche", "lbl": {"en": "Porsche"}},
-      {"v": "Renault", "lbl": {"en": "Renault"}},
-      {"v": "Seat", "lbl": {"en": "Seat"}},
-      {"v": "Suzuki", "lbl": {"en": "Suzuki"}},
-      {"v": "Toyota", "lbl": {"en": "Toyota"}},
-      {"v": "Volkswagen", "lbl": {"en": "Volkswagen"}},
-      {"v": "Volvo", "lbl": {"en": "Volvo"}},
-      {"v": "Škoda Auto", "lbl": {"en": "Škoda Auto"}}
-    ]
-  },
-  "shop#car_repair#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Marque", "en": "shop#car_repair#brand"},
-    "options": [
-      {"v": "AD", "lbl": {"en": "AD"}},
-      {"v": "Audi", "lbl": {"en": "Audi"}},
-      {"v": "BestDrive", "lbl": {"en": "BestDrive"}},
-      {"v": "Carglass", "lbl": {"en": "Carglass"}},
-      {"v": "Citroën", "lbl": {"en": "Citroën"}},
-      {"v": "Dacia", "lbl": {"en": "Dacia"}},
-      {"v": "Elan", "lbl": {"en": "Elan"}},
-      {"v": "Euromaster", "lbl": {"en": "Euromaster"}},
-      {"v": "Feu Vert", "lbl": {"en": "Feu Vert"}},
-      {"v": "Fiat", "lbl": {"en": "Fiat"}},
-      {"v": "Ford", "lbl": {"en": "Ford"}},
-      {"v": "Midas", "lbl": {"en": "Midas"}},
-      {"v": "Motrio", "lbl": {"en": "Motrio"}},
-      {"v": "Norauto", "lbl": {"en": "Norauto"}},
-      {"v": "Opel", "lbl": {"en": "Opel"}},
-      {"v": "Peugeot", "lbl": {"en": "Peugeot"}},
-      {"v": "Point S", "lbl": {"en": "Point S"}},
-      {"v": "Renault", "lbl": {"en": "Renault"}},
-      {"v": "Roady", "lbl": {"en": "Roady"}},
-      {"v": "Speedy", "lbl": {"en": "Speedy"}},
-      {"v": "Toyota", "lbl": {"en": "Toyota"}},
-      {"v": "Volkswagen", "lbl": {"en": "Volkswagen"}}
-    ]
-  },
   "tickets:public_transport": {
     "key": "tickets:public_transport",
     "type": "select",
@@ -1074,21 +891,6 @@
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
       {"v": "no", "lbl": {"fr": "Non", "en": "no"}}
-    ]
-  },
-  "shop#jewelry#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Marque", "en": "shop#jewelry#brand"},
-    "options": [
-      {"v": "Bijou Brigitte", "lbl": {"en": "Bijou Brigitte"}},
-      {"v": "Cartier", "lbl": {"en": "Cartier"}},
-      {"v": "Claire's", "lbl": {"en": "Claire's"}},
-      {"v": "Histoire d'Or", "lbl": {"en": "Histoire d'Or"}},
-      {"v": "Julien d'Orcel", "lbl": {"en": "Julien d'Orcel"}},
-      {"v": "Pandora", "lbl": {"en": "Pandora"}},
-      {"v": "Swarovski", "lbl": {"en": "Swarovski"}},
-      {"v": "Tiffany & Company", "lbl": {"en": "Tiffany & Company"}}
     ]
   },
   "drink:beer": {
@@ -1107,109 +909,6 @@
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
       {"v": "no", "lbl": {"fr": "Non", "en": "no"}}
-    ]
-  },
-  "shop#doityourself#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#doityourself#brand"},
-    "options": [
-      {"v": "Big Mat", "lbl": {"en": "Big Mat"}},
-      {"v": "Brico Cash", "lbl": {"en": "Brico Cash"}},
-      {"v": "Brico Dépôt", "lbl": {"en": "Brico Dépôt"}},
-      {"v": "Brico Pro", "lbl": {"en": "Brico Pro"}},
-      {"v": "Bricoman", "lbl": {"en": "Bricoman"}},
-      {"v": "Bricomarché", "lbl": {"en": "Bricomarché"}},
-      {"v": "Briconautes", "lbl": {"en": "Briconautes"}},
-      {"v": "Bricorama", "lbl": {"en": "Bricorama"}},
-      {"v": "Castorama", "lbl": {"en": "Castorama"}},
-      {"v": "Kiloutou", "lbl": {"en": "Kiloutou"}},
-      {
-        "v": "L'Entrepôt du Bricolage",
-        "lbl": {"en": "L'Entrepôt du Bricolage"}
-      },
-      {"v": "Leroy Merlin", "lbl": {"en": "Leroy Merlin"}},
-      {"v": "Mr.Bricolage", "lbl": {"en": "Mr.Bricolage"}},
-      {"v": "Point P", "lbl": {"en": "Point P"}},
-      {"v": "Saint-Maclou", "lbl": {"en": "Saint-Maclou"}},
-      {"v": "Weldom", "lbl": {"en": "Weldom"}}
-    ]
-  },
-  "shop#bakery#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#bakery#brand"},
-    "options": [
-      {"v": "Banette", "lbl": {"en": "Banette"}},
-      {"v": "Copaline", "lbl": {"en": "Copaline"}},
-      {"v": "La Mie Câline", "lbl": {"en": "La Mie Câline"}},
-      {"v": "La Tarte Tropézienne", "lbl": {"en": "La Tarte Tropézienne"}},
-      {"v": "Marie Blachère", "lbl": {"en": "Marie Blachère"}},
-      {"v": "Paul", "lbl": {"en": "Paul"}},
-      {"v": "Ronde des Pains", "lbl": {"en": "Ronde des Pains"}}
-    ]
-  },
-  "shop#books#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#books#brand"},
-    "options": [
-      {"v": "Cultura", "lbl": {"en": "Cultura"}},
-      {"v": "Decitre", "lbl": {"en": "Decitre"}},
-      {"v": "Fnac", "lbl": {"en": "Fnac"}},
-      {"v": "France Loisirs", "lbl": {"en": "France Loisirs"}},
-      {"v": "Furet du Nord", "lbl": {"en": "Furet du Nord"}},
-      {"v": "Gibert Joseph", "lbl": {"en": "Gibert Joseph"}}
-    ]
-  },
-  "shop#optician#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#optician#brand"},
-    "options": [
-      {"v": "Alain Afflelou", "lbl": {"en": "Alain Afflelou"}},
-      {"v": "Atol", "lbl": {"en": "Atol"}},
-      {"v": "Grand Optical", "lbl": {"en": "Grand Optical"}},
-      {"v": "Générale d'Optique", "lbl": {"en": "Générale d'Optique"}},
-      {"v": "Krys", "lbl": {"en": "Krys"}},
-      {
-        "v": "Les Opticiens Mutualistes",
-        "lbl": {"en": "Les Opticiens Mutualistes"}
-      },
-      {"v": "Lissac", "lbl": {"en": "Lissac"}},
-      {"v": "Lunettes Pour Tous", "lbl": {"en": "Lunettes Pour Tous"}},
-      {"v": "Optic 2000", "lbl": {"en": "Optic 2000"}},
-      {"v": "Optical Center", "lbl": {"en": "Optical Center"}}
-    ]
-  },
-  "shop#convenience#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#convenience#brand"},
-    "options": [
-      {"v": "8 à Huit", "lbl": {"en": "8 à Huit"}},
-      {"v": "Agip", "lbl": {"en": "Agip"}},
-      {"v": "Avia", "lbl": {"en": "Avia"}},
-      {"v": "BP", "lbl": {"en": "BP"}},
-      {"v": "Bio C' Bon", "lbl": {"en": "Bio C' Bon"}},
-      {"v": "Biocoop", "lbl": {"en": "Biocoop"}},
-      {"v": "Carrefour Express", "lbl": {"en": "Carrefour Express"}},
-      {"v": "Casino", "lbl": {"en": "Casino"}},
-      {"v": "Esso", "lbl": {"en": "Esso"}},
-      {"v": "Franprix", "lbl": {"en": "Franprix"}},
-      {"v": "Intermarché Contact", "lbl": {"en": "Intermarché Contact"}},
-      {"v": "La Vie Claire", "lbl": {"en": "La Vie Claire"}},
-      {"v": "Marks and Spencer", "lbl": {"en": "Marks and Spencer"}},
-      {"v": "Monoprix", "lbl": {"en": "Monoprix"}},
-      {"v": "Naturalia", "lbl": {"en": "Naturalia"}},
-      {"v": "Proxi", "lbl": {"en": "Proxi"}},
-      {"v": "Satoriz", "lbl": {"en": "Satoriz"}},
-      {"v": "Shell", "lbl": {"en": "Shell"}},
-      {"v": "Spar", "lbl": {"en": "Spar"}},
-      {"v": "Total", "lbl": {"en": "Total"}},
-      {"v": "Total Access", "lbl": {"en": "Total Access"}},
-      {"v": "Utile", "lbl": {"en": "Utile"}},
-      {"v": "Vival", "lbl": {"en": "Vival"}}
     ]
   },
   "parking": {
@@ -1330,52 +1029,6 @@
       {"v": "lamp", "lbl": {"en": "lamp"}}
     ]
   },
-  "amenity#bank#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "amenity#bank#brand"},
-    "options": [
-      {"v": "AXA", "lbl": {"en": "AXA"}},
-      {"v": "BNP Paribas", "lbl": {"en": "BNP Paribas"}},
-      {"v": "BRED", "lbl": {"en": "BRED"}},
-      {"v": "Banque Populaire", "lbl": {"en": "Banque Populaire"}},
-      {"v": "CIC", "lbl": {"en": "CIC"}},
-      {"v": "Caisse d'Épargne", "lbl": {"en": "Caisse d'Épargne"}},
-      {"v": "Crédit Agricole", "lbl": {"en": "Crédit Agricole"}},
-      {"v": "Crédit Coopératif", "lbl": {"en": "Crédit Coopératif"}},
-      {"v": "Crédit Mutuel", "lbl": {"en": "Crédit Mutuel"}},
-      {"v": "Crédit du Nord", "lbl": {"en": "Crédit du Nord"}},
-      {"v": "Groupama", "lbl": {"en": "Groupama"}},
-      {"v": "HSBC", "lbl": {"en": "HSBC"}},
-      {"v": "LCL", "lbl": {"en": "LCL"}},
-      {"v": "La Banque Postale", "lbl": {"en": "La Banque Postale"}},
-      {"v": "Société Générale", "lbl": {"en": "Société Générale"}},
-      {
-        "v": "Société Marseillaise de Crédit",
-        "lbl": {"en": "Société Marseillaise de Crédit"}
-      }
-    ]
-  },
-  "amenity#fast_food#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "amenity#fast_food#brand"},
-    "options": [
-      {"v": "Brioche Dorée", "lbl": {"en": "Brioche Dorée"}},
-      {"v": "Burger King", "lbl": {"en": "Burger King"}},
-      {"v": "Chipotle", "lbl": {"en": "Chipotle"}},
-      {"v": "Domino's Pizza", "lbl": {"en": "Domino's Pizza"}},
-      {"v": "Five Guys", "lbl": {"en": "Five Guys"}},
-      {"v": "KFC", "lbl": {"en": "KFC"}},
-      {"v": "McDonald's", "lbl": {"en": "McDonald's"}},
-      {"v": "O'Tacos", "lbl": {"en": "O'Tacos"}},
-      {"v": "Pret A Manger", "lbl": {"en": "Pret A Manger"}},
-      {"v": "Quick", "lbl": {"en": "Quick"}},
-      {"v": "Speed Burger", "lbl": {"en": "Speed Burger"}},
-      {"v": "Subway", "lbl": {"en": "Subway"}},
-      {"v": "Sushi Shop", "lbl": {"en": "Sushi Shop"}}
-    ]
-  },
   "brewery": {
     "key": "brewery",
     "type": "text",
@@ -1397,35 +1050,6 @@
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
       {"v": "no", "lbl": {"fr": "Non", "en": "no"}}
-    ]
-  },
-  "shop#shoes#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"fr": "Enseigne", "en": "shop#shoes#brand"},
-    "options": [
-      {"v": "André", "lbl": {"en": "André"}},
-      {"v": "Bata", "lbl": {"en": "Bata"}},
-      {"v": "Besson Chaussures", "lbl": {"en": "Besson Chaussures"}},
-      {"v": "Chaussea", "lbl": {"en": "Chaussea"}},
-      {"v": "Courir", "lbl": {"en": "Courir"}},
-      {"v": "Foot Locker", "lbl": {"en": "Foot Locker"}},
-      {"v": "Gabor", "lbl": {"en": "Gabor"}},
-      {"v": "Geox", "lbl": {"en": "Geox"}},
-      {"v": "La Halle", "lbl": {"en": "La Halle"}},
-      {
-        "v": "La Halle aux Chaussures",
-        "lbl": {"en": "La Halle aux Chaussures"}
-      },
-      {"v": "Mephisto", "lbl": {"en": "Mephisto"}},
-      {"v": "Minelli", "lbl": {"en": "Minelli"}},
-      {"v": "Pittarosso", "lbl": {"en": "Pittarosso"}},
-      {"v": "Salamander", "lbl": {"en": "Salamander"}},
-      {"v": "San Marina", "lbl": {"en": "San Marina"}},
-      {"v": "Tamaris", "lbl": {"en": "Tamaris"}},
-      {"v": "UGG", "lbl": {"en": "UGG"}},
-      {"v": "Vans", "lbl": {"en": "Vans"}},
-      {"v": "Éram", "lbl": {"en": "Éram"}}
     ]
   },
   "parking_space": {
@@ -1538,5 +1162,833 @@
     "key": "addr:postcode",
     "type": "number",
     "lbl": {"de": "addr:postcode", "en": "addr_postcode"}
+  },
+  "shop#travel_agency#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/travel_agency.json"
+  },
+  "shop#jewelry#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/jewelry.json"
+  },
+  "shop#butcher#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/butcher.json"
+  },
+  "shop#bakery#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/bakery.json"
+  },
+  "shop#art#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/art.json"
+  },
+  "shop#gift#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/gift.json"
+  },
+  "shop#hairdresser#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/hairdresser.json"
+  },
+  "shop#confectionery#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/confectionery.json"
+  },
+  "shop#florist#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/florist.json"
+  },
+  "shop#car_repair#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/car_repair.json"
+  },
+  "shop#department_store#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/department_store.json"
+  },
+  "shop#garden_centre#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/garden_centre.json"
+  },
+  "shop#kiosk#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/kiosk.json"
+  },
+  "shop#books#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/books.json"
+  },
+  "shop#outdoor#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/outdoor.json"
+  },
+  "shop#furniture#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/furniture.json"
+  },
+  "shop#pet#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/pet.json"
+  },
+  "shop#electronics#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/electronics.json"
+  },
+  "shop#charity#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/charity.json"
+  },
+  "shop#beverages#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/beverages.json"
+  },
+  "shop#doityourself#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/doityourself.json"
+  },
+  "shop#shoes#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/shoes.json"
+  },
+  "shop#cosmetics#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/cosmetics.json"
+  },
+  "shop#toys#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/toys.json"
+  },
+  "shop#motorcycle#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/motorcycle.json"
+  },
+  "shop#music#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/music.json"
+  },
+  "shop#musical_instrument#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/musical_instrument.json"
+  },
+  "shop#copyshop#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/copyshop.json"
+  },
+  "shop#photo#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/photo.json"
+  },
+  "shop#chemist#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/chemist.json"
+  },
+  "shop#beauty#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/beauty.json"
+  },
+  "shop#sports#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/sports.json"
+  },
+  "shop#carpet#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/carpet.json"
+  },
+  "shop#mobile_phone#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/mobile_phone.json"
+  },
+  "shop#video#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/video.json"
+  },
+  "shop#car#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/car.json"
+  },
+  "shop#bicycle#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/bicycle.json"
+  },
+  "shop#clothes#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/clothes.json"
+  },
+  "shop#hifi#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/hifi.json"
+  },
+  "shop#computer#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/computer.json"
+  },
+  "shop#greengrocer#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/greengrocer.json"
+  },
+  "shop#newsagent#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/newsagent.json"
+  },
+  "shop#bed#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/bed.json"
+  },
+  "shop#vacuum_cleaner#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/vacuum_cleaner.json"
+  },
+  "shop#tyres#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/tyres.json"
+  },
+  "shop#swimming_pool#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/swimming_pool.json"
+  },
+  "shop#houseware#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/houseware.json"
+  },
+  "shop#optician#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/optician.json"
+  },
+  "shop#stationery#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/stationery.json"
+  },
+  "shop#car_parts#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/car_parts.json"
+  },
+  "shop#funeral_directors#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/funeral_directors.json"
+  },
+  "shop#dry_cleaning#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/dry_cleaning.json"
+  },
+  "shop#hardware#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/hardware.json"
+  },
+  "shop#supermarket#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/supermarket.json"
+  },
+  "shop#convenience#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/convenience.json"
+  },
+  "shop#massage#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/massage.json"
+  },
+  "shop#frame#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/frame.json"
+  },
+  "shop#hearing_aids#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/hearing_aids.json"
+  },
+  "shop#fabric#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/fabric.json"
+  },
+  "shop#variety_store#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/variety_store.json"
+  },
+  "shop#bag#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/bag.json"
+  },
+  "shop#second_hand#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/second_hand.json"
+  },
+  "shop#deli#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/deli.json"
+  },
+  "shop#kitchen#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/kitchen.json"
+  },
+  "shop#interior_decoration#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/interior_decoration.json"
+  },
+  "shop#e-cigarette#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/e-cigarette.json"
+  },
+  "shop#video_games#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/video_games.json"
+  },
+  "shop#alcohol#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/alcohol.json"
+  },
+  "shop#party#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/party.json"
+  },
+  "shop#coffee#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/coffee.json"
+  },
+  "shop#seafood#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/seafood.json"
+  },
+  "shop#pastry#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/pastry.json"
+  },
+  "shop#tobacco#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/tobacco.json"
+  },
+  "shop#medical_supply#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/medical_supply.json"
+  },
+  "shop#chocolate#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/chocolate.json"
+  },
+  "shop#watches#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/watches.json"
+  },
+  "shop#baby_goods#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/baby_goods.json"
+  },
+  "shop#erotic#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/erotic.json"
+  },
+  "shop#nutrition_supplements#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/nutrition_supplements.json"
+  },
+  "shop#electrical#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/electrical.json"
+  },
+  "shop#games#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/games.json"
+  },
+  "shop#gas#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/gas.json"
+  },
+  "shop#ticket#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/ticket.json"
+  },
+  "shop#frozen_food#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/frozen_food.json"
+  },
+  "shop#perfumery#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/perfumery.json"
+  },
+  "shop#paint#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/paint.json"
+  },
+  "shop#tea#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/tea.json"
+  },
+  "shop#trade#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/trade.json"
+  },
+  "shop#agrarian#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/agrarian.json"
+  },
+  "shop#printer_ink#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/printer_ink.json"
+  },
+  "amenity#bank#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/bank.json"
+  },
+  "amenity#bar#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/bar.json"
+  },
+  "amenity#pub#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/pub.json"
+  },
+  "amenity#post_box#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/post_box.json"
+  },
+  "amenity#post_office#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/post_office.json"
+  },
+  "amenity#cafe#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/cafe.json"
+  },
+  "amenity#casino#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/casino.json"
+  },
+  "amenity#cinema#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/cinema.json"
+  },
+  "amenity#clinic#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/clinic.json"
+  },
+  "amenity#car_sharing#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/car_sharing.json"
+  },
+  "amenity#ice_cream#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/ice_cream.json"
+  },
+  "amenity#dentist#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/dentist.json"
+  },
+  "amenity#hospital#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/hospital.json"
+  },
+  "amenity#kindergarten#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/kindergarten.json"
+  },
+  "amenity#car_rental#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/car_rental.json"
+  },
+  "amenity#bicycle_rental#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/bicycle_rental.json"
+  },
+  "amenity#doctors#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/doctors.json"
+  },
+  "amenity#parking#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/parking.json"
+  },
+  "amenity#pharmacy#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/pharmacy.json"
+  },
+  "amenity#recycling#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/recycling.json"
+  },
+  "amenity#restaurant#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/restaurant.json"
+  },
+  "amenity#fast_food#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/fast_food.json"
+  },
+  "amenity#fuel#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/fuel.json"
+  },
+  "amenity#university#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/university.json"
+  },
+  "amenity#veterinary#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/veterinary.json"
+  },
+  "amenity#school#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/school.json"
+  },
+  "amenity#vending_machine#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/vending_machine.json"
+  },
+  "amenity#social_facility#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/social_facility.json"
+  },
+  "amenity#bureau_de_change#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/bureau_de_change.json"
+  },
+  "amenity#language_school#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/language_school.json"
+  },
+  "amenity#charging_station#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/charging_station.json"
+  },
+  "amenity#public_bookcase#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/public_bookcase.json"
+  },
+  "amenity#vehicle_inspection#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/vehicle_inspection.json"
+  },
+  "leisure#dog_park#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/leisure/dog_park.json"
+  },
+  "leisure#playground#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/leisure/playground.json"
+  },
+  "leisure#sports_centre#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/leisure/sports_centre.json"
+  },
+  "leisure#fitness_centre#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/leisure/fitness_centre.json"
+  },
+  "leisure#bowling_alley#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/leisure/bowling_alley.json"
+  },
+  "leisure#escape_game#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/leisure/escape_game.json"
+  },
+  "craft#window_construction#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/craft/window_construction.json"
+  },
+  "tourism#caravan_site#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/tourism/caravan_site.json"
+  },
+  "tourism#hotel#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/tourism/hotel.json"
+  },
+  "tourism#motel#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/tourism/motel.json"
+  },
+  "office#employment_agency#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/employment_agency.json"
+  },
+  "office#estate_agent#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/estate_agent.json"
+  },
+  "office#insurance#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/insurance.json"
+  },
+  "office#tax_advisor#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/tax_advisor.json"
+  },
+  "healthcare#blood_donation#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/healthcare/blood_donation.json"
   }
 }

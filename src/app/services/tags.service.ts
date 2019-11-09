@@ -203,6 +203,15 @@ export class TagsService {
         return this.presets[id];
     }
 
+    getPresetsOptionFromJson(jsonPath){
+            return this.http.get(`assets/${jsonPath}`)
+                .pipe(
+                    map((res) => {
+                        return res;
+                    })
+                )
+    }
+
 
 
     // liste des clés principales => ["shop", "amenity", "public_transport", "emergency",...]

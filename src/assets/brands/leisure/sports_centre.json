@@ -1,0 +1,24 @@
+[
+  {
+    "v": "YMCA",
+    "lbl": {"en": "YMCA"},
+    "tags": {
+      "brand": "YMCA",
+      "brand:wikidata": "Q157169",
+      "brand:wikipedia": "en:YMCA",
+      "leisure": "sports_centre",
+      "name": "YMCA"
+    }
+  },
+  {
+    "v": "iFLY",
+    "lbl": {"en": "iFLY"},
+    "tags": {
+      "brand": "iFLY",
+      "brand:wikidata": "Q64767105",
+      "leisure": "sports_centre",
+      "name": "iFLY",
+      "sport": "indoor_skydiving"
+    }
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "v": "Escapology",
+    "lbl": {"en": "Escapology"},
+    "countryCodes": ["us"],
+    "matchTags": ["tourism/attraction"],
+    "tags": {
+      "brand": "Escapology",
+      "brand:wikidata": "Q64137163",
+      "leisure": "escape_game",
+      "name": "Escapology"
+    }
+  }
+]

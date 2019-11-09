@@ -1,0 +1,15 @@
+[
+  {
+    "v": "KOA",
+    "lbl": {"en": "Kamp K9"},
+    "countryCodes": ["ca", "us"],
+    "matchTags": ["leisure/park"],
+    "tags": {
+      "brand": "KOA",
+      "brand:wikidata": "Q16988635",
+      "brand:wikipedia": "en:Kampgrounds of America",
+      "leisure": "dog_park",
+      "name": "Kamp K9"
+    }
+  }
+]

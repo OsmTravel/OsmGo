@@ -1,0 +1,413 @@
+[
+  {
+    "v": "Alex and Ani",
+    "lbl": {"en": "Alex and Ani"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Alex and Ani",
+      "brand:wikidata": "Q16198810",
+      "brand:wikipedia": "en:Alex and Ani",
+      "name": "Alex and Ani",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Apart",
+    "lbl": {"en": "Apart"},
+    "countryCodes": ["pl"],
+    "tags": {
+      "brand": "Apart",
+      "brand:wikidata": "Q11686561",
+      "brand:wikipedia": "pl:Apart",
+      "name": "Apart",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Bijou Brigitte",
+    "lbl": {"en": "Bijou Brigitte"},
+    "tags": {
+      "brand": "Bijou Brigitte",
+      "brand:wikidata": "Q599545",
+      "brand:wikipedia": "de:Bijou Brigitte",
+      "name": "Bijou Brigitte",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Cartier",
+    "lbl": {"en": "Cartier"},
+    "tags": {
+      "brand": "Cartier",
+      "brand:wikidata": "Q538587",
+      "brand:wikipedia": "en:Cartier (jeweler)",
+      "name": "Cartier",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Charm Diamond Centres",
+    "lbl": {"en": "Charm Diamond Centres"},
+    "countryCodes": ["ca"],
+    "matchNames": ["Charm Diamond", "Charm Diamond Centre"],
+    "tags": {
+      "brand": "Charm Diamond Centres",
+      "brand:wikidata": "Q5086396",
+      "brand:wikipedia": "en:Charm Diamond Centres",
+      "name": "Charm Diamond Centres",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Chisholm Hunter",
+    "lbl": {"en": "Chisholm Hunter"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Chisholm Hunter",
+      "brand:wikidata": "Q66662001",
+      "name": "Chisholm Hunter",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Christ",
+    "lbl": {"en": "Christ"},
+    "countryCodes": ["ch", "de", "nl"],
+    "tags": {
+      "brand": "Christ",
+      "brand:wikidata": "Q1077957",
+      "brand:wikipedia": "de:Christ (Juwelier)",
+      "name": "Christ",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "David Yurman",
+    "lbl": {"en": "David Yurman"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "David Yurman",
+      "brand:wikidata": "Q5241390",
+      "brand:wikipedia": "en:David Yurman",
+      "name": "David Yurman",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Ernest Jones",
+    "lbl": {"en": "Ernest Jones"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Ernest Jones",
+      "brand:wikidata": "Q5393358",
+      "brand:wikipedia": "en:Ernest Jones (retailer)",
+      "name": "Ernest Jones",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "F.Hinds",
+    "lbl": {"en": "F.Hinds"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "F.Hinds",
+      "brand:wikidata": "Q5423915",
+      "brand:wikipedia": "en:F. Hinds",
+      "name": "F.Hinds",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Fred Meyer",
+    "lbl": {"en": "Fred Meyer"},
+    "countryCodes": ["us"],
+    "nomatch": [
+      "shop/department_store|Fred Meyer",
+      "shop/supermarket|Fred Meyer"
+    ],
+    "tags": {
+      "brand": "Fred Meyer",
+      "brand:wikidata": "Q5495932",
+      "brand:wikipedia": "en:Fred Meyer",
+      "name": "Fred Meyer",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Goldsmiths",
+    "lbl": {"en": "Goldsmiths"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Goldsmiths",
+      "brand:wikidata": "Q16993095",
+      "brand:wikipedia": "en:Goldsmiths (retailer)",
+      "name": "Goldsmiths",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Guldfynd",
+    "lbl": {"en": "Guldfynd"},
+    "countryCodes": ["se"],
+    "tags": {
+      "brand": "Guldfynd",
+      "brand:wikidata": "Q49099223",
+      "brand:wikipedia": "sv:Guldfynd",
+      "name": "Guldfynd",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "H.Samuel",
+    "lbl": {"en": "H.Samuel"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "H.Samuel",
+      "brand:wikidata": "Q5628558",
+      "brand:wikipedia": "en:H. Samuel",
+      "name": "H.Samuel",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Helzberg Diamonds",
+    "lbl": {"en": "Helzberg Diamonds"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Helzberg Diamonds",
+      "brand:wikidata": "Q16995161",
+      "brand:wikipedia": "en:Helzberg Diamonds",
+      "name": "Helzberg Diamonds",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Histoire d'Or",
+    "lbl": {"en": "Histoire d'Or"},
+    "countryCodes": ["be", "fr", "it", "nl"],
+    "tags": {
+      "brand": "Histoire d'Or",
+      "brand:wikidata": "Q62529245",
+      "name": "Histoire d'Or",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Icing",
+    "lbl": {"en": "Icing"},
+    "countryCodes": ["ca", "us"],
+    "tags": {"brand": "Icing", "name": "Icing", "shop": "jewelry"}
+  },
+  {
+    "v": "James Avery Jewelry",
+    "lbl": {"en": "James Avery Jewelry"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "James Avery Jewelry",
+      "brand:wikidata": "Q6129024",
+      "brand:wikipedia": "en:James Avery Artisan Jewelry",
+      "name": "James Avery Jewelry",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Jared",
+    "lbl": {"en": "Jared"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Jared",
+      "brand:wikidata": "Q62029282",
+      "name": "Jared",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Jubiler",
+    "lbl": {"en": "Jubiler"},
+    "tags": {"brand": "Jubiler", "name": "Jubiler", "shop": "jewelry"}
+  },
+  {
+    "v": "Julien d'Orcel",
+    "lbl": {"en": "Julien d'Orcel"},
+    "countryCodes": ["fr"],
+    "tags": {
+      "brand": "Julien d'Orcel",
+      "brand:wikidata": "Q62497463",
+      "name": "Julien d'Orcel",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Kay Jewelers",
+    "lbl": {"en": "Kay Jewelers"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Kay Jewelers",
+      "brand:wikidata": "Q62029290",
+      "name": "Kay Jewelers",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Lucardi",
+    "lbl": {"en": "Lucardi"},
+    "countryCodes": ["nl"],
+    "tags": {
+      "brand": "Lucardi",
+      "brand:wikidata": "Q13774940",
+      "brand:wikipedia": "nl:Lucardi",
+      "name": "Lucardi",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Michael Hill",
+    "lbl": {"en": "Michael Hill"},
+    "countryCodes": ["au", "ca", "nz", "us"],
+    "tags": {
+      "brand": "Michael Hill",
+      "brand:wikidata": "Q3308250",
+      "brand:wikipedia": "en:Michael Hill Jeweller",
+      "name": "Michael Hill",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "PNJ",
+    "lbl": {"en": "PNJ"},
+    "countryCodes": ["vn"],
+    "tags": {
+      "brand": "PNJ",
+      "brand:wikidata": "Q61129183",
+      "brand:wikipedia": "vi:PNJ",
+      "name": "PNJ",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Pandora",
+    "lbl": {"en": "Pandora"},
+    "tags": {
+      "brand": "Pandora",
+      "brand:wikidata": "Q2241604",
+      "brand:wikipedia": "en:Pandora (jewelry)",
+      "name": "Pandora",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Peoples Jewellers",
+    "lbl": {"en": "Peoples Jewellers"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Peoples Jewellers",
+      "brand:wikidata": "Q64995558",
+      "name": "Peoples Jewellers",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Piercing Pagoda",
+    "lbl": {"en": "Piercing Pagoda"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Piercing Pagoda",
+      "name": "Piercing Pagoda",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Swarovski",
+    "lbl": {"en": "Swarovski"},
+    "tags": {
+      "brand": "Swarovski",
+      "brand:wikidata": "Q611115",
+      "brand:wikipedia": "en:Swarovski",
+      "name": "Swarovski",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Thomas Sabo",
+    "lbl": {"en": "Thomas Sabo"},
+    "tags": {"brand": "Thomas Sabo", "name": "Thomas Sabo", "shop": "jewelry"}
+  },
+  {
+    "v": "Tiffany & Company",
+    "lbl": {"en": "Tiffany & Company"},
+    "countryCodes": ["us"],
+    "matchNames": ["tiffany", "tiffany's"],
+    "tags": {
+      "brand": "Tiffany & Company",
+      "brand:wikidata": "Q1066858",
+      "brand:wikipedia": "en:Tiffany & Co.",
+      "name": "Tiffany & Company",
+      "official_name": "Tiffany & Co.",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Tous",
+    "lbl": {"en": "Tous"},
+    "tags": {
+      "brand": "Tous",
+      "brand:wikidata": "Q3815128",
+      "brand:wikipedia": "en:Tous (company)",
+      "name": "Tous",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Warren James",
+    "lbl": {"en": "Warren James"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Warren James",
+      "brand:wikidata": "Q19604616",
+      "brand:wikipedia": "en:Warren James Jewellers",
+      "name": "Warren James",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Zales",
+    "lbl": {"en": "Zales"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Zales",
+      "brand:wikidata": "Q8065305",
+      "brand:wikipedia": "en:Zale Corporation",
+      "name": "Zales",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Адамас",
+    "lbl": {"en": "Адамас"},
+    "countryCodes": ["ru"],
+    "tags": {
+      "brand": "Адамас",
+      "brand:en": "Adamas",
+      "brand:ru": "Адамас",
+      "brand:wikidata": "Q62393709",
+      "name": "Адамас",
+      "name:en": "Adamas",
+      "name:ru": "Адамас",
+      "shop": "jewelry"
+    }
+  },
+  {
+    "v": "Золотая мечта",
+    "lbl": {"en": "Золотая мечта"},
+    "countryCodes": ["by"],
+    "tags": {
+      "brand": "Золотая мечта",
+      "brand:en": "Gold Dream",
+      "brand:ru": "Золотая мечта",
+      "name": "Золотая мечта",
+      "name:en": "Gold Dream",
+      "name:ru": "Золотая мечта",
+      "shop": "jewelry"
+    }
+  }
+]

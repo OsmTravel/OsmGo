@@ -1,0 +1,325 @@
+[
+  {
+    "v": "Camille Albane",
+    "lbl": {"en": "Camille Albane"},
+    "countryCodes": ["fr"],
+    "tags": {
+      "brand": "Camille Albane",
+      "brand:wikidata": "Q62965183",
+      "name": "Camille Albane",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Coiff&Co",
+    "lbl": {"en": "Coiff&Co"},
+    "countryCodes": ["fr"],
+    "tags": {"brand": "Coiff&Co", "name": "Coiff&Co", "shop": "hairdresser"}
+  },
+  {
+    "v": "Cost Cutters",
+    "lbl": {"en": "Cost Cutters"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Cost Cutters",
+      "brand:wikidata": "Q62029366",
+      "name": "Cost Cutters",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Dessange",
+    "lbl": {"en": "Dessange"},
+    "tags": {
+      "brand": "Dessange",
+      "brand:wikidata": "Q62979914",
+      "name": "Dessange",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Fantastic Sams",
+    "lbl": {"en": "Fantastic Sams"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Fantastic Sams",
+      "brand:wikidata": "Q5434222",
+      "brand:wikipedia": "en:Fantastic Sams",
+      "name": "Fantastic Sams",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "First Choice Haircutters",
+    "lbl": {"en": "First Choice Haircutters"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "First Choice Haircutters",
+      "brand:wikidata": "Q5452622",
+      "brand:wikipedia": "en:First Choice Haircutters",
+      "name": "First Choice Haircutters",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Fodrászat",
+    "lbl": {"en": "Fodrászat"},
+    "tags": {"brand": "Fodrászat", "name": "Fodrászat", "shop": "hairdresser"}
+  },
+  {
+    "v": "Franck Provost",
+    "lbl": {"en": "Franck Provost"},
+    "countryCodes": ["be", "fr", "pl"],
+    "tags": {
+      "brand": "Franck Provost",
+      "brand:wikidata": "Q62805922",
+      "brand:wikipedia": "fr:Franck Provost (Salons de coiffure)",
+      "name": "Franck Provost",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Great Clips",
+    "lbl": {"en": "Great Clips"},
+    "countryCodes": ["ca", "us"],
+    "tags": {
+      "brand": "Great Clips",
+      "brand:wikidata": "Q5598967",
+      "brand:wikipedia": "en:Great Clips",
+      "name": "Great Clips",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Hair Cuttery",
+    "lbl": {"en": "Hair Cuttery"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Hair Cuttery",
+      "brand:wikidata": "Q5639484",
+      "brand:wikipedia": "en:Hair Cuttery",
+      "name": "Hair Cuttery",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Hair Express",
+    "lbl": {"en": "Hair Express"},
+    "countryCodes": ["de", "us"],
+    "tags": {
+      "brand": "Hair Express",
+      "brand:wikidata": "Q57550814",
+      "name": "Hair Express",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Hair Studio",
+    "lbl": {"en": "Hair Studio"},
+    "tags": {
+      "brand": "Hair Studio",
+      "name": "Hair Studio",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Hairkiller",
+    "lbl": {"en": "Hairkiller"},
+    "countryCodes": ["at", "de", "lu"],
+    "tags": {
+      "brand": "Hairkiller",
+      "brand:wikidata": "Q58305998",
+      "name": "Hairkiller",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Jean Louis David",
+    "lbl": {"en": "Jean Louis David"},
+    "countryCodes": ["es", "fr", "it", "pl"],
+    "tags": {
+      "brand": "Jean Louis David",
+      "brand:wikidata": "Q64445174",
+      "name": "Jean Louis David",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Kirpykla",
+    "lbl": {"en": "Kirpykla"},
+    "countryCodes": ["lt"],
+    "tags": {"brand": "Kirpykla", "name": "Kirpykla", "shop": "hairdresser"}
+  },
+  {
+    "v": "Klier",
+    "lbl": {"en": "Klier"},
+    "countryCodes": ["at", "cz", "de", "sk"],
+    "tags": {
+      "brand": "Klier",
+      "brand:wikidata": "Q1465159",
+      "brand:wikipedia": "de:Frisör Klier",
+      "name": "Klier",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Klipp",
+    "lbl": {"en": "Klipp"},
+    "countryCodes": ["at"],
+    "tags": {
+      "brand": "Klipp",
+      "brand:wikidata": "Q1737304",
+      "brand:wikipedia": "de:Klipp Frisör",
+      "name": "Klipp",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Marco Aldany",
+    "lbl": {"en": "Marco Aldany"},
+    "tags": {
+      "brand": "Marco Aldany",
+      "name": "Marco Aldany",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Mastercuts",
+    "lbl": {"en": "Mastercuts"},
+    "countryCodes": ["ca", "us"],
+    "tags": {
+      "brand": "Mastercuts",
+      "brand:wikidata": "Q64026258",
+      "name": "Mastercuts",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Pascal Coste",
+    "lbl": {"en": "Pascal Coste"},
+    "countryCodes": ["fr"],
+    "tags": {
+      "brand": "Pascal Coste",
+      "brand:wikidata": "Q66555630",
+      "name": "Pascal Coste",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Saint Algue",
+    "lbl": {"en": "Saint Algue"},
+    "tags": {
+      "brand": "Saint Algue",
+      "brand:wikidata": "Q62973210",
+      "name": "Saint Algue",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Sport Clips",
+    "lbl": {"en": "Sport Clips"},
+    "countryCodes": ["ca", "us"],
+    "matchNames": ["sport clips haircuts", "sports clips"],
+    "tags": {
+      "brand": "Sport Clips",
+      "brand:wikidata": "Q7579310",
+      "name": "Sport Clips",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Super Cut",
+    "lbl": {"en": "Super Cut"},
+    "tags": {
+      "brand": "Super Cut",
+      "brand:wikidata": "Q64139077",
+      "name": "Super Cut",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Supercuts",
+    "lbl": {"en": "Supercuts"},
+    "countryCodes": ["ca", "gb", "us"],
+    "tags": {
+      "brand": "Supercuts",
+      "brand:wikidata": "Q7643239",
+      "brand:wikipedia": "en:Supercuts",
+      "name": "Supercuts",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Tchip",
+    "lbl": {"en": "Tchip"},
+    "countryCodes": ["fr"],
+    "tags": {
+      "brand": "Tchip",
+      "brand:wikidata": "Q62871250",
+      "name": "Tchip",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Ulta Beauty",
+    "lbl": {"en": "The Salon at Ulta Beauty"},
+    "countryCodes": ["us"],
+    "tags": {
+      "alt_name": "Ulta Salon",
+      "brand": "Ulta Beauty",
+      "brand:wikidata": "Q7880076",
+      "brand:wikipedia": "en:Ulta Beauty",
+      "name": "The Salon at Ulta Beauty",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Toni & Guy",
+    "lbl": {"en": "Toni & Guy"},
+    "tags": {
+      "brand": "Toni & Guy",
+      "brand:wikidata": "Q324784",
+      "brand:wikipedia": "en:Toni & Guy",
+      "name": "Toni & Guy",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Top Hair",
+    "lbl": {"en": "Top Hair"},
+    "countryCodes": ["de"],
+    "tags": {
+      "brand": "Top Hair",
+      "brand:wikidata": "Q62523343",
+      "name": "Top Hair",
+      "shop": "hairdresser"
+    }
+  },
+  {
+    "v": "Виктория",
+    "lbl": {"en": "Виктория"},
+    "tags": {"brand": "Виктория", "name": "Виктория", "shop": "hairdresser"}
+  },
+  {
+    "v": "Елена",
+    "lbl": {"en": "Елена"},
+    "tags": {"brand": "Елена", "name": "Елена", "shop": "hairdresser"}
+  },
+  {
+    "v": "Каприз",
+    "lbl": {"en": "Каприз"},
+    "countryCodes": ["ru", "ua"],
+    "tags": {"brand": "Каприз", "name": "Каприз", "shop": "hairdresser"}
+  },
+  {
+    "v": "Фея",
+    "lbl": {"en": "Фея"},
+    "countryCodes": ["ru", "ua"],
+    "tags": {"brand": "Фея", "name": "Фея", "shop": "hairdresser"}
+  },
+  {
+    "v": "Чио Чио",
+    "lbl": {"en": "Чио Чио"},
+    "tags": {"brand": "Чио Чио", "name": "Чио Чио", "shop": "hairdresser"}
+  }
+]

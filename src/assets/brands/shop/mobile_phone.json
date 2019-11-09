@@ -1,0 +1,916 @@
+[
+  {
+    "v": "3 Store",
+    "lbl": {"en": "3 Store"},
+    "countryCodes": ["gb", "it"],
+    "matchNames": ["3", "three", "three store"],
+    "tags": {
+      "brand": "3 Store",
+      "brand:wikidata": "Q407009",
+      "brand:wikipedia": "en:3 (telecommunications)",
+      "name": "3 Store",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "A1",
+    "lbl": {"en": "A1"},
+    "countryCodes": ["at", "bg", "by", "hr", "si"],
+    "matchNames": ["velcom", "velcom|a1", "велком"],
+    "nomatch": ["shop/telecommunication|A1"],
+    "tags": {
+      "brand": "A1",
+      "brand:wikidata": "Q688755",
+      "brand:wikipedia": "en:A1 Telekom Austria Group",
+      "name": "A1",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "AT&T",
+    "lbl": {"en": "AT&T"},
+    "countryCodes": ["mx", "us"],
+    "matchNames": ["att mobile", "att mobility", "att wireless"],
+    "tags": {
+      "brand": "AT&T",
+      "brand:wikidata": "Q298594",
+      "brand:wikipedia": "en:AT&T Mobility",
+      "name": "AT&T",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Bell",
+    "lbl": {"en": "Bell"},
+    "countryCodes": ["ca"],
+    "matchNames": ["bell mobile", "bell mobility", "bell wireless"],
+    "nomatch": ["shop/telecommunication|Bell"],
+    "tags": {
+      "brand": "Bell",
+      "brand:wikidata": "Q2894594",
+      "brand:wikipedia": "en:Bell Mobility",
+      "name": "Bell",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Best Buy Mobile",
+    "lbl": {"en": "Best Buy Mobile"},
+    "countryCodes": ["ca"],
+    "nomatch": [
+      "amenity/vending_machine|Best Buy Express",
+      "shop/electronics|Best Buy"
+    ],
+    "tags": {
+      "brand": "Best Buy Mobile",
+      "brand:wikidata": "Q533415",
+      "brand:wikipedia": "en:Best Buy",
+      "name": "Best Buy Mobile",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Bitė",
+    "lbl": {"en": "Bitė"},
+    "countryCodes": ["lt"],
+    "tags": {
+      "brand": "Bitė",
+      "brand:wikidata": "Q796010",
+      "brand:wikipedia": "lt:Bitės grupė",
+      "name": "Bitė",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Boost Mobile",
+    "lbl": {"en": "Boost Mobile"},
+    "countryCodes": ["us"],
+    "matchNames": ["boost"],
+    "tags": {
+      "brand": "Boost Mobile",
+      "brand:wikidata": "Q4943790",
+      "brand:wikipedia": "en:Boost Mobile",
+      "name": "Boost Mobile",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Bouygues Telecom",
+    "lbl": {"en": "Bouygues Telecom"},
+    "countryCodes": ["fr"],
+    "tags": {
+      "brand": "Bouygues Telecom",
+      "brand:wikidata": "Q581438",
+      "brand:wikipedia": "fr:Bouygues Telecom",
+      "name": "Bouygues Telecom",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Carphone Warehouse",
+    "lbl": {"en": "Carphone Warehouse"},
+    "countryCodes": ["by", "gb", "ie"],
+    "matchNames": ["the carphone warehouse"],
+    "tags": {
+      "brand": "Carphone Warehouse",
+      "brand:wikidata": "Q118046",
+      "brand:wikipedia": "en:Carphone Warehouse",
+      "name": "Carphone Warehouse",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Chatr",
+    "lbl": {"en": "Chatr"},
+    "countryCodes": ["ca"],
+    "matchNames": ["Chatr Mobile"],
+    "tags": {
+      "brand": "Chatr",
+      "brand:wikidata": "Q5087766",
+      "brand:wikipedia": "en:Chatr",
+      "name": "Chatr",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Claro",
+    "lbl": {"en": "Claro"},
+    "tags": {
+      "brand": "Claro",
+      "brand:wikidata": "Q1770208",
+      "brand:wikipedia": "en:Claro (company)",
+      "name": "Claro",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Cricket Wireless",
+    "lbl": {"en": "Cricket Wireless"},
+    "countryCodes": ["us"],
+    "matchNames": ["cricket"],
+    "tags": {
+      "brand": "Cricket Wireless",
+      "brand:wikidata": "Q5184987",
+      "brand:wikipedia": "en:Cricket Wireless",
+      "name": "Cricket Wireless",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Digicel",
+    "lbl": {"en": "Digicel"},
+    "tags": {
+      "brand": "Digicel",
+      "brand:wikidata": "Q2117506",
+      "brand:wikipedia": "en:Digicel",
+      "name": "Digicel",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "EE",
+    "lbl": {"en": "EE"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "EE",
+      "brand:wikidata": "Q5322942",
+      "brand:wikipedia": "en:EE Limited",
+      "name": "EE",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Entel",
+    "lbl": {"en": "Entel"},
+    "countryCodes": ["cl", "pe"],
+    "tags": {
+      "brand": "Entel",
+      "brand:wikidata": "Q450420",
+      "brand:wikipedia": "en:Entel (Chile)",
+      "name": "Entel",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Fido",
+    "lbl": {"en": "Fido"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Fido",
+      "brand:wikidata": "Q3071471",
+      "brand:wikipedia": "en:Fido Solutions",
+      "name": "Fido",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Freedom Mobile",
+    "lbl": {"en": "Freedom Mobile"},
+    "countryCodes": ["ca"],
+    "matchNames": ["freedom", "wind mobile"],
+    "tags": {
+      "brand": "Freedom Mobile",
+      "brand:wikidata": "Q8023931",
+      "brand:wikipedia": "en:Freedom Mobile",
+      "name": "Freedom Mobile",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Koodo",
+    "lbl": {"en": "Koodo"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Koodo",
+      "brand:wikidata": "Q6430529",
+      "brand:wikipedia": "en:Koodo Mobile",
+      "name": "Koodo",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "MEO",
+    "lbl": {"en": "MEO"},
+    "matchNames": ["loja meo"],
+    "tags": {
+      "brand": "MEO",
+      "brand:wikidata": "Q3306167",
+      "brand:wikipedia": "en:MEO (telecommunications company)",
+      "name": "MEO",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "MTN",
+    "lbl": {"en": "MTN"},
+    "matchNames": ["agence mtn"],
+    "tags": {
+      "brand": "MTN",
+      "brand:wikidata": "Q1813361",
+      "brand:wikipedia": "en:MTN Group",
+      "name": "MTN",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "MetroPCS",
+    "lbl": {"en": "MetroPCS"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "MetroPCS",
+      "brand:wikidata": "Q1925685",
+      "brand:wikipedia": "en:Metro by T-Mobile",
+      "name": "MetroPCS",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Mobilcom Debitel",
+    "lbl": {"en": "Mobilcom Debitel"},
+    "countryCodes": ["de", "ir"],
+    "matchNames": ["debitel"],
+    "tags": {
+      "brand": "Mobilcom Debitel",
+      "brand:wikidata": "Q344744",
+      "brand:wikipedia": "en:Debitel",
+      "name": "Mobilcom Debitel",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Moov",
+    "lbl": {"en": "Moov"},
+    "countryCodes": ["ci", "tg"],
+    "matchNames": ["agence moov"],
+    "tags": {
+      "brand": "Moov",
+      "brand:wikidata": "Q3323637",
+      "brand:wikipedia": "fr:Moov Côte d'Ivoire",
+      "name": "Moov",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Movistar",
+    "lbl": {"en": "Movistar"},
+    "tags": {
+      "brand": "Movistar",
+      "brand:wikidata": "Q967735",
+      "brand:wikipedia": "en:Movistar",
+      "name": "Movistar",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "NOS",
+    "lbl": {"en": "NOS"},
+    "tags": {
+      "brand": "NOS",
+      "brand:wikidata": "Q136331",
+      "brand:wikipedia": "en:NOS (Portuguese media company)",
+      "name": "NOS",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "O2",
+    "lbl": {"en": "O2"},
+    "countryCodes": ["cz", "de", "gb", "ie", "sk"],
+    "tags": {
+      "brand": "O2",
+      "brand:wikidata": "Q1759255",
+      "brand:wikipedia": "en:Telefónica Europe",
+      "name": "O2",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Optie1",
+    "lbl": {"en": "Optie1"},
+    "countryCodes": ["nl"],
+    "tags": {
+      "brand": "Optie1",
+      "brand:wikidata": "Q62393564",
+      "name": "Optie1",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Optus",
+    "lbl": {"en": "Optus"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "Optus",
+      "brand:wikidata": "Q865038",
+      "name": "Optus",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Orange",
+    "lbl": {"en": "Orange"},
+    "matchNames": ["agence orange"],
+    "tags": {
+      "brand": "Orange",
+      "brand:wikidata": "Q1431486",
+      "brand:wikipedia": "fr:Orange (entreprise)",
+      "name": "Orange",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Personal",
+    "lbl": {"en": "Personal"},
+    "countryCodes": ["ar", "py"],
+    "tags": {
+      "brand": "Personal",
+      "brand:wikidata": "Q10933021",
+      "brand:wikipedia": "es:Personal (Argentina)",
+      "name": "Personal",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Phone House",
+    "lbl": {"en": "Phone House"},
+    "countryCodes": ["de", "es", "fr", "nl", "pt"],
+    "matchNames": ["the phone house"],
+    "tags": {
+      "brand": "Phone House",
+      "brand:wikidata": "Q118046",
+      "brand:wikipedia": "en:Carphone Warehouse",
+      "name": "Phone House",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Play",
+    "lbl": {"en": "Play"},
+    "countryCodes": ["pl"],
+    "tags": {
+      "brand": "Play",
+      "brand:wikidata": "Q7202998",
+      "brand:wikipedia": "pl:Play (sieć telefonii komórkowej)",
+      "name": "Play",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Plus",
+    "lbl": {"en": "Plus"},
+    "countryCodes": ["pl"],
+    "nomatch": ["amenity/fuel|Gas Plus", "shop/supermarket|PLUS"],
+    "tags": {
+      "brand": "Plus",
+      "brand:wikidata": "Q7205598",
+      "brand:wikipedia": "pl:Plus (sieć telefonii komórkowej)",
+      "name": "Plus",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Rogers",
+    "lbl": {"en": "Rogers"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Rogers",
+      "brand:wikidata": "Q3439663",
+      "brand:wikipedia": "en:Rogers Wireless",
+      "name": "Rogers",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "SFR",
+    "lbl": {"en": "SFR"},
+    "countryCodes": ["fr", "lu"],
+    "matchNames": ["espace sfr"],
+    "tags": {
+      "brand": "SFR",
+      "brand:wikidata": "Q218765",
+      "brand:wikipedia": "en:SFR",
+      "name": "SFR",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Sprint",
+    "lbl": {"en": "Sprint"},
+    "nomatch": ["amenity/fuel|Sprint"],
+    "tags": {
+      "brand": "Sprint",
+      "brand:wikidata": "Q301965",
+      "brand:wikipedia": "en:Sprint Corporation",
+      "name": "Sprint",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "T-Mobile",
+    "lbl": {"en": "T-Mobile"},
+    "tags": {
+      "brand": "T-Mobile",
+      "brand:wikidata": "Q327634",
+      "brand:wikipedia": "en:T-Mobile",
+      "name": "T-Mobile",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "TIM",
+    "lbl": {"en": "TIM"},
+    "countryCodes": ["br", "it"],
+    "tags": {
+      "brand": "TIM",
+      "brand:wikidata": "Q144617",
+      "brand:wikipedia": "en:Telecom Italia",
+      "name": "TIM",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Tbooth Wireless",
+    "lbl": {"en": "Tbooth Wireless"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Tbooth Wireless",
+      "brand:wikidata": "Q7690597",
+      "name": "Tbooth Wireless",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Telcel",
+    "lbl": {"en": "Telcel"},
+    "countryCodes": ["cu", "mx"],
+    "tags": {
+      "brand": "Telcel",
+      "brand:wikidata": "Q3517255",
+      "brand:wikipedia": "en:Telcel",
+      "name": "Telcel",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Tele2",
+    "lbl": {"en": "Tele2"},
+    "tags": {
+      "brand": "Tele2",
+      "brand:wikidata": "Q309865",
+      "brand:wikipedia": "en:Tele2",
+      "name": "Tele2",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Telekom",
+    "lbl": {"en": "Telekom"},
+    "countryCodes": ["de", "hu", "ro", "si", "sk"],
+    "matchNames": ["telekom shop"],
+    "tags": {
+      "brand": "Telekom",
+      "brand:wikidata": "Q9396",
+      "brand:wikipedia": "en:Deutsche Telekom",
+      "name": "Telekom",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Telenor",
+    "lbl": {"en": "Telenor"},
+    "tags": {
+      "brand": "Telenor",
+      "brand:wikidata": "Q845632",
+      "brand:wikipedia": "en:Telenor",
+      "name": "Telenor",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Telia",
+    "lbl": {"en": "Telia"},
+    "countryCodes": ["dk", "fi", "lt", "no", "se"],
+    "tags": {
+      "brand": "Telia",
+      "brand:wikidata": "Q862303",
+      "brand:wikipedia": "en:Telia Company",
+      "name": "Telia",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Telstra",
+    "lbl": {"en": "Telstra"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "Telstra",
+      "brand:wikidata": "Q721162",
+      "brand:wikipedia": "en:Telstra",
+      "name": "Telstra",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Telus",
+    "lbl": {"en": "Telus"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Telus",
+      "brand:wikidata": "Q165858",
+      "brand:wikipedia": "en:Telus",
+      "name": "Telus",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Turkcell",
+    "lbl": {"en": "Turkcell"},
+    "countryCodes": ["cy", "tr"],
+    "tags": {
+      "brand": "Turkcell",
+      "brand:wikidata": "Q283852",
+      "brand:wikipedia": "en:Turkcell",
+      "name": "Turkcell",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "U.S. Cellular",
+    "lbl": {"en": "U.S. Cellular"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "U.S. Cellular",
+      "brand:wikidata": "Q2466256",
+      "brand:wikipedia": "en:U.S. Cellular",
+      "name": "U.S. Cellular",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Verizon Wireless",
+    "lbl": {"en": "Verizon Wireless"},
+    "countryCodes": ["us"],
+    "matchNames": ["verizon"],
+    "tags": {
+      "brand": "Verizon Wireless",
+      "brand:wikidata": "Q919641",
+      "brand:wikipedia": "en:Verizon Wireless",
+      "name": "Verizon Wireless",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Vidéotron",
+    "lbl": {"en": "Vidéotron"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Vidéotron",
+      "brand:wikidata": "Q2396830",
+      "brand:wikipedia": "en:Vidéotron",
+      "name": "Vidéotron",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Virgin Mobile",
+    "lbl": {"en": "Virgin Mobile~(Canada)"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "Virgin Mobile",
+      "brand:wikidata": "Q3560641",
+      "brand:wikipedia": "en:Virgin Mobile Canada",
+      "name": "Virgin Mobile",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Vivo",
+    "lbl": {"en": "Vivo"},
+    "tags": {
+      "brand": "Vivo",
+      "brand:wikidata": "Q18301787",
+      "brand:wikipedia": "en:Vivo (technology company)",
+      "name": "Vivo",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Vodafone",
+    "lbl": {"en": "Vodafone"},
+    "matchNames": ["vodafone shop"],
+    "tags": {
+      "brand": "Vodafone",
+      "brand:wikidata": "Q122141",
+      "brand:wikipedia": "en:Vodafone",
+      "name": "Vodafone",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "WIFI_ETECSA",
+    "lbl": {"en": "WIFI_ETECSA"},
+    "countryCodes": ["cu"],
+    "tags": {
+      "brand": "WIFI_ETECSA",
+      "brand:wikidata": "Q490323",
+      "brand:wikipedia": "es:Empresa de Telecomunicaciones de Cuba",
+      "name": "WIFI_ETECSA",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "WOW! Mobile Boutique",
+    "lbl": {"en": "WOW! Mobile Boutique"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "WOW! Mobile Boutique",
+      "brand:wikidata": "Q64847598",
+      "name": "WOW! Mobile Boutique",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Wind",
+    "lbl": {"en": "Wind"},
+    "countryCodes": ["it"],
+    "tags": {
+      "brand": "Wind",
+      "brand:wikidata": "Q650467",
+      "brand:wikipedia": "en:WIND (Italy)",
+      "name": "Wind",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "WirelessWave",
+    "lbl": {"en": "WirelessWave"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "WirelessWave",
+      "brand:wikidata": "Q8026815",
+      "name": "WirelessWave",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Yoigo",
+    "lbl": {"en": "Yoigo"},
+    "countryCodes": ["es"],
+    "tags": {
+      "brand": "Yoigo",
+      "brand:wikidata": "Q2630989",
+      "brand:wikipedia": "en:Yoigo",
+      "name": "Yoigo",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "au",
+    "lbl": {"en": "auショップ"},
+    "countryCodes": ["jp"],
+    "matchNames": ["au"],
+    "tags": {
+      "brand": "au",
+      "brand:ja": "au",
+      "brand:wikidata": "Q307110",
+      "brand:wikipedia": "ja:Au (携帯電話)",
+      "name": "auショップ",
+      "name:en": "au",
+      "name:ja": "auショップ",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Алло",
+    "lbl": {"en": "Алло"},
+    "countryCodes": ["md", "ua"],
+    "tags": {
+      "brand": "Алло",
+      "brand:wikidata": "Q18683057",
+      "brand:wikipedia": "uk:Алло (торгова мережа)",
+      "name": "Алло",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Билайн",
+    "lbl": {"en": "Билайн"},
+    "countryCodes": ["kg", "kz", "ru"],
+    "tags": {
+      "brand": "Билайн",
+      "brand:en": "Beeline",
+      "brand:wikidata": "Q402880",
+      "brand:wikipedia": "en:Beeline (brand)",
+      "name": "Билайн",
+      "name:en": "Beeline",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Евросеть",
+    "lbl": {"en": "Евросеть"},
+    "countryCodes": ["by", "kz", "ru", "ua"],
+    "tags": {
+      "brand": "Евросеть",
+      "brand:en": "Euroset",
+      "brand:wikidata": "Q65310",
+      "brand:wikipedia": "en:Euroset",
+      "name": "Евросеть",
+      "name:en": "Euroset",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Київстар",
+    "lbl": {"en": "Київстар"},
+    "countryCodes": ["ua"],
+    "tags": {
+      "brand": "Київстар",
+      "brand:en": "Kyivstar",
+      "brand:wikidata": "Q2288463",
+      "brand:wikipedia": "en:Kyivstar",
+      "name": "Київстар",
+      "name:en": "Kyivstar",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "МТС",
+    "lbl": {"en": "МТС"},
+    "countryCodes": ["by", "ru", "ua"],
+    "nomatch": ["shop/telecommunication|МТС"],
+    "tags": {
+      "brand": "МТС",
+      "brand:en": "MTS",
+      "brand:wikidata": "Q1368919",
+      "brand:wikipedia": "en:MTS (network provider)",
+      "name": "МТС",
+      "name:en": "MTS",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Мегафон",
+    "lbl": {"en": "Мегафон"},
+    "countryCodes": ["ru", "tj"],
+    "tags": {
+      "brand": "Мегафон",
+      "brand:en": "MegaFon",
+      "brand:wikidata": "Q1720713",
+      "brand:wikipedia": "en:MegaFon",
+      "name": "Мегафон",
+      "name:en": "MegaFon",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "НА'СВЯЗИ",
+    "lbl": {"en": "НА'СВЯЗИ"},
+    "countryCodes": ["by"],
+    "tags": {"brand": "НА'СВЯЗИ", "name": "НА'СВЯЗИ", "shop": "mobile_phone"}
+  },
+  {
+    "v": "Связной",
+    "lbl": {"en": "Связной"},
+    "countryCodes": ["by", "ru", "uz"],
+    "tags": {
+      "brand": "Связной",
+      "brand:en": "Svyaznoy",
+      "brand:wikidata": "Q65371",
+      "brand:wikipedia": "en:Svyaznoy",
+      "name": "Связной",
+      "name:en": "Svyaznoy",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "Теле2",
+    "lbl": {"en": "Теле2"},
+    "countryCodes": ["ru"],
+    "tags": {
+      "brand": "Теле2",
+      "brand:en": "Tele2",
+      "brand:wikidata": "Q309865",
+      "brand:wikipedia": "en:Tele2",
+      "name": "Теле2",
+      "name:en": "Tele2",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "ソフトバンク",
+    "lbl": {"en": "ソフトバンク"},
+    "countryCodes": ["jp"],
+    "tags": {
+      "brand": "ソフトバンク",
+      "brand:en": "SoftBank Telecom",
+      "brand:ja": "ソフトバンク",
+      "brand:wikidata": "Q7553832",
+      "brand:wikipedia": "en:SoftBank Telecom",
+      "name": "ソフトバンク",
+      "name:en": "SoftBank Telecom",
+      "name:ja": "ソフトバンク",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "ソフトバンクショップ",
+    "lbl": {"en": "ソフトバンクショップ"},
+    "countryCodes": ["jp"],
+    "tags": {
+      "brand": "ソフトバンクショップ",
+      "brand:en": "SoftBankShop",
+      "brand:ja": "ソフトバンクショップ",
+      "brand:wikidata": "Q11315281",
+      "brand:wikipedia": "ja:ソフトバンクショップ",
+      "name": "ソフトバンクショップ",
+      "name:en": "SoftBankShop",
+      "name:ja": "ソフトバンクショップ",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "ドコモショップ",
+    "lbl": {"en": "ドコモショップ"},
+    "countryCodes": ["jp"],
+    "tags": {
+      "brand": "ドコモショップ",
+      "brand:en": "DoCoMo Shop",
+      "brand:ja": "ドコモショップ",
+      "brand:wikidata": "Q853958",
+      "brand:wikipedia": "ja:NTTドコモ",
+      "name": "ドコモショップ",
+      "name:en": "DoCoMo Shop",
+      "name:ja": "ドコモショップ",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "ワイモバイル",
+    "lbl": {"en": "ワイモバイル"},
+    "countryCodes": ["jp"],
+    "tags": {
+      "brand": "ワイモバイル",
+      "brand:ja": "ワイモバイル",
+      "name": "ワイモバイル",
+      "name:ja": "ワイモバイル",
+      "shop": "mobile_phone"
+    }
+  },
+  {
+    "v": "台灣大哥大",
+    "lbl": {"en": "台灣大哥大"},
+    "countryCodes": ["tw"],
+    "tags": {
+      "brand": "台灣大哥大",
+      "brand:en": "Taiwan Mobile",
+      "brand:wikidata": "Q5943259",
+      "brand:wikipedia": "zh:台灣大哥大",
+      "brand:zh": "台灣大哥大",
+      "name": "台灣大哥大",
+      "name:en": "Taiwan Mobile",
+      "name:zh": "台灣大哥大",
+      "shop": "mobile_phone"
+    }
+  }
+]

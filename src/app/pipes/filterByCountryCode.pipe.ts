@@ -11,6 +11,8 @@ export class FilterByCountryCode  {
             return items;
         }
        
-        return items.filter(item => !item.countryCodes || item.countryCodes.includes(countryCode));
+        return items.filter(item => {
+           return  !item.countryCodes || item.countryCodes.map( o=> o.toUpperCase()).includes(countryCode)
+        });
     }
 }

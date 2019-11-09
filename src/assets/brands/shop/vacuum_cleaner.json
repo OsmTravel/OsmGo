@@ -1,0 +1,14 @@
+[
+  {
+    "v": "Oreck",
+    "lbl": {"en": "Oreck"},
+    "countryCodes": ["us"],
+    "matchNames": ["oreck vacuums"],
+    "tags": {
+      "brand": "Oreck",
+      "brand:wikidata": "Q57273844",
+      "name": "Oreck",
+      "shop": "vacuum_cleaner"
+    }
+  }
+]

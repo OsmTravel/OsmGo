@@ -1,0 +1,33 @@
+[
+  {
+    "v": "Boys & Girls Club",
+    "lbl": {"en": "Boys & Girls Club"},
+    "countryCodes": ["us"],
+    "tags": {
+      "amenity": "social_facility",
+      "brand": "Boys & Girls Club",
+      "brand:wikidata": "Q2923055",
+      "brand:wikipedia": "en:Boys & Girls Clubs of America",
+      "name": "Boys & Girls Club",
+      "social_facility": "outreach",
+      "social_facility:for": "children"
+    }
+  },
+  {
+    "v": "VA",
+    "lbl": {"en": "Vet Center"},
+    "countryCodes": ["us"],
+    "tags": {
+      "amenity": "social_facility",
+      "brand": "VA",
+      "brand:wikidata": "Q6580225",
+      "brand:wikipedia": "en:Veterans Health Administration",
+      "healthcare": "counselling",
+      "healthcare:counselling": "psychiatry",
+      "healthcare:for": "veterans",
+      "name": "Vet Center",
+      "social_facility": "healthcare;outreach",
+      "social_facility:for": "veterans"
+    }
+  }
+]

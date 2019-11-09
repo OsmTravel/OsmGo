@@ -1,0 +1,414 @@
+[
+  {
+    "v": "Alko",
+    "lbl": {"en": "Alko"},
+    "countryCodes": ["fi"],
+    "tags": {
+      "brand": "Alko",
+      "brand:wikidata": "Q1849187",
+      "brand:wikipedia": "en:Alko",
+      "name": "Alko",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "BC Liquor Store",
+    "lbl": {"en": "BC Liquor Store"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "BC Liquor Store",
+      "brand:wikidata": "Q43079557",
+      "brand:wikipedia": "en:BC Liquor Stores",
+      "name": "BC Liquor Store",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "BWS",
+    "lbl": {"en": "BWS"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "BWS",
+      "brand:wikidata": "Q4836848",
+      "brand:wikipedia": "en:BWS (liquor retailer)",
+      "name": "BWS",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Bargain Booze",
+    "lbl": {"en": "Bargain Booze"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Bargain Booze",
+      "brand:wikidata": "Q16971315",
+      "brand:wikipedia": "en:Bargain Booze",
+      "name": "Bargain Booze",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "BevMo!",
+    "lbl": {"en": "BevMo!"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "BevMo!",
+      "brand:wikidata": "Q4899308",
+      "brand:wikipedia": "en:BevMo!",
+      "name": "BevMo!",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Cellarbrations",
+    "lbl": {"en": "Cellarbrations"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "Cellarbrations",
+      "name": "Cellarbrations",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Dan Murphy's",
+    "lbl": {"en": "Dan Murphy's"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "Dan Murphy's",
+      "brand:wikidata": "Q5214075",
+      "brand:wikipedia": "en:Dan Murphy's",
+      "name": "Dan Murphy's",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Fine Wine & Good Spirits",
+    "lbl": {"en": "Fine Wine & Good Spirits"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Fine Wine & Good Spirits",
+      "brand:wikidata": "Q64514776",
+      "name": "Fine Wine & Good Spirits",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Gall & Gall",
+    "lbl": {"en": "Gall & Gall"},
+    "countryCodes": ["nl"],
+    "tags": {
+      "brand": "Gall & Gall",
+      "brand:wikidata": "Q13639185",
+      "brand:wikipedia": "nl:Gall & Gall",
+      "name": "Gall & Gall",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "LCBO",
+    "lbl": {"en": "LCBO"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "LCBO",
+      "brand:wikidata": "Q845263",
+      "brand:wikipedia": "en:Liquor Control Board of Ontario",
+      "name": "LCBO",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Liquor Depot",
+    "lbl": {"en": "Liquor Depot"},
+    "countryCodes": ["ca"],
+    "tags": {"brand": "Liquor Depot", "name": "Liquor Depot", "shop": "alcohol"}
+  },
+  {
+    "v": "Liquorland",
+    "lbl": {"en": "Liquorland"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "Liquorland",
+      "brand:wikidata": "Q2283837",
+      "brand:wikipedia": "en:Liquorland",
+      "name": "Liquorland",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Majestic",
+    "lbl": {"en": "Majestic"},
+    "countryCodes": ["gb"],
+    "matchNames": ["majestic wine", "majestic wine warehouse"],
+    "tags": {
+      "brand": "Majestic",
+      "brand:wikidata": "Q6737725",
+      "brand:wikipedia": "en:Majestic Wine",
+      "name": "Majestic",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Mitra",
+    "lbl": {"en": "Mitra"},
+    "countryCodes": ["nl"],
+    "tags": {"brand": "Mitra", "name": "Mitra", "shop": "alcohol"}
+  },
+  {
+    "v": "Nicolas",
+    "lbl": {"en": "Nicolas"},
+    "countryCodes": ["be", "fr", "gb"],
+    "tags": {
+      "brand": "Nicolas",
+      "brand:wikidata": "Q3340012",
+      "brand:wikipedia": "en:Nicolas (wine retailer)",
+      "name": "Nicolas",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Oddbins",
+    "lbl": {"en": "Oddbins"},
+    "countryCodes": ["gb"],
+    "tags": {
+      "brand": "Oddbins",
+      "brand:wikidata": "Q7077472",
+      "brand:wikipedia": "en:Oddbins",
+      "name": "Oddbins",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "SAQ",
+    "lbl": {"en": "SAQ"},
+    "countryCodes": ["ca"],
+    "nomatch": ["shop/alcohol|SAQ Express", "shop/alcohol|SAQ Sélection"],
+    "tags": {
+      "brand": "SAQ",
+      "brand:wikidata": "Q3488077",
+      "brand:wikipedia": "en:Société des alcools du Québec",
+      "name": "SAQ",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "SAQ Express",
+    "lbl": {"en": "SAQ Express"},
+    "countryCodes": ["ca"],
+    "nomatch": ["shop/alcohol|SAQ", "shop/alcohol|SAQ Sélection"],
+    "tags": {
+      "brand": "SAQ Express",
+      "brand:wikidata": "Q3488077",
+      "brand:wikipedia": "en:Société des alcools du Québec",
+      "name": "SAQ Express",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "SAQ Sélection",
+    "lbl": {"en": "SAQ Sélection"},
+    "countryCodes": ["ca"],
+    "nomatch": ["shop/alcohol|SAQ", "shop/alcohol|SAQ Express"],
+    "tags": {
+      "brand": "SAQ Sélection",
+      "brand:wikidata": "Q3488077",
+      "brand:wikipedia": "en:Société des alcools du Québec",
+      "name": "SAQ Sélection",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Spec's",
+    "lbl": {"en": "Spec's"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Spec's",
+      "brand:wikidata": "Q7574415",
+      "brand:wikipedia": "en:Spec's Wine, Spirits & Finer Foods",
+      "name": "Spec's",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Super Liquor",
+    "lbl": {"en": "Super Liquor"},
+    "countryCodes": ["nz"],
+    "tags": {"brand": "Super Liquor", "name": "Super Liquor", "shop": "alcohol"}
+  },
+  {
+    "v": "Systembolaget",
+    "lbl": {"en": "Systembolaget"},
+    "countryCodes": ["se"],
+    "tags": {
+      "brand": "Systembolaget",
+      "brand:wikidata": "Q1476113",
+      "brand:wikipedia": "en:Systembolaget",
+      "name": "Systembolaget",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "The Beer Store",
+    "lbl": {"en": "The Beer Store"},
+    "countryCodes": ["ca"],
+    "tags": {
+      "brand": "The Beer Store",
+      "brand:wikidata": "Q16243674",
+      "brand:wikipedia": "en:The Beer Store",
+      "name": "The Beer Store",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Thirsty Camel",
+    "lbl": {"en": "Thirsty Camel"},
+    "countryCodes": ["au"],
+    "tags": {
+      "brand": "Thirsty Camel",
+      "name": "Thirsty Camel",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Total Wine",
+    "lbl": {"en": "Total Wine"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Total Wine",
+      "brand:wikidata": "Q7828084",
+      "brand:wikipedia": "en:Total Wine & More",
+      "name": "Total Wine",
+      "official_name": "Total Wine & More",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Virginia ABC",
+    "lbl": {"en": "Virginia ABC"},
+    "countryCodes": ["us"],
+    "tags": {
+      "brand": "Virginia ABC",
+      "brand:wikidata": "Q7934236",
+      "brand:wikipedia": "en:Virginia Alcoholic Beverage Control Authority",
+      "name": "Virginia ABC",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Алкомаркет",
+    "lbl": {"en": "Алкомаркет"},
+    "countryCodes": ["kz"],
+    "tags": {"brand": "Алкомаркет", "name": "Алкомаркет", "shop": "alcohol"}
+  },
+  {
+    "v": "Ароматный мир",
+    "lbl": {"en": "Ароматный мир"},
+    "countryCodes": ["ru"],
+    "tags": {
+      "brand": "Ароматный мир",
+      "name": "Ароматный мир",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Бристоль",
+    "lbl": {"en": "Бристоль"},
+    "countryCodes": ["ru"],
+    "matchTags": ["shop/convenience"],
+    "tags": {
+      "brand": "Бристоль",
+      "brand:wikidata": "Q59155583",
+      "brand:wikipedia": "ru:Бристоль (сеть магазинов)",
+      "name": "Бристоль",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Винлаб",
+    "lbl": {"en": "Винлаб"},
+    "countryCodes": ["ru"],
+    "tags": {"brand": "Винлаб", "name": "Винлаб", "shop": "alcohol"}
+  },
+  {
+    "v": "Горилка",
+    "lbl": {"en": "Горилка"},
+    "countryCodes": ["kz", "ru"],
+    "tags": {"brand": "Горилка", "name": "Горилка", "shop": "alcohol"}
+  },
+  {
+    "v": "Градус",
+    "lbl": {"en": "Градус"},
+    "countryCodes": ["ru", "ua"],
+    "tags": {"brand": "Градус", "name": "Градус", "shop": "alcohol"}
+  },
+  {
+    "v": "Градусы",
+    "lbl": {"en": "Градусы"},
+    "countryCodes": ["ru"],
+    "tags": {"brand": "Градусы", "name": "Градусы", "shop": "alcohol"}
+  },
+  {
+    "v": "Красное & Белое",
+    "lbl": {"en": "Красное & Белое"},
+    "countryCodes": ["ru"],
+    "matchNames": ["красное и белое"],
+    "tags": {
+      "brand": "Красное & Белое",
+      "brand:en": "Red&White",
+      "brand:wikidata": "Q24933790",
+      "brand:wikipedia": "en:Krasnoe & Beloe",
+      "name": "Красное & Белое",
+      "name:en": "Red&White",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "Кристалл",
+    "lbl": {"en": "Кристалл"},
+    "countryCodes": ["by", "ru"],
+    "matchTags": ["shop/convenience"],
+    "tags": {"brand": "Кристалл", "name": "Кристалл", "shop": "alcohol"}
+  },
+  {
+    "v": "Лион",
+    "lbl": {"en": "Лион"},
+    "countryCodes": ["ru"],
+    "tags": {"brand": "Лион", "name": "Лион", "shop": "alcohol"}
+  },
+  {
+    "v": "Норман",
+    "lbl": {"en": "Норман"},
+    "countryCodes": ["ru"],
+    "tags": {"brand": "Норман", "name": "Норман", "shop": "alcohol"}
+  },
+  {
+    "v": "Отдохни",
+    "lbl": {"en": "Отдохни"},
+    "countryCodes": ["ru"],
+    "tags": {"brand": "Отдохни", "name": "Отдохни", "shop": "alcohol"}
+  },
+  {
+    "v": "Чарка до свята",
+    "lbl": {"en": "Чарка до свята"},
+    "tags": {
+      "brand": "Чарка до свята",
+      "name": "Чарка до свята",
+      "shop": "alcohol"
+    }
+  },
+  {
+    "v": "カクヤス",
+    "lbl": {"en": "カクヤス"},
+    "countryCodes": ["jp"],
+    "tags": {
+      "brand": "カクヤス",
+      "brand:en": "Kakuyasu",
+      "brand:ja": "カクヤス",
+      "brand:wikidata": "Q11293990",
+      "brand:wikipedia": "ja:カクヤス",
+      "name": "カクヤス",
+      "name:en": "Kakuyasu",
+      "name:ja": "カクヤス",
+      "shop": "alcohol"
+    }
+  }
+]

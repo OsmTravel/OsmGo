@@ -19,9 +19,10 @@
                 <ion-label> 
                     <b>{{option.lbl[language] || option.lbl['en'] }}</b>
                     <br> {{option.v}}
+                   
                 </ion-label>
 
-                <ion-radio [value]="option.v"></ion-radio>
+                <ion-radio [value]="option"></ion-radio>
 
             </ion-item>
         </ion-radio-group>

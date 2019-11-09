@@ -1,0 +1,28 @@
+[
+  {
+    "v": "Granngården",
+    "lbl": {"en": "Granngården"},
+    "countryCodes": ["se"],
+    "tags": {
+      "brand": "Granngården",
+      "brand:wikidata": "Q10508136",
+      "brand:wikipedia": "sv:Granngården AB",
+      "name": "Granngården",
+      "shop": "agrarian"
+    }
+  },
+  {
+    "v": "Southern States",
+    "lbl": {"en": "Southern States"},
+    "countryCodes": ["us"],
+    "tags": {
+      "agrarian": "seed;feed;tools",
+      "brand": "Southern States",
+      "brand:wikidata": "Q7570508",
+      "brand:wikipedia": "en:Southern States Cooperative",
+      "name": "Southern States",
+      "official_name": "Southern States Cooperative",
+      "shop": "agrarian"
+    }
+  }
+]

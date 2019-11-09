@@ -1,0 +1,87 @@
+[
+  {
+    "v": "Harley-Davidson",
+    "lbl": {"en": "Harley-Davidson"},
+    "tags": {
+      "brand": "Harley-Davidson",
+      "brand:wikidata": "Q192814",
+      "brand:wikipedia": "en:Harley-Davidson",
+      "name": "Harley-Davidson",
+      "shop": "motorcycle"
+    }
+  },
+  {
+    "v": "Honda",
+    "lbl": {"en": "Honda"},
+    "nomatch": ["shop/car|Honda"],
+    "tags": {
+      "brand": "Honda",
+      "brand:wikidata": "Q9584",
+      "brand:wikipedia": "en:Honda",
+      "name": "Honda",
+      "shop": "motorcycle"
+    }
+  },
+  {
+    "v": "Kawasaki",
+    "lbl": {"en": "Kawasaki"},
+    "tags": {
+      "brand": "Kawasaki",
+      "brand:wikidata": "Q6379855",
+      "brand:wikipedia": "en:Kawasaki motorcycles",
+      "name": "Kawasaki",
+      "shop": "motorcycle"
+    }
+  },
+  {
+    "v": "Motortrade",
+    "lbl": {"en": "Motortrade"},
+    "countryCodes": ["ph"],
+    "tags": {
+      "brand": "Motortrade",
+      "brand:wikidata": "Q48803162",
+      "brand:wikipedia": "en:Motortrade",
+      "name": "Motortrade",
+      "shop": "motorcycle"
+    }
+  },
+  {
+    "v": "Suzuki",
+    "lbl": {"en": "Suzuki"},
+    "nomatch": ["shop/car|Suzuki"],
+    "tags": {
+      "brand": "Suzuki",
+      "brand:wikidata": "Q181642",
+      "brand:wikipedia": "en:Suzuki",
+      "name": "Suzuki",
+      "shop": "motorcycle"
+    }
+  },
+  {
+    "v": "Yamaha",
+    "lbl": {"en": "Yamaha"},
+    "tags": {
+      "brand": "Yamaha",
+      "brand:wikidata": "Q158888",
+      "brand:wikipedia": "en:Yamaha Motor Company",
+      "name": "Yamaha",
+      "shop": "motorcycle"
+    }
+  },
+  {
+    "v": "レッドバロン",
+    "lbl": {"en": "レッドバロン"},
+    "countryCodes": ["jp"],
+    "tags": {
+      "brand": "レッドバロン",
+      "brand:en": "Red Baron",
+      "brand:ja": "レッドバロン",
+      "brand:wikidata": "Q11349759",
+      "brand:wikipedia": "ja:レッドバロン (企業)",
+      "name": "レッドバロン",
+      "name:en": "Red Baron",
+      "name:ja": "レッドバロン",
+      "shop": "motorcycle"
+    }
+  }
+]

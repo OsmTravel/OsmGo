@@ -159,6 +159,15 @@ export class ModalsContentPage implements OnInit {
       for (let i = 0; i < this.presetsIds.length; i++) {
         const preset = this.tagsService.getPresetsById(this.presetsIds[i]);
 
+        
+        if (preset.optionsFromJson){
+     
+          this.tagsService.getPresetsOptionFromJson(preset.optionsFromJson)
+            .subscribe(presetOptions => {
+              preset['options'] = presetOptions
+            })
+        }
+
         // le tag utilisant la clé du preset
         const tagOfPreset = this.tags.filter(tag => tag.key === preset.key)[0] || undefined;
         if (tagOfPreset) {
@@ -442,6 +451,17 @@ export class ModalsContentPage implements OnInit {
       const _data = d.data;
       if (_data) {
         this.tags.filter(tag => tag.key === _data.key)[0].value = _data.value;
+        if (_data.tags){ // add or remplace tags...
+          for (let t in _data.tags){
+            const tagIndex = this.tags.findIndex( o=> o.key == t);
+            if (tagIndex !== -1){
+              this.tags[tagIndex] = {"key":t, "value":_data.tags[t]};
+            } else {
+              this.tags = [...this.tags, {"key":t, "value":_data.tags[t]}]
+            }
+          }
+
+        }
       }
     });
 

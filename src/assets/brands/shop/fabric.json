@@ -1,0 +1,15 @@
+[
+  {
+    "v": "Mondial Tissus",
+    "lbl": {"en": "Mondial Tissus"},
+    "countryCodes": ["fr"],
+    "matchTags": ["shop/curtain", "shop/department_store"],
+    "tags": {
+      "brand": "Mondial Tissus",
+      "brand:wikidata": "Q17635288",
+      "brand:wikipedia": "fr:Mondial Tissus",
+      "name": "Mondial Tissus",
+      "shop": "fabric"
+    }
+  }
+]

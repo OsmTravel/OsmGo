@@ -25,7 +25,6 @@ export class ModalSelectList {
         this.data = params.data;
         this.language = this.configService.config.languageTags;
         this.countryCode = this.configService.config.countryTags;
-        console.log( this.countryCode);
 
         // this.platform.registerBackButtonAction(e => {
         //     this.dismiss();
@@ -38,7 +37,7 @@ export class ModalSelectList {
 
     selected(e) {
         if (e && e.detail && this.initvalue !== e.detail) {
-            this.dismiss({ 'key': this.data.key, 'value': e.detail.value });
+            this.dismiss({ 'key': this.data.key, 'value': e.detail.value.v, 'tags': e.detail.value.tags });
         }
     }
 
