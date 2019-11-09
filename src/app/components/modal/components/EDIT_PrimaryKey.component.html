@@ -1,0 +1,30 @@
+<ion-card (click)="emitOpenModal()">
+		<ion-card-header>
+			<b *ngIf="!displayCode">{{keyLbl[language] || keyLbl['en']}}</b>
+			<b *ngIf="displayCode">{{primaryKey.key}}</b>
+		</ion-card-header>
+
+		<ion-card-content >
+
+		<div class="wrapperEdit2cols">
+					<div class="contentEdit2cols">
+						<p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> 
+								{{configOfPrimaryKey.lbl[language] ? configOfPrimaryKey.lbl[language] : configOfPrimaryKey.lbl['en']}}
+						</p>
+						<p class="description" *ngIf="!displayCode && configOfPrimaryKey && configOfPrimaryKey.description"> 
+								{{configOfPrimaryKey.description[language] !== undefined  ? configOfPrimaryKey.description[language] : configOfPrimaryKey.description['en']}}
+				
+							</p>
+
+						<p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
+						<ion-icon name="code"></ion-icon>
+							{{primaryKey.value}}
+						</p>
+					</div>
+					<div class="buttonEdit2cols">
+						<ion-icon name="settings" style="width: 2em; height: 2em;"></ion-icon>
+					</div>
+		</div>
+
+		</ion-card-content>
+	</ion-card>

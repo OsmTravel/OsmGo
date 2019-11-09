@@ -1,0 +1,29 @@
+<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.alert && ( configOfPrimaryKey?.alert[language] || configOfPrimaryKey?.alert['en'] )" class="alertCard">
+    <ion-card-content>
+      {{configOfPrimaryKey?.alert[language] || configOfPrimaryKey?.alert['en']}}
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="configOfPrimaryKey && configOfPrimaryKey?.alertByCountryCodes">
+      <ion-card *ngFor="let alert of configOfPrimaryKey.alertByCountryCodes | filterByCountryCode:countryCode"  class="alertCard">
+          <ion-card-content>
+            {{alert.text[language] || alert.text['en']}}
+          </ion-card-content>
+        </ion-card>
+  </div>
+
+  
+  
+  <ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.warning && ( configOfPrimaryKey?.warning[language] || configOfPrimaryKey?.warning['en'] ) && (!configOfPrimaryKey.warningCountryCodes || configOfPrimaryKey.warningCountryCodes.includes(countryCode))" class="warningtCard">
+    <ion-card-content>
+        {{configOfPrimaryKey?.text[language] || configOfPrimaryKey?.text['en']}}
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="configOfPrimaryKey && configOfPrimaryKey?.warningByCountryCodes">
+      <ion-card *ngFor="let warning of configOfPrimaryKey.warningByCountryCodes | filterByCountryCode:countryCode"  class="warningtCard">
+          <ion-card-content>
+            {{warning.text[language] || warning.text['en']}}
+          </ion-card-content>
+        </ion-card>
+  </div>

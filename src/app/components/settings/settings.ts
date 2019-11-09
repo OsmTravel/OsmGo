@@ -122,18 +122,6 @@ export class SettingsPage {
   countryTagsChange(e){
     const newCountry = e.detail.value;
     this.configService.setCountryTags(newCountry);
-   
-        this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, newCountry)
-            .subscribe( e => {
-            
-                console.log('New Config Loaded!')
-                let newDataJson =  this.mapService.setIconStyle(this.dataService.getGeojson());
-                this.dataService.setGeojson(newDataJson);
-               this.mapService.eventMarkerReDraw.emit(newDataJson);
-               
-                
-                
-            });
   }
 
   async generateCahedIcon (){

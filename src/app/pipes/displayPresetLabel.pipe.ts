@@ -7,6 +7,10 @@ import { Pipe } from '@angular/core';
 
 export class DisplayPresetLabelPipe  {
     transform(tag) {
-       return tag.preset.tags.filter( p => p.v === tag.value)[0] || undefined;
+        if ( !tag.preset || !tag.preset.options){
+            return
+        }
+        let res = tag.preset.options.find( p => p.v === tag.value) || undefined;
+        return res
     }
 }

@@ -13,6 +13,7 @@ import { AlertService } from '../../services/alert.service';
 import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
+import { AlertComponent } from './components/alert/alert.component';
 
 import {isEqual, findIndex } from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
@@ -31,7 +32,7 @@ export class ModalsContentPage implements OnInit {
   typeFiche;
   displayCode = false;
   mode;
-  configOfPrimaryKey = { presets: [], alert: undefined };
+  configOfPrimaryKey = { presets: [], alert: undefined , presetsByCountryCodes: undefined};
 
   primaryKey = { key: '', value: '', lbl: '' };
   customValue = '';
@@ -40,6 +41,7 @@ export class ModalsContentPage implements OnInit {
   allTags;
   newPosition;
   displayAddTag = false;
+  presetsIds= [];
 
   constructor(
     public platform: Platform,
@@ -139,12 +141,23 @@ export class ModalsContentPage implements OnInit {
 
     // la configuration pour cette clé principale (lbl, icon, presets[], ...)
     this.configOfPrimaryKey = this.tagsService.getTagConfigByKeyValue(this.primaryKey['key'], this.primaryKey['value']);
-    const presetsIds = (this.configOfPrimaryKey && this.configOfPrimaryKey.presets) ? this.configOfPrimaryKey.presets : undefined;
+    this.presetsIds = (this.configOfPrimaryKey && this.configOfPrimaryKey.presets) ? this.configOfPrimaryKey.presets : undefined;
 
-    if (presetsIds && presetsIds.length > 0) {
+    if (this.configOfPrimaryKey && this.configOfPrimaryKey.presetsByCountryCodes ){
+
+      const presetsByCountryCodes =  this.configOfPrimaryKey.presetsByCountryCodes
+            .filter( p => p.countryCodes.includes(this.configService.config.countryTags))
+            .map( pr => pr.preset )
+
+      if (!this.presetsIds) this.presetsIds = [];
+      this.presetsIds = [...presetsByCountryCodes, ...this.presetsIds]
+      
+    }
+  
+    if (this.presetsIds && this.presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
-      for (let i = 0; i < presetsIds.length; i++) {
-        const preset = this.tagsService.getPresetsById(presetsIds[i]);
+      for (let i = 0; i < this.presetsIds.length; i++) {
+        const preset = this.tagsService.getPresetsById(this.presetsIds[i]);
 
         // le tag utilisant la clé du preset
         const tagOfPreset = this.tags.filter(tag => tag.key === preset.key)[0] || undefined;
@@ -177,7 +190,17 @@ export class ModalsContentPage implements OnInit {
       return res;
     }
 
-    const presetsIds = configOfPrimaryKey.presets;
+    let presetsIds = configOfPrimaryKey.presets;
+    // IF countryTags => Push!
+    if (configOfPrimaryKey && 
+      configOfPrimaryKey.presetsByCountryCodes ){
+
+        const presetsByCountryCodes =  configOfPrimaryKey.presetsByCountryCodes
+        .filter( p => p.countryCodes.includes(this.configService.config.countryTags))
+        .map( pr => pr.preset )
+        presetsIds = [...presetsIds, ...presetsByCountryCodes]
+
+      }
     for (let i = 0; i < presetsIds.length; i++) {
       if (this.tagsService.presets[presetsIds[i]].key){
         res.push(this.tagsService.presets[presetsIds[i]].key);

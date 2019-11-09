@@ -1,7 +1,18 @@
 [
   {
+    "id": "tmsIgn",
+    "label": "Ortho IGN",
+    "type": "raster",
+    "tiles": [
+      "https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}"
+    ],
+    "tileSize": 256,
+    "maxzoom": 19,
+    "countryCodes":["FR"]
+  },
+  {
     "id": "mapbox-satellite",
-    "label": "Mapbox satellite ",
+    "label": "satellite Mapbox",
     "type": "raster",
     "url": "mapbox://mapbox.satellite",
     "tileSize": 256

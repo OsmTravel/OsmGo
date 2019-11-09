@@ -28,28 +28,33 @@
 					[usedByWays]="feature.properties.usedByWays || null"> 
 			</read-meta>
 
-			<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.alert != ''" class="alertCard">
-				<ion-card-content>
-					{{configOfPrimaryKey?.alert}}
-				</ion-card-content>
-			</ion-card>
+	
+			<app-alert 
+				[configOfPrimaryKey]="configOfPrimaryKey" 
+				[language] = "this.configService.config.languageTags"
+				[countryCode]= "this.configService.config.countryTags">
+			</app-alert>
 
-			<ion-card *ngIf="configOfPrimaryKey && configOfPrimaryKey?.warning != ''" class="warningtCard">
-				<ion-card-content>
-					{{configOfPrimaryKey?.warning}}
-				</ion-card-content>
-			</ion-card>
+		
 
 
 			<!--Primary Key-->
- 
-			<read-primary-key [displayCode]="displayCode" [keyLbl]="tagsService.tags[primaryKey.key].lbl" [primaryKey]="primaryKey"
-			 [configOfPrimaryKey]="configOfPrimaryKey">
+			<read-primary-key [displayCode]="displayCode" 
+				[keyLbl]="tagsService.tags[primaryKey.key].lbl" 
+				[primaryKey]="primaryKey"
+				[language] = "this.configService.config.languageTags"
+				[configOfPrimaryKey]="configOfPrimaryKey">
 			</read-primary-key>
 
 			<!--Les presets-->
 			<div *ngFor="let tag of tags;">
-				<read-presets *ngIf="tag.preset && tag.value !== ''" [displayCode]="displayCode" [tag]="tag">
+				<read-presets *ngIf="tag.preset && tag.value !== ''" 
+				[displayCode]="displayCode" 
+				[tag]="tag"
+				[language]="this.configService.config.languageTags"
+				[countryCode]="this.configService.config.countryTags"
+				
+				>
 				</read-presets>
 			</div>
 
@@ -109,21 +114,30 @@
 				[usedByWays]="feature.properties.usedByWays || null"> 
 			</read-meta>
 			<!--Alert-->
-			<ion-card *ngIf="configOfPrimaryKey?.alert && configOfPrimaryKey?.alert != ''" class="alertCard">
-				<ion-card-content>
-					{{configOfPrimaryKey?.alert}}
-				</ion-card-content>
-			</ion-card>
+			<app-alert 
+				[configOfPrimaryKey]="configOfPrimaryKey" 
+				[language] = "this.configService.config.languageTags"
+				[countryCode]= "this.configService.config.countryTags">
+			</app-alert>
 
 			<!--Primary key-->
-			<edit-primary-key [displayCode]="displayCode" [keyLbl]="tagsService.tags[primaryKey.key].lbl" [primaryKey]="primaryKey"
-			 [configOfPrimaryKey]="configOfPrimaryKey" (openPrimaryTagModal)="openPrimaryTagModal()">
+			<edit-primary-key 
+				[displayCode]="displayCode" 
+				[keyLbl]="tagsService.tags[primaryKey.key].lbl" 
+				[primaryKey]="primaryKey"
+				[configOfPrimaryKey]="configOfPrimaryKey" 
+				[language] = "this.configService.config.languageTags"
+				(openPrimaryTagModal)="openPrimaryTagModal()">
 			</edit-primary-key>
 
 			<!--Les presets-->
 			<div *ngFor="let tag of tags">
 
-				<edit-presets *ngIf="tag.preset" [displayCode]="displayCode" [tag]="tag" (openPrimaryListModal)="openModalList(tag)">
+				<edit-presets *ngIf="tag.preset" 
+					[displayCode]="displayCode" 
+					[tag]="tag"
+					[language] = "this.configService.config.languageTags"
+					(openPrimaryListModal)="openModalList(tag)">
 				</edit-presets>
 			</div>
 

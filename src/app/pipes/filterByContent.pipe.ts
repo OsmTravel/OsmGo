@@ -8,6 +8,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FilterByContentPipe implements PipeTransform  {
     transform(items, keys: string[], searchText: string) {
         const patt = new RegExp(searchText, 'i');
+        console.log(items)
+        console.log(keys)
 
         return items.filter(item => {
             for (let i = 0; i < keys.length; i++) {

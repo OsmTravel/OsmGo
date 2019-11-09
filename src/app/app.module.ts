@@ -35,9 +35,16 @@ import { ReadPresets } from './components/modal/components/READ_Presets.componen
 import { EditOtherTag } from './components/modal/components/EDIT_OtherTag.component';
 import { EditPresets } from './components/modal/components/EDIT_Presets.component';
 import { EditPrimaryKey } from './components/modal/components/EDIT_PrimaryKey.component';
+import { AlertComponent } from './components/modal/components/alert/alert.component'
 
 import { DisplayPresetLabelPipe } from './pipes/displayPresetLabel.pipe';
 import { FilterByContentPipe } from './pipes/filterByContent.pipe';
+import { FilterByTagsContentPipe } from './pipes/filterByTagsContent.pipe';
+import { FilterExcludeTagByCountryCode } from './pipes/filterExcludeTagByCountryCode.pipe';
+import { FilterByCountryCode } from './pipes/filterByCountryCode.pipe';
+
+import { FilterByPresetsContentPipe } from './pipes/filterByPresetsContent.pipe';
+
 import { FilterDeprecatedTagPipe } from './pipes/filterDeprecatedTag.pipe';
 import { FilterExcludeKeysPipe } from './pipes/filterExcludeKeys.pipe';
 import { FilterIncludeKeysPipe } from './pipes/filterIncludeKeys.pipe';
@@ -64,22 +71,26 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-export class CustomHammerConfig extends HammerGestureConfig{
+export class CustomHammerConfig extends HammerGestureConfig {
   overrides = {
-    'pan':{
-      direction :Hammer.DIRECTION_ALL
+    'pan': {
+      direction: Hammer.DIRECTION_ALL
     }
   }
 
 }
 
 @NgModule({
-  declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage,LoginPage,
+  declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage, LoginPage,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
-    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey,
+    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent,
 
     DisplayPresetLabelPipe,
     FilterByContentPipe,
+    FilterByTagsContentPipe,
+    FilterExcludeTagByCountryCode,
+    FilterByCountryCode,
+    FilterByPresetsContentPipe,
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
     FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe,
@@ -108,7 +119,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
   providers: [
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
+    { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
   ],
   bootstrap: [AppComponent]
 })

@@ -92,8 +92,8 @@ export class TagsService {
         return this.primaryKeys;
     }
 
-    getAllTags(language, country): Observable<any> { // tags à plat ?
-        return this.http.get(`assets/i18n/${language}/${country}/tags.json`)
+    getAllTags(): Observable<any> { // tags à plat ?
+        return this.http.get(`assets/tags&presets/tags.json`)
             .pipe(
                 map(res => {
                     const tags = res;
@@ -118,9 +118,9 @@ export class TagsService {
     }
 
 
-
-    loadTags(language, country) {
-        this.http.get(`assets/i18n/${language}/${country}/tags.json`)
+    // TODO: duplicate with getAllTags ?
+    loadTags() {
+        this.http.get(`assets/tags&presets/tags.json`)
             .pipe(
                 map((res) => {
                     return res;
@@ -159,8 +159,8 @@ export class TagsService {
         return res;
     }
 
-    getBaseMaps(language, country) {
-        return this.http.get(`assets/i18n/${language}/${country}/basemap.json`)
+    getBaseMaps() {
+        return this.http.get(`assets/tags&presets/basemap.json`)
             .pipe(
                 map((p) => {
                     this.configService.baseMapSources = p;
@@ -169,10 +169,10 @@ export class TagsService {
             );
     }
 
-    loadPresets(language, country) {
-        return this.http.get(`assets/i18n/${language}/${country}/presets.json`)
+    loadPresets() {
+        return this.http.get(`assets/tags&presets/presets.json`)
             .pipe(
-                map((p) => { // c'est moche... vivement rx6.
+                map((p) => { 
                     const json = p;
                     for (const k in json) {
                         json[k]['_id'] = k;
@@ -183,11 +183,11 @@ export class TagsService {
             );
     }
 
-    loadTagsAndPresets$(language, country) {
+    loadTagsAndPresets$() {
         return forkJoin(
-            this.loadPresets(language, country),
-            this.getAllTags(language, country),
-            this.getBaseMaps(language, country)
+            this.loadPresets(),
+            this.getAllTags(),
+            this.getBaseMaps()
                 .pipe(
                     map(allTags => {
                         for (const key in allTags) {

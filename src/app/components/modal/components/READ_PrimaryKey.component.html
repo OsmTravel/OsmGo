@@ -1,0 +1,21 @@
+   	<ion-card>
+        <ion-card-header>
+            <b *ngIf="!displayCode">{{keyLbl[language] || keyLbl['en']}}</b>
+            <b *ngIf="displayCode">{{primaryKey.key}}</b>
+        </ion-card-header>
+        <ion-card-content>
+            <p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> 
+                {{configOfPrimaryKey.lbl[language]  ? configOfPrimaryKey.lbl[language] : configOfPrimaryKey.lbl['en']}}
+            </p>
+
+            <p class="description" *ngIf="!displayCode && configOfPrimaryKey && configOfPrimaryKey.description"> 
+                {{configOfPrimaryKey.description[language] !== undefined ? configOfPrimaryKey.description[language] : configOfPrimaryKey.description['en']}}
+
+            </p>
+           
+            <p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
+            <ion-icon name="code"></ion-icon>
+                {{primaryKey.value}}
+            </p>
+        </ion-card-content>
+	</ion-card>

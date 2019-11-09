@@ -198,8 +198,8 @@
 				<ion-label>{{'SETTINGS.TAG_LANGUAGE' | translate }}</ion-label>
 				<ion-select [value]="this.configService.config.languageTags"
 					(ionChange)="languageTagsChange($event)">
-					<ion-select-option *ngFor="let lang of this.configService.i18nConfig.tags" [value]="lang.language">
-						{{lang.language}}
+					<ion-select-option *ngFor="let lang of this.configService.i18nConfig.tags" [value]="lang.code">
+						{{lang.code}}
 					</ion-select-option>
 				</ion-select>
 			</ion-item>
@@ -213,8 +213,8 @@
 				<ion-label>{{'SETTINGS.TAG_COUNTRY' | translate }}</ion-label>
 				<ion-select [value]="this.configService.config.countryTags" (ionChange)="countryTagsChange($event)">
 					<ion-select-option *ngFor="let country of this.configService.currentTagsCountryChoice"
-						[value]="country.region">
-						{{country.region}}
+						[value]="country.code">
+						{{country.code}} ({{country.name}})
 					</ion-select-option>
 				</ion-select>
 			</ion-item>

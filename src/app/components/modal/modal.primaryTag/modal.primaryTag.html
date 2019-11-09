@@ -15,7 +15,8 @@
 				[(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
 					<ion-select-option value="bookmarks"> {{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_BOOKMARKS' | translate}} </ion-select-option>
 					<ion-select-option value="full"> {{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_FULL' | translate}} </ion-select-option>
-					<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag.lbl}} ({{tag.key}})</ion-select-option>
+					<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag?.lbl[configService.config.languageTags] || tag?.lbl['en']}} ({{tag.key}})</ion-select-option>
+					
 				</ion-select>
 			</div>
 
@@ -28,7 +29,7 @@
 
 		<div class="listTag" *ngIf="selectedKey !== 'full' || (searchText.length > 2 && selectedKey === 'full' )">
 			<table class="tableListe">
-				<tr *ngFor="let tag of currentListOfTags | filterDeprecatedTag | filterByContent:['key','lbl','terms']:searchText;">
+				<tr *ngFor="let tag of currentListOfTags | filterDeprecatedTag | filterExcludeTagByCountryCode:this.configService.config.countryTags | filterByTagsContent:[this.configService.config.languageTags, this.configService.config.countryTags]:searchText;">
 					<td style="width:16px;" [style.background-color]="tag.markerColor">
 						<img *ngIf="tag.icon == '' " src="assets/mapStyle/IconsSVG/maki-circle-15.svg" height="15px" width="15px" style="max-width: 16px;" />
 						<img *ngIf="tag.icon != '' " src="assets/mapStyle/IconsSVG/{{tag.icon}}.svg" height="15px" width="15px" style="max-width: 16px;" />
@@ -39,9 +40,9 @@
 					</td>
 
 					<td (click)="selected(tag)" [style.color]="(_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key) ? '#3b22dd' : 'black'">
-						<b>{{tag?.lbl}}</b>
+						<b>{{tag?.lbl[configService.config.languageTags] || tag?.lbl['en']}}</b>
 						<br> <span style="font-size: 0.8em;">{{tag?.primaryKey}}={{tag?.key}} </span> 
-						<br> <span style="font-size: 11px;font-style: italic;"> {{tag?.description}}
+						<br> <span style="font-size: 11px;font-style: italic;"> {{ tag?.description ? tag?.description[configService.config.languageTags] || tag?.description['en'] : ''}}
 					</span>
 					</td>
 
@@ -70,7 +71,9 @@
 			
 			<ion-select style="width: 100%; min-width: 100%;"  [placeholder]="'MODAL_SELECTED_ITEM.SELECT_CATEGORY' | translate"
 				[(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
-				<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag.lbl}} ({{tag.key}})</ion-select-option>
+				<ion-select-option *ngFor="let tag of primaryKeys" 
+				
+				[value]="tag.key"> {{tag?.lbl[configService.config.languageTags] || tag?.lbl['en']}} ({{tag.key}})</ion-select-option>
 			</ion-select>
 
 			</div>

@@ -213,9 +213,23 @@ export class MainPage implements AfterViewInit {
 
     this.configService.getI18nConfig$().subscribe(async i18nConfig => {
 
+    // TODO: From config File ...
+    i18nConfig['tags'] = [ 
+      { 'code': "en", "label": "english" },
+      { 'code': "fr", "label": "français" } ,
+      { 'code': "de", "label": "de" } 
+    ]
+
+    i18nConfig['country'] = [
+        { "code": "FR", "name": "France" },
+        { "code": "GB", "name": "United Kingdom of Great Britain and Northern Ireland" },
+        { "code": "DE", "name": "Germany" }
+        ]
+
       this.configService.i18nConfig = i18nConfig;
       const e = await this.configService.loadConfig(i18nConfig)
 
+      // TODO: only WEB ?
       this.osmApi.initAuth();
       if (!this.osmApi.isAuthenticated() || !this.osmApi.getUserInfo().connected) {
         this.osmApi.resetUserInfo();
@@ -229,7 +243,7 @@ export class MainPage implements AfterViewInit {
       this.tagsService.loadLastTagAdded$().subscribe()
       this.tagsService.loadBookMarks$().subscribe()
 
-      this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
+      this.tagsService.loadTagsAndPresets$()
         .subscribe(async e => {
 
           const missingIcons: string[] = await this.iconService.getMissingSpirtes();
