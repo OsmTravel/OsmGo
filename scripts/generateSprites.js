@@ -6,11 +6,11 @@ var svg2img = require('svg2img');
 
 const Spritesmith = require('spritesmith');
 
-exports.generateSprites = (language = 'fr', country = 'FR') => {
+exports.generateSprites = () => {
 
     const iconsSVGsPath = path.join(__dirname, '..', 'src','assets','mapStyle','IconsSVG');
     const markersModelPath = path.join(__dirname,'markersModel');
-    const tagsPath = path.join(__dirname, '..', 'src','assets','i18n', language, country, 'tags.json');
+    const tagsPath = path.join(__dirname, '..', 'src','assets','tags&presets', 'tags.json');
     const outputTmp = path.join(__dirname, 'tmp');
     const outputFolderSVG = path.join(outputTmp, 'SVG');
   

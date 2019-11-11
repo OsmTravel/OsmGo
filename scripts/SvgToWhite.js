@@ -2,9 +2,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const cheerio = require('cheerio');
 
-
-const iconsSVGsPath = path.join(__dirname, './data/SvgForSprites/SVGs/');
-const whiteList = ['none', 'Delete', 'Create', 'Update', 'arrow-position'];
+const iconsSVGsPath = path.join(__dirname, '..','src', 'assets', 'mapStyle', 'IconsSVG');
+const whiteList = ['none', 'Delete', 'Create', 'Update', 'arrow-position', 'Old', 'Fixme'];
 
 let files = fs.readdirSync(iconsSVGsPath);
 for (let i = 0; i < files.length; i++) {
@@ -13,7 +12,7 @@ for (let i = 0; i < files.length; i++) {
         fileName.split('.')[1] == 'svg' &&
         whiteList.indexOf(fileName.split('.')[0]) == -1) {
 
-        let iconSvg = fs.readFileSync(iconsSVGsPath + fileName, 'utf8');
+        let iconSvg = fs.readFileSync(path.join(iconsSVGsPath, fileName), 'utf8');
 
         const $ = cheerio.load(iconSvg, { useHtmlParser2: true });
         //    let $ = cheerio.load(iconSvg);
@@ -26,7 +25,7 @@ for (let i = 0; i < files.length; i++) {
         $('path').attr('fill', '#FFFFFF');
         let cleanSvg = $.xml('svg');
 
-        fs.writeFileSync(iconsSVGsPath + fileName, cleanSvg, 'utf8')
+        fs.writeFileSync( path.join(iconsSVGsPath,fileName) , cleanSvg, 'utf8')
     }
 }
 

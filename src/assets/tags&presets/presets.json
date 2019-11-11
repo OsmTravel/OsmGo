@@ -2,7 +2,7 @@
   "cuisine": {
     "key": "cuisine",
     "type": "list",
-    "lbl": {"en": "cuisine", "fr": "Type de cuisine", "de": "Cuisine"},
+    "lbl": {"en": "Cuisines", "fr": "Type de cuisine", "de": "Cuisine"},
     "options": [
       {
         "v": "barbecue",
@@ -309,17 +309,17 @@
   "operator": {
     "key": "operator",
     "type": "text",
-    "lbl": {"en": "operator", "fr": "Opérateur", "de": "Operator"}
+    "lbl": {"en": "Operator", "fr": "Opérateur", "de": "Operator"}
   },
   "brand": {
     "key": "brand",
     "type": "text",
-    "lbl": {"en": "brand", "fr": "Enseigne", "de": "Marque"}
+    "lbl": {"en": "Brand", "fr": "Enseigne", "de": "Marque"}
   },
   "bicycle_parking": {
     "key": "bicycle_parking",
     "type": "select",
-    "lbl": {"en": "type", "fr": "Type", "de": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Type"},
     "options": [
       {"v": "stands", "lbl": {"en": "stands", "fr": "Arceau/Sheffield"}},
       {"v": "shed", "lbl": {"en": "shed", "fr": "Abri dédié"}},
@@ -335,12 +335,12 @@
   "capacity": {
     "key": "capacity",
     "type": "number",
-    "lbl": {"en": "capacity", "fr": "Capacité", "de": "Capacity"}
+    "lbl": {"en": "Capacity", "fr": "Capacité", "de": "Capacity"}
   },
   "covered": {
     "key": "covered",
     "type": "select",
-    "lbl": {"en": "covered", "fr": "Couvert", "de": "Covered"},
+    "lbl": {"en": "Covered", "fr": "Couvert", "de": "Covered"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -419,7 +419,7 @@
   "self_service": {
     "key": "self_service",
     "type": "select",
-    "lbl": {"en": "Self service"},
+    "lbl": {"en": "Self-Service"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -428,10 +428,11 @@
   "second_hand": {
     "key": "second_hand",
     "type": "select",
-    "lbl": {"en": "Second Hand", "fr": "Articles d'occasion"},
+    "lbl": {"en": "Sells Used", "fr": "Articles d'occasion"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
-      {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
+      {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}},
+      {"v": "only", "lbl": {"en": "Only"}}
     ]
   },
   "recycling_type": {
@@ -507,7 +508,7 @@
     "key": "wheelchair",
     "type": "select",
     "lbl": {
-      "en": "Wheelchair",
+      "en": "Wheelchair Access",
       "fr": "Accessible en fauteuil",
       "de": "Rollstuhlzugang"
     },
@@ -537,7 +538,7 @@
   "drive_through": {
     "key": "drive_through",
     "type": "select",
-    "lbl": {"en": "Drive"},
+    "lbl": {"en": "Drive-Through"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -546,7 +547,10 @@
   "dispensing": {
     "key": "dispensing",
     "type": "select",
-    "lbl": {"en": "Dispensing", "fr": "Vente de médicaments sur ordonnance"},
+    "lbl": {
+      "en": "Dispenses Prescriptions",
+      "fr": "Vente de médicaments sur ordonnance"
+    },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -564,7 +568,7 @@
   "tactile_paving": {
     "key": "tactile_paving",
     "type": "select",
-    "lbl": {"en": "Tactile_paving", "fr": "Pavé tactile"},
+    "lbl": {"en": "Tactile Paving", "fr": "Pavé tactile"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -573,7 +577,7 @@
   "seats": {
     "key": "seats",
     "type": "number",
-    "lbl": {"en": "Number of seats", "fr": "Nombre de places"}
+    "lbl": {"en": "Seats", "fr": "Nombre de places"}
   },
   "religion": {
     "key": "religion",
@@ -592,7 +596,7 @@
   "vending": {
     "key": "vending",
     "type": "list",
-    "lbl": {"en": "Vending", "fr": "Objet vendu"},
+    "lbl": {"en": "Types of Goods", "fr": "Objet vendu"},
     "options": [
       {
         "v": "admission_tickets",
@@ -651,7 +655,7 @@
   "social_facility": {
     "key": "social_facility",
     "type": "list",
-    "lbl": {"en": "Social Facility", "fr": "Type de services sociaux"},
+    "lbl": {"en": "Type", "fr": "Type de services sociaux"},
     "options": [
       {
         "v": "group_home",
@@ -769,21 +773,17 @@
   "phone": {
     "key": "phone",
     "type": "text",
-    "lbl": {"en": "phone", "fr": "Téléphone", "de": "Telefon"}
+    "lbl": {"en": "Telephone", "fr": "Téléphone", "de": "Telefon"}
   },
   "website": {
     "key": "website",
     "type": "text",
-    "lbl": {"en": "website", "fr": "Site web", "de": "Website"}
+    "lbl": {"en": "Website", "fr": "Site web", "de": "Website"}
   },
   "opening_hours": {
     "key": "opening_hours",
     "type": "text",
-    "lbl": {
-      "en": "opening hours",
-      "fr": "Horaires d'ouverture",
-      "de": "Öffnungszeiten"
-    }
+    "lbl": {"en": "Hours", "fr": "Horaires d'ouverture", "de": "Öffnungszeiten"}
   },
   "school:FR": {
     "key": "school:FR",
@@ -835,7 +835,7 @@
   "clothes": {
     "key": "clothes",
     "type": "list",
-    "lbl": {"fr": "Vetements", "en": "clothes"},
+    "lbl": {"fr": "Vetements", "en": "Clothes"},
     "options": [
       {"v": "babies", "lbl": {"fr": "Bébé", "en": "babies"}},
       {"v": "hats", "lbl": {"fr": "Chapeaux", "en": "hats"}},
@@ -914,7 +914,7 @@
   "parking": {
     "key": "parking",
     "type": "list",
-    "lbl": {"fr": "Type", "en": "parking"},
+    "lbl": {"fr": "Type", "en": "Type"},
     "options": [
       {"v": "surface", "lbl": {"en": "surface"}},
       {"v": "underground", "lbl": {"en": "underground"}},
@@ -924,13 +924,14 @@
       {"v": "garage_boxes", "lbl": {"en": "garage_boxes"}},
       {"v": "sheds", "lbl": {"en": "sheds"}},
       {"v": "park_and_ride", "lbl": {"en": "park_and_ride"}},
-      {"v": "layby", "lbl": {"en": "layby"}}
+      {"v": "layby", "lbl": {"en": "layby"}},
+      {"v": "carports", "lbl": {"en": "Carports"}}
     ]
   },
   "access": {
     "key": "access",
     "type": "select",
-    "lbl": {"fr": "Restriction légale d'accès", "en": "access"},
+    "lbl": {"fr": "Restriction légale d'accès", "en": "Allowed Access"},
     "options": [
       {"v": "private", "lbl": {"fr": "Privé", "en": "private"}},
       {
@@ -940,13 +941,76 @@
       {
         "v": "delivery",
         "lbl": {"fr": "Réservé aux livraisons.", "en": "delivery"}
+      },
+      {
+        "v": "yes",
+        "lbl": {
+          "en": {
+            "title": "Allowed",
+            "description": "Access allowed by law; a right of way"
+          }
+        }
+      },
+      {
+        "v": "no",
+        "lbl": {
+          "en": {
+            "title": "Prohibited",
+            "description": "Access not allowed to the general public"
+          }
+        }
+      },
+      {
+        "v": "permissive",
+        "lbl": {
+          "en": {
+            "title": "Permissive",
+            "description": "Access allowed until such time as the owner revokes the permission"
+          }
+        }
+      },
+      {
+        "v": "designated",
+        "lbl": {
+          "en": {
+            "title": "Designated",
+            "description": "Access allowed according to signs or specific local laws"
+          }
+        }
+      },
+      {
+        "v": "destination",
+        "lbl": {
+          "en": {
+            "title": "Destination",
+            "description": "Access allowed only to reach a destination"
+          }
+        }
+      },
+      {
+        "v": "dismount",
+        "lbl": {
+          "en": {
+            "title": "Dismount",
+            "description": "Access allowed but rider must dismount"
+          }
+        }
+      },
+      {
+        "v": "permit",
+        "lbl": {
+          "en": {
+            "title": "Permit",
+            "description": "Access allowed only with a valid permit or license"
+          }
+        }
       }
     ]
   },
   "material": {
     "key": "material",
     "type": "list",
-    "lbl": {"fr": "Matériau principal", "en": "material"},
+    "lbl": {"fr": "Matériau principal", "en": "Material"},
     "options": [
       {"v": "wood", "lbl": {"fr": "Bois", "en": "wood"}},
       {"v": "metal", "lbl": {"fr": "Métal", "en": "metal"}},
@@ -962,7 +1026,7 @@
   "outdoor_seating": {
     "key": "outdoor_seating",
     "type": "list",
-    "lbl": {"fr": "Consommation en extérieure", "en": "outdoor_seating"},
+    "lbl": {"fr": "Consommation en extérieure", "en": "Outdoor Seating"},
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
       {"v": "no", "lbl": {"fr": "Non", "en": "no"}},
@@ -982,7 +1046,7 @@
   "takeaway": {
     "key": "takeaway",
     "type": "select",
-    "lbl": {"fr": "A emporter", "en": "takeaway"},
+    "lbl": {"fr": "A emporter", "en": "Takeaway"},
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
       {"v": "no", "lbl": {"fr": "Non", "en": "no"}},
@@ -992,7 +1056,7 @@
   "delivery": {
     "key": "delivery",
     "type": "select",
-    "lbl": {"fr": "Livraison", "en": "delivery"},
+    "lbl": {"fr": "Livraison", "en": "Delivery"},
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
       {"v": "no", "lbl": {"fr": "Non", "en": "no"}},
@@ -1002,11 +1066,13 @@
   "internet_access": {
     "key": "internet_access",
     "type": "select",
-    "lbl": {"fr": "Accès à Internet", "en": "internet_access"},
+    "lbl": {"fr": "Accès à Internet", "en": "Internet Access"},
     "options": [
       {"v": "wlan", "lbl": {"fr": "Wifi", "en": "wlan"}},
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
-      {"v": "no", "lbl": {"fr": "Non", "en": "no"}}
+      {"v": "no", "lbl": {"fr": "Non", "en": "no"}},
+      {"v": "wired", "lbl": {"en": "Wired"}},
+      {"v": "terminal", "lbl": {"en": "Terminal"}}
     ]
   },
   "diet:vegetarian": {
@@ -1032,7 +1098,7 @@
   "brewery": {
     "key": "brewery",
     "type": "text",
-    "lbl": {"fr": "Bières", "en": "brewery"}
+    "lbl": {"fr": "Bières", "en": "Draft Beers"}
   },
   "fuel:lpg": {
     "key": "fuel:lpg",
@@ -1066,7 +1132,7 @@
   "surveillance": {
     "key": "surveillance",
     "type": "select",
-    "lbl": {"fr": "Type de surveillance", "en": "surveillance"},
+    "lbl": {"fr": "Type de surveillance", "en": "Surveillance Kind"},
     "options": [
       {"v": "public", "lbl": {"fr": "Espace public ", "en": "public"}},
       {
@@ -1990,5 +2056,1687 @@
     "type": "list",
     "lbl": {"en": "Brand", "fr": "Enseigne"},
     "optionsFromJson": "brands/healthcare/blood_donation.json"
+  },
+  "direction": {
+    "key": "direction",
+    "type": "number",
+    "placeholder": "45, 90, 180, 270",
+    "lbl": {"en": "Direction (Degrees Clockwise)"}
+  },
+  "lit": {
+    "key": "lit",
+    "type": "select",
+    "terms": ["lamp", "lighting"],
+    "lbl": {"en": "Lit"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "support": {
+    "key": "support",
+    "type": "select",
+    "lbl": {"en": "Support"},
+    "iDtype": "combo"
+  },
+  "height": {
+    "key": "height",
+    "minValue": 0,
+    "type": "number",
+    "lbl": {"en": "Height (Meters)"}
+  },
+  "visibility": {
+    "key": "visibility",
+    "type": "list",
+    "lbl": {"en": "Visibility"},
+    "options": [
+      {"v": "house", "lbl": {"en": "Up to 5m (16ft)"}},
+      {"v": "street", "lbl": {"en": "5 to 20m (16 to 65ft)"}},
+      {"v": "area", "lbl": {"en": "Over 20m (65ft)"}}
+    ],
+    "iDtype": "combo"
+  },
+  "name": {
+    "key": "name",
+    "type": "localized",
+    "universal": true,
+    "placeholder": "Common name (if any)",
+    "terms": ["label", "title"],
+    "lbl": {"en": "Name"}
+  },
+  "building_area": {
+    "key": "building",
+    "type": "select",
+    "default": "yes",
+    "geometry": "area",
+    "lbl": {"en": "Building"},
+    "iDtype": "combo"
+  },
+  "internet_access/fee": {
+    "key": "internet_access:fee",
+    "type": "select",
+    "prerequisiteTag": {"key": "internet_access", "valueNot": "no"},
+    "terms": ["wifi fee"],
+    "lbl": {"en": "Internet Access Fee"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "internet_access/ssid": {
+    "key": "internet_access:ssid",
+    "type": "text",
+    "prerequisiteTag": {"key": "internet_access", "valueNot": "no"},
+    "terms": ["ssid"],
+    "lbl": {"en": "Wifi Network Name"}
+  },
+  "address": {
+    "type": "address",
+    "key": "addr",
+    "keys": [
+      "addr:block_number",
+      "addr:city",
+      "addr:block_number",
+      "addr:conscriptionnumber",
+      "addr:county",
+      "addr:country",
+      "addr:county",
+      "addr:district",
+      "addr:floor",
+      "addr:hamlet",
+      "addr:housename",
+      "addr:housenumber",
+      "addr:neighbourhood",
+      "addr:place",
+      "addr:postcode",
+      "addr:province",
+      "addr:quarter",
+      "addr:state",
+      "addr:street",
+      "addr:subdistrict",
+      "addr:suburb",
+      "addr:unit"
+    ],
+    "icon": "address",
+    "terms": ["location"],
+    "lbl": {"en": "Address"},
+    "options": []
+  },
+  "country": {
+    "key": "country",
+    "type": "select",
+    "lbl": {"en": "Country"},
+    "iDtype": "combo"
+  },
+  "email": {
+    "key": "email",
+    "type": "text",
+    "placeholder": "example@example.com",
+    "lbl": {"en": "Email"},
+    "iDtype": "email"
+  },
+  "fax": {
+    "key": "fax",
+    "type": "text",
+    "placeholder": "+31 42 123 4567",
+    "lbl": {"en": "Fax"},
+    "iDtype": "tel"
+  },
+  "network": {"key": "network", "type": "text", "lbl": {"en": "Network"}},
+  "social_facility_for": {
+    "key": "social_facility:for",
+    "type": "select",
+    "lbl": {"en": "People Served"},
+    "iDtype": "combo"
+  },
+  "recycling_accepts": {
+    "key": "recycling:",
+    "type": "multiCombo",
+    "lbl": {"en": "Accepts"}
+  },
+  "collection_times": {
+    "key": "collection_times",
+    "type": "text",
+    "lbl": {"en": "Collection Times"}
+  },
+  "animal_boarding": {
+    "key": "animal_boarding",
+    "type": "select",
+    "lbl": {"en": "For Animals"},
+    "iDtype": "semiCombo"
+  },
+  "level": {
+    "key": "level",
+    "type": "select",
+    "terms": ["building floor", "deck", "storey", "story"],
+    "prerequisiteTag": {"keyNot": "building"},
+    "lbl": {"en": "Level"},
+    "iDtype": "combo"
+  },
+  "payment_multi": {
+    "key": "payment:",
+    "type": "multiCombo",
+    "lbl": {"en": "Payment Types"}
+  },
+  "animal_breeding": {
+    "key": "animal_breeding",
+    "type": "select",
+    "lbl": {"en": "For Animals"},
+    "iDtype": "semiCombo"
+  },
+  "animal_shelter": {
+    "key": "animal_shelter",
+    "type": "select",
+    "lbl": {"en": "For Animals"},
+    "iDtype": "semiCombo"
+  },
+  "charge_fee": {
+    "key": "charge",
+    "type": "text",
+    "placeholder": "1 EUR, 5 USD, 10 JPY…",
+    "prerequisiteTag": {"key": "fee", "valueNot": "no"},
+    "lbl": {"en": "Fee Amount"}
+  },
+  "cash_in": {
+    "key": "cash_in",
+    "type": "select",
+    "lbl": {"en": "Cash In"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "currency_multi": {
+    "key": "currency:",
+    "type": "multiCombo",
+    "terms": ["bills", "cash", "coins", "money"],
+    "lbl": {"en": "Currency Types"}
+  },
+  "indoor": {
+    "key": "indoor",
+    "type": "select",
+    "lbl": {"en": "Indoor"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "manufacturer": {
+    "key": "manufacturer",
+    "type": "select",
+    "snake_case": false,
+    "caseSensitive": true,
+    "lbl": {"en": "Manufacturer"},
+    "iDtype": "combo"
+  },
+  "atm": {
+    "key": "atm",
+    "type": "select",
+    "lbl": {"en": "ATM"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "air_conditioning": {
+    "key": "air_conditioning",
+    "type": "select",
+    "terms": ["cooling system", "refrigeration"],
+    "lbl": {"en": "Air Conditioning"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "min_age": {
+    "key": "min_age",
+    "type": "number",
+    "minValue": 0,
+    "terms": ["lower age limit"],
+    "lbl": {"en": "Minimum Age"}
+  },
+  "microbrewery": {
+    "key": "microbrewery",
+    "type": "select",
+    "terms": ["brewpub", "craft beer"],
+    "lbl": {"en": "Microbrewery"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "smoking": {
+    "key": "smoking",
+    "type": "list",
+    "placeholder": "No, Separated, Yes...",
+    "lbl": {"en": "Smoking"},
+    "options": [
+      {"v": "no", "lbl": {"en": "No smoking anywhere"}},
+      {
+        "v": "separated",
+        "lbl": {"en": "In smoking areas, not physically isolated"}
+      },
+      {"v": "isolated", "lbl": {"en": "In smoking areas, physically isolated"}},
+      {"v": "outside", "lbl": {"en": "Allowed outside"}},
+      {"v": "yes", "lbl": {"en": "Allowed everywhere"}},
+      {
+        "v": "dedicated",
+        "lbl": {"en": "Dedicated to smokers (e.g. smokers' club)"}
+      }
+    ],
+    "iDtype": "combo"
+  },
+  "fuel": {
+    "key": "fuel",
+    "type": "select",
+    "lbl": {"en": "Fuel"},
+    "iDtype": "combo"
+  },
+  "access_simple": {
+    "key": "access",
+    "type": "list",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes"}},
+      {"v": "permissive", "lbl": {"en": "permissive"}},
+      {"v": "private", "lbl": {"en": "private"}},
+      {"v": "customers", "lbl": {"en": "customers"}},
+      {"v": "permit", "lbl": {"en": "permit"}},
+      {"v": "no", "lbl": {"en": "no"}}
+    ],
+    "terms": ["permitted", "private", "public"],
+    "lbl": {"en": "Allowed Access"},
+    "iDtype": "combo"
+  },
+  "colour": {"key": "colour", "type": "text", "lbl": {"en": "Color"}},
+  "inscription": {
+    "key": "inscription",
+    "type": "textarea",
+    "lbl": {"en": "Inscription"}
+  },
+  "operator/type": {
+    "key": "operator:type",
+    "type": "select",
+    "prerequisiteTag": {"key": "operator"},
+    "lbl": {"en": "Operator Type"},
+    "iDtype": "combo"
+  },
+  "payment_multi_fee": {
+    "key": "payment:",
+    "type": "multiCombo",
+    "prerequisiteTag": {"key": "fee", "valueNot": "no"},
+    "lbl": {"en": "Payment Types"}
+  },
+  "service/bicycle": {
+    "key": "service:bicycle:",
+    "type": "multiCombo",
+    "lbl": {"en": "Services"}
+  },
+  "building": {
+    "key": "building",
+    "type": "select",
+    "terms": ["structure"],
+    "lbl": {"en": "Building"},
+    "iDtype": "combo"
+  },
+  "bar": {
+    "key": "bar",
+    "type": "select",
+    "lbl": {"en": "Bar"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "diet_multi": {
+    "key": "diet:",
+    "type": "multiCombo",
+    "terms": [
+      "gluten free",
+      "fruitarian",
+      "halal",
+      "kosher",
+      "lactose free",
+      "meat",
+      "pescatarian",
+      "raw",
+      "vegan",
+      "vegetarian"
+    ],
+    "lbl": {"en": "Diet Types"}
+  },
+  "not/name": {
+    "key": "not:name",
+    "type": "select",
+    "terms": ["common mistake names", "wrong names"],
+    "lbl": {"en": "Incorrect Names"},
+    "iDtype": "semiCombo"
+  },
+  "reservation": {
+    "key": "reservation",
+    "type": "list",
+    "lbl": {"en": "Reservations"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Accepted"}},
+      {"v": "no", "lbl": {"en": "Not Accepted"}},
+      {"v": "required", "lbl": {"en": "Required"}},
+      {"v": "recommended", "lbl": {"en": "Recommended"}}
+    ],
+    "iDtype": "combo"
+  },
+  "supervised": {
+    "key": "supervised",
+    "type": "select",
+    "terms": ["guarded", "manned"],
+    "lbl": {"en": "Supervised"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "max_age": {
+    "key": "max_age",
+    "type": "number",
+    "minValue": 0,
+    "terms": ["upper age limit"],
+    "lbl": {"en": "Maximum Age"}
+  },
+  "screen": {
+    "key": "screen",
+    "type": "number",
+    "placeholder": "1, 4, 8…",
+    "minValue": 0,
+    "lbl": {"en": "Screens"}
+  },
+  "healthcare/speciality": {
+    "key": "healthcare:speciality",
+    "type": "select",
+    "reference": {"key": "healthcare"},
+    "lbl": {"en": "Specialties"},
+    "iDtype": "semiCombo"
+  },
+  "display": {
+    "key": "display",
+    "type": "list",
+    "options": [
+      {"v": "analog", "lbl": {"en": "analog"}},
+      {"v": "digital", "lbl": {"en": "digital"}},
+      {"v": "sundial", "lbl": {"en": "sundial"}},
+      {"v": "unorthodox", "lbl": {"en": "unorthodox"}}
+    ],
+    "lbl": {"en": "Display"},
+    "iDtype": "combo"
+  },
+  "date": {
+    "key": "date",
+    "type": "select",
+    "lbl": {"en": "Date"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "faces": {
+    "key": "faces",
+    "type": "number",
+    "minValue": 0,
+    "lbl": {"en": "Faces"}
+  },
+  "denomination": {
+    "key": "denomination",
+    "type": "select",
+    "prerequisiteTag": {"key": "religion"},
+    "lbl": {"en": "Denomination"},
+    "iDtype": "combo"
+  },
+  "polling_station": {
+    "key": "polling_station",
+    "type": "select",
+    "terms": ["voting place"],
+    "lbl": {"en": "Polling Place"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "scuba_diving": {
+    "key": "scuba_diving:",
+    "type": "multiCombo",
+    "options": [
+      {"v": "repair", "lbl": {"en": "repair"}},
+      {"v": "courses", "lbl": {"en": "courses"}},
+      {"v": "rental", "lbl": {"en": "rental"}},
+      {"v": "filling", "lbl": {"en": "filling"}},
+      {"v": "air_filling", "lbl": {"en": "air_filling"}},
+      {"v": "nitrox_filling", "lbl": {"en": "nitrox_filling"}},
+      {"v": "trimix_filling", "lbl": {"en": "trimix_filling"}},
+      {"v": "oxygen_filling", "lbl": {"en": "oxygen_filling"}}
+    ],
+    "lbl": {"en": "Services"}
+  },
+  "sport": {
+    "key": "sport",
+    "type": "select",
+    "lbl": {"en": "Sports"},
+    "iDtype": "semiCombo"
+  },
+  "gender": {
+    "type": "select",
+    "keys": ["male", "female", "unisex"],
+    "placeholder": "Unknown",
+    "terms": ["access", "female", "male", "unisex"],
+    "lbl": {"en": "Gender"},
+    "options": [
+      {"v": "male", "lbl": {"en": "Male"}},
+      {"v": "female", "lbl": {"en": "Female"}},
+      {"v": "unisex", "lbl": {"en": "Unisex"}}
+    ],
+    "iDtype": "radio"
+  },
+  "ref": {"key": "ref", "type": "text", "lbl": {"en": "Reference Code"}},
+  "fuel_multi": {
+    "key": "fuel:",
+    "type": "multiCombo",
+    "lbl": {"en": "Fuel Types"}
+  },
+  "emergency": {
+    "key": "emergency",
+    "type": "select",
+    "lbl": {"en": "Emergency"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "lockable": {
+    "key": "lockable",
+    "type": "select",
+    "lbl": {"en": "Lockable"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "preschool": {
+    "key": "preschool",
+    "type": "select",
+    "lbl": {"en": "Preschool"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "language_multi": {
+    "key": "language:",
+    "type": "multiCombo",
+    "lbl": {"en": "Languages"}
+  },
+  "post": {
+    "type": "address",
+    "key": "post",
+    "keys": [
+      "post:block_number",
+      "post:city",
+      "post:block_number",
+      "post:conscriptionnumber",
+      "post:county",
+      "post:country",
+      "post:county",
+      "post:district",
+      "post:floor",
+      "post:hamlet",
+      "post:housename",
+      "post:housenumber",
+      "post:neighbourhood",
+      "post:place",
+      "post:postcode",
+      "post:province",
+      "post:quarter",
+      "post:state",
+      "post:street",
+      "post:subdistrict",
+      "post:suburb",
+      "post:unit"
+    ],
+    "lbl": {"en": "Delivery Address"}
+  },
+  "ref/isil": {"key": "ref:isil", "type": "text", "lbl": {"en": "ISIL Code"}},
+  "door": {
+    "key": "door",
+    "type": "select",
+    "lbl": {"en": "Door"},
+    "iDtype": "combo"
+  },
+  "width": {
+    "key": "width",
+    "type": "number",
+    "minValue": 0,
+    "lbl": {"en": "Width (Meters)"}
+  },
+  "rooms": {
+    "key": "rooms",
+    "type": "number",
+    "minValue": 0,
+    "lbl": {"en": "Rooms"}
+  },
+  "surface": {
+    "key": "surface",
+    "type": "select",
+    "lbl": {"en": "Surface"},
+    "iDtype": "combo"
+  },
+  "maxstay": {
+    "key": "maxstay",
+    "type": "list",
+    "options": [
+      {"v": "15 min", "lbl": {"en": "15 min"}},
+      {"v": "30 min", "lbl": {"en": "30 min"}},
+      {"v": "45 min", "lbl": {"en": "45 min"}},
+      {"v": "1 hr", "lbl": {"en": "1 hr"}},
+      {"v": "1.5 hr", "lbl": {"en": "1.5 hr"}},
+      {"v": "2 hr", "lbl": {"en": "2 hr"}},
+      {"v": "2.5 hr", "lbl": {"en": "2.5 hr"}},
+      {"v": "3 hr", "lbl": {"en": "3 hr"}},
+      {"v": "4 hr", "lbl": {"en": "4 hr"}},
+      {"v": "1 day", "lbl": {"en": "1 day"}},
+      {"v": "2 day", "lbl": {"en": "2 day"}}
+    ],
+    "snake_case": false,
+    "lbl": {"en": "Max Stay"},
+    "iDtype": "combo"
+  },
+  "park_ride": {
+    "key": "park_ride",
+    "type": "select",
+    "lbl": {"en": "Park and Ride"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "service_times": {
+    "key": "service_times",
+    "type": "text",
+    "lbl": {"en": "Service Times"}
+  },
+  "bath/type": {
+    "key": "bath:type",
+    "type": "list",
+    "lbl": {"en": "Specialty"},
+    "options": [
+      {"v": "onsen", "lbl": {"en": "Japanese Onsen"}},
+      {"v": "foot_bath", "lbl": {"en": "Foot Bath"}},
+      {"v": "hot_spring", "lbl": {"en": "Hot Spring"}}
+    ],
+    "iDtype": "combo"
+  },
+  "bath/open_air": {
+    "key": "bath:open_air",
+    "type": "select",
+    "lbl": {"en": "Open Air"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "bath/sand_bath": {
+    "key": "bath:sand_bath",
+    "type": "select",
+    "lbl": {"en": "Sand Bath"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "public_bookcase/type": {
+    "key": "public_bookcase:type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "location": {
+    "key": "location",
+    "type": "select",
+    "lbl": {"en": "Location"},
+    "iDtype": "combo"
+  },
+  "stars": {
+    "key": "stars",
+    "type": "select",
+    "terms": ["rating"],
+    "lbl": {"en": "Stars"},
+    "iDtype": "combo"
+  },
+  "water_point": {
+    "key": "water_point",
+    "type": "select",
+    "lbl": {"en": "Water Point"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "shelter_type": {
+    "key": "shelter_type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "bin": {
+    "key": "bin",
+    "type": "select",
+    "terms": ["garbage can", "trash can"],
+    "lbl": {"en": "Waste Bin"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "studio": {
+    "key": "studio",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "booth": {
+    "key": "booth",
+    "type": "select",
+    "caseSensitive": true,
+    "lbl": {"en": "Booth"},
+    "iDtype": "combo"
+  },
+  "sms": {
+    "key": "sms",
+    "type": "select",
+    "lbl": {"en": "SMS"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "video_calls": {
+    "key": "video",
+    "type": "select",
+    "lbl": {"en": "Video Calls"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "toilets/disposal": {
+    "key": "toilets:disposal",
+    "type": "list",
+    "lbl": {"en": "Disposal"},
+    "options": [
+      {"v": "flush", "lbl": {"en": "Flush"}},
+      {"v": "pitlatrine", "lbl": {"en": "Pit Latrine"}},
+      {"v": "chemical", "lbl": {"en": "Chemical"}},
+      {"v": "bucket", "lbl": {"en": "Bucket"}}
+    ],
+    "iDtype": "combo"
+  },
+  "changing_table": {
+    "key": "changing_table",
+    "type": "select",
+    "lbl": {"en": "Diaper Changing Table"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "toilets/handwashing": {
+    "key": "toilets:handwashing",
+    "type": "select",
+    "lbl": {"en": "Handwashing"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "toilets/position": {
+    "key": "toilets:position",
+    "type": "select",
+    "lbl": {"en": "Positions"},
+    "iDtype": "semiCombo"
+  },
+  "townhall/type": {
+    "key": "townhall:type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "blind": {
+    "key": "blind",
+    "type": "select",
+    "terms": ["sight impairment", "vision impairment"],
+    "lbl": {"en": "Blind Person Access"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Yes"}},
+      {"v": "limited", "lbl": {"en": "Limited"}},
+      {"v": "no", "lbl": {"en": "No"}}
+    ],
+    "iDtype": "radio"
+  },
+  "waste": {
+    "key": "waste",
+    "type": "select",
+    "lbl": {"en": "Waste"},
+    "iDtype": "semiCombo"
+  },
+  "maxweight": {
+    "key": "maxweight",
+    "type": "select",
+    "snake_case": false,
+    "lbl": {"en": "Max Weight"},
+    "iDtype": "combo"
+  },
+  "club": {"key": "club", "type": "typeCombo", "lbl": {"en": "Type"}},
+  "craft": {"key": "craft", "type": "typeCombo", "lbl": {"en": "Type"}},
+  "product": {
+    "key": "product",
+    "type": "select",
+    "lbl": {"en": "Products"},
+    "iDtype": "semiCombo"
+  },
+  "building/levels_building": {
+    "key": "building:levels",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "2, 4, 6...",
+    "prerequisiteTag": {"key": "building", "valueNot": "no"},
+    "lbl": {"en": "Building Levels"}
+  },
+  "height_building": {
+    "key": "height",
+    "minValue": 0,
+    "type": "number",
+    "prerequisiteTag": {"key": "building", "valueNot": "no"},
+    "lbl": {"en": "Building Height (Meters)"}
+  },
+  "emergency_combo": {
+    "key": "emergency",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "fire_hydrant/type": {
+    "key": "fire_hydrant:type",
+    "type": "list",
+    "lbl": {"en": "Shape"},
+    "options": [
+      {"v": "pillar", "lbl": {"en": "Pillar/Aboveground"}},
+      {"v": "underground", "lbl": {"en": "Underground"}},
+      {"v": "wall", "lbl": {"en": "Wall"}},
+      {"v": "pipe", "lbl": {"en": "Capped Pipe"}}
+    ],
+    "iDtype": "combo"
+  },
+  "water_source": {
+    "key": "water_source",
+    "default": "main",
+    "type": "select",
+    "lbl": {"en": "Water Source"},
+    "iDtype": "combo"
+  },
+  "couplings": {
+    "key": "couplings",
+    "type": "number",
+    "minValue": 1,
+    "placeholder": "1, 2, 3...",
+    "lbl": {"en": "Couplings"}
+  },
+  "fire_hydrant/diameter": {
+    "key": "fire_hydrant:diameter",
+    "type": "select",
+    "snake_case": false,
+    "lbl": {"en": "Diameter (mm, in, or letters)"},
+    "iDtype": "combo"
+  },
+  "fire_hydrant/pressure": {
+    "key": "fire_hydrant:pressure",
+    "type": "select",
+    "snake_case": false,
+    "lbl": {"en": "Pressure (bar)"},
+    "iDtype": "combo"
+  },
+  "survey/date": {
+    "key": "survey:date",
+    "type": "text",
+    "lbl": {"en": "Last Survey Date"}
+  },
+  "water_volume": {
+    "key": "water_volume",
+    "type": "number",
+    "snake_case": false,
+    "lbl": {"en": "Water Reserve Volume (m³)"}
+  },
+  "siren/purpose": {
+    "key": "siren:purpose",
+    "type": "select",
+    "lbl": {"en": "Purpose"},
+    "iDtype": "combo"
+  },
+  "siren/type": {
+    "key": "siren:type",
+    "type": "list",
+    "lbl": {"en": "Type"},
+    "options": [
+      {"v": "pneumatic", "lbl": {"en": "Pneumatic"}},
+      {"v": "electronic", "lbl": {"en": "Electronic"}},
+      {"v": "other", "lbl": {"en": "Other"}}
+    ],
+    "iDtype": "combo"
+  },
+  "healthcare": {
+    "key": "healthcare",
+    "type": "typeCombo",
+    "lbl": {"en": "Type"}
+  },
+  "blood_components": {
+    "key": "blood:",
+    "type": "multiCombo",
+    "lbl": {"en": "Blood Components"},
+    "options": [
+      {"v": "whole", "lbl": {"en": "whole blood"}},
+      {"v": "plasma", "lbl": {"en": "plasma"}},
+      {"v": "platelets", "lbl": {"en": "platelets"}},
+      {"v": "stemcells", "lbl": {"en": "stem cell samples"}}
+    ]
+  },
+  "crossing": {
+    "key": "crossing",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "level_semi": {
+    "key": "level",
+    "type": "select",
+    "terms": ["building floors", "decks", "stories", "storeys", "storys"],
+    "lbl": {"en": "Levels"},
+    "iDtype": "semiCombo"
+  },
+  "maxheight": {
+    "key": "maxheight",
+    "type": "select",
+    "placeholder": "4, 4.5, 5, 14'0\", 14'6\", 15'0\"",
+    "snake_case": false,
+    "lbl": {"en": "Max Height"},
+    "iDtype": "combo"
+  },
+  "direction_vertex": {
+    "key": "direction",
+    "type": "list",
+    "lbl": {"en": "Direction Affected"},
+    "options": [
+      {"v": "forward", "lbl": {"en": "Forward"}},
+      {"v": "backward", "lbl": {"en": "Backward"}},
+      {"v": "both", "lbl": {"en": "Both / All"}}
+    ],
+    "iDtype": "combo"
+  },
+  "distance": {"key": "distance", "type": "text", "lbl": {"en": "Distance"}},
+  "direction_clock": {
+    "key": "direction",
+    "type": "list",
+    "lbl": {"en": "Direction"},
+    "options": [
+      {"v": "clockwise", "lbl": {"en": "Clockwise"}},
+      {"v": "anticlockwise", "lbl": {"en": "Counterclockwise"}}
+    ],
+    "iDtype": "combo"
+  },
+  "structure": {
+    "type": "structureRadio",
+    "keys": ["bridge", "tunnel", "embankment", "cutting", "ford"],
+    "placeholder": "Unknown",
+    "lbl": {"en": "Structure"},
+    "options": [
+      {"v": "bridge", "lbl": {"en": "Bridge"}},
+      {"v": "tunnel", "lbl": {"en": "Tunnel"}},
+      {"v": "embankment", "lbl": {"en": "Embankment"}},
+      {"v": "cutting", "lbl": {"en": "Cutting"}},
+      {"v": "ford", "lbl": {"en": "Ford"}}
+    ]
+  },
+  "oneway": {
+    "key": "oneway",
+    "type": "select",
+    "lbl": {"en": "One Way"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ],
+    "iDtype": "onewayCheck"
+  },
+  "incline": {
+    "key": "incline",
+    "type": "select",
+    "lbl": {"en": "Incline"},
+    "iDtype": "combo"
+  },
+  "maxweight_bridge": {
+    "key": "maxweight",
+    "type": "select",
+    "snake_case": false,
+    "prerequisiteTag": {"key": "bridge", "valueNot": "no"},
+    "lbl": {"en": "Max Weight"},
+    "iDtype": "combo"
+  },
+  "smoothness": {
+    "key": "smoothness",
+    "type": "list",
+    "placeholder": "Thin Rollers, Wheels, Off-Road...",
+    "lbl": {"en": "Smoothness"},
+    "options": [
+      {
+        "v": "excellent",
+        "lbl": {"en": "Thin Rollers: rollerblade, skateboard"}
+      },
+      {"v": "good", "lbl": {"en": "Thin Wheels: racing bike"}},
+      {
+        "v": "intermediate",
+        "lbl": {"en": "Wheels: city bike, wheelchair, scooter"}
+      },
+      {
+        "v": "bad",
+        "lbl": {"en": "Robust Wheels: trekking bike, car, rickshaw"}
+      },
+      {
+        "v": "very_bad",
+        "lbl": {"en": "High Clearance: light duty off-road vehicle"}
+      },
+      {"v": "horrible", "lbl": {"en": "Off-Road: heavy duty off-road vehicle"}},
+      {
+        "v": "very_horrible",
+        "lbl": {"en": "Specialized off-road: tractor, ATV"}
+      },
+      {"v": "impassable", "lbl": {"en": "Impassable / No wheeled vehicle"}}
+    ],
+    "iDtype": "combo"
+  },
+  "sport_racing_motor": {
+    "key": "sport",
+    "type": "list",
+    "options": [
+      {"v": "motor", "lbl": {"en": "motor"}},
+      {"v": "karting", "lbl": {"en": "karting"}},
+      {"v": "motocross", "lbl": {"en": "motocross"}}
+    ],
+    "lbl": {"en": "Sports"},
+    "iDtype": "semiCombo"
+  },
+  "lanes": {
+    "key": "lanes",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "1, 2, 3...",
+    "lbl": {"en": "Lanes"}
+  },
+  "maxspeed": {
+    "key": "maxspeed",
+    "type": "number",
+    "placeholder": "40, 50, 60...",
+    "lbl": {"en": "Speed Limit"},
+    "iDtype": "maxspeed"
+  },
+  "stop": {
+    "key": "stop",
+    "type": "list",
+    "lbl": {"en": "Stop Type"},
+    "options": [
+      {"v": "all", "lbl": {"en": "All Ways"}},
+      {"v": "minor", "lbl": {"en": "Minor Road"}}
+    ],
+    "iDtype": "combo"
+  },
+  "lamp_type": {
+    "key": "lamp_type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "traffic_signals": {
+    "key": "traffic_signals",
+    "type": "select",
+    "default": "signal",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "traffic_signals/direction": {
+    "key": "traffic_signals:direction",
+    "type": "list",
+    "lbl": {"en": "Direction Affected"},
+    "options": [
+      {"v": "forward", "lbl": {"en": "Forward"}},
+      {"v": "backward", "lbl": {"en": "Backward"}},
+      {"v": "both", "lbl": {"en": "Both / All"}}
+    ],
+    "iDtype": "combo"
+  },
+  "elevation": {
+    "key": "ele",
+    "type": "number",
+    "icon": "elevation",
+    "universal": true,
+    "terms": ["altitude"],
+    "lbl": {"en": "Elevation"}
+  },
+  "site_type": {
+    "key": "site_type",
+    "type": "select",
+    "lbl": {"en": "Site Type"},
+    "iDtype": "combo"
+  },
+  "historic/civilization": {
+    "key": "historic:civilization",
+    "type": "select",
+    "lbl": {"en": "Historic Civilization"},
+    "iDtype": "combo"
+  },
+  "castle_type": {
+    "key": "castle_type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "start_date": {
+    "key": "start_date",
+    "type": "text",
+    "universal": true,
+    "terms": ["inception"],
+    "lbl": {"en": "Start Date"}
+  },
+  "seamark/wreck/category": {
+    "key": "seamark:wreck:category",
+    "type": "select",
+    "lbl": {"en": "Category"},
+    "iDtype": "combo"
+  },
+  "historic/wreck/date_sunk": {
+    "key": "wreck:date_sunk",
+    "type": "text",
+    "lbl": {"en": "Date Sunk"}
+  },
+  "historic/wreck/visible_at_low_tide": {
+    "key": "wreck:visible_at_low_tide",
+    "type": "select",
+    "lbl": {"en": "Visible At Low Tide"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "historic/wreck/visible_at_high_tide": {
+    "key": "wreck:visible_at_high_tide",
+    "type": "select",
+    "lbl": {"en": "Visible At High Tide"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "seamark/type": {
+    "key": "seamark:type",
+    "type": "select",
+    "terms": ["marine"],
+    "lbl": {"en": "Seamark"},
+    "iDtype": "combo"
+  },
+  "dance/style": {
+    "key": "dance:style",
+    "type": "select",
+    "lbl": {"en": "Dance Styles"},
+    "iDtype": "semiCombo"
+  },
+  "dog": {
+    "key": "dog",
+    "type": "list",
+    "terms": ["animals", "pets"],
+    "lbl": {"en": "Dogs"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Allowed"}},
+      {"v": "leashed", "lbl": {"en": "Leashed Only"}},
+      {"v": "no", "lbl": {"en": "Not Allowed"}}
+    ],
+    "iDtype": "combo"
+  },
+  "fishing": {
+    "key": "fishing",
+    "type": "select",
+    "lbl": {"en": "Fishing"},
+    "iDtype": "combo"
+  },
+  "seasonal": {
+    "key": "seasonal",
+    "type": "select",
+    "lbl": {"en": "Seasonal"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "sport_ice": {
+    "key": "sport",
+    "type": "list",
+    "options": [
+      {"v": "ice_skating", "lbl": {"en": "ice_skating"}},
+      {"v": "ice_hockey", "lbl": {"en": "ice_hockey"}},
+      {"v": "multi", "lbl": {"en": "multi"}},
+      {"v": "curling", "lbl": {"en": "curling"}},
+      {"v": "ice_stock", "lbl": {"en": "ice_stock"}}
+    ],
+    "lbl": {"en": "Sports"},
+    "iDtype": "semiCombo"
+  },
+  "sanitary_dump_station": {
+    "key": "sanitary_dump_station",
+    "type": "select",
+    "lbl": {"en": "Toilet Disposal"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "power_supply": {
+    "key": "power_supply",
+    "type": "select",
+    "lbl": {"en": "Power Supply"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "playground/theme": {
+    "key": "playground:theme",
+    "type": "select",
+    "lbl": {"en": "Theme"},
+    "iDtype": "combo"
+  },
+  "resort": {
+    "key": "resort",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "length": {
+    "key": "length",
+    "type": "number",
+    "minValue": 0,
+    "lbl": {"en": "Length (Meters)"}
+  },
+  "swimming_pool": {
+    "key": "swimming_pool",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "sport_racing_nonmotor": {
+    "key": "sport",
+    "type": "list",
+    "options": [
+      {"v": "bmx", "lbl": {"en": "bmx"}},
+      {"v": "cycling", "lbl": {"en": "cycling"}},
+      {"v": "dog_racing", "lbl": {"en": "dog_racing"}},
+      {"v": "horse_racing", "lbl": {"en": "horse_racing"}},
+      {"v": "running", "lbl": {"en": "running"}}
+    ],
+    "lbl": {"en": "Sports"},
+    "iDtype": "semiCombo"
+  },
+  "resource": {
+    "key": "resource",
+    "type": "select",
+    "lbl": {"en": "Resources"},
+    "iDtype": "semiCombo"
+  },
+  "communication_multi": {
+    "key": "communication:",
+    "type": "multiCombo",
+    "lbl": {"en": "Communication Types"}
+  },
+  "content": {
+    "key": "content",
+    "type": "list",
+    "options": [
+      {"v": "silage", "lbl": {"en": "silage"}},
+      {"v": "water", "lbl": {"en": "water"}},
+      {"v": "oil", "lbl": {"en": "oil"}},
+      {"v": "fuel", "lbl": {"en": "fuel"}},
+      {"v": "slurry", "lbl": {"en": "slurry"}},
+      {"v": "gas", "lbl": {"en": "gas"}},
+      {"v": "manure", "lbl": {"en": "manure"}},
+      {"v": "sewage", "lbl": {"en": "sewage"}}
+    ],
+    "lbl": {"en": "Content"},
+    "iDtype": "combo"
+  },
+  "crane/type": {
+    "key": "crane:type",
+    "type": "list",
+    "lbl": {"en": "Crane Type"},
+    "options": [
+      {"v": "portal_crane", "lbl": {"en": "Portal Crane"}},
+      {"v": "floor-mounted_crane", "lbl": {"en": "Floor-mounted Crane"}},
+      {"v": "travel_lift", "lbl": {"en": "Travel Lift"}}
+    ],
+    "iDtype": "combo"
+  },
+  "flag/type": {
+    "key": "flag:type",
+    "type": "select",
+    "lbl": {"en": "Flag Type"},
+    "iDtype": "combo"
+  },
+  "label": {"key": "label", "type": "textarea", "lbl": {"en": "Label"}},
+  "tower/type": {
+    "key": "tower:type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "tower/construction": {
+    "key": "tower:construction",
+    "type": "select",
+    "placeholder": "Guyed, Lattice, Concealed, ...",
+    "lbl": {"en": "Construction"},
+    "iDtype": "combo"
+  },
+  "monitoring_multi": {
+    "key": "monitoring:",
+    "type": "multiCombo",
+    "lbl": {"en": "Monitoring"}
+  },
+  "floating": {
+    "key": "floating",
+    "type": "select",
+    "lbl": {"en": "Floating"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "stroller": {
+    "key": "stroller",
+    "type": "select",
+    "terms": ["baby carriage", "perambulator", "pram", "pushchair"],
+    "lbl": {"en": "Stroller Access"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Yes"}},
+      {"v": "limited", "lbl": {"en": "Limited"}},
+      {"v": "no", "lbl": {"en": "No"}}
+    ],
+    "iDtype": "radio"
+  },
+  "substance": {
+    "key": "substance",
+    "type": "select",
+    "lbl": {"en": "Substance"},
+    "iDtype": "combo"
+  },
+  "layer": {
+    "key": "layer",
+    "type": "number",
+    "placeholder": "0",
+    "lbl": {"en": "Layer"}
+  },
+  "diameter": {
+    "key": "diameter",
+    "type": "select",
+    "snake_case": false,
+    "placeholder": "5 mm, 10 cm, 15 in…",
+    "lbl": {"en": "Diameter"},
+    "iDtype": "combo"
+  },
+  "crop": {
+    "key": "crop",
+    "type": "select",
+    "lbl": {"en": "Crops"},
+    "iDtype": "semiCombo"
+  },
+  "street_cabinet": {
+    "key": "street_cabinet",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "utility_semi": {
+    "key": "utility",
+    "type": "select",
+    "lbl": {"en": "Utilities"},
+    "iDtype": "semiCombo"
+  },
+  "surveillance/type": {
+    "key": "surveillance:type",
+    "type": "list",
+    "lbl": {"en": "Surveillance Type"},
+    "options": [
+      {"v": "camera", "lbl": {"en": "Camera"}},
+      {"v": "guard", "lbl": {"en": "Guard"}},
+      {"v": "ALPR", "lbl": {"en": "Automatic License Plate Reader"}}
+    ],
+    "iDtype": "combo"
+  },
+  "surveillance/zone": {
+    "key": "surveillance:zone",
+    "type": "select",
+    "lbl": {"en": "Surveillance Zone"},
+    "iDtype": "combo"
+  },
+  "architect": {
+    "key": "architect",
+    "type": "text",
+    "terms": ["building designer"],
+    "lbl": {"en": "Architect"}
+  },
+  "description": {
+    "key": "description",
+    "type": "textarea",
+    "universal": true,
+    "terms": ["summary"],
+    "lbl": {"en": "Description"}
+  },
+  "intermittent": {
+    "key": "intermittent",
+    "type": "select",
+    "lbl": {"en": "Intermittent"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "leaf_type": {
+    "key": "leaf_type",
+    "type": "list",
+    "lbl": {"en": "Leaf Type"},
+    "options": [
+      {"v": "broadleaved", "lbl": {"en": "Broadleaved"}},
+      {"v": "needleleaved", "lbl": {"en": "Needleleaved"}},
+      {"v": "mixed", "lbl": {"en": "Mixed"}},
+      {"v": "leafless", "lbl": {"en": "Leafless"}}
+    ],
+    "iDtype": "combo"
+  },
+  "leaf_cycle": {
+    "key": "leaf_cycle",
+    "type": "list",
+    "lbl": {"en": "Leaf Cycle"},
+    "options": [
+      {"v": "evergreen", "lbl": {"en": "Evergreen"}},
+      {"v": "deciduous", "lbl": {"en": "Deciduous"}},
+      {"v": "semi_evergreen", "lbl": {"en": "Semi-Evergreen"}},
+      {"v": "semi_deciduous", "lbl": {"en": "Semi-Deciduous"}},
+      {"v": "mixed", "lbl": {"en": "Mixed"}}
+    ],
+    "iDtype": "combo"
+  },
+  "denotation": {
+    "key": "denotation",
+    "type": "select",
+    "lbl": {"en": "Denotation"},
+    "iDtype": "combo"
+  },
+  "leaf_type_singular": {
+    "key": "leaf_type",
+    "type": "list",
+    "lbl": {"en": "Leaf Type"},
+    "options": [
+      {"v": "broadleaved", "lbl": {"en": "Broadleaved"}},
+      {"v": "needleleaved", "lbl": {"en": "Needleleaved"}},
+      {"v": "leafless", "lbl": {"en": "Leafless"}}
+    ],
+    "iDtype": "combo"
+  },
+  "leaf_cycle_singular": {
+    "key": "leaf_cycle",
+    "type": "list",
+    "lbl": {"en": "Leaf Cycle"},
+    "options": [
+      {"v": "evergreen", "lbl": {"en": "Evergreen"}},
+      {"v": "deciduous", "lbl": {"en": "Deciduous"}},
+      {"v": "semi_evergreen", "lbl": {"en": "Semi-Evergreen"}},
+      {"v": "semi_deciduous", "lbl": {"en": "Semi-Deciduous"}}
+    ],
+    "iDtype": "combo"
+  },
+  "species/wikidata": {
+    "key": "species:wikidata",
+    "keys": ["species:wikidata", "species:wikipedia"],
+    "type": "text",
+    "lbl": {"en": "Species Wikidata"},
+    "iDtype": "wikidata"
+  },
+  "volcano/status": {
+    "key": "volcano:status",
+    "type": "list",
+    "lbl": {"en": "Volcano Status"},
+    "options": [
+      {"v": "active", "lbl": {"en": "Active"}},
+      {"v": "dormant", "lbl": {"en": "Dormant"}},
+      {"v": "extinct", "lbl": {"en": "Extinct"}}
+    ],
+    "iDtype": "combo"
+  },
+  "volcano/type": {
+    "key": "volcano:type",
+    "type": "list",
+    "lbl": {"en": "Volcano Type"},
+    "options": [
+      {"v": "stratovolcano", "lbl": {"en": "Stratovolcano"}},
+      {"v": "shield", "lbl": {"en": "Shield"}},
+      {"v": "scoria", "lbl": {"en": "Scoria"}}
+    ],
+    "iDtype": "combo"
+  },
+  "water": {
+    "key": "water",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "salt": {
+    "key": "salt",
+    "type": "select",
+    "terms": ["saline", "salinated"],
+    "lbl": {"en": "Salt"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "tidal": {
+    "key": "tidal",
+    "type": "select",
+    "lbl": {"en": "Tidal"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "wetland": {
+    "key": "wetland",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "consulting": {
+    "key": "consulting",
+    "type": "select",
+    "lbl": {"en": "Expertise"},
+    "iDtype": "semiCombo"
+  },
+  "office": {"key": "office", "type": "typeCombo", "lbl": {"en": "Type"}},
+  "diplomatic": {
+    "key": "diplomatic",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "target": {
+    "key": "target",
+    "type": "select",
+    "lbl": {"en": "Target"},
+    "iDtype": "combo"
+  },
+  "diplomatic/services": {
+    "key": "diplomatic:services:",
+    "type": "multiCombo",
+    "lbl": {"en": "Services"}
+  },
+  "departures_board": {
+    "key": "departures_board",
+    "type": "list",
+    "lbl": {"en": "Departures Board"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Yes"}},
+      {"v": "timetable", "lbl": {"en": "Timetable"}},
+      {"v": "realtime", "lbl": {"en": "Realtime"}},
+      {"v": "no", "lbl": {"en": "None"}}
+    ],
+    "iDtype": "combo"
+  },
+  "ref_platform": {
+    "key": "ref",
+    "type": "text",
+    "lbl": {"en": "Platform Number"}
+  },
+  "aerialway/access": {
+    "key": "aerialway:access",
+    "type": "list",
+    "lbl": {"en": "Access"},
+    "options": [
+      {"v": "entry", "lbl": {"en": "Entry"}},
+      {"v": "exit", "lbl": {"en": "Exit"}},
+      {"v": "both", "lbl": {"en": "Both"}}
+    ],
+    "iDtype": "combo"
+  },
+  "aerialway/summer/access": {
+    "key": "aerialway:summer:access",
+    "type": "list",
+    "lbl": {"en": "Access (summer)"},
+    "options": [
+      {"v": "entry", "lbl": {"en": "Entry"}},
+      {"v": "exit", "lbl": {"en": "Exit"}},
+      {"v": "both", "lbl": {"en": "Both"}}
+    ],
+    "iDtype": "combo"
+  },
+  "ref_stop_position": {
+    "key": "ref",
+    "type": "text",
+    "lbl": {"en": "Stop Number"}
+  },
+  "shop": {"key": "shop", "type": "typeCombo", "lbl": {"en": "Type"}},
+  "agrarian": {
+    "key": "agrarian",
+    "type": "select",
+    "lbl": {"en": "Products"},
+    "iDtype": "semiCombo"
+  },
+  "beauty": {
+    "key": "beauty",
+    "type": "select",
+    "lbl": {"en": "Beauty Specialty"},
+    "iDtype": "combo"
+  },
+  "service/vehicle": {
+    "key": "service:vehicle:",
+    "type": "multiCombo",
+    "lbl": {"en": "Services"}
+  },
+  "levels": {
+    "key": "building:levels",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "2, 4, 6...",
+    "lbl": {"en": "Levels"}
+  },
+  "artwork_type": {
+    "key": "artwork_type",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "artist": {"key": "artist_name", "type": "text", "lbl": {"en": "Artist"}},
+  "guest_house": {
+    "key": "guest_house",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "horse_stables": {
+    "key": "amenity",
+    "type": "select",
+    "reference": {"key": "amenity", "value": "stables"},
+    "lbl": {"en": "Riding Stable"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ],
+    "iDtype": "check"
+  },
+  "horse_riding": {
+    "key": "leisure",
+    "type": "select",
+    "reference": {"key": "leisure", "value": "horse_riding"},
+    "lbl": {"en": "Horseback Riding"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ],
+    "iDtype": "check"
+  },
+  "horse_dressage": {
+    "key": "sport",
+    "type": "select",
+    "reference": {"key": "sport", "value": "equestrian"},
+    "lbl": {"en": "Dressage Riding"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ],
+    "iDtype": "check"
+  },
+  "fireplace": {
+    "key": "fireplace",
+    "type": "select",
+    "lbl": {"en": "Fireplace"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
   }
 }
