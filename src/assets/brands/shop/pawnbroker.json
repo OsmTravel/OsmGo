@@ -1,0 +1,71 @@
+[
+  {
+    "v": "Cash Converters",
+    "lbl": {"en": "Cash Converters"},
+    "tags": {
+      "brand": "Cash Converters",
+      "brand:wikidata": "Q5048645",
+      "brand:wikipedia": "en:Cash Converters",
+      "name": "Cash Converters",
+      "shop": "pawnbroker"
+    }
+  },
+  {
+    "v": "Cebuana Lhuillier",
+    "lbl": {"en": "Cebuana Lhuillier"},
+    "countryCodes": ["ph"],
+    "matchNames": ["agencia cebuana", "m lhuillier"],
+    "tags": {
+      "brand": "Cebuana Lhuillier",
+      "brand:wikidata": "Q17064661",
+      "brand:wikipedia": "en:Cebuana Lhuillier",
+      "name": "Cebuana Lhuillier",
+      "shop": "pawnbroker",
+      "short_name": "Cebuana"
+    }
+  },
+  {
+    "v": "Loombard",
+    "lbl": {"en": "Loombard"},
+    "countryCodes": ["pl"],
+    "tags": {"brand": "Loombard", "name": "Loombard", "shop": "pawnbroker"}
+  },
+  {
+    "v": "Palawan Pawnshop",
+    "lbl": {"en": "Palawan Pawnshop"},
+    "countryCodes": ["ph"],
+    "tags": {
+      "brand": "Palawan Pawnshop",
+      "brand:wikidata": "Q62391488",
+      "name": "Palawan Pawnshop",
+      "shop": "pawnbroker"
+    }
+  },
+  {
+    "v": "RD Pawnshop",
+    "lbl": {"en": "RD Pawnshop"},
+    "countryCodes": ["ph"],
+    "tags": {
+      "brand": "RD Pawnshop",
+      "name": "RD Pawnshop",
+      "shop": "pawnbroker"
+    }
+  },
+  {
+    "v": "Villarica Pawnshop",
+    "lbl": {"en": "Villarica Pawnshop"},
+    "countryCodes": ["ph"],
+    "tags": {
+      "brand": "Villarica Pawnshop",
+      "brand:wikidata": "Q62391438",
+      "name": "Villarica Pawnshop",
+      "shop": "pawnbroker"
+    }
+  },
+  {
+    "v": "Скарбниця",
+    "lbl": {"en": "Скарбниця"},
+    "countryCodes": ["ua"],
+    "tags": {"brand": "Скарбниця", "name": "Скарбниця", "shop": "pawnbroker"}
+  }
+]

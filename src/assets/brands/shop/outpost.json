@@ -1,0 +1,15 @@
+[
+  {
+    "v": "Wildberries",
+    "lbl": {"en": "Wildberries"},
+    "countryCodes": ["by", "ru"],
+    "matchTags": ["shop/clothes"],
+    "tags": {
+      "brand": "Wildberries",
+      "brand:wikidata": "Q24933714",
+      "brand:wikipedia": "ru:Wildberries",
+      "name": "Wildberries",
+      "shop": "outpost"
+    }
+  }
+]

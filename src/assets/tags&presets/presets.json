@@ -272,17 +272,6 @@
       {"v": "fish", "lbl": {"fr": "Poisson", "en": "fish"}}
     ]
   },
-  "fire_hydrant:type": {
-    "key": "fire_hydrant:type",
-    "type": "select",
-    "lbl": {"en": "type", "fr": "Type", "de": "Type"},
-    "options": [
-      {"v": "underground", "lbl": {"en": "underground", "fr": "Souterraine"}},
-      {"v": "pillar", "lbl": {"en": "pillar", "fr": "Pilier / hors sol"}},
-      {"v": "wall", "lbl": {"en": "wall", "fr": "Mur"}},
-      {"v": "pond", "lbl": {"en": "pond", "fr": "Etang"}}
-    ]
-  },
   "fire_hydrant:position": {
     "key": "fire_hydrant:position",
     "type": "select",
@@ -2590,7 +2579,6 @@
       {"v": "humanitarian", "lbl": {"en": "humanitarian"}},
       {"v": "charity", "lbl": {"en": "charity"}},
       {"v": "corporation", "lbl": {"en": "corporation"}}
- 
     ]
   },
   "payment_multi_fee": {
@@ -3442,7 +3430,6 @@
     "prerequisiteTag": {"key": "building", "valueNot": "no"},
     "lbl": {"en": "Building Height (Meters)"}
   },
-
   "water_source": {
     "key": "water_source",
     "default": "main",
@@ -3480,7 +3467,6 @@
     "placeholder": "1, 2, 3...",
     "lbl": {"en": "Couplings"}
   },
-
   "fire_hydrant/pressure": {
     "key": "fire_hydrant:pressure",
     "type": "number",
@@ -4542,7 +4528,6 @@
       {"v": "surface_water", "lbl": {"en": "surface_water"}}
     ]
   },
-
   "architect": {
     "key": "architect",
     "type": "text",
@@ -5075,5 +5060,261 @@
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
     ]
+  },
+  "emergency_combo": {
+    "key": "emergency",
+    "type": "select",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "fire_hydrant/type": {
+    "key": "fire_hydrant:type",
+    "type": "list",
+    "lbl": {"en": "Shape", "fr": "Type"},
+    "options": [
+      {
+        "v": "pillar",
+        "lbl": {"en": "Pillar/Aboveground", "fr": "Pilier / hors sol"}
+      },
+      {"v": "underground", "lbl": {"en": "Underground", "fr": "Souterraine"}},
+      {"v": "wall", "lbl": {"en": "Wall", "fr": "Mur"}},
+      {"v": "pipe", "lbl": {"en": "Capped Pipe"}},
+      {"v": "pond", "lbl": {"en": "pond", "fr": "Etang"}}
+    ],
+    "iDtype": "combo"
+  },
+  "fire_hydrant/diameter": {
+    "key": "fire_hydrant:diameter",
+    "type": "select",
+    "snake_case": false,
+    "lbl": {"en": "Diameter (mm, in, or letters)"},
+    "iDtype": "combo"
+  },
+  "survey/date": {
+    "key": "survey:date",
+    "type": "text",
+    "lbl": {"en": "Last Survey Date"}
+  },
+  "level_semi": {
+    "key": "level",
+    "type": "select",
+    "terms": ["building floors", "decks", "stories", "storeys", "storys"],
+    "lbl": {"en": "Levels"},
+    "iDtype": "semiCombo"
+  },
+  "surveillance/type": {
+    "key": "surveillance:type",
+    "type": "list",
+    "lbl": {"en": "Surveillance Type"},
+    "options": [
+      {"v": "camera", "lbl": {"en": "Camera"}},
+      {"v": "guard", "lbl": {"en": "Guard"}},
+      {"v": "ALPR", "lbl": {"en": "Automatic License Plate Reader"}}
+    ],
+    "iDtype": "combo"
+  },
+  "surveillance/zone": {
+    "key": "surveillance:zone",
+    "type": "select",
+    "lbl": {"en": "Surveillance Zone"},
+    "iDtype": "combo"
+  },
+  "shop#boat#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/boat.json"
+  },
+  "shop#bookmaker#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/bookmaker.json"
+  },
+  "shop#candles#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/candles.json"
+  },
+  "shop#catalogue#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/catalogue.json"
+  },
+  "shop#country_store#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/country_store.json"
+  },
+  "shop#craft#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/craft.json"
+  },
+  "shop#fashion_accessories#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/fashion_accessories.json"
+  },
+  "shop#hairdresser_supply#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/hairdresser_supply.json"
+  },
+  "shop#health_food#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/health_food.json"
+  },
+  "shop#hobby#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/hobby.json"
+  },
+  "shop#lottery#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/lottery.json"
+  },
+  "shop#money_lender#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/money_lender.json"
+  },
+  "shop#outpost#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/outpost.json"
+  },
+  "shop#pawnbroker#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/pawnbroker.json"
+  },
+  "shop#rental#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/rental.json"
+  },
+  "shop#storage_rental#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/storage_rental.json"
+  },
+  "shop#telecommunication#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/telecommunication.json"
+  },
+  "shop#tiles#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/tiles.json"
+  },
+  "shop#wholesale#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/shop/wholesale.json"
+  },
+  "amenity#animal_boarding#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/animal_boarding.json"
+  },
+  "amenity#childcare#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/childcare.json"
+  },
+  "amenity#money_transfer#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/money_transfer.json"
+  },
+  "amenity#payment_centre#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/payment_centre.json"
+  },
+  "amenity#payment_terminal#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/payment_terminal.json"
+  },
+  "amenity#prep_school#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/prep_school.json"
+  },
+  "amenity#social_centre#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/amenity/social_centre.json"
+  },
+  "craft#signmaker#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/craft/signmaker.json"
+  },
+  "office#bail_bond_agent#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/bail_bond_agent.json"
+  },
+  "office#consulting#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/consulting.json"
+  },
+  "office#coworking#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/coworking.json"
+  },
+  "office#energy_supplier#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/energy_supplier.json"
+  },
+  "office#financial_advisor#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/office/financial_advisor.json"
+  },
+  "healthcare#counselling#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "optionsFromJson": "brands/healthcare/counselling.json"
   }
 }

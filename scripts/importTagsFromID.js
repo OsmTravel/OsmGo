@@ -6,8 +6,9 @@ const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
 const presetsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'presets.json')
 
-const tagsIDPath = path.join(__dirname, 'iD', 'presets', 'presets.json');
-const presetsIDPath = path.join(__dirname, 'iD', 'presets', 'fields.json')
+const idRepoPath = path.join(__dirname, '..', '..', 'iD')
+const tagsIDPath = path.join(idRepoPath, 'data', 'presets', 'presets.json');
+const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
@@ -33,46 +34,46 @@ for (let iDid of tagsIDpkeys) {
     let iDFields = []; // for this tag
     let iDMoreFields = []
     if (tagiD.fields) {
-       
+
         for (let f of tagiD.fields) {
-    
-            if (presetsID[f] && presetsID[f].type==='typeCombo'){
+
+            if (presetsID[f] && presetsID[f].type === 'typeCombo') {
 
             }
-            else if (/\{/.test(f)){
-                const keyRef = f.replace('{','').replace('}','');
+            else if (/\{/.test(f)) {
+                const keyRef = f.replace('{', '').replace('}', '');
                 const fields = tagsID[keyRef].fields
-                
-                const newF = fields.filter( f => !idTagsFieldsListId.includes(f))
-                idTagsFieldsListId = [...idTagsFieldsListId, ...newF ]
-                iDFields = [...iDFields, ...newF ]
 
-          
+                const newF = fields.filter(f => !idTagsFieldsListId.includes(f))
+                idTagsFieldsListId = [...idTagsFieldsListId, ...newF]
+                iDFields = [...iDFields, ...newF]
+
+
             } else if (!idTagsFieldsListId.includes(f)) { // TODO: add {shop} tags
                 idTagsFieldsListId.push(f);
-                iDFields = [...iDFields, f ]
+                iDFields = [...iDFields, f]
             } else {
-                iDFields = [...iDFields, f ]
+                iDFields = [...iDFields, f]
             }
         }
     }
-    if ( tagiD.moreFields){
+    if (tagiD.moreFields) {
         for (let f of tagiD.moreFields) {
-            if (presetsID[f] && presetsID[f].type==='typeCombo'){
+            if (presetsID[f] && presetsID[f].type === 'typeCombo') {
 
             }
-            else if (/\{/.test(f)){
-                const keyRef = f.replace('{','').replace('}','');
+            else if (/\{/.test(f)) {
+                const keyRef = f.replace('{', '').replace('}', '');
                 const fields = tagsID[keyRef].moreFields
-                const newF = fields.filter( f => !idTagsFieldsListId.includes(f))
+                const newF = fields.filter(f => !idTagsFieldsListId.includes(f))
                 idTagsFieldsListId = [...idTagsFieldsListId, ...newF];
-                iDMoreFields = [...iDMoreFields, ...newF ]
-          
+                iDMoreFields = [...iDMoreFields, ...newF]
+
             } else if (!idTagsFieldsListId.includes(f)) { // TODO: add {shop} tags
                 idTagsFieldsListId.push(f);
-                iDMoreFields = [...iDMoreFields, f ]
+                iDMoreFields = [...iDMoreFields, f]
             } else {
-                iDMoreFields = [...iDMoreFields, f ]
+                iDMoreFields = [...iDMoreFields, f]
             }
         }
     }
@@ -95,20 +96,20 @@ for (let iDid of tagsIDpkeys) {
             presets: iDFields,
 
             lbl: { en: tagiD.name },
-            terms: {en: tagiD.terms ? tagiD.terms.join(', ') : ''},
+            terms: { en: tagiD.terms ? tagiD.terms.join(', ') : '' },
             geometry: tagiD.geometry,
             iDRef: iDid
         }
-        if (tagiD.terms) newTag['terms'] = {'en': tagiD.terms.join(', ') };
-        if (iDMoreFields.length > 0 ) newTag['moreFields'] = iDMoreFields
+        if (tagiD.terms) newTag['terms'] = { 'en': tagiD.terms.join(', ') };
+        if (iDMoreFields.length > 0) newTag['moreFields'] = iDMoreFields
         if (tagiD.tags) newTag['tags'] = tagiD.tags;
-        
+
 
         tagsOsmgo[idPkey].values.push(newTag)
 
         // console.log(newTag)
         // tagsOsmgo[idPkey]
-      
+
 
     } else {
         if (tagiD.geometry) tagOsmgo['geometry'] = tagiD.geometry;
@@ -120,17 +121,17 @@ for (let iDid of tagsIDpkeys) {
             tagOsmgo['terms']['en'] = tagiD.terms.join(', ')
         };
 
-        if (tagiD.tags && !tagOsmgo.tags ) tagOsmgo['tags'] = tagiD.tags;
+        if (tagiD.tags && !tagOsmgo.tags) tagOsmgo['tags'] = tagiD.tags;
 
         const newFieldsFromId = iDFields.filter(f => !['name', 'brand'].includes(f) && !tagOsmgo.presets.includes(f));
         tagOsmgo.presets = [...tagOsmgo.presets, ...newFieldsFromId];
 
-        if (iDMoreFields){
-            if (!tagOsmgo.moreFields){
+        if (iDMoreFields) {
+            if (!tagOsmgo.moreFields) {
                 tagOsmgo['moreFields'] = iDMoreFields
             } else {
                 const newMoreFields = iDMoreFields.filter(f => !['name', 'brand'].includes(f) && !tagOsmgo.moreFields.includes(f));
-                tagOsmgo['moreFields']  = [...tagOsmgo['moreFields'] , ...newMoreFields ]
+                tagOsmgo['moreFields'] = [...tagOsmgo['moreFields'], ...newMoreFields]
             }
         }
     }
@@ -143,31 +144,31 @@ for (let iDid of tagsIDpkeys) {
 // console.log(presetsID);
 let types = [];
 
-for (let fiDId of idTagsFieldsListId){
+for (let fiDId of idTagsFieldsListId) {
     const currentIDPreset = presetsID[fiDId]
     let currentOsmGoPreset = presetsOsmgo[fiDId]
 
-   
+
     // console.log(currentIDPreset.type)
 
-    if (currentIDPreset.label){
-        currentIDPreset.lbl = {'en': currentIDPreset.label}
+    if (currentIDPreset.label) {
+        currentIDPreset.lbl = { 'en': currentIDPreset.label }
     }
 
-    if (currentIDPreset.options){
-        currentIDPreset.options = currentIDPreset.options.map( o => {
-            return  {
+    if (currentIDPreset.options) {
+        currentIDPreset.options = currentIDPreset.options.map(o => {
+            return {
                 "v": o,
-                "lbl": {"en": o}
-              }
+                "lbl": { "en": o }
+            }
         })
     }
 
-    if (currentIDPreset.strings){
+    if (currentIDPreset.strings) {
         const objs = currentIDPreset.strings.options;
-        const options  = [];
-        for (let k in objs){
-            options.push({ "v": k!=='undefined' ? k : '', "lbl":{ "en": objs[k]}})
+        const options = [];
+        for (let k in objs) {
+            options.push({ "v": k !== 'undefined' ? k : '', "lbl": { "en": objs[k] } })
         }
         delete currentIDPreset.strings;
         currentIDPreset['options'] = options;
@@ -175,82 +176,88 @@ for (let fiDId of idTagsFieldsListId){
         // console.log(options)
     }
 
-    
-    if (['check','onewayCheck' ].includes(currentIDPreset.type)){
-        const options = [  
-            {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
-            {"v": "no", "lbl": {"en": "no", "fr": "Non"}} ]
+
+    if (['check', 'onewayCheck'].includes(currentIDPreset.type)) {
+        const options = [
+            { "v": "yes", "lbl": { "en": "yes", "fr": "Oui" } },
+            { "v": "no", "lbl": { "en": "no", "fr": "Non" } }]
         currentIDPreset['iDtype'] = currentIDPreset.type;
         currentIDPreset['type'] = 'select'
         currentIDPreset['options'] = options
     }
 
 
-   
-    if ( ['semiCombo','combo', 'access' ].includes(currentIDPreset.type)){
+
+    if (['semiCombo', 'combo', 'access'].includes(currentIDPreset.type)) {
         currentIDPreset['iDtype'] = currentIDPreset.type;
-        if (currentIDPreset['options']){
+        if (currentIDPreset['options']) {
             currentIDPreset['type'] = 'list'
-        }else {
+        } else {
             currentIDPreset['type'] = 'select'
         }
     }
 
-    if ( ['wikidata','tel', 'email', 'adresss', 'url' ].includes(currentIDPreset.type)){
+    if (['wikidata', 'tel', 'email', 'adresss', 'url'].includes(currentIDPreset.type)) {
         currentIDPreset['iDtype'] = currentIDPreset.type;
         currentIDPreset['type'] = 'text'
     }
 
-    if ( ['maxspeed'].includes(currentIDPreset.type)){
+    if (['maxspeed'].includes(currentIDPreset.type)) {
         currentIDPreset['iDtype'] = currentIDPreset.type;
         currentIDPreset['type'] = 'number'
     }
 
-    
-      if(currentIDPreset.type == 'radio'){
+
+    if (currentIDPreset.type == 'radio') {
         currentIDPreset['iDtype'] = currentIDPreset.type;
         currentIDPreset['type'] = 'select'
 
         // console.log(currentIDPreset);
-      }
+    }
 
-      delete currentIDPreset.label
+    delete currentIDPreset.label
 
 
     //   if (!types.includes(currentIDPreset.type)){
     //       types.push(currentIDPreset.type)
     //   }
 
-      // already in OSMGO
-    if (currentOsmGoPreset){
-         if (currentIDPreset.options){
-             for (let oiD of currentIDPreset.options ){
-                 let oGo = currentOsmGoPreset.options.find( o => o.v === oiD.v)
-                 if (oGo){
+    // already in OSMGO
+    if (currentOsmGoPreset) {
+        if (currentIDPreset.options) {
+            for (let oiD of currentIDPreset.options) {
+                //  console.log(currentOsmGoPreset);
+                let oGo
+                if (currentOsmGoPreset.options) {
+                    oGo = currentOsmGoPreset.options.find(o => o.v === oiD.v)
+                }
+                if (oGo) {
                     // oGo.lbl.en = oiD.lbl.en;
-                 } else {
-                    currentOsmGoPreset.options.push(oiD)
-                 }
-             }
+                } else {
+                    if (currentOsmGoPreset.options) {
+                        currentOsmGoPreset.options.push(oiD)
+                    }
+                }
+            }
             // currentOsmGoPreset.options = [...currentOsmGoPreset.options, ...currentIDPreset.options]
-         }
+        }
 
-         if (currentIDPreset && currentIDPreset.lbl && currentIDPreset.lbl.en){
+        if (currentIDPreset && currentIDPreset.lbl && currentIDPreset.lbl.en) {
             currentOsmGoPreset.lbl.en = currentIDPreset.lbl.en
-         } else {
-             console.log(currentIDPreset);
-         }
-        
+        } else {
+            console.log(currentIDPreset);
+        }
+
 
         // console.log('Go :', currentOsmGoPreset, 'iD:', currentIDPreset)
-        currentOsmGoPreset = { ...currentIDPreset , ...currentOsmGoPreset} 
+        currentOsmGoPreset = { ...currentIDPreset, ...currentOsmGoPreset }
     } else {
         presetsOsmgo[fiDId] = currentIDPreset
     }
 }
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8' )
-fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8' )
+fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
+fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
 // console.log(tagsOsmgo);
 // tagsOsmgoPath
 // presetsOsmgoPath

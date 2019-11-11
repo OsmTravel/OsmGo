@@ -2668,7 +2668,7 @@
       },
       {
         "key": "curtain",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
@@ -3063,7 +3063,7 @@
       },
       {
         "key": "erotic",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": [
           "shop#erotic#brand",
@@ -3275,7 +3275,7 @@
       },
       {
         "key": "ticket",
-        "icon": "fa-ticket-alt-solid",
+        "icon": "fas-ticket-alt",
         "markerColor": "#A23337",
         "presets": [
           "shop#ticket#brand",
@@ -3499,7 +3499,7 @@
       },
       {
         "key": "sewing",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
@@ -3653,25 +3653,27 @@
       },
       {
         "key": "fishmonger",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": [],
         "lbl": {"en": "Fishmonger"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/fishmonger",
-        "tags": {"shop": "fishmonger"}
+        "tags": {"shop": "fishmonger"},
+        "moreFields": []
       },
       {
         "key": "furnace",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": [],
         "lbl": {"en": "Furnace Store"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/furnace",
-        "tags": {"shop": "furnace"}
+        "tags": {"shop": "furnace"},
+        "moreFields": []
       },
       {
         "key": "appliance",
@@ -3684,26 +3686,28 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/appliance",
-        "tags": {"shop": "appliance"}
+        "tags": {"shop": "appliance"},
+        "moreFields": []
       },
       {
         "key": "boat",
         "icon": "temaki-boating",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#boat#brand"],
         "lbl": {"en": "Boat Store"},
         "terms": {
           "en": "fishing boat, jetski, motorboat, rowboat, sailboat, vessel, watercraft"
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/boat",
-        "tags": {"shop": "boat"}
+        "tags": {"shop": "boat"},
+        "moreFields": []
       },
       {
         "key": "bookmaker",
         "icon": "temaki-money_hand",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#bookmaker#brand"],
         "lbl": {"en": "Bookmaker"},
         "terms": {"en": "betting, bookie"},
         "geometry": ["point", "area"],
@@ -3720,18 +3724,20 @@
         "terms": {"en": "brew shop, homebrew supply store"},
         "geometry": ["point", "area"],
         "iDRef": "shop/brewing_supplies",
-        "tags": {"shop": "brewing_supplies"}
+        "tags": {"shop": "brewing_supplies"},
+        "moreFields": []
       },
       {
         "key": "candles",
         "icon": "fa-burn",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#candles#brand"],
         "lbl": {"en": "Candle Shop"},
         "terms": {"en": "wax"},
         "geometry": ["point", "area"],
         "iDRef": "shop/candles",
-        "tags": {"shop": "candles"}
+        "tags": {"shop": "candles"},
+        "moreFields": []
       },
       {
         "key": "cannabis",
@@ -3747,49 +3753,53 @@
       },
       {
         "key": "catalogue",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#catalogue#brand"],
         "lbl": {"en": "Catalog Shop"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/catalogue",
-        "tags": {"shop": "catalogue"}
+        "tags": {"shop": "catalogue"},
+        "moreFields": []
       },
       {
         "key": "country_store",
         "icon": "fa-hat-cowboy-side",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#country_store#brand"],
         "lbl": {"en": "Country Store"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/country_store",
-        "tags": {"shop": "country_store"}
+        "tags": {"shop": "country_store"},
+        "moreFields": []
       },
       {
         "key": "craft",
         "icon": "fa-palette",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#craft#brand"],
         "lbl": {"en": "Arts and Crafts Store"},
         "terms": {"en": "art*, paint*, frame"},
         "geometry": ["point", "area"],
         "iDRef": "shop/craft",
-        "tags": {"shop": "craft"}
+        "tags": {"shop": "craft"},
+        "moreFields": []
       },
       {
         "key": "fashion_accessories",
         "icon": "temaki-fashion_accessories",
         "markerColor": "#A23337",
-        "presets": ["name", "clothes"],
+        "presets": ["shop#fashion_accessories#brand", "name", "clothes"],
         "lbl": {"en": "Fashion Accessories Store"},
         "terms": {
           "en": "bag, cologne, fragrance, hat, jewellery, purfume, purse, scarf, sunglasses, umbrella, wallet, watch"
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/fashion_accessories",
-        "tags": {"shop": "fashion_accessories"}
+        "tags": {"shop": "fashion_accessories"},
+        "moreFields": []
       },
       {
         "key": "fuel",
@@ -3800,40 +3810,44 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/fuel",
-        "tags": {"shop": "fuel"}
+        "tags": {"shop": "fuel"},
+        "moreFields": []
       },
       {
         "key": "hairdresser_supply",
         "icon": "temaki-hair_care",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#hairdresser_supply#brand"],
         "lbl": {"en": "Hairdresser Supply Store"},
         "terms": {"en": "barber, shampoo, conditioner"},
         "geometry": ["point", "area"],
         "iDRef": "shop/hairdresser_supply",
-        "tags": {"shop": "hairdresser_supply"}
+        "tags": {"shop": "hairdresser_supply"},
+        "moreFields": []
       },
       {
         "key": "health_food",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#health_food#brand"],
         "lbl": {"en": "Health Food Shop"},
         "terms": {"en": "wholefood, vitamins, vegetarian, vegan"},
         "geometry": ["point", "area"],
         "iDRef": "shop/health_food",
-        "tags": {"shop": "health_food"}
+        "tags": {"shop": "health_food"},
+        "moreFields": []
       },
       {
         "key": "hobby",
         "icon": "fa-dragon",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#hobby#brand"],
         "lbl": {"en": "Hobby Shop"},
         "terms": {"en": "manga, figurine, model"},
         "geometry": ["point", "area"],
         "iDRef": "shop/hobby",
-        "tags": {"shop": "hobby"}
+        "tags": {"shop": "hobby"},
+        "moreFields": []
       },
       {
         "key": "hunting",
@@ -3844,7 +3858,8 @@
         "terms": {"en": "arrows, bows, bullets, crossbows, rifles, traps"},
         "geometry": ["point", "area"],
         "iDRef": "shop/hunting",
-        "tags": {"shop": "hunting"}
+        "tags": {"shop": "hunting"},
+        "moreFields": []
       },
       {
         "key": "lighting",
@@ -3857,18 +3872,20 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/lighting",
-        "tags": {"shop": "lighting"}
+        "tags": {"shop": "lighting"},
+        "moreFields": []
       },
       {
         "key": "lottery",
-        "icon": "",
+        "icon": "fas-ticket-alt",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#lottery#brand"],
         "lbl": {"en": "Lottery Shop"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/lottery",
-        "tags": {"shop": "lottery"}
+        "tags": {"shop": "lottery"},
+        "moreFields": []
       },
       {
         "key": "military_surplus",
@@ -3881,18 +3898,20 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/military_surplus",
-        "tags": {"shop": "military_surplus"}
+        "tags": {"shop": "military_surplus"},
+        "moreFields": []
       },
       {
         "key": "money_lender",
         "icon": "temaki-money_hand",
         "markerColor": "#A23337",
-        "presets": ["currency_multi"],
+        "presets": ["shop#money_lender#brand", "currency_multi"],
         "lbl": {"en": "Money Lender"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/money_lender",
-        "tags": {"shop": "money_lender"}
+        "tags": {"shop": "money_lender"},
+        "moreFields": []
       },
       {
         "key": "motorcycle_repair",
@@ -3903,29 +3922,32 @@
         "terms": {"en": "auto, bike, garage, motorcycle, repair, service"},
         "geometry": ["point", "area"],
         "iDRef": "shop/motorcycle_repair",
-        "tags": {"shop": "motorcycle_repair"}
+        "tags": {"shop": "motorcycle_repair"},
+        "moreFields": []
       },
       {
         "key": "outpost",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#outpost#brand"],
         "lbl": {"en": "Online Retailer Outpost"},
         "terms": {"en": "online, pick up, pickup"},
         "geometry": ["point", "area"],
         "iDRef": "shop/outpost",
-        "tags": {"shop": "outpost"}
+        "tags": {"shop": "outpost"},
+        "moreFields": []
       },
       {
         "key": "pawnbroker",
         "icon": "temaki-money_hand",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#pawnbroker#brand"],
         "lbl": {"en": "Pawn Shop"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/pawnbroker",
-        "tags": {"shop": "pawnbroker"}
+        "tags": {"shop": "pawnbroker"},
+        "moreFields": []
       },
       {
         "key": "psychic",
@@ -3938,18 +3960,20 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/psychic",
-        "tags": {"shop": "psychic"}
+        "tags": {"shop": "psychic"},
+        "moreFields": []
       },
       {
         "key": "pyrotechnics",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": [],
         "lbl": {"en": "Fireworks Store"},
         "terms": {"en": "fireworks"},
         "geometry": ["point", "area"],
         "iDRef": "shop/pyrotechnics",
-        "tags": {"shop": "pyrotechnics"}
+        "tags": {"shop": "pyrotechnics"},
+        "moreFields": []
       },
       {
         "key": "radiotechnics",
@@ -3960,64 +3984,70 @@
         "terms": {"en": "antenna, transistor"},
         "geometry": ["point", "area"],
         "iDRef": "shop/radiotechnics",
-        "tags": {"shop": "radiotechnics"}
+        "tags": {"shop": "radiotechnics"},
+        "moreFields": []
       },
       {
         "key": "religion",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
         "presets": ["religion", "denomination"],
         "lbl": {"en": "Religious Store"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/religion",
-        "tags": {"shop": "religion"}
+        "tags": {"shop": "religion"},
+        "moreFields": []
       },
       {
         "key": "rental",
         "icon": "fa-dolly",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#rental#brand"],
         "lbl": {"en": "Rental Shop"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/rental",
-        "tags": {"shop": "rental"}
+        "tags": {"shop": "rental"},
+        "moreFields": []
       },
       {
         "key": "storage_rental",
         "icon": "fa-warehouse",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#storage_rental#brand"],
         "lbl": {"en": "Storage Rental"},
         "terms": {"en": "garages"},
         "geometry": ["point", "area"],
         "iDRef": "shop/storage_rental",
-        "tags": {"shop": "storage_rental"}
+        "tags": {"shop": "storage_rental"},
+        "moreFields": []
       },
       {
         "key": "telecommunication",
         "icon": "maki-telephone-15",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#telecommunication#brand"],
         "lbl": {"en": "Telecom Retail Store"},
         "terms": {
           "en": "communication, internet service provider, isp, network, telephone, voice"
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/telecommunication",
-        "tags": {"shop": "telecommunication"}
+        "tags": {"shop": "telecommunication"},
+        "moreFields": []
       },
       {
         "key": "tiles",
-        "icon": "",
+        "icon": "maki-shop-15",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#tiles#brand"],
         "lbl": {"en": "Tile Shop"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/tiles",
-        "tags": {"shop": "tiles"}
+        "tags": {"shop": "tiles"},
+        "moreFields": []
       },
       {
         "key": "water_sports",
@@ -4028,29 +4058,45 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/water_sports",
-        "tags": {"shop": "water_sports"}
+        "tags": {"shop": "water_sports"},
+        "moreFields": []
       },
       {
         "key": "water",
-        "icon": "",
+        "icon": "maki-drinking-water-15",
         "markerColor": "#A23337",
         "presets": [],
         "lbl": {"en": "Drinking Water Shop"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "shop/water",
-        "tags": {"shop": "water"}
+        "tags": {"shop": "water"},
+        "moreFields": []
       },
       {
         "key": "wholesale",
         "icon": "maki-warehouse-15",
         "markerColor": "#A23337",
-        "presets": [],
+        "presets": ["shop#wholesale#brand"],
         "lbl": {"en": "Wholesale Store"},
         "terms": {"en": "warehouse club, cash and carry"},
         "geometry": ["point", "area"],
         "iDRef": "shop/wholesale",
-        "tags": {"shop": "wholesale"}
+        "tags": {"shop": "wholesale"},
+        "moreFields": []
+      },
+      {
+        "key": "spices",
+        "icon": "maki-shop-15",
+        "markerColor": "#A23337",
+        "presets": [],
+        "lbl": {"en": "Spice Shop"},
+        "terms": {
+          "en": "chili, cinnamon, curry, ginger, herbs, pepper, saffron, salt, spice store, spices, turmeric, wasabi"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "shop/spices",
+        "tags": {"shop": "spices"}
       }
     ]
   },
@@ -7398,7 +7444,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "amenity/register_office",
-        "tags": {"amenity": "register_office"}
+        "tags": {"amenity": "register_office"},
+        "moreFields": []
       },
       {
         "key": "scrapyard",
@@ -7409,13 +7456,15 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "amenity/scrapyard",
-        "tags": {"amenity": "scrapyard"}
+        "tags": {"amenity": "scrapyard"},
+        "moreFields": []
       },
       {
         "key": "animal_boarding",
         "icon": "maki-veterinary-15",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#animal_boarding#brand",
           "name",
           "operator",
           "address",
@@ -7505,7 +7554,8 @@
         "terms": {"en": "beer, bier, booze"},
         "geometry": ["point", "area"],
         "iDRef": "amenity/biergarten",
-        "tags": {"amenity": "biergarten"}
+        "tags": {"amenity": "biergarten"},
+        "moreFields": []
       },
       {
         "key": "car_pooling",
@@ -7532,6 +7582,7 @@
         "icon": "fa-child",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#childcare#brand",
           "name",
           "operator",
           "operator/type",
@@ -7826,8 +7877,8 @@
         "icon": "temaki-money_hand",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#money_transfer#brand",
           "name",
-          "brand",
           "address",
           "building_area",
           "payment_multi",
@@ -7855,8 +7906,8 @@
         "icon": "temaki-money_hand",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#payment_centre#brand",
           "name",
-          "brand",
           "address",
           "building_area",
           "opening_hours",
@@ -7884,8 +7935,8 @@
         "icon": "fa-credit-card",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#payment_terminal#brand",
           "name",
-          "brand",
           "address",
           "opening_hours",
           "payment_multi"
@@ -7907,7 +7958,7 @@
       },
       {
         "key": "planetarium",
-        "icon": "",
+        "icon": "maki-globe-15",
         "markerColor": "#EF9228",
         "presets": [
           "name",
@@ -7956,6 +8007,7 @@
         "icon": "temaki-school",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#prep_school#brand",
           "name",
           "operator",
           "address",
@@ -8045,6 +8097,7 @@
         "icon": "",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#recycling#brand",
           "name",
           "operator",
           "operator/type",
@@ -8075,7 +8128,12 @@
         "key": "recycling",
         "icon": "",
         "markerColor": "#EF9228",
-        "presets": ["operator", "recycling_accepts", "collection_times"],
+        "presets": [
+          "amenity#recycling#brand",
+          "operator",
+          "recycling_accepts",
+          "collection_times"
+        ],
         "lbl": {"en": "Recycling Container"},
         "terms": {
           "en": "bin, can, bottle, glass, garbage, rubbish, scrap, trash"
@@ -8110,8 +8168,8 @@
         "icon": "fa-handshake",
         "markerColor": "#EF9228",
         "presets": [
+          "amenity#social_centre#brand",
           "name",
-          "brand",
           "operator",
           "operator/type",
           "address",
@@ -8190,6 +8248,94 @@
           "wheelchair"
         ],
         "tags": {"amenity": "weighbridge"}
+      },
+      {
+        "key": "karaoke_box",
+        "icon": "maki-karaoke-15",
+        "markerColor": "#EF9228",
+        "presets": [
+          "name",
+          "operator",
+          "address",
+          "building_area",
+          "opening_hours",
+          "website"
+        ],
+        "lbl": {"en": "Karaoke Box"},
+        "terms": {"en": "karaoke club, karaoke room, karaoke television, KTV"},
+        "geometry": ["point", "area"],
+        "iDRef": "amenity/karaoke",
+        "moreFields": [
+          "air_conditioning",
+          "email",
+          "fax",
+          "level",
+          "min_age",
+          "payment_multi",
+          "phone",
+          "smoking",
+          "wheelchair"
+        ],
+        "tags": {"amenity": "karaoke_box"}
+      },
+      {
+        "key": "recycling",
+        "icon": "maki-recycling-15",
+        "markerColor": "#EF9228",
+        "presets": [
+          "amenity#recycling#brand",
+          "name",
+          "operator",
+          "operator/type",
+          "address",
+          "building",
+          "opening_hours",
+          "recycling_accepts"
+        ],
+        "lbl": {"en": "Recycling Center"},
+        "terms": {
+          "en": "bottle, can, dump, glass, garbage, rubbish, scrap, trash"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "amenity/recycling_centre",
+        "moreFields": [
+          "charge_fee",
+          "email",
+          "fax",
+          "fee",
+          "payment_multi_fee",
+          "phone",
+          "website",
+          "wheelchair"
+        ],
+        "tags": {"amenity": "recycling", "recycling_type": "centre"}
+      },
+      {
+        "key": "recycling",
+        "icon": "maki-recycling-15",
+        "markerColor": "#EF9228",
+        "presets": [
+          "amenity#recycling#brand",
+          "operator",
+          "recycling_accepts",
+          "collection_times"
+        ],
+        "lbl": {"en": "Recycling Container"},
+        "terms": {
+          "en": "bin, can, bottle, glass, garbage, rubbish, scrap, trash"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "amenity/recycling_container",
+        "moreFields": [
+          "colour",
+          "covered",
+          "indoor",
+          "level",
+          "manufacturer",
+          "material",
+          "opening_hours"
+        ],
+        "tags": {"amenity": "recycling", "recycling_type": "container"}
       }
     ]
   },
@@ -8465,14 +8611,286 @@
       },
       {
         "key": "stop_area",
-        "icon": "",
+        "icon": "maki-aerialway-15",
         "markerColor": "#C057A0",
         "presets": ["name", "ref", "network", "operator"],
         "lbl": {"en": "Transit Stop Area"},
         "terms": {"en": ""},
         "geometry": ["relation"],
         "iDRef": "public_transport/stop_area",
-        "tags": {"type": "public_transport", "public_transport": "stop_area"}
+        "tags": {"type": "public_transport", "public_transport": "stop_area"},
+        "moreFields": []
+      },
+      {
+        "key": "stop_position",
+        "icon": "maki-aerialway-15",
+        "markerColor": "#C057A0",
+        "presets": ["ref_stop_position"],
+        "lbl": {"en": "Aerialway Stopping Location"},
+        "terms": {
+          "en": "aerialway, cable car, public transit, public transportation, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_aerialway",
+        "tags": {"public_transport": "stop_position", "aerialway": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "maki-bus-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Bus Stopping Location"},
+        "terms": {
+          "en": "bus, public transit, public transportation, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_bus",
+        "tags": {"public_transport": "stop_position", "bus": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "maki-ferry-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Ferry Stopping Location"},
+        "terms": {
+          "en": "boat, dock, ferry, pier, public transit, public transportation, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_ferry",
+        "tags": {"public_transport": "stop_position", "ferry": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "temaki-light_rail",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Light Rail Stopping Location"},
+        "terms": {
+          "en": "electric, light rail, public transit, public transportation, rail, track, tram, trolley, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_light_rail",
+        "tags": {"public_transport": "stop_position", "light_rail": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "temaki-monorail",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Monorail Stopping Location"},
+        "terms": {
+          "en": "monorail, public transit, public transportation, rail, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_monorail",
+        "tags": {"public_transport": "stop_position", "monorail": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "temaki-subway",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Subway Stopping Location"},
+        "terms": {
+          "en": "metro, public transit, public transportation, rail, subway, track, transit, transportation, underground"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_subway",
+        "tags": {"public_transport": "stop_position", "subway": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "maki-rail-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Train Stopping Location"},
+        "terms": {
+          "en": "public transit, public transportation, rail, track, train, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_train",
+        "tags": {"public_transport": "stop_position", "train": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "temaki-tram",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Tram Stopping Location"},
+        "terms": {
+          "en": "electric, light rail, public transit, public transportation, rail, streetcar, track, tram, trolley, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_tram",
+        "tags": {"public_transport": "stop_position", "tram": "yes"}
+      },
+      {
+        "key": "stop_position",
+        "icon": "temaki-trolleybus",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Trolleybus Stopping Location"},
+        "terms": {
+          "en": "bus, electric, public transit, public transportation, streetcar, trackless, tram, trolley, transit, transportation"
+        },
+        "geometry": ["vertex"],
+        "iDRef": "public_transport/stop_position_trolleybus",
+        "tags": {"public_transport": "stop_position", "trolleybus": "yes"}
+      },
+      {
+        "key": "platform",
+        "icon": "maki-rail-15",
+        "markerColor": "#C057A0",
+        "presets": [
+          "name",
+          "network",
+          "operator",
+          "departures_board",
+          "shelter"
+        ],
+        "lbl": {"en": "Transit Stop / Platform"},
+        "terms": {
+          "en": "platform, public transit, public transportation, transit, transportation"
+        },
+        "geometry": ["point"],
+        "iDRef": "public_transport/platform_point",
+        "moreFields": ["bench", "bin", "level", "lit", "wheelchair"],
+        "tags": {"public_transport": "platform"}
+      },
+      {
+        "key": "station",
+        "icon": "maki-aerialway-15",
+        "markerColor": "#C057A0",
+        "presets": ["aerialway/access", "aerialway/summer/access"],
+        "lbl": {"en": "Aerialway Station"},
+        "terms": {
+          "en": "aerialway, cable car, public transit, public transportation, station, terminal, transit, transportation"
+        },
+        "geometry": ["point", "vertex", "area"],
+        "iDRef": "public_transport/station_aerialway",
+        "tags": {"public_transport": "station", "aerialway": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "maki-bus-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Bus Station / Terminal"},
+        "terms": {
+          "en": "bus, public transit, public transportation, station, terminal, transit, transportation"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_bus",
+        "tags": {"public_transport": "station", "bus": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "maki-ferry-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Ferry Station / Terminal"},
+        "terms": {
+          "en": "boat, dock, ferry, pier, public transit, public transportation, station, terminal, transit, transportation"
+        },
+        "geometry": ["vertex", "point", "area"],
+        "iDRef": "public_transport/station_ferry",
+        "tags": {"public_transport": "station", "ferry": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "temaki-light_rail",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Light Rail Station"},
+        "terms": {
+          "en": "electric, light rail, public transit, public transportation, rail, station, terminal, track, tram, trolley, transit, transportation"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_light_rail",
+        "tags": {"public_transport": "station", "light_rail": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "temaki-monorail",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Monorail Station"},
+        "terms": {
+          "en": "monorail, public transit, public transportation, rail, station, terminal, transit, transportation"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_monorail",
+        "tags": {"public_transport": "station", "monorail": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "temaki-subway",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Subway Station"},
+        "terms": {
+          "en": "metro, public transit, public transportation, rail, station, subway, terminal, track, transit, transportation, underground"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_subway",
+        "tags": {"public_transport": "station", "subway": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "maki-rail-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Train Station (Halt / Request)"},
+        "terms": {
+          "en": "halt, public transit, public transportation, rail, station, track, train, transit, transportation, whistle stop"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_train_halt",
+        "tags": {
+          "public_transport": "station",
+          "train": "yes",
+          "railway": "halt"
+        }
+      },
+      {
+        "key": "station",
+        "icon": "maki-rail-15",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Train Station"},
+        "terms": {
+          "en": "public transit, public transportation, rail, station, terminal, track, train, transit, transportation"
+        },
+        "geometry": ["vertex", "point", "area"],
+        "iDRef": "public_transport/station_train",
+        "tags": {"public_transport": "station", "train": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "temaki-tram",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Tram Station"},
+        "terms": {
+          "en": "electric, light rail, public transit, public transportation, rail, station, streetcar, terminal, track, tram, trolley, transit, transportation"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_tram",
+        "tags": {"public_transport": "station", "tram": "yes"}
+      },
+      {
+        "key": "station",
+        "icon": "temaki-trolleybus",
+        "markerColor": "#C057A0",
+        "presets": [],
+        "lbl": {"en": "Trolleybus Station / Terminal"},
+        "terms": {
+          "en": "bus, electric, public transit, public transportation, station, streetcar, terminal, trackless, tram, trolley, transit, transportation"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "public_transport/station_trolleybus",
+        "tags": {"public_transport": "station", "trolleybus": "yes"}
       },
       {
         "key": "stop_position",
@@ -8601,7 +9019,7 @@
         "icon": "maki-fire-station-15",
         "markerColor": "#75030B",
         "presets": [
-          "fire_hydrant:type",
+          "fire_hydrant/type",
           "fire_hydrant:position",
           "fire_hydrant:diameter",
           "ref",
@@ -8627,7 +9045,9 @@
           "fire_hydrant/pressure",
           "level",
           "survey:date",
-          "water_volume"
+          "water_volume",
+          "fire_hydrant/diameter",
+          "survey/date"
         ]
       },
       {
@@ -8747,7 +9167,7 @@
         "key": "yes",
         "icon": "wiki_question",
         "markerColor": "#75030B",
-        "presets": [],
+        "presets": ["emergency_combo"],
         "lbl": {
           "en": "Emergency Access Yes",
           "fr": "Accessible aux services d'urgences",
@@ -8818,58 +9238,63 @@
       },
       {
         "key": "designated",
-        "icon": "",
         "markerColor": "#75030B",
-        "presets": [],
+        "presets": ["emergency_combo"],
         "lbl": {"en": "Emergency Access Designated"},
         "terms": {"en": ""},
         "geometry": ["line"],
         "iDRef": "emergency/designated",
-        "tags": {"emergency": "designated"}
+        "tags": {"emergency": "designated"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "destination",
-        "icon": "",
         "markerColor": "#75030B",
-        "presets": [],
+        "presets": ["emergency_combo"],
         "lbl": {"en": "Emergency Access Destination"},
         "terms": {"en": ""},
         "geometry": ["line"],
         "iDRef": "emergency/destination",
-        "tags": {"emergency": "destination"}
+        "tags": {"emergency": "destination"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "no",
-        "icon": "",
         "markerColor": "#75030B",
-        "presets": [],
+        "presets": ["emergency_combo"],
         "lbl": {"en": "Emergency Access No"},
         "terms": {"en": ""},
         "geometry": ["line"],
         "iDRef": "emergency/no",
-        "tags": {"emergency": "no"}
+        "tags": {"emergency": "no"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "official",
-        "icon": "",
         "markerColor": "#75030B",
-        "presets": [],
+        "presets": ["emergency_combo"],
         "lbl": {"en": "Emergency Access Official"},
         "terms": {"en": ""},
         "geometry": ["line"],
         "iDRef": "emergency/official",
-        "tags": {"emergency": "official"}
+        "tags": {"emergency": "official"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "private",
-        "icon": "",
         "markerColor": "#75030B",
-        "presets": [],
+        "presets": ["emergency_combo"],
         "lbl": {"en": "Emergency Access Private"},
         "terms": {"en": ""},
         "geometry": ["line"],
         "iDRef": "emergency/private",
-        "tags": {"emergency": "private"}
+        "tags": {"emergency": "private"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "ambulance_station",
@@ -8928,7 +9353,20 @@
         "terms": {"en": "CPR, rescue"},
         "geometry": ["point", "area"],
         "iDRef": "emergency/lifeguard",
-        "tags": {"emergency": "lifeguard"}
+        "tags": {"emergency": "lifeguard"},
+        "moreFields": []
+      },
+      {
+        "key": "fire_alarm_box",
+        "icon": "fa-bell",
+        "markerColor": "#75030B",
+        "presets": ["indoor", "ref", "operator"],
+        "lbl": {"en": "Fire Alarm Call Box"},
+        "terms": {"en": ""},
+        "geometry": ["point", "vertex"],
+        "iDRef": "emergency/fire_alarm",
+        "moreFields": ["level"],
+        "tags": {"emergency": "fire_alarm_box"}
       }
     ]
   },
@@ -9942,7 +10380,8 @@
         "terms": {"en": "crowd, bench, sports, stand, stands, seat, seating"},
         "geometry": ["area"],
         "iDRef": "leisure/bleachers",
-        "tags": {"leisure": "bleachers"}
+        "tags": {"leisure": "bleachers"},
+        "moreFields": []
       },
       {
         "key": "common",
@@ -10081,6 +10520,43 @@
         "iDRef": "leisure/swimming_area",
         "moreFields": ["opening_hours", "operator"],
         "tags": {"leisure": "swimming_area"}
+      },
+      {
+        "key": "dance",
+        "icon": "fa-music",
+        "markerColor": "#5B396C",
+        "presets": [
+          "name",
+          "operator",
+          "address",
+          "building_area",
+          "dance/style"
+        ],
+        "lbl": {"en": "Dance School"},
+        "terms": {"en": "jive, swing, tango, waltz, dance teaching"},
+        "geometry": ["point", "area"],
+        "iDRef": "leisure/dancing_school",
+        "moreFields": [
+          "email",
+          "fax",
+          "level",
+          "opening_hours",
+          "payment_multi",
+          "phone",
+          "website"
+        ],
+        "tags": {"leisure": "dance", "dance:teaching": "yes"}
+      },
+      {
+        "key": "slipway",
+        "icon": "maki-slipway-15",
+        "markerColor": "#5B396C",
+        "presets": [],
+        "lbl": {"en": "Slipway"},
+        "terms": {"en": "boat launch, boat ramp, boat landing"},
+        "geometry": ["point", "vertex"],
+        "iDRef": "leisure/slipway_point",
+        "tags": {"leisure": "slipway"}
       }
     ]
   },
@@ -11143,7 +11619,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "craft/jeweler",
-        "tags": {"craft": "jeweler"}
+        "tags": {"craft": "jeweler"},
+        "moreFields": []
       },
       {
         "key": "agricultural_engines",
@@ -11154,7 +11631,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "craft/agricultural_engines",
-        "tags": {"craft": "agricultural_engines"}
+        "tags": {"craft": "agricultural_engines"},
+        "moreFields": []
       },
       {
         "key": "carpet_layer",
@@ -11165,7 +11643,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "craft/carpet_layer",
-        "tags": {"craft": "carpet_layer"}
+        "tags": {"craft": "carpet_layer"},
+        "moreFields": []
       },
       {
         "key": "insulation",
@@ -11187,18 +11666,31 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "craft/scaffolder",
-        "tags": {"craft": "scaffolder"}
+        "tags": {"craft": "scaffolder"},
+        "moreFields": []
       },
       {
         "key": "signmaker",
         "icon": "temaki-tools",
         "markerColor": "#5B396C",
-        "presets": [],
+        "presets": ["craft#signmaker#brand"],
         "lbl": {"en": "Signmaker"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "craft/signmaker",
-        "tags": {"craft": "signmaker"}
+        "tags": {"craft": "signmaker"},
+        "moreFields": []
+      },
+      {
+        "key": "insulation",
+        "icon": "temaki-tools",
+        "markerColor": "#5B396C",
+        "presets": [],
+        "lbl": {"en": "Insulator"},
+        "terms": {"en": ""},
+        "geometry": ["point", "area"],
+        "iDRef": "craft/insulator",
+        "tags": {"craft": "insulation"}
       }
     ]
   },
@@ -11968,7 +12460,8 @@
         "terms": {"en": "tent, rv"},
         "geometry": ["point", "area"],
         "iDRef": "tourism/camp_pitch",
-        "tags": {"tourism": "camp_pitch"}
+        "tags": {"tourism": "camp_pitch"},
+        "moreFields": []
       },
       {
         "key": "trail_riding_station",
@@ -12723,7 +13216,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "office/physician",
-        "tags": {"office": "physician"}
+        "tags": {"office": "physician"},
+        "moreFields": []
       },
       {
         "key": "adoption_agency",
@@ -12734,13 +13228,14 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "office/adoption_agency",
-        "tags": {"office": "adoption_agency"}
+        "tags": {"office": "adoption_agency"},
+        "moreFields": []
       },
       {
         "key": "bail_bond_agent",
         "icon": "maki-bank-15",
         "markerColor": "#F5BB3A",
-        "presets": [],
+        "presets": ["office#bail_bond_agent#brand"],
         "lbl": {"en": "Bail Bond Agent"},
         "terms": {
           "en": "bail bond dealer, bail bond man, bail bondsman, bail bondsperson"
@@ -12759,24 +13254,26 @@
         "terms": {"en": "charitable organization"},
         "geometry": ["point", "area"],
         "iDRef": "office/charity",
-        "tags": {"office": "charity"}
+        "tags": {"office": "charity"},
+        "moreFields": []
       },
       {
         "key": "consulting",
         "icon": "maki-suitcase-15",
         "markerColor": "#F5BB3A",
-        "presets": ["name", "consulting", "office"],
+        "presets": ["office#consulting#brand", "name", "consulting", "office"],
         "lbl": {"en": "Consultancy Office"},
         "terms": {"en": "consulting firm office"},
         "geometry": ["point", "area"],
         "iDRef": "office/consulting",
-        "tags": {"office": "consulting"}
+        "tags": {"office": "consulting"},
+        "moreFields": []
       },
       {
         "key": "coworking",
         "icon": "maki-suitcase-15",
         "markerColor": "#F5BB3A",
-        "presets": ["internet_access"],
+        "presets": ["office#coworking#brand", "internet_access"],
         "lbl": {"en": "Coworking Space"},
         "terms": {"en": "coworking, office"},
         "geometry": ["point", "area"],
@@ -12799,33 +13296,36 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "office/diplomatic",
-        "tags": {"office": "diplomatic"}
+        "tags": {"office": "diplomatic"},
+        "moreFields": []
       },
       {
         "key": "energy_supplier",
         "icon": "maki-suitcase-15",
         "markerColor": "#F5BB3A",
-        "presets": [],
+        "presets": ["office#energy_supplier#brand"],
         "lbl": {"en": "Energy Supplier Office"},
         "terms": {
           "en": "electricity, energy company, energy utility, gas utility"
         },
         "geometry": ["point", "area"],
         "iDRef": "office/energy_supplier",
-        "tags": {"office": "energy_supplier"}
+        "tags": {"office": "energy_supplier"},
+        "moreFields": []
       },
       {
         "key": "financial_advisor",
         "icon": "maki-suitcase-15",
         "markerColor": "#F5BB3A",
-        "presets": [],
+        "presets": ["office#financial_advisor#brand"],
         "lbl": {"en": "Financial Advisor"},
         "terms": {
           "en": "401k, inheritance, savings, stocks, retirement, wealth management"
         },
         "geometry": ["point", "area"],
         "iDRef": "office/financial_advisor",
-        "tags": {"office": "financial_advisor"}
+        "tags": {"office": "financial_advisor"},
+        "moreFields": []
       },
       {
         "key": "financial",
@@ -12836,7 +13336,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "office/financial",
-        "tags": {"office": "financial"}
+        "tags": {"office": "financial"},
+        "moreFields": []
       },
       {
         "key": "quango",
@@ -12849,7 +13350,8 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "office/quango",
-        "tags": {"office": "quango"}
+        "tags": {"office": "quango"},
+        "moreFields": []
       },
       {
         "key": "therapist",
@@ -12860,7 +13362,8 @@
         "terms": {"en": "therapy"},
         "geometry": ["point", "area"],
         "iDRef": "office/therapist",
-        "tags": {"office": "therapist"}
+        "tags": {"office": "therapist"},
+        "moreFields": []
       }
     ]
   },
@@ -12979,7 +13482,9 @@
           "surveillance:zone",
           "operator",
           "camera:direction",
-          "direction"
+          "direction",
+          "surveillance/type",
+          "surveillance/zone"
         ],
         "lbl": {
           "en": "Surveillance",
@@ -13178,7 +13683,7 @@
       },
       {
         "key": "pipeline",
-        "icon": "",
+        "icon": "mi-plumber",
         "markerColor": "#D3D3D3",
         "presets": ["operator", "location", "substance", "layer", "diameter"],
         "deprecated": true,
@@ -13546,7 +14051,8 @@
         },
         "geometry": ["point"],
         "iDRef": "man_made/antenna",
-        "tags": {"man_made": "antenna"}
+        "tags": {"man_made": "antenna"},
+        "moreFields": []
       },
       {
         "key": "beacon",
@@ -13574,14 +14080,15 @@
       },
       {
         "key": "breakwater",
-        "icon": "",
         "markerColor": "#D3D3D3",
         "presets": ["material", "seamark/type"],
         "lbl": {"en": "Breakwater"},
         "terms": {"en": ""},
         "geometry": ["line", "area"],
         "iDRef": "man_made/breakwater",
-        "tags": {"man_made": "breakwater"}
+        "tags": {"man_made": "breakwater"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "bunker_silo",
@@ -13592,7 +14099,8 @@
         "terms": {"en": "Silage, Storage"},
         "geometry": ["point", "area"],
         "iDRef": "man_made/bunker_silo",
-        "tags": {"man_made": "bunker_silo"}
+        "tags": {"man_made": "bunker_silo"},
+        "moreFields": []
       },
       {
         "key": "cairn",
@@ -13603,7 +14111,8 @@
         "terms": {"en": "rock pile, stone stack, stone pile, càrn"},
         "geometry": ["point", "area"],
         "iDRef": "man_made/cairn",
-        "tags": {"man_made": "cairn"}
+        "tags": {"man_made": "cairn"},
+        "moreFields": []
       },
       {
         "key": "clearcut",
@@ -13614,7 +14123,8 @@
         "terms": {"en": "cut, forest, lumber, tree, wood"},
         "geometry": ["area"],
         "iDRef": "man_made/clearcut",
-        "tags": {"man_made": "clearcut"}
+        "tags": {"man_made": "clearcut"},
+        "moreFields": []
       },
       {
         "key": "cutline",
@@ -13625,18 +14135,20 @@
         "terms": {"en": ""},
         "geometry": ["line"],
         "iDRef": "man_made/cutline",
-        "tags": {"man_made": "cutline"}
+        "tags": {"man_made": "cutline"},
+        "moreFields": []
       },
       {
         "key": "dyke",
-        "icon": "",
         "markerColor": "#D3D3D3",
         "presets": [],
         "lbl": {"en": "Levee"},
         "terms": {"en": "Dike, Dyke, Floodbank, Stopbank"},
         "geometry": ["line"],
         "iDRef": "man_made/dyke",
-        "tags": {"man_made": "dyke"}
+        "tags": {"man_made": "dyke"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "gasometer",
@@ -13647,18 +14159,20 @@
         "terms": {"en": "gas holder"},
         "geometry": ["point", "area"],
         "iDRef": "man_made/gasometer",
-        "tags": {"man_made": "gasometer"}
+        "tags": {"man_made": "gasometer"},
+        "moreFields": []
       },
       {
         "key": "groyne",
-        "icon": "",
         "markerColor": "#D3D3D3",
         "presets": ["material", "seamark/type"],
         "lbl": {"en": "Groyne"},
         "terms": {"en": ""},
         "geometry": ["line", "area"],
         "iDRef": "man_made/groyne",
-        "tags": {"man_made": "groyne"}
+        "tags": {"man_made": "groyne"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "icon": "temaki-manhole",
@@ -13679,11 +14193,11 @@
         "terms": {"en": ""},
         "geometry": ["point", "vertex", "area"],
         "iDRef": "man_made/obelisk",
-        "tags": {"man_made": "obelisk"}
+        "tags": {"man_made": "obelisk"},
+        "moreFields": []
       },
       {
         "key": "observatory",
-        "icon": "",
         "markerColor": "#D3D3D3",
         "presets": [
           "name",
@@ -13697,7 +14211,8 @@
         "geometry": ["point", "area"],
         "iDRef": "man_made/observatory",
         "moreFields": ["email", "fax", "phone", "website"],
-        "tags": {"man_made": "observatory"}
+        "tags": {"man_made": "observatory"},
+        "icon": ""
       },
       {
         "key": "petroleum_well",
@@ -13710,7 +14225,8 @@
         },
         "geometry": ["point"],
         "iDRef": "man_made/petroleum_well",
-        "tags": {"man_made": "petroleum_well"}
+        "tags": {"man_made": "petroleum_well"},
+        "moreFields": []
       },
       {
         "key": "torii",
@@ -13726,14 +14242,15 @@
       },
       {
         "key": "tunnel",
-        "icon": "",
+        "icon": "tnp-2009642",
         "markerColor": "#D3D3D3",
         "presets": ["name", "layer", "width", "length", "height"],
         "lbl": {"en": "Tunnel Area"},
         "terms": {"en": "bore, dig, shaft, underground passage, underpass"},
         "geometry": ["area"],
         "iDRef": "man_made/tunnel",
-        "tags": {"man_made": "tunnel"}
+        "tags": {"man_made": "tunnel"},
+        "moreFields": []
       },
       {
         "key": "utility_pole",
@@ -13756,7 +14273,18 @@
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "man_made/water_works",
-        "tags": {"man_made": "water_works"}
+        "tags": {"man_made": "water_works"},
+        "moreFields": []
+      },
+      {
+        "icon": "temaki-manhole",
+        "markerColor": "#D3D3D3",
+        "presets": ["operator", "label", "ref"],
+        "lbl": {"en": "Manhole"},
+        "terms": {"en": "cover, hole, sewer, sewage, telecom"},
+        "geometry": ["point", "vertex"],
+        "iDRef": "man_made/manhole",
+        "tags": {"manhole": "*"}
       }
     ]
   },
@@ -14089,18 +14617,20 @@
         "terms": {"en": "baby, childbirth, delivery, labour, labor, pregnancy"},
         "geometry": ["point", "area"],
         "iDRef": "healthcare/birthing_center",
-        "tags": {"healthcare": "birthing_center"}
+        "tags": {"healthcare": "birthing_center"},
+        "moreFields": []
       },
       {
         "key": "counselling",
         "icon": "fa-comments",
         "markerColor": "#C9BCF0",
-        "presets": [],
+        "presets": ["healthcare#counselling#brand"],
         "lbl": {"en": "Counselling Center"},
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "healthcare/counselling",
-        "tags": {"healthcare": "counselling"}
+        "tags": {"healthcare": "counselling"},
+        "moreFields": []
       },
       {
         "key": "hospice",
@@ -14111,7 +14641,8 @@
         "terms": {"en": "terminal, illness"},
         "geometry": ["point", "area"],
         "iDRef": "healthcare/hospice",
-        "tags": {"healthcare": "hospice"}
+        "tags": {"healthcare": "hospice"},
+        "moreFields": []
       },
       {
         "key": "optometrist",
@@ -14122,7 +14653,8 @@
         "terms": {"en": "eye, glasses, lasik, lenses, vision"},
         "geometry": ["point", "area"],
         "iDRef": "healthcare/optometrist",
-        "tags": {"healthcare": "optometrist"}
+        "tags": {"healthcare": "optometrist"},
+        "moreFields": []
       },
       {
         "key": "rehabilitation",
@@ -14133,7 +14665,8 @@
         "terms": {"en": "rehab, therapist, therapy"},
         "geometry": ["point", "area"],
         "iDRef": "healthcare/rehabilitation",
-        "tags": {"healthcare": "rehabilitation"}
+        "tags": {"healthcare": "rehabilitation"},
+        "moreFields": []
       }
     ]
   },
@@ -14414,7 +14947,8 @@
         "terms": {"en": "Town Gate"},
         "geometry": ["point", "area"],
         "iDRef": "historic/city_gate",
-        "tags": {"historic": "city_gate"}
+        "tags": {"historic": "city_gate"},
+        "moreFields": []
       },
       {
         "key": "wreck",
@@ -14533,7 +15067,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "line", "area"],
         "iDRef": "natural/bay",
-        "tags": {"natural": "bay"}
+        "tags": {"natural": "bay"},
+        "moreFields": []
       },
       {
         "key": "beach",
@@ -14544,7 +15079,8 @@
         "terms": {"en": "shore"},
         "geometry": ["point", "area"],
         "iDRef": "natural/beach",
-        "tags": {"natural": "beach"}
+        "tags": {"natural": "beach"},
+        "moreFields": []
       },
       {
         "key": "cape",
@@ -14555,7 +15091,8 @@
         "terms": {"en": "bay, coastline, erosion, headland, promontory"},
         "geometry": ["point", "vertex"],
         "iDRef": "natural/cape",
-        "tags": {"natural": "cape"}
+        "tags": {"natural": "cape"},
+        "moreFields": []
       },
       {
         "key": "cave_entrance",
@@ -14574,18 +15111,20 @@
         "terms": {"en": "cavern, hollow, grotto, shelter, cavity"},
         "geometry": ["point", "area"],
         "iDRef": "natural/cave_entrance",
-        "tags": {"natural": "cave_entrance"}
+        "tags": {"natural": "cave_entrance"},
+        "moreFields": []
       },
       {
         "key": "fell",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Fell"},
         "terms": {"en": ""},
         "geometry": ["area"],
         "iDRef": "natural/fell",
-        "tags": {"natural": "fell"}
+        "tags": {"natural": "fell"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "glacier",
@@ -14596,40 +15135,44 @@
         "terms": {"en": "ice, snow"},
         "geometry": ["area"],
         "iDRef": "natural/glacier",
-        "tags": {"natural": "glacier"}
+        "tags": {"natural": "glacier"},
+        "moreFields": []
       },
       {
         "key": "grassland",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Grassland"},
         "terms": {"en": "prairie, savanna"},
         "geometry": ["area"],
         "iDRef": "natural/grassland",
-        "tags": {"natural": "grassland"}
+        "tags": {"natural": "grassland"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "heath",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Heath"},
         "terms": {"en": ""},
         "geometry": ["area"],
         "iDRef": "natural/heath",
-        "tags": {"natural": "heath"}
+        "tags": {"natural": "heath"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "mud",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Mud"},
         "terms": {"en": "wetland"},
         "geometry": ["area"],
         "iDRef": "natural/mud",
-        "tags": {"natural": "mud"}
+        "tags": {"natural": "mud"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "peak",
@@ -14642,7 +15185,8 @@
         },
         "geometry": ["point", "vertex"],
         "iDRef": "natural/peak",
-        "tags": {"natural": "peak"}
+        "tags": {"natural": "peak"},
+        "moreFields": []
       },
       {
         "key": "reef",
@@ -14653,18 +15197,20 @@
         "terms": {"en": "barrier, coral, ocean, sand, shoal"},
         "geometry": ["area", "point"],
         "iDRef": "natural/reef",
-        "tags": {"natural": "reef"}
+        "tags": {"natural": "reef"},
+        "moreFields": []
       },
       {
         "key": "ridge",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Ridge"},
         "terms": {"en": "crest"},
         "geometry": ["line"],
         "iDRef": "natural/ridge",
-        "tags": {"natural": "ridge"}
+        "tags": {"natural": "ridge"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "rock",
@@ -14675,7 +15221,8 @@
         "terms": {"en": "boulder, stone, rock"},
         "geometry": ["point", "area"],
         "iDRef": "natural/rock",
-        "tags": {"natural": "rock"}
+        "tags": {"natural": "rock"},
+        "moreFields": []
       },
       {
         "key": "saddle",
@@ -14686,40 +15233,44 @@
         "terms": {"en": "pass, mountain pass, top"},
         "geometry": ["point", "vertex"],
         "iDRef": "natural/saddle",
-        "tags": {"natural": "saddle"}
+        "tags": {"natural": "saddle"},
+        "moreFields": []
       },
       {
         "key": "sand",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Sand"},
         "terms": {"en": "desert"},
         "geometry": ["area"],
         "iDRef": "natural/sand",
-        "tags": {"natural": "sand"}
+        "tags": {"natural": "sand"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "scree",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Scree"},
         "terms": {"en": "loose rocks"},
         "geometry": ["area"],
         "iDRef": "natural/scree",
-        "tags": {"natural": "scree"}
+        "tags": {"natural": "scree"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "scrub",
-        "icon": "",
         "markerColor": "#009549",
         "presets": [],
         "lbl": {"en": "Scrub"},
         "terms": {"en": "bush, shrubs"},
         "geometry": ["area"],
         "iDRef": "natural/scrub",
-        "tags": {"natural": "scrub"}
+        "tags": {"natural": "scrub"},
+        "moreFields": [],
+        "icon": ""
       },
       {
         "key": "spring",
@@ -14730,7 +15281,8 @@
         "terms": {"en": ""},
         "geometry": ["point", "vertex"],
         "iDRef": "natural/spring",
-        "tags": {"natural": "spring"}
+        "tags": {"natural": "spring"},
+        "moreFields": []
       },
       {
         "key": "stone",
@@ -14741,7 +15293,8 @@
         "terms": {"en": "boulder, stone, rock"},
         "geometry": ["point", "area"],
         "iDRef": "natural/stone",
-        "tags": {"natural": "stone"}
+        "tags": {"natural": "stone"},
+        "moreFields": []
       },
       {
         "key": "valley",
@@ -14754,7 +15307,8 @@
         },
         "geometry": ["vertex", "point", "line"],
         "iDRef": "natural/valley",
-        "tags": {"natural": "valley"}
+        "tags": {"natural": "valley"},
+        "moreFields": []
       },
       {
         "key": "volcano",
@@ -14765,7 +15319,8 @@
         "terms": {"en": "mountain, crater"},
         "geometry": ["point", "vertex"],
         "iDRef": "natural/volcano",
-        "tags": {"natural": "volcano"}
+        "tags": {"natural": "volcano"},
+        "moreFields": []
       },
       {
         "key": "wetland",
@@ -14778,7 +15333,8 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "natural/wetland",
-        "tags": {"natural": "wetland"}
+        "tags": {"natural": "wetland"},
+        "moreFields": []
       }
     ]
   },
@@ -15007,7 +15563,8 @@
           "level",
           "access_simple",
           "wheelchair",
-          "maxweight"
+          "maxweight",
+          "level_semi"
         ],
         "lbl": {"en": "Elevator"},
         "terms": {"en": "lift"},
@@ -15025,7 +15582,8 @@
         "terms": {"en": "Highway Emergency Bay"},
         "geometry": ["vertex"],
         "iDRef": "highway/emergency_bay",
-        "tags": {"highway": "emergency_bay"}
+        "tags": {"highway": "emergency_bay"},
+        "moreFields": []
       },
       {
         "key": "milestone",
@@ -15038,7 +15596,8 @@
         },
         "geometry": ["point", "vertex"],
         "iDRef": "highway/milestone",
-        "tags": {"highway": "milestone"}
+        "tags": {"highway": "milestone"},
+        "moreFields": []
       },
       {
         "key": "mini_roundabout",
@@ -15049,7 +15608,8 @@
         "terms": {"en": "traffic circle"},
         "geometry": ["vertex"],
         "iDRef": "highway/mini_roundabout",
-        "tags": {"highway": "mini_roundabout"}
+        "tags": {"highway": "mini_roundabout"},
+        "moreFields": []
       },
       {
         "key": "passing_place",
@@ -15060,7 +15620,8 @@
         "terms": {"en": "turnout, pullout"},
         "geometry": ["vertex"],
         "iDRef": "highway/passing_place",
-        "tags": {"highway": "passing_place"}
+        "tags": {"highway": "passing_place"},
+        "moreFields": []
       },
       {
         "key": "pedestrian",
@@ -15113,7 +15674,8 @@
         },
         "geometry": ["line", "area"],
         "iDRef": "highway/raceway",
-        "tags": {"highway": "raceway"}
+        "tags": {"highway": "raceway"},
+        "moreFields": []
       },
       {
         "key": "rest_area",
@@ -15143,7 +15705,8 @@
         "terms": {"en": "services, travel plaza, service station"},
         "geometry": ["point", "vertex", "area"],
         "iDRef": "highway/services",
-        "tags": {"highway": "services"}
+        "tags": {"highway": "services"},
+        "moreFields": []
       },
       {
         "key": "traffic_mirror",
@@ -15156,7 +15719,8 @@
         },
         "geometry": ["point", "vertex"],
         "iDRef": "highway/traffic_mirror",
-        "tags": {"highway": "traffic_mirror"}
+        "tags": {"highway": "traffic_mirror"},
+        "moreFields": []
       },
       {
         "key": "trailhead",
@@ -15190,7 +15754,8 @@
         "terms": {"en": "cul-de-sac"},
         "geometry": ["vertex"],
         "iDRef": "highway/turning_circle",
-        "tags": {"highway": "turning_circle"}
+        "tags": {"highway": "turning_circle"},
+        "moreFields": []
       },
       {
         "key": "turning_loop",
@@ -15201,7 +15766,39 @@
         "terms": {"en": "cul-de-sac"},
         "geometry": ["vertex"],
         "iDRef": "highway/turning_loop",
-        "tags": {"highway": "turning_loop"}
+        "tags": {"highway": "turning_loop"},
+        "moreFields": []
+      },
+      {
+        "key": "pedestrian",
+        "icon": "temaki-pedestrian",
+        "markerColor": "#0E5F71",
+        "presets": ["name", "surface", "lit", "width", "structure", "access"],
+        "lbl": {"en": "Pedestrian Area"},
+        "terms": {"en": "center, centre, plaza, quad, square, walkway"},
+        "geometry": ["area"],
+        "iDRef": "highway/pedestrian_area",
+        "tags": {"highway": "pedestrian", "area": "yes"}
+      },
+      {
+        "key": "pedestrian",
+        "icon": "temaki-pedestrian",
+        "markerColor": "#0E5F71",
+        "presets": [
+          "name",
+          "surface",
+          "lit",
+          "width",
+          "oneway",
+          "structure",
+          "access"
+        ],
+        "lbl": {"en": "Pedestrian Street"},
+        "terms": {"en": "center, centre, plaza, quad, square, walkway"},
+        "geometry": ["line"],
+        "iDRef": "highway/pedestrian_line",
+        "moreFields": ["covered", "incline", "maxweight_bridge", "smoothness"],
+        "tags": {"highway": "pedestrian"}
       }
     ]
   },
