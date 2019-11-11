@@ -8605,7 +8605,6 @@
           "fire_hydrant:position",
           "fire_hydrant:diameter",
           "ref",
-          "fire_hydrant/type",
           "colour",
           "water_source",
           "couplings"
@@ -8625,10 +8624,9 @@
         "iDRef": "emergency/fire_hydrant",
         "tags": {"emergency": "fire_hydrant"},
         "moreFields": [
-          "fire_hydrant/diameter",
           "fire_hydrant/pressure",
           "level",
-          "survey/date",
+          "survey:date",
           "water_volume"
         ]
       },
@@ -8749,7 +8747,7 @@
         "key": "yes",
         "icon": "wiki_question",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {
           "en": "Emergency Access Yes",
           "fr": "Accessible aux services d'urgences",
@@ -8822,7 +8820,7 @@
         "key": "designated",
         "icon": "",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {"en": "Emergency Access Designated"},
         "terms": {"en": ""},
         "geometry": ["line"],
@@ -8833,7 +8831,7 @@
         "key": "destination",
         "icon": "",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {"en": "Emergency Access Destination"},
         "terms": {"en": ""},
         "geometry": ["line"],
@@ -8844,7 +8842,7 @@
         "key": "no",
         "icon": "",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {"en": "Emergency Access No"},
         "terms": {"en": ""},
         "geometry": ["line"],
@@ -8855,7 +8853,7 @@
         "key": "official",
         "icon": "",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {"en": "Emergency Access Official"},
         "terms": {"en": ""},
         "geometry": ["line"],
@@ -8866,7 +8864,7 @@
         "key": "private",
         "icon": "",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {"en": "Emergency Access Private"},
         "terms": {"en": ""},
         "geometry": ["line"],
@@ -12981,8 +12979,6 @@
           "surveillance:zone",
           "operator",
           "camera:direction",
-          "surveillance/type",
-          "surveillance/zone",
           "direction"
         ],
         "lbl": {
@@ -15008,7 +15004,7 @@
         "markerColor": "#0E5F71",
         "presets": [
           "ref",
-          "level_semi",
+          "level",
           "access_simple",
           "wheelchair",
           "maxweight"
