@@ -1,0 +1,46 @@
+{
+    "icon": "maki-cafe",
+    "fields": [
+        "name",
+        "cuisine",
+        "address",
+        "building_area",
+        "outdoor_seating",
+        "internet_access",
+        "internet_access/fee"
+    ],
+    "moreFields": [
+        "air_conditioning",
+        "bar",
+        "capacity",
+        "delivery",
+        "diet_multi",
+        "email",
+        "fax",
+        "internet_access/ssid",
+        "level",
+        "min_age",
+        "not/name",
+        "opening_hours",
+        "payment_multi",
+        "phone",
+        "reservation",
+        "smoking",
+        "takeaway",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "bistro",
+        "coffee",
+        "tea"
+    ],
+    "tags": {
+        "amenity": "cafe"
+    },
+    "name": "Cafe"
+}

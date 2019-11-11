@@ -1,0 +1,19 @@
+{
+    "icon": "temaki-money_hand",
+    "moreFields": [
+        "{shop}",
+        "min_age"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "betting",
+        "bookie"
+    ],
+    "tags": {
+        "shop": "bookmaker"
+    },
+    "name": "Bookmaker"
+}

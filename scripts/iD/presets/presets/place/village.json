@@ -1,0 +1,18 @@
+{
+    "icon": "maki-village",
+    "fields": [
+        "name",
+        "population"
+    ],
+    "moreFields": [
+        "website"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "place": "village"
+    },
+    "name": "Village"
+}

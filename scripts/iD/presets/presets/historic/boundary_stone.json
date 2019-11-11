@@ -1,0 +1,18 @@
+{
+    "icon": "temaki-milestone",
+    "fields": [
+        "name",
+        "inscription"
+    ],
+    "moreFields": [
+        "material"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "historic": "boundary_stone"
+    },
+    "name": "Boundary Stone"
+}

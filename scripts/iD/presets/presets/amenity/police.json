@@ -1,0 +1,39 @@
+{
+    "icon": "maki-police",
+    "fields": [
+        "name",
+        "operator",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
+    "moreFields": [
+        "email",
+        "fax",
+        "level",
+        "phone",
+        "polling_station",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "badge",
+        "constable",
+        "constabulary",
+        "cop",
+        "detective",
+        "fed",
+        "law",
+        "enforcement",
+        "officer",
+        "patrol"
+    ],
+    "tags": {
+        "amenity": "police"
+    },
+    "name": "Police"
+}

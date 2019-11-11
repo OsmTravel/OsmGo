@@ -1,0 +1,17 @@
+{
+    "icon": "temaki-power",
+    "fields": [
+        "substation",
+        "operator",
+        "building",
+        "ref"
+    ],
+    "geometry": [
+        "area",
+        "point"
+    ],
+    "tags": {
+        "power": "substation"
+    },
+    "name": "Substation"
+}

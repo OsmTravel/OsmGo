@@ -1,0 +1,18 @@
+{
+    "icon": "maki-city",
+    "fields": [
+        "name",
+        "population"
+    ],
+    "moreFields": [
+        "website"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "place": "city"
+    },
+    "name": "City"
+}

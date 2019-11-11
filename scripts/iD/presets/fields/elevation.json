@@ -1,0 +1,10 @@
+{
+    "key": "ele",
+    "type": "number",
+    "icon": "elevation",
+    "universal": true,
+    "label": "Elevation",
+    "terms": [
+        "altitude"
+    ]
+}

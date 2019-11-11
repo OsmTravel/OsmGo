@@ -1,0 +1,16 @@
+{
+    "icon": "maki-golf",
+    "fields": [
+        "name",
+        "ref_golf_hole",
+        "par",
+        "handicap"
+    ],
+    "geometry": [
+        "line"
+    ],
+    "tags": {
+        "golf": "hole"
+    },
+    "name": "Golf Hole"
+}

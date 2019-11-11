@@ -1,0 +1,22 @@
+{
+    "geometry": [
+        "area"
+    ],
+    "fields": [
+        "name",
+        "operator",
+        "resource"
+    ],
+    "moreFields": [
+        "address",
+        "email",
+        "fax",
+        "phone",
+        "website"
+    ],
+    "tags": {
+        "landuse": "quarry"
+    },
+    "terms": [],
+    "name": "Quarry"
+}

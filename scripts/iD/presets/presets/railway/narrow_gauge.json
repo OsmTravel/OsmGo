@@ -1,0 +1,23 @@
+{
+    "icon": "iD-railway-rail",
+    "fields": [
+        "{railway/rail}"
+    ],
+    "moreFields": [
+        "covered",
+        "frequency_electrified",
+        "maxspeed",
+        "voltage_electrified"
+    ],
+    "geometry": [
+        "line"
+    ],
+    "tags": {
+        "railway": "narrow_gauge"
+    },
+    "terms": [
+        "narrow gauge railway",
+        "narrow gauge railroad"
+    ],
+    "name": "Narrow Gauge Rail"
+}

@@ -1,0 +1,17 @@
+{
+    "geometry": [
+        "line"
+    ],
+    "fields": [
+        "name",
+        "aerialway/capacity",
+        "aerialway/duration"
+    ],
+    "terms": [
+        "tbar"
+    ],
+    "tags": {
+        "aerialway": "t-bar"
+    },
+    "name": "T-bar Lift"
+}

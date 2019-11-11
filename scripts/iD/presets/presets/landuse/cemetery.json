@@ -1,0 +1,23 @@
+{
+    "icon": "maki-cemetery",
+    "fields": [
+        "name",
+        "religion",
+        "denomination"
+    ],
+    "moreFields": [
+        "address",
+        "email",
+        "fax",
+        "phone",
+        "website"
+    ],
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "landuse": "cemetery"
+    },
+    "terms": [],
+    "name": "Cemetery"
+}

@@ -1,0 +1,30 @@
+{
+    "icon": "fas-music",
+    "fields": [
+        "name",
+        "operator",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
+    "moreFields": [
+        "email",
+        "fax",
+        "level",
+        "payment_multi",
+        "phone",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "school of music"
+    ],
+    "tags": {
+        "amenity": "music_school"
+    },
+    "name": "Music School"
+}

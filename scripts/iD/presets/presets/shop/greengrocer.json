@@ -1,0 +1,16 @@
+{
+    "icon": "fas-carrot",
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "fruit",
+        "produce",
+        "vegetable"
+    ],
+    "tags": {
+        "shop": "greengrocer"
+    },
+    "name": "Greengrocer"
+}

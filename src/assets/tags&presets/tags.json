@@ -8822,7 +8822,7 @@
     ]
   },
   "natural": {
-    "exclude_way_values": ["bare_rock", "cliff", "wood", "shingle"],
+    "exclude_way_values": ["bare_rock", "cliff", "wood", "shingle", "coastline"],
     "lbl": {"en": "Natural", "fr": "Naturel", "de": "Natural"},
     "values": [
       {

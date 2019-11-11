@@ -1,0 +1,10 @@
+{
+    "icon": "maki-barrier",
+    "geometry": [
+        "vertex"
+    ],
+    "tags": {
+        "barrier": "cattle_grid"
+    },
+    "name": "Cattle Grid"
+}

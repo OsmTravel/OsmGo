@@ -1,0 +1,23 @@
+{
+    "icon": "maki-dam",
+    "geometry": [
+        "point",
+        "vertex",
+        "line",
+        "area"
+    ],
+    "fields": [
+        "name",
+        "operator",
+        "height",
+        "material"
+    ],
+    "moreFields": [
+        "seamark/type",
+        "website"
+    ],
+    "tags": {
+        "waterway": "dam"
+    },
+    "name": "Dam"
+}

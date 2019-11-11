@@ -1,0 +1,19 @@
+{
+    "icon": "maki-building",
+    "geometry": [
+        "area"
+    ],
+    "tags": {
+        "building": "terrace"
+    },
+    "terms": [
+        "home",
+        "terrace",
+        "brownstone",
+        "family",
+        "residence",
+        "dwelling"
+    ],
+    "matchScore": 0.5,
+    "name": "Row Houses"
+}

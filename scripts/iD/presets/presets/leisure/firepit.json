@@ -1,0 +1,18 @@
+{
+    "icon": "maki-fire-station",
+    "fields": [
+        "access_simple"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "leisure": "firepit"
+    },
+    "terms": [
+        "fireplace",
+        "campfire"
+    ],
+    "name": "Firepit"
+}

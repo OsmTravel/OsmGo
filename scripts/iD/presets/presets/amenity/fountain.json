@@ -1,0 +1,23 @@
+{
+    "icon": "temaki-fountain",
+    "fields": [
+        "name",
+        "operator",
+        "height",
+        "lit"
+    ],
+    "moreFields": [
+        "covered",
+        "indoor",
+        "level",
+        "manufacturer"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "amenity": "fountain"
+    },
+    "name": "Fountain"
+}

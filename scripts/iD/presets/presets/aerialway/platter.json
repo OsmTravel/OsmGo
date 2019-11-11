@@ -1,0 +1,18 @@
+{
+    "geometry": [
+        "line"
+    ],
+    "terms": [
+        "button lift",
+        "poma lift"
+    ],
+    "fields": [
+        "name",
+        "aerialway/capacity",
+        "aerialway/duration"
+    ],
+    "tags": {
+        "aerialway": "platter"
+    },
+    "name": "Platter Lift"
+}

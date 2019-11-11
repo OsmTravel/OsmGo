@@ -1,0 +1,34 @@
+{
+    "icon": "maki-town-hall",
+    "fields": [
+        "name",
+        "operator",
+        "townhall/type",
+        "address",
+        "building_area"
+    ],
+    "moreFields": [
+        "email",
+        "fax",
+        "phone",
+        "polling_station",
+        "smoking",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "village",
+        "city",
+        "government",
+        "courthouse",
+        "municipal"
+    ],
+    "tags": {
+        "amenity": "townhall"
+    },
+    "name": "Town Hall"
+}

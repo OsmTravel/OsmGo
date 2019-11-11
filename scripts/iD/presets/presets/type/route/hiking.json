@@ -1,0 +1,21 @@
+{
+    "icon": "fas-hiking",
+    "fields": [
+        "name",
+        "ref_route",
+        "operator",
+        "network_foot",
+        "description",
+        "distance",
+        "to",
+        "from"
+    ],
+    "geometry": [
+        "relation"
+    ],
+    "tags": {
+        "type": "route",
+        "route": "hiking"
+    },
+    "name": "Hiking Route"
+}

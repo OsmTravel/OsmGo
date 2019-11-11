@@ -1,0 +1,17 @@
+{
+    "icon": "maki-lodging",
+    "fields": [
+        "{tourism/guest_house}"
+    ],
+    "moreFields": [
+        "{tourism/guest_house}"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "tourism": "hostel"
+    },
+    "name": "Hostel"
+}

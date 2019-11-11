@@ -1,0 +1,21 @@
+{
+    "icon": "maki-car-repair",
+    "fields": [
+        "{shop}",
+        "service/vehicle"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "automobile",
+        "automotive",
+        "garage",
+        "service"
+    ],
+    "tags": {
+        "shop": "car_repair"
+    },
+    "name": "Car Repair Shop"
+}

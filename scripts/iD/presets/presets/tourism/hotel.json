@@ -1,0 +1,19 @@
+{
+    "icon": "fas-concierge-bell",
+    "fields": [
+        "{tourism/motel}"
+    ],
+    "moreFields": [
+        "{tourism/motel}",
+        "bar",
+        "stars"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "tourism": "hotel"
+    },
+    "name": "Hotel"
+}

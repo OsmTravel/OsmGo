@@ -1,0 +1,15 @@
+{
+    "icon": "maki-roadblock",
+    "fields": [
+        "access",
+        "stile",
+        "material"
+    ],
+    "geometry": [
+        "vertex"
+    ],
+    "tags": {
+        "barrier": "stile"
+    },
+    "name": "Stile"
+}

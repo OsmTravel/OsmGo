@@ -1,0 +1,19 @@
+{
+    "icon": "maki-religious-christian",
+    "fields": [
+        "name",
+        "inscription"
+    ],
+    "moreFields": [
+        "material"
+    ],
+    "geometry": [
+        "point",
+        "vertex",
+        "area"
+    ],
+    "tags": {
+        "historic": "wayside_cross"
+    },
+    "name": "Wayside Cross"
+}

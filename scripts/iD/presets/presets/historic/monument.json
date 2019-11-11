@@ -1,0 +1,20 @@
+{
+    "icon": "maki-monument",
+    "fields": [
+        "name",
+        "inscription",
+        "access_simple"
+    ],
+    "moreFields": [
+        "material"
+    ],
+    "geometry": [
+        "point",
+        "vertex",
+        "area"
+    ],
+    "tags": {
+        "historic": "monument"
+    },
+    "name": "Monument"
+}

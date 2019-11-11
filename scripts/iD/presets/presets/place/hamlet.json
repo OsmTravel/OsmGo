@@ -1,0 +1,18 @@
+{
+    "icon": "maki-triangle-stroked",
+    "fields": [
+        "name",
+        "population"
+    ],
+    "moreFields": [
+        "website"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "place": "hamlet"
+    },
+    "name": "Hamlet"
+}

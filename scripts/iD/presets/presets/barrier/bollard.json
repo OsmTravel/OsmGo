@@ -1,0 +1,19 @@
+{
+    "icon": "temaki-silo",
+    "fields": [
+        "access",
+        "bollard",
+        "height",
+        "width",
+        "material",
+        "colour"
+    ],
+    "geometry": [
+        "point",
+        "vertex"
+    ],
+    "tags": {
+        "barrier": "bollard"
+    },
+    "name": "Bollard"
+}

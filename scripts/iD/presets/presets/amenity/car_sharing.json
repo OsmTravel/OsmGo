@@ -1,0 +1,28 @@
+{
+    "icon": "maki-car",
+    "fields": [
+        "name",
+        "operator",
+        "operator/type",
+        "capacity",
+        "address",
+        "payment_multi",
+        "supervised"
+    ],
+    "moreFields": [
+        "email",
+        "fax",
+        "lit",
+        "phone",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "amenity": "car_sharing"
+    },
+    "name": "Car Sharing"
+}

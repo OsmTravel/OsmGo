@@ -1,0 +1,18 @@
+{
+    "icon": "iD-highway-unclassified",
+    "fields": [
+        "name",
+        "ref_route",
+        "network_road",
+        "to",
+        "from"
+    ],
+    "geometry": [
+        "relation"
+    ],
+    "tags": {
+        "type": "route",
+        "route": "road"
+    },
+    "name": "Road Route"
+}

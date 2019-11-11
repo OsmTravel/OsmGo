@@ -1,0 +1,34 @@
+{
+    "icon": "iD-highway-steps",
+    "fields": [
+        "incline_steps",
+        "access_simple",
+        "handrail",
+        "step_count",
+        "surface",
+        "width"
+    ],
+    "moreFields": [
+        "covered",
+        "dog",
+        "indoor",
+        "level_semi",
+        "lit",
+        "name",
+        "ref",
+        "stroller",
+        "wheelchair"
+    ],
+    "geometry": [
+        "line"
+    ],
+    "tags": {
+        "highway": "steps"
+    },
+    "terms": [
+        "stairs",
+        "staircase",
+        "stairway"
+    ],
+    "name": "Steps"
+}

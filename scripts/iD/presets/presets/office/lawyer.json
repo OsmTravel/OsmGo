@@ -1,0 +1,12 @@
+{
+    "icon": "fas-balance-scale",
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "office": "lawyer"
+    },
+    "terms": [],
+    "name": "Law Office"
+}

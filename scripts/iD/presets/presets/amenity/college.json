@@ -1,0 +1,33 @@
+{
+    "icon": "maki-college",
+    "fields": [
+        "name",
+        "operator",
+        "operator/type",
+        "address",
+        "website",
+        "internet_access",
+        "internet_access/fee"
+    ],
+    "moreFields": [
+        "denomination",
+        "email",
+        "fax",
+        "internet_access/ssid",
+        "phone",
+        "religion",
+        "wheelchair"
+    ],
+    "geometry": [
+        "area",
+        "point"
+    ],
+    "terms": [
+        "university",
+        "undergraduate school"
+    ],
+    "tags": {
+        "amenity": "college"
+    },
+    "name": "College Grounds"
+}

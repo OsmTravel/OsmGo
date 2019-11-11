@@ -1,0 +1,42 @@
+{
+    "icon": "maki-doctor",
+    "fields": [
+        "name",
+        "operator",
+        "operator/type",
+        "healthcare/speciality",
+        "address",
+        "building_area",
+        "opening_hours"
+    ],
+    "moreFields": [
+        "air_conditioning",
+        "email",
+        "fax",
+        "level",
+        "payment_multi",
+        "phone",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "medical",
+        "urgentcare"
+    ],
+    "tags": {
+        "amenity": "clinic"
+    },
+    "addTags": {
+        "amenity": "clinic",
+        "healthcare": "clinic"
+    },
+    "reference": {
+        "key": "amenity",
+        "value": "clinic"
+    },
+    "name": "Clinic"
+}

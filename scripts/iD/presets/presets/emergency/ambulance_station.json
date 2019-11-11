@@ -1,0 +1,29 @@
+{
+    "icon": "fas-ambulance",
+    "fields": [
+        "name",
+        "operator",
+        "building_area",
+        "address"
+    ],
+    "moreFields": [
+        "email",
+        "fax",
+        "phone",
+        "website",
+        "wheelchair"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "EMS",
+        "EMT",
+        "rescue"
+    ],
+    "tags": {
+        "emergency": "ambulance_station"
+    },
+    "name": "Ambulance Station"
+}

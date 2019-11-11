@@ -1,0 +1,15 @@
+{
+    "icon": "maki-clothing-store",
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "clothes",
+        "suit"
+    ],
+    "tags": {
+        "shop": "tailor"
+    },
+    "name": "Tailor"
+}

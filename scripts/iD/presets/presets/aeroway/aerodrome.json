@@ -1,0 +1,29 @@
+{
+    "icon": "maki-airport",
+    "geometry": [
+        "area",
+        "point"
+    ],
+    "fields": [
+        "name",
+        "iata",
+        "icao",
+        "operator",
+        "internet_access",
+        "internet_access/fee",
+        "internet_access/ssid"
+    ],
+    "terms": [
+        "aerodrome",
+        "aeroway",
+        "airplane",
+        "airport",
+        "jet",
+        "plane"
+    ],
+    "tags": {
+        "aeroway": "aerodrome"
+    },
+    "matchScore": 0.9,
+    "name": "Airport"
+}

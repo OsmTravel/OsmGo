@@ -1,0 +1,19 @@
+{
+    "icon": "iD-boundary",
+    "fields": [
+        "name",
+        "admin_level"
+    ],
+    "geometry": [
+        "relation"
+    ],
+    "tags": {
+        "type": "boundary",
+        "boundary": "administrative"
+    },
+    "reference": {
+        "key": "boundary",
+        "value": "administrative"
+    },
+    "name": "Administrative Boundary"
+}

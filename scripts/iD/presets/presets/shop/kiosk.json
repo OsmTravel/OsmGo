@@ -1,0 +1,15 @@
+{
+    "icon": "maki-shop",
+    "fields": [
+        "{shop}",
+        "levels"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "tags": {
+        "shop": "kiosk"
+    },
+    "name": "Kiosk"
+}

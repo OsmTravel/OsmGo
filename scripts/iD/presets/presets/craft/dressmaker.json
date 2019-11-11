@@ -1,0 +1,14 @@
+{
+    "icon": "maki-clothing-store",
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "seamstress"
+    ],
+    "tags": {
+        "craft": "dressmaker"
+    },
+    "name": "Dressmaker"
+}

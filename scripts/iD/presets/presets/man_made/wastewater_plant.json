@@ -1,0 +1,27 @@
+{
+    "icon": "temaki-waste",
+    "fields": [
+        "name",
+        "operator",
+        "address"
+    ],
+    "moreFields": [
+        "email",
+        "fax",
+        "phone",
+        "website"
+    ],
+    "geometry": [
+        "point",
+        "area"
+    ],
+    "terms": [
+        "sewage*",
+        "water treatment plant",
+        "reclamation plant"
+    ],
+    "tags": {
+        "man_made": "wastewater_plant"
+    },
+    "name": "Wastewater Plant"
+}

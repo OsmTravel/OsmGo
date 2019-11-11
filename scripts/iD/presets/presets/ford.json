@@ -1,0 +1,15 @@
+{
+    "icon": "temaki-pedestrian",
+    "fields": [
+        "name",
+        "access",
+        "seasonal"
+    ],
+    "geometry": [
+        "vertex"
+    ],
+    "tags": {
+        "ford": "yes"
+    },
+    "name": "Ford"
+}

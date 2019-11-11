@@ -1,0 +1,17 @@
+{
+    "icon": "temaki-ruins",
+    "fields": [
+        "historic",
+        "inscription"
+    ],
+    "geometry": [
+        "point",
+        "vertex",
+        "line",
+        "area"
+    ],
+    "tags": {
+        "historic": "*"
+    },
+    "name": "Historic Site"
+}
