@@ -41,6 +41,7 @@
           "/svg/md-help-circle",
           "/svg/md-trash.svg",
           "/svg/md-help-circle.svg",
+          "/svg/md-cloud-upload.svg",
           "/*.png",
 
           "/assets/mapStyle/IconsSVG/*.svg"

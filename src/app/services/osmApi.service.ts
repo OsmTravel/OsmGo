@@ -12,10 +12,11 @@ import { MapService } from './map.service';
 import { TagsService } from './tags.service';
 import { DataService } from './data.service';
 import { AlertService } from './alert.service';
-import { ConfigService } from './config.service';
+import { ConfigService, User } from './config.service';
 import { cloneDeep } from 'lodash';
 
 import bboxPolygon from '@turf/bbox-polygon'
+
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
@@ -36,8 +37,8 @@ export class OsmApiService {
 
     authType = 'oauth'
 
-    user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
-    changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
+  
+  
     auth;
     eventNewPoint = new EventEmitter();
 
@@ -51,21 +52,7 @@ export class OsmApiService {
         private localStorage: Storage
     ) {
 
-        this.localStorage.get('user_info').then(d => {
-            if (d && d.connected) {
-                this.user_info = d;
-            } else {
-                this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
-            }
-        });
-
-        this.localStorage.get('changeset').then(d => {
-            if (d) {
-                this.changeset = d;
-            } else {
-                this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.configService.getChangeSetComment() };
-            }
-        });
+    
     }
 
     initAuth(){
@@ -104,7 +91,7 @@ export class OsmApiService {
     logout() {
         this.auth.logout();
         this.localStorage.remove('changeset')
-        this.resetUserInfo();
+        this.configService.resetUserInfo();
     }
 
     // retourne l'URL de l'API (dev ou prod)
@@ -112,22 +99,10 @@ export class OsmApiService {
         return this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url;
     }
 
-    getUserInfo() {
-        return this.user_info;
-    }
-
-    setUserInfo(_user_info) {
-        this.user_info = _user_info;
-        this.localStorage.set('user_info', this.user_info);
-    }
-
-    resetUserInfo() {
-        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
-        this.localStorage.set('user_info', this.user_info);
-    }
+ 
 
     // DETAIL DE L'UTILISATEUR
-    getUserDetail(_user?, _password?, basicAuth = false): Observable<any> {
+    getUserDetail$(_user?, _password?, basicAuth = false): Observable<User> {
         this.authType = basicAuth ? 'basic' : 'oauth';
         const PATH_API = '/api/0.6/user/details'
         let _observable;
@@ -165,9 +140,8 @@ export class OsmApiService {
                 const x_user = xml.getElementsByTagName('user')[0];
                 const uid = x_user.getAttribute('id');
                 const display_name = x_user.getAttribute('display_name');
-                const _userInfo = { user: _user, password: _password, _basicAuth: basicAuth, uid: uid, display_name: display_name, connected: true };
-                console.log(_userInfo)
-                this.setUserInfo(_userInfo);
+                const _userInfo: User = { user: _user, password: _password, uid: uid, display_name: display_name, connected: true, type:  basicAuth ? 'basic' : 'oauth' };
+                this.configService.setUserInfo(_userInfo);
                 return _userInfo;
             }),
             catchError((error: any) => {
@@ -183,25 +157,7 @@ export class OsmApiService {
     The same user can have multiple active changesets at the same time. A changeset has a maximum capacity
     (currently 50,000 edits) and maximum lifetime (currently 24 hours)
     */
-    getChangeset() {
-        return this.changeset;
-    }
 
-    setChangeset(_id: string, _created_at, _last_changeset_activity, _comment) { // alimente changeset + localstorage
-        this.changeset = {
-            id: _id,
-            last_changeset_activity: _last_changeset_activity,
-            created_at: _created_at,
-            comment: _comment
-        };  // to do => ajouter le serveur?
-        this.localStorage.set('changeset', this.changeset);
-    }
-
-    updateChangesetLastActivity() {
-        const time = Date.now();
-        this.changeset.last_changeset_activity = time;
-        this.localStorage.set('last_changeset_activity', time.toString());
-    }
 
 
     createOSMChangeSet(comment): Observable<any> {
@@ -240,7 +196,7 @@ export class OsmApiService {
             const url = this.getUrlApi() + PATH_API;
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`)
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`)
                 .set('Content-Type', 'text/xml');
 
             _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
@@ -248,7 +204,7 @@ export class OsmApiService {
 
         return _observable.pipe(
             map((res) => {
-                this.setChangeset(res.toString(), Date.now(), Date.now(), comment);
+                this.configService.setChangeset(res.toString(), Date.now(), Date.now(), comment);
                 return res;
             })
         );
@@ -257,15 +213,15 @@ export class OsmApiService {
     // determine si le changset est valide, sinon on en crée un nouveau
     getValidChangset(_comments): Observable<any> {
         // si il n'existe pas
-        if (this.getChangeset().id == null || this.getChangeset().id === '') {
+        if (this.configService.getChangeset().id == null || this.configService.getChangeset().id === '') {
             return this.createOSMChangeSet(_comments);
-        } else if (_comments !== this.getChangeset().comment) { // un commentaire différent => nouveau ChangeSet
+        } else if (_comments !== this.configService.getChangeset().comment) { // un commentaire différent => nouveau ChangeSet
             return this.createOSMChangeSet(_comments);
-        } else if ((Date.now() - this.getChangeset().last_changeset_activity) / 1000 > 3540 || // bientot une heure sans activité
-            (Date.now() - this.getChangeset().last_changeset_activity) / 1000 > 86360) {    // bientot > 24h
+        } else if ((Date.now() - this.configService.getChangeset().last_changeset_activity) / 1000 > 3540 || // bientot une heure sans activité
+            (Date.now() - this.configService.getChangeset().last_changeset_activity) / 1000 > 86360) {    // bientot > 24h
             return this.createOSMChangeSet(_comments);
         } else {
-            return of(this.getChangeset().id)
+            return of(this.configService.getChangeset().id)
                 .pipe(
                     map(CS => CS)
                 );
@@ -413,7 +369,7 @@ export class OsmApiService {
             const url = this.getUrlApi() + '/api/0.6/node/create';
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`);
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`);
 
             _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
         }
@@ -473,7 +429,7 @@ export class OsmApiService {
 
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`)
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`)
                 .set('Content-Type', 'text/xml');
 
             _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
@@ -543,7 +499,7 @@ export class OsmApiService {
 
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.getUserInfo().user + ':' + this.getUserInfo().password)}`);
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`);
 
             _observable = this.http.request('delete', url, { headers: headers, body: content_delete })
         }

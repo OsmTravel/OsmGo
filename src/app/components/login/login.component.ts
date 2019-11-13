@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { OsmApiService } from '../../services/osmApi.service';
+import { ConfigService } from 'src/app/services/config.service';
 
 
 @Component({
@@ -12,12 +13,12 @@ export class LoginPage {
     password: string;
     errorLogin;
 
-    constructor(public osmApi: OsmApiService, public navCtrl: NavController) {
-        this.username = this.osmApi.user_info.user;
+    constructor(public osmApi: OsmApiService, public navCtrl: NavController, public configService: ConfigService) {
+        this.username = this.configService.user_info.user;
     }
 
     login() {
-        this.osmApi.getUserDetail(this.username, this.password, true)
+        this.osmApi.getUserDetail$(this.username, this.password, true)
         .subscribe(res => {
             this.navCtrl.pop();
         }, (error => {

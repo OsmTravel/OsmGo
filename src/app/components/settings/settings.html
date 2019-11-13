@@ -157,11 +157,11 @@
 		<ion-card-content>
 			<ion-item>
 				<ion-label>{{ 'SETTINGS.DELAYED_MODE' | translate}} </ion-label>
-				<ion-toggle [disabled]="!this.osmApi.getUserInfo().connected"
+				<ion-toggle [disabled]="!this.configService.getUserInfo().connected"
 					[checked]="this.configService.config.isDelayed" (ionChange)="isDelayedChange($event)">
 				</ion-toggle>
 			</ion-item>
-			<label *ngIf="!this.osmApi.getUserInfo().connected"
+			<label *ngIf="!this.configService.getUserInfo().connected"
 				class="hint">{{ 'SETTINGS.LIVE_MODE_MUST_LOGIN' | translate}}<br></label>
 
 			<label *ngIf="!this.configService.config.isDelayed"

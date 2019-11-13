@@ -32,7 +32,7 @@ export class PushDataToOsmPage implements AfterViewInit {
         public mapService: MapService,
         public navCtrl: NavController,
         private alertCtrl: AlertController,
-        private configService: ConfigService,
+        public configService: ConfigService,
         public platform: Platform,
         private translate: TranslateService
     ) {
@@ -116,8 +116,8 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['properties']['tags'] = cloneDeep(featureChanged.properties.tags);
                         newFeature['properties']['meta'] = {};
                         newFeature['properties']['meta']['version'] = 1;
-                        newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
-                        newFeature['properties']['meta']['uid'] = this.osmApi.getUserInfo().uid;
+                        newFeature['properties']['meta']['user'] = this.configService.getUserInfo().display_name;
+                        newFeature['properties']['meta']['uid'] = this.configService.getUserInfo().uid;
                         newFeature['properties']['meta']['timestamp'] = new Date().toISOString();
                         newFeature['properties']['time'] = new Date().getTime();
 
@@ -146,8 +146,8 @@ export class PushDataToOsmPage implements AfterViewInit {
                         let newFeature = {};
                         newFeature = featureChanged;
                         newFeature['properties']['meta']['version'] = newVersion;
-                        newFeature['properties']['meta']['user'] = this.osmApi.getUserInfo().display_name;
-                        newFeature['properties']['meta']['uid'] = this.osmApi.getUserInfo().uid;
+                        newFeature['properties']['meta']['user'] = this.configService.getUserInfo().display_name;
+                        newFeature['properties']['meta']['uid'] = this.configService.getUserInfo().uid;
                         newFeature['properties']['meta']['timestamp'] = new Date().toISOString();
                         newFeature['properties']['time'] = new Date().getTime();
                         if (newFeature['properties']['tags']['fixme']) {
