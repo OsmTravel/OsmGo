@@ -11,41 +11,45 @@
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
-			
-		
+
+
 			<ion-list style="padding-top:0;">
-				
-				<ion-item color="black" *ngIf="this.newVersion"  (click)="reloadApp()">		
-						<ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' | translate }}	
+
+				<ion-item color="black" *ngIf="this.newVersion" (click)="reloadApp()">
+					<ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' | translate }}
 				</ion-item>
-		
-				<ion-item *ngIf="configService.deviceInfo.platform != 'web' && !this.osmApi.user_info.connected"  (click)="pushPage('/login')">
+
+				<ion-item				
+					*ngIf="configService.platforms.includes('hybrid') && !this.configService.user_info.connected"
+					(click)="pushPage('/login')">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
-				<ion-item *ngIf="configService.deviceInfo.platform == 'web' && !this.osmApi.user_info.connected" (click)="login()">
+				<ion-item
+					*ngIf="!configService.platforms.includes('hybrid') && !this.configService.user_info.connected"
+					(click)="login()">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
 				<ion-item (click)="pushPage('/settings')">
-					<ion-icon name="settings"></ion-icon>	{{'MENU.SETTINGS' | translate }}
+					<ion-icon name="settings"></ion-icon> {{'MENU.SETTINGS' | translate }}
 				</ion-item>
 
 				<ion-item (click)="pushPage('/about')">
 					<ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' | translate }}
 				</ion-item>
 
-				<ion-item *ngIf="this.osmApi.user_info.connected" (click)="logout()">
+				<ion-item *ngIf="this.configService.user_info.connected" (click)="logout()">
 					<ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' | translate }}
 				</ion-item>
 
 				<ion-item color="danger" (click)="deleteDatapresentConfirm()">
-						<ion-icon name="trash"></ion-icon>	{{'MENU.DELETE_DATA' | translate }}
+					<ion-icon name="trash"></ion-icon> {{'MENU.DELETE_DATA' | translate }}
 				</ion-item>
 
-				<ion-item *ngIf= "configService.deviceInfo.platform != 'web'" (click)="exit()">
-					<ion-icon name="exit"></ion-icon>	{{'MENU.EXIT' | translate }} 
-			</ion-item>
+				<ion-item *ngIf="configService.platforms.includes('hybrid')" (click)="exit()">
+					<ion-icon name="exit"></ion-icon> {{'MENU.EXIT' | translate }}
+				</ion-item>
 			</ion-list>
 		</ion-content>
 	</div>

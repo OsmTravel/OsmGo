@@ -122,8 +122,6 @@ export class LocationService {
 
             // Convert radians to degrees
             compassHeading *= 180 / Math.PI;
-            console.log('apihtml',compassHeading);
-
 
             let newCompassHeading = {
                 magneticHeading: compassHeading,

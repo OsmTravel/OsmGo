@@ -752,7 +752,7 @@ export class MapService {
         return;
       }
 
-      if (this.configService.deviceInfo.platform === 'web'){
+      if (!this.configService.platforms.includes('hybrid')){
         window.navigator.vibrate(50);
       }else {
     
@@ -861,9 +861,7 @@ export class MapService {
         throttleTime(100)
       )
       .subscribe(heading => {
-        console.log(heading);
         if (this.arrowDirection.className !== 'positionMarkersSize locationMapIcon') {
-          console.log('okk')
           this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
         }
 

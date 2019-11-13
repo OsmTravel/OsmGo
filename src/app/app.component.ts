@@ -35,16 +35,10 @@ export class AppComponent {
   async initializeApp() {
     this.translate.setDefaultLang('en');
     this.configService.platforms = this.platform.platforms();
-    this.configService.platforms
-
     this.configService.deviceInfo = await Device.getInfo();
 
-    this.configService.loadAppVersion();
+    await this.configService.loadAppVersion();
 
-    this.platform.backButton
-      .subscribe(e => {
-
-      })
   }
 
 

@@ -278,8 +278,8 @@ export class ModalsContentPage implements OnInit {
             this.feature.properties.id = data;
             this.feature.properties.meta = {};
             this.feature.properties.meta['version'] = 1;
-            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().display_name;
-            this.feature.properties.meta['uid'] = this.osmApi.getUserInfo().uid;
+            this.feature.properties.meta['user'] = this.configService.getUserInfo().display_name;
+            this.feature.properties.meta['uid'] = this.configService.getUserInfo().uid;
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // style
 
@@ -324,8 +324,8 @@ export class ModalsContentPage implements OnInit {
         this.osmApi.apiOsmUpdateOsmElement(this.feature, CS)
           .subscribe(data => {
             this.feature.properties.meta.version++;
-            this.feature.properties.meta['user'] = this.osmApi.getUserInfo().display_name;
-            this.feature.properties.meta['uid'] = this.osmApi.getUserInfo().uid;
+            this.feature.properties.meta['user'] = this.configService.getUserInfo().display_name;
+            this.feature.properties.meta['uid'] = this.configService.getUserInfo().uid;
             this.feature.properties.meta['timestamp'] = new Date().toISOString();
             this.feature = this.mapService.getIconStyle(this.feature); // création du style
             this.dataService.updateFeatureToGeojson(this.feature);
