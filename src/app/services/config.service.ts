@@ -6,6 +6,22 @@ import { environment } from '../../environments/environment.prod';
 import { StatesService } from './states.service';
 
 
+export interface User {
+    uid: string;
+    display_name: string;
+    connected: boolean;
+    user: string;
+    password: string;
+    type: "basic" | "oauth";
+}
+
+export interface Changeset {
+    id: string;
+    last_changeset_activity: number;
+    created_at: number;
+    comment: string;
+}
+
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
     eventCloseGeolocPage = new EventEmitter();
@@ -15,8 +31,9 @@ export class ConfigService {
         private translate: TranslateService,
         public stateService: StatesService
     ) { }
-
-    i18nConfig 
+    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
+    changeset: Changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
+    i18nConfig;
 
     eventConfigIsLoaded = new EventEmitter();
     freezeMapRenderer = false;
@@ -60,12 +77,47 @@ export class ConfigService {
     appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: environment.version || '0.0.0' };
 
 
+    getUserInfo() {
+        return this.user_info;
+    }
+
+    setUserInfo(_user_info) {
+        this.user_info = _user_info;
+        this.localStorage.set('user_info', this.user_info);
+    }
+
+    resetUserInfo() {
+        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
+        this.localStorage.set('user_info', this.user_info);
+    }
+
+    getChangeset(): Changeset {
+        return this.changeset;
+    }
+
+    setChangeset(_id: string, _created_at, _last_changeset_activity, _comment) { // alimente changeset + localstorage
+        this.changeset = {
+            id: _id,
+            last_changeset_activity: _last_changeset_activity,
+            created_at: _created_at,
+            comment: _comment
+        };  // to do => ajouter le serveur?
+        this.localStorage.set('changeset', this.changeset);
+    }
+
+    updateChangesetLastActivity() {
+        const time = Date.now();
+        this.changeset.last_changeset_activity = time;
+        this.localStorage.set('last_changeset_activity', time.toString());
+    }
+
+
     getI18nConfig$() {
         return this.http.get('./assets/i18n/i18n.json')
     }
 
 
-
+    // TODO: add userInfo
     async loadConfig(_i18nConfig) {
 
         let d = await this.localStorage.get('config')
@@ -83,6 +135,23 @@ export class ConfigService {
         this.config.languageTags = this.config.languageTags || 'en';
         this.config.countryTags = this.config.countryTags || 'GB';
 
+
+        let userInfo = await this.localStorage.get('user_info')
+        if (userInfo && userInfo.connected) {
+            this.user_info = userInfo;
+        } else {
+            this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
+        }
+
+        let changeset: Changeset = await this.localStorage.get('changeset')
+        if (changeset) {
+            this.changeset = changeset;
+        } else {
+            this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
+        }
+
+    return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
+}
 
         // TODO : from assets /countryCode.json 
         this.currentTagsCountryChoice = _i18nConfig.country

@@ -81,14 +81,15 @@ export class MenuPage {
         this.closeEvent.emit()
     }
 
+    // TODO: May be bug...
     login(){
         if (!this.osmApi.isAuthenticated()){
             this.osmApi.login$()
                 .subscribe(e => {
-                    this.osmApi.getUserDetail()
+                    this.osmApi.getUserDetail$()
                     .subscribe( user => {
                         this.zone.run(() => {
-                            this.osmApi.setUserInfo(user);
+                            this.configService.setUserInfo(user);
                         });
                       
                     })
@@ -96,9 +97,9 @@ export class MenuPage {
             
 
         } else {
-            this.osmApi.getUserDetail()
+            this.osmApi.getUserDetail$()
             .subscribe( user=> {
-                this.osmApi.setUserInfo(user);
+                this.configService.setUserInfo(user);
             })
 
         }

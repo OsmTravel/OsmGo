@@ -7,7 +7,7 @@ _Osm Go!_ is a Android application and a **P**rogressive **W**eb **A**pplication
 Map your environment simply and fast, directly from the app. Keep your eyes wide open and contribute to OSM while on the run.
 
 
-You can install the PWA or just navigate on a web brower at **[osmgo.com](https://osmgo.com])**
+You can install the PWA or just navigate on a web brower at **[osmgo.com](https://osmgo.com)**
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
 
