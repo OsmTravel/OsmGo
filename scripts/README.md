@@ -14,8 +14,6 @@ node addTranslationFromiD.js {code_country}
 
 node addTranslationFromiD.js fr
 node addTranslationFromiD.js de
-node addTranslationFromiD.js de
-node addTranslationFromiD.js de
 node addTranslationFromiD.js es
 node addTranslationFromiD.js pt
 node addTranslationFromiD.js it

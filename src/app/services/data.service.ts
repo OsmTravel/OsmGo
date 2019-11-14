@@ -119,9 +119,6 @@ export class DataService {
         }
     }
 
-
-    /* Delayedd */
-
     getGeojsonChanged() {
         return cloneDeep(this.geojsonChanged);
     }

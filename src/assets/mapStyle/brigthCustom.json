@@ -76,7 +76,7 @@
             "type": "vector"
         }
     },
-    "sprite": "assets/i18n/{language}/{country}/sprites",
+    "sprite": "assets/mapStyle/sprites",
     "glyphs": "assets/mapStyle/glyphs/{fontstack}/{range}.pbf",
     "layers": [
         {

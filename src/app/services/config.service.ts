@@ -47,7 +47,6 @@ export class ConfigService {
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'allTags',
-        isDelayed: true,
         baseMapSourceId: this.baseMapSources ? this.baseMapSources[0].id : null,
         filterWayByArea: true,
         filterWayByLength: true,
@@ -153,14 +152,14 @@ export class ConfigService {
     return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
 }
 
-        // TODO : from assets /countryCode.json 
-        this.currentTagsCountryChoice = _i18nConfig.country
+    //     // TODO : from assets /countryCode.json 
+    //     this.currentTagsCountryChoice = _i18nConfig.country
 
-        this.eventConfigIsLoaded.emit(this.config);
+    //     this.eventConfigIsLoaded.emit(this.config);
 
 
-        ;
-    }
+    //     ;
+    // }
 
     async loadAppVersion() {
         this.appVersion.appVersionNumber = environment.version;
@@ -213,16 +212,6 @@ export class ConfigService {
 
     getDefaultPrimarykeyWindows() {
         return this.config.defaultPrimarykeyWindows;
-    }
-
-
-    setIsDelayed(isDelayed: boolean) {
-        this.config.isDelayed = isDelayed;
-        this.localStorage.set('config', this.config);
-    }
-
-    getIsDelayed() {
-        return this.config.isDelayed;
     }
 
     setBaseSourceId(baseMapSourceId: string) {

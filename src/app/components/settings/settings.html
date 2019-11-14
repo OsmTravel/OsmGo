@@ -151,33 +151,6 @@
 		</ion-card-content>
 	</ion-card>
 
-
-
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-label>{{ 'SETTINGS.DELAYED_MODE' | translate}} </ion-label>
-				<ion-toggle [disabled]="!this.configService.getUserInfo().connected"
-					[checked]="this.configService.config.isDelayed" (ionChange)="isDelayedChange($event)">
-				</ion-toggle>
-			</ion-item>
-			<label *ngIf="!this.configService.getUserInfo().connected"
-				class="hint">{{ 'SETTINGS.LIVE_MODE_MUST_LOGIN' | translate}}<br></label>
-
-			<label *ngIf="!this.configService.config.isDelayed"
-				class="hint">{{ 'SETTINGS.LIVE_MODE_ON' | translate}}</label>
-			<label *ngIf="this.configService.config.isDelayed"
-				class="hint">{{ 'SETTINGS.LIVE_MODE_OFF' | translate}}</label>
-			<br>
-			<label *ngIf="!this.configService.config.isDelayed" class="hint">
-				{{ 'SETTINGS.LIVE_MODE_HINT' | translate}}
-			</label>
-			<label *ngIf="this.configService.config.isDelayed" class="hint">
-				{{ 'SETTINGS.DELAYED_MODE_HINT' | translate}}
-			</label>
-		</ion-card-content>
-	</ion-card>
-
 	<h4>{{ 'SETTINGS.LANGUAGE_AND_REGION' | translate}}</h4>
 	<ion-card *ngIf="this.configService.config.languageUi && this.configService.i18nConfig">
 		<ion-card-content>
@@ -223,26 +196,6 @@
 	</ion-card>
 
 	<h4>{{ 'SETTINGS.CACHE' | translate}}</h4>
-
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<!-- <ion-label>{{ 'SETTINGS.GENERATE_ICON_CACHE' | translate}}</ion-label> -->
-				<ion-button (click)="generateCahedIcon()" color="primary">
-					{{ 'SETTINGS.GENERATE_ICON_CACHE' | translate}}</ion-button>
-			</ion-item>
-		</ion-card-content>
-	</ion-card>
-
-
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-button (click)="deleteIconCache()" color="warning">{{ 'SETTINGS.DELETE_ICON_CACHE' | translate}}
-				</ion-button>
-			</ion-item>
-		</ion-card-content>
-	</ion-card>
 
 	<ion-card>
 		<ion-card-content>

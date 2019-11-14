@@ -1,9 +1,0 @@
-<mat-form-field style="width: 100%;">
-    <input matInput placeholder="Filtrer" [(ngModel)]="searchName">
-  </mat-form-field>
-
-<div *ngFor="let iconName of iconList | filterByName: searchName" 
-    class="divicon" (click)="selectNewIcon(iconName)">
-    <img width="48px" height="48px" style="padding: 4px" class="svg-icon"  [title]="iconName"
-    [src]="'./api/svg/'+ iconName"
-    />

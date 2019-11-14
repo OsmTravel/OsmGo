@@ -1,21 +1,30 @@
-   	<ion-card>
-        <ion-card-header>
-            <b *ngIf="!displayCode">{{keyLbl[language] || keyLbl['en']}}</b>
-            <b *ngIf="displayCode">{{primaryKey.key}}</b>
-        </ion-card-header>
-        <ion-card-content>
-            <p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> 
-                {{configOfPrimaryKey.lbl[language]  ? configOfPrimaryKey.lbl[language] : configOfPrimaryKey.lbl['en']}}
-            </p>
+<ion-card>  
+        <div style=" width: 40px; height: 100%; position: absolute;" [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'">
+                    <app-icon  class="iconImgPNG imgCenter" [tagConfig]="tagConfig"[jsonSprites]="jsonSprites">  </app-icon>
+                  
 
-            <p class="description" *ngIf="!displayCode && configOfPrimaryKey && configOfPrimaryKey.description"> 
-                {{configOfPrimaryKey.description[language] !== undefined ? configOfPrimaryKey.description[language] : configOfPrimaryKey.description['en']}}
+        </div>
+        <div class="primaryCardContent">
+            <ion-card-content>
+                <p class="primaryKeyLabel" *ngIf="!displayCode && tagConfig?.lbl">
+                    {{tagConfig.lbl[language]  ? tagConfig.lbl[language] : tagConfig.lbl['en']}}
+                </p>
 
-            </p>
-           
-            <p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
-            <ion-icon name="code"></ion-icon>
-                {{primaryKey.value}}
-            </p>
-        </ion-card-content>
-	</ion-card>
+                <p class="description" *ngIf="!displayCode && tagConfig && tagConfig.description">
+                    {{tagConfig.description[language] !== undefined ? tagConfig.description[language] : tagConfig.description['en']}}
+                </p>
+
+                <span *ngIf="displayCode && tagConfig">
+                        <ion-icon name="code"></ion-icon>
+                        {{tagConfig.tags | displayTags}}
+                        <!-- {{this.tagsConfig[primaryKey.key].lbl[language] || this.tagsConfig[primaryKey.key].lbl['en'] || ''}} -->
+                </span>
+
+                <span *ngIf="!tagConfig">
+                        <ion-icon name="code"></ion-icon>
+                        {{primaryKey.key}}={{primaryKey.value}}
+                </span>
+        
+            </ion-card-content>
+    </div>
+</ion-card>

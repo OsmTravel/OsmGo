@@ -2,6 +2,8 @@ const path = require('path');
 const fs = require('fs');
 const stringify = require("json-stringify-pretty-compact")
 
+const _ = require('lodash');
+
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
 const presetsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'presets.json')
@@ -21,7 +23,7 @@ const osmgoPkeys = Object.keys(tagsOsmgo);
 
 let idTagsFieldsListId = []; // list of id of fields to add...
 const tagsIDpkeys = Object.keys(tagsID)
-    .filter(k => k.split('/').length == 2) // only "generic" key for now
+    .filter(k => k.split('/').length >= 2) // only "generic" key for now
     .filter(k => osmgoPkeys.includes(k.split('/')[0])) // only primaryKeys of Osm Go for now
     .filter(k => !tagsOsmgo[k.split('/')[0]]['exclude_way_values'] ||
         !tagsOsmgo[k.split('/')[0]]['exclude_way_values'].includes(k.split('/')[1])) // no excludes ways...
@@ -33,10 +35,20 @@ for (let iDid of tagsIDpkeys) {
     const tagiD = tagsID[iDid];
     let iDFields = []; // for this tag
     let iDMoreFields = []
+    if (tagiD['addTags'] && tagiD['addTags']['brand']){
+        continue;
+        console.log(tagiD.tags);
+        console.log(tagiD.addTags)
+        console.log(iDid)
+    }
+    // console.log('-------------')
+    // console.log('iD tags', tagiD.tags);
+    // // console.log(tagiD.addTags)
+    // // console.log(iDid)
+    // console.log('-------------')
+
     if (tagiD.fields) {
-
         for (let f of tagiD.fields) {
-
             if (presetsID[f] && presetsID[f].type === 'typeCombo') {
 
             }
@@ -84,7 +96,23 @@ for (let iDid of tagsIDpkeys) {
 
     const iDKey = tagiD.tags[idPkey];
 
-    let tagOsmgo = tagsOsmgo[idPkey].values.find(ogT => ogT.key == idValue)
+    // let tagOsmgo = tagsOsmgo[idPkey].values.find(ogT => ogT.key == idValue);
+
+    let tagOsmgo = tagsOsmgo[idPkey].values.find(ogT => {
+        return _.isEqual(tagiD.tags, ogT.tags)
+
+    });
+
+
+    if (tagOsmgo){
+        // console.log('GO' , tagOsmgo, 'iD' , tagiD);
+    } else {
+        console.info(tagiD);
+    }
+   
+
+
+    // console.log(tagOsmgo);
     // not in Osm Go
     if (!tagOsmgo) {
         // console.log(idPkey, idValue);
@@ -103,7 +131,10 @@ for (let iDid of tagsIDpkeys) {
         if (tagiD.terms) newTag['terms'] = { 'en': tagiD.terms.join(', ') };
         if (iDMoreFields.length > 0) newTag['moreFields'] = iDMoreFields
         if (tagiD.tags) newTag['tags'] = tagiD.tags;
-
+        if (tagiD.addTags) newTag['addTags'] = tagiD.addTags;
+        if (tagiD.reference) newTag['reference'] = tagiD.reference;
+        if (tagiD.searchable) newTag['searchable'] = tagiD.searchable;
+        
 
         tagsOsmgo[idPkey].values.push(newTag)
 
@@ -114,14 +145,18 @@ for (let iDid of tagsIDpkeys) {
     } else {
         if (tagiD.geometry) tagOsmgo['geometry'] = tagiD.geometry;
         tagOsmgo['iDRef'] = iDid;
-        if (!tagOsmgo.icon) tagOsmgo['icon'] = tagiD.icon;
+        if (!tagOsmgo.icon) tagOsmgo['icon'] = tagiD.icon || '';
         if (tagiD.name) tagOsmgo['lbl']['en'] = tagiD.name;
         if (tagiD.terms) {
             if (!tagOsmgo['terms']) tagOsmgo['terms'] = {};
             tagOsmgo['terms']['en'] = tagiD.terms.join(', ')
         };
 
-        if (tagiD.tags && !tagOsmgo.tags) tagOsmgo['tags'] = tagiD.tags;
+        if (tagiD.tags) tagOsmgo['tags'] = tagiD.tags;
+        if (tagiD.addTags) tagOsmgo['addTags'] = tagiD.addTags;
+        if (tagiD.reference) tagOsmgo['reference'] = tagiD.reference;
+        if (tagiD.searchable) tagOsmgo['searchable'] = tagiD.searchable;
+        
 
         const newFieldsFromId = iDFields.filter(f => !['name', 'brand'].includes(f) && !tagOsmgo.presets.includes(f));
         tagOsmgo.presets = [...tagOsmgo.presets, ...newFieldsFromId];
@@ -147,7 +182,9 @@ let types = [];
 for (let fiDId of idTagsFieldsListId) {
     const currentIDPreset = presetsID[fiDId]
     let currentOsmGoPreset = presetsOsmgo[fiDId]
-
+    if (!currentIDPreset) {
+        continue;
+    }
 
     // console.log(currentIDPreset.type)
 
@@ -258,12 +295,4 @@ for (let fiDId of idTagsFieldsListId) {
 
 fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
 fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
-// console.log(tagsOsmgo);
-// tagsOsmgoPath
-// presetsOsmgoPath
 
-
-// console.log(types);
-    // console.log(idTagsFieldsListId)
-
-// console.log(tagsIDpkeys);

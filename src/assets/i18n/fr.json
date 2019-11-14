@@ -79,12 +79,6 @@
     "MARGIN_HINT": "Distance autour de la vue courante où les données seront téléchargées",
     "AERIAL_IMAGERY": "Imagerie aérienne",
     "AERIAL_IMAGERY_HINT": "Imagerie aérienne à utiliser",
-    "DELAYED_MODE": "Mode différé",
-    "DELAYED_MODE_HINT": "Les éléments modifiés seront envoyés en une fois à votre demande (mode conseillé)",
-    "LIVE_MODE_MUST_LOGIN": "Connectez vous pour passer en mode live",
-    "LIVE_MODE_ON": "Mode live On",
-    "LIVE_MODE_OFF": "Mode live Off",
-    "LIVE_MODE_HINT": "Après chaque modification, l'élément est envoyé vers OpenStreetMap",
     "LANGUAGE_AND_REGION": "Langue & région",
     "UI_LANGUAGE": "Langue de l'interface",
     "TAG_LANGUAGE": "Langue des tags",
@@ -105,6 +99,7 @@
     "ADD_SURVEY_DATE_HINT": "Ajouter le tag 'survey:date' à la date du jour pour chaque création/modification d'un objet"
   },
   "MODAL_SELECTED_ITEM": {
+    "CUSTOM_KEY_VALUE": "Ajouter une valeur qui n'existe pas",
     "PRIMARY_TAG_LIST": "Liste",
     "PRIMARY_TAG_CUSTOM": "Custom",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Veuillez entrer au moins 3 lettres dans la barre de recherche",

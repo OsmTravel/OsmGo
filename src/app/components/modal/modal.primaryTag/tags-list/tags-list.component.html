@@ -1,0 +1,44 @@
+<table class="tableListe">
+  <tr
+    *ngFor="let tag of tags | filterDeprecatedTag | filterExcludeTagByCountryCode:countryTags | filterTagCongigByGeometry:geometriesFilter | filterByTagsContent:[languageTags, countryTags]:searchText;"
+  >
+    <td style="width:16px;" [style.background-color]="tag.markerColor">
+            <app-icon  [tagConfig]="tag"[jsonSprites]="jsonSprites">  </app-icon>
+    </td>
+
+    <td (click)="addRemoveToBookmarks.emit(tag)" style="width:36px">
+      <ion-icon
+        [style.color]="isBookMarked(tag) ? '#ffe80a' : '#d8d8d8'"
+        name="star"
+        item-left
+        style="font-size: 26px;"
+      ></ion-icon>
+    </td>
+
+    <td (click)="selected.emit(tag)">
+      <b
+        [style.color]="(oldTagConfig?.id === tag.id) ? '#3b22dd' : 'black'"
+        >{{ (tag?.lbl) ? tag?.lbl[languageTags] ||  tag?.lbl['en'] : null}}</b
+      >
+      <!-- <br> <span style="font-size: 0.8em;">{{tag?.primaryKey}}={{tag?.key}} </span>  -->
+      <br />
+      <span style="font-size: 0.8em;">{{tag?.tags | displayTags }}</span>
+      <br />
+      <span style="font-size: 11px;font-style: italic;">
+        {{ tag?.description ?
+        tag?.description[languageTags] ||
+        tag?.description['en'] : ''}}
+      </span>
+    </td>
+
+    <td style="width:36px">
+      <div *ngIf="oldTagConfig?.id === tag.id">
+        <ion-icon
+          name="checkmark"
+          item-left
+          style="font-size: 26px; color: green;"
+        ></ion-icon>
+      </div>
+    </td>
+  </tr>
+</table>

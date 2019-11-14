@@ -1,4 +1,4 @@
-import osmToOsmgo from './index.mjs'
+import osmToOsmgo from './index.js'
 import  fs from 'fs'
 
 const tagConfig = JSON.parse(fs.readFileSync('./fixture/tagconfig.json', 'utf8'));

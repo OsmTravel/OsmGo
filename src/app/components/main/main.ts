@@ -18,7 +18,6 @@ import { timer } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IconService } from 'src/app/services/icon.service';
 import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from 'src/app/services/states.service';
 
@@ -53,7 +52,6 @@ export class MainPage implements AfterViewInit {
     private _ngZone: NgZone,
     private router: Router,
     private translate: TranslateService,
-    public iconService: IconService,
     public loadingController: LoadingController,
     private swUpdate: SwUpdate,
     public statesService: StatesService
@@ -80,7 +78,6 @@ export class MainPage implements AfterViewInit {
     });
 
     mapService.eventShowModal.subscribe(async (_data) => {
-
       this.configService.freezeMapRenderer = true;
       const newPosition = (_data.newPosition) ? _data.newPosition : false;
 
@@ -95,6 +92,7 @@ export class MainPage implements AfterViewInit {
       modal.onDidDismiss().then(d => {
         this.modalIsOpen = false;
         const data = d.data;
+        console.log(data);
         this.configService.freezeMapRenderer = false;
         if (data) {
           if (data['type'] === 'Move') {
@@ -249,22 +247,22 @@ export class MainPage implements AfterViewInit {
       this.tagsService.loadTagsAndPresets$()
         .subscribe(async e => {
 
-          const missingIcons: string[] = await this.iconService.getMissingSpirtes();
+          // const missingIcons: string[] = await this.iconService.getMissingSpirtes();
 
-          if (missingIcons.length > 0) {
-            const loading = await this.loadingController.create({
-              message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
-            });
-            await loading.present();
-            const missingSprites: string[] = await this.iconService.getMissingSpirtes();
-            for (let missIcon of missingSprites) {
+          // if (missingIcons.length > 0) {
+          //   const loading = await this.loadingController.create({
+          //     message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
+          //   });
+          //   await loading.present();
+          //   const missingSprites: string[] = await this.iconService.getMissingSpirtes();
+          //   for (let missIcon of missingSprites) {
 
-              let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
-              this.dataService.addIconCache(missIcon, uriIcon)
+          //     let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
+          //     this.dataService.addIconCache(missIcon, uriIcon)
 
-            }
-            loading.dismiss();
-          }
+          //   }
+          //   loading.dismiss();
+          // }
         });
 
       this.mapService.eventDomMainReady.emit(document.getElementById('map'));

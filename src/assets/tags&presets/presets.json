@@ -19445,5 +19445,102 @@
     "type": "list",
     "lbl": {"en": "Brand", "fr": "Enseigne"},
     "optionsFromJson": "brands/healthcare/counselling.json"
+  },
+  "crossing/island": {
+    "key": "crossing:island",
+    "type": "select",
+    "lbl": {"en": "Refuge Island", "fr": "Île de refuge"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "memorial": {
+    "key": "memorial",
+    "type": "typeCombo",
+    "lbl": {"en": "Type", "fr": "Type"}
+  },
+  "hoops": {
+    "key": "hoops",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "1, 2, 4...",
+    "lbl": {"en": "Hoops", "fr": "Nombre d'arceaux"}
+  },
+  "valve": {
+    "key": "valve",
+    "type": "select",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
+  },
+  "camera/type": {
+    "key": "camera:type",
+    "type": "list",
+    "lbl": {"en": "Camera Type", "fr": "Type de caméra"},
+    "options": [
+      {"v": "fixed", "lbl": {"en": "Fixed", "fr": "Fixée"}},
+      {"v": "panning", "lbl": {"en": "Panning", "fr": "Panoramique"}},
+      {"v": "dome", "lbl": {"en": "Dome", "fr": "Dôme"}}
+    ],
+    "iDtype": "combo"
+  },
+  "camera/mount": {
+    "key": "camera:mount",
+    "type": "select",
+    "lbl": {"en": "Camera Mount", "fr": "Support de caméra"},
+    "iDtype": "combo"
+  },
+  "camera/direction": {
+    "key": "camera:direction",
+    "type": "number",
+    "placeholder": "45, 90, 180, 270",
+    "lbl": {
+      "en": "Direction (Degrees Clockwise)",
+      "fr": "Direction (en degrés dans le sens horaire)"
+    }
+  },
+  "contact/webcam": {
+    "key": "contact:webcam",
+    "type": "text",
+    "icon": "website",
+    "placeholder": "http://example.com/",
+    "lbl": {"en": "Webcam URL", "fr": "adresse de visioconférence"},
+    "iDtype": "url"
+  },
+  "basin": {
+    "key": "basin",
+    "type": "select",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
+  },
+  "intermittent_yes": {
+    "key": "intermittent",
+    "type": "select",
+    "default": "yes",
+    "lbl": {"en": "Intermittent", "fr": "Intermittent"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "consulate": {
+    "key": "consulate",
+    "type": "select",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
+  },
+  "embassy": {
+    "key": "embassy",
+    "type": "select",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
+  },
+  "liaison": {
+    "key": "liaison",
+    "type": "select",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
   }
 }

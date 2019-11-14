@@ -8,13 +8,18 @@ const Spritesmith = require('spritesmith');
 
 exports.generateSprites = () => {
 
-    const iconsSVGsPath = path.join(__dirname, '..', 'src','assets','mapStyle','IconsSVG');
-    const markersModelPath = path.join(__dirname,'markersModel');
+    const iconsUsed = [];
+
+  
+    const iconsSVGsPath = path.join(__dirname, '..', 'resources','IconsSVG');
+    const markersModelPath = path.join(__dirname, '..', 'resources','markersModel');
     const tagsPath = path.join(__dirname, '..', 'src','assets','tags&presets', 'tags.json');
     const outputTmp = path.join(__dirname, 'tmp');
     const outputFolderSVG = path.join(outputTmp, 'SVG');
   
     const outPath = path.join(__dirname, '..', 'src','assets', 'mapStyle','sprites') // les sprites en sorti
+
+    const outPathIconSprites = path.join(__dirname, '..', 'src','assets') // les sprites en sorti
 
 
     fs.removeSync(outputTmp);
@@ -23,13 +28,16 @@ exports.generateSprites = () => {
 
     let iconsSVG = [];
 
-    function generateMarkerIcon(iconName, colorIcon, colorMarker, unknowTag = false) {
+    const generateMarkerIcon = (iconName, colorIcon, colorMarker,geometries= undefined, unknowTag = false) => {
+        if (!geometries){
+            geometries = ['point', 'vertex','area','line']
+        }
         let iconSVG;
         if (iconName == '') {
             if (unknowTag) {
                 iconSVG = fs.readFileSync(path.join(iconsSVGsPath,  'wiki_question.svg')).toString();
             } else {
-                iconSVG = fs.readFileSync(path.join(iconsSVGsPath , 'maki-circle-15.svg')).toString();
+                iconSVG = fs.readFileSync(path.join(iconsSVGsPath , 'maki-circle.svg')).toString();
             }
 
         } else {
@@ -50,10 +58,9 @@ exports.generateSprites = () => {
 
         let $ = cheerio.load(iconSVG)
         pathIconXMLstr = '';
-        let iconSVGpath = ''
+  
         $('path').attr('d', function (a, b) {
             pathIconXMLstr += '<path fill="' + colorIcon + '" transform="translate(4.5 4.5)" d="' + b + '"></path> ';
-            iconSVGpath += '<path fill="#FFFFFF" d="' + b + '"></path> ';
         })
         iconDpath = $('path').attr('d');
 
@@ -65,15 +72,19 @@ exports.generateSprites = () => {
             '<svg version="1.1" id="marker-circle-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"  y="0px" width="24px" height="36px" viewBox="0 0 24 36" enable-background="new 0 0 24 36" xml:space="preserve">';
 
         const xmlEnd = '</svg>'
+        if (geometries.includes('point') || geometries.includes('vertex') ){
+            const SVGcircle = xmlHeader + pathMarkerXMLCircle + pathIconXMLstr + xmlEnd;
+            fs.writeFileSync(path.join(outputFolderSVG, 'circle-' + colorMarker + '-' + iconName + '.svg'), SVGcircle);
+        }
 
-        const SVGcircle = xmlHeader + pathMarkerXMLCircle + pathIconXMLstr + xmlEnd;
-        fs.writeFileSync(path.join(outputFolderSVG, 'circle-' + colorMarker + '-' + iconName + '.svg'), SVGcircle);
-
-        const SVGpenta = xmlHeader + pathMarkerXMLPenta + pathIconXMLstr + xmlEnd;
-        fs.writeFileSync(path.join(outputFolderSVG, 'penta-' + colorMarker + '-' + iconName + '.svg'), SVGpenta);
-
-        const SVGsquare = xmlHeader + pathMarkerXMLSquare + pathIconXMLstr + xmlEnd;
-        fs.writeFileSync(path.join(outputFolderSVG, 'square-' + colorMarker + '-' + iconName + '.svg'), SVGsquare);
+        if (geometries.includes('line')){
+            const SVGpenta = xmlHeader + pathMarkerXMLPenta + pathIconXMLstr + xmlEnd;
+            fs.writeFileSync(path.join(outputFolderSVG, 'penta-' + colorMarker + '-' + iconName + '.svg'), SVGpenta);
+        }
+        if (geometries.includes('area')){
+            const SVGsquare = xmlHeader + pathMarkerXMLSquare + pathIconXMLstr + xmlEnd;
+            fs.writeFileSync(path.join(outputFolderSVG, 'square-' + colorMarker + '-' + iconName + '.svg'), SVGsquare);
+        }
     }
 
 
@@ -82,21 +93,26 @@ exports.generateSprites = () => {
     let iconsMarkersStr = [];
     for (key in tags) {
         for (let i = 0; i < tags[key].values.length; i++) {
-
+            if (tags[key].values[i].icon && !iconsUsed.includes(tags[key].values[i].icon)){
+              
+                iconsUsed.push(tags[key].values[i].icon);
+            }
             let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon
             if (iconsMarkersStr.indexOf(strIcM) == -1) {
                 iconsMarkersStr.push(strIcM);
-                generateMarkerIcon(tags[key].values[i].icon, "#ffffff", tags[key].values[i].markerColor)
+             
+                generateMarkerIcon(tags[key].values[i].icon, "#ffffff", tags[key].values[i].markerColor, tags[key].values[i].geometry)
             }
         }
     }
 
-    generateMarkerIcon('', "#ffffff", "#000000", true)
+    // unknows tag config
+    generateMarkerIcon('', "#ffffff", "#000000",['point','line','area'], true)
 
 
     //copy whiteliste 
     const whiteList = ['none', 'Delete', 'Create', 'Update', 'Old', 'Fixme'];
-
+  
     for (let i = 0; i < whiteList.length; i++) {
         fs.copySync(path.join(iconsSVGsPath, whiteList[i] + '.svg'), path.join(outputFolderSVG, whiteList[i] + '.svg'));
     }
@@ -109,7 +125,7 @@ exports.generateSprites = () => {
 
     const svgToPNG = (filePath, factor) => {
         var dimensions = sizeOf(filePath);
-
+        // console.log(filePath);
 
         // console.log(dimensions.width, dimensions.height);
         const svgString = fs.readFileSync(filePath, 'utf8');
@@ -175,12 +191,58 @@ exports.generateSprites = () => {
             });
 
         })
+    }
 
+    // just icons sprites for interface
+    const generateIconSprites = async () => {
+        console.info('Sprites for Ui')
+        const factor = 2;
+        const pngFolder = path.join(outputTmp, 'PNG_icons');
+        await fs.emptyDir(pngFolder)
+        for (let svgFileName of iconsUsed){
+            const filePath = path.join(iconsSVGsPath, `${svgFileName}.svg`)
+            
+            const image = await svgToPNG(filePath, factor);
+            fs.writeFileSync(path.join(pngFolder, `${svgFileName}.png`), image)
+        }
 
+        const pngsNameFile = fs.readdirSync(pngFolder);
+        const pngPaths = pngsNameFile.map(n => path.join(pngFolder, n))
+        var sprites = pngPaths
+
+  
+        return new Promise((resolve, reject) => {
+            Spritesmith.run({ src: sprites }, async function handleResult(err, result) {
+                if (err) {
+                    reject(err);
+                }
+
+                const outFileName = 'iconsSprites';// factor === 1 ? 'sprites' : `sprites@${factor}x`
+                fs.writeFileSync(path.join(outPathIconSprites, outFileName + '.png'), result.image)
+                // await sharp(result.image).toFile(path.join(outPath, outFileName + '.png'))
+
+                const jsonSprites = {};
+                for (const k in result.coordinates) {
+                    // console.log(path.basename(k))
+                    const basename = path.basename(k).replace('.png', '');
+                    // console.log(basename)
+                    jsonSprites[basename] = { ...result.coordinates[k], "pixelRatio": factor }
+                }
+                fs.writeFileSync(path.join(outPathIconSprites, outFileName + '.json'), JSON.stringify(jsonSprites));
+                await fs.remove(pngFolder)
+
+                resolve({ 'json': path.join(outPath, outFileName + '.json'), 'png': path.join(outPath, outFileName + '.png') })
+
+            });
+
+        })
+
+       
     }
     
     return Promise.all(
     [
+        generateIconSprites(),
         generateSprites(outPath, 1), 
         generateSprites(outPath, 2), 
         generateSprites(outPath, 3)

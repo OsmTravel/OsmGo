@@ -8,7 +8,7 @@ function reponse(event) {
     let geojsonChanged = event.data.geojsonChanged
     let tagsConfig = event.data.tagsConfig;
 
-    const result = osmToOsmgo(osmData, {tagConfig: tagsConfig, 
+    const result = osmToOsmgo.convert(osmData, {tagConfig: tagsConfig, 
         oldGeojson: oldGeojson, 
         geojsonChanged: geojsonChanged,
         oldBboxFeature: oldBboxFeature

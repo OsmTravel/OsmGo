@@ -108,7 +108,6 @@ export class MenuPage {
     }
 
     logout() {
-        this.configService.setIsDelayed(true);
         this.osmApi.logout();
     }
 

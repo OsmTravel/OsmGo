@@ -61,21 +61,29 @@
   <table style="width:100%">
     <tr>
       <th style="width: 45px;">{{ 'SEND_DATA.TYPE' | translate}}</th>
-      <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
+      <th style="width: 45px;"></th>
+      
       <th>{{ 'SEND_DATA.NAME' | translate}}</th>
+      <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
+     
       <th style="width: 45px;"><ion-icon name="locate"></ion-icon></th>
       <th style="width: 45px;">{{ 'SEND_DATA.ERROR' | translate}}</th>
       
     </tr>
     <tr *ngFor="let item of featuresChanges">
-      <td>
-        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add"></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create"></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash"></ion-icon>
-
+      <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
+        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add" class="iconType" ></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create" class="iconType" ></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash" class="iconType" ></ion-icon>
       </td>
-      <td>{{item.properties?.primaryTag.k}}: {{item.properties?.primaryTag.v}}</td>
-      <td>{{item?.properties?.tags?.name}}</td>
+      <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
+          <app-icon  class="imgCenter iconImg" [tagConfig]="item.properties" [jsonSprites]="tagsService.jsonSprites">  </app-icon>
+             
+     
+      </td>
+      <td>{{item.properties?._name}}</td>
+      <td>{{item.properties?.primaryTag.key}}: {{item.properties?.primaryTag.value}}</td>
+     
         <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon name="locate"></ion-icon>  </td>
       <td>
         <div *ngIf="item.error" (click)="displayError(item.error)">

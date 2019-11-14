@@ -7,11 +7,28 @@ import { Component, Input } from '@angular/core';
 })
 export class ReadPrimaryKey {
     @Input() displayCode;
-    @Input() keyLbl;
-    @Input() primaryKey;
-    @Input() configOfPrimaryKey;
+    @Input() tagsConfig;
+    @Input() tagConfig;
     @Input() language;
+    @Input() feature;
+    @Input() jsonSprites;
 
+    primaryKey;
+  
+   
     ngOnInit(): void {
+        this.primaryKey = this.findPkey(this.feature);
+    
+        // console.log(this.currentSpriteConfig);
+     
     }
+
+    findPkey( feature){
+        const pkeys = Object.keys(this.tagsConfig);
+        for (let k in feature.properties.tags){
+            if (pkeys.includes(k)){
+                return {key: k, value:feature.properties.tags[k] }
+            }
+        }
+    } 
 }

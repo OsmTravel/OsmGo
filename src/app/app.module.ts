@@ -35,7 +35,9 @@ import { ReadPresets } from './components/modal/components/READ_Presets.componen
 import { EditOtherTag } from './components/modal/components/EDIT_OtherTag.component';
 import { EditPresets } from './components/modal/components/EDIT_Presets.component';
 import { EditPrimaryKey } from './components/modal/components/EDIT_PrimaryKey.component';
-import { AlertComponent } from './components/modal/components/alert/alert.component'
+import { AlertComponent } from './components/modal/components/alert/alert.component';
+import { TagsListComponent } from './components/modal/modal.primaryTag/tags-list/tags-list.component'
+import { IconComponent } from './components/icon/icon.component'
 
 import { DisplayPresetLabelPipe } from './pipes/displayPresetLabel.pipe';
 import { FilterByContentPipe } from './pipes/filterByContent.pipe';
@@ -65,6 +67,9 @@ import 'moment/locale/en-gb';
 import 'moment/locale/fr';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DisplayTagsPipe } from './pipes/display-tags.pipe';
+import { from } from 'rxjs';
+import { FilterTagCongigByGeometryPipe } from './pipes/filter-tag-congig-by-geometry.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -83,7 +88,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
 @NgModule({
   declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage, LoginPage,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
-    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent,
+    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent, 
+    TagsListComponent, IconComponent,
 
     DisplayPresetLabelPipe,
     FilterByContentPipe,
@@ -93,14 +99,14 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FilterByPresetsContentPipe,
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
-    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe,
+    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterTagCongigByGeometryPipe,
   ],
   entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({mode: 'md'}),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,

@@ -1,0 +1,16 @@
+<div *ngIf="tagConfig && tagConfig.icon && jsonSprites[tagConfig.icon]; let conf"
+  [style.width]="conf.width +'px'"
+  [style.height]= "conf.height +'px'"
+  [style.background-position]=" '-'+ conf.x +'px -'+conf.y +'px'"
+  class="sprites"
+>
+</div>
+
+<div *ngIf="!tagConfig || !tagConfig.icon || !jsonSprites[tagConfig.icon]"
+  [style.width]="jsonSprites['wiki_question'].width +'px'"
+  [style.height]= "jsonSprites['wiki_question'].height +'px'"
+  [style.background-position]=" '-'+ jsonSprites['wiki_question'].x +'px -'+jsonSprites['wiki_question'].y +'px'"
+  class="sprites"
+>
+</div>
+

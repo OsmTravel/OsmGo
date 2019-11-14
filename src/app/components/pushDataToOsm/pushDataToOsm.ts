@@ -39,6 +39,7 @@ export class PushDataToOsmPage implements AfterViewInit {
 
         this.commentChangeset = this.configService.getChangeSetComment();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
+        console.log(this.featuresChanges);
     }
 
 

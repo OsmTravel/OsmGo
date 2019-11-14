@@ -5,16 +5,17 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { ConfigService } from './config.service';
 import { cloneDeep } from 'lodash';
-
+import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
-    lastTagAdded = {};
+    lastTagAdded: TagConfig[];
     bookMarks = [];
     tags;
     presets = {};
     basemaps;
     primaryKeys = [];
+    jsonSprites
 
 
     constructor(private http: HttpClient,
@@ -23,7 +24,7 @@ export class TagsService {
     }
 
     // bookMarks
-    getBookMarks() {
+    getBookMarks():TagConfig[] {
         return this.bookMarks;
     }
     setBookMarks(bookMarks) {
@@ -64,12 +65,20 @@ export class TagsService {
 
 
     // LastTagAdded
-    getLastTagAdded() {
+    getLastTagAdded() :TagConfig[] {
         return this.lastTagAdded;
     }
-    setLastTagAdded(lastTag) {
-        this.localStorage.set('lastTagAdded', lastTag);
-        this.lastTagAdded = lastTag;
+    addTagToLastTagAdded(tagconfig: TagConfig) {
+        if (!this.lastTagAdded || !Array.isArray( this.lastTagAdded)){
+            this.lastTagAdded = [];
+        }
+        const index = this.lastTagAdded.findIndex( o => o.id == tagconfig.id) 
+        if (index !== -1){
+            this.lastTagAdded.splice(index, 1);
+        }
+        this.lastTagAdded = [tagconfig, ... this.lastTagAdded].slice(0,20);
+        console.log('setLastTag', this.lastTagAdded)
+        this.localStorage.set('lastTagAdded', this.lastTagAdded);
     }
 
     loadLastTagAdded$() {
@@ -91,6 +100,27 @@ export class TagsService {
     getPrimaryKeys() {
         return this.primaryKeys;
     }
+
+    
+  findPkey( featureOrTags): PrimaryTag{
+    const pkeys = Object.keys(this.tags);
+    if (featureOrTags.properties && featureOrTags.properties.tags){
+        for (let k in featureOrTags.properties.tags){
+            if (pkeys.includes(k)){
+                return {key: k, value:featureOrTags.properties.tags[k] }
+            }
+            return undefined
+        }
+    } else {
+        for (let t of featureOrTags){
+            if (pkeys.includes(t.key)){
+                return {key: t.key, value:t.value }
+            }
+        }
+        return undefined
+    }
+
+} 
 
     getAllTags(): Observable<any> { // tags à plat ?
         return this.http.get(`assets/tags&presets/tags.json`)
@@ -183,8 +213,21 @@ export class TagsService {
             );
     }
 
+    loadJsonSprites$() {
+        console.log('JSON SPRITES')
+        return this.http.get('assets/iconsSprites.json')
+          .pipe(
+            map( (jsonSprites) => {
+                this.jsonSprites = jsonSprites
+                console.log(jsonSprites);
+                return this.jsonSprites;
+            })
+          )
+      }
+
     loadTagsAndPresets$() {
         return forkJoin(
+            this.loadJsonSprites$(),
             this.loadPresets(),
             this.getAllTags(),
             this.getBaseMaps()
@@ -203,8 +246,9 @@ export class TagsService {
         return this.presets[id];
     }
 
+   
     getPresetsOptionFromJson(jsonPath){
-            return this.http.get(`assets/${jsonPath}`)
+            return this.http.get<PresetOption[]>(`assets/${jsonPath}`)
                 .pipe(
                     map((res) => {
                         return res;
