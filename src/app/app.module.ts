@@ -68,7 +68,6 @@ import 'moment/locale/fr';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DisplayTagsPipe } from './pipes/display-tags.pipe';
-import { from } from 'rxjs';
 import { FilterTagCongigByGeometryPipe } from './pipes/filter-tag-congig-by-geometry.pipe';
 
 

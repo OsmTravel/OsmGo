@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlertComponent } from './alert.component';
+import { FilterByCountryCode } from 'src/app/pipes/filterByCountryCode.pipe';
 
 describe('AlertComponent', () => {
   let component: AlertComponent;
@@ -9,7 +10,7 @@ describe('AlertComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AlertComponent ],
+      declarations: [ AlertComponent, FilterByCountryCode ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();

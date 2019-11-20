@@ -2,7 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IconComponent } from './icon.component';
-
+const jsonSprites : any = require('../../../assets/iconsSprites.json')
+const tagConfig: any = require('../../../assets/tags&presets/tags.json');
 describe('IconComponent', () => {
   let component: IconComponent;
   let fixture: ComponentFixture<IconComponent>;
@@ -18,7 +19,10 @@ describe('IconComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(IconComponent);
     component = fixture.componentInstance;
+    component.jsonSprites = jsonSprites
+    component.tagConfig= tagConfig
     fixture.detectChanges();
+    
   });
 
   it('should create', () => {

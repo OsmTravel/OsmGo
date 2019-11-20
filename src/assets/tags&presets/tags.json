@@ -224,6 +224,7 @@
           "fr": "Drapeau publicitaire"
         },
         "tags": {"advertising": "flag"},
+        "geometry": ["point", "vertex"],
         "id": "advertising/flag"
       },
       {
@@ -236,6 +237,7 @@
           "en": "Advertising sign, also used for neon signs and logos"
         },
         "tags": {"advertising": "sign"},
+        "geometry": ["point", "vertex"],
         "id": "advertising/sign"
       },
       {
@@ -245,6 +247,7 @@
         "presets": [],
         "lbl": {"en": "Screen", "fr": "Ecran"},
         "terms": {"en": "", "fr": "publicité"},
+        "geometry": ["point", "vertex"],
         "description": {
           "en": "Advertising Screens",
           "fr": "Ecran publicitaire"
@@ -257,6 +260,7 @@
         "icon": "maki-art-gallery",
         "markerColor": "#D73F29",
         "presets": [],
+        "geometry": ["point", "vertex"],
         "lbl": {"en": "Sculpture ", "fr": "sculpture / objet 3D"},
         "description": {
           "en": "Advertising sculpture, or any advertising object in 3D."
@@ -270,6 +274,7 @@
         "markerColor": "#D73F29",
         "presets": [],
         "lbl": {"en": "Tarp"},
+        "geometry": ["point", "vertex"],
         "description": {
           "en": "Advertising on tarp, either on scaffolding, or wall tarp. They are exceptional size advertising devices."
         },
@@ -280,6 +285,7 @@
         "key": "wall_painting",
         "icon": "mi-painter",
         "markerColor": "#D73F29",
+        "geometry": ["point", "vertex"],
         "presets": [],
         "lbl": {"en": "Wall Painting", "fr": "Peinture sur mur"},
         "description": {"en": "Advertisement painted on a wall"},
@@ -293,6 +299,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"advertising": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "advertising/yes"
       }
     ]
@@ -424,12 +431,14 @@
           "fr": "Préférez la catégorie 'Bureau'"
         },
         "tags": {"shop": "estate_agent"},
+        "geometry": ["point", "area"],
         "id": "shop/estate_agent"
       },
       {
         "key": "insurance",
         "icon": "mi-insurance-agency",
         "markerColor": "#A23337",
+        "geometry": ["point", "area"],
         "presets": [
           "operator",
           "wheelchair",
@@ -5753,6 +5762,7 @@
           "de": "Modellbaugeschäft"
         },
         "tags": {"shop": "model"},
+        "geometry": ["point", "area"],
         "id": "shop/model"
       },
       {
@@ -5768,6 +5778,7 @@
           "de": "Lampengeschäft"
         },
         "tags": {"shop": "lamps"},
+        "geometry": ["point", "area"],
         "id": "shop/lamps"
       },
       {
@@ -6675,6 +6686,7 @@
         "terms": {"en": "non-perishable food"},
         "description": {"en": "non-perishable food"},
         "tags": {"shop": "grocery"},
+        "geometry": ["point", "area"],
         "id": "shop/grocery"
       },
       {
@@ -9789,6 +9801,7 @@
           "fr": "Vente de table d’extérieur, décorations, etc "
         },
         "tags": {"shop": "garden_furniture"},
+        "geometry": ["point", "area"],
         "id": "shop/garden_furniture"
       },
       {
@@ -9942,6 +9955,7 @@
           "en": "Selling and installing glazing for windows and doors"
         },
         "tags": {"shop": "glaziery"},
+        "geometry": ["point", "area"],
         "id": "shop/glaziery"
       },
       {
@@ -10805,6 +10819,7 @@
         "lbl": {"en": " Not known", "fr": "_NC"},
         "description": {"en": "A shop of unspecified type."},
         "tags": {"shop": "yes"},
+        "geometry": ["point", "area"],
         "id": "shop/yes"
       },
       {
@@ -10817,6 +10832,7 @@
           "en": "A shop that sells skis and/or related accessories and services"
         },
         "tags": {"shop": "ski"},
+        "geometry": ["point", "area"],
         "id": "shop/ski"
       },
       {
@@ -10878,6 +10894,7 @@
           "en": "Shop focused on selling (fresh) pasta, ravioli, etc."
         },
         "tags": {"shop": "pasta"},
+        "geometry": ["point", "area"],
         "id": "shop/pasta"
       },
       {
@@ -10974,6 +10991,7 @@
         "lbl": {"en": "Food", "fr": "Magasin d'alimentation"},
         "alert": {"en": "Prefer 'deli'", "fr": "préférez 'deli'"},
         "tags": {"shop": "food"},
+        "geometry": ["point", "area"],
         "id": "shop/food"
       },
       {
@@ -13296,6 +13314,7 @@
         "presets": ["wheelchair"],
         "lbl": {"en": "Auditorium"},
         "tags": {"amenity": "auditorium"},
+        "geometry": ["point", "area"],
         "id": "amenity/auditorium"
       },
       {
@@ -14042,6 +14061,7 @@
         ],
         "excludeCountryCodes": ["FR"],
         "tags": {"amenity": "brothel"},
+        "geometry": ["point", "area"],
         "id": "amenity/brothel"
       },
       {
@@ -14342,6 +14362,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Public Building", "fr": "Bâtiment public"},
         "tags": {"amenity": "public_building"},
+        "geometry": ["point", "area"],
         "id": "amenity/public_building"
       },
       {
@@ -14826,6 +14847,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Health Centre", "fr": "Centre de santé"},
         "tags": {"amenity": "health_centre"},
+        "geometry": ["point", "area"],
         "id": "amenity/health_centre"
       },
       {
@@ -17030,6 +17052,7 @@
           "fr": "Déprécié, utiliser : amenity=kindergarten + nursery=yes."
         },
         "tags": {"amenity": "nursery"},
+        "geometry": ["point", "area"],
         "id": "amenity/nursery"
       },
       {
@@ -17157,6 +17180,7 @@
         "presets": ["wheelchair"],
         "lbl": {"en": "Parc"},
         "tags": {"amenity": "park"},
+        "geometry": ["point", "area"],
         "id": "amenity/park"
       },
       {
@@ -18156,6 +18180,7 @@
           "fr": "Remplacé par : leisure=fitness_centre"
         },
         "tags": {"amenity": "gym"},
+        "geometry": ["point", "area"],
         "id": "amenity/gym"
       },
       {
@@ -19536,6 +19561,7 @@
           "en": "In a swingerclub adult people meet to have a party and group sex."
         },
         "tags": {"amenity": "swingerclub"},
+        "geometry": ["point", "area"],
         "id": "amenity/swingerclub"
       },
       {
@@ -19655,7 +19681,6 @@
         "presets": [
           "amenity#social_facility#brand",
           "social_facility",
-          "social_facility:for",
           "wheelchair",
           "phone",
           "website",
@@ -19952,6 +19977,7 @@
           "de": "Ein Gerät, das ÖPNV-Tickets gültig macht bzw. entwertet"
         },
         "tags": {"amenity": "ticket_validator"},
+        "geometry": ["point", "vertex"],
         "id": "amenity/ticket_validator"
       },
       {
@@ -20448,6 +20474,7 @@
         "lbl": {"en": "Stripclub", "fr": "Club de strip-tease"},
         "description": {"en": "A place that offer striptease and lap dances."},
         "tags": {"amenity": "stripclub"},
+        "geometry": ["point", "area"],
         "id": "amenity/stripclub"
       },
       {
@@ -20669,6 +20696,7 @@
         "lbl": {"en": "Table", "fr": "Table publique"},
         "description": {"en": "A public table"},
         "tags": {"amenity": "table"},
+        "geometry": ["point"],
         "id": "amenity/table"
       },
       {
@@ -20678,6 +20706,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"amenity": "yes"},
+        "geometry": ["point", "area"],
         "id": "amenity/yes"
       },
       {
@@ -20843,6 +20872,7 @@
           "fr": "Un lieu public où les gens viennent laver leurs vêtements manuellement."
         },
         "tags": {"amenity": "lavoir"},
+        "geometry": ["point", "area"],
         "id": "amenity/lavoir"
       },
       {
@@ -21491,6 +21521,7 @@
           "de": "Tanzschule"
         },
         "tags": {"amenity": "dancing_school"},
+        "geometry": ["point", "area"],
         "id": "amenity/dancing_school"
       },
       {
@@ -22125,6 +22156,7 @@
         "deprecated": true,
         "lbl": {"en": "Hotel", "fr": "Hôtel"},
         "tags": {"amenity": "hotel"},
+        "geometry": ["point", "area"],
         "id": "amenity/hotel"
       },
       {
@@ -22134,6 +22166,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Market", "fr": "Marché"},
         "tags": {"amenity": "market"},
+        "geometry": ["point", "area"],
         "id": "amenity/market"
       },
       {
@@ -22145,6 +22178,7 @@
         "lbl": {"en": "Sauna"},
         "alert": {"en": "prefer leisure=sauna", "fr": "Utilisez leisure=sauna"},
         "tags": {"amenity": "sauna"},
+        "geometry": ["point", "area"],
         "id": "amenity/sauna"
       },
       {
@@ -26342,86 +26376,13 @@
         "id": "public_transport/stop_position"
       },
       {
-        "key": "platform",
-        "icon": "mi-bus-station",
-        "markerColor": "#C057A0",
-        "presets": [
-          "bench",
-          "wheelchair",
-          "shelter",
-          "operator",
-          "ref_platform",
-          "network",
-          "departures_board",
-          "surface"
-        ],
-        "lbl": {
-          "en": "Transit Platform",
-          "fr": "Quai de transport en commun",
-          "de": "Haltestelle (Wartebereich)",
-          "es": "Plataforma de transporte público",
-          "pt": "Plataforma de transporte público",
-          "ru": "Платформа",
-          "el": "Αποβάθρα Διέλευσης",
-          "eo": "Haltejo publik-transporta (atendejo)",
-          "fi": "Joukkoliikennelaituri",
-          "he": "רציף תחבורה",
-          "hu": "Átszálló peron",
-          "ja": "交通機関のプラットホーム",
-          "ko": "대중교통 승강장",
-          "mk": "Преоден перон",
-          "nl": "Openbaarvervoershalte",
-          "pl": "Przystanek / Peron",
-          "uk": "Платформа",
-          "vi": "Bến Phương tiện Công cộng",
-          "zh-CN": "公共交通站台",
-          "zh-TW": "轉運月台"
-        },
-        "terms": {
-          "en": "platform, public transit, public transportation, transit, transportation",
-          "fr": "gare de transports en commun,station de transports en commun,quai de transports en commun,arrêt de transports en commun,gare,stop,arrêt,station,attente voyageur,transports en commun",
-          "de": "Haltestelle (Wartebereich)",
-          "es": "plataforma, andén, transporte público, transporte",
-          "pt": "plataforma, transporte público, transportes públicos",
-          "eo": "perono,haltejo,stacio,kajo,atendejo",
-          "he": "רציף,תחנה,תח״צ,תחב״צ,תעבורה,תחבורה",
-          "hu": "peron",
-          "ja": "プラットホーム, 待合所, 乗り場, ホーム, 駅, 乗降所, 停車場, 停留所, のりば, 交通機関のプラットホーム",
-          "nl": "spoorwegperron,spoorwegplatform,treinperron,treinplatform,tramperron,tramhalte,tramplatform,metroperron,metrohalte,metroplatform,busperron,bushalte,busplatform,platform",
-          "pl": "przystanek, peron, transport publiczny, transport, przewozy",
-          "uk": "платформа,траспорт,громадський,перевезення,пасажири,автобус,трамвай,тролейбус,поїзд,потяг",
-          "vi": "trạm, bến, ke, ke ga, phương tiện công cộng, ptcc, giao thông công cộng, gtcc, tram, ben, phuong tien cong cong, giao thong cong cong",
-          "zh-CN": "站台,月台,车站,公共交通,交通",
-          "zh-TW": "轉運月台"
-        },
-        "description": {
-          "en": "The place where passengers are waiting for the public transport vehicles.",
-          "fr": "Lieu où les passagers attendent les véhicules de transport en commun",
-          "de": "Ein Ort, an dem Fahrgäste auf öffentliche Transportmittel warten."
-        },
-        "geometry": ["line", "area"],
-        "iDRef": "public_transport/platform",
-        "tags": {"public_transport": "platform"},
-        "moreFields": [
-          "access",
-          "covered",
-          "indoor",
-          "layer",
-          "level",
-          "lit",
-          "wheelchair",
-          "bench",
-          "bin"
-        ],
-        "id": "public_transport/platform"
-      },
-      {
         "key": "yes",
         "icon": "wiki_question",
         "markerColor": "#C057A0",
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"public_transport": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "public_transport/yes"
       },
       {
@@ -26674,7 +26635,7 @@
           "zh-CN": "公交,公交站,公交车,巴士,大巴,客车,车站,枢纽,枢纽站,终点站,站台",
           "zh-TW": "客運站"
         },
-        "geometry": ["point", "area"],
+        "geometry": ["point", "area","line"],
         "iDRef": "public_transport/station_bus",
         "tags": {
           "public_transport": "station",
@@ -27175,7 +27136,7 @@
           "zh-HK": "Tram Station, 電車大站",
           "zh-TW": "電車站"
         },
-        "geometry": ["point", "area"],
+        "geometry": ["point", "area","line"],
         "iDRef": "public_transport/station_tram",
         "tags": {"public_transport": "station", "tram": "yes"},
         "reference": {"key": "public_transport", "value": "station"},
@@ -28438,6 +28399,7 @@
           "de": "Ein Sammelplatz ist ein Punkt, an dem sich im Brand- oder Schadensfall, also in der Regel bei einer Gebäudeevakuierung, alle Personen aus einem Gebäude sammeln sollen."
         },
         "tags": {"emergency": "assembly_point"},
+        "geometry": ["point"],
         "id": "emergency/assembly_point"
       },
       {
@@ -28519,6 +28481,7 @@
           "de": "Turm für Rettungsschwimmer"
         },
         "tags": {"emergency": "lifeguard_tower"},
+        "geometry": ["point", "vertex"],
         "id": "emergency/lifeguard_tower"
       },
       {
@@ -28598,7 +28561,7 @@
         "key": "yes",
         "icon": "wiki_question",
         "markerColor": "#75030B",
-        "presets": ["emergency_combo"],
+        "presets": [],
         "lbl": {
           "en": "Emergency Access Yes",
           "fr": "Accessible aux services d'urgences",
@@ -28784,6 +28747,7 @@
           "fr": "Entrée du service des urgences d'un hôpital"
         },
         "tags": {"emergency": "emergency_ward_entrance"},
+        "geometry": ["point", "vertex"],
         "id": "emergency/emergency_ward_entrance"
       },
       {
@@ -30833,6 +30797,7 @@
           "en": "A place for supervised camps for children or teenagers conducted during the summer months"
         },
         "tags": {"leisure": "summer_camp"},
+        "geometry": ["point", "area"],
         "id": "leisure/summer_camp"
       },
       {
@@ -31047,6 +31012,7 @@
           "de": "Versteck um Wildtiere zu beobachten"
         },
         "tags": {"leisure": "wildlife_hide"},
+        "geometry": ["point", "area"],
         "id": "leisure/wildlife_hide"
       },
       {
@@ -31133,6 +31099,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"leisure": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "leisure/yes"
       },
       {
@@ -32227,6 +32194,7 @@
         "terms": {"en": "pingpong", "fr": "pingpong, tenis de table"},
         "description": {"en": "pingpong", "fr": "pingpong, tenis de table"},
         "tags": {"leisure": "table_tennis_table"},
+        "geometry": ["point"],
         "id": "leisure/table_tennis_table"
       },
       {
@@ -35099,19 +35067,6 @@
         "id": "craft/hvac"
       },
       {
-        "key": "insulation",
-        "icon": "",
-        "markerColor": "#5B396C",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "lbl": {"en": "Insulation", "fr": "Isolation thermique"},
-        "description": {
-          "en": "A workplace or office of a person who does thermal insulation in buildings.",
-          "fr": "Technicien thermicien (isolation)"
-        },
-        "tags": {"craft": "insulation"},
-        "id": "craft/insulation"
-      },
-      {
         "key": "jeweller",
         "icon": "mi-jewelry-store",
         "markerColor": "#5B396C",
@@ -35122,6 +35077,7 @@
           "fr": "Bijoutier-joaillier"
         },
         "tags": {"craft": "jeweller"},
+        "geometry": ["point", "area"],
         "id": "craft/jeweller"
       },
       {
@@ -37256,6 +37212,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"craft": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "craft/yes"
       },
       {
@@ -37365,6 +37322,7 @@
           "de": "Ein Büro eines Bauunternehmers."
         },
         "tags": {"craft": "builder"},
+        "geometry": ["point", "area"],
         "id": "craft/builder"
       },
       {
@@ -39637,6 +39595,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"tourism": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "tourism/yes"
       },
       {
@@ -42118,6 +42077,7 @@
         "terms": {"en": "", "fr": "impots, dgfip, taxe"},
         "description": {"en": "Fiscal authorities, tax and revenue office."},
         "tags": {"office": "tax"},
+        "geometry": ["point", "area"],
         "id": "office/tax"
       },
       {
@@ -42420,6 +42380,7 @@
         "lbl": {"en": "_NC"},
         "description": {"en": "Generic tag for unspecified office type."},
         "tags": {"office": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "office/yes"
       },
       {
@@ -43266,7 +43227,7 @@
         "key": "diplomatic",
         "icon": "maki-embassy",
         "markerColor": "#F5BB3A",
-        "presets": ["name", "consulate", "{office}"],
+        "presets": ["name", "consulate"],
         "lbl": {"en": "Consulate", "fr": "Consulat"},
         "terms": {"en": "", "fr": "Consulat"},
         "geometry": ["point", "area"],
@@ -43482,6 +43443,7 @@
           "de": "Funkturm oder Fernmeldeturm"
         },
         "tags": {"man_made": "communications_tower"},
+        "geometry": ["point"],
         "id": "man_made/communications_tower"
       },
       {
@@ -43491,6 +43453,7 @@
         "presets": [],
         "deprecated": true,
         "lbl": {"en": "Advertising", "fr": "Dispositifs Publicitaires"},
+        "geometry": ["point"],
         "tags": {"man_made": "advertising"},
         "id": "man_made/advertising"
       },
@@ -43645,15 +43608,16 @@
         "markerColor": "#D3D3D3",
         "presets": [
           "surveillance",
-          "surveillance:type",
+          "surveillance/type",
+          "surveillance/zone",
           "camera:type",
           "camera:mount",
-          "surveillance:zone",
+          
           "operator",
           "camera:direction",
-          "direction",
-          "surveillance/type",
-          "surveillance/zone"
+          "direction"
+         
+          
         ],
         "lbl": {
           "en": "Surveillance",
@@ -43931,6 +43895,7 @@
           "de": "Öffentlich nutzbarer Wasserhahn"
         },
         "tags": {"man_made": "water_tap"},
+        "geometry": ["point"],
         "id": "man_made/water_tap"
       },
       {
@@ -43940,6 +43905,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"man_made": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "man_made/yes"
       },
       {
@@ -44544,6 +44510,7 @@
           "de": "Ein Hochbehälter ist ein unterirdischer Wasserspeicher."
         },
         "tags": {"man_made": "reservoir_covered"},
+        "geometry": ["point", "area"],
         "id": "man_made/reservoir_covered"
       },
       {
@@ -45264,6 +45231,7 @@
           "de": "Taubenhaus, Taubenschlag"
         },
         "tags": {"man_made": "dovecote"},
+        "geometry": ["point", "area"],
         "id": "man_made/dovecote"
       },
       {
@@ -45279,7 +45247,8 @@
           "de": "Eine Maschine für die Produktion von künstlichem Schnee."
         },
         "tags": {"man_made": "snow_cannon"},
-        "id": "man_made/snow_cannon"
+        "id": "man_made/snow_cannon",
+        "geometry": ["point"]
       },
       {
         "key": "pumping_station",
@@ -46810,21 +46779,6 @@
         "id": "man_made/pipeline/underground"
       },
       {
-        "icon": "temaki-wheel",
-        "markerColor": "#D3D3D3",
-        "presets": ["ref", "operator", "valve", "location", "diameter"],
-        "lbl": {"en": "Pipeline Valve", "fr": "Valve sur un pipeline"},
-        "terms": {
-          "en": "oil, natural gas, water, sewer, sewage",
-          "fr": "Pipeline, Gazoduc, Oléoduc"
-        },
-        "geometry": ["vertex"],
-        "iDRef": "man_made/pipeline/valve",
-        "moreFields": ["colour", "manufacturer", "material"],
-        "tags": {"pipeline": "valve"},
-        "id": "man_made/pipeline/valve"
-      },
-      {
         "key": "storage_tank",
         "icon": "temaki-storage_tank",
         "markerColor": "#D3D3D3",
@@ -47104,6 +47058,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Blood Bank", "fr": "Banque du sang"},
         "tags": {"healthcare": "blood_bank"},
+        "geometry": ["point", "area"],
         "id": "healthcare/blood_bank"
       },
       {
@@ -47202,6 +47157,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Health Center", "fr": "Centre médical"},
         "tags": {"healthcare": "centre"},
+        "geometry": ["point", "area"],
         "id": "healthcare/centre"
       },
       {
@@ -47211,6 +47167,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Clinic"},
         "tags": {"healthcare": "clinic"},
+        "geometry": ["point", "area"],
         "id": "healthcare/clinic"
       },
       {
@@ -47224,6 +47181,7 @@
           "de": "Zahnarztpraxis"
         },
         "tags": {"healthcare": "dentist"},
+        "geometry": ["point", "area"],
         "id": "healthcare/dentist"
       },
       {
@@ -47235,6 +47193,7 @@
         "terms": {"en": "", "fr": "Docteur"},
         "description": {"en": "", "fr": "Docteur"},
         "tags": {"healthcare": "doctor"},
+        "geometry": ["point", "area"],
         "id": "healthcare/doctor"
       },
       {
@@ -47244,6 +47203,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Hôpital"},
         "tags": {"healthcare": "hospital"},
+        "geometry": ["point", "area"],
         "id": "healthcare/hospital"
       },
       {
@@ -47611,6 +47571,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Sophrologist", "fr": "Sophrologue"},
         "tags": {"healthcare": "sophrologist"},
+        "geometry": ["point", "area"],
         "id": "healthcare/sophrologist"
       },
       {
@@ -47764,6 +47725,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"healthcare": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "healthcare/yes"
       },
       {
@@ -47773,6 +47735,7 @@
         "presets": [],
         "lbl": {"en": "Nurse", "fr": "Infirmier"},
         "tags": {"healthcare": "nurse"},
+        "geometry": ["point", "area"],
         "id": "healthcare/nurse"
       },
       {
@@ -49031,6 +48994,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"historic": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "historic/yes"
       },
       {
@@ -49040,6 +49004,7 @@
         "presets": [],
         "lbl": {"en": "Historical Building", "fr": "Bâtiment historique "},
         "tags": {"historic": "building"},
+        "geometry": ["point", "area"],
         "id": "historic/building"
       },
       {
@@ -49108,6 +49073,7 @@
           "en": "This property distinguishes a tower as historic"
         },
         "tags": {"historic": "tower"},
+        "geometry": ["point", "area"],
         "id": "historic/tower"
       },
       {
@@ -49417,6 +49383,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"natural": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "natural/yes"
       },
       {
@@ -52037,6 +52004,7 @@
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"highway": "yes"},
+        "geometry": ["point", "area", "vertex", "line"],
         "id": "highway/yes"
       },
       {
@@ -52050,6 +52018,7 @@
           "fr": "Un radar pédagogique qui affiche la vitesse d'un automobiliste"
         },
         "tags": {"highway": "speed_display"},
+        "geometry": ["point", "vertex"],
         "id": "highway/speed_display"
       },
       {
@@ -52061,8 +52030,7 @@
           "level",
           "access_simple",
           "wheelchair",
-          "maxweight",
-          "level_semi"
+          "maxweight"
         ],
         "lbl": {
           "en": "Elevator",
@@ -53223,6 +53191,7 @@
           "en": "A club where Radio Amateurs gather on a regular basis"
         },
         "tags": {"club": "amateur_radio"},
+        "geometry": ["point", "area"],
         "id": "club/amateur_radio"
       },
       {
@@ -53232,6 +53201,7 @@
         "presets": [],
         "lbl": {"en": "art", "fr": "Club artistique"},
         "tags": {"club": "art"},
+        "geometry": ["point", "area"],
         "id": "club/art"
       },
       {
@@ -53241,6 +53211,7 @@
         "presets": [],
         "lbl": {"en": "astronomy", "fr": "Club d'astronomie"},
         "tags": {"club": "astronomy"},
+        "geometry": ["point", "area"],
         "id": "club/astronomy"
       },
       {
@@ -53254,6 +53225,7 @@
           "de": "Ein Verkehrsclub ist eine Organisation, die die Interessen aller oder bestimmter Verkehrsteilnehmer vertritt."
         },
         "tags": {"club": "automobile"},
+        "geometry": ["point", "area"],
         "id": "club/automobile"
       },
       {
@@ -53266,6 +53238,7 @@
           "fr": "Association qui promeut l'usage du vélo"
         },
         "tags": {"club": "bicycle"},
+        "geometry": ["point", "area"],
         "id": "club/bicycle"
       },
       {
@@ -53275,6 +53248,7 @@
         "presets": [],
         "lbl": {"en": "board_games", "fr": "Club de jeux de sociétés"},
         "tags": {"club": "board_games"},
+        "geometry": ["point", "area"],
         "id": "club/board_games"
       },
       {
@@ -53284,6 +53258,7 @@
         "presets": [],
         "lbl": {"en": "card_games", "fr": "Club dédié aux jeux de cartes"},
         "tags": {"club": "card_games"},
+        "geometry": ["point", "area"],
         "id": "club/card_games"
       },
       {
@@ -53296,6 +53271,7 @@
           "fr": "Un club dédié aux activités caritatives"
         },
         "tags": {"club": "charity"},
+        "geometry": ["point", "area"],
         "id": "club/charity"
       },
       {
@@ -53305,6 +53281,7 @@
         "presets": [],
         "lbl": {"en": "chess", "fr": "Club d'échecs"},
         "tags": {"club": "chess"},
+        "geometry": ["point", "area"],
         "id": "club/chess"
       },
       {
@@ -53314,6 +53291,7 @@
         "presets": [],
         "lbl": {"en": "cinema", "fr": "Club de cinéma"},
         "tags": {"club": "cinema"},
+        "geometry": ["point", "area"],
         "id": "club/cinema"
       },
       {
@@ -53323,6 +53301,7 @@
         "presets": [],
         "lbl": {"en": "culture"},
         "tags": {"club": "culture"},
+        "geometry": ["point", "area"],
         "id": "club/culture"
       },
       {
@@ -53332,6 +53311,7 @@
         "presets": [],
         "lbl": {"en": "doityourself", "fr": "Club DIY"},
         "tags": {"club": "doityourself"},
+        "geometry": ["point", "area"],
         "id": "club/doityourself"
       },
       {
@@ -53341,6 +53321,7 @@
         "presets": [],
         "lbl": {"en": "equestrian", "fr": "Club équestre"},
         "tags": {"club": "equestrian"},
+        "geometry": ["point", "area"],
         "id": "club/equestrian"
       },
       {
@@ -53354,6 +53335,7 @@
           "de": "Ein Fanklub ist eine informelle oder auch formelle Vereinigung von Freunden oder Fans"
         },
         "tags": {"club": "fan"},
+        "geometry": ["point", "area"],
         "id": "club/fan"
       },
       {
@@ -53363,6 +53345,7 @@
         "presets": [],
         "lbl": {"en": "fishing", "fr": "Club de pêche"},
         "tags": {"club": "fishing"},
+        "geometry": ["point", "area"],
         "id": "club/fishing"
       },
       {
@@ -53372,6 +53355,7 @@
         "presets": [],
         "lbl": {"en": "game", "fr": "Club dédié aux jeux"},
         "tags": {"club": "game"},
+        "geometry": ["point", "area"],
         "id": "club/game"
       },
       {
@@ -53384,6 +53368,7 @@
           "fr": "Club consacré à l'histoire et aux traditions"
         },
         "tags": {"club": "history"},
+        "geometry": ["point", "area"],
         "id": "club/history"
       },
       {
@@ -53393,6 +53378,7 @@
         "presets": [],
         "lbl": {"en": "hunting", "fr": "Club de chasse"},
         "tags": {"club": "hunting"},
+        "geometry": ["point", "area"],
         "id": "club/hunting"
       },
       {
@@ -53404,6 +53390,7 @@
         "terms": {"en": "", "fr": "GUL"},
         "description": {"en": "", "fr": "GUL"},
         "tags": {"club": "linux"},
+        "geometry": ["point", "area"],
         "id": "club/linux"
       },
       {
@@ -53414,6 +53401,7 @@
         "lbl": {"en": "motorcycle", "fr": "Club de motards"},
         "description": {"en": "A motorcycle club"},
         "tags": {"club": "motorcycle"},
+        "geometry": ["point", "area"],
         "id": "club/motorcycle"
       },
       {
@@ -53423,6 +53411,7 @@
         "presets": [],
         "lbl": {"en": "music", "fr": "Club de musique ou de chant"},
         "tags": {"club": "music"},
+        "geometry": ["point", "area"],
         "id": "club/music"
       },
       {
@@ -53437,6 +53426,7 @@
           "fr": "champignons, rochers, fleurs, ornithologie"
         },
         "tags": {"club": "nature"},
+        "geometry": ["point", "area"],
         "id": "club/nature"
       },
       {
@@ -53446,6 +53436,7 @@
         "presets": [],
         "lbl": {"en": "nudism", "fr": "Club naturiste"},
         "tags": {"club": "nudism"},
+        "geometry": ["point", "area"],
         "id": "club/nudism"
       },
       {
@@ -53455,6 +53446,7 @@
         "presets": [],
         "lbl": {"en": "photography", "fr": "Club photo"},
         "tags": {"club": "photography"},
+        "geometry": ["point", "area"],
         "id": "club/photography"
       },
       {
@@ -53464,6 +53456,7 @@
         "presets": [],
         "lbl": {"en": "religion", "fr": "Club religieux"},
         "tags": {"club": "religion"},
+        "geometry": ["point", "area"],
         "id": "club/religion"
       },
       {
@@ -53474,6 +53467,7 @@
         "lbl": {"en": "scout", "fr": "Club de scout"},
         "description": {"en": "Local Scout Group", "de": "Pfadfinder Stamm"},
         "tags": {"club": "scout"},
+        "geometry": ["point", "area"],
         "id": "club/scout"
       },
       {
@@ -53483,6 +53477,7 @@
         "presets": [],
         "lbl": {"en": "social", "fr": "Club social"},
         "tags": {"club": "social"},
+        "geometry": ["point", "area"],
         "id": "club/social"
       },
       {
@@ -53555,6 +53550,7 @@
         "presets": [],
         "lbl": {"en": "theatre", "fr": "Club de théâtre"},
         "tags": {"club": "theatre"},
+        "geometry": ["point", "area"],
         "id": "club/theatre"
       },
       {
@@ -53564,6 +53560,7 @@
         "presets": [],
         "lbl": {"en": "veterans", "fr": "Club d'anciens combattants"},
         "tags": {"club": "veterans"},
+        "geometry": ["point", "area"],
         "id": "club/veterans"
       }
     ]

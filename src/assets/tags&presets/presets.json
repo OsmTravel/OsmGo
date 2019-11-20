@@ -5454,7 +5454,7 @@
   },
   "country": {
     "key": "country",
-    "type": "select",
+    "type": "text",
     "lbl": {
       "en": "Country",
       "fr": "Pays",
@@ -9436,7 +9436,7 @@
   },
   "stars": {
     "key": "stars",
-    "type": "select",
+    "type": "number",
     "terms": ["rating"],
     "lbl": {
       "en": "Stars",
@@ -18711,7 +18711,7 @@
   },
   "emergency_combo": {
     "key": "emergency",
-    "type": "select",
+    "type": "text",
     "lbl": {
       "en": "Type",
       "fr": "Type",
@@ -18947,7 +18947,7 @@
   },
   "fire_hydrant/diameter": {
     "key": "fire_hydrant:diameter",
-    "type": "select",
+    "type": "text",
     "snake_case": false,
     "lbl": {
       "en": "Diameter (mm, in, or letters)",
@@ -19007,7 +19007,7 @@
   },
   "level_semi": {
     "key": "level",
-    "type": "select",
+    "type": "number",
     "terms": ["building floors", "decks", "stories", "storeys", "storys"],
     "lbl": {
       "en": "Levels",
@@ -19246,6 +19246,15 @@
       "zh-HK": "監視區域",
       "zh-TW": "監視區域"
     },
+    "options": [
+      {"v": "town", "lbl": {"fr": "Surveillance de le ville", "en": "town"}},
+      {"v": "traffic", "lbl": {"fr": "Trafic routier", "en": "traffic"}},
+      {"v": "building", "lbl": {"fr": "Bâtiment", "en": "building"}},
+      {"v": "parking", "lbl": {"fr": "Parking", "en": "parking"}},
+      {"v": "entrance", "lbl": {"fr": "Entrée de bâtiment", "en": "entrance"}},
+      {"v": "bank", "lbl": {"fr": "Banque", "en": "bank"}},
+      {"v": "shop", "lbl": {"fr": "Un commerce", "en": "shop"}}
+    ],
     "iDtype": "combo"
   },
   "shop#boat#brand": {
@@ -19470,7 +19479,7 @@
   },
   "valve": {
     "key": "valve",
-    "type": "select",
+    "type": "text",
     "lbl": {"en": "Type", "fr": "Type"},
     "iDtype": "combo"
   },
@@ -19489,6 +19498,21 @@
     "key": "camera:mount",
     "type": "select",
     "lbl": {"en": "Camera Mount", "fr": "Support de caméra"},
+    "options": [
+      {"v": "pole", "lbl": {"fr": "Sur un poteau /mât", "en": "pole"}},
+      {"v": "wall", "lbl": {"fr": "Sur un mur", "en": "wall"}},
+      {
+        "v": "street_lamp",
+        "lbl": {"fr": "Sur un lampadaire", "en": "street_lamp"}
+      },
+      {"v": "ceiling", "lbl": {"fr": "Au plafond", "en": "ceiling"}},
+      {"v": "roof", "lbl": {"fr": "Sur un toit", "en": "roof"}},
+      {
+        "v": "traffic_signals",
+        "lbl": {"fr": "Sur un feu de signalisation", "en": "traffic_signals"}
+      },
+      {"v": "building", "lbl": {"fr": "Sur un bâtiment", "en": "building"}}
+    ],
     "iDtype": "combo"
   },
   "camera/direction": {
@@ -19512,6 +19536,11 @@
     "key": "basin",
     "type": "select",
     "lbl": {"en": "Type", "fr": "Type"},
+    "options": [
+      {"v": "infiltration", "lbl": {"en": "infiltration"}},
+      {"v": "detention", "lbl": {"en": "detention"}},
+      {"v": "retention", "lbl": {"en": "retention"}}
+    ],
     "iDtype": "combo"
   },
   "intermittent_yes": {
@@ -19529,18 +19558,40 @@
     "key": "consulate",
     "type": "select",
     "lbl": {"en": "Type", "fr": "Type"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "consular_agency", "lbl": {"en": "consular_agency"}},
+      {"v": "consular_office", "lbl": {"en": "consular_office"}},
+      {"v": "consulate_general", "lbl": {"en": "consulate_general"}},
+      {"v": "honorary_consul", "lbl": {"en": "honorary_consul"}}
+    ],
     "iDtype": "combo"
   },
   "embassy": {
     "key": "embassy",
     "type": "select",
     "lbl": {"en": "Type", "fr": "Type"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "branch_embassy", "lbl": {"en": "branch_embassy"}},
+      {"v": "delegation", "lbl": {"en": "delegation"}},
+      {"v": "high_commission", "lbl": {"en": "high_commission"}},
+      {"v": "interests_section", "lbl": {"en": "interests_section"}},
+      {"v": "mission", "lbl": {"en": "mission"}},
+      {"v": "nunciature", "lbl": {"en": "nunciature"}},
+      {"v": "residence", "lbl": {"en": "residence"}}
+    ],
     "iDtype": "combo"
   },
   "liaison": {
     "key": "liaison",
     "type": "select",
     "lbl": {"en": "Type", "fr": "Type"},
+    "options": [
+      {"v": "liaison_office", "lbl": {"en": "liaison_office"}},
+      {"v": "representative_office", "lbl": {"en": "representative_office"}},
+      {"v": "subnational", "lbl": {"en": "subnational"}}
+    ],
     "iDtype": "combo"
   }
 }
