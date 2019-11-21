@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment.prod';
 import { StatesService } from './states.service';
+import { Platform } from '@ionic/angular';
 
 
 export interface User {
@@ -26,6 +27,7 @@ export class ConfigService {
     eventCloseGeolocPage = new EventEmitter();
 
     constructor(public localStorage: Storage,
+        private platform : Platform,
         private http: HttpClient,
         private translate: TranslateService,
         public stateService: StatesService
@@ -59,7 +61,8 @@ export class ConfigService {
         addSurveyDate: true,
         isDevMode: false,
         isDevServer: false,
-        authType: this.platforms.includes('hybrid') ? 'basic' : 'oauth'
+        authType : this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
+    
     };
 
     currentTagsCountryChoice = [];

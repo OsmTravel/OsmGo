@@ -37,7 +37,10 @@ export class MainPage implements AfterViewInit {
   menuIsOpen = false;
   newVersion = false;
 
+  authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
+
   constructor(public navCtrl: NavController,
+    private platform: Platform,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     public menuCtrl: MenuController,
@@ -215,8 +218,8 @@ export class MainPage implements AfterViewInit {
 
       this.configService.i18nConfig = i18nConfig;
       const e = await this.configService.loadConfig(i18nConfig)
-      console.log('authType : ', this.configService.config.authType);
-      if (this.configService.config.authType == 'oauth'){
+      console.log('authType : ', this.authType);
+      if (this.authType == 'oauth'){
         this.osmApi.initAuth();
         if (!this.osmApi.isAuthenticated() || !this.configService.getUserInfo().connected) {
           this.osmApi.logout()
