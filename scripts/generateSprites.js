@@ -29,9 +29,9 @@ exports.generateSprites = () => {
     let iconsSVG = [];
 
     const generateMarkerIcon = (iconName, colorIcon, colorMarker,geometries= undefined, unknowTag = false) => {
-        if (!geometries){
+        // if (!geometries){
             geometries = ['point', 'vertex','area','line']
-        }
+        // }
         let iconSVG;
         if (iconName == '') {
             if (unknowTag) {

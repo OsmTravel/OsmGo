@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const cheerio = require('cheerio');
 
-const iconsSVGsPath = path.join(__dirname, '..','src', 'assets', 'mapStyle', 'IconsSVG');
+const iconsSVGsPath = path.join(__dirname, '..','resources', 'IconsSVG');
 const whiteList = ['none', 'Delete', 'Create', 'Update', 'arrow-position', 'Old', 'Fixme'];
 
 let files = fs.readdirSync(iconsSVGsPath);

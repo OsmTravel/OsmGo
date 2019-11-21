@@ -40207,7 +40207,7 @@
       },
       {
         "key": "artwork",
-        "icon": "fas-female",
+        "icon": "visualpharm-statue",
         "markerColor": "#9D7178",
         "presets": ["name", "artist", "material"],
         "lbl": {"en": "Statue", "fr": "Statue"},

@@ -6,8 +6,7 @@ var parse = require('parse-svg-path')
 var scale = require('scale-svg-path')
 var serialize = require('serialize-svg-path')
 
-
-const iconsSVGsPath = path.join(__dirname, '..','src', 'assets', 'mapStyle', 'IconsSVG');
+const iconsSVGsPath = path.join(__dirname, '..','resources', 'IconsSVG');
 const blackList = ['none.svg', 'Delete.svg', 'Create.svg', 'Update.svg', 'arrow-position.svg', 'Old.svg', 'Fixme.svg'];
 
 const listOfSvgsName = fs.readdirSync(iconsSVGsPath)
