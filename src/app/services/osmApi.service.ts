@@ -16,11 +16,12 @@ import { ConfigService, User } from './config.service';
 import { cloneDeep } from 'lodash';
 
 import bboxPolygon from '@turf/bbox-polygon'
+import { Platform } from '@ionic/angular';
 
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-
+    authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
     oauthParam = {
         prod: {
             url: 'https://www.openstreetmap.org',
@@ -39,6 +40,7 @@ export class OsmApiService {
     eventNewPoint = new EventEmitter();
 
     constructor(
+        private platform: Platform,
         private http: HttpClient,
         public mapService: MapService,
         public tagsService: TagsService,
@@ -52,14 +54,16 @@ export class OsmApiService {
     }
 
     initAuth(){
-        const landing = `${window.location.origin}/assets/land.html`
+        const landing = `${window.location.origin}/assets/land.html` // land_single.html
+        const windowType = 'popup';  // singlepage, popup, newFullPage
+ 
         this.auth = new osmAuth({
             url: this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url,
             oauth_consumer_key: this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_consumer_key : this.oauthParam.prod.oauth_consumer_key,
             oauth_secret: this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_secret : this.oauthParam.prod.oauth_secret,
             auto: false, // show a login form if the user is not authenticated and
             landing: landing,
-            windowType: 'newFullPage' // singlepage, popup, newFullPage
+            windowType: windowType 
         });
 
     }
@@ -85,7 +89,7 @@ export class OsmApiService {
     }
 
     logout() {
-        if (this.configService.config.authType == 'oauth'){
+        if (this.authType == 'oauth'){
             this.auth.logout();
         }
         this.localStorage.remove('changeset')
@@ -103,7 +107,7 @@ export class OsmApiService {
     getUserDetail$(_user?, _password?, basicAuth = false): Observable<User> {
         const PATH_API = '/api/0.6/user/details'
         let _observable;
-        if (this.configService.config.authType === 'oauth') {
+        if (this.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -171,7 +175,7 @@ export class OsmApiService {
         const PATH_API = `/api/0.6/changeset/create`
 
         let _observable;
-        if (this.configService.config.authType === 'oauth') {
+        if (this.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -344,7 +348,7 @@ export class OsmApiService {
         const content_put = this.geojson2OsmCreate(feature, changesetId);
         const PATH_API = `/api/0.6/node/create`
         let _observable;
-        if (this.configService.config.authType === 'oauth') {
+        if (this.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -402,7 +406,7 @@ export class OsmApiService {
         const content_put = this.geojson2OsmUpdate(feature, changesetId);
         const PATH_API = `/api/0.6/${id}`
         let _observable;
-        if (this.configService.config.authType === 'oauth') {
+        if (this.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -473,7 +477,7 @@ export class OsmApiService {
         const content_delete = this.geojson2OsmUpdate(feature, changesetId);
         const PATH_API = `/api/0.6/${id}`
         let _observable;
-        if (this.configService.config.authType === 'oauth') {
+        if (this.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
