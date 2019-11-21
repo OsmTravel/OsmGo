@@ -55,7 +55,7 @@ export class OsmApiService {
 
     initAuth(){
         const landing = `${window.location.origin}/assets/land.html` // land_single.html
-        const windowType = 'popup';  // singlepage, popup, newFullPage
+        const windowType = 'newFullPage';  // singlepage, popup, newFullPage
  
         this.auth = new osmAuth({
             url: this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url,
