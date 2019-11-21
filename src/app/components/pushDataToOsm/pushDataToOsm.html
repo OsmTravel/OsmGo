@@ -97,6 +97,6 @@
             [disabled]="isPushing"
             (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
   <ion-button class="footerButton" 
-              [disabled]="!configService.user_info.connected || summary.Total === 0  || isPushing"
+              [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
               (click)="pushDataToOsm(commentChangeset)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
 </ion-footer>

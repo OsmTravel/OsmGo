@@ -23,7 +23,7 @@ export class PushDataToOsmPage implements AfterViewInit {
     changesetId = '';
     commentChangeset = '';
     isPushing = false;
-    featuresChanges = {};
+    featuresChanges = [];
 
     constructor(
         public dataService: DataService,
@@ -230,6 +230,7 @@ export class PushDataToOsmPage implements AfterViewInit {
         // let featuresChanged = this.dataService.getGeojsonChanged().features;
         this.osmApi.getValidChangset(commentChangeset)
             .subscribe(async CS => {
+                console.log('getValidChangset', CS)
                 const cloneGeojsonChanged = this.dataService.getGeojsonChanged()
                 this.changesetId = CS;
                 for (let feature of cloneGeojsonChanged.features) {
@@ -237,7 +238,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                     try {
                         await this.pushFeatureToOsm(feature, this.changesetId)
                     } catch (error) {
-
+                        console.log(error)
                     }
                 };
                 this.isPushing = false;
