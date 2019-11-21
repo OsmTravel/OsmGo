@@ -14,7 +14,7 @@ export class LoginPage {
     errorLogin;
 
     constructor(public osmApi: OsmApiService, public navCtrl: NavController, public configService: ConfigService) {
-        this.username = this.configService.user_info.user;
+       
     }
 
     login() {
