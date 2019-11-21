@@ -35,10 +35,6 @@ export class OsmApiService {
         }
     }
 
-    authType = 'oauth'
-
-  
-  
     auth;
     eventNewPoint = new EventEmitter();
 
@@ -89,7 +85,9 @@ export class OsmApiService {
     }
 
     logout() {
-        this.auth.logout();
+        if (this.configService.config.authType == 'oauth'){
+            this.auth.logout();
+        }
         this.localStorage.remove('changeset')
         this.configService.resetUserInfo();
     }
@@ -103,10 +101,9 @@ export class OsmApiService {
 
     // DETAIL DE L'UTILISATEUR
     getUserDetail$(_user?, _password?, basicAuth = false): Observable<User> {
-        this.authType = basicAuth ? 'basic' : 'oauth';
         const PATH_API = '/api/0.6/user/details'
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.config.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -140,7 +137,7 @@ export class OsmApiService {
                 const x_user = xml.getElementsByTagName('user')[0];
                 const uid = x_user.getAttribute('id');
                 const display_name = x_user.getAttribute('display_name');
-                const _userInfo: User = { user: _user, password: _password, uid: uid, display_name: display_name, connected: true, type:  basicAuth ? 'basic' : 'oauth' };
+                const _userInfo: User = { user: _user, password: _password, uid: uid, display_name: display_name, connected: true};
                 this.configService.setUserInfo(_userInfo);
                 return _userInfo;
             }),
@@ -174,7 +171,7 @@ export class OsmApiService {
         const PATH_API = `/api/0.6/changeset/create`
 
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.config.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -347,7 +344,7 @@ export class OsmApiService {
         const content_put = this.geojson2OsmCreate(feature, changesetId);
         const PATH_API = `/api/0.6/node/create`
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.config.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -405,7 +402,7 @@ export class OsmApiService {
         const content_put = this.geojson2OsmUpdate(feature, changesetId);
         const PATH_API = `/api/0.6/${id}`
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.config.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -476,7 +473,7 @@ export class OsmApiService {
         const content_delete = this.geojson2OsmUpdate(feature, changesetId);
         const PATH_API = `/api/0.6/${id}`
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.config.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({

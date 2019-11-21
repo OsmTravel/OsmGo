@@ -20,13 +20,13 @@
 				</ion-item>
 
 				<ion-item				
-					*ngIf="configService.platforms.includes('hybrid') && !this.configService.user_info.connected"
+					*ngIf="configService.config.authType =='basic' && !this.configService.user_info.connected"
 					(click)="pushPage('/login')">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
 				<ion-item
-					*ngIf="!configService.platforms.includes('hybrid') && !this.configService.user_info.connected"
+					*ngIf="configService.config.authType =='oauth' && !this.configService.user_info.connected"
 					(click)="login()">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>

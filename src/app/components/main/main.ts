@@ -215,16 +215,13 @@ export class MainPage implements AfterViewInit {
 
       this.configService.i18nConfig = i18nConfig;
       const e = await this.configService.loadConfig(i18nConfig)
-
-      this.osmApi.initAuth();
-      if (e.user_info.type === 'oauth') {
+      console.log('authType : ', this.configService.config.authType);
+      if (this.configService.config.authType == 'oauth'){
+        this.osmApi.initAuth();
         if (!this.osmApi.isAuthenticated() || !this.configService.getUserInfo().connected) {
-        
           this.osmApi.logout()
         }
       }
-
-
 
       this.translate.use(this.configService.config.languageUi);
 

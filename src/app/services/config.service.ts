@@ -12,7 +12,6 @@ export interface User {
     connected: boolean;
     user: string;
     password: string;
-    type: "basic" | "oauth";
 }
 
 export interface Changeset {
@@ -31,7 +30,7 @@ export class ConfigService {
         private translate: TranslateService,
         public stateService: StatesService
     ) { }
-    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
+    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null};
     changeset: Changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     i18nConfig;
 
@@ -59,7 +58,8 @@ export class ConfigService {
         displayFixmeIcon: true,
         addSurveyDate: true,
         isDevMode: false,
-        isDevServer: false
+        isDevServer: false,
+        authType: this.platforms.includes('hybrid') ? 'basic' : 'oauth'
     };
 
     currentTagsCountryChoice = [];
@@ -87,7 +87,7 @@ export class ConfigService {
     }
 
     resetUserInfo() {
-        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
+        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null};
         this.localStorage.set('user_info', this.user_info);
     }
 
@@ -150,7 +150,7 @@ export class ConfigService {
         if (userInfo && userInfo.connected) {
             this.user_info = userInfo;
         } else {
-            this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, type: null };
+            this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
         }
 
         let changeset: Changeset = await this.localStorage.get('changeset')
