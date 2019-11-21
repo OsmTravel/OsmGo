@@ -13,11 +13,8 @@ export class LoginPage {
     password: string;
     errorLogin;
 
-    constructor(
-        public osmApi: OsmApiService, 
-        public navCtrl: NavController, 
-        public configService: ConfigService) {
-        this.username = this.configService.user_info.user;
+    constructor(public osmApi: OsmApiService, public navCtrl: NavController, public configService: ConfigService) {
+       
     }
 
     login() {

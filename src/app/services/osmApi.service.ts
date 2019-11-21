@@ -16,11 +16,12 @@ import { ConfigService, User } from './config.service';
 import { cloneDeep } from 'lodash';
 
 import bboxPolygon from '@turf/bbox-polygon'
+import { Platform } from '@ionic/angular';
 
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-
+    authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
     oauthParam = {
         prod: {
             url: 'https://www.openstreetmap.org',
@@ -35,14 +36,11 @@ export class OsmApiService {
         }
     }
 
-    authType = 'oauth'
-
-  
-  
     auth;
     eventNewPoint = new EventEmitter();
 
     constructor(
+        private platform: Platform,
         private http: HttpClient,
         public mapService: MapService,
         public tagsService: TagsService,
@@ -56,14 +54,16 @@ export class OsmApiService {
     }
 
     initAuth(){
-        const landing = `${window.location.origin}/assets/land.html`
+        const landing = `${window.location.origin}/assets/land.html` // land_single.html
+        const windowType = 'newFullPage';  // singlepage, popup, newFullPage
+ 
         this.auth = new osmAuth({
             url: this.configService.getIsDevServer() ? this.oauthParam.dev.url : this.oauthParam.prod.url,
             oauth_consumer_key: this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_consumer_key : this.oauthParam.prod.oauth_consumer_key,
             oauth_secret: this.configService.getIsDevServer() ? this.oauthParam.dev.oauth_secret : this.oauthParam.prod.oauth_secret,
             auto: false, // show a login form if the user is not authenticated and
             landing: landing,
-            windowType: 'newFullPage' // singlepage, popup, newFullPage
+            windowType: windowType 
         });
 
     }
@@ -89,7 +89,9 @@ export class OsmApiService {
     }
 
     logout() {
-        this.auth.logout();
+        if (this.authType == 'oauth'){
+            this.auth.logout();
+        }
         this.localStorage.remove('changeset')
         this.configService.resetUserInfo();
     }
@@ -103,7 +105,6 @@ export class OsmApiService {
 
     // DETAIL DE L'UTILISATEUR
     getUserDetail$(_user?, _password?, basicAuth = false): Observable<User> {
-        this.authType = basicAuth ? 'basic' : 'oauth';
         const PATH_API = '/api/0.6/user/details'
         let _observable;
         if (this.authType === 'oauth') {
@@ -140,7 +141,7 @@ export class OsmApiService {
                 const x_user = xml.getElementsByTagName('user')[0];
                 const uid = x_user.getAttribute('id');
                 const display_name = x_user.getAttribute('display_name');
-                const _userInfo: User = { user: _user, password: _password, uid: uid, display_name: display_name, connected: true, type:  basicAuth ? 'basic' : 'oauth' };
+                const _userInfo: User = { user: _user, password: _password, uid: uid, display_name: display_name, connected: true};
                 this.configService.setUserInfo(_userInfo);
                 return _userInfo;
             }),

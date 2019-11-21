@@ -19,13 +19,14 @@ import { concat} from 'rxjs';
     animations: menuAnimations
 })
 export class MenuPage {
-
+    
     @Output() closeEvent = new EventEmitter();
     @Output() exitApp = new EventEmitter();
     @Input() menuIsOpen;
     @Input() newVersion;
     aboutPage = AboutPage;
     pushDataToOsmPage = PushDataToOsmPage;
+    authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
     constructor(
         public mapService: MapService,
