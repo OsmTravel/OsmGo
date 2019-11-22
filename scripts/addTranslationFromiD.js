@@ -11,6 +11,7 @@ const idRepoPath = path.join(__dirname, '..', '..', 'iD')
 const idTranslationPath = path.join(idRepoPath, 'dist', 'locales');
 
 
+
 let language = argv['_'][0];
 
 if (!language){
@@ -18,6 +19,12 @@ if (!language){
     return 
 }
 
+let overwrite = false;
+
+if (argv['_'][1] && argv['_'][1] == 'o'){
+    console.log(overwrite);
+    overwrite = true;
+}
 
 const idTranslationFilePath = path.join(idTranslationPath, `${language}.json`)
 
@@ -41,7 +48,10 @@ const importTrTags = () => {
             // console.log(tag.iDRef);
             if (tag.iDRef){
                 if (trPresets[tag.iDRef] && trPresets[tag.iDRef].name){
-                    tag.lbl[language] = trPresets[tag.iDRef].name
+                    if (!tag.lbl[language] || overwrite){
+                        tag.lbl[language] = trPresets[tag.iDRef].name
+                    }
+                  
                 }
                 
                 if (trPresets[tag.iDRef] && trPresets[tag.iDRef].terms){
@@ -49,7 +59,10 @@ const importTrTags = () => {
                         tag['terms'] = {}
     
                     }
-                    tag.terms[language] = trPresets[tag.iDRef].terms
+                    if (!tag.terms[language] || overwrite){
+                        tag.terms[language] = trPresets[tag.iDRef].terms
+                    }
+                   
                 }
                 // console.info(tag)
             //     console.log(trPresets[tag.iDRef]);

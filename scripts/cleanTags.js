@@ -28,7 +28,12 @@ for (let pkey in tagsOsmgo){
                 indexToDelete.push(i)
             }
         } else {
-            console.log('PAS D\'ID ', tag);
+            if (tag.iDRef){
+                tag.id = tag.iDRef
+            }else {
+                console.log('PAS D\'ID ', tag);
+            }
+            
 
         }
 

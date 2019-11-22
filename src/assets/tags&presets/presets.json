@@ -760,7 +760,7 @@
       {
         "v": "yes",
         "lbl": {
-          "en": "yes",
+          "en": "Yes",
           "fr": "Oui",
           "de": "Ja",
           "es": "Sí",
@@ -806,7 +806,7 @@
       {
         "v": "no",
         "lbl": {
-          "en": "no",
+          "en": "No",
           "fr": "Non",
           "de": "Nein",
           "es": "No",
@@ -965,7 +965,7 @@
       {
         "v": "centre",
         "lbl": {
-          "en": "Centre",
+          "en": "Center",
           "fr": "Centre de recyclage",
           "de": "Zentrum",
           "es": "Centro",
@@ -1189,7 +1189,7 @@
       {
         "v": "yes",
         "lbl": {
-          "en": "yes",
+          "en": "Yes",
           "fr": "Oui",
           "de": "a",
           "es": "Si",
@@ -1209,7 +1209,7 @@
       {
         "v": "no",
         "lbl": {
-          "en": "no",
+          "en": "No",
           "fr": "Non",
           "de": "Nein",
           "es": "No",
@@ -2219,7 +2219,7 @@
       {
         "v": "surface",
         "lbl": {
-          "en": "surface",
+          "en": "Surface",
           "fr": "En surface",
           "de": "Ebenerdig",
           "es": "Superficie",
@@ -2268,7 +2268,7 @@
       {
         "v": "underground",
         "lbl": {
-          "en": "underground",
+          "en": "Underground",
           "fr": "Souterrain",
           "de": "Tiefgarage",
           "es": "Subterráneo",
@@ -2316,7 +2316,7 @@
       {
         "v": "multi-storey",
         "lbl": {
-          "en": "multi-storey",
+          "en": "Multilevel",
           "fr": "Sur plusieurs niveaux",
           "de": "Parkhaus",
           "es": "Multinivel",
@@ -2362,7 +2362,7 @@
       {
         "v": "lane",
         "lbl": {
-          "en": "lane",
+          "en": "Roadside Lane",
           "fr": "Bordure de voie",
           "de": "Parkstreifen am Straßenrand",
           "es": "Carril al borde del camino",
@@ -2408,7 +2408,7 @@
       {
         "v": "garage_boxes",
         "lbl": {
-          "en": "garage_boxes",
+          "en": "Garage Boxes",
           "fr": "Box",
           "de": "Garagenboxen",
           "es": "Garaje en cubículos",
@@ -2453,7 +2453,7 @@
       {
         "v": "sheds",
         "lbl": {
-          "en": "sheds",
+          "en": "Sheds",
           "fr": "Abri privé",
           "de": "Schuppen",
           "es": "Galpones",
@@ -2603,7 +2603,7 @@
         "v": "private",
         "lbl": {
           "fr": "Privé",
-          "en": "private",
+          "en": "Private",
           "de": "Privat",
           "es": "Privado",
           "pt": "Privado",
@@ -2661,10 +2661,7 @@
       {
         "v": "yes",
         "lbl": {
-          "en": {
-            "title": "Allowed",
-            "description": "Access allowed by law; a right of way"
-          },
+          "en": "Allowed",
           "fr": "Autorisé",
           "de": "Erlaubt",
           "es": "Permitido",
@@ -2715,10 +2712,7 @@
       {
         "v": "no",
         "lbl": {
-          "en": {
-            "title": "Prohibited",
-            "description": "Access not allowed to the general public"
-          },
+          "en": "Prohibited",
           "fr": "Interdit",
           "de": "Verboten",
           "es": "Prohibido",
@@ -2769,10 +2763,7 @@
       {
         "v": "permissive",
         "lbl": {
-          "en": {
-            "title": "Permissive",
-            "description": "Access allowed until such time as the owner revokes the permission"
-          },
+          "en": "Permissive",
           "fr": "Accès toléré",
           "de": "Geduldet",
           "es": "Permisivo",
@@ -2821,10 +2812,7 @@
       {
         "v": "designated",
         "lbl": {
-          "en": {
-            "title": "Designated",
-            "description": "Access allowed according to signs or specific local laws"
-          },
+          "en": "Designated",
           "fr": "Prévu spécifiquement pour certains types de véhicules",
           "de": "<br><div>rechtsverbindlich vorgesehen / gewidmet<br data-mce-bogus=\"1\"></div>",
           "es": "Designado",
@@ -2875,10 +2863,7 @@
       {
         "v": "destination",
         "lbl": {
-          "en": {
-            "title": "Destination",
-            "description": "Access allowed only to reach a destination"
-          },
+          "en": "Destination",
           "fr": "Interdit sauf riverains",
           "de": "Ziel",
           "es": "Destino",
@@ -2930,10 +2915,7 @@
       {
         "v": "dismount",
         "lbl": {
-          "en": {
-            "title": "Dismount",
-            "description": "Access allowed but rider must dismount"
-          },
+          "en": "Dismount",
           "fr": "Mettre pied à terre",
           "de": "Absteigen",
           "es": "Desmontado",
@@ -2981,10 +2963,7 @@
       {
         "v": "permit",
         "lbl": {
-          "en": {
-            "title": "Permit",
-            "description": "Access allowed only with a valid permit or license"
-          },
+          "en": "Permit",
           "fr": "Permis",
           "de": "Zugang nur nach Zustimmung zu Nutzungsbedingungen",
           "es": "Permiso",
@@ -3178,7 +3157,7 @@
         "v": "yes",
         "lbl": {
           "fr": "Oui",
-          "en": "yes",
+          "en": "Yes",
           "de": "Ja",
           "es": "Si",
           "pt": "Sim",
@@ -3226,7 +3205,7 @@
         "v": "no",
         "lbl": {
           "fr": "Non",
-          "en": "no",
+          "en": "No",
           "de": "Nein",
           "es": "No",
           "pt": "Não",
@@ -3274,7 +3253,7 @@
         "v": "only",
         "lbl": {
           "fr": "À emporter seulement",
-          "en": "only",
+          "en": "Takeaway Only",
           "de": "nur zum Mitnehmen",
           "es": "Sólo para llevar",
           "pt": "Apenas",
@@ -3430,7 +3409,7 @@
         "v": "wlan",
         "lbl": {
           "fr": "Wifi",
-          "en": "wlan",
+          "en": "Wifi",
           "de": "Wi-Fi",
           "es": "Wi-Fi",
           "pt": "Sem fios (Wi-Fi)",
@@ -3481,7 +3460,7 @@
         "v": "yes",
         "lbl": {
           "fr": "Oui",
-          "en": "yes",
+          "en": "Yes",
           "de": "Ja",
           "es": "Sí",
           "pt": "Sim",
@@ -3532,7 +3511,7 @@
         "v": "no",
         "lbl": {
           "fr": "Non",
-          "en": "no",
+          "en": "No",
           "de": "Nein",
           "es": "No",
           "pt": "Não",
@@ -11981,7 +11960,7 @@
       {
         "v": "yes",
         "lbl": {
-          "en": "yes",
+          "en": "Yes",
           "fr": "Oui",
           "de": "Ja",
           "es": "Sí",
@@ -12030,7 +12009,7 @@
       {
         "v": "no",
         "lbl": {
-          "en": "no",
+          "en": "No",
           "fr": "Non",
           "de": "Nein",
           "es": "No",
@@ -19458,7 +19437,11 @@
   "crossing/island": {
     "key": "crossing:island",
     "type": "select",
-    "lbl": {"en": "Refuge Island", "fr": "Île de refuge"},
+    "lbl": {
+      "en": "Refuge Island",
+      "fr": "Île de refuge",
+      "de": "Mittelinsel beim Fußgängerübergang"
+    },
     "iDtype": "check",
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -19468,36 +19451,50 @@
   "memorial": {
     "key": "memorial",
     "type": "typeCombo",
-    "lbl": {"en": "Type", "fr": "Type"}
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"}
   },
   "hoops": {
     "key": "hoops",
     "type": "number",
     "minValue": 0,
     "placeholder": "1, 2, 4...",
-    "lbl": {"en": "Hoops", "fr": "Nombre d'arceaux"}
+    "lbl": {"en": "Hoops", "fr": "Nombre d'arceaux", "de": "Ringe"}
   },
   "valve": {
     "key": "valve",
     "type": "text",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "camera/type": {
     "key": "camera:type",
     "type": "list",
-    "lbl": {"en": "Camera Type", "fr": "Type de caméra"},
+    "lbl": {
+      "en": "Camera Type",
+      "fr": "Type de caméra",
+      "de": "Art der Kamera"
+    },
     "options": [
-      {"v": "fixed", "lbl": {"en": "Fixed", "fr": "Fixée"}},
-      {"v": "panning", "lbl": {"en": "Panning", "fr": "Panoramique"}},
-      {"v": "dome", "lbl": {"en": "Dome", "fr": "Dôme"}}
+      {
+        "v": "fixed",
+        "lbl": {"en": "Fixed", "fr": "Fixée", "de": "fest ausgerichtet"}
+      },
+      {
+        "v": "panning",
+        "lbl": {"en": "Panning", "fr": "Panoramique", "de": "schwenkend"}
+      },
+      {"v": "dome", "lbl": {"en": "Dome", "fr": "Dôme", "de": "Dom"}}
     ],
     "iDtype": "combo"
   },
   "camera/mount": {
     "key": "camera:mount",
     "type": "select",
-    "lbl": {"en": "Camera Mount", "fr": "Support de caméra"},
+    "lbl": {
+      "en": "Camera Mount",
+      "fr": "Support de caméra",
+      "de": "Kameramontage"
+    },
     "options": [
       {"v": "pole", "lbl": {"fr": "Sur un poteau /mât", "en": "pole"}},
       {"v": "wall", "lbl": {"fr": "Sur un mur", "en": "wall"}},
@@ -19521,7 +19518,8 @@
     "placeholder": "45, 90, 180, 270",
     "lbl": {
       "en": "Direction (Degrees Clockwise)",
-      "fr": "Direction (en degrés dans le sens horaire)"
+      "fr": "Direction (en degrés dans le sens horaire)",
+      "de": "Blickrichtung (Grad im Uhrzeigersinn) "
     }
   },
   "contact/webcam": {
@@ -19529,13 +19527,17 @@
     "type": "text",
     "icon": "website",
     "placeholder": "http://example.com/",
-    "lbl": {"en": "Webcam URL", "fr": "adresse de visioconférence"},
+    "lbl": {
+      "en": "Webcam URL",
+      "fr": "adresse de visioconférence",
+      "de": "Webcam-URL"
+    },
     "iDtype": "url"
   },
   "basin": {
     "key": "basin",
     "type": "select",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "options": [
       {"v": "infiltration", "lbl": {"en": "infiltration"}},
       {"v": "detention", "lbl": {"en": "detention"}},
@@ -19547,7 +19549,11 @@
     "key": "intermittent",
     "type": "select",
     "default": "yes",
-    "lbl": {"en": "Intermittent", "fr": "Intermittent"},
+    "lbl": {
+      "en": "Intermittent",
+      "fr": "Intermittent",
+      "de": "Zeitweise ausgetrockneter Wasserlauf"
+    },
     "iDtype": "check",
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -19557,7 +19563,7 @@
   "consulate": {
     "key": "consulate",
     "type": "select",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
       {"v": "consular_agency", "lbl": {"en": "consular_agency"}},
@@ -19570,7 +19576,7 @@
   "embassy": {
     "key": "embassy",
     "type": "select",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
       {"v": "branch_embassy", "lbl": {"en": "branch_embassy"}},
@@ -19586,12 +19592,71 @@
   "liaison": {
     "key": "liaison",
     "type": "select",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "yp"},
     "options": [
       {"v": "liaison_office", "lbl": {"en": "liaison_office"}},
       {"v": "representative_office", "lbl": {"en": "representative_office"}},
       {"v": "subnational", "lbl": {"en": "subnational"}}
     ],
     "iDtype": "combo"
+  },
+  "aerialway/occupancy": {
+    "key": "aerialway:occupancy",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "2, 4, 8...",
+    "lbl": {"en": "Occupancy", "fr": "Nombre de places", "de": "Belegung"}
+  },
+  "aerialway/capacity": {
+    "key": "aerialway:capacity",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "500, 2500, 5000...",
+    "lbl": {
+      "en": "Capacity (per hour)",
+      "fr": "Capacité (par heure)",
+      "de": "Kapazität (pro Stunde)"
+    }
+  },
+  "aerialway/duration": {
+    "key": "aerialway:duration",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "1, 2, 3...",
+    "lbl": {
+      "en": "Duration (minutes)",
+      "fr": "Durée (minutes)",
+      "de": "Dauer (Minuten)"
+    }
+  },
+  "aerialway/heating": {
+    "key": "aerialway:heating",
+    "type": "select",
+    "lbl": {"en": "Heated", "fr": "Chauffé", "de": "Beheizt"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
+  },
+  "oneway_yes": {
+    "key": "oneway",
+    "type": "select",
+    "lbl": {"en": "One Way", "fr": "Sens unique", "de": "Einbahnstraße"},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Yes", "fr": "Oui", "de": "Ja"}},
+      {"v": "no", "lbl": {"en": "No", "fr": "Non", "de": "Nein"}}
+    ],
+    "iDtype": "onewayCheck"
+  },
+  "aerialway/bubble": {
+    "key": "aerialway:bubble",
+    "type": "select",
+    "lbl": {"en": "Bubble", "fr": "Bulle", "de": "Blase"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
   }
 }

@@ -20,6 +20,8 @@ const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
 
 const osmgoPkeys = Object.keys(tagsOsmgo);
 
+// const osmgoPkeys = ['aerialway'];
+
 
 let idTagsFieldsListId = []; // list of id of fields to add...
 const tagsIDpkeys = Object.keys(tagsID)
@@ -120,7 +122,7 @@ for (let iDid of tagsIDpkeys) {
         let newTag = {
             key: iDKey,
             icon: tagiD.icon || '',
-            markerColor: tagsOsmgo[idPkey].values[0].markerColor,
+            markerColor: tagsOsmgo[idPkey].values[0] ? tagsOsmgo[idPkey].values[0].markerColor : 'markerColorEMPTY',
             presets: iDFields,
 
             lbl: { en: tagiD.name },
