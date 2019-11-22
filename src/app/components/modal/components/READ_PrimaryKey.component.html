@@ -1,6 +1,6 @@
 <ion-card>  
         <div style=" width: 50px; height: 100%; position: absolute;" [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'">
-                    <app-icon  class="iconImgPNG imgCenter" [icon]="tagConfig.icon"[jsonSprites]="jsonSprites">  </app-icon>
+                    <app-icon  class="iconImgPNG imgCenter" [icon]=" tagConfig && tagConfig.icon? tagConfig.icon : null" [jsonSprites]="jsonSprites">  </app-icon>
                   
 
         </div>

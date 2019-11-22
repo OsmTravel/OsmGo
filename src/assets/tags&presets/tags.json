@@ -305,7 +305,7 @@
     ]
   },
   "shop": {
-    "lbl": {"en": "Shop", "fr": "Commerce", "de": "Shop"},
+    "lbl": {"en": "Shop", "fr": "Commerce", "de": "Laden"},
     "values": [
       {
         "key": "travel_agency",
@@ -13200,7 +13200,7 @@
     ]
   },
   "amenity": {
-    "lbl": {"en": "Amenity", "fr": "Équipement", "de": "Amenity"},
+    "lbl": {"en": "Amenity", "fr": "Équipement", "de": "Einrichtung"},
     "values": [
       {
         "key": "embassy",
@@ -28532,7 +28532,11 @@
     ]
   },
   "emergency": {
-    "lbl": {"en": "Emergency", "fr": "Urgence", "de": "Emergency"},
+    "lbl": {
+      "en": "Emergency Feature",
+      "fr": "Urgence",
+      "de": "Notfalleinrichtungen"
+    },
     "values": [
       {
         "key": "fire_hydrant",
@@ -29748,7 +29752,7 @@
     ]
   },
   "leisure": {
-    "lbl": {"en": "Leisure ", "fr": "Loisirs ", "de": "Leisure "},
+    "lbl": {"en": "Leisure", "fr": "Loisirs ", "de": "Freizeit"},
     "values": [
       {
         "key": "adult_gaming_centre",
@@ -34203,7 +34207,7 @@
     ]
   },
   "craft": {
-    "lbl": {"en": "Craft", "fr": "Artisanat", "de": "Craft"},
+    "lbl": {"en": "Craft", "fr": "Artisanat", "de": "Handwerker"},
     "values": [
       {
         "key": "basket_maker",
@@ -38531,7 +38535,7 @@
     ]
   },
   "tourism": {
-    "lbl": {"en": "Tourism", "fr": "Tourisme", "de": "Tourism"},
+    "lbl": {"en": "Tourism", "fr": "Tourisme", "de": "Tourismus"},
     "values": [
       {
         "key": "alpine_hut",
@@ -41061,7 +41065,7 @@
     ]
   },
   "office": {
-    "lbl": {"en": "Office", "fr": "Bureau", "de": "Office"},
+    "lbl": {"en": "Office", "fr": "Bureau", "de": "Büro"},
     "values": [
       {
         "key": "accountant",
@@ -44017,7 +44021,7 @@
   },
   "man_made": {
     "exclude_way_values": ["embankment", "bridge"],
-    "lbl": {"en": "Man Made", "fr": "Édifice", "de": "Man Made"},
+    "lbl": {"en": "Man Made", "fr": "Édifice", "de": "Bauten"},
     "values": [
       {
         "key": "lighthouse",
@@ -47682,7 +47686,11 @@
     ]
   },
   "healthcare": {
-    "lbl": {"en": "Healthcare", "fr": "Santé", "de": "Healthcare"},
+    "lbl": {
+      "en": "Healthcare Facility",
+      "fr": "Santé",
+      "de": "Gesundheitseinrichtung"
+    },
     "values": [
       {
         "key": "alternative",
@@ -48851,7 +48859,11 @@
     ]
   },
   "historic": {
-    "lbl": {"en": "Historic ", "fr": "Historique ", "de": "Historic "},
+    "lbl": {
+      "en": "Historic Site",
+      "fr": "Historique ",
+      "de": "Historische Stätte"
+    },
     "values": [
       {
         "key": "wayside_cross",
@@ -50069,7 +50081,7 @@
       "shingle",
       "coastline"
     ],
-    "lbl": {"en": "Natural", "fr": "Naturel", "de": "Natural"},
+    "lbl": {"en": "Natural", "fr": "Naturel", "de": "Natur"},
     "values": [
       {
         "key": "tree",
@@ -52275,7 +52287,7 @@
       "platform",
       "corridor"
     ],
-    "lbl": {"en": "Highway", "fr": "Voirie", "de": "Highway"},
+    "lbl": {"en": "Highway", "fr": "Voirie", "de": "Straße/Weg"},
     "values": [
       {
         "key": "street_lamp",
@@ -54022,11 +54034,7 @@
     ]
   },
   "club": {
-    "lbl": {
-      "en": "Club / association",
-      "fr": "Club / association",
-      "de": "Club / association"
-    },
+    "lbl": {"en": "Club", "fr": "Club / association", "de": "Verein"},
     "values": [
       {
         "key": "amateur_radio",
@@ -54413,7 +54421,7 @@
     ]
   },
   "aerialway": {
-    "lbl": {"en": "Aerialway", "fr": "Éléments aériens"},
+    "lbl": {"en": "Aerialway", "fr": "Éléments aériens", "de": "Seilbahn"},
     "values": [
       {
         "key": "station",
@@ -54725,17 +54733,22 @@
     ]
   },
   "attraction": {
-    "lbl": {"en": "attraction", "fr": "Attraction touristique"},
+    "lbl": {
+      "en": "Attraction",
+      "fr": "Attraction touristique",
+      "de": "Attraktion"
+    },
     "values": [
       {
         "key": "amusement_ride",
         "icon": "maki-amusement-park",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "Amusement Ride", "fr": "Manège"},
+        "lbl": {"en": "Amusement Ride", "fr": "Manège", "de": "Fahrgeschäft"},
         "terms": {
           "en": "theme park,carnival ride",
-          "fr": "manège,attraction,parc d'attraction"
+          "fr": "manège,attraction,parc d'attraction",
+          "de": "Vergnügungsfahrt, Fahrbetrieb"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/amusement_ride",
@@ -54758,10 +54771,11 @@
         "icon": "maki-zoo",
         "markerColor": "#0065A9",
         "presets": ["name", "operator", "species/wikidata"],
-        "lbl": {"en": "Animal Enclosure", "fr": "Enclos"},
+        "lbl": {"en": "Animal Enclosure", "fr": "Enclos", "de": "Tiergehege"},
         "terms": {
           "en": "amphibian,animal park,aquarium,bear,bird,fish,insect,lion,mammal,monkey,penguin,reptile,safari,theme park,tiger,zoo",
-          "fr": "enclos,animal,animaux,cage,lion,tigre,ours,zoo,parc zoologique,parc animalier,safari"
+          "fr": "enclos,animal,animaux,cage,lion,tigre,ours,zoo,parc zoologique,parc animalier,safari",
+          "de": "Tiergehege, Gehege"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/animal",
@@ -54773,10 +54787,11 @@
         "icon": "maki-amusement-park",
         "markerColor": "#0065A9",
         "presets": ["attraction", "fee", "charge_fee", "height"],
-        "lbl": {"en": "Big Wheel", "fr": "Grande Roue"},
+        "lbl": {"en": "Big Wheel", "fr": "Grande Roue", "de": "Riesenrad"},
         "terms": {
           "en": "ferris wheel,theme park,amusement ride",
-          "fr": "grande roue,roue,attraction,parc d'attraction"
+          "fr": "grande roue,roue,attraction,parc d'attraction",
+          "de": "Riesenrad"
         },
         "geometry": ["point"],
         "iDRef": "attraction/big_wheel",
@@ -54789,8 +54804,11 @@
         "icon": "fas-car-crash",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "Bumper Cars"},
-        "terms": {"en": "theme park,dodgem cars,autoscooter"},
+        "lbl": {"en": "Bumper Cars", "de": "Autoscooter"},
+        "terms": {
+          "en": "theme park,dodgem cars,autoscooter",
+          "de": "Autoscooter, Themenpark"
+        },
         "geometry": ["point", "area"],
         "iDRef": "attraction/bumper_car",
         "moreFields": ["max_age", "min_age"],
@@ -54802,10 +54820,15 @@
         "icon": "maki-pitch",
         "markerColor": "#0065A9",
         "presets": ["height"],
-        "lbl": {"en": "Bungee Jumping", "fr": "Saut à l'élastique"},
+        "lbl": {
+          "en": "Bungee Jumping",
+          "fr": "Saut à l'élastique",
+          "de": "Bungee Jumping"
+        },
         "terms": {
           "en": "theme park,bungy jumping,jumping platform",
-          "fr": "saut à l'élastique,attraction,parc d'attraction"
+          "fr": "saut à l'élastique,attraction,parc d'attraction",
+          "de": "Bungee Jumping"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/bungee_jumping",
@@ -54818,10 +54841,11 @@
         "icon": "temaki-amusement_park",
         "markerColor": "#0065A9",
         "presets": ["building_area"],
-        "lbl": {"en": "Carousel", "fr": "Carrousel"},
+        "lbl": {"en": "Carousel", "fr": "Carrousel", "de": "Karussell"},
         "terms": {
           "en": "theme park,roundabout,merry-go-round,galloper,jumper,horseabout,flying horses",
-          "fr": "Carrousel, Manège,attraction,parc d'attraction"
+          "fr": "Carrousel, Manège,attraction,parc d'attraction",
+          "de": "Karussell"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/carousel",
@@ -54834,10 +54858,15 @@
         "icon": "maki-rail-metro",
         "markerColor": "#0065A9",
         "presets": ["building_area"],
-        "lbl": {"en": "Dark Ride", "fr": "Parcours scénique"},
+        "lbl": {
+          "en": "Dark Ride",
+          "fr": "Parcours scénique",
+          "de": "Geisterbahn"
+        },
         "terms": {
           "en": "theme park,ghost train",
-          "fr": "parcours scénique,train fantôme,attraction,parc d'attraction"
+          "fr": "parcours scénique,train fantôme,attraction,parc d'attraction",
+          "de": "Geisterbahn"
         },
         "geometry": ["point", "line", "area"],
         "iDRef": "attraction/dark_ride",
@@ -54850,10 +54879,15 @@
         "icon": "temaki-tower",
         "markerColor": "#0065A9",
         "presets": ["height"],
-        "lbl": {"en": "Drop Tower", "fr": "Tour de chute"},
+        "lbl": {
+          "en": "Drop Tower",
+          "fr": "Tour de chute",
+          "de": "Freifallturm"
+        },
         "terms": {
           "en": "theme park,amusement ride,gondola,tower,big drop",
-          "fr": "tour de chute,attraction,parc d'attraction"
+          "fr": "tour de chute,attraction,parc d'attraction",
+          "de": "Freifallturm"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/drop_tower",
@@ -54866,10 +54900,11 @@
         "icon": "maki-amusement-park",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "Maze", "fr": "Labyrinthe"},
+        "lbl": {"en": "Maze", "fr": "Labyrinthe", "de": "Labyrinth"},
         "terms": {
           "en": "theme park,amusement ride,labyrinth",
-          "fr": "Labyrinthe,attraction,parc d'attraction"
+          "fr": "Labyrinthe,attraction,parc d'attraction",
+          "de": "Labyrinth, Irrgarten"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/maze",
@@ -54882,10 +54917,15 @@
         "icon": "maki-danger",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "Pirate Ship", "fr": "Bateau pirate"},
+        "lbl": {
+          "en": "Pirate Ship",
+          "fr": "Bateau pirate",
+          "de": "Piratenschiff"
+        },
         "terms": {
           "en": "theme park,carnival ride,amusement ride",
-          "fr": "bateau pirate,attraction,parc d'attraction"
+          "fr": "bateau pirate,attraction,parc d'attraction",
+          "de": "Piratenschiff"
         },
         "geometry": ["point"],
         "iDRef": "attraction/pirate_ship",
@@ -54898,10 +54938,11 @@
         "icon": "maki-ferry",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "River Rafting", "fr": "Rafting"},
+        "lbl": {"en": "River Rafting", "fr": "Rafting", "de": "Rafting"},
         "terms": {
           "en": "theme park,aquatic park,water park,rafting simulator,river rafting ride,river rapids ride",
-          "fr": "rafting,bateau,canoë,kayak"
+          "fr": "rafting,bateau,canoë,kayak",
+          "de": "Rafting"
         },
         "geometry": ["point", "line"],
         "iDRef": "attraction/river_rafting",
@@ -54914,10 +54955,15 @@
         "icon": "temaki-roller_coaster",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "Roller Coaster", "fr": "Montagnes russes"},
+        "lbl": {
+          "en": "Roller Coaster",
+          "fr": "Montagnes russes",
+          "de": "Achterbahn"
+        },
         "terms": {
           "en": "theme park,amusement ride",
-          "fr": "montagnes russes,attraction,parc d'attraction"
+          "fr": "montagnes russes,attraction,parc d'attraction",
+          "de": "Achterbahn"
         },
         "geometry": ["point", "area"],
         "iDRef": "attraction/roller_coaster",
@@ -54930,10 +54976,15 @@
         "icon": "temaki-sledding",
         "markerColor": "#0065A9",
         "presets": [],
-        "lbl": {"en": "Summer Toboggan", "fr": "Luge d'été"},
+        "lbl": {
+          "en": "Summer Toboggan",
+          "fr": "Luge d'été",
+          "de": "Sommerrodelbahn"
+        },
         "terms": {
           "en": "alpine slide,mountain coaster",
-          "fr": "luge d'été,toboggan d'été"
+          "fr": "luge d'été,toboggan d'été",
+          "de": "Sommerrodelbahn"
         },
         "geometry": ["line"],
         "iDRef": "attraction/summer_toboggan",
@@ -54946,10 +54997,15 @@
         "icon": "maki-rail",
         "markerColor": "#0065A9",
         "presets": ["fee", "charge_fee"],
-        "lbl": {"en": "Tourist Train", "fr": "Train touristique"},
+        "lbl": {
+          "en": "Tourist Train",
+          "fr": "Train touristique",
+          "de": "Touristenzug"
+        },
         "terms": {
           "en": "theme park,rackless train,road train,Tschu-Tschu train,dotto train,park train",
-          "fr": "train touristique,petit train"
+          "fr": "train touristique,petit train",
+          "de": "Touristenzug"
         },
         "geometry": ["point", "line"],
         "iDRef": "attraction/train",
@@ -54958,13 +55014,18 @@
       },
       {
         "key": "water_slide",
-        "icon": "fas-swimmer",
+        "icon": "maki-swimming",
         "markerColor": "#0065A9",
         "presets": ["height"],
-        "lbl": {"en": "Water Slide", "fr": "Toboggan aquatique"},
+        "lbl": {
+          "en": "Water Slide",
+          "fr": "Toboggan aquatique",
+          "de": "Wasserrutsche"
+        },
         "terms": {
           "en": "theme park,aquatic park,water park,flumes,water chutes,hydroslides",
-          "fr": "toboggan aquatique"
+          "fr": "toboggan aquatique",
+          "de": "Wasserrutsche, Wasserrutschbahn"
         },
         "geometry": ["line", "area"],
         "iDRef": "attraction/water_slide",
@@ -54975,15 +55036,23 @@
     ]
   },
   "playground": {
-    "lbl": {"en": "playground", "fr": "Jeux"},
+    "lbl": {
+      "en": "Playground Equipment",
+      "fr": "Jeux",
+      "de": "Spielgeräte des Spielplatz"
+    },
     "values": [
       {
         "key": "balancebeam",
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Play Balance Beam", "fr": "Poutre (Jeux pour enfants)"},
-        "terms": {"en": "", "fr": "Poutre"},
+        "lbl": {
+          "en": "Play Balance Beam",
+          "fr": "Poutre (Jeux pour enfants)",
+          "de": "Balancierbalken"
+        },
+        "terms": {"en": "", "fr": "Poutre", "de": "Balancierbalken"},
         "geometry": ["point", "line"],
         "iDRef": "playground/balance_beam",
         "tags": {"playground": "balancebeam"},
@@ -54994,10 +55063,15 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Basket Spinner", "fr": "Présentoir"},
+        "lbl": {
+          "en": "Basket Spinner",
+          "fr": "Présentoir",
+          "de": "drehender Korb"
+        },
         "terms": {
           "en": "basket rotator",
-          "fr": "Présentoir, présentoir à paniers"
+          "fr": "Présentoir, présentoir à paniers",
+          "de": "drehender Korb"
         },
         "geometry": ["point"],
         "iDRef": "playground/basket_spinner",
@@ -55009,8 +55083,16 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Basket Swing", "fr": "Balançoire à panier"},
-        "terms": {"en": "", "fr": "balançoire, balancelle, jeux pour enfants"},
+        "lbl": {
+          "en": "Basket Swing",
+          "fr": "Balançoire à panier",
+          "de": "Korbschaukel"
+        },
+        "terms": {
+          "en": "",
+          "fr": "balançoire, balancelle, jeux pour enfants",
+          "de": "Korbschaukel"
+        },
         "geometry": ["point"],
         "iDRef": "playground/basket_swing",
         "tags": {"playground": "basketswing"},
@@ -55021,10 +55103,15 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Climbing Frame", "fr": "Cage à poules "},
+        "lbl": {
+          "en": "Climbing Frame",
+          "fr": "Cage à poules ",
+          "de": "Klettergerüst / Seilspinne"
+        },
         "terms": {
           "en": "",
-          "fr": "portique, portique de jeux, jeux, jeux pour enfants"
+          "fr": "portique, portique de jeux, jeux, jeux pour enfants",
+          "de": "Klettergerüst, Seilspinne, Raumnetz"
         },
         "geometry": ["point", "area"],
         "iDRef": "playground/climbing_frame",
@@ -55036,10 +55123,15 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Bouncy Cushion", "fr": "Jeu gonflable"},
+        "lbl": {
+          "en": "Bouncy Cushion",
+          "fr": "Jeu gonflable",
+          "de": "Hüpfkissen"
+        },
         "terms": {
           "en": "",
-          "fr": "trampoline, trampoline à eau, trampoline à air"
+          "fr": "trampoline, trampoline à eau, trampoline à air",
+          "de": "Hüpfkissen"
         },
         "geometry": ["point", "area"],
         "iDRef": "playground/cushion",
@@ -55051,8 +55143,12 @@
         "icon": "maki-pitch",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Play Horizontal Bar", "fr": "Barre fixe pour enfants"},
-        "terms": {"en": "high bar", "fr": "Barre fixe"},
+        "lbl": {
+          "en": "Play Horizontal Bar",
+          "fr": "Barre fixe pour enfants",
+          "de": "Klimmzugstange"
+        },
+        "terms": {"en": "high bar", "fr": "Barre fixe", "de": "Klimmzugstange"},
         "geometry": ["point"],
         "iDRef": "playground/horizontal_bar",
         "tags": {"playground": "horizontal_bar"},
@@ -55063,10 +55159,15 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Spring Rider", "fr": "Balançoire à ressort"},
+        "lbl": {
+          "en": "Spring Rider",
+          "fr": "Balançoire à ressort",
+          "de": "Springreiter"
+        },
         "terms": {
           "en": "spring rocker,springy rocker",
-          "fr": "Jeux pour enfants, animal sur ressort, jouet sur ressort"
+          "fr": "Jeux pour enfants, animal sur ressort, jouet sur ressort",
+          "de": "Springreiter"
         },
         "geometry": ["point"],
         "iDRef": "playground/rocker",
@@ -55087,8 +55188,16 @@
           "height",
           "bench"
         ],
-        "lbl": {"en": "Play Roundabout", "fr": "Tourniquet"},
-        "terms": {"en": "merry-go-round", "fr": "Tourniquet, jeux pour enfant"},
+        "lbl": {
+          "en": "Play Roundabout",
+          "fr": "Tourniquet",
+          "de": "Kinderkarussell"
+        },
+        "terms": {
+          "en": "merry-go-round",
+          "fr": "Tourniquet, jeux pour enfant",
+          "de": "Ringelspiel, Kinderkarussell"
+        },
         "geometry": ["point", "area"],
         "iDRef": "playground/roundabout",
         "tags": {"playground": "roundabout"},
@@ -55099,8 +55208,12 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Sandpit", "fr": "Bac à sable"},
-        "terms": {"en": "", "fr": "Bac à sable, jeux pour enfants, sable"},
+        "lbl": {"en": "Sandpit", "fr": "Bac à sable", "de": "Sandkasten"},
+        "terms": {
+          "en": "",
+          "fr": "Bac à sable, jeux pour enfants, sable",
+          "de": "Sandkasten, Sandkiste"
+        },
         "geometry": ["point", "area"],
         "iDRef": "playground/sandpit",
         "tags": {"playground": "sandpit"},
@@ -55111,10 +55224,11 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Seesaw", "fr": "Balançoire à bascule"},
+        "lbl": {"en": "Seesaw", "fr": "Balançoire à bascule", "de": "Wippe"},
         "terms": {
           "en": "",
-          "fr": "Balançoire à bascule, tape-fesses, tape-cul,  jeux pour enfants"
+          "fr": "Balançoire à bascule, tape-fesses, tape-cul,  jeux pour enfants",
+          "de": "Wippe"
         },
         "geometry": ["point"],
         "iDRef": "playground/seesaw",
@@ -55126,8 +55240,12 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Slide", "fr": "Toboggan "},
-        "terms": {"en": "", "fr": "Toboggan,  jeux pour enfants"},
+        "lbl": {"en": "Slide", "fr": "Toboggan ", "de": "Rutsche"},
+        "terms": {
+          "en": "",
+          "fr": "Toboggan,  jeux pour enfants",
+          "de": "Rutsche"
+        },
         "geometry": ["point", "line"],
         "iDRef": "playground/slide",
         "tags": {"playground": "slide"},
@@ -55138,10 +55256,15 @@
         "icon": "maki-pitch",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Play Structure", "fr": "Structure (Jeu pour enfants)"},
+        "lbl": {
+          "en": "Play Structure",
+          "fr": "Structure (Jeu pour enfants)",
+          "de": "Spielgebäude"
+        },
         "terms": {
           "en": "",
-          "fr": "Structure de jeux, portique de jeux,  jeux pour enfants"
+          "fr": "Structure de jeux, portique de jeux,  jeux pour enfants",
+          "de": "Spielgebäude"
         },
         "geometry": ["point", "area"],
         "iDRef": "playground/structure",
@@ -55153,10 +55276,11 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": ["capacity", "baby_seat", "wheelchair", "blind"],
-        "lbl": {"en": "Swing", "fr": "Balançoire"},
+        "lbl": {"en": "Swing", "fr": "Balançoire", "de": "Schaukel"},
         "terms": {
           "en": "",
-          "fr": "Balançoire, balancelles,  jeux pour enfants"
+          "fr": "Balançoire, balancelles,  jeux pour enfants",
+          "de": "Schaukel"
         },
         "geometry": ["point"],
         "iDRef": "playground/swing",
@@ -55168,8 +55292,16 @@
         "icon": "maki-playground",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Zip Wire", "fr": "Tyrolienne"},
-        "terms": {"en": "", "fr": "Tyrolienne"},
+        "lbl": {
+          "en": "Zip Wire",
+          "fr": "Tyrolienne",
+          "de": "Seilbahn Spielplatz"
+        },
+        "terms": {
+          "en": "",
+          "fr": "Tyrolienne",
+          "de": "Seilrutsche, Seilbahn, Spielplatz"
+        },
         "geometry": ["point", "line"],
         "iDRef": "playground/zipwire",
         "tags": {"playground": "zipwire"},
@@ -55178,14 +55310,18 @@
     ]
   },
   "power": {
-    "lbl": {"en": "power", "fr": "Énergie"},
+    "lbl": {"en": "Power", "fr": "Énergie", "de": "Energieversorgung"},
     "values": [
       {
         "key": "sub_station",
         "icon": "temaki-power",
         "markerColor": "#2f3242",
         "presets": ["operator", "building", "ref"],
-        "lbl": {"en": "Substation"},
+        "lbl": {
+          "en": "Substation",
+          "fr": "Poste de transformation",
+          "de": "Umspannwerk"
+        },
         "terms": {"en": ""},
         "geometry": ["point", "area"],
         "iDRef": "power/sub_station",
@@ -55198,8 +55334,16 @@
         "icon": "",
         "markerColor": "#2f3242",
         "presets": ["name", "operator", "voltage", "ref", "layer"],
-        "lbl": {"en": "Underground Power Cable"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Underground Power Cable",
+          "fr": "Câble électrique souterrain",
+          "de": "Erdkabel"
+        },
+        "terms": {
+          "en": "",
+          "fr": "Câble électrique souterrain",
+          "de": "unterirdisches Stromkabel, Stromkabel unter der Erde, vergrabenes Stromkabel"
+        },
         "geometry": ["line"],
         "iDRef": "power/cable/underground",
         "tags": {"power": "cable", "location": "underground"},
@@ -55217,8 +55361,16 @@
           "generator/type",
           "ref"
         ],
-        "lbl": {"en": "Power Generator"},
-        "terms": {"en": "hydro, solar, turbine, wind"},
+        "lbl": {
+          "en": "Power Generator",
+          "fr": "Génératrice",
+          "de": "Stromgenerator"
+        },
+        "terms": {
+          "en": "hydro,solar,turbine,wind",
+          "fr": "Génératrice",
+          "de": "Stromgenerator, Generator"
+        },
         "geometry": ["point", "vertex", "area"],
         "iDRef": "power/generator",
         "moreFields": ["level", "manufacturer"],
@@ -55230,8 +55382,16 @@
         "icon": "fas-solar-panel",
         "markerColor": "#2f3242",
         "presets": ["operator", "ref"],
-        "lbl": {"en": "Solar Panel"},
-        "terms": {"en": "photovoltaic module, PV module, sunlight"},
+        "lbl": {
+          "en": "Solar Panel",
+          "fr": "Panneaux solaires",
+          "de": "Solarstromanlage"
+        },
+        "terms": {
+          "en": "photovoltaic module,PV module,sunlight",
+          "fr": "panneaux solaires,centrale solaire",
+          "de": "Solarstromanlage,Photovoltaikanlage"
+        },
         "geometry": ["area", "point", "vertex"],
         "iDRef": "power/generator/method/photovoltaic",
         "moreFields": ["manufacturer"],
@@ -55251,9 +55411,15 @@
         "icon": "temaki-power",
         "markerColor": "#2f3242",
         "presets": ["operator", "generator/method", "generator/type", "ref"],
-        "lbl": {"en": "Water Turbine"},
+        "lbl": {
+          "en": "Water Turbine",
+          "fr": "Centrale hydroélectrique",
+          "de": "Wasserturbine"
+        },
         "terms": {
-          "en": "dam, generator, francis turbine, hydroelectricity, kaplan turbine, pelton turbine"
+          "en": "dam,generator,francis turbine,hydroelectricity,kaplan turbine,pelton turbine",
+          "fr": "centrale hydroélectrique,barrage,générateur,électricité,kaplan,pelton,turbine",
+          "de": "Wasserturbine, Kaplanturbine, Wasserelektrizität"
         },
         "geometry": ["point", "vertex", "area"],
         "iDRef": "power/generator/source/hydro",
@@ -55278,8 +55444,16 @@
           "generator/type",
           "ref"
         ],
-        "lbl": {"en": "Nuclear Reactor"},
-        "terms": {"en": "fission, generator, nuclear, nuke, reactor"},
+        "lbl": {
+          "en": "Nuclear Reactor",
+          "fr": "Centrale nucléaire",
+          "de": "Atomreaktor"
+        },
+        "terms": {
+          "en": "fission,generator,nuclear,nuke,reactor",
+          "fr": "réacteur nucléaire,centrale nucléaire",
+          "de": "Atomreaktor, Atomkraftwerk, Kernkraftwerk"
+        },
         "geometry": ["point", "vertex", "area"],
         "iDRef": "power/generator/source/nuclear",
         "moreFields": ["manufacturer"],
@@ -55296,8 +55470,16 @@
         "icon": "temaki-wind_turbine",
         "markerColor": "#2f3242",
         "presets": ["operator", "generator/type", "height", "ref"],
-        "lbl": {"en": "Wind Turbine"},
-        "terms": {"en": "generator, turbine, windmill, wind"},
+        "lbl": {
+          "en": "Wind Turbine",
+          "fr": "Centrale éolienne",
+          "de": "Windkraftanlage"
+        },
+        "terms": {
+          "en": "generator,turbine,windmill,wind",
+          "fr": "centrale éolienne,éoliennes",
+          "de": "Windkraftanlage, Windturbine, Windgenerator, Windmühle, Windenergieanlage"
+        },
         "geometry": ["point", "vertex", "area"],
         "iDRef": "power/generator/source/wind",
         "moreFields": ["manufacturer"],
@@ -55314,9 +55496,15 @@
         "icon": "temaki-power_tower",
         "markerColor": "#2f3242",
         "presets": ["name", "operator", "voltage", "ref", "layer"],
-        "lbl": {"en": "Power Line"},
+        "lbl": {
+          "en": "Power Line",
+          "fr": "Ligne électrique majeure",
+          "de": "Hochspannungsleitung"
+        },
         "terms": {
-          "en": "electric power transmission line, high voltage line, high tension line"
+          "en": "electric power transmission line,high voltage line,high tension line",
+          "fr": "Ligne électrique",
+          "de": "Stromleitung-Hochspannung, Freileitung, Überlandleitung, Hochspannungsleitung"
         },
         "geometry": ["line"],
         "iDRef": "power/line",
@@ -55325,11 +55513,19 @@
       },
       {
         "key": "minor_line",
-        "icon": "iD-power-line",
+        "icon": "",
         "markerColor": "#2f3242",
         "presets": ["name", "operator", "voltage", "ref", "layer"],
-        "lbl": {"en": "Minor Power Line"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Minor Power Line",
+          "fr": "Ligne électrique mineure",
+          "de": "Mittel-/Niederspannungsleitung"
+        },
+        "terms": {
+          "en": "",
+          "fr": "Ligne électrique mineure",
+          "de": "Stromleitung-Niederspannung, Niederspannungsleitung, Mittelspannungsleitung, Freileitung, Niederspannungsfreileitung, Mittelspannungsfreileitung, Stromleitung-Mittelspannung,"
+        },
         "geometry": ["line"],
         "iDRef": "power/minor_line",
         "tags": {"power": "minor_line"},
@@ -55346,8 +55542,16 @@
           "plant/output/electricity",
           "start_date"
         ],
-        "lbl": {"en": "Power Station Grounds"},
-        "terms": {"en": "coal, gas, generat*, hydro, nuclear, power, station"},
+        "lbl": {
+          "en": "Power Station Grounds",
+          "fr": "Centrale électrique",
+          "de": "Kraftwerksgelände"
+        },
+        "terms": {
+          "en": "coal,gas,generat*,hydro,nuclear,power,station",
+          "fr": "Centrale électrique",
+          "de": "Kraftwerksgelände, Elektrizitätswerkgrundstück, Kraftwerk"
+        },
         "geometry": ["area"],
         "iDRef": "power/plant",
         "tags": {"power": "plant"},
@@ -55359,8 +55563,16 @@
         "icon": "temaki-utility_pole",
         "markerColor": "#2f3242",
         "presets": ["ref", "operator", "height", "material", "line_attachment"],
-        "lbl": {"en": "Power Pole"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Power Pole",
+          "fr": "Poteau électrique",
+          "de": "Strommast"
+        },
+        "terms": {
+          "en": "",
+          "fr": "Pylone électrique, Poteau électrique",
+          "de": "Strommast, Stromleitungsmast, Freileitungspfosten"
+        },
         "geometry": ["point", "vertex"],
         "iDRef": "power/pole",
         "moreFields": ["manufacturer"],
@@ -55372,8 +55584,12 @@
         "icon": "temaki-power",
         "markerColor": "#2f3242",
         "presets": ["operator", "building", "ref"],
-        "lbl": {"en": "Substation"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Substation", "fr": "Sous-station", "de": "Umspannwerk"},
+        "terms": {
+          "en": "",
+          "fr": "Sous-station électrique,poste de transformation électrique,transformateur",
+          "de": "Umspannstation, Umspannwerk, Transformatorenstation, Schaltanlage, Trafostation"
+        },
         "geometry": ["area", "point"],
         "iDRef": "power/substation",
         "tags": {"power": "substation"},
@@ -55391,8 +55607,16 @@
           "voltage",
           "ref"
         ],
-        "lbl": {"en": "Power Switch"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Power Switch",
+          "fr": "Appareil de connexion électrique",
+          "de": "Netzschalter"
+        },
+        "terms": {
+          "en": "",
+          "fr": "Appareil de connexion électrique",
+          "de": "Netzschalter, Ein/Ausschalter"
+        },
         "geometry": ["point", "vertex"],
         "iDRef": "power/switch",
         "tags": {"power": "switch"},
@@ -55410,8 +55634,16 @@
           "material",
           "line_attachment"
         ],
-        "lbl": {"en": "High-Voltage Tower"},
-        "terms": {"en": "power"},
+        "lbl": {
+          "en": "High-Voltage Tower",
+          "fr": "Pylône électrique ",
+          "de": "Hochspannungsmast"
+        },
+        "terms": {
+          "en": "power",
+          "fr": "Pylône haute-tension",
+          "de": "Hauptstrommast, Freileitungsmast"
+        },
         "geometry": ["point", "vertex"],
         "iDRef": "power/tower",
         "moreFields": ["manufacturer"],
@@ -55431,8 +55663,16 @@
           "devices",
           "phases"
         ],
-        "lbl": {"en": "Transformer"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Transformer",
+          "fr": "Transformateur",
+          "de": "Transformator"
+        },
+        "terms": {
+          "en": "",
+          "fr": "Transformateur",
+          "de": "Transformator, Umspannwerk"
+        },
         "geometry": ["point", "vertex"],
         "iDRef": "power/transformer",
         "moreFields": [
@@ -55450,14 +55690,14 @@
     ]
   },
   "barrier": {
-    "lbl": {"en": "barrier", "fr": "Barrière physique"},
+    "lbl": {"en": "Barrier", "fr": "Barrière physique", "de": "Barriere"},
     "values": [
       {
         "key": "entrance",
         "icon": "maki-entrance-alt1",
         "markerColor": "#283d30",
         "presets": [],
-        "lbl": {"en": "Entrance"},
+        "lbl": {"en": "Entrance", "fr": "Ouverture", "de": "Durchgang"},
         "terms": {"en": ""},
         "geometry": ["vertex"],
         "iDRef": "barrier/entrance",
@@ -55469,8 +55709,16 @@
         "icon": "maki-roadblock",
         "markerColor": "#283d30",
         "presets": ["access", "material"],
-        "lbl": {"en": "Block"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Block",
+          "fr": "Bloc",
+          "de": "Stein-/Betonblock; Stein-/Betonblöcke"
+        },
+        "terms": {
+          "en": "",
+          "fr": "bloc de béton, rocher, obstacle, block",
+          "de": "Block"
+        },
         "geometry": ["point", "vertex"],
         "iDRef": "barrier/block",
         "tags": {"barrier": "block"},
@@ -55488,8 +55736,12 @@
           "colour",
           "width"
         ],
-        "lbl": {"en": "Bollard"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Bollard", "fr": "Poteau", "de": "Poller"},
+        "terms": {
+          "en": "",
+          "fr": "poteau, potelet, borne escamotable, borne, bollard, pilier",
+          "de": "Poller, Pfosten"
+        },
         "geometry": ["point", "vertex"],
         "iDRef": "barrier/bollard",
         "tags": {"barrier": "bollard"},
@@ -55501,8 +55753,16 @@
         "icon": "maki-roadblock",
         "markerColor": "#283d30",
         "presets": ["access", "building_area"],
-        "lbl": {"en": "Border Control"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Border Control",
+          "fr": "Poste-frontière",
+          "de": "Grenzkontrolle"
+        },
+        "terms": {
+          "en": "",
+          "fr": "poste-frontière, poste frontiere, contrôle à la frontière, contrôle aux frontières, point de contrôle à une frontière, controle, border control",
+          "de": "Grenzkontrolle"
+        },
         "geometry": ["vertex", "area"],
         "iDRef": "barrier/border_control",
         "moreFields": ["address", "email", "fax", "phone", "website"],
@@ -55514,8 +55774,16 @@
         "icon": "maki-barrier",
         "markerColor": "#283d30",
         "presets": [],
-        "lbl": {"en": "Cattle Grid"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Cattle Grid",
+          "fr": "Grille à bétail",
+          "de": "Weiderost"
+        },
+        "terms": {
+          "en": "",
+          "fr": "grille à bétail, barrière canadienne, passage canadien, pas canadien, bovistop, grille a betail, grille bétail, barres à bétail, barres à animaux, bétail, piétons, randonneurs, animaux, animal, vache, cheval, barres fosse, vide, trou, cattle grid, grid cattle",
+          "de": "Viehgitter, Viehrost"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/cattle_grid",
         "tags": {"barrier": "cattle_grid"},
@@ -55526,8 +55794,8 @@
         "icon": "maki-barrier",
         "markerColor": "#283d30",
         "presets": ["access"],
-        "lbl": {"en": "Chain"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Chain", "fr": "Chaîne", "de": "Kette"},
+        "terms": {"en": "", "fr": "chaîne", "de": "Kette"},
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/chain",
         "tags": {"barrier": "chain"},
@@ -55538,8 +55806,12 @@
         "icon": "temaki-wall",
         "markerColor": "#283d30",
         "presets": ["height", "material"],
-        "lbl": {"en": "City Wall"},
-        "terms": {"en": ""},
+        "lbl": {"en": "City Wall", "fr": "Mur d'enceinte", "de": "Stadtmauer"},
+        "terms": {
+          "en": "",
+          "fr": "remparts, mur d'enceinte, murs d'enceinte, murailles, fortifications, cité fortifiée, ville fortifiée, enceinte fortifiée, ouvrage de défense, défenses, forteresse, bastion, fortifiée, donjon, tours, tour de garde, tour de guet, enceinte, city wall, wall city",
+          "de": "Stadtmauer"
+        },
         "geometry": ["line", "area"],
         "iDRef": "barrier/city_wall",
         "tags": {"barrier": "city_wall"},
@@ -55550,8 +55822,16 @@
         "icon": "maki-roadblock",
         "markerColor": "#283d30",
         "presets": ["access"],
-        "lbl": {"en": "Cycle Barrier"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Cycle Barrier",
+          "fr": "Barrière à vélos",
+          "de": "Umlaufgitter"
+        },
+        "terms": {
+          "en": "",
+          "fr": "chicane vélos, barrière vélos, barrières vélos, passage vélos,\nchicane bicyclettes, barrière bicyclettes, barrières bicyclettes, passage bicyclettes,\nchicane à vélos, barrière à vélos, barrières à vélos, passage à vélos,\nchicane à bicyclettes, barrière à bicyclettes, barrières à bicyclettes, passage à bicyclettes,\nbarrière pour vélos, barrières pour vélos, passage pour vélos,\nbarrière pour bicyclettes, barrières pour bicyclettes, passage pour bicyclettes,\nchicane, barrières, barrieres, passage, rétrécissement, goulot, portillon à chicane, vélos, bicyclettes, cycle barrier, traffic calming",
+          "de": "Drängelgitter, Umlaufsperre"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/cycle_barrier",
         "tags": {"barrier": "cycle_barrier"},
@@ -55562,8 +55842,12 @@
         "icon": "maki-roadblock",
         "markerColor": "#283d30",
         "presets": [],
-        "lbl": {"en": "Trench"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Trench", "fr": "Tranchée", "de": "Graben"},
+        "terms": {
+          "en": "",
+          "fr": "tranchée, tranchee, fossé, fosse, cheminement, retranchement, boyau, barrier ditch, ditch, trench",
+          "de": "Graben, Straßengraben, Rinne"
+        },
         "geometry": ["line", "area"],
         "iDRef": "barrier/ditch",
         "tags": {"barrier": "ditch"},
@@ -55574,8 +55858,12 @@
         "icon": "maki-fence",
         "markerColor": "#283d30",
         "presets": ["fence_type", "height", "material"],
-        "lbl": {"en": "Fence"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Fence", "fr": "Clôture", "de": "Zaun"},
+        "terms": {
+          "en": "",
+          "fr": "clôture, cloture, grillage, grille, barrière, palissade, enceinte, enclos, barrier fence, fence",
+          "de": "Zaun"
+        },
         "geometry": ["line"],
         "iDRef": "barrier/fence",
         "tags": {"barrier": "fence"},
@@ -55586,8 +55874,12 @@
         "icon": "temaki-railing",
         "markerColor": "#283d30",
         "presets": [],
-        "lbl": {"en": "Railing"},
-        "terms": {"en": "railing, handrail, guard rail"},
+        "lbl": {"en": "Railing", "fr": "garde-fou", "de": "Geländer"},
+        "terms": {
+          "en": "railing,handrail,guard rail",
+          "fr": "garde-fou,garde-corps,rampe",
+          "de": "Geländer"
+        },
         "geometry": ["line"],
         "iDRef": "barrier/fence/railing",
         "tags": {"barrier": "fence", "fence_type": "railing"},
@@ -55598,8 +55890,12 @@
         "icon": "maki-barrier",
         "markerColor": "#283d30",
         "presets": ["access", "opening_hours"],
-        "lbl": {"en": "Gate"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Gate", "fr": "Portail", "de": "Tor"},
+        "terms": {
+          "en": "",
+          "fr": "portail, porte, passage, ouverture, entrée, portillon, entree, barrière, barriere, fermeture, barrier gate, gate",
+          "de": "Gatter, Tor"
+        },
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/gate",
         "tags": {"barrier": "gate"},
@@ -55610,9 +55906,15 @@
         "icon": "temaki-guard_rail",
         "markerColor": "#283d30",
         "presets": ["material"],
-        "lbl": {"en": "Guard Rail"},
+        "lbl": {
+          "en": "Guard Rail",
+          "fr": "barrière de sécurité",
+          "de": "Leitplanke"
+        },
         "terms": {
-          "en": "guardrail, traffic barrier, crash barrier, median barrier, roadside barrier, Armco barrier"
+          "en": "guardrail,traffic barrier,crash barrier,median barrier,roadside barrier,Armco barrier",
+          "fr": "barrière de sécurité,barre de sécurité,garde-fou,garde-corps,rampe",
+          "de": "Leitplanke, Schutzgeländer, Schutzplanke"
         },
         "geometry": ["line"],
         "iDRef": "barrier/guard_rail",
@@ -55624,8 +55926,12 @@
         "icon": "",
         "markerColor": "#283d30",
         "presets": ["height"],
-        "lbl": {"en": "Hedge"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Hedge", "fr": "Haie", "de": "Hecke"},
+        "terms": {
+          "en": "",
+          "fr": "haie, arbustes, arbres, plantes, buisson, clôture, brise-vent, rangée, broussaille, bordure, cloture, buis, ifs, barrier hedge, hedge",
+          "de": "Hecke"
+        },
         "geometry": ["line", "area"],
         "iDRef": "barrier/hedge",
         "tags": {"barrier": "hedge"},
@@ -55636,8 +55942,16 @@
         "icon": "temaki-car_wash",
         "markerColor": "#283d30",
         "presets": ["maxheight"],
-        "lbl": {"en": "Height Restrictor"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Height Restrictor",
+          "fr": "Limiteur de hauteur",
+          "de": "Durchfahrtshöhenbegrenzer"
+        },
+        "terms": {
+          "en": "",
+          "fr": "limite de hauteur,limiteur de hauteur,barrière",
+          "de": "Durchfahrtshöhenbegrenzer, Bauwerk zur Einschränkung der Durchfahrtshöhe"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/height_restrictor",
         "tags": {"barrier": "height_restrictor"},
@@ -55648,8 +55962,8 @@
         "icon": "temaki-kerb-raised",
         "markerColor": "#283d30",
         "presets": ["kerb", "tactile_paving", "wheelchair"],
-        "lbl": {"en": "Curb"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Curb", "fr": "Trottoir", "de": "Bordstein"},
+        "terms": {"en": "", "fr": "trottoir,bord", "de": "Bordstein"},
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/kerb",
         "moreFields": ["material"],
@@ -55660,8 +55974,16 @@
         "icon": "temaki-kerb-flush",
         "markerColor": "#283d30",
         "presets": ["kerb"],
-        "lbl": {"en": "Flush Curb"},
-        "terms": {"en": "even curb, level curb, tactile curb"},
+        "lbl": {
+          "en": "Flush Curb",
+          "fr": "Bordure de trottoir affleurante",
+          "de": "Stufenfrei abgesenkter Bordstein"
+        },
+        "terms": {
+          "en": "even curb,level curb,tactile curb",
+          "fr": "abaissement de trottoir,bordure de trottoir abaissée,bordure abaissée,rampe d'accès,plan incliné,charretière,abaissement,affleurement",
+          "de": "stufenfrei abgesenkter Bordstein, kantenfreie abgesenkter Bordstein, voll abgesenkter Bordstein,"
+        },
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/kerb/flush",
         "tags": {"barrier": "kerb", "kerb": "flush"},
@@ -55673,9 +55995,15 @@
         "icon": "temaki-kerb-lowered",
         "markerColor": "#283d30",
         "presets": ["kerb", "kerb/height"],
-        "lbl": {"en": "Lowered Curb"},
+        "lbl": {
+          "en": "Lowered Curb",
+          "fr": "Bordure de trottoir abaissée",
+          "de": "Abgesenkter Bordstein"
+        },
         "terms": {
-          "en": "curb cut, curb ramp, kerb ramp, dropped kerb, pram ramp"
+          "en": "curb cut,curb ramp,kerb ramp,dropped kerb,pram ramp",
+          "fr": "abaissement de trottoir,bateau,bordure abaissée,rampe d'accès,plan incliné,charretière",
+          "de": "abgesenkter Bordstein, abgesenkte Gehsteigkante, Rampe,"
         },
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/kerb/lowered",
@@ -55688,8 +56016,16 @@
         "icon": "temaki-kerb-raised",
         "markerColor": "#283d30",
         "presets": ["kerb", "kerb/height"],
-        "lbl": {"en": "Raised Curb"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Raised Curb",
+          "fr": "Bordure de trottoir relevée",
+          "de": "Erhöhter Bordstein"
+        },
+        "terms": {
+          "en": "",
+          "fr": "trottoir,bord,relèvement de trottoir,trottoir relevé",
+          "de": "Erhöhter Bordstein"
+        },
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/kerb/raised",
         "tags": {"barrier": "kerb", "kerb": "raised"},
@@ -55701,8 +56037,16 @@
         "icon": "temaki-kerb-rolled",
         "markerColor": "#283d30",
         "presets": ["kerb", "kerb/height"],
-        "lbl": {"en": "Rolled Curb"},
-        "terms": {"en": "gutter"},
+        "lbl": {
+          "en": "Rolled Curb",
+          "fr": "Bordure de trottoir creusée",
+          "de": "Abgerundeter Bordstein"
+        },
+        "terms": {
+          "en": "gutter",
+          "fr": "rolled,creusée,égouts,gouttière,caniveaux",
+          "de": "Abgerundeter Bordstein"
+        },
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/kerb/rolled",
         "tags": {"barrier": "kerb", "kerb": "rolled"},
@@ -55715,8 +56059,16 @@
         "icon": "maki-barrier",
         "markerColor": "#283d30",
         "presets": ["access"],
-        "lbl": {"en": "Kissing Gate"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Kissing Gate",
+          "fr": "Portillon à chicane mobile",
+          "de": "Schwinggatter"
+        },
+        "terms": {
+          "en": "",
+          "fr": "portillon à chicanes, chicane battante, portail à bétail, portail à sas, portillon, passage, bétail, piétons, randonneurs, animaux, animal, vache, cheval, enclos, barrier kissing gate, kissing gate",
+          "de": "Tor, Gatter"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/kissing_gate",
         "tags": {"barrier": "kissing_gate"},
@@ -55727,8 +56079,12 @@
         "icon": "temaki-lift_gate",
         "markerColor": "#283d30",
         "presets": ["access"],
-        "lbl": {"en": "Lift Gate"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Lift Gate", "fr": "Barrière levante", "de": "Schranke "},
+        "terms": {
+          "en": "",
+          "fr": "barrière relevable, barrière levante, barrière automatique, barrière de péage, lift gate",
+          "de": "Schranke, Schlagbaum"
+        },
         "geometry": ["vertex", "line"],
         "iDRef": "barrier/lift_gate",
         "tags": {"barrier": "lift_gate"},
@@ -55739,8 +56095,16 @@
         "icon": "temaki-wall",
         "markerColor": "#283d30",
         "presets": ["height", "material"],
-        "lbl": {"en": "Retaining Wall"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Retaining Wall",
+          "fr": "Mur de soutènement",
+          "de": "Stützmauer"
+        },
+        "terms": {
+          "en": "",
+          "fr": "mur de soutènement, mur de retenue, retenue, restanque, faisse, rideau, retaining wall, érosion, éboulement, glissement de terrain",
+          "de": "Stützmauer"
+        },
         "geometry": ["line", "area"],
         "iDRef": "barrier/retaining_wall",
         "tags": {"barrier": "retaining_wall"},
@@ -55751,8 +56115,16 @@
         "icon": "fas-dungeon",
         "markerColor": "#283d30",
         "presets": [],
-        "lbl": {"en": "Sally Port"},
-        "terms": {"en": "Postern, castle side gate"},
+        "lbl": {
+          "en": "Sally Port",
+          "fr": "Entrée fortifiée",
+          "de": "Sicherheitsschleuse"
+        },
+        "terms": {
+          "en": "Postern,castle side gate",
+          "fr": "entrée fortifiée,poterne",
+          "de": "Sicherheitsschleuse, Durchgang, Durchlass durch ein Gemäuer, Tore, Gitter"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/sally_port",
         "tags": {"barrier": "sally_port"},
@@ -55763,8 +56135,12 @@
         "icon": "maki-roadblock",
         "markerColor": "#283d30",
         "presets": ["access", "stile", "material"],
-        "lbl": {"en": "Stile"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Stile", "fr": "Échalier", "de": "Zaunübertritt"},
+        "terms": {
+          "en": "",
+          "fr": "échalier, echalier, escalier, échelle, passerelle, franchissement, passage, enclos, haie, bétail, piétons, randonneurs, stile",
+          "de": "Zaunübertritt, Zauntritt, Stägel, Mauertritt"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/stile",
         "tags": {"barrier": "stile"},
@@ -55780,8 +56156,16 @@
           "payment_multi",
           "currency_multi"
         ],
-        "lbl": {"en": "Toll Booth"},
-        "terms": {"en": ""},
+        "lbl": {
+          "en": "Toll Booth",
+          "fr": "Poste de péage",
+          "de": "Mautstation"
+        },
+        "terms": {
+          "en": "",
+          "fr": "péage, péage routier, péage autoroutier, poste de péage, barrière de péage, gare de péage, zone de péage, bureau de péage, pont à péage, agent de péage, peage, route à péage, autoroute, taxe, toll booth",
+          "de": "Mautstelle"
+        },
         "geometry": ["vertex", "area"],
         "iDRef": "barrier/toll_booth",
         "moreFields": [
@@ -55800,8 +56184,12 @@
         "icon": "maki-roadblock",
         "markerColor": "#283d30",
         "presets": ["access"],
-        "lbl": {"en": "Turnstile"},
-        "terms": {"en": "baffle gate, turnstyle"},
+        "lbl": {"en": "Turnstile", "fr": "Tourniquet", "de": "Drehkreuz"},
+        "terms": {
+          "en": "baffle gate,turnstyle",
+          "fr": "tourniquet,portillon d'accès,barrière",
+          "de": "Drehkreuz"
+        },
         "geometry": ["vertex"],
         "iDRef": "barrier/turnstile",
         "tags": {"barrier": "turnstile"},
@@ -55812,8 +56200,12 @@
         "icon": "temaki-wall",
         "markerColor": "#283d30",
         "presets": ["wall", "height", "material"],
-        "lbl": {"en": "Wall"},
-        "terms": {"en": ""},
+        "lbl": {"en": "Wall", "fr": "Mur", "de": "Mauer"},
+        "terms": {
+          "en": "",
+          "fr": "mur, parapet, paroi, muraille, enceinte, rempart, cloison, clôture, barrière, pierres, briques, béton, wall",
+          "de": "Mauer"
+        },
         "geometry": ["line", "area"],
         "iDRef": "barrier/wall",
         "tags": {"barrier": "wall"},
@@ -55824,9 +56216,10 @@
         "icon": "temaki-wall",
         "markerColor": "#283d30",
         "presets": [],
-        "lbl": {"en": "Noise Barrier"},
+        "lbl": {"en": "Noise Barrier", "de": "Lärmschutzwand"},
         "terms": {
-          "en": "acoustical barrier, noise wall, noisewall, sound barrier, sound berm, sound wall, soundberm, soundwall"
+          "en": "acoustical barrier,noise wall,noisewall,sound barrier,sound berm,sound wall,soundberm,soundwall",
+          "de": "akustische Barriere, Lärmschutzwand"
         },
         "geometry": ["line", "area"],
         "iDRef": "barrier/wall/noise_barrier",

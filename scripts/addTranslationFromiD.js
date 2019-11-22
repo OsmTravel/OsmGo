@@ -43,7 +43,13 @@ const trPresets = idTr.presets.presets
 // TAGS
 const importTrTags = () => {
     for (let pkey in tagsOsmgo){
-
+        if (!tagsOsmgo[pkey].lbl[language] || overwrite){
+         
+            if (trPresets[pkey] && trPresets[pkey].name){
+                tagsOsmgo[pkey].lbl[language] =  trPresets[pkey].name
+            }
+           
+        }
         for(let tag of tagsOsmgo[pkey].values){
             // console.log(tag.iDRef);
             if (tag.iDRef){

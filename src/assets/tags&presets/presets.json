@@ -19662,19 +19662,19 @@
   "attraction": {
     "key": "attraction",
     "type": "text",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "playground": {
     "key": "playground",
     "type": "text",
-    "lbl": {"en": "Type", "fr": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "baby_seat": {
     "key": "baby",
     "type": "select",
-    "lbl": {"en": "Baby Seat", "fr": "Siège bébé"},
+    "lbl": {"en": "Baby Seat", "fr": "Siège bébé", "de": "Kindersitz"},
     "iDtype": "check",
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -19684,48 +19684,72 @@
   "voltage": {
     "key": "voltage",
     "type": "text",
-    "lbl": {"en": "Voltage"},
+    "lbl": {"en": "Voltage", "fr": "Tension électrique", "de": "Spannung"},
     "iDtype": "combo"
   },
   "generator/source": {
     "key": "generator:source",
     "type": "text",
-    "lbl": {"en": "Source"},
+    "lbl": {"en": "Source", "fr": "Source", "de": "Quelle"},
     "iDtype": "combo"
   },
   "generator/method": {
     "key": "generator:method",
     "type": "text",
-    "lbl": {"en": "Method"},
+    "lbl": {"en": "Method", "fr": "Méthode", "de": "Methode"},
     "iDtype": "combo"
   },
   "generator/type": {
     "key": "generator:type",
     "type": "text",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "plant/output/electricity": {
     "key": "plant:output:electricity",
     "type": "text",
     "placeholder": "500 MW, 1000 MW, 2000 MW...",
-    "lbl": {"en": "Power Output"}
+    "lbl": {"en": "Power Output", "fr": "Puissance", "de": "Leistung"}
   },
   "line_attachment": {
     "key": "line_attachment",
     "type": "text",
-    "lbl": {"en": "Line Attachment"},
+    "lbl": {
+      "en": "Line Attachment",
+      "fr": "Armement aérien",
+      "de": "Leitungsbefestigung"
+    },
     "iDtype": "combo"
   },
   "switch": {
     "key": "switch",
     "type": "list",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "options": [
-      {"v": "mechanical", "lbl": {"en": "Mechanical"}},
-      {"v": "circuit_breaker", "lbl": {"en": "Circuit Breaker"}},
-      {"v": "disconnector", "lbl": {"en": "Disconnector"}},
-      {"v": "earthing", "lbl": {"en": "Earthing"}}
+      {
+        "v": "mechanical",
+        "lbl": {"en": "Mechanical", "fr": "Interrupteur", "de": "mechanisch"}
+      },
+      {
+        "v": "circuit_breaker",
+        "lbl": {
+          "en": "Circuit Breaker",
+          "fr": "Disjoncteur",
+          "de": "Schutzschalter"
+        }
+      },
+      {
+        "v": "disconnector",
+        "lbl": {
+          "en": "Disconnector",
+          "fr": "Sectionneur",
+          "de": "Trennschalter"
+        }
+      },
+      {
+        "v": "earthing",
+        "lbl": {"en": "Earthing", "fr": "Sectionneur de terre", "de": "Erdung"}
+      }
     ],
     "iDtype": "combo"
   },
@@ -19734,27 +19758,72 @@
     "type": "number",
     "minValue": 1,
     "placeholder": "1, 2, 3...",
-    "lbl": {"en": "Cables"}
+    "lbl": {"en": "Cables", "fr": "Cables ", "de": "Kabel"}
   },
   "design": {
     "key": "design",
     "type": "text",
-    "lbl": {"en": "Design"},
+    "lbl": {"en": "Design", "fr": "Type", "de": "Design"},
     "iDtype": "combo"
   },
   "transformer": {
     "key": "transformer",
     "type": "list",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "options": [
-      {"v": "distribution", "lbl": {"en": "Distribution"}},
-      {"v": "generator", "lbl": {"en": "Generator"}},
-      {"v": "converter", "lbl": {"en": "Converter"}},
-      {"v": "traction", "lbl": {"en": "Traction"}},
-      {"v": "auto", "lbl": {"en": "Autotransformer"}},
-      {"v": "phase_angle_regulator", "lbl": {"en": "Phase Angle Regulator"}},
-      {"v": "auxiliary", "lbl": {"en": "Auxiliary"}},
-      {"v": "yes", "lbl": {"en": "Unknown"}}
+      {
+        "v": "distribution",
+        "lbl": {
+          "en": "Distribution",
+          "fr": "Distribution",
+          "de": "Masttransformator"
+        }
+      },
+      {
+        "v": "generator",
+        "lbl": {"en": "Generator", "fr": "Générateur", "de": "Generator"}
+      },
+      {
+        "v": "converter",
+        "lbl": {
+          "en": "Converter",
+          "fr": "Convertisseur",
+          "de": "Stromrichter-Transformator"
+        }
+      },
+      {
+        "v": "traction",
+        "lbl": {
+          "en": "Traction",
+          "fr": "Traction",
+          "de": "Eisenbahntransformator"
+        }
+      },
+      {
+        "v": "auto",
+        "lbl": {
+          "en": "Autotransformer",
+          "fr": "Autotransformateur",
+          "de": "Spartransformer"
+        }
+      },
+      {
+        "v": "phase_angle_regulator",
+        "lbl": {
+          "en": "Phase Angle Regulator",
+          "fr": "Déphaseur",
+          "de": "Querregeltransformator"
+        }
+      },
+      {
+        "v": "auxiliary",
+        "lbl": {
+          "en": "Auxiliary",
+          "fr": "auxiliaire",
+          "de": "Eigenbedarfstransformator"
+        }
+      },
+      {"v": "yes", "lbl": {"en": "Unknown", "fr": "Inconnu", "de": "Unbekannt"}}
     ],
     "iDtype": "combo"
   },
@@ -19762,7 +19831,7 @@
     "key": "rating",
     "type": "text",
     "snake_case": false,
-    "lbl": {"en": "Power Rating"},
+    "lbl": {"en": "Power Rating", "fr": "Puissance", "de": "Anschlussleistung"},
     "iDtype": "combo"
   },
   "devices": {
@@ -19770,37 +19839,53 @@
     "type": "number",
     "minValue": 0,
     "placeholder": "1, 2, 3...",
-    "lbl": {"en": "Devices"}
+    "lbl": {"en": "Devices", "fr": "Appareils", "de": "Geräte"}
   },
   "phases": {
     "key": "phases",
     "type": "number",
     "minValue": 1,
     "placeholder": "1, 2, 3...",
-    "lbl": {"en": "Phases"}
+    "lbl": {"en": "Phases", "fr": "Phases", "de": "Phasen"}
   },
   "frequency": {
     "key": "frequency",
     "type": "text",
-    "lbl": {"en": "Operating Frequency"},
+    "lbl": {
+      "en": "Operating Frequency",
+      "fr": "Fréquence ",
+      "de": "Betriebsfrequenz"
+    },
     "iDtype": "combo"
   },
   "voltage/primary": {
     "key": "voltage:primary",
     "type": "text",
-    "lbl": {"en": "Primary Voltage"},
+    "lbl": {
+      "en": "Primary Voltage",
+      "fr": "Tension primaire",
+      "de": "Primärspannung"
+    },
     "iDtype": "combo"
   },
   "voltage/secondary": {
     "key": "voltage:secondary",
     "type": "text",
-    "lbl": {"en": "Secondary Voltage"},
+    "lbl": {
+      "en": "Secondary Voltage",
+      "fr": "Tension secondaire",
+      "de": "Sekundärspannung"
+    },
     "iDtype": "combo"
   },
   "voltage/tertiary": {
     "key": "voltage:tertiary",
     "type": "text",
-    "lbl": {"en": "Tertiary Voltage"},
+    "lbl": {
+      "en": "Tertiary Voltage",
+      "fr": "Tension tertiaire",
+      "de": "Tertiärspannung"
+    },
     "iDtype": "combo"
   },
   "windings": {
@@ -19808,58 +19893,91 @@
     "type": "number",
     "minValue": 1,
     "placeholder": "1, 2, 3...",
-    "lbl": {"en": "Windings"}
+    "lbl": {"en": "Windings", "fr": "Enroulements", "de": "Windungen"}
   },
   "windings/configuration": {
     "key": "windings:configuration",
     "type": "list",
-    "lbl": {"en": "Windings Configuration"},
+    "lbl": {
+      "en": "Windings Configuration",
+      "fr": "Configuration des enroulements",
+      "de": "Windungskonfiguration"
+    },
     "options": [
-      {"v": "star", "lbl": {"en": "Star / Wye"}},
-      {"v": "delta", "lbl": {"en": "Delta"}},
-      {"v": "open-delta", "lbl": {"en": "Open Delta"}},
-      {"v": "zigzag", "lbl": {"en": "Zig Zag"}},
-      {"v": "open", "lbl": {"en": "Open"}},
-      {"v": "scott", "lbl": {"en": "Scott"}},
-      {"v": "leblanc", "lbl": {"en": "Leblanc"}}
+      {
+        "v": "star",
+        "lbl": {"en": "Star / Wye", "fr": "Étoile", "de": "Sternschaltung"}
+      },
+      {
+        "v": "delta",
+        "lbl": {"en": "Delta", "fr": "Triangle", "de": "Dreieckschaltung"}
+      },
+      {
+        "v": "open-delta",
+        "lbl": {
+          "en": "Open Delta",
+          "fr": "Triangle-ouvert",
+          "de": "offene Dreieckschaltung"
+        }
+      },
+      {
+        "v": "zigzag",
+        "lbl": {"en": "Zig Zag", "fr": "Zig-zag ", "de": "Zickzackschaltung"}
+      },
+      {
+        "v": "open",
+        "lbl": {"en": "Open", "fr": "Ouverte", "de": " offene Wicklungen"}
+      },
+      {
+        "v": "scott",
+        "lbl": {"en": "Scott", "fr": "Scott", "de": "Scott-Schaltung"}
+      },
+      {
+        "v": "leblanc",
+        "lbl": {"en": "Leblanc", "fr": "Leblanc", "de": "Leblanc-Schaltung"}
+      }
     ],
     "iDtype": "combo"
   },
   "bollard": {
     "key": "bollard",
     "type": "text",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "fence_type": {
     "key": "fence_type",
     "type": "text",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "kerb": {
     "key": "kerb",
     "type": "text",
-    "lbl": {"en": "Curb"},
+    "lbl": {
+      "en": "Curb",
+      "fr": "Aménagement de trottoir, Abaissement (bateau)",
+      "de": "Bordstein"
+    },
     "iDtype": "combo"
   },
   "kerb/height": {
     "key": "kerb:height",
     "type": "text",
     "snake_case": false,
-    "lbl": {"en": "Height"},
+    "lbl": {"en": "Height", "fr": "Hauteur", "de": "Höhe"},
     "iDtype": "combo"
   },
   "stile": {
     "key": "stile",
     "type": "text",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "de": "Typ"},
     "iDtype": "combo"
   },
   "wall": {
     "key": "wall",
     "type": "text",
-    "lbl": {"en": "Type"},
+    "lbl": {"en": "Type", "fr": "Type", "de": "Typ"},
     "iDtype": "combo"
   }
 }
