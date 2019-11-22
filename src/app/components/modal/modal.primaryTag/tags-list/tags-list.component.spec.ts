@@ -12,7 +12,7 @@ import { DisplayTagsPipe } from 'src/app/pipes/display-tags.pipe';
 
 
 const tagConfig: any = require('../../../../../assets/tags&presets/tags.json');
-const jsonSprites : any = require('../../../../../assets/iconsSprites.json')
+const jsonSprites : any = require('../../../../../assets/iconsSprites@x2.json')
 describe('TagsListComponent', () => {
   let component: TagsListComponent;
   let fixture: ComponentFixture<TagsListComponent>;

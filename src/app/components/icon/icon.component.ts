@@ -11,10 +11,13 @@ export class IconComponent implements OnInit {
   @Input() tagConfig;
   currentSpriteConfig
   styleBackgroundPosition;
+  devicePixelRatio;
 
   constructor() { }
 
   ngOnInit() {
+    this.devicePixelRatio = Math.round(window.devicePixelRatio);
+    console.log(window.devicePixelRatio)
   }
 
 

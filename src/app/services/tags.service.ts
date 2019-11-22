@@ -215,7 +215,8 @@ export class TagsService {
 
     loadJsonSprites$() {
         console.log('JSON SPRITES')
-        return this.http.get('assets/iconsSprites.json')
+        const devicePixelRatio =  Math.round(window.devicePixelRatio);
+        return this.http.get('assets/iconsSprites@x'+devicePixelRatio+'.json')
           .pipe(
             map( (jsonSprites) => {
                 this.jsonSprites = jsonSprites

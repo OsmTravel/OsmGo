@@ -12887,7 +12887,7 @@
       },
       {
         "key": "water_sports",
-        "icon": "fa-swimmer",
+        "icon": "maki-swimming",
         "markerColor": "#A23337",
         "presets": [],
         "lbl": {
@@ -25841,7 +25841,7 @@
       },
       {
         "key": "toilets",
-        "icon": "tnp-2009541",
+        "icon": "mi-toilet",
         "markerColor": "#EF9228",
         "presets": ["toilets/disposal", "toilets/handwashing"],
         "lbl": {"en": "Pit Latrine", "fr": "Toilette sèche"},
@@ -32734,7 +32734,7 @@
       },
       {
         "key": "swimming_area",
-        "icon": "fa-swimmer",
+        "icon": "maki-swimming",
         "markerColor": "#5B396C",
         "presets": [
           "name",
@@ -33501,7 +33501,7 @@
       },
       {
         "key": "sports_centre",
-        "icon": "fas-swimmer",
+        "icon": "maki-swimming",
         "markerColor": "#5B396C",
         "presets": [],
         "lbl": {"en": "Swimming Pool Facility", "fr": "Centre aquatique"},
@@ -39473,7 +39473,7 @@
       },
       {
         "key": "zoo",
-        "icon": "mi-zoo",
+        "icon": "temaki-zoo",
         "markerColor": "#9D7178",
         "presets": [
           "wheelchair",
@@ -43325,7 +43325,7 @@
       {
         "key": "lighthouse",
         "icon": "maki-lighthouse",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "building_area", "height"],
         "lbl": {
           "en": "Lighthouse",
@@ -43430,7 +43430,7 @@
       {
         "key": "communications_tower",
         "icon": "fa-broadcast-tower-solid",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Communications Tower (+ 100m)",
@@ -43449,7 +43449,7 @@
       {
         "key": "advertising",
         "icon": "maki-monument",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "deprecated": true,
         "lbl": {"en": "Advertising", "fr": "Dispositifs Publicitaires"},
@@ -43460,7 +43460,7 @@
       {
         "key": "cross",
         "icon": "fa-cross-solid",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "material",
           "height",
@@ -43511,7 +43511,7 @@
       {
         "key": "flagpole",
         "icon": "fa-flag",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "flag/type", "country", "lit", "height"],
         "lbl": {
           "en": "Flagpole",
@@ -43605,7 +43605,7 @@
       {
         "key": "surveillance",
         "icon": "fas-video",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "surveillance",
           "surveillance/type",
@@ -43700,7 +43700,7 @@
       {
         "key": "water_tower",
         "icon": "osm-water-tower",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "height"],
         "lbl": {
           "en": "Water Tower",
@@ -43795,7 +43795,7 @@
       {
         "key": "water_well",
         "icon": "maki-water",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator"],
         "lbl": {
           "en": "Water Well",
@@ -43885,7 +43885,7 @@
       {
         "key": "water_tap",
         "icon": "maki-drinking-water",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Water tap", "fr": "Robinet d'eau"},
         "terms": {"en": "", "fr": "Eau potable, "},
@@ -43901,7 +43901,7 @@
       {
         "key": "yes",
         "icon": "wiki_question",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "_NC"},
         "tags": {"man_made": "yes"},
@@ -43911,7 +43911,7 @@
       {
         "key": "survey_point",
         "icon": "mi-cemetery",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["ref"],
         "lbl": {
           "en": "Survey Point",
@@ -44005,7 +44005,7 @@
       {
         "key": "storage_tank",
         "icon": "temaki-storage_tank",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "content",
           "operator",
@@ -44096,7 +44096,7 @@
       {
         "key": "pier",
         "icon": "temaki-pedestrian",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["surface", "floating", "width", "access", "lit"],
         "lbl": {
           "en": "Pier",
@@ -44202,7 +44202,7 @@
       {
         "key": "wastewater_plant",
         "icon": "temaki-waste",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "address"],
         "lbl": {
           "en": "Wastewater Plant",
@@ -44299,7 +44299,7 @@
       {
         "key": "pipeline",
         "icon": "mi-plumber",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "location", "substance", "layer", "diameter"],
         "deprecated": true,
         "lbl": {
@@ -44400,7 +44400,7 @@
       {
         "key": "tower",
         "icon": "maki-castle",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "tower/type",
           "tower/construction",
@@ -44500,7 +44500,7 @@
       {
         "key": "reservoir_covered",
         "icon": "maki-water",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Reservoir Covered", "fr": "Réservoir d'eau enterré "},
         "terms": {"en": "", "fr": "Château d'eau"},
@@ -44516,7 +44516,7 @@
       {
         "key": "works",
         "icon": "maki-industry",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "address", "building_area", "product"],
         "lbl": {
           "en": "Factory",
@@ -44603,7 +44603,7 @@
       {
         "key": "mast",
         "icon": "temaki-mast",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["tower/type", "tower/construction", "height"],
         "lbl": {
           "en": "Mast",
@@ -44684,7 +44684,7 @@
       {
         "key": "street_cabinet",
         "icon": "fa-cube",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "ref",
           "operator",
@@ -44742,7 +44742,7 @@
       {
         "key": "silo",
         "icon": "temaki-silo",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["crop", "building_area"],
         "lbl": {
           "en": "Silo",
@@ -44826,7 +44826,7 @@
       {
         "key": "monitoring_station",
         "icon": "thermometer-half-solid",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["monitoring_multi", "operator", "manufacturer"],
         "lbl": {
           "en": "Monitoring Station",
@@ -44889,7 +44889,7 @@
       {
         "key": "windmill",
         "icon": "maki-windmill",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["building_area"],
         "lbl": {
           "en": "Windmill",
@@ -44969,7 +44969,7 @@
       {
         "key": "watermill",
         "icon": "maki-watermill",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["building_area"],
         "lbl": {
           "en": "Watermill",
@@ -45048,7 +45048,7 @@
       {
         "key": "chimney",
         "icon": "maki-industry",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "material", "height"],
         "lbl": {
           "en": "Chimney",
@@ -45134,7 +45134,7 @@
       {
         "key": "adit",
         "icon": "maki-triangle",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "resource", "direction"],
         "lbl": {
           "en": "Adit",
@@ -45221,7 +45221,7 @@
       {
         "key": "dovecote",
         "icon": "fa-dove-solid",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Dovecote", "fr": "Pigeonnier"},
         "terms": {"en": "", "fr": "Colombier"},
@@ -45237,7 +45237,7 @@
       {
         "key": "snow_cannon",
         "icon": "mi-snow",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Snow Cannon", "fr": "Canon à neige"},
         "terms": {"en": "", "fr": "enneigeur"},
@@ -45253,7 +45253,7 @@
       {
         "key": "pumping_station",
         "icon": "maki-water",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Pumping Station",
@@ -45332,7 +45332,7 @@
       {
         "key": "crane",
         "icon": "temaki-crane",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "manufacturer", "height", "crane/type"],
         "lbl": {
           "en": "Crane",
@@ -45406,7 +45406,7 @@
       {
         "key": "mineshaft",
         "icon": "maki-triangle",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "resource"],
         "lbl": {
           "en": "Mineshaft",
@@ -45458,7 +45458,7 @@
       {
         "key": "antenna",
         "icon": "temaki-antenna",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "communication_multi",
           "operator",
@@ -45530,7 +45530,7 @@
       {
         "key": "beacon",
         "icon": "maki-communications-tower",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["name", "height"],
         "lbl": {
           "en": "Beacon",
@@ -45572,7 +45572,7 @@
       {
         "key": "beehive",
         "icon": "fa-archive",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["ref", "operator", "seasonal", "height", "colour"],
         "lbl": {
           "en": "Beehive",
@@ -45616,7 +45616,7 @@
       },
       {
         "key": "breakwater",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["material", "seamark/type"],
         "lbl": {
           "en": "Breakwater",
@@ -45706,7 +45706,7 @@
       {
         "key": "bunker_silo",
         "icon": "temaki-silo",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["content"],
         "lbl": {
           "en": "Bunker Silo",
@@ -45758,7 +45758,7 @@
       {
         "key": "cairn",
         "icon": "temaki-cairn",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Cairn",
@@ -45798,7 +45798,7 @@
       {
         "key": "clearcut",
         "icon": "maki-logging",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Clearcut Forest",
@@ -45856,7 +45856,7 @@
       {
         "key": "cutline",
         "icon": "maki-logging",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Cut line",
@@ -45944,7 +45944,7 @@
       },
       {
         "key": "dyke",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Levee",
@@ -45984,7 +45984,7 @@
       {
         "key": "gasometer",
         "icon": "temaki-storage_tank",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["content", "building_area"],
         "lbl": {
           "en": "Gasometer",
@@ -46058,7 +46058,7 @@
       },
       {
         "key": "groyne",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["material", "seamark/type"],
         "lbl": {
           "en": "Groyne",
@@ -46131,7 +46131,7 @@
       },
       {
         "icon": "temaki-manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "label", "ref"],
         "lbl": {
           "en": "Manhole",
@@ -46161,7 +46161,7 @@
       {
         "key": "obelisk",
         "icon": "maki-monument",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["name", "inscription", "height", "material", "colour"],
         "lbl": {
           "en": "Obelisk",
@@ -46202,7 +46202,7 @@
       },
       {
         "key": "observatory",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "name",
           "operator",
@@ -46277,7 +46277,7 @@
       {
         "key": "petroleum_well",
         "icon": "temaki-oil_well",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Oil Well",
@@ -46358,7 +46358,7 @@
       {
         "key": "torii",
         "icon": "temaki-shinto",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["height", "material", "colour", "lit"],
         "lbl": {
           "en": "Torii",
@@ -46400,7 +46400,7 @@
       {
         "key": "tunnel",
         "icon": "tnp-2009642",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["name", "layer", "width", "length", "height"],
         "lbl": {
           "en": "Tunnel Area",
@@ -46454,7 +46454,7 @@
       {
         "key": "utility_pole",
         "icon": "temaki-utility_pole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["ref", "operator", "utility_semi", "height", "material"],
         "lbl": {
           "en": "Utility Pole",
@@ -46490,7 +46490,7 @@
       {
         "key": "water_works",
         "icon": "maki-water",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["name", "operator", "address"],
         "lbl": {
           "en": "Water Works",
@@ -46573,7 +46573,7 @@
       },
       {
         "icon": "temaki-manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "ref"],
         "lbl": {"en": "Storm Drain"},
         "terms": {"en": "cover, drain, hole, rain, sewer, sewage, storm"},
@@ -46586,7 +46586,7 @@
       },
       {
         "icon": "temaki-gas_manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "ref"],
         "lbl": {"en": "Gas Utility Manhole"},
         "terms": {"en": "cover, gas, heat, hole, utility"},
@@ -46599,7 +46599,7 @@
       },
       {
         "icon": "temaki-power_manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "ref"],
         "lbl": {"en": "Power Utility Manhole"},
         "terms": {"en": "cover, hole, electric, hole, power, utility"},
@@ -46612,7 +46612,7 @@
       },
       {
         "icon": "temaki-waste_manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "ref"],
         "lbl": {"en": "Sewer Utility Manhole"},
         "terms": {"en": "cover, drain, hole, sewer, sewage, utility"},
@@ -46625,7 +46625,7 @@
       },
       {
         "icon": "temaki-cable_manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "ref"],
         "lbl": {"en": "Telecom Utility Manhole"},
         "terms": {
@@ -46640,7 +46640,7 @@
       },
       {
         "icon": "temaki-waste_manhole",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["operator", "ref"],
         "lbl": {"en": "Water Utility Manhole"},
         "terms": {"en": "cover, drinking, hole, utility, water"},
@@ -46654,7 +46654,7 @@
       {
         "key": "mast",
         "icon": "temaki-mast_communication",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["communication_multi"],
         "lbl": {"en": "Communication Mast", "fr": "Mât de communication"},
         "terms": {
@@ -46671,7 +46671,7 @@
       {
         "key": "mast",
         "icon": "temaki-mast_communication",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Mobile Phone Mast", "fr": "Mât de téléphonie mobile"},
         "terms": {
@@ -46692,7 +46692,7 @@
       {
         "key": "mast",
         "icon": "temaki-mast_communication",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Radio Broadcast Mast",
@@ -46716,7 +46716,7 @@
       {
         "key": "mast",
         "icon": "temaki-mast_communication",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {
           "en": "Television Broadcast Mast",
@@ -46740,7 +46740,7 @@
       {
         "key": "pier",
         "icon": "temaki-pedestrian",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Floating Pier", "fr": "Jetée flottante"},
         "terms": {
@@ -46756,7 +46756,7 @@
       {
         "key": "pipeline",
         "icon": "iD-pipeline-line",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Underground Pipeline", "fr": "Pipeline souterrain"},
         "terms": {
@@ -46781,7 +46781,7 @@
       {
         "key": "storage_tank",
         "icon": "temaki-storage_tank",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Water Tank", "fr": "Réservoir d'eau"},
         "terms": {"en": "cistern, water tower", "fr": "réservoir,eau,citerne"},
@@ -46794,7 +46794,7 @@
       {
         "key": "surveillance",
         "icon": "temaki-security_camera",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [
           "surveillance",
           "surveillance/type",
@@ -46818,7 +46818,7 @@
       {
         "key": "tower",
         "icon": "fas-bell",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Bell Tower", "fr": "Clocher"},
         "terms": {
@@ -46835,7 +46835,7 @@
       {
         "key": "tower",
         "icon": "temaki-tower_communication",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": ["communication_multi"],
         "lbl": {"en": "Communication Tower", "fr": "Tour de communication"},
         "terms": {
@@ -46852,7 +46852,7 @@
       {
         "key": "tower",
         "icon": "maki-castle",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Fortified Tower", "fr": "Tour fortifiée"},
         "terms": {
@@ -46869,7 +46869,7 @@
       {
         "key": "tower",
         "icon": "temaki-tower",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Minaret", "fr": "Minaret"},
         "terms": {
@@ -46886,7 +46886,7 @@
       {
         "key": "tower",
         "icon": "temaki-tower",
-        "markerColor": "#D3D3D3",
+        "markerColor": "#4A4A4A",
         "presets": [],
         "lbl": {"en": "Observation Tower", "fr": "Tour d'observation"},
         "terms": {

@@ -100,7 +100,6 @@ exports.generateSprites = () => {
             let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon
             if (iconsMarkersStr.indexOf(strIcM) == -1) {
                 iconsMarkersStr.push(strIcM);
-             
                 generateMarkerIcon(tags[key].values[i].icon, "#ffffff", tags[key].values[i].markerColor, tags[key].values[i].geometry)
             }
         }
@@ -194,9 +193,8 @@ exports.generateSprites = () => {
     }
 
     // just icons sprites for interface
-    const generateIconSprites = async () => {
-        console.info('Sprites for Ui')
-        const factor = 2;
+    const generateIconSprites = async (factor) => {
+        console.info('Sprites for Ui X',factor)
         const pngFolder = path.join(outputTmp, 'PNG_icons');
         await fs.emptyDir(pngFolder)
         for (let svgFileName of iconsUsed){
@@ -218,7 +216,7 @@ exports.generateSprites = () => {
                 }
 
                 const outFileName = 'iconsSprites';// factor === 1 ? 'sprites' : `sprites@${factor}x`
-                fs.writeFileSync(path.join(outPathIconSprites, outFileName + '.png'), result.image)
+                fs.writeFileSync(path.join(outPathIconSprites, `${outFileName}@x${factor}.png`), result.image)
                 // await sharp(result.image).toFile(path.join(outPath, outFileName + '.png'))
 
                 const jsonSprites = {};
@@ -228,10 +226,10 @@ exports.generateSprites = () => {
                     // console.log(basename)
                     jsonSprites[basename] = { ...result.coordinates[k], "pixelRatio": factor }
                 }
-                fs.writeFileSync(path.join(outPathIconSprites, outFileName + '.json'), JSON.stringify(jsonSprites));
+                fs.writeFileSync(path.join(outPathIconSprites, `${outFileName}@x${factor}.json`), JSON.stringify(jsonSprites));
                 await fs.remove(pngFolder)
 
-                resolve({ 'json': path.join(outPath, outFileName + '.json'), 'png': path.join(outPath, outFileName + '.png') })
+                resolve({ 'json': path.join(outPath, `${outFileName}@x${factor}.json`), 'png': path.join(outPath, `${outFileName}@x${factor}.png`) })
 
             });
 
@@ -242,7 +240,9 @@ exports.generateSprites = () => {
     
     return Promise.all(
     [
-        generateIconSprites(),
+        generateIconSprites(1),
+        generateIconSprites(2),
+        generateIconSprites(3),
         generateSprites(outPath, 1), 
         generateSprites(outPath, 2), 
         generateSprites(outPath, 3)

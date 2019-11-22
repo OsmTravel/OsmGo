@@ -685,7 +685,7 @@ export class MapService {
       if (!features.length) {
         return;
       }
-
+      console.log(features);
       if (!this.configService.platforms.includes('hybrid')){
         window.navigator.vibrate(50);
       }else {
