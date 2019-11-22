@@ -19680,5 +19680,186 @@
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
     ]
+  },
+  "voltage": {
+    "key": "voltage",
+    "type": "text",
+    "lbl": {"en": "Voltage"},
+    "iDtype": "combo"
+  },
+  "generator/source": {
+    "key": "generator:source",
+    "type": "text",
+    "lbl": {"en": "Source"},
+    "iDtype": "combo"
+  },
+  "generator/method": {
+    "key": "generator:method",
+    "type": "text",
+    "lbl": {"en": "Method"},
+    "iDtype": "combo"
+  },
+  "generator/type": {
+    "key": "generator:type",
+    "type": "text",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "plant/output/electricity": {
+    "key": "plant:output:electricity",
+    "type": "text",
+    "placeholder": "500 MW, 1000 MW, 2000 MW...",
+    "lbl": {"en": "Power Output"}
+  },
+  "line_attachment": {
+    "key": "line_attachment",
+    "type": "text",
+    "lbl": {"en": "Line Attachment"},
+    "iDtype": "combo"
+  },
+  "switch": {
+    "key": "switch",
+    "type": "list",
+    "lbl": {"en": "Type"},
+    "options": [
+      {"v": "mechanical", "lbl": {"en": "Mechanical"}},
+      {"v": "circuit_breaker", "lbl": {"en": "Circuit Breaker"}},
+      {"v": "disconnector", "lbl": {"en": "Disconnector"}},
+      {"v": "earthing", "lbl": {"en": "Earthing"}}
+    ],
+    "iDtype": "combo"
+  },
+  "cables": {
+    "key": "cables",
+    "type": "number",
+    "minValue": 1,
+    "placeholder": "1, 2, 3...",
+    "lbl": {"en": "Cables"}
+  },
+  "design": {
+    "key": "design",
+    "type": "text",
+    "lbl": {"en": "Design"},
+    "iDtype": "combo"
+  },
+  "transformer": {
+    "key": "transformer",
+    "type": "list",
+    "lbl": {"en": "Type"},
+    "options": [
+      {"v": "distribution", "lbl": {"en": "Distribution"}},
+      {"v": "generator", "lbl": {"en": "Generator"}},
+      {"v": "converter", "lbl": {"en": "Converter"}},
+      {"v": "traction", "lbl": {"en": "Traction"}},
+      {"v": "auto", "lbl": {"en": "Autotransformer"}},
+      {"v": "phase_angle_regulator", "lbl": {"en": "Phase Angle Regulator"}},
+      {"v": "auxiliary", "lbl": {"en": "Auxiliary"}},
+      {"v": "yes", "lbl": {"en": "Unknown"}}
+    ],
+    "iDtype": "combo"
+  },
+  "rating": {
+    "key": "rating",
+    "type": "text",
+    "snake_case": false,
+    "lbl": {"en": "Power Rating"},
+    "iDtype": "combo"
+  },
+  "devices": {
+    "key": "devices",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "1, 2, 3...",
+    "lbl": {"en": "Devices"}
+  },
+  "phases": {
+    "key": "phases",
+    "type": "number",
+    "minValue": 1,
+    "placeholder": "1, 2, 3...",
+    "lbl": {"en": "Phases"}
+  },
+  "frequency": {
+    "key": "frequency",
+    "type": "text",
+    "lbl": {"en": "Operating Frequency"},
+    "iDtype": "combo"
+  },
+  "voltage/primary": {
+    "key": "voltage:primary",
+    "type": "text",
+    "lbl": {"en": "Primary Voltage"},
+    "iDtype": "combo"
+  },
+  "voltage/secondary": {
+    "key": "voltage:secondary",
+    "type": "text",
+    "lbl": {"en": "Secondary Voltage"},
+    "iDtype": "combo"
+  },
+  "voltage/tertiary": {
+    "key": "voltage:tertiary",
+    "type": "text",
+    "lbl": {"en": "Tertiary Voltage"},
+    "iDtype": "combo"
+  },
+  "windings": {
+    "key": "windings",
+    "type": "number",
+    "minValue": 1,
+    "placeholder": "1, 2, 3...",
+    "lbl": {"en": "Windings"}
+  },
+  "windings/configuration": {
+    "key": "windings:configuration",
+    "type": "list",
+    "lbl": {"en": "Windings Configuration"},
+    "options": [
+      {"v": "star", "lbl": {"en": "Star / Wye"}},
+      {"v": "delta", "lbl": {"en": "Delta"}},
+      {"v": "open-delta", "lbl": {"en": "Open Delta"}},
+      {"v": "zigzag", "lbl": {"en": "Zig Zag"}},
+      {"v": "open", "lbl": {"en": "Open"}},
+      {"v": "scott", "lbl": {"en": "Scott"}},
+      {"v": "leblanc", "lbl": {"en": "Leblanc"}}
+    ],
+    "iDtype": "combo"
+  },
+  "bollard": {
+    "key": "bollard",
+    "type": "text",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "fence_type": {
+    "key": "fence_type",
+    "type": "text",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "kerb": {
+    "key": "kerb",
+    "type": "text",
+    "lbl": {"en": "Curb"},
+    "iDtype": "combo"
+  },
+  "kerb/height": {
+    "key": "kerb:height",
+    "type": "text",
+    "snake_case": false,
+    "lbl": {"en": "Height"},
+    "iDtype": "combo"
+  },
+  "stile": {
+    "key": "stile",
+    "type": "text",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
+  },
+  "wall": {
+    "key": "wall",
+    "type": "text",
+    "lbl": {"en": "Type"},
+    "iDtype": "combo"
   }
 }

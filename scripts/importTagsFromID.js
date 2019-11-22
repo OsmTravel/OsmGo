@@ -20,7 +20,7 @@ const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
 
 // const osmgoPkeys = Object.keys(tagsOsmgo);
 
-const osmgoPkeys = ['playground'];
+const osmgoPkeys = ['barrier'];
 
 
 let idTagsFieldsListId = []; // list of id of fields to add...

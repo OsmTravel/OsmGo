@@ -55176,5 +55176,663 @@
         "id": "playground/zipwire"
       }
     ]
+  },
+  "power": {
+    "lbl": {"en": "power", "fr": "Énergie"},
+    "values": [
+      {
+        "key": "sub_station",
+        "icon": "temaki-power",
+        "markerColor": "#2f3242",
+        "presets": ["operator", "building", "ref"],
+        "lbl": {"en": "Substation"},
+        "terms": {"en": ""},
+        "geometry": ["point", "area"],
+        "iDRef": "power/sub_station",
+        "tags": {"power": "sub_station"},
+        "reference": {"key": "power", "value": "substation"},
+        "id": "power/sub_station"
+      },
+      {
+        "key": "cable",
+        "icon": "",
+        "markerColor": "#2f3242",
+        "presets": ["name", "operator", "voltage", "ref", "layer"],
+        "lbl": {"en": "Underground Power Cable"},
+        "terms": {"en": ""},
+        "geometry": ["line"],
+        "iDRef": "power/cable/underground",
+        "tags": {"power": "cable", "location": "underground"},
+        "addTags": {"power": "cable", "location": "underground", "layer": "-1"},
+        "id": "power/cable/underground"
+      },
+      {
+        "key": "generator",
+        "icon": "temaki-power",
+        "markerColor": "#2f3242",
+        "presets": [
+          "operator",
+          "generator/source",
+          "generator/method",
+          "generator/type",
+          "ref"
+        ],
+        "lbl": {"en": "Power Generator"},
+        "terms": {"en": "hydro, solar, turbine, wind"},
+        "geometry": ["point", "vertex", "area"],
+        "iDRef": "power/generator",
+        "moreFields": ["level", "manufacturer"],
+        "tags": {"power": "generator"},
+        "id": "power/generator"
+      },
+      {
+        "key": "generator",
+        "icon": "fas-solar-panel",
+        "markerColor": "#2f3242",
+        "presets": ["operator", "ref"],
+        "lbl": {"en": "Solar Panel"},
+        "terms": {"en": "photovoltaic module, PV module, sunlight"},
+        "geometry": ["area", "point", "vertex"],
+        "iDRef": "power/generator/method/photovoltaic",
+        "moreFields": ["manufacturer"],
+        "tags": {"power": "generator", "generator:method": "photovoltaic"},
+        "addTags": {
+          "power": "generator",
+          "generator:source": "solar",
+          "generator:method": "photovoltaic",
+          "generator:type": "solar_photovoltaic_panel",
+          "generator:output:electricity": "yes"
+        },
+        "reference": {"key": "generator:method", "value": "photovoltaic"},
+        "id": "power/generator/method/photovoltaic"
+      },
+      {
+        "key": "generator",
+        "icon": "temaki-power",
+        "markerColor": "#2f3242",
+        "presets": ["operator", "generator/method", "generator/type", "ref"],
+        "lbl": {"en": "Water Turbine"},
+        "terms": {
+          "en": "dam, generator, francis turbine, hydroelectricity, kaplan turbine, pelton turbine"
+        },
+        "geometry": ["point", "vertex", "area"],
+        "iDRef": "power/generator/source/hydro",
+        "moreFields": ["height", "manufacturer"],
+        "tags": {"power": "generator", "generator:source": "hydro"},
+        "addTags": {
+          "power": "generator",
+          "generator:source": "hydro",
+          "generator:output:electricity": "yes"
+        },
+        "reference": {"key": "generator:source", "value": "hydro"},
+        "id": "power/generator/source/hydro"
+      },
+      {
+        "key": "generator",
+        "icon": "temaki-radiation",
+        "markerColor": "#2f3242",
+        "presets": [
+          "operator",
+          "generator/source",
+          "generator/method",
+          "generator/type",
+          "ref"
+        ],
+        "lbl": {"en": "Nuclear Reactor"},
+        "terms": {"en": "fission, generator, nuclear, nuke, reactor"},
+        "geometry": ["point", "vertex", "area"],
+        "iDRef": "power/generator/source/nuclear",
+        "moreFields": ["manufacturer"],
+        "tags": {
+          "power": "generator",
+          "generator:source": "nuclear",
+          "generator:method": "fission"
+        },
+        "reference": {"key": "generator:source", "value": "nuclear"},
+        "id": "power/generator/source/nuclear"
+      },
+      {
+        "key": "generator",
+        "icon": "temaki-wind_turbine",
+        "markerColor": "#2f3242",
+        "presets": ["operator", "generator/type", "height", "ref"],
+        "lbl": {"en": "Wind Turbine"},
+        "terms": {"en": "generator, turbine, windmill, wind"},
+        "geometry": ["point", "vertex", "area"],
+        "iDRef": "power/generator/source/wind",
+        "moreFields": ["manufacturer"],
+        "tags": {
+          "power": "generator",
+          "generator:source": "wind",
+          "generator:method": "wind_turbine"
+        },
+        "reference": {"key": "generator:source", "value": "wind"},
+        "id": "power/generator/source/wind"
+      },
+      {
+        "key": "line",
+        "icon": "temaki-power_tower",
+        "markerColor": "#2f3242",
+        "presets": ["name", "operator", "voltage", "ref", "layer"],
+        "lbl": {"en": "Power Line"},
+        "terms": {
+          "en": "electric power transmission line, high voltage line, high tension line"
+        },
+        "geometry": ["line"],
+        "iDRef": "power/line",
+        "tags": {"power": "line"},
+        "id": "power/line"
+      },
+      {
+        "key": "minor_line",
+        "icon": "iD-power-line",
+        "markerColor": "#2f3242",
+        "presets": ["name", "operator", "voltage", "ref", "layer"],
+        "lbl": {"en": "Minor Power Line"},
+        "terms": {"en": ""},
+        "geometry": ["line"],
+        "iDRef": "power/minor_line",
+        "tags": {"power": "minor_line"},
+        "id": "power/minor_line"
+      },
+      {
+        "key": "plant",
+        "icon": "maki-industry",
+        "markerColor": "#2f3242",
+        "presets": [
+          "name",
+          "operator",
+          "address",
+          "plant/output/electricity",
+          "start_date"
+        ],
+        "lbl": {"en": "Power Station Grounds"},
+        "terms": {"en": "coal, gas, generat*, hydro, nuclear, power, station"},
+        "geometry": ["area"],
+        "iDRef": "power/plant",
+        "tags": {"power": "plant"},
+        "addTags": {"power": "plant", "landuse": "industrial"},
+        "id": "power/plant"
+      },
+      {
+        "key": "pole",
+        "icon": "temaki-utility_pole",
+        "markerColor": "#2f3242",
+        "presets": ["ref", "operator", "height", "material", "line_attachment"],
+        "lbl": {"en": "Power Pole"},
+        "terms": {"en": ""},
+        "geometry": ["point", "vertex"],
+        "iDRef": "power/pole",
+        "moreFields": ["manufacturer"],
+        "tags": {"power": "pole"},
+        "id": "power/pole"
+      },
+      {
+        "key": "substation",
+        "icon": "temaki-power",
+        "markerColor": "#2f3242",
+        "presets": ["operator", "building", "ref"],
+        "lbl": {"en": "Substation"},
+        "terms": {"en": ""},
+        "geometry": ["area", "point"],
+        "iDRef": "power/substation",
+        "tags": {"power": "substation"},
+        "id": "power/substation"
+      },
+      {
+        "key": "switch",
+        "icon": "temaki-power_switch",
+        "markerColor": "#2f3242",
+        "presets": [
+          "switch",
+          "operator",
+          "location",
+          "cables",
+          "voltage",
+          "ref"
+        ],
+        "lbl": {"en": "Power Switch"},
+        "terms": {"en": ""},
+        "geometry": ["point", "vertex"],
+        "iDRef": "power/switch",
+        "tags": {"power": "switch"},
+        "id": "power/switch"
+      },
+      {
+        "key": "tower",
+        "icon": "temaki-power_tower",
+        "markerColor": "#2f3242",
+        "presets": [
+          "ref",
+          "operator",
+          "design",
+          "height",
+          "material",
+          "line_attachment"
+        ],
+        "lbl": {"en": "High-Voltage Tower"},
+        "terms": {"en": "power"},
+        "geometry": ["point", "vertex"],
+        "iDRef": "power/tower",
+        "moreFields": ["manufacturer"],
+        "tags": {"power": "tower"},
+        "id": "power/tower"
+      },
+      {
+        "key": "transformer",
+        "icon": "temaki-power_transformer",
+        "markerColor": "#2f3242",
+        "presets": [
+          "ref",
+          "operator",
+          "transformer",
+          "location",
+          "rating",
+          "devices",
+          "phases"
+        ],
+        "lbl": {"en": "Transformer"},
+        "terms": {"en": ""},
+        "geometry": ["point", "vertex"],
+        "iDRef": "power/transformer",
+        "moreFields": [
+          "frequency",
+          "manufacturer",
+          "voltage/primary",
+          "voltage/secondary",
+          "voltage/tertiary",
+          "windings",
+          "windings/configuration"
+        ],
+        "tags": {"power": "transformer"},
+        "id": "power/transformer"
+      }
+    ]
+  },
+  "barrier": {
+    "lbl": {"en": "barrier", "fr": "Barrière physique"},
+    "values": [
+      {
+        "key": "entrance",
+        "icon": "maki-entrance-alt1",
+        "markerColor": "#283d30",
+        "presets": [],
+        "lbl": {"en": "Entrance"},
+        "terms": {"en": ""},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/entrance",
+        "tags": {"barrier": "entrance"},
+        "id": "barrier/entrance"
+      },
+      {
+        "key": "block",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": ["access", "material"],
+        "lbl": {"en": "Block"},
+        "terms": {"en": ""},
+        "geometry": ["point", "vertex"],
+        "iDRef": "barrier/block",
+        "tags": {"barrier": "block"},
+        "id": "barrier/block"
+      },
+      {
+        "key": "bollard",
+        "icon": "temaki-silo",
+        "markerColor": "#283d30",
+        "presets": [
+          "access",
+          "bollard",
+          "height",
+          "material",
+          "colour",
+          "width"
+        ],
+        "lbl": {"en": "Bollard"},
+        "terms": {"en": ""},
+        "geometry": ["point", "vertex"],
+        "iDRef": "barrier/bollard",
+        "tags": {"barrier": "bollard"},
+        "moreFields": [],
+        "id": "barrier/bollard"
+      },
+      {
+        "key": "border_control",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": ["access", "building_area"],
+        "lbl": {"en": "Border Control"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "area"],
+        "iDRef": "barrier/border_control",
+        "moreFields": ["address", "email", "fax", "phone", "website"],
+        "tags": {"barrier": "border_control"},
+        "id": "barrier/border_control"
+      },
+      {
+        "key": "cattle_grid",
+        "icon": "maki-barrier",
+        "markerColor": "#283d30",
+        "presets": [],
+        "lbl": {"en": "Cattle Grid"},
+        "terms": {"en": ""},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/cattle_grid",
+        "tags": {"barrier": "cattle_grid"},
+        "id": "barrier/cattle_grid"
+      },
+      {
+        "key": "chain",
+        "icon": "maki-barrier",
+        "markerColor": "#283d30",
+        "presets": ["access"],
+        "lbl": {"en": "Chain"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/chain",
+        "tags": {"barrier": "chain"},
+        "id": "barrier/chain"
+      },
+      {
+        "key": "city_wall",
+        "icon": "temaki-wall",
+        "markerColor": "#283d30",
+        "presets": ["height", "material"],
+        "lbl": {"en": "City Wall"},
+        "terms": {"en": ""},
+        "geometry": ["line", "area"],
+        "iDRef": "barrier/city_wall",
+        "tags": {"barrier": "city_wall"},
+        "id": "barrier/city_wall"
+      },
+      {
+        "key": "cycle_barrier",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": ["access"],
+        "lbl": {"en": "Cycle Barrier"},
+        "terms": {"en": ""},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/cycle_barrier",
+        "tags": {"barrier": "cycle_barrier"},
+        "id": "barrier/cycle_barrier"
+      },
+      {
+        "key": "ditch",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": [],
+        "lbl": {"en": "Trench"},
+        "terms": {"en": ""},
+        "geometry": ["line", "area"],
+        "iDRef": "barrier/ditch",
+        "tags": {"barrier": "ditch"},
+        "id": "barrier/ditch"
+      },
+      {
+        "key": "fence",
+        "icon": "maki-fence",
+        "markerColor": "#283d30",
+        "presets": ["fence_type", "height", "material"],
+        "lbl": {"en": "Fence"},
+        "terms": {"en": ""},
+        "geometry": ["line"],
+        "iDRef": "barrier/fence",
+        "tags": {"barrier": "fence"},
+        "id": "barrier/fence"
+      },
+      {
+        "key": "fence",
+        "icon": "temaki-railing",
+        "markerColor": "#283d30",
+        "presets": [],
+        "lbl": {"en": "Railing"},
+        "terms": {"en": "railing, handrail, guard rail"},
+        "geometry": ["line"],
+        "iDRef": "barrier/fence/railing",
+        "tags": {"barrier": "fence", "fence_type": "railing"},
+        "id": "barrier/fence/railing"
+      },
+      {
+        "key": "gate",
+        "icon": "maki-barrier",
+        "markerColor": "#283d30",
+        "presets": ["access", "opening_hours"],
+        "lbl": {"en": "Gate"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/gate",
+        "tags": {"barrier": "gate"},
+        "id": "barrier/gate"
+      },
+      {
+        "key": "guard_rail",
+        "icon": "temaki-guard_rail",
+        "markerColor": "#283d30",
+        "presets": ["material"],
+        "lbl": {"en": "Guard Rail"},
+        "terms": {
+          "en": "guardrail, traffic barrier, crash barrier, median barrier, roadside barrier, Armco barrier"
+        },
+        "geometry": ["line"],
+        "iDRef": "barrier/guard_rail",
+        "tags": {"barrier": "guard_rail"},
+        "id": "barrier/guard_rail"
+      },
+      {
+        "key": "hedge",
+        "icon": "",
+        "markerColor": "#283d30",
+        "presets": ["height"],
+        "lbl": {"en": "Hedge"},
+        "terms": {"en": ""},
+        "geometry": ["line", "area"],
+        "iDRef": "barrier/hedge",
+        "tags": {"barrier": "hedge"},
+        "id": "barrier/hedge"
+      },
+      {
+        "key": "height_restrictor",
+        "icon": "temaki-car_wash",
+        "markerColor": "#283d30",
+        "presets": ["maxheight"],
+        "lbl": {"en": "Height Restrictor"},
+        "terms": {"en": ""},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/height_restrictor",
+        "tags": {"barrier": "height_restrictor"},
+        "id": "barrier/height_restrictor"
+      },
+      {
+        "key": "kerb",
+        "icon": "temaki-kerb-raised",
+        "markerColor": "#283d30",
+        "presets": ["kerb", "tactile_paving", "wheelchair"],
+        "lbl": {"en": "Curb"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/kerb",
+        "moreFields": ["material"],
+        "tags": {"barrier": "kerb"},
+        "id": "barrier/kerb"
+      },
+      {
+        "icon": "temaki-kerb-flush",
+        "markerColor": "#283d30",
+        "presets": ["kerb"],
+        "lbl": {"en": "Flush Curb"},
+        "terms": {"en": "even curb, level curb, tactile curb"},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/kerb/flush",
+        "tags": {"barrier": "kerb", "kerb": "flush"},
+        "addTags": {"barrier": "kerb", "kerb": "flush"},
+        "reference": {"key": "kerb", "value": "flush"},
+        "id": "barrier/kerb/flush"
+      },
+      {
+        "icon": "temaki-kerb-lowered",
+        "markerColor": "#283d30",
+        "presets": ["kerb", "kerb/height"],
+        "lbl": {"en": "Lowered Curb"},
+        "terms": {
+          "en": "curb cut, curb ramp, kerb ramp, dropped kerb, pram ramp"
+        },
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/kerb/lowered",
+        "tags": {"barrier": "kerb", "kerb": "lowered"},
+        "addTags": {"barrier": "kerb", "kerb": "lowered"},
+        "reference": {"key": "kerb", "value": "lowered"},
+        "id": "barrier/kerb/lowered"
+      },
+      {
+        "icon": "temaki-kerb-raised",
+        "markerColor": "#283d30",
+        "presets": ["kerb", "kerb/height"],
+        "lbl": {"en": "Raised Curb"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/kerb/raised",
+        "tags": {"barrier": "kerb", "kerb": "raised"},
+        "addTags": {"barrier": "kerb", "kerb": "raised"},
+        "reference": {"key": "kerb", "value": "raised"},
+        "id": "barrier/kerb/raised"
+      },
+      {
+        "icon": "temaki-kerb-rolled",
+        "markerColor": "#283d30",
+        "presets": ["kerb", "kerb/height"],
+        "lbl": {"en": "Rolled Curb"},
+        "terms": {"en": "gutter"},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/kerb/rolled",
+        "tags": {"barrier": "kerb", "kerb": "rolled"},
+        "addTags": {"barrier": "kerb", "kerb": "rolled"},
+        "reference": {"key": "kerb", "value": "rolled"},
+        "id": "barrier/kerb/rolled"
+      },
+      {
+        "key": "kissing_gate",
+        "icon": "maki-barrier",
+        "markerColor": "#283d30",
+        "presets": ["access"],
+        "lbl": {"en": "Kissing Gate"},
+        "terms": {"en": ""},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/kissing_gate",
+        "tags": {"barrier": "kissing_gate"},
+        "id": "barrier/kissing_gate"
+      },
+      {
+        "key": "lift_gate",
+        "icon": "temaki-lift_gate",
+        "markerColor": "#283d30",
+        "presets": ["access"],
+        "lbl": {"en": "Lift Gate"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "line"],
+        "iDRef": "barrier/lift_gate",
+        "tags": {"barrier": "lift_gate"},
+        "id": "barrier/lift_gate"
+      },
+      {
+        "key": "retaining_wall",
+        "icon": "temaki-wall",
+        "markerColor": "#283d30",
+        "presets": ["height", "material"],
+        "lbl": {"en": "Retaining Wall"},
+        "terms": {"en": ""},
+        "geometry": ["line", "area"],
+        "iDRef": "barrier/retaining_wall",
+        "tags": {"barrier": "retaining_wall"},
+        "id": "barrier/retaining_wall"
+      },
+      {
+        "key": "sally_port",
+        "icon": "fas-dungeon",
+        "markerColor": "#283d30",
+        "presets": [],
+        "lbl": {"en": "Sally Port"},
+        "terms": {"en": "Postern, castle side gate"},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/sally_port",
+        "tags": {"barrier": "sally_port"},
+        "id": "barrier/sally_port"
+      },
+      {
+        "key": "stile",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": ["access", "stile", "material"],
+        "lbl": {"en": "Stile"},
+        "terms": {"en": ""},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/stile",
+        "tags": {"barrier": "stile"},
+        "id": "barrier/stile"
+      },
+      {
+        "key": "toll_booth",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": [
+          "access",
+          "building_area",
+          "payment_multi",
+          "currency_multi"
+        ],
+        "lbl": {"en": "Toll Booth"},
+        "terms": {"en": ""},
+        "geometry": ["vertex", "area"],
+        "iDRef": "barrier/toll_booth",
+        "moreFields": [
+          "address",
+          "email",
+          "fax",
+          "opening_hours",
+          "phone",
+          "website"
+        ],
+        "tags": {"barrier": "toll_booth"},
+        "id": "barrier/toll_booth"
+      },
+      {
+        "key": "turnstile",
+        "icon": "maki-roadblock",
+        "markerColor": "#283d30",
+        "presets": ["access"],
+        "lbl": {"en": "Turnstile"},
+        "terms": {"en": "baffle gate, turnstyle"},
+        "geometry": ["vertex"],
+        "iDRef": "barrier/turnstile",
+        "tags": {"barrier": "turnstile"},
+        "id": "barrier/turnstile"
+      },
+      {
+        "key": "wall",
+        "icon": "temaki-wall",
+        "markerColor": "#283d30",
+        "presets": ["wall", "height", "material"],
+        "lbl": {"en": "Wall"},
+        "terms": {"en": ""},
+        "geometry": ["line", "area"],
+        "iDRef": "barrier/wall",
+        "tags": {"barrier": "wall"},
+        "id": "barrier/wall"
+      },
+      {
+        "key": "wall",
+        "icon": "temaki-wall",
+        "markerColor": "#283d30",
+        "presets": [],
+        "lbl": {"en": "Noise Barrier"},
+        "terms": {
+          "en": "acoustical barrier, noise wall, noisewall, sound barrier, sound berm, sound wall, soundberm, soundwall"
+        },
+        "geometry": ["line", "area"],
+        "iDRef": "barrier/wall/noise_barrier",
+        "tags": {"barrier": "wall", "wall": "noise_barrier"},
+        "id": "barrier/wall/noise_barrier"
+      }
+    ]
   }
 }
