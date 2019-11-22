@@ -3,7 +3,7 @@
     *ngFor="let tag of tags | filterDeprecatedTag | filterExcludeTagByCountryCode:countryTags | filterTagCongigByGeometry:geometriesFilter | filterByTagsContent:[languageTags, countryTags]:searchText;"
   >
     <td style="width:16px;" [style.background-color]="tag.markerColor">
-            <app-icon  [tagConfig]="tag"[jsonSprites]="jsonSprites">  </app-icon>
+            <app-icon  [icon]="tag.icon"[jsonSprites]="jsonSprites">  </app-icon>
     </td>
 
     <td (click)="addRemoveToBookmarks.emit(tag)" style="width:36px">

@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class IconComponent implements OnInit {
 
   @Input() jsonSprites;
-  @Input() tagConfig;
+  @Input() icon;
   currentSpriteConfig
   styleBackgroundPosition;
   devicePixelRatio;

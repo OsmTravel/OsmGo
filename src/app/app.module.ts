@@ -69,6 +69,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DisplayTagsPipe } from './pipes/display-tags.pipe';
 import { FilterTagCongigByGeometryPipe } from './pipes/filter-tag-congig-by-geometry.pipe';
+import { DialogMultiFeaturesComponent } from './components/dialog-multi-features/dialog-multi-features.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -86,7 +87,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
 
 @NgModule({
   declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage, LoginPage,
-    ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
+    ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,DialogMultiFeaturesComponent,
     ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent, 
     TagsListComponent, IconComponent,
 
@@ -100,7 +101,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FilterExcludeKeysPipe,
     FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterTagCongigByGeometryPipe,
   ],
-  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList],
+  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

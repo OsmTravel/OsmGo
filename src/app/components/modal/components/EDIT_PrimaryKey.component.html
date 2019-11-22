@@ -1,6 +1,6 @@
 <ion-card (click)="emitOpenModal()">
-		<div style=" width: 40px; height: 100%; position: absolute;" [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'">
-				<app-icon  class="iconImgPNG imgCenter" [tagConfig]="tagConfig" [jsonSprites]="jsonSprites">  </app-icon>
+		<div style=" width: 50px; height: 100%; position: absolute;" [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'">
+				<app-icon  class="iconImgPNG imgCenter" [icon]="tagConfig.icon" [jsonSprites]="jsonSprites">  </app-icon>
         </div>
 			<div class="primaryCardContent">
 

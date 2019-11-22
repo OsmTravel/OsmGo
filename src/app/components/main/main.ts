@@ -22,6 +22,7 @@ import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from 'src/app/services/states.service';
 
 import { Plugins } from '@capacitor/core';
+import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
 
 const { App } = Plugins;
 
@@ -79,6 +80,28 @@ export class MainPage implements AfterViewInit {
         }
       }
     });
+
+    mapService.eventShowDialogMultiFeatures.subscribe(async (features) => {
+    console.log('recieve')
+    const modal = await this.modalCtrl.create({
+      component: DialogMultiFeaturesComponent,
+      cssClass: 'dialog-multi-features',
+      componentProps: { features: features, jsonSprites: this.tagsService.jsonSprites }
+    });
+    await modal.present();
+
+    modal.onDidDismiss().then(d => {
+      if (d && d.data){
+        const feature = d.data
+        console.log(feature);
+       this.mapService.selectFeature(feature); // bof
+      }
+      // console.log(d)
+    })
+
+    });
+
+
 
     mapService.eventShowModal.subscribe(async (_data) => {
       this.configService.freezeMapRenderer = true;

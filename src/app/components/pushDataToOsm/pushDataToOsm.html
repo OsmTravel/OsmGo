@@ -77,7 +77,7 @@
         <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash" class="iconType" ></ion-icon>
       </td>
       <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
-          <app-icon  class="imgCenter iconImg" [tagConfig]="item.properties" [jsonSprites]="tagsService.jsonSprites">  </app-icon>
+          <app-icon  class="imgCenter iconImg" [icon]="item.properties.icon" [jsonSprites]="tagsService.jsonSprites">  </app-icon>
              
      
       </td>

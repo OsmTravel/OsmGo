@@ -1,0 +1,43 @@
+
+.iconType{
+    color: black;
+    height: 25px;
+    width: 25px;
+}
+
+.iconGeometryType{
+    color: black;
+    height: 35px;
+    width: 35px;
+}
+
+table{
+    width: 100%;
+}
+
+.noname{
+    color: rgb(172, 172, 172);
+}
+
+td{
+    padding: 4px;
+}
+th{
+    text-align: left;
+}
+
+.spanId{
+    color: rgb(172, 172, 172);
+    font-size: 0.8em;
+}
+
+.content{
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    // height: 100%;
+    // margin-top: 1em;
+    overflow-x: auto;
+}

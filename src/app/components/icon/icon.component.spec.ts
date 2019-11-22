@@ -3,7 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IconComponent } from './icon.component';
 const jsonSprites : any = require('../../../assets/iconsSprites@x2.json')
-const tagConfig: any = require('../../../assets/tags&presets/tags.json');
 describe('IconComponent', () => {
   let component: IconComponent;
   let fixture: ComponentFixture<IconComponent>;
@@ -20,7 +19,7 @@ describe('IconComponent', () => {
     fixture = TestBed.createComponent(IconComponent);
     component = fixture.componentInstance;
     component.jsonSprites = jsonSprites
-    component.tagConfig= tagConfig
+    component.icon= 'maki-bicycle'
     fixture.detectChanges();
     
   });

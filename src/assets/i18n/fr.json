@@ -6,7 +6,11 @@
     "CONFIRM": "Confirmer",
     "ADD": "Ajouter",
     "VALIDATE": "Valider",
-    "OK": "Ok"
+    "OK": "Ok",
+    "UNKNOWN": "Inconnu",
+    "UNDEFINED": "Indéfini",
+    "NAME": "Nom",
+    "ID": "Id"
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Vraiment ?",

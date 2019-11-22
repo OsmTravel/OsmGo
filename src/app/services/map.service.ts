@@ -114,6 +114,7 @@ export class MapService {
   eventOsmElementCreated = new EventEmitter();
   eventMarkerReDraw = new EventEmitter();
   eventMarkerChangedReDraw = new EventEmitter();
+  eventShowDialogMultiFeatures = new EventEmitter();
   markersLayer = [];
 
 
@@ -701,43 +702,45 @@ export class MapService {
       const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
-        const inputsParams: any = uniqFeaturesById.map((f, i) => {
-          const tags = JSON.parse(f['properties'].tags);
-          const pk = JSON.parse(f['properties'].primaryTag);
-          const name = tags.name || '?';
-          const label = `${name}  (${pk.k} = ${pk.v})`;
-          return {
-            type: 'radio',
-            label: label,
-            value: f['properties']['id'],
-            checked: i === 0
-          };
+        console.log('eventShowDialogMultiFeatures.emit');
+        this.eventShowDialogMultiFeatures.emit(uniqFeaturesById);
+        // const inputsParams: any = uniqFeaturesById.map((f, i) => {
+        //   const tags = JSON.parse(f['properties'].tags);
+        //   const pk = JSON.parse(f['properties'].primaryTag);
+        //   const name = tags.name || '?';
+        //   const label = `${name}  (${pk.k} = ${pk.v})`;
+        //   return {
+        //     type: 'radio',
+        //     label: label,
+        //     value: f['properties']['id'],
+        //     checked: i === 0
+        //   };
 
-        });
-        const alert = await this.alertCtrl.create(
-          {
-            header: this.translate.instant('MAIN.WHAT_ITEM'),
-            inputs: inputsParams,
-            buttons: [
-              {
-                text: this.translate.instant('SHARED.CANCEL'),
-                role: 'cancel',
-                cssClass: 'secondary',
-                handler: () => {
+        // });
+        // const alert = await this.alertCtrl.create(
+        //   {
+        //     header: this.translate.instant('MAIN.WHAT_ITEM'),
+        //     inputs: inputsParams,
+        //     buttons: [
+        //       {
+        //         text: this.translate.instant('SHARED.CANCEL'),
+        //         role: 'cancel',
+        //         cssClass: 'secondary',
+        //         handler: () => {
 
-                }
-              }, {
-                text: this.translate.instant('SHARED.OK'),
-                handler: (data: any) => {
-                  const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
-                  this.selectFeature(selectedFeature[0]);
-                }
-              }
-            ]
-          }
-        );
+        //         }
+        //       }, {
+        //         text: this.translate.instant('SHARED.OK'),
+        //         handler: (data: any) => {
+        //           const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
+        //           this.selectFeature(selectedFeature[0]);
+        //         }
+        //       }
+        //     ]
+        //   }
+        // );
 
-        await alert.present();
+        // await alert.present();
 
       } else {
         this.selectFeature(uniqFeaturesById[0]);
