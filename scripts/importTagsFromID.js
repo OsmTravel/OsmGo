@@ -18,9 +18,9 @@ const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
 const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8')).presets;
 const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
 
-const osmgoPkeys = Object.keys(tagsOsmgo);
+// const osmgoPkeys = Object.keys(tagsOsmgo);
 
-// const osmgoPkeys = ['aerialway'];
+const osmgoPkeys = ['playground'];
 
 
 let idTagsFieldsListId = []; // list of id of fields to add...

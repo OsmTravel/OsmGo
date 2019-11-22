@@ -19658,5 +19658,27 @@
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
     ]
+  },
+  "attraction": {
+    "key": "attraction",
+    "type": "text",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
+  },
+  "playground": {
+    "key": "playground",
+    "type": "text",
+    "lbl": {"en": "Type", "fr": "Type"},
+    "iDtype": "combo"
+  },
+  "baby_seat": {
+    "key": "baby",
+    "type": "select",
+    "lbl": {"en": "Baby Seat", "fr": "Siège bébé"},
+    "iDtype": "check",
+    "options": [
+      {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
+      {"v": "no", "lbl": {"en": "no", "fr": "Non"}}
+    ]
   }
 }

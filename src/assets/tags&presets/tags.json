@@ -54723,5 +54723,458 @@
         "id": "aerialway/zip_line"
       }
     ]
+  },
+  "attraction": {
+    "lbl": {"en": "attraction", "fr": "Attraction touristique"},
+    "values": [
+      {
+        "key": "amusement_ride",
+        "icon": "maki-amusement-park",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "Amusement Ride", "fr": "Manège"},
+        "terms": {
+          "en": "theme park,carnival ride",
+          "fr": "manège,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/amusement_ride",
+        "moreFields": [
+          "address",
+          "email",
+          "fax",
+          "opening_hours",
+          "payment_multi",
+          "phone",
+          "website",
+          "max_age",
+          "min_age"
+        ],
+        "tags": {"attraction": "amusement_ride"},
+        "id": "attraction/amusement_ride"
+      },
+      {
+        "key": "animal",
+        "icon": "maki-zoo",
+        "markerColor": "#0065A9",
+        "presets": ["name", "operator", "species/wikidata"],
+        "lbl": {"en": "Animal Enclosure", "fr": "Enclos"},
+        "terms": {
+          "en": "amphibian,animal park,aquarium,bear,bird,fish,insect,lion,mammal,monkey,penguin,reptile,safari,theme park,tiger,zoo",
+          "fr": "enclos,animal,animaux,cage,lion,tigre,ours,zoo,parc zoologique,parc animalier,safari"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/animal",
+        "tags": {"attraction": "animal"},
+        "id": "attraction/animal"
+      },
+      {
+        "key": "big_wheel",
+        "icon": "maki-amusement-park",
+        "markerColor": "#0065A9",
+        "presets": ["attraction", "fee", "charge_fee", "height"],
+        "lbl": {"en": "Big Wheel", "fr": "Grande Roue"},
+        "terms": {
+          "en": "ferris wheel,theme park,amusement ride",
+          "fr": "grande roue,roue,attraction,parc d'attraction"
+        },
+        "geometry": ["point"],
+        "iDRef": "attraction/big_wheel",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "big_wheel"},
+        "id": "attraction/big_wheel"
+      },
+      {
+        "key": "bumper_car",
+        "icon": "fas-car-crash",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "Bumper Cars"},
+        "terms": {"en": "theme park,dodgem cars,autoscooter"},
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/bumper_car",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "bumper_car"},
+        "id": "attraction/bumper_car"
+      },
+      {
+        "key": "bungee_jumping",
+        "icon": "maki-pitch",
+        "markerColor": "#0065A9",
+        "presets": ["height"],
+        "lbl": {"en": "Bungee Jumping", "fr": "Saut à l'élastique"},
+        "terms": {
+          "en": "theme park,bungy jumping,jumping platform",
+          "fr": "saut à l'élastique,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/bungee_jumping",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "bungee_jumping"},
+        "id": "attraction/bungee_jumping"
+      },
+      {
+        "key": "carousel",
+        "icon": "temaki-amusement_park",
+        "markerColor": "#0065A9",
+        "presets": ["building_area"],
+        "lbl": {"en": "Carousel", "fr": "Carrousel"},
+        "terms": {
+          "en": "theme park,roundabout,merry-go-round,galloper,jumper,horseabout,flying horses",
+          "fr": "Carrousel, Manège,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/carousel",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "carousel"},
+        "id": "attraction/carousel"
+      },
+      {
+        "key": "dark_ride",
+        "icon": "maki-rail-metro",
+        "markerColor": "#0065A9",
+        "presets": ["building_area"],
+        "lbl": {"en": "Dark Ride", "fr": "Parcours scénique"},
+        "terms": {
+          "en": "theme park,ghost train",
+          "fr": "parcours scénique,train fantôme,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "line", "area"],
+        "iDRef": "attraction/dark_ride",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "dark_ride"},
+        "id": "attraction/dark_ride"
+      },
+      {
+        "key": "drop_tower",
+        "icon": "temaki-tower",
+        "markerColor": "#0065A9",
+        "presets": ["height"],
+        "lbl": {"en": "Drop Tower", "fr": "Tour de chute"},
+        "terms": {
+          "en": "theme park,amusement ride,gondola,tower,big drop",
+          "fr": "tour de chute,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/drop_tower",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "drop_tower"},
+        "id": "attraction/drop_tower"
+      },
+      {
+        "key": "maze",
+        "icon": "maki-amusement-park",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "Maze", "fr": "Labyrinthe"},
+        "terms": {
+          "en": "theme park,amusement ride,labyrinth",
+          "fr": "Labyrinthe,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/maze",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "maze"},
+        "id": "attraction/maze"
+      },
+      {
+        "key": "pirate_ship",
+        "icon": "maki-danger",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "Pirate Ship", "fr": "Bateau pirate"},
+        "terms": {
+          "en": "theme park,carnival ride,amusement ride",
+          "fr": "bateau pirate,attraction,parc d'attraction"
+        },
+        "geometry": ["point"],
+        "iDRef": "attraction/pirate_ship",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "pirate_ship"},
+        "id": "attraction/pirate_ship"
+      },
+      {
+        "key": "river_rafting",
+        "icon": "maki-ferry",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "River Rafting", "fr": "Rafting"},
+        "terms": {
+          "en": "theme park,aquatic park,water park,rafting simulator,river rafting ride,river rapids ride",
+          "fr": "rafting,bateau,canoë,kayak"
+        },
+        "geometry": ["point", "line"],
+        "iDRef": "attraction/river_rafting",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "river_rafting"},
+        "id": "attraction/river_rafting"
+      },
+      {
+        "key": "roller_coaster",
+        "icon": "temaki-roller_coaster",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "Roller Coaster", "fr": "Montagnes russes"},
+        "terms": {
+          "en": "theme park,amusement ride",
+          "fr": "montagnes russes,attraction,parc d'attraction"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "attraction/roller_coaster",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "roller_coaster"},
+        "id": "attraction/roller_coaster"
+      },
+      {
+        "key": "summer_toboggan",
+        "icon": "temaki-sledding",
+        "markerColor": "#0065A9",
+        "presets": [],
+        "lbl": {"en": "Summer Toboggan", "fr": "Luge d'été"},
+        "terms": {
+          "en": "alpine slide,mountain coaster",
+          "fr": "luge d'été,toboggan d'été"
+        },
+        "geometry": ["line"],
+        "iDRef": "attraction/summer_toboggan",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "summer_toboggan"},
+        "id": "attraction/summer_toboggan"
+      },
+      {
+        "key": "train",
+        "icon": "maki-rail",
+        "markerColor": "#0065A9",
+        "presets": ["fee", "charge_fee"],
+        "lbl": {"en": "Tourist Train", "fr": "Train touristique"},
+        "terms": {
+          "en": "theme park,rackless train,road train,Tschu-Tschu train,dotto train,park train",
+          "fr": "train touristique,petit train"
+        },
+        "geometry": ["point", "line"],
+        "iDRef": "attraction/train",
+        "tags": {"attraction": "train"},
+        "id": "attraction/train"
+      },
+      {
+        "key": "water_slide",
+        "icon": "fas-swimmer",
+        "markerColor": "#0065A9",
+        "presets": ["height"],
+        "lbl": {"en": "Water Slide", "fr": "Toboggan aquatique"},
+        "terms": {
+          "en": "theme park,aquatic park,water park,flumes,water chutes,hydroslides",
+          "fr": "toboggan aquatique"
+        },
+        "geometry": ["line", "area"],
+        "iDRef": "attraction/water_slide",
+        "moreFields": ["max_age", "min_age"],
+        "tags": {"attraction": "water_slide"},
+        "id": "attraction/water_slide"
+      }
+    ]
+  },
+  "playground": {
+    "lbl": {"en": "playground", "fr": "Jeux"},
+    "values": [
+      {
+        "key": "balancebeam",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Play Balance Beam", "fr": "Poutre (Jeux pour enfants)"},
+        "terms": {"en": "", "fr": "Poutre"},
+        "geometry": ["point", "line"],
+        "iDRef": "playground/balance_beam",
+        "tags": {"playground": "balancebeam"},
+        "id": "playground/balance_beam"
+      },
+      {
+        "key": "basketrotator",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Basket Spinner", "fr": "Présentoir"},
+        "terms": {
+          "en": "basket rotator",
+          "fr": "Présentoir, présentoir à paniers"
+        },
+        "geometry": ["point"],
+        "iDRef": "playground/basket_spinner",
+        "tags": {"playground": "basketrotator"},
+        "id": "playground/basket_spinner"
+      },
+      {
+        "key": "basketswing",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Basket Swing", "fr": "Balançoire à panier"},
+        "terms": {"en": "", "fr": "balançoire, balancelle, jeux pour enfants"},
+        "geometry": ["point"],
+        "iDRef": "playground/basket_swing",
+        "tags": {"playground": "basketswing"},
+        "id": "playground/basket_swing"
+      },
+      {
+        "key": "climbingframe",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Climbing Frame", "fr": "Cage à poules "},
+        "terms": {
+          "en": "",
+          "fr": "portique, portique de jeux, jeux, jeux pour enfants"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "playground/climbing_frame",
+        "tags": {"playground": "climbingframe"},
+        "id": "playground/climbing_frame"
+      },
+      {
+        "key": "cushion",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Bouncy Cushion", "fr": "Jeu gonflable"},
+        "terms": {
+          "en": "",
+          "fr": "trampoline, trampoline à eau, trampoline à air"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "playground/cushion",
+        "tags": {"playground": "cushion"},
+        "id": "playground/cushion"
+      },
+      {
+        "key": "horizontal_bar",
+        "icon": "maki-pitch",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Play Horizontal Bar", "fr": "Barre fixe pour enfants"},
+        "terms": {"en": "high bar", "fr": "Barre fixe"},
+        "geometry": ["point"],
+        "iDRef": "playground/horizontal_bar",
+        "tags": {"playground": "horizontal_bar"},
+        "id": "playground/horizontal_bar"
+      },
+      {
+        "key": "springy",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Spring Rider", "fr": "Balançoire à ressort"},
+        "terms": {
+          "en": "spring rocker,springy rocker",
+          "fr": "Jeux pour enfants, animal sur ressort, jouet sur ressort"
+        },
+        "geometry": ["point"],
+        "iDRef": "playground/rocker",
+        "tags": {"playground": "springy"},
+        "id": "playground/rocker"
+      },
+      {
+        "key": "roundabout",
+        "icon": "maki-stadium",
+        "markerColor": "#EF9228",
+        "presets": [
+          "playground",
+          "playground/theme",
+          "min_age",
+          "max_age",
+          "wheelchair",
+          "blind",
+          "height",
+          "bench"
+        ],
+        "lbl": {"en": "Play Roundabout", "fr": "Tourniquet"},
+        "terms": {"en": "merry-go-round", "fr": "Tourniquet, jeux pour enfant"},
+        "geometry": ["point", "area"],
+        "iDRef": "playground/roundabout",
+        "tags": {"playground": "roundabout"},
+        "id": "playground/roundabout"
+      },
+      {
+        "key": "sandpit",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Sandpit", "fr": "Bac à sable"},
+        "terms": {"en": "", "fr": "Bac à sable, jeux pour enfants, sable"},
+        "geometry": ["point", "area"],
+        "iDRef": "playground/sandpit",
+        "tags": {"playground": "sandpit"},
+        "id": "playground/sandpit"
+      },
+      {
+        "key": "seesaw",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Seesaw", "fr": "Balançoire à bascule"},
+        "terms": {
+          "en": "",
+          "fr": "Balançoire à bascule, tape-fesses, tape-cul,  jeux pour enfants"
+        },
+        "geometry": ["point"],
+        "iDRef": "playground/seesaw",
+        "tags": {"playground": "seesaw"},
+        "id": "playground/seesaw"
+      },
+      {
+        "key": "slide",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Slide", "fr": "Toboggan "},
+        "terms": {"en": "", "fr": "Toboggan,  jeux pour enfants"},
+        "geometry": ["point", "line"],
+        "iDRef": "playground/slide",
+        "tags": {"playground": "slide"},
+        "id": "playground/slide"
+      },
+      {
+        "key": "structure",
+        "icon": "maki-pitch",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Play Structure", "fr": "Structure (Jeu pour enfants)"},
+        "terms": {
+          "en": "",
+          "fr": "Structure de jeux, portique de jeux,  jeux pour enfants"
+        },
+        "geometry": ["point", "area"],
+        "iDRef": "playground/structure",
+        "tags": {"playground": "structure"},
+        "id": "playground/structure"
+      },
+      {
+        "key": "swing",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": ["capacity", "baby_seat", "wheelchair", "blind"],
+        "lbl": {"en": "Swing", "fr": "Balançoire"},
+        "terms": {
+          "en": "",
+          "fr": "Balançoire, balancelles,  jeux pour enfants"
+        },
+        "geometry": ["point"],
+        "iDRef": "playground/swing",
+        "tags": {"playground": "swing"},
+        "id": "playground/swing"
+      },
+      {
+        "key": "zipwire",
+        "icon": "maki-playground",
+        "markerColor": "#EF9228",
+        "presets": [],
+        "lbl": {"en": "Zip Wire", "fr": "Tyrolienne"},
+        "terms": {"en": "", "fr": "Tyrolienne"},
+        "geometry": ["point", "line"],
+        "iDRef": "playground/zipwire",
+        "tags": {"playground": "zipwire"},
+        "id": "playground/zipwire"
+      }
+    ]
   }
 }
