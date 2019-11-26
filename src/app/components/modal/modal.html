@@ -106,6 +106,19 @@
 					<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
 				</ion-fab-button>
 			</ion-fab>
+
+			<ion-fab style="bottom:-26; right: 48px;" class="fabToogleCode">
+				<ion-fab-button size="small" (click)="saveField(tagId, tags)">
+					<ion-icon name="save"></ion-icon>
+				</ion-fab-button>
+			</ion-fab>
+
+
+			<ion-fab style="bottom:-26; right: 93px;" class="fabToogleCode" *ngIf="savedFields">
+				<ion-fab-button size="small" (click)="restoreFields()">
+					<ion-icon name="arrow-dropdown-circle"></ion-icon>
+				</ion-fab-button>
+			</ion-fab>
 		</ion-header>
 
 		<div class="content">
@@ -188,7 +201,7 @@
 				<ion-icon name="close"> </ion-icon>
 			</ion-fab-button>
 			<ion-fab-button tappable color="secondary"  *ngIf="mode =='Update'"
-			 (click)="updateOsmElement()" class="fabInlineMarginLess" style="margin-right:15px;">
+			 (click)="updateOsmElement(tagConfig)" class="fabInlineMarginLess" style="margin-right:15px;">
 				<ion-icon name="checkmark"> </ion-icon>
 			</ion-fab-button>
 
@@ -196,6 +209,7 @@
 			 (click)="createOsmElement(tagConfig)" class="fabInlineMarginLess">
 				<ion-icon name="checkmark"> </ion-icon>
 			</ion-fab-button>
+	
 
 			<ion-fab-button  tappable *ngIf="feature.properties.type === 'node'" 
 			[disabled]="feature.properties.usedByWays"

@@ -11,6 +11,7 @@ import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 export class TagsService {
     lastTagAdded: TagConfig[];
     bookMarks = [];
+    savedFields = {};
     tags;
     presets = {};
     basemaps;
@@ -69,6 +70,9 @@ export class TagsService {
         return this.lastTagAdded;
     }
     addTagToLastTagAdded(tagconfig: TagConfig) {
+        if (!tagconfig){
+            return;
+        }
         if (!this.lastTagAdded || !Array.isArray( this.lastTagAdded)){
             this.lastTagAdded = [];
         }
@@ -79,6 +83,34 @@ export class TagsService {
         this.lastTagAdded = [tagconfig, ... this.lastTagAdded].slice(0,20);
         console.log('setLastTag', this.lastTagAdded)
         this.localStorage.set('lastTagAdded', this.lastTagAdded);
+    }
+
+
+    loadSavedFields$() {
+        return from(this.localStorage.get('savedFields'))
+            .pipe(
+                map(d => {
+                    if (d) {
+                        this.savedFields = d;
+                    } else {
+                        this.savedFields = {};
+                    }
+                    return this.savedFields;
+                })
+            )
+    }
+
+    addSavedField(tagId, tags){
+        console.log(this.savedFields);
+        if (!this.savedFields[tagId]){
+            this.savedFields[tagId] = {};
+        }
+        this.savedFields[tagId]['tags'] = tags
+        // .tags = tags;
+        this.localStorage.set('savedFields', this.savedFields);
+        console.log('------addSavedField')
+        console.log(tagId);
+        console.log(tags)
     }
 
     loadLastTagAdded$() {

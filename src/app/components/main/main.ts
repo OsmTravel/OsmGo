@@ -265,6 +265,8 @@ export class MainPage implements AfterViewInit {
       // TODO: switchmap
       this.tagsService.loadLastTagAdded$().subscribe()
       this.tagsService.loadBookMarks$().subscribe()
+      this.tagsService.loadSavedFields$().subscribe()
+      
 
       this.tagsService.loadTagsAndPresets$()
         .subscribe(async e => {

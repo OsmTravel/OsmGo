@@ -38,8 +38,8 @@
     <div
       class="listTag"
       *ngIf="selectedKey === 'full' && searchText.length < 3 "
-      (swiperight)="displayType = 'bookmarks'" 
-      (swipeleft)="displayType = 'lastTags'"
+      (swipeleft)="displayType = 'bookmarks'" 
+      (swiperigth)="displayType = 'lastTags'"
     >
       <h4 style="text-align: center;">
         {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate}}

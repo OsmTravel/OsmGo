@@ -38,6 +38,8 @@ export class ModalsContentPage implements OnInit {
   mode;
   tagConfig: TagConfig
   primaryKey: PrimaryTag
+  savedFields;
+  tagId: string;
 
 
   customValue = '';
@@ -128,11 +130,17 @@ export class ModalsContentPage implements OnInit {
 
     // la configuration pour cette clé principale (lbl, icon, presets[], ...)
     // this.tagConfig = this.tagsService.getTagConfigByKeyValue(this.primaryKey['key'], this.primaryKey['value']);
+    console.log(this.feature);
     if (!tagConfig) {
       this.tagConfig = getConfigTag(this.feature, this.tagsService.tags);
     } else {
       this.tagConfig = tagConfig;
     }
+
+    console.log('tagConfig', this.tagConfig)
+
+    this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
+    this.savedFields = this.tagsService.savedFields[this.tagId];
 
     this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
 
@@ -288,8 +296,9 @@ export class ModalsContentPage implements OnInit {
 
 
 
-  updateOsmElement() {
+  updateOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
+    this.tagsService.addTagToLastTagAdded(tagconfig);
     // si les tags et la position n'ont pas changé, on ne fait rien!
     if (!this.dataIsChanged() && !this.newPosition) {
       this.dismiss();
@@ -436,7 +445,7 @@ export class ModalsContentPage implements OnInit {
           text: this.translate.instant('SHARED.YES'),
           handler: data => {
             this.addSurveyDate();
-            this.updateOsmElement();
+            this.updateOsmElement(null);
           }
         }
       ]
@@ -466,8 +475,30 @@ export class ModalsContentPage implements OnInit {
     } else {
       this.tags.push({ 'key': 'survey:date', 'value': isoDate });
     }
-
-
   }
+
+  saveField(tagId, tags){
+    const savedTags = tags.map( t => { return { key: t.key, value: t.value }})
+    this.tagsService.addSavedField(tagId, savedTags);
+    if (!this.savedFields) this.savedFields = {};
+    this.savedFields['tags'] = [...savedTags];
+  }
+
+  restoreFields(){
+
+    if (this.savedFields){
+      for (let stags of this.savedFields.tags){
+        let t =  this.tags.find( o => o.key === stags.key)
+        if (t){
+          t['value'] = stags.value
+          // t = { "key": stags, "value": this.savedFields.tags[k]}
+        }else {
+          this.tags.push(stags)
+        }
+      }
+    }
+    this.initComponent();
+  }
+  
 
 }

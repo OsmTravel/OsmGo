@@ -120,7 +120,6 @@ export function getConfigTag(feature, tagsConfig) {
     const pkey = getPrimaryKeyOfObject(feature, tagsConfig)
     const conf = tagsConfig[pkey['k']]
     const confFilter = conf.values.filter( c => c.tags[pkey['k']] == [pkey['v']] )
-
     const fetureTags = feature.properties.tags
 
     let match = {conf: undefined, matchProps: 0};
@@ -128,14 +127,15 @@ export function getConfigTag(feature, tagsConfig) {
         let nb = 0;
         for( let vk in variant.tags){
             if (!fetureTags[vk] || fetureTags[vk] !== variant.tags[vk]){
+                nb = 0;
                 continue;
             }else {
                 nb++;
             }
-            if (nb > match.matchProps){
-                match = { conf: variant, matchProps: nb}
-            }
-         
+        }
+
+        if (nb > match.matchProps){
+            match = { conf: variant, matchProps: nb}
         }
         // console.log(variant.tags);
     }

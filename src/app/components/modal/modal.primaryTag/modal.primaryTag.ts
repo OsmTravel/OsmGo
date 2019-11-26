@@ -10,7 +10,7 @@ import { TagConfig } from '../../../../type'
     styleUrls: ['./modal.primaryTag.scss']
 })
 export class ModalPrimaryTag implements OnInit {
-    displayType: 'bookmarks' | 'lastTags' = "bookmarks"
+    displayType: 'bookmarks' | 'lastTags' = "lastTags"
     selectedKey: string;
     tagsOfselectedKey;
     loading = true;
