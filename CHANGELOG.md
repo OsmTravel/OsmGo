@@ -1,3 +1,14 @@
+# 1.0.0
+ - Refactoring Tags & Presets configuration
+ - Import "brand" from name-suggestion-index/
+ - Import tags & presets from iD
+ - Import other languages from iD ! ( tags & presets)
+ - Configuration by tags (not only  by primary key /  value)
+ - Adding some unit test
+ - Select multi features components
+ - add keys : aerialway, playground, attraction, barrier, power
+ - You can save and restore fields
+
 # 0.12.0
 ## Features
  - osmgo.com ( translation interface : admin.osmgo.com )

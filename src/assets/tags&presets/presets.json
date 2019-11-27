@@ -43,9 +43,7 @@
       "tr": "Yemek Çeşitleri",
       "uk": "Кухня",
       "vi": "Ẩm thực",
-      "zh-CN": "菜系",
-      "zh-HK": "菜式",
-      "zh-TW": "菜系"
+      "zh": "菜系"
     },
     "options": [
       {
@@ -387,9 +385,7 @@
       "uk": "Оператор",
       "vi": "Cơ quan Chủ quản",
       "yue": "承辦商",
-      "zh-CN": "经营者",
-      "zh-HK": "營辦商",
-      "zh-TW": "營運商"
+      "zh": "经营者"
     }
   },
   "brand": {
@@ -437,9 +433,7 @@
       "uk": "Марка",
       "vi": "Nhãn hiệu",
       "yue": "牌",
-      "zh-CN": "品牌",
-      "zh-HK": "品牌",
-      "zh-TW": "品牌"
+      "zh": "品牌"
     }
   },
   "bicycle_parking": {
@@ -489,9 +483,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "options": [
       {"v": "stands", "lbl": {"en": "stands", "fr": "Arceau/Sheffield"}},
@@ -553,9 +545,7 @@
       "uk": "Міськість",
       "vi": "Sức chứa",
       "yue": "容納",
-      "zh-CN": "容量",
-      "zh-HK": "容納",
-      "zh-TW": "容量"
+      "zh": "容量"
     }
   },
   "covered": {
@@ -602,9 +592,7 @@
       "uk": "Під навісом",
       "vi": "Có Mái Che",
       "yue": "有蓋",
-      "zh-CN": "有上盖",
-      "zh-HK": "被遮蓋",
-      "zh-TW": "有遮蓋"
+      "zh": "有上盖"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -705,8 +693,7 @@
       "sv": "Självbetjäning",
       "uk": "Самообслуговування",
       "vi": "Tự phục vụ",
-      "zh-CN": "自助服务",
-      "zh-TW": "自助服務"
+      "zh": "自助服务"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -752,9 +739,7 @@
       "uk": "Вживані речі",
       "vi": "Bán Đồ Cũ",
       "yue": "賣二手",
-      "zh-CN": "出售二手商品",
-      "zh-HK": "售賣二手貨",
-      "zh-TW": "販售二手商品"
+      "zh": "出售二手商品"
     },
     "options": [
       {
@@ -797,10 +782,7 @@
           "tr": "Evet",
           "uk": "Так",
           "vi": "Có Bán",
-          "yue": "係",
-          "zh-CN": "是",
-          "zh-HK": "是",
-          "zh-TW": "可以"
+          "yue": "係"
         }
       },
       {
@@ -842,10 +824,7 @@
           "tr": "Hayır",
           "uk": "Ні",
           "vi": "Không Bán",
-          "yue": "唔係",
-          "zh-CN": "否",
-          "zh-HK": "否",
-          "zh-TW": "不行"
+          "yue": "唔係"
         }
       },
       {
@@ -887,10 +866,7 @@
           "tr": "Sadece",
           "uk": "Виключно",
           "vi": "Chỉ Bán",
-          "yue": "只可",
-          "zh-CN": "仅",
-          "zh-HK": "只可",
-          "zh-TW": "只能"
+          "yue": "只可"
         }
       }
     ]
@@ -926,9 +902,7 @@
       "sr": "Врста",
       "sv": "Typ",
       "uk": "Тип",
-      "vi": "Kiểu",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "vi": "Kiểu"
     },
     "options": [
       {
@@ -956,10 +930,7 @@
           "pl": "Kontener",
           "sv": "Container",
           "uk": "Контейнер",
-          "vi": "Thùng",
-          "zh-CN": "回收容器",
-          "zh-HK": "回收箱",
-          "zh-TW": "桶"
+          "vi": "Thùng"
         }
       },
       {
@@ -987,9 +958,7 @@
           "pl": "Centrum",
           "sv": "Återvinningscentral",
           "uk": "Центр",
-          "vi": "Trung tâm",
-          "zh-HK": "中心",
-          "zh-TW": "中心"
+          "vi": "Trung tâm"
         }
       }
     ]
@@ -1064,9 +1033,7 @@
       "uk": "Спинка",
       "vi": "Dựa Lưng",
       "yue": "長椅",
-      "zh-CN": "长椅",
-      "zh-HK": "長椅",
-      "zh-TW": "椅背"
+      "zh": "长椅"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1127,9 +1094,7 @@
       "uk": "Лавка",
       "vi": "Băng ghế",
       "yue": "長凳",
-      "zh-CN": "长凳",
-      "zh-HK": "長椅",
-      "zh-TW": "長凳"
+      "zh": "长凳"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1181,9 +1146,7 @@
       "uk": "Для інвалідних візків",
       "vi": "Đi Xe lăn Được",
       "yue": "可通輪椅",
-      "zh-CN": "轮椅通道",
-      "zh-HK": "可通輪椅",
-      "zh-TW": "輪椅通道"
+      "zh": "轮椅通道"
     },
     "options": [
       {
@@ -1202,8 +1165,7 @@
           "pl": "Tak",
           "sv": "Ja",
           "uk": "Так",
-          "vi": "Có",
-          "zh-TW": "有"
+          "vi": "Có"
         }
       },
       {
@@ -1222,8 +1184,7 @@
           "pl": "Nie",
           "sv": "Nej",
           "uk": "Немає",
-          "vi": "Không có",
-          "zh-TW": "無"
+          "vi": "Không có"
         }
       },
       {
@@ -1241,8 +1202,7 @@
           "pl": "Ograniczony",
           "sv": "Begränsad",
           "uk": "Обмежено",
-          "vi": "Hạn chế",
-          "zh-TW": "有限制"
+          "vi": "Hạn chế"
         }
       },
       {
@@ -1298,9 +1258,7 @@
       "uk": "Плата",
       "vi": "Phí",
       "yue": "費用",
-      "zh-CN": "费用",
-      "zh-HK": "費用",
-      "zh-TW": "費用"
+      "zh": "费用"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1350,9 +1308,7 @@
       "uk": "Проїзд біля пункту обслуговування",
       "vi": "Lối Mua hàng trên Xe",
       "yue": "車上取",
-      "zh-CN": "免下车",
-      "zh-HK": "免下車",
-      "zh-TW": "得來速"
+      "zh": "免下车"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1387,8 +1343,7 @@
       "sv": "Receptbelagda läkemedel ",
       "uk": "За рецептом",
       "vi": "Phát Thuốc",
-      "zh-CN": "开处方药",
-      "zh-TW": "發放處方"
+      "zh": "开处方药"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1442,9 +1397,7 @@
       "uk": "Притулок",
       "vi": "Nhà chờ",
       "yue": "有天遮",
-      "zh-CN": "候车亭",
-      "zh-HK": "有蓋",
-      "zh-TW": "有蓋範圍"
+      "zh": "避难所"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1489,9 +1442,7 @@
       "uk": "Тактильне покриття",
       "vi": "Gạch dành cho Người Khiếm thị",
       "yue": "盲人引路徑",
-      "zh-CN": "人行道视障引导设施",
-      "zh-HK": "盲人引路徑",
-      "zh-TW": "人行道視障引導設施"
+      "zh": "人行道视障引导设施"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1525,9 +1476,7 @@
       "sv": "Sittplatser",
       "uk": "Місця",
       "vi": "Số Ghế",
-      "zh-CN": "座位",
-      "zh-HK": "座位",
-      "zh-TW": "座位數"
+      "zh": "座位"
     }
   },
   "religion": {
@@ -1577,9 +1526,7 @@
       "uk": "Релігія",
       "vi": "Tôn giáo",
       "yue": "宗敎",
-      "zh-CN": "宗教",
-      "zh-HK": "宗敎",
-      "zh-TW": "宗教"
+      "zh": "宗教"
     },
     "options": [
       {"v": "christian", "lbl": {"en": "Christian", "fr": "Chrétienne"}},
@@ -1627,9 +1574,7 @@
       "sv": "Typ av gods",
       "uk": "Товари",
       "vi": "Loại Hàng hóa",
-      "zh-CN": "商品类型",
-      "zh-HK": "貨物種類",
-      "zh-TW": "貨物類型"
+      "zh": "商品类型"
     },
     "options": [
       {
@@ -1727,9 +1672,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "options": [
       {
@@ -1885,9 +1828,7 @@
       "uk": "Телефон",
       "vi": "Số Điện thoại",
       "yue": "電話",
-      "zh-CN": "电话",
-      "zh-HK": "電話",
-      "zh-TW": "電話"
+      "zh": "电话"
     }
   },
   "website": {
@@ -1937,9 +1878,7 @@
       "uk": "Вебсайт",
       "vi": "Trang Web",
       "yue": "網站",
-      "zh-CN": "网站",
-      "zh-HK": "網站",
-      "zh-TW": "網站"
+      "zh": "网站"
     }
   },
   "opening_hours": {
@@ -1990,9 +1929,7 @@
       "uk": "Розклад роботи",
       "vi": "Giờ Mở cửa",
       "yue": "時間",
-      "zh-CN": "开放时间",
-      "zh-HK": "時間",
-      "zh-TW": "小時"
+      "zh": "小时"
     }
   },
   "school:FR": {
@@ -2085,9 +2022,7 @@
       "uk": "Одяг",
       "vi": "Quần áo",
       "yue": "衣",
-      "zh-CN": "服饰",
-      "zh-HK": "衣物",
-      "zh-TW": "服飾"
+      "zh": "服饰"
     },
     "options": [
       {"v": "babies", "lbl": {"fr": "Bébé", "en": "babies"}},
@@ -2211,9 +2146,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "options": [
       {
@@ -2259,10 +2192,7 @@
           "tr": "Yüzey",
           "uk": "Наземна",
           "vi": "Ngoài trời",
-          "yue": "地面",
-          "zh-CN": "地面",
-          "zh-HK": "地面",
-          "zh-TW": "平面"
+          "yue": "地面"
         }
       },
       {
@@ -2307,10 +2237,7 @@
           "tr": "Yeraltı",
           "uk": "Підземна",
           "vi": "Ngầm",
-          "yue": "地底",
-          "zh-CN": "地下",
-          "zh-HK": "地下",
-          "zh-TW": "地下"
+          "yue": "地底"
         }
       },
       {
@@ -2353,10 +2280,7 @@
           "tr": "Çokkatlı",
           "uk": "Багаторівнева",
           "vi": "Cao tầng",
-          "yue": "多層",
-          "zh-CN": "多层",
-          "zh-HK": "多層",
-          "zh-TW": "立體"
+          "yue": "多層"
         }
       },
       {
@@ -2398,10 +2322,7 @@
           "tr": "Yol Kenarı Park Şeridi",
           "uk": "Смуга вздовж дороги",
           "vi": "Làn đường",
-          "yue": "街邊",
-          "zh-CN": "路边",
-          "zh-HK": "路旁",
-          "zh-TW": "路邊停車位"
+          "yue": "街邊"
         }
       },
       {"v": "rooftop", "lbl": {"en": "rooftop"}},
@@ -2444,10 +2365,7 @@
           "tr": "Park Kutuları",
           "uk": "Гаражі",
           "vi": "Ga ra",
-          "yue": "廂房",
-          "zh-CN": "车库盒",
-          "zh-HK": "車庫箱",
-          "zh-TW": "垃圾桶"
+          "yue": "廂房"
         }
       },
       {
@@ -2491,10 +2409,7 @@
           "tr": "Gölgelik",
           "uk": "Навіси",
           "vi": "Lán",
-          "yue": "屋",
-          "zh-CN": "车棚",
-          "zh-HK": "有蓋",
-          "zh-TW": "有覆蓋"
+          "yue": "屋"
         }
       },
       {"v": "park_and_ride", "lbl": {"en": "park_and_ride"}},
@@ -2539,10 +2454,7 @@
           "tr": "Kenarları Açık Park Alanı",
           "uk": "Навіси",
           "vi": "Nhà xe",
-          "yue": "亭",
-          "zh-CN": "车棚",
-          "zh-HK": "車位",
-          "zh-TW": "車棚"
+          "yue": "亭"
         }
       }
     ]
@@ -2594,9 +2506,7 @@
       "uk": " Пересування дозволено",
       "vi": "Quyền Truy cập",
       "yue": "准過",
-      "zh-CN": "允许通行",
-      "zh-HK": "允許通過",
-      "zh-TW": "允許通行限制"
+      "zh": "允许通行"
     },
     "options": [
       {
@@ -2645,9 +2555,7 @@
           "uk": "Приватний",
           "vi": "Tư nhân",
           "yue": "私家",
-          "zh-CN": "私人",
-          "zh-HK": "私人",
-          "zh-TW": "私人"
+          "zh": "私人"
         }
       },
       {
@@ -2704,9 +2612,7 @@
           "uk": "Дозволений",
           "vi": "Cho phép",
           "yue": "准許",
-          "zh-CN": "允许",
-          "zh-HK": "准許",
-          "zh-TW": "可使用"
+          "zh": "允许的"
         }
       },
       {
@@ -2755,9 +2661,7 @@
           "uk": "Заборонений",
           "vi": "Cấm",
           "yue": "禁入",
-          "zh-CN": "禁止",
-          "zh-HK": "禁入",
-          "zh-TW": "禁止進入"
+          "zh": "禁止的"
         }
       },
       {
@@ -2804,9 +2708,7 @@
           "uk": "З дозволу",
           "vi": "Chủ cho phép",
           "yue": "任過",
-          "zh-CN": "默许",
-          "zh-HK": "自由通過",
-          "zh-TW": "獲許可進入"
+          "zh": "获许可进入"
         }
       },
       {
@@ -2855,9 +2757,7 @@
           "uk": "Зазначений",
           "vi": "Theo mục đích",
           "yue": "指名",
-          "zh-CN": "指定",
-          "zh-HK": "指定",
-          "zh-TW": "指定"
+          "zh": "特定的"
         }
       },
       {
@@ -2907,9 +2807,7 @@
           "uk": "До місця призначення",
           "vi": "Nơi đến",
           "yue": "目的地",
-          "zh-CN": "目的地",
-          "zh-HK": "目的地",
-          "zh-TW": "目的地"
+          "zh": "目的地"
         }
       },
       {
@@ -2954,10 +2852,7 @@
           "tr": "Araçtan inmek",
           "uk": "Спішившись",
           "vi": "Bắt xuống đi bộ",
-          "yue": "落車推",
-          "zh-CN": "下车",
-          "zh-HK": "下車",
-          "zh-TW": "下車"
+          "yue": "落車推"
         }
       },
       {
@@ -2990,10 +2885,7 @@
           "pl": "Za zezwoleniem",
           "sv": "Tillstånd",
           "uk": "Перепустка",
-          "vi": "Giấy phép",
-          "zh-CN": "许可证",
-          "zh-HK": "准許證",
-          "zh-TW": "許可證"
+          "vi": "Giấy phép"
         }
       }
     ]
@@ -3030,9 +2922,7 @@
       "sv": "Material",
       "uk": "Матеріал",
       "vi": "Chất liệu",
-      "zh-CN": "材质",
-      "zh-HK": "物料",
-      "zh-TW": "材質"
+      "zh": "材质"
     },
     "options": [
       {"v": "wood", "lbl": {"fr": "Bois", "en": "wood"}},
@@ -3086,9 +2976,7 @@
       "tr": "Açıkhava Oturma",
       "uk": "Місця на зовні",
       "vi": "Ngồi Ngoài trời",
-      "zh-CN": "室外座位",
-      "zh-HK": "室外座位",
-      "zh-TW": "戶外座位"
+      "zh": "室外座位"
     },
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
@@ -3148,9 +3036,7 @@
       "uk": "На винос",
       "vi": "Mang về",
       "yue": "外賣",
-      "zh-CN": "打包外带",
-      "zh-HK": "外賣",
-      "zh-TW": "外帶"
+      "zh": "打包外带"
     },
     "options": [
       {
@@ -3195,10 +3081,7 @@
           "tr": "Evet",
           "uk": "Так",
           "vi": "Có",
-          "yue": "有",
-          "zh-CN": "是",
-          "zh-HK": "可以",
-          "zh-TW": "可以"
+          "yue": "有"
         }
       },
       {
@@ -3243,10 +3126,7 @@
           "tr": "Hayır",
           "uk": "Ні",
           "vi": "Không có",
-          "yue": "無",
-          "zh-CN": "否",
-          "zh-HK": "不可",
-          "zh-TW": "不行"
+          "yue": "無"
         }
       },
       {
@@ -3288,10 +3168,7 @@
           "tr": "Sadece Paket Servis",
           "uk": "Тільки на винос",
           "vi": "Chỉ có Mang về",
-          "yue": "只限外賣",
-          "zh-CN": "仅限外卖",
-          "zh-HK": "只可外賣",
-          "zh-TW": "只能外帶"
+          "yue": "只限外賣"
         }
       }
     ]
@@ -3341,9 +3218,7 @@
       "uk": "Доставка",
       "vi": "Giao hàng",
       "yue": "外賣",
-      "zh-CN": "外卖配送",
-      "zh-HK": "外賣",
-      "zh-TW": "可外送"
+      "zh": "外卖配送"
     },
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
@@ -3400,9 +3275,7 @@
       "uk": "Інтернет-доступ",
       "vi": "Truy cập Internet",
       "yue": "用到互聯網",
-      "zh-CN": "互联网接入",
-      "zh-HK": "用到互聯網",
-      "zh-TW": "網際網絡存取"
+      "zh": "互联网接入"
     },
     "options": [
       {
@@ -3451,9 +3324,7 @@
           "uk": "Wifi",
           "vi": "Wi-Fi",
           "yue": "無綫上網",
-          "zh-CN": "Wi-Fi",
-          "zh-HK": "無綫上網",
-          "zh-TW": "無線網絡"
+          "zh": "无线网络"
         }
       },
       {
@@ -3501,10 +3372,7 @@
           "tr": "Evet",
           "uk": "Так",
           "vi": "Có",
-          "yue": "有",
-          "zh-CN": "是",
-          "zh-HK": "有",
-          "zh-TW": "有"
+          "yue": "有"
         }
       },
       {
@@ -3552,10 +3420,7 @@
           "tr": "Hayır",
           "uk": "Ні",
           "vi": "Không có",
-          "yue": "無",
-          "zh-CN": "否",
-          "zh-HK": "否",
-          "zh-TW": "無"
+          "yue": "無"
         }
       },
       {
@@ -3604,9 +3469,7 @@
           "uk": "Дротовий",
           "vi": "Qua dây điện",
           "yue": "揷綫上網",
-          "zh-CN": "有线网络",
-          "zh-HK": "揷綫上網",
-          "zh-TW": "有線網絡"
+          "zh": "有线网络"
         }
       },
       {
@@ -3655,9 +3518,7 @@
           "uk": "Термінал",
           "vi": "Máy tính công cộng",
           "yue": "終端機",
-          "zh-CN": "终端",
-          "zh-HK": "終端機",
-          "zh-TW": "終端"
+          "zh": "终端"
         }
       }
     ]
@@ -3715,9 +3576,7 @@
       "uk": "Розливне пиво",
       "vi": "Bia Tươi",
       "yue": "生啤",
-      "zh-CN": "生啤酒",
-      "zh-HK": "生啤",
-      "zh-TW": "生啤酒"
+      "zh": "生啤酒"
     }
   },
   "fuel:lpg": {
@@ -3786,9 +3645,7 @@
       "tr": "Gözetim",
       "uk": "Спостереження ",
       "vi": "Vị trí Quan sát",
-      "zh-CN": "监视",
-      "zh-HK": "監視類型",
-      "zh-TW": "監視種類"
+      "zh": "监视"
     },
     "options": [
       {"v": "public", "lbl": {"fr": "Espace public ", "en": "public"}},
@@ -4753,9 +4610,7 @@
       "tr": "Yön (Saat Yönünde Derece)",
       "uk": "Напрямок (в градусах за годинниковою стрілкою)",
       "vi": "Hướng (Độ theo Chiều Kim Đồng hồ)",
-      "zh-CN": "方向 (度顺时针)",
-      "zh-HK": "方向 (順時針度數)",
-      "zh-TW": "方向 (順時針角度)"
+      "zh": "方向 (度顺时针)"
     }
   },
   "lit": {
@@ -4804,9 +4659,7 @@
       "uk": "Освітлення",
       "vi": "Có Đèn Sáng",
       "yue": "有燈",
-      "zh-CN": "照明设施",
-      "zh-HK": "照明",
-      "zh-TW": "照明"
+      "zh": "照明设施"
     },
     "iDtype": "check",
     "options": [
@@ -4854,9 +4707,7 @@
       "uk": "Розташовано на",
       "vi": "Cách Gắn",
       "yue": "支架",
-      "zh-CN": "支持物",
-      "zh-HK": "支持",
-      "zh-TW": "支援"
+      "zh": "支持物"
     },
     "iDtype": "combo",
     "options": [
@@ -4939,9 +4790,7 @@
       "uk": "Висота (в метрах)",
       "vi": "Chiều cao (Mét)",
       "yue": "高（米）",
-      "zh-CN": "高度 (米)",
-      "zh-HK": "高度 (米)",
-      "zh-TW": "高度 (公尺)"
+      "zh": "高度 (米)"
     }
   },
   "visibility": {
@@ -4985,9 +4834,7 @@
       "uk": "Видно з",
       "vi": "Tầm Nhìn Xa",
       "yue": "顯隱",
-      "zh-CN": "能见度",
-      "zh-HK": "可見度",
-      "zh-TW": "可見度"
+      "zh": "能见度"
     },
     "options": [
       {
@@ -5026,10 +4873,7 @@
           "tr": "5m (16ft)'den az",
           "uk": "5 м (16 фт)",
           "vi": "Tới 5 m (16 ft)",
-          "yue": "過五米（十六呎）",
-          "zh-CN": "小于 5米 (16英尺)",
-          "zh-HK": "到 5 米 (16 呎)",
-          "zh-TW": "約 5 公尺（16 英呎）"
+          "yue": "過五米（十六呎）"
         }
       },
       {
@@ -5068,10 +4912,7 @@
           "tr": "5m ile 20m (16 - 65ft) arası",
           "uk": "5 м до 20 м (16-65 фт)",
           "vi": "5 đến 20 m (16 đến 65 ft)",
-          "yue": "五到二十米（十六到六十五呎）",
-          "zh-CN": "5 至 20米 (16 至 65英尺)",
-          "zh-HK": "5 至 20米 (16 至 65呎)",
-          "zh-TW": "5 到 20 公尺（16 到 65 英呎）"
+          "yue": "五到二十米（十六到六十五呎）"
         }
       },
       {
@@ -5110,10 +4951,7 @@
           "tr": "20m (65ft)'den fazla",
           "uk": "більше ніж 20 м (65 фт)",
           "vi": "Hơn 20 m (65 ft)",
-          "yue": "過二十米（六十五呎）",
-          "zh-CN": "大于 20米 (65英尺)",
-          "zh-HK": "超過 20 米 (65 呎)",
-          "zh-TW": "超過 20 公尺（65 英呎）"
+          "yue": "過二十米（六十五呎）"
         }
       }
     ],
@@ -5170,9 +5008,7 @@
       "uk": "Назва",
       "vi": "Tên",
       "yue": "名",
-      "zh-CN": "名称",
-      "zh-HK": "名",
-      "zh-TW": "名稱"
+      "zh": "名称"
     }
   },
   "building_area": {
@@ -5225,9 +5061,7 @@
       "uk": "Будівля",
       "vi": "Tòa nhà",
       "yue": "屋宇",
-      "zh-CN": "建筑物",
-      "zh-HK": "建築物",
-      "zh-TW": "建築物"
+      "zh": "建筑物"
     },
     "iDtype": "combo",
     "options": [
@@ -5309,9 +5143,7 @@
       "uk": "Плата за доступ до Інтернету",
       "vi": "Phí Truy cập Internet",
       "yue": "上網費",
-      "zh-CN": "上网费用",
-      "zh-HK": "互聯網費用",
-      "zh-TW": "網路存取費用"
+      "zh": "上网费用"
     },
     "iDtype": "check",
     "options": [
@@ -5346,8 +5178,7 @@
       "sv": "Wifi-nätverksnamn",
       "uk": "Назва мережі WiFi",
       "vi": "Tên Mạng Wi-Fi",
-      "zh-CN": "Wi-Fi 网络名称",
-      "zh-TW": "Wifi 網路名稱"
+      "zh": "Wi-Fi 网络名称"
     }
   },
   "country": {
@@ -5398,9 +5229,7 @@
       "uk": "Країна",
       "vi": "Quốc gia",
       "yue": "國",
-      "zh-CN": "国家",
-      "zh-HK": "國",
-      "zh-TW": "國家"
+      "zh": "国家"
     },
     "iDtype": "text"
   },
@@ -5449,9 +5278,7 @@
       "uk": "Е-пошта",
       "vi": "Thư điện tử",
       "yue": "電郵",
-      "zh-CN": "Email",
-      "zh-HK": "電郵",
-      "zh-TW": "Email"
+      "zh": "Email"
     },
     "iDtype": "email"
   },
@@ -5503,9 +5330,7 @@
       "uk": "Факс",
       "vi": "Số Fax",
       "yue": "傳真",
-      "zh-CN": "传真",
-      "zh-HK": "傳真",
-      "zh-TW": "傳真"
+      "zh": "传真"
     },
     "iDtype": "tel"
   },
@@ -5556,9 +5381,7 @@
       "uk": "Мережа",
       "vi": "Hệ thống",
       "yue": "網絡",
-      "zh-CN": "网络",
-      "zh-HK": "網絡",
-      "zh-TW": "網路"
+      "zh": "网络"
     }
   },
   "social_facility_for": {
@@ -5595,9 +5418,7 @@
       "tr": "Hedef Kitle",
       "uk": "Обслуговуються",
       "vi": "Dân được Phục vụ",
-      "zh-CN": "服务对象",
-      "zh-HK": "服務對象",
-      "zh-TW": "服務對象"
+      "zh": "服务对象"
     },
     "iDtype": "combo",
     "options": [
@@ -5679,9 +5500,7 @@
       "uk": "Час виїмки/вивезення",
       "vi": "Giờ Lấy thư",
       "yue": "收集時間",
-      "zh-CN": "收取时间",
-      "zh-HK": "收集時間",
-      "zh-TW": "收集時間"
+      "zh": "收集时间"
     }
   },
   "animal_boarding": {
@@ -5727,9 +5546,7 @@
       "tr": "Hayvanlar için",
       "uk": "Для тварин",
       "vi": "Loại Thú",
-      "zh-CN": "寄养动物类型",
-      "zh-HK": "動物用",
-      "zh-TW": "動物"
+      "zh": "寄养动物类型"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -5797,9 +5614,7 @@
       "uk": "Поверх",
       "vi": "Lầu",
       "yue": "層",
-      "zh-CN": "楼层",
-      "zh-HK": "圖層",
-      "zh-TW": "樓層"
+      "zh": "楼层"
     },
     "iDtype": "combo"
   },
@@ -5846,9 +5661,7 @@
       "uk": "Види розрахунків",
       "vi": "Phương thức Thanh toán",
       "yue": "畀錢方式",
-      "zh-CN": "支付类型",
-      "zh-HK": "付款種類",
-      "zh-TW": "付款類型"
+      "zh": "支付类型"
     }
   },
   "animal_breeding": {
@@ -5894,9 +5707,7 @@
       "tr": "Hayvanlar için",
       "uk": "Для тварин",
       "vi": "Loại Thú",
-      "zh-CN": "饲养动物类型",
-      "zh-HK": "動物用",
-      "zh-TW": "動物"
+      "zh": "饲养动物类型"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -5974,9 +5785,7 @@
       "tr": "Hayvanlar için",
       "uk": "Для тварин",
       "vi": "Loại Thú",
-      "zh-CN": "收留动物类型",
-      "zh-HK": "動物用",
-      "zh-TW": "動物"
+      "zh": "收留动物类型"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -6034,8 +5843,7 @@
       "sr": "Износ таксе",
       "sv": "Avgiftsbelopp",
       "uk": "Розмір плати",
-      "vi": "Giá",
-      "zh-TW": "收費金額"
+      "vi": "Giá"
     }
   },
   "cash_in": {
@@ -6065,8 +5873,7 @@
       "sv": "Insättning av pengar",
       "uk": "Купюроприймач",
       "vi": "Nhận tiền",
-      "zh-CN": "货币兑换",
-      "zh-TW": "存款"
+      "zh": "货币兑换"
     },
     "iDtype": "check",
     "options": [
@@ -6117,9 +5924,7 @@
       "uk": "Валюта",
       "vi": "Loại Tiền",
       "yue": "錢類",
-      "zh-CN": "货币类型",
-      "zh-HK": "外幣種類",
-      "zh-TW": "貨幣種類"
+      "zh": "货币类型"
     }
   },
   "indoor": {
@@ -6162,9 +5967,7 @@
       "uk": "План приміщення",
       "vi": "Trong Nhà",
       "yue": "戶內",
-      "zh-CN": "室内",
-      "zh-HK": "室內",
-      "zh-TW": "室內"
+      "zh": "室内"
     },
     "iDtype": "check",
     "options": [
@@ -6202,8 +6005,7 @@
       "sv": "Tillverkare",
       "uk": "Виробник",
       "vi": "Hãng Sản xuất",
-      "zh-CN": "制造商",
-      "zh-TW": "製造者"
+      "zh": "制造商"
     },
     "iDtype": "combo"
   },
@@ -6254,9 +6056,7 @@
       "uk": "Банкомат",
       "vi": "Máy Rút tiền",
       "yue": "提款機",
-      "zh-CN": "自动提款机（ATM）",
-      "zh-HK": "提款機",
-      "zh-TW": "自動提款機"
+      "zh": "ATM"
     },
     "iDtype": "check",
     "options": [
@@ -6294,8 +6094,7 @@
       "sv": "Luftkonditionering",
       "uk": "Кондиціювання повітря",
       "vi": "Máy lạnh",
-      "zh-CN": "空调",
-      "zh-TW": "空調"
+      "zh": "空调"
     },
     "iDtype": "check",
     "options": [
@@ -6324,8 +6123,7 @@
       "pl": "Minimalny wiek dziecka",
       "sv": "Lägsta ålder",
       "uk": "Мінімальний вік",
-      "vi": "Tuổi Tối thiểu",
-      "zh-TW": "最小年齡"
+      "vi": "Tuổi Tối thiểu"
     }
   },
   "microbrewery": {
@@ -6356,8 +6154,7 @@
       "sv": "Microbryggeri",
       "uk": "Міні-пивоварня",
       "vi": "Bia Thủ công",
-      "zh-CN": "手工啤酒",
-      "zh-TW": "微釀啤酒作坊"
+      "zh": "手工啤酒"
     },
     "iDtype": "check",
     "options": [
@@ -6411,9 +6208,7 @@
       "uk": "Паління",
       "vi": "Hút thuốc",
       "yue": "食煙",
-      "zh-CN": "吸烟",
-      "zh-HK": "吸煙",
-      "zh-TW": "吸煙"
+      "zh": "吸烟"
     },
     "options": [
       {
@@ -6456,10 +6251,7 @@
           "tr": "Sigara İçmek Yasak",
           "uk": "Паління заборонено",
           "vi": "Hoàn toàn cấm hút thuốc",
-          "yue": "度度無得食煙",
-          "zh-CN": "禁止吸烟",
-          "zh-HK": "任何地方都不可吸煙",
-          "zh-TW": "禁止吸煙"
+          "yue": "度度無得食煙"
         }
       },
       {
@@ -6502,10 +6294,7 @@
           "tr": "Fiziksel Olarak Ayrılmamış Sigara İçme Alanı",
           "uk": "У відведених зонах, не ізольованих",
           "vi": "Ở nơi hút thuốc không có tường",
-          "yue": "食得煙地帶，無真正隔開",
-          "zh-CN": "指定区域可使用（不隔开）",
-          "zh-HK": "沒有隔開的吸煙區",
-          "zh-TW": "無隔離空間的吸煙區"
+          "yue": "食得煙地帶，無真正隔開"
         }
       },
       {
@@ -6548,10 +6337,7 @@
           "tr": "Fiziksel Olarak Ayrılmış Sigara İçme Alanı",
           "uk": "У відведених зонах, ізольованих",
           "vi": "Ở nơi hút thuốc có tường",
-          "yue": "食得煙地帶，真正隔開",
-          "zh-CN": "指定区域可使用（隔开）",
-          "zh-HK": "於實質上隔開的吸煙區",
-          "zh-TW": "有隔離空間的吸煙區"
+          "yue": "食得煙地帶，真正隔開"
         }
       },
       {
@@ -6594,10 +6380,7 @@
           "tr": "Dışarıda Sigara İçilebilir",
           "uk": "Дозволено зовні",
           "vi": "Cho phép ở ngoài trời",
-          "yue": "出面食得煙",
-          "zh-CN": "室外可使用",
-          "zh-HK": "可於室外吸煙",
-          "zh-TW": "室外允許吸煙"
+          "yue": "出面食得煙"
         }
       },
       {
@@ -6640,10 +6423,7 @@
           "tr": "Sigara İçilebilir",
           "uk": "Дозволено скрізь",
           "vi": "Cho phép ở bất cứ nơi nào",
-          "yue": "度度都食得煙",
-          "zh-CN": "随处可使用",
-          "zh-HK": "所有地方均可吸煙",
-          "zh-TW": "允許吸煙"
+          "yue": "度度都食得煙"
         }
       },
       {
@@ -6684,10 +6464,7 @@
           "tr": "Sigara İçenlere Özel Bölme (örneğin sigara odası)",
           "uk": "Призначено для курців",
           "vi": "Dành riêng cho người hút thuốc (ví dụ quán hút thuốc)",
-          "yue": "專畀食煙（諸如煙房）",
-          "zh-CN": "吸烟专用",
-          "zh-HK": "吸煙者專用 (例如吸煙室)",
-          "zh-TW": "吸煙者專屬 (例如吸煙者酒吧)"
+          "yue": "專畀食煙（諸如煙房）"
         }
       }
     ],
@@ -6739,9 +6516,7 @@
       "uk": "АЗС",
       "vi": "Nhiên liệu",
       "yue": "燃料",
-      "zh-CN": "油站",
-      "zh-HK": "燃料",
-      "zh-TW": "燃料"
+      "zh": "油站"
     },
     "iDtype": "combo",
     "options": [
@@ -6825,9 +6600,7 @@
       "uk": "Доступ",
       "vi": "Quyền Truy cập",
       "yue": "過得",
-      "zh-CN": "允许进入",
-      "zh-HK": "允許通過",
-      "zh-TW": "允許通行"
+      "zh": "允许进入"
     },
     "iDtype": "combo"
   },
@@ -6866,8 +6639,7 @@
       "tr": "Renk",
       "uk": "Колір",
       "vi": "Màu sắc",
-      "zh-CN": "颜色",
-      "zh-TW": "顏色"
+      "zh": "颜色"
     }
   },
   "inscription": {
@@ -6909,9 +6681,7 @@
       "tr": "Yazıt",
       "uk": "Напис",
       "vi": "Câu Ghi",
-      "zh-CN": "铭文",
-      "zh-HK": "碑文",
-      "zh-TW": "題詞"
+      "zh": "铭文"
     }
   },
   "operator/type": {
@@ -6936,8 +6706,7 @@
       "sr": "Врста оператора",
       "sv": "Typ av operatör",
       "uk": "Тип оператора",
-      "vi": "Kiểu Cơ quan Chủ quan",
-      "zh-TW": "營運者類型"
+      "vi": "Kiểu Cơ quan Chủ quan"
     },
     "iDtype": "combo",
     "options": [
@@ -6992,8 +6761,7 @@
       "sv": "Betalningssätt",
       "uk": "Види розрахунків",
       "vi": "Phương thức Thanh toán",
-      "zh-CN": "支付类型",
-      "zh-TW": "付款類型"
+      "zh": "支付类型"
     }
   },
   "service/bicycle": {
@@ -7036,9 +6804,7 @@
       "tr": "Bisiklet",
       "uk": "Послуги",
       "vi": "Dịch vụ",
-      "zh-CN": "服务",
-      "zh-HK": "服務",
-      "zh-TW": "服務"
+      "zh": "服务"
     }
   },
   "building": {
@@ -7090,9 +6856,7 @@
       "uk": "Будівля",
       "vi": "Tòa nhà",
       "yue": "屋宇",
-      "zh-CN": "建筑物",
-      "zh-HK": "建築物",
-      "zh-TW": "建築物"
+      "zh": "建筑物"
     },
     "iDtype": "combo",
     "options": [
@@ -7159,8 +6923,7 @@
       "sv": "Bar",
       "uk": "Бар",
       "vi": "Quán Rượu",
-      "zh-CN": "吧台",
-      "zh-TW": "酒吧"
+      "zh": "吧台"
     },
     "iDtype": "check",
     "options": [
@@ -7209,8 +6972,7 @@
       "sv": "Typ av diet",
       "uk": "Страви",
       "vi": "Chế độ Ăn uống",
-      "zh-CN": "饮食种类",
-      "zh-TW": "飲食類型"
+      "zh": "饮食种类"
     }
   },
   "not/name": {
@@ -7234,8 +6996,7 @@
       "sv": "Inkorrekt namn",
       "uk": "Неправильні імена",
       "vi": "Tên Sai",
-      "zh-CN": "错误名称",
-      "zh-TW": "不正確名稱"
+      "zh": "错误名称"
     },
     "iDtype": "semiCombo"
   },
@@ -7266,8 +7027,7 @@
       "sv": "Bokning",
       "uk": "Попереднє замовлення",
       "vi": "Đặt bàn",
-      "zh-CN": "预订",
-      "zh-TW": "訂位"
+      "zh": "预订"
     },
     "options": [
       {
@@ -7295,9 +7055,7 @@
           "pl": "Tak",
           "sv": "Möjligt",
           "uk": "Приймається",
-          "vi": "Cho phép",
-          "zh-CN": "接受",
-          "zh-TW": "接受"
+          "vi": "Cho phép"
         }
       },
       {
@@ -7325,9 +7083,7 @@
           "pl": "Nie",
           "sv": "Ej möjligt",
           "uk": "Не приймається",
-          "vi": "Không cho phép",
-          "zh-CN": "不接受",
-          "zh-TW": "不接受"
+          "vi": "Không cho phép"
         }
       },
       {
@@ -7355,9 +7111,7 @@
           "pl": "Wymagane",
           "sv": "Krävs",
           "uk": "Потрібне",
-          "vi": "Đòi hỏi",
-          "zh-CN": "必需",
-          "zh-TW": "必須"
+          "vi": "Đòi hỏi"
         }
       },
       {
@@ -7385,9 +7139,7 @@
           "pl": "Zalecane",
           "sv": "Rekommenderas",
           "uk": "Бажане",
-          "vi": "Khuyên khích",
-          "zh-CN": "推荐",
-          "zh-TW": "建議"
+          "vi": "Khuyên khích"
         }
       }
     ],
@@ -7438,9 +7190,7 @@
       "uk": "Під наглядом",
       "vi": "Canh gác",
       "yue": "有人睇",
-      "zh-CN": "监督",
-      "zh-HK": "受監察",
-      "zh-TW": "受監察"
+      "zh": "监督"
     },
     "iDtype": "check",
     "options": [
@@ -7469,8 +7219,7 @@
       "pl": "Maksymalny wiek dziecka",
       "sv": "Maxålder",
       "uk": "Максимальний вік",
-      "vi": "Tuổi Tối đa",
-      "zh-TW": "最大年齡"
+      "vi": "Tuổi Tối đa"
     }
   },
   "screen": {
@@ -7496,8 +7245,7 @@
       "sv": "Salonger",
       "uk": "Екрани",
       "vi": "Số Màn hình",
-      "zh-CN": "屏幕数",
-      "zh-TW": "螢幕"
+      "zh": "屏幕数"
     }
   },
   "healthcare/speciality": {
@@ -7539,9 +7287,7 @@
       "tr": "Uzmanlık",
       "uk": "Спеціальності",
       "vi": "Chuyên môn",
-      "zh-CN": "专科",
-      "zh-HK": "專科",
-      "zh-TW": "專科"
+      "zh": "专科"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -7627,9 +7373,7 @@
       "uk": "Циферблат",
       "vi": "Kiểu Hiển thị",
       "yue": "顯示",
-      "zh-CN": "表盘显示类型",
-      "zh-HK": "顯示",
-      "zh-TW": "顯示"
+      "zh": "表盘显示类型"
     },
     "iDtype": "combo"
   },
@@ -7678,9 +7422,7 @@
       "uk": "Дата",
       "vi": "Ngày tháng",
       "yue": "日期",
-      "zh-CN": "日期",
-      "zh-HK": "日期",
-      "zh-TW": "日期"
+      "zh": "日期"
     },
     "iDtype": "check",
     "options": [
@@ -7717,8 +7459,7 @@
       "sv": "Sidor",
       "uk": "Сторони",
       "vi": "Số Mặt",
-      "zh-CN": "面数",
-      "zh-TW": "面"
+      "zh": "面数"
     }
   },
   "denomination": {
@@ -7768,9 +7509,7 @@
       "uk": "Віросповідання",
       "vi": "Giáo phái",
       "yue": "派",
-      "zh-CN": "教派",
-      "zh-HK": "派",
-      "zh-TW": "教派"
+      "zh": "教派"
     },
     "iDtype": "combo",
     "options": [
@@ -7822,8 +7561,7 @@
       "pl": "Lokal wyborczy",
       "sv": "Vallokal",
       "uk": "Місце для голосування",
-      "vi": "Địa điểm Đi bầu",
-      "zh-TW": "投票站"
+      "vi": "Địa điểm Đi bầu"
     },
     "iDtype": "check",
     "options": [
@@ -7868,9 +7606,7 @@
       "sv": "Tjänster",
       "uk": "Послуги",
       "vi": "Dịch vụ",
-      "zh-CN": "服务",
-      "zh-HK": "服務",
-      "zh-TW": "水肺潛水服務"
+      "zh": "服务"
     }
   },
   "sport": {
@@ -7915,9 +7651,7 @@
       "tr": "Spor",
       "uk": "Спорт",
       "vi": "Môn Thể thao",
-      "zh-CN": "运动",
-      "zh-HK": "運動",
-      "zh-TW": "運動"
+      "zh": "运动"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -7999,9 +7733,7 @@
       "uk": "Стать",
       "vi": "Giới tính",
       "yue": "性別",
-      "zh-CN": "性别",
-      "zh-HK": "性別",
-      "zh-TW": "性別"
+      "zh": "性别"
     },
     "options": [
       {
@@ -8046,10 +7778,7 @@
           "tr": "Erkek",
           "uk": "Чоловіча",
           "vi": "Nam",
-          "yue": "男",
-          "zh-CN": "男",
-          "zh-HK": "男",
-          "zh-TW": "男性"
+          "yue": "男"
         }
       },
       {
@@ -8094,10 +7823,7 @@
           "tr": "Kadın",
           "uk": "Жіноча",
           "vi": "Nữ",
-          "yue": "女",
-          "zh-CN": "女",
-          "zh-HK": "女",
-          "zh-TW": "女性"
+          "yue": "女"
         }
       },
       {
@@ -8141,10 +7867,7 @@
           "tr": "Eş",
           "uk": "Унісекс",
           "vi": "Nam nữ",
-          "yue": "不分男女",
-          "zh-CN": "男女通用",
-          "zh-HK": "單性",
-          "zh-TW": "男女通用"
+          "yue": "不分男女"
         }
       }
     ],
@@ -8189,9 +7912,7 @@
       "tr": "Referans Kodu",
       "uk": "Номер",
       "vi": "Mã số Tham chiếu",
-      "zh-CN": "编号",
-      "zh-HK": "參考編號",
-      "zh-TW": "參考編號"
+      "zh": "编号"
     }
   },
   "fuel_multi": {
@@ -8238,9 +7959,7 @@
       "uk": "Паливо",
       "vi": "Loại Xăng",
       "yue": "燃料類",
-      "zh-CN": "燃料类型",
-      "zh-HK": "燃料種類",
-      "zh-TW": "燃料種類"
+      "zh": "燃料类型"
     }
   },
   "emergency": {
@@ -8290,9 +8009,7 @@
       "uk": "Аварійні служби",
       "vi": "Khẩn cấp",
       "yue": "急症室",
-      "zh-CN": "急诊",
-      "zh-HK": "急症室",
-      "zh-TW": "緊急"
+      "zh": "急诊"
     },
     "iDtype": "check",
     "options": [
@@ -8315,8 +8032,7 @@
       "pl": "Zakluczalny",
       "sv": "Låsbar",
       "uk": "Зачиняється",
-      "vi": "Khóa Được",
-      "zh-TW": "可鎖"
+      "vi": "Khóa Được"
     },
     "iDtype": "check",
     "options": [
@@ -8343,8 +8059,7 @@
       "pl": "Przedszkole",
       "sv": "Förskola",
       "uk": "Дошкільний заклад",
-      "vi": "Trường Mầm non",
-      "zh-TW": "育幼院"
+      "vi": "Trường Mầm non"
     },
     "iDtype": "check",
     "options": [
@@ -8387,9 +8102,7 @@
       "tr": "Diller",
       "uk": "Мови",
       "vi": "Ngôn ngữ",
-      "zh-CN": "语言",
-      "zh-HK": "語言",
-      "zh-TW": "語言"
+      "zh": "语言"
     }
   },
   "ref/isil": {
@@ -8424,9 +8137,7 @@
       "sv": "ISIL-kod",
       "uk": "Код ISIL",
       "vi": "Mã Nhận dạng ISIL",
-      "zh-CN": "ISIL 编码",
-      "zh-HK": "ISIL 編號",
-      "zh-TW": "ISIL 代碼"
+      "zh": "ISIL 编码"
     }
   },
   "door": {
@@ -8458,8 +8169,7 @@
       "sv": "Dörr",
       "uk": "Двері",
       "vi": "Cửa",
-      "zh-CN": "门",
-      "zh-TW": "門"
+      "zh": "门"
     },
     "iDtype": "combo",
     "options": [
@@ -8534,9 +8244,7 @@
       "uk": "Ширина (метрів)",
       "vi": "Chiều ngang (Mét)",
       "yue": "闊（米）",
-      "zh-CN": "宽度 (米)",
-      "zh-HK": "濶度(米)",
-      "zh-TW": "寬度 (公尺)"
+      "zh": "宽度 (米)"
     }
   },
   "rooms": {
@@ -8582,9 +8290,7 @@
       "uk": "Кількість номерів",
       "vi": "Số Phòng",
       "yue": "房數",
-      "zh-CN": "房间数",
-      "zh-HK": "房間數目",
-      "zh-TW": "房間數"
+      "zh": "房间数"
     }
   },
   "surface": {
@@ -8635,9 +8341,7 @@
       "uk": "Поверхня",
       "vi": "Mặt",
       "yue": "表面",
-      "zh-CN": "表面铺设",
-      "zh-HK": "表面",
-      "zh-TW": "路面鋪設"
+      "zh": "表面"
     },
     "iDtype": "combo",
     "options": [
@@ -8711,9 +8415,7 @@
       "uk": "Максимальний час",
       "vi": "Thời gian Ở Tối đa",
       "yue": "留得時間",
-      "zh-CN": "可停留时间",
-      "zh-HK": "可停留時間",
-      "zh-TW": "可停留時間"
+      "zh": "可停留时间"
     },
     "iDtype": "combo"
   },
@@ -8762,9 +8464,7 @@
       "uk": "Перехоплююча стоянка",
       "vi": "Trung chuyển",
       "yue": "泊車轉乖",
-      "zh-CN": "停车换乘",
-      "zh-HK": "泊車轉乘",
-      "zh-TW": "停車轉乘"
+      "zh": "停车换乘"
     },
     "iDtype": "check",
     "options": [
@@ -8808,9 +8508,7 @@
       "tr": "Hizmet Saatleri",
       "uk": "Розклад",
       "vi": "Giờ Phục vụ",
-      "zh-CN": "服务时间",
-      "zh-HK": "服務時間",
-      "zh-TW": "服務時間"
+      "zh": "服务时间"
     }
   },
   "bath/type": {
@@ -8854,9 +8552,7 @@
       "tr": "Uzmanlık",
       "uk": "Спеціалізація",
       "vi": "Nét Đặc biệt",
-      "zh-CN": "特色",
-      "zh-HK": "種類",
-      "zh-TW": "專業"
+      "zh": "特色"
     },
     "options": [
       {
@@ -8898,10 +8594,7 @@
           "tr": "Kaplıca",
           "uk": "Японський онсен",
           "vi": "Suối Nước Nóng Nhật",
-          "yue": "日本溫泉",
-          "zh-CN": "日式温泉",
-          "zh-HK": "日式溫泉",
-          "zh-TW": "日式溫泉"
+          "yue": "日本溫泉"
         }
       },
       {
@@ -8943,10 +8636,7 @@
           "tr": "Ayak Banyosu",
           "uk": "Ванна для ніг",
           "vi": "Ngâm Chân",
-          "yue": "浸腳",
-          "zh-CN": "足浴",
-          "zh-HK": "泡腳",
-          "zh-TW": "泡腳"
+          "yue": "浸腳"
         }
       },
       {
@@ -8989,10 +8679,7 @@
           "tr": "Termal",
           "uk": "Гаряче джерело",
           "vi": "Suối Nước Nóng",
-          "yue": "溫泉",
-          "zh-CN": "温泉",
-          "zh-HK": "溫泉",
-          "zh-TW": "熱溫泉"
+          "yue": "溫泉"
         }
       }
     ],
@@ -9040,9 +8727,7 @@
       "uk": "На відкритому повітрі",
       "vi": "Ngoài trời",
       "yue": "露天",
-      "zh-CN": "露天",
-      "zh-HK": "露天",
-      "zh-TW": "露天浴場"
+      "zh": "露天"
     },
     "iDtype": "check",
     "options": [
@@ -9091,9 +8776,7 @@
       "uk": "Піщана  лазня",
       "vi": "Tắm Cát",
       "yue": "沙浴",
-      "zh-CN": "沙浴",
-      "zh-HK": "沙浴",
-      "zh-TW": "沙浴"
+      "zh": "沙浴"
     },
     "iDtype": "check",
     "options": [
@@ -9122,8 +8805,7 @@
       "sr": "Врста",
       "sv": "Typ",
       "uk": "Тип",
-      "vi": "Kiểu",
-      "zh-TW": "類型"
+      "vi": "Kiểu"
     },
     "iDtype": "combo",
     "options": [
@@ -9204,9 +8886,7 @@
       "uk": "Місцезнаходження",
       "vi": "Vị trí",
       "yue": "地點",
-      "zh-CN": "位置",
-      "zh-HK": "地點",
-      "zh-TW": "位置"
+      "zh": "位置"
     },
     "iDtype": "combo",
     "options": [
@@ -9279,9 +8959,7 @@
       "uk": "Зірки",
       "vi": "Số Sao",
       "yue": "星級",
-      "zh-CN": "星级",
-      "zh-HK": "星級",
-      "zh-TW": "星等"
+      "zh": "星级"
     },
     "iDtype": "number"
   },
@@ -9323,9 +9001,7 @@
       "uk": "Заправка водою",
       "vi": "Trạm Đóng Bình Nước uống",
       "yue": "補水處",
-      "zh-CN": "饮水点",
-      "zh-HK": "取水地點",
-      "zh-TW": "取水點"
+      "zh": "饮水点"
     },
     "iDtype": "check",
     "options": [
@@ -9377,9 +9053,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -9457,9 +9131,7 @@
       "uk": "Урна для сміття",
       "vi": "Thùng rác",
       "yue": "垃圾桶",
-      "zh-CN": "垃圾箱",
-      "zh-HK": "垃圾筒",
-      "zh-TW": "垃圾筒"
+      "zh": "垃圾箱"
     },
     "iDtype": "check",
     "options": [
@@ -9509,9 +9181,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -9567,8 +9237,7 @@
       "sv": "Typ av bås",
       "uk": "Кабіна",
       "vi": "Buồng",
-      "zh-CN": "岗亭，小屋",
-      "zh-TW": "亭子"
+      "zh": "岗亭，小屋"
     },
     "iDtype": "combo"
   },
@@ -9632,9 +9301,7 @@
       "uk": "Тип туалету",
       "vi": "Phương pháp thải",
       "yue": "棄置",
-      "zh-CN": "排污方式",
-      "zh-HK": "棄置",
-      "zh-TW": "處置方式"
+      "zh": "排污方式"
     },
     "options": [
       {
@@ -9674,10 +9341,7 @@
           "tr": "Sifon",
           "uk": "Зливний",
           "vi": "Bấm",
-          "yue": "沖水",
-          "zh-CN": "冲水式",
-          "zh-HK": "沖水式",
-          "zh-TW": "沖水式"
+          "yue": "沖水"
         }
       },
       {
@@ -9700,9 +9364,7 @@
           "pl": "Latryna",
           "sv": "Grop-latrin",
           "uk": "Вигрібна яма",
-          "vi": "Mương",
-          "zh-CN": "旱厕",
-          "zh-TW": "旱廁"
+          "vi": "Mương"
         }
       },
       {
@@ -9743,10 +9405,7 @@
           "tr": "Kimyasal",
           "uk": "Хімічний",
           "vi": "Hóa chất",
-          "yue": "化學",
-          "zh-CN": "化学厕所",
-          "zh-HK": "化學掩臭",
-          "zh-TW": "化工"
+          "yue": "化學"
         }
       },
       {
@@ -9787,10 +9446,7 @@
           "tr": "Kova",
           "uk": "Відро",
           "vi": "Thùng",
-          "yue": "尿兜",
-          "zh-CN": "粪桶",
-          "zh-HK": "尿斗",
-          "zh-TW": "尿筒"
+          "yue": "尿兜"
         }
       }
     ],
@@ -9814,8 +9470,7 @@
       "pl": "Przewijak",
       "sv": "Skötbord",
       "uk": "Сповивальний стіл",
-      "vi": "Bàn Thay Tã",
-      "zh-TW": "尿布更換桌"
+      "vi": "Bàn Thay Tã"
     },
     "iDtype": "check",
     "options": [
@@ -9847,8 +9502,7 @@
       "sv": "Handtvätt",
       "uk": "Рукомийник",
       "vi": "Rửa Tay",
-      "zh-CN": "洗手处",
-      "zh-TW": "洗手台"
+      "zh": "洗手处"
     },
     "iDtype": "check",
     "options": [
@@ -9879,8 +9533,7 @@
       "sv": "Ställningar",
       "uk": "Положення",
       "vi": "Tư thế",
-      "zh-CN": "位置",
-      "zh-TW": "位置"
+      "zh": "位置"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -9902,8 +9555,7 @@
       "pl": "Rodzaj",
       "sv": "Typ",
       "uk": "Тип",
-      "vi": "Cấp",
-      "zh-TW": "類型"
+      "vi": "Cấp"
     },
     "iDtype": "combo",
     "options": [
@@ -9939,8 +9591,7 @@
       "pl": "Dostęp dla niewidomych",
       "sv": "Åtkomst för blind person",
       "uk": "Доступ для осіб з вадами зору",
-      "vi": "Người Khiếm thị Truy cập Được",
-      "zh-TW": "盲人通道"
+      "vi": "Người Khiếm thị Truy cập Được"
     },
     "options": [
       {
@@ -9961,8 +9612,7 @@
           "pl": "Tak",
           "sv": "Ja",
           "uk": "Так",
-          "vi": "Có",
-          "zh-TW": "有"
+          "vi": "Có"
         }
       },
       {
@@ -9982,8 +9632,7 @@
           "pl": "Ograniczony",
           "sv": "Begränsad",
           "uk": "Обмежено",
-          "vi": "Hạn chế",
-          "zh-TW": "有限制"
+          "vi": "Hạn chế"
         }
       },
       {
@@ -10004,8 +9653,7 @@
           "pl": "Nie",
           "sv": "Nej",
           "uk": "Немає",
-          "vi": "Không có",
-          "zh-TW": "無"
+          "vi": "Không có"
         }
       }
     ],
@@ -10029,8 +9677,7 @@
       "pl": "Odpady",
       "sv": "Skräp",
       "uk": "Відходи",
-      "vi": "Rác rưởi",
-      "zh-TW": "廢棄物"
+      "vi": "Rác rưởi"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -10089,9 +9736,7 @@
       "tr": "En Fazla Ağırlık",
       "uk": "Обмеження ваги",
       "vi": "Trọng lượng Tối đa",
-      "zh-CN": "限制质量",
-      "zh-HK": "最大承重",
-      "zh-TW": "最大承重"
+      "zh": "限制质量"
     },
     "iDtype": "combo"
   },
@@ -10138,9 +9783,7 @@
       "uk": "Тип",
       "vi": "Loại",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "類型"
+      "zh": "类型"
     }
   },
   "craft": {
@@ -10189,9 +9832,7 @@
       "uk": "Тип",
       "vi": "Loại",
       "yue": "類",
-      "zh-CN": "种类",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "种类"
     }
   },
   "product": {
@@ -10234,9 +9875,7 @@
       "tr": "Ürünler",
       "uk": "Виробляє",
       "vi": "Sản phẩm",
-      "zh-CN": "产品",
-      "zh-HK": "產品",
-      "zh-TW": "產品"
+      "zh": "产品"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -10304,8 +9943,7 @@
       "sv": "Byggnadsvåning",
       "uk": "Кількість поверхів",
       "vi": "Số Lầu",
-      "zh-CN": "楼层数",
-      "zh-TW": "建築物樓層"
+      "zh": "楼层数"
     }
   },
   "height_building": {
@@ -10339,8 +9977,7 @@
       "sv": "Byggnadshöjd (meter)",
       "uk": "Висота (в метрах)",
       "vi": "Chiều cao Tòa nhà (Mét)",
-      "zh-CN": "建筑物高度 (米)",
-      "zh-TW": "建築物高度（公尺）"
+      "zh": "建筑物高度 (米)"
     }
   },
   "water_source": {
@@ -10371,8 +10008,7 @@
       "pl": "Źródło wody",
       "sv": "Vattenkälla",
       "uk": "Джерело водопостачання",
-      "vi": "Nguồn Nước",
-      "zh-TW": "水源"
+      "vi": "Nguồn Nước"
     },
     "iDtype": "combo",
     "options": [
@@ -10423,8 +10059,7 @@
       "pl": "Liczba złączek",
       "sv": "Anslutningar",
       "uk": "Тип з'єднання",
-      "vi": "Số Khớp nối",
-      "zh-TW": "接合子"
+      "vi": "Số Khớp nối"
     }
   },
   "fire_hydrant/pressure": {
@@ -10457,8 +10092,7 @@
       "sv": "Tryck (bar)",
       "uk": "Тиск (бар)",
       "vi": "Áp suất (ba)",
-      "zh-CN": "水压 (bar)",
-      "zh-TW": "壓力（巴）"
+      "zh": "水压 (bar)"
     },
     "iDtype": "combo"
   },
@@ -10495,8 +10129,7 @@
       "sv": "Volym på vattenreservoarer (m³)",
       "uk": "Запас води (м³)",
       "vi": "Thể tích Nước Dự trữ (m³)",
-      "zh-CN": "蓄水量 (m³)",
-      "zh-TW": "儲水量（立方公尺）"
+      "zh": "蓄水量 (m³)"
     }
   },
   "siren/purpose": {
@@ -10529,9 +10162,7 @@
       "pl": "Przeznaczenie",
       "sv": "Syfte",
       "uk": "Призначення",
-      "vi": "Mục đích",
-      "zh-HK": "作用",
-      "zh-TW": "目的"
+      "vi": "Mục đích"
     },
     "iDtype": "combo",
     "options": [
@@ -10590,9 +10221,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "options": [
       {
@@ -10624,9 +10253,7 @@
           "pl": "Pneumatyczna",
           "sv": "Pneumatisk",
           "uk": "Пневматична",
-          "vi": "Gió",
-          "zh-HK": "氣動",
-          "zh-TW": "氣動式"
+          "vi": "Gió"
         }
       },
       {
@@ -10659,9 +10286,7 @@
           "pl": "Elektroniczna",
           "sv": "Elektronisk",
           "uk": "Електрична",
-          "vi": "Điện tử",
-          "zh-HK": "電子",
-          "zh-TW": "電子式"
+          "vi": "Điện tử"
         }
       },
       {
@@ -10693,9 +10318,7 @@
           "pl": "Inna",
           "sv": "Annan",
           "uk": "Інший",
-          "vi": "Khác",
-          "zh-HK": "其他",
-          "zh-TW": "其他"
+          "vi": "Khác"
         }
       }
     ],
@@ -10741,9 +10364,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "類型"
+      "zh": "类型"
     }
   },
   "blood_components": {
@@ -10788,9 +10409,7 @@
       "uk": "Складові крові",
       "vi": "Thành phần Máu",
       "yue": "血成份",
-      "zh-CN": "血液成分",
-      "zh-HK": "血液成分",
-      "zh-TW": "血液組成"
+      "zh": "血液成分"
     },
     "options": [
       {
@@ -10831,10 +10450,7 @@
           "tr": "tam kan",
           "uk": "цільна кров",
           "vi": "máu toàn phần",
-          "yue": "全血",
-          "zh-CN": "全血",
-          "zh-HK": "全血",
-          "zh-TW": "全血"
+          "yue": "全血"
         }
       },
       {
@@ -10877,10 +10493,7 @@
           "tr": "plazma",
           "uk": "плазма",
           "vi": "huyết tương",
-          "yue": "血漿",
-          "zh-CN": "血浆",
-          "zh-HK": "血漿",
-          "zh-TW": "血漿"
+          "yue": "血漿"
         }
       },
       {
@@ -10923,10 +10536,7 @@
           "tr": "pıhtı hücreler",
           "uk": "тромбоцити",
           "vi": "tiểu cầu",
-          "yue": "血小板",
-          "zh-CN": "血小板",
-          "zh-HK": "血小板",
-          "zh-TW": "血小板"
+          "yue": "血小板"
         }
       },
       {
@@ -10968,10 +10578,7 @@
           "tr": "kök hücre örnekleri",
           "uk": "зразки стовбурових клітин",
           "vi": "mẫu tế bào gốc",
-          "yue": "幹細胞樣本",
-          "zh-CN": "干细胞样本",
-          "zh-HK": "幹細胞樣本",
-          "zh-TW": "幹細胞樣品"
+          "yue": "幹細胞樣本"
         }
       }
     ]
@@ -11024,9 +10631,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -11089,9 +10694,7 @@
       "tr": "En Fazla Yükseklik",
       "uk": "Максимальна висота",
       "vi": "Chiều cao Tối đa",
-      "zh-CN": "限制高度",
-      "zh-HK": "最大高度",
-      "zh-TW": "最高高度"
+      "zh": "限制高度"
     },
     "iDtype": "combo"
   },
@@ -11117,8 +10720,7 @@
       "pl": "Kierunek",
       "sv": "Påverkad riktning",
       "uk": "Напрямок дії",
-      "vi": "Hướng Ảnh hưởng",
-      "zh-TW": "受影響的方向"
+      "vi": "Hướng Ảnh hưởng"
     },
     "options": [
       {
@@ -11158,10 +10760,7 @@
           "sv": "Framåt",
           "tr": "İleri",
           "uk": "За напрямком лінії",
-          "vi": "Tiến",
-          "zh-CN": "向前",
-          "zh-HK": "前向",
-          "zh-TW": "前進"
+          "vi": "Tiến"
         }
       },
       {
@@ -11200,10 +10799,7 @@
           "sv": "Bakåt",
           "tr": "Geri",
           "uk": "Проти напрямку лінії",
-          "vi": "Ngược",
-          "zh-CN": "向后",
-          "zh-HK": "後向",
-          "zh-TW": "後退"
+          "vi": "Ngược"
         }
       },
       {
@@ -11241,10 +10837,7 @@
           "sv": "Båda / Alla",
           "tr": "İleri ve Geri",
           "uk": "В обидва боки/Всі",
-          "vi": "2 Chiều / Mọi Hướng",
-          "zh-CN": "双向 / 全部",
-          "zh-HK": "雙向",
-          "zh-TW": "兩者都有 / 全都有"
+          "vi": "2 Chiều / Mọi Hướng"
         }
       }
     ],
@@ -11284,9 +10877,7 @@
       "tr": "Uzaklık",
       "uk": "Відстань",
       "vi": "Tầm xa",
-      "zh-CN": "距离",
-      "zh-HK": "距離",
-      "zh-TW": "距離"
+      "zh": "距离"
     }
   },
   "direction_clock": {
@@ -11331,9 +10922,7 @@
       "uk": "Напрямок",
       "vi": "Hướng",
       "yue": "方向",
-      "zh-CN": "方向",
-      "zh-HK": "方向",
-      "zh-TW": "方向"
+      "zh": "方向"
     },
     "options": [
       {
@@ -11376,10 +10965,7 @@
           "tr": "Saat Yönünde",
           "uk": "За годинниковою стрілкою",
           "vi": "Theo Chiều kim Đồng hồ",
-          "yue": "順時針",
-          "zh-CN": "顺时针",
-          "zh-HK": "順時針",
-          "zh-TW": "順時針"
+          "yue": "順時針"
         }
       },
       {
@@ -11422,10 +11008,7 @@
           "tr": "Saat Yönünün Tersine",
           "uk": "Проти годинникової стрілки",
           "vi": "Ngược Chiều kim Đồng hồ",
-          "yue": "逆時針",
-          "zh-CN": "逆时针",
-          "zh-HK": "逆時針",
-          "zh-TW": "逆時針"
+          "yue": "逆時針"
         }
       }
     ],
@@ -11480,9 +11063,7 @@
       "uk": "Споруда",
       "vi": "Cấu trúc",
       "yue": "結構",
-      "zh-CN": "结构",
-      "zh-HK": "結構",
-      "zh-TW": "人造結構物"
+      "zh": "结构"
     },
     "options": [
       {
@@ -11532,9 +11113,7 @@
           "uk": "Міст",
           "vi": "Cầu",
           "yue": "橋",
-          "zh-CN": "桥梁",
-          "zh-HK": "橋樑",
-          "zh-TW": "橋樑"
+          "zh": "桥"
         }
       },
       {
@@ -11584,9 +11163,7 @@
           "uk": "Тунель",
           "vi": "Đường hầm",
           "yue": "隧道",
-          "zh-CN": "隧道",
-          "zh-HK": "隧道",
-          "zh-TW": "隧道"
+          "zh": "隧道"
         }
       },
       {
@@ -11632,9 +11209,7 @@
           "uk": "Насип",
           "vi": "Đường đắp cao",
           "yue": "基堤",
-          "zh-CN": "路堤",
-          "zh-HK": "基堤",
-          "zh-TW": "堤"
+          "zh": "堤岸"
         }
       },
       {
@@ -11678,9 +11253,7 @@
           "uk": "Виїмка",
           "vi": "Đường xẻ",
           "yue": "開山",
-          "zh-CN": "路堑",
-          "zh-HK": "開山",
-          "zh-TW": "挖土"
+          "zh": "开凿"
         }
       },
       {
@@ -11722,10 +11295,7 @@
           "tr": "Sığ Geçit",
           "uk": "Брід",
           "vi": "Nơi Lội qua Sông",
-          "yue": "津",
-          "zh-CN": "过水路面",
-          "zh-HK": "淺灘",
-          "zh-TW": "淺灘"
+          "yue": "津"
         }
       }
     ]
@@ -11778,9 +11348,7 @@
       "uk": "Односторонній рух",
       "vi": "Chiều",
       "yue": "單程",
-      "zh-CN": "单行线",
-      "zh-HK": "單程",
-      "zh-TW": "單行道"
+      "zh": "单行"
     },
     "options": [
       {
@@ -11826,10 +11394,7 @@
           "tr": "Evet",
           "uk": "Так",
           "vi": "1 Chiều",
-          "yue": "係",
-          "zh-CN": "是",
-          "zh-HK": "是",
-          "zh-TW": "是"
+          "yue": "係"
         }
       },
       {
@@ -11875,10 +11440,7 @@
           "tr": "Hayır",
           "uk": "Ні",
           "vi": "2 Chiều",
-          "yue": "唔係",
-          "zh-CN": "否",
-          "zh-HK": "否",
-          "zh-TW": "否"
+          "yue": "唔係"
         }
       }
     ],
@@ -11930,9 +11492,7 @@
       "uk": "Нахил",
       "vi": "Độ dốc",
       "yue": "斜",
-      "zh-CN": "斜度",
-      "zh-HK": "斜",
-      "zh-TW": "斜度"
+      "zh": "斜度"
     },
     "iDtype": "combo"
   },
@@ -11968,8 +11528,7 @@
       "sv": "Maxvikt",
       "uk": "Максимально дозволена маса",
       "vi": "Trọng lượng Tối đa",
-      "zh-CN": "限制质量",
-      "zh-TW": "最大重量"
+      "zh": "限制质量"
     },
     "iDtype": "combo"
   },
@@ -12015,9 +11574,7 @@
       "uk": "Проходимість",
       "vi": "Độ nhẵn",
       "yue": "粗滑",
-      "zh-CN": "平顺度",
-      "zh-HK": "順滑度",
-      "zh-TW": "平順度"
+      "zh": "平顺度"
     },
     "options": [
       {
@@ -12055,10 +11612,7 @@
           "tr": "Küçük Tekerlekli Hafif Araçlar: paten, kaykay",
           "uk": "Ролики: роликові ковзани, скейтборди",
           "vi": "Bánh xe Trượt: Giày patanh, ván trượt",
-          "yue": "轆仔：𨎊軸溜冰、滑板",
-          "zh-CN": "轴承：溜冰，滑板",
-          "zh-HK": "軸承：溜冰、滑板",
-          "zh-TW": "軸承：溜冰、滑板"
+          "yue": "轆仔：𨎊軸溜冰、滑板"
         }
       },
       {
@@ -12096,10 +11650,7 @@
           "tr": "İnce Tekerlekli Araçlar: Yarış Bisikleti",
           "uk": "Вузькі колеса: гоночні велосипеди",
           "vi": "Bánh xe Mỏng: Xe đạp đua",
-          "yue": "薄轆：公路單車",
-          "zh-CN": "细轮：竞速自行车",
-          "zh-HK": "細車輪：公路車",
-          "zh-TW": "窄輪：公路車"
+          "yue": "薄轆：公路單車"
         }
       },
       {
@@ -12138,10 +11689,7 @@
           "tr": "Hafif Tekerlekli Araçlar: şehir bisikleti, tekerlekli sandalye, mobilet",
           "uk": "Колеса: дорожні велосипеди, візки, самокати",
           "vi": "Bánh xe: Xe đạp lai, xe lăn, vét pa",
-          "yue": "有轆：單車、輪椅、滑板車",
-          "zh-CN": "轮胎：通勤脚踏车，轮椅，滑板车",
-          "zh-HK": "輪胎：單車、輪椅、滑板車",
-          "zh-TW": "輪胎：通勤自行車、輪椅、速克達"
+          "yue": "有轆：單車、輪椅、滑板車"
         }
       },
       {
@@ -12179,10 +11727,7 @@
           "tr": "Dirençli Tekerlere Sahip Araçlar: arazi bisikleti, arazi aracı",
           "uk": "Міцні колеса: гібридні велосипеди, машини, рикші",
           "vi": "Bánh xe Bền: Xe hơi, xích lô, xe đạp dã ngoại",
-          "yue": "耐用轆：旅行單車、汽車、人力車",
-          "zh-CN": "强化轮胎：休旅自行车，汽车，人力车",
-          "zh-HK": "堅固車輪：旅行單車、汽車、人力車",
-          "zh-TW": "強化輪胎：登山車、汽車、人力車"
+          "yue": "耐用轆：旅行單車、汽車、人力車"
         }
       },
       {
@@ -12221,10 +11766,7 @@
           "tr": "Yüksek Araçlar: yüksek arazi aracı",
           "uk": "Великий кліренс: автомобілі і малі позашляховики",
           "vi": "Gầm Cao: Xe xa đường nhẹ",
-          "yue": "高地台：輕型越野車",
-          "zh-CN": "轻量化：低负重越野车辆",
-          "zh-HK": "高地台：輕型越野車輛",
-          "zh-TW": "高底盤：輕度越野車輛"
+          "yue": "高地台：輕型越野車"
         }
       },
       {
@@ -12263,10 +11805,7 @@
           "tr": "Arazi Araçları: ağır iş arazi aracı",
           "uk": "Позашляховики: повноцінні позашляховики",
           "vi": "Xa đường: Xe xa đường nặng",
-          "yue": "越野：重型越野車輛",
-          "zh-CN": "越野：高负重越野车辆",
-          "zh-HK": "越野：重型越野車輛",
-          "zh-TW": "越野：重度越野車輛"
+          "yue": "越野：重型越野車輛"
         }
       },
       {
@@ -12305,10 +11844,7 @@
           "tr": "Özel Arazi Araçları: traktör, ATV",
           "uk": "Спеціалізовані позашляховики: трактори, мотоусюдиходи, танки, тріалбайкі",
           "vi": "Xa đường Chuyên dụng: Máy kéo, ATV",
-          "yue": "越野專用：拖拉機、全地形越野車",
-          "zh-CN": "越野专用：拖拉机，全地形越野车",
-          "zh-HK": "越野專用：拖拉機、全地形越野車",
-          "zh-TW": "越野專用：拖拉機、全地形車"
+          "yue": "越野專用：拖拉機、全地形越野車"
         }
       },
       {
@@ -12348,10 +11884,7 @@
           "tr": "Geçilmez / Araç Giremez",
           "uk": "Неможливо для будь-якої колісної техніки",
           "vi": "Không thể qua được bằng bánh xe",
-          "yue": "無得車過 / 唔畀車行",
-          "zh-CN": "无法通行 / 有轮车辆无法通行",
-          "zh-HK": "無法通行 / 輪車無法通行",
-          "zh-TW": "無法通行 /  機動車輛無法通行"
+          "yue": "無得車過 / 唔畀車行"
         }
       }
     ],
@@ -12403,9 +11936,7 @@
       "tr": "Spor",
       "uk": "Спорт",
       "vi": "Môn Thể thao",
-      "zh-CN": "赛车项目",
-      "zh-HK": "運動",
-      "zh-TW": "運動"
+      "zh": "赛车项目"
     },
     "iDtype": "semiCombo"
   },
@@ -12460,9 +11991,7 @@
       "uk": "Смуги",
       "vi": "Số Làn",
       "yue": "綫道數",
-      "zh-CN": "车道数目",
-      "zh-HK": "行車綫",
-      "zh-TW": "車線數目"
+      "zh": "车道"
     }
   },
   "maxspeed": {
@@ -12514,9 +12043,7 @@
       "uk": "Обмеження швидкості",
       "vi": "Tốc độ Tối đa",
       "yue": "限速",
-      "zh-CN": "限制速度",
-      "zh-HK": "速度限制",
-      "zh-TW": "速度限制"
+      "zh": "限速"
     },
     "iDtype": "maxspeed"
   },
@@ -12559,9 +12086,7 @@
       "uk": "STOP для…",
       "vi": "Các Đường Phải Dừng lại",
       "yue": "停車指示",
-      "zh-CN": "停车指示类型",
-      "zh-HK": "停車指示種類",
-      "zh-TW": "停車指示種類"
+      "zh": "停车指示类型"
     },
     "options": [
       {
@@ -12601,10 +12126,7 @@
           "tr": "Tüm Yollar",
           "uk": "Всіх доріг",
           "vi": "Tất cả các Đường",
-          "yue": "所有方向",
-          "zh-CN": "全部方向",
-          "zh-HK": "全部方向",
-          "zh-TW": "全部方向"
+          "yue": "所有方向"
         }
       },
       {
@@ -12645,10 +12167,7 @@
           "tr": "Tali Yol",
           "uk": "Для другорядних",
           "vi": "Chỉ Đường Không Ưu tiên",
-          "yue": "車道仔",
-          "zh-CN": "次要道路",
-          "zh-HK": "次級道路",
-          "zh-TW": "支線道路停止"
+          "yue": "車道仔"
         }
       }
     ],
@@ -12700,9 +12219,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "類別",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -12774,9 +12291,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "訊號種類",
-      "zh-TW": "號誌種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -12830,8 +12345,7 @@
       "pl": "Kierunek",
       "sv": "Påverkad riktning",
       "uk": "Напрямок дії",
-      "vi": "Hướng Ảnh hưởng",
-      "zh-TW": "受影響的方向"
+      "vi": "Hướng Ảnh hưởng"
     },
     "options": [
       {
@@ -12867,10 +12381,7 @@
           "sv": "Framåt",
           "tr": "İleri",
           "uk": "За напрямком лінії",
-          "vi": "Tiến",
-          "zh-CN": "向前",
-          "zh-HK": "前向",
-          "zh-TW": "前後"
+          "vi": "Tiến"
         }
       },
       {
@@ -12906,10 +12417,7 @@
           "sv": "Bakåt",
           "tr": "Geri",
           "uk": "Проти напрямку лінії",
-          "vi": "Ngược",
-          "zh-CN": "向后",
-          "zh-HK": "後向",
-          "zh-TW": "後退"
+          "vi": "Ngược"
         }
       },
       {
@@ -12945,10 +12453,7 @@
           "sv": "Båda / Alla",
           "tr": "İkisi / Hepsi",
           "uk": "В обидва боки/Всі",
-          "vi": "2 Chiều / Mọi Hướng",
-          "zh-CN": "双向 / 全部",
-          "zh-HK": "雙向",
-          "zh-TW": "兩個方向 / 全部"
+          "vi": "2 Chiều / Mọi Hướng"
         }
       }
     ],
@@ -13004,9 +12509,7 @@
       "uk": "Висота над р.м.",
       "vi": "Cao độ",
       "yue": "海拔",
-      "zh-CN": "海拔",
-      "zh-HK": "海拔",
-      "zh-TW": "海拔高度"
+      "zh": "海拔"
     }
   },
   "site_type": {
@@ -13037,9 +12540,7 @@
       "sv": "Typ av arkeologisk plats",
       "uk": "Тип археологічної пам'ятки",
       "vi": "Loại Di chỉ",
-      "zh-CN": "站点类型",
-      "zh-HK": "地點類別",
-      "zh-TW": "遺址類型"
+      "zh": "站点类型"
     },
     "iDtype": "combo",
     "options": [
@@ -13115,9 +12616,7 @@
       "tr": "Eski Uygarlık",
       "uk": "Антична культура",
       "vi": "Nền Văn hóa",
-      "zh-CN": "所属文化及历史时期",
-      "zh-HK": "古代文明",
-      "zh-TW": "古文明"
+      "zh": "所属文化及历史时期"
     },
     "iDtype": "combo",
     "options": [
@@ -13191,9 +12690,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -13261,9 +12758,7 @@
       "tr": "Başlangıç Tarihi",
       "uk": "Дата початку",
       "vi": "Ngày Bắt đầu",
-      "zh-CN": "启用或竣工日期",
-      "zh-HK": "起始日期",
-      "zh-TW": "啟始日期"
+      "zh": "启用或竣工日期"
     }
   },
   "seamark/wreck/category": {
@@ -13296,9 +12791,7 @@
       "pl": "Kategoria",
       "sv": "Kategori",
       "uk": "Категорія",
-      "vi": "Kiểu",
-      "zh-HK": "分類",
-      "zh-TW": "種類"
+      "vi": "Kiểu"
     },
     "iDtype": "combo",
     "options": [
@@ -13342,9 +12835,7 @@
       "sv": "Datum då det sjönk",
       "uk": "Дата затоплення",
       "vi": "Ngày Chìm",
-      "zh-CN": "沉没时间",
-      "zh-HK": "沉沒日期",
-      "zh-TW": "沉沒日期"
+      "zh": "沉没时间"
     }
   },
   "historic/wreck/visible_at_low_tide": {
@@ -13377,9 +12868,7 @@
       "sv": "Synligt vid lågt tidvatten",
       "uk": "Видно під час відливу",
       "vi": "Nhô ra khi Thủy triều Xuống",
-      "zh-CN": "低潮时可见",
-      "zh-HK": "退潮時看到",
-      "zh-TW": "退潮時可見"
+      "zh": "低潮时可见"
     },
     "iDtype": "check",
     "options": [
@@ -13417,9 +12906,7 @@
       "sv": "Synligt vid högt tidvatten",
       "uk": "Видно під час приливу",
       "vi": "Nhô ra khi Thủy triều Lên",
-      "zh-CN": "高潮时可见",
-      "zh-HK": "漲潮時看到",
-      "zh-TW": "滿潮時可見"
+      "zh": "高潮时可见"
     },
     "iDtype": "check",
     "options": [
@@ -13454,9 +12941,7 @@
       "sv": "Sjömärke",
       "uk": "Навігаційний знак",
       "vi": "Dấu hiệu",
-      "zh-CN": "导航标志",
-      "zh-HK": "航海標",
-      "zh-TW": "海標"
+      "zh": "导航标志"
     },
     "iDtype": "combo",
     "options": [
@@ -13526,9 +13011,7 @@
       "sv": "Dansstilar",
       "uk": "Види танців",
       "vi": "Thể loại Khiêu vũ",
-      "zh-CN": "舞蹈类型",
-      "zh-HK": "舞蹈風格",
-      "zh-TW": "舞蹈類型"
+      "zh": "舞蹈类型"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -13590,8 +13073,7 @@
       "sv": "Hundar",
       "uk": "Собаки",
       "vi": "Chó",
-      "zh-CN": "狗",
-      "zh-TW": "狗"
+      "zh": "狗"
     },
     "options": [
       {
@@ -13624,9 +13106,7 @@
           "sr": "Дозвољено",
           "sv": "Tillåten",
           "uk": "Дозволено",
-          "vi": "Cho phép",
-          "zh-CN": "允许",
-          "zh-TW": "允許"
+          "vi": "Cho phép"
         }
       },
       {
@@ -13656,9 +13136,7 @@
           "sr": "Само на поводцу",
           "sv": "Endast kopplad",
           "uk": "Тільки на шворі",
-          "vi": "Chỉ Cho phép khi có Dây buộc",
-          "zh-CN": "仅限牵狗绳",
-          "zh-TW": "只有牽繩套住"
+          "vi": "Chỉ Cho phép khi có Dây buộc"
         }
       },
       {
@@ -13691,9 +13169,7 @@
           "sr": "Није дозвољено",
           "sv": "Ej tillåten",
           "uk": "Не дозволяється",
-          "vi": "Cấm",
-          "zh-CN": "不允许",
-          "zh-TW": "不允許"
+          "vi": "Cấm"
         }
       }
     ],
@@ -13725,8 +13201,7 @@
       "sv": "Fiske",
       "uk": "Риболовля",
       "vi": "Câu cá",
-      "zh-CN": "钓鱼",
-      "zh-TW": "釣魚"
+      "zh": "钓鱼"
     },
     "iDtype": "combo",
     "options": [
@@ -13791,9 +13266,7 @@
       "uk": "Сезонний",
       "vi": "Tùy Mùa",
       "yue": "季節",
-      "zh-CN": "具备季节性",
-      "zh-HK": "季節性",
-      "zh-TW": "季節性"
+      "zh": "具备季节性"
     },
     "iDtype": "check",
     "options": [
@@ -13849,9 +13322,7 @@
       "tr": "Spor",
       "uk": "Спорт",
       "vi": "Môn Thể thao",
-      "zh-CN": "冰上项目",
-      "zh-HK": "運動",
-      "zh-TW": "運動"
+      "zh": "冰上项目"
     },
     "iDtype": "semiCombo"
   },
@@ -13892,9 +13363,7 @@
       "uk": "Злив каналізаційних відходів",
       "vi": "Trạm Đổ Chất thải Vệ sinh",
       "yue": "屎尿棄置",
-      "zh-CN": "厕所废物",
-      "zh-HK": "廁所污水處理",
-      "zh-TW": "廁所處理方式"
+      "zh": "厕所废物"
     },
     "iDtype": "check",
     "options": [
@@ -13943,9 +13412,7 @@
       "uk": "Розетка",
       "vi": "Nguồn Điện",
       "yue": "電源",
-      "zh-CN": "供电",
-      "zh-HK": "電源供應",
-      "zh-TW": "電源供應器"
+      "zh": "供电"
     },
     "iDtype": "check",
     "options": [
@@ -13968,8 +13435,7 @@
       "pl": "Motyw",
       "sv": "Tema",
       "uk": "Тема",
-      "vi": "Chủ đề",
-      "zh-TW": "主題"
+      "vi": "Chủ đề"
     },
     "iDtype": "combo",
     "options": [
@@ -14024,8 +13490,7 @@
       "sr": "Врста",
       "sv": "Typ",
       "uk": "Тип",
-      "vi": "Kiểu",
-      "zh-TW": "類型"
+      "vi": "Kiểu"
     },
     "iDtype": "combo",
     "options": [
@@ -14095,9 +13560,7 @@
       "uk": "Довжина (метрів)",
       "vi": "Chiều dài (Mét)",
       "yue": "長（米）",
-      "zh-CN": "长度 (米)",
-      "zh-HK": "長度 (米)",
-      "zh-TW": "長度 (公尺)"
+      "zh": "长度 (米)"
     }
   },
   "swimming_pool": {
@@ -14132,9 +13595,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -14202,9 +13663,7 @@
       "tr": "Spor",
       "uk": "Спорт",
       "vi": "Môn Thể thao",
-      "zh-CN": "运动项目",
-      "zh-HK": "運動",
-      "zh-TW": "運動"
+      "zh": "运动项目"
     },
     "iDtype": "semiCombo"
   },
@@ -14231,8 +13690,7 @@
       "sv": "Resurser",
       "uk": "Ресурси",
       "vi": "Tài nguyên",
-      "zh-CN": "资源",
-      "zh-TW": "資源"
+      "zh": "资源"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -14309,9 +13767,7 @@
       "tr": "İletişim türleri",
       "uk": "Транслює сигнал",
       "vi": "Kiểu Giao thông",
-      "zh-CN": "通讯类型",
-      "zh-HK": "通訊種類",
-      "zh-TW": "通訊類型"
+      "zh": "通讯类型"
     }
   },
   "content": {
@@ -14365,9 +13821,7 @@
       "tr": "Madde",
       "uk": "Вміст",
       "vi": "Đồ Chứa đựng",
-      "zh-CN": "内容",
-      "zh-HK": "內容",
-      "zh-TW": "內容"
+      "zh": "内容"
     },
     "iDtype": "combo"
   },
@@ -14411,9 +13865,7 @@
       "tr": "Vinç Türü",
       "uk": "Тип крана",
       "vi": "Kiểu Cẩu",
-      "zh-CN": "起重机类型",
-      "zh-HK": "起重機種類",
-      "zh-TW": "起重機類型"
+      "zh": "起重机类型"
     },
     "options": [
       {
@@ -14449,10 +13901,7 @@
           "sr": "Преносни кран",
           "sv": "Portalkran",
           "uk": "Козловий кран",
-          "vi": "Cầu Chạy Cổng trục",
-          "zh-CN": "门式起重机",
-          "zh-HK": "流動起重機",
-          "zh-TW": "門式起重機"
+          "vi": "Cầu Chạy Cổng trục"
         }
       },
       {
@@ -14489,10 +13938,7 @@
           "sr": "Монтажни кран",
           "sv": "Golvmonterad kran",
           "uk": "Стаціонарний кран",
-          "vi": "Cẩu Đứng trên Đất",
-          "zh-CN": "固定式起重机",
-          "zh-HK": "坐地式起重機",
-          "zh-TW": "落地式起重機"
+          "vi": "Cẩu Đứng trên Đất"
         }
       },
       {
@@ -14524,10 +13970,7 @@
           "sl": "Premični žerjav",
           "sv": "Traverslift",
           "uk": "Пересувний витяг",
-          "vi": "Máy Trục Tàu",
-          "zh-CN": "流动式起重机",
-          "zh-HK": "活動式起重機",
-          "zh-TW": "移動式起重機"
+          "vi": "Máy Trục Tàu"
         }
       }
     ],
@@ -14567,8 +14010,7 @@
       "sv": "Flaggtyp",
       "uk": "Вид прапора",
       "vi": "Loại Cờ",
-      "zh-CN": "旗帜类型",
-      "zh-TW": "旗幟種類"
+      "zh": "旗帜类型"
     },
     "iDtype": "combo",
     "options": [
@@ -14637,9 +14079,7 @@
       "tr": "İsim",
       "uk": "Мітка",
       "vi": "Chữ đề",
-      "zh-CN": "标识",
-      "zh-HK": "標籤",
-      "zh-TW": "標籤"
+      "zh": "标识"
     }
   },
   "tower/type": {
@@ -14684,9 +14124,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -14761,9 +14199,7 @@
       "tr": "Kule İnşaatı",
       "uk": "Конструкція вежі",
       "vi": "Hình dạng",
-      "zh-CN": "结构",
-      "zh-HK": "建築物料",
-      "zh-TW": "建材"
+      "zh": "结构"
     },
     "iDtype": "combo",
     "options": [
@@ -14829,9 +14265,7 @@
       "pl": "Monitoring",
       "sv": "Mäter",
       "uk": "Відстежується",
-      "vi": "Giám sát",
-      "zh-HK": "監測",
-      "zh-TW": "監測"
+      "vi": "Giám sát"
     }
   },
   "floating": {
@@ -14860,8 +14294,7 @@
       "sv": "Flytande",
       "uk": "Плавучий",
       "vi": "Nổi trên Mặt nước",
-      "zh-CN": "漂浮",
-      "zh-TW": "漂浮"
+      "zh": "漂浮"
     },
     "iDtype": "check",
     "options": [
@@ -14887,8 +14320,7 @@
       "pl": "Dostęp dla wózków dziecięcych",
       "sv": "Åtkomst för barnvagn",
       "uk": "Дитяча коляска",
-      "vi": "Đẩy Xe đẩy Được",
-      "zh-TW": "嬰兒車"
+      "vi": "Đẩy Xe đẩy Được"
     },
     "options": [
       {
@@ -14906,8 +14338,7 @@
           "pl": "Tak",
           "sv": "Ja",
           "uk": "Так",
-          "vi": "Có",
-          "zh-TW": "有"
+          "vi": "Có"
         }
       },
       {
@@ -14924,8 +14355,7 @@
           "pl": "Ograniczony",
           "sv": "Begränsad",
           "uk": "Обмежено",
-          "vi": "Hạn chế",
-          "zh-TW": "有限制"
+          "vi": "Hạn chế"
         }
       },
       {
@@ -14943,8 +14373,7 @@
           "pl": "Nie",
           "sv": "Nej",
           "uk": "Немає",
-          "vi": "Không có",
-          "zh-TW": "無"
+          "vi": "Không có"
         }
       }
     ],
@@ -14984,9 +14413,7 @@
       "tr": "Madde",
       "uk": "Речовина",
       "vi": "Chất",
-      "zh-CN": "材质",
-      "zh-HK": "物質",
-      "zh-TW": "材質"
+      "zh": "材质"
     },
     "iDtype": "combo",
     "options": [
@@ -15068,9 +14495,7 @@
       "uk": "Шар",
       "vi": "Lớp",
       "yue": "層",
-      "zh-CN": "图层",
-      "zh-HK": "層",
-      "zh-TW": "層"
+      "zh": "层"
     }
   },
   "diameter": {
@@ -15099,8 +14524,7 @@
       "sr": "Пречник",
       "sv": "Diameter",
       "uk": "Діаметр",
-      "vi": "Đường kính",
-      "zh-TW": "直徑"
+      "vi": "Đường kính"
     },
     "iDtype": "combo"
   },
@@ -15148,9 +14572,7 @@
       "uk": "Рослини",
       "vi": "Loại Cây",
       "yue": "作物",
-      "zh-CN": "作物",
-      "zh-HK": "農作物",
-      "zh-TW": "作物"
+      "zh": "作物"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -15205,8 +14627,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -15305,8 +14726,7 @@
       "sv": "Arkitekt",
       "uk": "Архітектор",
       "vi": "Kiến trúc sư",
-      "zh-CN": "建筑设计师",
-      "zh-TW": "建築樣式"
+      "zh": "建筑设计师"
     }
   },
   "description": {
@@ -15358,9 +14778,7 @@
       "uk": "Опис",
       "vi": "Miêu tả",
       "yue": "描述",
-      "zh-CN": "描述",
-      "zh-HK": "描述",
-      "zh-TW": "描述"
+      "zh": "描述"
     }
   },
   "intermittent": {
@@ -15401,9 +14819,7 @@
       "tr": "Aralıklı",
       "uk": "Пересихає",
       "vi": "Lúc chảy Lúc không",
-      "zh-CN": "断流现象",
-      "zh-HK": "間中",
-      "zh-TW": "週期性的"
+      "zh": "断流现象"
     },
     "iDtype": "check",
     "options": [
@@ -15455,9 +14871,7 @@
       "uk": "Тип листя",
       "vi": "Loại Lá",
       "yue": "葉類",
-      "zh-CN": "叶型",
-      "zh-HK": "葉子種類",
-      "zh-TW": "葉子種類"
+      "zh": "叶型"
     },
     "options": [
       {
@@ -15501,10 +14915,7 @@
           "tr": "Geniş Yapraklı",
           "uk": "Широколисті",
           "vi": "Hình Quạt",
-          "yue": "闊葉",
-          "zh-CN": "阔叶",
-          "zh-HK": "闊葉",
-          "zh-TW": "闊葉林"
+          "yue": "闊葉"
         }
       },
       {
@@ -15547,10 +14958,7 @@
           "tr": "İğneli",
           "uk": "Хвоя",
           "vi": "Hình Kim",
-          "yue": "針葉",
-          "zh-CN": "针叶",
-          "zh-HK": "針葉",
-          "zh-TW": "針葉林"
+          "yue": "針葉"
         }
       },
       {
@@ -15596,10 +15004,7 @@
           "tr": "Karışık",
           "uk": "Змішана",
           "vi": "Pha trộn",
-          "yue": "混合",
-          "zh-CN": "混交林",
-          "zh-HK": "混合",
-          "zh-TW": "混合林"
+          "yue": "混合"
         }
       },
       {
@@ -15643,10 +15048,7 @@
           "tr": "Yapraksız",
           "uk": "Без листя",
           "vi": "Không có",
-          "yue": "無葉",
-          "zh-CN": "无叶",
-          "zh-HK": "無葉",
-          "zh-TW": "落葉林"
+          "yue": "無葉"
         }
       }
     ],
@@ -15692,9 +15094,7 @@
       "uk": "Сезонність",
       "vi": "Thời gian Mọc Lá",
       "yue": "換葉週期",
-      "zh-CN": "叶寿命",
-      "zh-HK": "換葉週期",
-      "zh-TW": "落葉期"
+      "zh": "叶寿命"
     },
     "options": [
       {
@@ -15738,10 +15138,7 @@
           "tr": "Hep Yeşil",
           "uk": "Вічнозелений",
           "vi": "Thường xanh",
-          "yue": "常綠",
-          "zh-CN": "常绿",
-          "zh-HK": "常綠",
-          "zh-TW": "長青樹"
+          "yue": "常綠"
         }
       },
       {
@@ -15784,10 +15181,7 @@
           "tr": "Yaprak Döken",
           "uk": "Листяний",
           "vi": "Rụng Lá",
-          "yue": "落葉",
-          "zh-CN": "落叶",
-          "zh-HK": "落葉",
-          "zh-TW": "落葉林"
+          "yue": "落葉"
         }
       },
       {
@@ -15830,10 +15224,7 @@
           "tr": "Kısmen Yeşil",
           "uk": "Напів-вічнозелений",
           "vi": "Bán Thường xanh",
-          "yue": "半常綠",
-          "zh-CN": "半常绿",
-          "zh-HK": "半常綠    ",
-          "zh-TW": "半長青林"
+          "yue": "半常綠"
         }
       },
       {
@@ -15876,10 +15267,7 @@
           "tr": "Kısmen Yaprak Döken",
           "uk": "Напів-лістяний",
           "vi": "Bán Rụng Lá",
-          "yue": "半落葉",
-          "zh-CN": "半落叶",
-          "zh-HK": "半落葉",
-          "zh-TW": "半落葉林"
+          "yue": "半落葉"
         }
       },
       {
@@ -15925,10 +15313,7 @@
           "tr": "Karışık",
           "uk": "Змішаний",
           "vi": "Pha trộn",
-          "yue": "混合",
-          "zh-CN": "混交林",
-          "zh-HK": "混合",
-          "zh-TW": "混合林"
+          "yue": "混合"
         }
       }
     ],
@@ -15978,9 +15363,7 @@
       "uk": "Позначення",
       "vi": "Tầm Quan trọng",
       "yue": "表示",
-      "zh-CN": "树木指示性",
-      "zh-HK": "表示",
-      "zh-TW": "表示"
+      "zh": "意思"
     },
     "iDtype": "combo",
     "options": [
@@ -16049,9 +15432,7 @@
       "uk": "Тип листя",
       "vi": "Loại Lá",
       "yue": "葉類",
-      "zh-CN": "叶型",
-      "zh-HK": "葉子種類",
-      "zh-TW": "葉子種類"
+      "zh": "叶型"
     },
     "options": [
       {
@@ -16095,10 +15476,7 @@
           "tr": "Geniş Yapraklı",
           "uk": "Широколисті",
           "vi": "Hình Quạt",
-          "yue": "闊葉",
-          "zh-CN": "阔叶",
-          "zh-HK": "闊葉",
-          "zh-TW": "闊葉林"
+          "yue": "闊葉"
         }
       },
       {
@@ -16141,10 +15519,7 @@
           "tr": "İğneli",
           "uk": "Хвоя",
           "vi": "Hình Kim",
-          "yue": "針葉",
-          "zh-CN": "针叶",
-          "zh-HK": "針葉",
-          "zh-TW": "針葉樹"
+          "yue": "針葉"
         }
       },
       {
@@ -16188,10 +15563,7 @@
           "tr": "Yapraksız",
           "uk": "Без листя",
           "vi": "Không có",
-          "yue": "無葉",
-          "zh-CN": "无叶",
-          "zh-HK": "無葉",
-          "zh-TW": "落葉樹"
+          "yue": "無葉"
         }
       }
     ],
@@ -16238,9 +15610,7 @@
       "uk": "Сезонність",
       "vi": "Thời gian Mọc Lá",
       "yue": "換葉週期",
-      "zh-CN": "叶寿命",
-      "zh-HK": "換葉週期",
-      "zh-TW": "落葉期"
+      "zh": "叶寿命"
     },
     "options": [
       {
@@ -16284,10 +15654,7 @@
           "tr": "Hep Yeşil",
           "uk": "Вічнозелена рослинність",
           "vi": "Thường xanh",
-          "yue": "常綠",
-          "zh-CN": "常绿树",
-          "zh-HK": "常綠",
-          "zh-TW": "常青樹"
+          "yue": "常綠"
         }
       },
       {
@@ -16330,10 +15697,7 @@
           "tr": "Yaprak Döken",
           "uk": "Листопадна рослинність",
           "vi": "Rụng Lá",
-          "yue": "落葉",
-          "zh-CN": "落叶树",
-          "zh-HK": "落葉",
-          "zh-TW": "落葉樹"
+          "yue": "落葉"
         }
       },
       {
@@ -16376,10 +15740,7 @@
           "tr": "Kısmen Yeşil",
           "uk": "Напів-вічнозелена рослинність",
           "vi": "Bán Thường xanh",
-          "yue": "半常綠",
-          "zh-CN": "半常绿树",
-          "zh-HK": "半常綠",
-          "zh-TW": "半長青樹"
+          "yue": "半常綠"
         }
       },
       {
@@ -16422,10 +15783,7 @@
           "tr": "Kısmen Yaprak Döken",
           "uk": "Напів-листяна рослинність",
           "vi": "Bán Rụng Lá",
-          "yue": "半落葉",
-          "zh-CN": "半落叶树",
-          "zh-HK": "半落葉",
-          "zh-TW": "半落葉樹"
+          "yue": "半落葉"
         }
       }
     ],
@@ -16450,8 +15808,7 @@
       "pl": "Species Wikidata",
       "sv": "Wikidata för art",
       "uk": "Вид, Wikidata код",
-      "vi": "Wikidata về Loài",
-      "zh-TW": "物種的維基數據"
+      "vi": "Wikidata về Loài"
     },
     "iDtype": "wikidata"
   },
@@ -16492,9 +15849,7 @@
       "tr": "Yanardağ Durumu",
       "uk": "Стан вулкана",
       "vi": "Trạng thái Núi lửa",
-      "zh-CN": "火山活动",
-      "zh-HK": "火山狀態",
-      "zh-TW": "火山狀態"
+      "zh": "火山活动"
     },
     "options": [
       {
@@ -16532,10 +15887,7 @@
           "sv": "Aktiv",
           "tr": "Etkin",
           "uk": "Діючий",
-          "vi": "Hoạt động",
-          "zh-CN": "活火山",
-          "zh-HK": "活火山",
-          "zh-TW": "活"
+          "vi": "Hoạt động"
         }
       },
       {
@@ -16572,10 +15924,7 @@
           "sv": "Vilande",
           "tr": "Sönmüş",
           "uk": "Сплячий",
-          "vi": "Hồi dung nham",
-          "zh-CN": "休眠火山",
-          "zh-HK": "睡火山",
-          "zh-TW": "休眠"
+          "vi": "Hồi dung nham"
         }
       },
       {
@@ -16612,10 +15961,7 @@
           "sv": "slocknad",
           "tr": "Sönük",
           "uk": "Згаслий",
-          "vi": "Không hoạt động nữa",
-          "zh-CN": "死火山",
-          "zh-HK": "死火山",
-          "zh-TW": "死"
+          "vi": "Không hoạt động nữa"
         }
       }
     ],
@@ -16660,9 +16006,7 @@
       "tr": "Yanardağ Türü",
       "uk": "Тип вулкана",
       "vi": "Hình dạng Núi lửa",
-      "zh-CN": "火山锥",
-      "zh-HK": "火山種類",
-      "zh-TW": "火山類型"
+      "zh": "火山锥"
     },
     "options": [
       {
@@ -16697,10 +16041,7 @@
           "sv": "Stratovulkan",
           "tr": "Katmanlı yanardağ",
           "uk": "Стратовулкан",
-          "vi": "Tầng",
-          "zh-CN": "复合锥",
-          "zh-HK": "層狀火山",
-          "zh-TW": "複式火山"
+          "vi": "Tầng"
         }
       },
       {
@@ -16735,10 +16076,7 @@
           "sv": "Sköldvulkan",
           "tr": "Koruyucu",
           "uk": "Щитовий",
-          "vi": "Khiên",
-          "zh-CN": "盾形火山",
-          "zh-HK": "盾狀火山",
-          "zh-TW": "盾狀"
+          "vi": "Khiên"
         }
       },
       {
@@ -16772,9 +16110,7 @@
           "sv": "Scoria",
           "tr": "Lav külü",
           "uk": "Шлаковий конус",
-          "vi": "Nón",
-          "zh-CN": "碎屑锥",
-          "zh-TW": "火山渣"
+          "vi": "Nón"
         }
       }
     ],
@@ -16827,9 +16163,7 @@
       "uk": "Тип",
       "vi": "Loại",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -16890,8 +16224,7 @@
       "sv": "Salt",
       "uk": "Солоне",
       "vi": "Nước mặn",
-      "zh-CN": "咸水",
-      "zh-TW": "鹽份"
+      "zh": "咸水"
     },
     "iDtype": "check",
     "options": [
@@ -16923,8 +16256,7 @@
       "sv": "Tidvatten",
       "uk": "Заплава",
       "vi": "Thủy triều",
-      "zh-CN": "处于潮间带",
-      "zh-TW": "潮汐"
+      "zh": "处于潮间带"
     },
     "iDtype": "check",
     "options": [
@@ -16979,9 +16311,7 @@
       "uk": "Тип",
       "vi": "Loại",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -17091,9 +16421,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     }
   },
   "diplomatic": {
@@ -17124,8 +16452,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Cấp",
-      "zh-CN": "类型",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -17165,8 +16492,7 @@
       "sv": "Riktas mot",
       "uk": "Представництво",
       "vi": "Nước Bạn",
-      "zh-CN": "目标国",
-      "zh-TW": "目標"
+      "zh": "目标国"
     },
     "iDtype": "combo",
     "options": [
@@ -17229,8 +16555,7 @@
       "sv": "Tjänster",
       "uk": "Послуги",
       "vi": "Dịch vụ",
-      "zh-CN": "服务",
-      "zh-TW": "服務"
+      "zh": "服务"
     }
   },
   "departures_board": {
@@ -17261,8 +16586,7 @@
       "sv": "Avgångstavla",
       "uk": "Табло відправлень",
       "vi": "Bảng Giờ đi",
-      "zh-CN": "到站显示屏/牌",
-      "zh-TW": "出發告示牌"
+      "zh": "到站显示屏/牌"
     },
     "options": [
       {
@@ -17295,9 +16619,7 @@
           "sr": "Да",
           "sv": "Ja",
           "uk": "В наявності",
-          "vi": "Có",
-          "zh-CN": "有",
-          "zh-TW": "是"
+          "vi": "Có"
         }
       },
       {
@@ -17328,9 +16650,7 @@
           "sr": "Распоред",
           "sv": "Tidtabell",
           "uk": "Розклад",
-          "vi": "Thời biểu",
-          "zh-CN": "时刻表",
-          "zh-TW": "時刻表"
+          "vi": "Thời biểu"
         }
       },
       {
@@ -17359,9 +16679,7 @@
           "sr": "Реално време",
           "sv": "Realtid",
           "uk": "В реальному часі",
-          "vi": "Thời gian thực",
-          "zh-CN": "实时",
-          "zh-TW": "即時"
+          "vi": "Thời gian thực"
         }
       },
       {
@@ -17393,9 +16711,7 @@
           "sr": "Ништа",
           "sv": "Ingen",
           "uk": "Немає",
-          "vi": "Không có",
-          "zh-CN": "无",
-          "zh-TW": "無"
+          "vi": "Không có"
         }
       }
     ],
@@ -17439,9 +16755,7 @@
       "tr": "Platform Numarası",
       "uk": "Номер платформи",
       "vi": "Số Ke",
-      "zh-CN": "站台编号",
-      "zh-HK": "月台編號",
-      "zh-TW": "站台編號"
+      "zh": "站台编号"
     }
   },
   "aerialway/access": {
@@ -17490,9 +16804,7 @@
       "uk": "Доступ",
       "vi": "Quyền Truy cập",
       "yue": "通",
-      "zh-CN": "通行限制",
-      "zh-HK": "通過",
-      "zh-TW": "通行方向"
+      "zh": "通行限制"
     },
     "options": [
       {
@@ -17538,10 +16850,7 @@
           "tr": "Giriş",
           "uk": "Вхід",
           "vi": "Vào",
-          "yue": "入",
-          "zh-CN": "入口",
-          "zh-HK": "進入",
-          "zh-TW": "進入"
+          "yue": "入"
         }
       },
       {
@@ -17587,10 +16896,7 @@
           "tr": "Çıkış",
           "uk": "Вихід",
           "vi": "Ra",
-          "yue": "出",
-          "zh-CN": "出口",
-          "zh-HK": "出口",
-          "zh-TW": "離開"
+          "yue": "出"
         }
       },
       {
@@ -17637,10 +16943,7 @@
           "tr": "İkisi de",
           "uk": "Вхід/Вихід",
           "vi": "Ra vào",
-          "yue": "出入都得",
-          "zh-CN": "双向",
-          "zh-HK": "進入及離開",
-          "zh-TW": "雙向"
+          "yue": "出入都得"
         }
       }
     ],
@@ -17691,9 +16994,7 @@
       "uk": "Доступ влітку",
       "vi": "Quyền Truy cập (Mùa hè)",
       "yue": "通（夏天）",
-      "zh-CN": "通行方向（夏季）",
-      "zh-HK": "開放 (夏天)",
-      "zh-TW": "通行方向（夏季）"
+      "zh": "通行方向（夏季）"
     },
     "options": [
       {
@@ -17739,10 +17040,7 @@
           "tr": "Giriş",
           "uk": "Вхід",
           "vi": "Vào",
-          "yue": "入",
-          "zh-CN": "入口",
-          "zh-HK": "進入",
-          "zh-TW": "進入"
+          "yue": "入"
         }
       },
       {
@@ -17788,10 +17086,7 @@
           "tr": "Çıkış",
           "uk": "Вихід",
           "vi": "Ra",
-          "yue": "出",
-          "zh-CN": "出口",
-          "zh-HK": "出口",
-          "zh-TW": "離開"
+          "yue": "出"
         }
       },
       {
@@ -17837,10 +17132,7 @@
           "tr": "İkisi de",
           "uk": "Вхід/Вихід",
           "vi": "Ra vào",
-          "yue": "出人都得",
-          "zh-CN": "双向",
-          "zh-HK": "進入及離開",
-          "zh-TW": "雙向"
+          "yue": "出人都得"
         }
       }
     ],
@@ -17883,9 +17175,7 @@
       "tr": "Durak Numarası",
       "uk": "Номер зупинки",
       "vi": "Số Trạm",
-      "zh-CN": "车站编号",
-      "zh-HK": "車站編號",
-      "zh-TW": "站體編號"
+      "zh": "车站编号"
     }
   },
   "shop": {
@@ -17935,9 +17225,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     }
   },
   "agrarian": {
@@ -17980,9 +17268,7 @@
       "tr": "Ürünler",
       "uk": "Продукція",
       "vi": "Sản phẩm",
-      "zh-CN": "产品",
-      "zh-HK": "產品",
-      "zh-TW": "產品"
+      "zh": "产品"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -18033,8 +17319,7 @@
       "sv": "Skönhetsspecialitet",
       "uk": "Послуги",
       "vi": "Chuyên môn",
-      "zh-CN": "美容专业",
-      "zh-TW": "美容專門"
+      "zh": "美容专业"
     },
     "iDtype": "combo",
     "options": [
@@ -18106,9 +17391,7 @@
       "tr": "Hizmetler",
       "uk": "Послуги",
       "vi": "Dịch vụ",
-      "zh-CN": "车辆服务",
-      "zh-HK": "服務",
-      "zh-TW": "服務"
+      "zh": "车辆服务"
     }
   },
   "levels": {
@@ -18162,9 +17445,7 @@
       "uk": "Поверхи",
       "vi": "Số Tầng",
       "yue": "樓",
-      "zh-CN": "楼层数",
-      "zh-HK": "樓層數",
-      "zh-TW": "房屋樓層數"
+      "zh": "级别"
     }
   },
   "artwork_type": {
@@ -18214,9 +17495,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類",
-      "zh-TW": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -18297,9 +17576,7 @@
       "uk": "Художник",
       "vi": "Nghệ sĩ",
       "yue": "藝人",
-      "zh-CN": "艺术家",
-      "zh-HK": "藝人",
-      "zh-TW": "藝術家"
+      "zh": "艺术家"
     }
   },
   "guest_house": {
@@ -18329,8 +17606,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "iDtype": "combo",
     "options": [
@@ -18380,9 +17656,7 @@
       "sv": "Ridstall",
       "uk": "Стайня",
       "vi": "Chuồng Ngựa",
-      "zh-CN": "骑马练习",
-      "zh-HK": "馬廄",
-      "zh-TW": "騎馬馬房"
+      "zh": "骑马练习"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -18424,9 +17698,7 @@
       "tr": "At Binicilik Spor",
       "uk": "Верхова їзда",
       "vi": "Cưỡi ngựa",
-      "zh-CN": "马背骑行",
-      "zh-HK": "騎馬",
-      "zh-TW": "馬背騎乘"
+      "zh": "马背骑行"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -18462,9 +17734,7 @@
       "sv": "Dressyrriding",
       "uk": "Виїздка",
       "vi": "Cưỡi ngựa Biểu diễn",
-      "zh-CN": "花式骑术",
-      "zh-HK": "盛裝舞步",
-      "zh-TW": "馬場馬術"
+      "zh": "花式骑术"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -18505,8 +17775,7 @@
       "sv": "Eldplats",
       "uk": "Вогнище",
       "vi": "Lò sưởi",
-      "zh-CN": "壁炉",
-      "zh-TW": "壁爐"
+      "zh": "壁炉"
     },
     "iDtype": "check",
     "options": [
@@ -18541,8 +17810,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型",
-      "zh-TW": "類型"
+      "zh": "类型"
     },
     "iDtype": "combo"
   },
@@ -18575,8 +17843,7 @@
       "sv": "Form",
       "uk": "Вигляд",
       "vi": "Hình dạng",
-      "zh-CN": "形状",
-      "zh-TW": "形狀"
+      "zh": "形状"
     },
     "options": [
       {
@@ -18619,10 +17886,7 @@
           "tr": "Sütun",
           "uk": "Колонка/Надземний",
           "vi": "Cột",
-          "yue": "柱／地上",
-          "zh-CN": "支柱/地上",
-          "zh-HK": "柱狀/地上",
-          "zh-TW": "支柱式/地面式"
+          "yue": "柱／地上"
         }
       },
       {
@@ -18666,10 +17930,7 @@
           "tr": "Yeraltı",
           "uk": "Підземний",
           "vi": "Dưới đất",
-          "yue": "地底",
-          "zh-CN": "地下",
-          "zh-HK": "地下",
-          "zh-TW": "地下式"
+          "yue": "地底"
         }
       },
       {
@@ -18715,10 +17976,7 @@
           "tr": "Duvar",
           "uk": "Настінний",
           "vi": "Tường",
-          "yue": "牆",
-          "zh-CN": "墙",
-          "zh-HK": "牆上",
-          "zh-TW": "牆"
+          "yue": "牆"
         }
       },
       {
@@ -18742,8 +18000,7 @@
           "pl": "Zamknięta rura",
           "sv": "Kapslat rör",
           "uk": "Проста труба",
-          "vi": "Ống dẫn Đậy nắp",
-          "zh-TW": "加蓋管"
+          "vi": "Ống dẫn Đậy nắp"
         }
       },
       {"v": "pond", "lbl": {"en": "pond", "fr": "Etang"}}
@@ -18777,8 +18034,7 @@
       "sv": "Diameter (mm, tum eller bokstäver)",
       "uk": "Діаметр (мм, дюйми або літери)",
       "vi": "Đường kính (mm, inch, hoặc chữ)",
-      "zh-CN": "直径 (mm, in 或字母)",
-      "zh-TW": "直徑（毫米、英呎或 letters）"
+      "zh": "直径 (mm, in 或字母)"
     },
     "iDtype": "combo"
   },
@@ -18806,8 +18062,7 @@
       "pl": "Data ostatniej kontroli",
       "sv": "Senaste undersökningsdatum",
       "uk": "Остання дата спостереження",
-      "vi": "Ngày Khảo sát Cuối",
-      "zh-TW": "最後調查日期"
+      "vi": "Ngày Khảo sát Cuối"
     }
   },
   "level_semi": {
@@ -18830,8 +18085,7 @@
       "sr": "Нивои",
       "sv": "Våningar",
       "uk": "Поверж",
-      "vi": "Lầu",
-      "zh-TW": "樓層"
+      "vi": "Lầu"
     },
     "iDtype": "semiCombo"
   },
@@ -18874,9 +18128,7 @@
       "tr": "Gözetim Biçimi",
       "uk": "Тип спостереження",
       "vi": "Chế độ Quan sát",
-      "zh-CN": "监视类型",
-      "zh-HK": "監視種類",
-      "zh-TW": "監視類型"
+      "zh": "监视类型"
     },
     "options": [
       {
@@ -18917,10 +18169,7 @@
           "sv": "Kamera",
           "tr": "Güvenlik Kamerası",
           "uk": "Камера",
-          "vi": "Camera",
-          "zh-CN": "摄像机",
-          "zh-HK": "相機",
-          "zh-TW": "相機"
+          "vi": "Camera"
         }
       },
       {
@@ -18961,10 +18210,7 @@
           "sv": "Vakt",
           "tr": "Koruma",
           "uk": "Охорона",
-          "vi": "Nhân viên",
-          "zh-CN": "警卫",
-          "zh-HK": "守衛",
-          "zh-TW": "守衛"
+          "vi": "Nhân viên"
         }
       },
       {
@@ -19001,10 +18247,7 @@
           "sv": "Automatisk avläsning av registreringsskyltar",
           "tr": "Otomatik Araç Plaka Okuma Sistemi",
           "uk": "Автоматичне розпізнавання номерних знаків",
-          "vi": "Hệ thống Nhận dạng Bảng số Xe Tự động",
-          "zh-CN": "车牌自动识别系统",
-          "zh-HK": "自動車牌讀取器",
-          "zh-TW": "自動牌照讀取器"
+          "vi": "Hệ thống Nhận dạng Bảng số Xe Tự động"
         }
       }
     ],
@@ -19047,9 +18290,7 @@
       "tr": "Güvenli Alan",
       "uk": "Зона спостереження",
       "vi": "Phạm vi Quan sát",
-      "zh-CN": "监控区",
-      "zh-HK": "監視區域",
-      "zh-TW": "監視區域"
+      "zh": "监控区"
     },
     "options": [
       {"v": "town", "lbl": {"fr": "Surveillance de le ville", "en": "town"}},
@@ -19324,8 +18565,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類"
+      "zh": "类型"
     }
   },
   "hoops": {
@@ -19370,8 +18610,7 @@
       "uk": "Кільця",
       "vi": "Số Vòng",
       "yue": "藍框數",
-      "zh-CN": "篮圈数",
-      "zh-HK": "籃框數量"
+      "zh": "篮圈数"
     }
   },
   "valve": {
@@ -19441,8 +18680,7 @@
       "tr": "Kamera Türü",
       "uk": "Тип камери",
       "vi": "Loại Camera",
-      "zh-CN": "相机类型",
-      "zh-HK": "相機種類"
+      "zh": "相机类型"
     },
     "options": [
       {
@@ -19485,9 +18723,7 @@
           "sv": "Fast",
           "tr": "Sabit",
           "uk": "Нерухома",
-          "vi": "Cố định",
-          "zh-CN": "固定式",
-          "zh-HK": "固定式"
+          "vi": "Cố định"
         }
       },
       {
@@ -19528,9 +18764,7 @@
           "sv": "Panorering",
           "tr": "Panaromik",
           "uk": "Панорамна",
-          "vi": "Cuộn",
-          "zh-CN": "摇移式",
-          "zh-HK": "搖擺式"
+          "vi": "Cuộn"
         }
       },
       {
@@ -19573,9 +18807,7 @@
           "sv": "Dome (\"kupol\")",
           "tr": "Tepeden",
           "uk": "Купольна",
-          "vi": "Vòm",
-          "zh-CN": "半球式",
-          "zh-HK": "半球形"
+          "vi": "Vòm"
         }
       }
     ],
@@ -19620,8 +18852,7 @@
       "tr": "Kamera Kurulum",
       "uk": "Кріплення камери",
       "vi": "Hỗ trợ Camera",
-      "zh-CN": "相机架设",
-      "zh-HK": "相機托架"
+      "zh": "相机架设"
     },
     "options": [
       {"v": "pole", "lbl": {"fr": "Sur un poteau /mât", "en": "pole"}},
@@ -19683,8 +18914,7 @@
       "tr": "Yön (saat yönünde derece cinsinden)",
       "uk": "Напрямок (в градусах за годинниковою стрілкою)",
       "vi": "Hướng (Độ theo Chiều Kim Đồng hồ)",
-      "zh-CN": "方向 (顺时针度)",
-      "zh-HK": "方向 (順時針度數)"
+      "zh": "方向 (顺时针度)"
     }
   },
   "contact/webcam": {
@@ -19731,8 +18961,7 @@
       "tr": "Webcam Adresi",
       "uk": "URL веб-камери",
       "vi": "URL Webcam",
-      "zh-CN": "网络摄像机地址",
-      "zh-HK": "網路相機 URL"
+      "zh": "网络摄像机地址"
     },
     "iDtype": "url"
   },
@@ -19770,7 +18999,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "options": [
       {"v": "infiltration", "lbl": {"en": "infiltration"}},
@@ -19810,7 +19039,7 @@
       "tr": "Aralıklı",
       "uk": "Пересихає",
       "vi": "Lúc có nước Lúc không",
-      "zh-CN": "断流现象"
+      "zh": "断流现象"
     },
     "iDtype": "check",
     "options": [
@@ -19846,7 +19075,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Cấp",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -19885,7 +19114,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Cấp",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -19926,7 +19155,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Cấp",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "options": [
       {"v": "liaison_office", "lbl": {"en": "liaison_office"}},
@@ -19980,8 +19209,7 @@
       "uk": "Кількість місць",
       "vi": "Số khách",
       "yue": "一車人數",
-      "zh-CN": "载客数",
-      "zh-HK": "車廂載客量"
+      "zh": "载客数"
     }
   },
   "aerialway/capacity": {
@@ -20030,8 +19258,7 @@
       "uk": "Пропускна здатність (на годину)",
       "vi": "Số khách (Mỗi giờ)",
       "yue": "載量（一個鐘計）",
-      "zh-CN": "客流量(每小时)",
-      "zh-HK": "載客量 (每小時)"
+      "zh": "客流量(每小时)"
     }
   },
   "aerialway/duration": {
@@ -20081,8 +19308,7 @@
       "uk": "Тривалість (хвилин)",
       "vi": "Mất Thời gian (Phút)",
       "yue": "行程（分鐘）",
-      "zh-CN": "持续时间(分钟)",
-      "zh-HK": "車程 (分鐘)"
+      "zh": "持续时间(分钟)"
     }
   },
   "aerialway/heating": {
@@ -20129,8 +19355,7 @@
       "uk": "З підігрівом",
       "vi": "Máy sưởi",
       "yue": "有暖氣",
-      "zh-CN": "暖气",
-      "zh-HK": "暖氣"
+      "zh": "暖气"
     },
     "iDtype": "check",
     "options": [
@@ -20186,8 +19411,7 @@
       "uk": "Односторонній рух",
       "vi": "Chiều",
       "yue": "單程",
-      "zh-CN": "单行线",
-      "zh-HK": "單程"
+      "zh": "单行"
     },
     "options": [
       {
@@ -20233,9 +19457,7 @@
           "tr": "Evet",
           "uk": "Так",
           "vi": "1 Chiều",
-          "yue": "係",
-          "zh-CN": "是",
-          "zh-HK": "是"
+          "yue": "係"
         }
       },
       {
@@ -20281,9 +19503,7 @@
           "tr": "Hayır",
           "uk": "Ні",
           "vi": "2 Chiều",
-          "yue": "唔係",
-          "zh-CN": "否",
-          "zh-HK": "否"
+          "yue": "唔係"
         }
       }
     ],
@@ -20331,8 +19551,7 @@
       "uk": "Захисний екран",
       "vi": "Mái vòm",
       "yue": "吊車廂",
-      "zh-CN": "圆形顶",
-      "zh-HK": "車廂"
+      "zh": "圆形顶"
     },
     "iDtype": "check",
     "options": [
@@ -20374,7 +19593,7 @@
       "tr": "Tip",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "iDtype": "combo"
   },
@@ -20406,7 +19625,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "iDtype": "combo"
   },
@@ -20474,8 +19693,7 @@
       "tr": "Gerilim",
       "uk": "Напруга",
       "vi": "Điện áp",
-      "zh-CN": "电压",
-      "zh-HK": "電壓"
+      "zh": "电压"
     },
     "iDtype": "combo"
   },
@@ -20526,8 +19744,7 @@
       "uk": "Джерело",
       "vi": "Nguồn",
       "yue": "來源",
-      "zh-CN": "来源",
-      "zh-HK": "來源"
+      "zh": "来源"
     },
     "iDtype": "combo"
   },
@@ -20577,8 +19794,7 @@
       "uk": "Метод",
       "vi": "Phương pháp",
       "yue": "方法",
-      "zh-CN": "模式",
-      "zh-HK": "方法"
+      "zh": "模式"
     },
     "iDtype": "combo"
   },
@@ -20629,8 +19845,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo"
   },
@@ -20674,8 +19889,7 @@
       "tr": "Güç Çıkışı",
       "uk": "Вихідна потужність",
       "vi": "Điện năng lượng",
-      "zh-CN": "输出功率",
-      "zh-HK": "電力輸出"
+      "zh": "输出功率"
     }
   },
   "line_attachment": {
@@ -20735,8 +19949,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "开关类型",
-      "zh-HK": "種類"
+      "zh": "开关类型"
     },
     "options": [
       {
@@ -20771,8 +19984,7 @@
           "sv": "Lastbrytare",
           "tr": "Mekanik",
           "uk": "Механічний",
-          "vi": "Cơ học",
-          "zh-HK": "機械式"
+          "vi": "Cơ học"
         }
       },
       {
@@ -20806,9 +20018,7 @@
           "sv": "Effektbrytare",
           "tr": "Şalter",
           "uk": "Автоматичний вимикач",
-          "vi": "Cầu dao",
-          "zh-CN": "断路器",
-          "zh-HK": "斷路器"
+          "vi": "Cầu dao"
         }
       },
       {
@@ -20841,8 +20051,7 @@
           "sv": "Frånskiljare",
           "tr": "Ayırıcı",
           "uk": "Розʼєднувач",
-          "vi": "Cầu dao Cách ly",
-          "zh-HK": "切斷器"
+          "vi": "Cầu dao Cách ly"
         }
       },
       {
@@ -20877,9 +20086,7 @@
           "sv": "Enpelarjordningskopplare",
           "tr": "Topraklama",
           "uk": "Заземлення",
-          "vi": "Cầu dao Tiếp địa",
-          "zh-CN": "接地",
-          "zh-HK": " 接地斷路"
+          "vi": "Cầu dao Tiếp địa"
         }
       }
     ],
@@ -20926,8 +20133,7 @@
       "tr": "Kablo",
       "uk": "Дроти",
       "vi": "Số Cáp",
-      "zh-CN": "电缆数量",
-      "zh-HK": " 電纜"
+      "zh": "电缆数量"
     }
   },
   "design": {
@@ -20962,8 +20168,7 @@
       "sv": "Design",
       "uk": "Конструкція",
       "vi": "Thiết kế",
-      "zh-CN": "指定",
-      "zh-HK": "設計"
+      "zh": "指定"
     },
     "iDtype": "combo"
   },
@@ -21005,8 +20210,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "变压器类型",
-      "zh-HK": "種類"
+      "zh": "变压器类型"
     },
     "options": [
       {
@@ -21038,9 +20242,7 @@
           "sv": "Distribution",
           "tr": "Dağıtım",
           "uk": "Розподільчий",
-          "vi": "Phân phối",
-          "zh-CN": "配电变压器",
-          "zh-HK": "配電器"
+          "vi": "Phân phối"
         }
       },
       {
@@ -21077,9 +20279,7 @@
           "sv": "Generator",
           "tr": "Üreteç",
           "uk": "Генератор",
-          "vi": "Phát điện",
-          "zh-CN": "发电机变压器",
-          "zh-HK": "變電器"
+          "vi": "Phát điện"
         }
       },
       {
@@ -21114,9 +20314,7 @@
           "sv": "Omformarstation",
           "tr": "Dönüştürücü",
           "uk": "Перетворювач",
-          "vi": "Chuyển đổi",
-          "zh-CN": "变流器",
-          "zh-HK": "轉換器"
+          "vi": "Chuyển đổi"
         }
       },
       {
@@ -21148,9 +20346,7 @@
           "sv": "Enfastransformator",
           "tr": "Çekme",
           "uk": "Силовий",
-          "vi": "Kéo",
-          "zh-CN": "牵引变压器",
-          "zh-HK": " 牽引器"
+          "vi": "Kéo"
         }
       },
       {
@@ -21185,9 +20381,7 @@
           "sv": "Enkellindad transformator",
           "tr": "Otomatik dönüştürücü",
           "uk": "Автотрансформатор",
-          "vi": "Tự biến áp",
-          "zh-CN": "自耦变压器",
-          "zh-HK": "自耦變壓器"
+          "vi": "Tự biến áp"
         }
       },
       {
@@ -21221,9 +20415,7 @@
           "sv": "Fasregulator",
           "tr": "Faz Açısı Düzenleyici",
           "uk": "Регулятор фазового зсуву",
-          "vi": "Dịch pha",
-          "zh-CN": "相角调节器",
-          "zh-HK": "相位角整流器"
+          "vi": "Dịch pha"
         }
       },
       {
@@ -21255,9 +20447,7 @@
           "sv": "Lokaltransformator",
           "tr": "Yardımcı",
           "uk": "Допоміжний",
-          "vi": "Phụ tải",
-          "zh-CN": "辅助变压器",
-          "zh-HK": "輔助"
+          "vi": "Phụ tải"
         }
       },
       {
@@ -21295,9 +20485,7 @@
           "sv": "Okänd",
           "tr": "Bilinmeyen",
           "uk": "Невідомо",
-          "vi": "Không rõ",
-          "zh-CN": "未知",
-          "zh-HK": "未知"
+          "vi": "Không rõ"
         }
       }
     ],
@@ -21334,8 +20522,7 @@
       "sv": "Märkeffekt",
       "tr": "Güç Düzeyi",
       "uk": "Потужність",
-      "vi": "Công suất",
-      "zh-HK": "電力功率"
+      "vi": "Công suất"
     },
     "iDtype": "combo"
   },
@@ -21379,8 +20566,7 @@
       "tr": "Aygıtlar",
       "uk": "Пристрої",
       "vi": "Số Thiết bị",
-      "zh-CN": "设备数量",
-      "zh-HK": "裝置"
+      "zh": "设备数量"
     }
   },
   "phases": {
@@ -21419,8 +20605,7 @@
       "sv": "Faser",
       "uk": "Фази",
       "vi": "Số Pha",
-      "zh-CN": "相数",
-      "zh-HK": "相位"
+      "zh": "相数"
     }
   },
   "frequency": {
@@ -21458,8 +20643,7 @@
       "tr": "Çalışma Sıklığı",
       "uk": "Робоча частота",
       "vi": "Tần số Hoạt động",
-      "zh-CN": "工作频率",
-      "zh-HK": "操作頻率"
+      "zh": "工作频率"
     },
     "iDtype": "combo"
   },
@@ -21498,8 +20682,7 @@
       "tr": "Birincil Gerilim",
       "uk": "Напруга первинної обмотки",
       "vi": "Điện áp Chính",
-      "zh-CN": "一次电压",
-      "zh-HK": "初級電壓"
+      "zh": "一次电压"
     },
     "iDtype": "combo"
   },
@@ -21538,8 +20721,7 @@
       "tr": "İkincil Gerilim",
       "uk": "Напруга вторинної обмотки",
       "vi": "Điện áp Thứ 2",
-      "zh-CN": "二次电压",
-      "zh-HK": " 次級電壓"
+      "zh": "二次电压"
     },
     "iDtype": "combo"
   },
@@ -21578,8 +20760,7 @@
       "tr": "Üçüncül Gerilim",
       "uk": "Напруга третинної обмотки",
       "vi": "Điện áp Thứ 3",
-      "zh-CN": "三次电压",
-      "zh-HK": "三次電壓"
+      "zh": "三次电压"
     },
     "iDtype": "combo"
   },
@@ -21618,8 +20799,7 @@
       "tr": "Bobinler",
       "uk": "Обмотки",
       "vi": "Số Cuộn dây",
-      "zh-CN": "绕组数",
-      "zh-HK": "繞組"
+      "zh": "绕组数"
     }
   },
   "windings/configuration": {
@@ -21653,8 +20833,7 @@
       "sv": "Lindningskonfiguration",
       "uk": "Конфігурація обмоток",
       "vi": "Cách Nối Cuộn dây",
-      "zh-CN": "绕组配置",
-      "zh-HK": "繞組組態"
+      "zh": "绕组配置"
     },
     "options": [
       {
@@ -21683,8 +20862,7 @@
           "pl": "Gwiazdowy",
           "sv": " Y-koppling",
           "uk": "Зірка",
-          "vi": "Sao",
-          "zh-CN": "星型（Y型）"
+          "vi": "Sao"
         }
       },
       {
@@ -21714,8 +20892,7 @@
           "pl": "Trójkąt",
           "sv": " D-koppling",
           "uk": "Трикутник",
-          "vi": "Tam giác",
-          "zh-CN": "三角形"
+          "vi": "Tam giác"
         }
       },
       {
@@ -21744,8 +20921,7 @@
           "pl": "Otwarty trójkąt",
           "sv": "Öppen D-koppling",
           "uk": "Відкритий трикутник",
-          "vi": "Tam giác Hở",
-          "zh-CN": "开放三角形"
+          "vi": "Tam giác Hở"
         }
       },
       {
@@ -21775,8 +20951,7 @@
           "sv": " Z-koppling",
           "tr": "Zikzak",
           "uk": "Зиг-Заг",
-          "vi": "Chữ chi",
-          "zh-CN": "曲折连接"
+          "vi": "Chữ chi"
         }
       },
       {
@@ -21805,8 +20980,7 @@
           "pl": "Otwarty",
           "sv": "Öppna lindningar",
           "uk": "Незалежні",
-          "vi": "Hở mạch",
-          "zh-CN": "开放"
+          "vi": "Hở mạch"
         }
       },
       {
@@ -21832,8 +21006,7 @@
           "pl": "Scott",
           "sv": " Scott-koppling",
           "uk": "зʼєднання Скотта",
-          "vi": "Scott",
-          "zh-CN": "斯科特"
+          "vi": "Scott"
         }
       },
       {
@@ -21861,8 +21034,7 @@
           "pl": "Leblanc",
           "sv": " Leblanc-koppling",
           "uk": "зʼєднання Лебланк",
-          "vi": "Leblanc",
-          "zh-CN": "勒布朗"
+          "vi": "Leblanc"
         }
       }
     ],
@@ -21934,8 +21106,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo"
   },
@@ -21978,8 +21149,7 @@
       "tr": "Kaldırım Taşı",
       "uk": "Бордюр",
       "vi": "Bờ Lề đường",
-      "zh-CN": "路缘",
-      "zh-HK": "下斜路緣"
+      "zh": "路缘"
     },
     "iDtype": "combo"
   },
@@ -22012,7 +21182,7 @@
       "sv": "Höjd",
       "uk": "Висота",
       "vi": "Chiều cao",
-      "zh-CN": "高度"
+      "zh": "高度"
     },
     "iDtype": "combo"
   },
@@ -22033,7 +21203,7 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh-CN": "类型"
+      "zh": "类型"
     },
     "iDtype": "combo"
   },
@@ -22078,8 +21248,7 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "yue": "類",
-      "zh-CN": "类型",
-      "zh-HK": "種類"
+      "zh": "类型"
     },
     "iDtype": "combo"
   }
