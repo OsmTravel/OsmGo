@@ -10,7 +10,7 @@ git clone https://github.com/osmlab/name-suggestion-index.git
 
 
 ### Import translation  from iD
-node addTranslationFromiD.js {code_country}
+node addTranslationFromiD.js {code_country} o 
 
 node addTranslationFromiD.js fr
 node addTranslationFromiD.js de
