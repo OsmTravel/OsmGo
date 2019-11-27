@@ -5121,7 +5121,7 @@
   },
   "name": {
     "key": "name",
-    "type": "localized",
+    "type": "text",
     "universal": true,
     "placeholder": "Common name (if any)",
     "terms": ["label", "title"],
@@ -5350,87 +5350,7 @@
       "zh-TW": "Wifi 網路名稱"
     }
   },
-  "address": {
-    "type": "address",
-    "key": "addr",
-    "keys": [
-      "addr:block_number",
-      "addr:city",
-      "addr:block_number",
-      "addr:conscriptionnumber",
-      "addr:county",
-      "addr:country",
-      "addr:county",
-      "addr:district",
-      "addr:floor",
-      "addr:hamlet",
-      "addr:housename",
-      "addr:housenumber",
-      "addr:neighbourhood",
-      "addr:place",
-      "addr:postcode",
-      "addr:province",
-      "addr:quarter",
-      "addr:state",
-      "addr:street",
-      "addr:subdistrict",
-      "addr:suburb",
-      "addr:unit"
-    ],
-    "icon": "address",
-    "terms": ["location"],
-    "lbl": {
-      "en": "Address",
-      "fr": "Adresse",
-      "de": "Adresse",
-      "es": "Dirección",
-      "pt": "Morada",
-      "it": "Indirizzo",
-      "ru": "Адресная информация",
-      "ast": "Direición",
-      "bg": "Адрес",
-      "bn": "ঠিকানা",
-      "bs": "Adresa",
-      "ca": "Adreça",
-      "cs": "Adresa",
-      "cy": "Cyfeiriad",
-      "da": "Adresse",
-      "dv": "އެޑްރެސް",
-      "el": "Διεύθυνση",
-      "eo": "Adreso",
-      "et": "Aadress",
-      "fa": "نشانی",
-      "fi": "Osoite",
-      "gl": "Enderezo",
-      "he": "כתובת",
-      "hr": "Adresa",
-      "hu": "Cím",
-      "id": "Alamat",
-      "is": "Heimilisfang",
-      "ja": "住所",
-      "ko": "주소",
-      "lt": "Adresas",
-      "lv": "Adrese",
-      "mk": "Адреса",
-      "ms": "Alamat",
-      "nl": "Adres",
-      "no": "Adresse",
-      "pl": "Adres",
-      "ro": "Adresă",
-      "sk": "Adresa",
-      "sl": "Naslov",
-      "sr": "Адреса",
-      "sv": "Adress",
-      "tr": "Adres",
-      "uk": "Адреса",
-      "vi": "Địa chỉ",
-      "yue": "地埗",
-      "zh-CN": "地址",
-      "zh-HK": "地址",
-      "zh-TW": "地址"
-    },
-    "options": []
-  },
+
   "country": {
     "key": "country",
     "type": "text",
@@ -5714,52 +5634,7 @@
       {"v": "mothers", "lbl": {"en": "mothers"}}
     ]
   },
-  "recycling_accepts": {
-    "key": "recycling:",
-    "type": "multiCombo",
-    "lbl": {
-      "en": "Accepts",
-      "fr": "Accepte",
-      "de": "Akzeptiert",
-      "es": "Acepta",
-      "pt": "Aceita",
-      "it": "Accetta",
-      "ru": "Принимает",
-      "ast": "Aceuta",
-      "bg": "Приема",
-      "ca": "N'accepta",
-      "cs": "Určení",
-      "da": "Accepterer",
-      "el": "Δέχεται",
-      "eo": "Akceptanta",
-      "et": "Võtab vastu",
-      "fa": "قبول",
-      "fi": "Keräysastiat",
-      "gl": "Acepta",
-      "he": "מקבל",
-      "hu": "Elfogad",
-      "is": "Tekur við",
-      "ja": "リサイクル可能な素材",
-      "ko": "종류",
-      "lt": "Priima",
-      "lv": "Pieņem",
-      "mk": "Прима",
-      "ms": "Menerima",
-      "nl": "Aanvaardt",
-      "pl": "Przyjmuje",
-      "sk": "Prijíma",
-      "sl": "Sprejme",
-      "sr": "Пријем",
-      "sv": "Accepterar",
-      "tr": "Kabul Ediyor",
-      "uk": "Приймається",
-      "vi": "Nhận",
-      "yue": "收得",
-      "zh-CN": "接受",
-      "zh-HK": "接受",
-      "zh-TW": "接受"
-    }
-  },
+
   "collection_times": {
     "key": "collection_times",
     "type": "text",
@@ -5932,7 +5807,7 @@
   },
   "payment_multi": {
     "key": "payment:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Payment Types",
       "fr": "Types de paiement",
@@ -6203,7 +6078,7 @@
   },
   "currency_multi": {
     "key": "currency:",
-    "type": "multiCombo",
+    "type": "text",
     "terms": ["bills", "cash", "coins", "money"],
     "lbl": {
       "en": "Currency Types",
@@ -6999,7 +6874,7 @@
   },
   "inscription": {
     "key": "inscription",
-    "type": "textarea",
+    "type": "text",
     "lbl": {
       "en": "Inscription",
       "fr": "Inscription",
@@ -7091,7 +6966,7 @@
   },
   "payment_multi_fee": {
     "key": "payment:",
-    "type": "multiCombo",
+    "type": "text",
     "prerequisiteTag": {"key": "fee", "valueNot": "no"},
     "lbl": {
       "en": "Payment Types",
@@ -7125,7 +7000,7 @@
   },
   "service/bicycle": {
     "key": "service:bicycle:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Services",
       "fr": "Services",
@@ -7297,7 +7172,7 @@
   },
   "diet_multi": {
     "key": "diet:",
-    "type": "multiCombo",
+    "type": "text",
     "terms": [
       "gluten free",
       "fruitarian",
@@ -7960,7 +7835,7 @@
   },
   "scuba_diving": {
     "key": "scuba_diving:",
-    "type": "multiCombo",
+    "type": "text",
     "options": [
       {"v": "repair", "lbl": {"en": "repair"}},
       {"v": "courses", "lbl": {"en": "courses"}},
@@ -8323,7 +8198,7 @@
   },
   "fuel_multi": {
     "key": "fuel:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Fuel Types",
       "fr": "Types de carburants",
@@ -8481,7 +8356,7 @@
   },
   "language_multi": {
     "key": "language:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Languages",
       "fr": "Langues",
@@ -8517,53 +8392,6 @@
       "zh-CN": "语言",
       "zh-HK": "語言",
       "zh-TW": "語言"
-    }
-  },
-  "post": {
-    "type": "address",
-    "key": "post",
-    "keys": [
-      "post:block_number",
-      "post:city",
-      "post:block_number",
-      "post:conscriptionnumber",
-      "post:county",
-      "post:country",
-      "post:county",
-      "post:district",
-      "post:floor",
-      "post:hamlet",
-      "post:housename",
-      "post:housenumber",
-      "post:neighbourhood",
-      "post:place",
-      "post:postcode",
-      "post:province",
-      "post:quarter",
-      "post:state",
-      "post:street",
-      "post:subdistrict",
-      "post:suburb",
-      "post:unit"
-    ],
-    "lbl": {
-      "en": "Delivery Address",
-      "fr": "Adresse de livraison",
-      "de": "Zustelladresse",
-      "es": "Dirección de entrega",
-      "pt": "Endereço de entrega",
-      "it": "Indirizzo di Consegna",
-      "eo": "Adreso de poŝt-livero",
-      "fi": "Jakeluosoite",
-      "he": "כתובת משלוח",
-      "hu": "Szállítási cím",
-      "ja": "郵便受の配達先住所",
-      "mk": "Адреса за достава",
-      "pl": "Adres skrzynki",
-      "sv": "Leveransadress",
-      "uk": "Адреса доставки",
-      "vi": "Địa chỉ Nhận Thư",
-      "zh-TW": "郵寄地址"
     }
   },
   "ref/isil": {
@@ -10271,7 +10099,7 @@
   },
   "club": {
     "key": "club",
-    "type": "typeCombo",
+    "type": "text",
     "lbl": {
       "en": "Type",
       "fr": "Type",
@@ -10319,7 +10147,7 @@
   },
   "craft": {
     "key": "craft",
-    "type": "typeCombo",
+    "type": "text",
     "lbl": {
       "en": "Type",
       "fr": "Type",
@@ -10877,7 +10705,7 @@
   },
   "healthcare": {
     "key": "healthcare",
-    "type": "typeCombo",
+    "type": "text",
     "lbl": {
       "en": "Type",
       "fr": "Type",
@@ -10922,7 +10750,7 @@
   },
   "blood_components": {
     "key": "blood:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Blood Components",
       "fr": "Composants du sang",
@@ -11606,7 +11434,7 @@
     "iDtype": "combo"
   },
   "structure": {
-    "type": "structureRadio",
+    "type": "text",
     "keys": ["bridge", "tunnel", "embankment", "cutting", "ford"],
     "placeholder": "Unknown",
     "lbl": {
@@ -14444,7 +14272,7 @@
   },
   "communication_multi": {
     "key": "communication:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Communication Types",
       "fr": "Type de communication",
@@ -14975,7 +14803,7 @@
   },
   "monitoring_multi": {
     "key": "monitoring:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Monitoring",
       "fr": "Surveillance",
@@ -15485,7 +15313,7 @@
   },
   "description": {
     "key": "description",
-    "type": "textarea",
+    "type": "text",
     "universal": true,
     "terms": ["summary"],
     "lbl": {
@@ -17220,7 +17048,7 @@
   },
   "office": {
     "key": "office",
-    "type": "typeCombo",
+    "type": "text",
     "lbl": {
       "en": "Type",
       "fr": "Type",
@@ -17378,7 +17206,7 @@
   },
   "diplomatic/services": {
     "key": "diplomatic:services:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Services",
       "fr": "Services diplomatiques",
@@ -18064,7 +17892,7 @@
   },
   "shop": {
     "key": "shop",
-    "type": "typeCombo",
+    "type": "text",
     "lbl": {
       "en": "Type",
       "fr": "Type",
@@ -18243,7 +18071,7 @@
   },
   "service/vehicle": {
     "key": "service:vehicle:",
-    "type": "multiCombo",
+    "type": "text",
     "lbl": {
       "en": "Services",
       "fr": "Véhicule de service",
@@ -19450,7 +19278,7 @@
   },
   "memorial": {
     "key": "memorial",
-    "type": "typeCombo",
+    "type": "text",
     "lbl": {"en": "Type", "fr": "Type", "de": "Typ"}
   },
   "hoops": {

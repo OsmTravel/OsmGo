@@ -6964,7 +6964,7 @@
         "key": "vacant",
         "icon": "mi-storage",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "address", "building_area"],
+        "presets": ["wheelchair",  "building_area"],
         "lbl": {
           "en": "Vacant Shop",
           "fr": "Commerce désaffecté",
@@ -13212,7 +13212,7 @@
           "website",
           "opening_hours",
           "country",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -13355,7 +13355,7 @@
           "opening_hours",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -13572,7 +13572,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "atm",
           "drive_through"
@@ -13699,7 +13699,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "outdoor_seating",
           "min_age",
@@ -13824,7 +13824,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "smoking",
           "brewery"
@@ -13954,7 +13954,7 @@
           "operator",
           "operator/type",
           "building_area",
-          "address",
+          
           "ref/isil",
           "internet_access",
           "internet_access/fee",
@@ -14101,7 +14101,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "min_age",
           "smoking"
@@ -14271,7 +14271,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -14403,7 +14403,7 @@
           "website",
           "opening_hours",
           "cuisine",
-          "address",
+          
           "building_area",
           "outdoor_seating",
           "internet_access",
@@ -14533,7 +14533,7 @@
         "key": "fire_station",
         "icon": "mi-fire-station",
         "markerColor": "#EF9228",
-        "presets": ["phone", "operator", "address", "building_area"],
+        "presets": ["phone", "operator",  "building_area"],
         "lbl": {
           "en": "Fire Station",
           "fr": "Caserne de pompiers",
@@ -14649,7 +14649,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "smoking"
         ],
@@ -14759,7 +14759,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -14881,7 +14881,7 @@
         "key": "grave_yard",
         "icon": "maki-cemetery",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "religion", "address"],
+        "presets": ["wheelchair", "religion"],
         "lbl": {
           "en": "Graveyard",
           "fr": "Lieu de sépulture attenant à un lieu de culte, cimetière paroissial",
@@ -14990,7 +14990,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "screen",
           "building_area",
           "payment_multi"
@@ -15117,7 +15117,7 @@
           "operator",
           "operator/type",
           "healthcare/speciality",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -15332,7 +15332,7 @@
           "operator",
           "operator/type",
           "capacity",
-          "address",
+          
           "payment_multi",
           "supervised"
         ],
@@ -15436,7 +15436,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "outdoor_seating"
         ],
@@ -15623,7 +15623,7 @@
         "iDRef": "amenity/crematorium",
         "tags": {"amenity": "crematorium"},
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "level",
@@ -15763,7 +15763,7 @@
           "opening_hours",
           "operator",
           "healthcare/speciality",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -16084,7 +16084,7 @@
           "operator",
           "operator/type",
           "healthcare/speciality",
-          "address",
+          
           "emergency"
         ],
         "lbl": {
@@ -16198,7 +16198,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "preschool"
         ],
         "lbl": {
@@ -16304,7 +16304,7 @@
         "markerColor": "#EF9228",
         "presets": [
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours",
           "payment_multi",
@@ -16411,7 +16411,7 @@
           "opening_hours",
           "religion",
           "denomination",
-          "address",
+          
           "building_area",
           "service_times"
         ],
@@ -16539,7 +16539,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "payment_multi"
         ],
         "lbl": {
@@ -16759,7 +16759,7 @@
         "iDRef": "amenity/bicycle_rental",
         "tags": {"amenity": "bicycle_rental"},
         "moreFields": [
-          "address",
+          
           "covered",
           "email",
           "fax",
@@ -16782,7 +16782,7 @@
           "opening_hours",
           "operator",
           "townhall/type",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -16901,7 +16901,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "social_facility",
           "social_facility_for"
@@ -16966,7 +16966,7 @@
           "opening_hours",
           "operator",
           "healthcare/speciality",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -17092,7 +17092,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -17301,7 +17301,7 @@
         "iDRef": "amenity/parking",
         "tags": {"amenity": "parking"},
         "moreFields": [
-          "address",
+          
           "covered",
           "email",
           "fax",
@@ -17440,7 +17440,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "drive_through"
         ],
@@ -17520,7 +17520,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building"
         ],
         "lbl": {
@@ -17627,7 +17627,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -17747,8 +17747,7 @@
           "website",
           "opening_hours",
           "operator",
-          "operator/type",
-          "address"
+          "operator/type"
         ],
         "lbl": {
           "en": "Prison Grounds",
@@ -17937,7 +17936,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -18073,7 +18072,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "drive_through"
         ],
@@ -18213,7 +18212,7 @@
         "key": "community_centre",
         "icon": "osm-community_centre",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "operator", "address", "building_area"],
+        "presets": ["wheelchair", "operator",  "building_area"],
         "lbl": {
           "en": "Community Center",
           "fr": "Salle polyvalente",
@@ -18411,7 +18410,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "fuel_multi",
           "self_service"
         ],
@@ -18531,7 +18530,7 @@
           "website",
           "opening_hours",
           "studio",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -18639,8 +18638,7 @@
           "website",
           "opening_hours",
           "operator",
-          "capacity",
-          "address"
+          "capacity"
         ],
         "lbl": {
           "en": "Taxi Stand",
@@ -18737,7 +18735,7 @@
         "key": "ferry_terminal",
         "icon": "mi-boat-tour",
         "markerColor": "#EF9228",
-        "presets": ["network", "operator", "address", "building_area"],
+        "presets": ["network", "operator",  "building_area"],
         "lbl": {
           "en": "Ferry Station / Terminal",
           "fr": "Terminal ferry",
@@ -18792,7 +18790,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -19258,7 +19256,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -19368,7 +19366,7 @@
           "wheelchair",
           "operator",
           "operator/type",
-          "address",
+          
           "religion",
           "denomination",
           "website"
@@ -19486,7 +19484,7 @@
           "wheelchair",
           "operator",
           "operator/type",
-          "address",
+          
           "website",
           "internet_access",
           "internet_access/fee"
@@ -19713,7 +19711,7 @@
           "opening_hours",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area",
           "social_facility_for"
         ],
@@ -19814,7 +19812,7 @@
         "key": "parking_entrance",
         "icon": "maki-parking-garage",
         "markerColor": "#EF9228",
-        "presets": ["ref", "access_simple", "address", "level"],
+        "presets": ["ref", "access_simple",  "level"],
         "lbl": {
           "en": "Parking Garage Entrance/Exit",
           "fr": "Entrée ou sortie de parking",
@@ -19902,7 +19900,7 @@
         "key": "dojo",
         "icon": "maki-pitch",
         "markerColor": "#EF9228",
-        "presets": ["sport", "address", "building_area", "opening_hours"],
+        "presets": ["sport",  "building_area", "opening_hours"],
         "lbl": {
           "en": "Dojo / Martial Arts Academy",
           "fr": "Dojo",
@@ -20019,7 +20017,7 @@
           "operator",
           "payment_multi",
           "currency_multi",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -20215,7 +20213,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -20313,7 +20311,7 @@
           "opening_hours",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area",
           "language_multi"
         ],
@@ -20611,7 +20609,7 @@
           "opening_hours",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area",
           "internet_access",
           "internet_access/fee",
@@ -21080,7 +21078,7 @@
         "geometry": ["point", "vertex", "area"],
         "iDRef": "amenity/shower",
         "tags": {"amenity": "shower"},
-        "moreFields": ["address", "gender", "level", "operator"],
+        "moreFields": [ "gender", "level", "operator"],
         "id": "amenity/shower"
       },
       {
@@ -21176,7 +21174,7 @@
         "tags": {"amenity": "public_bookcase"},
         "moreFields": [
           "access_simple",
-          "address",
+          
           "brand",
           "email",
           "level",
@@ -21198,7 +21196,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -21616,7 +21614,7 @@
         "markerColor": "#EF9228",
         "presets": [
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours",
           "animal_breeding"
@@ -21795,7 +21793,7 @@
         "presets": [
           "ref",
           "operator",
-          "address",
+          
           "opening_hours",
           "building_area"
         ],
@@ -21863,7 +21861,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "internet_access",
           "internet_access/fee",
@@ -22013,7 +22011,7 @@
         "iDRef": "amenity/boat_rental",
         "tags": {"amenity": "boat_rental"},
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "phone",
@@ -22026,7 +22024,7 @@
         "key": "monastery",
         "icon": "pray-solid",
         "markerColor": "#EF9228",
-        "presets": ["religion", "denomination", "address", "building_area"],
+        "presets": ["religion", "denomination",  "building_area"],
         "lbl": {
           "en": "Monastery Grounds",
           "fr": "Terrain de monastère",
@@ -22213,7 +22211,7 @@
         "markerColor": "#EF9228",
         "presets": [
           "name",
-          "address",
+          
           "building_area",
           "opening_hours",
           "operator"
@@ -22271,7 +22269,7 @@
         "key": "scrapyard",
         "icon": "maki-car",
         "markerColor": "#EF9228",
-        "presets": ["name", "operator", "address", "opening_hours"],
+        "presets": ["name", "operator",  "opening_hours"],
         "lbl": {
           "en": "Scrap Yard",
           "fr": "Casse automobile",
@@ -22324,7 +22322,7 @@
           "amenity#animal_boarding#brand",
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours",
           "animal_boarding"
@@ -22413,7 +22411,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours",
           "animal_shelter"
@@ -22592,7 +22590,7 @@
         "markerColor": "#EF9228",
         "presets": [
           "name",
-          "address",
+          
           "building",
           "outdoor_seating",
           "brewery"
@@ -22659,7 +22657,7 @@
           "operator",
           "operator/type",
           "capacity",
-          "address",
+          
           "opening_hours",
           "lit"
         ],
@@ -22732,7 +22730,7 @@
           "name",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area",
           "opening_hours"
         ],
@@ -22832,7 +22830,7 @@
           "name",
           "operator",
           "building_area",
-          "address",
+          
           "website",
           "internet_access"
         ],
@@ -22898,7 +22896,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours",
           "scuba_diving"
@@ -23033,7 +23031,7 @@
           "name",
           "operator",
           "building_area",
-          "address",
+          
           "website",
           "internet_access",
           "internet_access/fee",
@@ -23099,7 +23097,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours"
         ],
@@ -23282,7 +23280,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours",
           "website"
@@ -23342,7 +23340,7 @@
         "key": "letter_box",
         "icon": "temaki-letter_box",
         "markerColor": "#EF9228",
-        "presets": ["post", "access_simple", "collection_times", "height"],
+        "presets": ["access_simple", "collection_times", "height"],
         "lbl": {
           "en": "Letter Box",
           "fr": "Boîte aux lettres privée",
@@ -23441,7 +23439,7 @@
         },
         "geometry": ["vertex"],
         "iDRef": "amenity/loading_dock",
-        "moreFields": ["address", "colour", "level", "lit", "wheelchair"],
+        "moreFields": [ "colour", "level", "lit", "wheelchair"],
         "tags": {"amenity": "loading_dock"},
         "id": "amenity/loading_dock"
       },
@@ -23452,7 +23450,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "rooms",
           "internet_access",
@@ -23537,7 +23535,7 @@
         "presets": [
           "amenity#money_transfer#brand",
           "name",
-          "address",
+          
           "building_area",
           "payment_multi",
           "currency_multi"
@@ -23606,7 +23604,7 @@
         "presets": [
           "amenity#payment_centre#brand",
           "name",
-          "address",
+          
           "building_area",
           "opening_hours",
           "payment_multi"
@@ -23669,7 +23667,7 @@
         "presets": [
           "amenity#payment_terminal#brand",
           "name",
-          "address",
+          
           "opening_hours",
           "payment_multi"
         ],
@@ -23731,7 +23729,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours"
         ],
@@ -23826,7 +23824,7 @@
         "key": "post_depot",
         "icon": "fa-mail-bulk",
         "markerColor": "#EF9228",
-        "presets": ["name", "operator", "address", "building_area", "phone"],
+        "presets": ["name", "operator",  "building_area", "phone"],
         "lbl": {
           "en": "Post Sorting Office",
           "fr": "Bureau de tri de courrier",
@@ -23878,7 +23876,7 @@
           "amenity#prep_school#brand",
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours"
         ],
@@ -23937,7 +23935,7 @@
           "bath/type",
           "bath/open_air",
           "bath/sand_bath",
-          "address",
+          
           "building_area",
           "fee",
           "charge_fee"
@@ -24036,7 +24034,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "opening_hours"
         ],
@@ -24136,10 +24134,8 @@
           "name",
           "operator",
           "operator/type",
-          "address",
           "building",
-          "opening_hours",
-          "recycling_accepts"
+          "opening_hours"
         ],
         "lbl": {
           "en": "Recycling Center",
@@ -24387,7 +24383,7 @@
           "name",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -24447,7 +24443,7 @@
         "key": "toy_library",
         "icon": "fa-chess-knight",
         "markerColor": "#EF9228",
-        "presets": ["operator", "address", "building_area", "opening_hours"],
+        "presets": ["operator",  "building_area", "opening_hours"],
         "lbl": {
           "en": "Toy Library",
           "fr": "Ludothèque",
@@ -24498,7 +24494,7 @@
           "operator",
           "operator/type",
           "waste",
-          "address",
+          
           "opening_hours",
           "fee",
           "payment_multi_fee",
@@ -24606,7 +24602,7 @@
         "geometry": ["point", "vertex"],
         "iDRef": "amenity/weighbridge",
         "moreFields": [
-          "address",
+          
           "colour",
           "lit",
           "manufacturer",
@@ -26124,7 +26120,7 @@
         "key": "theatre",
         "icon": "maki-theatre",
         "markerColor": "#EF9228",
-        "presets": ["name", "operator", "address", "lit"],
+        "presets": ["name", "operator",  "lit"],
         "lbl": {
           "en": "Amphitheatre",
           "fr": "Amphithéâtre",
@@ -26787,7 +26783,7 @@
         "presets": [
           "network",
           "operator",
-          "address",
+          
           "building_area",
           "internet_access"
         ],
@@ -29432,7 +29428,7 @@
         "key": "ambulance_station",
         "icon": "fa-ambulance",
         "markerColor": "#75030B",
-        "presets": ["name", "operator", "building_area", "address"],
+        "presets": ["name", "operator", "building_area"],
         "lbl": {
           "en": "Ambulance Station",
           "fr": "Station d'ambulance",
@@ -29844,7 +29840,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -29980,7 +29976,7 @@
         "key": "bird_hide",
         "icon": "fa-dove-solid",
         "markerColor": "#5B396C",
-        "presets": ["building_area", "address", "opening_hours"],
+        "presets": ["building_area",  "opening_hours"],
         "lbl": {
           "en": "Bird Hide",
           "fr": "Observatoire ornithologique",
@@ -30063,7 +30059,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "dance/style"
         ],
@@ -30345,7 +30341,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "fee",
           "payment_multi_fee",
@@ -30433,7 +30429,7 @@
           "seasonal",
           "sport_ice",
           "operator",
-          "address",
+          
           "building"
         ],
         "lbl": {
@@ -30627,7 +30623,7 @@
         "iDRef": "leisure/marina",
         "tags": {"leisure": "marina"},
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "internet_access",
@@ -30649,7 +30645,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "fee",
           "payment_multi_fee",
           "charge_fee"
@@ -30732,7 +30728,7 @@
         "key": "park",
         "icon": "maki-park",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "operator", "address", "opening_hours"],
+        "presets": ["wheelchair", "operator",  "opening_hours"],
         "lbl": {
           "en": "Park",
           "fr": "Parc",
@@ -31045,7 +31041,7 @@
           "wheelchair",
           "sport",
           "building",
-          "address",
+          
           "fee",
           "payment_multi_fee",
           "charge_fee"
@@ -31134,7 +31130,7 @@
         "key": "stadium",
         "icon": "maki-stadium",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "sport", "address"],
+        "presets": ["wheelchair", "sport"],
         "lbl": {
           "en": "Stadium",
           "fr": "Stade",
@@ -31342,14 +31338,14 @@
         "geometry": ["area", "point"],
         "iDRef": "leisure/swimming_pool",
         "tags": {"leisure": "swimming_pool"},
-        "moreFields": ["address", "level", "opening_hours", "operator"],
+        "moreFields": [ "level", "opening_hours", "operator"],
         "id": "leisure/swimming_pool"
       },
       {
         "key": "water_park",
         "icon": "mi-diving",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "operator", "address"],
+        "presets": ["wheelchair", "operator"],
         "lbl": {
           "en": "Water Park",
           "fr": "Parc à thème aquatique",
@@ -31466,7 +31462,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -31932,7 +31928,7 @@
         "key": "golf_course",
         "icon": "maki-golf",
         "markerColor": "#5B396C",
-        "presets": ["operator", "address", "opening_hours"],
+        "presets": ["operator",  "opening_hours"],
         "lbl": {
           "en": "Golf Course",
           "fr": "Parcours de golf",
@@ -32119,7 +32115,7 @@
           "opening_hours",
           "access_simple",
           "operator",
-          "address",
+          
           "building"
         ],
         "lbl": {
@@ -32214,7 +32210,7 @@
           "website",
           "opening_hours",
           "sport",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -32309,7 +32305,7 @@
         "key": "nature_reserve",
         "icon": "fa-otter-solid",
         "markerColor": "#5B396C",
-        "presets": ["operator", "address", "opening_hours"],
+        "presets": ["operator",  "opening_hours"],
         "lbl": {
           "en": "Nature Reserve",
           "fr": "Réserve naturelle",
@@ -32462,7 +32458,7 @@
         "presets": [
           "leisure#bowling_alley#brand",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -32569,7 +32565,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "fee",
           "payment_multi_fee",
@@ -32644,7 +32640,7 @@
         "markerColor": "#5B396C",
         "presets": [
           "name",
-          "address",
+          
           "opening_hours",
           "fee",
           "payment_multi_fee",
@@ -32852,7 +32848,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "dance/style"
         ],
@@ -32969,7 +32965,7 @@
         "geometry": ["area", "point"],
         "iDRef": "leisure/disc_golf_course",
         "moreFields": [
-          "address",
+          
           "dog",
           "email",
           "fax",
@@ -33046,7 +33042,7 @@
         "key": "resort",
         "icon": "maki-lodging",
         "markerColor": "#5B396C",
-        "presets": ["name", "operator", "resort", "address", "opening_hours"],
+        "presets": ["name", "operator", "resort",  "opening_hours"],
         "lbl": {
           "en": "Resort",
           "fr": "Complexe touristique , Village de vacances",
@@ -38543,7 +38539,7 @@
         "markerColor": "#9D7178",
         "presets": [
           "operator",
-          "address",
+          
           "building_area",
           "internet_access",
           "internet_access/fee",
@@ -38648,7 +38644,7 @@
         "key": "attraction",
         "icon": "maki-star",
         "markerColor": "#9D7178",
-        "presets": ["operator", "address"],
+        "presets": ["operator"],
         "lbl": {
           "en": "Tourist Attraction",
           "fr": "Attraction touristique",
@@ -38843,7 +38839,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "access_simple",
           "capacity",
           "fee",
@@ -38951,7 +38947,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "capacity",
           "sanitary_dump_station",
           "power_supply",
@@ -39064,7 +39060,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -39362,7 +39358,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -39466,7 +39462,7 @@
           "phone",
           "website",
           "opening_hours",
-          "address",
+          
           "building_area",
           "rooms",
           "internet_access",
@@ -39588,7 +39584,7 @@
           "opening_hours",
           "operator",
           "operator/type",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -39702,7 +39698,7 @@
         "key": "picnic_site",
         "icon": "maki-picnic-site",
         "markerColor": "#9D7178",
-        "presets": ["operator", "address", "access_simple", "capacity"],
+        "presets": ["operator",  "access_simple", "capacity"],
         "lbl": {
           "en": "Picnic Site",
           "fr": "Aire de pique-nique",
@@ -39817,8 +39813,7 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
-          "address"
+          "operator"
         ],
         "lbl": {
           "en": "Theme Park",
@@ -40021,7 +40016,7 @@
         "markerColor": "#9D7178",
         "presets": [
           "operator",
-          "address",
+          
           "building_area",
           "fee",
           "payment_multi_fee",
@@ -40103,7 +40098,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "fee",
           "charge_fee"
         ],
@@ -40231,7 +40226,7 @@
           "opening_hours",
           "operator",
           "guest_house",
-          "address",
+          
           "building_area",
           "rooms",
           "internet_access",
@@ -40352,7 +40347,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "internet_access",
           "internet_access/fee"
@@ -40444,7 +40439,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area",
           "rooms",
           "internet_access",
@@ -40549,7 +40544,7 @@
           "website",
           "opening_hours",
           "operator",
-          "address",
+          
           "building_area"
         ],
         "lbl": {
@@ -40735,7 +40730,7 @@
         "geometry": ["point", "area"],
         "iDRef": "tourism/trail_riding_station",
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "internet_access",
@@ -40929,7 +40924,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "building_area",
           "internet_access",
           "internet_access/fee"
@@ -44118,7 +44113,7 @@
         "iDRef": "man_made/lighthouse",
         "tags": {"man_made": "lighthouse", "seamark:type": "light_major"},
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "phone",
@@ -44901,7 +44896,7 @@
         "key": "wastewater_plant",
         "icon": "temaki-waste",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "address"],
+        "presets": ["operator"],
         "lbl": {
           "en": "Wastewater Plant",
           "fr": "Station d'épuration",
@@ -45215,7 +45210,7 @@
         "key": "works",
         "icon": "maki-industry",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "address", "building_area", "product"],
+        "presets": ["operator",  "building_area", "product"],
         "lbl": {
           "en": "Factory",
           "fr": "Usine",
@@ -46904,7 +46899,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "access_simple",
           "building_area"
         ],
@@ -47189,7 +47184,7 @@
         "key": "water_works",
         "icon": "maki-water",
         "markerColor": "#4A4A4A",
-        "presets": ["name", "operator", "address"],
+        "presets": ["name", "operator"],
         "lbl": {
           "en": "Water Works",
           "fr": "Usine d'eau potable",
@@ -48441,8 +48436,7 @@
           "website",
           "opening_hours",
           "operator",
-          "ref",
-          "address"
+          "ref"
         ],
         "lbl": {
           "en": "Medical Laboratory",
@@ -53460,7 +53454,7 @@
         "geometry": ["point", "vertex", "area"],
         "iDRef": "highway/rest_area",
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "phone",
@@ -53638,7 +53632,7 @@
           "name",
           "operator",
           "elevation",
-          "address",
+          
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -54085,7 +54079,7 @@
       },
       {
         "key": "bicycle",
-        "icon": "",
+        "icon": "maki-bicycle",
         "markerColor": "#3467eb",
         "presets": [],
         "lbl": {
@@ -54753,7 +54747,7 @@
         "geometry": ["point", "area"],
         "iDRef": "attraction/amusement_ride",
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "opening_hours",
@@ -55538,7 +55532,7 @@
         "presets": [
           "name",
           "operator",
-          "address",
+          
           "plant/output/electricity",
           "start_date"
         ],
@@ -55691,6 +55685,12 @@
   },
   "barrier": {
     "lbl": {"en": "Barrier", "fr": "Barrière physique", "de": "Barriere"},
+    "exclude_way_values": [
+      "hedge",
+      "fence",
+      "kerb",
+      "wall"
+    ],
     "values": [
       {
         "key": "entrance",
@@ -55765,7 +55765,7 @@
         },
         "geometry": ["vertex", "area"],
         "iDRef": "barrier/border_control",
-        "moreFields": ["address", "email", "fax", "phone", "website"],
+        "moreFields": [ "email", "fax", "phone", "website"],
         "tags": {"barrier": "border_control"},
         "id": "barrier/border_control"
       },
@@ -56169,7 +56169,7 @@
         "geometry": ["vertex", "area"],
         "iDRef": "barrier/toll_booth",
         "moreFields": [
-          "address",
+          
           "email",
           "fax",
           "opening_hours",

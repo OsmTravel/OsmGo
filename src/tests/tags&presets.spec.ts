@@ -149,6 +149,20 @@ describe('tags&Presets', () => {
     });
 
 
+    it('type of presets should be  list / select / number / text', () => {
+        const noOptionsTags = [];
+
+        for (let pid in presets){
+            const preset = presets[pid];
+            if (!['select','list', 'number', 'text'].includes(preset.type) ) {
+                    noOptionsTags.push(pid)
+                
+            }
+        }
+        expect(noOptionsTags).toEqual([])  
+    });
+
+
     it('presets with type "list" or "select" should have options', () => {
         const noOptionsTags = [];
 
