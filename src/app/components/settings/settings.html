@@ -172,7 +172,7 @@
 				<ion-select [value]="this.configService.config.languageTags"
 					(ionChange)="languageTagsChange($event)">
 					<ion-select-option *ngFor="let lang of this.configService.i18nConfig.tags" [value]="lang.code">
-						{{lang.code}}
+						{{lang.nativeName}}
 					</ion-select-option>
 				</ion-select>
 			</ion-item>

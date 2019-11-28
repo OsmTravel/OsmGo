@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "639-1": "en",
+      "code": "en",
       "639-2": "eng",
       "family": "Indo-European",
       "name": "English",
@@ -9,7 +9,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/English_language"
     },
     {
-      "639-1": "fr",
+      "code": "fr",
       "639-2": "fra",
       "639-2/B": "fre",
       "family": "Indo-European",
@@ -18,7 +18,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/French_language"
     },
     {
-      "639-1": "de",
+      "code": "de",
       "639-2": "deu",
       "639-2/B": "ger",
       "family": "Indo-European",
@@ -27,7 +27,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/German_language"
     },
     {
-      "639-1": "es",
+      "code": "es",
       "639-2": "spa",
       "family": "Indo-European",
       "name": "Spanish",
@@ -35,7 +35,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Spanish_language"
     },
     {
-      "639-1": "pt",
+      "code": "pt",
       "639-2": "por",
       "family": "Indo-European",
       "name": "Portuguese",
@@ -43,7 +43,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Portuguese_language"
     },
     {
-      "639-1": "it",
+      "code": "it",
       "639-2": "ita",
       "family": "Indo-European",
       "name": "Italian",
@@ -51,7 +51,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Italian_language"
     },
     {
-      "639-1": "ru",
+      "code": "ru",
       "639-2": "rus",
       "family": "Indo-European",
       "name": "Russian",
@@ -59,7 +59,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Russian_language"
     },
     {
-      "639-1": "ca",
+      "code": "ca",
       "639-2": "cat",
       "family": "Indo-European",
       "name": "Catalan",
@@ -67,7 +67,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Catalan_language"
     },
     {
-      "639-1": "cs",
+      "code": "cs",
       "639-2": "ces",
       "639-2/B": "cze",
       "family": "Indo-European",
@@ -76,7 +76,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Czech_language"
     },
     {
-      "639-1": "da",
+      "code": "da",
       "639-2": "dan",
       "family": "Indo-European",
       "name": "Danish",
@@ -84,7 +84,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Danish_language"
     },
     {
-      "639-1": "el",
+      "code": "el",
       "639-2": "ell",
       "639-2/B": "gre",
       "family": "Indo-European",
@@ -93,7 +93,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Greek_language"
     },
     {
-      "639-1": "eo",
+      "code": "eo",
       "639-2": "epo",
       "family": "Constructed",
       "name": "Esperanto",
@@ -101,7 +101,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Esperanto"
     },
     {
-      "639-1": "et",
+      "code": "et",
       "639-2": "est",
       "family": "Uralic",
       "name": "Estonian",
@@ -109,7 +109,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Estonian_language"
     },
     {
-      "639-1": "fa",
+      "code": "fa",
       "639-2": "fas",
       "639-2/B": "per",
       "family": "Indo-European",
@@ -118,7 +118,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Persian_language"
     },
     {
-      "639-1": "fi",
+      "code": "fi",
       "639-2": "fin",
       "family": "Uralic",
       "name": "Finnish",
@@ -126,7 +126,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Finnish_language"
     },
     {
-      "639-1": "gl",
+      "code": "gl",
       "639-2": "glg",
       "family": "Indo-European",
       "name": "Galician",
@@ -134,7 +134,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Galician_language"
     },
     {
-      "639-1": "he",
+      "code": "he",
       "639-2": "heb",
       "family": "Afro-Asiatic",
       "name": "Hebrew (modern)",
@@ -142,7 +142,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Hebrew_language"
     },
     {
-      "639-1": "hu",
+      "code": "hu",
       "639-2": "hun",
       "family": "Uralic",
       "name": "Hungarian",
@@ -150,7 +150,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Hungarian_language"
     },
     {
-      "639-1": "is",
+      "code": "is",
       "639-2": "isl",
       "639-2/B": "ice",
       "family": "Indo-European",
@@ -159,7 +159,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Icelandic_language"
     },
     {
-      "639-1": "ja",
+      "code": "ja",
       "639-2": "jpn",
       "family": "Japonic",
       "name": "Japanese",
@@ -167,7 +167,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Japanese_language"
     },
     {
-      "639-1": "ko",
+      "code": "ko",
       "639-2": "kor",
       "family": "Koreanic",
       "name": "Korean",
@@ -175,7 +175,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Korean_language"
     },
     {
-      "639-1": "lt",
+      "code": "lt",
       "639-2": "lit",
       "family": "Indo-European",
       "name": "Lithuanian",
@@ -183,7 +183,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Lithuanian_language"
     },
     {
-      "639-1": "lv",
+      "code": "lv",
       "639-2": "lav",
       "family": "Indo-European",
       "name": "Latvian",
@@ -191,7 +191,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Latvian_language"
     },
     {
-      "639-1": "mk",
+      "code": "mk",
       "639-2": "mkd",
       "639-2/B": "mac",
       "family": "Indo-European",
@@ -200,7 +200,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Macedonian_language"
     },
     {
-      "639-1": "ms",
+      "code": "ms",
       "639-2": "msa",
       "639-2/B": "may",
       "family": "Austronesian",
@@ -209,7 +209,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Malay_language"
     },
     {
-      "639-1": "nl",
+      "code": "nl",
       "639-2": "nld",
       "639-2/B": "dut",
       "family": "Indo-European",
@@ -218,7 +218,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Dutch_language"
     },
     {
-      "639-1": "pl",
+      "code": "pl",
       "639-2": "pol",
       "family": "Indo-European",
       "name": "Polish",
@@ -226,7 +226,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Polish_language"
     },
     {
-      "639-1": "ro",
+      "code": "ro",
       "639-2": "ron",
       "639-2/B": "rum",
       "family": "Indo-European",
@@ -235,7 +235,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Romanian_language"
     },
     {
-      "639-1": "sk",
+      "code": "sk",
       "639-2": "slk",
       "639-2/B": "slo",
       "family": "Indo-European",
@@ -244,7 +244,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Slovak_language"
     },
     {
-      "639-1": "sl",
+      "code": "sl",
       "639-2": "slv",
       "family": "Indo-European",
       "name": "Slovene",
@@ -252,7 +252,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Slovene_language"
     },
     {
-      "639-1": "sr",
+      "code": "sr",
       "639-2": "srp",
       "family": "Indo-European",
       "name": "Serbian",
@@ -260,7 +260,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Serbian_language"
     },
     {
-      "639-1": "sv",
+      "code": "sv",
       "639-2": "swe",
       "family": "Indo-European",
       "name": "Swedish",
@@ -268,7 +268,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Swedish_language"
     },
     {
-      "639-1": "tr",
+      "code": "tr",
       "639-2": "tur",
       "family": "Turkic",
       "name": "Turkish",
@@ -276,7 +276,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Turkish_language"
     },
     {
-      "639-1": "uk",
+      "code": "uk",
       "639-2": "ukr",
       "family": "Indo-European",
       "name": "Ukrainian",
@@ -284,7 +284,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Ukrainian_language"
     },
     {
-      "639-1": "vi",
+      "code": "vi",
       "639-2": "vie",
       "family": "Austroasiatic",
       "name": "Vietnamese",
@@ -292,7 +292,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Vietnamese_language"
     },
     {
-      "639-1": "zh",
+      "code": "zh",
       "639-2": "zho",
       "639-2/B": "chi",
       "family": "Sino-Tibetan",
@@ -301,7 +301,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Chinese_language"
     },
     {
-      "639-1": "bg",
+      "code": "bg",
       "639-2": "bul",
       "family": "Indo-European",
       "name": "Bulgarian",
@@ -309,7 +309,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Bulgarian_language"
     },
     {
-      "639-1": "bs",
+      "code": "bs",
       "639-2": "bos",
       "family": "Indo-European",
       "name": "Bosnian",
@@ -317,7 +317,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Bosnian_language"
     },
     {
-      "639-1": "dv",
+      "code": "dv",
       "639-2": "div",
       "family": "Indo-European",
       "name": "Divehi, Dhivehi, Maldivian",
@@ -325,7 +325,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Dhivehi_language"
     },
     {
-      "639-1": "hr",
+      "code": "hr",
       "639-2": "hrv",
       "family": "Indo-European",
       "name": "Croatian",
@@ -333,7 +333,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Croatian_language"
     },
     {
-      "639-1": "id",
+      "code": "id",
       "639-2": "ind",
       "family": "Austronesian",
       "name": "Indonesian",
@@ -341,7 +341,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Indonesian_language"
     },
     {
-      "639-1": "no",
+      "code": "no",
       "639-2": "nor",
       "family": "Indo-European",
       "name": "Norwegian",
@@ -349,7 +349,7 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Norwegian_language"
     },
     {
-      "639-1": "bn",
+      "code": "bn",
       "639-2": "ben",
       "family": "Indo-European",
       "name": "Bengali, Bangla",

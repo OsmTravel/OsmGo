@@ -236,13 +236,13 @@ export class MainPage implements AfterViewInit {
     // TODO: Dirty... use rxjs mergemap ?
 
     this.configService.getI18nConfig$().subscribe(async i18nConfig => {
-
+     console.log(i18nConfig)
     // TODO: From config File ...
-    i18nConfig['tags'] = [ 
-      { 'code': "en", "label": "english" },
-      { 'code': "fr", "label": "français" } ,
-      { 'code': "de", "label": "de" } 
-    ]
+    // i18nConfig['tags'] = [ 
+    //   { 'code': "en", "label": "english" },
+    //   { 'code': "fr", "label": "français" } ,
+    //   { 'code': "de", "label": "de" } 
+    // ]
 
     i18nConfig['country'] = [
         { "code": "FR", "name": "France" },

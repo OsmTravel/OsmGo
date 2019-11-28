@@ -1,6 +1,6 @@
 {
   "aa": {
-    "639-1": "aa",
+    "code": "aa",
     "639-2": "aar",
     "family": "Afro-Asiatic",
     "name": "Afar",
@@ -8,7 +8,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Afar_language"
   },
   "ab": {
-    "639-1": "ab",
+    "code": "ab",
     "639-2": "abk",
     "family": "Northwest Caucasian",
     "name": "Abkhaz",
@@ -16,7 +16,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Abkhaz_language"
   },
   "ae": {
-    "639-1": "ae",
+    "code": "ae",
     "639-2": "ave",
     "family": "Indo-European",
     "name": "Avestan",
@@ -24,7 +24,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Avestan_language"
   },
   "af": {
-    "639-1": "af",
+    "code": "af",
     "639-2": "afr",
     "family": "Indo-European",
     "name": "Afrikaans",
@@ -32,7 +32,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Afrikaans_language"
   },
   "ak": {
-    "639-1": "ak",
+    "code": "ak",
     "639-2": "aka",
     "family": "Niger–Congo",
     "name": "Akan",
@@ -40,7 +40,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Akan_language"
   },
   "am": {
-    "639-1": "am",
+    "code": "am",
     "639-2": "amh",
     "family": "Afro-Asiatic",
     "name": "Amharic",
@@ -48,7 +48,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Amharic_language"
   },
   "an": {
-    "639-1": "an",
+    "code": "an",
     "639-2": "arg",
     "family": "Indo-European",
     "name": "Aragonese",
@@ -56,7 +56,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Aragonese_language"
   },
   "ar": {
-    "639-1": "ar",
+    "code": "ar",
     "639-2": "ara",
     "family": "Afro-Asiatic",
     "name": "Arabic",
@@ -64,7 +64,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Arabic_language"
   },
   "as": {
-    "639-1": "as",
+    "code": "as",
     "639-2": "asm",
     "family": "Indo-European",
     "name": "Assamese",
@@ -72,7 +72,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Assamese_language"
   },
   "av": {
-    "639-1": "av",
+    "code": "av",
     "639-2": "ava",
     "family": "Northeast Caucasian",
     "name": "Avaric",
@@ -80,7 +80,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Avar_language"
   },
   "ay": {
-    "639-1": "ay",
+    "code": "ay",
     "639-2": "aym",
     "family": "Aymaran",
     "name": "Aymara",
@@ -88,7 +88,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Aymara_language"
   },
   "az": {
-    "639-1": "az",
+    "code": "az",
     "639-2": "aze",
     "family": "Turkic",
     "name": "Azerbaijani",
@@ -96,7 +96,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Azerbaijani_language"
   },
   "ba": {
-    "639-1": "ba",
+    "code": "ba",
     "639-2": "bak",
     "family": "Turkic",
     "name": "Bashkir",
@@ -104,7 +104,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bashkir_language"
   },
   "be": {
-    "639-1": "be",
+    "code": "be",
     "639-2": "bel",
     "family": "Indo-European",
     "name": "Belarusian",
@@ -112,7 +112,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Belarusian_language"
   },
   "bg": {
-    "639-1": "bg",
+    "code": "bg",
     "639-2": "bul",
     "family": "Indo-European",
     "name": "Bulgarian",
@@ -120,7 +120,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bulgarian_language"
   },
   "bh": {
-    "639-1": "bh",
+    "code": "bh",
     "639-2": "bih",
     "family": "Indo-European",
     "name": "Bihari",
@@ -128,7 +128,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bihari_languages"
   },
   "bi": {
-    "639-1": "bi",
+    "code": "bi",
     "639-2": "bis",
     "family": "Creole",
     "name": "Bislama",
@@ -136,7 +136,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bislama_language"
   },
   "bm": {
-    "639-1": "bm",
+    "code": "bm",
     "639-2": "bam",
     "family": "Niger–Congo",
     "name": "Bambara",
@@ -144,7 +144,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bambara_language"
   },
   "bn": {
-    "639-1": "bn",
+    "code": "bn",
     "639-2": "ben",
     "family": "Indo-European",
     "name": "Bengali, Bangla",
@@ -152,7 +152,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bengali_language"
   },
   "bo": {
-    "639-1": "bo",
+    "code": "bo",
     "639-2": "bod",
     "639-2/B": "tib",
     "family": "Sino-Tibetan",
@@ -161,7 +161,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Standard_Tibetan"
   },
   "br": {
-    "639-1": "br",
+    "code": "br",
     "639-2": "bre",
     "family": "Indo-European",
     "name": "Breton",
@@ -169,7 +169,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Breton_language"
   },
   "bs": {
-    "639-1": "bs",
+    "code": "bs",
     "639-2": "bos",
     "family": "Indo-European",
     "name": "Bosnian",
@@ -177,7 +177,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bosnian_language"
   },
   "ca": {
-    "639-1": "ca",
+    "code": "ca",
     "639-2": "cat",
     "family": "Indo-European",
     "name": "Catalan",
@@ -185,7 +185,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Catalan_language"
   },
   "ce": {
-    "639-1": "ce",
+    "code": "ce",
     "639-2": "che",
     "family": "Northeast Caucasian",
     "name": "Chechen",
@@ -193,7 +193,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Chechen_language"
   },
   "ch": {
-    "639-1": "ch",
+    "code": "ch",
     "639-2": "cha",
     "family": "Austronesian",
     "name": "Chamorro",
@@ -201,7 +201,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Chamorro_language"
   },
   "co": {
-    "639-1": "co",
+    "code": "co",
     "639-2": "cos",
     "family": "Indo-European",
     "name": "Corsican",
@@ -209,7 +209,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Corsican_language"
   },
   "cr": {
-    "639-1": "cr",
+    "code": "cr",
     "639-2": "cre",
     "family": "Algonquian",
     "name": "Cree",
@@ -217,7 +217,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Cree_language"
   },
   "cs": {
-    "639-1": "cs",
+    "code": "cs",
     "639-2": "ces",
     "639-2/B": "cze",
     "family": "Indo-European",
@@ -226,7 +226,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Czech_language"
   },
   "cu": {
-    "639-1": "cu",
+    "code": "cu",
     "639-2": "chu",
     "family": "Indo-European",
     "name": "Old Church Slavonic, Church Slavonic, Old Bulgarian",
@@ -234,7 +234,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Old_Church_Slavonic"
   },
   "cv": {
-    "639-1": "cv",
+    "code": "cv",
     "639-2": "chv",
     "family": "Turkic",
     "name": "Chuvash",
@@ -242,7 +242,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Chuvash_language"
   },
   "cy": {
-    "639-1": "cy",
+    "code": "cy",
     "639-2": "cym",
     "639-2/B": "wel",
     "family": "Indo-European",
@@ -251,7 +251,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Welsh_language"
   },
   "da": {
-    "639-1": "da",
+    "code": "da",
     "639-2": "dan",
     "family": "Indo-European",
     "name": "Danish",
@@ -259,7 +259,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Danish_language"
   },
   "de": {
-    "639-1": "de",
+    "code": "de",
     "639-2": "deu",
     "639-2/B": "ger",
     "family": "Indo-European",
@@ -268,7 +268,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/German_language"
   },
   "dv": {
-    "639-1": "dv",
+    "code": "dv",
     "639-2": "div",
     "family": "Indo-European",
     "name": "Divehi, Dhivehi, Maldivian",
@@ -276,7 +276,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Dhivehi_language"
   },
   "dz": {
-    "639-1": "dz",
+    "code": "dz",
     "639-2": "dzo",
     "family": "Sino-Tibetan",
     "name": "Dzongkha",
@@ -284,7 +284,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Dzongkha_language"
   },
   "ee": {
-    "639-1": "ee",
+    "code": "ee",
     "639-2": "ewe",
     "family": "Niger–Congo",
     "name": "Ewe",
@@ -292,7 +292,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Ewe_language"
   },
   "el": {
-    "639-1": "el",
+    "code": "el",
     "639-2": "ell",
     "639-2/B": "gre",
     "family": "Indo-European",
@@ -301,7 +301,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Greek_language"
   },
   "en": {
-    "639-1": "en",
+    "code": "en",
     "639-2": "eng",
     "family": "Indo-European",
     "name": "English",
@@ -309,7 +309,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/English_language"
   },
   "eo": {
-    "639-1": "eo",
+    "code": "eo",
     "639-2": "epo",
     "family": "Constructed",
     "name": "Esperanto",
@@ -317,7 +317,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Esperanto"
   },
   "es": {
-    "639-1": "es",
+    "code": "es",
     "639-2": "spa",
     "family": "Indo-European",
     "name": "Spanish",
@@ -325,7 +325,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Spanish_language"
   },
   "et": {
-    "639-1": "et",
+    "code": "et",
     "639-2": "est",
     "family": "Uralic",
     "name": "Estonian",
@@ -333,7 +333,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Estonian_language"
   },
   "eu": {
-    "639-1": "eu",
+    "code": "eu",
     "639-2": "eus",
     "639-2/B": "baq",
     "family": "Language isolate",
@@ -342,7 +342,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Basque_language"
   },
   "fa": {
-    "639-1": "fa",
+    "code": "fa",
     "639-2": "fas",
     "639-2/B": "per",
     "family": "Indo-European",
@@ -351,7 +351,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Persian_language"
   },
   "ff": {
-    "639-1": "ff",
+    "code": "ff",
     "639-2": "ful",
     "family": "Niger–Congo",
     "name": "Fula, Fulah, Pulaar, Pular",
@@ -359,7 +359,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Fula_language"
   },
   "fi": {
-    "639-1": "fi",
+    "code": "fi",
     "639-2": "fin",
     "family": "Uralic",
     "name": "Finnish",
@@ -367,7 +367,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Finnish_language"
   },
   "fj": {
-    "639-1": "fj",
+    "code": "fj",
     "639-2": "fij",
     "family": "Austronesian",
     "name": "Fijian",
@@ -375,7 +375,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Fijian_language"
   },
   "fo": {
-    "639-1": "fo",
+    "code": "fo",
     "639-2": "fao",
     "family": "Indo-European",
     "name": "Faroese",
@@ -383,7 +383,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Faroese_language"
   },
   "fr": {
-    "639-1": "fr",
+    "code": "fr",
     "639-2": "fra",
     "639-2/B": "fre",
     "family": "Indo-European",
@@ -392,7 +392,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/French_language"
   },
   "fy": {
-    "639-1": "fy",
+    "code": "fy",
     "639-2": "fry",
     "family": "Indo-European",
     "name": "Western Frisian",
@@ -400,7 +400,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/West_Frisian_language"
   },
   "ga": {
-    "639-1": "ga",
+    "code": "ga",
     "639-2": "gle",
     "family": "Indo-European",
     "name": "Irish",
@@ -408,7 +408,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Irish_language"
   },
   "gd": {
-    "639-1": "gd",
+    "code": "gd",
     "639-2": "gla",
     "family": "Indo-European",
     "name": "Scottish Gaelic, Gaelic",
@@ -416,7 +416,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Scottish_Gaelic_language"
   },
   "gl": {
-    "639-1": "gl",
+    "code": "gl",
     "639-2": "glg",
     "family": "Indo-European",
     "name": "Galician",
@@ -424,7 +424,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Galician_language"
   },
   "gn": {
-    "639-1": "gn",
+    "code": "gn",
     "639-2": "grn",
     "family": "Tupian",
     "name": "Guaraní",
@@ -432,7 +432,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Guaran%C3%AD_language"
   },
   "gu": {
-    "639-1": "gu",
+    "code": "gu",
     "639-2": "guj",
     "family": "Indo-European",
     "name": "Gujarati",
@@ -440,7 +440,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Gujarati_language"
   },
   "gv": {
-    "639-1": "gv",
+    "code": "gv",
     "639-2": "glv",
     "family": "Indo-European",
     "name": "Manx",
@@ -448,7 +448,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Manx_language"
   },
   "ha": {
-    "639-1": "ha",
+    "code": "ha",
     "639-2": "hau",
     "family": "Afro-Asiatic",
     "name": "Hausa",
@@ -456,7 +456,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Hausa_language"
   },
   "he": {
-    "639-1": "he",
+    "code": "he",
     "639-2": "heb",
     "family": "Afro-Asiatic",
     "name": "Hebrew (modern)",
@@ -464,7 +464,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Hebrew_language"
   },
   "hi": {
-    "639-1": "hi",
+    "code": "hi",
     "639-2": "hin",
     "family": "Indo-European",
     "name": "Hindi",
@@ -472,7 +472,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Hindi"
   },
   "ho": {
-    "639-1": "ho",
+    "code": "ho",
     "639-2": "hmo",
     "family": "Austronesian",
     "name": "Hiri Motu",
@@ -480,7 +480,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Hiri_Motu_language"
   },
   "hr": {
-    "639-1": "hr",
+    "code": "hr",
     "639-2": "hrv",
     "family": "Indo-European",
     "name": "Croatian",
@@ -488,7 +488,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Croatian_language"
   },
   "ht": {
-    "639-1": "ht",
+    "code": "ht",
     "639-2": "hat",
     "family": "Creole",
     "name": "Haitian, Haitian Creole",
@@ -496,7 +496,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Haitian_Creole_language"
   },
   "hu": {
-    "639-1": "hu",
+    "code": "hu",
     "639-2": "hun",
     "family": "Uralic",
     "name": "Hungarian",
@@ -504,7 +504,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Hungarian_language"
   },
   "hy": {
-    "639-1": "hy",
+    "code": "hy",
     "639-2": "hye",
     "639-2/B": "arm",
     "family": "Indo-European",
@@ -513,7 +513,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Armenian_language"
   },
   "hz": {
-    "639-1": "hz",
+    "code": "hz",
     "639-2": "her",
     "family": "Niger–Congo",
     "name": "Herero",
@@ -521,7 +521,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Herero_language"
   },
   "ia": {
-    "639-1": "ia",
+    "code": "ia",
     "639-2": "ina",
     "family": "Constructed",
     "name": "Interlingua",
@@ -529,7 +529,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Interlingua"
   },
   "id": {
-    "639-1": "id",
+    "code": "id",
     "639-2": "ind",
     "family": "Austronesian",
     "name": "Indonesian",
@@ -537,7 +537,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Indonesian_language"
   },
   "ie": {
-    "639-1": "ie",
+    "code": "ie",
     "639-2": "ile",
     "family": "Constructed",
     "name": "Interlingue",
@@ -545,7 +545,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Interlingue_language"
   },
   "ig": {
-    "639-1": "ig",
+    "code": "ig",
     "639-2": "ibo",
     "family": "Niger–Congo",
     "name": "Igbo",
@@ -553,7 +553,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Igbo_language"
   },
   "ii": {
-    "639-1": "ii",
+    "code": "ii",
     "639-2": "iii",
     "family": "Sino-Tibetan",
     "name": "Nuosu",
@@ -561,7 +561,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Nuosu_language"
   },
   "ik": {
-    "639-1": "ik",
+    "code": "ik",
     "639-2": "ipk",
     "family": "Eskimo–Aleut",
     "name": "Inupiaq",
@@ -569,7 +569,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Inupiaq_language"
   },
   "io": {
-    "639-1": "io",
+    "code": "io",
     "639-2": "ido",
     "family": "Constructed",
     "name": "Ido",
@@ -577,7 +577,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Ido_(language)"
   },
   "is": {
-    "639-1": "is",
+    "code": "is",
     "639-2": "isl",
     "639-2/B": "ice",
     "family": "Indo-European",
@@ -586,7 +586,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Icelandic_language"
   },
   "it": {
-    "639-1": "it",
+    "code": "it",
     "639-2": "ita",
     "family": "Indo-European",
     "name": "Italian",
@@ -594,7 +594,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Italian_language"
   },
   "iu": {
-    "639-1": "iu",
+    "code": "iu",
     "639-2": "iku",
     "family": "Eskimo–Aleut",
     "name": "Inuktitut",
@@ -602,7 +602,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Inuktitut"
   },
   "ja": {
-    "639-1": "ja",
+    "code": "ja",
     "639-2": "jpn",
     "family": "Japonic",
     "name": "Japanese",
@@ -610,7 +610,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Japanese_language"
   },
   "jv": {
-    "639-1": "jv",
+    "code": "jv",
     "639-2": "jav",
     "family": "Austronesian",
     "name": "Javanese",
@@ -618,7 +618,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Javanese_language"
   },
   "ka": {
-    "639-1": "ka",
+    "code": "ka",
     "639-2": "kat",
     "639-2/B": "geo",
     "family": "South Caucasian",
@@ -627,7 +627,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Georgian_language"
   },
   "kg": {
-    "639-1": "kg",
+    "code": "kg",
     "639-2": "kon",
     "family": "Niger–Congo",
     "name": "Kongo",
@@ -635,7 +635,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kongo_language"
   },
   "ki": {
-    "639-1": "ki",
+    "code": "ki",
     "639-2": "kik",
     "family": "Niger–Congo",
     "name": "Kikuyu, Gikuyu",
@@ -643,7 +643,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Gikuyu_language"
   },
   "kj": {
-    "639-1": "kj",
+    "code": "kj",
     "639-2": "kua",
     "family": "Niger–Congo",
     "name": "Kwanyama, Kuanyama",
@@ -651,7 +651,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kwanyama"
   },
   "kk": {
-    "639-1": "kk",
+    "code": "kk",
     "639-2": "kaz",
     "family": "Turkic",
     "name": "Kazakh",
@@ -659,7 +659,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kazakh_language"
   },
   "kl": {
-    "639-1": "kl",
+    "code": "kl",
     "639-2": "kal",
     "family": "Eskimo–Aleut",
     "name": "Kalaallisut, Greenlandic",
@@ -667,7 +667,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kalaallisut_language"
   },
   "km": {
-    "639-1": "km",
+    "code": "km",
     "639-2": "khm",
     "family": "Austroasiatic",
     "name": "Khmer",
@@ -675,7 +675,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Khmer_language"
   },
   "kn": {
-    "639-1": "kn",
+    "code": "kn",
     "639-2": "kan",
     "family": "Dravidian",
     "name": "Kannada",
@@ -683,7 +683,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kannada_language"
   },
   "ko": {
-    "639-1": "ko",
+    "code": "ko",
     "639-2": "kor",
     "family": "Koreanic",
     "name": "Korean",
@@ -691,7 +691,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Korean_language"
   },
   "kr": {
-    "639-1": "kr",
+    "code": "kr",
     "639-2": "kau",
     "family": "Nilo-Saharan",
     "name": "Kanuri",
@@ -699,7 +699,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kanuri_language"
   },
   "ks": {
-    "639-1": "ks",
+    "code": "ks",
     "639-2": "kas",
     "family": "Indo-European",
     "name": "Kashmiri",
@@ -707,7 +707,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kashmiri_language"
   },
   "ku": {
-    "639-1": "ku",
+    "code": "ku",
     "639-2": "kur",
     "family": "Indo-European",
     "name": "Kurdish",
@@ -715,7 +715,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kurdish_language"
   },
   "kv": {
-    "639-1": "kv",
+    "code": "kv",
     "639-2": "kom",
     "family": "Uralic",
     "name": "Komi",
@@ -723,7 +723,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Komi_language"
   },
   "kw": {
-    "639-1": "kw",
+    "code": "kw",
     "639-2": "cor",
     "family": "Indo-European",
     "name": "Cornish",
@@ -731,7 +731,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Cornish_language"
   },
   "ky": {
-    "639-1": "ky",
+    "code": "ky",
     "639-2": "kir",
     "family": "Turkic",
     "name": "Kyrgyz",
@@ -739,7 +739,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kyrgyz_language"
   },
   "la": {
-    "639-1": "la",
+    "code": "la",
     "639-2": "lat",
     "family": "Indo-European",
     "name": "Latin",
@@ -747,7 +747,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Latin"
   },
   "lb": {
-    "639-1": "lb",
+    "code": "lb",
     "639-2": "ltz",
     "family": "Indo-European",
     "name": "Luxembourgish, Letzeburgesch",
@@ -755,7 +755,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Luxembourgish_language"
   },
   "lg": {
-    "639-1": "lg",
+    "code": "lg",
     "639-2": "lug",
     "family": "Niger–Congo",
     "name": "Ganda",
@@ -763,7 +763,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Luganda"
   },
   "li": {
-    "639-1": "li",
+    "code": "li",
     "639-2": "lim",
     "family": "Indo-European",
     "name": "Limburgish, Limburgan, Limburger",
@@ -771,7 +771,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Limburgish_language"
   },
   "ln": {
-    "639-1": "ln",
+    "code": "ln",
     "639-2": "lin",
     "family": "Niger–Congo",
     "name": "Lingala",
@@ -779,7 +779,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Lingala_language"
   },
   "lo": {
-    "639-1": "lo",
+    "code": "lo",
     "639-2": "lao",
     "family": "Tai–Kadai",
     "name": "Lao",
@@ -787,7 +787,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Lao_language"
   },
   "lt": {
-    "639-1": "lt",
+    "code": "lt",
     "639-2": "lit",
     "family": "Indo-European",
     "name": "Lithuanian",
@@ -795,7 +795,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Lithuanian_language"
   },
   "lu": {
-    "639-1": "lu",
+    "code": "lu",
     "639-2": "lub",
     "family": "Niger–Congo",
     "name": "Luba-Katanga",
@@ -803,7 +803,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tshiluba_language"
   },
   "lv": {
-    "639-1": "lv",
+    "code": "lv",
     "639-2": "lav",
     "family": "Indo-European",
     "name": "Latvian",
@@ -811,7 +811,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Latvian_language"
   },
   "mg": {
-    "639-1": "mg",
+    "code": "mg",
     "639-2": "mlg",
     "family": "Austronesian",
     "name": "Malagasy",
@@ -819,7 +819,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Malagasy_language"
   },
   "mh": {
-    "639-1": "mh",
+    "code": "mh",
     "639-2": "mah",
     "family": "Austronesian",
     "name": "Marshallese",
@@ -827,7 +827,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Marshallese_language"
   },
   "mi": {
-    "639-1": "mi",
+    "code": "mi",
     "639-2": "mri",
     "639-2/B": "mao",
     "family": "Austronesian",
@@ -836,7 +836,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/M%C4%81ori_language"
   },
   "mk": {
-    "639-1": "mk",
+    "code": "mk",
     "639-2": "mkd",
     "639-2/B": "mac",
     "family": "Indo-European",
@@ -845,7 +845,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Macedonian_language"
   },
   "ml": {
-    "639-1": "ml",
+    "code": "ml",
     "639-2": "mal",
     "family": "Dravidian",
     "name": "Malayalam",
@@ -853,7 +853,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Malayalam_language"
   },
   "mn": {
-    "639-1": "mn",
+    "code": "mn",
     "639-2": "mon",
     "family": "Mongolic",
     "name": "Mongolian",
@@ -861,7 +861,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Mongolian_language"
   },
   "mr": {
-    "639-1": "mr",
+    "code": "mr",
     "639-2": "mar",
     "family": "Indo-European",
     "name": "Marathi (Marāṭhī)",
@@ -869,7 +869,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Marathi_language"
   },
   "ms": {
-    "639-1": "ms",
+    "code": "ms",
     "639-2": "msa",
     "639-2/B": "may",
     "family": "Austronesian",
@@ -878,7 +878,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Malay_language"
   },
   "mt": {
-    "639-1": "mt",
+    "code": "mt",
     "639-2": "mlt",
     "family": "Afro-Asiatic",
     "name": "Maltese",
@@ -886,7 +886,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Maltese_language"
   },
   "my": {
-    "639-1": "my",
+    "code": "my",
     "639-2": "mya",
     "639-2/B": "bur",
     "family": "Sino-Tibetan",
@@ -895,7 +895,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Burmese_language"
   },
   "na": {
-    "639-1": "na",
+    "code": "na",
     "639-2": "nau",
     "family": "Austronesian",
     "name": "Nauruan",
@@ -903,7 +903,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Nauruan_language"
   },
   "nb": {
-    "639-1": "nb",
+    "code": "nb",
     "639-2": "nob",
     "family": "Indo-European",
     "name": "Norwegian Bokmål",
@@ -911,7 +911,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Bokm%C3%A5l"
   },
   "nd": {
-    "639-1": "nd",
+    "code": "nd",
     "639-2": "nde",
     "family": "Niger–Congo",
     "name": "Northern Ndebele",
@@ -919,7 +919,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Northern_Ndebele_language"
   },
   "ne": {
-    "639-1": "ne",
+    "code": "ne",
     "639-2": "nep",
     "family": "Indo-European",
     "name": "Nepali",
@@ -927,7 +927,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Nepali_language"
   },
   "ng": {
-    "639-1": "ng",
+    "code": "ng",
     "639-2": "ndo",
     "family": "Niger–Congo",
     "name": "Ndonga",
@@ -935,7 +935,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Ndonga"
   },
   "nl": {
-    "639-1": "nl",
+    "code": "nl",
     "639-2": "nld",
     "639-2/B": "dut",
     "family": "Indo-European",
@@ -944,7 +944,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Dutch_language"
   },
   "nn": {
-    "639-1": "nn",
+    "code": "nn",
     "639-2": "nno",
     "family": "Indo-European",
     "name": "Norwegian Nynorsk",
@@ -952,7 +952,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Nynorsk"
   },
   "no": {
-    "639-1": "no",
+    "code": "no",
     "639-2": "nor",
     "family": "Indo-European",
     "name": "Norwegian",
@@ -960,7 +960,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Norwegian_language"
   },
   "nr": {
-    "639-1": "nr",
+    "code": "nr",
     "639-2": "nbl",
     "family": "Niger–Congo",
     "name": "Southern Ndebele",
@@ -968,7 +968,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Southern_Ndebele_language"
   },
   "nv": {
-    "639-1": "nv",
+    "code": "nv",
     "639-2": "nav",
     "family": "Dené–Yeniseian",
     "name": "Navajo, Navaho",
@@ -976,7 +976,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Navajo_language"
   },
   "ny": {
-    "639-1": "ny",
+    "code": "ny",
     "639-2": "nya",
     "family": "Niger–Congo",
     "name": "Chichewa, Chewa, Nyanja",
@@ -984,7 +984,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Chichewa_language"
   },
   "oc": {
-    "639-1": "oc",
+    "code": "oc",
     "639-2": "oci",
     "family": "Indo-European",
     "name": "Occitan",
@@ -992,7 +992,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Occitan_language"
   },
   "oj": {
-    "639-1": "oj",
+    "code": "oj",
     "639-2": "oji",
     "family": "Algonquian",
     "name": "Ojibwe, Ojibwa",
@@ -1000,7 +1000,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Ojibwe_language"
   },
   "om": {
-    "639-1": "om",
+    "code": "om",
     "639-2": "orm",
     "family": "Afro-Asiatic",
     "name": "Oromo",
@@ -1008,7 +1008,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Oromo_language"
   },
   "or": {
-    "639-1": "or",
+    "code": "or",
     "639-2": "ori",
     "family": "Indo-European",
     "name": "Oriya",
@@ -1016,7 +1016,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Oriya_language"
   },
   "os": {
-    "639-1": "os",
+    "code": "os",
     "639-2": "oss",
     "family": "Indo-European",
     "name": "Ossetian, Ossetic",
@@ -1024,7 +1024,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Ossetic_language"
   },
   "pa": {
-    "639-1": "pa",
+    "code": "pa",
     "639-2": "pan",
     "family": "Indo-European",
     "name": "(Eastern) Punjabi",
@@ -1032,7 +1032,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Eastern_Punjabi_language"
   },
   "pi": {
-    "639-1": "pi",
+    "code": "pi",
     "639-2": "pli",
     "family": "Indo-European",
     "name": "Pāli",
@@ -1040,7 +1040,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/P%C4%81li_language"
   },
   "pl": {
-    "639-1": "pl",
+    "code": "pl",
     "639-2": "pol",
     "family": "Indo-European",
     "name": "Polish",
@@ -1048,7 +1048,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Polish_language"
   },
   "ps": {
-    "639-1": "ps",
+    "code": "ps",
     "639-2": "pus",
     "family": "Indo-European",
     "name": "Pashto, Pushto",
@@ -1056,7 +1056,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Pashto_language"
   },
   "pt": {
-    "639-1": "pt",
+    "code": "pt",
     "639-2": "por",
     "family": "Indo-European",
     "name": "Portuguese",
@@ -1064,7 +1064,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Portuguese_language"
   },
   "qu": {
-    "639-1": "qu",
+    "code": "qu",
     "639-2": "que",
     "family": "Quechuan",
     "name": "Quechua",
@@ -1072,7 +1072,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Quechua_language"
   },
   "rm": {
-    "639-1": "rm",
+    "code": "rm",
     "639-2": "roh",
     "family": "Indo-European",
     "name": "Romansh",
@@ -1080,7 +1080,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Romansh_language"
   },
   "rn": {
-    "639-1": "rn",
+    "code": "rn",
     "639-2": "run",
     "family": "Niger–Congo",
     "name": "Kirundi",
@@ -1088,7 +1088,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kirundi"
   },
   "ro": {
-    "639-1": "ro",
+    "code": "ro",
     "639-2": "ron",
     "639-2/B": "rum",
     "family": "Indo-European",
@@ -1097,7 +1097,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Romanian_language"
   },
   "ru": {
-    "639-1": "ru",
+    "code": "ru",
     "639-2": "rus",
     "family": "Indo-European",
     "name": "Russian",
@@ -1105,7 +1105,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Russian_language"
   },
   "rw": {
-    "639-1": "rw",
+    "code": "rw",
     "639-2": "kin",
     "family": "Niger–Congo",
     "name": "Kinyarwanda",
@@ -1113,7 +1113,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Kinyarwanda"
   },
   "sa": {
-    "639-1": "sa",
+    "code": "sa",
     "639-2": "san",
     "family": "Indo-European",
     "name": "Sanskrit (Saṁskṛta)",
@@ -1121,7 +1121,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sanskrit"
   },
   "sc": {
-    "639-1": "sc",
+    "code": "sc",
     "639-2": "srd",
     "family": "Indo-European",
     "name": "Sardinian",
@@ -1129,7 +1129,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sardinian_language"
   },
   "sd": {
-    "639-1": "sd",
+    "code": "sd",
     "639-2": "snd",
     "family": "Indo-European",
     "name": "Sindhi",
@@ -1137,7 +1137,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sindhi_language"
   },
   "se": {
-    "639-1": "se",
+    "code": "se",
     "639-2": "sme",
     "family": "Uralic",
     "name": "Northern Sami",
@@ -1145,7 +1145,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Northern_Sami"
   },
   "sg": {
-    "639-1": "sg",
+    "code": "sg",
     "639-2": "sag",
     "family": "Creole",
     "name": "Sango",
@@ -1153,7 +1153,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sango_language"
   },
   "si": {
-    "639-1": "si",
+    "code": "si",
     "639-2": "sin",
     "family": "Indo-European",
     "name": "Sinhalese, Sinhala",
@@ -1161,7 +1161,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sinhalese_language"
   },
   "sk": {
-    "639-1": "sk",
+    "code": "sk",
     "639-2": "slk",
     "639-2/B": "slo",
     "family": "Indo-European",
@@ -1170,7 +1170,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Slovak_language"
   },
   "sl": {
-    "639-1": "sl",
+    "code": "sl",
     "639-2": "slv",
     "family": "Indo-European",
     "name": "Slovene",
@@ -1178,7 +1178,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Slovene_language"
   },
   "sm": {
-    "639-1": "sm",
+    "code": "sm",
     "639-2": "smo",
     "family": "Austronesian",
     "name": "Samoan",
@@ -1186,7 +1186,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Samoan_language"
   },
   "sn": {
-    "639-1": "sn",
+    "code": "sn",
     "639-2": "sna",
     "family": "Niger–Congo",
     "name": "Shona",
@@ -1194,7 +1194,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Shona_language"
   },
   "so": {
-    "639-1": "so",
+    "code": "so",
     "639-2": "som",
     "family": "Afro-Asiatic",
     "name": "Somali",
@@ -1202,7 +1202,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Somali_language"
   },
   "sq": {
-    "639-1": "sq",
+    "code": "sq",
     "639-2": "sqi",
     "639-2/B": "alb",
     "family": "Indo-European",
@@ -1211,7 +1211,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Albanian_language"
   },
   "sr": {
-    "639-1": "sr",
+    "code": "sr",
     "639-2": "srp",
     "family": "Indo-European",
     "name": "Serbian",
@@ -1219,7 +1219,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Serbian_language"
   },
   "ss": {
-    "639-1": "ss",
+    "code": "ss",
     "639-2": "ssw",
     "family": "Niger–Congo",
     "name": "Swati",
@@ -1227,7 +1227,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Swati_language"
   },
   "st": {
-    "639-1": "st",
+    "code": "st",
     "639-2": "sot",
     "family": "Niger–Congo",
     "name": "Southern Sotho",
@@ -1235,7 +1235,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sotho_language"
   },
   "su": {
-    "639-1": "su",
+    "code": "su",
     "639-2": "sun",
     "family": "Austronesian",
     "name": "Sundanese",
@@ -1243,7 +1243,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Sundanese_language"
   },
   "sv": {
-    "639-1": "sv",
+    "code": "sv",
     "639-2": "swe",
     "family": "Indo-European",
     "name": "Swedish",
@@ -1251,7 +1251,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Swedish_language"
   },
   "sw": {
-    "639-1": "sw",
+    "code": "sw",
     "639-2": "swa",
     "family": "Niger–Congo",
     "name": "Swahili",
@@ -1259,7 +1259,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Swahili_language"
   },
   "ta": {
-    "639-1": "ta",
+    "code": "ta",
     "639-2": "tam",
     "family": "Dravidian",
     "name": "Tamil",
@@ -1267,7 +1267,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tamil_language"
   },
   "te": {
-    "639-1": "te",
+    "code": "te",
     "639-2": "tel",
     "family": "Dravidian",
     "name": "Telugu",
@@ -1275,7 +1275,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Telugu_language"
   },
   "tg": {
-    "639-1": "tg",
+    "code": "tg",
     "639-2": "tgk",
     "family": "Indo-European",
     "name": "Tajik",
@@ -1283,7 +1283,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tajik_language"
   },
   "th": {
-    "639-1": "th",
+    "code": "th",
     "639-2": "tha",
     "family": "Tai–Kadai",
     "name": "Thai",
@@ -1291,7 +1291,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Thai_language"
   },
   "ti": {
-    "639-1": "ti",
+    "code": "ti",
     "639-2": "tir",
     "family": "Afro-Asiatic",
     "name": "Tigrinya",
@@ -1299,7 +1299,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tigrinya_language"
   },
   "tk": {
-    "639-1": "tk",
+    "code": "tk",
     "639-2": "tuk",
     "family": "Turkic",
     "name": "Turkmen",
@@ -1307,7 +1307,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Turkmen_language"
   },
   "tl": {
-    "639-1": "tl",
+    "code": "tl",
     "639-2": "tgl",
     "family": "Austronesian",
     "name": "Tagalog",
@@ -1315,7 +1315,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tagalog_language"
   },
   "tn": {
-    "639-1": "tn",
+    "code": "tn",
     "639-2": "tsn",
     "family": "Niger–Congo",
     "name": "Tswana",
@@ -1323,7 +1323,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tswana_language"
   },
   "to": {
-    "639-1": "to",
+    "code": "to",
     "639-2": "ton",
     "family": "Austronesian",
     "name": "Tonga (Tonga Islands)",
@@ -1331,7 +1331,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tongan_language"
   },
   "tr": {
-    "639-1": "tr",
+    "code": "tr",
     "639-2": "tur",
     "family": "Turkic",
     "name": "Turkish",
@@ -1339,7 +1339,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Turkish_language"
   },
   "ts": {
-    "639-1": "ts",
+    "code": "ts",
     "639-2": "tso",
     "family": "Niger–Congo",
     "name": "Tsonga",
@@ -1347,7 +1347,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tsonga_language"
   },
   "tt": {
-    "639-1": "tt",
+    "code": "tt",
     "639-2": "tat",
     "family": "Turkic",
     "name": "Tatar",
@@ -1355,7 +1355,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tatar_language"
   },
   "tw": {
-    "639-1": "tw",
+    "code": "tw",
     "639-2": "twi",
     "family": "Niger–Congo",
     "name": "Twi",
@@ -1363,7 +1363,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Twi"
   },
   "ty": {
-    "639-1": "ty",
+    "code": "ty",
     "639-2": "tah",
     "family": "Austronesian",
     "name": "Tahitian",
@@ -1371,7 +1371,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Tahitian_language"
   },
   "ug": {
-    "639-1": "ug",
+    "code": "ug",
     "639-2": "uig",
     "family": "Turkic",
     "name": "Uyghur",
@@ -1379,7 +1379,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Uyghur_language"
   },
   "uk": {
-    "639-1": "uk",
+    "code": "uk",
     "639-2": "ukr",
     "family": "Indo-European",
     "name": "Ukrainian",
@@ -1387,7 +1387,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Ukrainian_language"
   },
   "ur": {
-    "639-1": "ur",
+    "code": "ur",
     "639-2": "urd",
     "family": "Indo-European",
     "name": "Urdu",
@@ -1395,7 +1395,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Urdu"
   },
   "uz": {
-    "639-1": "uz",
+    "code": "uz",
     "639-2": "uzb",
     "family": "Turkic",
     "name": "Uzbek",
@@ -1403,7 +1403,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Uzbek_language"
   },
   "ve": {
-    "639-1": "ve",
+    "code": "ve",
     "639-2": "ven",
     "family": "Niger–Congo",
     "name": "Venda",
@@ -1411,7 +1411,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Venda_language"
   },
   "vi": {
-    "639-1": "vi",
+    "code": "vi",
     "639-2": "vie",
     "family": "Austroasiatic",
     "name": "Vietnamese",
@@ -1419,7 +1419,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Vietnamese_language"
   },
   "vo": {
-    "639-1": "vo",
+    "code": "vo",
     "639-2": "vol",
     "family": "Constructed",
     "name": "Volapük",
@@ -1427,7 +1427,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Volap%C3%BCk"
   },
   "wa": {
-    "639-1": "wa",
+    "code": "wa",
     "639-2": "wln",
     "family": "Indo-European",
     "name": "Walloon",
@@ -1435,7 +1435,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Walloon_language"
   },
   "wo": {
-    "639-1": "wo",
+    "code": "wo",
     "639-2": "wol",
     "family": "Niger–Congo",
     "name": "Wolof",
@@ -1443,7 +1443,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Wolof_language"
   },
   "xh": {
-    "639-1": "xh",
+    "code": "xh",
     "639-2": "xho",
     "family": "Niger–Congo",
     "name": "Xhosa",
@@ -1451,7 +1451,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Xhosa_language"
   },
   "yi": {
-    "639-1": "yi",
+    "code": "yi",
     "639-2": "yid",
     "family": "Indo-European",
     "name": "Yiddish",
@@ -1459,7 +1459,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Yiddish_language"
   },
   "yo": {
-    "639-1": "yo",
+    "code": "yo",
     "639-2": "yor",
     "family": "Niger–Congo",
     "name": "Yoruba",
@@ -1467,7 +1467,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Yoruba_language"
   },
   "za": {
-    "639-1": "za",
+    "code": "za",
     "639-2": "zha",
     "family": "Tai–Kadai",
     "name": "Zhuang, Chuang",
@@ -1475,7 +1475,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Zhuang_languages"
   },
   "zh": {
-    "639-1": "zh",
+    "code": "zh",
     "639-2": "zho",
     "639-2/B": "chi",
     "family": "Sino-Tibetan",
@@ -1484,7 +1484,7 @@
     "wikiUrl": "https://en.wikipedia.org/wiki/Chinese_language"
   },
   "zu": {
-    "639-1": "zu",
+    "code": "zu",
     "639-2": "zul",
     "family": "Niger–Congo",
     "name": "Zulu",
