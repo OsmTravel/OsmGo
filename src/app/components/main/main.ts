@@ -14,7 +14,7 @@ import { AlertService } from '../../services/alert.service';
 import { ConfigService } from '../../services/config.service';
 import { ModalsContentPage } from '../modal/modal';
 
-import { timer } from 'rxjs';
+import { timer, forkJoin } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -23,6 +23,7 @@ import { StatesService } from 'src/app/services/states.service';
 
 import { Plugins } from '@capacitor/core';
 import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
+import { switchMap } from 'rxjs/operators';
 
 const { App } = Plugins;
 
@@ -82,7 +83,6 @@ export class MainPage implements AfterViewInit {
     });
 
     mapService.eventShowDialogMultiFeatures.subscribe(async (features) => {
-    console.log('recieve')
     const modal = await this.modalCtrl.create({
       component: DialogMultiFeaturesComponent,
       cssClass: 'dialog-multi-features',
@@ -115,10 +115,10 @@ export class MainPage implements AfterViewInit {
       await modal.present();
       this.modalIsOpen = true;
 
-      modal.onDidDismiss().then(d => {
+      modal.onDidDismiss()
+      .then(d => {
         this.modalIsOpen = false;
         const data = d.data;
-        console.log(data);
         this.configService.freezeMapRenderer = false;
         if (data) {
           if (data['type'] === 'Move') {
@@ -233,26 +233,21 @@ export class MainPage implements AfterViewInit {
 
   ngAfterViewInit() {
 
-    // TODO: Dirty... use rxjs mergemap ?
+    forkJoin(
+      this.configService.getI18nConfig$()
+      .pipe(
+        switchMap( i18nConfig =>  this.configService.loadConfig$(i18nConfig))
+      ),
+      this.tagsService.loadLastTagAdded$(),
+      this.tagsService.loadBookMarks$(),
+      this.tagsService.loadSavedFields$(),
+      this.tagsService.loadTagsAndPresets$()
+    ).subscribe( () => {
+      this.translate.use(this.configService.config.languageUi);
+      // this.mapService.eventDomMainReady.emit(document.getElementById('map'));
 
-    this.configService.getI18nConfig$().subscribe(async i18nConfig => {
-     console.log(i18nConfig)
-    // TODO: From config File ...
-    // i18nConfig['tags'] = [ 
-    //   { 'code': "en", "label": "english" },
-    //   { 'code': "fr", "label": "français" } ,
-    //   { 'code': "de", "label": "de" } 
-    // ]
+      this.mapService.initMap();
 
-    i18nConfig['country'] = [
-        { "code": "FR", "name": "France" },
-        { "code": "GB", "name": "United Kingdom of Great Britain and Northern Ireland" },
-        { "code": "DE", "name": "Germany" }
-        ]
-
-      this.configService.i18nConfig = i18nConfig;
-      const e = await this.configService.loadConfig(i18nConfig)
-      console.log('authType : ', this.authType);
       if (this.authType == 'oauth'){
         this.osmApi.initAuth();
         if (!this.osmApi.isAuthenticated() || !this.configService.getUserInfo().connected) {
@@ -260,41 +255,7 @@ export class MainPage implements AfterViewInit {
         }
       }
 
-      this.translate.use(this.configService.config.languageUi);
-
-      // TODO: switchmap
-      this.tagsService.loadLastTagAdded$().subscribe()
-      this.tagsService.loadBookMarks$().subscribe()
-      this.tagsService.loadSavedFields$().subscribe()
-      
-
-      this.tagsService.loadTagsAndPresets$()
-        .subscribe(async e => {
-
-          // const missingIcons: string[] = await this.iconService.getMissingSpirtes();
-
-          // if (missingIcons.length > 0) {
-          //   const loading = await this.loadingController.create({
-          //     message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
-          //   });
-          //   await loading.present();
-          //   const missingSprites: string[] = await this.iconService.getMissingSpirtes();
-          //   for (let missIcon of missingSprites) {
-
-          //     let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
-          //     this.dataService.addIconCache(missIcon, uriIcon)
-
-          //   }
-          //   loading.dismiss();
-          // }
-        });
-
-      this.mapService.eventDomMainReady.emit(document.getElementById('map'));
-
-
-
-    });
-
+    })
 
 
     this.alertService.eventDisplayToolTipRefreshData.subscribe(async e => {

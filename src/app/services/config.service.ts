@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment.prod';
 import { StatesService } from './states.service';
 import { Platform } from '@ionic/angular';
-
+import { map } from 'rxjs/operators';
+import { from } from 'rxjs';
 
 export interface User {
     uid: string;
@@ -116,53 +117,55 @@ export class ConfigService {
 
     getI18nConfig$() {
         return this.http.get('./assets/i18n/i18n.json')
+        .pipe( map(i18nConfig => {
+            i18nConfig['country'] = [
+                { "code": "FR", "name": "France" },
+                { "code": "GB", "name": "United Kingdom of Great Britain and Northern Ireland" },
+                { "code": "DE", "name": "Germany" }
+                ]
+            this.i18nConfig = i18nConfig;
+            return i18nConfig
+        }) )
+        
     }
 
 
     // TODO: add userInfo
-    async loadConfig(_i18nConfig) {
-
-        let d = await this.localStorage.get('config')
-
-        if (d) {
-            // tslint:disable-next-line:forin
-            for (const key in d) {
-                this.config[key] = d[key];
-            }
-        } else {
-            this.localStorage.set('config', this.config);
-        }
-    
-
-        this.config.languageTags = this.config.languageTags || 'en';
-        this.config.countryTags = this.config.countryTags || 'GB';
-
-
-        let userInfo = await this.localStorage.get('user_info')
-        if (userInfo && userInfo.connected) {
-            this.user_info = userInfo;
-        } else {
-            this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
-        }
-
-        let changeset: Changeset = await this.localStorage.get('changeset')
-        if (changeset) {
-            this.changeset = changeset;
-        } else {
-            this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
-        }
-
-    return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
+    loadConfig$(_i18nConfig) {
+        return from(this.localStorage.get('config'))
+        .pipe( 
+            map( async d => {
+                if (d) {
+                    // tslint:disable-next-line:forin
+                    for (const key in d) {
+                        this.config[key] = d[key];
+                    }
+                } else {
+                    this.localStorage.set('config', this.config);
+                }
+            
+        
+                this.config.languageTags = this.config.languageTags || 'en';
+                this.config.countryTags = this.config.countryTags || 'GB';
+        
+        
+                let userInfo = await this.localStorage.get('user_info')
+                if (userInfo && userInfo.connected) {
+                    this.user_info = userInfo;
+                } else {
+                    this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
+                }
+        
+                let changeset: Changeset = await this.localStorage.get('changeset')
+                if (changeset) {
+                    this.changeset = changeset;
+                } else {
+                    this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
+                }
+            return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
+            })
+        )
 }
-
-    //     // TODO : from assets /countryCode.json 
-    //     this.currentTagsCountryChoice = _i18nConfig.country
-
-    //     this.eventConfigIsLoaded.emit(this.config);
-
-
-    //     ;
-    // }
 
     async loadAppVersion() {
         this.appVersion.appVersionNumber = environment.version;

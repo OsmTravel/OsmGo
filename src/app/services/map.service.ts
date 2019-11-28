@@ -51,8 +51,7 @@ export class MapService {
     this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)';
-
-    this.eventDomMainReady.subscribe(mes => {
+    
       mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
       this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
         if (this.map) {
@@ -60,8 +59,6 @@ export class MapService {
         }
 
       });
-      this.initMap();
-    });
 
     this.eventMarkerReDraw.subscribe(geojson => {
       if (geojson) {
@@ -702,45 +699,7 @@ export class MapService {
       const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
-        console.log('eventShowDialogMultiFeatures.emit');
         this.eventShowDialogMultiFeatures.emit(uniqFeaturesById);
-        // const inputsParams: any = uniqFeaturesById.map((f, i) => {
-        //   const tags = JSON.parse(f['properties'].tags);
-        //   const pk = JSON.parse(f['properties'].primaryTag);
-        //   const name = tags.name || '?';
-        //   const label = `${name}  (${pk.k} = ${pk.v})`;
-        //   return {
-        //     type: 'radio',
-        //     label: label,
-        //     value: f['properties']['id'],
-        //     checked: i === 0
-        //   };
-
-        // });
-        // const alert = await this.alertCtrl.create(
-        //   {
-        //     header: this.translate.instant('MAIN.WHAT_ITEM'),
-        //     inputs: inputsParams,
-        //     buttons: [
-        //       {
-        //         text: this.translate.instant('SHARED.CANCEL'),
-        //         role: 'cancel',
-        //         cssClass: 'secondary',
-        //         handler: () => {
-
-        //         }
-        //       }, {
-        //         text: this.translate.instant('SHARED.OK'),
-        //         handler: (data: any) => {
-        //           const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
-        //           this.selectFeature(selectedFeature[0]);
-        //         }
-        //       }
-        //     ]
-        //   }
-        // );
-
-        // await alert.present();
 
       } else {
         this.selectFeature(uniqFeaturesById[0]);

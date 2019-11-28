@@ -154,7 +154,7 @@ export class TagsService {
 
 } 
 
-    getAllTags(): Observable<any> { // tags à plat ?
+    getAllTags(): Observable<any> { 
         return this.http.get(`assets/tags&presets/tags.json`)
             .pipe(
                 map(res => {
@@ -178,31 +178,6 @@ export class TagsService {
             return undefined;
         }
     }
-
-
-    // TODO: duplicate with getAllTags ?
-    loadTags() {
-        this.http.get(`assets/tags&presets/tags.json`)
-            .pipe(
-                map((res) => {
-                    return res;
-                })
-            )
-            .subscribe(data => {
-                const tags = data;
-                for (const tagsObject in tags) {
-                    for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                        tags[tagsObject].values[i]['primaryKey'] = tagsObject;
-                    }
-
-                }
-                this.tags = tags;
-                this.getListOfPrimaryKey();
-                return tags;
-            });
-        // .catch((error: any) => throwError(error.json().error || 'Server error'));
-    }
-
 
 
     getTags() {
