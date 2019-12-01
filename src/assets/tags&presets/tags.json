@@ -41964,7 +41964,13 @@
       {
         "icon": "mi-plumber",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "presets": [
+          "craft#plumber#brand",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours"
+        ],
         "lbl": {
           "en": "Plumber",
           "fr": "Plombier",
