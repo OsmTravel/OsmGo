@@ -13785,12 +13785,6 @@
           "en": "An establishment specifically dedicated to prostitution.",
           "de": "Ein Bordell ist eine Einrichtung, die ausdrücklich dem käuflichen Sex (Prostitution) gewidmet ist."
         },
-        "alertByCountryCodes": [
-          {
-            "countryCodes": ["FR"],
-            "text": {"en": "It doesn't exist in this country"}
-          }
-        ],
         "excludeCountryCodes": ["FR"],
         "tags": {"amenity": "brothel"},
         "geometry": ["point", "area"],
@@ -19151,15 +19145,6 @@
           "fr": "Automates de vente et distributeurs automatiques",
           "de": "Ein Gerät, das Waren, Fahrkarten oder andere Dinge verkauft"
         },
-        "warningByCountryCodes": [
-          {
-            "countryCodes": ["FR"],
-            "text": {
-              "en": "It's not an ATM",
-              "fr": "Ne pas confondre avec un distributeur de billet"
-            }
-          }
-        ],
         "geometry": ["point", "vertex"],
         "iDRef": "amenity/vending_machine",
         "tags": {"amenity": "vending_machine"},
