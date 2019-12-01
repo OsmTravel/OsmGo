@@ -33,40 +33,41 @@ for (let pkey in tagsOsmgo){
             }else {
                 console.log('PAS D\'ID ', tag);
             }
-            
-
         }
 
-        // if (tag.icon === undefined){
-        //     tag.icon = '';
-        //     // console.log( tag.icon)
-        // }
+        // delete "key" property
+        if (tag.key){
+            delete tag.key;
+        }
 
-        // if (!tag.tags){
-        //     tag['tags'] = {};
-        //     tag['tags'][pkey] = tag.key;
-        // }
+
+
+        if (tag.icon === undefined){
+            tag.icon = '';
+            // console.log( tag.icon)
+        }
+
+        if (!tag.tags){
+            tag['tags'] = {};
+            tag['tags'][pkey] = tag.key;
+        }
+
+        tag.presets = tag.presets.filter ( p => p !== 'name' )
         
-        // if (tag.addTags){
-        //     for (let tkey in tag.addTags){
-        //         if (!tag['tags'][tkey]){
-        //             tag['tags'][tkey] = tag.addTags[tkey]
-        //         }
-        //     }
-        // }
 
-        // if (!tag.id){
-        //     if (tag['iDRef']){
-        //         tag['id'] = tag['iDRef'];
-        //     }else {
-        //         let newId = Object.keys(tag.tags)
-        //             .map( k => `${k}/${tag.tags[k]}`)
-        //             .join('#')
-        //         console.log(newId);
-        //         tag['id'] = newId;
-        //     }
-        //     // console.log(tag)
-        // }
+
+        if (!tag.id){
+            if (tag['iDRef']){
+                tag['id'] = tag['iDRef'];
+            }else {
+                let newId = Object.keys(tag.tags)
+                    .map( k => `${k}/${tag.tags[k]}`)
+                    .join('#')
+                console.log(newId);
+                tag['id'] = newId;
+            }
+            // console.log(tag)
+        }
         
     }
 

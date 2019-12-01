@@ -4,15 +4,6 @@
     </ion-card-content>
   </ion-card>
 
-  <div *ngIf="tagConfig && tagConfig?.alertByCountryCodes">
-      <ion-card *ngFor="let alert of tagConfig.alertByCountryCodes | filterByCountryCode:countryCode"  class="alertCard">
-          <ion-card-content>
-            {{alert.text[language] || alert.text['en']}}
-          </ion-card-content>
-        </ion-card>
-  </div>
-
-  
   
   <ion-card *ngIf="tagConfig && tagConfig?.warning && ( tagConfig?.warning[language] || tagConfig?.warning['en'] ) && (!tagConfig.warningCountryCodes || tagConfig.warningCountryCodes.includes(countryCode))" class="warningtCard">
     <ion-card-content>
@@ -20,11 +11,3 @@
         {{tagConfig?.warning[language] || tagConfig?.warning['en']}}
     </ion-card-content>
   </ion-card>
-
-  <div *ngIf="tagConfig && tagConfig?.warningByCountryCodes">
-      <ion-card *ngFor="let warning of tagConfig.warningByCountryCodes | filterByCountryCode:countryCode"  class="warningtCard">
-          <ion-card-content>
-            {{warning.text[language] || warning.text['en']}}
-          </ion-card-content>
-        </ion-card>
-  </div>
