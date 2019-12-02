@@ -134,7 +134,7 @@
       {
         "icon": "maki-art-gallery",
         "markerColor": "#D73F29",
-        "presets": ["operator", "lit", "visibility", "direction", "height"],
+        "presets": ["lit", "visibility", "direction", "height"],
         "lbl": {"en": "Advertising Totem"},
         "description": {
           "en": "A rectangular advertising totem.",
@@ -519,13 +519,7 @@
         "icon": "mi-insurance-agency",
         "markerColor": "#A23337",
         "geometry": ["point", "area"],
-        "presets": [
-          "operator",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "deprecated": true,
         "lbl": {"en": "Insurance", "fr": "Assurance"},
         "alert": {"en": "Use Office", "fr": "Préférez la catégorie 'Bureau'"},
@@ -537,7 +531,6 @@
         "markerColor": "#A23337",
         "presets": [
           "shop#jewelry#brand",
-          "operator",
           "wheelchair",
           "phone",
           "website",
@@ -1101,7 +1094,6 @@
         "markerColor": "#A23337",
         "presets": [
           "shop#hairdresser#brand",
-          "operator",
           "male",
           "female",
           "wheelchair",
@@ -1207,7 +1199,6 @@
         "markerColor": "#A23337",
         "presets": [
           "shop#confectionery#brand",
-          "operator",
           "wheelchair",
           "phone",
           "website",
@@ -1304,7 +1295,6 @@
         "markerColor": "#A23337",
         "presets": [
           "shop#florist#brand",
-          "operator",
           "wheelchair",
           "phone",
           "website",
@@ -1509,7 +1499,6 @@
         "markerColor": "#A23337",
         "presets": [
           "shop#car_repair#brand",
-          "operator",
           "wheelchair",
           "phone",
           "website",
@@ -2193,7 +2182,6 @@
         "markerColor": "#A23337",
         "presets": [
           "shop#outdoor#brand",
-          "operator",
           "wheelchair",
           "phone",
           "website",
@@ -4031,7 +4019,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "sport"
         ],
         "lbl": {
@@ -13697,7 +13684,6 @@
         "presets": [
           "wheelchair",
           "building_area",
-          "operator",
           "internet_access",
           "internet_access/fee",
           "internet_access/ssid"
@@ -13772,7 +13758,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "building_area"
         ],
@@ -13993,7 +13978,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#bank#brand",
-          "operator",
           "wheelchair",
           "phone",
           "website",
@@ -14386,7 +14370,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "building_area",
           "ref/isil",
@@ -14539,7 +14522,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area",
           "min_age",
           "smoking"
@@ -14650,7 +14632,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#post_box#brand",
-          "operator",
           "collection_times",
           "drive_through",
           "ref"
@@ -14715,7 +14696,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -14989,7 +14969,7 @@
       {
         "icon": "mi-fire-station",
         "markerColor": "#EF9228",
-        "presets": ["phone", "operator", "building_area"],
+        "presets": ["phone", "building_area"],
         "lbl": {
           "en": "Fire Station",
           "fr": "Caserne de pompiers",
@@ -15105,7 +15085,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area",
           "smoking"
         ],
@@ -15573,7 +15552,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "healthcare/speciality",
           "building_area"
@@ -15676,13 +15654,7 @@
       {
         "icon": "maki-waste-basket",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "waste",
-          "collection_times",
-          "material",
-          "colour"
-        ],
+        "presets": ["waste", "collection_times", "material", "colour"],
         "lbl": {
           "en": "Waste Basket",
           "fr": "Poubelle pour piétons",
@@ -15785,7 +15757,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#car_sharing#brand",
-          "operator",
           "operator/type",
           "capacity",
           "payment_multi",
@@ -16097,7 +16068,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "wheelchair",
-          "operator",
           "network",
           "cash_in",
           "currency_multi",
@@ -16224,7 +16194,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "healthcare/speciality",
           "building_area"
         ],
@@ -16330,7 +16299,6 @@
         "icon": "maki-drinking-water",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -16439,7 +16407,7 @@
       {
         "icon": "osm-fountain",
         "markerColor": "#EF9228",
-        "presets": ["operator", "height", "lit"],
+        "presets": ["height", "lit"],
         "lbl": {
           "en": "Fountain",
           "fr": "Fontaine",
@@ -16546,7 +16514,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "healthcare/speciality",
           "emergency"
@@ -16656,7 +16623,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "preschool"
         ],
         "lbl": {
@@ -16764,7 +16730,6 @@
         "icon": "mi-car-wash",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "building_area",
           "opening_hours",
           "payment_multi",
@@ -17006,7 +16971,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "payment_multi"
         ],
         "lbl": {
@@ -17125,7 +17089,6 @@
           "opening_hours",
           "capacity",
           "network",
-          "operator",
           "operator/type",
           "fee",
           "payment_multi_fee"
@@ -17254,7 +17217,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "townhall/type",
           "building_area"
         ],
@@ -17373,14 +17335,13 @@
         "icon": "mi-health",
         "markerColor": "#EF9228",
         "presets": [
+          "social_facility",
+          "social_facility:for",
           "wheelchair",
           "phone",
           "website",
           "opening_hours",
-          "operator",
-          "building_area",
-          "social_facility",
-          "social_facility_for"
+          "building_area"
         ],
         "lbl": {
           "en": "Nursing Home",
@@ -17443,7 +17404,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "healthcare/speciality",
           "building_area"
         ],
@@ -17563,7 +17523,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -17692,7 +17651,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "parking",
           "capacity",
@@ -17799,7 +17757,6 @@
         "markerColor": "#1B75BB",
         "presets": [
           "bicycle_parking",
-          "operator",
           "capacity",
           "covered",
           "operator/type",
@@ -17919,7 +17876,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area",
           "drive_through"
         ],
@@ -17995,7 +17951,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building"
         ],
         "lbl": {
@@ -18103,7 +18058,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -18225,7 +18179,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type"
         ],
         "lbl": {
@@ -18555,9 +18508,13 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
-          "building_area",
-          "drive_through"
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
         ],
         "lbl": {
           "en": "Fast Food",
@@ -18659,24 +18616,14 @@
         "iDRef": "amenity/fast_food",
         "tags": {"amenity": "fast_food"},
         "moreFields": [
-          "air_conditioning",
           "capacity",
-          "delivery",
-          "diet_multi",
           "email",
           "fax",
-          "internet_access",
           "internet_access/fee",
           "internet_access/ssid",
           "level",
-          "opening_hours",
-          "outdoor_seating",
           "payment_multi",
-          "phone",
-          "smoking",
-          "takeaway",
-          "website",
-          "wheelchair"
+          "smoking"
         ],
         "id": "amenity/fast_food"
       },
@@ -18697,7 +18644,7 @@
       {
         "icon": "osm-community_centre",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair", "operator", "building_area"],
+        "presets": ["wheelchair", "building_area"],
         "lbl": {
           "en": "Community Center",
           "fr": "Salle polyvalente",
@@ -18896,7 +18843,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "fuel_multi",
           "self_service"
         ],
@@ -19128,7 +19074,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "capacity"
         ],
         "lbl": {
@@ -19231,7 +19176,7 @@
       {
         "icon": "mi-boat-tour",
         "markerColor": "#EF9228",
-        "presets": ["network", "operator", "building_area"],
+        "presets": ["network", "building_area"],
         "lbl": {
           "en": "Ferry Station / Terminal",
           "fr": "Terminal ferry",
@@ -19289,7 +19234,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -19532,14 +19476,7 @@
       {
         "icon": "maki-telephone",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "phone",
-          "fee",
-          "payment_multi_fee",
-          "charge_fee",
-          "booth"
-        ],
+        "presets": ["phone", "fee", "payment_multi_fee", "charge_fee", "booth"],
         "lbl": {
           "en": "Telephone",
           "fr": "Téléphone",
@@ -19762,7 +19699,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -19873,7 +19809,6 @@
         "presets": [
           "amenity#school#brand",
           "wheelchair",
-          "operator",
           "operator/type",
           "religion",
           "denomination",
@@ -19996,7 +19931,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "wheelchair",
-          "operator",
           "operator/type",
           "website",
           "internet_access",
@@ -20114,7 +20048,6 @@
           "vending",
           "wheelchair",
           "ref",
-          "operator",
           "payment_multi",
           "currency_multi"
         ],
@@ -20213,16 +20146,13 @@
         "icon": "fa-hand-holding-heart-solid",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#social_facility#brand",
           "social_facility",
+          "social_facility:for",
           "wheelchair",
           "phone",
           "website",
           "opening_hours",
-          "operator",
-          "operator/type",
-          "building_area",
-          "social_facility_for"
+          "operator/type"
         ],
         "lbl": {
           "en": "Social Facility",
@@ -20525,7 +20455,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "payment_multi",
           "currency_multi",
           "building_area"
@@ -20726,7 +20655,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -20822,7 +20750,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "building_area",
           "language_multi"
@@ -20912,7 +20839,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#charging_station#brand",
-          "operator",
           "capacity",
           "access_simple",
           "fee",
@@ -21129,7 +21055,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "building_area",
           "internet_access",
@@ -21429,7 +21354,7 @@
       {
         "icon": "fa-motorcycle",
         "markerColor": "#EF9228",
-        "presets": ["capacity", "operator", "covered", "access_simple"],
+        "presets": ["capacity", "covered", "access_simple"],
         "lbl": {
           "en": "Motorcycle Parking",
           "fr": "Parking pour motocyclettes",
@@ -21616,7 +21541,6 @@
         "presets": [
           "amenity#public_bookcase#brand",
           "public_bookcase/type",
-          "operator",
           "opening_hours",
           "capacity",
           "website",
@@ -21724,7 +21648,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -21799,13 +21722,7 @@
       {
         "icon": "maki-drinking-water",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "fee",
-          "payment_multi_fee",
-          "charge_fee",
-          "opening_hours"
-        ],
+        "presets": ["fee", "payment_multi_fee", "charge_fee", "opening_hours"],
         "lbl": {
           "en": "RV Drinking Water",
           "fr": "Eau potable pour citerne de véhicule de loisirs",
@@ -21886,7 +21803,6 @@
         "icon": "fa-tachometer-alt",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -21985,13 +21901,7 @@
       {
         "icon": "maki-water",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "fee",
-          "payment_multi_fee",
-          "charge_fee",
-          "opening_hours"
-        ],
+        "presets": ["fee", "payment_multi_fee", "charge_fee", "opening_hours"],
         "lbl": {
           "en": "Animal Watering Place",
           "fr": "Point d'eau pour animaux",
@@ -22084,7 +21994,7 @@
       {
         "icon": "fa-camera",
         "markerColor": "#EF9228",
-        "presets": ["operator", "payment_multi", "wheelchair"],
+        "presets": ["payment_multi", "wheelchair"],
         "lbl": {
           "en": "Photo Booth",
           "fr": "Photomaton",
@@ -22147,12 +22057,7 @@
       {
         "icon": "maki-zoo",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "building_area",
-          "opening_hours",
-          "animal_breeding"
-        ],
+        "presets": ["building_area", "opening_hours", "animal_breeding"],
         "lbl": {
           "en": "Animal Breeding Facility",
           "fr": "Installation d'élevage d'animaux",
@@ -22238,7 +22143,6 @@
         "icon": "temaki-storage_tank",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -22323,7 +22227,7 @@
       {
         "icon": "fa-person-booth-solid",
         "markerColor": "#EF9228",
-        "presets": ["ref", "operator", "opening_hours", "building_area"],
+        "presets": ["ref", "opening_hours", "building_area"],
         "lbl": {
           "en": "Permanent Polling Place",
           "fr": "Bureau de vote permanent",
@@ -22443,13 +22347,7 @@
       {
         "icon": "mi-boating",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "operator/type",
-          "fee",
-          "payment_multi_fee",
-          "charge_fee"
-        ],
+        "presets": ["operator/type", "fee", "payment_multi_fee", "charge_fee"],
         "lbl": {
           "en": "Boat Rental",
           "fr": "Location de bateau",
@@ -22606,7 +22504,7 @@
       {
         "icon": "maki-waste-basket",
         "markerColor": "#EF9228",
-        "presets": ["operator", "waste", "collection_times", "access_simple"],
+        "presets": ["waste", "collection_times", "access_simple"],
         "lbl": {
           "en": "Garbage Dumpster",
           "fr": "Bac à déchets",
@@ -22723,7 +22621,7 @@
       {
         "icon": "maki-town-hall",
         "markerColor": "#EF9228",
-        "presets": ["building_area", "opening_hours", "operator"],
+        "presets": ["building_area", "opening_hours"],
         "lbl": {
           "en": "Register Office",
           "fr": "Bureau d'état-civil",
@@ -22780,7 +22678,7 @@
       {
         "icon": "maki-car",
         "markerColor": "#EF9228",
-        "presets": ["operator", "opening_hours"],
+        "presets": ["opening_hours"],
         "lbl": {
           "en": "Scrap Yard",
           "fr": "Casse automobile",
@@ -22828,7 +22726,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#animal_boarding#brand",
-          "operator",
           "building_area",
           "opening_hours",
           "animal_boarding"
@@ -22920,12 +22817,7 @@
       {
         "icon": "maki-veterinary",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "building_area",
-          "opening_hours",
-          "animal_shelter"
-        ],
+        "presets": ["building_area", "opening_hours", "animal_shelter"],
         "lbl": {
           "en": "Animal Shelter",
           "fr": "Refuge animalier",
@@ -23019,8 +22911,6 @@
         "icon": "maki-bicycle",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
-          "brand",
           "opening_hours",
           "fee",
           "payment_multi_fee",
@@ -23172,13 +23062,7 @@
       {
         "icon": "maki-car",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "operator/type",
-          "capacity",
-          "opening_hours",
-          "lit"
-        ],
+        "presets": ["operator/type", "capacity", "opening_hours", "lit"],
         "lbl": {
           "en": "Car Pooling",
           "fr": "Covoiturage",
@@ -23247,7 +23131,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#childcare#brand",
-          "operator",
           "operator/type",
           "building_area",
           "opening_hours"
@@ -23347,7 +23230,7 @@
       {
         "icon": "fa-user-tie",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "website", "internet_access"],
+        "presets": ["building_area", "website", "internet_access"],
         "lbl": {
           "en": "Convention Center",
           "fr": "Centre de congrés",
@@ -23410,12 +23293,7 @@
       {
         "icon": "temaki-scuba_diving",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "building_area",
-          "opening_hours",
-          "scuba_diving"
-        ],
+        "presets": ["building_area", "opening_hours", "scuba_diving"],
         "lbl": {
           "en": "Dive Center",
           "fr": "Centre de plongée",
@@ -23486,13 +23364,7 @@
       {
         "icon": "maki-clothing-store",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "access_simple",
-          "gender",
-          "wheelchair",
-          "building_area"
-        ],
+        "presets": ["access_simple", "gender", "wheelchair", "building_area"],
         "lbl": {
           "en": "Changing Room",
           "fr": "Vestiaire",
@@ -23543,7 +23415,6 @@
         "icon": "fa-users",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "building_area",
           "website",
           "internet_access",
@@ -23613,7 +23484,7 @@
       {
         "icon": "maki-restaurant",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "opening_hours"],
+        "presets": ["opening_hours"],
         "lbl": {
           "en": "Food Court",
           "fr": "Aire de restauration, food-court",
@@ -23711,12 +23582,7 @@
       {
         "icon": "fa-box",
         "markerColor": "#EF9228",
-        "presets": [
-          "operator",
-          "access_simple",
-          "material",
-          "collection_times"
-        ],
+        "presets": ["access_simple", "material", "collection_times"],
         "lbl": {
           "en": "Grit Bin",
           "fr": "Bac à sel",
@@ -23801,7 +23667,7 @@
       {
         "icon": "maki-karaoke",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "opening_hours", "website"],
+        "presets": ["building_area", "opening_hours", "website"],
         "lbl": {
           "en": "Karaoke Box",
           "fr": "Karaoke",
@@ -23919,14 +23785,7 @@
       {
         "icon": "fa-truck-loading",
         "markerColor": "#EF9228",
-        "presets": [
-          "ref",
-          "operator",
-          "access_simple",
-          "door",
-          "width",
-          "height"
-        ],
+        "presets": ["ref", "access_simple", "door", "width", "height"],
         "lbl": {
           "en": "Loading Dock",
           "de": "Laderampe",
@@ -23971,7 +23830,6 @@
         "icon": "maki-heart",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "building_area",
           "rooms",
           "internet_access",
@@ -24245,7 +24103,7 @@
       {
         "icon": "maki-globe",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "opening_hours"],
+        "presets": ["building_area", "opening_hours"],
         "lbl": {
           "en": "Planetarium",
           "fr": "Planétarium",
@@ -24343,7 +24201,7 @@
       {
         "icon": "fa-mail-bulk",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "phone"],
+        "presets": ["building_area", "phone"],
         "lbl": {
           "en": "Post Sorting Office",
           "fr": "Bureau de tri de courrier",
@@ -24395,7 +24253,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#prep_school#brand",
-          "operator",
           "building_area",
           "opening_hours"
         ],
@@ -24549,7 +24406,7 @@
       {
         "icon": "maki-ranger-station",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "opening_hours"],
+        "presets": ["building_area", "opening_hours"],
         "lbl": {
           "en": "Ranger Station",
           "fr": "Services publics des parcs nationaux",
@@ -24644,7 +24501,7 @@
       {
         "icon": "recycling",
         "markerColor": "#EF9228",
-        "presets": ["operator", "operator/type", "building", "opening_hours"],
+        "presets": ["operator/type", "building", "opening_hours"],
         "lbl": {
           "en": "Recycling Center",
           "fr": "Déchèterie / Parc à conteneurs / Écocentre",
@@ -24735,8 +24592,7 @@
         "presets": [
           "recycling:glass_bottles",
           "recycling:plastic",
-          "recycling:paper",
-          "operator"
+          "recycling:paper"
         ],
         "lbl": {
           "en": "Recycling Container",
@@ -24882,7 +24738,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "amenity#social_centre#brand",
-          "operator",
           "operator/type",
           "building_area"
         ],
@@ -24947,7 +24802,7 @@
       {
         "icon": "fa-chess-knight",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area", "opening_hours"],
+        "presets": ["building_area", "opening_hours"],
         "lbl": {
           "en": "Toy Library",
           "fr": "Ludothèque",
@@ -24992,7 +24847,6 @@
         "icon": "maki-waste-basket",
         "markerColor": "#EF9228",
         "presets": [
-          "operator",
           "operator/type",
           "waste",
           "opening_hours",
@@ -25073,7 +24927,7 @@
       {
         "icon": "fa-weight",
         "markerColor": "#EF9228",
-        "presets": ["ref", "operator", "access_simple", "maxweight"],
+        "presets": ["ref", "access_simple", "maxweight"],
         "lbl": {
           "en": "Truck Scale",
           "de": "Brückenwaage, LKW-Waage",
@@ -25543,7 +25397,21 @@
       {
         "icon": "fas-ice-cream",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Ice Cream Fast Food",
           "fr": "Fast food de glaces",
@@ -25574,7 +25442,21 @@
       {
         "icon": "maki-fast-food",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Burger Fast Food",
           "fr": "Fast food de burger",
@@ -25628,7 +25510,20 @@
       {
         "icon": "fas-drumstick-bite",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [       
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"],
         "lbl": {
           "en": "Chicken Fast Food",
           "fr": "Fast food de poulet",
@@ -25683,7 +25578,21 @@
       {
         "icon": "temaki-donut",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Donut Fast Food",
           "fr": "Fast food de donuts",
@@ -25730,7 +25639,21 @@
       {
         "icon": "fas-fish",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Fish & Chips Fast Food",
           "fr": "Fast food de fish & chips",
@@ -25780,7 +25703,21 @@
       {
         "icon": "fas-hotdog",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Hot Dog Fast Food",
           "de": "Hot Dog Stand",
@@ -25793,7 +25730,8 @@
           "pl": "Bar z hot dogami",
           "sv": "Snabbmat – Korv med bröd",
           "uk": "Хот-доги фаст-фуд",
-          "vi": "Tiệm Ăn nhanh Hot dog"
+          "vi": "Tiệm Ăn nhanh Hot dog",
+          "fr": "Fast food de hotdogs"
         },
         "terms": {
           "en": "ballpark,frankfurter,frank,hotdog stand,sandwich,sausage,wiener",
@@ -25817,7 +25755,21 @@
       {
         "icon": "maki-restaurant",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Kebab Fast Food",
           "fr": "Kebab",
@@ -25868,7 +25820,21 @@
       {
         "icon": "fas-pepper-hot",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Mexican Fast Food",
           "fr": "Fast food mexicain",
@@ -25920,10 +25886,24 @@
       {
         "icon": "maki-restaurant-pizza",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Pizza Fast Food",
-          "fr": "Pizzeria",
+          "fr": "Pizzeria (Fast Food)",
           "de": "Pizza Fast Food",
           "es": "Comida rápida de pizza",
           "pt": "Pizzaria ",
@@ -25974,7 +25954,21 @@
       {
         "icon": "temaki-sandwich",
         "markerColor": "#EF9228",
-        "presets": [],
+        "presets": [
+          "amenity#fast_food#brand",
+          "cuisine",
+          "wheelchair",
+          "phone",
+          "website",
+          "opening_hours",
+          "drive_through",
+          "takeaway",
+          "delivery",
+          "diet:vegetarian",
+          "air_conditioning",
+          "internet_access",
+          "outdoor_seating"
+        ],
         "lbl": {
           "en": "Sandwich Fast Food",
           "fr": "Sandwicherie",
@@ -28190,7 +28184,7 @@
       {
         "icon": "maki-shelter",
         "markerColor": "#EF9228",
-        "presets": ["operator", "building_area"],
+        "presets": ["building_area"],
         "lbl": {
           "en": "Lean-To",
           "fr": "Appentis",
@@ -28865,7 +28859,7 @@
       {
         "icon": "maki-theatre",
         "markerColor": "#EF9228",
-        "presets": ["operator", "lit"],
+        "presets": ["lit"],
         "lbl": {
           "en": "Amphitheatre",
           "fr": "Amphithéâtre",
@@ -29049,7 +29043,7 @@
       {
         "icon": "temaki-vending_machine",
         "markerColor": "#EF9228",
-        "presets": ["vending", "operator"],
+        "presets": ["vending"],
         "lbl": {
           "en": "Bottle Return Machine",
           "fr": "Machine de retour de bouteilles",
@@ -29888,7 +29882,6 @@
         "markerColor": "#EF9228",
         "presets": [
           "vending",
-          "operator",
           "fee",
           "payment_multi_fee",
           "charge_fee",
@@ -29967,7 +29960,7 @@
       {
         "icon": "temaki-vending_lockers",
         "markerColor": "#EF9228",
-        "presets": ["vending", "operator", "payment_multi", "currency_multi"],
+        "presets": ["vending", "payment_multi", "currency_multi"],
         "lbl": {
           "en": "Parcel Pickup/Dropoff Locker",
           "fr": "Consigne de dépôt ou retrait de colis",
@@ -30023,7 +30016,7 @@
       {
         "icon": "temaki-vending_lockers",
         "markerColor": "#EF9228",
-        "presets": ["vending", "operator"],
+        "presets": ["vending"],
         "lbl": {
           "en": "Parcel Pickup Locker",
           "fr": "Consigne pour récupérer des colis",
@@ -30442,7 +30435,7 @@
       {
         "icon": "mi-bus-station",
         "markerColor": "#C057A0",
-        "presets": ["wheelchair", "ref_stop_position", "network", "operator"],
+        "presets": ["wheelchair", "ref_stop_position", "network"],
         "lbl": {
           "en": "Transit Stopping Location",
           "fr": "Emplacement d'arrêt",
@@ -30519,7 +30512,7 @@
       {
         "icon": "maki-rail",
         "markerColor": "#C057A0",
-        "presets": ["network", "operator", "building_area", "internet_access"],
+        "presets": ["network", "building_area", "internet_access"],
         "lbl": {
           "en": "Transit Station",
           "fr": "Station",
@@ -30598,7 +30591,7 @@
       {
         "icon": "maki-rail",
         "markerColor": "#C057A0",
-        "presets": ["network", "operator", "departures_board", "shelter"],
+        "presets": ["network", "departures_board", "shelter"],
         "lbl": {
           "en": "Transit Stop / Platform",
           "fr": "Quai de transport en commun",
@@ -31315,7 +31308,7 @@
       {
         "icon": "maki-aerialway",
         "markerColor": "#C057A0",
-        "presets": ["ref", "network", "operator"],
+        "presets": ["ref", "network"],
         "lbl": {
           "en": "Transit Stop Area",
           "fr": "Zone d'arrêt",
@@ -32566,7 +32559,7 @@
       {
         "icon": "fa-heartbeat",
         "markerColor": "#75030B",
-        "presets": ["indoor", "ref", "operator"],
+        "presets": ["indoor", "ref"],
         "lbl": {
           "en": "Defibrillator",
           "fr": "Défibrillateur",
@@ -32647,7 +32640,7 @@
       {
         "icon": "maki-telephone",
         "markerColor": "#75030B",
-        "presets": ["ref", "operator", "covered", "indoor", "booth"],
+        "presets": ["ref", "covered", "indoor", "booth"],
         "lbl": {
           "en": "Emergency Phone",
           "fr": "Téléphone d'urgence",
@@ -32760,7 +32753,7 @@
       {
         "icon": "osm-musical_instrument",
         "markerColor": "#75030B",
-        "presets": ["siren/purpose", "siren/type", "ref", "operator"],
+        "presets": ["siren/purpose", "siren/type", "ref"],
         "lbl": {
           "en": "Siren",
           "fr": "Sirène",
@@ -32844,7 +32837,7 @@
       {
         "icon": "life-ring-solid",
         "markerColor": "#75030B",
-        "presets": ["ref", "operator"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Life Ring",
           "fr": "Bouée de Sauvetage",
@@ -32956,7 +32949,7 @@
       {
         "icon": "maki-fire-station",
         "markerColor": "#75030B",
-        "presets": ["ref", "operator"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Emergency Water Tank",
           "fr": "Réservoir d'eau de secours",
@@ -33022,7 +33015,7 @@
       {
         "icon": "fa-fire-extinguisher",
         "markerColor": "#75030B",
-        "presets": ["indoor", "ref", "operator"],
+        "presets": ["indoor", "ref"],
         "lbl": {
           "en": "Fire Extinguisher",
           "fr": "Extincteur d'incendie",
@@ -33331,7 +33324,7 @@
       {
         "icon": "fa-ambulance",
         "markerColor": "#75030B",
-        "presets": ["operator", "building_area"],
+        "presets": ["building_area"],
         "lbl": {
           "en": "Ambulance Station",
           "fr": "Station d'ambulance",
@@ -33430,7 +33423,7 @@
       {
         "icon": "fas-bell",
         "markerColor": "#75030B",
-        "presets": ["indoor", "ref", "operator"],
+        "presets": ["indoor", "ref"],
         "lbl": {
           "en": "Fire Alarm Call Box",
           "fr": "Boîte d'alarme incendie",
@@ -33485,7 +33478,7 @@
       {
         "icon": "fa-tape",
         "markerColor": "#75030B",
-        "presets": ["indoor", "ref", "operator"],
+        "presets": ["indoor", "ref"],
         "lbl": {
           "en": "Fire Hose",
           "fr": "Tuyau d'incendie",
@@ -33535,7 +33528,7 @@
       {
         "icon": "fa-medkit",
         "markerColor": "#75030B",
-        "presets": ["indoor", "ref", "operator"],
+        "presets": ["indoor", "ref"],
         "lbl": {
           "en": "First Aid Kit",
           "fr": "Kit de premiers secours",
@@ -33598,7 +33591,7 @@
       {
         "icon": "fa-life-ring",
         "markerColor": "#75030B",
-        "presets": ["ref", "operator", "building_area", "opening_hours"],
+        "presets": ["ref", "building_area", "opening_hours"],
         "lbl": {
           "en": "Lifeguard",
           "fr": "sauveteur",
@@ -33793,7 +33786,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -33871,7 +33863,7 @@
       {
         "icon": "maki-music",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "building_area", "operator"],
+        "presets": ["wheelchair", "building_area"],
         "lbl": {
           "en": "Bandstand",
           "fr": "Kiosque à musique",
@@ -34013,7 +34005,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area",
           "dance/style"
         ],
@@ -34387,7 +34378,6 @@
           "opening_hours",
           "seasonal",
           "sport_ice",
-          "operator",
           "building"
         ],
         "lbl": {
@@ -34485,7 +34475,6 @@
         "markerColor": "#5B396C",
         "presets": [
           "wheelchair",
-          "operator",
           "capacity",
           "fee",
           "payment_multi_fee",
@@ -34602,7 +34591,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "fee",
           "payment_multi_fee",
           "charge_fee"
@@ -34686,7 +34674,7 @@
       {
         "icon": "maki-park",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "operator", "opening_hours"],
+        "presets": ["wheelchair", "opening_hours"],
         "lbl": {
           "en": "Park",
           "fr": "Parc",
@@ -34893,7 +34881,6 @@
         "markerColor": "#5B396C",
         "presets": [
           "leisure#playground#brand",
-          "operator",
           "playground/theme",
           "surface",
           "access_simple",
@@ -35313,7 +35300,7 @@
       {
         "icon": "mi-diving",
         "markerColor": "#5B396C",
-        "presets": ["wheelchair", "operator"],
+        "presets": ["wheelchair"],
         "lbl": {
           "en": "Water Park",
           "fr": "Parc à thème aquatique",
@@ -35431,7 +35418,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -35515,13 +35501,7 @@
       {
         "icon": "mi-florist",
         "markerColor": "#5B396C",
-        "presets": [
-          "operator",
-          "access_simple",
-          "fee",
-          "payment_multi_fee",
-          "charge_fee"
-        ],
+        "presets": ["access_simple", "fee", "payment_multi_fee", "charge_fee"],
         "lbl": {
           "en": "Garden",
           "fr": "Jardin",
@@ -35898,7 +35878,7 @@
       {
         "icon": "maki-golf",
         "markerColor": "#5B396C",
-        "presets": ["operator", "opening_hours"],
+        "presets": ["opening_hours"],
         "lbl": {
           "en": "Golf Course",
           "fr": "Parcours de golf",
@@ -36079,7 +36059,6 @@
           "website",
           "opening_hours",
           "access_simple",
-          "operator",
           "building"
         ],
         "lbl": {
@@ -36267,7 +36246,7 @@
       {
         "icon": "fa-otter-solid",
         "markerColor": "#5B396C",
-        "presets": ["operator", "opening_hours"],
+        "presets": ["opening_hours"],
         "lbl": {
           "en": "Nature Reserve",
           "fr": "Réserve naturelle",
@@ -36419,7 +36398,7 @@
       {
         "icon": "mi-bowling-alley",
         "markerColor": "#5B396C",
-        "presets": ["leisure#bowling_alley#brand", "operator", "building_area"],
+        "presets": ["leisure#bowling_alley#brand", "building_area"],
         "lbl": {
           "en": "Bowling Alley",
           "fr": "Bowling",
@@ -36812,7 +36791,7 @@
       {
         "icon": "fa-music",
         "markerColor": "#5B396C",
-        "presets": ["operator", "building_area", "dance/style"],
+        "presets": ["building_area", "dance/style"],
         "lbl": {
           "en": "Dance School",
           "fr": "École de danse",
@@ -36884,7 +36863,6 @@
         "icon": "temaki-disc_golf_basket",
         "markerColor": "#5B396C",
         "presets": [
-          "operator",
           "access_simple",
           "fee",
           "payment_multi_fee",
@@ -36935,7 +36913,7 @@
       {
         "icon": "maki-picnic-site",
         "markerColor": "#5B396C",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Outdoor Seating Area",
           "fr": "Aire des places en terrasse",
@@ -36998,7 +36976,7 @@
       {
         "icon": "maki-lodging",
         "markerColor": "#5B396C",
-        "presets": ["operator", "resort", "opening_hours"],
+        "presets": ["resort", "opening_hours"],
         "lbl": {
           "en": "Resort",
           "fr": "Complexe touristique , Village de vacances",
@@ -44192,7 +44170,6 @@
         "icon": "mi-roofing-contractor",
         "markerColor": "#9D7178",
         "presets": [
-          "operator",
           "building_area",
           "internet_access",
           "internet_access/fee",
@@ -44297,7 +44274,7 @@
       {
         "icon": "maki-star",
         "markerColor": "#9D7178",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Tourist Attraction",
           "fr": "Attraction touristique",
@@ -44495,7 +44472,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "access_simple",
           "capacity",
           "fee",
@@ -44715,7 +44691,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -45016,7 +44991,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -45240,7 +45214,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "operator/type",
           "building_area"
         ],
@@ -45358,7 +45331,7 @@
       {
         "icon": "maki-picnic-site",
         "markerColor": "#9D7178",
-        "presets": ["operator", "access_simple", "capacity"],
+        "presets": ["access_simple", "capacity"],
         "lbl": {
           "en": "Picnic Site",
           "fr": "Aire de pique-nique",
@@ -45469,13 +45442,7 @@
       {
         "icon": "mi-amusement-park",
         "markerColor": "#9D7178",
-        "presets": [
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours",
-          "operator"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Theme Park",
           "fr": "Parc d'attraction",
@@ -45676,7 +45643,6 @@
         "icon": "mi-roofing-contractor",
         "markerColor": "#9D7178",
         "presets": [
-          "operator",
           "building_area",
           "fee",
           "payment_multi_fee",
@@ -45758,7 +45724,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "fee",
           "charge_fee"
         ],
@@ -45883,7 +45848,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "guest_house",
           "building_area",
           "rooms",
@@ -46005,7 +45969,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area",
           "internet_access",
           "internet_access/fee"
@@ -46100,7 +46063,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area",
           "rooms",
           "internet_access",
@@ -46204,7 +46166,6 @@
           "phone",
           "website",
           "opening_hours",
-          "operator",
           "building_area"
         ],
         "lbl": {
@@ -46731,7 +46692,7 @@
       {
         "icon": "maki-information",
         "markerColor": "#9D7178",
-        "presets": ["operator", "direction"],
+        "presets": ["direction"],
         "lbl": {
           "en": "Information Board",
           "fr": "Panneau d'information",
@@ -46808,7 +46769,7 @@
       {
         "icon": "fas-map-signs",
         "markerColor": "#9D7178",
-        "presets": ["elevation", "operator", "ref"],
+        "presets": ["elevation", "ref"],
         "lbl": {
           "en": "Guidepost",
           "fr": "Panneau d'indications",
@@ -46877,7 +46838,7 @@
       {
         "icon": "fas-map",
         "markerColor": "#9D7178",
-        "presets": ["operator", "direction"],
+        "presets": ["direction"],
         "lbl": {
           "en": "Map",
           "fr": "Carte",
@@ -46954,12 +46915,7 @@
       {
         "icon": "maki-information",
         "markerColor": "#9D7178",
-        "presets": [
-          "operator",
-          "building_area",
-          "internet_access",
-          "internet_access/fee"
-        ],
+        "presets": ["building_area", "internet_access", "internet_access/fee"],
         "lbl": {
           "en": "Tourist Information Office",
           "fr": "Office de tourisme",
@@ -47043,7 +46999,7 @@
       {
         "icon": "maki-information",
         "markerColor": "#9D7178",
-        "presets": ["ref", "operator", "colour", "material", "elevation"],
+        "presets": ["ref", "colour", "material", "elevation"],
         "lbl": {
           "en": "Trail Marker",
           "fr": "Repère",
@@ -47085,7 +47041,7 @@
       {
         "icon": "maki-information",
         "markerColor": "#9D7178",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Information Terminal",
           "fr": "Terminal d'information",
@@ -49263,13 +49219,7 @@
       {
         "icon": "maki-water",
         "markerColor": "#F5BB3A",
-        "presets": [
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours",
-          "operator"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Water Utility Office",
           "fr": "Agence de l'eau",
@@ -50322,7 +50272,7 @@
       {
         "icon": "maki-town-hall",
         "markerColor": "#F5BB3A",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Register Office",
           "fr": "Bureau d'état-civil",
@@ -50389,7 +50339,7 @@
       {
         "icon": "maki-town-hall",
         "markerColor": "#F5BB3A",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Tax and Revenue Office",
           "fr": "Bureau des impôts",
@@ -50548,7 +50498,7 @@
       {
         "icon": "maki-lighthouse",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "building_area", "height"],
+        "presets": ["building_area", "height"],
         "lbl": {
           "en": "Lighthouse",
           "fr": "Phare",
@@ -50727,7 +50677,7 @@
       {
         "icon": "fa-flag",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "flag/type", "country", "lit", "height"],
+        "presets": ["flag/type", "country", "lit", "height"],
         "lbl": {
           "en": "Flagpole",
           "fr": "Mât de drapeau",
@@ -50827,7 +50777,6 @@
           "surveillance/zone",
           "camera:type",
           "camera:mount",
-          "operator",
           "camera:direction",
           "direction"
         ],
@@ -50915,7 +50864,7 @@
       {
         "icon": "osm-water-tower",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "height"],
+        "presets": ["height"],
         "lbl": {
           "en": "Water Tower",
           "fr": "Château d'eau",
@@ -51011,7 +50960,7 @@
       {
         "icon": "maki-water",
         "markerColor": "#4A4A4A",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Water Well",
           "fr": "Puits",
@@ -51227,7 +51176,6 @@
         "markerColor": "#4A4A4A",
         "presets": [
           "content",
-          "operator",
           "material",
           "building_area",
           "height",
@@ -51424,7 +51372,7 @@
       {
         "icon": "temaki-waste",
         "markerColor": "#4A4A4A",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Wastewater Plant",
           "fr": "Station d'épuration",
@@ -51523,7 +51471,7 @@
       {
         "icon": "mi-plumber",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "location", "substance", "layer", "diameter"],
+        "presets": ["location", "substance", "layer", "diameter"],
         "deprecated": true,
         "lbl": {
           "en": "Pipeline",
@@ -51746,7 +51694,7 @@
       {
         "icon": "maki-industry",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "building_area", "product"],
+        "presets": ["building_area", "product"],
         "lbl": {
           "en": "Factory",
           "fr": "Usine",
@@ -51918,7 +51866,6 @@
         "markerColor": "#4A4A4A",
         "presets": [
           "ref",
-          "operator",
           "street_cabinet",
           "utility_semi",
           "height",
@@ -52060,7 +52007,7 @@
       {
         "icon": "thermometer-half-solid",
         "markerColor": "#4A4A4A",
-        "presets": ["monitoring_multi", "operator", "manufacturer"],
+        "presets": ["monitoring_multi", "manufacturer"],
         "lbl": {
           "en": "Monitoring Station",
           "fr": "Station de surveillance",
@@ -52286,7 +52233,7 @@
       {
         "icon": "maki-industry",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "material", "height"],
+        "presets": ["material", "height"],
         "lbl": {
           "en": "Chimney",
           "fr": "Cheminée",
@@ -52372,7 +52319,7 @@
       {
         "icon": "maki-triangle",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "resource", "direction"],
+        "presets": ["resource", "direction"],
         "lbl": {
           "en": "Adit",
           "fr": "Entrée de mine",
@@ -52574,7 +52521,7 @@
       {
         "icon": "temaki-crane",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "manufacturer", "height", "crane/type"],
+        "presets": ["manufacturer", "height", "crane/type"],
         "lbl": {
           "en": "Crane",
           "fr": "Grue",
@@ -52649,7 +52596,7 @@
       {
         "icon": "maki-triangle",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "resource"],
+        "presets": ["resource"],
         "lbl": {
           "en": "Mineshaft",
           "fr": "Puits de mine",
@@ -52703,12 +52650,7 @@
       {
         "icon": "temaki-antenna",
         "markerColor": "#4A4A4A",
-        "presets": [
-          "communication_multi",
-          "operator",
-          "manufacturer",
-          "height"
-        ],
+        "presets": ["communication_multi", "manufacturer", "height"],
         "lbl": {
           "en": "Antenna",
           "fr": "Antenne radioélectrique",
@@ -52826,7 +52768,7 @@
       {
         "icon": "fa-archive",
         "markerColor": "#4A4A4A",
-        "presets": ["ref", "operator", "seasonal", "height", "colour"],
+        "presets": ["ref", "seasonal", "height", "colour"],
         "lbl": {
           "en": "Beehive",
           "fr": "Ruche",
@@ -53423,7 +53365,7 @@
       {
         "icon": "temaki-manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "label", "ref"],
+        "presets": ["label", "ref"],
         "lbl": {
           "en": "Manhole",
           "de": "Kanaldeckel",
@@ -53496,7 +53438,7 @@
       },
       {
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "access_simple", "building_area"],
+        "presets": ["access_simple", "building_area"],
         "lbl": {
           "en": "Observatory",
           "fr": "Observatoire",
@@ -53745,7 +53687,7 @@
       {
         "icon": "temaki-utility_pole",
         "markerColor": "#4A4A4A",
-        "presets": ["ref", "operator", "utility_semi", "height", "material"],
+        "presets": ["ref", "utility_semi", "height", "material"],
         "lbl": {
           "en": "Utility Pole",
           "de": "Strommast",
@@ -53781,7 +53723,7 @@
       {
         "icon": "maki-water",
         "markerColor": "#4A4A4A",
-        "presets": ["operator"],
+        "presets": [],
         "lbl": {
           "en": "Water Works",
           "fr": "Usine d'eau potable",
@@ -53871,7 +53813,7 @@
       {
         "icon": "temaki-manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Storm Drain",
           "de": "Wasserablauf",
@@ -53898,7 +53840,7 @@
       {
         "icon": "temaki-gas_manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Gas Utility Manhole",
           "de": "Wartungszugang zu Gas-Leitungen",
@@ -53925,7 +53867,7 @@
       {
         "icon": "temaki-power_manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Power Utility Manhole",
           "de": "Zugang zu unterirdischen Stromleitungen",
@@ -53952,7 +53894,7 @@
       {
         "icon": "temaki-waste_manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Sewer Utility Manhole",
           "de": "Wartungszugang zu Abwasserleitungen",
@@ -53979,7 +53921,7 @@
       {
         "icon": "temaki-cable_manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Telecom Utility Manhole",
           "de": "Wartungszugang zu Telekomunikationskabeln",
@@ -54006,7 +53948,7 @@
       {
         "icon": "temaki-waste_manhole",
         "markerColor": "#4A4A4A",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Water Utility Manhole",
           "de": "Wartungszugang zu Wasserleitungen",
@@ -55451,14 +55393,7 @@
       {
         "icon": "microscope-solid",
         "markerColor": "#C9BCF0",
-        "presets": [
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours",
-          "operator",
-          "ref"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours", "ref"],
         "lbl": {
           "en": "Medical Laboratory",
           "fr": "Laboratoire d'analyses médicale",
@@ -60637,7 +60572,7 @@
       {
         "icon": "mi-bus-station",
         "markerColor": "#0E5F71",
-        "presets": ["network", "operator", "bench", "shelter"],
+        "presets": ["network", "bench", "shelter"],
         "lbl": {
           "en": "Bus Stop",
           "fr": "Arrêt de bus",
@@ -61263,7 +61198,7 @@
       {
         "icon": "maki-car",
         "markerColor": "#0E5F71",
-        "presets": ["operator", "opening_hours"],
+        "presets": ["opening_hours"],
         "lbl": {
           "en": "Rest Area",
           "fr": "Aire de repos",
@@ -61525,7 +61460,6 @@
         "icon": "fa-hiking",
         "markerColor": "#0E5F71",
         "presets": [
-          "operator",
           "elevation",
           "access_simple",
           "fee",
@@ -63778,7 +63712,7 @@
       {
         "icon": "maki-zoo",
         "markerColor": "#0065A9",
-        "presets": ["operator", "species/wikidata"],
+        "presets": ["species/wikidata"],
         "lbl": {
           "en": "Animal Enclosure",
           "fr": "Enclos",
@@ -65456,7 +65390,7 @@
       {
         "icon": "temaki-power",
         "markerColor": "#2f3242",
-        "presets": ["operator", "building", "ref"],
+        "presets": ["building", "ref"],
         "lbl": {
           "en": "Substation",
           "fr": "Poste de transformation",
@@ -65520,7 +65454,7 @@
       {
         "icon": "",
         "markerColor": "#2f3242",
-        "presets": ["operator", "voltage", "ref", "layer"],
+        "presets": ["voltage", "ref", "layer"],
         "lbl": {
           "en": "Underground Power Cable",
           "fr": "Câble électrique souterrain",
@@ -65574,7 +65508,6 @@
         "icon": "temaki-power",
         "markerColor": "#2f3242",
         "presets": [
-          "operator",
           "generator/source",
           "generator/method",
           "generator/type",
@@ -65678,7 +65611,7 @@
       {
         "icon": "fas-solar-panel",
         "markerColor": "#2f3242",
-        "presets": ["operator", "ref"],
+        "presets": ["ref"],
         "lbl": {
           "en": "Solar Panel",
           "fr": "Panneaux solaires",
@@ -65740,7 +65673,7 @@
       {
         "icon": "temaki-power",
         "markerColor": "#2f3242",
-        "presets": ["operator", "generator/method", "generator/type", "ref"],
+        "presets": ["generator/method", "generator/type", "ref"],
         "lbl": {
           "en": "Water Turbine",
           "fr": "Centrale hydroélectrique",
@@ -65793,7 +65726,6 @@
         "icon": "temaki-radiation",
         "markerColor": "#2f3242",
         "presets": [
-          "operator",
           "generator/source",
           "generator/method",
           "generator/type",
@@ -65854,7 +65786,7 @@
       {
         "icon": "temaki-wind_turbine",
         "markerColor": "#2f3242",
-        "presets": ["operator", "generator/type", "height", "ref"],
+        "presets": ["generator/type", "height", "ref"],
         "lbl": {
           "en": "Wind Turbine",
           "fr": "Centrale éolienne",
@@ -65910,7 +65842,7 @@
       {
         "icon": "temaki-power_tower",
         "markerColor": "#2f3242",
-        "presets": ["operator", "voltage", "ref", "layer"],
+        "presets": ["voltage", "ref", "layer"],
         "lbl": {
           "en": "Power Line",
           "fr": "Ligne électrique majeure",
@@ -66009,7 +65941,7 @@
       {
         "icon": "",
         "markerColor": "#2f3242",
-        "presets": ["operator", "voltage", "ref", "layer"],
+        "presets": ["voltage", "ref", "layer"],
         "lbl": {
           "en": "Minor Power Line",
           "fr": "Ligne électrique mineure",
@@ -66102,7 +66034,7 @@
       {
         "icon": "maki-industry",
         "markerColor": "#2f3242",
-        "presets": ["operator", "plant/output/electricity", "start_date"],
+        "presets": ["plant/output/electricity", "start_date"],
         "lbl": {
           "en": "Power Station Grounds",
           "fr": "Centrale électrique",
@@ -66168,7 +66100,7 @@
       {
         "icon": "temaki-utility_pole",
         "markerColor": "#2f3242",
-        "presets": ["ref", "operator", "height", "material", "line_attachment"],
+        "presets": ["ref", "height", "material", "line_attachment"],
         "lbl": {
           "en": "Power Pole",
           "fr": "Poteau électrique",
@@ -66265,7 +66197,7 @@
       {
         "icon": "temaki-power",
         "markerColor": "#2f3242",
-        "presets": ["operator", "building", "ref"],
+        "presets": ["building", "ref"],
         "lbl": {
           "en": "Substation",
           "fr": "Sous-station",
@@ -66352,14 +66284,7 @@
       {
         "icon": "temaki-power_switch",
         "markerColor": "#2f3242",
-        "presets": [
-          "switch",
-          "operator",
-          "location",
-          "cables",
-          "voltage",
-          "ref"
-        ],
+        "presets": ["switch", "location", "cables", "voltage", "ref"],
         "lbl": {
           "en": "Power Switch",
           "fr": "Appareil de connexion électrique",
@@ -66415,14 +66340,7 @@
       {
         "icon": "temaki-power_tower",
         "markerColor": "#2f3242",
-        "presets": [
-          "ref",
-          "operator",
-          "design",
-          "height",
-          "material",
-          "line_attachment"
-        ],
+        "presets": ["ref", "design", "height", "material", "line_attachment"],
         "lbl": {
           "en": "High-Voltage Tower",
           "fr": "Pylône électrique ",
@@ -66522,7 +66440,6 @@
         "markerColor": "#2f3242",
         "presets": [
           "ref",
-          "operator",
           "transformer",
           "location",
           "rating",
@@ -68591,7 +68508,7 @@
         "id": "barrier/stile",
         "description": {
           "en": "A structure which provides people a passage through or over a boundary via steps, ladders or narrow gaps.",
-          "fr": "Échalier.",
+          "fr": " Petite échelle ou passerelle permettant aux piétons de franchir une clôture protégeant du bétail.",
           "de": "Zauntritt",
           "it": "Scaletta - Una struttura che fornisce alle persone un passaggio attraverso o sopra un confine tramite gradini, scale o spazi stretti.",
           "cs": "Stavba, která umožňuje průchod překážkou pomocí schodů, žebříku nebo úzké mezery.",

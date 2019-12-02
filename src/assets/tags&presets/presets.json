@@ -56,7 +56,10 @@
       },
       {"v": "burger", "lbl": {"en": "burger", "fr": "Burger", "de": "Burger"}},
       {"v": "cake", "lbl": {"en": "cake", "fr": "Cake", "de": "Cake"}},
-      {"v": "coffee_shop", "lbl": {"en": "coffee shop", "de": "Coffee Shop"}},
+      {
+        "v": "coffee_shop",
+        "lbl": {"en": "coffee shop", "de": "Coffee Shop", "fr": "Café"}
+      },
       {
         "v": "couscous",
         "lbl": {"en": "couscous", "fr": "Couscous", "de": "Couscous"}
@@ -645,7 +648,7 @@
   "male": {
     "key": "male",
     "type": "select",
-    "lbl": {"en": "Homme"},
+    "lbl": {"en": "Male", "fr": "Homme"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -654,7 +657,7 @@
   "female": {
     "key": "female",
     "type": "select",
-    "lbl": {"en": "Femme"},
+    "lbl": {"en": "Female", "fr": "Femme"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -705,7 +708,7 @@
     "type": "select",
     "lbl": {
       "en": "Sells Used",
-      "fr": "Vente d'occasion",
+      "fr": "Vente d'articles d'occasion",
       "de": "Second Hand",
       "es": "Vende usados",
       "pt": "Vende usado",
@@ -975,7 +978,7 @@
   "recycling:paper": {
     "key": "recycling:paper",
     "type": "select",
-    "lbl": {"en": "Papier"},
+    "lbl": {"en": "Papier", "fr": "Papier"},
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
       {"v": "no", "lbl": {"en": "no", "fr": "Non", "de": "No"}}
@@ -995,7 +998,7 @@
     "type": "select",
     "lbl": {
       "en": "Backrest",
-      "fr": "Dossier de siège",
+      "fr": "Dossier",
       "de": "Rückenlehne",
       "es": "Respaldo",
       "pt": "Encosto",
@@ -1216,7 +1219,7 @@
     "type": "select",
     "lbl": {
       "en": "Fee",
-      "fr": "Prix",
+      "fr": "Payant",
       "de": "Gebühr",
       "es": "Tarifado",
       "pt": "Taxa",
@@ -1320,7 +1323,7 @@
     "type": "select",
     "lbl": {
       "en": "Dispenses Prescriptions",
-      "fr": "Peut délivrer des médicaments sous ordonnance",
+      "fr": "Médicaments sur ordonnance",
       "de": "Gibt rezeptpflichtige Medikamente aus",
       "es": "Prepara recetas",
       "pt": "Medicamentos sujeitos a receita médica",
@@ -1724,7 +1727,39 @@
   "social_facility:for": {
     "key": "social_facility:for",
     "type": "list",
-    "lbl": {"en": "social Facility for", "fr": "Destinataire des services"},
+    "lbl": {
+      "en": "People Served",
+      "fr": "Personnes aidées",
+      "de": "Unterstützter Personenkreis",
+      "es": "Personas atendidas",
+      "pt": "Público-alvo",
+      "it": "Tipo di utenza",
+      "ru": "Обслуживаемые лица",
+      "ast": "Persones atendíes",
+      "ca": "Persones ateses",
+      "cs": "Komu slouží",
+      "da": "Serviceret gruppe",
+      "el": "Εξυπηρετημένος Κόσμος",
+      "eo": "Alcela grupo",
+      "fa": "ظرفیت",
+      "fi": "Kohderyhmä",
+      "gl": "Persoas atendidas",
+      "he": "כמות אנשים שניתן לשרת",
+      "hu": "Célcsoport",
+      "is": "Þjónustað fólk",
+      "ja": "対象者",
+      "ko": "제공되는 사람들",
+      "mk": "Опслужувани лица",
+      "ms": "Orang Dilayan",
+      "nl": "Doelgroep",
+      "pl": "Grupa docelowa",
+      "sk": "Obsluhovaných ľudí",
+      "sv": "Människohjälp",
+      "tr": "Hedef Kitle",
+      "uk": "Обслуговуються",
+      "vi": "Dân được Phục vụ",
+      "zh": "服务对象"
+    },
     "options": [
       {"v": "abused", "lbl": {"en": "Abused", "fr": "Victimes d'abus sexuels"}},
       {"v": "child", "lbl": {"en": "child", "fr": "Enfants"}},
@@ -63443,76 +63478,6 @@
       "yue": "網絡",
       "zh": "网络"
     }
-  },
-  "social_facility_for": {
-    "key": "social_facility:for",
-    "type": "select",
-    "lbl": {
-      "en": "People Served",
-      "fr": "Personnes aidées",
-      "de": "Unterstützter Personenkreis",
-      "es": "Personas atendidas",
-      "pt": "Público-alvo",
-      "it": "Tipo di utenza",
-      "ru": "Обслуживаемые лица",
-      "ast": "Persones atendíes",
-      "ca": "Persones ateses",
-      "cs": "Komu slouží",
-      "da": "Serviceret gruppe",
-      "el": "Εξυπηρετημένος Κόσμος",
-      "eo": "Alcela grupo",
-      "fa": "ظرفیت",
-      "fi": "Kohderyhmä",
-      "gl": "Persoas atendidas",
-      "he": "כמות אנשים שניתן לשרת",
-      "hu": "Célcsoport",
-      "is": "Þjónustað fólk",
-      "ja": "対象者",
-      "ko": "제공되는 사람들",
-      "mk": "Опслужувани лица",
-      "ms": "Orang Dilayan",
-      "nl": "Doelgroep",
-      "pl": "Grupa docelowa",
-      "sk": "Obsluhovaných ľudí",
-      "sv": "Människohjälp",
-      "tr": "Hedef Kitle",
-      "uk": "Обслуговуються",
-      "vi": "Dân được Phục vụ",
-      "zh": "服务对象"
-    },
-    "iDtype": "combo",
-    "options": [
-      {"v": "senior", "lbl": {"en": "senior"}},
-      {"v": "disabled", "lbl": {"en": "disabled"}},
-      {"v": "child", "lbl": {"en": "child"}},
-      {"v": "homeless", "lbl": {"en": "homeless"}},
-      {"v": "mental_health", "lbl": {"en": "mental_health"}},
-      {"v": "juvenile", "lbl": {"en": "juvenile"}},
-      {"v": "orphan", "lbl": {"en": "orphan"}},
-      {"v": "migrant", "lbl": {"en": "migrant"}},
-      {"v": "underprivileged", "lbl": {"en": "underprivileged"}},
-      {"v": "community", "lbl": {"en": "community"}},
-      {"v": "drug_addicted", "lbl": {"en": "drug_addicted"}},
-      {"v": "refugees", "lbl": {"en": "refugees"}},
-      {"v": "refugee", "lbl": {"en": "refugee"}},
-      {"v": "displaced", "lbl": {"en": "displaced"}},
-      {"v": "unemployed", "lbl": {"en": "unemployed"}},
-      {"v": "diseased", "lbl": {"en": "diseased"}},
-      {"v": "woman", "lbl": {"en": "woman"}},
-      {"v": "children", "lbl": {"en": "children"}},
-      {"v": "elderly", "lbl": {"en": "elderly"}},
-      {"v": "youth", "lbl": {"en": "youth"}},
-      {"v": "Women", "lbl": {"en": "Women"}},
-      {"v": "women", "lbl": {"en": "women"}},
-      {"v": "family", "lbl": {"en": "family"}},
-      {"v": "abused", "lbl": {"en": "abused"}},
-      {"v": "migrants", "lbl": {"en": "migrants"}},
-      {"v": "LGBTI", "lbl": {"en": "LGBTI"}},
-      {"v": "terminal_ill", "lbl": {"en": "terminal_ill"}},
-      {"v": "dementia", "lbl": {"en": "dementia"}},
-      {"v": "victim", "lbl": {"en": "victim"}},
-      {"v": "mothers", "lbl": {"en": "mothers"}}
-    ]
   },
   "collection_times": {
     "key": "collection_times",
