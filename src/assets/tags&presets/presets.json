@@ -5373,24 +5373,6 @@
       }
     ]
   },
-  "shop#art#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "YellowKorner",
-        "lbl": {"en": "YellowKorner"},
-        "tags": {
-          "brand": "YellowKorner",
-          "brand:wikidata": "Q3572115",
-          "brand:wikipedia": "fr:YellowKorner",
-          "name": "YellowKorner",
-          "shop": "art"
-        }
-      }
-    ]
-  },
   "shop#gift#brand": {
     "key": "brand",
     "type": "list",
@@ -14279,25 +14261,6 @@
       }
     ]
   },
-  "shop#carpet#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Carpetright",
-        "lbl": {"en": "Carpetright"},
-        "countryCodes": ["be", "gb", "ie", "nl"],
-        "tags": {
-          "brand": "Carpetright",
-          "brand:wikidata": "Q5045782",
-          "brand:wikipedia": "en:Carpetright",
-          "name": "Carpetright",
-          "shop": "carpet"
-        }
-      }
-    ]
-  },
   "shop#mobile_phone#brand": {
     "key": "brand",
     "type": "list",
@@ -20294,24 +20257,6 @@
       }
     ]
   },
-  "shop#greengrocer#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Produce Junction",
-        "lbl": {"en": "Produce Junction"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "Produce Junction",
-          "brand:wikidata": "Q60583541",
-          "name": "Produce Junction",
-          "shop": "greengrocer"
-        }
-      }
-    ]
-  },
   "shop#newsagent#brand": {
     "key": "brand",
     "type": "list",
@@ -20616,24 +20561,6 @@
       }
     ]
   },
-  "shop#vacuum_cleaner#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Oreck",
-        "lbl": {"en": "Oreck"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "Oreck",
-          "brand:wikidata": "Q57273844",
-          "name": "Oreck",
-          "shop": "vacuum_cleaner"
-        }
-      }
-    ]
-  },
   "shop#tyres#brand": {
     "key": "brand",
     "type": "list",
@@ -20741,26 +20668,6 @@
           "brand:wikipedia": "sv:Vianor",
           "name": "Vianor",
           "shop": "tyres"
-        }
-      }
-    ]
-  },
-  "shop#swimming_pool#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Leslie's Pool Supplies",
-        "lbl": {"en": "Leslie's Pool Supplies"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "Leslie's Pool Supplies",
-          "brand:wikidata": "Q6530568",
-          "brand:wikipedia": "en:Leslie's Poolmart",
-          "name": "Leslie's Pool Supplies",
-          "official_name": "Leslie's Pool Supplies Service & Repair",
-          "shop": "swimming_pool"
         }
       }
     ]
@@ -30748,24 +30655,6 @@
       }
     ]
   },
-  "shop#frame#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Aaron Brothers",
-        "lbl": {"en": "Aaron Brothers"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "Aaron Brothers",
-          "brand:wikidata": "Q64979251",
-          "name": "Aaron Brothers",
-          "shop": "frame"
-        }
-      }
-    ]
-  },
   "shop#hearing_aids#brand": {
     "key": "brand",
     "type": "list",
@@ -30850,25 +30739,6 @@
           "brand:wikipedia": "de:Neuroth AG",
           "name": "Neuroth",
           "shop": "hearing_aids"
-        }
-      }
-    ]
-  },
-  "shop#fabric#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Mondial Tissus",
-        "lbl": {"en": "Mondial Tissus"},
-        "countryCodes": ["fr"],
-        "tags": {
-          "brand": "Mondial Tissus",
-          "brand:wikidata": "Q17635288",
-          "brand:wikipedia": "fr:Mondial Tissus",
-          "name": "Mondial Tissus",
-          "shop": "fabric"
         }
       }
     ]
@@ -31437,25 +31307,6 @@
       }
     ]
   },
-  "shop#second_hand#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Value Village",
-        "lbl": {"en": "Value Village"},
-        "countryCodes": ["ca", "us"],
-        "tags": {
-          "brand": "Value Village",
-          "brand:wikidata": "Q7428188",
-          "brand:wikipedia": "en:Savers",
-          "name": "Value Village",
-          "shop": "second_hand"
-        }
-      }
-    ]
-  },
   "shop#deli#brand": {
     "key": "brand",
     "type": "list",
@@ -31732,18 +31583,6 @@
           "name": "Zara Home",
           "shop": "interior_decoration"
         }
-      }
-    ]
-  },
-  "shop#e-cigarette#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Vardex",
-        "lbl": {"en": "Vardex"},
-        "tags": {"brand": "Vardex", "name": "Vardex", "shop": "e-cigarette"}
       }
     ]
   },
@@ -32233,25 +32072,6 @@
       }
     ]
   },
-  "shop#party#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Party City",
-        "lbl": {"en": "Party City"},
-        "countryCodes": ["ca", "us"],
-        "tags": {
-          "brand": "Party City",
-          "brand:wikidata": "Q7140896",
-          "brand:wikipedia": "en:Party City",
-          "name": "Party City",
-          "shop": "party"
-        }
-      }
-    ]
-  },
   "shop#coffee#brand": {
     "key": "brand",
     "type": "list",
@@ -32279,18 +32099,6 @@
           "name": "Tchibo",
           "shop": "coffee"
         }
-      }
-    ]
-  },
-  "shop#seafood#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Рыба",
-        "lbl": {"en": "Рыба"},
-        "tags": {"brand": "Рыба", "name": "Рыба", "shop": "seafood"}
       }
     ]
   },
@@ -32333,25 +32141,6 @@
           "brand:wikidata": "Q62384749",
           "name": "Smallcakes",
           "shop": "pastry"
-        }
-      }
-    ]
-  },
-  "shop#tobacco#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Nemzeti Dohánybolt",
-        "lbl": {"en": "Nemzeti Dohánybolt"},
-        "countryCodes": ["hu"],
-        "tags": {
-          "brand": "Nemzeti Dohánybolt",
-          "brand:wikidata": "Q20639040",
-          "brand:wikipedia": "en:Dohánybolt",
-          "name": "Nemzeti Dohánybolt",
-          "shop": "tobacco"
         }
       }
     ]
@@ -32772,43 +32561,6 @@
           "brand:wikipedia": "en:Vitamin World",
           "name": "Vitamin World",
           "shop": "nutrition_supplements"
-        }
-      }
-    ]
-  },
-  "shop#electrical#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Kafkas",
-        "lbl": {"en": "Kafkas"},
-        "countryCodes": ["gr"],
-        "tags": {
-          "brand": "Kafkas",
-          "brand:wikidata": "Q68201770",
-          "name": "Kafkas",
-          "shop": "electrical"
-        }
-      }
-    ]
-  },
-  "shop#games#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Games Workshop",
-        "lbl": {"en": "Games Workshop"},
-        "countryCodes": ["de", "fr", "gb", "nl", "us"],
-        "tags": {
-          "brand": "Games Workshop",
-          "brand:wikidata": "Q587270",
-          "brand:wikipedia": "en:Games Workshop",
-          "name": "Games Workshop",
-          "shop": "games"
         }
       }
     ]
@@ -33250,24 +33002,6 @@
           "name": "Southern States",
           "official_name": "Southern States Cooperative",
           "shop": "agrarian"
-        }
-      }
-    ]
-  },
-  "shop#printer_ink#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Cartridge World",
-        "lbl": {"en": "Cartridge World"},
-        "tags": {
-          "brand": "Cartridge World",
-          "brand:wikidata": "Q5047439",
-          "brand:wikipedia": "en:Cartridge World",
-          "name": "Cartridge World",
-          "shop": "printer_ink"
         }
       }
     ]
@@ -44880,23 +44614,6 @@
       }
     ]
   },
-  "amenity#casino#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Luckia",
-        "lbl": {"en": "Luckia"},
-        "tags": {
-          "amenity": "casino",
-          "brand": "Luckia",
-          "brand:wikidata": "Q42304308",
-          "name": "Luckia"
-        }
-      }
-    ]
-  },
   "amenity#cinema#brand": {
     "key": "brand",
     "type": "list",
@@ -45369,12 +45086,6 @@
         }
       }
     ]
-  },
-  "amenity#clinic#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "optionsFromJson": "brands/amenity/clinic.json"
   },
   "amenity#car_sharing#brand": {
     "key": "brand",
@@ -45867,18 +45578,6 @@
       }
     ]
   },
-  "amenity#dentist#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "optionsFromJson": "brands/amenity/dentist.json"
-  },
-  "amenity#hospital#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "optionsFromJson": "brands/amenity/hospital.json"
-  },
   "amenity#kindergarten#brand": {
     "key": "brand",
     "type": "list",
@@ -46308,12 +46007,6 @@
       }
     ]
   },
-  "amenity#doctors#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "optionsFromJson": "brands/amenity/doctors.json"
-  },
   "amenity#parking#brand": {
     "key": "brand",
     "type": "list",
@@ -46372,18 +46065,6 @@
         }
       }
     ]
-  },
-  "amenity#pharmacy#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "optionsFromJson": "brands/amenity/pharmacy.json"
-  },
-  "amenity#recycling#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "optionsFromJson": "brands/amenity/recycling.json"
   },
   "amenity#restaurant#brand": {
     "key": "brand",
@@ -59318,24 +58999,6 @@
       }
     ]
   },
-  "amenity#public_bookcase#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Little Free Library",
-        "lbl": {"en": "Little Free Library"},
-        "tags": {
-          "amenity": "public_bookcase",
-          "brand": "Little Free Library",
-          "brand:wikidata": "Q6650101",
-          "brand:wikipedia": "en:Little Free Library",
-          "name": "Little Free Library"
-        }
-      }
-    ]
-  },
   "amenity#vehicle_inspection#brand": {
     "key": "brand",
     "type": "list",
@@ -59476,44 +59139,6 @@
           "brand:wikipedia": "de:TÜV Thüringen",
           "name": "TÜV Thüringen",
           "short_name": "TÜV"
-        }
-      }
-    ]
-  },
-  "leisure#dog_park#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "KOA",
-        "lbl": {"en": "Kamp K9"},
-        "countryCodes": ["ca", "us"],
-        "tags": {
-          "brand": "KOA",
-          "brand:wikidata": "Q16988635",
-          "brand:wikipedia": "en:Kampgrounds of America",
-          "leisure": "dog_park",
-          "name": "Kamp K9"
-        }
-      }
-    ]
-  },
-  "leisure#playground#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "McDonald's",
-        "lbl": {"en": "McDonald's PlayPlace"},
-        "tags": {
-          "access": "customers",
-          "brand": "McDonald's",
-          "brand:wikidata": "Q38076",
-          "brand:wikipedia": "en:McDonald's",
-          "leisure": "playground",
-          "name": "McDonald's PlayPlace"
         }
       }
     ]
@@ -59912,62 +59537,6 @@
           "name": "カーブス",
           "name:en": "Curves",
           "name:ja": "カーブス"
-        }
-      }
-    ]
-  },
-  "leisure#bowling_alley#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Strike Bowling Bar",
-        "lbl": {"en": "Strike Bowling Bar"},
-        "countryCodes": ["au"],
-        "tags": {
-          "brand": "Strike Bowling Bar",
-          "brand:wikidata": "Q7623769",
-          "brand:wikipedia": "en:Strike Bowling Bar",
-          "leisure": "bowling_alley",
-          "name": "Strike Bowling Bar"
-        }
-      }
-    ]
-  },
-  "leisure#escape_game#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Escapology",
-        "lbl": {"en": "Escapology"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "Escapology",
-          "brand:wikidata": "Q64137163",
-          "leisure": "escape_game",
-          "name": "Escapology"
-        }
-      }
-    ]
-  },
-  "craft#window_construction#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "K par K",
-        "lbl": {"en": "K par K"},
-        "countryCodes": ["fr"],
-        "tags": {
-          "brand": "K par K",
-          "brand:wikidata": "Q3191596",
-          "brand:wikipedia": "fr:K par K",
-          "craft": "window_construction",
-          "name": "K par K"
         }
       }
     ]
@@ -75486,25 +75055,6 @@
     ],
     "iDtype": "combo"
   },
-  "shop#boat#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "West Marine",
-        "lbl": {"en": "West Marine"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "West Marine",
-          "brand:wikidata": "Q7985852",
-          "brand:wikipedia": "en:West Marine",
-          "name": "West Marine",
-          "shop": "boat"
-        }
-      }
-    ]
-  },
   "shop#bookmaker#brand": {
     "key": "brand",
     "type": "list",
@@ -75636,44 +75186,6 @@
           "name:en": "Fonbet",
           "name:ru": "Фонбет",
           "shop": "bookmaker"
-        }
-      }
-    ]
-  },
-  "shop#candles#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Yankee Candle",
-        "lbl": {"en": "Yankee Candle"},
-        "countryCodes": ["ca", "gb", "us"],
-        "tags": {
-          "brand": "Yankee Candle",
-          "brand:wikidata": "Q8048733",
-          "brand:wikipedia": "en:Yankee Candle",
-          "name": "Yankee Candle",
-          "shop": "candles"
-        }
-      }
-    ]
-  },
-  "shop#catalogue#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Argos",
-        "lbl": {"en": "Argos"},
-        "countryCodes": ["gb", "ie"],
-        "tags": {
-          "brand": "Argos",
-          "brand:wikidata": "Q4789707",
-          "brand:wikipedia": "en:Argos (retailer)",
-          "name": "Argos",
-          "shop": "catalogue"
         }
       }
     ]
@@ -75994,81 +75506,6 @@
       }
     ]
   },
-  "shop#hairdresser_supply#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Sally Beauty Supply",
-        "lbl": {"en": "Sally Beauty Supply"},
-        "countryCodes": [
-          "be",
-          "ca",
-          "cl",
-          "de",
-          "es",
-          "fr",
-          "gb",
-          "ie",
-          "mx",
-          "nl",
-          "pe",
-          "pr",
-          "us"
-        ],
-        "tags": {
-          "brand": "Sally Beauty Supply",
-          "brand:wikidata": "Q7405065",
-          "brand:wikipedia": "en:Sally Beauty Holdings",
-          "name": "Sally Beauty Supply",
-          "shop": "hairdresser_supply"
-        }
-      }
-    ]
-  },
-  "shop#health_food#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Holland & Barrett",
-        "lbl": {"en": "Holland & Barrett"},
-        "countryCodes": ["gb", "ie", "nl"],
-        "tags": {
-          "brand": "Holland & Barrett",
-          "brand:wikidata": "Q5880870",
-          "brand:wikipedia": "en:Holland & Barrett",
-          "name": "Holland & Barrett",
-          "shop": "health_food"
-        }
-      }
-    ]
-  },
-  "shop#hobby#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "アニメイト",
-        "lbl": {"en": "アニメイト"},
-        "countryCodes": ["jp"],
-        "tags": {
-          "brand": "アニメイト",
-          "brand:en": "Animate",
-          "brand:ja": "アニメイト",
-          "brand:wikidata": "Q1041890",
-          "brand:wikipedia": "ja:アニメイト",
-          "name": "アニメイト",
-          "name:en": "Animate",
-          "name:ja": "アニメイト",
-          "shop": "hobby"
-        }
-      }
-    ]
-  },
   "shop#lottery#brand": {
     "key": "brand",
     "type": "list",
@@ -76232,25 +75669,6 @@
       }
     ]
   },
-  "shop#outpost#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Wildberries",
-        "lbl": {"en": "Wildberries"},
-        "countryCodes": ["by", "ru"],
-        "tags": {
-          "brand": "Wildberries",
-          "brand:wikidata": "Q24933714",
-          "brand:wikipedia": "ru:Wildberries",
-          "name": "Wildberries",
-          "shop": "outpost"
-        }
-      }
-    ]
-  },
   "shop#pawnbroker#brand": {
     "key": "brand",
     "type": "list",
@@ -76326,25 +75744,6 @@
           "brand": "Скарбниця",
           "name": "Скарбниця",
           "shop": "pawnbroker"
-        }
-      }
-    ]
-  },
-  "shop#rental#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "U-Haul",
-        "lbl": {"en": "U-Haul"},
-        "countryCodes": ["ca", "us"],
-        "tags": {
-          "brand": "U-Haul",
-          "brand:wikidata": "Q7862902",
-          "brand:wikipedia": "en:U-Haul",
-          "name": "U-Haul",
-          "shop": "rental"
         }
       }
     ]
@@ -76555,25 +75954,6 @@
       }
     ]
   },
-  "shop#tiles#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Topps Tiles",
-        "lbl": {"en": "Topps Tiles"},
-        "countryCodes": ["gb"],
-        "tags": {
-          "brand": "Topps Tiles",
-          "brand:wikidata": "Q17026595",
-          "brand:wikipedia": "en:Topps Tiles",
-          "name": "Topps Tiles",
-          "shop": "tiles"
-        }
-      }
-    ]
-  },
   "shop#wholesale#brand": {
     "key": "brand",
     "type": "list",
@@ -76661,25 +76041,6 @@
           "name:en": "Costco",
           "name:ja": "コストコ",
           "shop": "wholesale"
-        }
-      }
-    ]
-  },
-  "amenity#animal_boarding#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "PetsHotel",
-        "lbl": {"en": "PetsHotel"},
-        "countryCodes": ["ca", "us"],
-        "tags": {
-          "amenity": "animal_boarding",
-          "animal_boarding": "dog;cat",
-          "brand": "PetsHotel",
-          "brand:wikidata": "Q67141961",
-          "name": "PetsHotel"
         }
       }
     ]
@@ -77094,45 +76455,6 @@
           "official_name": "Veterans of Foreign Wars of the United States",
           "short_name": "VFW",
           "social_centre:for": "veterans"
-        }
-      }
-    ]
-  },
-  "craft#signmaker#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Fastsigns",
-        "lbl": {"en": "Fastsigns"},
-        "countryCodes": ["ae", "ca", "cl", "gb", "ky", "mx", "sa", "us"],
-        "tags": {
-          "brand": "Fastsigns",
-          "brand:wikidata": "Q5437127",
-          "brand:wikipedia": "en:Fastsigns",
-          "craft": "signmaker",
-          "name": "Fastsigns"
-        }
-      }
-    ]
-  },
-  "office#bail_bond_agent#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Aladdin Bail Bonds",
-        "lbl": {"en": "Aladdin Bail Bonds"},
-        "countryCodes": ["us"],
-        "tags": {
-          "brand": "Aladdin Bail Bonds",
-          "brand:wikidata": "Q64166257",
-          "brand:wikipedia": "en:Aladdin Bail Bonds",
-          "name": "Aladdin Bail Bonds",
-          "office": "bail_bond_agent",
-          "opening_hours": "24/7"
         }
       }
     ]
@@ -80061,26 +79383,5 @@
       "zh": "类型"
     },
     "iDtype": "combo"
-  },
-  "craft#plumber#brand": {
-    "key": "brand",
-    "type": "list",
-    "lbl": {"en": "Brand", "fr": "Enseigne"},
-    "options": [
-      {
-        "v": "Mr. Rooter",
-        "lbl": {"en": "Mr. Rooter"},
-        "countryCodes": ["us"],
-        "tags": {
-          "alt_name": "Mister Rooter",
-          "brand": "Mr. Rooter",
-          "brand:wikidata": "Q6929145",
-          "brand:wikipedia": "en:Mr. Rooter",
-          "craft": "plumber",
-          "name": "Mr. Rooter",
-          "official_name": "Mr. Rooter Plumbing"
-        }
-      }
-    ]
   }
 }

@@ -129,7 +129,7 @@
         "icon": "maki-art-gallery",
         "markerColor": "#D73F29",
         "presets": ["lit", "visibility", "direction", "height"],
-        "lbl": {"en": "Advertising Totem"},
+        "lbl": {"en": "Advertising Totem", "fr": "Totems publicitaires "},
         "description": {
           "en": "A rectangular advertising totem.",
           "fr": "Dispositif publicitaire rectangulaire permanent, emblématique de l'activité d'un établissement commercial, artisanal ou industriel. Un totem ne peut dépasser en France 6,50 m de haut pour 1 m ou plus de large, et 8 m pour moins d'1 m de large.",
@@ -216,7 +216,7 @@
         "icon": "maki-embassy",
         "markerColor": "#D73F29",
         "presets": [],
-        "lbl": {"en": "Flag", "fr": "Drapeau"},
+        "lbl": {"en": "Flag", "fr": "Drapeau publicitaire"},
         "description": {
           "en": "Flagpole for advertising",
           "fr": "Drapeau publicitaire, oriflamme, fanion",
@@ -233,10 +233,10 @@
         "icon": "maki-art-gallery",
         "markerColor": "#D73F29",
         "presets": [],
-        "lbl": {"en": "Sign", "fr": "sign"},
+        "lbl": {"en": "Sign", "fr": "Enseigne publicitaire"},
         "description": {
           "en": "Advertising sign, also used for neon signs and logos",
-          "fr": "Enseigne publicitaire",
+          "fr": "Situé sur le bâtiment où a lieu l'activité annoncée",
           "cs": "Reklamní tabule a loga umístěné na střeše či fasádě",
           "ja": "看板",
           "pl": "Miejsce z reklamowym znakiem."
@@ -249,7 +249,7 @@
         "icon": "maki-art-gallery",
         "markerColor": "#D73F29",
         "presets": [],
-        "lbl": {"en": "Screen", "fr": "Ecran"},
+        "lbl": {"en": "Screen", "fr": "Ecran publicitaire"},
         "terms": {"en": "", "fr": "publicité"},
         "geometry": ["point", "vertex"],
         "description": {
@@ -268,7 +268,7 @@
         "markerColor": "#D73F29",
         "presets": [],
         "geometry": ["point", "vertex"],
-        "lbl": {"en": "Sculpture ", "fr": "sculpture / objet 3D"},
+        "lbl": {"en": "Sculpture ", "fr": "Sculpture / objet 3D publicitaire"},
         "description": {
           "en": "Advertising sculpture, or any advertising object in 3D.",
           "fr": "Dispositif publicitaire en 3D, une sculpture, un objet, une forme.",
@@ -284,24 +284,25 @@
         "icon": "maki-art-gallery",
         "markerColor": "#D73F29",
         "presets": [],
-        "lbl": {"en": "Tarp"},
+        "lbl": {"en": "Tarp", "fr": "Bâche publicitaire"},
         "geometry": ["point", "vertex"],
         "description": {
           "en": "Advertising on tarp, either on scaffolding, or wall tarp. They are exceptional size advertising devices.",
-          "fr": "Bâche publicitaire, la bâche peut se trouver sur un échafaudage, ou sur un mur. Souvent de taille énorme, voire exceptionnelle.",
+          "fr": "La bâche peut se trouver sur un échafaudage, ou sur un mur. Souvent de taille énorme, voire exceptionnelle.",
           "cs": "Reklamní plachta na lešení, nebo na zdi. Reklamní plocha značné velikosti.",
           "ja": "広告用垂れ幕",
           "pl": "Wisząca tkanina z reklamą."
         },
         "tags": {"advertising": "tarp"},
-        "id": "advertising/tarp"
+        "id": "advertising/tarp",
+        "terms": {"en": "", "fr": "bache, echafaudage, échafaudage, publicité"}
       },
       {
         "icon": "mi-painter",
         "markerColor": "#D73F29",
         "geometry": ["point", "vertex"],
         "presets": [],
-        "lbl": {"en": "Wall Painting", "fr": "Peinture sur mur"},
+        "lbl": {"en": "Wall Painting", "fr": "Peinture sur mur publicitaire"},
         "description": {
           "en": "Advertisement painted on a wall",
           "fr": "Publicité directement peinte sur un mur",
@@ -317,10 +318,11 @@
         "icon": "",
         "markerColor": "#D73F29",
         "presets": [],
-        "lbl": {"en": "_NC"},
+        "lbl": {"en": "_NC", "fr": "Publicité indéterminé"},
         "tags": {"advertising": "yes"},
         "geometry": ["point", "area", "vertex", "line"],
-        "id": "advertising/yes"
+        "id": "advertising/yes",
+        "terms": {"en": "", "fr": "nc"}
       }
     ]
   },
@@ -727,13 +729,7 @@
       {
         "icon": "mi-art-gallery",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#art#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Art Store",
           "fr": "Marchand d'art",
@@ -1939,7 +1935,7 @@
         "icon": "mi-florist",
         "markerColor": "#A23337",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "deprecated": true,
+        "deprecated": false,
         "lbl": {
           "en": "Organic Goods Store",
           "de": "Bioladen",
@@ -3835,13 +3831,7 @@
       {
         "icon": "fa-scroll-solid",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#carpet#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Carpet Store",
           "fr": "Magasin de tapis",
@@ -4666,13 +4656,7 @@
       {
         "icon": "osm-greengrocer",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#greengrocer#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Greengrocer",
           "fr": "Marchand de fruits et légumes",
@@ -5112,16 +5096,10 @@
       {
         "icon": "temaki-vacuum",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#vacuum_cleaner#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Vacuum Cleaner Store",
-          "fr": "Magasin d'électroménager de nettoyage",
+          "fr": "Magasin d'aspirateurs",
           "de": "Staubsaugergeschäft",
           "es": "Tienda de aspiradoras",
           "pt": "Loja de aspiradores",
@@ -5157,7 +5135,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Vente de produits de nettoyage",
+          "fr": "électroménager de nettoyage",
           "de": "Staubsaugergeschäft,Staubsaugerladen",
           "es": "aspiradora, limpiadora, limpieza, aspirador",
           "pt": "Vacuum Cleaner Store, Aspirador, Aspiradores, Aspirar",
@@ -5292,13 +5270,7 @@
       {
         "icon": "maki-swimming",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#swimming_pool#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Pool Supply Store",
           "fr": "Magasin de matériel de piscine",
@@ -5447,7 +5419,7 @@
         },
         "terms": {
           "en": "ammo,gun,knife,knives",
-          "fr": "Armurerie",
+          "fr": "armes, couteaux ",
           "de": "Waffengeschäft,Waffenhändler",
           "es": "armería, munición, tienda de armas, caza, pesca, cuchillos, navajas",
           "pt": "espingardaria, Loja de Armas, Caça",
@@ -5473,7 +5445,7 @@
         },
         "description": {
           "en": "Shop focused on selling weapons like knifes, guns etc.",
-          "fr": "Armurerie",
+          "fr": "Magasin vendant des armes à feu, couteaux, etc",
           "de": "Waffenladen",
           "cs": "Obchod zaměřený na zbraně jako jsou nože, pistole, pušky, atd.",
           "ja": "主にナイフや銃などの武器を販売する店。"
@@ -5489,10 +5461,10 @@
         "markerColor": "#A23337",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Model Shop", "fr": "Magasin de modélisme"},
-        "terms": {"en": "", "fr": "model réduit"},
+        "terms": {"en": "", "fr": "model réduit, maquette, drone"},
         "description": {
           "en": "A shop selling scale models.",
-          "fr": "model réduit",
+          "fr": "Vente de model réduit",
           "de": "Modellbaugeschäft",
           "es": "Una tienda que vende modelos a escala.",
           "cs": "Obchod prodávající miniaturní modely aut, lodí, letadel, ...",
@@ -5507,7 +5479,10 @@
         "markerColor": "#A23337",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {"en": "Lamps Store", "fr": "Vente de luminaires"},
-        "terms": {"en": "selling lighting fixtures ", "fr": "lampes"},
+        "terms": {
+          "en": "selling lighting fixtures ",
+          "fr": "lampes, éclairage, eclairage"
+        },
         "description": {
           "en": "selling lighting fixtures ",
           "fr": "lampes",
@@ -5946,7 +5921,7 @@
         },
         "terms": {
           "en": "undertaker,memorial home",
-          "fr": "Funérarium, Maison funéraire",
+          "fr": "Funérarium, Maison funéraire, pompes funèbres",
           "de": "Beerdigungsinstitut, Bestattungsinstitut, Bestattungsunternehmen, Bestatter, Pompfüneberer",
           "es": "Funeraria, funeral, entierro, sepelio, funerario, fúnebre",
           "pt": "Funeral Home, Casa Funerária, Agência Mortuária, Casa Mortuária",
@@ -5975,7 +5950,7 @@
         },
         "description": {
           "en": "Providing services related to funeral arrangements, may also be known as a \"funeral parlour\" or \"undertakers\".",
-          "fr": "Offrir des services liés aux arrangements funéraires, appelé \"centre funéraire\", \"espace funéraire, \"maison funéraire\" ou \"pompes funèbres\".",
+          "fr": "Offre des services liés aux arrangements funéraires",
           "de": "Dienstleistungen rund um Bestattungen",
           "es": "Proporciona servicios relacionados con arreglos funerarios, pueden ser conocidos como \"funerarias\", \"casas funerarias\", \"velatorios\", \"tanatorios\" o \"centros conmemorativos\".",
           "pt": "Prestação de serviços relacionados com o funeral, também pode ser conhecido como uma \"funerária\" ou \"coveiros\".",
@@ -6132,7 +6107,7 @@
         "terms": {
           "en": "",
           "de": "Eisenwarenhandlung, Eisenwarengeschäft",
-          "fr": "Quincaillerie",
+          "fr": "Outils, clou, bricolage ",
           "es": "ferretería,  herramientas",
           "pt": "Hardware Store",
           "it": "Negozio di ferramenta",
@@ -6355,7 +6330,7 @@
         },
         "description": {
           "en": "A convenience shop: a small local shop carrying a variety of everyday products",
-          "fr": "Épicerie ou supérette: petit commerce de proximité qui vend quelques produits que l'on trouve dans les supermarchés.",
+          "fr": "Petit commerce de proximité qui vend quelques produits que l'on trouve dans les supermarchés.",
           "de": "Tante-Emma-Laden, Nachbarschaftsladen, kleines Lebensmittelgeschäft, Spätverkauf, Tankstellenverkauf",
           "es": "Una tienda de conveniencia o colmado.",
           "pt": "A loja de conveniência. A pequena loja locais carregando um pequeno subconjunto de itens que você encontraria em um supermercado",
@@ -6432,7 +6407,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Salon de massage",
+          "fr": "",
           "de": "Massagesalon,Masseur,Massagepraxis,Massagestudio",
           "es": "masaje, salón de masaje, salón de masajes",
           "pt": "Massage Shop, Massagista, Massagens, Massagem, SPA",
@@ -6456,7 +6431,7 @@
         },
         "description": {
           "en": "Massage shop",
-          "fr": "Salon de massage",
+          "fr": "",
           "de": "Massagesalon",
           "pt": "Empresa que presta serviços de massagens.",
           "ru": "Массажный кабинет, салон.",
@@ -6472,13 +6447,7 @@
       {
         "icon": "fa-file-picture-o",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#frame#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Framing Shop",
           "fr": "Magasin d'encadrements",
@@ -6643,7 +6612,7 @@
       {
         "icon": "mi-storage",
         "markerColor": "#A23337",
-        "presets": ["wheelchair", "building_area"],
+        "presets": ["wheelchair"],
         "lbl": {
           "en": "Vacant Shop",
           "fr": "Commerce désaffecté",
@@ -6700,13 +6669,7 @@
       {
         "icon": "fa-tape",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#fabric#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Fabric Store",
           "fr": "Magasin de tissus",
@@ -6972,7 +6935,7 @@
       {
         "icon": "fa-krw",
         "markerColor": "#A23337",
-        "presets": ["shop#second_hand#brand", "wheelchair", "second_hand"],
+        "presets": ["wheelchair", "second_hand"],
         "lbl": {
           "en": "Consignment/Thrift Store",
           "fr": "Dépôt-vente/produits d'occasion",
@@ -7192,7 +7155,7 @@
         },
         "terms": {
           "en": "cabinets,countertops,sinks",
-          "fr": "Vente de mobilier et accessoires de cuisine",
+          "fr": "cuisine",
           "de": "Kücheneinrichter,Kücheneinrichtungsgeschäft,Küchenhaus",
           "es": "cocina, cocinas, diseño de cocinas",
           "pt": "Kitchen Design Store, Cozinhas, Cozinha, à medida",
@@ -7361,7 +7324,7 @@
         },
         "terms": {
           "en": "ink",
-          "fr": "Salon de tatouage",
+          "fr": "",
           "de": "Tätowierungsladen, Peckerlstube, Tattoostudio, Tätowierer",
           "es": "tatuaje, tatuar, tattoo",
           "pt": "Tattoo Parlor, Tatuagens, Tatuagem, Tatuador, Tatuar",
@@ -7385,7 +7348,7 @@
         },
         "description": {
           "en": "A place where people can get permanent tattoos",
-          "fr": "Salon de tatouage",
+          "fr": "On peut se faire tatouer ici",
           "de": "Tattoo-Studio",
           "es": "Un lugar donde las personas pueden hacerse tatuajes permanentes.",
           "pt": "Local onde se aplicam tatuagens permanentes.",
@@ -7403,13 +7366,7 @@
       {
         "icon": "fa-magic",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#e-cigarette#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "E-Cigarette Shop",
           "fr": "Magasin de cigarettes électroniques",
@@ -7446,7 +7403,7 @@
         },
         "terms": {
           "en": "electronic,vape,vaping,vapor",
-          "fr": "Boutique de cigarettes électroniques",
+          "fr": "vape, vapoteuse, e-cigarette, ecigarette, eliquide",
           "de": "E-Zigarettenhändler",
           "es": "tabaco, cigarrillo, electrónico",
           "pt": "E-Cigarette, E-Cigarro, E-Cig, Cigarro Eletrónico, Cigarro Eletrônico",
@@ -7526,7 +7483,7 @@
         },
         "terms": {
           "en": "key,lockpick",
-          "fr": "Serrurier",
+          "fr": "clé, serrurerie",
           "de": "Schlosser, Schlüsseldienst",
           "es": "cerrajero, cerradura, cerrajería",
           "pt": "Locksmith, Fechaduras, Fechadura, Chaves, Chave",
@@ -7553,7 +7510,7 @@
         },
         "description": {
           "en": "A shop where you can get keys cut",
-          "fr": "Serrurier",
+          "fr": "",
           "de": "Schlüsseldienst",
           "es": "Cerrajería",
           "pt": "Local onde se consegue fazer cópias de chaves",
@@ -7692,7 +7649,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Vente de fromages",
+          "fr": "fromage",
           "de": "Käseladen",
           "es": "quesería, quesos, lácteos",
           "pt": "Cheese Store, Queijo, Queijos, loja de queijos",
@@ -7773,7 +7730,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Boutique de vêtements en cuir",
+          "fr": "magasin, vetement, vêtements en cuir, sac",
           "de": "Lederwarengeschäft,Lederbekleidungsgeschäft,Lederwarenhändler",
           "es": "cuero, piel, gamuza, tienda de cuero, talabartería",
           "pt": "Leather Store, Loja de Cabedais, Peles, Pele, Cabedais, Cabedal",
@@ -7860,7 +7817,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Magasin de location et vente de jeux vidéo",
+          "fr": "jeu, video, console ",
           "de": "Videospielladen,Videospielgeschäft,Computerspieleladen",
           "es": "video juego, juegos electrónicos, videojuegos",
           "pt": "Jogos de Computador, Consola",
@@ -7941,7 +7898,7 @@
         "terms": {
           "en": "drape*,window",
           "de": "Gardinenladen,Vorhanggeschäft",
-          "fr": "Magasin de rideaux",
+          "fr": "",
           "es": "cortina, cortinajes",
           "pt": "Curtain Store, Cortina, Cortinas, Cortinado, Cortinados",
           "it": "tende,tendaggi,finestre",
@@ -7971,7 +7928,8 @@
           "ru": "Магазин штор",
           "cs": "Obchod specializovaný na záclony a závěsy",
           "ja": "カーテンやドレイプの販売に特化した店舗。",
-          "pl": "Sklep specjalizujący się w sprzedaży firan oraz zasłon."
+          "pl": "Sklep specjalizujący się w sprzedaży firan oraz zasłon.",
+          "fr": "Magasin spatialisé dans la vente de rideaux"
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/curtain",
@@ -8052,7 +8010,7 @@
         },
         "description": {
           "en": "A shop where you can buy antiques",
-          "fr": "Brocante",
+          "fr": "",
           "de": "Antiquitätengeschäft",
           "ru": "Магазин по продаже старинных вещей (антиквариата)",
           "cs": "Obchod se starožitnostmi",
@@ -8166,16 +8124,10 @@
       {
         "icon": "dance-instructor",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#party#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Party Supply Store",
-          "fr": "Magasin de matériel de fête",
+          "fr": "Magasin de fournitures de fête",
           "de": "Partyzubehör",
           "es": "Tienda de artículos para fiestas",
           "pt": "Loja de materiais para festas",
@@ -8210,7 +8162,7 @@
         },
         "description": {
           "en": "Shop selling party supplies like decorations, invitations and costumes.",
-          "fr": "ballons,costumes,décorations,invitations,fête",
+          "fr": "Un magasin vendant diverses fournitures de fêtes.. Les produits vendus comprennent les décorations, les couverts jetables, les costumes, les cartes d'anniversaire, etc",
           "de": "Geschäft, das Partyzubehör wie Deko-Artikel, Einladungskarten und Kostüme anbietet.",
           "es": "Tienda que vende sumistros para fiestas tales como material decorativo, invitaciones y disfraces.",
           "cs": "Obchod prodávající potřeby na party jako dekorace, pozvánka a kostýmy."
@@ -8222,7 +8174,7 @@
         "id": "shop/party"
       },
       {
-        "icon": "fa-coffee",
+        "icon": "temaki-coffee",
         "markerColor": "#A23337",
         "presets": [
           "shop#coffee#brand",
@@ -8267,7 +8219,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Magasin de café",
+          "fr": "café, torréfacteur",
           "de": "Kaffeegeschäft, Kaffeeverkauf",
           "es": "café, expresso, grano, molido, tienda, almacén, negocio",
           "pt": "Coffee Store,café,grão,pó",
@@ -8291,7 +8243,7 @@
         },
         "description": {
           "en": "A shop selling coffee",
-          "fr": "Magasin de café",
+          "fr": "Magasin spécialisé dans la vente de café",
           "de": "Kaffeegeschäft",
           "pt": "A shop selling coffee",
           "it": "Un negozio di caffè",
@@ -8309,13 +8261,7 @@
       {
         "icon": "mi-fish-cleaning",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#seafood#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Seafood Shop",
           "fr": "Poissonnerie / Vente de fruits de mer",
@@ -8445,7 +8391,7 @@
         },
         "terms": {
           "en": "patisserie,cake shop,cakery",
-          "fr": "gaufre",
+          "fr": "gaufre, gâteau, gateau",
           "de": "Bäckerei,Süßspeisengeschäft,Konfiserie",
           "es": "pastelería, repostería, tarta, torta, pastel, masa",
           "pt": "Pastelaria, Bolos, Pastel, Pastéis",
@@ -8488,13 +8434,7 @@
       {
         "icon": "smoking-solid",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#tobacco#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Tobacco Shop",
           "fr": "Bureau de tabac",
@@ -9224,7 +9164,7 @@
         },
         "terms": {
           "en": "health,supplement,vitamin",
-          "fr": "compléments alimentaires;compléments nutritionnels",
+          "fr": "compléments alimentaires;compléments nutritionnels, protéine, vitamines",
           "de": "Nahrungsergänzungsmittelgeschäft, Vitaminpräparategeschäft, Gewichtsreduktionspräparategeschäft",
           "es": "nutrición, suplementos, complementos, vitaminas, minerales, tienda, almacén, negocio",
           "pt": "Nutrition Supplements Store",
@@ -9244,7 +9184,7 @@
         },
         "description": {
           "en": "Shops that sells nutritional supplements different types of purified proteins, fats, vitamins, minerals and/or herbs.",
-          "fr": "compléments alimentaires;compléments nutritionnels",
+          "fr": "",
           "cs": "Obchod prodávající potravinové doplňky (z vitamínů, minerálů a/nebo bylinek)",
           "ja": "サプリメント（ビタミン剤、ミネラル、ハーブなど）を販売する店舗",
           "pl": "Sklep zajmujący się sprzedażą różnego typu syntetycznych suplementów diety takich jak: białko, tłuszcze, witaminy, minerały oraz/lub zioła."
@@ -9258,14 +9198,11 @@
       {
         "icon": "fa-lightbulb-o",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#electrical#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
-        "lbl": {"en": "Electrical Equipment Store"},
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
+        "lbl": {
+          "en": "Electrical Equipment Store",
+          "fr": "Vente de matériel électrique"
+        },
         "description": {
           "en": "Shop selling electrical supplies and devices",
           "es": "Tienda que vende suplementos y dispositivos eléctricos",
@@ -9276,7 +9213,10 @@
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/electrical",
-        "terms": {"en": "cable,electric,fan,LED,lighting,power,wire"},
+        "terms": {
+          "en": "cable,electric,fan,LED,lighting,power,wire",
+          "fr": "electique, electricité, cables"
+        },
         "tags": {"shop": "electrical"},
         "moreFields": [],
         "id": "shop/electrical"
@@ -9358,7 +9298,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Anime Shop",
-          "fr": "Boutique d'« animes »",
+          "fr": "Boutique d'animes",
           "de": "Anime-Geschäft",
           "es": "Tienda de anime",
           "pt": "Loja de anime",
@@ -9391,7 +9331,7 @@
         },
         "terms": {
           "en": "manga,japan,cosplay,figurine,dakimakura",
-          "fr": "Vente de mangas, de CD et DVD, déguisements, accessoires",
+          "fr": "manga, anime, animé",
           "de": "Anime",
           "es": "anime, hentai, dibujos animados, manga, comic, revista, historieta, cosplay, figuras, maquetas, peluches, novelas",
           "pt": "Anime Shop, Loja de material Asiático, Manga, Anime",
@@ -9418,7 +9358,7 @@
         },
         "description": {
           "en": "A shop that sells anime and related items.",
-          "fr": "Un magasin vendant des animé, manga, Bd",
+          "fr": "Un magasin vendant des animé, manga, Bd, CD et DVD, déguisements, accessoires",
           "pt": "A loja de material anime",
           "ru": "Магазин аниме товаров",
           "cs": "Obchod specializovaný na anime video a související věci.",
@@ -9433,13 +9373,7 @@
       {
         "icon": "fa-chess-solid",
         "markerColor": "#A23337",
-        "presets": [
-          "shop#games#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Tabletop Game Store",
           "fr": "Magasin de jeux de plateau",
@@ -9459,7 +9393,7 @@
         },
         "terms": {
           "en": "board game,card game,dice game,game shop,live action role-playing game,miniatures wargame,strategy game",
-          "fr": "jeux de plateau,jeu de plateau,jeu de cartes,jeux de cartes,game shop,jeu de rôle,miniature,stratégie,plateau,cartes,figurines",
+          "fr": "jeux de plateau,jeu de plateau,jeu de cartes,jeux de cartes,game shop,jeu de rôle,miniature,figurines",
           "de": "Brettspielgeschäft",
           "es": "juego de mesa, juego de cartas, juego de dados, tienda de juegos, juego de rol, miniaturas de guerra, juego de estrategia",
           "pt": "tabletop game store, tabletop, loja de jogos de mesa, loja de jogos de tabuleiro, loja de jogos, jogos de mesa, jogos de tabuleiro, jogo de mesa, jogo de tabuleiro",
@@ -9471,7 +9405,7 @@
         },
         "description": {
           "en": "Shop selling board games.",
-          "fr": "jeux de plateau,jeu de plateau,jeu de cartes,jeux de cartes,game shop,jeu de rôle,miniature,stratégie,plateau,cartes,figurines",
+          "fr": "",
           "es": "Tienda que vende juegos de mesa.",
           "cs": "Obchod prodávající stolní hry",
           "ja": "ボードゲームを販売する店舗。"
@@ -9488,7 +9422,7 @@
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Glazing",
-          "fr": "Vente de vitrages de fenêtres et de portes."
+          "fr": "Vente de vitrages de fenêtres et de portes"
         },
         "terms": {"en": "glazing for windows and doors"},
         "description": {
@@ -9749,7 +9683,7 @@
         "deprecated": true,
         "lbl": {
           "en": "Boutique",
-          "fr": "Petit magasin de mode",
+          "fr": "Magasin de Haute couture ",
           "de": "Boutique",
           "es": "Boutique",
           "pt": "Boutique",
@@ -9791,7 +9725,7 @@
         "terms": {"en": "", "fr": "Haute couture"},
         "description": {
           "en": "a small shop that sells expensive or designer clothing and/or accessories",
-          "fr": "magasin de Haute couture",
+          "fr": "Magasin de Haute couture, pas pour tous les budgets! ",
           "de": "Boutique",
           "pt": "uma tomada de pequenas compras, especialmente uma que se especializou em itens de elite e da moda",
           "ru": "Небольшой магазин который специализируется на элитных и модных товарах",
@@ -10027,7 +9961,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Magasin de thés",
+          "fr": "thes, tisane, infusion",
           "de": "Teegeschäft,Teeladen",
           "es": "te, infusión, té, tienda de té",
           "pt": "Tea Store,chá,ervas,medicinal,medicinais",
@@ -10102,7 +10036,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "Grossiste",
+          "fr": "",
           "de": "Baustoffhandel, Bauzentrum, Baumarkt, Holzhandel",
           "es": "comercio, corralón, corralon, materiales, contrucción, construccion, madera, cemento, ladrillos",
           "pt": "construção, materiais, granel, b2b, cimento, areia, tijolos, brita",
@@ -10238,7 +10172,7 @@
         },
         "description": {
           "en": "A shop that sells sewing supplies (fabric, thread, yarn, knitting needles, sewing machines, etc.)",
-          "fr": "Un magasin qui vend des fournitures de couture (tissu, fil, aiguilles à tricoter, machines à coudre, etc.",
+          "fr": "Un magasin qui vend des fournitures de couture (tissu, fil, aiguilles à tricoter, machines à coudre, etc.)",
           "de": "Ein Geschäft, das Nähzubehör (Nähmaschinen, Garn, Stricknadeln, Kurzwaren usw.) verkauft.",
           "es": "Una tienda que vende suministros de costura, como telas, hilos, estambres, agujas de tejer, máquinas de coser, etc.",
           "cs": "Obchod prodávající potřeby k šití (látky, nitě, přízi, pletací jehlice, šicí stroje, atd.)",
@@ -10328,13 +10262,14 @@
         "icon": "wiki_question",
         "markerColor": "#A23337",
         "presets": ["wheelchair", "phone", "website", "opening_hours"],
-        "lbl": {"en": " Not known", "fr": "_NC"},
+        "lbl": {"en": " Not known", "fr": "Commerce indeterminé"},
         "description": {
           "en": "A shop of unspecified type.",
           "es": "Una tienda de tipo no especificado.",
           "cs": "Obchod neurčeného typu",
           "ja": "不特定の種類の店舗です。",
-          "pl": "Sklep nieokreślonego typu"
+          "pl": "Sklep nieokreślonego typu",
+          "fr": "Un commerce sans information sur sa nature"
         },
         "tags": {"shop": "yes"},
         "geometry": ["point", "area"],
@@ -10350,12 +10285,13 @@
         },
         "tags": {"shop": "ski"},
         "geometry": ["point", "area"],
-        "id": "shop/ski"
+        "id": "shop/ski",
+        "terms": {"en": "", "fr": "ski, snowboard, sport d'hiver"}
       },
       {
         "icon": "fa-print",
         "markerColor": "#A23337",
-        "presets": ["shop#printer_ink#brand"],
+        "presets": [],
         "lbl": {
           "en": "Printer Ink Store",
           "fr": "Vendeur d'encre pour imprimante",
@@ -10599,7 +10535,9 @@
         "moreFields": [],
         "reference": {"key": "shop", "value": "seafood"},
         "id": "shop/fishmonger",
-        "description": {"en": "", "pl": "Owoce morza."}
+        "description": {"en": "", "pl": "Owoce morza."},
+        "alert": {"en": "", "fr": "shop=seafood"},
+        "deprecated": true
       },
       {
         "icon": "maki-shop",
@@ -10645,7 +10583,8 @@
         "tags": {"shop": "furnace"},
         "moreFields": [],
         "id": "shop/furnace",
-        "description": {"en": "", "ru": "Магазин по продаже печей."}
+        "description": {"en": "", "ru": "Магазин по продаже печей."},
+        "deprecated": true
       },
       {
         "icon": "temaki-laundry",
@@ -10684,7 +10623,7 @@
         },
         "terms": {
           "en": "air conditioner,appliance,dishwasher,dryer,freezer,fridge,grill,kitchen,oven,refrigerator,stove,washer,washing machine",
-          "fr": "magasin d'électroménager, électroménager, appareil électroménager, petit électroménager, gros électroménager, shop appliance, appliances, \nbouilloire, centrifugeuse, cuiseur, cuit vapeur, fouet électrique, grille-pain, machine à pain, mixeur, pierrade, presse-agrumes, robot de cuisine, robot multifonctions, pèse-personne, épilateur, rasoir électrique, cafetière, moulin à café, aspirateur, cireuse, nettoyeur à vapeur, tondeuse, repassage, centrale vapeur, fer à repasser, cuisinière, four micro-ondes, four traditionnel, four à vapeur, cuisinière à gaz, hotte aspirante, plaque de cuisson, lave-linge, lave-vaisselle, sèche-linge, cave à vin, congélateur, réfrigérateur, climatiseur",
+          "fr": "Electroménager lave-linge, lave-vaisselle, frigo, réfrigérateur, machine a laver",
           "de": "Haushaltselektrogerätegeschäft, Elektroschäft",
           "es": "electrodomésticos, aire acondicionado, acondicionador de aire, aparatos, lavavajillas, secadora, heladera, freezer, congelador, nevera, parrilla, cocina, horno, frigorífico, estufa, lavarropas, lavadora,",
           "pt": "eletrodoméstico, electrodoméstico, frigorífico, máquina",
@@ -10714,13 +10653,14 @@
         "description": {
           "en": "Shop for white goods",
           "de": "Geschäft das Weiße Ware verkauft",
-          "pl": "Sklep sprzedający \"urządzenia domowe\", takie jak lodówki i pralki."
+          "pl": "Sklep sprzedający \"urządzenia domowe\", takie jak lodówki i pralki.",
+          "fr": "Vente de gros et petit électroménager ( lave-linge, lave-vaisselle, robot de cuisine, etc)"
         }
       },
       {
         "icon": "temaki-boating",
         "markerColor": "#A23337",
-        "presets": ["shop#boat#brand"],
+        "presets": [],
         "lbl": {
           "en": "Boat Store",
           "fr": "Magasin de bateaux",
@@ -10858,7 +10798,8 @@
           "ja": "醸造用品店",
           "mk": "Пивоварска продавница",
           "pl": "Sklep dla piwowarów domowych",
-          "uk": "Пивоварне та виноробне обладнання"
+          "uk": "Пивоварне та виноробне обладнання",
+          "fr": "Vente de produits pour le brassage "
         },
         "terms": {
           "en": "brew shop,homebrew supply store",
@@ -10868,7 +10809,8 @@
           "he": "חנות תחביבים קולינריים,חנות מוצרי מבשלה,חנות בירה,אספקה למבשלות",
           "ja": "醸造用品店, 醸造, 酒, 酒造, DIY, ホームブリュー",
           "pl": "piwowarstwo domowe, browar domowy, domowy browar, akcesoria piwowarskie, akcesoria winiarskie, słód, słody, chmiele",
-          "uk": "пиво,вино,віски,коньяк,перегонка,куб,брага,самогон,апарат,саморобне,магазин"
+          "uk": "пиво,вино,віски,коньяк,перегонка,куб,брага,самогон,апарат,саморобне,магазин",
+          "fr": "bière, brassage"
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/brewing_supplies",
@@ -10886,7 +10828,7 @@
       {
         "icon": "fa-burn",
         "markerColor": "#A23337",
-        "presets": ["shop#candles#brand"],
+        "presets": [],
         "lbl": {
           "en": "Candle Shop",
           "fr": "Magasin de bougies",
@@ -11008,7 +10950,7 @@
       {
         "icon": "maki-shop",
         "markerColor": "#A23337",
-        "presets": ["shop#catalogue#brand"],
+        "presets": [],
         "lbl": {
           "en": "Catalog Shop",
           "fr": "Magasin à catalogue",
@@ -11256,7 +11198,7 @@
       {
         "icon": "temaki-hair_care",
         "markerColor": "#A23337",
-        "presets": ["shop#hairdresser_supply#brand"],
+        "presets": [],
         "lbl": {
           "en": "Hairdresser Supply Store",
           "fr": "Magasin de matériel de coiffure",
@@ -11311,7 +11253,7 @@
       {
         "icon": "maki-shop",
         "markerColor": "#A23337",
-        "presets": ["shop#health_food#brand"],
+        "presets": [],
         "lbl": {
           "en": "Health Food Shop",
           "fr": "Magasin d'alimentation de santé",
@@ -11371,7 +11313,7 @@
       {
         "icon": "fa-dragon",
         "markerColor": "#A23337",
-        "presets": ["shop#hobby#brand"],
+        "presets": [],
         "lbl": {
           "en": "Hobby Shop",
           "fr": "Magasin pour hobby (non spécifié)",
@@ -11786,7 +11728,7 @@
       {
         "icon": "maki-shop",
         "markerColor": "#A23337",
-        "presets": ["shop#outpost#brand"],
+        "presets": [],
         "lbl": {
           "en": "Online Retailer Outpost",
           "fr": "Magasin de produits vendus en ligne",
@@ -11899,35 +11841,6 @@
           "id": "Sebuah bisnis yang menyediakan pinjaman berjaminan dengan barang pribadi sebagai jaminan.",
           "ja": "質屋。個人が所有するものを担保として、お金を貸し出す商売。"
         }
-      },
-      {
-        "icon": "temaki-psychic",
-        "markerColor": "#A23337",
-        "presets": [],
-        "lbl": {
-          "en": "Psychic",
-          "de": "Astrologiker",
-          "es": "Vidente",
-          "he": "מדיום",
-          "ja": "サイキック店",
-          "mk": "Јасновидец",
-          "pl": "Medium",
-          "uk": "Екстрасенс"
-        },
-        "terms": {
-          "en": "astrology,crystal ball,divination,fortune teller,seer,spirit",
-          "de": "Astrologie, Kristallkugel, Wahrsager, Seher, Geist, Wahrsagungen, Hellsehen, Prophezeiung, Weissagung",
-          "es": "astrología, bola de cristal, adivinación, adivina, vidente, espíritu, parapsicológico, parasicológico, parapsicológo, parasicológo, parapsicológa, parasicológa, vidente, medium, médium",
-          "he": "גילוי עתידות,תקשור,תיקשור,מגלה עתידות,מגדת עתידות",
-          "ja": "サイキック店, 超能力",
-          "pl": "medium, wróżka, wróżbita, wróżenie",
-          "uk": "астрологія,медіум,маг,дух,віщун,віщунья,бабка"
-        },
-        "geometry": ["point", "area"],
-        "iDRef": "shop/psychic",
-        "tags": {"shop": "psychic"},
-        "moreFields": [],
-        "id": "shop/psychic"
       },
       {
         "icon": "maki-shop",
@@ -12165,7 +12078,7 @@
       {
         "icon": "fa-dolly",
         "markerColor": "#A23337",
-        "presets": ["shop#rental#brand"],
+        "presets": [],
         "lbl": {
           "en": "Rental Shop",
           "fr": "Magasin de location",
@@ -12211,7 +12124,7 @@
         "presets": ["shop#storage_rental#brand"],
         "lbl": {
           "en": "Storage Rental",
-          "fr": "Location de stockage - Ne pas utiliser",
+          "fr": "Location de stockage",
           "de": "Lagerraumvermieter",
           "es": "Alquiler de depósito",
           "pt": "Aluguer de armazéns",
@@ -12242,7 +12155,7 @@
         },
         "terms": {
           "en": "garages",
-          "fr": "Location de stockage - Ne pas utiliser",
+          "fr": "",
           "de": "Lagerraum-Vermieter, Einlagerplatz-Vermieter, Selfstorage, Selbstlagerzentrum, Mietlager",
           "es": "almacenamiento, almacén, almacenaje, depósito, baulera, alquiler, renta, arrendamiento",
           "pt": "Estoque, Armazenamento, Depósito, Armazém",
@@ -12271,26 +12184,14 @@
           "de": "Lagervermietung",
           "es": "Trasteros o espacio para almacenamiento.",
           "ja": "レンタル倉庫、貸し倉庫、トランクルーム、レンタル収納スペース。"
-        }
-      },
-      {
-        "icon": "maki-telephone",
-        "markerColor": "#A23337",
-        "presets": ["shop#telecommunication#brand"],
-        "lbl": {"en": "Telecom Retail Store"},
-        "terms": {
-          "en": "communication,internet service provider,isp,network,telephone,voice"
         },
-        "geometry": ["point", "area"],
-        "iDRef": "shop/telecommunication",
-        "tags": {"shop": "telecommunication"},
-        "moreFields": [],
-        "id": "shop/telecommunication"
+        "deprecated": true,
+        "alert": {"en": "", "fr": "Ne pas utiliser"}
       },
       {
         "icon": "maki-shop",
         "markerColor": "#A23337",
-        "presets": ["shop#tiles#brand"],
+        "presets": [],
         "lbl": {
           "en": "Tile Shop",
           "fr": "Magasin de carrelage",
@@ -12540,9 +12441,10 @@
         "icon": "maki-shop",
         "markerColor": "#A23337",
         "presets": [],
-        "lbl": {"en": "Spice Shop"},
+        "lbl": {"en": "Spice Shop", "fr": "Magasin d'épices"},
         "terms": {
-          "en": "chili,cinnamon,curry,ginger,herbs,pepper,saffron,salt,spice store,spices,turmeric,wasabi"
+          "en": "chili,cinnamon,curry,ginger,herbs,pepper,saffron,salt,spice store,spices,turmeric,wasabi",
+          "fr": "epices"
         },
         "geometry": ["point", "area"],
         "iDRef": "shop/spices",
@@ -12555,7 +12457,8 @@
           "ru": "Магазин, продающий специи",
           "cs": "Obchod s kořením",
           "ja": "香辛料を販売する店",
-          "pl": "Sklep sprzedający przyprawy do potreaw."
+          "pl": "Sklep sprzedający przyprawy do potreaw.",
+          "fr": "A shop selling various spices and is likely to sell related products like dried herbs and dried fruits."
         }
       },
       {
@@ -12738,46 +12641,6 @@
         "id": "shop/clothes/underwear"
       },
       {
-        "icon": "maki-shop",
-        "markerColor": "#A23337",
-        "presets": [],
-        "lbl": {
-          "en": "LGBTQ+ Erotic Store",
-          "fr": "Sex-shop LGBTQ+",
-          "de": "LGBTQ+ Erotikgeschäft",
-          "es": "Tienda erótica LGBTQ+",
-          "pt": "Loja de artigos eróticos LGBTQ+",
-          "it": "Negozio erotico LGBTQ+",
-          "fi": "Seksuaalivähemmistöjen erotiikkamyymälä",
-          "he": "חנות ארוטית ללהטבפא״ק+",
-          "hu": "LGBTQ+ szexbolt ",
-          "ja": "LGBTQ+なポルノショップ",
-          "ko": "LGBTQ+ 성인용품 가게",
-          "mk": "Еротска продавница за ЛГБТК+",
-          "pl": "Sex shop LGBT",
-          "sv": "HBTQ-sexshop",
-          "uk": "LGBTQ+ Секс-шоп"
-        },
-        "terms": {
-          "en": "sex,porn",
-          "fr": "Sex-shop,lgbtq,gay,lesbien",
-          "de": "LGBTQ+ Erotikgeschäft",
-          "es": "sexo, porno",
-          "pt": "gay, lésbico, lésbica, lgbt, lgbtq, lgb, homosexual, homossexual, sex shop",
-          "it": "sesso,porno,lesbica,lesbiche,lgbtq,lgbt,lgb,omosessuale,bisex,trans,queen",
-          "he": "מין,סקס,פורנוגרפיה,פורנו,מיניות,תשוקה,אירוטיקה",
-          "ja": "LGBTQ+なポルノショップ, ポルノショップ, LGBT, アダルトショップ, ゲイ, レズビアン, トランスジェンダー, レインボー, ポルノ",
-          "pl": "sex shop dla homoseksualistów, gejów, lesbijek, sex-shop, sklep erotyczny",
-          "sv": "Sex, sexshop, sexaffär, erotik, erotikaffär, erotisk, sexfilmer, porr, porrfilmer, sexleksaker, underkläder, kondomer, pornografi, porrfilmer, sexfilmer, porrtidningar, HBTQ-sexshop, HBTQ, gay, lesbisk",
-          "uk": "секс,іграшки,для дорослих"
-        },
-        "geometry": ["point", "area"],
-        "iDRef": "shop/erotic/lgbtq",
-        "tags": {"shop": "erotic", "lgbtq": "primary"},
-        "moreFields": [],
-        "id": "shop/erotic/lgbtq"
-      },
-      {
         "icon": "temaki-laundry",
         "markerColor": "#A23337",
         "presets": [],
@@ -12951,15 +12814,6 @@
         "tags": {"amenity": "bus_station"},
         "moreFields": [],
         "id": "amenity/bus_station"
-      },
-      {
-        "icon": "",
-        "markerColor": "#EF9228",
-        "presets": ["wheelchair"],
-        "lbl": {"en": "Auditorium"},
-        "tags": {"amenity": "auditorium"},
-        "geometry": ["point", "area"],
-        "id": "amenity/auditorium"
       },
       {
         "icon": "fa-car",
@@ -14215,7 +14069,6 @@
         "icon": "mi-casino",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#casino#brand",
           "wheelchair",
           "phone",
           "website",
@@ -14656,7 +14509,6 @@
         "icon": "fa-hospital-o",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#clinic#brand",
           "wheelchair",
           "phone",
           "website",
@@ -15262,7 +15114,6 @@
         "icon": "maki-dentist",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#dentist#brand",
           "wheelchair",
           "phone",
           "website",
@@ -15560,7 +15411,6 @@
         "icon": "mi-hospital",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#hospital#brand",
           "wheelchair",
           "phone",
           "website",
@@ -16400,7 +16250,6 @@
         "icon": "maki-doctor",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#doctors#brand",
           "wheelchair",
           "phone",
           "website",
@@ -16622,11 +16471,13 @@
       {
         "icon": "maki-park",
         "markerColor": "#EF9228",
-        "presets": ["wheelchair"],
+        "presets": [],
         "lbl": {"en": "Parc"},
         "tags": {"amenity": "park"},
         "geometry": ["point", "area"],
-        "id": "amenity/park"
+        "id": "amenity/park",
+        "deprecated": true,
+        "alert": {"en": "", "fr": "leisure=park."}
       },
       {
         "icon": "mi-parking",
@@ -16847,7 +16698,6 @@
         "icon": "mi-pharmacy",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#pharmacy#brand",
           "dispensing",
           "wheelchair",
           "phone",
@@ -19989,7 +19839,7 @@
         "icon": "wiki_question",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "_NC"},
+        "lbl": {"en": "_NC", "fr": "Equipement indéterminé"},
         "tags": {"amenity": "yes"},
         "geometry": ["point", "area"],
         "id": "amenity/yes"
@@ -20140,7 +19990,7 @@
         "icon": "mi-roofing-contractor",
         "markerColor": "#EF9228",
         "presets": [],
-        "lbl": {"en": "Lavoir"},
+        "lbl": {"en": "Lavoir", "fr": "Lavoir"},
         "description": {
           "en": "A public place where people come to wash their clothes manually",
           "fr": "Un lieu public où les gens viennent laver leurs vêtements manuellement.",
@@ -20332,7 +20182,6 @@
         "icon": "fa-book",
         "markerColor": "#EF9228",
         "presets": [
-          "amenity#public_bookcase#brand",
           "public_bookcase/type",
           "opening_hours",
           "capacity",
@@ -21461,12 +21310,7 @@
       {
         "icon": "maki-veterinary",
         "markerColor": "#EF9228",
-        "presets": [
-          "amenity#animal_boarding#brand",
-          "building_area",
-          "opening_hours",
-          "animal_boarding"
-        ],
+        "presets": ["building_area", "opening_hours", "animal_boarding"],
         "lbl": {
           "en": "Animal Boarding Facility",
           "fr": "Plateforme de chargement d'animaux",
@@ -22562,7 +22406,7 @@
         },
         "terms": {
           "en": "",
-          "fr": "love hôtel",
+          "fr": "love hôtel, pute, passes hotel",
           "de": "Stundenhotel, Liebeshotel",
           "es": "hotel para parejas, parejas, telo, albergue transitorio, hotel alojamiento, motel",
           "pt": "Motel",
@@ -22666,7 +22510,8 @@
           "de": "Ein Ort, der Geldtransfers (meist in bar) von einem Einzahler zu einem Empfänger anbietet.",
           "cs": "Místo, které nabízí převody peněz, zejména hotovost za hotovost.",
           "ja": "海外送金所。海外送金、特にキャッシュからキャッシュへのサービスを提供する場所",
-          "pl": "Miejsce oferujące przelewy pieniężne, w szczególności gotówkę."
+          "pl": "Miejsce oferujące przelewy pieniężne, w szczególności gotówkę.",
+          "fr": "Western unionn monegram & cie"
         }
       },
       {
@@ -22871,7 +22716,7 @@
         "id": "amenity/planetarium",
         "description": {
           "en": "A theatre built for presenting educational and entertaining shows about astronomy and the night sky, or for training in celestial navigation",
-          "fr": "Planétarium",
+          "fr": "",
           "de": "Planetarium",
           "es": "Un teatro construido para presentar espectáculos educativos y de entretenimiento sobre la astronomía y el cielo nocturno, o para el entrenamiento en la navegación celestial.",
           "pt": "Planetário: local para apresentação de espetáculos educacionais e recreativos sobre astronomia e o céu noturno, ou para treino em navegação celestial. Não confundir com observatório para o qual existe uma etiqueta própria.",
@@ -23257,7 +23102,8 @@
         "presets": [
           "recycling:glass_bottles",
           "recycling:plastic",
-          "recycling:paper"
+          "recycling:paper",
+          "recycling:clothes"
         ],
         "lbl": {
           "en": "Recycling Container",
@@ -23592,7 +23438,8 @@
           "mk": "Мосна вага",
           "pl": "Waga dla pojazdów",
           "sr": "Камионска вага",
-          "uk": "Автомобільні ваги"
+          "uk": "Автомобільні ваги",
+          "fr": "Balance"
         },
         "terms": {
           "en": "weigh station,weighbridge",
@@ -23603,7 +23450,8 @@
           "hu": "hídmérleg",
           "ja": "トラックスケール, 車両計量台",
           "pl": "waga dla pojazdów, waga samochodowa",
-          "uk": "вантаж,зваження,станція,груз"
+          "uk": "вантаж,зваження,станція,груз",
+          "fr": "pont bascule poids balance"
         },
         "geometry": ["point", "vertex"],
         "iDRef": "amenity/weighbridge",
@@ -23794,7 +23642,7 @@
         "id": "amenity/bicycle_parking/shed"
       },
       {
-        "icon": "maki-hospital",
+        "icon": "mi-health",
         "markerColor": "#EF9228",
         "presets": [],
         "lbl": {
@@ -23863,7 +23711,7 @@
         "id": "amenity/clinic/abortion"
       },
       {
-        "icon": "maki-hospital",
+        "icon": "mi-health",
         "markerColor": "#EF9228",
         "presets": [],
         "lbl": {
@@ -27316,7 +27164,8 @@
           "pl": "Studio filmowe",
           "sv": "Filmstudio",
           "uk": "Кіностудія",
-          "vi": "Xưởng Phim"
+          "vi": "Xưởng Phim",
+          "fr": "Studio de cinéma"
         },
         "terms": {
           "en": "movie production,movie studio,video production,video recording,video studio",
@@ -27567,7 +27416,8 @@
           "ja": "自販機(パン)",
           "pl": "Automat z pieczywem",
           "uk": "Хліб, торговий автомат",
-          "vi": "Máy Bán Bánh mì"
+          "vi": "Máy Bán Bánh mì",
+          "fr": "Distributeur de pains"
         },
         "terms": {
           "en": "baguette,bread",
@@ -27576,7 +27426,8 @@
           "ja": "自販機(パン), パン, 自販機",
           "pl": "automat z pieczywem, pieczywo, chleb, bułki",
           "uk": "хліб,випічка,автомат,кіоск,магазин,булочка,рогалик",
-          "vi": "máy bán bánh mì, máy bán bánh mỳ, máy bán ổ bánh mì, máy bán ổ bánh mỳ, may ban banh mi, may ban banh my, may ban o banh mi, may ban o banh my"
+          "vi": "máy bán bánh mì, máy bán bánh mỳ, máy bán ổ bánh mì, máy bán ổ bánh mỳ, may ban banh mi, may ban banh my, may ban o banh mi, may ban o banh my",
+          "fr": "pains, distibuteur automatic, boulangerie"
         },
         "geometry": ["point", "vertex"],
         "iDRef": "amenity/vending_machine/bread",
@@ -27868,7 +27719,8 @@
           "ja": "自販機(卵)",
           "pl": "Automat z jajkami",
           "uk": "Яйця, торговий автомат",
-          "vi": "Máy Bán Trứng"
+          "vi": "Máy Bán Trứng",
+          "fr": "Distributeur d’œufs"
         },
         "terms": {
           "en": "egg",
@@ -27884,7 +27736,8 @@
         "tags": {"amenity": "vending_machine", "vending": "eggs"},
         "reference": {"key": "vending", "value": "eggs"},
         "moreFields": [],
-        "id": "amenity/vending_machine/eggs"
+        "id": "amenity/vending_machine/eggs",
+        "description": {"en": "", "fr": "oeufs, distributeur automatique"}
       },
       {
         "icon": "temaki-vending_machine",
@@ -28299,7 +28152,8 @@
           "ja": "自販機(氷)",
           "pl": "Automat z kostkami lodu",
           "uk": "Морозиво, торговий автомат",
-          "vi": "Máy Bán Đá lạnh"
+          "vi": "Máy Bán Đá lạnh",
+          "fr": "Distributeur de glaçons"
         },
         "terms": {
           "en": "cubes,ice",
@@ -28308,7 +28162,8 @@
           "ja": "自販機(氷), 氷, アイス, 自販機",
           "pl": "automat z kostkami lodu, kostki lodu, lód w kostkach",
           "uk": "морозиво,магазин,автомат",
-          "vi": "máy bán đá lạnh, máy bán cục đá, may ban da lanh, may ban cuc da"
+          "vi": "máy bán đá lạnh, máy bán cục đá, may ban da lanh, may ban cuc da",
+          "fr": "glacon"
         },
         "geometry": ["point", "vertex"],
         "iDRef": "amenity/vending_machine/ice_cubes",
@@ -32307,7 +32162,7 @@
       {
         "icon": "maki-dog-park",
         "markerColor": "#5B396C",
-        "presets": ["leisure#dog_park#brand"],
+        "presets": [],
         "lbl": {
           "en": "Dog Park",
           "fr": "Parc canin",
@@ -33044,7 +32899,6 @@
         "icon": "maki-playground",
         "markerColor": "#5B396C",
         "presets": [
-          "leisure#playground#brand",
           "playground/theme",
           "surface",
           "access_simple",
@@ -34484,7 +34338,7 @@
       {
         "icon": "mi-bowling-alley",
         "markerColor": "#5B396C",
-        "presets": ["leisure#bowling_alley#brand", "building_area"],
+        "presets": ["building_area"],
         "lbl": {
           "en": "Bowling Alley",
           "fr": "Bowling",
@@ -34578,7 +34432,6 @@
         "icon": "fa-key",
         "markerColor": "#5B396C",
         "presets": [
-          "leisure#escape_game#brand",
           "wheelchair",
           "phone",
           "website",
@@ -39725,13 +39578,7 @@
       {
         "icon": "mi-plumber",
         "markerColor": "#5B396C",
-        "presets": [
-          "craft#plumber#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Plumber",
           "fr": "Plombier",
@@ -41003,13 +40850,7 @@
       {
         "icon": "fa-door-closed-solid",
         "markerColor": "#5B396C",
-        "presets": [
-          "craft#window_construction#brand",
-          "wheelchair",
-          "phone",
-          "website",
-          "opening_hours"
-        ],
+        "presets": ["wheelchair", "phone", "website", "opening_hours"],
         "lbl": {
           "en": "Window Construction",
           "fr": "Construction de fenêtres",
@@ -41752,7 +41593,7 @@
       {
         "icon": "temaki-tools",
         "markerColor": "#5B396C",
-        "presets": ["craft#signmaker#brand"],
+        "presets": [],
         "lbl": {
           "en": "Signmaker",
           "fr": "Fabriquant d'enseignes",
@@ -46902,7 +46743,7 @@
       {
         "icon": "maki-bank",
         "markerColor": "#F5BB3A",
-        "presets": ["office#bail_bond_agent#brand"],
+        "presets": [],
         "lbl": {
           "en": "Bail Bond Agent",
           "fr": "Agent de cautionnement",
@@ -52577,7 +52418,7 @@
         "id": "healthcare/counselling"
       },
       {
-        "icon": "maki-hospital",
+        "icon": "mi-health",
         "markerColor": "#C9BCF0",
         "presets": [],
         "lbl": {
@@ -52697,7 +52538,7 @@
         "id": "healthcare/optometrist"
       },
       {
-        "icon": "maki-hospital",
+        "icon": "mi-health",
         "markerColor": "#C9BCF0",
         "presets": [],
         "lbl": {
@@ -52751,7 +52592,7 @@
         "id": "healthcare/rehabilitation"
       },
       {
-        "icon": "maki-hospital",
+        "icon": "mi-health",
         "markerColor": "#C9BCF0",
         "presets": [],
         "lbl": {
@@ -57209,15 +57050,6 @@
         "id": "highway/bus_stop"
       },
       {
-        "icon": "wiki_question",
-        "markerColor": "#0E5F71",
-        "presets": [],
-        "lbl": {"en": "_NC"},
-        "tags": {"highway": "yes"},
-        "geometry": ["point", "area", "vertex", "line"],
-        "id": "highway/yes"
-      },
-      {
         "icon": "fas-video",
         "markerColor": "#0E5F71",
         "presets": [],
@@ -60218,7 +60050,8 @@
           "mk": "Автодром",
           "pl": "Autodrom (w parku rozrywki)",
           "uk": "Бамперні машинки",
-          "vi": "Xe Điện đụng"
+          "vi": "Xe Điện đụng",
+          "fr": "Auto-tamponneuses"
         },
         "terms": {
           "en": "theme park,dodgem cars,autoscooter",
@@ -64789,7 +64622,8 @@
           "ja": "防音壁",
           "mk": "Букобран",
           "pl": "Ekrany akustyczne",
-          "uk": "Шумовий бар'єр"
+          "uk": "Шумовий бар'єр",
+          "fr": "Barrière anti bruit"
         },
         "terms": {
           "en": "acoustical barrier,noise wall,noisewall,sound barrier,sound berm,sound wall,soundberm,soundwall",
