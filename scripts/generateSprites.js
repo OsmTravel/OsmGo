@@ -9,6 +9,7 @@ const Spritesmith = require('spritesmith');
 exports.generateSprites = () => {
 
     const iconsUsed = [];
+    const markerUsed = [];
 
   
     const iconsSVGsPath = path.join(__dirname, '..', 'resources','IconsSVG');
@@ -29,10 +30,11 @@ exports.generateSprites = () => {
     let iconsSVG = [];
 
     const generateMarkerIcon = (iconName, colorIcon, colorMarker,geometries= undefined, unknowTag = false) => {
-        // if (!geometries){
+        if (!geometries){
             geometries = ['point', 'vertex','area','line']
-        // }
-        let iconSVG;
+        }
+       
+     
         if (iconName == '') {
             if (unknowTag) {
                 iconSVG = fs.readFileSync(path.join(iconsSVGsPath,  'wiki_question.svg')).toString();
@@ -72,20 +74,35 @@ exports.generateSprites = () => {
             '<svg version="1.1" id="marker-circle-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"  y="0px" width="24px" height="36px" viewBox="0 0 24 36" enable-background="new 0 0 24 36" xml:space="preserve">';
 
         const xmlEnd = '</svg>'
+
         if (geometries.includes('point') || geometries.includes('vertex') ){
-            const SVGcircle = xmlHeader + pathMarkerXMLCircle + pathIconXMLstr + xmlEnd;
-            fs.writeFileSync(path.join(outputFolderSVG, 'circle-' + colorMarker + '-' + iconName + '.svg'), SVGcircle);
+            const id = 'circle-' + colorMarker + '-' + iconName ;
+            if ( !markerUsed.includes(id)){
+                markerUsed.push(id);
+                const SVGcircle = xmlHeader + pathMarkerXMLCircle + pathIconXMLstr + xmlEnd;
+                fs.writeFileSync(path.join(outputFolderSVG, id+ '.svg'), SVGcircle);
+            }
+         
         }
 
         if (geometries.includes('line')){
+            const id = 'penta-' + colorMarker + '-' + iconName 
+            if ( !markerUsed.includes(id)){
+                markerUsed.push(id);
             const SVGpenta = xmlHeader + pathMarkerXMLPenta + pathIconXMLstr + xmlEnd;
-            fs.writeFileSync(path.join(outputFolderSVG, 'penta-' + colorMarker + '-' + iconName + '.svg'), SVGpenta);
+            fs.writeFileSync(path.join(outputFolderSVG, id+ '.svg'), SVGpenta);
+            }
         }
         if (geometries.includes('area')){
+            const id = 'square-' + colorMarker + '-' + iconName ;
+            if ( !markerUsed.includes(id)){
+                markerUsed.push(id);
             const SVGsquare = xmlHeader + pathMarkerXMLSquare + pathIconXMLstr + xmlEnd;
-            fs.writeFileSync(path.join(outputFolderSVG, 'square-' + colorMarker + '-' + iconName + '.svg'), SVGsquare);
+            fs.writeFileSync(path.join(outputFolderSVG, id+ '.svg'), SVGsquare);
         }
+        
     }
+}
 
 
     const tags = JSON.parse(fs.readFileSync(tagsPath).toString());
@@ -98,10 +115,10 @@ exports.generateSprites = () => {
                 iconsUsed.push(tags[key].values[i].icon);
             }
             let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon
-            if (iconsMarkersStr.indexOf(strIcM) == -1) {
+            // if (iconsMarkersStr.indexOf(strIcM) == -1) {
                 iconsMarkersStr.push(strIcM);
                 generateMarkerIcon(tags[key].values[i].icon, "#ffffff", tags[key].values[i].markerColor, tags[key].values[i].geometry)
-            }
+            // }
         }
     }
 
