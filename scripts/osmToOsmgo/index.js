@@ -8,8 +8,6 @@ import clone from 'lodash/clone'
 import martinez from 'martinez-polygon-clipping'
 
 
-
-
 const inside = (point, vs) => {
     // ray-casting algorithm based on
     // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
@@ -26,7 +24,7 @@ const inside = (point, vs) => {
     return inside;
 };
 
-function wayToPoint(feature) { // /!\ mutable !
+const wayToPoint = (feature) => { // /!\ mutable !
     if (feature.geometry.type !== 'Point') {
         // stock the original geometry in  feature.properties.way_geometry  .way_geometry
         feature.properties.way_geometry = clone(feature.geometry);
@@ -47,7 +45,7 @@ function wayToPoint(feature) { // /!\ mutable !
 }
 
 //https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features
-function wayIsRealyPolygon(tags) {
+const wayIsRealyPolygon = (tags) => {
     if (tags['area'] === 'no') return false;
     // FROM : https://github.com/tyrasd/osm-polygon-features/blob/master/polygon-features.json
     const keys = Object.keys(tags);
@@ -83,7 +81,7 @@ function wayIsRealyPolygon(tags) {
     return false;
 }
 
-function isFilteredByKeys(tags, keysFilter) { // true => in final result
+const isFilteredByKeys = (tags, keysFilter) => { // true => in final result
     if (!keysFilter) return true;
     if (!tags) return false;
     const keys = Object.keys(tags);
@@ -96,16 +94,16 @@ function isFilteredByKeys(tags, keysFilter) { // true => in final result
     return false
 }
 
-function getPrimaryKeyOfObject(feature, tagsConfig) {
-    const tags = feature.properties.tags
-    let types_liste = Object.keys(tagsConfig);
+const getPrimaryKeyOfObject = (feature, excludesWays, primaryKeys) => {
+    const tags = feature.properties.tags;
     let kv = { k: '', v: '' };
     for (let k in tags) {
-        if (types_liste.includes(k)) {
+        if (primaryKeys.includes(k)) {
             // on filtre ici pour ne pas prendre en compte les ways exclus
             if ((feature.properties.type == 'way' || feature.properties.type == 'relation')
-                && tagsConfig[k].exclude_way_values
-                && tagsConfig[k].exclude_way_values.includes(tags[k])
+                && excludesWays
+                && excludesWays[k] 
+                && excludesWays[k].includes(tags[k]) 
             ) {
                 continue
             }
@@ -117,13 +115,10 @@ function getPrimaryKeyOfObject(feature, tagsConfig) {
 }
 
 export function getConfigTag(feature, tagsConfig) {
-    const pkey = getPrimaryKeyOfObject(feature, tagsConfig)
-    const conf = tagsConfig[pkey['k']]
-    const confFilter = conf.values.filter( c => c.tags[pkey['k']] == [pkey['v']] )
     const fetureTags = feature.properties.tags
 
     let match = {conf: undefined, matchProps: 0};
-    for (let variant of confFilter){
+    for (let variant of tagsConfig){
         let nb = 0;
         for( let vk in variant.tags){
             if (!fetureTags[vk] || fetureTags[vk] !== variant.tags[vk]){
@@ -133,13 +128,10 @@ export function getConfigTag(feature, tagsConfig) {
                 nb++;
             }
         }
-
         if (nb > match.matchProps){
             match = { conf: variant, matchProps: nb}
         }
-        // console.log(variant.tags);
     }
-  
     if (match.conf) {
         return match.conf;
     } else {
@@ -150,9 +142,7 @@ export function getConfigTag(feature, tagsConfig) {
 
 export function setIconStyle(feature, tagsConfig) { // /!\ mutable 
 
-
     let configMarker = getConfigTag(feature, tagsConfig);
-    // return;
   
     let markerShape
     if (feature.properties.type === 'node') {
@@ -167,7 +157,6 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
 
 
     if (configMarker) { // OK
-        // console.log(configMarker.icon);
         feature.properties.icon = (configMarker.icon) ? configMarker.icon : ''
         feature.properties.marker = `${markerShape}-${configMarker.markerColor}-${feature.properties.icon}`
         feature.properties.hexColor = configMarker.markerColor;
@@ -182,7 +171,7 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
     return feature;
 }
 
-function addAttributesToFeature(feature) { // /!\ mutable !
+const addAttributesToFeature = (feature) => { // /!\ mutable !
     // add properties values
     if (feature.properties.tags.name) {
         feature.properties['_name'] = feature.properties.tags.name
@@ -196,7 +185,7 @@ function addAttributesToFeature(feature) { // /!\ mutable !
 }
 
 
-function getMergedGeojsonGeojsonChanged(geojson, geojsonChanged) {
+const getMergedGeojsonGeojsonChanged = (geojson, geojsonChanged) => {
     if (!geojsonChanged) {
         return geojson
     }
@@ -214,7 +203,7 @@ function getMergedGeojsonGeojsonChanged(geojson, geojsonChanged) {
     return clone(geojson)
 }
 
-function mergeOldNewGeojsonData(oldGeojson, newGeojson, newFeatureBbox, geojsonChanged) {
+const mergeOldNewGeojsonData = (oldGeojson, newGeojson, newFeatureBbox, geojsonChanged) => {
     let geojson = null;
     let oldFeatures = oldGeojson.features
     let newFeatures = newGeojson.features
@@ -260,8 +249,7 @@ function mergeOldNewGeojsonData(oldGeojson, newGeojson, newFeatureBbox, geojsonC
     return getMergedGeojsonGeojsonChanged(geojson, geojsonChanged);
 }
 
-function mergeBounds(newBboxFeature, oldBboxFeature) {
-
+const mergeBounds = (newBboxFeature, oldBboxFeature) => {
     if (!oldBboxFeature || oldBboxFeature.length === 0) {
         return { 'type': 'FeatureCollection', 'features': [newBboxFeature] };
     } else {
@@ -291,8 +279,8 @@ function unescapeXmlValue(a) {
 
 export const convert = (text, options) => {
     let keysFilter = null;
-    if (options && options.tagConfig) {
-        keysFilter = Object.keys(options.tagConfig);
+    if (options && options.primaryKeys ) {
+        keysFilter =options.primaryKeys;
     }
 
     const jsonObj = parser.parse(text, {
@@ -653,18 +641,17 @@ export const convert = (text, options) => {
         }
     }
 
-
     const featuresResult = []
     for (let f in nodes) {
         const tags = nodes[f].properties.tags
         if (nodes[f].geometry && nodes[f].properties.tags && isFilteredByKeys(tags, keysFilter)) {
             addAttributesToFeature(nodes[f])
+           
             if (options && options.tagConfig) {
-                let primaryTag = getPrimaryKeyOfObject(nodes[f], options.tagConfig)
+                 let primaryTag = getPrimaryKeyOfObject(nodes[f], options.excludesWays, options.primaryKeys);
                 if (primaryTag) {
                     nodes[f].properties['primaryTag'] = primaryTag;
                     setIconStyle(nodes[f], options.tagConfig)
-
                     featuresResult.push(nodes[f])
                 }
 
@@ -689,7 +676,7 @@ export const convert = (text, options) => {
             }
             wayToPoint(ways[f])
             if (options && options.tagConfig) {
-                let primaryTag = getPrimaryKeyOfObject(ways[f], options.tagConfig)
+                let primaryTag = getPrimaryKeyOfObject(ways[f], options.excludesWays, options.primaryKeys)
 
                 if (primaryTag) {
                     ways[f].properties['primaryTag'] = primaryTag;
@@ -719,7 +706,7 @@ export const convert = (text, options) => {
             }
             wayToPoint(relations[f])
             if (options && options.tagConfig) {
-                let primaryTag = getPrimaryKeyOfObject(relations[f], options.tagConfig)
+                let primaryTag = getPrimaryKeyOfObject(relations[f], options.excludesWays, options.primaryKeys)
 
                 if (primaryTag) {
                     relations[f].properties['primaryTag'] = primaryTag;

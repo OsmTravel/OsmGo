@@ -12,6 +12,7 @@ export class ReadPrimaryKey {
     @Input() language;
     @Input() feature;
     @Input() jsonSprites;
+    @Input() primaryKeys;
 
     primaryKey;
   
@@ -24,7 +25,7 @@ export class ReadPrimaryKey {
     }
 
     findPkey( feature){
-        const pkeys = Object.keys(this.tagsConfig);
+        const pkeys = this.primaryKeys;
         for (let k in feature.properties.tags){
             if (pkeys.includes(k)){
                 return {key: k, value:feature.properties.tags[k] }

@@ -18,9 +18,7 @@ export class EditPrimaryKey {
     @Input() primaryKey :PrimaryTag;
    
 
-    ngOnInit(): void {
-        console.log(this.tagsConfig);
-        
+    ngOnInit(): void {        
     }
     emitOpenModal() {
         this.openPrimaryTagModal.emit();

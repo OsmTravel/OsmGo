@@ -10,7 +10,6 @@ import { TagConfig } from '../../../../type'
     styleUrls: ['./modal.primaryTag.scss']
 })
 export class ModalPrimaryTag implements OnInit {
-    displayType: 'bookmarks' | 'lastTags' = "lastTags"
     selectedKey: string;
     tagsOfselectedKey;
     loading = true;
@@ -24,6 +23,7 @@ export class ModalPrimaryTag implements OnInit {
     bookmarks: TagConfig[];
     lastTagsAdded: TagConfig[];
     geometriesPossible:string[] = []
+    displayType = 'lastTags'
 
 
     constructor(
@@ -57,25 +57,28 @@ export class ModalPrimaryTag implements OnInit {
         this.bookmarks = this.tagsService.getBookMarks();
         this.lastTagsAdded = this.tagsService.getLastTagAdded()
     
-        this.tagsService.getAllTags().subscribe(allTags => {
-            this.allTags = allTags;
-            //TODO:
-                this.primaryKeys = Object.keys(allTags).sort();
+        // this.tagsService.getAllTags().subscribe(allTags => {
+        //     this.allTags = allTags;
+        //     //TODO:
+        //         this.primaryKeys = Object.keys(allTags).sort();
            
-            if (this.configService.getDefaultPrimarykeyWindows() === 'allTags') {
+        //     if (this.configService.getDefaultPrimarykeyWindows() === 'allTags') {
 
-                this.selectedKey = 'full';
-            } else if (this.configService.getDefaultPrimarykeyWindows() === 'bookmarks') {
+        //         this.selectedKey = 'full';
+        //     } else if (this.configService.getDefaultPrimarykeyWindows() === 'bookmarks') {
 
-                this.selectedKey = 'bookmarks';
-            } else {
-                // this.selectedKey = this._primaryKey.key;
-            }
+        //         this.selectedKey = 'bookmarks';
+        //     } else {
+        //         // this.selectedKey = this._primaryKey.key;
+        //     }
         
-                this.currentListOfTags = this.tagsService.getFullTags();
+        //         this.currentListOfTags = this.tagsService.getFullTags();
             
-            this.loading = false;
-        });
+        //     this.loading = false;
+        // });
+        this.currentListOfTags = this.tagsService.tags;
+            
+        this.loading = false;
     }
 
     dismiss(data = null) {
@@ -94,17 +97,18 @@ export class ModalPrimaryTag implements OnInit {
     }
 
     addRemoveToBookmarks(tag) {
+        console.log(tag);
         this.tagsService.addRemoveBookMark(tag);
     }
 
 
-    updateSelectedValue(key) {
-        if (key === 'full') {
-            this.currentListOfTags = this.tagsService.getFullTags();
-        } else if (key === 'bookmarks') {
-            this.currentListOfTags = this.tagsService.getBookMarks();
-        }
-    }
+    // updateSelectedValue(key) {
+    //     if (key === 'full') {
+    //         this.currentListOfTags = this.tagsService.getFullTags();
+    //     } else if (key === 'bookmarks') {
+    //         this.currentListOfTags = this.tagsService.getBookMarks();
+    //     }
+    // }
 
     addCustomValue(key, value){
         const newConfig = {

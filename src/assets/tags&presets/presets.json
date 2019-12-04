@@ -1895,6 +1895,7 @@
   },
   "school:FR": {
     "key": "school:FR",
+    "countryCodes": ["FR"],
     "type": "select",
     "lbl": {"fr": "Ecole FR", "en": "school:FR"},
     "options": [

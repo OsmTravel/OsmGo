@@ -44,11 +44,12 @@
 				[feature]="feature"
 				[language] = "configService.config.languageTags"
 				[tagConfig]="tagConfig"
+				[primaryKeys]="tagsService.primaryKeys"
 				[jsonSprites]="tagsService.jsonSprites">
 			</read-primary-key>
 
 			<!--Les presets-->
-			<div *ngFor="let tag of tags;">
+			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets;">
 				<read-presets *ngIf="tag.preset && tag.value !== ''" 
 				[displayCode]="displayCode" 
 				[tag]="tag"
@@ -59,8 +60,7 @@
 			</div>
 
 			<!--Le reste des tags-->
-			
-			<div *ngFor="let tag of tags | filterExcludeKeys:getExcludeKeysFromOtherTags(primaryKey.key, tagConfig, !displayCode);">
+			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true;">
 				<read-other-tag [tag]="tag" *ngIf="!tag.preset "> </read-other-tag>
 			</div>
 
@@ -150,7 +150,7 @@
 			<!--  -->
 
 			<!--Les presets-->
-			<div *ngFor="let tag of tags">
+			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets">
 
 				<edit-presets *ngIf="tag.preset" 
 					[displayCode]="displayCode" 
@@ -162,7 +162,7 @@
 
 			<!--Le reste des tags-->
 		
-			<div *ngFor="let tag of tags | filterExcludeKeys: getExcludeKeysFromOtherTags(primaryKey.key, tagConfig, !displayCode)">
+			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true">
 				<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
 			</div>
 

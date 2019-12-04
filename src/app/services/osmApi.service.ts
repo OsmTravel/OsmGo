@@ -528,7 +528,9 @@ export class OsmApiService {
             new Promise((resolve, reject) => {
                 const workerFormatData = new Worker('assets/workers/worker-formatOsmData.js');
                 workerFormatData.postMessage({
-                    tagsConfig: that.tagsService.getTags(),
+                    tagsConfig: that.tagsService.tags,
+                    excludesWays: that.tagsService.excludeWays,
+                    primaryKeys: that.tagsService.primaryKeys,
                     osmData: osmData,
                     oldGeojson: oldGeojson,
                     oldBboxFeature: oldBboxFeature,

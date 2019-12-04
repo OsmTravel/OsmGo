@@ -347,7 +347,6 @@ export class MapService {
   }
 
   getIconStyle(feature) {
-    console.log('getIconStyle' ,feature)
     feature = setIconStyle(feature, this.tagsService.tags);
     return feature;
   }

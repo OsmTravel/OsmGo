@@ -9,7 +9,7 @@ describe('tags&Presets', () => {
     });
 
     it('tags should contain shop/amenity/etc..', () => {
-        const pkeys = Object.keys(tagsConfig)
+        const pkeys = tagsConfig.primaryKeys
         expect(pkeys).toContain('shop')
         expect(pkeys).toContain('advertising')
         expect(pkeys).toContain('amenity')
@@ -18,37 +18,35 @@ describe('tags&Presets', () => {
     });
 
     it('tags should have an ID', () => {
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
-            for (let tag of tags) {
+        for (let  tag of  tagsConfig.tags) {
                 const id = tag.id;
-                expect(id).toBeTruthy(id)
-            }
+                expect(id).toBeTruthy(id);
         }
     });
 
     it('tags should have a "tags" property', () => {
         const withoutTags = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
-            for (let tag of tags) {
+       
+        for (let  tag of  tagsConfig.tags) {
                 if (!tag.tags){
                     withoutTags.push(tag.id)
-                } else {
-                    if ( !tag.tags[pkey] ){
-                        withoutTags.push(tag.id)
-                    }
-                }
+                } 
+                // first element must be primary tag
+                // else {
+                //     if ( !tag.tags[pkey] ){
+                //         withoutTags.push(tag.id)
+                //     }
+                // }
             }
             expect(withoutTags).toEqual([]) 
-        }
+        
     });
 
     it('tags should not have same "tags"', () => {
         const uniqueTags = [];
         const duplicateTags = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
+      
+            const tags =  tagsConfig.tags
             for (let tag of tags) {
                 let tagsStrs = [];
                 for (let t in tag.tags){
@@ -61,7 +59,7 @@ describe('tags&Presets', () => {
                     duplicateTags.push(ts)
                 }
             }
-        }
+        
         expect(duplicateTags).toEqual([]) 
     });
 
@@ -69,8 +67,7 @@ describe('tags&Presets', () => {
     it('tags should have an unique ID', () => {
         const ids = [];
         const duplicateIds = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
+            const tags = tagsConfig.tags
             for (let tag of tags) {
                 const id = tag.id;
                 if (!ids.includes(id)){
@@ -79,14 +76,13 @@ describe('tags&Presets', () => {
                     duplicateIds.push(id);
                 }
             }
-        }
         expect(duplicateIds).toEqual([])  
     });
 
     it('tags should use existing presets id', () => {
         const unknowPresetId = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
+      
+        const tags = tagsConfig.tags
             for (let tag of tags) {
                 const presetsList = tag.presets
                 for (let pid of presetsList){
@@ -96,14 +92,13 @@ describe('tags&Presets', () => {
                 }
 
             }
-        }
+        
         expect(unknowPresetId).toEqual([])  
     });
 
     it('tags should have a unique preset keys', () => {
         const duplicateKeys = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
+        const tags = tagsConfig.tags
             for (let tag of tags) {
                 const presetsList = tag.presets
 
@@ -117,34 +112,33 @@ describe('tags&Presets', () => {
                     
                 }
             }
-        }
+        
         expect(duplicateKeys).toEqual([])  
     });
 
 
     it('tags should have english label', () => {
         const noEn = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
+        const tags = tagsConfig.tags
             for (let tag of tags) {
                 if (!tag.lbl || !tag.lbl.en){
                     noEn.push(tag.id);
                 }
             }
-        }
+        
         expect(noEn).toEqual([])  
     });
 
     it('tags should have "geometry" property ([\'point\',etc} ', () => {
         const nogeom = [];
-        for (let pkey in tagsConfig) {
-            const tags = tagsConfig[pkey].values
+        
+        const tags = tagsConfig.tags
             for (let tag of tags) {
                 if (!tag.geometry || tag.geometry.length < 1){
                     nogeom.push(tag.id);
                 }
             }
-        }
+        
         expect(nogeom).toEqual([])  
     });
 

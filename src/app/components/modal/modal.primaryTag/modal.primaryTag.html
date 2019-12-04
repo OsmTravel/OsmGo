@@ -37,7 +37,7 @@
 
     <div
       class="listTag"
-      *ngIf="selectedKey === 'full' && searchText.length < 3 "
+      *ngIf="searchText.length < 3 "
       (swipeleft)="displayType = 'bookmarks'" 
       (swiperigth)="displayType = 'lastTags'"
     >

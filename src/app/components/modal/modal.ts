@@ -14,7 +14,6 @@ import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 import { AlertComponent } from './components/alert/alert.component';
-// import  osmToOsmgo from '../../../assets/osmToOsmgo.min.js'
 import {getConfigTag} from '../../../../scripts/osmToOsmgo/index.js'
 
 import { Feature, Tag, Preset, PrimaryTag, TagConfig} from '../../../type'
@@ -118,6 +117,8 @@ export class ModalsContentPage implements OnInit {
 
   initComponent(tagConfig: TagConfig = null) {
     this.primaryKey = this.tagsService.findPkey(this.tags);
+
+
     this.feature.properties.primaryTag = this.primaryKey
     // Edit, Read, Loading
     this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read';
@@ -132,7 +133,7 @@ export class ModalsContentPage implements OnInit {
     // this.tagConfig = this.tagsService.getTagConfigByKeyValue(this.primaryKey['key'], this.primaryKey['value']);
     console.log(this.feature);
     if (!tagConfig) {
-      this.tagConfig = getConfigTag(this.feature, this.tagsService.tags);
+      this.tagConfig = getConfigTag(this.feature, this.tagsService.tags, this.tagsService.excludeWays, this.tagsService.primaryKeys);
     } else {
       this.tagConfig = tagConfig;
     }
@@ -182,12 +183,12 @@ export class ModalsContentPage implements OnInit {
   }
 
   // les clés à exclure dans les "autres tags", (qui ne sont pas dans les presets donc)
+  //TODO PIPE
   getExcludeKeysFromOtherTags(primaryKey, tagConfig, exludeTags= false) {
-    const res = [primaryKey, 'name'];
+    let res = [ 'name'];
     if (!tagConfig) {
       return res;
     }
-
     let presetsIds = tagConfig.presets;
     // IF countryTags => Push!
     if (tagConfig && tagConfig.presetsByCountryCodes) {
@@ -196,6 +197,7 @@ export class ModalsContentPage implements OnInit {
         .map(pr => pr.preset)
       presetsIds = [...presetsIds, ...presetsByCountryCodes]
     }
+    // TODO : ajouter le presets !
     for (let i = 0; i < presetsIds.length; i++) {
       if (this.tagsService.presets[presetsIds[i]].key) {
         res.push(this.tagsService.presets[presetsIds[i]].key);
@@ -204,12 +206,10 @@ export class ModalsContentPage implements OnInit {
 
     // excludeTags list in the tag config
     if (exludeTags){
-      for (let t in tagConfig.tags){
-        res.push(t);
-      }
+      res = [...res, ...Object.keys(tagConfig.tags)]
     }
 
-
+    console.log(res);
     return res;
   }
 

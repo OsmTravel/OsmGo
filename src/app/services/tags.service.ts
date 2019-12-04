@@ -12,10 +12,12 @@ export class TagsService {
     lastTagAdded: TagConfig[];
     bookMarks = [];
     savedFields = {};
-    tags;
-    presets = {};
-    basemaps;
+    tags:TagConfig[];
     primaryKeys = [];
+    excludeWays= {};
+    presets = {};
+
+    basemaps;
     jsonSprites
 
 
@@ -108,9 +110,6 @@ export class TagsService {
         this.savedFields[tagId]['tags'] = tags
         // .tags = tags;
         this.localStorage.set('savedFields', this.savedFields);
-        console.log('------addSavedField')
-        console.log(tagId);
-        console.log(tags)
     }
 
     loadLastTagAdded$() {
@@ -135,7 +134,7 @@ export class TagsService {
 
     
   findPkey( featureOrTags): PrimaryTag{
-    const pkeys = Object.keys(this.tags);
+    const pkeys = this.primaryKeys;
     if (featureOrTags.properties && featureOrTags.properties.tags){
         for (let k in featureOrTags.properties.tags){
             if (pkeys.includes(k)){
@@ -158,43 +157,39 @@ export class TagsService {
         return this.http.get(`assets/tags&presets/tags.json`)
             .pipe(
                 map(res => {
-                    const tags = res;
-                    for (const tagsObject in tags) {
-                        for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                            tags[tagsObject].values[i]['primaryKey'] = tagsObject;
-                        }
-                    }
-                    this.tags = tags;
-                    return tags;
+                    this.tags = res['tags'];;
+                    this.primaryKeys = res['primaryKeys'];
+                    this.excludeWays = res['excludeWays'];
+                    return res['tags'];
                 })
             );
     }
 
-    getTagConfigByKeyValue(key, value) {
-        const filtered = this.tags[key].values.filter(elem => elem.key === value);
-        if (filtered.length > 0) {
-            return filtered[0];
-        } else {
-            return undefined;
-        }
-    }
+    // getTagConfigByKeyValue(key, value) {
+    //     const filtered = this.tags[key].values.filter(elem => elem.key === value);
+    //     if (filtered.length > 0) {
+    //         return filtered[0];
+    //     } else {
+    //         return undefined;
+    //     }
+    // }
 
 
     getTags() {
         return cloneDeep(this.tags);
     }
 
-    getFullTags() {
-        const res = [];
-        const tags = this.getTags();
-        for (const tagsObject in tags) {
-            for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                const currentTag = cloneDeep(tags[tagsObject].values[i]);
-                res.push(currentTag);
-            }
-        }
-        return res;
-    }
+    // getFullTags() {
+    //     const res = [];
+    //     const tags = this.getTags();
+    //     for (const tagsObject in tags) {
+    //         for (let i = 0; i < tags[tagsObject].values.length; i++) {
+    //             const currentTag = cloneDeep(tags[tagsObject].values[i]);
+    //             res.push(currentTag);
+    //         }
+    //     }
+    //     return res;
+    // }
 
     getBaseMaps() {
         return this.http.get(`assets/tags&presets/basemap.json`)
@@ -227,7 +222,6 @@ export class TagsService {
           .pipe(
             map( (jsonSprites) => {
                 this.jsonSprites = jsonSprites
-                console.log(jsonSprites);
                 return this.jsonSprites;
             })
           )
@@ -240,11 +234,11 @@ export class TagsService {
             this.getAllTags(),
             this.getBaseMaps()
                 .pipe(
-                    map(allTags => {
-                        for (const key in allTags) {
-                            this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
-                        }
-                    })
+                    // map(allTags => {
+                    //     for (const key in allTags) {
+                    //         this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
+                    //     }
+                    // })
                 )
         )
     }
@@ -298,14 +292,4 @@ export class TagsService {
         return null;
     }
 
-    getConfigMarkerByKv(k, v) {
-        const tags = this.getTags();
-        if (tags[k]) {
-            for (const i in tags[k].values) {
-                if (tags[k].values[i].key === v) {
-                    return tags[k].values[i];
-                }
-            }
-        }
-    }
 }

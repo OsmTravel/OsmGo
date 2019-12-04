@@ -10,7 +10,6 @@ import { FilterExcludeTagByCountryCode } from 'src/app/pipes/filterExcludeTagByC
 import { FilterDeprecatedTagPipe } from 'src/app/pipes/filterDeprecatedTag.pipe';
 import { DisplayTagsPipe } from 'src/app/pipes/display-tags.pipe';
 
-
 const tagConfig: any = require('../../../../../assets/tags&presets/tags.json');
 const jsonSprites : any = require('../../../../../assets/iconsSprites@x2.json')
 describe('TagsListComponent', () => {
@@ -31,12 +30,12 @@ describe('TagsListComponent', () => {
     // component.processInput();
     fixture = TestBed.createComponent(TagsListComponent);
     component = fixture.componentInstance;
-    component.tags = [...tagConfig['shop'].values, ...tagConfig['amenity'].values]
+    component.tags = tagConfig.tags;
 
     component.countryTags = 'FR'
     component.languageTags = 'fr'
     component.searchText = ''
-    component.oldTagConfig = tagConfig['shop'].values[2];
+    component.oldTagConfig = tagConfig.tags[2];
     component.bookmarks = []
     component.jsonSprites = jsonSprites
     component.geometriesFilter = ['point']
