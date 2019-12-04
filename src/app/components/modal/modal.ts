@@ -279,7 +279,7 @@ export class ModalsContentPage implements OnInit {
   dismiss(data = null) {
     this.modalCtrl.dismiss(data);
   }
-  // TODO save
+
   createOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
     this.tagsService.addTagToLastTagAdded(tagconfig);
@@ -374,6 +374,10 @@ export class ModalsContentPage implements OnInit {
             }
           }
         }
+        this.tagId = d.data.id;
+        console.log(d);
+        console.log(this.tagId)
+        
         
         this.zone.run(() => {
           const result = this.initComponent(cloneDeep(_data))
@@ -477,27 +481,26 @@ export class ModalsContentPage implements OnInit {
     }
   }
 
-  saveField(tagId, tags){
+  saveFields(tagId, tags){
     const savedTags = tags.map( t => { return { key: t.key, value: t.value }})
+      .filter( t => t.key !== 'name')
+      .filter(t => t.key !== 'survey:date')
     this.tagsService.addSavedField(tagId, savedTags);
     if (!this.savedFields) this.savedFields = {};
     this.savedFields['tags'] = [...savedTags];
   }
 
   restoreFields(){
-
     if (this.savedFields){
       for (let stags of this.savedFields.tags){
         let t =  this.tags.find( o => o.key === stags.key)
         if (t){
           t['value'] = stags.value
-          // t = { "key": stags, "value": this.savedFields.tags[k]}
         }else {
           this.tags.push(stags)
         }
       }
     }
-    this.initComponent();
   }
   
 
