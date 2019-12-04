@@ -28,8 +28,6 @@ const { Haptics } = Plugins;
 @Injectable({ providedIn: 'root' })
 export class MapService {
 
-
-
   constructor(
     private _ngZone: NgZone,
     public dataService: DataService,
@@ -45,7 +43,6 @@ export class MapService {
 
     this.domMarkerPosition = document.createElement('div');
     this.domMarkerPosition.className = 'positionMarkersSize';
-
     this.arrowDirection = document.createElement('div');
 
     this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
@@ -119,6 +116,20 @@ export class MapService {
   eventMarkerMove = new EventEmitter();
   markerMoving = false; // le marker est en train d'être positionné
   markerPositionate;
+  markerMapboxUnknown = {};
+
+  loadUnknownMarker(factor){
+        // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${factor}X.png`, (error, image) => {
+            this.markerMapboxUnknown['circle']= image;
+          })
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/penta-unknown@${factor}X.png`, (error, image) => {
+            this.markerMapboxUnknown['penta']= image;
+          })
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/square-unknown@${factor}X.png`, (error, image) => {
+            this.markerMapboxUnknown['square']= image;
+          })
+  }
 
   drawWaysPoly(geojson, source) {
     const features = geojson.features;
@@ -398,11 +409,8 @@ export class MapService {
           if (this.layersAreLoaded && this.locationService.location) {
             this.changeLocationRadius(this.locationService.location.coords.accuracy, false);
           }
-
         });
-        // this.map.on('render',e => {
-        //   console.log(e);
-        // })
+        this.loadUnknownMarker(window.devicePixelRatio)
 
       });
     });
@@ -730,20 +738,14 @@ export class MapService {
       // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
       const iconId = e.id;
       if( /^circle/.test(iconId)){
-        const imgBase64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAkCAYAAACTz/ouAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKRSURBVEiJrZdBaFJxHMc/2isziCDTQ9ghi7rIXnTIS4eRlxlFdMkYuzaFDjsV1aFT4GkVdJhXCYYwpILqpg0CQxkbE2IVxFqLtgIXxnCx1H+H53vp9L331/mFH8qP///z/f3+vv///3RgrUPAFeAqcAo41syvAh+BZ8AL4LcNp0Mu4B6wCQib2ATuAPtk4SeAJQnwzngPHLeDq8BaH3A9vgNDZvDDwJddwPVYBY7oUEfL52tgpJtzMBgkFouhqir1ep1isUgymWR5edms2FfApdbEZbOKJiYmRK1WEztVrVZFNBq16qSt2EK3QZFIRDQajQ64ru3tbaGqqpnBOx1+xqyKXC5nwKampoTX6xV+v19kMhkjn0qlrLoYArhrNiCbzYq5uTmRz+eFoihG3uv1GgalUsnK4LYCXDD7pcLhcNf88PCw8b1cLptNBwgDfLKooC08Hk/b8gghxPj4uNWcJYCKDNztdovFxcU2eDqdFk6n02reL4AtGYOxsTEDXKlURDweFw6Hw27eH4CvMgaJRMIwGB0dld3V3xS080M/hk21srLCzMwMAPPz83bDjWkAkzLV+Hw+EQgERCAQEC6XS7aDBMBFmcHT09PGEoVCIVmDESfwBvgp23MPWgNmFbSn6JHejpkKhQKKogCwsbEhY/CQ5lMEcBBYR3LDScR6k9mm6wM0uGbW1vMBwF9ardtRtO3dL7wC+K0MAG7uwuCGHRzACbztAz7L/zveVqeRPASbUQVOysJ13e/B4FavcAAFWJCALwB7+zEAOAfULOB/gbP9wnU9tjB4sFs4wAHgcxf4B2D/IAxAe0trhdeB84OC63raYvBk0HAAD/AD7RrsOCnNtKcHgy20+zuD9mdDSv8AMyN6/UHX5osAAAAASUVORK5CYII='
-        this.map.loadImage('/assets/mapStyle/unknow-marker/circle-unknow.png', (error, image) => {
-          this.map.addImage(iconId, image);
-        })
+        console.log(this.markerMapboxUnknown['circle'])
+          this.map.addImage(iconId, this.markerMapboxUnknown['circle'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
       if( /^penta/.test(iconId)){
-        this.map.loadImage('/assets/mapStyle/unknow-marker/penta-unknow.png', (error, image) => {
-          this.map.addImage(iconId, image);
-        })
+        this.map.addImage(iconId, this.markerMapboxUnknown['penta'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
       if( /^square/.test(iconId)){
-        this.map.loadImage('/assets/mapStyle/unknow-marker/square-unknow.png', (error, image) => {
-          this.map.addImage(iconId, image);
-        })
+        this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
       console.log('missingIcon:', iconId)
 

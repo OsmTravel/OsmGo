@@ -17,10 +17,11 @@ exports.generateSprites = () => {
     const tagsPath = path.join(__dirname, '..', 'src','assets','tags&presets', 'tags.json');
     const outputTmp = path.join(__dirname, 'tmp');
     const outputFolderSVG = path.join(outputTmp, 'SVG');
-  
-    const outPath = path.join(__dirname, '..', 'src','assets', 'mapStyle','sprites') // les sprites en sorti
-
-    const outPathIconSprites = path.join(__dirname, '..', 'src','assets') // les sprites en sorti
+    
+    const assetsPath = path.join(__dirname, '..', 'src','assets')
+    const outPath = path.join(assetsPath, 'mapStyle','sprites') // les sprites en sorti
+    const iconSvgAssetsPath = path.join(assetsPath, 'mapStyle', 'icons') 
+    const outPathIconSprites = path.join(assetsPath) // les sprites en sorti
 
 
     fs.removeSync(outputTmp);
@@ -77,6 +78,7 @@ exports.generateSprites = () => {
 
         if (geometries.includes('point') || geometries.includes('vertex') ){
             const id = 'circle-' + colorMarker + '-' + iconName ;
+  
             if ( !markerUsed.includes(id)){
                 markerUsed.push(id);
                 const SVGcircle = xmlHeader + pathMarkerXMLCircle + pathIconXMLstr + xmlEnd;
@@ -172,10 +174,15 @@ exports.generateSprites = () => {
         console.time('svgToPNG')
         for (let i = 0; i < svgNames.length; i++) {
             const svgFileName = svgNames[i];
-            // console.log(svgFileName);
+           
             const filePath = path.join(outputFolderSVG, svgFileName)
 
             const image = await svgToPNG(filePath, factor);
+            if ( /#000000-.svg/.test(svgFileName) ){
+                console.log(svgFileName);
+                const shape = svgFileName.split('-#')[0]
+                fs.writeFileSync(path.join(assetsPath,'mapStyle','unknown-marker', `${shape}-unknown@${factor}X.png`), image)
+            }
             fs.writeFileSync(path.join(pngFolder, `${svgFileName}.png`), image)
         }
         console.timeEnd('svgToPNG')
@@ -209,13 +216,31 @@ exports.generateSprites = () => {
         })
     }
 
+    const copySvgIconsInAssets = async () => {
+        await fs.emptyDir(iconSvgAssetsPath);
+        console.log(iconsUsed)
+        for (let svgFileName of iconsUsed){
+            const filePath = path.join(iconsSVGsPath, `${svgFileName}.svg`)
+            // copy SVG to assets
+            fs.copySync(filePath, path.join(iconSvgAssetsPath, `${svgFileName}.svg`));
+        }
+
+    }
+
+    const getWikiQuestionBlackMarker =  async( factor) => {
+
+    }
+
     // just icons sprites for interface
     const generateIconSprites = async (factor) => {
         console.info('Sprites for Ui X',factor)
         const pngFolder = path.join(outputTmp, 'PNG_icons');
+     
         await fs.emptyDir(pngFolder)
+       
         for (let svgFileName of iconsUsed){
             const filePath = path.join(iconsSVGsPath, `${svgFileName}.svg`)
+            // copy SVG to assets
             
             const image = await svgToPNG(filePath, factor);
             fs.writeFileSync(path.join(pngFolder, `${svgFileName}.png`), image)
@@ -257,6 +282,7 @@ exports.generateSprites = () => {
     
     return Promise.all(
     [
+        // copySvgIconsInAssets(),
         generateIconSprites(1),
         generateIconSprites(2),
         generateIconSprites(3),
