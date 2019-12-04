@@ -127,7 +127,9 @@
     "PRIMARY_TAG_FULL": "Tous les tags",
     "SELECT_CATEGORY": "Séléctionner une catégorie",
     "THIS_NODE_IS_USED_BY_A_WAY": "Ce nœud est utilisé par {x} chemin(s)",
-    "UNDEFINED_VALUE": "NC"
+    "UNDEFINED_VALUE": "NC",
+    "LAST_TAG_USED": "Derniers tags utilisés",
+    "BOOKMARKS": "Favoris"
   },
   "progress": [114, 116]
 }

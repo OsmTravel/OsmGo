@@ -56,8 +56,7 @@
       </div>
 
       <div class="lastTags" *ngIf="displayType == 'lastTags'"  >
-        <h4>Last tags</h4>
-        <!-- TODO: Translation -->
+        <h4> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
         <app-tags-list 
         [tags]="lastTagsAdded"
         [countryTags]="configService.config.countryTags"
@@ -74,7 +73,7 @@
       </div>
  
       <div class="bookmarks" *ngIf="displayType == 'bookmarks'" >
-        <h4>{{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_BOOKMARKS' | translate }}</h4>
+        <h4>{{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}</h4>
         <app-tags-list 
         [tags]="bookmarks"
         [countryTags]="configService.config.countryTags"

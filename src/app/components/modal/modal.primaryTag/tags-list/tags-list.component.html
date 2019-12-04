@@ -2,7 +2,7 @@
   <tr
     *ngFor="let tag of tags | filterDeprecatedTag | filterExcludeTagByCountryCode:countryTags | filterTagCongigByGeometry:geometriesFilter | filterByTagsContent:[languageTags, countryTags]:searchText;"
   >
-    <td style="width:16px;" [style.background-color]="tag.markerColor">
+    <td style="width:16px;" [style.background-color]="tag.markerColor ? tag.markerColor : 'black'">
             <app-icon  [icon]="tag.icon"[jsonSprites]="jsonSprites">  </app-icon>
     </td>
 
