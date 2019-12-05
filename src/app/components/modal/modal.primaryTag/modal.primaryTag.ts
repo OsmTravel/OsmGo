@@ -13,7 +13,6 @@ export class ModalPrimaryTag implements OnInit {
     selectedKey: string;
     tagsOfselectedKey;
     loading = true;
-    primaryKeys = [];
     allTags: TagConfig[];
     searchText = '';
     currentListOfTags: TagConfig[] = [];
@@ -86,15 +85,20 @@ export class ModalPrimaryTag implements OnInit {
     // }
 
     addCustomValue(key, value){
-        const newConfig = {
-            icon: "",
+        const newConfig:TagConfig = {
+            icon: "wiki_question",
+            markerColor: '#000000',
+            geometry: ['point'],
+            lbl: {'en': `${key} = ${value}` },
+            presets:[],
             id: `${key}/${value}`,
             key: value,
-            presets: [],
-            primaryKey: key,
-            tags: {}
+            tags: {},
+            isUserTag: true
         }
         newConfig.tags[key]= value;
+
+        this.tagsService.addUserTags(newConfig)
 
         this.summit(newConfig);
 

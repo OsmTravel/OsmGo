@@ -145,16 +145,16 @@ export class ModalsContentPage implements OnInit {
 
     this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
 
-    if (this.tagConfig && this.tagConfig.presetsByCountryCodes) {
+    // if (this.tagConfig && this.tagConfig.presetsByCountryCodes) {
 
-      const presetsByCountryCodes = this.tagConfig.presetsByCountryCodes
-        .filter(p => p.countryCodes.includes(this.configService.config.countryTags))
-        .map(pr => pr.preset)
+    //   const presetsByCountryCodes = this.tagConfig.presetsByCountryCodes
+    //     .filter(p => p.countryCodes.includes(this.configService.config.countryTags))
+    //     .map(pr => pr.preset)
 
-      if (!this.presetsIds) this.presetsIds = [];
-      this.presetsIds = [...presetsByCountryCodes, ...this.presetsIds]
+    //   if (!this.presetsIds) this.presetsIds = [];
+    //   this.presetsIds = [...presetsByCountryCodes, ...this.presetsIds]
 
-    }
+    // }
 
     if (this.presetsIds && this.presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant

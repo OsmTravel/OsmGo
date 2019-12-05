@@ -16,6 +16,7 @@ export class TagsService {
     bookmarksIds: string[] = [];
     savedFields = {};
     tags:TagConfig[];
+    userTags:TagConfig[];
     primaryKeys = [];
     excludeWays= {};
     presets = {};
@@ -90,11 +91,31 @@ export class TagsService {
             return;
         }
 
-        this.lastTagsUsedIds = [...this.lastTagsUsedIds , tagId].slice(0,20);
-        this.lastTagsUsed = [...this.lastTagsUsed, currentTag].slice(0,20)
+        this.lastTagsUsedIds = [tagId, ...this.lastTagsUsedIds].slice(0,20);
+        this.lastTagsUsed = [currentTag, ...this.lastTagsUsed].slice(0,20)
 
         this.setLastTagsUsedIds(this.lastTagsUsedIds)
         return currentTag;
+    }
+
+    getUserTagsFromStorage$(){
+        return from( this.localStorage.get('userTags'))
+    }
+
+    setUserTags(userTags: TagConfig[]) {
+        this.localStorage.set('userTags', userTags);
+        this.userTags = userTags;
+    }
+
+    addUserTags(newTag: TagConfig){
+        const newTagId = newTag.id;
+        if (this.userTags.find( t => t.id === newTagId)){
+            return;
+        }
+        this.userTags =  [...this.userTags, newTag]
+        this.tags = [...this.tags, newTag ]
+        this.setUserTags(this.userTags)
+    
     }
 
 
@@ -176,14 +197,18 @@ export class TagsService {
             this.getTagsConfig$(),
             this.getBaseMaps$(),
             this.getBookMarksIdsFromStorage$(),
-            this.getlastTagsUsedIdsFromStorage$()
+            this.getlastTagsUsedIdsFromStorage$(),
+            this.getUserTagsFromStorage$()
         )
         .pipe(
-            map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds]) => {
+            map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags]) => {
 
+                this.userTags = userTags ? userTags : [];
+                console.log(this.userTags);
+        
                 this.jsonSprites = jsonSprites;
                 this.presets = presets;
-                this.tags = tagsConfig['tags'];;
+                this.tags = [...tagsConfig['tags'], this.userTags];
                 this.primaryKeys = tagsConfig['primaryKeys'];
                 this.excludeWays = tagsConfig['excludeWays'];
                 this.configService.baseMapSources = baseMaps;

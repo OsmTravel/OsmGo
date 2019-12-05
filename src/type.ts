@@ -68,7 +68,7 @@ export interface TagConfig{
     iDRef?: string;
     tags: any;
     moreFields?: string[];
-    presetsByCountryCodes: any[];
     id: string;
+    isUserTag?: boolean
 
 }
