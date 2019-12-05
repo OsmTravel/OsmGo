@@ -239,7 +239,7 @@ export class MainPage implements AfterViewInit {
         switchMap( i18nConfig =>  this.configService.loadConfig$(i18nConfig))
       ),
       this.tagsService.loadLastTagAdded$(),
-      this.tagsService.loadBookMarks$(),
+      // this.tagsService.loadBookMarks$(),
       this.tagsService.loadSavedFields$(),
       this.tagsService.loadTagsAndPresets$()
     ).subscribe( () => {

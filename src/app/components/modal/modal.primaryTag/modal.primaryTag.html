@@ -19,7 +19,10 @@
         [bookmarks]="bookmarks"
         [jsonSprites]="tagsService.jsonSprites"
         [geometriesFilter]="geometriesPossible"
-        (addRemoveToBookmarks)="addRemoveToBookmarks($event)"
+        [bookmarksIds]="tagsService.bookmarksIds"
+        (removeBookmark)= removeBookmark($event)
+        (addBookmark)= addBookmark($event)
+
         (selected)="selected($event)"
         >
 
@@ -65,7 +68,9 @@
         [oldTagConfig]="oldTagConfig"
         [bookmarks]="bookmarks"
         [jsonSprites]="tagsService.jsonSprites"
-        (addRemoveToBookmarks)="addRemoveToBookmarks($event)"
+        [bookmarksIds]="tagsService.bookmarksIds"
+        (removeBookmark)= removeBookmark($event)
+        (addBookmark)= addBookmark($event)
         (selected)="selected($event)"
         >
       </app-tags-list>
@@ -82,7 +87,9 @@
         [oldTagConfig]="oldTagConfig"
         [bookmarks]="bookmarks"
         [jsonSprites]="tagsService.jsonSprites"
-        (addRemoveToBookmarks)="addRemoveToBookmarks($event)"
+        [bookmarksIds]="tagsService.bookmarksIds"
+        (removeBookmark)= removeBookmark($event)
+        (addBookmark)= addBookmark($event)
         (selected)="selected($event)"
         >
     </app-tags-list>

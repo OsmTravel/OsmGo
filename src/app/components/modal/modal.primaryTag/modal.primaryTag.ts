@@ -96,9 +96,11 @@ export class ModalPrimaryTag implements OnInit {
         this.summit(config);
     }
 
-    addRemoveToBookmarks(tag) {
-        console.log(tag);
-        this.tagsService.addRemoveBookMark(tag);
+    addBookmark(tag){
+        this.tagsService.addBookMark(tag.id)
+    }
+    removeBookmark(tag){
+        this.tagsService.removeBookMark(tag.id)
     }
 
 

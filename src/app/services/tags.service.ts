@@ -10,7 +10,8 @@ import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 @Injectable({ providedIn: 'root' })
 export class TagsService {
     lastTagAdded: TagConfig[];
-    bookMarks = [];
+    bookMarks:TagConfig[] = []
+    bookmarksIds: string[] = [];
     savedFields = {};
     tags:TagConfig[];
     primaryKeys = [];
@@ -30,40 +31,54 @@ export class TagsService {
     getBookMarks():TagConfig[] {
         return this.bookMarks;
     }
-    setBookMarks(bookMarks) {
-        this.localStorage.set('bookMarks', bookMarks);
-        this.bookMarks = bookMarks;
+
+    setBookMarksIds(bookmarksIds: string[]) {
+        this.localStorage.set('bookmarksIds', bookmarksIds);
+        this.bookmarksIds = bookmarksIds;
     }
 
-    addRemoveBookMark(tag) {
-        let ind = -1;
-        for (let i = 0; i < this.bookMarks.length; i++) {
-            if (this.bookMarks[i].key === tag.key && this.bookMarks[i].primaryKey === tag.primaryKey) {
-                ind = i;
-            }
-        }
-
-        if (ind === -1) {
-            this.bookMarks.push(tag);
-        } else {
-            this.bookMarks.splice(ind, 1);
-        }
-        this.localStorage.set('bookMarks', this.bookMarks);
+    removeBookMark( tagId: string ){
+        this.bookmarksIds = this.bookmarksIds.filter( b => b !== tagId);
+        this.bookMarks = this.bookMarks.filter( b => b.id !== tagId);
+        this.setBookMarksIds(this.bookmarksIds)
     }
 
+    addBookMark(tagId: string){
+        if (this.bookmarksIds.includes(tagId)){
+            return;
+        }
+        let currentTag = this.tags.find( t => t.id === tagId);
+        if (!currentTag){
+            return;
+        }
+        this.bookmarksIds = [...this.bookmarksIds , tagId];
+        this.bookMarks = [...this.bookMarks, currentTag]
 
-    loadBookMarks$() {
-        return from(this.localStorage.get('bookMarks'))
-            .pipe(
-                map(d => {
-                    if (d) {
-                        this.bookMarks = d;
-                    } else {
-                        this.bookMarks = [];
-                    }
-                    return this.bookMarks;
-                })
-            )
+        this.setBookMarksIds(this.bookmarksIds)
+        return currentTag;
+    }
+    // addRemoveBookMark(tagId: string) {
+    //     let ind = -1;
+    //     for (let i = 0; i < this.bookMarks.length; i++) {
+    //         if (this.bookMarks[i].key === tag.key && this.bookMarks[i].primaryKey === tag.primaryKey) {
+    //             ind = i;
+    //         }
+    //     }
+
+    //     if (ind === -1) {
+    //         this.bookMarks.push(tag);
+    //     } else {
+    //         this.bookMarks.splice(ind, 1);
+    //     }
+    //     this.localStorage.set('bookMarks', this.bookMarks);
+    // }
+
+    getTagConfigFromTagsID( tagIds:string[]){
+        return this.tags.filter( tag => tagIds.includes(tag.id))
+    }
+
+    getBookMarksIdsFromStorage$() {
+        return from(this.localStorage.get('bookmarksIds'))
     }
 
 
@@ -234,14 +249,27 @@ export class TagsService {
             this.loadJsonSprites$(),
             this.loadPresets(),
             this.getAllTags(),
-            this.getBaseMaps()
-                .pipe(
-                    // map(allTags => {
-                    //     for (const key in allTags) {
-                    //         this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
-                    //     }
-                    // })
-                )
+            this.getBaseMaps(),
+            this.getBookMarksIdsFromStorage$()
+        )
+        .pipe(
+            map( ([jsonsprites, presets, tags, baseMaps, bookmarksIds]) => {
+                // console.log(jsonsprites, presets, tags, bookmarksIds);
+                console.log('llllllla', bookmarksIds)
+                // console.log(bookmarksIds);
+                    if (bookmarksIds) {
+                        this.bookmarksIds = bookmarksIds
+                        console.log(this.bookmarksIds)
+                        this.bookMarks = this.getTagConfigFromTagsID(bookmarksIds);
+                        console.log(this.bookMarks );
+                    } else {
+                        this.bookMarks = [];
+                        this.bookmarksIds = []
+                    }
+                  
+              
+
+            } )
         )
     }
 

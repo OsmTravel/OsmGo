@@ -17,8 +17,12 @@ export class TagsListComponent implements OnInit {
   @Input() bookmarks: TagConfig[];
   @Input() jsonSprites
   @Input() geometriesFilter: string[];
+  @Input() bookmarksIds: string[];
 
-  @Output() addRemoveToBookmarks = new EventEmitter();
+  @Output() removeBookmark = new EventEmitter();
+  @Output() addBookmark = new EventEmitter();
+  
+
   @Output() selected = new EventEmitter();
   
 
@@ -29,13 +33,8 @@ export class TagsListComponent implements OnInit {
   }
 
   isBookMarked(tag) {
-    const bM: any = this.bookmarks;
-    for (let i = 0; i < bM.length; i++) {
-        if (bM[i].id === tag.id) {
-            return true;
-        }
-    }
-    return false;
+    // TODO pipe
+    return this.bookmarksIds.includes(tag.id)
 }
 
 }
