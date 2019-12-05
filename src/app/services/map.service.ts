@@ -273,13 +273,12 @@ export class MapService {
     this.markerPositionate.remove();
     const coords = this.markerPositionate.getLngLat();
     let newTag;
-    const lastTags = this.tagsService.getLastTagAdded();
-    if (lastTags && lastTags[0]) { // on récupere le dernier tag créé si il existe
-      const lastTagConfig: TagConfig[] = this.tagsService.getLastTagAdded();
-      newTag = {...lastTagConfig[0].tags}
+
+    if (this.tagsService.lastTagsUsed && this.tagsService.lastTagsUsed[0]) { // on récupere le dernier tag créé si il existe
+      newTag = {...this.tagsService.lastTagsUsed[0].tags}
       
     } else {
-      newTag = {...this.tagsService.tags['shop'].values[0].tags};
+      newTag = {...this.tagsService.tags[0].tags};
 
     }
     const pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });

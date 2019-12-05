@@ -20,8 +20,6 @@ export class ModalPrimaryTag implements OnInit {
     typeFiche = 'list';
     customValue = '';
     oldTagConfig: TagConfig;
-    bookmarks: TagConfig[];
-    lastTagsAdded: TagConfig[];
     geometriesPossible:string[] = []
     displayType = 'lastTags'
 
@@ -35,7 +33,6 @@ export class ModalPrimaryTag implements OnInit {
 
 
     ) {
-        console.log(this.params.data);
         this.oldTagConfig = this.params.data.tagConfig
 
     }
@@ -52,32 +49,8 @@ export class ModalPrimaryTag implements OnInit {
         } else if( typeGeomFeature === 'Polygon' || typeGeomFeature === 'MultiPolygon' ){
             this.geometriesPossible =  [...this.geometriesPossible, 'area']
         }
-        console.log(this.geometriesPossible );
-
-        this.bookmarks = this.tagsService.getBookMarks();
-        this.lastTagsAdded = this.tagsService.getLastTagAdded()
-    
-        // this.tagsService.getAllTags().subscribe(allTags => {
-        //     this.allTags = allTags;
-        //     //TODO:
-        //         this.primaryKeys = Object.keys(allTags).sort();
-           
-        //     if (this.configService.getDefaultPrimarykeyWindows() === 'allTags') {
-
-        //         this.selectedKey = 'full';
-        //     } else if (this.configService.getDefaultPrimarykeyWindows() === 'bookmarks') {
-
-        //         this.selectedKey = 'bookmarks';
-        //     } else {
-        //         // this.selectedKey = this._primaryKey.key;
-        //     }
-        
-        //         this.currentListOfTags = this.tagsService.getFullTags();
-            
-        //     this.loading = false;
-        // });
+     
         this.currentListOfTags = this.tagsService.tags;
-            
         this.loading = false;
     }
 

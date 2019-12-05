@@ -159,14 +159,7 @@ export class ModalsContentPage implements OnInit {
     if (this.presetsIds && this.presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
       for (let i = 0; i < this.presetsIds.length; i++) {
-        const preset:Preset = this.tagsService.getPresetsById(this.presetsIds[i]);
-
-        if (preset.optionsFromJson) {
-          this.tagsService.getPresetsOptionFromJson(preset.optionsFromJson)
-            .subscribe(presetOptions => {
-              preset['options'] = presetOptions
-            })
-        }
+        const preset:Preset = this.tagsService.presets[this.presetsIds[i]];
 
         // le tag utilisant la clé du preset
         const tagOfPreset: Tag = this.tags.find(tag => tag.key === preset.key) || undefined;
@@ -282,7 +275,7 @@ export class ModalsContentPage implements OnInit {
 
   createOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
-    this.tagsService.addTagToLastTagAdded(tagconfig);
+    this.tagsService.addTagTolastTagsUsed(tagconfig.id);
 
     if (this.configService.getAddSurveyDate()) {
       this.addSurveyDate()
@@ -298,7 +291,7 @@ export class ModalsContentPage implements OnInit {
 
   updateOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
-    this.tagsService.addTagToLastTagAdded(tagconfig);
+    this.tagsService.addTagTolastTagsUsed(tagconfig.id);
     // si les tags et la position n'ont pas changé, on ne fait rien!
     if (!this.dataIsChanged() && !this.newPosition) {
       this.dismiss();

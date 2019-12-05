@@ -14,7 +14,6 @@ export class TagsListComponent implements OnInit {
   @Input() languageTags;
   @Input() searchText: string;
   @Input() oldTagConfig: TagConfig;
-  @Input() bookmarks: TagConfig[];
   @Input() jsonSprites
   @Input() geometriesFilter: string[];
   @Input() bookmarksIds: string[];

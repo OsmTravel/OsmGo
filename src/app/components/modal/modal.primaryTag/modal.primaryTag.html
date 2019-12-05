@@ -16,7 +16,6 @@
         [languageTags]="configService.config.languageTags"
         [searchText]="searchText"
         [oldTagConfig]="oldTagConfig"
-        [bookmarks]="bookmarks"
         [jsonSprites]="tagsService.jsonSprites"
         [geometriesFilter]="geometriesPossible"
         [bookmarksIds]="tagsService.bookmarksIds"
@@ -61,12 +60,11 @@
       <div class="lastTags" *ngIf="displayType == 'lastTags'"  >
         <h4> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
         <app-tags-list 
-        [tags]="lastTagsAdded"
+        [tags]="this.tagsService.lastTagsUsed"
         [countryTags]="configService.config.countryTags"
         [languageTags]="configService.config.languageTags"
         [searchText]="''"
         [oldTagConfig]="oldTagConfig"
-        [bookmarks]="bookmarks"
         [jsonSprites]="tagsService.jsonSprites"
         [bookmarksIds]="tagsService.bookmarksIds"
         (removeBookmark)= removeBookmark($event)
@@ -80,12 +78,11 @@
       <div class="bookmarks" *ngIf="displayType == 'bookmarks'" >
         <h4>{{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}</h4>
         <app-tags-list 
-        [tags]="bookmarks"
+        [tags]="tagsService.bookMarks"
         [countryTags]="configService.config.countryTags"
         [languageTags]="configService.config.languageTags"
         [searchText]="''"
         [oldTagConfig]="oldTagConfig"
-        [bookmarks]="bookmarks"
         [jsonSprites]="tagsService.jsonSprites"
         [bookmarksIds]="tagsService.bookmarksIds"
         (removeBookmark)= removeBookmark($event)
