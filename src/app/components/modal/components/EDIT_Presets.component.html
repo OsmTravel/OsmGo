@@ -24,8 +24,10 @@
                             <p class="displayLabelListValue">  {{item.lbl[language] || item.lbl['en']}}</p> 
                     </ion-select-option>
 
-                    <ion-select-option  *ngIf="!(tag | displayPresetLabel);" [value]="tag.value" >
-                           <p class="displayLabelListValue"> {{(tag.value)}}</p> 
+
+                    <ion-select-option  *ngIf="(tag | displayPresetLabel) === undefined &&  tag.value!= '' ;" [value]="tag.value" >
+                        {{'<> '}} 
+                           <p class="displayLabelListValue"> {{(tag.value)}} {{(tag | displayPresetLabel)}}</p> 
                     </ion-select-option>
                     
 

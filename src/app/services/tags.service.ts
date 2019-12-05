@@ -135,6 +135,7 @@ export class TagsService {
     
   findPkey( featureOrTags): PrimaryTag{
     const pkeys = this.primaryKeys;
+    console.log(this.primaryKeys);
     if (featureOrTags.properties && featureOrTags.properties.tags){
         for (let k in featureOrTags.properties.tags){
             if (pkeys.includes(k)){
@@ -159,6 +160,7 @@ export class TagsService {
                 map(res => {
                     this.tags = res['tags'];;
                     this.primaryKeys = res['primaryKeys'];
+                    console.log(this.primaryKeys);
                     this.excludeWays = res['excludeWays'];
                     return res['tags'];
                 })
