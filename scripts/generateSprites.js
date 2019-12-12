@@ -107,22 +107,22 @@ exports.generateSprites = () => {
 }
 
 
-    const tags = JSON.parse(fs.readFileSync(tagsPath).toString());
+    const tags = JSON.parse(fs.readFileSync(tagsPath));
     console.log('génération des markers');
     let iconsMarkersStr = [];
-    for (key in tags) {
-        for (let i = 0; i < tags[key].values.length; i++) {
-            if (tags[key].values[i].icon && !iconsUsed.includes(tags[key].values[i].icon)){
+
+        for (let i = 0; i < tags.tags.length; i++) {
+            if (tags.tags[i].icon && !iconsUsed.includes(tags.tags[i].icon)){
               
-                iconsUsed.push(tags[key].values[i].icon);
+                iconsUsed.push(tags.tags[i].icon);
             }
-            let strIcM = tags[key].values[i].markerColor + '|' + tags[key].values[i].icon
+            let strIcM = tags.tags[i].markerColor + '|' + tags.tags[i].icon
             // if (iconsMarkersStr.indexOf(strIcM) == -1) {
                 iconsMarkersStr.push(strIcM);
-                generateMarkerIcon(tags[key].values[i].icon, "#ffffff", tags[key].values[i].markerColor, tags[key].values[i].geometry)
+                generateMarkerIcon(tags.tags[i].icon, "#ffffff", tags.tags[i].markerColor, tags.tags[i].geometry)
             // }
         }
-    }
+
 
     // unknows tag config
     generateMarkerIcon('', "#ffffff", "#000000",['point','line','area'], true)

@@ -159,6 +159,9 @@ export class PushDataToOsmPage implements AfterViewInit {
                             newFeature['properties']['fixme'] = false;
                         }
 
+                        if (newFeature['properties']['deprecated']){
+                            delete newFeature['properties']['deprecated']
+                        }
                         delete newFeature['properties']['changeType'];
                         delete newFeature['properties']['originalData'];
 

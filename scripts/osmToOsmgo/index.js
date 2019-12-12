@@ -115,28 +115,54 @@ const getPrimaryKeyOfObject = (feature, excludesWays, primaryKeys) => {
 }
 
 export function getConfigTag(feature, tagsConfig) {
-    const fetureTags = feature.properties.tags
-
+    const featureTags = feature.properties.tags
+    console.log(featureTags);
     let match = {conf: undefined, matchProps: 0};
     for (let variant of tagsConfig){
         let nb = 0;
         for( let vk in variant.tags){
-            if (!fetureTags[vk] || fetureTags[vk] !== variant.tags[vk]){
+            if (!featureTags[vk] || featureTags[vk] !== variant.tags[vk]){
+                if (vk === 'dance:teaching'){
+                    console.log(vk);
+                    console.log(featureTags[vk])
+                    console.log(variant.tags[vk]);
+                }
+           
                 nb = 0;
                 continue;
             }else {
                 nb++;
+                console.log('okkkkkkk', nb, vk)
             }
         }
         if (nb > match.matchProps){
             match = { conf: variant, matchProps: nb}
         }
+       
     }
     if (match.conf) {
         return match.conf;
     } else {
         
         return null
+    }
+}
+
+
+export function addAttributesToFeature (feature) { // /!\ mutable !
+    // add properties values
+    if (feature.properties.tags.name) {
+        feature.properties['_name'] = feature.properties.tags.name
+    } else if ( feature.properties.tags.ref){
+        feature.properties['_name'] = feature.properties.tags.ref
+    }
+
+
+    if (feature.properties.meta.timestamp) {
+        feature.properties.time = (new Date(feature.properties.meta.timestamp)).getTime();
+    }
+    if (feature.properties.tags.fixme) {
+        feature.properties.fixme = true;
     }
 }
 
@@ -161,6 +187,16 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
         feature.properties.marker = `${markerShape}-${configMarker.markerColor}-${feature.properties.icon}`
         feature.properties.hexColor = configMarker.markerColor;
 
+        if (configMarker.deprecated){
+            feature.properties['deprecated'] = configMarker.deprecated
+       
+        } else {
+            if( feature.properties['deprecated'] ){
+                delete feature.properties['deprecated'];
+            }
+           
+        }
+
 
     } else { // on ne connait pas la 'value', donc pas de config pour le marker
         feature.properties.icon = 'maki-circle'
@@ -168,25 +204,14 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
         feature.properties.marker = `${markerShape}-#000000-`;
     }
 
+
+
+    addAttributesToFeature(feature)
+
     return feature;
 }
 
-export function addAttributesToFeature (feature) { // /!\ mutable !
-    // add properties values
-    if (feature.properties.tags.name) {
-        feature.properties['_name'] = feature.properties.tags.name
-    } else if ( feature.properties.tags.ref){
-        feature.properties['_name'] = feature.properties.tags.ref
-    }
 
-
-    if (feature.properties.meta.timestamp) {
-        feature.properties.time = (new Date(feature.properties.meta.timestamp)).getTime();
-    }
-    if (feature.properties.tags.fixme) {
-        feature.properties.fixme = true;
-    }
-}
 
 
 const getMergedGeojsonGeojsonChanged = (geojson, geojsonChanged) => {

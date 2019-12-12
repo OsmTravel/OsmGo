@@ -88,6 +88,10 @@ export class ModalsContentPage implements OnInit {
   ngOnInit() { // override
     // console.log(this.feature);
     this.initComponent();
+
+    if (this.mode === 'Create'){
+      this.openPrimaryTagModal();
+    }
   }
 
   presentConfirm() {
@@ -116,12 +120,14 @@ export class ModalsContentPage implements OnInit {
   }
 
   initComponent(tagConfig: TagConfig = null) {
-    this.primaryKey = this.tagsService.findPkey(this.tags);
 
+    
+    this.primaryKey = this.tagsService.findPkey(this.tags);
+    console.log(this.primaryKey);
 
     this.feature.properties.primaryTag = this.primaryKey
     // Edit, Read, Loading
-    this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read';
+    this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read'; // ?
 
     // supprimer les valeurs vide de this.tags (changement de type)
     this.tags = this.tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue);
@@ -138,6 +144,7 @@ export class ModalsContentPage implements OnInit {
       this.tagConfig = tagConfig;
     }
 
+    console.log(this.tagConfig);
     this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
     this.savedFields = this.tagsService.savedFields[this.tagId];
 
@@ -247,7 +254,8 @@ export class ModalsContentPage implements OnInit {
 
   updateOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
-    this.tagsService.addTagTolastTagsUsed(tagconfig.id);
+
+    this.tagsService.addTagTolastTagsUsed(tagconfig ? tagconfig.id : null);
     // si les tags et la position n'ont pas changé, on ne fait rien!
     if (!this.dataIsChanged() && !this.newPosition) {
       this.dismiss();
@@ -448,6 +456,32 @@ export class ModalsContentPage implements OnInit {
         }
       }
     }
+  }
+
+
+  fixDeprecated(deprecated:any){
+
+    const deprecadetKeys =  Object.keys(deprecated.old)
+    // delete old tags
+    this.tags = this.tags.filter( t => !deprecadetKeys.includes(t.key) )
+    
+    for (let depold of deprecadetKeys){
+      if ( this.feature.properties[depold]){
+        delete this.feature.properties[depold];
+      }
+    }
+    this.feature.properties.tags = {...deprecated.replace, ...this.feature.properties.tags}
+
+    // add new
+    for (let k in deprecated.replace){
+      this.tags = [ { 'key':k, 'value': deprecated.replace[k] } , ...this.tags]
+    }
+
+    if (this.mode !== 'Update'){
+      this.mode = 'Update';
+      this.typeFiche = 'Edit'
+    }
+    this.initComponent();
   }
   
 

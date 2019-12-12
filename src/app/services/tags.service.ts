@@ -82,6 +82,9 @@ export class TagsService {
 
 
     addTagTolastTagsUsed(tagId: string) {
+        if (!tagId){
+            return;
+        }
         if (this.lastTagsUsedIds.includes(tagId)){
             this.lastTagsUsedIds = this.lastTagsUsedIds.filter( tu => tu !== tagId);
             this.lastTagsUsed = this.lastTagsUsed.filter(tu => tu.id !== tagId)  

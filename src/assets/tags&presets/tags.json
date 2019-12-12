@@ -27900,7 +27900,7 @@
       },
       "terms": {
         "en": "excrement bags,poop,waste,dog,animal",
-        "fr": "distributeur de sacs pour excréments,crottes de chien,sacs à excrément,chien,canin,animal",
+        "fr": "distributeur de sacs pour excréments,crottes de chien,sacs à excrément,chien,canin,animal, caca",
         "de": "Kottütenspender, Kotsackerlspender, Hundekottütenspender",
         "es": "Bolsas de excremento, caca, residuos, perro, animal",
         "pt": "excrement, excrementos, cocó, dejetos, saco, sacos",
@@ -34684,7 +34684,7 @@
       }
     },
     {
-      "icon": "fa-music",
+      "icon": "dance-instructor",
       "markerColor": "#5B396C",
       "presets": ["building_area", "dance/style"],
       "lbl": {
@@ -56319,7 +56319,7 @@
       },
       "terms": {
         "en": "excrement,shit,sewage,wastewater,Settling Basin,Clarifier Basin",
-        "fr": "bassin d'eaux usées,station d'épuration,égouts,eaux usées",
+        "fr": "bassin d'eaux usées,station d'épuration,égouts,eaux usées, caca",
         "de": "Abwasserbecken",
         "es": "Excrementos, mierda, aguas residuales, residuos, Cuenca de asentamiento, Cuenca clarificadora",
         "pt": "wastewater basin, bacia de decantação em ETAR, bacia de decantação, ETAR,esgotos,dejetos",
@@ -62545,7 +62545,7 @@
         "vi": "cột bê tông, cột be-tông, cot be tong, cot be tong",
         "zh": "护柱"
       },
-      "geometry": ["point", "vertex"],
+      "geometry": ["point", "vertex", "line"],
       "iDRef": "barrier/bollard",
       "tags": {"barrier": "bollard"},
       "moreFields": [],

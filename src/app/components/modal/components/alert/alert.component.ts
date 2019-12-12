@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-alert',
@@ -9,7 +9,8 @@ export class AlertComponent implements OnInit {
 
     @Input() tagConfig;
     @Input() language;
-    @Input() countryCode; 
+    @Input() countryCode;
+    @Output() fixDeprecated = new EventEmitter(); 
 
   constructor() { }
 

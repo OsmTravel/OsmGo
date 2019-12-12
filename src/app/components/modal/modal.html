@@ -33,7 +33,8 @@
 			<app-alert 
 				[tagConfig]="tagConfig" 
 				[language] = "this.configService.config.languageTags"
-				[countryCode]= "this.configService.config.countryTags">
+				[countryCode]= "this.configService.config.countryTags"
+				(fixDeprecated) = "fixDeprecated($event)">
 			</app-alert>
 
 		
@@ -132,7 +133,8 @@
 			<app-alert 
 				[tagConfig]="tagConfig" 
 				[language] = "this.configService.config.languageTags"
-				[countryCode]= "this.configService.config.countryTags">
+				[countryCode]= "this.configService.config.countryTags"
+				(fixDeprecated) = "fixDeprecated($event)">
 			</app-alert>
 
 			<!--Primary key-->

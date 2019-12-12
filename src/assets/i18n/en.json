@@ -128,5 +128,9 @@
     "UNDEFINED_VALUE": "Unknown",
     "LAST_TAG_USED": "Last used tags",
     "BOOKMARKS": "Bookmarks"
+  },
+  "ALERT":{
+    "TAG_IS_DEPRECATED": "This tag is deprecated",
+    "FIX": "Fix"
   }
 }

@@ -645,7 +645,7 @@ export class MapService {
         'icon-image': 'Fixme', 'icon-ignore-placement': true, 'icon-offset': [13, -12],
         'visibility': 'none'
       },
-      'filter':  ["any", ['get','fixme'] ] 
+      'filter':  [ "any", ['has','fixme'] , ['has', 'deprecated'] ]
       
     });
 
