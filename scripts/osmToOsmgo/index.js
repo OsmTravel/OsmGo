@@ -171,11 +171,15 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
     return feature;
 }
 
-const addAttributesToFeature = (feature) => { // /!\ mutable !
+export function addAttributesToFeature (feature) { // /!\ mutable !
     // add properties values
     if (feature.properties.tags.name) {
         feature.properties['_name'] = feature.properties.tags.name
+    } else if ( feature.properties.tags.ref){
+        feature.properties['_name'] = feature.properties.tags.ref
     }
+
+
     if (feature.properties.meta.timestamp) {
         feature.properties.time = (new Date(feature.properties.meta.timestamp)).getTime();
     }

@@ -125,7 +125,7 @@ export class ModalsContentPage implements OnInit {
 
     // supprimer les valeurs vide de this.tags (changement de type)
     this.tags = this.tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue);
-    if (!this.tags.filter(tag => tag.key === 'name')[0]) { // on ajoute un nom vide si il n'existe pas
+    if (!this.tags.find(tag => tag.key === 'name')) { // on ajoute un nom vide si il n'existe pas
       this.tags.push({ key: 'name', value: '' });
     }
 
@@ -138,23 +138,10 @@ export class ModalsContentPage implements OnInit {
       this.tagConfig = tagConfig;
     }
 
-    console.log('tagConfig', this.tagConfig)
-
     this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
     this.savedFields = this.tagsService.savedFields[this.tagId];
 
     this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
-
-    // if (this.tagConfig && this.tagConfig.presetsByCountryCodes) {
-
-    //   const presetsByCountryCodes = this.tagConfig.presetsByCountryCodes
-    //     .filter(p => p.countryCodes.includes(this.configService.config.countryTags))
-    //     .map(pr => pr.preset)
-
-    //   if (!this.presetsIds) this.presetsIds = [];
-    //   this.presetsIds = [...presetsByCountryCodes, ...this.presetsIds]
-
-    // }
 
     if (this.presetsIds && this.presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
@@ -173,37 +160,6 @@ export class ModalsContentPage implements OnInit {
     }
 
     return {tagConfig : this.tagConfig, tags: this.tags, feature: this.feature }
-  }
-
-  // les clés à exclure dans les "autres tags", (qui ne sont pas dans les presets donc)
-  //TODO PIPE
-  getExcludeKeysFromOtherTags(primaryKey, tagConfig, exludeTags= false) {
-    let res = [ 'name'];
-    if (!tagConfig) {
-      return res;
-    }
-    let presetsIds = tagConfig.presets;
-    // IF countryTags => Push!
-    if (tagConfig && tagConfig.presetsByCountryCodes) {
-      const presetsByCountryCodes = tagConfig.presetsByCountryCodes
-        .filter(p => p.countryCodes.includes(this.configService.config.countryTags))
-        .map(pr => pr.preset)
-      presetsIds = [...presetsIds, ...presetsByCountryCodes]
-    }
-    // TODO : ajouter le presets !
-    for (let i = 0; i < presetsIds.length; i++) {
-      if (this.tagsService.presets[presetsIds[i]].key) {
-        res.push(this.tagsService.presets[presetsIds[i]].key);
-      }
-    }
-
-    // excludeTags list in the tag config
-    if (exludeTags){
-      res = [...res, ...Object.keys(tagConfig.tags)]
-    }
-
-    console.log(res);
-    return res;
   }
 
   dataIsChanged() {
@@ -368,8 +324,6 @@ export class ModalsContentPage implements OnInit {
           }
         }
         this.tagId = d.data.id;
-        console.log(d);
-        console.log(this.tagId)
         
         
         this.zone.run(() => {
