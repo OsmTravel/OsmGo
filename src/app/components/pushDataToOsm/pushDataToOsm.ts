@@ -10,6 +10,7 @@ import { ConfigService } from '../../services/config.service';
 import { timer } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { cloneDeep, clone } from 'lodash';
+import { addAttributesToFeature } from '../../../../scripts/osmToOsmgo/index.js'
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -123,6 +124,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['properties']['time'] = new Date().getTime();
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
+                        addAttributesToFeature(newFeature)
                         this.summary.Total--;
                         this.summary.Create--;
                         
@@ -162,6 +164,7 @@ export class PushDataToOsmPage implements AfterViewInit {
 
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
+                        addAttributesToFeature(newFeature)
                         this.summary.Total--;
                         this.summary.Update--;
 

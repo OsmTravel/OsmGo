@@ -339,11 +339,6 @@ export class OsmApiService {
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
         addAttributesToFeature(feature)
-        console.log(feature);
-        // this.osmgo addAttributesToFeature
-        // if( _feature.properties.tags.name){
-        //     feature.properties['_name'] = _feature.properties.tags.name;
-        // }
         this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
         // refresh changed only
         return of(_feature);

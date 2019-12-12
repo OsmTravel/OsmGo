@@ -7,7 +7,11 @@
  - Adding some unit test
  - Select multi features components
  - add keys : aerialway, playground, attraction, barrier, power
- - You can save and restore fields
+ - You can save and restore fields 
+ - Yf the name is undefined but the ref attribute is present, the latter will be displayed on the map
+ - Deleting the live update feature
+ - The last tags used are display by default. If you want to choose another preset, you must type 3 letters in the searchbar
+ - Add icon and color on the information sheet
 
 # 0.12.0
 ## Features

@@ -71,10 +71,10 @@
       
     </tr>
     <tr *ngFor="let item of featuresChanges">
-      <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
-        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add" class="iconType" ></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create" class="iconType" ></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash" class="iconType" ></ion-icon>
+      <td>
+        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add" class="iconType" style="color:green" ></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create" class="iconType" style="color:blue" ></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash" class="iconType" style="color:red"  ></ion-icon>
       </td>
       <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
           <app-icon  class="imgCenter iconImg" [icon]="item.properties.icon" [jsonSprites]="tagsService.jsonSprites">  </app-icon>
@@ -84,7 +84,7 @@
       <td>{{item.properties?._name}}</td>
       <td>{{item.properties?.primaryTag.key}}: {{item.properties?.primaryTag.value}}</td>
      
-        <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon name="locate"></ion-icon>  </td>
+        <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon style="font-size: 2em;" name="locate"></ion-icon>  </td>
       <td>
         <div *ngIf="item.error" (click)="displayError(item.error)">
           <ion-icon name="bug"></ion-icon>
