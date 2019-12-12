@@ -3049,7 +3049,9 @@
       "iDRef": "shop/fashion",
       "tags": {"shop": "fashion"},
       "moreFields": [],
-      "id": "shop/fashion"
+      "id": "shop/fashion",
+      "deprecated": true,
+      "replace": {"shop": "clothes"}
     },
     {
       "icon": "fa-motorcycle",
@@ -9784,7 +9786,8 @@
       "iDRef": "shop/boutique",
       "tags": {"shop": "boutique"},
       "moreFields": [],
-      "id": "shop/boutique"
+      "id": "shop/boutique",
+      "replace": {"shop": "clothes"}
     },
     {
       "icon": "osm-perfumery",
@@ -10583,7 +10586,8 @@
       "id": "shop/fishmonger",
       "description": {"en": "", "pl": "Owoce morza."},
       "alert": {"en": "", "fr": "shop=seafood"},
-      "deprecated": true
+      "deprecated": true,
+      "replace": {"shop": "seafood"}
     },
     {
       "icon": "maki-shop",
@@ -10630,7 +10634,8 @@
       "moreFields": [],
       "id": "shop/furnace",
       "description": {"en": "", "ru": "Магазин по продаже печей."},
-      "deprecated": true
+      "deprecated": true,
+      "replace": {"shop": "fireplace"}
     },
     {
       "icon": "temaki-laundry",
@@ -12795,7 +12800,9 @@
       "iDRef": "amenity/embassy",
       "tags": {"amenity": "embassy"},
       "moreFields": ["email", "fax", "phone", "website", "wheelchair"],
-      "id": "amenity/embassy"
+      "id": "amenity/embassy",
+      "deprecated": true,
+      "replace": {"office": "diplomatic"}
     },
     {
       "icon": "mi-bus-station",
@@ -13870,7 +13877,9 @@
         "en": "",
         "pt": "Usado para marcar um edifício público.",
         "ru": "Ранее использовался для обозначения общественных зданий."
-      }
+      },
+      "deprecated": true,
+      "replace": {"building": "public"}
     },
     {
       "icon": "mi-cafe",
@@ -16384,7 +16393,8 @@
       },
       "tags": {"amenity": "nursery"},
       "geometry": ["point", "area"],
-      "id": "amenity/nursery"
+      "id": "amenity/nursery",
+      "replace": {"amenity": "kindergarten"}
     },
     {
       "icon": "fa-balance-scale",
@@ -17451,7 +17461,8 @@
       },
       "tags": {"amenity": "gym"},
       "geometry": ["point", "area"],
-      "id": "amenity/gym"
+      "id": "amenity/gym",
+      "replace": {"leisure": "fitness_centre"}
     },
     {
       "icon": "osm-community_centre",
@@ -20010,7 +20021,8 @@
       "tags": {"amenity": "swimming_pool"},
       "moreFields": [],
       "reference": {"key": "leisure", "value": "swimming_pool"},
-      "id": "amenity/swimming_pool"
+      "id": "amenity/swimming_pool",
+      "replace": {"leisure": "swimming_pool"}
     },
     {
       "icon": "mi-roofing-contractor",
@@ -20635,7 +20647,9 @@
       },
       "tags": {"amenity": "dancing_school"},
       "geometry": ["point", "area"],
-      "id": "amenity/dancing_school"
+      "id": "amenity/dancing_school",
+      "deprecated": true,
+      "replace": {"leisure": "dance", "dance:teaching": "yes"}
     },
     {
       "icon": "fa-camera",
@@ -21207,7 +21221,8 @@
       "lbl": {"en": "Hotel", "fr": "Hôtel"},
       "tags": {"amenity": "hotel"},
       "geometry": ["point", "area"],
-      "id": "amenity/hotel"
+      "id": "amenity/hotel",
+      "replace": {"tourism": "hotel"}
     },
     {
       "icon": "fa-apple",
@@ -21227,7 +21242,8 @@
       "alert": {"en": "prefer leisure=sauna", "fr": "Utilisez leisure=sauna"},
       "tags": {"amenity": "sauna"},
       "geometry": ["point", "area"],
-      "id": "amenity/sauna"
+      "id": "amenity/sauna",
+      "replace": {"leisure": "sauna"}
     },
     {
       "icon": "maki-town-hall",
@@ -21281,7 +21297,9 @@
         "de": "DISCOURAGED",
         "pt": "Used to mark a register of births, marriages and deaths.",
         "ru": "Указывает отделы записи актов гражданского состояния - ЗАГСы"
-      }
+      },
+      "deprecated": true,
+      "replace": {"office": "government", "government": "register_office"}
     },
     {
       "icon": "maki-car",
@@ -21324,7 +21342,9 @@
       "tags": {"amenity": "scrapyard"},
       "moreFields": [],
       "reference": {"key": "industrial", "value": "scrap_yard"},
-      "id": "amenity/scrapyard"
+      "id": "amenity/scrapyard",
+      "deprecated": true,
+      "replace": {"landuse": "industrial", "industrial": "scrap_yard"}
     },
     {
       "icon": "maki-veterinary",
@@ -28942,7 +28962,9 @@
       "tags": {"public_transport": "station", "aerialway": "yes"},
       "reference": {"key": "aerialway", "value": "station"},
       "moreFields": [],
-      "id": "public_transport/station_aerialway"
+      "id": "public_transport/station_aerialway",
+      "deprecated": true,
+      "replace": {"public_transport": "station", "aerialway": "station"}
     },
     {
       "icon": "maki-bus",
@@ -39104,7 +39126,9 @@
       "tags": {"craft": "optician"},
       "moreFields": [],
       "reference": {"key": "shop", "value": "optician"},
-      "id": "craft/optician"
+      "id": "craft/optician",
+      "deprecated": true,
+      "replace": {"shop": "optician"}
     },
     {
       "icon": "mi-painter",
@@ -41209,7 +41233,9 @@
       "tags": {"craft": "jeweler"},
       "moreFields": [],
       "reference": {"key": "shop", "value": "jewelry"},
-      "id": "craft/jeweler"
+      "id": "craft/jeweler",
+      "deprecated": true,
+      "replace": {"shop": "jewelry"}
     },
     {
       "icon": "temaki-tools",
@@ -46409,7 +46435,8 @@
       "iDRef": "office/administrative",
       "tags": {"office": "administrative"},
       "moreFields": [],
-      "id": "office/administrative"
+      "id": "office/administrative",
+      "replace": {"office": "government"}
     },
     {
       "icon": "people-carry-solid",
@@ -61254,7 +61281,9 @@
         "it": "Sottostazione elettrica",
         "ja": "変電所向けの非推奨のタグ",
         "pl": "Podstacja wysokiego napięcia."
-      }
+      },
+      "deprecated": true,
+      "replace": {"power": "substation"}
     },
     {
       "icon": "",
