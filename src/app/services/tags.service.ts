@@ -211,7 +211,8 @@ export class TagsService {
         
                 this.jsonSprites = jsonSprites;
                 this.presets = presets;
-                this.tags = [...tagsConfig['tags'], this.userTags];
+                this.tags = [...tagsConfig['tags'], ...this.userTags];
+                console.log(this.tags);
                 this.primaryKeys = tagsConfig['primaryKeys'];
                 this.excludeWays = tagsConfig['excludeWays'];
                 this.configService.baseMapSources = baseMaps;

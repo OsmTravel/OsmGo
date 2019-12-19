@@ -116,23 +116,15 @@ const getPrimaryKeyOfObject = (feature, excludesWays, primaryKeys) => {
 
 export function getConfigTag(feature, tagsConfig) {
     const featureTags = feature.properties.tags
-    console.log(featureTags);
     let match = {conf: undefined, matchProps: 0};
     for (let variant of tagsConfig){
         let nb = 0;
         for( let vk in variant.tags){
             if (!featureTags[vk] || featureTags[vk] !== variant.tags[vk]){
-                if (vk === 'dance:teaching'){
-                    console.log(vk);
-                    console.log(featureTags[vk])
-                    console.log(variant.tags[vk]);
-                }
-           
                 nb = 0;
                 continue;
             }else {
                 nb++;
-                console.log('okkkkkkk', nb, vk)
             }
         }
         if (nb > match.matchProps){

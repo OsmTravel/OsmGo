@@ -10,7 +10,7 @@
         ></ion-searchbar>
       </div>
     </div>
-
+  
     <div class="listTag" *ngIf="searchText.length > 2 ">
       <app-tags-list 
         [tags]="currentListOfTags"
@@ -23,8 +23,8 @@
         [bookmarksIds]="tagsService.bookmarksIds"
         (removeBookmark)= removeBookmark($event)
         (addBookmark)= addBookmark($event)
-
         (selected)="selected($event)"
+  
         >
 
       </app-tags-list>
@@ -42,8 +42,8 @@
     <div
       class="listTag"
       *ngIf="searchText.length < 3 "
-      (swipeleft)="displayType = 'bookmarks'" 
-      (swiperigth)="displayType = 'lastTags'"
+      (swipeleft)="swipeLeft()" 
+      (swiperight)="swipeRight()"
     >
       <h4 style="text-align: center;">
         {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate}}
@@ -51,17 +51,19 @@
 
       <div class="buttonsSwitchType">
           <ion-button ion-button  (click)="displayType = 'lastTags'" class="buttonSwitchType"  [disabled]="displayType === 'lastTags'">
-              lastTags
+            {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} 
             </ion-button>
         <ion-button ion-button  (click)="displayType = 'bookmarks'"  class="buttonSwitchType" [disabled]="displayType === 'bookmarks'">
-          Bookmarks
+          {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
         </ion-button>
      
       </div>
 
+
       <div class="lastTags" *ngIf="displayType == 'lastTags'"  >
         <h4> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
-        <app-tags-list 
+        <app-tags-list
+     
         [tags]="this.tagsService.lastTagsUsed"
         [countryTags]="configService.config.countryTags"
         [languageTags]="configService.config.languageTags"
@@ -72,6 +74,7 @@
         (removeBookmark)= removeBookmark($event)
         (addBookmark)= addBookmark($event)
         (selected)="selected($event)"
+        (swipeLeft)="swipeLeft()"
         >
       </app-tags-list>
 
@@ -90,6 +93,7 @@
         (removeBookmark)= removeBookmark($event)
         (addBookmark)= addBookmark($event)
         (selected)="selected($event)"
+        
         >
     </app-tags-list>
   </div>
@@ -105,16 +109,13 @@
   </div>
 
   <div *ngIf="loading" style="height:100%">
-    <ion-header>
-      <ion-toolbar>
+    <!-- <ion-header>
+      <ion-toolbar> -->
         <ion-title>
           {{ 'MODAL_SELECTED_ITEM.LOADING' | translate}}
         </ion-title>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content> </ion-content>
-
-    <ion-footer> </ion-footer>
+      <!-- </ion-toolbar>
+    </ion-header> -->
   </div>
 </div>
+

@@ -1,5 +1,7 @@
-<table class="tableListe">
-  <tr
+<div style="width:100%;"  >
+<table class="tableListe" style="width:100%; height: 100%;" >
+  <tbody style="width:100%; ">
+  <tr 
     *ngFor="let tag of tags | filterDeprecatedTag | filterExcludeTagByCountryCode:countryTags | filterTagCongigByGeometry:geometriesFilter | filterByTagsContent:[languageTags, countryTags]:searchText;"
   >
     <td style="width:16px;" [style.background-color]="tag.markerColor ? tag.markerColor : 'black'">
@@ -41,4 +43,6 @@
       </div>
     </td>
   </tr>
+</tbody>
 </table>
+</div>

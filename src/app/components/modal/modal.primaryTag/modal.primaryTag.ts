@@ -19,7 +19,7 @@ export class ModalPrimaryTag implements OnInit {
     typeFiche = 'list';
     customValue = '';
     oldTagConfig: TagConfig;
-    geometriesPossible:string[] = []
+    geometriesPossible: string[] = []
     displayType = 'lastTags'
 
 
@@ -39,16 +39,16 @@ export class ModalPrimaryTag implements OnInit {
     ngOnInit() {
         const typeGeomFeature = this.params.data.geojson.geometry.type;
         const usedByWay = this.params.data.geojson.properties.usedByWays ? true : false
-        if (typeGeomFeature === 'Point' && !usedByWay){
-            this.geometriesPossible =  [...this.geometriesPossible, 'point']
-        } else if (typeGeomFeature === 'Point' && usedByWay){
-                this.geometriesPossible =  [...this.geometriesPossible, 'vertex']
-        } else if( typeGeomFeature === 'Polyline' || typeGeomFeature === 'MultiPolyline' ){
-            this.geometriesPossible =  [...this.geometriesPossible, 'line']
-        } else if( typeGeomFeature === 'Polygon' || typeGeomFeature === 'MultiPolygon' ){
-            this.geometriesPossible =  [...this.geometriesPossible, 'area']
+        if (typeGeomFeature === 'Point' && !usedByWay) {
+            this.geometriesPossible = [...this.geometriesPossible, 'point']
+        } else if (typeGeomFeature === 'Point' && usedByWay) {
+            this.geometriesPossible = [...this.geometriesPossible, 'vertex']
+        } else if (typeGeomFeature === 'Polyline' || typeGeomFeature === 'MultiPolyline') {
+            this.geometriesPossible = [...this.geometriesPossible, 'line']
+        } else if (typeGeomFeature === 'Polygon' || typeGeomFeature === 'MultiPolygon') {
+            this.geometriesPossible = [...this.geometriesPossible, 'area']
         }
-     
+
         this.currentListOfTags = this.tagsService.tags;
         this.loading = false;
     }
@@ -68,31 +68,42 @@ export class ModalPrimaryTag implements OnInit {
         this.summit(config);
     }
 
-    addBookmark(tag){
+    addBookmark(tag) {
         this.tagsService.addBookMark(tag.id)
     }
-    removeBookmark(tag){
+    removeBookmark(tag) {
         this.tagsService.removeBookMark(tag.id)
     }
 
 
-    addCustomValue(key, value){
-        const newConfig:TagConfig = {
+    addCustomValue(key, value) {
+        const newConfig: TagConfig = {
             icon: "wiki_question",
             markerColor: '#000000',
             geometry: ['point'],
-            lbl: {'en': `${key} = ${value}` },
-            presets:[],
+            lbl: { 'en': `${key} = ${value}` },
+            presets: [],
             id: `${key}/${value}`,
             key: value,
             tags: {},
             isUserTag: true
         }
-        newConfig.tags[key]= value;
+        newConfig.tags[key] = value;
 
         this.tagsService.addUserTags(newConfig)
 
         this.summit(newConfig);
 
+    }
+
+
+    swipeLeft() {
+        console.log('this.swipeLeft')
+        this.displayType = 'bookmarks'
+
+    }
+    swipeRight() {
+        console.log('swipeRight')
+        this.displayType = 'lastTags'
     }
 }
