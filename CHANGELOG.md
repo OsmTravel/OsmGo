@@ -1,17 +1,38 @@
 # 1.0.0
+## Tags & presets
  - Refactoring Tags & Presets configuration
- - Import "brand" from name-suggestion-index/
+    - Configuration by tags (not only  by primary key /  value).
+        - amenity=fast_food => Fast food
+        - amenity=fast_food & cuisine=pizza => Fast food Pizza
+    - One files for all language
+    - Tags & presets can be filter by country code
  - Import tags & presets from iD
- - Import other languages from iD ! ( tags & presets)
- - Configuration by tags (not only  by primary key /  value)
+ - Import deprecated presets from ID
+ - Import "brand" from name-suggestion-index/
+ - Import languages translation from iD ! ( tags & presets)
+ - Add keys : aerialway, playground, attraction, barrier, power
+ - Import descriptions from TagInfo
+
+## ✨ Features
+ - You can save and restore fields
+ - You can fix deprecated presets automatically (with a button)
+ - Deprecated items are now highlighted on the map
+
+## Deleting Features
+ - Deleting the live update mode
+ - OsmGo-Admin has its [own repository](https://github.com/DoFabien/OsmGo-admin)
+
+## 🍏 Improvements
  - Adding some unit test
+ - Mapbox gl js 1.6.0
+ - Icons are now stored in a sprite ( no SVG)
+
+## UI
  - Select multi features components
- - add keys : aerialway, playground, attraction, barrier, power
- - You can save and restore fields 
- - Yf the name is undefined but the ref attribute is present, the latter will be displayed on the map
- - Deleting the live update feature
- - The last tags used are display by default. If you want to choose another preset, you must type 3 letters in the searchbar
+ - If the name is undefined but the ref attribute is present, the latter will be displayed on the map
+ - The 20 last tags used are saved and display in a list. If you want to choose another preset, you must type 3 letters in the searchbar
  - Add icon and color on the information sheet
+ 
 
 # 0.12.0
 ## Features

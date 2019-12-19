@@ -13,15 +13,30 @@
 
 			</ion-toolbar>
 
-			<ion-fab style="bottom:-26; right: 5px;" class="fabToogleCode">
-				<ion-fab-button size="small" (click)="toogleCode()">
-					<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-					<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
-				</ion-fab-button>
-			</ion-fab>
+	
 
 		</ion-header>
 		<div class="content">
+	
+			<div class="actions"> 
+				<ion-fab  horizontal="end" >
+						<ion-fab-button  size="small" (click)="toogleCode()">
+							<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+							<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+						</ion-fab-button>
+				</ion-fab>
+				<ion-fab  >
+					<ion-fab-button color="light" size="small" (click)="addOrRemoveBookmark(tagConfig)">
+						<ion-icon
+						[style.color]=" (tagConfig | isBookmarked:tagsService.bookmarksIds) ? '#f71000' : '#d8d8d8'"
+						name="heart"
+						item-left
+						style="font-size: 26px;"
+					  ></ion-icon>
+					</ion-fab-button>
+				</ion-fab>
+			</div>
+
 			<read-meta *ngIf="feature.properties.meta" 
 					[feature]="feature"
 					[displayCode]="displayCode"
@@ -95,34 +110,51 @@
 		<ion-header>
 			<ion-toolbar>
 				<ion-title>
-					<ion-input type="text" [placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate" 
+					<ion-input type="text"
+					clearInput= "true"
+					[placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate" 
+
 					[(ngModel)]="findElement(tags,{key : 'name'}).value"
 					 autocomplete="off"></ion-input>
 				</ion-title>
 			</ion-toolbar>
 
-			<ion-fab style="bottom:-26; right: 5px;" class="fabToogleCode">
-				<ion-fab-button size="small" (click)="toogleCode()">
-					<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-					<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
-				</ion-fab-button>
-			</ion-fab>
-
-			<ion-fab style="bottom:-26; right: 48px;" class="fabToogleCode">
-				<ion-fab-button size="small" (click)="saveFields(tagId, tags)">
-					<ion-icon name="save"></ion-icon>
-				</ion-fab-button>
-			</ion-fab>
-
-
-			<ion-fab style="bottom:-26; right: 93px;" class="fabToogleCode" *ngIf="savedFields">
-				<ion-fab-button size="small" (click)="restoreFields()">
-					<ion-icon name="arrow-dropdown-circle"></ion-icon>
-				</ion-fab-button>
-			</ion-fab>
 		</ion-header>
 
 		<div class="content">
+
+			<div class="actions"> 
+				<ion-fab  horizontal="end" >
+						<ion-fab-button  size="small" (click)="toogleCode()">
+							<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+							<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+						</ion-fab-button>
+				</ion-fab>
+				<ion-fab  >
+					<ion-fab-button color="light" size="small" (click)="addOrRemoveBookmark(tagConfig)">
+						<ion-icon
+						[style.color]=" (tagConfig | isBookmarked:tagsService.bookmarksIds) ? '#f71000' : '#d8d8d8'"
+						name="heart"
+						item-left
+						style="font-size: 26px;"
+					  ></ion-icon>
+					</ion-fab-button>
+				</ion-fab>
+
+				<ion-fab style="margin-left: 45px;" >
+					<ion-fab-button size="small" (click)="saveFields(tagId, tags)"   >
+						<ion-icon name="save"></ion-icon>
+					</ion-fab-button>
+				</ion-fab>
+	
+				<ion-fab style="margin-left: 90px;">
+					<ion-fab-button size="small" (click)="restoreFields()" >
+						<ion-icon name="arrow-dropdown-circle"></ion-icon>
+					</ion-fab-button>
+				</ion-fab>
+
+			</div>
+
 			<read-meta *ngIf="feature.properties.meta" 
 				[feature]="feature"
 				[displayCode]="displayCode"

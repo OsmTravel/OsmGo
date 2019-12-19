@@ -6,9 +6,9 @@
             <app-icon  [icon]="tag.icon"[jsonSprites]="jsonSprites">  </app-icon>
     </td>
 
-    <td (click)="isBookMarked(tag) ? removeBookmark.emit(tag) : addBookmark.emit(tag)" style="width:36px">
+    <td (click)="addOrRemoveBookmark(tag)" style="width:36px">
       <ion-icon
-        [style.color]="isBookMarked(tag) ? '#f71000' : '#d8d8d8'"
+        [style.color]="(tag | isBookmarked:bookmarksIds) ? '#f71000' : '#d8d8d8'"
         name="heart"
         item-left
         style="font-size: 26px;"

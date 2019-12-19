@@ -3,6 +3,8 @@
     <div id="searchSelect">
       <div id="searchDiv">
         <ion-searchbar
+        autocomplete='off' autocorrect='off' autocapitalize='none' 
+        showCancelButton="always"
           [(ngModel)]="searchText"
           [debounce]="300"
         ></ion-searchbar>

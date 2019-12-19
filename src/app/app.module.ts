@@ -70,6 +70,7 @@ import { environment } from '../environments/environment';
 import { DisplayTagsPipe } from './pipes/display-tags.pipe';
 import { FilterTagCongigByGeometryPipe } from './pipes/filter-tag-congig-by-geometry.pipe';
 import { DialogMultiFeaturesComponent } from './components/dialog-multi-features/dialog-multi-features.component';
+import { IsBookmarkedPipe } from './pipes/is-bookmarked.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -99,7 +100,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FilterByPresetsContentPipe,
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
-    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterTagCongigByGeometryPipe,
+    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterTagCongigByGeometryPipe, IsBookmarkedPipe,
   ],
   entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent],
   imports: [

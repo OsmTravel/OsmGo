@@ -106,21 +106,7 @@
 
 
 	<h4>{{ 'SETTINGS.TAGS' | translate}}</h4>
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-label>{{ 'SETTINGS.DEFAULT_TAGS_LIST' | translate}} </ion-label>
-				<ion-select [value]="this.configService.config.defaultPrimarykeyWindows"
-					(ionChange)="defaultPrimarykeyWindowsChange($event)">
-					<ion-select-option value="allTags">{{ 'SETTINGS.TAGS_LIST_ALL' | translate}}</ion-select-option>
-					<ion-select-option value="bookmarks">{{ 'SETTINGS.TAGS_LIST_BOOKMARKS' | translate}}
-					</ion-select-option>
-					<ion-select-option value="type">{{ 'SETTINGS.TAGS_LIST_TYPE' | translate}}</ion-select-option>
-				</ion-select>
-			</ion-item>
-			<label class="hint">{{ 'SETTINGS.DEFAULT_TAGS_LIST_HINT' | translate}}</label>
-		</ion-card-content>
-	</ion-card>
+
 
 	<ion-card>
 		<ion-card-content>
@@ -152,6 +138,7 @@
 	</ion-card>
 
 	<h4>{{ 'SETTINGS.LANGUAGE_AND_REGION' | translate}}</h4>
+	
 	<ion-card *ngIf="this.configService.config.languageUi && this.configService.i18nConfig">
 		<ion-card-content>
 			<ion-item>
@@ -179,21 +166,23 @@
 		</ion-card-content>
 	</ion-card>
 
-	<ion-card
-		*ngIf="this.configService.config.languageTags && this.configService.i18nConfig && this.configService.config.languageTags">
+	
+	<ion-card>
+		<ion-card-header>
+			{{'SETTINGS.TAG_COUNTRY' | translate }}
+		</ion-card-header>
 		<ion-card-content>
-			<ion-item>
-				<ion-label>{{'SETTINGS.TAG_COUNTRY' | translate }}</ion-label>
-				<ion-select [value]="this.configService.config.countryTags" (ionChange)="countryTagsChange($event)">
-					<ion-select-option *ngFor="let country of this.configService.currentTagsCountryChoice"
-						[value]="country.code">
-						{{country.code}} ({{country.name}})
-					</ion-select-option>
-				</ion-select>
-			</ion-item>
+			<div class="wrapperEdit2cols">
+				<div class="contentEdit2cols">
+						<ion-item>
+							<ion-input type="text" [value]="this.configService.config.countryTags" (ionChange)="countryTagsChange($event)" placeholder="GB, FR, DE ..."></ion-input>
+						</ion-item>
+				</div>
+			</div>
 			<label class="hint">{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</label>
 		</ion-card-content>
 	</ion-card>
+
 
 	<h4>{{ 'SETTINGS.CACHE' | translate}}</h4>
 

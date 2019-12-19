@@ -65,8 +65,8 @@ export class TagsService {
         if (!currentTag){
             return;
         }
-        this.bookmarksIds = [...this.bookmarksIds , tagId];
-        this.bookMarks = [...this.bookMarks, currentTag]
+        this.bookmarksIds = [tagId, ...this.bookmarksIds ];
+        this.bookMarks = [currentTag, ...this.bookMarks]
 
         this.setBookMarksIds(this.bookmarksIds)
         return currentTag;

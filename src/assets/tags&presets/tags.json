@@ -53889,7 +53889,6 @@
       "icon": "maki-water",
       "markerColor": "#009549",
       "presets": ["water", "intermittent"],
-      "deprecated": true,
       "lbl": {
         "en": "Water",
         "fr": "Eau",
@@ -53972,8 +53971,6 @@
         "pl": "Obszar wodny, taki jak jezioro lub staw.",
         "uk": "Використовується для позначення водойм, таких як озера та ставки."
       },
-      "warning": {"en": "", "fr": "Doit être une surface"},
-      "alert": {"en": "Polygon only"},
       "geometry": ["area"],
       "iDRef": "natural/water",
       "tags": {"natural": "water"},

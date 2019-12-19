@@ -118,11 +118,6 @@ export class ConfigService {
     getI18nConfig$() {
         return this.http.get('./assets/i18n/i18n.json')
         .pipe( map(i18nConfig => {
-            i18nConfig['country'] = [
-                { "code": "FR", "name": "France" },
-                { "code": "GB", "name": "United Kingdom of Great Britain and Northern Ireland" },
-                { "code": "DE", "name": "Germany" }
-                ]
             this.i18nConfig = i18nConfig;
             return i18nConfig
         }) )

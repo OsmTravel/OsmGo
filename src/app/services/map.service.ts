@@ -119,14 +119,16 @@ export class MapService {
   markerMapboxUnknown = {};
 
   loadUnknownMarker(factor){
+        console.log(factor);
+        const roundedFactor = Math.round(factor)
         // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
-          this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${factor}X.png`, (error, image) => {
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
             this.markerMapboxUnknown['circle']= image;
           })
-          this.map.loadImage(`/assets/mapStyle/unknown-marker/penta-unknown@${factor}X.png`, (error, image) => {
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`, (error, image) => {
             this.markerMapboxUnknown['penta']= image;
           })
-          this.map.loadImage(`/assets/mapStyle/unknown-marker/square-unknown@${factor}X.png`, (error, image) => {
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`, (error, image) => {
             this.markerMapboxUnknown['square']= image;
           })
   }

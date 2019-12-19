@@ -20,20 +20,29 @@ export class TagsListComponent implements OnInit {
 
   @Output() removeBookmark = new EventEmitter();
   @Output() addBookmark = new EventEmitter();
-  
+
 
   @Output() selected = new EventEmitter();
-  
+
 
   constructor() { }
 
   ngOnInit() {
-   
+
   }
 
   isBookMarked(tag) {
     // TODO pipe
     return this.bookmarksIds.includes(tag.id)
-}
+  }
+
+  addOrRemoveBookmark(tag) {
+    const isBookMarked = this.isBookMarked(tag);
+    if (isBookMarked) {
+      this.removeBookmark.emit(tag)
+    } else {
+      this.addBookmark.emit(tag)
+    }
+  }
 
 }

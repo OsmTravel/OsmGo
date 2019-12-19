@@ -76,14 +76,6 @@ export class ModalPrimaryTag implements OnInit {
     }
 
 
-    // updateSelectedValue(key) {
-    //     if (key === 'full') {
-    //         this.currentListOfTags = this.tagsService.getFullTags();
-    //     } else if (key === 'bookmarks') {
-    //         this.currentListOfTags = this.tagsService.getBookMarks();
-    //     }
-    // }
-
     addCustomValue(key, value){
         const newConfig:TagConfig = {
             icon: "wiki_question",
