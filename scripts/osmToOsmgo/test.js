@@ -1,15 +1,23 @@
 const osmToOsmgo = require('./index.min.js')
 const fs = require('fs')
+const path = require('path')
 
-const tagConfig = JSON.parse(fs.readFileSync('./fixture/tagconfig.json', 'utf8'));
-const osmStr = fs.readFileSync('./fixture/f9.osm', 'utf8')
+// import { convert } from './index.js'
+// import * as fs from 'fs';
+// import * as path from 'path';
 
-console.time('time');
-const result = osmToOsmgo(osmStr, {tagConfig: tagConfig});
+const tagConfigPath = path.join('..','..','src','assets', 'tags&presets', 'tags.json')
+const tagConfig = JSON.parse(fs.readFileSync(tagConfigPath, 'utf8'));
+const osmStr = fs.readFileSync('./fixture/f10.osm', 'utf8')
+
+const tags = tagConfig.tags
+const primaryKeys = tagConfig.primaryKeys
+const excludeWays = tagConfig.excludeWays
+
+console.time('time')
+const result = osmToOsmgo.convert(osmStr, {tagConfig: tags, excludesWays: excludeWays, primaryKeys:primaryKeys});
 console.timeEnd('time');
-console.log('count:' , result.features.length);
+// console.log(result.geojson);
 
-console.time('timeFull');
-const resultFull = osmToOsmgo(osmStr);
-console.timeEnd('timeFull');
-console.log('count:' , resultFull.features.length);
+console.log('count:' , result.geojson.features.length);
+

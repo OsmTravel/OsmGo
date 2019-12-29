@@ -9,6 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class EditPresets {
     @Input() displayCode;
     @Input() tag;
+    @Input() language;
 
     @Output() openPrimaryListModal = new EventEmitter();
 

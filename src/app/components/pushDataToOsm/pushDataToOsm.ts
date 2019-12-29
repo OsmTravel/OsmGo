@@ -10,6 +10,7 @@ import { ConfigService } from '../../services/config.service';
 import { timer } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { cloneDeep, clone } from 'lodash';
+import { addAttributesToFeature } from '../../../../scripts/osmToOsmgo/index.js'
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -122,6 +123,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['properties']['time'] = new Date().getTime();
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
+                        addAttributesToFeature(newFeature)
                         this.summary.Total--;
                         this.summary.Create--;
                         
@@ -156,11 +158,15 @@ export class PushDataToOsmPage implements AfterViewInit {
                             newFeature['properties']['fixme'] = false;
                         }
 
+                        if (newFeature['properties']['deprecated']){
+                            delete newFeature['properties']['deprecated']
+                        }
                         delete newFeature['properties']['changeType'];
                         delete newFeature['properties']['originalData'];
 
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
+                        addAttributesToFeature(newFeature)
                         this.summary.Total--;
                         this.summary.Update--;
 
@@ -230,7 +236,7 @@ export class PushDataToOsmPage implements AfterViewInit {
         // let featuresChanged = this.dataService.getGeojsonChanged().features;
         this.osmApi.getValidChangset(commentChangeset)
             .subscribe(async CS => {
-                console.log('getValidChangset', CS)
+               
                 const cloneGeojsonChanged = this.dataService.getGeojsonChanged()
                 this.changesetId = CS;
                 for (let feature of cloneGeojsonChanged.features) {

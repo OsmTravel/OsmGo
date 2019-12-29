@@ -42,3 +42,30 @@ ion-card{
     font-size: 0.8em;
     opacity: 0.8;
 }
+
+.iconImgPNG{
+    margin-left: auto;
+    margin-right: auto;
+    // margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.imgCenter{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.iconImg{
+    max-width: 26px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.primaryCardContent{
+    margin-left: 40px;
+}

@@ -7,7 +7,6 @@ import { OsmApiService } from '../../services/osmApi.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from 'src/app/services/tags.service';
 import { DataService } from 'src/app/services/data.service';
-import { IconService } from 'src/app/services/icon.service';
 
 
 @Component({
@@ -24,7 +23,6 @@ export class SettingsPage {
     public platform: Platform,
     public tagsService: TagsService,
     public dataService: DataService,
-    public iconService : IconService,
     public osmApi: OsmApiService,
     public loadingController: LoadingController) {
 
@@ -51,9 +49,6 @@ export class SettingsPage {
     this.configService.setDefaultPrimarykeyWindows(e.detail.value);
   }
 
-  isDelayedChange(e) {
-    this.configService.setIsDelayed(e.detail.checked);
-  }
 
   filterWayByArea(e) {
     this.configService.setFilterWayByArea(e.detail.checked);
@@ -122,34 +117,8 @@ export class SettingsPage {
   countryTagsChange(e){
     const newCountry = e.detail.value;
     this.configService.setCountryTags(newCountry);
-   
-        this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, newCountry)
-            .subscribe( e => {
-            
-                console.log('New Config Loaded!')
-                let newDataJson =  this.mapService.setIconStyle(this.dataService.getGeojson());
-                this.dataService.setGeojson(newDataJson);
-               this.mapService.eventMarkerReDraw.emit(newDataJson);
-               
-                
-                
-            });
   }
 
-  async generateCahedIcon (){
-    const loading = await this.loadingController.create({
-      message: '........'
-    });
-    await loading.present();
-    const missingSprites:string[]  = await this.iconService.getMissingSpirtes();
-    for ( let missIcon of missingSprites){
-      console.log(missIcon);
-      let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
-      this.dataService.addIconCache(missIcon, uriIcon)
-
-    }
-    loading.dismiss();
-  }
 
   async deleteCache (){
     await this.dataService.clearCache();
@@ -163,15 +132,6 @@ export class SettingsPage {
       window.location.reload(true);
   }
 
-  async deleteIconCache(){
-    const loading = await this.loadingController.create({
-      message: '...'
-    });
-    let n = await this.dataService.clearIconCache();
-    console.log('deleted: ', n)
-    loading.dismiss();
-   
-  }
 
   async changeIsDevServer(isDev : boolean){
     await this.configService.setIsDevServer(isDev);

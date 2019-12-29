@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "node --experimental-modules test.mjs ",
     "js:esmbuild": "BABEL_ENV=cjs rollup --config",
     "js:iifebuild": "BABEL_ENV=iife rollup --config",
     "build": "npm run js:esmbuild && npm run js:iifebuild",
     "watch": "BABEL_ENV=cjs rollup --config --watch"
-
   },
   "author": "",
   "license": "ISC",

@@ -1,6 +1,6 @@
 <ion-toolbar>
     <ion-title>
-        {{ data.preset.lbl }}
+        {{ data.preset.lbl[language] || data.preset.lbl['en']  }}
     </ion-title>
 </ion-toolbar>
 <div id="divContentSB">
@@ -15,13 +15,14 @@
     <ion-list>
         <ion-radio-group (ionChange)="selected($event)" >
             <ion-item 
-            *ngFor="let tag of data.preset.tags | filterByContent:['v','lbl']:searchText;">
+            *ngFor="let option of data.preset.options | filterByCountryCode:countryCode | filterByPresetsContent:[language]:searchText">
                 <ion-label> 
-                    <b>{{tag.lbl}}</b>
-                    <br> {{tag.v}}
+                    <b>{{option.lbl[language] || option.lbl['en'] }}</b>
+                    <br> {{option.v}}
+                   
                 </ion-label>
 
-                <ion-radio [value]="tag.v"></ion-radio>
+                <ion-radio [value]="option"></ion-radio>
 
             </ion-item>
         </ion-radio-group>

@@ -15,18 +15,18 @@ import { AlertController } from '@ionic/angular';
 import * as mapboxgl from 'mapbox-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
-import { IconService } from './icon.service';
 import { AlertInput } from '@ionic/core';
 import {
   Plugins,
   HapticsImpactStyle
 } from '@capacitor/core';
 
+import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
+import { TagConfig } from 'src/type';
+
 const { Haptics } = Plugins;
 @Injectable({ providedIn: 'root' })
 export class MapService {
-
-
 
   constructor(
     private _ngZone: NgZone,
@@ -38,21 +38,17 @@ export class MapService {
     private zone: NgZone,
     private alertCtrl: AlertController,
     private http: HttpClient,
-    private translate: TranslateService,
-    private iconService: IconService,
-
+    private translate: TranslateService
   ) {
 
     this.domMarkerPosition = document.createElement('div');
     this.domMarkerPosition.className = 'positionMarkersSize';
-
     this.arrowDirection = document.createElement('div');
 
     this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)';
-
-    this.eventDomMainReady.subscribe(mes => {
+    
       mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
       this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
         if (this.map) {
@@ -60,8 +56,6 @@ export class MapService {
         }
 
       });
-      this.initMap();
-    });
 
     this.eventMarkerReDraw.subscribe(geojson => {
       if (geojson) {
@@ -114,6 +108,7 @@ export class MapService {
   eventOsmElementCreated = new EventEmitter();
   eventMarkerReDraw = new EventEmitter();
   eventMarkerChangedReDraw = new EventEmitter();
+  eventShowDialogMultiFeatures = new EventEmitter();
   markersLayer = [];
 
 
@@ -121,6 +116,21 @@ export class MapService {
   eventMarkerMove = new EventEmitter();
   markerMoving = false; // le marker est en train d'être positionné
   markerPositionate;
+  markerMapboxUnknown = {};
+
+  loadUnknownMarker(factor){
+        const roundedFactor = Math.round(factor)
+        // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
+            this.markerMapboxUnknown['circle']= image;
+          })
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`, (error, image) => {
+            this.markerMapboxUnknown['penta']= image;
+          })
+          this.map.loadImage(`/assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`, (error, image) => {
+            this.markerMapboxUnknown['square']= image;
+          })
+  }
 
   drawWaysPoly(geojson, source) {
     const features = geojson.features;
@@ -263,12 +273,14 @@ export class MapService {
     this.markerMoving = false;
     this.markerPositionate.remove();
     const coords = this.markerPositionate.getLngLat();
-    const newTag = { name: '' };
-    if (this.tagsService.getLastTagAdded()) { // on récupere le dernier tag créé si il existe
-      const lastTag: any = this.tagsService.getLastTagAdded();
-      newTag[lastTag.key] = lastTag.value;
+    let newTag;
+
+    if (this.tagsService.lastTagsUsed && this.tagsService.lastTagsUsed[0]) { // on récupere le dernier tag créé si il existe
+      newTag = {...this.tagsService.lastTagsUsed[0].tags}
+      
     } else {
-      newTag['shop'] = 'yes';
+      newTag = {...this.tagsService.tags[0].tags};
+
     }
     const pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
@@ -318,31 +330,10 @@ export class MapService {
     this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData());
   }
 
-
-
-
-  private getMarkerShape(feature) {
-    // rien a faire ici...
-    feature.properties['_name'] = feature.properties.tags.name ? feature.properties.tags.name : '';
-
-    if (feature.properties.type === 'node') {
-      return 'circle';
-    } else {
-      if (feature.properties.way_geometry.type === 'LineString' || feature.properties.way_geometry.type === 'MultiLineString') {
-        return 'penta';
-      } else if (feature.properties.way_geometry.type === 'Polygon' || feature.properties.way_geometry.type === 'MultiPolygon') {
-        return 'square';
-      } else {
-        return 'star';
-      }
-    }
-  }
-
   getMapStyle() {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .pipe(
         map(mapboxStyle => {
-          const path = window.location.href;
           let spritesFullPath = `mapStyle/sprites/sprites`;
           // http://localhost:8100/assets/mapStyle/sprites/sprites.json
             const basePath = window.location.origin // path.split('#')[0];
@@ -356,34 +347,11 @@ export class MapService {
   }
 
   getIconStyle(feature) {
-    const listOfPrimaryKeys = this.tagsService.getListOfPrimaryKey();
-    const primaryTag = this.tagsService.getPrimaryKeyOfObject(feature); // {k: "shop", v: "travel_agency"}
-    feature.properties['primaryTag'] = primaryTag;
-    if (listOfPrimaryKeys.indexOf(primaryTag.k) !== -1) { // c'est un objet à afficher
-      const configMarker = this.tagsService.getConfigMarkerByKv(primaryTag.k, primaryTag.v);
-      if (configMarker) { // OK
-
-        feature.properties.icon = (configMarker.icon) ? configMarker.icon : '';
-        feature.properties.marker = this.getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
-        feature.properties.hexColor = configMarker.markerColor;
-
-      } else { // on ne connait pas la 'value', donc pas de config pour le marker
-        feature.properties.icon = 'maki-circle-15';
-        feature.properties.hexColor = '#000000';
-        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
-      }
-    }
+    feature = setIconStyle(feature, this.tagsService.tags);
     return feature;
   }
 
-  setIconStyle(FeatureCollection) {
-    const features = FeatureCollection.features;
-    for (let i = 0; i < features.length; i++) {
-      const feature = features[i];
-      this.getIconStyle(feature); // lent....
-    }
-    return FeatureCollection;
-  }
+
 
   initMap() {
 
@@ -440,11 +408,8 @@ export class MapService {
           if (this.layersAreLoaded && this.locationService.location) {
             this.changeLocationRadius(this.locationService.location.coords.accuracy, false);
           }
-
         });
-        // this.map.on('render',e => {
-        //   console.log(e);
-        // })
+        this.loadUnknownMarker(window.devicePixelRatio)
 
       });
     });
@@ -561,32 +526,6 @@ export class MapService {
 
     const geojson = this.dataService.getFeatureById(feature['properties'].id, origineData);
     this.eventShowModal.emit({ type: 'Read', geojson: geojson, origineData: origineData });
-  }
-
-
-  addIconToMapFromURI(iconId, uri) {
-    if (!uri) {
-      console.log(iconId);
-      return;
-    }
-
-    this.map.loadImage(uri, (error, image) => {
-      // console.log(iconId, image)
-
-      this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
-      const ind = this.markersLoaded.findIndex(el => el.id === iconId);
-      this.markersLoaded[ind].loaded = true;
-      // console.log(this.markerLoaded[ind]); 
-
-      let notLoaded = this.markersLoaded.filter(el => el.loaded == false && (/^circle/.test(el.id) || /^square/.test(el.id) || /^penta/.test(el.id)))
-      // console.log('reste',  notLoaded.length ) 
-      // console.log(notLoaded);
-
-      if (!this.markersLoaded.find(el => el.loaded == false && (/^circle/.test(el.id) || /^square/.test(el.id) || /^penta/.test(el.id)))) {
-        console.log('redraw');
-        this.eventMarkerReDraw.emit(this.dataService.getGeojson());
-      }
-    })
   }
 
 
@@ -707,7 +646,7 @@ export class MapService {
         'icon-image': 'Fixme', 'icon-ignore-placement': true, 'icon-offset': [13, -12],
         'visibility': 'none'
       },
-      'filter':  ["any", ['get','fixme'] ] 
+      'filter':  [ "any", ['has','fixme'] , ['has', 'deprecated'] ]
       
     });
 
@@ -751,7 +690,6 @@ export class MapService {
       if (!features.length) {
         return;
       }
-
       if (!this.configService.platforms.includes('hybrid')){
         window.navigator.vibrate(50);
       }else {
@@ -767,43 +705,7 @@ export class MapService {
       const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
 
       if (uniqFeaturesById.length > 1) {
-        const inputsParams: any = uniqFeaturesById.map((f, i) => {
-          const tags = JSON.parse(f['properties'].tags);
-          const pk = JSON.parse(f['properties'].primaryTag);
-          const name = tags.name || '?';
-          const label = `${name}  (${pk.k} = ${pk.v})`;
-          return {
-            type: 'radio',
-            label: label,
-            value: f['properties']['id'],
-            checked: i === 0
-          };
-
-        });
-        const alert = await this.alertCtrl.create(
-          {
-            header: this.translate.instant('MAIN.WHAT_ITEM'),
-            inputs: inputsParams,
-            buttons: [
-              {
-                text: this.translate.instant('SHARED.CANCEL'),
-                role: 'cancel',
-                cssClass: 'secondary',
-                handler: () => {
-
-                }
-              }, {
-                text: this.translate.instant('SHARED.OK'),
-                handler: (data: any) => {
-                  const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
-                  this.selectFeature(selectedFeature[0]);
-                }
-              }
-            ]
-          }
-        );
-
-        await alert.present();
+        this.eventShowDialogMultiFeatures.emit(uniqFeaturesById);
 
       } else {
         this.selectFeature(uniqFeaturesById[0]);
@@ -831,24 +733,20 @@ export class MapService {
 
 
     this.map.on('styleimagemissing', async e => {
+      // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
       const iconId = e.id;
-      if (this.markersLoaded.find(el => el.id == iconId)) {
-        return;
+      if( /^circle/.test(iconId)){
+        console.log(this.markerMapboxUnknown['circle'])
+          this.map.addImage(iconId, this.markerMapboxUnknown['circle'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
-
-      this.markersLoaded.push({ id: iconId, loaded: false });
-      let cachedUri = await this.dataService.getIconCache(iconId)
-
-      if (cachedUri) {
-        this.addIconToMapFromURI(iconId, cachedUri);
-      } else {
-        let uri = await this.iconService.generateMarkerByIconId(iconId);
-        if (uri) {
-          this.addIconToMapFromURI(iconId, uri);
-          this.dataService.addIconCache(iconId, uri);
-        }
-
+      if( /^penta/.test(iconId)){
+        this.map.addImage(iconId, this.markerMapboxUnknown['penta'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
+      if( /^square/.test(iconId)){
+        this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: Math.round(window.devicePixelRatio) });
+      }
+      console.log('missingIcon:', iconId)
+
     })
 
 

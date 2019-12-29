@@ -17,7 +17,7 @@ import { cloneDeep } from 'lodash';
 
 import bboxPolygon from '@turf/bbox-polygon'
 import { Platform } from '@ionic/angular';
-
+import { addAttributesToFeature } from '../../../scripts/osmToOsmgo/index.js'
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
@@ -329,6 +329,7 @@ export class OsmApiService {
 
     /// CREATE NODE
     createOsmNode(_feature) {
+        console.log("createOsmNode", _feature)
         const feature = cloneDeep(_feature);
         const d = new Date();
         const tmpId = 'tmp_' + d.getTime();
@@ -337,6 +338,7 @@ export class OsmApiService {
         feature.properties['meta'] = { timestamp: 0, version: 0, user: '' };
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
+        addAttributesToFeature(feature)
         this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
         // refresh changed only
         return of(_feature);
@@ -388,9 +390,11 @@ export class OsmApiService {
     // Update
     updateOsmElement(_feature, origineData) {
         const feature = cloneDeep(_feature);
+        addAttributesToFeature(feature)
         const id = feature.id;
         if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
+           
         } else { // jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update';
             feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id, 'data');
@@ -452,6 +456,7 @@ export class OsmApiService {
     // Delete
     deleteOsmElement(_feature) {
         const feature = cloneDeep(_feature);
+        addAttributesToFeature(feature)
         const id = feature.id;
 
         if (feature.properties.changeType) { // il a déjà été modifié
@@ -528,7 +533,9 @@ export class OsmApiService {
             new Promise((resolve, reject) => {
                 const workerFormatData = new Worker('assets/workers/worker-formatOsmData.js');
                 workerFormatData.postMessage({
-                    tagsConfig: that.tagsService.getTags(),
+                    tagsConfig: that.tagsService.tags,
+                    excludesWays: that.tagsService.excludeWays,
+                    primaryKeys: that.tagsService.primaryKeys,
                     osmData: osmData,
                     oldGeojson: oldGeojson,
                     oldBboxFeature: oldBboxFeature,

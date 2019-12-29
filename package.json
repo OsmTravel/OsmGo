@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "0.12.4",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +13,7 @@
     "e2e": "ng e2e",
     "sprites": "node  ./scripts/sprites.js",
     "importTags": "node ./scripts/importTagsPresetsFromServer.js",
-    "buildAndroid": "node ./incrementVersion.js && node ./osmGoAdmin/backend/updatei18nMetadata.js && ionic build --prod --release && npx cap sync && node ./scripts/modifyAndroidFiles.js && npx cap open android"
+    "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && node ./scripts/modifyAndroidFiles.js && npx cap open android"
   },
   "dependencies": {
     "@angular/animations": "^8.2.8",
@@ -39,7 +39,7 @@
     "core-js": "^3.2.1",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
-    "mapbox-gl": "^1.4.1",
+    "mapbox-gl": "^1.6.0",
     "moment": "^2.24.0",
     "ngx-moment": "^3.4.0",
     "osm-auth": "github:DoFabien/osm-auth#master",
@@ -58,6 +58,7 @@
     "@angular/language-service": "^8.2.8",
     "@capacitor/cli": "1.2.1",
     "@ionic/angular-toolkit": "~2.0.0",
+    "@types/geojson": "^7946.0.7",
     "@types/jasmine": "^3.4.1",
     "@types/jasminewd2": "^2.0.7",
     "@types/lodash": "^4.14.141",
@@ -65,6 +66,7 @@
     "cheerio": "^1.0.0-rc.3",
     "codelyzer": "^5.1.2",
     "fs-extra": "^8.1.0",
+    "jasmine": "^3.5.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "json-stringify-pretty-compact": "^2.0.0",
@@ -73,15 +75,19 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "parse-svg-path": "^0.1.2",
     "protractor": "~5.4.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
+    "scale-svg-path": "0.0.1",
+    "serialize-svg-path": "^0.1.0",
     "source-map-explorer": "^2.1.0",
     "spritesmith": "^3.4.0",
     "svg2img": "^0.6.1",
     "ts-node": "~8.3.0",
     "tslint": "~5.20.0",
     "typescript": "~3.5.3",
-    "xml2js": "^0.4.22"
+    "xml2js": "^0.4.22",
+    "yargs": "^14.2.0"
   }
 }

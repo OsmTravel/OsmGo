@@ -1,115 +1,121 @@
 <div *ngIf="!loading" style="height:100%; background-color: white;">
+  <div>
+    <div id="searchSelect">
+      <div id="searchDiv">
+        <ion-searchbar
+        autocomplete='off' autocorrect='off' autocapitalize='none' 
+        inputmode="text"
+          [(ngModel)]="searchText"
+          [debounce]="300"
+        ></ion-searchbar>
+      </div>
+    </div>
+  
+    <div class="listTag" *ngIf="searchText.length > 2 ">
+      <app-tags-list 
+        [tags]="currentListOfTags"
+        [countryTags]="configService.config.countryTags"
+        [languageTags]="configService.config.languageTags"
+        [searchText]="searchText"
+        [oldTagConfig]="oldTagConfig"
+        [jsonSprites]="tagsService.jsonSprites"
+        [geometriesFilter]="geometriesPossible"
+        [bookmarksIds]="tagsService.bookmarksIds"
+        (removeBookmark)= removeBookmark($event)
+        (addBookmark)= addBookmark($event)
+        (selected)="selected($event)"
+  
+        >
 
-	<div id="tab">
-		<ion-button  ion-button clear (click)="typeFiche = 'list'">
-			{{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_LIST' | translate}}
-		</ion-button>
-		<ion-button  ion-button clear (click)="typeFiche = 'custom'">
-				{{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_CUSTOM' | translate}}
-		</ion-button>
-	</div>
-	<div *ngIf="typeFiche == 'list'">
-		<div id="searchSelect">
-			<div style="width: 45%; padding:8px;"> 
-				<ion-select class="select-md" style="width: 100%; min-width: 100%;padding-left:0;" 
-				[(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
-					<ion-select-option value="bookmarks"> {{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_BOOKMARKS' | translate}} </ion-select-option>
-					<ion-select-option value="full"> {{ 'MODAL_SELECTED_ITEM.PRIMARY_TAG_FULL' | translate}} </ion-select-option>
-					<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag.lbl}} ({{tag.key}})</ion-select-option>
-				</ion-select>
-			</div>
+      </app-tags-list>
 
-			<div id="searchDiv">
-				<ion-searchbar [(ngModel)]="searchText" [debounce]="300"></ion-searchbar>
-			</div>
+      <!-- Add custum value (from searchBar to the key) -->
+      <div>
+			<h4> {{ 'MODAL_SELECTED_ITEM.CUSTOM_KEY_VALUE' | translate}} </h4>
+          <ion-chip *ngFor="let k of tagsService.primaryKeys">
+            <ion-label color="primary" (click)="addCustomValue(k,searchText)" >{{ k }}={{searchText}}</ion-label>
+          </ion-chip>
+        
+      </div>
+    </div>
 
-		</div>
+    <div
+      class="listTag"
+      *ngIf="searchText.length < 3 "
+      (swipeleft)="swipeLeft()" 
+      (swiperight)="swipeRight()"
+    >
+      <h4 style="text-align: center;">
+        {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate}}
+      </h4>
+
+      <div class="buttonsSwitchType">
+          <ion-button ion-button  (click)="displayType = 'lastTags'" class="buttonSwitchType"  [disabled]="displayType === 'lastTags'">
+            {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} 
+            </ion-button>
+        <ion-button ion-button  (click)="displayType = 'bookmarks'"  class="buttonSwitchType" [disabled]="displayType === 'bookmarks'">
+          {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
+        </ion-button>
+     
+      </div>
 
 
-		<div class="listTag" *ngIf="selectedKey !== 'full' || (searchText.length > 2 && selectedKey === 'full' )">
-			<table class="tableListe">
-				<tr *ngFor="let tag of currentListOfTags | filterDeprecatedTag | filterByContent:['key','lbl','terms']:searchText;">
-					<td style="width:16px;" [style.background-color]="tag.markerColor">
-						<img *ngIf="tag.icon == '' " src="assets/mapStyle/IconsSVG/maki-circle-15.svg" height="15px" width="15px" style="max-width: 16px;" />
-						<img *ngIf="tag.icon != '' " src="assets/mapStyle/IconsSVG/{{tag.icon}}.svg" height="15px" width="15px" style="max-width: 16px;" />
-					</td>
+      <div class="lastTags" *ngIf="displayType == 'lastTags'"  >
+        <h4> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
+        <app-tags-list
+     
+        [tags]="this.tagsService.lastTagsUsed"
+        [countryTags]="configService.config.countryTags"
+        [languageTags]="configService.config.languageTags"
+        [searchText]="''"
+        [oldTagConfig]="oldTagConfig"
+        [jsonSprites]="tagsService.jsonSprites"
+        [bookmarksIds]="tagsService.bookmarksIds"
+        (removeBookmark)= removeBookmark($event)
+        (addBookmark)= addBookmark($event)
+        (selected)="selected($event)"
+        (swipeLeft)="swipeLeft()"
+        >
+      </app-tags-list>
 
-					<td (click)="addRemoveToBookmarks(tag)" style="width:36px">
-						<ion-icon [style.color]="isBookMarked(tag) ? '#ffe80a' : '#d8d8d8'" name="star" item-left style="font-size: 26px;"></ion-icon>
-					</td>
-
-					<td (click)="selected(tag)" [style.color]="(_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key) ? '#3b22dd' : 'black'">
-						<b>{{tag?.lbl}}</b>
-						<br> <span style="font-size: 0.8em;">{{tag?.primaryKey}}={{tag?.key}} </span> 
-						<br> <span style="font-size: 11px;font-style: italic;"> {{tag?.description}}
-					</span>
-					</td>
-
-					<td style="width:36px">
-						<div *ngIf="_primaryKey.key === tag.primaryKey && _primaryKey.value === tag.key">
-							<ion-icon name="checkmark" item-left style="font-size: 26px; color: green;"></ion-icon>
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<div class="listTag" *ngIf="selectedKey === 'full' && searchText.length < 3 ">
-			<h4 style="text-align: center;">
-					{{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate}}
-				</h4>
-
-		</div>
+      </div>
+ 
+      <div class="bookmarks" *ngIf="displayType == 'bookmarks'" >
+        <h4>{{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}</h4>
+        <app-tags-list 
+        [tags]="tagsService.bookMarks"
+        [countryTags]="configService.config.countryTags"
+        [languageTags]="configService.config.languageTags"
+        [searchText]="''"
+        [oldTagConfig]="oldTagConfig"
+        [jsonSprites]="tagsService.jsonSprites"
+        [bookmarksIds]="tagsService.bookmarksIds"
+        (removeBookmark)= removeBookmark($event)
+        (addBookmark)= addBookmark($event)
+        (selected)="selected($event)"
+        
+        >
+    </app-tags-list>
+  </div>
 	</div>
 	
-	
 
-	<div *ngIf="typeFiche == 'custom'">
-		<div id="searchSelect">
-			<div style="width: 100%; padding:8px;">
-			
-			<ion-select style="width: 100%; min-width: 100%;"  [placeholder]="'MODAL_SELECTED_ITEM.SELECT_CATEGORY' | translate"
-				[(ngModel)]="selectedKey" (ngModelChange)="updateSelectedValue($event)">
-				<ion-select-option *ngFor="let tag of primaryKeys" [value]="tag.key"> {{tag.lbl}} ({{tag.key}})</ion-select-option>
-			</ion-select>
+  </div>
 
-			</div>
-		</div>
+  <div id="footer">
+    <ion-button ion-button color="danger" (click)="cancel()">
+      {{ 'SHARED.CANCEL' | translate}}
+    </ion-button>
+  </div>
 
-		<div class="listTag">
-			<ion-item>
-				<ion-label floating>Value</ion-label>
-				<ion-input type="text" [(ngModel)]="customValue"></ion-input>
-			</ion-item>
-
-		</div>
-	</div>
-
-	<div id="footer">
-		<ion-button  *ngIf="typeFiche == 'custom'" ion-button (click)="summit(typeFiche)" [disabled]="(customValue == ''  || selectedKey =='bookmarks' || selectedKey =='full' ) && typeFiche == 'custom' ">
-				{{ 'SHARED.VALIDATE' | translate}}
-		</ion-button>
-		<ion-button  ion-button color="danger" (click)="cancel()">
-			{{ 'SHARED.CANCEL' | translate}}
-		</ion-button>
-	</div>
-
-
-
-	<div *ngIf="loading" style="height:100%">
-		<ion-header>
-			<ion-toolbar>
-				<ion-title>
-						{{ 'MODAL_SELECTED_ITEM.LOADING' | translate}}
-				</ion-title>
-			</ion-toolbar>
-		</ion-header>
-
-		<ion-content>
-		</ion-content>
-
-		<ion-footer>
-		</ion-footer>
-	</div>
-
+  <div *ngIf="loading" style="height:100%">
+    <!-- <ion-header>
+      <ion-toolbar> -->
+        <ion-title>
+          {{ 'MODAL_SELECTED_ITEM.LOADING' | translate}}
+        </ion-title>
+      <!-- </ion-toolbar>
+    </ion-header> -->
+  </div>
 </div>
+

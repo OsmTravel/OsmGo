@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment.prod';
 import { StatesService } from './states.service';
 import { Platform } from '@ionic/angular';
-
+import { map } from 'rxjs/operators';
+import { from } from 'rxjs';
 
 export interface User {
     uid: string;
@@ -20,6 +21,26 @@ export interface Changeset {
     last_changeset_activity: number;
     created_at: number;
     comment: string;
+}
+
+export interface Config {
+    mapMarginBuffer: number,
+    lockMapHeading: boolean,
+    followPosition: boolean,
+    defaultPrimarykeyWindows: 'lastTags' | 'bookmarks',
+    baseMapSourceId: string,
+    filterWayByArea: boolean,
+    filterWayByLength: boolean,
+    changeSetComment: string,
+    languageUi: string,
+    languageTags: string,
+    countryTags: string,
+    oldTagsIcon: { display: boolean, year: number },
+    displayFixmeIcon: boolean,
+    addSurveyDate: boolean,
+    isDevMode: boolean,
+    isDevServer: boolean,
+    authType : 'basic' | 'oauth'
 }
 
 @Injectable({ providedIn: 'root' })
@@ -43,12 +64,11 @@ export class ConfigService {
     baseMapSources;
     currentZoom: number = undefined;
 
-    config = {
+    config: Config = {
         mapMarginBuffer: 50,
         lockMapHeading: true,
         followPosition: true,
-        defaultPrimarykeyWindows: 'allTags',
-        isDelayed: true,
+        defaultPrimarykeyWindows: 'lastTags',
         baseMapSourceId: this.baseMapSources ? this.baseMapSources[0].id : null,
         filterWayByArea: true,
         filterWayByLength: true,
@@ -117,215 +137,201 @@ export class ConfigService {
 
     getI18nConfig$() {
         return this.http.get('./assets/i18n/i18n.json')
+        .pipe( map(i18nConfig => {
+            this.i18nConfig = i18nConfig;
+            return i18nConfig
+        }) )
+        
     }
 
 
     // TODO: add userInfo
-    async loadConfig(_i18nConfig) {
-
-        let d = await this.localStorage.get('config')
-
-        if (d) {
-            // tslint:disable-next-line:forin
-            for (const key in d) {
-                this.config[key] = d[key];
-            }
-        } else {
-            this.localStorage.set('config', this.config);
-        }
-
-        if (_i18nConfig) {
-            const currentTagsLanguage = _i18nConfig.tags.find(l => l.language === this.config.languageTags);
-            if (!currentTagsLanguage) {
-                this.config.languageTags = 'en';
-                this.config.countryTags = 'GB';
-            } else {
-                if (!currentTagsLanguage.country.find(r => r.region === this.config.countryTags)) {
-                    this.config.countryTags = currentTagsLanguage.country[0].region;
+    loadConfig$(_i18nConfig) {
+        return from(this.localStorage.get('config'))
+        .pipe( 
+            map( async d => {
+                if (d) {
+                    // tslint:disable-next-line:forin
+                    for (const key in d) {
+                        this.config[key] = d[key];
+                    }
+                } else {
+                    this.localStorage.set('config', this.config);
                 }
-            }
-            this.currentTagsCountryChoice = _i18nConfig.tags.find(l => l.language == this.config.languageTags).country;
-            this.eventConfigIsLoaded.emit(this.config);
-        }
-
-
-        let userInfo = await this.localStorage.get('user_info')
-        if (userInfo && userInfo.connected) {
-            this.user_info = userInfo;
-        } else {
-            this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
-        }
-
-        let changeset: Changeset = await this.localStorage.get('changeset')
-        if (changeset) {
-            this.changeset = changeset;
-        } else {
-            this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
-        }
-
-    return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
+            
+        
+                this.config.languageTags = this.config.languageTags || 'en';
+                this.config.countryTags = this.config.countryTags || 'GB';
+        
+        
+                let userInfo = await this.localStorage.get('user_info')
+                if (userInfo && userInfo.connected) {
+                    this.user_info = userInfo;
+                } else {
+                    this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
+                }
+        
+                let changeset: Changeset = await this.localStorage.get('changeset')
+                if (changeset) {
+                    this.changeset = changeset;
+                } else {
+                    this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
+                }
+            return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
+            })
+        )
 }
 
-async loadAppVersion() {
-    this.appVersion.appVersionNumber = environment.version;
-    console.log(this.appVersion);
+    async loadAppVersion() {
+        this.appVersion.appVersionNumber = environment.version;
+        console.log(this.appVersion);
 
-}
+    }
 
-getAppVersion() {
-    return this.appVersion;
-}
-
-
-setMapMarginBuffer(buffer: number) {
-    this.config.mapMarginBuffer = buffer;
-    this.localStorage.set('config', this.config);
-}
-getMapMarginBuffer() {
-    return this.config.mapMarginBuffer;
-}
-
-setChangeSetComment(comment: string) {
-    this.config.changeSetComment = comment;
-    this.localStorage.set('config', this.config);
-}
-getChangeSetComment() {
-    return this.config.changeSetComment;
-}
-
-setLockMapHeading(isLockMapHeading: boolean) {
-    this.config.lockMapHeading = isLockMapHeading;
-    this.localStorage.set('config', this.config);
-}
-getLockMapHeading() {
-    return this.config.lockMapHeading;
-}
+    getAppVersion() {
+        return this.appVersion;
+    }
 
 
-setFollowPosition(isFollowingPosition: boolean) {
-    this.config.followPosition = isFollowingPosition;
-    this.localStorage.set('config', this.config);
-}
-getFollowPosition() {
-    return this.config.followPosition;
-}
+    setMapMarginBuffer(buffer: number) {
+        this.config.mapMarginBuffer = buffer;
+        this.localStorage.set('config', this.config);
+    }
+    getMapMarginBuffer() {
+        return this.config.mapMarginBuffer;
+    }
 
-setDefaultPrimarykeyWindows(defaultPrimarykeyWindows: string) {
-    this.config.defaultPrimarykeyWindows = defaultPrimarykeyWindows;
-    this.localStorage.set('config', this.config);
-}
+    setChangeSetComment(comment: string) {
+        this.config.changeSetComment = comment;
+        this.localStorage.set('config', this.config);
+    }
+    getChangeSetComment() {
+        return this.config.changeSetComment;
+    }
 
-getDefaultPrimarykeyWindows() {
-    return this.config.defaultPrimarykeyWindows;
-}
+    setLockMapHeading(isLockMapHeading: boolean) {
+        this.config.lockMapHeading = isLockMapHeading;
+        this.localStorage.set('config', this.config);
+    }
+    getLockMapHeading() {
+        return this.config.lockMapHeading;
+    }
 
 
-setIsDelayed(isDelayed: boolean) {
-    this.config.isDelayed = isDelayed;
-    this.localStorage.set('config', this.config);
-}
+    setFollowPosition(isFollowingPosition: boolean) {
+        this.config.followPosition = isFollowingPosition;
+        this.localStorage.set('config', this.config);
+    }
+    getFollowPosition() {
+        return this.config.followPosition;
+    }
 
-getIsDelayed() {
-    return this.config.isDelayed;
-}
+    setDefaultPrimarykeyWindows(defaultPrimarykeyWindows: 'lastTags' | 'bookmarks') {
+        this.config.defaultPrimarykeyWindows = defaultPrimarykeyWindows;
+        this.localStorage.set('config', this.config);
+    }
 
-setBaseSourceId(baseMapSourceId: string) {
-    this.config.baseMapSourceId = baseMapSourceId;
-    this.localStorage.set('config', this.config);
-}
+    getDefaultPrimarykeyWindows() {
+        return this.config.defaultPrimarykeyWindows;
+    }
 
-getBaseMapId() {
-    return this.config.baseMapSourceId;
-}
+    setBaseSourceId(baseMapSourceId: string) {
+        this.config.baseMapSourceId = baseMapSourceId;
+        this.localStorage.set('config', this.config);
+    }
 
-/* Boolean, activé ou pas */
-setFilterWayByArea(enable: boolean) {
-    this.config.filterWayByArea = enable;
-    this.localStorage.set('config', this.config);
-}
-getFilterWayByArea() {
-    return this.config.filterWayByArea;
-}
+    getBaseMapId() {
+        return this.config.baseMapSourceId;
+    }
 
-setFilterWayByLength(enable: boolean) {
-    this.config.filterWayByLength = enable;
-    this.localStorage.set('config', this.config);
-}
+    /* Boolean, activé ou pas */
+    setFilterWayByArea(enable: boolean) {
+        this.config.filterWayByArea = enable;
+        this.localStorage.set('config', this.config);
+    }
+    getFilterWayByArea() {
+        return this.config.filterWayByArea;
+    }
 
-getFilterWayByLength() {
-    return this.config.filterWayByLength;
-}
+    setFilterWayByLength(enable: boolean) {
+        this.config.filterWayByLength = enable;
+        this.localStorage.set('config', this.config);
+    }
 
-setUiLanguage(lang: string) {
-    this.config.languageUi = lang;
-    this.translate.use(lang);
-    this.localStorage.set('config', this.config);
-}
+    getFilterWayByLength() {
+        return this.config.filterWayByLength;
+    }
 
-getUiLanguage() {
-    return this.config.languageUi;
-}
+    setUiLanguage(lang: string) {
+        this.config.languageUi = lang;
+        this.translate.use(lang);
+        this.localStorage.set('config', this.config);
+    }
 
-setLanguageTags(lang: string) {
-    this.config.languageTags = lang;
-    this.currentTagsCountryChoice = this.i18nConfig.tags.find(l => l.language == lang).country;
-    this.config.countryTags = this.currentTagsCountryChoice[0].region;
-    this.localStorage.set('config', this.config);
-}
+    getUiLanguage() {
+        return this.config.languageUi;
+    }
 
-setCountryTags(country: string) {
-    this.config.countryTags = country;
-    this.localStorage.set('config', this.config);
-}
+    setLanguageTags(lang: string) {
+        this.config.languageTags = lang;
+        // this.currentTagsCountryChoice = this.i18nConfig.tags.find(l => l.language == lang).country;
+        // this.config.countryTags = this.currentTagsCountryChoice[0].region;
+        this.localStorage.set('config', this.config);
+    }
 
-getOldTagsIcon() {
-    return this.config.oldTagsIcon;
-}
+    setCountryTags(country: string) {
+        this.config.countryTags = country;
+        this.localStorage.set('config', this.config);
+    }
 
-setOldTagsIcon(display: boolean, year: number){
-    this.config.oldTagsIcon = { display: display, year: year }
-    this.localStorage.set('config', this.config);
-}
+    getOldTagsIcon() {
+        return this.config.oldTagsIcon;
+    }
 
-getDisplayFixmeIcon() {
-    return this.config.displayFixmeIcon;
-}
+    setOldTagsIcon(display: boolean, year: number) {
+        this.config.oldTagsIcon = { display: display, year: year }
+        this.localStorage.set('config', this.config);
+    }
 
-setDisplayFixmeIcon(display: boolean){
-    this.config.displayFixmeIcon = display
-    this.localStorage.set('config', this.config);
-}
+    getDisplayFixmeIcon() {
+        return this.config.displayFixmeIcon;
+    }
 
-getAddSurveyDate() {
-    return this.config.addSurveyDate;
-}
+    setDisplayFixmeIcon(display: boolean) {
+        this.config.displayFixmeIcon = display
+        this.localStorage.set('config', this.config);
+    }
 
-setAddSurveyDate(add: boolean){
-    this.config.addSurveyDate = add
-    this.localStorage.set('config', this.config);
-}
+    getAddSurveyDate() {
+        return this.config.addSurveyDate;
+    }
 
-getIsDevMode() {
-    return this.config.isDevMode;
-}
+    setAddSurveyDate(add: boolean) {
+        this.config.addSurveyDate = add
+        this.localStorage.set('config', this.config);
+    }
 
-setIsDevMode(isDevMode: boolean) {
-    this.config.isDevMode = isDevMode;
-    this.localStorage.set('config', this.config);
-}
+    getIsDevMode() {
+        return this.config.isDevMode;
+    }
 
-getIsDevServer() {
-    return this.config.isDevServer;
-}
+    setIsDevMode(isDevMode: boolean) {
+        this.config.isDevMode = isDevMode;
+        this.localStorage.set('config', this.config);
+    }
 
-async setIsDevServer(isDevServer: boolean) {
-    this.config.isDevServer = isDevServer;
-    await this.localStorage.set('config', this.config);
-    await this.localStorage.remove('geojson');
-    await this.localStorage.remove('geojsonBbox');
-    await this.localStorage.remove('user_info');
-    await this.localStorage.remove('geojsonChanged');
-    return isDevServer;
-}
+    getIsDevServer() {
+        return this.config.isDevServer;
+    }
+
+    async setIsDevServer(isDevServer: boolean) {
+        this.config.isDevServer = isDevServer;
+        await this.localStorage.set('config', this.config);
+        await this.localStorage.remove('geojson');
+        await this.localStorage.remove('geojsonBbox');
+        await this.localStorage.remove('user_info');
+        await this.localStorage.remove('geojsonChanged');
+        return isDevServer;
+    }
 
 }

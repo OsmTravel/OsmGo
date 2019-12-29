@@ -6,7 +6,11 @@
     "CONFIRM": "Confirm",
     "ADD": "Add",
     "VALIDATE": "Validate",
-    "OK": "Ok"
+    "OK": "Ok",
+    "UNKNOWN": "Unknown",
+    "UNDEFINED": "Undefined",
+    "NAME": "Name",
+    "ID": "Id"
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Really ?",
@@ -69,32 +73,19 @@
     "HIDE_LONG_LINE": "Hide lines longer than 200 m",
     "HIDE_LONG_LINE_HINT": "Lines longer than 200 m won't be displayed. A marker will always symbolize the line",
     "TAGS": "Tags",
-    "DEFAULT_TAGS_LIST": "List of default tags",
-    "TAGS_LIST_ALL": "All tags",
-    "TAGS_LIST_BOOKMARKS": "Bookmarks",
-    "TAGS_LIST_TYPE": "By type",
-    "DEFAULT_TAGS_LIST_HINT": "Default tag type when opening the selection window",
     "DATA": "Data",
     "MARGIN": "Margin",
     "MARGIN_HINT": "Distance around the current view where the data will be downloaded",
     "AERIAL_IMAGERY": "Aerial imagery",
     "AERIAL_IMAGERY_HINT": "Aerial imaging to use",
-    "DELAYED_MODE": "Deferred mode",
-    "DELAYED_MODE_HINT": "The modified items will be sent when requested (recommended mode)",
-    "LIVE_MODE_MUST_LOGIN": "You must be authenticated to switch",
-    "LIVE_MODE_ON": "Mode live On",
-    "LIVE_MODE_OFF": "Mode live Off",
-    "LIVE_MODE_HINT": "After each change, the item is sent to OpenStreetMap",
     "LANGUAGE_AND_REGION": "Language & region",
     "UI_LANGUAGE": "User interface language",
     "TAG_LANGUAGE": "Language of tags",
     "TAG_COUNTRY": "Country",
     "TAG_COUNTRY_HINT": "Tags and presets may vary by country",
     "CACHE": "Cache management",
-    "GENERATE_ICON_CACHE": "Generate the icon cache",
-    "DELETE_ICON_CACHE": "Delete icon cache",
     "DELETE_CACHE": "Delete all application cache",
-    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, icons, login, etc)",
+    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, login, etc)",
     "DISPLAY_OLD_TAGS_ICON": "Show an icon on old objects",
     "OLD_TAGS_ICON_RANGE_PART_1": "Last modification at least",
     "OLD_TAGS_ICON_RANGE_PART_2": "years ago",
@@ -105,6 +96,7 @@
     "ADD_SURVEY_DATE_HINT": "Add today's date to tag 'survey:date after adding/editing object"
   },
   "MODAL_SELECTED_ITEM": {
+    "CUSTOM_KEY_VALUE": "Add a custom value",
     "PRIMARY_TAG_LIST": "List",
     "PRIMARY_TAG_CUSTOM": "Custom",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Please enter at least 3 letters in the search bar",
@@ -127,7 +119,13 @@
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
     "PRIMARY_TAG_FULL": "Full",
     "SELECT_CATEGORY": "Select a category",
-    "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way",
-    "UNDEFINED_VALUE": "unknown"
+    "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way(s)",
+    "UNDEFINED_VALUE": "Unknown",
+    "LAST_TAG_USED": "Last used tags",
+    "BOOKMARKS": "Bookmarks"
+  },
+  "ALERT":{
+    "TAG_IS_DEPRECATED": "This tag is deprecated",
+    "FIX": "Fix"
   }
 }

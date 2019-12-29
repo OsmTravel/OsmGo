@@ -1,22 +1,25 @@
 import { Component, Input } from '@angular/core';
 import * as moment from 'moment';
-import { ConfigService } from 'src/app/services/config.service';
+
 @Component({
     selector: 'read-meta',
 	templateUrl: './READ_Meta.component.html',
 })
 export class ReadMeta {
-
-	constructor( private configService: ConfigService){
+    @Input() feature;
+	@Input() displayCode;
+	@Input() languageUi
+	meta
+	usedByWays
+	constructor( ){
 
 	}
 	
 	ngOnInit(): void {
-		moment.locale(this.configService.getUiLanguage()); // TODO Once...
+		this.usedByWays = this.feature.properties.usedByWays || null;
+		moment.locale(this.languageUi); // TODO Once...
 	}
 
-    @Input() meta;
-	@Input() displayCode;
-	@Input() usedByWays;
+
 	
 }

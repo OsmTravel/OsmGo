@@ -1,0 +1,62 @@
+
+<div style="height: 100%;">
+    <ion-header>
+    <ion-toolbar>
+      <ion-title> 
+         {{'MAIN.WHAT_ITEM' | translate}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+    <div class="content">
+      <table>
+          <table>
+              <thead>
+                  <tr>
+                      <th style="width:20px;"></th>
+                      <th style="width:20px;"></th>
+                      <!-- <th> Type </th> -->
+                      <th>  {{'SHARED.NAME' | translate}} </th>
+                      <th>  {{'SHARED.ID' | translate}}</th>
+                  </tr>
+              </thead>
+              <tbody *ngFor="let feature of features">
+            
+                  <tr (click)="selectFeature(feature)" >
+                      <td style="width:20px;" [style.background-color]="feature.properties.hexColor">
+                          <app-icon  [icon]="feature.properties.icon"[jsonSprites]="jsonSprites">  </app-icon>
+                    </td>
+
+                    <td> 
+                        <ion-icon *ngIf="feature.properties.changeType == 'Create'" name="add" class="iconType" ></ion-icon>
+                        <ion-icon *ngIf="feature.properties.changeType == 'Update'" name="create" class="iconType" ></ion-icon>
+                        <ion-icon *ngIf="feature.properties.changeType == 'Delete'" name="trash" class="iconType" ></ion-icon>
+                    </td>
+                    <!-- TODO: geometryType -->
+                    <!-- <td>  
+                        <ion-icon *ngIf="!feature.properties.way_geometry" src="assets/idIcons/icon-vertex.svg"></ion-icon>
+                        <ion-icon *ngIf="feature.properties.way_geometry && feature.properties.way_geometry.type == 'Polyline'" class="iconGeometryType" src="assets/idIcons/icon-area.svg"></ion-icon>
+                        <ion-icon  *ngIf="feature.properties.way_geometry.type == 'Polygon'" src="assets/idIcons/icon-line.svg"></ion-icon>
+                    </td> -->
+
+                    <!-- TODO: translation -->
+                      <td>
+                        <span *ngIf="feature.properties._name"> {{feature.properties._name}} </span>
+                        <span *ngIf="!feature.properties._name" class="noname"> {{'SHARED.UNDEFINED' | translate}} </span>
+                        
+                      </td>
+                      <td> 
+                        <span *ngIf="feature.properties.changeType !== 'Create'" class="spanId"> 
+                            {{feature.properties.id}}
+                        </span ></td>
+                     
+                  </tr>
+              </tbody>
+          </table>
+      </table>
+    </div>
+  </div>
+
+
+
+
+

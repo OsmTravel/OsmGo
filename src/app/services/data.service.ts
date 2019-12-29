@@ -119,16 +119,13 @@ export class DataService {
         }
     }
 
-
-    /* Delayedd */
-
     getGeojsonChanged() {
         return cloneDeep(this.geojsonChanged);
     }
 
-    setGeojsonChanged(geojson) { // TODO: Promise... Async await ? 
+    async setGeojsonChanged(geojson) { 
         this.geojsonChanged = geojson;
-        this.localStorage.set('geojsonChanged', this.geojsonChanged);
+       await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
     getCountGeojsonChanged(): number {
