@@ -19777,7 +19777,9 @@
       "lbl": {"en": "_NC", "fr": "Equipement indéterminé"},
       "tags": {"amenity": "yes"},
       "geometry": ["point", "area"],
-      "id": "amenity/yes"
+      "id": "amenity/yes",
+      "deprecated": false,
+      "searchable": false
     },
     {
       "icon": "maki-parking",
@@ -25286,7 +25288,7 @@
       "presets": [],
       "lbl": {
         "en": "Brewpub",
-        "fr": "brasserie-pub",
+        "fr": "Brasserie & pub",
         "de": "Pub mit Hausbrauerei",
         "es": "Pub cervecero",
         "pt": "Cervejaria",
@@ -25303,7 +25305,7 @@
       },
       "terms": {
         "en": "alcohol,drink,dive,beer,bier,booze,craft brewery,microbrewery,small batch brewery",
-        "fr": "brasserie-pub,alcool,boissons,bière",
+        "fr": "brasserie-pub ,bar, alcool,boissons,bière",
         "de": "Pub mit Hausbrauerei",
         "es": "alcohol, bebida, cerveza, cervecería artesanal, cervecería de pequeños lotes",
         "pt": "cerveja,cerveja artesanal,álcool,bebida",
@@ -25321,7 +25323,8 @@
       "tags": {"amenity": "pub", "microbrewery": "yes"},
       "reference": {"key": "microbrewery"},
       "moreFields": [],
-      "id": "amenity/pub/microbrewery"
+      "id": "amenity/pub/microbrewery",
+      "description": {"en": "", "fr": "Pub qui fait également brasserie"}
     },
     {
       "icon": "recycling",
@@ -28643,7 +28646,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"public_transport": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "public_transport/yes"
+      "id": "public_transport/yes",
+      "searchable": false
     },
     {
       "icon": "maki-rail",
@@ -30955,7 +30959,8 @@
       "iDRef": "emergency/yes",
       "tags": {"emergency": "yes"},
       "moreFields": [],
-      "id": "emergency/yes"
+      "id": "emergency/yes",
+      "searchable": false
     },
     {
       "icon": "maki-fire-station",
@@ -33318,7 +33323,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"leisure": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "leisure/yes"
+      "id": "leisure/yes",
+      "searchable": false
     },
     {
       "icon": "mi-florist",
@@ -40734,7 +40740,7 @@
       "icon": "wiki_question",
       "markerColor": "#5B396C",
       "presets": [],
-      "lbl": {"en": "_NC"},
+      "lbl": {"en": "_NC", "fr": "Artisan indéterminé "},
       "tags": {"craft": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
       "id": "craft/yes"
@@ -42980,7 +42986,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"tourism": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "tourism/yes"
+      "id": "tourism/yes",
+      "searchable": false
     },
     {
       "icon": "maki-lodging",
@@ -47860,7 +47867,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"man_made": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "man_made/yes"
+      "id": "man_made/yes",
+      "searchable": false
     },
     {
       "icon": "mi-cemetery",
@@ -52006,7 +52014,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"healthcare": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "healthcare/yes"
+      "id": "healthcare/yes",
+      "searchable": false
     },
     {
       "icon": "mi-health",
@@ -53224,7 +53233,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"historic": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "historic/yes"
+      "id": "historic/yes",
+      "searchable": false
     },
     {
       "icon": "fa-bank",
@@ -53704,7 +53714,8 @@
       "lbl": {"en": "_NC"},
       "tags": {"natural": "yes"},
       "geometry": ["point", "area", "vertex", "line"],
-      "id": "natural/yes"
+      "id": "natural/yes",
+      "searchable": false
     },
     {
       "icon": "maki-water",

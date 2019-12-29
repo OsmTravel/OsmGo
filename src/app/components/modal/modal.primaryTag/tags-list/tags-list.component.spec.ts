@@ -8,6 +8,8 @@ import { FilterExcludeKeysPipe } from 'src/app/pipes/filterExcludeKeys.pipe';
 import { FilterByCountryCode } from 'src/app/pipes/filterByCountryCode.pipe';
 import { FilterExcludeTagByCountryCode } from 'src/app/pipes/filterExcludeTagByCountryCode.pipe';
 import { FilterDeprecatedTagPipe } from 'src/app/pipes/filterDeprecatedTag.pipe';
+import { FilterBySearchablePipe } from 'src/app/pipes/filter-by-searchable.pipe'
+
 import { DisplayTagsPipe } from 'src/app/pipes/display-tags.pipe';
 import { IsBookmarkedPipe } from 'src/app/pipes/is-bookmarked.pipe';
 
@@ -20,7 +22,7 @@ describe('TagsListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ TagsListComponent, FilterByTagsContentPipe, FilterTagCongigByGeometryPipe , FilterExcludeKeysPipe, 
-        FilterByCountryCode, FilterExcludeTagByCountryCode, FilterDeprecatedTagPipe, DisplayTagsPipe, IsBookmarkedPipe],
+        FilterByCountryCode, FilterExcludeTagByCountryCode, FilterDeprecatedTagPipe, FilterBySearchablePipe,  DisplayTagsPipe, IsBookmarkedPipe],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
