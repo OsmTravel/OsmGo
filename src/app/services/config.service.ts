@@ -23,6 +23,26 @@ export interface Changeset {
     comment: string;
 }
 
+export interface Config {
+    mapMarginBuffer: number,
+    lockMapHeading: boolean,
+    followPosition: boolean,
+    defaultPrimarykeyWindows: 'lastTags' | 'bookmarks',
+    baseMapSourceId: string,
+    filterWayByArea: boolean,
+    filterWayByLength: boolean,
+    changeSetComment: string,
+    languageUi: string,
+    languageTags: string,
+    countryTags: string,
+    oldTagsIcon: { display: boolean, year: number },
+    displayFixmeIcon: boolean,
+    addSurveyDate: boolean,
+    isDevMode: boolean,
+    isDevServer: boolean,
+    authType : 'basic' | 'oauth'
+}
+
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
     eventCloseGeolocPage = new EventEmitter();
@@ -44,11 +64,11 @@ export class ConfigService {
     baseMapSources;
     currentZoom: number = undefined;
 
-    config = {
+    config: Config = {
         mapMarginBuffer: 50,
         lockMapHeading: true,
         followPosition: true,
-        defaultPrimarykeyWindows: 'allTags',
+        defaultPrimarykeyWindows: 'lastTags',
         baseMapSourceId: this.baseMapSources ? this.baseMapSources[0].id : null,
         filterWayByArea: true,
         filterWayByLength: true,
@@ -206,7 +226,7 @@ export class ConfigService {
         return this.config.followPosition;
     }
 
-    setDefaultPrimarykeyWindows(defaultPrimarykeyWindows: string) {
+    setDefaultPrimarykeyWindows(defaultPrimarykeyWindows: 'lastTags' | 'bookmarks') {
         this.config.defaultPrimarykeyWindows = defaultPrimarykeyWindows;
         this.localStorage.set('config', this.config);
     }

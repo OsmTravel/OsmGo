@@ -17,7 +17,6 @@ export class IconComponent implements OnInit {
 
   ngOnInit() {
     this.devicePixelRatio = Math.round(window.devicePixelRatio);
-    console.log(window.devicePixelRatio)
   }
 
 

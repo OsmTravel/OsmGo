@@ -117,7 +117,6 @@ export class MainPage implements AfterViewInit {
 
       modal.onDidDismiss()
       .then(d => {
-        console.log(d);
         this.modalIsOpen = false;
         const data = d.data;
         this.configService.freezeMapRenderer = false;

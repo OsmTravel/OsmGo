@@ -86,7 +86,6 @@ export class ModalsContentPage implements OnInit {
 
 
   ngOnInit() { // override
-    // console.log(this.feature);
     this.initComponent();
 
     if (this.mode === 'Create') {
@@ -487,7 +486,6 @@ export class ModalsContentPage implements OnInit {
 
 
   addOrRemoveBookmark(tag : TagConfig) {
-    console.log('addOrRemoveBookmark', tag.id)
     if (!this.tagsService.bookmarksIds.includes(tag.id)) {
       this.tagsService.addBookMark(tag.id)
     } else {

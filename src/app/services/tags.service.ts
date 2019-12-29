@@ -205,14 +205,11 @@ export class TagsService {
         )
         .pipe(
             map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags]) => {
-
                 this.userTags = userTags ? userTags : [];
-                console.log(this.userTags);
         
                 this.jsonSprites = jsonSprites;
                 this.presets = presets;
                 this.tags = [...tagsConfig['tags'], ...this.userTags];
-                console.log(this.tags);
                 this.primaryKeys = tagsConfig['primaryKeys'];
                 this.excludeWays = tagsConfig['excludeWays'];
                 this.configService.baseMapSources = baseMaps;

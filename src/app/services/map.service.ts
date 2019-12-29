@@ -119,7 +119,6 @@ export class MapService {
   markerMapboxUnknown = {};
 
   loadUnknownMarker(factor){
-        console.log(factor);
         const roundedFactor = Math.round(factor)
         // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
           this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
@@ -691,7 +690,6 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      console.log(features);
       if (!this.configService.platforms.includes('hybrid')){
         window.navigator.vibrate(50);
       }else {
