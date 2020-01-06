@@ -120,6 +120,22 @@
 		</ion-card-content>
 	</ion-card>
 
+	<ion-card>
+		<ion-card-content>
+
+			<ion-item>
+				<ion-label>{{ 'SETTINGS.CHECKED_KEY' | translate}}</ion-label>
+				<ion-select [value]="this.configService.config.checkedKey" (ionChange)="checkedKeyChange($event)">
+					<ion-select-option value="survey:date">
+						survey:date
+					</ion-select-option>
+					<ion-select-option value="check_date">
+						check_date
+					</ion-select-option>
+				</ion-select>
+			</ion-item>
+		</ion-card-content>
+	</ion-card>
 
 
 	<h4>{{ 'SETTINGS.DATA' | translate}}</h4>

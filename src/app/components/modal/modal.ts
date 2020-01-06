@@ -424,7 +424,7 @@ export class ModalsContentPage implements OnInit {
 
     let tagSurveyIndex = -1;
     for (let i = 0; i < this.tags.length; i++) {
-      if (this.tags[i].key === 'survey:date') {
+      if (this.tags[i].key === this.configService.config.checkedKey) {
         tagSurveyIndex = i;
         break;
       }
@@ -432,7 +432,7 @@ export class ModalsContentPage implements OnInit {
     if (tagSurveyIndex !== -1) { // le tag existe déjà, on l'écrase
       this.tags[tagSurveyIndex].value = isoDate;
     } else {
-      this.tags.push({ 'key': 'survey:date', 'value': isoDate });
+      this.tags.push({ 'key': this.configService.config.checkedKey, 'value': isoDate });
     }
   }
 
@@ -440,6 +440,7 @@ export class ModalsContentPage implements OnInit {
     const savedTags = tags.map(t => { return { key: t.key, value: t.value } })
       .filter(t => t.key !== 'name')
       .filter(t => t.key !== 'survey:date')
+      .filter(t => t.key !== 'check_date')
     this.tagsService.addSavedField(tagId, savedTags);
     if (!this.savedFields) this.savedFields = {};
     this.savedFields['tags'] = [...savedTags];

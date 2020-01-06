@@ -101,6 +101,10 @@ export class SettingsPage {
     this.configService.setAddSurveyDate(e.detail.checked);
   }
 
+  checkedKeyChange(e){
+    console.log(e);
+    this.configService.setCheckedKey(e.detail.value);
+  }
 
   languageUiChange(e){
     const newLlang = e.detail.value;

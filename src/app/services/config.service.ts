@@ -40,7 +40,8 @@ export interface Config {
     addSurveyDate: boolean,
     isDevMode: boolean,
     isDevServer: boolean,
-    authType : 'basic' | 'oauth'
+    authType: 'basic' | 'oauth',
+    checkedKey: 'survey:date' | 'check_date'
 }
 
 @Injectable({ providedIn: 'root' })
@@ -48,12 +49,12 @@ export class ConfigService {
     eventCloseGeolocPage = new EventEmitter();
 
     constructor(public localStorage: Storage,
-        private platform : Platform,
+        private platform: Platform,
         private http: HttpClient,
         private translate: TranslateService,
         public stateService: StatesService
     ) { }
-    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null};
+    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null };
     changeset: Changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     i18nConfig;
 
@@ -81,8 +82,9 @@ export class ConfigService {
         addSurveyDate: true,
         isDevMode: false,
         isDevServer: false,
-        authType : this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
-    
+        authType: this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth',
+        checkedKey: "survey:date"
+
     };
 
     currentTagsCountryChoice = [];
@@ -110,7 +112,7 @@ export class ConfigService {
     }
 
     resetUserInfo() {
-        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null};
+        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
         this.localStorage.set('user_info', this.user_info);
     }
 
@@ -137,50 +139,50 @@ export class ConfigService {
 
     getI18nConfig$() {
         return this.http.get('./assets/i18n/i18n.json')
-        .pipe( map(i18nConfig => {
-            this.i18nConfig = i18nConfig;
-            return i18nConfig
-        }) )
-        
+            .pipe(map(i18nConfig => {
+                this.i18nConfig = i18nConfig;
+                return i18nConfig
+            }))
+
     }
 
 
     // TODO: add userInfo
     loadConfig$(_i18nConfig) {
         return from(this.localStorage.get('config'))
-        .pipe( 
-            map( async d => {
-                if (d) {
-                    // tslint:disable-next-line:forin
-                    for (const key in d) {
-                        this.config[key] = d[key];
+            .pipe(
+                map(async d => {
+                    if (d) {
+                        // tslint:disable-next-line:forin
+                        for (const key in d) {
+                            this.config[key] = d[key];
+                        }
+                    } else {
+                        this.localStorage.set('config', this.config);
                     }
-                } else {
-                    this.localStorage.set('config', this.config);
-                }
-            
-        
-                this.config.languageTags = this.config.languageTags || 'en';
-                this.config.countryTags = this.config.countryTags || 'GB';
-        
-        
-                let userInfo = await this.localStorage.get('user_info')
-                if (userInfo && userInfo.connected) {
-                    this.user_info = userInfo;
-                } else {
-                    this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
-                }
-        
-                let changeset: Changeset = await this.localStorage.get('changeset')
-                if (changeset) {
-                    this.changeset = changeset;
-                } else {
-                    this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
-                }
-            return { "config": this.config, "user_info":this.user_info, "changeset":this.changeset};
-            })
-        )
-}
+
+
+                    this.config.languageTags = this.config.languageTags || 'en';
+                    this.config.countryTags = this.config.countryTags || 'GB';
+
+
+                    let userInfo = await this.localStorage.get('user_info')
+                    if (userInfo && userInfo.connected) {
+                        this.user_info = userInfo;
+                    } else {
+                        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
+                    }
+
+                    let changeset: Changeset = await this.localStorage.get('changeset')
+                    if (changeset) {
+                        this.changeset = changeset;
+                    } else {
+                        this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
+                    }
+                    return { "config": this.config, "user_info": this.user_info, "changeset": this.changeset };
+                })
+            )
+    }
 
     async loadAppVersion() {
         this.appVersion.appVersionNumber = environment.version;
@@ -310,6 +312,16 @@ export class ConfigService {
         this.config.addSurveyDate = add
         this.localStorage.set('config', this.config);
     }
+
+    getCheckedKey() : 'survey:date' | 'check_date'  {
+        return this.config.checkedKey;
+    }
+
+    setCheckedKey(key: 'survey:date' | 'check_date') {
+        this.config.checkedKey = key
+        this.localStorage.set('config', this.config);
+    }
+
 
     getIsDevMode() {
         return this.config.isDevMode;
