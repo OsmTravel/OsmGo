@@ -11,13 +11,9 @@ const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, "utf8"));
 
 const tagsResult = [];
 const primaryKeys = [];
-const excludeWays = {};
 
 for (let pkey in tagsOsmgo) {
     primaryKeys.push(pkey)
-    if (tagsOsmgo[pkey].exclude_way_values){
-        excludeWays[pkey] = tagsOsmgo[pkey].exclude_way_values
-    }
   for (let i = 0; i < tagsOsmgo[pkey].values.length; i++) {
     let tag = tagsOsmgo[pkey].values[i];
     tagsResult.push(tag);
@@ -25,10 +21,9 @@ for (let pkey in tagsOsmgo) {
 }
 console.log(tagsResult.length);
 console.log(primaryKeys);
-console.log(excludeWays)
+
 const result = {
     primaryKeys: primaryKeys,
-    excludeWays: excludeWays,
     tags: tagsResult
 }
 fs.writeFileSync(newConfigPath, stringify(result));

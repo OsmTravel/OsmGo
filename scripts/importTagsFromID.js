@@ -21,8 +21,8 @@ const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
 
 // const osmgoPkeys = Object.keys(tagsOsmgo);
 
-const osmgoPkeys = ['telecom'];
-
+const osmgoPkeys = ['building'];
+const markerColor = "#5A5A5A";
 
 let idTagsFieldsListId = []; // list of id of fields to add...
 const tagsIDpkeys = Object.keys(tagsID)
@@ -121,9 +121,9 @@ for (let iDid of tagsIDpkeys) {
         // console.log(idPkey, idValue);
         // new tag
         let newTag = {
-            key: iDKey,
+            id: iDid,
             icon: tagiD.icon || '',
-            markerColor: tagsOsmgo[0] ? tagsOsmgo[0].markerColor : 'markerColorEMPTY',
+            markerColor: markerColor,
             presets: iDFields,
 
             lbl: { en: tagiD.name },

@@ -18,7 +18,6 @@ export class TagsService {
     tags:TagConfig[];
     userTags:TagConfig[];
     primaryKeys = [];
-    excludeWays= {};
     presets = {};
 
     basemaps;
@@ -211,7 +210,6 @@ export class TagsService {
                 this.presets = presets;
                 this.tags = [...tagsConfig['tags'], ...this.userTags];
                 this.primaryKeys = tagsConfig['primaryKeys'];
-                this.excludeWays = tagsConfig['excludeWays'];
                 this.configService.baseMapSources = baseMaps;
         
                     if (bookmarksIds) {

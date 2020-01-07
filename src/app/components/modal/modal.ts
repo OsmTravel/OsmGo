@@ -136,11 +136,10 @@ export class ModalsContentPage implements OnInit {
 
     // la configuration pour cette clé principale (lbl, icon, presets[], ...)
     if (!tagConfig) {
-      this.tagConfig = getConfigTag(this.feature, this.tagsService.tags, this.tagsService.excludeWays, this.tagsService.primaryKeys);
+      this.tagConfig = getConfigTag(this.feature, this.tagsService.tags);       
     } else {
       this.tagConfig = tagConfig;
     }
-
 
     if (!this.primaryKey) {
       this.primaryKey = this.tagsService.findPkey((this.tags));

@@ -32,7 +32,8 @@ const idTr = JSON.parse(fs.readFileSync(idTranslationFilePath, 'utf8'))[language
 
 // const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
+const tagsOsmgoConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
+const tagsOsmgo = tagsOsmgoConfig.tags;
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
 
 const trFields = idTr.presets.fields;
@@ -42,22 +43,13 @@ const trPresets = idTr.presets.presets
 
 // TAGS
 const importTrTags = () => {
-    for (let pkey in tagsOsmgo){
-        if (!tagsOsmgo[pkey].lbl[language] || overwrite){
-         
-            if (trPresets[pkey] && trPresets[pkey].name){
-                tagsOsmgo[pkey].lbl[language] =  trPresets[pkey].name
-            }
-           
-        }
-        for(let tag of tagsOsmgo[pkey].values){
+        for(let tag of tagsOsmgo){
             // console.log(tag.iDRef);
             if (tag.iDRef){
                 if (trPresets[tag.iDRef] && trPresets[tag.iDRef].name){
                     if (!tag.lbl[language] || overwrite){
                         tag.lbl[language] = trPresets[tag.iDRef].name
                     }
-                  
                 }
                 
                 if (trPresets[tag.iDRef] && trPresets[tag.iDRef].terms){
@@ -75,9 +67,9 @@ const importTrTags = () => {
             // console.log(tag.lbl[language])
             }  
         }
-    }
     
-    fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8');
+    
+    fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgoConfig), 'utf8');
 }
 
 
@@ -86,7 +78,10 @@ const importFields = () => {
         const osmGoPreset = presetsOsmgo[k];
         if (trFields[k]){
             if (trFields[k].label){
-                osmGoPreset.lbl[language] = trFields[k].label;
+                if (!osmGoPreset.lbl[language] || overwrite ){
+                    osmGoPreset.lbl[language] = trFields[k].label;
+                }
+                
             }
 
             if (trFields[k].options){
@@ -94,11 +89,17 @@ const importFields = () => {
                 for (let osmgoOpt of osmGoPreset.options){
                     if (iDoptions[osmgoOpt.v]){
                         if (typeof iDoptions[osmgoOpt.v] === 'string'){
-                            osmgoOpt.lbl[language] = iDoptions[osmgoOpt.v]
+                            if (!osmgoOpt.lbl[language] || overwrite){
+                                osmgoOpt.lbl[language] = iDoptions[osmgoOpt.v]
+                            }
+                           
                         } 
                         else {
                             if (iDoptions[osmgoOpt.v].title){
-                                osmgoOpt.lbl[language] = iDoptions[osmgoOpt.v].title
+                                if (!osmgoOpt.lbl[language] || overwrite){
+                                    osmgoOpt.lbl[language] = iDoptions[osmgoOpt.v].title
+                                }
+                                
                             }
                         }
                     }

@@ -25,7 +25,9 @@ const inside = (point, vs) => {
 };
 
 const wayToPoint = (feature) => { // /!\ mutable !
+  
     if (feature.geometry.type !== 'Point') {
+        // console.log(feature)
         // stock the original geometry in  feature.properties.way_geometry  .way_geometry
         feature.properties.way_geometry = clone(feature.geometry);
         switch (feature.geometry.type) {
@@ -94,19 +96,11 @@ const isFilteredByKeys = (tags, keysFilter) => { // true => in final result
     return false
 }
 
-const getPrimaryKeyOfObject = (feature, excludesWays, primaryKeys) => {
+const getPrimaryKeyOfObject = (feature, primaryKeys) => {
     const tags = feature.properties.tags;
     let kv = { k: '', v: '' };
     for (let k in tags) {
         if (primaryKeys.includes(k)) {
-            // on filtre ici pour ne pas prendre en compte les ways exclus
-            if ((feature.properties.type == 'way' || feature.properties.type == 'relation')
-                && excludesWays
-                && excludesWays[k] 
-                && excludesWays[k].includes(tags[k]) 
-            ) {
-                continue
-            }
             kv = { k: k, v: tags[k] };
             return kv
         }
@@ -135,8 +129,26 @@ export function getConfigTag(feature, tagsConfig) {
     if (match.conf) {
         return match.conf;
     } else {
-        
-        return null
+       
+        // oops...
+        const k = feature.properties.primaryTag.k ? 'k' : 'key';
+        const v = feature.properties.primaryTag.k ? 'v' : 'value';
+
+        const unkownsId = `${feature.properties.primaryTag[k]}/${feature.properties.primaryTag[v]}`;
+        const unkownsTagConfig =  {
+            key: feature.properties.primaryTag[k],
+            icon: 'wiki-question',
+            markerColor: '#000000',
+            lbl:{ en:`${feature.properties.primaryTag[k]} = ${feature.properties.primaryTag[v]}`},
+            presets: [],
+            geometry : [],
+            tags: {},
+            id: unkownsId,
+            unknowTags: true 
+        }
+        unkownsTagConfig['tags'][feature.properties.primaryTag[k]] = feature.properties.primaryTag[v];
+        return unkownsTagConfig;
+
     }
 }
 
@@ -161,7 +173,7 @@ export function addAttributesToFeature (feature) { // /!\ mutable !
 export function setIconStyle(feature, tagsConfig) { // /!\ mutable 
 
     let configMarker = getConfigTag(feature, tagsConfig);
-  
+
     let markerShape
     if (feature.properties.type === 'node') {
         markerShape = 'circle'
@@ -173,11 +185,13 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
         markerShape = 'star';
     }
 
-
-    if (configMarker) { // OK
         feature.properties.icon = (configMarker.icon) ? configMarker.icon : ''
         feature.properties.marker = `${markerShape}-${configMarker.markerColor}-${feature.properties.icon}`
         feature.properties.hexColor = configMarker.markerColor;
+        feature.properties.configId = configMarker.id;
+        if (configMarker.unknowTags){
+            feature.properties.unknowTags = true;
+        }
 
         if (configMarker.deprecated){
             feature.properties['deprecated'] = configMarker.deprecated
@@ -188,16 +202,6 @@ export function setIconStyle(feature, tagsConfig) { // /!\ mutable
             }
            
         }
-
-
-    } else { // on ne connait pas la 'value', donc pas de config pour le marker
-        feature.properties.icon = 'maki-circle'
-        feature.properties.hexColor = '#000000';
-        feature.properties.marker = `${markerShape}-#000000-`;
-    }
-
-
-
     addAttributesToFeature(feature)
 
     return feature;
@@ -351,7 +355,7 @@ export const convert = (text, options) => {
             if (_nodes[ndId]) {
                 coordinates.push(_nodes[ndId].geometry.coordinates)
             } else {
-                console.log('TAINDED!')
+                // console.log('TAINDED!')
             }
         }
         if (typeGeom == 'LineString') {
@@ -517,7 +521,100 @@ export const convert = (text, options) => {
         return resultRings
     }
 
+    const extractOsmGoData = ( nodes, ways, relations, tagConfig, primaryKeys) => {
+        // console.log(nodes, ways,relations, tagsConfig )
 
+        const featuresResult = []
+    for (let f in nodes) {
+        // let configMarker = getConfigTag(f, tagsConfig);
+        // console.log(configMarker)
+        const tags = nodes[f].properties.tags
+        if (nodes[f].geometry && nodes[f].properties.tags) {
+            addAttributesToFeature(nodes[f])
+           
+            if (options && tagConfig) {
+                 let primaryTag = getPrimaryKeyOfObject(nodes[f], primaryKeys);
+                if (primaryTag) {
+                    nodes[f].properties['primaryTag'] = primaryTag;
+                    setIconStyle(nodes[f], options.tagConfig);
+                    // console.log(nodes[f]);
+                    featuresResult.push(nodes[f])
+                }
+
+            }
+            else {
+                featuresResult.push(nodes[f])
+            }
+
+        }
+    }
+
+    for (let f in ways) {
+        const tags = ways[f].properties.tags
+        if (ways[f].geometry && ways[f].properties.tags) {
+            addAttributesToFeature(ways[f])
+            // transform geom
+            if (ways[f].geometry.type == 'Polygon' || ways[f].geometry.type == 'MultiPolygon') {
+                if (!wayIsRealyPolygon(ways[f].properties.tags)) {
+                    ways[f].geometry.coordinates = ways[f].geometry.coordinates[0];
+                    ways[f].geometry.type = ways[f].geometry.type == 'Polygon' ? 'LineString' : 'MultiLineString'
+                }
+            }
+            wayToPoint(ways[f])
+            if (options && options.tagConfig) {
+                let primaryTag = getPrimaryKeyOfObject(ways[f], primaryKeys)
+
+                if (primaryTag) {
+                    ways[f].properties['primaryTag'] = primaryTag;
+                    setIconStyle(ways[f], options.tagConfig)
+                    featuresResult.push(ways[f])
+                }
+
+            }
+            else {
+                featuresResult.push(ways[f])
+            }
+
+
+        }
+    }
+
+    for (let f in relations) {
+        const tags = relations[f].properties.tags
+        if (relations[f].geometry && relations[f].properties.tags && isFilteredByKeys(tags, keysFilter)) {
+            // transform geom
+            addAttributesToFeature(relations[f])
+            if (relations[f].geometry.type == 'Polygon' || relations[f].geometry.type == 'MultiPolygon') {
+                if (!wayIsRealyPolygon(relations[f].properties.tags)) {
+                    relations[f].geometry.coordinates = relations[f].geometry.coordinates[0];
+                    relations[f].geometry.type = relations[f].geometry.type == 'Polygon' ? 'LineString' : 'MultiLineString'
+                }
+            }
+            wayToPoint(relations[f])
+            if (options && options.tagConfig) {
+                let primaryTag = getPrimaryKeyOfObject(relations[f], primaryKeys)
+
+                if (primaryTag) {
+                    relations[f].properties['primaryTag'] = primaryTag;
+                    setIconStyle(relations[f], options.tagConfig)
+                    featuresResult.push(relations[f])
+                }
+
+            } else {
+                featuresResult.push(relations[f])
+            }
+
+        }
+    }
+
+    return featuresResult;
+    }
+
+
+
+
+
+    
     const nodes = {} //
     if (!Array.isArray(osm.node)) { osm.node = osm.node ? [osm.node] : [] }
     for (let node of osm.node) {
@@ -662,85 +759,12 @@ export const convert = (text, options) => {
         }
     }
 
-    const featuresResult = []
-    for (let f in nodes) {
-        const tags = nodes[f].properties.tags
-        if (nodes[f].geometry && nodes[f].properties.tags && isFilteredByKeys(tags, keysFilter)) {
-            addAttributesToFeature(nodes[f])
-           
-            if (options && options.tagConfig) {
-                 let primaryTag = getPrimaryKeyOfObject(nodes[f], options.excludesWays, options.primaryKeys);
-                if (primaryTag) {
-                    nodes[f].properties['primaryTag'] = primaryTag;
-                    setIconStyle(nodes[f], options.tagConfig)
-                    featuresResult.push(nodes[f])
-                }
+  
 
-            }
-            else {
-                featuresResult.push(nodes[f])
-            }
+    // console.log(nodes);
+    const featuresResult = extractOsmGoData(nodes, ways, relations, options.tagConfig, options.primaryKeys)
 
-        }
-    }
-
-    for (let f in ways) {
-        const tags = ways[f].properties.tags
-        if (ways[f].geometry && ways[f].properties.tags && isFilteredByKeys(tags, keysFilter)) {
-            addAttributesToFeature(ways[f])
-            // transform geom
-            if (ways[f].geometry.type == 'Polygon' || ways[f].geometry.type == 'MultiPolygon') {
-                if (!wayIsRealyPolygon(ways[f].properties.tags)) {
-                    ways[f].geometry.coordinates = ways[f].geometry.coordinates[0];
-                    ways[f].geometry.type = ways[f].geometry.type == 'Polygon' ? 'LineString' : 'MultiLineString'
-                }
-            }
-            wayToPoint(ways[f])
-            if (options && options.tagConfig) {
-                let primaryTag = getPrimaryKeyOfObject(ways[f], options.excludesWays, options.primaryKeys)
-
-                if (primaryTag) {
-                    ways[f].properties['primaryTag'] = primaryTag;
-                    setIconStyle(ways[f], options.tagConfig)
-                    featuresResult.push(ways[f])
-                }
-
-            }
-            else {
-                featuresResult.push(ways[f])
-            }
-
-
-        }
-    }
-
-    for (let f in relations) {
-        const tags = relations[f].properties.tags
-        if (relations[f].geometry && relations[f].properties.tags && isFilteredByKeys(tags, keysFilter)) {
-            // transform geom
-            addAttributesToFeature(relations[f])
-            if (relations[f].geometry.type == 'Polygon' || relations[f].geometry.type == 'MultiPolygon') {
-                if (!wayIsRealyPolygon(relations[f].properties.tags)) {
-                    relations[f].geometry.coordinates = relations[f].geometry.coordinates[0];
-                    relations[f].geometry.type = relations[f].geometry.type == 'Polygon' ? 'LineString' : 'MultiLineString'
-                }
-            }
-            wayToPoint(relations[f])
-            if (options && options.tagConfig) {
-                let primaryTag = getPrimaryKeyOfObject(relations[f], options.excludesWays, options.primaryKeys)
-
-                if (primaryTag) {
-                    relations[f].properties['primaryTag'] = primaryTag;
-                    setIconStyle(relations[f], options.tagConfig)
-                    featuresResult.push(relations[f])
-                }
-
-            } else {
-                featuresResult.push(relations[f])
-            }
-
-        }
-    }
+    
 
     const geojson = {
         "type": "FeatureCollection",

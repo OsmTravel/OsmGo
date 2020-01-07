@@ -46,6 +46,7 @@ export interface Config {
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
+
     eventCloseGeolocPage = new EventEmitter();
 
     constructor(public localStorage: Storage,
@@ -64,6 +65,112 @@ export class ConfigService {
     deviceInfo;
     baseMapSources;
     currentZoom: number = undefined;
+
+
+
+    defaultHiddenIds :string[] = [
+        "highway/pedestrian_area",
+        'highway/footway',
+        'highway/motorway',
+        'highway/trunk',
+        'highway/trunk_link',
+        'highway/primary',
+        'highway/primary_link',
+        'highway/secondary',
+        'highway/secondary_link',
+        'highway/tertiary',
+        'highway/tertiary_link',
+        'highway/unclassified',
+        'highway/residential',
+        'highway/service',
+        'highway/motorway_link',
+        'highway/living_street',
+        'highway/track',
+        'highway/bus_guideway',
+        'highway/road',
+        'highway/bridleway',
+        'highway/path',
+        'highway/cycleway',
+        'highway/construction',
+        'highway/steps',
+        'highway/motorway_junction',
+        'highway/corridor',
+        'highway/pedestrian_line',
+        'highway/cycleway/bicycle_foot',
+        'highway/footway/crossing',
+        'highway/service/parking_aisle',
+        'highway/service/driveway',
+        'highway/path/informal',
+        'highway/stop',
+        'highway/turning_circle',
+
+        'barrier/hedge',
+        'barrier/fence',
+        'barrier/kerb',
+        'barrier/wall',
+
+        'natural/grassland',
+        'natural/wood',
+        'natural/bare_rock',
+        'natural/cliff',
+        'natural/shingle',
+        'natural/coastline',
+
+        'man_made/bridge',
+
+        'building/train_station',
+        'building/apartments',
+        'building/barn',
+        'building/boathouse',
+        'building/bungalow',
+        'building/cabin',
+        'building/carport',
+        "building/cathedral",
+        "building/chapel",
+        "building/church",
+        "building/civic",
+        "building/college",
+        "building/commercial",
+        "building/construction",
+        "building/detached",
+        "building/dormitory",
+        "building/farm_auxiliary",
+        "building/farm",
+        "building/garage",
+        "building/garages",
+        "building/grandstand",
+        "building/greenhouse",
+        "building/hangar",
+        "building/hospital",
+        "building/hotel",
+        "building/house",
+        "building/houseboat",
+        "building/hut",
+        "building/industrial",
+        "building/kindergarten",
+        "building/mosque",
+        "building/pavilion",
+        "building/public",
+        "building/residential",
+        "building/retail",
+        "building/roof",
+        "building/ruins",
+        "building/school",
+        "building/semidetached_house",
+        "building/service",
+        "building/shed",
+        "building/stable",
+        "building/stadium",
+        "building/static_caravan",
+        "building/temple",
+        "building/terrace",
+        "building/transportation",
+        "building/university",
+        "building/warehouse",
+        "building/office",
+        "building/yes"
+    ]
+
 
     config: Config = {
         mapMarginBuffer: 50,
@@ -84,7 +191,6 @@ export class ConfigService {
         isDevServer: false,
         authType: this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth',
         checkedKey: "survey:date"
-
     };
 
     currentTagsCountryChoice = [];

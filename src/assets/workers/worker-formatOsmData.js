@@ -7,13 +7,12 @@ function reponse(event) {
     let oldBboxFeature = event.data.oldBboxFeature
     let geojsonChanged = event.data.geojsonChanged
     let tagsConfig = event.data.tagsConfig;
-    let excludesWays = event.data.excludesWays;
+
     let primaryKeys = event.data.primaryKeys;
 
     const result = osmToOsmgo.convert(osmData, 
         {
         tagConfig: tagsConfig,
-        excludesWays: excludesWays,
         primaryKeys: primaryKeys,
         oldGeojson: oldGeojson, 
         geojsonChanged: geojsonChanged,

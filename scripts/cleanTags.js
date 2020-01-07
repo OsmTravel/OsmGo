@@ -4,22 +4,21 @@ const stringify = require("json-stringify-pretty-compact");
 const rp = require("request-promise");
 
 const assetsFolder = path.join(__dirname, "..", "src", "assets");
-const tagsOsmgoPath = path.join(assetsFolder, "tags&presets", "tags.json");
+const tagConfigPath = path.join(assetsFolder, "tags&presets", "tags.json");
 const presetsOsmgoPath = path.join(
   assetsFolder,
   "tags&presets",
   "presets.json"
 );
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, "utf8"));
+const tagsConfig = JSON.parse(fs.readFileSync(tagConfigPath, "utf8"));
 const presetsOsmgo = fs.readJSONSync(presetsOsmgoPath);
 
-for (let pkey in tagsOsmgo) {
   const uniqIds = [];
   const indexToDelete = [];
 
-  for (let i = 0; i < tagsOsmgo[pkey].values.length; i++) {
-    let tag = tagsOsmgo[pkey].values[i];
+  for (let i = 0; i < tagsConfig.tags.length; i++) {
+    let tag = tagsConfig.tags[i];
 
     if (tag.id) {
       if (!uniqIds.includes(tag.id)) {
@@ -76,13 +75,13 @@ for (let pkey in tagsOsmgo) {
   }
 
   for (let i = indexToDelete.length - 1; i >= 0; i--) {
-    tagsOsmgo[pkey].values.splice(indexToDelete[i], 1);
+    tagsConfig.tags.splice(indexToDelete[i], 1);
   }
 
   console.log(indexToDelete);
-}
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo));
+
+fs.writeFileSync(tagConfigPath, stringify(tagsConfig));
 
 for (let pid in presetsOsmgo) {
   const preset = presetsOsmgo[pid];

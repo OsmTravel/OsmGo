@@ -163,7 +163,7 @@ describe('tags&Presets', () => {
         for (let pid in presets){
             const preset = presets[pid];
             if (['select','list'].includes(preset.type) ) {
-                if ( !preset.options || preset.options.length < 2){
+                if ( !preset.options || preset.options.length < 1 ){
                     console.log(preset.options )
                     noOptionsTags.push(pid)
                 }
