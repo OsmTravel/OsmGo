@@ -19,7 +19,8 @@
     "attraction",
     "playground",
     "power",
-    "barrier"
+    "barrier",
+    "telecom"
   ],
   "excludeWays": {
     "man_made": ["embankment", "bridge"],
@@ -64191,6 +64192,79 @@
       "iDRef": "barrier/wall/noise_barrier",
       "tags": {"barrier": "wall", "wall": "noise_barrier"},
       "id": "barrier/wall/noise_barrier"
+    },
+    {
+      "id": "telecom/data_center",
+      "key": "data_center",
+      "icon": "fas-server",
+      "markerColor": "#4B6576",
+      "presets": ["ref", "operator"],
+      "lbl": {"en": "Data Center"},
+      "terms": {
+        "en": "computer systems storage, information technology, server farm, the cloud, telecommunications",
+        "fr": "telecom, serveur, data center"
+      },
+      "geometry": ["point", "area"],
+      "iDRef": "telecom/data_center",
+      "moreFields": ["address", "gnis/feature_id", "phone", "website"],
+      "tags": {"telecom": "data_center"}
+    },
+    {
+      "id": "telecom/exchange",
+      "key": "exchange",
+      "icon": "maki-telephone",
+      "markerColor": "#4B6576",
+      "presets": ["building:prefabricated", "telecom:medium", "operator", "ref", "ref:FR:Orange", "ref:FR:PTT"],
+      "lbl": {"en": "Exchange", "fr": "Nœud de raccordement"},
+      "terms": {
+        "en": "computer systems storage, information technology, server farm, the cloud, telecommunications",
+        "fr": "Noeud de raccordement, telecom"
+      },
+      "description": {
+        "en": "A place to connect landlines subscribers to telecommunication service equipments",
+        "fr":"Site (un bâtiment ou une armoire de rue) permettant de connecter la boucle locale (côté abonné) aux équipements de service et réseaux longue distance des opérateurs."
+      },
+      "geometry": ["point", "area"],
+      "moreFields": [],
+      "tags": {"telecom": "exchange"}
+    },
+    {
+      "id": "telecom/connection_point",
+      "key": "connection_point",
+      "icon": "maki-telephone",
+      "markerColor": "#4B6576",
+      "presets": ["telecom:medium", "operator", "ref", "ref:FR:Orange", "ref:FR:PTT"],
+      "lbl": {"en": "Connection point", "fr": "Points de sous-répartition"},
+      "terms": {
+        "en": "Last point of telecom local loops allowing direct connections towards a few households and subscribers",
+        "fr": "telecom"
+      },
+      "description": {
+        "en": "A place to connect landlines subscribers to telecommunication service equipments",
+        "fr":"Sites (armoires de rues) de sous-répartition permettant de connecter les abonnés d'un réseau télécoms entre les nœuds de raccordement et les foyers alentours."
+      },
+      "geometry": ["point", "area"],
+      "moreFields": [],
+      "tags": {"telecom": "connection_point"}
+    },
+    {
+      "id": "telecom/service_device",
+      "key": "service_device",
+      "icon": "maki-telephone",
+      "markerColor": "#4B6576",
+      "presets": ["telecom:medium", "operator", "ref", "ref:FR:Orange", "ref:FR:PTT"],
+      "lbl": {"en": "Service device", "fr": "Equipements de service"},
+      "terms": {
+        "en": "Last point of telecom local loops allowing direct connections towards a few households and subscribers",
+        "fr": "Point de sous répartition, telecom"
+      },
+      "description": {
+        "en": "Active equipment which deliver service to connected customers. It can be for instance a DSLAM, a telephone switch, or more recently an OLT for optical networks. It excludes amplifiers or repeaters installed along local loops or long distance lines.",
+        "fr":"Les équipements actifs qui fournissent un service aux abonnés connectés. Cela peut être un DSLAM, un commutateur téléphonique ou une OLT pour les réseaux optiques. A l'exclusion des amplificateurs ou répéteurs où qu'ils soient installés."
+      },
+      "geometry": ["point", "area"],
+      "moreFields": [],
+      "tags": {"telecom": "service_device"}
     }
   ]
 }

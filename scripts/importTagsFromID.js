@@ -12,7 +12,8 @@ const idRepoPath = path.join(__dirname, '..', '..', 'iD')
 const tagsIDPath = path.join(idRepoPath, 'data', 'presets', 'presets.json');
 const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
+const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagsOsmgo = tagConfig.tags;
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
 
 const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8')).presets;
@@ -20,15 +21,15 @@ const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
 
 // const osmgoPkeys = Object.keys(tagsOsmgo);
 
-const osmgoPkeys = ['barrier'];
+const osmgoPkeys = ['telecom'];
 
 
 let idTagsFieldsListId = []; // list of id of fields to add...
 const tagsIDpkeys = Object.keys(tagsID)
     .filter(k => k.split('/').length >= 2) // only "generic" key for now
     .filter(k => osmgoPkeys.includes(k.split('/')[0])) // only primaryKeys of Osm Go for now
-    .filter(k => !tagsOsmgo[k.split('/')[0]]['exclude_way_values'] ||
-        !tagsOsmgo[k.split('/')[0]]['exclude_way_values'].includes(k.split('/')[1])) // no excludes ways...
+    // .filter(k => !tagsOsmgo[k.split('/')[0]]['exclude_way_values'] ||
+    //     !tagsOsmgo[k.split('/')[0]]['exclude_way_values'].includes(k.split('/')[1])) // no excludes ways...
 // .map( k => { return {"pkey": k.split('/')[0], "value":k.split('/')[1], "id": k } })
 
 /* IMPORT TAGS */
@@ -100,7 +101,7 @@ for (let iDid of tagsIDpkeys) {
 
     // let tagOsmgo = tagsOsmgo[idPkey].values.find(ogT => ogT.key == idValue);
 
-    let tagOsmgo = tagsOsmgo[idPkey].values.find(ogT => {
+    let tagOsmgo = tagsOsmgo.find(ogT => {
         return _.isEqual(tagiD.tags, ogT.tags)
 
     });
@@ -122,7 +123,7 @@ for (let iDid of tagsIDpkeys) {
         let newTag = {
             key: iDKey,
             icon: tagiD.icon || '',
-            markerColor: tagsOsmgo[idPkey].values[0] ? tagsOsmgo[idPkey].values[0].markerColor : 'markerColorEMPTY',
+            markerColor: tagsOsmgo[0] ? tagsOsmgo[0].markerColor : 'markerColorEMPTY',
             presets: iDFields,
 
             lbl: { en: tagiD.name },
@@ -138,7 +139,7 @@ for (let iDid of tagsIDpkeys) {
         if (tagiD.searchable) newTag['searchable'] = tagiD.searchable;
         
 
-        tagsOsmgo[idPkey].values.push(newTag)
+        tagsOsmgo.push(newTag)
 
         // console.log(newTag)
         // tagsOsmgo[idPkey]
@@ -295,6 +296,6 @@ for (let fiDId of idTagsFieldsListId) {
     }
 }
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
+fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
 fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
 

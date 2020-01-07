@@ -79286,5 +79286,44 @@
       "zh": "类型"
     },
     "iDtype": "combo"
+  },
+  "building:prefabricated": {
+    "key": "building:prefabricated",
+    "type": "select",
+    "lbl": {"en": "Prefabricated building", "fr": "Bâtiment préfabriqué "},
+    "options": [
+      {"v": "yes", "lbl": {"en": "Yes", "fr": "Oui"}}
+    ]
+  },
+  "man_made:street_cabinet": {
+    "key": "man_made",
+    "type": "select",
+    "lbl": {"en": "In a street cabinet", "fr": "Dans une armoire de rue"},
+    "options": [
+      {"v": "street_cabinet", "lbl": {"en": "street_cabinet", "fr": "Une armoire de rue"}}
+    ]
+  },
+
+  "telecom:medium": {
+    "key": "telecom:medium",
+    "type": "select",
+    "lbl": {"en": "In a street cabinet", "fr": "Support de transmission"},
+    "options": [
+      {"v": "copper", "lbl": {"en": "Copper", "fr": "Paire cuivrée"}},
+      {"v": "fibre", "lbl": {"en": "Fibre", "fr": "Fibre optique"}},
+      {"v": "coaxial", "lbl": {"en": "Coaxial", "fr": "Câble coaxial"}}
+    ]
+  },
+  "ref:FR:Orange": {
+    "key": "ref:FR:Orange",
+    "type": "text",
+    "lbl": {"en": "ref:FR:Orange", "fr": "ref:FR:Orange"},
+    "countryCodes": ["FR"]
+  },
+  "ref:FR:PTT": {
+    "key": "ref:FR:PTT",
+    "type": "text",
+    "lbl": {"en": "ref:FR:PTT", "fr": "ref:FR:PTT"},
+    "countryCodes": ["FR"]
   }
 }
