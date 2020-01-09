@@ -10,24 +10,35 @@
         ></ion-searchbar>
       </div>
     </div>
-  
+  {{geometriesFilter}}
     <div class="listTag" *ngIf="searchText.length > 2 ">
-      <app-tags-list 
-        [tags]="currentListOfTags"
-        [countryTags]="configService.config.countryTags"
-        [languageTags]="configService.config.languageTags"
-        [searchText]="searchText"
-        [oldTagConfig]="oldTagConfig"
-        [jsonSprites]="tagsService.jsonSprites"
-        [geometriesFilter]="geometriesPossible"
-        [bookmarksIds]="tagsService.bookmarksIds"
-        (removeBookmark)= removeBookmark($event)
-        (addBookmark)= addBookmark($event)
-        (selected)="selected($event)"
-  
-        >
 
-      </app-tags-list>
+      <ion-list style="overflow-y: auto;">
+        <ion-item *ngFor="let tag of currentListOfTags 
+        | filterDeprecatedTag 
+        | filterHiddenTags:tagsService.hiddenTagsIds
+        | filterBySearchable 
+        | filterExcludeTagByCountryCode:countryTags 
+        | filterByByGeometryType:[geometryType]
+        | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+        
+        class="ion-no-padding">
+         <app-tag-list-element   style="width: 100%;"
+         [tag]="tag"
+         [countryTags]="configService.config.countryTags"
+         [languageTags]="configService.config.languageTags"
+         [jsonSprites]="tagsService.jsonSprites"
+         [geometriesFilter]="geometriesPossible"
+         [bookmarksIds]="tagsService.bookmarksIds"
+         [oldTagConfig]="oldTagConfig"
+         (removeBookmark)="tagsService.removeBookMark(tag)"
+         (addBookmark)= "tagsService.addBookMark(tag)"
+         (selected)="selected($event)"
+         >
+         </app-tag-list-element>
+       </ion-item> 
+     </ion-list>
+
 
       <!-- Add custum value (from searchBar to the key) -->
       <div>
@@ -62,51 +73,69 @@
 
       <div class="lastTags" *ngIf="displayType == 'lastTags'"  >
         <h4> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
-        <app-tags-list
-     
-        [tags]="this.tagsService.lastTagsUsed"
-        [countryTags]="configService.config.countryTags"
-        [languageTags]="configService.config.languageTags"
-        [searchText]="''"
-        [oldTagConfig]="oldTagConfig"
-        [jsonSprites]="tagsService.jsonSprites"
-        [bookmarksIds]="tagsService.bookmarksIds"
-        (removeBookmark)= removeBookmark($event)
-        (addBookmark)= addBookmark($event)
-        (selected)="selected($event)"
-        (swipeLeft)="swipeLeft()"
-        >
-      </app-tags-list>
 
+        
+        <ion-list style="overflow-y: auto;"  (swipeLeft)="swipeLeft()">
+          <ion-item *ngFor="let tag of this.tagsService.lastTagsUsed 
+                      | filterDeprecatedTag 
+                      | filterBySearchable 
+                      | filterExcludeTagByCountryCode:countryTags 
+                      | filterByByGeometryType:[geometryType]
+                      | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+                      class="ion-no-padding">
+           <app-tag-list-element  style="width: 100%;"
+           [tag]="tag"
+           [countryTags]="configService.config.countryTags"
+           [languageTags]="configService.config.languageTags"
+           [jsonSprites]="tagsService.jsonSprites"
+           [geometriesFilter]="geometriesPossible"
+           [bookmarksIds]="tagsService.bookmarksIds"
+           [oldTagConfig]="oldTagConfig"
+           (removeBookmark)= removeBookmark($event)
+           (addBookmark)= addBookmark($event)
+           (selected)="selected($event)"
+           >
+           </app-tag-list-element>
+         </ion-item> 
+       </ion-list>
       </div>
  
       <div class="bookmarks" *ngIf="displayType == 'bookmarks'" >
         <h4>{{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}</h4>
-        <app-tags-list 
-        [tags]="tagsService.bookMarks"
-        [countryTags]="configService.config.countryTags"
-        [languageTags]="configService.config.languageTags"
-        [searchText]="''"
-        [oldTagConfig]="oldTagConfig"
-        [jsonSprites]="tagsService.jsonSprites"
-        [bookmarksIds]="tagsService.bookmarksIds"
-        (removeBookmark)= removeBookmark($event)
-        (addBookmark)= addBookmark($event)
-        (selected)="selected($event)"
-        
-        >
-    </app-tags-list>
+
+        <ion-list style="overflow-y: auto;">
+          <ion-item *ngFor="let tag of tagsService.tags 
+                | filterBookmarkedTags:tagsService.bookmarksIds
+                | filterExcludeTagByCountryCode:countryTags 
+                | filterByByGeometryType:[geometryType]
+                | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+          class="ion-no-padding">
+           <app-tag-list-element  style="width: 100%;"
+           [tag]="tag"
+           [countryTags]="configService.config.countryTags"
+           [languageTags]="configService.config.languageTags"
+           [jsonSprites]="tagsService.jsonSprites"
+           [geometriesFilter]="geometriesPossible"
+           [bookmarksIds]="tagsService.bookmarksIds"
+           [oldTagConfig]="oldTagConfig"
+           (removeBookmark)= removeBookmark($event)
+           (addBookmark)= addBookmark($event)
+           (selected)="selected($event)"
+           >
+           </app-tag-list-element>
+         </ion-item> 
+       </ion-list>
   </div>
 	</div>
 	
 
   </div>
 
-  <div id="footer">
+  <ion-footer id="footer">
     <ion-button ion-button color="danger" (click)="cancel()">
       {{ 'SHARED.CANCEL' | translate}}
     </ion-button>
-  </div>
+  </ion-footer>
 
   <div *ngIf="loading" style="height:100%">
     <!-- <ion-header>

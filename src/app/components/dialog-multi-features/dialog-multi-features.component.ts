@@ -14,14 +14,12 @@ export class DialogMultiFeaturesComponent implements OnInit {
     // console.log(this.features)
     this.features = navParams.get('features')
     this.jsonSprites =  navParams.get('jsonSprites')
-    console.log(navParams.get('features'));
   }
 
   ngOnInit() {}
 
 
   selectFeature(feature){
-    console.log('dissmiss', feature)
     this.modalCtrl.dismiss(feature);
 
   }

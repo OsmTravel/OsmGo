@@ -39,6 +39,7 @@ export class ModalsContentPage implements OnInit {
   primaryKey: PrimaryTag
   savedFields;
   tagId: string;
+  geometryType: 'point' | 'vertex' | 'line' | 'area'
 
 
   customValue = '';
@@ -68,6 +69,20 @@ export class ModalsContentPage implements OnInit {
   ) {
     this.newPosition = params.data.newPosition;
     this.feature = cloneDeep(params.data.data);
+
+    const originalFeatureGeometry = this.feature.properties.way_geometry ? this.feature.properties.way_geometry :  this.feature.geometry
+    const typeGeomFeature = originalFeatureGeometry.type;
+    const usedByWay = this.feature.properties.usedByWays ? true : false
+    if (typeGeomFeature === 'Point' && !usedByWay) {
+        this.geometryType = 'point';
+    } else if (typeGeomFeature === 'Point' && usedByWay) {
+        this.geometryType = 'vertex';
+    } else if (typeGeomFeature === 'LineString' || typeGeomFeature === 'MultiLineString') {
+        this.geometryType =  'line'
+    } else if (typeGeomFeature === 'Polygon' || typeGeomFeature === 'MultiPolygon') {
+        this.geometryType = 'area'
+    }
+
 
     this.mode = params.data.type; // Read, Create, Update
     this.origineData = this.params.data.origineData; // literal, sources
@@ -299,7 +314,7 @@ export class ModalsContentPage implements OnInit {
   async openPrimaryTagModal() {
     const modal = await this.modalCtrl.create({
       component: ModalPrimaryTag,
-      componentProps: { geojson: this.feature, tagConfig: this.tagConfig, tags: this.tags }
+      componentProps: { geojson: this.feature, tagConfig: this.tagConfig, tags: this.tags, geometryType : this.geometryType }
     });
     await modal.present();
     modal.onDidDismiss()
@@ -487,9 +502,9 @@ export class ModalsContentPage implements OnInit {
 
   addOrRemoveBookmark(tag : TagConfig) {
     if (!this.tagsService.bookmarksIds.includes(tag.id)) {
-      this.tagsService.addBookMark(tag.id)
+      this.tagsService.addBookMark(tag)
     } else {
-      this.tagsService.removeBookMark(tag.id)
+      this.tagsService.removeBookMark(tag)
     }
   }
 

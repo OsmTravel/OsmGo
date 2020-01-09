@@ -16,7 +16,9 @@ interface FeatureProperties{
     meta: MetaData
     primaryTag: PrimaryTag
     tags: any;
-    type: string
+    type: string;
+    way_geometry?: Geometry;
+    usedByWays? : boolean
 }
 
 export interface PrimaryTag{
@@ -69,6 +71,6 @@ export interface TagConfig{
     tags: any;
     moreFields?: string[];
     id: string;
-    isUserTag?: boolean
+    isUserTag?: boolean;
 
 }

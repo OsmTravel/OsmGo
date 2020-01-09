@@ -147,7 +147,7 @@
 					</ion-fab-button>
 				</ion-fab>
 	
-				<ion-fab style="margin-left: 90px;">
+				<ion-fab style="margin-left: 90px;" *ngIf="savedFields">
 					<ion-fab-button size="small" (click)="restoreFields()" >
 						<ion-icon name="arrow-dropdown-circle"></ion-icon>
 					</ion-fab-button>

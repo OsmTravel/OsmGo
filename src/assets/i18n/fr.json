@@ -10,7 +10,8 @@
     "UNKNOWN": "Inconnu",
     "UNDEFINED": "Indéfini",
     "NAME": "Nom",
-    "ID": "Id"
+    "ID": "Id",
+    "CLOSE": "Fermer"
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Vraiment ?",
@@ -29,7 +30,8 @@
     "DELETE_DATA_CONFIRM_MESSAGE": "Supprimer les données téléchargées? (conserve les modifications)",
     "SIGN_OUT": "Se déconnecter",
     "EXIT": "Quitter",
-    "NEW_VERSION": "Une nouvelle version est prête!"
+    "NEW_VERSION": "Une nouvelle version est disponible!",
+    "TAG_MANAGEMENT":"Gestion des tags"
   },
   "ABOUT": {"ABOUT": "A propos", "SOURCES": "Sources", "DATA": "Données"},
   "GEOLOCATION": {
@@ -58,8 +60,7 @@
     "SEND": "Envoyer !",
     "DELETE": "Supprimer",
     "DELETE_CONFIRM_HEADER": "Vraiment ?",
-    "DELETE_CONFIRM_MESSAGE": "Supprimer toutes les modifications?",
-    "CLOSE": "Fermer"
+    "DELETE_CONFIRM_MESSAGE": "Supprimer toutes les modifications?"
   },
   "SETTINGS": {
     "SETTINGS": "Paramètres",
@@ -134,5 +135,16 @@
   "ALERT":{
     "TAG_IS_DEPRECATED": "Ce tag est déprécié",
     "FIX": "Fix"
+  },
+  "MANAGE_TAGS":{
+    "TAG_MANAGEMENT_TITLE": "Gestion des tags",
+    "ACTIVE_TAGS": "Gérer les tags actifs",
+    "ACTIVE_TAGS_DESCRIPTION": "Cette fenêtre vous permet de cacher certains éléments sur la carte ou d'ajouter des favoris.",
+    "HIDDEN_TAGS_WARNING": "Les éléments cachés ne sont pas rendus sur la carte et ne sont pas proposés dans la liste des tags. A utiliser avec prudence afin d'éviter les doublons.",
+    "HIDDEN_TAGS": "Gérer les tags cachés",
+    "HIDDEN_TAGS_DESCRIPTION": "Cette fenêtres vous permet de rendre visible les éléments cachés",
+    "BOOKMARKED_TAGS": "Gérer vos favoris",
+    "BOOKMARKED_TAGS_DESCRIPTION": "Cette fenêtre vous permet de gerer vos tags favoris",
+    "RESET_HIDDEN_TAGS" : "Réinitialiser"
   }
 }

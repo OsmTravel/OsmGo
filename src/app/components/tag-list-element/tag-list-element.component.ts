@@ -1,35 +1,36 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TagConfig } from 'src/type';
 
-
 @Component({
-  selector: 'app-tags-list',
-  templateUrl: './tags-list.component.html',
-  styleUrls: ['./tags-list.component.scss'],
+  selector: 'app-tag-list-element',
+  templateUrl: './tag-list-element.component.html',
+  styleUrls: ['./tag-list-element.component.scss'],
 })
-export class TagsListComponent implements OnInit {
-
-  @Input() tags: any;
+export class TagListElementComponent implements OnInit {
+  @Input() tag: any;
   @Input() countryTags;
   @Input() languageTags;
-  @Input() searchText: string;
-  @Input() oldTagConfig: TagConfig;
   @Input() jsonSprites
   @Input() geometriesFilter: string[];
   @Input() bookmarksIds: string[];
+  @Input() oldTagConfig: TagConfig;
+  @Input() isHiddenTag: boolean
+  @Input() showHideTagButton: boolean 
 
   @Output() removeBookmark = new EventEmitter();
   @Output() addBookmark = new EventEmitter();
+  @Output() removeHiddenTag = new EventEmitter();
+  @Output() addHiddenTag = new EventEmitter();
+
+  constructor() { }
+
+  ngOnInit() {}
+
+ 
 
 
   @Output() selected = new EventEmitter();
 
-
-  constructor() { }
-
-  ngOnInit() {
-
-  }
 
   isBookMarked(tag) {
     // TODO pipe

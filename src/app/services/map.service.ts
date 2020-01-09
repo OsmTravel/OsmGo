@@ -160,12 +160,11 @@ export class MapService {
         // currentFilter[0] === 'all
           let findedFilter = false
           for (let i = 1; i < currentFilter.length; i++) {
-            if (currentFilter[i][0] === 'match' && currentFilter[i][1][0] === 'configId') {
-
-              currentFilter[i] = ['!in', 'configId', ...ids];
+            if (currentFilter[i][0] === 'match' && currentFilter[i][1][1] === 'configId') {
+              currentFilter[i] = newConfigIdFilter;
               newFilter = currentFilter;
               findedFilter = true;
-              break;
+              // break;
             }
           }
 
@@ -173,9 +172,7 @@ export class MapService {
             newFilter = [...currentFilter, newConfigIdFilter]
           }
         
-      
       this.map.setFilter(layerId, newFilter);
-
     }
 
   }
@@ -752,7 +749,7 @@ export class MapService {
 
     this.layersAreLoaded = true;
 
-    this.filterMakerByIds(this.configService.defaultHiddenIds);
+    this.filterMakerByIds(this.tagsService.hiddenTagsIds);
 
     let configOldTagIcon = this.configService.getOldTagsIcon();
     if (configOldTagIcon.display) {
@@ -773,7 +770,7 @@ export class MapService {
       if (!features.length) {
         return;
       }
-      console.log(features.map(f => f.properties.configId));
+
       if (!this.configService.platforms.includes('hybrid')) {
         window.navigator.vibrate(50);
       } else {

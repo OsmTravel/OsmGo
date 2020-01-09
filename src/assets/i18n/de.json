@@ -6,7 +6,8 @@
     "CONFIRM": "Bestätigen",
     "ADD": "Hinzufügen",
     "VALIDATE": "Überprüfen",
-    "OK": "Ok"
+    "OK": "Ok",
+    "CLOSE": "Schließen"
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Sicher ?",
@@ -52,8 +53,7 @@
     "SEND": "Gesendet!",
     "DELETE": "Entfernen",
     "DELETE_CONFIRM_HEADER": "Sicher?",
-    "DELETE_CONFIRM_MESSAGE": "Alle Änderungen löschen?",
-    "CLOSE": "Schließen"
+    "DELETE_CONFIRM_MESSAGE": "Alle Änderungen löschen?"
   },
   "SETTINGS": {
     "SETTINGS": "Einstellungen",

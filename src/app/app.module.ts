@@ -36,7 +36,6 @@ import { EditOtherTag } from './components/modal/components/EDIT_OtherTag.compon
 import { EditPresets } from './components/modal/components/EDIT_Presets.component';
 import { EditPrimaryKey } from './components/modal/components/EDIT_PrimaryKey.component';
 import { AlertComponent } from './components/modal/components/alert/alert.component';
-import { TagsListComponent } from './components/modal/modal.primaryTag/tags-list/tags-list.component'
 import { IconComponent } from './components/icon/icon.component'
 
 import { DisplayPresetLabelPipe } from './pipes/displayPresetLabel.pipe';
@@ -68,10 +67,17 @@ import 'moment/locale/fr';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { DisplayTagsPipe } from './pipes/display-tags.pipe';
-import { FilterTagCongigByGeometryPipe } from './pipes/filter-tag-congig-by-geometry.pipe';
+import { FilterByByGeometryTypePipe } from './pipes/filter-by-geometry-type.pipe';
 import { DialogMultiFeaturesComponent } from './components/dialog-multi-features/dialog-multi-features.component';
 import { IsBookmarkedPipe } from './pipes/is-bookmarked.pipe';
 import { FilterBySearchablePipe } from './pipes/filter-by-searchable.pipe';
+import { HiddenTagsComponent } from './components/manage-tags/hidden-tags/hidden-tags.component';
+import { TagListElementComponent } from './components/tag-list-element/tag-list-element.component';
+import { FilterHiddenTagsPipe } from './pipes/filter-hidden-tags.pipe';
+import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
+import { ActiveTagsComponent } from './components/manage-tags/active-tags/active-tags.component';
+import { BookmarkedTagsComponent } from './components/manage-tags/bookmarked-tags/bookmarked-tags.component';
+import { FilterBookmarkedTagsPipe } from './pipes/filter-bookmarked-tags.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -89,9 +95,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
 
 @NgModule({
   declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage, LoginPage,
+    HiddenTagsComponent, ActiveTagsComponent,BookmarkedTagsComponent,  ManageTagsComponent,
+    TagListElementComponent,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,DialogMultiFeaturesComponent,
     ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent, 
-    TagsListComponent, IconComponent,
+    IconComponent,
 
     DisplayPresetLabelPipe,
     FilterByContentPipe,
@@ -101,9 +109,9 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FilterByPresetsContentPipe,
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
-    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterTagCongigByGeometryPipe, IsBookmarkedPipe, FilterBySearchablePipe,
+    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe, FilterBySearchablePipe, FilterHiddenTagsPipe, FilterBookmarkedTagsPipe,
   ],
-  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent],
+  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -10,7 +10,8 @@
     "UNKNOWN": "Unknown",
     "UNDEFINED": "Undefined",
     "NAME": "Name",
-    "ID": "Id"
+    "ID": "Id",
+    "CLOSE": "Close"
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Really ?",
@@ -29,7 +30,8 @@
     "DELETE_DATA_CONFIRM_MESSAGE": "Delete downloaded data? (keep the changes)",
     "SIGN_OUT": "Logout",
     "EXIT": "Exit",
-    "NEW_VERSION": "A new version is ready !"
+    "NEW_VERSION": "A new version is ready !",
+    "TAG_MANAGEMENT":"Tags management"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
   "GEOLOCATION": {
@@ -58,8 +60,7 @@
     "SEND": "Send !",
     "DELETE": "Delete",
     "DELETE_CONFIRM_HEADER": "Really ?",
-    "DELETE_CONFIRM_MESSAGE": "Delete all changes?",
-    "CLOSE": "Close"
+    "DELETE_CONFIRM_MESSAGE": "Delete all changes?"
   },
   "SETTINGS": {
     "SETTINGS": "Settings",
@@ -128,5 +129,16 @@
   "ALERT":{
     "TAG_IS_DEPRECATED": "This tag is deprecated",
     "FIX": "Fix"
+  },
+  "MANAGE_TAGS":{
+    "TAG_MANAGEMENT_TITLE": "Tags management",
+    "ACTIVE_TAGS": "Manage active tags",
+    "ACTIVE_TAGS_DESCRIPTION": "This window allows you to hide certain items on the map or add favourites.",
+    "HIDDEN_TAGS_WARNING": "Hidden elements are not rendered on the map and are not proposed in the tag list. Use with caution to avoid duplicates.",
+    "HIDDEN_TAGS": "Manage hidden tags",
+    "HIDDEN_TAGS_DESCRIPTION": "This window allows you to make the hidden elements visible.",
+    "BOOKMARKED_TAGS": "Manage your favorites",
+    "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
+    "RESET_HIDDEN_TAGS" : "Reset"
   }
 }

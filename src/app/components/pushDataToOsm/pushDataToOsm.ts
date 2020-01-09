@@ -73,7 +73,7 @@ export class PushDataToOsmPage implements AfterViewInit {
             message: error,
             buttons: [
                 {
-                    text: this.translate.instant('SEND_DATA.CLOSE'),
+                    text: this.translate.instant('SHARED.CLOSE'),
                     role: 'cancel',
                     handler: () => {
 

@@ -12,26 +12,126 @@ export class TagsService {
     lastTagsUsed: TagConfig[];
     lastTagsUsedIds: string[];
 
-    bookMarks:TagConfig[] = []
     bookmarksIds: string[] = [];
     savedFields = {};
     tags:TagConfig[];
     userTags:TagConfig[];
     primaryKeys = [];
     presets = {};
+    hiddenTagsIds: string[];
 
     basemaps;
     jsonSprites
 
 
+    
+    defaultHiddenTagsIds :string[] = [
+        "highway/pedestrian_area",
+        'highway/footway',
+        'highway/motorway',
+        'highway/trunk',
+        'highway/trunk_link',
+        'highway/primary',
+        'highway/primary_link',
+        'highway/secondary',
+        'highway/secondary_link',
+        'highway/tertiary',
+        'highway/tertiary_link',
+        'highway/unclassified',
+        'highway/residential',
+        'highway/service',
+        'highway/motorway_link',
+        'highway/living_street',
+        'highway/track',
+        'highway/bus_guideway',
+        'highway/road',
+        'highway/bridleway',
+        'highway/path',
+        'highway/cycleway',
+        'highway/construction',
+        'highway/steps',
+        'highway/motorway_junction',
+        'highway/corridor',
+        'highway/pedestrian_line',
+        'highway/cycleway/bicycle_foot',
+        'highway/footway/crossing',
+        'highway/service/parking_aisle',
+        'highway/service/driveway',
+        'highway/path/informal',
+        'highway/stop',
+        'highway/turning_circle',
+
+        'barrier/hedge',
+        'barrier/fence',
+        'barrier/kerb',
+        'barrier/wall',
+
+        'natural/grassland',
+        'natural/wood',
+        'natural/bare_rock',
+        'natural/cliff',
+        'natural/shingle',
+        'natural/coastline',
+
+        'man_made/bridge',
+
+        'building/train_station',
+        'building/apartments',
+        'building/barn',
+        'building/boathouse',
+        'building/bungalow',
+        'building/cabin',
+        'building/carport',
+        "building/cathedral",
+        "building/chapel",
+        "building/church",
+        "building/civic",
+        "building/college",
+        "building/commercial",
+        "building/construction",
+        "building/detached",
+        "building/dormitory",
+        "building/farm_auxiliary",
+        "building/farm",
+        "building/garage",
+        "building/garages",
+        "building/grandstand",
+        "building/greenhouse",
+        "building/hangar",
+        "building/hospital",
+        "building/hotel",
+        "building/house",
+        "building/houseboat",
+        "building/hut",
+        "building/industrial",
+        "building/kindergarten",
+        "building/mosque",
+        "building/pavilion",
+        "building/public",
+        "building/residential",
+        "building/retail",
+        "building/roof",
+        "building/ruins",
+        "building/school",
+        "building/semidetached_house",
+        "building/service",
+        "building/shed",
+        "building/stable",
+        "building/stadium",
+        "building/static_caravan",
+        "building/temple",
+        "building/terrace",
+        "building/transportation",
+        "building/university",
+        "building/warehouse",
+        "building/office",
+        "building/yes"
+    ]
+
+
     constructor(private http: HttpClient,
         public localStorage: Storage,
         public configService: ConfigService) {
-    }
-
-    // bookMarks
-    getBookMarks():TagConfig[] {
-        return this.bookMarks;
     }
 
     
@@ -50,30 +150,66 @@ export class TagsService {
         this.lastTagsUsedIds = lastTagsUsedIds;
     }
 
-    removeBookMark( tagId: string ){
-        this.bookmarksIds = this.bookmarksIds.filter( b => b !== tagId);
-        this.bookMarks = this.bookMarks.filter( b => b.id !== tagId);
+    removeBookMark( tag: TagConfig ){
+        this.bookmarksIds = this.bookmarksIds.filter( b => b !== tag.id);
         this.setBookMarksIds(this.bookmarksIds)
     }
 
-    addBookMark(tagId: string){
-        if (this.bookmarksIds.includes(tagId)){
+    addBookMark(tag: TagConfig){
+        if (this.bookmarksIds.includes(tag.id)){
             return;
         }
-        let currentTag = this.tags.find( t => t.id === tagId);
+        let currentTag = this.tags.find( t => t.id === tag.id);
         if (!currentTag){
-            return;
+            console.log('nopppppppp', tag)
+            this.addUserTags(tag)
+            // return;
         }
-        this.bookmarksIds = [tagId, ...this.bookmarksIds ];
-        this.bookMarks = [currentTag, ...this.bookMarks]
+        this.bookmarksIds = [tag.id, ...this.bookmarksIds ];
 
         this.setBookMarksIds(this.bookmarksIds)
+        // TODO : si tag inconnu => ajouter à userTag
         return currentTag;
     }
 
     getBookMarksIdsFromStorage$() {
         return from(this.localStorage.get('bookmarksIds'))
     }
+
+    // hidden tags
+    getHiddenTagsIdsFromStorage$() {
+        return from(this.localStorage.get('hiddenTagsIds'))
+    }
+
+    setHiddenTagsIds(hiddenTagsIds: string[]) {
+        this.localStorage.set('hiddenTagsIds', hiddenTagsIds);
+        this.hiddenTagsIds = hiddenTagsIds;
+    }
+
+    removeHiddenTag(tag:TagConfig){
+        if(!tag.id){
+          return;
+        }
+        const newHiddenTags = this.hiddenTagsIds.filter(t => t !== tag.id)
+        this.setHiddenTagsIds(newHiddenTags)
+      }
+
+    addHiddenTag(tag:TagConfig){ // => hide a tag
+        if(!tag.id){
+          return;
+        }
+        if (!this.hiddenTagsIds.includes(tag.id)){
+            const newHiddenTags = [tag.id, ...this.hiddenTagsIds]
+            this.setHiddenTagsIds(newHiddenTags)
+            // delete bookmark...
+            this.removeBookMark(tag)
+        }
+      }
+    
+    resetHiddenTags(){
+        const defaultHiddenTagsIds = [...this.defaultHiddenTagsIds];
+        this.setHiddenTagsIds(defaultHiddenTagsIds) 
+      }
 
     getlastTagsUsedIdsFromStorage$(){
         return from(this.localStorage.get('lastTagsUsedIds'))
@@ -200,10 +336,11 @@ export class TagsService {
             this.getBaseMaps$(),
             this.getBookMarksIdsFromStorage$(),
             this.getlastTagsUsedIdsFromStorage$(),
-            this.getUserTagsFromStorage$()
+            this.getUserTagsFromStorage$(),
+            this.getHiddenTagsIdsFromStorage$()
         )
         .pipe(
-            map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags]) => {
+            map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]) => {
                 this.userTags = userTags ? userTags : [];
         
                 this.jsonSprites = jsonSprites;
@@ -214,10 +351,14 @@ export class TagsService {
         
                     if (bookmarksIds) {
                         this.bookmarksIds = bookmarksIds
-                        this.bookMarks = this.getTagConfigFromTagsID(bookmarksIds);
                     } else {
-                        this.bookMarks = [];
                         this.bookmarksIds = []
+                    }
+
+                    if (hiddenTagsIds){
+                        this.hiddenTagsIds = hiddenTagsIds
+                    } else {
+                        this.hiddenTagsIds = [...this.defaultHiddenTagsIds];
                     }
 
                     if (lastTagsUsedIds){
@@ -227,9 +368,6 @@ export class TagsService {
                         this.lastTagsUsedIds = [];
                         this.lastTagsUsed =  [];
                     }
-                  
-              
-
             } )
         )
     }

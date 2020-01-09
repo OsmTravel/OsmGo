@@ -24,7 +24,6 @@ export class FilterByTagsContentPipe implements PipeTransform {
     transform(items, args: string[], searchText: string) {
         const patt = new RegExp(searchText, 'i');
         const [language, countryCode] = args;
-      
         return items.filter(item => {
             // By Key
             if (patt.test(item['key'])) {
@@ -51,9 +50,6 @@ export class FilterByTagsContentPipe implements PipeTransform {
                     return true;
                 }
             }
-
-
-            // }
         });
 
     }

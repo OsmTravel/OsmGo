@@ -93,7 +93,6 @@ export class MainPage implements AfterViewInit {
     modal.onDidDismiss().then(d => {
       if (d && d.data){
         const feature = d.data
-        console.log(feature);
        this.mapService.selectFeature(feature); // bof
       }
       // console.log(d)

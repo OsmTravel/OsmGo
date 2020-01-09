@@ -1,4 +1,5 @@
-<div *ngIf="icon && jsonSprites[icon]; let conf"
+<div  class="test" >
+  <div *ngIf="icon && jsonSprites[icon]; let conf"
   [style.width]="conf.width +'px'"
   [style.height]= "conf.height +'px'"
   [style.background-position]=" '-'+ conf.x +'px -'+conf.y +'px'"
@@ -12,5 +13,8 @@
   [style.background-position]=" '-'+ jsonSprites['wiki_question'].x +'px -'+jsonSprites['wiki_question'].y +'px'"
   [className]="'spritesX' + devicePixelRatio"
 >
+</div>
+
+
 </div>
 

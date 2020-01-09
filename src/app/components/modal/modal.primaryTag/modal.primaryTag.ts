@@ -20,6 +20,7 @@ export class ModalPrimaryTag implements OnInit {
     customValue = '';
     oldTagConfig: TagConfig;
     geometriesPossible: string[] = []
+    geometryType: 'point' | 'vertex' | 'line' | 'area'
     displayType = 'lastTags'
 
 
@@ -27,28 +28,15 @@ export class ModalPrimaryTag implements OnInit {
         public params: NavParams,
         public modalCtrl: ModalController,
         public tagsService: TagsService,
-        // public platform: Platform,
         public configService: ConfigService
 
 
     ) {
         this.oldTagConfig = this.params.data.tagConfig
-
     }
 
     ngOnInit() {
-        const typeGeomFeature = this.params.data.geojson.geometry.type;
-        const usedByWay = this.params.data.geojson.properties.usedByWays ? true : false
-        if (typeGeomFeature === 'Point' && !usedByWay) {
-            this.geometriesPossible = [...this.geometriesPossible, 'point']
-        } else if (typeGeomFeature === 'Point' && usedByWay) {
-            this.geometriesPossible = [...this.geometriesPossible, 'vertex']
-        } else if (typeGeomFeature === 'Polyline' || typeGeomFeature === 'MultiPolyline') {
-            this.geometriesPossible = [...this.geometriesPossible, 'line']
-        } else if (typeGeomFeature === 'Polygon' || typeGeomFeature === 'MultiPolygon') {
-            this.geometriesPossible = [...this.geometriesPossible, 'area']
-        }
-
+        this.geometryType = this.params.data.geometryType;
         this.currentListOfTags = this.tagsService.tags;
         this.loading = false;
     }
@@ -68,11 +56,11 @@ export class ModalPrimaryTag implements OnInit {
         this.summit(config);
     }
 
-    addBookmark(tag) {
-        this.tagsService.addBookMark(tag.id)
+    addBookmark(tag:TagConfig) {
+        this.tagsService.addBookMark(tag)
     }
-    removeBookmark(tag) {
-        this.tagsService.removeBookMark(tag.id)
+    removeBookmark(tag:TagConfig) {
+        this.tagsService.removeBookMark(tag)
     }
 
 

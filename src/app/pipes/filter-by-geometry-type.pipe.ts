@@ -2,12 +2,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { TagConfig } from 'src/type';
 
 @Pipe({
-  name: 'filterTagCongigByGeometry'
+  name: 'filterByByGeometryType'
 })
-export class FilterTagCongigByGeometryPipe implements PipeTransform {
+export class FilterByByGeometryTypePipe implements PipeTransform {
 
-  transform(tagsConfig: TagConfig[], geometries : string[]): any {
-    if (!geometries || geometries.length == 0){
+  transform(tagsConfig: TagConfig[], geometriesType :('point' | 'vertex' | 'line' | 'area')[]): any {
+    if (!geometriesType || geometriesType.length == 0){
       return tagsConfig
     }
 
@@ -16,7 +16,7 @@ export class FilterTagCongigByGeometryPipe implements PipeTransform {
       if (!tc.geometry){
         return true
       }
-      for (let g of geometries){
+      for (let g of geometriesType){
         if ( tc.geometry.includes(g)){
           return true;
         }
