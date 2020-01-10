@@ -46,7 +46,7 @@ exports.generateSprites = () => {
         } else {
             iconSVG = fs.readFileSync(path.join(iconsSVGsPath , iconName + '.svg')).toString();
         }
-
+    
 
         parseString(fs.readFileSync(path.join(markersModelPath, 'marker-circle.svg')).toString(), function (err, result) {
             pathMarkerXMLCircle = '<path fill="' + colorMarker + '" d="' + result.svg.path[0].$.d + '"></path>';
@@ -61,9 +61,23 @@ exports.generateSprites = () => {
 
         let $ = cheerio.load(iconSVG)
         pathIconXMLstr = '';
-  
+
+        let width;
+        let height;
+        $('svg').attr('width',  (a, b) => {
+            width= Number(b.replace('px',''));
+        })
+
+        $('svg').attr('height',  (a, b) => {
+            height= Number(b.replace('px',''));
+        })
+    
+        const translateX = 4.5 + (( 15 - width ) /2 )// width - 11.5
+        const translateY = 4.5 + (( 15 - height ) /2 )
+
+
         $('path').attr('d', function (a, b) {
-            pathIconXMLstr += '<path fill="' + colorIcon + '" transform="translate(4.5 4.5)" d="' + b + '"></path> ';
+            pathIconXMLstr += `<path fill='${colorIcon}' transform='translate(${translateX} ${translateY})' d='${b}'></path> `;
         })
         iconDpath = $('path').attr('d');
 
@@ -102,8 +116,8 @@ exports.generateSprites = () => {
             const SVGsquare = xmlHeader + pathMarkerXMLSquare + pathIconXMLstr + xmlEnd;
             fs.writeFileSync(path.join(outputFolderSVG, id+ '.svg'), SVGsquare);
         }
-        
     }
+    
 }
 
 
@@ -117,16 +131,14 @@ exports.generateSprites = () => {
                 iconsUsed.push(tags.tags[i].icon);
             }
             let strIcM = tags.tags[i].markerColor + '|' + tags.tags[i].icon
-            // if (iconsMarkersStr.indexOf(strIcM) == -1) {
                 iconsMarkersStr.push(strIcM);
                 generateMarkerIcon(tags.tags[i].icon, "#ffffff", tags.tags[i].markerColor, tags.tags[i].geometry)
-            // }
+
         }
 
 
     // unknows tag config
     generateMarkerIcon('', "#ffffff", "#000000",['point','line','area'], true)
-
 
     //copy whiteliste 
     const whiteList = ['none', 'Delete', 'Create', 'Update', 'Old', 'Fixme'];
@@ -143,9 +155,6 @@ exports.generateSprites = () => {
 
     const svgToPNG = (filePath, factor) => {
         var dimensions = sizeOf(filePath);
-        // console.log(filePath);
-
-        // console.log(dimensions.width, dimensions.height);
         const svgString = fs.readFileSync(filePath, 'utf8');
         return new Promise((resolve, reject) => {
 
@@ -216,21 +225,6 @@ exports.generateSprites = () => {
         })
     }
 
-    const copySvgIconsInAssets = async () => {
-        await fs.emptyDir(iconSvgAssetsPath);
-        console.log(iconsUsed)
-        for (let svgFileName of iconsUsed){
-            const filePath = path.join(iconsSVGsPath, `${svgFileName}.svg`)
-            // copy SVG to assets
-            fs.copySync(filePath, path.join(iconSvgAssetsPath, `${svgFileName}.svg`));
-        }
-
-    }
-
-    const getWikiQuestionBlackMarker =  async( factor) => {
-
-    }
-
     // just icons sprites for interface
     const generateIconSprites = async (factor) => {
         console.info('Sprites for Ui X',factor)
@@ -282,7 +276,6 @@ exports.generateSprites = () => {
     
     return Promise.all(
     [
-        // copySvgIconsInAssets(),
         generateIconSprites(1),
         generateIconSprites(2),
         generateIconSprites(3),

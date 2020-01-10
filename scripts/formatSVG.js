@@ -14,6 +14,7 @@ const listOfSvgsName = fs.readdirSync(iconsSVGsPath)
     .filter(svgName => path.extname(svgName) == '.svg')
 
 for (let i = 0; i < listOfSvgsName.length; i++) {
+    const fileName = listOfSvgsName[i];
     const pathSvg = path.join(iconsSVGsPath, listOfSvgsName[i]);
     let svgStr = fs.readFileSync(pathSvg, 'utf8');
     let _$ = cheerio.load(svgStr)
@@ -30,39 +31,40 @@ for (let i = 0; i < listOfSvgsName.length; i++) {
     }
     const vBWidth = Number(viewBoxSize[2]) - Number(viewBoxSize[0])
     const vBHeight = Number(viewBoxSize[3]) - Number(viewBoxSize[1])
-    const dimMin = (vBHeight < vBWidth) ? vBHeight : vBWidth
+    const dimMin = (vBHeight < vBWidth) ? vBHeight : vBWidth;
+    const dimMax = (vBHeight < vBWidth) ? vBWidth : vBHeight
     if (dimMin != 15){
         // console.log(dimMin)
     }
-    const factor = 15 / dimMin
+ 
+    const factorMax = 15 / dimMax
     
-    let minSide = (vBHeight < vBWidth ) ? 'h' : 'w';
+    let maxSide = (vBHeight < vBWidth ) ? 'w': 'h';
 
-    const ratio= minSide == 'h' ? vBWidth/vBHeight : vBHeight/vBWidth
-    // le coté le plus petit sera de 15px
-    let outH = (minSide == 'h') ? 15 : 15 * ratio;
-    let outW = (minSide == 'w') ? 15 : 15 * ratio;
-    if (outW > 20){
-        console.log('trop large! ', listOfSvgsName[i] )
-    }
+    const ratioMax = maxSide == 'h' ? vBWidth/vBHeight : vBHeight/vBWidth
+    // le coté le plus grand sera de 15px
+
+    let outHMax = (maxSide == 'h') ? 15 : 15 * ratioMax;
+    let outWMax = (maxSide == 'w') ? 15 : 15 * ratioMax;
+  
 
     _path = _$('path');
-    let newPaths = []
+    let newPaths = [];
+  
     for (let i  = 0; i < _path.length; i++){
         const _pathD = _path[i].attribs['d']
-        let path = parse(_pathD)
-        var x = scale(path, factor)
+        let path = parse(_pathD)        
+        var x = scale(path, factorMax);
+
         const newPath = `<path d="${serialize(x)}" fill="#FFFFFF"/>`
         newPaths.push(newPath)
     }
 
-
-    const newSvg = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="${outW}px" height="${outH}px" viewBox="0 0 ${outW} ${outH}" style="enable-background:new 0 0 15 15;" space="preserve">
+    const newSvg = `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="${outWMax}px" height="${outHMax}px" viewBox="0 0 ${outWMax} ${outHMax}" style="enable-background:new 0 0 15 15;" space="preserve">
     ${newPaths.join(' ')}
     </svg>`
 
     fs.writeFileSync(path.join(iconsSVGsPath,listOfSvgsName[i]), newSvg, 'utf8')
-    // fa-chess-knight-solid.svg
 }
 
 
