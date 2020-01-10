@@ -640,14 +640,20 @@ export class MapService {
 
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
-      'paint': { 'line-color': '#088', 'line-width': 5 }
+      'paint': { 'line-color': '#ea1212', 'line-width': 5, 
+      'line-dasharray': {   "stops": [
+        [14, [1,0] ],
+        [14, [1,1] ]
+      ] } 
+      }
     });
 
     this.map.addLayer({
       'id': 'way_fill', 'type': 'fill', 'minzoom': minzoom, 'source': 'ways',
       'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 }
       // ,'filter': ['all']
-      , 'filter': ['all', ['==', ["geometry-type"], 'Polygon']]
+      , 'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
+      
     });
 
     this.map.addLayer({
@@ -663,7 +669,7 @@ export class MapService {
     this.map.addLayer({
       'id': 'way_fill_changed', 'type': 'fill', 'source': 'ways_changed',
       'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 },
-      'filter': ['all', ['==', ["geometry-type"], 'Polygon']]
+      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
     });
 
     this.map.addLayer({
@@ -673,7 +679,7 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['==', ["geometry-type"], 'LineString']]
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
     });
 
     this.map.addLayer({
@@ -709,7 +715,7 @@ export class MapService {
     });
 
     this.map.addLayer({
-      'id': 'icon-old', 'type': 'symbol', 'source': 'data',
+      'id': 'icon-old', 'type': 'symbol', 'source': 'data', 'minzoom': minzoom,
       'layout': {
         'icon-image': 'Old', 'icon-ignore-placement': true, 'icon-offset': [-13, -12],
         'visibility': 'none'
@@ -718,7 +724,7 @@ export class MapService {
     });
 
     this.map.addLayer({
-      'id': 'icon-fixme', 'type': 'symbol', 'source': 'data',
+      'id': 'icon-fixme', 'type': 'symbol', 'source': 'data', 'minzoom': minzoom,
       'layout': {
         'icon-image': 'Fixme', 'icon-ignore-placement': true, 'icon-offset': [13, -12],
         'visibility': 'none'
@@ -734,13 +740,13 @@ export class MapService {
     });
 
     this.map.addLayer({
-      'id': 'marker_changed', 'type': 'symbol', 'source': 'data_changed',
+      'id': 'marker_changed', 'type': 'symbol', 'source': 'data_changed', 'minzoom': minzoom,
       'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] },
       'filter': ['all']
     });
 
     this.map.addLayer({
-      'id': 'icon-change', 'type': 'symbol', 'source': 'data_changed',
+      'id': 'icon-change', 'type': 'symbol', 'source': 'data_changed', 'minzoom': minzoom,
       'layout': {
         'icon-image': '{changeType}', 'icon-ignore-placement': true, 'icon-offset': [0, -35]
       },
