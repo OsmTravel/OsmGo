@@ -8,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from 'src/app/services/tags.service';
 import { DataService } from 'src/app/services/data.service';
 
-
 @Component({
   selector: 'page-settings',
   templateUrl: './settings.html',
@@ -65,7 +64,12 @@ export class SettingsPage {
 
   baseMapChange(e) {
     this.configService.setBaseSourceId(e.detail.value);
+    const currentState = this.mapService.isDisplaySatelliteBaseMap
     this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
+ 
+    if (currentState){
+      this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, true);
+    }
   }
 
 
