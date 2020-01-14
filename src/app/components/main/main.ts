@@ -37,6 +37,7 @@ export class MainPage implements AfterViewInit {
   modalIsOpen = false;
   menuIsOpen = false;
   newVersion = false;
+  loadingData = false
 
   authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
@@ -199,19 +200,25 @@ export class MainPage implements AfterViewInit {
     // L'utilisateur charge les données, on supprime donc le tooltip
     this._ngZone.run(() => {
       this.alertService.displayToolTipRefreshData = false;
-      this.mapService.loadingData = true;
+      this.loadingData = true;
     });
 
 
     const bbox: any = this.mapService.getBbox();
     this.osmApi.getDataFromBbox(bbox)
-      .subscribe(data => { // data = geojson a partir du serveur osm
-
+      .subscribe(newDataJson => { // data = geojson a partir du serveur osm
+        this.dataService.setGeojsonBbox(newDataJson['geojsonBbox']);
+        this.mapService.eventNewBboxPolygon.emit(newDataJson['geojsonBbox']);
+        this.dataService.setGeojson(newDataJson['geojson']);
+        this.mapService.eventMarkerReDraw.emit(newDataJson['geojson']);
+        this._ngZone.run(() => {
+          this.loadingData = false;
+        });
       },
         err => {
-          this.mapService.loadingData = false;
+          this.loadingData = false;
           console.log(err);
-          this.presentToast(err);
+          this.presentToast(err.message);
         });
   }
 

@@ -86,7 +86,6 @@ export class MapService {
   subscriptionMoveElement;
   subscriptionMarkerMove;
   mode = 'Update';
-  loadingData = false;
   headingIsLocked = true;
   positionIsFollow = true;
   isDisplaySatelliteBaseMap = false;

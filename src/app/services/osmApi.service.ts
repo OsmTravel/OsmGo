@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, throwError, of, from } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, switchMap } from 'rxjs/operators';
 
 import * as osmAuth from 'osm-auth';
 
@@ -329,7 +329,6 @@ export class OsmApiService {
 
     /// CREATE NODE
     createOsmNode(_feature) {
-        console.log("createOsmNode", _feature)
         const feature = cloneDeep(_feature);
         const d = new Date();
         const tmpId = 'tmp_' + d.getTime();
@@ -522,8 +521,15 @@ export class OsmApiService {
     }
 
     /*
-        Observable : Utilise un Web Worker pour, ajouter un point au polygon, definir le style, filtrer et fusionner les données
+        Convertit les donnée XML d'OSM en geojson en utilisant osmtogeojson
+        Filtre les données*
+        Convertit les polygones/lignes en point
+        Generation du style dans les properties*
+        Fusion avec les données existantes (ancienne + les données modifiés)*
+
+        * utilisation du webworker
     */
+    
     formatOsmJsonData$(osmData, oldGeojson, geojsonChanged) {
         const that = this;
         const oldBbox = this.dataService.getGeojsonBbox();
@@ -553,37 +559,6 @@ export class OsmApiService {
         );
     }
 
-    /*
-        Convertit les donnée XML d'OSM en geojson en utilisant osmtogeojson
-        Filtre les données*
-        Convertit les polygones/lignes en point
-        Generation du style dans les properties*
-        Fusion avec les données existantes (ancienne + les données modifiés)*
-
-        * utilisation du webworker
-    */
-    formatDataResult(osmData, oldGeojson, geojsonChanged) {
-
-        return this.formatOsmJsonData$(osmData, oldGeojson, geojsonChanged)
-            .subscribe(newDataJson => {
-                // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
-                if (newDataJson['error']) {
-                    throw (newDataJson['error']);
-                }
-
-                this.dataService.setGeojsonBbox(newDataJson['geojsonBbox']);
-                this.mapService.eventNewBboxPolygon.emit(newDataJson['geojsonBbox']);
-                this.dataService.setGeojson(newDataJson['geojson']);
-                this.mapService.eventMarkerReDraw.emit(newDataJson['geojson']);
-                this.mapService.loadingData = false;
-            },
-                error => {
-                    // TODO?
-                    console.log(error);
-                }
-            );
-    }
-
     getDataFromBbox(bbox: any) {
         const featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
@@ -594,13 +569,14 @@ export class OsmApiService {
         const url = this.getUrlApi() + `/api/0.6/map?bbox=${bbox.join(',')}`;
         return this.http.get(url, { responseType: 'text' })
             .pipe(
-                map((osmData) => {
-                    this.formatDataResult(osmData, this.dataService.getGeojson(), this.dataService.getGeojsonChanged());
+                switchMap(osmData =>  this.formatOsmJsonData$(osmData,  this.dataService.getGeojson(), this.dataService.getGeojsonChanged())),
+                map((newDataJson => {
+                    return newDataJson
                 }),
                 catchError((error: any) => {
                     return throwError(error.error || 'Impossible de télécharger les données (api)');
                 }
-                )
+                ))
             );
 
     }
