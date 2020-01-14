@@ -774,7 +774,7 @@ export class MapService {
     this.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.map);
 
     this.map.on('click', async (e) => {
-      const features = this.map.queryRenderedFeatures(e.point, { layers: ['marker', 'marker_changed', 'icon-change', 'way_fill','way_line'] });
+      const features = this.map.queryRenderedFeatures(e.point, { layers: this.configService.selecableLayers });
       if (!features.length) {
         return;
       }

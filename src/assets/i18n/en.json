@@ -95,7 +95,11 @@
     "DISPLAY_FIXME_ICON_HINT": "Displays an icon to the right of the marker to indicate the presence of a fixed tag",
     "ADD_SURVEY_DATE": "Add today's date to tag 'survey:date",
     "ADD_SURVEY_DATE_HINT": "Add today's date to tag 'survey:date' or 'check_date' after adding/editing object",
-    "CHECKED_KEY": "survey:date or check_date ?"
+    "CHECKED_KEY": "survey:date or check_date ?",
+    "LINES_SELECTABLE": "Make lines selectable",
+    "LINES_SELECTABLE_HINT" : "Ability to click on a line to open the element sheet",
+    "POLYGONS_SELECTABLE": "Make polygons selectable",
+    "POLYGONS_SELECTABLE_HINT" : "Ability to click on a polygon to open the element sheet"
   },
   "MODAL_SELECTED_ITEM": {
     "CUSTOM_KEY_VALUE": "Add a custom value",

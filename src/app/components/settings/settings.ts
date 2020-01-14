@@ -106,7 +106,6 @@ export class SettingsPage {
   }
 
   checkedKeyChange(e){
-    console.log(e);
     this.configService.setCheckedKey(e.detail.value);
   }
 
@@ -125,6 +124,13 @@ export class SettingsPage {
   countryTagsChange(e){
     const newCountry = e.detail.value;
     this.configService.setCountryTags(newCountry);
+  }
+
+  isSelectableLineChange(e){
+    this.configService.setIsSelectableLine(e.detail.checked)
+  }
+  isSelectablePolygonChange(e){
+    this.configService.setIsSelectablePolygon(e.detail.checked)
   }
 
 

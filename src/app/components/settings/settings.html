@@ -104,6 +104,27 @@
 	</ion-card>
 
 
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label> {{ 'SETTINGS.LINES_SELECTABLE' | translate}}  </ion-label>
+				<ion-toggle [checked]="this.configService.config.isSelectableLine"
+					(ionChange)="isSelectableLineChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate}} </label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-content>
+			<ion-item>
+				<ion-label>{{ 'SETTINGS.POLYGONS_SELECTABLE' | translate}}   </ion-label>
+				<ion-toggle [checked]="this.configService.config.isSelectablePolygon"
+					(ionChange)="isSelectablePolygonChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate}} </label>
+		</ion-card-content>
+	</ion-card>
 
 	<h4>{{ 'SETTINGS.TAGS' | translate}}</h4>
 

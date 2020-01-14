@@ -43,7 +43,9 @@ export interface Config {
     isDevMode: boolean,
     isDevServer: boolean,
     authType: 'basic' | 'oauth',
-    checkedKey: 'survey:date' | 'check_date'
+    checkedKey: 'survey:date' | 'check_date',
+    isSelectableLine: boolean,
+    isSelectablePolygon: boolean
 }
 
 @Injectable({ providedIn: 'root' })
@@ -67,6 +69,7 @@ export class ConfigService {
     deviceInfo;
     baseMapSources;
     currentZoom: number = undefined;
+    selecableLayers:string[] = ['marker', 'marker_changed', 'icon-change'] 
 
 
 
@@ -90,7 +93,9 @@ export class ConfigService {
         isDevMode: false,
         isDevServer: false,
         authType: this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth',
-        checkedKey: "survey:date"
+        checkedKey: "survey:date",
+        isSelectableLine : true,
+        isSelectablePolygon: false,
         
     };
 
@@ -172,6 +177,9 @@ export class ConfigService {
                     this.config.languageTags = this.config.languageTags || 'en';
                     this.config.countryTags = this.config.countryTags || 'GB';
 
+                    
+                    this.setIsSelectableLine(this.config.isSelectableLine);
+                    this.setIsSelectablePolygon(this.config.isSelectablePolygon);
 
                     let userInfo = await this.localStorage.get('user_info')
                     if (userInfo && userInfo.connected) {
@@ -343,6 +351,30 @@ export class ConfigService {
     getIsDevServer() {
         return this.config.isDevServer;
     }
+
+    setIsSelectableLine(isSelectableLine :boolean){
+        const layers = ['way_line'] // way_line_changed TODO: add properties...
+        this.config.isSelectableLine = isSelectableLine;
+        this.localStorage.set('config', this.config);
+        let newSelectableLayers = this.selecableLayers.filter( l => !layers.includes(l))
+        if (isSelectableLine){
+            newSelectableLayers = [...newSelectableLayers, ...layers]
+        }
+        this.selecableLayers = [...newSelectableLayers]
+    }
+    
+    
+    setIsSelectablePolygon(isSelectablePolygon :boolean){
+        const layers = ['way_fill'] //  way_fill_changed TODO: add properties...
+        this.config.isSelectablePolygon = isSelectablePolygon;
+        this.localStorage.set('config', this.config);
+        let newSelectableLayers = this.selecableLayers.filter( l => !layers.includes(l))
+        if (isSelectablePolygon){
+            newSelectableLayers = [...newSelectableLayers, ...layers]
+        }
+        this.selecableLayers = [...newSelectableLayers]
+    }
+
 
     async setIsDevServer(isDevServer: boolean) {
         this.config.isDevServer = isDevServer;
