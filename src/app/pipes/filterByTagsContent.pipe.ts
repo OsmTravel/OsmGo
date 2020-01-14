@@ -24,15 +24,19 @@ export class FilterByTagsContentPipe implements PipeTransform {
     transform(items, args: string[], searchText: string) {
         const patt = new RegExp(searchText, 'i');
         const [language, countryCode] = args;
+        if (!searchText){
+            return items;
+        }
         return items.filter(item => {
-            // By Key
-            if (patt.test(item['key'])) {
+            // By tags
+            const tagsStr = JSON.stringify(item.tags)
+            if (patt.test(tagsStr)) {
                 return true;
-            } else if (patt.test(this.replaceCharSpe(item['key']))) {
+            } else if (patt.test(this.replaceCharSpe(tagsStr))) {
                 return true;
             }
 
-            // By label ()
+            // By label
             if (item.lbl){
                 let it = item.lbl[language] ? item.lbl[language] : item.lbl['en']
                 if (patt.test(it)) {
@@ -42,6 +46,7 @@ export class FilterByTagsContentPipe implements PipeTransform {
                 }
             }
 
+            // By terms
             if (item.terms){
                 let it = item.terms[language] ? item.terms[language] : item.terms['en']
                 if (patt.test(it)) {
