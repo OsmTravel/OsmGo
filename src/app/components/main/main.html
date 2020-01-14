@@ -25,13 +25,13 @@
 			</ion-fab-button>
 		</ion-fab>
 
-		<ion-fab *ngIf="!mapService.loadingData" style="left: 0; bottom: 0;  margin:6px;" >
+		<ion-fab *ngIf="!loadingData" style="left: 0; bottom: 0;  margin:6px;" >
 			<ion-fab-button tappable  (click)="loadData()" arrow="true" event="press" [disabled]="configService.currentZoom < 14">
 				<ion-icon *ngIf="!loadingData" name="refresh"></ion-icon>
 				<ion-spinner *ngIf="loadingData" ></ion-spinner>
 			</ion-fab-button>
 		</ion-fab> 
-		<ion-fab *ngIf="mapService.loadingData" style="left: 0; bottom: 0;  margin:6px;" >
+		<ion-fab *ngIf="loadingData" style="left: 0; bottom: 0;  margin:6px;" >
 			<ion-fab-button  disabled>
 				<ion-spinner ></ion-spinner>
 			</ion-fab-button>

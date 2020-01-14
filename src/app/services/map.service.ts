@@ -150,6 +150,9 @@ export class MapService {
       'marker',
       // 'marker_changed'
     ]
+    if (ids.length === 0){ // avoid :expected at least one branch label.
+      ids = ['']
+    }
 
     for (let layerId of layersIds) {
       const currentFilter = this.map.getFilter(layerId);
