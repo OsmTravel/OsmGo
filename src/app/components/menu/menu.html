@@ -20,16 +20,11 @@
 				</ion-item>
 
 				<ion-item				
-					*ngIf="authType =='basic' && !this.configService.user_info.connected"
+					*ngIf="!this.configService.user_info.connected"
 					(click)="pushPage('/login')">
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
-				<ion-item
-					*ngIf="authType =='oauth' && !this.configService.user_info.connected"
-					(click)="login()">
-					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
-				</ion-item>
 
 				<ion-item (click)="pushPage('/tags')">
 					<ion-icon name="settings"></ion-icon> {{'MENU.TAG_MANAGEMENT' | translate }} 

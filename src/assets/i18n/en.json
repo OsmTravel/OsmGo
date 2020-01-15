@@ -43,7 +43,11 @@
     "LOGIN": "Login",
     "USERNAME_PLACEHOLDER": "Email or user name OpenStreetMap",
     "PASSWORD_PLACEHOLDER": "Password",
-    "LOGIN_BUTTON": "Log in"
+    "LOGIN_BUTTON": "Log in",
+    "LOGIN_OAUTH": "Log in with Oauth",
+    "SAVE_PASSWORD": "Save your password",
+    "SAVED_PASSWORD_HINT": "Your password will be saved in clear in the application cache",
+    "NOT_SAVED_PASSWORD_HINT": "You will be asked for your password before each OSM update"
   },
   "SEND_DATA": {
     "SEND_DATA": "Send data",
@@ -60,7 +64,8 @@
     "SEND": "Send !",
     "DELETE": "Delete",
     "DELETE_CONFIRM_HEADER": "Really ?",
-    "DELETE_CONFIRM_MESSAGE": "Delete all changes?"
+    "DELETE_CONFIRM_MESSAGE": "Delete all changes?",
+    "PASSWORD_OSM": "OSM password"
   },
   "SETTINGS": {
     "SETTINGS": "Settings",

@@ -39,7 +39,7 @@ export class MainPage implements AfterViewInit {
   newVersion = false;
   loadingData = false
 
-  authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
+  // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
   constructor(public navCtrl: NavController,
     private platform: Platform,
@@ -247,18 +247,9 @@ export class MainPage implements AfterViewInit {
       this.tagsService.loadSavedFields$(),
       this.tagsService.loadTagsAndPresets$()
     ).subscribe( () => {
-      this.translate.use(this.configService.config.languageUi);
-      // this.mapService.eventDomMainReady.emit(document.getElementById('map'));
-
-      this.mapService.initMap();
-
-      if (this.authType == 'oauth'){
+        this.translate.use(this.configService.config.languageUi);
+        this.mapService.initMap();
         this.osmApi.initAuth();
-        if (!this.osmApi.isAuthenticated() || !this.configService.getUserInfo().connected) {
-          this.osmApi.logout()
-        }
-      }
-
     })
 
 

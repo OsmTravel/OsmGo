@@ -12,6 +12,13 @@
 
 
 <ion-content class="ion-padding">
+  <h1 *ngIf="this.configService.config.isDevServer" > DEV SERVER</h1>
+
+  <ion-card *ngIf="connectionError" color="danger" >
+    <ion-card-content>
+      {{connectionError}}
+    </ion-card-content>
+  </ion-card>
 
   	<ion-card *ngIf="!configService.user_info.connected" color="danger" >
 				<ion-card-content>
@@ -106,5 +113,5 @@
             (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
   <ion-button class="footerButton" 
               [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
-              (click)="pushDataToOsm(commentChangeset)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
+              (click)="pushDataToOsm(commentChangeset, this.basicPassword)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
 </ion-footer>

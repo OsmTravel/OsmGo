@@ -26,7 +26,6 @@ export class MenuPage {
     @Input() newVersion;
     aboutPage = AboutPage;
     pushDataToOsmPage = PushDataToOsmPage;
-    authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
     constructor(
         public mapService: MapService,
@@ -37,8 +36,7 @@ export class MenuPage {
         private alertCtrl: AlertController,
         public platform: Platform,
         private translate: TranslateService,
-        private navCtrl: NavController,
-        private zone:NgZone
+        private navCtrl: NavController
     ) {
 
 
@@ -80,32 +78,6 @@ export class MenuPage {
 
     closeMenu() {
         this.closeEvent.emit()
-    }
-
-    // TODO: May be bug...
-    login(){
-        if (!this.osmApi.isAuthenticated()){
-            this.osmApi.login$()
-                .subscribe(e => {
-                    this.osmApi.getUserDetail$()
-                    .subscribe( user => {
-                        this.zone.run(() => {
-                            this.configService.setUserInfo(user);
-                        });
-                      
-                    })
-                })
-            
-
-        } else {
-            this.osmApi.getUserDetail$()
-            .subscribe( user=> {
-                this.configService.setUserInfo(user);
-            })
-
-        }
-
-        
     }
 
     logout() {

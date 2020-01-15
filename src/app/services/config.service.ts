@@ -16,6 +16,7 @@ export interface User {
     connected: boolean;
     user: string;
     password: string;
+    authType: 'basic' | 'oauth';
 }
 
 export interface Changeset {
@@ -42,10 +43,10 @@ export interface Config {
     addSurveyDate: boolean,
     isDevMode: boolean,
     isDevServer: boolean,
-    authType: 'basic' | 'oauth',
     checkedKey: 'survey:date' | 'check_date',
     isSelectableLine: boolean,
-    isSelectablePolygon: boolean
+    isSelectablePolygon: boolean,
+    passwordSaved: boolean
 }
 
 @Injectable({ providedIn: 'root' })
@@ -59,7 +60,7 @@ export class ConfigService {
         private translate: TranslateService,
         public stateService: StatesService
     ) { }
-    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null };
+    user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null, authType: null};
     changeset: Changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };
     i18nConfig;
 
@@ -92,10 +93,10 @@ export class ConfigService {
         addSurveyDate: true,
         isDevMode: false,
         isDevServer: false,
-        authType: this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth',
         checkedKey: "survey:date",
         isSelectableLine : true,
         isSelectablePolygon: false,
+        passwordSaved : true
         
     };
 
@@ -124,7 +125,7 @@ export class ConfigService {
     }
 
     resetUserInfo() {
-        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
+        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, authType: null};
         this.localStorage.set('user_info', this.user_info);
     }
 
@@ -185,7 +186,7 @@ export class ConfigService {
                     if (userInfo && userInfo.connected) {
                         this.user_info = userInfo;
                     } else {
-                        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null };
+                        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, authType: null};
                     }
 
                     let changeset: Changeset = await this.localStorage.get('changeset')
@@ -384,6 +385,11 @@ export class ConfigService {
         await this.localStorage.remove('user_info');
         await this.localStorage.remove('geojsonChanged');
         return isDevServer;
+    }
+
+    setPasswordSaved(isSaved: boolean){
+        this.config.passwordSaved = isSaved;
+        this.localStorage.set('config', this.config);
     }
 
 }
