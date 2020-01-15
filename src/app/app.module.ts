@@ -39,7 +39,7 @@ import { AlertComponent } from './components/modal/components/alert/alert.compon
 import { IconComponent } from './components/icon/icon.component'
 
 import { DisplayPresetLabelPipe } from './pipes/displayPresetLabel.pipe';
-import { FilterByContentPipe } from './pipes/filterByContent.pipe';
+
 import { FilterByTagsContentPipe } from './pipes/filterByTagsContent.pipe';
 import { FilterExcludeTagByCountryCode } from './pipes/filterExcludeTagByCountryCode.pipe';
 import { FilterByCountryCode } from './pipes/filterByCountryCode.pipe';
@@ -48,10 +48,9 @@ import { FilterByPresetsContentPipe } from './pipes/filterByPresetsContent.pipe'
 
 import { FilterDeprecatedTagPipe } from './pipes/filterDeprecatedTag.pipe';
 import { FilterExcludeKeysPipe } from './pipes/filterExcludeKeys.pipe';
-import { FilterIncludeKeysPipe } from './pipes/filterIncludeKeys.pipe';
-import { FilterNullValuePipe } from './pipes/filterNullValue.pipe';
-import { KeysPipe } from './pipes/keys.pipe';
-import { ToLowercasePipe } from './pipes/toLowercase.pipe';
+
+
+
 
 
 
@@ -73,11 +72,12 @@ import { IsBookmarkedPipe } from './pipes/is-bookmarked.pipe';
 import { FilterBySearchablePipe } from './pipes/filter-by-searchable.pipe';
 import { HiddenTagsComponent } from './components/manage-tags/hidden-tags/hidden-tags.component';
 import { TagListElementComponent } from './components/tag-list-element/tag-list-element.component';
-import { FilterHiddenTagsPipe } from './pipes/filter-hidden-tags.pipe';
+
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
 import { ActiveTagsComponent } from './components/manage-tags/active-tags/active-tags.component';
 import { BookmarkedTagsComponent } from './components/manage-tags/bookmarked-tags/bookmarked-tags.component';
-import { FilterBookmarkedTagsPipe } from './pipes/filter-bookmarked-tags.pipe';
+
+import { FiltersTagsByIdsPipe } from './pipes/filters-tags-by-ids.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -102,14 +102,15 @@ export class CustomHammerConfig extends HammerGestureConfig {
     IconComponent,
 
     DisplayPresetLabelPipe,
-    FilterByContentPipe,
+ 
     FilterByTagsContentPipe,
     FilterExcludeTagByCountryCode,
     FilterByCountryCode,
     FilterByPresetsContentPipe,
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
-    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe, DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe, FilterBySearchablePipe, FilterHiddenTagsPipe, FilterBookmarkedTagsPipe,
+    DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe,
+    FilterBySearchablePipe, FiltersTagsByIdsPipe,
   ],
   entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
   imports: [

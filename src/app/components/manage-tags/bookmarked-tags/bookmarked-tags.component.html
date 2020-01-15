@@ -27,7 +27,7 @@
     <div class="listTag" >
        <ion-list style="overflow-y: auto;">
          <ion-item *ngFor="let tag of tagsService.tags 
-                          | filterBookmarkedTags:this.tagsService.bookmarksIds 
+                          | filtersTagsByIds:this.tagsService.bookmarksIds 
                           | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
          class="ion-no-padding">
           <app-tag-list-element   style="width: 100%;"

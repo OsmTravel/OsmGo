@@ -14,9 +14,9 @@
     <div class="listTag" *ngIf="searchText.length > 2 ">
 
       <ion-list style="overflow-y: auto;">
-        <ion-item *ngFor="let tag of currentListOfTags 
+        <ion-item *ngFor="let tag of currentListOfTags
+        | filtersTagsByIds:tagsService.hiddenTagsIds:true
         | filterDeprecatedTag 
-        | filterHiddenTags:tagsService.hiddenTagsIds
         | filterBySearchable 
         | filterExcludeTagByCountryCode:countryTags 
         | filterByByGeometryType:[geometryType]
@@ -76,12 +76,12 @@
 
         
         <ion-list style="overflow-y: auto;"  (swipeLeft)="swipeLeft()">
-          <ion-item *ngFor="let tag of this.tagsService.lastTagsUsed 
+          <ion-item *ngFor="let tag of tagsService.tags
+                      | filtersTagsByIds:tagsService.lastTagsUsedIds 
                       | filterDeprecatedTag 
                       | filterBySearchable 
                       | filterExcludeTagByCountryCode:countryTags 
-                      | filterByByGeometryType:[geometryType]
-                      | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+                      | filterByByGeometryType:[geometryType]"  
                       class="ion-no-padding">
            <app-tag-list-element  style="width: 100%;"
            [tag]="tag"
@@ -105,10 +105,9 @@
 
         <ion-list style="overflow-y: auto;">
           <ion-item *ngFor="let tag of tagsService.tags 
-                | filterBookmarkedTags:tagsService.bookmarksIds
+                | filtersTagsByIds:tagsService.bookmarksIds
                 | filterExcludeTagByCountryCode:countryTags 
-                | filterByByGeometryType:[geometryType]
-                | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+                | filterByByGeometryType:[geometryType]"  
           class="ion-no-padding">
            <app-tag-list-element  style="width: 100%;"
            [tag]="tag"

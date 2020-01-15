@@ -322,14 +322,21 @@ export class MapService {
     this.markerPositionate.remove();
     const coords = this.markerPositionate.getLngLat();
     let newTag;
-
-    if (this.tagsService.lastTagsUsed && this.tagsService.lastTagsUsed[0]) { // on récupere le dernier tag créé si il existe
-      newTag = { ...this.tagsService.lastTagsUsed[0].tags }
+     
+    if (this.tagsService.lastTagsUsedIds && this.tagsService.lastTagsUsedIds[0]) { // on récupere le dernier tag créé si il existe
+      const lastTagsUsed = this.tagsService.tags.find( t => t.id === this.tagsService.lastTagsUsedIds[0])
+      if (lastTagsUsed){
+        newTag = { ...lastTagsUsed.tags}
+      }
+      else{
+        newTag = { ...this.tagsService.tags[0].tags };
+      }
+      
 
     } else {
       newTag = { ...this.tagsService.tags[0].tags };
-
     }
+   
     const pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
     this.eventShowModal.emit({ type: 'Create', geojson: pt, origineData: null });

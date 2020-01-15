@@ -9,7 +9,6 @@ import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
-    lastTagsUsed: TagConfig[];
     lastTagsUsedIds: string[];
 
     bookmarksIds: string[] = [];
@@ -26,7 +25,7 @@ export class TagsService {
 
     
     defaultHiddenTagsIds :string[] = [
-        "highway/pedestrian_area",
+        'highway/pedestrian_area',
         'highway/footway',
         'highway/motorway',
         'highway/trunk',
@@ -75,6 +74,7 @@ export class TagsService {
 
         'man_made/bridge',
 
+        'building/yes',
         'building/train_station',
         'building/apartments',
         'building/barn',
@@ -82,50 +82,49 @@ export class TagsService {
         'building/bungalow',
         'building/cabin',
         'building/carport',
-        "building/cathedral",
-        "building/chapel",
-        "building/church",
-        "building/civic",
-        "building/college",
-        "building/commercial",
-        "building/construction",
-        "building/detached",
-        "building/dormitory",
-        "building/farm_auxiliary",
-        "building/farm",
-        "building/garage",
-        "building/garages",
-        "building/grandstand",
-        "building/greenhouse",
-        "building/hangar",
-        "building/hospital",
-        "building/hotel",
-        "building/house",
-        "building/houseboat",
-        "building/hut",
-        "building/industrial",
-        "building/kindergarten",
-        "building/mosque",
-        "building/pavilion",
-        "building/public",
-        "building/residential",
-        "building/retail",
-        "building/roof",
-        "building/ruins",
-        "building/school",
-        "building/semidetached_house",
-        "building/service",
-        "building/shed",
-        "building/stable",
-        "building/stadium",
-        "building/static_caravan",
-        "building/temple",
-        "building/terrace",
-        "building/transportation",
-        "building/university",
-        "building/warehouse",
-        "building/office",
-        "building/yes"
+        'building/cathedral',
+        'building/chapel',
+        'building/church',
+        'building/civic',
+        'building/college',
+        'building/commercial',
+        'building/construction',
+        'building/detached',
+        'building/dormitory',
+        'building/farm_auxiliary',
+        'building/farm',
+        'building/garage',
+        'building/garages',
+        'building/grandstand',
+        'building/greenhouse',
+        'building/hangar',
+        'building/hospital',
+        'building/hotel',
+        'building/house',
+        'building/houseboat',
+        'building/hut',
+        'building/industrial',
+        'building/kindergarten',
+        'building/mosque',
+        'building/pavilion',
+        'building/public',
+        'building/residential',
+        'building/retail',
+        'building/roof',
+        'building/ruins',
+        'building/school',
+        'building/semidetached_house',
+        'building/service',
+        'building/shed',
+        'building/stable',
+        'building/stadium',
+        'building/static_caravan',
+        'building/temple',
+        'building/terrace',
+        'building/transportation',
+        'building/university',
+        'building/warehouse',
+        'building/office'
     ]
 
 
@@ -161,9 +160,7 @@ export class TagsService {
         }
         let currentTag = this.tags.find( t => t.id === tag.id);
         if (!currentTag){
-            console.log('nopppppppp', tag)
             this.addUserTags(tag)
-            // return;
         }
         this.bookmarksIds = [tag.id, ...this.bookmarksIds ];
 
@@ -222,7 +219,6 @@ export class TagsService {
         }
         if (this.lastTagsUsedIds.includes(tagId)){
             this.lastTagsUsedIds = this.lastTagsUsedIds.filter( tu => tu !== tagId);
-            this.lastTagsUsed = this.lastTagsUsed.filter(tu => tu.id !== tagId)  
         }
         let currentTag = this.tags.find( t => t.id === tagId);
         if (!currentTag){
@@ -230,7 +226,6 @@ export class TagsService {
         }
 
         this.lastTagsUsedIds = [tagId, ...this.lastTagsUsedIds].slice(0,20);
-        this.lastTagsUsed = [currentTag, ...this.lastTagsUsed].slice(0,20)
 
         this.setLastTagsUsedIds(this.lastTagsUsedIds)
         return currentTag;
@@ -363,10 +358,8 @@ export class TagsService {
 
                     if (lastTagsUsedIds){
                         this.lastTagsUsedIds = lastTagsUsedIds;
-                        this.lastTagsUsed =  this.getTagConfigFromTagsID(lastTagsUsedIds);
                     } else {
                         this.lastTagsUsedIds = [];
-                        this.lastTagsUsed =  [];
                     }
             } )
         )

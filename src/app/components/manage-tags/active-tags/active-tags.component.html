@@ -29,7 +29,7 @@
 
       <ion-list style="overflow-y: auto;" *ngIf="searchText.length > 2">
         <ion-item *ngFor="let tag of tagsService.tags | 
-                       filterHiddenTags:tagsService.hiddenTagsIds | 
+                       filtersTagsByIds:tagsService.hiddenTagsIds:true |
                        filterDeprecatedTag | 
                        filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
         class="ion-no-padding">
