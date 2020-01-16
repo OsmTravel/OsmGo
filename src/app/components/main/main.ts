@@ -24,6 +24,7 @@ import { StatesService } from 'src/app/services/states.service';
 import { Plugins } from '@capacitor/core';
 import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
 import { switchMap } from 'rxjs/operators';
+import { InitService } from 'src/app/services/init.service';
 
 const { App } = Plugins;
 
@@ -38,11 +39,11 @@ export class MainPage implements AfterViewInit {
   menuIsOpen = false;
   newVersion = false;
   loadingData = false
+  loading = true;
 
   // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
   constructor(public navCtrl: NavController,
-    private platform: Platform,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     public menuCtrl: MenuController,
@@ -60,7 +61,9 @@ export class MainPage implements AfterViewInit {
     private translate: TranslateService,
     public loadingController: LoadingController,
     private swUpdate: SwUpdate,
-    public statesService: StatesService
+    public statesService: StatesService,
+    public initService: InitService
+
   ) {
 
 
@@ -239,17 +242,30 @@ export class MainPage implements AfterViewInit {
 
   ngAfterViewInit() {
 
-    forkJoin(
-      this.configService.getI18nConfig$()
-      .pipe(
-        switchMap( i18nConfig =>  this.configService.loadConfig$(i18nConfig))
-      ),
-      this.tagsService.loadSavedFields$(),
-      this.tagsService.loadTagsAndPresets$()
-    ).subscribe( () => {
-        this.translate.use(this.configService.config.languageUi);
-        this.mapService.initMap();
+    this.initService.initLoadData$()
+      .subscribe( ([config, userInfo, changeset, savedFields, presets, tags, baseMaps, bookmarksIds, lastTagsIds, geojson, geojsonChanged, geojsonBbox]) => {
+        this.locationService.enableGeolocation();
         this.osmApi.initAuth();
+
+        this.mapService.initMap(config)
+    })
+
+    this.mapService.eventMapIsLoaded.subscribe( e => {
+      console.log('mapLoaded!')
+      console.log('MAP IS LOADED')
+      // .then( map => {
+        this.loading = false;
+        console.log('maploaded')
+        timer(2000).subscribe( e => {
+          const nbData = this.dataService.getGeojson().features.length;
+          if (nbData > 0) {
+            // Il y a des données stockées en mémoires... 
+            this.alertService.eventNewAlert.emit(nbData+ ' ' + this.translate.instant('MAIN.START_SNACK_ITEMS_IN_MEMORY'));
+          } else {
+            // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
+            this.alertService.eventDisplayToolTipRefreshData.emit();
+          }
+        })
     })
 
 

@@ -11,6 +11,7 @@ import { timer } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { cloneDeep, clone } from 'lodash';
 import { addAttributesToFeature } from '../../../../scripts/osmToOsmgo/index.js'
+import { InitService } from 'src/app/services/init.service';
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -37,13 +38,25 @@ export class PushDataToOsmPage implements AfterViewInit {
         private alertCtrl: AlertController,
         public configService: ConfigService,
         public platform: Platform,
-        private translate: TranslateService
+        private translate: TranslateService,
+        public initService: InitService
     ) {
 
         this.commentChangeset = this.configService.getChangeSetComment();
         this.featuresChanges = this.dataService.getGeojsonChanged().features; 
     }
     ngOnInit(): void {
+
+            if (!this.initService.isLoaded){
+                console.log('ooo')
+              this.initService.initLoadData$()
+              .subscribe( e => {
+                  this.basicPassword = this.configService.user_info.password; 
+                  this.commentChangeset = this.configService.getChangeSetComment();
+                  this.featuresChanges = this.dataService.getGeojsonChanged().features; 
+                })
+            }
+        
         this.basicPassword = this.configService.user_info.password;      
     }
 

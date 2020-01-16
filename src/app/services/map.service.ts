@@ -23,10 +23,13 @@ import {
 
 import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
 import { TagConfig } from 'src/type';
+import { Config } from 'protractor';
+import { of } from 'rxjs';
 
 const { Haptics } = Plugins;
 @Injectable({ providedIn: 'root' })
 export class MapService {
+  isFirstPosition = true;
 
   constructor(
     private _ngZone: NgZone,
@@ -50,11 +53,10 @@ export class MapService {
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
-    this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
-      if (this.map) {
+    this.locationService.eventLocationIsReady.subscribe(data => { 
+      if (this.map && this.configService.config.centerWhenGpsIsReady) {
         this.map.setZoom(19);
       }
-
     });
 
     this.eventMarkerReDraw.subscribe(geojson => {
@@ -71,12 +73,19 @@ export class MapService {
       }
     });
 
-    this.configService.eventCloseGeolocPage.subscribe(e => {
-      if (this.configService.geojsonIsLoadedFromCache && !this.configService.geolocPageIsOpen) {
-        this.diplayInitToast();
-      }
+    this.eventMapMove
+      .pipe(
+        debounceTime(700)
+      )
+      .subscribe( () => {
+        let mapCenter = this.map.getCenter();
+        let mapBearing = this.map.getBearing()
+        let mapZoom = this.map.getZoom();
+        const currentView = { lng: mapCenter.lng, lat: mapCenter.lat, zoom: mapZoom, bearing: mapBearing }
+        this.configService.setLastView(currentView)
+      })
 
-    });
+
   } // EOF constructor
 
   bboxPolygon;
@@ -106,6 +115,7 @@ export class MapService {
   eventOsmElementDeleted = new EventEmitter();
   eventOsmElementCreated = new EventEmitter();
   eventMarkerReDraw = new EventEmitter();
+  eventMapIsLoaded = new EventEmitter();
   eventMarkerChangedReDraw = new EventEmitter();
   eventShowDialogMultiFeatures = new EventEmitter();
   markersLayer = [];
@@ -113,6 +123,7 @@ export class MapService {
 
   // CREATE NEW MARKER
   eventMarkerMove = new EventEmitter();
+  eventMapMove = new EventEmitter();
   markerMoving = false; // le marker est en train d'être positionné
   markerPositionate;
   markerMapboxUnknown = {};
@@ -288,7 +299,13 @@ export class MapService {
     }
   }
   centerOnMyPosition() {
+    const currentZoom = this.map.getZoom()
+
     this.map.setCenter(this.locationService.getCoordsPosition());
+    if (currentZoom < 17){
+      this.map.setZoom(18)
+    }
+    
     if (this.configService.config.lockMapHeading) {
       this.headingIsLocked = true;
     }
@@ -408,23 +425,24 @@ export class MapService {
 
 
 
-  initMap() {
-
-    const that = this;
+  initMap( config: Config) {
+    
     this.getMapStyle().subscribe(mapStyle => {
-
-      that.zone.runOutsideAngular(() => {
+      this.positionIsFollow = config.centerWhenGpsIsReady;
+      this.headingIsLocked = config.centerWhenGpsIsReady;
+      this.zone.runOutsideAngular(() => {
         this.map = new mapboxgl.Map({
           container: 'map',
           style: mapStyle,
-          center: [this.configService.init.lng, this.configService.init.lat],
-          zoom: this.configService.init.zoom,
+          center: [config.lastView.lng, config.lastView.lat] ,
+          zoom: config.lastView.zoom,
+          bearing: config.lastView.bearing,
+          pitch: 0,
           maxZoom: 22,
           doubleClickZoom: false,
           attributionControl: false,
           dragRotate: true,
           trackResize: false,
-          pitch: 0,
           pitchWithRotate: false,
           collectResourceTiming: false
         });
@@ -441,9 +459,12 @@ export class MapService {
         this.map.on('load', async () => {
 
           this.mapIsLoaded();
+          return of(this.map)
+        
         });
 
         this.map.on('move', (e) => {
+          this.eventMapMove.emit();
           if (this.markerMoving || this.markerMoveMoving) {
             this.eventMarkerMove.emit(this.map.getCenter());
           }
@@ -467,6 +488,8 @@ export class MapService {
         this.loadUnknownMarker(window.devicePixelRatio)
 
       });
+
+      
     });
 
     /* SUBSCRIPTIONS */
@@ -497,45 +520,6 @@ export class MapService {
         this.markerMove.setLngLat(center);
       });
     });
-  }
-
-  loadDataFromLocalStorage() {
-    this.dataService.localStorage.get('geojsonBbox').then(data => {
-      if (data) {
-        this.dataService.setGeojsonBbox(data);
-        this.eventNewBboxPolygon.emit(data);
-      }
-
-    });
-
-    this.dataService.localStorage.get('geojsonChanged').then(data => {
-      if (data) {
-        this.dataService.setGeojsonChanged(data);
-        this.eventMarkerChangedReDraw.emit(data);
-      }
-    });
-
-    this.dataService.localStorage.get('geojson').then(data => {
-      this.configService.geojsonIsLoadedFromCache = true;
-      if (data) {
-        this.dataService.setGeojson(data);
-        this.eventMarkerReDraw.emit(data);
-        if (!this.configService.geolocPageIsOpen) {
-          this.diplayInitToast();
-        }
-      }
-    });
-  }
-
-  diplayInitToast() {
-    const data = this.dataService.getGeojson();
-    if (data.features.length > 0) {
-      // Il y a des données stockées en mémoires... 
-      this.alertService.eventNewAlert.emit(data.features.length + ' ' + this.translate.instant('MAIN.START_SNACK_ITEMS_IN_MEMORY'));
-    } else {
-      // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
-      this.alertService.eventDisplayToolTipRefreshData.emit();
-    }
   }
 
   getIconRotate(heading, mapBearing) {
@@ -572,7 +556,8 @@ export class MapService {
   addDomMarkerPosition() {
     if (!this.markerLocation) {
       this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition,
-        { offset: [0, 0] }).setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
+        { offset: [0, 0] })
+        .setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
       this.markerLocation.addTo(this.map);
 
     }
@@ -631,9 +616,6 @@ export class MapService {
   }
 
   mapIsLoaded() {
-    const that = this;
-
-    this.loadDataFromLocalStorage();
     const minzoom = 14;
 
     this.map.addSource('bbox', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
@@ -642,6 +624,11 @@ export class MapService {
     this.map.addSource('ways', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
     this.map.addSource('ways_changed', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
     this.map.addSource('location_circle', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
+
+    // this.loadDataFromLocalStorage();
+    this.eventNewBboxPolygon.emit(this.dataService.geojsonBbox);
+    this.eventMarkerChangedReDraw.emit(this.dataService.geojsonChanged);
+    this.eventMarkerReDraw.emit(this.dataService.geojson);
 
     for (let bm of this.configService.baseMapSources) {
       this.map.addSource(bm.id, bm);
@@ -799,7 +786,7 @@ export class MapService {
 
 
       const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
-
+      
       if (uniqFeaturesById.length > 1) {
         this.eventShowDialogMultiFeatures.emit(uniqFeaturesById);
 
@@ -881,15 +868,22 @@ export class MapService {
         this.changeLocationRadius(geojsonPos.features[0].properties.accuracy, true);
 
         if (this.configService.config.followPosition && this.positionIsFollow) {
-          that.map.setCenter(geojsonPos.features[0].geometry.coordinates);
+          this.map.setCenter(geojsonPos.features[0].geometry.coordinates);
+          if (this.isFirstPosition){
+            this.map.setZoom(19);
+          }
+          
         }
       }
+      this.isFirstPosition = false
     });
 
-    // La localisation était déjà ready avnt que la carte ne soit chargée // TODO: forkjoin!
+    // La localisation était déjà ready avnt que la carte ne soit chargée 
     if (this.locationService.gpsIsReady) {
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos());
     }
+  
+    this.eventMapIsLoaded.emit()
   }
 
 }

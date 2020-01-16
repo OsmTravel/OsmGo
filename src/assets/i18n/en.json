@@ -11,7 +11,8 @@
     "UNDEFINED": "Undefined",
     "NAME": "Name",
     "ID": "Id",
-    "CLOSE": "Close"
+    "CLOSE": "Close",
+    "LOADING": "Loading..."
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Really ?",
@@ -34,11 +35,7 @@
     "TAG_MANAGEMENT":"Tags management"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
-  "GEOLOCATION": {
-    "GEOLOCATION_IN_PROGESS": "Geolocation in progress ...",
-    "DO_NOT_USE_GEOLOCATION": "Do not use geolocation",
-    "YOU_SHOULD_ALLOW_GEOLOCATION": "You should allow geolocation ..."
-  },
+
   "LOGIN": {
     "LOGIN": "Login",
     "USERNAME_PLACEHOLDER": "Email or user name OpenStreetMap",
@@ -104,7 +101,9 @@
     "LINES_SELECTABLE": "Make lines selectable",
     "LINES_SELECTABLE_HINT" : "Ability to click on a line to open the element sheet",
     "POLYGONS_SELECTABLE": "Make polygons selectable",
-    "POLYGONS_SELECTABLE_HINT" : "Ability to click on a polygon to open the element sheet"
+    "POLYGONS_SELECTABLE_HINT" : "Ability to click on a polygon to open the element sheet",
+    "CENTER_WHEN_GPS_IS_READY" : "On start, center the map on your location",
+    "CENTER_WHEN_GPS_IS_READY_HINT" : "Center the map on your location as soon as possible"
   },
   "MODAL_SELECTED_ITEM": {
     "CUSTOM_KEY_VALUE": "Add a custom value",

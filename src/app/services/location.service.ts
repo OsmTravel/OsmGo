@@ -26,7 +26,7 @@ export class LocationService {
 
     constructor(
         public configService: ConfigService) {
-        this.enableGeolocation();
+        
     }
 
     watchPosition() {
@@ -59,15 +59,12 @@ export class LocationService {
         this.heading();
         Geolocation.getCurrentPosition({ enableHighAccuracy: true, maximumAge: 3000 })
             .then(position => {
-                this.configService.init.zoom = 19;
-                this.configService.init.lng = position.coords.longitude;
-                this.configService.init.lat = position.coords.latitude;
                 this.location = position;
                 this.eventNewLocation.emit(this.getGeojsonPos());
 
                 this.eventLocationIsReady.emit(position);
                 this.configService.geolocPageIsOpen = false;
-                this.configService.eventCloseGeolocPage.emit('gpsIsReady');
+            
                 this.gpsIsReady = true;
                 this.watchPosition()
             });
@@ -166,8 +163,12 @@ export class LocationService {
     }
 
     getGeojsonPos() {
-        const lon = (this.location && this.location.coords) ? this.location.coords.longitude : this.configService.init.lng;
-        const lat = (this.location && this.location.coords) ? this.location.coords.latitude : this.configService.init.lat;
+        if (!this.location){
+            console.log('nop')
+            return;
+        }
+        const lon =  this.location.coords.longitude ;
+        const lat =  this.location.coords.latitude ;
         const accuracy = (this.location && this.location.coords) ? this.location.coords.accuracy : 0;
         const heading = this.compassHeading.magneticHeading;
 
@@ -210,13 +211,4 @@ export class LocationService {
         };
     }
 
-    dontUseLocation() {
-        this.configService.init.zoom = 4.8;
-        this.forceOpen = true;
-        this.configService.config.lockMapHeading = false;
-        this.configService.config.followPosition = false;
-        this.compassHeading = { magneticHeading: 0, trueHeading: 0, headingAccuracy: 0, timestamp: 0 };
-        this.configService.geolocPageIsOpen = false;
-        this.configService.eventCloseGeolocPage.emit('force');
-    }
 }

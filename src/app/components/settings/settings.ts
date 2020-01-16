@@ -7,6 +7,7 @@ import { OsmApiService } from '../../services/osmApi.service';
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from 'src/app/services/tags.service';
 import { DataService } from 'src/app/services/data.service';
+import { InitService } from 'src/app/services/init.service';
 
 @Component({
   selector: 'page-settings',
@@ -23,7 +24,16 @@ export class SettingsPage {
     public tagsService: TagsService,
     public dataService: DataService,
     public osmApi: OsmApiService,
-    public loadingController: LoadingController) {
+    public loadingController: LoadingController,
+    public initService: InitService) {
+
+  }
+
+  ngOnInit(): void {
+   
+      if (!this.initService.isLoaded){
+        this.initService.initLoadData$().subscribe()
+     }
 
   }
 
@@ -42,6 +52,10 @@ export class SettingsPage {
 
   followPositionChange(e) {
     this.configService.setFollowPosition(e.detail.checked);
+  }
+
+  centerWhenGpsIsReadyChange(e){
+    this.configService.setCenterWhenGpsIsReady(e.detail.checked)
   }
 
   defaultPrimarykeyWindowsChange(e) {

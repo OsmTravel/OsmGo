@@ -53,6 +53,18 @@
 		<ion-card-header> </ion-card-header>
 		<ion-card-content>
 			<ion-item>
+				<ion-label>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate}} </ion-label>
+				<ion-toggle [checked]="this.configService.config.centerWhenGpsIsReady"
+					(ionChange)="centerWhenGpsIsReadyChange($event)"></ion-toggle>
+			</ion-item>
+			<label class="hint">{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate}} </label>
+		</ion-card-content>
+	</ion-card>
+
+	<ion-card>
+		<ion-card-header> </ion-card-header>
+		<ion-card-content>
+			<ion-item>
 				<ion-label> {{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate}} </ion-label>
 				<ion-toggle [checked]="this.configService.config.oldTagsIcon.display"
 					(ionChange)="displayOldTagIconChange($event)"></ion-toggle>

@@ -1,7 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import {
   ModalController, Platform,
-  // NavParams,
   LoadingController, ToastController, AlertController
 } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
@@ -13,7 +12,6 @@ import { AlertService } from '../../services/alert.service';
 import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
-import { AlertComponent } from './components/alert/alert.component';
 import { getConfigTag } from '../../../../scripts/osmToOsmgo/index.js'
 
 import { Feature, Tag, Preset, PrimaryTag, TagConfig } from '../../../type'

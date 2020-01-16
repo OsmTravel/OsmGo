@@ -169,13 +169,27 @@ export class TagsService {
         return currentTag;
     }
 
-    getBookMarksIdsFromStorage$() {
+    loadBookMarksIds$() {
         return from(this.localStorage.get('bookmarksIds'))
+            .pipe( 
+                map( bookmarksIds => {
+                    bookmarksIds = bookmarksIds ? bookmarksIds : []
+                    this.bookmarksIds = bookmarksIds
+                    return bookmarksIds
+                })
+            )
     }
 
     // hidden tags
-    getHiddenTagsIdsFromStorage$() {
+    loadHiddenTagsIds$() {
         return from(this.localStorage.get('hiddenTagsIds'))
+        .pipe(
+            map( hiddenTagsIds => {
+                hiddenTagsIds = hiddenTagsIds ? hiddenTagsIds : [...this.defaultHiddenTagsIds];
+                this.hiddenTagsIds  = hiddenTagsIds;
+                return hiddenTagsIds;
+            })
+        )
     }
 
     setHiddenTagsIds(hiddenTagsIds: string[]) {
@@ -208,8 +222,15 @@ export class TagsService {
         this.setHiddenTagsIds(defaultHiddenTagsIds) 
       }
 
-    getlastTagsUsedIdsFromStorage$(){
+    loadLastTagsUsedIds$(){
         return from(this.localStorage.get('lastTagsUsedIds'))
+        .pipe(
+            map( lastTagsUsedIds => {
+                lastTagsUsedIds = lastTagsUsedIds ? lastTagsUsedIds : [];
+                this.lastTagsUsedIds = lastTagsUsedIds;
+                return lastTagsUsedIds;
+            })
+        )
     }
 
 
@@ -231,8 +252,15 @@ export class TagsService {
         return currentTag;
     }
 
-    getUserTagsFromStorage$(){
+    loadUserTags$(){
         return from( this.localStorage.get('userTags'))
+        .pipe(
+            map( userTags => {
+                userTags = userTags ? userTags : [];
+                this.userTags = userTags;
+                return userTags;
+            })
+        )
     }
 
     setUserTags(userTags: TagConfig[]) {
@@ -256,12 +284,9 @@ export class TagsService {
         return from(this.localStorage.get('savedFields'))
             .pipe(
                 map(d => {
-                    if (d) {
-                        this.savedFields = d;
-                    } else {
-                        this.savedFields = {};
-                    }
-                    return this.savedFields;
+                    const res = d ? d : {}
+                    this.savedFields = res
+                    return res;
                 })
             )
     }
@@ -299,13 +324,25 @@ export class TagsService {
 
     getTagsConfig$(): Observable<any> { 
         return this.http.get(`assets/tags&presets/tags.json`)
+            .pipe( 
+                map( tagsConfig => {
+                    this.primaryKeys = tagsConfig['primaryKeys'];
+                    return tagsConfig
+                })
+            )
     }
 
-    getBaseMaps$() {
+    loadBaseMaps$() {
         return this.http.get(`assets/tags&presets/basemap.json`)
+            .pipe(
+                map(baseMaps => {
+                    this.configService.baseMapSources = baseMaps;
+                    return baseMaps
+                })
+            )
     }
 
-    getPresets$() {
+    loadPresets$() {
         return this.http.get(`assets/tags&presets/presets.json`)
             .pipe(
                 map((p) => { 
@@ -313,55 +350,54 @@ export class TagsService {
                     for (const k in json) {
                         json[k]['_id'] = k;
                     }
+                    this.presets = json;
                    return json;
                 })
             );
     }
-
-    getJsonSprites$() {
+ 
+    loadJsonSprites$() {
         const devicePixelRatio =  Math.round(window.devicePixelRatio);
         return this.http.get('assets/iconsSprites@x'+devicePixelRatio+'.json')
-      }
-
-    loadTagsAndPresets$() {
-        return forkJoin(
-            this.getJsonSprites$(),
-            this.getPresets$(),
-            this.getTagsConfig$(),
-            this.getBaseMaps$(),
-            this.getBookMarksIdsFromStorage$(),
-            this.getlastTagsUsedIdsFromStorage$(),
-            this.getUserTagsFromStorage$(),
-            this.getHiddenTagsIdsFromStorage$()
-        )
         .pipe(
-            map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]) => {
-                this.userTags = userTags ? userTags : [];
-        
+            map( jsonSprites => {
                 this.jsonSprites = jsonSprites;
-                this.presets = presets;
-                this.tags = [...tagsConfig['tags'], ...this.userTags];
-                this.primaryKeys = tagsConfig['primaryKeys'];
-                this.configService.baseMapSources = baseMaps;
-        
-                    if (bookmarksIds) {
-                        this.bookmarksIds = bookmarksIds
-                    } else {
-                        this.bookmarksIds = []
-                    }
-
-                    if (hiddenTagsIds){
-                        this.hiddenTagsIds = hiddenTagsIds
-                    } else {
-                        this.hiddenTagsIds = [...this.defaultHiddenTagsIds];
-                    }
-
-                    if (lastTagsUsedIds){
-                        this.lastTagsUsedIds = lastTagsUsedIds;
-                    } else {
-                        this.lastTagsUsedIds = [];
-                    }
+                return jsonSprites;
             } )
         )
-    }
+      }
+
+      loadTags$(){
+          return forkJoin(
+            this.getTagsConfig$(),
+            this.loadUserTags$(),
+          ).pipe(
+              map( ([tagsConfig, userTags]) => {
+                  let tags = [...tagsConfig['tags'], ...userTags];
+                this.tags = tags;
+                return tags;
+              })
+          )
+      }
+
+
+    // loadTagsAndPresets$() {
+    //     return forkJoin(
+    //         this.loadJsonSprites$(),
+    //         this.loadPresets$(),
+    //         this.loadTags$(),
+    //         this.loadBaseMaps$(),
+    //         this.loadBookMarksIds$(),
+    //         this.loadLastTagsUsedIds$(),
+    //         this.loadHiddenTagsIds$()
+    //     )
+    //     .pipe(
+    //         map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]) => {
+        
+                   
+
+    //                 return [jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]
+    //         } )
+    //     )
+    // }
 }

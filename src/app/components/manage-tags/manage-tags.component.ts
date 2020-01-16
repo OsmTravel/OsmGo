@@ -9,6 +9,7 @@ import { TagConfig } from 'src/type';
 import { ActiveTagsComponent } from './active-tags/active-tags.component';
 import { BookmarkedTagsComponent } from './bookmarked-tags/bookmarked-tags.component';
 import { MapService } from 'src/app/services/map.service';
+import { InitService } from 'src/app/services/init.service';
 
 @Component({
   selector: 'app-manage-tags',
@@ -20,29 +21,21 @@ export class ManageTagsComponent implements OnInit {
   refreshFilterMapAfterClose = false;
 
   constructor( public modalCtrl: ModalController, 
+    public initService : InitService,
     public configService: ConfigService,
     public mapService: MapService,
     public tagsService: TagsService, public navCtrl: NavController) { }
 
   ngOnInit() {
-      if (!this.tagsService.tags){
-        forkJoin(
-          this.configService.getI18nConfig$()
-          .pipe(
-            switchMap( i18nConfig =>  this.configService.loadConfig$(i18nConfig))
-          ),
-          this.tagsService.loadSavedFields$(),
-          this.tagsService.loadTagsAndPresets$()
-        ).subscribe( () => {
-        })
+      if (!this.initService.isLoaded){
+        this.initService.initLoadData$().subscribe()
       }
   }
 
 
   async openHiddenTagsModal(){
     const modal = await this.modalCtrl.create({
-      component: HiddenTagsComponent,
-      // componentProps: { type: _data.type, data: _data.geojson, newPosition: newPosition, origineData: _data.origineData }
+      component: HiddenTagsComponent
     });
     await modal.present();
 
@@ -58,8 +51,7 @@ export class ManageTagsComponent implements OnInit {
 
   async openActiveTagsModal(){
     const modal = await this.modalCtrl.create({
-      component: ActiveTagsComponent,
-      // componentProps: { type: _data.type, data: _data.geojson, newPosition: newPosition, origineData: _data.origineData }
+      component: ActiveTagsComponent
     });
     await modal.present();
 
@@ -74,8 +66,7 @@ export class ManageTagsComponent implements OnInit {
 
   async openBookmarkedTagsModal(){
     const modal = await this.modalCtrl.create({
-      component: BookmarkedTagsComponent,
-      // componentProps: { type: _data.type, data: _data.geojson, newPosition: newPosition, origineData: _data.origineData }
+      component: BookmarkedTagsComponent
     });
     await modal.present();
 

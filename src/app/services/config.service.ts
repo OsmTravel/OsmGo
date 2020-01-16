@@ -6,7 +6,7 @@ import { environment } from '../../environments/environment.prod';
 import { StatesService } from './states.service';
 import { Platform } from '@ionic/angular';
 import { map } from 'rxjs/operators';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { TagConfig } from 'src/type';
 import { TagsService } from './tags.service';
 
@@ -46,13 +46,14 @@ export interface Config {
     checkedKey: 'survey:date' | 'check_date',
     isSelectableLine: boolean,
     isSelectablePolygon: boolean,
-    passwordSaved: boolean
+    passwordSaved: boolean,
+    lastView: { lng: number, lat: number, zoom: number, bearing: number },
+    centerWhenGpsIsReady : boolean
 }
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
 
-    eventCloseGeolocPage = new EventEmitter();
 
     constructor(public localStorage: Storage,
         private platform: Platform,
@@ -96,7 +97,9 @@ export class ConfigService {
         checkedKey: "survey:date",
         isSelectableLine : true,
         isSelectablePolygon: false,
-        passwordSaved : true
+        passwordSaved : true,
+        lastView: { lng: 0, lat: 0, zoom: 1, bearing: 0},
+        centerWhenGpsIsReady: true
         
     };
 
@@ -105,12 +108,6 @@ export class ConfigService {
 
     geolocPageIsOpen = true;
     geojsonIsLoadedFromCache = false;
-
-    init = {
-        lng: 2.6,
-        lat: 47,
-        zoom: 4.8
-    };
 
     appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: environment.version || '0.0.0' };
 
@@ -159,12 +156,65 @@ export class ConfigService {
 
     }
 
+    loadConfig$(_i18nConfig):Observable<Config> {
+        return from(this.localStorage.get('config'))
+            .pipe(
+                map( d => {
+                    if (d) {
+                        // tslint:disable-next-line:forin
+                        for (const key in d) {
+                            this.config[key] = d[key];
+                        }
+                    } else {
+                        this.localStorage.set('config', this.config);
+                    }
+
+                    this.config.languageTags = this.config.languageTags || 'en';
+                    this.config.countryTags = this.config.countryTags || 'GB';
+
+                    this.setIsSelectableLine(this.config.isSelectableLine);
+                    this.setIsSelectablePolygon(this.config.isSelectablePolygon);
+
+                    return this.config;
+                })
+            )
+    }
+
+    loadUserInfo$(){
+        return from(this.localStorage.get('user_info'))
+            .pipe(
+                map( userInfo => {
+                    if (userInfo && userInfo.connected) {
+                        this.user_info = userInfo;
+                    } else {
+                        this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, authType: null};
+                    }
+                    return this.user_info 
+                })
+            )
+    }
+
+    loadChangeSet$(){
+        return from(this.localStorage.get('changeset'))
+        .pipe(
+            map( changeset => {
+                if (changeset) {
+                    this.changeset = changeset;
+                } else {
+                    this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
+                }
+                return this.changeset
+            })
+        )
+
+    }
 
     // TODO: add userInfo
-    loadConfig$(_i18nConfig) {
+    loadConfig2$(_i18nConfig) {
         return from(this.localStorage.get('config'))
             .pipe(
                 map(async d => {
+                    console.log(d);
                     if (d) {
                         // tslint:disable-next-line:forin
                         for (const key in d) {
@@ -195,7 +245,7 @@ export class ConfigService {
                     } else {
                         this.changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: this.getChangeSetComment() };
                     }
-
+                    console.log({ "config": this.config, "user_info": this.user_info, "changeset": this.changeset });
                     return { "config": this.config, "user_info": this.user_info, "changeset": this.changeset };
                 })
             )
@@ -392,4 +442,13 @@ export class ConfigService {
         this.localStorage.set('config', this.config);
     }
 
+    setCenterWhenGpsIsReady( center: boolean){
+        this.config.centerWhenGpsIsReady = center;
+        this.localStorage.set('config', this.config);
+    }
+
+    setLastView(lastView){
+        this.config.lastView = lastView;
+        this.localStorage.set('config', this.config);
+    }
 }

@@ -1,6 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { cloneDeep } from 'lodash';
+import { from } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({ providedIn: 'root' })
@@ -22,6 +24,39 @@ export class DataService {
         return this.localStorage.get(idIcon);
     }
 
+
+    loadGeojson$(){
+        return from(this.localStorage.get('geojson'))
+            .pipe(
+                map( geojson => {
+                    geojson = geojson ? geojson : { 'type': 'FeatureCollection', 'features': [] }
+                    this.geojson = geojson
+                    return geojson
+                } )
+            )
+    }
+
+    loadGeojsonChanged$(){
+        return from(this.localStorage.get('geojsonChanged'))
+            .pipe(
+                map( geojson => {
+                    geojson = geojson ? geojson : { 'type': 'FeatureCollection', 'features': [] }
+                    this.geojsonChanged = geojson
+                    return geojson
+                } )
+            )
+    }
+
+    loadGeojsonBbox$(){
+        return from(this.localStorage.get('geojsonBbox'))
+            .pipe(
+                map( geojson => {
+                    geojson = geojson ? geojson : { 'type': 'FeatureCollection', 'features': [] }
+                    this.geojsonBbox = geojson
+                    return geojson
+                } )
+            )
+    }
   
 
     async getKeysCacheIcon(){
@@ -76,7 +111,12 @@ export class DataService {
     }
 
     getGeojson() {
-        return this.geojson;
+        if (this.geojson){
+            return this.geojson;
+        } else {
+            return { 'type': 'FeatureCollection', 'features': [] }
+        }
+       
     }
 
     setGeojson(data) {
