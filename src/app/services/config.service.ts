@@ -404,7 +404,7 @@ export class ConfigService {
     }
 
     setIsSelectableLine(isSelectableLine :boolean){
-        const layers = ['way_line'] // way_line_changed TODO: add properties...
+        const layers = ['way_line', 'way_line_changed'] // way_line_changed TODO: add properties...
         this.config.isSelectableLine = isSelectableLine;
         this.localStorage.set('config', this.config);
         let newSelectableLayers = this.selecableLayers.filter( l => !layers.includes(l))
@@ -416,7 +416,7 @@ export class ConfigService {
     
     
     setIsSelectablePolygon(isSelectablePolygon :boolean){
-        const layers = ['way_fill'] //  way_fill_changed TODO: add properties...
+        const layers = ['way_fill', 'way_fill_changed'] //   TODO: add properties...
         this.config.isSelectablePolygon = isSelectablePolygon;
         this.localStorage.set('config', this.config);
         let newSelectableLayers = this.selecableLayers.filter( l => !layers.includes(l))

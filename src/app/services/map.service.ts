@@ -566,7 +566,7 @@ export class MapService {
     const layer = feature['layer'].id;
     // Provenance de la donnée d'origine (data OU data_changed)
     let origineData = 'data';
-    if (layer === 'label_changed' || layer === 'marker_changed' || layer === 'icon-change') {
+    if ( ['label_changed','marker_changed','icon-change', 'way_line_changed', 'way_fill_changed'].includes(layer)) {
       origineData = 'data_changed';
     }
 
