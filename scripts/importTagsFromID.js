@@ -19,38 +19,44 @@ const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
 const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8')).presets;
 const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
 
+const excludesPresets = ['name','address', 'gnis/feature_id', 'operator', 'building_area', 'brand', 'post', 'recycling_accepts', "level_semi"]
 // const osmgoPkeys = Object.keys(tagsOsmgo);
 
-const osmgoPkeys = ['building'];
-const markerColor = "#5A5A5A";
+const osmgoPkeys = tagConfig.primaryKeys;
+const markerColor = "{CHANGE_ME}";
+
 
 let idTagsFieldsListId = []; // list of id of fields to add...
-const tagsIDpkeys = Object.keys(tagsID)
-    .filter(k => k.split('/').length >= 2) // only "generic" key for now
-    .filter(k => osmgoPkeys.includes(k.split('/')[0])) // only primaryKeys of Osm Go for now
-    // .filter(k => !tagsOsmgo[k.split('/')[0]]['exclude_way_values'] ||
-    //     !tagsOsmgo[k.split('/')[0]]['exclude_way_values'].includes(k.split('/')[1])) // no excludes ways...
-// .map( k => { return {"pkey": k.split('/')[0], "value":k.split('/')[1], "id": k } })
 
 /* IMPORT TAGS */
-for (let iDid of tagsIDpkeys) {
-    // console.log(iDid);
+for (let iDid in tagsID){
+    
+    
+    if( iDid.split('/').length === 1){ // primary key
+        continue;
+    }
+
+    if (iDid.split('/')[0] == 'type'){
+        continue;
+    }
+   
     const tagiD = tagsID[iDid];
-    let iDFields = []; // for this tag
-    let iDMoreFields = []
+    // exclude brands...
     if (tagiD['addTags'] && tagiD['addTags']['brand']){
         continue;
-        console.log(tagiD.tags);
-        console.log(tagiD.addTags)
-        console.log(iDid)
     }
-    // console.log('-------------')
-    // console.log('iD tags', tagiD.tags);
-    // // console.log(tagiD.addTags)
-    // // console.log(iDid)
-    // console.log('-------------')
+    // console.log(iDid);
+    const tagIDKeys = Object.keys(tagiD.tags)
+    
+    if (_.intersection(tagIDKeys, osmgoPkeys).length == 0){
+        continue;
+    }
 
-    if (tagiD.fields) {
+
+    let iDFields = []; // for this tag
+    let iDMoreFields = [];
+
+    if (tagiD.fields){
         for (let f of tagiD.fields) {
             if (presetsID[f] && presetsID[f].type === 'typeCombo') {
 
@@ -61,17 +67,18 @@ for (let iDid of tagsIDpkeys) {
 
                 const newF = fields.filter(f => !idTagsFieldsListId.includes(f))
                 idTagsFieldsListId = [...idTagsFieldsListId, ...newF]
-                iDFields = [...iDFields, ...newF]
-
+                iDFields = [...iDFields, ...newF].filter( f =>  !excludesPresets.includes(f))
 
             } else if (!idTagsFieldsListId.includes(f)) { // TODO: add {shop} tags
                 idTagsFieldsListId.push(f);
-                iDFields = [...iDFields, f]
+                iDFields = [...iDFields, f].filter( f =>  !excludesPresets.includes(f))
             } else {
-                iDFields = [...iDFields, f]
+                iDFields = [...iDFields, f].filter( f =>  !excludesPresets.includes(f))
             }
         }
+
     }
+
     if (tagiD.moreFields) {
         for (let f of tagiD.moreFields) {
             if (presetsID[f] && presetsID[f].type === 'typeCombo') {
@@ -82,98 +89,56 @@ for (let iDid of tagsIDpkeys) {
                 const fields = tagsID[keyRef].moreFields
                 const newF = fields.filter(f => !idTagsFieldsListId.includes(f))
                 idTagsFieldsListId = [...idTagsFieldsListId, ...newF];
-                iDMoreFields = [...iDMoreFields, ...newF]
+                iDMoreFields = [...iDMoreFields, ...newF].filter(f => !idTagsFieldsListId.includes(f))
 
             } else if (!idTagsFieldsListId.includes(f)) { // TODO: add {shop} tags
                 idTagsFieldsListId.push(f);
-                iDMoreFields = [...iDMoreFields, f]
+                iDMoreFields = [...iDMoreFields, f].filter(f => !idTagsFieldsListId.includes(f))
             } else {
-                iDMoreFields = [...iDMoreFields, f]
+                iDMoreFields = [...iDMoreFields, f].filter(f => !idTagsFieldsListId.includes(f))
             }
         }
     }
-    // console.log(iDFields);
 
-    const idPkey = iDid.split('/')[0];
-    const idValue = iDid.split('/')[1];
+    const tagOsmgoById = tagsOsmgo.find( t => t.id === iDid);
 
-    const iDKey = tagiD.tags[idPkey];
-
-    // let tagOsmgo = tagsOsmgo[idPkey].values.find(ogT => ogT.key == idValue);
-
-    let tagOsmgo = tagsOsmgo.find(ogT => {
+    let currenOsmgoTag = tagsOsmgo.find(ogT => {
         return _.isEqual(tagiD.tags, ogT.tags)
-
     });
 
 
-    if (tagOsmgo){
-        // console.log('GO' , tagOsmgo, 'iD' , tagiD);
-    } else {
-        console.info(tagiD);
+    let newTag = {
+        id: iDid,
+        tags: tagiD.tags,
+        icon: tagiD.icon || '',
+        markerColor: markerColor,
+        presets: iDFields,
+        moreFields: iDMoreFields,
+        lbl: { en: tagiD.name },
+        terms: { en: tagiD.terms ? tagiD.terms.join(', ') : '' },
+        geometry: tagiD.geometry,
+        iDRef: iDid
     }
-   
+    if (tagiD.terms) newTag['terms'] = { 'en': tagiD.terms.join(', ') };
+    if (tagiD.addTags) newTag['addTags'] = tagiD.addTags;
+    if (tagiD.reference) newTag['reference'] = tagiD.reference;
+    if (tagiD.searchable) newTag['searchable'] = tagiD.searchable;
+    
 
-
-    // console.log(tagOsmgo);
-    // not in Osm Go
-    if (!tagOsmgo) {
-        // console.log(idPkey, idValue);
-        // new tag
-        let newTag = {
-            id: iDid,
-            icon: tagiD.icon || '',
-            markerColor: markerColor,
-            presets: iDFields,
-
-            lbl: { en: tagiD.name },
-            terms: { en: tagiD.terms ? tagiD.terms.join(', ') : '' },
-            geometry: tagiD.geometry,
-            iDRef: iDid
+    if (tagOsmgoById && !currenOsmgoTag){ // !tags but same id...
+        console.log('!tags & sameIds', iDid)
+        tagOsmgoById.tags = tagiD.tags
+        if (tagiD.addTags) {
+            tagOsmgoById['addTags'] = tagiD.addTags;
         }
-        if (tagiD.terms) newTag['terms'] = { 'en': tagiD.terms.join(', ') };
-        if (iDMoreFields.length > 0) newTag['moreFields'] = iDMoreFields
-        if (tagiD.tags) newTag['tags'] = tagiD.tags;
-        if (tagiD.addTags) newTag['addTags'] = tagiD.addTags;
-        if (tagiD.reference) newTag['reference'] = tagiD.reference;
-        if (tagiD.searchable) newTag['searchable'] = tagiD.searchable;
-        
-
+    } else if (!tagOsmgoById && !currenOsmgoTag){ // new
+        console.log('new', iDid)
         tagsOsmgo.push(newTag)
+    } else { // exist
 
-        // console.log(newTag)
-        // tagsOsmgo[idPkey]
-
-
-    } else {
-        if (tagiD.geometry) tagOsmgo['geometry'] = tagiD.geometry;
-        tagOsmgo['iDRef'] = iDid;
-        if (!tagOsmgo.icon) tagOsmgo['icon'] = tagiD.icon || '';
-        if (tagiD.name) tagOsmgo['lbl']['en'] = tagiD.name;
-        if (tagiD.terms) {
-            if (!tagOsmgo['terms']) tagOsmgo['terms'] = {};
-            tagOsmgo['terms']['en'] = tagiD.terms.join(', ')
-        };
-
-        if (tagiD.tags) tagOsmgo['tags'] = tagiD.tags;
-        if (tagiD.addTags) tagOsmgo['addTags'] = tagiD.addTags;
-        if (tagiD.reference) tagOsmgo['reference'] = tagiD.reference;
-        if (tagiD.searchable) tagOsmgo['searchable'] = tagiD.searchable;
-        
-
-        const newFieldsFromId = iDFields.filter(f => !['name', 'brand'].includes(f) && !tagOsmgo.presets.includes(f));
-        tagOsmgo.presets = [...tagOsmgo.presets, ...newFieldsFromId];
-
-        if (iDMoreFields) {
-            if (!tagOsmgo.moreFields) {
-                tagOsmgo['moreFields'] = iDMoreFields
-            } else {
-                const newMoreFields = iDMoreFields.filter(f => !['name', 'brand'].includes(f) && !tagOsmgo.moreFields.includes(f));
-                tagOsmgo['moreFields'] = [...tagOsmgo['moreFields'], ...newMoreFields]
-            }
-        }
     }
 }
+
 
 
 
@@ -181,8 +146,11 @@ for (let iDid of tagsIDpkeys) {
 // list des Presets/fields used : idTagsFieldsListId
 // console.log(presetsID);
 let types = [];
-
 for (let fiDId of idTagsFieldsListId) {
+    // console.log(fiDId);
+    if (excludesPresets.includes(fiDId)){
+        continue;
+    }
     const currentIDPreset = presetsID[fiDId]
     let currentOsmGoPreset = presetsOsmgo[fiDId]
     if (!currentIDPreset) {
@@ -295,6 +263,28 @@ for (let fiDId of idTagsFieldsListId) {
         presetsOsmgo[fiDId] = currentIDPreset
     }
 }
+
+// //  delete presets keys
+// for (let tag of tagConfig.tags){
+//     tag.presets = tag.presets.filter(f => !excludesPresets.includes(f))
+//     if (tag.moreFields){
+//         tag.moreFields = tag.moreFields.filter(f => !excludesPresets.includes(f))
+//     }
+// }
+
+const compareById = (a, b) => {
+    // Use toUpperCase() to ignore character casing
+    const idA = a.id;
+    const idB = b.id
+  
+    let comparison = 0;
+    if (idA > idB) {
+      comparison = 1;
+    } else if (idA < idB) {
+      comparison = -1;
+    }
+    return comparison;
+  }
 
 fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
 fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')

@@ -1,4 +1,4 @@
-<ion-card *ngIf="tag.preset?.type === 'select'">
+<!-- <ion-card *ngIf="tag.preset?.type === 'select'">
     <ion-card-header>
         <b *ngIf="!displayCode && (tag.preset?.lbl[language] || tag.preset?.lbl['en']); else diplayCodeSelect">{{tag.preset?.lbl[language] || tag.preset?.lbl['en']}}</b>
         <ng-template #diplayCodeSelect>
@@ -37,10 +37,9 @@
             <ion-item *ngIf="displayCode">
                     <ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
             </ion-item>
-                
-                
-     
         </div>
+
+
         <div class="buttonEdit2cols">
             <ion-col width-10 class="ion-col10">
             <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
@@ -49,9 +48,16 @@
     </div>
 
     </ion-card-content>
-</ion-card>
+</ion-card> -->
 
+<app-select *ngIf="tag.preset?.type === 'select'"
+    [tag]="tag"
+    [language]="language"
+    [displayCode]="displayCode"
+    (addTags)= "addTags.emit($event)"
+    >
 
+</app-select>
 
 <ion-card *ngIf="tag.preset?.type === 'list'">
     <ion-card-header  (click)="emitOpenModal(tag)">

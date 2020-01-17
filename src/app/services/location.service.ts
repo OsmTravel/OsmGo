@@ -63,7 +63,6 @@ export class LocationService {
                 this.eventNewLocation.emit(this.getGeojsonPos());
 
                 this.eventLocationIsReady.emit(position);
-                this.configService.geolocPageIsOpen = false;
             
                 this.gpsIsReady = true;
                 this.watchPosition()

@@ -471,12 +471,12 @@ export class MapService {
         });
 
         this.map.on('movestart', (e) => {
-          this.configService.freezeMapRenderer = true;
+          // this.configService.freezeMapRenderer = true;
         });
 
         this.map.on('moveend', (e) => {
 
-          this.configService.freezeMapRenderer = false;
+          // this.configService.freezeMapRenderer = false;
 
         });
 
@@ -870,12 +870,12 @@ export class MapService {
         if (this.configService.config.followPosition && this.positionIsFollow) {
           this.map.setCenter(geojsonPos.features[0].geometry.coordinates);
           if (this.isFirstPosition){
-            this.map.setZoom(19);
+            this.map.setZoom(18);
+            this.isFirstPosition = false
           }
           
         }
       }
-      this.isFirstPosition = false
     });
 
     // La localisation était déjà ready avnt que la carte ne soit chargée 

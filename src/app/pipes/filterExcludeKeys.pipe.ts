@@ -8,7 +8,8 @@ import { TagConfig } from 'src/type';
 
 export class FilterExcludeKeysPipe{
     transform(items, tagConfig:TagConfig, countryCode: string, primaryKeys, presets, excludeOtherPresets = false) {
-        let excludesKeys = ['name', ...primaryKeys]
+        // let excludesKeys = ['name', ...primaryKeys]
+        let excludesKeys = ['name']
 
         if (!tagConfig){
             return items.filter(item => !excludesKeys.includes(item.key));

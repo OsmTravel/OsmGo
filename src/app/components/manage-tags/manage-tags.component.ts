@@ -79,7 +79,6 @@ export class ManageTagsComponent implements OnInit {
   
 
   back(){
-    console.log('back)')
     if (this.mapService.map ){ //&& this.refreshFilterMapAfterClose === true
       this.mapService.filterMakerByIds(this.tagsService.hiddenTagsIds)
     }

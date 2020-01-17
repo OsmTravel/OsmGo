@@ -43,8 +43,8 @@
       <!-- Add custum value (from searchBar to the key) -->
       <div>
 			<h4> {{ 'MODAL_SELECTED_ITEM.CUSTOM_KEY_VALUE' | translate}} </h4>
-          <ion-chip *ngFor="let k of tagsService.primaryKeys">
-            <ion-label color="primary" (click)="addCustomValue(k,searchText)" >{{ k }}={{searchText}}</ion-label>
+          <ion-chip *ngFor="let k of tagsService.primaryKeys | sortArray">
+            <ion-label color="primary" (click)="addCustomValue(k,searchText.toLowerCase())" >{{ k }}={{searchText | lowercase}}</ion-label>
           </ion-chip>
         
       </div>

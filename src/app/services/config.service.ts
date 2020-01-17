@@ -105,8 +105,6 @@ export class ConfigService {
 
     currentTagsCountryChoice = [];
 
-
-    geolocPageIsOpen = true;
     geojsonIsLoadedFromCache = false;
 
     appVersion = { appName: 'Osm Go!', appVersionCode: '12', appVersionNumber: environment.version || '0.0.0' };

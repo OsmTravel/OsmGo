@@ -66,10 +66,11 @@ export class ModalPrimaryTag implements OnInit {
 
 
     addCustomValue(key, value) {
+        // TODO: ckeck if aleardy exist
         const newConfig: TagConfig = {
-            icon: "wiki_question",
+            icon: "maki-circle-custom",
             markerColor: '#000000',
-            geometry: ['point'],
+            geometry: ['point', 'vertex', 'line', 'area'],
             lbl: { 'en': `${key} = ${value}` },
             presets: [],
             id: `${key}/${value}`,

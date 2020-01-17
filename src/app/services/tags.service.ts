@@ -4,7 +4,6 @@ import { map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { ConfigService } from './config.service';
-import { cloneDeep } from 'lodash';
 import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 
 @Injectable({ providedIn: 'root' })
@@ -60,10 +59,25 @@ export class TagsService {
         'highway/stop',
         'highway/turning_circle',
 
-        'barrier/hedge',
-        'barrier/fence',
+        'railway/platform',
+        'railway/abandoned',
+        'railway/construction',
+        'railway/disused',
+        'railway/funicular',
+        'railway/light_rail',
+        'railway/miniature',
+        'railway/monorail',
+        'railway/narrow_gauge',
+        'railway/rail',
+        'railway/rail/highspeed',
+        'railway/subway',
+        'railway/tram',
+
         'barrier/kerb',
-        'barrier/wall',
+        'barrier/kerb/flush',
+        'barrier/kerb/lowered',
+        'barrier/kerb/raised',
+        'barrier/kerb/rolled',
 
         'natural/grassland',
         'natural/wood',
@@ -71,6 +85,17 @@ export class TagsService {
         'natural/cliff',
         'natural/shingle',
         'natural/coastline',
+
+        'waterway/riverbank',
+        'waterway/canal',
+        'waterway/canal/lock',
+        'waterway/ditch',
+        'waterway/drain',
+        'waterway/fish_pass',
+        'waterway/river',
+        'waterway/stream_intermittent',
+        'waterway/stream',
+        'waterway/tidal_channel',
 
         'man_made/bridge',
 
@@ -273,10 +298,12 @@ export class TagsService {
         if (this.userTags.find( t => t.id === newTagId)){
             return;
         }
+        newTag['geometry'] = ['point', 'vertex', 'line', 'area']
+        newTag['icon'] = "maki-circle-custom",
+        newTag['markerColor'] = "#000000";
         this.userTags =  [...this.userTags, newTag]
         this.tags = [...this.tags, newTag ]
         this.setUserTags(this.userTags)
-    
     }
 
 

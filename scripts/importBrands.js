@@ -3,13 +3,14 @@ const fs = require("fs-extra");
 const stringify = require("json-stringify-pretty-compact");
 
 const assetsFolder = path.join(__dirname, "..", "src", "assets");
-const tagsPath = path.join(assetsFolder, "tags&presets", "tags.json");
+const tagsConfigPath = path.join(assetsFolder, "tags&presets", "tags.json");
 const presetsPath = path.join(assetsFolder, "tags&presets", "presets.json");
 
 const nsPath = path.join(__dirname, "..", "..", "name-suggestion-index");
 const brandsPath = path.join(nsPath, "brands");
 
-const tags = JSON.parse(fs.readFileSync(tagsPath, "utf8"));
+const tagsConfig = JSON.parse(fs.readFileSync(tagsConfigPath, "utf8"));
+const tags = tagsConfig.tags;
 const presets = JSON.parse(fs.readFileSync(presetsPath, "utf8"));
 
 const formatBrandsNS = brandsNSJson => {
@@ -52,8 +53,9 @@ const importBrandsToPresetsConfig = (presets, id, options) => {
   return presets; // it's mutable...
 };
 
-for (let pkey in tags) {
-  for (let tagConfig of tags[pkey].values) {
+  for (let tagConfig of tags) {
+    const pkey = Object.keys(tagConfig.tags)[0]
+ 
     if (Object.keys(tagConfig.tags).length == 1 && tagConfig.tags[pkey]) {
       const value = tagConfig.tags[pkey];
       const currentBrandPath = path.join(brandsPath, pkey, `${value}.json`);
@@ -68,7 +70,7 @@ for (let pkey in tags) {
       }
     }
   }
-}
+
 
 fs.writeFileSync(presetsPath, stringify(presets), "utf8");
-fs.writeFileSync(tagsPath, stringify(tags), "utf8");
+fs.writeFileSync(tagsConfigPath, stringify(tagsConfig), "utf8");

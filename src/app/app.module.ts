@@ -77,6 +77,8 @@ import { ActiveTagsComponent } from './components/manage-tags/active-tags/active
 import { BookmarkedTagsComponent } from './components/manage-tags/bookmarked-tags/bookmarked-tags.component';
 
 import { FiltersTagsByIdsPipe } from './pipes/filters-tags-by-ids.pipe';
+import { SelectComponent } from './components/modal/components/select/select.component';
+import { SortArrayPipe } from './pipes/sort-array.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -98,7 +100,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     TagListElementComponent,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,DialogMultiFeaturesComponent,
     ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent, 
-    IconComponent,
+    IconComponent, SelectComponent,
 
     DisplayPresetLabelPipe,
  
@@ -109,7 +111,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
     DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe,
-    FilterBySearchablePipe, FiltersTagsByIdsPipe,
+    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe,
   ],
   entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
   imports: [

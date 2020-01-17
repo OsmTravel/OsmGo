@@ -309,6 +309,8 @@ export class ModalsContentPage implements OnInit {
     // on ferme la modal
     this.dismiss({ type: 'Move', 'geojson': this.feature, mode: this.mode });
   }
+
+
   async openPrimaryTagModal() {
     const modal = await this.modalCtrl.create({
       component: ModalPrimaryTag,
@@ -317,41 +319,42 @@ export class ModalsContentPage implements OnInit {
     await modal.present();
     modal.onDidDismiss()
       .then(d => {
-        const _data = d.data;
-        if (_data) {
-          const oldPrimaryTag = this.tagsService.findPkey(this.tags);
-          // deleting old primary tag
-          if (oldPrimaryTag && this.tags) {
-            this.tags = this.tags.filter(t => t.key !== oldPrimaryTag.key)
+        const newTagConfig = d.data;
+        const oldTagConfig = this.tagConfig;
+        const oldKeyTagsToDelete = Object.keys(oldTagConfig.tags);
+        let copyTags = cloneDeep(this.tags);
+        copyTags = copyTags.filter( t => !oldKeyTagsToDelete.includes(t.key))
+
+        for (let t of copyTags){
+          if (t.preset ){
+            delete t.preset
           }
-
-          // DELETING tags in old preset
-          if (this.tagConfig && this.tagConfig['tags']) {
-            const oldKeysTag = Object.keys(this.tagConfig['tags'])
-            this.tags = this.tags.filter(t => !oldKeysTag.includes(t.key))
-          }
-
-          // this.tagConfig => primary key
-
-          if (_data.tags) {
-            for (let k in _data.tags) {
-              let targetInd = this.tags.findIndex(t => t.key == k);
-              if (targetInd >= 0) {
-                this.tags[targetInd] = { "key": k, "value": _data.tags[k] }
-              } else {
-                this.tags = [...this.tags, { "key": k, "value": _data.tags[k] }]
-              }
-            }
-          }
-          this.tagId = d.data.id;
-
-
-          this.zone.run(() => {
-            const result = this.initComponent(cloneDeep(_data))
-            this.tagConfig = result.tagConfig;
-          })
-
         }
+        if (!newTagConfig){
+          return;
+        }
+        const newTagsKeys = Object.keys(newTagConfig.tags )
+        let newTagsToAdd = [];
+        for (let k in newTagConfig.tags ){
+          newTagsToAdd = [{key: k, value:newTagConfig.tags[k] }, ...newTagsToAdd]
+        }
+
+       
+
+        copyTags = copyTags.filter( ct => !newTagsKeys.includes(ct.key))
+        copyTags = [...newTagsToAdd, ...copyTags ]
+
+        if (newTagConfig.addTags){
+          console.log('addTags', newTagConfig.addTags)
+          console.log(1, copyTags)
+          copyTags = this.addTags(newTagConfig.addTags,copyTags )
+          
+          console.log(2 ,copyTags)
+        }
+
+
+        this.tags = copyTags;
+        this.initComponent(cloneDeep(newTagConfig))
       });
   }
 
@@ -368,21 +371,35 @@ export class ModalsContentPage implements OnInit {
       if (_data) {
         this.tags.filter(tag => tag.key === _data.key)[0].value = _data.value;
         if (_data.tags) { // add or remplace tags...
-          for (let t in _data.tags) {
-            const tagIndex = this.tags.findIndex(o => o.key == t);
-            if (tagIndex !== -1) {
-              this.tags[tagIndex] = { "key": t, "value": _data.tags[t] };
-            } else {
-              this.tags = [...this.tags, { "key": t, "value": _data.tags[t] }]
-            }
-          }
-
+          this.tags = this.addTags(_data.tags, this.tags)
+          this.initComponent(this.tagConfig )
         }
       }
     });
 
 
 
+  }
+ //  add or remplace tags [] from tags {} 
+  addTags(newTags, existingTags){
+    let _existingTags = [...existingTags]
+    for (let t in newTags) {
+      const tagIndex = _existingTags.findIndex(o => o.key == t);
+      if (tagIndex !== -1) {
+        _existingTags[tagIndex] = { "key": t, "value": newTags[t] };
+      } else {
+        _existingTags = [..._existingTags, { "key": t, "value": newTags[t] }]
+      }
+    }
+    return _existingTags;
+    
+  }
+
+  addPresetsTags(newTags){
+    if (newTags){
+      this.tags = this.addTags(newTags, this.tags)
+      this.initComponent(this.tagConfig )
+    }
   }
 
   cancelChange() {

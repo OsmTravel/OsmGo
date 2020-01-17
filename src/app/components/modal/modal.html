@@ -182,16 +182,16 @@
 				(openPrimaryTagModal)="openPrimaryTagModal()">
 			</edit-primary-key>
 
-			<!--  -->
-
+			
 			<!--Les presets-->
 			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets">
-
 				<edit-presets *ngIf="tag.preset" 
 					[displayCode]="displayCode" 
 					[tag]="tag"
 					[language] = "this.configService.config.languageTags"
-					(openPrimaryListModal)="openModalList(tag)">
+					(openPrimaryListModal)="openModalList(tag)"
+					(addTags)="addPresetsTags($event)"
+					>
 				</edit-presets>
 			</div>
 

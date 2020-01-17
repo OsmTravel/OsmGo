@@ -21,7 +21,6 @@ node addTranslationFromiD.js ru
 node addTranslationFromiD.js bg
 node addTranslationFromiD.js bn
 node addTranslationFromiD.js bs
-node addTranslationFromiD.js ca
 node addTranslationFromiD.js cs
 node addTranslationFromiD.js cy
 node addTranslationFromiD.js da
@@ -60,7 +59,6 @@ node addTranslationFromiD.js zh
 ## Import description from taginfo
 node importDescriptionFromTaginfo.js {code_country} o 
 o => owerwrite
-node importDescriptionFromTaginfo.js de
 
 node importDescriptionFromTaginfo.js en
 node importDescriptionFromTaginfo.js fr
@@ -72,7 +70,6 @@ node importDescriptionFromTaginfo.js ru
 node importDescriptionFromTaginfo.js bg
 node importDescriptionFromTaginfo.js bn
 node importDescriptionFromTaginfo.js bs
-node importDescriptionFromTaginfo.js ca
 node importDescriptionFromTaginfo.js cs
 node importDescriptionFromTaginfo.js cy
 node importDescriptionFromTaginfo.js da

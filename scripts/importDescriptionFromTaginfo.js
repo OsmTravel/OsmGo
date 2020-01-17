@@ -3,10 +3,10 @@ const fs = require('fs-extra');
 const path = require('path');
 const stringify = require("json-stringify-pretty-compact")
 
-
 const argv = require('yargs').argv
 
 let language = argv['_'][0];
+
 
 if (!language){
     console.error(language, 'oops')
@@ -66,21 +66,26 @@ const getStatsByKey = async (key )=> {
     return result;
 }
 
-
+const pks = tagsOsmgo.primaryKeys;
 
 const run = async () => {
+   
+    console.log(pks);
+    console.log(overwrite);
 
-    for (let pk in tagsOsmgo) {
+    for (let pk of pks) {
         const tagInfoKey =  (await getStatsByKey(pk)).values
         // console.log(tagInfoKey);
-        let tagsConfig = tagsOsmgo[pk].values;
+        let tagsConfig = tagsOsmgo.tags;
+ 
         for (let tagConfig of tagsConfig) {
             let keys = Object.keys(tagConfig.tags)
             if ( keys.length == 1  && keys[0] === pk ){
                 const value = tagConfig.tags[pk]
                 const currentTagInfo = tagInfoKey.find( ti => ti.value === value)
                 if (currentTagInfo && currentTagInfo.description){
-                    if (tagConfig.description && tagConfig.description['lbl'] && tagConfig.description['lbl'][language] && !overwrite ){
+                                 
+                    if (tagConfig.description  && tagConfig.description[language] && overwrite === false ){
                         //nada
                     }else {
                         if (!tagConfig.description){

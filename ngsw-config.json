@@ -42,9 +42,13 @@
           "/svg/md-trash.svg",
           "/svg/md-help-circle.svg",
           "/svg/md-cloud-upload.svg",
-          "/*.png",
-
-          "/assets/mapStyle/IconsSVG/*.svg"
+          "/svg/md-heart.svg",
+          "/svg/md-create.svg",
+          "/svg/md-checkmark-circle-outline.svg",
+          "/svg/md-time.svg",
+          "/assets/ionicons/ionicons_save.svg",
+          "/assets/ionicons/ionicons_restore-save.svg",
+          "/*.png"
         ]
       }
     }, 
@@ -79,8 +83,8 @@
         "https://ecn.t3.tiles.virtualearth.net/**"
       ],
       "cacheConfig": {
-        "maxSize": 2000,
-        "maxAge": "30d",
+        "maxSize": 800,
+        "maxAge": "15d",
         "strategy": "performance"
       }
     }

@@ -140,6 +140,10 @@ exports.generateSprites = () => {
     // unknows tag config
     generateMarkerIcon('', "#ffffff", "#000000",['point','line','area'], true)
 
+    // userTag
+    generateMarkerIcon('maki-circle-custom', "#d40000ff", "#000000",['point','line','area'])
+    iconsUsed.push('maki-circle-custom')
+
     //copy whiteliste 
     const whiteList = ['none', 'Delete', 'Create', 'Update', 'Old', 'Fixme'];
   
