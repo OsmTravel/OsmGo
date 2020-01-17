@@ -61,18 +61,18 @@
       </h4>
 
       <div class="buttonsSwitchType">
-          <ion-button ion-button  (click)="displayType = 'lastTags'" class="buttonSwitchType"  [disabled]="displayType === 'lastTags'">
-            {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} 
+          <ion-button ion-button  (click)="changePageLastTagsBookmarks('lastTags')" class="buttonSwitchType" color="light"  [disabled]="displayType === 'lastTags'">
+            <ion-icon name="time"></ion-icon> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} 
             </ion-button>
-        <ion-button ion-button  (click)="displayType = 'bookmarks'"  class="buttonSwitchType" [disabled]="displayType === 'bookmarks'">
-          {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
+        <ion-button ion-button  (click)="changePageLastTagsBookmarks('bookmarks')"  class="buttonSwitchType" color="light"  [disabled]="displayType === 'bookmarks'">
+          <ion-icon name="heart"></ion-icon>  {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
         </ion-button>
      
       </div>
 
 
       <div class="lastTags" *ngIf="displayType == 'lastTags'"  >
-        <h4> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
+        <h4 style="text-align: center;"> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
 
         
         <ion-list style="overflow-y: auto;"  (swipeLeft)="swipeLeft()">
@@ -101,7 +101,7 @@
       </div>
  
       <div class="bookmarks" *ngIf="displayType == 'bookmarks'" >
-        <h4>{{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}</h4>
+        <h4 style="text-align: center;">{{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}</h4>
 
         <ion-list style="overflow-y: auto;">
           <ion-item *ngFor="let tag of tagsService.tags 

@@ -251,11 +251,7 @@ export class MainPage implements AfterViewInit {
     })
 
     this.mapService.eventMapIsLoaded.subscribe( e => {
-      console.log('mapLoaded!')
-      console.log('MAP IS LOADED')
-      // .then( map => {
         this.loading = false;
-        console.log('maploaded')
         timer(2000).subscribe( e => {
           const nbData = this.dataService.getGeojson().features.length;
           if (nbData > 0) {

@@ -36,6 +36,7 @@ export class ModalPrimaryTag implements OnInit {
     }
 
     ngOnInit() {
+        this.displayType = this.configService.config.defaultPrimarykeyWindows == 'bookmarks' ? 'bookmarks' : 'lastTags'
         this.geometryType = this.params.data.geometryType;
         this.currentListOfTags = this.tagsService.tags;
         this.loading = false;
@@ -93,5 +94,10 @@ export class ModalPrimaryTag implements OnInit {
     swipeRight() {
         console.log('swipeRight')
         this.displayType = 'lastTags'
+    }
+
+    changePageLastTagsBookmarks(value){
+        this.displayType = value;
+        this.configService.setDefaultPrimarykeyWindows(value)
     }
 }
