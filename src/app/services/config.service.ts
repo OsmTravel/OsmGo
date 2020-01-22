@@ -182,7 +182,7 @@ export class ConfigService {
         return from(this.localStorage.get('user_info'))
             .pipe(
                 map( userInfo => {
-                    if (userInfo && userInfo.connected) {
+                    if (userInfo && userInfo.connected && userInfo.authType) {
                         this.user_info = userInfo;
                     } else {
                         this.user_info = { uid: '', display_name: '', connected: false, user: null, password: null, authType: null};

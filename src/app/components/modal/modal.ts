@@ -1,4 +1,4 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import {
   ModalController, Platform,
   LoadingController, ToastController, AlertController
@@ -23,7 +23,8 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'modal',
   templateUrl: './modal.html',
-  styleUrls: ['./modal.scss']
+  styleUrls: ['./modal.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalsContentPage implements OnInit {
   tags: Tag[] = []; // main data
@@ -37,7 +38,7 @@ export class ModalsContentPage implements OnInit {
   primaryKey: PrimaryTag
   savedFields;
   tagId: string;
-  geometryType: 'point' | 'vertex' | 'line' | 'area'
+  geometryType: 'point' | 'vertex' | 'line' | 'area';
 
 
   customValue = '';
@@ -62,7 +63,8 @@ export class ModalsContentPage implements OnInit {
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     private zone: NgZone,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private cdr: ChangeDetectorRef
 
   ) {
     this.newPosition = params.data.newPosition;
@@ -100,6 +102,7 @@ export class ModalsContentPage implements OnInit {
 
   ngOnInit() { // override
     this.initComponent();
+    this.cdr.detectChanges();
 
     if (this.mode === 'Create') {
       this.openPrimaryTagModal();
@@ -132,53 +135,65 @@ export class ModalsContentPage implements OnInit {
   }
 
   initComponent(tagConfig: TagConfig = null) {
+    let _tags = [...this.tags]
+    let feature = cloneDeep(this.feature)
+    let _tagConfig: TagConfig;
+    let _tagId;
+    let _presetsIds: string[];
+    let _savedFields;
+    let _primaryKey;
 
+    _primaryKey = this.tagsService.findPkey(_tags);
 
-    this.primaryKey = this.tagsService.findPkey(this.tags);
-
-
-    this.feature.properties.primaryTag = this.primaryKey
+    feature.properties.primaryTag = _primaryKey
+    // this.feature.properties.primaryTag = this.primaryKey
     // Edit, Read, Loading
     this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read'; // ?
 
-    // supprimer les valeurs vide de this.tags (changement de type)
-    this.tags = this.tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue);
-    if (!this.tags.find(tag => tag.key === 'name')) { // on ajoute un nom vide si il n'existe pas
-      this.tags.push({ key: 'name', value: '' });
+    _tags = _tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue);
+    if (!_tags.find(tag => tag.key === 'name')) { // on ajoute un nom vide si il n'existe pas
+    _tags.push({ key: 'name', value: '' });
     }
 
-    // la configuration pour cette clé principale (lbl, icon, presets[], ...)
-    if (!tagConfig) {
-      this.tagConfig = getConfigTag(this.feature, this.tagsService.tags);       
-    } else {
-      this.tagConfig = tagConfig;
-    }
+      // la configuration pour cette clé principale (lbl, icon, presets[], ...)
+      if (!tagConfig) {
+        _tagConfig = getConfigTag(feature, this.tagsService.tags);       
+      } else {
+        _tagConfig= tagConfig;
+      }
 
-    if (!this.primaryKey) {
-      this.primaryKey = this.tagsService.findPkey((this.tags));
-    }
-    this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
-    this.savedFields = this.tagsService.savedFields[this.tagId];
+    _tagId = _tagConfig && _tagConfig.id ? _tagConfig.id : `${_primaryKey.key}/${_primaryKey.value}`;
+    // this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
+    _savedFields = this.tagsService.savedFields[_tagId];
+    this.savedFields = _savedFields;
 
-    this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
+    // this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
+    _presetsIds = (_tagConfig && _tagConfig.presets) ? _tagConfig.presets : undefined;
 
-    if (this.presetsIds && this.presetsIds.length > 0) {
+
+    if (_presetsIds && _presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
-      for (let i = 0; i < this.presetsIds.length; i++) {
-        const preset: Preset = this.tagsService.presets[this.presetsIds[i]];
+      for (let i = 0; i < _presetsIds.length; i++) {
+        const preset: Preset = this.tagsService.presets[_presetsIds[i]];
 
         // le tag utilisant la clé du preset
-        const tagOfPreset: Tag = this.tags.find(tag => tag.key === preset.key) || undefined;
+        const tagOfPreset: Tag = _tags.find(tag => tag.key === preset.key) || undefined;
 
         if (tagOfPreset) {
           tagOfPreset['preset'] = preset; // on met la config du prset direct dans le "tag" => key, value, preset[]
         } else { // => un le tag avec la key du preset n'existe pas, on l'insert vide
-          this.tags.push({ 'key': preset.key, 'value': '', preset: preset });
+          _tags.push({ 'key': preset.key, 'value': '', preset: preset });
         }
       }
     }
 
-    return { tagConfig: this.tagConfig, tags: this.tags, feature: this.feature }
+      this.tagId = _tagId;
+      this.feature = feature;
+      this.tags = _tags;
+      this.presetsIds = _presetsIds;
+      this.tagConfig = _tagConfig;
+      this.primaryKey = _primaryKey;
+    return { tagConfig: _tagConfig, tags: _tags, feature: feature }
   }
 
   dataIsChanged() {
@@ -331,6 +346,7 @@ export class ModalsContentPage implements OnInit {
           }
         }
         if (!newTagConfig){
+          this.cdr.detectChanges();
           return;
         }
         const newTagsKeys = Object.keys(newTagConfig.tags )
@@ -340,21 +356,16 @@ export class ModalsContentPage implements OnInit {
         }
 
        
-
         copyTags = copyTags.filter( ct => !newTagsKeys.includes(ct.key))
         copyTags = [...newTagsToAdd, ...copyTags ]
 
         if (newTagConfig.addTags){
-          console.log('addTags', newTagConfig.addTags)
-          console.log(1, copyTags)
           copyTags = this.addTags(newTagConfig.addTags,copyTags )
-          
-          console.log(2 ,copyTags)
         }
 
-
-        this.tags = copyTags;
-        this.initComponent(cloneDeep(newTagConfig))
+        this.tags = [...copyTags];
+        this.initComponent(newTagConfig);
+        this.cdr.detectChanges();
       });
   }
 
@@ -375,6 +386,7 @@ export class ModalsContentPage implements OnInit {
           this.initComponent(this.tagConfig )
         }
       }
+      this.cdr.detectChanges();
     });
 
 
@@ -400,6 +412,7 @@ export class ModalsContentPage implements OnInit {
       this.tags = this.addTags(newTags, this.tags)
       this.initComponent(this.tagConfig )
     }
+    this.cdr.detectChanges();
   }
 
   cancelChange() {
@@ -475,22 +488,26 @@ export class ModalsContentPage implements OnInit {
     this.savedFields['tags'] = [...savedTags];
   }
 
-  restoreFields() {
-    if (this.savedFields) {
-      for (let stags of this.savedFields.tags) {
-        let t = this.tags.find(o => o.key === stags.key)
+  restoreFields(tagId, tags) {
+    const fields = this.tagsService.savedFields[tagId];
+    const newTags = [...tags];
+    if (fields) {
+      for (let stags of fields.tags) {
+        let t = newTags.find(o => o.key === stags.key)
         if (t) {
           t['value'] = stags.value
         } else {
-          this.tags.push(stags)
+          newTags.push(stags)
         }
       }
     }
+    this.tags = [...newTags];
+    this.initComponent(this.tagConfig);
+    this.cdr.detectChanges();
   }
 
 
   fixDeprecated(deprecated: any) {
-
     const deprecadetKeys = Object.keys(deprecated.old)
     // delete old tags
     this.tags = this.tags.filter(t => !deprecadetKeys.includes(t.key))
@@ -500,8 +517,7 @@ export class ModalsContentPage implements OnInit {
         delete this.feature.properties[depold];
       }
     }
-    this.feature.properties.tags = { ...deprecated.replace, ...this.feature.properties.tags }
-
+    this.feature.properties.tags = { ...this.feature.properties.tags , ...deprecated.replace }
     // add new
     for (let k in deprecated.replace) {
       this.tags = [{ 'key': k, 'value': deprecated.replace[k] }, ...this.tags]
@@ -511,7 +527,9 @@ export class ModalsContentPage implements OnInit {
       this.mode = 'Update';
       this.typeFiche = 'Edit'
     }
+
     this.initComponent();
+    this.cdr.detectChanges();
   }
 
 
@@ -521,6 +539,7 @@ export class ModalsContentPage implements OnInit {
     } else {
       this.tagsService.removeBookMark(tag)
     }
+    this.cdr.detectChanges();
   }
 
 

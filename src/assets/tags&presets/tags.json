@@ -48574,10 +48574,6 @@
         "ca": "Oficina de tràmits locals",
         "eo": "Administra oficejo"
       },
-      "alert": {
-        "en": "use : office=government.",
-        "fr": "Déprécié, utiliser : office=government."
-      },
       "geometry": ["point", "area"],
       "iDRef": "office/administrative",
       "tags": {"office": "administrative"},

@@ -319,7 +319,6 @@ export class TagsService {
     }
 
     addSavedField(tagId, tags){
-        console.log(this.savedFields);
         if (!this.savedFields[tagId]){
             this.savedFields[tagId] = {};
         }

@@ -149,7 +149,7 @@
 				</ion-fab>
 	
 				<ion-fab style="margin-left: 90px;" *ngIf="savedFields">
-					<ion-fab-button size="small" (click)="restoreFields()" >
+					<ion-fab-button size="small" (click)="restoreFields(tagId, tags)" >
 						<ion-icon src="/assets/ionicons/ionicons_restore-save.svg"></ion-icon>
 					</ion-fab-button>
 				</ion-fab>
