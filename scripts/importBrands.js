@@ -3,8 +3,8 @@ const fs = require("fs-extra");
 const stringify = require("json-stringify-pretty-compact");
 
 const assetsFolder = path.join(__dirname, "..", "src", "assets");
-const tagsConfigPath = path.join(assetsFolder, "tags&presets", "tags.json");
-const presetsPath = path.join(assetsFolder, "tags&presets", "presets.json");
+const tagsConfigPath = path.join(assetsFolder, "tagsAndPresets", "tags.json");
+const presetsPath = path.join(assetsFolder, "tagsAndPresets", "presets.json");
 
 const nsPath = path.join(__dirname, "..", "..", "name-suggestion-index");
 const brandsPath = path.join(nsPath, "brands");

@@ -6,8 +6,8 @@ const stringify = require("json-stringify-pretty-compact")
 const codeLangue = 'ast';
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
-const presetsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'presets.json')
+const tagsPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
+const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json')
 
 const presets = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
 const tags = JSON.parse(fs.readFileSync(tagsPath, 'utf8'));

@@ -8,7 +8,7 @@
     ],
     "tileSize": 256,
     "maxzoom": 19,
-    "countryCodes":["FR"]
+    "countryCodes": ["FR"]
   },
   {
     "id": "mapbox-satellite",

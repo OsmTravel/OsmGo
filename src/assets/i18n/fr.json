@@ -32,10 +32,9 @@
     "SIGN_OUT": "Se déconnecter",
     "EXIT": "Quitter",
     "NEW_VERSION": "Une nouvelle version est disponible!",
-    "TAG_MANAGEMENT":"Gestion des tags"
+    "TAG_MANAGEMENT": "Gestion des tags"
   },
   "ABOUT": {"ABOUT": "A propos", "SOURCES": "Sources", "DATA": "Données"},
-
   "LOGIN": {
     "LOGIN": "Login",
     "USERNAME_PLACEHOLDER": "Email ou nom d'utilisateur OpenStreetMap",
@@ -106,11 +105,11 @@
     "ADD_SURVEY_DATE_HINT": "Ajouter le tag 'survey:date' ou 'check:date' à la date du jour pour chaque création/modification d'un objet",
     "CHECKED_KEY": "survey:date ou check_date ?",
     "LINES_SELECTABLE": "Rendre les lignes séléctionnables",
-    "LINES_SELECTABLE_HINT" : "Possibilité de cliquer sur une ligne pour ouvrir la fiche de l'élément",
+    "LINES_SELECTABLE_HINT": "Possibilité de cliquer sur une ligne pour ouvrir la fiche de l'élément",
     "POLYGONS_SELECTABLE": "Rendre les polygones séléctionnables",
-    "POLYGONS_SELECTABLE_HINT" : "Possibilité de cliquer sur un polygone pour ouvrir la fiche de l'élément",
-    "CENTER_WHEN_GPS_IS_READY" : "Au démarrage, centrer la carte sur votre position",
-    "CENTER_WHEN_GPS_IS_READY_HINT" : "Centre la carte sur votre position dès que c'est possible"
+    "POLYGONS_SELECTABLE_HINT": "Possibilité de cliquer sur un polygone pour ouvrir la fiche de l'élément",
+    "CENTER_WHEN_GPS_IS_READY": "Au démarrage, centrer la carte sur votre position",
+    "CENTER_WHEN_GPS_IS_READY_HINT": "Centre la carte sur votre position dès que c'est possible"
   },
   "MODAL_SELECTED_ITEM": {
     "CUSTOM_KEY_VALUE": "Ajouter une valeur qui n'existe pas",
@@ -141,11 +140,8 @@
     "LAST_TAG_USED": "Derniers tags utilisés",
     "BOOKMARKS": "Favoris"
   },
-  "ALERT":{
-    "TAG_IS_DEPRECATED": "Ce tag est déprécié",
-    "FIX": "Fix"
-  },
-  "MANAGE_TAGS":{
+  "ALERT": {"TAG_IS_DEPRECATED": "Ce tag est déprécié", "FIX": "Fix"},
+  "MANAGE_TAGS": {
     "TAG_MANAGEMENT_TITLE": "Gestion des tags",
     "ACTIVE_TAGS": "Gérer les tags actifs",
     "ACTIVE_TAGS_DESCRIPTION": "Cette fenêtre vous permet de cacher certains éléments sur la carte ou d'ajouter des favoris.",
@@ -154,6 +150,6 @@
     "HIDDEN_TAGS_DESCRIPTION": "Cette fenêtres vous permet de rendre visible les éléments cachés",
     "BOOKMARKED_TAGS": "Gérer vos favoris",
     "BOOKMARKED_TAGS_DESCRIPTION": "Cette fenêtre vous permet de gerer vos tags favoris",
-    "RESET_HIDDEN_TAGS" : "Réinitialiser"
+    "RESET_HIDDEN_TAGS": "Réinitialiser"
   }
 }

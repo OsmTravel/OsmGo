@@ -4,8 +4,8 @@ const stringify = require("json-stringify-pretty-compact");
 const rp = require("request-promise");
 
 const assetsFolder = path.join(__dirname, "..", "src", "assets");
-const tagsOsmgoPath = path.join(assetsFolder, "tags&presets", "tags.json");
-const newConfigPath = path.join(assetsFolder, "tags&presets", "newTags.json");
+const tagsOsmgoPath = path.join(assetsFolder, "tagsAndPresets", "tags.json");
+const newConfigPath = path.join(assetsFolder, "tagsAndPresets", "newTags.json");
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, "utf8"));
 

@@ -5,7 +5,7 @@ import { TagListElementComponent } from './tag-list-element.component';
 import { IsBookmarkedPipe }  from '../../pipes/is-bookmarked.pipe'
 import { DisplayTagsPipe }  from '../../pipes/display-tags.pipe'
 
-const tagsConfig : any = require('../../../assets/tags&presets/tags.json')
+const tagsConfig : any = require('../../../assets/tagsAndPresets/tags.json')
 
 describe('TagListElementComponent', () => {
   let component: TagListElementComponent;

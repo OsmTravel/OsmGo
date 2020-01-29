@@ -75884,10 +75884,7 @@
       "icon": "maki-fence",
       "markerColor": "#283d30",
       "presets": ["height", "material"],
-      "lbl": {
-        "en": "Undetermined barrier",
-        "fr": "Barrière indéterminé"
-      },
+      "lbl": {"en": "Undetermined barrier", "fr": "Barrière indéterminé"},
       "geometry": ["line", "vertex"],
       "tags": {"barrier": "yes"},
       "id": "barrier/yes",

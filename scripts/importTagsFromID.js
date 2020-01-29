@@ -5,8 +5,8 @@ const stringify = require("json-stringify-pretty-compact")
 const _ = require('lodash');
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
-const presetsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'presets.json')
+const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
+const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json')
 
 const idRepoPath = path.join(__dirname, '..', '..', 'iD')
 const tagsIDPath = path.join(idRepoPath, 'data', 'presets', 'presets.json');

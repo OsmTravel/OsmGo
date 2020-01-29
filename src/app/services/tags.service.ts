@@ -349,7 +349,7 @@ export class TagsService {
 } 
 
     getTagsConfig$(): Observable<any> { 
-        return this.http.get(`assets/tags&presets/tags.json`)
+        return this.http.get(`assets/tagsAndPresets/tags.json`)
             .pipe( 
                 map( tagsConfig => {
                     this.primaryKeys = tagsConfig['primaryKeys'];
@@ -359,7 +359,7 @@ export class TagsService {
     }
 
     loadBaseMaps$() {
-        return this.http.get(`assets/tags&presets/basemap.json`)
+        return this.http.get(`assets/tagsAndPresets/basemap.json`)
             .pipe(
                 map(baseMaps => {
                     this.configService.baseMapSources = baseMaps;
@@ -369,7 +369,7 @@ export class TagsService {
     }
 
     loadPresets$() {
-        return this.http.get(`assets/tags&presets/presets.json`)
+        return this.http.get(`assets/tagsAndPresets/presets.json`)
             .pipe(
                 map((p) => { 
                     const json = p;
@@ -407,7 +407,7 @@ export class TagsService {
       }
 
 
-    // loadTagsAndPresets$() {
+    // loadtagsAndPresets$() {
     //     return forkJoin(
     //         this.loadJsonSprites$(),
     //         this.loadPresets$(),

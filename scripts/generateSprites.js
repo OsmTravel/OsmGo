@@ -14,7 +14,7 @@ exports.generateSprites = () => {
   
     const iconsSVGsPath = path.join(__dirname, '..', 'resources','IconsSVG');
     const markersModelPath = path.join(__dirname, '..', 'resources','markersModel');
-    const tagsPath = path.join(__dirname, '..', 'src','assets','tags&presets', 'tags.json');
+    const tagsPath = path.join(__dirname, '..', 'src','assets','tagsAndPresets', 'tags.json');
     const outputTmp = path.join(__dirname, 'tmp');
     const outputFolderSVG = path.join(outputTmp, 'SVG');
     

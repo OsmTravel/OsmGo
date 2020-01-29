@@ -1,6 +1,6 @@
-const tagsConfig: any = require('../assets/tags&presets/tags.json');
-const presets: any = require('../assets/tags&presets/presets.json');
-describe('tags&Presets', () => {
+const tagsConfig: any = require('../assets/tagsAndPresets/tags.json');
+const presets: any = require('../assets/tagsAndPresets/presets.json');
+describe('tagsAndPresets', () => {
 
 
     beforeEach(() => {

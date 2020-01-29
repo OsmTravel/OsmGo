@@ -4,10 +4,10 @@ const stringify = require("json-stringify-pretty-compact");
 const rp = require("request-promise");
 
 const assetsFolder = path.join(__dirname, "..", "src", "assets");
-const tagConfigPath = path.join(assetsFolder, "tags&presets", "tags.json");
+const tagConfigPath = path.join(assetsFolder, "tagsAndPresets", "tags.json");
 const presetsOsmgoPath = path.join(
   assetsFolder,
-  "tags&presets",
+  "tagsAndPresets",
   "presets.json"
 );
 

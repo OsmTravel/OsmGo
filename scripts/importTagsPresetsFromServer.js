@@ -6,57 +6,51 @@ const stringify = require("json-stringify-pretty-compact")
 // const serverApiUrl = 'http://localhost:8080/api/';
 const serverApiUrl = 'https://admin.osmgo.com/api/'
 
+const assetsPath= path.join(__dirname, '..', 'src', 'assets')
 const assetsFolderI18n = path.join(__dirname, '..', 'src', 'assets', 'i18n')
 
 
 const getI18nConfig = async () => {
-    return rp(`${serverApiUrl}i18`);
+    return rp(`${serverApiUrl}i18n`);
 }
 
 
-const getTags = async (language, country) => {
-    return rp(`${serverApiUrl}OsmGoTags/${language}/${country}`);
+const getTagsConfig = async () => {
+    return rp(`${serverApiUrl}OsmGoTagsConfig/`);
 }
 
-const getPresets = async (language, country) => {
-    return rp(`${serverApiUrl}OsmGoPresets/${language}/${country}`);
+const getPresets = async () => {
+    return rp(`${serverApiUrl}OsmGoPresets/`);
 }
 
-const getBaseMaps = async (language, country) => {
-    return rp(`${serverApiUrl}OsmGoBaseMaps/${language}/${country}`);
+const getBaseMaps = async () => {
+    return rp(`${serverApiUrl}OsmGoBaseMaps/`);
 }
 
 const getUiTranslation = async (language) => {
     return rp(`${serverApiUrl}UiTranslation/${language}`);
 }
 
-const writeTagsPresetsBaseMap = async (language, country) => {
-    let tags = JSON.parse((await getTags(language, country)));
-    fs.writeFileSync(path.join(assetsFolderI18n, language, country, 'tags.json'), stringify(tags), 'utf8')
-    let presets = JSON.parse((await getPresets(language, country)));
-    fs.writeFileSync(path.join(assetsFolderI18n, language, country, 'presets.json'), stringify(presets), 'utf8')
-    let basemaps = JSON.parse((await getBaseMaps(language, country)));
-    fs.writeFileSync(path.join(assetsFolderI18n, language, country, 'basemap.json'), stringify(basemaps), 'utf8')
+const writeTagsPresetsBaseMap = async () => {
+    let tagsConfig = JSON.parse((await getTagsConfig()));
+    fs.writeFileSync(path.join(assetsPath, 'tagsAndPresets', 'tags.json'), stringify(tagsConfig), 'utf8')
+
+    let presets = JSON.parse((await getPresets()));
+    fs.writeFileSync(path.join(assetsPath, 'tagsAndPresets', 'presets.json'), stringify(presets), 'utf8')
+    let basemaps = JSON.parse((await getBaseMaps()));
+    fs.writeFileSync(path.join(assetsPath, 'tagsAndPresets', 'basemap.json'), stringify(basemaps), 'utf8')
 }
 
 const run = async () => {
     const i18Config = JSON.parse((await getI18nConfig()));
 
-    for ( let _language of i18Config.interface){
-        console.log(_language)
-        const uiTra = JSON.parse((await getUiTranslation(_language)));
-        fs.writeFileSync(path.join(assetsFolderI18n, `${_language}.json`), stringify(uiTra), 'utf8')
+    for ( let _language of i18Config){
+        const uiTra = JSON.parse((await getUiTranslation(_language.code)));
+        fs.writeFileSync(path.join(assetsFolderI18n, `${_language.code}.json`), stringify(uiTra), 'utf8')
     };
-
     // // tags presets & basesmap
-    for ( let t of i18Config.tags){
-        let _language = t.language;
-        for ( let c of t.country){
-            let _country = c.region;
-            console.log(_language, '-',_country);
-            await writeTagsPresetsBaseMap(_language, _country)
-        }
-    }
+    await writeTagsPresetsBaseMap()
+    
 }
 
 run();

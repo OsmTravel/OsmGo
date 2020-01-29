@@ -20,7 +20,7 @@ if (argv['_'][1] && argv['_'][1] == 'o'){
 }
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
+const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
 

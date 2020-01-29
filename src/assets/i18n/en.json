@@ -32,10 +32,9 @@
     "SIGN_OUT": "Logout",
     "EXIT": "Exit",
     "NEW_VERSION": "A new version is ready !",
-    "TAG_MANAGEMENT":"Tags management"
+    "TAG_MANAGEMENT": "Tags management"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
-
   "LOGIN": {
     "LOGIN": "Login",
     "USERNAME_PLACEHOLDER": "Email or user name OpenStreetMap",
@@ -99,11 +98,11 @@
     "ADD_SURVEY_DATE_HINT": "Add today's date to tag 'survey:date' or 'check_date' after adding/editing object",
     "CHECKED_KEY": "survey:date or check_date ?",
     "LINES_SELECTABLE": "Make lines selectable",
-    "LINES_SELECTABLE_HINT" : "Ability to click on a line to open the element sheet",
+    "LINES_SELECTABLE_HINT": "Ability to click on a line to open the element sheet",
     "POLYGONS_SELECTABLE": "Make polygons selectable",
-    "POLYGONS_SELECTABLE_HINT" : "Ability to click on a polygon to open the element sheet",
-    "CENTER_WHEN_GPS_IS_READY" : "On start, center the map on your location",
-    "CENTER_WHEN_GPS_IS_READY_HINT" : "Center the map on your location as soon as possible"
+    "POLYGONS_SELECTABLE_HINT": "Ability to click on a polygon to open the element sheet",
+    "CENTER_WHEN_GPS_IS_READY": "On start, center the map on your location",
+    "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible"
   },
   "MODAL_SELECTED_ITEM": {
     "CUSTOM_KEY_VALUE": "Add a custom value",
@@ -134,11 +133,8 @@
     "LAST_TAG_USED": "Last used tags",
     "BOOKMARKS": "Bookmarks"
   },
-  "ALERT":{
-    "TAG_IS_DEPRECATED": "This tag is deprecated",
-    "FIX": "Fix"
-  },
-  "MANAGE_TAGS":{
+  "ALERT": {"TAG_IS_DEPRECATED": "This tag is deprecated", "FIX": "Fix"},
+  "MANAGE_TAGS": {
     "TAG_MANAGEMENT_TITLE": "Tags management",
     "ACTIVE_TAGS": "Manage active tags",
     "ACTIVE_TAGS_DESCRIPTION": "This window allows you to hide certain items on the map or add favourites.",
@@ -147,6 +143,6 @@
     "HIDDEN_TAGS_DESCRIPTION": "This window allows you to make the hidden elements visible.",
     "BOOKMARKED_TAGS": "Manage your favorites",
     "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
-    "RESET_HIDDEN_TAGS" : "Reset"
+    "RESET_HIDDEN_TAGS": "Reset"
   }
 }

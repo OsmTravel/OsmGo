@@ -10,7 +10,7 @@ const path = require('path')
 // import * as fs from 'fs';
 // import * as path from 'path';
 
-const tagConfigPath = path.join('..','..','src','assets', 'tags&presets', 'tags.json')
+const tagConfigPath = path.join('..','..','src','assets', 'tagsAndPresets', 'tags.json')
 const tagConfig = JSON.parse(fs.readFileSync(tagConfigPath, 'utf8'));
 const osmStr = fs.readFileSync('./fixture/f10.osm', 'utf8')
 

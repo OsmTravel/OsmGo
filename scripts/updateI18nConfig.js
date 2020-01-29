@@ -7,8 +7,8 @@ const _ =  require('lodash')
 
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
-const presetsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'presets.json')
+const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
+const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json')
 
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));

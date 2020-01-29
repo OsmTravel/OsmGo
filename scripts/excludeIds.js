@@ -5,7 +5,7 @@ const stringify = require("json-stringify-pretty-compact")
 const _ = require('lodash');
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tags&presets', 'tags.json')
+const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags;
