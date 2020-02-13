@@ -419,15 +419,33 @@ export class ModalsContentPage implements OnInit {
     this.dataService.cancelFeatureChange(this.feature);
     this.dismiss({ redraw: true });
   }
-  presentToast(message) {
-    this.toastCtrl.create({
+  async presentToast(message) {
+
+    const toast = await this.toastCtrl.create({
       message: message,
-      duration: 5000,
-      showCloseButton: true,
-      closeButtonText: 'X'
-    }).then(toast => {
-      toast.present();
+      duration: 4000,
+      position: 'bottom',
+      buttons: [
+        {
+          text: 'X',
+          role: 'cancel',
+          handler: () => {
+  
+          }
+        }
+      ]
     });
+    toast.present();
+
+
+    // this.toastCtrl.create({
+    //   message: message,
+    //   duration: 5000,
+    //   showCloseButton: true,
+    //   closeButtonText: 'X'
+    // }).then(toast => {
+    //   toast.present();
+    // });
 
   }
 

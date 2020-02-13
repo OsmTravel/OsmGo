@@ -8,7 +8,8 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/assets/i18n/**"
+          "/assets/i18n/**",
+          "/manifest.webmanifest"
         ]
       }
     },

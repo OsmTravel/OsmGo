@@ -21,7 +21,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from 'src/app/services/states.service';
 
-import { Plugins } from '@capacitor/core';
+import { Plugins, ToastShowOptions } from '@capacitor/core';
 import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
 import { switchMap } from 'rxjs/operators';
 import { InitService } from 'src/app/services/init.service';
@@ -226,17 +226,36 @@ export class MainPage implements AfterViewInit {
   }
 
 
-  presentToast(message) {
-    this.toastCtrl.create({
-      message: message,
-      position: 'top',
-      duration: 4000,
-      showCloseButton: true,
-      closeButtonText: 'X'
-    })
-      .then(toast => {
-        toast.present();
+  async presentToast(message) {
+
+
+      const toast = await this.toastCtrl.create({
+        message: message,
+        duration: 4000,
+        position: 'top',
+        buttons: [
+          {
+            text: 'X',
+            role: 'cancel',
+            handler: () => {
+           
+            }
+          }
+        ]
       });
+      toast.present();
+    
+
+    // this.toastCtrl.create({
+    //   message: message,
+    //   position: 'top',
+    //   duration: 4000,
+    //   showCloseButton: true,
+    //   closeButtonText: 'X'
+    // })
+    //   .then(toast => {
+    //     toast.present();
+    //   });
 
   }
 
@@ -267,21 +286,41 @@ export class MainPage implements AfterViewInit {
 
     this.alertService.eventDisplayToolTipRefreshData.subscribe(async e => {
 
+
       const toast = await this.toastCtrl.create({
-        position: 'bottom',
         message: this.translate.instant('MAIN.LOAD_BBOX'),
-        showCloseButton: true,
-        duration: 6000,
-        closeButtonText: 'Ok'
+        duration: 4000,
+        position: 'bottom',
+        buttons: [
+          {
+            text: 'Ok',
+            role: 'cancel',
+            handler: () => {
+              if (this.mapService.map && this.mapService.map.getZoom() > 16) {
+                this.loadData();
+              }
+            }
+          }
+        ]
       });
       toast.present();
-      toast.onDidDismiss().then(ev => {
-        if (ev.role === 'cancel') {
-          if (this.mapService.map && this.mapService.map.getZoom() > 16) {
-            this.loadData();
-          }
-        }
-      });
+
+
+      // const toast = await this.toastCtrl.create({
+      //   position: 'bottom',
+      //   message: this.translate.instant('MAIN.LOAD_BBOX'),
+      //   showCloseButton: true,
+      //   duration: 6000,
+      //   closeButtonText: 'Ok'
+      // });
+      // toast.present();
+      // toast.onDidDismiss().then(ev => {
+      //   if (ev.role === 'cancel') {
+      //     if (this.mapService.map && this.mapService.map.getZoom() > 16) {
+      //       this.loadData();
+      //     }
+      //   }
+      // });
     });
 
 
