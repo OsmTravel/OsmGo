@@ -2854,126 +2854,7 @@
                 "text-halo-color": "rgba(255,255,255,0.7)"
             }
         },
-        {
-            "id": "poi_label_2",
-            "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
-            "source": "composite",
-            "source-layer": "poi_label",
-            "minzoom": 14,
-            "interactive": false,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "Point"
-                ],
-                [
-                    "==",
-                    "scalerank",
-                    2
-                ]
-            ],
-            "layout": {
-                "icon-image": "{maki}-11",
-                "text-font": ["Roboto-Bold"],
-                "text-field": "{name_en}",
-                "text-max-width": 9,
-                "text-padding": 2,
-                "text-offset": [
-                    0,
-                    0.6
-                ],
-                "text-anchor": "top",
-                "text-size": 12
-            },
-            "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
-                "text-halo-width": 1,
-                "text-halo-blur": 0.5
-            }
-        },
-        {
-            "id": "rail_station_label",
-            "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
-            "source": "composite",
-            "source-layer": "rail_station_label",
-            "interactive": false,
-            "layout": {
-                "text-size": 12,
-                "icon-image": "{maki}-11",
-                "text-font": [
-                   "Roboto-Bold"
-                ],
-                "text-padding": 2,
-                "visibility": "visible",
-                "text-offset": [
-                    0,
-                    0.6
-                ],
-                "text-anchor": "top",
-                "text-field": "{name_en}",
-                "text-max-width": 9
-            },
-            "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
-                "text-halo-width": 1,
-                "text-halo-blur": 0.5
-            }
-        },
-        {
-            "id": "poi_label_1",
-            "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
-            "source": "composite",
-            "source-layer": "poi_label",
-            "minzoom": 13,
-            "interactive": false,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "Point"
-                ],
-                [
-                    "==",
-                    "scalerank",
-                    1
-                ]
-            ],
-            "layout": {
-                "icon-image": "{maki}-11",
-                "text-font": [
-                    "Roboto-Bold"
-                ],
-                "text-field": "{name_en}",
-                "text-max-width": 9,
-                "text-padding": 2,
-                "text-offset": [
-                    0,
-                    0.6
-                ],
-                "text-anchor": "top",
-                "text-size": 12
-            },
-            "paint": {
-                "text-color": "#666",
-                "text-halo-color": "#ffffff",
-                "text-halo-width": 1,
-                "text-halo-blur": 0.5
-            }
-        },
+  
         {
             "id": "airport_label",
             "type": "symbol",
@@ -2999,21 +2880,6 @@
                     3
                 ]
             ],
-            "layout": {
-                "icon-image": "{maki}-11",
-                "text-font": [
-                    "Roboto-Bold"
-                ],
-                "text-field": "{name_en}",
-                "text-max-width": 9,
-                "text-padding": 2,
-                "text-offset": [
-                    0,
-                    0.6
-                ],
-                "text-anchor": "top",
-                "text-size": 12
-            },
             "paint": {
                 "text-color": "#666",
                 "text-halo-color": "#ffffff",
