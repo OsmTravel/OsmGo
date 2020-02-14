@@ -827,7 +827,7 @@ export class MapService {
       if (/^square/.test(iconId)) {
         this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
-      console.log('missingIcon:', iconId)
+      // console.log('missingIcon:', iconId)
 
     })
 

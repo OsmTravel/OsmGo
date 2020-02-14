@@ -79,6 +79,7 @@ import { BookmarkedTagsComponent } from './components/manage-tags/bookmarked-tag
 import { FiltersTagsByIdsPipe } from './pipes/filters-tags-by-ids.pipe';
 import { SelectComponent } from './components/modal/components/select/select.component';
 import { SortArrayPipe } from './pipes/sort-array.pipe';
+import { LimitDisplayTagsPipe } from './pipes/limit-display-tags.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -112,7 +113,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
     DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe,
-    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe,
+    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe, LimitDisplayTagsPipe,
   ],
   entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
   imports: [

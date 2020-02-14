@@ -20,7 +20,8 @@
         | filterBySearchable 
         | filterExcludeTagByCountryCode:countryTags 
         | filterByByGeometryType:[geometryType]
-        | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+        | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText
+        | limitDisplayTags:50;"  
         
         class="ion-no-padding">
          <app-tag-list-element   style="width: 100%;"
