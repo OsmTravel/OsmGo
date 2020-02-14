@@ -5,13 +5,54 @@ const stringify = require("json-stringify-pretty-compact")
 
 const argv = require('yargs').argv
 
-let language = argv['_'][0];
+// let language = argv['_'][0];
+
+let languages = [
+    "fr",
+    "de",
+    "es",
+    "pt",
+    "it",
+    "ru",
+    "bg",
+    "bn",
+    "bs",
+    "cs",
+    "cy",
+    "da",
+    "dv",
+    "el",
+    "eo",
+    "et",
+    "fa",
+    "fi",
+    "gl",
+    "he",
+    "hr",
+    "hu",
+    "id",
+    "is",
+    "ja",
+    "ko",
+    "lt",
+    "lv",
+    "mk",
+    "ms",
+    "nl",
+    "no",
+    "pl",
+    "ro",
+    "sk",
+    "sl",
+    "sr",
+    "sv",
+    "tr",
+    "uk",
+    "vi",
+    "zh"
+  ];
 
 
-if (!language){
-    console.error(language, 'oops')
-    return 
-}
 
 let overwrite = false;
 
@@ -24,8 +65,9 @@ const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
 
-const getStatsByKey = async (key )=> {
 
+
+const getStatsByKey = async (key, language )=> {
     var options = {
         uri: `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`,
         json: true // Automatically parses the JSON string in the response
@@ -68,13 +110,11 @@ const getStatsByKey = async (key )=> {
 
 const pks = tagsOsmgo.primaryKeys;
 
-const run = async () => {
-   
-    console.log(pks);
-    console.log(overwrite);
+const run = async (language) => {
+    console.log(language);
 
     for (let pk of pks) {
-        const tagInfoKey =  (await getStatsByKey(pk)).values
+        const tagInfoKey =  (await getStatsByKey(pk, language)).values
         // console.log(tagInfoKey);
         let tagsConfig = tagsOsmgo.tags;
  
@@ -101,6 +141,10 @@ const run = async () => {
     fs.writeFileSync( tagsOsmgoPath, stringify(tagsOsmgo), 'utf8');
 }
 
-run();
+
+for (let language of languages){
+    run(language);
+}
+
 
 // 

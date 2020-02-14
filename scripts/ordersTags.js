@@ -15,17 +15,17 @@ const tagsOsmgo = tagConfig.tags;
 
 // ORDER BY primaryKeys FIRST
 const primaryKeys = tagConfig.primaryKeys;
-console.log(primaryKeys);
+// console.log(primaryKeys);
 
 let primaryKeysObject = {};
 for (pk of primaryKeys){
   primaryKeysObject[pk] = [];
 }
-console.log(primaryKeysObject);
+// console.log(primaryKeysObject);
 
 for (let tag of tagsOsmgo){
   const tagPk = tag.id.split('/')[0]
-  console.log(tagPk);
+  // console.log(tagPk);
   primaryKeysObject[tagPk].push(tag)
 }
 

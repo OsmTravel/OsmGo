@@ -584,7 +584,8 @@
       "uk": "Під навісом",
       "vi": "Có Mái Che",
       "zh": "有上盖",
-      "ca": "Cobert"
+      "ca": "Cobert",
+      "no": "Dekket"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -2427,7 +2428,8 @@
           "uk": "Навіси",
           "vi": "Nhà xe",
           "ca": "Aixoplucs",
-          "eo": "Tegmentitaj duonbudoj"
+          "eo": "Tegmentitaj duonbudoj",
+          "no": "Carporter"
         }
       }
     ]
@@ -2879,7 +2881,9 @@
       "uk": "Матеріал",
       "vi": "Chất liệu",
       "zh": "材质",
-      "ca": "Material"
+      "ca": "Material",
+      "no": "Materiale",
+      "tr": "Materyal"
     },
     "options": [
       {"v": "wood", "lbl": {"fr": "Bois", "en": "wood"}},
@@ -3857,6 +3861,17 @@
         }
       },
       {
+        "v": "Miles Morgan Travel",
+        "lbl": {"en": "Miles Morgan Travel"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Miles Morgan Travel",
+          "brand:wikidata": "Q83179278",
+          "name": "Miles Morgan Travel",
+          "shop": "travel_agency"
+        }
+      },
+      {
         "v": "Neckermann Reisen",
         "lbl": {"en": "Neckermann Reisen"},
         "countryCodes": ["de"],
@@ -3876,6 +3891,17 @@
           "brand:wikidata": "Q40387610",
           "brand:wikipedia": "de:OTTO Reisen",
           "name": "Reiseland",
+          "shop": "travel_agency"
+        }
+      },
+      {
+        "v": "STA Travel",
+        "lbl": {"en": "STA Travel"},
+        "tags": {
+          "brand": "STA Travel",
+          "brand:wikidata": "Q2208025",
+          "brand:wikipedia": "en:STA Travel",
+          "name": "STA Travel",
           "shop": "travel_agency"
         }
       },
@@ -4034,6 +4060,18 @@
           "brand:wikidata": "Q11686561",
           "brand:wikipedia": "pl:Apart",
           "name": "Apart",
+          "shop": "jewelry"
+        }
+      },
+      {
+        "v": "Beaverbrooks",
+        "lbl": {"en": "Beaverbrooks"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Beaverbrooks",
+          "brand:wikidata": "Q4878226",
+          "brand:wikipedia": "en:Beaverbrooks",
+          "name": "Beaverbrooks",
           "shop": "jewelry"
         }
       },
@@ -7715,6 +7753,17 @@
         }
       },
       {
+        "v": "dd's Discounts",
+        "lbl": {"en": "dd's Discounts"},
+        "countryCodes": ["us"],
+        "tags": {
+          "brand": "dd's Discounts",
+          "brand:wikidata": "Q83743863",
+          "name": "dd's Discounts",
+          "shop": "department_store"
+        }
+      },
+      {
         "v": "Åhléns",
         "lbl": {"en": "Åhléns"},
         "countryCodes": ["se"],
@@ -8212,6 +8261,15 @@
           "brand:wikidata": "Q676585",
           "brand:wikipedia": "en:Fnac",
           "name": "Fnac",
+          "shop": "books"
+        }
+      },
+      {
+        "v": "France Loisirs",
+        "lbl": {"en": "France Loisirs"},
+        "tags": {
+          "brand": "France Loisirs",
+          "name": "France Loisirs",
           "shop": "books"
         }
       },
@@ -8780,6 +8838,18 @@
         }
       },
       {
+        "v": "Macpac",
+        "lbl": {"en": "Macpac"},
+        "countryCodes": ["au", "nz"],
+        "tags": {
+          "brand": "Macpac",
+          "brand:wikidata": "Q6724943",
+          "brand:wikipedia": "en:Macpac",
+          "name": "Macpac",
+          "shop": "outdoor"
+        }
+      },
+      {
         "v": "Millets",
         "lbl": {"en": "Millets"},
         "countryCodes": ["gb"],
@@ -8928,6 +8998,11 @@
           "name": "Askona",
           "shop": "furniture"
         }
+      },
+      {
+        "v": "Bellona",
+        "lbl": {"en": "Bellona"},
+        "tags": {"brand": "Bellona", "name": "Bellona", "shop": "furniture"}
       },
       {
         "v": "Black Red White",
@@ -9609,6 +9684,17 @@
         }
       },
       {
+        "v": "Jollyes",
+        "lbl": {"en": "Jollyes"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Jollyes",
+          "brand:wikidata": "Q45844955",
+          "name": "Jollyes",
+          "shop": "pet"
+        }
+      },
+      {
         "v": "Maxi Zoo",
         "lbl": {"en": "Maxi Zoo"},
         "countryCodes": ["be", "ch", "dk", "fr", "ie", "it", "pl"],
@@ -9739,6 +9825,18 @@
         }
       },
       {
+        "v": "Pets Corner",
+        "lbl": {"en": "Pets Corner"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Pets Corner",
+          "brand:wikidata": "Q17018476",
+          "brand:wikipedia": "en:Pets Corner",
+          "name": "Pets Corner",
+          "shop": "pet"
+        }
+      },
+      {
         "v": "Pets at Home",
         "lbl": {"en": "Pets at Home"},
         "countryCodes": ["gb"],
@@ -9820,6 +9918,11 @@
     "lbl": {"en": "Brand", "fr": "Enseigne"},
     "options": [
       {
+        "v": "Altex",
+        "lbl": {"en": "Altex"},
+        "tags": {"brand": "Altex", "name": "Altex", "shop": "electronics"}
+      },
+      {
         "v": "Apple Store",
         "lbl": {"en": "Apple Store"},
         "tags": {
@@ -9857,6 +9960,18 @@
           "brand:wikidata": "Q533415",
           "brand:wikipedia": "en:Best Buy",
           "name": "Best Buy",
+          "shop": "electronics"
+        }
+      },
+      {
+        "v": "Bing Lee",
+        "lbl": {"en": "Bing Lee"},
+        "countryCodes": ["au"],
+        "tags": {
+          "brand": "Bing Lee",
+          "brand:wikidata": "Q4914136",
+          "brand:wikipedia": "en:Bing Lee",
+          "name": "Bing Lee",
           "shop": "electronics"
         }
       },
@@ -10026,6 +10141,11 @@
         }
       },
       {
+        "v": "Gitem",
+        "lbl": {"en": "Gitem"},
+        "tags": {"brand": "Gitem", "name": "Gitem", "shop": "electronics"}
+      },
+      {
         "v": "Hartlauer",
         "lbl": {"en": "Hartlauer"},
         "countryCodes": ["at"],
@@ -10118,6 +10238,11 @@
           "name": "La Curacao",
           "shop": "electronics"
         }
+      },
+      {
+        "v": "M.Видео",
+        "lbl": {"en": "M.Видео"},
+        "tags": {"brand": "M.Видео", "name": "M.Видео", "shop": "electronics"}
       },
       {
         "v": "MDA",
@@ -10685,6 +10810,18 @@
           "brand:wikidata": "Q326079",
           "brand:wikipedia": "en:Cancer Research UK",
           "name": "Cancer Research UK",
+          "shop": "charity"
+        }
+      },
+      {
+        "v": "Cats Protection",
+        "lbl": {"en": "Cats Protection"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Cats Protection",
+          "brand:wikidata": "Q5053998",
+          "brand:wikipedia": "en:Cats Protection",
+          "name": "Cats Protection",
           "shop": "charity"
         }
       },
@@ -11852,7 +11989,13 @@
         "v": "Belwest",
         "lbl": {"en": "Belwest"},
         "countryCodes": ["by", "ru"],
-        "tags": {"brand": "Belwest", "name": "Belwest", "shop": "shoes"}
+        "tags": {
+          "brand": "Belwest",
+          "brand:wikidata": "Q4081686",
+          "brand:wikipedia": "ru:Белвест",
+          "name": "Belwest",
+          "shop": "shoes"
+        }
       },
       {
         "v": "Besson Chaussures",
@@ -11876,6 +12019,11 @@
           "name": "Birkenstock",
           "shop": "shoes"
         }
+      },
+      {
+        "v": "Bocage",
+        "lbl": {"en": "Bocage"},
+        "tags": {"brand": "Bocage", "name": "Bocage", "shop": "shoes"}
       },
       {
         "v": "Brantano",
@@ -12664,7 +12812,13 @@
       {
         "v": "Shoe Show",
         "lbl": {"en": "Shoe Show"},
-        "tags": {"brand": "Shoe Show", "name": "Shoe Show", "shop": "shoes"}
+        "tags": {
+          "brand": "Shoe Show",
+          "brand:wikidata": "Q7500015",
+          "brand:wikipedia": "en:Shoe Show",
+          "name": "Shoe Show",
+          "shop": "shoes"
+        }
       },
       {
         "v": "Shoe Zone",
@@ -13254,6 +13408,7 @@
       {
         "v": "Juguettos",
         "lbl": {"en": "Juguettos"},
+        "countryCodes": ["es"],
         "tags": {"brand": "Juguettos", "name": "Juguettos", "shop": "toys"}
       },
       {
@@ -13634,15 +13789,6 @@
         }
       },
       {
-        "v": "Photocopie",
-        "lbl": {"en": "Photocopie"},
-        "tags": {
-          "brand": "Photocopie",
-          "name": "Photocopie",
-          "shop": "copyshop"
-        }
-      },
-      {
         "v": "Sir Speedy",
         "lbl": {"en": "Sir Speedy"},
         "countryCodes": ["us"],
@@ -13655,13 +13801,9 @@
         }
       },
       {
-        "v": "Xerox",
-        "lbl": {"en": "Xerox"},
-        "tags": {"brand": "Xerox", "name": "Xerox", "shop": "copyshop"}
-      },
-      {
         "v": "Копирка",
         "lbl": {"en": "Копирка"},
+        "countryCodes": ["by", "ru"],
         "tags": {"brand": "Копирка", "name": "Копирка", "shop": "copyshop"}
       }
     ]
@@ -13701,6 +13843,18 @@
           "brand": "Max Spielmann",
           "brand:wikidata": "Q76221051",
           "name": "Max Spielmann",
+          "shop": "photo"
+        }
+      },
+      {
+        "v": "Snappy Snaps",
+        "lbl": {"en": "Snappy Snaps"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Snappy Snaps",
+          "brand:wikidata": "Q7547351",
+          "brand:wikipedia": "en:Snappy Snaps",
+          "name": "Snappy Snaps",
           "shop": "photo"
         }
       },
@@ -14175,6 +14329,15 @@
         }
       },
       {
+        "v": "New York Nails",
+        "lbl": {"en": "New York Nails"},
+        "tags": {
+          "brand": "New York Nails",
+          "name": "New York Nails",
+          "shop": "beauty"
+        }
+      },
+      {
         "v": "Palm Beach Tan",
         "lbl": {"en": "Palm Beach Tan"},
         "countryCodes": ["us"],
@@ -14217,6 +14380,18 @@
           "beauty": "nails",
           "brand": "Star Nails",
           "name": "Star Nails",
+          "shop": "beauty"
+        }
+      },
+      {
+        "v": "Tan Republic",
+        "lbl": {"en": "Tan Republic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "beauty": "tanning",
+          "brand": "Tan Republic",
+          "brand:wikidata": "Q84112774",
+          "name": "Tan Republic",
           "shop": "beauty"
         }
       },
@@ -16702,6 +16877,18 @@
         }
       },
       {
+        "v": "BadRhino",
+        "lbl": {"en": "BadRhino"},
+        "countryCodes": ["gb", "ie"],
+        "tags": {
+          "brand": "BadRhino",
+          "brand:wikidata": "Q84161924",
+          "clothes": "men",
+          "name": "BadRhino",
+          "shop": "clothes"
+        }
+      },
+      {
         "v": "Banana Republic",
         "lbl": {"en": "Banana Republic"},
         "countryCodes": ["ca", "gb", "us"],
@@ -16768,6 +16955,17 @@
           "brand:wikipedia": "en:Billabong (clothing)",
           "clothes": "men;women",
           "name": "Billabong",
+          "shop": "clothes"
+        }
+      },
+      {
+        "v": "Bimba y Lola",
+        "lbl": {"en": "Bimba y Lola"},
+        "tags": {
+          "brand": "Bimba y Lola",
+          "brand:wikidata": "Q54869493",
+          "brand:wikipedia": "es:Bimba y Lola",
+          "name": "Bimba y Lola",
           "shop": "clothes"
         }
       },
@@ -17379,6 +17577,11 @@
           "name": "Damart",
           "shop": "clothes"
         }
+      },
+      {
+        "v": "Darjeeling",
+        "lbl": {"en": "Darjeeling"},
+        "tags": {"brand": "Darjeeling", "name": "Darjeeling", "shop": "clothes"}
       },
       {
         "v": "David's Bridal",
@@ -18879,6 +19082,11 @@
         }
       },
       {
+        "v": "Milavitsa",
+        "lbl": {"en": "Milavitsa"},
+        "tags": {"brand": "Milavitsa", "name": "Milavitsa", "shop": "clothes"}
+      },
+      {
         "v": "Miller & Monroe",
         "lbl": {"en": "Miller & Monroe"},
         "countryCodes": ["at", "de", "nl"],
@@ -18946,6 +19154,11 @@
           "name": "Moores",
           "shop": "clothes"
         }
+      },
+      {
+        "v": "Morgan",
+        "lbl": {"en": "Morgan"},
+        "tags": {"brand": "Morgan", "name": "Morgan", "shop": "clothes"}
       },
       {
         "v": "Moss Bros",
@@ -20560,6 +20773,18 @@
         }
       },
       {
+        "v": "Yours Clothing",
+        "lbl": {"en": "Yours Clothing"},
+        "countryCodes": ["de", "gb", "gg", "ie"],
+        "tags": {
+          "brand": "Yours Clothing",
+          "brand:wikidata": "Q84163322",
+          "clothes": "women",
+          "name": "Yours Clothing",
+          "shop": "clothes"
+        }
+      },
+      {
         "v": "Z",
         "lbl": {"en": "Z"},
         "tags": {
@@ -20920,11 +21145,13 @@
         }
       },
       {
-        "v": "Hudson News",
-        "lbl": {"en": "Hudson News"},
+        "v": "Hudson",
+        "lbl": {"en": "Hudson"},
         "tags": {
-          "brand": "Hudson News",
-          "name": "Hudson News",
+          "brand": "Hudson",
+          "brand:wikidata": "Q5928682",
+          "brand:wikipedia": "en:Hudson Group",
+          "name": "Hudson",
           "shop": "newsagent"
         }
       },
@@ -21062,6 +21289,19 @@
           "brand:wikidata": "Q4430611",
           "brand:wikipedia": "ru:Союзпечать",
           "name": "Союзпечать",
+          "shop": "newsagent"
+        }
+      },
+      {
+        "v": "朝日新聞",
+        "lbl": {"en": "朝日新聞"},
+        "tags": {
+          "brand": "朝日新聞",
+          "brand:en": "Asahi Shimbun",
+          "brand:wikidata": "Q720503",
+          "brand:wikipedia": "ja:朝日新聞",
+          "name": "朝日新聞",
+          "name:en": "Asahi Shimbun",
           "shop": "newsagent"
         }
       },
@@ -21270,6 +21510,17 @@
         }
       },
       {
+        "v": "Eurotyre",
+        "lbl": {"en": "Eurotyre"},
+        "tags": {
+          "brand": "Eurotyre",
+          "brand:wikidata": "Q3060871",
+          "brand:wikipedia": "fr:Eurotyre",
+          "name": "Eurotyre",
+          "shop": "tyres"
+        }
+      },
+      {
         "v": "Express Oil Change & Tire Engineers",
         "lbl": {"en": "Express Oil Change & Tire Engineers"},
         "countryCodes": ["us"],
@@ -21414,6 +21665,18 @@
           "brand:wikidata": "Q5887941",
           "brand:wikipedia": "en:HomeGoods",
           "name": "HomeGoods",
+          "shop": "houseware"
+        }
+      },
+      {
+        "v": "KODi",
+        "lbl": {"en": "KODi"},
+        "countryCodes": ["de"],
+        "tags": {
+          "brand": "KODi",
+          "brand:wikidata": "Q1778216",
+          "brand:wikipedia": "de:Kodi (Unternehmen)",
+          "name": "KODi",
           "shop": "houseware"
         }
       },
@@ -22176,7 +22439,10 @@
         "tags": {
           "brand": "メガネストアー",
           "brand:ja": "メガネストアー",
+          "brand:wikidata": "Q11343503",
+          "brand:wikipedia": "jp:メガネストアー",
           "name": "メガネストアー",
+          "name:en": "Megane Store",
           "name:ja": "メガネストアー",
           "shop": "optician"
         }
@@ -22874,6 +23140,17 @@
         }
       },
       {
+        "v": "Proper Job",
+        "lbl": {"en": "Proper Job"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Proper Job",
+          "brand:wikidata": "Q83741810",
+          "name": "Proper Job",
+          "shop": "hardware"
+        }
+      },
+      {
         "v": "True Value",
         "lbl": {"en": "True Value"},
         "countryCodes": ["us"],
@@ -23168,6 +23445,18 @@
         }
       },
       {
+        "v": "Alvo",
+        "lbl": {"en": "Alvo"},
+        "countryCodes": ["be", "lu"],
+        "tags": {
+          "brand": "Alvo",
+          "brand:wikidata": "Q16068936",
+          "brand:wikipedia": "nl:Alvo (supermarkt)",
+          "name": "Alvo",
+          "shop": "supermarket"
+        }
+      },
+      {
         "v": "Amigo",
         "lbl": {"en": "Amigo"},
         "countryCodes": ["us"],
@@ -23184,7 +23473,13 @@
         "v": "Ara",
         "lbl": {"en": "Ara"},
         "countryCodes": ["co"],
-        "tags": {"brand": "Ara", "name": "Ara", "shop": "supermarket"}
+        "tags": {
+          "brand": "Ara",
+          "brand:wikidata": "Q63148677",
+          "brand:wikipedia": "de:Tiendas Ara",
+          "name": "Ara",
+          "shop": "supermarket"
+        }
       },
       {
         "v": "Asda",
@@ -23239,6 +23534,8 @@
         "countryCodes": ["fr", "lu"],
         "tags": {
           "brand": "Auchan Drive",
+          "brand:wikidata": "Q2870659",
+          "brand:wikipedia": "fr:Auchan Drive",
           "name": "Auchan Drive",
           "shop": "supermarket"
         }
@@ -23317,8 +23614,11 @@
       {
         "v": "Big Market",
         "lbl": {"en": "Big Market"},
+        "countryCodes": ["al"],
         "tags": {
           "brand": "Big Market",
+          "brand:wikidata": "Q28135235",
+          "brand:wikipedia": "sq:Big Market",
           "name": "Big Market",
           "shop": "supermarket"
         }
@@ -24602,6 +24902,7 @@
       {
         "v": "Fresh",
         "lbl": {"en": "Fresh"},
+        "countryCodes": ["sk"],
         "tags": {
           "brand": "Fresh",
           "brand:wikidata": "Q50737403",
@@ -24967,7 +25268,12 @@
         "v": "Hruška",
         "lbl": {"en": "Hruška"},
         "countryCodes": ["cz"],
-        "tags": {"brand": "Hruška", "name": "Hruška", "shop": "supermarket"}
+        "tags": {
+          "brand": "Hruška",
+          "brand:wikidata": "Q58196374",
+          "name": "Hruška",
+          "shop": "supermarket"
+        }
       },
       {
         "v": "Hy-Vee",
@@ -25407,16 +25713,6 @@
         }
       },
       {
-        "v": "Leclerc Drive",
-        "lbl": {"en": "Leclerc Drive"},
-        "countryCodes": ["fr"],
-        "tags": {
-          "brand": "Leclerc Drive",
-          "name": "Leclerc Drive",
-          "shop": "supermarket"
-        }
-      },
-      {
         "v": "Lewiatan",
         "lbl": {"en": "Lewiatan"},
         "countryCodes": ["pl"],
@@ -25720,6 +26016,18 @@
         }
       },
       {
+        "v": "Maxi",
+        "lbl": {"en": "Maxi"},
+        "countryCodes": ["ca"],
+        "tags": {
+          "brand": "Maxi",
+          "brand:wikidata": "Q3302441",
+          "brand:wikipedia": "fr:Maxi (supermarché)",
+          "name": "Maxi",
+          "shop": "supermarket"
+        }
+      },
+      {
         "v": "Maxi Dia",
         "lbl": {"en": "Maxi Dia"},
         "countryCodes": ["es"],
@@ -25960,7 +26268,21 @@
       {
         "v": "Mix Markt",
         "lbl": {"en": "Mix Markt"},
-        "countryCodes": ["de"],
+        "countryCodes": [
+          "at",
+          "be",
+          "cy",
+          "cz",
+          "de",
+          "es",
+          "fr",
+          "gb",
+          "gr",
+          "it",
+          "me",
+          "nl",
+          "pt"
+        ],
         "tags": {
           "brand": "Mix Markt",
           "brand:wikidata": "Q327854",
@@ -25972,6 +26294,7 @@
       {
         "v": "Monoprix",
         "lbl": {"en": "Monoprix"},
+        "countryCodes": ["ad", "fr", "tn"],
         "tags": {
           "brand": "Monoprix",
           "brand:wikidata": "Q3321241",
@@ -26029,6 +26352,8 @@
         "lbl": {"en": "NTUC Fairprice"},
         "tags": {
           "brand": "NTUC Fairprice",
+          "brand:wikidata": "Q6955519",
+          "brand:wikipedia": "en:NTUC FairPrice",
           "name": "NTUC Fairprice",
           "shop": "supermarket"
         }
@@ -27109,6 +27434,7 @@
       {
         "v": "SuperValu",
         "lbl": {"en": "SuperValu"},
+        "countryCodes": ["gb", "ie"],
         "tags": {
           "brand": "SuperValu",
           "brand:wikidata": "Q7642081",
@@ -27225,7 +27551,7 @@
       {
         "v": "Tesco Metro",
         "lbl": {"en": "Tesco Metro"},
-        "countryCodes": ["gb"],
+        "countryCodes": ["gb", "ie"],
         "tags": {
           "brand": "Tesco Metro",
           "brand:wikidata": "Q57551648",
@@ -27673,8 +27999,14 @@
       {
         "v": "bi1",
         "lbl": {"en": "bi1"},
-        "countryCodes": ["fr"],
-        "tags": {"brand": "bi1", "name": "bi1", "shop": "supermarket"}
+        "countryCodes": ["fr", "pl"],
+        "tags": {
+          "brand": "bi1",
+          "brand:wikidata": "Q56325139",
+          "brand:wikipedia": "pl:Bi1",
+          "name": "bi1",
+          "shop": "supermarket"
+        }
       },
       {
         "v": "denn's Biomarkt",
@@ -28152,6 +28484,20 @@
         }
       },
       {
+        "v": "Макси",
+        "lbl": {"en": "Макси"},
+        "countryCodes": ["rs"],
+        "tags": {
+          "brand": "Макси",
+          "brand:en": "Maxi",
+          "brand:wikidata": "Q6795490",
+          "brand:wikipedia": "sr:Макси",
+          "name": "Макси",
+          "name:en": "Maxi",
+          "shop": "supermarket"
+        }
+      },
+      {
         "v": "Мария-Ра",
         "lbl": {"en": "Мария-Ра"},
         "countryCodes": ["ru"],
@@ -28288,6 +28634,11 @@
           "name:en": "Rukavychka",
           "shop": "supermarket"
         }
+      },
+      {
+        "v": "Санта",
+        "lbl": {"en": "Санта"},
+        "tags": {"brand": "Санта", "name": "Санта", "shop": "supermarket"}
       },
       {
         "v": "Светофор",
@@ -29202,6 +29553,11 @@
         }
       },
       {
+        "v": "Avia",
+        "lbl": {"en": "Avia"},
+        "tags": {"brand": "Avia", "name": "Avia", "shop": "convenience"}
+      },
+      {
         "v": "BP Shop",
         "lbl": {"en": "BP Shop"},
         "countryCodes": ["au", "ch", "fr", "gb", "us"],
@@ -29229,6 +29585,15 @@
         "v": "Bonjour",
         "lbl": {"en": "Bonjour"},
         "tags": {"brand": "Bonjour", "name": "Bonjour", "shop": "convenience"}
+      },
+      {
+        "v": "Boutique D'alimentation",
+        "lbl": {"en": "Boutique D'alimentation"},
+        "tags": {
+          "brand": "Boutique D'alimentation",
+          "name": "Boutique D'alimentation",
+          "shop": "convenience"
+        }
       },
       {
         "v": "Buc-ee's",
@@ -29446,6 +29811,11 @@
         }
       },
       {
+        "v": "Conoco",
+        "lbl": {"en": "Conoco"},
+        "tags": {"brand": "Conoco", "name": "Conoco", "shop": "convenience"}
+      },
+      {
         "v": "Coop Pronto",
         "lbl": {"en": "Coop Pronto"},
         "countryCodes": ["ch", "li"],
@@ -29547,6 +29917,16 @@
           "name": "Delikatesy Centrum",
           "shop": "convenience"
         }
+      },
+      {
+        "v": "Despensa",
+        "lbl": {"en": "Despensa"},
+        "tags": {"brand": "Despensa", "name": "Despensa", "shop": "convenience"}
+      },
+      {
+        "v": "Douka",
+        "lbl": {"en": "Douka"},
+        "tags": {"brand": "Douka", "name": "Douka", "shop": "convenience"}
       },
       {
         "v": "Express",
@@ -29692,17 +30072,6 @@
         }
       },
       {
-        "v": "Hudson",
-        "lbl": {"en": "Hudson"},
-        "tags": {
-          "brand": "Hudson",
-          "brand:wikidata": "Q5928682",
-          "brand:wikipedia": "en:Hudson Group",
-          "name": "Hudson",
-          "shop": "convenience"
-        }
-      },
-      {
         "v": "Hursts",
         "lbl": {"en": "Hursts"},
         "countryCodes": ["gb"],
@@ -29781,7 +30150,14 @@
       {
         "v": "Jiffy",
         "lbl": {"en": "Jiffy"},
-        "tags": {"brand": "Jiffy", "name": "Jiffy", "shop": "convenience"}
+        "countryCodes": ["th"],
+        "tags": {
+          "brand": "Jiffy",
+          "brand:wikidata": "Q16770436",
+          "brand:wikipedia": "th:จิฟฟี่",
+          "name": "Jiffy",
+          "shop": "convenience"
+        }
       },
       {
         "v": "Joker",
@@ -30129,6 +30505,32 @@
           "brand:wikidata": "Q56745088",
           "brand:wikipedia": "de:Migrolino",
           "name": "Migrolino",
+          "shop": "convenience"
+        }
+      },
+      {
+        "v": "Mini Mix",
+        "lbl": {"en": "Mini Mix"},
+        "countryCodes": [
+          "at",
+          "be",
+          "cy",
+          "cz",
+          "de",
+          "es",
+          "fr",
+          "gb",
+          "gr",
+          "it",
+          "me",
+          "nl",
+          "pt"
+        ],
+        "tags": {
+          "brand": "Mini Mix",
+          "brand:wikidata": "Q327854",
+          "brand:wikipedia": "de:Mix Markt",
+          "name": "Mini Mix",
           "shop": "convenience"
         }
       },
@@ -31135,6 +31537,7 @@
           "brand": "Евроопт Market",
           "brand:wikidata": "Q65455869",
           "name": "Евроопт Market",
+          "name:ru": "Евроопт Маркет",
           "shop": "convenience"
         }
       },
@@ -31248,6 +31651,11 @@
         "tags": {"brand": "Мрія", "name": "Мрія", "shop": "convenience"}
       },
       {
+        "v": "Ольга",
+        "lbl": {"en": "Ольга"},
+        "tags": {"brand": "Ольга", "name": "Ольга", "shop": "convenience"}
+      },
+      {
         "v": "Продовольственный магазин",
         "lbl": {"en": "Продовольственный магазин"},
         "tags": {
@@ -31299,6 +31707,22 @@
         "lbl": {"en": "Ярче"},
         "countryCodes": ["ru"],
         "tags": {"brand": "Ярче", "name": "Ярче", "shop": "convenience"}
+      },
+      {
+        "v": "จิฟฟี่",
+        "lbl": {"en": "จิฟฟี่"},
+        "countryCodes": ["th"],
+        "tags": {
+          "brand": "จิฟฟี่",
+          "brand:en": "Jiffy",
+          "brand:th": "จิฟฟี่",
+          "brand:wikidata": "Q16770436",
+          "brand:wikipedia": "th:จิฟฟี่",
+          "name": "จิฟฟี่",
+          "name:en": "Jiffy",
+          "name:th": "จิฟฟี่",
+          "shop": "convenience"
+        }
       },
       {
         "v": "アンスリー",
@@ -31605,6 +32029,8 @@
         "tags": {
           "brand": "미니스톱",
           "brand:ko": "미니스톱",
+          "brand:wikidata": "Q1038929",
+          "brand:wikipedia": "en:Ministop",
           "name": "미니스톱",
           "name:ko": "미니스톱",
           "shop": "convenience"
@@ -32379,6 +32805,17 @@
         }
       },
       {
+        "v": "Dream Doors",
+        "lbl": {"en": "Dream Doors"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Dream Doors",
+          "brand:wikidata": "Q84702301",
+          "name": "Dream Doors",
+          "shop": "kitchen"
+        }
+      },
+      {
         "v": "Ixina",
         "lbl": {"en": "Ixina"},
         "countryCodes": [
@@ -32595,6 +33032,8 @@
         "lbl": {"en": "Zara Home"},
         "tags": {
           "brand": "Zara Home",
+          "brand:wikidata": "Q3114054",
+          "brand:wikipedia": "en:Zara Home",
           "name": "Zara Home",
           "shop": "interior_decoration"
         }
@@ -32828,6 +33267,11 @@
         "lbl": {"en": "Mitra"},
         "countryCodes": ["nl"],
         "tags": {"brand": "Mitra", "name": "Mitra", "shop": "alcohol"}
+      },
+      {
+        "v": "NSLC",
+        "lbl": {"en": "NSLC"},
+        "tags": {"brand": "NSLC", "name": "NSLC", "shop": "alcohol"}
       },
       {
         "v": "Nicolas",
@@ -33066,6 +33510,18 @@
         "tags": {
           "brand": "Чарка до свята",
           "name": "Чарка до свята",
+          "shop": "alcohol"
+        }
+      },
+      {
+        "v": "やまや",
+        "lbl": {"en": "やまや"},
+        "countryCodes": ["jp"],
+        "tags": {
+          "brand": "やまや",
+          "brand:ja": "やまや",
+          "name": "やまや",
+          "name:ja": "やまや",
           "shop": "alcohol"
         }
       },
@@ -33436,6 +33892,7 @@
       {
         "v": "Дочки-сыночки",
         "lbl": {"en": "Дочки-сыночки"},
+        "countryCodes": ["by", "ru"],
         "tags": {
           "brand": "Дочки-сыночки",
           "name": "Дочки-сыночки",
@@ -33665,6 +34122,11 @@
           "name": "Guichet Transilien",
           "shop": "ticket"
         }
+      },
+      {
+        "v": "Минсктранс",
+        "lbl": {"en": "Минсктранс"},
+        "tags": {"brand": "Минсктранс", "name": "Минсктранс", "shop": "ticket"}
       }
     ]
   },
@@ -37000,6 +37462,15 @@
         }
       },
       {
+        "v": "Centennial Bank",
+        "lbl": {"en": "Centennial Bank"},
+        "tags": {
+          "amenity": "bank",
+          "brand": "Centennial Bank",
+          "name": "Centennial Bank"
+        }
+      },
+      {
         "v": "Central Bank",
         "lbl": {"en": "Central Bank"},
         "tags": {
@@ -37955,7 +38426,26 @@
       {
         "v": "GT Bank",
         "lbl": {"en": "GT Bank"},
-        "tags": {"amenity": "bank", "brand": "GT Bank", "name": "GT Bank"}
+        "countryCodes": [
+          "ci",
+          "gb",
+          "gh",
+          "gm",
+          "ke",
+          "lr",
+          "ng",
+          "rw",
+          "tz",
+          "ug"
+        ],
+        "tags": {
+          "amenity": "bank",
+          "brand": "GT Bank",
+          "brand:wikidata": "Q579747",
+          "brand:wikipedia": "en:Guaranty Trust Bank",
+          "name": "GT Bank",
+          "official_name": "Guaranty Trust Bank"
+        }
       },
       {
         "v": "Galicia",
@@ -38508,11 +38998,6 @@
           "brand:wikipedia": "tr:Kuveyt Türk",
           "name": "Kuveyt Türk"
         }
-      },
-      {
-        "v": "LBS",
-        "lbl": {"en": "LBS"},
-        "tags": {"amenity": "bank", "brand": "LBS", "name": "LBS"}
       },
       {
         "v": "LCL",
@@ -39277,9 +39762,12 @@
       {
         "v": "Permanent TSB",
         "lbl": {"en": "Permanent TSB"},
+        "countryCodes": ["ie"],
         "tags": {
           "amenity": "bank",
           "brand": "Permanent TSB",
+          "brand:wikidata": "Q3154461",
+          "brand:wikipedia": "en:Permanent TSB",
           "name": "Permanent TSB"
         }
       },
@@ -39351,6 +39839,15 @@
           "brand:wikidata": "Q13538661",
           "brand:wikipedia": "sk:Prima banka Slovensko",
           "name": "Prima banka"
+        }
+      },
+      {
+        "v": "Prosperity Bank",
+        "lbl": {"en": "Prosperity Bank"},
+        "tags": {
+          "amenity": "bank",
+          "brand": "Prosperity Bank",
+          "name": "Prosperity Bank"
         }
       },
       {
@@ -40545,11 +41042,6 @@
         }
       },
       {
-        "v": "Venezuela",
-        "lbl": {"en": "Venezuela"},
-        "tags": {"amenity": "bank", "brand": "Venezuela", "name": "Venezuela"}
-      },
-      {
         "v": "Vietcombank",
         "lbl": {"en": "Vietcombank"},
         "countryCodes": ["vn"],
@@ -41499,6 +41991,19 @@
           "name": "Укрсоцбанк",
           "name:en": "Ukrsotsbank",
           "name:uk": "Укрсоцбанк"
+        }
+      },
+      {
+        "v": "УниКредит Булбанк",
+        "lbl": {"en": "УниКредит Булбанк"},
+        "countryCodes": ["bg"],
+        "tags": {
+          "amenity": "bank",
+          "brand": "УниКредит Булбанк",
+          "brand:wikidata": "Q7884635",
+          "brand:wikipedia": "bg:УниКредит Булбанк",
+          "name": "УниКредит Булбанк",
+          "name:en": "UniCredit Bulbank"
         }
       },
       {
@@ -43809,6 +44314,11 @@
         }
       },
       {
+        "v": "Еконт",
+        "lbl": {"en": "Еконт"},
+        "tags": {"amenity": "post_office", "brand": "Еконт", "name": "Еконт"}
+      },
+      {
         "v": "Казпочта",
         "lbl": {"en": "Казпочта"},
         "countryCodes": ["kz"],
@@ -43942,6 +44452,30 @@
           "brand:wikipedia": "en:Aroma Espresso Bar",
           "cuisine": "coffee_shop",
           "name": "Aroma Espresso Bar",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "v": "Baggins Coffee",
+        "lbl": {"en": "Baggins Coffee"},
+        "tags": {
+          "amenity": "cafe",
+          "brand": "Baggins Coffee",
+          "cuisine": "coffee_shop",
+          "name": "Baggins Coffee",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "v": "Bambu",
+        "lbl": {"en": "Bambu"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "cafe",
+          "brand": "Bambu",
+          "brand:wikidata": "Q83437245",
+          "cuisine": "vietnamese;bubble_tea",
+          "name": "Bambu",
           "takeaway": "yes"
         }
       },
@@ -47019,6 +47553,7 @@
       {
         "v": "Buchbinder",
         "lbl": {"en": "Buchbinder"},
+        "countryCodes": ["at", "de"],
         "tags": {
           "amenity": "car_rental",
           "brand": "Buchbinder",
@@ -47338,9 +47873,9 @@
           "brand:wikidata": "Q11089693",
           "brand:wikipedia": "ja:パーク24",
           "fee": "yes",
-          "name": "Times",
-          "name:en": "タイムズ",
-          "name:ja": "Times"
+          "name": "タイムズ",
+          "name:en": "Times",
+          "name:ja": "タイムズ"
         }
       }
     ]
@@ -48984,6 +49519,15 @@
           "brand:wikipedia": "en:Mad Mex Fresh Mexican Grill",
           "cuisine": "mexican",
           "name": "Mad Mex Fresh Mexican Grill"
+        }
+      },
+      {
+        "v": "Maquis Restaurant",
+        "lbl": {"en": "Maquis Restaurant"},
+        "tags": {
+          "amenity": "restaurant",
+          "brand": "Maquis Restaurant",
+          "name": "Maquis Restaurant"
         }
       },
       {
@@ -51106,9 +51650,11 @@
       {
         "v": "Asia-Imbiss",
         "lbl": {"en": "Asia-Imbiss"},
+        "countryCodes": ["de"],
         "tags": {
           "amenity": "fast_food",
           "brand": "Asia-Imbiss",
+          "cuisine": "asian",
           "name": "Asia-Imbiss",
           "takeaway": "yes"
         }
@@ -51341,6 +51887,20 @@
         }
       },
       {
+        "v": "Buona",
+        "lbl": {"en": "Buona"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "fast_food",
+          "brand": "Buona",
+          "brand:wikidata": "Q23461372",
+          "brand:wikipedia": "en:Buona",
+          "cuisine": "italian",
+          "name": "Buona",
+          "takeaway": "yes"
+        }
+      },
+      {
         "v": "Burger Fuel",
         "lbl": {"en": "Burger Fuel"},
         "countryCodes": ["ae", "iq", "nz", "sa", "us"],
@@ -51564,6 +52124,16 @@
           "brand:wikipedia": "en:Chicken Treat",
           "cuisine": "chicken",
           "name": "Chicken Treat",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "v": "China Garden",
+        "lbl": {"en": "China Garden"},
+        "tags": {
+          "amenity": "fast_food",
+          "brand": "China Garden",
+          "name": "China Garden",
           "takeaway": "yes"
         }
       },
@@ -52110,7 +52680,20 @@
       },
       {
         "v": "Gino's Pizza",
-        "lbl": {"en": "Gino's Pizza"},
+        "lbl": {"en": "Gino's Pizza~(Canada)"},
+        "countryCodes": ["ca"],
+        "tags": {
+          "amenity": "fast_food",
+          "brand": "Gino's Pizza",
+          "brand:wikidata": "Q84029134",
+          "cuisine": "pizza",
+          "name": "Gino's Pizza",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "v": "Gino's Pizza",
+        "lbl": {"en": "Gino's Pizza~(West Virginia)"},
         "countryCodes": ["us"],
         "tags": {
           "amenity": "fast_food",
@@ -52494,6 +53077,20 @@
         }
       },
       {
+        "v": "Jack's",
+        "lbl": {"en": "Jack's"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "fast_food",
+          "brand": "Jack's",
+          "brand:wikidata": "Q6110826",
+          "brand:wikipedia": "en:Jack's",
+          "cuisine": "burger",
+          "name": "Jack's",
+          "takeaway": "yes"
+        }
+      },
+      {
         "v": "Jamba Juice",
         "lbl": {"en": "Jamba Juice"},
         "countryCodes": ["us"],
@@ -52725,6 +53322,7 @@
           "brand": "LEON",
           "brand:wikidata": "Q6524851",
           "brand:wikipedia": "en:Leon Restaurants",
+          "cuisine": "burger;sandwich",
           "name": "LEON",
           "takeaway": "yes"
         }
@@ -53501,6 +54099,7 @@
         "tags": {
           "amenity": "fast_food",
           "brand": "Pizzaville",
+          "cuisine": "pizza",
           "name": "Pizzaville",
           "takeaway": "yes"
         }
@@ -53930,6 +54529,16 @@
           "brand:wikipedia": "en:Smoothie King",
           "cuisine": "juice",
           "name": "Smoothie King",
+          "takeaway": "yes"
+        }
+      },
+      {
+        "v": "Snack Bar",
+        "lbl": {"en": "Snack Bar"},
+        "tags": {
+          "amenity": "fast_food",
+          "brand": "Snack Bar",
+          "name": "Snack Bar",
           "takeaway": "yes"
         }
       },
@@ -58950,7 +59559,13 @@
         "v": "bi1",
         "lbl": {"en": "bi1"},
         "countryCodes": ["fr"],
-        "tags": {"amenity": "fuel", "brand": "bi1", "name": "bi1"}
+        "tags": {
+          "amenity": "fuel",
+          "brand": "bi1",
+          "brand:wikidata": "Q56325139",
+          "brand:wikipedia": "pl:Bi1",
+          "name": "bi1"
+        }
       },
       {
         "v": "din-X",
@@ -60170,6 +60785,15 @@
         }
       },
       {
+        "v": "Eurochange",
+        "lbl": {"en": "Eurochange"},
+        "tags": {
+          "amenity": "bureau_de_change",
+          "brand": "Eurochange",
+          "name": "Eurochange"
+        }
+      },
+      {
         "v": "Travelex",
         "lbl": {"en": "Travelex"},
         "tags": {
@@ -60793,15 +61417,6 @@
           "brand:wikipedia": "en:24 Hour Fitness",
           "leisure": "fitness_centre",
           "name": "24 Hour Fitness"
-        }
-      },
-      {
-        "v": "Academia ao ar livre",
-        "lbl": {"en": "Academia ao ar livre"},
-        "tags": {
-          "brand": "Academia ao ar livre",
-          "leisure": "fitness_centre",
-          "name": "Academia ao ar livre"
         }
       },
       {
@@ -61846,6 +62461,15 @@
         }
       },
       {
+        "v": "Hôtel de la Gare",
+        "lbl": {"en": "Hôtel de la Gare"},
+        "tags": {
+          "brand": "Hôtel de la Gare",
+          "name": "Hôtel de la Gare",
+          "tourism": "hotel"
+        }
+      },
+      {
         "v": "Ibis",
         "lbl": {"en": "Ibis"},
         "tags": {
@@ -62494,6 +63118,7 @@
         "lbl": {"en": "Americas Best Value Inn"},
         "tags": {
           "brand": "Americas Best Value Inn",
+          "brand:wikidata": "Q4742512",
           "name": "Americas Best Value Inn",
           "tourism": "motel"
         }
@@ -62704,6 +63329,17 @@
           "brand": "Barnard Marcus",
           "brand:wikidata": "Q81860444",
           "name": "Barnard Marcus",
+          "office": "estate_agent"
+        }
+      },
+      {
+        "v": "Bradleys",
+        "lbl": {"en": "Bradleys"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Bradleys",
+          "brand:wikidata": "Q83738286",
+          "name": "Bradleys",
           "office": "estate_agent"
         }
       },
@@ -63353,12 +63989,49 @@
         }
       },
       {
+        "v": "CESCE",
+        "lbl": {"en": "CESCE"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "CESCE",
+          "brand:wikidata": "Q5737049",
+          "brand:wikipedia": "es:CESCE",
+          "name": "CESCE",
+          "office": "insurance",
+          "official_name": "Compañía Española de Seguros de Crédito a la Exportación"
+        }
+      },
+      {
         "v": "CUK Ubezpieczenia",
         "lbl": {"en": "CUK Ubezpieczenia"},
         "countryCodes": ["pl"],
         "tags": {
           "brand": "CUK Ubezpieczenia",
           "name": "CUK Ubezpieczenia",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "Caser",
+        "lbl": {"en": "Caser"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Caser",
+          "brand:wikidata": "Q5756057",
+          "brand:wikipedia": "es:Caser",
+          "name": "Caser",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "Catalana Occidente",
+        "lbl": {"en": "Catalana Occidente"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Catalana Occidente",
+          "brand:wikidata": "Q5936881",
+          "brand:wikipedia": "es:Catalana Occidente",
+          "name": "Catalana Occidente",
           "office": "insurance"
         }
       },
@@ -63511,6 +64184,8 @@
         "countryCodes": ["de"],
         "tags": {
           "brand": "HUK-Coburg",
+          "brand:wikidata": "Q1566111",
+          "brand:wikipedia": "de:HUK-Coburg",
           "name": "HUK-Coburg",
           "office": "insurance"
         }
@@ -63557,8 +64232,33 @@
         "countryCodes": ["lu"],
         "tags": {
           "brand": "LaLux",
+          "brand:wikidata": "Q13103680",
           "brand:wikipedia": "lb:La Luxembourgeoise",
           "name": "LaLux",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "Liberty Seguros",
+        "lbl": {"en": "Liberty Seguros"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Liberty Seguros",
+          "brand:wikidata": "Q3178929",
+          "brand:wikipedia": "es:Liberty Seguros",
+          "name": "Liberty Seguros",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "Línea Directa",
+        "lbl": {"en": "Línea Directa"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Línea Directa",
+          "brand:wikidata": "Q325156",
+          "brand:wikipedia": "es:Línea Directa",
+          "name": "Línea Directa",
           "office": "insurance"
         }
       },
@@ -63636,6 +64336,18 @@
         }
       },
       {
+        "v": "Mutua Madrileña",
+        "lbl": {"en": "Mutua Madrileña"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Mutua Madrileña",
+          "brand:wikidata": "Q4888750",
+          "brand:wikipedia": "es:Mutua Madrileña",
+          "name": "Mutua Madrileña",
+          "office": "insurance"
+        }
+      },
+      {
         "v": "Nationwide",
         "lbl": {"en": "Nationwide"},
         "countryCodes": ["us"],
@@ -63668,6 +64380,18 @@
           "brand:wikidata": "Q1807170",
           "brand:wikipedia": "pl:Powszechny Zakład Ubezpieczeń",
           "name": "PZU",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "Pelayo",
+        "lbl": {"en": "Pelayo"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Pelayo",
+          "brand:wikidata": "Q16617805",
+          "brand:wikipedia": "es:Pelayo Seguros",
+          "name": "Pelayo",
           "office": "insurance"
         }
       },
@@ -63714,6 +64438,18 @@
           "brand:wikidata": "Q2208645",
           "brand:wikipedia": "de:SV SparkassenVersicherung",
           "name": "SV SparkassenVersicherung",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "Santa Lucía",
+        "lbl": {"en": "Santa Lucía"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "Santa Lucía",
+          "brand:wikidata": "Q6120481",
+          "brand:wikipedia": "es:Santa Lucía",
+          "name": "Santa Lucía",
           "office": "insurance"
         }
       },
@@ -63774,6 +64510,18 @@
           "brand:wikidata": "Q7833457",
           "brand:wikipedia": "en:Tranquilidade",
           "name": "Tranquilidade",
+          "office": "insurance"
+        }
+      },
+      {
+        "v": "VidaCaixa",
+        "lbl": {"en": "VidaCaixa"},
+        "countryCodes": ["es"],
+        "tags": {
+          "brand": "VidaCaixa",
+          "brand:wikidata": "Q11705079",
+          "brand:wikipedia": "es:VidaCaixa",
+          "name": "VidaCaixa",
           "office": "insurance"
         }
       },
@@ -65036,7 +65784,9 @@
       "uk": "Розмір плати",
       "vi": "Giá",
       "el": "Δωρεάν Ποσό",
-      "gl": "Importe da taxa"
+      "gl": "Importe da taxa",
+      "ru": "Размер оплаты",
+      "no": "Avgift mengde"
     }
   },
   "cash_in": {
@@ -65194,7 +65944,8 @@
       "sv": "Tillverkare",
       "uk": "Виробник",
       "vi": "Hãng Sản xuất",
-      "zh": "制造商"
+      "zh": "制造商",
+      "no": "produsent"
     },
     "iDtype": "combo"
   },
@@ -65281,7 +66032,8 @@
       "sv": "Luftkonditionering",
       "uk": "Кондиціювання повітря",
       "vi": "Máy lạnh",
-      "zh": "空调"
+      "zh": "空调",
+      "no": "Klimaanlegg"
     },
     "iDtype": "check",
     "options": [
@@ -65313,7 +66065,8 @@
       "vi": "Tuổi Tối thiểu",
       "ru": "Минимальный возраст",
       "el": "Ελάχιστη Ηλικία",
-      "gl": "Idade mínima"
+      "gl": "Idade mínima",
+      "no": "Minimum Alder"
     }
   },
   "microbrewery": {
@@ -66168,7 +66921,8 @@
       "zh": "错误名称",
       "ru": "Некорректные имена",
       "el": "Λάθος Ονόματα",
-      "tr": "Yanlış İsimler"
+      "tr": "Yanlış İsimler",
+      "ko": "틀린 이름"
     },
     "iDtype": "semiCombo"
   },
@@ -66392,7 +67146,9 @@
       "vi": "Tuổi Tối đa",
       "ru": "Максимальный возраст",
       "el": "Μέγιστη Ηλικία",
-      "gl": "Idade máxima"
+      "gl": "Idade máxima",
+      "nl": "Maximale leeftijd",
+      "no": "Maksimum Alder"
     }
   },
   "screen": {
@@ -67946,7 +68702,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "ru": "Тип",
-      "el": "Τύπος"
+      "el": "Τύπος",
+      "ko": "유형"
     },
     "iDtype": "combo",
     "options": [
@@ -68366,7 +69123,8 @@
       "sv": "Typ av bås",
       "uk": "Кабіна",
       "vi": "Buồng",
-      "zh": "岗亭，小屋"
+      "zh": "岗亭，小屋",
+      "no": "kiosk"
     },
     "iDtype": "combo"
   },
@@ -68623,7 +69381,8 @@
       "vi": "Bàn Thay Tã",
       "el": "Χώρος Αλλαγής Πάνας",
       "eo": "Tablo por ŝanĝi vindotukojn",
-      "gl": "Cambiador de cueiros"
+      "gl": "Cambiador de cueiros",
+      "no": "Bleie skiftebord"
     },
     "iDtype": "check",
     "options": [
@@ -68715,7 +69474,8 @@
       "pt": "Tipo",
       "ru": "Тип",
       "el": "Τύπος",
-      "hu": "Típus"
+      "hu": "Típus",
+      "ko": "유형"
     },
     "iDtype": "combo",
     "options": [
@@ -68805,7 +69565,8 @@
           "ru": "Ограничено",
           "el": "Περιορισμένο",
           "eo": "Limigita",
-          "gl": "Limitado"
+          "gl": "Limitado",
+          "no": "Begrenset"
         }
       },
       {
@@ -69115,7 +69876,8 @@
       "sv": "Byggnadshöjd (meter)",
       "uk": "Висота (в метрах)",
       "vi": "Chiều cao Tòa nhà (Mét)",
-      "zh": "建筑物高度 (米)"
+      "zh": "建筑物高度 (米)",
+      "tr": "Yapı Yüksekliği (Metre)"
     }
   },
   "water_source": {
@@ -71687,7 +72449,8 @@
       "uk": "Антична культура",
       "vi": "Nền Văn hóa",
       "zh": "所属文化及历史时期",
-      "ca": "Civilització històrica"
+      "ca": "Civilització històrica",
+      "no": "Historisk sivilisasjon"
     },
     "iDtype": "combo",
     "options": [
@@ -72272,7 +73035,8 @@
       "sv": "Fiske",
       "uk": "Риболовля",
       "vi": "Câu cá",
-      "zh": "钓鱼"
+      "zh": "钓鱼",
+      "no": "Fiske"
     },
     "iDtype": "combo",
     "options": [
@@ -72503,7 +73267,8 @@
       "vi": "Chủ đề",
       "fr": "Thème",
       "el": "Θέμα",
-      "hu": "Téma"
+      "hu": "Téma",
+      "ko": "테마"
     },
     "iDtype": "combo",
     "options": [
@@ -72560,7 +73325,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "ru": "Тип",
-      "el": "Τύπος"
+      "el": "Τύπος",
+      "ko": "유형"
     },
     "iDtype": "combo",
     "options": [
@@ -73001,7 +73767,8 @@
           "uk": "Стаціонарний кран",
           "vi": "Cẩu Đứng trên Đất",
           "ca": "Grua muntada al pis",
-          "eo": "Mast-bazita (kantilevra)"
+          "eo": "Mast-bazita (kantilevra)",
+          "no": "Gulv-montert Kran"
         }
       },
       {
@@ -73351,7 +74118,8 @@
       "sv": "Flytande",
       "uk": "Плавучий",
       "vi": "Nổi trên Mặt nước",
-      "zh": "漂浮"
+      "zh": "漂浮",
+      "no": "Flytende"
     },
     "iDtype": "check",
     "options": [
@@ -73597,7 +74365,8 @@
       "uk": "Діаметр",
       "vi": "Đường kính",
       "el": "Διάμετρος",
-      "tr": "Çap"
+      "tr": "Çap",
+      "no": "Diameter"
     },
     "iDtype": "combo"
   },
@@ -73700,7 +74469,8 @@
       "vi": "Kiểu",
       "zh": "类型",
       "ru": "Тип",
-      "el": "Τύπος"
+      "el": "Τύπος",
+      "ko": "유형"
     },
     "iDtype": "combo",
     "options": [
@@ -75391,7 +76161,8 @@
       "pl": "Rodzaj ekspertyz",
       "sv": "Expertis",
       "uk": "Послуги",
-      "vi": "Chuyên môn"
+      "vi": "Chuyên môn",
+      "no": "Expertise"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -75494,7 +76265,8 @@
       "uk": "Тип",
       "vi": "Cấp",
       "zh": "类型",
-      "el": "Τύπος"
+      "el": "Τύπος",
+      "ko": "유형"
     },
     "iDtype": "combo",
     "options": [
@@ -75534,7 +76306,8 @@
       "sv": "Riktas mot",
       "uk": "Представництво",
       "vi": "Nước Bạn",
-      "zh": "目标国"
+      "zh": "目标国",
+      "ko": "주재국"
     },
     "iDtype": "combo",
     "options": [
@@ -75597,7 +76370,8 @@
       "sv": "Tjänster",
       "uk": "Послуги",
       "vi": "Dịch vụ",
-      "zh": "服务"
+      "zh": "服务",
+      "ko": "업무"
     }
   },
   "departures_board": {
@@ -75692,7 +76466,8 @@
           "uk": "Розклад",
           "vi": "Thời biểu",
           "ca": "Horari",
-          "eo": "hortabulo"
+          "eo": "hortabulo",
+          "no": "Rutetabell"
         }
       },
       {
@@ -76621,7 +77396,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "el": "Τύπος"
+      "el": "Τύπος",
+      "ko": "유형"
     },
     "iDtype": "combo",
     "options": [
@@ -77097,7 +77873,8 @@
       "uk": "Поверж",
       "vi": "Lầu",
       "ru": "Число этажей",
-      "el": "Επίπεδο"
+      "el": "Επίπεδο",
+      "no": "Etasjer"
     },
     "iDtype": "semiCombo"
   },
@@ -77571,6 +78348,17 @@
         }
       },
       {
+        "v": "Stock+Field",
+        "lbl": {"en": "Stock+Field"},
+        "countryCodes": ["us"],
+        "tags": {
+          "brand": "Stock+Field",
+          "brand:wikidata": "Q84572995",
+          "name": "Stock+Field",
+          "shop": "country_store"
+        }
+      },
+      {
         "v": "TSC Stores",
         "lbl": {"en": "TSC Stores"},
         "countryCodes": ["ca"],
@@ -77960,6 +78748,17 @@
         "tags": {"brand": "Loombard", "name": "Loombard", "shop": "pawnbroker"}
       },
       {
+        "v": "M Lhuillier",
+        "lbl": {"en": "M Lhuillier"},
+        "countryCodes": ["ph"],
+        "tags": {
+          "brand": "M Lhuillier",
+          "brand:wikidata": "Q83434356",
+          "name": "M Lhuillier",
+          "shop": "pawnbroker"
+        }
+      },
+      {
         "v": "Palawan Pawnshop",
         "lbl": {"en": "Palawan Pawnshop"},
         "countryCodes": ["ph"],
@@ -78101,6 +78900,18 @@
         }
       },
       {
+        "v": "Malitel",
+        "lbl": {"en": "Malitel"},
+        "countryCodes": ["ml"],
+        "tags": {
+          "brand": "Malitel",
+          "brand:wikidata": "Q6743829",
+          "brand:wikipedia": "en:Malitel",
+          "name": "Malitel",
+          "shop": "telecommunication"
+        }
+      },
+      {
         "v": "Ooredoo",
         "lbl": {"en": "Ooredoo"},
         "tags": {
@@ -78108,6 +78919,18 @@
           "brand:wikidata": "Q919935",
           "brand:wikipedia": "en:Ooredoo",
           "name": "Ooredoo",
+          "shop": "telecommunication"
+        }
+      },
+      {
+        "v": "Orange Mali",
+        "lbl": {"en": "Orange Mali"},
+        "countryCodes": ["ml"],
+        "tags": {
+          "brand": "Orange Mali",
+          "brand:wikidata": "Q3355061",
+          "brand:wikipedia": "fr:Orange Mali",
+          "name": "Orange Mali",
           "shop": "telecommunication"
         }
       },
@@ -78155,15 +78978,6 @@
           "brand:wikipedia": "en:MTS (network provider)",
           "name": "МТС",
           "name:en": "MTS",
-          "shop": "telecommunication"
-        }
-      },
-      {
-        "v": "Магазин lifecell",
-        "lbl": {"en": "Магазин lifecell"},
-        "tags": {
-          "brand": "Магазин lifecell",
-          "name": "Магазин lifecell",
           "shop": "telecommunication"
         }
       },
@@ -79393,7 +80207,8 @@
       "uk": "Кріплення камери",
       "vi": "Hỗ trợ Camera",
       "zh": "相机架设",
-      "ca": "Muntatge de càmera"
+      "ca": "Muntatge de càmera",
+      "no": "Kamera feste"
     },
     "options": [
       {"v": "pole", "lbl": {"fr": "Sur un poteau /mât", "en": "pole"}},
@@ -79614,7 +80429,9 @@
       "sv": "Typ",
       "uk": "Тип",
       "vi": "Cấp",
-      "zh": "类型"
+      "zh": "类型",
+      "ko": "유형",
+      "no": "Type"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -79654,7 +80471,8 @@
       "uk": "Тип",
       "vi": "Cấp",
       "zh": "类型",
-      "el": "Είδος"
+      "el": "Είδος",
+      "ko": "유형"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -79696,7 +80514,8 @@
       "uk": "Тип",
       "vi": "Cấp",
       "zh": "类型",
-      "el": "Τύπος"
+      "el": "Τύπος",
+      "ko": "유형"
     },
     "options": [
       {"v": "liaison_office", "lbl": {"en": "liaison_office"}},
@@ -79748,7 +80567,8 @@
       "uk": "Кількість місць",
       "vi": "Số khách",
       "zh": "载客数",
-      "ca": "Ocupació"
+      "ca": "Ocupació",
+      "no": "Yrke"
     }
   },
   "aerialway/capacity": {
@@ -80178,7 +80998,8 @@
       "ru": "Сидение для младенцев",
       "el": "Κάθισμα βρέφους",
       "eo": "Por beboj",
-      "gl": "Asento para meniños"
+      "gl": "Asento para meniños",
+      "no": "Babysete"
     },
     "iDtype": "check",
     "options": [
@@ -80685,7 +81506,8 @@
       "uk": "Конструкція",
       "vi": "Thiết kế",
       "zh": "指定",
-      "ca": "Disseny"
+      "ca": "Disseny",
+      "no": "Design"
     },
     "iDtype": "combo"
   },
@@ -81071,7 +81893,8 @@
       "uk": "Пристрої",
       "vi": "Số Thiết bị",
       "zh": "设备数量",
-      "ca": "Dispositius"
+      "ca": "Dispositius",
+      "no": "Enheter"
     }
   },
   "phases": {
@@ -81109,7 +81932,8 @@
       "uk": "Фази",
       "vi": "Số Pha",
       "zh": "相数",
-      "ca": "Fases"
+      "ca": "Fases",
+      "no": "faser"
     }
   },
   "frequency": {
@@ -81146,7 +81970,8 @@
       "uk": "Робоча частота",
       "vi": "Tần số Hoạt động",
       "zh": "工作频率",
-      "ca": "Freqüència de funcionament"
+      "ca": "Freqüència de funcionament",
+      "no": "Driftsfrekvens"
     },
     "iDtype": "combo"
   },
@@ -81563,7 +82388,8 @@
       "ru": "Тип",
       "el": "Τύπος",
       "eo": "Speco",
-      "gl": "Tipo"
+      "gl": "Tipo",
+      "ko": "유형"
     },
     "iDtype": "combo"
   },
@@ -81651,7 +82477,8 @@
       "uk": "Бордюр",
       "vi": "Bờ Lề đường",
       "zh": "路缘",
-      "ca": "Vorera"
+      "ca": "Vorera",
+      "no": "veikant"
     },
     "iDtype": "combo"
   },
@@ -81684,7 +82511,8 @@
       "sv": "Höjd",
       "uk": "Висота",
       "vi": "Chiều cao",
-      "zh": "高度"
+      "zh": "高度",
+      "no": "Høyde"
     },
     "iDtype": "combo"
   },
@@ -81824,7 +82652,8 @@
       "sk": "Obtiažnosť pri jazde na koni",
       "sv": "Svårighetsgrad – Ridning",
       "uk": "Складність маршруту",
-      "vi": "Trình độ Cưỡi ngựa"
+      "vi": "Trình độ Cưỡi ngựa",
+      "no": "Riding Vanskelighetsgrad"
     },
     "options": [
       {
@@ -81854,7 +82683,8 @@
           "pl": "Łatwe: Brak przeszkód, problemów. (domyślnie)",
           "sv": "Lätt: Inga problem eller svårigheter (standard).",
           "uk": "Легкий: жодних складностей. (типовий)",
-          "vi": "Dễ: Không có trở ngại. (mặc định)"
+          "vi": "Dễ: Không có trở ngại. (mặc định)",
+          "no": "Enkel: Ingen problemer eller vanskeligheter. (standard)"
         }
       },
       {
@@ -82146,7 +82976,8 @@
       "pl": "Rodzaj",
       "sv": "Typ",
       "uk": "Тип",
-      "vi": "Kiểu"
+      "vi": "Kiểu",
+      "ko": "유형"
     },
     "iDtype": "combo"
   },
@@ -82175,7 +83006,8 @@
       "pl": "Zagrożona zalaniem",
       "sv": "Risk för översvämning",
       "uk": "Підтоплюється",
-      "vi": "Hay bị Lụt"
+      "vi": "Hay bị Lụt",
+      "no": "flom utsatt"
     },
     "iDtype": "check",
     "options": [
@@ -82238,7 +83070,8 @@
           "sr": "Кружни ток",
           "sv": "Cirkulationsplats",
           "uk": "Круг",
-          "vi": "Đường vòng"
+          "vi": "Đường vòng",
+          "no": "Rundkjøring"
         }
       },
       {
@@ -82263,7 +83096,8 @@
           "pl": "Skrzyżowanie o ruchu okrężnym",
           "sv": "Trafikcirkel",
           "uk": "Коло",
-          "vi": "Bùng binh Cổ điển"
+          "vi": "Bùng binh Cổ điển",
+          "no": "Rundkjøring"
         }
       },
       {
@@ -82399,7 +83233,8 @@
       "sv": "Destinationer",
       "uk": "Пункти призначення",
       "vi": "Địa điểm trên Hướng Đường đến",
-      "tr": "Hedefler"
+      "tr": "Hedefler",
+      "no": "Destinasjoner"
     },
     "iDtype": "semiCombo"
   },
@@ -82487,7 +83322,8 @@
       "uk": "Розмір плати",
       "vi": "Giá Thu phí",
       "el": "Κόστος Αντιτίμου",
-      "gl": "Taxa da portaxe"
+      "gl": "Taxa da portaxe",
+      "ru": "Размер оплаты"
     }
   },
   "destination/symbol_oneway": {
@@ -82516,7 +83352,8 @@
       "pl": "Miejsca docelowe (symbole)",
       "sv": "Destinationssymbol",
       "uk": "Символ дороги призначення",
-      "vi": "Ký hiệu Tiện nghi trên Hướng Đường đến"
+      "vi": "Ký hiệu Tiện nghi trên Hướng Đường đến",
+      "no": "Destinasjonssymboler"
     },
     "iDtype": "semiCombo"
   },
@@ -82668,7 +83505,8 @@
       "pl": "Minimalna prędkość",
       "sv": "Lägsta tillåtna hastighet",
       "uk": "Мінімальна дозволена швидкість",
-      "vi": "Tốc độ Tối thiểu"
+      "vi": "Tốc độ Tối thiểu",
+      "no": "Minimum Fartsgrense"
     },
     "iDtype": "maxspeed"
   },
@@ -83342,7 +84180,8 @@
       "sv": "Svårighetsgrad – Mountainbike uppför",
       "tr": "Dağ Bisikleti Yükselme Zorluğu",
       "uk": "Складність підйому на гору на велосипеді",
-      "vi": "Độ hiểm trở Đạp xe Leo lên núi"
+      "vi": "Độ hiểm trở Đạp xe Leo lên núi",
+      "no": "Terrengsykling Klatre Vanskelighetsgrad"
     },
     "options": [
       {
@@ -84667,7 +85506,8 @@
       "mk": "Земја на знамето",
       "pl": "Państwo",
       "uk": "Прапор країни",
-      "vi": "Mã Quốc gia của Quốc kỳ"
+      "vi": "Mã Quốc gia của Quốc kỳ",
+      "no": "Falgg Land"
     },
     "iDtype": "combo"
   },
@@ -84729,7 +85569,7 @@
   },
   "pump": {
     "key": "pump",
-    "type": "text",
+    "type": "select",
     "lbl": {
       "en": "Pump",
       "fr": "Pompe",
@@ -84742,9 +85582,78 @@
       "mk": "Пумпа",
       "pl": "Pompa",
       "uk": "Помпа",
-      "vi": "Bơm"
+      "vi": "Bơm",
+      "sv": "Pump"
     },
-    "iDtype": "combo"
+    "iDtype": "combo",
+    "options": [
+      {
+        "v": "yes",
+        "lbl": {
+          "en": "Yes",
+          "fr": "Yes",
+          "de": "Ja",
+          "es": "Sí",
+          "pt": "Sim",
+          "he": "כן",
+          "ja": "有り",
+          "mk": "Да",
+          "pl": "Tak",
+          "sv": "Ja",
+          "uk": "Так",
+          "vi": "Có"
+        }
+      },
+      {
+        "v": "manual",
+        "lbl": {
+          "en": "Manual",
+          "de": "Handpumpe",
+          "es": "Bomba manual",
+          "pt": "Com bomba manual",
+          "he": "משאבה ידנית",
+          "ja": "手動",
+          "mk": "Рачна пумпа",
+          "pl": "Ręczna",
+          "sv": "Manuell handpump",
+          "uk": "Ручний насос",
+          "vi": "Bơm Tay"
+        }
+      },
+      {
+        "v": "powered",
+        "lbl": {
+          "en": "Powered",
+          "de": "Maschinelle Pumpe",
+          "es": "Bomba accionada por máquina",
+          "pt": "Com bomba automática",
+          "he": "משאבה מופעלת מכונה",
+          "ja": "機械式",
+          "mk": "Моторна пумпа",
+          "pl": "Z napędem",
+          "sv": "Motordriven pump",
+          "uk": "Механізований насос",
+          "vi": "Máy Bơm"
+        }
+      },
+      {
+        "v": "no",
+        "lbl": {
+          "en": "No",
+          "fr": "Non",
+          "de": "Keine",
+          "es": "Ninguna",
+          "pt": "Nenhuma",
+          "he": "אין",
+          "ja": "無し",
+          "mk": "Ништо",
+          "pl": "Brak",
+          "sv": "Ingen",
+          "uk": "Немає",
+          "vi": "Không có"
+        }
+      }
+    ]
   },
   "building/levels/underground": {
     "key": "building:levels:underground",
@@ -84776,7 +85685,10 @@
       "vi": "Số Hầm",
       "el": "Υπόγεια Επίπεδα",
       "gl": "Niveis subterráneos",
-      "tr": "Yeraltı Katlar"
+      "tr": "Yeraltı Katlar",
+      "ru": "Число подземных этажей",
+      "nl": "Ondergrondse verdiepingen",
+      "no": "Underjordiske etasjer"
     }
   },
   "building/material": {
@@ -85026,6 +85938,17 @@
     "lbl": {"en": "Brand", "fr": "Enseigne"},
     "options": [
       {
+        "v": "E-Cigarette Direct",
+        "lbl": {"en": "E-Cigarette Direct"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "E-Cigarette Direct",
+          "brand:wikidata": "Q84703237",
+          "name": "E-Cigarette Direct",
+          "shop": "e-cigarette"
+        }
+      },
+      {
         "v": "Vardex",
         "lbl": {"en": "Vardex"},
         "countryCodes": ["ru"],
@@ -85058,9 +85981,9 @@
     "lbl": {"en": "Brand", "fr": "Enseigne"},
     "options": [
       {
-        "v": "Рыба",
-        "lbl": {"en": "Рыба"},
-        "tags": {"brand": "Рыба", "name": "Рыба", "shop": "seafood"}
+        "v": "Океан",
+        "lbl": {"en": "Океан"},
+        "tags": {"brand": "Океан", "name": "Океан", "shop": "seafood"}
       }
     ]
   },
@@ -85369,12 +86292,25 @@
     "lbl": {"en": "Brand", "fr": "Enseigne"},
     "options": [
       {
+        "v": "Codere",
+        "lbl": {"en": "Codere"},
+        "countryCodes": ["ar", "co", "es", "it", "mx", "pa", "uy"],
+        "tags": {
+          "amenity": "casino",
+          "brand": "Codere",
+          "brand:wikidata": "Q2918415",
+          "brand:wikipedia": "es:Codere",
+          "name": "Codere"
+        }
+      },
+      {
         "v": "Luckia",
         "lbl": {"en": "Luckia"},
         "tags": {
           "amenity": "casino",
           "brand": "Luckia",
           "brand:wikidata": "Q42304308",
+          "brand:wikipedia": "es:Luckia",
           "name": "Luckia"
         }
       }
@@ -85396,6 +86332,16 @@
           "brand:wikipedia": "ru:36,6 (аптечная сеть)",
           "healthcare": "pharmacy",
           "name": "36,6"
+        }
+      },
+      {
+        "v": "Agafarma",
+        "lbl": {"en": "Agafarma"},
+        "tags": {
+          "amenity": "pharmacy",
+          "brand": "Agafarma",
+          "healthcare": "pharmacy",
+          "name": "Agafarma"
         }
       },
       {
@@ -85444,16 +86390,6 @@
           "brand:wikipedia": "sv:Apotek Hjärtat",
           "healthcare": "pharmacy",
           "name": "Apotek Hjärtat"
-        }
-      },
-      {
-        "v": "Aptek",
-        "lbl": {"en": "Aptek"},
-        "tags": {
-          "amenity": "pharmacy",
-          "brand": "Aptek",
-          "healthcare": "pharmacy",
-          "name": "Aptek"
         }
       },
       {
@@ -85857,6 +86793,16 @@
         }
       },
       {
+        "v": "Farmacia Cruz Azul",
+        "lbl": {"en": "Farmacia Cruz Azul"},
+        "tags": {
+          "amenity": "pharmacy",
+          "brand": "Farmacia Cruz Azul",
+          "healthcare": "pharmacy",
+          "name": "Farmacia Cruz Azul"
+        }
+      },
+      {
         "v": "Farmacia Familiei",
         "lbl": {"en": "Farmacia Familiei"},
         "countryCodes": ["md"],
@@ -86008,6 +86954,16 @@
           "brand:wikipedia": "es:Farmatodo",
           "healthcare": "pharmacy",
           "name": "Farmatodo"
+        }
+      },
+      {
+        "v": "Farmácia Popular",
+        "lbl": {"en": "Farmácia Popular"},
+        "tags": {
+          "amenity": "pharmacy",
+          "brand": "Farmácia Popular",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Popular"
         }
       },
       {
@@ -87338,6 +88294,19 @@
         }
       },
       {
+        "v": "アイン薬局",
+        "lbl": {"en": "アイン薬局"},
+        "countryCodes": ["jp"],
+        "tags": {
+          "amenity": "pharmacy",
+          "brand": "アイン薬局",
+          "brand:ja": "アイン薬局",
+          "healthcare": "pharmacy",
+          "name": "アイン薬局",
+          "name:ja": "アイン薬局"
+        }
+      },
+      {
         "v": "ウェルパーク",
         "lbl": {"en": "ウェルパーク"},
         "countryCodes": ["jp"],
@@ -87969,13 +88938,28 @@
       "mk": "VAT-број",
       "pl": "Numer VAT",
       "uk": "ПДВ ід. платника",
-      "vi": "Mã số Thuế Giá trị Gia tăng"
+      "vi": "Mã số Thuế Giá trị Gia tăng",
+      "fr": "Numéro d'identifiant TVA",
+      "he": "מס׳ מזהה מס",
+      "nl": "BTW-nummer",
+      "sv": "VAT ID-nummer"
     }
   },
   "gambling": {
     "key": "gambling",
     "type": "text",
-    "lbl": {"en": "Games"},
+    "lbl": {
+      "en": "Games",
+      "de": "Spiele",
+      "es": "Juegos",
+      "pt": "Jogos",
+      "he": "משחקים",
+      "ja": "遊戯の種類",
+      "ko": "게임",
+      "mk": "Игри",
+      "pl": "Gry",
+      "uk": "Ігри"
+    },
     "iDtype": "semiCombo"
   },
   "baby_feeding": {
@@ -87988,11 +88972,66 @@
       "mothers",
       "nursing"
     ],
-    "lbl": {"en": "Baby Nursing Area"},
+    "lbl": {
+      "en": "Baby Nursing Area",
+      "de": "Babyfütterungsbereich",
+      "es": "Área de lactancia",
+      "pt": "Área de amamentação",
+      "el": "Χώρος Νοσηλείας Βρεφών",
+      "he": "אזור הנקת תינוקות",
+      "ja": "授乳",
+      "mk": "Место за доење",
+      "pl": "Miejsce do karmienia niemowlęcia",
+      "uk": "Місце для годування немовлят"
+    },
     "options": [
-      {"v": "room", "lbl": {"en": "Dedicated Room"}},
-      {"v": "yes", "lbl": {"en": "Marked Space"}},
-      {"v": "no", "lbl": {"en": "None"}}
+      {
+        "v": "room",
+        "lbl": {
+          "en": "Dedicated Room",
+          "de": "Eigener Raum",
+          "es": "Habitación dedicada",
+          "pt": "Espaço dedicado",
+          "he": "חדר מוקצה",
+          "ja": "授乳室あり",
+          "mk": "Посебна соба",
+          "no": "Dedikert rom",
+          "pl": "Osobny pokój",
+          "uk": "Окрема кімната",
+          "vi": "Phòng Riêng"
+        }
+      },
+      {
+        "v": "yes",
+        "lbl": {
+          "en": "Marked Space",
+          "de": "Gekennzeicheter Bereich",
+          "es": "Espacio señalado",
+          "pt": "Sim",
+          "he": "מתחם מסומן",
+          "ja": "授乳可",
+          "mk": "Обележано место",
+          "pl": "Wyznaczone miejsce",
+          "uk": "Виділене місце"
+        }
+      },
+      {
+        "v": "no",
+        "lbl": {
+          "en": "None",
+          "de": "Keiner",
+          "es": "Ninguna",
+          "pt": "Nenhuma",
+          "el": "Κανένα",
+          "he": "אין",
+          "ja": "授乳不可",
+          "mk": "Нема",
+          "no": "Ingen",
+          "pl": "Nie",
+          "uk": "Немає",
+          "vi": "Không có"
+        }
+      }
     ],
     "iDtype": "combo"
   },
@@ -88008,7 +89047,9 @@
       "mk": "Полнење шишиња",
       "pl": "Napełnianie butelek",
       "uk": "Наповнення пляшок",
-      "vi": "Cho Đổ vào Bình nước"
+      "vi": "Cho Đổ vào Bình nước",
+      "el": "Εμφιάλωση",
+      "he": "מילוי בקבוקים"
     },
     "iDtype": "check",
     "options": [
@@ -88033,7 +89074,8 @@
       "pl": "Rodzaj",
       "sv": "Typ",
       "uk": "Тип",
-      "vi": "Kiểu"
+      "vi": "Kiểu",
+      "ko": "유형"
     },
     "iDtype": "combo"
   },
@@ -88042,7 +89084,22 @@
     "type": "number",
     "minValue": 0,
     "placeholder": "2, 4, 6...",
-    "lbl": {"en": "Levels"}
+    "lbl": {
+      "en": "Levels",
+      "fr": "Étages",
+      "de": "Geschosse",
+      "es": "Niveles",
+      "pt": "Andares",
+      "ru": "Число этажей",
+      "he": "קומות",
+      "ja": "総階数",
+      "ko": "층수",
+      "mk": "Катови",
+      "nl": "Verdiepingen",
+      "pl": "Liczba kondygnacji",
+      "sv": "Våningar",
+      "uk": "Поверхи"
+    }
   },
   "hot_water": {
     "key": "hot_water",
@@ -88056,7 +89113,10 @@
       "mk": "Топла вода",
       "pl": "Ciepła woda",
       "uk": "Гаряча вода",
-      "vi": "Nước Nóng"
+      "vi": "Nước Nóng",
+      "fr": "Eau chaude",
+      "he": "מים חמים",
+      "no": "Varmt vann"
     },
     "iDtype": "check",
     "options": [
@@ -88081,13 +89141,24 @@
       "pl": "Napoje",
       "sv": "Drycker",
       "uk": "Напої",
-      "vi": "Đồ uống"
+      "vi": "Đồ uống",
+      "no": "Drinker"
     }
   },
   "segregated": {
     "key": "segregated",
     "type": "select",
-    "lbl": {"en": "Bicycle-Pedestrian Separation"},
+    "lbl": {
+      "en": "Bicycle-Pedestrian Separation",
+      "de": "Getrennter Fuß- und Radweg",
+      "es": "Separación de bicicletas y peatones",
+      "pt": "Separação ciclistas/pedestres",
+      "el": "Διαχωρισμός Ποδηλάτων-Πεζών",
+      "ja": "レーン分離",
+      "mk": "Велосипедско-пешачка одделница",
+      "pl": "Rozdzielona",
+      "uk": "Пішоходи окремо від велосипедистів"
+    },
     "iDtype": "check",
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -88305,7 +89376,8 @@
           "sv": "Cykelspår",
           "tr": "Ayrılmış bisiklet yolu",
           "uk": "Велотрек",
-          "vi": "Đường xe đạp riêng"
+          "vi": "Đường xe đạp riêng",
+          "no": "Sykkelbane"
         }
       },
       {
@@ -88345,7 +89417,8 @@
           "sv": "Cykelfil delad med buss",
           "tr": "Otobüsle paylaşılan bisiklet şeridi",
           "uk": "Велодоріжка суміщена зі смугою громадського транспорту",
-          "vi": "Làn xe đạp lẫn xe buýt"
+          "vi": "Làn xe đạp lẫn xe buýt",
+          "no": "Sykkelfelt delt med buss"
         }
       },
       {
@@ -88385,7 +89458,8 @@
           "sv": "Motriktad cykelfil",
           "tr": "Ters yönde bisiklet şeridi",
           "uk": "Велодріжка в зворотньому напрямку",
-          "vi": "Làn xe đạp ngược chiều lối"
+          "vi": "Làn xe đạp ngược chiều lối",
+          "no": "Motsatte sykkelfelt"
         }
       },
       {
@@ -88440,19 +89514,36 @@
       "mk": "Висина на избувот",
       "pl": "Wysokość erupcji",
       "uk": "Висота виверження",
-      "vi": "Chiều cao Phun Nước"
+      "vi": "Chiều cao Phun Nước",
+      "he": "גובה ההתפרצות"
     }
   },
   "plant/source": {
     "key": "plant:source",
     "type": "text",
-    "lbl": {"en": "Energy Source"},
+    "lbl": {
+      "en": "Energy Source",
+      "de": "Energiequelle",
+      "es": "Fuente de energía",
+      "pt": "Fonte de energia",
+      "mk": "Извор на енергија",
+      "pl": "Źródło energii",
+      "uk": "Джерело енергії"
+    },
     "iDtype": "combo"
   },
   "plant/method": {
     "key": "plant:method",
     "type": "text",
-    "lbl": {"en": "Generation Method"},
+    "lbl": {
+      "en": "Generation Method",
+      "de": "Art der Energiegewinnung",
+      "es": "Método de generación",
+      "pt": "Método de geração",
+      "mk": "Начин на струјосоздавање",
+      "pl": "Metoda wytwarzania energii",
+      "uk": "Метод генерації"
+    },
     "iDtype": "combo"
   },
   "backcountry": {
@@ -88467,7 +89558,8 @@
       "mk": "Зафрлени предели",
       "pl": "Dziki kemping bez udogodnień",
       "uk": "Без зручностей",
-      "vi": "Hẻo lánh"
+      "vi": "Hẻo lánh",
+      "he": "ללא סימון"
     },
     "iDtype": "check",
     "options": [
@@ -88487,7 +89579,8 @@
       "mk": "Само групи",
       "pl": "Tylko grupy",
       "uk": "Тільки для груп",
-      "vi": "Chỉ Phục vụ Nhóm người"
+      "vi": "Chỉ Phục vụ Nhóm người",
+      "he": "קבוצות בלבד"
     },
     "iDtype": "check",
     "options": [
@@ -88507,7 +89600,8 @@
       "mk": "Дозволени отворени огништа",
       "pl": "Rozpalanie ognia dozwolone?",
       "uk": "Розведення багаття",
-      "vi": "Cho phép Đánh lửa Dã ngoại"
+      "vi": "Cho phép Đánh lửa Dã ngoại",
+      "he": "מותר אש גלויה"
     },
     "iDtype": "check",
     "options": [
@@ -88527,7 +89621,9 @@
       "mk": "Тушеви",
       "pl": "Prysznice",
       "uk": "Душ",
-      "vi": "Có Tắm Đứng"
+      "vi": "Có Tắm Đứng",
+      "he": "מקלחות",
+      "sv": "Duschar"
     },
     "iDtype": "check",
     "options": [
@@ -88547,7 +89643,9 @@
       "mk": "Тушеви",
       "pl": "Toalety",
       "uk": "Туалет",
-      "vi": "Có Cầu tiêu"
+      "vi": "Có Cầu tiêu",
+      "he": "שירותים",
+      "sv": "Toaletter"
     },
     "iDtype": "check",
     "options": [
@@ -88558,7 +89656,19 @@
   "museum": {
     "key": "museum",
     "type": "text",
-    "lbl": {"en": "Type"},
+    "lbl": {
+      "en": "Type",
+      "de": "Typ",
+      "es": "Tipo",
+      "pt": "Tipo",
+      "he": "סוג",
+      "ja": "博物館の種類",
+      "mk": "Вид",
+      "pl": "Rodzaj",
+      "sv": "Typ",
+      "uk": "Тип",
+      "vi": "Kiểu"
+    },
     "iDtype": "combo"
   },
   "telecom/streetCabinet": {
@@ -88631,7 +89741,8 @@
       "sv": "IATA-flygplatskod",
       "tr": "IATA Havalimanı Kodu",
       "uk": "IATA",
-      "vi": "Mã Sân bay IATA"
+      "vi": "Mã Sân bay IATA",
+      "ko": "IATA 공항 코드"
     }
   },
   "icao": {
@@ -88656,7 +89767,8 @@
       "sv": "ICAO-flygplatskod",
       "tr": "ICAO Havalimanı Kodu",
       "uk": "ICAO",
-      "vi": "Mã Sân bay ICAO"
+      "vi": "Mã Sân bay ICAO",
+      "ko": "ICAO 공항 코드"
     }
   },
   "ref_aeroway_gate": {
@@ -89348,7 +90460,8 @@
           "sv": "Kontaktledning",
           "tr": "Kablolu",
           "uk": "Контактна лінія",
-          "vi": "Dây điện Bên trên"
+          "vi": "Dây điện Bên trên",
+          "no": "Kontakt linje"
         }
       },
       {
@@ -89540,7 +90653,8 @@
       "pl": "Kolej dużych prędkości",
       "sv": "Höghastighet",
       "uk": "Швидкісна магістраль",
-      "vi": "Cao tốc"
+      "vi": "Cao tốc",
+      "no": "Høyhastighet"
     },
     "iDtype": "check",
     "options": [
@@ -89844,7 +90958,8 @@
       "pl": "Śluza wodna",
       "sv": "Sluss",
       "uk": "Шлюз",
-      "vi": "Âu tàu"
+      "vi": "Âu tàu",
+      "no": "Lås"
     },
     "iDtype": "check",
     "options": [
@@ -89896,5 +91011,859 @@
       "vi": "Loại"
     },
     "iDtype": "combo"
+  },
+  "building/levels_building": {
+    "key": "building:levels",
+    "type": "number",
+    "minValue": 0,
+    "placeholder": "2, 4, 6...",
+    "prerequisiteTag": {"key": "building", "valueNot": "no"},
+    "lbl": {
+      "en": "Building Levels",
+      "fr": "Nombre de niveaux",
+      "de": "Gebäudeetagen",
+      "es": "Niveles del edificio",
+      "pt": "Pisos do edifício",
+      "it": "Piani dell’edificio",
+      "ru": "Число этажей",
+      "cs": "Patra budovy",
+      "da": "Antal bygningsetager",
+      "el": "Επίπεδα Κτισμάτων",
+      "eo": "Etaĝoj de konstruaĵo",
+      "et": "Hoone korruseid",
+      "fa": "طبقات ساختمان",
+      "fi": "Rakennuksen kerrokset",
+      "gl": "Andares do edificio",
+      "he": "קומות בבניין",
+      "hr": "Katova zgrade",
+      "hu": "Épületszintek",
+      "ja": "建物の地上階数",
+      "ko": "층수",
+      "mk": "Катови на градбата",
+      "nl": "Verdiepingen in gebouw",
+      "no": "bygning etasjer",
+      "pl": "Liczba kondygnacji",
+      "sr": "Спратови грађевине",
+      "sv": "Byggnadsvåning",
+      "uk": "Кількість поверхів",
+      "vi": "Số Lầu"
+    }
+  },
+  "board_type": {
+    "key": "board_type",
+    "type": "text",
+    "lbl": {
+      "en": "Type",
+      "fr": "Type",
+      "de": "Typ",
+      "es": "Tipo",
+      "pt": "Tipo",
+      "it": "Tipo",
+      "ru": "Тип",
+      "bg": "Вид",
+      "cs": "Typ",
+      "da": "Type",
+      "el": "Είδος",
+      "eo": "Speco",
+      "et": "Tüüp",
+      "fa": "نوع",
+      "fi": "Tyyppi",
+      "gl": "Tipo",
+      "he": "סוג",
+      "hr": "Tip",
+      "hu": "Típus",
+      "is": "Tegund",
+      "ja": "種類",
+      "ko": "유형",
+      "lt": "Tipas",
+      "lv": "Tips",
+      "mk": "Вид",
+      "ms": "Jenis",
+      "nl": "Type",
+      "no": "Type",
+      "pl": "Rodzaj",
+      "ro": "Tip",
+      "sk": "Typ",
+      "sl": "Vrsta",
+      "sr": "Врста",
+      "sv": "Typ",
+      "tr": "Tür",
+      "uk": "Тип",
+      "vi": "Kiểu"
+    },
+    "iDtype": "combo"
+  },
+  "shop#camera#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Jessops",
+        "lbl": {"en": "Jessops"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "Jessops",
+          "brand:wikidata": "Q3191701",
+          "brand:wikipedia": "en:Jessops",
+          "name": "Jessops",
+          "shop": "camera"
+        }
+      },
+      {
+        "v": "London Camera Exchange",
+        "lbl": {"en": "London Camera Exchange"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "brand": "London Camera Exchange",
+          "brand:wikidata": "Q84156395",
+          "name": "London Camera Exchange",
+          "shop": "camera"
+        }
+      }
+    ]
+  },
+  "shop#doors#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Юркас",
+        "lbl": {"en": "Юркас"},
+        "countryCodes": ["by"],
+        "tags": {"brand": "Юркас", "name": "Юркас", "shop": "doors"}
+      }
+    ]
+  },
+  "shop#flooring#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Floor & Decor",
+        "lbl": {"en": "Floor & Decor"},
+        "countryCodes": ["us"],
+        "tags": {
+          "brand": "Floor & Decor",
+          "brand:wikidata": "Q56280964",
+          "brand:wikipedia": "en:Floor & Decor",
+          "name": "Floor & Decor",
+          "shop": "flooring"
+        }
+      }
+    ]
+  },
+  "shop#pottery#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Sargadelos",
+        "lbl": {"en": "Sargadelos"},
+        "tags": {
+          "brand": "Sargadelos",
+          "brand:wikidata": "Q12390201",
+          "brand:wikipedia": "gl:Grupo Sargadelos",
+          "name": "Sargadelos",
+          "shop": "pottery"
+        }
+      }
+    ]
+  },
+  "shop#tool_hire#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "HSS Hire",
+        "lbl": {"en": "HSS Hire"},
+        "countryCodes": ["gb", "ie"],
+        "tags": {
+          "brand": "HSS Hire",
+          "brand:wikidata": "Q5636000",
+          "brand:wikipedia": "en:HSS Hire",
+          "name": "HSS Hire",
+          "shop": "tool_hire"
+        }
+      }
+    ]
+  },
+  "amenity#car_wash#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "IMO",
+        "lbl": {"en": "IMO"},
+        "tags": {
+          "amenity": "car_wash",
+          "brand": "IMO",
+          "brand:wikidata": "Q81802686",
+          "name": "IMO"
+        }
+      },
+      {
+        "v": "Waves",
+        "lbl": {"en": "Waves"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "amenity": "car_wash",
+          "brand": "Waves",
+          "brand:wikidata": "Q81802122",
+          "name": "Waves"
+        }
+      }
+    ]
+  },
+  "amenity#clinic#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Aid Post",
+        "lbl": {"en": "Aid Post"},
+        "tags": {"amenity": "clinic", "brand": "Aid Post", "name": "Aid Post"}
+      },
+      {
+        "v": "Asepeyo",
+        "lbl": {"en": "Asepeyo"},
+        "countryCodes": ["es"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Asepeyo",
+          "brand:wikidata": "Q11906879",
+          "brand:wikipedia": "es:Asepeyo",
+          "healthcare": "clinic",
+          "name": "Asepeyo"
+        }
+      },
+      {
+        "v": "CityMD",
+        "lbl": {"en": "CityMD"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "CityMD",
+          "brand:wikidata": "Q22295471",
+          "brand:wikipedia": "en:CityMD",
+          "healthcare": "clinic",
+          "name": "CityMD"
+        }
+      },
+      {
+        "v": "DaVita Dialysis",
+        "lbl": {"en": "DaVita Dialysis"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "DaVita Dialysis",
+          "brand:wikidata": "Q5207184",
+          "healthcare": "dialysis",
+          "healthcare:speciality": "dialysis",
+          "name": "DaVita Dialysis"
+        }
+      },
+      {
+        "v": "Dialysis Clinic",
+        "lbl": {"en": "Dialysis Clinic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Dialysis Clinic",
+          "brand:wikidata": "Q5270633",
+          "brand:wikipedia": "en:Dialysis Clinic, Inc.",
+          "healthcare": "dialysis",
+          "healthcare:speciality": "dialysis",
+          "name": "Dialysis Clinic",
+          "short_name": "DCI"
+        }
+      },
+      {
+        "v": "Fresenius Kidney Care",
+        "lbl": {"en": "Fresenius Kidney Care"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Fresenius Kidney Care",
+          "brand:wikidata": "Q650259",
+          "brand:wikipedia": "en:Fresenius Medical Care",
+          "healthcare": "dialysis",
+          "healthcare:speciality": "dialysis",
+          "name": "Fresenius Kidney Care"
+        }
+      },
+      {
+        "v": "Fresenius Medical Care",
+        "lbl": {"en": "Fresenius Medical Care"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Fresenius Medical Care",
+          "brand:wikidata": "Q650259",
+          "brand:wikipedia": "en:Fresenius Medical Care",
+          "healthcare": "dialysis",
+          "healthcare:speciality": "dialysis",
+          "name": "Fresenius Medical Care"
+        }
+      },
+      {
+        "v": "Planned Parenthood",
+        "lbl": {"en": "Planned Parenthood"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Planned Parenthood",
+          "brand:wikidata": "Q2553262",
+          "brand:wikipedia": "en:Planned Parenthood",
+          "healthcare": "counselling",
+          "healthcare:counselling": "antenatal;sexual",
+          "name": "Planned Parenthood"
+        }
+      },
+      {
+        "v": "Posyandu",
+        "lbl": {"en": "Posyandu"},
+        "tags": {"amenity": "clinic", "brand": "Posyandu", "name": "Posyandu"}
+      },
+      {
+        "v": "Puskesmas",
+        "lbl": {"en": "Puskesmas"},
+        "tags": {"amenity": "clinic", "brand": "Puskesmas", "name": "Puskesmas"}
+      },
+      {
+        "v": "Puskesmas Pembantu",
+        "lbl": {"en": "Puskesmas Pembantu"},
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Puskesmas Pembantu",
+          "name": "Puskesmas Pembantu"
+        }
+      },
+      {
+        "v": "Satellite Healthcare",
+        "lbl": {"en": "Satellite Healthcare"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Satellite Healthcare",
+          "brand:wikidata": "Q50039787",
+          "healthcare": "dialysis",
+          "healthcare:speciality": "dialysis",
+          "name": "Satellite Healthcare"
+        }
+      },
+      {
+        "v": "Terveystalo",
+        "lbl": {"en": "Terveystalo"},
+        "countryCodes": ["fi"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "Terveystalo",
+          "brand:wikidata": "Q11897034",
+          "brand:wikipedia": "fi:Terveystalo",
+          "healthcare": "clinic",
+          "name": "Terveystalo"
+        }
+      },
+      {
+        "v": "VA",
+        "lbl": {"en": "VA Clinic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "VA",
+          "brand:wikidata": "Q6580225",
+          "brand:wikipedia": "en:Veterans Health Administration",
+          "healthcare": "clinic",
+          "healthcare:for": "veterans",
+          "name": "VA Clinic",
+          "short_name": "VA"
+        }
+      },
+      {
+        "v": "ZoomCare",
+        "lbl": {"en": "ZoomCare"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "clinic",
+          "brand": "ZoomCare",
+          "brand:wikidata": "Q64120374",
+          "brand:wikipedia": "en:ZoomCare",
+          "healthcare": "clinic",
+          "name": "ZoomCare",
+          "urgent_care": "yes"
+        }
+      }
+    ]
+  },
+  "amenity#college#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Akademie Deutsche POP",
+        "lbl": {"en": "Akademie Deutsche POP"},
+        "tags": {
+          "amenity": "college",
+          "brand": "Akademie Deutsche POP",
+          "brand:wikidata": "Q413887",
+          "brand:wikipedia": "de:Akademie Deutsche POP",
+          "name": "Akademie Deutsche POP"
+        }
+      },
+      {
+        "v": "SAE Institute",
+        "lbl": {"en": "SAE Institute"},
+        "tags": {
+          "amenity": "college",
+          "brand": "SAE Institute",
+          "brand:wikidata": "Q201438",
+          "brand:wikipedia": "en:SAE Institute",
+          "name": "SAE Institute"
+        }
+      }
+    ]
+  },
+  "amenity#dentist#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Aspen Dental",
+        "lbl": {"en": "Aspen Dental"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Aspen Dental",
+          "brand:wikidata": "Q4807808",
+          "brand:wikipedia": "en:Aspen Dental",
+          "healthcare": "dentist",
+          "name": "Aspen Dental"
+        }
+      },
+      {
+        "v": "Comfort Dental",
+        "lbl": {"en": "Comfort Dental"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Comfort Dental",
+          "brand:wikidata": "Q22079521",
+          "brand:wikipedia": "en:Comfort Dental",
+          "healthcare": "dentist",
+          "name": "Comfort Dental"
+        }
+      },
+      {
+        "v": "Dentix",
+        "lbl": {"en": "Dentix"},
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Dentix",
+          "brand:wikidata": "Q30505320",
+          "brand:wikipedia": "es:Dentix",
+          "name": "Dentix"
+        }
+      },
+      {
+        "v": "Folktandvården",
+        "lbl": {"en": "Folktandvården"},
+        "countryCodes": ["se"],
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Folktandvården",
+          "brand:wikidata": "Q10497476",
+          "brand:wikipedia": "sv:Folktandvården",
+          "name": "Folktandvården"
+        }
+      },
+      {
+        "v": "Gentle Dental",
+        "lbl": {"en": "Gentle Dental"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Gentle Dental",
+          "name": "Gentle Dental"
+        }
+      },
+      {
+        "v": "Kool Smiles",
+        "lbl": {"en": "Kool Smiles"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Kool Smiles",
+          "brand:wikidata": "Q6430587",
+          "brand:wikipedia": "en:Kool Smiles",
+          "healthcare": "dentist",
+          "name": "Kool Smiles"
+        }
+      },
+      {
+        "v": "Vitaldent",
+        "lbl": {"en": "Vitaldent"},
+        "countryCodes": ["es", "it"],
+        "tags": {
+          "amenity": "dentist",
+          "brand": "Vitaldent",
+          "brand:wikidata": "Q5860599",
+          "brand:wikipedia": "es:Vitaldent",
+          "name": "Vitaldent"
+        }
+      },
+      {
+        "v": "Western Dental",
+        "lbl": {"en": "Western Dental"},
+        "countryCodes": ["us"],
+        "tags": {
+          "alt_name": "Western Dental & Orthodontics",
+          "amenity": "dentist",
+          "brand": "Western Dental",
+          "brand:wikidata": "Q64211989",
+          "brand:wikipedia": "en:Western Dental",
+          "healthcare": "dentist",
+          "name": "Western Dental"
+        }
+      },
+      {
+        "v": "Дантист",
+        "lbl": {"en": "Дантист"},
+        "tags": {"amenity": "dentist", "brand": "Дантист", "name": "Дантист"}
+      }
+    ]
+  },
+  "amenity#doctors#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "MinuteClinic",
+        "lbl": {"en": "MinuteClinic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "doctors",
+          "brand": "MinuteClinic",
+          "brand:wikidata": "Q6871141",
+          "brand:wikipedia": "en:MinuteClinic",
+          "healthcare": "doctor",
+          "healthcare:speciality": "community",
+          "name": "MinuteClinic"
+        }
+      },
+      {
+        "v": "RediClinic",
+        "lbl": {"en": "RediClinic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "doctors",
+          "brand": "RediClinic",
+          "brand:wikidata": "Q64138408",
+          "healthcare": "doctor",
+          "healthcare:speciality": "community",
+          "name": "RediClinic"
+        }
+      },
+      {
+        "v": "The Little Clinic",
+        "lbl": {"en": "The Little Clinic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "doctors",
+          "brand": "The Little Clinic",
+          "brand:wikidata": "Q64138262",
+          "healthcare": "doctor",
+          "healthcare:speciality": "community",
+          "name": "The Little Clinic"
+        }
+      },
+      {
+        "v": "Walgreens",
+        "lbl": {"en": "Walgreens Healthcare Clinic"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "doctors",
+          "brand": "Walgreens",
+          "brand:wikidata": "Q1591889",
+          "healthcare": "doctor",
+          "healthcare:speciality": "community",
+          "name": "Walgreens Healthcare Clinic"
+        }
+      }
+    ]
+  },
+  "amenity#gambling#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Buzz Bingo",
+        "lbl": {"en": "Buzz Bingo"},
+        "countryCodes": ["gb"],
+        "tags": {
+          "amenity": "gambling",
+          "brand": "Buzz Bingo",
+          "brand:wikidata": "Q60746117",
+          "brand:wikipedia": "en:Buzz Bingo",
+          "gambling": "bingo;slot_machines",
+          "name": "Buzz Bingo"
+        }
+      }
+    ]
+  },
+  "amenity#hospital#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Cruz Roja",
+        "lbl": {"en": "Cruz Roja"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Cruz Roja",
+          "name": "Cruz Roja"
+        }
+      },
+      {
+        "v": "IMSS",
+        "lbl": {"en": "IMSS"},
+        "tags": {"amenity": "hospital", "brand": "IMSS", "name": "IMSS"}
+      },
+      {
+        "v": "Select Specialty Hospital",
+        "lbl": {"en": "Select Specialty Hospital"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Select Specialty Hospital",
+          "brand:wikidata": "Q66360902",
+          "healthcare": "hospital",
+          "name": "Select Specialty Hospital"
+        }
+      },
+      {
+        "v": "Shriners Hospitals for Children",
+        "lbl": {"en": "Shriners Hospital for Children"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Shriners Hospitals for Children",
+          "brand:wikidata": "Q7504109",
+          "brand:wikipedia": "en:Shriners Hospitals for Children",
+          "healthcare": "hospital",
+          "healthcare:speciality": "paediatrics",
+          "name": "Shriners Hospitals for Children"
+        }
+      },
+      {
+        "v": "VA",
+        "lbl": {"en": "VA Medical Center"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "hospital",
+          "brand": "VA",
+          "brand:wikidata": "Q6580225",
+          "brand:wikipedia": "en:Veterans Health Administration",
+          "healthcare": "hospital",
+          "healthcare:for": "veterans",
+          "name": "VA Medical Center",
+          "short_name": "VA"
+        }
+      },
+      {
+        "v": "Больница",
+        "lbl": {"en": "Больница"},
+        "tags": {"amenity": "hospital", "brand": "Больница", "name": "Больница"}
+      },
+      {
+        "v": "Городская больница",
+        "lbl": {"en": "Городская больница"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Городская больница",
+          "name": "Городская больница"
+        }
+      },
+      {
+        "v": "Детская больница",
+        "lbl": {"en": "Детская больница"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Детская больница",
+          "name": "Детская больница"
+        }
+      },
+      {
+        "v": "Медпункт",
+        "lbl": {"en": "Медпункт"},
+        "tags": {"amenity": "hospital", "brand": "Медпункт", "name": "Медпункт"}
+      },
+      {
+        "v": "Противотуберкулезный диспансер",
+        "lbl": {"en": "Противотуберкулезный диспансер"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Противотуберкулезный диспансер",
+          "name": "Противотуберкулезный диспансер"
+        }
+      },
+      {
+        "v": "Районная больница",
+        "lbl": {"en": "Районная больница"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Районная больница",
+          "name": "Районная больница"
+        }
+      },
+      {
+        "v": "Роддом",
+        "lbl": {"en": "Роддом"},
+        "tags": {"amenity": "hospital", "brand": "Роддом", "name": "Роддом"}
+      },
+      {
+        "v": "Родильный дом",
+        "lbl": {"en": "Родильный дом"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Родильный дом",
+          "name": "Родильный дом"
+        }
+      },
+      {
+        "v": "Скорая помощь",
+        "lbl": {"en": "Скорая помощь"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Скорая помощь",
+          "name": "Скорая помощь"
+        }
+      },
+      {
+        "v": "ЦРБ",
+        "lbl": {"en": "ЦРБ"},
+        "tags": {"amenity": "hospital", "brand": "ЦРБ", "name": "ЦРБ"}
+      },
+      {
+        "v": "Центральная районная больница",
+        "lbl": {"en": "Центральная районная больница"},
+        "tags": {
+          "amenity": "hospital",
+          "brand": "Центральная районная больница",
+          "name": "Центральная районная больница"
+        }
+      },
+      {
+        "v": "โรงพยาบาลส่งเสริมสุขภาพตำบล",
+        "lbl": {"en": "โรงพยาบาลส่งเสริมสุขภาพตำบล"},
+        "countryCodes": ["th"],
+        "tags": {
+          "amenity": "hospital",
+          "brand": "โรงพยาบาลส่งเสริมสุขภาพตำบล",
+          "brand:th": "โรงพยาบาลส่งเสริมสุขภาพตำบล",
+          "name": "โรงพยาบาลส่งเสริมสุขภาพตำบล",
+          "name:th": "โรงพยาบาลส่งเสริมสุขภาพตำบล"
+        }
+      }
+    ]
+  },
+  "amenity#recycling#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Planet Aid",
+        "lbl": {"en": "Planet Aid"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "recycling",
+          "brand": "Planet Aid",
+          "brand:wikidata": "Q7201055",
+          "brand:wikipedia": "en:Planet Aid",
+          "name": "Planet Aid",
+          "recycling:clothes": "yes",
+          "recycling:shoes": "yes",
+          "recycling_type": "container"
+        }
+      },
+      {
+        "v": "Saint Vincent de Paul",
+        "lbl": {"en": "Saint Vincent de Paul"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "recycling",
+          "brand": "Saint Vincent de Paul",
+          "brand:wikidata": "Q66581837",
+          "name": "Saint Vincent de Paul",
+          "recycling:clothes": "yes",
+          "recycling:shoes": "yes",
+          "short_name": "SVdP"
+        }
+      },
+      {
+        "v": "The Salvation Army",
+        "lbl": {"en": "The Salvation Army"},
+        "countryCodes": ["us"],
+        "tags": {
+          "amenity": "recycling",
+          "brand": "The Salvation Army",
+          "brand:wikidata": "Q188307",
+          "brand:wikipedia": "en:The Salvation Army",
+          "name": "The Salvation Army",
+          "recycling:clothes": "yes"
+        }
+      }
+    ]
+  },
+  "craft#cleaning#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "Molly Maid",
+        "lbl": {"en": "Molly Maid"},
+        "countryCodes": ["ca", "gb", "jp", "pt", "us"],
+        "tags": {
+          "brand": "Molly Maid",
+          "brand:wikidata": "Q6896624",
+          "brand:wikipedia": "en:Molly Maid",
+          "craft": "cleaning",
+          "name": "Molly Maid"
+        }
+      }
+    ]
+  },
+  "office#telecommunication#brand": {
+    "key": "brand",
+    "type": "list",
+    "lbl": {"en": "Brand", "fr": "Enseigne"},
+    "options": [
+      {
+        "v": "ETECSA",
+        "lbl": {"en": "ETECSA"},
+        "countryCodes": ["cu"],
+        "tags": {
+          "brand": "ETECSA",
+          "brand:wikidata": "Q490323",
+          "brand:wikipedia": "es:Empresa de Telecomunicaciones de Cuba",
+          "name": "ETECSA",
+          "office": "telecommunication",
+          "official_name": "Empresa de Telecomunicaciones de Cuba"
+        }
+      }
+    ]
   }
 }

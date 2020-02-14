@@ -75,7 +75,7 @@
       },
       "terms": {
         "en": "",
-        "fr": "publicité, 4x3, affiche, panneau d'affichage, billboard, advertising, advertisement",
+        "fr": "publicité, 4x3, affiche, panneau d'affichage, billboard, advertising, advertisement.",
         "de": "Werbetafel,Anschlagtafel,Reklametafel,Anschlagbrett",
         "es": "panel, cartel, cartelera, valla, publicitario, publicidad",
         "pt": "outdoor, billboard, publicidade, mupi, pub, anúncio, cartaz",
@@ -130,7 +130,10 @@
         "ja": "掲示板",
         "mk": "Огласна табла",
         "pl": "Tablica ogłoszeń",
-        "uk": "Дошка оголошень"
+        "uk": "Дошка оголошень",
+        "ko": "게시판",
+        "no": "Oppslagstavle",
+        "vi": "Bảng Tin nhắn"
       },
       "description": {
         "en": "Small billboard for neighbourhood advertising, generally intended for pedestrians, but some of them can be along roads. Some of them are open to any fly posters, and not private.",
@@ -154,7 +157,9 @@
         "et": "reklaamtahvel,teadete sein,teated",
         "ja": "広告掲示板, 掲示板, 情報掲示板, 町内掲示板, 広告, 公告",
         "pl": "tablica ogłoszeń, tablica ogłoszeniowa, tablica reklamowa",
-        "uk": "дошка,оголошення,об'ява,повідомлення,інформація"
+        "uk": "дошка,оголошення,об'ява,повідомлення,інформація",
+        "ko": "알림판",
+        "vi": "bảng tin nhắn, bảng nhắn tin, bang tin nhan, bang nhan tin"
       }
     },
     {
@@ -1869,7 +1874,8 @@
         "pl": "Sklep z łodziami",
         "sv": "Båtaffär",
         "uk": "Магазин човнів",
-        "eo": "Boat‑vendejo"
+        "eo": "Boat‑vendejo",
+        "ko": "보트 가게"
       },
       "terms": {
         "en": "fishing boat,jetski,motorboat,rowboat,sailboat,vessel,watercraft",
@@ -1883,7 +1889,8 @@
         "pl": "łódź, łodzie, jachty, skutery wodne, sprzedaż łodzi, motorówek, jachtów, żeglarstwo, żeglarski",
         "sv": "Båtaffär, fiskebåt, jetski, jet-ski, vattenskoter, motorboat, eka, roddbåt, segelbåt, segel, båt, båttillbehör",
         "uk": "лодка,мотор,веслування,вітрило,човен",
-        "eo": "boatoj,ŝipoj,motorboatoj,kanotoj,motorkanotoj"
+        "eo": "boatoj,ŝipoj,motorboatoj,kanotoj,motorkanotoj",
+        "ko": "보트 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/boat",
@@ -2166,7 +2173,8 @@
         "mk": "Пивоварска продавница",
         "pl": "Sklep dla piwowarów domowych",
         "uk": "Пивоварне та виноробне обладнання",
-        "fr": "Vente de produits pour le brassage "
+        "fr": "Vente de produits pour le brassage ",
+        "ko": "양조 용품 가게"
       },
       "terms": {
         "en": "brew shop,homebrew supply store",
@@ -2177,7 +2185,8 @@
         "ja": "醸造用品店, 醸造, 酒, 酒造, DIY, ホームブリュー",
         "pl": "piwowarstwo domowe, browar domowy, domowy browar, akcesoria piwowarskie, akcesoria winiarskie, słód, słody, chmiele",
         "uk": "пиво,вино,віски,коньяк,перегонка,куб,брага,самогон,апарат,саморобне,магазин",
-        "fr": "bière, brassage"
+        "fr": "bière, brassage",
+        "ko": "양조 용품 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/brewing_supplies",
@@ -2300,7 +2309,7 @@
       "id": "shop/camera",
       "icon": "fas-camera-retro",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#camera#brand"],
       "lbl": {
         "en": "Camera Equipment Store",
         "de": "Fotofachgeschäft",
@@ -2309,7 +2318,8 @@
         "ja": "カメラ店",
         "mk": "Продавница за фотографска опрема",
         "pl": "Sklep z kamerami i aparatami",
-        "uk": "Фотообладнання"
+        "uk": "Фотообладнання",
+        "ko": "카메라 가게"
       },
       "terms": {
         "en": "camera, film, lens, photo",
@@ -2318,7 +2328,8 @@
         "pt": "câmara,lentes,fotografia,fotográfica,filme,revelação,fotos,foto",
         "ja": "カメラ店, カメラ用品, レンズ, 写真",
         "pl": "sklep z kamerami i aparatami fotograficznymi, sprzęt fotograficzny, kamery, aparaty fotograficzne, obiektywy fotograficzne",
-        "uk": "камера,об'єктив,штатив,фотоапарат,плівка,реактив,папір,спалах,світло"
+        "uk": "камера,об'єктив,штатив,фотоапарат,плівка,реактив,папір,спалах,світло",
+        "ko": "카메라 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/camera",
@@ -2447,7 +2458,8 @@
         "pl": "sklep z produktami z konopi, coffee shop, konopie, marihuana, cannabis, kanabis",
         "sv": "Cannabisaffär, Cannabis, 420, marijuana,pot,reefer,weed",
         "uk": "магазин,канабіс,марихуана,косяк,п'ятка,травка",
-        "eo": "marihhuano,marihxuano,kanabo,haŝiŝo"
+        "eo": "marihhuano,marihxuano,kanabo,haŝiŝo",
+        "ko": "대마초 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/cannabis",
@@ -2569,8 +2581,26 @@
       "icon": "maki-car",
       "markerColor": "#A23337",
       "presets": [],
-      "lbl": {"en": "Used Car Dealership"},
-      "terms": {"en": "automobile, automotive"},
+      "lbl": {
+        "en": "Used Car Dealership",
+        "de": "Gerbrauchtwagenhandlung",
+        "es": "Concesionario de autos usados",
+        "pt": "Loja de carros usados",
+        "ja": "中古車店",
+        "ko": "중고차 딜러",
+        "mk": "Салон за половни возила",
+        "pl": "Komis samochodowy",
+        "uk": "Автосалон вживаних авто"
+      },
+      "terms": {
+        "en": "automobile, automotive",
+        "de": "KFZ, Gebrauchtwagenzentrum, Gebrauchtwagenhändler, Gebrauchtwagenverkauf, Occasion, Jahreswagen, Altfahrzeug, PKW, Gebrauchtwagenmarkt, Autohandlung, Autohaus, Werkstatt, Second Hand",
+        "es": "automóvil, automotriz, auto, coche, carro, vehículo, concesionaria",
+        "pt": "automóveis,automóvel,segunda mão,carro,veículos,concessionário,concessionária",
+        "ja": "中古車店, 中古屋, カーディーラー",
+        "pl": "komis samochodowy, autokomis, używane samochody, używane auta, sprzedawca samochodów, dealer samochodowy, sprzedaż samochodów, sprzedaż aut, samochody, auta",
+        "uk": "авто,майданчик,перекуп,бу,бв,вживаний"
+      },
       "geometry": ["point", "area"],
       "iDRef": "shop/car/second_hand",
       "tags": {"shop": "car", "second_hand": "only"}
@@ -2914,7 +2944,8 @@
         "de": "Teppichgeschäft",
         "ru": "Магазин, торгующий коврами.",
         "cs": "Obchod prodávající koberce",
-        "ja": "絨毯を販売する店舗です。"
+        "ja": "絨毯を販売する店舗です。",
+        "es": "Una tienda que vende alfombras."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/carpet",
@@ -3420,9 +3451,26 @@
       "icon": "maki-clothing-store",
       "markerColor": "#A23337",
       "presets": [],
-      "lbl": {"en": "Secondhand Clothing Store"},
+      "lbl": {
+        "en": "Secondhand Clothing Store",
+        "de": "Second-Hand Bekleidungsgeschäft",
+        "es": "Tienda de ropa de segunda mano",
+        "pt": "Loja de roupa em segunda mão",
+        "ja": "衣料品店（リサイクル）",
+        "ko": "중고 옷 가게",
+        "mk": "Продавница за половна облека",
+        "pl": "Sklep z odzieżą używaną",
+        "uk": "Магазин вживаного одягу"
+      },
       "terms": {
-        "en": "blouses, clothes, consignment, dresses, pants, second hand, shirts, shorts, skirts, slacks, suits, used"
+        "en": "blouses, clothes, consignment, dresses, pants, second hand, shirts, shorts, skirts, slacks, suits, used",
+        "de": "Gebrauchtwaren, Gebrauchtkleidung, Vintage, secondhand, zweite Hand, Altkleider, Kleider, Kleidung, Klamotten, Mode",
+        "es": "blusas, ropa, ropa usada, vestidos, pantalones, segunda mano, camisas, pantalones cortos, faldas, pantalones, trajes, usados",
+        "pt": "roupas,vestuário,calças,vestidos,casacos,camisas,saias,fatos,usados,usada,usado,sapatos,calçado",
+        "ja": "リサイクル店, 古着屋, 中古屋, リサイクルショップ, 衣料品店（リサイクル）, 衣料品店",
+        "ko": "중고 옷 상점",
+        "pl": "odzież używana, lumpeks, ciuchland, ciucholand, ciuchy, ubrania",
+        "uk": "секонд,одяг,штани,светри,куртки,плаття,костюм"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/clothes/second_hand",
@@ -3464,7 +3512,8 @@
         "pl": "bielizna",
         "sv": "Underklädersaffär, underkläder, bh, trosor, kalsonger, mode, underklänning, sockar, strumpor, lingeri, damunderkläder",
         "uk": "одяг,магазин,спіднє,білизна,труси,шкарпетки,панчохи,термобілизна",
-        "eo": "vestovendejo,subvestaĵoj,duonpantalono,kalsono,brustoteniloj,mamzonoj,mamingoj,ŝtrumpoj,shtrumpoj,sxtrumpoj"
+        "eo": "vestovendejo,subvestaĵoj,duonpantalono,kalsono,brustoteniloj,mamzonoj,mamingoj,ŝtrumpoj,shtrumpoj,sxtrumpoj",
+        "ko": "속옷 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/clothes/underwear",
@@ -3478,9 +3527,24 @@
       "icon": "temaki-gown",
       "markerColor": "#A23337",
       "presets": [],
-      "lbl": {"en": "Wedding Clothes Store"},
+      "lbl": {
+        "en": "Wedding Clothes Store",
+        "de": "Hochzeitskleidungsgeschäft",
+        "es": "Tienda de ropa para bodas",
+        "pt": "Loja de vestuário de casamento",
+        "ja": "衣料品店（婚礼）",
+        "mk": "Продавница за свадбена облека",
+        "pl": "Salon sukien ślubnych",
+        "uk": "Магазин весільного вбрання"
+      },
       "terms": {
-        "en": "boutique, bridal, bride, bridegroom, bridesmaid, groom, groomsman, tuxedo, wedding dress, wedding gown"
+        "en": "boutique, bridal, bride, bridegroom, bridesmaid, groom, groomsman, tuxedo, wedding dress, wedding gown",
+        "de": "Hochzeit, Braut, Bräutigam, Brautkleidung, Brautbekleidung, Brautmode, Boutique, Trauung, Trauzeuge, Smoking",
+        "es": "Boutique, novia, novia, novio, dama de honor, novio, padrino de boda, esmoquin, vestido de novia, vestido de novia",
+        "pt": "roupa,roupas,noiva,noivo,vestidos,fatos,padrinhos,madrinhas",
+        "ja": "衣料品店（婚礼）, ウェディングドレス, 結婚, 衣料品店",
+        "pl": "salon sukien ślubnych, suknie ślubne, sukienki ślubne, odzież, ubrania",
+        "uk": "магазин,весілля,вбрання,плаття,наречена,наречений,фата,смокінг,костюм"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/clothes/wedding",
@@ -4670,21 +4734,28 @@
       "id": "shop/doors",
       "icon": "fas-door-open",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#doors#brand"],
       "lbl": {
         "en": "Door Shop",
         "es": "Tienda de puertas (aberturas)",
         "ja": "ドア販売店",
         "mk": "Продавница за врати",
         "pl": "Sklep z drzwiami",
-        "uk": "Магазин дверей"
+        "uk": "Магазин дверей",
+        "de": "Türgeschäft",
+        "pt": "Loja de portas",
+        "ko": "문 가게",
+        "no": "Dør Butikk"
       },
       "terms": {
         "en": "",
         "es": "puertas, aberturas, tienda",
         "ja": "ドア販売店, ドア, 扉",
         "pl": "sklep z drzwiami, drzwi",
-        "uk": "двері,магазни,замок,завіси"
+        "uk": "двері,магазни,замок,завіси",
+        "de": "Tür, Tor, Eingang, Ausgang",
+        "pt": "portões,portão,porta,portada",
+        "ko": "문 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/doors",
@@ -4896,7 +4967,9 @@
         "ja": "電気店",
         "mk": "Продавница за електрика",
         "pl": "Sklep elektryczny",
-        "uk": "Магазин електротехнічного обладнання"
+        "uk": "Магазин електротехнічного обладнання",
+        "it": "Negozio di materiale elettrico",
+        "no": "Elektrisk utstyrsbutikk"
       },
       "description": {
         "en": "Shop selling electrical supplies and devices",
@@ -4918,7 +4991,8 @@
         "he": "חנות חשמל,חנות תאורה,מאווררים,כבל,חשמל,תאורה",
         "ja": "電気店, 電気工具, 電子部品, 検査機器",
         "pl": "sklep elektryczny, kable, przewody, przedłużacze, liczniki elektryczne, gniazdka elektryczne, skrzynki bezpiecznikowe, domofony, dzwonki, wentylatory, wentylacja, klimatyzacja, ogrzewanie, oświetlenie",
-        "uk": "електрика,електротовари,ЛЕД,дріт,дроти,кабель,освітлення"
+        "uk": "електрика,електротовари,ЛЕД,дріт,дроти,кабель,освітлення",
+        "it": "cavi,prese,spine,interruttori,portalampada,plafoniere,lampadine"
       },
       "tags": {"shop": "electrical"},
       "moreFields": [],
@@ -5157,7 +5231,8 @@
         "ja": "LGBTQ+なポルノショップ, ポルノショップ, LGBT, アダルトショップ, ゲイ, レズビアン, トランスジェンダー, レインボー, ポルノ",
         "pl": "sex shop dla homoseksualistów, gejów, lesbijek, sex-shop, sklep erotyczny",
         "sv": "Sex, sexshop, sexaffär, erotik, erotikaffär, erotisk, sexfilmer, porr, porrfilmer, sexleksaker, underkläder, kondomer, pornografi, porrfilmer, sexfilmer, porrtidningar, HBTQ-sexshop, HBTQ, gay, lesbisk",
-        "uk": "секс,іграшки,для дорослих"
+        "uk": "секс,іграшки,для дорослих",
+        "ko": "LGBTQ+ 성인용품 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/erotic/lgbtq",
@@ -5453,13 +5528,15 @@
         "ja": "アクセサリー店, アクセサリーショップ, ファッション, 小物, 装飾品, 服飾小物, ファッションアクセサリー店, 店舗, お店, おしゃれ, ファッション小物店",
         "pl": "Sklep z galanterią, galanteria, akcesoria modowe, dodatki do ubrania, dodatki do odzieży, paski, kapelusze, czapki, torebki, rękawiczki, szaliki, szale, chusty, parasole, portfele, biżuteria",
         "uk": "парфум,сумка,одеколон,духи,прикраси,шарф,шаль,окуляри,парасоля,годинник,пулярес",
-        "eo": "galanterio,galanteriejo,akcesoraĵoj,saketoj,mansakoj,ombreloj"
+        "eo": "galanterio,galanteriejo,akcesoraĵoj,saketoj,mansakoj,ombreloj",
+        "ko": "패션 액세서리 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/fashion_accessories",
       "tags": {"shop": "fashion_accessories"},
       "moreFields": [],
-      "id": "shop/fashion_accessories"
+      "id": "shop/fashion_accessories",
+      "description": {"en": "", "de": "Geschäft für Modeaccessoires"}
     },
     {
       "icon": "fa-fire",
@@ -5502,7 +5579,8 @@
         "sv": "eldstad, eldstäder, kamin, kakelugn, gaskamin",
         "uk": "магазин,дрова,вугілля,піч,камін,опалення",
         "vi": "tiệm lò sưởi, cửa hàng lò sưởi, tiem lo suoi, cua hang lo suoi",
-        "eo": "kamenoj,hejtiloj"
+        "eo": "kamenoj,hejtiloj",
+        "ko": "벽난로 상점"
       },
       "description": {
         "en": "A shop selling fireplaces",
@@ -5564,7 +5642,8 @@
         "sv": "Fiskeaffär, fiskeutrustning, sommarfiske, vinterfiske, levande bete, bete, fiske, fiska, fisk, fiskare",
         "uk": "рибалка,наживка,волосінь,приманка,вудка,рибальство",
         "vi": "tiệm cần câu, tiệm câu cá, tiệm cần câu cá, cửa hàng cần câu, cửa hàng câu cá, cửa hàng cần câu cá, tiem can cau, tiem cau ca, tiem can cau ca, cua hang can cau, cua hang cau ca, cua hang can cau ca",
-        "eo": "fiŝhokado,fiŝkaptado,hokfiŝado"
+        "eo": "fiŝhokado,fiŝkaptado,hokfiŝado",
+        "ko": "낚시 상점"
       },
       "description": {
         "en": "Store where you can buy fishing equipment.",
@@ -5573,7 +5652,8 @@
         "ru": "Рыболовный магазин",
         "cs": "Obchod s rybářským vybavením",
         "ja": "釣り道具を買うことができる店。",
-        "pl": "Sklep z artykułami i osprzętem dla wędkarzy."
+        "pl": "Sklep z artykułami i osprzętem dla wędkarzy.",
+        "es": "Tienda donde puedes comprar equipo de pesca."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/fishing",
@@ -5642,7 +5722,7 @@
       "id": "shop/flooring",
       "icon": "temaki-tools",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#flooring#brand"],
       "lbl": {
         "en": "Flooring Supply Shop",
         "de": "Fußbodengeschäft",
@@ -5924,7 +6004,8 @@
         "sv": "Fryst mat, frysmat,  snabbmat, matlådor, fryst, frys, färdigmat, färdigrätt, färdigrätter, mat, lunch",
         "uk": "магазин,їжа,продукти,напівфабрикати",
         "vi": "tiệm thực phẩm đông lạnh, cửa hàng thực phẩm đông lạnh, tiệm đồ ăn đông lạnh, cửa hàng đồ ăn đông lạnh, tiem thuc pham dong lanh, cua hang thuc pham dong lanh, tiem do an dong lanh, cua hang do an dong lanh",
-        "eo": "frostigita manĝaĵo,fridigita manĝaĵo"
+        "eo": "frostigita manĝaĵo,fridigita manĝaĵo",
+        "ko": "냉동식품 상점"
       },
       "description": {
         "en": "A shop that mainly sells frozen food",
@@ -5965,7 +6046,8 @@
         "sv": "Bränsleaffär",
         "uk": "Паливо",
         "vi": "Tiệm Nhiên liệu",
-        "eo": "Brulaĵ-vendejo"
+        "eo": "Brulaĵ-vendejo",
+        "no": "Drivstoffbuttikk"
       },
       "terms": {
         "en": "",
@@ -5983,7 +6065,8 @@
         "sv": "Bränsleaffär, bränslebutik, bränsle, motorbränsle, kol, träkol, eldningsolja, motorbränsle, propan, LPG, fotogen",
         "uk": "магазин,паливо,дрова,вугілля,газ,солярка,дизель,бензин,керосин",
         "vi": "tiệm nhiên liệu, cửa hàng nhiên liệu, tiệm xăng, cửa hàng xăng, tiệm dầu lửa, cửa hàng dầu lửa, tiem nhien lieu, cua hang nhien lieu, tiem xang, cua hang xang, tiem dau lua, cua hang dau lua",
-        "eo": "brulaĵo,benzino,fuelo,gaso,gasboteloj,gasujoj,boteloj"
+        "eo": "brulaĵo,benzino,fuelo,gaso,gasboteloj,gasujoj,boteloj",
+        "ko": "연료 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/fuel",
@@ -6270,7 +6353,8 @@
         "nl": "Bordspellenwinkel",
         "pl": "Sklep z grami",
         "uk": "Настільні ігри",
-        "eo": "Tabullud‑vendejo"
+        "eo": "Tabullud‑vendejo",
+        "no": "Bordspill Butikk"
       },
       "terms": {
         "en": "board game,card game,dice game,game shop,live action role-playing game,miniatures wargame,strategy game",
@@ -6283,7 +6367,8 @@
         "ja": "ボードゲーム販売店, ボードゲーム, カードゲーム, ロールプレイングゲーム, トレーディングカード, ゲーム, 店舗, お店, 娯楽",
         "pl": "sklep z grami, planszowymi, karcianymi, bez prądu, gry, gry planszowe, gry karciane, gry bitewne, planszówki, karcianki",
         "uk": "ігри,настільні,карткові,магазин,розваги,рольові,міні,стратегії",
-        "eo": "tabulludoj,kartludoj,rolludoj,rpg"
+        "eo": "tabulludoj,kartludoj,rolludoj,rpg",
+        "ko": "보드게임 상점"
       },
       "description": {
         "en": "Shop selling board games.",
@@ -6928,7 +7013,8 @@
         "sv": "frisörtillbehör, frisör, frisyr, hårförlängningar, hårspray, schampo, balsam, skönhetsmedel, konstgjorda naglar",
         "uk": "шампунь,кондиціонер,ножиці,фен",
         "vi": "tiệm mỹ phẩm tóc, tiệm mĩ phẩm tóc, cửa hàng mỹ phẩm tóc, cửa hàng mĩ phẩm tóc, tiem my pham toc, tiem mi pham toc, cua hang my pham toc, cua hang mi pham toc",
-        "eo": "hartondisto,tondisto"
+        "eo": "hartondisto,tondisto",
+        "ko": "미용실 용품 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/hairdresser_supply",
@@ -7068,7 +7154,8 @@
         "sv": "Hälsokostbutik",
         "uk": "Магазин здорового харчування",
         "vi": "Tiệm Thực phẩm Tự nhiên",
-        "eo": "Sanig-manĝaĵa vendejo"
+        "eo": "Sanig-manĝaĵa vendejo",
+        "no": "Helsekostbutikk"
       },
       "terms": {
         "en": "wholefood,vitamins,vegetarian,vegan",
@@ -7087,7 +7174,8 @@
         "sv": "Hälsokostbutik, hälsokost, hälsomat, organisk, organist,  vitaminer, vegetarian, vegan, naturligt, kosttillskott, köttersättning, mjölkersättning",
         "uk": "харчові добавки,вітаміни,вегеріанский,веганський",
         "vi": "tiệm thực phẩm tự nhiên, cửa hàng thực phẩm tự nhiên, tiệm thực phẩm bổ dưỡng, cửa hàng thực phẩm bổ dưỡng, tiem thuc pham tu nhien, cua hang thuc pham tu nhien, tiem thuc pham bo duong, cua hang thuc pham bo duong",
-        "eo": "saniga manĝaĵo,sana manĝaĵo,ekologia manĝaĵo,vegetarisma manĝaĵo"
+        "eo": "saniga manĝaĵo,sana manĝaĵo,ekologia manĝaĵo,vegetarisma manĝaĵo",
+        "ko": "건강식품 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/health_food",
@@ -7099,7 +7187,8 @@
         "de": "Naturkostladen oder Bioladen",
         "cs": "???",
         "ja": "健康食品店。自然食品、ビタミン、栄養補助食品、肉、代替食品などを販売。",
-        "pl": "Sklep ze zdrową żywnością; sprzedający produkty pełnoziarniste, witaminy, suplementy diety oraz alternatywy dla mięsa i nabiału."
+        "pl": "Sklep ze zdrową żywnością; sprzedający produkty pełnoziarniste, witaminy, suplementy diety oraz alternatywy dla mięsa i nabiału.",
+        "es": "Una tienda de alimentos saludables; venta de alimentos integrales, vitaminas, suplementos nutricionales y alternativas de carne y lácteos."
       }
     },
     {
@@ -7173,7 +7262,8 @@
         "uk": "магазин, вади, слух, підсилення, апарат",
         "vi": "tiệm ống nghe, cửa hàng ống nghe, cửa hiệu ống nghe, điếc tai, tiem ong nghe, cua hang ong nghe, cua hieu ong nghe, diec tai",
         "zh": "听觉恢复用品店",
-        "eo": "aŭdhelpiloj,audhelpiloj,auxdhelpiloj,aŭdiloj,aŭskultiloj,orelhelpiloj"
+        "eo": "aŭdhelpiloj,audhelpiloj,auxdhelpiloj,aŭdiloj,aŭskultiloj,orelhelpiloj",
+        "ko": "보청기 상점"
       },
       "description": {
         "en": "A shop specialized in selling hearing aids devices",
@@ -7253,7 +7343,8 @@
         "uk": "рослини, трави, ботаника",
         "vi": "tiệm thuốc bắc, tiệm thuốc nam, cửa hàng thuốc bắc, cửa hàng thuốc nam, cửa hiệu thuốc bắc, cửa hiệu thuốc nam, tiệm thuốc đông y, tiệm thuốc đông dược, cửa hàng thuốc đông y, cửa hàng thuốc đông dược, cửa hiệu thuốc đông y, cửa hiệu thuốc đông dược, tiem thuoc bac, tiem thuoc nam, cua hang thuoc bac, cua hang thuoc nam, cua hieu thuoc bac, cua hieu thuoc nam, tiem thuoc dong y, tiem thuoc dong duoc, cua hang thuoc dong y, cua hang thuoc dong duoc, cua hieu thuoc dong y, cua hieu thuoc dong duoc",
         "zh": "草药店,草药,中医,医疗,药房,药品,用品,商店,治疗,医院",
-        "eo": "herboj,herbisto,herbovendejo,drogherboj,kuracherboj"
+        "eo": "herboj,herbisto,herbovendejo,drogherboj,kuracherboj",
+        "ko": "약초 상점"
       },
       "description": {
         "en": "Shop focused on selling herbs, often for medical purposes",
@@ -7382,7 +7473,8 @@
         "pl": "Sklep hobbystyczny",
         "sv": "Hobbyaffär",
         "uk": "Магазин товарів для хоббі",
-        "fi": "Harrastuskauppa"
+        "fi": "Harrastuskauppa",
+        "no": "Hobby Butikk"
       },
       "terms": {
         "en": "manga,figurine,model",
@@ -7471,7 +7563,8 @@
         "uk": "господарство, прибирання, побутова, хімія, товар, гігієна",
         "vi": "tiệm gia dụng, tiệm đồ gia dụng, tiệm đồ dùng gia đình, cửa hàng gia dụng, cửa hàng đồ gia dụng, tiem gia dung, tiem do gia dung, tiem do dung gia dinh, cua hang gia dung, cua hang do gia dung",
         "zh": "小型家饰店",
-        "eo": "mastrumado,mastrumaparatoj,mastrumaj aparatoj,potoj,manĝ    iloj,kuirejo"
+        "eo": "mastrumado,mastrumaparatoj,mastrumaj aparatoj,potoj,manĝ    iloj,kuirejo",
+        "ko": "가정용품 상점"
       },
       "description": {
         "en": "A shop selling small household items",
@@ -7535,7 +7628,8 @@
         "sv": "Jaktaffär, jaktbutik, jakt, jaktutrustning, jaktvapen, jaktgevär",
         "uk": "полювання,кулі,стріли,лук,рушниця,капкан",
         "vi": "tiệm súng săn, tiệm săn bắn, cửa hàng súng săn, cửa hàng săn bắn, tiem sung san, tiem san ban, cua hang sung san, cua hang san ban",
-        "eo": "ĉasado,kaptado,bestoĉasado,armiloj,pafiloj,fusiloj"
+        "eo": "ĉasado,kaptado,bestoĉasado,armiloj,pafiloj,fusiloj",
+        "ko": "사냥 용품 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/hunting",
@@ -7550,7 +7644,8 @@
         "ru": "Магазин по продаже оружия и охотничьих принадлежностей",
         "cs": "Obchod s loveckými zbraněmi a vybavením.",
         "ja": "猟銃や狩猟道具を買うことができる店舗。",
-        "pl": "Sklep myśliwski"
+        "pl": "Sklep myśliwski",
+        "es": "Tienda donde puedes comprar equipo de caza y armas."
       }
     },
     {
@@ -7636,7 +7731,8 @@
         "uk": "інтерьєр, оздоблення, шпалери, занавіски, штори, килими, покрівля, меблі",
         "vi": "tiệm trang trí nội thất, cửa hàng trang trí nội thất, cửa hiệu trang trí nội thất, tiem trang tri noi that, cua hang trang thi noi that, cua hieu trang tri noi that",
         "zh": "室内装饰店",
-        "eo": "ensembloj,ornamoj,ornamaĵoj,dekoracioj,mebloj,meblaro"
+        "eo": "ensembloj,ornamoj,ornamaĵoj,dekoracioj,mebloj,meblaro",
+        "ko": "실내장식 상점"
       },
       "description": {
         "en": "Shop focused on selling interior decorations",
@@ -7688,7 +7784,8 @@
         "vi": "Tiệm Kim hoàn",
         "eo": "Juvelista vendejo",
         "cs": "Klenotnictví",
-        "tr": "Kuyumcu"
+        "tr": "Kuyumcu",
+        "ko": "귀금속 가게"
       },
       "terms": {
         "en": "bracelet,diamond,earrings,gem,gold,jeweler,jewellery,jeweller,necklace,pins,ring,silver",
@@ -7703,7 +7800,8 @@
         "pl": "jubiler, złotnik, złoto, srebro, skup złota, skup srebra, biżuteria, kolczyki, pierścionki, naszyjniki, rzemiosło, rzemieślnik, rzemieślnicy",
         "uk": "браслет,діамант,сережки,коштовний камінь,золото,ювелірні вироби, ювелір,намисто,шпильки,кільце,срібло,прикраси,перли,коралі",
         "vi": "tiệm kim hoàn, cửa hàng kim hoàn, quầy kim hoàn, tiệm đồ trang sức, cửa hàng đồ trang sức, quầy đồ trang sức, tiệm nữ trang, cửa hàng nữ trang, quầy nữ trang, vàng, bạc, ngọc, tiem kim hoan, cua hang kim hoan, quay kim hoan, tiem do trang suc, cua hang do trang suc, quay do trang suc, tiem nu trang, cua hang nu trang, quay nu trang, vang, bac, ngoc",
-        "eo": "juveloj,juvelaĵoj,juvelartoj,oraĵoj,diamantoj,ringoj"
+        "eo": "juveloj,juvelaĵoj,juvelartoj,oraĵoj,diamantoj,ringoj",
+        "ko": "귀금속 상점"
       },
       "description": {
         "en": "A shop that sells rings, necklaces, earrings, watches, etc.",
@@ -8126,7 +8224,8 @@
         "uk": "шкіра, шкіряні вироби",
         "vi": "tiệm đồ da, cửa hàng đồ da, cửa hiệu đồ da, quán đồ da, tiệm quần áo da, cửa hàng quần áo da, cửa hiệu quần áo da, quán quần áo da, tiem do da, cua hang do da, cua hieu do da, quan do da, tiem quan ao da, cua hang quan ao da, cua hieu quan ao da, quan quan ao da",
         "zh": "皮具店",
-        "eo": "galanterio,ledo,ledaĵoj,ledajhoj,ledajxoj"
+        "eo": "galanterio,ledo,ledaĵoj,ledajhoj,ledajxoj",
+        "ko": "가죽 상점"
       },
       "description": {
         "en": "A shop for products made out of leather",
@@ -8179,7 +8278,9 @@
         "pl": "oświetlenie, lampy, lampki, żarówki, led",
         "sv": "Belysningsbutik, belysning, lampor, LED, glödlampor",
         "uk": "лампа,освітлення,люстра,ліхтар,бра,світильник,світлодіоди",
-        "eo": "prilimigado,lampoj,bulboj"
+        "eo": "prilimigado,lampoj,bulboj",
+        "it": "lampade,lampadari,plafoniere",
+        "ko": "조명 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/lighting",
@@ -8190,7 +8291,8 @@
         "en": "A shop selling lighting fixtures and lamps.",
         "cs": "Obchod s osvětlením",
         "ja": "主に照明器具を販売する店舗です。",
-        "pl": "Sklep sprzedający lampy oraz oprawy oświetleniowe."
+        "pl": "Sklep sprzedający lampy oraz oprawy oświetleniowe.",
+        "de": "Ein Geschäft, das Leuchten und Lampen verkauft."
       }
     },
     {
@@ -8535,7 +8637,8 @@
         "uk": "салон, СПА, процедура, відпочинок",
         "vi": "tiệm xoa bóp, cửa hàng xoa bóp, cửa hiệu xoa bóp, quán xoa bóp, tiệm châm cứu, cửa hàng châm cứu, cửa hiệu châm cứu, quán châm cứu, tiem xoa bop, cua hang xoa bop, cua hieu xoa bop, quan xoa bop, tiem cham cuu, cua hang cham cuu, cua hieu cham cuu, quan cham cuu",
         "zh": "按摩店",
-        "eo": "masaĝo,masagho,masagxo"
+        "eo": "masaĝo,masagho,masagxo",
+        "ko": "마사지 상점"
       },
       "description": {
         "en": "Massage shop",
@@ -8624,7 +8727,8 @@
         "uk": "магазин, медицина, техніка, обладнання, препарати",
         "vi": "tiệm thiết bị y tế, cửa hàng thiết bị y tế, cửa hiệu thiết bị y tế, tiem thiet bi y te, cua hang thiet bi y te, cua hieu thiet bi y te",
         "zh": "医疗,医护,药房,药品,用品,商店,医院,治疗",
-        "eo": "medicinaĵoj"
+        "eo": "medicinaĵoj",
+        "ko": "의료 용품 상점"
       },
       "description": {
         "en": "A store where you can buy medical equipment for private persons.",
@@ -9019,7 +9123,8 @@
         "uk": "Ремонт мотоциклів",
         "vi": "Tiệm Sửa Xe máy",
         "zh": "摩托车修理店",
-        "eo": "Motorcikl-riparejo"
+        "eo": "Motorcikl-riparejo",
+        "no": "Motorsykkelverksted"
       },
       "terms": {
         "en": "auto,bike,garage,motorcycle,repair,service",
@@ -9318,7 +9423,8 @@
         "uk": "новини, журнал, газета",
         "vi": "tiệm báo, cửa hàng báo, cửa hiệu báo, quầy báo, tiệm tạp chí, cửa hàng tạp chí, cửa hiệu tạp chí, quầy tạp chí, tiem bao, cua hang bao, cua hieu bao, quay bao, quan bao, tiem tap chi, cua hang tap chi, cua hieu tap chi, quay tap chi",
         "zh": "报摊",
-        "eo": "gazetvendejo,gazetejo,magazinoj"
+        "eo": "gazetvendejo,gazetejo,magazinoj",
+        "ko": "신문/잡지 상점"
       },
       "description": {
         "en": "A shop selling newspapers and magazines.",
@@ -9399,14 +9505,16 @@
         "uk": "вітаміни,мінерали,спортивне харчування,дієтичне харчування,амінокіслоти",
         "vi": "tiệm thuốc bổ, tiệm thuốc uống bổ trợ, cửa hàng thuốc bổ, cửa hàng thuốc uống bổ trợ, quầy thuốc bổ, quầy thuốc uống bổ trợ, tiem thuoc bo, tiem thuoc uong bo tro, cua hang thuoc bo, cua hang thuoc uong bo tro, quay thuoc bo, quay thuoc uong bo tro",
         "zh": "保健品店",
-        "eo": "dietsuplementoj,nutraĵoj"
+        "eo": "dietsuplementoj,nutraĵoj",
+        "ko": "영양 보조 식품 상점"
       },
       "description": {
         "en": "Shops that sells nutritional supplements different types of purified proteins, fats, vitamins, minerals and/or herbs.",
         "fr": "",
         "cs": "Obchod prodávající potravinové doplňky (z vitamínů, minerálů a/nebo bylinek)",
         "ja": "サプリメント（ビタミン剤、ミネラル、ハーブなど）を販売する店舗",
-        "pl": "Sklep zajmujący się sprzedażą różnego typu syntetycznych suplementów diety takich jak: białko, tłuszcze, witaminy, minerały oraz/lub zioła."
+        "pl": "Sklep zajmujący się sprzedażą różnego typu syntetycznych suplementów diety takich jak: białko, tłuszcze, witaminy, minerały oraz/lub zioła.",
+        "de": "Geschäft für Nahrungsergänzungsmittel"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/nutrition_supplements",
@@ -9584,7 +9692,8 @@
         "uk": "магазин, їжа, органічна, корисна, без добрив",
         "vi": "tiệm thực phẩm hữu cơ, tiệm đồ ăn hữu cơ, cửa hàng thực phẩm hữu cơ, cửa hàng đồ ăn hữu cơ, cửa hiệu thực phẩm hữu cơ, cửa hiệu đồ ăn hữu cơ, tiem thuc pham huu co, tiem do an huu co, cua hang thuc pham huu co, cua hang do an huu co, cua hieu thuc pham huu co, cua hieu do an huu co",
         "zh": "有机产品店",
-        "eo": "ekologia manĝaĵo,organika manĝaĵo"
+        "eo": "ekologia manĝaĵo,organika manĝaĵo",
+        "ko": "유기농 식품 상점"
       },
       "description": {
         "en": "",
@@ -9806,7 +9915,8 @@
         "uk": "фарби, пензлі, розчинник, колір",
         "vi": "tiệm sơn, cửa hàng sơn, cửa hiệu sơn, quán sơn, tiem son, cua hang son, cua hieu son, quan son",
         "zh": "油漆店,颜料店",
-        "eo": "farboj,kolorigiloj,lakoj,pentriloj"
+        "eo": "farboj,kolorigiloj,lakoj,pentriloj",
+        "ko": "페인트 상점"
       },
       "description": {
         "en": "A shop where you can buy paints.",
@@ -9869,7 +9979,8 @@
         "sv": "Partybutik, kallasutrustning, festutrustning, festivalutrustning, kallas, fest, festival, partyutrustning, party, kallasdekoration, dekoration, ballonger, serpentiner, engångstallrikar, engångsbestick, engångsglas,  dräkter, utklädning, småpresenter",
         "uk": "повітряні кульки,наряди,костюм,оздоблення,запрошення,листівки",
         "vi": "tiệm phụ kiện trang trí tiệc, tiệm phụ kiện tiệc, tiệm trang trí tiệc, tiệm trang phục, cửa hàng phụ kiện trang trí tiệc, cửa hàng phụ kiện tiệc, cửa hàng trang trí tiệc, cửa hàng trang phục, liên hoan, sinh nhật, khí cầu, quả bóng, tiem phu kien trang tri tiec, tiem phu kien tiec, tiem trang tri tiec, tiem trang phuc, cua hang phu kien trang tri tiec, cua hang phu kien tiec, cua hang trang tri tiec, cua hang trang phuc, lien hoan, sinh nhat, khi cau, qua bong",
-        "eo": "okazaĵoj,eventoj,balonoj,kostumoj"
+        "eo": "okazaĵoj,eventoj,balonoj,kostumoj",
+        "ko": "파티 용품 상점"
       },
       "description": {
         "en": "Shop selling party supplies like decorations, invitations and costumes.",
@@ -9970,7 +10081,8 @@
         "uk": "магазин,солодощі,кондитерські,вироби,тістечко",
         "vi": "tiệm bánh ngọt, cửa hàng bánh ngọt, quán bánh ngọt, tiệm bánh, cửa hàng bánh, quán bánh, bánh ngọt, bánh quy, bánh qui, bánh sinh nhật, bánh sanh nhật, pa-tê-sô, patêsô, tiem banh ngot, cua hang banh ngot, quan banh ngot, tiem banh, cua hang banh, quan banh, banh ngot, banh quy, banh qui, banh sinh nhat, banh sanh nhat, pa-te-so, pateso",
         "zh": "油酥点心店,糕点店,糕饼店,面包点心店",
-        "eo": "panejo,bakejo,sukeraĵejo"
+        "eo": "panejo,bakejo,sukeraĵejo",
+        "ko": "과자 상점"
       },
       "description": {
         "en": "A shop where sweet bakery products are produced and sold",
@@ -10141,7 +10253,8 @@
         "vi": "tiệm nước hoa, cửa hàng nước hoa, tiệm dầu thơm, cửa hàng dầu thơm, tiem nuoc hoa, cua hang nuoc hoa, tiem dau thom, cua hang dau thom",
         "zh": "香水,商店,香精,香,店",
         "ca": "Perfumeria, botiga de colònies",
-        "eo": "parfumoj,parfumejo,bonodorejo"
+        "eo": "parfumoj,parfumejo,bonodorejo",
+        "ko": "향수 상점"
       },
       "description": {
         "en": "A shop selling perfumes.",
@@ -10298,7 +10411,8 @@
         "sv": "Pälsvård för husdjur, pälsvård, husdjur, hund, Trimning, hundvård",
         "uk": "собака,кіт,стрижка,підрізка кігтів,купання,мийка",
         "vi": "dịch vụ tỉa lông, tỉa lông thú cưng, tỉa lông chó, tỉa lông mèo, tỉa lông ngựa, dich vu tia long, tia long thu cung, tia long cho, tia long meo, tia long ngua",
-        "eo": "frizejo,hartondisto,hundoj,katoj,hejmbestoj"
+        "eo": "frizejo,hartondisto,hundoj,katoj,hejmbestoj",
+        "ko": "애완동물 용품 상점"
       },
       "description": {
         "en": "A shop offering grooming services for pets (most frequently dogs)",
@@ -10413,7 +10527,7 @@
       "id": "shop/pottery",
       "icon": "temaki-vase",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#pottery#brand"],
       "lbl": {
         "en": "Pottery Store",
         "de": "Keramikladen",
@@ -10422,7 +10536,8 @@
         "ja": "陶磁器店",
         "mk": "Продавница за грнчарија",
         "pl": "Sklep garncarski",
-        "uk": "Порцелянові вироби"
+        "uk": "Порцелянові вироби",
+        "ko": "도자기 가게"
       },
       "terms": {
         "en": "ceramic, pot, vase",
@@ -10431,7 +10546,8 @@
         "pt": "vasos,potes,porcelana,cerâmica,louça",
         "ja": "陶磁器店, 陶器店, 皿, 茶碗, 焼き物",
         "pl": "sklep garncarski, garncarstwo, porcelana, ceramika",
-        "uk": "магазин,гончар,порцеляна,фаянс,посуд,ваза,тарілка,кераміка"
+        "uk": "магазин,гончар,порцеляна,фаянс,посуд,ваза,тарілка,кераміка",
+        "ko": "도자기 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/pottery",
@@ -10478,7 +10594,8 @@
         "pl": "sklep z tuszami do drukarek, tusze, tonery, drukarki",
         "sv": "Butik för skrivarbläck, kopieringsbläck, skrivarbläck, faxbläck, bläck, skrivartoner, toner, skrivare, kopiator, fax",
         "uk": "тонер,чорнила,копірка,друк,принтер",
-        "eo": "presilinko,inko,kartoĉo,farbopulvoro"
+        "eo": "presilinko,inko,kartoĉo,farbopulvoro",
+        "ko": "프린터 잉크 상점"
       },
       "description": {
         "en": "A shop that sells or refills printer ink cartridges",
@@ -10589,7 +10706,8 @@
         "uk": "салют, свято, установка, свіча, бенгальский, вогонь, вистріл",
         "vi": "tiệm pháo bông, cửa hàng pháo bông, cửa hiệu pháo bông, quán pháo bông, tiệm pháo hoa, cửa hàng pháo hoa, cửa hiệu pháo hoa, quán pháo hoa, tiem phao bong, cua hang phao bong, cua hieu phao bong, quan phao bong, tiem phao hoa, cua hang phao hoa, cua hieu phao hoa, quan phao hoa",
         "zh": "烟花爆竹店",
-        "eo": "artfajraĵoj,artfajrajhoj,artfajrajxoj,fajraĵoj,piroteknikaĵoj,piroteĥnikaĵoj"
+        "eo": "artfajraĵoj,artfajrajhoj,artfajrajxoj,fajraĵoj,piroteknikaĵoj,piroteĥnikaĵoj",
+        "ko": "불꽃놀이 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/pyrotechnics",
@@ -10670,7 +10788,8 @@
         "vi": "tiệm linh kiện điện tử, tiệm linh kiện điện thoại, tiệm linh kiện vô tuyến, tiệm linh kiện rađiô, tiệm linh kiện radio, cửa hàng linh kiện điện tử, cửa hàng linh kiện điện thoại, cửa hàng linh kiện vô tuyến, cửa hàng linh kiện rađiô, cửa hàng linh kiện radio, cửa hiệu linh kiện điện tử, cửa hiệu linh kiện điện thoại, cửa hiệu linh kiện vô tuyến, cửa hiệu linh kiện rađiô, cửa hiệu linh kiện radio, tiem linh kien dien tu, tiem linh kien dien thoai, tiem linh kien vo tuyen, tiem linh kien radio, cua hang linh kien dien tu, cua hang linh kien dien thoai, cua hang linh kien vo tuyen, cua hang linh kien radio, cua hieu linh kien dien tu, cua hieu linh kien dien thoai, cua hieu linh kien vo tuyen, cua hieu linh kien radio",
         "zh": "音像制品店",
         "eo": "radioteĥniko,radiotekniko,elektroniko",
-        "fa": "آنتن, ترانزیستور"
+        "fa": "آنتن, ترانزیستور",
+        "ko": "라디오/전자 부품 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/radiotechnics",
@@ -10750,7 +10869,8 @@
         "uk": "свічки,ікони,образи,релігія,книжки,література,талісмани,обереги",
         "vi": "tiệm bán đồ tôn giáo, cửa hàng bán đồ tôn giáo, cửa hiệu bán đồ tôn giáo, tiệm sách tôn giáo, hiệu sách tôn giáo, cửa hàng sách tôn giáo, cửa hiệu sách tôn giáo, tiem ban do ton giao, cua hang ban do ton giao, cua hieu ban do ton giao, tiem sach ton giao, hieu sach ton giao, cua hang sach ton giao, cua hieu sach ton giao",
         "zh": "宗教商店",
-        "eo": "religiaĵoj,devotaĵoj,devotajhoj,devotajxoj,religio,kultobjektoj"
+        "eo": "religiaĵoj,devotaĵoj,devotajhoj,devotajxoj,religio,kultobjektoj",
+        "ko": "종교 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/religion",
@@ -10785,7 +10905,8 @@
         "sv": "Hyrbutik",
         "uk": "Станція прокату",
         "pt": "Loja de aluguer de material em geral",
-        "vi": "Cho thuê Hàng hóa"
+        "vi": "Cho thuê Hàng hóa",
+        "ko": "대여점"
       },
       "terms": {
         "en": "",
@@ -10886,7 +11007,8 @@
         "uk": "магазин, пірнання, плавання, підводне, акваланг, ласти, обладнання, гідрокостюм",
         "vi": "tiệm dụng cụ lặn scuba, cửa hàng dụng cụ lặn scuba, cửa hiệu dụng cụ lặn scuba, tiem dung cu lan scuba, cua hang dung cu lan scuba, cua hieu dung cu lan scuba",
         "zh": "潜水商店",
-        "eo": "subakvadaparatoj,subakvadiloj,subakvado,plonĝado"
+        "eo": "subakvadaparatoj,subakvadiloj,subakvado,plonĝado",
+        "ko": "스쿠버 다이빙 상점"
       },
       "description": {
         "en": "A shop that sells eqipment for scuba diving and/or related accessories and services",
@@ -11129,7 +11251,8 @@
         "sv": "sybutik. sömnadsbutik, sy, sömnad, nå, tråd, tyg, garn, symaskin",
         "uk": "нитки,голки,пряжа,в'язальні спиці,швейні машини",
         "vi": "tiệm đồ kim chỉ, tiệm đồ may, tiệm máy may, cửa hàng đồ kim chỉ, cửa hàng đồ may, cửa hàng máy may, tiem do kim chi, tiem do may, tiem may may, cua hang do kim chi, cua hang do may, cua hang may may",
-        "eo": "pasamento,kudriloj,ŝtofo,teksaĵo,pingloj"
+        "eo": "pasamento,kudriloj,ŝtofo,teksaĵo,pingloj",
+        "ko": "바느질 용품 상점"
       },
       "description": {
         "en": "A shop that sells sewing supplies (fabric, thread, yarn, knitting needles, sewing machines, etc.)",
@@ -11225,7 +11348,8 @@
         "vi": "tiệm giày, cửa hàng giày, chỗ bán giày, cửa hiệu giày, dép, tiem giay, cua hang giay, cho ban giay, cua hieu giay, dep",
         "zh": "鞋店",
         "ca": "Sabateria, Botiga de sabates, Sabater",
-        "eo": "ŝuoj,shuoj,sxuoj,botoj,ŝuovendejo,botvendejo"
+        "eo": "ŝuoj,shuoj,sxuoj,botoj,ŝuovendejo,botvendejo",
+        "ko": "신발 상점"
       },
       "description": {
         "en": "A shop selling shoes",
@@ -11285,7 +11409,8 @@
         "he": "צ׳ילי,צ'ילי,קינמון,קארי,זנגביל,ג׳ינג׳ר,ג'ינג'ר,תבלינים,תבלין,זעפרן,וסאבי,כורכום,כמון,פלפל,חריף,לימון פרסי,זעתר",
         "ja": "スパイス店, 香辛料店, お店",
         "pl": "przyprawy, zioła, suszone owoce, orzechy",
-        "uk": "чилі,кориця,каррі,імбир,зелень,перець,шафран,сіль,магазин,спецій,спеції,куркума,васабі,приправа"
+        "uk": "чилі,кориця,каррі,імбир,зелень,перець,шафран,сіль,магазин,спецій,спеції,куркума,васабі,приправа",
+        "ko": "향신료 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/spices",
@@ -11383,7 +11508,8 @@
         "uk": "Sporting Goods Store,cgjhnnjdfhb, спорттовари",
         "vi": "khu vực bán dụng cụ thể thao, chỗ bán dụng cụ thể thao, tiệm bán dụng cụ thể thao, nơi bán dụng cụ thể thao, cửa hàng bán dụng cụ thể thao, cửa hiệu bán dụng cụ thể thao, quầy bán dụng cụ thể thao, cửa tiệm dụng cụ thể thao, bóng, thanh tạ, giày đi bộ, giày trượt băng, vợt, khu vuc ban dung cu the thao, cho ban dung cu the thao, tiem ban dung cu the thao, noi ban dung cu the thao, cua hang ban dung cu the thao, cua hieu ban dung cu the thao, quay ban dung cu the thao, cua tiem dung cu the thao, bong, thanh ta, giay di bo, giay truot bang, vot",
         "zh": "体育,体育用品店",
-        "eo": "sportovendejo,vestovendejo"
+        "eo": "sportovendejo,vestovendejo",
+        "ko": "스포츠 용품 상점"
       },
       "description": {
         "en": "A shop selling sports equipment and clothing.",
@@ -11698,7 +11824,8 @@
         "sv": "Butik för pooltillbehör",
         "uk": "Обладнання для басейнів",
         "eo": "Vendejo de naĝej-akcesoriaĵoj",
-        "fi": "Uima-allasliike"
+        "fi": "Uima-allasliike",
+        "ko": "수영장 용품 가게"
       },
       "terms": {
         "en": "hot tub equipment store,hot tub maintenance store,hot tub supply store,pool shop,pool store,swimming pool equipment store,swimming pool installation store,swimming pool maintenance store,swimming pool supply shop",
@@ -11711,7 +11838,8 @@
         "pl": "Sklep z akcesoriami do basenów, akcesoria do basenów, materiały do basenów, baseny",
         "sv": "Pooltillbehörsbutik, badtunna, poolbutik, poolutrustningsbutik, poolinstallationsbutik, poolunderhållsbutik, poolbutikleveransbutik´, poolinstallation, poolunderhåll, poolservice, pool, basäng, jacussy",
         "uk": "ванна,тепла,вода,обслуговування,встановлення,утримання,басейн,фільтр",
-        "eo": "naĝejo,naĝbaseno"
+        "eo": "naĝejo,naĝbaseno",
+        "ko": "수영장 용품 상점"
       },
       "description": {
         "en": "A store that sells swimming pool equipment and supplies",
@@ -11968,7 +12096,8 @@
         "uk": "чай, трави, напої, чайник, заварка",
         "vi": "tiệm bán trà khô, tiệm bán chè khô, cửa hàng bán trà khô, cửa hàng bán chè khô, cửa hiệu bán trà khô, cửa hiệu bán chè khô, tiem ban tra kho, tiem ban che kho, cua hang ban tra kho, cua hang ban che kho, cua hieu ban tra kho, cua hieu ban che kho",
         "zh": "茶,茶叶,茶店,茶品,红茶,黄茶,清茶,青茶,绿茶,花茶,黑茶,白茶,乌龙,商店",
-        "eo": "teo,teejo"
+        "eo": "teo,teejo",
+        "ko": "차 상점"
       },
       "description": {
         "en": "Shop selling tea",
@@ -11991,7 +12120,7 @@
       "id": "shop/telecommunication",
       "icon": "maki-telephone",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#telecommunication#brand"],
       "lbl": {
         "en": "Telecom Retail Store",
         "fr": "Magasin de compagnie de télécommunication",
@@ -12003,7 +12132,8 @@
         "ja": "通信サービス店",
         "mk": "Телекомуникациска продавница",
         "pl": "Dostawca Internetu/telefonu/TV",
-        "uk": "Магазин телекомунікаційного обладнання"
+        "uk": "Магазин телекомунікаційного обладнання",
+        "ko": "통신사 대리점"
       },
       "terms": {
         "en": "communication, internet service provider, isp, network, telephone, voice",
@@ -12161,7 +12291,8 @@
         "uk": "магазин,кахель,кахлі,плитка,керамічна",
         "vi": "tiệm ngói, cửa hàng ngói, tiem ngoi, cua hang ngoi",
         "zh": "磁磚商店",
-        "eo": "kaheloj,kahelaro,planko,platoj"
+        "eo": "kaheloj,kahelaro,planko,platoj",
+        "ko": "타일 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/tiles",
@@ -12274,7 +12405,7 @@
       "id": "shop/tool_hire",
       "icon": "temaki-tools",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#tool_hire#brand"],
       "lbl": {
         "en": "Tool Rental",
         "de": "Werkzeugverleih",
@@ -12795,7 +12926,8 @@
         "uk": "приладдя, прибирання, мішки, щітка, пилосос, швабра",
         "vi": "tiệm máy hút bụi, cửa hàng máy hút bụi, cửa hiệu máy hút bụi, quán hút bụi, tiem may hut bui, cua hang may hut bui, cua hieu may hut bui, quan hut bui",
         "zh": "吸尘器店",
-        "eo": "polvosuĉiloj,polvosochiloj,polvosucxiloj,senpolvigiloj"
+        "eo": "polvosuĉiloj,polvosochiloj,polvosucxiloj,senpolvigiloj",
+        "ko": "진공청소기 상점"
       },
       "description": {
         "en": "A shop that sales vacuum cleaners",
@@ -12803,7 +12935,8 @@
         "pt": "Loja de venda de aspiradores de pó e/ou líquidos e produtos associados.",
         "ru": "Магазин по продаже пылесосов",
         "cs": "Obchod prodávající vysavače",
-        "ja": "掃除機を販売する店舗"
+        "ja": "掃除機を販売する店舗",
+        "de": "Ein Staubsaugergeschäft"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/vacuum_cleaner",
@@ -13079,7 +13212,8 @@
         "uk": "ігри, приставка, денді, комп’ютер, сега, икс-бокс, плейстейшен, x-box, playstation, dende, sega, atari",
         "vi": "tiệm trò chơi điện tử, tiệm video game, tiệm trò chơi video, tiệm game, cửa hàng trò chơi điện tử, cửa hàng video game, cửa hàng trò chơi video, cửa hàng game, cửa hiệu trò chơi điện tử, cửa hiệu video game, cửa hiệu trò chơi video, cửa hiệu game, tiem tro choi dien tu, tiem video game, tiem tro choi video, tiem game, cua hang tro choi dien tu, cua hang video game, cua hang tro choi video, cua hang game, cua hieu tro choi dien tu, cua hieu video game, cua hieu tro choi video, cua hieu game",
         "zh": "电子游戏店,视频游戏店",
-        "eo": "videoludoj,komputilaj ludoj,elektronikaj ludoj"
+        "eo": "videoludoj,komputilaj ludoj,elektronikaj ludoj",
+        "ko": "비디오 게임 상점"
       },
       "description": {
         "en": "Shop selling video games.",
@@ -13165,7 +13299,8 @@
         "vi": "tiệm đồng hồ đeo tay, cửa hàng đồng hồ đeo tay, tiem dong ho deo tay, cua hang dong ho deo tay",
         "zh": "手表店,钟表店,Watches Shop",
         "ca": "Botiga d'ulleres",
-        "eo": "horloĝoj,horloghoj,horlogxoj,poŝhorloĝoj"
+        "eo": "horloĝoj,horloghoj,horlogxoj,poŝhorloĝoj",
+        "ko": "손목시계 상점"
       },
       "description": {
         "en": "A shop that sells watches.",
@@ -13228,7 +13363,8 @@
         "sv": "Dricksvatten, vatten",
         "uk": "вода,питна,бутиль,баклажка,магазин",
         "vi": "tiệm nước uống, cửa hàng nước uống, tiệm nước lọc, cửa hàng nước lọc, nước đóng chai, tiem nuoc uong, cua hang nuoc uong, tiem nuoc loc, cua hang nuoc loc, nuoc dong chai",
-        "eo": "akvo,trinkebla akvo,boteligita akvo,enboteligita akvo"
+        "eo": "akvo,trinkebla akvo,boteligita akvo,enboteligita akvo",
+        "ko": "식수 상점"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/water",
@@ -13390,7 +13526,8 @@
         "fr": "Magasin vendant des armes à feu, couteaux, etc",
         "de": "Waffenladen",
         "cs": "Obchod zaměřený na zbraně jako jsou nože, pistole, pušky, atd.",
-        "ja": "主にナイフや銃などの武器を販売する店。"
+        "ja": "主にナイフや銃などの武器を販売する店。",
+        "es": "Tienda especializada en la venta de armas, como cuchillos, pistolas, rifles, etc."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/weapons",
@@ -13530,7 +13667,8 @@
         "uk": "магазин, жалюзі, ролети, занавіски",
         "vi": "tiệm mành mành, cửa hàng mành mành, cửa hiệu mành mành, tiệm màn sáo, cửa hàng màn sáo, cửa hiệu màn sáo, tiem manh manh, cua hang manh manh, cua hieu manh manh, tiem man sao, cua hang man sao, cua hieu man sao",
         "zh": "百叶窗店",
-        "eo": "fenestrkovriloj,fenestrokovriloj,latkurtenoj,rulkurtenoj,ĵaluzioj"
+        "eo": "fenestrkovriloj,fenestrokovriloj,latkurtenoj,rulkurtenoj,ĵaluzioj",
+        "ko": "창문 블라인드 상점"
       },
       "description": {
         "en": "A shop that sells window blinds.",
@@ -13920,7 +14058,8 @@
       "iDRef": "healthcare/birthing_center",
       "tags": {"healthcare": "birthing_center"},
       "moreFields": [],
-      "id": "healthcare/birthing_center"
+      "id": "healthcare/birthing_center",
+      "description": {"en": "", "es": "Un centro de parto no clínico."}
     },
     {
       "icon": "maki-blood-bank",
@@ -14309,7 +14448,8 @@
       "description": {
         "en": "baby,childbirth,delivery,labour,labor,pregnancy",
         "fr": "Maïeuticien",
-        "de": "Hebamme, Entbindungspfleger, Geburtshelfer, Geburtshelferin"
+        "de": "Hebamme, Entbindungspfleger, Geburtshelfer, Geburtshelferin",
+        "es": "Matrona."
       },
       "geometry": ["point", "area"],
       "iDRef": "healthcare/midwife",
@@ -15896,7 +16036,8 @@
         "pl": "Garaż dla rowerów",
         "sv": "Cykelparkeringsgarage",
         "uk": "Велостоянка-гараж",
-        "eo": "Bicikla parkumejo: konstruaĵo"
+        "eo": "Bicikla parkumejo: konstruaĵo",
+        "tr": "Bisiklet Park Yeri"
       },
       "terms": {
         "en": "Bike Parking Station,cycle parking,cycling,Multi-Storey Bicycle Park,Multi-Storey Bike Park",
@@ -16979,7 +17120,12 @@
     {
       "icon": "mi-car-wash",
       "markerColor": "#EF9228",
-      "presets": ["opening_hours", "payment_multi", "self_service"],
+      "presets": [
+        "amenity#car_wash#brand",
+        "opening_hours",
+        "payment_multi",
+        "self_service"
+      ],
       "lbl": {
         "en": "Car Wash",
         "fr": "Station de lavage de voiture",
@@ -17501,6 +17647,7 @@
       "icon": "fa-hospital-o",
       "markerColor": "#EF9228",
       "presets": [
+        "amenity#clinic#brand",
         "wheelchair",
         "phone",
         "website",
@@ -17907,6 +18054,7 @@
       "icon": "fa-graduation-cap",
       "markerColor": "#EF9228",
       "presets": [
+        "amenity#college#brand",
         "wheelchair",
         "operator/type",
         "website",
@@ -18593,6 +18741,7 @@
       "icon": "maki-dentist",
       "markerColor": "#EF9228",
       "presets": [
+        "amenity#dentist#brand",
         "wheelchair",
         "phone",
         "website",
@@ -18774,6 +18923,7 @@
       "icon": "maki-doctor",
       "markerColor": "#EF9228",
       "presets": [
+        "amenity#doctors#brand",
         "wheelchair",
         "phone",
         "website",
@@ -18989,7 +19139,8 @@
         "uk": "Роздягальня",
         "eo": "Vestejo",
         "el": "Αποδυτήρια",
-        "gl": "Vestiario"
+        "gl": "Vestiario",
+        "vi": "Phòng Thay đồ"
       },
       "terms": {
         "en": "changeroom,dressing room,fitting room,locker room",
@@ -19004,7 +19155,8 @@
         "sv": "Omklädningsrum, omklädning, ombyte, påklädning, påklädningsrum, loge, avklädning, avklädningsrum",
         "uk": "перевдягальня,примірочна",
         "eo": "travestejo,tualetejo",
-        "gl": "cambio de roupa, vestidor, vestuario, vestiarios, vistidor, gardarroupa, roupeiro, probador, mudar de roupa, cambiar de roupa"
+        "gl": "cambio de roupa, vestidor, vestuario, vestiarios, vistidor, gardarroupa, roupeiro, probador, mudar de roupa, cambiar de roupa",
+        "vi": "phòng thay đồ, phòng thay áo, phòng thay quần áo, phong thay do, phong thay ao, phong thay quan ao"
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/dressing_room",
@@ -20612,10 +20764,28 @@
       "id": "amenity/gambling",
       "icon": "fas-coins",
       "markerColor": "#EF9228",
-      "presets": [],
-      "lbl": {"en": "Gambling Hall"},
+      "presets": ["amenity#gambling#brand"],
+      "lbl": {
+        "en": "Gambling Hall",
+        "de": "Spielhalle",
+        "es": "Salón de juegos de azar",
+        "pt": "Sala de bingo",
+        "he": "היכל הימורים",
+        "ja": "ギャンブル場",
+        "ko": "도박장",
+        "mk": "Сала за коцкање",
+        "pl": "Salon pachinko/bingo",
+        "uk": "Ігорна зала"
+      },
       "terms": {
-        "en": "betting, bingo, blackjack, casino, craps, gamble, gambling, keno, lottery, pachinko, poker, roulette, slot machines, slots"
+        "en": "betting, bingo, blackjack, casino, craps, gamble, gambling, keno, lottery, pachinko, poker, roulette, slot machines, slots",
+        "de": "Glücksspiel, Bingo, Kartenspiele, Blackjack, Casino, Würfelspiel, Lotto, Pachinko, Poker, Roulette, Slotmaschinen,",
+        "es": "apuestas, bingo, blackjack, casino, dados, azar, juegos de azar, keno, lotería, pachinko, póker, poker, ruleta, máquinas tragamonedas, tragamonedas",
+        "pt": "jogo,bingo,pachinko",
+        "he": "קזינו,הימורים,סלוט מאשין,קולטה,פוקר,סלוטס,מכונות הימורים,בלק ג׳ק,בינגו,התערבות",
+        "ja": "ギャンブル場, 賭博場, カジノ",
+        "pl": "pachinko, bingo, automaty do gry, hazard, kasyno",
+        "uk": "бінго,казино,ставки,лото,кено,автомати,зала"
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/gambling",
@@ -20843,6 +21013,7 @@
       "icon": "mi-hospital",
       "markerColor": "#EF9228",
       "presets": [
+        "amenity#hospital#brand",
         "wheelchair",
         "phone",
         "website",
@@ -21313,7 +21484,8 @@
         "sv": "karaoke box,  karaoke,  karaokeklubb,  karaoke-klubb, karaokerum,  karaoke-rum,  karaoke-tv, KTV",
         "uk": "караоке,клуб,бар,спів,дозвілля",
         "vi": "dàn karaoke, phòng karaoke, truyền hình karaoke, ktv, karaoke, dan karaoke, phong karaoke, truyen hinh karaoke",
-        "eo": "karaokeo,kantado"
+        "eo": "karaokeo,kantado",
+        "ko": "가라오케"
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/karaoke_box",
@@ -21539,7 +21711,16 @@
       "icon": "mi-roofing-contractor",
       "markerColor": "#EF9228",
       "presets": ["operator/type", "access_simple"],
-      "lbl": {"en": "Lavoir", "fr": "Lavoir"},
+      "lbl": {
+        "en": "Lavoir",
+        "fr": "Lavoir",
+        "de": "Waschhaus",
+        "es": "Lavadero",
+        "pt": "Lavadouro",
+        "mk": "Пералница",
+        "pl": "Pralnia (przy rzece)",
+        "uk": "Місце для прання"
+      },
       "description": {
         "en": "A public place where people come to wash their clothes manually",
         "fr": "Un lieu public où les gens viennent laver leurs vêtements manuellement.",
@@ -21551,7 +21732,14 @@
       "geometry": ["point", "area"],
       "id": "amenity/lavoir",
       "iDRef": "amenity/lavoir",
-      "terms": {"en": "clothing, laundry, washing"},
+      "terms": {
+        "en": "clothing, laundry, washing",
+        "de": "Waschplatz, Waschstelle, Wäsche, Lavoir",
+        "es": "ropa, lavandería, lavanderia, lavado, lavoir",
+        "pt": "lavadouros,lavagem de roupa,fonte,água,roupas,tanque de lavagem",
+        "pl": "pralnia zewnętrzna, pranie",
+        "uk": "одяг,прання,громадське,місце,лавуар"
+      },
       "moreFields": []
     },
     {
@@ -22690,7 +22878,8 @@
         "uk": "Багатоповерхова стоянка",
         "vi": "Bãi Đậu xe Cao tầng",
         "zh": "多层停车场",
-        "eo": "Pluretaĝa parkumejo"
+        "eo": "Pluretaĝa parkumejo",
+        "tr": "Çok Katlı Otopark"
       },
       "terms": {
         "en": "car,indoor parking,multistorey car park,parkade,parking building,parking deck,parking garage,parking ramp,parking structure",
@@ -23567,7 +23756,9 @@
         "sv": "Rikets sal för Jehovas vittne",
         "uk": "Зал Царства Свідків Єгови",
         "eo": "Regnohalo de Atestantoj de Jehovo",
-        "gl": "Testemuñas de Xehová"
+        "gl": "Testemuñas de Xehová",
+        "it": "Sala del Regno dei testimoni di Geova",
+        "ko": "여호와의 증인 왕국회관"
       },
       "terms": {
         "en": "christian,church,house of God,house of prayer,house of worship",
@@ -24382,7 +24573,8 @@
         "fi": "Postilaatikko",
         "gl": "Caixa do correo",
         "hu": "Utcai postaláda",
-        "tr": "Posta Bırakma Kutusu"
+        "tr": "Posta Bırakma Kutusu",
+        "ko": "우체통"
       },
       "terms": {
         "en": "drop box,dropbox,letter drop,mail box,mail collection box,mail drop,mail dropoff,mailbox,package drop,pillar box,pillarbox,post box,postal box,postbox",
@@ -24440,7 +24632,9 @@
         "pl": "Sortownia listów lub paczek",
         "sv": "Postsorteringskontor",
         "uk": "Поштова сортувальна станція",
-        "gl": "Oficina de clasificación de correos"
+        "gl": "Oficina de clasificación de correos",
+        "el": "Γραφείο Ταξινόμησης Αλληλογραφίας",
+        "ko": "우편집중국"
       },
       "terms": {
         "en": "mail processing and distribution center,post depot",
@@ -24454,7 +24648,8 @@
         "pl": "sortownia listów, sortownia paczek, sortownia przesyłek, sortownia poczty, poczta, kurier, firma kurierska",
         "sv": "Postsorteringskontor, post, postsortering, sortering, postdistribution, postterminal, brev, brevsortering, brevdistribution",
         "uk": "пошта,поштампт,листи,відправлення,доставка,сортування,центр",
-        "gl": "centro de procesamento, distribución de correo, depósito de correo, paquetería, paquetaría"
+        "gl": "centro de procesamento, distribución de correo, depósito de correo, paquetería, paquetaría",
+        "ko": "우편물류센터"
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/post_depot",
@@ -24620,7 +24815,8 @@
         "sv": "Kvälsskola, pluggskola, läxhjälp, akademisk, läxa, matematik, läsning, testförberedelse, handledning, skrivning",
         "uk": "репетитор,вступ,екзамени,мова,математика,іноземна,диктант,навчання,допомога,інститут,університет,коледж",
         "eo": "kursoj",
-        "vi": "trường luyện thi, trường học thêm, trung tâm luyện thi, trung tâm học thêm, truong luyen thi, truong hoc them, trung tam luyen thi, trung tam hoc them"
+        "vi": "trường luyện thi, trường học thêm, trung tâm luyện thi, trung tâm học thêm, truong luyen thi, truong hoc them, trung tam luyen thi, trung tam hoc them",
+        "ko": "국어,수학,영어,논술"
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/prep_school",
@@ -24635,7 +24831,11 @@
       ],
       "tags": {"amenity": "prep_school"},
       "id": "amenity/prep_school",
-      "description": {"en": "Tutor or test prep centre", "ja": "学習塾/予備校。"}
+      "description": {
+        "en": "Tutor or test prep centre",
+        "ja": "学習塾/予備校。",
+        "es": "Una academia de estudios, centro de tutorización o centro de preparación de exámenes."
+      }
     },
     {
       "icon": "maki-prison",
@@ -25266,7 +25466,11 @@
       "id": "amenity/recycling",
       "icon": "maki-recycling",
       "markerColor": "#EF9228",
-      "presets": ["recycling_type", "collection_times"],
+      "presets": [
+        "amenity#recycling#brand",
+        "recycling_type",
+        "collection_times"
+      ],
       "lbl": {
         "en": "Recycling",
         "fr": "Point de recyclage",
@@ -25645,7 +25849,8 @@
         "ja": "研究所",
         "mk": "Истражувачки институт",
         "pl": "Instytut badawczy",
-        "uk": "Територія науково-дослідного інституту"
+        "uk": "Територія науково-дослідного інституту",
+        "ko": "연구 기관 부지"
       },
       "terms": {
         "en": "applied research, experimentation, r&d, r & d, r and d, research and development, research institution, research laboratory, research labs",
@@ -28240,7 +28445,9 @@
         "el": "Studio Ηχογράφησης",
         "et": "Helistuudio",
         "gl": "Estudio de gravación",
-        "sv": "Inspelningsstudio"
+        "sv": "Inspelningsstudio",
+        "it": "Studio di registrazione audio",
+        "ko": "녹음실"
       },
       "terms": {
         "en": "audio mixing,audio production,audio recording,audio studio",
@@ -28286,7 +28493,9 @@
         "et": "Raadiojaam",
         "fi": "Radioasema",
         "gl": "Estudio de radio",
-        "hu": "Rádióállomás"
+        "hu": "Rádióállomás",
+        "it": "Studio emittente radiofonica",
+        "ko": "라디오 방송국"
       },
       "terms": {
         "en": "am radio,fm radio,radio broadcast,radio studio",
@@ -28331,7 +28540,9 @@
         "et": "Telejaam",
         "fi": "Televisiostudio",
         "gl": "Estudio de televisión",
-        "hu": "Televízióállomás"
+        "hu": "Televízióállomás",
+        "it": "Studio emittente televisiva",
+        "ko": "텔레비전 방송국"
       },
       "terms": {
         "en": "television broadcast,television studio,tv broadcast,tv station,tv studio",
@@ -28377,7 +28588,9 @@
         "et": "Filmistuudio",
         "fi": "Elokuvastudio",
         "gl": "Estudio de filmes",
-        "hu": "Filmstúdió"
+        "hu": "Filmstúdió",
+        "it": "Studio di produzione video",
+        "ko": "영화 촬영실"
       },
       "terms": {
         "en": "movie production,movie studio,video production,video recording,video studio",
@@ -29085,7 +29298,8 @@
         "pl": "Latryna",
         "uk": "Вигрібна яма",
         "zh": "旱厕",
-        "eo": "Necesejo ter‑trua (latrino)"
+        "eo": "Necesejo ter‑trua (latrino)",
+        "sv": "Grop-latrin"
       },
       "terms": {
         "en": "head,lavatory,long drop,outhouse,pit toilet,privy",
@@ -31593,6 +31807,27 @@
       "searchable": false
     },
     {
+      "id": "amenity/exhibition_centre",
+      "tags": {"amenity": "exhibition_centre"},
+      "icon": "fas-user-tie",
+      "markerColor": "#EF9228",
+      "presets": [
+        "operator/type",
+        "website",
+        "internet_access",
+        "internet_access/fee",
+        "internet_access/ssid"
+      ],
+      "moreFields": [],
+      "lbl": {"en": "Exposition Center"},
+      "terms": {
+        "en": "exhibition center, fair, exhibition, exposition, trade fair, trade show, trade exhibition, expo, tradeshow"
+      },
+      "geometry": ["point", "area"],
+      "iDRef": "amenity/exhibition_centre",
+      "description": {"en": "", "de": "Messe", "pl": "Centrum_wystawowe."}
+    },
+    {
       "icon": "maki-aerialway",
       "markerColor": "#C057A0",
       "presets": [],
@@ -32142,7 +32377,8 @@
         "uk": "Залізнична платформа",
         "vi": "Ke ga",
         "zh": "火车站台",
-        "eo": "Haltejo fervoja (atendejo)"
+        "eo": "Haltejo fervoja (atendejo)",
+        "no": "Tog Platform"
       },
       "terms": {
         "en": "platform,public transit,public transportation,rail,track,train,transit,transportation",
@@ -32200,7 +32436,8 @@
         "pl": "Przystanek / Peron kolejowy",
         "sv": "Järnvägsperrong",
         "uk": "Залізнична платформа",
-        "vi": "Ke ga"
+        "vi": "Ke ga",
+        "no": "Tog Platform"
       },
       "terms": {
         "en": "platform, public transit, public transportation, rail, track, train, transit, transportation",
@@ -32253,7 +32490,8 @@
         "uk": "Трамвайна платформа",
         "vi": "Bến Tàu điện",
         "zh": "有轨电车站台",
-        "eo": "Haltejo trama (atendejo)"
+        "eo": "Haltejo trama (atendejo)",
+        "no": "Trikk Platform"
       },
       "terms": {
         "en": "electric,light rail,platform,public transit,public transportation,rail,streetcar,track,tram,trolley,transit,transportation",
@@ -32287,6 +32525,46 @@
       "id": "public_transport/platform/tram"
     },
     {
+      "icon": "temaki-tram",
+      "markerColor": "#C057A0",
+      "presets": [],
+      "lbl": {"en": "Tram Level Crossing"},
+      "terms": {"en": "crossing"},
+      "description": {
+        "en": "where a road crosses a tramway on the same level - i.e. without a bridge"
+      },
+      "geometry": ["line", "vertex"],
+      "tags": {"railway": "tram_level_crossing"},
+      "moreFields": [],
+      "id": "railway/tram_level_crossing"
+    },
+    {
+      "icon": "temaki-tram",
+      "markerColor": "#C057A0",
+      "presets": [],
+      "lbl": {"en": "Tram Crossing"},
+      "terms": {"en": "crossing"},
+      "description": {
+        "en": "a point where a footway crosses a tramway on the same level"
+      },
+      "geometry": ["line", "vertex"],
+      "tags": {"railway": "tram_crossing"},
+      "moreFields": [],
+      "id": "railway/tram_crossing"
+    },
+    {
+      "icon": "temaki-tram",
+      "markerColor": "#C057A0",
+      "presets": [],
+      "lbl": {"en": "Railway Crossing"},
+      "terms": {"en": "crossing"},
+      "description": {"en": "Crossing rails that do not interconnect"},
+      "geometry": ["vertex"],
+      "tags": {"railway": "railway_crossing"},
+      "moreFields": [],
+      "id": "railway/railway_crossing"
+    },
+    {
       "id": "public_transport/platform/tram_point",
       "icon": "temaki-tram",
       "markerColor": "#C057A0",
@@ -32311,7 +32589,8 @@
         "pl": "Przystanek tramwajowy (peron)",
         "sv": "Spårvagnsplattform",
         "uk": "Трамвайна платформа",
-        "vi": "Bến Tàu điện"
+        "vi": "Bến Tàu điện",
+        "no": "Trikk Platform"
       },
       "terms": {
         "en": "electric, light rail, platform, public transit, public transportation, rail, streetcar, track, tram, trolley, transit, transportation",
@@ -33028,7 +33307,8 @@
         "uk": "залізнична,платформа,зупинка,вокзал,станція,транзит,громадський,транспорт,перевезення",
         "vi": "nhà ga, nhà ga xe lửa, nha ga, nha ga xe lua",
         "zh": "列车,火车,火车站,动车,高铁,铁路,车站",
-        "eo": "stacidomo fervoja"
+        "eo": "stacidomo fervoja",
+        "it": "stop,fermata,transito,treno,passeggeri"
       },
       "geometry": ["vertex", "point", "area"],
       "iDRef": "public_transport/station_train",
@@ -33089,7 +33369,8 @@
         "uk": "залізнична,платформа,зупинка,вокзал,станція,транзит,громадський,транспорт,перевезення,(на вимогу)",
         "vi": "ga xép, nhà ga xép, ga xep, nha ga xep",
         "zh": "列车,动车,铁路,车站",
-        "eo": "haltejo fervoja"
+        "eo": "haltejo fervoja",
+        "it": "stop,stazione,transito,treno,passeggeri"
       },
       "geometry": ["point", "area"],
       "iDRef": "public_transport/station_train_halt",
@@ -33132,7 +33413,8 @@
         "uk": "Трамвайна станція",
         "vi": "Gà Tàu điện",
         "zh": "有轨电车站",
-        "eo": "Stacio trama"
+        "eo": "Stacio trama",
+        "no": "Trikkestasjon"
       },
       "terms": {
         "en": "electric,light rail,public transit,public transportation,rail,station,streetcar,terminal,track,tram,trolley,transit,transportation",
@@ -34552,8 +34834,25 @@
       "icon": "maki-heliport",
       "markerColor": "#75030B",
       "presets": ["surface"],
-      "lbl": {"en": "Emergency Landing Site"},
-      "terms": {"en": "helicopter, helipad, heliport"},
+      "lbl": {
+        "en": "Emergency Landing Site",
+        "de": "Landeplatz für Rettungshubschrauber",
+        "es": "Sitio de aterrizaje de emergencia",
+        "pt": "Local de aterragem de emergência",
+        "ja": "緊急着陸地点",
+        "mk": "Итно слетувалиште",
+        "pl": "Awaryjne lądowisko",
+        "uk": "Місце висадки аварійно-рятувальних служб"
+      },
+      "terms": {
+        "en": "helicopter, helipad, heliport",
+        "de": "Hubschrauber, Rettungshubschrauber, Helicopter, Helikopter, Landeplatz, Landefläche, Landebereich, Notlandeplatz, Notlandefläche, Notlandebereich",
+        "es": "helicóptero, helicoptero, helipuerto",
+        "pt": "helipad,helicóptero,heliporto,emergência,hospital",
+        "ja": "緊急着陸地点, 救命",
+        "pl": "awaryjne lądowisko dla helikopterów, awaryjne lądowisko dla śmigłowców, śmigłowiec, lotnisko",
+        "uk": "гелікоптер,майданчик,рятувальник,ававрія,катастрофа"
+      },
       "geometry": ["point", "area"],
       "iDRef": "emergency/landing_site",
       "tags": {"emergency": "landing_site"},
@@ -35357,7 +35656,8 @@
         "uk": "Пляжний курорт",
         "vi": "Bãi biển Nghỉ dưỡng",
         "zh": "海滩度假区",
-        "eo": "Sablobordo administrata (kun oportunaĵoj)"
+        "eo": "Sablobordo administrata (kun oportunaĵoj)",
+        "no": "Strandhotell"
       },
       "terms": {
         "en": "",
@@ -35902,7 +36202,8 @@
         "pl": "Pole do gry w disc golfa",
         "uk": "Диско-гольф",
         "eo": "Ludkampo por golfdisko",
-        "sv": "Frisbeegolfbana"
+        "sv": "Frisbeegolfbana",
+        "no": "Disc Golf Bane"
       },
       "terms": {
         "en": "disk golf,frisbee golf,flying disc golf,frolf,ultimate",
@@ -36224,7 +36525,8 @@
         "uk": "Місце для риболовлі",
         "vi": "Chỗ Câu cá",
         "zh": "钓鱼地点",
-        "eo": "Loko por fiŝhokado"
+        "eo": "Loko por fiŝhokado",
+        "no": "Fiske Plass"
       },
       "terms": {
         "en": "angler",
@@ -36251,7 +36553,8 @@
         "pt": "Lugar de pesca.",
         "cs": "Místo pro rybaření",
         "ja": "釣りをするための場所です。",
-        "pl": "Miejsce publiczne przeznaczone do uprawiania wędkarstwa."
+        "pl": "Miejsce publiczne przeznaczone do uprawiania wędkarstwa.",
+        "es": "Un lugar público o privado donde pescar."
       },
       "geometry": ["vertex", "point", "area"],
       "iDRef": "leisure/fishing",
@@ -38805,7 +39108,8 @@
         "ja": "野外チェス盤",
         "mk": "Џиновска шаховска табла",
         "pl": "Szachy plenerowe",
-        "uk": "Гігантська шахівниця"
+        "uk": "Гігантська шахівниця",
+        "ko": "대형 체스판"
       },
       "terms": {
         "en": "chessboard, checkerboard, checkers, chequerboard, garden chess, large chess, oversize chess",
@@ -40804,7 +41108,8 @@
         "uk": "Велотрек",
         "eo": "Kurejo bicikla",
         "ru": "Велотрек",
-        "el": "Ποδηλατική Πίστα"
+        "el": "Ποδηλατική Πίστα",
+        "no": "Sykkelbane"
       },
       "terms": {
         "en": "bicycle track,bicycling track,cycle racetrack,velodrome",
@@ -40850,7 +41155,8 @@
         "uk": "Іподром",
         "eo": "Kurejo ĉevala",
         "el": "Πίστα Ιπποδρομιών",
-        "vi": "Đường Đua Ngựa"
+        "vi": "Đường Đua Ngựa",
+        "no": "Travbane"
       },
       "terms": {
         "en": "equestrian race track,horse race betting,horseracing,horsetrack,horse racetrack",
@@ -40905,7 +41211,8 @@
         "ru": "Беговая дорожка",
         "el": "Στίβος",
         "gl": "Pista de atletismo",
-        "vi": "Đường Chạy"
+        "vi": "Đường Chạy",
+        "no": "Løpe bane"
       },
       "terms": {
         "en": "athletics track,decathlon,foot race,long distance running,marathon,middle distance running,racetrack,running,sprint,track,walking",
@@ -42009,7 +42316,7 @@
       "id": "craft/cleaning",
       "icon": "temaki-vacuum",
       "markerColor": "#5B396C",
-      "presets": [],
+      "presets": ["craft#cleaning#brand"],
       "lbl": {
         "en": "Cleaning Service",
         "de": "Putzerei",
@@ -45880,7 +46187,8 @@
         "pl": "Graffiti",
         "sv": "Graffiti",
         "uk": "Графіті",
-        "eo": "Grafitio (aĉa murpentraĵo)"
+        "eo": "Grafitio (aĉa murpentraĵo)",
+        "tr": "Duvar Yazısı"
       },
       "terms": {
         "en": "Street Artwork,Guerilla Artwork,Graffiti Artwork",
@@ -45893,7 +46201,8 @@
         "pl": "graffiti",
         "sv": "Graffiti, gatukonst, graffitikonst, kladd, klotter, spray, sprayfärg",
         "uk": "стрітарт,зображеня,адерграунд",
-        "eo": "murpentraĵo,murskribaĵo,murpentrajho,murpentrajxo,murskribaĉo"
+        "eo": "murpentraĵo,murskribaĵo,murpentrajho,murpentrajxo,murskribaĉo",
+        "tr": "Graffiti, Duvar Resmi"
       },
       "geometry": ["point", "vertex", "line", "area"],
       "iDRef": "tourism/artwork/graffiti",
@@ -46243,7 +46552,8 @@
         "sv": "Tältplats/husvagnsplats",
         "uk": "Місце під намет",
         "eo": "Loko por kampadveturilo/tendo",
-        "gl": "Lugar de campismo"
+        "gl": "Lugar de campismo",
+        "ko": "캠핑장"
       },
       "terms": {
         "en": "tent,rv",
@@ -47759,9 +48069,28 @@
       "icon": "temaki-museum",
       "markerColor": "#9D7178",
       "presets": [],
-      "lbl": {"en": "History Museum"},
+      "lbl": {
+        "en": "History Museum",
+        "de": "Historisches Museum",
+        "es": "Museo de historia",
+        "pt": "Museu de História",
+        "it": "Museo di storia",
+        "he": "מוזיאון היסטוריה",
+        "ja": "歴史博物館",
+        "ko": "역사 박물관",
+        "mk": "Историски музеј",
+        "pl": "Muzeum historyczne",
+        "uk": "Історичний музей"
+      },
       "terms": {
-        "en": "artifacts, dioramas, exhibits, exhibitions, foundation, hall, institution"
+        "en": "artifacts, dioramas, exhibits, exhibitions, foundation, hall, institution",
+        "de": "Geschichtsmuseum, Geschichte, Artefakte, Ausstellung",
+        "es": "artefactos, dioramas, exhibiciones, exposiciones, fundación, salón, institución",
+        "pt": "exposição,exibição,museulógico,instituição,fundação",
+        "he": "מוצגים,היסטוריה,היכל,מוסד",
+        "ja": "歴史博物館, 歴史館, 博物館",
+        "pl": "muzeum historyczne",
+        "uk": "музей,діорама,виставка,експозиція,артефакт,експонат,старожитності"
       },
       "geometry": ["point", "area"],
       "iDRef": "tourism/museum/history",
@@ -48390,7 +48719,8 @@
         "zh": "野生动物园",
         "eo": "Bestoĝardeno: safari-parko",
         "el": "Πάρκο για Σαφάρι",
-        "fi": "Safaripuisto"
+        "fi": "Safaripuisto",
+        "ko": "사파리 공원"
       },
       "terms": {
         "en": "Drive-Through Zoo,Drive-In Zoo",
@@ -49064,7 +49394,9 @@
         "mk": "Советодавно биро",
         "pl": "Biuro konsultanta",
         "uk": "Консалтингова фірма",
-        "vi": "Văn phòng Tư vấn"
+        "vi": "Văn phòng Tư vấn",
+        "el": "Γραφείο Συμβούλων",
+        "ko": "컨설팅 사무소"
       },
       "terms": {
         "en": "consulting firm office",
@@ -49282,7 +49614,9 @@
         "eo": "Ambasadejo",
         "el": "Πρεσβεία",
         "sv": "Ambassad",
-        "vi": "Đại sứ quán"
+        "vi": "Đại sứ quán",
+        "no": "Ambassade",
+        "tr": "Büyükelçilik"
       },
       "terms": {
         "en": "",
@@ -49296,7 +49630,8 @@
         "pl": "ambasada",
         "uk": "дипломат,міжнародний,установа,посольство,представництво",
         "eo": "ambasado,ambasadorejo,konsulejo",
-        "vi": "đại sứ quán, tòa đại sứ, toà đại sứ, dai su quan, toa dai su"
+        "vi": "đại sứ quán, tòa đại sứ, toà đại sứ, dai su quan, toa dai su",
+        "tr": "Elçilik"
       },
       "geometry": ["point", "area"],
       "iDRef": "office/diplomatic/embassy",
@@ -49321,7 +49656,8 @@
         "ja": "交流組織",
         "mk": "Служба за врски",
         "pl": "Biuro łącznikowe",
-        "uk": "Координаційний центр"
+        "uk": "Координаційний центр",
+        "el": "Γραφείο Διασύνδεσης"
       },
       "terms": {
         "en": "",
@@ -50032,8 +50368,26 @@
       "icon": "maki-suitcase",
       "markerColor": "#F5BB3A",
       "presets": [],
-      "lbl": {"en": "Public Prosecutor's Office"},
-      "terms": {"en": "attorney general, district attorney, prosecution"},
+      "lbl": {
+        "en": "Public Prosecutor's Office",
+        "de": "Staatsanwaltschaft",
+        "es": "Fiscalía",
+        "pt": "Gabinete de procuradoria",
+        "ja": "検察庁",
+        "ko": "검찰청",
+        "mk": "Јавно обвинителство",
+        "pl": "Prokuratura",
+        "uk": "Прокуратура"
+      },
+      "terms": {
+        "en": "attorney general, district attorney, prosecution",
+        "de": "Anklagebehörde, Strafverfolgung, Strafvollstreckung, Justiz, Bezirksstaatsanwaltschaft, Bundesstaatsanwaltschaft, Generalstaatsanwaltschaft, Oberstaatsanwaltschaft",
+        "es": "fiscal general, fiscal de distrito, fiscalía",
+        "pt": "procurador-público,ministério público,julgamento,tribunal,acusação,acção penal,ação penal,procurador-geral da república",
+        "ja": "検察庁, 検察, 検察官, 法",
+        "pl": "prokuratura, prokurator, urząd",
+        "uk": "прокурор,офіс,управління,обвинувачувач"
+      },
       "geometry": ["point", "area"],
       "iDRef": "office/government/prosecutor",
       "tags": {"office": "government", "government": "prosecutor"},
@@ -50898,7 +51252,8 @@
         "uk": "Офіс політичної партії",
         "vi": "Văn phòng Đảng phái Chính trị",
         "cs": "Kancelář politické strany",
-        "sv": "Partikontor"
+        "sv": "Partikontor",
+        "el": "Γραφείο Πολιτικού Κόμματος"
       },
       "terms": {
         "en": "",
@@ -51091,7 +51446,8 @@
         "sv": "Religiöst kontor",
         "uk": "Релігійна організація",
         "vi": "Văn phòng Tôn giáo",
-        "eo": "Kancelario religia"
+        "eo": "Kancelario religia",
+        "no": "Religiøst Kontor"
       },
       "terms": {
         "en": "",
@@ -51326,7 +51682,8 @@
         "uk": "Податкова консультація",
         "vi": "Dich vụ Khai thuế",
         "zh": "税务顾问机构",
-        "eo": "Oficejo de impost-konsilo"
+        "eo": "Oficejo de impost-konsilo",
+        "no": "Skatterådgiverkontor"
       },
       "terms": {
         "en": "tax,tax consultant",
@@ -51363,7 +51720,13 @@
     {
       "icon": "maki-telephone",
       "markerColor": "#F5BB3A",
-      "presets": ["wheelchair", "phone", "website", "opening_hours"],
+      "presets": [
+        "office#telecommunication#brand",
+        "wheelchair",
+        "phone",
+        "website",
+        "opening_hours"
+      ],
       "lbl": {
         "en": "Telecom Office",
         "fr": "Agence de télécommunications",
@@ -51964,7 +52327,8 @@
         "mk": "Фар",
         "pl": "Nabieżnik",
         "uk": "Сигнальний вогонь",
-        "eo": "Signalilo"
+        "eo": "Signalilo",
+        "tr": "Fener"
       },
       "terms": {
         "en": "",
@@ -52014,7 +52378,8 @@
         "pl": "Ul",
         "uk": "Вулик",
         "eo": "Abelujo",
-        "gl": "Abellariza"
+        "gl": "Abellariza",
+        "vi": "Tổ ong"
       },
       "terms": {
         "en": "apiary, beekeeper, farm, honey, pollination",
@@ -52029,7 +52394,8 @@
         "pl": "ul",
         "uk": "вулик,пасіка,бджоли,бджільництво,мед",
         "eo": "abeldomo,abelejo",
-        "gl": "colmea, alvariza, apiario, colmear, apicultor, granxa, mel, polinización"
+        "gl": "colmea, alvariza, apiario, colmear, apicultor, granxa, mel, polinización",
+        "vi": "tổ ong, to ong"
       },
       "geometry": ["point", "area"],
       "iDRef": "man_made/beehive",
@@ -52292,7 +52658,8 @@
         "mk": "Могила",
         "pl": "Kopiec",
         "uk": "Тур",
-        "eo": "Ŝtonamaso"
+        "eo": "Ŝtonamaso",
+        "ko": "돌무더기"
       },
       "terms": {
         "en": "rock pile, stone stack, stone pile, càrn",
@@ -52429,7 +52796,8 @@
         "sv": "Kalhygge",
         "uk": "Вирубка",
         "vi": "Rừng bị Chặt trắng",
-        "eo": "Hakita arbaro"
+        "eo": "Hakita arbaro",
+        "no": "Nedhugget Skog"
       },
       "terms": {
         "en": "cut, forest, lumber, tree, wood",
@@ -52742,7 +53110,9 @@
         "pl": "Grobla",
         "uk": "Захисний насип",
         "eo": "Digo",
-        "gl": "Dique"
+        "gl": "Dique",
+        "it": "Argine",
+        "ko": "제방"
       },
       "terms": {
         "en": "Dike, Dyke, Floodbank, Stopbank",
@@ -52754,7 +53124,8 @@
         "ja": "堤防, 築堤, 土手",
         "pl": "grobla, wał",
         "uk": "дамба,дайк,захист,повінь",
-        "eo": "baraĵo,akvoŝtopilo,akvobarilo,barilo,surŝutaĵo"
+        "eo": "baraĵo,akvoŝtopilo,akvobarilo,barilo,surŝutaĵo",
+        "it": "argine,terrapieno,rialzo"
       },
       "geometry": ["line"],
       "iDRef": "man_made/dyke",
@@ -52828,7 +53199,8 @@
         "pl": "nasyp,wał",
         "sv": "Upphöjning, barnvall, vall, bank, Vägbank",
         "uk": "Насип, вал",
-        "vi": "đường đắp cao, đê, duong dap cao, de"
+        "vi": "đường đắp cao, đê, duong dap cao, de",
+        "it": "argine,terrapieno,rialzo"
       },
       "geometry": ["line"],
       "iDRef": "man_made/embankment",
@@ -53197,7 +53569,9 @@
         "fi": "Katukaivo",
         "hu": "Búvónyílás",
         "mk": "Шахта",
-        "vi": "Hố ga"
+        "vi": "Hố ga",
+        "gl": "Pozo de inspección",
+        "ko": "맨홀"
       },
       "terms": {
         "en": "cover,hole,sewer,sewage,telecom",
@@ -53209,7 +53583,8 @@
         "fr": "bouche d'égout,égout,télécommunication,plaque",
         "pt": "buraco,tampa,estrada,esgotos,águas,pluviais,cabos,telecomunicações",
         "et": "kaev,sidekaev,reoveekaev,äravoolukaev,kanalisatsioonikaev",
-        "vi": "hố ga, lỗ cống, miệng cống, viễn thông, ho ga, lo cong, mieng cong, vien thong"
+        "vi": "hố ga, lỗ cống, miệng cống, viễn thông, ho ga, lo cong, mieng cong, vien thong",
+        "gl": "cuberta, buraco, burato, sumidoiro, tapa de sumidoiro, rede de sumidoiro, alcantarilla, alcantarillado, telecomunicacións, boca de sumidoiro, rexistro, colector, colectores, foxo, foxos, furaco, furado"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/manhole",
@@ -53269,7 +53644,9 @@
         "fr": "Accès de maintenance pour des conduites de gaz",
         "pt": "Caixa de visita de gás",
         "et": "Gaasivõrgukaev",
-        "mk": "Гасоводна шахта"
+        "mk": "Гасоводна шахта",
+        "gl": "Pozo de inspección de servizo de gas",
+        "ko": "가스 맨홀"
       },
       "terms": {
         "en": "cover,gas,heat,hole,utility",
@@ -53279,7 +53656,8 @@
         "pl": "właz do studzienki gazowej, wpust do studzienki gazowej, gazowa studzienka rewizyjna, studzienka rewizyjna do gazu, gazociąg, rurociąg gazowy, sieć gazowa",
         "uk": "газ,люк,колодязь,огляд",
         "fr": "bouche d'égout,égout,télécommunication,plaque,gaz,trou",
-        "pt": "buraco,tampa,estrada,cabos,gás,canos,canalização,tubagem,tubos"
+        "pt": "buraco,tampa,estrada,cabos,gás,canos,canalização,tubagem,tubos",
+        "gl": "cuberta, gas, calefacción, buraco, burato, inspección, pozo"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/manhole/gas",
@@ -53302,7 +53680,9 @@
         "fr": "Accès de maintenance pour des conduites de câbles électriques",
         "pt": "Caixa de visita de energia",
         "et": "Elektrivõrgukaev",
-        "mk": "Струјоводна шахта"
+        "mk": "Струјоводна шахта",
+        "gl": "Pozo de inspección de rede eléctrica",
+        "ko": "전력 맨홀"
       },
       "terms": {
         "en": "cover,hole,electric,hole,power,utility",
@@ -53312,7 +53692,8 @@
         "pl": "właz do studni elektrycznej, wpust do studni elektrycznej, licznik elektryczny, licznik energii elektrycznej, licznik prądu, przewody elektryczne, sieć elektryczna",
         "uk": "електрика,колодязь,люк,обслуговування,підземні",
         "fr": "bouche d'égout,égout,télécommunication,plaque,électricité,câbles souterrains",
-        "pt": "buraco,tampa,estrada,cabos,gás,canos,canalização,tubagem,tubos,elétrico,eléctrico,eletricidade,electricidade"
+        "pt": "buraco,tampa,estrada,cabos,gás,canos,canalização,tubagem,tubos,elétrico,eléctrico,eletricidade,electricidade",
+        "gl": "cuberta, buraco, burato, eléctrico, electricidade, pozo, inspección"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/manhole/power",
@@ -53335,7 +53716,9 @@
         "fr": "Accès de maintenance pour des conduites d'eaux usées",
         "pt": "Caixa de visita de esgotos",
         "et": "Reoveekaev",
-        "mk": "Канализациска шахта"
+        "mk": "Канализациска шахта",
+        "gl": "Pozo de inspección de sumidoiro",
+        "ko": "하수도 맨홀"
       },
       "terms": {
         "en": "cover,drain,hole,sewer,sewage,utility",
@@ -53346,7 +53729,8 @@
         "uk": "люк,каналізація,стоки,вода",
         "fr": "bouche d'égout,égout,télécommunication,plaque",
         "pt": "buraco,tampa,estrada,cabos,gás,canos,canalização,tubagem,tubos,esgoto,residuais",
-        "et": "kanalisatsioonikaev,äravoolukaev"
+        "et": "kanalisatsioonikaev,äravoolukaev",
+        "gl": "cuberta, desagüe, buraco, burato, alcantarillado, pozo, inspección, sumidoiro, rede de sumidoiro, tapa de sumidoiro, inspeccion, auga, augas negras, alcantarilla, augas residuais, residual, refugallo, refugallos"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/manhole/sewer",
@@ -53370,7 +53754,9 @@
         "pt": "Caixa de visita de telecomunicações",
         "et": "Sidekaev",
         "mk": "Телекомуникациска шахта",
-        "vi": "Hố Cáp Viễn thông"
+        "vi": "Hố Cáp Viễn thông",
+        "gl": "Pozo de inspección de telecomunicacións",
+        "ko": "통신 맨홀"
       },
       "terms": {
         "en": "bt,cable,cover,phone,hole,telecom,telephone,utility",
@@ -53382,7 +53768,8 @@
         "fr": "bouche d'égout,égout,télécommunication,plaque,téléphone,internet,câbles",
         "pt": "buraco,tampa,estrada,cabos,telefone,internet,telecomunicação,comunicações",
         "et": "telekomikaev,internetikaev,telefonikaev,andmesidekaev",
-        "vi": "hố cáp viễn thông, lỗ cáp viễn thông, ho cap vien thong, lo cap vien thong"
+        "vi": "hố cáp viễn thông, lỗ cáp viễn thông, ho cap vien thong, lo cap vien thong",
+        "gl": "cable, cabo, cuberta, teléfono, buraco, burato, telecomunicacións, pozo, inspección"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/manhole/telecom",
@@ -53405,7 +53792,9 @@
         "fr": "Accès de maintenance pour nettoyage des conduites d'eau potable",
         "pt": "Caixa de visita de água",
         "et": "Veevärgikaev",
-        "mk": "Водоводна шахта"
+        "mk": "Водоводна шахта",
+        "gl": "Pozo de inspección de servizo de agua",
+        "ko": "수도 맨홀"
       },
       "terms": {
         "en": "cover,drinking,hole,utility,water",
@@ -53416,7 +53805,8 @@
         "uk": "люк,вода,водопостачання,мережа",
         "fr": "bouche d'égout,égout,télécommunication,plaque,eau potable,tuyauterie,tuyaux d'eau",
         "pt": "buraco,tampa,estrada,cabos,canos,canalização,tubagem,tubos,águas",
-        "et": "joogiveekaev,veekaev"
+        "et": "joogiveekaev,veekaev",
+        "gl": "cuberta, bebida, burato, buraco, utilidade, auga, pozo, inspección, inspeccion, tapa de sumidoiro, sumidoiro"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/manhole/water",
@@ -54383,7 +54773,8 @@
         "pl": "Zawór rurociągu",
         "sr": "Вентил цевовода",
         "uk": "Вентиль трубопроводу",
-        "el": "Βαλβίδα Σωλήνα"
+        "el": "Βαλβίδα Σωλήνα",
+        "no": "Rørledningsventil"
       },
       "terms": {
         "en": "oil, natural gas, water, sewer, sewage",
@@ -54706,7 +55097,8 @@
         "uk": "Бак для води",
         "eo": "Rezervujo (akvo)",
         "el": "Δεξαμενή Νερού",
-        "vi": "Bể Chứa Nước"
+        "vi": "Bể Chứa Nước",
+        "no": "Vanntank"
       },
       "terms": {
         "en": "cistern, water tower",
@@ -55459,7 +55851,8 @@
         "eo": "Tunelo",
         "el": "Περιοχή Σήραγγας",
         "gl": "Área de túnel",
-        "vi": "Đường hầm"
+        "vi": "Đường hầm",
+        "no": "Tunell Område"
       },
       "terms": {
         "en": "bore,dig,shaft,underground passage,underpass",
@@ -55635,7 +56028,8 @@
         "ja": "給水栓",
         "mk": "Чешма",
         "pl": "Kran z wodą",
-        "uk": "Кран з водою"
+        "uk": "Кран з водою",
+        "no": "Vannkran"
       },
       "terms": {
         "en": "drinking water, water faucet, water point, water source, water spigot",
@@ -56386,14 +56780,36 @@
       "icon": "fa-bank",
       "markerColor": "#FFBA0C",
       "presets": ["start_date"],
-      "lbl": {"en": "Historic Building", "fr": "Bâtiment historique "},
+      "lbl": {
+        "en": "Historic Building",
+        "fr": "Bâtiment historique ",
+        "de": "Historisches Gebäude",
+        "es": "Edificio histórico",
+        "pt": "Edifício histórico",
+        "ja": "歴史的建築物",
+        "ko": "역사적 건물",
+        "mk": "Историска градба",
+        "pl": "Zabytkowy budynek",
+        "tr": "Tarihi Bina",
+        "uk": "Історична будівля",
+        "vi": "Tòa nhà Lịch sử"
+      },
       "tags": {"historic": "building"},
       "geometry": ["area"],
       "id": "historic/building",
       "iDRef": "historic/building",
       "addTags": {"historic": "building", "building": "*"},
       "reference": {"key": "historic", "value": "building"},
-      "moreFields": []
+      "moreFields": [],
+      "terms": {
+        "de": "Denkmal, Fachwerk, historisch, gotisch, romanisch, klassizistisch, barock, mittelalterlich, geschichtlich",
+        "es": "Edificio, histórico",
+        "pt": "Edifício antigo,prédio,históricos,imóvel histórico,imóvel de interesse público,monumento",
+        "ja": "歴史的建築物, 歴史的家屋, 史跡, 保存家屋",
+        "pl": "zabytkowy budynek, historyczny budynek, budynek zabytkowy, budynek historyczny, zabytek",
+        "uk": "будівля,дім,споруда,історія",
+        "vi": "tòa nhà lịch sử, toà nhà lịch sử, toa nha lich su"
+      }
     },
     {
       "icon": "maki-castle",
@@ -56521,7 +56937,9 @@
         "el": "Ιστορική Οχύρωση",
         "gl": "Fortaleza histórica",
         "tr": "Tarihi Kale",
-        "vi": "Pháo đài Lớn Lịch sử"
+        "vi": "Pháo đài Lớn Lịch sử",
+        "ko": "역사적 요새",
+        "no": "Historisk Fort"
       },
       "terms": {
         "en": "citadel,military",
@@ -56575,7 +56993,8 @@
         "eo": "Palaco",
         "ru": "Дворец",
         "el": "Παλάτι",
-        "tr": "Saray"
+        "tr": "Saray",
+        "no": "palass"
       },
       "terms": {
         "en": "Royal Residence,royal,king,queen",
@@ -56675,7 +57094,8 @@
         "sv": "Stadsport",
         "uk": "Міська брама",
         "eo": "Pordego urba",
-        "vi": "Cổng thành"
+        "vi": "Cổng thành",
+        "no": "By Port"
       },
       "terms": {
         "en": "Town Gate",
@@ -58028,7 +58448,8 @@
         "ru": "Клиф, скалистый обрыв.",
         "cs": "Sráz, skalní stěna, útes",
         "ja": "垂直またはほぼ垂直に自然の地形が落ち込んでおり、多くは岩が露出しているものです。",
-        "pl": "Pionowy lub prawie pionowy naturalny spadek terenu, zazwyczaj z gołą powierzchnię skalną."
+        "pl": "Pionowy lub prawie pionowy naturalny spadek terenu, zazwyczaj z gołą powierzchnię skalną.",
+        "uk": "Вертикальний чи майже вертикальний природний перепад місцевості, переважно кам'яний"
       }
     },
     {
@@ -58226,7 +58647,8 @@
         "ja": "間欠泉",
         "mk": "Гејзер",
         "pl": "Gejzer",
-        "uk": "Гейзер"
+        "uk": "Гейзер",
+        "ko": "간헐천"
       },
       "terms": {
         "en": "erupting spring, geiser, gieser, guyser, hot water, hydrogeology, hydrothermal explosion, steam",
@@ -58533,7 +58955,8 @@
         "bg": "Пустош.",
         "cs": "Vřesoviště",
         "ja": "ヒース(heath)もしくはヒース原(heathland)は、開けていて、背の低い木の植生で、たびたびツツジ科の植物が優勢なことで特徴付けられる、矮性低木の生息地です。",
-        "pl": "Wrzosowisko."
+        "pl": "Wrzosowisko.",
+        "uk": "Територія на якій переважає верес та інша низькоросла рослинність."
       }
     },
     {
@@ -58874,7 +59297,8 @@
         "mk": "Прицврстена карпа / камен",
         "pl": "Skała",
         "uk": "Скупчення каміння / Валуни",
-        "eo": "Roko (fiksita al tero)"
+        "eo": "Roko (fiksita al tero)",
+        "gl": "Rocha incrustada"
       },
       "terms": {
         "en": "boulder, stone, rock",
@@ -58886,7 +59310,8 @@
         "ja": "岩(岩盤に接続), 岩, ボールダー, ボルダリング",
         "pl": "skała, głaz, kamień",
         "uk": "каміння,валун,порода",
-        "eo": "roko,ŝtonego,shtonego,sxtonego"
+        "eo": "roko,ŝtonego,shtonego,sxtonego",
+        "gl": "rocha, pedra, pena, penedo, roca, con, farallón"
       },
       "geometry": ["point", "area"],
       "iDRef": "natural/rock",
@@ -59153,7 +59578,8 @@
         "ru": "Осыпь",
         "cs": "Osyp, suťoviště",
         "ja": "ガレ場。落石や近くの崖の風化によって形成された、固まっていない角ばった石の岩場",
-        "pl": "Oznaczenie rumowiska skalnego."
+        "pl": "Oznaczenie rumowiska skalnego.",
+        "uk": "Нагромадження уламків каміння утворене внаслідок осипання та ерозії гірських порід"
       }
     },
     {
@@ -59406,7 +59832,8 @@
         "mk": "Неприцврстена карпа / камен",
         "pl": "Kamień",
         "uk": "Окремий камінь / Валун",
-        "eo": "Ŝtonego (nefiksita al tero)"
+        "eo": "Ŝtonego (nefiksita al tero)",
+        "gl": "Pedra solta"
       },
       "terms": {
         "en": "boulder, stone, rock",
@@ -59418,7 +59845,8 @@
         "ja": "岩(単独), 岩, 巨石, 石",
         "pl": "kamień, głaz",
         "uk": "валун,камінь,скала",
-        "eo": "roko,ŝtonego,shtonego,sxtonego"
+        "eo": "roko,ŝtonego,shtonego,sxtonego",
+        "gl": "rocha, pedra, pena, penedo, roca, con, farallón"
       },
       "geometry": ["point", "area"],
       "iDRef": "natural/stone",
@@ -59517,7 +59945,8 @@
         "vi": "cây, cay",
         "zh": "树",
         "ca": "Arbre",
-        "eo": "arbo"
+        "eo": "arbo",
+        "gl": "arbore, árbore, árvore, árbol, arbol, arbusto"
       },
       "description": {
         "en": "A single tree",
@@ -59674,7 +60103,8 @@
         "ru": "Долина, балка",
         "cs": "Údolí",
         "ja": "谷です",
-        "pl": "Dolina."
+        "pl": "Dolina.",
+        "uk": "Природна витягнута заглибина з похилими схилами оточена пагорбами або горами"
       }
     },
     {
@@ -60356,7 +60786,8 @@
         "uk": "Струмок",
         "vi": "Dòng suối",
         "zh": "溪流",
-        "eo": "Rivereto"
+        "eo": "Rivereto",
+        "no": "Bekk Område"
       },
       "terms": {
         "en": "beck, branch, brook, burn, course, creek, current, drift, flood, flow, freshet, race, rill, rindle, rivulet, run, runnel, rush, spate, spritz, surge, tide, torrent, tributary, watercourse",
@@ -61023,7 +61454,8 @@
         "vi": "Lối Băng qua Đường",
         "eo": "Trapasejo",
         "el": "Διασταύρωση",
-        "tr": "Geçit"
+        "tr": "Geçit",
+        "da": "Fodgængerovergang"
       },
       "description": {
         "en": "Pedestrian crossing",
@@ -61227,7 +61659,8 @@
         "uk": "перехід,пішохідний,непозначений,без розмітки",
         "vi": "lối băng qua đường không có vạch, lối qua đường không có vạch, loi bang qua duong khong co vach, loi qua duong khong co vach",
         "zh": "人行横道",
-        "eo": "pasejo,trairejo,irejo"
+        "eo": "pasejo,trairejo,irejo",
+        "da": "overgang,fodgænger,fodgængerovergang"
       },
       "geometry": ["vertex"],
       "iDRef": "highway/crossing/unmarked",
@@ -61268,7 +61701,8 @@
         "vi": "Lối Qua đường Nổi lên Không có Vạch",
         "zh": "人行横道 (无标线/抬升)",
         "eo": "Stratpasejo (kun stratĝibo longa)",
-        "tr": "İşaretsiz Yaya Geçidi (Kasisli)"
+        "tr": "İşaretsiz Yaya Geçidi (Kasisli)",
+        "da": "Umarkeret fodgængerovergang (hævet)"
       },
       "terms": {
         "en": "flat top, hump, speed, slow",
@@ -61286,7 +61720,8 @@
         "uk": "перехід,пішохідний,непозначений,без розмітки",
         "vi": "lối băng qua đường nổi lên không có vạch, lối qua đường nổi lên không có vạch, loi bang qua duong noi len khong co vach, loi qua duong noi len khong co vach",
         "zh": "人行横道,抬升,减速台,减速带,减速",
-        "eo": "pasejo,trairejo,irejo,stratĝibo,azendorso,malrapidigilo"
+        "eo": "pasejo,trairejo,irejo,stratĝibo,azendorso,malrapidigilo",
+        "da": "overgang,fodgænger,fodgængerovergang,bump,hævet"
       },
       "geometry": ["vertex"],
       "iDRef": "highway/crossing/unmarked-raised",
@@ -61995,7 +62430,8 @@
         "ja": "歩道（駐車場内）",
         "mk": "Пристапен остров",
         "pl": "Alejka dla pieszych (na parkingu)",
-        "uk": "Пішохідний прохід на стоянці"
+        "uk": "Пішохідний прохід на стоянці",
+        "pt": "Corredor de acesso para peões"
       },
       "terms": {
         "en": "accessible van loading zone, disabled parking access zone, handicap parking access zone, parking lot aisle, striped zone, tow zone, tow-away zone, towaway zone, wheelchair aisle",
@@ -62003,7 +62439,8 @@
         "es": "zona de carga, furgonetas, zona de acceso, discapacitados, zona de acceso para discapacitados, pasillo de estacionamiento, zona rayada, zona de remolque, pasillo de silla de ruedas",
         "ja": "歩道（駐車場内）, 歩道, 通路, 駐車場",
         "pl": "alejka dla pieszych, parking, piesi, ścieżka",
-        "uk": "стоянка,парковка,пішохід,прохід,візок"
+        "uk": "стоянка,парковка,пішохід,прохід,візок",
+        "pt": "acesso,pedestres,deficientes,estacionamento,parqueamento,cadeiras de rodas,cadeirantes,necessidades especiais,portadora de deficiência"
       },
       "geometry": ["line"],
       "iDRef": "highway/footway/access_aisle",
@@ -62815,7 +63252,8 @@
         "ru": "Дорожный знак с указанием расстояния от начала трассы.",
         "cs": "Kamenný nebo železný kilometrovník u silnice označující ujetou vzdálenost.",
         "ja": "道路のわきにある石や金属の目印で、位置の参照や移動距離を示します。",
-        "pl": "Używane do oznaczania położenia słupków kilometrowych."
+        "pl": "Używane do oznaczania położenia słupków kilometrowych.",
+        "pt": "Um marco quilométrico rodoviário."
       }
     },
     {
@@ -63883,7 +64321,8 @@
         "vi": "Đường Đua Xe",
         "fr": "Circuit de courses motorisées",
         "el": "Πίστα Μηχανοκίνητου Αθλητισμού",
-        "tr": "Motor Sporları Yarış Pisti"
+        "tr": "Motor Sporları Yarış Pisti",
+        "ko": "모터스포츠 경주로"
       },
       "terms": {
         "en": "auto*,formula one,kart,motocross,nascar,race*,track",
@@ -63897,7 +64336,8 @@
         "uk": "трек,мотоспорт,картинг,мотокрос,перегони,формула 1,авто*",
         "vi": "đường đua xe hơi, đường đua ô tô, đường đua ô-tô, đường đua ôtô, đường đua xe máy, trường đua xe hơi, trường đua ô tô, trường đua ô-tô, trường đua ôtô, trường đua xe máy, duong dua xe, truong dua xe, duong dua xe hoi, duong dua o to, duong dua o-to, duong dua oto, duong dua xe may, truong dua xe hoi, truong dua o to, truong dua o-to, truong dua oto, truong dua xe may",
         "fr": "piste de courses automobiles,courses automobiles,course automobile,formule un,automobile,moto-cross,motocross,course,piste",
-        "el": "Πίστα Kart"
+        "el": "Πίστα Kart",
+        "ko": "포뮬러 원"
       },
       "geometry": ["line", "area"],
       "iDRef": "highway/raceway",
@@ -63932,7 +64372,8 @@
         "pl": "Tor gokartowy",
         "sv": "Kartingbana (Gokart)",
         "uk": "Карт-трек",
-        "gl": "Circuíto de carreiras de karting"
+        "gl": "Circuíto de carreiras de karting",
+        "ko": "카트 경주로"
       },
       "terms": {
         "en": "carting, go carts, go karts, go-karts, gokarts, kart racing, karting track, motorsports, shifter karts, superkarts",
@@ -63970,7 +64411,8 @@
         "sv": "Motocrossbana",
         "uk": "Мотокрос",
         "el": "Πίστα Motocross",
-        "gl": "Circuíto de carreiras de motocross"
+        "gl": "Circuíto de carreiras de motocross",
+        "ko": "모터크로스 경주로"
       },
       "terms": {
         "en": "off-road racing, offroad moto racing, motocross circuit, motorcycle track, motorsports",
@@ -63982,7 +64424,8 @@
         "ja": "モトクロスレース場, レース場, スポーツ, サーキット, バイク",
         "pl": "tor motocrossowy, tor żużlowy, żużel, motocykle, tor wyścigowy, wyścigi",
         "sv": "Motocrossbana, motorcross, off road-bana, off-road, off road, motorcykelbana, motorsport",
-        "uk": "трек,мотокрос,перегони,гонки,мотоцикл,мотоспорт"
+        "uk": "трек,мотокрос,перегони,гонки,мотоцикл,мотоспорт",
+        "ko": "모토크로스,오토바이"
       },
       "geometry": ["line", "area"],
       "iDRef": "highway/raceway/motocross",
@@ -65138,7 +65581,8 @@
         "uk": "Камера контролю швидкості",
         "vi": "Camera GIám sát Tốc độ",
         "zh": "超速摄像头",
-        "eo": "Rapid-kontrolilo"
+        "eo": "Rapid-kontrolilo",
+        "no": "Fotoboks"
       },
       "terms": {
         "en": "",
@@ -66070,7 +66514,8 @@
         "zh": "小径起点",
         "eo": "Komenco de turisma kurso",
         "gl": "Comezo da pista",
-        "vi": "Đầu Đường mòn"
+        "vi": "Đầu Đường mòn",
+        "no": "Stihode"
       },
       "terms": {
         "en": "hiking,mile zero,mountain biking,mountaineering,trail endpoint,trail start,staging area,trekking",
@@ -66346,7 +66791,8 @@
         "vi": "Đường cùng Vòng tròn",
         "zh": "环岛",
         "ca": "Cul de sac",
-        "eo": "Loko por turniĝi malantaŭen"
+        "eo": "Loko por turniĝi malantaŭen",
+        "no": "Snuplass"
       },
       "terms": {
         "en": "cul-de-sac",
@@ -68522,7 +68968,8 @@
         "ja": "急流すべり",
         "mk": "Трупна спушталка",
         "pl": "Spływ na kłodzie",
-        "uk": "Водний спуск"
+        "uk": "Водний спуск",
+        "ko": "플룸라이드"
       },
       "terms": {
         "en": "theme park, amusement ride, flume",
@@ -68531,7 +68978,8 @@
         "es": "parque temático, atracción de feria, canal, troncos",
         "ja": "丸太水路, ログ水路, アトラクション, 急流すべり",
         "pl": "spływ na kłodzie, spływ w kłodzie, park rozrywki, lunapark, wesołe miasteczko",
-        "uk": "спуск,горка,гірка,гондола,лодка,вода"
+        "uk": "спуск,горка,гірка,гондола,лодка,вода",
+        "ko": "후룸라이드"
       },
       "geometry": ["point", "area"],
       "iDRef": "attraction/log_flume",
@@ -68790,7 +69238,8 @@
       "id": "attraction/roller_coaster",
       "description": {
         "en": "Permanent roller coaster, an amusement ride with an elevated rail track designed with tight turns, steep slopes, and sometimes loops.",
-        "de": "Stationäre Achterbahn"
+        "de": "Stationäre Achterbahn",
+        "es": "Montaña rusa permanente, un paseo recreativo sobre una vía férrea elevada diseñada con giros cerrados, pendientes pronunciadas y a veces con bucles."
       }
     },
     {
@@ -68858,7 +69307,8 @@
         "ja": "回転ブランコ",
         "mk": "Вртелешка со лулашки",
         "pl": "Karuzela huśtawkowa",
-        "uk": "Ланцюгова карусель"
+        "uk": "Ланцюгова карусель",
+        "pt": "Carrossel de cadeiras suspensas"
       },
       "terms": {
         "en": "theme park, amusement ride, carousel, tower, carousel tower",
@@ -68868,7 +69318,8 @@
         "he": "לונה פארק,מתקן שעשועים,פארק שעשועים,מגדל נדנדות",
         "ja": "回転ブランコ, アトラクション",
         "pl": "karuzela huśtawkowa, park rozrywki, lunapark, wesołe miasteczko",
-        "uk": "карусель,гойдалка,атракціон,ромашка"
+        "uk": "карусель,гойдалка,атракціон,ромашка",
+        "pt": "atração,diversões,temático,atracção"
       },
       "geometry": ["point", "area"],
       "iDRef": "attraction/swing_carousel",
@@ -69047,7 +69498,8 @@
         "uk": "Бревно",
         "vi": "Trò chơi Cầu thăng Bằng",
         "zh": "跷跷板",
-        "eo": "Ŝtipo ekvilibra (por infanoj)"
+        "eo": "Ŝtipo ekvilibra (por infanoj)",
+        "no": "Leke Balansebjelke"
       },
       "terms": {
         "en": "",
@@ -70006,7 +70458,8 @@
         "uk": "Гідравлічна турбіна",
         "eo": "Akvoturbino",
         "el": "Κινητήρας Νερού",
-        "sv": "Vattenkraftverk"
+        "sv": "Vattenkraftverk",
+        "no": "Vannturbin"
       },
       "terms": {
         "en": "dam,generator,francis turbine,hydroelectricity,kaplan turbine,pelton turbine",
@@ -70140,7 +70593,8 @@
         "sv": "Vindturbin, vindkraft, vindkraftverk, vindmölla",
         "uk": "вітер,вітряк",
         "vi": "tua bin gió, tua-bin gió, tuabin gió, turbine gió, máy phát điện gió, cối xay gió, máy xay gió, tua bin gio, tua-bin gio, tuabin gio, turbine gio, may phat dien gio, coi xay gio, may xay gio",
-        "eo": "ventoturbino,turbino,ventmaŝino"
+        "eo": "ventoturbino,turbino,ventmaŝino",
+        "it": "aerogeneratore,eolico,vento,elica,pale"
       },
       "geometry": ["point", "vertex", "area"],
       "iDRef": "power/generator/source/wind",
@@ -70417,9 +70871,23 @@
       "icon": "maki-industry",
       "markerColor": "#2f3242",
       "presets": ["start_date"],
-      "lbl": {"en": "Coal-Fired Power Plant"},
+      "lbl": {
+        "en": "Coal-Fired Power Plant",
+        "de": "Kohlekraftwerk",
+        "es": "Planta de energía a carbón",
+        "pt": "Central a carvão",
+        "it": "Centrale a carbone",
+        "mk": "Јаглена електрана",
+        "pl": "Elektrownia węglowa",
+        "uk": "Вугільна електростанція"
+      },
       "terms": {
-        "en": "carbon, combustion, fossil fuel, coalfired, power station"
+        "en": "carbon, combustion, fossil fuel, coalfired, power station",
+        "de": "Kohle, Braunkohle, Steinkohle, Kraftwerk, Verbrennung",
+        "es": "carbón, carbon, combustión, combustion, combustibles fósiles, combustibles fosiles, carbón, central eléctrica",
+        "pt": "estação de produção energética,energia,central de energia,eletricidade,elétrica,carvão,combustível fóssil",
+        "pl": "elektrownia węglowa",
+        "uk": "вугіль,спалювання,паливо,викопне,електростанція,вуглець"
       },
       "geometry": ["area"],
       "iDRef": "power/plant/source/coal",
@@ -70438,9 +70906,23 @@
       "icon": "temaki-gas",
       "markerColor": "#2f3242",
       "presets": ["start_date"],
-      "lbl": {"en": "Gas-Fired Power Plant"},
+      "lbl": {
+        "en": "Gas-Fired Power Plant",
+        "de": "Gaskraftwerk",
+        "es": "Planta de energía a gas",
+        "pt": "Central a gás",
+        "it": "Centrale a gas",
+        "mk": "Гасна електрана",
+        "pl": "Elektrownia gazowa",
+        "uk": "Газова електростанція"
+      },
       "terms": {
-        "en": "carbon, combustion, fossil fuel, gasfired, power station, natural gas"
+        "en": "carbon, combustion, fossil fuel, gasfired, power station, natural gas",
+        "de": "Kraftwerk, Erdgas, Biogas, Holzgas, Kohlegas, Kuppelgas, Brenngas, Gasturbinenkraftwerk, Blockheizkraftwerk, Dampfkraftwerk, Gas-und-Dampf-Kombikraftwerk, GuD, VGT",
+        "es": "carbono, combustión, combustion, combustibles fósiles, combustibles fosiles, gas, central eléctrica, gas natural",
+        "pt": "gasómetro,gás natural,combustível fóssil,estação de produção energética,energia,central de energia,eletricidade,elétrica,gasômetro",
+        "pl": "elektrownia gazowa",
+        "uk": "вуглець,спалювання,паливо,викопне,газифікована,газ,природній,електростанція"
       },
       "geometry": ["area"],
       "iDRef": "power/plant/source/gas",
@@ -70459,9 +70941,24 @@
       "icon": "maki-dam",
       "markerColor": "#2f3242",
       "presets": ["plant/output/electricity"],
-      "lbl": {"en": "Hydroelectric Power Station"},
+      "lbl": {
+        "en": "Hydroelectric Power Station",
+        "de": "Wasserkraftwerk",
+        "es": "Estación de energía hidroeléctrica",
+        "pt": "Central hidroelétrica",
+        "it": "Centrale idroelettrica",
+        "ko": "수력 발전소",
+        "mk": "Хидроелектрана",
+        "pl": "Elektrownia wodna",
+        "uk": "Гідроелектростанція"
+      },
       "terms": {
-        "en": "dam, power plant, run-of-the-river, tidal, water turbine"
+        "en": "dam, power plant, run-of-the-river, tidal, water turbine",
+        "de": "Wasserkraft, Pumpspeicher, Wellenkraftwerk, Strömungskraftwerk, Gezeitenkraftwerk, Wasserturbine, Turbine, Stauanlage, Staumauer, Staustufe, Talsperre, Wasserrad, Laufwasserkraftwerk, Stausee, Flusskraftwerk, Speicherkraftwerk,",
+        "es": "represa, presa, central eléctrica, central electrica, escurrimiento del río, marea, turbina de agua",
+        "pt": "estação de produção energética,energia,central de energia,eletricidade,elétrica,barragem,água,turbina hidroelétrica",
+        "pl": "elektrownia wodna, hydroelektrownia przepływowa, zapora wodna, elektrownia szczytowo-pompowa",
+        "uk": "плотина,дамба,електростанція,річкова,турбіна,водяна,вода"
       },
       "geometry": ["area"],
       "iDRef": "power/plant/source/hydro",
@@ -70479,8 +70976,25 @@
       "icon": "temaki-radiation",
       "markerColor": "#2f3242",
       "presets": [],
-      "lbl": {"en": "Nuclear Power Plant"},
-      "terms": {"en": "atomic, fission, power station, nuclear reactor"},
+      "lbl": {
+        "en": "Nuclear Power Plant",
+        "de": "Kernkraftwerk",
+        "es": "Planta de energía nuclear",
+        "pt": "Central nuclear",
+        "it": "Centrale nucleare",
+        "ko": "원자력 발전소",
+        "mk": "Нуклеарна електрана",
+        "pl": "Elektrownia jądrowa",
+        "uk": "Атомна електростанція"
+      },
+      "terms": {
+        "en": "atomic, fission, power station, nuclear reactor",
+        "de": "Atom, Kraftwerk, Nuklear, Kernkraft, AKW, KKW, Reaktor, Fission, Kernenergie, Atomenergie, Atommeiler, Kernmeiler, Kernspaltung",
+        "es": "atómica, fisión, fision, central eléctrica, central electrica, reactor nuclear",
+        "pt": "atómica,fissão,estação de produção energética,energia,reator nuclear,central de energia atómica,eletricidade,elétrica",
+        "pl": "elektrownia jądrowa, elektrownia atomowa, reaktor jądrowy",
+        "uk": "атом,енергія,електростанція,реакція,атомна"
+      },
       "geometry": ["area"],
       "iDRef": "power/plant/source/nuclear",
       "tags": {"power": "plant", "plant:source": "nuclear"},
@@ -70498,9 +71012,22 @@
       "icon": "fas-solar-panel",
       "markerColor": "#2f3242",
       "presets": [],
-      "lbl": {"en": "Solar Farm"},
+      "lbl": {
+        "en": "Solar Farm",
+        "de": "Solarpark",
+        "es": "Granja solar",
+        "pt": "Parque solar",
+        "mk": "Сончева фарма",
+        "pl": "Elektrownia słoneczna",
+        "uk": "Сонячна електростанція"
+      },
       "terms": {
-        "en": "photovoltaic power station, solar panels, solar park, utility-scale solar"
+        "en": "photovoltaic power station, solar panels, solar park, utility-scale solar",
+        "de": "Solar, Sonne, Kraftwerk, PV, Photovoltaik, Fotovoltaik, Solarpanel,",
+        "es": "central fotovoltaica, paneles solares, parque solar, granja solar, huerta, solar a escala de servicios públicos",
+        "pt": "central solar,central fotovoltaica,painéis solares,painel solar,fotovoltaico,estação de produção energética,eletricidade,elétrica",
+        "pl": "elektrownia słoneczna, farma fotowoltaiczna",
+        "uk": "сонце,панелі,сонячні,електрика,електростанція,ферма"
       },
       "geometry": ["area"],
       "iDRef": "power/plant/source/solar",
@@ -70518,9 +71045,23 @@
       "icon": "temaki-wind_turbine",
       "markerColor": "#2f3242",
       "presets": ["start_date"],
-      "lbl": {"en": "Wind Farm"},
+      "lbl": {
+        "en": "Wind Farm",
+        "de": "Windrad",
+        "es": "Granja eólica",
+        "pt": "Parque eólico",
+        "ko": "풍력 발전소",
+        "mk": "Ветропарк",
+        "pl": "Elektrownia wiatrowa",
+        "uk": "Вітроелектростанція"
+      },
       "terms": {
-        "en": "offshore wind, wind park, wind power plant, wind power station, wind turbines, windmills"
+        "en": "offshore wind, wind park, wind power plant, wind power station, wind turbines, windmills",
+        "de": "Windkraftwerk, Windpark, Wind, Windenergie, WEA, Offshore, Onshore, Windräder, Windfarm",
+        "es": "viento en alta mar, parque eólico, parque eolico, planta de energía eólica, planta de energia eolica, estación de energía eólica, estación de energía eolica, turbinas eólicas, turbinas eolicas, molinos de viento",
+        "pt": "eólico,eólica,vento,wind,energia,turbinas,produção de energia,eólicas,estação,central eólica,eletricidade,elétrica",
+        "pl": "elektrownia wiatrowa, farma wiatrowa, siłownia wiatrowa",
+        "uk": "вітер,електростанція,вітряк,турбіна,ферма"
       },
       "geometry": ["area"],
       "iDRef": "power/plant/source/wind",
@@ -71967,7 +72508,8 @@
         "pl": "Rękaw (wiatrowskaz)",
         "sv": "Vindstrut",
         "uk": "Вітровказ",
-        "vi": "Ống gió"
+        "vi": "Ống gió",
+        "tr": "Rüzgâr hortumu"
       },
       "terms": {
         "en": "",
@@ -71984,7 +72526,8 @@
         "pl": "rękaw, wiatrowskaz, wskaźnik wiatru, wiatromierz, anemometr, anemoskop",
         "sv": "vindstrut, vindmätning, strut, vind, vindriktning, vindstyrka",
         "uk": "вітер,вказівник,флюгер,напрям,швидкість",
-        "vi": "ống gió, ong gio"
+        "vi": "ống gió, ong gio",
+        "tr": "rüzgar hortumu"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "aeroway/windsock",
@@ -73071,7 +73614,8 @@
         "pt": "Trilho/carril de um monotrilho/monocarril.",
         "cs": "Monorail - železnice o jedné kolejnici.",
         "ja": "1本のレールで成り立つ鉄道。",
-        "pl": "Kolej jednoszynowa."
+        "pl": "Kolej jednoszynowa.",
+        "es": "Un ferrocarril con un solo raíl."
       }
     },
     {
@@ -73654,7 +74198,9 @@
         "pl": "Myjnia pociągów",
         "sv": "Tågtvätt",
         "uk": "Мийка для вагонів",
-        "vi": "Rửa Xe lửa"
+        "vi": "Rửa Xe lửa",
+        "no": "Tog Vask",
+        "tr": "Tren Yıkama"
       },
       "terms": {
         "en": "wash, clean",
@@ -73795,7 +74341,8 @@
         "mk": "Железнички двор",
         "pl": "Stacja towarowa",
         "uk": "Залізничне депо",
-        "vi": "Sân ga"
+        "vi": "Sân ga",
+        "tr": "Demir Yolu Sahası"
       },
       "terms": {
         "en": "freight car stop, freight train station, rail freight station, railroad yard, railway yard",
@@ -74471,7 +75018,8 @@
         "ja": "魚道",
         "mk": "Рибен премин",
         "pl": "Przepławka dla ryb",
-        "uk": "Рибохід"
+        "uk": "Рибохід",
+        "he": "מעבר דגים"
       },
       "terms": {
         "en": "eel ladder, eel pass, fish ladder, fish migration, fish passage, fish siphon, fish steps, fish way, fishladder, fishpass, fishsteps, fishway",
@@ -74480,7 +75028,8 @@
         "pt": "escadaria,escada,peixes,piscícola,canal,enguias,salmão,açude,represa,barragem,rio,transposição,desovar",
         "ja": "魚道, ダム, 堰",
         "pl": "przepławka dla ryb, jaz, zapora, śluza wodna, ryby",
-        "uk": "риба,драбина,пропуск,обхід,лосось,прохід,сходи"
+        "uk": "риба,драбина,пропуск,обхід,лосось,прохід,сходи",
+        "he": "מעבר צלופחים,מעבר דגה,מדרגות דגים,דרך דגים,סולם דגים,נדידת דגים"
       },
       "geometry": ["line"],
       "iDRef": "waterway/fish_pass",
@@ -75017,9 +75566,24 @@
         "intermittent"
       ],
       "moreFields": [],
-      "lbl": {"en": "Tidal Channel"},
+      "lbl": {
+        "en": "Tidal Channel",
+        "de": "Gezeitenkanal",
+        "es": "Canal de marea",
+        "pt": "Canal de maré",
+        "ja": "感潮水路",
+        "mk": "Плимен канал",
+        "pl": "Kanał pływowy",
+        "uk": "Припливний канал"
+      },
       "terms": {
-        "en": "coastal, pill, intertidal, mangroves, marine, salt marsh, tidal creek, tidal flat, tidal inlet, waterway"
+        "en": "coastal, pill, intertidal, mangroves, marine, salt marsh, tidal creek, tidal flat, tidal inlet, waterway",
+        "de": "Priel, Balje, Balge, Wattrinne, Schloon, Wattstrom",
+        "es": "costero, intermareal, manglar, marino, marisma, arroyo de marea, planicie de marea, entrada de marea, vía fluvial",
+        "pt": "costeiro,mar,entre-marés,manguezal,mangal,mangais,marinho,sal,salobra,pântano,água,marés",
+        "ja": "感潮水路, クリーク, 水路",
+        "pl": "kanał pływowy, pływy, ciek",
+        "uk": "прилив,відлив,вода,мілина,ранок,вечір"
       },
       "geometry": ["line"],
       "iDRef": "waterway/tidal_channel",
@@ -75664,7 +76228,8 @@
         "pl": "Łańcuch",
         "uk": "Ланцюг",
         "eo": "Ĉeno",
-        "sv": "Kedja"
+        "sv": "Kedja",
+        "ko": "쇠사슬"
       },
       "terms": {
         "en": "",
@@ -77189,8 +77754,25 @@
       "icon": "temaki-gate",
       "markerColor": "#283d30",
       "presets": [],
-      "lbl": {"en": "Swing Gate"},
-      "terms": {"en": ""},
+      "lbl": {
+        "en": "Swing Gate",
+        "de": "Drehschranke",
+        "es": "Puerta batiente",
+        "pt": "Cancela giratória",
+        "ja": "スイングゲート",
+        "mk": "Крилна порта",
+        "pl": "Szlaban (przesuwany w poziomie)",
+        "uk": "Відкидні ворота"
+      },
+      "terms": {
+        "en": "",
+        "de": "Schranke, Schlagbaum, Drehtor, Gatter",
+        "es": "puerta,batiente",
+        "pt": "barreira,girar,obstáculo",
+        "ja": "スイングゲート, 旋回ゲート",
+        "pl": "szlaban, bariera",
+        "uk": "ворота,шлагбаум,прохід,проїзд"
+      },
       "geometry": ["vertex"],
       "iDRef": "barrier/swing_gate",
       "tags": {"barrier": "swing_gate"},
@@ -78955,7 +79537,8 @@
         "pl": "Budynek gospodarczy",
         "sv": "Gårdsbyggnader",
         "uk": "Господарчі споруди на фермі",
-        "vi": "Tòa nhà Nông trại"
+        "vi": "Tòa nhà Nông trại",
+        "tr": "Çiftlik Binası"
       },
       "terms": {
         "en": "",
@@ -79353,7 +79936,8 @@
         "mk": "Хангар",
         "pl": "Budynek hangaru",
         "uk": "Ангар",
-        "sv": "Hangar"
+        "sv": "Hangar",
+        "tr": "Hangar"
       },
       "terms": {
         "en": "",
@@ -79560,7 +80144,8 @@
         "de": "Hotel",
         "cs": "Budova navržená jako hotel s oddělenými pokoji pro ubytování.",
         "ja": "ホテルの建物。宿泊設備が利用できる個室が設計されている建物です。",
-        "pl": "Budynek hotelowy."
+        "pl": "Budynek hotelowy.",
+        "es": "Un edificio diseñado con habitaciones separadas para pasar la noche."
       }
     },
     {
@@ -80102,7 +80687,8 @@
         "pl": "Pawilon sportowy",
         "sv": "Klubbhus",
         "uk": "Павільйон на спортмайданчику",
-        "vi": "Đình"
+        "vi": "Đình",
+        "tr": "Köşk"
       },
       "terms": {
         "en": "sports",
@@ -81324,7 +81910,8 @@
         "pl": "Budynek dworca",
         "sv": "Tågstationsbyggnad",
         "uk": "Залізнична станція",
-        "vi": "Nhà ga"
+        "vi": "Nhà ga",
+        "tr": "Tren İstasyonu Binası"
       },
       "terms": {"en": ""},
       "geometry": ["point", "vertex", "area"],
@@ -81404,7 +81991,8 @@
         "ru": "Здание, имеющее отношение к общественному транспорту.",
         "cs": "Budova související s veřejnou dopravou.",
         "ja": "公共交通機関に関する建物です。",
-        "pl": "Budynek transportu publicznego."
+        "pl": "Budynek transportu publicznego.",
+        "es": "Un edificio relacionado con el transporte público."
       }
     },
     {
@@ -81615,14 +82203,23 @@
         "ja": "非常口",
         "mk": "Итен излез",
         "pl": "Wyjście ewakuacyjne",
-        "uk": "Аварійний вихід"
+        "uk": "Аварійний вихід",
+        "fr": "Sortie de secours",
+        "de": "Notausgang",
+        "pt": "Saída de emergência",
+        "ko": "비상구",
+        "vi": "Lối thoát Khẩn cấp"
       },
       "terms": {
         "en": "fire exit, door",
         "es": "salida de emergencia, puerta, evacuación",
         "ja": "非常口, 出口, 緊急",
         "pl": "wyjście ewakuacyjne",
-        "uk": "вихід,двері,пожарний,аварія"
+        "uk": "вихід,двері,пожарний,аварія",
+        "fr": "sortie de secours, porte, issue de secours, évacuation, urgence, incendie",
+        "de": "Fluchtweg, Fluchttür, Feuerfluchtweg",
+        "pt": "evacuação, saída de evacuação, emergência,incêndio",
+        "vi": "lối thoát khẩn cấp, lối ra khẩn cấp, loi thoat khan cap, loi ra khan cap"
       },
       "geometry": ["vertex"],
       "iDRef": "entrance/emergency"

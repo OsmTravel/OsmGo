@@ -72,6 +72,9 @@ export class TagsService {
         'railway/rail/highspeed',
         'railway/subway',
         'railway/tram',
+        'railway/tram_level_crossing',
+        'railway/tram_crossing',
+        'railway/railway_crossing',
 
         'barrier/kerb',
         'barrier/kerb/flush',
