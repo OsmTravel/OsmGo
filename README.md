@@ -17,11 +17,11 @@ The APK can be found in [the release list of this repository](https://github.com
 A short user documentation can be found [here](https://dofabien.github.io/OsmGo/).
 
  <p align="center">
-  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-vt.png?raw=true"/>
-  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-ortho.png?raw=true"/>
-  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/fiche.png?raw=true"/>
-  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/map-modif.png?raw=true"/>
-  <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/select-primary-tag-velo.png?raw=true"/>
+  <img src="./docs/assets/map-vt.png?raw=true"/>
+  <img src="./docs/assets/map-ortho.png?raw=true"/>
+  <img src="./docs/assets/fiche.png?raw=true"/>
+  <img src="./docs/assets/map-modif.png?raw=true"/>
+  <img src="./docs/assets/select-primary-tag-velo.png?raw=true"/>
   <img src="https://raw.githubusercontent.com/wiki/DoFabien/OsmGo/assets/send-data.png"/>
 </p>
 
@@ -59,3 +59,7 @@ If you want to contribute to Osm Go! and make it better, your help is welcome !
  5. Push your branch to your fork on Github, the remote `origin`.
  6. From your fork open a pull request in the correct branch. 
  
+
+### Interface translation
+You can help me translate the app into other languages. 
+The easiest way is to go [through this app](https://admin.osmgo.com/), and click on "translate Ui".

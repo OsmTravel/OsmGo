@@ -10,21 +10,24 @@
  - Import deprecated presets from ID
  - Import "brand" from name-suggestion-index/
  - Import languages translation from iD ! ( tags & presets)
- - Add keys : aerialway, playground, attraction, barrier, power
+ - Add keys : aerialway, playground, attraction, barrier, power, telecom, etc..
  - Import descriptions from TagInfo
 
 ## ✨ Features
  - You can save and restore fields
  - You can fix deprecated presets automatically (with a button)
  - Deprecated items are now highlighted on the map
+ - Ability to hide / show some tags on the in a dedicated menu
+ - You can choose between "check_date" and "survey_date" in settings menu
 
 ## Deleting Features
  - Deleting the live update mode
  - OsmGo-Admin has its [own repository](https://github.com/DoFabien/OsmGo-admin)
 
 ## 🍏 Improvements
+ - Ionic 5 & Angular 9
  - Adding some unit test
- - Mapbox gl js 1.6.0
+ - Mapbox gl js 1.7.0
  - Icons are now stored in a sprite ( no SVG)
 
 ## UI
