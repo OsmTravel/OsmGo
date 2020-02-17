@@ -3,27 +3,33 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'read-primary-key',
     styleUrls: ['./style.scss'],
-    template: `
-   	<ion-card>
-        <ion-card-header>
-            <b *ngIf="!displayCode">{{keyLbl}}</b>
-            <b *ngIf="displayCode">{{primaryKey.key}}</b>
-        </ion-card-header>
-        <ion-card-content>
-            <p class="primaryKeyLabel" *ngIf="!displayCode && configOfPrimaryKey?.lbl"> {{configOfPrimaryKey.lbl}}</p>
-            <p class="description" *ngIf="!displayCode && configOfPrimaryKey && configOfPrimaryKey.description"> {{configOfPrimaryKey.description}}</p>
-           
-            <p class="primaryKeyLabel" *ngIf="displayCode || !configOfPrimaryKey?.lbl">
-            <ion-icon name="code"></ion-icon>
-                {{primaryKey.value}}
-            </p>
-        </ion-card-content>
-	</ion-card>
-  `
+    templateUrl: 'READ_PrimaryKey.component.html'
 })
 export class ReadPrimaryKey {
     @Input() displayCode;
-    @Input() keyLbl;
-    @Input() primaryKey;
-    @Input() configOfPrimaryKey;
+    @Input() tagsConfig;
+    @Input() tagConfig;
+    @Input() language;
+    @Input() feature;
+    @Input() jsonSprites;
+    @Input() primaryKeys;
+
+    primaryKey;
+  
+   
+    ngOnInit(): void {
+        this.primaryKey = this.findPkey(this.feature);
+    
+        // console.log(this.currentSpriteConfig);
+     
+    }
+
+    findPkey( feature){
+        const pkeys = this.primaryKeys;
+        for (let k in feature.properties.tags){
+            if (pkeys.includes(k)){
+                return {key: k, value:feature.properties.tags[k] }
+            }
+        }
+    } 
 }

@@ -6,7 +6,13 @@
     "CONFIRM": "Confirm",
     "ADD": "Add",
     "VALIDATE": "Validate",
-    "OK": "Ok"
+    "OK": "Ok",
+    "UNKNOWN": "Unknown",
+    "UNDEFINED": "Undefined",
+    "NAME": "Name",
+    "ID": "Id",
+    "CLOSE": "Close",
+    "LOADING": "Loading..."
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Really ?",
@@ -25,19 +31,19 @@
     "DELETE_DATA_CONFIRM_MESSAGE": "Delete downloaded data? (keep the changes)",
     "SIGN_OUT": "Logout",
     "EXIT": "Exit",
-    "NEW_VERSION": "A new version is ready !"
+    "NEW_VERSION": "A new version is ready !",
+    "TAG_MANAGEMENT": "Tags management"
   },
   "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
-  "GEOLOCATION": {
-    "GEOLOCATION_IN_PROGESS": "Geolocation in progress ...",
-    "DO_NOT_USE_GEOLOCATION": "Do not use geolocation",
-    "YOU_SHOULD_ALLOW_GEOLOCATION": "You should allow geolocation ..."
-  },
   "LOGIN": {
     "LOGIN": "Login",
     "USERNAME_PLACEHOLDER": "Email or user name OpenStreetMap",
     "PASSWORD_PLACEHOLDER": "Password",
-    "LOGIN_BUTTON": "Log in"
+    "LOGIN_BUTTON": "Log in",
+    "LOGIN_OAUTH": "Log in with Oauth",
+    "SAVE_PASSWORD": "Save your password",
+    "SAVED_PASSWORD_HINT": "Your password will be saved in clear in the application cache",
+    "NOT_SAVED_PASSWORD_HINT": "You will be asked for your password before each OSM update"
   },
   "SEND_DATA": {
     "SEND_DATA": "Send data",
@@ -55,7 +61,7 @@
     "DELETE": "Delete",
     "DELETE_CONFIRM_HEADER": "Really ?",
     "DELETE_CONFIRM_MESSAGE": "Delete all changes?",
-    "CLOSE": "Close"
+    "PASSWORD_OSM": "OSM password"
   },
   "SETTINGS": {
     "SETTINGS": "Settings",
@@ -69,32 +75,19 @@
     "HIDE_LONG_LINE": "Hide lines longer than 200 m",
     "HIDE_LONG_LINE_HINT": "Lines longer than 200 m won't be displayed. A marker will always symbolize the line",
     "TAGS": "Tags",
-    "DEFAULT_TAGS_LIST": "List of default tags",
-    "TAGS_LIST_ALL": "All tags",
-    "TAGS_LIST_BOOKMARKS": "Bookmarks",
-    "TAGS_LIST_TYPE": "By type",
-    "DEFAULT_TAGS_LIST_HINT": "Default tag type when opening the selection window",
     "DATA": "Data",
     "MARGIN": "Margin",
     "MARGIN_HINT": "Distance around the current view where the data will be downloaded",
     "AERIAL_IMAGERY": "Aerial imagery",
     "AERIAL_IMAGERY_HINT": "Aerial imaging to use",
-    "DELAYED_MODE": "Deferred mode",
-    "DELAYED_MODE_HINT": "The modified items will be sent when requested (recommended mode)",
-    "LIVE_MODE_MUST_LOGIN": "You must be authenticated to switch",
-    "LIVE_MODE_ON": "Mode live On",
-    "LIVE_MODE_OFF": "Mode live Off",
-    "LIVE_MODE_HINT": "After each change, the item is sent to OpenStreetMap",
     "LANGUAGE_AND_REGION": "Language & region",
     "UI_LANGUAGE": "User interface language",
     "TAG_LANGUAGE": "Language of tags",
     "TAG_COUNTRY": "Country",
     "TAG_COUNTRY_HINT": "Tags and presets may vary by country",
     "CACHE": "Cache management",
-    "GENERATE_ICON_CACHE": "Generate the icon cache",
-    "DELETE_ICON_CACHE": "Delete icon cache",
     "DELETE_CACHE": "Delete all application cache",
-    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, icons, login, etc)",
+    "DELETE_CACHE_HINT": "Delete all application cache (data, edits, login, etc)",
     "DISPLAY_OLD_TAGS_ICON": "Show an icon on old objects",
     "OLD_TAGS_ICON_RANGE_PART_1": "Last modification at least",
     "OLD_TAGS_ICON_RANGE_PART_2": "years ago",
@@ -102,9 +95,17 @@
     "DISPLAY_FIXME_ICON": "Display \"fixme\" icons",
     "DISPLAY_FIXME_ICON_HINT": "Displays an icon to the right of the marker to indicate the presence of a fixed tag",
     "ADD_SURVEY_DATE": "Add today's date to tag 'survey:date",
-    "ADD_SURVEY_DATE_HINT": "Add today's date to tag 'survey:date after adding/editing object"
+    "ADD_SURVEY_DATE_HINT": "Add today's date to tag 'survey:date' or 'check_date' after adding/editing object",
+    "CHECKED_KEY": "survey:date or check_date ?",
+    "LINES_SELECTABLE": "Make lines selectable",
+    "LINES_SELECTABLE_HINT": "Ability to click on a line to open the element sheet",
+    "POLYGONS_SELECTABLE": "Make polygons selectable",
+    "POLYGONS_SELECTABLE_HINT": "Ability to click on a polygon to open the element sheet",
+    "CENTER_WHEN_GPS_IS_READY": "On start, center the map on your location",
+    "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible"
   },
   "MODAL_SELECTED_ITEM": {
+    "CUSTOM_KEY_VALUE": "Add a custom value",
     "PRIMARY_TAG_LIST": "List",
     "PRIMARY_TAG_CUSTOM": "Custom",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Please enter at least 3 letters in the search bar",
@@ -127,7 +128,21 @@
     "PRIMARY_TAG_BOOKMARKS": "Bookmarks",
     "PRIMARY_TAG_FULL": "Full",
     "SELECT_CATEGORY": "Select a category",
-    "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way",
-    "UNDEFINED_VALUE": "unknown"
+    "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way(s)",
+    "UNDEFINED_VALUE": "Unknown",
+    "LAST_TAG_USED": "Last used tags",
+    "BOOKMARKS": "Bookmarks"
+  },
+  "ALERT": {"TAG_IS_DEPRECATED": "This tag is deprecated", "FIX": "Fix"},
+  "MANAGE_TAGS": {
+    "TAG_MANAGEMENT_TITLE": "Tags management",
+    "ACTIVE_TAGS": "Manage active tags",
+    "ACTIVE_TAGS_DESCRIPTION": "This window allows you to hide certain items on the map or add favourites.",
+    "HIDDEN_TAGS_WARNING": "Hidden elements are not rendered on the map and are not proposed in the tag list. Use with caution to avoid duplicates.",
+    "HIDDEN_TAGS": "Manage hidden tags",
+    "HIDDEN_TAGS_DESCRIPTION": "This window allows you to make the hidden elements visible.",
+    "BOOKMARKED_TAGS": "Manage your favorites",
+    "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
+    "RESET_HIDDEN_TAGS": "Reset"
   }
 }

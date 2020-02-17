@@ -12,6 +12,13 @@
 
 
 <ion-content class="ion-padding">
+  <h1 *ngIf="this.configService.config.isDevServer" > DEV SERVER</h1>
+
+  <ion-card *ngIf="connectionError" color="danger" >
+    <ion-card-content>
+      {{connectionError}}
+    </ion-card-content>
+  </ion-card>
 
   	<ion-card *ngIf="!configService.user_info.connected" color="danger" >
 				<ion-card-content>
@@ -61,22 +68,30 @@
   <table style="width:100%">
     <tr>
       <th style="width: 45px;">{{ 'SEND_DATA.TYPE' | translate}}</th>
-      <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
+      <th style="width: 45px;"></th>
+      
       <th>{{ 'SEND_DATA.NAME' | translate}}</th>
+      <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
+     
       <th style="width: 45px;"><ion-icon name="locate"></ion-icon></th>
       <th style="width: 45px;">{{ 'SEND_DATA.ERROR' | translate}}</th>
       
     </tr>
     <tr *ngFor="let item of featuresChanges">
       <td>
-        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add"></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create"></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash"></ion-icon>
-
+        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add" class="iconType" style="color:green" ></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create" class="iconType" style="color:blue" ></ion-icon>
+        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash" class="iconType" style="color:red"  ></ion-icon>
       </td>
-      <td>{{item.properties?.primaryTag.k}}: {{item.properties?.primaryTag.v}}</td>
-      <td>{{item?.properties?.tags?.name}}</td>
-        <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon name="locate"></ion-icon>  </td>
+      <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
+          <app-icon  class="imgCenter iconImg" [icon]="item.properties.icon" [jsonSprites]="tagsService.jsonSprites">  </app-icon>
+             
+     
+      </td>
+      <td>{{item.properties?._name}}</td>
+      <td>{{item.properties?.primaryTag.key}}: {{item.properties?.primaryTag.value}}</td>
+     
+        <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon style="font-size: 2em;" name="locate"></ion-icon>  </td>
       <td>
         <div *ngIf="item.error" (click)="displayError(item.error)">
           <ion-icon name="bug"></ion-icon>
@@ -98,5 +113,5 @@
             (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
   <ion-button class="footerButton" 
               [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
-              (click)="pushDataToOsm(commentChangeset)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
+              (click)="pushDataToOsm(commentChangeset, this.basicPassword)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
 </ion-footer>

@@ -73,10 +73,16 @@ The buttons there enable you
   <img src="./assets/select-primary-tag-velo.png?raw=true"/>
 </p>
 
+You can save attributes from an item and restore these attributes to an other item (with the same type)
 <p align="center">
-  <img src="./assets/fiche-modif-select.png?raw=true"/>
-  <img src="./assets/list-type-cuisine.png?raw=true"/>
+  <img src="./assets/save_&_restore.gif?raw=true"/>
 </p>
+
+You can add a key that does not exist in the database
+<p align="center">
+  <img src="./assets/custom_key.gif?raw=true"/>
+</p>
+
 
 ## Upload your modifications as a changeset
 
@@ -90,4 +96,16 @@ The buttons there enable you
 <p align="center">
   <img src="./assets/params.png?raw=true"/>
   <img src="./assets/param-2.png?raw=true"/>
+</p>
+
+## Hide & show items
+You can hide or show some objects by type. 
+<p align="center">
+  <img src="./assets/manage_active_tags.png?raw=true"/>
+  <img src="./assets/manage_hidden_tags.png?raw=true"/>
+</p>
+
+For example, the same area with no hidden tags
+<p align="center">
+  <img src="./assets/no_hidden_tags.png?raw=true"/>
 </p>

@@ -1,0 +1,1494 @@
+{
+  "aa": {
+    "code": "aa",
+    "639-2": "aar",
+    "family": "Afro-Asiatic",
+    "name": "Afar",
+    "nativeName": "Afaraf",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Afar_language"
+  },
+  "ab": {
+    "code": "ab",
+    "639-2": "abk",
+    "family": "Northwest Caucasian",
+    "name": "Abkhaz",
+    "nativeName": "аҧсуа бызшәа, аҧсшәа",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Abkhaz_language"
+  },
+  "ae": {
+    "code": "ae",
+    "639-2": "ave",
+    "family": "Indo-European",
+    "name": "Avestan",
+    "nativeName": "avesta",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Avestan_language"
+  },
+  "af": {
+    "code": "af",
+    "639-2": "afr",
+    "family": "Indo-European",
+    "name": "Afrikaans",
+    "nativeName": "Afrikaans",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Afrikaans_language"
+  },
+  "ak": {
+    "code": "ak",
+    "639-2": "aka",
+    "family": "Niger–Congo",
+    "name": "Akan",
+    "nativeName": "Akan",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Akan_language"
+  },
+  "am": {
+    "code": "am",
+    "639-2": "amh",
+    "family": "Afro-Asiatic",
+    "name": "Amharic",
+    "nativeName": "አማርኛ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Amharic_language"
+  },
+  "an": {
+    "code": "an",
+    "639-2": "arg",
+    "family": "Indo-European",
+    "name": "Aragonese",
+    "nativeName": "aragonés",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Aragonese_language"
+  },
+  "ar": {
+    "code": "ar",
+    "639-2": "ara",
+    "family": "Afro-Asiatic",
+    "name": "Arabic",
+    "nativeName": "العربية",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Arabic_language"
+  },
+  "as": {
+    "code": "as",
+    "639-2": "asm",
+    "family": "Indo-European",
+    "name": "Assamese",
+    "nativeName": "অসমীয়া",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Assamese_language"
+  },
+  "av": {
+    "code": "av",
+    "639-2": "ava",
+    "family": "Northeast Caucasian",
+    "name": "Avaric",
+    "nativeName": "авар мацӀ, магӀарул мацӀ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Avar_language"
+  },
+  "ay": {
+    "code": "ay",
+    "639-2": "aym",
+    "family": "Aymaran",
+    "name": "Aymara",
+    "nativeName": "aymar aru",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Aymara_language"
+  },
+  "az": {
+    "code": "az",
+    "639-2": "aze",
+    "family": "Turkic",
+    "name": "Azerbaijani",
+    "nativeName": "azərbaycan dili",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Azerbaijani_language"
+  },
+  "ba": {
+    "code": "ba",
+    "639-2": "bak",
+    "family": "Turkic",
+    "name": "Bashkir",
+    "nativeName": "башҡорт теле",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bashkir_language"
+  },
+  "be": {
+    "code": "be",
+    "639-2": "bel",
+    "family": "Indo-European",
+    "name": "Belarusian",
+    "nativeName": "беларуская мова",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Belarusian_language"
+  },
+  "bg": {
+    "code": "bg",
+    "639-2": "bul",
+    "family": "Indo-European",
+    "name": "Bulgarian",
+    "nativeName": "български език",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bulgarian_language"
+  },
+  "bh": {
+    "code": "bh",
+    "639-2": "bih",
+    "family": "Indo-European",
+    "name": "Bihari",
+    "nativeName": "भोजपुरी",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bihari_languages"
+  },
+  "bi": {
+    "code": "bi",
+    "639-2": "bis",
+    "family": "Creole",
+    "name": "Bislama",
+    "nativeName": "Bislama",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bislama_language"
+  },
+  "bm": {
+    "code": "bm",
+    "639-2": "bam",
+    "family": "Niger–Congo",
+    "name": "Bambara",
+    "nativeName": "bamanankan",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bambara_language"
+  },
+  "bn": {
+    "code": "bn",
+    "639-2": "ben",
+    "family": "Indo-European",
+    "name": "Bengali, Bangla",
+    "nativeName": "বাংলা",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bengali_language"
+  },
+  "bo": {
+    "code": "bo",
+    "639-2": "bod",
+    "639-2/B": "tib",
+    "family": "Sino-Tibetan",
+    "name": "Tibetan Standard, Tibetan, Central",
+    "nativeName": "བོད་ཡིག",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Standard_Tibetan"
+  },
+  "br": {
+    "code": "br",
+    "639-2": "bre",
+    "family": "Indo-European",
+    "name": "Breton",
+    "nativeName": "brezhoneg",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Breton_language"
+  },
+  "bs": {
+    "code": "bs",
+    "639-2": "bos",
+    "family": "Indo-European",
+    "name": "Bosnian",
+    "nativeName": "bosanski jezik",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bosnian_language"
+  },
+  "ca": {
+    "code": "ca",
+    "639-2": "cat",
+    "family": "Indo-European",
+    "name": "Catalan",
+    "nativeName": "català",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Catalan_language"
+  },
+  "ce": {
+    "code": "ce",
+    "639-2": "che",
+    "family": "Northeast Caucasian",
+    "name": "Chechen",
+    "nativeName": "нохчийн мотт",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Chechen_language"
+  },
+  "ch": {
+    "code": "ch",
+    "639-2": "cha",
+    "family": "Austronesian",
+    "name": "Chamorro",
+    "nativeName": "Chamoru",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Chamorro_language"
+  },
+  "co": {
+    "code": "co",
+    "639-2": "cos",
+    "family": "Indo-European",
+    "name": "Corsican",
+    "nativeName": "corsu, lingua corsa",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Corsican_language"
+  },
+  "cr": {
+    "code": "cr",
+    "639-2": "cre",
+    "family": "Algonquian",
+    "name": "Cree",
+    "nativeName": "ᓀᐦᐃᔭᐍᐏᐣ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Cree_language"
+  },
+  "cs": {
+    "code": "cs",
+    "639-2": "ces",
+    "639-2/B": "cze",
+    "family": "Indo-European",
+    "name": "Czech",
+    "nativeName": "čeština, český jazyk",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Czech_language"
+  },
+  "cu": {
+    "code": "cu",
+    "639-2": "chu",
+    "family": "Indo-European",
+    "name": "Old Church Slavonic, Church Slavonic, Old Bulgarian",
+    "nativeName": "ѩзыкъ словѣньскъ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Old_Church_Slavonic"
+  },
+  "cv": {
+    "code": "cv",
+    "639-2": "chv",
+    "family": "Turkic",
+    "name": "Chuvash",
+    "nativeName": "чӑваш чӗлхи",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Chuvash_language"
+  },
+  "cy": {
+    "code": "cy",
+    "639-2": "cym",
+    "639-2/B": "wel",
+    "family": "Indo-European",
+    "name": "Welsh",
+    "nativeName": "Cymraeg",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Welsh_language"
+  },
+  "da": {
+    "code": "da",
+    "639-2": "dan",
+    "family": "Indo-European",
+    "name": "Danish",
+    "nativeName": "dansk",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Danish_language"
+  },
+  "de": {
+    "code": "de",
+    "639-2": "deu",
+    "639-2/B": "ger",
+    "family": "Indo-European",
+    "name": "German",
+    "nativeName": "Deutsch",
+    "wikiUrl": "https://en.wikipedia.org/wiki/German_language"
+  },
+  "dv": {
+    "code": "dv",
+    "639-2": "div",
+    "family": "Indo-European",
+    "name": "Divehi, Dhivehi, Maldivian",
+    "nativeName": "ދިވެހި",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Dhivehi_language"
+  },
+  "dz": {
+    "code": "dz",
+    "639-2": "dzo",
+    "family": "Sino-Tibetan",
+    "name": "Dzongkha",
+    "nativeName": "རྫོང་ཁ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Dzongkha_language"
+  },
+  "ee": {
+    "code": "ee",
+    "639-2": "ewe",
+    "family": "Niger–Congo",
+    "name": "Ewe",
+    "nativeName": "Eʋegbe",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ewe_language"
+  },
+  "el": {
+    "code": "el",
+    "639-2": "ell",
+    "639-2/B": "gre",
+    "family": "Indo-European",
+    "name": "Greek (modern)",
+    "nativeName": "ελληνικά",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Greek_language"
+  },
+  "en": {
+    "code": "en",
+    "639-2": "eng",
+    "family": "Indo-European",
+    "name": "English",
+    "nativeName": "English",
+    "wikiUrl": "https://en.wikipedia.org/wiki/English_language"
+  },
+  "eo": {
+    "code": "eo",
+    "639-2": "epo",
+    "family": "Constructed",
+    "name": "Esperanto",
+    "nativeName": "Esperanto",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Esperanto"
+  },
+  "es": {
+    "code": "es",
+    "639-2": "spa",
+    "family": "Indo-European",
+    "name": "Spanish",
+    "nativeName": "Español",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Spanish_language"
+  },
+  "et": {
+    "code": "et",
+    "639-2": "est",
+    "family": "Uralic",
+    "name": "Estonian",
+    "nativeName": "eesti, eesti keel",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Estonian_language"
+  },
+  "eu": {
+    "code": "eu",
+    "639-2": "eus",
+    "639-2/B": "baq",
+    "family": "Language isolate",
+    "name": "Basque",
+    "nativeName": "euskara, euskera",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Basque_language"
+  },
+  "fa": {
+    "code": "fa",
+    "639-2": "fas",
+    "639-2/B": "per",
+    "family": "Indo-European",
+    "name": "Persian (Farsi)",
+    "nativeName": "فارسی",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Persian_language"
+  },
+  "ff": {
+    "code": "ff",
+    "639-2": "ful",
+    "family": "Niger–Congo",
+    "name": "Fula, Fulah, Pulaar, Pular",
+    "nativeName": "Fulfulde, Pulaar, Pular",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Fula_language"
+  },
+  "fi": {
+    "code": "fi",
+    "639-2": "fin",
+    "family": "Uralic",
+    "name": "Finnish",
+    "nativeName": "suomi, suomen kieli",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Finnish_language"
+  },
+  "fj": {
+    "code": "fj",
+    "639-2": "fij",
+    "family": "Austronesian",
+    "name": "Fijian",
+    "nativeName": "vosa Vakaviti",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Fijian_language"
+  },
+  "fo": {
+    "code": "fo",
+    "639-2": "fao",
+    "family": "Indo-European",
+    "name": "Faroese",
+    "nativeName": "føroyskt",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Faroese_language"
+  },
+  "fr": {
+    "code": "fr",
+    "639-2": "fra",
+    "639-2/B": "fre",
+    "family": "Indo-European",
+    "name": "French",
+    "nativeName": "français, langue française",
+    "wikiUrl": "https://en.wikipedia.org/wiki/French_language"
+  },
+  "fy": {
+    "code": "fy",
+    "639-2": "fry",
+    "family": "Indo-European",
+    "name": "Western Frisian",
+    "nativeName": "Frysk",
+    "wikiUrl": "https://en.wikipedia.org/wiki/West_Frisian_language"
+  },
+  "ga": {
+    "code": "ga",
+    "639-2": "gle",
+    "family": "Indo-European",
+    "name": "Irish",
+    "nativeName": "Gaeilge",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Irish_language"
+  },
+  "gd": {
+    "code": "gd",
+    "639-2": "gla",
+    "family": "Indo-European",
+    "name": "Scottish Gaelic, Gaelic",
+    "nativeName": "Gàidhlig",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Scottish_Gaelic_language"
+  },
+  "gl": {
+    "code": "gl",
+    "639-2": "glg",
+    "family": "Indo-European",
+    "name": "Galician",
+    "nativeName": "galego",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Galician_language"
+  },
+  "gn": {
+    "code": "gn",
+    "639-2": "grn",
+    "family": "Tupian",
+    "name": "Guaraní",
+    "nativeName": "Avañe'ẽ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Guaran%C3%AD_language"
+  },
+  "gu": {
+    "code": "gu",
+    "639-2": "guj",
+    "family": "Indo-European",
+    "name": "Gujarati",
+    "nativeName": "ગુજરાતી",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Gujarati_language"
+  },
+  "gv": {
+    "code": "gv",
+    "639-2": "glv",
+    "family": "Indo-European",
+    "name": "Manx",
+    "nativeName": "Gaelg, Gailck",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Manx_language"
+  },
+  "ha": {
+    "code": "ha",
+    "639-2": "hau",
+    "family": "Afro-Asiatic",
+    "name": "Hausa",
+    "nativeName": "(Hausa) هَوُسَ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Hausa_language"
+  },
+  "he": {
+    "code": "he",
+    "639-2": "heb",
+    "family": "Afro-Asiatic",
+    "name": "Hebrew (modern)",
+    "nativeName": "עברית",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Hebrew_language"
+  },
+  "hi": {
+    "code": "hi",
+    "639-2": "hin",
+    "family": "Indo-European",
+    "name": "Hindi",
+    "nativeName": "हिन्दी, हिंदी",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Hindi"
+  },
+  "ho": {
+    "code": "ho",
+    "639-2": "hmo",
+    "family": "Austronesian",
+    "name": "Hiri Motu",
+    "nativeName": "Hiri Motu",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Hiri_Motu_language"
+  },
+  "hr": {
+    "code": "hr",
+    "639-2": "hrv",
+    "family": "Indo-European",
+    "name": "Croatian",
+    "nativeName": "hrvatski jezik",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Croatian_language"
+  },
+  "ht": {
+    "code": "ht",
+    "639-2": "hat",
+    "family": "Creole",
+    "name": "Haitian, Haitian Creole",
+    "nativeName": "Kreyòl ayisyen",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Haitian_Creole_language"
+  },
+  "hu": {
+    "code": "hu",
+    "639-2": "hun",
+    "family": "Uralic",
+    "name": "Hungarian",
+    "nativeName": "magyar",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Hungarian_language"
+  },
+  "hy": {
+    "code": "hy",
+    "639-2": "hye",
+    "639-2/B": "arm",
+    "family": "Indo-European",
+    "name": "Armenian",
+    "nativeName": "Հայերեն",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Armenian_language"
+  },
+  "hz": {
+    "code": "hz",
+    "639-2": "her",
+    "family": "Niger–Congo",
+    "name": "Herero",
+    "nativeName": "Otjiherero",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Herero_language"
+  },
+  "ia": {
+    "code": "ia",
+    "639-2": "ina",
+    "family": "Constructed",
+    "name": "Interlingua",
+    "nativeName": "Interlingua",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Interlingua"
+  },
+  "id": {
+    "code": "id",
+    "639-2": "ind",
+    "family": "Austronesian",
+    "name": "Indonesian",
+    "nativeName": "Bahasa Indonesia",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Indonesian_language"
+  },
+  "ie": {
+    "code": "ie",
+    "639-2": "ile",
+    "family": "Constructed",
+    "name": "Interlingue",
+    "nativeName": "Originally called Occidental; then Interlingue after WWII",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Interlingue_language"
+  },
+  "ig": {
+    "code": "ig",
+    "639-2": "ibo",
+    "family": "Niger–Congo",
+    "name": "Igbo",
+    "nativeName": "Asụsụ Igbo",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Igbo_language"
+  },
+  "ii": {
+    "code": "ii",
+    "639-2": "iii",
+    "family": "Sino-Tibetan",
+    "name": "Nuosu",
+    "nativeName": "ꆈꌠ꒿ Nuosuhxop",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Nuosu_language"
+  },
+  "ik": {
+    "code": "ik",
+    "639-2": "ipk",
+    "family": "Eskimo–Aleut",
+    "name": "Inupiaq",
+    "nativeName": "Iñupiaq, Iñupiatun",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Inupiaq_language"
+  },
+  "io": {
+    "code": "io",
+    "639-2": "ido",
+    "family": "Constructed",
+    "name": "Ido",
+    "nativeName": "Ido",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ido_(language)"
+  },
+  "is": {
+    "code": "is",
+    "639-2": "isl",
+    "639-2/B": "ice",
+    "family": "Indo-European",
+    "name": "Icelandic",
+    "nativeName": "Íslenska",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Icelandic_language"
+  },
+  "it": {
+    "code": "it",
+    "639-2": "ita",
+    "family": "Indo-European",
+    "name": "Italian",
+    "nativeName": "Italiano",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Italian_language"
+  },
+  "iu": {
+    "code": "iu",
+    "639-2": "iku",
+    "family": "Eskimo–Aleut",
+    "name": "Inuktitut",
+    "nativeName": "ᐃᓄᒃᑎᑐᑦ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Inuktitut"
+  },
+  "ja": {
+    "code": "ja",
+    "639-2": "jpn",
+    "family": "Japonic",
+    "name": "Japanese",
+    "nativeName": "日本語 (にほんご)",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Japanese_language"
+  },
+  "jv": {
+    "code": "jv",
+    "639-2": "jav",
+    "family": "Austronesian",
+    "name": "Javanese",
+    "nativeName": "ꦧꦱꦗꦮ, Basa Jawa",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Javanese_language"
+  },
+  "ka": {
+    "code": "ka",
+    "639-2": "kat",
+    "639-2/B": "geo",
+    "family": "South Caucasian",
+    "name": "Georgian",
+    "nativeName": "ქართული",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Georgian_language"
+  },
+  "kg": {
+    "code": "kg",
+    "639-2": "kon",
+    "family": "Niger–Congo",
+    "name": "Kongo",
+    "nativeName": "Kikongo",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kongo_language"
+  },
+  "ki": {
+    "code": "ki",
+    "639-2": "kik",
+    "family": "Niger–Congo",
+    "name": "Kikuyu, Gikuyu",
+    "nativeName": "Gĩkũyũ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Gikuyu_language"
+  },
+  "kj": {
+    "code": "kj",
+    "639-2": "kua",
+    "family": "Niger–Congo",
+    "name": "Kwanyama, Kuanyama",
+    "nativeName": "Kuanyama",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kwanyama"
+  },
+  "kk": {
+    "code": "kk",
+    "639-2": "kaz",
+    "family": "Turkic",
+    "name": "Kazakh",
+    "nativeName": "қазақ тілі",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kazakh_language"
+  },
+  "kl": {
+    "code": "kl",
+    "639-2": "kal",
+    "family": "Eskimo–Aleut",
+    "name": "Kalaallisut, Greenlandic",
+    "nativeName": "kalaallisut, kalaallit oqaasii",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kalaallisut_language"
+  },
+  "km": {
+    "code": "km",
+    "639-2": "khm",
+    "family": "Austroasiatic",
+    "name": "Khmer",
+    "nativeName": "ខ្មែរ, ខេមរភាសា, ភាសាខ្មែរ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Khmer_language"
+  },
+  "kn": {
+    "code": "kn",
+    "639-2": "kan",
+    "family": "Dravidian",
+    "name": "Kannada",
+    "nativeName": "ಕನ್ನಡ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kannada_language"
+  },
+  "ko": {
+    "code": "ko",
+    "639-2": "kor",
+    "family": "Koreanic",
+    "name": "Korean",
+    "nativeName": "한국어",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Korean_language"
+  },
+  "kr": {
+    "code": "kr",
+    "639-2": "kau",
+    "family": "Nilo-Saharan",
+    "name": "Kanuri",
+    "nativeName": "Kanuri",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kanuri_language"
+  },
+  "ks": {
+    "code": "ks",
+    "639-2": "kas",
+    "family": "Indo-European",
+    "name": "Kashmiri",
+    "nativeName": "कश्मीरी, كشميري‎",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kashmiri_language"
+  },
+  "ku": {
+    "code": "ku",
+    "639-2": "kur",
+    "family": "Indo-European",
+    "name": "Kurdish",
+    "nativeName": "Kurdî, كوردی‎",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kurdish_language"
+  },
+  "kv": {
+    "code": "kv",
+    "639-2": "kom",
+    "family": "Uralic",
+    "name": "Komi",
+    "nativeName": "коми кыв",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Komi_language"
+  },
+  "kw": {
+    "code": "kw",
+    "639-2": "cor",
+    "family": "Indo-European",
+    "name": "Cornish",
+    "nativeName": "Kernewek",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Cornish_language"
+  },
+  "ky": {
+    "code": "ky",
+    "639-2": "kir",
+    "family": "Turkic",
+    "name": "Kyrgyz",
+    "nativeName": "Кыргызча, Кыргыз тили",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kyrgyz_language"
+  },
+  "la": {
+    "code": "la",
+    "639-2": "lat",
+    "family": "Indo-European",
+    "name": "Latin",
+    "nativeName": "latine, lingua latina",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Latin"
+  },
+  "lb": {
+    "code": "lb",
+    "639-2": "ltz",
+    "family": "Indo-European",
+    "name": "Luxembourgish, Letzeburgesch",
+    "nativeName": "Lëtzebuergesch",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Luxembourgish_language"
+  },
+  "lg": {
+    "code": "lg",
+    "639-2": "lug",
+    "family": "Niger–Congo",
+    "name": "Ganda",
+    "nativeName": "Luganda",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Luganda"
+  },
+  "li": {
+    "code": "li",
+    "639-2": "lim",
+    "family": "Indo-European",
+    "name": "Limburgish, Limburgan, Limburger",
+    "nativeName": "Limburgs",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Limburgish_language"
+  },
+  "ln": {
+    "code": "ln",
+    "639-2": "lin",
+    "family": "Niger–Congo",
+    "name": "Lingala",
+    "nativeName": "Lingála",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Lingala_language"
+  },
+  "lo": {
+    "code": "lo",
+    "639-2": "lao",
+    "family": "Tai–Kadai",
+    "name": "Lao",
+    "nativeName": "ພາສາລາວ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Lao_language"
+  },
+  "lt": {
+    "code": "lt",
+    "639-2": "lit",
+    "family": "Indo-European",
+    "name": "Lithuanian",
+    "nativeName": "lietuvių kalba",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Lithuanian_language"
+  },
+  "lu": {
+    "code": "lu",
+    "639-2": "lub",
+    "family": "Niger–Congo",
+    "name": "Luba-Katanga",
+    "nativeName": "Tshiluba",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tshiluba_language"
+  },
+  "lv": {
+    "code": "lv",
+    "639-2": "lav",
+    "family": "Indo-European",
+    "name": "Latvian",
+    "nativeName": "latviešu valoda",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Latvian_language"
+  },
+  "mg": {
+    "code": "mg",
+    "639-2": "mlg",
+    "family": "Austronesian",
+    "name": "Malagasy",
+    "nativeName": "fiteny malagasy",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Malagasy_language"
+  },
+  "mh": {
+    "code": "mh",
+    "639-2": "mah",
+    "family": "Austronesian",
+    "name": "Marshallese",
+    "nativeName": "Kajin M̧ajeļ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Marshallese_language"
+  },
+  "mi": {
+    "code": "mi",
+    "639-2": "mri",
+    "639-2/B": "mao",
+    "family": "Austronesian",
+    "name": "Māori",
+    "nativeName": "te reo Māori",
+    "wikiUrl": "https://en.wikipedia.org/wiki/M%C4%81ori_language"
+  },
+  "mk": {
+    "code": "mk",
+    "639-2": "mkd",
+    "639-2/B": "mac",
+    "family": "Indo-European",
+    "name": "Macedonian",
+    "nativeName": "македонски јазик",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Macedonian_language"
+  },
+  "ml": {
+    "code": "ml",
+    "639-2": "mal",
+    "family": "Dravidian",
+    "name": "Malayalam",
+    "nativeName": "മലയാളം",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Malayalam_language"
+  },
+  "mn": {
+    "code": "mn",
+    "639-2": "mon",
+    "family": "Mongolic",
+    "name": "Mongolian",
+    "nativeName": "Монгол хэл",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Mongolian_language"
+  },
+  "mr": {
+    "code": "mr",
+    "639-2": "mar",
+    "family": "Indo-European",
+    "name": "Marathi (Marāṭhī)",
+    "nativeName": "मराठी",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Marathi_language"
+  },
+  "ms": {
+    "code": "ms",
+    "639-2": "msa",
+    "639-2/B": "may",
+    "family": "Austronesian",
+    "name": "Malay",
+    "nativeName": "bahasa Melayu, بهاس ملايو‎",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Malay_language"
+  },
+  "mt": {
+    "code": "mt",
+    "639-2": "mlt",
+    "family": "Afro-Asiatic",
+    "name": "Maltese",
+    "nativeName": "Malti",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Maltese_language"
+  },
+  "my": {
+    "code": "my",
+    "639-2": "mya",
+    "639-2/B": "bur",
+    "family": "Sino-Tibetan",
+    "name": "Burmese",
+    "nativeName": "ဗမာစာ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Burmese_language"
+  },
+  "na": {
+    "code": "na",
+    "639-2": "nau",
+    "family": "Austronesian",
+    "name": "Nauruan",
+    "nativeName": "Dorerin Naoero",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Nauruan_language"
+  },
+  "nb": {
+    "code": "nb",
+    "639-2": "nob",
+    "family": "Indo-European",
+    "name": "Norwegian Bokmål",
+    "nativeName": "Norsk bokmål",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Bokm%C3%A5l"
+  },
+  "nd": {
+    "code": "nd",
+    "639-2": "nde",
+    "family": "Niger–Congo",
+    "name": "Northern Ndebele",
+    "nativeName": "isiNdebele",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Northern_Ndebele_language"
+  },
+  "ne": {
+    "code": "ne",
+    "639-2": "nep",
+    "family": "Indo-European",
+    "name": "Nepali",
+    "nativeName": "नेपाली",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Nepali_language"
+  },
+  "ng": {
+    "code": "ng",
+    "639-2": "ndo",
+    "family": "Niger–Congo",
+    "name": "Ndonga",
+    "nativeName": "Owambo",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ndonga"
+  },
+  "nl": {
+    "code": "nl",
+    "639-2": "nld",
+    "639-2/B": "dut",
+    "family": "Indo-European",
+    "name": "Dutch",
+    "nativeName": "Nederlands, Vlaams",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Dutch_language"
+  },
+  "nn": {
+    "code": "nn",
+    "639-2": "nno",
+    "family": "Indo-European",
+    "name": "Norwegian Nynorsk",
+    "nativeName": "Norsk nynorsk",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Nynorsk"
+  },
+  "no": {
+    "code": "no",
+    "639-2": "nor",
+    "family": "Indo-European",
+    "name": "Norwegian",
+    "nativeName": "Norsk",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Norwegian_language"
+  },
+  "nr": {
+    "code": "nr",
+    "639-2": "nbl",
+    "family": "Niger–Congo",
+    "name": "Southern Ndebele",
+    "nativeName": "isiNdebele",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Southern_Ndebele_language"
+  },
+  "nv": {
+    "code": "nv",
+    "639-2": "nav",
+    "family": "Dené–Yeniseian",
+    "name": "Navajo, Navaho",
+    "nativeName": "Diné bizaad",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Navajo_language"
+  },
+  "ny": {
+    "code": "ny",
+    "639-2": "nya",
+    "family": "Niger–Congo",
+    "name": "Chichewa, Chewa, Nyanja",
+    "nativeName": "chiCheŵa, chinyanja",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Chichewa_language"
+  },
+  "oc": {
+    "code": "oc",
+    "639-2": "oci",
+    "family": "Indo-European",
+    "name": "Occitan",
+    "nativeName": "occitan, lenga d'òc",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Occitan_language"
+  },
+  "oj": {
+    "code": "oj",
+    "639-2": "oji",
+    "family": "Algonquian",
+    "name": "Ojibwe, Ojibwa",
+    "nativeName": "ᐊᓂᔑᓈᐯᒧᐎᓐ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ojibwe_language"
+  },
+  "om": {
+    "code": "om",
+    "639-2": "orm",
+    "family": "Afro-Asiatic",
+    "name": "Oromo",
+    "nativeName": "Afaan Oromoo",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Oromo_language"
+  },
+  "or": {
+    "code": "or",
+    "639-2": "ori",
+    "family": "Indo-European",
+    "name": "Oriya",
+    "nativeName": "ଓଡ଼ିଆ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Oriya_language"
+  },
+  "os": {
+    "code": "os",
+    "639-2": "oss",
+    "family": "Indo-European",
+    "name": "Ossetian, Ossetic",
+    "nativeName": "ирон æвзаг",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ossetic_language"
+  },
+  "pa": {
+    "code": "pa",
+    "639-2": "pan",
+    "family": "Indo-European",
+    "name": "(Eastern) Punjabi",
+    "nativeName": "ਪੰਜਾਬੀ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Eastern_Punjabi_language"
+  },
+  "pi": {
+    "code": "pi",
+    "639-2": "pli",
+    "family": "Indo-European",
+    "name": "Pāli",
+    "nativeName": "पाऴि",
+    "wikiUrl": "https://en.wikipedia.org/wiki/P%C4%81li_language"
+  },
+  "pl": {
+    "code": "pl",
+    "639-2": "pol",
+    "family": "Indo-European",
+    "name": "Polish",
+    "nativeName": "język polski, polszczyzna",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Polish_language"
+  },
+  "ps": {
+    "code": "ps",
+    "639-2": "pus",
+    "family": "Indo-European",
+    "name": "Pashto, Pushto",
+    "nativeName": "پښتو",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Pashto_language"
+  },
+  "pt": {
+    "code": "pt",
+    "639-2": "por",
+    "family": "Indo-European",
+    "name": "Portuguese",
+    "nativeName": "Português",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Portuguese_language"
+  },
+  "qu": {
+    "code": "qu",
+    "639-2": "que",
+    "family": "Quechuan",
+    "name": "Quechua",
+    "nativeName": "Runa Simi, Kichwa",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Quechua_language"
+  },
+  "rm": {
+    "code": "rm",
+    "639-2": "roh",
+    "family": "Indo-European",
+    "name": "Romansh",
+    "nativeName": "rumantsch grischun",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Romansh_language"
+  },
+  "rn": {
+    "code": "rn",
+    "639-2": "run",
+    "family": "Niger–Congo",
+    "name": "Kirundi",
+    "nativeName": "Ikirundi",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kirundi"
+  },
+  "ro": {
+    "code": "ro",
+    "639-2": "ron",
+    "639-2/B": "rum",
+    "family": "Indo-European",
+    "name": "Romanian",
+    "nativeName": "Română",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Romanian_language"
+  },
+  "ru": {
+    "code": "ru",
+    "639-2": "rus",
+    "family": "Indo-European",
+    "name": "Russian",
+    "nativeName": "Русский",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Russian_language"
+  },
+  "rw": {
+    "code": "rw",
+    "639-2": "kin",
+    "family": "Niger–Congo",
+    "name": "Kinyarwanda",
+    "nativeName": "Ikinyarwanda",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Kinyarwanda"
+  },
+  "sa": {
+    "code": "sa",
+    "639-2": "san",
+    "family": "Indo-European",
+    "name": "Sanskrit (Saṁskṛta)",
+    "nativeName": "संस्कृतम्",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sanskrit"
+  },
+  "sc": {
+    "code": "sc",
+    "639-2": "srd",
+    "family": "Indo-European",
+    "name": "Sardinian",
+    "nativeName": "sardu",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sardinian_language"
+  },
+  "sd": {
+    "code": "sd",
+    "639-2": "snd",
+    "family": "Indo-European",
+    "name": "Sindhi",
+    "nativeName": "सिन्धी, سنڌي، سندھی‎",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sindhi_language"
+  },
+  "se": {
+    "code": "se",
+    "639-2": "sme",
+    "family": "Uralic",
+    "name": "Northern Sami",
+    "nativeName": "Davvisámegiella",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Northern_Sami"
+  },
+  "sg": {
+    "code": "sg",
+    "639-2": "sag",
+    "family": "Creole",
+    "name": "Sango",
+    "nativeName": "yângâ tî sängö",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sango_language"
+  },
+  "si": {
+    "code": "si",
+    "639-2": "sin",
+    "family": "Indo-European",
+    "name": "Sinhalese, Sinhala",
+    "nativeName": "සිංහල",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sinhalese_language"
+  },
+  "sk": {
+    "code": "sk",
+    "639-2": "slk",
+    "639-2/B": "slo",
+    "family": "Indo-European",
+    "name": "Slovak",
+    "nativeName": "slovenčina, slovenský jazyk",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Slovak_language"
+  },
+  "sl": {
+    "code": "sl",
+    "639-2": "slv",
+    "family": "Indo-European",
+    "name": "Slovene",
+    "nativeName": "slovenski jezik, slovenščina",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Slovene_language"
+  },
+  "sm": {
+    "code": "sm",
+    "639-2": "smo",
+    "family": "Austronesian",
+    "name": "Samoan",
+    "nativeName": "gagana fa'a Samoa",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Samoan_language"
+  },
+  "sn": {
+    "code": "sn",
+    "639-2": "sna",
+    "family": "Niger–Congo",
+    "name": "Shona",
+    "nativeName": "chiShona",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Shona_language"
+  },
+  "so": {
+    "code": "so",
+    "639-2": "som",
+    "family": "Afro-Asiatic",
+    "name": "Somali",
+    "nativeName": "Soomaaliga, af Soomaali",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Somali_language"
+  },
+  "sq": {
+    "code": "sq",
+    "639-2": "sqi",
+    "639-2/B": "alb",
+    "family": "Indo-European",
+    "name": "Albanian",
+    "nativeName": "Shqip",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Albanian_language"
+  },
+  "sr": {
+    "code": "sr",
+    "639-2": "srp",
+    "family": "Indo-European",
+    "name": "Serbian",
+    "nativeName": "српски језик",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Serbian_language"
+  },
+  "ss": {
+    "code": "ss",
+    "639-2": "ssw",
+    "family": "Niger–Congo",
+    "name": "Swati",
+    "nativeName": "SiSwati",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Swati_language"
+  },
+  "st": {
+    "code": "st",
+    "639-2": "sot",
+    "family": "Niger–Congo",
+    "name": "Southern Sotho",
+    "nativeName": "Sesotho",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sotho_language"
+  },
+  "su": {
+    "code": "su",
+    "639-2": "sun",
+    "family": "Austronesian",
+    "name": "Sundanese",
+    "nativeName": "Basa Sunda",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Sundanese_language"
+  },
+  "sv": {
+    "code": "sv",
+    "639-2": "swe",
+    "family": "Indo-European",
+    "name": "Swedish",
+    "nativeName": "svenska",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Swedish_language"
+  },
+  "sw": {
+    "code": "sw",
+    "639-2": "swa",
+    "family": "Niger–Congo",
+    "name": "Swahili",
+    "nativeName": "Kiswahili",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Swahili_language"
+  },
+  "ta": {
+    "code": "ta",
+    "639-2": "tam",
+    "family": "Dravidian",
+    "name": "Tamil",
+    "nativeName": "தமிழ்",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tamil_language"
+  },
+  "te": {
+    "code": "te",
+    "639-2": "tel",
+    "family": "Dravidian",
+    "name": "Telugu",
+    "nativeName": "తెలుగు",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Telugu_language"
+  },
+  "tg": {
+    "code": "tg",
+    "639-2": "tgk",
+    "family": "Indo-European",
+    "name": "Tajik",
+    "nativeName": "тоҷикӣ, toçikī, تاجیکی‎",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tajik_language"
+  },
+  "th": {
+    "code": "th",
+    "639-2": "tha",
+    "family": "Tai–Kadai",
+    "name": "Thai",
+    "nativeName": "ไทย",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Thai_language"
+  },
+  "ti": {
+    "code": "ti",
+    "639-2": "tir",
+    "family": "Afro-Asiatic",
+    "name": "Tigrinya",
+    "nativeName": "ትግርኛ",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tigrinya_language"
+  },
+  "tk": {
+    "code": "tk",
+    "639-2": "tuk",
+    "family": "Turkic",
+    "name": "Turkmen",
+    "nativeName": "Türkmen, Түркмен",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Turkmen_language"
+  },
+  "tl": {
+    "code": "tl",
+    "639-2": "tgl",
+    "family": "Austronesian",
+    "name": "Tagalog",
+    "nativeName": "Wikang Tagalog",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tagalog_language"
+  },
+  "tn": {
+    "code": "tn",
+    "639-2": "tsn",
+    "family": "Niger–Congo",
+    "name": "Tswana",
+    "nativeName": "Setswana",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tswana_language"
+  },
+  "to": {
+    "code": "to",
+    "639-2": "ton",
+    "family": "Austronesian",
+    "name": "Tonga (Tonga Islands)",
+    "nativeName": "faka Tonga",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tongan_language"
+  },
+  "tr": {
+    "code": "tr",
+    "639-2": "tur",
+    "family": "Turkic",
+    "name": "Turkish",
+    "nativeName": "Türkçe",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Turkish_language"
+  },
+  "ts": {
+    "code": "ts",
+    "639-2": "tso",
+    "family": "Niger–Congo",
+    "name": "Tsonga",
+    "nativeName": "Xitsonga",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tsonga_language"
+  },
+  "tt": {
+    "code": "tt",
+    "639-2": "tat",
+    "family": "Turkic",
+    "name": "Tatar",
+    "nativeName": "татар теле, tatar tele",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tatar_language"
+  },
+  "tw": {
+    "code": "tw",
+    "639-2": "twi",
+    "family": "Niger–Congo",
+    "name": "Twi",
+    "nativeName": "Twi",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Twi"
+  },
+  "ty": {
+    "code": "ty",
+    "639-2": "tah",
+    "family": "Austronesian",
+    "name": "Tahitian",
+    "nativeName": "Reo Tahiti",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Tahitian_language"
+  },
+  "ug": {
+    "code": "ug",
+    "639-2": "uig",
+    "family": "Turkic",
+    "name": "Uyghur",
+    "nativeName": "ئۇيغۇرچە‎, Uyghurche",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Uyghur_language"
+  },
+  "uk": {
+    "code": "uk",
+    "639-2": "ukr",
+    "family": "Indo-European",
+    "name": "Ukrainian",
+    "nativeName": "Українська",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Ukrainian_language"
+  },
+  "ur": {
+    "code": "ur",
+    "639-2": "urd",
+    "family": "Indo-European",
+    "name": "Urdu",
+    "nativeName": "اردو",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Urdu"
+  },
+  "uz": {
+    "code": "uz",
+    "639-2": "uzb",
+    "family": "Turkic",
+    "name": "Uzbek",
+    "nativeName": "Oʻzbek, Ўзбек, أۇزبېك‎",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Uzbek_language"
+  },
+  "ve": {
+    "code": "ve",
+    "639-2": "ven",
+    "family": "Niger–Congo",
+    "name": "Venda",
+    "nativeName": "Tshivenḓa",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Venda_language"
+  },
+  "vi": {
+    "code": "vi",
+    "639-2": "vie",
+    "family": "Austroasiatic",
+    "name": "Vietnamese",
+    "nativeName": "Tiếng Việt",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Vietnamese_language"
+  },
+  "vo": {
+    "code": "vo",
+    "639-2": "vol",
+    "family": "Constructed",
+    "name": "Volapük",
+    "nativeName": "Volapük",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Volap%C3%BCk"
+  },
+  "wa": {
+    "code": "wa",
+    "639-2": "wln",
+    "family": "Indo-European",
+    "name": "Walloon",
+    "nativeName": "walon",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Walloon_language"
+  },
+  "wo": {
+    "code": "wo",
+    "639-2": "wol",
+    "family": "Niger–Congo",
+    "name": "Wolof",
+    "nativeName": "Wollof",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Wolof_language"
+  },
+  "xh": {
+    "code": "xh",
+    "639-2": "xho",
+    "family": "Niger–Congo",
+    "name": "Xhosa",
+    "nativeName": "isiXhosa",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Xhosa_language"
+  },
+  "yi": {
+    "code": "yi",
+    "639-2": "yid",
+    "family": "Indo-European",
+    "name": "Yiddish",
+    "nativeName": "ייִדיש",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Yiddish_language"
+  },
+  "yo": {
+    "code": "yo",
+    "639-2": "yor",
+    "family": "Niger–Congo",
+    "name": "Yoruba",
+    "nativeName": "Yorùbá",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Yoruba_language"
+  },
+  "za": {
+    "code": "za",
+    "639-2": "zha",
+    "family": "Tai–Kadai",
+    "name": "Zhuang, Chuang",
+    "nativeName": "Saɯ cueŋƅ, Saw cuengh",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Zhuang_languages"
+  },
+  "zh": {
+    "code": "zh",
+    "639-2": "zho",
+    "639-2/B": "chi",
+    "family": "Sino-Tibetan",
+    "name": "Chinese",
+    "nativeName": "中文 (Zhōngwén), 汉语, 漢語",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Chinese_language"
+  },
+  "zu": {
+    "code": "zu",
+    "639-2": "zul",
+    "family": "Niger–Congo",
+    "name": "Zulu",
+    "nativeName": "isiZulu",
+    "wikiUrl": "https://en.wikipedia.org/wiki/Zulu_language"
+  }
+}

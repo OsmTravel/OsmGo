@@ -1,5 +1,4 @@
 import { ConfigService } from './services/config.service';
-import { LocationService } from './services/location.service';
 import { Component } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
@@ -17,7 +16,6 @@ const { Device, SplashScreen } = Plugins;
 export class AppComponent {
   constructor(
     private platform: Platform,
-    private locationService: LocationService,
     public configService: ConfigService,
     private translate: TranslateService,
     public tagService: TagsService,

@@ -1,0 +1,62 @@
+<ion-header color="primary">
+  <ion-toolbar color="primary" >
+        <ion-buttons style="min-width: 32px;" (click)="modalCtrl.dismiss(refreshFilterMapAfterClose)" slot="primary"> 
+                <ion-icon name="arrow-back"></ion-icon> 
+             </ion-buttons>
+    <ion-title>
+      {{'MANAGE_TAGS.HIDDEN_TAGS' | translate}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+
+    <div id="searchSelect">
+      <div id="searchDiv">
+        <ion-searchbar
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="none"
+          inputmode="text"
+          [(ngModel)]="searchText"
+          [debounce]="300"
+        ></ion-searchbar>
+      </div>
+    </div> 
+    
+    <div class="listTag" >
+       <ion-list style="overflow-y: auto;">
+        <!-- TODO: filter by ids, (like bookmark, etc...) -->
+         <ion-item *ngFor="let tag of tagsService.tags | 
+                        filtersTagsByIds:this.tagsService.hiddenTagsIds |
+                        filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
+         class="ion-no-padding">
+          <app-tag-list-element   style="width: 100%;"
+          [tag]="tag"
+          [countryTags]="configService.config.countryTags"
+          [languageTags]="configService.config.languageTags"
+          [jsonSprites]="tagsService.jsonSprites"
+          [geometriesFilter]="['point']"
+          [bookmarksIds]="tagsService.bookmarksIds"
+          [isHiddenTag] = "true"
+          (removeHiddenTag) = removeHiddenTag($event)
+          >
+          </app-tag-list-element>
+        </ion-item> 
+      </ion-list> 
+    </div>
+ 
+  </ion-content>
+
+  <ion-footer id="footer">
+    <ion-button ion-button color="primary" (click)="modalCtrl.dismiss(refreshFilterMapAfterClose);" >
+      {{ 'SHARED.CLOSE' | translate}}
+    </ion-button>
+
+    <ion-button ion-button color="danger" (click)="tagsService.resetHiddenTags()">
+      {{'MANAGE_TAGS.RESET_HIDDEN_TAGS' | translate}}
+    </ion-button>
+    
+  </ion-footer>
+
+
+

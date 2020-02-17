@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { BrowserModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as Hammer from 'hammerjs';
@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AboutPage } from './components/about/about';
-import { LocationPage } from './components/location/location';
 import { MainPage } from './components/main/main';
 import { MenuPage } from './components/menu/menu';
 import { LoginPage } from './components/login/login.component';
@@ -35,15 +34,22 @@ import { ReadPresets } from './components/modal/components/READ_Presets.componen
 import { EditOtherTag } from './components/modal/components/EDIT_OtherTag.component';
 import { EditPresets } from './components/modal/components/EDIT_Presets.component';
 import { EditPrimaryKey } from './components/modal/components/EDIT_PrimaryKey.component';
+import { AlertComponent } from './components/modal/components/alert/alert.component';
+import { IconComponent } from './components/icon/icon.component'
 
 import { DisplayPresetLabelPipe } from './pipes/displayPresetLabel.pipe';
-import { FilterByContentPipe } from './pipes/filterByContent.pipe';
+
+import { FilterByTagsContentPipe } from './pipes/filterByTagsContent.pipe';
+import { FilterExcludeTagByCountryCode } from './pipes/filterExcludeTagByCountryCode.pipe';
+import { FilterByCountryCode } from './pipes/filterByCountryCode.pipe';
+
+import { FilterByPresetsContentPipe } from './pipes/filterByPresetsContent.pipe';
+
 import { FilterDeprecatedTagPipe } from './pipes/filterDeprecatedTag.pipe';
 import { FilterExcludeKeysPipe } from './pipes/filterExcludeKeys.pipe';
-import { FilterIncludeKeysPipe } from './pipes/filterIncludeKeys.pipe';
-import { FilterNullValuePipe } from './pipes/filterNullValue.pipe';
-import { KeysPipe } from './pipes/keys.pipe';
-import { ToLowercasePipe } from './pipes/toLowercase.pipe';
+
+
+
 
 
 
@@ -58,38 +64,63 @@ import 'moment/locale/en-gb';
 import 'moment/locale/fr';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { DisplayTagsPipe } from './pipes/display-tags.pipe';
+import { FilterByByGeometryTypePipe } from './pipes/filter-by-geometry-type.pipe';
+import { DialogMultiFeaturesComponent } from './components/dialog-multi-features/dialog-multi-features.component';
+import { IsBookmarkedPipe } from './pipes/is-bookmarked.pipe';
+import { FilterBySearchablePipe } from './pipes/filter-by-searchable.pipe';
+import { HiddenTagsComponent } from './components/manage-tags/hidden-tags/hidden-tags.component';
+import { TagListElementComponent } from './components/tag-list-element/tag-list-element.component';
+
+import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
+import { ActiveTagsComponent } from './components/manage-tags/active-tags/active-tags.component';
+import { BookmarkedTagsComponent } from './components/manage-tags/bookmarked-tags/bookmarked-tags.component';
+
+import { FiltersTagsByIdsPipe } from './pipes/filters-tags-by-ids.pipe';
+import { SelectComponent } from './components/modal/components/select/select.component';
+import { SortArrayPipe } from './pipes/sort-array.pipe';
+import { LimitDisplayTagsPipe } from './pipes/limit-display-tags.pipe';
 
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-export class CustomHammerConfig extends HammerGestureConfig{
+@Injectable()
+export class CustomHammerConfig extends HammerGestureConfig {
   overrides = {
-    'pan':{
-      direction :Hammer.DIRECTION_ALL
+    'pan': {
+      direction: Hammer.DIRECTION_ALL
     }
   }
 
 }
 
 @NgModule({
-  declarations: [AppComponent, MainPage, LocationPage, AboutPage, MenuPage,LoginPage,
-    ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,
-    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey,
+  declarations: [AppComponent, MainPage, AboutPage, MenuPage, LoginPage,
+    HiddenTagsComponent, ActiveTagsComponent,BookmarkedTagsComponent,  ManageTagsComponent,
+    TagListElementComponent,
+    ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,DialogMultiFeaturesComponent,
+    ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent, 
+    IconComponent, SelectComponent,
 
     DisplayPresetLabelPipe,
-    FilterByContentPipe,
+ 
+    FilterByTagsContentPipe,
+    FilterExcludeTagByCountryCode,
+    FilterByCountryCode,
+    FilterByPresetsContentPipe,
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
-    FilterIncludeKeysPipe, FilterNullValuePipe, KeysPipe, ToLowercasePipe,
+    DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe,
+    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe, LimitDisplayTagsPipe,
   ],
-  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList],
+  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({mode: 'md'}),
     IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
@@ -108,7 +139,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
   providers: [
 
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide : HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
+    { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,51 @@
+<ion-card *ngIf="tag.preset?.type === 'select'">
+  <ion-card-header>
+      <b *ngIf="!displayCode && (tag.preset?.lbl[language] || tag.preset?.lbl['en']); else diplayCodeSelect">{{tag.preset?.lbl[language] || tag.preset?.lbl['en']}}</b>
+      <ng-template #diplayCodeSelect>
+      <ion-icon name="code"></ion-icon>
+      {{tag.preset?.key}}
+  </ng-template>
+      
+  </ion-card-header>
+
+  <ion-card-content>
+
+  <div class="wrapperEdit2cols">
+      <div class="contentEdit2cols">
+         
+          <div *ngIf="!displayCode">
+                  <ion-select  [interface]="'popover'" [value]="tag.value" (ionChange)="selectChange($event);"
+                  style="width: 100%; min-width: 100%;padding-left:0;"
+              >
+              <ion-select-option   [value]="''" >
+                  <p class="undefindedListValue"> {{'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'| translate}} </p> 
+              </ion-select-option>
+                  <ion-select-option  *ngFor ="let item of tag.preset.options;" [value]="item.v" >
+                          <p class="displayLabelListValue">  {{item.lbl[language] || item.lbl['en']}}</p> 
+                  </ion-select-option>
+
+
+                  <ion-select-option  *ngIf="(tag | displayPresetLabel) === undefined &&  tag.value!= '' ;" [value]="tag.value" >
+                      {{'<> '}} 
+                         <p class="displayLabelListValue"> {{(tag.value)}} {{(tag | displayPresetLabel)}}</p> 
+                  </ion-select-option>
+                  
+
+              </ion-select>
+          </div>
+            
+          <ion-item *ngIf="displayCode">
+                  <ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
+          </ion-item>
+      </div>
+
+      
+      <div class="buttonEdit2cols">
+          <ion-col width-10 class="ion-col10">
+          <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
+          </ion-col>
+      </div>
+  </div>
+
+  </ion-card-content>
+</ion-card>

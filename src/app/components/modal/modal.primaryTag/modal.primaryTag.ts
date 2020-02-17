@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController, Platform, NavParams } from '@ionic/angular';
 import { TagsService } from '../../../services/tags.service';
 import { ConfigService } from '../../../services/config.service';
+import { TagConfig } from '../../../../type'
 
 @Component({
     selector: 'modal-primary-tag',
@@ -9,105 +10,95 @@ import { ConfigService } from '../../../services/config.service';
     styleUrls: ['./modal.primaryTag.scss']
 })
 export class ModalPrimaryTag implements OnInit {
-    _primaryKey;
     selectedKey: string;
     tagsOfselectedKey;
     loading = true;
-    primaryKeys = [];
-    allTags;
+    allTags: TagConfig[];
     searchText = '';
-    currentListOfTags = [];
+    currentListOfTags: TagConfig[] = [];
     typeFiche = 'list';
     customValue = '';
+    oldTagConfig: TagConfig;
+    geometriesPossible: string[] = []
+    geometryType: 'point' | 'vertex' | 'line' | 'area'
+    displayType = 'lastTags'
 
 
     constructor(
         public params: NavParams,
         public modalCtrl: ModalController,
         public tagsService: TagsService,
-        // public platform: Platform,
         public configService: ConfigService
 
 
     ) {
-        this._primaryKey = this.params.data.primaryKey;
-
-        // backButton
-        // this.platform.registerBackButtonAction(e => {
-        //     this.dismiss();
-        // });
-
+        this.oldTagConfig = this.params.data.tagConfig
     }
 
     ngOnInit() {
-        console.log(this.configService.config.languageTags, this.configService.config.countryTags);
-        this.tagsService.getAllTags(this.configService.config.languageTags, this.configService.config.countryTags).subscribe(allTags => {
-            this.allTags = allTags;
-
-            // tslint:disable-next-line:forin
-            for (const key in allTags) {
-                this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
-            }
-            if (this.configService.getDefaultPrimarykeyWindows() === 'allTags') {
-
-                this.selectedKey = 'full';
-            } else if (this.configService.getDefaultPrimarykeyWindows() === 'bookmarks') {
-
-                this.selectedKey = 'bookmarks';
-            } else {
-                this.selectedKey = this._primaryKey.key;
-            }
-            if (this.selectedKey === 'full') {
-                this.currentListOfTags = this.tagsService.getFullTags();
-            } else if (this.selectedKey === 'bookmarks') {
-                this.currentListOfTags = this.tagsService.getBookMarks();
-            } else {
-                this.currentListOfTags = allTags[this.selectedKey].values;
-            }
-            this.loading = false;
-        });
+        this.displayType = this.configService.config.defaultPrimarykeyWindows == 'bookmarks' ? 'bookmarks' : 'lastTags'
+        this.geometryType = this.params.data.geometryType;
+        this.currentListOfTags = this.tagsService.tags;
+        this.loading = false;
     }
 
     dismiss(data = null) {
         this.modalCtrl.dismiss(data);
     }
 
-    summit(typeFiche) {
-        if (typeFiche === 'custom') {
-            this._primaryKey = { key: this.selectedKey, value: this.customValue };
-        }
-        this.dismiss(this._primaryKey);
+    summit(data) {
+        this.dismiss(data);
     }
     cancel() {
         this.dismiss();
     }
 
-    selected(e) {
-        this._primaryKey = { key: e.primaryKey, value: e.key };
-        this.summit(this.typeFiche);
+    selected(config) {
+        this.summit(config);
     }
 
-    addRemoveToBookmarks(tag) {
-        this.tagsService.addRemoveBookMark(tag);
+    addBookmark(tag:TagConfig) {
+        this.tagsService.addBookMark(tag)
     }
-    isBookMarked(tag) {
-        const bM: any = this.tagsService.getBookMarks();
-        for (let i = 0; i < bM.length; i++) {
-            if (bM[i].primaryKey === tag.primaryKey && bM[i].key === tag.key) {
-                return true;
-            }
+    removeBookmark(tag:TagConfig) {
+        this.tagsService.removeBookMark(tag)
+    }
+
+
+    addCustomValue(key, value) {
+        // TODO: ckeck if aleardy exist
+        const newConfig: TagConfig = {
+            icon: "maki-circle-custom",
+            markerColor: '#000000',
+            geometry: ['point', 'vertex', 'line', 'area'],
+            lbl: { 'en': `${key} = ${value}` },
+            presets: [],
+            id: `${key}/${value}`,
+            key: value,
+            tags: {},
+            isUserTag: true
         }
-        return false;
+        newConfig.tags[key] = value;
+
+        this.tagsService.addUserTags(newConfig)
+
+        this.summit(newConfig);
+
     }
 
-    updateSelectedValue(key) {
-        if (key === 'full') {
-            this.currentListOfTags = this.tagsService.getFullTags();
-        } else if (key === 'bookmarks') {
-            this.currentListOfTags = this.tagsService.getBookMarks();
-        } else {
-            this.currentListOfTags = this.allTags[key].values;
-        }
 
+    swipeLeft() {
+        console.log('this.swipeLeft')
+        this.displayType = 'bookmarks'
+
+    }
+    swipeRight() {
+        console.log('swipeRight')
+        this.displayType = 'lastTags'
+    }
+
+    changePageLastTagsBookmarks(value){
+        this.displayType = value;
+        this.configService.setDefaultPrimarykeyWindows(value)
     }
 }

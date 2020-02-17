@@ -1,7 +1,6 @@
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import {
   ModalController, Platform,
-  // NavParams,
   LoadingController, ToastController, AlertController
 } from '@ionic/angular';
 import { NavParams } from '@ionic/angular';
@@ -13,33 +12,42 @@ import { AlertService } from '../../services/alert.service';
 import { TagsService } from '../../services/tags.service';
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
+import { getConfigTag } from '../../../../scripts/osmToOsmgo/index.js'
 
-import {isEqual, findIndex } from 'lodash';
+import { Feature, Tag, Preset, PrimaryTag, TagConfig } from '../../../type'
+
+import { cloneDeep, isEqual, findIndex } from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
-import { cloneDeep } from 'lodash';
+
 
 @Component({
   selector: 'modal',
   templateUrl: './modal.html',
-  styleUrls: ['./modal.scss']
+  styleUrls: ['./modal.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalsContentPage implements OnInit {
-  tags = []; // main data
+  tags: Tag[] = []; // main data
   originalTags = [];
-  feature;
+  feature: Feature;
   origineData: string;
-  typeFiche;
-  displayCode = false;
+  typeFiche: string;
+  displayCode: boolean = false;
   mode;
-  configOfPrimaryKey = { presets: [], alert: undefined };
+  tagConfig: TagConfig
+  primaryKey: PrimaryTag
+  savedFields;
+  tagId: string;
+  geometryType: 'point' | 'vertex' | 'line' | 'area';
 
-  primaryKey = { key: '', value: '', lbl: '' };
+
   customValue = '';
 
   newTag = { key: '', value: '' };
   allTags;
   newPosition;
   displayAddTag = false;
+  presetsIds = [];
 
   constructor(
     public platform: Platform,
@@ -55,13 +63,29 @@ export class ModalsContentPage implements OnInit {
     public toastCtrl: ToastController,
     private alertCtrl: AlertController,
     private zone: NgZone,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private cdr: ChangeDetectorRef
 
   ) {
     this.newPosition = params.data.newPosition;
     this.feature = cloneDeep(params.data.data);
+
+    const originalFeatureGeometry = this.feature.properties.way_geometry ? this.feature.properties.way_geometry :  this.feature.geometry
+    const typeGeomFeature = originalFeatureGeometry.type;
+    const usedByWay = this.feature.properties.usedByWays ? true : false
+    if (typeGeomFeature === 'Point' && !usedByWay) {
+        this.geometryType = 'point';
+    } else if (typeGeomFeature === 'Point' && usedByWay) {
+        this.geometryType = 'vertex';
+    } else if (typeGeomFeature === 'LineString' || typeGeomFeature === 'MultiLineString') {
+        this.geometryType =  'line'
+    } else if (typeGeomFeature === 'Polygon' || typeGeomFeature === 'MultiPolygon') {
+        this.geometryType = 'area'
+    }
+
+
     this.mode = params.data.type; // Read, Create, Update
-    this.origineData = params.data.origineData;
+    this.origineData = this.params.data.origineData; // literal, sources
     this.typeFiche = 'Loading'; // Edit, Read, Loading
 
     // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
@@ -77,8 +101,12 @@ export class ModalsContentPage implements OnInit {
 
 
   ngOnInit() { // override
-    // console.log(this.feature);
     this.initComponent();
+    this.cdr.detectChanges();
+
+    if (this.mode === 'Create') {
+      this.openPrimaryTagModal();
+    }
   }
 
   presentConfirm() {
@@ -106,84 +134,66 @@ export class ModalsContentPage implements OnInit {
 
   }
 
+  initComponent(tagConfig: TagConfig = null) {
+    let _tags = [...this.tags]
+    let feature = cloneDeep(this.feature)
+    let _tagConfig: TagConfig;
+    let _tagId;
+    let _presetsIds: string[];
+    let _savedFields;
+    let _primaryKey;
 
-  getPrimaryKeyOfTags(tags) {
-    const feature = this.feature;
-    const listOfPrimaryKey = this.tagsService.getListOfPrimaryKey();
-    for (let i = 0; i < tags.length; i++) {
-      if (listOfPrimaryKey.indexOf(tags[i].key) !== -1) {
-        /* on ne prend pas en compte les ways exclus pour détérminer la primarykey*/
-        if ((feature.properties.type === 'way' || feature.properties.type === 'relation')
-          && this.tagsService.tags[tags[i].key].exclude_way_values
-          && this.tagsService.tags[tags[i].key].exclude_way_values.indexOf(tags[i].value) !== -1
-        ) {
-          continue;
-        }
-        return cloneDeep(tags)[i];
-      }
-    }
-    return undefined;
-  }
+    _primaryKey = this.tagsService.findPkey(_tags);
 
-  initComponent() {
+    feature.properties.primaryTag = _primaryKey
+    // this.feature.properties.primaryTag = this.primaryKey
     // Edit, Read, Loading
-    this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read';
-    // supprimer les valeurs vide de this.tags (changement de type)
-    this.tags = this.tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue);
+    this.typeFiche = (this.mode === 'Update' || this.mode === 'Create') ? 'Edit' : 'Read'; // ?
 
-    if (!this.tags.filter(tag => tag.key === 'name')[0]) { // on ajoute un nom vide si il n'existe pas
-      this.tags.push({ key: 'name', value: '' });
+    _tags = _tags.filter(tag => tag.value && tag.value !== '' && !tag.isDefaultValue);
+    if (!_tags.find(tag => tag.key === 'name')) { // on ajoute un nom vide si il n'existe pas
+    _tags.push({ key: 'name', value: '' });
     }
-    // retourne la clé principale : {key: "amenity", value: "cafe"}
-    this.primaryKey = this.getPrimaryKeyOfTags(this.tags);
 
-    // la configuration pour cette clé principale (lbl, icon, presets[], ...)
-    this.configOfPrimaryKey = this.tagsService.getTagConfigByKeyValue(this.primaryKey['key'], this.primaryKey['value']);
-    const presetsIds = (this.configOfPrimaryKey && this.configOfPrimaryKey.presets) ? this.configOfPrimaryKey.presets : undefined;
+      // la configuration pour cette clé principale (lbl, icon, presets[], ...)
+      if (!tagConfig) {
+        _tagConfig = getConfigTag(feature, this.tagsService.tags);       
+      } else {
+        _tagConfig= tagConfig;
+      }
 
-    if (presetsIds && presetsIds.length > 0) {
+    _tagId = _tagConfig && _tagConfig.id ? _tagConfig.id : `${_primaryKey.key}/${_primaryKey.value}`;
+    // this.tagId = this.tagConfig && this.tagConfig.id ? this.tagConfig.id : `${this.primaryKey.key}/${this.primaryKey.value}`;
+    _savedFields = this.tagsService.savedFields[_tagId];
+    this.savedFields = _savedFields;
+
+    // this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
+    _presetsIds = (_tagConfig && _tagConfig.presets) ? _tagConfig.presets : undefined;
+
+
+    if (_presetsIds && _presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
-      for (let i = 0; i < presetsIds.length; i++) {
-        const preset = this.tagsService.getPresetsById(presetsIds[i]);
+      for (let i = 0; i < _presetsIds.length; i++) {
+        const preset: Preset = this.tagsService.presets[_presetsIds[i]];
 
         // le tag utilisant la clé du preset
-        const tagOfPreset = this.tags.filter(tag => tag.key === preset.key)[0] || undefined;
+        const tagOfPreset: Tag = _tags.find(tag => tag.key === preset.key) || undefined;
+
         if (tagOfPreset) {
           tagOfPreset['preset'] = preset; // on met la config du prset direct dans le "tag" => key, value, preset[]
         } else { // => un le tag avec la key du preset n'existe pas, on l'insert vide
-          this.tags.push({ 'key': preset.key, 'value': '', preset: preset });
+          _tags.push({ 'key': preset.key, 'value': '', preset: preset });
         }
       }
     }
-    // on ajoute les valeurs par defaut s'il on crée l'objet
-    if (this.mode === 'Create' && this.configOfPrimaryKey['default_values']) {
-      const default_values = this.configOfPrimaryKey['default_values'];
-      for (let i = 0; i < default_values.length; i++) {
-        const filteredTag = this.tags.filter(tag => tag.key === default_values[i].key);
-        if (filteredTag[0]) { // le preset existe déja, on lui injecte la valeur
-          filteredTag[0].value = default_values[i].value;
-          filteredTag[0]['isDefaultValue'] = true;
-        } else { // N'est pas présent dans les presets, on l'ajoute
-          this.tags.push({ 'key': default_values[i].key, 'value': default_values[i].value, 'isDefaultValue': true });
-        }
-      }
-    }
-  }
 
-  // les clés à exclure dans les "autres tags", (qui ne sont pas dans les presets donc)
-  getExcludeKeysFromOtherTags(primaryKey, configOfPrimaryKey) {
-    const res = [primaryKey, 'name'];
-    if (!configOfPrimaryKey) {
-      return res;
-    }
-
-    const presetsIds = configOfPrimaryKey.presets;
-    for (let i = 0; i < presetsIds.length; i++) {
-      if (this.tagsService.presets[presetsIds[i]].key){
-        res.push(this.tagsService.presets[presetsIds[i]].key);
-      }
-    }
-    return res;
+      this.tagId = _tagId;
+      this.feature = feature;
+      this.tags = _tags;
+      this.presetsIds = _presetsIds;
+      this.tagConfig = _tagConfig;
+      this.primaryKey = _primaryKey;
+    return { tagConfig: _tagConfig, tags: _tags, feature: feature }
   }
 
   dataIsChanged() {
@@ -196,7 +206,7 @@ export class ModalsContentPage implements OnInit {
 
     const originalTagsNotNull = [];
     for (let i = 0; i < this.originalTags.length; i++) {
-      if (this.originalTags[i].value && this.originalTags[i].value !== '' ) {
+      if (this.originalTags[i].value && this.originalTags[i].value !== '') {
         originalTagsNotNull.push({ 'key': this.originalTags[i].key, 'value': this.originalTags[i].value });
       }
     }
@@ -253,120 +263,51 @@ export class ModalsContentPage implements OnInit {
     this.modalCtrl.dismiss(data);
   }
 
-  createOsmElement() {
+  createOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
-    this.tagsService.setLastTagAdded(this.primaryKey);
+    this.tagsService.addTagTolastTagsUsed(tagconfig.id);
 
-    if(this.configService.getAddSurveyDate()){
+    if (this.configService.getAddSurveyDate()) {
       this.addSurveyDate()
     }
 
     this.pushTagsToFeature(); // on pousse les tags dans la feature
-    if (this.configService.getIsDelayed()) {
-      this.osmApi.createOsmNode(this.feature).subscribe(data => {
-        this.dismiss({ redraw: true });
-      });
-
-
-    } else { // liveMode // on envoie le point sur le serveur OSM
-
-      this.osmApi.getValidChangset(this.configService.getChangeSetComment()).subscribe(CS => {
-
-        this.osmApi.apiOsmCreateNode(this.feature, CS)
-          .subscribe(data => {
-            this.feature['id'] = 'node/' + data;
-            this.feature.properties.id = data;
-            this.feature.properties.meta = {};
-            this.feature.properties.meta['version'] = 1;
-            this.feature.properties.meta['user'] = this.configService.getUserInfo().display_name;
-            this.feature.properties.meta['uid'] = this.configService.getUserInfo().uid;
-            this.feature.properties.meta['timestamp'] = new Date().toISOString();
-            this.feature = this.mapService.getIconStyle(this.feature); // style
-
-            this.dataService.addFeatureToGeojson(this.feature);
-            this.dismiss({ redraw: true });
-
-          },
-            error => {
-              this.typeFiche = 'Edit';
-              this.presentToast(JSON.stringify(error));
-            });
-      },
-        error => {
-          this.typeFiche = 'Edit';
-          this.presentToast(JSON.stringify(error));
-        });
-    }
+    this.osmApi.createOsmNode(this.feature).subscribe(data => {
+      this.dismiss({ redraw: true });
+    });
   }
 
 
 
-  updateOsmElement() {
+  updateOsmElement(tagconfig) {
     this.typeFiche = 'Loading';
+
+    this.tagsService.addTagTolastTagsUsed(tagconfig ? tagconfig.id : null);
     // si les tags et la position n'ont pas changé, on ne fait rien!
     if (!this.dataIsChanged() && !this.newPosition) {
       this.dismiss();
       return;
     }
 
-    if(this.configService.getAddSurveyDate()){
+    if (this.configService.getAddSurveyDate()) {
       this.addSurveyDate()
     }
-  
+
     this.pushTagsToFeature(); // on pousse les tags dans la feature
 
-    if (this.configService.getIsDelayed()) {
-      this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(data => {
-        this.dismiss({ redraw: true });
-      });
-    } else {
-      this.osmApi.getValidChangset(this.configService.getChangeSetComment()).subscribe(CS => {
-        this.osmApi.apiOsmUpdateOsmElement(this.feature, CS)
-          .subscribe(data => {
-            this.feature.properties.meta.version++;
-            this.feature.properties.meta['user'] = this.configService.getUserInfo().display_name;
-            this.feature.properties.meta['uid'] = this.configService.getUserInfo().uid;
-            this.feature.properties.meta['timestamp'] = new Date().toISOString();
-            this.feature = this.mapService.getIconStyle(this.feature); // création du style
-            this.dataService.updateFeatureToGeojson(this.feature);
-            this.dismiss({ redraw: true });
-          },
-            er => {
-              this.typeFiche = 'Edit';
-              this.presentToast(er.statusText + ' : ' + er.text());
-            });
+    this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(data => {
+      this.dismiss({ redraw: true });
+    });
 
-      },
-        error => {
-          this.typeFiche = 'Edit';
-          this.presentToast(error);
-        });
-    }
 
   }
 
   deleteOsmElement() {
     this.typeFiche = 'Loading';
+    this.osmApi.deleteOsmElement(this.feature).subscribe(data => {
+      this.dismiss({ redraw: true });
+    });
 
-    if (this.configService.getIsDelayed()) {
-      this.osmApi.deleteOsmElement(this.feature).subscribe(data => {
-        this.dismiss({ redraw: true });
-      });
-    } else {
-      this.osmApi.getValidChangset(this.configService.getChangeSetComment()).subscribe(CS => {
-        this.osmApi.apiOsmDeleteOsmElement(this.feature, CS)
-          .subscribe(data => {
-            this.dataService.deleteFeatureFromGeojson(this.feature);
-            // this.mapService.eventMarkerReDraw.emit(this.dataService.getMergedGeojsonGeojsonChanged());
-            this.dismiss({ redraw: true });
-
-          },
-            error => {
-              this.typeFiche = 'Edit';
-              this.presentToast(error.statusText + ' : ' + error.text());
-            });
-      });
-    }
 
   }
 
@@ -383,28 +324,49 @@ export class ModalsContentPage implements OnInit {
     // on ferme la modal
     this.dismiss({ type: 'Move', 'geojson': this.feature, mode: this.mode });
   }
-  async openPrimaryTagModal() {
-    const data = { geojson: this.feature, configOfPrimaryKey: this.configOfPrimaryKey, primaryKey: this.primaryKey, tags: this.tags };
-    // const modal = this.modalCtrl.create(ModalPrimaryTag, data);
 
+
+  async openPrimaryTagModal() {
     const modal = await this.modalCtrl.create({
       component: ModalPrimaryTag,
-      componentProps: { geojson: this.feature, configOfPrimaryKey: this.configOfPrimaryKey, primaryKey: this.primaryKey, tags: this.tags }
+      componentProps: { geojson: this.feature, tagConfig: this.tagConfig, tags: this.tags, geometryType : this.geometryType }
     });
     await modal.present();
+    modal.onDidDismiss()
+      .then(d => {
+        const newTagConfig = d.data;
+        const oldTagConfig = this.tagConfig;
+        const oldKeyTagsToDelete = Object.keys(oldTagConfig.tags);
+        let copyTags = cloneDeep(this.tags);
+        copyTags = copyTags.filter( t => !oldKeyTagsToDelete.includes(t.key))
 
-    modal.onDidDismiss().then(d => {
-      const _data = d.data;
-      if (_data) {
-        // on trouve l'index de l'ancien type pour le remplacer par le nouveau;
-        const idx = findIndex(this.tags,
-          o => o.key === this.primaryKey.key && o.value === this.primaryKey.value);
+        for (let t of copyTags){
+          if (t.preset ){
+            delete t.preset
+          }
+        }
+        if (!newTagConfig){
+          this.cdr.detectChanges();
+          return;
+        }
+        const newTagsKeys = Object.keys(newTagConfig.tags )
+        let newTagsToAdd = [];
+        for (let k in newTagConfig.tags ){
+          newTagsToAdd = [{key: k, value:newTagConfig.tags[k] }, ...newTagsToAdd]
+        }
 
-        this.tags[idx] = cloneDeep(_data);
-        this.primaryKey = cloneDeep(_data); // TODO: WTF ?
-        this.initComponent();
-      }
-    });
+       
+        copyTags = copyTags.filter( ct => !newTagsKeys.includes(ct.key))
+        copyTags = [...newTagsToAdd, ...copyTags ]
+
+        if (newTagConfig.addTags){
+          copyTags = this.addTags(newTagConfig.addTags,copyTags )
+        }
+
+        this.tags = [...copyTags];
+        this.initComponent(newTagConfig);
+        this.cdr.detectChanges();
+      });
   }
 
   async openModalList(data) {
@@ -419,32 +381,77 @@ export class ModalsContentPage implements OnInit {
       const _data = d.data;
       if (_data) {
         this.tags.filter(tag => tag.key === _data.key)[0].value = _data.value;
+        if (_data.tags) { // add or remplace tags...
+          this.tags = this.addTags(_data.tags, this.tags)
+          this.initComponent(this.tagConfig )
+        }
       }
+      this.cdr.detectChanges();
     });
 
 
 
+  }
+ //  add or remplace tags [] from tags {} 
+  addTags(newTags, existingTags){
+    let _existingTags = [...existingTags]
+    for (let t in newTags) {
+      const tagIndex = _existingTags.findIndex(o => o.key == t);
+      if (tagIndex !== -1) {
+        _existingTags[tagIndex] = { "key": t, "value": newTags[t] };
+      } else {
+        _existingTags = [..._existingTags, { "key": t, "value": newTags[t] }]
+      }
+    }
+    return _existingTags;
+    
+  }
+
+  addPresetsTags(newTags){
+    if (newTags){
+      this.tags = this.addTags(newTags, this.tags)
+      this.initComponent(this.tagConfig )
+    }
+    this.cdr.detectChanges();
   }
 
   cancelChange() {
     this.dataService.cancelFeatureChange(this.feature);
     this.dismiss({ redraw: true });
   }
-  presentToast(message) {
-    this.toastCtrl.create({
+  async presentToast(message) {
+
+    const toast = await this.toastCtrl.create({
       message: message,
-      duration: 5000,
-      showCloseButton: true,
-      closeButtonText: 'X'
-    }).then(toast => {
-      toast.present();
+      duration: 4000,
+      position: 'bottom',
+      buttons: [
+        {
+          text: 'X',
+          role: 'cancel',
+          handler: () => {
+  
+          }
+        }
+      ]
     });
+    toast.present();
+
+
+    // this.toastCtrl.create({
+    //   message: message,
+    //   duration: 5000,
+    //   showCloseButton: true,
+    //   closeButtonText: 'X'
+    // }).then(toast => {
+    //   toast.present();
+    // });
 
   }
 
   confirmAddSurveyDate() {
     this.alertCtrl.create({
-      header: this.translate.instant('MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_HEADER'), 
+      header: this.translate.instant('MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_HEADER'),
       subHeader: this.translate.instant('MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_MESSAGE'),
       buttons: [
         {
@@ -457,7 +464,7 @@ export class ModalsContentPage implements OnInit {
           text: this.translate.instant('SHARED.YES'),
           handler: data => {
             this.addSurveyDate();
-            this.updateOsmElement();
+            this.updateOsmElement(null);
           }
         }
       ]
@@ -477,7 +484,7 @@ export class ModalsContentPage implements OnInit {
 
     let tagSurveyIndex = -1;
     for (let i = 0; i < this.tags.length; i++) {
-      if (this.tags[i].key === 'survey:date') {
+      if (this.tags[i].key === this.configService.config.checkedKey) {
         tagSurveyIndex = i;
         break;
       }
@@ -485,10 +492,73 @@ export class ModalsContentPage implements OnInit {
     if (tagSurveyIndex !== -1) { // le tag existe déjà, on l'écrase
       this.tags[tagSurveyIndex].value = isoDate;
     } else {
-      this.tags.push({ 'key': 'survey:date', 'value': isoDate });
+      this.tags.push({ 'key': this.configService.config.checkedKey, 'value': isoDate });
+    }
+  }
+
+  saveFields(tagId, tags) {
+    const savedTags = tags.map(t => { return { key: t.key, value: t.value } })
+      .filter(t => t.key !== 'name')
+      .filter(t => t.key !== 'survey:date')
+      .filter(t => t.key !== 'check_date')
+    this.tagsService.addSavedField(tagId, savedTags);
+    if (!this.savedFields) this.savedFields = {};
+    this.savedFields['tags'] = [...savedTags];
+  }
+
+  restoreFields(tagId, tags) {
+    const fields = this.tagsService.savedFields[tagId];
+    const newTags = [...tags];
+    if (fields) {
+      for (let stags of fields.tags) {
+        let t = newTags.find(o => o.key === stags.key)
+        if (t) {
+          t['value'] = stags.value
+        } else {
+          newTags.push(stags)
+        }
+      }
+    }
+    this.tags = [...newTags];
+    this.initComponent(this.tagConfig);
+    this.cdr.detectChanges();
+  }
+
+
+  fixDeprecated(deprecated: any) {
+    const deprecadetKeys = Object.keys(deprecated.old)
+    // delete old tags
+    this.tags = this.tags.filter(t => !deprecadetKeys.includes(t.key))
+
+    for (let depold of deprecadetKeys) {
+      if (this.feature.properties[depold]) {
+        delete this.feature.properties[depold];
+      }
+    }
+    this.feature.properties.tags = { ...this.feature.properties.tags , ...deprecated.replace }
+    // add new
+    for (let k in deprecated.replace) {
+      this.tags = [{ 'key': k, 'value': deprecated.replace[k] }, ...this.tags]
     }
 
-   
+    if (this.mode !== 'Update') {
+      this.mode = 'Update';
+      this.typeFiche = 'Edit'
+    }
+
+    this.initComponent();
+    this.cdr.detectChanges();
   }
+
+
+  addOrRemoveBookmark(tag : TagConfig) {
+    if (!this.tagsService.bookmarksIds.includes(tag.id)) {
+      this.tagsService.addBookMark(tag)
+    } else {
+      this.tagsService.removeBookMark(tag)
+    }
+    this.cdr.detectChanges();
+  }
+
 
 }

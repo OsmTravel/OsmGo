@@ -1,3 +1,42 @@
+# 1.0.0
+## Tags & presets
+ - Refactoring Tags & Presets configuration
+    - Configuration by tags (not only  by primary key /  value).
+        - amenity=fast_food => Fast food
+        - amenity=fast_food & cuisine=pizza => Fast food Pizza
+    - One files for all language
+    - Tags & presets can be filter by country code
+ - Import tags & presets from iD
+ - Import deprecated presets from ID
+ - Import "brand" from name-suggestion-index/
+ - Import languages translation from iD ! ( tags & presets)
+ - Add keys : aerialway, playground, attraction, barrier, power, telecom, etc..
+ - Import descriptions from TagInfo
+
+## ✨ Features
+ - You can save and restore fields
+ - You can fix deprecated presets automatically (with a button)
+ - Deprecated items are now highlighted on the map
+ - Ability to hide / show some tags on the in a dedicated menu
+ - You can choose between "check_date" and "survey_date" in settings menu
+
+## Deleting Features
+ - Deleting the live update mode
+ - OsmGo-Admin has its [own repository](https://github.com/DoFabien/OsmGo-admin)
+
+## 🍏 Improvements
+ - Ionic 5 & Angular 9
+ - Adding some unit test
+ - Mapbox gl js 1.7.0
+ - Icons are now stored in a sprite ( no SVG)
+
+## UI
+ - Select multi features components
+ - If the name is undefined but the ref attribute is present, the latter will be displayed on the map
+ - The 20 last tags used are saved and display in a list. If you want to choose another preset, you must type 3 letters in the searchbar
+ - Add icon and color on the information sheet
+ 
+
 # 0.12.0
 ## Features
  - osmgo.com ( translation interface : admin.osmgo.com )

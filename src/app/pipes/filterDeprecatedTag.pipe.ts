@@ -6,7 +6,11 @@ import { Pipe } from '@angular/core';
 })
 
 export class FilterDeprecatedTagPipe  {
-    transform(items, keys: string[]) {
+    transform(items) {
+        if (!items){
+            return ([]);
+        }
+
         return items.filter(item => {
            if (!item.deprecated){
                return true

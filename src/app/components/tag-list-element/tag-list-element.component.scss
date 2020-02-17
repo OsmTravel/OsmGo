@@ -1,0 +1,62 @@
+.box {
+    display: flex;
+  }
+
+  .content{
+      position: relative;
+      width: 100%;
+      display: flex;
+  }
+.tag-icon{
+    position: relative;
+    // width: 45px;
+    width: 50px;
+    min-width: 50px;
+    // vertical-align: middle;
+    padding: 0.2em;
+}
+
+.icon-wrapper{
+    // vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.buttonUnhideTag{
+    height: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.bookmark{
+    // position: absolute;
+    // left: 45px;
+    width: 36px;
+    min-width: 36px;
+    // width:36px;
+    vertical-align: middle;
+    padding: 0.2em;
+}
+
+.action{
+    // position: absolute;
+    // right: 45px;
+    width: 45px;
+    min-width: 45px;
+}
+
+.tag-text{
+    // position: absolute;
+    // left: 90px;
+    // right: 45px;
+    padding: 0.5em;
+}
+
+.spacer {
+    flex-grow: 1;
+  }

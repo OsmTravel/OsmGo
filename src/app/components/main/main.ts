@@ -14,15 +14,17 @@ import { AlertService } from '../../services/alert.service';
 import { ConfigService } from '../../services/config.service';
 import { ModalsContentPage } from '../modal/modal';
 
-import { timer } from 'rxjs';
+import { timer, forkJoin } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IconService } from 'src/app/services/icon.service';
 import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from 'src/app/services/states.service';
 
-import { Plugins } from '@capacitor/core';
+import { Plugins, ToastShowOptions } from '@capacitor/core';
+import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
+import { switchMap } from 'rxjs/operators';
+import { InitService } from 'src/app/services/init.service';
 
 const { App } = Plugins;
 
@@ -36,11 +38,12 @@ export class MainPage implements AfterViewInit {
   modalIsOpen = false;
   menuIsOpen = false;
   newVersion = false;
+  loadingData = false
+  loading = true;
 
-  authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
+  // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
   constructor(public navCtrl: NavController,
-    private platform: Platform,
     public modalCtrl: ModalController,
     public toastCtrl: ToastController,
     public menuCtrl: MenuController,
@@ -56,10 +59,11 @@ export class MainPage implements AfterViewInit {
     private _ngZone: NgZone,
     private router: Router,
     private translate: TranslateService,
-    public iconService: IconService,
     public loadingController: LoadingController,
     private swUpdate: SwUpdate,
-    public statesService: StatesService
+    public statesService: StatesService,
+    public initService: InitService
+
   ) {
 
 
@@ -82,8 +86,27 @@ export class MainPage implements AfterViewInit {
       }
     });
 
-    mapService.eventShowModal.subscribe(async (_data) => {
+    mapService.eventShowDialogMultiFeatures.subscribe(async (features) => {
+    const modal = await this.modalCtrl.create({
+      component: DialogMultiFeaturesComponent,
+      cssClass: 'dialog-multi-features',
+      componentProps: { features: features, jsonSprites: this.tagsService.jsonSprites }
+    });
+    await modal.present();
 
+    modal.onDidDismiss().then(d => {
+      if (d && d.data){
+        const feature = d.data
+       this.mapService.selectFeature(feature); // bof
+      }
+      // console.log(d)
+    })
+
+    });
+
+
+
+    mapService.eventShowModal.subscribe(async (_data) => {
       this.configService.freezeMapRenderer = true;
       const newPosition = (_data.newPosition) ? _data.newPosition : false;
 
@@ -95,7 +118,8 @@ export class MainPage implements AfterViewInit {
       await modal.present();
       this.modalIsOpen = true;
 
-      modal.onDidDismiss().then(d => {
+      modal.onDidDismiss()
+      .then(d => {
         this.modalIsOpen = false;
         const data = d.data;
         this.configService.freezeMapRenderer = false;
@@ -179,105 +203,124 @@ export class MainPage implements AfterViewInit {
     // L'utilisateur charge les données, on supprime donc le tooltip
     this._ngZone.run(() => {
       this.alertService.displayToolTipRefreshData = false;
-      this.mapService.loadingData = true;
+      this.loadingData = true;
     });
 
 
     const bbox: any = this.mapService.getBbox();
     this.osmApi.getDataFromBbox(bbox)
-      .subscribe(data => { // data = geojson a partir du serveur osm
-
+      .subscribe(newDataJson => { // data = geojson a partir du serveur osm
+        this.dataService.setGeojsonBbox(newDataJson['geojsonBbox']);
+        this.mapService.eventNewBboxPolygon.emit(newDataJson['geojsonBbox']);
+        this.dataService.setGeojson(newDataJson['geojson']);
+        this.mapService.eventMarkerReDraw.emit(newDataJson['geojson']);
+        this._ngZone.run(() => {
+          this.loadingData = false;
+        });
       },
         err => {
-          this.mapService.loadingData = false;
+          this.loadingData = false;
           console.log(err);
-          this.presentToast(err);
+          this.presentToast(err.message);
         });
   }
 
 
-  presentToast(message) {
-    this.toastCtrl.create({
-      message: message,
-      position: 'top',
-      duration: 4000,
-      showCloseButton: true,
-      closeButtonText: 'X'
-    })
-      .then(toast => {
-        toast.present();
+  async presentToast(message) {
+
+
+      const toast = await this.toastCtrl.create({
+        message: message,
+        duration: 4000,
+        position: 'top',
+        buttons: [
+          {
+            text: 'X',
+            role: 'cancel',
+            handler: () => {
+           
+            }
+          }
+        ]
       });
+      toast.present();
+    
+
+    // this.toastCtrl.create({
+    //   message: message,
+    //   position: 'top',
+    //   duration: 4000,
+    //   showCloseButton: true,
+    //   closeButtonText: 'X'
+    // })
+    //   .then(toast => {
+    //     toast.present();
+    //   });
 
   }
 
   ngAfterViewInit() {
 
-    // TODO: Dirty... use rxjs mergemap ?
-
-    this.configService.getI18nConfig$().subscribe(async i18nConfig => {
-
-      this.configService.i18nConfig = i18nConfig;
-      const e = await this.configService.loadConfig(i18nConfig)
-      console.log('authType : ', this.authType);
-      if (this.authType == 'oauth'){
+    this.initService.initLoadData$()
+      .subscribe( ([config, userInfo, changeset, savedFields, presets, tags, baseMaps, bookmarksIds, lastTagsIds, geojson, geojsonChanged, geojsonBbox]) => {
+        this.locationService.enableGeolocation();
         this.osmApi.initAuth();
-        if (!this.osmApi.isAuthenticated() || !this.configService.getUserInfo().connected) {
-          this.osmApi.logout()
-        }
-      }
 
-      this.translate.use(this.configService.config.languageUi);
+        this.mapService.initMap(config)
+    })
 
-      // TODO: switchmap
-      this.tagsService.loadLastTagAdded$().subscribe()
-      this.tagsService.loadBookMarks$().subscribe()
-
-      this.tagsService.loadTagsAndPresets$(this.configService.config.languageTags, this.configService.config.countryTags)
-        .subscribe(async e => {
-
-          const missingIcons: string[] = await this.iconService.getMissingSpirtes();
-
-          if (missingIcons.length > 0) {
-            const loading = await this.loadingController.create({
-              message: this.translate.instant('MAIN.CREATING_MISSING_ICONS')
-            });
-            await loading.present();
-            const missingSprites: string[] = await this.iconService.getMissingSpirtes();
-            for (let missIcon of missingSprites) {
-
-              let uriIcon = await this.iconService.generateMarkerByIconId(missIcon)
-              this.dataService.addIconCache(missIcon, uriIcon)
-
-            }
-            loading.dismiss();
+    this.mapService.eventMapIsLoaded.subscribe( e => {
+        this.loading = false;
+        timer(2000).subscribe( e => {
+          const nbData = this.dataService.getGeojson().features.length;
+          if (nbData > 0) {
+            // Il y a des données stockées en mémoires... 
+            this.alertService.eventNewAlert.emit(nbData+ ' ' + this.translate.instant('MAIN.START_SNACK_ITEMS_IN_MEMORY'));
+          } else {
+            // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
+            this.alertService.eventDisplayToolTipRefreshData.emit();
           }
-        });
-
-      this.mapService.eventDomMainReady.emit(document.getElementById('map'));
-
-
-
-    });
-
+        })
+    })
 
 
     this.alertService.eventDisplayToolTipRefreshData.subscribe(async e => {
 
+
       const toast = await this.toastCtrl.create({
-        position: 'bottom',
         message: this.translate.instant('MAIN.LOAD_BBOX'),
-        showCloseButton: true,
-        duration: 6000,
-        closeButtonText: 'Ok'
+        duration: 4000,
+        position: 'bottom',
+        buttons: [
+          {
+            text: 'Ok',
+            role: 'cancel',
+            handler: () => {
+              if (this.mapService.map && this.mapService.map.getZoom() > 16) {
+                this.loadData();
+              }
+            }
+          }
+        ]
       });
       toast.present();
-      toast.onDidDismiss().then(ev => {
-        if (ev.role === 'cancel') {
-          if (this.mapService.map && this.mapService.map.getZoom() > 16) {
-            this.loadData();
-          }
-        }
-      });
+
+
+      // const toast = await this.toastCtrl.create({
+      //   position: 'bottom',
+      //   message: this.translate.instant('MAIN.LOAD_BBOX'),
+      //   showCloseButton: true,
+      //   duration: 6000,
+      //   closeButtonText: 'Ok'
+      // });
+      // toast.present();
+      // toast.onDidDismiss().then(ev => {
+      //   if (ev.role === 'cancel') {
+      //     if (this.mapService.map && this.mapService.map.getZoom() > 16) {
+      //       this.loadData();
+      //     }
+      //   }
+      // });
     });
 
 

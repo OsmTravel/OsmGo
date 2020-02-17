@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, throwError, of, from } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map, catchError, switchMap, tap } from 'rxjs/operators';
 
 import * as osmAuth from 'osm-auth';
 
@@ -17,11 +17,10 @@ import { cloneDeep } from 'lodash';
 
 import bboxPolygon from '@turf/bbox-polygon'
 import { Platform } from '@ionic/angular';
-
+import { addAttributesToFeature } from '../../../scripts/osmToOsmgo/index.js'
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-    authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
     oauthParam = {
         prod: {
             url: 'https://www.openstreetmap.org',
@@ -89,7 +88,7 @@ export class OsmApiService {
     }
 
     logout() {
-        if (this.authType == 'oauth'){
+        if (this.configService.user_info.authType == 'oauth'){
             this.auth.logout();
         }
         this.localStorage.remove('changeset')
@@ -104,10 +103,10 @@ export class OsmApiService {
  
 
     // DETAIL DE L'UTILISATEUR
-    getUserDetail$(_user?, _password?, basicAuth = false): Observable<User> {
+    getUserDetail$(_user?, _password?, basicAuth = false, passwordSaved = true, test = false): Observable<User> {
         const PATH_API = '/api/0.6/user/details'
         let _observable;
-        if (this.authType === 'oauth') {
+        if (!basicAuth) {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -141,8 +140,11 @@ export class OsmApiService {
                 const x_user = xml.getElementsByTagName('user')[0];
                 const uid = x_user.getAttribute('id');
                 const display_name = x_user.getAttribute('display_name');
-                const _userInfo: User = { user: _user, password: _password, uid: uid, display_name: display_name, connected: true};
-                this.configService.setUserInfo(_userInfo);
+                const _userInfo: User = { user: _user, password: passwordSaved ?_password : null, uid: uid, display_name: display_name, connected: true,  authType: basicAuth ? 'basic' : 'oauth',};
+                if (!test){
+                    this.configService.setUserInfo(_userInfo);
+                }
+               
                 return _userInfo;
             }),
             catchError((error: any) => {
@@ -161,7 +163,7 @@ export class OsmApiService {
 
 
 
-    createOSMChangeSet(comment): Observable<any> {
+    createOSMChangeSet(comment, password): Observable<any> {
         const appVersion = `${this.configService.getAppVersion().appName} ${this.configService.getAppVersion().appVersionNumber}`;
         const content_put = `
         <osm>
@@ -175,7 +177,7 @@ export class OsmApiService {
         const PATH_API = `/api/0.6/changeset/create`
 
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.user_info.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -197,7 +199,7 @@ export class OsmApiService {
             const url = this.getUrlApi() + PATH_API;
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`)
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`)
                 .set('Content-Type', 'text/xml');
 
             _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
@@ -212,15 +214,15 @@ export class OsmApiService {
     }
 
     // determine si le changset est valide, sinon on en crée un nouveau
-    getValidChangset(_comments): Observable<any> {
+    getValidChangset(_comments, password): Observable<any> {
         // si il n'existe pas
         if (this.configService.getChangeset().id == null || this.configService.getChangeset().id === '') {
-            return this.createOSMChangeSet(_comments);
+            return this.createOSMChangeSet(_comments, password);
         } else if (_comments !== this.configService.getChangeset().comment) { // un commentaire différent => nouveau ChangeSet
-            return this.createOSMChangeSet(_comments);
+            return this.createOSMChangeSet(_comments, password);
         } else if ((Date.now() - this.configService.getChangeset().last_changeset_activity) / 1000 > 3540 || // bientot une heure sans activité
             (Date.now() - this.configService.getChangeset().last_changeset_activity) / 1000 > 86360) {    // bientot > 24h
-            return this.createOSMChangeSet(_comments);
+            return this.createOSMChangeSet(_comments, password);
         } else {
             return of(this.configService.getChangeset().id)
                 .pipe(
@@ -337,18 +339,19 @@ export class OsmApiService {
         feature.properties['meta'] = { timestamp: 0, version: 0, user: '' };
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
+        addAttributesToFeature(feature)
         this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
         // refresh changed only
         return of(_feature);
 
     }
 
-    apiOsmCreateNode(_feature, changesetId) {
+    apiOsmCreateNode(_feature, changesetId, password) {
         const feature = cloneDeep(_feature);
         const content_put = this.geojson2OsmCreate(feature, changesetId);
         const PATH_API = `/api/0.6/node/create`
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.user_info.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -370,7 +373,7 @@ export class OsmApiService {
             const url = this.getUrlApi() + '/api/0.6/node/create';
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`);
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`);
 
             _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
         }
@@ -388,9 +391,11 @@ export class OsmApiService {
     // Update
     updateOsmElement(_feature, origineData) {
         const feature = cloneDeep(_feature);
+        addAttributesToFeature(feature)
         const id = feature.id;
         if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
             this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
+           
         } else { // jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update';
             feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id, 'data');
@@ -400,13 +405,13 @@ export class OsmApiService {
         return of(id);
     }
 
-    apiOsmUpdateOsmElement(_feature, changesetId) {
+    apiOsmUpdateOsmElement(_feature, changesetId, password) {
         const feature = cloneDeep(_feature);
         const id = feature.id;
         const content_put = this.geojson2OsmUpdate(feature, changesetId);
         const PATH_API = `/api/0.6/${id}`
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.user_info.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -430,7 +435,7 @@ export class OsmApiService {
 
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`)
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`)
                 .set('Content-Type', 'text/xml');
 
             _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
@@ -452,6 +457,7 @@ export class OsmApiService {
     // Delete
     deleteOsmElement(_feature) {
         const feature = cloneDeep(_feature);
+        addAttributesToFeature(feature)
         const id = feature.id;
 
         if (feature.properties.changeType) { // il a déjà été modifié
@@ -471,13 +477,13 @@ export class OsmApiService {
         return of(id);
     }
 
-    apiOsmDeleteOsmElement(_feature, changesetId) {
+    apiOsmDeleteOsmElement(_feature, changesetId, password) {
         const feature = cloneDeep(_feature);
         const id = feature.id;
         const content_delete = this.geojson2OsmUpdate(feature, changesetId);
         const PATH_API = `/api/0.6/${id}`
         let _observable;
-        if (this.authType === 'oauth') {
+        if (this.configService.user_info.authType === 'oauth') {
             _observable = Observable.create(
                 observer => {
                     this.auth.xhr({
@@ -500,7 +506,7 @@ export class OsmApiService {
 
             let headers = new HttpHeaders();
             headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + this.configService.getUserInfo().password)}`);
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`);
 
             _observable = this.http.request('delete', url, { headers: headers, body: content_delete })
         }
@@ -517,8 +523,15 @@ export class OsmApiService {
     }
 
     /*
-        Observable : Utilise un Web Worker pour, ajouter un point au polygon, definir le style, filtrer et fusionner les données
+        Convertit les donnée XML d'OSM en geojson en utilisant osmtogeojson
+        Filtre les données*
+        Convertit les polygones/lignes en point
+        Generation du style dans les properties*
+        Fusion avec les données existantes (ancienne + les données modifiés)*
+
+        * utilisation du webworker
     */
+    
     formatOsmJsonData$(osmData, oldGeojson, geojsonChanged) {
         const that = this;
         const oldBbox = this.dataService.getGeojsonBbox();
@@ -528,7 +541,8 @@ export class OsmApiService {
             new Promise((resolve, reject) => {
                 const workerFormatData = new Worker('assets/workers/worker-formatOsmData.js');
                 workerFormatData.postMessage({
-                    tagsConfig: that.tagsService.getTags(),
+                    tagsConfig: that.tagsService.tags,
+                    primaryKeys: that.tagsService.primaryKeys,
                     osmData: osmData,
                     oldGeojson: oldGeojson,
                     oldBboxFeature: oldBboxFeature,
@@ -547,37 +561,6 @@ export class OsmApiService {
         );
     }
 
-    /*
-        Convertit les donnée XML d'OSM en geojson en utilisant osmtogeojson
-        Filtre les données*
-        Convertit les polygones/lignes en point
-        Generation du style dans les properties*
-        Fusion avec les données existantes (ancienne + les données modifiés)*
-
-        * utilisation du webworker
-    */
-    formatDataResult(osmData, oldGeojson, geojsonChanged) {
-
-        return this.formatOsmJsonData$(osmData, oldGeojson, geojsonChanged)
-            .subscribe(newDataJson => {
-                // Il y a eu une erreur lors de la conversion => exemple, timeOut et code 200
-                if (newDataJson['error']) {
-                    throw (newDataJson['error']);
-                }
-
-                this.dataService.setGeojsonBbox(newDataJson['geojsonBbox']);
-                this.mapService.eventNewBboxPolygon.emit(newDataJson['geojsonBbox']);
-                this.dataService.setGeojson(newDataJson['geojson']);
-                this.mapService.eventMarkerReDraw.emit(newDataJson['geojson']);
-                this.mapService.loadingData = false;
-            },
-                error => {
-                    // TODO?
-                    console.log(error);
-                }
-            );
-    }
-
     getDataFromBbox(bbox: any) {
         const featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
@@ -585,16 +568,22 @@ export class OsmApiService {
             featureBbox.geometry.coordinates[0][i][1] = featureBbox.geometry.coordinates[0][i][1];
         }
 
+        const headers = new HttpHeaders() 
+            .set('Content-Type', 'text/xml')
+            .set('Accept', 'text/xml');
+
         const url = this.getUrlApi() + `/api/0.6/map?bbox=${bbox.join(',')}`;
-        return this.http.get(url, { responseType: 'text' })
+    
+        return this.http.get(url, {headers: headers, responseType: 'text' })
             .pipe(
-                map((osmData) => {
-                    this.formatDataResult(osmData, this.dataService.getGeojson(), this.dataService.getGeojsonChanged());
+                switchMap(osmData =>  this.formatOsmJsonData$(osmData,  this.dataService.getGeojson(), this.dataService.getGeojsonChanged())),
+                map((newDataJson => {
+                    return newDataJson
                 }),
                 catchError((error: any) => {
                     return throwError(error.error || 'Impossible de télécharger les données (api)');
                 }
-                )
+                ))
             );
 
     }

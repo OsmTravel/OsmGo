@@ -1,47 +1,15 @@
-<ion-card *ngIf="tag.preset?.type === 'select'">
-    <ion-card-header>
-        <b *ngIf="!displayCode">{{tag.preset?.lbl}}</b>
-        <b *ngIf="displayCode">
-        <ion-icon name="code"></ion-icon>
-        {{tag.preset?.key}}</b>
-    </ion-card-header>
+<app-select *ngIf="tag.preset?.type === 'select'"
+    [tag]="tag"
+    [language]="language"
+    [displayCode]="displayCode"
+    (addTags)= "addTags.emit($event)"
+    >
 
-    <ion-card-content>
-
-    <div class="wrapperEdit2cols">
-        <div class="contentEdit2cols">
-
-                <ion-select *ngIf="!displayCode" [interface]="'popover'" [(ngModel)]="tag.value"
-                    style="width: 100%; min-width: 100%;padding-left:0;"
-                >
-                <ion-select-option   [value]="''" >
-                    <p class="undefindedListValue"> {{'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'| translate}} </p> 
-                </ion-select-option>
-                    <ion-select-option  *ngFor ="let item of tag.preset.tags;" [value]="item.v" >
-                            <p class="displayLabelListValue">  {{item.lbl}}</p> 
-                    </ion-select-option>
-                </ion-select>
-
-
-            <ion-item *ngIf="displayCode">
-                    <ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-                </ion-item>
-        </div>
-        <div class="buttonEdit2cols">
-            <ion-col width-10 class="ion-col10">
-            <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
-            </ion-col>
-        </div>
-    </div>
-
-    </ion-card-content>
-</ion-card>
-
-
+</app-select>
 
 <ion-card *ngIf="tag.preset?.type === 'list'">
     <ion-card-header  (click)="emitOpenModal(tag)">
-        <b *ngIf="!displayCode">{{ tag.preset?.lbl }} 
+        <b *ngIf="!displayCode">{{ tag.preset?.lbl[language] || tag.preset?.lbl['en']  }} 
         <ion-icon name="settings"></ion-icon>
         </b>
 
@@ -52,15 +20,17 @@
 
     <div class="wrapperEdit2cols">
         <div class="contentEdit2cols">
-                <ion-item *ngIf="!displayCode && ((tag | displayPresetLabel) || tag.value =='' )" (click)="emitOpenModal(tag)">
-                    <p *ngIf="tag.value !=''" class="displayLabelListValue">{{ (tag | displayPresetLabel)?.lbl }} </p>
+                <ion-item *ngIf="!displayCode && ((tag | displayPresetLabel) || tag.value =='' ); else noPreset; let preset" (click)="emitOpenModal(tag)">
+                    <p *ngIf="tag.value !=''" class="displayLabelListValue">{{ preset?.lbl[language] || preset?.lbl['en']  }} </p>
                     <p class="undefindedListValue" *ngIf="tag.value ==''">  {{'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'| translate}} </p>
                 </ion-item>
 
-                <ion-item *ngIf="displayCode || (!(tag | displayPresetLabel) && tag.value !=='')" style="padding-left: 0px">
-                     <ion-label color="primary"> <ion-icon name="code"></ion-icon> </ion-label>
-                    <ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-                </ion-item>
+                
+                <ng-template #noPreset>
+                        <ion-label color="primary"> <ion-icon name="code"></ion-icon> </ion-label>
+                        <ion-input type="text" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
+                </ng-template>
+           
         </div>
         <div class="buttonEdit2cols">
             <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
@@ -74,7 +44,7 @@
 
 <ion-card *ngIf="tag.preset?.type === 'number'">
     <ion-card-header>
-        <b *ngIf="!displayCode">{{tag.preset?.lbl}}</b>
+        <b *ngIf="!displayCode">{{tag.preset?.lbl[language] || tag.preset?.lbl['en']}}</b>
         <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{tag.preset?.key}}</b>
     </ion-card-header>
 
@@ -99,7 +69,7 @@
 
 <ion-card *ngIf="tag.preset?.type === 'text'">
     <ion-card-header>
-        <b *ngIf="!displayCode">{{ tag.preset?.lbl }}</b>
+        <b *ngIf="!displayCode">{{tag.preset?.lbl[language] || tag.preset?.lbl['en']}}</b>
         <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{ tag.preset?.key }}</b>
     </ion-card-header>
 

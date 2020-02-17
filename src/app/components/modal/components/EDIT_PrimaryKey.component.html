@@ -1,0 +1,39 @@
+<ion-card (click)="emitOpenModal()">
+		<div style=" width: 50px; height: 100%; position: absolute;" [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'">
+				<app-icon  class="iconImgPNG imgCenter" [icon]=" tagConfig && tagConfig.icon? tagConfig.icon : null" [jsonSprites]="jsonSprites">  </app-icon>
+        </div>
+			<div class="primaryCardContent">
+
+			<ion-card-content >
+
+			<div class="wrapperEdit2cols">
+						<div class="contentEdit2cols">
+							
+							    <p class="primaryKeyLabel" *ngIf="!displayCode && tagConfig?.lbl">
+										{{tagConfig.lbl[language]  ? tagConfig.lbl[language] : tagConfig.lbl['en']}}
+									</p>
+					
+									<p class="description" *ngIf="!displayCode && tagConfig && tagConfig.description">
+										{{tagConfig.description[language] !== undefined ? tagConfig.description[language] : tagConfig.description['en']}}
+									</p>
+					
+									<span *ngIf="displayCode && tagConfig">
+											<ion-icon name="code"></ion-icon>
+											{{tagConfig.tags | displayTags}}
+											<!-- {{this.tagsConfig[primaryKey.key].lbl[language] || this.tagsConfig[primaryKey.key].lbl['en'] || ''}} -->
+									</span>
+					
+									<span *ngIf="!tagConfig || !tagConfig?.lbl">
+											<ion-icon name="code"></ion-icon>
+											{{primaryKey.key}}={{primaryKey.value}}
+									</span>
+							
+						</div>
+						<div class="buttonEdit2cols">
+							<ion-icon name="settings" style="width: 2em; height: 2em;"></ion-icon>
+						</div>
+			</div>
+
+			</ion-card-content>
+        </div>
+	</ion-card>

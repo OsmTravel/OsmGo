@@ -4,17 +4,156 @@ import { map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { ConfigService } from './config.service';
-import { cloneDeep } from 'lodash';
-
+import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
-    lastTagAdded = {};
-    bookMarks = [];
-    tags;
-    presets = {};
-    basemaps;
+    lastTagsUsedIds: string[];
+
+    bookmarksIds: string[] = [];
+    savedFields = {};
+    tags:TagConfig[];
+    userTags:TagConfig[];
     primaryKeys = [];
+    presets = {};
+    hiddenTagsIds: string[];
+
+    basemaps;
+    jsonSprites
+
+
+    
+    defaultHiddenTagsIds :string[] = [
+        'highway/pedestrian_area',
+        'highway/footway',
+        'highway/motorway',
+        'highway/trunk',
+        'highway/trunk_link',
+        'highway/primary',
+        'highway/primary_link',
+        'highway/secondary',
+        'highway/secondary_link',
+        'highway/tertiary',
+        'highway/tertiary_link',
+        'highway/unclassified',
+        'highway/residential',
+        'highway/service',
+        'highway/motorway_link',
+        'highway/living_street',
+        'highway/track',
+        'highway/bus_guideway',
+        'highway/road',
+        'highway/bridleway',
+        'highway/path',
+        'highway/cycleway',
+        'highway/construction',
+        'highway/steps',
+        'highway/motorway_junction',
+        'highway/corridor',
+        'highway/pedestrian_line',
+        'highway/cycleway/bicycle_foot',
+        'highway/footway/crossing',
+        'highway/service/parking_aisle',
+        'highway/service/driveway',
+        'highway/path/informal',
+        'highway/stop',
+        'highway/turning_circle',
+
+        'railway/platform',
+        'railway/abandoned',
+        'railway/construction',
+        'railway/disused',
+        'railway/funicular',
+        'railway/light_rail',
+        'railway/miniature',
+        'railway/monorail',
+        'railway/narrow_gauge',
+        'railway/rail',
+        'railway/rail/highspeed',
+        'railway/subway',
+        'railway/tram',
+        'railway/tram_level_crossing',
+        'railway/tram_crossing',
+        'railway/railway_crossing',
+
+        'barrier/kerb',
+        'barrier/kerb/flush',
+        'barrier/kerb/lowered',
+        'barrier/kerb/raised',
+        'barrier/kerb/rolled',
+
+        'natural/grassland',
+        'natural/wood',
+        'natural/bare_rock',
+        'natural/cliff',
+        'natural/shingle',
+        'natural/coastline',
+
+        'waterway/riverbank',
+        'waterway/canal',
+        'waterway/canal/lock',
+        'waterway/ditch',
+        'waterway/drain',
+        'waterway/fish_pass',
+        'waterway/river',
+        'waterway/stream_intermittent',
+        'waterway/stream',
+        'waterway/tidal_channel',
+
+        'man_made/bridge',
+
+        'building/yes',
+        'building/train_station',
+        'building/apartments',
+        'building/barn',
+        'building/boathouse',
+        'building/bungalow',
+        'building/cabin',
+        'building/carport',
+        'building/cathedral',
+        'building/chapel',
+        'building/church',
+        'building/civic',
+        'building/college',
+        'building/commercial',
+        'building/construction',
+        'building/detached',
+        'building/dormitory',
+        'building/farm_auxiliary',
+        'building/farm',
+        'building/garage',
+        'building/garages',
+        'building/grandstand',
+        'building/greenhouse',
+        'building/hangar',
+        'building/hospital',
+        'building/hotel',
+        'building/house',
+        'building/houseboat',
+        'building/hut',
+        'building/industrial',
+        'building/kindergarten',
+        'building/mosque',
+        'building/pavilion',
+        'building/public',
+        'building/residential',
+        'building/retail',
+        'building/roof',
+        'building/ruins',
+        'building/school',
+        'building/semidetached_house',
+        'building/service',
+        'building/shed',
+        'building/stable',
+        'building/stadium',
+        'building/static_caravan',
+        'building/temple',
+        'building/terrace',
+        'building/transportation',
+        'building/university',
+        'building/warehouse',
+        'building/office'
+    ]
 
 
     constructor(private http: HttpClient,
@@ -22,229 +161,272 @@ export class TagsService {
         public configService: ConfigService) {
     }
 
-    // bookMarks
-    getBookMarks() {
-        return this.bookMarks;
-    }
-    setBookMarks(bookMarks) {
-        this.localStorage.set('bookMarks', bookMarks);
-        this.bookMarks = bookMarks;
+    
+    getTagConfigFromTagsID( tagIds:string[]){
+        return this.tags.filter( tag => tagIds.includes(tag.id))
     }
 
-    addRemoveBookMark(tag) {
-        let ind = -1;
-        for (let i = 0; i < this.bookMarks.length; i++) {
-            if (this.bookMarks[i].key === tag.key && this.bookMarks[i].primaryKey === tag.primaryKey) {
-                ind = i;
-            }
+
+    setBookMarksIds(bookmarksIds: string[]) {
+        this.localStorage.set('bookmarksIds', bookmarksIds);
+        this.bookmarksIds = bookmarksIds;
+    }
+
+    setLastTagsUsedIds(lastTagsUsedIds: string[]){
+        this.localStorage.set('lastTagsUsedIds', lastTagsUsedIds);
+        this.lastTagsUsedIds = lastTagsUsedIds;
+    }
+
+    removeBookMark( tag: TagConfig ){
+        this.bookmarksIds = this.bookmarksIds.filter( b => b !== tag.id);
+        this.setBookMarksIds(this.bookmarksIds)
+    }
+
+    addBookMark(tag: TagConfig){
+        if (this.bookmarksIds.includes(tag.id)){
+            return;
         }
-
-        if (ind === -1) {
-            this.bookMarks.push(tag);
-        } else {
-            this.bookMarks.splice(ind, 1);
+        let currentTag = this.tags.find( t => t.id === tag.id);
+        if (!currentTag){
+            this.addUserTags(tag)
         }
-        this.localStorage.set('bookMarks', this.bookMarks);
+        this.bookmarksIds = [tag.id, ...this.bookmarksIds ];
+
+        this.setBookMarksIds(this.bookmarksIds)
+        // TODO : si tag inconnu => ajouter à userTag
+        return currentTag;
     }
 
-
-    loadBookMarks$() {
-        return from(this.localStorage.get('bookMarks'))
-            .pipe(
-                map(d => {
-                    if (d) {
-                        this.bookMarks = d;
-                    } else {
-                        this.bookMarks = [];
-                    }
-                    return this.bookMarks;
+    loadBookMarksIds$() {
+        return from(this.localStorage.get('bookmarksIds'))
+            .pipe( 
+                map( bookmarksIds => {
+                    bookmarksIds = bookmarksIds ? bookmarksIds : []
+                    this.bookmarksIds = bookmarksIds
+                    return bookmarksIds
                 })
             )
     }
 
-
-    // LastTagAdded
-    getLastTagAdded() {
-        return this.lastTagAdded;
-    }
-    setLastTagAdded(lastTag) {
-        this.localStorage.set('lastTagAdded', lastTag);
-        this.lastTagAdded = lastTag;
-    }
-
-    loadLastTagAdded$() {
-        return from(this.localStorage.get('lastTagAdded')).pipe(
-            map(d => {
-                if (d) {
-                    this.lastTagAdded = d;
-                } else {
-                    this.lastTagAdded = null;
-                }
-                return d
+    // hidden tags
+    loadHiddenTagsIds$() {
+        return from(this.localStorage.get('hiddenTagsIds'))
+        .pipe(
+            map( hiddenTagsIds => {
+                hiddenTagsIds = hiddenTagsIds ? hiddenTagsIds : [...this.defaultHiddenTagsIds];
+                this.hiddenTagsIds  = hiddenTagsIds;
+                return hiddenTagsIds;
             })
-        );
+        )
     }
 
-
-
-
-    getPrimaryKeys() {
-        return this.primaryKeys;
+    setHiddenTagsIds(hiddenTagsIds: string[]) {
+        this.localStorage.set('hiddenTagsIds', hiddenTagsIds);
+        this.hiddenTagsIds = hiddenTagsIds;
     }
 
-    getAllTags(language, country): Observable<any> { // tags à plat ?
-        return this.http.get(`assets/i18n/${language}/${country}/tags.json`)
-            .pipe(
-                map(res => {
-                    const tags = res;
-                    for (const tagsObject in tags) {
-                        for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                            tags[tagsObject].values[i]['primaryKey'] = tagsObject;
-                        }
-                    }
-                    this.tags = tags;
-                    return tags;
-                })
-            );
-    }
-
-    getTagConfigByKeyValue(key, value) {
-        const filtered = this.tags[key].values.filter(elem => elem.key === value);
-        if (filtered.length > 0) {
-            return filtered[0];
-        } else {
-            return undefined;
+    removeHiddenTag(tag:TagConfig){
+        if(!tag.id){
+          return;
         }
+        const newHiddenTags = this.hiddenTagsIds.filter(t => t !== tag.id)
+        this.setHiddenTagsIds(newHiddenTags)
+      }
+
+    addHiddenTag(tag:TagConfig){ // => hide a tag
+        if(!tag.id){
+          return;
+        }
+        if (!this.hiddenTagsIds.includes(tag.id)){
+            const newHiddenTags = [tag.id, ...this.hiddenTagsIds]
+            this.setHiddenTagsIds(newHiddenTags)
+            // delete bookmark...
+            this.removeBookMark(tag)
+        }
+      }
+    
+    resetHiddenTags(){
+        const defaultHiddenTagsIds = [...this.defaultHiddenTagsIds];
+        this.setHiddenTagsIds(defaultHiddenTagsIds) 
+      }
+
+    loadLastTagsUsedIds$(){
+        return from(this.localStorage.get('lastTagsUsedIds'))
+        .pipe(
+            map( lastTagsUsedIds => {
+                lastTagsUsedIds = lastTagsUsedIds ? lastTagsUsedIds : [];
+                this.lastTagsUsedIds = lastTagsUsedIds;
+                return lastTagsUsedIds;
+            })
+        )
     }
 
 
+    addTagTolastTagsUsed(tagId: string) {
+        if (!tagId){
+            return;
+        }
+        if (this.lastTagsUsedIds.includes(tagId)){
+            this.lastTagsUsedIds = this.lastTagsUsedIds.filter( tu => tu !== tagId);
+        }
+        let currentTag = this.tags.find( t => t.id === tagId);
+        if (!currentTag){
+            return;
+        }
 
-    loadTags(language, country) {
-        this.http.get(`assets/i18n/${language}/${country}/tags.json`)
+        this.lastTagsUsedIds = [tagId, ...this.lastTagsUsedIds].slice(0,20);
+
+        this.setLastTagsUsedIds(this.lastTagsUsedIds)
+        return currentTag;
+    }
+
+    loadUserTags$(){
+        return from( this.localStorage.get('userTags'))
+        .pipe(
+            map( userTags => {
+                userTags = userTags ? userTags : [];
+                this.userTags = userTags;
+                return userTags;
+            })
+        )
+    }
+
+    setUserTags(userTags: TagConfig[]) {
+        this.localStorage.set('userTags', userTags);
+        this.userTags = userTags;
+    }
+
+    addUserTags(newTag: TagConfig){
+        const newTagId = newTag.id;
+        if (this.userTags.find( t => t.id === newTagId)){
+            return;
+        }
+        newTag['geometry'] = ['point', 'vertex', 'line', 'area']
+        newTag['icon'] = "maki-circle-custom",
+        newTag['markerColor'] = "#000000";
+        this.userTags =  [...this.userTags, newTag]
+        this.tags = [...this.tags, newTag ]
+        this.setUserTags(this.userTags)
+    }
+
+
+    loadSavedFields$() {
+        return from(this.localStorage.get('savedFields'))
             .pipe(
-                map((res) => {
+                map(d => {
+                    const res = d ? d : {}
+                    this.savedFields = res
                     return res;
                 })
             )
-            .subscribe(data => {
-                const tags = data;
-                for (const tagsObject in tags) {
-                    for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                        tags[tagsObject].values[i]['primaryKey'] = tagsObject;
-                    }
+    }
 
-                }
-                this.tags = tags;
-                this.getListOfPrimaryKey();
-                return tags;
-            });
-        // .catch((error: any) => throwError(error.json().error || 'Server error'));
+    addSavedField(tagId, tags){
+        if (!this.savedFields[tagId]){
+            this.savedFields[tagId] = {};
+        }
+        this.savedFields[tagId]['tags'] = tags
+        // .tags = tags;
+        this.localStorage.set('savedFields', this.savedFields);
     }
 
 
-
-    getTags() {
-        return cloneDeep(this.tags);
-    }
-
-    getFullTags() {
-        const res = [];
-        const tags = this.getTags();
-        for (const tagsObject in tags) {
-            for (let i = 0; i < tags[tagsObject].values.length; i++) {
-                const currentTag = cloneDeep(tags[tagsObject].values[i]);
-                res.push(currentTag);
+  findPkey( featureOrTags): PrimaryTag{
+    const pkeys = this.primaryKeys;
+    if (featureOrTags.properties && featureOrTags.properties.tags){
+        for (let k in featureOrTags.properties.tags){
+            if (pkeys.includes(k)){
+                return {key: k, value:featureOrTags.properties.tags[k] }
+            }
+            return undefined
+        }
+    } else {
+        for (let t of featureOrTags){
+            if (pkeys.includes(t.key)){
+                return {key: t.key, value:t.value }
             }
         }
-        return res;
+        return undefined
     }
 
-    getBaseMaps(language, country) {
-        return this.http.get(`assets/i18n/${language}/${country}/basemap.json`)
-            .pipe(
-                map((p) => {
-                    this.configService.baseMapSources = p;
-                    return this.basemaps;
+} 
+
+    getTagsConfig$(): Observable<any> { 
+        return this.http.get(`assets/tagsAndPresets/tags.json`)
+            .pipe( 
+                map( tagsConfig => {
+                    this.primaryKeys = tagsConfig['primaryKeys'];
+                    return tagsConfig
                 })
-            );
+            )
     }
 
-    loadPresets(language, country) {
-        return this.http.get(`assets/i18n/${language}/${country}/presets.json`)
+    loadBaseMaps$() {
+        return this.http.get(`assets/tagsAndPresets/basemap.json`)
             .pipe(
-                map((p) => { // c'est moche... vivement rx6.
+                map(baseMaps => {
+                    this.configService.baseMapSources = baseMaps;
+                    return baseMaps
+                })
+            )
+    }
+
+    loadPresets$() {
+        return this.http.get(`assets/tagsAndPresets/presets.json`)
+            .pipe(
+                map((p) => { 
                     const json = p;
                     for (const k in json) {
                         json[k]['_id'] = k;
                     }
                     this.presets = json;
-                    return this.presets;
+                   return json;
                 })
             );
     }
-
-    loadTagsAndPresets$(language, country) {
-        return forkJoin(
-            this.loadPresets(language, country),
-            this.getAllTags(language, country),
-            this.getBaseMaps(language, country)
-                .pipe(
-                    map(allTags => {
-                        for (const key in allTags) {
-                            this.primaryKeys.push({ lbl: allTags[key].lbl, key: key });
-                        }
-                    })
-                )
+ 
+    loadJsonSprites$() {
+        const devicePixelRatio =  Math.round(window.devicePixelRatio);
+        return this.http.get('assets/iconsSprites@x'+devicePixelRatio+'.json')
+        .pipe(
+            map( jsonSprites => {
+                this.jsonSprites = jsonSprites;
+                return jsonSprites;
+            } )
         )
-    }
+      }
+
+      loadTags$(){
+          return forkJoin(
+            this.getTagsConfig$(),
+            this.loadUserTags$(),
+          ).pipe(
+              map( ([tagsConfig, userTags]) => {
+                  let tags = [...tagsConfig['tags'], ...userTags];
+                this.tags = tags;
+                return tags;
+              })
+          )
+      }
 
 
-    getPresetsById(id) {
-        return this.presets[id];
-    }
+    // loadtagsAndPresets$() {
+    //     return forkJoin(
+    //         this.loadJsonSprites$(),
+    //         this.loadPresets$(),
+    //         this.loadTags$(),
+    //         this.loadBaseMaps$(),
+    //         this.loadBookMarksIds$(),
+    //         this.loadLastTagsUsedIds$(),
+    //         this.loadHiddenTagsIds$()
+    //     )
+    //     .pipe(
+    //         map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]) => {
+        
+                   
 
-
-
-    // liste des clés principales => ["shop", "amenity", "public_transport", "emergency",...]
-    getListOfPrimaryKey() {
-        const tags = this.tags;
-        const listeOfPrimaryKey = [];
-        for (const key in tags) {
-            listeOfPrimaryKey.push(key);
-        }
-        return listeOfPrimaryKey;
-    }
-
-    getPrimaryKeyOfObject(feature) {
-        const tags = feature.properties.tags;
-        const types_liste = this.getListOfPrimaryKey();
-        let kv = { k: '', v: '' };
-        for (const k in tags) {
-            // console.log(k);
-            if (types_liste.indexOf(k) !== -1) {
-                // on filtre ici pour ne pas prendre en compte les ways exclus
-                if ((feature.properties.type === 'way' || feature.properties.type === 'relation')
-                    && this.tags[k].exclude_way_values
-                    && this.tags[k].exclude_way_values.indexOf(tags[k]) !== -1
-                ) {
-                    continue;
-                }
-                kv = { k: k, v: tags[k] };
-                // console.log(kv)
-                return kv;
-            }
-        }
-        return null;
-    }
-
-    getConfigMarkerByKv(k, v) {
-        const tags = this.getTags();
-        if (tags[k]) {
-            for (const i in tags[k].values) {
-                if (tags[k].values[i].key === v) {
-                    return tags[k].values[i];
-                }
-            }
-        }
-    }
+    //                 return [jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]
+    //         } )
+    //     )
+    // }
 }

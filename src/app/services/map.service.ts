@@ -15,18 +15,21 @@ import { AlertController } from '@ionic/angular';
 import * as mapboxgl from 'mapbox-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
-import { IconService } from './icon.service';
 import { AlertInput } from '@ionic/core';
 import {
   Plugins,
   HapticsImpactStyle
 } from '@capacitor/core';
 
+import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
+import { TagConfig } from 'src/type';
+import { Config } from 'protractor';
+import { of } from 'rxjs';
+
 const { Haptics } = Plugins;
 @Injectable({ providedIn: 'root' })
 export class MapService {
-
-
+  isFirstPosition = true;
 
   constructor(
     private _ngZone: NgZone,
@@ -38,29 +41,22 @@ export class MapService {
     private zone: NgZone,
     private alertCtrl: AlertController,
     private http: HttpClient,
-    private translate: TranslateService,
-    private iconService: IconService,
-
+    private translate: TranslateService
   ) {
 
     this.domMarkerPosition = document.createElement('div');
     this.domMarkerPosition.className = 'positionMarkersSize';
-
     this.arrowDirection = document.createElement('div');
 
     this.arrowDirection.className = 'positionMarkersSize locationMapIcon-wo-orientation';
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
-    this.eventDomMainReady.subscribe(mes => {
-      mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
-      this.locationService.eventLocationIsReady.subscribe(data => { // flatmap ?
-        if (this.map) {
-          this.map.setZoom(19);
-        }
-
-      });
-      this.initMap();
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
+    this.locationService.eventLocationIsReady.subscribe(data => { 
+      if (this.map && this.configService.config.centerWhenGpsIsReady) {
+        this.map.setZoom(19);
+      }
     });
 
     this.eventMarkerReDraw.subscribe(geojson => {
@@ -77,12 +73,19 @@ export class MapService {
       }
     });
 
-    this.configService.eventCloseGeolocPage.subscribe(e => {
-      if (this.configService.geojsonIsLoadedFromCache && !this.configService.geolocPageIsOpen) {
-        this.diplayInitToast();
-      }
+    this.eventMapMove
+      .pipe(
+        debounceTime(700)
+      )
+      .subscribe( () => {
+        let mapCenter = this.map.getCenter();
+        let mapBearing = this.map.getBearing()
+        let mapZoom = this.map.getZoom();
+        const currentView = { lng: mapCenter.lng, lat: mapCenter.lat, zoom: mapZoom, bearing: mapBearing }
+        this.configService.setLastView(currentView)
+      })
 
-    });
+
   } // EOF constructor
 
   bboxPolygon;
@@ -92,7 +95,6 @@ export class MapService {
   subscriptionMoveElement;
   subscriptionMarkerMove;
   mode = 'Update';
-  loadingData = false;
   headingIsLocked = true;
   positionIsFollow = true;
   isDisplaySatelliteBaseMap = false;
@@ -113,14 +115,81 @@ export class MapService {
   eventOsmElementDeleted = new EventEmitter();
   eventOsmElementCreated = new EventEmitter();
   eventMarkerReDraw = new EventEmitter();
+  eventMapIsLoaded = new EventEmitter();
   eventMarkerChangedReDraw = new EventEmitter();
+  eventShowDialogMultiFeatures = new EventEmitter();
   markersLayer = [];
 
 
   // CREATE NEW MARKER
   eventMarkerMove = new EventEmitter();
+  eventMapMove = new EventEmitter();
   markerMoving = false; // le marker est en train d'être positionné
   markerPositionate;
+  markerMapboxUnknown = {};
+
+  filters = {
+    fixme: null,
+
+  }
+
+  loadUnknownMarker(factor) {
+    const roundedFactor = Math.round(factor)
+    // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
+    this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
+      this.markerMapboxUnknown['circle'] = image;
+    })
+    this.map.loadImage(`/assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`, (error, image) => {
+      this.markerMapboxUnknown['penta'] = image;
+    })
+    this.map.loadImage(`/assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`, (error, image) => {
+      this.markerMapboxUnknown['square'] = image;
+    })
+  }
+
+  
+  filterMakerByIds(ids) {
+    const layersIds = [
+      'way_fill',
+      'way_line',
+      // 'way_fill_changed',
+      // 'way_line_changed',
+      'label',
+      // 'label_changed',
+      'icon-old',
+      'icon-fixme',
+      'marker',
+      // 'marker_changed'
+    ]
+    if (ids.length === 0){ // avoid :expected at least one branch label.
+      ids = ['']
+    }
+
+    for (let layerId of layersIds) {
+      const currentFilter = this.map.getFilter(layerId);
+      const newConfigIdFilter = ["match", ["get", "configId"], [...ids], false, true];
+      let newFilter = [];
+  
+        // currentFilter[0] === 'all
+          let findedFilter = false
+          for (let i = 1; i < currentFilter.length; i++) {
+            if (currentFilter[i][0] === 'match' && currentFilter[i][1][1] === 'configId') {
+              currentFilter[i] = newConfigIdFilter;
+              newFilter = currentFilter;
+              findedFilter = true;
+              // break;
+            }
+          }
+
+          if (!findedFilter) {
+            newFilter = [...currentFilter, newConfigIdFilter]
+          }
+        
+      this.map.setFilter(layerId, newFilter);
+    }
+
+  }
+
 
   drawWaysPoly(geojson, source) {
     const features = geojson.features;
@@ -130,7 +199,7 @@ export class MapService {
       if (feature.properties.type !== 'node') {
         const featureWay = {
           'type': 'Feature',
-          'properties': { 'hexColor': feature.properties.hexColor, 'mesure': feature.properties.mesure },
+          'properties': feature.properties,
           'geometry': feature.properties.way_geometry
         };
         featuresWay.push(featureWay);
@@ -230,7 +299,13 @@ export class MapService {
     }
   }
   centerOnMyPosition() {
+    const currentZoom = this.map.getZoom()
+
     this.map.setCenter(this.locationService.getCoordsPosition());
+    if (currentZoom < 17){
+      this.map.setZoom(18)
+    }
+    
     if (this.configService.config.lockMapHeading) {
       this.headingIsLocked = true;
     }
@@ -263,13 +338,22 @@ export class MapService {
     this.markerMoving = false;
     this.markerPositionate.remove();
     const coords = this.markerPositionate.getLngLat();
-    const newTag = { name: '' };
-    if (this.tagsService.getLastTagAdded()) { // on récupere le dernier tag créé si il existe
-      const lastTag: any = this.tagsService.getLastTagAdded();
-      newTag[lastTag.key] = lastTag.value;
+    let newTag;
+     
+    if (this.tagsService.lastTagsUsedIds && this.tagsService.lastTagsUsedIds[0]) { // on récupere le dernier tag créé si il existe
+      const lastTagsUsed = this.tagsService.tags.find( t => t.id === this.tagsService.lastTagsUsedIds[0])
+      if (lastTagsUsed){
+        newTag = { ...lastTagsUsed.tags}
+      }
+      else{
+        newTag = { ...this.tagsService.tags[0].tags };
+      }
+      
+
     } else {
-      newTag['shop'] = 'yes';
+      newTag = { ...this.tagsService.tags[0].tags };
     }
+   
     const pt = point([coords.lng, coords.lat], { type: 'node', tags: newTag });
     this.mode = 'Create';
     this.eventShowModal.emit({ type: 'Create', geojson: pt, origineData: null });
@@ -318,36 +402,15 @@ export class MapService {
     this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData());
   }
 
-
-
-
-  private getMarkerShape(feature) {
-    // rien a faire ici...
-    feature.properties['_name'] = feature.properties.tags.name ? feature.properties.tags.name : '';
-
-    if (feature.properties.type === 'node') {
-      return 'circle';
-    } else {
-      if (feature.properties.way_geometry.type === 'LineString' || feature.properties.way_geometry.type === 'MultiLineString') {
-        return 'penta';
-      } else if (feature.properties.way_geometry.type === 'Polygon' || feature.properties.way_geometry.type === 'MultiPolygon') {
-        return 'square';
-      } else {
-        return 'star';
-      }
-    }
-  }
-
   getMapStyle() {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .pipe(
         map(mapboxStyle => {
-          const path = window.location.href;
           let spritesFullPath = `mapStyle/sprites/sprites`;
           // http://localhost:8100/assets/mapStyle/sprites/sprites.json
-            const basePath = window.location.origin // path.split('#')[0];
-            spritesFullPath = `${basePath}/assets/${spritesFullPath}`;
-    
+          const basePath = window.location.origin // path.split('#')[0];
+          spritesFullPath = `${basePath}/assets/${spritesFullPath}`;
+
           mapboxStyle['sprite'] = spritesFullPath;
           return mapboxStyle
         }
@@ -356,52 +419,30 @@ export class MapService {
   }
 
   getIconStyle(feature) {
-    const listOfPrimaryKeys = this.tagsService.getListOfPrimaryKey();
-    const primaryTag = this.tagsService.getPrimaryKeyOfObject(feature); // {k: "shop", v: "travel_agency"}
-    feature.properties['primaryTag'] = primaryTag;
-    if (listOfPrimaryKeys.indexOf(primaryTag.k) !== -1) { // c'est un objet à afficher
-      const configMarker = this.tagsService.getConfigMarkerByKv(primaryTag.k, primaryTag.v);
-      if (configMarker) { // OK
-
-        feature.properties.icon = (configMarker.icon) ? configMarker.icon : '';
-        feature.properties.marker = this.getMarkerShape(feature) + '-' + configMarker.markerColor + '-' + feature.properties.icon;
-        feature.properties.hexColor = configMarker.markerColor;
-
-      } else { // on ne connait pas la 'value', donc pas de config pour le marker
-        feature.properties.icon = 'maki-circle-15';
-        feature.properties.hexColor = '#000000';
-        feature.properties.marker = this.getMarkerShape(feature) + '-#000000-';
-      }
-    }
+    feature = setIconStyle(feature, this.tagsService.tags);
     return feature;
   }
 
-  setIconStyle(FeatureCollection) {
-    const features = FeatureCollection.features;
-    for (let i = 0; i < features.length; i++) {
-      const feature = features[i];
-      this.getIconStyle(feature); // lent....
-    }
-    return FeatureCollection;
-  }
 
-  initMap() {
 
-    const that = this;
+  initMap( config: Config) {
+    
     this.getMapStyle().subscribe(mapStyle => {
-
-      that.zone.runOutsideAngular(() => {
+      this.positionIsFollow = config.centerWhenGpsIsReady;
+      this.headingIsLocked = config.centerWhenGpsIsReady;
+      this.zone.runOutsideAngular(() => {
         this.map = new mapboxgl.Map({
           container: 'map',
           style: mapStyle,
-          center: [this.configService.init.lng, this.configService.init.lat],
-          zoom: this.configService.init.zoom,
+          center: [config.lastView.lng, config.lastView.lat] ,
+          zoom: config.lastView.zoom,
+          bearing: config.lastView.bearing,
+          pitch: 0,
           maxZoom: 22,
           doubleClickZoom: false,
           attributionControl: false,
           dragRotate: true,
           trackResize: false,
-          pitch: 0,
           pitchWithRotate: false,
           collectResourceTiming: false
         });
@@ -418,21 +459,24 @@ export class MapService {
         this.map.on('load', async () => {
 
           this.mapIsLoaded();
+          return of(this.map)
+        
         });
 
         this.map.on('move', (e) => {
+          this.eventMapMove.emit();
           if (this.markerMoving || this.markerMoveMoving) {
             this.eventMarkerMove.emit(this.map.getCenter());
           }
         });
 
         this.map.on('movestart', (e) => {
-          this.configService.freezeMapRenderer = true;
+          // this.configService.freezeMapRenderer = true;
         });
 
         this.map.on('moveend', (e) => {
-    
-          this.configService.freezeMapRenderer = false;
+
+          // this.configService.freezeMapRenderer = false;
 
         });
 
@@ -440,13 +484,12 @@ export class MapService {
           if (this.layersAreLoaded && this.locationService.location) {
             this.changeLocationRadius(this.locationService.location.coords.accuracy, false);
           }
-
         });
-        // this.map.on('render',e => {
-        //   console.log(e);
-        // })
+        this.loadUnknownMarker(window.devicePixelRatio)
 
       });
+
+      
     });
 
     /* SUBSCRIPTIONS */
@@ -479,45 +522,6 @@ export class MapService {
     });
   }
 
-  loadDataFromLocalStorage() {
-    this.dataService.localStorage.get('geojsonBbox').then(data => {
-      if (data) {
-        this.dataService.setGeojsonBbox(data);
-        this.eventNewBboxPolygon.emit(data);
-      }
-
-    });
-
-    this.dataService.localStorage.get('geojsonChanged').then(data => {
-      if (data) {
-        this.dataService.setGeojsonChanged(data);
-        this.eventMarkerChangedReDraw.emit(data);
-      }
-    });
-
-    this.dataService.localStorage.get('geojson').then(data => {
-      this.configService.geojsonIsLoadedFromCache = true;
-      if (data) {
-        this.dataService.setGeojson(data);
-        this.eventMarkerReDraw.emit(data);
-        if (!this.configService.geolocPageIsOpen) {
-          this.diplayInitToast();
-        }
-      }
-    });
-  }
-
-  diplayInitToast() {
-    const data = this.dataService.getGeojson();
-    if (data.features.length > 0) {
-      // Il y a des données stockées en mémoires... 
-      this.alertService.eventNewAlert.emit(data.features.length + ' ' + this.translate.instant('MAIN.START_SNACK_ITEMS_IN_MEMORY'));
-    } else {
-      // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
-      this.alertService.eventDisplayToolTipRefreshData.emit();
-    }
-  }
-
   getIconRotate(heading, mapBearing) {
     heading = heading > 354 ? 0 : heading + 5;
     mapBearing = mapBearing < 0 ? 360 + mapBearing : mapBearing;
@@ -531,22 +535,29 @@ export class MapService {
   }
 
   toogleMesureFilter(enable: boolean, layerName: string, value: number, _map) {
-    const currentFilter = _map.getFilter(layerName);
-    const unfiltered = currentFilter.filter(el => el[1] && el[1] !== 'mesure');
-    if (enable) {
-      const newFilter = [...unfiltered, ['<', 'mesure', value]];
-      _map.setFilter(layerName, newFilter);
-      return layerName;
-    } else {
-      _map.setFilter(layerName, unfiltered);
-      return unfiltered;
+    let currentFilter = _map.getFilter(layerName);
+    let findIndex = null;
+    for (let i = 1; i < currentFilter.length; i++) {
+      if (currentFilter[i][1][1] == 'mesure') {
+        findIndex = i;
+      }
+    }
+    if (findIndex && !enable) { // delete filter
+      currentFilter.splice(findIndex, 1);
+      _map.setFilter(layerName, currentFilter);
+      return currentFilter;
+    } else if (enable) {
+      currentFilter.push(['<', ['get', 'mesure'], value]);
+      _map.setFilter(layerName, currentFilter);
+      return currentFilter
     }
   }
 
   addDomMarkerPosition() {
     if (!this.markerLocation) {
       this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition,
-        { offset: [0, 0] }).setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
+        { offset: [0, 0] })
+        .setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
       this.markerLocation.addTo(this.map);
 
     }
@@ -555,7 +566,7 @@ export class MapService {
     const layer = feature['layer'].id;
     // Provenance de la donnée d'origine (data OU data_changed)
     let origineData = 'data';
-    if (layer === 'label_changed' || layer === 'marker_changed' || layer === 'icon-change') {
+    if ( ['label_changed','marker_changed','icon-change', 'way_line_changed', 'way_fill_changed'].includes(layer)) {
       origineData = 'data_changed';
     }
 
@@ -564,55 +575,47 @@ export class MapService {
   }
 
 
-  addIconToMapFromURI(iconId, uri) {
-    if (!uri) {
-      console.log(iconId);
-      return;
-    }
-
-    this.map.loadImage(uri, (error, image) => {
-      // console.log(iconId, image)
-
-      this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
-      const ind = this.markersLoaded.findIndex(el => el.id === iconId);
-      this.markersLoaded[ind].loaded = true;
-      // console.log(this.markerLoaded[ind]); 
-
-      let notLoaded = this.markersLoaded.filter(el => el.loaded == false && (/^circle/.test(el.id) || /^square/.test(el.id) || /^penta/.test(el.id)))
-      // console.log('reste',  notLoaded.length ) 
-      // console.log(notLoaded);
-
-      if (!this.markersLoaded.find(el => el.loaded == false && (/^circle/.test(el.id) || /^square/.test(el.id) || /^penta/.test(el.id)))) {
-        console.log('redraw');
-        this.eventMarkerReDraw.emit(this.dataService.getGeojson());
-      }
-    })
-  }
-
-
-  showOldTagIcon(maxYearAgo: number){
+  showOldTagIcon(maxYearAgo: number) {
     const OneYear = 31536000000;
     const currentTime = new Date().getTime()
-    this.map.setFilter('icon-old', ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ]);
-    this.map.setLayoutProperty('icon-old', 'visibility', 'visible' )
+
+    let currentFilter = this.map.getFilter('icon-old');
+    //  currentFilter.push( ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ] );
+
+    let findedIndex;
+    for (let i = 1; i < currentFilter.length; i++){
+      if (currentFilter[i].length == 3 && currentFilter[i][2] &&
+        currentFilter[i][0] == '>' && currentFilter[i][2][1] === 'time' ){
+          findedIndex = i;
+        }
+    }
+    let newFilter;
+    if (findedIndex){
+      currentFilter[findedIndex] = ['>', currentTime - (OneYear * maxYearAgo), ['get', 'time']];
+      newFilter = currentFilter;
+    } else {
+      newFilter = [...currentFilter,
+        ['>', currentTime - (OneYear * maxYearAgo), ['get', 'time']]
+        ];
+    }
+
+    this.map.setFilter('icon-old', newFilter);
+    this.map.setLayoutProperty('icon-old', 'visibility', 'visible')
+
   }
 
-  hideOldTagIcon(){
-    this.map.setLayoutProperty('icon-old', 'visibility', 'none' )
+  hideOldTagIcon() {
+    this.map.setLayoutProperty('icon-old', 'visibility', 'none')
   }
 
-  showFixmeIcon( ){
-    this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible' ) 
+  showFixmeIcon() {
+    this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible')
   }
-  hideFixmeIcon( ){
-    this.map.setLayoutProperty('icon-fixme', 'visibility', 'none' ) 
+  hideFixmeIcon() {
+    this.map.setLayoutProperty('icon-fixme', 'visibility', 'none')
   }
-
 
   mapIsLoaded() {
-    const that = this;
-
-    this.loadDataFromLocalStorage();
     const minzoom = 14;
 
     this.map.addSource('bbox', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
@@ -622,19 +625,31 @@ export class MapService {
     this.map.addSource('ways_changed', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
     this.map.addSource('location_circle', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
 
+    // this.loadDataFromLocalStorage();
+    this.eventNewBboxPolygon.emit(this.dataService.geojsonBbox);
+    this.eventMarkerChangedReDraw.emit(this.dataService.geojsonChanged);
+    this.eventMarkerReDraw.emit(this.dataService.geojson);
+
     for (let bm of this.configService.baseMapSources) {
       this.map.addSource(bm.id, bm);
     }
 
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
-      'paint': { 'line-color': '#088', 'line-width': 5 }
+      'paint': { 'line-color': '#ea1212', 'line-width': 5, 
+      'line-dasharray': {   "stops": [
+        [14, [1,0] ],
+        [14, [1,1] ]
+      ] } 
+      }
     });
 
     this.map.addLayer({
       'id': 'way_fill', 'type': 'fill', 'minzoom': minzoom, 'source': 'ways',
-      'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 },
-      'filter': ['all', ['==', '$type', 'Polygon']]
+      'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 }
+      // ,'filter': ['all']
+      , 'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
+      
     });
 
     this.map.addLayer({
@@ -644,13 +659,13 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['==', '$type', 'LineString']]
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
     });
 
     this.map.addLayer({
       'id': 'way_fill_changed', 'type': 'fill', 'source': 'ways_changed',
       'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 },
-      'filter': ['all', ['==', '$type', 'Polygon']]
+      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
     });
 
     this.map.addLayer({
@@ -660,7 +675,7 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['==', '$type', 'LineString']]
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
     });
 
     this.map.addLayer({
@@ -669,7 +684,8 @@ export class MapService {
         'icon-image': 'none', 'icon-anchor': 'bottom',
         'text-field': '{_name}', 'text-font': ['Roboto-Regular'], 'text-allow-overlap': false, 'text-size': 9, 'text-offset': [0, 1]
       },
-      'paint': { 'text-color': '#888', 'text-halo-color': 'rgba(255,255,255,0.8)', 'text-halo-width': 1 }
+      'paint': { 'text-color': '#888', 'text-halo-color': 'rgba(255,255,255,0.8)', 'text-halo-width': 1 },
+      'filter': ['all']
     });
 
     this.map.addLayer({
@@ -678,7 +694,8 @@ export class MapService {
         'icon-image': 'none', 'icon-anchor': 'bottom',
         'text-field': '{_name}', 'text-font': ['Roboto-Regular'], 'text-allow-overlap': false, 'text-size': 9, 'text-offset': [0, 1]
       },
-      'paint': { 'text-color': '#888', 'text-halo-color': 'rgba(255,255,255,0.8)', 'text-halo-width': 1 }
+      'paint': { 'text-color': '#888', 'text-halo-color': 'rgba(255,255,255,0.8)', 'text-halo-width': 1 },
+      'filter': ['all']
     });
 
     // location
@@ -694,49 +711,55 @@ export class MapService {
     });
 
     this.map.addLayer({
-      'id': 'icon-old', 'type': 'symbol', 'source': 'data',
+      'id': 'icon-old', 'type': 'symbol', 'source': 'data', 'minzoom': minzoom,
       'layout': {
         'icon-image': 'Old', 'icon-ignore-placement': true, 'icon-offset': [-13, -12],
         'visibility': 'none'
-      }
+      },
+      'filter': ['all']
     });
 
     this.map.addLayer({
-      'id': 'icon-fixme', 'type': 'symbol', 'source': 'data',
+      'id': 'icon-fixme', 'type': 'symbol', 'source': 'data', 'minzoom': minzoom,
       'layout': {
         'icon-image': 'Fixme', 'icon-ignore-placement': true, 'icon-offset': [13, -12],
         'visibility': 'none'
       },
-      'filter':  ["any", ['get','fixme'] ] 
-      
+      'filter': ['all', ["any", ['has', 'fixme'], ['has', 'deprecated']]]
+
     });
 
     this.map.addLayer({
       'id': 'marker', 'type': 'symbol', 'minzoom': minzoom, 'source': 'data',
-      'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] }
+      'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] },
+      'filter': ['all']
     });
 
     this.map.addLayer({
-      'id': 'marker_changed', 'type': 'symbol', 'source': 'data_changed',
-      'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] }
+      'id': 'marker_changed', 'type': 'symbol', 'source': 'data_changed', 'minzoom': minzoom,
+      'layout': { 'icon-image': '{marker}', 'icon-allow-overlap': true, 'icon-ignore-placement': true, 'icon-offset': [0, -14] },
+      'filter': ['all']
     });
 
     this.map.addLayer({
-      'id': 'icon-change', 'type': 'symbol', 'source': 'data_changed',
+      'id': 'icon-change', 'type': 'symbol', 'source': 'data_changed', 'minzoom': minzoom,
       'layout': {
         'icon-image': '{changeType}', 'icon-ignore-placement': true, 'icon-offset': [0, -35]
-      }
+      },
+      'filter': ['all']
     });
-    
+
     this.layersAreLoaded = true;
 
+    this.filterMakerByIds(this.tagsService.hiddenTagsIds);
+
     let configOldTagIcon = this.configService.getOldTagsIcon();
-    if( configOldTagIcon.display){
+    if (configOldTagIcon.display) {
       this.showOldTagIcon(configOldTagIcon.year)
     }
-   
-    if (this.configService.getDisplayFixmeIcon()){
-        this.showFixmeIcon();
+
+    if (this.configService.getDisplayFixmeIcon()) {
+      this.showFixmeIcon();
     }
 
     // value en m²!
@@ -744,66 +767,28 @@ export class MapService {
     // value en km!
     this.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.map);
 
-
-
     this.map.on('click', async (e) => {
-      const features = this.map.queryRenderedFeatures(e.point, { layers: ['marker', 'marker_changed', 'icon-change'] });
+      const features = this.map.queryRenderedFeatures(e.point, { layers: this.configService.selecableLayers });
       if (!features.length) {
         return;
       }
 
-      if (!this.configService.platforms.includes('hybrid')){
+      if (!this.configService.platforms.includes('hybrid')) {
         window.navigator.vibrate(50);
-      }else {
-    
-        Haptics.impact(  {
+      } else {
+
+        Haptics.impact({
           style: HapticsImpactStyle.Heavy
         });
-    
+
       }
 
 
 
       const uniqFeaturesById = uniqBy(features, o => o['properties']['id']);
-
+      
       if (uniqFeaturesById.length > 1) {
-        const inputsParams: any = uniqFeaturesById.map((f, i) => {
-          const tags = JSON.parse(f['properties'].tags);
-          const pk = JSON.parse(f['properties'].primaryTag);
-          const name = tags.name || '?';
-          const label = `${name}  (${pk.k} = ${pk.v})`;
-          return {
-            type: 'radio',
-            label: label,
-            value: f['properties']['id'],
-            checked: i === 0
-          };
-
-        });
-        const alert = await this.alertCtrl.create(
-          {
-            header: this.translate.instant('MAIN.WHAT_ITEM'),
-            inputs: inputsParams,
-            buttons: [
-              {
-                text: this.translate.instant('SHARED.CANCEL'),
-                role: 'cancel',
-                cssClass: 'secondary',
-                handler: () => {
-
-                }
-              }, {
-                text: this.translate.instant('SHARED.OK'),
-                handler: (data: any) => {
-                  const selectedFeature = uniqFeaturesById.filter(o => o['properties']['id'] === data);
-                  this.selectFeature(selectedFeature[0]);
-                }
-              }
-            ]
-          }
-        );
-
-        await alert.present();
+        this.eventShowDialogMultiFeatures.emit(uniqFeaturesById);
 
       } else {
         this.selectFeature(uniqFeaturesById[0]);
@@ -831,24 +816,19 @@ export class MapService {
 
 
     this.map.on('styleimagemissing', async e => {
+      // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
       const iconId = e.id;
-      if (this.markersLoaded.find(el => el.id == iconId)) {
-        return;
+      if (/^circle/.test(iconId)) {
+        this.map.addImage(iconId, this.markerMapboxUnknown['circle'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
-
-      this.markersLoaded.push({ id: iconId, loaded: false });
-      let cachedUri = await this.dataService.getIconCache(iconId)
-
-      if (cachedUri) {
-        this.addIconToMapFromURI(iconId, cachedUri);
-      } else {
-        let uri = await this.iconService.generateMarkerByIconId(iconId);
-        if (uri) {
-          this.addIconToMapFromURI(iconId, uri);
-          this.dataService.addIconCache(iconId, uri);
-        }
-
+      if (/^penta/.test(iconId)) {
+        this.map.addImage(iconId, this.markerMapboxUnknown['penta'], { pixelRatio: Math.round(window.devicePixelRatio) });
       }
+      if (/^square/.test(iconId)) {
+        this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: Math.round(window.devicePixelRatio) });
+      }
+      // console.log('missingIcon:', iconId)
+
     })
 
 
@@ -865,18 +845,18 @@ export class MapService {
           this.arrowDirection.className = 'positionMarkersSize locationMapIcon'
         }
 
-          if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
-          
-            this.map.rotateTo(heading.trueHeading);
-            // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
-            this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
+        if (this.configService.config.lockMapHeading && this.headingIsLocked) { // on suit l'orientation, la map tourne
 
-          } else { // la map reste fixe, l'icon tourne
+          this.map.rotateTo(heading.trueHeading);
+          // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
+          this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
 
-            const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
-            this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
-          }
-   
+        } else { // la map reste fixe, l'icon tourne
+
+          const iconRotate = this.getIconRotate(heading.trueHeading, this.map.getBearing());
+          this.arrowDirection.setAttribute('style', 'transform: rotate(' + iconRotate + 'deg');
+        }
+
       });
 
     this.locationService.eventNewLocation.subscribe(geojsonPos => {
@@ -888,15 +868,22 @@ export class MapService {
         this.changeLocationRadius(geojsonPos.features[0].properties.accuracy, true);
 
         if (this.configService.config.followPosition && this.positionIsFollow) {
-          that.map.setCenter(geojsonPos.features[0].geometry.coordinates);
+          this.map.setCenter(geojsonPos.features[0].geometry.coordinates);
+          if (this.isFirstPosition){
+            this.map.setZoom(18);
+            this.isFirstPosition = false
+          }
+          
         }
       }
     });
 
-    // La localisation était déjà ready avnt que la carte ne soit chargée // TODO: forkjoin!
+    // La localisation était déjà ready avnt que la carte ne soit chargée 
     if (this.locationService.gpsIsReady) {
       this.locationService.eventNewLocation.emit(this.locationService.getGeojsonPos());
     }
+  
+    this.eventMapIsLoaded.emit()
   }
 
 }

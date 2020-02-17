@@ -10,6 +10,8 @@ import { ConfigService } from '../../services/config.service';
 import { timer } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { cloneDeep, clone } from 'lodash';
+import { addAttributesToFeature } from '../../../../scripts/osmToOsmgo/index.js'
+import { InitService } from 'src/app/services/init.service';
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -24,6 +26,8 @@ export class PushDataToOsmPage implements AfterViewInit {
     commentChangeset = '';
     isPushing = false;
     featuresChanges = [];
+    basicPassword = null;
+    connectionError;
 
     constructor(
         public dataService: DataService,
@@ -34,11 +38,26 @@ export class PushDataToOsmPage implements AfterViewInit {
         private alertCtrl: AlertController,
         public configService: ConfigService,
         public platform: Platform,
-        private translate: TranslateService
+        private translate: TranslateService,
+        public initService: InitService
     ) {
 
         this.commentChangeset = this.configService.getChangeSetComment();
-        this.featuresChanges = this.dataService.getGeojsonChanged().features;
+        this.featuresChanges = this.dataService.getGeojsonChanged().features; 
+    }
+    ngOnInit(): void {
+
+            if (!this.initService.isLoaded){
+                console.log('ooo')
+              this.initService.initLoadData$()
+              .subscribe( e => {
+                  this.basicPassword = this.configService.user_info.password; 
+                  this.commentChangeset = this.configService.getChangeSetComment();
+                  this.featuresChanges = this.dataService.getGeojsonChanged().features; 
+                })
+            }
+        
+        this.basicPassword = this.configService.user_info.password;      
     }
 
 
@@ -72,7 +91,7 @@ export class PushDataToOsmPage implements AfterViewInit {
             message: error,
             buttons: [
                 {
-                    text: this.translate.instant('SEND_DATA.CLOSE'),
+                    text: this.translate.instant('SHARED.CLOSE'),
                     role: 'cancel',
                     handler: () => {
 
@@ -101,10 +120,10 @@ export class PushDataToOsmPage implements AfterViewInit {
     /**
      * Send this feature to OSM
      */
-    private pushFeatureToOsm(featureChanged, CS) {
+    private pushFeatureToOsm(featureChanged, CS, password) {
         return new Promise((resolve, reject) => {
             if (featureChanged.properties.changeType === 'Create') {
-                this.osmApi.apiOsmCreateNode(featureChanged, CS)
+                this.osmApi.apiOsmCreateNode(featureChanged, CS, password)
                     .subscribe(id => {
                         let newFeature = {};
                         newFeature['type'] = 'Feature';
@@ -122,6 +141,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                         newFeature['properties']['time'] = new Date().getTime();
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
+                        addAttributesToFeature(newFeature)
                         this.summary.Total--;
                         this.summary.Create--;
                         
@@ -141,7 +161,7 @@ export class PushDataToOsmPage implements AfterViewInit {
             } else if
                 (featureChanged.properties.changeType === 'Update') {
 
-                this.osmApi.apiOsmUpdateOsmElement(featureChanged, CS)
+                this.osmApi.apiOsmUpdateOsmElement(featureChanged, CS, password)
                     .subscribe(newVersion => {
                         let newFeature = {};
                         newFeature = featureChanged;
@@ -153,14 +173,19 @@ export class PushDataToOsmPage implements AfterViewInit {
                         if (newFeature['properties']['tags']['fixme']) {
                             newFeature['properties']['fixme'] = true;
                         } else {
-                            newFeature['properties']['fixme'] = false;
+                            if (newFeature['properties']['fixme'])
+                                delete newFeature['properties']['fixme'];
                         }
 
+                        if (newFeature['properties']['deprecated']){
+                            delete newFeature['properties']['deprecated']
+                        }
                         delete newFeature['properties']['changeType'];
                         delete newFeature['properties']['originalData'];
 
 
                         newFeature = this.mapService.getIconStyle(newFeature); // style
+                        addAttributesToFeature(newFeature)
                         this.summary.Total--;
                         this.summary.Update--;
 
@@ -188,7 +213,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                     let emptyFeaturetags = clone(featureChanged);
                     emptyFeaturetags['properties']['tags']= {};
 
-                    this.osmApi.apiOsmUpdateOsmElement(emptyFeaturetags, CS)
+                    this.osmApi.apiOsmUpdateOsmElement(emptyFeaturetags, CS, password)
                     .subscribe(newVersion => {
                         this.summary.Total--;
                         this.summary.Delete--;
@@ -199,7 +224,7 @@ export class PushDataToOsmPage implements AfterViewInit {
                    
 
                 }else {
-                    this.osmApi.apiOsmDeleteOsmElement(featureChanged, CS)
+                    this.osmApi.apiOsmDeleteOsmElement(featureChanged, CS, password)
                     .subscribe(id => {
                         this.summary.Total--;
                         this.summary.Delete--;
@@ -219,24 +244,97 @@ export class PushDataToOsmPage implements AfterViewInit {
         })
     }
 
-    pushDataToOsm(commentChangeset) {
+    async presentAlertPassword(user_info) {
+        const alert = await this.alertCtrl.create({
+          header: user_info.display_name,
+          inputs: [
+            {
+              name: 'password',
+              type: 'password',
+              placeholder: this.translate.instant('SEND_DATA.PASSWORD_OSM')
+            }
+            ],
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              cssClass: 'secondary',
+              handler: (blah) => {
+                console.log('Confirm Cancel: blah');
+              }
+            }, {
+              text: 'Ok',
+              handler: (e) => {
+                console.log(e.password);
+                this.basicPassword = e.password;
+                this.pushDataToOsm(this.commentChangeset, this.basicPassword );
+              }
+            }
+          ]
+        });
+    
+        await alert.present();
+      }
+
+
+     userIsConnected(password){
+        return new Promise((resolve, reject) => {
+            this.osmApi.getUserDetail$(this.configService.user_info.user, password, this.configService.user_info.authType === 'basic' ? true : false, null, true)
+            .subscribe( u => {
+                resolve( true)
+            },
+            err => {
+                reject(err.error)
+                if (this.configService.user_info.authType === 'basic' && !this.configService.user_info.password){
+                    this.basicPassword = null;
+                    this.isPushing = false;
+                }
+                // console.log('HTTP Error', err.error)
+            }
+            )
+        })
+
+     } 
+
+
+    async pushDataToOsm(commentChangeset, password) {
         if (this.isPushing) {
             console.log('Already being sent')
             return;
         }
-
-        this.isPushing = true;
         this.configService.setChangeSetComment(commentChangeset);
-        // let featuresChanged = this.dataService.getGeojsonChanged().features;
-        this.osmApi.getValidChangset(commentChangeset)
+        
+
+         if (this.configService.user_info.authType == 'basic' && !this.basicPassword){
+       
+            await this.presentAlertPassword(this.configService.user_info)
+            return
+
+        }
+        this.isPushing = true;
+        let userIsConnected;
+        try {
+            userIsConnected = await this.userIsConnected(password);
+        } catch (error) {
+            this.connectionError = error;
+               if (this.configService.user_info.authType === 'basic' && !this.configService.user_info.password){
+                    this.basicPassword = null;
+                    this.isPushing = false;
+                }
+            this.isPushing = false;
+            return;
+        }
+        this.connectionError = undefined;
+
+     
+        this.osmApi.getValidChangset(commentChangeset, password)
+            .pipe()
             .subscribe(async CS => {
-                console.log('getValidChangset', CS)
                 const cloneGeojsonChanged = this.dataService.getGeojsonChanged()
                 this.changesetId = CS;
                 for (let feature of cloneGeojsonChanged.features) {
-                    // TODO => observable, switchmap...
                     try {
-                        await this.pushFeatureToOsm(feature, this.changesetId)
+                        await this.pushFeatureToOsm(feature, this.changesetId, password)
                     } catch (error) {
                         console.log(error)
                     }

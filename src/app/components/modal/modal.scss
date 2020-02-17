@@ -42,15 +42,7 @@
         float: left;
     }
 
-    .alertCard {
-        background-color: #da281c;
-        color: white;
-    }
-
-    .warningtCard {
-        background-color: #ff6b3e;
-        color: white;
-    }
+ 
 
     .fabSurveyDate{
         position: absolute;
@@ -61,5 +53,13 @@
         bottom: -25px;
     }
 
+    .actions{
+        position: relative;
+        min-height: 40px;
+        width: 100%;
+    }
+    .actionsFabButton{
+        position: relative;
+    }
 
 
