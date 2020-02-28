@@ -1,1 +1,72 @@
-{}
+{
+  "SHARED": {
+    "YES": "Ano",
+    "NO": "Ne",
+    "CANCEL": "Zrušit",
+    "CONFIRM": "Potvrdit",
+    "ADD": "Přidat",
+    "OK": "Ok",
+    "CLOSE": "Zavřít",
+    "LOADING": "Načítání...",
+    "VALIDATE": "Ověřit",
+    "UNKNOWN": "Neznámý",
+    "UNDEFINED": "Nedefinovaný",
+    "NAME": "Název",
+    "ID": "ID"
+  },
+  "MAIN": {
+    "WHAT_ITEM": "Který?",
+    "LOAD_BBOX": "Načíst data?",
+    "EXIT_CONFIRM_HEADER": "Opravdu?",
+    "EXIT_CONFIRM_MESSAGE": "Opravdu chcete opustit Osm Go! ?",
+    "START_SNACK_ITEMS_IN_MEMORY": "položek v paměti",
+    "CREATING_MISSING_ICONS": "Vytvářím chybějící ikony..."
+  },
+  "MENU": {
+    "SETTINGS": "Nastavení",
+    "ABOUT": "O aplikaci",
+    "DELETE_DATA": "Smazat data",
+    "DELETE_DATA_CONFIRM_HEADER": "Opravdu?",
+    "SIGN_OUT": "Odhlásit",
+    "EXIT": "Zavřít",
+    "NEW_VERSION": "K dispozici nová verze!",
+    "TAG_MANAGEMENT": "Správa tagů",
+    "CONNECTION": "Přihlášení k OpenStreetMap",
+    "DELETE_DATA_CONFIRM_MESSAGE": "Smazat stažená data? (zachová změny)"
+  },
+  "ABOUT": {"ABOUT": "O aplikaci", "SOURCES": "Zdroje", "DATA": "Data"},
+  "LOGIN": {
+    "LOGIN": "Login",
+    "USERNAME_PLACEHOLDER": "Email nebo uživatelské jméno Openstreetmap",
+    "PASSWORD_PLACEHOLDER": "Heslo",
+    "LOGIN_BUTTON": "Přihlásit",
+    "LOGIN_OAUTH": "Přihlásit s Oauth",
+    "SAVE_PASSWORD": "Uložit heslo",
+    "SAVED_PASSWORD_HINT": "Heslo bude uloženo v čitelné podobě v mezipaměti aplikace",
+    "NOT_SAVED_PASSWORD_HINT": "Před každým nahráním na OSM budete vyzváni k zadání hesla"
+  },
+  "SEND_DATA": {
+    "SEND_DATA": "Nahrát změny",
+    "YOU_MUST_BE_LOGGED_IN": "Pro odeslání změn na OSM se prosím přihlašte.",
+    "NUMBER_OF_ITEMS_TO_SEND": "Počet položek:",
+    "ADDED_ITEMS": "Vytvořené",
+    "UPDATED_ITEMS": "Změněné",
+    "DELETED_ITEMS": "Smazané",
+    "CHANGESET_COMMENT": "Komentář sady změn",
+    "TYPE": "Typ",
+    "PRIMARY_KEY": "Hlavní tag",
+    "NAME": "Název",
+    "ERROR": "Chyba",
+    "SEND": "Odeslat!",
+    "DELETE": "Smazat",
+    "DELETE_CONFIRM_HEADER": "Opravdu?",
+    "DELETE_CONFIRM_MESSAGE": "Vrátit všechny změny?",
+    "PASSWORD_OSM": "OSM heslo"
+  },
+  "SETTINGS": {
+    "SETTINGS": "Nastavení",
+    "MAP": "Mapa",
+    "POSITION_TRACKING": "Sledování polohy",
+    "ORIENTATION_TRACKING": ""
+  }
+}
