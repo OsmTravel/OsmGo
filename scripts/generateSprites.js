@@ -282,10 +282,8 @@ exports.generateSprites = () => {
     [
         generateIconSprites(1),
         generateIconSprites(2),
-        generateIconSprites(3),
         generateSprites(outPath, 1), 
-        generateSprites(outPath, 2), 
-        generateSprites(outPath, 3)
+        generateSprites(outPath, 2)
     ]).then(e => {
         fs.removeSync(outputTmp);
     })

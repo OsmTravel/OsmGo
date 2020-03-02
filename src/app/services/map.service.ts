@@ -134,8 +134,7 @@ export class MapService {
   }
 
   loadUnknownMarker(factor) {
-    const roundedFactor = Math.round(factor)
-    // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
+    const roundedFactor = factor > 1 ? 2 : 1
     this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
       this.markerMapboxUnknown['circle'] = image;
     })
@@ -818,14 +817,15 @@ export class MapService {
     this.map.on('styleimagemissing', async e => {
       // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
       const iconId = e.id;
+      const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
       if (/^circle/.test(iconId)) {
-        this.map.addImage(iconId, this.markerMapboxUnknown['circle'], { pixelRatio: Math.round(window.devicePixelRatio) });
+        this.map.addImage(iconId, this.markerMapboxUnknown['circle'], { pixelRatio:pixelRatio });
       }
       if (/^penta/.test(iconId)) {
-        this.map.addImage(iconId, this.markerMapboxUnknown['penta'], { pixelRatio: Math.round(window.devicePixelRatio) });
+        this.map.addImage(iconId, this.markerMapboxUnknown['penta'], { pixelRatio: pixelRatio });
       }
       if (/^square/.test(iconId)) {
-        this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: Math.round(window.devicePixelRatio) });
+        this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: pixelRatio });
       }
       // console.log('missingIcon:', iconId)
 

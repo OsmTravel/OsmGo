@@ -1,3 +1,11 @@
+# 1.1.0
+## Bug Fixes
+ - #61 Sprites x1 or x2
+
+## Translation
+ - en & de : @m-rey
+ - cs : @kudlav
+
 # 1.0.0
 ## Tags & presets
  - Refactoring Tags & Presets configuration

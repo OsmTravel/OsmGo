@@ -10,7 +10,7 @@
     "CLOSE": "Schließen"
   },
   "MAIN": {
-    "EXIT_CONFIRM_HEADER": "Sicher ?",
+    "EXIT_CONFIRM_HEADER": "Sicher?",
     "EXIT_CONFIRM_MESSAGE": "Möchtest du Osm Go! wirklich verlassen?",
     "START_SNACK_ITEMS_IN_MEMORY": "Gespeicherte Elemente",
     "WHAT_ITEM": "Welches?",
@@ -34,7 +34,7 @@
   },
   "LOGIN": {
     "LOGIN": "Anmelden",
-    "USERNAME_PLACEHOLDER": "Email oder OpenStreetMap Nutzername",
+    "USERNAME_PLACEHOLDER": "E-Mail oder OpenStreetMap-Nutzername",
     "PASSWORD_PLACEHOLDER": "Passwort",
     "LOGIN_BUTTON": "Anmelden"
   },
@@ -45,12 +45,12 @@
     "ADDED_ITEMS": "Erstellt",
     "UPDATED_ITEMS": "Aktualisiert",
     "DELETED_ITEMS": "Entfernt",
-    "CHANGESET_COMMENT": "Changeset Kommentar",
+    "CHANGESET_COMMENT": "Changeset-Kommentar",
     "TYPE": "Eingabe",
     "PRIMARY_KEY": "Primary key",
     "NAME": "Name",
     "ERROR": "Fehler",
-    "SEND": "Gesendet!",
+    "SEND": "Senden!",
     "DELETE": "Entfernen",
     "DELETE_CONFIRM_HEADER": "Sicher?",
     "DELETE_CONFIRM_MESSAGE": "Alle Änderungen löschen?"
@@ -64,14 +64,14 @@
     "ORIENTATION_TRACKING_HINT": "Die Ausrichtung der Karte hängt vom Gerät ab",
     "HIDE_LARGE_POLYGON": "Polygone größer als 5000 m² verstecken",
     "HIDE_LARGE_POLYGON_HINT": "Polygone größer als 5000 m² werden nicht angezeigt. Diese werden nur durch einen Marker dargestellt",
-    "HIDE_LONG_LINE": "Verstecke Linien größer als 200 m",
-    "HIDE_LONG_LINE_HINT": "Linien größer als 200 m werden nicht angezeigt. Diese werden nur durch einen Marker dargestellt",
+    "HIDE_LONG_LINE": "Verstecke Linien länger als 200 m",
+    "HIDE_LONG_LINE_HINT": "Linien länger als 200 m werden nicht angezeigt. Diese werden nur durch einen Marker dargestellt",
     "TAGS": "Tags",
     "DEFAULT_TAGS_LIST": "Liste der als Standard festlegter Tags",
     "TAGS_LIST_ALL": "Alle Tags",
     "TAGS_LIST_BOOKMARKS": "Favoriten",
     "TAGS_LIST_TYPE": "nach Typ",
-    "DEFAULT_TAGS_LIST_HINT": "Standard Tag Typ, wenn das Auswahlfenster geöffnet wird",
+    "DEFAULT_TAGS_LIST_HINT": "Standard Tag-Typ, wenn das Auswahlfenster geöffnet wird",
     "DATA": "Daten",
     "MARGIN": "Abstand",
     "MARGIN_HINT": "Die Distanz der Ansicht, in der Daten heruntergeladen werden soll",
@@ -81,10 +81,10 @@
     "UI_LANGUAGE": "Bediensprache der Anwendung",
     "TAG_LANGUAGE": "Sprache der Tags",
     "TAG_COUNTRY": "Land",
-    "TAG_COUNTRY_HINT": "Tags und Presets dürften je Land variieren",
+    "TAG_COUNTRY_HINT": "Tags und Presets sind landesabhängig",
     "CACHE": "Cache-Verwaltung",
-    "GENERATE_ICON_CACHE": "Icon Cache generieren",
-    "DELETE_ICON_CACHE": "Icon Cache löschen",
+    "GENERATE_ICON_CACHE": "Icon-Cache generieren",
+    "DELETE_ICON_CACHE": "Icon-Cache löschen",
     "DELETE_CACHE": "Alle Anwendungsdaten löschen",
     "DELETE_CACHE_HINT": "Alle Anwendungsdaten löschen (Daten, Änderungen, Symbole, Anmeldedetails, etc.)"
   },
@@ -92,7 +92,7 @@
     "PRIMARY_TAG_LIST": "Liste",
     "PRIMARY_TAG_CUSTOM": "Benutzerdefiniert",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Bitte mind. 3 Zeichen in die Suchmaske eingeben",
-    "LOADING": "Laden...",
+    "LOADING": "Laden…",
     "META_VERSION": "Version:",
     "META_BEING_CREATED": "Schon erstellt",
     "META_CREATED_AT_DATE": "Hinzugefügt:",
@@ -110,6 +110,6 @@
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Tag 'survey:date' mit dem heutigen Datum hinzufügen",
     "PRIMARY_TAG_BOOKMARKS": "Favoriten",
     "PRIMARY_TAG_FULL": "Voll",
-    "UNDEFINED_VALUE": "unknown"
+    "UNDEFINED_VALUE": "unbekannt"
   }
 }
