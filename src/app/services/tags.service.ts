@@ -386,7 +386,7 @@ export class TagsService {
     }
  
     loadJsonSprites$() {
-        const devicePixelRatio =  Math.round(window.devicePixelRatio);
+        const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
         return this.http.get('assets/iconsSprites@x'+devicePixelRatio+'.json')
         .pipe(
             map( jsonSprites => {

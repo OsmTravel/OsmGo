@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,7 +13,7 @@
     "e2e": "ng e2e",
     "sprites": "node  ./scripts/sprites.js",
     "importFromID" :"node ./scripts/importTagsFromID.js && node ./scripts/ordersTags.js && node ./scripts/importDeprecatdeTagsFromiD.js && node ./scripts/addTranslationFromiD.js ",
-    "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && node ./scripts/modifyAndroidFiles.js && npx cap open android"
+    "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && node ./scripts/modifyAndroidFiles.js"
   },
   "dependencies": {
     "@angular/animations": "^9.0.1",
