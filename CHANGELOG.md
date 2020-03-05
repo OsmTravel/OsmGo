@@ -1,3 +1,7 @@
+# 1.1.1
+## Bug Fixes
+ - Js target ES5 for compatibility with < Android 7  
+
 # 1.1.0
 ## Bug Fixes
  - #61 Sprites x1 or x2
