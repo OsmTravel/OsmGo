@@ -17,7 +17,7 @@ const deprecatedIDPath = path.join(idRepoPath, 'data', 'deprecated.json');
 
 const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'));
 
-for (let depiD of deprecatedID.dataDeprecated){
+for (let depiD of deprecatedID){
     // console.log(depiD)
     let depOsmgo = tagsOsmgo.tags.find( t => {
        return JSON.stringify(depiD.old) === JSON.stringify( t.tags)
