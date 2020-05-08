@@ -15,7 +15,7 @@ const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
 
 const deprecatedIDPath = path.join(idRepoPath, 'data', 'deprecated.json');
 
-const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'));
+const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8')).dataDeprecated;
 
 for (let depiD of deprecatedID){
     // console.log(depiD)
