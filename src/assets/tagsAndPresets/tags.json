@@ -622,7 +622,13 @@
     {
       "icon": "fa-dragon",
       "markerColor": "#A23337",
-      "presets": ["wheelchair", "phone", "website", "opening_hours"],
+      "presets": [
+        "shop#anime#brand",
+        "wheelchair",
+        "phone",
+        "website",
+        "opening_hours"
+      ],
       "lbl": {
         "en": "Anime / Manga Shop",
         "fr": "Boutique d'animes",
@@ -4415,7 +4421,13 @@
     {
       "icon": "fa-cheese",
       "markerColor": "#A23337",
-      "presets": ["wheelchair", "phone", "website", "opening_hours"],
+      "presets": [
+        "shop#dairy#brand",
+        "wheelchair",
+        "phone",
+        "website",
+        "opening_hours"
+      ],
       "lbl": {
         "en": "Dairy Store",
         "fr": "Crèmerie",
@@ -13935,7 +13947,7 @@
       "tags": {"shop": "household_linen"},
       "icon": "",
       "markerColor": "#A23337",
-      "presets": [],
+      "presets": ["shop#household_linen#brand"],
       "moreFields": [],
       "lbl": {
         "en": "Household Linen Shop",
@@ -21569,6 +21581,7 @@
       "icon": "fa-internet-explorer",
       "markerColor": "#EF9228",
       "presets": [
+        "amenity#internet_cafe#brand",
         "wheelchair",
         "phone",
         "website",
@@ -21679,7 +21692,7 @@
     {
       "icon": "maki-karaoke",
       "markerColor": "#EF9228",
-      "presets": ["opening_hours", "website"],
+      "presets": ["amenity#karaoke_box#brand", "opening_hours", "website"],
       "lbl": {
         "en": "Karaoke Box",
         "fr": "Karaoke",
@@ -22650,7 +22663,13 @@
     {
       "icon": "fa-music",
       "markerColor": "#EF9228",
-      "presets": ["wheelchair", "phone", "website", "opening_hours"],
+      "presets": [
+        "amenity#music_school#brand",
+        "wheelchair",
+        "phone",
+        "website",
+        "opening_hours"
+      ],
       "lbl": {
         "en": "Music School",
         "fr": "École de musique",
@@ -35835,7 +35854,13 @@
     {
       "icon": "mi-casino",
       "markerColor": "#5B396C",
-      "presets": ["wheelchair", "phone", "website", "opening_hours"],
+      "presets": [
+        "leisure#adult_gaming_centre#brand",
+        "wheelchair",
+        "phone",
+        "website",
+        "opening_hours"
+      ],
       "lbl": {
         "en": "Adult Gaming Center",
         "fr": "Jeux pour adultes",
@@ -35912,7 +35937,13 @@
     {
       "icon": "fa-gamepad",
       "markerColor": "#5B396C",
-      "presets": ["wheelchair", "phone", "website", "opening_hours"],
+      "presets": [
+        "leisure#amusement_arcade#brand",
+        "wheelchair",
+        "phone",
+        "website",
+        "opening_hours"
+      ],
       "lbl": {
         "en": "Amusement Arcade",
         "fr": "Salle de jeux",
@@ -41889,7 +41920,13 @@
       "tags": {"leisure": "trampoline_park"},
       "icon": "",
       "markerColor": "#5B396C",
-      "presets": ["opening_hours", "opening_hours/covid19", "phone", "website"],
+      "presets": [
+        "leisure#trampoline_park#brand",
+        "opening_hours",
+        "opening_hours/covid19",
+        "phone",
+        "website"
+      ],
       "moreFields": [],
       "lbl": {
         "en": "Trampoline Park",
