@@ -2239,6 +2239,8 @@
         "shop#butcher#brand",
         "butcher",
         "organic",
+        "diet:halal",
+        "diet:kosher",
         "wheelchair",
         "phone",
         "website",
