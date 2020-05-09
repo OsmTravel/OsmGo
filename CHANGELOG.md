@@ -1,3 +1,8 @@
+# 1.2.0
+ - Import tags from id 2.17
+ - Update mapbox gl js : 1.10.0
+ - #62 Fix butcher ( kosher, halal)
+
 # 1.1.1
 ## Bug Fixes
  - Js target ES5 for compatibility with < Android 7  
