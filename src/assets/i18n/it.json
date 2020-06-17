@@ -1,1 +1,16 @@
-{}
+{
+  "SHARED": {
+    "NO": "No",
+    "CANCEL": "Cancella",
+    "CONFIRM": "Conferma",
+    "ADD": "Aggiungi",
+    "OK": "Ok",
+    "NAME": "Nome",
+    "ID": "ID",
+    "CLOSE": "Chiudi"
+  },
+  "MAIN": {"WHAT_ITEM": "Quale?"},
+  "ABOUT": {"DATA": "Data"},
+  "SEND_DATA": {"NAME": "Nome", "ERROR": "Errore"},
+  "SETTINGS": {"DATA": "Data", "LANGUAGE_AND_REGION": "Lingua e regione"}
+}

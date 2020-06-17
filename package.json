@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Cartographiez les tous!",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -37,7 +37,7 @@
     "core-js": "^3.6.4",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.15",
-    "mapbox-gl": "^1.10.0",
+    "mapbox-gl": "^1.11.0",
     "moment": "^2.24.0",
     "ngx-moment": "^3.5.0",
     "osm-auth": "github:DoFabien/osm-auth#master",
