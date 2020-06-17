@@ -7,7 +7,12 @@
     "ADD": "Hinzufügen",
     "VALIDATE": "Überprüfen",
     "OK": "Ok",
-    "CLOSE": "Schließen"
+    "CLOSE": "Schließen",
+    "NAME": "Name",
+    "ID": "ID",
+    "LOADING": "Laden ...",
+    "UNKNOWN": "Unbekannt",
+    "UNDEFINED": "Unbestimmt"
   },
   "MAIN": {
     "EXIT_CONFIRM_HEADER": "Sicher?",
@@ -15,7 +20,7 @@
     "START_SNACK_ITEMS_IN_MEMORY": "Gespeicherte Elemente",
     "WHAT_ITEM": "Welches?",
     "LOAD_BBOX": "Daten laden?",
-    "CREATING_MISSING_ICONS": "Erstelle fehlende Symbole…"
+    "CREATING_MISSING_ICONS": "Erstelle fehlende Symbole …"
   },
   "MENU": {
     "CONNECTION": "Bei OpenStreetMap anmelden",
@@ -25,7 +30,9 @@
     "DELETE_DATA_CONFIRM_HEADER": "Sicher?",
     "DELETE_DATA_CONFIRM_MESSAGE": "Heruntergeladene Daten löschen? (Änderungen werden behalten)",
     "EXIT": "Schließen",
-    "SIGN_OUT": "Abmelden"
+    "SIGN_OUT": "Abmelden",
+    "NEW_VERSION": "Eine neue Version ist verfügbar!",
+    "TAG_MANAGEMENT": "Tag Verwaltung"
   },
   "ABOUT": {"ABOUT": "Über", "SOURCES": "Quellen", "DATA": "Daten"},
   "GEOLOCATION": {
@@ -36,7 +43,11 @@
     "LOGIN": "Anmelden",
     "USERNAME_PLACEHOLDER": "E-Mail oder OpenStreetMap-Nutzername",
     "PASSWORD_PLACEHOLDER": "Passwort",
-    "LOGIN_BUTTON": "Anmelden"
+    "LOGIN_BUTTON": "Anmelden",
+    "LOGIN_OAUTH": "Mit OAuth anmelden",
+    "NOT_SAVED_PASSWORD_HINT": "Du wirst vor jedem OSM-Update nach dem Passwort gefragt",
+    "SAVED_PASSWORD_HINT": "Dein Passwort wird als Klartext im App Cache gespeichert",
+    "SAVE_PASSWORD": "Speichere dein Passwort"
   },
   "SEND_DATA": {
     "SEND_DATA": "Daten senden",
@@ -53,7 +64,8 @@
     "SEND": "Senden!",
     "DELETE": "Entfernen",
     "DELETE_CONFIRM_HEADER": "Sicher?",
-    "DELETE_CONFIRM_MESSAGE": "Alle Änderungen löschen?"
+    "DELETE_CONFIRM_MESSAGE": "Alle Änderungen löschen?",
+    "PASSWORD_OSM": "OSM Passwort"
   },
   "SETTINGS": {
     "SETTINGS": "Einstellungen",
@@ -77,7 +89,7 @@
     "MARGIN_HINT": "Die Distanz der Ansicht, in der Daten heruntergeladen werden soll",
     "AERIAL_IMAGERY": "Luftbild",
     "AERIAL_IMAGERY_HINT": "Zu verwendendes Luftbild",
-    "LANGUAGE_AND_REGION": "Sprache & Region",
+    "LANGUAGE_AND_REGION": "Sprache und Region",
     "UI_LANGUAGE": "Bediensprache der Anwendung",
     "TAG_LANGUAGE": "Sprache der Tags",
     "TAG_COUNTRY": "Land",
@@ -86,13 +98,21 @@
     "GENERATE_ICON_CACHE": "Icon-Cache generieren",
     "DELETE_ICON_CACHE": "Icon-Cache löschen",
     "DELETE_CACHE": "Alle Anwendungsdaten löschen",
-    "DELETE_CACHE_HINT": "Alle Anwendungsdaten löschen (Daten, Änderungen, Symbole, Anmeldedetails, etc.)"
+    "DELETE_CACHE_HINT": "Alle Anwendungsdaten löschen (Daten, Änderungen, Symbole, Anmeldedetails, etc.)",
+    "DISPLAY_FIXME_ICON": "Zeige \"fixme\" Symbole",
+    "CHECKED_KEY": "survey:date' oder 'check_date'?",
+    "DISPLAY_OLD_TAGS_ICON": "Zeige ein Symbol bei alten Objekten",
+    "OLD_TAGS_ICON_RANGE_PART_1": "Letzte Bearbeitung ca.",
+    "OLD_TAGS_ICON_RANGE_PART_2": "Jahr her",
+    "ADD_SURVEY_DATE": "Trage in 'survey:date' das heutige Datum ein",
+    "CENTER_WHEN_GPS_IS_READY": "Zentriere beim Start die Karte auf deiner Position",
+    "CENTER_WHEN_GPS_IS_READY_HINT": "Zentrieredie Karte auf deiner Position sobald verfügbar"
   },
   "MODAL_SELECTED_ITEM": {
     "PRIMARY_TAG_LIST": "Liste",
     "PRIMARY_TAG_CUSTOM": "Benutzerdefiniert",
     "SEARCH_TAG_AT_LEAST_3_LETTERS": "Bitte mind. 3 Zeichen in die Suchmaske eingeben",
-    "LOADING": "Laden…",
+    "LOADING": "Laden …",
     "META_VERSION": "Version:",
     "META_BEING_CREATED": "Schon erstellt",
     "META_CREATED_AT_DATE": "Hinzugefügt:",
@@ -110,6 +130,15 @@
     "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Tag 'survey:date' mit dem heutigen Datum hinzufügen",
     "PRIMARY_TAG_BOOKMARKS": "Favoriten",
     "PRIMARY_TAG_FULL": "Voll",
-    "UNDEFINED_VALUE": "unbekannt"
-  }
+    "UNDEFINED_VALUE": "Unbekannt",
+    "SELECT_CATEGORY": "Wähle eine Kategorie",
+    "THIS_NODE_IS_USED_BY_A_WAY": "Dieser Punkt wird von {x} Linien verwendet",
+    "LAST_TAG_USED": "Letzte verwendete tags",
+    "BOOKMARKS": "Lesezeichen"
+  },
+  "MANAGE_TAGS": {
+    "RESET_HIDDEN_TAGS": "Zurücksetzen",
+    "BOOKMARKED_TAGS": "Verwalte deine Favoriten"
+  },
+  "ALERT": {"TAG_IS_DEPRECATED": "Dieser tag ist veraltet", "FIX": "Fix"}
 }

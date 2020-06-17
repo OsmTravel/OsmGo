@@ -1,1 +1,40 @@
-{}
+{
+  "SHARED": {
+    "YES": "Tak",
+    "NO": "Nie",
+    "CANCEL": "Anuluj",
+    "ADD": "Dodaj",
+    "OK": "Ok",
+    "NAME": "Nazwa",
+    "CLOSE": "Zamknij"
+  },
+  "MENU": {
+    "SETTINGS": "Ustawienia",
+    "NEW_VERSION": "Nowa wersja jest dostępna!"
+  },
+  "LOGIN": {
+    "PASSWORD_PLACEHOLDER": "Hasło",
+    "SAVE_PASSWORD": "Zapamiętaj hasło"
+  },
+  "SEND_DATA": {
+    "SEND_DATA": "Wyślij dane",
+    "NUMBER_OF_ITEMS_TO_SEND": "Liczba elementów:",
+    "ERROR": "Błąd",
+    "DELETE": "Usuń",
+    "SEND": "Wyślij!"
+  },
+  "SETTINGS": {
+    "SETTINGS": "Ustawienia",
+    "LANGUAGE_AND_REGION": "Język i region",
+    "UI_LANGUAGE": "Język interfejsu użytkownika",
+    "TAG_COUNTRY": "Kraj",
+    "DISPLAY_OLD_TAGS_ICON": "Oznacz stare obiekty ikoną",
+    "OLD_TAGS_ICON_HINT": "Jeśli obiekt jest starszy, wyświetl małą ikonę na lewo od znacznika na mapie"
+  },
+  "MODAL_SELECTED_ITEM": {
+    "META_VERSION": "Wersja:",
+    "META_BY": "Przez:",
+    "META_MYSELF": "Mnie",
+    "PLACEHOLDER_NAME": "Nazwa"
+  }
+}
