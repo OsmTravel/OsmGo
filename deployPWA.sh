@@ -1,3 +1,4 @@
+#!/bin/bash
 . deploy.config
 
 echo $serverHost
