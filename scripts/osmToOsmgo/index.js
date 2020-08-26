@@ -112,9 +112,10 @@ export function getConfigTag(feature, tagsConfig) {
     const featureTags = feature.properties.tags
     let match = {conf: undefined, matchProps: 0};
     for (let variant of tagsConfig){
+        const firstKeyTag = Object.keys(variant.tags)[0]; // we must have the first key of tag config
         let nb = 0;
         for( let vk in variant.tags){
-            if (!featureTags[vk] || featureTags[vk] !== variant.tags[vk]){
+            if (!featureTags[vk] || featureTags[vk] !== variant.tags[vk] || !featureTags[firstKeyTag]){
                 nb = 0;
                 continue;
             }else {

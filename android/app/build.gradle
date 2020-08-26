@@ -6,7 +6,7 @@ android {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 12122
+        versionCode 12123
         versionName "1.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
