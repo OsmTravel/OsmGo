@@ -26,12 +26,12 @@
     "save": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "rollup": "^1.21.4",
-    "rollup-plugin-babel": "^4.3.3",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "rollup": "^2.26.5",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^5.1.2"
+    "rollup-plugin-terser": "^7.0.0"
   }
 }
