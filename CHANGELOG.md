@@ -1,3 +1,8 @@
+# 1.3.0
+ - Fix #66 : Restaurant as self service laundry 
+ - Import tags from id
+ - Update mapbox gl js : 1.12.0
+ 
 # 1.2.0
  - Import tags from id 2.17
  - Update mapbox gl js : 1.10.0
