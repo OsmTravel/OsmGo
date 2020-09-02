@@ -10,12 +10,13 @@ export class EditPresets {
     @Input() displayCode;
     @Input() tag;
     @Input() language;
+    @Input() preset;
 
     @Output() openPrimaryListModal = new EventEmitter();
     @Output() addTags = new EventEmitter();
 
     emitOpenModal(tag) {
-        if (!this.displayCode && this.tag.preset.type === 'list') {
+        if (!this.displayCode && this.preset.type === 'list') {
             this.openPrimaryListModal.emit(tag);
         }
     }

@@ -69,6 +69,7 @@
 				<read-presets *ngIf="tag.preset && tag.value !== ''" 
 				[displayCode]="displayCode" 
 				[tag]="tag"
+				[preset] ="tag.preset"
 				[language]="this.configService.config.languageTags"
 				[countryCode]="this.configService.config.countryTags"
 				>
@@ -77,7 +78,19 @@
 
 			<!--Le reste des tags-->
 			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true;">
-				<read-other-tag [tag]="tag" *ngIf="!tag.preset "> </read-other-tag>
+				
+				<read-presets *ngIf="this.tagsService.presets[tag.key]; else readOtherTag"
+				[displayCode]="displayCode" 
+				[tag]="tag" 
+				[preset] ="tagsService.presets[tag.key]"
+				[language]="this.configService.config.languageTags"
+				[countryCode]="this.configService.config.countryTags"
+				>
+				</read-presets>
+				<ng-template #readOtherTag>
+					<read-other-tag  [tag]="tag" [presets]="this.tagsService.presets" *ngIf="!tag.preset "> </read-other-tag>
+				</ng-template>
+				
 			</div>
 
 		</div>
@@ -185,7 +198,8 @@
 			
 			<!--Les presets-->
 			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets">
-				<edit-presets *ngIf="tag.preset" 
+				<edit-presets *ngIf="tag.preset"
+					[preset] ="tag.preset"
 					[displayCode]="displayCode" 
 					[tag]="tag"
 					[language] = "this.configService.config.languageTags"
@@ -198,7 +212,24 @@
 			<!--Le reste des tags-->
 		
 			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true">
-				<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
+				
+				<edit-presets *ngIf="tagsService.presets[tag.key] ; else editOtherTag" 
+					[preset] ="tagsService.presets[tag.key]"
+					[displayCode]="displayCode" 
+					[tag]="tag"
+					[language] = "this.configService.config.languageTags"
+					(openPrimaryListModal)="openModalList(tag)"
+					(addTags)="addPresetsTags($event)"
+					>
+				</edit-presets>
+				<ng-template #editOtherTag>
+					<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
+				</ng-template>
+				
+
+			
+
+
 			</div>
 
 			<!--Nouveaux tag-->

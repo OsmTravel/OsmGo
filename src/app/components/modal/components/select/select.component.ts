@@ -10,6 +10,7 @@ export class SelectComponent implements OnInit {
 
   @Input() displayCode;
   @Input() tag;
+  @Input() preset;
   @Input() language;
   
   @Output() addTags = new EventEmitter();
@@ -18,7 +19,7 @@ export class SelectComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
+    
   }
 
   selectChange(e){
@@ -26,7 +27,7 @@ export class SelectComponent implements OnInit {
     const newValue = e.detail.value;
     this.tag['value'] = newValue
 
-    const currentPresetOption = this.tag.preset.options.find( po => po.v == newValue);
+    const currentPresetOption = this.preset.options.find( po => po.v == newValue);
     if (currentPresetOption && currentPresetOption.tags){
       this.addTags.emit(currentPresetOption.tags)
     }

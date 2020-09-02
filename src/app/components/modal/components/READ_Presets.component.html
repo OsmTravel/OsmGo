@@ -1,20 +1,18 @@
 <ion-card>
     <ion-card-header>
-        <b *ngIf="!displayCode">{{tag.preset?.lbl[language] || tag.preset?.lbl['en']  }}</b>
-        <b *ngIf="displayCode">{{tag.preset?.key}}</b>
+        <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']  }}</b>
+        <b *ngIf="displayCode">{{preset?.key}}</b>
     </ion-card-header>
     <ion-card-content>
         <div>
 
         </div>
-        <p *ngIf="!displayCode && (tag | displayPresetLabel) ; else noPreset ; let preset">
-            {{car | json}}
-            {{preset.lbl[language]  || preset.lbl['en']}}
+        <p *ngIf="!displayCode && (tag | displayPresetLabel:preset) ; else noPreset ; let pr">
+            {{pr.lbl[language]  || pr.lbl['en']}}
         </p>
 
         <ng-template #noPreset>
-            <ion-icon name="code" *ngIf="tag.preset?.type !== 'number'
-                        && tag.preset?.type !== 'text' "></ion-icon>
+            <ion-icon name="code" *ngIf="!['number', 'text','tel', 'url', 'email'].includes(preset?.type)"></ion-icon>
             {{tag.value}}
 
         </ng-template>

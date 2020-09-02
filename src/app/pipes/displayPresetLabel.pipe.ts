@@ -6,11 +6,11 @@ import { Pipe } from '@angular/core';
 })
 
 export class DisplayPresetLabelPipe  {
-    transform(tag) {
-        if ( !tag.preset || !tag.preset.options){
+    transform(tag, preset) {
+        if ( !preset || !preset.options){
             return
         }
-        let res = tag.preset.options.find( p => p.v === tag.value) || undefined;
+        let res = preset.options.find( p => p.v === tag.value) || undefined;
         return res
     }
 }
