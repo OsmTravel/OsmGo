@@ -205,9 +205,13 @@ for (let fiDId of idTagsFieldsListId) {
         }
     }
 
-    if (['wikidata', 'tel', 'email', 'adresss', 'url'].includes(currentIDPreset.type)) {
+    if (['wikidata', 'adresss'].includes(currentIDPreset.type)) {
         currentIDPreset['iDtype'] = currentIDPreset.type;
         currentIDPreset['type'] = 'text'
+    }
+    if (['tel', 'email', 'url'].includes(currentIDPreset.type)) {
+        currentIDPreset['iDtype'] = currentIDPreset.type;
+        currentIDPreset['type'] = currentIDPreset.type;
     }
 
     if (['maxspeed'].includes(currentIDPreset.type)) {

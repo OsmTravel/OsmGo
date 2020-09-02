@@ -143,12 +143,12 @@ describe('tagsAndPresets', () => {
     });
 
 
-    it('type of presets should be  list / select / number / text', () => {
+    it('type of presets should be  list / select / number / text / tel / url / email', () => {
         const noOptionsTags = [];
 
         for (let pid in presets){
             const preset = presets[pid];
-            if (!['select','list', 'number', 'text'].includes(preset.type) ) {
+            if (!['select','list', 'number', 'text', 'tel', 'url', 'email'].includes(preset.type) ) {
                     noOptionsTags.push(pid)
                 
             }
