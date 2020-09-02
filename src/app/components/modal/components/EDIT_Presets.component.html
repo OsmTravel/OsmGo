@@ -66,8 +66,8 @@
     </ion-card-content>
 </ion-card>
 
-<!-- Type : TEL -->
-<ion-card *ngIf="preset?.type === 'tel'">
+<!-- Type : TEL / URL / EMAIL -->
+<ion-card *ngIf= "['tel', 'email', 'url' ].includes(preset?.type )">
     <ion-card-header>
         <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']}}</b>
         <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{preset?.key}}</b>
@@ -77,7 +77,7 @@
     <div class="wrapperEdit2cols">
         <div class="contentEdit2cols">
                 <ion-item style="padding-left: 0px">
-                    <ion-input type="tel" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
+                    <ion-input [type]="preset.type" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
                 </ion-item>
         </div>
 
@@ -89,51 +89,6 @@
     </ion-card-content>
 </ion-card>
 
-<!-- Type : EMAIL -->
-<ion-card *ngIf="preset?.type === 'email'">
-    <ion-card-header>
-        <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']}}</b>
-        <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{preset?.key}}</b>
-    </ion-card-header>
-
-    <ion-card-content>
-    <div class="wrapperEdit2cols">
-        <div class="contentEdit2cols">
-                <ion-item style="padding-left: 0px">
-                    <ion-input type="email" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-                </ion-item>
-        </div>
-
-        <div class="buttonEdit2cols">
-            <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
-        </div>
-
-    </div>
-    </ion-card-content>
-</ion-card>
-
-<!-- Type : URL -->
-<ion-card *ngIf="preset?.type === 'url'">
-    <ion-card-header>
-        <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']}}</b>
-        <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{preset?.key}}</b>
-    </ion-card-header>
-
-    <ion-card-content>
-    <div class="wrapperEdit2cols">
-        <div class="contentEdit2cols">
-                <ion-item style="padding-left: 0px">
-                    <ion-input type="url" [(ngModel)]="tag.value" [placeholder]="tag.key"></ion-input>
-                </ion-item>
-        </div>
-
-        <div class="buttonEdit2cols">
-            <ion-icon (click)="tag.value = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
-        </div>
-
-    </div>
-    </ion-card-content>
-</ion-card>
 
 
 <ion-card *ngIf="preset?.type === 'text'">
