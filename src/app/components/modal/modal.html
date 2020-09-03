@@ -88,7 +88,7 @@
 				>
 				</read-presets>
 				<ng-template #readOtherTag>
-					<read-other-tag  [tag]="tag" [presets]="this.tagsService.presets" *ngIf="!tag.preset "> </read-other-tag>
+					<read-other-tag  [tag]="tag"  *ngIf="!tag.preset "> </read-other-tag>
 				</ng-template>
 				
 			</div>
@@ -197,39 +197,25 @@
 
 			
 			<!--Les presets-->
-			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets">
-				<edit-presets *ngIf="tag.preset"
-					[preset] ="tag.preset"
-					[displayCode]="displayCode" 
-					[tag]="tag"
-					[language] = "this.configService.config.languageTags"
-					(openPrimaryListModal)="openModalList(tag)"
-					(addTags)="addPresetsTags($event)"
-					>
-				</edit-presets>
-			</div>
-
 			<!--Le reste des tags-->
 		
-			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true">
-				
-				<edit-presets *ngIf="tagsService.presets[tag.key] ; else editOtherTag" 
-					[preset] ="tagsService.presets[tag.key]"
+			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets">
+
+				<edit-presets *ngIf="(tag.preset || tagsService.presets[tag.key]) ; else editOtherTag" 
+					[preset] ="tag.preset ? tag.preset : tagsService.presets[tag.key]"
 					[displayCode]="displayCode" 
 					[tag]="tag"
 					[language] = "this.configService.config.languageTags"
-					(openPrimaryListModal)="openModalList(tag)"
+					(openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key]))"
 					(addTags)="addPresetsTags($event)"
 					>
 				</edit-presets>
+
+
 				<ng-template #editOtherTag>
 					<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
 				</ng-template>
 				
-
-			
-
-
 			</div>
 
 			<!--Nouveaux tag-->
@@ -237,28 +223,27 @@
 				<ion-icon name="add"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-card *ngIf="displayAddTag">
-				<ion-card-header *ngIf="displayAddTag">
-						{{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate}}
-				</ion-card-header>
-				<ion-card-content *ngIf="displayAddTag">
-					<ion-item>
-						<ion-label primary stacked>Key</ion-label>
-						<ion-input type="text" placeholder="Key" 
-						autocapitalize="none" autocomplete="off"
-						[(ngModel)]="newTag.key"></ion-input>
-					</ion-item>
-					<ion-item>
-						<ion-label primary stacked>Value</ion-label>
-						<ion-input type="text" placeholder="value"
-						autocapitalize="none" autocomplete="off"
-						[(ngModel)]="newTag.value"></ion-input>
-					</ion-item>
-					<ion-button ion-button [disabled]="newTag.key == '' || newTag.value == ''" (click)="addTag()"> 
-						{{ 'SHARED.ADD' | translate}}
-					</ion-button>
-				</ion-card-content>
-			</ion-card>
+			<div *ngIf="displayAddTag">
+
+				<ion-card>
+					<ion-card-header *ngIf="displayAddTag">
+							{{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate}}
+					</ion-card-header>
+					<ion-card-content *ngIf="displayAddTag">
+						<ion-item>
+							<ion-label primary stacked>Key</ion-label>
+							<ion-input type="text" placeholder="Key" 
+							autocapitalize="none" autocomplete="off"
+							[(ngModel)]="newKey"></ion-input>
+						</ion-item>
+						<ion-button ion-button [disabled]="newKey == ''" (click)="addNewKey(newKey)"> 
+							{{ 'SHARED.ADD' | translate}}
+						</ion-button>
+
+					</ion-card-content>
+				</ion-card>
+			</div>
+		
 
 		</div>
 
