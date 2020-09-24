@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 export class ReadPresets {
     @Input() displayCode;
     @Input() tag;
+    @Input() preset;
     @Input() language;
     @Input() countryCode;
     

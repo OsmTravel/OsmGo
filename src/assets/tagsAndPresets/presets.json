@@ -2412,7 +2412,7 @@
   },
   "phone": {
     "key": "phone",
-    "type": "text",
+    "type": "tel",
     "lbl": {
       "en": "Telephone",
       "fr": "Téléphone",
@@ -2456,7 +2456,7 @@
   },
   "website": {
     "key": "website",
-    "type": "text",
+    "type": "url",
     "lbl": {
       "en": "Website",
       "fr": "Site Web",
@@ -72112,11 +72112,11 @@
   },
   "email": {
     "key": "email",
-    "type": "text",
+    "type": "email",
     "placeholder": "example@example.com",
     "lbl": {
       "en": "Email",
-      "fr": "Courrier électronique",
+      "fr": "Email",
       "de": "E-Mail",
       "es": "Correo electrónico",
       "pt": "Email",
@@ -72160,7 +72160,7 @@
   },
   "fax": {
     "key": "fax",
-    "type": "text",
+    "type": "tel",
     "placeholder": "+31 42 123 4567",
     "lbl": {
       "en": "Fax",
@@ -87714,7 +87714,7 @@
   },
   "contact/webcam": {
     "key": "contact:webcam",
-    "type": "text",
+    "type": "url",
     "icon": "website",
     "placeholder": "http://example.com/",
     "lbl": {

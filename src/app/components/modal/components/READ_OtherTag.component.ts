@@ -15,5 +15,5 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class ReadOtherTag {
-    @Input() tag;
+	@Input() tag;
 }

@@ -1,9 +1,9 @@
-<ion-card *ngIf="tag.preset?.type === 'select'">
+<ion-card *ngIf="preset?.type === 'select'">
   <ion-card-header>
-      <b *ngIf="!displayCode && (tag.preset?.lbl[language] || tag.preset?.lbl['en']); else diplayCodeSelect">{{tag.preset?.lbl[language] || tag.preset?.lbl['en']}}</b>
+      <b *ngIf="!displayCode && (preset?.lbl[language] || preset?.lbl['en']); else diplayCodeSelect">{{preset?.lbl[language] || preset?.lbl['en']}}</b>
       <ng-template #diplayCodeSelect>
       <ion-icon name="code"></ion-icon>
-      {{tag.preset?.key}}
+      {{preset?.key}}
   </ng-template>
       
   </ion-card-header>
@@ -20,14 +20,14 @@
               <ion-select-option   [value]="''" >
                   <p class="undefindedListValue"> {{'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'| translate}} </p> 
               </ion-select-option>
-                  <ion-select-option  *ngFor ="let item of tag.preset.options;" [value]="item.v" >
+                  <ion-select-option  *ngFor ="let item of preset.options;" [value]="item.v" >
                           <p class="displayLabelListValue">  {{item.lbl[language] || item.lbl['en']}}</p> 
                   </ion-select-option>
 
 
-                  <ion-select-option  *ngIf="(tag | displayPresetLabel) === undefined &&  tag.value!= '' ;" [value]="tag.value" >
+                  <ion-select-option  *ngIf="(tag | displayPresetLabel:preset) === undefined &&  tag.value!= '' ;" [value]="tag.value" >
                       {{'<> '}} 
-                         <p class="displayLabelListValue"> {{(tag.value)}} {{(tag | displayPresetLabel)}}</p> 
+                         <p class="displayLabelListValue"> {{(tag.value)}} {{(tag | displayPresetLabel:preset)}}</p> 
                   </ion-select-option>
                   
 

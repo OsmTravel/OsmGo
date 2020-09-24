@@ -43,7 +43,7 @@ export class ModalsContentPage implements OnInit {
 
   customValue = '';
 
-  newTag = { key: '', value: '' };
+  newKey = '';
   allTags;
   newPosition;
   displayAddTag = false;
@@ -230,15 +230,24 @@ export class ModalsContentPage implements OnInit {
     });
   }
 
-  addTag() {
-    // TODO : controler que la clé n'existe pas et notifier le cas échéant
-    if (this.newTag.key !== '' && this.newTag.value !== '') {
-      this.newTag.key = this.newTag.key.trim();
-      this.tags.push(this.newTag);
-      this.newTag = { key: '', value: '' };
+  addNewKey(key){
+    // Check if the key already exists in presets
+    if ( this.tags.find( t => t.key == key)){
       this.displayAddTag = false;
+      this.newKey = '';
+      return;
     }
+
+    const genericPreset = this.tagsService.presets[key];
+    if (!genericPreset){
+      this.tags = [...this.tags, {key: key, value:''}]
+    } else {
+      this.tags = [...this.tags, {key: key, value:'', preset: genericPreset }]
+    }
+    this.newKey = '';
+    this.displayAddTag = false;
   }
+
   deleteTag(tag) {
     const idx = findIndex(this.tags, { key: tag.key });
     if (idx !== -1) {
@@ -369,7 +378,12 @@ export class ModalsContentPage implements OnInit {
       });
   }
 
-  async openModalList(data) {
+  async openModalList(data, preset) {
+    if (preset){
+      data['preset'] = preset;
+    }
+ 
+  
 
     const modal = await this.modalCtrl.create({
       component: ModalSelectList,
