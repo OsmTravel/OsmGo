@@ -104,7 +104,7 @@ export class OsmApiService {
 
     // DETAIL DE L'UTILISATEUR
     getUserDetail$(_user?, _password?, basicAuth = false, passwordSaved = true, test = false): Observable<User> {
-        const PATH_API = '/api/0.6/user/details'
+        const PATH_API = '/api/0.6/user/details.json'
         let _observable;
         if (!basicAuth) {
             _observable = Observable.create(
@@ -112,12 +112,12 @@ export class OsmApiService {
                     this.auth.xhr({
                         method: 'GET',
                         path: PATH_API,
-                        options: { header: { 'Content-Type': 'text/xml' } },
+                        options: { header: { 'Content-Type': 'application/json' } },
                     }, (err, details) => {
                         if (err) {
                             observer.error({ response: err.response || '??', status: err.status || 0 });
                         }
-                        observer.next(details)
+                        observer.next(JSON.parse(details))
                     });
                 })
         } else {
@@ -126,25 +126,21 @@ export class OsmApiService {
             let headers = new HttpHeaders();
             headers = headers
                 .set('Authorization', `Basic ${btoa(_user + ':' + _password)}`)
-                .set('Content-Type', 'text/xml');
+                .set('Content-Type', 'application/json');
 
-            _observable = this.http.get(url, { headers: headers, responseType: 'text' })
-                .pipe(
-                    map(res => new DOMParser().parseFromString(res, 'text/xml'))
-                )
+            _observable = this.http.get(url, { headers: headers})
+            
         }
 
         return _observable.pipe(
-            map((res: Document) => {
-                const xml = res
-                const x_user = xml.getElementsByTagName('user')[0];
-                const uid = x_user.getAttribute('id');
-                const display_name = x_user.getAttribute('display_name');
+            map((res: any) => {
+                const x_user = res.user;
+                const uid = x_user['id'];
+                const display_name = x_user['display_name'];
                 const _userInfo: User = { user: _user, password: passwordSaved ?_password : null, uid: uid, display_name: display_name, connected: true,  authType: basicAuth ? 'basic' : 'oauth',};
                 if (!test){
                     this.configService.setUserInfo(_userInfo);
                 }
-               
                 return _userInfo;
             }),
             catchError((error: any) => {
