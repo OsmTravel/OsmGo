@@ -6,8 +6,8 @@ android {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 12127
-        versionName "1.4.0"
+        versionCode 12131
+        versionName "1.4.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
