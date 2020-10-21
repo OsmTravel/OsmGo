@@ -18,9 +18,11 @@ import { MainPage } from './components/main/main';
 import { MenuPage } from './components/menu/menu';
 import { LoginPage } from './components/login/login.component';
 
+
+
 import { ModalsContentPage } from './components/modal/modal';
 import { ModalPrimaryTag } from './components/modal/modal.primaryTag/modal.primaryTag';
-
+import {OpeningHoursComponent} from './components/modal/components/opening-hours/opening-hours.component'
 
 import { ModalSelectList } from './components/modal/modalSelectList/modalSelectList';
 import { PushDataToOsmPage } from './components/pushDataToOsm/pushDataToOsm';
@@ -80,6 +82,9 @@ import { FiltersTagsByIdsPipe } from './pipes/filters-tags-by-ids.pipe';
 import { SelectComponent } from './components/modal/components/select/select.component';
 import { SortArrayPipe } from './pipes/sort-array.pipe';
 import { LimitDisplayTagsPipe } from './pipes/limit-display-tags.pipe';
+import { from } from 'rxjs';
+import { MinutesToHoursMinutesPipe } from './pipes/minutes-to-hours-minutes.pipe';
+import { ModalAddOpeningHoursIntervalComponent } from './components/modal/components/opening-hours/modal-add-opening-hours-interval/modal-add-opening-hours-interval.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -92,10 +97,10 @@ export function createTranslateLoader(http: HttpClient) {
     TagListElementComponent,
     ModalPrimaryTag, ModalsContentPage, ModalSelectList, PushDataToOsmPage, SettingsPage,DialogMultiFeaturesComponent,
     ReadMeta, ReadPrimaryKey, ReadOtherTag, ReadPresets, EditOtherTag, EditPresets, EditPrimaryKey, AlertComponent, 
-    IconComponent, SelectComponent,
+    IconComponent, SelectComponent,ModalAddOpeningHoursIntervalComponent,
 
     DisplayPresetLabelPipe,
- 
+    OpeningHoursComponent,
     FilterByTagsContentPipe,
     FilterExcludeTagByCountryCode,
     FilterByCountryCode,
@@ -103,7 +108,7 @@ export function createTranslateLoader(http: HttpClient) {
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
     DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe,
-    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe, LimitDisplayTagsPipe,
+    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe, LimitDisplayTagsPipe, MinutesToHoursMinutesPipe,
   ],
   entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
   imports: [
