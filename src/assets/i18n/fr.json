@@ -151,5 +151,25 @@
     "BOOKMARKED_TAGS": "Gérer vos favoris",
     "BOOKMARKED_TAGS_DESCRIPTION": "Cette fenêtre vous permet de gerer vos tags favoris",
     "RESET_HIDDEN_TAGS": "Réinitialiser"
+  },
+  "DAYS": {
+    "MONDAY": "Lundi",
+    "TUESDAY": "Mardi",
+    "WEDNESDAY":"Mercredi",
+    "THURSDAY": "Jeudi",
+    "FRIDAY": "Vendredi",
+    "SATURDAY": "Samedi",
+    "SUNDAY": "Dimanche"
+  },
+  "OPENINGHOURS":{
+    "CLOSED": "Fermé",
+    "UNKNOW": "Non renseigné",
+    "START_TIME": "A partir de ",
+    "END_TIME" : "Jusqu'a",
+    "ADD_OPENING_HOURS": "Ajouter un horaire",
+    "ADD_INTERVAL": "Ajouter un interval",
+    "DELETE_INTERVAL": "Supprimer cet interval",
+    "SELECT_AT_LEAST_ONE_DAY": "Veuillez sélectionner au moins un jour",
+    "TOO_COMPLEX_FOR_OSMGO": "Le format est trop complexe pour Osm Go!"
   }
 }
