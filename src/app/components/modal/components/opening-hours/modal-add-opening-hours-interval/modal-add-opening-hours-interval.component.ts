@@ -30,12 +30,11 @@ export class ModalAddOpeningHoursIntervalComponent implements OnInit {
   dayIsSelected = false;
   
   ngOnInit() {
-    console.log(this.params.data);
+
   }
 
   timeChange(e){
     const newTimeStr = e.detail.value
-    console.log(newTimeStr);
   }
 
   addNewInteval(){
@@ -50,7 +49,6 @@ export class ModalAddOpeningHoursIntervalComponent implements OnInit {
   toggleDay(index){
    
     this.days[index].selected= !this.days[index].selected;
-
     this.dayIsSelected = this.days.map(d => d.selected).includes(true);
   }
 

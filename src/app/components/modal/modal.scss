@@ -2,6 +2,12 @@
     $headerHeight :56px;
     $footerHeight : 60px;
 
+    .toogleCodeButton{
+        position: absolute;
+        right: 0;
+        top: 28px;
+    }
+
     .wrapper{
         position: absolute;
         top:0;
