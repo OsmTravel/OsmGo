@@ -209,7 +209,8 @@
         "zh": "广告柱",
         "eo": "Reklam-kolono",
         "no": "Annonsekolonne",
-        "sr": "Огласни стуб"
+        "sr": "Огласни стуб",
+        "eu": "Publizitaterako zutabea"
       },
       "terms": {
         "en": "",
@@ -262,7 +263,8 @@
         "ru": "Флагшток для рекламы",
         "cs": "Vlajkový stožár pro reklamu",
         "ja": "広告のための旗竿",
-        "pl": "Miejsce z masztem na reklamę."
+        "pl": "Miejsce z masztem na reklamę.",
+        "de": "Fahnenmast für Werbezwecke"
       },
       "tags": {"advertising": "flag"},
       "geometry": ["point", "vertex"],
@@ -330,7 +332,8 @@
         "ru": "Экраны для показа рекламы",
         "cs": "Reklamní obrazovka",
         "ja": "広告スクリーン",
-        "pl": "Miejsce z ekranem reklamowym."
+        "pl": "Miejsce z ekranem reklamowym.",
+        "de": "Ein Bildschirm für Werbezwecke"
       },
       "tags": {"advertising": "screen"},
       "id": "advertising/screen"
@@ -347,7 +350,8 @@
         "ru": "Рекламная скульптура или любой трёхмерный рекламный объект.",
         "cs": "Reklamní socha, nebo jiný 3D reklamní objekt.",
         "ja": "広告彫刻",
-        "pl": "Miejsce z reklamową rzeźbą."
+        "pl": "Miejsce z reklamową rzeźbą.",
+        "de": "Eine Skulptur für Werbezwecke"
       },
       "tags": {"advertising": "sculpture"},
       "id": "advertising/sculpture"
@@ -362,7 +366,8 @@
         "fr": "Situé sur le bâtiment où a lieu l'activité annoncée",
         "cs": "Reklamní tabule a loga umístěné na střeše či fasádě",
         "ja": "看板",
-        "pl": "Miejsce z reklamowym znakiem."
+        "pl": "Miejsce z reklamowym znakiem.",
+        "de": "Werbeschild, auch für Neonschilder und Logos verwendet"
       },
       "tags": {"advertising": "sign"},
       "geometry": ["point", "vertex"],
@@ -379,7 +384,8 @@
         "fr": "La bâche peut se trouver sur un échafaudage, ou sur un mur. Souvent de taille énorme, voire exceptionnelle.",
         "cs": "Reklamní plachta na lešení, nebo na zdi. Reklamní plocha značné velikosti.",
         "ja": "広告用垂れ幕",
-        "pl": "Wisząca tkanina z reklamą."
+        "pl": "Wisząca tkanina z reklamą.",
+        "de": "Werbeplane, meist an Gerüsten oder Wandflächen befestigt"
       },
       "tags": {"advertising": "tarp"},
       "id": "advertising/tarp",
@@ -451,7 +457,8 @@
         "ru": "Реклама, нарисованная на стене",
         "cs": "Reklama namalovaná na zdi",
         "ja": "壁に描かれた広告",
-        "pl": "Miejsce z malowaną reklamą na ścianie."
+        "pl": "Miejsce z malowaną reklamą na ścianie.",
+        "de": "Ein Wandgemälde für Werbezwecke"
       },
       "tags": {"advertising": "wall_painting"},
       "id": "advertising/wall_painting"
@@ -813,7 +820,8 @@
         "ru": "Магазин по продаже старинных вещей (антиквариата)",
         "cs": "Obchod se starožitnostmi",
         "ja": "骨董品を売る店",
-        "uk": "Магазин, де можна придбати старовинні речі (антикваріат)"
+        "uk": "Магазин, де можна придбати старовинні речі (антикваріат)",
+        "pl": "Sklep sprzedający antyki."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/antiques",
@@ -974,7 +982,8 @@
         "es": "Una tienda que vende obras de arte.",
         "ru": "Продажа произведений искусства.",
         "cs": "Obchod s uměním",
-        "ja": "美術品を販売する店舗です。"
+        "ja": "美術品を販売する店舗です。",
+        "pl": "Sklep sprzedający dzieła sztuki."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/art",
@@ -1962,7 +1971,8 @@
       "id": "shop/boat",
       "description": {
         "en": "A boat shop, may also offer further services",
-        "cs": "Prodej lodí či člunů, může nabízet i další služby."
+        "cs": "Prodej lodí či člunů, může nabízet i další služby.",
+        "pl": "Sklep sprzedający łodzie i akcesoria; sklep żeglarski."
       }
     },
     {
@@ -2049,7 +2059,8 @@
         "es": "Un establecimiento que acepta apuestas sobre el resultado de eventos deportivos u otro tipo de eventos según probabilidades previamente acordadas.",
         "pt": "Uma loja que leva apostas em eventos esportivos e outros a uma chance acordada.",
         "cs": "Sázková kancelář",
-        "ja": "ブックメーカー。スポーツやその他の出来事にオッズに基づいて賭けをする店舗です。"
+        "ja": "ブックメーカー。スポーツやその他の出来事にオッズに基づいて賭けをする店舗です。",
+        "pl": "Zakład bukmacherski."
       }
     },
     {
@@ -2141,7 +2152,8 @@
         "pt": "Uma loja especializada na venda de livros, embora possa eventualmente vender também outras publicações impressas, como jornais e revistas.",
         "ru": "Книжный магазин",
         "cs": "Knihkupectví",
-        "ja": "書店。書籍を販売する店舗です。"
+        "ja": "書店。書籍を販売する店舗です。",
+        "pl": "Księgarnia."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/books",
@@ -2505,7 +2517,8 @@
         "en": "Shop focused on selling candles and candle accessories (holders, etc)",
         "de": "Kerzengeschäft",
         "cs": "Obchod se svíčkami a příslušenstvím (svícny, atd.)",
-        "ja": "主にろうそくやろうそく関連商品（燭台など）を販売する店舗です"
+        "ja": "主にろうそくやろうそく関連商品（燭台など）を販売する店舗です",
+        "pl": "Sklep sprzedający świece."
       }
     },
     {
@@ -2553,7 +2566,8 @@
       "tags": {"shop": "cannabis"},
       "id": "shop/cannabis",
       "description": {
-        "en": "A shop primarily and legally selling cannabis products."
+        "en": "A shop primarily and legally selling cannabis products.",
+        "pl": "Sklep sprzedający produkty z konopi."
       }
     },
     {
@@ -2796,7 +2810,8 @@
         "it": "Negozio che vende ricambi per auto, olio, ecc..",
         "ru": "Автозапчасти",
         "cs": "Místo, kde se prodávají náhradní díly pro auta, příslušenství, motorové oleje, autokosmetika, atd.",
-        "ja": "自動車の部品、アクセサリ、オイル、化学製品などを販売する店舗です。"
+        "ja": "自動車の部品、アクセサリ、オイル、化学製品などを販売する店舗です。",
+        "pl": "Sklep z częściami i akcesoriami do samochodów."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/car_parts",
@@ -2954,7 +2969,8 @@
       },
       "description": {
         "en": "A shop for caravans, motorhomes & similar recreational vehicles",
-        "fr": "Magasin de caravanes ou de camping-car "
+        "fr": "Magasin de caravanes ou de camping-car ",
+        "pl": "Sklep sprzedający kampery i przyczepy kempingowe."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/caravan",
@@ -3046,7 +3062,8 @@
         "ru": "Магазин, торгующий коврами.",
         "cs": "Obchod prodávající koberce",
         "ja": "絨毯を販売する店舗です。",
-        "es": "Una tienda que vende alfombras."
+        "es": "Una tienda que vende alfombras.",
+        "pl": "Sklep sprzedający dywany."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/carpet",
@@ -3171,7 +3188,8 @@
         "ru": "Благотворительный магазин",
         "cs": "Obchod provozovaný charitou",
         "da": "En butik drevet af en velgørende organisation",
-        "ja": "慈善団体が運営する店舗"
+        "ja": "慈善団体が運営する店舗",
+        "pl": "Sklep charytatywny."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/charity",
@@ -3347,7 +3365,9 @@
         "it": "Un negozio che vende articoli per l'igiene personale, cosmetici e prodotti per la pulizia della casa.",
         "ru": "Магазин по продаже предметов личной гигиены, косметики и бытовой химии.",
         "cs": "Drogerie - prodej produktů osobní hygieny, kosmetiky a domácích čistících prostředků.",
-        "ja": "市販薬や衛生用品、化粧品、掃除用品などを売っている店。薬剤師がいないドラッグストア。"
+        "ja": "市販薬や衛生用品、化粧品、掃除用品などを売っている店。薬剤師がいないドラッグストア。",
+        "es": "Una tienda que vende artículos de higiene personal, cosméticos y productos de limpieza para el hogar.",
+        "pl": "Sklep sprzedający kosmetyki i artykuły chemiczne; drogeria."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/chemist",
@@ -3883,7 +3903,8 @@
         "pt": "Um loja que vende computadores, programas...",
         "ru": "Компьютерный магазин",
         "cs": "Obchod prodávající počítače, periferie, software, ...",
-        "ja": "パソコン、周辺機器、ソフト等の販売店"
+        "ja": "パソコン、周辺機器、ソフト等の販売店",
+        "pl": "Sklep lub serwis komputerowy."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/computer",
@@ -4270,7 +4291,8 @@
         "pt": "Loja que vende exclusivamente cosméticos",
         "cs": "Obchod prodávající výhradně kosmetiku",
         "ja": "化粧品を専門に販売する店舗",
-        "ko": "화장품만을 파는 상점"
+        "ko": "화장품만을 파는 상점",
+        "pl": "Sklep sprzedający wyłącznie kosmetyki."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/cosmetics",
@@ -4322,7 +4344,8 @@
       "moreFields": [],
       "id": "shop/country_store",
       "description": {
-        "en": "A Country Store is a UK term for a shop selling a range of goods specifically aimed at country dwellers."
+        "en": "A Country Store is a UK term for a shop selling a range of goods specifically aimed at country dwellers.",
+        "pl": "Sklep sprzedający towary przeznaczone dla mieszkańców terenów wiejskich, takie jak sprzęt ogrodniczy, sprzęt do polowań i jazdy konnej, pasza dla zwierząt."
       }
     },
     {
@@ -4407,7 +4430,8 @@
         "de": "Künstlerbedarf, Bastelbedarf",
         "es": "Una tienda de suministros para trabajos de artesanía o bellas artes.",
         "cs": "Prodej vybavení pro umělce a řemeslníky.",
-        "ja": "美術や工芸の備品店。"
+        "ja": "美術や工芸の備品店。",
+        "pl": "Sklep z artykułami dla artystów."
       }
     },
     {
@@ -4680,7 +4704,8 @@
         "ru": "Магазин деликатесов.",
         "cs": "Prodej lahůdek",
         "ja": "高級惣菜店（デリカテッセン店）",
-        "pl": "Ekskluzywne delikatesy."
+        "pl": "Ekskluzywne delikatesy.",
+        "es": "Una tienda delicatesen."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/deli",
@@ -4940,7 +4965,8 @@
       "tags": {"shop": "doors"},
       "description": {
         "en": "Shop selling doors",
-        "de": "Ein Geschäft, das Türen verkauft"
+        "de": "Ein Geschäft, das Türen verkauft",
+        "pl": "Sklep sprzedający drzwi."
       }
     },
     {
@@ -5113,7 +5139,8 @@
         "en": "A shop selling electronic cigarettes",
         "fr": "Boutique de cigarettes électroniques",
         "cs": "Obchod prodávající elektronické cigarety",
-        "ja": "電子たばこを販売する店舗"
+        "ja": "電子たばこを販売する店舗",
+        "pl": "Sklep sprzedający e-papierosy."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/e-cigarette",
@@ -5160,7 +5187,8 @@
         "it": "Negozio di elettronica",
         "ru": "Магазин электромонтажных инструментов и материалов",
         "cs": "Obchod prodávající elektrické potřeby a zařízení",
-        "ja": "電気店。電気工具や機器を販売する店舗です。"
+        "ja": "電気店。電気工具や機器を販売する店舗です。",
+        "pl": "Sklep sprzedający artykuły i urządzenia elektryczne."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/electrical",
@@ -5276,7 +5304,8 @@
         "it": "Negozio di elettronica di consumo, come TV, radio, frigoriferi",
         "ru": "Магазин по продаже бытовой электроники и техники",
         "cs": "Obchod prodávající spotřebitelskou elektroniku jako televize, rádia a ledničky",
-        "ja": "テレビ、ラジオ、冷蔵庫などの家庭用電化製品を販売する電器店"
+        "ja": "テレビ、ラジオ、冷蔵庫などの家庭用電化製品を販売する電器店",
+        "pl": "Sklep sprzedający elektronikę użytkową (RTV i AGD)."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/electronics",
@@ -5726,7 +5755,11 @@
       "tags": {"shop": "fashion_accessories"},
       "moreFields": [],
       "id": "shop/fashion_accessories",
-      "description": {"en": "", "de": "Geschäft für Modeaccessoires"}
+      "description": {
+        "en": "",
+        "de": "Geschäft für Modeaccessoires",
+        "pl": "Sklep z galanterią."
+      }
     },
     {
       "icon": "fa-fire",
@@ -5779,7 +5812,9 @@
         "de": "Ein Kamin oder Kachelofenladen",
         "ru": "Магазин, продающий печи и камины",
         "cs": "Prodejna krbů a kamen",
-        "ja": "暖房具店。暖炉やストーブを販売する店舗です。"
+        "ja": "暖房具店。暖炉やストーブを販売する店舗です。",
+        "es": "Una tienda que vende chimeneas.",
+        "pl": "Sklep sprzedający kominki, piece lub grzejniki."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/fireplace",
@@ -5907,7 +5942,11 @@
       "moreFields": [],
       "reference": {"key": "shop", "value": "seafood"},
       "id": "shop/fishmonger",
-      "description": {"en": "", "pl": "Owoce morza."},
+      "description": {
+        "en": "",
+        "pl": "Owoce morza.",
+        "cs": "NEDOPORUČOVÁNO - Použijte, prosím, spíše značku tag:shop=seafood"
+      },
       "alert": {"en": "", "fr": "shop=seafood"},
       "deprecated": true,
       "replace": {"shop": "seafood"}
@@ -5951,7 +5990,8 @@
         "en": "A shop which sells a variety of floorings",
         "de": "Ein Geschäft, das eine Vielzahl an Fußböden anbietet",
         "ru": "Магазин, специализирующийся на напольных покрытиях",
-        "cs": "???"
+        "cs": "???",
+        "pl": "Sklep sprzedający posadzki."
       }
     },
     {
@@ -6149,7 +6189,8 @@
         "pt": "Uma loja onde você pode comprar quadros.",
         "ru": "Магазин по продаже картинных рам.",
         "cs": "Obchod s rámy na obrazy",
-        "ja": "額縁を買うことができる店。"
+        "ja": "額縁を買うことができる店。",
+        "pl": "Sklep sprzedający ramy i ramki do obrazów lub zdjęć."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/frame",
@@ -6219,7 +6260,8 @@
         "fr": "Un magasin qui vend principalement des produits surgelés",
         "de": "Ein Laden in dem Tiefkühlkost verkauft wird",
         "cs": "Obchod, který prodává hlavně mražené jídlo.",
-        "ja": "主に冷凍食品を販売する店"
+        "ja": "主に冷凍食品を販売する店",
+        "pl": "Sklep sprzedający głównie mrożonki."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/frozen_food",
@@ -6285,7 +6327,8 @@
       "description": {
         "en": "A shop selling fuels",
         "pt": "Uma loja que vende combustíveis.",
-        "cs": "Obchod prodávající paliva"
+        "cs": "Obchod prodávající paliva",
+        "pl": "Sklep sprzedający paliwo."
       }
     },
     {
@@ -6433,7 +6476,12 @@
       "tags": {"shop": "furnace"},
       "moreFields": [],
       "id": "shop/furnace",
-      "description": {"en": "", "ru": "Магазин по продаже печей."},
+      "description": {
+        "en": "",
+        "ru": "Магазин по продаже печей.",
+        "pt": "Use tag:craft=plumber instead - see EN doc.",
+        "fr": "Utiliser de préférence tag:craft=plumber."
+      },
       "deprecated": true,
       "replace": {"shop": "fireplace"}
     },
@@ -6587,7 +6635,8 @@
         "fr": "",
         "es": "Tienda que vende juegos de mesa.",
         "cs": "Obchod prodávající stolní hry",
-        "ja": "ボードゲームを販売する店舗。"
+        "ja": "ボードゲームを販売する店舗。",
+        "pl": "Sklep sprzedający gry planszowe, karciane, bitewne, RPG."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/games",
@@ -6686,7 +6735,9 @@
         "cs": "Zahradnické centrum prodávající květiny v květináčích a někdy dokonce stromy",
         "fa": "فروشگاه عرضهٔ گل‌های گلدانی و نیز گاهی اوقات درخت.",
         "ko": "화분에 심는 꽃, 어쩌면 심지어 나무도 파는 가게.",
-        "pl": "Centrum ogrodnicze sprzedające rośliny doniczkowe, drzewa, małą architekturę ogrodową."
+        "pl": "Centrum ogrodnicze sprzedające rośliny doniczkowe, drzewa, małą architekturę ogrodową.",
+        "pt": "Loja que vende flores em vasos, talvez até mesmo árvores (ver também tag:shop=florist para buquês de flores).",
+        "ja": "鉢植えの花やブーケにする樹木(tag:shop=florist参照)を売る店。"
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/garden_centre",
@@ -6944,7 +6995,8 @@
         "ru": "Магазин по продаже подарков, поздравительных открыток или сувениров.",
         "cs": "Obchod s dárkovými předměty, přáními, suvenýry pro turisty",
         "ja": "土産物店、ギフトショップ。贈り物、グリーティングカード、あるいは観光みやげを販売する店舗です。",
-        "ko": "선물, 인사말 카드나 관광 선물(기념품)을 파는 가게."
+        "ko": "선물, 인사말 카드나 관광 선물(기념품)을 파는 가게.",
+        "pl": "Sklep sprzedający prezenty, kartki z życzeniami lub prezenty turystyczne (pamiątki)."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/gift",
@@ -6965,7 +7017,8 @@
         "en": "Selling and installing glazing for windows and doors",
         "ru": "Мастерская, магазин по продаже и установке стекол для окон и дверей.",
         "cs": "Prodej a instalace skel do oken a dveří",
-        "ja": "ガラス屋。窓やドアのガラスを販売したり取り付けたりします。"
+        "ja": "ガラス屋。窓やドアのガラスを販売したり取り付けたりします。",
+        "es": "Venta e instalación de vidrios para puertas y ventanas."
       },
       "tags": {"shop": "glaziery"},
       "geometry": ["point", "area"],
@@ -7241,7 +7294,8 @@
         "en": "A shop where you can buy hairdressing supplies",
         "de": "Friseurbedarf",
         "pt": "Uma loja onde você pode comprar suprimentos de cabeleireiro",
-        "cs": "Obchod s potřebami pro kadeřníky"
+        "cs": "Obchod s potřebami pro kadeřníky",
+        "pl": "Sklep z artykułami fryzjerskimi."
       }
     },
     {
@@ -7334,7 +7388,8 @@
         "it": "Negozio di ferramenta",
         "ru": "Магазин инструментов, крепежа.",
         "cs": "Železářství",
-        "ja": "金物店。木材、工具、その他の建設用具を販売する店舗"
+        "ja": "金物店。木材、工具、その他の建設用具を販売する店舗",
+        "pl": "Sklep sprzedający narzędzia."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/hardware",
@@ -7490,7 +7545,8 @@
         "pt": "Uma loja especializada na venda de aparelhos auditivos",
         "ru": "Магазин по продаже слуховых аппаратов",
         "cs": "Obchod specializovaný na naslouchadla",
-        "ja": "補聴器の販売に特化した店舗"
+        "ja": "補聴器の販売に特化した店舗",
+        "pl": "Sklep sprzedający aparaty słuchowe."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/hearing_aids",
@@ -7665,7 +7721,8 @@
         "it": "Negozio che vende componenti per l'alta fedeltà audio (riproduttori, amplificatori, altoparlanti, cavi)",
         "ru": "Магазин по продаже Hi-Fi аппаратуры и компонентов",
         "cs": "Obchod prodávající Hi-Fi audiokomponenty",
-        "ja": "高品質のオーディオ装置を販売する店"
+        "ja": "高品質のオーディオ装置を販売する店",
+        "pl": "Sklep ze sprzętem hi-fi."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/hifi",
@@ -7969,7 +8026,8 @@
         "pt": "Loja especializada em decoração de interiores.",
         "ru": "Салон дизайнера интерьеров, магазин.",
         "cs": "Obchod s dekoracemi interiéru",
-        "ja": "主に内装用品を販売する店舗。インテリアショップ。"
+        "ja": "主に内装用品を販売する店舗。インテリアショップ。",
+        "pl": "Sklep sprzedający produkty do dekoracji i wyposażenia wnętrz."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/interior_decoration",
@@ -8620,7 +8678,8 @@
         "es": "Cerrajería",
         "pt": "Local onde se consegue fazer cópias de chaves",
         "cs": "Obchod, kde vám zhotoví duplikát klíče.",
-        "ja": "合鍵を作ってもらえる店舗"
+        "ja": "合鍵を作ってもらえる店舗",
+        "pl": "Miejsce, gdzie można dorobić klucze."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/locksmith",
@@ -8713,7 +8772,9 @@
         "es": "Un establecimiento en el cual la única o principal función es la venta de lotería.",
         "pt": "Uma loja cujo propósito principal é a venda de bilhetes de loteria.",
         "cs": "Obchod jehož hlavním účelem je prodávat losy do loterie",
-        "ja": "宝くじ店。主に（または専ら）宝くじを販売している店舗です。"
+        "ja": "宝くじ店。主に（または専ら）宝くじを販売している店舗です。",
+        "de": "Ein Geschäft, das hauptsächlich Lottoscheinen verkauft.",
+        "pl": "Kolektura."
       }
     },
     {
@@ -8893,7 +8954,8 @@
         "pt": "Empresa que presta serviços de massagens.",
         "ru": "Массажный кабинет, салон.",
         "cs": "Masážní salón",
-        "ja": "マッサージ店"
+        "ja": "マッサージ店",
+        "pl": "Salon masażu."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/massage",
@@ -8983,7 +9045,8 @@
         "ru": "Магазин, торгующий медицинскими изделиями для частных лиц.",
         "cs": "Obchod, kde si můžete soukromě koupit zdravotnické potřeby.",
         "ja": "個人が医療用品を買うことができる店舗。医療用品店。",
-        "pl": "Sklep w którym można kupić sprzęt medyczny, rehabilitacyjny, ortopedyczny."
+        "pl": "Sklep w którym można kupić sprzęt medyczny, rehabilitacyjny, ortopedyczny.",
+        "es": "Una tienda donde se puede comprar equipo médico para particulares."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/medical_supply",
@@ -9034,7 +9097,8 @@
       "description": {
         "en": "Shop selling used military equipment",
         "fr": "Magasin vendant du matériel militaire utilisé",
-        "cs": "Obchod prodávající použité armádní vybavení"
+        "cs": "Obchod prodávající použité armádní vybavení",
+        "pl": "Sklep sprzedający sprzęt wojskowy."
       }
     },
     {
@@ -9152,7 +9216,8 @@
         "de": "Modellbaugeschäft",
         "es": "Una tienda que vende modelos a escala.",
         "cs": "Obchod prodávající miniaturní modely aut, lodí, letadel, ...",
-        "ja": "模型店。模型を販売する店舗です。"
+        "ja": "模型店。模型を販売する店舗です。",
+        "pl": "Sklep modelarski."
       },
       "tags": {"shop": "model"},
       "geometry": ["point", "area"],
@@ -9238,7 +9303,8 @@
         "en": "Shop offering small personal loans at high rates of interest",
         "ru": "Займы, мелкое потребительское кредтование, ростовщик",
         "cs": "Obchod nabízející malé osobní půjčky na vysoký úrok",
-        "ja": "消費者金融。少額の個人向けローンを高い金利で貸し付けます。"
+        "ja": "消費者金融。少額の個人向けローンを高い金利で貸し付けます。",
+        "pl": "Firma pożyczkowa."
       }
     },
     {
@@ -9332,7 +9398,8 @@
         "ru": "Магазин по продаже и/или мастерская по обслуживанию мототехники",
         "cs": "Obchod, který prodává motocykly a/nebo související příslušenství a služby.",
         "ja": "オートバイや関連するアクセサリの販売、サービスを提供する店",
-        "nl": "Een winkel die motoren, motoronderdelen, motorkleding, motoraccessoires verkoopt en/of reparaties uitvoert en/of motoren verhuurt."
+        "nl": "Een winkel die motoren, motoronderdelen, motorkleding, motoraccessoires verkoopt en/of reparaties uitvoert en/of motoren verhuurt.",
+        "pl": "Sklep sprzedający motocykle lub części do nich, akcesoria, odzież motocyklową."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/motorcycle",
@@ -9408,7 +9475,9 @@
         "en": "A place where you can get your motorcycles repaired",
         "pt": "Local onde se repara motocicletas",
         "cs": "Místo, kde si můžete nechat opravit motocykl.",
-        "ja": "オートバイを修理できる場所です"
+        "ja": "オートバイを修理できる場所です",
+        "es": "Un lugar donde puedes reparar tu motocicleta.",
+        "pl": "Warsztat motocyklowy."
       }
     },
     {
@@ -9500,7 +9569,8 @@
         "es": "Una tienda que principalmente vende música grabada (vinilos/CDs).",
         "ru": "Магазин, ориентированный на продажу записанной музыки (винил, компакт-диски)",
         "cs": "Obchod, který prodává hlavně nahranou hudbu (vinyly/CDčka)",
-        "ja": "レコード店。主に録音された音楽（レコード/CD）を販売する店舗"
+        "ja": "レコード店。主に録音された音楽（レコード/CD）を販売する店舗",
+        "pl": "Sklep z nagraniami muzycznymi."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/music",
@@ -9688,7 +9758,8 @@
         "it": "Edicola, rivenditore di giornali, articoli di cartoleria",
         "ru": "Магазин предлагающий в основном газеты и журналы",
         "cs": "Obchod prodávající noviny a časopisy",
-        "ja": "新聞や雑誌を販売する店。"
+        "ja": "新聞や雑誌を販売する店。",
+        "pl": "Sklep sprzedający głównie gazety i czasopisma."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/newsagent",
@@ -10049,7 +10120,9 @@
         "pt": "Caminhadas venda loja, equipamento de camping escalada, (e GPSes).",
         "ru": "Магазин по продаже туристического снаряжения и GPS.",
         "cs": "Obchod s potřebami pro kempování, turistiku, horolezectví a jiným vybavením do přírody",
-        "ja": "トレッキング、登山、キャンプ用品を売っている店。"
+        "ja": "トレッキング、登山、キャンプ用品を売っている店。",
+        "fr": "Magasin vendant du matériel de randonnées (ex : GPS), d'escalade et/ou de camping.",
+        "pl": "Sklep sprzedający sprzęt turystyczny, wspinaczkowy, kempingowy."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/outdoor",
@@ -10098,7 +10171,8 @@
       "description": {
         "en": "Shop primarily used to pick-up items ordered online. May have meager supply of products.",
         "de": "Der Laden wird hauptsächlich zur Abholung von online bestellten Artikeln verwendet.",
-        "ru": "Место, где можно забрать товар, купленный в интернет-магазине."
+        "ru": "Место, где можно забрать товар, купленный в интернет-магазине.",
+        "pl": "Placówka sklepu internetowego."
       }
     },
     {
@@ -10185,7 +10259,8 @@
         "pt": "Uma loja onde você pode comprar tintas.",
         "ru": "Магазин в котором можно купить краски.",
         "cs": "Obchod barvy, laky",
-        "ja": "塗料・絵の具を買うことができる店。"
+        "ja": "塗料・絵の具を買うことができる店。",
+        "pl": "Sklep sprzedający farby."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/paint",
@@ -10249,7 +10324,8 @@
         "fr": "Un magasin vendant diverses fournitures de fêtes.. Les produits vendus comprennent les décorations, les couverts jetables, les costumes, les cartes d'anniversaire, etc",
         "de": "Geschäft, das Partyzubehör wie Deko-Artikel, Einladungskarten und Kostüme anbietet.",
         "es": "Tienda que vende sumistros para fiestas tales como material decorativo, invitaciones y disfraces.",
-        "cs": "Obchod prodávající potřeby na party jako dekorace, pozvánka a kostýmy."
+        "cs": "Obchod prodávající potřeby na party jako dekorace, pozvánka a kostýmy.",
+        "pl": "Sklep sprzedający artykuły imprezowe."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/party",
@@ -10525,7 +10601,8 @@
         "es": "Tienda donde se venden perfumes.",
         "pt": "Uma loja que vende perfumes.",
         "cs": "Parfumerie",
-        "ja": "香水を販売する店舗です。"
+        "ja": "香水を販売する店舗です。",
+        "pl": "Sklep sprzedający perfumy."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/perfumery",
@@ -10782,7 +10859,9 @@
         "de": "Geschäft für Foto- und Videozubehör",
         "pt": "Uma loja de fotos que lida com fotos ou vídeos de qualquer tipo.",
         "cs": "Obchod pro věci související s fotografií nebo videem",
-        "ja": "あらゆる形で写真やビデオを扱う店。"
+        "ja": "あらゆる形で写真やビデオを扱う店。",
+        "es": "Una tienda que trata con fotos o videos de cualquier manera.",
+        "pl": "Sklep fotograficzny."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/photo",
@@ -10878,7 +10957,8 @@
       },
       "description": {
         "en": "A shop that sells or refills printer ink cartridges",
-        "fr": "Spécialiste de vente d'encre pour imprimante"
+        "fr": "Spécialiste de vente d'encre pour imprimante",
+        "pl": "Sklep sprzedający tusze i tonery do drukarek."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/printer_ink",
@@ -11090,7 +11170,8 @@
         "it": "Negozio focalizzato sulla vendita di componenti e prodotti elettronici, dispositivi di misurazione radio e batterie per radio e parti elettroniche.",
         "ru": "Магазин радиодеталей",
         "cs": "Obchod zaměřený na elektronické součástky a produkty, zařízení pro měření rádia a potřeby pro rádio a elektroniku.",
-        "ja": "主に電子部品、エレクトロニクス製品、電波測定機器、ラジオやエレクトロニクスのサプライ品を販売する店舗です。"
+        "ja": "主に電子部品、エレクトロニクス製品、電波測定機器、ラジオやエレクトロニクスのサプライ品を販売する店舗です。",
+        "pl": "Sklep sprzedający części elektroniczne."
       }
     },
     {
@@ -11312,7 +11393,8 @@
         "de": "Tauchausrüstungsladen",
         "pt": "Uma loja que vende equipamentos para mergulho e/ou acessórios e serviços relacionados",
         "cs": "Obchod, ve kterém se prodává vybavení pro potápění a/nebo související příslušenství a služby.",
-        "ja": "スキューバダイビングの装備や、関連するアクセサリ、サービスを販売する店舗"
+        "ja": "スキューバダイビングの装備や、関連するアクセサリ、サービスを販売する店舗",
+        "pl": "Sklep sprzedający sprzęt do nurkowania."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/scuba_diving",
@@ -11674,7 +11756,8 @@
       "presets": [],
       "lbl": {"en": "Ski", "fr": "Vente de ski"},
       "description": {
-        "en": "A shop that sells skis and/or related accessories and services"
+        "en": "A shop that sells skis and/or related accessories and services",
+        "pl": "Sklep sprzedający sprzęt narciarski."
       },
       "tags": {"shop": "ski"},
       "geometry": ["point", "area"],
@@ -11829,7 +11912,8 @@
         "es": "Una tienda que vende equipamiento y ropa deportiva.",
         "ru": "Спортивный магазин",
         "cs": "Obchod se sportovními potřebami a oblečením",
-        "ja": "スポーツの装備やスポーツウェアを販売する店舗です。"
+        "ja": "スポーツの装備やスポーツウェアを販売する店舗です。",
+        "pl": "Sklep ze sprzętem i odzieżą sportową."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/sports",
@@ -12004,7 +12088,8 @@
         "en": "storage of household goods, i.e. self storage",
         "de": "Lagervermietung",
         "es": "Trasteros o espacio para almacenamiento.",
-        "ja": "レンタル倉庫、貸し倉庫、トランクルーム、レンタル収納スペース。"
+        "ja": "レンタル倉庫、貸し倉庫、トランクルーム、レンタル収納スペース。",
+        "pl": "Miejsce oferujące powierzchnie lub kontenery do wynajęcia na dłuższy okres do przechowywania przedmiotów osobistych."
       },
       "deprecated": true,
       "alert": {"en": "", "fr": "Ne pas utiliser"}
@@ -12165,7 +12250,8 @@
         "pt": "Uma loja que vende equipamentos e suprimentos de piscinas.",
         "ru": "Магазин принадлежностей и расходных материалов для плавательных и других бассейнов",
         "cs": "Prodej bazénů a příslušenství",
-        "ja": "遊泳プール用品や備品を販売する店舗"
+        "ja": "遊泳プール用品や備品を販売する店舗",
+        "pl": "Sklep sprzedający akcesoria do basenów."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/swimming_pool",
@@ -12246,7 +12332,8 @@
         "en": "A place where clothing is made, repaired, or altered professionally, especially suits and men's clothing.",
         "de": "Ein Ort, an dem Kleidung professionell hergestellt, repariert oder verändert wird, insbesondere Anzüge und Herrenbekleidung.",
         "cs": "Místo, kde se oblečení vyrábí, opravuje, nebo profesionálně upravuje. Zejména mužské oděvy a obleky.",
-        "ja": "仕立屋。プロが服（特にスーツや紳士服）を制作したり、修理したり、直したりする場所です。"
+        "ja": "仕立屋。プロが服（特にスーツや紳士服）を制作したり、修理したり、直したりする場所です。",
+        "pl": "Miejsce oferujące usługi krawieckie."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/tailor",
@@ -12633,7 +12720,8 @@
         "en": "A store that sells tiles",
         "de": "Fliesenhändler, Fliesengeschäft",
         "es": "Una tienda que vende azulejos.",
-        "cs": "Obchod prodávající dlaždice"
+        "cs": "Obchod prodávající dlaždice",
+        "pl": "Sklep sprzedający płytki ceramiczne."
       }
     },
     {
@@ -12723,7 +12811,8 @@
         "it": "Tabaccaio",
         "ru": "Табачный магазин",
         "cs": "Prodejna tabáku",
-        "ja": "たばこを販売する店で、その他の便利な商品を売っている可能性があります"
+        "ja": "たばこを販売する店で、その他の便利な商品を売っている可能性があります",
+        "pl": "Sklep z wyrobami tytoniowymi."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/tobacco",
@@ -12772,7 +12861,10 @@
       "geometry": ["point", "area"],
       "iDRef": "shop/tool_hire",
       "tags": {"shop": "tool_hire"},
-      "description": {"en": "A shop hiring out tools"}
+      "description": {
+        "en": "A shop hiring out tools",
+        "pl": "Wypożyczalnia narzędzi."
+      }
     },
     {
       "icon": "maki-rocket",
@@ -12867,7 +12959,8 @@
         "pt": "A loja de brinquedos.",
         "ru": "Магазин игрушек.",
         "cs": "Obchod zaměřený na prodej dětských hraček",
-        "ja": "おもちゃ屋、玩具店。主に子ども向けの玩具を販売する店"
+        "ja": "おもちゃ屋、玩具店。主に子ども向けの玩具を販売する店",
+        "pl": "Sklep sprzedający zabawki dla dzieci."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/toys",
@@ -12938,7 +13031,8 @@
         "es": "Un establecimiento que vende a comercios y profesionales, pero también a consumidores normales.",
         "ru": "Место оптовой торговли",
         "cs": "Obchod, kde se prodává zboží řemeslníkům, ale také běžně koncovým zákazníkům.",
-        "ja": "建築資材店。特定の業者向けの商品を販売する場所で、ふつうは一般消費者にも販売します。"
+        "ja": "建築資材店。特定の業者向けの商品を販売する場所で、ふつうは一般消費者にも販売します。",
+        "pl": "Skład materiałów budowlanych."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/trade",
@@ -13198,7 +13292,9 @@
         "ru": "Магазин, который в настоящее время не используется.",
         "cs": "Obchod, který je v současnosti nevyužíván.",
         "ja": "現在は使用されていない店舗です。",
-        "pl": "Wolne pomieszczenie na sklep."
+        "pl": "Wolne pomieszczenie na sklep.",
+        "es": "Un local comercial que actualmente no está en uso.",
+        "gl": "Un local comercial que actualmente non está en uso."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/vacant",
@@ -13287,7 +13383,8 @@
         "ru": "Магазин по продаже пылесосов",
         "cs": "Obchod prodávající vysavače",
         "ja": "掃除機を販売する店舗",
-        "de": "Ein Staubsaugergeschäft"
+        "de": "Ein Staubsaugergeschäft",
+        "pl": "Sklep sprzedający odkurzacze."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/vacuum_cleaner",
@@ -13482,7 +13579,8 @@
         "pt": "Uma loja que vende ou aluga vídeos / DVDs",
         "ru": "Прокат или продажа видео",
         "cs": "Obchod, který prodává či půjčuje videa/DVDčka.",
-        "ja": "ビデオや DVD を販売したり貸し出したりする店舗"
+        "ja": "ビデオや DVD を販売したり貸し出したりする店舗",
+        "pl": "Sklep lub wypożyczalnia filmów DVD lub VHS."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/video",
@@ -13573,7 +13671,9 @@
         "de": "Videospielladen",
         "es": "Tienda que vende videojuegos.",
         "cs": "Obchod prodávající počítačové hry.",
-        "ja": "テレビゲームを販売する店舗。"
+        "ja": "テレビゲームを販売する店舗。",
+        "ru": "Shop selling video games.",
+        "pl": "Sklep sprzedający gry wideo."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/video_games",
@@ -13663,7 +13763,8 @@
         "pt": "Relojoaria: uma loja que vende exclusivamente ou maioritariamente relógios.",
         "ru": "Магазин, торгующий наручными часами.",
         "cs": "Obchod, který prodává hodinky.",
-        "ja": "腕時計を販売する店舗です。"
+        "ja": "腕時計を販売する店舗です。",
+        "pl": "Sklep sprzedający zegarki."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/watches",
@@ -13883,7 +13984,8 @@
         "de": "Waffenladen",
         "cs": "Obchod zaměřený na zbraně jako jsou nože, pistole, pušky, atd.",
         "ja": "主にナイフや銃などの武器を販売する店。",
-        "es": "Tienda especializada en la venta de armas, como cuchillos, pistolas, rifles, etc."
+        "es": "Tienda especializada en la venta de armas, como cuchillos, pistolas, rifles, etc.",
+        "pl": "Sklep sprzedający broń."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/weapons",
@@ -14035,7 +14137,8 @@
         "es": "Una tienda que vende persianas.",
         "ru": "Магазин продающий шторы, жалюзи",
         "cs": "Prodej žaluzií",
-        "ja": "窓のブラインドを販売する店舗です。"
+        "ja": "窓のブラインドを販売する店舗です。",
+        "pl": "Sklep sprzedający żaluzje i rolety okienne."
       },
       "geometry": ["point", "area"],
       "iDRef": "shop/window_blind",
@@ -14189,7 +14292,13 @@
         "uk": "рушник,скатертина,простирадло,наволочка,ковдра,штора,хустка,халат,серветка"
       },
       "geometry": ["point", "area"],
-      "iDRef": "shop/household_linen"
+      "iDRef": "shop/household_linen",
+      "description": {
+        "en": "",
+        "fr": "Un magasin qui vend du linge de maison.",
+        "ru": "Магазин по продаже домашнего белья.",
+        "pl": "Sklep sprzedający pościel, ręczniki i inne tkaniny używane w domu."
+      }
     },
     {
       "icon": "mi-health",
@@ -14473,7 +14582,11 @@
       "tags": {"healthcare": "birthing_center"},
       "moreFields": [],
       "id": "healthcare/birthing_center",
-      "description": {"en": "", "es": "Un centro de parto no clínico."}
+      "description": {
+        "en": "",
+        "es": "Un centro de parto no clínico.",
+        "de": "Geburtshaus, Geburtszentrum"
+      }
     },
     {
       "icon": "maki-blood-bank",
@@ -14568,7 +14681,8 @@
         "ru": "Место, где можно сдать кровь, плазму и/или тромбоциты, а также, возможно, образцы стволовых клеток",
         "cs": "Centrum, kde můžete darovat krev, plazmu či krevní destičky a možná si nechat odebrat vzorky kmenových buněk.",
         "ja": "献血（全血献血、成分献血）を行うことができる施設です。施設によっては、幹細胞のサンプル抽出も可能な場合があります。",
-        "nl": "Plaats waar je bloed, plasma en/of bloedplaatjes kan doneren, en eventueel stamcelmonsters kan laten nemen"
+        "nl": "Plaats waar je bloed, plasma en/of bloedplaatjes kan doneren, en eventueel stamcelmonsters kan laten nemen",
+        "fr": "Lieu de collecte de sang, plasma ou plaquettes"
       },
       "geometry": ["point", "area"],
       "iDRef": "healthcare/blood_donation",
@@ -14592,7 +14706,8 @@
       "lbl": {"en": "Clinic"},
       "tags": {"healthcare": "clinic"},
       "geometry": ["point", "area"],
-      "id": "healthcare/clinic"
+      "id": "healthcare/clinic",
+      "description": {"en": "", "de": "Klinik für ambulante Behandlung"}
     },
     {
       "icon": "fa-comments",
@@ -14661,7 +14776,8 @@
       "description": {
         "en": "A place to get medical attention or a check up from a physician.",
         "fr": "Docteur",
-        "de": "Arztpraxis"
+        "de": "Arztpraxis",
+        "es": "Un lugar para recibir atención médica o un chequeo de un médico. Se utiliza además de amenity=doctors"
       },
       "tags": {"healthcare": "doctor"},
       "geometry": ["point", "area"],
@@ -14733,7 +14849,11 @@
       "iDRef": "healthcare/hospice",
       "tags": {"healthcare": "hospice"},
       "moreFields": [],
-      "id": "healthcare/hospice"
+      "id": "healthcare/hospice",
+      "description": {
+        "en": "",
+        "de": "Ein Hospiz, das unheilbar kranken Menschen Palliativpflege und Unterstützung für ihre Angehörigen bietet"
+      }
     },
     {
       "icon": "mi-health",
@@ -14745,7 +14865,8 @@
       "id": "healthcare/hospital",
       "description": {
         "en": "A hospital providing in-patient medical treatment",
-        "de": "Ein Krankenhaus"
+        "de": "Ein Krankenhaus",
+        "es": "Un hospital que proporciona tratamiento médico a los pacientes hospitalizados, utilizado además de amenity=hospital"
       }
     },
     {
@@ -14808,7 +14929,8 @@
         "fr": "fr=Laboratoire_de_biologie_médicale=laboratoire de biologie médicale Un laboratoire de biologie médicale, est un lieu permettant d'analyser des fluides corporels tels que le sang, l'urine, etc.",
         "de": "Medizinisches Labor",
         "ru": "Медицинская лаборатория",
-        "pl": "Miejsce w którym poddaje się analizie pobrane próbki biologiczne."
+        "pl": "Miejsce w którym poddaje się analizie pobrane próbki biologiczne.",
+        "es": "Un laboratorio médico, un lugar que realiza análisis y diagnósticos de los fluidos corporales"
       },
       "geometry": ["point", "area"],
       "iDRef": "healthcare/laboratory",
@@ -15671,7 +15793,8 @@
         "zh": "艺术中心",
         "ca": "Centre artístic",
         "eo": "Belart-centro",
-        "no": "Kunst Senter"
+        "no": "Kunst Senter",
+        "eu": "Arte Zentro"
       },
       "terms": {
         "en": "",
@@ -15787,7 +15910,8 @@
         "vi": "Máy Rút tiền",
         "zh": "自动柜员机（ATM）。",
         "ca": "Caixer automàtic",
-        "eo": "Bankaŭtomato"
+        "eo": "Bankaŭtomato",
+        "eu": "ATM"
       },
       "terms": {
         "en": "money,cash,machine",
@@ -15906,7 +16030,8 @@
         "vi": "Ngân hàng",
         "zh": "银行",
         "ca": "Banc",
-        "eo": "Bankejo"
+        "eo": "Bankejo",
+        "eu": "Banku"
       },
       "terms": {
         "en": "credit union,check,deposit,fund,investment,repository,reserve,safe,savings,stock,treasury,trust,vault",
@@ -16034,7 +16159,8 @@
         "vi": "Quán rượu",
         "zh": "酒吧",
         "ca": "Bar de copes",
-        "eo": "Drinkejo"
+        "eo": "Drinkejo",
+        "eu": "Taberna"
       },
       "terms": {
         "en": "dive,beer,bier,booze",
@@ -16078,7 +16204,8 @@
         "cs": "Bar - podnik, kde se prodávají alkoholické nápoje ke konzumaci na místě, charakteristický hlučnou a živou atmosférou.",
         "el": "Κατάστημα στο οποίο σερβίρονται κυρίως οινοπνευματώδη ποτά, και συνήθως έχει δυνατή μουσική.",
         "ja": "バー。その場で飲むための酒類を販売する施設、騒がしくて活気のある雰囲気が特徴です。ふつうは食事として食べるための食品は販売していません。音楽は普通大音量で、立ったままでいなければならない場合もしばしばあります。",
-        "pl": "Bar."
+        "pl": "Bar.",
+        "fr": "un établissement commercial qui vend des boissons alcoolisées à consommer sur place. Les bars sont caractérisés par une atmosphère bruyante et vibrante, comme une fête. Généralement on n'y vend pas de véritable repas. La musique est généralement forte et on doit souvent rester debout."
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/bar",
@@ -16197,7 +16324,8 @@
         "zh": "烧烤设施",
         "ca": "Barbacoa/graella",
         "eo": "Rostilo",
-        "no": "Grill"
+        "no": "Grill",
+        "eu": "Barbakoa/Parrila"
       },
       "terms": {
         "en": "bbq,grill",
@@ -16293,7 +16421,8 @@
         "vi": "Băng ghế",
         "zh": "长凳",
         "ca": "Banc",
-        "eo": "Benko"
+        "eo": "Benko",
+        "eu": "Banku"
       },
       "terms": {
         "en": "seat,chair",
@@ -16410,7 +16539,8 @@
         "vi": "Chỗ Đậu Xe đạp",
         "zh": "自行车停放处",
         "ca": "Aparcament per a  bicicletes",
-        "eo": "Bicikla parkumejo"
+        "eo": "Bicikla parkumejo",
+        "eu": "Bizikletentzako Aparkalekua"
       },
       "terms": {
         "en": "bike,cycle parking,cycling",
@@ -16688,7 +16818,8 @@
         "vi": "Cho thuê Xe đạp",
         "zh": "自行车租赁处",
         "ca": "Lloguer de bicicletes",
-        "eo": "Bicikl-pruntejo"
+        "eo": "Bicikl-pruntejo",
+        "eu": "Bizikleten Alokairua "
       },
       "terms": {
         "en": "bike,bicycle,bikeshare,bike share,bicycle share,cycle dock,cycle hub,cycleshare,cycling",
@@ -16804,7 +16935,8 @@
         "zh": "自行车维修工具站",
         "ca": "Lloc de reparació de Bicicletes",
         "eo": "Bicikla mem-riparejo",
-        "no": "Sykkel Mekkestativ"
+        "no": "Sykkel Mekkestativ",
+        "eu": "Bizikleta konpontzeko tresneriaren postua"
       },
       "terms": {
         "en": "bike chain,bike multitool,bike repair,bike tools,cycle pump,cycle repair,cycling",
@@ -16846,7 +16978,8 @@
         "pt": "Estação de reparação de bicicletas: local com ferramentas básicas para reparação de bicicletas pelo próprio ciclista, normalmente ao ar livre, em parques e de forma gratuita disponíveis 24 horas por dia.",
         "cs": "Stojánek pro opravu bicyklu vlastními silami.",
         "ja": "自分で自転車を修理するための公共の道具です。",
-        "pl": "Publiczne miejsce do samodzielnej naprawy rowerów."
+        "pl": "Publiczne miejsce do samodzielnej naprawy rowerów.",
+        "ru": "Инструменты для самостоятельного ремонта велосипедов. Используйте tag:shop=bicycle для профессиональной мастерской, возможно в комбинации с этим ключом если доступны инструменты для самостоятельного ремонта. Если это возможно, указывайте тег key:brand."
       }
     },
     {
@@ -16878,7 +17011,8 @@
         "eo": "Bierĝardeno",
         "tr": "Bira bahçesi",
         "no": "Ølhage",
-        "fa": "بیرگارتن (حیاط با سرو آبجو - ریشه در مونیخ آلمان)"
+        "fa": "بیرگارتن (حیاط با سرو آبجو - ریشه در مونیخ آلمان)",
+        "eu": "Biergarten"
       },
       "terms": {
         "en": "beer,bier,booze",
@@ -16966,7 +17100,8 @@
         "vi": "Cho thuê Tàu",
         "zh": "船舶租赁处",
         "ca": "Lloguer d'embarcacions",
-        "eo": "Boat-pruntejo"
+        "eo": "Boat-pruntejo",
+        "eu": "Ontzi alokairu"
       },
       "terms": {
         "en": "",
@@ -17084,7 +17219,8 @@
         "zh": "货币兑换",
         "ca": "Canvi de divisa",
         "eo": "Monŝanĝejo",
-        "no": "Valutaveksling"
+        "no": "Valutaveksling",
+        "eu": "Moneta trukea"
       },
       "terms": {
         "en": "bureau de change,money changer",
@@ -17182,7 +17318,8 @@
         "zh": "公交车站 / 枢纽站",
         "ca": "Estació d'autobusos",
         "eo": "Aŭtobus-stacio",
-        "sk": "Autobusová zastávka / Terminál"
+        "sk": "Autobusová zastávka / Terminál",
+        "eu": "Autobus geltoki / Terminal"
       },
       "description": {
         "en": "A bus station would usually be a terminus where many routes stop / start, and where you can change between routes, etc.",
@@ -17260,7 +17397,8 @@
         "vi": "Quán Cà phê",
         "zh": "咖啡",
         "ca": "Cafè",
-        "eo": "Kafejo"
+        "eo": "Kafejo",
+        "eu": "Kafetegi"
       },
       "terms": {
         "en": "bistro,coffee,tea",
@@ -17460,7 +17598,8 @@
         "vi": "Cho thuê Xe",
         "zh": "汽车租赁",
         "ca": "Lloguer de cotxes",
-        "eo": "Aŭtomobil-pruntejo"
+        "eo": "Aŭtomobil-pruntejo",
+        "eu": "Auto Alokairua"
       },
       "terms": {
         "en": "",
@@ -17663,7 +17802,8 @@
         "vi": "Rửa xe",
         "zh": "洗车",
         "ca": "Rentat de cotxes",
-        "eo": "Aŭtopurigejo"
+        "eo": "Aŭtopurigejo",
+        "eu": "Auto garbiketa"
       },
       "terms": {
         "en": "",
@@ -17767,7 +17907,8 @@
         "vi": "Sòng bạc",
         "zh": "赌场",
         "ca": "Casino",
-        "eo": "Monludejo"
+        "eo": "Monludejo",
+        "eu": "Kasino"
       },
       "terms": {
         "en": "gambling,roulette,craps,poker,blackjack",
@@ -17874,7 +18015,8 @@
         "vi": "Trạm Sạc Pin",
         "zh": "充电站",
         "ca": "Estació de càrrega",
-        "eo": "Ŝargostacio"
+        "eo": "Ŝargostacio",
+        "eu": "Kargatzeko geltokia"
       },
       "terms": {
         "en": "EV,Electric Vehicle,Supercharger",
@@ -17969,7 +18111,8 @@
         "vi": "Giữ trẻ",
         "zh": "托儿所/保育园",
         "ca": "Llar d'Infants",
-        "eo": "Bebovartejo"
+        "eo": "Bebovartejo",
+        "eu": "Haurtzendegi/ Ume zaintza"
       },
       "terms": {
         "en": "daycare,orphanage,playgroup",
@@ -18078,7 +18221,8 @@
         "vi": "Rạp phim",
         "zh": "电影院",
         "ca": "Cinema",
-        "eo": "Kinejo"
+        "eo": "Kinejo",
+        "eu": "Zinema"
       },
       "terms": {
         "en": "drive-in,film,flick,movie,theater,picture,show,screen",
@@ -18195,7 +18339,8 @@
         "vi": "Trạm Y tế",
         "zh": "诊所",
         "ca": "Clínica",
-        "eo": "Kuracistejo (centro de komunuma sano)"
+        "eo": "Kuracistejo (centro de komunuma sano)",
+        "eu": "Erietxe"
       },
       "terms": {
         "en": "medical,urgentcare",
@@ -18293,7 +18438,8 @@
         "zh": "流产诊所",
         "ca": "Clínica d'avortament",
         "eo": "Kliniko de abortigo",
-        "fa": "کلینیک سقط جنین"
+        "fa": "کلینیک سقط جنین",
+        "eu": "Abortu klinika"
       },
       "terms": {
         "en": "",
@@ -18367,7 +18513,8 @@
         "zh": "生育诊所",
         "ca": "Clínica de fertilitat",
         "eo": "Kliniko de fekundeco",
-        "fa": "کلینیک باروری"
+        "fa": "کلینیک باروری",
+        "eu": "Ugalkortasun klinika"
       },
       "terms": {
         "en": "egg,fertility,reproductive,sperm,ovulation",
@@ -18446,7 +18593,8 @@
         "vi": "Đồng hồ",
         "zh": "时钟",
         "ca": "Rellotge",
-        "eo": "Horloĝo"
+        "eo": "Horloĝo",
+        "eu": "Ordulari"
       },
       "terms": {
         "en": "time",
@@ -18609,7 +18757,8 @@
         "vi": "Sân trường Cao đẳng",
         "zh": "学院",
         "ca": "Escola professional",
-        "eo": "Postmezgrada lernejo (ISCED 4)"
+        "eo": "Postmezgrada lernejo (ISCED 4)",
+        "eu": "Unibertsitate Eremu"
       },
       "terms": {
         "en": "university,undergraduate school",
@@ -18706,7 +18855,8 @@
         "zh": "社区活动中心",
         "ca": "Centre Comunitari",
         "eo": "Komunuma centro",
-        "no": "Samfunnshus"
+        "no": "Samfunnshus",
+        "eu": "Gizarte Etxe"
       },
       "terms": {
         "en": "event,hall",
@@ -18867,7 +19017,8 @@
         "zh": "压缩空气",
         "ca": "Aire comprimit",
         "eo": "Gaskunpremilo",
-        "no": "Komprimert Luft"
+        "no": "Komprimert Luft",
+        "eu": "Aire konpromitua"
       },
       "terms": {
         "en": "",
@@ -19036,7 +19187,8 @@
         "vi": "Tòa",
         "zh": "法院",
         "ca": "Jutjat",
-        "eo": "Juĝdomo"
+        "eo": "Juĝdomo",
+        "eu": "Epaitegi"
       },
       "terms": {
         "en": "",
@@ -19145,7 +19297,8 @@
         "zh": "共享办公空间",
         "ca": "Espai de coworking",
         "eo": "Loko por samloka laborado (ang. coworking)",
-        "no": "Medarbeider Rom"
+        "no": "Medarbeider Rom",
+        "eu": "Coworking espazioa"
       },
       "description": {
         "en": "A place where people can go to work (might require a fee); not limited to a single employer",
@@ -19203,7 +19356,8 @@
         "vi": "Lò Thiêu",
         "zh": "火葬场",
         "ca": "Crematori",
-        "eo": "Kadavrobruligejo"
+        "eo": "Kadavrobruligejo",
+        "eu": "Errausketa-labe"
       },
       "terms": {
         "en": "cemetery,funeral",
@@ -19319,7 +19473,8 @@
         "vi": "Nha sĩ",
         "zh": "牙科医院",
         "ca": "Dentista",
-        "eo": "Dentistejo"
+        "eo": "Dentistejo",
+        "eu": "Dentista"
       },
       "terms": {
         "en": "tooth,teeth",
@@ -19502,7 +19657,8 @@
         "vi": "Bác sĩ",
         "zh": "医师",
         "ca": "Doctor",
-        "eo": "Kabineto de kuracisto"
+        "eo": "Kabineto de kuracisto",
+        "eu": "Mediku"
       },
       "terms": {
         "en": "medic*,physician",
@@ -19766,7 +19922,8 @@
         "vi": "Nước Uống",
         "zh": "饮水处",
         "ca": "Aigua apta per al consum",
-        "eo": "Trinkakvejo"
+        "eo": "Trinkakvejo",
+        "eu": "Ur edangarria"
       },
       "terms": {
         "en": "potable water source,water fountain,drinking fountain,bubbler,water tap",
@@ -19868,7 +20025,8 @@
         "vi": "Trường Dạy Lái Xe",
         "zh": "驾校",
         "ca": "Autoescola",
-        "eo": "Stirlernejo"
+        "eo": "Stirlernejo",
+        "eu": "Auto-eskola"
       },
       "terms": {
         "en": "",
@@ -19974,7 +20132,8 @@
         "vi": "Tòa đại sứ",
         "zh": "使馆",
         "ca": "Ambaixada",
-        "eo": "Ambasadejo"
+        "eo": "Ambasadejo",
+        "eu": "Enbaxada"
       },
       "description": {
         "en": "A representation of a country in another country.",
@@ -20133,7 +20292,8 @@
         "vi": "Nhà hàng Ăn nhanh",
         "zh": "快餐",
         "ca": "Local de menjar ràpid",
-        "eo": "Rapidmanĝejo"
+        "eo": "Rapidmanĝejo",
+        "eu": "Janari azkarra"
       },
       "terms": {
         "en": "restaurant,takeaway",
@@ -20989,7 +21149,8 @@
         "vi": "Trạm Cứu hỏa",
         "zh": "消防站",
         "ca": "Parc de bombers",
-        "eo": "Fajrobrigadejo"
+        "eo": "Fajrobrigadejo",
+        "eu": "Suhiltzaile-etxe"
       },
       "terms": {
         "en": "",
@@ -21034,7 +21195,9 @@
         "ru": "Используется для обозначения пожарной части.",
         "cs": "Hasičská stanice nebo požární zbrojnice.",
         "fi": "Pelastusasema",
-        "ja": "消防署。消防本部・消防団が運営する基地です。"
+        "ja": "消防署。消防本部・消防団が運営する基地です。",
+        "it": "Una stazione dove operano i vigili del fuoco.",
+        "es": "Una estación desde la que opera una brigada de bomberos."
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/fire_station",
@@ -21092,7 +21255,8 @@
         "vi": "Trung tâm Ẩm thực",
         "zh": "美食广场",
         "eo": "Manĝ-bazaro",
-        "no": "Mathall"
+        "no": "Mathall",
+        "eu": "Bazkaltzeko eremua"
       },
       "terms": {
         "en": "fast food,restaurant,food",
@@ -21199,7 +21363,8 @@
         "vi": "Vòi nước",
         "zh": "喷泉",
         "ca": "Font",
-        "eo": "Fontano"
+        "eo": "Fontano",
+        "eu": "Iturri"
       },
       "terms": {
         "en": "basin, water",
@@ -21307,7 +21472,8 @@
         "vi": "Cây xăng",
         "zh": "加油站",
         "ca": "Benzinera",
-        "eo": "Benzinejo"
+        "eo": "Benzinejo",
+        "eu": "Gasolindegi"
       },
       "terms": {
         "en": "petrol,fuel,gasoline,propane,diesel,lng,cng,biodiesel",
@@ -21474,7 +21640,8 @@
         "vi": "Nghĩa địa tại Nhà thờ",
         "zh": "墓地",
         "ca": "Cementiri",
-        "eo": "Tombejo (ĉirkaŭpreĝeja)"
+        "eo": "Tombejo (ĉirkaŭpreĝeja)",
+        "eu": "Hilerri"
       },
       "terms": {
         "en": "burial ground, cemetary, cemetery, churchyard, columbarium, grave yard, graveyard, mausoleum, tomb",
@@ -21523,7 +21690,8 @@
         "ja": "墓地。宗教施設のそばで人（動物の場合もある）を埋葬する場所。",
         "nl": "Een kleine begraafplaats",
         "pl": "Miejsce pochówku.",
-        "uk": "Місце для поховання людей (іноді тварин) що знаходиться поряд з культовим місцем."
+        "uk": "Місце для поховання людей (іноді тварин) що знаходиться поряд з культовим місцем.",
+        "da": "A place where people (or sometimes animals) are buried which is close to a place of worship."
       },
       "warning": {"en": "", "fr": "Très rare en France"},
       "geometry": ["point", "area"],
@@ -21570,7 +21738,8 @@
         "zh": "砂箱",
         "ca": "Contenidor de sorra",
         "eo": "Ujo kun sablo kaj salo",
-        "no": "Strøkasse"
+        "no": "Strøkasse",
+        "eu": "Hare-ontzi"
       },
       "terms": {
         "en": "salt,sand",
@@ -21693,7 +21862,8 @@
         "vi": "Sân Bệnh viện",
         "zh": "医院",
         "ca": "Hospital",
-        "eo": "Malsanuleja tereno"
+        "eo": "Malsanuleja tereno",
+        "eu": "Ospitalearen Eremua"
       },
       "terms": {
         "en": "clinic,doctor,emergency room,health,infirmary,institution,sanatorium,sanitarium,sick,surgery,ward",
@@ -21815,7 +21985,8 @@
         "vi": "Chỗ Săn Cao",
         "zh": "狩猎站",
         "ca": "Punt de caça",
-        "eo": "Altembusko ĉasada"
+        "eo": "Altembusko ĉasada",
+        "eu": "Ehiza postua"
       },
       "terms": {
         "en": "game,gun,lookout,rifle,shoot*,wild,watch",
@@ -21909,7 +22080,8 @@
         "zh": "冰淇淋店",
         "ca": "Gelateria",
         "eo": "Glaciaĵejo",
-        "no": "Iskrem Butikk"
+        "no": "Iskrem Butikk",
+        "eu": "Izozki denda"
       },
       "terms": {
         "en": "gelato,sorbet,sherbet,frozen,yogurt",
@@ -22025,7 +22197,8 @@
         "vi": "Quán Internet",
         "zh": "网吧",
         "ca": "Cifercafè",
-        "eo": "Retkafejo"
+        "eo": "Retkafejo",
+        "eu": "Internet kafetegi"
       },
       "terms": {
         "en": "cybercafe,taxiphone,teleboutique,coffee,cafe,net,lanhouse",
@@ -22239,7 +22412,8 @@
         "cs": "Mateřská škola.",
         "el": "'''Νηπιαγωγείο, Βρεφονηπιακός σταθμός, Παιδικός σταθμός''' - Ίδρυμα που παρέχει φροντίδα και ίσως κάποιου είδους εκπαίδευση σε παιδιά προσχολικής ηλικίας",
         "ja": "幼稚園や保育園。就学前の子供の面倒を見たり、（普通は）早期教育を施したりする場所です。",
-        "pl": "Miejsce opieki nad dziećmi w wieku przedszkolnym."
+        "pl": "Miejsce opieki nad dziećmi w wieku przedszkolnym.",
+        "uk": "Для позначення дитячих садків."
       },
       "geometry": ["area", "point"],
       "iDRef": "amenity/kindergarten",
@@ -22300,7 +22474,8 @@
         "ca": "Escola d'idiomes",
         "eo": "Lingva lernejo",
         "sk": "Jazyková škola",
-        "sr": "Језичка школа"
+        "sr": "Језичка школа",
+        "eu": "Hizkuntz eskola"
       },
       "terms": {
         "en": "esl",
@@ -22530,7 +22705,8 @@
         "vi": "Thư viện",
         "zh": "图书馆",
         "ca": "Biblioteca",
-        "eo": "Biblioteko"
+        "eo": "Biblioteko",
+        "eu": "Liburutegi"
       },
       "terms": {
         "en": "book",
@@ -22651,7 +22827,8 @@
         "en": "A loading dock.",
         "ru": "Погрузочная рампа.",
         "ja": "貨物の搬出入口",
-        "pl": "Dok załadunkowy."
+        "pl": "Dok załadunkowy.",
+        "fr": "Un quai de chargement"
       }
     },
     {
@@ -22798,7 +22975,8 @@
         "vi": "Chợ phiên",
         "zh": "市场",
         "ca": "Mercat",
-        "eo": "Bazaro"
+        "eo": "Bazaro",
+        "eu": "Merkatu"
       },
       "terms": {
         "en": "",
@@ -22884,7 +23062,8 @@
         "vi": "Sân Tu viện",
         "eo": "Monaĥeja tereno",
         "fa": "زمین های صومعه",
-        "sr": "Манастирско земљиште"
+        "sr": "Манастирско земљиште",
+        "eu": "Monastegiaren eremu"
       },
       "terms": {
         "en": "abbey,basilica,bethel,cathedral,chancel,chantry,chapel,church,fold,house of God,house of prayer,house of worship,minster,mission,monastery,mosque,oratory,parish,sacellum,sanctuary,shrine,synagogue,tabernacle,temple",
@@ -23037,7 +23216,8 @@
         "vi": "Chỗ Đậu Xe máy",
         "zh": "摩托车停车场",
         "ca": "Aparcament per a motocicletes",
-        "eo": "Motorcikla parkumejo"
+        "eo": "Motorcikla parkumejo",
+        "eu": "Motorren aparkalekua"
       },
       "terms": {
         "en": "",
@@ -23130,7 +23310,8 @@
         "ca": "Escola de música",
         "eo": "Muzika lernejo",
         "sk": "Hudobná škola",
-        "sr": "Музичка школа"
+        "sr": "Музичка школа",
+        "eu": "Musika eskola"
       },
       "terms": {
         "en": "school of music",
@@ -23164,7 +23345,8 @@
         "pt": "Conservatórioou escola de música: instituição, pública ou privada, dedicada ao ensino de música, canto ou outras áreas relacionadas.",
         "cs": "Hudební škola",
         "ja": "音楽学校・音楽教室",
-        "pl": "Szkoła muzyczna."
+        "pl": "Szkoła muzyczna.",
+        "fr": "École de musique, institution éducative spécialisée dans l'étude, l'enseignement et la recherche en musique"
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/music_school",
@@ -23230,7 +23412,8 @@
         "vi": "Câu lạc bộ Giải trí",
         "zh": "夜总会",
         "ca": "Club nocturn",
-        "eo": "Noktoklubejo"
+        "eo": "Noktoklubejo",
+        "eu": "Klub"
       },
       "terms": {
         "en": "disco*,night club,dancing,dance club",
@@ -23580,7 +23763,8 @@
         "zh": "多层停车场",
         "eo": "Pluretaĝa parkumejo",
         "tr": "Çok Katlı Otopark",
-        "sr": "Вишеспратна јавна гаража"
+        "sr": "Вишеспратна јавна гаража",
+        "eu": "Maila anitzeko aparkaleku"
       },
       "terms": {
         "en": "car,indoor parking,multistorey car park,parkade,parking building,parking deck,parking garage,parking ramp,parking structure",
@@ -23861,7 +24045,8 @@
         "vi": "Chỗ Đậu xe",
         "zh": "停车位",
         "ca": "Espai d'aparcament",
-        "eo": "Parkumeja loko (detala)"
+        "eo": "Parkumeja loko (detala)",
+        "eu": "Aparkatzeko lekua"
       },
       "terms": {
         "en": "",
@@ -24251,7 +24436,8 @@
         "vi": "Nơi Thờ phụng",
         "zh": "礼拜场所",
         "ca": "Lloc de culte",
-        "eo": "Preĝejo"
+        "eo": "Preĝejo",
+        "eu": "Gurtza gune"
       },
       "terms": {
         "en": "abbey,basilica,bethel,cathedral,chancel,chantry,chapel,church,fold,house of God,house of prayer,house of worship,minster,mission,mosque,oratory,parish,sacellum,sanctuary,shrine,synagogue,tabernacle,temple",
@@ -24302,7 +24488,9 @@
         "ja": "宗教行事が行われる場所",
         "pl": "Miejsca kultu niezależnie od religii lub wyznania.",
         "tr": "Ibadet edilen yerler",
-        "uk": "Місця в яких проводяться релігійні обряди та богослужіння"
+        "uk": "Місця в яких проводяться релігійні обряди та богослужіння",
+        "no": "Steder for tilbedelse uavhenging av religion eller trosretning tag:amenity=place_of_worship.",
+        "da": "Alle steder for tilbedelse, uafhængigt af religion eller trosretning få tag tag:amenity=place_of_worship."
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/place_of_worship",
@@ -24368,7 +24556,8 @@
         "vi": "Chùa Phật giáo",
         "zh": "佛教寺庙",
         "ca": "Temple budista",
-        "eo": "Pagodo"
+        "eo": "Pagodo",
+        "eu": "Tenplu budista"
       },
       "terms": {
         "en": "stupa,vihara,monastery,temple,pagoda,zendo,dojo",
@@ -24668,7 +24857,8 @@
         "vi": "Đền thờ Ấn Độ giáo",
         "zh": "印度教寺庙",
         "ca": "Temple Hindú",
-        "eo": "Hinduisma templo"
+        "eo": "Hinduisma templo",
+        "eu": "Tenplu hindua"
       },
       "terms": {
         "en": "kovil,devasthana,mandir,kshetram,alayam,shrine,temple",
@@ -24868,7 +25058,8 @@
         "vi": "Đền thờ Thần đạo",
         "zh": "神道教神社",
         "ca": "Santuari sintoísta",
-        "eo": "Ŝintoismo adorejo"
+        "eo": "Ŝintoismo adorejo",
+        "eu": "Xintoismo Santutegia"
       },
       "terms": {
         "en": "kami,torii",
@@ -24939,7 +25130,8 @@
         "vi": "Đền thờ Sikh giáo",
         "zh": "锡克教教堂",
         "ca": "Temple Sikh ",
-        "eo": "Sikisma templo"
+        "eo": "Sikisma templo",
+        "eu": "Tenplu Sikhista "
       },
       "terms": {
         "en": "gurudwara,temple",
@@ -25011,7 +25203,8 @@
         "vi": "Đạo quán",
         "zh": "道教宫观",
         "ca": "Temple Taoista",
-        "eo": "Taoisma templo"
+        "eo": "Taoisma templo",
+        "eu": "Tenplu Taoista"
       },
       "terms": {
         "en": "daoist,monastery,temple",
@@ -25087,7 +25280,8 @@
         "vi": "Cung Thiên văn",
         "zh": "天文馆",
         "ca": "Planetari",
-        "eo": "Planetario (astrokinejo)"
+        "eo": "Planetario (astrokinejo)",
+        "eu": "Planetario"
       },
       "terms": {
         "en": "museum,astronomy,observatory",
@@ -25189,7 +25383,8 @@
         "vi": "Đồn Cảnh sát",
         "zh": "警察局",
         "ca": "Comissaria de Policia",
-        "eo": "Policejo"
+        "eo": "Policejo",
+        "eu": "Polizia"
       },
       "terms": {
         "en": "badge,constable,constabulary,cop,detective,fed,law,enforcement,officer,patrol",
@@ -25452,7 +25647,8 @@
       "description": {
         "en": "A distribution centre or sorting office for letters and parcels.",
         "de": "Verteil- oder Sortierzentrum für Briefe und Pakete.",
-        "es": "Un centro de distribución u oficina de clasificación de cartas y paquetes."
+        "es": "Un centro de distribución u oficina de clasificación de cartas y paquetes.",
+        "fr": "Un centre de distribution, bureau de tri pour les lettres et les colis. Centre de tri postal"
       }
     },
     {
@@ -25507,7 +25703,8 @@
         "vi": "Bưu điện",
         "zh": "邮局",
         "ca": "Oficina de correus",
-        "eo": "Poŝtoficejo"
+        "eo": "Poŝtoficejo",
+        "eu": "Postetxe"
       },
       "terms": {
         "en": "letter,mail",
@@ -25633,7 +25830,8 @@
       "description": {
         "en": "Tutor or test prep centre",
         "ja": "学習塾/予備校。",
-        "es": "Una academia de estudios, centro de tutorización o centro de preparación de exámenes."
+        "es": "Una academia de estudios, centro de tutorización o centro de preparación de exámenes.",
+        "ko": "학원/ Hakwon"
       }
     },
     {
@@ -25682,7 +25880,8 @@
         "vi": "Sân Nhà tù",
         "zh": "监狱/看守所",
         "ca": "Terrenys de presó",
-        "eo": "Mallibereja tereno"
+        "eo": "Mallibereja tereno",
+        "eu": "Espetxe"
       },
       "terms": {
         "en": "cell,jail,correction",
@@ -25722,7 +25921,8 @@
         "cs": "Věznice",
         "fi": "Vankila",
         "ja": "未決拘禁者や受刑者が収容される刑務所・拘置所",
-        "pl": "Zakład karny."
+        "pl": "Zakład karny.",
+        "it": "Un carcere o una prigione dove le persone sono recluse prima del processo o dopo essere state condannate"
       },
       "geometry": ["area", "point"],
       "iDRef": "amenity/prison",
@@ -25785,7 +25985,8 @@
         "vi": "Quán rượu Pub",
         "zh": "酒馆",
         "ca": "Bar",
-        "eo": "Taverno"
+        "eo": "Taverno",
+        "eu": "Pub"
       },
       "terms": {
         "en": "alcohol,drink,dive,beer,bier,booze",
@@ -26006,7 +26207,8 @@
         "vi": "Nơi Tắm Công cộng",
         "zh": "公共浴室",
         "ca": "Banys públic",
-        "eo": "Banejo (distro)"
+        "eo": "Banejo (distro)",
+        "eu": "Komun publikoak"
       },
       "terms": {
         "en": "onsen,foot bath,hot springs",
@@ -26108,7 +26310,8 @@
         "zh": "公共书架",
         "ca": "Biblioteca pública",
         "eo": "Publika libroŝranko",
-        "no": "Bokkiosk"
+        "no": "Bokkiosk",
+        "eu": "Apalategi publikoa"
       },
       "terms": {
         "en": "library,bookcrossing",
@@ -26177,7 +26380,9 @@
       "description": {
         "en": "",
         "pt": "Usado para marcar um edifício público.",
-        "ru": "Ранее использовался для обозначения общественных зданий."
+        "ru": "Ранее использовался для обозначения общественных зданий.",
+        "cs": "NEPOUŽÍVEJTE. Pro vládní úřady použijte radši tag:office=government",
+        "ja": "非推奨。政府の事務所には、代わりに tag:office=government を使用してください"
       },
       "deprecated": true,
       "replace": {"building": "public"}
@@ -26222,7 +26427,8 @@
         "vi": "Trạm Kiểm lâm",
         "zh": "野郊访客处",
         "ca": "Base d'Agents Rurals",
-        "eo": "Naturrezerveja oficejo/impostbudo"
+        "eo": "Naturrezerveja oficejo/impostbudo",
+        "eu": "Basozain geltokia"
       },
       "terms": {
         "en": "visitor center,visitor centre,permit center,permit centre,backcountry office,warden office,warden center",
@@ -26312,7 +26518,8 @@
         "tr": "Geri Dönüşüm",
         "uk": "Переробка вторсировини",
         "vi": "Tái chế",
-        "sl": "Recikliranje"
+        "sl": "Recikliranje",
+        "eu": "Birziklatze"
       },
       "terms": {"en": ""},
       "geometry": ["point", "area"],
@@ -26481,7 +26688,8 @@
         "zh": "回收站",
         "ca": "Centre de Reciclatge",
         "eo": "Ricikliga centro",
-        "no": "Gjenvinningssenter"
+        "no": "Gjenvinningssenter",
+        "eu": "Birziklatze zentrua"
       },
       "terms": {
         "en": "bottle,can,dump,glass,garbage,rubbish,scrap,trash",
@@ -26566,7 +26774,8 @@
         "vi": "Thùng Tái chế",
         "zh": "回收容器",
         "eo": "Centro de recikligo",
-        "sl": "Ekološki otok"
+        "sl": "Ekološki otok",
+        "eu": "Birziklatze ontzi"
       },
       "terms": {
         "en": "bin,can,bottle,glass,garbage,rubbish,scrap,trash",
@@ -26656,7 +26865,9 @@
         "en": "",
         "de": "DISCOURAGED",
         "pt": "Used to mark a register of births, marriages and deaths.",
-        "ru": "Указывает отделы записи актов гражданского состояния - ЗАГСы"
+        "ru": "Указывает отделы записи актов гражданского состояния - ЗАГСы",
+        "cs": "NEPOUŽÍVEJTE, použijte radši tag:office=government + tag:government=register_office",
+        "ja": "非推奨、代わりに tag:office=government + tag:government=register_office を使用してください。"
       },
       "deprecated": true,
       "replace": {"office": "government", "government": "register_office"}
@@ -26771,7 +26982,8 @@
         "vi": "Nhà hàng",
         "zh": "餐馆",
         "ca": "Restaurant",
-        "eo": "Restoracio"
+        "eo": "Restoracio",
+        "eu": "Jatetxe"
       },
       "terms": {
         "en": "bar,breakfast,cafe,café,canteen,coffee,dine,dining,dinner,drive-in,eat,grill,lunch,table",
@@ -28099,7 +28311,8 @@
         "vi": "Sân Trường",
         "zh": "学校",
         "ca": "Escola",
-        "eo": "Lernejo (ISCED 1-3)"
+        "eo": "Lernejo (ISCED 1-3)",
+        "eu": "Eskola eremu"
       },
       "terms": {
         "en": "academy,elementary school,middle school,high school",
@@ -28254,7 +28467,8 @@
         "vi": "Nhà trú",
         "zh": "亭",
         "ca": "Refugi",
-        "eo": "Ŝirmejo"
+        "eo": "Ŝirmejo",
+        "eu": "Aterpetxe"
       },
       "terms": {
         "en": "lean-to,gazebo,picnic",
@@ -28336,7 +28550,8 @@
         "uk": "Альтанка",
         "vi": "Vọng lâu",
         "eo": "Ĝardena budo",
-        "fa": "پناه‌گاه گازبو (نوعی آلاچیق یا بام)"
+        "fa": "پناه‌گاه گازبو (نوعی آلاچیق یا بام)",
+        "eu": "Begiratoki"
       },
       "terms": {
         "en": "",
@@ -28394,7 +28609,8 @@
         "eo": "Duon-ferma ŝirmejo",
         "no": "Gapahuk",
         "cs": "opěradlo / místo k opření",
-        "fa": "انبار ساده چسبیده به ساختمان / زیرپله / پناه‌گاه"
+        "fa": "انبار ساده چسبیده به ساختمان / زیرپله / پناه‌گاه",
+        "eu": "Zintzilikari"
       },
       "terms": {
         "en": "alpine hut, cabin, leanto, lodging, overnight accommodations, sleeping shelter, wilderness hut",
@@ -28449,7 +28665,8 @@
         "sv": "Picknicktak",
         "uk": "Навіс для пікніка",
         "vi": "Nơi Ăn có Mái che",
-        "eo": "Ŝirmejo senflankmura (piknika)"
+        "eo": "Ŝirmejo senflankmura (piknika)",
+        "eu": "Babestutako piknik-a"
       },
       "terms": {
         "en": "pavilion",
@@ -28505,7 +28722,8 @@
         "uk": "Навіс на зупинці",
         "vi": "Nhà chờ Phương tiện Công cộng",
         "eo": "Ŝirmejo publik-transporta",
-        "no": "Busskur"
+        "no": "Busskur",
+        "eu": "Babestutako korridorea"
       },
       "terms": {
         "en": "bus stop,metro stop,public transit shelter,public transport shelter,tram stop shelter,waiting",
@@ -28583,7 +28801,8 @@
         "zh": "淋浴间",
         "ca": "Dutxa",
         "eo": "Duŝejo",
-        "et": "Dušš"
+        "et": "Dušš",
+        "eu": "Dutxa"
       },
       "terms": {
         "en": "rain closet",
@@ -28665,7 +28884,8 @@
         "ca": "Àrea per a fumadors",
         "eo": "Fumejo",
         "sk": "Fajčiarska zóna",
-        "sr": "Област за пушаче"
+        "sr": "Област за пушаче",
+        "eu": "Erretzeko gune"
       },
       "terms": {
         "en": "",
@@ -28771,7 +28991,8 @@
         "pt": "Centro social: local comunitário onde um grupo de apoio mútuo ou outro tipo de grupo se encontra. Pode ser acessível ao público em geral ou restrito a membros. Não usar esta etiqueta para casos abrangidos por outras etiquetas como lares.",
         "cs": "Společenské centrum (bratrstva, sesterstva, profesionálního či odborového sdružení, ...)",
         "ja": "社交施設。友愛会、女子学生クラブ、職人団体、ユニオンホール、その他の非営利団体の会館。",
-        "pl": "Centrum bractw, uniwersytetów, stowarzyszeń zawodowych, związków zawodowych i innych organizacji non-profit."
+        "pl": "Centrum bractw, uniwersytetów, stowarzyszeń zawodowych, związków zawodowych i innych organizacji non-profit.",
+        "es": "Centro de fraternidades, hermandades, sociedades profesionales, locales sindicales u otras organizaciones sin ánimo de lucro."
       }
     },
     {
@@ -28822,7 +29043,8 @@
         "vi": "Dịch vụ Xã hội",
         "zh": "社会服务设施",
         "ca": "Equipament social",
-        "eo": "Socia servejo"
+        "eo": "Socia servejo",
+        "eu": "Gizarte-instalazio"
       },
       "terms": {
         "en": "",
@@ -28971,7 +29193,8 @@
         "zh": "食物供应站",
         "ca": "Banc d'aliments",
         "eo": "Manĝ-disdonejo (manĝabanko)",
-        "no": "Matsentral"
+        "no": "Matsentral",
+        "eu": "Elikagai-banku"
       },
       "terms": {
         "en": "",
@@ -29047,7 +29270,8 @@
         "vi": "Nhà trọ Cộng đồng Người già",
         "zh": "敬老院",
         "ca": "Residència d'avis",
-        "eo": "Grupa hejmo"
+        "eo": "Grupa hejmo",
+        "eu": "Zahar-etxe"
       },
       "terms": {
         "en": "old,senior,living,care home,assisted living",
@@ -29130,7 +29354,8 @@
         "vi": "Cứu trợ Người Vô gia cư",
         "zh": "流浪者庇护站",
         "ca": "Refugi per a indigents",
-        "eo": "Azilo por senhejmuloj"
+        "eo": "Azilo por senhejmuloj",
+        "eu": "Etxegabeentzako aterpetxe"
       },
       "terms": {
         "en": "houseless,unhoused,displaced",
@@ -29210,7 +29435,8 @@
         "vi": "Viện Dưỡng lão",
         "zh": "疗养院",
         "ca": "Llar d'avis",
-        "eo": "Domo de permanenta zorgado"
+        "eo": "Domo de permanenta zorgado",
+        "eu": "Zahar-egoitza"
       },
       "terms": {
         "en": "elderly,living,nursing,old,senior,assisted living",
@@ -29312,7 +29538,8 @@
         "vi": "Studio",
         "zh": "工作室",
         "ca": "Estudi",
-        "eo": "Studio"
+        "eo": "Studio",
+        "eu": "Estudio"
       },
       "terms": {
         "en": "recording,radio,television",
@@ -29351,7 +29578,8 @@
         "ru": "Студия для записи программ и их трансляции по радио и телевидению. Также это могут быть студии звукозаписи музыкальных лейблов.",
         "cs": "Studio pro vytváření rozhlasových nebo televizních programů. Také pro hudební nahrávací studio.",
         "ja": "スタジオ。ラジオやテレビの番組を制作したり放送したりします。音楽の録音スタジオを表すのにも使えます。",
-        "pl": "Pomieszczenie wykorzystywane do nagrań lub nadawania programów radiowych lub telewizyjnych."
+        "pl": "Pomieszczenie wykorzystywane do nagrań lub nadawania programów radiowych lub telewizyjnych.",
+        "es": "Un estudio utilizado para crear programas de radio o televisión y transmitirlos. También puede ser usado para marcar un estudio de grabación de música."
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/studio",
@@ -29653,7 +29881,12 @@
       "moreFields": [],
       "reference": {"key": "leisure", "value": "swimming_pool"},
       "id": "amenity/swimming_pool",
-      "replace": {"leisure": "swimming_pool"}
+      "replace": {"leisure": "swimming_pool"},
+      "description": {
+        "en": "",
+        "cs": "NEDOPORUČOVÁNO, použijte radši tag:leisure=swimming_pool",
+        "ja": "非推奨、代わりに tag:leisure=swimming_pool を使用してください。"
+      }
     },
     {
       "icon": "mi-toilet",
@@ -29737,7 +29970,8 @@
         "vi": "Bến Tắc xi",
         "zh": "出租车停车处",
         "ca": "Parada de Taxi",
-        "eo": "Taksistacio"
+        "eo": "Taksistacio",
+        "eu": "Taxi postu"
       },
       "terms": {
         "en": "cab",
@@ -29838,7 +30072,8 @@
         "vi": "Điện thoại",
         "zh": "电话",
         "ca": "Telèfon",
-        "eo": "Telefono"
+        "eo": "Telefono",
+        "eu": "Telefono"
       },
       "terms": {
         "en": "phone",
@@ -29949,7 +30184,8 @@
         "vi": "Nhà hát",
         "zh": "剧院",
         "ca": "Teatre",
-        "eo": "Teatrejo"
+        "eo": "Teatrejo",
+        "eu": "Antzoki"
       },
       "terms": {
         "en": "theatre,performance,play,musical",
@@ -30048,7 +30284,8 @@
         "sv": "Amfiteater",
         "uk": "Амфітеатр",
         "vi": "Đài vòng",
-        "eo": "Amfiteatro"
+        "eo": "Amfiteatro",
+        "eu": "Anfiteatro"
       },
       "terms": {
         "en": "open air,outdoor,greek,ampi",
@@ -30146,7 +30383,8 @@
         "vi": "Phòng Vệ sinh",
         "zh": "厕所",
         "ca": "Lavabos",
-        "eo": "Necesejo"
+        "eo": "Necesejo",
+        "eu": "Komun"
       },
       "terms": {
         "en": "bathroom,restroom,outhouse,privy,head,lavatory,latrine,water closet,WC,W.C.",
@@ -30368,7 +30606,8 @@
         "vi": "Tòa thị chính Thị xã",
         "zh": "市政府",
         "ca": "Ajuntament",
-        "eo": "Urbodomo"
+        "eo": "Urbodomo",
+        "eu": "Udaletxe"
       },
       "terms": {
         "en": "village,city,government,courthouse,municipal",
@@ -30536,7 +30775,8 @@
       "id": "amenity/toy_library",
       "description": {
         "en": "A place to play with or lend games and toys.",
-        "es": "Un lugar donde jugar o prestar juegos y juguetes."
+        "es": "Un lugar donde jugar o prestar juegos y juguetes.",
+        "fr": "Ludothèque, lieu qui dispose de jeux pour emprunter ou pour jouer sur place"
       }
     },
     {
@@ -30587,7 +30827,8 @@
         "vi": "Sân trường Đại học",
         "zh": "大学",
         "ca": "Campus universitari",
-        "eo": "Altgrada lernejo (ISCED 5-7)"
+        "eo": "Altgrada lernejo (ISCED 5-7)",
+        "eu": "Unibertsitatearen eremua"
       },
       "terms": {
         "en": "college,graduate school,PhD program,master's degree program",
@@ -30766,7 +31007,8 @@
         "vi": "Máy Bán Hàng",
         "zh": "自动售货机",
         "ca": "Màquina de vending",
-        "eo": "Vendilo"
+        "eo": "Vendilo",
+        "eu": "Makina saltzaile"
       },
       "terms": {
         "en": "",
@@ -30962,7 +31204,8 @@
         "vi": "Máy Bán Thuốc lá",
         "zh": "香烟售货机",
         "ca": "Màquina de tabac",
-        "eo": "Vendilo de cigaredoj"
+        "eo": "Vendilo de cigaredoj",
+        "eu": "Zigarro makina saltzaile"
       },
       "terms": {
         "en": "cigarette",
@@ -31034,7 +31277,8 @@
         "zh": "咖啡售货机",
         "ca": "Expenedora de cafè",
         "eo": "Vendilo de kafo",
-        "sr": "Аутомат за кафу"
+        "sr": "Аутомат за кафу",
+        "eu": "Kafe makina saltzaile"
       },
       "terms": {
         "en": "coffee",
@@ -31104,7 +31348,8 @@
         "vi": "Máy Bán Bao Cao su",
         "zh": "避孕套售货机",
         "ca": "Expenedor de preservatius",
-        "eo": "Vendilo de kondomoj"
+        "eo": "Vendilo de kondomoj",
+        "eu": "Kondoi makina saltzaile"
       },
       "terms": {
         "en": "condom",
@@ -31177,7 +31422,8 @@
         "vi": "Máy Bán Nước uống",
         "zh": "饮料售货机",
         "ca": "Màquina de vènding de begudes",
-        "eo": "Vendilo de trinkaĵoj"
+        "eo": "Vendilo de trinkaĵoj",
+        "eu": "Edarien makina saltzaile"
       },
       "terms": {
         "en": "drink,soda,beverage,juice,pop",
@@ -31301,7 +31547,8 @@
         "zh": "电器售货机",
         "eo": "Vendilo de elektronikaĵoj",
         "fa": "دستگاه فروش خودکار لوازم الکترونیکی",
-        "sr": "Аутомат за електронику"
+        "sr": "Аутомат за електронику",
+        "eu": "Sistema elektronikoen makina saltzaile"
       },
       "terms": {
         "en": "cable,charger,earbud,headphone,phone,tablet",
@@ -31361,7 +31608,8 @@
         "zh": "纪念币压制机",
         "eo": "Vendilo de etenditaj moneroj",
         "fa": "دستگاه داد و ستد سکه تخت",
-        "sr": "Аутомат за жетоне"
+        "sr": "Аутомат за жетоне",
+        "eu": "Txanpon-makina"
       },
       "terms": {
         "en": "coin,crush,elongated,flatten,penny,souvenir",
@@ -31477,7 +31725,8 @@
         "zh": "女性卫生用品售货机",
         "ca": "Màquina de vènding d'articles d'higiene femenina",
         "eo": "Vendilo de virinaj higienaĵoj",
-        "sr": "Аутомат за женску хигијену"
+        "sr": "Аутомат за женску хигијену",
+        "eu": "Emakumezkoentzako higiene produktuen makina saltzaile"
       },
       "terms": {
         "en": "condom,tampon,pad,woman,women,menstrual hygiene products,personal care",
@@ -31544,7 +31793,8 @@
         "vi": "Máy Bán Đồ ăn",
         "zh": "食物售货机",
         "eo": "Vendilo de manĝaĵo",
-        "sr": "Аутомат за храну"
+        "sr": "Аутомат за храну",
+        "eu": "Janari makina saltzailea"
       },
       "terms": {
         "en": "food",
@@ -31608,7 +31858,8 @@
         "zh": "油泵",
         "ca": "Sortidor de benzina",
         "eo": "Vendilo de benzino",
-        "fa": "پمپ سوخت (خودبردار)"
+        "fa": "پمپ سوخت (خودبردار)",
+        "eu": "Gas hornigailu"
       },
       "terms": {
         "en": "petrol,fuel,gasoline,propane,diesel,lng,cng,biodiesel",
@@ -31672,7 +31923,8 @@
         "zh": "冰淇淋售货机",
         "ca": "Expenedora de gelats",
         "eo": "Vendilo de glaciaĵoj",
-        "sr": "Аутомат за сладолед"
+        "sr": "Аутомат за сладолед",
+        "eu": "Izozkien makina saltzaile"
       },
       "terms": {
         "en": "chocolate,ice cream,frozen,popsicle,vanilla",
@@ -31800,7 +32052,8 @@
         "zh": "报纸售货机",
         "ca": "Màquina expenedora de diaris",
         "eo": "Vendilo de gazetoj",
-        "sr": "Аутомат за новине"
+        "sr": "Аутомат за новине",
+        "eu": "Egunkarien makina saltzaile"
       },
       "terms": {
         "en": "newspaper",
@@ -32286,7 +32539,8 @@
         "vi": "Thú y",
         "zh": "动物医院",
         "ca": "Veterinari",
-        "eo": "Bestokuracistejo"
+        "eo": "Bestokuracistejo",
+        "eu": "Albaitari"
       },
       "terms": {
         "en": "pet clinic,veterinarian,animal hospital,pet doctor",
@@ -33023,7 +33277,14 @@
       },
       "geometry": ["point", "area"],
       "iDRef": "amenity/kneipp_water_cure",
-      "reference": {"key": "amenity", "value": "kneipp_water_cure"}
+      "reference": {"key": "amenity", "value": "kneipp_water_cure"},
+      "description": {
+        "en": "",
+        "pt": "Termas de terapia de Kneipp: estruturas presentes principalmente na Alemanha.",
+        "cs": "Kneippova lázeň",
+        "ru": "A foot bath is a shallow pool, often with handrail.",
+        "de": "Ein Fußbad ist ein flaches Außenbecken, oft mit Handlauf."
+      }
     },
     {
       "id": "amenity/parking_space/disabled",
@@ -35626,7 +35887,8 @@
         "en": "A designated (safe) place where people can gather or must report to during an emergency or a fire drill",
         "de": "Ein Sammelplatz ist ein Punkt, an dem sich im Brand- oder Schadensfall, also in der Regel bei einer Gebäudeevakuierung, alle Personen aus einem Gebäude sammeln sollen.",
         "it": "Un luogo sicuro predisposto per ritrovarsi durante un'emergenza.",
-        "cs": "Shromaždiště - bezpečné místo nebo oblast, kde se lidé shromažďují v případě nebezpečí či požárního cvičení."
+        "cs": "Shromaždiště - bezpečné místo nebo oblast, kde se lidé shromažďují v případě nebezpečí či požárního cvičení.",
+        "fr": "Un lieu désigné (sûr) où les personnes peuvent se rassembler ou doivent se présenter lors d'une urgence ou d'un exercice sur une situation d'urgence"
       },
       "tags": {"emergency": "assembly_point"},
       "geometry": ["point"],
@@ -35705,7 +35967,8 @@
         "cs": "Automatizovaný externí defibrilátor, který diagnostikuje a automaticky opravuje srdeční arytmii",
         "ja": "自動的に心臓の不整脈を診断して、応急処置を施せる外部または持ち運び可能な除細動器（別名 自動体外式除細動器、AED）",
         "pl": "Defibrylator zewnętrzny.",
-        "pt": "Desfibrilador, um dispositivo eletrônico externo e portátil que diagnostica e pode corrigir automaticamente a arritmia do coração (também conhecido como Desfibrilador Externo Automático, DEA)"
+        "pt": "Desfibrilador, um dispositivo eletrônico externo e portátil que diagnostica e pode corrigir automaticamente a arritmia do coração (também conhecido como Desfibrilador Externo Automático, DEA)",
+        "it": "Defibrillatore, un dispositivo elettronico portatile esterno che diagnostica e può correggere automaticamente le aritmie cardiache (anche noto come defibrillatore automatico esterno, DAE)"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "emergency/defibrillator",
@@ -35818,7 +36081,9 @@
         "de": "um den Eingang zu einer Notaufnahme zu markieren",
         "it": "Indica l'accesso alla camera calda di un Pronto Soccorso",
         "ja": "救急外来入口",
-        "pl": "Wejście do oddziału ratunkowego."
+        "pl": "Wejście do oddziału ratunkowego.",
+        "gl": "para marcar a entrada a unha sala de urxencias",
+        "es": "para marcar la entrada a una sala de emergencias"
       }
     },
     {
@@ -35875,7 +36140,8 @@
       "description": {
         "en": "A device used for notifying a fire department of a fire.",
         "ja": "火災報知機。火災を消防署に通報する装置。",
-        "pl": "Urządzenie alarmowe powiadamiające straż pożarną o pożarze."
+        "pl": "Urządzenie alarmowe powiadamiające straż pożarną o pożarze.",
+        "fr": "Dispositif utilisé pour signaler un incendie à un service de pompiers."
       }
     },
     {
@@ -35939,7 +36205,8 @@
         "ru": "Огнетушитель — устройство для тушения небольших очагов пожара.",
         "cs": "Hasicí přístroj pro hašení malých požárů v nouzových situacích",
         "ja": "消火器は持ち運び可能な火災防護機器であり、緊急時に小規模な火災を鎮めたり、制御するために用いられます。",
-        "pl": "Gaśnica."
+        "pl": "Gaśnica.",
+        "de": "Ein Feuerlöscher ist ein tragbares Löschgerät zum Löschen von Kleinbränden."
       },
       "geometry": ["point", "vertex"],
       "iDRef": "emergency/fire_extinguisher",
@@ -36002,7 +36269,8 @@
         "ru": "Пожарный рукав для подачи воды или других огнегасящих веществ в зону пожара.",
         "cs": "Požární hadice je vysokotlaká hadice, která přenáší vodu (nebo jiný zpomalovač hoření jako třeba pěnu) k hašení požáru.",
         "ja": "火を消化するための水や消火剤（泡など）を運ぶために使う高圧ホース",
-        "pl": "Wąż pożarniczy."
+        "pl": "Wąż pożarniczy.",
+        "es": "Una manguera de alta presión utilizada para llevar agua u otro retardante de fuego (como la espuma) a un incendio para extinguirlo."
       }
     },
     {
@@ -36120,7 +36388,10 @@
         "en": "Preselected flat area for a helicopter to land in an emergency situation",
         "es": "Área plana donde un helicópteo puede aterrizar en caso de emergencia.",
         "cs": "Předem zvolená plocha pro přistání vrtulníku v nouzové situaci",
-        "pl": "Wstępnie wybrany płaski obszar dla śmigłowca lądującego w sytuacji awaryjnej."
+        "pl": "Wstępnie wybrany płaski obszar dla śmigłowca lądującego w sytuacji awaryjnej.",
+        "it": "Area piana predisposta all'atterraggio di elicotteri in caso di emergenza.",
+        "fr": "Zone plane présélectionnée pour l'atterrissage d'un hélicoptère en situation d'urgence",
+        "de": "Vorgewählte flache Stelle zur Hubschrauberlandung in Notsituationen"
       }
     },
     {
@@ -36186,7 +36457,8 @@
       "description": {
         "en": "An emergency flotation device.",
         "de": "Ein Rettungsring ist ein Ring, der zu ertrinkenden Personen geworfen wird und diese über Wasser halten soll.",
-        "cs": "Záchranný kruh"
+        "cs": "Záchranný kruh",
+        "fr": "Bouée de sauvetage"
       },
       "geometry": ["point", "vertex"],
       "iDRef": "emergency/life_ring",
@@ -36260,7 +36532,10 @@
       "tags": {"emergency": "lifeguard"},
       "moreFields": [],
       "id": "emergency/lifeguard",
-      "description": {"en": "A place where a lifeguard is on duty"}
+      "description": {
+        "en": "A place where a lifeguard is on duty",
+        "fr": "Un lieu où un sauveteur aquatique est en service"
+      }
     },
     {
       "icon": "maki-ranger-station",
@@ -36637,7 +36912,8 @@
         "en": "A large water basin or tank for a fire department to take water.",
         "fr": "Réservoir d'eau de secours",
         "cs": "Požární nádrž - velká vodní nádrž, odkud mohou hasiči čerpat vodu.",
-        "pl": "Duży zbiornik na wodę wykorzystywany dla potrzeb straży pożarnej."
+        "pl": "Duży zbiornik na wodę wykorzystywany dla potrzeb straży pożarnej.",
+        "de": "Ein Becken oder Tank zur Löschwasserentnahme."
       },
       "geometry": ["point", "vertex"],
       "iDRef": "emergency/water_tank",
@@ -36687,7 +36963,12 @@
       "tags": {"emergency": "yes"},
       "moreFields": [],
       "id": "emergency/yes",
-      "searchable": false
+      "searchable": false,
+      "description": {
+        "en": "",
+        "gl": "Emprégase para indicar que un hospital está equipado para atender urxencias ou que unha estrada é accesíbel ós servizos de emerxencia.",
+        "es": "Se utiliza para indicar que un hospital está equipado para atender emergencias o que una carretera es accesible a los servicios de emergencia."
+      }
     },
     {
       "id": "emergency/mountain_rescue",
@@ -36734,7 +37015,12 @@
         "fr": "secours,PGHM"
       },
       "geometry": ["point", "area"],
-      "iDRef": "emergency/mountain_rescue"
+      "iDRef": "emergency/mountain_rescue",
+      "description": {
+        "en": "",
+        "fr": "Base de sauvetage en montagne avec une équipe fournissant des services de recherche et de sauvetage en milieu montagneux",
+        "de": "Bergrettungs-Station für ein Team der Bergwacht, das Such- und Rettungsdienste in bergiger Umgebung anbietet."
+      }
     },
     {
       "id": "emergency/fire_hydrant",
@@ -36820,7 +37106,20 @@
         "gl": "hydrant, hidrante, boca de incendios, boca de lumes, lumes, incendio, incendios, hidrantes, lume"
       },
       "geometry": ["point", "vertex"],
-      "iDRef": "emergency/fire_hydrant"
+      "iDRef": "emergency/fire_hydrant",
+      "description": {
+        "en": "",
+        "pt": "Hidrante/boca de incêndio: dispositivo que fornece água em guarde quantidade para combate ao fogo. Normalmente é necessário conectar uma mangueira com uma ligação específica (normalmente uniforme em cada país).",
+        "uk": "Пожежний гідрант",
+        "it": "Una misura antincendio attiva ed una sorgente d'acqua nella maggior parte delle aree urbane, suburbane e rurali, alimentata dalla rete idrica municipale, per permettere ai vigili del fuoco di rifornirsi per le operazioni antincendio.",
+        "cs": "Požární hydrant je aktivní prvek ochrany před požárem, který je zdrojem vody pro hasiče při hašení požáru.",
+        "fr": "Borne ou bouche incendie utilisée par les pompiers.",
+        "ru": "Пожарный гидрант -- средство активной противопожарной защиты, источник воды во многих застроенных территориях, позволяет пожарным подключаться к водопроводу для помощи в тушении пожара.",
+        "de": "Ein Hydrant ist in OSM als eine Armatur (sowohl Hydranten als auch für Löschwasserbrunnen) zur Wasserentnahme für Feuerlöschzwecke definiert.",
+        "es": "Una medida activa de protección contra incendios y una fuente de agua proveída en la mayoría de zonas urbanas, suburbanas y rurales con un servicio municipal de agua que permite a los bomberos aprovechar el suministro de agua para apagar un incendio.",
+        "ja": "消火栓。アクティブな防火設備であり、たいていの都市部、郊外、田園地帯で自治体の水道サービスから提供されている水源で、消火活動の支援用に、消防士が自治体の水道供給に接続して使えるようにするためのものです。",
+        "pl": "Oznaczanie położenia hydrantu."
+      }
     },
     {
       "icon": "mi-casino",
@@ -36970,7 +37269,8 @@
         "fr": "salle de jeux,arcade,jeux vidéos,simulateurs de course,pinball",
         "cs": "Místo, kde se hrají placené hry.",
         "ja": "料金を支払ってゲームをする場所",
-        "pl": "Salon gier."
+        "pl": "Salon gier.",
+        "de": "Ein Ort für Videospiele"
       },
       "geometry": ["point", "area"],
       "iDRef": "leisure/amusement_arcade",
@@ -39178,7 +39478,8 @@
         "ru": "Место встреч людей с общими интересами (в области науки, технологий и т.п.).",
         "cs": "Místo, kde se scházejí lidé se společnými zájmy (věda, technologie, ...).",
         "ja": "共通の関心（科学、技術、など）を持つ人たちが出会う場所。",
-        "pl": "Miejsce, gdzie ludzie o wspólnych interesów (nauka, technologia, ...) mogą się spotkać."
+        "pl": "Miejsce, gdzie ludzie o wspólnych interesów (nauka, technologia, ...) mogą się spotkać.",
+        "de": "Ein Platz, wo sich Leute mit gemeinsamen Interessen (Wissenschaft, Technik, ...) treffen."
       },
       "geometry": ["point", "area"],
       "iDRef": "leisure/hackerspace",
@@ -41410,7 +41711,8 @@
         "uk": "Тенісний стіл",
         "vi": "Bàn Bóng bàn",
         "zh": "乒乓球场地",
-        "eo": "Tablotenisa tablo"
+        "eo": "Tablotenisa tablo",
+        "eu": "ping-pong mahai"
       },
       "terms": {
         "en": "table tennis,ping pong",
@@ -41493,7 +41795,8 @@
         "vi": "Sân Quần vợt",
         "zh": "网球场",
         "ca": "Pista de tennis",
-        "eo": "Tenisejo"
+        "eo": "Tenisejo",
+        "eu": "tenis-zelaia"
       },
       "terms": {
         "en": "",
@@ -41580,7 +41883,8 @@
         "vi": "Sân Bóng chuyền",
         "zh": "排球场",
         "ca": "Camp de vòleibol",
-        "eo": "Flugpilkada ludkampo"
+        "eo": "Flugpilkada ludkampo",
+        "eu": "boleibol-zelaia"
       },
       "terms": {
         "en": "",
@@ -41672,7 +41976,8 @@
         "vi": "Sân chơi",
         "zh": "游乐场",
         "ca": "Zona de jocs infantils",
-        "eo": "Infana ludejo"
+        "eo": "Infana ludejo",
+        "eu": "Jolastoki"
       },
       "terms": {
         "en": "jungle gym,play area",
@@ -41761,7 +42066,8 @@
         "vi": "Khu Nghỉ dưỡng",
         "zh": "度假区",
         "eo": "Turisma centro",
-        "sk": "Rezort"
+        "sk": "Rezort",
+        "eu": "opor-leku"
       },
       "terms": {
         "en": "recreation center,sanatorium,ski and snowboard resort,vacation resort,winter sports resort",
@@ -41859,7 +42165,8 @@
         "zh": "桑拿",
         "eo": "Ŝvitbanejo",
         "gl": "Sauna",
-        "sk": "Sauna"
+        "sk": "Sauna",
+        "eu": "Sauna"
       },
       "terms": {
         "en": "",
@@ -42084,7 +42391,9 @@
         "cs": "Lodní skluz",
         "fi": "Vesillelaskupaikka, jonne venettä kuljettava perävaunu voidaan peruuttaa.",
         "ja": "スリップウェイはボートを進水させるための斜路です。",
-        "pl": "Rampa służąca do wodowania łodzi."
+        "pl": "Rampa służąca do wodowania łodzi.",
+        "fr": "Cale de halage : rampe pour la mise à l'eau de bateaux",
+        "es": "Una grada o rampa para la botadura barcos al agua"
       },
       "moreFields": [],
       "addTags": {
@@ -42139,7 +42448,8 @@
         "vi": "Trung tâm Thể thao",
         "zh": "体育中心/综合体育场",
         "ca": "Complex esportiu",
-        "eo": "Sporta centro"
+        "eo": "Sporta centro",
+        "eu": "Kiroldegia/ gunea"
       },
       "terms": {
         "en": "",
@@ -42362,7 +42672,8 @@
         "vi": "Sân vận động",
         "zh": "体育场",
         "ca": "Estadi",
-        "eo": "Stadiono"
+        "eo": "Stadiono",
+        "eu": "Estadio"
       },
       "terms": {
         "en": "",
@@ -42404,7 +42715,8 @@
         "ru": "Крупный стадион с многоярусными трибунами",
         "cs": "Sportovní stadion s patrovým sezením pro diváky.",
         "ja": "階段状の固定席がある有名なスポーツ施設。",
-        "pl": "Ważne obiekty sportowe z wieloma miejscami siedzącymi."
+        "pl": "Ważne obiekty sportowe z wieloma miejscami siedzącymi.",
+        "es": "Una instalación deportiva importante con un número considerable de asientos en gradas."
       },
       "geometry": ["point", "area"],
       "iDRef": "leisure/stadium",
@@ -42545,7 +42857,8 @@
         "vi": "Hồ Bơi",
         "zh": "游泳池",
         "ca": "Piscina",
-        "eo": "Naĝejo (akvo)"
+        "eo": "Naĝejo (akvo)",
+        "eu": "Igerileku"
       },
       "terms": {
         "en": "dive,water,aquatics",
@@ -42607,7 +42920,8 @@
       "description": {
         "en": "pingpong",
         "fr": "pingpong, tenis de table",
-        "pl": "Stół do gry w tenisa stołowego/ping-ponga."
+        "pl": "Stół do gry w tenisa stołowego/ping-ponga.",
+        "de": "Tischtennisplatte; es wird empfohlen, stattdessen tag:leisure=pitch mit tag:sport=table_tennis zu benutzen."
       },
       "tags": {"leisure": "table_tennis_table"},
       "geometry": ["point"],
@@ -42682,7 +42996,8 @@
         "it": "Una pista per la corsa, il ciclismo ed altre specialità non motoristiche quali corse di cavalli e cani.",
         "cs": "Závodní dráha pro běh, cyklistiku a jiné nemotorové sporty jako jsou dostihy koní či chrtů",
         "ja": "徒競走や自転車競走のほか、競馬、ドッグレースなどの自動車以外の競走に使う競技トラックです。",
-        "pl": "Tor wyścigowy do biegania, jazdy na rowerze i innych sportów niezmotoryzowanych, takich jak jazda konna, wyścigi psów."
+        "pl": "Tor wyścigowy do biegania, jazdy na rowerze i innych sportów niezmotoryzowanych, takich jak jazda konna, wyścigi psów.",
+        "ru": "Спортивный трек для бега, велогонок и прочих не моторизированных видов спорта"
       },
       "warning": {"en": "", "fr": "hors sports mécaniques)"},
       "geometry": ["line", "point", "area"],
@@ -42904,7 +43219,8 @@
         "vi": "Công viên Nước",
         "zh": "水上乐园",
         "ca": "Parc Aquàtic",
-        "eo": "Akvoparko"
+        "eo": "Akvoparko",
+        "eu": "Ur-parkea"
       },
       "terms": {
         "en": "swim,pool,dive",
@@ -43120,7 +43436,12 @@
         "fa": "ترامبولین ، ترامپولین ، فنر ، پرش ، بازی ، ورزش ، تفریح ، جامپ ، جامپینگ"
       },
       "geometry": ["point", "area"],
-      "iDRef": "leisure/trampoline_park"
+      "iDRef": "leisure/trampoline_park",
+      "description": {
+        "en": "",
+        "de": "Eine Freizeitanlage, die aus vielen miteinander verbundenen Trampolinen besteht.",
+        "pl": "Sala zabudowana wieloma połączonymi trampolinami."
+      }
     },
     {
       "icon": "temaki-tools",
@@ -43719,7 +44040,8 @@
         "ru": "A brewery is a dedicated building for the making of beer",
         "cs": "Pivovar - budova pro vaření piva.",
         "ja": "地ビールの製造に特化した建物です。",
-        "pl": "Dedykowane miejsce do ważenia piwa."
+        "pl": "Dedykowane miejsce do ważenia piwa.",
+        "de": "Eine Handwerksbrauerei zur traditionellen Herstellung und den Verkauf von Bier"
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/brewery",
@@ -44223,7 +44545,8 @@
         "ru": "Часовая мастерская.",
         "cs": "Pracoviště nebo kancelář hodináře, který staví nebo opravuje velké hodiny.",
         "ja": "時計全般を組み立てたり、修理したり、名入れしたりする時計職人の作業場所または事務所。",
-        "pl": "Miejsce pracy lub biuro zegarmistrza budującego, naprawiającego lub grawerującego wszelkiego rodzaju zegary."
+        "pl": "Miejsce pracy lub biuro zegarmistrza budującego, naprawiającego lub grawerującego wszelkiego rodzaju zegary.",
+        "de": "Ein Arbeitsplatz oder ein Büro eines Uhrmachers, welcher Uhren aller Arten erstellt, repariert oder graviert."
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/clockmaker",
@@ -44348,7 +44671,8 @@
         "zh": "酿酒厂",
         "ca": "Destil·leria",
         "eo": "Distilejo",
-        "fa": "تقطیر"
+        "fa": "تقطیر",
+        "eu": "Destilategi"
       },
       "terms": {
         "en": "alcohol,beverage,bourbon,booze,brandy,gin,hooch,liquor,mezcal,moonshine,rum,scotch,spirits,still,tequila,vodka,whiskey,whisky",
@@ -44644,7 +44968,8 @@
         "fr": "Réparation d'appareils électroniques",
         "es": "Tiendas y centros que proporcionan servicios de reparación de computadoras, teléfonos, aparatos electrónicos, etc.",
         "it": "Un centro per la riparazione di computer, telefoni e altri dispositivi elettronici.",
-        "pl": "Warsztat naprawczy i centrum serwisowe zapewniające naprawy komputerów, telefonów, urządzeń itp."
+        "pl": "Warsztat naprawczy i centrum serwisowe zapewniające naprawy komputerów, telefonów, urządzeń itp.",
+        "de": "Ein Betrieb zur Reparatur elektronischer Geräte"
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/electronics_repair",
@@ -44750,7 +45075,8 @@
         "vi": "Làm vườn",
         "zh": "园艺工",
         "ca": "Jardiner",
-        "eo": "Ĝardenista oficejo"
+        "eo": "Ĝardenista oficejo",
+        "eu": "Lorezain"
       },
       "terms": {
         "en": "landscaper,grounds keeper",
@@ -44878,7 +45204,8 @@
         "ru": "Резка и продажа стекла",
         "cs": "Sklenářství - místo, kde se vybírá, řeže, zasazuje nebo vyměňuje sklo pro komerční, bytové nebo umělecké použití.",
         "ja": "住宅用や業務用、美術用のガラスを選び、切断し、設置し、置き換え、撤去するところ。",
-        "pl": "Warsztat szklarski."
+        "pl": "Warsztat szklarski.",
+        "es": "Un lugar donde el vidrio residencial, comercial y artístico es seleccionado, cortado, instalado, reemplazado y removido."
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/glaziery",
@@ -45353,7 +45680,8 @@
         "it": "Un posto dove si possono fare duplicati delle chiavi.",
         "ru": "Место, где можно изготовить копии ключей с их оригиналов.",
         "cs": "Místo, kde se vyrábí duplikáty klíčů.",
-        "ja": "合鍵を作成できる場所。"
+        "ja": "合鍵を作成できる場所。",
+        "de": "Ein Ort an dem Schlüssel anhand eines Originals vervielfältigt werden."
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/key_cutter",
@@ -45500,7 +45828,8 @@
         "pt": "Um lugar onde corrimões, portas, rampas e coisas semelhantes são feitas de metal.",
         "it": "Azienda metalmeccanica - Un posto dove si lavora il metallo. Questo vale per pianificazione, costruzione, commercio e riparazione.",
         "cs": "Železné konstrukce - pracoviště nebo kancelář osoby, která pracuje s kovem. Platí pro: plánování, výrobu, prodej, opravy.",
-        "ja": "金属加工をする人の作業場所や事務所。金属の設計、工事、販売、修理が含まれます。"
+        "ja": "金属加工をする人の作業場所や事務所。金属の設計、工事、販売、修理が含まれます。",
+        "es": "El lugar de trabajo o la oficina de una persona que trabaja con metal. Esto se aplica a: planificación, construcción, comercio o reparación."
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/metal_construction",
@@ -45613,7 +45942,8 @@
         "vi": "Thợ Sơn",
         "zh": "油漆匠",
         "ca": "Pintor",
-        "eo": "Dom-kolorigista oficejo"
+        "eo": "Dom-kolorigista oficejo",
+        "eu": "Margolari"
       },
       "terms": {
         "en": "",
@@ -45761,7 +46091,8 @@
         "vi": "Chụp hình",
         "zh": "照相店",
         "ca": "Fotògraf",
-        "eo": "Fotista studio/oficejo"
+        "eo": "Fotista studio/oficejo",
+        "eu": "Argazkilari"
       },
       "terms": {
         "en": "",
@@ -45851,7 +46182,8 @@
         "vi": "Rửa Hình",
         "zh": "照片冲洗店",
         "ca": "Laboratori fotogràfic",
-        "eo": "Fotista laborejo"
+        "eo": "Fotista laborejo",
+        "eu": "Argazki laborategi"
       },
       "terms": {
         "en": "film",
@@ -45891,7 +46223,8 @@
         "pt": "Um lugar onde as fotos tiradas em um filme ort imagens digitais são transformados em uma forma mais permanente, muitas vezes em papel ou plástico.",
         "it": "Laboratorio fotografico - Un posto in cui le foto scattate su pellicola o in digitale vengono trasformate in una forma più permanente, spesso su carta o fogli di plastica.",
         "cs": "Fotolaboratoř - výroba fotografií na papíře nebo plastické fólii",
-        "ja": "フィルムやデジタル画像として撮影された写真を、もっと恒久的な形、紙やプラスチック板に転写するところ。"
+        "ja": "フィルムやデジタル画像として撮影された写真を、もっと恒久的な形、紙やプラスチック板に転写するところ。",
+        "de": "Ein Fotolabor ist ein Ort (Arbeitsplatz oder Büro), an dem Fotos, die auf einem Film aufgenommen wurden oder als digitale Bilder vorliegen, in eine dauerhaftere Form gebracht werden, oft als fotografische Abzüge auf Papier oder Plastikfolie."
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/photographic_laboratory",
@@ -45974,7 +46307,8 @@
         "pt": "Local de trabalho ou o escritório de um comerciante que trabalha com gesso, como a formação de uma camada de gesso sobre uma parede interior ou molduras de gesso decorativas em tetos ou paredes.",
         "it": "Stuccatore - Un artigiano che lavora con intonaci o modanature decorative in gesso su soffitti o pareti.",
         "cs": "Pracoviště nebo kancelář štukatéra",
-        "ja": "左官店。内装の壁の石膏（漆喰）層を塗ったり、天井や壁に装飾を加えたりする職人の作業場所や事務所。"
+        "ja": "左官店。内装の壁の石膏（漆喰）層を塗ったり、天井や壁に装飾を加えたりする職人の作業場所や事務所。",
+        "de": "Ein Fachbetrieb für Putz- und Stuckarbeiten an Gebäuden"
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/plasterer",
@@ -46030,7 +46364,8 @@
         "vi": "Sửa Ống nước",
         "zh": "管道工",
         "ca": "Llauner",
-        "eo": "Tubista oficejo"
+        "eo": "Tubista oficejo",
+        "eu": "Iturgin"
       },
       "terms": {
         "en": "pipe",
@@ -46208,7 +46543,8 @@
         "vi": "Dựng Cột Buồm",
         "zh": "装配工",
         "ca": "Armador d'embarcacions",
-        "eo": "Rigilarista laborejo"
+        "eo": "Rigilarista laborejo",
+        "eu": "Aparejadore"
       },
       "terms": {
         "en": "",
@@ -46746,7 +47082,8 @@
         "pt": "Um lugar onde as esculturas são feitas.",
         "it": "Scultore - Un artigiano che crea sculture.",
         "cs": "Sochař - místo, kde se vytvářejí sochy.",
-        "ja": "彫刻を制作する場所。"
+        "ja": "彫刻を制作する場所。",
+        "de": "Der Arbeitsplatz oder das Büro eines Bildhauers."
       },
       "geometry": ["point", "area"],
       "iDRef": "craft/sculptor",
@@ -46898,7 +47235,8 @@
       "description": {
         "en": "Signmaker",
         "fr": "Fabricant d'enseignes",
-        "ja": "看板屋"
+        "ja": "看板屋",
+        "de": "Der Betrieb eins Schilder- und Lichtreklameherstellers"
       }
     },
     {
@@ -47866,7 +48204,8 @@
         "ru": "Океанариум -— научно-просветительное учреждение, как правило некоммерческое, музей живой морской природы.",
         "cs": "Akvárium",
         "ja": "動物園に対する水族館です。",
-        "pl": "Akwarium publiczne będące odpowiednikiem zoo."
+        "pl": "Akwarium publiczne będące odpowiednikiem zoo.",
+        "es": "Una instalación con animales acuáticos vivos para ser vistos por el público."
       },
       "geometry": ["point", "area"],
       "iDRef": "tourism/aquarium",
@@ -49849,7 +50188,8 @@
         "ru": "Жильё на короткое время, особенно для путешествующих на машине.",
         "cs": "Motel. Krátkodobé ubytování zejména pro motoristy.",
         "ja": "モーテル。自動車で旅行している人向けの、短期滞在の宿泊施設です。",
-        "pl": "Krótkotrwałe zakwaterowanie, szczególnie dla osób podróżujących samochodem."
+        "pl": "Krótkotrwałe zakwaterowanie, szczególnie dla osób podróżujących samochodem.",
+        "pt": "Alojamento de curta duração, especialmente para pessoas que viajam de carro. Não usar em países lusófonos como Portugal ou Brasil que tem outro significado, para esses casos usar antes a etiqueta tag:amenity=love_hotel."
       },
       "geometry": ["point", "area"],
       "iDRef": "tourism/motel",
@@ -53973,7 +54313,8 @@
         "en": "",
         "es": "Se desaconseja el uso de esta etiqueta, use key:healthcare en su lugar.",
         "cs": "Kancelář, kde můžete podstoupit fyzioterapii.",
-        "pl": "Gabinet do fizykoterapii, takiej jak fizjoterapia, terapia przeciwko chorobom neurologicznym lub osteopatii, itd."
+        "pl": "Gabinet do fizykoterapii, takiej jak fizjoterapia, terapia przeciwko chorobom neurologicznym lub osteopatii, itd.",
+        "de": "Bezeichnete eine medizinische Praxis eines Therapeuten, bitte stattdessen healthcare=* verwenden."
       }
     },
     {
@@ -54291,7 +54632,8 @@
         "vi": "Lối vào Mỏ",
         "zh": "坑道入口",
         "ca": "Entrada",
-        "eo": "Mineja koridoro"
+        "eo": "Mineja koridoro",
+        "eu": "Igarobide"
       },
       "terms": {
         "en": "cave, horizontal mine entrance, tunnel, underground",
@@ -54387,7 +54729,8 @@
         "vi": "Ăngten",
         "zh": "天线杆塔",
         "eo": "Anteno",
-        "sk": "Anténa"
+        "sk": "Anténa",
+        "eu": "Antena"
       },
       "terms": {
         "en": "broadcast, cell phone, cell, communication, mobile phone, radio, television, transmission, tv",
@@ -54576,7 +54919,8 @@
         "vi": "Đê Chắn Sóng",
         "zh": "防波堤",
         "ca": "trencaonades",
-        "eo": "Ond-rompilo"
+        "eo": "Ond-rompilo",
+        "eu": "Olatu-orma"
       },
       "terms": {
         "en": "",
@@ -54708,7 +55052,8 @@
       "description": {
         "en": "The outline of a bridge, grouping together all features for that bridge.",
         "de": "Definiert den Umriss einer Brücke, in dem alle Eigenschalten dieser Brücke zusammengefasst sind.",
-        "pl": "Zarys mostu, grupujący wszystkie funkcje związane z tym mostem."
+        "pl": "Zarys mostu, grupujący wszystkie funkcje związane z tym mostem.",
+        "fr": "Contour d'un pont, avec tous ses éléments.\n<!--"
       }
     },
     {
@@ -54739,7 +55084,8 @@
         "cs": "podzemní silo",
         "fa": "سیلوی سنگری / بونکری",
         "gl": "Silo búnquer",
-        "sk": "Silážna jama"
+        "sk": "Silážna jama",
+        "eu": "Bunker-siloa"
       },
       "terms": {
         "en": "Silage, Storage",
@@ -54818,7 +55164,8 @@
       "id": "man_made/cairn",
       "description": {
         "en": "A mound of stones, usually conical or pyramidal, raised as a landmark or to designate a point of importance in surveying.",
-        "pl": "Kopiec kamieni, zwykle stożkowaty lub piramidalny, wzniesiony jako punkt orientacyjny lub oznaczający ważny punkt w geodezji."
+        "pl": "Kopiec kamieni, zwykle stożkowaty lub piramidalny, wzniesiony jako punkt orientacyjny lub oznaczający ważny punkt w geodezji.",
+        "it": "Un cumulo di pietre, tipicamente conico o piramidale, costruito come punto di riferimento o per indicare un luogo di importanza nel rilevamento."
       }
     },
     {
@@ -54862,7 +55209,8 @@
         "vi": "Ống khói",
         "zh": "烟囱",
         "ca": "Xemeneia",
-        "eo": "Kamentubo"
+        "eo": "Kamentubo",
+        "eu": "Tximinia"
       },
       "terms": {
         "en": "",
@@ -55124,7 +55472,8 @@
         "cs": "Kříž s malou historickou nebo náboženskou hodnotou, např. kříž na vrcholu hory",
         "ja": "多少歴史的・宗教的価値のある十字架。山頂の十字架（summit cross）など。",
         "pl": "Duży krzyż zaznaczający jakiejś miejsce.",
-        "uk": "Хрест що не має релігійного чи історичного значення (напр. позначає вершину гори)"
+        "uk": "Хрест що не має релігійного чи історичного значення (напр. позначає вершину гори)",
+        "pt": "Cruz com pouco valor histórico ou religioso, quase sempre no cimo de um cume."
       },
       "geometry": ["point", "vertex"],
       "iDRef": "man_made/cross",
@@ -55238,7 +55587,8 @@
         "ru": "Место где голуби разводятся или содержатся.",
         "cs": "Holubník",
         "ja": "鳩が飼育されたり集められている場所。鳩舎。鳩小屋。",
-        "pl": "Miejsce, w którym gołębie są hodowane lub trzymane."
+        "pl": "Miejsce, w którym gołębie są hodowane lub trzymane.",
+        "pt": "Um edifício onde se criam ou albergam pombas."
       },
       "tags": {"man_made": "dovecote"},
       "geometry": ["point", "area"],
@@ -56727,7 +57077,8 @@
         "ru": "Скважина для поиска и добычи нефти",
         "cs": "Ropný vrt.",
         "ja": "油井。石油の探索と採掘を行うために設計され、地上から掘られた穴です。",
-        "pl": "Szyb naftowy."
+        "pl": "Szyb naftowy.",
+        "fr": "Un puits d'hydrocarbure est un trou réalisé dans le sol pour en extraire des hydrocarbures."
       }
     },
     {
@@ -59193,6 +59544,10 @@
         "da": "historie,bygning",
         "eo": "historia konstruaĵo,memorigaĵo,antikvaĵo",
         "fa": "ساختمان تاریخی ، بنای تاریخی"
+      },
+      "description": {
+        "en": "",
+        "de": "Unspezifisches geschichtlich bedeutsames Gebäude"
       }
     },
     {
@@ -60081,7 +60436,8 @@
         "es": "Una estructura donde alguien ha sido enterrado.",
         "cs": "Historicky významný hrob",
         "ja": "墓。誰かが埋葬されている構造物です。",
-        "pl": "Nagrobek."
+        "pl": "Nagrobek.",
+        "ru": "A structure where somebody has been buried."
       },
       "geometry": ["point", "area"],
       "iDRef": "historic/tomb",
@@ -60408,7 +60764,17 @@
         "fa": "جاذبه ، جذب ، کشش ، کشندگی ، ستون تاریخی ، جاذبه گردشگری ، گرایش ، جالب"
       },
       "geometry": ["point", "area"],
-      "iDRef": "historic/pillory"
+      "iDRef": "historic/pillory",
+      "description": {
+        "en": "",
+        "pt": "Um pelourinho.",
+        "ru": "Позорный столб",
+        "cs": "Pranýř",
+        "fr": "Un pilori.",
+        "de": "Pranger",
+        "es": "Una picota.",
+        "ja": "さらし台"
+      }
     },
     {
       "id": "natural/bare_rock",
@@ -61773,7 +62139,8 @@
         "ru": "Обозначает хребты и кряжи.",
         "cs": "Horský hřbet",
         "ja": "山や丘の尾根（稜線）",
-        "pl": "Oznaczanie grzbietów górskich."
+        "pl": "Oznaczanie grzbietów górskich.",
+        "fa": "تپهٔ خطی یا زمین‌چهر کوهستانی با امتداد پیوسته در ارتفاع."
       }
     },
     {
@@ -62635,7 +63002,8 @@
         "cs": "Údolí",
         "ja": "谷です",
         "pl": "Dolina.",
-        "uk": "Природна витягнута заглибина з похилими схилами оточена пагорбами або горами"
+        "uk": "Природна витягнута заглибина з похилими схилами оточена пагорбами або горами",
+        "pt": "Depressão natural erodida por um curso de água flanqueada por cumeeiras, montanhas ou colinas."
       }
     },
     {
@@ -63665,7 +64033,14 @@
         "fr": "arbuste,arbrisseau,buisson"
       },
       "geometry": ["point", "vertex"],
-      "iDRef": "natural/shrub"
+      "iDRef": "natural/shrub",
+      "description": {
+        "en": "",
+        "pt": "Um arbusto.",
+        "fr": "Un arbuste.",
+        "de": "Ein einzelner Strauch (auch Busch oder kleines Gehölz).",
+        "pl": "Krzew."
+      }
     },
     {
       "icon": "maki-horse-riding",
@@ -64974,7 +65349,9 @@
         "de": "Notrufnische, Nothaltebucht",
         "cs": "Nouzové stání",
         "nl": "Vluchthaven op een snelweg of andere hoofdweg",
-        "pl": "Zatoka awaryjna na drodze."
+        "pl": "Zatoka awaryjna na drodze.",
+        "it": "Piazzola di sosta accanto ad una strada",
+        "ru": "Аварийный отсек на шоссе"
       }
     },
     {
@@ -65975,7 +66352,8 @@
         "cs": "Kamenný nebo železný kilometrovník u silnice označující ujetou vzdálenost.",
         "ja": "道路のわきにある石や金属の目印で、位置の参照や移動距離を示します。",
         "pl": "Używane do oznaczania położenia słupków kilometrowych.",
-        "pt": "Um marco quilométrico rodoviário."
+        "pt": "Um marco quilométrico rodoviário.",
+        "it": "Segnale di progressiva distanziometrica"
       }
     },
     {
@@ -66279,7 +66657,8 @@
         "cs": "Sjezd z dálnice nebo jiné významné silnice.",
         "ja": "自動車道やその他の主要道路の出口（インターチェンジやジャンクション）。",
         "pl": "Zjazd z autostrady lub innej ważnej drogi.",
-        "uk": "З’їзд з автомагістралі чи іншої значної дороги."
+        "uk": "З’їзд з автомагістралі чи іншої значної дороги.",
+        "fr": "Une sortie d'autoroute, de 4 voies ou route principale"
       }
     },
     {
@@ -67031,7 +67410,8 @@
         "en": "Connecting slip roads/ramps of primary highways",
         "de": "Anschluss- oder Verbindungsrampe einer Fernstraße (Bundesstraße)",
         "it": "Tratti di collegamento (svincoli/rampe) tra una primary e un'altra stada.",
-        "ru": "Небольшие соединительные дороги, использующиеся для съезда или въезда на дорогу класса \"primary\"."
+        "ru": "Небольшие соединительные дороги, использующиеся для съезда или въезда на дорогу класса \"primary\".",
+        "es": "Conexión de vías de acceso/rampas de las carreteras primarias"
       }
     },
     {
@@ -67417,7 +67797,8 @@
         "cs": "Dálniční/silniční odpočívka, kde není benzínová stanice.",
         "ja": "パーキングエリアまたは休憩所。運転手が道路から離れて休憩することができる場所ですが、給油施設はありません。",
         "pl": "Miejsce do zatrzymywania nie posiadające rozbudowanej infrastruktury.",
-        "sv": "Rastplats längs bilväg"
+        "sv": "Rastplats längs bilväg",
+        "es": "Lugar donde los conductores pueden abandonar la vía para descansar, pero no repostar."
       }
     },
     {
@@ -71714,7 +72095,8 @@
         "uk": "Карусель",
         "vi": "Đu quay",
         "zh": "旋转木马",
-        "eo": "Karuselo"
+        "eo": "Karuselo",
+        "eu": "Zaldiko-maldiko"
       },
       "terms": {
         "en": "theme park,roundabout,merry-go-round,galloper,jumper,horseabout,flying horses",
@@ -73918,7 +74300,14 @@
       "tags": {"power": "plant"},
       "addTags": {"power": "plant", "landuse": "industrial"},
       "id": "power/plant",
-      "description": {"en": "", "de": "Kraftwerk", "ja": "発電機によって電力を生産する場所。"},
+      "description": {
+        "en": "",
+        "de": "Kraftwerk",
+        "ja": "発電機によって電力を生産する場所。",
+        "it": "Luogo dove l'energia viene prodotta da tag:power=generator.",
+        "ru": "Место, где с помощью tag:power=generator вырабатывается энергия.",
+        "fr": "Lieux de production d'électricité, chaleur, gaz, froid... à l'aide d'un ou plusieurs tag:power=generator."
+      },
       "moreFields": []
     },
     {
@@ -74344,7 +74733,8 @@
         "it": "Palo o piccolo traliccio linea elettrica",
         "ru": "Небольшая опора ЛЭП (столб)",
         "ja": "中低圧の電力線を支える単独の（ふつうは木かコンクリートの）電柱。",
-        "pl": "Słup linii napowietrznych"
+        "pl": "Słup linii napowietrznych",
+        "fr": "Un poteau simple supportant des lignes électriques de toute tension. Ce sont le plus souvent des mats armés pour supporter des isolateurs séparant la ligne électrique de la terre."
       }
     },
     {
@@ -74406,7 +74796,8 @@
         "pt": "marca de electricidade sub-estações.",
         "it": "Sottostazione elettrica",
         "ja": "変電所向けの非推奨のタグ",
-        "pl": "Podstacja wysokiego napięcia."
+        "pl": "Podstacja wysokiego napięcia.",
+        "ru": "(Устаревший тег. Трансформаторные будки, распределительные щиты.) Для обозначения крупных и небольших подстанций используйте tag:power=substation"
       },
       "deprecated": true,
       "replace": {"power": "substation"}
@@ -74791,7 +75182,14 @@
       },
       "terms": {"en": ""},
       "geometry": ["line"],
-      "iDRef": "power/cable"
+      "iDRef": "power/cable",
+      "description": {
+        "en": "",
+        "it": "Cablaggio di linee a bassa / alta tensione",
+        "fr": "Un câble isolé transportant l'énergie électrique, tel que deux installés pour le transport ou la distribution sous nos routes. Le contraire de tag:power=line.",
+        "de": "Erdkabel zur Energieversorgung",
+        "pl": "Kable izolowane, przesyłowe lub dystrybucyjne pod drogami i kable morskie."
+      }
     },
     {
       "id": "aeroway/aerodrome",
@@ -74846,7 +75244,8 @@
         "tr": "Havaalanı",
         "uk": "Аеропорт",
         "vi": "Sân bay",
-        "zh": "机场"
+        "zh": "机场",
+        "eu": "Aireportu"
       },
       "terms": {
         "en": "aerodrome, aeroway, airplane, airport, jet, plane",
@@ -75020,7 +75419,8 @@
         "sv": "Gate",
         "tr": "Kapı",
         "uk": "Вихід на посадку",
-        "vi": "Cổng Sân bay"
+        "vi": "Cổng Sân bay",
+        "eu": "Aireportuko ate"
       },
       "terms": {
         "en": "",
@@ -75059,7 +75459,8 @@
         "it": "Gate - Il punto di un aeroporto dove i passeggeri aspettano prima di salire sul loro volo.",
         "ru": "Используется для обозначения и нумерации выходов на посадку в аэропортах.",
         "cs": "Pro označování čísel bran (gate) na letišti.",
-        "ja": "空港の搭乗口番号"
+        "ja": "空港の搭乗口番号",
+        "es": "Puerta de embarque"
       }
     },
     {
@@ -75301,7 +75702,8 @@
         "de": "Rollhalt. Ein Ort, hinter dem ein haltendes Flugzeug den voraus liegenden kreuzenden Weg sicher freihält.",
         "pt": "Ponto demarcado no chão para a aeronave esperar a oportunidade de uma travessia segura.",
         "it": "Posizione di attesa - Una posizione dietro la quale l'aeromobile deve fermarsi per essere al sicuro da un incrocio.",
-        "cs": "Vyčkávací místo letadla"
+        "cs": "Vyčkávací místo letadla",
+        "es": "Un punto detrás del cual las aeronaves se consideran alejadas de un camino de cruce"
       }
     },
     {
@@ -75696,7 +76098,8 @@
         "sv": "Flygterminal",
         "tr": "Terminal",
         "uk": "Термінал",
-        "vi": "Ga Sân bay"
+        "vi": "Ga Sân bay",
+        "eu": "Aireportuko Terminal"
       },
       "terms": {
         "en": "airport, aerodrome",
@@ -75839,7 +76242,13 @@
       "presets": [],
       "lbl": {"en": "Railway Crossing"},
       "terms": {"en": "crossing"},
-      "description": {"en": "Crossing rails that do not interconnect"},
+      "description": {
+        "en": "Crossing rails that do not interconnect",
+        "ru": "Пересечение несмежных рельс",
+        "cs": "Křížící se koleje, které spolu nejsou propojeny.",
+        "de": "Gleiskreuzung ohne Weichenfunktion",
+        "pl": "Skrzyżowania szyn, które się przecinają."
+      },
       "geometry": ["vertex"],
       "tags": {"railway": "railway_crossing"},
       "moreFields": [],
@@ -77124,7 +77533,8 @@
         "ja": "その国の標準的な線路幅を走る旅客・貨物鉄道。(新幹線も含む)",
         "pl": "Oznaczanie linii kolejowych o standardowym rozstawie torów dla danego kraju lub regionu.",
         "sv": "Normalspår avsedd för reguljär passagerar- och godstrafik.",
-        "uk": "Залізнична колія, нормальної ширини."
+        "uk": "Залізнична колія, нормальної ширини.",
+        "es": "Rieles de una vía de ancho estándar"
       }
     },
     {
@@ -79416,7 +79826,8 @@
         "ru": "Большой неподвижный блок(и), мешающий свободному проезду.",
         "cs": "Velký nepohyblivý blok materiálu blokující volný průjezd.",
         "ja": "道路の自由な行き来を阻害する、巨大な動かせないブロックです。",
-        "pl": "Duży blok zamykający swobodny dostęp wzdłuż drogi."
+        "pl": "Duży blok zamykający swobodny dostęp wzdłuż drogi.",
+        "fa": "یک یا چند بلوک بزرگ ثابت که معمولاً دسترسی یک راه را محدود می‌کند."
       },
       "moreFields": []
     },
@@ -79744,7 +80155,8 @@
         "ru": "Цепь, преграждающая проезд моторизованным транспортным средствам.",
         "cs": "Řetěz přes cestu pro zabránění průjezdu vozidel.",
         "ja": "自動車の進入を防ぐために使う鎖。",
-        "pl": "Łańcuch ograniczający przejazd pojazdów."
+        "pl": "Łańcuch ograniczający przejazd pojazdów.",
+        "de": "Eine gespannte Kette um die Durchfahrt motorisierter Fahrzeuge zu verhindern"
       },
       "moreFields": []
     },
@@ -80078,7 +80490,8 @@
         "vi": "Cửa vào",
         "zh": "入口",
         "ca": "Entrada",
-        "eo": "Enirejo"
+        "eo": "Enirejo",
+        "eu": "Sarrera"
       },
       "terms": {"en": ""},
       "geometry": ["vertex"],
@@ -80302,7 +80715,8 @@
         "vi": "Cổng",
         "zh": "门",
         "ca": "Porta",
-        "eo": "Pordego"
+        "eo": "Pordego",
+        "eu": "Ate"
       },
       "terms": {
         "en": "",
@@ -81187,7 +81601,8 @@
       "id": "barrier/sally_port",
       "description": {
         "en": "A secure, controlled entryway to a fortification or prison.",
-        "es": "Una entrada segura y controlada a una fortificación o prisión."
+        "es": "Una entrada segura y controlada a una fortificación o prisión.",
+        "de": "Ein sicherer und kontrollierter Zugang zu einer Festung oder einem Gefängnis."
       },
       "moreFields": []
     },
@@ -81323,7 +81738,9 @@
         "fr": "Barrière tournante.",
         "it": "Sbarra a rotazione - Una sbarra o un palo che può essere ruotato per permettere o bloccare l'accesso veicolare attraverso un punto controllato.",
         "ru": "Затвор, состоящий из стержня или полюса, повернутого таким образом, чтобы стрела блокировала доступ к автомобилю через контролируемую точку.",
-        "cs": "Závora otočná do strany"
+        "cs": "Závora otočná do strany",
+        "de": "Eine Drehschranke, die sich zum Öffnen um ihren Auflagerpunkt dreht",
+        "es": "Una barrera abatible es similar a una [[Tag:barrier=lift gate"
       }
     },
     {
@@ -81525,7 +81942,8 @@
         "vi": "Tường",
         "zh": "墙",
         "ca": "Mur",
-        "eo": "Muro"
+        "eo": "Muro",
+        "eu": "Pareta"
       },
       "terms": {
         "en": "",
@@ -81659,7 +82077,16 @@
         "ja": "スパイクストリップ, 交通安全, 交通静穏化, 道路設備, 減速, スパイク"
       },
       "geometry": ["vertex"],
-      "iDRef": "barrier/spikes"
+      "iDRef": "barrier/spikes",
+      "description": {
+        "en": "",
+        "it": "Spuntoni o chiodi - Sono posizionati sul terreno per prevenire gli accessi non autorizzati.",
+        "cs": "Ostnatý pás",
+        "fr": "Herse.",
+        "de": "Eine Nagelsperre um die Bereifung von Fahrzeugen beim Darüberfahren zu zerstören",
+        "es": "Puntas sobre el terreno para evitar el acceso no autorizado.",
+        "pl": "Kolczatka jest urządzeniem lub bronią używaną do utrudniania lub zatrzymywania ruchu pojazdów kołowych poprzez przebijanie ich opon."
+      }
     },
     {
       "id": "piste/downhill/halfpipe",
@@ -82057,7 +82484,8 @@
         "ru": "Укреплённое сооружение военного назначения.",
         "cs": "Bunkr.",
         "ja": "強化された軍事的な建物。",
-        "pl": "Schron wojskowy chroniący przed ogniem przeciwnika."
+        "pl": "Schron wojskowy chroniący przed ogniem przeciwnika.",
+        "de": "Ein militärischer Bunker"
       }
     },
     {
@@ -82142,7 +82570,8 @@
         "ru": "Небольшой, грубо построенный дом, обычно в сельской местности.",
         "cs": "Bouda, chatka - malý, nahrubo postavený dům obvykle na venkově.",
         "ja": "簡素な造りの小さな家で、郊外部によく見られます。",
-        "pl": "Domek letniskowy."
+        "pl": "Domek letniskowy.",
+        "de": "Ein kleines, einfach gebautes Haus, das normalerweise in ländlichen Gebieten anzutreffen ist"
       }
     },
     {
@@ -82380,7 +82809,8 @@
         "bg": "Сграда ползвана за параклис.",
         "cs": "Budova postavená jako kaple.",
         "ja": "礼拝堂（chapel）として建てられた建物。",
-        "pl": "Kaplica."
+        "pl": "Kaplica.",
+        "pt": "Edifício construído como capela."
       }
     },
     {
@@ -82466,7 +82896,8 @@
         "ru": "Здание, построенное как церковь.",
         "cs": "Budova postavená jako kostel.",
         "ja": "教会として建てられた建物です。",
-        "pl": "Budynek świątyni."
+        "pl": "Budynek świątyni.",
+        "uk": "Будівля, що зведена як церква."
       }
     },
     {
@@ -82546,7 +82977,8 @@
         "de": "Öffentliches Gebäude",
         "es": "Un edificio que aloja cualquier equipamiento cívico de carácter público (ayuntamiento, biblioteca, piscina, etc.).",
         "cs": "Budova občanské vybavenosti (radnice, knihovna, plavecký bazén).",
-        "ja": "公共施設（役所、図書館、遊泳プールなど）が入居している建物です。"
+        "ja": "公共施設（役所、図書館、遊泳プールなど）が入居している建物です。",
+        "ru": "Здание, в котором могут быть расположены любое общественное место (городская администрация, библиотека, бассейн)."
       }
     },
     {
@@ -82813,7 +83245,8 @@
         "cs": "Budova ve výstavbě.",
         "ja": "建設中の建物",
         "no": "En bygning under konstruksjon",
-        "pl": "Budynek w budowie."
+        "pl": "Budynek w budowie.",
+        "de": "Ein Gebäude im Bau"
       }
     },
     {
@@ -82946,7 +83379,8 @@
         "sv": "Elevhem",
         "tr": "Yurt",
         "uk": "Гуртожиток",
-        "vi": "Ký túc xá"
+        "vi": "Ký túc xá",
+        "eu": "Erresidentzia"
       },
       "terms": {
         "en": "",
@@ -83034,7 +83468,8 @@
         "sv": "Entré/utgång",
         "tr": "Giriş/Çıkış",
         "uk": "Вхід/Вихід",
-        "vi": "Cửa Ra vào"
+        "vi": "Cửa Ra vào",
+        "eu": "Sarrera/Irteera"
       },
       "terms": {"en": ""},
       "geometry": ["vertex"],
@@ -83117,7 +83552,8 @@
         "es": "Un edificio residencial en una granja.",
         "cs": "Obytná budova na statku/farmě.",
         "ja": "農場にある住宅（農家）。",
-        "pl": "Dom mieszkalny w gospodarstwie rolnym."
+        "pl": "Dom mieszkalny w gospodarstwie rolnym.",
+        "ru": "Жилой дом на ферме."
       }
     },
     {
@@ -83188,7 +83624,8 @@
         "ru": "Здание на ферме, которая не является жилищем.",
         "cs": "Budova na statku, která neslouží k bydlení.",
         "ja": "住居ではない農場の建物です。",
-        "pl": "Niemieszkalny budynek gospodarczy."
+        "pl": "Niemieszkalny budynek gospodarczy.",
+        "de": "Landwirtschaftsgebäude ohne Wohnung"
       }
     },
     {
@@ -83242,7 +83679,8 @@
         "sv": "Garage",
         "tr": "Garaj",
         "uk": "Гараж",
-        "vi": "Ga ra"
+        "vi": "Ga ra",
+        "eu": "Garaje"
       },
       "terms": {
         "en": "",
@@ -83340,7 +83778,8 @@
         "sv": "Garage",
         "tr": "Garajlar",
         "uk": "Гаражі",
-        "vi": "Dãy Ga ra"
+        "vi": "Dãy Ga ra",
+        "eu": "Garajeak"
       },
       "terms": {
         "en": "",
@@ -83598,7 +84037,8 @@
         "ru": "Ангар это здание используемое для хранения авиатехники, вертолётов или космических кораблей.",
         "cs": "Hangár.",
         "ja": "ハンガー。航空機、ヘリコプター、宇宙船の格納に使われる建物です。",
-        "pl": "Hangar lotniczy."
+        "pl": "Hangar lotniczy.",
+        "de": "Ein Hangar"
       }
     },
     {
@@ -83781,7 +84221,8 @@
         "cs": "Budova navržená jako hotel s oddělenými pokoji pro ubytování.",
         "ja": "ホテルの建物。宿泊設備が利用できる個室が設計されている建物です。",
         "pl": "Budynek hotelowy.",
-        "es": "Un edificio diseñado con habitaciones separadas para pasar la noche."
+        "es": "Un edificio diseñado con habitaciones separadas para pasar la noche.",
+        "ru": "Здание, спроектированное с отдельными комнатами, доступными для ночлега."
       }
     },
     {
@@ -83832,7 +84273,8 @@
         "tr": "Ev",
         "uk": "Дім",
         "vi": "Nhà ở",
-        "zh": "房屋"
+        "zh": "房屋",
+        "eu": "Etxe"
       },
       "terms": {
         "en": "home, family, residence, dwelling",
@@ -84207,7 +84649,8 @@
         "en": "A generic kindergarten building.",
         "ru": "Общее здание детского сада.",
         "ja": "一般的な幼稚園の建物です。",
-        "pl": "budynek przedszkola na terenie przedszkola."
+        "pl": "budynek przedszkola na terenie przedszkola.",
+        "de": "Ein Kindergartengebäude"
       }
     },
     {
@@ -84704,7 +85147,8 @@
         "sv": "Tak",
         "tr": "Çatı",
         "uk": "Дах",
-        "vi": "Mái Che"
+        "vi": "Mái Che",
+        "eu": "Teilatu"
       },
       "terms": {
         "en": "",
@@ -84991,7 +85435,9 @@
         "en": "A house that shares a common wall with another on one side.",
         "fr": "Une maison qui partage un mur commun avec une autre maison.",
         "es": "Una casa que comparte una pared común con otra a un lado.",
-        "pl": "Dom, który dzieli wspólną ścianę z drugim,po jednej stronie."
+        "pl": "Dom, który dzieli wspólną ścianę z drugim,po jednej stronie.",
+        "ru": "Дом, у которого с одной стороны есть общая стена с другим домом.",
+        "de": "Eine Doppelhaushälfte"
       }
     },
     {
@@ -85061,7 +85507,8 @@
         "ru": "Служебные постройки с работающим оборудованием, не предназначенные для нахождения внутри людей.",
         "cs": "Servisní budova. Obvykle malá neobydlená budova, ve které jsou nějaká zařízení (pumpy nebo transformátory).",
         "ja": "機械室。確実に機械がある小さな無人の建物です（ポンプ室や変電所など）。",
-        "pl": "Budynek serwisowy/ techniczny."
+        "pl": "Budynek serwisowy/ techniczny.",
+        "pt": "Um edifício de serviço que, geralmente, é pequeno e contém maquinaria (como bombas ou transformadores)."
       }
     },
     {
@@ -85198,7 +85645,8 @@
         "sv": "Stall",
         "tr": "Ahır",
         "uk": "Стайня",
-        "vi": "Chuồng Ngựa"
+        "vi": "Chuồng Ngựa",
+        "eu": "Ukuilu"
       },
       "terms": {
         "en": "horse shelter",
@@ -85400,7 +85848,8 @@
         "de": "Wohncontainer oder Wohnwagen, die langfristig an einem Ort stehen.",
         "cs": "Mobilní dům (karavan), který (téměř) stále stojí na stejném místě.",
         "ja": "トレーラーハウス。特定の場所に（半）永久的に設置されているもの。",
-        "pl": "Przyczepa stacjonarna (przyczepa kempingowa), pozostawiona na stałe w jednym miejscu."
+        "pl": "Przyczepa stacjonarna (przyczepa kempingowa), pozostawiona na stałe w jednym miejscu.",
+        "ru": "Переносной дом, бытовка или дом на колёсах, временно или навсегда расположенный в определённом месте."
       }
     },
     {
@@ -85472,7 +85921,8 @@
         "de": "Ein Gebäude, das als Tempel erbaut wurde",
         "cs": "Budova postavená jako chrám.",
         "ja": "寺院として建てられた建物です。",
-        "pl": "Budynek, który został zbudowany jako świątynia."
+        "pl": "Budynek, który został zbudowany jako świątynia.",
+        "ru": "Здание, построенное как храм."
       }
     },
     {
@@ -85555,7 +86005,8 @@
         "es": "El contorno de una hilera lineal de viviendas residenciales, cada una de las cuales normalmente tiene su propia entrada, formando una ''terrace'' o hilera de casas adosadas («row-house» o «townhouse» en inglés norteamericano).",
         "cs": "Půdorys řadového domu, každý z jednotlivých domů má svůj vchod.",
         "ja": "長屋、テラスハウス。一列に並んだ住宅の輪郭で、それぞれに個別に玄関があり、テラスの形をしています。",
-        "pl": "Dom jednorodzinny w zabudowie szeregowej."
+        "pl": "Dom jednorodzinny w zabudowie szeregowej.",
+        "ru": "Ряд жилых домов (блокированная застройка), построенных в линию, каждый из которых обычно имеет отдельный вход, образующий террасу («рядный дом» или «таунхаус» в североамериканском английском)."
       }
     },
     {

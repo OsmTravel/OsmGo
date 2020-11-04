@@ -339,6 +339,14 @@
       "name": "Bengali, Bangla",
       "nativeName": "বাংলা",
       "wikiUrl": "https://en.wikipedia.org/wiki/Bengali_language"
+    },
+    {
+      "code": "eu",
+      "639-2": "eus",
+      "family": "Indo-European",
+      "name": "Basque",
+      "nativeName": "Euskara",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Basque_language"
     }
   ]
 }
