@@ -3,10 +3,11 @@
         <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']  }}</b>
         <b *ngIf="displayCode">{{preset?.key}}</b>
     </ion-card-header>
-    <ion-card-content>
-        <div>
+    <ion-card-content *ngIf="preset?.type != 'opening_hours'">
+       <div *ngIf="preset?.type == 'opening_hours'">
+      
+       </div>
 
-        </div>
         <p *ngIf="!displayCode && (tag | displayPresetLabel:preset) ; else noPreset ; let pr">
             {{pr.lbl[language]  || pr.lbl['en']}}
         </p>
@@ -18,4 +19,16 @@
         </ng-template>
 
     </ion-card-content>
+
+
+    <ion-card-content *ngIf="preset?.type == 'opening_hours'">
+        <app-opening-hours *ngIf="!displayCode ; else noPreset"   [openingHours]="tag.value" [displayCode]="displayCode"> </app-opening-hours>
+
+        <ng-template #noPreset>
+            <ion-icon name="code"></ion-icon>
+            {{tag.value}}
+        </ng-template>
+       
+    </ion-card-content>
+
 </ion-card>

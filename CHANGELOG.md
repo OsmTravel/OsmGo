@@ -1,3 +1,12 @@
+# 1.5.0
+## 🍏 Improvements
+ - Upgrade dependencies : Mapbox GL JS 1.12.0, Angular 10, etc
+ - Add Basque language #71
+
+## ✨ Features
+ - First iteration of opening_hours interface. It use a part of [YoHours](https://framagit.org/PanierAvide/YoHours) by Adrien Pavie (#63)
+    - This first version only allows you to add simple "opening_hours" format (without specific days, weeks or holidays)
+
 # 1.3.0
  - Fix #66 : Restaurant as self service laundry 
  - Import tags from id

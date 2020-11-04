@@ -44,7 +44,8 @@
       "zh": "菜系",
       "ca": "Cuines",
       "id": "Masakan",
-      "no": "Kjøkken"
+      "no": "Kjøkken",
+      "eu": "Sukaldeak"
     },
     "options": [
       {
@@ -364,7 +365,8 @@
       "uk": "Оператор",
       "vi": "Cơ quan Chủ quản",
       "zh": "经营者",
-      "ca": "Operador"
+      "ca": "Operador",
+      "eu": "Operadore"
     }
   },
   "brand": {
@@ -410,7 +412,8 @@
       "uk": "Марка",
       "vi": "Nhãn hiệu",
       "zh": "品牌",
-      "ca": "Marca"
+      "ca": "Marca",
+      "eu": "Marka"
     }
   },
   "bicycle_parking": {
@@ -458,7 +461,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "options": [
       {"v": "stands", "lbl": {"en": "stands", "fr": "Arceau/Sheffield"}},
@@ -518,7 +522,8 @@
       "uk": "Міськість",
       "vi": "Sức chứa",
       "zh": "容量",
-      "ca": "Capacitat"
+      "ca": "Capacitat",
+      "eu": "Edukiera"
     }
   },
   "covered": {
@@ -564,7 +569,8 @@
       "vi": "Có Mái Che",
       "zh": "有上盖",
       "ca": "Cobert",
-      "no": "Dekket"
+      "no": "Dekket",
+      "eu": "Estalita"
     },
     "options": [
       {
@@ -690,7 +696,9 @@
       "sr": "Органски производи",
       "sv": "Organiska produkter",
       "uk": "Органічні продукти",
-      "vi": "Thực phẩm Hữu cơ"
+      "vi": "Thực phẩm Hữu cơ",
+      "ru": "Органические продукты",
+      "nl": "Organische producten"
     },
     "options": [
       {
@@ -1264,7 +1272,9 @@
       "ko": "셀프서비스",
       "no": "Selvbetjening",
       "fa": "سلف سرویس",
-      "sk": "Samoobsluha"
+      "sk": "Samoobsluha",
+      "da": "Selvbetjening",
+      "nl": "Zelfbediening"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1350,7 +1360,8 @@
           "uk": "Так",
           "vi": "Có Bán",
           "ca": "Sí",
-          "eo": "Jes"
+          "eo": "Jes",
+          "eu": "Bai"
         }
       },
       {
@@ -1391,7 +1402,8 @@
           "vi": "Không Bán",
           "ca": "No",
           "eo": "Ne",
-          "no": "Nei"
+          "no": "Nei",
+          "eu": "Ez"
         }
       },
       {
@@ -1432,7 +1444,8 @@
           "vi": "Chỉ Bán",
           "ca": "Només",
           "eo": "Nur",
-          "no": "Kun"
+          "no": "Kun",
+          "eu": "Bakarrik"
         }
       }
     ]
@@ -1470,7 +1483,8 @@
       "vi": "Kiểu",
       "ca": "Tipus",
       "da": "Type",
-      "fa": "نوع"
+      "fa": "نوع",
+      "eu": "Mota"
     },
     "options": [
       {
@@ -1503,7 +1517,8 @@
           "no": "Container",
           "fa": "کانتینر",
           "sk": "Kontajner",
-          "sr": "Контејнер"
+          "sr": "Контејнер",
+          "eu": "Edukiontzi"
         }
       },
       {
@@ -1536,7 +1551,8 @@
           "no": "Senter",
           "fa": "مرکز",
           "sk": "Centrum",
-          "sr": "Центар"
+          "sr": "Центар",
+          "eu": "Zentru"
         }
       }
     ]
@@ -1668,7 +1684,8 @@
       "uk": "Лавка",
       "vi": "Băng ghế",
       "zh": "长凳",
-      "ca": "Banc per a asseure's"
+      "ca": "Banc per a asseure's",
+      "eu": "Banku"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1718,7 +1735,8 @@
       "uk": "Для інвалідних візків",
       "vi": "Đi Xe lăn Được",
       "zh": "轮椅通道",
-      "ca": "Accés per a cadires de rodes"
+      "ca": "Accés per a cadires de rodes",
+      "eu": "Gurpildun-aulkientzako Sarrera"
     },
     "options": [
       {
@@ -1867,7 +1885,8 @@
       "uk": "Плата",
       "vi": "Phí",
       "zh": "费用",
-      "ca": "Pagament"
+      "ca": "Pagament",
+      "eu": "Ordainketa"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1915,7 +1934,8 @@
       "uk": "Проїзд біля пункту обслуговування",
       "vi": "Lối Mua hàng trên Xe",
       "zh": "免下车",
-      "ca": "Via dins una propietat."
+      "ca": "Via dins una propietat.",
+      "eu": "Auto-zerbitzua"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1953,7 +1973,8 @@
       "zh": "开处方药",
       "no": "Dispenser Resepter",
       "fa": "توزیع نسخه‌ها",
-      "sk": "Vydáva recepty"
+      "sk": "Vydáva recepty",
+      "eu": "Errezetak administratzen ditu"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -2086,7 +2107,9 @@
       "ca": "Seients",
       "ko": "좌석 수",
       "da": "Sæder",
-      "sk": "Sedadlá"
+      "sk": "Sedadlá",
+      "ru": "Мест",
+      "eu": "Eserlekuak"
     }
   },
   "religion": {
@@ -2134,7 +2157,8 @@
       "uk": "Релігія",
       "vi": "Tôn giáo",
       "zh": "宗教",
-      "ca": "Religió"
+      "ca": "Religió",
+      "eu": "Erlijio"
     },
     "options": [
       {"v": "christian", "lbl": {"en": "Christian", "fr": "Chrétienne"}},
@@ -2182,7 +2206,8 @@
       "uk": "Товари",
       "vi": "Loại Hàng hóa",
       "zh": "商品类型",
-      "ca": "Tipus de mercaderies"
+      "ca": "Tipus de mercaderies",
+      "eu": "Elikagai Motak"
     },
     "options": [
       {
@@ -2278,7 +2303,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "options": [
       {
@@ -2451,7 +2477,8 @@
       "zh": "电话",
       "ca": "Telèfon",
       "no": "Telefon",
-      "sr": "Телефон"
+      "sr": "Телефон",
+      "eu": "Telefonoa"
     }
   },
   "website": {
@@ -2499,12 +2526,13 @@
       "uk": "Вебсайт",
       "vi": "Trang Web",
       "zh": "网站",
-      "ca": "Lloc web"
+      "ca": "Lloc web",
+      "eu": "Webgune"
     }
   },
   "opening_hours": {
     "key": "opening_hours",
-    "type": "text",
+    "type": "opening_hours",
     "lbl": {
       "en": "Hours",
       "fr": "Horaires d'ouverture",
@@ -2548,7 +2576,8 @@
       "uk": "Розклад роботи",
       "vi": "Giờ Mở cửa",
       "zh": "小时",
-      "ca": "Horari"
+      "ca": "Horari",
+      "eu": "Orduak"
     }
   },
   "school:FR": {
@@ -2641,7 +2670,8 @@
       "vi": "Quần áo",
       "zh": "服饰",
       "ca": "Roba",
-      "id": "Baju"
+      "id": "Baju",
+      "eu": "Arropa"
     },
     "options": [
       {"v": "babies", "lbl": {"fr": "Bébé", "en": "babies"}},
@@ -2763,7 +2793,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "options": [
       {
@@ -2850,7 +2881,8 @@
           "uk": "Підземна",
           "vi": "Ngầm",
           "ca": "Subterrani",
-          "eo": "Subtera"
+          "eo": "Subtera",
+          "eu": "Lur azpiko"
         }
       },
       {
@@ -2955,7 +2987,11 @@
           "sr": "Кровни простор",
           "sv": "På taket",
           "uk": "На даху",
-          "vi": "Trên Nóc nhà"
+          "vi": "Trên Nóc nhà",
+          "ru": "На крыше",
+          "fi": "Katto",
+          "ko": "옥상",
+          "nl": "Dak"
         }
       },
       {
@@ -3037,7 +3073,8 @@
           "uk": "Навіси",
           "vi": "Lán",
           "ca": "Garatges",
-          "eo": "Garaĝ-budoj privataj"
+          "eo": "Garaĝ-budoj privataj",
+          "eu": "Estalgune"
         }
       },
       {"v": "park_and_ride", "lbl": {"en": "park_and_ride"}},
@@ -3081,7 +3118,8 @@
           "vi": "Nhà xe",
           "ca": "Aixoplucs",
           "eo": "Tegmentitaj duonbudoj",
-          "no": "Carporter"
+          "no": "Carporter",
+          "eu": "Garaje"
         }
       }
     ]
@@ -3131,7 +3169,8 @@
       "uk": " Пересування дозволено",
       "vi": "Quyền Truy cập",
       "zh": "允许通行",
-      "ca": "Accés permès"
+      "ca": "Accés permès",
+      "eu": "Onartutako sarbidea"
     },
     "options": [
       {
@@ -3178,7 +3217,8 @@
           "vi": "Tư nhân",
           "zh": "私人",
           "ca": "Privat",
-          "eo": "Privata"
+          "eo": "Privata",
+          "eu": "Pribatua"
         }
       },
       {
@@ -3233,7 +3273,8 @@
           "vi": "Cho phép",
           "zh": "允许的",
           "ca": "Permès",
-          "eo": "Permesata"
+          "eo": "Permesata",
+          "eu": "Baimenduta"
         }
       },
       {
@@ -3280,7 +3321,8 @@
           "vi": "Cấm",
           "zh": "禁止的",
           "ca": "Prohibit",
-          "eo": "Malpermesata"
+          "eo": "Malpermesata",
+          "eu": "Debekatuta"
         }
       },
       {
@@ -3325,7 +3367,8 @@
           "vi": "Chủ cho phép",
           "zh": "获许可进入",
           "ca": "Permissiu",
-          "eo": "Verŝajne permesata"
+          "eo": "Verŝajne permesata",
+          "eu": "Permisibo"
         }
       },
       {
@@ -3372,7 +3415,8 @@
           "vi": "Theo mục đích",
           "zh": "特定的",
           "ca": "Específic",
-          "eo": "Adaptita"
+          "eo": "Adaptita",
+          "eu": "Aukeratua"
         }
       },
       {
@@ -3420,7 +3464,8 @@
           "vi": "Nơi đến",
           "zh": "目的地",
           "ca": "Destinació",
-          "eo": "Celloko"
+          "eo": "Celloko",
+          "eu": "Helmuga"
         }
       },
       {
@@ -3464,7 +3509,8 @@
           "vi": "Bắt xuống đi bộ",
           "ca": "Baixar del mitjà de transport",
           "eo": "Deseliĝi",
-          "id": "turun dari kendaraan"
+          "id": "turun dari kendaraan",
+          "eu": "©Desmuntatu"
         }
       },
       {
@@ -3500,7 +3546,8 @@
           "eo": "Paspermeso postulata",
           "id": "Minta izin",
           "sk": "Povolenie",
-          "sr": "Пропусница"
+          "sr": "Пропусница",
+          "eu": "Baimendu"
         }
       }
     ]
@@ -3541,7 +3588,8 @@
       "no": "Materiale",
       "tr": "Materyal",
       "da": "Materiale",
-      "sk": "Materiál"
+      "sk": "Materiál",
+      "eu": "Materiala"
     },
     "options": [
       {"v": "wood", "lbl": {"fr": "Bois", "en": "wood"}},
@@ -3595,7 +3643,8 @@
       "vi": "Ngồi Ngoài trời",
       "zh": "室外座位",
       "ca": "Seient a l'aire lliure",
-      "no": "Utendørs sitteplass"
+      "no": "Utendørs sitteplass",
+      "eu": "Kanpoko eserlekuak"
     },
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
@@ -3654,7 +3703,8 @@
       "vi": "Mang về",
       "zh": "打包外带",
       "ca": "Per emportar",
-      "sr": "За понети"
+      "sr": "За понети",
+      "eu": "Eramateko"
     },
     "options": [
       {
@@ -3697,7 +3747,8 @@
           "uk": "Так",
           "vi": "Có",
           "ca": "Sí",
-          "eo": "Jes"
+          "eo": "Jes",
+          "eu": "Bai"
         }
       },
       {
@@ -3740,7 +3791,8 @@
           "uk": "Ні",
           "vi": "Không có",
           "ca": "No",
-          "eo": "Ne"
+          "eo": "Ne",
+          "eu": "Ez"
         }
       },
       {
@@ -3781,7 +3833,8 @@
           "vi": "Chỉ có Mang về",
           "ca": "Només per emportar",
           "eo": "Nur elportado",
-          "sr": "Само за понети"
+          "sr": "Само за понети",
+          "eu": "Eramateko Bakarrik "
         }
       }
     ]
@@ -3830,7 +3883,8 @@
       "vi": "Giao hàng",
       "zh": "外卖配送",
       "ca": "Entrega",
-      "id": "Pesan Antar"
+      "id": "Pesan Antar",
+      "eu": "Entrega"
     },
     "options": [
       {"v": "yes", "lbl": {"fr": "Oui", "en": "yes"}},
@@ -3932,7 +3986,8 @@
           "vi": "Wi-Fi",
           "zh": "无线网络",
           "ca": "WiFi",
-          "eo": "Sendrata"
+          "eo": "Sendrata",
+          "eu": "Wifi"
         }
       },
       {
@@ -3978,7 +4033,8 @@
           "uk": "Так",
           "vi": "Có",
           "ca": "Sí",
-          "eo": "Jes"
+          "eo": "Jes",
+          "eu": "Bai"
         }
       },
       {
@@ -4024,7 +4080,8 @@
           "uk": "Ні",
           "vi": "Không có",
           "ca": "No",
-          "eo": "Ne"
+          "eo": "Ne",
+          "eu": "Ez"
         }
       },
       {
@@ -4071,7 +4128,8 @@
           "vi": "Qua dây điện",
           "zh": "有线网络",
           "ca": "Per cable",
-          "eo": "Drata"
+          "eo": "Drata",
+          "eu": "Kableatua"
         }
       },
       {
@@ -4118,7 +4176,8 @@
           "vi": "Máy tính công cộng",
           "zh": "终端",
           "ca": "Mitjançant un terminal",
-          "eo": "Terminalo"
+          "eo": "Terminalo",
+          "eu": "Terminal"
         }
       }
     ]
@@ -4177,7 +4236,8 @@
       "vi": "Bia Tươi",
       "zh": "生啤酒",
       "no": "Fatøl",
-      "sk": "Nefiltrované pivá"
+      "sk": "Nefiltrované pivá",
+      "eu": "Presioko Garagardo"
     }
   },
   "fuel:lpg": {
@@ -71549,7 +71609,8 @@
       "ca": "Direcció (graus en sentit horari)",
       "no": "Retning (Grader Medurs)",
       "hr": "Smjer (stupnjeva u smjeru kazaljke na satu)",
-      "sk": "Smer (stupňov v smere hodinových ručičiek)"
+      "sk": "Smer (stupňov v smere hodinových ručičiek)",
+      "eu": "Norabidea ( Graduak erlojuaren orratzen norantzan)"
     }
   },
   "lit": {
@@ -71596,7 +71657,8 @@
       "uk": "Освітлення",
       "vi": "Có Đèn Sáng",
       "zh": "照明设施",
-      "ca": "Il·luminació"
+      "ca": "Il·luminació",
+      "eu": "Argitu"
     },
     "iDtype": "check",
     "options": [
@@ -71644,7 +71706,8 @@
       "zh": "支持物",
       "ca": "Suport",
       "no": "Støtte",
-      "sr": "Подршка"
+      "sr": "Подршка",
+      "eu": "Laguntza"
     },
     "iDtype": "combo",
     "options": [
@@ -71726,7 +71789,9 @@
       "vi": "Chiều cao (Mét)",
       "zh": "高度 (米)",
       "ca": "Altura (metres)",
-      "id": "Tinggi (Meter)"
+      "id": "Tinggi (Meter)",
+      "et": "Kõrgus (meetrites)",
+      "eu": "Altuera (Metroak)"
     }
   },
   "visibility": {
@@ -71768,7 +71833,8 @@
       "uk": "Видно з",
       "vi": "Tầm Nhìn Xa",
       "zh": "能见度",
-      "ca": "Visibilitat"
+      "ca": "Visibilitat",
+      "eu": "Ikuspen"
     },
     "options": [
       {
@@ -71805,7 +71871,8 @@
           "uk": "5 м (16 фт)",
           "vi": "Tới 5 m (16 ft)",
           "ca": "Fins a 5 m (16 peus)",
-          "eo": "Ĝis 5m"
+          "eo": "Ĝis 5m",
+          "eu": "5m-ra arte (16ft)"
         }
       },
       {
@@ -71842,7 +71909,8 @@
           "uk": "5 м до 20 м (16-65 фт)",
           "vi": "5 đến 20 m (16 đến 65 ft)",
           "ca": "De 5 a 20 m (16 a 65 peus)",
-          "eo": "De 5 ĝis 20m"
+          "eo": "De 5 ĝis 20m",
+          "eu": "5-20m bitartean (16 to 65ft)"
         }
       },
       {
@@ -71879,7 +71947,8 @@
           "uk": "більше ніж 20 м (65 фт)",
           "vi": "Hơn 20 m (65 ft)",
           "ca": "Més de 20m (65 peus)",
-          "eo": "Pli ol 20m"
+          "eo": "Pli ol 20m",
+          "eu": "20m baino gehiago (65ft)"
         }
       }
     ],
@@ -71960,7 +72029,9 @@
           "hu": "Fizetős",
           "ja": "有料",
           "sk": "Platený",
-          "sr": "Плаћени"
+          "sr": "Плаћени",
+          "ru": "Платно",
+          "nl": "Betalend"
         }
       },
       {
@@ -71990,7 +72061,9 @@
           "hu": "Ingyenes",
           "ja": "無料",
           "sk": "Zadarmo",
-          "sr": "Слободан"
+          "sr": "Слободан",
+          "ru": "Бесплатно",
+          "nl": "Gratis"
         }
       },
       {
@@ -72019,7 +72092,9 @@
           "hu": "Csak ügyfeleknek",
           "ja": "利用客専用",
           "sk": "Iba zákaznici",
-          "sr": "Само купци"
+          "sr": "Само купци",
+          "ru": "Только для клиентов",
+          "nl": "Enkel klanten"
         }
       }
     ]
@@ -72106,7 +72181,8 @@
       "uk": "Країна",
       "vi": "Quốc gia",
       "zh": "国家",
-      "ca": "País"
+      "ca": "País",
+      "eu": "Herrialde"
     },
     "iDtype": "text"
   },
@@ -72154,7 +72230,8 @@
       "vi": "Thư điện tử",
       "zh": "Email",
       "ca": "Correu-e",
-      "id": "Email"
+      "id": "Email",
+      "eu": "Posta-elektroniko"
     },
     "iDtype": "email"
   },
@@ -72204,7 +72281,8 @@
       "uk": "Факс",
       "vi": "Số Fax",
       "zh": "传真",
-      "ca": "Fax"
+      "ca": "Fax",
+      "eu": "Fax"
     },
     "iDtype": "tel"
   },
@@ -72253,7 +72331,8 @@
       "uk": "Мережа",
       "vi": "Hệ thống",
       "zh": "网络",
-      "ca": "Xarxa"
+      "ca": "Xarxa",
+      "eu": "Sare"
     }
   },
   "collection_times": {
@@ -72300,7 +72379,8 @@
       "uk": "Час виїмки/вивезення",
       "vi": "Giờ Lấy thư",
       "zh": "收集时间",
-      "ca": "Horari de recollida"
+      "ca": "Horari de recollida",
+      "eu": "Biltzeko ordutegia"
     }
   },
   "animal_boarding": {
@@ -72346,7 +72426,8 @@
       "vi": "Loại Thú",
       "zh": "寄养动物类型",
       "ca": "Per a animals",
-      "id": "Untuk hewan"
+      "id": "Untuk hewan",
+      "eu": "Animalientzako"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -72413,7 +72494,8 @@
       "vi": "Lầu",
       "zh": "楼层",
       "ca": "Nivell",
-      "id": "Tingkatan"
+      "id": "Tingkatan",
+      "eu": "Maila"
     },
     "iDtype": "combo"
   },
@@ -72458,7 +72540,8 @@
       "uk": "Види розрахунків",
       "vi": "Phương thức Thanh toán",
       "zh": "支付类型",
-      "ca": "Tipus de pagament"
+      "ca": "Tipus de pagament",
+      "eu": "Ordaintzeko Moduak"
     }
   },
   "animal_breeding": {
@@ -72504,7 +72587,8 @@
       "vi": "Loại Thú",
       "zh": "饲养动物类型",
       "ca": "Per a animals",
-      "id": "Untuk hewan"
+      "id": "Untuk hewan",
+      "eu": "Animalientzako"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -72582,7 +72666,8 @@
       "vi": "Loại Thú",
       "zh": "收留动物类型",
       "ca": "Per a animals",
-      "id": "Untuk hewan"
+      "id": "Untuk hewan",
+      "eu": "Animalientzako"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -72686,7 +72771,8 @@
       "da": "Indbetaling",
       "fa": "تبدیل کردن به پول نقد",
       "sk": "Vkladanie peňazí",
-      "sr": "Новчана уплата"
+      "sr": "Новчана уплата",
+      "eu": "Kobratu"
     },
     "iDtype": "check",
     "options": [
@@ -72737,7 +72823,8 @@
       "zh": "货币类型",
       "ca": "Tipus de divisa",
       "no": "Valutetyper",
-      "id": "Tipe Mata Uang"
+      "id": "Tipe Mata Uang",
+      "eu": "Txanpon Motak"
     }
   },
   "indoor": {
@@ -72779,7 +72866,8 @@
       "vi": "Trong Nhà",
       "zh": "室内",
       "ca": "Interior",
-      "sr": "Унутрашњост"
+      "sr": "Унутрашњост",
+      "eu": "Barneko"
     },
     "iDtype": "check",
     "options": [
@@ -73042,7 +73130,8 @@
       "uk": "Паління",
       "vi": "Hút thuốc",
       "zh": "吸烟",
-      "ca": "Apte per a fumadors"
+      "ca": "Apte per a fumadors",
+      "eu": "Erretze"
     },
     "options": [
       {
@@ -73084,7 +73173,8 @@
           "vi": "Hoàn toàn cấm hút thuốc",
           "ca": "Prohibit fumar a tot arreu",
           "eo": "Fumado malpermesata ĉie",
-          "no": "Ingen Røyking Overalt."
+          "no": "Ingen Røyking Overalt.",
+          "eu": "Ezin da inon erre "
         }
       },
       {
@@ -73125,7 +73215,8 @@
           "uk": "У відведених зонах, не ізольованих",
           "vi": "Ở nơi hút thuốc không có tường",
           "ca": "A les àrees per a fumadors, no aïllades físicament",
-          "eo": "En fumĉambroj, ne reale apartigitaj"
+          "eo": "En fumĉambroj, ne reale apartigitaj",
+          "eu": "Erretzeko zonaldeetan, fisikoki isolatu gabekoak"
         }
       },
       {
@@ -73166,7 +73257,8 @@
           "uk": "У відведених зонах, ізольованих",
           "vi": "Ở nơi hút thuốc có tường",
           "ca": "A les àrees per a fumadors, aïllades físicament",
-          "eo": "En fumĉambroj, reale apartigitaj"
+          "eo": "En fumĉambroj, reale apartigitaj",
+          "eu": "Erretzeko zonaldeetan, fisikoki isolatuak"
         }
       },
       {
@@ -73207,7 +73299,8 @@
           "uk": "Дозволено зовні",
           "vi": "Cho phép ở ngoài trời",
           "ca": "Permès a fora",
-          "eo": "Permesata ekstere"
+          "eo": "Permesata ekstere",
+          "eu": "Kanpoaldean baimendua"
         }
       },
       {
@@ -73249,7 +73342,8 @@
           "vi": "Cho phép ở bất cứ nơi nào",
           "ca": "Permès a tot arreu",
           "eo": "Permesata ĉie",
-          "no": "Tillatt overalt"
+          "no": "Tillatt overalt",
+          "eu": "Leku guztietan baimendua"
         }
       },
       {
@@ -73289,7 +73383,8 @@
           "vi": "Dành riêng cho người hút thuốc (ví dụ quán hút thuốc)",
           "ca": "Dedicat a fumadors (ex: club de fumadors)",
           "eo": "Dediĉata por fumantoj (ekz. fumista klubejo)",
-          "sr": "Намењено пушачима (нпр. пушачки клуб)"
+          "sr": "Намењено пушачима (нпр. пушачки клуб)",
+          "eu": "Erretzaileei zuzendua (adib. erretzaileen kluba)"
         }
       }
     ],
@@ -73339,7 +73434,8 @@
       "uk": "АЗС",
       "vi": "Nhiên liệu",
       "zh": "油站",
-      "ca": "Carburant"
+      "ca": "Carburant",
+      "eu": "Erregai"
     },
     "iDtype": "combo",
     "options": [
@@ -73421,7 +73517,8 @@
       "uk": "Доступ",
       "vi": "Quyền Truy cập",
       "zh": "允许进入",
-      "ca": "Accés permès"
+      "ca": "Accés permès",
+      "eu": "Sarrera baimendua"
     },
     "iDtype": "combo"
   },
@@ -73462,7 +73559,8 @@
       "zh": "颜色",
       "ca": "Color",
       "da": "Farve",
-      "sk": "Farba"
+      "sk": "Farba",
+      "eu": "kolore"
     }
   },
   "inscription": {
@@ -73505,7 +73603,8 @@
       "zh": "铭文",
       "ca": "Inscripció",
       "no": "Inskripsjon",
-      "hr": "Natpis"
+      "hr": "Natpis",
+      "eu": "Izen-ematea"
     }
   },
   "operator/type": {
@@ -73536,7 +73635,8 @@
       "da": "Operatørtype",
       "el": "Τύπος Χειριστή",
       "no": "Operator Type",
-      "fa": "نوع گرداننده"
+      "fa": "نوع گرداننده",
+      "nl": "Type operator"
     },
     "iDtype": "combo",
     "options": [
@@ -73594,7 +73694,8 @@
       "zh": "支付类型",
       "da": "Betallingstype",
       "no": "Betalingsmetoder",
-      "sk": "Typy platieb"
+      "sk": "Typy platieb",
+      "ko": "결제 수단"
     }
   },
   "service/bicycle": {
@@ -73636,7 +73737,8 @@
       "uk": "Послуги",
       "vi": "Dịch vụ",
       "zh": "服务",
-      "ca": "Serveis"
+      "ca": "Serveis",
+      "eu": "Zerbitzuak"
     }
   },
   "building": {
@@ -73686,7 +73788,8 @@
       "uk": "Будівля",
       "vi": "Tòa nhà",
       "zh": "建筑物",
-      "ca": "Edifici"
+      "ca": "Edifici",
+      "eu": "Eraikin"
     },
     "iDtype": "combo",
     "options": [
@@ -73971,7 +74074,8 @@
           "eo": "Devigata",
           "no": "Nødvendig",
           "sk": "Požadovaný",
-          "sr": "Захтевају"
+          "sr": "Захтевају",
+          "ru": "Обязательно"
         }
       },
       {
@@ -74002,7 +74106,8 @@
           "eo": "Konsilinda",
           "no": "Anbefalt",
           "sk": "Odporúčaný",
-          "sr": "Препоручују"
+          "sr": "Препоручују",
+          "ru": "Рекомендуется"
         }
       }
     ],
@@ -74052,7 +74157,8 @@
       "vi": "Canh gác",
       "zh": "监督",
       "ca": "Supervisat",
-      "no": "Veiledet"
+      "no": "Veiledet",
+      "eu": "Gainbegiratu"
     },
     "iDtype": "check",
     "options": [
@@ -74125,7 +74231,8 @@
       "cs": "obrazovky",
       "nl": "Schermen",
       "fa": "صفحه نمایش",
-      "sr": "Екрани"
+      "sr": "Екрани",
+      "ru": "Экраны"
     }
   },
   "healthcare/speciality": {
@@ -74168,7 +74275,8 @@
       "zh": "专科",
       "ca": "Especialitats",
       "no": "Spesialiteter",
-      "id": "Keahlian"
+      "id": "Keahlian",
+      "eu": "Berezitasunak"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -74254,7 +74362,8 @@
       "zh": "表盘显示类型",
       "ca": "Pantalla",
       "no": "Skjerm",
-      "id": "Tampilan"
+      "id": "Tampilan",
+      "eu": "Pantaila"
     },
     "iDtype": "combo"
   },
@@ -74302,7 +74411,8 @@
       "vi": "Ngày tháng",
       "zh": "日期",
       "ca": "Data",
-      "id": "Tanggal"
+      "id": "Tanggal",
+      "eu": "Data"
     },
     "iDtype": "check",
     "options": [
@@ -74341,7 +74451,8 @@
       "zh": "面数",
       "ca": "Cares",
       "fa": "نماها",
-      "sk": "Tváre"
+      "sk": "Tváre",
+      "eu": "Aldeak"
     }
   },
   "denomination": {
@@ -74390,7 +74501,8 @@
       "vi": "Giáo phái",
       "zh": "教派",
       "ca": "Denominació",
-      "no": "Benevnelse"
+      "no": "Benevnelse",
+      "eu": "Izendapen"
     },
     "iDtype": "combo",
     "options": [
@@ -74545,7 +74657,8 @@
       "vi": "Môn Thể thao",
       "zh": "运动",
       "ca": "Esports",
-      "no": "Sport"
+      "no": "Sport",
+      "eu": "Kirolak"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -74625,7 +74738,8 @@
       "uk": "Стать",
       "vi": "Giới tính",
       "zh": "性别",
-      "ca": "Gènere"
+      "ca": "Gènere",
+      "eu": "Genero"
     },
     "options": [
       {
@@ -74668,7 +74782,8 @@
           "uk": "Чоловіча",
           "vi": "Nam",
           "ca": "Masculí",
-          "eo": "Vira"
+          "eo": "Vira",
+          "eu": "Gizon"
         }
       },
       {
@@ -74711,7 +74826,8 @@
           "uk": "Жіноча",
           "vi": "Nữ",
           "ca": "Femení",
-          "eo": "Ina"
+          "eo": "Ina",
+          "eu": "Emakume"
         }
       },
       {
@@ -74754,7 +74870,8 @@
           "vi": "Nam nữ",
           "ca": "Unisex",
           "eo": "Gea",
-          "id": "Unisex"
+          "id": "Unisex",
+          "eu": "Unisex"
         }
       }
     ],
@@ -74799,7 +74916,8 @@
       "vi": "Mã số Tham chiếu",
       "zh": "编号",
       "ca": "Codi de referència",
-      "no": "Referansekode"
+      "no": "Referansekode",
+      "eu": "Erreferentzia kode"
     }
   },
   "fuel_multi": {
@@ -74845,7 +74963,8 @@
       "vi": "Loại Xăng",
       "zh": "燃料类型",
       "ca": "Tipus de combustible",
-      "id": "Tipe Bahan Bakar"
+      "id": "Tipe Bahan Bakar",
+      "eu": "Erregai Motak"
     }
   },
   "emergency": {
@@ -74893,7 +75012,8 @@
       "uk": "Аварійні служби",
       "vi": "Khẩn cấp",
       "zh": "急诊",
-      "ca": "Material per a emergències"
+      "ca": "Material per a emergències",
+      "eu": "Larrialdi"
     },
     "iDtype": "check",
     "options": [
@@ -74963,7 +75083,9 @@
       "no": "Førskole",
       "fa": "پیش دبستانی",
       "sk": "Predškolské",
-      "sr": "Предшколско"
+      "sr": "Предшколско",
+      "ru": "Дошкольное учреждение ",
+      "nl": "Kleuterschool"
     },
     "iDtype": "check",
     "options": [
@@ -75008,7 +75130,8 @@
       "zh": "语言",
       "ca": "Llengües",
       "id": "Bahasa",
-      "sk": "Jazyky"
+      "sk": "Jazyky",
+      "eu": "Hizkuntzak"
     }
   },
   "ref/isil": {
@@ -75199,7 +75322,8 @@
       "uk": "Кількість номерів",
       "vi": "Số Phòng",
       "zh": "房间数",
-      "ca": "Habitacions"
+      "ca": "Habitacions",
+      "eu": "Gelak"
     }
   },
   "surface": {
@@ -75454,7 +75578,8 @@
       "uk": "Спеціалізація",
       "vi": "Nét Đặc biệt",
       "zh": "特色",
-      "ca": "Especialitat"
+      "ca": "Especialitat",
+      "eu": "Espezialitate"
     },
     "options": [
       {
@@ -75628,7 +75753,8 @@
       "zh": "露天",
       "ca": "Aire Lliure",
       "id": "Tempat Terbuka",
-      "sr": "Отворен простор"
+      "sr": "Отворен простор",
+      "eu": "Aire zabalean"
     },
     "iDtype": "check",
     "options": [
@@ -75677,7 +75803,8 @@
       "zh": "沙浴",
       "ca": "Bany de sorra",
       "id": "Mandi Pasir",
-      "sr": "Пешчана купка"
+      "sr": "Пешчана купка",
+      "eu": "Harea-bainua"
     },
     "iDtype": "check",
     "options": [
@@ -75794,7 +75921,8 @@
       "uk": "Місцезнаходження",
       "vi": "Vị trí",
       "zh": "位置",
-      "ca": "Ubicació"
+      "ca": "Ubicació",
+      "eu": "Kokalekua"
     },
     "iDtype": "combo",
     "options": [
@@ -75867,7 +75995,8 @@
       "zh": "星级",
       "ca": "Estrelles",
       "no": "Stjerner",
-      "sr": "Звезде"
+      "sr": "Звезде",
+      "eu": "Izarrak"
     },
     "iDtype": "number"
   },
@@ -75957,7 +76086,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -76034,7 +76164,8 @@
       "vi": "Thùng rác",
       "zh": "垃圾箱",
       "ca": "Paperera",
-      "id": "Tong Sampah"
+      "id": "Tong Sampah",
+      "eu": "Zakarrontzi"
     },
     "iDtype": "check",
     "options": [
@@ -76082,7 +76213,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -76142,7 +76274,8 @@
       "no": "kiosk",
       "da": "Begge",
       "ko": "부스",
-      "sk": "Búdka"
+      "sk": "Búdka",
+      "eu": "Postu"
     },
     "iDtype": "combo"
   },
@@ -76206,7 +76339,8 @@
       "fa": "تماس‌های ویدیویی",
       "sk": "Videohovor",
       "sr": "Видео позиви",
-      "sv": "Videosamtal"
+      "sv": "Videosamtal",
+      "nl": "Videobellen"
     },
     "iDtype": "check",
     "options": [
@@ -76315,7 +76449,9 @@
           "vi": "Mương",
           "eo": "Ter‑truo (latrino)",
           "fa": "توالت گودالی",
-          "sr": "Пољски тоалет"
+          "sr": "Пољски тоалет",
+          "ko": "재래식 화장실",
+          "nl": "Putlatrine"
         }
       },
       {
@@ -76427,7 +76563,8 @@
       "da": "Bleskiftebord",
       "fa": "جدول تعویض پوشک",
       "sk": "Prebaľovací stôl",
-      "sr": "Сто за промену пелена"
+      "sr": "Сто за промену пелена",
+      "nl": "Luierververstafel"
     },
     "iDtype": "check",
     "options": [
@@ -76462,7 +76599,8 @@
       "zh": "洗手处",
       "el": "Πλύσιμο με το χέρι",
       "sk": "Umývanie rúk",
-      "sr": "Лавабои"
+      "sr": "Лавабои",
+      "ru": "Рукомойник"
     },
     "iDtype": "check",
     "options": [
@@ -76582,7 +76720,8 @@
       "da": "Adgang for blinde",
       "fa": "دسترسی افراد نابینا",
       "sk": "Prístup nevidiacím",
-      "sr": "Приступ слепим особама"
+      "sr": "Приступ слепим особама",
+      "ru": "Доступно для слабовидящих"
     },
     "options": [
       {
@@ -76819,7 +76958,8 @@
       "uk": "Тип",
       "vi": "Loại",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     }
   },
   "craft": {
@@ -76866,7 +77006,8 @@
       "uk": "Тип",
       "vi": "Loại",
       "zh": "种类",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     }
   },
   "product": {
@@ -76909,7 +77050,8 @@
       "vi": "Sản phẩm",
       "zh": "产品",
       "ca": "Productes",
-      "no": "Produkter"
+      "no": "Produkter",
+      "eu": "Produktuak"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -77244,7 +77386,8 @@
       "ca": "Tipus",
       "da": "Type",
       "fa": "نوع",
-      "sk": "Typ"
+      "sk": "Typ",
+      "eu": "Mota"
     },
     "options": [
       {
@@ -77279,7 +77422,8 @@
           "eo": "pneŭmatika",
           "fa": "پنوماتیک ، بادی",
           "sk": "Preumatická",
-          "sr": "Пнеуматска"
+          "sr": "Пнеуматска",
+          "eu": "Neumatiko"
         }
       },
       {
@@ -77315,7 +77459,8 @@
           "eo": "elektronika",
           "fa": "الکترونیک",
           "sk": "Elektrická",
-          "sr": "Електрична"
+          "sr": "Електрична",
+          "eu": "Elektroniko"
         }
       },
       {
@@ -77351,7 +77496,8 @@
           "da": "Anden",
           "fa": "سایر",
           "sk": "Iná",
-          "sr": "Друго"
+          "sr": "Друго",
+          "eu": "Beste batzuk"
         }
       }
     ],
@@ -77396,7 +77542,8 @@
       "vi": "Kiểu",
       "zh": "类型",
       "ca": "Tipus",
-      "sk": "Typ"
+      "sk": "Typ",
+      "eu": "Mota"
     }
   },
   "blood_components": {
@@ -77441,7 +77588,8 @@
       "zh": "血液成分",
       "ca": "Components de la sang",
       "no": "Blodkomponenter",
-      "id": "Komponen Darah"
+      "id": "Komponen Darah",
+      "eu": "Odolaren osagaiak"
     },
     "options": [
       {
@@ -77482,7 +77630,8 @@
           "ca": "sang total",
           "eo": "sango",
           "el": "Αίμα",
-          "no": "helblod"
+          "no": "helblod",
+          "eu": "Osagai guztidun odol"
         }
       },
       {
@@ -77525,7 +77674,8 @@
           "ca": "plasma",
           "eo": "plasmo",
           "no": "plasma",
-          "id": "plasma"
+          "id": "plasma",
+          "eu": "odol-plasma"
         }
       },
       {
@@ -77568,7 +77718,8 @@
           "ca": "plaquetes",
           "eo": "trombocitoj (sangoplatetoj)",
           "id": "platelet",
-          "no": "blodplater "
+          "no": "blodplater ",
+          "eu": "Plaketak"
         }
       },
       {
@@ -77609,7 +77760,8 @@
           "vi": "mẫu tế bào gốc",
           "ca": "extrets de cèl·lules mare",
           "eo": "praĉeloj (stamĉeloj)",
-          "no": "stamcelleprøver"
+          "no": "stamcelleprøver",
+          "eu": "zelula ama laginak"
         }
       }
     ]
@@ -77660,7 +77812,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -77795,7 +77948,8 @@
           "uk": "За напрямком лінії",
           "vi": "Tiến",
           "ca": "Endavant",
-          "eo": "Antaŭen"
+          "eo": "Antaŭen",
+          "eu": "Aurreranzko"
         }
       },
       {
@@ -77835,7 +77989,8 @@
           "vi": "Ngược",
           "ca": "Enrere",
           "eo": "Malantaŭen",
-          "sk": "Dozadu"
+          "sk": "Dozadu",
+          "eu": "Atzeranzko"
         }
       },
       {
@@ -77874,7 +78029,8 @@
           "vi": "2 Chiều / Mọi Hướng",
           "ca": "Ambdós / Tots",
           "eo": "Ambaŭ / ĉiuj",
-          "sk": "Oba / všetky"
+          "sk": "Oba / všetky",
+          "eu": "Biak / Guztiak"
         }
       }
     ],
@@ -77916,7 +78072,8 @@
       "zh": "距离",
       "ca": "Distància",
       "id": "Jarak",
-      "sk": "Vzdialenosť"
+      "sk": "Vzdialenosť",
+      "eu": "Distantzia"
     }
   },
   "direction_clock": {
@@ -77960,7 +78117,8 @@
       "uk": "Напрямок",
       "vi": "Hướng",
       "zh": "方向",
-      "ca": "Direcció"
+      "ca": "Direcció",
+      "eu": "Norabide"
     },
     "options": [
       {
@@ -78004,7 +78162,8 @@
           "ca": "en sentit de les agulles del rellotge",
           "eo": "Horloĝdirekte",
           "id": "Searah Jarum Jam",
-          "sr": "У смеру казаљке"
+          "sr": "У смеру казаљке",
+          "eu": "Erlujaren orratzen norantzan"
         }
       },
       {
@@ -78048,7 +78207,8 @@
           "ca": "en sentit contrari al de les agulles del rellotge",
           "eo": "Malhorloĝdirekte",
           "id": "Berlawanan Jarum Jam",
-          "sr": "Супротно смеру казаљке"
+          "sr": "Супротно смеру казаљке",
+          "eu": "Erlojuaren orratzen kontrako norantza"
         }
       }
     ],
@@ -78101,7 +78261,8 @@
       "uk": "Споруда",
       "vi": "Cấu trúc",
       "zh": "结构",
-      "ca": "Estructura"
+      "ca": "Estructura",
+      "eu": "Egitura"
     },
     "options": [
       {
@@ -78149,7 +78310,8 @@
           "vi": "Cầu",
           "zh": "桥",
           "ca": "Pont",
-          "eo": "Ponto"
+          "eo": "Ponto",
+          "eu": "Zubi"
         }
       },
       {
@@ -78197,7 +78359,8 @@
           "vi": "Đường hầm",
           "zh": "隧道",
           "ca": "Túnel",
-          "eo": "Tunelo"
+          "eo": "Tunelo",
+          "eu": "Tunel"
         }
       },
       {
@@ -78375,7 +78538,8 @@
       "uk": "Односторонній рух",
       "vi": "Chiều",
       "zh": "单行",
-      "ca": "Sentit únic"
+      "ca": "Sentit únic",
+      "eu": "Norabide bakarra"
     },
     "options": [
       {
@@ -78419,7 +78583,8 @@
           "uk": "Так",
           "vi": "1 Chiều",
           "ca": "Sí",
-          "eo": "Jes"
+          "eo": "Jes",
+          "eu": "Bai"
         }
       },
       {
@@ -78463,7 +78628,8 @@
           "uk": "Ні",
           "vi": "2 Chiều",
           "ca": "No",
-          "eo": "Ne"
+          "eo": "Ne",
+          "eu": "Ez"
         }
       }
     ],
@@ -78514,7 +78680,8 @@
       "vi": "Độ dốc",
       "zh": "斜度",
       "ca": "Pendent",
-      "et": "Kalle"
+      "et": "Kalle",
+      "eu": "Aldapa"
     },
     "iDtype": "combo"
   },
@@ -78599,7 +78766,8 @@
       "uk": "Проходимість",
       "vi": "Độ nhẵn",
       "zh": "平顺度",
-      "ca": "Uniformitat per a vehicles"
+      "ca": "Uniformitat per a vehicles",
+      "eu": "Leuntasun"
     },
     "options": [
       {
@@ -78949,7 +79117,8 @@
       "vi": "Môn Thể thao",
       "zh": "赛车项目",
       "ca": "Esports",
-      "no": "Sport"
+      "no": "Sport",
+      "eu": "Kirolak"
     },
     "iDtype": "semiCombo"
   },
@@ -79002,7 +79171,8 @@
       "uk": "Смуги",
       "vi": "Số Làn",
       "zh": "车道",
-      "ca": "Carrils"
+      "ca": "Carrils",
+      "eu": "Gurdibideak"
     }
   },
   "maxspeed": {
@@ -79052,7 +79222,8 @@
       "uk": "Обмеження швидкості",
       "vi": "Tốc độ Tối đa",
       "zh": "限速",
-      "ca": "Límit de velocitat"
+      "ca": "Límit de velocitat",
+      "eu": "Abiadura muga"
     },
     "iDtype": "maxspeed"
   },
@@ -79094,7 +79265,8 @@
       "vi": "Các Đường Phải Dừng lại",
       "zh": "停车指示类型",
       "ca": "Tipus de stop",
-      "no": "Stop Type"
+      "no": "Stop Type",
+      "eu": "Geldialdi Mota"
     },
     "options": [
       {
@@ -79132,7 +79304,8 @@
           "uk": "Всіх доріг",
           "vi": "Tất cả các Đường",
           "ca": "Totes direccions",
-          "eo": "Ĉiuj vojoj"
+          "eo": "Ĉiuj vojoj",
+          "eu": "Norabide guztiak"
         }
       },
       {
@@ -79223,7 +79396,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -79293,7 +79467,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -79352,7 +79527,8 @@
       "tr": "Etkilenen Yön",
       "fa": "جهت تحت تأثیر",
       "ko": "방향",
-      "sr": "Утиче на смер"
+      "sr": "Утиче на смер",
+      "nl": "Richting beïnvloed"
     },
     "options": [
       {
@@ -79390,7 +79566,8 @@
           "ca": "Endavant",
           "eo": "Antaŭen",
           "sk": "Dopredu",
-          "sr": "Унапред"
+          "sr": "Унапред",
+          "eu": "Aurrera"
         }
       },
       {
@@ -79428,7 +79605,8 @@
           "ca": "Enrere",
           "eo": "Malantaŭen",
           "sk": "Dozadu",
-          "sr": "Уназад"
+          "sr": "Уназад",
+          "eu": "Atzera"
         }
       },
       {
@@ -79466,7 +79644,8 @@
           "ca": "Ambdós / Tots",
           "eo": "Ambaŭ / ĉiuj",
           "sk": "Oba / všetky",
-          "sr": "Оба / Све"
+          "sr": "Оба / Све",
+          "eu": "Biak / Guztiak"
         }
       }
     ],
@@ -79552,7 +79731,8 @@
       "uk": "Тип археологічної пам'ятки",
       "vi": "Loại Di chỉ",
       "zh": "站点类型",
-      "fa": "نوع سایت"
+      "fa": "نوع سایت",
+      "eu": "Leku Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -79629,7 +79809,8 @@
       "zh": "所属文化及历史时期",
       "ca": "Civilització històrica",
       "no": "Historisk sivilisasjon",
-      "id": "Peradaban Bersejarah"
+      "id": "Peradaban Bersejarah",
+      "eu": "Zibilizazio historikoa"
     },
     "iDtype": "combo",
     "options": [
@@ -79701,7 +79882,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -79770,7 +79952,8 @@
       "zh": "启用或竣工日期",
       "ca": "Data d'inici",
       "no": "Startdato",
-      "sr": "Датум почетка"
+      "sr": "Датум почетка",
+      "eu": "Hasiera Data"
     }
   },
   "seamark/wreck/category": {
@@ -79805,7 +79988,8 @@
       "vi": "Kiểu",
       "ca": "Categoria",
       "fa": "دسته‌بندی",
-      "sk": "Kategória"
+      "sk": "Kategória",
+      "eu": "Kategoria"
     },
     "iDtype": "combo",
     "options": [
@@ -79888,7 +80072,8 @@
       "zh": "低潮时可见",
       "id": "Kelihatan saat air surut",
       "fa": "قابل مشاهده در جزر و مد پایین",
-      "sk": "Viditeľné pri odlive"
+      "sk": "Viditeľné pri odlive",
+      "eu": "Ikusgarria marea behera dagoenean"
     },
     "iDtype": "check",
     "options": [
@@ -79929,7 +80114,8 @@
       "zh": "高潮时可见",
       "id": "Kelihatan saat air pasang",
       "fa": "قابل مشاهده در جزر و مد بالا",
-      "sk": "Viditeľné pri prílive"
+      "sk": "Viditeľné pri prílive",
+      "eu": "Ikusgarria marea gora dagoenean"
     },
     "iDtype": "check",
     "options": [
@@ -80039,7 +80225,8 @@
       "ca": "Estils de ball",
       "no": "Dansestiler",
       "id": "Gaya tarian",
-      "sk": "Tanečné štýly"
+      "sk": "Tanečné štýly",
+      "eu": "Dantza estiloak"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -80375,7 +80562,8 @@
       "vi": "Môn Thể thao",
       "zh": "冰上项目",
       "ca": "Esports",
-      "no": "Sport"
+      "no": "Sport",
+      "eu": "Kirolak"
     },
     "iDtype": "semiCombo"
   },
@@ -80463,7 +80651,8 @@
       "vi": "Nguồn Điện",
       "zh": "供电",
       "ca": "Abastament elèctric",
-      "no": "Strømforsyning"
+      "no": "Strømforsyning",
+      "eu": "Korronte irteera"
     },
     "iDtype": "check",
     "options": [
@@ -80630,7 +80819,8 @@
       "uk": "Довжина (метрів)",
       "vi": "Chiều dài (Mét)",
       "zh": "长度 (米)",
-      "ca": "Llargada (metres)"
+      "ca": "Llargada (metres)",
+      "eu": "Luzeera (Metroak)"
     }
   },
   "swimming_pool": {
@@ -80668,7 +80858,8 @@
       "ca": "Tipus",
       "da": "Type",
       "fa": "نوع",
-      "sk": "Typ"
+      "sk": "Typ",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -80736,7 +80927,8 @@
       "vi": "Môn Thể thao",
       "zh": "运动项目",
       "ca": "Esports",
-      "no": "Sport"
+      "no": "Sport",
+      "eu": "Kirolak"
     },
     "iDtype": "semiCombo"
   },
@@ -80767,7 +80959,9 @@
       "el": "Πηγές",
       "fa": "منابع",
       "sk": "Zdroje",
-      "sr": "Ресурси"
+      "sr": "Ресурси",
+      "ru": "Ресурсы",
+      "nl": "Grondstoffen"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -80844,7 +81038,8 @@
       "vi": "Kiểu Giao thông",
       "zh": "通讯类型",
       "ca": "Tipus de comunicació",
-      "id": "Tipe komunikasi"
+      "id": "Tipe komunikasi",
+      "eu": "Komunikabide Motak"
     }
   },
   "content": {
@@ -80898,7 +81093,8 @@
       "vi": "Đồ Chứa đựng",
       "zh": "内容",
       "ca": "Contingut",
-      "id": "Konten"
+      "id": "Konten",
+      "eu": "Edukia"
     },
     "iDtype": "combo"
   },
@@ -80942,7 +81138,8 @@
       "vi": "Kiểu Cẩu",
       "zh": "起重机类型",
       "ca": "Tipus de grua",
-      "sk": "Typ žeriavu"
+      "sk": "Typ žeriavu",
+      "eu": "Garabi Mota"
     },
     "options": [
       {
@@ -80979,7 +81176,8 @@
           "ca": "Pont Grua",
           "eo": "Rulponta",
           "no": "Traverskran",
-          "sk": "Lodný žeriav"
+          "sk": "Lodný žeriav",
+          "eu": "Lehorpe Garabia"
         }
       },
       {
@@ -81017,7 +81215,8 @@
           "ca": "Grua muntada al pis",
           "eo": "Mast-bazita (kantilevra)",
           "no": "Gulv-montert Kran",
-          "sk": "Žeriav pripevnený k podlahe"
+          "sk": "Žeriav pripevnený k podlahe",
+          "eu": "Lurrerako Garabia"
         }
       },
       {
@@ -81052,7 +81251,8 @@
           "no": "Reiseheis",
           "fa": "جرثقیل دروازه‌ای سیار",
           "sk": "Dopravný žeriav",
-          "sr": "Пренос брода"
+          "sr": "Пренос брода",
+          "ru": "Подъемник для судов"
         }
       }
     ],
@@ -81094,7 +81294,8 @@
       "zh": "旗帜类型",
       "ca": "Tipus de bandera",
       "id": "Tipe bendera",
-      "sk": "Typ vlajky"
+      "sk": "Typ vlajky",
+      "eu": "Bandera Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -81164,7 +81365,8 @@
       "zh": "标识",
       "ca": "Etiqueta",
       "no": "Etikett",
-      "id": "Label"
+      "id": "Label",
+      "eu": "Marka"
     }
   },
   "tower/type": {
@@ -81207,7 +81409,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -81282,7 +81485,8 @@
       "vi": "Hình dạng",
       "zh": "结构",
       "ca": "Construcció",
-      "sr": "Конструкција"
+      "sr": "Конструкција",
+      "eu": "Eraikuntza"
     },
     "iDtype": "combo",
     "options": [
@@ -81419,7 +81623,8 @@
       "eo": "Aliro por infanĉaretoj",
       "fa": "دسترسی کالسکه بچه",
       "sk": "Prístup s kočiarom",
-      "sr": "Прилаз за колица"
+      "sr": "Прилаз за колица",
+      "nl": "Buggy toegang"
     },
     "options": [
       {
@@ -81555,7 +81760,8 @@
       "zh": "材质",
       "ca": "Substància",
       "no": "Substans",
-      "sr": "Супстанца"
+      "sr": "Супстанца",
+      "eu": "Substantzia"
     },
     "iDtype": "combo",
     "options": [
@@ -81635,7 +81841,8 @@
       "uk": "Шар",
       "vi": "Lớp",
       "zh": "层",
-      "ca": "Capa"
+      "ca": "Capa",
+      "eu": "Geruza"
     }
   },
   "diameter": {
@@ -81718,7 +81925,8 @@
       "uk": "Рослини",
       "vi": "Loại Cây",
       "zh": "作物",
-      "ca": "Cultius"
+      "ca": "Cultius",
+      "eu": "Laborantzak"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -81822,7 +82030,8 @@
       "cs": "služby",
       "eo": "Uzata por",
       "fa": "کارایی",
-      "sv": "Infrastruktur"
+      "sv": "Infrastruktur",
+      "nl": "Nutsvoorzieningen"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -81948,7 +82157,8 @@
       "vi": "Miêu tả",
       "zh": "描述",
       "ca": "Descripció",
-      "et": "Kirjeldus"
+      "et": "Kirjeldus",
+      "eu": "Deskripzio"
     }
   },
   "intermittent": {
@@ -81990,7 +82200,8 @@
       "zh": "断流现象",
       "ca": "Intermitent",
       "no": "Intermittent",
-      "sr": "Наизменичан"
+      "sr": "Наизменичан",
+      "eu": "Aldizka"
     },
     "iDtype": "check",
     "options": [
@@ -82040,7 +82251,8 @@
       "uk": "Тип листя",
       "vi": "Loại Lá",
       "zh": "叶型",
-      "ca": "Tipus de fulles"
+      "ca": "Tipus de fulles",
+      "eu": "Hosto Mota"
     },
     "options": [
       {
@@ -82082,7 +82294,8 @@
           "uk": "Широколисті",
           "vi": "Hình Quạt",
           "ca": "Fulles amples",
-          "eo": "Folihavaj"
+          "eo": "Folihavaj",
+          "eu": "Hosto zabalekoa"
         }
       },
       {
@@ -82167,7 +82380,8 @@
           "uk": "Змішана",
           "vi": "Pha trộn",
           "ca": "Barrejat",
-          "eo": "Plurspecaj"
+          "eo": "Plurspecaj",
+          "eu": "Nahastuta"
         }
       },
       {
@@ -82209,7 +82423,8 @@
           "uk": "Без листя",
           "vi": "Không có",
           "ca": "Sense fullatge",
-          "eo": "Senfoliaj"
+          "eo": "Senfoliaj",
+          "eu": "Hosto gabea"
         }
       }
     ],
@@ -82255,7 +82470,8 @@
       "zh": "叶寿命",
       "ca": "Cicle del fullatge",
       "no": "Blad Syklus",
-      "sr": "Лисни циклус"
+      "sr": "Лисни циклус",
+      "eu": "Hostoaren zikloa"
     },
     "options": [
       {
@@ -82297,7 +82513,8 @@
           "uk": "Вічнозелений",
           "vi": "Thường xanh",
           "ca": "Perenne",
-          "eo": "Ĉiamverdaj"
+          "eo": "Ĉiamverdaj",
+          "eu": "Hosto iraunkor"
         }
       },
       {
@@ -82339,7 +82556,8 @@
           "vi": "Rụng Lá",
           "ca": "Caducifoli",
           "eo": "Falfoliaj (deciduaj)",
-          "no": "Løvfellende"
+          "no": "Løvfellende",
+          "eu": "Hostoerorkor"
         }
       },
       {
@@ -82381,7 +82599,8 @@
           "vi": "Bán Thường xanh",
           "ca": "Semiperenne",
           "eo": "Duonĉiamfoliaj",
-          "no": "Delvis-Eviggrønn"
+          "no": "Delvis-Eviggrønn",
+          "eu": "Erdi-iraunkor"
         }
       },
       {
@@ -82423,7 +82642,8 @@
           "vi": "Bán Rụng Lá",
           "ca": "Semicaducifoli",
           "eo": "Duonfalfoliaj",
-          "no": "Delvis-Løvfellende"
+          "no": "Delvis-Løvfellende",
+          "eu": "Erdi-hostoerorkor"
         }
       },
       {
@@ -82467,7 +82687,8 @@
           "uk": "Змішаний",
           "vi": "Pha trộn",
           "ca": "Barrejat",
-          "eo": "Plurspecaj"
+          "eo": "Plurspecaj",
+          "eu": "Misto"
         }
       }
     ],
@@ -82516,7 +82737,8 @@
       "vi": "Tầm Quan trọng",
       "zh": "意思",
       "ca": "Denotació",
-      "no": "Bokstavelig"
+      "no": "Bokstavelig",
+      "eu": "Denotazio"
     },
     "iDtype": "combo",
     "options": [
@@ -82583,7 +82805,8 @@
       "uk": "Тип листя",
       "vi": "Loại Lá",
       "zh": "叶型",
-      "ca": "Tipus de fulla"
+      "ca": "Tipus de fulla",
+      "eu": "Hosto Mota"
     },
     "options": [
       {
@@ -82755,7 +82978,8 @@
       "zh": "叶寿命",
       "ca": "Cicle de renovació de fulla",
       "no": "Bladsyklus",
-      "sr": "Лисни циклус"
+      "sr": "Лисни циклус",
+      "eu": "Hostoaren zikloa"
     },
     "options": [
       {
@@ -82797,7 +83021,8 @@
           "uk": "Вічнозелена рослинність",
           "vi": "Thường xanh",
           "ca": "Perennifòlia",
-          "eo": "Ĉiamverda"
+          "eo": "Ĉiamverda",
+          "eu": "Hosto iraunkor"
         }
       },
       {
@@ -82839,7 +83064,8 @@
           "vi": "Rụng Lá",
           "ca": "Caducifòlia",
           "eo": "Falfolia (decidua)",
-          "no": "Løvfellende"
+          "no": "Løvfellende",
+          "eu": "Hostoerorkor"
         }
       },
       {
@@ -82880,7 +83106,8 @@
           "uk": "Напів-вічнозелена рослинність",
           "vi": "Bán Thường xanh",
           "ca": "Semiperennifòlia",
-          "eo": "Duonĉiamfolia"
+          "eo": "Duonĉiamfolia",
+          "eu": "Erdi-iraunkor"
         }
       },
       {
@@ -82922,7 +83149,8 @@
           "vi": "Bán Rụng Lá",
           "ca": "Semicaducifòlia",
           "eo": "Duonfalfolia",
-          "no": "Semi-Løvfellende"
+          "no": "Semi-Løvfellende",
+          "eu": "Erdi-hostoerorkor"
         }
       }
     ],
@@ -82991,7 +83219,8 @@
       "vi": "Trạng thái Núi lửa",
       "zh": "火山活动",
       "ca": "Estat del volcà",
-      "sr": "Статус вулкана"
+      "sr": "Статус вулкана",
+      "eu": "Sumendiaren egoera"
     },
     "options": [
       {
@@ -83029,7 +83258,8 @@
           "vi": "Hoạt động",
           "ca": "Actiu",
           "eo": "Aktiva",
-          "sr": "Активни"
+          "sr": "Активни",
+          "eu": "Aktibo"
         }
       },
       {
@@ -83066,7 +83296,8 @@
           "vi": "Hồi dung nham",
           "ca": "Inactiu",
           "eo": "Dormanta",
-          "sr": "Успавани"
+          "sr": "Успавани",
+          "eu": "Jarduera(rik) gabe(ko) "
         }
       },
       {
@@ -83103,7 +83334,8 @@
           "vi": "Không hoạt động nữa",
           "ca": "Extingit",
           "eo": "Neaktiva",
-          "sr": "Угашени"
+          "sr": "Угашени",
+          "eu": "Itzali"
         }
       }
     ],
@@ -83147,7 +83379,8 @@
       "uk": "Тип вулкана",
       "vi": "Hình dạng Núi lửa",
       "zh": "火山锥",
-      "ca": "Tipus de volcà"
+      "ca": "Tipus de volcà",
+      "eu": "Sumendi Mota"
     },
     "options": [
       {
@@ -83215,7 +83448,8 @@
           "uk": "Щитовий",
           "vi": "Khiên",
           "ca": "Escut",
-          "eo": "Ŝilda"
+          "eo": "Ŝilda",
+          "eu": "Babes"
         }
       },
       {
@@ -83300,7 +83534,8 @@
       "uk": "Тип",
       "vi": "Loại",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -83456,7 +83691,8 @@
       "uk": "Тип",
       "vi": "Loại",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -83588,7 +83824,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     }
   },
   "diplomatic": {
@@ -83671,7 +83908,9 @@
       "da": "Mål",
       "fa": "هدف",
       "sk": "Cieľ",
-      "sr": "Циљ"
+      "sr": "Циљ",
+      "ru": "Цель",
+      "nl": "Doelwit"
     },
     "iDtype": "combo",
     "options": [
@@ -83956,7 +84195,8 @@
       "vi": "Số Ke",
       "zh": "站台编号",
       "ca": "Nombre de plataforma",
-      "no": "Platform Nummer"
+      "no": "Platform Nummer",
+      "eu": "Plataforma Zenbakia"
     }
   },
   "aerialway/access": {
@@ -84003,7 +84243,8 @@
       "uk": "Доступ",
       "vi": "Quyền Truy cập",
       "zh": "通行限制",
-      "ca": "Accés"
+      "ca": "Accés",
+      "eu": "Sarrera"
     },
     "options": [
       {
@@ -84047,7 +84288,8 @@
           "uk": "Вхід",
           "vi": "Vào",
           "ca": "Entrada",
-          "eo": "Eniro"
+          "eo": "Eniro",
+          "eu": "Sarrera"
         }
       },
       {
@@ -84091,7 +84333,8 @@
           "uk": "Вихід",
           "vi": "Ra",
           "ca": "Sortida",
-          "eo": "Eliro"
+          "eo": "Eliro",
+          "eu": "Irteera"
         }
       },
       {
@@ -84136,7 +84379,8 @@
           "uk": "Вхід/Вихід",
           "vi": "Ra vào",
           "ca": "Ambdues",
-          "eo": "Ambaŭ"
+          "eo": "Ambaŭ",
+          "eu": "Biak"
         }
       }
     ],
@@ -84185,7 +84429,8 @@
       "uk": "Доступ влітку",
       "vi": "Quyền Truy cập (Mùa hè)",
       "zh": "通行方向（夏季）",
-      "ca": "Accés (estival)"
+      "ca": "Accés (estival)",
+      "eu": "Sarbidea (uda)"
     },
     "options": [
       {
@@ -84229,7 +84474,8 @@
           "uk": "Вхід",
           "vi": "Vào",
           "ca": "Entrada",
-          "eo": "Eniro"
+          "eo": "Eniro",
+          "eu": "Sarrera"
         }
       },
       {
@@ -84273,7 +84519,8 @@
           "uk": "Вихід",
           "vi": "Ra",
           "ca": "Sortida",
-          "eo": "Eliro"
+          "eo": "Eliro",
+          "eu": "Irteera"
         }
       },
       {
@@ -84317,7 +84564,8 @@
           "uk": "Вхід/Вихід",
           "vi": "Ra vào",
           "ca": "Ambdues",
-          "eo": "Ambaŭ"
+          "eo": "Ambaŭ",
+          "eu": "Biak"
         }
       }
     ],
@@ -84407,7 +84655,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     }
   },
   "agrarian": {
@@ -84450,7 +84699,8 @@
       "vi": "Sản phẩm",
       "zh": "产品",
       "ca": "Productes",
-      "id": "Produk"
+      "id": "Produk",
+      "eu": "Produktuak"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -84579,7 +84829,8 @@
       "vi": "Dịch vụ",
       "zh": "车辆服务",
       "ca": "Serveis",
-      "lt": "Paslaugos"
+      "lt": "Paslaugos",
+      "eu": "Zerbitzuak"
     }
   },
   "levels": {
@@ -84679,7 +84930,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo",
     "options": [
@@ -84758,7 +85010,8 @@
       "uk": "Художник",
       "vi": "Nghệ sĩ",
       "zh": "艺术家",
-      "ca": "Artista"
+      "ca": "Artista",
+      "eu": "Artista"
     }
   },
   "guest_house": {
@@ -84849,7 +85102,9 @@
       "no": "Ridestall",
       "da": "Ridestald",
       "fa": "پایدار سواری (مکانی که اسب‌ها را برای سوار ماندن مردم نگهداری می‌کنند)",
-      "sr": "Коњичка штала"
+      "sr": "Коњичка штала",
+      "et": "Ratsatall",
+      "eu": "Zalditegi"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -84892,7 +85147,8 @@
       "uk": "Верхова їзда",
       "vi": "Cưỡi ngựa",
       "zh": "马背骑行",
-      "da": "Ridning"
+      "da": "Ridning",
+      "eu": "Ekitazio"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -84974,7 +85230,8 @@
       "zh": "壁炉",
       "da": "Ildsted",
       "id": "Perapian",
-      "fa": "بخاری ، آتشگاه ، شومینه"
+      "fa": "بخاری ، آتشگاه ، شومینه",
+      "eu": "Tximinia"
     },
     "iDtype": "check",
     "options": [
@@ -85163,7 +85420,8 @@
           "uk": "Камера",
           "vi": "Camera",
           "ca": "Càmera",
-          "eo": "Kamerao"
+          "eo": "Kamerao",
+          "eu": "Kamara"
         }
       },
       {
@@ -85203,7 +85461,8 @@
           "uk": "Охорона",
           "vi": "Nhân viên",
           "ca": "Vigilat",
-          "eo": "Gardisto"
+          "eo": "Gardisto",
+          "eu": "Zaintzaile"
         }
       },
       {
@@ -87307,7 +87566,8 @@
       "eo": "Trafik-insuleto",
       "fa": "جزیرک",
       "sk": "Utečenecký ostrov",
-      "sr": "Избегличко острво"
+      "sr": "Избегличко острво",
+      "ru": "Островок безопасности"
     },
     "iDtype": "check",
     "options": [
@@ -87353,7 +87613,8 @@
       "vi": "Kiểu",
       "zh": "类型",
       "ca": "Tipus",
-      "sk": "Typ"
+      "sk": "Typ",
+      "eu": "Mota"
     }
   },
   "hoops": {
@@ -87397,7 +87658,8 @@
       "vi": "Số Vòng",
       "zh": "篮圈数",
       "ca": "Cistella de basquetbol",
-      "no": "Bøyler"
+      "no": "Bøyler",
+      "eu": "Aroak"
     }
   },
   "valve": {
@@ -87475,7 +87737,8 @@
       "vi": "Loại Camera",
       "zh": "相机类型",
       "ca": "Tipus de càmera",
-      "id": "Tipe kamera"
+      "id": "Tipe kamera",
+      "eu": "Kamera Mota"
     },
     "options": [
       {
@@ -87518,7 +87781,8 @@
           "vi": "Cố định",
           "ca": "Fixe",
           "eo": "Fiksigita",
-          "id": "Tetap"
+          "id": "Tetap",
+          "eu": "Konponduta"
         }
       },
       {
@@ -87559,7 +87823,8 @@
           "vi": "Cuộn",
           "ca": "Panoràmica",
           "eo": "Turnebla",
-          "id": "Bisa bergerak"
+          "id": "Bisa bergerak",
+          "eu": "Panoramika bat egin"
         }
       },
       {
@@ -87602,7 +87867,8 @@
           "vi": "Vòm",
           "ca": "Cúpula",
           "eo": "Kupola",
-          "id": "Kubah"
+          "id": "Kubah",
+          "eu": "Domo"
         }
       }
     ],
@@ -87648,7 +87914,8 @@
       "zh": "相机架设",
       "ca": "Muntatge de càmera",
       "no": "Kamera feste",
-      "id": "Pemasangan Kamera"
+      "id": "Pemasangan Kamera",
+      "eu": "Kameraren muntaia"
     },
     "options": [
       {"v": "pole", "lbl": {"fr": "Sur un poteau /mât", "en": "pole"}},
@@ -87709,7 +87976,8 @@
       "uk": "Напрямок (в градусах за годинниковою стрілкою)",
       "vi": "Hướng (Độ theo Chiều Kim Đồng hồ)",
       "zh": "方向 (顺时针度)",
-      "ca": "Direcció (graus en sentit horari)"
+      "ca": "Direcció (graus en sentit horari)",
+      "eu": "Norabidea ( Graduak erlojuaren orratzen norantzan)"
     }
   },
   "contact/webcam": {
@@ -87756,7 +88024,8 @@
       "vi": "URL Webcam",
       "zh": "网络摄像机地址",
       "ca": "URL de la webcam",
-      "id": "URL Webcam"
+      "id": "URL Webcam",
+      "eu": "Web kameraren URL-a"
     },
     "iDtype": "url"
   },
@@ -88029,7 +88298,8 @@
       "vi": "Số khách",
       "zh": "载客数",
       "ca": "Ocupació",
-      "no": "Yrke"
+      "no": "Yrke",
+      "eu": "Betetze"
     }
   },
   "aerialway/capacity": {
@@ -88076,7 +88346,8 @@
       "uk": "Пропускна здатність (на годину)",
       "vi": "Số khách (Mỗi giờ)",
       "zh": "客流量(每小时)",
-      "ca": "Capacitat (per hora)"
+      "ca": "Capacitat (per hora)",
+      "eu": "Kapazitatea (orduko)"
     }
   },
   "aerialway/duration": {
@@ -88124,7 +88395,8 @@
       "uk": "Тривалість (хвилин)",
       "vi": "Mất Thời gian (Phút)",
       "zh": "持续时间(分钟)",
-      "ca": "Duració (minuts)"
+      "ca": "Duració (minuts)",
+      "eu": "Iraupena (minutuak)"
     }
   },
   "aerialway/heating": {
@@ -88169,7 +88441,8 @@
       "uk": "З підігрівом",
       "vi": "Máy sưởi",
       "zh": "暖气",
-      "ca": "Climatitzat"
+      "ca": "Climatitzat",
+      "eu": "Beroa"
     },
     "iDtype": "check",
     "options": [
@@ -88223,7 +88496,8 @@
       "uk": "Односторонній рух",
       "vi": "Chiều",
       "zh": "单行",
-      "ca": "Sentit únic"
+      "ca": "Sentit únic",
+      "eu": "Norabide bakarra"
     },
     "options": [
       {
@@ -88267,7 +88541,8 @@
           "uk": "Так",
           "vi": "1 Chiều",
           "ca": "Sí",
-          "eo": "Jes"
+          "eo": "Jes",
+          "eu": "Bai"
         }
       },
       {
@@ -88311,7 +88586,8 @@
           "uk": "Ні",
           "vi": "2 Chiều",
           "ca": "No",
-          "eo": "Ne"
+          "eo": "Ne",
+          "eu": "Ez"
         }
       }
     ],
@@ -88357,7 +88633,8 @@
       "uk": "Захисний екран",
       "vi": "Mái vòm",
       "zh": "圆形顶",
-      "ca": "Bombolla"
+      "ca": "Bombolla",
+      "eu": "Burbuila"
     },
     "iDtype": "check",
     "options": [
@@ -88519,7 +88796,8 @@
       "vi": "Điện áp",
       "zh": "电压",
       "ca": "Voltatge",
-      "sr": "Напон"
+      "sr": "Напон",
+      "eu": "Tentsio"
     },
     "iDtype": "combo"
   },
@@ -88568,7 +88846,8 @@
       "uk": "Джерело",
       "vi": "Nguồn",
       "zh": "来源",
-      "ca": "Font"
+      "ca": "Font",
+      "eu": "Sorburu"
     },
     "iDtype": "combo"
   },
@@ -88616,7 +88895,8 @@
       "uk": "Метод",
       "vi": "Phương pháp",
       "zh": "模式",
-      "ca": "Mètode"
+      "ca": "Mètode",
+      "eu": "Metodo"
     },
     "iDtype": "combo"
   },
@@ -88665,7 +88945,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo"
   },
@@ -88773,7 +89054,8 @@
       "zh": "开关类型",
       "ca": "Tipus",
       "da": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "eu": "Mota"
     },
     "options": [
       {
@@ -88809,7 +89091,8 @@
           "ca": "Mecanic",
           "eo": "Meĥanika (441-14-10)",
           "sk": "Mechanický",
-          "sr": "Механички"
+          "sr": "Механички",
+          "eu": "Mekaniko"
         }
       },
       {
@@ -88963,7 +89246,8 @@
       "zh": "电缆数量",
       "ca": "Cables",
       "id": "Kabel",
-      "sk": "Káble"
+      "sk": "Káble",
+      "eu": "Kableak"
     }
   },
   "design": {
@@ -89002,7 +89286,8 @@
       "no": "Design",
       "da": "Design",
       "id": "Desain",
-      "sk": "Dizajn"
+      "sk": "Dizajn",
+      "eu": "Diseinu"
     },
     "iDtype": "combo"
   },
@@ -89043,7 +89328,8 @@
       "vi": "Kiểu",
       "zh": "变压器类型",
       "ca": "Tipus",
-      "sk": "Typ"
+      "sk": "Typ",
+      "eu": "Mota"
     },
     "options": [
       {
@@ -89076,7 +89362,8 @@
           "ca": "Distribuidor",
           "eo": "Distribu-transformilo",
           "sk": "Distribúcia",
-          "sr": "Пренос"
+          "sr": "Пренос",
+          "eu": "Banaketa"
         }
       },
       {
@@ -89113,7 +89400,8 @@
           "vi": "Phát điện",
           "ca": "Generador",
           "eo": "Blok-transformilo",
-          "sr": "Генератор"
+          "sr": "Генератор",
+          "eu": "Sorgailu"
         }
       },
       {
@@ -89149,7 +89437,8 @@
           "ca": "Convertidor",
           "eo": "Konvertilo",
           "sk": "Menič",
-          "sr": "Конвертер"
+          "sr": "Конвертер",
+          "eu": "Bihurtzaile"
         }
       },
       {
@@ -89182,7 +89471,8 @@
           "ca": "Tracció",
           "eo": "Kontaktrela",
           "fi": "Rautatien syöttöasema",
-          "sr": "Вуча"
+          "sr": "Вуча",
+          "eu": "Trakzio"
         }
       },
       {
@@ -89251,7 +89541,8 @@
           "vi": "Dịch pha",
           "ca": "Regulador d'angle de fase",
           "eo": "Fazangul-alĝustigilo",
-          "sr": "Регулатор фазног угла"
+          "sr": "Регулатор фазног угла",
+          "eu": "Fase Angulu Erregulatzaile"
         }
       },
       {
@@ -89283,7 +89574,8 @@
           "vi": "Phụ tải",
           "ca": "Auxiliar",
           "eo": "Helpa (intern-sistema)",
-          "sr": "Помоћни"
+          "sr": "Помоћни",
+          "eu": "Laguntzaile"
         }
       },
       {
@@ -89321,7 +89613,8 @@
           "vi": "Không rõ",
           "ca": "Desconegut",
           "eo": "Nekonata",
-          "sr": "Непознато"
+          "sr": "Непознато",
+          "eu": "Ezezagun"
         }
       }
     ],
@@ -89404,7 +89697,8 @@
       "ca": "Dispositius",
       "no": "Enheter",
       "id": "Perangkat",
-      "sk": "Zariadenia"
+      "sk": "Zariadenia",
+      "eu": "Tresnak"
     }
   },
   "phases": {
@@ -89445,7 +89739,8 @@
       "ca": "Fases",
       "no": "faser",
       "sk": "Fázy",
-      "sr": "Фазе"
+      "sr": "Фазе",
+      "eu": "Faseak"
     }
   },
   "frequency": {
@@ -89484,7 +89779,8 @@
       "zh": "工作频率",
       "ca": "Freqüència de funcionament",
       "no": "Driftsfrekvens",
-      "sk": "Operačná frekvencia"
+      "sk": "Operačná frekvencia",
+      "eu": "Eragiketa maiztasuna"
     },
     "iDtype": "combo"
   },
@@ -89798,7 +90094,8 @@
           "vi": "Chữ chi",
           "ca": "Zig Zag",
           "eo": "IEC 421-10-04 (zigzaga)",
-          "sr": "Цик-цак"
+          "sr": "Цик-цак",
+          "sk": "Cik cak"
         }
       },
       {
@@ -89829,7 +90126,8 @@
           "ca": "Obert",
           "eo": "IEC 421-10-05 (malfermita)",
           "no": "Åpen",
-          "sr": "Отворена"
+          "sr": "Отворена",
+          "eu": "Ireki"
         }
       },
       {
@@ -89969,7 +90267,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo"
   },
@@ -90013,7 +90312,8 @@
       "vi": "Bờ Lề đường",
       "zh": "路缘",
       "ca": "Vorera",
-      "no": "veikant"
+      "no": "veikant",
+      "eu": "Frenatu"
     },
     "iDtype": "combo"
   },
@@ -90128,7 +90428,8 @@
       "uk": "Тип",
       "vi": "Kiểu",
       "zh": "类型",
-      "ca": "Tipus"
+      "ca": "Tipus",
+      "eu": "Mota"
     },
     "iDtype": "combo"
   },
@@ -90203,7 +90504,8 @@
       "uk": "Складність маршруту",
       "vi": "Trình độ Cưỡi ngựa",
       "no": "Riding Vanskelighetsgrad",
-      "da": "Ridning sværhedsgrad"
+      "da": "Ridning sværhedsgrad",
+      "eu": "Ekitazioaren zailtasuna"
     },
     "options": [
       {
@@ -90235,7 +90537,8 @@
           "uk": "Легкий: жодних складностей. (типовий)",
           "vi": "Dễ: Không có trở ngại. (mặc định)",
           "no": "Enkel: Ingen problemer eller vanskeligheter. (standard)",
-          "da": "Let: Ingen udfordringer eller besværligheder. (standard)"
+          "da": "Let: Ingen udfordringer eller besværligheder. (standard)",
+          "eu": "Erraza: Arazorik edo zailtasunik gabea. (lehenetsita)"
         }
       },
       {
@@ -90264,7 +90567,8 @@
           "vi": "Xấu: Lối gồ ghề, đôi khi có quãng khó đi qua.",
           "no": "Bruk med forsiktighet: Ujevn måte, tidvis vanskelige passasjer.",
           "da": "Vær varsom: Ujævn vej, enkelte svære passager.",
-          "fa": "با احتیاط استفاده کنید: راه ناهموار ، معابر گاهی دشوار."
+          "fa": "با احتیاط استفاده کنید: راه ناهموار ، معابر گاهی دشوار.",
+          "eu": "Kontuz ibili: bide malkartsua, noizean behin pasabide zailak."
         }
       },
       {
@@ -90293,7 +90597,8 @@
           "vi": "Khó: Lối hẹp có thể có trở ngại làm dễ bị té.",
           "no": "Vanskelig: Måten smal og utsatt. Kan inneholde hindringer for å gå over og smale passasjer.",
           "da": "Svær: Smal og udsat vej. Kan indeholde forhindringer der skal skræves over og smalle passager.",
-          "fa": "دشوار: راه باریک و در بدون حفاظ. ممکن است حاوی موانع برای عبور و مرور و معابر باریک باشد."
+          "fa": "دشوار: راه باریک و در بدون حفاظ. ممکن است حاوی موانع برای عبور و مرور و معابر باریک باشد.",
+          "eu": "Zaila: bide estu eta arriskutsua. Bidea estutzen eta zailtzen duten oztopoak egon daitezke."
         }
       },
       {
@@ -90322,7 +90627,8 @@
           "uk": "Дуже складний: тільки для досвідчених вершників та їх коней. Багато перешкод. Мости вимагають попереднього огляду на придатність рухатись по ним коням.",
           "vi": "Rất Khó: Chỉ có những ngựa và người cưỡi ngựa có nhiều khả năng có thể qua lại. Có trở ngại lớn. Cần phải xem xét kỹ càng các cầu.",
           "da": "Mellemting: Kun passage for erfarne ryttere og heste. Betydelige forhindringer. Broer bør undersøges nøje.",
-          "fa": "خط مرزی: فقط برای سواران و اسب‌های با تجربه قابل عبور است. دارای موانع عمده. باید پل‌ها را با دقت بررسی کرد."
+          "fa": "خط مرزی: فقط برای سواران و اسب‌های با تجربه قابل عبور است. دارای موانع عمده. باید پل‌ها را با دقت بررسی کرد.",
+          "eu": "Muga: Bakarrik zaldizko eta zaldi esperimentatuak ibiltzeko modukoa. Oztopo nagusiak. Zubiek arretaz aztertuak izan behar dute."
         }
       },
       {
@@ -90352,7 +90658,8 @@
           "vi": "Nguy hiểm: Chỉ có những ngựa và người cưỡi ngựa có rất nhiều khả năng có thể qua lại được khi trời đẹp. Nên xuống ngựa.",
           "no": "Farlig: Brukbar bare for veldig erfarne ryttere og hester og bare i godt vær. Avstige.",
           "da": "Farlig: Kun passage for meget erfarne ryttere og heste og kun i godt vejr. Stig af.",
-          "fa": "خطرناک: فقط برای سواران و اسب‌های بسیار باتجربه و فقط در هوای خوب قابل تردد است. پیاده شدن از اسب بهتر است."
+          "fa": "خطرناک: فقط برای سواران و اسب‌های بسیار باتجربه و فقط در هوای خوب قابل تردد است. پیاده شدن از اسب بهتر است.",
+          "eu": "Arriskutsua: Bakarrik oso zaldizko eta zaldi trebeek ibiltzeko modukoa eta soilik eguraldi ona egiten duenean. Desmuntatu."
         }
       },
       {
@@ -90381,7 +90688,8 @@
           "vi": "Hiểm nghèo: Ngựa không qua được lối hoặc cầu quá hẹp, thiếu cột chống, có trở ngại như thang.",
           "no": "Unngåelig: vei eller bro ikke farbar for hester. For smal, utilstrekkelig støtte, hindringer som stiger. Livsfare.",
           "da": "Upasserbar: Vej eller bro er ikke passerbar for heste. For smal, utilstrækkeligt understøttet, forhindringer såsom stiger. Livsfare.",
-          "fa": "غیر قابل عبور: راه یا پل برای اسب قابل عبور نیست. بیش از حد باریک، پشتیبانی ناکافی، موانعی مانند نردبان. زندگی در خطر است."
+          "fa": "غیر قابل عبور: راه یا پل برای اسب قابل عبور نیست. بیش از حد باریک، پشتیبانی ناکافی، موانعی مانند نردبان. زندگی در خطر است.",
+          "eu": "Zeharkaezina: Zaldiek igaro ezin duten bide edo zubia. Estuegia, euskarri nahikorik gabea, eskilarak bezalako oztopoekin. Hiltzeko arriskua."
         }
       }
     ],
@@ -90411,7 +90719,8 @@
       "vi": "Dây điện Chăng Trên đầu cho Xe điện",
       "el": "Αιωρούμενα Καλώδια του Τρόλεϊ",
       "fa": "سیم‌های واگن برقی بالای سر",
-      "sr": "Жице надземних колица"
+      "sr": "Жице надземних колица",
+      "nl": "Trolleybus bovenleidingen"
     },
     "iDtype": "check",
     "options": [
@@ -90532,7 +90841,8 @@
       "tr": "Not",
       "uk": "Примітка",
       "vi": "Chú thích",
-      "zh": "备注"
+      "zh": "备注",
+      "eu": "Ohar"
     }
   },
   "access_aisle": {
@@ -90636,7 +90946,8 @@
       "no": "Kryss",
       "da": "Vejfletning",
       "sk": "Križovatka",
-      "sr": "Раскршће"
+      "sr": "Раскршће",
+      "ru": "Перекрёсток"
     },
     "options": [
       {
@@ -90702,7 +91013,8 @@
           "id": "Bundaran Kecil Jalan",
           "fa": "میدان، دایره‌ی یک طرفه، حلقه ترافیک",
           "sk": "Kruhový objazd",
-          "sr": "Саобраћајни круг"
+          "sr": "Саобраћајни круг",
+          "ru": "Круговое движение"
         }
       },
       {
@@ -90880,7 +91192,8 @@
       "id": "Nomor Jalan Tujuan",
       "fa": "شماره جاده مقصد",
       "sk": "Cieľové čísla ciest",
-      "sr": "Путне ознаке одредишта"
+      "sr": "Путне ознаке одредишта",
+      "da": "Endepunkts vejnummer"
     },
     "iDtype": "semiCombo"
   },
@@ -90947,7 +91260,8 @@
       "da": "Afgift",
       "fa": "مقدار عوارض",
       "ko": "요금",
-      "sk": "Veľkosť mýta"
+      "sk": "Veľkosť mýta",
+      "nl": "Kostprijs"
     }
   },
   "destination/symbol_oneway": {
@@ -90981,7 +91295,8 @@
       "cs": "piktogramy cílů",
       "id": "Simbol Tujuan",
       "sk": "Cieľové symboly",
-      "sr": "Симболи одредишта"
+      "sr": "Симболи одредишта",
+      "da": "Endepunktsymbol"
     },
     "iDtype": "semiCombo"
   },
@@ -91022,7 +91337,8 @@
       "tr": "Tavsiye Edilen Hız Sınırı",
       "id": "Batas Kecepatan yang disarankan",
       "no": "Anbefalt fartsgrense",
-      "sr": "Препоручено ограничење брзине"
+      "sr": "Препоручено ограничење брзине",
+      "eu": "Aholkatutako Abiadura Muga"
     },
     "iDtype": "maxspeed"
   },
@@ -91103,7 +91419,8 @@
       "tr": "Ücret",
       "uk": "Платний проїзд",
       "vi": "Thu phí",
-      "sr": "Путарина"
+      "sr": "Путарина",
+      "eu": "Bidesari"
     },
     "iDtype": "check",
     "options": [
@@ -91622,7 +91939,8 @@
           "sv": "Enklast (vita cirkel)",
           "tr": "Çok Kolay (beyaz)",
           "uk": "Найпростіший (біле коло)",
-          "vi": "Dễ nhất (hình tròn màu trắng)"
+          "vi": "Dễ nhất (hình tròn màu trắng)",
+          "eu": "Errazena (zirkulu zuria)"
         }
       },
       {
@@ -91664,7 +91982,8 @@
           "sv": "Enkel (gröna cirkel)",
           "tr": "Kolay (yeşil)",
           "uk": "Простий (зелене коло)",
-          "vi": "Dễ (hình tròn màu xanh lục)"
+          "vi": "Dễ (hình tròn màu xanh lục)",
+          "eu": "Erraza (zirkulu berdea)"
         }
       },
       {
@@ -91707,7 +92026,8 @@
           "sv": "Medium (blå fyrkant)",
           "tr": "Orta Zorluk (mavi)",
           "uk": "Середній (синій квадрат)",
-          "vi": "Trung bình (hình vuông màu xanh lam)"
+          "vi": "Trung bình (hình vuông màu xanh lam)",
+          "eu": "Erdi (karratu urdina)"
         }
       },
       {
@@ -91749,7 +92069,8 @@
           "sv": "Svår (svart diamant)",
           "tr": "Çok Zor (siyah)",
           "uk": "Складний (чорний ромб)",
-          "vi": "Khó (hình thoi màu đen)"
+          "vi": "Khó (hình thoi màu đen)",
+          "eu": "Zaila (diamante beltza)"
         }
       },
       {
@@ -91791,7 +92112,8 @@
           "sv": "Extremt svårt (dubbel svart diamant)",
           "tr": "Aşırı Zor (çift siyah)",
           "uk": "Надзвичайно складний (подвійний чорний ромб)",
-          "vi": "Cực Khó (2 hình thoi màu đen)"
+          "vi": "Cực Khó (2 hình thoi màu đen)",
+          "eu": "Oso zaila (Diamante beltz bikoitza)"
         }
       }
     ],
@@ -91836,7 +92158,8 @@
       "tr": "Dağ Bisikleti Yükselme Zorluğu",
       "uk": "Складність підйому на гору на велосипеді",
       "vi": "Độ hiểm trở Đạp xe Leo lên núi",
-      "no": "Terrengsykling Klatre Vanskelighetsgrad"
+      "no": "Terrengsykling Klatre Vanskelighetsgrad",
+      "eu": "Zailtasun Handiko Mendi Ziklismoa"
     },
     "options": [
       {
@@ -92401,7 +92724,8 @@
       "uk": "Видимість маршруту",
       "vi": "Tầm nhìn trên Đường mòn",
       "zh": "路径可见度",
-      "fa": "مسیر پیاده روی (درجه‌بندی با دید در مسیر)"
+      "fa": "مسیر پیاده روی (درجه‌بندی با دید در مسیر)",
+      "eu": "Pistaren ikusgarritasuna"
     },
     "options": [
       {
@@ -92681,7 +93005,8 @@
       "tr": "Tür",
       "uk": "Тип",
       "vi": "Kiểu",
-      "zh": "类型"
+      "zh": "类型",
+      "eu": "Mota"
     },
     "iDtype": "combo"
   },
@@ -92726,7 +93051,8 @@
       "tr": "Yön",
       "uk": "Нахил",
       "vi": "Độ dốc",
-      "et": "Kalle"
+      "et": "Kalle",
+      "eu": "Aldapa"
     },
     "options": [
       {
@@ -92770,7 +93096,8 @@
           "sv": "Upp",
           "tr": "Yukarı",
           "uk": "Вгору",
-          "vi": "Lên"
+          "vi": "Lên",
+          "eu": "Gora"
         }
       },
       {
@@ -92814,7 +93141,8 @@
           "sv": "Ned",
           "tr": "Aşağı",
           "uk": "Вниз",
-          "vi": "Xuống"
+          "vi": "Xuống",
+          "eu": "Behera"
         }
       }
     ],
@@ -92860,7 +93188,8 @@
       "sv": "Ledstång",
       "tr": "Merdiven Korkuluğu",
       "uk": "Перила",
-      "vi": "Lan can"
+      "vi": "Lan can",
+      "eu": "Baranda"
     },
     "iDtype": "check",
     "options": [
@@ -92908,7 +93237,8 @@
       "tr": "Basamak Sayısı",
       "uk": "Кількість сходинок",
       "vi": "Số Bước",
-      "no": "Antall steg"
+      "no": "Antall steg",
+      "eu": "Pausu kopurua"
     }
   },
   "tracktype": {
@@ -93173,7 +93503,8 @@
       "fa": "قابل شرب، آشامیدنی",
       "hu": "Iható",
       "sk": "Pitné",
-      "sr": "Пијаћа вода"
+      "sr": "Пијаћа вода",
+      "ru": "Пригодно для питья"
     },
     "iDtype": "check",
     "options": [
@@ -93262,7 +93593,8 @@
       "tr": "Bina",
       "uk": "Будівля",
       "vi": "Tòa nhà",
-      "zh": "建筑物"
+      "zh": "建筑物",
+      "eu": "Eraikin"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -93296,7 +93628,8 @@
       "hu": "Szivattyú",
       "ko": "펌프",
       "sk": "Pumpa",
-      "sr": "Пумпа"
+      "sr": "Пумпа",
+      "ru": "Пункт подкачки колёс"
     },
     "iDtype": "combo",
     "options": [
@@ -93327,7 +93660,8 @@
           "fa": "بله",
           "hu": "Van",
           "sk": "Áno",
-          "sr": "Да"
+          "sr": "Да",
+          "ru": "Да"
         }
       },
       {
@@ -93355,7 +93689,8 @@
           "fa": "پمپ دستی",
           "hu": "Kézi szivattyú",
           "sk": "Manuálna ručná pumpa",
-          "sr": "Ручна пумпа"
+          "sr": "Ручна пумпа",
+          "ru": "Ручной насос"
         }
       },
       {
@@ -93382,7 +93717,8 @@
           "fa": "دستگاه - پمپ برقی",
           "hu": "Gépi szivattyú",
           "sk": "Motorom poháňana pumpa",
-          "sr": "Машинска пумпа"
+          "sr": "Машинска пумпа",
+          "ru": "Компрессор для подкачки колёс "
         }
       },
       {
@@ -97260,7 +97596,8 @@
       "eo": "Ludoj",
       "fa": "بازی‌ها",
       "sk": "Hry",
-      "sr": "Игре"
+      "sr": "Игре",
+      "ru": "Игры"
     },
     "iDtype": "semiCombo"
   },
@@ -97427,7 +97764,8 @@
       "hu": "Palacktöltés",
       "sk": "Plnenie fliaš",
       "sr": "Пуњење боца",
-      "sv": "Flaskpåfyllning"
+      "sv": "Flaskpåfyllning",
+      "nl": "Flessen vullen"
     },
     "iDtype": "check",
     "options": [
@@ -97464,7 +97802,8 @@
       "fa": "نوع",
       "hu": "Típus",
       "sk": "Typ",
-      "sr": "Врста"
+      "sr": "Врста",
+      "ru": "Тип фонтана"
     },
     "iDtype": "combo"
   },
@@ -97570,7 +97909,8 @@
       "eo": "Trinkaĵoj",
       "fa": "نوشیدنی",
       "sk": "Nápoje",
-      "sr": "Пића"
+      "sr": "Пића",
+      "ru": "Напитки"
     }
   },
   "segregated": {
@@ -97595,7 +97935,9 @@
       "it": "Separazione Biciclette-Pedoni",
       "eo": "Apartigo inter piedirantoj k biciklantoj",
       "fa": "دوچرخه - تفکیک‌شده از پیاده‌رو",
-      "sk": "Oddelenie cyklistov od chodcov"
+      "sk": "Oddelenie cyklistov od chodcov",
+      "nl": "Fietser-voetganger scheiding",
+      "vi": "Làn Riêng cho Xe đạp và Người đi bộ"
     },
     "iDtype": "check",
     "options": [
@@ -97647,7 +97989,8 @@
       "sv": "Cykelfiler",
       "tr": "Bisiklet Yolu",
       "uk": "Велодоріжка",
-      "vi": "Làn Xe đạp"
+      "vi": "Làn Xe đạp",
+      "eu": "Bidegorria"
     },
     "options": [
       {
@@ -97691,7 +98034,8 @@
           "sv": "Ingen",
           "tr": "Hiçbiri",
           "uk": "Немає",
-          "vi": "Không có"
+          "vi": "Không có",
+          "eu": "Inor"
         }
       },
       {
@@ -97734,7 +98078,8 @@
           "tr": "Standart bisiklet şeridi",
           "uk": "Звичайна велодоріжка",
           "vi": "Làn xe đạp chuẩn",
-          "id": "Lajur Sepeda Standar"
+          "id": "Lajur Sepeda Standar",
+          "eu": "Bidegorri arrunta"
         }
       },
       {
@@ -97776,7 +98121,8 @@
           "tr": "Paylaşılan bisiklet şeridi",
           "uk": "Велодоріжка спільно з іншим рухом",
           "vi": "Làn xe đạp dùng chung",
-          "id": "Lajur sepeda berbagi"
+          "id": "Lajur sepeda berbagi",
+          "eu": "Partekatutako bidegorria"
         }
       },
       {
@@ -97817,7 +98163,8 @@
           "tr": "Ayrılmış bisiklet yolu",
           "uk": "Велотрек",
           "vi": "Đường xe đạp riêng",
-          "no": "Sykkelbane"
+          "no": "Sykkelbane",
+          "eu": "Bidegorria"
         }
       },
       {
@@ -97859,7 +98206,8 @@
           "uk": "Велодоріжка суміщена зі смугою громадського транспорту",
           "vi": "Làn xe đạp lẫn xe buýt",
           "no": "Sykkelfelt delt med buss",
-          "id": "Lajur sepeda berbagi dengan bus"
+          "id": "Lajur sepeda berbagi dengan bus",
+          "eu": "Autobusen bidearekin bat eginda doan bidegorria"
         }
       },
       {
@@ -97900,7 +98248,8 @@
           "tr": "Ters yönde bisiklet şeridi",
           "uk": "Велодріжка в зворотньому напрямку",
           "vi": "Làn xe đạp ngược chiều lối",
-          "no": "Motsatte sykkelfelt"
+          "no": "Motsatte sykkelfelt",
+          "eu": "Kontrako bidegorria"
         }
       },
       {
@@ -97939,7 +98288,8 @@
           "tr": "Her iki yönde kullanılabilen bisiklet şeridi",
           "uk": "Рух веолодоріжкою в протилежному напрямку",
           "vi": "Làm xe đạp ngược chiều giao thông",
-          "no": "Motstrøms sykkelfelt"
+          "no": "Motstrøms sykkelfelt",
+          "eu": "Kontrako norabidedun bidegorria"
         }
       }
     ]
@@ -97970,7 +98320,10 @@
       "fa": "ارتفاع فوران",
       "hu": "Kitörési magasság",
       "sk": "Výška erupcie",
-      "sr": "Висина ерупције"
+      "sr": "Висина ерупције",
+      "ru": "Высота выброса",
+      "el": "Ύψος έκρηξης",
+      "nl": "Uitbarstingshoogte"
     }
   },
   "plant/source": {
@@ -98051,7 +98404,8 @@
       "eo": "Sovaĝa (sen oportunaĵoj)",
       "fa": "ناحیه‌ی دورافتاده",
       "sk": "Vidiek",
-      "sv": "Vildmarkscamping"
+      "sv": "Vildmarkscamping",
+      "nl": "Afgelegen"
     },
     "iDtype": "check",
     "options": [
@@ -98119,7 +98473,8 @@
       "it": "Fuochi all'Aperto Consentiti",
       "eo": "Fajro permesata",
       "fa": "آتش‌افروزی مجاز است",
-      "sk": "Otvorené ohne dovolené"
+      "sk": "Otvorené ohne dovolené",
+      "ru": "Открытый огонь разрешён"
     },
     "iDtype": "check",
     "options": [
@@ -98150,7 +98505,10 @@
       "el": "Ντουζιέρες",
       "eo": "Duŝejo",
       "fa": "دوش",
-      "sk": "Sprchy"
+      "sk": "Sprchy",
+      "ru": "Душ",
+      "et": "Dušid",
+      "nl": "Douches"
     },
     "iDtype": "check",
     "options": [
@@ -98183,7 +98541,8 @@
       "fi": "Vessat",
       "ko": "화장실",
       "sk": "Toalety",
-      "sr": "Тоалети"
+      "sr": "Тоалети",
+      "ru": "Туалет"
     },
     "iDtype": "check",
     "options": [
@@ -98299,7 +98658,8 @@
       "da": "IATA lufthavnskode",
       "no": "IATA Airport Kode",
       "fa": "کد فرودگاه یاتا (انجمن بین‌المللی حمل‌ونقل هوایی)",
-      "sr": "ИАТА ознака"
+      "sr": "ИАТА ознака",
+      "ru": "Код аэропорта IATA"
     }
   },
   "icao": {
@@ -98329,7 +98689,8 @@
       "da": "ICAO lufthavnskode",
       "no": "ICAO Airport Kode",
       "fa": "کد فرودگاه ایکائو (سازمان بین‌المللی هوانوردی غیرنظامی)",
-      "sr": "ИКАО ознака"
+      "sr": "ИКАО ознака",
+      "ru": "Код аэропорта ICAO"
     }
   },
   "ref_aeroway_gate": {
@@ -98370,7 +98731,8 @@
       "tr": "Kapı Numarası",
       "uk": "Номер виходу на посадку",
       "vi": "Số Cổng",
-      "no": "Port Nummer"
+      "no": "Port Nummer",
+      "eu": "Ate Zenbakia"
     }
   },
   "ref_runway": {
@@ -98525,7 +98887,8 @@
       "sv": "Typ av service",
       "tr": "Servis Türü",
       "uk": "Тип службового шляху",
-      "vi": "Kiểu Dịch vụ"
+      "vi": "Kiểu Dịch vụ",
+      "eu": "Zerbitzu Mota"
     },
     "options": [
       {
@@ -98714,7 +99077,8 @@
       "sv": "Användningsområde",
       "tr": "Kullanım Tipi",
       "uk": "Тіп колії",
-      "vi": "Kiểu Sử dụng"
+      "vi": "Kiểu Sử dụng",
+      "eu": "Erabilera Mota"
     },
     "options": [
       {
@@ -98746,7 +99110,8 @@
           "uk": "Основний путь",
           "vi": "Chính",
           "fa": "اصلی",
-          "sr": "Основна"
+          "sr": "Основна",
+          "eu": "Nagusi"
         }
       },
       {
@@ -98778,7 +99143,8 @@
           "uk": "Гілка",
           "vi": "Nhánh",
           "fa": "شعبه",
-          "sr": "Грана"
+          "sr": "Грана",
+          "eu": "Adar"
         }
       },
       {
@@ -98810,7 +99176,8 @@
           "uk": "Промислова",
           "vi": "Công nghiệp",
           "fa": "صنعتی",
-          "sr": "Индустријска"
+          "sr": "Индустријска",
+          "eu": "Industrial"
         }
       },
       {
@@ -98842,7 +99209,8 @@
           "uk": "Військова",
           "vi": "Quân sự",
           "fa": "نظامی",
-          "sr": "Војна"
+          "sr": "Војна",
+          "eu": "Militar"
         }
       },
       {
@@ -98875,7 +99243,8 @@
           "da": "Test",
           "fa": "آزمایش",
           "sk": "Test",
-          "sr": "Тест"
+          "sr": "Тест",
+          "eu": "Analisi"
         }
       },
       {
@@ -98911,7 +99280,8 @@
           "uk": "Туристична",
           "vi": "Du lịch",
           "da": "Turisme",
-          "sr": "Туристичка"
+          "sr": "Туристичка",
+          "eu": "Turismo"
         }
       }
     ],
@@ -98956,7 +99326,8 @@
       "sv": "Spårvidd",
       "tr": "Dingil Genişliği",
       "uk": "Колія",
-      "vi": "Khổ"
+      "vi": "Khổ",
+      "eu": "Kalibre"
     },
     "iDtype": "combo"
   },
@@ -99001,7 +99372,8 @@
       "tr": "Elektrik Kaynağı",
       "uk": "Електрифікація",
       "vi": "Điện khí hóa",
-      "id": "Memiliki Listrik"
+      "id": "Memiliki Listrik",
+      "eu": "Elektrifikazio"
     },
     "options": [
       {
@@ -99042,7 +99414,8 @@
           "tr": "Kablolu",
           "uk": "Контактна лінія",
           "vi": "Dây điện Bên trên",
-          "no": "Kontakt linje"
+          "no": "Kontakt linje",
+          "eu": "Ukipenezko Linea"
         }
       },
       {
@@ -99084,7 +99457,8 @@
           "sv": "Elektrifierad räls",
           "tr": "Ray",
           "uk": "Електрифіковані рейки",
-          "vi": "Đường ray Điện"
+          "vi": "Đường ray Điện",
+          "eu": "Errail elektrifikatua"
         }
       },
       {
@@ -99127,7 +99501,8 @@
           "sv": "Ja (ospecificerad)",
           "tr": "Evet (belirtilmemiş)",
           "uk": "Так (невизначено)",
-          "vi": "Có (không xác định)"
+          "vi": "Có (không xác định)",
+          "eu": "Bai (zehaztu gabe)"
         }
       },
       {
@@ -99171,7 +99546,8 @@
           "sv": "Nej",
           "tr": "Hayır",
           "uk": "Ні",
-          "vi": "Không có"
+          "vi": "Không có",
+          "eu": "Ez"
         }
       }
     ],
@@ -99342,7 +99718,8 @@
       "vi": "Hướng Ảnh hưởng",
       "cs": "Dotčený směr",
       "fa": "جهت تحت تأثیر",
-      "ko": "방향"
+      "ko": "방향",
+      "nl": "Richting beïnvloed"
     },
     "options": [
       {
@@ -99378,7 +99755,8 @@
           "tr": "İleri",
           "uk": "За напрямком лінії",
           "vi": "Tiến",
-          "sk": "Dopredu"
+          "sk": "Dopredu",
+          "eu": "Aurrera"
         }
       },
       {
@@ -99415,7 +99793,8 @@
           "tr": "Geri",
           "uk": "Проти напрямку лінії",
           "vi": "Ngược",
-          "sk": "Dozadu"
+          "sk": "Dozadu",
+          "eu": "Atzeranzko"
         }
       },
       {
@@ -99452,7 +99831,8 @@
           "tr": "İleri ve Geri",
           "uk": "В обидва боки/Всі",
           "vi": "2 Chiều / Mọi Hướng",
-          "sk": "Obe / Všetky"
+          "sk": "Obe / Všetky",
+          "eu": "Biak / Guztiak"
         }
       }
     ],
@@ -99492,7 +99872,8 @@
       "tr": "Yapı",
       "uk": "Споруда",
       "vi": "Cấu trúc",
-      "sr": "Структура"
+      "sr": "Структура",
+      "eu": "Egitura"
     },
     "options": [
       {
@@ -99530,7 +99911,8 @@
           "tr": "Tünel",
           "uk": "Тунель",
           "vi": "Đường hầm",
-          "sr": "Тунел"
+          "sr": "Тунел",
+          "eu": "Tunel"
         }
       }
     ]
@@ -99613,7 +99995,8 @@
       "sv": "Typ",
       "tr": "Tür",
       "uk": "Тип",
-      "vi": "Loại"
+      "vi": "Loại",
+      "eu": "Mota"
     },
     "iDtype": "combo"
   },
@@ -99697,7 +100080,8 @@
       "tr": "Tür",
       "uk": "Тип",
       "vi": "Kiểu",
-      "id": "tipe"
+      "id": "tipe",
+      "eu": "Mota"
     },
     "iDtype": "combo"
   },
@@ -100611,7 +100995,9 @@
       "sr": "COVID-19 радно време",
       "sv": "Öppettider under COVID-19-pandemin",
       "uk": "Розклад роботи на час COVID-19",
-      "vi": "Giờ Mở cửa trong Đại dịch COVID-19"
+      "vi": "Giờ Mở cửa trong Đại dịch COVID-19",
+      "ru": "Время работы во время пандемии COVID-19 ",
+      "nl": "COVID-19 pandemie openingsuren"
     },
     "iDtype": "combo"
   },
@@ -100637,7 +101023,8 @@
       "eo": "Naĝejeto por",
       "fa": "انواع حوضه",
       "sr": "Врста басена",
-      "sv": "Bassängtyper"
+      "sv": "Bassängtyper",
+      "nl": "Types opvangbekken"
     }
   },
   "capacity_parking": {
@@ -100669,7 +101056,9 @@
       "ko": "전체 주차면",
       "sk": "Celkový počet miest",
       "sr": "Укупно места",
-      "sv": "Totalt antal platser"
+      "sv": "Totalt antal platser",
+      "ru": "Всего мест",
+      "nl": "Totale capaciteit"
     }
   },
   "capacity/disabled_parking": {
@@ -100699,7 +101088,10 @@
       "sk": "Dostupné miesta",
       "sr": "Приступачних места",
       "sv": "Handikappsplatser",
-      "vi": "Số Chỗ Đậu xe Dành cho Người Khuyết tật"
+      "vi": "Số Chỗ Đậu xe Dành cho Người Khuyết tật",
+      "ru": "Доступно мест",
+      "el": "Προσβάσιμοι Χώροι",
+      "nl": "Gehandicaptenparkeerplaatsen"
     }
   },
   "ele": {
@@ -100734,7 +101126,8 @@
       "ko": "고도",
       "sk": "Nadmorská výška",
       "sr": "Надморска висина",
-      "sv": "Höjd"
+      "sv": "Höjd",
+      "ru": "Высота над уровнем моря"
     }
   },
   "ele_node": {
@@ -100770,7 +101163,8 @@
       "ko": "고도",
       "sk": "Nadmorská výška",
       "sr": "Надморска висина",
-      "sv": "Höjd"
+      "sv": "Höjd",
+      "ru": "Высота над уровнем моря"
     }
   },
   "garden/type": {
@@ -100801,7 +101195,9 @@
       "ko": "정원 유형",
       "sk": "Typ záhrady",
       "sr": "Врста баште",
-      "sv": "Trädgårdstyp"
+      "sv": "Trädgårdstyp",
+      "ru": "Тип сада",
+      "nl": "Tuinsoort"
     },
     "iDtype": "combo"
   },
@@ -100883,7 +101279,8 @@
       "ja": "トンネルの種類",
       "sk": "Typ",
       "sr": "Врста",
-      "sv": "Typ"
+      "sv": "Typ",
+      "fr": "Type"
     },
     "iDtype": "combo"
   },
@@ -100920,7 +101317,8 @@
       "gl": "Circunferencia",
       "hu": "Kerület",
       "sk": "Obvod",
-      "sr": "Кружница"
+      "sr": "Кружница",
+      "ru": "Длина окружности"
     },
     "iDtype": "combo"
   },
@@ -101538,7 +101936,8 @@
           "sv": "Stolpe/Ovan jord",
           "tr": "Sütun",
           "uk": "Колонка/Надземний",
-          "vi": "Cột"
+          "vi": "Cột",
+          "eu": "Zutabe/ Lur gaineko"
         }
       },
       {
@@ -101579,7 +101978,8 @@
           "sv": "Underjordisk",
           "tr": "Yeraltı",
           "uk": "Підземний",
-          "vi": "Dưới đất"
+          "vi": "Dưới đất",
+          "eu": "Lur azpian"
         }
       },
       {
@@ -101622,7 +102022,8 @@
           "sv": "Vägg",
           "tr": "Duvar",
           "uk": "Настінний",
-          "vi": "Tường"
+          "vi": "Tường",
+          "eu": "Horma"
         }
       },
       {

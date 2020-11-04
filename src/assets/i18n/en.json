@@ -144,5 +144,26 @@
     "BOOKMARKED_TAGS": "Manage your favorites",
     "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
     "RESET_HIDDEN_TAGS": "Reset"
+  },
+
+  "DAYS": {
+    "MONDAY": "Monday",
+    "TUESDAY": "Tuesday",
+    "WEDNESDAY":"Wednesday",
+    "THURSDAY": "Thursday",
+    "FRIDAY": "Friday",
+    "SATURDAY": "Saturday",
+    "SUNDAY": "Sunday"
+  },
+  "OPENINGHOURS":{
+    "CLOSED": "Closed",
+    "UNKNOW": "Unknown",
+    "START_TIME": "Start Time",
+    "END_TIME" : "End Time",
+    "ADD_OPENING_HOURS": "Add opening hours",
+    "ADD_INTERVAL": "Add an interval",
+    "DELETE_INTERVAL": "Delete this interval",
+    "SELECT_AT_LEAST_ONE_DAY": "You need to select at least one day",
+    "TOO_COMPLEX_FOR_OSMGO": "This format is too complex for Osm Go!"
   }
 }

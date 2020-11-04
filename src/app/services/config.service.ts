@@ -69,7 +69,7 @@ export class ConfigService {
     freezeMapRenderer = false;
     platforms = [];
     deviceInfo;
-    baseMapSources;
+    baseMapSources = null;
     currentZoom: number = undefined;
     selecableLayers:string[] = ['marker', 'marker_changed', 'icon-change'] 
 

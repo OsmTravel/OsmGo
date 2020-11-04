@@ -49,7 +49,8 @@ let languages = [
     "tr",
     "uk",
     "vi",
-    "zh"
+    "zh",
+    "eu"
   ];
 
 

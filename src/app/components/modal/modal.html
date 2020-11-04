@@ -1,4 +1,12 @@
 <div class="wrapper" [ngSwitch]="typeFiche">
+
+	<ion-fab class="toogleCodeButton">
+		<ion-fab-button  size="small" (click)="toogleCode()">
+			<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+			<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+		</ion-fab-button>
+</ion-fab>
+
 	<!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
 	<div *ngSwitchCase="'Read'" style="height:100%">
 		<ion-header>
@@ -18,24 +26,7 @@
 		</ion-header>
 		<div class="content">
 	
-			<div class="actions"> 
-				<ion-fab  horizontal="end" >
-						<ion-fab-button  size="small" (click)="toogleCode()">
-							<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-							<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
-						</ion-fab-button>
-				</ion-fab>
-				<ion-fab  >
-					<ion-fab-button color="light" size="small" (click)="addOrRemoveBookmark(tagConfig)">
-						<ion-icon
-						[style.color]=" (tagConfig | isBookmarked:tagsService.bookmarksIds) ? '#f71000' : '#d8d8d8'"
-						name="heart"
-						item-left
-						style="font-size: 26px;"
-					  ></ion-icon>
-					</ion-fab-button>
-				</ion-fab>
-			</div>
+		
 
 			<read-meta *ngIf="feature.properties.meta" 
 					[feature]="feature"
@@ -74,6 +65,7 @@
 				[countryCode]="this.configService.config.countryTags"
 				>
 				</read-presets>
+			
 			</div>
 
 			<!--Le reste des tags-->
@@ -137,12 +129,7 @@
 		<div class="content">
 
 			<div class="actions"> 
-				<ion-fab  horizontal="end" >
-						<ion-fab-button  size="small" (click)="toogleCode()">
-							<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-							<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
-						</ion-fab-button>
-				</ion-fab>
+		
 				<ion-fab  >
 					<ion-fab-button color="light" size="small" (click)="addOrRemoveBookmark(tagConfig)">
 						<ion-icon
