@@ -1,9 +1,9 @@
 {
   "name": "osm_go",
   "author": "Fabien Del Olmo",
-  "description": "Cartographiez les tous!",
+  "description": "Map them all !",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
