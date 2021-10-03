@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 
 import { ModalController } from '@ionic/angular';
-import { ModalAddOpeningHoursIntervalComponent } from './modal-add-opening-hours-interval/modal-add-opening-hours-interval.component.js';
+import { ModalAddOpeningHoursIntervalComponent } from './modal-add-opening-hours-interval/modal-add-opening-hours-interval.component'
 
 
 

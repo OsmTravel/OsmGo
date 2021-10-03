@@ -96,12 +96,12 @@
 				<ion-icon name="create"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button  (click)="cancelChange()" color="danger" *ngIf="feature.properties.changeType" class="fabInlineMarginLess">
+			<ion-fab-button  (click)="cancelChange()" color="danger" *ngIf="feature.properties['changeType']" class="fabInlineMarginLess">
 				<ion-icon name="close"> </ion-icon>
 				<ion-icon name="create"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button *ngIf="!feature.properties.changeType" color="secondary" (click)="confirmAddSurveyDate()" class="fabInlineMarginLess fabSurveyDate">
+			<ion-fab-button *ngIf="!feature.properties['changeType']" color="secondary" (click)="confirmAddSurveyDate()" class="fabInlineMarginLess fabSurveyDate">
 				<ion-icon name="checkmark-circle-outline"></ion-icon>
 			</ion-fab-button>
 		</ion-footer>
@@ -255,7 +255,7 @@
 				<ion-icon name="move"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button tappable color="danger" *ngIf="feature.properties.changeType" class="fabInlineMarginLess"
+			<ion-fab-button tappable color="danger" *ngIf="feature.properties['changeType']" class="fabInlineMarginLess"
 			(click)="cancelChange()" >
 				<ion-icon name="close"> </ion-icon>
 				<ion-icon name="create"> </ion-icon>

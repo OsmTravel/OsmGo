@@ -253,7 +253,7 @@
 					<ion-item>
 						<ion-label>Use the OSM development server</ion-label>
 						<ion-toggle [checked]="this.configService.config.isDevServer"
-							(ionChange)="changeIsDevServer($event.detail.checked)"></ion-toggle>
+							(ionChange)="changeIsDevServer($event['detail']['checked'])"></ion-toggle>
 					</ion-item>
 					<label class="hint">
 						After this change, the application will be restarted and the data will be cleared  </label>

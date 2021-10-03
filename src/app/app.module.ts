@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { AngularResizedEventModule } from 'angular-resize-event';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage';
@@ -60,6 +59,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AngularResizeEventModule } from 'angular-resize-event';
 
 import { MomentModule } from 'ngx-moment';
 import 'moment/locale/en-gb';
@@ -121,7 +121,8 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     MomentModule,
     HammerModule,
-    AngularResizedEventModule,
+    AngularResizeEventModule,
+    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -30,6 +30,7 @@ const { Haptics } = Plugins;
 @Injectable({ providedIn: 'root' })
 export class MapService {
   isFirstPosition = true;
+  loadingData = false;
 
   constructor(
     private _ngZone: NgZone,

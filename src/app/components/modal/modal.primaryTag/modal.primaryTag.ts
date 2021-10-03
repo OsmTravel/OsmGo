@@ -21,7 +21,8 @@ export class ModalPrimaryTag implements OnInit {
     oldTagConfig: TagConfig;
     geometriesPossible: string[] = []
     geometryType: 'point' | 'vertex' | 'line' | 'area'
-    displayType = 'lastTags'
+    displayType = 'lastTags';
+    countryTags;
 
 
     constructor(
