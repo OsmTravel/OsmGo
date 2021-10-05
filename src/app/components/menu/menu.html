@@ -45,10 +45,6 @@
 				<ion-item color="danger" (click)="deleteDatapresentConfirm()">
 					<ion-icon name="trash"></ion-icon> {{'MENU.DELETE_DATA' | translate }}
 				</ion-item>
-
-				<ion-item *ngIf="configService.platforms.includes('hybrid')" (click)="exit()">
-					<ion-icon name="exit"></ion-icon> {{'MENU.EXIT' | translate }}
-				</ion-item>
 			</ion-list>
 		</ion-content>
 	</div>

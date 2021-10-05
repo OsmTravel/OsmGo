@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { cloneDeep } from 'lodash';
 import { from } from 'rxjs';
 import { map } from 'rxjs/operators';

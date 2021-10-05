@@ -16,17 +16,14 @@ import * as mapboxgl from 'mapbox-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { AlertInput } from '@ionic/core';
-import {
-  Plugins,
-  HapticsImpactStyle
-} from '@capacitor/core';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
 import { TagConfig } from 'src/type';
 import { Config } from 'protractor';
 import { of } from 'rxjs';
 
-const { Haptics } = Plugins;
+
 @Injectable({ providedIn: 'root' })
 export class MapService {
   isFirstPosition = true;
@@ -776,11 +773,7 @@ export class MapService {
       if (!this.configService.platforms.includes('hybrid')) {
         window.navigator.vibrate(50);
       } else {
-
-        Haptics.impact({
-          style: HapticsImpactStyle.Heavy
-        });
-
+        await Haptics.impact({ style: ImpactStyle.Heavy })
       }
 
 

@@ -2,7 +2,8 @@ const fs = require('fs-extra');
 const path = require('path');
 const cheerio = require('cheerio');
 const parseString = require('xml2js').parseString;
-var svg2img = require('svg2img');
+// const svg2img = require('svg2img');
+const svgRender = require('svg-render');
 
 const Spritesmith = require('spritesmith');
 
@@ -26,6 +27,7 @@ exports.generateSprites = () => {
 
     fs.removeSync(outputTmp);
     fs.mkdirsSync(outputFolderSVG);
+
 
 
     let iconsSVG = [];
@@ -151,30 +153,19 @@ exports.generateSprites = () => {
         fs.copySync(path.join(iconsSVGsPath, whiteList[i] + '.svg'), path.join(outputFolderSVG, whiteList[i] + '.svg'));
     }
 
-
     const svgNames = fs.readdirSync(outputFolderSVG);
     // filtrer que les SVG
-    var sizeOf = require('image-size');
+    const sizeOf = require('image-size');
 
 
-    const svgToPNG = (filePath, factor) => {
-        var dimensions = sizeOf(filePath);
-        const svgString = fs.readFileSync(filePath, 'utf8');
-        return new Promise((resolve, reject) => {
+    const svgToPNG = async (filePath, factor) => {
+        const dimensions = sizeOf(filePath);
+        const svgBuffer = fs.readFileSync(filePath);
 
-
-            svg2img(svgString, { 'width': dimensions.width * factor, 'height': dimensions.height * factor }, function (error, buffer) {
-                if (error) {
-                    reject(error);
-                } else {
-                    resolve(buffer)
-                }
-                //returns a Buffer
-
-            });
-
-        })
-
+        return await svgRender( { 
+            'buffer': svgBuffer,
+            'width': dimensions.width * factor, 
+            'height': dimensions.height * factor })
 
     }
 
@@ -184,13 +175,10 @@ exports.generateSprites = () => {
         await fs.emptyDir(pngFolder)
         console.log(factor);
         console.log('length', svgNames.length)
-        console.time('svgToPNG')
-        for (let i = 0; i < svgNames.length; i++) {
-            const svgFileName = svgNames[i];
-           
+        for (const svgFileName of svgNames ) {
             const filePath = path.join(outputFolderSVG, svgFileName)
-
             const image = await svgToPNG(filePath, factor);
+
             if ( /#000000-.svg/.test(svgFileName) ){
                 console.log(svgFileName);
                 const shape = svgFileName.split('-#')[0]
@@ -198,7 +186,6 @@ exports.generateSprites = () => {
             }
             fs.writeFileSync(path.join(pngFolder, `${svgFileName}.png`), image)
         }
-        console.timeEnd('svgToPNG')
 
         const pngsNameFile = fs.readdirSync(pngFolder);
         const pngPaths = pngsNameFile.map(n => path.join(pngFolder, n))
@@ -285,6 +272,7 @@ exports.generateSprites = () => {
         generateSprites(outPath, 1), 
         generateSprites(outPath, 2)
     ]).then(e => {
+        console.log('END')
         fs.removeSync(outputTmp);
     })
 }

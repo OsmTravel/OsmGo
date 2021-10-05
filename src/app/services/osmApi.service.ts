@@ -5,7 +5,7 @@ import { map, catchError, switchMap, tap } from 'rxjs/operators';
 import * as osmAuth from 'osm-auth';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 
 import { MapService } from './map.service';

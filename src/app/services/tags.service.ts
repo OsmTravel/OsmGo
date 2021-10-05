@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, from, forkJoin } from 'rxjs';
 import { map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { ConfigService } from './config.service';
 import { PresetOption, PrimaryTag, TagConfig } from "../../type";
 

@@ -21,12 +21,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { SwUpdate } from '@angular/service-worker';
 import { StatesService } from 'src/app/services/states.service';
 
-import { Plugins, ToastShowOptions } from '@capacitor/core';
+
 import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
-import { switchMap } from 'rxjs/operators';
+
 import { InitService } from 'src/app/services/init.service';
 
-const { App } = Plugins;
 
 @Component({
   templateUrl: './main.html',
@@ -343,7 +342,5 @@ export class MainPage implements AfterViewInit {
 
   }
 
-  exitApp() {
-    App.exitApp()
-  }
+
 }

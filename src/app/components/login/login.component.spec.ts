@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core'
-import { Storage } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 import { LoginPage } from './login.component';
 import { createTranslateLoader } from '../../app.module'
 

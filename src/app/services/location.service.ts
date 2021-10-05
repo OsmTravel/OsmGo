@@ -2,9 +2,8 @@ import { Injectable, EventEmitter } from '@angular/core';
 
 
 import { ConfigService } from './config.service';
-import { Plugins } from '@capacitor/core';
 
-const { Geolocation } = Plugins;
+import { Geolocation } from '@capacitor/geolocation';
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {

@@ -6,8 +6,10 @@ import { Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
 import { StatesService } from './services/states.service';
-import { Plugins } from '@capacitor/core';
-const { Device, SplashScreen } = Plugins;
+import { Device } from '@capacitor/device';
+import { Storage } from '@ionic/storage-angular';
+
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,8 @@ export class AppComponent {
     public configService: ConfigService,
     private translate: TranslateService,
     public tagService: TagsService,
-    public statesService: StatesService
+    public statesService: StatesService,
+    private storage: Storage
 
   ) {
     this.initializeApp();
@@ -31,6 +34,7 @@ export class AppComponent {
   }
 
   async initializeApp() {
+    await this.storage.create();
     this.translate.setDefaultLang('en');
     this.configService.platforms = this.platform.platforms();
     this.configService.deviceInfo = await Device.getInfo();
