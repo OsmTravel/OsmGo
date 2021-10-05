@@ -37798,6 +37798,7 @@
       "presets": [
         "ref",
         "fire_hydrant/type",
+        "fire_hydrant/position",
         "colour",
         "water_source",
         "couplings"

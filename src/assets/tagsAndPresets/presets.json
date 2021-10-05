@@ -104425,5 +104425,43 @@
       "tr": "Çap (mm, in, veya harfler)"
     },
     "iDtype": "combo"
+  },
+  "fire_hydrant/position": {
+    "key": "fire_hydrant:position",
+    "type": "list",
+    "lbl": {
+      "en": "Position",
+      "fr": "Position"
+    },
+    "options": [
+      {
+        "v": "lane",
+        "lbl": {
+          "en": "On the side of a road lane",
+          "fr": "Au bord de la route"
+        }
+      },
+      {
+        "v": "parking_lot",
+        "lbl": {
+          "en": "In a parking",
+          "fr": "Sur un parking"
+        }
+      },
+      {
+        "v": "sidewalk",
+        "lbl": {
+          "en": "On a sidewalk ",
+          "fr": "Sur un trottoir"
+        }
+      },
+      {
+        "v": "green",
+        "lbl": {
+          "en": "In a grassy area",
+          "fr": "Sur de l'herbe"
+        }
+      }
+    ]
   }
 }
