@@ -11,8 +11,8 @@ const presetsOsmgoPath = path.join(
   "presets.json"
 );
 
-const idRepoPath = path.join(__dirname, "..", "..", "iD");
-const idTranslationPath = path.join(idRepoPath, "dist", "locales");
+const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
+const idTranslationPath = path.join(idRepoPath, 'translations');
 
 let languages = [
   "fr",

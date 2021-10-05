@@ -56,11 +56,71 @@
         "v": "steak_house",
         "lbl": {"en": "beef steak", "fr": "Beef Steak", "de": "Beef Steak"}
       },
-      {"v": "burger", "lbl": {"en": "burger", "fr": "Burger", "de": "Burger"}},
+      {
+        "v": "burger",
+        "lbl": {
+          "en": "burger",
+          "fr": "Burger",
+          "de": "Burger",
+          "es": "Hamburguesa",
+          "pt": "Hambúrguer",
+          "it": "Burger",
+          "ru": "Бургер",
+          "cs": "Burger",
+          "el": "Μπιφτέκι",
+          "eo": "burgeroj",
+          "et": "burger",
+          "fa": "همبرگر",
+          "fi": "hampurilaiset",
+          "he": "בורגר",
+          "hu": "Hamburger",
+          "id": "Burger",
+          "ja": "ハンバーガー",
+          "ko": "햄버거",
+          "mk": "Бургери",
+          "nl": "Burger",
+          "no": "Burger",
+          "pl": "burgery",
+          "sk": "Hamburgery",
+          "sv": "Burgare",
+          "tr": "Burger",
+          "uk": "Бургери",
+          "vi": "Hamburger"
+        }
+      },
       {"v": "cake", "lbl": {"en": "cake", "fr": "Cake", "de": "Cake"}},
       {
         "v": "coffee_shop",
-        "lbl": {"en": "coffee shop", "de": "Coffee Shop", "fr": "Café"}
+        "lbl": {
+          "en": "coffee shop",
+          "de": "Coffee Shop",
+          "fr": "Café",
+          "es": "Cafetería",
+          "pt": "Café",
+          "it": "Caffetteria",
+          "ru": "Кофейня",
+          "cs": "Kavárna",
+          "da": "Kaffebar",
+          "el": "Καφεπολείο",
+          "eo": "kaftrinkaĵoj",
+          "et": "kohvik",
+          "fa": "کافی شاپ، قهره خانه",
+          "fi": "kahvila",
+          "he": "בית קפה",
+          "hu": "Coffee Shop",
+          "id": "Kedai Kopi",
+          "ja": "コーヒー店",
+          "ko": "커피숍",
+          "mk": "Продавница за кафе",
+          "nl": "Koffiehuis",
+          "no": "Kafé",
+          "pl": "kawy",
+          "sk": "Kaviareň",
+          "sv": "Kaffeaffär",
+          "tr": "Kahve Dükkanı",
+          "uk": "Кав’ярня",
+          "vi": "Quán cà phê"
+        }
       },
       {
         "v": "couscous",
@@ -92,9 +152,69 @@
       },
       {
         "v": "ice_cream",
-        "lbl": {"en": "ice cream", "fr": "Glace", "de": "Glasse"}
+        "lbl": {
+          "en": "ice cream",
+          "fr": "Glace",
+          "de": "Glasse",
+          "es": "Helado",
+          "pt": "Gelados",
+          "it": "Gelato",
+          "ru": "Мороженое",
+          "cs": "Zmrzlina",
+          "da": "Is",
+          "el": "Παγωτό",
+          "eo": "glaciaĵoj",
+          "et": "jäätis",
+          "fa": "بستنی",
+          "fi": "jäätelö",
+          "he": "גלידה",
+          "hu": "Fagylalt",
+          "id": "Es Krim",
+          "ja": "アイスクリーム",
+          "ko": "아이스크림",
+          "mk": "Сладолед",
+          "nl": "IJssalon",
+          "no": "Iskrem",
+          "pl": "lody",
+          "sk": "Zmrzlina",
+          "sv": "Glass",
+          "tr": "Dondurma",
+          "uk": "Кафе-морозиво",
+          "vi": "Kem"
+        }
       },
-      {"v": "kebab", "lbl": {"en": "kebab", "fr": "Kebab", "de": "Kebab"}},
+      {
+        "v": "kebab",
+        "lbl": {
+          "en": "kebab",
+          "fr": "Kebab",
+          "de": "Kebab",
+          "es": "Kebab (Brocheta)",
+          "pt": "Kebab",
+          "it": "Kebab",
+          "ru": "Кебаб",
+          "cs": "Kebab",
+          "el": "Κεμπάμπ",
+          "eo": "kebabo",
+          "et": "kebabi",
+          "fa": "کباب",
+          "fi": "kebab",
+          "he": "קבב",
+          "hu": "Kebab",
+          "id": "Kebab",
+          "ja": "ケバブ",
+          "ko": "케밥",
+          "mk": "Гиро",
+          "nl": "Kebab",
+          "no": "Kebab",
+          "pl": "kebab",
+          "sk": "Kebab",
+          "sv": "Kebab",
+          "tr": "Kebap",
+          "uk": "Шашлик",
+          "vi": "Kebab"
+        }
+      },
       {
         "v": "mediterranean",
         "lbl": {"en": "Mediterranean", "fr": "Méditerranéenne"}
@@ -105,14 +225,139 @@
         "lbl": {"en": "pancake", "fr": "Pancake", "de": "Pancake"}
       },
       {"v": "pasta", "lbl": {"en": "pasta", "fr": "Pasta", "de": "Pasta"}},
-      {"v": "pizza", "lbl": {"en": "pizza", "fr": "Pizza", "de": "Pizza"}},
+      {
+        "v": "pizza",
+        "lbl": {
+          "en": "pizza",
+          "fr": "Pizza",
+          "de": "Pizza",
+          "es": "Pizza",
+          "pt": "Piza",
+          "it": "Pizza",
+          "ru": "Пицца",
+          "cs": "Pizza",
+          "el": "Πίτσα",
+          "eo": "picoj",
+          "et": "pitsa",
+          "fa": "پیتزا",
+          "fi": "pitsa",
+          "he": "פיצה",
+          "hu": "Pizza",
+          "id": "Pizza",
+          "ja": "ピザ",
+          "ko": "피자",
+          "mk": "Пицерија",
+          "nl": "Pizza",
+          "no": "Pizza",
+          "pl": "pizza",
+          "sk": "Pizza",
+          "sv": "Pizza",
+          "tr": "Pizza",
+          "uk": "Піца",
+          "vi": "Pizza"
+        }
+      },
       {
         "v": "seafood",
         "lbl": {"en": "seafood", "fr": "Poisson, fruits de mer"}
       },
-      {"v": "chicken", "lbl": {"en": "chicken", "fr": "Poulet"}},
-      {"v": "sandwich", "lbl": {"en": "sandwich", "fr": "Sandwich"}},
-      {"v": "sushi", "lbl": {"en": "sushi", "fr": "Sushi", "de": "Sushi"}},
+      {
+        "v": "chicken",
+        "lbl": {
+          "en": "chicken",
+          "fr": "Poulet",
+          "de": "Huhn",
+          "es": "Pollo",
+          "pt": "Frango",
+          "it": "Pollo",
+          "ru": "Курица",
+          "cs": "Kuřecí",
+          "da": "Kylling",
+          "el": "Κοτόπουλο",
+          "eo": "kokaĵo",
+          "et": "kana",
+          "fa": "مرغ، جوجه",
+          "fi": "kana",
+          "he": "עוף",
+          "hu": "Csirke",
+          "id": "Ayam",
+          "ja": "チキン",
+          "ko": "치킨",
+          "mk": "Пилешко",
+          "nl": "Kip",
+          "no": "Kylling",
+          "pl": "kurczaki",
+          "sk": "Kuracia",
+          "sv": "Kykling",
+          "tr": "Tavuk",
+          "uk": "Блюда з курятини",
+          "vi": "Gà"
+        }
+      },
+      {
+        "v": "sandwich",
+        "lbl": {
+          "en": "sandwich",
+          "fr": "Sandwich",
+          "de": "Sandwich",
+          "es": "Sándwich",
+          "pt": "Sanduíches",
+          "it": "Sandwich",
+          "ru": "Сэндвичи",
+          "cs": "Sendvič",
+          "el": "Σάντουιτς",
+          "eo": "sandviĉoj",
+          "et": "võileivad",
+          "fa": "ساندویچ",
+          "fi": "voileipä",
+          "he": "כריכים",
+          "hu": "Szendvics",
+          "id": "Roti Lapis\nSandwich",
+          "ja": "サンドイッチ",
+          "ko": "샌드위치",
+          "mk": "Сендвичарница",
+          "nl": "Broodjes",
+          "no": "Smørbrød",
+          "pl": "kanapki",
+          "sk": "Sendvič",
+          "sv": "Smörgås",
+          "tr": "Sandviç",
+          "uk": "Сендвіч",
+          "vi": "Bánh mì kẹp"
+        }
+      },
+      {
+        "v": "sushi",
+        "lbl": {
+          "en": "sushi",
+          "fr": "Sushi",
+          "de": "Sushi",
+          "es": "Sushi",
+          "pt": "Sushi",
+          "it": "Sushi",
+          "ru": "Суши",
+          "cs": "Suši",
+          "el": "Σούσι",
+          "eo": "suŝio",
+          "et": "sushi",
+          "fa": "سوشی",
+          "fi": "sushi",
+          "he": "סושי",
+          "hu": "Szusi",
+          "id": "Susyi",
+          "ja": "寿司",
+          "ko": "초밥",
+          "mk": "Суши",
+          "nl": "Sushi",
+          "no": "Sushi",
+          "pl": "sushi",
+          "sk": "Suši",
+          "sv": "Sushi",
+          "tr": "Suşi",
+          "uk": "Суші",
+          "vi": "Sushi"
+        }
+      },
       {"v": "tapas", "lbl": {"en": "tapas", "fr": "Tapas", "de": "Tapas"}},
       {"v": "pie", "lbl": {"en": "pie", "fr": "Tarte"}},
       {"v": "wings", "lbl": {"en": "wings", "de": "Wings"}},
@@ -122,11 +367,69 @@
       },
       {
         "v": "german",
-        "lbl": {"en": "German", "fr": "Cuisine Allemande", "de": "german"}
+        "lbl": {
+          "en": "German",
+          "fr": "Cuisine Allemande",
+          "de": "german",
+          "es": "Alemana",
+          "pt": "Alemã",
+          "it": "Tedesca",
+          "ru": "немецкий",
+          "cs": "Německá",
+          "da": "Tysk",
+          "el": "Γερμανική",
+          "eo": "germana",
+          "et": "saksa",
+          "fa": "آلمانی",
+          "fi": "saksalainen",
+          "he": "גרמני",
+          "hu": "Német",
+          "id": "Jerman",
+          "ja": "ドイツ料理",
+          "ko": "독일 음식",
+          "mk": "Германска",
+          "nl": "Duits",
+          "no": "Tysk",
+          "pl": "niemiecka",
+          "sk": "Nemecká",
+          "sv": "Tysk",
+          "tr": "Alman",
+          "uk": "Німецька кухня",
+          "vi": "Đức"
+        }
       },
       {
         "v": "american",
-        "lbl": {"en": "American", "fr": "Cuisine americaine", "de": "american"}
+        "lbl": {
+          "en": "American",
+          "fr": "Cuisine americaine",
+          "de": "american",
+          "es": "Norteamericana",
+          "pt": "Americana",
+          "it": "Americana",
+          "ru": "американский",
+          "cs": "Americká",
+          "da": "Amerikansk",
+          "el": "Αμερικανική",
+          "eo": "usona",
+          "et": "ameerika",
+          "fa": "آمریکایی",
+          "fi": "amerikkalainen",
+          "he": "אמריקאי",
+          "hu": "Amerikai",
+          "id": "Amerika",
+          "ja": "アメリカ料理",
+          "ko": "미국 음식",
+          "mk": "Американска",
+          "nl": "Amerikaans",
+          "no": "Amerikansk",
+          "pl": "amerykańska",
+          "sk": "Americká",
+          "sv": "Amerikansk",
+          "tr": "Amerikan",
+          "uk": "Американська кухня",
+          "vi": "Mỹ"
+        }
       },
       {"v": "arab", "lbl": {"en": "Arab", "fr": "Cuisine arabe", "de": "arab"}},
       {
@@ -139,7 +442,36 @@
       },
       {
         "v": "asian",
-        "lbl": {"en": "Asian", "fr": "Cuisine asiatique", "de": "asian"}
+        "lbl": {
+          "en": "Asian",
+          "fr": "Cuisine asiatique",
+          "de": "asian",
+          "es": "Asiática",
+          "pt": "Asiática",
+          "it": "Asiatica",
+          "ru": "азиатский",
+          "cs": "Asijská",
+          "da": "Asiatisk",
+          "el": "Ασιατική",
+          "eo": "azia",
+          "et": "aasia",
+          "fa": "آسیایی",
+          "fi": "aasialainen",
+          "he": "אסיאתי",
+          "hu": "Ázsiai",
+          "id": "Asia",
+          "ja": "アジア料理",
+          "ko": "아시아 음식",
+          "mk": "Азиска",
+          "nl": "Aziatisch",
+          "no": "Asiatisk",
+          "pl": "azjatycka",
+          "sk": "Ázijská",
+          "sv": "Asiatisk",
+          "tr": "Asyalı",
+          "uk": "Азійська кухня",
+          "vi": "Châu Á"
+        }
       },
       {
         "v": "australian",
@@ -189,7 +521,36 @@
       },
       {
         "v": "chinese",
-        "lbl": {"en": "Chinese", "fr": "Cuisine chinoise", "de": "chinese"}
+        "lbl": {
+          "en": "Chinese",
+          "fr": "Cuisine chinoise",
+          "de": "chinese",
+          "es": "China",
+          "pt": "Chinesa",
+          "it": "Cinese",
+          "ru": "китайский",
+          "cs": "Čínská",
+          "da": "Kinesisk",
+          "el": "Κινεζική",
+          "eo": "ĉina",
+          "et": "hiina",
+          "fa": "چینی",
+          "fi": "kiinalainen",
+          "he": "סיני",
+          "hu": "Kínai",
+          "id": "Cina",
+          "ja": "中華料理",
+          "ko": "중국 음식",
+          "mk": "Кинеска",
+          "nl": "Chinees",
+          "no": "Kinesisk",
+          "pl": "chińska",
+          "sk": "Čínska",
+          "sv": "Kinesisk",
+          "tr": "Çinli",
+          "uk": "Китайська кухня",
+          "vi": "Trung Quốc"
+        }
       },
       {
         "v": "korean",
@@ -209,11 +570,69 @@
       },
       {
         "v": "french",
-        "lbl": {"en": "French", "fr": "Cuisine française", "de": "french"}
+        "lbl": {
+          "en": "French",
+          "fr": "Cuisine française",
+          "de": "french",
+          "es": "Francesa",
+          "pt": "Francesa",
+          "it": "Francese",
+          "ru": "французский",
+          "cs": "Francouzská",
+          "da": "Fransk",
+          "el": "Γαλλική",
+          "eo": "franca",
+          "et": "prantsuse",
+          "fa": "فرانسوی",
+          "fi": "ranskalainen",
+          "he": "צרפתי",
+          "hu": "Francia",
+          "id": "Prancis",
+          "ja": "フランス料理",
+          "ko": "프랑스 음식",
+          "mk": "Француска",
+          "nl": "Frans",
+          "no": "Fransk",
+          "pl": "francuska",
+          "sk": "Frencúzska",
+          "sv": "Fransk",
+          "tr": "Fransız",
+          "uk": "Французька кухня",
+          "vi": "Pháp"
+        }
       },
       {
         "v": "greek",
-        "lbl": {"en": "Greek", "fr": "Cuisine greque", "de": "greek"}
+        "lbl": {
+          "en": "Greek",
+          "fr": "Cuisine greque",
+          "de": "greek",
+          "es": "Griega",
+          "pt": "Grega",
+          "it": "Greca",
+          "ru": "греческий",
+          "cs": "Řecká",
+          "da": "Græsk",
+          "el": "Ελληνική",
+          "eo": "greka",
+          "et": "kreeka",
+          "fa": "یونانی",
+          "fi": "kreikkalainen",
+          "he": "יווני",
+          "hu": "Görög",
+          "id": "Yunani",
+          "ja": "ギリシア料理",
+          "ko": "그리스 음식",
+          "mk": "Грчка",
+          "nl": "Grieks",
+          "no": "Gresk",
+          "pl": "grecka",
+          "sk": "Grécka",
+          "sv": "Grekisk",
+          "tr": "Yunan",
+          "uk": "Грецька кухня",
+          "vi": "Hy Lạp"
+        }
       },
       {
         "v": "hungarian",
@@ -221,7 +640,36 @@
       },
       {
         "v": "indian",
-        "lbl": {"en": "Indian", "fr": "Cuisine indienne", "de": "indian"}
+        "lbl": {
+          "en": "Indian",
+          "fr": "Cuisine indienne",
+          "de": "indian",
+          "es": "India",
+          "pt": "Indiana",
+          "it": "Indiana",
+          "ru": "Индийская кухня",
+          "cs": "Indická",
+          "da": "Indisk",
+          "el": "Ινδική",
+          "eo": "hinda",
+          "et": "india",
+          "fa": "هندی",
+          "fi": "intialainen",
+          "he": "הודי",
+          "hu": "Indiai",
+          "id": "India",
+          "ja": "インド料理",
+          "ko": "인도 음식",
+          "mk": "Индиска",
+          "nl": "Indisch",
+          "no": "indisk",
+          "pl": "indyjska",
+          "sk": "Indická",
+          "sv": "Indisk",
+          "tr": "Hintli",
+          "uk": "Індійська кухня",
+          "vi": "Ấn Độ"
+        }
       },
       {
         "v": "international",
@@ -233,11 +681,69 @@
       },
       {
         "v": "italian",
-        "lbl": {"en": "Italian", "fr": "Cuisine italienne", "de": "italian"}
+        "lbl": {
+          "en": "Italian",
+          "fr": "Cuisine italienne",
+          "de": "italian",
+          "es": "Italiana",
+          "pt": "Italiana",
+          "it": "Italiana",
+          "ru": "итальянский",
+          "cs": "Italská",
+          "da": "Italiensk",
+          "el": "Ιταλική",
+          "eo": "itala",
+          "et": "itaalia",
+          "fa": "ایتالیایی",
+          "fi": "italialainen",
+          "he": "איטלקי",
+          "hu": "Olasz",
+          "id": "Italia",
+          "ja": "イタリア料理",
+          "ko": "이탈리아 음식",
+          "mk": "Италијанска",
+          "nl": "Italiaans",
+          "no": "Italiensk",
+          "pl": "włoska",
+          "sk": "Talianska",
+          "sv": "Italiensk",
+          "tr": "İtalyan",
+          "uk": "Італійська кухня",
+          "vi": "Ý"
+        }
       },
       {
         "v": "japanese",
-        "lbl": {"en": "Japanese", "fr": "Cuisine japonaise", "de": "japanese"}
+        "lbl": {
+          "en": "Japanese",
+          "fr": "Cuisine japonaise",
+          "de": "japanese",
+          "es": "Japonesa",
+          "pt": "Japonesa",
+          "it": "Giapponese",
+          "ru": "Японская кухня",
+          "cs": "Japonská",
+          "da": "Japansk",
+          "el": "Ιαπωνική",
+          "eo": "japana",
+          "et": "jaapani",
+          "fa": "ژاپنی",
+          "fi": "japanilainen",
+          "he": "יפני",
+          "hu": "Japán",
+          "id": "Jepang",
+          "ja": "日本料理",
+          "ko": "일본 음식",
+          "mk": "Јапонска",
+          "nl": "Japans",
+          "no": "Japansk",
+          "pl": "japońska",
+          "sk": "Japonská",
+          "sv": "Japansk",
+          "tr": "Japon",
+          "uk": "Японська кухня",
+          "vi": "Nhật"
+        }
       },
       {
         "v": "latin_american",
@@ -257,7 +763,36 @@
       },
       {
         "v": "mexican",
-        "lbl": {"en": "Mexican", "fr": "Cuisine mexicaine", "de": "mexican"}
+        "lbl": {
+          "en": "Mexican",
+          "fr": "Cuisine mexicaine",
+          "de": "mexican",
+          "es": "Mexicana",
+          "pt": "Mexicana",
+          "it": "Messicana",
+          "ru": "Мексиканская кухня",
+          "cs": "Mexická",
+          "da": "Mexikansk",
+          "el": "Μεξικανική",
+          "eo": "meksika",
+          "et": "mehhiko",
+          "fa": "مکزیکی",
+          "fi": "meksikolainen",
+          "he": "מקסיקני",
+          "hu": "Mexikói",
+          "id": "Meksiko",
+          "ja": "メキシコ料理",
+          "ko": "멕시코 음식",
+          "mk": "Мексиканска",
+          "nl": "Mexicaans",
+          "no": "Meksikansk",
+          "pl": "meksykańska",
+          "sk": "Mexická",
+          "sv": "Mexikansk",
+          "tr": "Meksikalı",
+          "uk": "Мексиканська кухня",
+          "vi": "Mễ"
+        }
       },
       {
         "v": "pakistani",
@@ -289,7 +824,34 @@
       },
       {
         "v": "regional",
-        "lbl": {"en": "regional", "fr": "Cuisine regionalaise"}
+        "lbl": {
+          "en": "regional",
+          "fr": "Cuisine regionale",
+          "de": "Regional",
+          "es": "Regional",
+          "pt": "Regional",
+          "it": "Regionale",
+          "cs": "Místní",
+          "el": "Τοπική",
+          "eo": "regiona",
+          "et": "kohalik",
+          "fa": "محلی ، منطقه‌ای",
+          "fi": "paikallinen",
+          "he": "מקומי",
+          "hu": "Regionális",
+          "id": "Daerah\nRegional",
+          "ja": "郷土料理",
+          "ko": "토속 음식",
+          "mk": "Регионална",
+          "nl": "Regionaal",
+          "no": "Regional",
+          "pl": "regionalna",
+          "sk": "Miestna",
+          "sv": "Regional",
+          "tr": "Bölgesel",
+          "uk": "Місцева кухня",
+          "vi": "Địa phương"
+        }
       },
       {
         "v": "russian",
@@ -301,18 +863,101 @@
       },
       {
         "v": "thai",
-        "lbl": {"en": "Thai", "fr": "Cuisine thaïlandaise", "de": "thai"}
+        "lbl": {
+          "en": "Thai",
+          "fr": "Cuisine thaïlandaise",
+          "de": "thai",
+          "es": "Tailandesa",
+          "pt": "Tailandesa",
+          "it": "Thai",
+          "ru": "Тайская кухня",
+          "cs": "Thajská",
+          "da": "Thailandsk",
+          "el": "Ταιλανδέζικη",
+          "eo": "taja",
+          "et": "tai",
+          "fa": "تایلندی",
+          "fi": "thaimaalainen",
+          "he": "תאילנדי",
+          "hu": "Thai",
+          "id": "Thailand",
+          "ja": "タイ料理",
+          "ko": "태국 음식",
+          "mk": "Тајландска",
+          "nl": "Thaïs",
+          "no": "Thailandsk",
+          "pl": "tajska",
+          "sk": "Thajská",
+          "sv": "Thai",
+          "tr": "Tayland",
+          "uk": "Тайська кухня",
+          "vi": "Thái"
+        }
       },
       {
         "v": "turkish",
-        "lbl": {"en": "Turkish", "fr": "Cuisine turque", "de": "turkish"}
+        "lbl": {
+          "en": "Turkish",
+          "fr": "Cuisine turque",
+          "de": "turkish",
+          "es": "Turca",
+          "pt": "Turca",
+          "it": "Turca",
+          "ru": "Турецкая кухня",
+          "cs": "Turecká",
+          "da": "Tyrkisk",
+          "el": "Τουρκική",
+          "eo": "turka",
+          "et": "türgi",
+          "fa": "ترکی",
+          "fi": "turkkilainen",
+          "he": "טורקי",
+          "hu": "Török",
+          "id": "Turki",
+          "ja": "トルコ料理",
+          "ko": "터키 음식",
+          "mk": "Турска",
+          "nl": "Turks",
+          "no": "Tyrkisk",
+          "pl": "turecka",
+          "sk": "Turecká",
+          "sv": "Turkisk",
+          "tr": "Türk",
+          "uk": "Турецька кухня",
+          "vi": "Thổ Nhĩ Kỳ"
+        }
       },
       {
         "v": "vietnamese",
         "lbl": {
           "en": "Vietnamese",
           "fr": "Cuisine vietnamienne",
-          "de": "vietnamese"
+          "de": "vietnamese",
+          "es": "Vietnamita",
+          "pt": "Vietnamita",
+          "it": "Vietnamita",
+          "ru": "Вьетнамская кухня",
+          "cs": "Vietnamská",
+          "da": "Vietnamesisk",
+          "el": "Βιετναμέζικη",
+          "eo": "vjetnama",
+          "et": "vietnami",
+          "fa": "ویتنامی",
+          "fi": "vietnamilainen",
+          "he": "וייטנאמי",
+          "hu": "Vietnámi",
+          "id": "Vietnam",
+          "ja": "ベトナム料理",
+          "ko": "베트남 음식",
+          "mk": "Виетнамска",
+          "nl": "Vietnamees",
+          "no": "Vietnamesisk",
+          "pl": "wietnamska",
+          "sk": "Vietnamská",
+          "sv": "Vitnamesisk",
+          "tr": "Viyetnamlı",
+          "uk": "В’єтнамська кухня",
+          "vi": "Việt Nam"
         }
       },
       {"v": "belgian", "lbl": {"fr": "Cuisine Belge", "en": "belgian"}},
@@ -698,7 +1343,13 @@
       "uk": "Органічні продукти",
       "vi": "Thực phẩm Hữu cơ",
       "ru": "Органические продукты",
-      "nl": "Organische producten"
+      "nl": "Organische producten",
+      "el": "Οργανικά Προϊόντα",
+      "fi": "Luomutuotteet",
+      "gl": "Produtos orgánicos",
+      "hu": "Biotermék",
+      "no": "Organiske Produkter ",
+      "tr": "Organik Ürünler"
     },
     "options": [
       {
@@ -1274,7 +1925,8 @@
       "fa": "سلف سرویس",
       "sk": "Samoobsluha",
       "da": "Selvbetjening",
-      "nl": "Zelfbediening"
+      "nl": "Zelfbediening",
+      "tr": "Self-Servis"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1484,7 +2136,9 @@
       "ca": "Tipus",
       "da": "Type",
       "fa": "نوع",
-      "eu": "Mota"
+      "eu": "Mota",
+      "sk": "Typ",
+      "tr": "Tür"
     },
     "options": [
       {
@@ -1518,7 +2172,8 @@
           "fa": "کانتینر",
           "sk": "Kontajner",
           "sr": "Контејнер",
-          "eu": "Edukiontzi"
+          "eu": "Edukiontzi",
+          "tr": "Konteyner"
         }
       },
       {
@@ -1552,7 +2207,8 @@
           "fa": "مرکز",
           "sk": "Centrum",
           "sr": "Центар",
-          "eu": "Zentru"
+          "eu": "Zentru",
+          "tr": "Merkez"
         }
       }
     ]
@@ -1625,7 +2281,8 @@
       "uk": "Спинка",
       "vi": "Dựa Lưng",
       "zh": "长椅",
-      "ca": "Banc públic"
+      "ca": "Banc públic",
+      "et": "Seljatugi"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1768,7 +2425,9 @@
           "eo": "Jes",
           "fa": "بله",
           "sk": "Áno",
-          "sr": "Да"
+          "sr": "Да",
+          "gl": "Si",
+          "tr": "Evet"
         }
       },
       {
@@ -1800,7 +2459,9 @@
           "eo": "Ne",
           "fa": "خیر",
           "sk": "Nie",
-          "sr": "Не"
+          "sr": "Не",
+          "gl": "Non",
+          "tr": "Hayır"
         }
       },
       {
@@ -1831,7 +2492,9 @@
           "eo": "Limigita",
           "fa": "محدود",
           "sk": "Obmedzený",
-          "sr": "Ограничен"
+          "sr": "Ограничен",
+          "gl": "Limitada",
+          "tr": "Kısıtlı"
         }
       },
       {
@@ -1935,7 +2598,8 @@
       "vi": "Lối Mua hàng trên Xe",
       "zh": "免下车",
       "ca": "Via dins una propietat.",
-      "eu": "Auto-zerbitzua"
+      "eu": "Auto-zerbitzua",
+      "id": "Kendara-Lewat"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -1974,7 +2638,9 @@
       "no": "Dispenser Resepter",
       "fa": "توزیع نسخه‌ها",
       "sk": "Vydáva recepty",
-      "eu": "Errezetak administratzen ditu"
+      "eu": "Errezetak administratzen ditu",
+      "hu": "Vény beváltható",
+      "tr": "Reçeteleri Dağıtır"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui", "de": "Yes"}},
@@ -2109,7 +2775,9 @@
       "da": "Sæder",
       "sk": "Sedadlá",
       "ru": "Мест",
-      "eu": "Eserlekuak"
+      "eu": "Eserlekuak",
+      "no": "Seter",
+      "tr": "Koltuklar"
     }
   },
   "religion": {
@@ -2207,7 +2875,8 @@
       "vi": "Loại Hàng hóa",
       "zh": "商品类型",
       "ca": "Tipus de mercaderies",
-      "eu": "Elikagai Motak"
+      "eu": "Elikagai Motak",
+      "tr": "Mal Türleri"
     },
     "options": [
       {
@@ -2478,7 +3147,9 @@
       "ca": "Telèfon",
       "no": "Telefon",
       "sr": "Телефон",
-      "eu": "Telefonoa"
+      "eu": "Telefonoa",
+      "et": "Telefon",
+      "id": "Telepon"
     }
   },
   "website": {
@@ -2991,7 +3662,12 @@
           "ru": "На крыше",
           "fi": "Katto",
           "ko": "옥상",
-          "nl": "Dak"
+          "nl": "Dak",
+          "el": "Οροφή",
+          "et": "Katusel",
+          "gl": "Sobre do edificio",
+          "hu": "Tetőn",
+          "tr": "Çatı"
         }
       },
       {
@@ -3031,7 +3707,8 @@
           "uk": "Гаражі",
           "vi": "Ga ra",
           "ca": "Boxs",
-          "eo": "Parkumeja domo"
+          "eo": "Parkumeja domo",
+          "no": "Garasjekasser "
         }
       },
       {
@@ -3547,7 +4224,8 @@
           "id": "Minta izin",
           "sk": "Povolenie",
           "sr": "Пропусница",
-          "eu": "Baimendu"
+          "eu": "Baimendu",
+          "tr": "İzin ver"
         }
       }
     ]
@@ -3589,7 +4267,8 @@
       "tr": "Materyal",
       "da": "Materiale",
       "sk": "Materiál",
-      "eu": "Materiala"
+      "eu": "Materiala",
+      "et": "Materjal"
     },
     "options": [
       {"v": "wood", "lbl": {"fr": "Bois", "en": "wood"}},
@@ -4283,7 +4962,12 @@
       "ko": "유형",
       "sk": "Typ",
       "sr": "Врста",
-      "sv": "Typ"
+      "sv": "Typ",
+      "ru": "Тип",
+      "el": "Τύπος",
+      "gl": "Tipo",
+      "nl": "Type",
+      "tr": "Tür"
     },
     "options": [
       {"v": "disabled", "lbl": {"fr": "Désactivé", "en": "disabled"}},
@@ -71610,7 +72294,8 @@
       "no": "Retning (Grader Medurs)",
       "hr": "Smjer (stupnjeva u smjeru kazaljke na satu)",
       "sk": "Smer (stupňov v smere hodinových ručičiek)",
-      "eu": "Norabidea ( Graduak erlojuaren orratzen norantzan)"
+      "eu": "Norabidea ( Graduak erlojuaren orratzen norantzan)",
+      "id": "Arah (Derajat Searah Jarum Jam)"
     }
   },
   "lit": {
@@ -71872,7 +72557,8 @@
           "vi": "Tới 5 m (16 ft)",
           "ca": "Fins a 5 m (16 peus)",
           "eo": "Ĝis 5m",
-          "eu": "5m-ra arte (16ft)"
+          "eu": "5m-ra arte (16ft)",
+          "bg": "До 5м (16 фута)"
         }
       },
       {
@@ -72031,7 +72717,9 @@
           "sk": "Platený",
           "sr": "Плаћени",
           "ru": "Платно",
-          "nl": "Betalend"
+          "nl": "Betalend",
+          "no": "Betalt",
+          "tr": "Ödemeli"
         }
       },
       {
@@ -72063,7 +72751,9 @@
           "sk": "Zadarmo",
           "sr": "Слободан",
           "ru": "Бесплатно",
-          "nl": "Gratis"
+          "nl": "Gratis",
+          "no": "Gratis",
+          "tr": "Ücretsiz"
         }
       },
       {
@@ -72094,7 +72784,10 @@
           "sk": "Iba zákaznici",
           "sr": "Само купци",
           "ru": "Только для клиентов",
-          "nl": "Enkel klanten"
+          "nl": "Enkel klanten",
+          "da": "Forbeholdt kunder",
+          "no": "Kun Kunder",
+          "tr": "Sadece Müşteriler"
         }
       }
     ]
@@ -72132,7 +72825,8 @@
       "da": "Wi-Fi netværksnavn",
       "id": "Nama jaringan Wi-Fi",
       "ko": "Wi-Fi 네트워크 이름",
-      "sk": "Názov Wifi siete"
+      "sk": "Názov Wifi siete",
+      "tr": "Wifi Ağı İsmi"
     }
   },
   "country": {
@@ -72495,7 +73189,8 @@
       "zh": "楼层",
       "ca": "Nivell",
       "id": "Tingkatan",
-      "eu": "Maila"
+      "eu": "Maila",
+      "et": "Korrus"
     },
     "iDtype": "combo"
   },
@@ -72735,7 +73430,9 @@
       "id": "Biaya pengunaan",
       "nl": "Vrije bijdrage",
       "fa": "مبلغ",
-      "sk": "Veľkosť platby"
+      "sk": "Veľkosť platby",
+      "et": "Tasu",
+      "tr": "Ücret Tutarı"
     }
   },
   "cash_in": {
@@ -72772,7 +73469,8 @@
       "fa": "تبدیل کردن به پول نقد",
       "sk": "Vkladanie peňazí",
       "sr": "Новчана уплата",
-      "eu": "Kobratu"
+      "eu": "Kobratu",
+      "tr": "Nakite çevir"
     },
     "iDtype": "check",
     "options": [
@@ -72911,7 +73609,9 @@
       "id": "Manufaktur",
       "ko": "제조사",
       "fa": "سازنده",
-      "sk": "Výrobca"
+      "sk": "Výrobca",
+      "da": "Producent",
+      "tr": "Üretici"
     },
     "iDtype": "combo"
   },
@@ -73002,7 +73702,8 @@
       "no": "Klimaanlegg",
       "fa": "تهویه هوا",
       "sk": "Klimatizácia",
-      "sr": "Климатизација"
+      "sr": "Климатизација",
+      "tr": "Havalandırma"
     },
     "iDtype": "check",
     "options": [
@@ -73044,7 +73745,8 @@
       "eo": "Minimuma aĝo",
       "fa": "حداقل سن",
       "sk": "Najnižší vek",
-      "sr": "Минимално годиште"
+      "sr": "Минимално годиште",
+      "tr": "Minimum Yaş"
     }
   },
   "microbrewery": {
@@ -73078,7 +73780,10 @@
       "zh": "手工啤酒",
       "da": "Mikrobryggeri",
       "fa": "آبجوسازی کوچک",
-      "sk": "Minipivovar"
+      "sk": "Minipivovar",
+      "hr": "Mikro pivovara",
+      "ko": "소형 양조장",
+      "tr": "Küçük bira fabrikası"
     },
     "iDtype": "check",
     "options": [
@@ -73468,12 +74173,188 @@
     "key": "access",
     "type": "list",
     "options": [
-      {"v": "yes", "lbl": {"en": "yes"}},
-      {"v": "permissive", "lbl": {"en": "permissive"}},
-      {"v": "private", "lbl": {"en": "private"}},
-      {"v": "customers", "lbl": {"en": "customers"}},
-      {"v": "permit", "lbl": {"en": "permit"}},
-      {"v": "no", "lbl": {"en": "no"}}
+      {
+        "v": "yes",
+        "lbl": {
+          "en": "yes",
+          "fr": "Public",
+          "de": "Öffentlich",
+          "es": "Público",
+          "pt": "Público",
+          "it": "Pubblico",
+          "ru": "Общедоступный",
+          "cs": "Veřejné",
+          "da": "Offentlig",
+          "el": "Δημόσιο",
+          "eo": "Al ĉiuj",
+          "fa": "عمومی",
+          "fi": "Julkinen",
+          "he": "ציבורית",
+          "hu": "Nyilvános",
+          "ja": "アクセス可",
+          "mk": "Јавен",
+          "nl": "Openbaar",
+          "no": "Offentlig ",
+          "pl": "yes (publiczny)",
+          "sk": "Verejné",
+          "sv": "Offentlig",
+          "tr": "Genel",
+          "uk": "Загальний",
+          "vi": "Công cộng"
+        }
+      },
+      {
+        "v": "permissive",
+        "lbl": {
+          "en": "permissive",
+          "fr": "Accès toléré",
+          "de": "Bis auf Widerruf",
+          "es": "Permisivo",
+          "pt": "Permissivo",
+          "it": "Permesso dal proprietario",
+          "ru": "Допускается",
+          "cs": "Do odvolání",
+          "da": "Tilladt",
+          "el": "Επιτρεπτή",
+          "eo": "Verŝajne permesata",
+          "fa": "مجاز",
+          "fi": "Yksityisen sallima",
+          "he": "מתירנית",
+          "hr": "Dopuštenje",
+          "hu": "Megtűrt",
+          "ja": "所有者許諾あり",
+          "mk": "Се дозволува",
+          "nl": "Toegestaan",
+          "no": "Permissiv",
+          "pl": "permissive (dozwolony)",
+          "sk": "Prístupné",
+          "sv": "Tillåtande",
+          "tr": "İzin veren",
+          "uk": "З дозволу",
+          "vi": "Chủ thường cho phép"
+        }
+      },
+      {
+        "v": "private",
+        "lbl": {
+          "en": "private",
+          "fr": "Privé",
+          "de": "Privat",
+          "es": "Privado",
+          "pt": "Privado",
+          "it": "Privato",
+          "ru": "Частный",
+          "cs": "Soukromé",
+          "da": "Privat",
+          "el": "Ιδιωτικό",
+          "eo": "Privata",
+          "fa": "خصوصی",
+          "fi": "Yksityinen",
+          "he": "פרטית",
+          "hu": "Magántulajdon",
+          "ja": "私有",
+          "mk": "Приватен",
+          "nl": "Privé",
+          "no": "Privat",
+          "pl": "private (prywatny)",
+          "sk": "Súkromné ",
+          "sv": "Privat",
+          "tr": "Özel",
+          "uk": "Приватний",
+          "vi": "Riêng tư"
+        }
+      },
+      {
+        "v": "customers",
+        "lbl": {
+          "en": "customers",
+          "fr": "Réservé à la clientèle",
+          "de": "Nur für Kunden",
+          "es": "Clientes solamente",
+          "pt": "Para clientes",
+          "it": "Solo clienti",
+          "ru": "Только для клиентов",
+          "cs": "Pouze pro zákazníky",
+          "da": "Kun kunder",
+          "el": "Μόνο για Πελάτες",
+          "eo": "Nur por klientoj",
+          "et": "Ainult klientidele",
+          "fa": "فقط مشتریان",
+          "fi": "Vain asiakkaille",
+          "he": "ללקוחות בלבד",
+          "hu": "Csak ügyfeleknek",
+          "ja": "利用客専用",
+          "ko": "고객 전용",
+          "mk": "Само за муштерии",
+          "nl": "Enkel klanten",
+          "no": "Kun kunder ",
+          "pl": "customers (tylko klienci)",
+          "sk": "Len pre zákazníkov",
+          "sv": "Enbart kunder",
+          "tr": "Yalnızca Müşteriler",
+          "uk": "Тільки для клієнтів",
+          "vi": "Chỉ Khách hàng"
+        }
+      },
+      {
+        "v": "permit",
+        "lbl": {
+          "en": "permit",
+          "de": "Nur für Berechtigte",
+          "es": "Solo con permiso",
+          "pt": "Com autorização/licença",
+          "it": "Solo con permesso",
+          "cs": "Pouze s povolením",
+          "da": "Kun med tilladelse",
+          "el": "Μόνο με Άδεια",
+          "eo": "Nur kun paspermeso",
+          "fa": "فقط با مجوز",
+          "fi": "Luvanvarainen",
+          "he": "באישור בלבד",
+          "hr": "Samo s dozvolom",
+          "hu": "Csak engedéllyel",
+          "ja": "要許可",
+          "mk": "Само со дозвола",
+          "nl": "Enkel met toelating",
+          "no": "Kun med tillatelse ",
+          "pl": "permit (za zgodą)",
+          "sk": "Len s povolením",
+          "sv": "Enbart med tillstånd",
+          "tr": "Sadece izinle",
+          "uk": "За перепустками",
+          "vi": "Cần giấy phép"
+        }
+      },
+      {
+        "v": "no",
+        "lbl": {
+          "en": "no",
+          "fr": "Aucun(e)",
+          "de": "Kein Zugang",
+          "es": "Ninguno",
+          "pt": "Nenhum",
+          "it": "Nessuno",
+          "ru": "Нет",
+          "cs": "Žádné",
+          "da": "Ingen",
+          "el": "Κανένας",
+          "eo": "Neniu",
+          "fa": "هیچ‌کدام",
+          "fi": "Ei oikeutta",
+          "he": "אין",
+          "hu": "Senkinek",
+          "ja": "なし",
+          "mk": "Нема",
+          "nl": "Geen",
+          "no": "Ingen",
+          "pl": "no (brak)",
+          "sk": "Neprístupné",
+          "sv": "Ingen",
+          "tr": "Yok",
+          "uk": "Заборонено",
+          "vi": "Không cho phép"
+        }
+      }
     ],
     "terms": ["permitted", "private", "public"],
     "lbl": {
@@ -73560,7 +74441,8 @@
       "ca": "Color",
       "da": "Farve",
       "sk": "Farba",
-      "eu": "kolore"
+      "eu": "kolore",
+      "id": "Warna"
     }
   },
   "inscription": {
@@ -73636,7 +74518,10 @@
       "el": "Τύπος Χειριστή",
       "no": "Operator Type",
       "fa": "نوع گرداننده",
-      "nl": "Type operator"
+      "nl": "Type operator",
+      "gl": "Organismo operador",
+      "sk": "Typ operátora",
+      "tr": "Operatör Tipi"
     },
     "iDtype": "combo",
     "options": [
@@ -73695,7 +74580,8 @@
       "da": "Betallingstype",
       "no": "Betalingsmetoder",
       "sk": "Typy platieb",
-      "ko": "결제 수단"
+      "ko": "결제 수단",
+      "tr": "Ödeme Şekilleri"
     }
   },
   "service/bicycle": {
@@ -73860,7 +74746,8 @@
       "lt": "Baras",
       "id": "Bar",
       "ko": "바",
-      "sk": "Bar"
+      "sk": "Bar",
+      "tr": "Bar"
     },
     "iDtype": "check",
     "options": [
@@ -73913,8 +74800,11 @@
       "no": "Dietttyper",
       "da": "Diæt type",
       "id": "Tipe diet",
-      "sk": "Typy jedál"
-    }
+      "sk": "Typy jedál",
+      "et": "Toitumispõhimõte",
+      "tr": "Diyet Türleri"
+    },
+    "options": []
   },
   "not/name": {
     "key": "not:name",
@@ -73948,7 +74838,8 @@
       "eo": "Eraraj nomoj",
       "fa": "نام‌های نادرست",
       "sk": "Nesprávne názvy",
-      "sr": "Неисправни називи"
+      "sr": "Неисправни називи",
+      "gl": "Nomes incorrectos"
     },
     "iDtype": "semiCombo"
   },
@@ -73981,7 +74872,9 @@
       "vi": "Đặt bàn",
       "zh": "预订",
       "sk": "Rezervácia",
-      "sr": "Резервације"
+      "sr": "Резервације",
+      "no": "Reservasjoner ",
+      "tr": "Rezervasyonlar"
     },
     "options": [
       {
@@ -74012,7 +74905,8 @@
           "eo": "Akceptata",
           "no": "Akseptert",
           "sk": "Akceptovaný",
-          "sr": "Прихватају"
+          "sr": "Прихватају",
+          "tr": "Kabul Edildi"
         }
       },
       {
@@ -74043,7 +74937,8 @@
           "eo": "Neebla",
           "no": "Ikke tillatt",
           "sk": "Neakceptovaný",
-          "sr": "Не прихватају"
+          "sr": "Не прихватају",
+          "tr": "Kabul Edilmedi"
         }
       },
       {
@@ -74075,7 +74970,8 @@
           "no": "Nødvendig",
           "sk": "Požadovaný",
           "sr": "Захтевају",
-          "ru": "Обязательно"
+          "ru": "Обязательно",
+          "tr": "Gerekli"
         }
       },
       {
@@ -74107,7 +75003,8 @@
           "no": "Anbefalt",
           "sk": "Odporúčaný",
           "sr": "Препоручују",
-          "ru": "Рекомендуется"
+          "ru": "Рекомендуется",
+          "tr": "Önerilen"
         }
       }
     ],
@@ -74200,7 +75097,8 @@
       "eo": "Maksimuma aĝo",
       "fa": "حداکثر سن",
       "sk": "Najvyšší vek",
-      "sr": "Максимално годиште"
+      "sr": "Максимално годиште",
+      "tr": "Maksimum Yaş"
     }
   },
   "screen": {
@@ -74232,7 +75130,10 @@
       "nl": "Schermen",
       "fa": "صفحه نمایش",
       "sr": "Екрани",
-      "ru": "Экраны"
+      "ru": "Экраны",
+      "fi": "Ruutuja",
+      "sk": "Obrazovky",
+      "tr": "Ekranlar"
     }
   },
   "healthcare/speciality": {
@@ -74319,10 +75220,122 @@
     "key": "display",
     "type": "list",
     "options": [
-      {"v": "analog", "lbl": {"en": "analog"}},
-      {"v": "digital", "lbl": {"en": "digital"}},
-      {"v": "sundial", "lbl": {"en": "sundial"}},
-      {"v": "unorthodox", "lbl": {"en": "unorthodox"}}
+      {
+        "v": "analog",
+        "lbl": {
+          "en": "analog",
+          "fr": "Analogique",
+          "de": "Analog",
+          "es": "Analógico",
+          "pt": "Analógico",
+          "it": "Analogico",
+          "cs": "Analogový",
+          "el": "Αναλογική",
+          "eo": "Analoga",
+          "fa": "آنالوگ",
+          "fi": "analoginen",
+          "he": "אנלוגית",
+          "hu": "Analóg",
+          "id": "Analog",
+          "ja": "アナログ",
+          "ko": "아날로그",
+          "mk": "Аналоген",
+          "nl": "Analoog",
+          "pl": "Analogowy",
+          "sk": "Analógový",
+          "sv": "Analog",
+          "tr": "Analog",
+          "uk": "Аналоговий",
+          "vi": "Kim"
+        }
+      },
+      {
+        "v": "digital",
+        "lbl": {
+          "en": "digital",
+          "fr": "Numérique",
+          "de": "Digital",
+          "es": "Digital",
+          "pt": "Digital",
+          "it": "Digitale",
+          "ru": "Цифровой",
+          "cs": "Digitální",
+          "el": "Ψηφιακή",
+          "eo": "Cifereca",
+          "fa": "دیجیتال",
+          "fi": "digitaalinen",
+          "he": "דיגיטלית",
+          "hu": "Digitális",
+          "id": "Digital",
+          "ja": "デジタル",
+          "ko": "디지털",
+          "mk": "Дигитален",
+          "nl": "Digitaal",
+          "pl": "Cyfrowy",
+          "sk": "Digitálny",
+          "sv": "Digital",
+          "tr": "Dijital",
+          "uk": "Цифровий",
+          "vi": "Số"
+        }
+      },
+      {
+        "v": "sundial",
+        "lbl": {
+          "en": "sundial",
+          "de": "Sonnenuhr",
+          "es": "Reloj de sol",
+          "pt": "Relógio de sol",
+          "it": "Meridiana",
+          "cs": "Sluneční hodiny",
+          "da": "Solur",
+          "el": "Ηλιακό Ωρολόγιο",
+          "eo": "Sunhorloĝo",
+          "fa": "ساعت آفتابی",
+          "fi": "aurinkokello",
+          "he": "שעון שמש",
+          "hu": "Napóra",
+          "id": "Jam bayangan matahari",
+          "ja": "日時計",
+          "ko": "해시계",
+          "mk": "Сончев часовник",
+          "nl": "Zonnewijzer",
+          "pl": "Słoneczny",
+          "sk": "Slnečné hodiny",
+          "sv": "Solur",
+          "tr": "Güneş saati",
+          "uk": "Сонячний",
+          "vi": "Mặt Trời"
+        }
+      },
+      {
+        "v": "unorthodox",
+        "lbl": {
+          "en": "unorthodox",
+          "de": "Unorthodox",
+          "es": "Poco ortodoxo",
+          "pt": "Invulgar",
+          "it": "Non ortodosso",
+          "cs": "Nekonvenční",
+          "da": "Uortodoks",
+          "el": "Ανορθόδοξο",
+          "eo": "Nekutima",
+          "fa": "غیرمتعارف",
+          "fi": "epätavallinen",
+          "he": "חריגה",
+          "hu": "Szokatlan",
+          "id": "Tidak lazim",
+          "ja": "特殊表示",
+          "mk": "Необичен",
+          "nl": "Onorthodox",
+          "pl": "Niekonwencjonalny",
+          "sk": "Nekonvenčné",
+          "sv": "Oortodox",
+          "tr": "Alışılmışın dışında",
+          "uk": "Неортодоксальний",
+          "vi": "Đặc biệt"
+        }
+      }
     ],
     "lbl": {
       "en": "Display",
@@ -74452,7 +75465,9 @@
       "ca": "Cares",
       "fa": "نماها",
       "sk": "Tváre",
-      "eu": "Aldeak"
+      "eu": "Aldeak",
+      "id": "Menghadap",
+      "tr": "Yüzler"
     }
   },
   "denomination": {
@@ -74562,7 +75577,9 @@
       "no": "Valglokale",
       "it": "Luogo di Votazione",
       "fa": "ستاد انتخابات ، محل نمونه‌گیری",
-      "ko": "투표소"
+      "ko": "투표소",
+      "sk": "Volebná miestnosť",
+      "tr": "Oy Verme Alanı"
     },
     "iDtype": "check",
     "options": [
@@ -74612,7 +75629,8 @@
       "fa": "خدمات",
       "ko": "서비스",
       "sk": "Služby",
-      "sr": "Услуге"
+      "sr": "Услуге",
+      "tr": "Hizmetler"
     }
   },
   "sport": {
@@ -74658,7 +75676,8 @@
       "zh": "运动",
       "ca": "Esports",
       "no": "Sport",
-      "eu": "Kirolak"
+      "eu": "Kirolak",
+      "id": "Olahraga"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -74917,7 +75936,8 @@
       "zh": "编号",
       "ca": "Codi de referència",
       "no": "Referansekode",
-      "eu": "Erreferentzia kode"
+      "eu": "Erreferentzia kode",
+      "id": "Kode referensi"
     }
   },
   "fuel_multi": {
@@ -75049,7 +76069,8 @@
       "eo": "Ŝlosebla",
       "fa": "قابل قفل شدن",
       "sk": "Zamykateľné",
-      "sr": "Могуће закључати"
+      "sr": "Могуће закључати",
+      "tr": "Kilitlenebilir"
     },
     "iDtype": "check",
     "options": [
@@ -75085,7 +76106,8 @@
       "sk": "Predškolské",
       "sr": "Предшколско",
       "ru": "Дошкольное учреждение ",
-      "nl": "Kleuterschool"
+      "nl": "Kleuterschool",
+      "tr": "Okul Öncesi"
     },
     "iDtype": "check",
     "options": [
@@ -75167,7 +76189,9 @@
       "uk": "Код ISIL",
       "vi": "Mã Nhận dạng ISIL",
       "zh": "ISIL 编码",
-      "da": "ISIL kode"
+      "da": "ISIL kode",
+      "sk": "ISIL kód",
+      "tr": "ISIL Kodu"
     }
   },
   "door": {
@@ -75205,7 +76229,8 @@
       "id": "Pintu",
       "fa": "درب",
       "ko": "문",
-      "sk": "Dvere"
+      "sk": "Dvere",
+      "tr": "Kapı"
     },
     "iDtype": "combo",
     "options": [
@@ -75376,22 +76401,316 @@
     },
     "iDtype": "combo",
     "options": [
-      {"v": "asphalt", "lbl": {"en": "asphalt"}},
-      {"v": "unpaved", "lbl": {"en": "unpaved"}},
-      {"v": "paved", "lbl": {"en": "paved"}},
-      {"v": "ground", "lbl": {"en": "ground"}},
-      {"v": "gravel", "lbl": {"en": "gravel"}},
-      {"v": "concrete", "lbl": {"en": "concrete"}},
-      {"v": "paving_stones", "lbl": {"en": "paving_stones"}},
-      {"v": "dirt", "lbl": {"en": "dirt"}},
-      {"v": "grass", "lbl": {"en": "grass"}},
+      {
+        "v": "asphalt",
+        "lbl": {
+          "en": "asphalt",
+          "fr": "Asphalte",
+          "de": "Asphalt",
+          "es": "Asfalto",
+          "pt": "Asfalto",
+          "it": "Asfalto",
+          "cs": "Asfalt",
+          "el": "Άσφαλτος",
+          "eo": "asfalto",
+          "fa": "آسفالت",
+          "fi": "asvaltti",
+          "he": "אספלט",
+          "hu": "Aszfalt",
+          "ja": "アスファルト",
+          "ko": "아스팔트",
+          "mk": "Асфалт",
+          "nl": "Asfalt",
+          "pl": "asphalt (asfalt)",
+          "sk": "Asfalt",
+          "sv": "Asfallt",
+          "tr": "Asfalt",
+          "uk": "Асфальт",
+          "vi": "Nhựa"
+        }
+      },
+      {
+        "v": "unpaved",
+        "lbl": {
+          "en": "unpaved",
+          "de": "Ohne Straßenbelag",
+          "es": "Sin pavimentar",
+          "pt": "Não pavimentada",
+          "it": "Sterrato",
+          "cs": "Nezpevněný",
+          "el": "Μη στρωμένο",
+          "eo": "malfirma",
+          "fa": "سنگ‌فرش نشده (توصیف تقریبی عمدتاً بدون مهر و موم؛ آسفالت نشده، سست یا ...)",
+          "fi": "päällystämätön",
+          "he": "בלתי סלול",
+          "hu": "Burkolatlan",
+          "ja": "未舗装",
+          "ko": "비포장",
+          "mk": "Непоплочено",
+          "nl": "Niet-bestraat",
+          "pl": "unpaved (nieutwardzona)",
+          "sk": "Nespevnený",
+          "sv": "Obelagd",
+          "tr": "Asfaltsız",
+          "uk": "Без покриття",
+          "vi": "Không Lát"
+        }
+      },
+      {
+        "v": "paved",
+        "lbl": {
+          "en": "paved",
+          "fr": "Pavé",
+          "de": "Versiegelte Oberfläche",
+          "es": "Pavimentado",
+          "pt": "Pavimentada",
+          "it": "Pavimentato",
+          "cs": "Zpevněný",
+          "el": "Στρωμένο",
+          "eo": "firma",
+          "fa": "سنگ‌فرش شده  (توصیف تقریبی عمدتاً هموار؛ بتن، قیر یا ...)",
+          "fi": "päällystetty",
+          "he": "סלול",
+          "hu": "Burkolt",
+          "ja": "舗装",
+          "ko": "포장",
+          "mk": "Поплочено",
+          "nl": "Bestraat",
+          "pl": "paved (utwardzona)",
+          "sk": "Spevnený",
+          "sv": "Belagd",
+          "tr": "Kaldırım",
+          "uk": "З покриттям",
+          "vi": "Lát"
+        }
+      },
+      {
+        "v": "ground",
+        "lbl": {
+          "en": "ground",
+          "de": "naturbelassene Oberfläche",
+          "es": "Suelo",
+          "pt": "Chão",
+          "it": "Terreno",
+          "cs": "Země",
+          "el": "Έδαφος",
+          "eo": "grundo",
+          "fa": "راه مال‌رو (به صورت طبیعی ایجاد شده) باریک",
+          "fi": "maa",
+          "he": "אדמה",
+          "hu": "Föld",
+          "ja": "地面",
+          "mk": "Тло",
+          "nl": "Grond",
+          "pl": "ground (gruntowa)",
+          "sk": "Zem",
+          "sv": "Mark",
+          "tr": "Zemin",
+          "uk": "Ґрунт",
+          "vi": "Đất chung"
+        }
+      },
+      {
+        "v": "gravel",
+        "lbl": {
+          "en": "gravel",
+          "fr": "Graviers",
+          "de": "Schotter",
+          "es": "Grava",
+          "pt": "Gravilha",
+          "it": "Ghiaia",
+          "cs": "Štěrk",
+          "el": "Χαλίκι",
+          "eo": "gruzo",
+          "fa": "شنی (درشت)",
+          "fi": "sora",
+          "he": "חצץ",
+          "hu": "Zúzott kő",
+          "ja": "砕石",
+          "ko": "자갈",
+          "mk": "Чакал",
+          "nl": "Grind",
+          "pl": "gravel (żwir)",
+          "sk": "Štrk",
+          "sv": "Grus",
+          "tr": "Çakıl",
+          "uk": "Гравій",
+          "vi": "Sỏi"
+        }
+      },
+      {
+        "v": "concrete",
+        "lbl": {
+          "en": "concrete",
+          "fr": "Béton",
+          "de": "Beton",
+          "es": "Hormigón",
+          "pt": "Betão",
+          "it": "Cemento",
+          "cs": "Beton",
+          "el": "Μπετόν",
+          "eo": "betono",
+          "fa": "بتن",
+          "fi": "betoni",
+          "he": "בטון",
+          "hu": "Beton",
+          "ja": "コンクリート",
+          "ko": "콘크리트",
+          "mk": "Бетон",
+          "nl": "Beton",
+          "pl": "concrete (beton)",
+          "sk": "Betón",
+          "sv": "Betong",
+          "tr": "Beton",
+          "uk": "Бетон",
+          "vi": "Bê tông"
+        }
+      },
+      {
+        "v": "paving_stones",
+        "lbl": {
+          "en": "paving_stones",
+          "fr": "Pavés en béton ou très réguliers",
+          "de": "Pflastersteine",
+          "es": "Adoquines",
+          "pt": "Calçada",
+          "it": "Pietre da pavimentazione",
+          "cs": "Dlažba",
+          "el": "Πέτρες Επίστρωσης",
+          "eo": "trotuaraj platoj",
+          "fa": "موزائیک (سنگ مصنوعی)",
+          "fi": "päällystelaatat",
+          "he": "אבני ריצוף",
+          "hu": "Térkő",
+          "ja": "敷石",
+          "mk": "Калдрма",
+          "nl": "Straatstenen",
+          "pl": "paving_stones (kostka chodnikowa)",
+          "sk": "Dlažba",
+          "sv": "Gatsten",
+          "tr": "Kaldırım taşları",
+          "uk": "Штучна бруківка",
+          "vi": "Gạch"
+        }
+      },
+      {
+        "v": "dirt",
+        "lbl": {
+          "en": "dirt",
+          "fr": "Terre",
+          "de": "Unbefestigte Straße",
+          "es": "Tierra",
+          "pt": "Terra",
+          "it": "Terra",
+          "cs": "Hlína",
+          "el": "Σκόνη",
+          "eo": "grundo malebena",
+          "fa": "خاک",
+          "fi": "multa",
+          "he": "בוץ",
+          "hu": "Poros",
+          "ja": "土",
+          "ko": "흙",
+          "mk": "Земја",
+          "nl": "Aarde",
+          "pl": "dirt (sypka)",
+          "sk": "Hlina",
+          "sv": "Jord",
+          "tr": "Çamus",
+          "uk": "Грязюка",
+          "vi": "Đất"
+        }
+      },
+      {
+        "v": "grass",
+        "lbl": {
+          "en": "grass",
+          "fr": "Herbe",
+          "de": "Gras",
+          "es": "Césped",
+          "pt": "Relva",
+          "it": "Erba",
+          "cs": "Tráva",
+          "el": "Γρασίδι",
+          "eo": "herbo",
+          "fa": "چمن",
+          "fi": "ruoho",
+          "he": "דשא",
+          "hu": "Fű",
+          "ja": "芝生",
+          "ko": "잔디",
+          "mk": "Трева",
+          "nl": "Gras",
+          "pl": "grass (trawa)",
+          "sk": "Tráva",
+          "sv": "Gräs",
+          "tr": "Çim",
+          "uk": "Трава",
+          "vi": "Cỏ"
+        }
+      },
       {"v": "compacted", "lbl": {"en": "compacted"}},
-      {"v": "sand", "lbl": {"en": "sand"}},
+      {
+        "v": "sand",
+        "lbl": {
+          "en": "sand",
+          "fr": "Sable",
+          "de": "Sand",
+          "es": "Arena",
+          "pt": "Areia",
+          "it": "Sabbia",
+          "cs": "Písek",
+          "el": "Άμμος",
+          "eo": "sablo",
+          "fa": "شنی (ریز)",
+          "fi": "hiekka",
+          "he": "חול",
+          "hu": "Homok",
+          "ja": "砂地",
+          "ko": "모래",
+          "mk": "Песок",
+          "nl": "Zand",
+          "pl": "sand (piasek)",
+          "sk": "Piesok",
+          "sv": "Sand",
+          "tr": "Kum",
+          "uk": "Пісок",
+          "vi": "Cát"
+        }
+      },
       {"v": "cobblestone", "lbl": {"en": "cobblestone"}},
       {"v": "fine_gravel", "lbl": {"en": "fine_gravel"}},
       {"v": "sett", "lbl": {"en": "sett"}},
       {"v": "earth", "lbl": {"en": "earth"}},
-      {"v": "wood", "lbl": {"en": "wood"}},
+      {
+        "v": "wood",
+        "lbl": {
+          "en": "wood",
+          "fr": "Bois",
+          "de": "Holz",
+          "es": "Madera",
+          "pt": "Madeira",
+          "it": "Legno",
+          "cs": "Dřevo",
+          "el": "Ξύλο",
+          "eo": "ligno",
+          "et": "puit",
+          "fa": "چوب",
+          "fi": "puu",
+          "he": "עץ",
+          "hu": "Fa",
+          "ja": "木材",
+          "ko": "나무",
+          "mk": "Дрво",
+          "nl": "Hout",
+          "pl": "wood (drewno)",
+          "sk": "Drevo",
+          "sv": "Trä",
+          "tr": "Odun",
+          "uk": "Дерево",
+          "vi": "Gỗ"
+        }
+      },
       {"v": "concrete:plates", "lbl": {"en": "concrete:plates"}},
       {"v": "pebblestone", "lbl": {"en": "pebblestone"}},
       {"v": "mud", "lbl": {"en": "mud"}},
@@ -75400,7 +76719,34 @@
       {"v": "grass_paver", "lbl": {"en": "grass_paver"}},
       {"v": "concrete:lanes", "lbl": {"en": "concrete:lanes"}},
       {"v": "tartan", "lbl": {"en": "tartan"}},
-      {"v": "artificial_turf", "lbl": {"en": "artificial_turf"}},
+      {
+        "v": "artificial_turf",
+        "lbl": {
+          "en": "artificial_turf",
+          "fr": "Gazon synthétique",
+          "de": "Kunstrasen",
+          "es": "Césped artificial",
+          "pt": "Relvado artificial",
+          "it": "Superficie artificiale",
+          "cs": "Umělý trávník",
+          "el": "Τεχνητός Χλοοτάπητας",
+          "eo": "artefarita herbo",
+          "fa": "چمن مصنوعی",
+          "fi": "tekonurmi",
+          "he": "דשא מלאכותי",
+          "hu": "Műfű",
+          "ja": "人工芝",
+          "ko": "인공 잔디",
+          "mk": "Вештачка трева",
+          "nl": "Kunstgras",
+          "pl": "artificial_turf (sztuczna trawa)",
+          "sk": "Umelý trávnik",
+          "sv": "Konstgräs",
+          "tr": "Suni çim",
+          "uk": "Штучний газон",
+          "vi": "Cỏ Nhân tạo"
+        }
+      },
       {"v": "soil", "lbl": {"en": "soil"}},
       {"v": "trail", "lbl": {"en": "trail"}}
     ]
@@ -75842,7 +77188,9 @@
       "nl": "Type",
       "no": "Type",
       "fa": "نوع",
-      "sk": "Typ"
+      "sk": "Typ",
+      "gl": "Tipo",
+      "tr": "Tür"
     },
     "iDtype": "combo",
     "options": [
@@ -76275,7 +77623,8 @@
       "da": "Begge",
       "ko": "부스",
       "sk": "Búdka",
-      "eu": "Postu"
+      "eu": "Postu",
+      "tr": "Stand"
     },
     "iDtype": "combo"
   },
@@ -76307,7 +77656,10 @@
       "it": "SMS",
       "eo": "SMS",
       "fa": "پیامک",
-      "sr": "СМС"
+      "sr": "СМС",
+      "gl": "SMS",
+      "sk": "SMS",
+      "tr": "SMS"
     },
     "iDtype": "check",
     "options": [
@@ -76340,7 +77692,10 @@
       "sk": "Videohovor",
       "sr": "Видео позиви",
       "sv": "Videosamtal",
-      "nl": "Videobellen"
+      "nl": "Videobellen",
+      "ru": "Видеозвонки",
+      "gl": "Videochamadas",
+      "tr": "Görüntülü Aramalar"
     },
     "iDtype": "check",
     "options": [
@@ -76451,7 +77806,10 @@
           "fa": "توالت گودالی",
           "sr": "Пољски тоалет",
           "ko": "재래식 화장실",
-          "nl": "Putlatrine"
+          "nl": "Putlatrine",
+          "fi": "Huussi",
+          "sk": "Latrína",
+          "tr": "Tuvalet"
         }
       },
       {
@@ -76564,7 +77922,11 @@
       "fa": "جدول تعویض پوشک",
       "sk": "Prebaľovací stôl",
       "sr": "Сто за промену пелена",
-      "nl": "Luierververstafel"
+      "nl": "Luierververstafel",
+      "ru": "Пеленальный стол",
+      "hr": "Stol za presvlačenje beba",
+      "ko": "기저귀 교환대",
+      "tr": "Bebek Bezi Değiştirme Masası"
     },
     "iDtype": "check",
     "options": [
@@ -76600,7 +77962,8 @@
       "el": "Πλύσιμο με το χέρι",
       "sk": "Umývanie rúk",
       "sr": "Лавабои",
-      "ru": "Рукомойник"
+      "ru": "Рукомойник",
+      "tr": "El yıkama"
     },
     "iDtype": "check",
     "options": [
@@ -76634,7 +77997,9 @@
       "zh": "位置",
       "el": "Θέσεις",
       "sk": "Pozície",
-      "sr": "Положаји"
+      "sr": "Положаји",
+      "fi": "Sijainnit",
+      "tr": "Konumlar"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -76672,7 +78037,9 @@
       "eo": "Speco",
       "fa": "نوع",
       "sk": "Typ",
-      "sr": "Врста"
+      "sr": "Врста",
+      "gl": "Tipo",
+      "tr": "Tip"
     },
     "iDtype": "combo",
     "options": [
@@ -76721,7 +78088,10 @@
       "fa": "دسترسی افراد نابینا",
       "sk": "Prístup nevidiacím",
       "sr": "Приступ слепим особама",
-      "ru": "Доступно для слабовидящих"
+      "ru": "Доступно для слабовидящих",
+      "et": "Juurdepääs nägemispuudega inimestele",
+      "hu": "Vakok általi használat",
+      "tr": "Görme Engelli Erişimi"
     },
     "options": [
       {
@@ -76755,7 +78125,10 @@
           "nl": "Ja",
           "fa": "بله",
           "sk": "Áno",
-          "sr": "Да"
+          "sr": "Да",
+          "bg": "Да",
+          "et": "Jah",
+          "tr": "Evet"
         }
       },
       {
@@ -76788,7 +78161,9 @@
           "fa": "محدود",
           "hu": "Korlátozott",
           "sk": "Obmedzené",
-          "sr": "Ограничено"
+          "sr": "Ограничено",
+          "et": "Piiratud",
+          "tr": "Kısıtlı"
         }
       },
       {
@@ -76822,7 +78197,10 @@
           "nl": "Nee",
           "fa": "خیر",
           "sk": "Nie",
-          "sr": "Не"
+          "sr": "Не",
+          "bg": "Не",
+          "et": "Ei",
+          "tr": "Hayır"
         }
       }
     ],
@@ -76855,7 +78233,9 @@
       "eo": "Rubaĵoj",
       "fa": "پسماند",
       "sk": "Odpad",
-      "sr": "Отпад"
+      "sr": "Отпад",
+      "ru": "Отходы",
+      "tr": "Atık"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -76959,7 +78339,8 @@
       "vi": "Loại",
       "zh": "类型",
       "ca": "Tipus",
-      "eu": "Mota"
+      "eu": "Mota",
+      "id": "Tipe"
     }
   },
   "craft": {
@@ -77120,7 +78501,8 @@
       "tr": "Yapı Yüksekliği (Metre)",
       "no": "Byggehøyde (meter)",
       "id": "Tinggi Bangunan (Meter)",
-      "sk": "Výška budovy (metrov)"
+      "sk": "Výška budovy (metrov)",
+      "et": "Hoone kõrgus (meetrites)"
     }
   },
   "water_source": {
@@ -77154,7 +78536,8 @@
       "vi": "Nguồn Nước",
       "da": "Vandkilde",
       "sk": "Vodný zdroj",
-      "sr": "Извор воде"
+      "sr": "Извор воде",
+      "tr": "Su Kaynağı"
     },
     "iDtype": "combo",
     "options": [
@@ -77211,7 +78594,8 @@
       "da": "Koblinger",
       "fa": "کوپلینگ، اتصال",
       "sk": "Prípojky",
-      "sr": "Спојнице"
+      "sr": "Спојнице",
+      "tr": "Eşleme"
     }
   },
   "fire_hydrant/pressure": {
@@ -77248,7 +78632,8 @@
       "no": "Trykk (bar)",
       "da": "Tryk (i bar)",
       "id": "Tekanan (bar)",
-      "sk": "Tlak (bar)"
+      "sk": "Tlak (bar)",
+      "tr": "Basınç (bar)"
     },
     "iDtype": "combo"
   },
@@ -77288,7 +78673,8 @@
       "zh": "蓄水量 (m³)",
       "da": "Volume af vandreserve (m³)",
       "sk": "Objem vody (m³)",
-      "sr": "Запремина резерве воде (м³)"
+      "sr": "Запремина резерве воде (м³)",
+      "tr": "Su Rezervi Hacmi (m³)"
     }
   },
   "siren/purpose": {
@@ -77324,7 +78710,8 @@
       "ca": "Propòsit",
       "fa": "هدف",
       "sk": "Účel",
-      "sr": "Сврха"
+      "sr": "Сврха",
+      "tr": "Amaç"
     },
     "iDtype": "combo",
     "options": [
@@ -77387,7 +78774,8 @@
       "da": "Type",
       "fa": "نوع",
       "sk": "Typ",
-      "eu": "Mota"
+      "eu": "Mota",
+      "tr": "Tip"
     },
     "options": [
       {
@@ -77423,7 +78811,8 @@
           "fa": "پنوماتیک ، بادی",
           "sk": "Preumatická",
           "sr": "Пнеуматска",
-          "eu": "Neumatiko"
+          "eu": "Neumatiko",
+          "tr": "Pnömatik"
         }
       },
       {
@@ -77460,7 +78849,8 @@
           "fa": "الکترونیک",
           "sk": "Elektrická",
           "sr": "Електрична",
-          "eu": "Elektroniko"
+          "eu": "Elektroniko",
+          "tr": "Elektronik"
         }
       },
       {
@@ -77497,7 +78887,8 @@
           "fa": "سایر",
           "sk": "Iná",
           "sr": "Друго",
-          "eu": "Beste batzuk"
+          "eu": "Beste batzuk",
+          "tr": "Diğer"
         }
       }
     ],
@@ -77908,7 +79299,9 @@
       "fa": "جهت تحت تأثیر",
       "ko": "방향",
       "nl": "Richting beïnvloed",
-      "sk": "Smer jazdy"
+      "sk": "Smer jazdy",
+      "da": "Påvirket retning",
+      "id": "Arah yang Dipengaruhi"
     },
     "options": [
       {
@@ -77949,7 +79342,8 @@
           "vi": "Tiến",
           "ca": "Endavant",
           "eo": "Antaŭen",
-          "eu": "Aurreranzko"
+          "eu": "Aurreranzko",
+          "id": "Kedepan"
         }
       },
       {
@@ -77990,7 +79384,8 @@
           "ca": "Enrere",
           "eo": "Malantaŭen",
           "sk": "Dozadu",
-          "eu": "Atzeranzko"
+          "eu": "Atzeranzko",
+          "id": "Kebelakang"
         }
       },
       {
@@ -78030,7 +79425,8 @@
           "ca": "Ambdós / Tots",
           "eo": "Ambaŭ / ĉiuj",
           "sk": "Oba / všetky",
-          "eu": "Biak / Guztiak"
+          "eu": "Biak / Guztiak",
+          "id": "Keduanya / Semua"
         }
       }
     ],
@@ -78118,7 +79514,8 @@
       "vi": "Hướng",
       "zh": "方向",
       "ca": "Direcció",
-      "eu": "Norabide"
+      "eu": "Norabide",
+      "id": "Arah"
     },
     "options": [
       {
@@ -78404,7 +79801,8 @@
           "vi": "Đường đắp cao",
           "zh": "堤岸",
           "ca": "Terraplè ",
-          "eo": "Surŝutaĵo"
+          "eo": "Surŝutaĵo",
+          "id": "Tanggul\nGundukan\nEmbarau"
         }
       },
       {
@@ -78446,7 +79844,8 @@
           "vi": "Đường xẻ",
           "zh": "开凿",
           "ca": "Trinxera",
-          "eo": "Vojfosaĵo"
+          "eo": "Vojfosaĵo",
+          "id": "Memotong"
         }
       },
       {
@@ -78722,7 +80121,8 @@
       "lt": "Maksimalus svoris",
       "fa": "حداکثر وزن",
       "sk": "Maximálna hmotnosť",
-      "sr": "Максимална тежина"
+      "sr": "Максимална тежина",
+      "tr": "Maksimum Ağırlık"
     },
     "iDtype": "combo"
   },
@@ -79075,9 +80475,86 @@
     "key": "sport",
     "type": "list",
     "options": [
-      {"v": "motor", "lbl": {"en": "motor"}},
-      {"v": "karting", "lbl": {"en": "karting"}},
-      {"v": "motocross", "lbl": {"en": "motocross"}}
+      {
+        "v": "motor",
+        "lbl": {
+          "en": "motor",
+          "de": "Motorsport",
+          "es": "Automovilismo",
+          "pt": "Desporto motorizados",
+          "it": "Sport motoristici",
+          "cs": "Motoristický sport",
+          "eo": "aŭtosportoj",
+          "fa": "ورزش اتومبیلرانی",
+          "fi": "moottoriurheilu",
+          "he": "ספורט מוטורי",
+          "hu": "Motorversenyzés",
+          "ja": "モータースポーツ",
+          "ko": "모터스포츠",
+          "mk": "Мототрки",
+          "nl": "Motorsport",
+          "no": "Motorsport",
+          "pl": "motor (sporty motorowe)",
+          "sk": "Motoristický šport",
+          "sv": "Motorsport",
+          "tr": "Motorsport",
+          "uk": "Мотоспорт",
+          "vi": "Đua xe có Động cơ"
+        }
+      },
+      {
+        "v": "karting",
+        "lbl": {
+          "en": "karting",
+          "de": "Go-Kart",
+          "es": "Karting",
+          "pt": "Karting",
+          "it": "Go kart",
+          "ru": "Картинг",
+          "cs": "Motokáry",
+          "eo": "karting",
+          "fa": "ورزش کارتینگ",
+          "he": "קרטינג",
+          "hu": "Gokart",
+          "ja": "カート",
+          "mk": "Картинг",
+          "nl": "Karten",
+          "no": "Karting",
+          "pl": "karting (gokarty)",
+          "sk": "Motokáry",
+          "sv": "Gokart",
+          "tr": "Karting",
+          "uk": "Картинг",
+          "vi": "Đua xe Go-kart"
+        }
+      },
+      {
+        "v": "motocross",
+        "lbl": {
+          "en": "motocross",
+          "de": "Motocross",
+          "es": "Motocross",
+          "pt": "Motocrosse",
+          "it": "Motocross",
+          "cs": "Motokros",
+          "eo": "motokroso",
+          "fa": "ورزش موتوکراس (موتور پرشی)",
+          "fi": "motocross",
+          "he": "מוטוקרוס",
+          "hu": "Motokrossz",
+          "ja": "モトクロス",
+          "ko": "모터크로스",
+          "mk": "Мотокрос",
+          "nl": "Motorcross",
+          "no": "Motocross",
+          "pl": "motocross",
+          "sk": "Motokros",
+          "sv": "Motocross",
+          "tr": "Motokros",
+          "uk": "Мотокрос",
+          "vi": "Motocross"
+        }
+      }
     ],
     "lbl": {
       "en": "Sports",
@@ -79528,7 +81005,9 @@
       "fa": "جهت تحت تأثیر",
       "ko": "방향",
       "sr": "Утиче на смер",
-      "nl": "Richting beïnvloed"
+      "nl": "Richting beïnvloed",
+      "ru": "Направление",
+      "sk": "Smer jazdy"
     },
     "options": [
       {
@@ -79732,7 +81211,10 @@
       "vi": "Loại Di chỉ",
       "zh": "站点类型",
       "fa": "نوع سایت",
-      "eu": "Leku Mota"
+      "eu": "Leku Mota",
+      "fi": "Alueen tyyppi",
+      "sk": "Typ miesta",
+      "tr": "Site Tipi"
     },
     "iDtype": "combo",
     "options": [
@@ -79883,7 +81365,8 @@
       "vi": "Kiểu",
       "zh": "类型",
       "ca": "Tipus",
-      "eu": "Mota"
+      "eu": "Mota",
+      "id": "Tipe"
     },
     "iDtype": "combo",
     "options": [
@@ -79989,7 +81472,8 @@
       "ca": "Categoria",
       "fa": "دسته‌بندی",
       "sk": "Kategória",
-      "eu": "Kategoria"
+      "eu": "Kategoria",
+      "tr": "Kategori"
     },
     "iDtype": "combo",
     "options": [
@@ -80036,7 +81520,9 @@
       "zh": "沉没时间",
       "no": "Dato Sunket",
       "id": "Tanggal Tenggelam",
-      "fa": "تاریخ غرق شدن"
+      "fa": "تاریخ غرق شدن",
+      "sk": "Dátum potopenia",
+      "tr": "Batık tarihi"
     }
   },
   "historic/wreck/visible_at_low_tide": {
@@ -80073,7 +81559,9 @@
       "id": "Kelihatan saat air surut",
       "fa": "قابل مشاهده در جزر و مد پایین",
       "sk": "Viditeľné pri odlive",
-      "eu": "Ikusgarria marea behera dagoenean"
+      "eu": "Ikusgarria marea behera dagoenean",
+      "et": "Nähtav mõõna ajal",
+      "tr": "Sular Alçalınca Görünebilir"
     },
     "iDtype": "check",
     "options": [
@@ -80115,7 +81603,9 @@
       "id": "Kelihatan saat air pasang",
       "fa": "قابل مشاهده در جزر و مد بالا",
       "sk": "Viditeľné pri prílive",
-      "eu": "Ikusgarria marea gora dagoenean"
+      "eu": "Ikusgarria marea gora dagoenean",
+      "et": "Nähtav tõusu ajal",
+      "tr": "Sular Yükselince Görünebilir"
     },
     "iDtype": "check",
     "options": [
@@ -80152,7 +81642,9 @@
       "vi": "Dấu hiệu",
       "zh": "导航标志",
       "da": "Sømærke",
-      "fa": "دریانورد"
+      "fa": "دریانورد",
+      "hu": "Hajózási jel",
+      "tr": "Deniz işareti"
     },
     "iDtype": "combo",
     "options": [
@@ -80226,7 +81718,8 @@
       "no": "Dansestiler",
       "id": "Gaya tarian",
       "sk": "Tanečné štýly",
-      "eu": "Dantza estiloak"
+      "eu": "Dantza estiloak",
+      "tr": "Dans Stilleri"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -80330,7 +81823,8 @@
           "tr": "Serbest",
           "lt": "Leidžiama",
           "da": "Tilladt",
-          "sk": "Povolené"
+          "sk": "Povolené",
+          "id": "Boleh"
         }
       },
       {
@@ -80365,7 +81859,8 @@
           "id": "Diikat",
           "da": "Kun i snor",
           "fa": "فقط قلاده",
-          "sk": "Len na vodítku"
+          "sk": "Len na vodítku",
+          "tr": "Sadece Tasmalı"
         }
       },
       {
@@ -80442,7 +81937,8 @@
       "nl": "Vissen",
       "da": "Fiskeri tilladt",
       "ko": "낚시",
-      "sk": "Rybolov"
+      "sk": "Rybolov",
+      "tr": "Balıkçılık"
     },
     "iDtype": "combo",
     "options": [
@@ -80518,11 +82014,136 @@
     "key": "sport",
     "type": "list",
     "options": [
-      {"v": "ice_skating", "lbl": {"en": "ice_skating"}},
-      {"v": "ice_hockey", "lbl": {"en": "ice_hockey"}},
-      {"v": "multi", "lbl": {"en": "multi"}},
-      {"v": "curling", "lbl": {"en": "curling"}},
-      {"v": "ice_stock", "lbl": {"en": "ice_stock"}}
+      {
+        "v": "ice_skating",
+        "lbl": {
+          "en": "ice_skating",
+          "fr": "Patin à glace",
+          "de": "Eislaufen",
+          "es": "Patinaje sobre hielo",
+          "pt": "Patinagem no gelo",
+          "it": "Pattinaggio sul ghiaccio",
+          "cs": "Bruslení na ledu",
+          "eo": "glitkurado",
+          "fa": "ورزش اسکیت روی یخ",
+          "fi": "luistelu",
+          "he": "החלקרח",
+          "hu": "Jégkorcsolya",
+          "ja": "アイススケート",
+          "mk": "Лизгање",
+          "nl": "Schaatsen",
+          "pl": "ice_skating (łyżwiarstwo)",
+          "sk": "Korčuľovanie na ľade",
+          "sv": "Skridskor",
+          "tr": "Buz Pateni",
+          "uk": "Катання на ковзанах",
+          "vi": "Trượt băng"
+        }
+      },
+      {
+        "v": "ice_hockey",
+        "lbl": {
+          "en": "ice_hockey",
+          "fr": "Hockey sur glace",
+          "de": "Eishockey",
+          "es": "Hockey sobre hielo",
+          "pt": "Hóquei no gelo",
+          "it": "Hockey su ghiaccio",
+          "cs": "Lední hokej",
+          "eo": "glacihokeo",
+          "fa": "ورزش هاکی روی یخ",
+          "fi": "jääkiekko",
+          "he": "הוקי קרח",
+          "hu": "Jégkorong",
+          "ja": "アイスホッケー",
+          "ko": "아이스하키",
+          "mk": "Хокеј на мраз",
+          "nl": "IJshockey",
+          "pl": "ice_hockey (hokej)",
+          "sk": "Ľadový hokej",
+          "sv": "Ishockey",
+          "tr": "Buz Hokeyi",
+          "uk": "Хокей на льоду",
+          "vi": "Khúc côn cầu trên Băng"
+        }
+      },
+      {
+        "v": "multi",
+        "lbl": {
+          "en": "multi",
+          "fr": "Multisport",
+          "de": "Mehrere",
+          "es": "Múltiple",
+          "pt": "Vários",
+          "it": "Multiplo",
+          "cs": "Více sportů",
+          "el": "Πολλαπλά",
+          "eo": "pluraj sportoj",
+          "fa": "ورزش‌های چندگانه",
+          "fi": "useita",
+          "hu": "Többféle",
+          "ja": "複数競技",
+          "mk": "Повеќе",
+          "nl": "Meerdere",
+          "no": "Flere ",
+          "pl": "multi (różne)",
+          "sk": "Rôzne športy",
+          "sv": "Flera",
+          "tr": "Çoklu",
+          "uk": "Багатоцільового призначення",
+          "vi": "Đa môn"
+        }
+      },
+      {
+        "v": "curling",
+        "lbl": {
+          "en": "curling",
+          "fr": "Curling",
+          "de": "Curling",
+          "es": "Curling",
+          "pt": "Curling",
+          "it": "Curling",
+          "cs": "Curling",
+          "eo": "glitŝtonludo (curling)",
+          "fa": "کرلینگ\nورزشی که با هُل دادن سنگ‌ها روی صفحاتِ یخی انجام می‌شود",
+          "fi": "curling",
+          "he": "קרלינג",
+          "hu": "Curling",
+          "ja": "カーリング",
+          "ko": "컬링",
+          "mk": "Карлинг",
+          "nl": "Curling",
+          "pl": "curling",
+          "sk": "Curling",
+          "sv": "Curling",
+          "tr": "Körling",
+          "uk": "Керлінг",
+          "vi": "Bi đá trên Băng"
+        }
+      },
+      {
+        "v": "ice_stock",
+        "lbl": {
+          "en": "ice_stock",
+          "de": "Eisstockschießen",
+          "es": "Ice stock",
+          "pt": "Curling bávaro",
+          "it": "Birilli su ghiaccio",
+          "cs": "Bavorský curling",
+          "eo": "glitŝtonludo bavara (Eisstockschießen)",
+          "fa": "ورزش سهام یخ (یک ورزش زمستانی)",
+          "hu": "Ice stock",
+          "ja": "アイスストック",
+          "mk": "Ќутуци на мраз",
+          "nl": "IJsstokschieten",
+          "pl": "ice_stock (curling bawarski)",
+          "sk": "Bavorský curling",
+          "sv": "Isstock",
+          "tr": "Buz Stoğu",
+          "uk": "Баварський керлінг",
+          "vi": "Bi đá trên Băng Bayern"
+        }
+      }
     ],
     "lbl": {
       "en": "Sports",
@@ -80687,7 +82308,11 @@
       "it": "Tema",
       "eo": "Speco",
       "fa": "موضوع",
-      "sr": "Тема"
+      "sr": "Тема",
+      "ru": "Тематика",
+      "gl": "Tema",
+      "sk": "Téma",
+      "tr": "Tema"
     },
     "iDtype": "combo",
     "options": [
@@ -80751,7 +82376,8 @@
       "nl": "Type",
       "no": "Type",
       "fa": "نوع",
-      "sk": "Typ"
+      "sk": "Typ",
+      "tr": "Tür"
     },
     "iDtype": "combo",
     "options": [
@@ -80859,7 +82485,8 @@
       "da": "Type",
       "fa": "نوع",
       "sk": "Typ",
-      "eu": "Mota"
+      "eu": "Mota",
+      "tr": "Tip"
     },
     "iDtype": "combo",
     "options": [
@@ -80883,11 +82510,145 @@
     "key": "sport",
     "type": "list",
     "options": [
-      {"v": "bmx", "lbl": {"en": "bmx"}},
-      {"v": "cycling", "lbl": {"en": "cycling"}},
-      {"v": "dog_racing", "lbl": {"en": "dog_racing"}},
-      {"v": "horse_racing", "lbl": {"en": "horse_racing"}},
-      {"v": "running", "lbl": {"en": "running"}}
+      {
+        "v": "bmx",
+        "lbl": {
+          "en": "bmx",
+          "de": "BMX",
+          "es": "BMX (Ciclocross)",
+          "pt": "BMX",
+          "it": "BMX",
+          "cs": "BMX",
+          "eo": "biciklado akrobata (BMX)",
+          "fa": "ورزش بی‌ام‌ایکس (دوچرخه‌سواری BMX)",
+          "fi": "BMX",
+          "he": "אופנועי פעלולים",
+          "hu": "BMX",
+          "ja": "BMX",
+          "ko": "BMX",
+          "mk": "BMX",
+          "nl": "BMX",
+          "no": "BMX",
+          "pl": "bmx (BMX)",
+          "sk": "BMX",
+          "sv": "BMX",
+          "tr": "BMX",
+          "uk": "BMX",
+          "vi": "Đua Xe đạp BMX"
+        }
+      },
+      {
+        "v": "cycling",
+        "lbl": {
+          "en": "cycling",
+          "fr": "Cyclisme",
+          "de": "Radfahren",
+          "es": "Ciclismo",
+          "pt": "Ciclismo",
+          "it": "Ciclismo",
+          "cs": "Cyklistika",
+          "el": "Ποδηλασία",
+          "eo": "biciklado",
+          "fa": "ورزش دوچرخه‌سواری",
+          "fi": "pyöräily",
+          "hu": "Kerékpározás",
+          "ja": "サイクリング",
+          "mk": "Велосипедизам",
+          "nl": "Fietsen",
+          "no": "Sykling",
+          "pl": "cycling (tor kolarski)",
+          "sk": "Cyklistika",
+          "sv": "Cykling",
+          "tr": "Bisiklet binme",
+          "uk": "Велоспорт",
+          "vi": "Đua Xe đạp"
+        }
+      },
+      {
+        "v": "dog_racing",
+        "lbl": {
+          "en": "dog_racing",
+          "fr": "Course de chiens",
+          "de": "Hunderennen",
+          "es": "Carreras de perros",
+          "pt": "Corridas de cães",
+          "it": "Corse di cani",
+          "cs": "Psí běžecké závody",
+          "el": "Κυνοδρομίες",
+          "eo": "hund-kurado",
+          "fa": "ورزش مسابقه سگ",
+          "he": "מירוץ כלבים",
+          "hu": "Kutyaverseny",
+          "ja": "ドッグレース",
+          "ko": "도그 레이싱",
+          "mk": "Кучешка трка",
+          "nl": "Hondenrennen",
+          "no": "Hundeløp ",
+          "pl": "dog_racing (wyścigi psów)",
+          "sk": "Preteky psov",
+          "sv": "Hundkpplöpning",
+          "tr": "Köpek yarışı",
+          "uk": "Собачі перегони",
+          "vi": "Đua Chó"
+        }
+      },
+      {
+        "v": "horse_racing",
+        "lbl": {
+          "en": "horse_racing",
+          "fr": "Course hippique",
+          "de": "Pferderennen",
+          "es": "Carreras de caballos",
+          "pt": "Corridas de cavalos",
+          "it": "Corse di cavalli",
+          "cs": "Dostihy",
+          "el": "Ιπποδρομίες",
+          "eo": "ĉeval-kurado",
+          "fa": "ورزش مسابقه اسب‌دوانی",
+          "fi": "ravi",
+          "he": "מירוץ סוסים",
+          "hu": "Lóverseny",
+          "ja": "競馬",
+          "ko": "경마",
+          "mk": "Коњска трка",
+          "nl": "Paardenrennen",
+          "no": "Hesteløp",
+          "pl": "horse_racing (hipodrom)",
+          "sk": "Dostihy",
+          "sv": "Hästkapplöpning",
+          "tr": "At yarışı",
+          "uk": "Перегони на конях",
+          "vi": "Đua Ngựa"
+        }
+      },
+      {
+        "v": "running",
+        "lbl": {
+          "en": "running",
+          "de": "Laufsport",
+          "es": "Running (Carrera a pie)",
+          "pt": "Corrida",
+          "it": "Corsa",
+          "ru": "Бег",
+          "cs": "Běh",
+          "el": "Τρέξιμο",
+          "eo": "kurado",
+          "fa": "ورزش مسابقه دو",
+          "fi": "juoksu",
+          "he": "ריצה",
+          "hu": "Futás",
+          "ja": "ランニング",
+          "mk": "Трчање",
+          "nl": "Hardlopen",
+          "no": "Løping",
+          "pl": "running (bieżnia)",
+          "sk": "Beh",
+          "sv": "Löpning",
+          "tr": "Koşma",
+          "uk": "Біг",
+          "vi": "Chạy Đua"
+        }
+      }
     ],
     "lbl": {
       "en": "Sports",
@@ -80961,7 +82722,8 @@
       "sk": "Zdroje",
       "sr": "Ресурси",
       "ru": "Ресурсы",
-      "nl": "Grondstoffen"
+      "nl": "Grondstoffen",
+      "tr": "Kaynaklar"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -81139,7 +82901,8 @@
       "zh": "起重机类型",
       "ca": "Tipus de grua",
       "sk": "Typ žeriavu",
-      "eu": "Garabi Mota"
+      "eu": "Garabi Mota",
+      "id": "Tipe Derek"
     },
     "options": [
       {
@@ -81177,7 +82940,9 @@
           "eo": "Rulponta",
           "no": "Traverskran",
           "sk": "Lodný žeriav",
-          "eu": "Lehorpe Garabia"
+          "eu": "Lehorpe Garabia",
+          "id": "Derek portal",
+          "tr": "Portal Vinç"
         }
       },
       {
@@ -81216,7 +82981,8 @@
           "eo": "Mast-bazita (kantilevra)",
           "no": "Gulv-montert Kran",
           "sk": "Žeriav pripevnený k podlahe",
-          "eu": "Lurrerako Garabia"
+          "eu": "Lurrerako Garabia",
+          "tr": "Zemine Monte Edilmiş Vinç"
         }
       },
       {
@@ -81252,7 +83018,8 @@
           "fa": "جرثقیل دروازه‌ای سیار",
           "sk": "Dopravný žeriav",
           "sr": "Пренос брода",
-          "ru": "Подъемник для судов"
+          "ru": "Подъемник для судов",
+          "tr": "Seyahat Asansörü"
         }
       }
     ],
@@ -81295,7 +83062,8 @@
       "ca": "Tipus de bandera",
       "id": "Tipe bendera",
       "sk": "Typ vlajky",
-      "eu": "Bandera Mota"
+      "eu": "Bandera Mota",
+      "tr": "Bayrak Türü"
     },
     "iDtype": "combo",
     "options": [
@@ -81555,7 +83323,8 @@
       "no": "Overvåkning",
       "id": "Monitoring",
       "sk": "Sledovanie",
-      "sr": "Надзор"
+      "sr": "Надзор",
+      "tr": "İzleme"
     }
   },
   "floating": {
@@ -81588,7 +83357,8 @@
       "no": "Flytende",
       "id": "Mengapung",
       "da": "Flydende",
-      "sk": "Plávajuce"
+      "sk": "Plávajuce",
+      "tr": "Yüzen"
     },
     "iDtype": "check",
     "options": [
@@ -81624,7 +83394,8 @@
       "fa": "دسترسی کالسکه بچه",
       "sk": "Prístup s kočiarom",
       "sr": "Прилаз за колица",
-      "nl": "Buggy toegang"
+      "nl": "Buggy toegang",
+      "tr": "Bebek Arabası Erişimi"
     },
     "options": [
       {
@@ -81656,7 +83427,8 @@
           "eo": "Jes",
           "fa": "بله",
           "sk": "Áno",
-          "sr": "Да"
+          "sr": "Да",
+          "tr": "Evet"
         }
       },
       {
@@ -81687,7 +83459,8 @@
           "eo": "Limigita",
           "fa": "محدود",
           "sk": "S obmedzením",
-          "sr": "Ограничен"
+          "sr": "Ограничен",
+          "tr": "Kısıtlı"
         }
       },
       {
@@ -81719,7 +83492,8 @@
           "eo": "Ne",
           "fa": "خیر",
           "sk": "Nie",
-          "sr": "Не"
+          "sr": "Не",
+          "tr": "Hayır"
         }
       }
     ],
@@ -81761,7 +83535,8 @@
       "ca": "Substància",
       "no": "Substans",
       "sr": "Супстанца",
-      "eu": "Substantzia"
+      "eu": "Substantzia",
+      "sk": "Substancia"
     },
     "iDtype": "combo",
     "options": [
@@ -81879,7 +83654,9 @@
       "id": "Diameter",
       "nl": "Diameter",
       "fa": "قطر",
-      "sk": "Priemer"
+      "sk": "Priemer",
+      "et": "Läbimõõt",
+      "gl": "Diámetro"
     },
     "iDtype": "combo"
   },
@@ -81987,7 +83764,9 @@
       "ko": "유형",
       "lt": "Tipas",
       "da": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "nl": "Type",
+      "tr": "Tip"
     },
     "iDtype": "combo",
     "options": [
@@ -82031,7 +83810,13 @@
       "eo": "Uzata por",
       "fa": "کارایی",
       "sv": "Infrastruktur",
-      "nl": "Nutsvoorzieningen"
+      "nl": "Nutsvoorzieningen",
+      "it": "Utenze",
+      "el": "Εργαλεία",
+      "gl": "Elementos de utilidade",
+      "hu": "Közművek",
+      "tr": "Kamu hizmetleri",
+      "vi": "Loại Công trình"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -82106,7 +83891,9 @@
       "ca": "Arquitecte",
       "lt": "Architektas",
       "id": "Arsitek",
-      "sk": "Architekt"
+      "sk": "Architekt",
+      "et": "Arhitekt",
+      "tr": "Mimar"
     }
   },
   "description": {
@@ -83107,7 +84894,8 @@
           "vi": "Bán Thường xanh",
           "ca": "Semiperennifòlia",
           "eo": "Duonĉiamfolia",
-          "eu": "Erdi-iraunkor"
+          "eu": "Erdi-iraunkor",
+          "no": "Vintergrøn"
         }
       },
       {
@@ -83178,7 +84966,13 @@
       "vi": "Wikidata về Loài",
       "cs": "Wikidata druhu",
       "fa": "قسمت‌های ویکی‌داده",
-      "sr": "Врсте на Википодацима"
+      "sr": "Врсте на Википодацима",
+      "it": "Specie su Wikidata",
+      "gl": "Especies en Wikidata",
+      "ko": "생물종 위키데이터",
+      "nl": "Soort Wikidata",
+      "sk": "Wikidata druhu",
+      "tr": "Ortak özellikleri olan vikiveri grubu"
     },
     "iDtype": "wikidata"
   },
@@ -83602,7 +85396,8 @@
       "no": "Salt",
       "fa": "نمک",
       "sk": "Soľ",
-      "sr": "Со"
+      "sr": "Со",
+      "tr": "Tuz"
     },
     "iDtype": "check",
     "options": [
@@ -83638,7 +85433,9 @@
       "cs": "přílivový",
       "fa": "جزر و مد",
       "sk": "Príliv",
-      "sr": "Плимски"
+      "sr": "Плимски",
+      "ru": "Прилив",
+      "tr": "Gelgit"
     },
     "iDtype": "check",
     "options": [
@@ -83753,7 +85550,11 @@
       "eo": "Konsiloj pri",
       "fa": "تجربه و تخصص",
       "sk": "Odbornosť",
-      "sr": "Стручност"
+      "sr": "Стручност",
+      "gl": "Especialización",
+      "hu": "Szakterület",
+      "id": "Keahlian",
+      "tr": "Uzmanlık"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -83862,7 +85663,9 @@
       "lt": "Type",
       "no": "Type",
       "da": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "id": "Tipe",
+      "tr": "Tür"
     },
     "iDtype": "combo",
     "options": [
@@ -83910,7 +85713,8 @@
       "sk": "Cieľ",
       "sr": "Циљ",
       "ru": "Цель",
-      "nl": "Doelwit"
+      "nl": "Doelwit",
+      "tr": "Hedef"
     },
     "iDtype": "combo",
     "options": [
@@ -83976,7 +85780,10 @@
       "zh": "服务",
       "ko": "업무",
       "no": "Tjenester",
-      "sk": "Služby"
+      "sk": "Služby",
+      "et": "Teenused",
+      "id": "Layanan",
+      "tr": "Hizmetler"
     }
   },
   "departures_board": {
@@ -84011,7 +85818,10 @@
       "no": "Avgangsoversikt",
       "da": "Afgangs/ankomst-tavle",
       "fa": "تابلو اعلانات پروازهای خروجی",
-      "sk": "Panel s odchodmi"
+      "sk": "Panel s odchodmi",
+      "et": "Infotabloo",
+      "id": "Papan Keberangkatan",
+      "tr": "Kalkış Panosu"
     },
     "options": [
       {
@@ -84047,7 +85857,10 @@
           "eo": "jes",
           "lt": "Taip",
           "da": "Ja",
-          "sk": "Áno"
+          "sk": "Áno",
+          "et": "Jah",
+          "id": "Ya",
+          "tr": "Evet"
         }
       },
       {
@@ -84082,7 +85895,10 @@
           "no": "Rutetabell",
           "da": "Tidsplan",
           "fa": "جدول زمانی",
-          "sk": "Rozvrh"
+          "sk": "Rozvrh",
+          "et": "Sõiduplaan",
+          "id": "Terjadwal",
+          "tr": "Takvim"
         }
       },
       {
@@ -84117,7 +85933,9 @@
           "id": "Langsung",
           "da": "Realtid",
           "fa": "زمان واقعی",
-          "sk": "V reálnom čase"
+          "sk": "V reálnom čase",
+          "et": "Reaalajas",
+          "tr": "Gerçek Zamanlı"
         }
       },
       {
@@ -84151,7 +85969,10 @@
           "ca": "Cap",
           "eo": "neniu",
           "da": "Ingen",
-          "sk": "Žiadne"
+          "sk": "Žiadne",
+          "et": "Puudub",
+          "id": "Tidak ada",
+          "tr": "Hiçbiri"
         }
       }
     ],
@@ -84700,7 +86521,8 @@
       "zh": "产品",
       "ca": "Productes",
       "id": "Produk",
-      "eu": "Produktuak"
+      "eu": "Produktuak",
+      "et": "Tooted"
     },
     "iDtype": "semiCombo",
     "options": [
@@ -84757,13 +86579,100 @@
       "no": "Tjenester",
       "ko": "서비스",
       "sk": "Služby",
-      "sr": "Услуге"
+      "sr": "Услуге",
+      "tr": "Hizmetler"
     },
     "iDtype": "combo",
     "options": [
-      {"v": "nails", "lbl": {"en": "nails"}},
-      {"v": "tanning", "lbl": {"en": "tanning"}},
-      {"v": "cosmetics", "lbl": {"en": "cosmetics"}},
+      {
+        "v": "nails",
+        "lbl": {
+          "en": "nails",
+          "fr": "Manucure",
+          "de": "Fingernägel",
+          "es": "Uñas",
+          "pt": "Unhas",
+          "it": "Unghie",
+          "ru": "Маникюр",
+          "cs": "Nehty",
+          "da": "NEgle",
+          "el": "Νύχια",
+          "eo": "manikuro/pedikuro (ung-flagado)",
+          "fa": "کاشت و طراحی ناخن",
+          "he": "ציפורניים",
+          "hu": "Körömápolás",
+          "ja": "ネイル",
+          "mk": "Маникир",
+          "nl": "Nagels",
+          "no": "Negler",
+          "pl": "nails (manicure/pedicure)",
+          "sk": "nechty",
+          "sv": "Naglar",
+          "tr": "Tırnaklar",
+          "uk": "Салон манікюру",
+          "vi": "Móng"
+        }
+      },
+      {
+        "v": "tanning",
+        "lbl": {
+          "en": "tanning",
+          "fr": "Salon de bronzage",
+          "de": "Sonnenstudio",
+          "es": "Bronceado",
+          "pt": "Bronzeamento",
+          "it": "Abbronzatura",
+          "ru": "Солярий",
+          "cs": "Opalování",
+          "da": "Solbadning",
+          "el": "Μαύρισμα",
+          "eo": "sunbrunigo",
+          "fa": "برنزه کردن",
+          "he": "שיזוף",
+          "hu": "Szolárium",
+          "ja": "日焼け",
+          "mk": "Солариум",
+          "nl": "Bruinen",
+          "no": "Solarium",
+          "pl": "tanning (solarium)",
+          "sk": "Opaľovanie",
+          "sv": "Solarium",
+          "tr": "Bronzlaşma",
+          "uk": "Солярій",
+          "vi": "Da Nâu"
+        }
+      },
+      {
+        "v": "cosmetics",
+        "lbl": {
+          "en": "cosmetics",
+          "fr": "Parfumerie",
+          "de": "Kosmetik",
+          "es": "Cosméticos",
+          "pt": "Cosmética",
+          "it": "Cosmetica",
+          "ru": "Косметика",
+          "cs": "Kosmetika",
+          "da": "Kosmetik",
+          "el": "Καλλυντικά",
+          "eo": "kosmetiko",
+          "fa": "لوازم آرایشی",
+          "fi": "Kosmetiikka",
+          "he": "טיפוח",
+          "hu": "Kozmetika",
+          "ja": "化粧品店",
+          "ko": "화장품",
+          "mk": "Козметика",
+          "nl": "Cosmetica",
+          "no": "Kosmetikk ",
+          "pl": "cosmetics (zabiegi kosmetyczne)",
+          "sk": "Kozmetika",
+          "sv": "Kosmetika",
+          "tr": "Makyaj malzemeleri",
+          "uk": "Магазин косметики та парфумів",
+          "vi": "Mỹ phẩm"
+        }
+      },
       {"v": "spa", "lbl": {"en": "spa"}},
       {"v": "hair", "lbl": {"en": "hair"}},
       {"v": "skin_care", "lbl": {"en": "skin_care"}},
@@ -85011,7 +86920,8 @@
       "vi": "Nghệ sĩ",
       "zh": "艺术家",
       "ca": "Artista",
-      "eu": "Artista"
+      "eu": "Artista",
+      "et": "Kunstnik"
     }
   },
   "guest_house": {
@@ -85048,7 +86958,9 @@
       "no": "Type",
       "da": "Type",
       "nl": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "id": "Tipe",
+      "tr": "Tür"
     },
     "iDtype": "combo",
     "options": [
@@ -85104,7 +87016,8 @@
       "fa": "پایدار سواری (مکانی که اسب‌ها را برای سوار ماندن مردم نگهداری می‌کنند)",
       "sr": "Коњичка штала",
       "et": "Ratsatall",
-      "eu": "Zalditegi"
+      "eu": "Zalditegi",
+      "tr": "Sabit Biniş"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -85186,7 +87099,8 @@
       "vi": "Cưỡi ngựa Biểu diễn",
       "zh": "花式骑术",
       "no": "Dressurridning",
-      "fa": "درساژ سواری (حرکات نمایشی اسب)"
+      "fa": "درساژ سواری (حرکات نمایشی اسب)",
+      "tr": "At binişi eğitim alanı"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -85231,7 +87145,8 @@
       "da": "Ildsted",
       "id": "Perapian",
       "fa": "بخاری ، آتشگاه ، شومینه",
-      "eu": "Tximinia"
+      "eu": "Tximinia",
+      "tr": "Şömine"
     },
     "iDtype": "check",
     "options": [
@@ -85273,7 +87188,9 @@
       "da": "Type",
       "nl": "Type",
       "ko": "유형",
-      "sk": "Typ"
+      "sk": "Typ",
+      "id": "Tipe",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -85304,7 +87221,8 @@
       "vi": "Ngày Khảo sát Cuối",
       "fa": "تاریخ آخرین بررسی",
       "sk": "Dátum posledného prezretia",
-      "sr": "Последњи датум истраживања"
+      "sr": "Последњи датум истраживања",
+      "tr": "Son Anket Tarihi"
     }
   },
   "level_semi": {
@@ -85337,7 +87255,10 @@
       "nl": "Niveaus",
       "eo": "Etaĝoj",
       "fa": "طبقات",
-      "sk": "Podlažie"
+      "sk": "Podlažie",
+      "et": "Korruseid",
+      "gl": "Andares",
+      "tr": "Seviyeler"
     },
     "iDtype": "semiCombo"
   },
@@ -87567,7 +89488,8 @@
       "fa": "جزیرک",
       "sk": "Utečenecký ostrov",
       "sr": "Избегличко острво",
-      "ru": "Островок безопасности"
+      "ru": "Островок безопасности",
+      "ko": "안전지대"
     },
     "iDtype": "check",
     "options": [
@@ -87659,7 +89581,8 @@
       "zh": "篮圈数",
       "ca": "Cistella de basquetbol",
       "no": "Bøyler",
-      "eu": "Aroak"
+      "eu": "Aroak",
+      "et": "Korvpallirõngaid"
     }
   },
   "valve": {
@@ -87691,7 +89614,9 @@
       "nl": "Type",
       "fa": "نوع",
       "ko": "유형",
-      "sk": "Typ"
+      "sk": "Typ",
+      "gl": "Tipo",
+      "tr": "Tip"
     },
     "iDtype": "combo"
   },
@@ -87977,7 +89902,9 @@
       "vi": "Hướng (Độ theo Chiều Kim Đồng hồ)",
       "zh": "方向 (顺时针度)",
       "ca": "Direcció (graus en sentit horari)",
-      "eu": "Norabidea ( Graduak erlojuaren orratzen norantzan)"
+      "eu": "Norabidea ( Graduak erlojuaren orratzen norantzan)",
+      "et": "Suund (kraade päripäeva)",
+      "id": "Arah (Derajat Searah Jarum Jam)"
     }
   },
   "contact/webcam": {
@@ -88066,7 +89993,9 @@
       "ca": "Tipus",
       "lt": "Tipas",
       "id": "Tipe",
-      "sk": "Typ"
+      "sk": "Typ",
+      "bg": "Тип",
+      "tr": "Tür"
     },
     "options": [
       {"v": "infiltration", "lbl": {"en": "infiltration"}},
@@ -88152,7 +90081,9 @@
       "no": "Type",
       "lt": "Tipas",
       "da": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "id": "Tipe",
+      "tr": "Tür"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -88197,7 +90128,9 @@
       "lt": "Tipas",
       "no": "Type",
       "da": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "id": "Tipe",
+      "tr": "Tür"
     },
     "options": [
       {"v": "yes", "lbl": {"en": "yes", "fr": "Oui"}},
@@ -88245,7 +90178,8 @@
       "no": "Type",
       "da": "Type",
       "nl": "Type",
-      "sk": "Typ"
+      "sk": "Typ",
+      "tr": "Tür"
     },
     "options": [
       {"v": "liaison_office", "lbl": {"en": "liaison_office"}},
@@ -88717,7 +90651,8 @@
       "da": "Type",
       "no": "Type",
       "ko": "유형",
-      "sk": "Typ"
+      "sk": "Typ",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -88751,7 +90686,9 @@
       "id": "Tempat duduk bayi",
       "nl": "Kinderstoel",
       "fa": "جایگاه یا صندلی کودک",
-      "sk": "Detská sedačka"
+      "sk": "Detská sedačka",
+      "hr": "Sjedalica za bebe",
+      "tr": "Bebek Koltuğu"
     },
     "iDtype": "check",
     "options": [
@@ -89013,7 +90950,13 @@
       "cs": "způsob připojení",
       "it": "Allegato alla Linea",
       "eo": "Fiks-maniero de kabloj",
-      "fa": "پیوست خط"
+      "fa": "پیوست خط",
+      "et": "Liini kinnitus",
+      "gl": "Ligazón dos cables",
+      "hu": "Vezeték rögzítése",
+      "nl": "Lijnverbinding (nutsvoorzieningen)",
+      "sk": "Spôsob pripojenia vedenia",
+      "tr": "Hat Eklentisi"
     },
     "iDtype": "combo"
   },
@@ -89287,7 +91230,8 @@
       "da": "Design",
       "id": "Desain",
       "sk": "Dizajn",
-      "eu": "Diseinu"
+      "eu": "Diseinu",
+      "tr": "Tasarım"
     },
     "iDtype": "combo"
   },
@@ -89651,7 +91595,8 @@
       "tr": "Güç Düzeyi",
       "uk": "Потужність",
       "vi": "Công suất",
-      "no": "Effektvurdering"
+      "no": "Effektvurdering",
+      "sk": "Menovitý výkon"
     },
     "iDtype": "combo"
   },
@@ -89698,7 +91643,8 @@
       "no": "Enheter",
       "id": "Perangkat",
       "sk": "Zariadenia",
-      "eu": "Tresnak"
+      "eu": "Tresnak",
+      "et": "Seadmed"
     }
   },
   "phases": {
@@ -89740,7 +91686,8 @@
       "no": "faser",
       "sk": "Fázy",
       "sr": "Фазе",
-      "eu": "Faseak"
+      "eu": "Faseak",
+      "tr": "Aşamalar"
     }
   },
   "frequency": {
@@ -89972,7 +91919,8 @@
       "vi": "Cách Nối Cuộn dây",
       "zh": "绕组配置",
       "ca": "Configuració de bobines",
-      "sr": "Конфигурација намотаја"
+      "sr": "Конфигурација намотаја",
+      "tr": "Bobin Yapılandırması"
     },
     "options": [
       {
@@ -90002,7 +91950,8 @@
           "vi": "Sao",
           "ca": "Estrella",
           "eo": " IEC 421-10-01 (stel-forma)",
-          "sr": "Звезда"
+          "sr": "Звезда",
+          "tr": "Demiryolunda üçgen bağlantı"
         }
       },
       {
@@ -90033,7 +91982,9 @@
           "vi": "Tam giác",
           "ca": "Delta",
           "eo": "IEC 421-10-02 (delta / triangula)",
-          "sr": "Делта"
+          "sr": "Делта",
+          "sk": "Delta",
+          "tr": "Delta"
         }
       },
       {
@@ -90063,7 +92014,8 @@
           "vi": "Tam giác Hở",
           "ca": "Obert Delta",
           "eo": "IEC 421-10-03 (malfermita delta)",
-          "sr": "Отворена делта"
+          "sr": "Отворена делта",
+          "tr": "Geniş delta"
         }
       },
       {
@@ -90127,7 +92079,9 @@
           "eo": "IEC 421-10-05 (malfermita)",
           "no": "Åpen",
           "sr": "Отворена",
-          "eu": "Ireki"
+          "eu": "Ireki",
+          "sk": "Otvorený",
+          "tr": "Açık"
         }
       },
       {
@@ -90155,7 +92109,8 @@
           "ca": "Scott",
           "eo": "IEC 421-10-06 (Scott)",
           "cs": "vinutí v konfiguraci „Scott“",
-          "sr": "Скот"
+          "sr": "Скот",
+          "tr": "T bağlantı"
         }
       },
       {
@@ -90184,7 +92139,8 @@
           "vi": "Leblanc",
           "ca": "Leblanc",
           "eo": "IEC 421-10-07 (Leblanc)",
-          "sr": "Лебланк"
+          "sr": "Лебланк",
+          "tr": "Üçgen bağlantı"
         }
       }
     ],
@@ -90222,7 +92178,9 @@
       "nl": "Type",
       "fa": "نوع",
       "sk": "Typ",
-      "sr": "Врста"
+      "sr": "Врста",
+      "et": "Tüüp",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -90268,7 +92226,8 @@
       "vi": "Kiểu",
       "zh": "类型",
       "ca": "Tipus",
-      "eu": "Mota"
+      "eu": "Mota",
+      "id": "Tipe"
     },
     "iDtype": "combo"
   },
@@ -90352,7 +92311,8 @@
       "da": "Højde",
       "id": "Tinggi",
       "fa": "ارتفاع",
-      "sk": "Výška"
+      "sk": "Výška",
+      "tr": "Yükseklik"
     },
     "iDtype": "combo"
   },
@@ -90385,7 +92345,11 @@
       "fa": "نوع",
       "ko": "유형",
       "sk": "Typ",
-      "sr": "Врста"
+      "sr": "Врста",
+      "gl": "Tipo",
+      "hu": "Típus",
+      "nl": "Type",
+      "tr": "Tip"
     },
     "iDtype": "combo"
   },
@@ -90505,7 +92469,8 @@
       "vi": "Trình độ Cưỡi ngựa",
       "no": "Riding Vanskelighetsgrad",
       "da": "Ridning sværhedsgrad",
-      "eu": "Ekitazioaren zailtasuna"
+      "eu": "Ekitazioaren zailtasuna",
+      "tr": "Binicilik Zorluğu"
     },
     "options": [
       {
@@ -90538,7 +92503,9 @@
           "vi": "Dễ: Không có trở ngại. (mặc định)",
           "no": "Enkel: Ingen problemer eller vanskeligheter. (standard)",
           "da": "Let: Ingen udfordringer eller besværligheder. (standard)",
-          "eu": "Erraza: Arazorik edo zailtasunik gabea. (lehenetsita)"
+          "eu": "Erraza: Arazorik edo zailtasunik gabea. (lehenetsita)",
+          "sk": "Ľahké: Bez problémov alebo ťažkostí. (predvolené)",
+          "tr": "Kolay: Problemler ve zorluklar yok. (varsayılan)"
         }
       },
       {
@@ -90568,7 +92535,9 @@
           "no": "Bruk med forsiktighet: Ujevn måte, tidvis vanskelige passasjer.",
           "da": "Vær varsom: Ujævn vej, enkelte svære passager.",
           "fa": "با احتیاط استفاده کنید: راه ناهموار ، معابر گاهی دشوار.",
-          "eu": "Kontuz ibili: bide malkartsua, noizean behin pasabide zailak."
+          "eu": "Kontuz ibili: bide malkartsua, noizean behin pasabide zailak.",
+          "sk": "Opatrné: Hrboľatá cesta, občasné náročné pasáže.",
+          "tr": "Dikkatli kullanın: Düzensiz yol, ara sıra zor geçitler."
         }
       },
       {
@@ -90598,7 +92567,9 @@
           "no": "Vanskelig: Måten smal og utsatt. Kan inneholde hindringer for å gå over og smale passasjer.",
           "da": "Svær: Smal og udsat vej. Kan indeholde forhindringer der skal skræves over og smalle passager.",
           "fa": "دشوار: راه باریک و در بدون حفاظ. ممکن است حاوی موانع برای عبور و مرور و معابر باریک باشد.",
-          "eu": "Zaila: bide estu eta arriskutsua. Bidea estutzen eta zailtzen duten oztopoak egon daitezke."
+          "eu": "Zaila: bide estu eta arriskutsua. Bidea estutzen eta zailtzen duten oztopoak egon daitezke.",
+          "sk": "Náročné: Úzka a exponovaná cesta. Môže obsahovať prekážky pri prekračovaní a úzke pasáže.",
+          "tr": "Zor: yol dar ve korumasız. Üstünden geçilecek engeller ve dar geçitleri içerebilir."
         }
       },
       {
@@ -90628,7 +92599,9 @@
           "vi": "Rất Khó: Chỉ có những ngựa và người cưỡi ngựa có nhiều khả năng có thể qua lại. Có trở ngại lớn. Cần phải xem xét kỹ càng các cầu.",
           "da": "Mellemting: Kun passage for erfarne ryttere og heste. Betydelige forhindringer. Broer bør undersøges nøje.",
           "fa": "خط مرزی: فقط برای سواران و اسب‌های با تجربه قابل عبور است. دارای موانع عمده. باید پل‌ها را با دقت بررسی کرد.",
-          "eu": "Muga: Bakarrik zaldizko eta zaldi esperimentatuak ibiltzeko modukoa. Oztopo nagusiak. Zubiek arretaz aztertuak izan behar dute."
+          "eu": "Muga: Bakarrik zaldizko eta zaldi esperimentatuak ibiltzeko modukoa. Oztopo nagusiak. Zubiek arretaz aztertuak izan behar dute.",
+          "sk": "Hraničné: Prejazdné len pre skúsených jazdcov a kone. Hlavné prekážky. Mosty by sa mali starostlivo preskúmať.",
+          "tr": "Sınır: Sadece tecrübeli binici ve atlar geçebilir. Büyük engeller. Köprüler dikkatlice incelenmelidir."
         }
       },
       {
@@ -90659,7 +92632,9 @@
           "no": "Farlig: Brukbar bare for veldig erfarne ryttere og hester og bare i godt vær. Avstige.",
           "da": "Farlig: Kun passage for meget erfarne ryttere og heste og kun i godt vejr. Stig af.",
           "fa": "خطرناک: فقط برای سواران و اسب‌های بسیار باتجربه و فقط در هوای خوب قابل تردد است. پیاده شدن از اسب بهتر است.",
-          "eu": "Arriskutsua: Bakarrik oso zaldizko eta zaldi trebeek ibiltzeko modukoa eta soilik eguraldi ona egiten duenean. Desmuntatu."
+          "eu": "Arriskutsua: Bakarrik oso zaldizko eta zaldi trebeek ibiltzeko modukoa eta soilik eguraldi ona egiten duenean. Desmuntatu.",
+          "sk": "Nebezpečné: Prejazdné len pre veľmi skúsených jazdcov a kone a len za dobrého počasia. Zosadnúť.",
+          "tr": "Tehlikeli: Sadece uygun hava koşullarında çok tecrübeli binici ve atlar geçebilir. Attan inmek."
         }
       },
       {
@@ -90689,7 +92664,9 @@
           "no": "Unngåelig: vei eller bro ikke farbar for hester. For smal, utilstrekkelig støtte, hindringer som stiger. Livsfare.",
           "da": "Upasserbar: Vej eller bro er ikke passerbar for heste. For smal, utilstrækkeligt understøttet, forhindringer såsom stiger. Livsfare.",
           "fa": "غیر قابل عبور: راه یا پل برای اسب قابل عبور نیست. بیش از حد باریک، پشتیبانی ناکافی، موانعی مانند نردبان. زندگی در خطر است.",
-          "eu": "Zeharkaezina: Zaldiek igaro ezin duten bide edo zubia. Estuegia, euskarri nahikorik gabea, eskilarak bezalako oztopoekin. Hiltzeko arriskua."
+          "eu": "Zeharkaezina: Zaldiek igaro ezin duten bide edo zubia. Estuegia, euskarri nahikorik gabea, eskilarak bezalako oztopoekin. Hiltzeko arriskua.",
+          "sk": "Neprejazdné: Cesta alebo most nie sú pre kone priechodné. Príliš úzka, nedostatočné spevnenie, prekážky ako rebríky. Životu nebezpečné.",
+          "tr": "İmkansız: Yol veya köprü atlar için geçilebilir değil. Çok dar, yetersiz destek, basamak benzeri engeller var. Hayati tehlike."
         }
       }
     ],
@@ -90720,7 +92697,9 @@
       "el": "Αιωρούμενα Καλώδια του Τρόλεϊ",
       "fa": "سیم‌های واگن برقی بالای سر",
       "sr": "Жице надземних колица",
-      "nl": "Trolleybus bovenleidingen"
+      "nl": "Trolleybus bovenleidingen",
+      "ru": "Контактная сеть троллейбуса",
+      "tr": "Asma Tramvay Kabloları"
     },
     "iDtype": "check",
     "options": [
@@ -90756,7 +92735,9 @@
       "vi": "Ngày Dự kiến Khai trương",
       "no": "Forventet åpningstid",
       "fa": "تاریخ افتتاح پیش‌بینی شده",
-      "sk": "Očakávaný termín otvorenia"
+      "sk": "Očakávaný termín otvorenia",
+      "da": "Forventet åbningsdato",
+      "tr": "Beklenen Açılış Tarihi"
     }
   },
   "check_date": {
@@ -90790,7 +92771,9 @@
       "id": "Tanggal terakhir dicek",
       "da": "Sidst kontrolleret",
       "sk": "Dátum poslednej kontroly",
-      "sr": "Последњи проверени датум"
+      "sr": "Последњи проверени датум",
+      "et": "Viimati kontrollitud",
+      "tr": "Son Kontrol Tarihi"
     }
   },
   "note": {
@@ -90875,7 +92858,13 @@
       "fa": "نوع",
       "hu": "Típus",
       "sk": "Typ",
-      "sr": "Врста"
+      "sr": "Врста",
+      "ru": "Тип",
+      "bg": "Тип",
+      "et": "Tüüp",
+      "hr": "Vrsta",
+      "nl": "Type",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -90909,7 +92898,8 @@
       "et": "Üleujutusoht",
       "id": "Rawan Banjir",
       "da": "Oversvømmelsesrisiko",
-      "sk": "Náchylný na zaplavenie"
+      "sk": "Náchylný na zaplavenie",
+      "tr": "Sel Basmaya Eğilimli"
     },
     "iDtype": "check",
     "options": [
@@ -90947,7 +92937,8 @@
       "da": "Vejfletning",
       "sk": "Križovatka",
       "sr": "Раскршће",
-      "ru": "Перекрёсток"
+      "ru": "Перекрёсток",
+      "et": "Ristmik"
     },
     "options": [
       {
@@ -90982,7 +92973,10 @@
           "da": "Rundkørsel",
           "id": "Bundaran",
           "fa": "فلکه (میدان)",
-          "sk": "Kruhový objazd"
+          "sk": "Kruhový objazd",
+          "et": "Ringristmik",
+          "ko": "회전교차로",
+          "tr": "Dönel Kavşak"
         }
       },
       {
@@ -91014,7 +93008,8 @@
           "fa": "میدان، دایره‌ی یک طرفه، حلقه ترافیک",
           "sk": "Kruhový objazd",
           "sr": "Саобраћајни круг",
-          "ru": "Круговое движение"
+          "ru": "Круговое движение",
+          "tr": "Dönel Kavşak"
         }
       },
       {
@@ -91039,7 +93034,10 @@
           "uk": "Ручка глечика",
           "cs": "Sjezd z dálnice",
           "fa": "تقاطع دسته پارچی",
-          "sk": "Pripájač"
+          "sk": "Pripájač",
+          "no": "Jughandle",
+          "tr": "Jughandle tipi Kavşak",
+          "vi": "Quai bình"
         }
       }
     ],
@@ -91077,7 +93075,8 @@
       "uk": "Односторонній рух (велосипеди)",
       "vi": "Một Chiều (Xe đạp)",
       "no": "Enveis (Sykler)",
-      "sk": "Jednosmerka (bicykle)"
+      "sk": "Jednosmerka (bicykle)",
+      "tr": "Tek Yön (bisiklet)"
     },
     "iDtype": "check",
     "options": [
@@ -91193,7 +93192,9 @@
       "fa": "شماره جاده مقصد",
       "sk": "Cieľové čísla ciest",
       "sr": "Путне ознаке одредишта",
-      "da": "Endepunkts vejnummer"
+      "da": "Endepunkts vejnummer",
+      "hu": "Utak azonosítószáma",
+      "tr": "Hedef Yol Numaraları"
     },
     "iDtype": "semiCombo"
   },
@@ -91226,7 +93227,8 @@
       "uk": "Номер з'їзду",
       "vi": "Số Giao lộ",
       "tr": "Kavşak Numarası",
-      "no": "Kryss Nummer"
+      "no": "Kryss Nummer",
+      "sk": "Číslo križovatky"
     }
   },
   "charge_toll": {
@@ -91261,7 +93263,9 @@
       "fa": "مقدار عوارض",
       "ko": "요금",
       "sk": "Veľkosť mýta",
-      "nl": "Kostprijs"
+      "nl": "Kostprijs",
+      "et": "Teemaksu määr",
+      "tr": "Ücret Tutarı"
     }
   },
   "destination/symbol_oneway": {
@@ -91296,7 +93300,10 @@
       "id": "Simbol Tujuan",
       "sk": "Cieľové symboly",
       "sr": "Симболи одредишта",
-      "da": "Endepunktsymbol"
+      "da": "Endepunktsymbol",
+      "hr": "Znakovi odredišta",
+      "hu": "Útirány szimbóluma",
+      "tr": "Hedef Sembolleri"
     },
     "iDtype": "semiCombo"
   },
@@ -91462,7 +93469,8 @@
       "da": "Minimumshastighed",
       "fa": "حداقل سرعت مجاز",
       "sk": "Minimálna povolená rýchlosť",
-      "sr": "Минимално ограничење брзине"
+      "sr": "Минимално ограничење брзине",
+      "tr": "Minimum Hız Sınırı"
     },
     "iDtype": "maxspeed"
   },
@@ -91497,7 +93505,12 @@
       "it": "ID elemento GNIS",
       "eo": "GNIS-identigilo",
       "fa": "شناسه عارضه GNIS (سامانه اطلاعات نام‌های جغرافیایی)",
-      "ko": "GNIS 지물 ID"
+      "ko": "GNIS 지물 ID",
+      "gl": "ID do elemento GNIS",
+      "hu": "USA földrajzinév-információs rendszer azonosítója",
+      "nl": "GNIS object ID",
+      "sk": "Identifikačné číslo objektu GNIS",
+      "tr": "Coğrafi Adlar Bilgi Sistemi nesne ID"
     }
   },
   "informal": {
@@ -91526,7 +93539,10 @@
       "nl": "Informeel",
       "eo": "Neformala",
       "fa": "غیررسمی",
-      "sk": "Neformálny"
+      "sk": "Neformálny",
+      "da": "Uformel",
+      "gl": "Informal",
+      "tr": "Resmi olmayan"
     },
     "iDtype": "check",
     "options": [
@@ -92957,11 +94973,144 @@
     "key": "service",
     "type": "list",
     "options": [
-      {"v": "parking_aisle", "lbl": {"en": "parking_aisle"}},
-      {"v": "driveway", "lbl": {"en": "driveway"}},
-      {"v": "alley", "lbl": {"en": "alley"}},
-      {"v": "emergency_access", "lbl": {"en": "emergency_access"}},
-      {"v": "drive-through", "lbl": {"en": "drive-through"}}
+      {
+        "v": "parking_aisle",
+        "lbl": {
+          "en": "parking_aisle",
+          "fr": "Allée de parking",
+          "de": "Parkplatzfahrgassen",
+          "es": "Pasillo de estacionamiento",
+          "pt": "Corredor de estacionamento",
+          "it": "Corsia di un parcheggio",
+          "cs": "Parkovací ulička",
+          "el": "Νησίδα Πάρκινκ",
+          "eo": "parkumeja strateto",
+          "fa": "راهرو پارکینگ",
+          "fi": "Pysäköintiväylä",
+          "he": "מפרץ חניה",
+          "hu": "Parkolón belüli út",
+          "ja": "駐車場内通路",
+          "mk": "Паркинг-минувалиште",
+          "nl": "Rijbaan in parkeergelegenheid",
+          "pl": "parking_aisle (uliczka parkingowa)",
+          "sk": "Parkovacia ulička",
+          "sv": "Parkeringsväg",
+          "tr": "Park Alanı",
+          "uk": "Проїзд по стоянці",
+          "vi": "Lối trong Bãi đậu xe"
+        }
+      },
+      {
+        "v": "driveway",
+        "lbl": {
+          "en": "driveway",
+          "fr": "Allée",
+          "de": "Grundstückzufahrt",
+          "es": "Entrada de vehículos",
+          "pt": "Acesso a residência / garagem",
+          "it": "Accesso ad edifici/aziende",
+          "cs": "Příjezdová cesta",
+          "el": "Καθοδήγηση",
+          "eo": "enveturejo",
+          "fa": "جاده خصوصی\nدسترسی محلی به گروه کوچکی از سازه‌ها",
+          "fi": "Ajoväylä",
+          "hu": "Kocsibehajtó",
+          "ja": "民地内通路・ドライブウェイ",
+          "mk": "Моторна патека",
+          "nl": "Oprit",
+          "no": "innkjørsel",
+          "pl": "driveway (podjazd)",
+          "sk": "Príjazdová cesta",
+          "sv": "Uppfart",
+          "tr": "Arabayla uzaklaşmak",
+          "uk": "Проїзд",
+          "vi": "Lối đi vào Nhà"
+        }
+      },
+      {
+        "v": "alley",
+        "lbl": {
+          "en": "alley",
+          "fr": "Ruelle",
+          "de": "Gasse",
+          "es": "Callejón",
+          "pt": "Viela",
+          "it": "Vialetto/vicolo tra edifici",
+          "cs": "Ulička",
+          "el": "Στενάκι",
+          "eo": "vojo interdoma",
+          "fa": "کوچه خدماتی",
+          "fi": "Kuja",
+          "he": "סמטה",
+          "hu": "Hátsó „szolgalmi” út",
+          "ja": "路地",
+          "mk": "Сокак",
+          "nl": "Steeg",
+          "no": "Bakgate",
+          "pl": "alley (alejka)",
+          "sk": "Ulička",
+          "sv": "Gränd",
+          "tr": "Geçit",
+          "uk": "Провулок",
+          "vi": "Ngõ hẻm"
+        }
+      },
+      {
+        "v": "emergency_access",
+        "lbl": {
+          "en": "emergency_access",
+          "fr": "Accès d'urgence",
+          "de": "Feuerwehrzufahrt",
+          "es": "Acceso de emergencia",
+          "pt": "Acesso de emergência",
+          "it": "Accesso per i veicoli di soccorso/emergenza",
+          "ru": "Проезд для экстренных служб",
+          "cs": "Nouzový vjezd",
+          "el": "Πρόσβαση Εκτάκτου Ανάγκης",
+          "eo": "aliro por vivsava servo",
+          "fa": "دسترسی اضطراری",
+          "fi": "Hälytysajoneuvotie",
+          "he": "גישת חירום",
+          "hu": "Vészhelyzeti elérés",
+          "ja": "緊急通用路",
+          "mk": "Итен пристап",
+          "nl": "Toegang voor hulpdiensten",
+          "no": "Nødtilgang ",
+          "pl": "emergency_access (dla służb ratowniczych)",
+          "sk": "Núdzový vstup",
+          "sv": "Åtkomst för utryckningsfordon",
+          "tr": "Acil Erişim",
+          "uk": "Аварійний проїзд",
+          "vi": "Lối dành cho Dịch vụ Khẩn cấp"
+        }
+      },
+      {
+        "v": "drive-through",
+        "lbl": {
+          "en": "drive-through",
+          "de": "Drive-Through",
+          "es": "Servicio al vehículo",
+          "pt": "Serviço ao volante",
+          "it": "Accesso al servizio \"consegna in auto\"",
+          "cs": "Drive-through",
+          "el": "Οδήγηση Δια Μέσου",
+          "eo": "strateto por sen-elaŭtiĝa servo",
+          "fa": "خدمات سواره (بدون پیاده شدن)",
+          "fi": "Autokaista",
+          "hu": "Autós szolgáltatáshoz vezető út",
+          "ja": "ドライブスルー",
+          "ko": "드라이브 스루",
+          "mk": "Со возило",
+          "nl": "Drive-through",
+          "no": "Gjennomkjøring",
+          "pl": "drive-through",
+          "sk": "Drive-Through",
+          "sv": "Genomkörning (Drive-through)",
+          "tr": "Arabaya servis",
+          "uk": "Проїзд біля пункту обслуговування",
+          "vi": "Lối Mua hàng trên Xe"
+        }
+      }
     ],
     "lbl": {
       "en": "Type",
@@ -93097,7 +95246,8 @@
           "tr": "Yukarı",
           "uk": "Вгору",
           "vi": "Lên",
-          "eu": "Gora"
+          "eu": "Gora",
+          "et": "Üles"
         }
       },
       {
@@ -93142,7 +95292,8 @@
           "tr": "Aşağı",
           "uk": "Вниз",
           "vi": "Xuống",
-          "eu": "Behera"
+          "eu": "Behera",
+          "et": "Alla"
         }
       }
     ],
@@ -93189,7 +95340,8 @@
       "tr": "Merdiven Korkuluğu",
       "uk": "Перила",
       "vi": "Lan can",
-      "eu": "Baranda"
+      "eu": "Baranda",
+      "id": "Pegangan tangan"
     },
     "iDtype": "check",
     "options": [
@@ -93504,7 +95656,9 @@
       "hu": "Iható",
       "sk": "Pitné",
       "sr": "Пијаћа вода",
-      "ru": "Пригодно для питья"
+      "ru": "Пригодно для питья",
+      "hr": "Pitka voda",
+      "tr": "İçilebilir"
     },
     "iDtype": "check",
     "options": [
@@ -93541,7 +95695,11 @@
       "nl": "Vlag Land",
       "sk": "Vlajka krajiny",
       "sr": "Застава земље",
-      "sv": "Landsflagga"
+      "sv": "Landsflagga",
+      "ru": "Флаг страны",
+      "gl": "Bandeira de país",
+      "hu": "Képviselt ország",
+      "tr": "Bayrak Ülkesi"
     },
     "iDtype": "combo"
   },
@@ -93629,7 +95787,10 @@
       "ko": "펌프",
       "sk": "Pumpa",
       "sr": "Пумпа",
-      "ru": "Пункт подкачки колёс"
+      "ru": "Пункт подкачки колёс",
+      "gl": "Bomba",
+      "no": "Pumpe",
+      "tr": "Pompa"
     },
     "iDtype": "combo",
     "options": [
@@ -93661,7 +95822,9 @@
           "hu": "Van",
           "sk": "Áno",
           "sr": "Да",
-          "ru": "Да"
+          "ru": "Да",
+          "gl": "Si",
+          "tr": "Evet"
         }
       },
       {
@@ -93690,7 +95853,9 @@
           "hu": "Kézi szivattyú",
           "sk": "Manuálna ručná pumpa",
           "sr": "Ручна пумпа",
-          "ru": "Ручной насос"
+          "ru": "Ручной насос",
+          "gl": "Bomba manual",
+          "tr": "Manuel El Pompası"
         }
       },
       {
@@ -93718,7 +95883,9 @@
           "hu": "Gépi szivattyú",
           "sk": "Motorom poháňana pumpa",
           "sr": "Машинска пумпа",
-          "ru": "Компрессор для подкачки колёс "
+          "ru": "Компрессор для подкачки колёс ",
+          "gl": "Bomba automática",
+          "tr": "Makine ile Çalışan Pompa"
         }
       },
       {
@@ -93747,7 +95914,11 @@
           "fa": "هیچ‌کدام",
           "hu": "Nincs",
           "sk": "Žiadna",
-          "sr": "Нема"
+          "sr": "Нема",
+          "ru": "Нет",
+          "el": "Κάνενα",
+          "gl": "Sen bomba",
+          "tr": "Hiçbiri"
         }
       }
     ]
@@ -93789,7 +95960,8 @@
       "da": "Underjordiske etager",
       "id": "Jumlah lantai bawah tanah",
       "fa": "طبقات زیرزمین",
-      "sk": "Nadzemné podlažia"
+      "sk": "Nadzemné podlažia",
+      "bg": "Подземни нива"
     }
   },
   "building/material": {
@@ -93862,7 +96034,8 @@
       "tr": "Çatı Rengi",
       "fa": "رنگ سقف",
       "sk": "Farba strechy",
-      "sr": "Боја крова"
+      "sr": "Боја крова",
+      "et": "Katuse värv"
     },
     "iDtype": "combo"
   },
@@ -97564,7 +99737,11 @@
       "eo": "AVI-pagant-identigilo",
       "fa": "شماره شناسایی مالیات بر ارزش افزوده",
       "ko": "VAT ID 번호",
-      "sr": "Порески (ПИБ) број"
+      "sr": "Порески (ПИБ) број",
+      "gl": "Número identificador do IVA",
+      "hu": "Uniós adószám",
+      "sk": "číslo VAT ID",
+      "tr": "Vergi No"
     }
   },
   "gambling": {
@@ -97597,7 +99774,10 @@
       "fa": "بازی‌ها",
       "sk": "Hry",
       "sr": "Игре",
-      "ru": "Игры"
+      "ru": "Игры",
+      "gl": "Xogos",
+      "hu": "Szerencsejátékok",
+      "tr": "Oyunlar"
     },
     "iDtype": "semiCombo"
   },
@@ -97637,7 +99817,10 @@
       "eo": "Ejo por mamnutri bebon",
       "fa": "منطقه پرستاری کودک",
       "sk": "Dojčenská zóna",
-      "sr": "Област за негу бебе"
+      "sr": "Област за негу бебе",
+      "hr": "Prostor za dojenje",
+      "hu": "Csecsemőszoptató-hely",
+      "tr": "Bebek Bakım Alanı"
     },
     "options": [
       {
@@ -97668,7 +99851,9 @@
           "fa": "اتاق اختصاصی",
           "hu": "Kijelölt helyiség",
           "sk": "Vyhradená miestnosť",
-          "sr": "Наменска соба"
+          "sr": "Наменска соба",
+          "el": "Ειδικό Δωμάτιο",
+          "tr": "Ayrılmış Oda"
         }
       },
       {
@@ -97698,7 +99883,10 @@
           "fa": "جای علامت‌گذاری شده",
           "hu": "Kijelölt terület",
           "sk": "Označený priestor",
-          "sr": "Означени простор"
+          "sr": "Означени простор",
+          "el": "Σημειωμένος Χώρος",
+          "tr": "İşaretli Alan",
+          "vi": "Chỗ Đậu xe có Vạch"
         }
       },
       {
@@ -97730,7 +99918,9 @@
           "fa": "هیچ‌کدام",
           "hu": "Nincs",
           "sk": "Žiadne",
-          "sr": "Нема"
+          "sr": "Нема",
+          "bg": "Нищо",
+          "tr": "Hiçbiri"
         }
       }
     ],
@@ -97765,7 +99955,9 @@
       "sk": "Plnenie fliaš",
       "sr": "Пуњење боца",
       "sv": "Flaskpåfyllning",
-      "nl": "Flessen vullen"
+      "nl": "Flessen vullen",
+      "hr": "Punjenje boce",
+      "tr": "Şişe Dolumu"
     },
     "iDtype": "check",
     "options": [
@@ -97803,7 +99995,10 @@
       "hu": "Típus",
       "sk": "Typ",
       "sr": "Врста",
-      "ru": "Тип фонтана"
+      "ru": "Тип фонтана",
+      "gl": "Tipo",
+      "id": "Tipe",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -97840,7 +100035,11 @@
       "gl": "Andares do edificio",
       "hu": "Szintek",
       "sk": "Podlažia",
-      "sr": "Спратови"
+      "sr": "Спратови",
+      "bg": "Нива",
+      "et": "Korruseid",
+      "id": "Tingkat",
+      "tr": "Seviyeler"
     }
   },
   "hot_water": {
@@ -97873,7 +100072,10 @@
       "hu": "Forró víz",
       "ko": "온수",
       "sk": "Horúca voda",
-      "sr": "Врела вода"
+      "sr": "Врела вода",
+      "ru": "Горячая вода",
+      "gl": "Auga quente",
+      "tr": "Sıcak Su"
     },
     "iDtype": "check",
     "options": [
@@ -97910,7 +100112,10 @@
       "fa": "نوشیدنی",
       "sk": "Nápoje",
       "sr": "Пића",
-      "ru": "Напитки"
+      "ru": "Напитки",
+      "gl": "Bebidas",
+      "hu": "Ital",
+      "tr": "İçecekler"
     }
   },
   "segregated": {
@@ -97937,7 +100142,10 @@
       "fa": "دوچرخه - تفکیک‌شده از پیاده‌رو",
       "sk": "Oddelenie cyklistov od chodcov",
       "nl": "Fietser-voetganger scheiding",
-      "vi": "Làn Riêng cho Xe đạp và Người đi bộ"
+      "vi": "Làn Riêng cho Xe đạp và Người đi bộ",
+      "gl": "Separación de ciclistas e peonís",
+      "hu": "Kerékpáros-gyalogos elválasztás",
+      "tr": "Bisiklet-Yaya Ayrımı"
     },
     "iDtype": "check",
     "options": [
@@ -98249,7 +100457,8 @@
           "uk": "Велодріжка в зворотньому напрямку",
           "vi": "Làn xe đạp ngược chiều lối",
           "no": "Motsatte sykkelfelt",
-          "eu": "Kontrako bidegorria"
+          "eu": "Kontrako bidegorria",
+          "id": "Jajur sepeda berlawanan"
         }
       },
       {
@@ -98289,7 +100498,8 @@
           "uk": "Рух веолодоріжкою в протилежному напрямку",
           "vi": "Làm xe đạp ngược chiều giao thông",
           "no": "Motstrøms sykkelfelt",
-          "eu": "Kontrako norabidedun bidegorria"
+          "eu": "Kontrako norabidedun bidegorria",
+          "id": "Jalur sepeda lawan arus\nJalur sepeda kontraflow"
         }
       }
     ]
@@ -98323,7 +100533,9 @@
       "sr": "Висина ерупције",
       "ru": "Высота выброса",
       "el": "Ύψος έκρηξης",
-      "nl": "Uitbarstingshoogte"
+      "nl": "Uitbarstingshoogte",
+      "gl": "Altura de erupción",
+      "tr": "Patlama Yüksekliği"
     }
   },
   "plant/source": {
@@ -98353,7 +100565,10 @@
       "fa": "منبع انرژی",
       "hu": "Energiaforrás",
       "sk": "Zdroj energie",
-      "sr": "Извор напајања"
+      "sr": "Извор напајања",
+      "ru": "Тип топлива/источник энергии",
+      "gl": "Fonte de enerxía",
+      "tr": "Enerji Kaynağı"
     },
     "iDtype": "combo"
   },
@@ -98379,7 +100594,12 @@
       "it": "Metodo di Generazione",
       "eo": "Metodo de produkto",
       "fa": "روش تولید",
-      "sk": "Metóda generovania"
+      "sk": "Metóda generovania",
+      "ru": "Способ получения энергии",
+      "gl": "Método de produción ",
+      "hu": "Áramfejlesztés módja",
+      "nl": "Generatiemethode (elektriciteit)",
+      "tr": "Üretim yöntemi"
     },
     "iDtype": "combo"
   },
@@ -98405,7 +100625,12 @@
       "fa": "ناحیه‌ی دورافتاده",
       "sk": "Vidiek",
       "sv": "Vildmarkscamping",
-      "nl": "Afgelegen"
+      "nl": "Afgelegen",
+      "ru": "Отсутствие цивилизованных удобств (душ, электричество, вайфай и т.п.)",
+      "el": "Επαρχία",
+      "gl": "Área de campismo salvaxe",
+      "hu": "Kezeletlen",
+      "tr": "Taşra"
     },
     "iDtype": "check",
     "options": [
@@ -98440,7 +100665,10 @@
       "fa": "فقط گروه‌ها",
       "hu": "Csak csoportok",
       "sk": "Len skupiny",
-      "sv": "Enbart grupper"
+      "sv": "Enbart grupper",
+      "gl": "Só grupos",
+      "id": "Berkelompok Saja",
+      "tr": "Sadece Gruplar"
     },
     "iDtype": "check",
     "options": [
@@ -98474,7 +100702,11 @@
       "eo": "Fajro permesata",
       "fa": "آتش‌افروزی مجاز است",
       "sk": "Otvorené ohne dovolené",
-      "ru": "Открытый огонь разрешён"
+      "ru": "Открытый огонь разрешён",
+      "gl": "Fogueiras permitidas",
+      "hr": "Otvorena vatra je dopuštena",
+      "hu": "Tűzgyújtás engedélyezett",
+      "tr": "Açık Ateş Yakmak Serbest"
     },
     "iDtype": "check",
     "options": [
@@ -98508,7 +100740,10 @@
       "sk": "Sprchy",
       "ru": "Душ",
       "et": "Dušid",
-      "nl": "Douches"
+      "nl": "Douches",
+      "gl": "Duchas",
+      "hu": "Zuhany",
+      "tr": "Duşlar"
     },
     "iDtype": "check",
     "options": [
@@ -98542,7 +100777,10 @@
       "ko": "화장실",
       "sk": "Toalety",
       "sr": "Тоалети",
-      "ru": "Туалет"
+      "ru": "Туалет",
+      "gl": "Aseos",
+      "hu": "WC",
+      "tr": "Tuvaletler"
     },
     "iDtype": "check",
     "options": [
@@ -98579,7 +100817,10 @@
       "fa": "نوع",
       "hu": "Típus",
       "sk": "Typ",
-      "sr": "Врста"
+      "sr": "Врста",
+      "ru": "Тип",
+      "gl": "Tipo",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -98659,7 +100900,13 @@
       "no": "IATA Airport Kode",
       "fa": "کد فرودگاه یاتا (انجمن بین‌المللی حمل‌ونقل هوایی)",
       "sr": "ИАТА ознака",
-      "ru": "Код аэропорта IATA"
+      "ru": "Код аэропорта IATA",
+      "et": "IATA lennujaamakood",
+      "gl": "Código IATA de aeroportos",
+      "hr": "IATA kôd za zračnu luku",
+      "id": "Kode Bandara IATA",
+      "nl": "IATA-luchthavencode",
+      "sk": "Kód letiska podľa IATA"
     }
   },
   "icao": {
@@ -98690,7 +100937,13 @@
       "no": "ICAO Airport Kode",
       "fa": "کد فرودگاه ایکائو (سازمان بین‌المللی هوانوردی غیرنظامی)",
       "sr": "ИКАО ознака",
-      "ru": "Код аэропорта ICAO"
+      "ru": "Код аэропорта ICAO",
+      "et": "ICAO lennujaamakood",
+      "gl": "Código ICAO de aeroportos",
+      "hr": "ICAO kôd za zračnu luku",
+      "id": "Kode Bandara ICAO",
+      "nl": "ICAO-luchthavencode",
+      "sk": "Kód letiska podľa ICAO"
     }
   },
   "ref_aeroway_gate": {
@@ -98808,7 +101061,8 @@
       "vi": "Wikidata",
       "da": "Wikidata",
       "sk": "Wikidata",
-      "sr": "Википодаци"
+      "sr": "Википодаци",
+      "bg": "Уикиданни"
     },
     "iDtype": "wikidata"
   },
@@ -99111,7 +101365,8 @@
           "vi": "Chính",
           "fa": "اصلی",
           "sr": "Основна",
-          "eu": "Nagusi"
+          "eu": "Nagusi",
+          "tr": "Ana"
         }
       },
       {
@@ -99144,7 +101399,8 @@
           "vi": "Nhánh",
           "fa": "شعبه",
           "sr": "Грана",
-          "eu": "Adar"
+          "eu": "Adar",
+          "tr": "Branş"
         }
       },
       {
@@ -99177,7 +101433,8 @@
           "vi": "Công nghiệp",
           "fa": "صنعتی",
           "sr": "Индустријска",
-          "eu": "Industrial"
+          "eu": "Industrial",
+          "tr": "Endüstriyel"
         }
       },
       {
@@ -99210,7 +101467,8 @@
           "vi": "Quân sự",
           "fa": "نظامی",
           "sr": "Војна",
-          "eu": "Militar"
+          "eu": "Militar",
+          "tr": "Askeri"
         }
       },
       {
@@ -99244,7 +101502,8 @@
           "fa": "آزمایش",
           "sk": "Test",
           "sr": "Тест",
-          "eu": "Analisi"
+          "eu": "Analisi",
+          "tr": "Test"
         }
       },
       {
@@ -99281,7 +101540,8 @@
           "vi": "Du lịch",
           "da": "Turisme",
           "sr": "Туристичка",
-          "eu": "Turismo"
+          "eu": "Turismo",
+          "tr": "Turizm"
         }
       }
     ],
@@ -99327,7 +101587,8 @@
       "tr": "Dingil Genişliği",
       "uk": "Колія",
       "vi": "Khổ",
-      "eu": "Kalibre"
+      "eu": "Kalibre",
+      "id": "Ukuran Gauge/Lebar dalam rel kereta"
     },
     "iDtype": "combo"
   },
@@ -99415,7 +101676,8 @@
           "uk": "Контактна лінія",
           "vi": "Dây điện Bên trên",
           "no": "Kontakt linje",
-          "eu": "Ukipenezko Linea"
+          "eu": "Ukipenezko Linea",
+          "id": "Kabel listrik aliran atas"
         }
       },
       {
@@ -99618,7 +101880,9 @@
       "no": "Høyhastighet",
       "id": "Ngebut",
       "fa": "تندرو",
-      "sk": "Vysokorýchlostný"
+      "sk": "Vysokorýchlostný",
+      "da": "Højhastighed",
+      "tr": "Yüksek Hız"
     },
     "iDtype": "check",
     "options": [
@@ -99690,7 +101954,10 @@
       "pl": "Słupek pikietażu kolejowego",
       "sv": "Position förhållande till kilometerstolpe",
       "uk": "Кілометрова позначка",
-      "vi": "Vị trí theo Cột mốc"
+      "vi": "Vị trí theo Cột mốc",
+      "no": "Milepælposisjon ",
+      "sk": "Pozícia mílnika",
+      "tr": "Kilometre Taşı Konumu"
     }
   },
   "railway/signal/direction": {
@@ -99719,7 +101986,9 @@
       "cs": "Dotčený směr",
       "fa": "جهت تحت تأثیر",
       "ko": "방향",
-      "nl": "Richting beïnvloed"
+      "nl": "Richting beïnvloed",
+      "no": "Retning Berørt ",
+      "sk": "Smer jazdy"
     },
     "options": [
       {
@@ -99873,7 +102142,8 @@
       "uk": "Споруда",
       "vi": "Cấu trúc",
       "sr": "Структура",
-      "eu": "Egitura"
+      "eu": "Egitura",
+      "sk": "Štruktúra"
     },
     "options": [
       {
@@ -99946,7 +102216,9 @@
       "nl": "Slot",
       "fa": "قفل کردن",
       "sk": "Zámok",
-      "sr": "Брава"
+      "sr": "Брава",
+      "hu": "Zsilip",
+      "tr": "Kilit"
     },
     "iDtype": "check",
     "options": [
@@ -99996,7 +102268,8 @@
       "tr": "Tür",
       "uk": "Тип",
       "vi": "Loại",
-      "eu": "Mota"
+      "eu": "Mota",
+      "id": "Tipe"
     },
     "iDtype": "combo"
   },
@@ -100036,7 +102309,8 @@
       "uk": "Кількість поверхів",
       "vi": "Số Lầu",
       "id": "Jumlah Lantai Bangunan",
-      "sk": "Podlažia budovy"
+      "sk": "Podlažia budovy",
+      "tr": "Bina Seviyeleri"
     }
   },
   "board_type": {
@@ -100997,7 +103271,12 @@
       "uk": "Розклад роботи на час COVID-19",
       "vi": "Giờ Mở cửa trong Đại dịch COVID-19",
       "ru": "Время работы во время пандемии COVID-19 ",
-      "nl": "COVID-19 pandemie openingsuren"
+      "nl": "COVID-19 pandemie openingsuren",
+      "da": "COVID-19 åbningstid",
+      "gl": "Horario coa pandemia COVID-19",
+      "no": "COVID-19 Pandemiske åpningstider",
+      "sk": "Otváracie hodiny počas pandémie COVID-19",
+      "tr": "COVİD-19 Pandemisi Saatleri"
     },
     "iDtype": "combo"
   },
@@ -101024,7 +103303,13 @@
       "fa": "انواع حوضه",
       "sr": "Врста басена",
       "sv": "Bassängtyper",
-      "nl": "Types opvangbekken"
+      "nl": "Types opvangbekken",
+      "el": "Τύποι Λεκάνης",
+      "fi": "Allastyypit",
+      "gl": "Tipos de fondos",
+      "hu": "Medencetípus",
+      "sk": "Druhy brodidiel",
+      "tr": "Havza Türleri"
     }
   },
   "capacity_parking": {
@@ -101058,7 +103343,10 @@
       "sr": "Укупно места",
       "sv": "Totalt antal platser",
       "ru": "Всего мест",
-      "nl": "Totale capaciteit"
+      "nl": "Totale capaciteit",
+      "et": "Kohti kokku",
+      "gl": "Espazos totais",
+      "tr": "Toplam Alanlar"
     }
   },
   "capacity/disabled_parking": {
@@ -101091,7 +103379,11 @@
       "vi": "Số Chỗ Đậu xe Dành cho Người Khuyết tật",
       "ru": "Доступно мест",
       "el": "Προσβάσιμοι Χώροι",
-      "nl": "Gehandicaptenparkeerplaatsen"
+      "nl": "Gehandicaptenparkeerplaatsen",
+      "et": "Invakohtade arv",
+      "gl": "Espazos dispoñibles",
+      "hu": "Használható hely",
+      "tr": "Erişilebilir Alanlar"
     }
   },
   "ele": {
@@ -101127,7 +103419,11 @@
       "sk": "Nadmorská výška",
       "sr": "Надморска висина",
       "sv": "Höjd",
-      "ru": "Высота над уровнем моря"
+      "ru": "Высота над уровнем моря",
+      "gl": "Elevación",
+      "hr": "Visina",
+      "id": "Ketinggian",
+      "tr": "Yükseklik"
     }
   },
   "ele_node": {
@@ -101164,7 +103460,11 @@
       "sk": "Nadmorská výška",
       "sr": "Надморска висина",
       "sv": "Höjd",
-      "ru": "Высота над уровнем моря"
+      "ru": "Высота над уровнем моря",
+      "gl": "Elevación",
+      "hr": "Visina",
+      "id": "Ketinggian",
+      "tr": "Yükseklik"
     }
   },
   "garden/type": {
@@ -101197,7 +103497,10 @@
       "sr": "Врста баште",
       "sv": "Trädgårdstyp",
       "ru": "Тип сада",
-      "nl": "Tuinsoort"
+      "nl": "Tuinsoort",
+      "gl": "Tipo de xardín",
+      "id": "Tipe Kebun",
+      "tr": "Bahçe Türü"
     },
     "iDtype": "combo"
   },
@@ -101229,7 +103532,12 @@
       "ko": "유형",
       "sk": "Typ",
       "sr": "Врста",
-      "sv": "Typ"
+      "sv": "Typ",
+      "ru": "Тип",
+      "id": "Tipe",
+      "nl": "Type",
+      "no": "Type",
+      "tr": "Tür"
     },
     "iDtype": "combo"
   },
@@ -101255,7 +103563,13 @@
       "ja": "模造通信塔",
       "sk": "Maskovanie",
       "sr": "Мимика",
-      "sv": "Efterliknar"
+      "sv": "Efterliknar",
+      "it": "Camuffato",
+      "fi": "Jäljittelee",
+      "gl": "Mímese",
+      "hu": "Álcázás",
+      "nl": "Nabootsend",
+      "tr": "Taklitler"
     },
     "iDtype": "combo"
   },
@@ -101280,7 +103594,13 @@
       "sk": "Typ",
       "sr": "Врста",
       "sv": "Typ",
-      "fr": "Type"
+      "fr": "Type",
+      "ru": "Тип",
+      "fi": "Tyyppi",
+      "gl": "Tipo",
+      "hu": "Típus",
+      "nl": "Type",
+      "tr": "Tip"
     },
     "iDtype": "combo"
   },
@@ -101318,7 +103638,8 @@
       "hu": "Kerület",
       "sk": "Obvod",
       "sr": "Кружница",
-      "ru": "Длина окружности"
+      "ru": "Длина окружности",
+      "tr": "Daire Çevresi"
     },
     "iDtype": "combo"
   },
@@ -101342,7 +103663,13 @@
       "eo": "Speco de kablo",
       "fa": "متوسط",
       "sk": "Médium",
-      "sr": "Средњи"
+      "sr": "Средњи",
+      "it": "Mezzo",
+      "el": "Μεσαίο",
+      "gl": "Medio",
+      "hu": "Vezetéktípus",
+      "nl": "Medium",
+      "tr": "Orta"
     },
     "iDtype": "combo"
   },
@@ -101896,7 +104223,9 @@
       "sv": "Form",
       "uk": "Вигляд",
       "vi": "Hình dạng",
-      "sk": "Tvar"
+      "sk": "Tvar",
+      "id": "Bentuk",
+      "tr": "Model"
     },
     "options": [
       {
@@ -101937,7 +104266,8 @@
           "tr": "Sütun",
           "uk": "Колонка/Надземний",
           "vi": "Cột",
-          "eu": "Zutabe/ Lur gaineko"
+          "eu": "Zutabe/ Lur gaineko",
+          "id": "Pilar besi/Diatas tanah"
         }
       },
       {
@@ -102050,7 +104380,10 @@
           "uk": "Проста труба",
           "vi": "Ống dẫn Đậy nắp",
           "fa": "لوله پوشیده با کلاهک",
-          "sk": "Zatkané potrubie"
+          "sk": "Zatkané potrubie",
+          "da": "Rørafslutning",
+          "id": "Pipa berkatup",
+          "tr": "Kapaklı Boru"
         }
       }
     ],
@@ -102088,7 +104421,8 @@
       "vi": "Đường kính (mm, inch, hoặc chữ)",
       "fa": "قطر (میلی‌متر ، اینچ ، یا حروف)",
       "sk": "Priemer (mm, in, alebo písmena)",
-      "sr": "Пречник (мм, инч или слова)"
+      "sr": "Пречник (мм, инч или слова)",
+      "tr": "Çap (mm, in, veya harfler)"
     },
     "iDtype": "combo"
   }

@@ -8,12 +8,12 @@ const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json')
 
-const idRepoPath = path.join(__dirname, '..', '..', 'iD')
+const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
 
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'));
 
-const deprecatedIDPath = path.join(idRepoPath, 'data', 'deprecated.json');
+const deprecatedIDPath = path.join(idRepoPath, 'deprecated.json');
 
 const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'));
 

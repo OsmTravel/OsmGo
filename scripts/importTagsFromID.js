@@ -8,9 +8,9 @@ const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json')
 
-const idRepoPath = path.join(__dirname, '..', '..', 'iD')
-const tagsIDPath = path.join(idRepoPath, 'data', 'presets', 'presets.json');
-const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
+const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
+const tagsIDPath = path.join(idRepoPath, 'presets.json');
+const presetsIDPath = path.join(idRepoPath, 'fields.json')
 
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags;
