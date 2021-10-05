@@ -21,12 +21,12 @@
     <ion-list>
       <ion-item>
         <ion-label> {{'OPENINGHOURS.START_TIME' | translate }} </ion-label>
-        <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="time.start"></ion-datetime>
+        <ion-datetime display-format="HH:mm" picker-format="HH:mm" minuteValues="0,5,10,15,20,25,30,35,40,45,50,55" [(ngModel)]="time.start"></ion-datetime>
       </ion-item>
 
       <ion-item>
         <ion-label>{{'OPENINGHOURS.END_TIME' | translate }}</ion-label>
-        <ion-datetime display-format="HH:mm" picker-format="HH:mm" [(ngModel)]="time.end"></ion-datetime>
+        <ion-datetime display-format="HH:mm" picker-format="HH:mm" minuteValues="0,5,10,15,20,25,30,35,40,45,50,55" [(ngModel)]="time.end"></ion-datetime>
       </ion-item>
     </ion-list>
     <ion-button color="danger" (click)="removeInteval(index)"> {{'OPENINGHOURS.DELETE_INTERVAL' | translate }}
