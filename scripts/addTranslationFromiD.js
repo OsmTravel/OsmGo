@@ -15,6 +15,7 @@ const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
 const idTranslationPath = path.join(idRepoPath, 'translations');
 
 let languages = [
+  "en",
   "fr",
   "de",
   "es",
@@ -126,7 +127,11 @@ for (let language of languages) {
     //   console.log(osmGoPreset);
       if (trFields[k]) {
         if (trFields[k].label) {
-          if (!osmGoPreset.lbl[language] || overwrite) {
+          // console.log(osmGoPreset);
+          if (!osmGoPreset.lbl || !osmGoPreset.lbl[language] || overwrite) {
+            if (!osmGoPreset.lbl){
+              osmGoPreset['lbl'] = {}
+            }
             osmGoPreset.lbl[language] = trFields[k].label;
           }
         }

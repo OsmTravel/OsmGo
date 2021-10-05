@@ -10,14 +10,16 @@ const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json
 
 const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
 const tagsIDPath = path.join(idRepoPath, 'presets.json');
+console.log('ohhh', tagsIDPath);
 const presetsIDPath = path.join(idRepoPath, 'fields.json')
 
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags;
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'));
 
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8')).presets;
-const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8')).fields;
+const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'));
+
+const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8'));
 
 const excludesPresets = ['name','address', 'gnis/feature_id', 'operator', 'building_area', 'brand', 'post', 'recycling_accepts', "level_semi"]
 // const osmgoPkeys = Object.keys(tagsOsmgo);
@@ -30,6 +32,7 @@ let idTagsFieldsListId = []; // list of id of fields to add...
 
 /* IMPORT TAGS */
 for (let iDid in tagsID){
+    // console.log(iDid);
     
     
     if( iDid.split('/').length === 1){ // primary key
@@ -59,7 +62,6 @@ for (let iDid in tagsID){
     if (tagiD.fields){
         for (let f of tagiD.fields) {
             if (presetsID[f] && presetsID[f].type === 'typeCombo') {
-
             }
             else if (/\{/.test(f)) {
                 const keyRef = f.replace('{', '').replace('}', '');
@@ -147,7 +149,6 @@ for (let iDid in tagsID){
 // console.log(presetsID);
 let types = [];
 for (let fiDId of idTagsFieldsListId) {
-    // console.log(fiDId);
     if (excludesPresets.includes(fiDId)){
         continue;
     }
@@ -157,7 +158,6 @@ for (let fiDId of idTagsFieldsListId) {
         continue;
     }
 
-    // console.log(currentIDPreset.type)
 
     if (currentIDPreset.label) {
         currentIDPreset.lbl = { 'en': currentIDPreset.label }
@@ -180,8 +180,6 @@ for (let fiDId of idTagsFieldsListId) {
         }
         delete currentIDPreset.strings;
         currentIDPreset['options'] = options;
-        // console.log(currentIDPreset);
-        // console.log(options)
     }
 
 
@@ -224,7 +222,6 @@ for (let fiDId of idTagsFieldsListId) {
         currentIDPreset['iDtype'] = currentIDPreset.type;
         currentIDPreset['type'] = 'select'
 
-        // console.log(currentIDPreset);
     }
 
     delete currentIDPreset.label
@@ -260,8 +257,6 @@ for (let fiDId of idTagsFieldsListId) {
             console.log(currentIDPreset);
         }
 
-
-        // console.log('Go :', currentOsmGoPreset, 'iD:', currentIDPreset)
         currentOsmGoPreset = { ...currentIDPreset, ...currentOsmGoPreset }
     } else {
         presetsOsmgo[fiDId] = currentIDPreset
