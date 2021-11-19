@@ -12,15 +12,15 @@
 
 <ion-content class="ion-padding">
   <ion-card (tap)="tap($event)" >
-    <ion-card-header> OSM Go !</ion-card-header>
+    <ion-card-header> OSM Go!</ion-card-header>
     <ion-card-content>
-      Version : {{ configService.getAppVersion().appVersionNumber}}
+      Version {{ configService.getAppVersion().appVersionNumber}}
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-content>
-      {{'ABOUT.DATA' | translate }} :  © OpenStreetMap contributors<br> 
+      {{'ABOUT.DATA' | translate }} © OpenStreetMap contributors<br> 
      <!-- Ortophoto : <a href="http://openstreetmap.fr/f/2016.05.20_OSM-FR_IGN_Ortho.pdf" target="_blank">IGN</a>  -->
     </ion-card-content>
   </ion-card>
@@ -28,7 +28,7 @@
   <ion-card>
     
     <ion-card-content> 
-      <a href="https://github.com/DoFabien/OsmGo" target="_blank">Github</a> 
+      <a href="https://github.com/DoFabien/OsmGo" target="_blank">GitHub</a> 
     </ion-card-content>
   </ion-card>
  
