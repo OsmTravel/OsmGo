@@ -19,8 +19,10 @@
         </ion-item>
         
         <ion-item>
-            <ion-input [(ngModel)]="password" type="password" [disabled]="loading"
+            <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" [disabled]="loading"
             [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate "></ion-input>
+
+            <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" class="ion-text-right" (click)="showPassword = !showPassword"></ion-icon>
         </ion-item>
 
        <div>

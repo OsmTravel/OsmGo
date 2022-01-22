@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, Platform } from '@ionic/angular';
+import {  NavController, Platform } from '@ionic/angular';
 import { OsmApiService } from '../../services/osmApi.service';
 import { ConfigService } from 'src/app/services/config.service';
 
@@ -14,6 +14,7 @@ export class LoginPage {
     password: string;
     errorLogin;
     loading = false;
+    showPassword = false;
     isAndroid = this.platform.platforms().includes('hybrid')
 
     constructor(public osmApi: OsmApiService, 
