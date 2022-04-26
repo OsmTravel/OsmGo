@@ -1,5 +1,5 @@
 
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
 
 import { NavController, AlertController, Platform } from '@ionic/angular';
 import { OsmApiService } from '../../services/osmApi.service';
@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { cloneDeep, clone } from 'lodash';
 import { addAttributesToFeature } from '../../../../scripts/osmToOsmgo/index.js'
 import { InitService } from 'src/app/services/init.service';
+import { take } from 'rxjs/operators';
 
 @Component({
     selector: 'page-push-data-to-osm',
@@ -19,7 +20,7 @@ import { InitService } from 'src/app/services/init.service';
     styleUrls: ['./pushDataToOsm.scss']
 })
 
-export class PushDataToOsmPage implements AfterViewInit {
+export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
 
     summary = { 'Total': 0, 'Create': 0, 'Update': 0, 'Delete': 0 };
     changesetId = '';
@@ -50,6 +51,9 @@ export class PushDataToOsmPage implements AfterViewInit {
             if (!this.initService.isLoaded){
                 console.log('ooo')
               this.initService.initLoadData$()
+              .pipe( 
+                take(1)
+                ) 
               .subscribe( e => {
                   this.basicPassword = this.configService.user_info.password; 
                   this.commentChangeset = this.configService.getChangeSetComment();
@@ -58,6 +62,10 @@ export class PushDataToOsmPage implements AfterViewInit {
             }
         
         this.basicPassword = this.configService.user_info.password;      
+    }
+
+    ngOnDestroy():void{
+        console.log('destroy')
     }
 
 
@@ -124,6 +132,9 @@ export class PushDataToOsmPage implements AfterViewInit {
         return new Promise((resolve, reject) => {
             if (featureChanged.properties.changeType === 'Create') {
                 this.osmApi.apiOsmCreateNode(featureChanged, CS, password)
+                    .pipe( 
+                        take(1)
+                    ) 
                     .subscribe(id => {
                         let newFeature = {};
                         newFeature['type'] = 'Feature';
@@ -162,6 +173,9 @@ export class PushDataToOsmPage implements AfterViewInit {
                 (featureChanged.properties.changeType === 'Update') {
 
                 this.osmApi.apiOsmUpdateOsmElement(featureChanged, CS, password)
+                    .pipe( 
+                        take(1)
+                    ) 
                     .subscribe(newVersion => {
                         let newFeature = {};
                         newFeature = featureChanged;
@@ -214,6 +228,9 @@ export class PushDataToOsmPage implements AfterViewInit {
                     emptyFeaturetags['properties']['tags']= {};
 
                     this.osmApi.apiOsmUpdateOsmElement(emptyFeaturetags, CS, password)
+                    .pipe( 
+                        take(1)
+                    ) 
                     .subscribe(newVersion => {
                         this.summary.Total--;
                         this.summary.Delete--;
@@ -225,6 +242,9 @@ export class PushDataToOsmPage implements AfterViewInit {
 
                 }else {
                     this.osmApi.apiOsmDeleteOsmElement(featureChanged, CS, password)
+                    .pipe( 
+                        take(1)
+                    ) 
                     .subscribe(id => {
                         this.summary.Total--;
                         this.summary.Delete--;
@@ -265,7 +285,6 @@ export class PushDataToOsmPage implements AfterViewInit {
             }, {
               text: 'Ok',
               handler: (e) => {
-                console.log(e.password);
                 this.basicPassword = e.password;
                 this.pushDataToOsm(this.commentChangeset, this.basicPassword );
               }
@@ -328,7 +347,9 @@ export class PushDataToOsmPage implements AfterViewInit {
 
      
         this.osmApi.getValidChangset(commentChangeset, password)
-            .pipe()
+            .pipe(
+                take(1)
+            )
             .subscribe(async CS => {
                 const cloneGeojsonChanged = this.dataService.getGeojsonChanged()
                 this.changesetId = CS;
@@ -358,7 +379,7 @@ export class PushDataToOsmPage implements AfterViewInit {
         await this.dataService.resetGeojsonChanged();
         this.summary = this.getSummary();
         this.featuresChanges = this.dataService.getGeojsonChanged().features;
-        timer(100).subscribe(t => {
+        timer(100).pipe(take(1)).subscribe(t => {
             this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
             this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
             this.navCtrl.pop();
