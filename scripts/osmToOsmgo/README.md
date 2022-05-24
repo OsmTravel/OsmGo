@@ -17,9 +17,12 @@ It can filter output data with the osmGo tagconfig and get the "primary key" & g
 
 It can merge the new data with the old geojson data (and bbox)
 
-
 ## Build with rollup
 ```sh
+npm i
 npm run build
 ```
 Create index.min.js in this folder (cjs) and src/assets/osmToOsmgo.min.js (iife)
+
+## Notes
+Files in folder "fixture" are only used for tests, so no need to update them.
