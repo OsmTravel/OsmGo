@@ -74,7 +74,16 @@ const getStatsByKey = async (key, language )=> {
         json: true // Automatically parses the JSON string in the response
     };
 
-    const res = await rp(options);
+    console.log("Call: " + options.uri);
+    let res;
+    try {
+        res = await rp(options);
+    } catch(e) {
+        console.error(e);
+        console.log("Retry call: " + options.uri);
+        res = await rp(options);
+    }
+    console.log("Called");
 
     const nbTotal = res.data.reduce( (acc, cur) => acc + cur.count, 0);
     const result =  
