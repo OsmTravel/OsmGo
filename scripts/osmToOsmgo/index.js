@@ -46,12 +46,18 @@ const wayToPoint = (feature) => { // /!\ mutable !
     }
 }
 
-//https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features
+/**
+ * Check if the given tags describe a way that should be a polygon given OSM wiki definition:
+ * https://wiki.openstreetmap.org/wiki/Overpass_turbo/Polygon_Features
+ * @param {*} tags 
+ * @returns true if the tags describe a way that is 'always' a polygon
+ */
 const wayIsRealyPolygon = (tags) => {
     if (tags['area'] === 'no') return false;
-    // FROM : https://github.com/tyrasd/osm-polygon-features/blob/master/polygon-features.json
     const keys = Object.keys(tags);
     // is always polygon
+    // TODO TEST if (keys.includes('area:highway') && tags['area:highway'] !== "no") return true;
+    // FROM : https://github.com/tyrasd/osm-polygon-features/blob/master/polygon-features.json
     if (keys.includes('building') && tags['building'] !== "no") return true;
     if (keys.includes('landuse') && tags['landuse'] !== "no") return true;
     if (keys.includes('amenity') && tags['amenity'] !== "no") return true;
