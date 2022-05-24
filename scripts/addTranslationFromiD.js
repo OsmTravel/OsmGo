@@ -89,8 +89,19 @@ for (let language of languages) {
   const tagsOsmgo = tagsOsmgoConfig.tags;
   const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, "utf8"));
 
+  if (!idTr.presets) {
+    console.log("Remove language (no presets): " + language);
+    continue;
+  }
+
   const trFields = idTr.presets.fields;
   const trPresets = idTr.presets.presets;
+
+  if (!trFields || !trPresets) {
+    console.log("Remove language (no fields or presets) " + language);
+    continue;
+  }
+
   // console.log(trPresets);
 
   // TAGS
