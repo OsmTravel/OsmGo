@@ -14,7 +14,9 @@
       <div class="contentEdit2cols">
          
           <div *ngIf="!displayCode">
-                  <ion-select  [interface]="'popover'" [value]="tag.value" (ionChange)="selectChange($event);"
+                  <!-- Fix: in new ionic version, popover have overflow:hidden. It prevents the popover to show all the options -->
+                  <!-- So I changed the interface to action-sheet who can display all options with scrolling -->
+                  <ion-select [interface]="'action-sheet'" [value]="tag.value" (ionChange)="selectChange($event);"
                   style="width: 100%; min-width: 100%;padding-left:0;"
               >
               <ion-select-option   [value]="''" >
