@@ -1,3 +1,14 @@
+# 1.6.0
+## 🔧 Technicals
+- Upgrade Angular from 10 to 12
+- Upgrade Capacitorjs from 2.4 to 3.2
+- Add recommended capacitor plugins: app, haptics, keyboard & status-bar
+- Replace svg2img by svg-render
+- Android:
+  - Upgrade gradle plugin from 3.6.3 to 4.2.1
+  - Set compileSdkVersion & targetSdkVersion to 29 (Android 10)
+  - Migrate to androidx and jetifier
+
 # 1.5.0
 ## 🍏 Improvements
  - Upgrade dependencies : Mapbox GL JS 1.12.0, Angular 10, etc
