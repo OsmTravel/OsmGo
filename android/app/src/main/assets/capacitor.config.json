@@ -1,6 +1,5 @@
 {
 	"appId": "fr.dogeo.osmgo",
 	"appName": "Osm Go!",
-	"webDir": "www",
-	"bundledWebRuntime": false
+	"webDir": "www"
 }
