@@ -10,7 +10,6 @@ const presetsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json
 
 const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
 const tagsIDPath = path.join(idRepoPath, 'presets.json');
-console.log('ohhh', tagsIDPath);
 const presetsIDPath = path.join(idRepoPath, 'fields.json')
 
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
@@ -25,15 +24,38 @@ const excludesPresets = ['name','address', 'gnis/feature_id', 'operator', 'build
 // const osmgoPkeys = Object.keys(tagsOsmgo);
 
 const osmgoPkeys = tagConfig.primaryKeys;
-const markerColor = "{CHANGE_ME}";
+
+
+const getOsmGoMarkerColorFromTagRoot  = ( tagRoot) => {
+    let result = []; // =>  
+    for (const tag of tagsOsmgo){
+        const currentTagRoot = tag.id.split('/')[0]
+        if (currentTagRoot === tagRoot){
+            let resultColor = result.find( r => r.color === tag.markerColor)
+            if (resultColor){
+                resultColor.count = resultColor.count + 1
+            } else {
+                result = [...result, {color: tag.markerColor, count: 1}]
+            }
+        }
+    }
+    // take object with the max count
+    let maxCountColor;
+    for ( const r of result){
+        if (!maxCountColor || maxCountColor.count < r.count  ){
+            maxCountColor = r;
+        }
+    }
+    return maxCountColor.color || '{CHANGE_ME}'
+}
+
+getOsmGoMarkerColorFromTagRoot('natural')
 
 
 let idTagsFieldsListId = []; // list of id of fields to add...
 
 /* IMPORT TAGS */
 for (let iDid in tagsID){
-    // console.log(iDid);
-    
     
     if( iDid.split('/').length === 1){ // primary key
         continue;
@@ -48,7 +70,6 @@ for (let iDid in tagsID){
     if (tagiD['addTags'] && tagiD['addTags']['brand']){
         continue;
     }
-    // console.log(iDid);
     const tagIDKeys = Object.keys(tagiD.tags)
     
     if (_.intersection(tagIDKeys, osmgoPkeys).length == 0){
@@ -108,12 +129,11 @@ for (let iDid in tagsID){
         return _.isEqual(tagiD.tags, ogT.tags)
     });
 
-
     let newTag = {
         id: iDid,
         tags: tagiD.tags,
         icon: tagiD.icon || '',
-        markerColor: markerColor,
+        markerColor: "{CHANGE_ME}",
         presets: iDFields,
         moreFields: iDMoreFields,
         lbl: { en: tagiD.name },
@@ -135,8 +155,10 @@ for (let iDid in tagsID){
         }
     } else if (!tagOsmgoById && !currenOsmgoTag){ // new
         console.log('new', iDid)
+        const rootTag = iDid.split('/')[0]
+        newTag.markerColor = getOsmGoMarkerColorFromTagRoot(rootTag)
         tagsOsmgo.push(newTag)
-    } else { // exist
+    } else { // already exist
 
     }
 }
@@ -254,7 +276,7 @@ for (let fiDId of idTagsFieldsListId) {
         if (currentIDPreset && currentIDPreset.lbl && currentIDPreset.lbl.en) {
             currentOsmGoPreset.lbl.en = currentIDPreset.lbl.en
         } else {
-            console.log(currentIDPreset);
+            // console.log(currentIDPreset);
         }
 
         currentOsmGoPreset = { ...currentIDPreset, ...currentOsmGoPreset }

@@ -11,7 +11,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sprites": "node  ./scripts/sprites.js",
+    "sprites": "node ./scripts/importMissingSVGs.js && node ./scripts/formatSVG.js && node  ./scripts/sprites.js",
     "importFromID": "node ./scripts/importTagsFromID.js && node ./scripts/ordersTags.js && node ./scripts/importDeprecatdeTagsFromiD.js && node ./scripts/addTranslationFromiD.js ",
     "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android"
   },
@@ -88,6 +88,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "node-fetch": "^2.6.7",
     "parse-svg-path": "^0.1.2",
     "protractor": "~7.0.0",
     "request": "^2.88.2",
