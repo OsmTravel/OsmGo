@@ -6,6 +6,8 @@ var parse = require('parse-svg-path')
 var scale = require('scale-svg-path')
 var serialize = require('serialize-svg-path')
 
+console.info('Format SVGs')
+
 const iconsSVGsPath = path.join(__dirname, '..','resources', 'IconsSVG');
 const blackList = ['none.svg', 'Delete.svg', 'Create.svg', 'Update.svg', 'arrow-position.svg', 'Old.svg', 'Fixme.svg', 'maki-circle-custom.svg'];
 
@@ -14,7 +16,6 @@ const listOfSvgsName = fs.readdirSync(iconsSVGsPath)
     .filter(svgName => path.extname(svgName) == '.svg')
 
 for (let i = 0; i < listOfSvgsName.length; i++) {
-    const fileName = listOfSvgsName[i];
     const pathSvg = path.join(iconsSVGsPath, listOfSvgsName[i]);
     let svgStr = fs.readFileSync(pathSvg, 'utf8');
     let _$ = cheerio.load(svgStr)
