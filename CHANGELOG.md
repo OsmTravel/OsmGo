@@ -1,9 +1,29 @@
 # 1.6.0
+## 🍏 Improvements
+- Use standard copy/paste icons to store/restore tags on specific object
+- Update tags/presets translations from id-tagging-schema and taginfo
+- Add support for tag fire_hydrant:position and fire_hydrant:diameter
+- Speedup menu animations
+- For tag opening_hours set minute interval to 5 minutes
+- Rework English UI labels and texts
+- Rework UI label and texts in about screen
+- In log in page, you can now see your password while typing
+
+## 🐞 Bug fixes
+- Trying to fix "duplicates POI sent"
+
+## 📚 Documentation
+- Upgrade READMEs
+- Add comments in scripts code
+
 ## 🔧 Technicals
+- Upgrade scripts to target iD editor tag/preset that have been moved in repo id-tagging-schema
 - Upgrade Angular from 10 to 12
 - Upgrade Capacitorjs from 2.4 to 3.2
 - Add recommended capacitor plugins: app, haptics, keyboard & status-bar
+- Update POI SVG icons and sprites
 - Replace svg2img by svg-render
+- Upgrade script osmToOsmgo to make it cross environnement compatible
 - Android:
   - Upgrade gradle plugin from 3.6.3 to 4.2.1
   - Set compileSdkVersion & targetSdkVersion to 29 (Android 10)
