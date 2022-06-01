@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Osm Go!</string>
     <string name="title_activity_main">Osm Go!</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="fileprovider_authority">io.ionic.starter.fileprovider</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">fr.dogeo.osmgo</string>
+    <string name="fileprovider_authority">fr.dogeo.osmgo.fileprovider</string>
+    <string name="custom_url_scheme">fr.dogeo.osmgo</string>
 </resources>
