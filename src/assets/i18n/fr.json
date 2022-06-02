@@ -48,7 +48,6 @@
   "SEND_DATA": {
     "SEND_DATA": "Envoyer les données",
     "YOU_MUST_BE_LOGGED_IN": "Veuillez vous connecter pour envoyer vos modifications vers OSM.",
-    "NUMBER_OF_ITEMS_TO_SEND": "Nombre d'éléments restant :",
     "ADDED_ITEMS": "Création",
     "UPDATED_ITEMS": "Modification",
     "DELETED_ITEMS": "Suppression",
@@ -61,7 +60,9 @@
     "DELETE": "Supprimer",
     "DELETE_CONFIRM_HEADER": "Vraiment ?",
     "DELETE_CONFIRM_MESSAGE": "Supprimer toutes les modifications?",
-    "PASSWORD_OSM": "Mot de passe OSM"
+    "PASSWORD_OSM": "Mot de passe OSM",
+    "CANCEL_THIS_CHANGE" : "Annuler cette modification",
+    "UPLOADING_DATA_TO_OSM": "Envoi des modifications vers OpenStreetMap…"
   },
   "SETTINGS": {
     "SETTINGS": "Paramètres",

@@ -41,6 +41,7 @@
     "@turf/bbox-polygon": "^6.0.1",
     "@turf/turf": "^5.1.6",
     "angular-resize-event": "^3.0.2",
+    "fast-xml-parser": "^4.0.8",
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.20",
     "mapbox-gl": "^1.12.0",

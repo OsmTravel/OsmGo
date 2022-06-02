@@ -19,6 +19,9 @@ import bboxPolygon from '@turf/bbox-polygon'
 import { Platform } from '@ionic/angular';
 import { addAttributesToFeature } from '../../../scripts/osmToOsmgo/index.js'
 
+import {XMLParser} from 'fast-xml-parser'
+
+
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
     oauthParam = {
@@ -237,21 +240,186 @@ export class OsmApiService {
             .replace(/>/g, '&gt;')
     }
 
+    osmGoFeaturesToOsmDiffFile(features, idChangeset) : string{
+        const createChanges = [];
+        const modifyChanges = [];
+        const deleteChanges = [];
+
+        for (const feature of features){
+            console.log(feature.properties)
+            if (feature.properties.changeType == "Create"){
+                const xml = this.geojson2OsmCreate(feature, idChangeset)
+                createChanges.push(xml);
+            }
+            else if (feature.properties.changeType == "Update"){
+                const xml = this.geojson2OsmUpdate(feature, idChangeset)
+                modifyChanges.push(xml);
+            }
+            else if (feature.properties.changeType == "Delete"){
+                const xml = this.geojson2OsmUpdate(feature, idChangeset)
+                deleteChanges.push(xml);
+            }
+        }
+
+        const diffFile = 
+                `<osmChange version="0.6" generator="Osm Go !">
+                            <create> 
+                                ${createChanges.join('\n')}
+                            </create>
+
+                            <modify> 
+                                ${modifyChanges.join('\n')}
+                            </modify>
+
+                            <delete> 
+                                ${deleteChanges.join('\n')}
+                            </delete>
+
+                        </osmChange>
+                `
+
+               return diffFile
+    }
+
+    convertDiffFileResultPorperties( type: 'node' | 'way' |'relation', properties: any){
+        let typeChange: string;
+        if (!properties.new_version){
+            typeChange = 'Delete';
+        }
+        else if (parseInt(properties.new_version) === 1){
+            typeChange = 'Create';
+        } else if (parseInt(properties.new_version) > 1){
+            typeChange = 'Update';
+        }
+        let row = {type, typeChange, ...properties}
+        if (properties.old_id){
+            row = {...row, old_id: properties.old_id, osmgoOldId: `${type}/${properties.old_id}`  }
+        }
+        if (properties.new_id){
+            row = {...row, new_id: properties.new_id, osmgoNewId: `${type}/${properties.new_id}`  }
+        }
+        if (properties.new_version){
+            row = {...row, new_version: parseInt(properties.new_version)  }
+        }
+        return row
+    }
+
+    convertDiffFileResult(diffTextResult: string): any[]{
+        const options = {
+            ignoreAttributes: false,
+            attributeNamePrefix : "",
+            allowBooleanAttributes: true
+        };
+        const parser = new XMLParser(options);
+        let diffJson = parser.parse(diffTextResult).diffResult;
+        // console.log(diffJson);
+        const result = [];
+        if (diffJson.node){
+            if (!Array.isArray(diffJson.node)){
+                diffJson.node = [diffJson.node]
+            }
+            for (const properties of diffJson.node ){
+                const rowConverted = this.convertDiffFileResultPorperties('node', properties)
+                result.push(rowConverted)
+            }
+        }
+
+        if (diffJson.way){
+            console.log(diffJson.way);
+            if (!Array.isArray(diffJson.way)){
+                diffJson.way = [diffJson.way]
+            }
+            for (const properties of diffJson.way ){
+                const rowConverted = this.convertDiffFileResultPorperties('way', properties)
+                result.push(rowConverted)
+            }
+        }
+
+        if (diffJson.relation){
+            console.log(diffJson.relation);
+            if (!Array.isArray(diffJson.relation)){
+                diffJson.relation = [diffJson.relation]
+            }
+            for (const properties of diffJson.relation ){
+                const rowConverted = this.convertDiffFileResultPorperties('relation', properties)
+                result.push(rowConverted)
+            }
+        }
+        return result
+    }
+
+    apiOsmSendOsmDiffFile(diffFile, changesetId, password) {
+       
+        const PATH_API = `/api/0.6/changeset/${changesetId}/upload`
+        let _observable: Observable<string>;
+        if (this.configService.user_info.authType === 'oauth') {
+            _observable = Observable.create(
+                observer => {
+                    this.auth.xhr({
+                        method: 'POST',
+                        path: PATH_API,
+                        options: { header: { 'Content-Type': 'text/plain; charset=utf-8', 'accept': 'application/xml' } },
+                        content: diffFile
+
+                    }, (err, details) => {
+                        console.log(details);
+                        if (err) {
+                            console.error(err)
+                            console.log({ status: err.status || 500, error: err.responseText })
+                            observer.error({ status: err.status || 500, error: err.responseText });
+                        }
+                        else {
+                            try {
+                                const serializer = new XMLSerializer();
+                                const xmlStr = serializer.serializeToString(details);
+                                observer.next(xmlStr)
+                            } catch (error) {
+                                console.error('error', error)
+                            }
+                        }
+ 
+
+                    })
+                }
+            )
+        } else {
+            const url = this.getUrlApi() + `/api/0.6/changeset/${changesetId}/upload`;
+            let headers = new HttpHeaders();
+            headers = headers
+                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`)
+                .set('accept', 'application/xml')
+                .set('Content-Type', 'text/plain; charset=utf-8');
+
+                console.log(diffFile)
+            _observable = this.http.post(url, diffFile, { headers: headers, responseType: 'text' })
+        }
+
+        return _observable
+            .pipe( 
+                map( diffTextResult => {
+                    console.log(diffTextResult)
+                    return this.convertDiffFileResult(diffTextResult)
+                })
+            )
+    }
+
+
     // GEOJSON => XML osm
-    geojson2OsmCreate(geojson, id_changeset) {
-        const tags_json = geojson.properties.tags;
-        const lng = geojson.geometry.coordinates[0];
-        const lat = geojson.geometry.coordinates[1];
-        const node_header = `<node changeset="${id_changeset}" lat="${lat}" lon="${lng}">`;
+    geojson2OsmCreate(feature, id_changeset) {
+        console.log(feature.properties)
+        const tags_json = feature.properties.tags;
+        const lng = feature.geometry.coordinates[0];
+        const lat = feature.geometry.coordinates[1];
+        const id = feature.properties.id;
+        const node_header = `<node changeset="${id_changeset}" id="${id}" lat="${lat}" lon="${lng}">`;
         let tags_xml = '';
         for (const k in tags_json) {
             if (k !== '' && tags_json[k] !== '') { // TODO: miss 
-                tags_xml += `<tag 
-                k="${this.escapeXmlValue(k.trim())}"
-                v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`;
+                tags_xml += `
+                                    <tag k="${this.escapeXmlValue(k.trim())}" v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`;
             }
         }
-        const xml = `<osm> ${node_header}  ${tags_xml} </node></osm>`;
+        const xml = `${node_header}  ${tags_xml} </node>`;
         return (xml);
     }
 
@@ -279,10 +447,10 @@ export class OsmApiService {
 
                 }
             }
-            const xml = '<osm>' + node_header + tags_xml + '</node></osm>';
+            const xml = `${node_header} ${tags_xml}  </node>`;
             return (xml);
         } else if (type_objet === 'way') {
-            const way_header = '<way id="' + id + '" changeset="' + id_changeset + '" version="' + version + '">';
+            const way_header = `<way id="${id}" changeset="${id_changeset}" version="${version}">`;
             let tags_xml = '';
             for (const k in tags_json) {
                 if (k !== '' && tags_json[k] !== '') {
@@ -295,7 +463,7 @@ export class OsmApiService {
             for (let i = 0; i < _feature.ndRefs.length; i++) {
                 nd_ref_xml += `<nd ref="${_feature.ndRefs[i]}"/>`;
             }
-            const xml = `<osm> ${way_header}${nd_ref_xml}${tags_xml}</way></osm>`;
+            const xml = `${way_header}${nd_ref_xml}${tags_xml}</way>`;
             return xml;
         } else if (type_objet === 'relation') {
             const relation_header = `<relation id="${id}" changeset="${id_changeset}" version="${version}">`;
@@ -314,11 +482,11 @@ export class OsmApiService {
                     role="${_feature.relMembers[i].role}"
                     ref="${_feature.relMembers[i].ref}"/>`;
             }
-            const xml = `<osm>
+            const xml = `
                     ${relation_header}
                     ${tags_xml}
                     ${rel_ref_xml}
-                </relation></osm>`;
+                </relation>`;
             return xml;
         }
 
@@ -328,10 +496,10 @@ export class OsmApiService {
     /// CREATE NODE
     createOsmNode(_feature) {
         const feature = cloneDeep(_feature);
-        const d = new Date();
-        const tmpId = 'tmp_' + d.getTime();
-        feature.id = 'node/' + tmpId;
-        feature.properties.id = tmpId;
+        const id = this.dataService.getNextNewId()
+ 
+        feature.id = 'node/' + id;
+        feature.properties.id = id;
         feature.properties['meta'] = { timestamp: 0, version: 0, user: '' };
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
@@ -340,48 +508,6 @@ export class OsmApiService {
         // refresh changed only
         return of(_feature);
 
-    }
-
-    apiOsmCreateNode(_feature, changesetId, password) {
-        const feature = cloneDeep(_feature);
-        const content_put = this.geojson2OsmCreate(feature, changesetId);
-        const PATH_API = `/api/0.6/node/create`
-        let _observable;
-        if (this.configService.user_info.authType === 'oauth') {
-            _observable = Observable.create(
-                observer => {
-                    this.auth.xhr({
-                        method: 'PUT',
-                        path: PATH_API,
-                        options: { header: { 'Content-Type': 'text/xml' } },
-                        content: content_put
-
-                    }, (err, details) => {
-                        if (err) {
-                            observer.error({ response: err.response || '??', status: err.status || 0 });
-                        }
-                        observer.next(details)
-                    })
-                }
-            )
-        } else {
-
-            const url = this.getUrlApi() + '/api/0.6/node/create';
-            let headers = new HttpHeaders();
-            headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`);
-
-            _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
-        }
-
-        return _observable.pipe(
-            map(id => {
-                return id;
-            }),
-            catchError(error => {
-                return throwError(error);
-            })
-        );
     }
 
     // Update
@@ -400,55 +526,6 @@ export class OsmApiService {
         }
         return of(id);
     }
-
-    apiOsmUpdateOsmElement(_feature, changesetId, password) {
-        const feature = cloneDeep(_feature);
-        const id = feature.id;
-        const content_put = this.geojson2OsmUpdate(feature, changesetId);
-        const PATH_API = `/api/0.6/${id}`
-        let _observable;
-        if (this.configService.user_info.authType === 'oauth') {
-            _observable = Observable.create(
-                observer => {
-                    this.auth.xhr({
-                        method: 'PUT',
-                        path: PATH_API,
-                        options: { header: { 'Content-Type': 'text/xml' } },
-                        content: content_put
-
-                    }, (err, details) => {
-                        if (err) {
-                            observer.error({ response: err.response || '??', status: err.status || 0 });
-                        }
-                        observer.next(details)
-                    })
-                }
-            )
-
-        } else {
-
-            const url = this.getUrlApi() + PATH_API
-
-            let headers = new HttpHeaders();
-            headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`)
-                .set('Content-Type', 'text/xml');
-
-            _observable = this.http.put(url, content_put, { headers: headers, responseType: 'text' })
-        }
-
-        return _observable.pipe(
-            map(data => {
-                this.mapService.eventOsmElementUpdated.emit(feature);
-                return data;
-            }),
-            catchError(error => {
-                return throwError(error);
-            })
-        );
-    }
-
-
 
     // Delete
     deleteOsmElement(_feature) {
@@ -471,51 +548,6 @@ export class OsmApiService {
             this.dataService.deleteFeatureFromGeojson(feature);
         }
         return of(id);
-    }
-
-    apiOsmDeleteOsmElement(_feature, changesetId, password) {
-        const feature = cloneDeep(_feature);
-        const id = feature.id;
-        const content_delete = this.geojson2OsmUpdate(feature, changesetId);
-        const PATH_API = `/api/0.6/${id}`
-        let _observable;
-        if (this.configService.user_info.authType === 'oauth') {
-            _observable = Observable.create(
-                observer => {
-                    this.auth.xhr({
-                        method: 'DELETE',
-                        path: PATH_API,
-                        options: { header: { 'Content-Type': 'text/xml' } },
-                        content: content_delete
-
-                    }, (err, details) => {
-                        if (err) {
-                            observer.error({ response: err.response || '??', status: err.status || 0 });
-
-                        }
-                        observer.next(details)
-                    })
-                }
-            )
-        } else {
-            const url = this.getUrlApi() + PATH_API
-
-            let headers = new HttpHeaders();
-            headers = headers
-                .set('Authorization', `Basic ${btoa(this.configService.getUserInfo().user + ':' + password)}`);
-
-            _observable = this.http.request('delete', url, { headers: headers, body: content_delete })
-        }
-
-        return _observable.pipe(
-            map(data => {
-                this.mapService.eventOsmElementDeleted.emit(feature);
-                return data;
-            }),
-            catchError(error => {
-                return throwError(error);
-            })
-        );
     }
 
     /*

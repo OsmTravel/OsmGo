@@ -48,7 +48,6 @@
   "SEND_DATA": {
     "SEND_DATA": "Nahrát změny",
     "YOU_MUST_BE_LOGGED_IN": "Pro odeslání změn na OSM se prosím přihlašte.",
-    "NUMBER_OF_ITEMS_TO_SEND": "Počet položek:",
     "ADDED_ITEMS": "Vytvořené",
     "UPDATED_ITEMS": "Změněné",
     "DELETED_ITEMS": "Smazané",

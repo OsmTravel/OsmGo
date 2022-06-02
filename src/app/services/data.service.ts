@@ -163,6 +163,16 @@ export class DataService {
         return cloneDeep(this.geojsonChanged);
     }
 
+    getNextNewId(){
+        let minId = 0;
+        for( const feature of this.geojsonChanged.features){
+            if (feature.properties.id < minId ){
+                minId = feature.properties.id
+            }
+        }
+        return minId - 1
+    }
+
     async setGeojsonChanged(geojson) { 
         this.geojsonChanged = geojson;
        await this.localStorage.set('geojsonChanged', this.geojsonChanged);
@@ -189,7 +199,6 @@ export class DataService {
         this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
     deleteFeatureFromGeojsonChanged(feature) {
-
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features.splice(i, 1);

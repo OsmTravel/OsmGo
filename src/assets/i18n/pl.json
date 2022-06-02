@@ -48,7 +48,6 @@
   "SEND_DATA": {
     "SEND_DATA": "Wyślij dane",
     "YOU_MUST_BE_LOGGED_IN": "Proszę się zalogować by wysłać dane do OSM.",
-    "NUMBER_OF_ITEMS_TO_SEND": "Liczba elementów:",
     "ADDED_ITEMS": "Stworzono",
     "UPDATED_ITEMS": "Zaktualizowano",
     "DELETED_ITEMS": "Usunięto",
