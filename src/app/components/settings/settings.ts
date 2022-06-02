@@ -30,10 +30,11 @@ export class SettingsPage {
   }
 
   ngOnInit(): void {
-   
-      if (!this.initService.isLoaded){
-        this.initService.initLoadData$().subscribe()
-     }
+
+    if (!this.initService.isLoaded){
+      // We need to instantiate the map
+      this.navCtrl.back();
+    }
 
   }
 
@@ -42,8 +43,11 @@ export class SettingsPage {
   }
 
   mapMarginBufferChange(e) {
-
     this.configService.setMapMarginBuffer(e.detail.value);
+  }
+
+  limitFeaturesChange(e) {
+    this.configService.setLimitFeatures(e.detail.value);
   }
 
   lockMapHeadingChange(e) {
@@ -157,7 +161,7 @@ export class SettingsPage {
 
       const mainLocation = `${window.location.origin}#/main`
       window.location.replace(mainLocation);
-      window.location.reload(true);
+      window.location.reload();
   }
 
 
@@ -165,7 +169,7 @@ export class SettingsPage {
     await this.configService.setIsDevServer(isDev);
     const mainLocation = `${window.location.origin}#/main`
     window.location.replace(mainLocation);
-    window.location.reload(true);
+    window.location.reload();
   }
 
   async disableDevMode(e){

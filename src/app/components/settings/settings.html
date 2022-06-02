@@ -1,3 +1,4 @@
+
 <ion-header color="primary">
 	<ion-toolbar color="primary">
 		<ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary">
@@ -8,7 +9,7 @@
 </ion-header>
 
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" *ngIf="this.initService.isLoaded">
 	<h4> {{ 'SETTINGS.MAP' | translate}} </h4>
 
 	<ion-card>
@@ -172,6 +173,20 @@
 
 
 	<h4>{{ 'SETTINGS.DATA' | translate}}</h4>
+	<ion-card>
+		<ion-card-header>
+			{{ 'SETTINGS.LIMIT_FEATURES' | translate}} ({{this.configService.config.limitFeatures}})
+		</ion-card-header>
+		<ion-card-content>
+			<ion-range [value]="this.configService.config.limitFeatures" debounce="300" step="2000" snaps
+				(ionChange)="limitFeaturesChange($event)" min="0" max="60000">
+				<ion-label range-left>0</ion-label>
+				<ion-label range-right>60000</ion-label>
+			</ion-range>
+			<label class="hint">{{ 'SETTINGS.LIMIT_FEATURES_HINT' | translate}}</label>
+		</ion-card-content>
+	</ion-card>
+
 	<ion-card>
 		<ion-card-header>
 			{{ 'SETTINGS.MARGIN' | translate}} ({{this.configService.config.mapMarginBuffer}} m)

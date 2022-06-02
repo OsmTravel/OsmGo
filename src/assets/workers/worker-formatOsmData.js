@@ -7,6 +7,7 @@ function reponse(event) {
     let oldBboxFeature = event.data.oldBboxFeature
     let geojsonChanged = event.data.geojsonChanged
     let tagsConfig = event.data.tagsConfig;
+    let limitFeatures = event.data.limitFeatures;
 
     let primaryKeys = event.data.primaryKeys;
 
@@ -17,6 +18,7 @@ function reponse(event) {
         oldGeojson: oldGeojson, 
         geojsonChanged: geojsonChanged,
         oldBboxFeature: oldBboxFeature,
+        limitFeatures: limitFeatures
 
      }); 
      // return { geojson, geojsonBbox }

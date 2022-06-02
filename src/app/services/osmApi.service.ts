@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, throwError, of, from } from 'rxjs';
-import { map, catchError, switchMap, tap } from 'rxjs/operators';
+import { map, catchError, switchMap, tap, take } from 'rxjs/operators';
 
 import * as osmAuth from 'osm-auth';
 
@@ -560,7 +560,7 @@ export class OsmApiService {
         * utilisation du webworker
     */
     
-    formatOsmJsonData$(osmData, oldGeojson, geojsonChanged) {
+    formatOsmJsonData$(osmData, oldGeojson, geojsonChanged, limitFeatures: number = 10000) {
         const that = this;
         const oldBbox = this.dataService.getGeojsonBbox();
         const oldBboxFeature = cloneDeep(oldBbox.features[0]);
@@ -574,7 +574,8 @@ export class OsmApiService {
                     osmData: osmData,
                     oldGeojson: oldGeojson,
                     oldBboxFeature: oldBboxFeature,
-                    geojsonChanged: geojsonChanged
+                    geojsonChanged: geojsonChanged,
+                    limitFeatures: limitFeatures
                 });
 
                 workerFormatData.onmessage = (formatedData) => {
@@ -589,7 +590,7 @@ export class OsmApiService {
         );
     }
 
-    getDataFromBbox(bbox: any) {
+    getDataFromBbox(bbox: any, limitFeatures: number = 10000) {
         const featureBbox = bboxPolygon(bbox);
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
             featureBbox.geometry.coordinates[0][i][0] = featureBbox.geometry.coordinates[0][i][0];
@@ -604,14 +605,13 @@ export class OsmApiService {
     
         return this.http.get(url, {headers: headers, responseType: 'text' })
             .pipe(
-                switchMap(osmData =>  this.formatOsmJsonData$(osmData,  this.dataService.getGeojson(), this.dataService.getGeojsonChanged())),
-                map((newDataJson => {
-                    return newDataJson
-                }),
+                switchMap(osmData =>  this.formatOsmJsonData$(osmData,  this.dataService.getGeojson(), this.dataService.getGeojsonChanged(), limitFeatures)),
+                take(1),
                 catchError((error: any) => {
                     return throwError(error.error || 'Impossible de télécharger les données (api)');
                 }
-                ))
+
+                )
             );
 
     }

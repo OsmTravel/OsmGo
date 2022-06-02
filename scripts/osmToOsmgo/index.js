@@ -236,7 +236,6 @@ const getMergedGeojsonGeojsonChanged = (geojson, geojsonChanged) => {
 }
 
 const mergeOldNewGeojsonData = (oldGeojson, newGeojson, newFeatureBbox, geojsonChanged) => {
-    let geojson = null;
     let oldFeatures = oldGeojson.features
     let newFeatures = newGeojson.features
 
@@ -244,7 +243,6 @@ const mergeOldNewGeojsonData = (oldGeojson, newGeojson, newFeatureBbox, geojsonC
         return newGeojson;
     }
 
-    else {
         //  le cas où une feature a été supprimé entre temps, on doit la supprimer de nos données:
         let id_features_deleted = [];
         for (let i = 0; i < oldFeatures.length; i++) { // si la feature est dans la BBOX, on la push pour la supprimer
@@ -276,9 +274,8 @@ const mergeOldNewGeojsonData = (oldGeojson, newGeojson, newFeatureBbox, geojsonC
                 }
             }
         }
-        geojson = oldGeojson
-    }
-    return getMergedGeojsonGeojsonChanged(geojson, geojsonChanged);
+        
+    return getMergedGeojsonGeojsonChanged(oldGeojson, geojsonChanged);
 }
 
 const mergeBounds = (newBboxFeature, oldBboxFeature) => {
@@ -780,15 +777,25 @@ export const convert = (text, options) => {
 
 
     if (options && options.oldGeojson && options.geojsonChanged) {
+        const limit = Number.isInteger(options.limitFeatures) ? options.limitFeatures : 9999;
         const newFeatureBbox = bboxPolygon(bboxCoordinates);
+        
+        // le nombre de features de l'ancien set de données dépasse la limite. On lui envoie donc que les nouvelles données.
+        if (options.oldGeojson.features.length > limit){
+            const newGeojson = getMergedGeojsonGeojsonChanged(geojson, options.geojsonChanged)
+            const newBboxGeojson = mergeBounds(newFeatureBbox, null);
+            return { geojson: newGeojson, geojsonBbox: newBboxGeojson }
+        }
+        else {
+            const newGeojson = mergeOldNewGeojsonData(options.oldGeojson, geojson, newFeatureBbox, options.geojsonChanged)
+            const newBboxGeojson = mergeBounds(newFeatureBbox, options.oldBboxFeature);
+            return { geojson: newGeojson, geojsonBbox: newBboxGeojson }
+        }
 
-        const newGeojson = mergeOldNewGeojsonData(options.oldGeojson, geojson, newFeatureBbox, options.geojsonChanged)
-        const newBboxGeojson = mergeBounds(newFeatureBbox, options.oldBboxFeature);
-
-        return { geojson: newGeojson, geojsonBbox: newBboxGeojson }
+        
     } else {
         return { geojson: geojson, geojsonBbox: null }
     }
 
-
+    
 }

@@ -48,7 +48,8 @@ export interface Config {
     isSelectablePolygon: boolean,
     passwordSaved: boolean,
     lastView: { lng: number, lat: number, zoom: number, bearing: number },
-    centerWhenGpsIsReady : boolean
+    centerWhenGpsIsReady : boolean,
+    limitFeatures: number
 }
 
 @Injectable({ providedIn: 'root' })
@@ -99,7 +100,8 @@ export class ConfigService {
         isSelectablePolygon: false,
         passwordSaved : true,
         lastView: { lng: 0, lat: 0, zoom: 1, bearing: 0},
-        centerWhenGpsIsReady: true
+        centerWhenGpsIsReady: true,
+        limitFeatures : 10000
         
     };
 
@@ -268,6 +270,14 @@ export class ConfigService {
         return this.config.mapMarginBuffer;
     }
 
+    setLimitFeatures(limit: number) {
+        this.config.limitFeatures = limit;
+        this.localStorage.set('config', this.config);
+    }
+    getLimitFeatures() {
+        return this.config.limitFeatures;
+    }
+    
     setChangeSetComment(comment: string) {
         this.config.changeSetComment = comment;
         this.localStorage.set('config', this.config);

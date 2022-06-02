@@ -104,7 +104,9 @@
     "POLYGONS_SELECTABLE": "Make polygons selectable",
     "POLYGONS_SELECTABLE_HINT": "Ability to click on a polygon to open the element sheet.",
     "CENTER_WHEN_GPS_IS_READY": "On start, center the map on your location",
-    "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible."
+    "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible.",
+    "LIMIT_FEATURES" : "Maximum number of objects in memory",
+    "LIMIT_FEATURES_HINT": "After this limit, the old data will be deleted (the current modifications will be kept). Too high a limit can dramatically decrease performance"
   },
   "MODAL_SELECTED_ITEM": {
     "CUSTOM_KEY_VALUE": "Add a custom value",

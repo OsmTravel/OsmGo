@@ -110,7 +110,9 @@
     "POLYGONS_SELECTABLE": "Rendre les polygones séléctionnables",
     "POLYGONS_SELECTABLE_HINT": "Possibilité de cliquer sur un polygone pour ouvrir la fiche de l'élément",
     "CENTER_WHEN_GPS_IS_READY": "Au démarrage, centrer la carte sur votre position",
-    "CENTER_WHEN_GPS_IS_READY_HINT": "Centre la carte sur votre position dès que c'est possible"
+    "CENTER_WHEN_GPS_IS_READY_HINT": "Centre la carte sur votre position dès que c'est possible",
+    "LIMIT_FEATURES" : "Nombre max d'objets en mémoire",
+    "LIMIT_FEATURES_HINT": "Après cette limite, les anciennes données seront supprimées (Les modifications en cours seront conservées). Une limite trop haute peut dramatiquement diminuer les performances"
   },
   "MODAL_SELECTED_ITEM": {
     "CUSTOM_KEY_VALUE": "Ajouter une valeur qui n'existe pas",
