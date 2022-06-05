@@ -63,9 +63,7 @@ In the menu you have following options:
 4. Delete the data you've downloaded before.
 5. Close the app
 
-# Details
-
-## POI View
+# POI View
 
 A click of a marker opens the POI view. From here you can view or change tags, add new ones, etc.
 
@@ -82,7 +80,7 @@ The buttons there enable you
 3. to go into editing mode
 4. This let you add the "survey_data" tag to let other mappers know that this POI has been checked at `<timestamp>`
 
-## POI edit screen
+# POI edit screen
 
 <p align="center">
   <img src="./assets/fiche-update.png?raw=true"/>
@@ -93,12 +91,29 @@ The buttons there enable you
   <img src="./assets/select-primary-tag-velo.png?raw=true"/>
 </p>
 
-You can save attributes from an item and restore these attributes to an other item (with the same type)
+## Copy/Paste tags
+
+You can save attributes from an item and restore these attributes to an other item (with the same type):
+
+1. Add or edit a POI
+2. Add some tags
+3. Click on the "copy/save" icon on top of screen
+4. Add or edit a POI of the same type
+5. Click on the "paste/load" icon on top of screen
+6. All tags previouly copied will be applied to current POI
+
 <p align="center">
   <img src="./assets/save_&_restore.gif?raw=true"/>
 </p>
 
-You can add a key that does not exist in the database
+## Add a POI with 'not yet' supported type
+
+You can add a key that does not exist in the database:
+
+1. Add a POI
+2. In the search bar, type `whatyouwant`
+3. OsmGo! will propose you to create a POI amenity=whatyouwant, building=whatyouwant, etc.
+
 <p align="center">
   <img src="./assets/custom_key.gif?raw=true"/>
 </p>
