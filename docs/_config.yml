@@ -1,1 +1,8 @@
-theme: jekyll-theme-cayman
+title: Osm Go!
+description: Android and Progressive Web App for contributing to OpenStreetMap.
+remote_theme: just-the-docs/just-the-docs
+
+# Aux links for the upper right navigation
+aux_links:
+  "OsmGo! on GitHub":
+    - "//github.com/DoFabien/OsmGo"
