@@ -437,7 +437,7 @@ export class MapService {
           pitch: 0,
           maxZoom: 22,
           doubleClickZoom: false,
-          attributionControl: false,
+          attributionControl: true,
           dragRotate: true,
           trackResize: false,
           pitchWithRotate: false,

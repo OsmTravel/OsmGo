@@ -12,17 +12,17 @@
 
 	<div id="map" style="height: 100%; width: 100%" (resized)="onMapResized($event)">
 
-	
+		<!-- Top left button to open menu -->
 		<ion-fab style="left: 0px;top: 0px; margin:6px;" >
 				<ion-badge color="danger" *ngIf="newVersion"
 				style=" position: absolute;z-index: 1;left: 36px;"
 				>!</ion-badge>
 			<ion-fab-button tappable ion-fab fab-bottom (click)="openMenu()" >
-				
 				<ion-icon name="menu"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 
+		<!-- Top right button to upload changes on OSM -->
 		<ion-fab style="right:0 ;top: 0; margin:6px; margin-right:46px"
 			*ngIf="dataService.geojsonChanged && dataService.geojsonChanged.features.length > 0 && !mapService.markerMoving" >
 			<ion-fab-button (click)= "navCtrl.navigateForward('/pushData')">
@@ -30,68 +30,74 @@
 			</ion-fab-button>
 		</ion-fab>
 
-		<ion-fab *ngIf="!loadingData" style="left: 0; bottom: 0;  margin:6px;" >
+		<!-- Bottom left button to get data from OSM -->
+		<ion-fab *ngIf="!loadingData" style="left: 0; bottom: 34px;  margin:6px;" >
 			<ion-fab-button tappable  (click)="loadData()" arrow="true" event="press" [disabled]="configService.currentZoom < 14">
 				<ion-icon *ngIf="!loadingData" name="refresh"></ion-icon>
 				<ion-spinner *ngIf="loadingData" ></ion-spinner>
 			</ion-fab-button>
 		</ion-fab> 
-		<ion-fab *ngIf="loadingData" style="left: 0; bottom: 0;  margin:6px;" >
+		<!-- Bottom left button to get data from OSM with state loading -->
+		<ion-fab *ngIf="loadingData" style="left: 0; bottom: 34px;  margin:6px;" >
 			<ion-fab-button  disabled>
 				<ion-spinner ></ion-spinner>
 			</ion-fab-button>
 		</ion-fab> 
 
+		<!-- Bottom left button to toggle between base map and aerial imagery -->
 		<ion-fab 
-			style="left: 0; bottom: 0; margin:6px; margin-bottom:66px; " >
+			style="left: 0; bottom: 100px; margin:6px;" >
 			<ion-fab-button tappable ion-fab fab-bottom [color]="mapService.isDisplaySatelliteBaseMap ? 'light' : 'secondary'  "
 			 (click)="mapService.displaySatelliteBaseMap(configService.getBaseMapId(), !mapService.isDisplaySatelliteBaseMap)">
 				<ion-icon name="image"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 
+		<!-- Bottom right button to add a new marker -->
 		<ion-fab right bottom 
-		style="right: 0; bottom: 0; margin:6px; margin-bottom:66px;"
+		style="right: 0; bottom: 100px; margin:6px;"
 		*ngIf="!mapService.markerMoving && !mapService.markerMoveMoving" >
 			<ion-fab-button tappable ion-fab fab-bottom color="danger" 
 			(click)="mapService.positionateMarker()" [disabled]="mapService.loadingData">
 				<ion-icon name="add"></ion-icon>
-				
 			</ion-fab-button>
 		</ion-fab>
 
+		<!-- Bottom right button to use GPS location -->
 		<ion-fab right *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"
-			style="right: 0; bottom: 0; margin:6px;">
+			style="right: 0; bottom: 34px; margin:6px;">
 			<ion-fab-button tappable ion-fab fab-bottom 
 			(click)="mapService.centerOnMyPosition()" [disabled]="!locationService.gpsIsReady">
 				<ion-icon name="locate"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 
+		<!-- Bottom right button to accept creating new marker-->
 		<ion-fab right bottom *ngIf="mapService.markerMoving"
-		style="right: 0; bottom: 0; margin:6px;">
+		style="right: 0; bottom: 34px; margin:6px;">
 			<ion-fab-button tappable  fab-bottom color="secondary" (click)="mapService.openModalOsm()">
 				<ion-icon name="checkmark"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 
-		<ion-fab style="right: 60px; bottom: 0; margin:6px; " 
+		<!-- Bottom right button to cancel creating a new marker -->
+		<ion-fab style="right: 60px; bottom: 34px; margin:6px; " 
 			*ngIf="mapService.markerMoving">
 			<ion-fab-button tappable  fab-bottom color="danger" (click)="mapService.cancelNewMarker()">
 				<ion-icon name="close"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 
-
-		<ion-fab style="right: 60px; bottom: 0; margin:6px;"
+		<!-- Bottom right button to accept marker moving -->
+		<ion-fab style="right: 60px; bottom: 34px; margin:6px;"
 		 *ngIf="mapService.markerMoveMoving">
 			<ion-fab-button fab-bottom color="secondary" (click)="mapService.openModalWithNewPosition()">
 				<ion-icon name="checkmark"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
 
-
-		<ion-fab style="right: 0; bottom: 0; margin:6px;"
+		<!-- Bottom right button to cancel marker moving -->
+		<ion-fab style="right: 0; bottom: 34px; margin:6px;"
 		 *ngIf="mapService.markerMoveMoving">
 			<ion-fab-button ion-fab fab-bottom color="danger" (click)="mapService.cancelNewPosition()">
 				<ion-icon name="close"></ion-icon>
