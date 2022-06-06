@@ -775,10 +775,12 @@ export class MapService {
         return;
       }
 
-      if (!this.configService.platforms.includes('hybrid')) {
+      if (!this.configService.platforms.includes('hybrid') && window.navigator.vibrate) {
         window.navigator.vibrate(50);
       } else {
-        await Haptics.impact({ style: ImpactStyle.Heavy })
+        try {
+          await Haptics.impact({ style: ImpactStyle.Heavy })
+        } catch {}
       }
 
 

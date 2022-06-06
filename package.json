@@ -45,6 +45,7 @@
     "hammerjs": "^2.0.8",
     "lodash": "^4.17.20",
     "mapbox-gl": "^1.12.0",
+    "martinez-polygon-clipping": "^0.7.3",
     "moment": "^2.29.1",
     "ngx-moment": "^5.0.0",
     "osm-auth": "github:DoFabien/osm-auth#master",
