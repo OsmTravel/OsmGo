@@ -11,8 +11,8 @@ import { uniqBy, cloneDeep } from 'lodash';
 
 import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
-// declare var mapboxgl: any;
-import * as mapboxgl from 'mapbox-gl';
+
+import { LngLatLike, Map, Marker, NavigationControl, ScaleControl, StyleSpecification } from 'maplibre-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { AlertInput } from '@ionic/core';
@@ -51,7 +51,6 @@ export class MapService {
     this.domMarkerPosition.appendChild(this.arrowDirection);
     this.arrowDirection.style.transform = 'rotate(0deg)';
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA';
     this.locationService.eventLocationIsReady.subscribe(data => { 
       if (this.map && this.configService.config.centerWhenGpsIsReady) {
         this.map.setZoom(19);
@@ -125,7 +124,7 @@ export class MapService {
   eventMapMove = new EventEmitter();
   markerMoving = false; // le marker est en train d'être positionné
   markerPositionate;
-  markerMapboxUnknown = {};
+  markerMaplibreUnknown = {};
 
   filters = {
     fixme: null,
@@ -139,13 +138,13 @@ export class MapService {
   loadUnknownMarker(factor) {
     const roundedFactor = factor > 1 ? 2 : 1
     this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
-      this.markerMapboxUnknown['circle'] = image;
+      this.markerMaplibreUnknown['circle'] = image;
     })
     this.map.loadImage(`/assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`, (error, image) => {
-      this.markerMapboxUnknown['penta'] = image;
+      this.markerMaplibreUnknown['penta'] = image;
     })
     this.map.loadImage(`/assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`, (error, image) => {
-      this.markerMapboxUnknown['square'] = image;
+      this.markerMaplibreUnknown['square'] = image;
     })
   }
 
@@ -391,11 +390,11 @@ export class MapService {
     return cloneDeep(this.bboxPolygon);
   }
 
-  createDomMoveMarker(coord: number[], data) {
+  createDomMoveMarker(coord: LngLatLike, data) {
     const el = document.createElement('div');
     el.className = 'moveMarkerIcon';
-    const marker = new mapboxgl.Marker(el, { offset: [0, -15] }).setLngLat(coord);
-    marker.data = data;
+    const marker = new Marker(el, { offset: [0, -15] }).setLngLat(coord);
+    marker['data'] = data;
     return marker;
   }
 
@@ -407,14 +406,14 @@ export class MapService {
   getMapStyle() {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .pipe(
-        map(mapboxStyle => {
+        map(maplibreStyle => {
           let spritesFullPath = `mapStyle/sprites/sprites`;
           // http://localhost:8100/assets/mapStyle/sprites/sprites.json
           const basePath = window.location.origin // path.split('#')[0];
           spritesFullPath = `${basePath}/assets/${spritesFullPath}`;
 
-          mapboxStyle['sprite'] = spritesFullPath;
-          return mapboxStyle
+          maplibreStyle['sprite'] = spritesFullPath;
+          return maplibreStyle
         }
         )
       );
@@ -433,9 +432,9 @@ export class MapService {
       this.positionIsFollow = config.centerWhenGpsIsReady;
       this.headingIsLocked = config.centerWhenGpsIsReady;
       this.zone.runOutsideAngular(() => {
-        this.map = new mapboxgl.Map({
+        this.map = new Map({
           container: 'map',
-          style: mapStyle,
+          style: mapStyle as StyleSpecification,
           center: [config.lastView.lng, config.lastView.lat] ,
           zoom: config.lastView.zoom,
           bearing: config.lastView.bearing,
@@ -450,9 +449,9 @@ export class MapService {
         });
 
 
-        this.map.addControl(new mapboxgl.NavigationControl());
+        this.map.addControl(new NavigationControl(null));
 
-        const scale = new mapboxgl.ScaleControl({
+        const scale = new ScaleControl({
           maxWidth: 160,
           unit: 'metric'
         });
@@ -557,7 +556,7 @@ export class MapService {
 
   addDomMarkerPosition() {
     if (!this.markerLocation) {
-      this.markerLocation = new mapboxgl.Marker(this.domMarkerPosition,
+      this.markerLocation = new Marker(this.domMarkerPosition,
         { offset: [0, 0] })
         .setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
       this.markerLocation.addTo(this.map);
@@ -820,13 +819,13 @@ export class MapService {
       const iconId = e.id;
       const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
       if (/^circle/.test(iconId)) {
-        this.map.addImage(iconId, this.markerMapboxUnknown['circle'], { pixelRatio:pixelRatio });
+        this.map.addImage(iconId, this.markerMaplibreUnknown['circle'], { pixelRatio:pixelRatio });
       }
       if (/^penta/.test(iconId)) {
-        this.map.addImage(iconId, this.markerMapboxUnknown['penta'], { pixelRatio: pixelRatio });
+        this.map.addImage(iconId, this.markerMaplibreUnknown['penta'], { pixelRatio: pixelRatio });
       }
       if (/^square/.test(iconId)) {
-        this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: pixelRatio });
+        this.map.addImage(iconId, this.markerMaplibreUnknown['square'], { pixelRatio: pixelRatio });
       }
 
     })

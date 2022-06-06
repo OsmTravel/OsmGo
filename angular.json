@@ -33,7 +33,7 @@
               "src/.well-known/assetlinks.json",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss", "./node_modules/mapbox-gl/dist/mapbox-gl.css"],
+            "styles": ["src/theme/variables.scss", "src/global.scss", "./node_modules/maplibre-gl/dist/maplibre-gl.css"],
             "scripts": [],
             "aot": false,
             "vendorChunk": true,

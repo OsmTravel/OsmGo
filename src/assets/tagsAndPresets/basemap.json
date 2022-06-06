@@ -14,8 +14,12 @@
     "id": "mapbox-satellite",
     "label": "satellite Mapbox",
     "type": "raster",
-    "url": "mapbox://mapbox.satellite",
+    "tiles": [
+        "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.jpg?access_token=pk.eyJ1IjoiZG9mIiwiYSI6IlZvQ3VNbXcifQ.8_mV5dw1jVkC9luc6kjTsA"
+    ] ,
+    "maxzoom": 19,
     "tileSize": 256
+
   },
   {
     "id": "bing-maps",

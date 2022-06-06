@@ -11,7 +11,7 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 
-.mapboxgl-ctrl-logo{
+.maplibre-ctrl-logo{
     display: none !important;
 }
 .menu-content-overlay{
@@ -58,14 +58,14 @@ z-index: -2 !important;
 }
 
 // scale 
-.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
-    float: none !important;
-    margin: auto !important;
-    margin-left: auto ;
-    margin-right: auto;
-}
+// .maplibregl-ctrl-bottom-left .maplibregl-ctrl {
+//     float: none !important;
+//     margin: auto !important;
+//     margin-left: auto ;
+//     margin-right: auto;
+// }
 
-.mapboxgl-ctrl-bottom-left{
+.maplibregl-ctrl-bottom-left{
     width: 100%;
 }
 
@@ -81,7 +81,7 @@ z-index: -2 !important;
     // padding: 20% 10%  !important;
 }
 
-// Fix for Mapbox attribution "i" button
-.mapboxgl-ctrl-attrib {
+// Fix for Maplibre attribution "i" button
+.maplibregl-ctrl-attrib {
     box-sizing: unset;
 }
