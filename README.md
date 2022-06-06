@@ -59,6 +59,17 @@ Requirements:
 npm run buildAndroid`
 ```
 
+## Running WebApp on Linux
+You may have following error :
+
+`Watchpack Error (watcher): Error: ENOSPC: System limit for number of file watchers reached`
+
+If so, we are gonna increase the max number of watches from 16384 (default) to 524288:
+
+```sh
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
 ## Contributing
 If you want to contribute to Osm Go! and make it better, your help is welcome !
 
