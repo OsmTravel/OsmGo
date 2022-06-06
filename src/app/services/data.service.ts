@@ -185,20 +185,21 @@ export class DataService {
             return 0;
         }
     }
-    addFeatureToGeojsonChanged(feature) {
+    addFeatureToGeojsonChanged(feature):Promise<any> {
         this.geojsonChanged.features.push(feature);
-        this.localStorage.set('geojsonChanged', this.geojsonChanged);
+        return this.localStorage.set('geojsonChanged', this.geojsonChanged);
+  
     }
 
-    updateFeatureToGeojsonChanged(feature) {
+    updateFeatureToGeojsonChanged(feature):Promise<any> {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features[i] = feature;
             }
         }
-        this.localStorage.set('geojsonChanged', this.geojsonChanged);
+        return this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
-    deleteFeatureFromGeojsonChanged(feature) {
+    deleteFeatureFromGeojsonChanged(feature):Promise<any> {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features.splice(i, 1);
@@ -206,7 +207,8 @@ export class DataService {
             }
         }
 
-        this.localStorage.set('geojsonChanged', this.geojsonChanged);
+       return this.localStorage.set('geojsonChanged', this.geojsonChanged);
+        
     }
 
     getMergedGeojsonGeojsonChanged() {

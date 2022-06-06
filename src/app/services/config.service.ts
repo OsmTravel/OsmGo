@@ -3,7 +3,6 @@ import { Storage } from '@ionic/storage-angular';
 import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment.prod';
-import { StatesService } from './states.service';
 import { Platform } from '@ionic/angular';
 import { map } from 'rxjs/operators';
 import { from, Observable } from 'rxjs';
@@ -59,8 +58,7 @@ export class ConfigService {
     constructor(public localStorage: Storage,
         private platform: Platform,
         private http: HttpClient,
-        private translate: TranslateService,
-        public stateService: StatesService
+        private translate: TranslateService
     ) { }
     user_info: User = { uid: '', display_name: '', connected: false, user: null, password: null, authType: null};
     changeset: Changeset = { id: '', last_changeset_activity: 0, created_at: 0, comment: '' };

@@ -5,7 +5,6 @@ import { Platform } from '@ionic/angular';
 
 import { TranslateService } from '@ngx-translate/core';
 import { TagsService } from './services/tags.service';
-import { StatesService } from './services/states.service';
 import { Device } from '@capacitor/device';
 import { Storage } from '@ionic/storage-angular';
 
@@ -21,7 +20,6 @@ export class AppComponent {
     public configService: ConfigService,
     private translate: TranslateService,
     public tagService: TagsService,
-    public statesService: StatesService,
     private storage: Storage
 
   ) {

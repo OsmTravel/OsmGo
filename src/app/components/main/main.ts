@@ -19,7 +19,6 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 import { SwUpdate } from '@angular/service-worker';
-import { StatesService } from 'src/app/services/states.service';
 
 
 import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component';
@@ -37,7 +36,6 @@ export class MainPage implements AfterViewInit {
   modalIsOpen = false;
   menuIsOpen = false;
   newVersion = false;
-  loadingData = false
   loading = true;
 
   // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
@@ -60,7 +58,6 @@ export class MainPage implements AfterViewInit {
     private translate: TranslateService,
     public loadingController: LoadingController,
     private swUpdate: SwUpdate,
-    public statesService: StatesService,
     public initService: InitService
 
   ) {
@@ -199,29 +196,33 @@ export class MainPage implements AfterViewInit {
   }
 
   loadData() {
+    this.mapService.setIsProcessing(true)
     // L'utilisateur charge les données, on supprime donc le tooltip
     this._ngZone.run(() => {
       this.alertService.displayToolTipRefreshData = false;
-      this.loadingData = true;
     });
 
 
     const bbox: any = this.mapService.getBbox();
     this.osmApi.getDataFromBbox(bbox, this.configService.getLimitFeatures()) // configService
-      .subscribe(newDataJson => { // data = geojson a partir du serveur osm
+      .subscribe(
+        { next : newDataJson => { // data = geojson a partir du serveur osm
         this.dataService.setGeojsonBbox(newDataJson['geojsonBbox']);
         this.mapService.eventNewBboxPolygon.emit(newDataJson['geojsonBbox']);
         this.dataService.setGeojson(newDataJson['geojson']);
         this.mapService.eventMarkerReDraw.emit(newDataJson['geojson']);
-        this._ngZone.run(() => {
-          this.loadingData = false;
-        });
       },
-        err => {
-          this.loadingData = false;
+       error :  err => {
           console.log(err);
           this.presentToast(err.message);
-        });
+        },
+      
+      complete: () => {
+        this.mapService.setIsProcessing(false)
+      }
+      }
+        
+        );
   }
 
 

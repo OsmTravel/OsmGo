@@ -255,11 +255,12 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         
 
          if (this.configService.user_info.authType == 'basic' && !this.basicPassword){
-       
+            this.mapService.isProcessing.next(false)
             await this.presentAlertPassword(this.configService.user_info)
             return
 
         }
+        this.mapService.isProcessing.next(true)
         this.isPushing = true;
         this.uploadedOk = false
         try {
@@ -271,6 +272,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                     this.isPushing = false;
                 }
             this.isPushing = false;
+            this.mapService.isProcessing.next(false)
             return;
         }
         this.connectionError = undefined;
@@ -295,7 +297,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                         this.error = undefined;
                         this.summary = this.getSummary();
                         this.uploadedOk = true
-
+                        this.mapService.isProcessing.next(false)
                         timer(1000).pipe( take(1)).subscribe(() => {
                             // this.isPushing = false;
                             this.navCtrl.back();
@@ -307,6 +309,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                         const featureWithError =  {...this.featuresChanges.find(f => f.id == feature.id), error: err.error}
                         this.featuresChanges = [featureWithError, ...this.featuresChanges.filter(f => f.id !== feature.id)]
                         this.isPushing = false;
+                        this.mapService.isProcessing.next(false)
                     }
                 })
 
@@ -333,6 +336,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         timer(100).pipe(take(1)).subscribe(t => {
             this.mapService.eventMarkerReDraw.emit(this.dataService.getGeojson());
             this.mapService.eventMarkerChangedReDraw.emit(this.dataService.getGeojsonChanged());
+            this.mapService.isProcessing.next(false)
             this.navCtrl.pop();
         });
     }

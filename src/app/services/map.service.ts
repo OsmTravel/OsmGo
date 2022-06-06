@@ -21,13 +21,14 @@ import { Haptics, ImpactStyle } from '@capacitor/haptics';
 import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
 import { TagConfig } from 'src/type';
 import { Config } from 'protractor';
-import { of } from 'rxjs';
+import { BehaviorSubject, of, Subject } from 'rxjs';
 
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
   isFirstPosition = true;
   loadingData = false;
+  isProcessing: BehaviorSubject <boolean> = new BehaviorSubject <boolean>(false);
 
   constructor(
     private _ngZone: NgZone,
@@ -129,6 +130,10 @@ export class MapService {
   filters = {
     fixme: null,
 
+  }
+
+  setIsProcessing( isProcessing){
+    this.isProcessing.next(isProcessing);
   }
 
   loadUnknownMarker(factor) {
@@ -821,7 +826,6 @@ export class MapService {
       if (/^square/.test(iconId)) {
         this.map.addImage(iconId, this.markerMapboxUnknown['square'], { pixelRatio: pixelRatio });
       }
-      // console.log('missingIcon:', iconId)
 
     })
 

@@ -246,7 +246,6 @@ export class OsmApiService {
         const deleteChanges = [];
 
         for (const feature of features){
-            console.log(feature.properties)
             if (feature.properties.changeType == "Create"){
                 const xml = this.geojson2OsmCreate(feature, idChangeset)
                 createChanges.push(xml);
@@ -312,7 +311,6 @@ export class OsmApiService {
         };
         const parser = new XMLParser(options);
         let diffJson = parser.parse(diffTextResult).diffResult;
-        // console.log(diffJson);
         const result = [];
         if (diffJson.node){
             if (!Array.isArray(diffJson.node)){
@@ -325,7 +323,6 @@ export class OsmApiService {
         }
 
         if (diffJson.way){
-            console.log(diffJson.way);
             if (!Array.isArray(diffJson.way)){
                 diffJson.way = [diffJson.way]
             }
@@ -336,7 +333,6 @@ export class OsmApiService {
         }
 
         if (diffJson.relation){
-            console.log(diffJson.relation);
             if (!Array.isArray(diffJson.relation)){
                 diffJson.relation = [diffJson.relation]
             }
@@ -362,10 +358,8 @@ export class OsmApiService {
                         content: diffFile
 
                     }, (err, details) => {
-                        console.log(details);
                         if (err) {
                             console.error(err)
-                            console.log({ status: err.status || 500, error: err.responseText })
                             observer.error({ status: err.status || 500, error: err.responseText });
                         }
                         else {
@@ -390,14 +384,12 @@ export class OsmApiService {
                 .set('accept', 'application/xml')
                 .set('Content-Type', 'text/plain; charset=utf-8');
 
-                console.log(diffFile)
             _observable = this.http.post(url, diffFile, { headers: headers, responseType: 'text' })
         }
 
         return _observable
             .pipe( 
                 map( diffTextResult => {
-                    console.log(diffTextResult)
                     return this.convertDiffFileResult(diffTextResult)
                 })
             )
@@ -406,7 +398,6 @@ export class OsmApiService {
 
     // GEOJSON => XML osm
     geojson2OsmCreate(feature, id_changeset) {
-        console.log(feature.properties)
         const tags_json = feature.properties.tags;
         const lng = feature.geometry.coordinates[0];
         const lat = feature.geometry.coordinates[1];
@@ -504,34 +495,29 @@ export class OsmApiService {
         feature.properties.changeType = 'Create';
         feature.properties.originalData = null;
         addAttributesToFeature(feature)
-        this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
-        // refresh changed only
-        return of(_feature);
-
+        return from(this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature)))
     }
 
     // Update
     updateOsmElement(_feature, origineData) {
         const feature = cloneDeep(_feature);
         addAttributesToFeature(feature)
-        const id = feature.id;
         if (origineData === 'data_changed') {// il a déjà été modifié == if (feature.properties.changeType)
-            this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
+            return from(this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature)));
            
         } else { // jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update';
             feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id, 'data');
-            this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
             this.dataService.deleteFeatureFromGeojson(feature);
+            return from(this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature)));
         }
-        return of(id);
+        
     }
 
     // Delete
     deleteOsmElement(_feature) {
         const feature = cloneDeep(_feature);
         addAttributesToFeature(feature)
-        const id = feature.id;
 
         if (feature.properties.changeType) { // il a déjà été modifié
             if (feature.properties.changeType === 'Create') { // il n'est pas sur le serveur, on le supprime des 2 geojson
@@ -539,15 +525,15 @@ export class OsmApiService {
             } else if (feature.properties.changeType === 'Update') { // on reprend les données originales
                 this.dataService.updateFeatureToGeojson(feature.properties.originalData);
                 feature.properties.changeType = 'Delete';
-                this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
+                return from(this.dataService.updateFeatureToGeojsonChanged(this.mapService.getIconStyle(feature)));
             }
         } else { // jamais été modifié, n'exite donc pas dans this.geojsonChanged
             feature.properties.changeType = 'Delete';
             feature.properties.originalData = this.dataService.getFeatureById(feature.properties.id, 'data');
-            this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature));
             this.dataService.deleteFeatureFromGeojson(feature);
+            return from(this.dataService.addFeatureToGeojsonChanged(this.mapService.getIconStyle(feature)));
         }
-        return of(id);
+    
     }
 
     /*

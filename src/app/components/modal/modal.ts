@@ -64,7 +64,7 @@ export class ModalsContentPage implements OnInit {
     private alertCtrl: AlertController,
     private zone: NgZone,
     private translate: TranslateService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
 
   ) {
     this.newPosition = params.data.newPosition;
@@ -102,6 +102,8 @@ export class ModalsContentPage implements OnInit {
 
   ngOnInit() { // override
     this.initComponent();
+    // console.log(this.mapService.isProcessing.getValue())
+
     this.cdr.detectChanges();
 
     if (this.mode === 'Create') {
@@ -273,6 +275,9 @@ export class ModalsContentPage implements OnInit {
   }
 
   createOsmElement(tagconfig) {
+    
+    this.mapService.setIsProcessing(true);
+
     this.typeFiche = 'Loading';
     this.tagsService.addTagTolastTagsUsed(tagconfig.id);
 
@@ -281,19 +286,29 @@ export class ModalsContentPage implements OnInit {
     }
 
     this.pushTagsToFeature(); // on pousse les tags dans la feature
-    this.osmApi.createOsmNode(this.feature).subscribe(data => {
-      this.dismiss({ redraw: true });
-    });
+    this.osmApi.createOsmNode(this.feature)
+      .subscribe(
+        { next : data => {
+           
+          this.dismiss({ redraw: true });
+        }, 
+         complete : () => {
+            this.mapService.setIsProcessing(false)
+        }
+      
+      });
   }
 
 
 
   updateOsmElement(tagconfig) {
+    this.mapService.setIsProcessing(true)
     this.typeFiche = 'Loading';
 
     this.tagsService.addTagTolastTagsUsed(tagconfig ? tagconfig.id : null);
     // si les tags et la position n'ont pas changé, on ne fait rien!
     if (!this.dataIsChanged() && !this.newPosition) {
+      this.mapService.setIsProcessing(false)
       this.dismiss();
       return;
     }
@@ -304,18 +319,29 @@ export class ModalsContentPage implements OnInit {
 
     this.pushTagsToFeature(); // on pousse les tags dans la feature
 
-    this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(data => {
+    this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe(
+      { next : data => {
       this.dismiss({ redraw: true });
-    });
+    },
+    complete : () => {
+        this.mapService.setIsProcessing(false)
+    }
+  });
 
 
   }
 
   deleteOsmElement() {
+    this.mapService.setIsProcessing(true)
     this.typeFiche = 'Loading';
-    this.osmApi.deleteOsmElement(this.feature).subscribe(data => {
+    this.osmApi.deleteOsmElement(this.feature).subscribe(
+      {next : data => {
       this.dismiss({ redraw: true });
-    });
+    },
+      complete: () => {
+          this.mapService.setIsProcessing(false)
+      } 
+  } );
 
 
   }

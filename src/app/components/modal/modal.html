@@ -92,16 +92,15 @@
 				<ion-icon name="close"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button (click)="updateMode()" class="fabInlineMarginLess">
+			<ion-fab-button (click)="updateMode()" class="fabInlineMarginLess" [disabled]="mapService.isProcessing | async">
 				<ion-icon name="create"> </ion-icon>
 			</ion-fab-button>
-
-			<ion-fab-button  (click)="cancelChange()" color="danger" *ngIf="feature.properties['changeType']" class="fabInlineMarginLess">
+			<ion-fab-button  (click)="cancelChange()" color="danger" *ngIf="feature.properties['changeType']" [disabled]="mapService.isProcessing | async" class="fabInlineMarginLess">
 				<ion-icon name="close"> </ion-icon>
 				<ion-icon name="create"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button *ngIf="!feature.properties['changeType']" color="secondary" (click)="confirmAddSurveyDate()" class="fabInlineMarginLess fabSurveyDate">
+			<ion-fab-button *ngIf="!feature.properties['changeType']" [disabled]="mapService.isProcessing | async" color="secondary" (click)="confirmAddSurveyDate()" class="fabInlineMarginLess fabSurveyDate">
 				<ion-icon name="checkmark-circle-outline"></ion-icon>
 			</ion-fab-button>
 		</ion-footer>
@@ -238,30 +237,36 @@
 			<ion-fab-button tappable (click)="dismiss()" class="fabInlineMarginLess">
 				<ion-icon name="close"> </ion-icon>
 			</ion-fab-button>
-			<ion-fab-button tappable color="secondary"  *ngIf="mode =='Update'"
+
+			<ion-fab-button tappable color="secondary"  *ngIf="mode =='Update'" [disabled]="mapService.isProcessing | async"
 			 (click)="updateOsmElement(tagConfig)" class="fabInlineMarginLess" style="margin-right:15px;">
 				<ion-icon name="checkmark"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button  tappable color="secondary" *ngIf="mode =='Create'" 
+			<ion-fab-button  tappable color="secondary" *ngIf="mode =='Create'" [disabled]="mapService.isProcessing | async"
 			 (click)="createOsmElement(tagConfig)" class="fabInlineMarginLess">
 				<ion-icon name="checkmark"> </ion-icon>
 			</ion-fab-button>
 	
 
 			<ion-fab-button  tappable *ngIf="feature.properties.type === 'node'" 
-			[disabled]="feature.properties.usedByWays"
+			[disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
 			(click)="moveOsmElement()" class="fabInlineMarginLess">
 				<ion-icon name="move"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button tappable color="danger" *ngIf="feature.properties['changeType']" class="fabInlineMarginLess"
-			(click)="cancelChange()" >
+			<ion-fab-button tappable color="danger" 
+					*ngIf="feature.properties['changeType']" 
+					class="fabInlineMarginLess"
+					[disabled]="(mapService.isProcessing | async)"
+					(click)="cancelChange()" >
 				<ion-icon name="close"> </ion-icon>
 				<ion-icon name="create"> </ion-icon>
 			</ion-fab-button>
 
-			<ion-fab-button tappable ion-fab right color="danger" *ngIf="feature.properties.type == 'node' && mode=='Update'"
+			<ion-fab-button tappable ion-fab right color="danger" 
+					*ngIf="feature.properties.type == 'node' && mode=='Update'"
+					[disabled]="(mapService.isProcessing | async)"
 			 (click)="presentConfirm()" class="fabInlineMarginLess">
 				<ion-icon name="trash"> </ion-icon>
 			</ion-fab-button>
