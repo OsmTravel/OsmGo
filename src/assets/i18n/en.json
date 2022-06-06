@@ -63,7 +63,8 @@
     "DELETE_CONFIRM_MESSAGE": "Delete all changes?",
     "PASSWORD_OSM": "OSM password",
     "CANCEL_THIS_CHANGE" : "Cancel this change",
-    "UPLOADING_DATA_TO_OSM": "Uploading changes to OpenStreetMap..."
+    "UPLOADING_DATA_TO_OSM": "Uploading changes to OpenStreetMap...",
+    "DONT_CLOSE": "Please do not close this page"
   },
   "SETTINGS": {
     "SETTINGS": "Settings",

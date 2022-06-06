@@ -4,6 +4,7 @@
     <div style="margin: 1em;"> 
       <ion-icon class="uploadingIcon" name="globe"></ion-icon> 
     </div>
+    <div style="text-align: center;"> <h2> {{ 'SEND_DATA.DONT_CLOSE' | translate}}  </h2></div>
   </ng-container>
 
   <ng-container *ngIf="uploadedOk" >
@@ -69,9 +70,17 @@
   <ion-card-content>
     <span class="errorPush">{{error.status}} {{error.message}}</span>
 
-    <pre>
-      {{error.feature?.properties?.tags | json}}
-    </pre>
+    <div *ngIf="error.feature?.properties?.tags">
+      <table id="errorTable"  >
+        <ng-container *ngFor="let item of error.feature?.properties?.tags | keyvalue">
+        <tr *ngIf="item.value !== ''">
+            <td>{{item.key}}</td>
+            <td>{{item.value}}</td>
+        </tr>
+      </ng-container>
+      </table>
+    </div>
+
 
     <ion-button *ngIf="error.feature" (click)="cancelErrorFeature(error.feature)">{{ 'SEND_DATA.CANCEL_THIS_CHANGE' | translate}}</ion-button>
   </ion-card-content>

@@ -73,3 +73,21 @@
     align-items: center;
     justify-content: space-around
   }
+
+#errorTable{
+    border-collapse: collapse;
+    color: black;
+    font-weight: 600;
+    font-size: 0.8em;
+    background-color: lightgray;
+}
+
+#errorTable td, #errorTable th {
+    border: 1px solid #ddd;
+    padding: 3px;
+    text-align: left;
+  }
+
+#errorTable tr:nth-child(even){background-color: #f2f2f2;}
+
+
