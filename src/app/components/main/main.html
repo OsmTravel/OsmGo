@@ -30,15 +30,15 @@
 			</ion-fab-button>
 		</ion-fab>
 
-		<ion-fab *ngIf="!loadingData" style="left: 0; bottom: 34px;  margin:6px;" >
 		<!-- Bottom left button to get data from OSM -->
+		<ion-fab *ngIf="!(mapService.isProcessing | async)" style="left: 0; bottom: 34px;  margin:6px;" >
 			<ion-fab-button tappable  (click)="loadData()" arrow="true" event="press" [disabled]="configService.currentZoom < 14">
 				<ion-icon *ngIf="!(mapService.isProcessing | async)" name="refresh"></ion-icon>
 				<ion-spinner *ngIf="mapService.isProcessing | async" ></ion-spinner>
 			</ion-fab-button>
 		</ion-fab> 
-		<ion-fab *ngIf="mapService.isProcessing | async" style="left: 0; bottom: 34px;  margin:6px;" >
 		<!-- Bottom left button to get data from OSM with state loading -->
+		<ion-fab *ngIf="mapService.isProcessing | async" style="left: 0; bottom: 34px;  margin:6px;" >
 			<ion-fab-button  disabled>
 				<ion-spinner ></ion-spinner>
 			</ion-fab-button>
