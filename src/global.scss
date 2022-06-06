@@ -80,3 +80,8 @@ z-index: -2 !important;
     // display: block;  
     // padding: 20% 10%  !important;
 }
+
+// Fix for Mapbox attribution "i" button
+.mapboxgl-ctrl-attrib {
+    box-sizing: unset;
+}
