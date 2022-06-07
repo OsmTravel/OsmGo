@@ -1,4 +1,4 @@
-# Osm Go! 
+# Osm Go!
 
 ✅ ***Mapping less frustrating!***
 
@@ -16,7 +16,7 @@ Install the [PWA](https://osmgo.com) or just navigate to **https://osmgo.com**
 
 Or install it as a PWA by opening https://osmgo.com
 
-APK can be found in [the release list of this repository](https://github.com/DoFabien/OsmGo/releases) 
+APK can be found in [the release list of this repository](https://github.com/DoFabien/OsmGo/releases)
 
 ## iOS
 [<img style="vertical-align:middle; padding: 0px 13px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/60px-Safari_browser_logo.svg.png" alt="Install on iOS as a PWA" height="60">Install on iOS as a PWA</p>](https://osmgo.com)
@@ -48,7 +48,7 @@ npm run start
 
 ## Build for web (=> ./www)
 ```sh
-ng build --prod 
+npm run nuild
 ```
 
 ## Build for android (make apk)
@@ -56,7 +56,7 @@ Requirements:
 - [Android Studio](https://developer.android.com) with JDK and gradle
 
 ```sh
-npm run buildAndroid`
+npm run buildAndroid
 ```
 
 ## Running WebApp on Linux
@@ -70,6 +70,13 @@ If so, we are gonna increase the max number of watches from 16384 (default) to 5
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 ```
 
+## Building Android App on Linux
+Set the following envvar to your Android Studio installation:
+
+`export CAPACITOR_ANDROID_STUDIO_PATH=/opt/android-studio-2021.2.1/android-studio/bin/studio.sh`
+
+Then you can use the buildAndroid target with npm
+
 ## Contributing
 If you want to contribute to Osm Go! and make it better, your help is welcome !
 
@@ -79,8 +86,7 @@ If you want to contribute to Osm Go! and make it better, your help is welcome !
  4. Implement your feature and tests
  5. Push your branch on Github
  6. Open a pull request
- 
 
 ### Interface translation [Deprecated]
-You can help me translate the app into other languages. 
+You can help me translate the app into other languages.
 The easiest way is to go [through this app](https://admin.osmgo.com/), and click on "translate Ui".
