@@ -48,7 +48,7 @@ npm run start
 
 ## Build for web (=> ./www)
 ```sh
-npm run nuild
+npm run build
 ```
 
 ## Build for android (make apk)
