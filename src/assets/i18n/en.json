@@ -10,7 +10,7 @@
     "UNKNOWN": "Unknown",
     "UNDEFINED": "Undefined",
     "NAME": "Name",
-    "ID": "ID",
+    "ID": "Id",
     "CLOSE": "Close",
     "LOADING": "Loading…"
   },
@@ -34,7 +34,13 @@
     "NEW_VERSION": "New version available!",
     "TAG_MANAGEMENT": "Tag management"
   },
-  "ABOUT": {"ABOUT": "About", "SOURCES": "Sources", "DATA": "Data"},
+  "ABOUT": {
+    "ABOUT": "About",
+    "SOURCES": "Sources",
+    "DATA": "Data",
+    "VERSION": "Version",
+    "OSM_CONTRIBUTORS": "© OpenStreetMap contributors"
+  },
   "LOGIN": {
     "LOGIN": "Login",
     "USERNAME_PLACEHOLDER": "OpenStreetMap e-mail or username",
@@ -75,6 +81,11 @@
     "HIDE_LONG_LINE": "Hide lines longer than 200 m",
     "HIDE_LONG_LINE_HINT": "Lines longer than 200 m won't be displayed. A marker will always represent the line.",
     "TAGS": "Tags",
+    "DEFAULT_TAGS_LIST": "Default tags list",
+    "TAGS_LIST_ALL": "All tags",
+    "TAGS_LIST_BOOKMARKS": "Bookmarks",
+    "TAGS_LIST_TYPE": "By type",
+    "DEFAULT_TAGS_LIST_HINT": "Default tag type when opening the selection window",
     "DATA": "Data",
     "MARGIN": "Margin",
     "MARGIN_HINT": "Distance around the current view where the data will be downloaded.",
@@ -86,6 +97,8 @@
     "TAG_COUNTRY": "Country",
     "TAG_COUNTRY_HINT": "Tags and presets may vary by country.",
     "CACHE": "Cache management",
+    "GENERATE_ICON_CACHE": "Generate icon cache",
+    "DELETE_ICON_CACHE": "Delete icon cache",
     "DELETE_CACHE": "Delete entire app cache",
     "DELETE_CACHE_HINT": "Delete everything in the app cache (data, edits, login, etc.).",
     "DISPLAY_OLD_TAGS_ICON": "Show an icon on old objects",
@@ -145,7 +158,6 @@
     "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
     "RESET_HIDDEN_TAGS": "Reset"
   },
-
   "DAYS": {
     "MONDAY": "Monday",
     "TUESDAY": "Tuesday",
