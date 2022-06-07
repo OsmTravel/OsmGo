@@ -18,11 +18,9 @@ export class BasemapsService {
 
           const result = []
           const p = point([lng, lat]);
-          console.log(p);
           for (const feature of features){
             if (feature.geometry){
               if (booleanPointInPolygon(p, feature)){
-                // console.log(feature)
                 result.push(feature.properties)
               }
             } 

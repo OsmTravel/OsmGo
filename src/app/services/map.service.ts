@@ -732,9 +732,9 @@ export class MapService {
       'id': 'label', 'type': 'symbol', 'minzoom': 16.5, 'source': 'data',
       'layout': {
         'icon-image': 'none', 'icon-anchor': 'bottom',
-        'text-field': '{_name}', 'text-font': ['Roboto-Regular'], 'text-allow-overlap': false, 'text-size': 9, 'text-offset': [0, 1]
+        'text-field': '{_name}', 'text-font': ['Roboto-Regular'], 'text-allow-overlap': false, 'text-size': 11, 'text-offset': [0, 1]
       },
-      'paint': { 'text-color': '#888', 'text-halo-color': 'rgba(255,255,255,0.8)', 'text-halo-width': 1 },
+      'paint': { 'text-color': '#0a0a0a', 'text-halo-color': 'rgba(255,255,255,1)', 'text-halo-width': 2 },
       'filter': ['all']
     });
 
@@ -742,9 +742,9 @@ export class MapService {
       'id': 'label_changed', 'type': 'symbol', 'minzoom': 16.5, 'source': 'data_changed',
       'layout': {
         'icon-image': 'none', 'icon-anchor': 'bottom',
-        'text-field': '{_name}', 'text-font': ['Roboto-Regular'], 'text-allow-overlap': false, 'text-size': 9, 'text-offset': [0, 1]
+        'text-field': '{_name}', 'text-font': ['Roboto-Regular'], 'text-allow-overlap': false, 'text-size': 11, 'text-offset': [0, 1]
       },
-      'paint': { 'text-color': '#888', 'text-halo-color': 'rgba(255,255,255,0.8)', 'text-halo-width': 1 },
+      'paint': { 'text-color': '#0a0a0a', 'text-halo-color': 'rgba(255,255,255,1)', 'text-halo-width': 2 },
       'filter': ['all']
     });
 
