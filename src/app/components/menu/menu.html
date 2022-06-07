@@ -25,6 +25,9 @@
 					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
 				</ion-item>
 
+				<ion-item (click)="openBaseMapsPage()">
+					<ion-icon name="map"></ion-icon> {{ 'SETTINGS.AERIAL_IMAGERY' | translate}}
+				</ion-item>
 
 				<ion-item (click)="pushPage('/tags')">
 					<ion-icon name="settings"></ion-icon> {{'MENU.TAG_MANAGEMENT' | translate }} 

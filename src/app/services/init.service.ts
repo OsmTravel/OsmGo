@@ -34,7 +34,7 @@ export class InitService {
       this.tagsService.loadJsonSprites$(),
       this.tagsService.loadPresets$(),
       this.tagsService.loadTags$(),
-      this.tagsService.loadBaseMaps$(),
+     
       this.tagsService.loadBookMarksIds$(),
       this.tagsService.loadLastTagsUsedIds$(),
       this.tagsService.loadHiddenTagsIds$(),

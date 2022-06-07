@@ -80,17 +80,6 @@ export class SettingsPage {
     this.mapService.toogleMesureFilter(this.configService.getFilterWayByLength(), 'way_line', 0.2, this.mapService.map);
   }
 
-  baseMapChange(e) {
-    this.configService.setBaseSourceId(e.detail.value);
-    const currentState = this.mapService.isDisplaySatelliteBaseMap
-    this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, false);
- 
-    if (currentState){
-      this.mapService.displaySatelliteBaseMap(this.configService.config.baseMapSourceId, true);
-    }
-  }
-
-
 
   displayOldTagIconChange(e){
     

@@ -12,7 +12,7 @@ import { uniqBy, cloneDeep } from 'lodash';
 import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
 
-import { LngLatLike, Map, Marker, NavigationControl, ScaleControl, StyleSpecification } from 'maplibre-gl';
+import { AttributionControl, LngLatLike, Map, Marker, NavigationControl, ScaleControl, StyleSpecification } from 'maplibre-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
 import { AlertInput } from '@ionic/core';
@@ -117,6 +117,8 @@ export class MapService {
   eventMarkerChangedReDraw = new EventEmitter();
   eventShowDialogMultiFeatures = new EventEmitter();
   markersLayer = [];
+
+  attributionControl: AttributionControl;
 
 
   // CREATE NEW MARKER
@@ -278,21 +280,64 @@ export class MapService {
   }
 
 
-  displaySatelliteBaseMap(sourceName, isDisplay: boolean) {
-    if (!this.configService.baseMapSources.find(b => b.id === sourceName)) {
-      this.configService.setBaseSourceId(this.configService.baseMapSources[0].id)
-      sourceName = this.configService.baseMapSources[0].id;
+  displaySatelliteBaseMap(baseMap, isDisplay: boolean) {
+
+    const bmSource = {
+      'type': 'raster',
+      'tiles': baseMap.tiles,
+      'tileSize': 256,
+      'maxzoom' : baseMap.max_zoom
+  }
+
+  if (this.map.hasControl(this.attributionControl)){
+    this.map.removeControl(this.attributionControl);
+  }
+
+
+
+    
+    if (this.configService.config.basemap !== baseMap.id) {
+      if (this.map.getLayer('basemap')){
+        this.map.removeLayer('basemap')
+      }
+    
+      const mapSource = this.map.getSource('basemap')
+      if (mapSource){
+          this.map.removeSource('basemap')
+      }
+      this.map.addSource('basemap', bmSource);
+
+     }
+
+
+    const mapSource = this.map.getSource('basemap')
+    if (!mapSource){
+      this.map.addSource('basemap', bmSource);
     }
+
 
     if (isDisplay) {
       this.map.addLayer({
         'id': 'basemap',
         'type': 'raster',
-        'source': sourceName,
+        'source': 'basemap',
         'minzoom': 0
       }, 'bboxLayer');
+
+      this.attributionControl = new AttributionControl({
+        customAttribution: baseMap?.attribution?.text ? baseMap?.attribution?.text : ''
+        })
+    
+      this.map.addControl(this.attributionControl);
+
       this.isDisplaySatelliteBaseMap = true;
     } else {
+      this.attributionControl = new AttributionControl({
+        customAttribution: ''
+        })
+    
+      this.map.addControl(this.attributionControl);
+      
       if (this.map.getLayer('basemap')) {
         this.map.removeLayer('basemap');
       }
@@ -441,7 +486,7 @@ export class MapService {
           pitch: 0,
           maxZoom: 22,
           doubleClickZoom: false,
-          attributionControl: true,
+          attributionControl: false,
           dragRotate: true,
           trackResize: false,
           pitchWithRotate: false,
@@ -450,6 +495,12 @@ export class MapService {
 
 
         this.map.addControl(new NavigationControl(null));
+
+        this.attributionControl = new AttributionControl({
+          customAttribution: ''
+          })
+          
+        this.map.addControl(this.attributionControl);
 
         const scale = new ScaleControl({
           maxWidth: 160,
@@ -631,9 +682,7 @@ export class MapService {
     this.eventMarkerChangedReDraw.emit(this.dataService.geojsonChanged);
     this.eventMarkerReDraw.emit(this.dataService.geojson);
 
-    for (let bm of this.configService.baseMapSources) {
-      this.map.addSource(bm.id, bm);
-    }
+
 
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',

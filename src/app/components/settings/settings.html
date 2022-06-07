@@ -9,23 +9,8 @@
 </ion-header>
 
 
-<ion-content class="ion-padding" *ngIf="this.initService.isLoaded">
+<ion-content class="ion-padding">
 	<h4> {{ 'SETTINGS.MAP' | translate}} </h4>
-
-	<ion-card>
-		<ion-card-content>
-			<ion-item>
-				<ion-label>{{ 'SETTINGS.AERIAL_IMAGERY' | translate}}</ion-label>
-
-				<ion-select [value]="this.configService.config.baseMapSourceId" (ionChange)="baseMapChange($event)">
-					<ion-select-option *ngFor="let baseMap of this.configService.baseMapSources" [value]="baseMap.id">
-						{{baseMap.label}}
-					</ion-select-option>
-				</ion-select>
-			</ion-item>
-			<label class="hint">{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate}}</label>
-		</ion-card-content>
-	</ion-card>
 
 	<ion-card>
 		<ion-card-content>

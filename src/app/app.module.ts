@@ -85,6 +85,7 @@ import { LimitDisplayTagsPipe } from './pipes/limit-display-tags.pipe';
 import { from } from 'rxjs';
 import { MinutesToHoursMinutesPipe } from './pipes/minutes-to-hours-minutes.pipe';
 import { ModalAddOpeningHoursIntervalComponent } from './components/modal/components/opening-hours/modal-add-opening-hours-interval/modal-add-opening-hours-interval.component';
+import { BasemapsComponent } from './components/basemaps/basemaps.component';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -108,9 +109,9 @@ export function createTranslateLoader(http: HttpClient) {
     FilterDeprecatedTagPipe,
     FilterExcludeKeysPipe,
     DisplayTagsPipe, FilterByByGeometryTypePipe, IsBookmarkedPipe,
-    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe, LimitDisplayTagsPipe, MinutesToHoursMinutesPipe,
+    FilterBySearchablePipe, FiltersTagsByIdsPipe, SortArrayPipe, LimitDisplayTagsPipe, MinutesToHoursMinutesPipe, BasemapsComponent
   ],
-  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent],
+  entryComponents: [ModalsContentPage, ModalPrimaryTag, ModalSelectList, DialogMultiFeaturesComponent, HiddenTagsComponent, ActiveTagsComponent, BookmarkedTagsComponent, BasemapsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -13,6 +13,7 @@
     "e2e": "ng e2e",
     "sprites": "node ./scripts/importMissingSVGs.js && node ./scripts/formatSVG.js && node  ./scripts/sprites.js",
     "importFromID": "node ./scripts/importTagsFromID.js && node ./scripts/ordersTags.js && node ./scripts/importDeprecatdeTagsFromiD.js && node ./scripts/addTranslationFromiD.js ",
+    "importBaseMaps": "node ./scripts/importBasemaps.js",
     "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android"
   },
   "dependencies": {

@@ -361,15 +361,15 @@ export class TagsService {
             )
     }
 
-    loadBaseMaps$() {
-        return this.http.get(`assets/tagsAndPresets/basemap.json`)
-            .pipe(
-                map(baseMaps => {
-                    this.configService.baseMapSources = baseMaps;
-                    return baseMaps
-                })
-            )
-    }
+    // loadBaseMaps$() {
+    //     return this.http.get(`assets/tagsAndPresets/basemap.json`)
+    //         .pipe(
+    //             map(baseMaps => {
+    //                 this.configService.baseMapSources = baseMaps;
+    //                 return baseMaps
+    //             })
+    //         )
+    // }
 
     loadPresets$() {
         return this.http.get(`assets/tagsAndPresets/presets.json`)

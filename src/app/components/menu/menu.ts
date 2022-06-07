@@ -75,6 +75,15 @@ export class MenuPage {
         this.navCtrl.navigateForward(path);
     }
 
+    openBaseMapsPage(){
+        const centerOfMap = this.mapService.map.getCenter();
+        const lng = centerOfMap.lng;
+        const lat = centerOfMap.lat
+        console.log(centerOfMap)
+        this.pushPage(`/basemaps/${lng}/${lat}`)
+
+    }
+
 
     closeMenu() {
         this.closeEvent.emit()

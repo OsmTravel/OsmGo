@@ -30,7 +30,7 @@ export interface Config {
     lockMapHeading: boolean,
     followPosition: boolean,
     defaultPrimarykeyWindows: 'lastTags' | 'bookmarks',
-    baseMapSourceId: string,
+    basemap: any,
     filterWayByArea: boolean,
     filterWayByLength: boolean,
     changeSetComment: string,
@@ -72,7 +72,28 @@ export class ConfigService {
     currentZoom: number = undefined;
     selecableLayers:string[] = ['marker', 'marker_changed', 'icon-change'] 
 
-
+    defautBaseMap: any = {
+        "default": true,
+        "description": "Satellite and aerial imagery.",
+        "i18n": true,
+        "icon": "https://osmlab.github.io/editor-layer-index/sources/world/Bing.png",
+        "id": "Bing",
+        "license_url": "https://wiki.openstreetmap.org/wiki/Bing_Maps",
+        "max_zoom": 22,
+        "min_zoom": 1,
+        "name": "Bing Maps Aerial",
+        "no_tile_header": {"X-VE-Tile-Info": ["no-tile"]},
+        "permission_osm": "explicit",
+        "privacy_policy_url": "https://privacy.microsoft.com/privacystatement",
+        "type": "bing",
+        "url": "https://www.bing.com/maps",
+        "tiles": [
+                "https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+                "https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+                "https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
+                "https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z"
+            ]
+    }
 
 
 
@@ -81,7 +102,7 @@ export class ConfigService {
         lockMapHeading: true,
         followPosition: true,
         defaultPrimarykeyWindows: 'lastTags',
-        baseMapSourceId: this.baseMapSources ? this.baseMapSources[0].id : null,
+        basemap: this.defautBaseMap,
         filterWayByArea: true,
         filterWayByLength: true,
         changeSetComment: '',
@@ -310,13 +331,13 @@ export class ConfigService {
         return this.config.defaultPrimarykeyWindows;
     }
 
-    setBaseSourceId(baseMapSourceId: string) {
-        this.config.baseMapSourceId = baseMapSourceId;
+    setBasemap(basemap: any) {
+        this.config.basemap = basemap;
         this.localStorage.set('config', this.config);
     }
 
-    getBaseMapId() {
-        return this.config.baseMapSourceId;
+    getBasemap() {
+        return this.config.basemap;
     }
 
     /* Boolean, activé ou pas */

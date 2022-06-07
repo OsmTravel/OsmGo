@@ -48,7 +48,7 @@
 		<ion-fab 
 			style="left: 0; bottom: 100px; margin:6px;" >
 			<ion-fab-button tappable ion-fab fab-bottom [color]="mapService.isDisplaySatelliteBaseMap ? 'light' : 'secondary'  "
-			 (click)="mapService.displaySatelliteBaseMap(configService.getBaseMapId(), !mapService.isDisplaySatelliteBaseMap)">
+			 (click)="mapService.displaySatelliteBaseMap(configService.getBasemap(), !mapService.isDisplaySatelliteBaseMap)">
 				<ion-icon name="image"></ion-icon>
 			</ion-fab-button>
 		</ion-fab>
