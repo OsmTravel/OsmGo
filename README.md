@@ -28,7 +28,7 @@ A short user documentation can be found [here](https://dofabien.github.io/OsmGo/
 
 # Development
 Osm Go! is a _PWA_ application using Ionic 4 and Angular 8.
-It uses the map rendering engine Mapbox GL JS to display and run the in-app map.
+It uses the map rendering engine MapLibre GL JS to display and run the in-app map.
 
 Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
 
@@ -60,7 +60,7 @@ npm run buildAndroid
 ```
 
 ## Running WebApp on Linux
-You may have following error :
+You may have following error:
 
 `Watchpack Error (watcher): Error: ENOSPC: System limit for number of file watchers reached`
 
