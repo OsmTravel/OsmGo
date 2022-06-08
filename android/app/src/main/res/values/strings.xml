@@ -1,7 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Osm Go!</string>
-    <string name="title_activity_main">Osm Go!</string>
     <string name="package_name">fr.dogeo.osmgo</string>
     <string name="fileprovider_authority">fr.dogeo.osmgo.fileprovider</string>
     <string name="custom_url_scheme">fr.dogeo.osmgo</string>

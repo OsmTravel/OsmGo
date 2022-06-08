@@ -17,11 +17,37 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            applicationIdSuffix '.debug'
+            applicationIdSuffix ".debug"
+            debuggable true
+
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher_dev",
+                    appIconRound: "@mipmap/ic_launcher_dev_round"
+            ]
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "version"
+    productFlavors {
+        prod {
+            dimension "version"
+            resValue "string", "app_name", "Osm Go!"
+            resValue "string", "title_activity_main", "Osm Go!"
+            resValue "string", "app_icon", "@mipmap/ic_launcher"
+            resValue "string", "app_icon_round", "@mipmap/ic_launcher_round"
+        }
+        dev {
+            dimension "version"
+            resValue "string", "app_name", "Osm Go! Beta"
+            resValue "string", "title_activity_main", "Osm Go! Beta"
+            resValue "string", "app_icon", "@mipmap/ic_launcher_dev"
+            resValue "string", "app_icon_round", "@mipmap/ic_launcher_dev_round"
         }
     }
 }

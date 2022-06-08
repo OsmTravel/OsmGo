@@ -155,7 +155,7 @@ export class MainPage implements AfterViewInit {
   openMenu() {
     this.configService.freezeMapRenderer = true;
     this.menuIsOpen = true;
-    // history.pushState({menu:'open'}, 'menu')
+    history.pushState({msg:'openned side bar', menu:'open'}, 'menu')
   }
 
   closeMenu() {
@@ -326,32 +326,30 @@ export class MainPage implements AfterViewInit {
     });
 
 
-    // Initialize bahavios when pressing backButton on device
-
-    
+    // Initialize bahaviors when pressing backButton on device
     CapacitorApp.addListener('backButton', ({canGoBack}) => {
-      if(!canGoBack){
-        CapacitorApp.exitApp();
-      } else {
+      if(canGoBack) {
         window.history.back();
+      } else {
+        //TODO CapacitorApp.exitApp();
       }
     });
 
-    let noBackExitsApp = false;
-
     window.addEventListener('load', (e) => {
-      window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
+      window.history.pushState({ msg: 'a state for load' }, 'load')
     })
 
     window.addEventListener('popstate', (e) => {
+      // We push a new state to "replace" the one that have been pop
+      // It is uggly, but it prevent the app to exit
+      // We need to only add state when we are really opening modal or other screens
+      // TODO: add state only when popup or action are in progress
+      // TODO: add a popup "Are you sure to quit OsmGo!"
+      //window.history.pushState({ msg: 'here a new state' }, 'after popstate')
       if (this.menuIsOpen) {
-        window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
         this.closeMenu();
       } else if (this.modalIsOpen) {
-        window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
         this.modalCtrl.dismiss();
-      } else {
-        window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
       }
     })
 
