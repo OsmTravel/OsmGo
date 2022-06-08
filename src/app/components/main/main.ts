@@ -25,6 +25,8 @@ import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-mu
 
 import { InitService } from 'src/app/services/init.service';
 
+import { App as CapacitorApp } from '@capacitor/app';
+
 
 @Component({
   templateUrl: './main.html',
@@ -324,20 +326,32 @@ export class MainPage implements AfterViewInit {
     });
 
 
+    // Initialize bahavios when pressing backButton on device
+
+    
+    CapacitorApp.addListener('backButton', ({canGoBack}) => {
+      if(!canGoBack){
+        CapacitorApp.exitApp();
+      } else {
+        window.history.back();
+      }
+    });
+
+    let noBackExitsApp = false;
 
     window.addEventListener('load', (e) => {
-      window.history.pushState({ noBackExitsApp: true }, '')
+      window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
     })
 
     window.addEventListener('popstate', (e) => {
       if (this.menuIsOpen) {
-        window.history.pushState({ noBackExitsApp: true }, '')
+        window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
         this.closeMenu();
       } else if (this.modalIsOpen) {
-        window.history.pushState({ noBackExitsApp: true }, '')
+        window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
         this.modalCtrl.dismiss();
       } else {
-        window.history.pushState({ noBackExitsApp: true }, '')
+        window.history.pushState({ noBackExitsApp: noBackExitsApp }, '')
       }
     })
 
