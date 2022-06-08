@@ -15,8 +15,7 @@
     "importFromID": "node ./scripts/importTagsFromID.js && node ./scripts/ordersTags.js && node ./scripts/importDeprecatdeTagsFromiD.js && node ./scripts/addTranslationFromiD.js ",
     "importBaseMaps": "node ./scripts/importBasemaps.js",
     "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android",
-    "buildAndroidDebug": "ng build --configuration development && npx cap sync",
-    "runAndroidDebug": "ng build --configuration development && npx cap sync"
+    "buildAndroidDebug": "ng build --configuration development && npx cap sync"
   },
   "dependencies": {
     "@angular/animations": "~12.2.8",
