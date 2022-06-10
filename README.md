@@ -87,6 +87,5 @@ If you want to contribute to Osm Go! and make it better, your help is welcome !
  5. Push your branch on Github
  6. Open a pull request
 
-### Interface translation [Deprecated]
-You can help me translate the app into other languages.
-The easiest way is to go [through this app](https://admin.osmgo.com/), and click on "translate Ui".
+## Translation
+👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translating-the-app)
