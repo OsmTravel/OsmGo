@@ -251,6 +251,10 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         if (this.isPushing) {
             return;
         }
+
+        await this.dataService.replaceIdGenerateByOldVersion();
+       
+
         this.configService.setChangeSetComment(commentChangeset);
         
 
