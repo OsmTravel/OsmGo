@@ -178,6 +178,21 @@ export class DataService {
        await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
+    // replace id generate by version <= 1.5 (tmp_123) by -1, -2 etc...
+    async replaceIdGenerateByOldVersion() {
+        const geojsonChange = this.getGeojsonChanged()
+        for(const feature of geojsonChange.features ){
+            if (feature.properties.changeType == 'Create' && (!Number.isInteger(feature.properties.id) || feature.properties.id >= 0 )){
+                const nextId = this.getNextNewId()
+                feature.properties.id = nextId;
+                feature.id = `${feature.properties.type}/${nextId}`
+                console.info('FIXE :', feature.id, feature.properties.id);
+                await this.setGeojsonChanged(geojsonChange)
+
+            }
+        }
+    }
+
     getCountGeojsonChanged(): number {
         if (this.getGeojsonChanged().features) {
             return this.getGeojsonChanged().features.length;
