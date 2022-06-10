@@ -347,6 +347,14 @@
       "name": "Basque",
       "nativeName": "Euskara",
       "wikiUrl": "https://en.wikipedia.org/wiki/Basque_language"
+    },
+    {
+      "code": "ar",
+      "639-2": "ara",
+      "family": "Afro-Asiatic",
+      "name": "Arabic",
+      "nativeName": "اَلْعَرَبِيَّةُ",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Arabic_language"
     }
   ]
 }
