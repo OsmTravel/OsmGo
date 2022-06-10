@@ -60,6 +60,5 @@ If you want to contribute to Osm Go! and make it better, your help is welcome !
  6. From your fork open a pull request in the correct branch. 
  
 
-### Interface translation
-You can help me translate the app into other languages. 
-The easiest way is to go [through this app](https://admin.osmgo.com/), and click on "translate Ui".
+## Translation
+👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translating-the-app)
