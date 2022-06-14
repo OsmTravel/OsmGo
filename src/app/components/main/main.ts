@@ -335,7 +335,7 @@ export class MainPage implements AfterViewInit {
       } else {
         //TODO CapacitorApp.exitApp();
       }
-    });
+    });*/
 
     window.addEventListener('load', (e) => {
       window.history.pushState({ noBackExitsApp: true }, '')
