@@ -25,6 +25,8 @@ import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-mu
 
 import { InitService } from 'src/app/services/init.service';
 
+import { App as CapacitorApp } from '@capacitor/app';
+
 
 @Component({
   templateUrl: './main.html',
@@ -154,6 +156,7 @@ export class MainPage implements AfterViewInit {
     this.configService.freezeMapRenderer = true;
     this.menuIsOpen = true;
     // history.pushState({menu:'open'}, 'menu')
+    // TODO history.pushState({msg:'openned side bar', menu:'open'}, 'menu')
   }
 
   closeMenu() {
@@ -324,12 +327,28 @@ export class MainPage implements AfterViewInit {
     });
 
 
+    // Initialize bahaviors when pressing backButton on device
+    /*TODO
+    CapacitorApp.addListener('backButton', ({canGoBack}) => {
+      if(canGoBack) {
+        window.history.back();
+      } else {
+        //TODO CapacitorApp.exitApp();
+      }
+    });*/
 
     window.addEventListener('load', (e) => {
       window.history.pushState({ noBackExitsApp: true }, '')
+      //TODO window.history.pushState({ msg: 'a state for load' }, 'load')
     })
 
     window.addEventListener('popstate', (e) => {
+      // We push a new state to "replace" the one that have been pop
+      // It is uggly, but it prevent the app to exit
+      // We need to only add state when we are really opening modal or other screens
+      // TODO: add state only when popup or action are in progress
+      // TODO: add a popup "Are you sure to quit OsmGo!"
+      // window.history.pushState({ msg: 'here a new state' }, 'after popstate')
       if (this.menuIsOpen) {
         window.history.pushState({ noBackExitsApp: true }, '')
         this.closeMenu();

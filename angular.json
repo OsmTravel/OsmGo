@@ -69,6 +69,16 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
             "ci": {
               "progress": false
             }

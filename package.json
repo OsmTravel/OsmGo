@@ -7,14 +7,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
-    "build": "ng build --prod",
+    "build": "ng build --configuration production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sprites": "node ./scripts/importMissingSVGs.js && node ./scripts/formatSVG.js && node  ./scripts/sprites.js",
     "importFromID": "node ./scripts/importTagsFromID.js && node ./scripts/ordersTags.js && node ./scripts/importDeprecatdeTagsFromiD.js && node ./scripts/addTranslationFromiD.js ",
     "importBaseMaps": "node ./scripts/importBasemaps.js",
-    "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android"
+    "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android",
+    "buildAndroidDebug": "ng build --configuration development && npx cap sync"
   },
   "dependencies": {
     "@angular/animations": "~12.2.8",
