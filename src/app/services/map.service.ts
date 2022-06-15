@@ -357,8 +357,8 @@ export class MapService {
     }
 
     if (this.configService.config.followPosition) {
-      if (this.locationService.compassHeading.trueHeading) {
-        this.positionIsFollow = true;
+      this.positionIsFollow = true;
+      if (this.configService.config.lockMapHeading) {
         this.map.rotateTo(this.locationService.compassHeading.trueHeading);
         this.arrowDirection.setAttribute('style', 'transform: rotate(0deg');
       }
