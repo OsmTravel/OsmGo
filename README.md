@@ -9,83 +9,36 @@ Map your environment simply and fast, directly from the app. Keep your eyes wide
 # Use it
 
 ## Desktop
-Install the [PWA](https://osmgo.com) or just navigate to **https://osmgo.com**
+Navigate to **https://osmgo.com** or install the [PWA](https://osmgo.com).
 
 ## Android
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo)
+Get the app on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo), download [APK](https://github.com/DoFabien/OsmGo/releases/latest) on GitHub or [install it as a PWA](https://osmgo.com)
 
-Or install it as a PWA by opening https://osmgo.com
-
-APK can be found in [the release list of this repository](https://github.com/DoFabien/OsmGo/releases)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo) [<img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Download APK from GitHub" height="80">](https://github.com/DoFabien/OsmGo/releases)
 
 ## iOS
-[<img style="vertical-align:middle; padding: 0px 13px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/60px-Safari_browser_logo.svg.png" alt="Install on iOS as a PWA" height="60">Install on iOS as a PWA</p>](https://osmgo.com)
+Install on iOS as a [PWA](https://osmgo.com):
+
+[<img style="verical-align:middle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/60px-Safari_browser_logo.svg.png" alt="Install on iOS as a PWA" height="60">](https://osmgo.com)
 
 # User manual
-A short user documentation can be found [here](https://dofabien.github.io/OsmGo/).
+User documentation can be found [here](https://dofabien.github.io/OsmGo/).
+
+You can also have a look to:
+- the [release notes](https://github.com/DoFabien/OsmGo/releases)
+- the [changelog](CHANGELOG.md)
+
+
+# Screenshots
 
 <img width="170" src="./docs/assets/map-modif.png?raw=true"/> <img width="170" src="./docs/assets/map-ortho.png?raw=true"/> <img width="170" src="./docs/assets/select-primary-tag-velo.png?raw=true"/> <img width="170" src="./docs/assets/fiche.png?raw=true"/>
 
-# Development
-Osm Go! is a _PWA_ application using Ionic 4 and Angular 8.
-It uses the map rendering engine MapLibre GL JS to display and run the in-app map.
+# Contributing
+- 👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translate)
+- 🐞 [Report issues on GitHub](https://github.com/DoFabien/OsmGo/issues)
+- 🔧 [Contribute to the code (compile, debug, etc.)](CONTRIBUTING.md#development)
+- 📚 [Improve user documentation](https://github.com/DoFabien/OsmGo/tree/master/docs)
 
-Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
+# License
 
-## Install
-```sh
-npm install -g @ionic/cli
-git clone https://github.com/DoFabien/OsmGo.git
-cd OsmGo
-npm install
-```
-
-## Run
-Test it in a browser
-```sh
-npm run start
-```
-
-## Build for web (=> ./www)
-```sh
-npm run build
-```
-
-## Build for android (make apk)
-Requirements:
-- [Android Studio](https://developer.android.com) with JDK and gradle
-
-```sh
-npm run buildAndroid
-```
-
-## Running WebApp on Linux
-You may have following error:
-
-`Watchpack Error (watcher): Error: ENOSPC: System limit for number of file watchers reached`
-
-If so, we are gonna increase the max number of watches from 16384 (default) to 524288:
-
-```sh
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
-```
-
-## Building Android App on Linux
-Set the following envvar to your Android Studio installation:
-
-`export CAPACITOR_ANDROID_STUDIO_PATH=/opt/android-studio-2021.2.1/android-studio/bin/studio.sh`
-
-Then you can use the buildAndroid target with npm
-
-## Contributing
-If you want to contribute to Osm Go! and make it better, your help is welcome !
-
- 1. Fork this repo
- 2. Clone your fork on your local machine
- 3. Create a new branch from develop (feature) or master (hotfix)
- 4. Implement your feature and tests
- 5. Push your branch on Github
- 6. Open a pull request
-
-## Translation
-👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translating-the-app)
+This software is released under the terms of the [MIT License](https://tldrlegal.com/license/mit-license).
