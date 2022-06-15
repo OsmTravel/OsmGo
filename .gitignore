@@ -37,8 +37,5 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .sourcemaps
 
-package-lock\.json
-
 platforms/
 deploy.config
-
