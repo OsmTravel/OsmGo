@@ -3,11 +3,11 @@
 		<ion-header>
 			<ion-toolbar color="primary">
 				<ion-title>Osm Go!</ion-title>
-				<div class="menu-button" (click)="closeMenu()">
-					<ion-ripple-effect></ion-ripple-effect>
-					<ion-icon style="height: 56px;" name="arrow-back"></ion-icon>
-				</div>
-
+				<ion-buttons slot="end">
+					<ion-button (click)="closeMenu()">
+						<ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+					</ion-button>
+				</ion-buttons>
 			</ion-toolbar>
 		</ion-header>
 		<ion-content>
