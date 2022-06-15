@@ -4,14 +4,15 @@ import { map} from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 import { ConfigService } from './config.service';
-import { PresetOption, PrimaryTag, TagConfig } from "../../type";
+import { PrimaryTag, Tag, TagConfig } from "../../type";
+import { Feature } from 'geojson';
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
     lastTagsUsedIds: string[];
 
     bookmarksIds: string[] = [];
-    savedFields = {};
+    savedFields: Record<string, any> = {};
     tags:TagConfig[];
     userTags:TagConfig[];
     primaryKeys = [];
@@ -162,27 +163,27 @@ export class TagsService {
     }
 
     
-    getTagConfigFromTagsID( tagIds:string[]){
+    getTagConfigFromTagsID( tagIds: string[]): TagConfig[] {
         return this.tags.filter( tag => tagIds.includes(tag.id))
     }
 
 
-    setBookMarksIds(bookmarksIds: string[]) {
+    setBookMarksIds(bookmarksIds: string[]): void {
         this.localStorage.set('bookmarksIds', bookmarksIds);
         this.bookmarksIds = bookmarksIds;
     }
 
-    setLastTagsUsedIds(lastTagsUsedIds: string[]){
+    setLastTagsUsedIds(lastTagsUsedIds: string[]): void {
         this.localStorage.set('lastTagsUsedIds', lastTagsUsedIds);
         this.lastTagsUsedIds = lastTagsUsedIds;
     }
 
-    removeBookMark( tag: TagConfig ){
+    removeBookMark(tag: TagConfig): void{
         this.bookmarksIds = this.bookmarksIds.filter( b => b !== tag.id);
         this.setBookMarksIds(this.bookmarksIds)
     }
 
-    addBookMark(tag: TagConfig){
+    addBookMark(tag: TagConfig): TagConfig{
         if (this.bookmarksIds.includes(tag.id)){
             return;
         }
@@ -197,7 +198,7 @@ export class TagsService {
         return currentTag;
     }
 
-    loadBookMarksIds$() {
+    loadBookMarksIds$(): Observable<string[]> {
         return from(this.localStorage.get('bookmarksIds'))
             .pipe( 
                 map( bookmarksIds => {
@@ -209,7 +210,7 @@ export class TagsService {
     }
 
     // hidden tags
-    loadHiddenTagsIds$() {
+    loadHiddenTagsIds$(): Observable<string[]> {
         return from(this.localStorage.get('hiddenTagsIds'))
         .pipe(
             map( hiddenTagsIds => {
@@ -220,12 +221,12 @@ export class TagsService {
         )
     }
 
-    setHiddenTagsIds(hiddenTagsIds: string[]) {
+    setHiddenTagsIds(hiddenTagsIds: string[]): void {
         this.localStorage.set('hiddenTagsIds', hiddenTagsIds);
         this.hiddenTagsIds = hiddenTagsIds;
     }
 
-    removeHiddenTag(tag:TagConfig){
+    removeHiddenTag(tag:TagConfig): void {
         if(!tag.id){
           return;
         }
@@ -233,7 +234,7 @@ export class TagsService {
         this.setHiddenTagsIds(newHiddenTags)
       }
 
-    addHiddenTag(tag:TagConfig){ // => hide a tag
+    addHiddenTag(tag:TagConfig): void { // => hide a tag
         if(!tag.id){
           return;
         }
@@ -245,12 +246,12 @@ export class TagsService {
         }
       }
     
-    resetHiddenTags(){
+    resetHiddenTags(): void {
         const defaultHiddenTagsIds = [...this.defaultHiddenTagsIds];
         this.setHiddenTagsIds(defaultHiddenTagsIds) 
       }
 
-    loadLastTagsUsedIds$(){
+    loadLastTagsUsedIds$(): Observable<string[]> {
         return from(this.localStorage.get('lastTagsUsedIds'))
         .pipe(
             map( lastTagsUsedIds => {
@@ -262,7 +263,7 @@ export class TagsService {
     }
 
 
-    addTagTolastTagsUsed(tagId: string) {
+    addTagTolastTagsUsed(tagId: string): TagConfig {
         if (!tagId){
             return;
         }
@@ -280,7 +281,7 @@ export class TagsService {
         return currentTag;
     }
 
-    loadUserTags$(){
+    loadUserTags$(): Observable<string[]> {
         return from( this.localStorage.get('userTags'))
         .pipe(
             map( userTags => {
@@ -291,12 +292,12 @@ export class TagsService {
         )
     }
 
-    setUserTags(userTags: TagConfig[]) {
+    setUserTags(userTags: TagConfig[]): void {
         this.localStorage.set('userTags', userTags);
         this.userTags = userTags;
     }
 
-    addUserTags(newTag: TagConfig){
+    addUserTags(newTag: TagConfig): void {
         const newTagId = newTag.id;
         if (this.userTags.find( t => t.id === newTagId)){
             return;
@@ -310,7 +311,7 @@ export class TagsService {
     }
 
 
-    loadSavedFields$() {
+    loadSavedFields$(): Observable<Record<any, any>> {
         return from(this.localStorage.get('savedFields'))
             .pipe(
                 map(d => {
@@ -321,7 +322,7 @@ export class TagsService {
             )
     }
 
-    addSavedField(tagId, tags){
+    addSavedField(tagId: string, tags: any){
         if (!this.savedFields[tagId]){
             this.savedFields[tagId] = {};
         }
@@ -331,16 +332,16 @@ export class TagsService {
     }
 
 
-  findPkey( featureOrTags): PrimaryTag{
+  findPkey(featureOrTags: Feature | Tag[]): PrimaryTag | undefined {
     const pkeys = this.primaryKeys;
-    if (featureOrTags.properties && featureOrTags.properties.tags){
+    if (!(featureOrTags instanceof Array) && featureOrTags.properties && featureOrTags.properties.tags){
         for (let k in featureOrTags.properties.tags){
             if (pkeys.includes(k)){
                 return {key: k, value:featureOrTags.properties.tags[k] }
             }
             return undefined
         }
-    } else {
+    } else if (featureOrTags instanceof Array) {
         for (let t of featureOrTags){
             if (pkeys.includes(t.key)){
                 return {key: t.key, value:t.value }
@@ -371,7 +372,7 @@ export class TagsService {
     //         )
     // }
 
-    loadPresets$() {
+    loadPresets$(): Observable<any> {
         return this.http.get(`assets/tagsAndPresets/presets.json`)
             .pipe(
                 map((p) => { 
@@ -385,7 +386,7 @@ export class TagsService {
             );
     }
  
-    loadJsonSprites$() {
+    loadJsonSprites$(): Observable<any> {
         const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
         return this.http.get('assets/iconsSprites@x'+devicePixelRatio+'.json')
         .pipe(
@@ -396,12 +397,12 @@ export class TagsService {
         )
       }
 
-      loadTags$(){
+      loadTags$(): Observable<string[]> {
           return forkJoin(
             this.getTagsConfig$(),
             this.loadUserTags$(),
           ).pipe(
-              map( ([tagsConfig, userTags]) => {
+              map( ([tagsConfig, userTags]: [TagConfig, string[]]) => {
                   let tags = [...tagsConfig['tags'], ...userTags];
                 this.tags = tags;
                 return tags;

@@ -16,7 +16,7 @@ interface FeatureProperties{
 
 export interface PrimaryTag{
     key: string;
-    value: string;
+    value: string | number;
 }
 
 interface MetaData{
