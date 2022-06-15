@@ -1,4 +1,5 @@
 import { Geometry } from 'geojson';
+import { Marker } from 'maplibre-gl';
 
 interface FeatureProperties{
     hexColor: string;
@@ -65,4 +66,11 @@ export interface TagConfig{
     id: string;
     isUserTag?: boolean;
 
+}
+
+export type MapMode = 'Create' | 'Update' | 'Delete';  // FIXME: @dotcs Is this valid?
+
+export class OsmGoMarker<T = any> extends Marker {
+    id: string;
+    data: T;
 }

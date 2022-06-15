@@ -12,23 +12,23 @@ import { uniqBy, cloneDeep } from 'lodash';
 import { destination, point, Point, BBox } from '@turf/turf';
 import { AlertController } from '@ionic/angular';
 
-import { AttributionControl, LngLatLike, Map, Marker, NavigationControl, ScaleControl, StyleSpecification } from 'maplibre-gl';
+import { AttributionControl, FilterSpecification, GeoJSONFeature, GeoJSONSource, LngLat, LngLatLike, Map, MapGeoJSONFeature, Marker, NavigationControl, RasterSourceSpecification, ScaleControl, StyleSpecification } from 'maplibre-gl';
 import { TranslateService } from '@ngx-translate/core';
 import { map } from 'rxjs/operators';
-import { AlertInput } from '@ionic/core';
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
-import { TagConfig } from 'src/type';
+import { MapMode, OsmGoMarker, TagConfig } from 'src/type';
 import { Config } from 'protractor';
-import { BehaviorSubject, of, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs';
+import { FeatureCollection } from 'geojson';
 
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
-  isFirstPosition = true;
-  loadingData = false;
-  isProcessing: BehaviorSubject <boolean> = new BehaviorSubject <boolean>(false);
+  isFirstPosition: boolean = true;
+  loadingData: boolean = false;
+  isProcessing: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(
     private _ngZone: NgZone,
@@ -57,16 +57,18 @@ export class MapService {
       }
     });
 
-    this.eventMarkerReDraw.subscribe(geojson => {
+    this.eventMarkerReDraw.subscribe((geojson?: FeatureCollection) => {
       if (geojson) {
-        this.map.getSource('data').setData(geojson);
+        const source = this.map.getSource('data') as GeoJSONSource;
+        source.setData(geojson);
         this.drawWaysPoly(geojson, 'ways');
       }
     });
 
-    this.eventMarkerChangedReDraw.subscribe(geojson => {
+    this.eventMarkerChangedReDraw.subscribe((geojson?: FeatureCollection) => {
       if (geojson) {
-        this.map.getSource('data_changed').setData(geojson);
+        const source = this.map.getSource('data_changed') as GeoJSONSource;
+        source.setData(geojson);
         this.drawWaysPoly(geojson, 'ways_changed');
       }
     });
@@ -86,37 +88,37 @@ export class MapService {
 
   } // EOF constructor
 
-  bboxPolygon;
-  map;
-  markerMove;
-  markerMoveMoving = false;
-  subscriptionMoveElement;
-  subscriptionMarkerMove;
-  mode = 'Update';
-  headingIsLocked = true;
-  positionIsFollow = true;
-  isDisplaySatelliteBaseMap = false;
+  bboxPolygon: GeoJSONFeature;
+  map: Map;
+  markerMove: OsmGoMarker;
+  markerMoveMoving: boolean = false;
+  subscriptionMoveElement: Subscription;
+  subscriptionMarkerMove: Subscription;
+  mode: MapMode = 'Update';
+  headingIsLocked: boolean = true;
+  positionIsFollow: boolean = true;
+  isDisplaySatelliteBaseMap: boolean = false;
 
   domMarkerPosition: HTMLDivElement;
   arrowDirection: HTMLDivElement;
-  markerLocation = undefined;
-  layersAreLoaded = false;
+  markerLocation: OsmGoMarker = undefined;
+  layersAreLoaded: boolean = false;
 
-  markersLoaded = [];
+  markersLoaded: OsmGoMarker[] = [];
 
   eventDomMainReady = new EventEmitter();
   eventCreateNewMap = new EventEmitter();
-  eventNewBboxPolygon = new EventEmitter();
+  eventNewBboxPolygon = new EventEmitter<FeatureCollection>();
   eventMoveElement = new EventEmitter();
   eventShowModal = new EventEmitter();
   eventOsmElementUpdated = new EventEmitter();
   eventOsmElementDeleted = new EventEmitter();
   eventOsmElementCreated = new EventEmitter();
-  eventMarkerReDraw = new EventEmitter();
-  eventMapIsLoaded = new EventEmitter();
-  eventMarkerChangedReDraw = new EventEmitter();
-  eventShowDialogMultiFeatures = new EventEmitter();
-  markersLayer = [];
+  eventMarkerReDraw = new EventEmitter<FeatureCollection>();
+  eventMapIsLoaded = new EventEmitter<void>();
+  eventMarkerChangedReDraw = new EventEmitter<FeatureCollection>();
+  eventShowDialogMultiFeatures = new EventEmitter<MapGeoJSONFeature[]>();
+  markersLayer: OsmGoMarker[] = [];
 
   attributionControl: AttributionControl;
 
@@ -125,7 +127,7 @@ export class MapService {
   eventMarkerMove = new EventEmitter();
   eventMapMove = new EventEmitter();
   markerMoving = false; // le marker est en train d'être positionné
-  markerPositionate;
+  markerPositionate: OsmGoMarker;
   markerMaplibreUnknown = {};
 
   filters = {
@@ -133,11 +135,11 @@ export class MapService {
 
   }
 
-  setIsProcessing( isProcessing){
+  setIsProcessing(isProcessing: boolean): void {
     this.isProcessing.next(isProcessing);
   }
 
-  loadUnknownMarker(factor) {
+  loadUnknownMarker(factor: number): void {
     const roundedFactor = factor > 1 ? 2 : 1
     this.map.loadImage(`/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`, (error, image) => {
       this.markerMaplibreUnknown['circle'] = image;
@@ -151,7 +153,7 @@ export class MapService {
   }
 
   
-  filterMakerByIds(ids) {
+  filterMakerByIds(ids: string[]): void {
     const layersIds = [
       'way_fill',
       'way_line',
@@ -170,7 +172,10 @@ export class MapService {
 
     for (let layerId of layersIds) {
       const currentFilter = this.map.getFilter(layerId);
-      const newConfigIdFilter = ["match", ["get", "configId"], [...ids], false, true];
+      if (typeof currentFilter === "undefined") {
+        // FIXME @dotcs: Do something here
+      }
+      const newConfigIdFilter: FilterSpecification = ["match", ["get", "configId"], [...ids], false];
       let newFilter = [];
   
         // currentFilter[0] === 'all
@@ -190,11 +195,10 @@ export class MapService {
         
       this.map.setFilter(layerId, newFilter);
     }
-
   }
 
 
-  drawWaysPoly(geojson, source) {
+  drawWaysPoly(geojson: FeatureCollection, source: string): void {
     const features = geojson.features;
     const featuresWay = [];
     for (let i = 0; i < features.length; i++) {
@@ -209,7 +213,8 @@ export class MapService {
       }
     }
 
-    this.map.getSource(source).setData({ 'type': 'FeatureCollection', 'features': featuresWay });
+    const mapSource = this.map.getSource(source) as GeoJSONSource;
+    mapSource.setData({ 'type': 'FeatureCollection', 'features': featuresWay });
   }
 
 
@@ -218,11 +223,11 @@ export class MapService {
   Fortement inspirer de :
   https://github.com/mapbox/mapbox-gl-js/blob/9ee69dd4a74a021d4a04a8a96a3e8f06062d633a/src/ui/control/scale_control.js#L87
   */
-  getPixelDistFromMeter(_map, dist: number) {
+  getPixelDistFromMeter(_map: Map, dist: number): number {
     const y = _map.getContainer().clientHeight / 2;
     const mapWidth = _map.getContainer().clientWidth;
 
-    function getDistance(latlng1, latlng2) {
+    function getDistance(latlng1: LngLat, latlng2: LngLat): number {
       const R = 6371000;
       const rad = Math.PI / 180,
         lat1 = latlng1.lat * rad,
@@ -275,14 +280,14 @@ export class MapService {
     return bbox;
   }
 
-  resetNorth() {
+  resetNorth(): void {
     this.map.resetNorth();
   }
 
 
-  displaySatelliteBaseMap(baseMap, isDisplay: boolean) {
+  displaySatelliteBaseMap(baseMap, isDisplay: boolean): void {
 
-    const bmSource = {
+    const bmSource: RasterSourceSpecification = {
       'type': 'raster',
       'tiles': baseMap.tiles,
       'tileSize': 256,
@@ -344,7 +349,7 @@ export class MapService {
       this.isDisplaySatelliteBaseMap = false;
     }
   }
-  centerOnMyPosition() {
+  centerOnMyPosition(): void {
     const currentZoom = this.map.getZoom()
 
     this.map.setCenter(this.locationService.getCoordsPosition());
@@ -371,7 +376,7 @@ export class MapService {
     this.map.setPaintProperty('location_circle', 'circle-radius-transition', { 'duration': duration });
     this.map.setPaintProperty('location_circle', 'circle-radius', pxRadius);
   }
-  positionateMarker() {
+  positionateMarker(): void {
     this.markerPositionate = this.createDomMoveMarker([this.map.getCenter().lng, this.map.getCenter().lat], '');
     this.markerMoving = true;
     this.markerPositionate.addTo(this.map);
@@ -380,7 +385,7 @@ export class MapService {
     });
   }
 
-  openModalOsm() {
+  openModalOsm(): void {
     this.markerMoving = false;
     this.markerPositionate.remove();
     const coords = this.markerPositionate.getLngLat();
@@ -405,13 +410,13 @@ export class MapService {
     this.eventShowModal.emit({ type: 'Create', geojson: pt, origineData: null });
   }
 
-  cancelNewMarker() {
+  cancelNewMarker(): void {
     this.markerMoving = false;
     this.markerPositionate.remove();
   }
 
 
-  openModalWithNewPosition() {
+  openModalWithNewPosition(): void {
     this.markerMoveMoving = false;
     this.markerMove.remove();
     const geojson = this.markerMove.data;
@@ -422,7 +427,7 @@ export class MapService {
     this.eventShowModal.emit({ type: this.mode, geojson: geojson, newPosition: true, origineData: origineData });
   }
 
-  cancelNewPosition() {
+  cancelNewPosition(): void {
     this.markerMoveMoving = false;
     const geojson = this.markerMove.data;
     const origineData = (geojson.properties.changeType) ? 'data_changed' : 'data';
@@ -431,24 +436,24 @@ export class MapService {
   }
 
 
-  getBboxPolygon() {
+  getBboxPolygon(): GeoJSONFeature {
     return cloneDeep(this.bboxPolygon);
   }
 
-  createDomMoveMarker(coord: LngLatLike, data) {
+  createDomMoveMarker(coord: LngLatLike, data: any): OsmGoMarker {
     const el = document.createElement('div');
     el.className = 'moveMarkerIcon';
-    const marker = new Marker(el, { offset: [0, -15] }).setLngLat(coord);
+    const marker = new Marker(el, { offset: [0, -15] }).setLngLat(coord) as OsmGoMarker;
     marker['data'] = data;
     return marker;
   }
 
-  resetDataMap() {
+  resetDataMap(): void {
     this.eventNewBboxPolygon.emit(this.dataService.resetGeojsonBbox());
     this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData());
   }
 
-  getMapStyle() {
+  getMapStyle(): Observable<any> {
     return this.http.get('assets/mapStyle/brigthCustom.json')
       .pipe(
         map(maplibreStyle => {
@@ -464,15 +469,14 @@ export class MapService {
       );
   }
 
-  getIconStyle(feature) {
+  getIconStyle(feature: GeoJSONFeature): GeoJSONFeature {
     feature = setIconStyle(feature, this.tagsService.tags);
     return feature;
   }
 
 
 
-  initMap( config: Config) {
-    
+  initMap( config: Config): void {
     this.getMapStyle().subscribe(mapStyle => {
       this.positionIsFollow = config.centerWhenGpsIsReady;
       this.headingIsLocked = config.centerWhenGpsIsReady;
@@ -546,12 +550,13 @@ export class MapService {
 
     /* SUBSCRIPTIONS */
     // un nouveau polygon!
-    this.eventNewBboxPolygon.subscribe(geojsonPolygon => {
-      this.map.getSource('bbox').setData(geojsonPolygon);
+    this.eventNewBboxPolygon.subscribe((geojsonPolygon: FeatureCollection) => {
+      const mapSource = this.map.getSource('bbox') as GeoJSONSource;
+      mapSource.setData(geojsonPolygon);
     });
 
     // un marker est à déplacer!
-    this.subscriptionMoveElement = this.eventMoveElement.subscribe(data => {
+    this.subscriptionMoveElement = this.eventMoveElement.subscribe((data) => {
       // this.markerMoving = true;
       this.mode = data.mode;
       const geojson = data.geojson;
@@ -574,7 +579,7 @@ export class MapService {
     });
   }
 
-  getIconRotate(heading, mapBearing) {
+  getIconRotate(heading: number, mapBearing: number): number {
     heading = heading > 354 ? 0 : heading + 5;
     mapBearing = mapBearing < 0 ? 360 + mapBearing : mapBearing;
     let iconRotate = heading - mapBearing;
@@ -586,8 +591,11 @@ export class MapService {
     return iconRotate;
   }
 
-  toogleMesureFilter(enable: boolean, layerName: string, value: number, _map) {
+  toogleMesureFilter(enable: boolean, layerName: string, value: number, _map: Map): FilterSpecification {
     let currentFilter = _map.getFilter(layerName);
+    if (typeof currentFilter === "undefined") {
+      // FIXME: @dotcs add some error handling
+    }
     let findIndex = null;
     for (let i = 1; i < currentFilter.length; i++) {
       if (currentFilter[i][1][1] == 'mesure') {
@@ -599,22 +607,21 @@ export class MapService {
       _map.setFilter(layerName, currentFilter);
       return currentFilter;
     } else if (enable) {
-      currentFilter.push(['<', ['get', 'mesure'], value]);
+      (currentFilter as FilterSpecification[]).push(['<', ['get', 'mesure'], value]);
       _map.setFilter(layerName, currentFilter);
       return currentFilter
     }
   }
 
-  addDomMarkerPosition() {
+  addDomMarkerPosition(): void {
     if (!this.markerLocation) {
-      this.markerLocation = new Marker(this.domMarkerPosition,
+      this.markerLocation = new OsmGoMarker(this.domMarkerPosition,
         { offset: [0, 0] })
-        .setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);
+        .setLngLat(this.locationService.getGeojsonPos().features[0].geometry.coordinates);  // FIXME: @dotcs not all members are set (id, data)
       this.markerLocation.addTo(this.map);
-
     }
   }
-  selectFeature(feature) {
+  selectFeature(feature: MapGeoJSONFeature): void {
     const layer = feature['layer'].id;
     // Provenance de la donnée d'origine (data OU data_changed)
     let origineData = 'data';
@@ -627,27 +634,34 @@ export class MapService {
   }
 
 
-  showOldTagIcon(maxYearAgo: number) {
+  showOldTagIcon(maxYearAgo: number): void {
     const OneYear = 31536000000;
     const currentTime = new Date().getTime()
 
     let currentFilter = this.map.getFilter('icon-old');
+    if (typeof currentFilter === "undefined") {
+      // FIXME: @dotcs Add error handling
+    }
     //  currentFilter.push( ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ] );
 
-    let findedIndex;
+    let findedIndex: number;
     for (let i = 1; i < currentFilter.length; i++){
-      if (currentFilter[i].length == 3 && currentFilter[i][2] &&
-        currentFilter[i][0] == '>' && currentFilter[i][2][1] === 'time' ){
+      const spec = currentFilter[i] as FilterSpecification; // TODO: @dotcs probably a dangerous typecast
+      if (spec.length == 3 && spec[2] &&
+        spec[0] == '>' && spec[2][1] === 'time' ){
           findedIndex = i;
         }
     }
-    let newFilter;
+    let newFilter: FilterSpecification;
     if (findedIndex){
-      currentFilter[findedIndex] = ['>', currentTime - (OneYear * maxYearAgo), ['get', 'time']];
+      currentFilter[findedIndex] = ['>', "" + (currentTime - (OneYear * maxYearAgo)), ['get', 'time']];
       newFilter = currentFilter;
     } else {
+      newFilter = [...currentFilter] as FilterSpecification[];
+      const filter = ['>', "" + (currentTime - (OneYear * maxYearAgo)), ['get', 'time']];
+      newFilter.push(filter)
       newFilter = [...currentFilter,
-        ['>', currentTime - (OneYear * maxYearAgo), ['get', 'time']]
+        
         ];
     }
 
@@ -656,18 +670,18 @@ export class MapService {
 
   }
 
-  hideOldTagIcon() {
+  hideOldTagIcon(): void {
     this.map.setLayoutProperty('icon-old', 'visibility', 'none')
   }
 
-  showFixmeIcon() {
+  showFixmeIcon(): void {
     this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible')
   }
-  hideFixmeIcon() {
+  hideFixmeIcon(): void {
     this.map.setLayoutProperty('icon-fixme', 'visibility', 'none')
   }
 
-  mapIsLoaded() {
+  mapIsLoaded(): void {
     const minzoom = 14;
 
     this.map.addSource('bbox', { 'type': 'geojson', 'data': { 'type': 'FeatureCollection', 'features': [] } });
@@ -687,7 +701,7 @@ export class MapService {
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
       'paint': { 'line-color': '#ea1212', 'line-width': 5, 
-      'line-dasharray': {   "stops": [
+      'line-dasharray': { type: "exponential", "stops": [
         [14, [1,0] ],
         [14, [1,1] ]
       ] } 
@@ -698,7 +712,7 @@ export class MapService {
       'id': 'way_fill', 'type': 'fill', 'minzoom': minzoom, 'source': 'ways',
       'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 }
       // ,'filter': ['all']
-      , 'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
+      , 'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true]]
       
     });
 
@@ -709,13 +723,13 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true]]
     });
 
     this.map.addLayer({
       'id': 'way_fill_changed', 'type': 'fill', 'source': 'ways_changed',
       'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 },
-      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
+      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true]]
     });
 
     this.map.addLayer({
@@ -725,7 +739,7 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true]]
     });
 
     this.map.addLayer({
@@ -755,9 +769,8 @@ export class MapService {
       'paint': {
         'circle-color': '#9bbcf2', 'circle-opacity': 0.2, 'circle-radius': 0,
         'circle-stroke-width': 1, 'circle-stroke-color': '#9bbcf2', 'circle-stroke-opacity': 0.5,
-        'circle-radius-transition': { 'duration': 0 }
+        // 'circle-radius-transition': { 'duration': 0 }  # FIXME @dotcs: According to types, this property is not defined
       }
-
     });
 
     this.map.addLayer({
@@ -907,16 +920,18 @@ export class MapService {
 
       });
 
-    this.locationService.eventNewLocation.subscribe(geojsonPos => {
+    this.locationService.eventNewLocation.subscribe((geojsonPos: FeatureCollection) => {
       this.addDomMarkerPosition();
 
       if (geojsonPos.features && geojsonPos.features[0].properties) {
-        this.markerLocation.setLngLat(geojsonPos.features[0].geometry.coordinates);
-        this.map.getSource('location_circle').setData(geojsonPos);
+        const coordinates = (geojsonPos.features[0].geometry as Point).coordinates as LngLatLike;
+        this.markerLocation.setLngLat(coordinates);
+        const mapSource = this.map.getSource('location_circle') as GeoJSONSource;
+        mapSource.setData(geojsonPos);
         this.changeLocationRadius(geojsonPos.features[0].properties.accuracy, true);
 
         if (this.configService.config.followPosition && this.positionIsFollow) {
-          this.map.setCenter(geojsonPos.features[0].geometry.coordinates);
+          this.map.setCenter(coordinates);
           if (this.isFirstPosition){
             this.map.setZoom(18);
             this.isFirstPosition = false
