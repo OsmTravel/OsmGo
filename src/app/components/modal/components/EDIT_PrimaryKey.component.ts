@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { PrimaryTag, Feature } from "../../../../type";
+import { Feature } from 'geojson';
+import { PrimaryTag } from "../../../../type";
 
 @Component({
     selector: 'edit-primary-key',
