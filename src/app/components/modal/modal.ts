@@ -14,10 +14,11 @@ import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag';
 import { ModalSelectList } from './modalSelectList/modalSelectList';
 import { getConfigTag } from '../../../../scripts/osmToOsmgo/index.js'
 
-import { Feature, Tag, Preset, PrimaryTag, TagConfig } from '../../../type'
+import { Tag, Preset, PrimaryTag, TagConfig } from '../../../type'
 
 import { cloneDeep, isEqual, findIndex } from 'lodash';
 import { TranslateService } from '@ngx-translate/core';
+import { Feature } from 'geojson';
 
 
 @Component({

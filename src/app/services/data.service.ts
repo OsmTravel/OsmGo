@@ -1,72 +1,74 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { Feature, FeatureCollection } from 'geojson';
 import { cloneDeep } from 'lodash';
-import { from } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+/** Creates a new GeoJSON feature collection that contains zero features. */
+const makeEmptyGeoJsonFC = (): FeatureCollection => (
+    { 'type': 'FeatureCollection', 'features': [] }
+);
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
     eventNewPage = new EventEmitter();
-    geojson = { 'type': 'FeatureCollection', 'features': [] };
-    geojsonChanged = { 'type': 'FeatureCollection', 'features': [] };
-    geojsonWay = { 'type': 'FeatureCollection', 'features': [] };
-    geojsonBbox = { 'type': 'FeatureCollection', 'features': [] };
+    geojson: FeatureCollection = makeEmptyGeoJsonFC();
+    geojsonChanged: FeatureCollection = makeEmptyGeoJsonFC();
+    geojsonWay: FeatureCollection = makeEmptyGeoJsonFC();
+    geojsonBbox: FeatureCollection = makeEmptyGeoJsonFC();
 
-     constructor(public localStorage: Storage) {
-      }
+    constructor(public localStorage: Storage) {}
 
-    addIconCache(idIcon, uri){
+    addIconCache(idIcon: string, uri): void {
         this.localStorage.set(idIcon, uri);
     }
 
-    getIconCache(idIcon) {
+    getIconCache(idIcon: string): Promise<any> {
         return this.localStorage.get(idIcon);
     }
 
-
-    loadGeojson$(){
+    loadGeojson$(): Observable<FeatureCollection>{
         return from(this.localStorage.get('geojson'))
             .pipe(
-                map( geojson => {
-                    geojson = geojson ? geojson : { 'type': 'FeatureCollection', 'features': [] }
+                map((geojson: FeatureCollection) => {
+                    geojson = geojson ? geojson : makeEmptyGeoJsonFC();
                     this.geojson = geojson
                     return geojson
                 } )
             )
     }
 
-    loadGeojsonChanged$(){
+    loadGeojsonChanged$(): Observable<FeatureCollection> {
         return from(this.localStorage.get('geojsonChanged'))
             .pipe(
-                map( geojson => {
-                    geojson = geojson ? geojson : { 'type': 'FeatureCollection', 'features': [] }
+                map((geojson: FeatureCollection) => {
+                    geojson = geojson ? geojson : makeEmptyGeoJsonFC();
                     this.geojsonChanged = geojson
                     return geojson
                 } )
             )
     }
 
-    loadGeojsonBbox$(){
+    loadGeojsonBbox$(): Observable<FeatureCollection> {
         return from(this.localStorage.get('geojsonBbox'))
             .pipe(
-                map( geojson => {
-                    geojson = geojson ? geojson : { 'type': 'FeatureCollection', 'features': [] }
+                map((geojson: FeatureCollection) => {
+                    geojson = geojson ? geojson : makeEmptyGeoJsonFC();
                     this.geojsonBbox = geojson
                     return geojson
                 } )
             )
     }
   
-
-    async getKeysCacheIcon(){
-        let allKeys = await this.localStorage.keys();
+    async getKeysCacheIcon(): Promise<string[]> {
+        let allKeys: string[] = await this.localStorage.keys();
         return allKeys.filter( k => /^circle/.test(k) || /^square/.test(k) || /^penta/.test(k))
     }
 
-    async clearIconCache(){
-        let keys = await this.getKeysCacheIcon();
-        let n = 0;
+    async clearIconCache(): Promise<number> {
+        let keys: string[] = await this.getKeysCacheIcon();
+        let n: number = 0;
         for (let key of keys){
             console.log(key);
             await this.localStorage.remove(key);
@@ -75,59 +77,60 @@ export class DataService {
         return n;
     }
 
-    async clearCache(){
+    async clearCache(): Promise<void> {
         try {
             await this.localStorage.clear();
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
 
         try{
-            const dbs = await window.indexedDB.deleteDatabase('_ionickv')
+            const dbDeleteReq = window.indexedDB.deleteDatabase('_ionickv')
         }
         catch (error) { console.log(error)}
         localStorage.clear();
-       
     }
 
-
-    setGeojsonBbox(geojsonBbox) {
+    setGeojsonBbox(geojsonBbox): void {
         this.geojsonBbox = geojsonBbox;
         this.localStorage.set('geojsonBbox', this.geojsonBbox);
     }
-    getGeojsonBbox() {
+    getGeojsonBbox(): FeatureCollection {
         return this.geojsonBbox;
     }
 
-    resetGeojsonBbox() {
-        this.setGeojsonBbox({ 'type': 'FeatureCollection', 'features': [] });
-        return { 'type': 'FeatureCollection', 'features': [] };
+    resetGeojsonBbox(): FeatureCollection {
+        this.setGeojsonBbox(makeEmptyGeoJsonFC());
+        return makeEmptyGeoJsonFC();
     }
 
-
-    setGeojsonWay(data) {
+    setGeojsonWay(data: FeatureCollection): void {
         this.geojsonWay = cloneDeep(data);
     }
+
     addFeatureToGeojsonWay(feature) {
         this.geojsonWay.features.push(feature);
     }
 
-    getGeojson() {
+    getGeojson(): FeatureCollection {
         if (this.geojson){
             return this.geojson;
         } else {
-            return { 'type': 'FeatureCollection', 'features': [] }
+            return makeEmptyGeoJsonFC();
         }
-       
     }
 
-    setGeojson(data) {
+    setGeojson(data: FeatureCollection): void {
         this.geojson = cloneDeep(data);
         this.localStorage.set('geojson', this.geojson);
     }
-    addFeatureToGeojson(feature) {
+
+    addFeatureToGeojson(feature: Feature): void {
         this.geojson.features.push(feature);
         this.setGeojson(this.geojson);
     }
-    updateFeatureToGeojson(feature) {
+
+    updateFeatureToGeojson(feature: Feature) {
         for (let i = 0; i < this.geojson.features.length; i++) {
             if (this.geojson.features[i].id === feature.id) {
                 this.geojson.features[i] = feature;
@@ -137,7 +140,7 @@ export class DataService {
         }
     }
 
-    deleteFeatureFromGeojson(feature) {
+    deleteFeatureFromGeojson(feature: Feature) {
         for (let i = 0; i < this.geojson.features.length; i++) {
             if (this.geojson.features[i].id === feature.id) {
                 this.geojson.features.splice(i, 1);
@@ -147,10 +150,8 @@ export class DataService {
         }
     }
 
-    getFeatureById(id, origineData) {
-
-          const features = (origineData === 'data_changed') ? this.getGeojsonChanged().features :   this.getGeojson().features;
-
+    getFeatureById(id: number, origineData: string): Feature {
+        const features = (origineData === 'data_changed') ? this.getGeojsonChanged().features : this.getGeojson().features;
 
         for (let i = 0; i < features.length; i++) {
             if (features[i].properties.id === id) {
@@ -159,27 +160,27 @@ export class DataService {
         }
     }
 
-    getGeojsonChanged() {
+    getGeojsonChanged(): FeatureCollection {
         return cloneDeep(this.geojsonChanged);
     }
 
-    getNextNewId(){
+    getNextNewId(): number {
         let minId = 0;
         for( const feature of this.geojsonChanged.features){
             if (feature.properties.id < minId ){
-                minId = feature.properties.id
+                minId = feature.properties.id;
             }
         }
-        return minId - 1
+        return minId - 1;
     }
 
-    async setGeojsonChanged(geojson) { 
+    async setGeojsonChanged(geojson: FeatureCollection): Promise<void> { 
         this.geojsonChanged = geojson;
-       await this.localStorage.set('geojsonChanged', this.geojsonChanged);
+        await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
     // replace id generate by version <= 1.5 (tmp_123) by -1, -2 etc...
-    async replaceIdGenerateByOldVersion() {
+    async replaceIdGenerateByOldVersion(): Promise<void>{
         const geojsonChange = this.getGeojsonChanged()
         for(const feature of geojsonChange.features ){
             if (feature.properties.changeType == 'Create' && (!Number.isInteger(feature.properties.id) || feature.properties.id >= 0 )){
@@ -200,13 +201,14 @@ export class DataService {
             return 0;
         }
     }
-    addFeatureToGeojsonChanged(feature):Promise<any> {
+
+    addFeatureToGeojsonChanged(feature: Feature): Promise<any> {
         this.geojsonChanged.features.push(feature);
         return this.localStorage.set('geojsonChanged', this.geojsonChanged);
   
     }
 
-    updateFeatureToGeojsonChanged(feature):Promise<any> {
+    updateFeatureToGeojsonChanged(feature: Feature): Promise<any> {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features[i] = feature;
@@ -214,7 +216,8 @@ export class DataService {
         }
         return this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
-    deleteFeatureFromGeojsonChanged(feature):Promise<any> {
+
+    deleteFeatureFromGeojsonChanged(feature: Feature): Promise<any> {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features.splice(i, 1);
@@ -223,10 +226,9 @@ export class DataService {
         }
 
        return this.localStorage.set('geojsonChanged', this.geojsonChanged);
-        
     }
 
-    getMergedGeojsonGeojsonChanged() {
+    getMergedGeojsonGeojsonChanged(): FeatureCollection {
         // stock les id dans un array
         const changedIds = [];
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
@@ -245,7 +247,7 @@ export class DataService {
         return cloneDeep(this.geojson);
     }
 
-    cancelFeatureChange(feature) {
+    cancelFeatureChange(feature: Feature): void {
         const originalFeature = cloneDeep(feature.properties.originalData);
         this.deleteFeatureFromGeojsonChanged(feature);
         // this.deleteFeatureFromGeojson(feature);
@@ -255,17 +257,17 @@ export class DataService {
     }
 
     // supprime l'intégralité des changements
-    async resetGeojsonChanged(){
-        this.geojsonChanged = { 'type': 'FeatureCollection', 'features': [] };
+    async resetGeojsonChanged(): Promise<void> {
+        this.geojsonChanged = makeEmptyGeoJsonFC();
         await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
 
-    resetGeojsonData() {
-        this.setGeojson({ 'type': 'FeatureCollection', 'features': [] });
+    resetGeojsonData(): FeatureCollection {
+        this.setGeojson(makeEmptyGeoJsonFC());
         // this.getMergedGeojsonGeojsonChanged();
         // return this.getMergedGeojsonGeojsonChanged();
-        return { 'type': 'FeatureCollection', 'features': [] };
+        return makeEmptyGeoJsonFC();
     }
 
 }

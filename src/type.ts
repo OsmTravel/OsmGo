@@ -1,13 +1,5 @@
 import { Geometry } from 'geojson';
 
-export interface Feature {
-    type: string;
-    id: string;
-    geometry: Geometry;
-    properties : FeatureProperties;
-}
-
-
 interface FeatureProperties{
     hexColor: string;
     icon: string;
