@@ -4,6 +4,7 @@
     - Fix: DoFabien/OsmGo#94 DoFabien/OsmGo#96 DoFabien/OsmGo#99 DoFabien/OsmGo#110
 - Rework the way data are sent to OSM
 - Adding a new "work in progress" screen when sending data to OSM
+- Complete translation to Arabic (Thanks to [abdullahO2](https://github.com/abdullahO2))
 
 ## 🍏 Improvements
 - Use standard copy/paste icons to store/restore tags on specific object
@@ -19,14 +20,33 @@
 - Lock modifications when data are loading
 
 ## 🐞 Bug fixes
-- Trying to fix "duplicates POI sent" DoFabien/OsmGo#102
-- Trying to make the app work on iOS DoFabien/OsmGo#107
-- Trying to fix DoFabien/OsmGo#102 & DoFabien/OsmGo#109 by limiting the number of objects in memory to 10k (can be changed in settings)
+- DoFabien/OsmGo#51
+- DoFabien/OsmGo#52
+- DoFabien/OsmGo#76
+- DoFabien/OsmGo#78
+- DoFabien/OsmGo#79
+- DoFabien/OsmGo#82
+- DoFabien/OsmGo#89
+- DoFabien/OsmGo#92
+- DoFabien/OsmGo#93
+- DoFabien/OsmGo#94
+- DoFabien/OsmGo#95
+- DoFabien/OsmGo#96
+- DoFabien/OsmGo#99
+- DoFabien/OsmGo#102 Trying to fix "duplicates POI sent"
+- DoFabien/OsmGo#103
+- DoFabien/OsmGo#107 Trying to make the app work on iOS
+- DoFabien/OsmGo#109 Trying to fix by limiting the number of objects in memory to 10k (can be changed in settings)
+- DoFabien/OsmGo#110
+- DoFabien/OsmGo#111
+- DoFabien/OsmGo#118
 
 ## 📚 Documentation
-- Rework user Documentation with a new Jekyll theme
-    - Fix DoFabien/OsmGo#88 DoFabien/OsmGo#91
+- Rework user documentation with a new Jekyll theme
+    - Fix DoFabien/OsmGo#88
+    - Fix DoFabien/OsmGo#91
 - Upgrade READMEs
+    - Move sections translate & develop to file CONTRIBUTING.md
 - Add comments in scripts code
 
 ## 🔧 Technicals
@@ -42,6 +62,7 @@
     - Upgrade Gradle plugin from 3.6.3 to 4.2.1
     - Set compileSdkVersion & targetSdkVersion to 29 (Android 10)
     - Migrate to androidx and jetifier
+    - Add "Osm Go Beta" logo when compiling app in debug mode (allow user to install 2 versions of Osm Go!)
 
 # 1.5.0
 ## 🍏 Improvements
