@@ -71,7 +71,7 @@
 			<!--Le reste des tags-->
 			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true;">
 				
-				<read-presets *ngIf="this.tagsService.presets[tag.key]; else readOtherTag"
+				<read-presets *ngIf="tag.preset && tag.value !== '' && this.tagsService.presets[tag.key]; else readOtherTag"
 				[displayCode]="displayCode" 
 				[tag]="tag" 
 				[preset] ="tagsService.presets[tag.key]"
