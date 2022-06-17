@@ -4,7 +4,8 @@
     - Fix: DoFabien/OsmGo#94 DoFabien/OsmGo#96 DoFabien/OsmGo#99 DoFabien/OsmGo#110
 - Rework the way data are sent to OSM
 - Adding a new "work in progress" screen when sending data to OSM
-- Complete translation to Arabic (Thanks to [abdullahO2](https://github.com/abdullahO2))
+- Arabic translation complete. Thanks to [abdullahO2](https://github.com/abdullahO2)
+- Italian translation complete. Thanks to [MarcoR](https://www.osm.org/user/MarcoR)
 
 ## 🍏 Improvements
 - Use standard copy/paste icons to store/restore tags on specific object

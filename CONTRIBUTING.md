@@ -106,3 +106,10 @@ Set the following envvar to your Android Studio installation:
 `export CAPACITOR_ANDROID_STUDIO_PATH=/opt/android-studio-2021.2.1/android-studio/bin/studio.sh`
 
 Then you can use the buildAndroid target with npm
+
+## Update tags and presets
+
+### Add CHANGE_ME colors
+Here is a simple jq query to list tags by "id : markerColor". It will help you to identify the 'correct' color for your new tags.
+
+`cat src/assets/tagsAndPresets/tags.json | jq '.tags | sort_by(.id)[] | .id + " : " + .markerColor'`
