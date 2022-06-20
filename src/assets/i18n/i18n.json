@@ -285,6 +285,15 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Chinese_language"
     },
     {
+      "code": "zh-TW",
+      "639-2": "zho",
+      "639-2/B": "chi",
+      "family": "Sino-Tibetan",
+      "name": "Chinese (Taiwan)",
+      "nativeName": "漢語",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Chinese_language"
+    },
+    {
       "code": "bg",
       "639-2": "bul",
       "family": "Indo-European",
