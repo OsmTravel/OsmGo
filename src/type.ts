@@ -1,8 +1,22 @@
 import { Feature, FeatureCollection, Geometry } from 'geojson';
 
+/** 
+ * Osm Go! specific geojson feature collection.
+ * 
+ * All contained features have a specific set of feature properties and any
+ * possible geometry.
+ */
 export type OsmGoFeatureCollection = FeatureCollection<Geometry, FeatureProperties>;
+/**
+ * Osm Go! specific geojson feature.
+ * 
+ * Contains a specific set of features and any possible geometry.
+ */
 export type OsmGoFeature = Feature<Geometry, FeatureProperties>;
 
+/**
+ * Osm Go! specific geojson feature properties.
+ */
 export interface FeatureProperties{
     hexColor: string;
     icon: string;
@@ -14,10 +28,19 @@ export interface FeatureProperties{
     type: string;
     way_geometry?: Geometry;
     usedByWays? : boolean;
+    /** 
+     * Contains the original data of a feature in case it has been modified.
+     * Needed to revert changes in case the user decides to undo her changes.
+     */
     originalData: OsmGoFeature | null;
+    /** Type of change by the user */
     changeType?: OsmGoChangeType;
 }
 
+/** 
+ * Identifier for any operation that changes the underlying geojson data of an
+ * object.
+ */
 export type OsmGoChangeType = 'Create' | 'Update' | 'Delete';
 
 export interface PrimaryTag{
