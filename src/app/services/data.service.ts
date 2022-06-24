@@ -5,20 +5,21 @@ import { cloneDeep } from 'lodash';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-/** Creates a new GeoJSON feature collection that contains zero features. */
-const makeEmptyGeoJsonFC = (): FeatureCollection => (
-    { 'type': 'FeatureCollection', 'features': [] }
-);
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
     eventNewPage = new EventEmitter();
-    geojson: FeatureCollection = makeEmptyGeoJsonFC();
-    geojsonChanged: FeatureCollection = makeEmptyGeoJsonFC();
-    geojsonWay: FeatureCollection = makeEmptyGeoJsonFC();
-    geojsonBbox: FeatureCollection = makeEmptyGeoJsonFC();
+    geojson: FeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojsonChanged: FeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojsonWay: FeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojsonBbox: FeatureCollection = DataService.makeEmptyGeoJsonFC();
 
     constructor(public localStorage: Storage) {}
+
+    /** Creates a new GeoJSON feature collection that contains zero features. */
+    static makeEmptyGeoJsonFC(): FeatureCollection {
+        return { 'type': 'FeatureCollection', 'features': [] }
+    }
 
     addIconCache(idIcon: string, uri): void {
         this.localStorage.set(idIcon, uri);
@@ -32,7 +33,7 @@ export class DataService {
         return from(this.localStorage.get('geojson'))
             .pipe(
                 map((geojson: FeatureCollection) => {
-                    geojson = geojson ? geojson : makeEmptyGeoJsonFC();
+                    geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC();
                     this.geojson = geojson
                     return geojson
                 } )
@@ -43,7 +44,7 @@ export class DataService {
         return from(this.localStorage.get('geojsonChanged'))
             .pipe(
                 map((geojson: FeatureCollection) => {
-                    geojson = geojson ? geojson : makeEmptyGeoJsonFC();
+                    geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC();
                     this.geojsonChanged = geojson
                     return geojson
                 } )
@@ -54,7 +55,7 @@ export class DataService {
         return from(this.localStorage.get('geojsonBbox'))
             .pipe(
                 map((geojson: FeatureCollection) => {
-                    geojson = geojson ? geojson : makeEmptyGeoJsonFC();
+                    geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC();
                     this.geojsonBbox = geojson
                     return geojson
                 } )
@@ -91,7 +92,7 @@ export class DataService {
         localStorage.clear();
     }
 
-    setGeojsonBbox(geojsonBbox): void {
+    setGeojsonBbox(geojsonBbox: FeatureCollection): void {
         this.geojsonBbox = geojsonBbox;
         this.localStorage.set('geojsonBbox', this.geojsonBbox);
     }
@@ -100,8 +101,8 @@ export class DataService {
     }
 
     resetGeojsonBbox(): FeatureCollection {
-        this.setGeojsonBbox(makeEmptyGeoJsonFC());
-        return makeEmptyGeoJsonFC();
+        this.setGeojsonBbox(DataService.makeEmptyGeoJsonFC());
+        return DataService.makeEmptyGeoJsonFC();
     }
 
     setGeojsonWay(data: FeatureCollection): void {
@@ -116,7 +117,7 @@ export class DataService {
         if (this.geojson){
             return this.geojson;
         } else {
-            return makeEmptyGeoJsonFC();
+            return DataService.makeEmptyGeoJsonFC();
         }
     }
 
@@ -258,16 +259,16 @@ export class DataService {
 
     // supprime l'intégralité des changements
     async resetGeojsonChanged(): Promise<void> {
-        this.geojsonChanged = makeEmptyGeoJsonFC();
+        this.geojsonChanged = DataService.makeEmptyGeoJsonFC();
         await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
 
     resetGeojsonData(): FeatureCollection {
-        this.setGeojson(makeEmptyGeoJsonFC());
+        this.setGeojson(DataService.makeEmptyGeoJsonFC());
         // this.getMergedGeojsonGeojsonChanged();
         // return this.getMergedGeojsonGeojsonChanged();
-        return makeEmptyGeoJsonFC();
+        return DataService.makeEmptyGeoJsonFC();
     }
 
 }
