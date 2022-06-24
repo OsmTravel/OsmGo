@@ -1,17 +1,24 @@
-import { Geometry } from 'geojson';
+import { Feature, FeatureCollection, Geometry } from 'geojson';
 
-interface FeatureProperties{
+export type OsmGoFeatureCollection = FeatureCollection<Geometry, FeatureProperties>;
+export type OsmGoFeature = Feature<Geometry, FeatureProperties>;
+
+export interface FeatureProperties{
     hexColor: string;
     icon: string;
-    id: string;
+    id: number;
     marker: string
     meta: MetaData
     primaryTag: PrimaryTag
     tags: any;
     type: string;
     way_geometry?: Geometry;
-    usedByWays? : boolean
+    usedByWays? : boolean;
+    originalData: OsmGoFeature | null;
+    changeType?: OsmGoChangeType;
 }
+
+export type OsmGoChangeType = 'Create' | 'Update' | 'Delete';
 
 export interface PrimaryTag{
     key: string;

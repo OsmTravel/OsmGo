@@ -1,23 +1,23 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { Feature, FeatureCollection } from 'geojson';
 import { cloneDeep } from 'lodash';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { OsmGoFeatureCollection, OsmGoFeature } from 'src/type';
 
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
     eventNewPage = new EventEmitter();
-    geojson: FeatureCollection = DataService.makeEmptyGeoJsonFC();
-    geojsonChanged: FeatureCollection = DataService.makeEmptyGeoJsonFC();
-    geojsonWay: FeatureCollection = DataService.makeEmptyGeoJsonFC();
-    geojsonBbox: FeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojson: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojsonChanged: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojsonWay: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC();
+    geojsonBbox: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC();
 
     constructor(public localStorage: Storage) {}
 
     /** Creates a new GeoJSON feature collection that contains zero features. */
-    static makeEmptyGeoJsonFC(): FeatureCollection {
+    static makeEmptyGeoJsonFC(): OsmGoFeatureCollection {
         return { 'type': 'FeatureCollection', 'features': [] }
     }
 
@@ -29,10 +29,10 @@ export class DataService {
         return this.localStorage.get(idIcon);
     }
 
-    loadGeojson$(): Observable<FeatureCollection>{
+    loadGeojson$(): Observable<OsmGoFeatureCollection>{
         return from(this.localStorage.get('geojson'))
             .pipe(
-                map((geojson: FeatureCollection) => {
+                map((geojson: OsmGoFeatureCollection) => {
                     geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC();
                     this.geojson = geojson
                     return geojson
@@ -40,10 +40,10 @@ export class DataService {
             )
     }
 
-    loadGeojsonChanged$(): Observable<FeatureCollection> {
+    loadGeojsonChanged$(): Observable<OsmGoFeatureCollection> {
         return from(this.localStorage.get('geojsonChanged'))
             .pipe(
-                map((geojson: FeatureCollection) => {
+                map((geojson: OsmGoFeatureCollection) => {
                     geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC();
                     this.geojsonChanged = geojson
                     return geojson
@@ -51,10 +51,10 @@ export class DataService {
             )
     }
 
-    loadGeojsonBbox$(): Observable<FeatureCollection> {
+    loadGeojsonBbox$(): Observable<OsmGoFeatureCollection> {
         return from(this.localStorage.get('geojsonBbox'))
             .pipe(
-                map((geojson: FeatureCollection) => {
+                map((geojson: OsmGoFeatureCollection) => {
                     geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC();
                     this.geojsonBbox = geojson
                     return geojson
@@ -92,20 +92,20 @@ export class DataService {
         localStorage.clear();
     }
 
-    setGeojsonBbox(geojsonBbox: FeatureCollection): void {
+    setGeojsonBbox(geojsonBbox: OsmGoFeatureCollection): void {
         this.geojsonBbox = geojsonBbox;
         this.localStorage.set('geojsonBbox', this.geojsonBbox);
     }
-    getGeojsonBbox(): FeatureCollection {
+    getGeojsonBbox(): OsmGoFeatureCollection {
         return this.geojsonBbox;
     }
 
-    resetGeojsonBbox(): FeatureCollection {
+    resetGeojsonBbox(): OsmGoFeatureCollection {
         this.setGeojsonBbox(DataService.makeEmptyGeoJsonFC());
         return DataService.makeEmptyGeoJsonFC();
     }
 
-    setGeojsonWay(data: FeatureCollection): void {
+    setGeojsonWay(data: OsmGoFeatureCollection): void {
         this.geojsonWay = cloneDeep(data);
     }
 
@@ -113,7 +113,7 @@ export class DataService {
         this.geojsonWay.features.push(feature);
     }
 
-    getGeojson(): FeatureCollection {
+    getGeojson(): OsmGoFeatureCollection {
         if (this.geojson){
             return this.geojson;
         } else {
@@ -121,17 +121,17 @@ export class DataService {
         }
     }
 
-    setGeojson(data: FeatureCollection): void {
+    setGeojson(data: OsmGoFeatureCollection): void {
         this.geojson = cloneDeep(data);
         this.localStorage.set('geojson', this.geojson);
     }
 
-    addFeatureToGeojson(feature: Feature): void {
+    addFeatureToGeojson(feature: OsmGoFeature): void {
         this.geojson.features.push(feature);
         this.setGeojson(this.geojson);
     }
 
-    updateFeatureToGeojson(feature: Feature) {
+    updateFeatureToGeojson(feature: OsmGoFeature) {
         for (let i = 0; i < this.geojson.features.length; i++) {
             if (this.geojson.features[i].id === feature.id) {
                 this.geojson.features[i] = feature;
@@ -141,7 +141,7 @@ export class DataService {
         }
     }
 
-    deleteFeatureFromGeojson(feature: Feature) {
+    deleteFeatureFromGeojson(feature: OsmGoFeature) {
         for (let i = 0; i < this.geojson.features.length; i++) {
             if (this.geojson.features[i].id === feature.id) {
                 this.geojson.features.splice(i, 1);
@@ -151,7 +151,7 @@ export class DataService {
         }
     }
 
-    getFeatureById(id: number, origineData: string): Feature {
+    getFeatureById(id: number, origineData: string): OsmGoFeature {
         const features = (origineData === 'data_changed') ? this.getGeojsonChanged().features : this.getGeojson().features;
 
         for (let i = 0; i < features.length; i++) {
@@ -161,7 +161,7 @@ export class DataService {
         }
     }
 
-    getGeojsonChanged(): FeatureCollection {
+    getGeojsonChanged(): OsmGoFeatureCollection {
         return cloneDeep(this.geojsonChanged);
     }
 
@@ -175,7 +175,7 @@ export class DataService {
         return minId - 1;
     }
 
-    async setGeojsonChanged(geojson: FeatureCollection): Promise<void> { 
+    async setGeojsonChanged(geojson: OsmGoFeatureCollection): Promise<void> { 
         this.geojsonChanged = geojson;
         await this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
@@ -203,13 +203,13 @@ export class DataService {
         }
     }
 
-    addFeatureToGeojsonChanged(feature: Feature): Promise<any> {
+    addFeatureToGeojsonChanged(feature: OsmGoFeature): Promise<any> {
         this.geojsonChanged.features.push(feature);
         return this.localStorage.set('geojsonChanged', this.geojsonChanged);
   
     }
 
-    updateFeatureToGeojsonChanged(feature: Feature): Promise<any> {
+    updateFeatureToGeojsonChanged(feature: OsmGoFeature): Promise<any> {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features[i] = feature;
@@ -218,7 +218,7 @@ export class DataService {
         return this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
-    deleteFeatureFromGeojsonChanged(feature: Feature): Promise<any> {
+    deleteFeatureFromGeojsonChanged(feature: OsmGoFeature): Promise<any> {
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
             if (this.geojsonChanged.features[i].id === feature.id) {
                 this.geojsonChanged.features.splice(i, 1);
@@ -229,7 +229,7 @@ export class DataService {
        return this.localStorage.set('geojsonChanged', this.geojsonChanged);
     }
 
-    getMergedGeojsonGeojsonChanged(): FeatureCollection {
+    getMergedGeojsonGeojsonChanged(): OsmGoFeatureCollection {
         // stock les id dans un array
         const changedIds = [];
         for (let i = 0; i < this.geojsonChanged.features.length; i++) {
@@ -248,7 +248,7 @@ export class DataService {
         return cloneDeep(this.geojson);
     }
 
-    cancelFeatureChange(feature: Feature): void {
+    cancelFeatureChange(feature: OsmGoFeature): void {
         const originalFeature = cloneDeep(feature.properties.originalData);
         this.deleteFeatureFromGeojsonChanged(feature);
         // this.deleteFeatureFromGeojson(feature);
@@ -264,7 +264,7 @@ export class DataService {
     }
 
 
-    resetGeojsonData(): FeatureCollection {
+    resetGeojsonData(): OsmGoFeatureCollection {
         this.setGeojson(DataService.makeEmptyGeoJsonFC());
         // this.getMergedGeojsonGeojsonChanged();
         // return this.getMergedGeojsonGeojsonChanged();
