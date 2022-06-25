@@ -13,6 +13,9 @@ export class DataService {
     geojsonWay: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC()
     geojsonBbox: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC()
 
+    /** Next unused ID that can be used for a new feature. */
+    private _nextFeatureId = 0
+
     constructor(public localStorage: Storage) {}
 
     /** Creates a new GeoJSON feature collection that contains zero features. */
@@ -45,6 +48,17 @@ export class DataService {
             map((geojson: OsmGoFeatureCollection) => {
                 geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC()
                 this.geojsonChanged = geojson
+
+                // At this point we know previously created elements from which we can determine the min ID.
+                this._nextFeatureId =
+                    this.geojsonChanged.features.length > 0
+                        ? Math.min(
+                              ...this.geojsonChanged.features.map(
+                                  (f) => f.properties.id
+                              )
+                          ) - 1
+                        : 0
+
                 return geojson
             })
         )
@@ -186,14 +200,9 @@ export class DataService {
         return cloneDeep(this.geojsonChanged)
     }
 
-    getNextNewId(): number {
-        let minId = 0
-        for (const feature of this.geojsonChanged.features) {
-            if (feature.properties.id < minId) {
-                minId = feature.properties.id
-            }
-        }
-        return minId - 1
+    /** Returns the next available identifier for a feature (auto-incremented). */
+    get nextFeatureId() {
+        return this._nextFeatureId--
     }
 
     async setGeojsonChanged(geojson: OsmGoFeatureCollection): Promise<void> {
@@ -210,7 +219,7 @@ export class DataService {
                 (!Number.isInteger(feature.properties.id) ||
                     feature.properties.id >= 0)
             ) {
-                const nextId = this.getNextNewId()
+                const nextId = this.nextFeatureId
                 feature.properties.id = nextId
                 feature.id = `${feature.properties.type}/${nextId}`
                 console.info('FIXE :', feature.id, feature.properties.id)
@@ -284,6 +293,7 @@ export class DataService {
     async resetGeojsonChanged(): Promise<void> {
         this.geojsonChanged = DataService.makeEmptyGeoJsonFC()
         await this.localStorage.set('geojsonChanged', this.geojsonChanged)
+        this._nextFeatureId = 0
     }
 
     resetGeojsonData(): OsmGoFeatureCollection {
