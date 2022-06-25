@@ -21,10 +21,12 @@ export class DataService {
         return { 'type': 'FeatureCollection', 'features': [] }
     }
 
+    // TODO: Is this method still needed? It is not used anywhere.
     addIconCache(idIcon: string, uri): void {
         this.localStorage.set(idIcon, uri);
     }
 
+    // TODO: Is this method still needed? It is not used anywhere.
     getIconCache(idIcon: string): Promise<any> {
         return this.localStorage.get(idIcon);
     }
@@ -109,7 +111,7 @@ export class DataService {
         this.geojsonWay = cloneDeep(data);
     }
 
-    addFeatureToGeojsonWay(feature) {
+    addFeatureToGeojsonWay(feature: OsmGoFeature) {
         this.geojsonWay.features.push(feature);
     }
 
@@ -131,7 +133,7 @@ export class DataService {
         this.setGeojson(this.geojson);
     }
 
-    updateFeatureToGeojson(feature: OsmGoFeature) {
+    updateFeatureToGeojson(feature: OsmGoFeature): void {
         for (let i = 0; i < this.geojson.features.length; i++) {
             if (this.geojson.features[i].id === feature.id) {
                 this.geojson.features[i] = feature;
@@ -141,7 +143,7 @@ export class DataService {
         }
     }
 
-    deleteFeatureFromGeojson(feature: OsmGoFeature) {
+    deleteFeatureFromGeojson(feature: OsmGoFeature): void {
         for (let i = 0; i < this.geojson.features.length; i++) {
             if (this.geojson.features[i].id === feature.id) {
                 this.geojson.features.splice(i, 1);
