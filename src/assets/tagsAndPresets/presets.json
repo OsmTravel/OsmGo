@@ -91445,7 +91445,39 @@
       "id": "Arah (Derajat Searah Jarum Jam)"
     }
   },
-  "contact/webcam": {
+  "contact:phone": {
+    "key": "contact:phone",
+    "type": "tel",
+    "lbl": {
+      "en": "Contact phone",
+      "fr": "Téléphone de contact"
+    }
+  },
+  "contact:mobile": {
+    "key": "contact:mobile",
+    "type": "tel",
+    "lbl": {
+      "en": "Contact mobile phone",
+      "fr": "Téléphone portable de contact"
+    }
+  },
+  "contact:fax": {
+    "key": "contact:fax",
+    "type": "tel",
+    "lbl": {
+      "en": "Contact fax",
+      "fr": "Fax de contact"
+    }
+  },
+  "contact:website": {
+    "key": "contact:website",
+    "type": "url",
+    "lbl": {
+      "en": "Contact website",
+      "fr": "Site Web de contact"
+    }
+  },
+  "contact:webcam": {
     "key": "contact:webcam",
     "type": "url",
     "icon": "website",

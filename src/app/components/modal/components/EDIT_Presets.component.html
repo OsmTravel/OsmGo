@@ -71,6 +71,7 @@
     <ion-card-header>
         <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']}}</b>
         <b *ngIf="displayCode"> <ion-icon name="code"></ion-icon> {{preset?.key}}</b>
+        <a *ngIf="preset?.type == 'url' && tag.value" href="{{tag.value}}" target="_blank"><ion-icon name="link"></ion-icon></a>
     </ion-card-header>
 
     <ion-card-content>

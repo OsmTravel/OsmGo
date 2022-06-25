@@ -2,6 +2,7 @@
     <ion-card-header>
         <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']  }}</b>
         <b *ngIf="displayCode">{{preset?.key}}</b>
+        <a *ngIf="preset?.type == 'url' && tag.value" href="{{tag.value}}" target="_blank"><ion-icon name="link"></ion-icon></a>
     </ion-card-header>
     <ion-card-content *ngIf="preset?.type != 'opening_hours'">
        <div *ngIf="preset?.type == 'opening_hours'">
