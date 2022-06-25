@@ -19,7 +19,7 @@ import { AlertInput } from '@ionic/core';
 import { Haptics, ImpactStyle } from '@capacitor/haptics';
 
 import { setIconStyle } from "../../../scripts/osmToOsmgo/index.js";
-import { TagConfig } from 'src/type';
+import { FeatureIdSource, TagConfig } from 'src/type';
 import { Config } from 'protractor';
 import { BehaviorSubject, of, Subject } from 'rxjs';
 
@@ -617,7 +617,7 @@ export class MapService {
   selectFeature(feature) {
     const layer = feature['layer'].id;
     // Provenance de la donnée d'origine (data OU data_changed)
-    let origineData = 'data';
+    let origineData: FeatureIdSource = 'data';
     if ( ['label_changed','marker_changed','icon-change', 'way_line_changed', 'way_fill_changed'].includes(layer)) {
       origineData = 'data_changed';
     }

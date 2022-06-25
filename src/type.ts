@@ -18,15 +18,23 @@ export type OsmGoFeature = Feature<Geometry, FeatureProperties>;
  * Osm Go! specific geojson feature properties.
  */
 export interface FeatureProperties{
+    /** Color of the marker as a hexadecimal string */
     hexColor: string;
+    /** Config marker icon or empty string. */
     icon: string;
     id: number;
+    /** Identifier of the marker in the form "<shape>-<color>-<icon>" */
     marker: string
+    /** 
+     * Meta information about the last change of the feature, e.g. timestamp and
+     * author information.
+     */
     meta: MetaData
     primaryTag: PrimaryTag
     tags: any;
     type: string;
     way_geometry?: Geometry;
+    /** If true, the node is used by a way, otherwise false. */
     usedByWays? : boolean;
     /** 
      * Contains the original data of a feature in case it has been modified.
@@ -96,3 +104,5 @@ export interface TagConfig{
     isUserTag?: boolean;
 
 }
+
+export type FeatureIdSource = 'data' | 'data_changed';

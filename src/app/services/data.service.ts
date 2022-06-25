@@ -3,7 +3,7 @@ import { Storage } from '@ionic/storage-angular';
 import { cloneDeep } from 'lodash';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { OsmGoFeatureCollection, OsmGoFeature } from 'src/type';
+import { OsmGoFeatureCollection, OsmGoFeature, FeatureIdSource } from 'src/type';
 
 
 @Injectable({ providedIn: 'root' })
@@ -151,16 +151,33 @@ export class DataService {
         }
     }
 
-    getFeatureById(id: number, origineData: string): OsmGoFeature {
-        const features = (origineData === 'data_changed') ? this.getGeojsonChanged().features : this.getGeojson().features;
+    /** 
+     * Looks up a feature with a given ID.
+     * 
+     * If the source is `data`, the original OSM geojson features are searched
+     * through, otherwise the local modified features are used for the lookup.
+     * 
+     * @returns A deep copy of the feature if found, null otherwise.
+     */
+    getFeatureById(id: number, source: FeatureIdSource): OsmGoFeature | null {
+        const features = (source === 'data_changed') ? this.getGeojsonChanged().features : this.getGeojson().features;
 
         for (let i = 0; i < features.length; i++) {
             if (features[i].properties.id === id) {
                 return cloneDeep(features[i]);
             }
         }
+
+        return null;
     }
 
+    /**
+     * Retrieve a geojson feature collection of all changed
+     * (created/modified/deleted) elements.
+     * 
+     * @returns A deep copy of the geojson feature collection of all changed
+     * elements.
+     */
     getGeojsonChanged(): OsmGoFeatureCollection {
         return cloneDeep(this.geojsonChanged);
     }

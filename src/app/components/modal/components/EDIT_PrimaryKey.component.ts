@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Feature } from 'geojson';
-import { PrimaryTag } from "../../../../type";
+import { OsmGoFeature, PrimaryTag } from "../../../../type";
 
 @Component({
     selector: 'edit-primary-key',
@@ -15,7 +14,7 @@ export class EditPrimaryKey {
     @Input() tagConfig;
     @Input() language;
     @Input() jsonSprites;
-    @Input() feature: Feature;
+    @Input() feature: OsmGoFeature;
     @Input() primaryKey :PrimaryTag;
    
 
