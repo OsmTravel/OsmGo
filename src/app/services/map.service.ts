@@ -769,7 +769,10 @@ export class MapService {
       'paint': {
         'circle-color': '#9bbcf2', 'circle-opacity': 0.2, 'circle-radius': 0,
         'circle-stroke-width': 1, 'circle-stroke-color': '#9bbcf2', 'circle-stroke-opacity': 0.5,
-        // 'circle-radius-transition': { 'duration': 0 }  # FIXME @dotcs: According to types, this property is not defined
+        // @ts-expect-error
+        // Currently the property 'circle-radius-transition' is missing in the typings.
+        // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898445988
+        'circle-radius-transition': { 'duration': 0 },
       }
     });
 
