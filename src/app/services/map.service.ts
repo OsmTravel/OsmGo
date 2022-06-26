@@ -175,7 +175,10 @@ export class MapService {
       if (typeof currentFilter === "undefined") {
         // FIXME @dotcs: Do something here
       }
-      const newConfigIdFilter: FilterSpecification = ["match", ["get", "configId"], [...ids], false];
+      //@ts-expect-error
+      // Types are not correct for the match filter used in the next line.
+      // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+      const newConfigIdFilter: FilterSpecification = ["match", ["get", "configId"], [...ids], false, true];
       let newFilter = [];
   
         // currentFilter[0] === 'all
@@ -701,7 +704,10 @@ export class MapService {
     this.map.addLayer({
       'id': 'bboxLayer', 'type': 'line', 'source': 'bbox',
       'paint': { 'line-color': '#ea1212', 'line-width': 5, 
-      'line-dasharray': { type: "exponential", "stops": [
+      //@ts-expect-error
+      // Types can only deal with an array of numbers, not with more complex configurations.
+      // See docs: https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#paint-line-line-dasharray
+      'line-dasharray': { "stops": [
         [14, [1,0] ],
         [14, [1,1] ]
       ] } 
@@ -710,10 +716,12 @@ export class MapService {
 
     this.map.addLayer({
       'id': 'way_fill', 'type': 'fill', 'minzoom': minzoom, 'source': 'ways',
-      'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 }
-      // ,'filter': ['all']
-      , 'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true]]
-      
+      'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 },
+      // 'filter': ['all'],
+      //@ts-expect-error
+      // Types are not correct for the match filter used in the next line.
+      // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
     });
 
     this.map.addLayer({
@@ -723,13 +731,19 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true]]
+      //@ts-expect-error
+      // Types are not correct for the match filter used in the next line.
+      // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
     });
 
     this.map.addLayer({
       'id': 'way_fill_changed', 'type': 'fill', 'source': 'ways_changed',
       'paint': { 'fill-color': { 'property': 'hexColor', 'type': 'identity' }, 'fill-opacity': 0.3 },
-      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true]]
+      //@ts-expect-error
+      // Types are not correct for the match filter used in the next line.
+      // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+      'filter': ['all', ['match', ["geometry-type"], ['Polygon', 'MultiPolygon' ], true, false]]
     });
 
     this.map.addLayer({
@@ -739,7 +753,10 @@ export class MapService {
         'line-width': 4, 'line-opacity': 0.7
       },
       'layout': { 'line-join': 'round', 'line-cap': 'round' },
-      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true]]
+      //@ts-expect-error
+      // Types are not correct for the match filter used in the next line.
+      // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+      'filter': ['all', ['match', ["geometry-type"], ['LineString', 'MultiLineString' ], true, false]]
     });
 
     this.map.addLayer({
