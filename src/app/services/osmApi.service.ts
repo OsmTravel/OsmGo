@@ -544,11 +544,11 @@ export class OsmApiService {
                 }
             }
             let rel_ref_xml = ''
-            for (let i = 0; i < _feature.relMembers.length; i++) {
+            for (let i = 0; i < _feature.members.length; i++) {
                 rel_ref_xml += `<member
-                    type="${_feature.relMembers[i].type}"
-                    role="${_feature.relMembers[i].role}"
-                    ref="${_feature.relMembers[i].ref}"/>`
+                    type="${_feature.members[i].type}"
+                    role="${_feature.members[i].role}"
+                    ref="${_feature.members[i].ref}"/>`
             }
             const xml = `
                     ${relation_header}

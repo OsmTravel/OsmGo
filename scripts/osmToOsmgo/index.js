@@ -408,7 +408,7 @@ export const convert = (osmData, options) => {
 
     const getMultiPolygon = (_rel, _features) => {
         const rel = { ..._rel }
-        let members = Array.isArray(rel.member) ? rel.member : [rel.member]
+        let members = Array.isArray(rel.members) ? rel.members : [rel.members]
         rel['tainted'] = false
         for (let i = 0; i < members.length; i++) {
             let member = members[i]
@@ -733,10 +733,9 @@ export const convert = (osmData, options) => {
             }
             _features[`way/${el.id}`] = w
         } else if (el.type === 'relation') {
-            const rel = el
             const r = {
                 type: 'Feature',
-                id: `rel/${el.id}`,
+                id: `relation/${el.id}`,
                 properties: {
                     type: 'relation',
                     id: el.id,
@@ -748,7 +747,7 @@ export const convert = (osmData, options) => {
                         uid: el.uid,
                     },
                 },
-                member: el.members,
+                members: el.members,
                 tainted: false,
             }
 
@@ -778,9 +777,9 @@ export const convert = (osmData, options) => {
 
             if (r.properties.tags.type === 'multipolygon') {
                 // => We have to have all the relation first
-                multiPolygonIds.push(`rel/${r.id}`)
+                multiPolygonIds.push(`relation/${r.id}`)
             }
-            _features[`rel/${r.id}`] = r
+            _features[`relation/${r.id}`] = r
         }
     }
 
