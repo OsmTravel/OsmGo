@@ -27,7 +27,7 @@ import { TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ModalsContentPage implements OnInit {
-  tags: Tag[] = []; // main data
+  tags: Tag[] = []; // key/value that exists in OSM
   originalTags = [];
   feature: Feature;
   origineData: string;
@@ -142,6 +142,7 @@ export class ModalsContentPage implements OnInit {
     let _tagConfig: TagConfig;
     let _tagId;
     let _presetsIds: string[];
+    let _morePresetsIds: string[];
     let _savedFields;
     let _primaryKey;
 
@@ -171,12 +172,23 @@ export class ModalsContentPage implements OnInit {
 
     // this.presetsIds = (this.tagConfig && this.tagConfig.presets) ? this.tagConfig.presets : undefined;
     _presetsIds = (_tagConfig && _tagConfig.presets) ? _tagConfig.presets : undefined;
+    _morePresetsIds = (_tagConfig && _tagConfig.moreFields) ? _tagConfig.moreFields : undefined;
 
+    // concat 
+    _presetsIds = [..._presetsIds, ..._morePresetsIds]
 
     if (_presetsIds && _presetsIds.length > 0) {
       // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
       for (let i = 0; i < _presetsIds.length; i++) {
-        const preset: Preset = this.tagsService.presets[_presetsIds[i]];
+        let preset: Preset = this.tagsService.presets[_presetsIds[i]];
+
+        // for types select, list and manyCombo, if no options are provided then we set the type to text
+        if (preset.type === 'select' || preset.type === 'list' || preset.type === 'manyCombo') {
+          if (!preset.options || preset.options.length <= 0) {
+            preset.type = 'text'
+            console.warn("Set to text: " + preset.key + " in " + preset._id)
+          }
+        }
 
         // le tag utilisant la clé du preset
         const tagOfPreset: Tag = _tags.find(tag => tag.key === preset.key) || undefined;
