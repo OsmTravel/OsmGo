@@ -35,6 +35,14 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Spanish_language"
     },
     {
+      "code": "ca",
+      "639-2": "cat",
+      "family": "Indo-European",
+      "name": "Catalan",
+      "nativeName": "Català",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Catalan_language"
+    },
+    {
       "code": "pt",
       "639-2": "por",
       "family": "Indo-European",
