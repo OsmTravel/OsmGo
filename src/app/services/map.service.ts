@@ -32,7 +32,14 @@ import { AlertInput } from '@ionic/core'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
 import { setIconStyle } from '../../../scripts/osmToOsmgo/index.js'
-import { FeatureIdSource, MapMode, OsmGoFeature, OsmGoFeatureCollection, OsmGoMarker, TagConfig } from 'src/type'
+import {
+    FeatureIdSource,
+    MapMode,
+    OsmGoFeature,
+    OsmGoFeatureCollection,
+    OsmGoMarker,
+    TagConfig,
+} from 'src/type'
 import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { FeatureCollection } from 'geojson'
@@ -72,19 +79,23 @@ export class MapService {
 
         this.eventMarkerReDraw.subscribe((geojson?: OsmGoFeatureCollection) => {
             if (geojson) {
-                const source = this.map.getSource('data') as GeoJSONSource;
+                const source = this.map.getSource('data') as GeoJSONSource
                 source.setData(geojson)
                 this.drawWaysPoly(geojson, 'ways')
             }
         })
 
-        this.eventMarkerChangedReDraw.subscribe((geojson?: OsmGoFeatureCollection) => {
-            if (geojson) {
-                const source = this.map.getSource('data_changed') as GeoJSONSource;
-                source.setData(geojson)
-                this.drawWaysPoly(geojson, 'ways_changed')
+        this.eventMarkerChangedReDraw.subscribe(
+            (geojson?: OsmGoFeatureCollection) => {
+                if (geojson) {
+                    const source = this.map.getSource(
+                        'data_changed'
+                    ) as GeoJSONSource
+                    source.setData(geojson)
+                    this.drawWaysPoly(geojson, 'ways_changed')
+                }
             }
-        })
+        )
 
         this.eventMapMove.pipe(debounceTime(700)).subscribe(() => {
             let mapCenter = this.map.getCenter()
@@ -100,13 +111,13 @@ export class MapService {
         })
     } // EOF constructor
 
-    bboxPolygon: OsmGoFeature;
-    map: Map;
-    markerMove: OsmGoMarker;
-    markerMoveMoving: boolean = false;
-    subscriptionMoveElement: Subscription;
-    subscriptionMarkerMove: Subscription;
-    mode: MapMode = 'Update';
+    bboxPolygon: OsmGoFeature
+    map: Map
+    markerMove: OsmGoMarker
+    markerMoveMoving: boolean = false
+    subscriptionMoveElement: Subscription
+    subscriptionMarkerMove: Subscription
+    mode: MapMode = 'Update'
     headingIsLocked: boolean = true
     positionIsFollow: boolean = true
     isDisplaySatelliteBaseMap: boolean = false
@@ -138,7 +149,7 @@ export class MapService {
     eventMarkerMove = new EventEmitter()
     eventMapMove = new EventEmitter()
     markerMoving = false // le marker est en train d'être positionné
-    markerPositionate: OsmGoMarker;
+    markerPositionate: OsmGoMarker
     markerMaplibreUnknown = {}
 
     filters = {
@@ -191,7 +202,7 @@ export class MapService {
 
         for (let layerId of layersIds) {
             const currentFilter = this.map.getFilter(layerId)
-            if (typeof currentFilter === "undefined") {
+            if (typeof currentFilter === 'undefined') {
                 // FIXME @dotcs: Do something here
             }
             // @ts-expect-error
@@ -238,7 +249,7 @@ export class MapService {
             }
         }
 
-        const mapSource = this.map.getSource(source) as GeoJSONSource;
+        const mapSource = this.map.getSource(source) as GeoJSONSource
         mapSource.setData({ type: 'FeatureCollection', features: featuresWay })
     }
 
@@ -515,7 +526,9 @@ export class MapService {
     createDomMoveMarker(coord: LngLatLike, data: any): OsmGoMarker {
         const el = document.createElement('div')
         el.className = 'moveMarkerIcon'
-        const marker = new Marker(el, { offset: [0, -15] }).setLngLat(coord) as OsmGoMarker;
+        const marker = new Marker(el, { offset: [0, -15] }).setLngLat(
+            coord
+        ) as OsmGoMarker
         marker['data'] = data
         return marker
     }
@@ -614,7 +627,7 @@ export class MapService {
         /* SUBSCRIPTIONS */
         // un nouveau polygon!
         this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
-            const mapSource = this.map.getSource('bbox') as GeoJSONSource;
+            const mapSource = this.map.getSource('bbox') as GeoJSONSource
             mapSource.setData(geojsonPolygon)
         })
 
@@ -668,7 +681,7 @@ export class MapService {
         _map: Map
     ): FilterSpecification {
         let currentFilter = _map.getFilter(layerName)
-        if (typeof currentFilter === "undefined") {
+        if (typeof currentFilter === 'undefined') {
             // FIXME: @dotcs add some error handling
         }
         let findIndex = null
@@ -683,7 +696,11 @@ export class MapService {
             _map.setFilter(layerName, currentFilter)
             return currentFilter
         } else if (enable) {
-            (currentFilter as FilterSpecification[]).push(['<', ['get', 'mesure'], value])
+            ;(currentFilter as FilterSpecification[]).push([
+                '<',
+                ['get', 'mesure'],
+                value,
+            ])
             _map.setFilter(layerName, currentFilter)
             return currentFilter
         }
@@ -733,19 +750,24 @@ export class MapService {
         const currentTime = new Date().getTime()
 
         let currentFilter = this.map.getFilter('icon-old')
-        if (typeof currentFilter === "undefined") {
+        if (typeof currentFilter === 'undefined') {
             // FIXME: @dotcs Add error handling
         }
         //  currentFilter.push( ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ] );
 
-        let findedIndex: number;
+        let findedIndex: number
         for (let i = 1; i < currentFilter.length; i++) {
-            const spec = currentFilter[i] as FilterSpecification; // TODO: @dotcs probably a dangerous typecast
-            if (spec.length == 3 && spec[2] && spec[0] == '>' && spec[2][1] === 'time') {
+            const spec = currentFilter[i] as FilterSpecification // TODO: @dotcs probably a dangerous typecast
+            if (
+                spec.length == 3 &&
+                spec[2] &&
+                spec[0] == '>' &&
+                spec[2][1] === 'time'
+            ) {
                 findedIndex = i
             }
         }
-        let newFilter: FilterSpecification;
+        let newFilter: FilterSpecification
         if (findedIndex) {
             currentFilter[findedIndex] = [
                 '>',
@@ -754,8 +776,12 @@ export class MapService {
             ]
             newFilter = currentFilter
         } else {
-            newFilter = [...currentFilter] as FilterSpecification[];
-            const filter = ['>', "" + (currentTime - (OneYear * maxYearAgo)), ['get', 'time']];
+            newFilter = [...currentFilter] as FilterSpecification[]
+            const filter = [
+                '>',
+                '' + (currentTime - OneYear * maxYearAgo),
+                ['get', 'time'],
+            ]
             newFilter.push(filter)
         }
 
@@ -1191,31 +1217,37 @@ export class MapService {
                 }
             })
 
-        this.locationService.eventNewLocation.subscribe((geojsonPos: FeatureCollection) => {
-            this.addDomMarkerPosition()
+        this.locationService.eventNewLocation.subscribe(
+            (geojsonPos: FeatureCollection) => {
+                this.addDomMarkerPosition()
 
-            if (geojsonPos.features && geojsonPos.features[0].properties) {
-                const coordinates = (geojsonPos.features[0].geometry as Point).coordinates as LngLatLike;
-                this.markerLocation.setLngLat(coordinates);
-                const mapSource = this.map.getSource('location_circle') as GeoJSONSource;
-                mapSource.setData(geojsonPos);
-                this.changeLocationRadius(
-                    geojsonPos.features[0].properties.accuracy,
-                    true
-                )
+                if (geojsonPos.features && geojsonPos.features[0].properties) {
+                    const coordinates = (
+                        geojsonPos.features[0].geometry as Point
+                    ).coordinates as LngLatLike
+                    this.markerLocation.setLngLat(coordinates)
+                    const mapSource = this.map.getSource(
+                        'location_circle'
+                    ) as GeoJSONSource
+                    mapSource.setData(geojsonPos)
+                    this.changeLocationRadius(
+                        geojsonPos.features[0].properties.accuracy,
+                        true
+                    )
 
-                if (
-                    this.configService.config.followPosition &&
-                    this.positionIsFollow
-                ) {
-                    this.map.setCenter(coordinates)
-                    if (this.isFirstPosition) {
-                        this.map.setZoom(18)
-                        this.isFirstPosition = false
+                    if (
+                        this.configService.config.followPosition &&
+                        this.positionIsFollow
+                    ) {
+                        this.map.setCenter(coordinates)
+                        if (this.isFirstPosition) {
+                            this.map.setZoom(18)
+                            this.isFirstPosition = false
+                        }
                     }
                 }
             }
-        })
+        )
 
         // La localisation était déjà ready avnt que la carte ne soit chargée
         if (this.locationService.gpsIsReady) {
