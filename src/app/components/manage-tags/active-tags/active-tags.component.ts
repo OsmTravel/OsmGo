@@ -1,33 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { ConfigService } from 'src/app/services/config.service';
-import { TagsService } from 'src/app/services/tags.service';
-import { ModalController } from '@ionic/angular';
-import { TagConfig } from 'src/type';
+import { Component, OnInit } from '@angular/core'
+import { ConfigService } from 'src/app/services/config.service'
+import { TagsService } from 'src/app/services/tags.service'
+import { ModalController } from '@ionic/angular'
+import { TagConfig } from 'src/type'
 
 @Component({
-  selector: 'app-active-tags',
-  templateUrl: './active-tags.component.html',
-  styleUrls: ['./active-tags.component.scss', '../sharedStyle.scss'],
+    selector: 'app-active-tags',
+    templateUrl: './active-tags.component.html',
+    styleUrls: ['./active-tags.component.scss', '../sharedStyle.scss'],
 })
 export class ActiveTagsComponent implements OnInit {
+    searchText = ''
+    refreshFilterMapAfterClose = false
 
-  searchText = ''
-  refreshFilterMapAfterClose = false;
+    constructor(
+        public configService: ConfigService,
+        public tagsService: TagsService,
+        public modalCtrl: ModalController
+    ) {}
 
-  constructor(public configService: ConfigService,
-    public tagsService: TagsService,
-    public modalCtrl: ModalController) { }
+    ngOnInit() {}
 
-  ngOnInit() {
-  }
+    removeHiddenTag(tag: TagConfig) {
+        this.tagsService.removeHiddenTag(tag)
+        this.refreshFilterMapAfterClose = true
+    }
 
-  removeHiddenTag(tag:TagConfig){
-    this.tagsService.removeHiddenTag(tag);
-    this.refreshFilterMapAfterClose = true;
-  }
-
-  addHiddenTag(tag:TagConfig){
-   this.tagsService.addHiddenTag(tag);
-  }
-
+    addHiddenTag(tag: TagConfig) {
+        this.tagsService.addHiddenTag(tag)
+    }
 }

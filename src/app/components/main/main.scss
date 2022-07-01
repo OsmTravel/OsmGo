@@ -1,72 +1,91 @@
-    $footerHeight : 50px;
-    $header : 0;
+$footerHeight: 50px;
+$header: 0;
 
+.loadingFullScreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background-color: whitesmoke;
+}
 
+.main scroll-content {
+    margin-bottom: 0;
+}
 
-    .loadingFullScreen{
-        position: absolute;
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-        background-color: whitesmoke;
+#map {
+    position: absolute;
+    top: $header;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.maplibre-ctrl-logo {
+    display: none;
+}
+
+ion-footer {
+    height: $footerHeight;
+}
+
+.ion-fab {
+    z-index: 5000;
+}
+
+.spin {
+    -moz-animation: spin 1s 1 linear;
+    -o-animation: spin 1s 1 linear;
+    -webkit-animation: spin 1s 1 linear;
+    animation: spin 1s 1 linear;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
     }
+    100% {
+        -webkit-transform: rotate(359deg);
+    }
+}
 
-    .main scroll-content{
-        margin-bottom: 0;
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0deg);
     }
+    100% {
+        -moz-transform: rotate(359deg);
+    }
+}
 
-    #map {
-        position: absolute; top:$header; bottom: 0;right: 0; left: 0;
+@-o-keyframes spin {
+    0% {
+        -o-transform: rotate(0deg);
     }
-    .maplibre-ctrl-logo{
-        display: none;
+    100% {
+        -o-transform: rotate(359deg);
     }
+}
 
-    ion-footer {
-        height: $footerHeight;
+@-ms-keyframes spin {
+    0% {
+        -ms-transform: rotate(0deg);
     }
+    100% {
+        -ms-transform: rotate(359deg);
+    }
+}
 
-    .ion-fab{
-        z-index: 5000;
-    }  
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
 
-
-
-    .spin{
-        -moz-animation: spin 1s 1 linear;
-        -o-animation: spin 1s 1 linear;
-        -webkit-animation: spin 1s 1 linear;
-        animation: spin 1s 1 linear;
-    }
-
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(359deg); }
-    }
-    
-    @-moz-keyframes spin {
-        0% { -moz-transform: rotate(0deg); }
-        100% { -moz-transform: rotate(359deg); }
-    }
-    
-    @-o-keyframes spin {
-        0% { -o-transform: rotate(0deg); }
-        100% { -o-transform: rotate(359deg); }
-    }
-    
-    @-ms-keyframes spin {
-        0% { -ms-transform: rotate(0deg); }
-        100% { -ms-transform: rotate(359deg); }
-    }
-    
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(359deg); }
-    }
-
-
-    menu-component{
-        z-index: 1002;
-    }
+menu-component {
+    z-index: 1002;
+}

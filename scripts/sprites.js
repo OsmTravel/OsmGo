@@ -1,7 +1,7 @@
 const generateSprites = require('./generateSprites')
 
 const run = async () => {
-  await generateSprites.generateSprites();
+    await generateSprites.generateSprites()
 }
 
-run();
+run()

@@ -1,49 +1,43 @@
+$headerHeight: 56px;
+$tabHeight: 50px;
+$searchSelectHeight: 65px;
+$searchDivHeight: 58px;
 
-    $headerHeight: 56px;
-    $tabHeight: 50px;
-    $searchSelectHeight : 65px;
-    $searchDivHeight : 58px;
+ion-toolbar {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
+#divContentSB {
+    position: absolute;
+    top: $headerHeight;
+    height: $searchSelectHeight;
+    width: 100%;
+    background-color: white;
+}
+#searchDiv {
+    width: 100%;
+    //height: $searchDivHeight;
+}
 
-    ion-toolbar{
-        box-shadow: 1px 2px 4px rgba(0, 0, 0, .3);
-    }
+.listTag {
+    position: absolute;
+    top: $searchDivHeight + $headerHeight;
+    bottom: 50px;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: white;
+}
 
-    #divContentSB{
-         position: absolute;
-        top:$headerHeight;
-        height: $searchSelectHeight;
-        width: 100%;
-        background-color: white;
-    }
-    #searchDiv{
-       
-        width: 100%;
-        //height: $searchDivHeight;
-    }
+#footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: white;
+    box-shadow: -1px -2px 4px rgba(0, 0, 0, 0.3);
+}
 
-    .listTag{
-        position: absolute;
-        top: $searchDivHeight +  $headerHeight;
-        bottom: 50px;
-        width: 100%;
-        overflow-y: scroll;
-        background-color: white;
-    }
-
-    #footer{
-        position: absolute;
-        bottom: 0;
-        height: 50px;
-        width: 100%;
-        background-color: white;
-        box-shadow: -1px -2px 4px rgba(0, 0, 0, .3);
-    }
-
-    td{
-        padding: 10px;
-        border-bottom: 1px solid grey;
-    }
-
-
-
+td {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+}

@@ -1,14 +1,10 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core'
 
-@Injectable( { providedIn: 'root' } )
+@Injectable({ providedIn: 'root' })
 export class AlertService {
-    eventNewAlert = new EventEmitter();
-    eventDisplayToolTipRefreshData = new EventEmitter();
-    displayToolTipRefreshData = false;
+    eventNewAlert = new EventEmitter()
+    eventDisplayToolTipRefreshData = new EventEmitter()
+    displayToolTipRefreshData = false
 
-    constructor() {
-
-    }
-
-
+    constructor() {}
 }

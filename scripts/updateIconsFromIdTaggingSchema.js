@@ -1,19 +1,19 @@
 /**
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
-const path = require('path');
-const fs = require('fs');
-const chalk = require('chalk');
-const stringify = require("json-stringify-pretty-compact")
+const path = require('path')
+const fs = require('fs')
+const chalk = require('chalk')
+const stringify = require('json-stringify-pretty-compact')
 
-const _ = require('lodash');
-const { exit } = require('process');
+const _ = require('lodash')
+const { exit } = require('process')
 
 // OsmGo tags
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
-const tagsOsmgo = tagConfig.tags;
+const tagsOsmgo = tagConfig.tags
 
 // OsmGo sprites
 const spritesPath = path.join(assetsFolder, 'iconsSprites@x1.json')
@@ -22,8 +22,8 @@ const supportedIcons = Object.keys(sprites)
 
 // id-tagging-schema
 const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const tagsIDPath = path.join(idRepoPath, 'presets.json');
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'));
+const tagsIDPath = path.join(idRepoPath, 'presets.json')
+const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
 
 // tagsToIgnore because OsmGo icon is better than id icon
 const tagsToIgnore = [
@@ -108,7 +108,7 @@ const tagsToIgnore = [
     'shop/variety_store',
     'tourism/artwork',
     'tourism/gallery',
-    'tourism/theme_park'
+    'tourism/theme_park',
 ]
 let notworkingIcons = []
 let unsupportedIcons = []
@@ -116,8 +116,8 @@ let updatedTags = []
 
 /* IMPORT TAGS */
 for (let iDid in tagsID) {
-    const tagiD = tagsID[iDid];
-    const tagOsmgoById = tagsOsmgo.find(t => t.id === iDid);
+    const tagiD = tagsID[iDid]
+    const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
 
     if (tagOsmgoById) {
         if (tagOsmgoById.icon && !supportedIcons.includes(tagOsmgoById.icon)) {
@@ -131,12 +131,15 @@ for (let iDid in tagsID) {
                 if (tagOsmgoById.icon !== tagiD.icon) {
                     let oldicon = tagOsmgoById.icon
                     tagOsmgoById.icon = tagiD.icon
-                    let clone = Object.assign({ oldicon: oldicon }, tagOsmgoById)
+                    let clone = Object.assign(
+                        { oldicon: oldicon },
+                        tagOsmgoById
+                    )
                     clone.oldicon = oldicon
                     updatedTags.push(clone)
                 }
             } else {
-                unsupportedIcons = _.union(unsupportedIcons, [tagiD.icon]);
+                unsupportedIcons = _.union(unsupportedIcons, [tagiD.icon])
             }
         }
     }
@@ -144,14 +147,21 @@ for (let iDid in tagsID) {
 
 fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
 
-console.warn("iD icons not supported by OsmGo: " + unsupportedIcons.length)
-console.warn("Icons not working in OsmGo: " + notworkingIcons.length)
+console.warn('iD icons not supported by OsmGo: ' + unsupportedIcons.length)
+console.warn('Icons not working in OsmGo: ' + notworkingIcons.length)
 for (let itag in notworkingIcons) {
-    const tag = notworkingIcons[itag];
-    console.warn("not working: " + tag.id + " => " + tag.icon)
+    const tag = notworkingIcons[itag]
+    console.warn('not working: ' + tag.id + ' => ' + tag.icon)
 }
-console.log("Icons updated in OsmGo tags: " + updatedTags.length)
+console.log('Icons updated in OsmGo tags: ' + updatedTags.length)
 for (let itag in updatedTags) {
-    const tag = updatedTags[itag];
-    console.log("updated: " + chalk.yellow(tag.id) + " icon: " + chalk.red(tag.oldicon) + " => " + chalk.green(tag.icon))
+    const tag = updatedTags[itag]
+    console.log(
+        'updated: ' +
+            chalk.yellow(tag.id) +
+            ' icon: ' +
+            chalk.red(tag.oldicon) +
+            ' => ' +
+            chalk.green(tag.icon)
+    )
 }

@@ -1,33 +1,37 @@
 <ion-toolbar>
     <ion-title>
-        {{ data.preset.lbl[language] || data.preset.lbl['en']  }}
+        {{ data.preset.lbl[language] || data.preset.lbl['en'] }}
     </ion-title>
 </ion-toolbar>
 <div id="divContentSB">
     <div id="searchDiv">
-        <ion-searchbar [(ngModel)]="searchText" [debounce]="300"></ion-searchbar>
+        <ion-searchbar
+            [(ngModel)]="searchText"
+            [debounce]="300"
+        ></ion-searchbar>
     </div>
 </div>
-
 
 <div class="listTag">
     <!-- radio-group [(ngModel)]="data.value" (ionChange)="selected($event)" -->
     <ion-list>
-        <ion-radio-group (ionChange)="selected($event)" >
-            <ion-item 
-            *ngFor="let option of data.preset.options | filterByCountryCode:countryCode | filterByPresetsContent:[language]:searchText">
-                <ion-label> 
+        <ion-radio-group (ionChange)="selected($event)">
+            <ion-item
+                *ngFor="let option of data.preset.options | filterByCountryCode:countryCode | filterByPresetsContent:[language]:searchText"
+            >
+                <ion-label>
                     <b>{{option.lbl[language] || option.lbl['en'] }}</b>
-                    <br> {{option.v}}
-                   
+                    <br />
+                    {{option.v}}
                 </ion-label>
 
                 <ion-radio [value]="option"></ion-radio>
-
             </ion-item>
         </ion-radio-group>
     </ion-list>
 </div>
 <ion-footer id="footer">
-    <ion-button ion-button color="danger" (click)="dismiss()">{{ 'SHARED.CANCEL' | translate}}</ion-button>
+    <ion-button ion-button color="danger" (click)="dismiss()"
+        >{{ 'SHARED.CANCEL' | translate}}</ion-button
+    >
 </ion-footer>

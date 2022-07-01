@@ -1,34 +1,32 @@
 $tabHeight: 0;
-$searchSelectHeight : 65px;
+$searchSelectHeight: 65px;
 
-#searchSelect{
+#searchSelect {
     position: absolute;
-    top:  $tabHeight;
-    height: $searchSelectHeight ;
+    top: $tabHeight;
+    height: $searchSelectHeight;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-
 }
 
-#searchDiv{
+#searchDiv {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.listTag{
+.listTag {
     position: absolute;
-    top: $searchSelectHeight +  $tabHeight;
+    top: $searchSelectHeight + $tabHeight;
     bottom: 50px;
     width: 100%;
     overflow-y: scroll;
 }
 
-#footer{
+#footer {
     position: absolute;
     bottom: 0;
     height: 50px;
-    width: 100%
+    width: 100%;
 }
-

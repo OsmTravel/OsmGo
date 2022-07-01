@@ -1,35 +1,53 @@
 <ion-card>
     <ion-card-header>
-        <b *ngIf="!displayCode">{{preset?.lbl[language] || preset?.lbl['en']  }}</b>
-        <b *ngIf="displayCode">{{preset?.key}}</b>
-        <a *ngIf="preset?.type == 'url' && tag.value" href="{{tag.value}}" target="_blank"><ion-icon name="link"></ion-icon></a>
+        <b *ngIf="!displayCode">{{
+            preset?.lbl[language] || preset?.lbl['en']
+        }}</b>
+        <b *ngIf="displayCode">{{ preset?.key }}</b>
+        <a
+            *ngIf="preset?.type == 'url' && tag.value"
+            href="{{ tag.value }}"
+            target="_blank"
+            ><ion-icon name="link"></ion-icon
+        ></a>
     </ion-card-header>
     <ion-card-content *ngIf="preset?.type != 'opening_hours'">
-       <div *ngIf="preset?.type == 'opening_hours'">
-      
-       </div>
+        <div *ngIf="preset?.type == 'opening_hours'"></div>
 
-        <p *ngIf="!displayCode && (tag | displayPresetLabel:preset) ; else noPreset ; let pr">
-            {{pr.lbl[language]  || pr.lbl['en']}}
+        <p
+            *ngIf="
+                !displayCode && (tag | displayPresetLabel: preset);
+                else noPreset;
+                let pr
+            "
+        >
+            {{ pr.lbl[language] || pr.lbl['en'] }}
         </p>
 
         <ng-template #noPreset>
-            <ion-icon name="code" *ngIf="!['number', 'text','tel', 'url', 'email'].includes(preset?.type)"></ion-icon>
-            {{tag.value}}
-
+            <ion-icon
+                name="code"
+                *ngIf="
+                    !['number', 'text', 'tel', 'url', 'email'].includes(
+                        preset?.type
+                    )
+                "
+            ></ion-icon>
+            {{ tag.value }}
         </ng-template>
-
     </ion-card-content>
 
-
     <ion-card-content *ngIf="preset?.type == 'opening_hours'">
-        <app-opening-hours *ngIf="!displayCode ; else noPreset"   [openingHours]="tag.value" [displayCode]="displayCode"> </app-opening-hours>
+        <app-opening-hours
+            *ngIf="!displayCode; else noPreset"
+            [openingHours]="tag.value"
+            [displayCode]="displayCode"
+        >
+        </app-opening-hours>
 
         <ng-template #noPreset>
             <ion-icon name="code"></ion-icon>
-            {{tag.value}}
+            {{ tag.value }}
         </ng-template>
-       
     </ion-card-content>
-
 </ion-card>

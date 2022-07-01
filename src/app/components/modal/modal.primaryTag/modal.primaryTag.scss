@@ -1,54 +1,44 @@
+ion-header {
+    height: 65px;
+}
+$tabHeight: 0;
+$searchSelectHeight: 65px;
 
-    ion-header{
-        height: 65px;
-    }
-    $tabHeight: 0;
-    $searchSelectHeight : 65px;
+#searchSelect {
+    position: absolute;
+    top: $tabHeight;
+    height: $searchSelectHeight;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+#searchDiv {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+// ion-conten .primaryTag{
+//     margin-top: 130px;
+// }
 
-    #searchSelect{
-        position: absolute;
-        top:  $tabHeight;
-        height: $searchSelectHeight ;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+.listTag {
+    position: absolute;
+    top: $searchSelectHeight + $tabHeight;
+    bottom: 50px;
+    width: 100%;
+    overflow-y: scroll;
+}
 
-    }
+#footer {
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+}
 
-    #searchDiv{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    // ion-conten .primaryTag{
-    //     margin-top: 130px;
-    // }
-
-
-    .listTag{
-        position: absolute;
-        top: $searchSelectHeight +  $tabHeight;
-        bottom: 50px;
-        width: 100%;
-        overflow-y: scroll;
-    }
-
-    #footer{
-        position: absolute;
-        bottom: 0;
-        height: 50px;
-        width: 100%
-    }
-
-
-    .buttonSwitchType{
-        width: 50%;
-        margin: 0;
-    }
-
-
-
-
+.buttonSwitchType {
+    width: 50%;
+    margin: 0;
+}

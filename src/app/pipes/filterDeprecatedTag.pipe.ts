@@ -1,21 +1,19 @@
-import { Pipe } from '@angular/core';
+import { Pipe } from '@angular/core'
 
 @Pipe({
     name: 'filterDeprecatedTag',
-    pure: false
+    pure: false,
 })
-
-export class FilterDeprecatedTagPipe  {
+export class FilterDeprecatedTagPipe {
     transform(items) {
-        if (!items){
-            return ([]);
+        if (!items) {
+            return []
         }
 
-        return items.filter(item => {
-           if (!item.deprecated){
-               return true
-           }
-        });
-
+        return items.filter((item) => {
+            if (!item.deprecated) {
+                return true
+            }
+        })
     }
 }

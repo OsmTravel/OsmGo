@@ -1,71 +1,63 @@
+$headerHeight: 56px;
+$footerHeight: 60px;
 
-    $headerHeight :56px;
-    $footerHeight : 60px;
+.toogleCodeButton {
+    position: absolute;
+    right: 0;
+    top: 28px;
+}
 
-    .toogleCodeButton{
-        position: absolute;
-        right: 0;
-        top: 28px;
-    }
+.wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
-    .wrapper{
-        position: absolute;
-        top:0;
-        bottom: 0;
-        left:0;
-        right: 0;
-    }
+ion-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: $headerHeight;
+    background-color: white;
+}
+ion-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footerHeight;
+    background-color: white;
+}
+.content {
+    position: absolute;
+    bottom: $footerHeight;
+    overflow: auto;
+    top: $headerHeight;
+    width: 100%;
+    background-color: white;
+}
 
+.fabInlineMarginLess {
+    margin-left: 4px !important;
+    margin-top: 2px !important;
+    float: left;
+}
 
-    ion-header{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: $headerHeight;
-        background-color: white;
-    }
-    ion-footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: $footerHeight;
-        background-color: white;
-    }
-    .content{
-        position: absolute;
-        bottom: $footerHeight;
-        overflow: auto;
-        top:$headerHeight; 
-        width: 100%;
-        background-color: white;
-    }
+.fabSurveyDate {
+    position: absolute;
+    right: 4px;
+}
 
+.fabToogleCode {
+    bottom: -25px;
+}
 
-
-    .fabInlineMarginLess{
-        margin-left: 4px !important;
-        margin-top: 2px !important;
-        float: left;
-    }
-
- 
-
-    .fabSurveyDate{
-        position: absolute;
-        right: 4px;
-    }
-
-    .fabToogleCode{
-        bottom: -25px;
-    }
-
-    .actions{
-        position: relative;
-        min-height: 40px;
-        width: 100%;
-    }
-    .actionsFabButton{
-        position: relative;
-    }
-
-
+.actions {
+    position: relative;
+    min-height: 40px;
+    width: 100%;
+}
+.actionsFabButton {
+    position: relative;
+}

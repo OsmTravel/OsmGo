@@ -33,7 +33,11 @@
               "src/.well-known/assetlinks.json",
               "src/manifest.webmanifest"
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss", "./node_modules/maplibre-gl/dist/maplibre-gl.css"],
+            "styles": [
+              "src/theme/variables.scss",
+              "src/global.scss",
+              "./node_modules/maplibre-gl/dist/maplibre-gl.css"
+            ],
             "scripts": [],
             "aot": false,
             "vendorChunk": true,
@@ -136,10 +140,7 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         },
         "e2e": {

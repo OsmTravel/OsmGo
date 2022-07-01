@@ -1,20 +1,45 @@
 <ion-card *ngIf="tagConfig && tagConfig?.deprecated" class="alertCard">
-  <ion-card-content>
-    {{'ALERT.TAG_IS_DEPRECATED'| translate}}
-    <ion-button *ngIf="tagConfig.replace"  (click)="fixDeprecated.emit({old:tagConfig.tags, replace :tagConfig.replace })">   <ion-icon name="hammer"></ion-icon> </ion-button>
-  </ion-card-content>
-</ion-card>
-
-<ion-card *ngIf="tagConfig && tagConfig?.alert && ( tagConfig?.alert[language] || tagConfig?.alert['en'] )" class="alertCard">
     <ion-card-content>
-      {{tagConfig?.alert[language] || tagConfig?.alert['en']}}
+        {{ 'ALERT.TAG_IS_DEPRECATED' | translate }}
+        <ion-button
+            *ngIf="tagConfig.replace"
+            (click)="
+                fixDeprecated.emit({
+                    old: tagConfig.tags,
+                    replace: tagConfig.replace
+                })
+            "
+        >
+            <ion-icon name="hammer"></ion-icon>
+        </ion-button>
     </ion-card-content>
 </ion-card>
 
-  
-  <ion-card *ngIf="tagConfig && tagConfig?.warning && ( tagConfig?.warning[language] || tagConfig?.warning['en'] ) && (!tagConfig.warningCountryCodes || tagConfig.warningCountryCodes.includes(countryCode))" class="warningtCard">
+<ion-card
+    *ngIf="
+        tagConfig &&
+        tagConfig?.alert &&
+        (tagConfig?.alert[language] || tagConfig?.alert['en'])
+    "
+    class="alertCard"
+>
     <ion-card-content>
-      <!-- TODO bug? -->
-        {{tagConfig?.warning[language] || tagConfig?.warning['en']}}
+        {{ tagConfig?.alert[language] || tagConfig?.alert['en'] }}
     </ion-card-content>
-  </ion-card>
+</ion-card>
+
+<ion-card
+    *ngIf="
+        tagConfig &&
+        tagConfig?.warning &&
+        (tagConfig?.warning[language] || tagConfig?.warning['en']) &&
+        (!tagConfig.warningCountryCodes ||
+            tagConfig.warningCountryCodes.includes(countryCode))
+    "
+    class="warningtCard"
+>
+    <ion-card-content>
+        <!-- TODO bug? -->
+        {{ tagConfig?.warning[language] || tagConfig?.warning['en'] }}
+    </ion-card-content>
+</ion-card>

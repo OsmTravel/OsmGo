@@ -1,64 +1,78 @@
-
 <div class="content">
-
-    <div  class="tag-icon" style="width:50px"
-    [style.background-color]="tag.markerColor ? tag.markerColor : 'black'"
+    <div
+        class="tag-icon"
+        style="width: 50px"
+        [style.background-color]="tag.markerColor ? tag.markerColor : 'black'"
     >
-    <div class="icon-wrapper">
-      <app-icon [icon]="tag.icon" style="display: block;"  [jsonSprites]="jsonSprites"> </app-icon>
+        <div class="icon-wrapper">
+            <app-icon
+                [icon]="tag.icon"
+                style="display: block"
+                [jsonSprites]="jsonSprites"
+            >
+            </app-icon>
+        </div>
     </div>
-   
-  </div>
 
- 
+    <div
+        *ngIf="!isHiddenTag"
+        (click)="addOrRemoveBookmark(tag)"
+        style="width: 36px"
+        class="bookmark"
+    >
+        <ion-icon
+            [style.color]="
+                (tag | isBookmarked: bookmarksIds) ? '#f71000' : '#d8d8d8'
+            "
+            name="heart"
+            item-left
+            style="font-size: 26px; height: 100%; width: 100%"
+        ></ion-icon>
+    </div>
 
-  <div *ngIf="!isHiddenTag"  (click)="addOrRemoveBookmark(tag)" style="width:36px" class="bookmark" >
-    <ion-icon
-      [style.color]="(tag | isBookmarked: bookmarksIds) ? '#f71000' : '#d8d8d8'"
-      name="heart"
-      item-left
-      style="font-size: 26px; height: 100%;width: 100%;"
-    ></ion-icon>
-  </div>
+    <div class="tag-text spacer" (click)="selected.emit(tag)">
+        <b [style.color]="oldTagConfig?.id === tag.id ? '#3b22dd' : 'black'">{{
+            tag?.lbl ? (tag?.lbl)[languageTags] || (tag?.lbl)['en'] : null
+        }}</b>
 
-  <div class="tag-text spacer" (click)="selected.emit(tag)">
-    <b [style.color]="oldTagConfig?.id === tag.id ? '#3b22dd' : 'black'">{{
-      tag?.lbl ? (tag?.lbl)[languageTags] || (tag?.lbl)["en"] : null
-    }}</b>
+        <br />
+        <span style="font-size: 0.8em">{{ tag?.tags | displayTags }}</span>
+        <br />
+        <span style="font-size: 11px; font-style: italic">
+            {{
+                tag?.description
+                    ? (tag?.description)[languageTags] ||
+                      (tag?.description)['en']
+                    : ''
+            }}
+        </span>
+    </div>
 
-    <br />
-    <span style="font-size: 0.8em;">{{ tag?.tags | displayTags }}</span>
-    <br />
-    <span style="font-size: 11px;font-style: italic;">
-      {{
-        tag?.description
-          ? (tag?.description)[languageTags] || (tag?.description)["en"]
-          : ""
-      }}
-    </span>
-  </div>
+    <div class="action" *ngIf="oldTagConfig?.id === tag.id">
+        <ion-icon
+            name="checkmark"
+            item-left
+            [style.color]="oldTagConfig?.id === tag.id ? 'green' : 'black'"
+            style="font-size: 26px; height: 100%"
+        ></ion-icon>
+    </div>
+    <div *ngIf="isHiddenTag">
+        <ion-button
+            class="ion-no-margin buttonUnhideTag"
+            color="success"
+            (click)="removeHiddenTag.emit(tag)"
+        >
+            <ion-icon name="add-circle"> </ion-icon>
+        </ion-button>
+    </div>
 
-  <div class="action" *ngIf="oldTagConfig?.id === tag.id " >
-    <ion-icon
-      name="checkmark"
-      item-left
-      [style.color]="oldTagConfig?.id === tag.id ? 'green' : 'black'"
-      style="font-size: 26px; height: 100%;"
-    ></ion-icon>
-  </div>
-  <div *ngIf="isHiddenTag" >
-    <ion-button class="ion-no-margin buttonUnhideTag" color="success" (click)="removeHiddenTag.emit(tag)" >
-      <ion-icon name="add-circle">
-      </ion-icon>
-    </ion-button>
-  </div>
- 
-  <div *ngIf="showHideTagButton" >
-    <ion-button class="ion-no-margin buttonUnhideTag" color="danger" (click)="addHiddenTag.emit(tag)" >
-      <ion-icon name="remove-circle">
-      </ion-icon>
-    </ion-button>
-  </div>
-
+    <div *ngIf="showHideTagButton">
+        <ion-button
+            class="ion-no-margin buttonUnhideTag"
+            color="danger"
+            (click)="addHiddenTag.emit(tag)"
+        >
+            <ion-icon name="remove-circle"> </ion-icon>
+        </ion-button>
+    </div>
 </div>
-

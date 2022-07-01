@@ -1,47 +1,52 @@
-import {Pipe} from '@angular/core';
-import { TagConfig } from 'src/type';
+import { Pipe } from '@angular/core'
+import { TagConfig } from 'src/type'
 
 @Pipe({
     name: 'filterExcludeKeys',
-    pure: false
+    pure: false,
 })
-
-export class FilterExcludeKeysPipe{
-    transform(items, tagConfig:TagConfig, countryCode: string, primaryKeys, presets, excludeOtherPresets = false) {
+export class FilterExcludeKeysPipe {
+    transform(
+        items,
+        tagConfig: TagConfig,
+        countryCode: string,
+        primaryKeys,
+        presets,
+        excludeOtherPresets = false
+    ) {
         // let excludesKeys = ['name', ...primaryKeys]
         let excludesKeys = ['name']
 
-        if (!tagConfig){
-            return items.filter(item => !excludesKeys.includes(item.key));
+        if (!tagConfig) {
+            return items.filter((item) => !excludesKeys.includes(item.key))
         }
 
-        excludesKeys = [...excludesKeys, ...Object.keys(tagConfig.tags)];
+        excludesKeys = [...excludesKeys, ...Object.keys(tagConfig.tags)]
 
-        if (presets && excludeOtherPresets){
-            let keysInPresetsConfig = [];
-            for( let pid of tagConfig.presets){
-                const currentPreset = presets[pid];
+        if (presets && excludeOtherPresets) {
+            let keysInPresetsConfig = []
+            for (let pid of tagConfig.presets) {
+                const currentPreset = presets[pid]
                 //countryCodes TODO exclude
-                keysInPresetsConfig.push(currentPreset.key);
+                keysInPresetsConfig.push(currentPreset.key)
             }
             excludesKeys = [...excludesKeys, ...keysInPresetsConfig]
         }
 
-        if (countryCode && presets){
-            let excludeByCountryconde = [];
-            for( let pid of tagConfig.presets){
-                const currentPreset = presets[pid];
-                if (currentPreset.countryCode && !currentPreset.countryCode.includes(countryCode) ){
+        if (countryCode && presets) {
+            let excludeByCountryconde = []
+            for (let pid of tagConfig.presets) {
+                const currentPreset = presets[pid]
+                if (
+                    currentPreset.countryCode &&
+                    !currentPreset.countryCode.includes(countryCode)
+                ) {
                     excludeByCountryconde.push(presets[pid])
                 }
             }
             excludesKeys = [...excludesKeys, ...excludeByCountryconde]
         }
 
-            return items.filter(item => !excludesKeys.includes(item.key));
-
-
-           
-        
+        return items.filter((item) => !excludesKeys.includes(item.key))
     }
 }

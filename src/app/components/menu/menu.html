@@ -1,58 +1,69 @@
 <div id="menu" *ngIf="menuIsOpen" (swipeleft)="swipe($event)" @menuAnimation>
-	<div class="menuContent" *ngIf="menuIsOpen">
-		<ion-header>
-			<ion-toolbar color="primary">
-				<ion-title>Osm Go!</ion-title>
-				<ion-buttons slot="end">
-					<ion-button (click)="closeMenu()">
-						<ion-icon slot="icon-only" name="arrow-back"></ion-icon>
-					</ion-button>
-				</ion-buttons>
-			</ion-toolbar>
-		</ion-header>
-		<ion-content>
+    <div class="menuContent" *ngIf="menuIsOpen">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Osm Go!</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button (click)="closeMenu()">
+                        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                    </ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list style="padding-top: 0">
+                <ion-item
+                    color="black"
+                    *ngIf="this.newVersion"
+                    (click)="reloadApp()"
+                >
+                    <ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' |
+                    translate }}
+                </ion-item>
 
+                <ion-item
+                    *ngIf="!this.configService.user_info.connected"
+                    (click)="pushPage('/login')"
+                >
+                    <ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' |
+                    translate }}
+                </ion-item>
 
-			<ion-list style="padding-top:0;">
+                <ion-item (click)="openBaseMapsPage()">
+                    <ion-icon name="map"></ion-icon> {{
+                    'SETTINGS.AERIAL_IMAGERY' | translate}}
+                </ion-item>
 
-				<ion-item color="black" *ngIf="this.newVersion" (click)="reloadApp()">
-					<ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' | translate }}
-				</ion-item>
+                <ion-item (click)="pushPage('/tags')">
+                    <ion-icon name="settings"></ion-icon>
+                    {{'MENU.TAG_MANAGEMENT' | translate }}
+                </ion-item>
 
-				<ion-item				
-					*ngIf="!this.configService.user_info.connected"
-					(click)="pushPage('/login')">
-					<ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' | translate }}
-				</ion-item>
+                <ion-item (click)="pushPage('/settings')">
+                    <ion-icon name="settings"></ion-icon> {{'MENU.SETTINGS' |
+                    translate }}
+                </ion-item>
 
-				<ion-item (click)="openBaseMapsPage()">
-					<ion-icon name="map"></ion-icon> {{ 'SETTINGS.AERIAL_IMAGERY' | translate}}
-				</ion-item>
+                <ion-item (click)="pushPage('/about')">
+                    <ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' |
+                    translate }}
+                </ion-item>
 
-				<ion-item (click)="pushPage('/tags')">
-					<ion-icon name="settings"></ion-icon> {{'MENU.TAG_MANAGEMENT' | translate }} 
-				</ion-item>
+                <ion-item
+                    *ngIf="this.configService.user_info.connected"
+                    (click)="logout()"
+                >
+                    <ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' |
+                    translate }}
+                </ion-item>
 
-				<ion-item (click)="pushPage('/settings')">
-					<ion-icon name="settings"></ion-icon> {{'MENU.SETTINGS' | translate }}
-				</ion-item>
+                <ion-item color="danger" (click)="deleteDatapresentConfirm()">
+                    <ion-icon name="trash"></ion-icon> {{'MENU.DELETE_DATA' |
+                    translate }}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </div>
 
-				<ion-item (click)="pushPage('/about')">
-					<ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' | translate }}
-				</ion-item>
-
-				<ion-item *ngIf="this.configService.user_info.connected" (click)="logout()">
-					<ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' | translate }}
-				</ion-item>
-
-				<ion-item color="danger" (click)="deleteDatapresentConfirm()">
-					<ion-icon name="trash"></ion-icon> {{'MENU.DELETE_DATA' | translate }}
-				</ion-item>
-			</ion-list>
-		</ion-content>
-	</div>
-
-	<div class="backdrop" (click)="closeMenu()">
-	</div>
-
+    <div class="backdrop" (click)="closeMenu()"></div>
 </div>

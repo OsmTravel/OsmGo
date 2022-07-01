@@ -1,74 +1,102 @@
 <ion-header color="primary">
-  <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary"> 
-                <ion-icon name="arrow-back"></ion-icon> 
-             </ion-buttons>
-    <ion-title>
-      {{'LOGIN.LOGIN' | translate }}
-      <ion-spinner *ngIf="loading" ></ion-spinner>
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons
+            style="min-width: 32px"
+            (click)="navCtrl.back()"
+            slot="primary"
+        >
+            <ion-icon name="arrow-back"></ion-icon>
+        </ion-buttons>
+        <ion-title>
+            {{ 'LOGIN.LOGIN' | translate }}
+            <ion-spinner *ngIf="loading"></ion-spinner>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-
-<ion-content class="ion-padding" >
-  <ion-card class="ion-padding" > 
+<ion-content class="ion-padding">
+    <ion-card class="ion-padding">
         <ion-item>
-                <ion-input [(ngModel)]="username" [disabled]="loading"
-                [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate " ></ion-input>
-        </ion-item>
-        
-        <ion-item>
-            <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" [disabled]="loading"
-            [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate "></ion-input>
-
-            <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" class="ion-text-right" (click)="showPassword = !showPassword"></ion-icon>
+            <ion-input
+                [(ngModel)]="username"
+                [disabled]="loading"
+                [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate"
+            ></ion-input>
         </ion-item>
 
-       <div>
+        <ion-item>
+            <ion-input
+                [(ngModel)]="password"
+                [type]="showPassword ? 'text' : 'password'"
+                [disabled]="loading"
+                [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate"
+            ></ion-input>
 
-       
-          <div style="display: flex; width: max-content; margin-left: auto; margin-right: auto;">
-            <ion-label style="line-height: 38px;"> {{ 'LOGIN.SAVE_PASSWORD' | translate }} </ion-label>
-            <ion-toggle [checked]="this.configService.config.passwordSaved" [disabled]="loading"
-              (ionChange)="passwordSavedChange($event)"></ion-toggle>
-          </div>
+            <ion-icon
+                [name]="showPassword ? 'eye' : 'eye-off'"
+                class="ion-text-right"
+                (click)="showPassword = !showPassword"
+            ></ion-icon>
+        </ion-item>
+
+        <div>
+            <div
+                style="
+                    display: flex;
+                    width: max-content;
+                    margin-left: auto;
+                    margin-right: auto;
+                "
+            >
+                <ion-label style="line-height: 38px">
+                    {{ 'LOGIN.SAVE_PASSWORD' | translate }}
+                </ion-label>
+                <ion-toggle
+                    [checked]="this.configService.config.passwordSaved"
+                    [disabled]="loading"
+                    (ionChange)="passwordSavedChange($event)"
+                ></ion-toggle>
+            </div>
         </div>
-        <div style="text-align: center;">
-           <label *ngIf="this.configService.config.passwordSaved" class="hint">{{ 'LOGIN.SAVED_PASSWORD_HINT' | translate }}  </label>
-           <label *ngIf="!this.configService.config.passwordSaved" class="hint">{{ 'LOGIN.NOT_SAVED_PASSWORD_HINT' | translate }}</label>
+        <div style="text-align: center">
+            <label *ngIf="this.configService.config.passwordSaved" class="hint"
+                >{{ 'LOGIN.SAVED_PASSWORD_HINT' | translate }}
+            </label>
+            <label
+                *ngIf="!this.configService.config.passwordSaved"
+                class="hint"
+                >{{ 'LOGIN.NOT_SAVED_PASSWORD_HINT' | translate }}</label
+            >
         </div>
-             
 
-          
-           
-
-      
-     
-
-        <ion-card *ngIf="errorLogin" color="danger" >
+        <ion-card *ngIf="errorLogin" color="danger">
             <ion-card-content>
-                {{errorLogin.error}} 
+                {{ errorLogin.error }}
             </ion-card-content>
         </ion-card>
-   
-   
-        
-        <ion-button  [disabled]="loading"
-        style="margin-top: 16px; width: 100%;"
-        (click)="login()" block>{{ 'LOGIN.LOGIN_BUTTON' | translate }}</ion-button>
 
-      </ion-card>
+        <ion-button
+            [disabled]="loading"
+            style="margin-top: 16px; width: 100%"
+            (click)="login()"
+            block
+            >{{ 'LOGIN.LOGIN_BUTTON' | translate }}</ion-button
+        >
+    </ion-card>
 
-        <ion-button color="light"  [disabled]="loading"  *ngIf="!isAndroid"  style="margin-top: 60px; width: 100%; text-align: center; cursor: pointer;" (click)="oauthLogin()">
-          <ion-icon name="log-in"></ion-icon>  
-          {{ 'LOGIN.LOGIN_OAUTH' | translate }} 
-
-        </ion-button>
-
-
-
+    <ion-button
+        color="light"
+        [disabled]="loading"
+        *ngIf="!isAndroid"
+        style="
+            margin-top: 60px;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+        "
+        (click)="oauthLogin()"
+    >
+        <ion-icon name="log-in"></ion-icon>
+        {{ 'LOGIN.LOGIN_OAUTH' | translate }}
+    </ion-button>
 </ion-content>
-
-
-

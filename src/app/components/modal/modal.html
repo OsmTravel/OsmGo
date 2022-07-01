@@ -1,293 +1,347 @@
 <div class="wrapper" [ngSwitch]="typeFiche">
+    <ion-fab class="toogleCodeButton">
+        <ion-fab-button size="small" (click)="toogleCode()">
+            <ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
+            <ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
-	<ion-fab class="toogleCodeButton">
-		<ion-fab-button  size="small" (click)="toogleCode()">
-			<ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-			<ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
-		</ion-fab-button>
-</ion-fab>
+    <!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
+    <div *ngSwitchCase="'Read'" style="height: 100%">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>
+                    {{(findElement(tags,{key:'name'}).value != '') ?
+                    findElement(tags,{key:'name'}).value :
+                    ('MODAL_SELECTED_ITEM.NO_NAME' | translate) }}
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <div class="content">
+            <read-meta
+                *ngIf="feature.properties.meta"
+                [feature]="feature"
+                [displayCode]="displayCode"
+                [languageUi]="configService.getUiLanguage()"
+            >
+            </read-meta>
 
-	<!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
-	<div *ngSwitchCase="'Read'" style="height:100%">
-		<ion-header>
-			<ion-toolbar>
-				<ion-title>
-					{{(findElement(tags,{key:'name'}).value != '') ? 
-							findElement(tags,{key:'name'}).value : 
-							('MODAL_SELECTED_ITEM.NO_NAME' | translate)
-						}}
-				</ion-title>
+            <app-alert
+                [tagConfig]="tagConfig"
+                [language]="this.configService.config.languageTags"
+                [countryCode]="this.configService.config.countryTags"
+                (fixDeprecated)="fixDeprecated($event)"
+            >
+            </app-alert>
 
+            <!--Primary Key-->
+            <read-primary-key
+                [displayCode]="displayCode"
+                [tagsConfig]="tagsService.tags"
+                [feature]="feature"
+                [language]="configService.config.languageTags"
+                [tagConfig]="tagConfig"
+                [primaryKeys]="tagsService.primaryKeys"
+                [jsonSprites]="tagsService.jsonSprites"
+            >
+            </read-primary-key>
 
-			</ion-toolbar>
+            <!--Les presets-->
+            <div
+                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets;"
+            >
+                <read-presets
+                    *ngIf="tag.preset && tag.value !== ''"
+                    [displayCode]="displayCode"
+                    [tag]="tag"
+                    [preset]="tag.preset"
+                    [language]="this.configService.config.languageTags"
+                    [countryCode]="this.configService.config.countryTags"
+                >
+                </read-presets>
+            </div>
 
-	
+            <!--Le reste des tags-->
+            <div
+                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true;"
+            >
+                <read-presets
+                    *ngIf="this.tagsService.presets[tag.key]; else readOtherTag"
+                    [displayCode]="displayCode"
+                    [tag]="tag"
+                    [preset]="tagsService.presets[tag.key]"
+                    [language]="this.configService.config.languageTags"
+                    [countryCode]="this.configService.config.countryTags"
+                >
+                </read-presets>
+                <ng-template #readOtherTag>
+                    <read-other-tag [tag]="tag" *ngIf="!tag.preset ">
+                    </read-other-tag>
+                </ng-template>
+            </div>
+        </div>
 
-		</ion-header>
-		<div class="content">
-	
-		
+        <ion-footer>
+            <ion-fab-button
+                *ngIf="typeFiche==='Read'"
+                (click)="dismiss()"
+                class="fabInlineMarginLess"
+            >
+                <ion-icon name="close"> </ion-icon>
+            </ion-fab-button>
 
-			<read-meta *ngIf="feature.properties.meta" 
-					[feature]="feature"
-					[displayCode]="displayCode"
-					[languageUi]="configService.getUiLanguage()"
-					> 
-			</read-meta>
+            <ion-fab-button
+                (click)="updateMode()"
+                class="fabInlineMarginLess"
+                [disabled]="mapService.isProcessing | async"
+            >
+                <ion-icon name="create"> </ion-icon>
+            </ion-fab-button>
+            <ion-fab-button
+                (click)="cancelChange()"
+                color="danger"
+                *ngIf="feature.properties['changeType']"
+                [disabled]="mapService.isProcessing | async"
+                class="fabInlineMarginLess"
+            >
+                <ion-icon name="close"> </ion-icon>
+                <ion-icon name="create"> </ion-icon>
+            </ion-fab-button>
 
-	
-			<app-alert 
-				[tagConfig]="tagConfig" 
-				[language] = "this.configService.config.languageTags"
-				[countryCode]= "this.configService.config.countryTags"
-				(fixDeprecated) = "fixDeprecated($event)">
-			</app-alert>
+            <ion-fab-button
+                *ngIf="!feature.properties['changeType']"
+                [disabled]="mapService.isProcessing | async"
+                color="secondary"
+                (click)="confirmAddSurveyDate()"
+                class="fabInlineMarginLess fabSurveyDate"
+            >
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-footer>
+    </div>
 
-		
-			<!--Primary Key-->
-			<read-primary-key 
-				[displayCode]="displayCode" 
-				[tagsConfig]="tagsService.tags"
-				[feature]="feature"
-				[language] = "configService.config.languageTags"
-				[tagConfig]="tagConfig"
-				[primaryKeys]="tagsService.primaryKeys"
-				[jsonSprites]="tagsService.jsonSprites">
-			</read-primary-key>
+    <!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
+    <div *ngSwitchCase="'Edit'" style="height: 100%">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>
+                    <ion-input
+                        type="text"
+                        clearInput="true"
+                        [placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate"
+                        [(ngModel)]="findElement(tags,{key : 'name'}).value"
+                        autocorrect="off"
+                        autocapitalize="off"
+                    ></ion-input>
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
 
-			<!--Les presets-->
-			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets;">
-				<read-presets *ngIf="tag.preset && tag.value !== ''" 
-				[displayCode]="displayCode" 
-				[tag]="tag"
-				[preset] ="tag.preset"
-				[language]="this.configService.config.languageTags"
-				[countryCode]="this.configService.config.countryTags"
-				>
-				</read-presets>
-			
-			</div>
+        <div class="content">
+            <div class="actions">
+                <ion-fab>
+                    <ion-fab-button
+                        color="light"
+                        size="small"
+                        (click)="addOrRemoveBookmark(tagConfig)"
+                    >
+                        <ion-icon
+                            [style.color]=" (tagConfig | isBookmarked:tagsService.bookmarksIds) ? '#f71000' : '#d8d8d8'"
+                            name="heart"
+                            item-left
+                            style="font-size: 26px"
+                        ></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
 
-			<!--Le reste des tags-->
-			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true;">
-				
-				<read-presets *ngIf="this.tagsService.presets[tag.key]; else readOtherTag"
-				[displayCode]="displayCode" 
-				[tag]="tag" 
-				[preset] ="tagsService.presets[tag.key]"
-				[language]="this.configService.config.languageTags"
-				[countryCode]="this.configService.config.countryTags"
-				>
-				</read-presets>
-				<ng-template #readOtherTag>
-					<read-other-tag  [tag]="tag"  *ngIf="!tag.preset "> </read-other-tag>
-				</ng-template>
-				
-			</div>
+                <ion-fab style="margin-left: 45px">
+                    <ion-fab-button
+                        size="small"
+                        (click)="saveFields(tagId, tags)"
+                    >
+                        <ion-icon src="/assets/fa/copy-solid.svg"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
 
-		</div>
+                <ion-fab style="margin-left: 90px" *ngIf="savedFields">
+                    <ion-fab-button
+                        size="small"
+                        (click)="restoreFields(tagId, tags)"
+                    >
+                        <ion-icon src="/assets/fa/paste-solid.svg"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
 
-		<ion-footer>
-			<ion-fab-button *ngIf="typeFiche==='Read'" (click)="dismiss()" class="fabInlineMarginLess">
-				<ion-icon name="close"> </ion-icon>
-			</ion-fab-button>
+            <read-meta
+                *ngIf="feature.properties.meta"
+                [feature]="feature"
+                [displayCode]="displayCode"
+                [languageUi]="configService.getUiLanguage()"
+            >
+            </read-meta>
+            <!--Alert-->
+            <app-alert
+                [tagConfig]="tagConfig"
+                [language]="this.configService.config.languageTags"
+                [countryCode]="this.configService.config.countryTags"
+                (fixDeprecated)="fixDeprecated($event)"
+            >
+            </app-alert>
 
-			<ion-fab-button (click)="updateMode()" class="fabInlineMarginLess" [disabled]="mapService.isProcessing | async">
-				<ion-icon name="create"> </ion-icon>
-			</ion-fab-button>
-			<ion-fab-button  (click)="cancelChange()" color="danger" *ngIf="feature.properties['changeType']" [disabled]="mapService.isProcessing | async" class="fabInlineMarginLess">
-				<ion-icon name="close"> </ion-icon>
-				<ion-icon name="create"> </ion-icon>
-			</ion-fab-button>
+            <!--Primary key-->
+            <edit-primary-key
+                [displayCode]="displayCode"
+                [primaryKey]="primaryKey"
+                [tagsConfig]="tagsService.tags"
+                [feature]="feature"
+                [language]="configService.config.languageTags"
+                [tagConfig]="tagConfig"
+                [jsonSprites]="tagsService.jsonSprites"
+                (openPrimaryTagModal)="openPrimaryTagModal()"
+            >
+            </edit-primary-key>
 
-			<ion-fab-button *ngIf="!feature.properties['changeType']" [disabled]="mapService.isProcessing | async" color="secondary" (click)="confirmAddSurveyDate()" class="fabInlineMarginLess fabSurveyDate">
-				<ion-icon name="checkmark-circle-outline"></ion-icon>
-			</ion-fab-button>
-		</ion-footer>
-	</div>
+            <!--Les presets-->
+            <!--Le reste des tags-->
 
+            <div
+                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets"
+            >
+                <edit-presets
+                    *ngIf="(tag.preset || tagsService.presets[tag.key]) ; else editOtherTag"
+                    [preset]="tag.preset ? tag.preset : tagsService.presets[tag.key]"
+                    [displayCode]="displayCode"
+                    [tag]="tag"
+                    [language]="this.configService.config.languageTags"
+                    (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key]))"
+                    (addTags)="addPresetsTags($event)"
+                >
+                </edit-presets>
 
+                <ng-template #editOtherTag>
+                    <edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)">
+                    </edit-other-tag>
+                </ng-template>
+            </div>
 
-	<!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
-	<div *ngSwitchCase="'Edit'" style="height:100%">
+            <!--Nouveaux tag-->
+            <ion-fab-button
+                tappable
+                color="secondary"
+                *ngIf="!displayAddTag"
+                (click)="displayAddTag = true"
+                style="margin: 5px"
+            >
+                <ion-icon name="add"> </ion-icon>
+            </ion-fab-button>
 
-		<ion-header>
-			<ion-toolbar>
-				<ion-title>
-					<ion-input type="text"
-					clearInput= "true"
-					[placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate" 
+            <div *ngIf="displayAddTag">
+                <ion-card>
+                    <ion-card-header *ngIf="displayAddTag">
+                        {{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate}}
+                    </ion-card-header>
+                    <ion-card-content *ngIf="displayAddTag">
+                        <ion-item>
+                            <ion-label primary stacked>Key</ion-label>
+                            <ion-input
+                                type="text"
+                                placeholder="Key"
+                                autocapitalize="none"
+                                autocomplete="off"
+                                [(ngModel)]="newKey"
+                            ></ion-input>
+                        </ion-item>
+                        <ion-button
+                            ion-button
+                            [disabled]="newKey == ''"
+                            (click)="addNewKey(newKey)"
+                        >
+                            {{ 'SHARED.ADD' | translate}}
+                        </ion-button>
+                    </ion-card-content>
+                </ion-card>
+            </div>
+        </div>
 
-					[(ngModel)]="findElement(tags,{key : 'name'}).value"
-					autocorrect="off" autocapitalize="off"></ion-input>
-				</ion-title>
-			</ion-toolbar>
+        <ion-footer>
+            <ion-fab-button
+                tappable
+                (click)="dismiss()"
+                class="fabInlineMarginLess"
+            >
+                <ion-icon name="close"> </ion-icon>
+            </ion-fab-button>
 
-		</ion-header>
+            <ion-fab-button
+                tappable
+                color="secondary"
+                *ngIf="mode =='Update'"
+                [disabled]="mapService.isProcessing | async"
+                (click)="updateOsmElement(tagConfig)"
+                class="fabInlineMarginLess"
+                style="margin-right: 15px"
+            >
+                <ion-icon name="checkmark"> </ion-icon>
+            </ion-fab-button>
 
-		<div class="content">
+            <ion-fab-button
+                tappable
+                color="secondary"
+                *ngIf="mode =='Create'"
+                [disabled]="mapService.isProcessing | async"
+                (click)="createOsmElement(tagConfig)"
+                class="fabInlineMarginLess"
+            >
+                <ion-icon name="checkmark"> </ion-icon>
+            </ion-fab-button>
 
-			<div class="actions"> 
-		
-				<ion-fab  >
-					<ion-fab-button color="light" size="small" (click)="addOrRemoveBookmark(tagConfig)">
-						<ion-icon
-						[style.color]=" (tagConfig | isBookmarked:tagsService.bookmarksIds) ? '#f71000' : '#d8d8d8'"
-						name="heart"
-						item-left
-						style="font-size: 26px;"
-					  ></ion-icon>
-					</ion-fab-button>
-				</ion-fab>
+            <ion-fab-button
+                tappable
+                *ngIf="feature.properties.type === 'node'"
+                [disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
+                (click)="moveOsmElement()"
+                class="fabInlineMarginLess"
+            >
+                <ion-icon name="move"> </ion-icon>
+            </ion-fab-button>
 
-				<ion-fab style="margin-left: 45px;" >
-					<ion-fab-button size="small" (click)="saveFields(tagId, tags)"   >
-						<ion-icon src="/assets/fa/copy-solid.svg"></ion-icon>
-						
-					</ion-fab-button>
-				</ion-fab>
-	
-				<ion-fab style="margin-left: 90px;" *ngIf="savedFields">
-					<ion-fab-button size="small" (click)="restoreFields(tagId, tags)" >
-						<ion-icon src="/assets/fa/paste-solid.svg"></ion-icon>
-					</ion-fab-button>
-				</ion-fab>
+            <ion-fab-button
+                tappable
+                color="danger"
+                *ngIf="feature.properties['changeType']"
+                class="fabInlineMarginLess"
+                [disabled]="(mapService.isProcessing | async)"
+                (click)="cancelChange()"
+            >
+                <ion-icon name="close"> </ion-icon>
+                <ion-icon name="create"> </ion-icon>
+            </ion-fab-button>
 
-			</div>
-
-			<read-meta *ngIf="feature.properties.meta" 
-				[feature]="feature"
-				[displayCode]="displayCode"
-				[languageUi]="configService.getUiLanguage()"
-			> 	
-			</read-meta>
-			<!--Alert-->
-			<app-alert 
-				[tagConfig]="tagConfig" 
-				[language] = "this.configService.config.languageTags"
-				[countryCode]= "this.configService.config.countryTags"
-				(fixDeprecated) = "fixDeprecated($event)">
-			</app-alert>
-
-			<!--Primary key-->
-			<edit-primary-key 
-				[displayCode]="displayCode" 
-				[primaryKey]="primaryKey"
-				[tagsConfig]="tagsService.tags"
-				[feature]="feature"
-				[language] = "configService.config.languageTags"
-				[tagConfig]="tagConfig"
-				[jsonSprites]="tagsService.jsonSprites"
-				(openPrimaryTagModal)="openPrimaryTagModal()">
-			</edit-primary-key>
-
-			
-			<!--Les presets-->
-			<!--Le reste des tags-->
-		
-			<div *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets">
-
-				<edit-presets *ngIf="(tag.preset || tagsService.presets[tag.key]) ; else editOtherTag" 
-					[preset] ="tag.preset ? tag.preset : tagsService.presets[tag.key]"
-					[displayCode]="displayCode" 
-					[tag]="tag"
-					[language] = "this.configService.config.languageTags"
-					(openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key]))"
-					(addTags)="addPresetsTags($event)"
-					>
-				</edit-presets>
-
-
-				<ng-template #editOtherTag>
-					<edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)"> </edit-other-tag>
-				</ng-template>
-				
-			</div>
-
-			<!--Nouveaux tag-->
-			<ion-fab-button tappable color="secondary" *ngIf="!displayAddTag" (click)="displayAddTag = true" style="margin:5px;">
-				<ion-icon name="add"> </ion-icon>
-			</ion-fab-button>
-
-			<div *ngIf="displayAddTag">
-
-				<ion-card>
-					<ion-card-header *ngIf="displayAddTag">
-							{{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate}}
-					</ion-card-header>
-					<ion-card-content *ngIf="displayAddTag">
-						<ion-item>
-							<ion-label primary stacked>Key</ion-label>
-							<ion-input type="text" placeholder="Key" 
-							autocapitalize="none" autocomplete="off"
-							[(ngModel)]="newKey"></ion-input>
-						</ion-item>
-						<ion-button ion-button [disabled]="newKey == ''" (click)="addNewKey(newKey)"> 
-							{{ 'SHARED.ADD' | translate}}
-						</ion-button>
-
-					</ion-card-content>
-				</ion-card>
-			</div>
-		
-
-		</div>
-
-		<ion-footer>
-			<ion-fab-button tappable (click)="dismiss()" class="fabInlineMarginLess">
-				<ion-icon name="close"> </ion-icon>
-			</ion-fab-button>
-
-			<ion-fab-button tappable color="secondary"  *ngIf="mode =='Update'" [disabled]="mapService.isProcessing | async"
-			 (click)="updateOsmElement(tagConfig)" class="fabInlineMarginLess" style="margin-right:15px;">
-				<ion-icon name="checkmark"> </ion-icon>
-			</ion-fab-button>
-
-			<ion-fab-button  tappable color="secondary" *ngIf="mode =='Create'" [disabled]="mapService.isProcessing | async"
-			 (click)="createOsmElement(tagConfig)" class="fabInlineMarginLess">
-				<ion-icon name="checkmark"> </ion-icon>
-			</ion-fab-button>
-	
-
-			<ion-fab-button  tappable *ngIf="feature.properties.type === 'node'" 
-			[disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
-			(click)="moveOsmElement()" class="fabInlineMarginLess">
-				<ion-icon name="move"> </ion-icon>
-			</ion-fab-button>
-
-			<ion-fab-button tappable color="danger" 
-					*ngIf="feature.properties['changeType']" 
-					class="fabInlineMarginLess"
-					[disabled]="(mapService.isProcessing | async)"
-					(click)="cancelChange()" >
-				<ion-icon name="close"> </ion-icon>
-				<ion-icon name="create"> </ion-icon>
-			</ion-fab-button>
-
-			<ion-fab-button tappable ion-fab right color="danger" 
-					*ngIf="feature.properties.type == 'node' && mode=='Update'"
-					[disabled]="(mapService.isProcessing | async)"
-			 (click)="presentConfirm()" class="fabInlineMarginLess">
-				<ion-icon name="trash"> </ion-icon>
-			</ion-fab-button>
-
-		</ion-footer>
-
-	</div>
-	<!--EOF *ngSwitchCase="'Update'"-->
-	<div *ngSwitchCase="'Loading'" style="height:100%">
-		<ion-header>
-			<ion-toolbar>
-				<ion-title>
-					Loading...
-				</ion-title>
-			</ion-toolbar>
-		</ion-header>
-		<ion-content>
-			<h1>Loading ... </h1>
-		</ion-content>
-		<ion-footer>
-		</ion-footer>
-
-	</div>
+            <ion-fab-button
+                tappable
+                ion-fab
+                right
+                color="danger"
+                *ngIf="feature.properties.type == 'node' && mode=='Update'"
+                [disabled]="(mapService.isProcessing | async)"
+                (click)="presentConfirm()"
+                class="fabInlineMarginLess"
+            >
+                <ion-icon name="trash"> </ion-icon>
+            </ion-fab-button>
+        </ion-footer>
+    </div>
+    <!--EOF *ngSwitchCase="'Update'"-->
+    <div *ngSwitchCase="'Loading'" style="height: 100%">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title> Loading... </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <h1>Loading ...</h1>
+        </ion-content>
+        <ion-footer> </ion-footer>
+    </div>
 </div>

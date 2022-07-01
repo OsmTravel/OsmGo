@@ -1,35 +1,34 @@
-const rp = require('request-promise');
-const fs = require('fs-extra');
-const path = require('path');
-const stringify = require("json-stringify-pretty-compact")
+const rp = require('request-promise')
+const fs = require('fs-extra')
+const path = require('path')
+const stringify = require('json-stringify-pretty-compact')
 const _ = require('lodash')
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 
 const ignoredIds = [
-    "osm-mapnik-black_and_white", // ignored because it does not support CORS
-    "EsriWorldImageryClarity" // ignored because it does not support CORS
-];
+    'osm-mapnik-black_and_white', // ignored because it does not support CORS
+    'EsriWorldImageryClarity', // ignored because it does not support CORS
+]
 
 // const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'imagery.geojson')));
 
 const run = async () => {
-    const rep = await rp(url);
+    const rep = await rp(url)
     // console.log
-    const data = JSON.parse(rep);
-    const features = data.features;
-    const resultFeatures = [];
+    const data = JSON.parse(rep)
+    const features = data.features
+    const resultFeatures = []
     for (const feature of features) {
-
         // TODO test on property support_cors,
         // if my PR is accepted https://github.com/osmlab/editor-layer-index/pull/1540
 
         if (ignoredIds.includes(feature.properties.id)) {
             // Ignore this imagery
-            continue;
+            continue
         }
 
-        let furl = feature.properties.url;
+        let furl = feature.properties.url
         furl = furl.replace('{zoom}', '{z}')
         furl = furl.replace('{proj}', '3857')
         furl = furl.replace('{height}', '256')
@@ -43,28 +42,28 @@ const run = async () => {
             continue
         }
 
-        feature.properties['local']= feature.geometry ? true : false
+        feature.properties['local'] = feature.geometry ? true : false
 
-        if (feature.properties.id === 'Bing'){ // CORS...
+        if (feature.properties.id === 'Bing') {
+            // CORS...
             feature.properties['tiles'] = [
-                "https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-                "https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-                "https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z",
-                "https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z"
+                'https://ecn.t0.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z',
+                'https://ecn.t1.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z',
+                'https://ecn.t2.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z',
+                'https://ecn.t3.tiles.virtualearth.net/tiles/a{quadkey}.jpeg?g=587&mkt=en-gb&n=z',
             ]
-            feature.properties['attribution']= {
-                "required": true,
-                "text": "Bing© 2022 Microsoft Corporation",
-                "url": "https://blog.openstreetmap.org/2010/11/30/microsoft-imagery-details/"
-              }
+            feature.properties['attribution'] = {
+                required: true,
+                text: 'Bing© 2022 Microsoft Corporation',
+                url: 'https://blog.openstreetmap.org/2010/11/30/microsoft-imagery-details/',
+            }
             feature.properties['max_zoom'] = 19
-            
-        }
-        else if ( feature.properties.id === 'fr.ign.bdortho'){
-            feature.properties['tiles'] = ["https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}"]
+        } else if (feature.properties.id === 'fr.ign.bdortho') {
+            feature.properties['tiles'] = [
+                'https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
+            ]
             feature.properties['max_zoom'] = 19
-        }
-        else if (/\{switch\:/.test(furl)) {
+        } else if (/\{switch\:/.test(furl)) {
             // const fswitch = furl.match(/{switch\:.*\}/g)
             const fswitch = furl.match(/\{switch:.+?\}/g)
             const parts = fswitch[0].split(':')[1].slice(0, -1).split(',')
@@ -81,7 +80,15 @@ const run = async () => {
         // console.log(feature.properties.url)
     }
 
-    const ordered = _.orderBy(resultFeatures, [f => f.properties.default ? 1 : 0, f => f.properties.best ? 1 : 0 , f => f.properties.local ? 1 : 0  ], ['desc', 'desc', 'desc']);
+    const ordered = _.orderBy(
+        resultFeatures,
+        [
+            (f) => (f.properties.default ? 1 : 0),
+            (f) => (f.properties.best ? 1 : 0),
+            (f) => (f.properties.local ? 1 : 0),
+        ],
+        ['desc', 'desc', 'desc']
+    )
 
     // list.sort((a, b) => (a.color > b.color) ? 1 : -1)
 
@@ -90,5 +97,4 @@ const run = async () => {
     fs.writeFileSync(outPath, stringify(ordered), 'utf-8')
 }
 
-
-run();
+run()

@@ -1,60 +1,95 @@
 <div *ngIf="intervals && !displayCode && !isError && !isTooComplex; else code">
+    <ion-button
+        (click)="openModalAddOpeningHours(null)"
+        *ngIf="editMode"
+        size="small"
+    >
+        <ion-icon name="add"></ion-icon>
+        {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
+    </ion-button>
 
-  <ion-button (click)="openModalAddOpeningHours(null)" *ngIf="editMode" size="small">
-    <ion-icon name="add"></ion-icon> {{'OPENINGHOURS.ADD_OPENING_HOURS' | translate }} 
-  </ion-button>
-
-  <div *ngIf="openingHours">
-    <!-- Only 1 member in this iteration -->
-    <div *ngFor="let dataRange of intervals; let indexDataRange = index">
-
-      <table>
-        <tr *ngFor="let day of days">
-          <td>{{ day.text }}</td>
-          <td>
-            <div *ngIf="findIntervalsByDay(dataRange._typical._intervals, day.index); let _intervals">
-              <div *ngFor="let interval of _intervals ; let indexInterval = index" style="margin-bottom: 0.5em;">
-                {{interval._start | minutesToHoursMinutes}} - {{ interval._end | minutesToHoursMinutes}}
-                <ion-icon *ngIf="editMode" (click)="deleteCurrentInterval( dataRange, interval)" name="close-outline"
-                  style="font-size: 1.5em; vertical-align: bottom; color: red; cursor: pointer;"></ion-icon>
-              </div>
-              <div *ngIf="_intervals.length == 0">
-                {{'OPENINGHOURS.CLOSED' | translate }}
-              </div>
-            </div>
-          </td>
-
-        </tr>
-      </table>
-
-
+    <div *ngIf="openingHours">
+        <!-- Only 1 member in this iteration -->
+        <div *ngFor="let dataRange of intervals; let indexDataRange = index">
+            <table>
+                <tr *ngFor="let day of days">
+                    <td>{{ day.text }}</td>
+                    <td>
+                        <div
+                            *ngIf="
+                                findIntervalsByDay(
+                                    dataRange._typical._intervals,
+                                    day.index
+                                );
+                                let _intervals
+                            "
+                        >
+                            <div
+                                *ngFor="
+                                    let interval of _intervals;
+                                    let indexInterval = index
+                                "
+                                style="margin-bottom: 0.5em"
+                            >
+                                {{ interval._start | minutesToHoursMinutes }} -
+                                {{ interval._end | minutesToHoursMinutes }}
+                                <ion-icon
+                                    *ngIf="editMode"
+                                    (click)="
+                                        deleteCurrentInterval(
+                                            dataRange,
+                                            interval
+                                        )
+                                    "
+                                    name="close-outline"
+                                    style="
+                                        font-size: 1.5em;
+                                        vertical-align: bottom;
+                                        color: red;
+                                        cursor: pointer;
+                                    "
+                                ></ion-icon>
+                            </div>
+                            <div *ngIf="_intervals.length == 0">
+                                {{ 'OPENINGHOURS.CLOSED' | translate }}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-  </div>
-  <div *ngIf="!openingHours">
-    {{'OPENINGHOURS.UNKNOW' | translate }}
-  </div>
-
+    <div *ngIf="!openingHours">
+        {{ 'OPENINGHOURS.UNKNOW' | translate }}
+    </div>
 </div>
 
-
 <ng-template #code>
-  <div class="wrapperEdit2cols" *ngIf="editMode">
-    <div class="contentEdit2cols">
-      <ion-item style="padding-left: 0px">
-        <ion-input type="text" debounce="200" [(ngModel)]="openingHours" [placeholder]="'opening_hours'"
-          (ionChange)="valueChange($event)"></ion-input>
-      </ion-item>
-    </div>
-    <div class="buttonEdit2cols">
-      <ion-icon (click)="openingHours = ''" name="close" style="width: 2em; height: 2em;"></ion-icon>
+    <div class="wrapperEdit2cols" *ngIf="editMode">
+        <div class="contentEdit2cols">
+            <ion-item style="padding-left: 0px">
+                <ion-input
+                    type="text"
+                    debounce="200"
+                    [(ngModel)]="openingHours"
+                    [placeholder]="'opening_hours'"
+                    (ionChange)="valueChange($event)"
+                ></ion-input>
+            </ion-item>
+        </div>
+        <div class="buttonEdit2cols">
+            <ion-icon
+                (click)="openingHours = ''"
+                name="close"
+                style="width: 2em; height: 2em"
+            ></ion-icon>
+        </div>
     </div>
 
-  </div>
-
-  <div *ngIf="!editMode">
-   
-    {{openingHours}}
-    <div *ngIf="isTooComplex" class="tooComplex"> {{'OPENINGHOURS.TOO_COMPLEX_FOR_OSMGO' | translate }}</div>
-    
-  </div>
+    <div *ngIf="!editMode">
+        {{ openingHours }}
+        <div *ngIf="isTooComplex" class="tooComplex">
+            {{ 'OPENINGHOURS.TOO_COMPLEX_FOR_OSMGO' | translate }}
+        </div>
+    </div>
 </ng-template>

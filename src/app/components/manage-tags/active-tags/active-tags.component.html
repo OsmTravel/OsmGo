@@ -1,72 +1,81 @@
 <ion-header color="primary">
-  <ion-toolbar color="primary" >
-        <ion-buttons style="min-width: 32px;" (click)="modalCtrl.dismiss(false);" slot="primary"> 
-                <ion-icon name="arrow-back"></ion-icon> 
-             </ion-buttons>
-    <ion-title>
-      {{'MANAGE_TAGS.ACTIVE_TAGS' | translate}}
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons
+            style="min-width: 32px"
+            (click)="modalCtrl.dismiss(false)"
+            slot="primary"
+        >
+            <ion-icon name="arrow-back"></ion-icon>
+        </ion-buttons>
+        <ion-title>
+            {{ 'MANAGE_TAGS.ACTIVE_TAGS' | translate }}
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
     <div id="searchSelect">
-      <div id="searchDiv">
-        <ion-searchbar
-          autocomplete="off"
-          autocorrect="off"
-          autocapitalize="none"
-          inputmode="text"
-          [(ngModel)]="searchText"
-          [debounce]="300"
-        ></ion-searchbar>
-      </div>
-    </div> 
-    <div class="listTag" >
-     
-
-
-      <ion-list style="overflow-y: auto;" *ngIf="searchText.length > 2">
-        <ion-item *ngFor="let tag of tagsService.tags | 
-                       filtersTagsByIds:tagsService.hiddenTagsIds:true |
-                       filterDeprecatedTag | 
-                       filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText;"  
-        class="ion-no-padding">
-
-         <app-tag-list-element   style="width: 100%;"
-         [tag]="tag"
-         [countryTags]="configService.config.countryTags"
-         [languageTags]="configService.config.languageTags"
-         [jsonSprites]="tagsService.jsonSprites"
-         [geometriesFilter]="['point']"
-         [bookmarksIds]="tagsService.bookmarksIds"
-         [showHideTagButton]="true"
-         (removeBookmark)="tagsService.removeBookMark(tag)"
-         (addBookmark)= "tagsService.addBookMark(tag)"
-         (addHiddenTag) = addHiddenTag($event)
-         >
-         </app-tag-list-element>
-       </ion-item> 
-     </ion-list>
-
-     <div *ngIf="searchText.length <= 2">
-      <h4 style="text-align: center;">
-        {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate}}
-      </h4>
-     </div>
-    
-      
-    
+        <div id="searchDiv">
+            <ion-searchbar
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="none"
+                inputmode="text"
+                [(ngModel)]="searchText"
+                [debounce]="300"
+            ></ion-searchbar>
+        </div>
     </div>
- 
-  </ion-content>
+    <div class="listTag">
+        <ion-list style="overflow-y: auto" *ngIf="searchText.length > 2">
+            <ion-item
+                *ngFor="
+                    let tag of tagsService.tags
+                        | filtersTagsByIds: tagsService.hiddenTagsIds:true
+                        | filterDeprecatedTag
+                        | filterByTagsContent
+                            : [
+                                  configService.config.languageTags,
+                                  configService.config.countryTags
+                              ]
+                            : searchText
+                "
+                class="ion-no-padding"
+            >
+                <app-tag-list-element
+                    style="width: 100%"
+                    [tag]="tag"
+                    [countryTags]="configService.config.countryTags"
+                    [languageTags]="configService.config.languageTags"
+                    [jsonSprites]="tagsService.jsonSprites"
+                    [geometriesFilter]="['point']"
+                    [bookmarksIds]="tagsService.bookmarksIds"
+                    [showHideTagButton]="true"
+                    (removeBookmark)="tagsService.removeBookMark(tag)"
+                    (addBookmark)="tagsService.addBookMark(tag)"
+                    (addHiddenTag)="addHiddenTag($event)"
+                >
+                </app-tag-list-element>
+            </ion-item>
+        </ion-list>
 
-  <ion-footer id="footer">
-    <ion-button ion-button color="primary" (click)=" modalCtrl.dismiss(refreshFilterMapAfterClose);" >
-      {{ 'SHARED.CLOSE' | translate}}
-    </ion-button>    
-  </ion-footer>
+        <div *ngIf="searchText.length <= 2">
+            <h4 style="text-align: center">
+                {{
+                    'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS'
+                        | translate
+                }}
+            </h4>
+        </div>
+    </div>
+</ion-content>
 
-
-
+<ion-footer id="footer">
+    <ion-button
+        ion-button
+        color="primary"
+        (click)="modalCtrl.dismiss(refreshFilterMapAfterClose)"
+    >
+        {{ 'SHARED.CLOSE' | translate }}
+    </ion-button>
+</ion-footer>

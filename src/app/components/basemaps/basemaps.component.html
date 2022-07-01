@@ -1,24 +1,33 @@
 <ion-header color="primary">
-	<ion-toolbar color="primary">
-		<ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary">
-			<ion-icon name="arrow-back"></ion-icon>
-		</ion-buttons>
-		<ion-title>{{ 'SETTINGS.AERIAL_IMAGERY' | translate}}</ion-title>
-	</ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons
+            style="min-width: 32px"
+            (click)="navCtrl.back()"
+            slot="primary"
+        >
+            <ion-icon name="arrow-back"></ion-icon>
+        </ion-buttons>
+        <ion-title>{{ 'SETTINGS.AERIAL_IMAGERY' | translate }}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" *ngIf="this.initService.isLoaded">
-  <h4>{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate}}</h4>
-  <ion-card *ngFor="let bm of basemaps" (click)="selectBaseMap(bm)" [ngClass]="{selectedCard: bm.id == configService.config.basemap.id  }">
-    <ion-card-header>
-      <ion-card-subtitle>{{bm?.category}}  {{bm?.end_date}}</ion-card-subtitle>
-      <ion-card-title>{{bm.name}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-        <p *ngIf="bm.description" [innerText]="bm.description"></p>
-        <p>{{bm?.attribution?.text}}</p>
+    <h4>{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate }}</h4>
+    <ion-card
+        *ngFor="let bm of basemaps"
+        (click)="selectBaseMap(bm)"
+        [ngClass]="{ selectedCard: bm.id == configService.config.basemap.id }"
+    >
+        <ion-card-header>
+            <ion-card-subtitle
+                >{{ bm?.category }} {{ bm?.end_date }}</ion-card-subtitle
+            >
+            <ion-card-title>{{ bm.name }}</ion-card-title>
+        </ion-card-header>
 
-    </ion-card-content>
-  </ion-card>
+        <ion-card-content>
+            <p *ngIf="bm.description" [innerText]="bm.description"></p>
+            <p>{{ bm?.attribution?.text }}</p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
