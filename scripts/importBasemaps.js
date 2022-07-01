@@ -6,6 +6,10 @@ const _ = require('lodash')
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 
+const ignoredIds = [
+    "osm-mapnik-black_and_white", // ignored because it does not support CORS
+    "EsriWorldImageryClarity" // ignored because it does not support CORS
+];
 
 // const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'imagery.geojson')));
 
@@ -16,6 +20,15 @@ const run = async () => {
     const features = data.features;
     const resultFeatures = [];
     for (const feature of features) {
+
+        // TODO test on property support_cors,
+        // if my PR is accepted https://github.com/osmlab/editor-layer-index/pull/1540
+
+        if (ignoredIds.includes(feature.properties.id)) {
+            // Ignore this imagery
+            continue;
+        }
+
         let furl = feature.properties.url;
         furl = furl.replace('{zoom}', '{z}')
         furl = furl.replace('{proj}', '3857')

@@ -75,7 +75,7 @@
         <h4 style="text-align: center;"> {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}} </h4>
 
         
-        <ion-list style="overflow-y: auto;"  (swipeLeft)="swipeLeft()">
+        <ion-list style="overflow-y: auto;">
           <ion-item *ngFor="let tag of tagsService.tags
                       | filtersTagsByIds:tagsService.lastTagsUsedIds 
                       | filterDeprecatedTag 
