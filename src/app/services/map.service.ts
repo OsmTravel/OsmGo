@@ -194,9 +194,10 @@ export class MapService {
             if (typeof currentFilter === "undefined") {
                 // FIXME @dotcs: Do something here
             }
-            // @ts-expect-error, prettier-ignore
+            // @ts-expect-error
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+            // prettier-ignore
             const newConfigIdFilter: FilterSpecification = ['match', ['get', 'configId'], [...ids], false, true]
             let newFilter = []
 
@@ -837,9 +838,10 @@ export class MapService {
             // ,'filter': ['all']
             filter: [
                 'all',
-                // @ts-expect-error, prettier-ignore
+                // @ts-expect-error
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+                // prettier-ignore
                 ['match', ['geometry-type'], ['Polygon', 'MultiPolygon'], true, false],
             ],
         })
@@ -855,9 +857,10 @@ export class MapService {
                 'line-opacity': 0.7,
             },
             layout: { 'line-join': 'round', 'line-cap': 'round' },
-            // @ts-expect-error, prettier-ignore
+            // @ts-expect-error
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+            // prettier-ignore
             filter: ['all', [ 'match', ['geometry-type'], ['LineString', 'MultiLineString'], true, false],
             ],
         })
@@ -872,9 +875,10 @@ export class MapService {
             },
             filter: [
                 'all',
-                // @ts-expect-error, prettier-ignore
+                // @ts-expect-error
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+                // prettier-ignore
                 ['match', ['geometry-type'], ['Polygon', 'MultiPolygon'], true, false],
             ],
         })
@@ -891,9 +895,10 @@ export class MapService {
             layout: { 'line-join': 'round', 'line-cap': 'round' },
             filter: [
                 'all',
-                // @ts-expect-error, prettier-ignore
+                // @ts-expect-error
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+                // prettier-ignore
                 ['match', ['geometry-type'], ['LineString', 'MultiLineString'], true, false],
             ],
         })
