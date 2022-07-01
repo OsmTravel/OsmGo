@@ -1,4 +1,5 @@
 import { Feature, FeatureCollection, Geometry } from 'geojson'
+import { Marker } from 'maplibre-gl'
 
 /**
  * Osm Go! specific geojson feature collection.
@@ -107,3 +108,10 @@ export interface TagConfig {
 }
 
 export type FeatureIdSource = 'data' | 'data_changed'
+
+export type MapMode = 'Create' | 'Update' | 'Delete';  // FIXME: @dotcs Is this valid?
+
+export class OsmGoMarker<T = any> extends Marker {
+    id: string;
+    data: T;
+} 

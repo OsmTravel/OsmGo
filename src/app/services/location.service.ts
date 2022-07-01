@@ -173,7 +173,7 @@ export class LocationService {
         return this.location
     }
 
-    getCoordsPosition() {
+    getCoordsPosition(): [number, number] {
         if (this.location && this.location.coords) {
             return [
                 this.location.coords.longitude,
