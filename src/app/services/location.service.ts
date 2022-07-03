@@ -10,7 +10,6 @@ import { CompassHeading } from 'src/type'
 export class LocationService {
     eventNewLocation = new EventEmitter<FeatureCollection>()
     eventNewCompassHeading = new EventEmitter<CompassHeading>()
-    eventStartCompassHeading = new EventEmitter()
     eventLocationIsReady = new EventEmitter<GeolocationPosition>()
     location: GeolocationPosition
     pointGeojson: FeatureCollection<Point>
@@ -22,12 +21,7 @@ export class LocationService {
     }
 
     gpsIsReady: boolean = false
-    subscriptionLocation
     subscriptionWatchLocation: number
-    forceOpen: boolean = false // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
-    headingIsDisable: boolean = false
-
-    geolocationStatPermission: string = undefined
 
     constructor(public configService: ConfigService) {}
 
