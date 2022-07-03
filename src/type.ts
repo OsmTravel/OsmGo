@@ -1,5 +1,14 @@
-import { Feature, FeatureCollection, Geometry } from 'geojson'
+import { Point } from '@turf/turf'
+import {
+    Feature,
+    FeatureCollection,
+    Geometry,
+    LineString,
+    MultiLineString,
+    MultiPoint,
+} from 'geojson'
 import { Marker } from 'maplibre-gl'
+import { MultiPolygon, Polygon } from 'martinez-polygon-clipping'
 
 /**
  * Osm Go! specific geojson feature collection.
@@ -16,7 +25,10 @@ export type OsmGoFeatureCollection = FeatureCollection<
  *
  * Contains a specific set of features and any possible geometry.
  */
-export type OsmGoFeature = Feature<Geometry, FeatureProperties>
+export type OsmGoFeature<G extends Geometry = Geometry> = Feature<
+    G,
+    FeatureProperties
+>
 
 /**
  * Osm Go! specific geojson feature properties.
@@ -109,7 +121,7 @@ export interface TagConfig {
 
 export type FeatureIdSource = 'data' | 'data_changed'
 
-export type MapMode = 'Create' | 'Update' | 'Delete' // FIXME: @dotcs Is this valid?
+export type MapMode = 'Read' | 'Create' | 'Update' | 'Delete' // FIXME: @dotcs Is this valid?
 
 export class OsmGoMarker<T = any> extends Marker {
     id: string
@@ -137,4 +149,11 @@ export interface CompassHeading {
     trueHeading: number
     headingAccuracy: null
     timestamp: number
+}
+
+export interface EventShowModal {
+    type: MapMode
+    geojson: any
+    newPosition?: boolean
+    origineData: FeatureIdSource
 }

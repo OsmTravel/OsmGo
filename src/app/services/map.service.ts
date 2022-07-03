@@ -33,6 +33,7 @@ import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
 import { setIconStyle } from '../../../scripts/osmToOsmgo/index.js'
 import {
+    EventShowModal,
     FeatureIdSource,
     MapMode,
     OsmGoFeature,
@@ -43,6 +44,7 @@ import {
 import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { FeatureCollection } from 'geojson'
+import { ModalDismissData } from '../components/modal/modal'
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -132,8 +134,8 @@ export class MapService {
     eventDomMainReady = new EventEmitter()
     eventCreateNewMap = new EventEmitter()
     eventNewBboxPolygon = new EventEmitter<OsmGoFeatureCollection>()
-    eventMoveElement = new EventEmitter()
-    eventShowModal = new EventEmitter()
+    eventMoveElement = new EventEmitter<ModalDismissData>()
+    eventShowModal = new EventEmitter<EventShowModal>()
     eventOsmElementUpdated = new EventEmitter()
     eventOsmElementDeleted = new EventEmitter()
     eventOsmElementCreated = new EventEmitter()
@@ -649,11 +651,9 @@ export class MapService {
                         break
                     }
                 }
-                this.map.setCenter(geojson.geometry.coordinates)
-                this.markerMove = this.createDomMoveMarker(
-                    geojson.geometry.coordinates,
-                    geojson
-                )
+                const coordinates = geojson.geometry.coordinates as LngLatLike
+                this.map.setCenter(coordinates)
+                this.markerMove = this.createDomMoveMarker(coordinates, geojson)
                 this.markerMoveMoving = true
                 this.markerMove.addTo(this.map)
                 this.subscriptionMarkerMove = this.eventMarkerMove.subscribe(
