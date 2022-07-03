@@ -712,7 +712,7 @@ export class MapService {
                 offset: [0, 0],
             }).setLngLat(
                 this.locationService.getGeojsonPos().features[0].geometry
-                    .coordinates
+                    .coordinates as LngLatLike
             )
             // FIXME: @dotcs not all members are set (id, data)
             this.markerLocation.addTo(this.map)

@@ -131,3 +131,10 @@ export interface TagsJson {
     primaryKeys: string[]
     tags: TagConfig[]
 }
+
+export interface CompassHeading {
+    magneticHeading: number
+    trueHeading: number
+    headingAccuracy: null
+    timestamp: number
+}
