@@ -9,7 +9,14 @@ import { HttpClient } from '@angular/common/http'
 import { debounceTime, throttle, throttleTime } from 'rxjs/operators'
 import { uniqBy, cloneDeep } from 'lodash'
 
-import { destination, point, Point, BBox } from '@turf/turf'
+import {
+    destination,
+    point,
+    Point,
+    BBox,
+    MultiLineString,
+    MultiPoint,
+} from '@turf/turf'
 import { AlertController } from '@ionic/angular'
 
 import {
@@ -43,7 +50,7 @@ import {
 } from 'src/type'
 import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
-import { FeatureCollection } from 'geojson'
+import { Feature, FeatureCollection, LineString } from 'geojson'
 import { ModalDismissData } from '../components/modal/modal'
 
 @Injectable({ providedIn: 'root' })
@@ -740,7 +747,7 @@ export class MapService {
         const geojson = this.dataService.getFeatureById(
             feature['properties'].id,
             origineData
-        )
+        ) as Feature<Point | MultiPoint | LineString | MultiLineString>
         this.eventShowModal.emit({
             type: 'Read',
             geojson: geojson,

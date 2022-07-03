@@ -153,7 +153,7 @@ export interface CompassHeading {
 
 export interface EventShowModal {
     type: MapMode
-    geojson: any
+    geojson: Feature<Point | MultiPoint | LineString | MultiLineString>
     newPosition?: boolean
     origineData: FeatureIdSource
 }
