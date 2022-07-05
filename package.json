@@ -9,6 +9,7 @@
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build --configuration production",
     "test": "ng test --ts-config src/tsconfig.spec.json",
+    "test:ci": "ng test --ts-config src/tsconfig.spec.json --watch=false --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sprites": "node ./scripts/importMissingSVGs.js && node ./scripts/formatSVG.js && node  ./scripts/sprites.js",
