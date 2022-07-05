@@ -5,7 +5,7 @@ import {
     TranslateLoader,
     TranslateService,
 } from '@ngx-translate/core'
-import { createTranslateLoader } from '../../app.module'
+import { createTranslateLoader } from '@app/app.module'
 
 import { DialogMultiFeaturesComponent } from './dialog-multi-features.component'
 import {

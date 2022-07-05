@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { NavController, Platform } from '@ionic/angular'
-import { OsmApiService } from '../../services/osmApi.service'
-import { ConfigService } from 'src/app/services/config.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { ConfigService } from '@services/config.service'
 
 @Component({
     selector: 'login',

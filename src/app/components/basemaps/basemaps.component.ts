@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { NavController } from '@ionic/angular'
-import { BasemapsService } from 'src/app/services/basemaps.service'
-import { ConfigService } from 'src/app/services/config.service'
-import { InitService } from 'src/app/services/init.service'
-import { MapService } from 'src/app/services/map.service'
+import { BasemapsService } from '@services/basemaps.service'
+import { ConfigService } from '@services/config.service'
+import { InitService } from '@services/init.service'
+import { MapService } from '@services/map.service'
 
 @Component({
     selector: 'app-basemaps',

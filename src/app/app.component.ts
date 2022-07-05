@@ -1,10 +1,10 @@
-import { ConfigService } from './services/config.service'
+import { ConfigService } from '@services/config.service'
 import { Component } from '@angular/core'
 
 import { Platform } from '@ionic/angular'
 
 import { TranslateService } from '@ngx-translate/core'
-import { TagsService } from './services/tags.service'
+import { TagsService } from '@services/tags.service'
 import { Device } from '@capacitor/device'
 import { Storage } from '@ionic/storage-angular'
 

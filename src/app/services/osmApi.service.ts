@@ -7,16 +7,16 @@ import * as osmAuth from 'osm-auth'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Storage } from '@ionic/storage-angular'
 
-import { MapService } from './map.service'
-import { TagsService } from './tags.service'
-import { DataService } from './data.service'
-import { AlertService } from './alert.service'
-import { ConfigService, User } from './config.service'
+import { MapService } from '@services/map.service'
+import { TagsService } from '@services/tags.service'
+import { DataService } from '@services/data.service'
+import { AlertService } from '@services/alert.service'
+import { ConfigService, User } from '@services/config.service'
 import { cloneDeep } from 'lodash'
 
 import bboxPolygon from '@turf/bbox-polygon'
 import { Platform } from '@ionic/angular'
-import { addAttributesToFeature } from '../../../scripts/osmToOsmgo/index.js'
+import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 
 import { XMLParser } from 'fast-xml-parser'
 

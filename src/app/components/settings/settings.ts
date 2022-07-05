@@ -1,13 +1,13 @@
 import { Component } from '@angular/core'
 import { NavController, Platform, LoadingController } from '@ionic/angular'
 
-import { ConfigService } from '../../services/config.service'
-import { MapService } from '../../services/map.service'
-import { OsmApiService } from '../../services/osmApi.service'
+import { ConfigService } from '@services/config.service'
+import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
 import { TranslateService } from '@ngx-translate/core'
-import { TagsService } from 'src/app/services/tags.service'
-import { DataService } from 'src/app/services/data.service'
-import { InitService } from 'src/app/services/init.service'
+import { TagsService } from '@services/tags.service'
+import { DataService } from '@services/data.service'
+import { InitService } from '@services/init.service'
 
 @Component({
     selector: 'page-settings',

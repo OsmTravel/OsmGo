@@ -1,16 +1,16 @@
 import { Component, AfterViewInit, OnInit, OnDestroy } from '@angular/core'
 
 import { NavController, AlertController, Platform } from '@ionic/angular'
-import { OsmApiService } from '../../services/osmApi.service'
-import { TagsService } from '../../services/tags.service'
-import { MapService } from '../../services/map.service'
-import { DataService } from '../../services/data.service'
-import { ConfigService } from '../../services/config.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
+import { MapService } from '@services/map.service'
+import { DataService } from '@services/data.service'
+import { ConfigService } from '@services/config.service'
 import { timer } from 'rxjs'
 import { TranslateService } from '@ngx-translate/core'
 import { cloneDeep, clone } from 'lodash'
-import { addAttributesToFeature } from '../../../../scripts/osmToOsmgo/index.js'
-import { InitService } from 'src/app/services/init.service'
+import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
+import { InitService } from '@services/init.service'
 import { take } from 'rxjs/operators'
 
 @Component({

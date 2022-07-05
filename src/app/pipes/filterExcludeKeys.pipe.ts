@@ -1,5 +1,5 @@
 import { Pipe } from '@angular/core'
-import { TagConfig } from 'src/type'
+import { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterExcludeKeys',

@@ -2,8 +2,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { TagListElementComponent } from './tag-list-element.component'
-import { IsBookmarkedPipe } from '../../pipes/is-bookmarked.pipe'
-import { DisplayTagsPipe } from '../../pipes/display-tags.pipe'
+import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
+import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 
 const tagsConfig: any = require('../../../assets/tagsAndPresets/tags.json')
 

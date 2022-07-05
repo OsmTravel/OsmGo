@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
-import { TagConfig } from 'src/type'
+import { TagConfig } from '@osmgo/type'
 
 @Component({
     selector: 'app-tag-list-element',

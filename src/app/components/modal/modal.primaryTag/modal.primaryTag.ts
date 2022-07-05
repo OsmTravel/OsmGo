@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { ModalController, Platform, NavParams } from '@ionic/angular'
-import { TagsService } from '../../../services/tags.service'
-import { ConfigService } from '../../../services/config.service'
-import { TagConfig } from '../../../../type'
+import { TagsService } from '@services/tags.service'
+import { ConfigService } from '@services/config.service'
+import { TagConfig } from '@osmgo/type'
 
 @Component({
     selector: 'modal-primary-tag',

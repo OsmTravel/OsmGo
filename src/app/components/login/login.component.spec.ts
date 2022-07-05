@@ -12,7 +12,7 @@ import {
 } from '@ngx-translate/core'
 import { Storage } from '@ionic/storage-angular'
 import { LoginPage } from './login.component'
-import { createTranslateLoader } from '../../app.module'
+import { createTranslateLoader } from '@app/app.module'
 
 import { Location, LocationStrategy } from '@angular/common'
 import { ChildrenOutletContexts, UrlSerializer } from '@angular/router'
