@@ -321,25 +321,20 @@
     </ion-card>
 
     <ion-card>
-        <ion-card-header>
-            {{'SETTINGS.TAG_COUNTRY' | translate }}
-        </ion-card-header>
         <ion-card-content>
-            <div class="wrapperEdit2cols">
-                <div class="contentEdit2cols">
-                    <ion-item>
-                        <ion-input
-                            type="text"
-                            [value]="this.configService.config.countryTags"
-                            (ionChange)="countryTagsChange($event)"
-                            placeholder="GB, FR, DE ..."
-                        ></ion-input>
-                    </ion-item>
-                </div>
-            </div>
-            <label class="hint"
-                >{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</label
-            >
+            <ion-item>
+                <ion-label>{{'SETTINGS.TAG_COUNTRY' | translate }}</ion-label>
+                <ion-select
+                    [value]="this.configService.config.countryTags"
+                    (ionChange)="countryTagsChange($event)">
+                    <ion-select-option
+                        *ngFor="let country of this.configService.countryConfig"
+                        [value]="country.code">
+                        {{country.name}}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+            <label class="hint">{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</label>
         </ion-card-content>
     </ion-card>
 

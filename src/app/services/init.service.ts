@@ -30,6 +30,7 @@ export class InitService {
                         this.configService.loadConfig$(i18nConfig)
                     )
                 ),
+            this.configService.getCountryConfig$(),
             this.configService.loadUserInfo$(),
             this.configService.loadChangeSet$(),
             this.tagsService.loadSavedFields$(),

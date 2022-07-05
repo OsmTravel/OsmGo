@@ -74,6 +74,7 @@ export class ConfigService {
         comment: '',
     }
     i18nConfig
+    countryConfig
 
     eventConfigIsLoaded = new EventEmitter()
     freezeMapRenderer = false
@@ -192,6 +193,15 @@ export class ConfigService {
             map((i18nConfig) => {
                 this.i18nConfig = i18nConfig
                 return i18nConfig
+            })
+        )
+    }
+
+    getCountryConfig$() {
+        return this.http.get('./assets/countryCode.json').pipe(
+            map((countryCode) => {
+                this.countryConfig = countryCode
+                return countryCode
             })
         )
     }
