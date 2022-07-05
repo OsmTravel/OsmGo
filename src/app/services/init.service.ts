@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
 import { forkJoin } from 'rxjs'
-import { ConfigService } from './config.service'
-import { TagsService } from './tags.service'
+import { ConfigService } from '@services/config.service'
+import { TagsService } from '@services/tags.service'
 import { switchMap, tap } from 'rxjs/operators'
 import { TranslateService } from '@ngx-translate/core'
-import { DataService } from './data.service'
+import { DataService } from '@services/data.service'
 
 @Injectable({
     providedIn: 'root',

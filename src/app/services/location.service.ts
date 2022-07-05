@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core'
 
-import { ConfigService } from './config.service'
+import { ConfigService } from '@services/config.service'
 
 import { Geolocation } from '@capacitor/geolocation'
 

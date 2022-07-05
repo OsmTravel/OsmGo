@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core'
-import { OsmGoFeature, PrimaryTag } from '../../../../type'
+import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
 
 @Component({
     selector: 'edit-primary-key',

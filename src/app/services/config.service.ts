@@ -2,12 +2,12 @@ import { Injectable, EventEmitter } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import { HttpClient } from '@angular/common/http'
 import { TranslateService } from '@ngx-translate/core'
-import { environment } from '../../environments/environment.prod'
+import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular'
 import { map } from 'rxjs/operators'
 import { from, Observable } from 'rxjs'
-import { TagConfig } from 'src/type'
-import { TagsService } from './tags.service'
+import { TagConfig } from '@osmgo/type'
+import { TagsService } from '@services/tags.service'
 
 export interface User {
     uid: string

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ModalController, Platform, NavParams } from '@ionic/angular'
-import { ConfigService } from 'src/app/services/config.service'
+import { ConfigService } from '@services/config.service'
 
 @Component({
     templateUrl: './modalSelectList.html',

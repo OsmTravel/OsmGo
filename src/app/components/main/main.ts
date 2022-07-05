@@ -9,14 +9,14 @@ import {
     LoadingController,
 } from '@ionic/angular'
 
-import { OsmApiService } from '../../services/osmApi.service'
-import { TagsService } from '../../services/tags.service'
-import { MapService } from '../../services/map.service'
-import { DataService } from '../../services/data.service'
-import { LocationService } from '../../services/location.service'
-import { AlertService } from '../../services/alert.service'
-import { ConfigService } from '../../services/config.service'
-import { ModalsContentPage } from '../modal/modal'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
+import { MapService } from '@services/map.service'
+import { DataService } from '@services/data.service'
+import { LocationService } from '@services/location.service'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { ModalsContentPage } from '@components/modal/modal'
 
 import { timer, forkJoin } from 'rxjs'
 import { Router, NavigationEnd } from '@angular/router'
@@ -24,9 +24,9 @@ import { TranslateService } from '@ngx-translate/core'
 
 import { SwUpdate } from '@angular/service-worker'
 
-import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-multi-features.component'
+import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
 
-import { InitService } from 'src/app/services/init.service'
+import { InitService } from '@services/init.service'
 
 import { App as CapacitorApp } from '@capacitor/app'
 

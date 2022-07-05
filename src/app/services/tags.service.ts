@@ -3,8 +3,8 @@ import { Observable, from, forkJoin } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { Injectable } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
-import { ConfigService } from './config.service'
-import { PresetOption, PrimaryTag, TagConfig } from '../../type'
+import { ConfigService } from '@services/config.service'
+import { PresetOption, PrimaryTag, TagConfig } from '@osmgo/type'
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {

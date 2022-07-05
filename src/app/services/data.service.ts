@@ -3,7 +3,11 @@ import { Storage } from '@ionic/storage-angular'
 import { cloneDeep } from 'lodash'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
-import { OsmGoFeatureCollection, OsmGoFeature, FeatureIdSource } from 'src/type'
+import {
+    OsmGoFeatureCollection,
+    OsmGoFeature,
+    FeatureIdSource,
+} from '@osmgo/type'
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
