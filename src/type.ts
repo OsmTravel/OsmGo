@@ -107,3 +107,18 @@ export interface TagConfig {
 }
 
 export type FeatureIdSource = 'data' | 'data_changed'
+
+/**
+ * ISO 3166-1 numeric and alpha-2 country codes of a country.
+ *
+ * See: https://www.iban.com/country-codes
+ * See: https://en.wikipedia.org/wiki/ISO_3166-1_numeric
+ */
+export interface CountryCode {
+    /** Human readable country name. */
+    name: string
+    /** Alpha-2 country code. */
+    code: string
+    /** Numeric ISO 3166-1 country code */
+    'country-code': string
+}
