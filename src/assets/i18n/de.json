@@ -39,7 +39,7 @@
         "SOURCES": "Quellen",
         "DATA": "Daten",
         "VERSION": "Version",
-        "OSM_CONTRIBUTORS": "© OpenStreetMap contributors"
+        "OSM_CONTRIBUTORS": "© OpenStreetMap-Mitwirkende"
     },
     "LOGIN": {
         "LOGIN": "Anmelden",
