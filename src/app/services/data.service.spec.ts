@@ -1,5 +1,6 @@
 import { Storage } from '@ionic/storage'
 import { feature, featureCollection, point } from '@turf/turf'
+import { OsmGoFeature, OsmGoFeatureCollection } from 'src/type'
 import { DataService } from './data.service'
 
 describe('DataService', () => {
@@ -112,6 +113,90 @@ describe('DataService', () => {
                 expect(actual.type).toBe('FeatureCollection')
                 expect(actual.features.length).toBe(0)
             })
+
+            it('should be possible to set geojson data', () => {
+                const fc = featureCollection([
+                    point([0, 0]),
+                ]) as OsmGoFeatureCollection
+
+                service.setGeojson(fc)
+
+                expect(service.geojson).toEqual(fc)
+                expect(storageSpy.set.calls.count()).toBe(1)
+                expect(storageSpy.set.calls.mostRecent().args).toEqual([
+                    'geojson',
+                    fc,
+                ])
+
+                // test if object has been deeply cloned
+                fc.features[0].properties.id = 123
+
+                expect(service.geojson).not.toEqual(fc)
+            })
+
+            it('should be possible to add a feature to geojson collection', () => {
+                expect(service.getGeojson().features.length).toBe(0)
+
+                const newFeature = point([1, 2]) as OsmGoFeature
+                service.addFeatureToGeojson(newFeature)
+
+                expect(service.getGeojson().features.length).toBe(1)
+            })
+
+            describe('moddify/delete feature', () => {
+                let featureA: OsmGoFeature
+                let featureB: OsmGoFeature
+                beforeEach(() => {
+                    // Preparation
+                    featureA = point([0, 0]) as OsmGoFeature
+                    featureA.id = 123
+                    featureB = point([0, 0]) as OsmGoFeature
+                    featureB.id = 234
+                    const fc = featureCollection([
+                        featureA,
+                        featureB,
+                    ]) as OsmGoFeatureCollection
+
+                    service.setGeojson(fc)
+
+                    expect(service.getGeojson().features.length).toBe(2)
+                })
+
+                it('should update a feature based on its id', () => {
+                    // Prepare feature update
+                    const newFeature = point([1, 2]) as OsmGoFeature
+                    newFeature.id = featureA.id
+                    newFeature.properties.hexColor = '#ccc'
+
+                    // Apply feature update
+                    service.updateFeatureToGeojson(newFeature)
+
+                    // Test if collection has been updated correctly
+                    expect(
+                        service
+                            .getGeojson()
+                            .features.find(
+                                (feature) => feature.id === featureA.id
+                            )
+                    ).toEqual(newFeature)
+                })
+
+                it('should delete feature based on its id', () => {
+                    // Prepare feature deletion
+                    const deletionFeature = point([1, 2]) as OsmGoFeature
+                    deletionFeature.id = featureA.id
+
+                    service.deleteFeatureFromGeojson(deletionFeature)
+
+                    expect(
+                        service
+                            .getGeojson()
+                            .features.find(
+                                (feature) => feature.id === featureA.id
+                            )
+                    ).toBeUndefined()
+                })
+            })
         })
 
         describe('geojsonChanged', () => {
@@ -161,6 +246,46 @@ describe('DataService', () => {
                 ])
                 expect(actual.type).toBe('FeatureCollection')
                 expect(actual.features.length).toBe(0)
+            })
+
+            it('should be possible to write bbox geojson data', () => {
+                const fc = featureCollection([
+                    point([0, 0]),
+                ]) as OsmGoFeatureCollection
+                service.setGeojsonBbox(fc)
+
+                expect(service.geojsonBbox).toEqual(fc)
+                // ensure that data is persisted in storage
+                expect(storageSpy.set.calls.count()).toBe(1)
+                expect(storageSpy.set.calls.mostRecent().args).toEqual([
+                    'geojsonBbox',
+                    fc,
+                ])
+            })
+
+            it('should be possible to get bbox geojson data', () => {
+                const fc = featureCollection([
+                    point([0, 0]),
+                ]) as OsmGoFeatureCollection
+                service.geojsonBbox = fc
+
+                const actual = service.getGeojsonBbox()
+
+                expect(actual).toEqual(fc)
+            })
+
+            it('should be possible to reset bbox geojson data', () => {
+                const fc = featureCollection([
+                    point([0, 0]),
+                ]) as OsmGoFeatureCollection
+                service.setGeojsonBbox(fc)
+
+                expect(service.getGeojsonBbox().features.length).toBe(1)
+
+                const actual = service.resetGeojsonBbox()
+
+                expect(service.getGeojsonBbox().features.length).toBe(0)
+                expect(actual.features.length).toEqual(0)
             })
         })
     })
