@@ -25,7 +25,7 @@
     "MENU": {
         "CONNECTION": "Войти в OpenStreetMap",
         "SETTINGS": "Настройки",
-        "ABOUT": "",
+        "ABOUT": "О программе",
         "DELETE_DATA": "Удалить данные",
         "DELETE_DATA_CONFIRM_HEADER": "Вы уверены?",
         "DELETE_DATA_CONFIRM_MESSAGE": "Удалить загруженные данные? (изменения не будут удалены)",
@@ -35,7 +35,7 @@
         "TAG_MANAGEMENT": "Управление тегами"
     },
     "ABOUT": {
-        "ABOUT": "",
+        "ABOUT": "О программе",
         "SOURCES": "Источники",
         "DATA": "Данные",
         "VERSION": "Версия",
@@ -77,8 +77,8 @@
         "MAP": "Карта",
         "POSITION_TRACKING": "Отслеживание положения",
         "POSITION_TRACKING_HINT": "Карта сцентрирована на вашем положении.",
-        "ORIENTATION_TRACKING": "",
-        "ORIENTATION_TRACKING_HINT": "",
+        "ORIENTATION_TRACKING": "Отслеживать положение телефона",
+        "ORIENTATION_TRACKING_HINT": "Положение карты будет зависеть от положения устройства",
         "HIDE_LARGE_POLYGON": "Скрыть полигоны больше 5000 м²",
         "HIDE_LARGE_POLYGON_HINT": "Полигоны больше 5000 м² не будут отображены. Полигон всегда будет обозначаться маркером.",
         "HIDE_LONG_LINE": "Скрыть линии длиннее чем 200 м",
@@ -141,7 +141,7 @@
         "ADD_A_TAG": "Добавить тэг",
         "DELETE_CONFIRM_HEADER": "Вы уверены?",
         "DELETE_CONFIRM_MESSAGE": "Удалить этот объект?",
-        "ADD_SURVEY_DATE_CONFIRM_HEADER": "",
+        "ADD_SURVEY_DATE_CONFIRM_HEADER": "Объект был проверен?",
         "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Добавить тэг  'survey:date' с сегодняшней датой.",
         "PRIMARY_TAG_BOOKMARKS": "Закладки",
         "PRIMARY_TAG_FULL": "",
