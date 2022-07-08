@@ -79,6 +79,45 @@ describe('DataService', () => {
         expect(service.getGeojson().features[0]).toEqual(changedFeature)
     })
 
+    describe('id generation/handling', () => {
+        it('should be possible to get next free id', () => {
+            const feature = point([0, 0], { id: -10 }) as OsmGoFeature
+            const fc = featureCollection([feature]) as OsmGoFeatureCollection
+            service.setGeojsonChanged(fc)
+
+            const actual = service.getNextNewId()
+
+            expect(actual).toBe(-11)
+        })
+
+        it('should be possible to replace old id format with new id format', async () => {
+            const featureA = point([0, 0], {
+                id: 'tmp_123' as any,
+                changeType: 'Create',
+                type: 'foo',
+            }) as OsmGoFeature
+            const featureB = point([0, 0], {
+                id: 123,
+                changeType: 'Create',
+                type: 'foo',
+            }) as OsmGoFeature
+            const fc = featureCollection([
+                featureA,
+                featureB,
+            ]) as OsmGoFeatureCollection
+            service.setGeojsonChanged(fc)
+
+            await service.replaceIdGenerateByOldVersion()
+
+            const actual = service.getGeojsonChanged().features
+            expect(actual[0].properties.id).toBe(-1)
+            expect(actual[0].id).toBe('foo/-1')
+
+            expect(actual[1].properties.id).toBe(-2)
+            expect(actual[1].id).toBe('foo/-2')
+        })
+    })
+
     describe('cancel feature change', () => {
         it('cancel newly created feature', () => {
             const originalFeature = point([0, 0], {}, { id: 3 }) as OsmGoFeature
