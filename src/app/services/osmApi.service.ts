@@ -562,7 +562,7 @@ export class OsmApiService {
     /// CREATE NODE
     createOsmNode(_feature) {
         const feature = cloneDeep(_feature)
-        const id = this.dataService.getNextNewId()
+        const id = this.dataService.nextFeatureId
 
         feature.id = 'node/' + id
         feature.properties.id = id
