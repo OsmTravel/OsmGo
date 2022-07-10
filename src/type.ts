@@ -57,7 +57,7 @@ export type OsmGoChangeType = 'Create' | 'Update' | 'Delete'
 
 export interface PrimaryTag {
     key: string
-    value: string
+    value: string | number
 }
 
 interface MetaData {
@@ -114,4 +114,20 @@ export type MapMode = 'Create' | 'Update' | 'Delete' // FIXME: @dotcs Is this va
 export class OsmGoMarker<T = any> extends Marker {
     id: string
     data: T
+}
+
+export type JsonSprites = Record<string, Sprite>
+
+export interface Sprite {
+    x: number
+    y: number
+    width: number
+    height: number
+    pixelRatio: number
+}
+
+/** List of tags as found in `src/assets/tagsAndPresets/tags.json` */
+export interface TagsJson {
+    primaryKeys: string[]
+    tags: TagConfig[]
 }
