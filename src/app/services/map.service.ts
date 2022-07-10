@@ -9,7 +9,14 @@ import { HttpClient } from '@angular/common/http'
 import { debounceTime, throttle, throttleTime } from 'rxjs/operators'
 import { uniqBy, cloneDeep } from 'lodash'
 
-import { destination, point, Point, BBox } from '@turf/turf'
+import {
+    destination,
+    point,
+    Point,
+    BBox,
+    MultiLineString,
+    MultiPoint,
+} from '@turf/turf'
 import { AlertController } from '@ionic/angular'
 
 import {
@@ -33,6 +40,7 @@ import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
 import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
 import {
+    EventShowModal,
     FeatureIdSource,
     MapMode,
     OsmGoFeature,
@@ -42,7 +50,8 @@ import {
 } from '@osmgo/type'
 import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
-import { FeatureCollection } from 'geojson'
+import { Feature, FeatureCollection, LineString } from 'geojson'
+import { ModalDismissData } from '../components/modal/modal'
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -132,8 +141,8 @@ export class MapService {
     eventDomMainReady = new EventEmitter()
     eventCreateNewMap = new EventEmitter()
     eventNewBboxPolygon = new EventEmitter<OsmGoFeatureCollection>()
-    eventMoveElement = new EventEmitter()
-    eventShowModal = new EventEmitter()
+    eventMoveElement = new EventEmitter<ModalDismissData>()
+    eventShowModal = new EventEmitter<EventShowModal>()
     eventOsmElementUpdated = new EventEmitter()
     eventOsmElementDeleted = new EventEmitter()
     eventOsmElementCreated = new EventEmitter()
@@ -649,11 +658,9 @@ export class MapService {
                         break
                     }
                 }
-                this.map.setCenter(geojson.geometry.coordinates)
-                this.markerMove = this.createDomMoveMarker(
-                    geojson.geometry.coordinates,
-                    geojson
-                )
+                const coordinates = geojson.geometry.coordinates as LngLatLike
+                this.map.setCenter(coordinates)
+                this.markerMove = this.createDomMoveMarker(coordinates, geojson)
                 this.markerMoveMoving = true
                 this.markerMove.addTo(this.map)
                 this.subscriptionMarkerMove = this.eventMarkerMove.subscribe(
@@ -740,7 +747,7 @@ export class MapService {
         const geojson = this.dataService.getFeatureById(
             feature['properties'].id,
             origineData
-        )
+        ) as Feature<Point | MultiPoint | LineString | MultiLineString>
         this.eventShowModal.emit({
             type: 'Read',
             geojson: geojson,

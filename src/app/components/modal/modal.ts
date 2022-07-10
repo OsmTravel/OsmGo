@@ -27,7 +27,22 @@ import { Tag, Preset, PrimaryTag, TagConfig, OsmGoFeature } from '@osmgo/type'
 
 import { cloneDeep, isEqual, findIndex } from 'lodash'
 import { TranslateService } from '@ngx-translate/core'
+import {
+    LineString,
+    MultiLineString,
+    MultiPolygon,
+    Point,
+    Polygon,
+} from 'geojson'
 
+export interface ModalDismissData {
+    redraw?: boolean
+    type?: string
+    geojson?: OsmGoFeature<
+        Point | LineString | MultiLineString | Polygon | MultiPolygon
+    >
+    mode?: any
+}
 @Component({
     selector: 'modal',
     templateUrl: './modal.html',
@@ -37,7 +52,9 @@ import { TranslateService } from '@ngx-translate/core'
 export class ModalsContentPage implements OnInit {
     tags: Tag[] = [] // main data
     originalTags = []
-    feature: OsmGoFeature
+    feature: OsmGoFeature<
+        Point | LineString | MultiLineString | Polygon | MultiPolygon
+    >
     origineData: string
     typeFiche: string
     displayCode: boolean = false
@@ -310,7 +327,7 @@ export class ModalsContentPage implements OnInit {
         return null
     }
 
-    dismiss(data = null) {
+    dismiss(data: ModalDismissData = null) {
         this.modalCtrl.dismiss(data)
     }
 
