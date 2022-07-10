@@ -338,7 +338,10 @@ export class MapService {
         this.map.resetNorth()
     }
 
-    displaySatelliteBaseMap(baseMap, isDisplay: boolean): void {
+    displaySatelliteBaseMap(
+        baseMap: Record<string, any>,
+        isDisplay: boolean
+    ): void {
         const bmSource: RasterSourceSpecification = {
             type: 'raster',
             tiles: baseMap.tiles,
