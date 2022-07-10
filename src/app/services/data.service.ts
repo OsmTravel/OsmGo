@@ -101,14 +101,7 @@ export class DataService {
                 }
 
                 // At this point we know previously created elements from which we can determine the min ID.
-                this._nextFeatureId =
-                    this.geojsonChanged.features.length > 0
-                        ? Math.min(
-                              ...this.geojsonChanged.features.map(
-                                  (f) => f.properties.id
-                              )
-                          ) - 1
-                        : 0
+                this.forceNextFeatureIdSync()
 
                 return geojson
             })
@@ -249,6 +242,22 @@ export class DataService {
         return this._nextFeatureId--
     }
 
+    /**
+     * Synchronizes the next feature ID by looping through all existing changes
+     * and identifying the lowest ID.
+     * Looping through all entries is slow. Use this method only if really
+     * needed, e.g., if a new feature collection is set from outside the
+     * service.
+     */
+    private forceNextFeatureIdSync(): void {
+        const ids = Object.values(this._geojsonChanged)
+            .map((feature) => feature.properties.id)
+            // in the new format only non-positive values are allowed, skip all
+            // others
+            .filter((id) => id <= 0)
+        this._nextFeatureId = ids.length > 0 ? Math.min(...ids) - 1 : 0
+    }
+
     async setGeojsonChanged(data: OsmGoFeatureCollection): Promise<void> {
         this._geojsonChanged = {}
         for (const feature of data.features) {
@@ -259,8 +268,7 @@ export class DataService {
 
     // replace id generate by version <= 1.5 (tmp_123) by -1, -2 etc...
     async replaceIdGenerateByOldVersion(): Promise<void> {
-        const geojsonChange = this.getGeojsonChanged()
-        for (const feature of geojsonChange.features) {
+        for (const [id, feature] of Object.entries(this._geojsonChanged)) {
             if (
                 feature.properties.changeType == 'Create' &&
                 (!Number.isInteger(feature.properties.id) ||
@@ -270,9 +278,12 @@ export class DataService {
                 feature.properties.id = nextId
                 feature.id = `${feature.properties.type}/${nextId}`
                 console.info('FIXE :', feature.id, feature.properties.id)
-                await this.setGeojsonChanged(geojsonChange)
+
+                this._geojsonChanged[feature.id] = feature
+                delete this._geojsonChanged[id]
             }
         }
+        await this.setGeojsonChanged(this.getGeojsonChanged())
     }
 
     getCountGeojsonChanged(): number {
