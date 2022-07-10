@@ -22,12 +22,6 @@ describe('DataService', () => {
         service = new DataService(storageSpy)
     })
 
-    it('makeEmptyGeoJsonFC should create empty feature collection', () => {
-        const fc = DataService.makeEmptyGeoJsonFC()
-        expect(fc.type).toEqual('FeatureCollection')
-        expect(fc.features.length).toBe(0)
-    })
-
     it('should be possible to clear data cache', async () => {
         // preparation
         const _deleteDatabase = window.indexedDB.deleteDatabase

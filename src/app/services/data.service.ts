@@ -8,6 +8,7 @@ import {
     OsmGoFeature,
     FeatureIdSource,
 } from '@osmgo/type'
+import { feature, featureCollection } from '@turf/turf'
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -33,8 +34,12 @@ export class DataService {
      */
     _geojsonChanged: Record<string, OsmGoFeature> = {}
 
-    geojsonWay: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC()
-    geojsonBbox: OsmGoFeatureCollection = DataService.makeEmptyGeoJsonFC()
+    geojsonWay: OsmGoFeatureCollection = featureCollection(
+        []
+    ) as OsmGoFeatureCollection
+    geojsonBbox: OsmGoFeatureCollection = featureCollection(
+        []
+    ) as OsmGoFeatureCollection
 
     /** Next unused ID that can be used for a new feature. */
     private _nextFeatureId = 0
@@ -48,7 +53,7 @@ export class DataService {
      * Data source is the `_geojson` member variable.
      */
     get geojson(): OsmGoFeatureCollection {
-        const fc = DataService.makeEmptyGeoJsonFC()
+        const fc = featureCollection([]) as OsmGoFeatureCollection
         fc.features = Object.values(this._geojson)
         return fc
     }
@@ -60,14 +65,9 @@ export class DataService {
      * Data source is the `_geojsonChanged` member variable.
      */
     get geojsonChanged(): OsmGoFeatureCollection {
-        const fc = DataService.makeEmptyGeoJsonFC()
+        const fc = featureCollection([]) as OsmGoFeatureCollection
         fc.features = Object.values(this._geojsonChanged)
         return fc
-    }
-
-    /** Creates a new GeoJSON feature collection that contains zero features. */
-    static makeEmptyGeoJsonFC(): OsmGoFeatureCollection {
-        return { type: 'FeatureCollection', features: [] }
     }
 
     // TODO: Is this method still needed? It is not used anywhere.
@@ -83,7 +83,9 @@ export class DataService {
     loadGeojson$(): Observable<OsmGoFeatureCollection> {
         return from(this.localStorage.get('geojson')).pipe(
             map((geojson: OsmGoFeatureCollection) => {
-                geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC()
+                geojson = geojson
+                    ? geojson
+                    : (featureCollection([]) as OsmGoFeatureCollection)
                 for (const feature of geojson.features) {
                     this._geojson[feature.id] = feature
                 }
@@ -95,7 +97,9 @@ export class DataService {
     loadGeojsonChanged$(): Observable<OsmGoFeatureCollection> {
         return from(this.localStorage.get('geojsonChanged')).pipe(
             map((geojson: OsmGoFeatureCollection) => {
-                geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC()
+                geojson = geojson
+                    ? geojson
+                    : (featureCollection([]) as OsmGoFeatureCollection)
                 for (const feature of geojson.features) {
                     this._geojsonChanged[feature.id] = feature
                 }
@@ -111,7 +115,9 @@ export class DataService {
     loadGeojsonBbox$(): Observable<OsmGoFeatureCollection> {
         return from(this.localStorage.get('geojsonBbox')).pipe(
             map((geojson: OsmGoFeatureCollection) => {
-                geojson = geojson ? geojson : DataService.makeEmptyGeoJsonFC()
+                geojson = geojson
+                    ? geojson
+                    : (featureCollection([]) as OsmGoFeatureCollection)
                 this.geojsonBbox = geojson
                 return geojson
             })
@@ -160,8 +166,9 @@ export class DataService {
     }
 
     resetGeojsonBbox(): OsmGoFeatureCollection {
-        this.setGeojsonBbox(DataService.makeEmptyGeoJsonFC())
-        return DataService.makeEmptyGeoJsonFC()
+        const fc = featureCollection([]) as OsmGoFeatureCollection
+        this.setGeojsonBbox(fc)
+        return fc
     }
 
     setGeojsonWay(data: OsmGoFeatureCollection): void {
@@ -176,7 +183,7 @@ export class DataService {
         if (this.geojson) {
             return this.geojson
         } else {
-            return DataService.makeEmptyGeoJsonFC()
+            return featureCollection([]) as OsmGoFeatureCollection
         }
     }
 
@@ -341,9 +348,10 @@ export class DataService {
 
     resetGeojsonData(): OsmGoFeatureCollection {
         this._geojson = {}
-        this.setGeojson(DataService.makeEmptyGeoJsonFC())
+        const fc = featureCollection([]) as OsmGoFeatureCollection
+        this.setGeojson(fc)
         // this.getMergedGeojsonGeojsonChanged();
         // return this.getMergedGeojsonGeojsonChanged();
-        return DataService.makeEmptyGeoJsonFC()
+        return fc
     }
 }
