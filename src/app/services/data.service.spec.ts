@@ -1,11 +1,11 @@
 import { Storage } from '@ionic/storage'
-import { feature, featureCollection, point } from '@turf/turf'
+import { featureCollection, point } from '@turf/turf'
 import {
     FeatureProperties,
     OsmGoFeature,
     OsmGoFeatureCollection,
-} from 'src/type'
-import { DataService } from './data.service'
+} from '@osmgo/type'
+import { DataService } from '@services/data.service'
 
 describe('DataService', () => {
     let service: DataService

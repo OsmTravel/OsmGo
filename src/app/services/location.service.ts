@@ -4,7 +4,7 @@ import { ConfigService } from '@services/config.service'
 
 import { Geolocation } from '@capacitor/geolocation'
 import { FeatureCollection, Point } from 'geojson'
-import { CompassHeading } from 'src/type'
+import { CompassHeading } from '@osmgo/type'
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
