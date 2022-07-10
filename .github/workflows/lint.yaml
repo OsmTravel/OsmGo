@@ -1,4 +1,4 @@
-name: 'Lint and static code analysis'
+name: 'Lint and test code'
 
 on:
   push:
@@ -15,3 +15,5 @@ jobs:
         run: npm ci
       - name: Lint code style
         run: npm run prettier:check
+      - name: Run tests
+        run: npm run test:ci
