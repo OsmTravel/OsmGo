@@ -2,14 +2,16 @@ name: Deployment
 
 on:
   push:
+    branches:
+      - main
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - uses: actions/setup-node@v3
         with:
