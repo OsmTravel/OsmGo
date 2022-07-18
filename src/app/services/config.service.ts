@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators'
 import { from, Observable } from 'rxjs'
 import { TagConfig } from '@osmgo/type'
 import { TagsService } from '@services/tags.service'
+import { CountryCode } from '@osmgo/type'
 
 export interface User {
     uid: string
@@ -74,7 +75,7 @@ export class ConfigService {
         comment: '',
     }
     i18nConfig
-    countryConfig
+    countryConfig: CountryCode[]
 
     eventConfigIsLoaded = new EventEmitter()
     freezeMapRenderer = false
@@ -197,9 +198,9 @@ export class ConfigService {
         )
     }
 
-    getCountryConfig$() {
+    getCountryConfig$(): Observable<CountryCode[]> {
         return this.http.get('./assets/countryCode.json').pipe(
-            map((countryCode) => {
+            map((countryCode: CountryCode[]) => {
                 this.countryConfig = countryCode
                 return countryCode
             })
