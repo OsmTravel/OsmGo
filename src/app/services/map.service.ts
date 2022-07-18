@@ -6,7 +6,7 @@ import { LocationService } from '@services/location.service'
 import { ConfigService } from '@services/config.service'
 import { HttpClient } from '@angular/common/http'
 
-import { debounceTime, throttle, throttleTime } from 'rxjs/operators'
+import { debounceTime, throttleTime } from 'rxjs/operators'
 import { uniqBy, cloneDeep } from 'lodash'
 
 import { destination, point, Point, BBox } from '@turf/turf'
@@ -28,7 +28,6 @@ import {
 } from 'maplibre-gl'
 import { TranslateService } from '@ngx-translate/core'
 import { map } from 'rxjs/operators'
-import { AlertInput } from '@ionic/core'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
 import { setIconStyle } from '../../../scripts/osmToOsmgo/index.js'
@@ -39,9 +38,9 @@ import {
     OsmGoFeatureCollection,
     OsmGoMarker,
     TagConfig,
-} from 'src/type'
+} from '../../type'
 import { Config } from 'protractor'
-import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
+import { BehaviorSubject, Observable, of, Subscription } from 'rxjs'
 import { FeatureCollection } from 'geojson'
 
 @Injectable({ providedIn: 'root' })
@@ -840,15 +839,7 @@ export class MapService {
             paint: {
                 'line-color': '#ea1212',
                 'line-width': 5,
-                // @ts-expect-error
-                // Types can only deal with an array of numbers, not with more complex configurations.
-                // See docs: https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#paint-line-line-dasharray
-                'line-dasharray': {
-                    stops: [
-                        [14, [1, 0]],
-                        [14, [1, 1]],
-                    ],
-                },
+                'line-dasharray': [2, 2],
             },
         })
 
