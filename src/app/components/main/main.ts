@@ -16,7 +16,7 @@ import { DataService } from '../../services/data.service'
 import { LocationService } from '../../services/location.service'
 import { AlertService } from '../../services/alert.service'
 import { ConfigService } from '../../services/config.service'
-import { ModalsContentPage } from '../modal/modal'
+import { ModalDismissData, ModalsContentPage } from '../modal/modal'
 
 import { timer, forkJoin } from 'rxjs'
 import { Router, NavigationEnd } from '@angular/router'
@@ -29,6 +29,7 @@ import { DialogMultiFeaturesComponent } from '../dialog-multi-features/dialog-mu
 import { InitService } from 'src/app/services/init.service'
 
 import { App as CapacitorApp } from '@capacitor/app'
+import { BBox } from '@turf/turf'
 
 @Component({
     templateUrl: './main.html',
@@ -36,10 +37,10 @@ import { App as CapacitorApp } from '@capacitor/app'
     styleUrls: ['./main.scss'],
 })
 export class MainPage implements AfterViewInit {
-    modalIsOpen = false
-    menuIsOpen = false
-    newVersion = false
-    loading = true
+    modalIsOpen: boolean = false
+    menuIsOpen: boolean = false
+    newVersion: boolean = false
+    loading: boolean = true
 
     // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
@@ -66,7 +67,7 @@ export class MainPage implements AfterViewInit {
     ) {
         this.router.events.subscribe((e) => {
             if (e instanceof NavigationEnd) {
-                if (e['urlAfterRedirects'] === '/main') {
+                if (e.urlAfterRedirects === '/main') {
                     this.configService.freezeMapRenderer = false
                     // la carte ne detect pas toujours le changement de taille du DOM...
                     if (this.mapService.map) {
@@ -116,15 +117,15 @@ export class MainPage implements AfterViewInit {
             await modal.present()
             this.modalIsOpen = true
 
-            modal.onDidDismiss().then((d) => {
+            modal.onDidDismiss<ModalDismissData>().then((d) => {
                 this.modalIsOpen = false
                 const data = d.data
                 this.configService.freezeMapRenderer = false
                 if (data) {
-                    if (data['type'] === 'Move') {
+                    if (data.type === 'Move') {
                         this.mapService.eventMoveElement.emit(data)
                     }
-                    if (data['redraw']) {
+                    if (data.redraw) {
                         timer(50).subscribe((t) => {
                             this.mapService.eventMarkerReDraw.emit(
                                 this.dataService.getGeojson()
@@ -151,25 +152,25 @@ export class MainPage implements AfterViewInit {
         })
     }
 
-    openMenu() {
+    openMenu(): void {
         this.configService.freezeMapRenderer = true
         this.menuIsOpen = true
         // history.pushState({menu:'open'}, 'menu')
         // TODO history.pushState({msg:'openned side bar', menu:'open'}, 'menu')
     }
 
-    closeMenu() {
+    closeMenu(): void {
         this.configService.freezeMapRenderer = false
         this.menuIsOpen = false
     }
 
-    onMapResized(e) {
+    onMapResized(e: any): void {
         if (this.mapService.map) {
             this.mapService.map.resize()
         }
     }
 
-    presentConfirm() {
+    presentConfirm(): void {
         this.alertCtrl
             .create({
                 header: this.translate.instant('MAIN.EXIT_CONFIRM_HEADER'),
@@ -193,14 +194,14 @@ export class MainPage implements AfterViewInit {
             })
     }
 
-    loadData() {
+    loadData(): void {
         this.mapService.setIsProcessing(true)
         // L'utilisateur charge les données, on supprime donc le tooltip
         this._ngZone.run(() => {
             this.alertService.displayToolTipRefreshData = false
         })
 
-        const bbox: any = this.mapService.getBbox()
+        const bbox: BBox = this.mapService.getBbox()
         this.osmApi
             .getDataFromBbox(bbox, this.configService.getLimitFeatures()) // configService
             .subscribe({
@@ -226,7 +227,7 @@ export class MainPage implements AfterViewInit {
             })
     }
 
-    async presentToast(message) {
+    async presentToast(message: string): Promise<void> {
         const toast = await this.toastCtrl.create({
             message: message,
             duration: 4000,
@@ -253,7 +254,7 @@ export class MainPage implements AfterViewInit {
         //   });
     }
 
-    ngAfterViewInit() {
+    ngAfterViewInit(): void {
         this.initService
             .initLoadData$()
             .subscribe(
@@ -278,9 +279,9 @@ export class MainPage implements AfterViewInit {
                 }
             )
 
-        this.mapService.eventMapIsLoaded.subscribe((e) => {
+        this.mapService.eventMapIsLoaded.subscribe(() => {
             this.loading = false
-            timer(2000).subscribe((e) => {
+            timer(2000).subscribe(() => {
                 const nbData = this.dataService.getGeojson().features.length
                 if (nbData > 0) {
                     // Il y a des données stockées en mémoires...
@@ -298,46 +299,44 @@ export class MainPage implements AfterViewInit {
             })
         })
 
-        this.alertService.eventDisplayToolTipRefreshData.subscribe(
-            async (e) => {
-                const toast = await this.toastCtrl.create({
-                    message: this.translate.instant('MAIN.LOAD_BBOX'),
-                    duration: 4000,
-                    position: 'bottom',
-                    buttons: [
-                        {
-                            text: 'Ok',
-                            role: 'cancel',
-                            handler: () => {
-                                if (
-                                    this.mapService.map &&
-                                    this.mapService.map.getZoom() > 16
-                                ) {
-                                    this.loadData()
-                                }
-                            },
+        this.alertService.eventDisplayToolTipRefreshData.subscribe(async () => {
+            const toast = await this.toastCtrl.create({
+                message: this.translate.instant('MAIN.LOAD_BBOX'),
+                duration: 4000,
+                position: 'bottom',
+                buttons: [
+                    {
+                        text: 'Ok',
+                        role: 'cancel',
+                        handler: () => {
+                            if (
+                                this.mapService.map &&
+                                this.mapService.map.getZoom() > 16
+                            ) {
+                                this.loadData()
+                            }
                         },
-                    ],
-                })
-                toast.present()
+                    },
+                ],
+            })
+            toast.present()
 
-                // const toast = await this.toastCtrl.create({
-                //   position: 'bottom',
-                //   message: this.translate.instant('MAIN.LOAD_BBOX'),
-                //   showCloseButton: true,
-                //   duration: 6000,
-                //   closeButtonText: 'Ok'
-                // });
-                // toast.present();
-                // toast.onDidDismiss().then(ev => {
-                //   if (ev.role === 'cancel') {
-                //     if (this.mapService.map && this.mapService.map.getZoom() > 16) {
-                //       this.loadData();
-                //     }
-                //   }
-                // });
-            }
-        )
+            // const toast = await this.toastCtrl.create({
+            //   position: 'bottom',
+            //   message: this.translate.instant('MAIN.LOAD_BBOX'),
+            //   showCloseButton: true,
+            //   duration: 6000,
+            //   closeButtonText: 'Ok'
+            // });
+            // toast.present();
+            // toast.onDidDismiss().then(ev => {
+            //   if (ev.role === 'cancel') {
+            //     if (this.mapService.map && this.mapService.map.getZoom() > 16) {
+            //       this.loadData();
+            //     }
+            //   }
+            // });
+        })
 
         // Initialize bahaviors when pressing backButton on device
         /*TODO
