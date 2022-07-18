@@ -30,15 +30,14 @@ import { TranslateService } from '@ngx-translate/core'
 import { map } from 'rxjs/operators'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
-import { setIconStyle } from '../../../scripts/osmToOsmgo/index.js'
+import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
 import {
     FeatureIdSource,
     MapMode,
     OsmGoFeature,
     OsmGoFeatureCollection,
     OsmGoMarker,
-    TagConfig,
-} from '../../type'
+} from '@osmgo/type'
 import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subscription } from 'rxjs'
 import { FeatureCollection } from 'geojson'
