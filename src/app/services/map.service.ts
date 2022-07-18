@@ -14,10 +14,15 @@ import { AlertController } from '@ionic/angular'
 
 import {
     AttributionControl,
+    FilterSpecification,
+    GeoJSONSource,
+    LngLat,
     LngLatLike,
     Map,
+    MapGeoJSONFeature,
     Marker,
     NavigationControl,
+    RasterSourceSpecification,
     ScaleControl,
     StyleSpecification,
 } from 'maplibre-gl'
@@ -26,15 +31,23 @@ import { map } from 'rxjs/operators'
 import { AlertInput } from '@ionic/core'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 
-import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
-import { FeatureIdSource, TagConfig } from '@osmgo/type'
+import { setIconStyle } from '../../../scripts/osmToOsmgo/index.js'
+import {
+    FeatureIdSource,
+    MapMode,
+    OsmGoFeature,
+    OsmGoFeatureCollection,
+    OsmGoMarker,
+    TagConfig,
+} from 'src/type'
 import { Config } from 'protractor'
-import { BehaviorSubject, of, Subject } from 'rxjs'
+import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
+import { FeatureCollection } from 'geojson'
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
-    isFirstPosition = true
-    loadingData = false
+    isFirstPosition: boolean = true
+    loadingData: boolean = false
     isProcessing: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
     constructor(
@@ -64,19 +77,25 @@ export class MapService {
             }
         })
 
-        this.eventMarkerReDraw.subscribe((geojson) => {
+        this.eventMarkerReDraw.subscribe((geojson?: OsmGoFeatureCollection) => {
             if (geojson) {
-                this.map.getSource('data').setData(geojson)
+                const source = this.map.getSource('data') as GeoJSONSource
+                source.setData(geojson)
                 this.drawWaysPoly(geojson, 'ways')
             }
         })
 
-        this.eventMarkerChangedReDraw.subscribe((geojson) => {
-            if (geojson) {
-                this.map.getSource('data_changed').setData(geojson)
-                this.drawWaysPoly(geojson, 'ways_changed')
+        this.eventMarkerChangedReDraw.subscribe(
+            (geojson?: OsmGoFeatureCollection) => {
+                if (geojson) {
+                    const source = this.map.getSource(
+                        'data_changed'
+                    ) as GeoJSONSource
+                    source.setData(geojson)
+                    this.drawWaysPoly(geojson, 'ways_changed')
+                }
             }
-        })
+        )
 
         this.eventMapMove.pipe(debounceTime(700)).subscribe(() => {
             let mapCenter = this.map.getCenter()
@@ -92,37 +111,37 @@ export class MapService {
         })
     } // EOF constructor
 
-    bboxPolygon
-    map
-    markerMove
-    markerMoveMoving = false
-    subscriptionMoveElement
-    subscriptionMarkerMove
-    mode = 'Update'
-    headingIsLocked = true
-    positionIsFollow = true
-    isDisplaySatelliteBaseMap = false
+    bboxPolygon: OsmGoFeature
+    map: Map
+    markerMove: OsmGoMarker
+    markerMoveMoving: boolean = false
+    subscriptionMoveElement: Subscription
+    subscriptionMarkerMove: Subscription
+    mode: MapMode = 'Update'
+    headingIsLocked: boolean = true
+    positionIsFollow: boolean = true
+    isDisplaySatelliteBaseMap: boolean = false
 
     domMarkerPosition: HTMLDivElement
     arrowDirection: HTMLDivElement
-    markerLocation = undefined
-    layersAreLoaded = false
+    markerLocation: OsmGoMarker = undefined
+    layersAreLoaded: boolean = false
 
     markersLoaded = []
 
     eventDomMainReady = new EventEmitter()
     eventCreateNewMap = new EventEmitter()
-    eventNewBboxPolygon = new EventEmitter()
+    eventNewBboxPolygon = new EventEmitter<OsmGoFeatureCollection>()
     eventMoveElement = new EventEmitter()
     eventShowModal = new EventEmitter()
     eventOsmElementUpdated = new EventEmitter()
     eventOsmElementDeleted = new EventEmitter()
     eventOsmElementCreated = new EventEmitter()
-    eventMarkerReDraw = new EventEmitter()
-    eventMapIsLoaded = new EventEmitter()
-    eventMarkerChangedReDraw = new EventEmitter()
-    eventShowDialogMultiFeatures = new EventEmitter()
-    markersLayer = []
+    eventMarkerReDraw = new EventEmitter<OsmGoFeatureCollection>()
+    eventMapIsLoaded = new EventEmitter<void>()
+    eventMarkerChangedReDraw = new EventEmitter<OsmGoFeatureCollection>()
+    eventShowDialogMultiFeatures = new EventEmitter<MapGeoJSONFeature[]>()
+    markersLayer: OsmGoMarker[] = []
 
     attributionControl: AttributionControl
 
@@ -130,18 +149,18 @@ export class MapService {
     eventMarkerMove = new EventEmitter()
     eventMapMove = new EventEmitter()
     markerMoving = false // le marker est en train d'être positionné
-    markerPositionate
+    markerPositionate: OsmGoMarker
     markerMaplibreUnknown = {}
 
     filters = {
         fixme: null,
     }
 
-    setIsProcessing(isProcessing) {
+    setIsProcessing(isProcessing: boolean): void {
         this.isProcessing.next(isProcessing)
     }
 
-    loadUnknownMarker(factor) {
+    loadUnknownMarker(factor: number): void {
         const roundedFactor = factor > 1 ? 2 : 1
         this.map.loadImage(
             `/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`,
@@ -163,7 +182,7 @@ export class MapService {
         )
     }
 
-    filterMakerByIds(ids) {
+    filterMakerByIds(ids: string[]): void {
         const layersIds = [
             'way_fill',
             'way_line',
@@ -183,13 +202,14 @@ export class MapService {
 
         for (let layerId of layersIds) {
             const currentFilter = this.map.getFilter(layerId)
-            const newConfigIdFilter = [
-                'match',
-                ['get', 'configId'],
-                [...ids],
-                false,
-                true,
-            ]
+            if (typeof currentFilter === 'undefined') {
+                // FIXME @dotcs: Do something here
+            }
+            // @ts-expect-error
+            // Types are not correct for the match filter used in the next line.
+            // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+            // prettier-ignore
+            const newConfigIdFilter: FilterSpecification = ['match', ['get', 'configId'], [...ids], false, true]
             let newFilter = []
 
             // currentFilter[0] === 'all
@@ -214,7 +234,7 @@ export class MapService {
         }
     }
 
-    drawWaysPoly(geojson, source) {
+    drawWaysPoly(geojson: OsmGoFeatureCollection, source: string): void {
         const features = geojson.features
         const featuresWay = []
         for (let i = 0; i < features.length; i++) {
@@ -229,9 +249,8 @@ export class MapService {
             }
         }
 
-        this.map
-            .getSource(source)
-            .setData({ type: 'FeatureCollection', features: featuresWay })
+        const mapSource = this.map.getSource(source) as GeoJSONSource
+        mapSource.setData({ type: 'FeatureCollection', features: featuresWay })
     }
 
     /*
@@ -239,11 +258,11 @@ export class MapService {
   Fortement inspirer de :
   https://github.com/mapbox/mapbox-gl-js/blob/9ee69dd4a74a021d4a04a8a96a3e8f06062d633a/src/ui/control/scale_control.js#L87
   */
-    getPixelDistFromMeter(_map, dist: number) {
+    getPixelDistFromMeter(_map: Map, dist: number): number {
         const y = _map.getContainer().clientHeight / 2
         const mapWidth = _map.getContainer().clientWidth
 
-        function getDistance(latlng1, latlng2) {
+        function getDistance(latlng1: LngLat, latlng2: LngLat): number {
             const R = 6371000
             const rad = Math.PI / 180,
                 lat1 = latlng1.lat * rad,
@@ -315,12 +334,12 @@ export class MapService {
         return bbox
     }
 
-    resetNorth() {
+    resetNorth(): void {
         this.map.resetNorth()
     }
 
-    displaySatelliteBaseMap(baseMap, isDisplay: boolean) {
-        const bmSource = {
+    displaySatelliteBaseMap(baseMap, isDisplay: boolean): void {
+        const bmSource: RasterSourceSpecification = {
             type: 'raster',
             tiles: baseMap.tiles,
             tileSize: 256,
@@ -381,7 +400,7 @@ export class MapService {
             this.isDisplaySatelliteBaseMap = false
         }
     }
-    centerOnMyPosition() {
+    centerOnMyPosition(): void {
         const currentZoom = this.map.getZoom()
 
         this.map.setCenter(this.locationService.getCoordsPosition())
@@ -416,7 +435,7 @@ export class MapService {
         )
         this.map.setPaintProperty('location_circle', 'circle-radius', pxRadius)
     }
-    positionateMarker() {
+    positionateMarker(): void {
         this.markerPositionate = this.createDomMoveMarker(
             [this.map.getCenter().lng, this.map.getCenter().lat],
             ''
@@ -428,7 +447,7 @@ export class MapService {
         })
     }
 
-    openModalOsm() {
+    openModalOsm(): void {
         this.markerMoving = false
         this.markerPositionate.remove()
         const coords = this.markerPositionate.getLngLat()
@@ -463,12 +482,12 @@ export class MapService {
         })
     }
 
-    cancelNewMarker() {
+    cancelNewMarker(): void {
         this.markerMoving = false
         this.markerPositionate.remove()
     }
 
-    openModalWithNewPosition() {
+    openModalWithNewPosition(): void {
         this.markerMoveMoving = false
         this.markerMove.remove()
         const geojson = this.markerMove.data
@@ -486,7 +505,7 @@ export class MapService {
         })
     }
 
-    cancelNewPosition() {
+    cancelNewPosition(): void {
         this.markerMoveMoving = false
         const geojson = this.markerMove.data
         const origineData = geojson.properties.changeType
@@ -500,24 +519,26 @@ export class MapService {
         this.markerMove.remove()
     }
 
-    getBboxPolygon() {
+    getBboxPolygon(): OsmGoFeature {
         return cloneDeep(this.bboxPolygon)
     }
 
-    createDomMoveMarker(coord: LngLatLike, data) {
+    createDomMoveMarker(coord: LngLatLike, data: any): OsmGoMarker {
         const el = document.createElement('div')
         el.className = 'moveMarkerIcon'
-        const marker = new Marker(el, { offset: [0, -15] }).setLngLat(coord)
+        const marker = new Marker(el, { offset: [0, -15] }).setLngLat(
+            coord
+        ) as OsmGoMarker
         marker['data'] = data
         return marker
     }
 
-    resetDataMap() {
+    resetDataMap(): void {
         this.eventNewBboxPolygon.emit(this.dataService.resetGeojsonBbox())
         this.eventMarkerReDraw.emit(this.dataService.resetGeojsonData())
     }
 
-    getMapStyle() {
+    getMapStyle(): Observable<any> {
         return this.http.get('assets/mapStyle/brigthCustom.json').pipe(
             map((maplibreStyle) => {
                 let spritesFullPath = `mapStyle/sprites/sprites`
@@ -531,12 +552,12 @@ export class MapService {
         )
     }
 
-    getIconStyle(feature) {
+    getIconStyle(feature: OsmGoFeature): OsmGoFeature {
         feature = setIconStyle(feature, this.tagsService.tags)
         return feature
     }
 
-    initMap(config: Config) {
+    initMap(config: Config): void {
         this.getMapStyle().subscribe((mapStyle) => {
             this.positionIsFollow = config.centerWhenGpsIsReady
             this.headingIsLocked = config.centerWhenGpsIsReady
@@ -606,7 +627,8 @@ export class MapService {
         /* SUBSCRIPTIONS */
         // un nouveau polygon!
         this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
-            this.map.getSource('bbox').setData(geojsonPolygon)
+            const mapSource = this.map.getSource('bbox') as GeoJSONSource
+            mapSource.setData(geojsonPolygon)
         })
 
         // un marker est à déplacer!
@@ -640,7 +662,7 @@ export class MapService {
         )
     }
 
-    getIconRotate(heading, mapBearing) {
+    getIconRotate(heading: number, mapBearing: number): number {
         heading = heading > 354 ? 0 : heading + 5
         mapBearing = mapBearing < 0 ? 360 + mapBearing : mapBearing
         let iconRotate = heading - mapBearing
@@ -656,9 +678,12 @@ export class MapService {
         enable: boolean,
         layerName: string,
         value: number,
-        _map
-    ) {
+        _map: Map
+    ): FilterSpecification {
         let currentFilter = _map.getFilter(layerName)
+        if (typeof currentFilter === 'undefined') {
+            // FIXME: @dotcs add some error handling
+        }
         let findIndex = null
         for (let i = 1; i < currentFilter.length; i++) {
             if (currentFilter[i][1][1] == 'mesure') {
@@ -671,24 +696,29 @@ export class MapService {
             _map.setFilter(layerName, currentFilter)
             return currentFilter
         } else if (enable) {
-            currentFilter.push(['<', ['get', 'mesure'], value])
+            ;(currentFilter as FilterSpecification[]).push([
+                '<',
+                ['get', 'mesure'],
+                value,
+            ])
             _map.setFilter(layerName, currentFilter)
             return currentFilter
         }
     }
 
-    addDomMarkerPosition() {
+    addDomMarkerPosition(): void {
         if (!this.markerLocation) {
-            this.markerLocation = new Marker(this.domMarkerPosition, {
+            this.markerLocation = new OsmGoMarker(this.domMarkerPosition, {
                 offset: [0, 0],
             }).setLngLat(
                 this.locationService.getGeojsonPos().features[0].geometry
                     .coordinates
             )
+            // FIXME: @dotcs not all members are set (id, data)
             this.markerLocation.addTo(this.map)
         }
     }
-    selectFeature(feature) {
+    selectFeature(feature: MapGeoJSONFeature): void {
         const layer = feature['layer'].id
         // Provenance de la donnée d'origine (data OU data_changed)
         let origineData: FeatureIdSource = 'data'
@@ -715,55 +745,62 @@ export class MapService {
         })
     }
 
-    showOldTagIcon(maxYearAgo: number) {
+    showOldTagIcon(maxYearAgo: number): void {
         const OneYear = 31536000000
         const currentTime = new Date().getTime()
 
         let currentFilter = this.map.getFilter('icon-old')
+        if (typeof currentFilter === 'undefined') {
+            // FIXME: @dotcs Add error handling
+        }
         //  currentFilter.push( ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ] );
 
-        let findedIndex
+        let findedIndex: number
         for (let i = 1; i < currentFilter.length; i++) {
+            const spec = currentFilter[i] as FilterSpecification // TODO: @dotcs probably a dangerous typecast
             if (
-                currentFilter[i].length == 3 &&
-                currentFilter[i][2] &&
-                currentFilter[i][0] == '>' &&
-                currentFilter[i][2][1] === 'time'
+                spec.length == 3 &&
+                spec[2] &&
+                spec[0] == '>' &&
+                spec[2][1] === 'time'
             ) {
                 findedIndex = i
             }
         }
-        let newFilter
+        let newFilter: FilterSpecification
         if (findedIndex) {
             currentFilter[findedIndex] = [
                 '>',
-                currentTime - OneYear * maxYearAgo,
+                '' + (currentTime - OneYear * maxYearAgo),
                 ['get', 'time'],
             ]
             newFilter = currentFilter
         } else {
-            newFilter = [
-                ...currentFilter,
-                ['>', currentTime - OneYear * maxYearAgo, ['get', 'time']],
+            newFilter = [...currentFilter] as FilterSpecification[]
+            const filter = [
+                '>',
+                '' + (currentTime - OneYear * maxYearAgo),
+                ['get', 'time'],
             ]
+            newFilter.push(filter)
         }
 
         this.map.setFilter('icon-old', newFilter)
         this.map.setLayoutProperty('icon-old', 'visibility', 'visible')
     }
 
-    hideOldTagIcon() {
+    hideOldTagIcon(): void {
         this.map.setLayoutProperty('icon-old', 'visibility', 'none')
     }
 
-    showFixmeIcon() {
+    showFixmeIcon(): void {
         this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible')
     }
-    hideFixmeIcon() {
+    hideFixmeIcon(): void {
         this.map.setLayoutProperty('icon-fixme', 'visibility', 'none')
     }
 
-    mapIsLoaded() {
+    mapIsLoaded(): void {
         const minzoom = 14
 
         this.map.addSource('bbox', {
@@ -803,6 +840,9 @@ export class MapService {
             paint: {
                 'line-color': '#ea1212',
                 'line-width': 5,
+                // @ts-expect-error
+                // Types can only deal with an array of numbers, not with more complex configurations.
+                // See docs: https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/#paint-line-line-dasharray
                 'line-dasharray': {
                     stops: [
                         [14, [1, 0]],
@@ -824,13 +864,11 @@ export class MapService {
             // ,'filter': ['all']
             filter: [
                 'all',
-                [
-                    'match',
-                    ['geometry-type'],
-                    ['Polygon', 'MultiPolygon'],
-                    true,
-                    false,
-                ],
+                // @ts-expect-error
+                // Types are not correct for the match filter used in the next line.
+                // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+                // prettier-ignore
+                ['match', ['geometry-type'], ['Polygon', 'MultiPolygon'], true, false],
             ],
         })
 
@@ -845,15 +883,11 @@ export class MapService {
                 'line-opacity': 0.7,
             },
             layout: { 'line-join': 'round', 'line-cap': 'round' },
-            filter: [
-                'all',
-                [
-                    'match',
-                    ['geometry-type'],
-                    ['LineString', 'MultiLineString'],
-                    true,
-                    false,
-                ],
+            // @ts-expect-error
+            // Types are not correct for the match filter used in the next line.
+            // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+            // prettier-ignore
+            filter: ['all', [ 'match', ['geometry-type'], ['LineString', 'MultiLineString'], true, false],
             ],
         })
 
@@ -867,13 +901,11 @@ export class MapService {
             },
             filter: [
                 'all',
-                [
-                    'match',
-                    ['geometry-type'],
-                    ['Polygon', 'MultiPolygon'],
-                    true,
-                    false,
-                ],
+                // @ts-expect-error
+                // Types are not correct for the match filter used in the next line.
+                // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+                // prettier-ignore
+                ['match', ['geometry-type'], ['Polygon', 'MultiPolygon'], true, false],
             ],
         })
 
@@ -889,13 +921,11 @@ export class MapService {
             layout: { 'line-join': 'round', 'line-cap': 'round' },
             filter: [
                 'all',
-                [
-                    'match',
-                    ['geometry-type'],
-                    ['LineString', 'MultiLineString'],
-                    true,
-                    false,
-                ],
+                // @ts-expect-error
+                // Types are not correct for the match filter used in the next line.
+                // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
+                // prettier-ignore
+                ['match', ['geometry-type'], ['LineString', 'MultiLineString'], true, false],
             ],
         })
 
@@ -956,6 +986,9 @@ export class MapService {
                 'circle-stroke-width': 1,
                 'circle-stroke-color': '#9bbcf2',
                 'circle-stroke-opacity': 0.5,
+                // @ts-expect-error
+                // Currently the property 'circle-radius-transition' is missing in the typings.
+                // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898445988
                 'circle-radius-transition': { duration: 0 },
             },
         })
@@ -1184,33 +1217,37 @@ export class MapService {
                 }
             })
 
-        this.locationService.eventNewLocation.subscribe((geojsonPos) => {
-            this.addDomMarkerPosition()
+        this.locationService.eventNewLocation.subscribe(
+            (geojsonPos: FeatureCollection) => {
+                this.addDomMarkerPosition()
 
-            if (geojsonPos.features && geojsonPos.features[0].properties) {
-                this.markerLocation.setLngLat(
-                    geojsonPos.features[0].geometry.coordinates
-                )
-                this.map.getSource('location_circle').setData(geojsonPos)
-                this.changeLocationRadius(
-                    geojsonPos.features[0].properties.accuracy,
-                    true
-                )
-
-                if (
-                    this.configService.config.followPosition &&
-                    this.positionIsFollow
-                ) {
-                    this.map.setCenter(
-                        geojsonPos.features[0].geometry.coordinates
+                if (geojsonPos.features && geojsonPos.features[0].properties) {
+                    const coordinates = (
+                        geojsonPos.features[0].geometry as Point
+                    ).coordinates as LngLatLike
+                    this.markerLocation.setLngLat(coordinates)
+                    const mapSource = this.map.getSource(
+                        'location_circle'
+                    ) as GeoJSONSource
+                    mapSource.setData(geojsonPos)
+                    this.changeLocationRadius(
+                        geojsonPos.features[0].properties.accuracy,
+                        true
                     )
-                    if (this.isFirstPosition) {
-                        this.map.setZoom(18)
-                        this.isFirstPosition = false
+
+                    if (
+                        this.configService.config.followPosition &&
+                        this.positionIsFollow
+                    ) {
+                        this.map.setCenter(coordinates)
+                        if (this.isFirstPosition) {
+                            this.map.setZoom(18)
+                            this.isFirstPosition = false
+                        }
                     }
                 }
             }
-        })
+        )
 
         // La localisation était déjà ready avnt que la carte ne soit chargée
         if (this.locationService.gpsIsReady) {
