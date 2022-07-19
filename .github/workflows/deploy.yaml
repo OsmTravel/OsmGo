@@ -24,7 +24,7 @@ jobs:
       #   run: npm run test:ci
 
       - name: Create build
-        run: npm run build
+        run: npm run build:ghpages
 
       - name: Deploy
         if: success()
