@@ -159,7 +159,9 @@
                         size="small"
                         (click)="saveFields(tagId, tags)"
                     >
-                        <ion-icon src="/assets/fa/copy-solid.svg"></ion-icon>
+                        <ion-icon
+                            [src]="getAssetPath('/fa/copy-solid.svg')"
+                        ></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
 
@@ -168,7 +170,9 @@
                         size="small"
                         (click)="restoreFields(tagId, tags)"
                     >
-                        <ion-icon src="/assets/fa/paste-solid.svg"></ion-icon>
+                        <ion-icon
+                            [src]="getAssetPath('/fa/paste-solid.svg')"
+                        ></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
             </div>

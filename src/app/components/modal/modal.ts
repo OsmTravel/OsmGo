@@ -34,6 +34,7 @@ import {
     Point,
     Polygon,
 } from 'geojson'
+import { environment } from '@environments/environment'
 
 export interface ModalDismissData {
     redraw?: boolean
@@ -660,5 +661,12 @@ export class ModalsContentPage implements OnInit {
             this.tagsService.removeBookMark(tag)
         }
         this.cdr.detectChanges()
+    }
+
+    /** Resolve a path relative to the assets folder. */
+    getAssetPath(relPath: string): string {
+        const relPathPatched = relPath.startsWith('/') ? relPath : '/' + relPath
+        const basePath = environment.urlBasePath || ''
+        return `${basePath}/assets${relPathPatched}`
     }
 }

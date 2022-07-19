@@ -172,3 +172,9 @@ export interface CountryCode {
     /** Numeric ISO 3166-1 country code */
     'country-code': string
 }
+
+export interface Environment {
+    production: boolean
+    version?: string
+    urlBasePath?: string
+}

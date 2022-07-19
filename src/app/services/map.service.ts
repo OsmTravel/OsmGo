@@ -51,6 +51,7 @@ import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { Feature, FeatureCollection, LineString } from 'geojson'
 import { ModalDismissData } from '../components/modal/modal'
+import { environment } from '@environments/environment'
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -170,20 +171,22 @@ export class MapService {
 
     loadUnknownMarker(factor: number): void {
         const roundedFactor = factor > 1 ? 2 : 1
+        const basePath = environment.urlBasePath || ''
+        const pathPrefix = `${basePath}/assets/mapStyle/unknown-marker`
         this.map.loadImage(
-            `/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`,
+            `${pathPrefix}/circle-unknown@${roundedFactor}X.png`,
             (error, image) => {
                 this.markerMaplibreUnknown['circle'] = image
             }
         )
         this.map.loadImage(
-            `/assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`,
+            `${pathPrefix}/penta-unknown@${roundedFactor}X.png`,
             (error, image) => {
                 this.markerMaplibreUnknown['penta'] = image
             }
         )
         this.map.loadImage(
-            `/assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`,
+            `${pathPrefix}/square-unknown@${roundedFactor}X.png`,
             (error, image) => {
                 this.markerMaplibreUnknown['square'] = image
             }
@@ -554,8 +557,9 @@ export class MapService {
             map((maplibreStyle) => {
                 let spritesFullPath = `mapStyle/sprites/sprites`
                 // http://localhost:8100/assets/mapStyle/sprites/sprites.json
-                const basePath = window.location.origin // path.split('#')[0];
-                spritesFullPath = `${basePath}/assets/${spritesFullPath}`
+                const origin = window.location.origin // path.split('#')[0];
+                const basePath = environment.urlBasePath || ''
+                spritesFullPath = `${origin}${basePath}/assets/${spritesFullPath}`
 
                 maplibreStyle['sprite'] = spritesFullPath
                 return maplibreStyle

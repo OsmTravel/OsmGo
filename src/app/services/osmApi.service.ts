@@ -19,6 +19,7 @@ import { Platform } from '@ionic/angular'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 
 import { XMLParser } from 'fast-xml-parser'
+import { environment } from '@environments/environment'
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
@@ -51,7 +52,8 @@ export class OsmApiService {
     ) {}
 
     initAuth() {
-        const landing = `${window.location.origin}/assets/land.html` // land_single.html
+        const basePath = environment.urlBasePath || ''
+        const landing = `${basePath}/assets/land.html` // land_single.html
         const windowType = 'newFullPage' // singlepage, popup, newFullPage
 
         this.auth = new osmAuth.default({

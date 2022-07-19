@@ -1,9 +1,7 @@
-.spritesX1 {
-    background: url('/assets/iconsSprites@x1.png') 0 0 no-repeat;
-}
-
-.spritesX2 {
-    background: url('/assets/iconsSprites@x2.png') 0 0 no-repeat;
+.sprites {
+    background-position-x: 0;
+    background-position-y: 0;
+    background-repeat: no-repeat;
 }
 
 .iconWrapper {

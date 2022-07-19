@@ -73,6 +73,31 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
+            "production-ghpages": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod-ghpages.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config-ghpages.json"
+            },
             "development": {
               "optimization": false,
               "sourceMap": true,
