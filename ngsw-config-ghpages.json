@@ -1,13 +1,13 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
-  "index": "/osmgo/index.html",
+  "index": "/OsmGo/index.html",
   "assetGroups": [
     {
       "name": "i18n",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/osmgo/assets/i18n/**", "/osmgo/manifest.webmanifest"]
+        "files": ["/OsmGo/assets/i18n/**", "/osmgo/manifest.webmanifest"]
       }
     },
     {
@@ -15,37 +15,37 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/osmgo/favicon.ico",
-          "/osmgo/index.html",
+          "/OsmGo/favicon.ico",
+          "/OsmGo/index.html",
           "*.css",
           "*.js",
-          "/osmgo/assets/osmtogeojson.js",
+          "/OsmGo/assets/osmtogeojson.js",
 
-          "/osmgo/svg/md-menu.svg",
-          "/osmgo/svg/md-refresh.svg",
-          "/osmgo/svg/md-image.svg",
-          "/osmgo/svg/md-arrow-back.svg",
-          "/osmgo/svg/md-add.svg",
-          "/osmgo/svg/md-locate.svg",
-          "/osmgo/svg/md-close.svg",
-          "/osmgo/svg/md-checkmark.svg",
-          "/osmgo/svg/md-code.svg",
-          "/osmgo/svg/md-move.svg",
-          "/osmgo/svg/md-settings.svg",
-          "/osmgo/svg/md-search.svg",
-          "/osmgo/svg/md-code-working.svg",
-          "/osmgo/svg/md-log-in.svg",
-          "/osmgo/svg/md-star.svg",
-          "/osmgo/svg/md-help-circle",
-          "/osmgo/svg/md-trash.svg",
-          "/osmgo/svg/md-help-circle.svg",
-          "/osmgo/svg/md-cloud-upload.svg",
-          "/osmgo/svg/md-heart.svg",
-          "/osmgo/svg/md-create.svg",
-          "/osmgo/svg/md-checkmark-circle-outline.svg",
-          "/osmgo/svg/md-time.svg",
-          "/osmgo/assets/ionicons/ionicons_save.svg",
-          "/osmgo/assets/ionicons/ionicons_restore-save.svg",
+          "/OsmGo/svg/md-menu.svg",
+          "/OsmGo/svg/md-refresh.svg",
+          "/OsmGo/svg/md-image.svg",
+          "/OsmGo/svg/md-arrow-back.svg",
+          "/OsmGo/svg/md-add.svg",
+          "/OsmGo/svg/md-locate.svg",
+          "/OsmGo/svg/md-close.svg",
+          "/OsmGo/svg/md-checkmark.svg",
+          "/OsmGo/svg/md-code.svg",
+          "/OsmGo/svg/md-move.svg",
+          "/OsmGo/svg/md-settings.svg",
+          "/OsmGo/svg/md-search.svg",
+          "/OsmGo/svg/md-code-working.svg",
+          "/OsmGo/svg/md-log-in.svg",
+          "/OsmGo/svg/md-star.svg",
+          "/OsmGo/svg/md-help-circle",
+          "/OsmGo/svg/md-trash.svg",
+          "/OsmGo/svg/md-help-circle.svg",
+          "/OsmGo/svg/md-cloud-upload.svg",
+          "/OsmGo/svg/md-heart.svg",
+          "/OsmGo/svg/md-create.svg",
+          "/OsmGo/svg/md-checkmark-circle-outline.svg",
+          "/OsmGo/svg/md-time.svg",
+          "/OsmGo/assets/ionicons/ionicons_save.svg",
+          "/OsmGo/assets/ionicons/ionicons_restore-save.svg",
           "*.png"
         ]
       }
@@ -57,7 +57,7 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/osmgo/assets/**",
+          "/OsmGo/assets/**",
           "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
