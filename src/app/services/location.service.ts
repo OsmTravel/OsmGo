@@ -3,38 +3,34 @@ import { Injectable, EventEmitter } from '@angular/core'
 import { ConfigService } from '@services/config.service'
 
 import { Geolocation } from '@capacitor/geolocation'
+import { FeatureCollection, Point } from 'geojson'
+import { CompassHeading } from '@osmgo/type'
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
-    eventNewLocation = new EventEmitter()
-    eventNewCompassHeading = new EventEmitter()
-    eventStartCompassHeading = new EventEmitter()
-    eventLocationIsReady = new EventEmitter()
-    location
-    pointGeojson
-    compassHeading = {
+    eventNewLocation = new EventEmitter<FeatureCollection>()
+    eventNewCompassHeading = new EventEmitter<CompassHeading>()
+    eventLocationIsReady = new EventEmitter<GeolocationPosition>()
+    location: GeolocationPosition
+    pointGeojson: FeatureCollection<Point>
+    compassHeading: CompassHeading = {
         magneticHeading: null,
         trueHeading: null,
         headingAccuracy: null,
         timestamp: null,
     }
 
-    gpsIsReady = false
-    subscriptionLocation
-    subscriptionWatchLocation
-    forceOpen = false // l'utilisateur a fait le choix d'ouvrir l'app sans geoloc
-    headingIsDisable = false
-
-    geolocationStatPermission: string = undefined
+    gpsIsReady: boolean = false
+    subscriptionWatchLocation: number
 
     constructor(public configService: ConfigService) {}
 
-    watchPosition() {
+    watchPosition(): void {
         if (this.subscriptionWatchLocation) {
-            this.subscriptionWatchLocation.clearwatch()
+            navigator.geolocation.clearWatch(this.subscriptionWatchLocation)
         }
         this.subscriptionWatchLocation = navigator.geolocation.watchPosition(
-            (position) => {
+            (position: GeolocationPosition) => {
                 if (!this.location) {
                     this.location = position
                     this.eventNewLocation.emit(this.getGeojsonPos())
@@ -70,12 +66,12 @@ export class LocationService {
         )
     }
 
-    enableGeolocation() {
+    enableGeolocation(): void {
         this.heading()
         Geolocation.getCurrentPosition({
             enableHighAccuracy: true,
             maximumAge: 3000,
-        }).then((position) => {
+        }).then((position: GeolocationPosition) => {
             this.location = position
             this.eventNewLocation.emit(this.getGeojsonPos())
 
@@ -86,12 +82,12 @@ export class LocationService {
         })
     }
 
-    disableGeolocation() {
-        this.subscriptionWatchLocation.clearwatch()
+    disableGeolocation(): void {
+        navigator.geolocation.clearWatch(this.subscriptionWatchLocation)
     }
 
-    heading() {
-        const onDeviceOrientation = (event) => {
+    heading(): void {
+        const onDeviceOrientation = (event: DeviceOrientationEvent) => {
             if (!event.absolute) {
                 return
             }
@@ -130,7 +126,7 @@ export class LocationService {
             // Convert radians to degrees
             compassHeading *= 180 / Math.PI
 
-            let newCompassHeading = {
+            let newCompassHeading: CompassHeading = {
                 magneticHeading: compassHeading,
                 trueHeading: compassHeading,
                 headingAccuracy: null,
@@ -169,7 +165,8 @@ export class LocationService {
             console.log('utiliser le heading du gps ?')
         }
     }
-    getLocation() {
+
+    getLocation(): GeolocationPosition {
         return this.location
     }
 
@@ -184,14 +181,14 @@ export class LocationService {
         }
     }
 
-    getGeojsonPos() {
+    getGeojsonPos(): FeatureCollection<Point> {
         if (!this.location) {
             console.log('nop')
             return
         }
-        const lon = this.location.coords.longitude
-        const lat = this.location.coords.latitude
-        const accuracy =
+        const lon: number = this.location.coords.longitude
+        const lat: number = this.location.coords.latitude
+        const accuracy: number =
             this.location && this.location.coords
                 ? this.location.coords.accuracy
                 : 0
@@ -201,6 +198,7 @@ export class LocationService {
             type: 'FeatureCollection',
             features: [
                 {
+                    type: 'Feature',
                     geometry: { type: 'Point', coordinates: [lon, lat] },
                     properties: {
                         accuracy: accuracy,
@@ -212,22 +210,22 @@ export class LocationService {
         return this.pointGeojson
     }
 
-    getGeoJSONCirclePosition(points = 64) {
+    getGeoJSONCirclePosition(points: number = 64): FeatureCollection {
         if (!points) {
             points = 64
         }
         const radiusInKm = this.location.coords.accuracy / 1000
-        const coords = {
+        const coords: { latitude: number; longitude: number } = {
             latitude: this.location.coords.latitude,
             longitude: this.location.coords.longitude,
         }
         const km = radiusInKm
-        const ret = []
+        const ret: number[][] = []
         const distanceX =
             km / (111.32 * Math.cos((coords.latitude * Math.PI) / 180))
         const distanceY = km / 110.574
 
-        let theta, x, y
+        let theta: number, x: number, y: number
         for (let i = 0; i < points; i++) {
             theta = (i / points) * (2 * Math.PI)
             x = distanceX * Math.cos(theta)
@@ -241,6 +239,7 @@ export class LocationService {
                 {
                     type: 'Feature',
                     geometry: { type: 'Polygon', coordinates: [ret] },
+                    properties: {},
                 },
             ],
         }
