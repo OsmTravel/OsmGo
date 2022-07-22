@@ -9,6 +9,7 @@
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build --configuration production",
     "build:ghpages": "ng build --configuration production-ghpages",
+    "postbuild:ghpages": "sh scripts/patchManifest.sh",
     "test": "ng test --ts-config src/tsconfig.spec.json --browsers Chrome",
     "test:coverage": "npm run test -- --code-coverage",
     "test:ci": "ng test --ts-config src/tsconfig.spec.json --watch=false --browsers=ChromeHeadlessCI --code-coverage",
