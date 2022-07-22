@@ -11,7 +11,7 @@ completed.
 """
 
 WEBMANIFEST_PATH="www/manifest.webmanifest"
-BASE_URL="/OsmGo"
+BASE_URL="/OsmGo/"  # trailing slash needed due to how GitHub Pages handles URLs
 
 sed -i "s#\"scope\": \"/\"#\"scope\": \"${BASE_URL}\"#" "${WEBMANIFEST_PATH}"
 sed -i "s#\"start_url\": \"/\"#\"start_url\": \"${BASE_URL}\"#" "${WEBMANIFEST_PATH}"
