@@ -1,0 +1,377 @@
+{
+  "language": [
+    {
+      "code": "en",
+      "639-2": "eng",
+      "family": "Indo-European",
+      "name": "English",
+      "nativeName": "English",
+      "wikiUrl": "https://en.wikipedia.org/wiki/English_language"
+    },
+    {
+      "code": "fr",
+      "639-2": "fra",
+      "639-2/B": "fre",
+      "family": "Indo-European",
+      "name": "French",
+      "nativeName": "Français",
+      "wikiUrl": "https://en.wikipedia.org/wiki/French_language"
+    },
+    {
+      "code": "de",
+      "639-2": "deu",
+      "639-2/B": "ger",
+      "family": "Indo-European",
+      "name": "German",
+      "nativeName": "Deutsch",
+      "wikiUrl": "https://en.wikipedia.org/wiki/German_language"
+    },
+    {
+      "code": "es",
+      "639-2": "spa",
+      "family": "Indo-European",
+      "name": "Spanish",
+      "nativeName": "Español",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Spanish_language"
+    },
+    {
+      "code": "ca",
+      "639-2": "cat",
+      "family": "Indo-European",
+      "name": "Catalan",
+      "nativeName": "Català",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Catalan_language"
+    },
+    {
+      "code": "pt",
+      "639-2": "por",
+      "family": "Indo-European",
+      "name": "Portuguese",
+      "nativeName": "Português",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Portuguese_language"
+    },
+    {
+      "code": "it",
+      "639-2": "ita",
+      "family": "Indo-European",
+      "name": "Italian",
+      "nativeName": "Italiano",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Italian_language"
+    },
+    {
+      "code": "ru",
+      "639-2": "rus",
+      "family": "Indo-European",
+      "name": "Russian",
+      "nativeName": "Русский",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Russian_language"
+    },
+    {
+      "code": "cs",
+      "639-2": "ces",
+      "639-2/B": "cze",
+      "family": "Indo-European",
+      "name": "Czech",
+      "nativeName": "čeština, český jazyk",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Czech_language"
+    },
+    {
+      "code": "da",
+      "639-2": "dan",
+      "family": "Indo-European",
+      "name": "Danish",
+      "nativeName": "dansk",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Danish_language"
+    },
+    {
+      "code": "el",
+      "639-2": "ell",
+      "639-2/B": "gre",
+      "family": "Indo-European",
+      "name": "Greek (modern)",
+      "nativeName": "ελληνικά",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Greek_language"
+    },
+    {
+      "code": "et",
+      "639-2": "est",
+      "family": "Uralic",
+      "name": "Estonian",
+      "nativeName": "eesti, eesti keel",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Estonian_language"
+    },
+    {
+      "code": "fa",
+      "639-2": "fas",
+      "639-2/B": "per",
+      "family": "Indo-European",
+      "name": "Persian (Farsi)",
+      "nativeName": "فارسی",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Persian_language"
+    },
+    {
+      "code": "fi",
+      "639-2": "fin",
+      "family": "Uralic",
+      "name": "Finnish",
+      "nativeName": "suomi, suomen kieli",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Finnish_language"
+    },
+    {
+      "code": "gl",
+      "639-2": "glg",
+      "family": "Indo-European",
+      "name": "Galician",
+      "nativeName": "galego",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Galician_language"
+    },
+    {
+      "code": "he",
+      "639-2": "heb",
+      "family": "Afro-Asiatic",
+      "name": "Hebrew (modern)",
+      "nativeName": "עברית",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Hebrew_language"
+    },
+    {
+      "code": "hu",
+      "639-2": "hun",
+      "family": "Uralic",
+      "name": "Hungarian",
+      "nativeName": "magyar",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Hungarian_language"
+    },
+    {
+      "code": "is",
+      "639-2": "isl",
+      "639-2/B": "ice",
+      "family": "Indo-European",
+      "name": "Icelandic",
+      "nativeName": "Íslenska",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Icelandic_language"
+    },
+    {
+      "code": "ja",
+      "639-2": "jpn",
+      "family": "Japonic",
+      "name": "Japanese",
+      "nativeName": "日本語 (にほんご)",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Japanese_language"
+    },
+    {
+      "code": "ko",
+      "639-2": "kor",
+      "family": "Koreanic",
+      "name": "Korean",
+      "nativeName": "한국어",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Korean_language"
+    },
+    {
+      "code": "lt",
+      "639-2": "lit",
+      "family": "Indo-European",
+      "name": "Lithuanian",
+      "nativeName": "lietuvių kalba",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Lithuanian_language"
+    },
+    {
+      "code": "lv",
+      "639-2": "lav",
+      "family": "Indo-European",
+      "name": "Latvian",
+      "nativeName": "latviešu valoda",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Latvian_language"
+    },
+    {
+      "code": "mk",
+      "639-2": "mkd",
+      "639-2/B": "mac",
+      "family": "Indo-European",
+      "name": "Macedonian",
+      "nativeName": "македонски јазик",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Macedonian_language"
+    },
+    {
+      "code": "ms",
+      "639-2": "msa",
+      "639-2/B": "may",
+      "family": "Austronesian",
+      "name": "Malay",
+      "nativeName": "bahasa Melayu, بهاس ملايو‎",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Malay_language"
+    },
+    {
+      "code": "nl",
+      "639-2": "nld",
+      "639-2/B": "dut",
+      "family": "Indo-European",
+      "name": "Dutch",
+      "nativeName": "Nederlands, Vlaams",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Dutch_language"
+    },
+    {
+      "code": "pl",
+      "639-2": "pol",
+      "family": "Indo-European",
+      "name": "Polish",
+      "nativeName": "język polski, polszczyzna",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Polish_language"
+    },
+    {
+      "code": "ro",
+      "639-2": "ron",
+      "639-2/B": "rum",
+      "family": "Indo-European",
+      "name": "Romanian",
+      "nativeName": "Română",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Romanian_language"
+    },
+    {
+      "code": "sk",
+      "639-2": "slk",
+      "639-2/B": "slo",
+      "family": "Indo-European",
+      "name": "Slovak",
+      "nativeName": "slovenčina, slovenský jazyk",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Slovak_language"
+    },
+    {
+      "code": "sl",
+      "639-2": "slv",
+      "family": "Indo-European",
+      "name": "Slovene",
+      "nativeName": "slovenski jezik, slovenščina",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Slovene_language"
+    },
+    {
+      "code": "sr",
+      "639-2": "srp",
+      "family": "Indo-European",
+      "name": "Serbian",
+      "nativeName": "српски језик",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Serbian_language"
+    },
+    {
+      "code": "sv",
+      "639-2": "swe",
+      "family": "Indo-European",
+      "name": "Swedish",
+      "nativeName": "svenska",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Swedish_language"
+    },
+    {
+      "code": "tr",
+      "639-2": "tur",
+      "family": "Turkic",
+      "name": "Turkish",
+      "nativeName": "Türkçe",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Turkish_language"
+    },
+    {
+      "code": "uk",
+      "639-2": "ukr",
+      "family": "Indo-European",
+      "name": "Ukrainian",
+      "nativeName": "Українська",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Ukrainian_language"
+    },
+    {
+      "code": "vi",
+      "639-2": "vie",
+      "family": "Austroasiatic",
+      "name": "Vietnamese",
+      "nativeName": "Tiếng Việt",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Vietnamese_language"
+    },
+    {
+      "code": "zh-CN",
+      "639-2": "zho",
+      "639-2/B": "chi",
+      "family": "Sino-Tibetan",
+      "name": "Chinese (China)",
+      "nativeName": "中文 (中国)",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Standard_Chinese"
+    },
+    {
+      "code": "zh-TW",
+      "639-2": "zho",
+      "639-2/B": "chi",
+      "family": "Sino-Tibetan",
+      "name": "Chinese (Taiwan)",
+      "nativeName": "漢語",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Taiwanese_Mandarin"
+    },
+    {
+      "code": "bg",
+      "639-2": "bul",
+      "family": "Indo-European",
+      "name": "Bulgarian",
+      "nativeName": "български език",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Bulgarian_language"
+    },
+    {
+      "code": "bs",
+      "639-2": "bos",
+      "family": "Indo-European",
+      "name": "Bosnian",
+      "nativeName": "bosanski jezik",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Bosnian_language"
+    },
+    {
+      "code": "dv",
+      "639-2": "div",
+      "family": "Indo-European",
+      "name": "Divehi, Dhivehi, Maldivian",
+      "nativeName": "ދިވެހި",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Dhivehi_language"
+    },
+    {
+      "code": "hr",
+      "639-2": "hrv",
+      "family": "Indo-European",
+      "name": "Croatian",
+      "nativeName": "hrvatski jezik",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Croatian_language"
+    },
+    {
+      "code": "id",
+      "639-2": "ind",
+      "family": "Austronesian",
+      "name": "Indonesian",
+      "nativeName": "Bahasa Indonesia",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Indonesian_language"
+    },
+    {
+      "code": "no",
+      "639-2": "nor",
+      "family": "Indo-European",
+      "name": "Norwegian",
+      "nativeName": "Norsk",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Norwegian_language"
+    },
+    {
+      "code": "bn",
+      "639-2": "ben",
+      "family": "Indo-European",
+      "name": "Bengali, Bangla",
+      "nativeName": "বাংলা",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Bengali_language"
+    },
+    {
+      "code": "eu",
+      "639-2": "eus",
+      "family": "Indo-European",
+      "name": "Basque",
+      "nativeName": "Euskara",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Basque_language"
+    },
+    {
+      "code": "ar",
+      "639-2": "ara",
+      "family": "Afro-Asiatic",
+      "name": "Arabic",
+      "nativeName": "اَلْعَرَبِيَّةُ",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Arabic_language"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "configVersion": 1,
+  "timestamp": 1658523348629,
+  "index": "/OsmGo/index.html",
+  "assetGroups": [
+    {
+      "name": "i18n",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": []
+    },
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/locationX2-wo-orientation.bfc7d5f5fd0679082745.png",
+        "/locationX2.5871f528562184f71733.png",
+        "/marker-moveX2.09fa6d262b35a36a0e7c.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "tilesMap",
+      "patterns": [
+        "https:\\/\\/a\\.tiles\\.mapbox\\.com\\/.*",
+        "https:\\/\\/b\\.tiles\\.mapbox\\.com\\/.*",
+        "https:\\/\\/c\\.tiles\\.mapbox\\.com\\/.*",
+        "https:\\/\\/api\\.mapbox\\.com\\/v4\\/.*",
+        "https:\\/\\/wxs\\.ign\\.fr\\/pratique\\/geoportail\\/.*",
+        "https:\\/\\/ecn\\.t0\\.tiles\\.virtualearth\\.net\\/.*",
+        "https:\\/\\/ecn\\.t1\\.tiles\\.virtualearth\\.net\\/.*",
+        "https:\\/\\/ecn\\.t2\\.tiles\\.virtualearth\\.net\\/.*",
+        "https:\\/\\/ecn\\.t3\\.tiles\\.virtualearth\\.net\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 800,
+      "maxAge": 1296000000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/locationX2-wo-orientation.bfc7d5f5fd0679082745.png": "7dc13e2d08476ab5172bb39aec32dc770bc26421",
+    "/locationX2.5871f528562184f71733.png": "db4710a03e011f6be41731b8a4e238671affa8e2",
+    "/marker-moveX2.09fa6d262b35a36a0e7c.png": "86e64d43ca116103a3a2656131a3d40edab3808a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
