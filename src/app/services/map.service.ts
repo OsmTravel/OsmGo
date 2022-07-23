@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, NgZone } from '@angular/core'
+import { Injectable, EventEmitter, NgZone, Inject } from '@angular/core'
 import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
 import { AlertService } from '@services/alert.service'
@@ -171,19 +171,19 @@ export class MapService {
     loadUnknownMarker(factor: number): void {
         const roundedFactor = factor > 1 ? 2 : 1
         this.map.loadImage(
-            `/assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`,
+            `./assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`,
             (error, image) => {
                 this.markerMaplibreUnknown['circle'] = image
             }
         )
         this.map.loadImage(
-            `/assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`,
+            `./assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`,
             (error, image) => {
                 this.markerMaplibreUnknown['penta'] = image
             }
         )
         this.map.loadImage(
-            `/assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`,
+            `./assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`,
             (error, image) => {
                 this.markerMaplibreUnknown['square'] = image
             }
@@ -553,8 +553,8 @@ export class MapService {
         return this.http.get('assets/mapStyle/brigthCustom.json').pipe(
             map((maplibreStyle) => {
                 let spritesFullPath = `mapStyle/sprites/sprites`
-                // http://localhost:8100/assets/mapStyle/sprites/sprites.json
-                const basePath = window.location.origin // path.split('#')[0];
+
+                const basePath = window.location.href.split('#')[0] //example : http://127.0.0.1:8080/www/#/main => http://127.0.0.1:8080/www/
                 spritesFullPath = `${basePath}/assets/${spritesFullPath}`
 
                 maplibreStyle['sprite'] = spritesFullPath
