@@ -1,10 +1,7 @@
 import path from 'path'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import { presetsOsmgoPath, tagsOsmgoPath } from './_paths'
-
-const nsPath = path.join(__dirname, '..', '..', 'name-suggestion-index')
-const brandsPath = path.join(nsPath, 'brands')
+import { brandsPath, presetsOsmgoPath, tagsOsmgoPath } from './_paths'
 
 const tagsConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tags = tagsConfig.tags

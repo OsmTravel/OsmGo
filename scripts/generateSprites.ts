@@ -5,13 +5,12 @@ const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
 import { parseString } from 'xml2js'
 import svgRender from 'svg-render'
 import Spritesmith from 'spritesmith'
-import { assetsFolder } from './_paths'
+import { assetsFolder, iconsSVGsPath } from './_paths'
 
 export const generateSprites = () => {
     const iconsUsed = []
     const markerUsed = []
 
-    const iconsSVGsPath = path.join(__dirname, '..', 'resources', 'IconsSVG')
     const markersModelPath = path.join(
         __dirname,
         '..',

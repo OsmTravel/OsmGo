@@ -28,3 +28,7 @@ export const idRepoPath = path.join(parentDir, 'id-tagging-schema', 'dist')
 export const tagsIDPath = path.join(idRepoPath, 'presets.json')
 export const presetsIDPath = path.join(idRepoPath, 'fields.json')
 export const idTranslationsPath = path.join(idRepoPath, 'translations')
+
+// name-suggestion-index project paths
+export const nsPath = path.join(parentDir, 'name-suggestion-index')
+export const brandsPath = path.join(nsPath, 'brands')
