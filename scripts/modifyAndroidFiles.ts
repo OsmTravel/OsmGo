@@ -1,6 +1,6 @@
 // Use capacitor from Android folder (withou Firebase & GMS)
-const path = require('path')
-const fs = require('fs')
+import path from 'path'
+import fs from 'fs'
 
 const pathCapSettingsGradle = path.join(
     __dirname,

@@ -6,7 +6,7 @@ import { parseString } from 'xml2js'
 import svgRender from 'svg-render'
 import Spritesmith from 'spritesmith'
 
-exports.generateSprites = () => {
+export const generateSprites = () => {
     const iconsUsed = []
     const markerUsed = []
 
@@ -176,7 +176,7 @@ exports.generateSprites = () => {
         }
     }
 
-    const tags = JSON.parse(fs.readFileSync(tagsPath))
+    const tags = JSON.parse(fs.readFileSync(tagsPath, 'utf8'))
     console.log('génération des markers')
     let iconsMarkersStr = []
 

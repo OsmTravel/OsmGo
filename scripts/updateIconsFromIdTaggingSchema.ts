@@ -1,13 +1,10 @@
 /**
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
-const path = require('path')
-const fs = require('fs')
-const chalk = require('chalk')
-const stringify = require('json-stringify-pretty-compact')
-
-const _ = require('lodash')
-const { exit } = require('process')
+import path from 'path'
+import fs from 'fs'
+import chalk from 'chalk'
+import stringify from 'json-stringify-pretty-compact'
 
 // OsmGo tags
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
@@ -26,7 +23,7 @@ const tagsIDPath = path.join(idRepoPath, 'presets.json')
 const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
 
 // tagsToIgnore because OsmGo icon is better than id icon
-const tagsToIgnore = [
+const tagsToIgnore: string[] = [
     'amenity/atm',
     'amenity/coworking_space',
     'amenity/nursing_home',
@@ -110,12 +107,12 @@ const tagsToIgnore = [
     'tourism/gallery',
     'tourism/theme_park',
 ]
-let notworkingIcons = []
-let unsupportedIcons = []
-let updatedTags = []
+const notworkingIcons = []
+const unsupportedIcons = []
+const updatedTags = []
 
 /* IMPORT TAGS */
-for (let iDid in tagsID) {
+for (const iDid in tagsID) {
     const tagiD = tagsID[iDid]
     const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
 
@@ -139,7 +136,7 @@ for (let iDid in tagsID) {
                     updatedTags.push(clone)
                 }
             } else {
-                unsupportedIcons = _.union(unsupportedIcons, [tagiD.icon])
+                unsupportedIcons.push(tagiD.icon)
             }
         }
     }
@@ -149,12 +146,12 @@ fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
 
 console.warn('iD icons not supported by OsmGo: ' + unsupportedIcons.length)
 console.warn('Icons not working in OsmGo: ' + notworkingIcons.length)
-for (let itag in notworkingIcons) {
+for (const itag in notworkingIcons) {
     const tag = notworkingIcons[itag]
     console.warn('not working: ' + tag.id + ' => ' + tag.icon)
 }
 console.log('Icons updated in OsmGo tags: ' + updatedTags.length)
-for (let itag in updatedTags) {
+for (const itag in updatedTags) {
     const tag = updatedTags[itag]
     console.log(
         'updated: ' +

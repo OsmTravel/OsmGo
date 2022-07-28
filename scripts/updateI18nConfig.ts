@@ -1,9 +1,6 @@
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
-const rp = require('request-promise')
-
-const _ = require('lodash')
+import path from 'path'
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -28,7 +25,7 @@ for (let pkey in tagsOsmgo) {
 }
 
 const iso639 = JSON.parse(
-    fs.readFileSync(path.join('..', 'resources', 'iso_639-1.json'))
+    fs.readFileSync(path.join('..', 'resources', 'iso_639-1.json'), 'utf8')
 )
 
 const langWithIso639 = []
@@ -45,7 +42,7 @@ languageCode.forEach((l) => {
 
 const i18path = path.join(assetsFolder, 'i18n', 'i18n.json')
 
-const i18nConf = JSON.parse(fs.readFileSync(i18path))
+const i18nConf = JSON.parse(fs.readFileSync(i18path, 'utf8'))
 i18nConf['tags'] = langWithIso639
 
 fs.writeFileSync(i18path, stringify(i18nConf), 'utf8')

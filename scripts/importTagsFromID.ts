@@ -1,11 +1,12 @@
 /**
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
-
-const _ = require('lodash')
+import path from 'path'
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
+import union from 'lodash/union'
+import isEqual from 'lodash/isEqual'
+import intersection from 'lodash/intersection'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -110,7 +111,7 @@ for (let t in tagsID) {
     const pk = getPk(iDid)
     if (!isPkToIgnore(pk)) {
         // insert the key without creating dulicate
-        osmgoPkeys = _.union(osmgoPkeys, [pk]);
+        osmgoPkeys = union(osmgoPkeys, [pk]);
     } 
 }
 osmgoPkeys = osmgoPkeys.sort();
@@ -166,7 +167,7 @@ for (let iDid in tagsID) {
     }
 
     //TODO rework
-    if (_.intersection(tagIDKeys, osmgoPkeys).length == 0) {
+    if (intersection(tagIDKeys, osmgoPkeys).length == 0) {
         continue
     }
 
@@ -192,8 +193,8 @@ for (let iDid in tagsID) {
                 iDFields = [...iDFields, ...newF].filter(
                     (f) => !excludesPresets.includes(f)
                 )
-                // We should use _.union(iDFields, newF) instead of doing this filter
-                // Code is more readable with _.union
+                // We should use union(iDFields, newF) instead of doing this filter
+                // Code is more readable with union
                 continue
             }
 
@@ -204,7 +205,7 @@ for (let iDid in tagsID) {
                 iDFields = [...iDFields, f].filter(
                     (f) => !excludesPresets.includes(f)
                 )
-                // Same we should use _.union(iDFields, [f]) instead of this filter
+                // Same we should use union(iDFields, [f]) instead of this filter
                 continue
             }
 
@@ -233,7 +234,7 @@ for (let iDid in tagsID) {
                 iDMoreFields = [...iDMoreFields, ...newF].filter(
                     (f) => !idTagsFieldsListId.includes(f)
                 )
-                // use _.union(iDFields, newF) instead of doing this filter
+                // use union(iDFields, newF) instead of doing this filter
                 continue
             }
 
@@ -244,7 +245,7 @@ for (let iDid in tagsID) {
                 iDMoreFields = [...iDMoreFields, f].filter(
                     (f) => !idTagsFieldsListId.includes(f)
                 )
-                // use _.union(iDFields, [f]) instead of this filter
+                // use union(iDFields, [f]) instead of this filter
                 continue
             }
 
@@ -258,7 +259,7 @@ for (let iDid in tagsID) {
     const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
 
     let currenOsmgoTag = tagsOsmgo.find((ogT) => {
-        return _.isEqual(tagiD.tags, ogT.tags)
+        return isEqual(tagiD.tags, ogT.tags)
     })
 
     let newTag = {
