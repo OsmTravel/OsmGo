@@ -6,7 +6,7 @@ import path from 'path'
 import parse from 'parse-svg-path'
 import scale from 'scale-svg-path'
 import serialize from 'serialize-svg-path'
-import { iconsSVGsPath } from './_paths'
+import { iconsSvgDir } from './_paths'
 
 console.info('Format SVGs')
 
@@ -22,12 +22,12 @@ const blackList: string[] = [
 ]
 
 const listOfSvgsName: string[] = fs
-    .readdirSync(iconsSVGsPath)
+    .readdirSync(iconsSvgDir)
     .filter((svgName) => blackList.indexOf(svgName) == -1)
     .filter((svgName) => path.extname(svgName) == '.svg')
 
 for (let i = 0; i < listOfSvgsName.length; i++) {
-    const pathSvg = path.join(iconsSVGsPath, listOfSvgsName[i])
+    const pathSvg = path.join(iconsSvgDir, listOfSvgsName[i])
     const svgStr = fs.readFileSync(pathSvg, 'utf8')
     const _$ = cheerio.load(svgStr)
 
@@ -82,9 +82,5 @@ for (let i = 0; i < listOfSvgsName.length; i++) {
     ${newPaths.join(' ')}
     </svg>`
 
-    fs.writeFileSync(
-        path.join(iconsSVGsPath, listOfSvgsName[i]),
-        newSvg,
-        'utf8'
-    )
+    fs.writeFileSync(path.join(iconsSvgDir, listOfSvgsName[i]), newSvg, 'utf8')
 }

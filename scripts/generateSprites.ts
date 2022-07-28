@@ -5,7 +5,7 @@ const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
 import { parseString } from 'xml2js'
 import svgRender from 'svg-render'
 import Spritesmith from 'spritesmith'
-import { assetsFolder, iconsSVGsPath } from './_paths'
+import { assetsDir, iconsSvgDir } from './_paths'
 
 export const generateSprites = () => {
     const iconsUsed = []
@@ -28,8 +28,8 @@ export const generateSprites = () => {
     const outputTmp = path.join(__dirname, 'tmp')
     const outputFolderSVG = path.join(outputTmp, 'SVG')
 
-    const outPath = path.join(assetsFolder, 'mapStyle', 'sprites') // les sprites en sorti
-    const outPathIconSprites = path.join(assetsFolder) // les sprites en sorti
+    const outPath = path.join(assetsDir, 'mapStyle', 'sprites') // les sprites en sorti
+    const outPathIconSprites = path.join(assetsDir) // les sprites en sorti
 
     fs.removeSync(outputTmp)
     fs.mkdirsSync(outputFolderSVG)
@@ -54,16 +54,16 @@ export const generateSprites = () => {
         if (iconName == '') {
             if (unknowTag) {
                 iconSVG = fs
-                    .readFileSync(path.join(iconsSVGsPath, 'wiki_question.svg'))
+                    .readFileSync(path.join(iconsSvgDir, 'wiki_question.svg'))
                     .toString()
             } else {
                 iconSVG = fs
-                    .readFileSync(path.join(iconsSVGsPath, 'maki-circle.svg'))
+                    .readFileSync(path.join(iconsSvgDir, 'maki-circle.svg'))
                     .toString()
             }
         } else {
             iconSVG = fs
-                .readFileSync(path.join(iconsSVGsPath, iconName + '.svg'))
+                .readFileSync(path.join(iconsSvgDir, iconName + '.svg'))
                 .toString()
         }
 
@@ -214,7 +214,7 @@ export const generateSprites = () => {
 
     for (let i = 0; i < whiteList.length; i++) {
         fs.copySync(
-            path.join(iconsSVGsPath, whiteList[i] + '.svg'),
+            path.join(iconsSvgDir, whiteList[i] + '.svg'),
             path.join(outputFolderSVG, whiteList[i] + '.svg')
         )
     }
@@ -248,7 +248,7 @@ export const generateSprites = () => {
                 const shape = svgFileName.split('-#')[0]
                 fs.writeFileSync(
                     path.join(
-                        assetsFolder,
+                        assetsDir,
                         'mapStyle',
                         'unknown-marker',
                         `${shape}-unknown@${factor}X.png`
@@ -312,7 +312,7 @@ export const generateSprites = () => {
         await fs.emptyDir(pngFolder)
 
         for (let svgFileName of iconsUsed) {
-            const filePath = path.join(iconsSVGsPath, `${svgFileName}.svg`)
+            const filePath = path.join(iconsSvgDir, `${svgFileName}.svg`)
             // copy SVG to assets
 
             const image = await svgToPNG(filePath, factor)

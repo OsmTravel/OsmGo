@@ -1,11 +1,11 @@
 import path from 'path'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import { brandsPath, presetsOsmgoPath, tagsOsmgoPath } from './_paths'
+import { nsiBrandsDir, tapPresetsPath, tapTagsPath } from './_paths'
 
-const tagsConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagsConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tags = tagsConfig.tags
-const presets = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
+const presets = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
 
 const formatBrandsNS = (brandsNSJson): Array<unknown> => {
     let result = []
@@ -56,7 +56,7 @@ for (const tagConfig of tags) {
 
     if (Object.keys(tagConfig.tags).length == 1 && tagConfig.tags[pkey]) {
         const value = tagConfig.tags[pkey]
-        const currentBrandPath = path.join(brandsPath, pkey, `${value}.json`)
+        const currentBrandPath = path.join(nsiBrandsDir, pkey, `${value}.json`)
         if (fs.existsSync(currentBrandPath)) {
             const brandNS = JSON.parse(
                 fs.readFileSync(currentBrandPath, 'utf8')
@@ -73,5 +73,5 @@ for (const tagConfig of tags) {
     }
 }
 
-fs.writeFileSync(presetsOsmgoPath, stringify(presets), 'utf8')
-fs.writeFileSync(tagsOsmgoPath, stringify(tagsConfig), 'utf8')
+fs.writeFileSync(tapPresetsPath, stringify(presets), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tagsConfig), 'utf8')

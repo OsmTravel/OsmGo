@@ -1,11 +1,11 @@
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import { tagsOsmgoPath, presetsOsmgoPath } from './_paths'
+import { tapTagsPath, tapPresetsPath } from './_paths'
 
 const codeLangue = 'ast'
 
-const presets = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
-const tags = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const presets = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
+const tags = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 
 for (let pkey in tags) {
     for (let tag of tags[pkey].values) {
@@ -41,5 +41,5 @@ for (let pkey in presets) {
     }
 }
 
-fs.writeFileSync(presetsOsmgoPath, stringify(presets), 'utf8')
-fs.writeFileSync(tagsOsmgoPath, stringify(tags), 'utf8')
+fs.writeFileSync(tapPresetsPath, stringify(presets), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tags), 'utf8')

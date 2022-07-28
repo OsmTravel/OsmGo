@@ -9,9 +9,9 @@
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import rp from 'request-promise'
-import { presetsOsmgoPath } from './_paths'
+import { tapPresetsPath } from './_paths'
 
-const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
+const presetsOsmgo = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
 
 const getOptionsFromTagInfo = async (
     key: string,
@@ -55,7 +55,7 @@ const run = async (): Promise<void> => {
         }
     }
 
-    fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
+    fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo), 'utf8')
 }
 
 run()

@@ -1,9 +1,9 @@
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import { tagsOsmgoPath, presetsOsmgoPath } from './_paths'
+import { tapTagsPath, tapPresetsPath } from './_paths'
 
-const tagsConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
-const presetsOsmgo = fs.readJSONSync(presetsOsmgoPath)
+const tagsConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const presetsOsmgo = fs.readJSONSync(tapPresetsPath)
 
 const uniqIds = []
 const indexToDelete = []
@@ -70,7 +70,7 @@ for (let i = indexToDelete.length - 1; i >= 0; i--) {
 
 console.log(indexToDelete)
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagsConfig))
+fs.writeFileSync(tapTagsPath, stringify(tagsConfig))
 
 for (let pid in presetsOsmgo) {
     const preset = presetsOsmgo[pid]
@@ -80,4 +80,4 @@ for (let pid in presetsOsmgo) {
         }
     }
 }
-fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo))
+fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo))

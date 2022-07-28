@@ -1,11 +1,11 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import { idRepoPath, tagsOsmgoPath } from './_paths'
+import { idtsDistDir, tapTagsPath } from './_paths'
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagsOsmgo = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 
-const deprecatedIDPath = path.join(idRepoPath, 'deprecated.json')
+const deprecatedIDPath = path.join(idtsDistDir, 'deprecated.json')
 
 const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'))
 
@@ -24,7 +24,7 @@ for (const depiD of deprecatedID) {
     // console.log(depOsmgo)
 }
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tagsOsmgo), 'utf8')
 // console.log(tagsOsmgo);
 
 // console.log(deprecatedID)

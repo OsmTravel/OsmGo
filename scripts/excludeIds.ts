@@ -1,7 +1,7 @@
 import fs from 'fs'
-import { tagsOsmgoPath } from './_paths'
+import { tapTagsPath } from './_paths'
 
-const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 const exludesIds: string[] = []

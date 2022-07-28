@@ -3,7 +3,7 @@ import fs from 'fs-extra'
 import path from 'path'
 import stringify from 'json-stringify-pretty-compact'
 import orderBy from 'lodash/orderBy'
-import { assetsFolder } from './_paths'
+import { assetsDir } from './_paths'
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 
@@ -93,7 +93,7 @@ const run = async () => {
 
     // list.sort((a, b) => (a.color > b.color) ? 1 : -1)
 
-    const outPath = path.join(assetsFolder, 'imagery.json')
+    const outPath = path.join(assetsDir, 'imagery.json')
 
     fs.writeFileSync(outPath, stringify(ordered), 'utf-8')
 }

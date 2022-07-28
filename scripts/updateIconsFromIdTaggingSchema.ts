@@ -5,19 +5,19 @@ import path from 'path'
 import fs from 'fs'
 import chalk from 'chalk'
 import stringify from 'json-stringify-pretty-compact'
-import { assetsFolder, tagsIDPath, tagsOsmgoPath } from './_paths'
+import { assetsDir, idtsTagsIdPath, tapTagsPath } from './_paths'
 
 // OsmGo tags
-const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 // OsmGo sprites
-const spritesPath = path.join(assetsFolder, 'iconsSprites@x1.json')
+const spritesPath = path.join(assetsDir, 'iconsSprites@x1.json')
 const sprites = JSON.parse(fs.readFileSync(spritesPath, 'utf8'))
 const supportedIcons = Object.keys(sprites)
 
 // id-tagging-schema
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
+const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
 
 // tagsToIgnore because OsmGo icon is better than id icon
 const tagsToIgnore: string[] = [
@@ -139,7 +139,7 @@ for (const iDid in tagsID) {
     }
 }
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tagConfig), 'utf8')
 
 console.warn('iD icons not supported by OsmGo: ' + unsupportedIcons.length)
 console.warn('Icons not working in OsmGo: ' + notworkingIcons.length)

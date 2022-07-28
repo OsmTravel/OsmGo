@@ -4,9 +4,9 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import { tagsOsmgoPath } from './_paths'
+import { tapTagsPath } from './_paths'
 
-const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 // ORDER BY primaryKeys FIRST
@@ -47,4 +47,4 @@ const compareById = <T>(a: { id: T }, b: { id: T }) => {
 
 // tagConfig.tags = tagConfig.tags.sort(compareById);
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tagConfig), 'utf8')

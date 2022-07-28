@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { argv } from 'yargs'
-import { tagsOsmgoPath, presetsOsmgoPath, idTranslationsPath } from './_paths'
+import { tapTagsPath, tapPresetsPath, idtsTranslationsDir } from './_paths'
 
 const languages = [
     'en',
@@ -65,7 +65,7 @@ if (argv['_'][1] && argv['_'][1] == 'o') {
 
 for (const language of languages) {
     const idTranslationFilePath = path.join(
-        idTranslationsPath,
+        idtsTranslationsDir,
         `${language}.json`
     )
 
@@ -75,9 +75,9 @@ for (const language of languages) {
 
     // const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 
-    const tagsOsmgoConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+    const tagsOsmgoConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
     const tagsOsmgo = tagsOsmgoConfig.tags
-    const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
+    const presetsOsmgo = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
 
     if (!idTr.presets) {
         console.log('Remove language (no presets): ' + language)
@@ -119,7 +119,7 @@ for (const language of languages) {
             }
         }
 
-        fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgoConfig), 'utf8')
+        fs.writeFileSync(tapTagsPath, stringify(tagsOsmgoConfig), 'utf8')
     }
 
     const importFields = (language: string) => {
@@ -170,7 +170,7 @@ for (const language of languages) {
             //
         }
 
-        fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
+        fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo), 'utf8')
     }
 
     importTrTags(language)

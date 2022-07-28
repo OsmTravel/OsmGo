@@ -2,7 +2,7 @@ import rp from 'request-promise'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import { argv } from 'yargs'
-import { tagsOsmgoPath } from './_paths'
+import { tapTagsPath } from './_paths'
 
 // let language = argv['_'][0];
 
@@ -58,7 +58,7 @@ if (argv['_'][1] && argv['_'][1] == 'o') {
     overwrite = true
 }
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagsOsmgo = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 
 const getStatsByKey = async (key: string, language: string) => {
     var options = {
@@ -144,7 +144,7 @@ const run = async (language: string) => {
             }
         }
     }
-    fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
+    fs.writeFileSync(tapTagsPath, stringify(tagsOsmgo), 'utf8')
 }
 
 for (const language of languages) {

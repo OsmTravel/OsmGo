@@ -3,9 +3,9 @@ import fs, { createWriteStream } from 'fs'
 import { pipeline } from 'stream'
 import { promisify } from 'util'
 import fetch from 'node-fetch'
-import { iconsSVGsPath, tagsOsmgoPath } from './_paths'
+import { iconsSvgDir, tapTagsPath } from './_paths'
 
-const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 const idFaSvgUrl: string = `https://raw.githubusercontent.com/openstreetmap/iD/develop/svg/fontawesome`
@@ -28,7 +28,7 @@ const download = async ({ url, path }: { url: string; path: string }) => {
 const run = async () => {
     console.info('Import of missing SVGs')
     for (const t of tagsOsmgo) {
-        const pathCurrentSVG = path.join(iconsSVGsPath, `${t.icon}.svg`)
+        const pathCurrentSVG = path.join(iconsSvgDir, `${t.icon}.svg`)
         if (t.icon && !fs.existsSync(pathCurrentSVG)) {
             console.log(`${t.icon}.svg`)
             if (/^fa/.test(t.icon)) {

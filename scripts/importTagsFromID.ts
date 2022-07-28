@@ -6,17 +6,17 @@ import stringify from 'json-stringify-pretty-compact'
 import isEqual from 'lodash/isEqual'
 import intersection from 'lodash/intersection'
 import {
-    presetsIDPath,
-    presetsOsmgoPath,
-    tagsIDPath,
-    tagsOsmgoPath,
+    idtsPresetsIdPath,
+    tapPresetsPath,
+    idtsTagsIdPath,
+    tapTagsPath,
 } from './_paths'
 
-const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
-const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
-const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8'))
+const presetsOsmgo = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
+const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
+const presetsID = JSON.parse(fs.readFileSync(idtsPresetsIdPath, 'utf8'))
 
 // presets to ignore
 const excludesPresets = [
@@ -434,5 +434,5 @@ const compareById = (a, b) => {
     return comparison
 }
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
-fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tagConfig), 'utf8')
+fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo), 'utf8')
