@@ -2,12 +2,15 @@ import rp from 'request-promise'
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
+import {
+    basemapOsmGoPath,
+    i18nFolder,
+    presetsOsmgoPath,
+    tagsOsmgoPath,
+} from './_paths'
 
 // const serverApiUrl = 'http://localhost:8080/api/';
 const serverApiUrl = 'https://admin.osmgo.com/api/'
-
-const assetsPath = path.join(__dirname, '..', 'src', 'assets')
-const assetsFolderI18n = path.join(__dirname, '..', 'src', 'assets', 'i18n')
 
 const getI18nConfig = async () => {
     return rp(`${serverApiUrl}i18n`)
@@ -31,24 +34,12 @@ const getUiTranslation = async (language) => {
 
 const writeTagsPresetsBaseMap = async () => {
     const tagsConfig = JSON.parse(await getTagsConfig())
-    fs.writeFileSync(
-        path.join(assetsPath, 'tagsAndPresets', 'tags.json'),
-        stringify(tagsConfig),
-        'utf8'
-    )
+    fs.writeFileSync(tagsOsmgoPath, stringify(tagsConfig), 'utf8')
 
     const presets = JSON.parse(await getPresets())
-    fs.writeFileSync(
-        path.join(assetsPath, 'tagsAndPresets', 'presets.json'),
-        stringify(presets),
-        'utf8'
-    )
+    fs.writeFileSync(presetsOsmgoPath, stringify(presets), 'utf8')
     const basemaps = JSON.parse(await getBaseMaps())
-    fs.writeFileSync(
-        path.join(assetsPath, 'tagsAndPresets', 'basemap.json'),
-        stringify(basemaps),
-        'utf8'
-    )
+    fs.writeFileSync(basemapOsmGoPath, stringify(basemaps), 'utf8')
 }
 
 const run = async () => {
@@ -57,7 +48,7 @@ const run = async () => {
     for (const _language of i18Config) {
         const uiTra = JSON.parse(await getUiTranslation(_language.code))
         fs.writeFileSync(
-            path.join(assetsFolderI18n, `${_language.code}.json`),
+            path.join(i18nFolder, `${_language.code}.json`),
             stringify(uiTra),
             'utf8'
         )

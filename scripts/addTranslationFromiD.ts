@@ -2,17 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { argv } from 'yargs'
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const idTranslationPath = path.join(idRepoPath, 'translations')
+import { tagsOsmgoPath, presetsOsmgoPath, idTranslationsPath } from './_paths'
 
 const languages = [
     'en',
@@ -75,7 +65,7 @@ if (argv['_'][1] && argv['_'][1] == 'o') {
 
 for (const language of languages) {
     const idTranslationFilePath = path.join(
-        idTranslationPath,
+        idTranslationsPath,
         `${language}.json`
     )
 

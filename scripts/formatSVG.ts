@@ -6,15 +6,10 @@ import path from 'path'
 import parse from 'parse-svg-path'
 import scale from 'scale-svg-path'
 import serialize from 'serialize-svg-path'
+import { iconsSVGsPath } from './_paths'
 
 console.info('Format SVGs')
 
-const iconsSVGsPath: string = path.join(
-    __dirname,
-    '..',
-    'resources',
-    'IconsSVG'
-)
 const blackList: string[] = [
     'none.svg',
     'Delete.svg',

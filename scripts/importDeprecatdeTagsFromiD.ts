@@ -1,16 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
+import { idRepoPath, tagsOsmgoPath } from './_paths'
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 

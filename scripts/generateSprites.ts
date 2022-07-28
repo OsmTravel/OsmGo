@@ -5,6 +5,7 @@ const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
 import { parseString } from 'xml2js'
 import svgRender from 'svg-render'
 import Spritesmith from 'spritesmith'
+import { assetsFolder } from './_paths'
 
 export const generateSprites = () => {
     const iconsUsed = []
@@ -28,10 +29,8 @@ export const generateSprites = () => {
     const outputTmp = path.join(__dirname, 'tmp')
     const outputFolderSVG = path.join(outputTmp, 'SVG')
 
-    const assetsPath = path.join(__dirname, '..', 'src', 'assets')
-    const outPath = path.join(assetsPath, 'mapStyle', 'sprites') // les sprites en sorti
-    const iconSvgAssetsPath = path.join(assetsPath, 'mapStyle', 'icons')
-    const outPathIconSprites = path.join(assetsPath) // les sprites en sorti
+    const outPath = path.join(assetsFolder, 'mapStyle', 'sprites') // les sprites en sorti
+    const outPathIconSprites = path.join(assetsFolder) // les sprites en sorti
 
     fs.removeSync(outputTmp)
     fs.mkdirsSync(outputFolderSVG)
@@ -250,7 +249,7 @@ export const generateSprites = () => {
                 const shape = svgFileName.split('-#')[0]
                 fs.writeFileSync(
                     path.join(
-                        assetsPath,
+                        assetsFolder,
                         'mapStyle',
                         'unknown-marker',
                         `${shape}-unknown@${factor}X.png`

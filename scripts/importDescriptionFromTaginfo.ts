@@ -1,8 +1,8 @@
 import rp from 'request-promise'
 import fs from 'fs-extra'
-import path from 'path'
 import stringify from 'json-stringify-pretty-compact'
 import { argv } from 'yargs'
+import { tagsOsmgoPath } from './_paths'
 
 // let language = argv['_'][0];
 
@@ -57,9 +57,6 @@ let overwrite: boolean = false
 if (argv['_'][1] && argv['_'][1] == 'o') {
     overwrite = true
 }
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 

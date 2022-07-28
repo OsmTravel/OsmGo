@@ -1,14 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
+import { i18nFolder, resourcesFolder, tagsOsmgoPath } from './_paths'
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 
@@ -25,7 +18,7 @@ for (let pkey in tagsOsmgo) {
 }
 
 const iso639 = JSON.parse(
-    fs.readFileSync(path.join('..', 'resources', 'iso_639-1.json'), 'utf8')
+    fs.readFileSync(path.join(resourcesFolder, 'iso_639-1.json'), 'utf8')
 )
 
 const langWithIso639 = []
@@ -40,7 +33,7 @@ languageCode.forEach((l) => {
 
 // console.log(langWithIso639)
 
-const i18path = path.join(assetsFolder, 'i18n', 'i18n.json')
+const i18path = path.join(i18nFolder, 'i18n.json')
 
 const i18nConf = JSON.parse(fs.readFileSync(i18path, 'utf8'))
 i18nConf['tags'] = langWithIso639

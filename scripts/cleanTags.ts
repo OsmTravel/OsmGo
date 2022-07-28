@@ -1,17 +1,8 @@
-import path from 'path'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import rp from 'request-promise'
+import { tagsOsmgoPath, presetsOsmgoPath } from './_paths'
 
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagConfigPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const tagsConfig = JSON.parse(fs.readFileSync(tagConfigPath, 'utf8'))
+const tagsConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const presetsOsmgo = fs.readJSONSync(presetsOsmgoPath)
 
 const uniqIds = []
@@ -79,7 +70,7 @@ for (let i = indexToDelete.length - 1; i >= 0; i--) {
 
 console.log(indexToDelete)
 
-fs.writeFileSync(tagConfigPath, stringify(tagsConfig))
+fs.writeFileSync(tagsOsmgoPath, stringify(tagsConfig))
 
 for (let pid in presetsOsmgo) {
     const preset = presetsOsmgo[pid]

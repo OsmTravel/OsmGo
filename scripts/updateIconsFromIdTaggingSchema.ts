@@ -5,10 +5,9 @@ import path from 'path'
 import fs from 'fs'
 import chalk from 'chalk'
 import stringify from 'json-stringify-pretty-compact'
+import { assetsFolder, idRepoPath, tagsOsmgoPath } from './_paths'
 
 // OsmGo tags
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
@@ -18,7 +17,6 @@ const sprites = JSON.parse(fs.readFileSync(spritesPath, 'utf8'))
 const supportedIcons = Object.keys(sprites)
 
 // id-tagging-schema
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
 const tagsIDPath = path.join(idRepoPath, 'presets.json')
 const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
 

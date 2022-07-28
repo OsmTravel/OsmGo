@@ -1,17 +1,14 @@
 import path from 'path'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsConfigPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsPath = path.join(assetsFolder, 'tagsAndPresets', 'presets.json')
+import { presetsOsmgoPath, tagsOsmgoPath } from './_paths'
 
 const nsPath = path.join(__dirname, '..', '..', 'name-suggestion-index')
 const brandsPath = path.join(nsPath, 'brands')
 
-const tagsConfig = JSON.parse(fs.readFileSync(tagsConfigPath, 'utf8'))
+const tagsConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tags = tagsConfig.tags
-const presets = JSON.parse(fs.readFileSync(presetsPath, 'utf8'))
+const presets = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
 
 const formatBrandsNS = (brandsNSJson): Array<unknown> => {
     let result = []
@@ -79,5 +76,5 @@ for (const tagConfig of tags) {
     }
 }
 
-fs.writeFileSync(presetsPath, stringify(presets), 'utf8')
-fs.writeFileSync(tagsConfigPath, stringify(tagsConfig), 'utf8')
+fs.writeFileSync(presetsOsmgoPath, stringify(presets), 'utf8')
+fs.writeFileSync(tagsOsmgoPath, stringify(tagsConfig), 'utf8')

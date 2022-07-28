@@ -4,9 +4,7 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
+import { tagsOsmgoPath } from './_paths'
 
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags

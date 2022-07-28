@@ -1,31 +1,21 @@
 /**
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
-import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import union from 'lodash/union'
 import isEqual from 'lodash/isEqual'
 import intersection from 'lodash/intersection'
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const tagsIDPath = path.join(idRepoPath, 'presets.json')
-const presetsIDPath = path.join(idRepoPath, 'fields.json')
+import {
+    presetsIDPath,
+    presetsOsmgoPath,
+    tagsIDPath,
+    tagsOsmgoPath,
+} from './_paths'
 
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
-
 const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
-
 const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8'))
 
 // presets to ignore

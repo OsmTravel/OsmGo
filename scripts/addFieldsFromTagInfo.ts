@@ -6,20 +6,11 @@
  * 3. Write the possible values in the same file 'tagsAndPresets/presets.json'
  */
 
-import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import rp from 'request-promise'
+import { presetsOsmgoPath } from './_paths'
 
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
 
 const getOptionsFromTagInfo = async (
