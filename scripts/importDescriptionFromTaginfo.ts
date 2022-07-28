@@ -1,13 +1,12 @@
-const rp = require('request-promise')
-const fs = require('fs-extra')
-const path = require('path')
-const stringify = require('json-stringify-pretty-compact')
-
-const argv = require('yargs').argv
+import rp from 'request-promise'
+import fs from 'fs-extra'
+import path from 'path'
+import stringify from 'json-stringify-pretty-compact'
+import { argv } from 'yargs'
 
 // let language = argv['_'][0];
 
-let languages = [
+let languages: string[] = [
     'fr',
     'de',
     'es',
@@ -53,7 +52,7 @@ let languages = [
     'eu',
 ]
 
-let overwrite = false
+let overwrite: boolean = false
 
 if (argv['_'][1] && argv['_'][1] == 'o') {
     overwrite = true
@@ -64,14 +63,14 @@ const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 
-const getStatsByKey = async (key, language) => {
+const getStatsByKey = async (key: string, language: string) => {
     var options = {
         uri: `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`,
         json: true, // Automatically parses the JSON string in the response
     }
 
     console.log('Call: ' + options.uri)
-    let res
+    let res: { data: any[]; rp: any; data_until: any }
     try {
         res = await rp(options)
     } catch (e) {
@@ -81,7 +80,10 @@ const getStatsByKey = async (key, language) => {
     }
     console.log('Called')
 
-    const nbTotal = res.data.reduce((acc, cur) => acc + cur.count, 0)
+    const nbTotal = res.data.reduce(
+        (acc: number, cur: { count: number }) => acc + cur.count,
+        0
+    )
     const result = {
         key: key,
         count: res.rp,
@@ -92,7 +94,7 @@ const getStatsByKey = async (key, language) => {
 
     // console.log(nbTotal);
 
-    for (let v of res.data) {
+    for (const v of res.data) {
         if (v.description && v.desclang === language) {
             result.values.push({
                 value: v.value,
@@ -109,15 +111,15 @@ const getStatsByKey = async (key, language) => {
     return result
 }
 
-const pks = tagsOsmgo.primaryKeys
+const pks: string[] = tagsOsmgo.primaryKeys
 
-const run = async (language) => {
+const run = async (language: string) => {
     console.log(language)
 
-    for (let pk of pks) {
+    for (const pk of pks) {
         const tagInfoKey = (await getStatsByKey(pk, language)).values
         // console.log(tagInfoKey);
-        let tagsConfig = tagsOsmgo.tags
+        const tagsConfig = tagsOsmgo.tags
 
         for (let tagConfig of tagsConfig) {
             let keys = Object.keys(tagConfig.tags)
@@ -148,7 +150,7 @@ const run = async (language) => {
     fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
 }
 
-for (let language of languages) {
+for (const language of languages) {
     run(language)
 }
 

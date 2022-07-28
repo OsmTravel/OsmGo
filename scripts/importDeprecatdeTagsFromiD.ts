@@ -1,8 +1,6 @@
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
-
-const _ = require('lodash')
+import path from 'path'
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -20,9 +18,9 @@ const deprecatedIDPath = path.join(idRepoPath, 'deprecated.json')
 
 const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'))
 
-for (let depiD of deprecatedID) {
+for (const depiD of deprecatedID) {
     // console.log(depiD)
-    let depOsmgo = tagsOsmgo.tags.find((t) => {
+    const depOsmgo = tagsOsmgo.tags.find((t) => {
         return JSON.stringify(depiD.old) === JSON.stringify(t.tags)
     })
     if (depOsmgo) {

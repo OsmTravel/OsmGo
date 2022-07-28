@@ -82,6 +82,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.162",
     "@types/node": "^12.11.1",
+    "@types/node-fetch": "^2.6.2",
     "@types/request-promise": "^4.1.48",
     "@types/xml2js": "^0.4.11",
     "@types/yargs": "^17.0.10",
