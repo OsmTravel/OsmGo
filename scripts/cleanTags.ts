@@ -1,7 +1,7 @@
-const path = require('path')
-const fs = require('fs-extra')
-const stringify = require('json-stringify-pretty-compact')
-const rp = require('request-promise')
+import path from 'path'
+import fs from 'fs-extra'
+import stringify from 'json-stringify-pretty-compact'
+import rp from 'request-promise'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagConfigPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -18,7 +18,7 @@ const uniqIds = []
 const indexToDelete = []
 
 for (let i = 0; i < tagsConfig.tags.length; i++) {
-    let tag = tagsConfig.tags[i]
+    const tag = tagsConfig.tags[i]
 
     if (tag.id) {
         if (!uniqIds.includes(tag.id)) {
@@ -54,16 +54,16 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
 
     if (!tag.tags) {
         tag['tags'] = {}
-        tag['tags'][pkey] = tag.key
+        // tag['tags'][pkey] = tag.key   // TODO @dotcs: This line throws an error because pkey is not defined
     }
 
-    tag.presets = tag.presets.filter((p) => p !== 'name')
+    tag.presets = tag.presets.filter((p: string) => p !== 'name')
 
     if (!tag.id) {
         if (tag['iDRef']) {
             tag['id'] = tag['iDRef']
         } else {
-            let newId = Object.keys(tag.tags)
+            const newId = Object.keys(tag.tags)
                 .map((k) => `${k}/${tag.tags[k]}`)
                 .join('#')
             console.log(newId)

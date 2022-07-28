@@ -1,7 +1,7 @@
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
-const argv = require('yargs').argv
+import path from 'path'
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
+import { argv } from 'yargs'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -14,7 +14,7 @@ const presetsOsmgoPath = path.join(
 const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
 const idTranslationPath = path.join(idRepoPath, 'translations')
 
-let languages = [
+const languages = [
     'en',
     'fr',
     'de',
@@ -73,7 +73,7 @@ if (argv['_'][1] && argv['_'][1] == 'o') {
     overwrite = true
 }
 
-for (let language of languages) {
+for (const language of languages) {
     const idTranslationFilePath = path.join(
         idTranslationPath,
         `${language}.json`
@@ -105,8 +105,8 @@ for (let language of languages) {
     // console.log(trPresets);
 
     // TAGS
-    const importTrTags = (language) => {
-        for (let tag of tagsOsmgo) {
+    const importTrTags = (language: string) => {
+        for (const tag of tagsOsmgo) {
             // console.log(tag.iDRef);
             if (tag.iDRef) {
                 if (trPresets[tag.iDRef] && trPresets[tag.iDRef].name) {
@@ -132,8 +132,8 @@ for (let language of languages) {
         fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgoConfig), 'utf8')
     }
 
-    const importFields = (language) => {
-        for (let k in presetsOsmgo) {
+    const importFields = (language: string) => {
+        for (const k in presetsOsmgo) {
             const osmGoPreset = presetsOsmgo[k]
             //   console.log(osmGoPreset);
             if (trFields[k]) {
@@ -158,7 +158,7 @@ for (let language of languages) {
                         osmGoPreset.options = []
                     }
 
-                    for (let osmgoOpt of osmGoPreset.options) {
+                    for (const osmgoOpt of osmGoPreset.options) {
                         if (iDoptions[osmgoOpt.v]) {
                             if (typeof iDoptions[osmgoOpt.v] === 'string') {
                                 if (!osmgoOpt.lbl[language] || overwrite) {

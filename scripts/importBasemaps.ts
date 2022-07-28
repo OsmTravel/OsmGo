@@ -1,12 +1,12 @@
-const rp = require('request-promise')
-const fs = require('fs-extra')
-const path = require('path')
-const stringify = require('json-stringify-pretty-compact')
-const _ = require('lodash')
+import rp from 'request-promise'
+import fs from 'fs-extra'
+import path from 'path'
+import stringify from 'json-stringify-pretty-compact'
+import orderBy from 'lodash/orderBy'
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 
-const ignoredIds = [
+const ignoredIds: string[] = [
     'osm-mapnik-black_and_white', // ignored because it does not support CORS
     'EsriWorldImageryClarity', // ignored because it does not support CORS
 ]
@@ -80,7 +80,7 @@ const run = async () => {
         // console.log(feature.properties.url)
     }
 
-    const ordered = _.orderBy(
+    const ordered = orderBy(
         resultFeatures,
         [
             (f) => (f.properties.default ? 1 : 0),

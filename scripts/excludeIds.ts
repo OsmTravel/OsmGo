@@ -1,8 +1,5 @@
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
-
-const _ = require('lodash')
+import path from 'path'
+import fs from 'fs'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -10,7 +7,7 @@ const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
-const exludesIds = []
+const exludesIds: string[] = []
 for (let tag of tagsOsmgo) {
     const id = tag.id
     const pk = id.split('/')[0]

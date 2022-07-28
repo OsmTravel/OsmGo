@@ -6,10 +6,10 @@
  * 3. Write the possible values in the same file 'tagsAndPresets/presets.json'
  */
 
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
-const rp = require('request-promise')
+import path from 'path'
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
+import rp from 'request-promise'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -22,7 +22,10 @@ const presetsOsmgoPath = path.join(
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
 
-const getOptionsFromTagInfo = async (key, nb = 30) => {
+const getOptionsFromTagInfo = async (
+    key: string,
+    nb: number = 30
+): Promise<Array<unknown>> => {
     const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&rp=${nb}&sortname=count&sortorder=desc`
 
     const rep = await rp(url)
@@ -44,7 +47,7 @@ const getOptionsFromTagInfo = async (key, nb = 30) => {
     return options
 }
 
-const run = async () => {
+const run = async (): Promise<void> => {
     for (let k in presetsOsmgo) {
         const currentPreset = presetsOsmgo[k]
         if (['list', 'select'].includes(currentPreset.type)) {

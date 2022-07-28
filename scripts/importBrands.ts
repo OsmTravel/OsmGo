@@ -1,6 +1,6 @@
-const path = require('path')
-const fs = require('fs-extra')
-const stringify = require('json-stringify-pretty-compact')
+import path from 'path'
+import fs from 'fs-extra'
+import stringify from 'json-stringify-pretty-compact'
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsConfigPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -13,7 +13,7 @@ const tagsConfig = JSON.parse(fs.readFileSync(tagsConfigPath, 'utf8'))
 const tags = tagsConfig.tags
 const presets = JSON.parse(fs.readFileSync(presetsPath, 'utf8'))
 
-const formatBrandsNS = (brandsNSJson) => {
+const formatBrandsNS = (brandsNSJson): Array<unknown> => {
     let result = []
     for (let k in brandsNSJson) {
         const lbl = k.split('|')[1]
@@ -29,7 +29,11 @@ const formatBrandsNS = (brandsNSJson) => {
     return result
 }
 
-const importBrandsToPresetsConfig = (presets, id, options) => {
+const importBrandsToPresetsConfig = (
+    presets: any,
+    id: string,
+    options: any
+): any => {
     // amenity#fast_food#brand
     const keep = ['v', 'lbl', 'countryCodes', 'tags']
 
@@ -53,7 +57,7 @@ const importBrandsToPresetsConfig = (presets, id, options) => {
     return presets // it's mutable...
 }
 
-for (let tagConfig of tags) {
+for (const tagConfig of tags) {
     const pkey = Object.keys(tagConfig.tags)[0]
 
     if (Object.keys(tagConfig.tags).length == 1 && tagConfig.tags[pkey]) {

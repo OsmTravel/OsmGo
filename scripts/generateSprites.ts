@@ -1,11 +1,10 @@
-const fs = require('fs-extra')
-const path = require('path')
-const cheerio = require('cheerio')
-const parseString = require('xml2js').parseString
-// const svg2img = require('svg2img');
-const svgRender = require('svg-render')
-
-const Spritesmith = require('spritesmith')
+import fs from 'fs-extra'
+import path from 'path'
+// import * as cheerio from 'cheerio'
+const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
+import { parseString } from 'xml2js'
+import svgRender from 'svg-render'
+import Spritesmith from 'spritesmith'
 
 exports.generateSprites = () => {
     const iconsUsed = []
@@ -50,6 +49,10 @@ exports.generateSprites = () => {
             geometries = ['point', 'vertex', 'area', 'line']
         }
 
+        let iconSVG: string
+        let pathMarkerXMLCircle: string
+        let pathMarkerXMLSquare: string
+
         if (iconName == '') {
             if (unknowTag) {
                 iconSVG = fs
@@ -80,7 +83,7 @@ exports.generateSprites = () => {
             }
         )
 
-        pathMarkerXMLPenta =
+        const pathMarkerXMLPenta =
             '<polygon fill="' +
             colorMarker +
             '" points="12,36 24,12 18,0 6.017,0 0,12.016 "/>'
@@ -100,16 +103,18 @@ exports.generateSprites = () => {
         )
 
         let $ = cheerio.load(iconSVG)
-        pathIconXMLstr = ''
+        let pathIconXMLstr = ''
 
-        let width
-        let height
+        let width: number
+        let height: number
         $('svg').attr('width', (a, b) => {
             width = Number(b.replace('px', ''))
+            return width + 'px'
         })
 
         $('svg').attr('height', (a, b) => {
             height = Number(b.replace('px', ''))
+            return height + 'px'
         })
 
         const translateX = 4.5 + (15 - width) / 2 // width - 11.5
@@ -117,8 +122,9 @@ exports.generateSprites = () => {
 
         $('path').attr('d', function (a, b) {
             pathIconXMLstr += `<path fill='${colorIcon}' transform='translate(${translateX} ${translateY})' d='${b}'></path> `
+            return pathIconXMLstr
         })
-        iconDpath = $('path').attr('d')
+        const iconDpath = $('path').attr('d')
 
         if (iconsSVG.indexOf(iconName) == -1) {
             iconsSVG.push(iconName)
