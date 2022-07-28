@@ -1,10 +1,10 @@
 ## Updating OsmGo assets
 
-OsmGo assets willdo imports from:
+OsmGo assets will do imports from:
 
--   iD
--   id-tagging-schema
--   and name-suggestion-index.
+-   [iD]
+-   [id-tagging-schema]
+-   and [name-suggestion-index].
 
 ### I. Clone iD
 
@@ -34,4 +34,8 @@ The repo of name-suggestion-index must be at same root as OsmGo repo
 
 Options:
 
--   o => owerwrite
+-   o => overwrite
+
+[id]: https://github.com/openstreetmap/iD
+[id-tagging-schema]: https://github.com/openstreetmap/id-tagging-schema
+[name-suggestion-index]: https://github.com/osmlab/name-suggestion-index
