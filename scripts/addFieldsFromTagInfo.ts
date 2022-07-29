@@ -15,15 +15,32 @@ import { readTapPresetsFromJson } from './_utils'
 
 const presetsOsmgo = readTapPresetsFromJson()
 
+interface OsmApiResponse {
+    url: string
+    data_until: string
+    total: number
+    data: Array<{
+        value: string
+        count: number
+        fraction: number
+        in_wiki: boolean
+        description: string
+        desclang: string
+        descdir: 'ltr' | 'rtl'
+    }>
+}
+
 const getOptionsFromTagInfo = async (
     key: string,
     nb: number = 30
 ): Promise<Array<PresetOption>> => {
+    /** E.g., https://taginfo.openstreetmap.org/api/4/key/values?key=building&rp=10&sortname=count&sortorder=desc */
     const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&rp=${nb}&sortname=count&sortorder=desc`
 
     const rep = await rp(url)
+    const ret: OsmApiResponse = JSON.parse(rep)
     // console.log
-    const data = JSON.parse(rep).data
+    const data = ret.data
     if (!data) {
         return null
     }
