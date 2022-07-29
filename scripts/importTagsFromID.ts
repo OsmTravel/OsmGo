@@ -11,10 +11,13 @@ import {
     idtsTagsIdPath,
     tapTagsPath,
 } from './_paths'
+import { TagConfig, TapPresetsJson, TapTagsJson } from '@osmgo/type'
 
-const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
-const presetsOsmgo = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
+const presetsOsmgo: TapPresetsJson = JSON.parse(
+    fs.readFileSync(tapPresetsPath, 'utf8')
+)
 const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
 const presetsID = JSON.parse(fs.readFileSync(idtsPresetsIdPath, 'utf8'))
 
@@ -252,7 +255,8 @@ for (let iDid in tagsID) {
         return isEqual(tagiD.tags, ogT.tags)
     })
 
-    let newTag = {
+    let newTag: TagConfig = {
+        key: undefined, // TODO: @dotcs Is this a problem? Key is required in the interface.
         id: iDid,
         tags: tagiD.tags,
         icon: tagiD.icon || '',

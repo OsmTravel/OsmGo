@@ -3,6 +3,7 @@ import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import { argv } from 'yargs'
 import { tapTagsPath } from './_paths'
+import { TapTagsJson } from '@osmgo/type'
 
 // let language = argv['_'][0];
 
@@ -58,7 +59,7 @@ if (argv['_'][1] && argv['_'][1] == 'o') {
     overwrite = true
 }
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagsOsmgo: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 
 const getStatsByKey = async (key: string, language: string) => {
     var options = {

@@ -2,10 +2,15 @@ import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { i18nDir, resourcesDir, tapTagsPath } from './_paths'
+import {
+    Iso6391Language,
+    Iso6391LanguageCodeJson,
+    TapTagsJson,
+} from '@osmgo/type'
 
-const tagsOsmgo = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagsOsmgo: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 
-const languageCode = []
+const languageCode: string[] = []
 
 for (let pkey in tagsOsmgo) {
     for (let tag of tagsOsmgo[pkey].values) {
@@ -17,11 +22,11 @@ for (let pkey in tagsOsmgo) {
     }
 }
 
-const iso639 = JSON.parse(
+const iso639: Iso6391LanguageCodeJson = JSON.parse(
     fs.readFileSync(path.join(resourcesDir, 'iso_639-1.json'), 'utf8')
 )
 
-const langWithIso639 = []
+const langWithIso639: Iso6391Language[] = []
 
 languageCode.forEach((l) => {
     if (!iso639[l]) {

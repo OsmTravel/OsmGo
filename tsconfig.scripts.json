@@ -14,7 +14,10 @@
     "module": "CommonJS",
     "lib": ["ES2015"],
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@osmgo/*": ["../src/*"]
+    }
   },
   "include": ["./scripts/*.ts"],
   "exclude": []

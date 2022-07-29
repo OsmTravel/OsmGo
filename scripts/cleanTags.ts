@@ -1,12 +1,13 @@
+import { TapPresetsJson, TapTagsJson } from '@osmgo/type'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import { tapTagsPath, tapPresetsPath } from './_paths'
 
-const tagsConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
-const presetsOsmgo = fs.readJSONSync(tapPresetsPath)
+const tagsConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const presetsOsmgo: TapPresetsJson = fs.readJSONSync(tapPresetsPath)
 
-const uniqIds = []
-const indexToDelete = []
+const uniqIds: string[] = []
+const indicesToDelete: number[] = []
 
 for (let i = 0; i < tagsConfig.tags.length; i++) {
     const tag = tagsConfig.tags[i]
@@ -17,7 +18,7 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
         } else {
             console.log('DOUBLON', tag.id)
             // console.log(i);
-            indexToDelete.push(i)
+            indicesToDelete.push(i)
         }
     } else {
         if (tag.iDRef) {
@@ -64,11 +65,11 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
     }
 }
 
-for (let i = indexToDelete.length - 1; i >= 0; i--) {
-    tagsConfig.tags.splice(indexToDelete[i], 1)
+for (let i = indicesToDelete.length - 1; i >= 0; i--) {
+    tagsConfig.tags.splice(indicesToDelete[i], 1)
 }
 
-console.log(indexToDelete)
+console.log(indicesToDelete)
 
 fs.writeFileSync(tapTagsPath, stringify(tagsConfig))
 

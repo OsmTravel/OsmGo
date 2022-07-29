@@ -6,17 +6,20 @@
  * 3. Write the possible values in the same file 'tagsAndPresets/presets.json'
  */
 
+import { PresetOption, TapPresetsJson } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import rp from 'request-promise'
 import { tapPresetsPath } from './_paths'
 
-const presetsOsmgo = JSON.parse(fs.readFileSync(tapPresetsPath, 'utf8'))
+const presetsOsmgo: TapPresetsJson = JSON.parse(
+    fs.readFileSync(tapPresetsPath, 'utf8')
+)
 
 const getOptionsFromTagInfo = async (
     key: string,
     nb: number = 30
-): Promise<Array<unknown>> => {
+): Promise<Array<PresetOption>> => {
     const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&rp=${nb}&sortname=count&sortorder=desc`
 
     const rep = await rp(url)
@@ -46,7 +49,7 @@ const run = async (): Promise<void> => {
                 // console.log(currentPreset.key)
                 let options = await getOptionsFromTagInfo(currentPreset.key)
                 if (options) {
-                    currentPreset['options'] = options.slice(0, 30)
+                    currentPreset.options = options.slice(0, 30)
                     console.log(currentPreset['options'])
                 }
 

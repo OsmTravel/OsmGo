@@ -4,8 +4,9 @@ import { pipeline } from 'stream'
 import { promisify } from 'util'
 import fetch from 'node-fetch'
 import { iconsSvgDir, tapTagsPath } from './_paths'
+import { TapTagsJson } from '@osmgo/type'
 
-const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 const idFaSvgUrl: string = `https://raw.githubusercontent.com/openstreetmap/iD/develop/svg/fontawesome`

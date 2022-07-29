@@ -1,12 +1,12 @@
 // ORDER TAGS BY PRIMARYKEYS ( order than "primaryKeys": ["advertising","shop","healthcare" etc ]
 // It's define the priority of tags detection
 
-import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { tapTagsPath } from './_paths'
+import { TapTagsJson } from '@osmgo/type'
 
-const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 // ORDER BY primaryKeys FIRST

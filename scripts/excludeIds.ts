@@ -1,7 +1,8 @@
+import { TapTagsJson } from '@osmgo/type'
 import fs from 'fs'
 import { tapTagsPath } from './_paths'
 
-const tagConfig = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 
 const exludesIds: string[] = []
