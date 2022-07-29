@@ -3,7 +3,7 @@ import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { argv } from 'yargs'
 import { tapTagsPath, tapPresetsPath, idtsTranslationsDir } from './_paths'
-import { TapPresetsJson, TapTagsJson } from '@osmgo/type'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const languages = [
     'en',
@@ -76,13 +76,9 @@ for (const language of languages) {
 
     // const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 
-    const tagsOsmgoConfig: TapTagsJson = JSON.parse(
-        fs.readFileSync(tapTagsPath, 'utf8')
-    )
+    const tagsOsmgoConfig = readTapTagsFromJson()
     const tagsOsmgo = tagsOsmgoConfig.tags
-    const presetsOsmgo: TapPresetsJson = JSON.parse(
-        fs.readFileSync(tapPresetsPath, 'utf8')
-    )
+    const presetsOsmgo = readTapPresetsFromJson()
 
     if (!idTr.presets) {
         console.log('Remove language (no presets): ' + language)

@@ -2,13 +2,10 @@ import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { i18nDir, resourcesDir, tapTagsPath } from './_paths'
-import {
-    Iso6391Language,
-    Iso6391LanguageCodeJson,
-    TapTagsJson,
-} from '@osmgo/type'
+import { Iso6391Language, Iso6391LanguageCodeJson } from '@osmgo/type'
+import { readTapTagsFromJson } from './_utils'
 
-const tagsOsmgo: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagsOsmgo = readTapTagsFromJson()
 
 const languageCode: string[] = []
 

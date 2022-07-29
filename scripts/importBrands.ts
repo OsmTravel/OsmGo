@@ -2,13 +2,11 @@ import path from 'path'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import { nsiBrandsDir, tapPresetsPath, tapTagsPath } from './_paths'
-import { TapPresetsJson, TapTagsJson } from '@osmgo/type'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
-const tagsConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagsConfig = readTapTagsFromJson()
 const tags = tagsConfig.tags
-const presets: TapPresetsJson = JSON.parse(
-    fs.readFileSync(tapPresetsPath, 'utf8')
-)
+const presets = readTapPresetsFromJson()
 
 const formatBrandsNS = (brandsNSJson): Array<unknown> => {
     let result = []

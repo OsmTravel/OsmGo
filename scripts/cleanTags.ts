@@ -1,10 +1,10 @@
-import { TapPresetsJson, TapTagsJson } from '@osmgo/type'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import { tapTagsPath, tapPresetsPath } from './_paths'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
-const tagsConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
-const presetsOsmgo: TapPresetsJson = fs.readJSONSync(tapPresetsPath)
+const tagsConfig = readTapTagsFromJson()
+const presetsOsmgo = readTapPresetsFromJson()
 
 const uniqIds: string[] = []
 const indicesToDelete: number[] = []

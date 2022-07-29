@@ -6,15 +6,14 @@
  * 3. Write the possible values in the same file 'tagsAndPresets/presets.json'
  */
 
-import { PresetOption, TapPresetsJson } from '@osmgo/type'
+import { PresetOption } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import rp from 'request-promise'
 import { tapPresetsPath } from './_paths'
+import { readTapPresetsFromJson } from './_utils'
 
-const presetsOsmgo: TapPresetsJson = JSON.parse(
-    fs.readFileSync(tapPresetsPath, 'utf8')
-)
+const presetsOsmgo = readTapPresetsFromJson()
 
 const getOptionsFromTagInfo = async (
     key: string,

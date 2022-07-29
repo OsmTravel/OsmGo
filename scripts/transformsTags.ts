@@ -2,10 +2,10 @@ import path from 'path'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import { tapDir, tapTagsPath } from './_paths'
-import { TapTagsJson } from '@osmgo/type'
+import { readTapTagsFromJson } from './_utils'
 
 const newConfigPath = path.join(tapDir, 'newTags.json')
-const tagsOsmgo: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagsOsmgo = readTapTagsFromJson()
 
 const tagsResult = []
 const primaryKeys = []

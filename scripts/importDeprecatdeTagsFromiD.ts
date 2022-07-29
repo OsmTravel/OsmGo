@@ -2,9 +2,9 @@ import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { idtsDistDir, tapTagsPath } from './_paths'
-import { TapTagsJson } from '@osmgo/type'
+import { readTapTagsFromJson } from './_utils'
 
-const tagsOsmgo: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagsOsmgo = readTapTagsFromJson()
 
 const deprecatedIDPath = path.join(idtsDistDir, 'deprecated.json')
 

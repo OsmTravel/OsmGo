@@ -11,13 +11,12 @@ import {
     idtsTagsIdPath,
     tapTagsPath,
 } from './_paths'
-import { TagConfig, TapPresetsJson, TapTagsJson } from '@osmgo/type'
+import { TagConfig } from '@osmgo/type'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
-const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig = readTapTagsFromJson()
 const tagsOsmgo = tagConfig.tags
-const presetsOsmgo: TapPresetsJson = JSON.parse(
-    fs.readFileSync(tapPresetsPath, 'utf8')
-)
+const presetsOsmgo = readTapPresetsFromJson()
 const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
 const presetsID = JSON.parse(fs.readFileSync(idtsPresetsIdPath, 'utf8'))
 

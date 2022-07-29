@@ -1,14 +1,12 @@
-import { TapPresetsJson, TapTagsJson } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { tapTagsPath, tapPresetsPath } from './_paths'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const codeLangue = 'ast'
 
-const presets: TapPresetsJson = JSON.parse(
-    fs.readFileSync(tapPresetsPath, 'utf8')
-)
-const tags: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const presets = readTapPresetsFromJson()
+const tags = readTapTagsFromJson()
 
 for (let pkey in tags) {
     for (let tag of tags[pkey].values) {

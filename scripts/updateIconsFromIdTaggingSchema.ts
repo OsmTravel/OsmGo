@@ -6,10 +6,10 @@ import fs from 'fs'
 import chalk from 'chalk'
 import stringify from 'json-stringify-pretty-compact'
 import { assetsDir, idtsTagsIdPath, tapTagsPath } from './_paths'
-import { TapTagsJson } from '@osmgo/type'
+import { readTapTagsFromJson } from './_utils'
 
 // OsmGo tags
-const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig = readTapTagsFromJson()
 const tagsOsmgo = tagConfig.tags
 
 // OsmGo sprites

@@ -4,9 +4,9 @@
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import { tapTagsPath } from './_paths'
-import { TapTagsJson } from '@osmgo/type'
+import { readTapTagsFromJson } from './_utils'
 
-const tagConfig: TapTagsJson = JSON.parse(fs.readFileSync(tapTagsPath, 'utf8'))
+const tagConfig = readTapTagsFromJson()
 const tagsOsmgo = tagConfig.tags
 
 // ORDER BY primaryKeys FIRST
