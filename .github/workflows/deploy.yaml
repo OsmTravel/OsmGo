@@ -24,7 +24,7 @@ jobs:
         run: npm run test:ci
 
       - name: Create build
-        run: npm run build
+        run: npm run ng -- build --configuration production --base-href=/OsmGo/
 
       - name: Deploy
         if: success()
