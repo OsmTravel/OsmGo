@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": ".",
-    "outDir": "../scripts-out",
     "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
