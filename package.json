@@ -13,7 +13,7 @@
     "test:ci": "ng test --ts-config src/tsconfig.spec.json --watch=false --browsers=ChromeHeadlessCI --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "scripts:transpile": "tsc -p ./tsconfig.scripts.json",
+    "scripts:transpile": "tsc -p ./scripts/tsconfig.json",
     "presprites": "npm run scripts:transpile",
     "sprites": "node ./scripts-out/importMissingSVGs.js && node ./scripts-out/formatSVG.js && node  ./scripts-out/sprites.js",
     "preimportFromID": "npm run scripts:transpile",
@@ -121,7 +121,7 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4",
     "xml2js": "^0.4.23",
-    "yargs": "^14.2.2"
+    "yargs": "^17.5.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

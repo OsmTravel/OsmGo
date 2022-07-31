@@ -1,15 +1,15 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./scripts",
-    "outDir": "./scripts-out",
+    "baseUrl": ".",
+    "outDir": "../scripts-out",
     "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": false,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2015",
+    "target": "es2017",
     "module": "CommonJS",
     "lib": ["ES2015"],
     "esModuleInterop": true,
@@ -18,6 +18,6 @@
       "@osmgo/*": ["../src/*"]
     }
   },
-  "include": ["./scripts/*.ts"],
+  "include": ["./*.ts"],
   "exclude": []
 }
