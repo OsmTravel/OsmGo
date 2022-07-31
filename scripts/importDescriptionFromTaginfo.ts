@@ -1,63 +1,32 @@
 import rp from 'request-promise'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import { argv } from 'yargs'
+import yargs from 'yargs'
 import { tapTagsPath } from './_paths'
 import { readTapTagsFromJson } from './_utils'
+import { defaultLanguages } from './_i18n'
 
-// let language = argv['_'][0];
-
-let languages: string[] = [
-    'fr',
-    'de',
-    'es',
-    'pt',
-    'it',
-    'ru',
-    'bg',
-    'bn',
-    'bs',
-    'cs',
-    'cy',
-    'da',
-    'dv',
-    'el',
-    'eo',
-    'et',
-    'fa',
-    'fi',
-    'gl',
-    'he',
-    'hr',
-    'hu',
-    'id',
-    'is',
-    'ja',
-    'ko',
-    'lt',
-    'lv',
-    'mk',
-    'ms',
-    'nl',
-    'no',
-    'pl',
-    'ro',
-    'sk',
-    'sl',
-    'sr',
-    'sv',
-    'tr',
-    'uk',
-    'vi',
-    'zh',
-    'eu',
-]
-
-let overwrite: boolean = false
-
-if (argv['_'][1] && argv['_'][1] == 'o') {
-    overwrite = true
-}
+const args = yargs(process.argv.slice(2))
+    .usage(
+        `$0 [args]
+        
+        Imports object descriptions from the taginfo.openstreetmap.org service.`
+    )
+    .help('help')
+    .version(false)
+    .option('overwrite', {
+        alias: 'o',
+        type: 'boolean',
+        description: 'Overwrite tag descriptions in multiple languages',
+        default: false,
+    })
+    .option('language', {
+        type: 'array',
+        choices: defaultLanguages,
+        description:
+            'Languages that should be looked up through the taginfo.openstreetmap.org service',
+    })
+    .parseSync()
 
 const tagsOsmgo = readTapTagsFromJson()
 
@@ -130,7 +99,7 @@ const run = async (language: string) => {
                     if (
                         tagConfig.description &&
                         tagConfig.description[language] &&
-                        overwrite === false
+                        args.overwrite === false
                     ) {
                         //nada
                     } else {
@@ -148,8 +117,6 @@ const run = async (language: string) => {
     fs.writeFileSync(tapTagsPath, stringify(tagsOsmgo), 'utf8')
 }
 
-for (const language of languages) {
+for (const language of args.language as string[]) {
     run(language)
 }
-
-//

@@ -1,70 +1,35 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import { argv } from 'yargs'
+import yargs from 'yargs'
 import { tapTagsPath, tapPresetsPath, idtsTranslationsDir } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
+import { defaultLanguages } from './_i18n'
 
-const languages = [
-    'en',
-    'fr',
-    'de',
-    'es',
-    'pt',
-    'it',
-    'ru',
-    'bg',
-    'bn',
-    'bs',
-    'cs',
-    'cy',
-    'da',
-    'dv',
-    'el',
-    'eo',
-    'et',
-    'fa',
-    'fi',
-    'gl',
-    'he',
-    'hr',
-    'hu',
-    'id',
-    'is',
-    'ja',
-    'ko',
-    'lt',
-    'lv',
-    'mk',
-    'ms',
-    'nl',
-    'no',
-    'pl',
-    'ro',
-    'sk',
-    'sl',
-    'sr',
-    'sv',
-    'tr',
-    'uk',
-    'vi',
-    'zh',
-    'eu',
-]
+const args = yargs(process.argv.slice(2))
+    .usage(
+        `$0 [args]
+        
+        Adds translations for tags from the iD editor.
+        This script looks up the translations in the third-party repository of the iD editor and aligns its definitions with the OsmGo i18n data.`
+    )
+    .help('help')
+    .version(false)
+    .option('overwrite', {
+        alias: 'o',
+        type: 'boolean',
+        description: 'Overwrite tag descriptions in multiple languages',
+        default: false,
+    })
+    .option('language', {
+        type: 'array',
+        choices: defaultLanguages,
+        description:
+            'Languages that should be looked up through the taginfo.openstreetmap.org service',
+    })
+    .parseSync()
 
-// if (!language) {
-//   console.error(language, "oops");
-//   return;
-// }
-
-let overwrite = false
-
-if (argv['_'][1] && argv['_'][1] == 'o') {
-    console.log(overwrite)
-    overwrite = true
-}
-
-for (const language of languages) {
+for (const language of args.language as string[]) {
     const idTranslationFilePath = path.join(
         idtsTranslationsDir,
         `${language}.json`
@@ -101,7 +66,7 @@ for (const language of languages) {
             // console.log(tag.iDRef);
             if (tag.iDRef) {
                 if (trPresets[tag.iDRef] && trPresets[tag.iDRef].name) {
-                    if (!tag.lbl[language] || overwrite) {
+                    if (!tag.lbl[language] || args.overwrite) {
                         tag.lbl[language] = trPresets[tag.iDRef].name
                     }
                 }
@@ -110,7 +75,7 @@ for (const language of languages) {
                     if (tag.terms === undefined) {
                         tag['terms'] = {}
                     }
-                    if (!tag.terms[language] || overwrite) {
+                    if (!tag.terms[language] || args.overwrite) {
                         tag.terms[language] = trPresets[tag.iDRef].terms
                     }
                 }
@@ -133,7 +98,7 @@ for (const language of languages) {
                     if (
                         !osmGoPreset.lbl ||
                         !osmGoPreset.lbl[language] ||
-                        overwrite
+                        args.overwrite
                     ) {
                         if (!osmGoPreset.lbl) {
                             osmGoPreset['lbl'] = {}
@@ -152,13 +117,16 @@ for (const language of languages) {
                     for (const osmgoOpt of osmGoPreset.options) {
                         if (iDoptions[osmgoOpt.v]) {
                             if (typeof iDoptions[osmgoOpt.v] === 'string') {
-                                if (!osmgoOpt.lbl[language] || overwrite) {
+                                if (!osmgoOpt.lbl[language] || args.overwrite) {
                                     osmgoOpt.lbl[language] =
                                         iDoptions[osmgoOpt.v]
                                 }
                             } else {
                                 if (iDoptions[osmgoOpt.v].title) {
-                                    if (!osmgoOpt.lbl[language] || overwrite) {
+                                    if (
+                                        !osmgoOpt.lbl[language] ||
+                                        args.overwrite
+                                    ) {
                                         osmgoOpt.lbl[language] =
                                             iDoptions[osmgoOpt.v].title
                                     }
