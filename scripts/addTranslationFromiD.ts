@@ -24,6 +24,7 @@ const args = yargs(process.argv.slice(2))
     .option('language', {
         type: 'array',
         choices: defaultLanguages,
+        default: defaultLanguages,
         description:
             'Languages that should be looked up through the taginfo.openstreetmap.org service',
     })
