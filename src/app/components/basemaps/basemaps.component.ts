@@ -14,7 +14,7 @@ import { MapService } from '@services/map.service'
 export class BasemapsComponent implements OnInit {
     lat: number
     lng: number
-    basemaps: any[]
+    basemaps: Record<string, any>[]
 
     constructor(
         public navCtrl: NavController,
@@ -43,7 +43,7 @@ export class BasemapsComponent implements OnInit {
         })
     }
 
-    selectBaseMap(basemap) {
+    selectBaseMap(basemap: Record<string, any>) {
         this.configService.setBasemap(basemap)
         this.mapService.displaySatelliteBaseMap(basemap, true)
         this.navCtrl.back()
