@@ -1,77 +1,44 @@
-const rp = require('request-promise')
-const fs = require('fs-extra')
-const path = require('path')
-const stringify = require('json-stringify-pretty-compact')
+import rp from 'request-promise'
+import fs from 'fs-extra'
+import stringify from 'json-stringify-pretty-compact'
+import yargs from 'yargs'
+import { tapTagsPath } from './_paths'
+import { readTapTagsFromJson } from './_utils'
+import { defaultLanguages } from './_i18n'
 
-const argv = require('yargs').argv
+const args = yargs(process.argv.slice(2))
+    .usage(
+        `$0 [args]
+        
+        Imports object descriptions from the taginfo.openstreetmap.org service.`
+    )
+    .help('help')
+    .version(false)
+    .option('overwrite', {
+        alias: 'o',
+        type: 'boolean',
+        description: 'Overwrite tag descriptions in multiple languages',
+        default: false,
+    })
+    .option('language', {
+        type: 'array',
+        choices: defaultLanguages,
+        default: defaultLanguages,
+        description:
+            'Languages that should be looked up through the taginfo.openstreetmap.org service',
+    })
+    .parseSync()
 
-// let language = argv['_'][0];
+const tagsOsmgo = readTapTagsFromJson()
 
-let languages = [
-    'fr',
-    'de',
-    'es',
-    'pt',
-    'it',
-    'ru',
-    'bg',
-    'bn',
-    'bs',
-    'cs',
-    'cy',
-    'da',
-    'dv',
-    'el',
-    'eo',
-    'et',
-    'fa',
-    'fi',
-    'gl',
-    'he',
-    'hr',
-    'hu',
-    'id',
-    'is',
-    'ja',
-    'ko',
-    'lt',
-    'lv',
-    'mk',
-    'ms',
-    'nl',
-    'no',
-    'pl',
-    'ro',
-    'sk',
-    'sl',
-    'sr',
-    'sv',
-    'tr',
-    'uk',
-    'vi',
-    'zh',
-    'eu',
-]
-
-let overwrite = false
-
-if (argv['_'][1] && argv['_'][1] == 'o') {
-    overwrite = true
-}
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-
-const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
-
-const getStatsByKey = async (key, language) => {
+const getStatsByKey = async (key: string, language: string) => {
     var options = {
         uri: `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`,
         json: true, // Automatically parses the JSON string in the response
     }
 
     console.log('Call: ' + options.uri)
-    let res
+    let res: { data: any[]; rp: any; data_until: any }
     try {
         res = await rp(options)
     } catch (e) {
@@ -81,7 +48,10 @@ const getStatsByKey = async (key, language) => {
     }
     console.log('Called')
 
-    const nbTotal = res.data.reduce((acc, cur) => acc + cur.count, 0)
+    const nbTotal = res.data.reduce(
+        (acc: number, cur: { count: number }) => acc + cur.count,
+        0
+    )
     const result = {
         key: key,
         count: res.rp,
@@ -92,7 +62,7 @@ const getStatsByKey = async (key, language) => {
 
     // console.log(nbTotal);
 
-    for (let v of res.data) {
+    for (const v of res.data) {
         if (v.description && v.desclang === language) {
             result.values.push({
                 value: v.value,
@@ -109,15 +79,15 @@ const getStatsByKey = async (key, language) => {
     return result
 }
 
-const pks = tagsOsmgo.primaryKeys
+const pks: string[] = tagsOsmgo.primaryKeys
 
-const run = async (language) => {
+const run = async (language: string) => {
     console.log(language)
 
-    for (let pk of pks) {
+    for (const pk of pks) {
         const tagInfoKey = (await getStatsByKey(pk, language)).values
         // console.log(tagInfoKey);
-        let tagsConfig = tagsOsmgo.tags
+        const tagsConfig = tagsOsmgo.tags
 
         for (let tagConfig of tagsConfig) {
             let keys = Object.keys(tagConfig.tags)
@@ -130,7 +100,7 @@ const run = async (language) => {
                     if (
                         tagConfig.description &&
                         tagConfig.description[language] &&
-                        overwrite === false
+                        args.overwrite === false
                     ) {
                         //nada
                     } else {
@@ -145,11 +115,9 @@ const run = async (language) => {
             }
         }
     }
-    fs.writeFileSync(tagsOsmgoPath, stringify(tagsOsmgo), 'utf8')
+    fs.writeFileSync(tapTagsPath, stringify(tagsOsmgo), 'utf8')
 }
 
-for (let language of languages) {
+for (const language of args.language as string[]) {
     run(language)
 }
-
-//

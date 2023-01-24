@@ -109,7 +109,7 @@ export interface TagConfig {
     markerColor: string
     presets: string[]
     lbl?: any
-    terms?: any
+    terms?: Record<string, string>
     description?: any
     geometry: string[]
     iDRef?: string
@@ -118,6 +118,23 @@ export interface TagConfig {
     id: string
     isUserTag?: boolean
 }
+
+export interface TapTagsJson {
+    primaryKeys: string[]
+    tags: TagConfig[]
+}
+
+export type TapPresetsJson = Record<string, Preset>
+
+export interface Iso6391Language {
+    code: string
+    '639-2': string
+    family: string
+    name: string
+    nativeName: string
+    wikiUrl: string
+}
+export type Iso6391LanguageCodeJson = Record<string, Iso6391Language>
 
 export type FeatureIdSource = 'data' | 'data_changed'
 

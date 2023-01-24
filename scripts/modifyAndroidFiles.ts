@@ -1,13 +1,9 @@
 // Use capacitor from Android folder (withou Firebase & GMS)
-const path = require('path')
-const fs = require('fs')
+import path from 'path'
+import fs from 'fs'
+import { androidDir } from './_paths'
 
-const pathCapSettingsGradle = path.join(
-    __dirname,
-    '..',
-    'android',
-    'capacitor.settings.gradle'
-)
+const pathCapSettingsGradle = path.join(androidDir, 'capacitor.settings.gradle')
 
 const newContent = `include ':capacitor-android'
 project(':capacitor-android').projectDir = new File('./capacitor')`

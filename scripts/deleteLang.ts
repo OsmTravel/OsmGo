@@ -1,19 +1,12 @@
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
+import { tapTagsPath, tapPresetsPath } from './_paths'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const codeLangue = 'ast'
 
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const presets = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
-const tags = JSON.parse(fs.readFileSync(tagsPath, 'utf8'))
+const presets = readTapPresetsFromJson()
+const tags = readTapTagsFromJson()
 
 for (let pkey in tags) {
     for (let tag of tags[pkey].values) {
@@ -49,5 +42,5 @@ for (let pkey in presets) {
     }
 }
 
-fs.writeFileSync(presetsOsmgoPath, stringify(presets), 'utf8')
-fs.writeFileSync(tagsPath, stringify(tags), 'utf8')
+fs.writeFileSync(tapPresetsPath, stringify(presets), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tags), 'utf8')

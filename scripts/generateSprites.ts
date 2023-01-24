@@ -1,17 +1,16 @@
-const fs = require('fs-extra')
-const path = require('path')
-const cheerio = require('cheerio')
-const parseString = require('xml2js').parseString
-// const svg2img = require('svg2img');
-const svgRender = require('svg-render')
+import fs from 'fs-extra'
+import path from 'path'
+// import * as cheerio from 'cheerio'
+const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
+import { parseString } from 'xml2js'
+import svgRender from 'svg-render'
+import Spritesmith from 'spritesmith'
+import { assetsDir, iconsSvgDir } from './_paths'
 
-const Spritesmith = require('spritesmith')
-
-exports.generateSprites = () => {
+export const generateSprites = () => {
     const iconsUsed = []
     const markerUsed = []
 
-    const iconsSVGsPath = path.join(__dirname, '..', 'resources', 'IconsSVG')
     const markersModelPath = path.join(
         __dirname,
         '..',
@@ -29,10 +28,8 @@ exports.generateSprites = () => {
     const outputTmp = path.join(__dirname, 'tmp')
     const outputFolderSVG = path.join(outputTmp, 'SVG')
 
-    const assetsPath = path.join(__dirname, '..', 'src', 'assets')
-    const outPath = path.join(assetsPath, 'mapStyle', 'sprites') // les sprites en sorti
-    const iconSvgAssetsPath = path.join(assetsPath, 'mapStyle', 'icons')
-    const outPathIconSprites = path.join(assetsPath) // les sprites en sorti
+    const outPath = path.join(assetsDir, 'mapStyle', 'sprites') // les sprites en sorti
+    const outPathIconSprites = path.join(assetsDir) // les sprites en sorti
 
     fs.removeSync(outputTmp)
     fs.mkdirsSync(outputFolderSVG)
@@ -50,19 +47,23 @@ exports.generateSprites = () => {
             geometries = ['point', 'vertex', 'area', 'line']
         }
 
+        let iconSVG: string
+        let pathMarkerXMLCircle: string
+        let pathMarkerXMLSquare: string
+
         if (iconName == '') {
             if (unknowTag) {
                 iconSVG = fs
-                    .readFileSync(path.join(iconsSVGsPath, 'wiki_question.svg'))
+                    .readFileSync(path.join(iconsSvgDir, 'wiki_question.svg'))
                     .toString()
             } else {
                 iconSVG = fs
-                    .readFileSync(path.join(iconsSVGsPath, 'maki-circle.svg'))
+                    .readFileSync(path.join(iconsSvgDir, 'maki-circle.svg'))
                     .toString()
             }
         } else {
             iconSVG = fs
-                .readFileSync(path.join(iconsSVGsPath, iconName + '.svg'))
+                .readFileSync(path.join(iconsSvgDir, iconName + '.svg'))
                 .toString()
         }
 
@@ -80,7 +81,7 @@ exports.generateSprites = () => {
             }
         )
 
-        pathMarkerXMLPenta =
+        const pathMarkerXMLPenta =
             '<polygon fill="' +
             colorMarker +
             '" points="12,36 24,12 18,0 6.017,0 0,12.016 "/>'
@@ -100,16 +101,18 @@ exports.generateSprites = () => {
         )
 
         let $ = cheerio.load(iconSVG)
-        pathIconXMLstr = ''
+        let pathIconXMLstr = ''
 
-        let width
-        let height
+        let width: number
+        let height: number
         $('svg').attr('width', (a, b) => {
             width = Number(b.replace('px', ''))
+            return width + 'px'
         })
 
         $('svg').attr('height', (a, b) => {
             height = Number(b.replace('px', ''))
+            return height + 'px'
         })
 
         const translateX = 4.5 + (15 - width) / 2 // width - 11.5
@@ -117,8 +120,9 @@ exports.generateSprites = () => {
 
         $('path').attr('d', function (a, b) {
             pathIconXMLstr += `<path fill='${colorIcon}' transform='translate(${translateX} ${translateY})' d='${b}'></path> `
+            return pathIconXMLstr
         })
-        iconDpath = $('path').attr('d')
+        const iconDpath = $('path').attr('d')
 
         if (iconsSVG.indexOf(iconName) == -1) {
             iconsSVG.push(iconName)
@@ -170,7 +174,7 @@ exports.generateSprites = () => {
         }
     }
 
-    const tags = JSON.parse(fs.readFileSync(tagsPath))
+    const tags = JSON.parse(fs.readFileSync(tagsPath, 'utf8'))
     console.log('génération des markers')
     let iconsMarkersStr = []
 
@@ -210,7 +214,7 @@ exports.generateSprites = () => {
 
     for (let i = 0; i < whiteList.length; i++) {
         fs.copySync(
-            path.join(iconsSVGsPath, whiteList[i] + '.svg'),
+            path.join(iconsSvgDir, whiteList[i] + '.svg'),
             path.join(outputFolderSVG, whiteList[i] + '.svg')
         )
     }
@@ -244,7 +248,7 @@ exports.generateSprites = () => {
                 const shape = svgFileName.split('-#')[0]
                 fs.writeFileSync(
                     path.join(
-                        assetsPath,
+                        assetsDir,
                         'mapStyle',
                         'unknown-marker',
                         `${shape}-unknown@${factor}X.png`
@@ -308,7 +312,7 @@ exports.generateSprites = () => {
         await fs.emptyDir(pngFolder)
 
         for (let svgFileName of iconsUsed) {
-            const filePath = path.join(iconsSVGsPath, `${svgFileName}.svg`)
+            const filePath = path.join(iconsSvgDir, `${svgFileName}.svg`)
             // copy SVG to assets
 
             const image = await svgToPNG(filePath, factor)

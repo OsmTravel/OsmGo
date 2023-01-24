@@ -1,24 +1,16 @@
-const path = require('path')
-const fs = require('fs-extra')
-const stringify = require('json-stringify-pretty-compact')
-const rp = require('request-promise')
+import fs from 'fs-extra'
+import stringify from 'json-stringify-pretty-compact'
+import { tapTagsPath, tapPresetsPath } from './_paths'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagConfigPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
+const tagsConfig = readTapTagsFromJson()
+const presetsOsmgo = readTapPresetsFromJson()
 
-const tagsConfig = JSON.parse(fs.readFileSync(tagConfigPath, 'utf8'))
-const presetsOsmgo = fs.readJSONSync(presetsOsmgoPath)
-
-const uniqIds = []
-const indexToDelete = []
+const uniqIds: string[] = []
+const indicesToDelete: number[] = []
 
 for (let i = 0; i < tagsConfig.tags.length; i++) {
-    let tag = tagsConfig.tags[i]
+    const tag = tagsConfig.tags[i]
 
     if (tag.id) {
         if (!uniqIds.includes(tag.id)) {
@@ -26,7 +18,7 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
         } else {
             console.log('DOUBLON', tag.id)
             // console.log(i);
-            indexToDelete.push(i)
+            indicesToDelete.push(i)
         }
     } else {
         if (tag.iDRef) {
@@ -54,16 +46,16 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
 
     if (!tag.tags) {
         tag['tags'] = {}
-        tag['tags'][pkey] = tag.key
+        // tag['tags'][pkey] = tag.key   // TODO @dotcs: This line throws an error because pkey is not defined
     }
 
-    tag.presets = tag.presets.filter((p) => p !== 'name')
+    tag.presets = tag.presets.filter((p: string) => p !== 'name')
 
     if (!tag.id) {
         if (tag['iDRef']) {
             tag['id'] = tag['iDRef']
         } else {
-            let newId = Object.keys(tag.tags)
+            const newId = Object.keys(tag.tags)
                 .map((k) => `${k}/${tag.tags[k]}`)
                 .join('#')
             console.log(newId)
@@ -73,13 +65,13 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
     }
 }
 
-for (let i = indexToDelete.length - 1; i >= 0; i--) {
-    tagsConfig.tags.splice(indexToDelete[i], 1)
+for (let i = indicesToDelete.length - 1; i >= 0; i--) {
+    tagsConfig.tags.splice(indicesToDelete[i], 1)
 }
 
-console.log(indexToDelete)
+console.log(indicesToDelete)
 
-fs.writeFileSync(tagConfigPath, stringify(tagsConfig))
+fs.writeFileSync(tapTagsPath, stringify(tagsConfig))
 
 for (let pid in presetsOsmgo) {
     const preset = presetsOsmgo[pid]
@@ -89,4 +81,4 @@ for (let pid in presetsOsmgo) {
         }
     }
 }
-fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo))
+fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo))

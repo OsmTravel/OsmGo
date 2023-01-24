@@ -6,6 +6,7 @@
   "version": "1.5.0",
   "scripts": {
     "ng": "ng",
+    "ts-node": "ts-node",
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build --configuration production",
     "test": "ng test --ts-config src/tsconfig.spec.json --browsers Chrome",
@@ -13,9 +14,9 @@
     "test:ci": "ng test --ts-config src/tsconfig.spec.json --watch=false --browsers=ChromeHeadlessCI --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sprites": "node ./scripts/importMissingSVGs.js && node ./scripts/formatSVG.js && node  ./scripts/sprites.js",
-    "importFromID": "node ./scripts/importTagsFromID.js && node ./scripts/ordersTags.js && node ./scripts/importDeprecatdeTagsFromiD.js && node ./scripts/addTranslationFromiD.js ",
-    "importBaseMaps": "node ./scripts/importBasemaps.js",
+    "sprites": "ts-node --project ./scripts/tsconfig.json ./scripts/importMissingSVGs.ts && ts-node --project ./scripts/tsconfig.json ./scripts/formatSVG.ts && ts-node --project ./scripts/tsconfig.json ./scripts/sprites.ts",
+    "importFromID": "ts-node --project ./scripts/tsconfig.json ./scripts/out/importTagsFromID.js && ts-node --project ./scripts/tsconfig.json ./scripts/out/ordersTags.js && ts-node --project ./scripts/tsconfig.json ./scripts/out/importDeprecatdeTagsFromiD.js && ts-node ./scripts/out/addTranslationFromiD.js ",
+    "importBaseMaps": "ts-node --project ./scripts/tsconfig.json ./scripts/out/importBasemaps.js",
     "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android",
     "buildAndroidDebug": "ng build --configuration development && npx cap sync",
     "prepare": "husky install",
@@ -73,11 +74,16 @@
     "@angular/language-service": "~12.0.1",
     "@capacitor/cli": "^3.2.4",
     "@ionic/angular-toolkit": "^4.0.0",
+    "@types/fs-extra": "^9.0.13",
     "@types/geojson": "^7946.0.7",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/lodash": "^4.14.162",
     "@types/node": "^12.11.1",
+    "@types/node-fetch": "^2.6.2",
+    "@types/request-promise": "^4.1.48",
+    "@types/xml2js": "^0.4.11",
+    "@types/yargs": "^17.0.10",
     "@typescript-eslint/eslint-plugin": "4.16.1",
     "@typescript-eslint/parser": "4.16.1",
     "cheerio": "^1.0.0-rc.3",
@@ -112,7 +118,7 @@
     "ts-node": "~8.3.0",
     "typescript": "~4.2.4",
     "xml2js": "^0.4.23",
-    "yargs": "^14.2.2"
+    "yargs": "^17.5.1"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

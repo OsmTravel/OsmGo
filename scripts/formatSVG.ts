@@ -1,15 +1,16 @@
 // redimensionne et harmonise les path des SVG à 15px (min) et
-const fs = require('fs')
-const cheerio = require('cheerio')
-const path = require('path')
-var parse = require('parse-svg-path')
-var scale = require('scale-svg-path')
-var serialize = require('serialize-svg-path')
+import fs from 'fs'
+// import * as cheerio from 'cheerio'
+const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
+import path from 'path'
+import parse from 'parse-svg-path'
+import scale from 'scale-svg-path'
+import serialize from 'serialize-svg-path'
+import { iconsSvgDir } from './_paths'
 
 console.info('Format SVGs')
 
-const iconsSVGsPath = path.join(__dirname, '..', 'resources', 'IconsSVG')
-const blackList = [
+const blackList: string[] = [
     'none.svg',
     'Delete.svg',
     'Create.svg',
@@ -20,17 +21,17 @@ const blackList = [
     'maki-circle-custom.svg',
 ]
 
-const listOfSvgsName = fs
-    .readdirSync(iconsSVGsPath)
+const listOfSvgsName: string[] = fs
+    .readdirSync(iconsSvgDir)
     .filter((svgName) => blackList.indexOf(svgName) == -1)
     .filter((svgName) => path.extname(svgName) == '.svg')
 
 for (let i = 0; i < listOfSvgsName.length; i++) {
-    const pathSvg = path.join(iconsSVGsPath, listOfSvgsName[i])
-    let svgStr = fs.readFileSync(pathSvg, 'utf8')
-    let _$ = cheerio.load(svgStr)
+    const pathSvg = path.join(iconsSvgDir, listOfSvgsName[i])
+    const svgStr = fs.readFileSync(pathSvg, 'utf8')
+    const _$ = cheerio.load(svgStr)
 
-    let viewBox = _$('svg').attr('viewBox')
+    const viewBox = _$('svg').attr('viewBox')
     let viewBoxSize = []
     if (!viewBox) {
         const svgW = Number(
@@ -57,21 +58,21 @@ for (let i = 0; i < listOfSvgsName.length; i++) {
 
     const factorMax = 15 / dimMax
 
-    let maxSide = vBHeight < vBWidth ? 'w' : 'h'
+    const maxSide = vBHeight < vBWidth ? 'w' : 'h'
 
     const ratioMax = maxSide == 'h' ? vBWidth / vBHeight : vBHeight / vBWidth
     // le coté le plus grand sera de 15px
 
-    let outHMax = maxSide == 'h' ? 15 : 15 * ratioMax
-    let outWMax = maxSide == 'w' ? 15 : 15 * ratioMax
+    const outHMax = maxSide == 'h' ? 15 : 15 * ratioMax
+    const outWMax = maxSide == 'w' ? 15 : 15 * ratioMax
 
-    _path = _$('path')
+    const _path = _$('path')
     let newPaths = []
 
     for (let i = 0; i < _path.length; i++) {
         const _pathD = _path[i].attribs['d']
-        let path = parse(_pathD)
-        var x = scale(path, factorMax)
+        const path = parse(_pathD)
+        const x = scale(path, factorMax)
 
         const newPath = `<path d="${serialize(x)}" fill="#FFFFFF"/>`
         newPaths.push(newPath)
@@ -81,9 +82,5 @@ for (let i = 0; i < listOfSvgsName.length; i++) {
     ${newPaths.join(' ')}
     </svg>`
 
-    fs.writeFileSync(
-        path.join(iconsSVGsPath, listOfSvgsName[i]),
-        newSvg,
-        'utf8'
-    )
+    fs.writeFileSync(path.join(iconsSvgDir, listOfSvgsName[i]), newSvg, 'utf8')
 }

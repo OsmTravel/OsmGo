@@ -1,31 +1,24 @@
 /**
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
-const path = require('path')
-const fs = require('fs')
-const stringify = require('json-stringify-pretty-compact')
+import fs from 'fs'
+import stringify from 'json-stringify-pretty-compact'
+import isEqual from 'lodash/isEqual'
+import intersection from 'lodash/intersection'
+import {
+    idtsPresetsIdPath,
+    tapPresetsPath,
+    idtsTagsIdPath,
+    tapTagsPath,
+} from './_paths'
+import { TagConfig } from '@osmgo/type'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
-const _ = require('lodash')
-
-const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
-const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
-const presetsOsmgoPath = path.join(
-    assetsFolder,
-    'tagsAndPresets',
-    'presets.json'
-)
-
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const tagsIDPath = path.join(idRepoPath, 'presets.json')
-const presetsIDPath = path.join(idRepoPath, 'fields.json')
-
-const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
+const tagConfig = readTapTagsFromJson()
 const tagsOsmgo = tagConfig.tags
-const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
-
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
-
-const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8'))
+const presetsOsmgo = readTapPresetsFromJson()
+const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
+const presetsID = JSON.parse(fs.readFileSync(idtsPresetsIdPath, 'utf8'))
 
 // presets to ignore
 const excludesPresets = [
@@ -110,7 +103,7 @@ for (let t in tagsID) {
     const pk = getPk(iDid)
     if (!isPkToIgnore(pk)) {
         // insert the key without creating dulicate
-        osmgoPkeys = _.union(osmgoPkeys, [pk]);
+        osmgoPkeys = union(osmgoPkeys, [pk]);
     } 
 }
 osmgoPkeys = osmgoPkeys.sort();
@@ -166,7 +159,7 @@ for (let iDid in tagsID) {
     }
 
     //TODO rework
-    if (_.intersection(tagIDKeys, osmgoPkeys).length == 0) {
+    if (intersection(tagIDKeys, osmgoPkeys).length == 0) {
         continue
     }
 
@@ -192,8 +185,8 @@ for (let iDid in tagsID) {
                 iDFields = [...iDFields, ...newF].filter(
                     (f) => !excludesPresets.includes(f)
                 )
-                // We should use _.union(iDFields, newF) instead of doing this filter
-                // Code is more readable with _.union
+                // We should use union(iDFields, newF) instead of doing this filter
+                // Code is more readable with union
                 continue
             }
 
@@ -204,7 +197,7 @@ for (let iDid in tagsID) {
                 iDFields = [...iDFields, f].filter(
                     (f) => !excludesPresets.includes(f)
                 )
-                // Same we should use _.union(iDFields, [f]) instead of this filter
+                // Same we should use union(iDFields, [f]) instead of this filter
                 continue
             }
 
@@ -233,7 +226,7 @@ for (let iDid in tagsID) {
                 iDMoreFields = [...iDMoreFields, ...newF].filter(
                     (f) => !idTagsFieldsListId.includes(f)
                 )
-                // use _.union(iDFields, newF) instead of doing this filter
+                // use union(iDFields, newF) instead of doing this filter
                 continue
             }
 
@@ -244,7 +237,7 @@ for (let iDid in tagsID) {
                 iDMoreFields = [...iDMoreFields, f].filter(
                     (f) => !idTagsFieldsListId.includes(f)
                 )
-                // use _.union(iDFields, [f]) instead of this filter
+                // use union(iDFields, [f]) instead of this filter
                 continue
             }
 
@@ -258,10 +251,11 @@ for (let iDid in tagsID) {
     const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
 
     let currenOsmgoTag = tagsOsmgo.find((ogT) => {
-        return _.isEqual(tagiD.tags, ogT.tags)
+        return isEqual(tagiD.tags, ogT.tags)
     })
 
-    let newTag = {
+    let newTag: TagConfig = {
+        key: undefined, // TODO: @dotcs Is this a problem? Key is required in the interface.
         id: iDid,
         tags: tagiD.tags,
         icon: tagiD.icon || '',
@@ -443,5 +437,5 @@ const compareById = (a, b) => {
     return comparison
 }
 
-fs.writeFileSync(tagsOsmgoPath, stringify(tagConfig), 'utf8')
-fs.writeFileSync(presetsOsmgoPath, stringify(presetsOsmgo), 'utf8')
+fs.writeFileSync(tapTagsPath, stringify(tagConfig), 'utf8')
+fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo), 'utf8')
