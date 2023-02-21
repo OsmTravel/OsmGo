@@ -11,28 +11,30 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-    <ion-card (tap)="tap($event)">
-        <ion-card-header>OSM Go!</ion-card-header>
-        <ion-card-content>
-            {{'ABOUT.VERSION' | translate}}
-            {{configService.getAppVersion().appVersionNumber}}
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            {{'ABOUT.DATA' | translate}} {{'ABOUT.OSM_CONTRIBUTORS' |
-            translate}}
-            <!-- Ortophoto : <a href="http://openstreetmap.fr/f/2016.05.20_OSM-FR_IGN_Ortho.pdf" target="_blank">IGN</a>  -->
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            <a href="https://github.com/DoFabien/OsmGo" target="_blank"
-                >GitHub</a
-            >
-        </ion-card-content>
-    </ion-card>
+<ion-content class="ion-padding-vertical">
+    <ion-item-group>
+        <ion-item lines="none">
+            <ion-thumbnail slot="start">
+                <img alt="" src="/assets/logo.png" />
+            </ion-thumbnail>
+            <ion-label>OSM Go!</ion-label>
+        </ion-item>
+        <ion-item (tap)="tap($event)" button>
+            <ion-label>
+                <h3>{{'ABOUT.VERSION' | translate}}</h3>
+                <p>{{configService.getAppVersion().appVersionNumber}}</p>
+            </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                <h3>{{'ABOUT.DATA' | translate}}</h3>
+                <p>{{'ABOUT.OSM_CONTRIBUTORS' | translate}}</p>
+                <!-- Ortophoto : <a href="http://openstreetmap.fr/f/2016.05.20_OSM-FR_IGN_Ortho.pdf" target="_blank">IGN</a>  -->
+            </ion-label>
+        </ion-item>
+        <ion-item href="https://github.com/DoFabien/OsmGo" target="_blank">
+            <ion-icon name="logo-github" slot="start"></ion-icon>
+            <ion-label>GitHub</ion-label>
+        </ion-item>
+    </ion-item-group>
 </ion-content>
