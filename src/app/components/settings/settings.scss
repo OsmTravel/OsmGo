@@ -15,3 +15,16 @@ page-settings {
 ion-label {
     white-space: normal !important;
 }
+
+.hint {
+    font-size: 12px;
+    margin: 0px 0px 2px 0px;
+}
+ion-item {
+    div {
+        width: 100%;
+        ion-label {
+            margin: 11px 0px 0px;
+        }
+    }
+}

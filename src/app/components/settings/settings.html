@@ -11,81 +11,64 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-    <h4>{{ 'SETTINGS.MAP' | translate}}</h4>
+<ion-content class="ion-padding-bottom">
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-icon name="map" slot="start"></ion-icon>
+            <ion-label>{{ 'SETTINGS.MAP' | translate}}</ion-label>
+        </ion-item-divider>
 
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label>
-                    {{ 'SETTINGS.POSITION_TRACKING' | translate}}
-                </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.followPosition"
-                    (ionChange)="followPositionChange($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.POSITION_TRACKING_HINT' | translate}}</label
-            >
-        </ion-card-content>
-    </ion-card>
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.POSITION_TRACKING' | translate}}</h3>
+                <p>{{ 'SETTINGS.POSITION_TRACKING_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.followPosition"
+                (ionChange)="followPositionChange($event)"
+            ></ion-toggle>
+        </ion-item>
 
-    <ion-card>
-        <ion-card-header> </ion-card-header>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.ORIENTATION_TRACKING' | translate}}
-                </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.lockMapHeading"
-                    (ionChange)="lockMapHeadingChange($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.ORIENTATION_TRACKING_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.ORIENTATION_TRACKING' | translate}}</h3>
+                <p>{{ 'SETTINGS.ORIENTATION_TRACKING_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.lockMapHeading"
+                (ionChange)="lockMapHeadingChange($event)"
+            ></ion-toggle>
+        </ion-item>
 
-    <ion-card>
-        <ion-card-header> </ion-card-header>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate}}
-                </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.centerWhenGpsIsReady"
-                    (ionChange)="centerWhenGpsIsReadyChange($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate}}</h3>
+                <p>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.centerWhenGpsIsReady"
+                (ionChange)="centerWhenGpsIsReadyChange($event)"
+            ></ion-toggle>
+        </ion-item>
 
-    <ion-card>
-        <ion-card-header> </ion-card-header>
-        <ion-card-content>
-            <ion-item>
-                <ion-label>
-                    {{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate}}
-                </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.oldTagsIcon.display"
-                    (ionChange)="displayOldTagIconChange($event)"
-                ></ion-toggle>
-            </ion-item>
-
-            <ion-label
-                >{{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_1' | translate}} {{
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate}}</h3>
+                <p>{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.oldTagsIcon.display"
+                (ionChange)="displayOldTagIconChange($event)"
+            ></ion-toggle>
+        </ion-item>
+        <ion-item lines="inset">
+            <ion-label position="stacked">
+                {{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_1' | translate}} {{
                 this.configService.config.oldTagsIcon.year }} {{
                 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_2' | translate}}
             </ion-label>
             <ion-range
+                [disabled]="!this.configService.config.oldTagsIcon.display"
                 [value]="this.configService.config.oldTagsIcon.year"
                 debounce="300"
                 snaps
@@ -94,297 +77,263 @@
                 max="10"
                 step="0.5"
                 pin
+            ></ion-range>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.DISPLAY_FIXME_ICON' | translate}}</h3>
+                <p>{{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.displayFixmeIcon"
+                (ionChange)="displayFixmeIconChange($event)"
+            ></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.HIDE_LARGE_POLYGON' | translate}}</h3>
+                <p>{{ 'SETTINGS.HIDE_LARGE_POLYGON_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.filterWayByArea"
+                (ionChange)="filterWayByArea($event)"
+            ></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.HIDE_LONG_LINE' | translate}}</h3>
+                <p>{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.filterWayByLength"
+                (ionChange)="filterWayByLength($event)"
+            ></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.LINES_SELECTABLE' | translate}}</h3>
+                <p>{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.isSelectableLine"
+                (ionChange)="isSelectableLineChange($event)"
+            ></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.POLYGONS_SELECTABLE' | translate}}</h3>
+                <p>{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.isSelectablePolygon"
+                (ionChange)="isSelectablePolygonChange($event)"
+            ></ion-toggle>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-icon name="pricetags" slot="start"></ion-icon>
+            <ion-label>{{ 'SETTINGS.TAGS' | translate}}</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.ADD_SURVEY_DATE' | translate}}</h3>
+                <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.addSurveyDate"
+                (ionChange)="addSurveyDateChange($event)"
+            ></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.CHECKED_KEY' | translate}}</h3>
+            </ion-label>
+            <ion-select
+                [disabled]="!this.configService.config.addSurveyDate"
+                [value]="this.configService.config.checkedKey"
+                (ionChange)="checkedKeyChange($event)"
             >
-                <ion-label range-left>0</ion-label>
-                <ion-label range-right>10</ion-label>
-            </ion-range>
+                <ion-select-option value="survey:date">
+                    survey:date
+                </ion-select-option>
+                <ion-select-option value="check_date">
+                    check_date
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item-group>
 
-            <label class="hint"
-                >{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-icon name="library" slot="start"></ion-icon>
+            <ion-label>{{ 'SETTINGS.DATA' | translate}}</ion-label>
+        </ion-item-divider>
 
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.DISPLAY_FIXME_ICON' | translate}}</ion-label
-                >
-                <ion-toggle
-                    [checked]="this.configService.config.displayFixmeIcon"
-                    (ionChange)="displayFixmeIconChange($event)"
-                ></ion-toggle>
-            </ion-item>
-
-            <label class="hint">
-                {{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.HIDE_LARGE_POLYGON' | translate}}
-                </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.filterWayByArea"
-                    (ionChange)="filterWayByArea($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.HIDE_LARGE_POLYGON_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.HIDE_LONG_LINE' | translate}}
-                </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.filterWayByLength"
-                    (ionChange)="filterWayByLength($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate}}</label
-            >
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
+        <ion-item lines="inset">
+            <div>
                 <ion-label>
-                    {{ 'SETTINGS.LINES_SELECTABLE' | translate}}
+                    <h3>
+                        {{ 'SETTINGS.LIMIT_FEATURES' | translate}}
+                        ({{this.configService.config.limitFeatures}})
+                    </h3>
+                    <p class="hint">
+                        {{ 'SETTINGS.LIMIT_FEATURES_HINT' | translate}}
+                    </p>
                 </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.isSelectableLine"
-                    (ionChange)="isSelectableLineChange($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
+                <ion-range
+                    [value]="this.configService.config.limitFeatures"
+                    debounce="300"
+                    step="2000"
+                    snaps
+                    (ionChange)="limitFeaturesChange($event)"
+                    min="0"
+                    max="60000"
+                ></ion-range>
+            </div>
+        </ion-item>
 
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.POLYGONS_SELECTABLE' | translate}}
+        <ion-item lines="inset">
+            <div>
+                <ion-label>
+                    <h3>
+                        {{ 'SETTINGS.MARGIN' | translate}}
+                        ({{this.configService.config.mapMarginBuffer}} m)
+                    </h3>
+                    <p class="hint">{{ 'SETTINGS.MARGIN_HINT' | translate}}</p>
                 </ion-label>
-                <ion-toggle
-                    [checked]="this.configService.config.isSelectablePolygon"
-                    (ionChange)="isSelectablePolygonChange($event)"
-                ></ion-toggle>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
+                <ion-range
+                    [value]="this.configService.config.mapMarginBuffer"
+                    debounce="300"
+                    snaps
+                    (ionChange)="mapMarginBufferChange($event)"
+                    min="0"
+                    max="100"
+                ></ion-range>
+            </div>
+        </ion-item>
+    </ion-item-group>
 
-    <h4>{{ 'SETTINGS.TAGS' | translate}}</h4>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label
-                    >{{ 'SETTINGS.ADD_SURVEY_DATE' | translate}}</ion-label
-                >
-                <ion-toggle
-                    [checked]="this.configService.config.addSurveyDate"
-                    (ionChange)="addSurveyDateChange($event)"
-                ></ion-toggle>
-            </ion-item>
-
-            <label class="hint">
-                {{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label>{{ 'SETTINGS.CHECKED_KEY' | translate}}</ion-label>
-                <ion-select
-                    [value]="this.configService.config.checkedKey"
-                    (ionChange)="checkedKeyChange($event)"
-                >
-                    <ion-select-option value="survey:date">
-                        survey:date
-                    </ion-select-option>
-                    <ion-select-option value="check_date">
-                        check_date
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
-        </ion-card-content>
-    </ion-card>
-
-    <h4>{{ 'SETTINGS.DATA' | translate}}</h4>
-    <ion-card>
-        <ion-card-header>
-            {{ 'SETTINGS.LIMIT_FEATURES' | translate}}
-            ({{this.configService.config.limitFeatures}})
-        </ion-card-header>
-        <ion-card-content>
-            <ion-range
-                [value]="this.configService.config.limitFeatures"
-                debounce="300"
-                step="2000"
-                snaps
-                (ionChange)="limitFeaturesChange($event)"
-                min="0"
-                max="60000"
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-icon name="language" slot="start"></ion-icon>
+            <ion-label
+                >{{ 'SETTINGS.LANGUAGE_AND_REGION' | translate}}</ion-label
             >
-                <ion-label range-left>0</ion-label>
-                <ion-label range-right>60000</ion-label>
-            </ion-range>
-            <label class="hint"
-                >{{ 'SETTINGS.LIMIT_FEATURES_HINT' | translate}}</label
+        </ion-item-divider>
+
+        <ion-item
+            *ngIf="this.configService.config.languageUi && this.configService.i18nConfig"
+            lines="inset"
+        >
+            <ion-label>{{ 'SETTINGS.UI_LANGUAGE' | translate}}</ion-label>
+            <ion-select
+                [value]="this.configService.config.languageUi"
+                (ionChange)="languageUiChange($event)"
             >
-        </ion-card-content>
-    </ion-card>
+                <ion-select-option
+                    *ngFor="let lang of this.configService.i18nConfig.language"
+                    [value]="lang.code"
+                >
+                    {{lang.nativeName}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
 
-    <ion-card>
-        <ion-card-header>
-            {{ 'SETTINGS.MARGIN' | translate}}
-            ({{this.configService.config.mapMarginBuffer}} m)
-        </ion-card-header>
-        <ion-card-content>
-            <ion-range
-                [value]="this.configService.config.mapMarginBuffer"
-                debounce="300"
-                snaps
-                (ionChange)="mapMarginBufferChange($event)"
-                min="0"
-                max="100"
+        <ion-item
+            *ngIf="this.configService.config.languageTags && this.configService.i18nConfig"
+            lines="inset"
+        >
+            <ion-label>{{'SETTINGS.TAG_LANGUAGE' | translate }}</ion-label>
+            <ion-select
+                [value]="this.configService.config.languageTags"
+                (ionChange)="languageTagsChange($event)"
             >
-                <ion-label range-left>0m</ion-label>
-                <ion-label range-right>100m</ion-label>
-            </ion-range>
-            <label class="hint">{{ 'SETTINGS.MARGIN_HINT' | translate}}</label>
-        </ion-card-content>
-    </ion-card>
-
-    <h4>{{ 'SETTINGS.LANGUAGE_AND_REGION' | translate}}</h4>
-
-    <ion-card
-        *ngIf="this.configService.config.languageUi && this.configService.i18nConfig"
-    >
-        <ion-card-content>
-            <ion-item>
-                <ion-label>{{ 'SETTINGS.UI_LANGUAGE' | translate}}</ion-label>
-                <ion-select
-                    [value]="this.configService.config.languageUi"
-                    (ionChange)="languageUiChange($event)"
+                <ion-select-option
+                    *ngFor="let lang of this.configService.i18nConfig.language"
+                    [value]="lang.code"
                 >
-                    <ion-select-option
-                        *ngFor="let lang of this.configService.i18nConfig.language"
-                        [value]="lang.code"
-                    >
-                        {{lang.nativeName}}
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
-        </ion-card-content>
-    </ion-card>
+                    {{lang.nativeName}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
 
-    <ion-card
-        *ngIf="this.configService.config.languageTags && this.configService.i18nConfig"
-    >
-        <ion-card-content>
-            <ion-item>
-                <ion-label>{{'SETTINGS.TAG_LANGUAGE' | translate }}</ion-label>
-                <ion-select
-                    [value]="this.configService.config.languageTags"
-                    (ionChange)="languageTagsChange($event)"
-                >
-                    <ion-select-option
-                        *ngFor="let lang of this.configService.i18nConfig.language"
-                        [value]="lang.code"
-                    >
-                        {{lang.nativeName}}
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-label>{{'SETTINGS.TAG_COUNTRY' | translate }}</ion-label>
-                <ion-select
-                    [value]="this.configService.config.countryTags"
-                    (ionChange)="countryTagsChange($event)"
-                >
-                    <ion-select-option
-                        *ngFor="let country of this.configService.countryConfig"
-                        [value]="country.code"
-                    >
-                        {{country.name}}
-                    </ion-select-option>
-                </ion-select>
-            </ion-item>
-            <label class="hint"
-                >{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</label
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{'SETTINGS.TAG_COUNTRY' | translate }}</h3>
+                <p>{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</p>
+            </ion-label>
+            <ion-select
+                [value]="this.configService.config.countryTags"
+                [interfaceOptions]="countryTagsOptions"
+                (ionChange)="countryTagsChange($event)"
             >
-        </ion-card-content>
-    </ion-card>
-
-    <h4>{{ 'SETTINGS.CACHE' | translate}}</h4>
-
-    <ion-card>
-        <ion-card-content>
-            <ion-item>
-                <ion-button (click)="deleteCache()" color="danger"
-                    >{{ 'SETTINGS.DELETE_CACHE' | translate}}</ion-button
+                <ion-select-option
+                    *ngFor="let country of this.configService.countryConfig"
+                    [value]="country.code"
                 >
-            </ion-item>
-            <label class="hint">
-                {{ 'SETTINGS.DELETE_CACHE_HINT' | translate}}
-            </label>
-        </ion-card-content>
-    </ion-card>
+                    {{country.name}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-item-group>
 
-    <div *ngIf="this.configService.config.isDevMode">
-        <h4>Developer mode</h4>
-        <ion-card>
-            <ion-card-content>
-                <ion-item>
-                    <ion-label>Use the OSM development server</ion-label>
-                    <ion-toggle
-                        [checked]="this.configService.config.isDevServer"
-                        (ionChange)="changeIsDevServer($event['detail']['checked'])"
-                    ></ion-toggle>
-                </ion-item>
-                <label class="hint">
+    <ion-item-group>
+        <ion-item-divider>
+            <ion-icon name="file-tray" slot="start"></ion-icon>
+            <ion-label>{{ 'SETTINGS.CACHE' | translate}}</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.DELETE_CACHE' | translate}}</h3>
+                <p>{{ 'SETTINGS.DELETE_CACHE_HINT' | translate}}</p>
+            </ion-label>
+            <ion-button
+                color="danger"
+                shape="round"
+                (click)="deleteCache()"
+                size="big"
+            >
+                <ion-icon slot="icon-only" name="trash"> </ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-item-group *ngIf="this.configService.config.isDevMode">
+        <ion-item-divider>
+            <ion-icon name="bug" slot="start"></ion-icon>
+            <ion-label>Developer mode</ion-label>
+        </ion-item-divider>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>Use the OSM development server</h3>
+                <p>
                     After this change, the application will be restarted and the
                     data will be cleared
-                </label>
-            </ion-card-content>
-        </ion-card>
+                </p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.isDevServer"
+                (ionChange)="changeIsDevServer($event['detail']['checked'])"
+            ></ion-toggle>
+        </ion-item>
 
-        <ion-card>
-            <ion-card-content>
-                <ion-item>
-                    <ion-label>Disable Developer mode</ion-label>
-                    <ion-toggle
-                        [checked]="this.configService.config.isDevMode"
-                        (ionChange)="disableDevMode($event)"
-                    ></ion-toggle>
-                </ion-item>
-            </ion-card-content>
-        </ion-card>
-    </div>
+        <ion-item lines="inset">
+            <ion-label>Disable Developer mode</ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.isDevMode"
+                (ionChange)="disableDevMode($event)"
+            ></ion-toggle>
+        </ion-item>
+    </ion-item-group>
 </ion-content>
