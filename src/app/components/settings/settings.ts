@@ -130,6 +130,10 @@ export class SettingsPage {
     languageUiChange(e) {
         const newLlang = e.detail.value
         this.configService.setUiLanguage(newLlang)
+        this.countryTagsOptions = {
+            header: this.translate.instant('SETTINGS.TAG_COUNTRY'),
+            subHeader: this.translate.instant('SETTINGS.TAG_COUNTRY_HINT'),
+        }
     }
 
     languageTagsChange(e) {
