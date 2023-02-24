@@ -25,13 +25,14 @@ import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import { SettingsPage } from '@components/settings/settings'
 
 import { ReadMeta } from '@components/modal/components/read/Meta.component'
-import { ReadPrimaryKey } from '@components/modal/components/read/PrimaryKey.component'
+import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
+
 import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
 import { ReadPresets } from '@components/modal/components/read/Presets.component'
 
 import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
 import { EditPresets } from '@components/modal/components/edit/Presets.component'
-import { EditPrimaryKey } from '@components/modal/components/edit/PrimaryKey.component'
+
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { IconComponent } from '@components/icon/icon.component'
 
@@ -101,16 +102,16 @@ export function createTranslateLoader(http: HttpClient) {
         SettingsPage,
         DialogMultiFeaturesComponent,
         ReadMeta,
-        ReadPrimaryKey,
         ReadOtherTag,
         ReadPresets,
         EditOtherTag,
         EditPresets,
-        EditPrimaryKey,
         AlertComponent,
         IconComponent,
         SelectComponent,
         ModalAddOpeningHoursIntervalComponent,
+
+        PrimaryKey,
 
         DisplayPresetLabelPipe,
         OpeningHoursComponent,

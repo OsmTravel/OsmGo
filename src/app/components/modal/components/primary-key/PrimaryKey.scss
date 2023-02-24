@@ -1,0 +1,51 @@
+div.primary-key {
+    display: flex;
+    min-height: 65px;
+
+    .icon {
+        width: 50px;
+        min-width: 50px;
+        position: relative;
+        app-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    ion-card-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 8px;
+        padding-right: 0px;
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: bolder;
+        }
+
+        p.description {
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+        p.code {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+    }
+
+    .actions {
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ion-icon {
+            width: 2em;
+            height: 2em;
+        }
+    }
+}

@@ -35,16 +35,13 @@
             </app-alert>
 
             <!--Primary Key-->
-            <read-primary-key
+            <primary-key
                 [displayCode]="displayCode"
-                [tagsConfig]="tagsService.tags"
-                [feature]="feature"
                 [language]="configService.config.languageTags"
                 [tagConfig]="tagConfig"
-                [primaryKeys]="tagsService.primaryKeys"
                 [jsonSprites]="tagsService.jsonSprites"
             >
-            </read-primary-key>
+            </primary-key>
 
             <!--Les presets-->
             <div
@@ -141,21 +138,6 @@
             <div class="actions">
                 <ion-fab>
                     <ion-fab-button
-                        color="light"
-                        size="small"
-                        (click)="addOrRemoveBookmark(tagConfig)"
-                    >
-                        <ion-icon
-                            [style.color]=" (tagConfig | isBookmarked:tagsService.bookmarksIds) ? '#f71000' : '#d8d8d8'"
-                            name="heart"
-                            item-left
-                            style="font-size: 26px"
-                        ></ion-icon>
-                    </ion-fab-button>
-                </ion-fab>
-
-                <ion-fab style="margin-left: 45px">
-                    <ion-fab-button
                         size="small"
                         (click)="saveFields(tagId, tags)"
                     >
@@ -163,7 +145,7 @@
                     </ion-fab-button>
                 </ion-fab>
 
-                <ion-fab style="margin-left: 90px" *ngIf="savedFields">
+                <ion-fab style="margin-left: 45px" *ngIf="savedFields">
                     <ion-fab-button
                         size="small"
                         (click)="restoreFields(tagId, tags)"
@@ -190,17 +172,17 @@
             </app-alert>
 
             <!--Primary key-->
-            <edit-primary-key
+            <primary-key
                 [displayCode]="displayCode"
-                [primaryKey]="primaryKey"
-                [tagsConfig]="tagsService.tags"
-                [feature]="feature"
                 [language]="configService.config.languageTags"
                 [tagConfig]="tagConfig"
                 [jsonSprites]="tagsService.jsonSprites"
+                [isEditMode]="true"
+                [isBookmarked]="tagConfig | isBookmarked:tagsService.bookmarksIds"
                 (openPrimaryTagModal)="openPrimaryTagModal()"
+                (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
             >
-            </edit-primary-key>
+            </primary-key>
 
             <!--Les presets-->
             <!--Le reste des tags-->
