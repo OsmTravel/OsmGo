@@ -3,8 +3,8 @@ import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
 
 @Component({
     selector: 'edit-primary-key',
-    styleUrls: ['./style.scss'],
-    templateUrl: 'EDIT_PrimaryKey.component.html',
+    styleUrls: ['../style.scss'],
+    templateUrl: 'PrimaryKey.component.html',
 })
 export class EditPrimaryKey {
     @Output() openPrimaryTagModal = new EventEmitter()

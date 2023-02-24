@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
 
 @Component({
     selector: 'edit-other-tag',
-    styleUrls: ['./style.scss'],
+    styleUrls: ['../style.scss'],
     template: `
         <ion-card>
             <ion-card-header>

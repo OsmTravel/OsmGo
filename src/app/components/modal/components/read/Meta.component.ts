@@ -3,7 +3,7 @@ import * as moment from 'moment'
 
 @Component({
     selector: 'read-meta',
-    templateUrl: './READ_Meta.component.html',
+    templateUrl: './Meta.component.html',
 })
 export class ReadMeta {
     @Input() feature

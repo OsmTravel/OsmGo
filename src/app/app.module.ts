@@ -24,14 +24,14 @@ import { ModalSelectList } from '@components/modal/modalSelectList/modalSelectLi
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import { SettingsPage } from '@components/settings/settings'
 
-import { ReadMeta } from '@components/modal/components/READ_Meta.component'
-import { ReadPrimaryKey } from '@components/modal/components/READ_PrimaryKey.component'
-import { ReadOtherTag } from '@components/modal/components/READ_OtherTag.component'
-import { ReadPresets } from '@components/modal/components/READ_Presets.component'
+import { ReadMeta } from '@components/modal/components/read/Meta.component'
+import { ReadPrimaryKey } from '@components/modal/components/read/PrimaryKey.component'
+import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
+import { ReadPresets } from '@components/modal/components/read/Presets.component'
 
-import { EditOtherTag } from '@components/modal/components/EDIT_OtherTag.component'
-import { EditPresets } from '@components/modal/components/EDIT_Presets.component'
-import { EditPrimaryKey } from '@components/modal/components/EDIT_PrimaryKey.component'
+import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
+import { EditPresets } from '@components/modal/components/edit/Presets.component'
+import { EditPrimaryKey } from '@components/modal/components/edit/PrimaryKey.component'
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { IconComponent } from '@components/icon/icon.component'
 

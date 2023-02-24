@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core'
 
 @Component({
     selector: 'read-primary-key',
-    styleUrls: ['./style.scss'],
-    templateUrl: 'READ_PrimaryKey.component.html',
+    styleUrls: ['../style.scss'],
+    templateUrl: 'PrimaryKey.component.html',
 })
 export class ReadPrimaryKey {
     @Input() displayCode
