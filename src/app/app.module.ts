@@ -24,7 +24,7 @@ import { ModalSelectList } from '@components/modal/modalSelectList/modalSelectLi
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import { SettingsPage } from '@components/settings/settings'
 
-import { ReadMeta } from '@components/modal/components/read/Meta.component'
+import { MetaCard } from '@app/components/modal/components/meta-card/MetaCard'
 import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
 
 import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
@@ -101,7 +101,6 @@ export function createTranslateLoader(http: HttpClient) {
         PushDataToOsmPage,
         SettingsPage,
         DialogMultiFeaturesComponent,
-        ReadMeta,
         ReadOtherTag,
         ReadPresets,
         EditOtherTag,
@@ -111,6 +110,7 @@ export function createTranslateLoader(http: HttpClient) {
         SelectComponent,
         ModalAddOpeningHoursIntervalComponent,
 
+        MetaCard,
         PrimaryKey,
 
         DisplayPresetLabelPipe,

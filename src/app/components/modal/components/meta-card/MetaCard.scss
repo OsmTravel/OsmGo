@@ -1,0 +1,23 @@
+ion-card-content {
+    display: flex;
+    align-items: center;
+
+    .meta-card {
+        flex-grow: 1;
+
+        .warning {
+            color: orange;
+            font-weight: bold;
+        }
+    }
+
+    ion-fab-button.confirmPresence {
+        --background: #ffffff;
+        --color: #222222;
+
+        &.confirmed {
+            --background: #22c25f;
+            --color: #ffffff;
+        }
+    }
+}

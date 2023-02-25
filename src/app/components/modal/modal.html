@@ -18,13 +18,15 @@
             </ion-toolbar>
         </ion-header>
         <div class="content">
-            <read-meta
+            <meta-card
                 *ngIf="feature.properties.meta"
                 [feature]="feature"
                 [displayCode]="displayCode"
                 [languageUi]="configService.getUiLanguage()"
+                [mapService]="mapService"
+                (confirmPresence)="confirmAddSurveyDate()"
             >
-            </read-meta>
+            </meta-card>
 
             <app-alert
                 [tagConfig]="tagConfig"
@@ -104,16 +106,6 @@
                 <ion-icon name="close"> </ion-icon>
                 <ion-icon name="create"> </ion-icon>
             </ion-fab-button>
-
-            <ion-fab-button
-                *ngIf="!feature.properties['changeType']"
-                [disabled]="mapService.isProcessing | async"
-                color="secondary"
-                (click)="confirmAddSurveyDate()"
-                class="fabInlineMarginLess fabSurveyDate"
-            >
-                <ion-icon name="checkmark-circle-outline"></ion-icon>
-            </ion-fab-button>
         </ion-footer>
     </div>
 
@@ -155,13 +147,6 @@
                 </ion-fab>
             </div>
 
-            <read-meta
-                *ngIf="feature.properties.meta"
-                [feature]="feature"
-                [displayCode]="displayCode"
-                [languageUi]="configService.getUiLanguage()"
-            >
-            </read-meta>
             <!--Alert-->
             <app-alert
                 [tagConfig]="tagConfig"
