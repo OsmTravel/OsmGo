@@ -7,7 +7,7 @@
     </ion-fab>
 
     <!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
-    <div *ngSwitchCase="'Read'" style="height: 100%">
+    <div *ngSwitchCase="'Read'" class="modal-content">
         <ion-header>
             <ion-toolbar>
                 <ion-title>
@@ -81,36 +81,43 @@
         </div>
 
         <ion-footer>
-            <ion-fab-button
-                *ngIf="typeFiche==='Read'"
-                (click)="dismiss()"
-                class="fabInlineMarginLess"
-            >
-                <ion-icon name="close"> </ion-icon>
-            </ion-fab-button>
-
-            <ion-fab-button
-                (click)="updateMode()"
-                class="fabInlineMarginLess"
-                [disabled]="mapService.isProcessing | async"
-            >
-                <ion-icon name="create"> </ion-icon>
-            </ion-fab-button>
-            <ion-fab-button
-                (click)="cancelChange()"
-                color="danger"
+            <div
                 *ngIf="feature.properties['changeType']"
-                [disabled]="mapService.isProcessing | async"
-                class="fabInlineMarginLess"
+                class="modifiedWarning"
             >
-                <ion-icon name="close"> </ion-icon>
-                <ion-icon name="create"> </ion-icon>
-            </ion-fab-button>
+                <ion-icon name="warning"></ion-icon>
+                <span>This node has unsynced changes</span>
+                <div class="spacer"></div>
+                <ion-button
+                    (click)="cancelChange()"
+                    color="danger"
+                    [disabled]="mapService.isProcessing | async"
+                >
+                    <ion-icon name="reload" slot="start"></ion-icon>
+                    Clean
+                </ion-button>
+            </div>
+
+            <div class="actions">
+                <div class="left section">
+                    <ion-button *ngIf="typeFiche==='Read'" (click)="dismiss()">
+                        <ion-icon name="close"></ion-icon>
+                    </ion-button>
+                </div>
+                <div class="right section">
+                    <ion-button
+                        (click)="updateMode()"
+                        [disabled]="mapService.isProcessing | async"
+                    >
+                        <ion-icon name="pencil"></ion-icon>
+                    </ion-button>
+                </div>
+            </div>
         </ion-footer>
     </div>
 
     <!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
-    <div *ngSwitchCase="'Edit'" style="height: 100%">
+    <div *ngSwitchCase="'Edit'" class="modal-content">
         <ion-header>
             <ion-toolbar>
                 <ion-title>
@@ -127,7 +134,7 @@
         </ion-header>
 
         <div class="content">
-            <div class="actions">
+            <div class="top-actions">
                 <ion-fab>
                     <ion-fab-button
                         size="small"
@@ -193,15 +200,16 @@
             </div>
 
             <!--Nouveaux tag-->
-            <ion-fab-button
+            <ion-button
                 tappable
                 color="secondary"
                 *ngIf="!displayAddTag"
                 (click)="displayAddTag = true"
-                style="margin: 5px"
+                style="margin: 5px 10px 10px"
+                expand="block"
             >
                 <ion-icon name="add"> </ion-icon>
-            </ion-fab-button>
+            </ion-button>
 
             <div *ngIf="displayAddTag">
                 <ion-card>
@@ -232,75 +240,75 @@
         </div>
 
         <ion-footer>
-            <ion-fab-button
-                tappable
-                (click)="dismiss()"
-                class="fabInlineMarginLess"
-            >
-                <ion-icon name="close"> </ion-icon>
-            </ion-fab-button>
-
-            <ion-fab-button
-                tappable
-                color="secondary"
-                *ngIf="mode =='Update'"
-                [disabled]="mapService.isProcessing | async"
-                (click)="updateOsmElement(tagConfig)"
-                class="fabInlineMarginLess"
-                style="margin-right: 15px"
-            >
-                <ion-icon name="checkmark"> </ion-icon>
-            </ion-fab-button>
-
-            <ion-fab-button
-                tappable
-                color="secondary"
-                *ngIf="mode =='Create'"
-                [disabled]="mapService.isProcessing | async"
-                (click)="createOsmElement(tagConfig)"
-                class="fabInlineMarginLess"
-            >
-                <ion-icon name="checkmark"> </ion-icon>
-            </ion-fab-button>
-
-            <ion-fab-button
-                tappable
-                *ngIf="feature.properties.type === 'node'"
-                [disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
-                (click)="moveOsmElement()"
-                class="fabInlineMarginLess"
-            >
-                <ion-icon name="move"> </ion-icon>
-            </ion-fab-button>
-
-            <ion-fab-button
-                tappable
-                color="danger"
+            <div
                 *ngIf="feature.properties['changeType']"
-                class="fabInlineMarginLess"
-                [disabled]="(mapService.isProcessing | async)"
-                (click)="cancelChange()"
+                class="modifiedWarning"
             >
-                <ion-icon name="close"> </ion-icon>
-                <ion-icon name="create"> </ion-icon>
-            </ion-fab-button>
+                <ion-icon name="warning"></ion-icon>
+                <span>This node has unsynced changes</span>
+                <div class="spacer"></div>
+                <ion-button
+                    (click)="cancelChange()"
+                    color="danger"
+                    [disabled]="mapService.isProcessing | async"
+                >
+                    <ion-icon name="reload" slot="start"></ion-icon>
+                    Clean
+                </ion-button>
+            </div>
 
-            <ion-fab-button
-                tappable
-                ion-fab
-                right
-                color="danger"
-                *ngIf="feature.properties.type == 'node' && mode=='Update'"
-                [disabled]="(mapService.isProcessing | async)"
-                (click)="presentConfirm()"
-                class="fabInlineMarginLess"
-            >
-                <ion-icon name="trash"> </ion-icon>
-            </ion-fab-button>
+            <div class="actions">
+                <div class="left section">
+                    <ion-button tappable (click)="dismiss()">
+                        <ion-icon name="close"></ion-icon>
+                    </ion-button>
+                </div>
+                <div class="middle section">
+                    <ion-button
+                        tappable
+                        *ngIf="feature.properties.type === 'node'"
+                        [disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
+                        (click)="moveOsmElement()"
+                    >
+                        <ion-icon name="move"></ion-icon>
+                    </ion-button>
+
+                    <ion-button
+                        tappable
+                        color="danger"
+                        *ngIf="feature.properties.type == 'node' && mode=='Update'"
+                        [disabled]="(mapService.isProcessing | async)"
+                        (click)="presentConfirm()"
+                    >
+                        <ion-icon name="trash"></ion-icon>
+                    </ion-button>
+                </div>
+                <div class="right section">
+                    <ion-button
+                        tappable
+                        color="secondary"
+                        *ngIf="mode =='Update'"
+                        [disabled]="mapService.isProcessing | async"
+                        (click)="updateOsmElement(tagConfig)"
+                    >
+                        <ion-icon name="checkmark"></ion-icon>
+                    </ion-button>
+
+                    <ion-button
+                        tappable
+                        color="secondary"
+                        *ngIf="mode =='Create'"
+                        [disabled]="mapService.isProcessing | async"
+                        (click)="createOsmElement(tagConfig)"
+                    >
+                        <ion-icon name="checkmark"></ion-icon>
+                    </ion-button>
+                </div>
+            </div>
         </ion-footer>
     </div>
     <!--EOF *ngSwitchCase="'Update'"-->
-    <div *ngSwitchCase="'Loading'" style="height: 100%">
+    <div *ngSwitchCase="'Loading'" class="modal-content">
         <ion-header>
             <ion-toolbar>
                 <ion-title> Loading... </ion-title>

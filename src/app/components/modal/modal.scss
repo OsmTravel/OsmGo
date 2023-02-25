@@ -1,5 +1,9 @@
-$headerHeight: 56px;
-$footerHeight: 60px;
+.modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
 .toogleCodeButton {
     position: absolute;
@@ -16,48 +20,57 @@ $footerHeight: 60px;
 }
 
 ion-header {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: $headerHeight;
     background-color: white;
 }
 ion-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: $footerHeight;
     background-color: white;
+
+    .modifiedWarning {
+        background-color: rgb(255, 173, 50);
+        padding: 4px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .actions {
+        padding: 0px 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 'left middle right';
+
+        .left {
+            grid-area: left;
+            justify-self: start;
+        }
+        .middle {
+            grid-area: middle;
+            justify-self: center;
+        }
+        .right {
+            grid-area: right;
+            justify-self: end;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+    }
+
+    .spacer {
+        flex-grow: 1;
+    }
 }
 .content {
-    position: absolute;
-    bottom: $footerHeight;
-    overflow: auto;
-    top: $headerHeight;
-    width: 100%;
+    overflow: auto scroll;
     background-color: white;
+    flex-grow: 1;
 }
 
-.fabInlineMarginLess {
-    margin-left: 4px !important;
-    margin-top: 2px !important;
-    float: left;
-}
-
-.fabSurveyDate {
-    position: absolute;
-    right: 4px;
-}
-
-.fabToogleCode {
-    bottom: -25px;
-}
-
-.actions {
+.top-actions {
     position: relative;
     min-height: 40px;
     width: 100%;
-}
-.actionsFabButton {
-    position: relative;
 }
