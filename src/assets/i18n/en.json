@@ -12,7 +12,12 @@
         "NAME": "Name",
         "ID": "Id",
         "CLOSE": "Close",
-        "LOADING": "Loading…"
+        "LOADING": "Loading…",
+        "CREATE": "Create",
+        "EDIT": "Edit",
+        "SAVE": "Save",
+        "DELETE": "Delete",
+        "CLEAR": "Clear"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Are you sure?",
@@ -149,7 +154,8 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way(s)",
         "UNDEFINED_VALUE": "Unknown",
         "LAST_TAG_USED": "Last used tags",
-        "BOOKMARKS": "Bookmarks"
+        "BOOKMARKS": "Bookmarks",
+        "WARN_NODE_EDITED": "This node has unsynced changes"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "This tag is deprecated",
