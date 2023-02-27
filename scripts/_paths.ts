@@ -31,9 +31,3 @@ export const tapTagsPath = path.join(tapDir, 'tags.json')
 export const tapPresetsPath = path.join(tapDir, 'presets.json')
 /** Path to the basemap JSON file within tags and presets. */
 export const tapBasemapPath = path.join(tapDir, 'basemap.json')
-
-// name-suggestion-index project paths
-/** Root directory of the external name-suggestion-index project. */
-export const nsiDir = path.join(parentDir, 'name-suggestion-index')
-/** Path to the external name-suggestion-index project's brands directory. */
-export const nsiBrandsDir = path.join(nsiDir, 'brands')
