@@ -9,7 +9,7 @@
 const path = require('path')
 const fs = require('fs')
 const stringify = require('json-stringify-pretty-compact')
-const rp = require('request-promise')
+const got = require('got')
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
@@ -25,9 +25,7 @@ const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
 const getOptionsFromTagInfo = async (key, nb = 30) => {
     const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&rp=${nb}&sortname=count&sortorder=desc`
 
-    const rep = await rp(url)
-    // console.log
-    const data = JSON.parse(rep).data
+    const data = (await got(url).json()).data
     if (!data) {
         return null
     }

@@ -1,4 +1,4 @@
-const rp = require('request-promise')
+const got = require('got')
 const path = require('path')
 const fs = require('fs-extra')
 const stringify = require('json-stringify-pretty-compact')
@@ -62,10 +62,9 @@ const importBrandsToPresetsConfig = (presets, id, options) => {
     return presets // it's mutable...
 }
 const run = async () => {
-    const brandsResponse = await rp(
+    const brandsData = await got(
         'https://cdn.jsdelivr.net/npm/name-suggestion-index@6.0/dist/presets/nsi-id-presets.json'
-    )
-    const brandsData = JSON.parse(brandsResponse)
+    ).json()
 
     for (let tagConfig of tags) {
         const pkey = Object.keys(tagConfig.tags)[0]

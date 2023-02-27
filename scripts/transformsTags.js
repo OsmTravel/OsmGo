@@ -1,7 +1,6 @@
 const path = require('path')
 const fs = require('fs-extra')
 const stringify = require('json-stringify-pretty-compact')
-const rp = require('request-promise')
 
 const assetsFolder = path.join(__dirname, '..', 'src', 'assets')
 const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')

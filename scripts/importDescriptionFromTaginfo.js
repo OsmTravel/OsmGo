@@ -1,4 +1,4 @@
-const rp = require('request-promise')
+const got = require('got')
 const fs = require('fs-extra')
 const path = require('path')
 const stringify = require('json-stringify-pretty-compact')
@@ -65,19 +65,16 @@ const tagsOsmgoPath = path.join(assetsFolder, 'tagsAndPresets', 'tags.json')
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 
 const getStatsByKey = async (key, language) => {
-    var options = {
-        uri: `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`,
-        json: true, // Automatically parses the JSON string in the response
-    }
+    var uri = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`
 
-    console.log('Call: ' + options.uri)
+    console.log('Call: ' + uri)
     let res
     try {
-        res = await rp(options)
+        res = await got(uri).json()
     } catch (e) {
         console.error(e)
-        console.log('Retry call: ' + options.uri)
-        res = await rp(options)
+        console.log('Retry call: ' + uri)
+        res = await got(uri).json()
     }
     console.log('Called')
 
