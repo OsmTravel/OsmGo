@@ -32,16 +32,6 @@ export const tapPresetsPath = path.join(tapDir, 'presets.json')
 /** Path to the basemap JSON file within tags and presets. */
 export const tapBasemapPath = path.join(tapDir, 'basemap.json')
 
-// id-tagging-schema project paths
-/** Path to the external id-tagging-schema project's distribution folder. */
-export const idtsDistDir = path.join(parentDir, 'id-tagging-schema', 'dist')
-/** Path to the external id-tagging-schema project's presets JSON file. */
-export const idtsTagsIdPath = path.join(idtsDistDir, 'presets.json')
-/** Path to the external id-tagging-schema project's fields JSON file. */
-export const idtsPresetsIdPath = path.join(idtsDistDir, 'fields.json')
-/** Path to the external id-tagging-schema project's translations directory. */
-export const idtsTranslationsDir = path.join(idtsDistDir, 'translations')
-
 // name-suggestion-index project paths
 /** Root directory of the external name-suggestion-index project. */
 export const nsiDir = path.join(parentDir, 'name-suggestion-index')

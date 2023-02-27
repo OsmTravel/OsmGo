@@ -5,7 +5,7 @@ import path from 'path'
 import fs from 'fs'
 import chalk from 'chalk'
 import stringify from 'json-stringify-pretty-compact'
-import { assetsDir, idtsTagsIdPath, tapTagsPath } from './_paths'
+import { assetsDir, tapTagsPath } from './_paths'
 import { readTapTagsFromJson } from './_utils'
 
 // OsmGo tags
@@ -18,7 +18,7 @@ const sprites = JSON.parse(fs.readFileSync(spritesPath, 'utf8'))
 const supportedIcons = Object.keys(sprites)
 
 // id-tagging-schema
-const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
+const tagsID = require('@openstreetmap/id-tagging-schema/dist/presets.json')
 
 // tagsToIgnore because OsmGo icon is better than id icon
 const tagsToIgnore: string[] = [
