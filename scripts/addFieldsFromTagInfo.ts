@@ -9,7 +9,7 @@
 import { PresetOption } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import rp from 'request-promise'
+import got from 'got'
 import { tapPresetsPath } from './_paths'
 import { readTapPresetsFromJson } from './_utils'
 
@@ -37,8 +37,7 @@ const getOptionsFromTagInfo = async (
     /** E.g., https://taginfo.openstreetmap.org/api/4/key/values?key=building&rp=10&sortname=count&sortorder=desc */
     const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&rp=${nb}&sortname=count&sortorder=desc`
 
-    const rep = await rp(url)
-    const ret: OsmApiResponse = JSON.parse(rep)
+    const ret: OsmApiResponse = await got(url).json()
     // console.log
     const data = ret.data
     if (!data) {
