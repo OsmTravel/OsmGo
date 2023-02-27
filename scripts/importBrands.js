@@ -11,36 +11,28 @@ const tagsConfig = JSON.parse(fs.readFileSync(tagsConfigPath, 'utf8'))
 const tags = tagsConfig.tags
 const presets = JSON.parse(fs.readFileSync(presetsPath, 'utf8'))
 
-const formatBrandsNS = (brandsData, brandPath) => {
+const nsiPresetsUrl =
+    'https://cdn.jsdelivr.net/npm/name-suggestion-index@6.0/dist/presets/nsi-id-presets.json'
+
+const formatBrandsNS = (brandsData) => {
     let result = []
-    for (let k in brandsData.presets) {
-        if (!k.startsWith(brandPath)) continue
-        const lbl = brandsData.presets[k].name
-        const v = brandsData.presets[k].addTags.brand
-        const id = k.split('/')[-1]
+    brandsData.forEach((v) => {
+        const lbl = brandsData.name
+        const brand = brandsData.addTags.brand
         const newObWithLbl = {
-            id: id,
-            v: v,
+            v: brand,
             lbl: { en: lbl },
-            ...brandsData.presets[k],
+            ...v,
         }
         result.push(newObWithLbl)
         // console.log(newObWithLbl);
-    }
+    })
     return result
 }
 
 const importBrandsToPresetsConfig = (presets, id, options) => {
     // amenity#fast_food#brand
-    const keep = [
-        'v',
-        'lbl',
-        'countryCodes',
-        'tags',
-        'addTags',
-        'imageURL',
-        'id',
-    ]
+    const keep = ['v', 'lbl', 'countryCodes', 'tags', 'addTags']
 
     options = options.map((o) => {
         for (let k in o) {
@@ -61,25 +53,42 @@ const importBrandsToPresetsConfig = (presets, id, options) => {
     presets[id] = presetContent
     return presets // it's mutable...
 }
+
+const parseNsiPresets = (data) => {
+    let result = {}
+    for (let k in data.presets) {
+        let k_parts = k.split('/')
+        const id = k_parts.pop()
+        const pkey = k_parts.join('/')
+        if (!result[pkey]) result[pkey] = []
+        data.presets[k].id = id
+        result[pkey].push(data.presets[k])
+    }
+    return result
+}
+
 const run = async () => {
-    const brandsData = await got(
-        'https://cdn.jsdelivr.net/npm/name-suggestion-index@6.0/dist/presets/nsi-id-presets.json'
-    ).json()
+    const brandsDataRaw = await got(nsiPresetsUrl).json()
+    const brandsData = parseNsiPresets(brandsDataRaw)
 
     for (let tagConfig of tags) {
         const pkey = Object.keys(tagConfig.tags)[0]
 
         if (Object.keys(tagConfig.tags).length == 1 && tagConfig.tags[pkey]) {
             const value = tagConfig.tags[pkey]
-            const brandOptions = formatBrandsNS(brandsData, `${pkey}/${value}`)
-            if (brandOptions.length == 0) continue
-            const id = `${pkey}#${value}#brand`
-            importBrandsToPresetsConfig(presets, id, brandOptions)
+            if (brandsData[`${pkey}/${value}`]) {
+                const brandOptions = formatBrandsNS(
+                    brandsData[`${pkey}/${value}`]
+                )
+                if (brandOptions.length == 0) continue
+                const id = `${pkey}#${value}#brand`
+                importBrandsToPresetsConfig(presets, id, brandOptions)
 
-            tagConfig.presets = tagConfig.presets.filter(
-                (p) => !/brand/.test(p)
-            )
-            tagConfig.presets = [id, ...tagConfig.presets]
+                tagConfig.presets = tagConfig.presets.filter(
+                    (p) => !/brand/.test(p)
+                )
+                tagConfig.presets = [id, ...tagConfig.presets]
+            }
         }
     }
 
