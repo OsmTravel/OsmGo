@@ -15,17 +15,12 @@ const presetsOsmgoPath = path.join(
     'presets.json'
 )
 
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const tagsIDPath = path.join(idRepoPath, 'presets.json')
-const presetsIDPath = path.join(idRepoPath, 'fields.json')
-
 const tagConfig = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 const tagsOsmgo = tagConfig.tags
 const presetsOsmgo = JSON.parse(fs.readFileSync(presetsOsmgoPath, 'utf8'))
 
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
-
-const presetsID = JSON.parse(fs.readFileSync(presetsIDPath, 'utf8'))
+const tagsID = require('@openstreetmap/id-tagging-schema/dist/presets.json')
+const presetsID = require('@openstreetmap/id-tagging-schema/dist/fields.json')
 
 // presets to ignore
 const excludesPresets = [

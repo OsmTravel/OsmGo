@@ -11,9 +11,6 @@ const presetsOsmgoPath = path.join(
     'presets.json'
 )
 
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const idTranslationPath = path.join(idRepoPath, 'translations')
-
 let languages = [
     'en',
     'fr',
@@ -74,14 +71,10 @@ if (argv['_'][1] && argv['_'][1] == 'o') {
 }
 
 for (let language of languages) {
-    const idTranslationFilePath = path.join(
-        idTranslationPath,
-        `${language}.json`
-    )
-
-    const idTr = JSON.parse(fs.readFileSync(idTranslationFilePath, 'utf8'))[
-        language
-    ]
+    const idTr =
+        require(`@openstreetmap/id-tagging-schema/dist/translations/${language}.json`)[
+            language
+        ]
 
     // const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 

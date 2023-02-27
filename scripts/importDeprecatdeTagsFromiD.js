@@ -12,13 +12,9 @@ const presetsOsmgoPath = path.join(
     'presets.json'
 )
 
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-
 const tagsOsmgo = JSON.parse(fs.readFileSync(tagsOsmgoPath, 'utf8'))
 
-const deprecatedIDPath = path.join(idRepoPath, 'deprecated.json')
-
-const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'))
+const deprecatedID = require('@openstreetmap/id-tagging-schema/dist/deprecated.json')
 
 for (let depiD of deprecatedID) {
     // console.log(depiD)

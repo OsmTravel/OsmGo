@@ -21,9 +21,7 @@ const sprites = JSON.parse(fs.readFileSync(spritesPath, 'utf8'))
 const supportedIcons = Object.keys(sprites)
 
 // id-tagging-schema
-const idRepoPath = path.join(__dirname, '..', '..', 'id-tagging-schema', 'dist')
-const tagsIDPath = path.join(idRepoPath, 'presets.json')
-const tagsID = JSON.parse(fs.readFileSync(tagsIDPath, 'utf8'))
+const tagsID = require('@openstreetmap/id-tagging-schema/dist/presets.json')
 
 // tagsToIgnore because OsmGo icon is better than id icon
 const tagsToIgnore = [
