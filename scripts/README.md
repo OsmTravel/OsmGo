@@ -33,11 +33,11 @@ The repo of name-suggestion-index must be at same root as OsmGo repo
 
 ### IV. Import translation from iD
 
-`ts-node addTranslationFromiD.js`
+`ts-node addTranslationFromiD.ts`
 
 ### V. Import description from taginfo
 
-`ts-node importDescriptionFromTaginfo.js --overwrite`
+`ts-node importDescriptionFromTaginfo.ts --overwrite`
 
 [id]: https://github.com/openstreetmap/iD
 [id-tagging-schema]: https://github.com/openstreetmap/id-tagging-schema
