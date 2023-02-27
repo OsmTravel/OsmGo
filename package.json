@@ -94,7 +94,7 @@
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "fs-extra": "^9.0.1",
-    "got": "^12.5.3",
+    "got": "^11.8.6",
     "husky": "^8.0.1",
     "jasmine": "^3.6.2",
     "jasmine-core": "~3.8.0",

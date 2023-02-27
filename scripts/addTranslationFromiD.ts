@@ -1,4 +1,3 @@
-import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
