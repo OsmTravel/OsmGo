@@ -160,6 +160,54 @@ const getPrimaryKeyOfObject = (feature, primaryKeys) => {
     return null
 }
 
+export function getConfigTag(feature, presets) {
+    const featureID = feature.properties.configId
+    let match = { exact: undefined, presets: [], moreFields: [] }
+    for (let variant of presets) {
+        const presetID = variant.id
+        // Save presets and moreFields from parent IDs
+        if (featureID.includes(presetID)) {
+            if (variant.presets)
+                match.presets = [...match.presets, ...variant.presets]
+            if (variant.moreFields)
+                match.moreFields = [...match.moreFields, ...variant.moreFields]
+        }
+        if (featureID == presetID) {
+            match.exact = variant
+        }
+    }
+    if (match.exact) {
+        let result = JSON.parse(JSON.stringify(match.exact)) // DeepCopy
+        // Add presets and moreFields from parent IDs
+        result.presets = match.presets
+        result.moreFields = match.moreFields
+        return result
+    } else {
+        // oops...
+        const k = feature.properties.primaryTag.k ? 'k' : 'key'
+        const v = feature.properties.primaryTag.k ? 'v' : 'value'
+
+        const unkownsId = `${feature.properties.primaryTag[k]}/${feature.properties.primaryTag[v]}`
+        const unkownsTagConfig = {
+            key: feature.properties.primaryTag[k],
+            icon: 'wiki-question',
+            markerColor: '#000000',
+            lbl: {
+                en: `${feature.properties.primaryTag[k]} = ${feature.properties.primaryTag[v]}`,
+            },
+            presets: [],
+            geometry: [],
+            tags: {},
+            id: unkownsId,
+            unknowTags: true,
+        }
+        unkownsTagConfig['tags'][feature.properties.primaryTag[k]] =
+            feature.properties.primaryTag[v]
+        return unkownsTagConfig
+    }
+}
+
+/*
 export function getConfigTag(feature, tagsConfig) {
     // TODO : This should be optimized
     const featureTags = feature.properties.tags
@@ -209,6 +257,7 @@ export function getConfigTag(feature, tagsConfig) {
         return unkownsTagConfig
     }
 }
+*/
 
 export function addAttributesToFeature(feature) {
     // /!\ mutable !
