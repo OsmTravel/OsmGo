@@ -45,30 +45,14 @@
             >
             </primary-key>
 
-            <!--Les presets-->
             <div
-                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets;"
+                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets | orderByPreset:tagConfig"
             >
                 <read-presets
-                    *ngIf="tag.preset && tag.value !== ''"
+                    *ngIf="tag.preset && tag.value !== ''; else readOtherTag"
                     [displayCode]="displayCode"
                     [tag]="tag"
                     [preset]="tag.preset"
-                    [language]="this.configService.config.languageTags"
-                    [countryCode]="this.configService.config.countryTags"
-                >
-                </read-presets>
-            </div>
-
-            <!--Le reste des tags-->
-            <div
-                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets:true;"
-            >
-                <read-presets
-                    *ngIf="this.tagsService.presets[tag.key]; else readOtherTag"
-                    [displayCode]="displayCode"
-                    [tag]="tag"
-                    [preset]="tagsService.presets[tag.key]"
                     [language]="this.configService.config.languageTags"
                     [countryCode]="this.configService.config.countryTags"
                 >
@@ -185,7 +169,7 @@
             <!--Le reste des tags-->
 
             <div
-                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets"
+                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets | orderByPreset:tagConfig"
             >
                 <edit-presets
                     *ngIf="(tag.preset || tagsService.presets[tag.key]) ; else editOtherTag"

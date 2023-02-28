@@ -46,6 +46,7 @@ import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
 
 import { FilterDeprecatedTagPipe } from '@pipes/filterDeprecatedTag.pipe'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
+import { OrderByPresetPipe } from './pipes/orderByPreset.pipe'
 
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 
@@ -121,6 +122,7 @@ export function createTranslateLoader(http: HttpClient) {
         FilterByPresetsContentPipe,
         FilterDeprecatedTagPipe,
         FilterExcludeKeysPipe,
+        OrderByPresetPipe,
         DisplayTagsPipe,
         FilterByByGeometryTypePipe,
         IsBookmarkedPipe,
