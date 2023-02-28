@@ -31,6 +31,7 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 build/
+/.angular/cache
 
 .DS_Store
 Thumbs.db

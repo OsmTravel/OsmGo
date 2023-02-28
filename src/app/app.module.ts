@@ -131,16 +131,6 @@ export function createTranslateLoader(http: HttpClient) {
         MinutesToHoursMinutesPipe,
         BasemapsComponent,
     ],
-    entryComponents: [
-        ModalsContentPage,
-        ModalPrimaryTag,
-        ModalSelectList,
-        DialogMultiFeaturesComponent,
-        HiddenTagsComponent,
-        ActiveTagsComponent,
-        BookmarkedTagsComponent,
-        BasemapsComponent,
-    ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
