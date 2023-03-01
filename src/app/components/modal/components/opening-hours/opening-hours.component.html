@@ -3,8 +3,9 @@
         (click)="openModalAddOpeningHours(null)"
         *ngIf="editMode"
         size="small"
+        expand="block"
     >
-        <ion-icon name="add"></ion-icon>
+        <ion-icon name="add" slot="start"></ion-icon>
         {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
     </ion-button>
 

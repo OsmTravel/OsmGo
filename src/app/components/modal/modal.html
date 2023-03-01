@@ -87,7 +87,7 @@
 
             <div class="actions">
                 <div class="left section">
-                    <ion-button *ngIf="typeFiche==='Read'" (click)="dismiss()">
+                    <ion-button (click)="dismiss()" fill="clear">
                         <ion-icon name="close" slot="start"></ion-icon>
                         {{ 'SHARED.CLOSE' | translate }}
                     </ion-button>
@@ -251,7 +251,7 @@
 
             <div class="actions">
                 <div class="left section">
-                    <ion-button tappable (click)="dismiss()">
+                    <ion-button tappable (click)="dismiss()" fill="clear">
                         <ion-icon name="close" slot="start"></ion-icon>
                         {{ 'SHARED.CLOSE' | translate }}
                     </ion-button>

@@ -17,13 +17,13 @@ export class ModalAddOpeningHoursIntervalComponent implements OnInit {
     times = [{ start: '09:00', end: '12:00' }]
 
     days = [
-        { index: 0, selected: false },
-        { index: 1, selected: false },
-        { index: 2, selected: false },
-        { index: 3, selected: false },
-        { index: 4, selected: false },
-        { index: 5, selected: false },
-        { index: 6, selected: false },
+        { index: 0, selected: false, label: 'DAYS.MONDAY' },
+        { index: 1, selected: false, label: 'DAYS.TUESDAY' },
+        { index: 2, selected: false, label: 'DAYS.WEDNESDAY' },
+        { index: 3, selected: false, label: 'DAYS.THURSDAY' },
+        { index: 4, selected: false, label: 'DAYS.FRIDAY' },
+        { index: 5, selected: false, label: 'DAYS.SATURDAY' },
+        { index: 6, selected: false, label: 'DAYS.SUNDAY' },
     ]
 
     dayIsSelected = false
