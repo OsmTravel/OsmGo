@@ -1,5 +1,6 @@
 /** Default supported languages by the OsmGo application. */
 export const defaultLanguages: string[] = [
+    'en',
     'fr',
     'de',
     'es',

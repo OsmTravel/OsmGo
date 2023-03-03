@@ -40,8 +40,6 @@ const excludesPresets = [
     'level_semi',
 ]
 
-// const osmgoPkeys = Object.keys(tagsOsmgo);
-
 const osmgoPkeys = tagConfig.primaryKeys
 
 // Primary keys to ignore. This list is extracted from misings pk in OsmGo 1.5
@@ -249,23 +247,7 @@ for (let iDid in tagsID) {
         return isEqual(tagiD.tags, ogT.tags)
     })
 
-    let newTag: TagConfig = {
-        key: undefined, // TODO: @dotcs Is this a problem? Key is required in the interface.
-        id: iDid,
-        tags: tagiD.tags,
-        icon: tagiD.icon || '',
-        markerColor: '{CHANGE_ME}',
-        presets: iDFields,
-        moreFields: iDMoreFields,
-        lbl: { en: tagiD.name },
-        terms: { en: tagiD.terms ? tagiD.terms.join(', ') : '' },
-        geometry: tagiD.geometry,
-        iDRef: iDid,
-    }
-    if (tagiD.terms) newTag['terms'] = { en: tagiD.terms.join(', ') }
-    if (tagiD.addTags) newTag['addTags'] = tagiD.addTags
-    if (tagiD.reference) newTag['reference'] = tagiD.reference
-    if (tagiD.searchable) newTag['searchable'] = tagiD.searchable
+    const rootTag = iDid.split('/')[0]
 
     if (tagOsmgoById && !currenOsmgoTag) {
         // tag found by id, we can update tags
@@ -279,15 +261,32 @@ for (let iDid in tagsID) {
     } else if (!tagOsmgoById && !currenOsmgoTag) {
         // new
         console.log('new', iDid)
-        const rootTag = iDid.split('/')[0]
-        newTag.markerColor = getOsmGoMarkerColorFromTagRoot(rootTag)
+        let newTag: TagConfig = {
+            key: undefined, // TODO: @dotcs Is this a problem? Key is required in the interface.
+            id: iDid,
+            tags: tagiD.tags,
+            icon: tagiD.icon || '',
+            markerColor: getOsmGoMarkerColorFromTagRoot(rootTag),
+            presets: iDFields,
+            moreFields: iDMoreFields,
+            lbl: { en: tagiD.name },
+            terms: { en: tagiD.terms ? tagiD.terms.join(', ') : '' },
+            geometry: tagiD.geometry,
+            iDRef: iDid,
+        }
+        if (tagiD.terms) newTag['terms'] = { en: tagiD.terms.join(', ') }
+        if (tagiD.addTags) newTag['addTags'] = tagiD.addTags
+        if (tagiD.reference) newTag['reference'] = tagiD.reference
+        if (tagiD.searchable) newTag['searchable'] = tagiD.searchable
+
         tagsOsmgo.push(newTag)
     } else if (tagOsmgoById) {
         // tag already exist in tags.json
         // we can update tags
-        //tagOsmgoById.tags = tagiD.tags; why don't we force tags update?
-        //tagOsmgoById.presets = iDFields why don't we force presets update?
-        //tagOsmgoById.moreFields = iDMoreFields why don't we force moreFields update?
+        tagOsmgoById.tags = tagiD.tags //why don't we force tags update?
+        // TODO : rework this part. MoreFields is used on Osm Go ? May be we have to merger fields and moreFields
+        // tagOsmgoById.presets = iDFields //why don't we force presets update?
+        // tagOsmgoById.moreFields = iDMoreFields //why don't we force moreFields update?
     } else {
         // tagOsmgoById is null. yes it can happen
         console.log('tagOsmgoById is null for iDid=' + iDid)

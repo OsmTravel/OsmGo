@@ -18,7 +18,7 @@ const args = yargs(process.argv.slice(2))
         alias: 'o',
         type: 'boolean',
         description: 'Overwrite tag descriptions in multiple languages',
-        default: false,
+        default: true,
     })
     .option('language', {
         type: 'array',
@@ -61,13 +61,13 @@ for (const language of args.language as string[]) {
         for (const tag of tagsOsmgo) {
             // console.log(tag.iDRef);
             if (tag.iDRef) {
-                if (trPresets[tag.iDRef] && trPresets[tag.iDRef].name) {
+                if (trPresets[tag.iDRef]?.name) {
                     if (!tag.lbl[language] || args.overwrite) {
                         tag.lbl[language] = trPresets[tag.iDRef].name
                     }
                 }
 
-                if (trPresets[tag.iDRef] && trPresets[tag.iDRef].terms) {
+                if (trPresets[tag.iDRef]?.terms) {
                     if (tag.terms === undefined) {
                         tag['terms'] = {}
                     }
@@ -75,9 +75,6 @@ for (const language of args.language as string[]) {
                         tag.terms[language] = trPresets[tag.iDRef].terms
                     }
                 }
-                // console.info(tag)
-                //     console.log(trPresets[tag.iDRef]);
-                // console.log(tag.lbl[language])
             }
         }
 

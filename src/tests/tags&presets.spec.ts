@@ -120,7 +120,7 @@ describe('tagsAndPresets', () => {
             }
         }
 
-        expect(noEn).toEqual([])
+        expect(noEn).toEqual([], noEn)
     })
 
     it('tags should have "geometry" property ([\'point\',etc} ', () => {
