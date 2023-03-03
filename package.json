@@ -15,7 +15,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sprites": "ts-node --project ./scripts/tsconfig.json ./scripts/importMissingSVGs.ts && ts-node --project ./scripts/tsconfig.json ./scripts/formatSVG.ts && ts-node --project ./scripts/tsconfig.json ./scripts/sprites.ts",
-    "importFromID": "ts-node --project ./scripts/tsconfig.json ./scripts/importTagsFromID.ts && ts-node --project ./scripts/tsconfig.json ./scripts/ordersTags.ts && ts-node --project ./scripts/tsconfig.json ./scripts/importDeprecatdeTagsFromiD.ts && ts-node ./scripts/addTranslationFromiD.ts",
+    "importFromID": "ts-node --project ./scripts/tsconfig.json ./scripts/importTagsFromID.ts && ts-node --project ./scripts/tsconfig.json ./scripts/ordersTags.ts && ts-node --project ./scripts/tsconfig.json ./scripts/importDeprecatdeTagsFromiD.ts && ts-node --project ./scripts/tsconfig.json  ./scripts/addTranslationFromiD.ts",
     "importBaseMaps": "ts-node --project ./scripts/tsconfig.json ./scripts/importBasemaps.ts",
     "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android",
     "buildAndroidDebug": "ng build --configuration development && npx cap sync",

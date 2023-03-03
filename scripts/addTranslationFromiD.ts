@@ -1,4 +1,4 @@
-import fs from 'fs'
+import { writeFileSync } from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
 import { tapTagsPath, tapPresetsPath } from './_paths'
@@ -81,7 +81,7 @@ for (const language of args.language as string[]) {
             }
         }
 
-        fs.writeFileSync(tapTagsPath, stringify(tagsOsmgoConfig), 'utf8')
+        writeFileSync(tapTagsPath, stringify(tagsOsmgoConfig), 'utf8')
     }
 
     const importFields = (language: string) => {
@@ -135,7 +135,7 @@ for (const language of args.language as string[]) {
             //
         }
 
-        fs.writeFileSync(tapPresetsPath, stringify(presetsOsmgo), 'utf8')
+        writeFileSync(tapPresetsPath, stringify(presetsOsmgo), 'utf8')
     }
 
     importTrTags(language)

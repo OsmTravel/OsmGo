@@ -1,7 +1,8 @@
 import fs from 'fs-extra'
 import path from 'path'
 // import * as cheerio from 'cheerio'
-const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
+import cheerio from 'cheerio'
+// const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
 import { parseString } from 'xml2js'
 import svgRender from 'svg-render'
 import Spritesmith from 'spritesmith'
