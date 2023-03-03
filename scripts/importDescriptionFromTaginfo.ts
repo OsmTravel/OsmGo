@@ -1,4 +1,4 @@
-import rp from 'request-promise'
+import got from 'got'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
@@ -32,19 +32,16 @@ const args = yargs(process.argv.slice(2))
 const tagsOsmgo = readTapTagsFromJson()
 
 const getStatsByKey = async (key: string, language: string) => {
-    var options = {
-        uri: `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`,
-        json: true, // Automatically parses the JSON string in the response
-    }
+    var uri = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&page=1&sortname=count_nodes&sortorder=desc&lang=${language}`
 
-    console.log('Call: ' + options.uri)
+    console.log('Call: ' + uri)
     let res: { data: any[]; rp: any; data_until: any }
     try {
-        res = await rp(options)
+        res = await got(uri).json()
     } catch (e) {
         console.error(e)
-        console.log('Retry call: ' + options.uri)
-        res = await rp(options)
+        console.log('Retry call: ' + uri)
+        res = await got(uri).json()
     }
     console.log('Called')
 

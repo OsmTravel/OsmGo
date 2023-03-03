@@ -1,8 +1,7 @@
-import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
-import { tapTagsPath, tapPresetsPath, idtsTranslationsDir } from './_paths'
+import { tapTagsPath, tapPresetsPath } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 import { defaultLanguages } from './_i18n'
 
@@ -31,14 +30,10 @@ const args = yargs(process.argv.slice(2))
     .parseSync()
 
 for (const language of args.language as string[]) {
-    const idTranslationFilePath = path.join(
-        idtsTranslationsDir,
-        `${language}.json`
-    )
-
-    const idTr = JSON.parse(fs.readFileSync(idTranslationFilePath, 'utf8'))[
-        language
-    ]
+    const idTr =
+        require(`@openstreetmap/id-tagging-schema/dist/translations/${language}.json`)[
+            language
+        ]
 
     // const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 

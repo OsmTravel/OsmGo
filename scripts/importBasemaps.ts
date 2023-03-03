@@ -1,4 +1,4 @@
-import rp from 'request-promise'
+import got from 'got'
 import fs from 'fs-extra'
 import path from 'path'
 import stringify from 'json-stringify-pretty-compact'
@@ -15,9 +15,8 @@ const ignoredIds: string[] = [
 // const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'imagery.geojson')));
 
 const run = async () => {
-    const rep = await rp(url)
     // console.log
-    const data = JSON.parse(rep)
+    const data: any = await got(url).json()
     const features = data.features
     const resultFeatures = []
     for (const feature of features) {

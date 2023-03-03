@@ -5,20 +5,15 @@ import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import isEqual from 'lodash/isEqual'
 import intersection from 'lodash/intersection'
-import {
-    idtsPresetsIdPath,
-    tapPresetsPath,
-    idtsTagsIdPath,
-    tapTagsPath,
-} from './_paths'
+import { tapPresetsPath, tapTagsPath } from './_paths'
 import { TagConfig } from '@osmgo/type'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const tagConfig = readTapTagsFromJson()
 const tagsOsmgo = tagConfig.tags
 const presetsOsmgo = readTapPresetsFromJson()
-const tagsID = JSON.parse(fs.readFileSync(idtsTagsIdPath, 'utf8'))
-const presetsID = JSON.parse(fs.readFileSync(idtsPresetsIdPath, 'utf8'))
+const tagsID = require('@openstreetmap/id-tagging-schema/dist/presets.json')
+const presetsID = require('@openstreetmap/id-tagging-schema/dist/fields.json')
 
 // presets to ignore
 const excludesPresets = [

@@ -1,14 +1,12 @@
 import path from 'path'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import { idtsDistDir, tapTagsPath } from './_paths'
+import { tapTagsPath } from './_paths'
 import { readTapTagsFromJson } from './_utils'
 
 const tagsOsmgo = readTapTagsFromJson()
 
-const deprecatedIDPath = path.join(idtsDistDir, 'deprecated.json')
-
-const deprecatedID = JSON.parse(fs.readFileSync(deprecatedIDPath, 'utf8'))
+const deprecatedID = require('@openstreetmap/id-tagging-schema/dist/deprecated.json')
 
 for (const depiD of deprecatedID) {
     // console.log(depiD)
