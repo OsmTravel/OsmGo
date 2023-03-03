@@ -11,6 +11,8 @@ const tagsOsmgo = tagConfig.tags
 
 const idFaSvgUrl: string = `https://raw.githubusercontent.com/openstreetmap/iD/develop/svg/fontawesome`
 const temakiSvgUrl: string = `https://raw.githubusercontent.com/ideditor/temaki/main/icons`
+const roentgenSvgUrl: string = `https://raw.githubusercontent.com/openstreetmap/iD/develop/svg/roentgen`
+const makiSvgUrl: string = `https://raw.githubusercontent.com/mapbox/maki/main/icons`
 
 // https://raw.githubusercontent.com/ideditor/temaki/main/icons/mast.svg
 
@@ -51,6 +53,32 @@ const run = async () => {
                 try {
                     await download({
                         url: iconTemakiUrl,
+                        path: pathCurrentSVG,
+                    })
+                } catch (err) {
+                    console.error(err)
+                }
+            } else if (/^roentgen/.test(t.icon)) {
+                // => roentgen
+                const iconRoentgenUrl = `${roentgenSvgUrl}/${
+                    t.icon.split('roentgen-')[1]
+                }.svg`
+                try {
+                    await download({
+                        url: iconRoentgenUrl,
+                        path: pathCurrentSVG,
+                    })
+                } catch (err) {
+                    console.error(err)
+                }
+            } else if (/^maki/.test(t.icon)) {
+                // => maki
+                const iconMakiUrl = `${makiSvgUrl}/${
+                    t.icon.split('maki-')[1]
+                }.svg`
+                try {
+                    await download({
+                        url: iconMakiUrl,
                         path: pathCurrentSVG,
                     })
                 } catch (err) {
