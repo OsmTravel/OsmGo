@@ -21,19 +21,26 @@ describe('tagsAndPresets', () => {
 
     it('tags should have a "tags" property', () => {
         const withoutTags = []
-
         for (let tag of tagsConfig.tags) {
-            if (!tag.tags) {
+            if (!tag.tags || Object.keys(tag.tags).length === 0) {
                 withoutTags.push(tag.id)
             }
-            // first element must be primary tag
-            // else {
-            //     if ( !tag.tags[pkey] ){
-            //         withoutTags.push(tag.id)
-            //     }
-            // }
         }
         expect(withoutTags).toEqual([])
+    })
+
+    it('tags should have a primary key tag', () => {
+        const idWithoutPrimarykey = []
+        const pkeys = tagsConfig.primaryKeys
+        for (let tag of tagsConfig.tags) {
+            const keysTag = Object.keys(tag.tags)
+            // intersection of keysTag and pkeys
+            const intersection = keysTag.filter((x) => pkeys.includes(x))
+            if (intersection.length === 0) {
+                idWithoutPrimarykey.push(tag.id)
+            }
+        }
+        expect(idWithoutPrimarykey).toEqual([])
     })
 
     it('tags should not have same "tags"', () => {
@@ -50,7 +57,7 @@ describe('tagsAndPresets', () => {
             if (!uniqueTags.includes(ts)) {
                 uniqueTags.push(ts)
             } else {
-                duplicateTags.push(ts)
+                duplicateTags.push(`${tag.id} : ${JSON.stringify(ts)}`)
             }
         }
 
@@ -72,43 +79,23 @@ describe('tagsAndPresets', () => {
         expect(duplicateIds).toEqual([])
     })
 
-    xit('tags should use existing presets id', () => {
+    it('tags should use existing presets id', () => {
         const unknowPresetId = []
 
         const tags = tagsConfig.tags
         for (let tag of tags) {
-            const presetsList = tag.presets
-            for (let pid of presetsList) {
+            const currentTagsPresets = [
+                ...tag.presets,
+                ...(tag.moreFields || []),
+            ]
+            for (let pid of currentTagsPresets) {
                 if (!presets[pid]) {
-                    unknowPresetId.push(pid)
+                    unknowPresetId.push(`${tag.id} : ${pid}`)
                 }
             }
         }
 
         expect(unknowPresetId).toEqual([])
-    })
-
-    xit('tags should have a unique preset keys', () => {
-        const duplicateKeys = []
-        const tags = tagsConfig.tags
-        for (let tag of tags) {
-            const presetsList = tag.presets
-
-            let presetsKeys = []
-            for (let pid of presetsList) {
-                if (!presetsKeys.includes(presets[pid].key)) {
-                    presetsKeys.push(presets[pid].key)
-                } else {
-                    duplicateKeys.push({
-                        key: presets[pid].key,
-                        keyId: pid,
-                        tagId: tag.id,
-                    })
-                }
-            }
-        }
-
-        expect(duplicateKeys).toEqual([])
     })
 
     it('tags should have english label', () => {
@@ -136,7 +123,7 @@ describe('tagsAndPresets', () => {
         expect(nogeom).toEqual([])
     })
 
-    xit('type of presets should be  list / select / number / text / tel / url / email / opening_hours', () => {
+    it('type of presets should be  list / select / number / text / tel / url / email / opening_hours', () => {
         const noOptionsTags = []
 
         for (let pid in presets) {
@@ -159,14 +146,13 @@ describe('tagsAndPresets', () => {
         expect(noOptionsTags).toEqual([])
     })
 
-    xit('presets with type "list" or "select" should have options', () => {
+    it('presets with type "list" or "select" should have options', () => {
         const noOptionsTags = []
 
         for (let pid in presets) {
             const preset = presets[pid]
             if (['select', 'list'].includes(preset.type)) {
                 if (!preset.options || preset.options.length < 1) {
-                    console.log(preset.options)
                     noOptionsTags.push(pid)
                 }
             }

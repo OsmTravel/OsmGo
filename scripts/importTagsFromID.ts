@@ -42,68 +42,6 @@ const excludesPresets = [
 
 const osmgoPkeys = tagConfig.primaryKeys
 
-// Primary keys to ignore. This list is extracted from misings pk in OsmGo 1.5
-// I commented some pk that we can 'may be' add in OsmGo 1.6
-const pkToIgnore = [
-    'addr',
-    'address',
-    'allotments',
-    'area',
-    'boundary',
-    // 'bridge' OsmGo 1.6 adding bridges
-    'building_point',
-    'cycleway',
-    'demolished',
-    //'disc_golf', OsmGo 1.6 adding disc_golf
-    'disused',
-    //'embankment', OsmGo 1.6 adding embankment
-    'ford',
-    'ford_line',
-    //'golf', OsmGo 1.6 adding golf
-    'indoor',
-    //'internet_access', OsmGo 1.6 adding internet_access
-    'junction',
-    'landuse',
-    'line',
-    'marker',
-    'network',
-    'noexit',
-    'point',
-    'relation',
-    'route',
-    'traffic_calming',
-    'traffic_sign',
-    'type',
-]
-
-function getPk(tag) {
-    return tag.split('/')[0]
-}
-
-function isPkToIgnore(tag) {
-    return pkToIgnore.includes(tag)
-}
-
-function isPresetToIgnore(tag) {
-    return excludesPresets.includes(tag)
-}
-
-// Import primary keys from id-tagging-schema
-/* Code to use to get PK from id-tagging-schema instead of getting current pk in OsmGo
-let osmgoPkeys = [];
-for (let t in tagsID) {
-    const iDid = t; 
-    const pk = getPk(iDid)
-    if (!isPkToIgnore(pk)) {
-        // insert the key without creating dulicate
-        osmgoPkeys = union(osmgoPkeys, [pk]);
-    } 
-}
-osmgoPkeys = osmgoPkeys.sort();
-// Store new pk in osmgo pklist
-tagConfig.primaryKeys = osmgoPkeys;
-*/
-
 const getOsmGoMarkerColorFromTagRoot = (tagRoot) => {
     let result = [] // =>
     for (const tag of tagsOsmgo) {
@@ -126,8 +64,6 @@ const getOsmGoMarkerColorFromTagRoot = (tagRoot) => {
     }
     return maxCountColor.color || '{CHANGE_ME}'
 }
-
-getOsmGoMarkerColorFromTagRoot('natural')
 
 let idTagsFieldsListId = [] // list of id of fields to add...
 
@@ -295,8 +231,7 @@ for (let iDid in tagsID) {
 
 /* IMPORT PRESETS */
 // list des Presets/fields used : idTagsFieldsListId
-// console.log(presetsID);
-let types = []
+
 for (let fiDId of idTagsFieldsListId) {
     if (excludesPresets.includes(fiDId)) {
         continue
@@ -341,41 +276,43 @@ for (let fiDId of idTagsFieldsListId) {
         currentIDPreset['iDtype'] = currentIDPreset.type
         currentIDPreset['type'] = 'select'
         currentIDPreset['options'] = options
-    }
-
-    if (['semiCombo', 'combo', 'access'].includes(currentIDPreset.type)) {
+    } else if (
+        ['semiCombo', 'combo', 'access', 'typeCombo'].includes(
+            currentIDPreset.type
+        )
+    ) {
         currentIDPreset['iDtype'] = currentIDPreset.type
         if (currentIDPreset['options']) {
             currentIDPreset['type'] = 'list'
         } else {
-            currentIDPreset['type'] = 'select'
+            // currentIDPreset['type'] = 'select' // ? // we need to integrate options from taginfo ?
+            currentIDPreset['type'] = 'text'
         }
-    }
-
-    if (['wikidata', 'adresss'].includes(currentIDPreset.type)) {
+    } else if (['tel', 'email', 'url'].includes(currentIDPreset.type)) {
+        currentIDPreset['iDtype'] = currentIDPreset.type
+        currentIDPreset['type'] = currentIDPreset.type
+    } else if (
+        ['number', 'maxspeed', 'roadheight'].includes(currentIDPreset.type)
+    ) {
+        currentIDPreset['iDtype'] = currentIDPreset.type
+        currentIDPreset['type'] = 'number'
+    } else if (currentIDPreset.type == 'radio') {
+        currentIDPreset['iDtype'] = currentIDPreset.type
+        currentIDPreset['type'] = 'select'
+    } else if (['text'].includes(currentIDPreset.type)) {
         currentIDPreset['iDtype'] = currentIDPreset.type
         currentIDPreset['type'] = 'text'
     }
-    if (['tel', 'email', 'url'].includes(currentIDPreset.type)) {
+    //TODO :add type multiCombo, textarea... in Osm Go
+    else {
+        console.error(
+            `unknown iD type : ${currentIDPreset.type}  => text in Osm Go`
+        )
         currentIDPreset['iDtype'] = currentIDPreset.type
-        currentIDPreset['type'] = currentIDPreset.type
-    }
-
-    if (['maxspeed'].includes(currentIDPreset.type)) {
-        currentIDPreset['iDtype'] = currentIDPreset.type
-        currentIDPreset['type'] = 'number'
-    }
-
-    if (currentIDPreset.type == 'radio') {
-        currentIDPreset['iDtype'] = currentIDPreset.type
-        currentIDPreset['type'] = 'select'
+        currentIDPreset['type'] = 'text'
     }
 
     delete currentIDPreset.label
-
-    //   if (!types.includes(currentIDPreset.type)){
-    //       types.push(currentIDPreset.type)
-    //   }
 
     // already in OSMGO
     if (currentOsmGoPreset) {
@@ -397,38 +334,11 @@ for (let fiDId of idTagsFieldsListId) {
             // currentOsmGoPreset.options = [...currentOsmGoPreset.options, ...currentIDPreset.options]
         }
 
-        if (currentIDPreset && currentIDPreset.lbl && currentIDPreset.lbl.en) {
-            currentOsmGoPreset.lbl.en = currentIDPreset.lbl.en
-        } else {
-            // console.log(currentIDPreset);
-        }
-
-        currentOsmGoPreset = { ...currentIDPreset, ...currentOsmGoPreset }
+        currentOsmGoPreset = { ...currentOsmGoPreset, ...currentIDPreset }
+        presetsOsmgo[fiDId] = currentOsmGoPreset
     } else {
         presetsOsmgo[fiDId] = currentIDPreset
     }
-}
-
-// //  delete presets keys
-// for (let tag of tagConfig.tags){
-//     tag.presets = tag.presets.filter(f => !excludesPresets.includes(f))
-//     if (tag.moreFields){
-//         tag.moreFields = tag.moreFields.filter(f => !excludesPresets.includes(f))
-//     }
-// }
-
-const compareById = (a, b) => {
-    // Use toUpperCase() to ignore character casing
-    const idA = a.id
-    const idB = b.id
-
-    let comparison = 0
-    if (idA > idB) {
-        comparison = 1
-    } else if (idA < idB) {
-        comparison = -1
-    }
-    return comparison
 }
 
 fs.writeFileSync(tapTagsPath, stringify(tagConfig), 'utf8')
