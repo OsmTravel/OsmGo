@@ -758,11 +758,7 @@ export class MapService {
         const OneYear = 31536000000
         const currentTime = new Date().getTime()
 
-        let currentFilter = this.map.getFilter('icon-old')
-        if (typeof currentFilter === 'undefined') {
-            // FIXME: @dotcs Add error handling
-        }
-        //  currentFilter.push( ['>', currentTime - (OneYear * maxYearAgo) , ['get', 'time'] ] );
+        let currentFilter = this.map.getFilter('icon-old') || []
 
         let findedIndex: number
         for (let i = 1; i < currentFilter.length; i++) {
@@ -776,7 +772,7 @@ export class MapService {
                 findedIndex = i
             }
         }
-        let newFilter: FilterSpecification
+        let newFilter: any
         if (findedIndex) {
             currentFilter[findedIndex] = [
                 '>',
@@ -785,10 +781,10 @@ export class MapService {
             ]
             newFilter = currentFilter
         } else {
-            newFilter = [...currentFilter] as FilterSpecification[]
+            newFilter = [...currentFilter]
             const filter = [
                 '>',
-                '' + (currentTime - OneYear * maxYearAgo),
+                currentTime - OneYear * maxYearAgo,
                 ['get', 'time'],
             ]
             newFilter.push(filter)
