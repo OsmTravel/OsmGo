@@ -95,86 +95,89 @@ for (let iDid in tagsID) {
     let iDFields = [] // for this tag
     let iDMoreFields = []
 
-    if (tagiD.fields) {
-        for (let f of tagiD.fields) {
-            if (presetsID[f] && presetsID[f].type === 'typeCombo') {
-                // ignore presets with type 'typeCombo'
-                continue
+    // get liste of fields from current tag from iD
+    let currentTagFields = []
+    let currentTagMoreFields = []
+    for (const f of tagiD.fields || []) {
+        if (/\{/.test(f)) {
+            // if field look like { ... } => reference to anothers parent fields
+            const keyRef = f.replace('{', '').replace('}', '')
+            const refFields = tagsID[keyRef].fields
+            currentTagFields = [...currentTagFields, ...refFields]
+            if (tagsID[keyRef].moreFields) {
+                currentTagMoreFields = [
+                    ...currentTagMoreFields,
+                    ...tagsID[keyRef].moreFields,
+                ]
             }
-
-            if (/\{/.test(f)) {
-                // if field look like { ... }
-                const keyRef = f.replace('{', '').replace('}', '')
-                const fields = tagsID[keyRef].fields
-
-                const newF = fields.filter(
-                    (f) => !idTagsFieldsListId.includes(f)
-                )
-                idTagsFieldsListId = [...idTagsFieldsListId, ...newF]
-                iDFields = [...iDFields, ...newF].filter(
-                    (f) => !excludesPresets.includes(f)
-                )
-                // We should use union(iDFields, newF) instead of doing this filter
-                // Code is more readable with union
-                continue
-            }
-
-            if (!idTagsFieldsListId.includes(f)) {
-                // if field not already added to list idTagsFieldsListId
-                // TODO: add {shop} tags
-                idTagsFieldsListId.push(f)
-                iDFields = [...iDFields, f].filter(
-                    (f) => !excludesPresets.includes(f)
-                )
-                // Same we should use union(iDFields, [f]) instead of this filter
-                continue
-            }
-
-            // Add tag
-            iDFields = [...iDFields, f].filter(
-                (f) => !excludesPresets.includes(f)
-            )
+        } else {
+            currentTagFields = [...currentTagFields, f]
         }
     }
 
-    if (tagiD.moreFields) {
-        for (let f of tagiD.moreFields) {
-            if (presetsID[f] && presetsID[f].type === 'typeCombo') {
-                // ignore presets with type 'typeCombo'
-                continue
+    // get liste of morreFields from current tag from iD
+    for (const f of tagiD.moreFields || []) {
+        if (/\{/.test(f)) {
+            // if field look like { ... }
+            const keyRef = f.replace('{', '').replace('}', '')
+            const refFields = tagsID[keyRef].fields
+            currentTagMoreFields = [...currentTagMoreFields, ...refFields]
+            if (tagsID[keyRef].moreFields) {
+                currentTagMoreFields = [
+                    ...currentTagMoreFields,
+                    ...tagsID[keyRef].moreFields,
+                ]
             }
+        } else {
+            currentTagMoreFields = [...currentTagMoreFields, f]
+        }
+    }
 
-            if (/\{/.test(f)) {
-                // if field look like { ... }
-                const keyRef = f.replace('{', '').replace('}', '')
-                const fields = tagsID[keyRef].moreFields
-                const newF = fields.filter(
-                    (f) => !idTagsFieldsListId.includes(f)
-                )
-                idTagsFieldsListId = [...idTagsFieldsListId, ...newF]
-                iDMoreFields = [...iDMoreFields, ...newF].filter(
-                    (f) => !idTagsFieldsListId.includes(f)
-                )
-                // use union(iDFields, newF) instead of doing this filter
-                continue
-            }
+    for (let f of currentTagFields) {
+        if (!presetsID[f]) {
+            // Todo : if field not in presetsID, and start with {, it's a reference to another field that reference to another field...
+            console.log('missing preset', f)
+            continue
+        }
+        if (presetsID[f].type === 'typeCombo') {
+            // ignore presets with type 'typeCombo'
+            continue
+        }
 
-            if (!idTagsFieldsListId.includes(f)) {
-                // if field not already added to list idTagsFieldsListId
-                // TODO: add {shop} tags
-                idTagsFieldsListId.push(f)
-                iDMoreFields = [...iDMoreFields, f].filter(
-                    (f) => !idTagsFieldsListId.includes(f)
-                )
-                // use union(iDFields, [f]) instead of this filter
-                continue
-            }
+        if (!idTagsFieldsListId.includes(f)) {
+            // if field not already added to list idTagsFieldsListId
+            idTagsFieldsListId.push(f)
+            iDFields = [...iDFields, f].filter(
+                (f) => !excludesPresets.includes(f)
+            )
+            // Same we should use union(iDFields, [f]) instead of this filter
+            continue
+        }
 
-            // Add tag
+        // Add tag
+        iDFields = [...iDFields, f].filter((f) => !excludesPresets.includes(f))
+    }
+
+    for (let f of currentTagMoreFields) {
+        if (presetsID[f] && presetsID[f].type === 'typeCombo') {
+            // ignore presets with type 'typeCombo'
+            continue
+        }
+
+        if (!idTagsFieldsListId.includes(f)) {
+            // if field not already added to list idTagsFieldsListId
+            idTagsFieldsListId.push(f)
             iDMoreFields = [...iDMoreFields, f].filter(
                 (f) => !idTagsFieldsListId.includes(f)
             )
+            // use union(iDFields, [f]) instead of this filter
+            continue
         }
+
+        // Add tag
+        iDMoreFields = [...iDMoreFields, f].filter(
+            (f) => !idTagsFieldsListId.includes(f)
+        )
     }
 
     const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
@@ -318,7 +321,6 @@ for (let fiDId of idTagsFieldsListId) {
     if (currentOsmGoPreset) {
         if (currentIDPreset.options) {
             for (let oiD of currentIDPreset.options) {
-                //  console.log(currentOsmGoPreset);
                 let oGo
                 if (currentOsmGoPreset.options) {
                     oGo = currentOsmGoPreset.options.find((o) => o.v === oiD.v)

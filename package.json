@@ -17,6 +17,7 @@
     "sprites": "ts-node --project ./scripts/tsconfig.json ./scripts/importMissingSVGs.ts && ts-node --project ./scripts/tsconfig.json ./scripts/formatSVG.ts && ts-node --project ./scripts/tsconfig.json ./scripts/sprites.ts",
     "importFromID": "ts-node --project ./scripts/tsconfig.json ./scripts/importTagsFromID.ts && ts-node --project ./scripts/tsconfig.json ./scripts/ordersTags.ts && ts-node --project ./scripts/tsconfig.json ./scripts/importDeprecatdeTagsFromiD.ts && ts-node --project ./scripts/tsconfig.json  ./scripts/addTranslationFromiD.ts",
     "importBaseMaps": "ts-node --project ./scripts/tsconfig.json ./scripts/importBasemaps.ts",
+    "importDescriptions": "ts-node --project ./scripts/tsconfig.json ./scripts/importDescriptionFromTaginfo.ts --overwrite",
     "cleanTagsPresets": "ts-node --project ./scripts/tsconfig.json ./scripts/cleanTags.ts",
     "update": "npm run importFromID && npm run cleanTagsPresets && npm run sprites && npm run importBaseMaps",
     "buildAndroid": "node ./incrementVersion.js && ionic build --prod --release && npx cap sync && npx cap open android",
