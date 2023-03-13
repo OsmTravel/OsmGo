@@ -192,40 +192,12 @@
             <ion-button
                 tappable
                 color="secondary"
-                *ngIf="!displayAddTag"
-                (click)="displayAddTag = true"
+                (click)="openModalAddTag()"
                 style="margin: 5px 10px 10px"
                 expand="block"
             >
                 <ion-icon name="add"> </ion-icon>
             </ion-button>
-
-            <div *ngIf="displayAddTag">
-                <ion-card>
-                    <ion-card-header *ngIf="displayAddTag">
-                        {{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate}}
-                    </ion-card-header>
-                    <ion-card-content *ngIf="displayAddTag">
-                        <ion-item>
-                            <ion-label primary stacked>Key</ion-label>
-                            <ion-input
-                                type="text"
-                                placeholder="Key"
-                                autocapitalize="none"
-                                autocomplete="off"
-                                [(ngModel)]="newKey"
-                            ></ion-input>
-                        </ion-item>
-                        <ion-button
-                            ion-button
-                            [disabled]="newKey == ''"
-                            (click)="addNewKey(newKey)"
-                        >
-                            {{ 'SHARED.ADD' | translate}}
-                        </ion-button>
-                    </ion-card-content>
-                </ion-card>
-            </div>
         </div>
 
         <ion-footer>

@@ -155,7 +155,8 @@
         "UNDEFINED_VALUE": "Unknown",
         "LAST_TAG_USED": "Last used tags",
         "BOOKMARKS": "Bookmarks",
-        "WARN_NODE_EDITED": "This node has unsynced changes"
+        "WARN_NODE_EDITED": "This node has unsynced changes",
+        "ADD_TAG_PLACEHOLDER": "Enter key or field name..."
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "This tag is deprecated",

@@ -21,6 +21,7 @@ import { ModalPrimaryTag } from '@components/modal/modal.primaryTag/modal.primar
 import { OpeningHoursComponent } from '@components/modal/components/opening-hours/opening-hours.component'
 
 import { ModalSelectList } from '@components/modal/modalSelectList/modalSelectList'
+import { ModalAddTag } from '@components/modal/modal.addTag/modal.addTag'
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import { SettingsPage } from '@components/settings/settings'
 
@@ -43,6 +44,12 @@ import { FilterExcludeTagByCountryCode } from '@pipes/filterExcludeTagByCountryC
 import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 
 import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
+
+import { FilterByListPipe } from '@pipes/filterByList.pipe'
+import { FilterPresetsByListPipe } from './pipes/filterPresetsByList.pipe'
+import { RemoveBrandsPipe } from './pipes/removeBrands.pipe'
+import { SearchForPipe } from './pipes/searchFor.pipe'
+import { ToOsmTagPipe } from './pipes/toOsmTag.pipe'
 
 import { FilterDeprecatedTagPipe } from '@pipes/filterDeprecatedTag.pipe'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
@@ -100,6 +107,7 @@ export function createTranslateLoader(http: HttpClient) {
         ModalPrimaryTag,
         ModalsContentPage,
         ModalSelectList,
+        ModalAddTag,
         PushDataToOsmPage,
         SettingsPage,
         DialogMultiFeaturesComponent,
@@ -123,6 +131,13 @@ export function createTranslateLoader(http: HttpClient) {
         FilterByPresetsContentPipe,
         FilterDeprecatedTagPipe,
         FilterExcludeKeysPipe,
+
+        FilterByListPipe,
+        FilterPresetsByListPipe,
+        RemoveBrandsPipe,
+        SearchForPipe,
+        ToOsmTagPipe,
+
         OrderByPresetPipe,
         CharLimitPipe,
         DisplayTagsPipe,

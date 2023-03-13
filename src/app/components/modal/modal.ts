@@ -21,6 +21,7 @@ import { AlertService } from '@services/alert.service'
 import { TagsService } from '@services/tags.service'
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
 import { ModalSelectList } from './modalSelectList/modalSelectList'
+import { ModalAddTag } from './modal.addTag/modal.addTag'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
 
 import { Tag, Preset, PrimaryTag, TagConfig, OsmGoFeature } from '@osmgo/type'
@@ -67,10 +68,8 @@ export class ModalsContentPage implements OnInit {
 
     customValue = ''
 
-    newKey = ''
     allTags
     newPosition
-    displayAddTag = false
     presetsIds = []
 
     constructor(
@@ -288,8 +287,6 @@ export class ModalsContentPage implements OnInit {
     addNewKey(key) {
         // Check if the key already exists in presets
         if (this.tags.find((t) => t.key == key)) {
-            this.displayAddTag = false
-            this.newKey = ''
             return
         }
 
@@ -310,8 +307,6 @@ export class ModalsContentPage implements OnInit {
                 },
             ]
         }
-        this.newKey = ''
-        this.displayAddTag = false
     }
 
     deleteTag(tag) {
@@ -491,6 +486,29 @@ export class ModalsContentPage implements OnInit {
             this.cdr.detectChanges()
         })
     }
+
+    async openModalAddTag() {
+        const modal = await this.modalCtrl.create({
+            component: ModalAddTag,
+            componentProps: {
+                moreFields: this.tagConfig.moreFields || [],
+                usedList: [
+                    ...this.tagConfig.presets,
+                    ...this.tags.map((e) => e.key),
+                ],
+            },
+        })
+        await modal.present()
+
+        modal.onDidDismiss().then((d) => {
+            const newTag = d.data
+            if (!newTag) return
+
+            this.addNewKey(newTag)
+            this.cdr.detectChanges()
+        })
+    }
+
     //  add or remplace tags [] from tags {}
     addTags(newTags, existingTags) {
         let _existingTags = [...existingTags]
