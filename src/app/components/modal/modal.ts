@@ -120,10 +120,13 @@ export class ModalsContentPage implements OnInit {
         // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
         // tslint:disable-next-line:forin
         for (const tag in this.feature.properties.tags) {
-            this.tags.push({
+            const preset = tagsService.presets[tag.replace(':', '/')]
+            const data: Tag = {
                 key: tag,
                 value: this.feature.properties.tags[tag],
-            })
+            }
+            if (preset) data.preset = preset
+            this.tags.push(data)
         }
         // clone
         this.originalTags = cloneDeep(this.tags)

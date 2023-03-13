@@ -172,12 +172,12 @@
                 *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets | orderByPreset:tagConfig"
             >
                 <edit-presets
-                    *ngIf="(tag.preset || tagsService.presets[tag.key]) ; else editOtherTag"
-                    [preset]="tag.preset ? tag.preset : tagsService.presets[tag.key]"
+                    *ngIf="(tag.preset || tagsService.presets[tag.key.replace(':', '/')]) ; else editOtherTag"
+                    [preset]="tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]"
                     [displayCode]="displayCode"
                     [tag]="tag"
                     [language]="this.configService.config.languageTags"
-                    (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key]))"
+                    (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]))"
                     (addTags)="addPresetsTags($event)"
                 >
                 </edit-presets>
