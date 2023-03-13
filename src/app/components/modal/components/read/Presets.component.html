@@ -11,9 +11,7 @@
             ><ion-icon name="link"></ion-icon
         ></a>
     </ion-card-header>
-    <ion-card-content *ngIf="preset?.type != 'opening_hours'">
-        <div *ngIf="preset?.type == 'opening_hours'"></div>
-
+    <ion-card-content *ngIf="preset?.key != 'opening_hours'">
         <p
             *ngIf="
                 !displayCode && (tag | displayPresetLabel: preset);
@@ -37,7 +35,7 @@
         </ng-template>
     </ion-card-content>
 
-    <ion-card-content *ngIf="preset?.type == 'opening_hours'">
+    <ion-card-content *ngIf="preset?.key == 'opening_hours'">
         <app-opening-hours
             *ngIf="!displayCode; else noPreset"
             [openingHours]="tag.value"
