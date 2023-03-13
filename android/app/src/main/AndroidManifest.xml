@@ -5,8 +5,8 @@
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:icon="@string/app_icon"
-        android:roundIcon="@string/app_icon_round"
+        android:icon="${appIcon}"
+        android:roundIcon="${appIconRound}"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
