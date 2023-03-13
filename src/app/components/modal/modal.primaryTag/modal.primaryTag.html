@@ -1,28 +1,29 @@
-<div *ngIf="!loading" style="height: 100%; background-color: white">
-    <div>
-        <div id="searchSelect">
-            <div id="searchDiv">
-                <ion-searchbar
-                    autocomplete="off"
-                    autocorrect="off"
-                    autocapitalize="none"
-                    inputmode="text"
-                    [(ngModel)]="searchText"
-                    [debounce]="300"
-                ></ion-searchbar>
-            </div>
+<div id="container" *ngIf="!loading">
+    <div id="searchSelect">
+        <div id="searchDiv">
+            <ion-searchbar
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="none"
+                inputmode="text"
+                [(ngModel)]="searchText"
+                [debounce]="300"
+            ></ion-searchbar>
         </div>
+    </div>
+
+    <ion-content>
         <div class="listTag" *ngIf="searchText.length > 2 ">
             <ion-list style="overflow-y: auto">
                 <ion-item
                     *ngFor="let tag of currentListOfTags
-        | filtersTagsByIds:tagsService.hiddenTagsIds:true
-        | filterDeprecatedTag 
-        | filterBySearchable 
-        | filterExcludeTagByCountryCode:countryTags 
-        | filterByByGeometryType:[geometryType]
-        | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText
-        | limitDisplayTags:50;"
+                        | filtersTagsByIds:tagsService.hiddenTagsIds:true
+                        | filterDeprecatedTag 
+                        | filterBySearchable 
+                        | filterExcludeTagByCountryCode:countryTags 
+                        | filterByByGeometryType:[geometryType]
+                        | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText
+                        | limitDisplayTags:50;"
                     class="ion-no-padding"
                 >
                     <app-tag-list-element
@@ -86,7 +87,9 @@
                     'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
                 </ion-button>
             </div>
+
             <div class="shadows"></div>
+
             <div class="lastTags tagList" *ngIf="displayType == 'lastTags'">
                 <h4 style="text-align: center">
                     {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}}
@@ -151,19 +154,21 @@
                 </ion-list>
             </div>
         </div>
-    </div>
+    </ion-content>
 
-    <ion-footer id="footer">
-        <ion-button ion-button color="danger" (click)="cancel()">
-            {{ 'SHARED.CANCEL' | translate}}
-        </ion-button>
+    <ion-footer>
+        <div class="actions">
+            <ion-button tappable (click)="dismiss()" fill="clear">
+                <ion-icon name="close" slot="start"></ion-icon>
+                {{ 'SHARED.CANCEL' | translate }}
+            </ion-button>
+        </div>
     </ion-footer>
-
-    <div *ngIf="loading" style="height: 100%">
-        <!-- <ion-header>
-      <ion-toolbar> -->
-        <ion-title> {{ 'MODAL_SELECTED_ITEM.LOADING' | translate}} </ion-title>
-        <!-- </ion-toolbar>
-    </ion-header> -->
-    </div>
+</div>
+<div *ngIf="loading" style="height: 100%">
+    <!-- <ion-header>
+  <ion-toolbar> -->
+    <ion-title> {{ 'MODAL_SELECTED_ITEM.LOADING' | translate}} </ion-title>
+    <!-- </ion-toolbar>
+</ion-header> -->
 </div>

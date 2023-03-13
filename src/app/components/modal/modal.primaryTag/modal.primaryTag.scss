@@ -1,41 +1,33 @@
-ion-header {
-    height: 65px;
-}
 $tabHeight: 0;
-$searchSelectHeight: 65px;
+
+#container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
 
 #searchSelect {
-    position: absolute;
-    top: $tabHeight;
-    height: $searchSelectHeight;
+    height: 65px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #searchDiv {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
-// ion-conten .primaryTag{
-//     margin-top: 130px;
-// }
-
-.listTag {
-    position: absolute;
-    top: $searchSelectHeight + $tabHeight;
-    bottom: 50px;
-    width: 100%;
-    overflow-y: scroll;
+ion-content {
+    flex-grow: 1;
+    overflow: hidden scroll;
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
+ion-footer {
+    .actions {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .buttonsSwitchType {
