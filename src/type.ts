@@ -85,6 +85,7 @@ export interface Tag {
     value: string | number
     isDefaultValue?: boolean
     preset?: any
+    isJustAdded?: boolean
 }
 
 export interface PresetOption {

@@ -295,11 +295,19 @@ export class ModalsContentPage implements OnInit {
 
         const genericPreset = this.tagsService.presets[key]
         if (!genericPreset) {
-            this.tags = [...this.tags, { key: key, value: '' }]
+            this.tags = [
+                ...this.tags,
+                { key: key, value: '', isJustAdded: true },
+            ]
         } else {
             this.tags = [
                 ...this.tags,
-                { key: key, value: '', preset: genericPreset },
+                {
+                    key: key,
+                    value: '',
+                    preset: genericPreset,
+                    isJustAdded: true,
+                },
             ]
         }
         this.newKey = ''
