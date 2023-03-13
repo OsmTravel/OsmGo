@@ -46,15 +46,15 @@ import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
 
 import { FilterByListPipe } from '@pipes/filterByList.pipe'
-import { FilterPresetsByListPipe } from './pipes/filterPresetsByList.pipe'
-import { RemoveBrandsPipe } from './pipes/removeBrands.pipe'
-import { SearchForPipe } from './pipes/searchFor.pipe'
-import { ToOsmTagPipe } from './pipes/toOsmTag.pipe'
+import { FilterPresetsByListPipe } from '@pipes/filterPresetsByList.pipe'
+import { RemoveBrandsPipe } from '@pipes/removeBrands.pipe'
+import { SearchForPipe } from '@pipes/searchFor.pipe'
+import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
 
 import { FilterDeprecatedTagPipe } from '@pipes/filterDeprecatedTag.pipe'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
-import { OrderByPresetPipe } from './pipes/orderByPreset.pipe'
-import { CharLimitPipe } from './pipes/charLimit.pipe'
+import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
+import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 

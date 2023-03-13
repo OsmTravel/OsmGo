@@ -18,7 +18,9 @@
     </ion-item-group>
 
     <ion-item-group *ngIf="searchFilter.length > 0">
-        <ion-item *ngIf="!usedList.includes(nameToOsmKey(searchFilter))">
+        <ion-item
+            *ngIf="!usedList.includes(nameToOsmKey(searchFilter)) && nameToOsmKey(searchFilter).length != 0"
+        >
             <ion-label (click)="select(searchFilter)">
                 <h3 *ngIf="tagsService.presets[nameToOsmKey(searchFilter)]">
                     {{
