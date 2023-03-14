@@ -72,6 +72,8 @@ export class ModalsContentPage implements OnInit {
     newPosition
     presetsIds = []
 
+    lastSurvey?: Date
+
     constructor(
         public platform: Platform,
         public params: NavParams,
@@ -117,6 +119,8 @@ export class ModalsContentPage implements OnInit {
         this.origineData = this.params.data.origineData // literal, sources
         this.typeFiche = 'Loading' // Edit, Read, Loading
 
+        const surveyDates = []
+
         // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
         // tslint:disable-next-line:forin
         for (const tag in this.feature.properties.tags) {
@@ -127,7 +131,21 @@ export class ModalsContentPage implements OnInit {
             }
             if (preset) data.preset = preset
             this.tags.push(data)
+
+            if (['survey:date', 'check_date'].includes(tag)) {
+                const surveyValue = new Date(this.feature.properties.tags[tag])
+                surveyValue.setHours(0, 0, 0, 0) // Reset hours
+                surveyDates.push(surveyValue)
+            }
         }
+
+        this.lastSurvey =
+            surveyDates.length > 0
+                ? surveyDates.reduce((pr, cu) => {
+                      return cu > pr ? cu : pr
+                  })
+                : null
+
         // clone
         this.originalTags = cloneDeep(this.tags)
     }
@@ -595,15 +613,38 @@ export class ModalsContentPage implements OnInit {
             })
     }
 
-    addSurveyDate() {
-        const now = new Date()
-        const YYYY = now.getFullYear()
+    generateISODate(date: Date) {
+        const YYYY = date.getFullYear()
         const MM =
-            now.getMonth() + 1 < 10
-                ? '0' + (now.getMonth() + 1)
-                : '' + (now.getMonth() + 1)
-        const DD = now.getDate() < 10 ? '0' + now.getDate() : '' + now.getDate()
-        const isoDate = YYYY + '-' + MM + '-' + DD
+            date.getMonth() + 1 < 10
+                ? '0' + (date.getMonth() + 1)
+                : '' + (date.getMonth() + 1)
+        const DD =
+            date.getDate() < 10 ? '0' + date.getDate() : '' + date.getDate()
+        return YYYY + '-' + MM + '-' + DD
+    }
+
+    shouldShowSurveyCard() {
+        const display = this.configService.getDisplaySurveyCard()
+        const today = new Date()
+        if (display == 'never') return false
+        if (!this.lastSurvey) return true
+        if (
+            this.generateISODate(this.lastSurvey) == this.generateISODate(today)
+        )
+            return false
+        if (display == 'always') return true
+
+        const OneYear = 31536000000
+        const maxYearAgo = this.configService.getSurveyCardYear()
+
+        return (
+            this.lastSurvey.getTime() < today.getTime() - OneYear * maxYearAgo
+        )
+    }
+
+    addSurveyDate() {
+        const isoDate = this.generateISODate(new Date())
 
         let tagSurveyIndex = -1
         for (let i = 0; i < this.tags.length; i++) {

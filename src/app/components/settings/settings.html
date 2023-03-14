@@ -51,7 +51,7 @@
             ></ion-toggle>
         </ion-item>
 
-        <ion-item lines="inset">
+        <ion-item lines="none">
             <ion-label>
                 <h3>{{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate}}</h3>
                 <p>{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}}</p>
@@ -144,21 +144,9 @@
 
         <ion-item lines="inset">
             <ion-label>
-                <h3>{{ 'SETTINGS.ADD_SURVEY_DATE' | translate}}</h3>
-                <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [checked]="this.configService.config.addSurveyDate"
-                (ionChange)="addSurveyDateChange($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
                 <h3>{{ 'SETTINGS.CHECKED_KEY' | translate}}</h3>
             </ion-label>
             <ion-select
-                [disabled]="!this.configService.config.addSurveyDate"
                 [value]="this.configService.config.checkedKey"
                 (ionChange)="checkedKeyChange($event)"
             >
@@ -169,6 +157,60 @@
                     check_date
                 </ion-select-option>
             </ion-select>
+        </ion-item>
+
+        <ion-item lines="inset">
+            <ion-label>
+                <h3>{{ 'SETTINGS.ADD_SURVEY_DATE' | translate}}</h3>
+                <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}</p>
+            </ion-label>
+            <ion-toggle
+                [checked]="this.configService.config.addSurveyDate"
+                (ionChange)="addSurveyDateChange($event)"
+            ></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>
+                <h3>{{ 'SETTINGS.DISPLAY_SURVEY_CARD' | translate}}</h3>
+                <p>{{ 'SETTINGS.DISPLAY_SURVEY_CARD_HINT' | translate}}</p>
+            </ion-label>
+            <ion-select
+                [value]="this.configService.config.surveyCard.display"
+                (ionChange)="displaySurveyCardChange($event)"
+                [interfaceOptions]="displaySurveyCardOptions()"
+            >
+                <ion-select-option value="never">
+                    {{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.NEVER' | translate}}
+                </ion-select-option>
+                <ion-select-option value="when_older">
+                    {{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.OLDER' | translate}}
+                </ion-select-option>
+                <ion-select-option value="always">
+                    {{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.ALWAYS' |
+                    translate}}
+                </ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item lines="inset">
+            <ion-label
+                position="stacked"
+                translate
+                [translateParams]="{year: this.configService.getSurveyCardYear()}"
+            >
+                SETTINGS.SURVEY_CARD_RANGE
+            </ion-label>
+            <ion-range
+                [disabled]="this.configService.config.surveyCard.display != 'when_older'"
+                [value]="this.configService.config.surveyCard.year"
+                debounce="300"
+                snaps
+                (ionChange)="yearOldSurveyCardChange($event)"
+                min="0"
+                max="10"
+                step="0.5"
+                pin
+            ></ion-range>
         </ion-item>
     </ion-item-group>
 
@@ -273,7 +315,7 @@
             </ion-label>
             <ion-select
                 [value]="this.configService.config.countryTags"
-                [interfaceOptions]="countryTagsOptions"
+                [interfaceOptions]="countryTagsOptions()"
                 (ionChange)="countryTagsChange($event)"
             >
                 <ion-select-option

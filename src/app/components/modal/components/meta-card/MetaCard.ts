@@ -7,12 +7,10 @@ import * as moment from 'moment'
     templateUrl: './MetaCard.html',
 })
 export class MetaCard {
-    @Output() confirmPresence = new EventEmitter()
-
     @Input() feature
+    @Input() lastSurvey
     @Input() displayCode
     @Input() languageUi
-    @Input() mapService
     meta
     usedByWays
     constructor() {}
@@ -20,10 +18,5 @@ export class MetaCard {
     ngOnInit(): void {
         this.usedByWays = this.feature.properties.usedByWays || null
         moment.locale(this.languageUi) // TODO Once...
-    }
-
-    emitConfirmPresence() {
-        if (this.feature.properties['changeType']) return
-        this.confirmPresence.emit()
     }
 }

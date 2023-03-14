@@ -23,8 +23,7 @@
                 [feature]="feature"
                 [displayCode]="displayCode"
                 [languageUi]="configService.getUiLanguage()"
-                [mapService]="mapService"
-                (confirmPresence)="confirmAddSurveyDate()"
+                [lastSurvey]="lastSurvey"
             >
             </meta-card>
 
@@ -44,6 +43,11 @@
                 [jsonSprites]="tagsService.jsonSprites"
             >
             </primary-key>
+
+            <survey-card
+                *ngIf="shouldShowSurveyCard()"
+                (yes)="addSurveyDate();updateOsmElement(null);"
+            ></survey-card>
 
             <div
                 *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets | orderByPreset:tagConfig"

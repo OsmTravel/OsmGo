@@ -26,6 +26,7 @@ import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import { SettingsPage } from '@components/settings/settings'
 
 import { MetaCard } from '@app/components/modal/components/meta-card/MetaCard'
+import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
 
 import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
@@ -121,6 +122,7 @@ export function createTranslateLoader(http: HttpClient) {
         ModalAddOpeningHoursIntervalComponent,
 
         MetaCard,
+        SurveyCard,
         PrimaryKey,
 
         DisplayPresetLabelPipe,

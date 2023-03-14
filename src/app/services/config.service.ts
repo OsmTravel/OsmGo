@@ -44,6 +44,10 @@ export interface Config {
     isDevMode: boolean
     isDevServer: boolean
     checkedKey: 'survey:date' | 'check_date'
+    surveyCard: {
+        display: 'never' | 'when_older' | 'always'
+        year: number
+    }
     isSelectableLine: boolean
     isSelectablePolygon: boolean
     passwordSaved: boolean
@@ -129,6 +133,10 @@ export class ConfigService {
         isDevMode: false,
         isDevServer: false,
         checkedKey: 'survey:date',
+        surveyCard: {
+            display: 'always',
+            year: 4,
+        },
         isSelectableLine: true,
         isSelectablePolygon: false,
         passwordSaved: true,
@@ -471,6 +479,24 @@ export class ConfigService {
 
     setCheckedKey(key: 'survey:date' | 'check_date') {
         this.config.checkedKey = key
+        this.localStorage.set('config', this.config)
+    }
+
+    getDisplaySurveyCard(): 'never' | 'when_older' | 'always' {
+        return this.config.surveyCard.display
+    }
+
+    setDisplaySurveyCard(value: 'never' | 'when_older' | 'always') {
+        this.config.surveyCard.display = value
+        this.localStorage.set('config', this.config)
+    }
+
+    getSurveyCardYear(): number {
+        return this.config.surveyCard.year
+    }
+
+    setSurveyCardYear(value: number) {
+        this.config.surveyCard.year = value
         this.localStorage.set('config', this.config)
     }
 
