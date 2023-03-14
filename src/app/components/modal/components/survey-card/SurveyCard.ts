@@ -15,12 +15,10 @@ export class SurveyCard {
     ngOnInit(): void {}
 
     handleYes() {
-        console.log('YES')
         this.yes.emit()
     }
 
     handleNo() {
-        console.log('NO')
         this.no.emit()
     }
 }

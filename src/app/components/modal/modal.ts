@@ -643,6 +643,18 @@ export class ModalsContentPage implements OnInit {
         )
     }
 
+    handleSurveyYes() {
+        this.addSurveyDate()
+        this.updateOsmElement(null)
+    }
+
+    async handleSurveyNo() {
+        // TODO: Ask if closed, disused or not existant
+        if (this.feature.properties.type == 'node') {
+            this.presentConfirm()
+        }
+    }
+
     addSurveyDate() {
         const isoDate = this.generateISODate(new Date())
 

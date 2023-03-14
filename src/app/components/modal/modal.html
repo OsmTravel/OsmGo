@@ -46,7 +46,8 @@
 
             <survey-card
                 *ngIf="shouldShowSurveyCard()"
-                (yes)="addSurveyDate();updateOsmElement(null);"
+                (yes)="handleSurveyYes()"
+                (no)="handleSurveyNo()"
             ></survey-card>
 
             <div
