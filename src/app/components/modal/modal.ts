@@ -621,6 +621,19 @@ export class ModalsContentPage implements OnInit {
                 value: isoDate,
             })
         }
+
+        // Remove old check tags
+        const possibleCheckedKeys = ['survey:date', 'check_date']
+        for (let i = 0; i < this.tags.length; i++) {
+            const key = this.tags[i].key
+            if (
+                key !== this.configService.config.checkedKey &&
+                possibleCheckedKeys.includes(key)
+            ) {
+                this.tags.splice(i, 1)
+                i--
+            }
+        }
     }
 
     saveFields(tagId, tags) {
