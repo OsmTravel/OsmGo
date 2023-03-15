@@ -60,7 +60,7 @@ export class MainPage implements AfterViewInit {
         private alertCtrl: AlertController,
         private _ngZone: NgZone,
         private router: Router,
-        private translate: TranslateService,
+        public translate: TranslateService,
         public loadingController: LoadingController,
         private swUpdate: SwUpdate,
         public initService: InitService

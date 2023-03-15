@@ -25,7 +25,19 @@
         "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
         "WHAT_ITEM": "Which?",
         "LOAD_BBOX": "Load data?",
-        "CREATING_MISSING_ICONS": "Creating missing icons…"
+        "CREATING_MISSING_ICONS": "Creating missing icons…",
+        "BUTTONS": {
+            "MENU": "Menu",
+            "UPLOAD": "Upload changes to OSM",
+            "LOAD_DATA": "Load data from OSM",
+            "LOADING_DATA": "Loading data from OSM",
+            "VIEW_AREAL_MAP": "View aerial imagery",
+            "VIEW_STYLED_MAP": "View styled map",
+            "ADD_NEW": "Add new node",
+            "CENTER_GPS": "Center on my position",
+            "CONFIRM_ADD": "Add node",
+            "CONFIRM_MOVE": "Move node"
+        }
     },
     "MENU": {
         "CONNECTION": "Log in at OpenStreetMap",
