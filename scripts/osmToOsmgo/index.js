@@ -162,20 +162,57 @@ const getPrimaryKeyOfObject = (feature, primaryKeys) => {
 
 export function getConfigTag(feature, presets) {
     const featureID = feature.properties.configId
+
+    const featurePrimaryTag = `${feature.properties.primaryTag.key}/${feature.properties.primaryTag.value}`
+    const featureTags = feature.properties.tags
+    let mostMaches = 0
+
     let match = { exact: undefined, presets: [], moreFields: [] }
     for (let variant of presets) {
         const presetID = variant.id
-        // Save presets and moreFields from parent IDs
-        if (featureID.includes(presetID)) {
-            if (variant.presets)
-                match.presets = [...match.presets, ...variant.presets]
-            if (variant.moreFields)
-                match.moreFields = [...match.moreFields, ...variant.moreFields]
-        }
-        if (featureID == presetID) {
-            match.exact = variant
+        if (featureID) {
+            // Save presets and moreFields from parent IDs
+            if (featureID.includes(presetID)) {
+                if (variant.presets)
+                    match.presets = [...match.presets, ...variant.presets]
+                if (variant.moreFields)
+                    match.moreFields = [
+                        ...match.moreFields,
+                        ...variant.moreFields,
+                    ]
+            }
+            if (featureID == presetID) {
+                match.exact = variant
+            }
+        } else {
+            if (!presetID.includes(featurePrimaryTag)) continue
+            let matches = 0
+            for (let key in variant.tags) {
+                if (
+                    !featureTags[key] ||
+                    featureTags[key] !== variant.tags[key]
+                ) {
+                    continue
+                } else {
+                    matches++
+                }
+            }
+            if (matches == Object.keys(variant.tags).length) {
+                if (variant.presets)
+                    match.presets = [...match.presets, ...variant.presets]
+                if (variant.moreFields)
+                    match.moreFields = [
+                        ...match.moreFields,
+                        ...variant.moreFields,
+                    ]
+                if (matches > mostMaches) {
+                    match.exact = variant
+                    mostMaches = matches
+                }
+            }
         }
     }
+
     if (match.exact) {
         let result = JSON.parse(JSON.stringify(match.exact)) // DeepCopy
         // Add presets and moreFields from parent IDs
