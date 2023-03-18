@@ -628,6 +628,7 @@ export class ModalsContentPage implements OnInit {
         const display = this.configService.getDisplaySurveyCard()
         const today = new Date()
         if (display == 'never') return false
+        if (this.feature.properties.meta.timestamp == '0') return false
         if (!this.lastSurvey) return true
         if (
             this.generateISODate(this.lastSurvey) == this.generateISODate(today)
