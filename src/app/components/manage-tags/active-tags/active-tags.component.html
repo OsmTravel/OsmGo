@@ -1,11 +1,9 @@
 <ion-header color="primary">
     <ion-toolbar color="primary">
-        <ion-buttons
-            style="min-width: 32px"
-            (click)="modalCtrl.dismiss(false)"
-            slot="primary"
-        >
-            <ion-icon name="arrow-back"></ion-icon>
+        <ion-buttons style="min-width: 32px" slot="primary">
+            <ion-button (click)="modalCtrl.dismiss(false)">
+                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
         </ion-buttons>
         <ion-title>
             {{ 'MANAGE_TAGS.ACTIVE_TAGS' | translate }}

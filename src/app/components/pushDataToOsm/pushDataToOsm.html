@@ -23,14 +23,11 @@
 
 <ion-header color="primary">
     <ion-toolbar color="primary">
-        <ion-button
-            style="min-width: 32px"
-            [disabled]="isPushing"
-            (click)="navCtrl.back()"
-            slot="primary"
-        >
-            <ion-icon name="arrow-back"></ion-icon>
-        </ion-button>
+        <ion-buttons style="min-width: 32px" slot="primary">
+            <ion-button (click)="navCtrl.back()" [disabled]="isPushing">
+                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
         <ion-title> {{ 'SEND_DATA.SEND_DATA' | translate}} </ion-title>
     </ion-toolbar>
 </ion-header>
