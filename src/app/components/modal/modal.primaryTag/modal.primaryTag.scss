@@ -1,44 +1,70 @@
-ion-header {
-    height: 65px;
-}
 $tabHeight: 0;
-$searchSelectHeight: 65px;
+
+#container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
 
 #searchSelect {
-    position: absolute;
-    top: $tabHeight;
-    height: $searchSelectHeight;
+    height: 65px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #searchDiv {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
-// ion-conten .primaryTag{
-//     margin-top: 130px;
-// }
+ion-content {
+    flex-grow: 1;
+    overflow: hidden scroll;
+}
 
-.listTag {
-    position: absolute;
-    top: $searchSelectHeight + $tabHeight;
-    bottom: 50px;
+ion-footer {
+    .actions {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.buttonsSwitchType {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px 8px;
+}
+
+ion-button.buttonSwitchType {
+    position: relative;
+    margin-bottom: 0px;
+    --border-radius: 4px 4px 0px 0px;
+    --background: rgb(255, 255, 255);
+    --color: rgba(24, 24, 24, 0.65);
+    --box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+        rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+
+    &[disabled] {
+        opacity: 1;
+        z-index: 1;
+        --color: rgb(24, 24, 24);
+        --box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+            rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+            rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+    }
+}
+
+.shadows {
+    position: relative;
+    z-index: 0;
     width: 100%;
-    overflow-y: scroll;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-}
-
-.buttonSwitchType {
-    width: 50%;
-    margin: 0;
+.tagList {
+    z-index: 1;
+    position: relative;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
 }

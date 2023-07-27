@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core'
 
 @Component({
     selector: 'read-presets',
-    templateUrl: 'READ_Presets.component.html',
+    templateUrl: 'Presets.component.html',
 })
 export class ReadPresets {
     @Input() displayCode

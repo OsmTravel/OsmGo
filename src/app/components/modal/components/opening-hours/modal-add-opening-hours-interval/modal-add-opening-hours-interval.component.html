@@ -1,94 +1,74 @@
-<ion-content>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[0].selected ? 'primary' : 'light'"
-        (click)="toggleDay(0)"
-    >
-        {{ 'DAYS.MONDAY' | translate }}
-    </ion-badge>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[1].selected ? 'primary' : 'light'"
-        (click)="toggleDay(1)"
-    >
-        {{ 'DAYS.TUESDAY' | translate }}
-    </ion-badge>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[2].selected ? 'primary' : 'light'"
-        (click)="toggleDay(2)"
-    >
-        {{ 'DAYS.WEDNESDAY' | translate }}
-    </ion-badge>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[3].selected ? 'primary' : 'light'"
-        (click)="toggleDay(3)"
-    >
-        {{ 'DAYS.THURSDAY' | translate }}
-    </ion-badge>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[4].selected ? 'primary' : 'light'"
-        (click)="toggleDay(4)"
-    >
-        {{ 'DAYS.FRIDAY' | translate }}
-    </ion-badge>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[5].selected ? 'primary' : 'light'"
-        (click)="toggleDay(5)"
-    >
-        {{ 'DAYS.SATURDAY' | translate }}
-    </ion-badge>
-    <ion-badge
-        class="dayBadge"
-        [color]="days[6].selected ? 'primary' : 'light'"
-        (click)="toggleDay(6)"
-    >
-        {{ 'DAYS.SUNDAY' | translate }}
-    </ion-badge>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>{{
+            'OPENINGHOURS.ADD_OPENING_HOURS' | translate
+        }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-vertical">
+    <div class="daysHeader">
+        <ion-badge
+            *ngFor="let day of days"
+            class="dayBadge"
+            [color]="day.selected ? 'primary' : 'light'"
+            (click)="toggleDay(day.index)"
+        >
+            {{ day.label | translate | charLimit: 3 }}
+        </ion-badge>
+    </div>
 
     <div *ngIf="!dayIsSelected" class="alertSelectADay">
         {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
     </div>
 
-    <div *ngFor="let time of times; let index = index">
-        <ion-list>
-            <ion-item>
-                <ion-label>
-                    {{ 'OPENINGHOURS.START_TIME' | translate }}
-                </ion-label>
+    <ion-card *ngFor="let time of times; let index = index">
+        <div class="timeGrid">
+            <div class="timeBlock">
+                <h3>{{ 'OPENINGHOURS.START_TIME' | translate }}</h3>
                 <ion-datetime
                     display-format="HH:mm"
                     picker-format="HH:mm"
-                    minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
+                    presentation="time"
                     [(ngModel)]="time.start"
                 ></ion-datetime>
-            </ion-item>
-
-            <ion-item>
-                <ion-label>{{ 'OPENINGHOURS.END_TIME' | translate }}</ion-label>
+            </div>
+            <div class="timeBlock">
+                <h3>{{ 'OPENINGHOURS.END_TIME' | translate }}</h3>
                 <ion-datetime
                     display-format="HH:mm"
                     picker-format="HH:mm"
-                    minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
+                    presentation="time"
                     [(ngModel)]="time.end"
                 ></ion-datetime>
-            </ion-item>
-        </ion-list>
-        <ion-button color="danger" (click)="removeInteval(index)">
+            </div>
+        </div>
+        <ion-button
+            color="danger"
+            (click)="removeInteval(index)"
+            fill="clear"
+            expand="full"
+        >
             {{ 'OPENINGHOURS.DELETE_INTERVAL' | translate }}
         </ion-button>
-    </div>
+    </ion-card>
 
-    <ion-button color="success" (click)="addNewInteval()">
+    <ion-button
+        color="success"
+        (click)="addNewInteval()"
+        expand="block"
+        class="addInterval"
+    >
         {{ 'OPENINGHOURS.ADD_INTERVAL' | translate }}
     </ion-button>
 </ion-content>
 
 <ion-footer id="footer">
-    <ion-button color="warning" (click)="cancel()">Cancel</ion-button>
+    <ion-button (click)="cancel()" fill="clear">
+        <ion-icon name="close" slot="start"></ion-icon>
+        {{ 'SHARED.CANCEL' | translate }}
+    </ion-button>
+    <div class="spacer"></div>
     <ion-button
         (click)="submit(times, days)"
         [disabled]="!dayIsSelected || times.length == 0"

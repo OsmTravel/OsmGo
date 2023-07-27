@@ -136,29 +136,6 @@
     </ion-card-content>
 </ion-card>
 
-<ion-card *ngIf="preset?.type === 'opening_hours'">
-    <ion-card-header>
-        <b *ngIf="!displayCode">{{
-            preset?.lbl[language] || preset?.lbl['en']
-        }}</b>
-        <b *ngIf="displayCode">
-            <ion-icon name="code"></ion-icon> {{ preset?.key }}</b
-        >
-    </ion-card-header>
-
-    <ion-card-content>
-        <div class="wrapperEdit2cols">
-            <app-opening-hours
-                [openingHours]="tag.value"
-                [displayCode]="displayCode"
-                [editMode]="true"
-                (valueChangeEvent)="tag.value = $event"
-            >
-            </app-opening-hours>
-        </div>
-    </ion-card-content>
-</ion-card>
-
 <ion-card *ngIf="preset?.type === 'text'">
     <ion-card-header>
         <b *ngIf="!displayCode">{{
@@ -171,22 +148,33 @@
 
     <ion-card-content>
         <div class="wrapperEdit2cols">
-            <div class="contentEdit2cols">
-                <ion-item style="padding-left: 0px">
-                    <ion-input
-                        type="text"
-                        [(ngModel)]="tag.value"
-                        [placeholder]="tag.key"
-                    ></ion-input>
-                </ion-item>
-            </div>
-            <div class="buttonEdit2cols">
-                <ion-icon
-                    (click)="tag.value = ''"
-                    name="close"
-                    style="width: 2em; height: 2em"
-                ></ion-icon>
-            </div>
+            <app-opening-hours
+                *ngIf="preset?.key === 'opening_hours'; else normalText"
+                [openingHours]="tag.value"
+                [displayCode]="displayCode"
+                [editMode]="true"
+                (valueChangeEvent)="tag.value = $event"
+            >
+            </app-opening-hours>
+
+            <ng-template #normalText>
+                <div class="contentEdit2cols">
+                    <ion-item style="padding-left: 0px">
+                        <ion-input
+                            type="text"
+                            [(ngModel)]="tag.value"
+                            [placeholder]="tag.key"
+                        ></ion-input>
+                    </ion-item>
+                </div>
+                <div class="buttonEdit2cols">
+                    <ion-icon
+                        (click)="tag.value = ''"
+                        name="close"
+                        style="width: 2em; height: 2em"
+                    ></ion-icon>
+                </div>
+            </ng-template>
         </div>
     </ion-card-content>
 </ion-card>

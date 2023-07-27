@@ -14,7 +14,10 @@
         (resized)="onMapResized($event)"
     >
         <!-- Top left button to open menu -->
-        <ion-fab style="left: 0px; top: 0px; margin: 6px">
+        <ion-fab
+            style="left: 0px; top: 0px; margin: 6px"
+            [title]="translate.instant('MAIN.BUTTONS.MENU')"
+        >
             <ion-badge
                 color="danger"
                 *ngIf="newVersion"
@@ -30,6 +33,7 @@
         <ion-fab
             style="right: 0; top: 0; margin: 6px; margin-right: 46px"
             *ngIf="dataService.geojsonChanged && dataService.geojsonChanged.features.length > 0 && !mapService.markerMoving"
+            [title]="translate.instant('MAIN.BUTTONS.UPLOAD')"
         >
             <ion-fab-button (click)="navCtrl.navigateForward('/pushData')">
                 <ion-icon name="cloud-upload"></ion-icon>
@@ -40,6 +44,7 @@
         <ion-fab
             *ngIf="!(mapService.isProcessing | async)"
             style="left: 0; bottom: 34px; margin: 6px"
+            [title]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
         >
             <ion-fab-button
                 tappable
@@ -61,6 +66,7 @@
         <ion-fab
             *ngIf="mapService.isProcessing | async"
             style="left: 0; bottom: 34px; margin: 6px"
+            [title]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
         >
             <ion-fab-button disabled>
                 <ion-spinner></ion-spinner>
@@ -75,6 +81,7 @@
                 fab-bottom
                 [color]="mapService.isDisplaySatelliteBaseMap ? 'light' : 'secondary'  "
                 (click)="mapService.displaySatelliteBaseMap(configService.getBasemap(), !mapService.isDisplaySatelliteBaseMap)"
+                [title]="translate.instant(mapService.isDisplaySatelliteBaseMap ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
             >
                 <ion-icon name="image"></ion-icon>
             </ion-fab-button>
@@ -86,6 +93,7 @@
             bottom
             style="right: 0; bottom: 100px; margin: 6px"
             *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"
+            [title]="translate.instant('MAIN.BUTTONS.ADD_NEW')"
         >
             <ion-fab-button
                 tappable
@@ -104,6 +112,7 @@
             right
             *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"
             style="right: 0; bottom: 34px; margin: 6px"
+            [title]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
         >
             <ion-fab-button
                 tappable
@@ -122,6 +131,7 @@
             bottom
             *ngIf="mapService.markerMoving"
             style="right: 0; bottom: 34px; margin: 6px"
+            [title]="translate.instant('MAIN.BUTTONS.CONFIRM_ADD')"
         >
             <ion-fab-button
                 tappable
@@ -137,6 +147,7 @@
         <ion-fab
             style="right: 60px; bottom: 34px; margin: 6px"
             *ngIf="mapService.markerMoving"
+            [title]="translate.instant('SHARED.CANCEL')"
         >
             <ion-fab-button
                 tappable
@@ -152,6 +163,7 @@
         <ion-fab
             style="right: 60px; bottom: 34px; margin: 6px"
             *ngIf="mapService.markerMoveMoving"
+            [title]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
         >
             <ion-fab-button
                 fab-bottom
@@ -166,6 +178,7 @@
         <ion-fab
             style="right: 0; bottom: 34px; margin: 6px"
             *ngIf="mapService.markerMoveMoving"
+            [title]="translate.instant('SHARED.CANCEL')"
         >
             <ion-fab-button
                 ion-fab

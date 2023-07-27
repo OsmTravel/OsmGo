@@ -21,6 +21,7 @@ import { AlertService } from '@services/alert.service'
 import { TagsService } from '@services/tags.service'
 import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
 import { ModalSelectList } from './modalSelectList/modalSelectList'
+import { ModalAddTag } from './modal.addTag/modal.addTag'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
 
 import { Tag, Preset, PrimaryTag, TagConfig, OsmGoFeature } from '@osmgo/type'
@@ -67,11 +68,11 @@ export class ModalsContentPage implements OnInit {
 
     customValue = ''
 
-    newKey = ''
     allTags
     newPosition
-    displayAddTag = false
     presetsIds = []
+
+    lastSurvey?: Date
 
     constructor(
         public platform: Platform,
@@ -118,14 +119,33 @@ export class ModalsContentPage implements OnInit {
         this.origineData = this.params.data.origineData // literal, sources
         this.typeFiche = 'Loading' // Edit, Read, Loading
 
+        const surveyDates = []
+
         // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
         // tslint:disable-next-line:forin
         for (const tag in this.feature.properties.tags) {
-            this.tags.push({
+            const preset = tagsService.presets[tag.replace(':', '/')]
+            const data: Tag = {
                 key: tag,
                 value: this.feature.properties.tags[tag],
-            })
+            }
+            if (preset) data.preset = preset
+            this.tags.push(data)
+
+            if (['survey:date', 'check_date'].includes(tag)) {
+                const surveyValue = new Date(this.feature.properties.tags[tag])
+                surveyValue.setHours(0, 0, 0, 0) // Reset hours
+                surveyDates.push(surveyValue)
+            }
         }
+
+        this.lastSurvey =
+            surveyDates.length > 0
+                ? surveyDates.reduce((pr, cu) => {
+                      return cu > pr ? cu : pr
+                  })
+                : null
+
         // clone
         this.originalTags = cloneDeep(this.tags)
     }
@@ -288,22 +308,26 @@ export class ModalsContentPage implements OnInit {
     addNewKey(key) {
         // Check if the key already exists in presets
         if (this.tags.find((t) => t.key == key)) {
-            this.displayAddTag = false
-            this.newKey = ''
             return
         }
 
         const genericPreset = this.tagsService.presets[key]
         if (!genericPreset) {
-            this.tags = [...this.tags, { key: key, value: '' }]
+            this.tags = [
+                ...this.tags,
+                { key: key, value: '', isJustAdded: true },
+            ]
         } else {
             this.tags = [
                 ...this.tags,
-                { key: key, value: '', preset: genericPreset },
+                {
+                    key: key,
+                    value: '',
+                    preset: genericPreset,
+                    isJustAdded: true,
+                },
             ]
         }
-        this.newKey = ''
-        this.displayAddTag = false
     }
 
     deleteTag(tag) {
@@ -483,6 +507,29 @@ export class ModalsContentPage implements OnInit {
             this.cdr.detectChanges()
         })
     }
+
+    async openModalAddTag() {
+        const modal = await this.modalCtrl.create({
+            component: ModalAddTag,
+            componentProps: {
+                moreFields: this.tagConfig.moreFields || [],
+                usedList: [
+                    ...this.tagConfig.presets,
+                    ...this.tags.map((e) => e.key),
+                ],
+            },
+        })
+        await modal.present()
+
+        modal.onDidDismiss().then((d) => {
+            const newTag = d.data
+            if (!newTag) return
+
+            this.addNewKey(newTag)
+            this.cdr.detectChanges()
+        })
+    }
+
     //  add or remplace tags [] from tags {}
     addTags(newTags, existingTags) {
         let _existingTags = [...existingTags]
@@ -566,15 +613,51 @@ export class ModalsContentPage implements OnInit {
             })
     }
 
-    addSurveyDate() {
-        const now = new Date()
-        const YYYY = now.getFullYear()
+    generateISODate(date: Date) {
+        const YYYY = date.getFullYear()
         const MM =
-            now.getMonth() + 1 < 10
-                ? '0' + (now.getMonth() + 1)
-                : '' + (now.getMonth() + 1)
-        const DD = now.getDate() < 10 ? '0' + now.getDate() : '' + now.getDate()
-        const isoDate = YYYY + '-' + MM + '-' + DD
+            date.getMonth() + 1 < 10
+                ? '0' + (date.getMonth() + 1)
+                : '' + (date.getMonth() + 1)
+        const DD =
+            date.getDate() < 10 ? '0' + date.getDate() : '' + date.getDate()
+        return YYYY + '-' + MM + '-' + DD
+    }
+
+    shouldShowSurveyCard() {
+        const display = this.configService.getDisplaySurveyCard()
+        const today = new Date()
+        if (display == 'never') return false
+        if (this.feature.properties.meta.timestamp == '0') return false
+        if (!this.lastSurvey) return true
+        if (
+            this.generateISODate(this.lastSurvey) == this.generateISODate(today)
+        )
+            return false
+        if (display == 'always') return true
+
+        const OneYear = 31536000000
+        const maxYearAgo = this.configService.getSurveyCardYear()
+
+        return (
+            this.lastSurvey.getTime() < today.getTime() - OneYear * maxYearAgo
+        )
+    }
+
+    handleSurveyYes() {
+        this.addSurveyDate()
+        this.updateOsmElement(null)
+    }
+
+    async handleSurveyNo() {
+        // TODO: Ask if closed, disused or not existant
+        if (this.feature.properties.type == 'node') {
+            this.presentConfirm()
+        }
+    }
+
+    addSurveyDate() {
+        const isoDate = this.generateISODate(new Date())
 
         let tagSurveyIndex = -1
         for (let i = 0; i < this.tags.length; i++) {
@@ -591,6 +674,19 @@ export class ModalsContentPage implements OnInit {
                 key: this.configService.config.checkedKey,
                 value: isoDate,
             })
+        }
+
+        // Remove old check tags
+        const possibleCheckedKeys = ['survey:date', 'check_date']
+        for (let i = 0; i < this.tags.length; i++) {
+            const key = this.tags[i].key
+            if (
+                key !== this.configService.config.checkedKey &&
+                possibleCheckedKeys.includes(key)
+            ) {
+                this.tags.splice(i, 1)
+                i--
+            }
         }
     }
 

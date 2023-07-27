@@ -555,7 +555,7 @@ export class MapService {
                 let spritesFullPath = `mapStyle/sprites/sprites`
 
                 const basePath = window.location.href.split('#')[0] //example : http://127.0.0.1:8080/www/#/main => http://127.0.0.1:8080/www/
-                spritesFullPath = `${basePath}/assets/${spritesFullPath}`
+                spritesFullPath = `${basePath}assets/${spritesFullPath}`
 
                 maplibreStyle['sprite'] = spritesFullPath
                 return maplibreStyle

@@ -24,7 +24,8 @@ export class SettingsPage {
         public dataService: DataService,
         public osmApi: OsmApiService,
         public loadingController: LoadingController,
-        public initService: InitService
+        public initService: InitService,
+        private translate: TranslateService
     ) {}
 
     ngOnInit(): void {
@@ -126,6 +127,23 @@ export class SettingsPage {
         this.configService.setCheckedKey(e.detail.value)
     }
 
+    displaySurveyCardChange(e) {
+        this.configService.setDisplaySurveyCard(e.detail.value)
+    }
+
+    displaySurveyCardOptions() {
+        return {
+            header: this.translate.instant('SETTINGS.DISPLAY_SURVEY_CARD'),
+            subHeader: this.translate.instant(
+                'SETTINGS.DISPLAY_SURVEY_CARD_HINT'
+            ),
+        }
+    }
+
+    yearOldSurveyCardChange(e) {
+        this.configService.setSurveyCardYear(e.detail.value)
+    }
+
     languageUiChange(e) {
         const newLlang = e.detail.value
         this.configService.setUiLanguage(newLlang)
@@ -139,6 +157,13 @@ export class SettingsPage {
     countryTagsChange(e) {
         const newCountry = e.detail.value
         this.configService.setCountryTags(newCountry)
+    }
+
+    countryTagsOptions() {
+        return {
+            header: this.translate.instant('SETTINGS.TAG_COUNTRY'),
+            subHeader: this.translate.instant('SETTINGS.TAG_COUNTRY_HINT'),
+        }
     }
 
     isSelectableLineChange(e) {

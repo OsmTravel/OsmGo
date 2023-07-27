@@ -21,7 +21,7 @@
       "@services/*": ["app/services/*"],
       "@environments/*": ["environments/*"],
       "@scripts/*": ["../scripts/*"],
-      "@osmgo/*": ["*"]
+      "@osmgo/*": ["./*"]
     }
   },
   "angularCompilerOptions": {

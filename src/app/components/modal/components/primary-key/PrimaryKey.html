@@ -1,0 +1,47 @@
+<ion-card>
+    <div class="primary-key">
+        <div
+            class="icon"
+            [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'"
+            (click)="emitOpenModal()"
+        >
+            <app-icon
+                [icon]="tagConfig && tagConfig.icon ? tagConfig.icon : null"
+                [jsonSprites]="jsonSprites"
+            ></app-icon>
+        </div>
+        <ion-card-content (click)="emitOpenModal()">
+            <ng-container *ngIf="displayCode; then code; else data">
+            </ng-container>
+
+            <ng-template #data>
+                <h3 *ngIf="tagConfig?.lbl">
+                    {{ tagConfig.lbl[language] ? tagConfig.lbl[language] :
+                    tagConfig.lbl['en'] }}
+                </h3>
+                <p
+                    class="description"
+                    *ngIf="tagConfig && tagConfig.description"
+                >
+                    {{ tagConfig.description[language] !== undefined ?
+                    tagConfig.description[language] :
+                    tagConfig.description['en'] }}
+                </p>
+            </ng-template>
+
+            <ng-template #code>
+                <p class="code" *ngIf="tagConfig">
+                    <ion-icon name="code"></ion-icon>
+                    {{ tagConfig.tags | displayTags }}
+                </p>
+            </ng-template>
+        </ion-card-content>
+        <div class="actions" *ngIf="isEditMode">
+            <ion-icon
+                [style.color]="isBookmarked ? '#f71000' : '#d8d8d8'"
+                name="heart"
+                (click)="emitToggleBookmark()"
+            ></ion-icon>
+        </div>
+    </div>
+</ion-card>

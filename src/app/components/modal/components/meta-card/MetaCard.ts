@@ -1,12 +1,14 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, Output, EventEmitter } from '@angular/core'
 import * as moment from 'moment'
 
 @Component({
-    selector: 'read-meta',
-    templateUrl: './READ_Meta.component.html',
+    selector: 'meta-card',
+    styleUrls: ['MetaCard.scss'],
+    templateUrl: './MetaCard.html',
 })
-export class ReadMeta {
+export class MetaCard {
     @Input() feature
+    @Input() lastSurvey
     @Input() displayCode
     @Input() languageUi
     meta

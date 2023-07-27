@@ -21,17 +21,20 @@ import { ModalPrimaryTag } from '@components/modal/modal.primaryTag/modal.primar
 import { OpeningHoursComponent } from '@components/modal/components/opening-hours/opening-hours.component'
 
 import { ModalSelectList } from '@components/modal/modalSelectList/modalSelectList'
+import { ModalAddTag } from '@components/modal/modal.addTag/modal.addTag'
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
 import { SettingsPage } from '@components/settings/settings'
 
-import { ReadMeta } from '@components/modal/components/READ_Meta.component'
-import { ReadPrimaryKey } from '@components/modal/components/READ_PrimaryKey.component'
-import { ReadOtherTag } from '@components/modal/components/READ_OtherTag.component'
-import { ReadPresets } from '@components/modal/components/READ_Presets.component'
+import { MetaCard } from '@app/components/modal/components/meta-card/MetaCard'
+import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
+import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
 
-import { EditOtherTag } from '@components/modal/components/EDIT_OtherTag.component'
-import { EditPresets } from '@components/modal/components/EDIT_Presets.component'
-import { EditPrimaryKey } from '@components/modal/components/EDIT_PrimaryKey.component'
+import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
+import { ReadPresets } from '@components/modal/components/read/Presets.component'
+
+import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
+import { EditPresets } from '@components/modal/components/edit/Presets.component'
+
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { IconComponent } from '@components/icon/icon.component'
 
@@ -43,8 +46,16 @@ import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 
 import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
 
+import { FilterByListPipe } from '@pipes/filterByList.pipe'
+import { FilterPresetsByListPipe } from '@pipes/filterPresetsByList.pipe'
+import { RemoveBrandsPipe } from '@pipes/removeBrands.pipe'
+import { SearchForPipe } from '@pipes/searchFor.pipe'
+import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
+
 import { FilterDeprecatedTagPipe } from '@pipes/filterDeprecatedTag.pipe'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
+import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
+import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
 import { HttpClientModule, HttpClient } from '@angular/common/http'
 
@@ -97,20 +108,22 @@ export function createTranslateLoader(http: HttpClient) {
         ModalPrimaryTag,
         ModalsContentPage,
         ModalSelectList,
+        ModalAddTag,
         PushDataToOsmPage,
         SettingsPage,
         DialogMultiFeaturesComponent,
-        ReadMeta,
-        ReadPrimaryKey,
         ReadOtherTag,
         ReadPresets,
         EditOtherTag,
         EditPresets,
-        EditPrimaryKey,
         AlertComponent,
         IconComponent,
         SelectComponent,
         ModalAddOpeningHoursIntervalComponent,
+
+        MetaCard,
+        SurveyCard,
+        PrimaryKey,
 
         DisplayPresetLabelPipe,
         OpeningHoursComponent,
@@ -120,6 +133,15 @@ export function createTranslateLoader(http: HttpClient) {
         FilterByPresetsContentPipe,
         FilterDeprecatedTagPipe,
         FilterExcludeKeysPipe,
+
+        FilterByListPipe,
+        FilterPresetsByListPipe,
+        RemoveBrandsPipe,
+        SearchForPipe,
+        ToOsmTagPipe,
+
+        OrderByPresetPipe,
+        CharLimitPipe,
         DisplayTagsPipe,
         FilterByByGeometryTypePipe,
         IsBookmarkedPipe,
@@ -128,16 +150,6 @@ export function createTranslateLoader(http: HttpClient) {
         SortArrayPipe,
         LimitDisplayTagsPipe,
         MinutesToHoursMinutesPipe,
-        BasemapsComponent,
-    ],
-    entryComponents: [
-        ModalsContentPage,
-        ModalPrimaryTag,
-        ModalSelectList,
-        DialogMultiFeaturesComponent,
-        HiddenTagsComponent,
-        ActiveTagsComponent,
-        BookmarkedTagsComponent,
         BasemapsComponent,
     ],
     imports: [
