@@ -144,7 +144,7 @@ export class SettingsPage {
         this.configService.setSurveyCardYear(e.detail.value)
     }
 
-    languageUiChange(e) {
+    languageUiChange(e: any) {
         const newLlang = e.detail.value
         this.configService.setUiLanguage(newLlang)
     }
