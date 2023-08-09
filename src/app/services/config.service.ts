@@ -41,7 +41,6 @@ export interface Config {
     oldTagsIcon: { display: boolean; year: number }
     displayFixmeIcon: boolean
     addSurveyDate: boolean
-    isDevMode: boolean
     isDevServer: boolean
     checkedKey: 'survey:date' | 'check_date'
     surveyCard: {
@@ -130,7 +129,6 @@ export class ConfigService {
         oldTagsIcon: { display: true, year: 4 },
         displayFixmeIcon: true,
         addSurveyDate: true,
-        isDevMode: false,
         isDevServer: false,
         checkedKey: 'survey:date',
         surveyCard: {
@@ -497,15 +495,6 @@ export class ConfigService {
 
     setSurveyCardYear(value: number) {
         this.config.surveyCard.year = value
-        this.localStorage.set('config', this.config)
-    }
-
-    getIsDevMode() {
-        return this.config.isDevMode
-    }
-
-    setIsDevMode(isDevMode: boolean) {
-        this.config.isDevMode = isDevMode
         this.localStorage.set('config', this.config)
     }
 

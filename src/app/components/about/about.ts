@@ -25,13 +25,6 @@ export class AboutPage {
         toast.present()
     }
 
-    async tap(e) {
-        if (e.tapCount == 5) {
-            await this.presentToast()
-            this.configService.setIsDevMode(true)
-        }
-    }
-
     dismiss(data = null) {
         this.viewCtrl.dismiss(data)
     }

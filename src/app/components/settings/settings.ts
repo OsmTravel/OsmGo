@@ -191,12 +191,4 @@ export class SettingsPage {
         window.location.replace(mainLocation)
         window.location.reload()
     }
-
-    async disableDevMode(e) {
-        const isDevServer = this.configService.getIsDevServer()
-        this.configService.setIsDevMode(false)
-        if (isDevServer) {
-            await this.changeIsDevServer(false)
-        }
-    }
 }
