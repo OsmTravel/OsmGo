@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Map them all !",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "scripts": {
     "ng": "ng",
     "ts-node": "ts-node",
