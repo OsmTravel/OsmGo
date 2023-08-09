@@ -14,9 +14,9 @@ Navigate to **https://osmgo.com** or install the [PWA](https://osmgo.com).
 
 ## Android
 
-Get the app on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo), download [APK](https://github.com/DoFabien/OsmGo/releases/latest) on GitHub or [install it as a PWA](https://osmgo.com)
+Get the app on [Google Play](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo), download [APK](https://github.com/OsmTravel/OsmGo/releases/latest) on GitHub or [install it as a PWA](https://osmgo.com)
 
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo) [<img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Download APK from GitHub" height="80">](https://github.com/DoFabien/OsmGo/releases)
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=fr.dogeo.osmgo) [<img src="https://user-images.githubusercontent.com/663460/26973090-f8fdc986-4d14-11e7-995a-e7c5e79ed925.png" alt="Download APK from GitHub" height="80">](https://github.com/OsmTravel/OsmGo/releases)
 
 ## iOS
 
@@ -26,11 +26,11 @@ Install on iOS as a [PWA](https://osmgo.com):
 
 # User manual
 
-User documentation can be found [here](https://dofabien.github.io/OsmGo/).
+User documentation can be found [here](https://github.com/OsmTravel/OsmGo/wiki).
 
 You can also have a look to:
 
--   the [release notes](https://github.com/DoFabien/OsmGo/releases)
+-   the [release notes](https://github.com/OsmTravel/OsmGo/releases)
 -   the [changelog](CHANGELOG.md)
 
 # Screenshots
@@ -40,8 +40,8 @@ You can also have a look to:
 # Contributing
 
 -   👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translate)
--   🐞 [Report issues on GitHub](https://github.com/DoFabien/OsmGo/issues)
--   📚 [Improve user documentation](https://github.com/DoFabien/OsmGo/tree/master/docs)
+-   🐞 [Report issues on GitHub](https://github.com/OsmTravel/OsmGo/issues)
+-   📚 [Improve user documentation](https://github.com/OsmTravel/OsmGo/tree/master/docs)
 -   🔧 [Contribute to the code (compile, debug, etc.)](CONTRIBUTING.md#development)
 
 # License
