@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModuleFactoryLoader } from '@angular/core'
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import {
     HttpClientTestingModule,
@@ -50,7 +50,6 @@ describe('LoginComponent', () => {
             providers: [
                 UrlSerializer,
                 ChildrenOutletContexts,
-                NgModuleFactoryLoader,
                 { provide: Location, useClass: SpyLocation },
                 { provide: LocationStrategy, useClass: MockLocationStrategy },
 

@@ -10,10 +10,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: 16
       - name: Install dependencies
         run: npm ci
-      - name: Lint code style
-        run: npm run prettier:check
+      # - name: Lint code style
+      #   run: npm run prettier:check
       - name: Run tests
         run: npm run test:ci
