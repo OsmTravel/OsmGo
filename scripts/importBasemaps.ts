@@ -4,6 +4,9 @@ import path from 'path'
 import stringify from 'json-stringify-pretty-compact'
 import orderBy from 'lodash/orderBy'
 import { assetsDir } from './_paths'
+import * as cover from '@mapbox/tile-cover'
+import SphericalMercator from '@mapbox/sphericalmercator'
+import centroid from '@turf/centroid'
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 
@@ -12,17 +15,86 @@ const ignoredIds: string[] = [
     'EsriWorldImageryClarity', // ignored because it does not support CORS
 ]
 
-// const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'imagery.geojson')));
+// check if the url is valid and if it supports CORS
+const checkUrl = async (feature: any) => {
+    const maxZoom = feature.properties.max_zoom || 15
+    const limits = { min_zoom: maxZoom - 1, max_zoom: maxZoom - 1 }
+
+    let coords = [79.08096313476562, 21.135184856708992]
+    if (feature.geometry) {
+        try {
+            const pointCentroid = centroid(feature)
+            coords = pointCentroid.geometry.coordinates
+        } catch (error) {
+            console.error(error)
+            return false
+        }
+    }
+    const pointGeometry = {
+        type: 'Point',
+        coordinates: coords,
+    }
+
+    const [x, y, z] = cover.tiles(pointGeometry, limits)[0]
+    const quadkey = tileToQuadkey(x, y, z)
+
+    const merc = new SphericalMercator({
+        size: 256,
+        antimeridian: false,
+    })
+    const bbox = merc.bbox(x, y, z, false, '900913')
+
+    const testUrl = feature.properties['tiles'][0]
+        .replace('{x}', x)
+        .replace('{y}', y)
+        .replace('{-y}', -y)
+        .replace('{z}', z)
+        .replace('{bbox-epsg-3857}', bbox.join(','))
+        .replace('{quadkey}', quadkey)
+
+    try {
+        const response = await got(testUrl, {
+            responseType: 'text',
+            timeout: 5000,
+        })
+
+        if (
+            response.statusCode === 200 &&
+            response.headers['access-control-allow-origin'] === '*'
+        ) {
+            return feature
+        }
+        return false
+    } catch (error) {
+        // console.error(error)
+        return false
+    }
+}
+
+const tileToQuadkey = (x, y, z) => {
+    let quadkey = ''
+    for (let i = z; i > 0; i--) {
+        let digit = 0
+        const mask = 1 << (i - 1)
+        if ((x & mask) !== 0) {
+            digit += 1
+        }
+        if ((y & mask) !== 0) {
+            digit += 2
+        }
+        quadkey += digit
+    }
+    return quadkey
+}
 
 const run = async () => {
-    // console.log
+    console.log('Importing basemaps from')
     const data: any = await got(url).json()
     const features = data.features
-    const resultFeatures = []
-    for (const feature of features) {
-        // TODO test on property support_cors,
-        // if my PR is accepted https://github.com/osmlab/editor-layer-index/pull/1540
+    // const features = data.features.filter((feature:any) => feature.properties.id === 'Bing')
 
+    let promisesCheckUrl = []
+    for (const feature of features) {
         if (ignoredIds.includes(feature.properties.id)) {
             // Ignore this imagery
             continue
@@ -75,14 +147,31 @@ const run = async () => {
         } else {
             feature.properties['tiles'].push(furl)
         }
-        resultFeatures.push(feature)
-        // console.log(resultFeatures);
-        // console.log(feature.properties.url)
+
+        // zoom is too low for Osm Go
+        if (feature.properties.max_zoom && feature.properties.max_zoom < 14) {
+            continue
+        }
+
+        promisesCheckUrl.push(checkUrl(feature))
     }
+
+    const resultCheckUrl = await Promise.all(promisesCheckUrl)
+
+    const resultFeatures = resultCheckUrl.filter((f) => f !== false)
+    const noValidBaseMaps = resultCheckUrl.filter((f) => f === false)
+
+    console.log(
+        'Valid base maps :',
+        resultFeatures.length,
+        'Invalid base maps :',
+        noValidBaseMaps.length
+    )
 
     const ordered = orderBy(
         resultFeatures,
         [
+            (f) => (f.properties.id === 'Bing' ? 1 : 0),
             (f) => (f.properties.default ? 1 : 0),
             (f) => (f.properties.best ? 1 : 0),
             (f) => (f.properties.local ? 1 : 0),
