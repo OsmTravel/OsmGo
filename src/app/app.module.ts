@@ -61,7 +61,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http'
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
-import { AngularResizeEventModule } from 'angular-resize-event'
 
 import { MomentModule } from 'ngx-moment'
 import 'moment/locale/en-gb'
@@ -162,7 +161,6 @@ export function createTranslateLoader(http: HttpClient) {
         HttpClientModule,
         MomentModule,
         HammerModule,
-        AngularResizeEventModule,
 
         TranslateModule.forRoot({
             loader: {

@@ -209,11 +209,11 @@ export class MapService {
         }
 
         for (let layerId of layersIds) {
-            const currentFilter = this.map.getFilter(layerId)
+            const currentFilter = this.map.getFilter(layerId) as any[]
             if (typeof currentFilter === 'undefined') {
                 // FIXME @dotcs: Do something here
             }
-            // @ts-expect-error
+
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
             // prettier-ignore
@@ -238,7 +238,10 @@ export class MapService {
                 newFilter = [...currentFilter, newConfigIdFilter]
             }
 
-            this.map.setFilter(layerId, newFilter)
+            this.map.setFilter(
+                layerId,
+                newFilter as ['boolean', ...unknown[], unknown]
+            )
         }
     }
 
@@ -537,7 +540,7 @@ export class MapService {
     createDomMoveMarker(coord: LngLatLike, data: any): OsmGoMarker {
         const el = document.createElement('div')
         el.className = 'moveMarkerIcon'
-        const marker = new Marker(el, { offset: [0, -15] }).setLngLat(
+        const marker = new Marker({ element: el, offset: [0, -15] }).setLngLat(
             coord
         ) as OsmGoMarker
         marker['data'] = data
@@ -689,7 +692,7 @@ export class MapService {
         value: number,
         _map: Map
     ): FilterSpecification {
-        let currentFilter = _map.getFilter(layerName)
+        let currentFilter = _map.getFilter(layerName) as any
         if (typeof currentFilter === 'undefined') {
             // FIXME: @dotcs add some error handling
         }
@@ -717,7 +720,8 @@ export class MapService {
 
     addDomMarkerPosition(): void {
         if (!this.markerLocation) {
-            this.markerLocation = new OsmGoMarker(this.domMarkerPosition, {
+            this.markerLocation = new OsmGoMarker({
+                element: this.domMarkerPosition,
                 offset: [0, 0],
             }).setLngLat(
                 this.locationService.getGeojsonPos().features[0].geometry
@@ -758,11 +762,11 @@ export class MapService {
         const OneYear = 31536000000
         const currentTime = new Date().getTime()
 
-        let currentFilter = this.map.getFilter('icon-old') || []
+        let currentFilter = (this.map.getFilter('icon-old') || []) as any[]
 
         let findedIndex: number
         for (let i = 1; i < currentFilter.length; i++) {
-            const spec = currentFilter[i] as FilterSpecification // TODO: @dotcs probably a dangerous typecast
+            const spec = currentFilter[i]
             if (
                 spec.length == 3 &&
                 spec[2] &&
@@ -861,7 +865,6 @@ export class MapService {
             // ,'filter': ['all']
             filter: [
                 'all',
-                // @ts-expect-error
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
                 // prettier-ignore
@@ -880,7 +883,6 @@ export class MapService {
                 'line-opacity': 0.7,
             },
             layout: { 'line-join': 'round', 'line-cap': 'round' },
-            // @ts-expect-error
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
             // prettier-ignore
@@ -898,7 +900,6 @@ export class MapService {
             },
             filter: [
                 'all',
-                // @ts-expect-error
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
                 // prettier-ignore
@@ -918,7 +919,6 @@ export class MapService {
             layout: { 'line-join': 'round', 'line-cap': 'round' },
             filter: [
                 'all',
-                // @ts-expect-error
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
                 // prettier-ignore

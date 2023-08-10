@@ -164,7 +164,7 @@ export class MainPage implements AfterViewInit {
         this.menuIsOpen = false
     }
 
-    onMapResized(e: any): void {
+    onMapResized(e: any = undefined): void {
         if (this.mapService.map) {
             this.mapService.map.resize()
         }
@@ -274,12 +274,14 @@ export class MainPage implements AfterViewInit {
                 ]) => {
                     this.locationService.enableGeolocation()
                     this.osmApi.initAuth()
+                    this.onMapResized()
 
                     this.mapService.initMap(config)
                 }
             )
 
         this.mapService.eventMapIsLoaded.subscribe(() => {
+            this.onMapResized()
             this.loading = false
             timer(2000).subscribe(() => {
                 const nbData = this.dataService.getGeojson().features.length
