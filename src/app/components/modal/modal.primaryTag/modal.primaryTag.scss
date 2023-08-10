@@ -1,54 +1,70 @@
+$tabHeight: 0;
 
-    ion-header{
-        height: 65px;
+#container {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#searchSelect {
+    height: 65px;
+    width: 100%;
+}
+
+#searchDiv {
+    width: 80%;
+    margin: auto;
+}
+
+ion-content {
+    flex-grow: 1;
+    overflow: hidden scroll;
+}
+
+ion-footer {
+    .actions {
+        display: flex;
+        align-items: center;
     }
-    $tabHeight: 0;
-    $searchSelectHeight : 65px;
+}
 
+.buttonsSwitchType {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px 8px;
+}
 
+ion-button.buttonSwitchType {
+    position: relative;
+    margin-bottom: 0px;
+    --border-radius: 4px 4px 0px 0px;
+    --background: rgb(255, 255, 255);
+    --color: rgba(24, 24, 24, 0.65);
+    --box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+        rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
 
-    #searchSelect{
-        position: absolute;
-        top:  $tabHeight;
-        height: $searchSelectHeight ;
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-
+    &[disabled] {
+        opacity: 1;
+        z-index: 1;
+        --color: rgb(24, 24, 24);
+        --box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+            rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+            rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
     }
+}
 
-    #searchDiv{
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.shadows {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 1px;
+}
 
-    // ion-conten .primaryTag{
-    //     margin-top: 130px;
-    // }
-
-
-    .listTag{
-        position: absolute;
-        top: $searchSelectHeight +  $tabHeight;
-        bottom: 50px;
-        width: 100%;
-        overflow-y: scroll;
-    }
-
-    #footer{
-        position: absolute;
-        bottom: 0;
-        height: 50px;
-        width: 100%
-    }
-
-
-    .buttonSwitchType{
-        width: 50%;
-        margin: 0;
-    }
-
-
-
-
+.tagList {
+    z-index: 1;
+    position: relative;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+}

@@ -1,15 +1,13 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
     name: 'filterByPresetsContent',
-    pure: false
+    pure: false,
 })
-
-
 export class FilterByPresetsContentPipe implements PipeTransform {
-
     replaceCharSpe(text: string) {
-        return text.replace(/[û]/gi, 'u')
+        return text
+            .replace(/[û]/gi, 'u')
             .replace(/[áàâ]/gi, 'a')
             .replace(/[éèêë]/gi, 'e')
             .replace(/[íîï]/gi, 'i')
@@ -17,40 +15,41 @@ export class FilterByPresetsContentPipe implements PipeTransform {
             .replace(/ç/g, 'c')
     }
 
-
     transform(items, args: string[], searchText: string) {
-        const patt = new RegExp(searchText, 'i');
-        const [language, countryCode] = args;
-        return items.filter(item => {
+        const patt = new RegExp(searchText, 'i')
+        const [language, countryCode] = args
+        return items.filter((item) => {
             // By Key
             if (patt.test(item['v'])) {
-                return true;
+                return true
             } else if (patt.test(this.replaceCharSpe(item['v']))) {
-                return true;
+                return true
             }
 
             // By label ()
-            if (item.lbl ){
-                let it = item.lbl[language] ? item.lbl[language] : item.lbl['en']
+            if (item.lbl) {
+                let it = item.lbl[language]
+                    ? item.lbl[language]
+                    : item.lbl['en']
                 if (patt.test(it)) {
-                    return true;
+                    return true
                 } else if (patt.test(this.replaceCharSpe(it))) {
-                    return true;
+                    return true
                 }
             }
 
-            if (item.terms){
-                let it = item.terms[language] ? item.terms[language] : item.terms['en']
+            if (item.terms) {
+                let it = item.terms[language]
+                    ? item.terms[language]
+                    : item.terms['en']
                 if (patt.test(it)) {
-                    return true;
+                    return true
                 } else if (patt.test(this.replaceCharSpe(it))) {
-                    return true;
+                    return true
                 }
             }
-
 
             // }
-        });
-
+        })
     }
 }

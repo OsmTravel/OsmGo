@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "defaultProject": "app",
   "newProjectRoot": "projects",
@@ -13,7 +14,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "aot": true,
             "outputPath": "www",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -34,16 +34,18 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              {
-                "input": "src/theme/variables.scss"
-              },
-              {
-                "input": "src/global.scss"
-              },
-              "./node_modules/mapbox-gl/dist/mapbox-gl.css"
-              
+              "src/theme/variables.scss",
+              "src/global.scss",
+              "./node_modules/maplibre-gl/dist/maplibre-gl.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "aot": false,
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -56,7 +58,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -65,24 +66,24 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
+                  "maximumWarning": "2mb",
                   "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
                 }
               ],
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false,
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
+            },
             "ci": {
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ],
               "progress": false
             }
           }
@@ -95,9 +96,6 @@
           "configurations": {
             "production": {
               "browserTarget": "app:build:production"
-            },
-            "ci": {
-              "progress": false
             }
           }
         },
@@ -112,8 +110,8 @@
           "options": {
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
             "styles": [],
             "scripts": [],
             "assets": [
@@ -126,8 +124,7 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
-              },
-              "src/manifest.webmanifest"
+              }
             ]
           },
           "configurations": {
@@ -138,10 +135,24 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
-            "exclude": ["**/node_modules/**"]
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app:serve:production"
+            },
+            "ci": {
+              "devServerTarget": "app:serve:ci"
+            }
           }
         },
         "ionic-cordova-build": {
@@ -169,35 +180,11 @@
           }
         }
       }
-    },
-    "app-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "app:serve"
-          },
-          "configurations": {
-            "ci": {
-              "devServerTarget": "app:serve:ci"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
     }
   },
   "cli": {
-    "defaultCollection": "@ionic/angular-toolkit"
+    "defaultCollection": "@ionic/angular-toolkit",
+    "analytics": false
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

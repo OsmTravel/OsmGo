@@ -1,13 +1,13 @@
 .box {
     display: flex;
-  }
+}
 
-  .content{
-      position: relative;
-      width: 100%;
-      display: flex;
-  }
-.tag-icon{
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+.tag-icon {
     position: relative;
     // width: 45px;
     width: 50px;
@@ -16,7 +16,7 @@
     padding: 0.2em;
 }
 
-.icon-wrapper{
+.icon-wrapper {
     // vertical-align: middle;
     width: 45px;
     height: 45px;
@@ -27,13 +27,13 @@
     transform: translateY(-50%);
 }
 
-.buttonUnhideTag{
+.buttonUnhideTag {
     height: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.bookmark{
+.bookmark {
     // position: absolute;
     // left: 45px;
     width: 36px;
@@ -43,14 +43,14 @@
     padding: 0.2em;
 }
 
-.action{
+.action {
     // position: absolute;
     // right: 45px;
     width: 45px;
     min-width: 45px;
 }
 
-.tag-text{
+.tag-text {
     // position: absolute;
     // left: 90px;
     // right: 45px;
@@ -59,4 +59,4 @@
 
 .spacer {
     flex-grow: 1;
-  }
+}

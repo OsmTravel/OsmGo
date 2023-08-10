@@ -1,8 +1,8 @@
-import { IsBookmarkedPipe } from './is-bookmarked.pipe';
+import { IsBookmarkedPipe } from './is-bookmarked.pipe'
 
 describe('IsBookmarkedPipe', () => {
-  it('create an instance', () => {
-    const pipe = new IsBookmarkedPipe();
-    expect(pipe).toBeTruthy();
-  });
-});
+    it('create an instance', () => {
+        const pipe = new IsBookmarkedPipe()
+        expect(pipe).toBeTruthy()
+    })
+})

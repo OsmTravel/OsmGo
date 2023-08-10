@@ -5,33 +5,31 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node --experimental-modules test.mjs ",
-    "js:esmbuild": "BABEL_ENV=cjs rollup --config",
-    "js:iifebuild": "BABEL_ENV=iife rollup --config",
+    "test": "node test.js ",
+    "js:esmbuild": "cross-env BABEL_ENV=cjs rollup --config",
+    "js:iifebuild": "cross-env BABEL_ENV=iife rollup --config",
     "build": "npm run js:esmbuild && npm run js:iifebuild",
-    "watch": "BABEL_ENV=cjs rollup --config --watch"
+    "watch": "cross-env BABEL_ENV=cjs rollup --config --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@turf/area": "^6.0.1",
-    "@turf/bbox-polygon": "^6.0.1",
-    "@turf/boolean-point-in-polygon": "^6.0.1",
-    "@turf/length": "^6.0.2",
-    "@turf/point-on-feature": "^5.1.5",
+    "@turf/area": "^6.5.0",
+    "@turf/bbox-polygon": "^6.5.0",
+    "@turf/boolean-point-in-polygon": "^6.5.0",
+    "@turf/length": "^6.5.0",
+    "@turf/point-on-feature": "^6.5.0",
     "esm": "^3.2.25",
-    "fast-xml-parser": "^3.12.20",
-    "lodash": "^4.17.15",
-    "martinez-polygon-clipping": "^0.5.0",
-    "save": "^2.4.0"
+    "martinez-polygon-clipping": "^0.7.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/preset-env": "^7.11.0",
-    "rollup": "^2.26.5",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "cross-env": "^7.0.3",
+    "rollup": "^2.75.7",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.0"
+    "rollup-plugin-terser": "^7.0.2"
   }
 }

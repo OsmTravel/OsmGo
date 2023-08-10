@@ -1,71 +1,76 @@
+.modal-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
-    $headerHeight :56px;
-    $footerHeight : 60px;
+.toogleCodeButton {
+    position: absolute;
+    right: 0;
+    top: 28px;
+}
 
-    .toogleCodeButton{
-        position: absolute;
-        right: 0;
-        top: 28px;
+.wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+ion-header {
+    background-color: white;
+}
+ion-footer {
+    background-color: white;
+
+    .modifiedWarning {
+        background-color: rgb(255, 173, 50);
+        padding: 4px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    .wrapper{
-        position: absolute;
-        top:0;
-        bottom: 0;
-        left:0;
-        right: 0;
+    .actions {
+        padding: 0px 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 'left middle right';
+
+        .left {
+            grid-area: left;
+            justify-self: start;
+        }
+        .middle {
+            grid-area: middle;
+            justify-self: center;
+        }
+        .right {
+            grid-area: right;
+            justify-self: end;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
     }
 
-
-    ion-header{
-        position: absolute;
-        top: 0;
-        width: 100%;
-        height: $headerHeight;
-        background-color: white;
+    .spacer {
+        flex-grow: 1;
     }
-    ion-footer{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: $footerHeight;
-        background-color: white;
-    }
-    .content{
-        position: absolute;
-        bottom: $footerHeight;
-        overflow: auto;
-        top:$headerHeight; 
-        width: 100%;
-        background-color: white;
-    }
+}
+.content {
+    overflow: auto scroll;
+    background-color: white;
+    flex-grow: 1;
+}
 
-
-
-    .fabInlineMarginLess{
-        margin-left: 4px !important;
-        margin-top: 2px !important;
-        float: left;
-    }
-
- 
-
-    .fabSurveyDate{
-        position: absolute;
-        right: 4px;
-    }
-
-    .fabToogleCode{
-        bottom: -25px;
-    }
-
-    .actions{
-        position: relative;
-        min-height: 40px;
-        width: 100%;
-    }
-    .actionsFabButton{
-        position: relative;
-    }
-
-
+.top-actions {
+    position: relative;
+    min-height: 40px;
+    width: 100%;
+}

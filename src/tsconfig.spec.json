@@ -1,19 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "resolveJsonModule": true,
     "outDir": "../out-tsc/spec",
-    "types": [
-      "jasmine",
-      "node"
-    ]
+    "target": "es5",
+    "types": ["jasmine", "node"]
   },
-  "files": [
-    "test.ts",
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+  "files": ["test.ts", "polyfills.ts"],
+  "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

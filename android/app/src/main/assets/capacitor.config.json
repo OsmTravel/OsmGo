@@ -1,8 +1,5 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "Osm Go!",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www",
-  "linuxAndroidStudioPath": "/opt/android-studio/bin/studio.sh"
+	"appId": "fr.dogeo.osmgo",
+	"appName": "Osm Go!",
+	"webDir": "www"
 }

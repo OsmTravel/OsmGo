@@ -1,25 +1,20 @@
-import { Injectable, HostListener } from '@angular/core';
-import { SwUpdate } from '@angular/service-worker';
+import { Injectable, HostListener } from '@angular/core'
+import { SwUpdate } from '@angular/service-worker'
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root',
 })
 export class PwaService {
+    promptEvent
 
-  promptEvent
+    constructor(private swUpdate: SwUpdate) {}
 
-  constructor(private swUpdate: SwUpdate) {
-
-
-  }
-
-  updateAvailable(){
-    this.swUpdate.available.subscribe(event => {
-      console.log('PwaService', event);
-      // if (askUserToUpdate()) {
-      //   window.location.reload();
-      // }
-    });
-  }
- 
+    updateAvailable() {
+        this.swUpdate.available.subscribe((event) => {
+            console.log('PwaService', event)
+            // if (askUserToUpdate()) {
+            //   window.location.reload();
+            // }
+        })
+    }
 }

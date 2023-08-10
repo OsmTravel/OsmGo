@@ -1,10 +1,46 @@
-.dayBadge{
-    padding: 0.5em;
-    margin: 0.2em;
-    font-size: large;
+.daysHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .dayBadge {
+        padding: 0.5em;
+        margin: 0.2em;
+        font-size: 1em;
+        user-select: none;
+        cursor: pointer;
+    }
 }
 
-.alertSelectADay{
+.timeGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .timeBlock {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            text-align: center;
+        }
+    }
+}
+
+.alertSelectADay {
     text-align: center;
     color: red;
+    padding: 12px 0px;
+}
+
+.addInterval {
+    margin: 0px 10px;
+}
+
+#footer {
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+    .spacer {
+        flex-grow: 1;
+    }
 }

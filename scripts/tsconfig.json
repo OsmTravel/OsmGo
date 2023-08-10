@@ -1,0 +1,22 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "sourceMap": false,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": false,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2017",
+    "module": "CommonJS",
+    "lib": ["ES2015"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@osmgo/*": ["../src/*"]
+    }
+  },
+  "include": ["./*.ts"],
+  "exclude": []
+}

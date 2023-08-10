@@ -72,12 +72,12 @@
     "pitch": 0,
     "sources": {
         "composite": {
-            "url": "assets/mapStyle/mapbox.mapbox-streets-v7.json",
+            "url": "./assets/mapStyle/mapbox.mapbox-streets-v7.json",
             "type": "vector"
         }
     },
-    "sprite": "assets/mapStyle/sprites",
-    "glyphs": "assets/mapStyle/glyphs/{fontstack}/{range}.pbf",
+    "sprite": "./assets/mapStyle/sprites",
+    "glyphs": "./assets/mapStyle/glyphs/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "background",

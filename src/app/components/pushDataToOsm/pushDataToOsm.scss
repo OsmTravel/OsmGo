@@ -1,17 +1,91 @@
+td,
+th {
+    padding: 0;
+    text-align: center;
+    padding: 4px;
+}
 
-    td, th {
-        padding: 0;
-        text-align: center;
-        padding: 4px;
-    }
-
-.footerButton{
+.footerButton {
     width: 45%;
 }
 
-.iconType{
+.iconType {
     color: white;
     height: 25px;
     width: 25px;
+}
 
+.cardError {
+    background-color: darkred;
+    color: whitesmoke;
+}
+
+.pushDataOverlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    background-color: whitesmoke;
+
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadingIcon {
+    font-size: 4em;
+    animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(3deg); */
+    /* transform: rotate(0.3rad);/ */
+    /* transform: rotate(3grad); */
+    /* transform: rotate(.03turn);  */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.uploadedOkIcon {
+    font-size: 9em;
+    color: green;
+}
+
+ion-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#errorTable {
+    border-collapse: collapse;
+    color: black;
+    font-weight: 600;
+    font-size: 0.8em;
+    background-color: lightgray;
+}
+
+#errorTable td,
+#errorTable th {
+    border: 1px solid #ddd;
+    padding: 3px;
+    text-align: left;
+}
+
+#errorTable tr:nth-child(even) {
+    background-color: #f2f2f2;
 }

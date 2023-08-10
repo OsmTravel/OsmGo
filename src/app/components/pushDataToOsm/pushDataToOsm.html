@@ -1,117 +1,187 @@
-<ion-header  color="primary">
-  <ion-toolbar  color="primary">
-      <ion-buttons style="min-width: 32px;" (click)="navCtrl.back()" slot="primary"> 
-          <ion-icon name="arrow-back"></ion-icon> 
-       </ion-buttons>
-    <ion-title>
-      {{ 'SEND_DATA.SEND_DATA' | translate}}
-    </ion-title>
-  </ion-toolbar>
+<div class="pushDataOverlay" *ngIf="isPushing">
+    <ng-container *ngIf="!uploadedOk">
+        <div style="text-align: center">
+            <h2>{{ 'SEND_DATA.UPLOADING_DATA_TO_OSM' | translate}}</h2>
+        </div>
+        <div style="margin: 1em">
+            <ion-icon class="uploadingIcon" name="globe"></ion-icon>
+        </div>
+        <div style="text-align: center">
+            <h2>{{ 'SEND_DATA.DONT_CLOSE' | translate}}</h2>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="uploadedOk">
+        <div style="margin: 1em">
+            <ion-icon
+                class="uploadedOkIcon"
+                name="checkmark-circle-outline"
+            ></ion-icon>
+        </div>
+    </ng-container>
+</div>
+
+<ion-header color="primary">
+    <ion-toolbar color="primary">
+        <ion-buttons style="min-width: 32px" slot="primary">
+            <ion-button (click)="navCtrl.back()" [disabled]="isPushing">
+                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title> {{ 'SEND_DATA.SEND_DATA' | translate}} </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content class="ion-padding">
-  <h1 *ngIf="this.configService.config.isDevServer" > DEV SERVER</h1>
+    <h1 *ngIf="this.configService.config.isDevServer">DEV SERVER</h1>
 
-  <ion-card *ngIf="connectionError" color="danger" >
-    <ion-card-content>
-      {{connectionError}}
-    </ion-card-content>
-  </ion-card>
+    <ion-card *ngIf="connectionError" color="danger">
+        <ion-card-content> {{connectionError}} </ion-card-content>
+    </ion-card>
 
-  	<ion-card *ngIf="!configService.user_info.connected" color="danger" >
-				<ion-card-content>
+    <ion-card *ngIf="!configService.user_info.connected" color="danger">
+        <ion-card-content>
             {{ 'SEND_DATA.YOU_MUST_BE_LOGGED_IN' | translate}}
-				</ion-card-content>
-			</ion-card>
+        </ion-card-content>
+    </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      {{'SEND_DATA.NUMBER_OF_ITEMS_TO_SEND' | translate}} {{summary.Total}}
-    </ion-card-header>
-    <ion-card-content>
-      <table style="width:100%">
+    <ion-card>
+        <ion-card-content>
+            <table style="width: 100%">
+                <tr>
+                    <th>{{ 'SEND_DATA.TOTAL_ITEMS' | translate}}</th>
+                    <th>{{ 'SEND_DATA.ADDED_ITEMS' | translate}}</th>
+                    <th>{{ 'SEND_DATA.UPDATED_ITEMS' | translate}}</th>
+                    <th>{{ 'SEND_DATA.DELETED_ITEMS' | translate}}</th>
+                </tr>
+                <tr>
+                    <td>{{summary.Total}}</td>
+                    <td>{{summary.Create}}</td>
+                    <td>{{summary.Update}}</td>
+                    <td>{{summary.Delete}}</td>
+                </tr>
+            </table>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="error" class="cardError">
+        <ion-card-header>
+            <h4 style="color: white">Error</h4>
+        </ion-card-header>
+        <ion-card-content>
+            <span class="errorPush">{{error.status}} {{error.message}}</span>
+
+            <div *ngIf="error.feature?.properties?.tags">
+                <table id="errorTable">
+                    <ng-container
+                        *ngFor="let item of error.feature?.properties?.tags | keyvalue"
+                    >
+                        <tr *ngIf="item.value !== ''">
+                            <td>{{item.key}}</td>
+                            <td>{{item.value}}</td>
+                        </tr>
+                    </ng-container>
+                </table>
+            </div>
+
+            <ion-button
+                *ngIf="error.feature"
+                (click)="cancelErrorFeature(error.feature)"
+                >{{ 'SEND_DATA.CANCEL_THIS_CHANGE' | translate}}</ion-button
+            >
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            {{ 'SEND_DATA.CHANGESET_COMMENT' | translate}}
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-input
+                    [(ngModel)]="commentChangeset"
+                    type="text"
+                    [placeholder]="'SEND_DATA.CHANGESET_COMMENT' | translate"
+                ></ion-input>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <table style="width: 100%">
         <tr>
-          <th>{{ 'SEND_DATA.ADDED_ITEMS' | translate}}</th>
-          <th>{{ 'SEND_DATA.UPDATED_ITEMS' | translate}}</th>
-          <th>{{ 'SEND_DATA.DELETED_ITEMS' | translate}}</th>
+            <th style="width: 45px">{{ 'SEND_DATA.TYPE' | translate}}</th>
+            <th style="width: 45px"></th>
+
+            <th>{{ 'SEND_DATA.NAME' | translate}}</th>
+            <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
+
+            <th style="width: 45px"><ion-icon name="locate"></ion-icon></th>
+            <th style="width: 45px">{{ 'SEND_DATA.ERROR' | translate}}</th>
         </tr>
-        <tr>
-          <td>{{summary.Create}}</td>
-          <td>{{summary.Update}}</td>
-          <td>{{summary.Delete}}</td>
+        <tr *ngFor="let item of featuresChanges">
+            <td>
+                <ion-icon
+                    *ngIf="item.properties.changeType == 'Create'"
+                    name="add"
+                    class="iconType"
+                    style="color: green"
+                ></ion-icon>
+                <ion-icon
+                    *ngIf="item.properties.changeType == 'Update'"
+                    name="create"
+                    class="iconType"
+                    style="color: blue"
+                ></ion-icon>
+                <ion-icon
+                    *ngIf="item.properties.changeType == 'Delete'"
+                    name="trash"
+                    class="iconType"
+                    style="color: red"
+                ></ion-icon>
+            </td>
+            <td
+                [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'"
+            >
+                <app-icon
+                    class="imgCenter iconImg"
+                    [icon]="item.properties.icon"
+                    [jsonSprites]="tagsService.jsonSprites"
+                >
+                </app-icon>
+            </td>
+            <td>{{item.properties?._name}}</td>
+            <td>
+                {{item.properties?.primaryTag.key}}:
+                {{item.properties?.primaryTag.value}}
+            </td>
+
+            <td (click)="centerToElement(item.geometry.coordinates)">
+                <ion-icon style="font-size: 2em" name="locate"></ion-icon>
+            </td>
+            <td>
+                <div *ngIf="item.error" (click)="displayError(item.error)">
+                    <ion-icon name="bug"></ion-icon>
+                </div>
+            </td>
         </tr>
-      </table>
-    </ion-card-content>
-  </ion-card>
+    </table>
 
-
-
-
-
-
-  <ion-card>
-       <ion-card-header>
-          {{ 'SEND_DATA.CHANGESET_COMMENT' | translate}}
-    </ion-card-header>
-     <ion-card-content>
-    <ion-item>
-      <ion-input [(ngModel)]="commentChangeset" type="text" [placeholder]="'SEND_DATA.CHANGESET_COMMENT' | translate"></ion-input>
-    </ion-item>
-     </ion-card-content>
-  </ion-card>
-
-
-
-
-  <table style="width:100%">
-    <tr>
-      <th style="width: 45px;">{{ 'SEND_DATA.TYPE' | translate}}</th>
-      <th style="width: 45px;"></th>
-      
-      <th>{{ 'SEND_DATA.NAME' | translate}}</th>
-      <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
-     
-      <th style="width: 45px;"><ion-icon name="locate"></ion-icon></th>
-      <th style="width: 45px;">{{ 'SEND_DATA.ERROR' | translate}}</th>
-      
-    </tr>
-    <tr *ngFor="let item of featuresChanges">
-      <td>
-        <ion-icon *ngIf="item.properties.changeType == 'Create'" name="add" class="iconType" style="color:green" ></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Update'" name="create" class="iconType" style="color:blue" ></ion-icon>
-        <ion-icon *ngIf="item.properties.changeType == 'Delete'" name="trash" class="iconType" style="color:red"  ></ion-icon>
-      </td>
-      <td [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'">
-          <app-icon  class="imgCenter iconImg" [icon]="item.properties.icon" [jsonSprites]="tagsService.jsonSprites">  </app-icon>
-             
-     
-      </td>
-      <td>{{item.properties?._name}}</td>
-      <td>{{item.properties?.primaryTag.key}}: {{item.properties?.primaryTag.value}}</td>
-     
-        <td (click)="centerToElement(item.geometry.coordinates)"> <ion-icon style="font-size: 2em;" name="locate"></ion-icon>  </td>
-      <td>
-        <div *ngIf="item.error" (click)="displayError(item.error)">
-          <ion-icon name="bug"></ion-icon>
-        </div>
-      </td>
-    
-    </tr>
-  </table>
-
-  <!--[disabled]="summary.Total === 0 || isPushing"-->
-
-
+    <!--[disabled]="summary.Total === 0 || isPushing"-->
 </ion-content>
 
 <ion-footer>
-  <!--  [disabled]="summary.Total === 0 || isPushing" ion-button block  -->
-  <ion-button class="footerButton" color="danger" 
-            [disabled]="isPushing"
-            (click)="presentConfirm()">{{ 'SEND_DATA.DELETE' | translate}}</ion-button>
-  <ion-button class="footerButton" 
-              [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
-              (click)="pushDataToOsm(commentChangeset, this.basicPassword)">{{ 'SEND_DATA.SEND' | translate}}</ion-button>
+    <!--  [disabled]="summary.Total === 0 || isPushing" ion-button block  -->
+    <ion-button
+        class="footerButton"
+        color="danger"
+        [disabled]="isPushing"
+        (click)="presentConfirm()"
+        >{{ 'SEND_DATA.DELETE' | translate}}</ion-button
+    >
+    <ion-button
+        class="footerButton"
+        [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
+        (click)="pushDataToOsm(commentChangeset, this.basicPassword)"
+        >{{ 'SEND_DATA.SEND' | translate}}</ion-button
+    >
 </ion-footer>

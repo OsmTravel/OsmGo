@@ -1,0 +1,414 @@
+{
+    "version": "0.6",
+    "generator": "CGImap 0.8.6 (3605563 errol.openstreetmap.org)",
+    "copyright": "OpenStreetMap and contributors",
+    "attribution": "http://www.openstreetmap.org/copyright",
+    "license": "http://opendatacommons.org/licenses/odbl/1-0/",
+    "bounds": {
+        "minlat": 51.5079449,
+        "minlon": -0.1290835,
+        "maxlat": 51.5088589,
+        "maxlon": -0.1252924
+    },
+    "elements": [
+        {
+            "type": "node",
+            "id": 5903173,
+            "lat": 51.5081000,
+            "lon": -0.1275710,
+            "timestamp": "2011-02-18T12:42:48Z",
+            "version": 1,
+            "changeset": 8424,
+            "user": "Oleg",
+            "uid": 315,
+            "tags": {
+                "created_by": "Qt/PoiCollector"
+            }
+        },
+        {
+            "type": "node",
+            "id": 5903211,
+            "lat": 51.5081000,
+            "lon": -0.1267080,
+            "timestamp": "2011-02-18T14:28:54Z",
+            "version": 1,
+            "changeset": 8444,
+            "user": "Oleg",
+            "uid": 315,
+            "tags": {
+                "created_by": "PoiCollector"
+            }
+        },
+        {
+            "type": "node",
+            "id": 6016351,
+            "lat": 51.5082050,
+            "lon": -0.1285538,
+            "timestamp": "2011-04-06T13:31:37Z",
+            "version": 1,
+            "changeset": 9216,
+            "user": "LivingWithDragons",
+            "uid": 351,
+            "tags": {
+                "amenity": "toilets"
+            }
+        },
+        {
+            "type": "node",
+            "id": 4298892654,
+            "lat": 51.5087646,
+            "lon": -0.1287274,
+            "timestamp": "2015-04-25T21:57:52Z",
+            "version": 1,
+            "changeset": 60643,
+            "user": "stefanblag",
+            "uid": 2838
+        },
+        {
+            "type": "node",
+            "id": 4298892656,
+            "lat": 51.5088238,
+            "lon": -0.1285622,
+            "timestamp": "2015-04-25T21:57:52Z",
+            "version": 1,
+            "changeset": 60643,
+            "user": "stefanblag",
+            "uid": 2838
+        },
+        {
+            "type": "node",
+            "id": 4298892658,
+            "lat": 51.5088558,
+            "lon": -0.1282932,
+            "timestamp": "2015-04-25T21:57:53Z",
+            "version": 1,
+            "changeset": 60643,
+            "user": "stefanblag",
+            "uid": 2838
+        },
+        {
+            "type": "node",
+            "id": 4298892660,
+            "lat": 51.5088555,
+            "lon": -0.1281579,
+            "timestamp": "2015-04-25T21:57:53Z",
+            "version": 1,
+            "changeset": 60643,
+            "user": "stefanblag",
+            "uid": 2838
+        },
+        {
+            "type": "node",
+            "id": 4327616627,
+            "lat": 51.5075703,
+            "lon": -0.1276758,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616628,
+            "lat": 51.5076368,
+            "lon": -0.1274742,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616629,
+            "lat": 51.5077039,
+            "lon": -0.1272994,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616630,
+            "lat": 51.5077266,
+            "lon": -0.1271917,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616631,
+            "lat": 51.5077418,
+            "lon": -0.1271267,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616632,
+            "lat": 51.5079430,
+            "lon": -0.1267425,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616633,
+            "lat": 51.5082719,
+            "lon": -0.1261103,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616634,
+            "lat": 51.5084288,
+            "lon": -0.1258460,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616635,
+            "lat": 51.5085544,
+            "lon": -0.1256215,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616636,
+            "lat": 51.5089172,
+            "lon": -0.1249455,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616637,
+            "lat": 51.5093650,
+            "lon": -0.1240288,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4327616638,
+            "lat": 51.5096978,
+            "lon": -0.1233478,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051
+        },
+        {
+            "type": "node",
+            "id": 4331226519,
+            "lat": 51.5084692,
+            "lon": -0.1276366,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226520,
+            "lat": 51.5084191,
+            "lon": -0.1280148,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226521,
+            "lat": 51.5083039,
+            "lon": -0.1279638,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226522,
+            "lat": 51.5083607,
+            "lon": -0.1275776,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226523,
+            "lat": 51.5084291,
+            "lon": -0.1276929,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226524,
+            "lat": 51.5083991,
+            "lon": -0.1279048,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226525,
+            "lat": 51.5083490,
+            "lon": -0.1278834,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "node",
+            "id": 4331226526,
+            "lat": 51.5083824,
+            "lon": -0.1276661,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744
+        },
+        {
+            "type": "way",
+            "id": 4305697047,
+            "timestamp": "2021-03-22T16:18:57Z",
+            "version": 1,
+            "changeset": 192919,
+            "user": "helloguysiliketowns",
+            "uid": 11051,
+            "nodes": [
+                4327616627,
+                4327616628,
+                4327616629,
+                4327616630,
+                4327616631,
+                4327616632,
+                4327616633,
+                4327616634,
+                4327616635,
+                4327616636,
+                4327616637,
+                4327616638
+            ],
+            "tags": {
+                "highway": "primary",
+                "oneway": "yes"
+            }
+        },
+        {
+            "type": "way",
+            "id": 4305900417,
+            "timestamp": "2022-06-28T05:22:07Z",
+            "version": 2,
+            "changeset": 238770,
+            "user": "Dof",
+            "uid": 2744,
+            "nodes": [
+                4331226519,
+                4331226520,
+                4331226521,
+                4331226522,
+                4331226519
+            ]
+        },
+        {
+            "type": "way",
+            "id": 4305900418,
+            "timestamp": "2022-06-28T05:13:55Z",
+            "version": 1,
+            "changeset": 238768,
+            "user": "Dof",
+            "uid": 2744,
+            "nodes": [
+                4331226523,
+                4331226524,
+                4331226525,
+                4331226526,
+                4331226523
+            ],
+            "tags": {
+                "area": "yes"
+            }
+        },
+        {
+            "type": "relation",
+            "id": 4304988383,
+            "timestamp": "2022-06-28T05:22:07Z",
+            "version": 2,
+            "changeset": 238770,
+            "user": "Dof",
+            "uid": 2744,
+            "members": [
+                {
+                    "type": "way",
+                    "ref": 4305900417,
+                    "role": "outer"
+                },
+                {
+                    "type": "way",
+                    "ref": 4305900418,
+                    "role": "inner"
+                }
+            ],
+            "tags": {
+                "amenity": "fast_food",
+                "brand": "Domino's",
+                "brand:wikidata": "Q839466",
+                "building": "yes",
+                "cuisine": "pizza",
+                "name": "Domino's",
+                "takeaway": "yes",
+                "type": "multipolygon"
+            }
+        }
+    ]
+}

@@ -35,6 +35,14 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Spanish_language"
     },
     {
+      "code": "ca",
+      "639-2": "cat",
+      "family": "Indo-European",
+      "name": "Catalan",
+      "nativeName": "Català",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Catalan_language"
+    },
+    {
       "code": "pt",
       "639-2": "por",
       "family": "Indo-European",
@@ -276,13 +284,22 @@
       "wikiUrl": "https://en.wikipedia.org/wiki/Vietnamese_language"
     },
     {
-      "code": "zh",
+      "code": "zh-CN",
       "639-2": "zho",
       "639-2/B": "chi",
       "family": "Sino-Tibetan",
-      "name": "Chinese",
-      "nativeName": "中文 (Zhōngwén), 汉语, 漢語",
-      "wikiUrl": "https://en.wikipedia.org/wiki/Chinese_language"
+      "name": "Chinese (China)",
+      "nativeName": "中文 (中国)",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Standard_Chinese"
+    },
+    {
+      "code": "zh-TW",
+      "639-2": "zho",
+      "639-2/B": "chi",
+      "family": "Sino-Tibetan",
+      "name": "Chinese (Taiwan)",
+      "nativeName": "漢語",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Taiwanese_Mandarin"
     },
     {
       "code": "bg",
@@ -347,6 +364,14 @@
       "name": "Basque",
       "nativeName": "Euskara",
       "wikiUrl": "https://en.wikipedia.org/wiki/Basque_language"
+    },
+    {
+      "code": "ar",
+      "639-2": "ara",
+      "family": "Afro-Asiatic",
+      "name": "Arabic",
+      "nativeName": "اَلْعَرَبِيَّةُ",
+      "wikiUrl": "https://en.wikipedia.org/wiki/Arabic_language"
     }
   ]
 }

@@ -1,36 +1,40 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import {
+    Component,
+    OnInit,
+    Input,
+    Output,
+    EventEmitter,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 
 @Component({
-  selector: 'app-select',
-  templateUrl: './select.component.html',
+    selector: 'app-select',
+    templateUrl: './select.component.html',
 
-  styleUrls: ['./select.component.scss', '../style.scss'],
+    styleUrls: ['./select.component.scss', '../style.scss'],
 })
 export class SelectComponent implements OnInit {
+    @Input() displayCode
+    @Input() tag
+    @Input() preset
+    @Input() language
 
-  @Input() displayCode;
-  @Input() tag;
-  @Input() preset;
-  @Input() language;
-  
-  @Output() addTags = new EventEmitter();
+    @Output() addTags = new EventEmitter()
 
- 
-  constructor() { }
+    constructor() {}
 
-  ngOnInit() {
-    
-  }
+    ngOnInit() {}
 
-  selectChange(e){
-    console.log('selectChange')
-    const newValue = e.detail.value;
-    this.tag['value'] = newValue
+    selectChange(e) {
+        console.log('selectChange')
+        const newValue = e.detail.value
+        this.tag['value'] = newValue
 
-    const currentPresetOption = this.preset.options.find( po => po.v == newValue);
-    if (currentPresetOption && currentPresetOption.tags){
-      this.addTags.emit(currentPresetOption.tags)
+        const currentPresetOption = this.preset.options.find(
+            (po) => po.v == newValue
+        )
+        if (currentPresetOption && currentPresetOption.tags) {
+            this.addTags.emit(currentPresetOption.tags)
+        }
     }
-  }
-
 }

@@ -1,0 +1,52 @@
+<ion-header>
+    <div class="searchContainer">
+        <ion-input
+            [placeholder]="translate.instant('MODAL_SELECTED_ITEM.ADD_TAG_PLACEHOLDER')"
+            [(ngModel)]="searchFilter"
+        ></ion-input>
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-item-group *ngIf="searchFilter.length == 0">
+        <ion-item *ngFor="let field of moreFields | filterByList:usedList">
+            <ion-label (click)="select(field)">
+                <h3>{{ tagsService.presets[field].lbl[language] }}</h3>
+                <p>{{ field | toOsmTag }}</p>
+            </ion-label>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-item-group *ngIf="searchFilter.length > 0">
+        <ion-item
+            *ngIf="!usedList.includes(nameToOsmKey(searchFilter)) && nameToOsmKey(searchFilter).length != 0"
+        >
+            <ion-label (click)="select(searchFilter)">
+                <h3 *ngIf="tagsService.presets[nameToOsmKey(searchFilter)]">
+                    {{
+                    tagsService.presets[nameToOsmKey(searchFilter)].lbl[language]
+                    }}
+                </h3>
+                <p>{{ searchFilter | toOsmTag }}</p>
+            </ion-label>
+        </ion-item>
+
+        <ion-item
+            *ngFor="let preset of presets | filterPresetsByList:usedList | removeBrands | searchFor:searchFilter:language"
+        >
+            <ion-label (click)="select(preset._id)">
+                <h3>{{ preset.lbl[language] }}</h3>
+                <p>{{ preset._id | toOsmTag}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-item-group>
+</ion-content>
+
+<ion-footer>
+    <div class="actions">
+        <ion-button tappable (click)="dismiss()" fill="clear">
+            <ion-icon name="close" slot="start"></ion-icon>
+            {{ 'SHARED.CANCEL' | translate }}
+        </ion-button>
+    </div>
+</ion-footer>

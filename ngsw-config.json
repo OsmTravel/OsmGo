@@ -7,10 +7,7 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/assets/i18n/**",
-          "/manifest.webmanifest"
-        ]
+        "files": ["/assets/i18n/**", "/manifest.webmanifest"]
       }
     },
     {
@@ -52,8 +49,8 @@
           "/*.png"
         ]
       }
-    }, 
- 
+    },
+
     {
       "name": "assets",
       "installMode": "lazy",

@@ -1,21 +1,13 @@
-.menu-button {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 56px;
-    width: 30px;
-}
-
-#menu{
+#menu {
     z-index: 100;
     position: absolute;
-    top:0;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
-.backdrop{
+.backdrop {
     z-index: 101;
     height: 100%;
     width: 100%;
@@ -23,20 +15,20 @@
     background-color: black;
 }
 
-.menuContent{
+.menuContent {
     z-index: 102;
     position: absolute;
     width: 304px;
     top: 0;
     left: 0;
     bottom: 0;
-    box-shadow: 0 -1px 24px rgba(0,0,0,0.4);
+    box-shadow: 0 -1px 24px rgba(0, 0, 0, 0.4);
 }
 
-ion-icon{
+ion-icon {
     margin-right: 0.5em;
 }
 
-ion-item{
+ion-item {
     cursor: pointer;
 }

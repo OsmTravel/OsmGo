@@ -1,29 +1,35 @@
-import { HttpClient } from '@angular/common/http';
-import { Observable, from, forkJoin } from 'rxjs';
-import { map} from 'rxjs/operators';
-import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
-import { ConfigService } from './config.service';
-import { PresetOption, PrimaryTag, TagConfig } from "../../type";
+import { HttpClient } from '@angular/common/http'
+import { Observable, from, forkJoin } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { Injectable } from '@angular/core'
+import { Storage } from '@ionic/storage-angular'
+import { ConfigService } from '@services/config.service'
+import {
+    JsonSprites,
+    OsmGoFeature,
+    Preset,
+    PrimaryTag,
+    Tag,
+    TagConfig,
+    TagsJson,
+} from '@osmgo/type'
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
-    lastTagsUsedIds: string[];
+    lastTagsUsedIds: string[]
 
-    bookmarksIds: string[] = [];
-    savedFields = {};
-    tags:TagConfig[];
-    userTags:TagConfig[];
-    primaryKeys = [];
-    presets = {};
-    hiddenTagsIds: string[];
+    bookmarksIds: string[] = []
+    savedFields: Record<string, any> = {}
+    tags: TagConfig[]
+    userTags: TagConfig[]
+    primaryKeys: string[] = []
+    presets: Record<string, Preset> = {}
+    hiddenTagsIds: string[]
 
-    basemaps;
-    jsonSprites
+    basemaps
+    jsonSprites: JsonSprites
 
-
-    
-    defaultHiddenTagsIds :string[] = [
+    defaultHiddenTagsIds: string[] = [
         'highway/pedestrian_area',
         'highway/footway',
         'highway/motorway',
@@ -152,263 +158,256 @@ export class TagsService {
         'building/transportation',
         'building/university',
         'building/warehouse',
-        'building/office'
+        'building/office',
     ]
 
-
-    constructor(private http: HttpClient,
+    constructor(
+        private http: HttpClient,
         public localStorage: Storage,
-        public configService: ConfigService) {
+        public configService: ConfigService
+    ) {}
+
+    getTagConfigFromTagsID(tagIds: string[]): TagConfig[] {
+        return this.tags.filter((tag) => tagIds.includes(tag.id))
     }
 
-    
-    getTagConfigFromTagsID( tagIds:string[]){
-        return this.tags.filter( tag => tagIds.includes(tag.id))
+    setBookMarksIds(bookmarksIds: string[]): void {
+        this.localStorage.set('bookmarksIds', bookmarksIds)
+        this.bookmarksIds = bookmarksIds
     }
 
-
-    setBookMarksIds(bookmarksIds: string[]) {
-        this.localStorage.set('bookmarksIds', bookmarksIds);
-        this.bookmarksIds = bookmarksIds;
+    setLastTagsUsedIds(lastTagsUsedIds: string[]): void {
+        this.localStorage.set('lastTagsUsedIds', lastTagsUsedIds)
+        this.lastTagsUsedIds = lastTagsUsedIds
     }
 
-    setLastTagsUsedIds(lastTagsUsedIds: string[]){
-        this.localStorage.set('lastTagsUsedIds', lastTagsUsedIds);
-        this.lastTagsUsedIds = lastTagsUsedIds;
-    }
-
-    removeBookMark( tag: TagConfig ){
-        this.bookmarksIds = this.bookmarksIds.filter( b => b !== tag.id);
+    removeBookMark(tag: TagConfig): void {
+        this.bookmarksIds = this.bookmarksIds.filter((b) => b !== tag.id)
         this.setBookMarksIds(this.bookmarksIds)
     }
 
-    addBookMark(tag: TagConfig){
-        if (this.bookmarksIds.includes(tag.id)){
-            return;
+    addBookMark(tag: TagConfig): TagConfig {
+        if (this.bookmarksIds.includes(tag.id)) {
+            return
         }
-        let currentTag = this.tags.find( t => t.id === tag.id);
-        if (!currentTag){
+        let currentTag = this.tags.find((t) => t.id === tag.id)
+        if (!currentTag) {
             this.addUserTags(tag)
         }
-        this.bookmarksIds = [tag.id, ...this.bookmarksIds ];
+        this.bookmarksIds = [tag.id, ...this.bookmarksIds]
 
         this.setBookMarksIds(this.bookmarksIds)
         // TODO : si tag inconnu => ajouter à userTag
-        return currentTag;
+        return currentTag
     }
 
-    loadBookMarksIds$() {
-        return from(this.localStorage.get('bookmarksIds'))
-            .pipe( 
-                map( bookmarksIds => {
-                    bookmarksIds = bookmarksIds ? bookmarksIds : []
-                    this.bookmarksIds = bookmarksIds
-                    return bookmarksIds
-                })
-            )
-    }
-
-    // hidden tags
-    loadHiddenTagsIds$() {
-        return from(this.localStorage.get('hiddenTagsIds'))
-        .pipe(
-            map( hiddenTagsIds => {
-                hiddenTagsIds = hiddenTagsIds ? hiddenTagsIds : [...this.defaultHiddenTagsIds];
-                this.hiddenTagsIds  = hiddenTagsIds;
-                return hiddenTagsIds;
+    loadBookMarksIds$(): Observable<string[]> {
+        return from(this.localStorage.get('bookmarksIds')).pipe(
+            map((bookmarksIds: string[]) => {
+                bookmarksIds = bookmarksIds ? bookmarksIds : []
+                this.bookmarksIds = bookmarksIds
+                return bookmarksIds
             })
         )
     }
 
-    setHiddenTagsIds(hiddenTagsIds: string[]) {
-        this.localStorage.set('hiddenTagsIds', hiddenTagsIds);
-        this.hiddenTagsIds = hiddenTagsIds;
+    // hidden tags
+    loadHiddenTagsIds$(): Observable<string[]> {
+        return from(this.localStorage.get('hiddenTagsIds')).pipe(
+            map((hiddenTagsIds: string[]) => {
+                hiddenTagsIds = hiddenTagsIds
+                    ? hiddenTagsIds
+                    : [...this.defaultHiddenTagsIds]
+                this.hiddenTagsIds = hiddenTagsIds
+                return hiddenTagsIds
+            })
+        )
     }
 
-    removeHiddenTag(tag:TagConfig){
-        if(!tag.id){
-          return;
-        }
-        const newHiddenTags = this.hiddenTagsIds.filter(t => t !== tag.id)
-        this.setHiddenTagsIds(newHiddenTags)
-      }
+    setHiddenTagsIds(hiddenTagsIds: string[]): void {
+        this.localStorage.set('hiddenTagsIds', hiddenTagsIds)
+        this.hiddenTagsIds = hiddenTagsIds
+    }
 
-    addHiddenTag(tag:TagConfig){ // => hide a tag
-        if(!tag.id){
-          return;
+    removeHiddenTag(tag: TagConfig): void {
+        if (!tag.id) {
+            return
         }
-        if (!this.hiddenTagsIds.includes(tag.id)){
+        const newHiddenTags = this.hiddenTagsIds.filter((t) => t !== tag.id)
+        this.setHiddenTagsIds(newHiddenTags)
+    }
+
+    addHiddenTag(tag: TagConfig): void {
+        // => hide a tag
+        if (!tag.id) {
+            return
+        }
+        if (!this.hiddenTagsIds.includes(tag.id)) {
             const newHiddenTags = [tag.id, ...this.hiddenTagsIds]
             this.setHiddenTagsIds(newHiddenTags)
             // delete bookmark...
             this.removeBookMark(tag)
         }
-      }
-    
-    resetHiddenTags(){
-        const defaultHiddenTagsIds = [...this.defaultHiddenTagsIds];
-        this.setHiddenTagsIds(defaultHiddenTagsIds) 
-      }
+    }
 
-    loadLastTagsUsedIds$(){
-        return from(this.localStorage.get('lastTagsUsedIds'))
-        .pipe(
-            map( lastTagsUsedIds => {
-                lastTagsUsedIds = lastTagsUsedIds ? lastTagsUsedIds : [];
-                this.lastTagsUsedIds = lastTagsUsedIds;
-                return lastTagsUsedIds;
+    resetHiddenTags(): void {
+        const defaultHiddenTagsIds = [...this.defaultHiddenTagsIds]
+        this.setHiddenTagsIds(defaultHiddenTagsIds)
+    }
+
+    loadLastTagsUsedIds$(): Observable<string[]> {
+        return from(this.localStorage.get('lastTagsUsedIds')).pipe(
+            map((lastTagsUsedIds: string[]) => {
+                lastTagsUsedIds = lastTagsUsedIds ? lastTagsUsedIds : []
+                this.lastTagsUsedIds = lastTagsUsedIds
+                return lastTagsUsedIds
             })
         )
     }
 
+    addTagTolastTagsUsed(tagId: string): TagConfig {
+        if (!tagId) {
+            return
+        }
+        if (this.lastTagsUsedIds.includes(tagId)) {
+            this.lastTagsUsedIds = this.lastTagsUsedIds.filter(
+                (tu) => tu !== tagId
+            )
+        }
+        let currentTag = this.tags.find((t) => t.id === tagId)
+        if (!currentTag) {
+            return
+        }
 
-    addTagTolastTagsUsed(tagId: string) {
-        if (!tagId){
-            return;
-        }
-        if (this.lastTagsUsedIds.includes(tagId)){
-            this.lastTagsUsedIds = this.lastTagsUsedIds.filter( tu => tu !== tagId);
-        }
-        let currentTag = this.tags.find( t => t.id === tagId);
-        if (!currentTag){
-            return;
-        }
-
-        this.lastTagsUsedIds = [tagId, ...this.lastTagsUsedIds].slice(0,20);
+        this.lastTagsUsedIds = [tagId, ...this.lastTagsUsedIds].slice(0, 20)
 
         this.setLastTagsUsedIds(this.lastTagsUsedIds)
-        return currentTag;
+        return currentTag
     }
 
-    loadUserTags$(){
-        return from( this.localStorage.get('userTags'))
-        .pipe(
-            map( userTags => {
-                userTags = userTags ? userTags : [];
-                this.userTags = userTags;
-                return userTags;
+    loadUserTags$(): Observable<TagConfig[]> {
+        return from(this.localStorage.get('userTags')).pipe(
+            map((userTags: TagConfig[]) => {
+                userTags = userTags ? userTags : []
+                this.userTags = userTags
+                return userTags
             })
         )
     }
 
-    setUserTags(userTags: TagConfig[]) {
-        this.localStorage.set('userTags', userTags);
-        this.userTags = userTags;
+    setUserTags(userTags: TagConfig[]): void {
+        this.localStorage.set('userTags', userTags)
+        this.userTags = userTags
     }
 
-    addUserTags(newTag: TagConfig){
-        const newTagId = newTag.id;
-        if (this.userTags.find( t => t.id === newTagId)){
-            return;
+    addUserTags(newTag: TagConfig): void {
+        const newTagId = newTag.id
+        if (this.userTags.find((t) => t.id === newTagId)) {
+            return
         }
-        newTag['geometry'] = ['point', 'vertex', 'line', 'area']
-        newTag['icon'] = "maki-circle-custom",
-        newTag['markerColor'] = "#000000";
-        this.userTags =  [...this.userTags, newTag]
-        this.tags = [...this.tags, newTag ]
+        newTag.geometry = ['point', 'vertex', 'line', 'area']
+        newTag.icon = 'maki-circle-custom'
+        newTag.markerColor = '#000000'
+        this.userTags = [...this.userTags, newTag]
+        this.tags = [...this.tags, newTag]
         this.setUserTags(this.userTags)
     }
 
-
-    loadSavedFields$() {
-        return from(this.localStorage.get('savedFields'))
-            .pipe(
-                map(d => {
-                    const res = d ? d : {}
-                    this.savedFields = res
-                    return res;
-                })
-            )
+    loadSavedFields$(): Observable<Record<string, any>> {
+        return from(this.localStorage.get('savedFields')).pipe(
+            map((d: Record<string, any>) => {
+                const res = d ? d : {}
+                this.savedFields = res
+                return res
+            })
+        )
     }
 
-    addSavedField(tagId, tags){
-        if (!this.savedFields[tagId]){
-            this.savedFields[tagId] = {};
+    addSavedField(tagId: string, tags: TagConfig[]): void {
+        if (!this.savedFields[tagId]) {
+            this.savedFields[tagId] = {}
         }
         this.savedFields[tagId]['tags'] = tags
         // .tags = tags;
-        this.localStorage.set('savedFields', this.savedFields);
+        this.localStorage.set('savedFields', this.savedFields)
     }
 
-
-  findPkey( featureOrTags): PrimaryTag{
-    const pkeys = this.primaryKeys;
-    if (featureOrTags.properties && featureOrTags.properties.tags){
-        for (let k in featureOrTags.properties.tags){
-            if (pkeys.includes(k)){
-                return {key: k, value:featureOrTags.properties.tags[k] }
+    findPkey(featureOrTags: OsmGoFeature | Tag[]): PrimaryTag {
+        const pkeys = this.primaryKeys
+        if (
+            !Array.isArray(featureOrTags) &&
+            featureOrTags.properties &&
+            featureOrTags.properties.tags
+        ) {
+            for (let k in featureOrTags.properties.tags) {
+                if (pkeys.includes(k)) {
+                    return { key: k, value: featureOrTags.properties.tags[k] }
+                }
+                return undefined
+            }
+        } else if (Array.isArray(featureOrTags)) {
+            for (let t of featureOrTags) {
+                if (pkeys.includes(t.key)) {
+                    return { key: t.key, value: t.value }
+                }
             }
             return undefined
         }
-    } else {
-        for (let t of featureOrTags){
-            if (pkeys.includes(t.key)){
-                return {key: t.key, value:t.value }
-            }
-        }
-        return undefined
     }
 
-} 
-
-    getTagsConfig$(): Observable<any> { 
-        return this.http.get(`assets/tagsAndPresets/tags.json`)
-            .pipe( 
-                map( tagsConfig => {
-                    this.primaryKeys = tagsConfig['primaryKeys'];
-                    return tagsConfig
-                })
-            )
-    }
-
-    loadBaseMaps$() {
-        return this.http.get(`assets/tagsAndPresets/basemap.json`)
-            .pipe(
-                map(baseMaps => {
-                    this.configService.baseMapSources = baseMaps;
-                    return baseMaps
-                })
-            )
-    }
-
-    loadPresets$() {
-        return this.http.get(`assets/tagsAndPresets/presets.json`)
-            .pipe(
-                map((p) => { 
-                    const json = p;
-                    for (const k in json) {
-                        json[k]['_id'] = k;
-                    }
-                    this.presets = json;
-                   return json;
-                })
-            );
-    }
- 
-    loadJsonSprites$() {
-        const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
-        return this.http.get('assets/iconsSprites@x'+devicePixelRatio+'.json')
-        .pipe(
-            map( jsonSprites => {
-                this.jsonSprites = jsonSprites;
-                return jsonSprites;
-            } )
+    getTagsConfig$(): Observable<TagsJson> {
+        return this.http.get(`assets/tagsAndPresets/tags.json`).pipe(
+            map((tagsConfig: TagsJson) => {
+                this.primaryKeys = tagsConfig.primaryKeys
+                return tagsConfig
+            })
         )
-      }
+    }
 
-      loadTags$(){
-          return forkJoin(
-            this.getTagsConfig$(),
-            this.loadUserTags$(),
-          ).pipe(
-              map( ([tagsConfig, userTags]) => {
-                  let tags = [...tagsConfig['tags'], ...userTags];
-                this.tags = tags;
-                return tags;
-              })
-          )
-      }
+    // loadBaseMaps$() {
+    //     return this.http.get(`assets/tagsAndPresets/basemap.json`)
+    //         .pipe(
+    //             map(baseMaps => {
+    //                 this.configService.baseMapSources = baseMaps;
+    //                 return baseMaps
+    //             })
+    //         )
+    // }
 
+    loadPresets$(): Observable<Record<string, Preset>> {
+        return this.http.get(`assets/tagsAndPresets/presets.json`).pipe(
+            map((p: Record<string, Preset>) => {
+                const json = p
+                for (const k in json) {
+                    json[k]._id = k
+                }
+                this.presets = json
+                return json
+            })
+        )
+    }
+
+    loadJsonSprites$(): Observable<JsonSprites> {
+        const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1
+        return this.http
+            .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
+            .pipe(
+                map((jsonSprites: JsonSprites) => {
+                    this.jsonSprites = jsonSprites
+                    return jsonSprites
+                })
+            )
+    }
+
+    loadTags$(): Observable<TagConfig[]> {
+        return forkJoin(this.getTagsConfig$(), this.loadUserTags$()).pipe(
+            map(([tagsConfig, userTags]: [TagsJson, TagConfig[]]) => {
+                let tags: TagConfig[] = [...tagsConfig.tags, ...userTags]
+                this.tags = tags
+                return tags
+            })
+        )
+    }
 
     // loadtagsAndPresets$() {
     //     return forkJoin(
@@ -422,8 +421,6 @@ export class TagsService {
     //     )
     //     .pipe(
     //         map( ([jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]) => {
-        
-                   
 
     //                 return [jsonSprites, presets, tagsConfig, baseMaps, bookmarksIds, lastTagsUsedIds, userTags, hiddenTagsIds]
     //         } )

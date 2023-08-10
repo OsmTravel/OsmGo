@@ -31,14 +31,12 @@ plugins/ios.json
 www/
 $RECYCLE.BIN/
 build/
+/.angular/cache
 
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
 .sourcemaps
 
-package-lock\.json
-
 platforms/
 deploy.config
-

@@ -1,14 +1,12 @@
-
-
-.spritesX1{
-    background: url('/assets/iconsSprites@x1.png') 0 0 no-repeat;
+.spritesX1 {
+    background: url('../../../assets/iconsSprites@x1.png') 0 0 no-repeat;
 }
 
-.spritesX2{
-    background: url('/assets/iconsSprites@x2.png') 0 0 no-repeat;
+.spritesX2 {
+    background: url('../../../assets/iconsSprites@x2.png') 0 0 no-repeat;
 }
 
-.iconWrapper{
+.iconWrapper {
     position: relative;
     display: block;
 }

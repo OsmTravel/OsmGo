@@ -1,0 +1,9 @@
+*.min.js
+android/
+fixture
+node_modules/
+package-lock.json
+package.json
+src/assets/
+www/
+yarn.lock
