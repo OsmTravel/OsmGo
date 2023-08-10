@@ -17,7 +17,7 @@
         "EDIT": "Editer",
         "SAVE": "Sauvegarder",
         "DELETE": "Supprimer",
-        "CLEAR": ""
+        "CLEAR": "Annuler"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Vraiment ?",
@@ -27,16 +27,16 @@
         "LOAD_BBOX": "Charger les données de l'emprise ?",
         "CREATING_MISSING_ICONS": "Création des icônes manquantes…",
         "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
+            "MENU": "Menu",
+            "UPLOAD": "Envoyer",
+            "LOAD_DATA": "Télécharger les données",
+            "LOADING_DATA": "Chargement",
+            "VIEW_AREAL_MAP": "Imagerie aérienne",
+            "VIEW_STYLED_MAP": "Afficher la carte",
+            "ADD_NEW": "Créer un objet",
+            "CENTER_GPS": "Centrer la carte sur ma position",
+            "CONFIRM_ADD": "Ajouter un objet",
+            "CONFIRM_MOVE": "Déplacer un objet"
         }
     },
     "MENU": {
@@ -138,14 +138,14 @@
         "CENTER_WHEN_GPS_IS_READY_HINT": "Centre la carte sur votre position dès que c'est possible",
         "LIMIT_FEATURES": "Nombre maximum d'objets en mémoire",
         "LIMIT_FEATURES_HINT": "Après cette limite, les anciennes données seront supprimées (Les modifications en cours seront conservées). Une limite trop haute peut diminuer considérablement les performances",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
+        "DISPLAY_SURVEY_CARD": "Afficher la survey card",
+        "DISPLAY_SURVEY_CARD_HINT": "Pour pouvoir ajouter le tag 'survey:date' facilement",
         "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
+            "ALWAYS": "Toujours",
+            "OLDER": "Plus ancien que...",
+            "NEVER": "Jamais"
         },
-        "SURVEY_CARD_RANGE": ""
+        "SURVEY_CARD_RANGE": "Afficher quand la dernière MAJ date de plus de {{year}} ans"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Ajouter une valeur qui n'existe pas",
@@ -175,10 +175,10 @@
         "UNDEFINED_VALUE": "NC",
         "LAST_TAG_USED": "Derniers tags utilisés",
         "BOOKMARKS": "Favoris",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "LAST_SURVEY": "Dernière visite",
+        "WARN_NODE_EDITED": "Cet objet à été modifié localement",
+        "ADD_TAG_PLACEHOLDER": "Entrer une clé ou un nom",
+        "SURVEY_QUESTION": "Cet objet existe toujours ?"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Ce tag est déprécié",
