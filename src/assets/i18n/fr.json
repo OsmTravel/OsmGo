@@ -12,7 +12,12 @@
         "NAME": "Nom",
         "ID": "Id",
         "CLOSE": "Fermer",
-        "LOADING": "Chargement…"
+        "LOADING": "Chargement…",
+        "CREATE": "Créer",
+        "EDIT": "Editer",
+        "SAVE": "Sauvegarder",
+        "DELETE": "Supprimer",
+        "CLEAR": "Annuler"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Vraiment ?",
@@ -20,7 +25,19 @@
         "START_SNACK_ITEMS_IN_MEMORY": "objets en mémoire",
         "WHAT_ITEM": "Lequel ?",
         "LOAD_BBOX": "Charger les données de l'emprise ?",
-        "CREATING_MISSING_ICONS": "Création des icônes manquantes…"
+        "CREATING_MISSING_ICONS": "Création des icônes manquantes…",
+        "BUTTONS": {
+            "MENU": "Menu",
+            "UPLOAD": "Envoyer",
+            "LOAD_DATA": "Télécharger les données",
+            "LOADING_DATA": "Chargement",
+            "VIEW_AREAL_MAP": "Imagerie aérienne",
+            "VIEW_STYLED_MAP": "Afficher la carte",
+            "ADD_NEW": "Créer un objet",
+            "CENTER_GPS": "Centrer la carte sur ma position",
+            "CONFIRM_ADD": "Ajouter un objet",
+            "CONFIRM_MOVE": "Déplacer un objet"
+        }
     },
     "MENU": {
         "CONNECTION": "Se connecter à OpenStreetMap",
@@ -120,7 +137,15 @@
         "CENTER_WHEN_GPS_IS_READY": "Au démarrage, centrer la carte sur votre position",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Centre la carte sur votre position dès que c'est possible",
         "LIMIT_FEATURES": "Nombre maximum d'objets en mémoire",
-        "LIMIT_FEATURES_HINT": "Après cette limite, les anciennes données seront supprimées (Les modifications en cours seront conservées). Une limite trop haute peut diminuer considérablement les performances"
+        "LIMIT_FEATURES_HINT": "Après cette limite, les anciennes données seront supprimées (Les modifications en cours seront conservées). Une limite trop haute peut diminuer considérablement les performances",
+        "DISPLAY_SURVEY_CARD": "Afficher la survey card",
+        "DISPLAY_SURVEY_CARD_HINT": "Pour pouvoir ajouter le tag 'survey:date' facilement",
+        "DISPLAY_SURVEY_CARD_CHOICE": {
+            "ALWAYS": "Toujours",
+            "OLDER": "Plus ancien que...",
+            "NEVER": "Jamais"
+        },
+        "SURVEY_CARD_RANGE": "Afficher quand la dernière MAJ date de plus de {{year}} ans"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Ajouter une valeur qui n'existe pas",
@@ -149,7 +174,11 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "Ce nœud est utilisé par {x} chemin(s)",
         "UNDEFINED_VALUE": "NC",
         "LAST_TAG_USED": "Derniers tags utilisés",
-        "BOOKMARKS": "Favoris"
+        "BOOKMARKS": "Favoris",
+        "LAST_SURVEY": "Dernière visite",
+        "WARN_NODE_EDITED": "Cet objet à été modifié localement",
+        "ADD_TAG_PLACEHOLDER": "Entrer une clé ou un nom",
+        "SURVEY_QUESTION": "Cet objet existe toujours ?"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Ce tag est déprécié",

@@ -12,7 +12,12 @@
         "NAME": "Имя",
         "ID": "Id",
         "CLOSE": "Закрыть",
-        "LOADING": "Загрузка…"
+        "LOADING": "Загрузка…",
+        "CREATE": "",
+        "EDIT": "",
+        "SAVE": "",
+        "DELETE": "",
+        "CLEAR": ""
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Вы уверены?",
@@ -20,7 +25,19 @@
         "START_SNACK_ITEMS_IN_MEMORY": "объект в памяти",
         "WHAT_ITEM": "Какой?",
         "LOAD_BBOX": "Загрузить данные?",
-        "CREATING_MISSING_ICONS": ""
+        "CREATING_MISSING_ICONS": "",
+        "BUTTONS": {
+            "MENU": "",
+            "UPLOAD": "",
+            "LOAD_DATA": "",
+            "LOADING_DATA": "",
+            "VIEW_AREAL_MAP": "",
+            "VIEW_STYLED_MAP": "",
+            "ADD_NEW": "",
+            "CENTER_GPS": "",
+            "CONFIRM_ADD": "",
+            "CONFIRM_MOVE": ""
+        }
     },
     "MENU": {
         "CONNECTION": "Войти в OpenStreetMap",
@@ -120,7 +137,15 @@
         "CENTER_WHEN_GPS_IS_READY": "При запуске, центрироваться на вашем положении",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Центрировать карту на вашем положении как можно скорее.",
         "LIMIT_FEATURES": "Максимальное количество объектов в памяти",
-        "LIMIT_FEATURES_HINT": "После достижения лимита, старые данные будут удалены (текущие изменения будут сохранены). Слишком большой лимит может значительно ухудшить производительность"
+        "LIMIT_FEATURES_HINT": "После достижения лимита, старые данные будут удалены (текущие изменения будут сохранены). Слишком большой лимит может значительно ухудшить производительность",
+        "DISPLAY_SURVEY_CARD": "",
+        "DISPLAY_SURVEY_CARD_HINT": "",
+        "DISPLAY_SURVEY_CARD_CHOICE": {
+            "ALWAYS": "",
+            "OLDER": "",
+            "NEVER": ""
+        },
+        "SURVEY_CARD_RANGE": ""
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Добавить свое значение",
@@ -149,7 +174,11 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "Точка используется в {x} линии(ях)",
         "UNDEFINED_VALUE": "Неизвестно",
         "LAST_TAG_USED": "Последний использованный тэг",
-        "BOOKMARKS": "Закладки"
+        "BOOKMARKS": "Закладки",
+        "LAST_SURVEY": "",
+        "WARN_NODE_EDITED": "",
+        "ADD_TAG_PLACEHOLDER": "",
+        "SURVEY_QUESTION": ""
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Этот тэг устарел",
