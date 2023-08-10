@@ -12,7 +12,12 @@
         "NAME": "Nom",
         "ID": "Id",
         "CLOSE": "Tancar",
-        "LOADING": "Carregant..."
+        "LOADING": "Carregant...",
+        "CREATE": "",
+        "EDIT": "",
+        "SAVE": "",
+        "DELETE": "",
+        "CLEAR": ""
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Estàs segur/a?",
@@ -20,7 +25,19 @@
         "START_SNACK_ITEMS_IN_MEMORY": "ítems a la memòria",
         "WHAT_ITEM": "Quin?",
         "LOAD_BBOX": "Carregar dades?",
-        "CREATING_MISSING_ICONS": "Creant icones que falten"
+        "CREATING_MISSING_ICONS": "Creant icones que falten",
+        "BUTTONS": {
+            "MENU": "",
+            "UPLOAD": "",
+            "LOAD_DATA": "",
+            "LOADING_DATA": "",
+            "VIEW_AREAL_MAP": "",
+            "VIEW_STYLED_MAP": "",
+            "ADD_NEW": "",
+            "CENTER_GPS": "",
+            "CONFIRM_ADD": "",
+            "CONFIRM_MOVE": ""
+        }
     },
     "MENU": {
         "CONNECTION": "Entrar a OpenStreetMap",
@@ -120,7 +137,15 @@
         "CENTER_WHEN_GPS_IS_READY": "A l'inici, centrar el mapa a la teva posició",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Centrar el mapa a la teva posició tan aviat com sigui possible.",
         "LIMIT_FEATURES": "Màxim nombre d'objectes en la memòria",
-        "LIMIT_FEATURES_HINT": "Després d'aquest límit, s'esborraran les dades antigues (es guarden les modificacions actuals). Augmentar el límit pot disminuir dràsticament el rendiment."
+        "LIMIT_FEATURES_HINT": "Després d'aquest límit, s'esborraran les dades antigues (es guarden les modificacions actuals). Augmentar el límit pot disminuir dràsticament el rendiment.",
+        "DISPLAY_SURVEY_CARD": "",
+        "DISPLAY_SURVEY_CARD_HINT": "",
+        "DISPLAY_SURVEY_CARD_CHOICE": {
+            "ALWAYS": "",
+            "OLDER": "",
+            "NEVER": ""
+        },
+        "SURVEY_CARD_RANGE": ""
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Afegeix un valor personalitzat",
@@ -149,7 +174,11 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "Aquest node s'utilitza en {x} via(es)",
         "UNDEFINED_VALUE": "Desconegut",
         "LAST_TAG_USED": "Etiquetes emprades darrerament",
-        "BOOKMARKS": "Favorits"
+        "BOOKMARKS": "Favorits",
+        "LAST_SURVEY": "",
+        "WARN_NODE_EDITED": "",
+        "ADD_TAG_PLACEHOLDER": "",
+        "SURVEY_QUESTION": ""
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Aquesta etiqueta està en desús",
