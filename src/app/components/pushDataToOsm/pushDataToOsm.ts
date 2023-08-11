@@ -166,7 +166,10 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                 this.dataService.deleteFeatureFromGeojsonChanged(
                     currentFeatureChanged
                 )
-                this.dataService.addFeatureToGeojson(newFeature)
+                // if theire is no tags, we don't add the feature
+                if (Object.keys(newFeature['properties']['tags']).length > 0) {
+                    this.dataService.addFeatureToGeojson(newFeature)
+                }
             } else if (diff.typeChange == 'Delete') {
                 this.dataService.deleteFeatureFromGeojsonChanged(
                     currentFeatureChanged
@@ -361,14 +364,14 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                             }
                             const featureWithError = {
                                 ...this.featuresChanges.find(
-                                    (f) => f.id == feature.id
+                                    (f) => f.id == feature?.id
                                 ),
                                 error: err.error,
                             }
                             this.featuresChanges = [
                                 featureWithError,
                                 ...this.featuresChanges.filter(
-                                    (f) => f.id !== feature.id
+                                    (f) => f.id !== feature?.id
                                 ),
                             ]
                             this.isPushing = false

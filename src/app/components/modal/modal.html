@@ -248,7 +248,7 @@
                         color="danger"
                         *ngIf="feature.properties.type == 'node' && mode=='Update'"
                         [disabled]="(mapService.isProcessing | async)"
-                        (click)="presentConfirm()"
+                        (click)="presentConfirm(feature)"
                     >
                         <ion-icon name="trash"></ion-icon>
                     </ion-button>
