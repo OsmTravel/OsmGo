@@ -44,6 +44,7 @@ export class TagsService {
         'highway/unclassified',
         'highway/residential',
         'highway/service',
+        'highway/service/alley',
         'highway/motorway_link',
         'highway/living_street',
         'highway/track',
@@ -253,6 +254,10 @@ export class TagsService {
     resetHiddenTags(): void {
         const defaultHiddenTagsIds = [...this.defaultHiddenTagsIds]
         this.setHiddenTagsIds(defaultHiddenTagsIds)
+    }
+
+    removeAllHiddenTags(): void {
+        this.setHiddenTagsIds([])
     }
 
     loadLastTagsUsedIds$(): Observable<string[]> {

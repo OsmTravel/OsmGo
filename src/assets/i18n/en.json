@@ -193,7 +193,8 @@
         "HIDDEN_TAGS_DESCRIPTION": "This window allows you to make the hidden elements visible.",
         "BOOKMARKED_TAGS": "Manage your favorites",
         "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
-        "RESET_HIDDEN_TAGS": "Reset"
+        "RESET_HIDDEN_TAGS": "Reset",
+        "REMOVE_ALL_HIDDEN_TAGS": "Remove all"
     },
     "DAYS": {
         "MONDAY": "Monday",

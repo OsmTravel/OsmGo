@@ -73,4 +73,12 @@
     >
         {{ 'MANAGE_TAGS.RESET_HIDDEN_TAGS' | translate }}
     </ion-button>
+
+    <ion-button
+        ion-button
+        color="danger"
+        (click)="tagsService.removeAllHiddenTags()"
+    >
+        {{ 'MANAGE_TAGS.REMOVE_ALL_HIDDEN_TAGS' | translate }}
+    </ion-button>
 </ion-footer>
