@@ -46,6 +46,7 @@
 
             <survey-card
                 *ngIf="shouldShowSurveyCard()"
+                [feature]="feature"
                 (yes)="handleSurveyYes()"
                 (no)="handleSurveyNo()"
             ></survey-card>
