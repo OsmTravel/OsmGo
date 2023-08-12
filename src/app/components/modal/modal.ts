@@ -162,7 +162,7 @@ export class ModalsContentPage implements OnInit {
         }
     }
 
-    presentConfirm() {
+    presentConfirm(feature: OsmGoFeature<any>) {
         this.alertCtrl
             .create({
                 header: this.translate.instant(
@@ -652,7 +652,7 @@ export class ModalsContentPage implements OnInit {
     async handleSurveyNo() {
         // TODO: Ask if closed, disused or not existant
         if (this.feature.properties.type == 'node') {
-            this.presentConfirm()
+            this.presentConfirm(this.feature)
         }
     }
 

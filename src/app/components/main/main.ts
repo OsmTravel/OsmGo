@@ -1,4 +1,12 @@
-import { Component, NgZone, AfterViewInit } from '@angular/core'
+declare const ResizeObserver: any
+
+import {
+    Component,
+    NgZone,
+    AfterViewInit,
+    ViewChild,
+    ElementRef,
+} from '@angular/core'
 import {
     NavController,
     MenuController,
@@ -18,7 +26,7 @@ import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 
-import { timer, forkJoin } from 'rxjs'
+import { timer, forkJoin, take } from 'rxjs'
 import { Router, NavigationEnd } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 
@@ -41,6 +49,8 @@ export class MainPage implements AfterViewInit {
     menuIsOpen: boolean = false
     newVersion: boolean = false
     loading: boolean = true
+
+    @ViewChild('map', { static: false }) mapElement: ElementRef
 
     // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
@@ -164,12 +174,6 @@ export class MainPage implements AfterViewInit {
         this.menuIsOpen = false
     }
 
-    onMapResized(e: any = undefined): void {
-        if (this.mapService.map) {
-            this.mapService.map.resize()
-        }
-    }
-
     presentConfirm(): void {
         this.alertCtrl
             .create({
@@ -255,6 +259,18 @@ export class MainPage implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
+        if (this.mapElement && this.mapElement.nativeElement) {
+            const observer = new ResizeObserver((entries) => {
+                for (const entry of entries) {
+                    if (entry.target === this.mapElement.nativeElement) {
+                        if (this.mapService.map) this.mapService.map.resize()
+                    }
+                }
+            })
+
+            observer.observe(this.mapElement.nativeElement)
+        }
+
         this.initService
             .initLoadData$()
             .subscribe(
@@ -274,31 +290,31 @@ export class MainPage implements AfterViewInit {
                 ]) => {
                     this.locationService.enableGeolocation()
                     this.osmApi.initAuth()
-                    this.onMapResized()
 
                     this.mapService.initMap(config)
                 }
             )
 
         this.mapService.eventMapIsLoaded.subscribe(() => {
-            this.onMapResized()
             this.loading = false
-            timer(2000).subscribe(() => {
-                const nbData = this.dataService.getGeojson().features.length
-                if (nbData > 0) {
-                    // Il y a des données stockées en mémoires...
-                    this.alertService.eventNewAlert.emit(
-                        nbData +
-                            ' ' +
-                            this.translate.instant(
-                                'MAIN.START_SNACK_ITEMS_IN_MEMORY'
-                            )
-                    )
-                } else {
-                    // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
-                    this.alertService.eventDisplayToolTipRefreshData.emit()
-                }
-            })
+            timer(2000)
+                .pipe(take(1))
+                .subscribe(() => {
+                    const nbData = this.dataService.getGeojson().features.length
+                    if (nbData > 0) {
+                        // Il y a des données stockées en mémoires...
+                        this.alertService.eventNewAlert.emit(
+                            nbData +
+                                ' ' +
+                                this.translate.instant(
+                                    'MAIN.START_SNACK_ITEMS_IN_MEMORY'
+                                )
+                        )
+                    } else {
+                        // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
+                        this.alertService.eventDisplayToolTipRefreshData.emit()
+                    }
+                })
         })
 
         this.alertService.eventDisplayToolTipRefreshData.subscribe(async () => {

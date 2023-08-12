@@ -293,8 +293,18 @@ export class OsmApiService {
                 const xml = this.geojson2OsmUpdate(feature, idChangeset)
                 modifyChanges.push(xml)
             } else if (feature.properties.changeType == 'Delete') {
-                const xml = this.geojson2OsmUpdate(feature, idChangeset)
-                deleteChanges.push(xml)
+                // if the node is used by a way, we just remove the tag, not the node
+                if (
+                    feature.properties.usedByWays &&
+                    feature.properties.usedByWays.length > 0
+                ) {
+                    feature.properties.tags = {}
+                    const xml = this.geojson2OsmUpdate(feature, idChangeset)
+                    modifyChanges.push(xml)
+                } else {
+                    const xml = this.geojson2OsmUpdate(feature, idChangeset)
+                    deleteChanges.push(xml)
+                }
             }
         }
 

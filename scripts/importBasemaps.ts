@@ -168,19 +168,42 @@ const run = async () => {
         noValidBaseMaps.length
     )
 
-    const ordered = orderBy(
-        resultFeatures,
-        [
-            (f) => (f.properties.id === 'Bing' ? 1 : 0),
-            (f) => (f.properties.default ? 1 : 0),
-            (f) => (f.properties.best ? 1 : 0),
-            (f) => (f.properties.local ? 1 : 0),
-        ],
-        ['desc', 'desc', 'desc']
+    const bing = resultFeatures.filter((f) =>
+        ['bing'].includes(f.properties.type)
+    )
+    const catPhoto = resultFeatures
+        .filter((f) => ['photo'].includes(f.properties.category))
+        .sort((a, b) => {
+            if (b.propertiesbest !== a.properties.best) {
+                return b.properties.best - a.properties.best
+            } else {
+                return b.properties.local - a.properties.local
+            }
+        })
+
+    const catHistoricphoto = resultFeatures.filter((f) =>
+        ['historicphoto'].includes(f.properties.category)
+    )
+    const catOsmbasedmap = resultFeatures.filter((f) =>
+        ['map', 'osmbasedmap'].includes(f.properties.category)
+    )
+    const catQa = resultFeatures.filter((f) =>
+        ['qa'].includes(f.properties.category)
+    )
+    const catOther = resultFeatures.filter((f) =>
+        ['photo', 'historicphoto', 'map', 'osmbasedmap', 'qa'].includes(
+            f.properties.category
+        )
     )
 
-    // list.sort((a, b) => (a.color > b.color) ? 1 : -1)
-
+    const ordered = [
+        ...bing,
+        ...catPhoto,
+        ...catHistoricphoto,
+        ...catOsmbasedmap,
+        ...catQa,
+        ...catOther,
+    ]
     const outPath = path.join(assetsDir, 'imagery.json')
 
     fs.writeFileSync(outPath, stringify(ordered), 'utf-8')
