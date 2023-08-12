@@ -178,10 +178,12 @@ export class OsmApiService {
         const appVersion = `${this.configService.getAppVersion().appName} ${
             this.configService.getAppVersion().appVersionNumber
         }`
+        const localeId = navigator?.language || '*'
         const content_put = `
         <osm>
             <changeset>
                 <tag k="created_by" v="${appVersion}"/>
+                <tag k="locale" v="${localeId}"/>
                 <tag k="comment" v="${comment}"/>
                 <tag k="source" v="survey"/>
             </changeset>
