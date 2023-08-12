@@ -26,10 +26,12 @@
         <div class="timeGrid">
             <div class="timeBlock">
                 <h3>{{ 'OPENINGHOURS.START_TIME' | translate }}</h3>
+
                 <ion-datetime
                     display-format="HH:mm"
                     picker-format="HH:mm"
                     presentation="time"
+                    minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
                     [(ngModel)]="time.start"
                 ></ion-datetime>
             </div>
@@ -39,6 +41,7 @@
                     display-format="HH:mm"
                     picker-format="HH:mm"
                     presentation="time"
+                    minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
                     [(ngModel)]="time.end"
                 ></ion-datetime>
             </div>
