@@ -25,6 +25,9 @@ let buildGradle = fs.readFileSync(buildGradlePath, 'utf8')
 
 let currentVersionCodeStr = buildGradle.match(/versionCode\s[0-9]+/g)[0]
 
+// replace : versionName "1.0.0" -> versionName "${version}"
+buildGradle.replace(/versionName\s+".*"/, `versionName "${version}"`)
+
 // time in seconds since 1970-01-01 00:00:00 UTC
 const time = Math.floor(new Date().getTime() / 1000)
 buildGradle = buildGradle.replace(currentVersionCodeStr, `versionCode ${time}`)
