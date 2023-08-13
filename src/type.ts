@@ -12,14 +12,13 @@ import { MultiPolygon, Polygon } from 'martinez-polygon-clipping'
 
 /**
  * Osm Go! specific geojson feature collection.
- *
- * All contained features have a specific set of feature properties and any
- * possible geometry.
+
  */
-export type OsmGoFeatureCollection = FeatureCollection<
-    Geometry,
-    FeatureProperties
->
+export interface OsmGoFeatureCollection {
+    type: 'FeatureCollection'
+    features: OsmGoFeature[]
+}
+
 /**
  * Osm Go! specific geojson feature.
  *
@@ -28,7 +27,9 @@ export type OsmGoFeatureCollection = FeatureCollection<
 export type OsmGoFeature<G extends Geometry = Geometry> = Feature<
     G,
     FeatureProperties
->
+> & {
+    id: string | undefined
+}
 
 /**
  * Osm Go! specific geojson feature properties.

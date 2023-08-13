@@ -218,19 +218,21 @@ export class DataService {
      *
      * @returns A deep copy of the feature if found, null otherwise.
      */
-    getFeatureById(id: number, source: FeatureIdSource): OsmGoFeature | null {
+    getFeatureById(
+        id: string,
+        source: FeatureIdSource
+    ): OsmGoFeature | undefined {
         const features =
             source === 'data_changed'
                 ? this.getGeojsonChanged().features
                 : this.getGeojson().features
 
-        for (let i = 0; i < features.length; i++) {
-            if (features[i].properties.id === id) {
-                return cloneDeep(features[i])
-            }
+        const feature = features.find((f) => f.id === id)
+        if (feature) {
+            return cloneDeep(feature)
+        } else {
+            return undefined
         }
-
-        return null
     }
 
     /**

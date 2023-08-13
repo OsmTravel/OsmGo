@@ -604,7 +604,7 @@ export class OsmApiService {
             // jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update'
             feature.properties.originalData = this.dataService.getFeatureById(
-                feature.properties.id,
+                feature.id,
                 'data'
             )
             this.dataService.deleteFeatureFromGeojson(feature)
@@ -642,7 +642,7 @@ export class OsmApiService {
             // jamais été modifié, n'exite donc pas dans this.geojsonChanged
             feature.properties.changeType = 'Delete'
             feature.properties.originalData = this.dataService.getFeatureById(
-                feature.properties.id,
+                feature.id,
                 'data'
             )
             this.dataService.deleteFeatureFromGeojson(feature)

@@ -660,7 +660,8 @@ export class MapService {
                         break
                     }
                 }
-                const coordinates = geojson.geometry.coordinates as LngLatLike
+                const coordinates = (geojson.geometry as GeoJSON.Point)
+                    .coordinates as LngLatLike
                 this.map.setCenter(coordinates)
                 this.markerMove = this.createDomMoveMarker(coordinates, geojson)
                 this.markerMoveMoving = true
@@ -747,8 +748,9 @@ export class MapService {
             origineData = 'data_changed'
         }
 
+        const idFromMap = `${feature.properties.type}/${feature.properties.id}`
         const geojson = this.dataService.getFeatureById(
-            feature['properties'].id,
+            idFromMap,
             origineData
         ) as Feature<Point | MultiPoint | LineString | MultiLineString>
         this.eventShowModal.emit({
