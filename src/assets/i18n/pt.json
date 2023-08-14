@@ -12,12 +12,7 @@
         "NAME": "Nome",
         "ID": "ID",
         "CLOSE": "Fechar",
-        "LOADING": "A carregar…",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "A carregar…"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Tem a certeza?",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "itens na memória",
         "WHAT_ITEM": "Qual?",
         "LOAD_BBOX": "Carregar dados?",
-        "CREATING_MISSING_ICONS": "A criar os ícones que faltam…",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "A criar os ícones que faltam…"
     },
     "MENU": {
         "CONNECTION": "Autenticar no OpenStreetMap",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "Ao iniciar, centrar o mapa na sua localização",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Centralize o mapa na sua localização o mais depressa possível.",
         "LIMIT_FEATURES": "Número máximo de objetos na memória",
-        "LIMIT_FEATURES_HINT": "Após este limite, os dados antigos serão eliminados (as alterações atuais serão mantidas). Um limite demasiado elevado pode diminuir drasticamente o desempenho",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "Após este limite, os dados antigos serão eliminados (as alterações atuais serão mantidas). Um limite demasiado elevado pode diminuir drasticamente o desempenho"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Adicionar um valor personalizado",
@@ -169,16 +144,11 @@
         "ADD_SURVEY_DATE_CONFIRM_HEADER": "O objeto foi verificado?",
         "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Adicionar a data de hoje à etiqueta 'survey:date'.",
         "PRIMARY_TAG_BOOKMARKS": "Favoritos",
-        "PRIMARY_TAG_FULL": "",
         "SELECT_CATEGORY": "Seleciona uma categoria",
         "THIS_NODE_IS_USED_BY_A_WAY": "O nó é utilizado por {x} via(s).",
         "UNDEFINED_VALUE": "Desconhecido",
         "LAST_TAG_USED": "Últimas etiquetas usadas",
-        "BOOKMARKS": "Favoritos",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "Favoritos"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "A etiqueta está em desuso",
