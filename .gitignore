@@ -40,3 +40,5 @@ UserInterfaceState.xcuserstate
 
 platforms/
 deploy.config
+
+src/environments/environment.prod.ts

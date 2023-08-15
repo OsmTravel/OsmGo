@@ -151,6 +151,9 @@ export class ConfigService {
         appName: 'Osm Go!',
         appVersionCode: '12',
         appVersionNumber: environment.version || '0.0.0',
+        platform: environment.platform || undefined,
+        branch: environment.branch || undefined,
+        shortHash: environment.shortHash || undefined,
     }
 
     getUserInfo() {
@@ -342,6 +345,15 @@ export class ConfigService {
 
     getAppVersion() {
         return this.appVersion
+    }
+
+    //Osm Go! 1.6.2-dev PWA
+    getAppFullVersion() {
+        const isDev = this.appVersion.branch === 'develop'
+        const platform = this.appVersion.platform
+        return `${this.appVersion.appName} ${this.appVersion.appVersionNumber}${
+            isDev ? '-dev' : ''
+        } ${platform ? platform : ''}`
     }
 
     setMapMarginBuffer(buffer: number) {

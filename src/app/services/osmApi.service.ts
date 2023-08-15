@@ -175,9 +175,8 @@ export class OsmApiService {
     */
 
     createOSMChangeSet(comment, password): Observable<any> {
-        const appVersion = `${this.configService.getAppVersion().appName} ${
-            this.configService.getAppVersion().appVersionNumber
-        }`
+        const appVersion = this.configService.getAppFullVersion()
+
         const localeId = navigator?.language || '*'
         const content_put = `
         <osm>
