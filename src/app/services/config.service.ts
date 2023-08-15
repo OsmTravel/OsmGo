@@ -138,7 +138,7 @@ export class ConfigService {
         isSelectableLine: true,
         isSelectablePolygon: false,
         passwordSaved: true,
-        lastView: undefined,
+        lastView: { lng: -0.127758, lat: 51.507351, zoom: 18, bearing: 0 }, // London
         centerWhenGpsIsReady: true,
         limitFeatures: 10000,
     }
