@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: 'login', component: LoginPage },
     { path: 'tags', component: ManageTagsComponent },
     { path: 'basemaps/:lng/:lat', component: BasemapsComponent },
+    { path: '**', pathMatch: 'full', redirectTo: '' },
 ]
 
 @NgModule({
