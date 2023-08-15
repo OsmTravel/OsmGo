@@ -138,7 +138,7 @@ export class ConfigService {
         isSelectableLine: true,
         isSelectablePolygon: false,
         passwordSaved: true,
-        lastView: { lng: 0, lat: 0, zoom: 1, bearing: 0 },
+        lastView: undefined,
         centerWhenGpsIsReady: true,
         limitFeatures: 10000,
     }

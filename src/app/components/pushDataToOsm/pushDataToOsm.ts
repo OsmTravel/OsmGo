@@ -12,6 +12,7 @@ import { cloneDeep, clone } from 'lodash'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { InitService } from '@services/init.service'
 import { take } from 'rxjs/operators'
+import { OsmGoFeature } from '@osmgo/type'
 
 @Component({
     selector: 'page-push-data-to-osm',

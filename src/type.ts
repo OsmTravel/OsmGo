@@ -172,9 +172,10 @@ export interface CompassHeading {
 
 export interface EventShowModal {
     type: MapMode
-    geojson: Feature<Point | MultiPoint | LineString | MultiLineString>
+    geojson: OsmGoFeature
     newPosition?: boolean
     origineData: FeatureIdSource
+    openPrimaryTagModalOnStart?: boolean
 }
 
 /**

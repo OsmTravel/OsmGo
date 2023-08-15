@@ -701,6 +701,99 @@ export class OsmApiService {
         )
     }
 
+    getOsmObjectById$(objectId: string): Observable<any> {
+        const headers = new HttpHeaders()
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+
+        const url = this.getUrlApi() + `/api/0.6/${objectId}.json`
+        return this.http
+            .get<any>(url, { headers: headers, responseType: 'json' })
+            .pipe(
+                map((d) => {
+                    const object = d.elements[0]
+                    if (object) {
+                        return object
+                    } else {
+                        // return undefined
+                        throwError(() => new Error('No coordinates found'))
+                    }
+                })
+            )
+    }
+
+    fetchNodeCoordinates(nodeId: string): Observable<any> {
+        return this.getOsmObjectById$(`node/${nodeId}`).pipe(
+            map((node) => ({
+                lon: parseFloat(node.lon),
+                lat: parseFloat(node.lat),
+            }))
+        )
+    }
+
+    /*
+       get the first coordinate of an object
+        if it's a node, return the coordinate of the node
+        if it's a way, return the coordinate of the first node
+        if it's a relation, return the coordinate of the first node or way
+
+     */
+    getFirstCoordFromIdObject$(
+        objectId: string
+    ): Observable<{ lon: number; lat: number }> {
+        const type = objectId.split('/')[0]
+        if (!['node', 'way', 'relation'].includes(type)) {
+            return throwError(() => new Error('Type not supported'))
+        }
+
+        return this.getOsmObjectById$(objectId).pipe(
+            switchMap((object) => {
+                if (object.type === 'node') {
+                    return of({ lon: object.lon, lat: object.lat })
+                } else if (object.type === 'way') {
+                    const nodeId = object.nodes[0]
+                    return this.fetchNodeCoordinates(nodeId)
+                } else if (object.type === 'relation') {
+                    const referencedObject = object.members.find(
+                        (member) =>
+                            member.type === 'node' || member.type === 'way'
+                    )
+                    if (referencedObject) {
+                        return this.getOsmObjectById$(
+                            `${referencedObject.type}/${referencedObject.ref}`
+                        ).pipe(
+                            switchMap((referenced) => {
+                                if (referenced.type === 'way') {
+                                    const nodeId = referenced.nodes[0]
+                                    return this.fetchNodeCoordinates(nodeId)
+                                } else if (referenced.type === 'node') {
+                                    return of({
+                                        lon: referenced.lon,
+                                        lat: referenced.lat,
+                                    })
+                                } else {
+                                    return throwError(
+                                        () => new Error('No coordinates found')
+                                    )
+                                }
+                            })
+                        )
+                    } else {
+                        return throwError(
+                            () => new Error('No coordinates found')
+                        )
+                    }
+                } else {
+                    return throwError(() => new Error('No coordinates found'))
+                    // throw new Error('Type d\'objet non pris en charge');
+                }
+            }),
+            catchError(() =>
+                throwError(() => new Error('No coordinates found'))
+            )
+        )
+    }
+
     getDataFromBbox(bbox: any, limitFeatures: number = 10000) {
         const featureBbox = bboxPolygon(bbox)
         for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {

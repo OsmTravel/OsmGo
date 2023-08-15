@@ -26,8 +26,9 @@ import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 
-import { timer, forkJoin, take } from 'rxjs'
-import { Router, NavigationEnd } from '@angular/router'
+import { timer, forkJoin, take, of, Observable, pipe } from 'rxjs'
+import { catchError, map } from 'rxjs/operators'
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 
 import { SwUpdate } from '@angular/service-worker'
@@ -38,6 +39,8 @@ import { InitService } from '@services/init.service'
 
 import { App as CapacitorApp } from '@capacitor/app'
 import { BBox } from '@turf/turf'
+import { FeatureIdSource } from '@osmgo/type'
+import { LngLat } from 'maplibre-gl'
 
 @Component({
     templateUrl: './main.html',
@@ -49,6 +52,11 @@ export class MainPage implements AfterViewInit {
     menuIsOpen: boolean = false
     newVersion: boolean = false
     loading: boolean = true
+    centerOnStart?: number[]
+    zoomOnStart?: number
+    loadOsmDataOnStart: boolean = false
+    idOsmObjectOnStart?: string
+    addOsmObjectOnStart?: { coords: LngLat; tags: any }
 
     @ViewChild('map', { static: false }) mapElement: ElementRef
 
@@ -73,7 +81,8 @@ export class MainPage implements AfterViewInit {
         public translate: TranslateService,
         public loadingController: LoadingController,
         private swUpdate: SwUpdate,
-        public initService: InitService
+        public initService: InitService,
+        private route: ActivatedRoute
     ) {
         this.router.events.subscribe((e) => {
             if (e instanceof NavigationEnd) {
@@ -107,7 +116,6 @@ export class MainPage implements AfterViewInit {
                     const feature = d.data
                     this.mapService.selectFeature(feature) // bof
                 }
-                // console.log(d)
             })
         })
 
@@ -122,6 +130,8 @@ export class MainPage implements AfterViewInit {
                     data: _data.geojson,
                     newPosition: newPosition,
                     origineData: _data.origineData,
+                    openPrimaryTagModalOnStart:
+                        _data.openPrimaryTagModalOnStart,
                 },
             })
             await modal.present()
@@ -146,6 +156,7 @@ export class MainPage implements AfterViewInit {
                         })
                     }
                 }
+                this.mapService.setCenterInUrl()
             })
         })
 
@@ -155,7 +166,69 @@ export class MainPage implements AfterViewInit {
     }
 
     ngOnInit(): void {
-        // sync user and isAuth
+        const urlId = this.route.snapshot.queryParamMap.get('id') // ex : id=node/5432 or id=way/123456 or relation/123
+        if (
+            urlId &&
+            urlId.split('/').length >= 2 &&
+            ['node', 'way', 'relation'].includes(urlId.split('/')[0])
+        ) {
+            this.idOsmObjectOnStart = urlId
+            this.loadOsmDataOnStart = true
+        }
+
+        const queryZoom = this.route.snapshot.queryParamMap.get('zoom')
+        if (queryZoom && parseFloat(queryZoom) > 10) {
+            let zoom = parseFloat(queryZoom) || 18
+            if (zoom <= 14 || zoom > 22) zoom = 18
+            this.zoomOnStart = zoom
+        }
+
+        const urlCenter = this.route.snapshot.queryParamMap.get('center')
+        if (urlCenter && urlCenter.split(',').length == 2) {
+            const center = urlCenter.split(',')
+            const long = parseFloat(center[0])
+            const lat = parseFloat(center[1])
+
+            if (
+                long &&
+                lat &&
+                long > -180 &&
+                long < 180 &&
+                lat > -90 &&
+                lat < 90
+            ) {
+                this.centerOnStart = [long, lat]
+                this.loadOsmDataOnStart = true
+            }
+        }
+
+        // add={"shop": "bakery", "name": "Boulangerie"}
+        const urlAddFeature = this.route.snapshot.queryParamMap.get('add')
+        if (urlAddFeature && !this.idOsmObjectOnStart) {
+            if (!this.centerOnStart) {
+                return console.error('addFeatureTag need center')
+            }
+            if (!this.zoomOnStart) {
+                this.zoomOnStart = 18
+            }
+            try {
+                const addFeatureTag = JSON.parse(urlAddFeature)
+                if (typeof addFeatureTag !== 'object')
+                    throw new Error('addFeatureTag is not an object')
+
+                const _coords: LngLat = new LngLat(
+                    this.centerOnStart[0],
+                    this.centerOnStart[1]
+                )
+                this.addOsmObjectOnStart = {
+                    coords: _coords,
+                    tags: addFeatureTag,
+                }
+                this.loadOsmDataOnStart = true
+            } catch (error) {
+                console.error(error)
+            }
+        }
 
         this.swUpdate.available.subscribe((event) => {
             this.newVersion = true
@@ -199,18 +272,23 @@ export class MainPage implements AfterViewInit {
     }
 
     loadData(): void {
+        this.loadData$().pipe(take(1)).subscribe()
+    }
+
+    loadData$(): Observable<any> {
         this.mapService.setIsProcessing(true)
         // L'utilisateur charge les données, on supprime donc le tooltip
         this._ngZone.run(() => {
             this.alertService.displayToolTipRefreshData = false
         })
 
+        // return a promise
+
         const bbox: BBox = this.mapService.getBbox()
-        this.osmApi
-            .getDataFromBbox(bbox, this.configService.getLimitFeatures()) // configService
-            .subscribe({
-                next: (newDataJson) => {
-                    // data = geojson a partir du serveur osm
+        return this.osmApi
+            .getDataFromBbox(bbox, this.configService.getLimitFeatures())
+            .pipe(
+                map((newDataJson) => {
                     this.dataService.setGeojsonBbox(newDataJson['geojsonBbox'])
                     this.mapService.eventNewBboxPolygon.emit(
                         newDataJson['geojsonBbox']
@@ -219,16 +297,16 @@ export class MainPage implements AfterViewInit {
                     this.mapService.eventMarkerReDraw.emit(
                         newDataJson['geojson']
                     )
-                },
-                error: (err) => {
-                    console.log(err)
-                    this.presentToast(err.message)
-                },
-
-                complete: () => {
                     this.mapService.setIsProcessing(false)
-                },
-            })
+                }),
+
+                catchError((err) => {
+                    this.mapService.setIsProcessing(false)
+                    console.error(err)
+                    this.presentToast(err.message)
+                    return of(err)
+                })
+            )
     }
 
     async presentToast(message: string): Promise<void> {
@@ -245,17 +323,6 @@ export class MainPage implements AfterViewInit {
             ],
         })
         toast.present()
-
-        // this.toastCtrl.create({
-        //   message: message,
-        //   position: 'top',
-        //   duration: 4000,
-        //   showCloseButton: true,
-        //   closeButtonText: 'X'
-        // })
-        //   .then(toast => {
-        //     toast.present();
-        //   });
     }
 
     ngAfterViewInit(): void {
@@ -271,23 +338,25 @@ export class MainPage implements AfterViewInit {
             observer.observe(this.mapElement.nativeElement)
         }
 
+        //http://localhost:4200/#/main?id=node/11108970847
+
         this.initService
-            .initLoadData$()
+            .initLoadData$(
+                this.centerOnStart,
+                this.zoomOnStart,
+                this.idOsmObjectOnStart
+            )
             .subscribe(
-                ([
+                ({
                     config,
                     userInfo,
-                    changeset,
                     savedFields,
                     presets,
                     tags,
-                    baseMaps,
-                    bookmarksIds,
-                    lastTagsIds,
                     geojson,
                     geojsonChanged,
                     geojsonBbox,
-                ]) => {
+                }) => {
                     this.locationService.enableGeolocation()
                     this.osmApi.initAuth()
 
@@ -296,7 +365,52 @@ export class MainPage implements AfterViewInit {
             )
 
         this.mapService.eventMapIsLoaded.subscribe(() => {
+            if (this.addOsmObjectOnStart) {
+                this.mapService.openModalOsm(
+                    this.addOsmObjectOnStart.coords,
+                    this.addOsmObjectOnStart.tags
+                )
+            }
+
             this.loading = false
+            if (this.loadOsmDataOnStart) {
+                this.loadData$()
+                    .pipe(take(1))
+                    .subscribe({
+                        next: () => {
+                            if (this.idOsmObjectOnStart) {
+                                // find feature from dataChanged if exist, else from data
+                                let origineData: FeatureIdSource =
+                                    'data_changed'
+                                let feature = this.dataService.getFeatureById(
+                                    this.idOsmObjectOnStart,
+                                    'data_changed'
+                                )
+                                if (!feature) {
+                                    feature = this.dataService.getFeatureById(
+                                        this.idOsmObjectOnStart,
+                                        'data'
+                                    )
+                                    origineData = 'data'
+                                }
+
+                                if (!feature) {
+                                    // this.translate.instant(
+                                    const errorMessage =
+                                        'Objetct not found in data'
+                                    this.presentToast(errorMessage)
+                                    return
+                                }
+                                // this.mapService.selectFeature(feature)
+                                this.mapService.eventShowModal.emit({
+                                    type: 'Read',
+                                    geojson: feature,
+                                    origineData: origineData,
+                                })
+                            }
+                        },
+                    })
+            }
             timer(2000)
                 .pipe(take(1))
                 .subscribe(() => {
@@ -331,29 +445,13 @@ export class MainPage implements AfterViewInit {
                                 this.mapService.map &&
                                 this.mapService.map.getZoom() > 16
                             ) {
-                                this.loadData()
+                                this.loadData$().pipe(take(1)).subscribe()
                             }
                         },
                     },
                 ],
             })
             toast.present()
-
-            // const toast = await this.toastCtrl.create({
-            //   position: 'bottom',
-            //   message: this.translate.instant('MAIN.LOAD_BBOX'),
-            //   showCloseButton: true,
-            //   duration: 6000,
-            //   closeButtonText: 'Ok'
-            // });
-            // toast.present();
-            // toast.onDidDismiss().then(ev => {
-            //   if (ev.role === 'cancel') {
-            //     if (this.mapService.map && this.mapService.map.getZoom() > 16) {
-            //       this.loadData();
-            //     }
-            //   }
-            // });
         })
 
         // Initialize bahaviors when pressing backButton on device

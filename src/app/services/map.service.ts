@@ -466,13 +466,15 @@ export class MapService {
         })
     }
 
-    openModalOsm(): void {
+    openModalOsm(lngLat?: LngLat, tags?: any): void {
         this.markerMoving = false
-        this.markerPositionate.remove()
-        const coords = this.markerPositionate.getLngLat()
+        if (this.markerPositionate) this.markerPositionate?.remove()
+        const coords = lngLat ? lngLat : this.markerPositionate.getLngLat()
         let newTag
 
-        if (
+        if (tags) {
+            newTag = { ...tags }
+        } else if (
             this.tagsService.lastTagsUsedIds &&
             this.tagsService.lastTagsUsedIds[0]
         ) {
@@ -498,6 +500,7 @@ export class MapService {
             type: 'Create',
             geojson: pt,
             origineData: null,
+            openPrimaryTagModalOnStart: !tags,
         })
     }
 
@@ -687,6 +690,7 @@ export class MapService {
             center: `${lng},${lat}`,
             zoom: `${zoom}`,
             id: null,
+            add: null,
         }
 
         this.router.navigate([], {
