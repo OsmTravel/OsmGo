@@ -51,6 +51,8 @@ import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { Feature, FeatureCollection, LineString } from 'geojson'
 import { ModalDismissData } from '../components/modal/modal'
+import { ActivatedRoute, Params, Router } from '@angular/router'
+import { DOCUMENT } from '@angular/common'
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -68,7 +70,10 @@ export class MapService {
         private zone: NgZone,
         private alertCtrl: AlertController,
         private http: HttpClient,
-        private translate: TranslateService
+        private translate: TranslateService,
+        private router: Router,
+        private activatedRoute: ActivatedRoute,
+        @Inject(DOCUMENT) private document: Document
     ) {
         this.domMarkerPosition = document.createElement('div')
         this.domMarkerPosition.className = 'positionMarkersSize'
@@ -487,7 +492,7 @@ export class MapService {
         const pt = point([coords.lng, coords.lat], {
             type: 'node',
             tags: newTag,
-        })
+        }) as OsmGoFeature
         this.mode = 'Create'
         this.eventShowModal.emit({
             type: 'Create',
@@ -555,10 +560,8 @@ export class MapService {
     getMapStyle(): Observable<any> {
         return this.http.get('assets/mapStyle/brigthCustom.json').pipe(
             map((maplibreStyle) => {
-                let spritesFullPath = `mapStyle/sprites/sprites`
-
-                const basePath = window.location.href.split('#')[0] //example : http://127.0.0.1:8080/www/#/main => http://127.0.0.1:8080/www/
-                spritesFullPath = `${basePath}assets/${spritesFullPath}`
+                const baseUrl = this.document.location.origin
+                const spritesFullPath = `${baseUrl}/assets/mapStyle/sprites/sprites`
 
                 maplibreStyle['sprite'] = spritesFullPath
                 return maplibreStyle
@@ -623,7 +626,7 @@ export class MapService {
                 })
 
                 this.map.on('moveend', (e) => {
-                    // this.configService.freezeMapRenderer = false;
+                    this.setCenterInUrl()
                 })
 
                 this.map.on('zoom', (e) => {
@@ -673,6 +676,25 @@ export class MapService {
                 )
             }
         )
+    }
+
+    setCenterInUrl(): void {
+        const center = this.map.getCenter()
+        const lng = Math.round(center.lng * 10000000) / 10000000
+        const lat = Math.round(center.lat * 10000000) / 10000000
+        const zoom = Math.round(this.map.getZoom() * 100) / 100
+        const queryParams: Params = {
+            center: `${lng},${lat}`,
+            zoom: `${zoom}`,
+            id: null,
+        }
+
+        this.router.navigate([], {
+            replaceUrl: true,
+            relativeTo: this.activatedRoute,
+            queryParams,
+            queryParamsHandling: 'merge',
+        })
     }
 
     getIconRotate(heading: number, mapBearing: number): number {
@@ -732,6 +754,7 @@ export class MapService {
             this.markerLocation.addTo(this.map)
         }
     }
+
     selectFeature(feature: MapGeoJSONFeature): void {
         const layer = feature['layer'].id
         // Provenance de la donnée d'origine (data OU data_changed)
@@ -749,10 +772,22 @@ export class MapService {
         }
 
         const idFromMap = `${feature.properties.type}/${feature.properties.id}`
-        const geojson = this.dataService.getFeatureById(
-            idFromMap,
-            origineData
-        ) as Feature<Point | MultiPoint | LineString | MultiLineString>
+        const geojson = this.dataService.getFeatureById(idFromMap, origineData)
+
+        if (origineData !== 'data_changed') {
+            const queryParams: Params = {
+                id: `${idFromMap}`,
+                zoom: null,
+                center: null,
+            }
+            this.router.navigate([], {
+                replaceUrl: true,
+                relativeTo: this.activatedRoute,
+                queryParams,
+                queryParamsHandling: 'merge',
+            })
+        }
+
         this.eventShowModal.emit({
             type: 'Read',
             geojson: geojson,
