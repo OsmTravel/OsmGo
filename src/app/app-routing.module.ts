@@ -10,8 +10,7 @@ import { ManageTagsComponent } from '@components/manage-tags/manage-tags.compone
 import { BasemapsComponent } from '@components/basemaps/basemaps.component'
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'main' },
-    { path: 'main', component: MainPage },
+    { path: '', component: MainPage },
     { path: 'about', component: AboutPage },
     { path: 'settings', component: SettingsPage },
     { path: 'pushData', component: PushDataToOsmPage },
@@ -21,7 +20,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { useHash: true })],
+    imports: [RouterModule.forRoot(routes, { useHash: false })],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}
