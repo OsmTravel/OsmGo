@@ -31,16 +31,23 @@ export class BasemapsComponent implements OnInit {
             this.navCtrl.back()
         }
 
-        this.route.params.subscribe((params) => {
-            this.lng = parseFloat(params.lng)
-            this.lat = parseFloat(params.lat)
+        if (this.route.params) {
+            this.route.params.subscribe({
+                next: (params) => {
+                    this.lng = parseFloat(params.lng)
+                    this.lat = parseFloat(params.lat)
 
-            this.basemapsService
-                .getBasemaps$(this.lng, this.lat)
-                .subscribe((basemaps) => {
-                    this.basemaps = basemaps
-                })
-        })
+                    this.basemapsService
+                        .getBasemaps$(this.lng, this.lat)
+                        .subscribe((basemaps) => {
+                            this.basemaps = basemaps
+                        })
+                },
+                error: (err) => {
+                    console.log('Error: ', err)
+                },
+            })
+        }
     }
 
     selectBaseMap(basemap: Record<string, any>) {

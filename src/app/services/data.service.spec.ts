@@ -238,7 +238,7 @@ describe('DataService', () => {
             // test
             const actual = service.getFeatureById('node/2', 'data')
 
-            expect(actual).toBeNull()
+            expect(actual).toBeUndefined()
         })
     })
 

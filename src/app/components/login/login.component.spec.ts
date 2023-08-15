@@ -18,6 +18,7 @@ import { Location, LocationStrategy } from '@angular/common'
 import { ChildrenOutletContexts, UrlSerializer } from '@angular/router'
 
 import { SpyLocation, MockLocationStrategy } from '@angular/common/testing'
+import { ActivatedRoute } from '@angular/router'
 
 const TRANSLATIONS_EN = require('../../../assets/i18n/en.json')
 const TRANSLATIONS_FR = require('../../../assets/i18n/fr.json')
@@ -52,6 +53,12 @@ describe('LoginComponent', () => {
                 ChildrenOutletContexts,
                 { provide: Location, useClass: SpyLocation },
                 { provide: LocationStrategy, useClass: MockLocationStrategy },
+                {
+                    provide: ActivatedRoute,
+                    useValue: {
+                        snapshot: { paramMap: new Map([['center', '45,5']]) },
+                    },
+                },
 
                 {
                     provide: Storage,
