@@ -211,7 +211,16 @@ export const generateSprites = () => {
     iconsUsed.push('maki-circle-custom')
 
     //copy whiteliste
-    const whiteList = ['none', 'Delete', 'Create', 'Update', 'Old', 'Fixme']
+    const whiteList = [
+        'none',
+        'Delete',
+        'Create',
+        'Update',
+        'Old',
+        'Fixme',
+        'location-without-orientation',
+        'location-with-orientation',
+    ]
 
     for (let i = 0; i < whiteList.length; i++) {
         fs.copySync(

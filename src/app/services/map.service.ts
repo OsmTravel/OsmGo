@@ -6,7 +6,7 @@ import { LocationService } from '@services/location.service'
 import { ConfigService } from '@services/config.service'
 import { HttpClient } from '@angular/common/http'
 
-import { debounceTime, throttleTime } from 'rxjs/operators'
+import { debounceTime, filter, throttleTime } from 'rxjs/operators'
 import { uniqBy, cloneDeep } from 'lodash'
 
 import {
@@ -75,15 +75,6 @@ export class MapService {
         private activatedRoute: ActivatedRoute,
         @Inject(DOCUMENT) private document: Document
     ) {
-        this.domMarkerPosition = document.createElement('div')
-        this.domMarkerPosition.className = 'positionMarkersSize'
-        this.arrowDirection = document.createElement('div')
-
-        this.arrowDirection.className =
-            'positionMarkersSize locationMapIcon-wo-orientation'
-        this.domMarkerPosition.appendChild(this.arrowDirection)
-        this.arrowDirection.style.transform = 'rotate(0deg)'
-
         this.locationService.eventLocationIsReady.subscribe((data) => {
             if (this.map && this.configService.config.centerWhenGpsIsReady) {
                 this.map.setZoom(19)
@@ -135,9 +126,6 @@ export class MapService {
     positionIsFollow: boolean = true
     isDisplaySatelliteBaseMap: boolean = false
 
-    domMarkerPosition: HTMLDivElement
-    arrowDirection: HTMLDivElement
-    markerLocation: OsmGoMarker = undefined
     layersAreLoaded: boolean = false
 
     markersLoaded = []
@@ -421,28 +409,30 @@ export class MapService {
     }
     centerOnMyPosition(): void {
         const currentZoom = this.map.getZoom()
-
-        this.map.setCenter(this.locationService.getCoordsPosition())
-        if (currentZoom < 17) {
-            this.map.setZoom(18)
-        }
-
         if (this.configService.config.lockMapHeading) {
             this.headingIsLocked = true
         }
-
+        let bearing = 0
         if (this.configService.config.followPosition) {
             this.positionIsFollow = true
             if (this.configService.config.lockMapHeading) {
-                this.map.rotateTo(
-                    this.locationService.compassHeading.trueHeading
-                )
-                this.arrowDirection.setAttribute(
-                    'style',
-                    'transform: rotate(0deg'
-                )
+                bearing = this.locationService.compassHeading.trueHeading
+
+                this.map.setLayoutProperty('location_user', 'icon-rotate', 0)
             }
         }
+        let newZoom = currentZoom
+        // this.map.setCenter(this.locationService.getCoordsPosition())
+        if (currentZoom < 17) {
+            // this.map.setZoom(18)
+            newZoom = 18
+        }
+        this.map.flyTo({
+            center: this.locationService.getCoordsPosition(),
+            zoom: newZoom,
+            bearing: bearing,
+            speed: 2,
+        })
     }
     changeLocationRadius(newRadius: number, transition: boolean = false): void {
         const pxRadius = this.getPixelDistFromMeter(this.map, newRadius)
@@ -634,10 +624,12 @@ export class MapService {
 
                 this.map.on('zoom', (e) => {
                     if (this.layersAreLoaded && this.locationService.location) {
-                        this.changeLocationRadius(
-                            this.locationService.location.coords.accuracy,
-                            false
-                        )
+                        if (this.locationService.location?.coords?.accuracy) {
+                            this.changeLocationRadius(
+                                this.locationService.location.coords.accuracy,
+                                false
+                            )
+                        }
                     }
                 })
                 this.loadUnknownMarker(window.devicePixelRatio)
@@ -746,17 +738,17 @@ export class MapService {
     }
 
     addDomMarkerPosition(): void {
-        if (!this.markerLocation) {
-            this.markerLocation = new OsmGoMarker({
-                element: this.domMarkerPosition,
-                offset: [0, 0],
-            }).setLngLat(
-                this.locationService.getGeojsonPos().features[0].geometry
-                    .coordinates as LngLatLike
-            )
-            // FIXME: @dotcs not all members are set (id, data)
-            this.markerLocation.addTo(this.map)
-        }
+        // if (!this.markerLocation) {
+        //     this.markerLocation = new OsmGoMarker({
+        //         element: this.domMarkerPosition,
+        //         offset: [0, 0],
+        //     }).setLngLat(
+        //         this.locationService.getGeojsonPos().features[0].geometry
+        //             .coordinates as LngLatLike
+        //     )
+        //     // FIXME: @dotcs not all members are set (id, data)
+        //     this.markerLocation.addTo(this.map)
+        // }
     }
 
     selectFeature(feature: MapGeoJSONFeature): void {
@@ -1024,10 +1016,26 @@ export class MapService {
                 'circle-stroke-width': 1,
                 'circle-stroke-color': '#9bbcf2',
                 'circle-stroke-opacity': 0.5,
+                'circle-pitch-alignment': 'map',
                 // @ts-expect-error
                 // Currently the property 'circle-radius-transition' is missing in the typings.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898445988
                 'circle-radius-transition': { duration: 0 },
+            },
+        })
+
+        this.map.addLayer({
+            id: 'location_user',
+            type: 'symbol',
+            source: 'location_circle',
+            minzoom: minzoom,
+            layout: {
+                'icon-size': 0.5,
+                // 'icon-image': 'location-with-orientation',
+                'icon-image': 'location-without-orientation',
+                'icon-ignore-placement': true,
+                'icon-allow-overlap': true,
+                'icon-pitch-alignment': 'map',
             },
         })
 
@@ -1175,9 +1183,10 @@ export class MapService {
                     this.locationService.compassHeading.trueHeading,
                     this.map.getBearing()
                 )
-                this.arrowDirection.setAttribute(
-                    'style',
-                    'transform: rotate(' + iconRotate + 'deg'
+                this.map.setLayoutProperty(
+                    'location_user',
+                    'icon-rotate',
+                    iconRotate
                 )
             }
         })
@@ -1215,63 +1224,73 @@ export class MapService {
 
         this.locationService.eventNewCompassHeading
             .pipe(
-                map((event: any) => {
-                    return event
-                }),
+                filter(
+                    (heading) =>
+                        !this.locationService.compassHeading.trueHeading ||
+                        Math.abs(
+                            heading.trueHeading -
+                                this.locationService.compassHeading.trueHeading
+                        ) > 1
+                ),
                 throttleTime(100)
             )
             .subscribe((heading) => {
-                if (
-                    this.arrowDirection.className !==
-                    'positionMarkersSize locationMapIcon'
-                ) {
-                    this.arrowDirection.className =
-                        'positionMarkersSize locationMapIcon'
+                if (!this.locationService.compassHeading.trueHeading) {
+                    this.map.setLayoutProperty(
+                        'location_user',
+                        'icon-image',
+                        'location-with-orientation'
+                    )
                 }
 
+                this.locationService.compassHeading = { ...heading }
                 if (
                     this.configService.config.lockMapHeading &&
                     this.headingIsLocked
                 ) {
                     // on suit l'orientation, la map tourne
-
                     this.map.rotateTo(heading.trueHeading)
-                    // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
-                    this.arrowDirection.setAttribute(
-                        'style',
-                        'transform: rotate(0deg'
+                    this.map.setLayoutProperty(
+                        'location_user',
+                        'icon-rotate',
+                        0
                     )
+
+                    // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
                 } else {
                     // la map reste fixe, l'icon tourne
-
                     const iconRotate = this.getIconRotate(
                         heading.trueHeading,
                         this.map.getBearing()
                     )
-                    this.arrowDirection.setAttribute(
-                        'style',
-                        'transform: rotate(' + iconRotate + 'deg'
+
+                    this.map.setLayoutProperty(
+                        'location_user',
+                        'icon-rotate',
+                        iconRotate
                     )
                 }
             })
 
         this.locationService.eventNewLocation.subscribe(
             (geojsonPos: FeatureCollection) => {
-                this.addDomMarkerPosition()
-
                 if (geojsonPos.features && geojsonPos.features[0].properties) {
                     const coordinates = (
                         geojsonPos.features[0].geometry as Point
                     ).coordinates as LngLatLike
-                    this.markerLocation.setLngLat(coordinates)
-                    const mapSource = this.map.getSource(
+                    // this.markerLocation.setLngLat(coordinates)
+
+                    const locationSource = this.map.getSource(
                         'location_circle'
                     ) as GeoJSONSource
-                    mapSource.setData(geojsonPos)
-                    this.changeLocationRadius(
-                        geojsonPos.features[0].properties.accuracy,
-                        true
-                    )
+                    locationSource.setData(geojsonPos)
+
+                    if (geojsonPos.features[0].properties?.accuracy) {
+                        this.changeLocationRadius(
+                            geojsonPos.features[0].properties?.accuracy,
+                            true
+                        )
+                    }
 
                     if (
                         this.configService.config.followPosition &&

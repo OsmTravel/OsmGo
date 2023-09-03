@@ -41,7 +41,6 @@
     "@capacitor/app": "5.0.6",
     "@capacitor/core": "5.2.2",
     "@capacitor/device": "^5.0.6",
-    "@capacitor/geolocation": "^5.0.6",
     "@capacitor/haptics": "5.0.6",
     "@capacitor/keyboard": "5.0.6",
     "@capacitor/splash-screen": "^5.0.6",

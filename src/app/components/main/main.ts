@@ -27,11 +27,11 @@ import { ConfigService } from '@services/config.service'
 import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 
 import { timer, forkJoin, take, of, Observable, pipe } from 'rxjs'
-import { catchError, map } from 'rxjs/operators'
+import { catchError, filter, map } from 'rxjs/operators'
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 
-import { SwUpdate } from '@angular/service-worker'
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 
 import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
 
@@ -230,9 +230,21 @@ export class MainPage implements AfterViewInit {
             }
         }
 
-        this.swUpdate.available.subscribe((event) => {
-            this.newVersion = true
-        })
+        this.swUpdate.versionUpdates
+            .pipe(
+                filter(
+                    (evt): evt is VersionReadyEvent =>
+                        evt.type === 'VERSION_READY'
+                ),
+                map((evt) => ({
+                    type: 'UPDATE_AVAILABLE',
+                    current: evt.currentVersion,
+                    available: evt.latestVersion,
+                }))
+            )
+            .subscribe((event) => {
+                this.newVersion = true
+            })
     }
 
     openMenu(): void {
@@ -397,7 +409,7 @@ export class MainPage implements AfterViewInit {
                                 if (!feature) {
                                     // this.translate.instant(
                                     const errorMessage =
-                                        'Objetct not found in data'
+                                        'Objetct not found in data' // TODO translate
                                     this.presentToast(errorMessage)
                                     return
                                 }

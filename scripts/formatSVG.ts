@@ -19,6 +19,8 @@ const blackList: string[] = [
     'Old.svg',
     'Fixme.svg',
     'maki-circle-custom.svg',
+    'location-without-orientation.svg',
+    'location-with-orientation.svg',
 ]
 
 const listOfSvgsName: string[] = fs
