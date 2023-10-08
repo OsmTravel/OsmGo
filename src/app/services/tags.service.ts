@@ -394,14 +394,21 @@ export class TagsService {
 
     loadJsonSprites$(): Observable<JsonSprites> {
         const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-        return this.http
-            .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
-            .pipe(
-                map((jsonSprites: JsonSprites) => {
-                    this.jsonSprites = jsonSprites
-                    return jsonSprites
-                })
-            )
+        const url =
+            devicePixelRatio == 1
+                ? `assets/mapStyle/sprites/sprites.json`
+                : `assets/mapStyle/sprites/sprites@2x.json`
+        return (
+            this.http
+                .get(url)
+                // .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
+                .pipe(
+                    map((jsonSprites: JsonSprites) => {
+                        this.jsonSprites = jsonSprites
+                        return jsonSprites
+                    })
+                )
+        )
     }
 
     loadTags$(): Observable<TagConfig[]> {

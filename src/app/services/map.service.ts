@@ -7,7 +7,7 @@ import { ConfigService } from '@services/config.service'
 import { HttpClient } from '@angular/common/http'
 
 import { debounceTime, filter, throttleTime } from 'rxjs/operators'
-import { uniqBy, cloneDeep } from 'lodash'
+import { uniqBy, cloneDeep, add } from 'lodash'
 
 import {
     destination,
@@ -60,6 +60,7 @@ export class MapService {
     loadingData: boolean = false
     isProcessing: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
+    spritesCache
     constructor(
         private _ngZone: NgZone,
         public dataService: DataService,
@@ -75,6 +76,20 @@ export class MapService {
         private activatedRoute: ActivatedRoute,
         @Inject(DOCUMENT) private document: Document
     ) {
+        // Preload sprites
+        const pathSprites =
+            window.devicePixelRatio == 1
+                ? `assets/mapStyle/sprites/sprites.png`
+                : `assets/mapStyle/sprites/sprites@2x.png`
+        const spriteImage = new Image()
+        spriteImage.onload = () => {
+            this.spritesCache = spriteImage
+        }
+        spriteImage.onerror = (error) => {
+            console.error(error)
+        }
+        spriteImage.src = pathSprites
+
         this.locationService.eventLocationIsReady.subscribe((data) => {
             if (this.map && this.configService.config.centerWhenGpsIsReady) {
                 this.map.setZoom(19)
@@ -82,22 +97,68 @@ export class MapService {
         })
 
         this.eventMarkerReDraw.subscribe((geojson?: OsmGoFeatureCollection) => {
-            if (geojson) {
-                const source = this.map.getSource('data') as GeoJSONSource
-                source.setData(geojson)
-                this.drawWaysPoly(geojson, 'ways')
+            const missingMarker = []
+            for (const feature of geojson.features) {
+                const marker = feature.properties.marker
+                if (
+                    !this.map.hasImage(marker) &&
+                    !missingMarker.includes(marker)
+                ) {
+                    missingMarker.push(marker)
+                }
             }
+            const t1 = new Date().getTime()
+            this.addMissingIconsToMap(missingMarker)
+                .then(() => {
+                    console.log(
+                        'addMissingIconsToMap TIME',
+                        new Date().getTime() - t1,
+                        'count :',
+                        missingMarker.length
+                    )
+                    if (geojson) {
+                        const source = this.map.getSource(
+                            'data'
+                        ) as GeoJSONSource
+                        source.setData(geojson)
+                        this.drawWaysPoly(geojson, 'ways')
+                    }
+                })
+                .catch((err) => {
+                    console.error(err)
+                })
         })
 
         this.eventMarkerChangedReDraw.subscribe(
             (geojson?: OsmGoFeatureCollection) => {
-                if (geojson) {
-                    const source = this.map.getSource(
-                        'data_changed'
-                    ) as GeoJSONSource
-                    source.setData(geojson)
-                    this.drawWaysPoly(geojson, 'ways_changed')
+                const missingMarker = []
+                for (const feature of geojson.features) {
+                    const marker = feature.properties.marker
+                    if (
+                        !this.map.hasImage(marker) &&
+                        !missingMarker.includes(marker)
+                    ) {
+                        missingMarker.push(marker)
+                    }
                 }
+                const t1 = new Date().getTime()
+                this.addMissingIconsToMap(missingMarker)
+                    .then(() => {
+                        console.log(
+                            'addMissingIconsToMapChange TIME',
+                            new Date().getTime() - t1
+                        )
+                        if (geojson) {
+                            const source = this.map.getSource(
+                                'data_changed'
+                            ) as GeoJSONSource
+                            source.setData(geojson)
+                            this.drawWaysPoly(geojson, 'ways_changed')
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err)
+                    })
             }
         )
 
@@ -632,7 +693,7 @@ export class MapService {
                         }
                     }
                 })
-                this.loadUnknownMarker(window.devicePixelRatio)
+                // this.loadUnknownMarker(window.devicePixelRatio)
             })
         })
 
@@ -1028,7 +1089,6 @@ export class MapService {
             id: 'location_user',
             type: 'symbol',
             source: 'location_circle',
-            minzoom: minzoom,
             layout: {
                 'icon-size': 0.5,
                 // 'icon-image': 'location-with-orientation',
@@ -1200,26 +1260,57 @@ export class MapService {
         this.map.on('styleimagemissing', async (e) => {
             // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
             const iconId = e.id
-            const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-            if (/^circle/.test(iconId)) {
-                this.map.addImage(
-                    iconId,
-                    this.markerMaplibreUnknown['circle'],
-                    { pixelRatio: pixelRatio }
-                )
-            }
-            if (/^penta/.test(iconId)) {
-                this.map.addImage(iconId, this.markerMaplibreUnknown['penta'], {
-                    pixelRatio: pixelRatio,
-                })
-            }
-            if (/^square/.test(iconId)) {
-                this.map.addImage(
-                    iconId,
-                    this.markerMaplibreUnknown['square'],
-                    { pixelRatio: pixelRatio }
-                )
-            }
+            // // TODO => in function
+            // const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
+            // let spriteGenerated = false
+            // let iconParam: { shape: string; color: string; id: string} | undefined
+            // const regex = /^(circle|square|penta)-(#\w{6})-([\w-]+)$/;
+            // const match = iconId.match(regex);
+
+            // if (match) {
+            //     const [, shape, color, id] = match;
+            //     iconParam = { shape, color, id }
+
+            //     const currentImage = await this.generateIconFromSprite(iconParam)
+
+            //     if (!currentImage){
+            //         console.log('no currentImage', iconId)
+            //     }
+            //     if (currentImage && !this.map.hasImage(iconId)){
+            //         spriteGenerated = true
+            //         this.map.addImage(iconId, currentImage.blob, {pixelRatio});
+            //         // this.map.loadImage(currentImage, (error, image) => {
+            //         //     if (error) throw error;
+            //         //     this.map.addImage(iconId, image, {pixelRatio});
+            //         // })
+            //     }
+
+            //   }
+            //   else {
+            //     console.log('no match', iconId)
+            //   }
+
+            // if (!spriteGenerated && !this.map.hasImage(iconId)){
+            //     if (/^circle/.test(iconId)) {
+            //         this.map.addImage(
+            //             iconId,
+            //             this.markerMaplibreUnknown['circle'],
+            //             { pixelRatio: pixelRatio }
+            //         )
+            //     }
+            //     if (/^penta/.test(iconId)) {
+            //         this.map.addImage(iconId, this.markerMaplibreUnknown['penta'], {
+            //             pixelRatio: pixelRatio,
+            //         })
+            //     }
+            //     if (/^square/.test(iconId)) {
+            //         this.map.addImage(
+            //             iconId,
+            //             this.markerMaplibreUnknown['square'],
+            //             { pixelRatio: pixelRatio }
+            //         )
+            //     }
+            // }
         })
 
         this.locationService.eventNewCompassHeading
@@ -1314,5 +1405,159 @@ export class MapService {
         }
 
         this.eventMapIsLoaded.emit()
+    }
+
+    async addMissingIconsToMap(iconsIds) {
+        const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
+        const promises = []
+        for (const iconId of iconsIds) {
+            let iconParam:
+                | { shape: string; color: string; id: string }
+                | undefined
+            const matchMarkerAndIcon = iconId.match(
+                /^(circle|square|penta)-(#\w{6})-([\w-]+)$/
+            )
+            const matchMarkerOnly = iconId.match(
+                /^(circle|square|penta)-(#\w{6})-$/
+            )
+            const matchShapeOnly = iconId.match(/^(circle|square|penta)-$/)
+
+            if (matchMarkerAndIcon) {
+                const [, shape, color, id] = matchMarkerAndIcon
+                iconParam = { shape, color, id }
+            } else if (matchMarkerOnly) {
+                let [, shape, color] = matchMarkerOnly
+                iconParam = { shape, color, id: 'maki-circle' }
+            } else if (matchShapeOnly) {
+                let [, shape] = matchShapeOnly
+                iconParam = { shape, color: '#000000', id: 'maki-circle' }
+            } else {
+                iconParam = {
+                    shape: 'circle',
+                    color: '#000000',
+                    id: 'maki-circle',
+                }
+                console.log('no match', iconId)
+            }
+
+            if (
+                !iconParam ||
+                !iconParam.shape ||
+                !iconParam.color ||
+                !iconParam.id
+            ) {
+                continue
+            }
+            promises.push(this.generateIconFromSprite(iconParam))
+        }
+
+        Promise.all(promises).then((images) => {
+            for (const image of images) {
+                if (image.blob && !this.map.hasImage(image.id)) {
+                    this.map.addImage(image.id, image.blob, { pixelRatio })
+                }
+            }
+        })
+
+        return true
+    }
+
+    getCanvasFromSpriteId(spriteId): Promise<HTMLCanvasElement> {
+        return new Promise((resolve, reject) => {
+            const t1 = new Date().getTime()
+            const spriteParams = this.tagsService.jsonSprites[spriteId]
+
+            if (!spriteParams) {
+                reject(spriteId + ' no spriteParams')
+            }
+            const pxRatio = spriteParams.pixelRatio || 1
+            const pathSprites =
+                pxRatio == 1
+                    ? `assets/mapStyle/sprites/sprites.png`
+                    : `assets/mapStyle/sprites/sprites@2x.png`
+
+            if (this.spritesCache) {
+                const spriteImage = this.spritesCache
+                const canvas = this.createCanvasFromSprite(
+                    spriteImage,
+                    spriteParams
+                )
+                resolve(canvas)
+            } else {
+                const spriteImage = new Image()
+                spriteImage.onload = () => {
+                    this.spritesCache = spriteImage
+                    const canvas = this.createCanvasFromSprite(
+                        spriteImage,
+                        spriteParams
+                    )
+                    resolve(canvas)
+                }
+                spriteImage.onerror = (error) => {
+                    reject(error)
+                }
+                spriteImage.src = pathSprites
+            }
+        })
+    }
+
+    private createCanvasFromSprite(
+        spriteImage: HTMLImageElement,
+        spriteParams: any
+    ): HTMLCanvasElement {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+        const { x, y, width, height, pixelRatio } = spriteParams
+        canvas.width = width * 1
+        canvas.height = height * 1
+        ctx.drawImage(
+            spriteImage,
+            x,
+            y,
+            width,
+            height,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        )
+        return canvas
+    }
+
+    combineCanvasMarkerAndIcon(
+        canvasMarker: HTMLCanvasElement,
+        canvasIcon: HTMLCanvasElement
+    ): HTMLCanvasElement {
+        const canvasCombined = document.createElement('canvas')
+        canvasCombined.width = canvasMarker.width
+        canvasCombined.height = canvasMarker.height
+
+        const ctx = canvasCombined.getContext('2d')
+        ctx.drawImage(canvasMarker, 0, 0)
+        ctx.drawImage(canvasIcon, 0, 0)
+        return canvasCombined
+    }
+
+    async generateIconFromSprite(
+        markerParam: { shape: string; color: string; id: string } | undefined
+    ): Promise<{ blob: ImageBitmap; id: string }> {
+        const id = `${markerParam.shape}-${markerParam.color}-${markerParam.id}`
+        const markerId = `${markerParam.shape}-${markerParam.color}`
+
+        const canvasIcon = await this.getCanvasFromSpriteId(markerParam.id)
+        const canvasMarker = await this.getCanvasFromSpriteId(markerId)
+
+        const canvasCombined = this.combineCanvasMarkerAndIcon(
+            canvasMarker,
+            canvasIcon
+        )
+
+        return new Promise((resolve, reject) => {
+            canvasCombined.toBlob((blob) => {
+                createImageBitmap(blob).then((imageBitmap) => {
+                    resolve({ id: id, blob: imageBitmap })
+                })
+            })
+        })
     }
 }

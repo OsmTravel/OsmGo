@@ -7,7 +7,7 @@ android {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1693749185
+        versionCode 1696748851
         versionName "1.6.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
