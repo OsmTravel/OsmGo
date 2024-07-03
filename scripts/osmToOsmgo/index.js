@@ -162,8 +162,7 @@ const getPrimaryKeyOfObject = (feature, primaryKeys) => {
 
 export function getConfigTag(feature, presets) {
     const featureID = feature.properties.configId
-
-    const featurePrimaryTag = `${feature.properties.primaryTag.key}/${feature.properties.primaryTag.value}`
+    const featurePrimaryTag = `${feature.properties.primaryTag.k}/${feature.properties.primaryTag.v}`
     const featureTags = feature.properties.tags
     let mostMaches = 0
 
@@ -337,7 +336,9 @@ export function setIconStyle(feature, tagsConfig) {
         markerShape = 'star'
     }
 
-    feature.properties.icon = configMarker.icon ? configMarker.icon : ''
+    feature.properties.icon = configMarker.icon
+        ? configMarker.icon
+        : 'maki-circle'
     feature.properties.marker = `${markerShape}-${configMarker.markerColor}-${feature.properties.icon}`
     feature.properties.hexColor = configMarker.markerColor
     feature.properties.configId = configMarker.id

@@ -693,16 +693,55 @@ export class MapService {
                         }
                     }
                 })
-                // this.loadUnknownMarker(window.devicePixelRatio)
+
+                const initStorageGeojson = this.dataService.geojson
+                const initStorageGeojsonChanged =
+                    this.dataService.geojsonChanged
+                const missingMarker = []
+                for (const feature of initStorageGeojson.features) {
+                    const marker = feature.properties.marker
+                    if (
+                        !this.map.hasImage(marker) &&
+                        !missingMarker.includes(marker)
+                    ) {
+                        missingMarker.push(marker)
+                    }
+                }
+                for (const feature of initStorageGeojsonChanged.features) {
+                    const marker = feature.properties.marker
+                    if (
+                        !this.map.hasImage(marker) &&
+                        !missingMarker.includes(marker)
+                    ) {
+                        missingMarker.push(marker)
+                    }
+                }
+                const t1 = new Date().getTime()
+                this.addMissingIconsToMap(missingMarker)
+                    .then((d) => {
+                        console.log(
+                            'addMissingIconsToMap INIT TIME',
+                            new Date().getTime() - t1,
+                            'count :',
+                            missingMarker.length
+                        )
+                    })
+                    .catch((err) => {
+                        console.error(err)
+                    })
+                    .finally(() => {
+                        this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
+                            const mapSource = this.map.getSource(
+                                'bbox'
+                            ) as GeoJSONSource
+                            mapSource.setData(geojsonPolygon)
+                        })
+                    })
             })
         })
 
         /* SUBSCRIPTIONS */
         // un nouveau polygon!
-        this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
-            const mapSource = this.map.getSource('bbox') as GeoJSONSource
-            mapSource.setData(geojsonPolygon)
-        })
 
         // un marker est à déplacer!
         this.subscriptionMoveElement = this.eventMoveElement.subscribe(
@@ -746,11 +785,13 @@ export class MapService {
             add: null,
         }
 
-        this.router.navigate([], {
-            replaceUrl: true,
-            relativeTo: this.activatedRoute,
-            queryParams,
-            queryParamsHandling: 'merge',
+        this._ngZone.run(() => {
+            this.router.navigate([], {
+                replaceUrl: true,
+                relativeTo: this.activatedRoute,
+                queryParams,
+                queryParamsHandling: 'merge',
+            })
         })
     }
 
@@ -1257,6 +1298,7 @@ export class MapService {
             })
         })
 
+        // TODO
         this.map.on('styleimagemissing', async (e) => {
             // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
             const iconId = e.id
