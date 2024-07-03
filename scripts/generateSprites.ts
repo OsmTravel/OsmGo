@@ -181,7 +181,7 @@ export const generateSprites = () => {
     }
 
     if (!iconsUsed.includes('wiki-question')) {
-        iconsUsed.push('wiki-wiki-question')
+        iconsUsed.push('wiki-question')
     }
 
     iconsUsed.forEach((iconName) => {
