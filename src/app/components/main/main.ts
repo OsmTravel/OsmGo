@@ -314,10 +314,11 @@ export class MainPage implements AfterViewInit {
                     this.mapService.setIsProcessing(false)
                 }),
 
+                // catch error and display a toast
                 catchError((err) => {
                     this.mapService.setIsProcessing(false)
                     console.error(err)
-                    this.presentToast(err.message)
+                    this.presentToast(err)
                     return of(err)
                 })
             )
