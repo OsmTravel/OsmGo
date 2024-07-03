@@ -177,6 +177,7 @@ export class MainPage implements AfterViewInit {
         }
 
         const queryZoom = this.route.snapshot.queryParamMap.get('zoom')
+        const queryLoadData = this.route.snapshot.queryParamMap.get('loadData')
         if (queryZoom && parseFloat(queryZoom) > 10) {
             let zoom = parseFloat(queryZoom) || 18
             if (zoom <= 14 || zoom > 22) zoom = 18
@@ -198,7 +199,8 @@ export class MainPage implements AfterViewInit {
                 lat < 90
             ) {
                 this.centerOnStart = [long, lat]
-                this.loadOsmDataOnStart = true
+                this.loadOsmDataOnStart =
+                    queryLoadData === 'true' ? true : false
             }
         }
 
