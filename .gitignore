@@ -44,3 +44,5 @@ deploy.config
 src/environments/environment.prod.ts
 
 android/app/release/
+
+android/app/capacitor.build.gradle

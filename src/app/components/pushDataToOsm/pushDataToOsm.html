@@ -184,7 +184,7 @@
     <ion-button
         class="footerButton"
         [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
-        (click)="pushDataToOsm(commentChangeset, this.basicPassword)"
+        (click)="pushDataToOsm(commentChangeset)"
         >{{ 'SEND_DATA.SEND' | translate}}</ion-button
     >
 </ion-footer>

@@ -50,8 +50,6 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             // We need to instantiate the map
             this.navCtrl.back()
         }
-
-        this.basicPassword = this.configService.user_info.password
     }
 
     ngOnDestroy(): void {}
@@ -179,67 +177,19 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         }
     }
 
-    async presentAlertPassword(user_info) {
-        const alert = await this.alertCtrl.create({
-            header: user_info.display_name,
-            inputs: [
-                {
-                    name: 'password',
-                    type: 'password',
-                    placeholder: this.translate.instant(
-                        'SEND_DATA.PASSWORD_OSM'
-                    ),
-                },
-            ],
-            buttons: [
-                {
-                    text: 'Cancel',
-                    role: 'cancel',
-                    cssClass: 'secondary',
-                    handler: () => {},
-                },
-                {
-                    text: 'Ok',
-                    handler: (e) => {
-                        this.basicPassword = e.password
-                        this.pushDataToOsm(
-                            this.commentChangeset,
-                            this.basicPassword
-                        )
-                    },
-                },
-            ],
-        })
-
-        await alert.present()
-    }
-
-    userIsConnected(password) {
+    userIsConnected() {
         return new Promise((resolve, reject) => {
             this.osmApi
-                .getUserDetail$(
-                    this.configService.user_info.user,
-                    password,
-                    this.configService.user_info.authType === 'basic'
-                        ? true
-                        : false,
-                    null,
-                    true
-                )
+                .getUserDetail$(true)
                 .pipe(take(1))
                 .subscribe(
                     (u) => {
                         resolve(true)
                     },
                     (err) => {
+                        console.error(err)
                         reject(err.error)
-                        if (
-                            this.configService.user_info.authType === 'basic' &&
-                            !this.configService.user_info.password
-                        ) {
-                            this.basicPassword = null
-                            this.isPushing = false
-                        }
+                        this.isPushing = false
                     }
                 )
         })
@@ -277,8 +227,9 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         return feature
     }
 
-    async pushDataToOsm(commentChangeset, password) {
+    async pushDataToOsm(commentChangeset) {
         if (this.isPushing) {
+            console.log('Already pushing')
             return
         }
 
@@ -286,28 +237,13 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
 
         this.configService.setChangeSetComment(commentChangeset)
 
-        if (
-            this.configService.user_info.authType == 'basic' &&
-            !this.basicPassword
-        ) {
-            this.mapService.isProcessing.next(false)
-            await this.presentAlertPassword(this.configService.user_info)
-            return
-        }
         this.mapService.isProcessing.next(true)
         this.isPushing = true
         this.uploadedOk = false
         try {
-            await this.userIsConnected(password)
+            await this.userIsConnected()
         } catch (error) {
             this.connectionError = error
-            if (
-                this.configService.user_info.authType === 'basic' &&
-                !this.configService.user_info.password
-            ) {
-                this.basicPassword = null
-                this.isPushing = false
-            }
             this.isPushing = false
             this.mapService.isProcessing.next(false)
             return
@@ -315,7 +251,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         this.connectionError = undefined
 
         this.osmApi
-            .getValidChangset(commentChangeset, password)
+            .getValidChangset(commentChangeset)
             .pipe(take(1))
             .subscribe((CS) => {
                 const features = this.dataService.getGeojsonChanged().features
@@ -326,7 +262,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                 )
 
                 this.osmApi
-                    .apiOsmSendOsmDiffFile(diffFile, this.changesetId, password)
+                    .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
                     .pipe(take(1))
                     .subscribe({
                         next: (diffFileResult) => {

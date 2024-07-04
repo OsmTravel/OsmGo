@@ -8,6 +8,12 @@ const config: CapacitorConfig = {
     appName: 'Osm Go!',
     // The directory of your compiled web assets.
     webDir: 'www',
+    plugins: {
+        App: {
+            url: 'osmgo',
+            androidScheme: 'osmgo',
+        },
+    },
 }
 
 export default config

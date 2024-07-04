@@ -44,7 +44,7 @@ export class BasemapsComponent implements OnInit {
                         })
                 },
                 error: (err) => {
-                    console.log('Error: ', err)
+                    console.error('Error: ', err)
                 },
             })
         }

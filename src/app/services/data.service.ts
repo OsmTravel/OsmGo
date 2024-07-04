@@ -135,7 +135,6 @@ export class DataService {
         let keys: string[] = await this.getKeysCacheIcon()
         let n: number = 0
         for (let key of keys) {
-            console.log(key)
             await this.localStorage.remove(key)
             n++
         }
@@ -146,7 +145,7 @@ export class DataService {
         try {
             await this.localStorage.clear()
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
 
         try {

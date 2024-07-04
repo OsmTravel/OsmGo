@@ -14,9 +14,6 @@ export interface User {
     uid: string
     display_name: string
     connected: boolean
-    user: string
-    password: string
-    authType: 'basic' | 'oauth'
 }
 
 export interface Changeset {
@@ -67,9 +64,6 @@ export class ConfigService {
         uid: '',
         display_name: '',
         connected: false,
-        user: null,
-        password: null,
-        authType: null,
     }
     changeset: Changeset = {
         id: '',
@@ -170,9 +164,6 @@ export class ConfigService {
             uid: '',
             display_name: '',
             connected: false,
-            user: null,
-            password: null,
-            authType: null,
         }
         this.localStorage.set('user_info', this.user_info)
     }
@@ -242,16 +233,13 @@ export class ConfigService {
     loadUserInfo$() {
         return from(this.localStorage.get('user_info')).pipe(
             map((userInfo) => {
-                if (userInfo && userInfo.connected && userInfo.authType) {
+                if (userInfo && userInfo.connected) {
                     this.user_info = userInfo
                 } else {
                     this.user_info = {
                         uid: '',
                         display_name: '',
                         connected: false,
-                        user: null,
-                        password: null,
-                        authType: null,
                     }
                 }
                 return this.user_info
@@ -281,7 +269,6 @@ export class ConfigService {
     loadConfig2$(_i18nConfig) {
         return from(this.localStorage.get('config')).pipe(
             map(async (d) => {
-                console.log(d)
                 if (d) {
                     // tslint:disable-next-line:forin
                     for (const key in d) {
@@ -305,9 +292,6 @@ export class ConfigService {
                         uid: '',
                         display_name: '',
                         connected: false,
-                        user: null,
-                        password: null,
-                        authType: null,
                     }
                 }
 

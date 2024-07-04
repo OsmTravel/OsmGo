@@ -41,6 +41,7 @@ import { App as CapacitorApp } from '@capacitor/app'
 import { BBox } from '@turf/turf'
 import { FeatureIdSource } from '@osmgo/type'
 import { LngLat } from 'maplibre-gl'
+import { OsmAuthService } from '@app/services/osm-auth.service'
 
 @Component({
     templateUrl: './main.html',
@@ -82,6 +83,7 @@ export class MainPage implements AfterViewInit {
         public loadingController: LoadingController,
         private swUpdate: SwUpdate,
         public initService: InitService,
+        private osmAuthService: OsmAuthService,
         private route: ActivatedRoute
     ) {
         this.router.events.subscribe((e) => {
@@ -166,6 +168,21 @@ export class MainPage implements AfterViewInit {
     }
 
     ngOnInit(): void {
+        this.route.queryParams.subscribe((params) => {
+            if (params['code']) {
+                this.handleAuthCallback(params['code'])
+                //remove 'code' from url to prevent handling it again
+                this.router.navigate([], {
+                    queryParams: {
+                        code: null,
+                    },
+                    queryParamsHandling: 'merge',
+                })
+            }
+        })
+
+        this.osmAuthService.loadToken()
+
         const urlId = this.route.snapshot.queryParamMap.get('id') // ex : id=node/5432 or id=way/123456 or relation/123
         if (
             urlId &&
@@ -247,6 +264,37 @@ export class MainPage implements AfterViewInit {
             .subscribe((event) => {
                 this.newVersion = true
             })
+    }
+
+    private handleAuthCallback(code: string) {
+        console.log('handleAuthCallback', code)
+
+        this.osmAuthService.exchangeCodeForToken(code).subscribe(
+            (response) => {
+                console.log('Authentification réussie', response)
+                const token = response.access_token
+
+                this.osmApi.getUserDetail$().subscribe({
+                    next: (user_info: any) => {
+                        console.log(user_info)
+                        this.configService.setUserInfo(user_info)
+                        this.osmAuthService.setToken(token)
+                    },
+                    error: (error) => {
+                        console.error(
+                            "Erreur lors de la récupération des détails de l'utilisateur:",
+                            error
+                        )
+                    },
+                })
+
+                // Gérer l'authentification réussie ici
+            },
+            (error) => {
+                console.error("Erreur d'authentification", error)
+                // Gérer l'erreur d'authentification ici
+            }
+        )
     }
 
     openMenu(): void {
@@ -373,7 +421,6 @@ export class MainPage implements AfterViewInit {
                     geojsonBbox,
                 }) => {
                     this.locationService.enableGeolocation()
-                    this.osmApi.initAuth()
 
                     this.mapService.initMap(config)
                 }

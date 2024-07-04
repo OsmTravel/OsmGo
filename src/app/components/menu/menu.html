@@ -32,7 +32,7 @@
 
                 <ion-item
                     *ngIf="!this.configService.user_info.connected"
-                    (click)="pushPage('/login')"
+                    (click)="login()"
                 >
                     <ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' |
                     translate }}

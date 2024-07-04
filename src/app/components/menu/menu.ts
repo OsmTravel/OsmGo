@@ -11,6 +11,7 @@ import { AlertService } from '@services/alert.service'
 import { TranslateService } from '@ngx-translate/core'
 import { menuAnimations } from './menu.animations'
 import { concat } from 'rxjs'
+import { OsmAuthService } from '@app/services/osm-auth.service'
 
 @Component({
     selector: 'menu-component',
@@ -35,7 +36,8 @@ export class MenuPage {
         private alertCtrl: AlertController,
         public platform: Platform,
         private translate: TranslateService,
-        private navCtrl: NavController
+        private navCtrl: NavController,
+        private osmAuthService: OsmAuthService
     ) {}
 
     deleteDatapresentConfirm() {
@@ -75,7 +77,6 @@ export class MenuPage {
         const centerOfMap = this.mapService.map.getCenter()
         const lng = centerOfMap.lng
         const lat = centerOfMap.lat
-        console.log(centerOfMap)
         this.pushPage(`/basemaps/${lng}/${lat}`)
     }
 
@@ -84,7 +85,11 @@ export class MenuPage {
     }
 
     logout() {
-        this.osmApi.logout()
+        this.osmAuthService.logout()
+    }
+
+    login() {
+        this.osmAuthService.login()
     }
 
     swipe(e) {

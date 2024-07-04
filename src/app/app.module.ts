@@ -14,7 +14,6 @@ import { AppRoutingModule } from '@app/app-routing.module'
 import { AboutPage } from '@components/about/about'
 import { MainPage } from '@components/main/main'
 import { MenuPage } from '@components/menu/menu'
-import { LoginPage } from '@components/login/login.component'
 
 import { ModalsContentPage } from '@components/modal/modal'
 import { ModalPrimaryTag } from '@components/modal/modal.primaryTag/modal.primaryTag'
@@ -83,7 +82,6 @@ import { FiltersTagsByIdsPipe } from '@pipes/filters-tags-by-ids.pipe'
 import { SelectComponent } from '@components/modal/components/select/select.component'
 import { SortArrayPipe } from '@pipes/sort-array.pipe'
 import { LimitDisplayTagsPipe } from '@pipes/limit-display-tags.pipe'
-import { from } from 'rxjs'
 import { MinutesToHoursMinutesPipe } from '@pipes/minutes-to-hours-minutes.pipe'
 import { ModalAddOpeningHoursIntervalComponent } from '@components/modal/components/opening-hours/modal-add-opening-hours-interval/modal-add-opening-hours-interval.component'
 import { BasemapsComponent } from '@components/basemaps/basemaps.component'
@@ -98,7 +96,6 @@ export function createTranslateLoader(http: HttpClient) {
         MainPage,
         AboutPage,
         MenuPage,
-        LoginPage,
         HiddenTagsComponent,
         ActiveTagsComponent,
         BookmarkedTagsComponent,

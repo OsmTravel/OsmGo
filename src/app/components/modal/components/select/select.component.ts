@@ -26,7 +26,6 @@ export class SelectComponent implements OnInit {
     ngOnInit() {}
 
     selectChange(e) {
-        console.log('selectChange')
         const newValue = e.detail.value
         this.tag['value'] = newValue
 
