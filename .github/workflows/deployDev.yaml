@@ -14,6 +14,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
@@ -24,14 +25,13 @@ jobs:
       - name: Create build
         run: npm run build
 
-      - name: rsync deployments
-        if: success()
-        uses: burnett01/rsync-deployments@6.0.0
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@master
+        env:
+          AWS_S3_ENDPOINT: ${{ secrets.STORJ_ENDPOINT }}
+          AWS_S3_BUCKET: osmgo-dev
+          AWS_ACCESS_KEY_ID: ${{ secrets.STORJ_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.STORJ_SECRET_KEY }}
+          SOURCE_DIR: './www'
         with:
-          switches: -avzr --delete
-          path: www/
-          remote_path: ${{ secrets.DEV_OSMGO_DEPLOY_PATH }}
-          remote_host: osmgo.com
-          remote_port: 22
-          remote_user: ${{ secrets.OSMGO_SRV_USER }}
-          remote_key: ${{ secrets.OSMGO_SRV_KEY }}
+          args: --acl public-read --follow-symlinks --delete
