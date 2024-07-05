@@ -1,3 +1,42 @@
+# 1.7.0
+
+### Added
+
+-   Oauth2 ! ([8362584b4e43e42af9e4d5c2ace83129b97de847](#))
+-   Add full version in changeset (Osm Go! 1.7.0-dev Android) ([1c020a59](#))
+-   Dynamic marker generation on the client side ([ce8235dd](#))
+-   Possibility of setting parameters in the startup URL ([43e14d06](#))
+
+### Changed
+
+-   Meta card: Display date amTimeAgo or in local format ([525d45ff](#))
+-   5-minute interval in time specification ([33b1ca9e](#))
+-   Order basemap, photo first ([746d191f](#))
+
+### Fixed
+
+-   Fix icons ([bce73d34](#), [f49b1143](#))
+-   Fix OsmToOsmGo script ([697b0609](#))
+-   Fix: Display error from osm request ([0339570b](#))
+-   Fix & optimization tags (osmToOsmGo) & icons ([2bd17fee](#))
+-   Fix: Default lastView to London ([fd49f4cc](#))
+-   Fix: Remove empty translation ([4f0c486b](#))
+-   Fix: getFeatureById takes feature.id (string, ex: node/123) as ref ([072ac5f7](#))
+-   Fix: App isn't installed, but geolocation doesn't work ([3abbc19b](#))
+-   Fix script importFromID ([11937e1a](#))
+
+### UI/UX
+
+-   UI: Menu ([7f40ed65](#))
+-   Put BACK arrow in upper left in menu & change arrow back ([20b32107](#))
+-   Adding a button to remove all hidden tags ([f0d18a4b](#))
+-   It is not possible to delete an object that is not a node from the "survey card" ([3140efd8](#))
+
+### Miscellaneous
+
+-   Redirect unknown URL to / ([19d4924d](#))
+-   useHash false & root page = '' ([d48c9136](#))
+
 # 1.6.0
 
 ## ✨ Features
