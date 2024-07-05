@@ -7,6 +7,22 @@ import parse from 'parse-svg-path'
 import scale from 'scale-svg-path'
 import serialize from 'serialize-svg-path'
 import { iconsSvgDir } from './_paths'
+import { optimize } from 'svgo'
+
+function mergeSVGPaths(svgString: string): string {
+    const result = optimize(svgString, {
+        plugins: [
+            {
+                name: 'mergePaths',
+                params: {
+                    force: true,
+                },
+            },
+        ],
+    })
+
+    return result.data
+}
 
 console.info('Format SVGs')
 
@@ -19,6 +35,8 @@ const blackList: string[] = [
     'Old.svg',
     'Fixme.svg',
     'maki-circle-custom.svg',
+    'location-without-orientation.svg',
+    'location-with-orientation.svg',
 ]
 
 const listOfSvgsName: string[] = fs
@@ -82,5 +100,10 @@ for (let i = 0; i < listOfSvgsName.length; i++) {
     ${newPaths.join(' ')}
     </svg>`
 
-    fs.writeFileSync(path.join(iconsSvgDir, listOfSvgsName[i]), newSvg, 'utf8')
+    const optimisedSVG = mergeSVGPaths(newSvg)
+    fs.writeFileSync(
+        path.join(iconsSvgDir, listOfSvgsName[i]),
+        optimisedSVG,
+        'utf8'
+    )
 }

@@ -6,8 +6,8 @@ import { LocationService } from '@services/location.service'
 import { ConfigService } from '@services/config.service'
 import { HttpClient } from '@angular/common/http'
 
-import { debounceTime, throttleTime } from 'rxjs/operators'
-import { uniqBy, cloneDeep } from 'lodash'
+import { debounceTime, filter, throttleTime } from 'rxjs/operators'
+import { uniqBy, cloneDeep, add } from 'lodash'
 
 import {
     destination,
@@ -51,6 +51,8 @@ import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { Feature, FeatureCollection, LineString } from 'geojson'
 import { ModalDismissData } from '../components/modal/modal'
+import { ActivatedRoute, Params, Router } from '@angular/router'
+import { DOCUMENT } from '@angular/common'
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -58,6 +60,7 @@ export class MapService {
     loadingData: boolean = false
     isProcessing: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
 
+    spritesCache
     constructor(
         private _ngZone: NgZone,
         public dataService: DataService,
@@ -68,16 +71,24 @@ export class MapService {
         private zone: NgZone,
         private alertCtrl: AlertController,
         private http: HttpClient,
-        private translate: TranslateService
+        private translate: TranslateService,
+        private router: Router,
+        private activatedRoute: ActivatedRoute,
+        @Inject(DOCUMENT) private document: Document
     ) {
-        this.domMarkerPosition = document.createElement('div')
-        this.domMarkerPosition.className = 'positionMarkersSize'
-        this.arrowDirection = document.createElement('div')
-
-        this.arrowDirection.className =
-            'positionMarkersSize locationMapIcon-wo-orientation'
-        this.domMarkerPosition.appendChild(this.arrowDirection)
-        this.arrowDirection.style.transform = 'rotate(0deg)'
+        // Preload sprites
+        const pathSprites =
+            window.devicePixelRatio == 1
+                ? `assets/mapStyle/sprites/sprites.png`
+                : `assets/mapStyle/sprites/sprites@2x.png`
+        const spriteImage = new Image()
+        spriteImage.onload = () => {
+            this.spritesCache = spriteImage
+        }
+        spriteImage.onerror = (error) => {
+            console.error(error)
+        }
+        spriteImage.src = pathSprites
 
         this.locationService.eventLocationIsReady.subscribe((data) => {
             if (this.map && this.configService.config.centerWhenGpsIsReady) {
@@ -86,22 +97,68 @@ export class MapService {
         })
 
         this.eventMarkerReDraw.subscribe((geojson?: OsmGoFeatureCollection) => {
-            if (geojson) {
-                const source = this.map.getSource('data') as GeoJSONSource
-                source.setData(geojson)
-                this.drawWaysPoly(geojson, 'ways')
+            const missingMarker = []
+            for (const feature of geojson.features) {
+                const marker = feature.properties.marker
+                if (
+                    !this.map.hasImage(marker) &&
+                    !missingMarker.includes(marker)
+                ) {
+                    missingMarker.push(marker)
+                }
             }
+            const t1 = new Date().getTime()
+            this.addMissingIconsToMap(missingMarker)
+                .then(() => {
+                    console.log(
+                        'addMissingIconsToMap TIME',
+                        new Date().getTime() - t1,
+                        'count :',
+                        missingMarker.length
+                    )
+                    if (geojson) {
+                        const source = this.map.getSource(
+                            'data'
+                        ) as GeoJSONSource
+                        source.setData(geojson)
+                        this.drawWaysPoly(geojson, 'ways')
+                    }
+                })
+                .catch((err) => {
+                    console.error(err)
+                })
         })
 
         this.eventMarkerChangedReDraw.subscribe(
             (geojson?: OsmGoFeatureCollection) => {
-                if (geojson) {
-                    const source = this.map.getSource(
-                        'data_changed'
-                    ) as GeoJSONSource
-                    source.setData(geojson)
-                    this.drawWaysPoly(geojson, 'ways_changed')
+                const missingMarker = []
+                for (const feature of geojson.features) {
+                    const marker = feature.properties.marker
+                    if (
+                        !this.map.hasImage(marker) &&
+                        !missingMarker.includes(marker)
+                    ) {
+                        missingMarker.push(marker)
+                    }
                 }
+                const t1 = new Date().getTime()
+                this.addMissingIconsToMap(missingMarker)
+                    .then(() => {
+                        console.log(
+                            'addMissingIconsToMapChange TIME',
+                            new Date().getTime() - t1
+                        )
+                        if (geojson) {
+                            const source = this.map.getSource(
+                                'data_changed'
+                            ) as GeoJSONSource
+                            source.setData(geojson)
+                            this.drawWaysPoly(geojson, 'ways_changed')
+                        }
+                    })
+                    .catch((err) => {
+                        console.error(err)
+                    })
             }
         )
 
@@ -130,9 +187,6 @@ export class MapService {
     positionIsFollow: boolean = true
     isDisplaySatelliteBaseMap: boolean = false
 
-    domMarkerPosition: HTMLDivElement
-    arrowDirection: HTMLDivElement
-    markerLocation: OsmGoMarker = undefined
     layersAreLoaded: boolean = false
 
     markersLoaded = []
@@ -416,28 +470,30 @@ export class MapService {
     }
     centerOnMyPosition(): void {
         const currentZoom = this.map.getZoom()
-
-        this.map.setCenter(this.locationService.getCoordsPosition())
-        if (currentZoom < 17) {
-            this.map.setZoom(18)
-        }
-
         if (this.configService.config.lockMapHeading) {
             this.headingIsLocked = true
         }
-
+        let bearing = 0
         if (this.configService.config.followPosition) {
             this.positionIsFollow = true
             if (this.configService.config.lockMapHeading) {
-                this.map.rotateTo(
-                    this.locationService.compassHeading.trueHeading
-                )
-                this.arrowDirection.setAttribute(
-                    'style',
-                    'transform: rotate(0deg'
-                )
+                bearing = this.locationService.compassHeading.trueHeading
+
+                this.map.setLayoutProperty('location_user', 'icon-rotate', 0)
             }
         }
+        let newZoom = currentZoom
+        // this.map.setCenter(this.locationService.getCoordsPosition())
+        if (currentZoom < 17) {
+            // this.map.setZoom(18)
+            newZoom = 18
+        }
+        this.map.flyTo({
+            center: this.locationService.getCoordsPosition(),
+            zoom: newZoom,
+            bearing: bearing,
+            speed: 2,
+        })
     }
     changeLocationRadius(newRadius: number, transition: boolean = false): void {
         const pxRadius = this.getPixelDistFromMeter(this.map, newRadius)
@@ -461,13 +517,15 @@ export class MapService {
         })
     }
 
-    openModalOsm(): void {
+    openModalOsm(lngLat?: LngLat, tags?: any): void {
         this.markerMoving = false
-        this.markerPositionate.remove()
-        const coords = this.markerPositionate.getLngLat()
+        if (this.markerPositionate) this.markerPositionate?.remove()
+        const coords = lngLat ? lngLat : this.markerPositionate.getLngLat()
         let newTag
 
-        if (
+        if (tags) {
+            newTag = { ...tags }
+        } else if (
             this.tagsService.lastTagsUsedIds &&
             this.tagsService.lastTagsUsedIds[0]
         ) {
@@ -487,12 +545,13 @@ export class MapService {
         const pt = point([coords.lng, coords.lat], {
             type: 'node',
             tags: newTag,
-        })
+        }) as OsmGoFeature
         this.mode = 'Create'
         this.eventShowModal.emit({
             type: 'Create',
             geojson: pt,
             origineData: null,
+            openPrimaryTagModalOnStart: !tags,
         })
     }
 
@@ -555,10 +614,8 @@ export class MapService {
     getMapStyle(): Observable<any> {
         return this.http.get('assets/mapStyle/brigthCustom.json').pipe(
             map((maplibreStyle) => {
-                let spritesFullPath = `mapStyle/sprites/sprites`
-
-                const basePath = window.location.href.split('#')[0] //example : http://127.0.0.1:8080/www/#/main => http://127.0.0.1:8080/www/
-                spritesFullPath = `${basePath}assets/${spritesFullPath}`
+                const baseUrl = this.document.location.origin
+                const spritesFullPath = `${baseUrl}/assets/mapStyle/sprites/sprites`
 
                 maplibreStyle['sprite'] = spritesFullPath
                 return maplibreStyle
@@ -623,27 +680,68 @@ export class MapService {
                 })
 
                 this.map.on('moveend', (e) => {
-                    // this.configService.freezeMapRenderer = false;
+                    this.setCenterInUrl()
                 })
 
                 this.map.on('zoom', (e) => {
                     if (this.layersAreLoaded && this.locationService.location) {
-                        this.changeLocationRadius(
-                            this.locationService.location.coords.accuracy,
-                            false
-                        )
+                        if (this.locationService.location?.coords?.accuracy) {
+                            this.changeLocationRadius(
+                                this.locationService.location.coords.accuracy,
+                                false
+                            )
+                        }
                     }
                 })
-                this.loadUnknownMarker(window.devicePixelRatio)
+
+                const initStorageGeojson = this.dataService.geojson
+                const initStorageGeojsonChanged =
+                    this.dataService.geojsonChanged
+                const missingMarker = []
+                for (const feature of initStorageGeojson.features) {
+                    const marker = feature.properties.marker
+                    if (
+                        !this.map.hasImage(marker) &&
+                        !missingMarker.includes(marker)
+                    ) {
+                        missingMarker.push(marker)
+                    }
+                }
+                for (const feature of initStorageGeojsonChanged.features) {
+                    const marker = feature.properties.marker
+                    if (
+                        !this.map.hasImage(marker) &&
+                        !missingMarker.includes(marker)
+                    ) {
+                        missingMarker.push(marker)
+                    }
+                }
+                const t1 = new Date().getTime()
+                this.addMissingIconsToMap(missingMarker)
+                    .then((d) => {
+                        console.log(
+                            'addMissingIconsToMap INIT TIME',
+                            new Date().getTime() - t1,
+                            'count :',
+                            missingMarker.length
+                        )
+                    })
+                    .catch((err) => {
+                        console.error(err)
+                    })
+                    .finally(() => {
+                        this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
+                            const mapSource = this.map.getSource(
+                                'bbox'
+                            ) as GeoJSONSource
+                            mapSource.setData(geojsonPolygon)
+                        })
+                    })
             })
         })
 
         /* SUBSCRIPTIONS */
         // un nouveau polygon!
-        this.eventNewBboxPolygon.subscribe((geojsonPolygon) => {
-            const mapSource = this.map.getSource('bbox') as GeoJSONSource
-            mapSource.setData(geojsonPolygon)
-        })
 
         // un marker est à déplacer!
         this.subscriptionMoveElement = this.eventMoveElement.subscribe(
@@ -660,7 +758,8 @@ export class MapService {
                         break
                     }
                 }
-                const coordinates = geojson.geometry.coordinates as LngLatLike
+                const coordinates = (geojson.geometry as GeoJSON.Point)
+                    .coordinates as LngLatLike
                 this.map.setCenter(coordinates)
                 this.markerMove = this.createDomMoveMarker(coordinates, geojson)
                 this.markerMoveMoving = true
@@ -672,6 +771,28 @@ export class MapService {
                 )
             }
         )
+    }
+
+    setCenterInUrl(): void {
+        const center = this.map.getCenter()
+        const lng = Math.round(center.lng * 10000000) / 10000000
+        const lat = Math.round(center.lat * 10000000) / 10000000
+        const zoom = Math.round(this.map.getZoom() * 100) / 100
+        const queryParams: Params = {
+            center: `${lng},${lat}`,
+            zoom: `${zoom}`,
+            id: null,
+            add: null,
+        }
+
+        this._ngZone.run(() => {
+            this.router.navigate([], {
+                replaceUrl: true,
+                relativeTo: this.activatedRoute,
+                queryParams,
+                queryParamsHandling: 'merge',
+            })
+        })
     }
 
     getIconRotate(heading: number, mapBearing: number): number {
@@ -719,18 +840,19 @@ export class MapService {
     }
 
     addDomMarkerPosition(): void {
-        if (!this.markerLocation) {
-            this.markerLocation = new OsmGoMarker({
-                element: this.domMarkerPosition,
-                offset: [0, 0],
-            }).setLngLat(
-                this.locationService.getGeojsonPos().features[0].geometry
-                    .coordinates as LngLatLike
-            )
-            // FIXME: @dotcs not all members are set (id, data)
-            this.markerLocation.addTo(this.map)
-        }
+        // if (!this.markerLocation) {
+        //     this.markerLocation = new OsmGoMarker({
+        //         element: this.domMarkerPosition,
+        //         offset: [0, 0],
+        //     }).setLngLat(
+        //         this.locationService.getGeojsonPos().features[0].geometry
+        //             .coordinates as LngLatLike
+        //     )
+        //     // FIXME: @dotcs not all members are set (id, data)
+        //     this.markerLocation.addTo(this.map)
+        // }
     }
+
     selectFeature(feature: MapGeoJSONFeature): void {
         const layer = feature['layer'].id
         // Provenance de la donnée d'origine (data OU data_changed)
@@ -747,10 +869,23 @@ export class MapService {
             origineData = 'data_changed'
         }
 
-        const geojson = this.dataService.getFeatureById(
-            feature['properties'].id,
-            origineData
-        ) as Feature<Point | MultiPoint | LineString | MultiLineString>
+        const idFromMap = `${feature.properties.type}/${feature.properties.id}`
+        const geojson = this.dataService.getFeatureById(idFromMap, origineData)
+
+        if (origineData !== 'data_changed') {
+            const queryParams: Params = {
+                id: `${idFromMap}`,
+                zoom: null,
+                center: null,
+            }
+            this.router.navigate([], {
+                replaceUrl: true,
+                relativeTo: this.activatedRoute,
+                queryParams,
+                queryParamsHandling: 'merge',
+            })
+        }
+
         this.eventShowModal.emit({
             type: 'Read',
             geojson: geojson,
@@ -974,6 +1109,8 @@ export class MapService {
         this.map.addLayer({
             id: 'location_circle',
             type: 'circle',
+            // @ts-expect-error
+            // Type 'string' is not assignable to type 'SourceSpecification'.
             source: 'location_circle',
             layout: {},
             paint: {
@@ -983,10 +1120,25 @@ export class MapService {
                 'circle-stroke-width': 1,
                 'circle-stroke-color': '#9bbcf2',
                 'circle-stroke-opacity': 0.5,
+                'circle-pitch-alignment': 'map',
                 // @ts-expect-error
                 // Currently the property 'circle-radius-transition' is missing in the typings.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898445988
                 'circle-radius-transition': { duration: 0 },
+            },
+        })
+
+        this.map.addLayer({
+            id: 'location_user',
+            type: 'symbol',
+            source: 'location_circle',
+            layout: {
+                'icon-size': 0.5,
+                // 'icon-image': 'location-with-orientation',
+                'icon-image': 'location-without-orientation',
+                'icon-ignore-placement': true,
+                'icon-allow-overlap': true,
+                'icon-pitch-alignment': 'map',
             },
         })
 
@@ -1134,9 +1286,10 @@ export class MapService {
                     this.locationService.compassHeading.trueHeading,
                     this.map.getBearing()
                 )
-                this.arrowDirection.setAttribute(
-                    'style',
-                    'transform: rotate(' + iconRotate + 'deg'
+                this.map.setLayoutProperty(
+                    'location_user',
+                    'icon-rotate',
+                    iconRotate
                 )
             }
         })
@@ -1147,90 +1300,132 @@ export class MapService {
             })
         })
 
+        // TODO
         this.map.on('styleimagemissing', async (e) => {
             // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
             const iconId = e.id
-            const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-            if (/^circle/.test(iconId)) {
-                this.map.addImage(
-                    iconId,
-                    this.markerMaplibreUnknown['circle'],
-                    { pixelRatio: pixelRatio }
-                )
-            }
-            if (/^penta/.test(iconId)) {
-                this.map.addImage(iconId, this.markerMaplibreUnknown['penta'], {
-                    pixelRatio: pixelRatio,
-                })
-            }
-            if (/^square/.test(iconId)) {
-                this.map.addImage(
-                    iconId,
-                    this.markerMaplibreUnknown['square'],
-                    { pixelRatio: pixelRatio }
-                )
-            }
+            // // TODO => in function
+            // const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
+            // let spriteGenerated = false
+            // let iconParam: { shape: string; color: string; id: string} | undefined
+            // const regex = /^(circle|square|penta)-(#\w{6})-([\w-]+)$/;
+            // const match = iconId.match(regex);
+
+            // if (match) {
+            //     const [, shape, color, id] = match;
+            //     iconParam = { shape, color, id }
+
+            //     const currentImage = await this.generateIconFromSprite(iconParam)
+
+            //     if (!currentImage){
+            //         console.log('no currentImage', iconId)
+            //     }
+            //     if (currentImage && !this.map.hasImage(iconId)){
+            //         spriteGenerated = true
+            //         this.map.addImage(iconId, currentImage.blob, {pixelRatio});
+            //         // this.map.loadImage(currentImage, (error, image) => {
+            //         //     if (error) throw error;
+            //         //     this.map.addImage(iconId, image, {pixelRatio});
+            //         // })
+            //     }
+
+            //   }
+            //   else {
+            //     console.log('no match', iconId)
+            //   }
+
+            // if (!spriteGenerated && !this.map.hasImage(iconId)){
+            //     if (/^circle/.test(iconId)) {
+            //         this.map.addImage(
+            //             iconId,
+            //             this.markerMaplibreUnknown['circle'],
+            //             { pixelRatio: pixelRatio }
+            //         )
+            //     }
+            //     if (/^penta/.test(iconId)) {
+            //         this.map.addImage(iconId, this.markerMaplibreUnknown['penta'], {
+            //             pixelRatio: pixelRatio,
+            //         })
+            //     }
+            //     if (/^square/.test(iconId)) {
+            //         this.map.addImage(
+            //             iconId,
+            //             this.markerMaplibreUnknown['square'],
+            //             { pixelRatio: pixelRatio }
+            //         )
+            //     }
+            // }
         })
 
         this.locationService.eventNewCompassHeading
             .pipe(
-                map((event: any) => {
-                    return event
-                }),
+                filter(
+                    (heading) =>
+                        !this.locationService.compassHeading.trueHeading ||
+                        Math.abs(
+                            heading.trueHeading -
+                                this.locationService.compassHeading.trueHeading
+                        ) > 1
+                ),
                 throttleTime(100)
             )
             .subscribe((heading) => {
-                if (
-                    this.arrowDirection.className !==
-                    'positionMarkersSize locationMapIcon'
-                ) {
-                    this.arrowDirection.className =
-                        'positionMarkersSize locationMapIcon'
+                if (!this.locationService.compassHeading.trueHeading) {
+                    this.map.setLayoutProperty(
+                        'location_user',
+                        'icon-image',
+                        'location-with-orientation'
+                    )
                 }
 
+                this.locationService.compassHeading = { ...heading }
                 if (
                     this.configService.config.lockMapHeading &&
                     this.headingIsLocked
                 ) {
                     // on suit l'orientation, la map tourne
-
                     this.map.rotateTo(heading.trueHeading)
-                    // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
-                    this.arrowDirection.setAttribute(
-                        'style',
-                        'transform: rotate(0deg'
+                    this.map.setLayoutProperty(
+                        'location_user',
+                        'icon-rotate',
+                        0
                     )
+
+                    // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
                 } else {
                     // la map reste fixe, l'icon tourne
-
                     const iconRotate = this.getIconRotate(
                         heading.trueHeading,
                         this.map.getBearing()
                     )
-                    this.arrowDirection.setAttribute(
-                        'style',
-                        'transform: rotate(' + iconRotate + 'deg'
+
+                    this.map.setLayoutProperty(
+                        'location_user',
+                        'icon-rotate',
+                        iconRotate
                     )
                 }
             })
 
         this.locationService.eventNewLocation.subscribe(
             (geojsonPos: FeatureCollection) => {
-                this.addDomMarkerPosition()
-
                 if (geojsonPos.features && geojsonPos.features[0].properties) {
                     const coordinates = (
                         geojsonPos.features[0].geometry as Point
                     ).coordinates as LngLatLike
-                    this.markerLocation.setLngLat(coordinates)
-                    const mapSource = this.map.getSource(
+                    // this.markerLocation.setLngLat(coordinates)
+
+                    const locationSource = this.map.getSource(
                         'location_circle'
                     ) as GeoJSONSource
-                    mapSource.setData(geojsonPos)
-                    this.changeLocationRadius(
-                        geojsonPos.features[0].properties.accuracy,
-                        true
-                    )
+                    locationSource.setData(geojsonPos)
+
+                    if (geojsonPos.features[0].properties?.accuracy) {
+                        this.changeLocationRadius(
+                            geojsonPos.features[0].properties?.accuracy,
+                            true
+                        )
+                    }
 
                     if (
                         this.configService.config.followPosition &&
@@ -1254,5 +1449,159 @@ export class MapService {
         }
 
         this.eventMapIsLoaded.emit()
+    }
+
+    async addMissingIconsToMap(iconsIds) {
+        const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
+        const promises = []
+        for (const iconId of iconsIds) {
+            let iconParam:
+                | { shape: string; color: string; id: string }
+                | undefined
+            const matchMarkerAndIcon = iconId.match(
+                /^(circle|square|penta)-(#\w{6})-([\w-]+)$/
+            )
+            const matchMarkerOnly = iconId.match(
+                /^(circle|square|penta)-(#\w{6})-$/
+            )
+            const matchShapeOnly = iconId.match(/^(circle|square|penta)-$/)
+
+            if (matchMarkerAndIcon) {
+                const [, shape, color, id] = matchMarkerAndIcon
+                iconParam = { shape, color, id }
+            } else if (matchMarkerOnly) {
+                let [, shape, color] = matchMarkerOnly
+                iconParam = { shape, color, id: 'maki-circle' }
+            } else if (matchShapeOnly) {
+                let [, shape] = matchShapeOnly
+                iconParam = { shape, color: '#000000', id: 'maki-circle' }
+            } else {
+                iconParam = {
+                    shape: 'circle',
+                    color: '#000000',
+                    id: 'maki-circle',
+                }
+                console.log('no match', iconId)
+            }
+
+            if (
+                !iconParam ||
+                !iconParam.shape ||
+                !iconParam.color ||
+                !iconParam.id
+            ) {
+                continue
+            }
+            promises.push(this.generateIconFromSprite(iconParam))
+        }
+
+        Promise.all(promises).then((images) => {
+            for (const image of images) {
+                if (image.blob && !this.map.hasImage(image.id)) {
+                    this.map.addImage(image.id, image.blob, { pixelRatio })
+                }
+            }
+        })
+
+        return true
+    }
+
+    getCanvasFromSpriteId(spriteId): Promise<HTMLCanvasElement> {
+        return new Promise((resolve, reject) => {
+            const t1 = new Date().getTime()
+            const spriteParams = this.tagsService.jsonSprites[spriteId]
+
+            if (!spriteParams) {
+                reject(spriteId + ' no spriteParams')
+            }
+            const pxRatio = spriteParams.pixelRatio || 1
+            const pathSprites =
+                pxRatio == 1
+                    ? `assets/mapStyle/sprites/sprites.png`
+                    : `assets/mapStyle/sprites/sprites@2x.png`
+
+            if (this.spritesCache) {
+                const spriteImage = this.spritesCache
+                const canvas = this.createCanvasFromSprite(
+                    spriteImage,
+                    spriteParams
+                )
+                resolve(canvas)
+            } else {
+                const spriteImage = new Image()
+                spriteImage.onload = () => {
+                    this.spritesCache = spriteImage
+                    const canvas = this.createCanvasFromSprite(
+                        spriteImage,
+                        spriteParams
+                    )
+                    resolve(canvas)
+                }
+                spriteImage.onerror = (error) => {
+                    reject(error)
+                }
+                spriteImage.src = pathSprites
+            }
+        })
+    }
+
+    private createCanvasFromSprite(
+        spriteImage: HTMLImageElement,
+        spriteParams: any
+    ): HTMLCanvasElement {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+        const { x, y, width, height, pixelRatio } = spriteParams
+        canvas.width = width * 1
+        canvas.height = height * 1
+        ctx.drawImage(
+            spriteImage,
+            x,
+            y,
+            width,
+            height,
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        )
+        return canvas
+    }
+
+    combineCanvasMarkerAndIcon(
+        canvasMarker: HTMLCanvasElement,
+        canvasIcon: HTMLCanvasElement
+    ): HTMLCanvasElement {
+        const canvasCombined = document.createElement('canvas')
+        canvasCombined.width = canvasMarker.width
+        canvasCombined.height = canvasMarker.height
+
+        const ctx = canvasCombined.getContext('2d')
+        ctx.drawImage(canvasMarker, 0, 0)
+        ctx.drawImage(canvasIcon, 0, 0)
+        return canvasCombined
+    }
+
+    async generateIconFromSprite(
+        markerParam: { shape: string; color: string; id: string } | undefined
+    ): Promise<{ blob: ImageBitmap; id: string }> {
+        const id = `${markerParam.shape}-${markerParam.color}-${markerParam.id}`
+        const markerId = `${markerParam.shape}-${markerParam.color}`
+
+        const canvasIcon = await this.getCanvasFromSpriteId(markerParam.id)
+        const canvasMarker = await this.getCanvasFromSpriteId(markerId)
+
+        const canvasCombined = this.combineCanvasMarkerAndIcon(
+            canvasMarker,
+            canvasIcon
+        )
+
+        return new Promise((resolve, reject) => {
+            canvasCombined.toBlob((blob) => {
+                createImageBitmap(blob).then((imageBitmap) => {
+                    resolve({ id: id, blob: imageBitmap })
+                })
+            })
+        })
     }
 }

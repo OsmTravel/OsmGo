@@ -12,12 +12,7 @@
         "NAME": "Nazwa",
         "ID": "ID",
         "CLOSE": "Zamknij",
-        "LOADING": "Wczytywanie…",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "Wczytywanie…"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Na pewno?",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "elementów w pamięci",
         "WHAT_ITEM": "Co chcesz wybrać?",
         "LOAD_BBOX": "Wczytać dane?",
-        "CREATING_MISSING_ICONS": "Tworzenie brakujących ikon…",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "Tworzenie brakujących ikon…"
     },
     "MENU": {
         "CONNECTION": "Zaloguj do OpenStreetMap",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "Auto pozycjonowanie GPS",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Po uruchomieniu wyśrodkuj mapę względem miejsca w którym jesteś.",
         "LIMIT_FEATURES": "Maksymalna liczba obiektów w pamięci",
-        "LIMIT_FEATURES_HINT": "Po przekroczeniu tego limitu stare dane zostaną usunięte (obecne zmiany zostaną zachowane). Zbyt wysoki limit może drastycznie obniżyć wydajność",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "Po przekroczeniu tego limitu stare dane zostaną usunięte (obecne zmiany zostaną zachowane). Zbyt wysoki limit może drastycznie obniżyć wydajność"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Dodaj wartość niestandardową",
@@ -174,11 +149,7 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "Tego węzła używa następująca liczba linii: {x}",
         "UNDEFINED_VALUE": "Nieokreślono",
         "LAST_TAG_USED": "Ostatnio użyte tagi",
-        "BOOKMARKS": "Zakładki",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "Zakładki"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Ten tag jest przestarzały",

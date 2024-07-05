@@ -12,12 +12,7 @@
         "NAME": "Naam",
         "ID": "Id",
         "CLOSE": "Sluiten",
-        "LOADING": "Laden...",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "Laden..."
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Weet je het zeker?",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "items in geheugen",
         "WHAT_ITEM": "Welke?",
         "LOAD_BBOX": "Gegevens laden?",
-        "CREATING_MISSING_ICONS": "Ontbrekende iconen aanmaken...",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "Ontbrekende iconen aanmaken..."
     },
     "MENU": {
         "CONNECTION": "Inloggen bij OpenStreetMap",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "Bij het starten de kaart centreren op je locatie",
         "CENTER_WHEN_GPS_IS_READY_HINT": "De kaart centreren op je locatie zodra dat kan.",
         "LIMIT_FEATURES": "Maximum aantal objecten in geheugen",
-        "LIMIT_FEATURES_HINT": "Na deze limiet worden de oude gegevens verwijderd (de huidige modificaties zullen behouden blijven). Een te hoge limiet kan de prestaties dramatisch verlagen",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "Na deze limiet worden de oude gegevens verwijderd (de huidige modificaties zullen behouden blijven). Een te hoge limiet kan de prestaties dramatisch verlagen"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Een aangepaste waarde toevoegen",
@@ -174,11 +149,7 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "Deze knoop wordt gebruikt door {x} weg(en)",
         "UNDEFINED_VALUE": "Onbekend",
         "LAST_TAG_USED": "Laatst gebruikte tags",
-        "BOOKMARKS": "Bladwijzers",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "Bladwijzers"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Deze tag is verouderd",

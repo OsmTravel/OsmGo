@@ -180,12 +180,18 @@ describe('DataService', () => {
     describe('getFeatureById', () => {
         it('should be possible to retrieve a feature by its prop id (source: data)', () => {
             // Preparation
-            const featureA = point([1, 0], {
-                id: 1,
-            }) as unknown as OsmGoFeature
-            const featureB = point([2, 0], {
-                id: 2,
-            }) as unknown as OsmGoFeature
+            const featureA = {
+                type: 'Feature',
+                id: 'node/1',
+                properties: {},
+                geometry: { type: 'Point', coordinates: [1, 0] },
+            } as OsmGoFeature
+            const featureB = {
+                type: 'Feature',
+                id: 'node/2',
+                properties: {},
+                geometry: { type: 'Point', coordinates: [2, 0] },
+            } as OsmGoFeature
             const fc = featureCollection([
                 featureA,
                 featureB,
@@ -193,19 +199,25 @@ describe('DataService', () => {
             service.setGeojson(fc)
 
             // test
-            const actual = service.getFeatureById(2, 'data')
+            const actual = service.getFeatureById('node/2', 'data')
 
             expect(actual).toEqual(featureB)
         })
 
         it('should be possible to retrieve a feature by its prop id (source: data_changed)', async () => {
             // Preparation
-            const featureA = point([1, 0], {
-                id: 1,
-            }) as unknown as OsmGoFeature
-            const featureB = point([2, 0], {
-                id: 2,
-            }) as unknown as OsmGoFeature
+            const featureA = {
+                type: 'Feature',
+                id: 'node/1',
+                properties: {},
+                geometry: { type: 'Point', coordinates: [1, 0] },
+            } as OsmGoFeature
+            const featureB = {
+                type: 'Feature',
+                id: 'node/2',
+                properties: {},
+                geometry: { type: 'Point', coordinates: [2, 0] },
+            } as OsmGoFeature
             const fc = featureCollection([
                 featureA,
                 featureB,
@@ -213,7 +225,7 @@ describe('DataService', () => {
             await service.setGeojsonChanged(fc)
 
             // test
-            const actual = service.getFeatureById(2, 'data_changed')
+            const actual = service.getFeatureById('node/2', 'data_changed')
 
             expect(actual).toEqual(featureB)
         })
@@ -224,9 +236,9 @@ describe('DataService', () => {
             service.setGeojson(fc)
 
             // test
-            const actual = service.getFeatureById(2, 'data')
+            const actual = service.getFeatureById('node/2', 'data')
 
-            expect(actual).toBeNull()
+            expect(actual).toBeUndefined()
         })
     })
 
@@ -333,9 +345,9 @@ describe('DataService', () => {
                 beforeEach(() => {
                     // Preparation
                     featureA = point([0, 0]) as OsmGoFeature
-                    featureA.id = 123
+                    featureA.id = 'node/123'
                     featureB = point([0, 0]) as OsmGoFeature
-                    featureB.id = 234
+                    featureB.id = 'node/234'
                     const fc = featureCollection([
                         featureA,
                         featureB,
@@ -455,9 +467,9 @@ describe('DataService', () => {
                 beforeEach(async () => {
                     // Preparation
                     featureA = point([0, 0]) as OsmGoFeature
-                    featureA.id = 123
+                    featureA.id = 'node/123'
                     featureB = point([0, 0]) as OsmGoFeature
-                    featureB.id = 234
+                    featureB.id = 'node/234'
                     const fc = featureCollection([
                         featureA,
                         featureB,

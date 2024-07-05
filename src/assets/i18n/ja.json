@@ -12,12 +12,7 @@
         "NAME": "名前",
         "ID": "ID",
         "CLOSE": "閉じる",
-        "LOADING": "読み込み中...",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "読み込み中..."
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "本当によろしいですか？",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "件の項目が記憶域内にあります",
         "WHAT_ITEM": "どれですか？",
         "LOAD_BBOX": "データを読み込みますか？",
-        "CREATING_MISSING_ICONS": "不明なアイコンを作成中…",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "不明なアイコンを作成中…"
     },
     "MENU": {
         "CONNECTION": "OpenStreetMapでログイン",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "開始時に、現在地に中央寄せする",
         "CENTER_WHEN_GPS_IS_READY_HINT": "できるだけ早くマップを現在地に中央寄せします。",
         "LIMIT_FEATURES": "記憶域内のオブジェクト最大数",
-        "LIMIT_FEATURES_HINT": "この制限の後、古いデータは削除されます（現在の変更は保持されます）。制限数が大きすぎるとパフォーマンスは劇的に低下します。",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "この制限の後、古いデータは削除されます（現在の変更は保持されます）。制限数が大きすぎるとパフォーマンスは劇的に低下します。"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "カスタム値を追加",
@@ -174,11 +149,7 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "このノードは{x}件のウェイで使われています",
         "UNDEFINED_VALUE": "不明",
         "LAST_TAG_USED": "最新利用タグ",
-        "BOOKMARKS": "ブックマーク",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "ブックマーク"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "このタグは非推奨です",

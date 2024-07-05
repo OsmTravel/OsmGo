@@ -1,5 +1,6 @@
 import { Injectable, HostListener } from '@angular/core'
-import { SwUpdate } from '@angular/service-worker'
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
+import { filter, map } from 'rxjs'
 
 @Injectable({
     providedIn: 'root',
@@ -10,11 +11,23 @@ export class PwaService {
     constructor(private swUpdate: SwUpdate) {}
 
     updateAvailable() {
-        this.swUpdate.available.subscribe((event) => {
-            console.log('PwaService', event)
-            // if (askUserToUpdate()) {
-            //   window.location.reload();
-            // }
-        })
+        const updatesAvailable = this.swUpdate.versionUpdates
+            .pipe(
+                filter(
+                    (evt): evt is VersionReadyEvent =>
+                        evt.type === 'VERSION_READY'
+                ),
+                map((evt) => ({
+                    type: 'UPDATE_AVAILABLE',
+                    current: evt.currentVersion,
+                    available: evt.latestVersion,
+                }))
+            )
+            .subscribe((event) => {
+                console.log('PwaService', event)
+                // if (askUserToUpdate()) {
+                //   window.location.reload();
+                // }
+            })
     }
 }

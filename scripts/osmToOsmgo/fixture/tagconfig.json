@@ -10648,7 +10648,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#A23337",
           "presets": ["wheelchair", "phone", "website", "opening_hours"],
           "lbl": {"en": " Not known", "fr": "_NC"},
@@ -20433,7 +20433,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#EF9228",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -26118,7 +26118,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#C057A0",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -29672,7 +29672,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#75030B",
           "presets": ["emergency_combo"],
           "lbl": {
@@ -32232,7 +32232,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#5B396C",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -38273,7 +38273,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#5B396C",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -40715,7 +40715,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#9D7178",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -43426,7 +43426,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#F5BB3A",
           "presets": [],
           "lbl": {"en": "_NC"},
@@ -44903,7 +44903,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#D3D3D3",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -48640,7 +48640,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#C9BCF0",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -49884,7 +49884,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#FFBA0C",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -50246,7 +50246,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#009549",
           "presets": [],
           "lbl": {"en": "_NC"}
@@ -52815,7 +52815,7 @@
         },
         {
           "key": "yes",
-          "icon": "wiki_question",
+          "icon": "wiki-question",
           "markerColor": "#0E5F71",
           "presets": [],
           "lbl": {"en": "_NC"}

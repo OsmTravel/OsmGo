@@ -14,9 +14,6 @@ export interface User {
     uid: string
     display_name: string
     connected: boolean
-    user: string
-    password: string
-    authType: 'basic' | 'oauth'
 }
 
 export interface Changeset {
@@ -67,9 +64,6 @@ export class ConfigService {
         uid: '',
         display_name: '',
         connected: false,
-        user: null,
-        password: null,
-        authType: null,
     }
     changeset: Changeset = {
         id: '',
@@ -138,7 +132,7 @@ export class ConfigService {
         isSelectableLine: true,
         isSelectablePolygon: false,
         passwordSaved: true,
-        lastView: { lng: 0, lat: 0, zoom: 1, bearing: 0 },
+        lastView: { lng: -0.127758, lat: 51.507351, zoom: 18, bearing: 0 }, // London
         centerWhenGpsIsReady: true,
         limitFeatures: 10000,
     }
@@ -151,6 +145,9 @@ export class ConfigService {
         appName: 'Osm Go!',
         appVersionCode: '12',
         appVersionNumber: environment.version || '0.0.0',
+        platform: environment.platform || undefined,
+        branch: environment.branch || undefined,
+        shortHash: environment.shortHash || undefined,
     }
 
     getUserInfo() {
@@ -167,9 +164,6 @@ export class ConfigService {
             uid: '',
             display_name: '',
             connected: false,
-            user: null,
-            password: null,
-            authType: null,
         }
         this.localStorage.set('user_info', this.user_info)
     }
@@ -239,16 +233,13 @@ export class ConfigService {
     loadUserInfo$() {
         return from(this.localStorage.get('user_info')).pipe(
             map((userInfo) => {
-                if (userInfo && userInfo.connected && userInfo.authType) {
+                if (userInfo && userInfo.connected) {
                     this.user_info = userInfo
                 } else {
                     this.user_info = {
                         uid: '',
                         display_name: '',
                         connected: false,
-                        user: null,
-                        password: null,
-                        authType: null,
                     }
                 }
                 return this.user_info
@@ -278,7 +269,6 @@ export class ConfigService {
     loadConfig2$(_i18nConfig) {
         return from(this.localStorage.get('config')).pipe(
             map(async (d) => {
-                console.log(d)
                 if (d) {
                     // tslint:disable-next-line:forin
                     for (const key in d) {
@@ -302,9 +292,6 @@ export class ConfigService {
                         uid: '',
                         display_name: '',
                         connected: false,
-                        user: null,
-                        password: null,
-                        authType: null,
                     }
                 }
 
@@ -342,6 +329,15 @@ export class ConfigService {
 
     getAppVersion() {
         return this.appVersion
+    }
+
+    //Osm Go! 1.6.2-dev PWA
+    getAppFullVersion() {
+        const isDev = this.appVersion.branch === 'develop'
+        const platform = this.appVersion.platform
+        return `${this.appVersion.appName} ${this.appVersion.appVersionNumber}${
+            isDev ? '-dev' : ''
+        } ${platform ? platform : ''}`
     }
 
     setMapMarginBuffer(buffer: number) {

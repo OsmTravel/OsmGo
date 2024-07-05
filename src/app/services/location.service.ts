@@ -2,7 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core'
 
 import { ConfigService } from '@services/config.service'
 
-import { Geolocation } from '@capacitor/geolocation'
+// import { Geolocation } from '@capacitor/geolocation'
 import { FeatureCollection, Point } from 'geojson'
 import { CompassHeading } from '@osmgo/type'
 
@@ -31,47 +31,35 @@ export class LocationService {
         }
         this.subscriptionWatchLocation = navigator.geolocation.watchPosition(
             (position: GeolocationPosition) => {
-                if (!this.location) {
+                if (position?.coords) {
                     this.location = position
                     this.eventNewLocation.emit(this.getGeojsonPos())
-                } else if (
-                    position &&
-                    position.coords &&
-                    !this.configService.freezeMapRenderer
-                ) {
-                    const deltaLat = Math.abs(
-                        position.coords.latitude - this.location.coords.latitude
-                    )
-                    const deltaLng = Math.abs(
-                        position.coords.longitude -
-                            this.location.coords.longitude
-                    )
-                    const deltaAccuracy = Math.abs(
-                        position.coords.accuracy - this.location.coords.accuracy
-                    )
-                    if (
-                        deltaLat > 0.00001 ||
-                        deltaLng > 0.00001 ||
-                        deltaAccuracy > 4
-                    ) {
-                        this.location = position
-                        this.eventNewLocation.emit(this.getGeojsonPos())
-                    }
                 }
             },
             (err) => {
-                console.log(err)
+                console.error(err)
             },
             { enableHighAccuracy: true }
         )
     }
 
+    getCurrentPosition(): Promise<GeolocationPosition> {
+        return new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(
+                (position: GeolocationPosition) => {
+                    resolve(position)
+                },
+                (err) => {
+                    reject(err)
+                },
+                { enableHighAccuracy: true }
+            )
+        })
+    }
+
     enableGeolocation(): void {
         this.heading()
-        Geolocation.getCurrentPosition({
-            enableHighAccuracy: true,
-            maximumAge: 3000,
-        }).then((position: GeolocationPosition) => {
+        this.getCurrentPosition().then((position: GeolocationPosition) => {
             this.location = position
             this.eventNewLocation.emit(this.getGeojsonPos())
 
@@ -133,20 +121,7 @@ export class LocationService {
                 timestamp: new Date().getTime(),
             }
 
-            if (!this.configService.freezeMapRenderer) {
-                if (
-                    !this.compassHeading.magneticHeading ||
-                    Math.abs(
-                        compassHeading - this.compassHeading.magneticHeading
-                    ) > 4
-                ) {
-                    // near 360? TODO
-                    if (!this.configService.freezeMapRenderer) {
-                        this.compassHeading = newCompassHeading
-                        this.eventNewCompassHeading.emit(newCompassHeading)
-                    }
-                }
-            }
+            this.eventNewCompassHeading.emit(newCompassHeading)
         }
 
         if (typeof window['ondeviceorientationabsolute'] == 'object') {
@@ -176,14 +151,12 @@ export class LocationService {
                 this.location.coords.longitude,
                 this.location.coords.latitude,
             ]
-        } else {
-            return [0, 0]
         }
+        throw new Error('no location')
     }
 
     getGeojsonPos(): FeatureCollection<Point> {
-        if (!this.location) {
-            console.log('nop')
+        if (!this.location?.coords) {
             return
         }
         const lon: number = this.location.coords.longitude

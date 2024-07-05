@@ -22,7 +22,8 @@
     top: 0;
     left: 0;
     bottom: 0;
-    box-shadow: 0 -1px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -1px 9px rgba(0, 0, 0, 0.1);
+    background-color: white;
 }
 
 ion-icon {
@@ -31,4 +32,16 @@ ion-icon {
 
 ion-item {
     cursor: pointer;
+}
+
+ion-title {
+    font-weight: 700;
+}
+
+.numVersion {
+    font-size: 11px;
+    color: white;
+    font-weight: 200;
+    font-style: italic;
+    opacity: 0.8;
 }

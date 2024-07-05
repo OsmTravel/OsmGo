@@ -1,5 +1,11 @@
 {
 	"appId": "fr.dogeo.osmgo",
 	"appName": "Osm Go!",
-	"webDir": "www"
+	"webDir": "www",
+	"plugins": {
+		"App": {
+			"url": "osmgo",
+			"androidScheme": "osmgo"
+		}
+	}
 }

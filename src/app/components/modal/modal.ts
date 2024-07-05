@@ -39,9 +39,7 @@ import {
 export interface ModalDismissData {
     redraw?: boolean
     type?: string
-    geojson?: OsmGoFeature<
-        Point | LineString | MultiLineString | Polygon | MultiPolygon
-    >
+    geojson?: OsmGoFeature
     mode?: any
 }
 @Component({
@@ -53,9 +51,7 @@ export interface ModalDismissData {
 export class ModalsContentPage implements OnInit {
     tags: Tag[] = [] // main data
     originalTags = []
-    feature: OsmGoFeature<
-        Point | LineString | MultiLineString | Polygon | MultiPolygon
-    >
+    feature: OsmGoFeature
     origineData: string
     typeFiche: string
     displayCode: boolean = false
@@ -65,7 +61,7 @@ export class ModalsContentPage implements OnInit {
     savedFields
     tagId: string
     geometryType: 'point' | 'vertex' | 'line' | 'area'
-
+    openPrimaryTagModalOnStart = false
     customValue = ''
 
     allTags
@@ -94,9 +90,11 @@ export class ModalsContentPage implements OnInit {
         this.newPosition = params.data.newPosition
         this.feature = cloneDeep(params.data.data)
 
-        const originalFeatureGeometry = this.feature.properties.way_geometry
+        const originalFeatureGeometry: any = this.feature.properties
+            .way_geometry
             ? this.feature.properties.way_geometry
             : this.feature.geometry
+
         const typeGeomFeature = originalFeatureGeometry.type
         const usedByWay = this.feature.properties.usedByWays ? true : false
         if (typeGeomFeature === 'Point' && !usedByWay) {
@@ -116,6 +114,7 @@ export class ModalsContentPage implements OnInit {
         }
 
         this.mode = params.data.type // Read, Create, Update
+        this.openPrimaryTagModalOnStart = params.data.openPrimaryTagModalOnStart
         this.origineData = this.params.data.origineData // literal, sources
         this.typeFiche = 'Loading' // Edit, Read, Loading
 
@@ -153,16 +152,13 @@ export class ModalsContentPage implements OnInit {
     ngOnInit() {
         // override
         this.initComponent()
-        // console.log(this.mapService.isProcessing.getValue())
-
         this.cdr.detectChanges()
-
-        if (this.mode === 'Create') {
+        if (this.mode === 'Create' && this.openPrimaryTagModalOnStart) {
             this.openPrimaryTagModal()
         }
     }
 
-    presentConfirm(feature: OsmGoFeature<any>) {
+    presentConfirm(feature: OsmGoFeature) {
         this.alertCtrl
             .create({
                 header: this.translate.instant(

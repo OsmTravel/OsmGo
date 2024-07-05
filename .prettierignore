@@ -7,3 +7,5 @@ package.json
 src/assets/
 www/
 yarn.lock
+.angular/
+coverage/

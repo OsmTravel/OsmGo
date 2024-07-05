@@ -1,0 +1,64 @@
+name: Deployment to osmgo.com || dev.osmgo.com
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+      - master
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint code style
+        run: npm run prettier:check
+
+      - name: Run tests
+        run: npm run test:ci
+
+      - name: Create build
+        run: npm run build
+
+      # add delay to wait for the build to finish
+      - name: Wait for build to finish
+        run: sleep 10
+
+      - name: List files to be deployed
+        run: ls ./www
+
+      - name: Check for index.html
+        run: |
+          if [ ! -f www/index.html ]; then
+            echo "index.html is missing!"
+            exit 1
+          fi
+
+      - name: Install rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
+      - name: Configure rclone environment
+        env:
+          RCLONE_CONFIG_MYREMOTE_TYPE: s3
+          RCLONE_CONFIG_MYREMOTE_PROVIDER: Other
+          RCLONE_CONFIG_MYREMOTE_ACCESS_KEY_ID: ${{ secrets.STORJ_ACCESS_KEY }}
+          RCLONE_CONFIG_MYREMOTE_SECRET_ACCESS_KEY: ${{ secrets.STORJ_SECRET_KEY }}
+          RCLONE_CONFIG_MYREMOTE_ENDPOINT: ${{ secrets.STORJ_ENDPOINT }}
+        run: |
+          rclone config create storj s3 env_auth false access_key_id $RCLONE_CONFIG_MYREMOTE_ACCESS_KEY_ID secret_access_key $RCLONE_CONFIG_MYREMOTE_SECRET_ACCESS_KEY endpoint $RCLONE_CONFIG_MYREMOTE_ENDPOINT
+
+      - name: Set bucket name
+        run: echo "BUCKET_NAME=$(if [ '${{ github.ref }}' = 'refs/heads/main' ] || [ '${{ github.ref }}' = 'refs/heads/master' ]; then echo 'osmgo-prod'; else echo 'osmgo-dev'; fi)" >> $GITHUB_ENV
+
+      - name: Deploy to S3 with rclone
+        run: rclone sync www storj:/${{ env.BUCKET_NAME }}

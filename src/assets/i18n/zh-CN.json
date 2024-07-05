@@ -12,12 +12,7 @@
         "NAME": "名称",
         "ID": "Id",
         "CLOSE": "关闭",
-        "LOADING": "加载中……",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "加载中……"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "你确定吗？",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "记忆中的项目",
         "WHAT_ITEM": "哪一个？",
         "LOAD_BBOX": "载入数据吗？",
-        "CREATING_MISSING_ICONS": "创建缺失的图标……",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "创建缺失的图标……"
     },
     "MENU": {
         "CONNECTION": "在OpenStreetMap中登入",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "启动时，你的位置将显示在地图中央",
         "CENTER_WHEN_GPS_IS_READY_HINT": "尽快将地图置于你的位置中心。",
         "LIMIT_FEATURES": "存储器中对象的最大数量",
-        "LIMIT_FEATURES_HINT": "超过这个限制，旧的数据将被删除（当前的修改将被保留）。太高的限制会极大地降低性能",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "超过这个限制，旧的数据将被删除（当前的修改将被保留）。太高的限制会极大地降低性能"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "添加一个自定义值",
@@ -174,11 +149,7 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "该节点被路径 {x} 所使用",
         "UNDEFINED_VALUE": "未知",
         "LAST_TAG_USED": "最后使用过的标签",
-        "BOOKMARKS": "书签",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "书签"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "此标签已被弃用",

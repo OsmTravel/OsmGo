@@ -150,10 +150,10 @@ const isFilteredByKeys = (tags, keysFilter) => {
 
 const getPrimaryKeyOfObject = (feature, primaryKeys) => {
     const tags = feature.properties.tags
-    let kv = { k: '', v: '' }
+    let kv = { key: '', value: '' }
     for (let k in tags) {
         if (primaryKeys.includes(k)) {
-            kv = { k: k, v: tags[k] }
+            kv = { key: k, value: tags[k] }
             return kv
         }
     }
@@ -162,7 +162,6 @@ const getPrimaryKeyOfObject = (feature, primaryKeys) => {
 
 export function getConfigTag(feature, presets) {
     const featureID = feature.properties.configId
-
     const featurePrimaryTag = `${feature.properties.primaryTag.key}/${feature.properties.primaryTag.value}`
     const featureTags = feature.properties.tags
     let mostMaches = 0
@@ -337,7 +336,9 @@ export function setIconStyle(feature, tagsConfig) {
         markerShape = 'star'
     }
 
-    feature.properties.icon = configMarker.icon ? configMarker.icon : ''
+    feature.properties.icon = configMarker.icon
+        ? configMarker.icon
+        : 'maki-circle'
     feature.properties.marker = `${markerShape}-${configMarker.markerColor}-${feature.properties.icon}`
     feature.properties.hexColor = configMarker.markerColor
     feature.properties.configId = configMarker.id

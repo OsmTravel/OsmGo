@@ -12,12 +12,7 @@
         "NAME": "Name",
         "ID": "ID",
         "CLOSE": "Schließen",
-        "LOADING": "Laden…",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "Laden…"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Sicher?",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "Gespeicherte Elemente",
         "WHAT_ITEM": "Welches?",
         "LOAD_BBOX": "Daten laden?",
-        "CREATING_MISSING_ICONS": "Erstelle fehlende Symbole …",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "Erstelle fehlende Symbole …"
     },
     "MENU": {
         "CONNECTION": "Bei OpenStreetMap anmelden",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "Zentriere beim Start die Karte auf deiner Position",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Zentrieredie Karte auf deiner Position sobald verfügbar.",
         "LIMIT_FEATURES": "Maximale Anzahl von Objekten im Speicher",
-        "LIMIT_FEATURES_HINT": "Bei erreichen dieses Limits werden alte Daten gelöscht (aktuelle Bearbeitungen bleiben erhalten). Ein zu hohes Limit kann die Leistung der Anwendung beinträchtigen",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "Bei erreichen dieses Limits werden alte Daten gelöscht (aktuelle Bearbeitungen bleiben erhalten). Ein zu hohes Limit kann die Leistung der Anwendung beinträchtigen"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Benutzerdefinierten Wert hinzufügen",
@@ -174,11 +149,7 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "Dieser Punkt wird von {x} Linie(n) verwendet",
         "UNDEFINED_VALUE": "Unbekannt",
         "LAST_TAG_USED": "Letzte verwendete tags",
-        "BOOKMARKS": "Lesezeichen",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "Lesezeichen"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "Dieser tag ist veraltet",

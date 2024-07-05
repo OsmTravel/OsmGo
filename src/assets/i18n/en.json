@@ -12,12 +12,7 @@
         "NAME": "Name",
         "ID": "Id",
         "CLOSE": "Close",
-        "LOADING": "Loading…",
-        "CREATE": "",
-        "EDIT": "",
-        "SAVE": "",
-        "DELETE": "",
-        "CLEAR": ""
+        "LOADING": "Loading…"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Are you sure?",
@@ -25,19 +20,7 @@
         "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
         "WHAT_ITEM": "Which?",
         "LOAD_BBOX": "Load data?",
-        "CREATING_MISSING_ICONS": "Creating missing icons…",
-        "BUTTONS": {
-            "MENU": "",
-            "UPLOAD": "",
-            "LOAD_DATA": "",
-            "LOADING_DATA": "",
-            "VIEW_AREAL_MAP": "",
-            "VIEW_STYLED_MAP": "",
-            "ADD_NEW": "",
-            "CENTER_GPS": "",
-            "CONFIRM_ADD": "",
-            "CONFIRM_MOVE": ""
-        }
+        "CREATING_MISSING_ICONS": "Creating missing icons…"
     },
     "MENU": {
         "CONNECTION": "Log in at OpenStreetMap",
@@ -137,15 +120,7 @@
         "CENTER_WHEN_GPS_IS_READY": "On start, center the map on your location",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible.",
         "LIMIT_FEATURES": "Maximum number of objects in memory",
-        "LIMIT_FEATURES_HINT": "After this limit, the old data will be deleted (the current modifications will be kept). Too high a limit can dramatically decrease performance",
-        "DISPLAY_SURVEY_CARD": "",
-        "DISPLAY_SURVEY_CARD_HINT": "",
-        "DISPLAY_SURVEY_CARD_CHOICE": {
-            "ALWAYS": "",
-            "OLDER": "",
-            "NEVER": ""
-        },
-        "SURVEY_CARD_RANGE": ""
+        "LIMIT_FEATURES_HINT": "After this limit, the old data will be deleted (the current modifications will be kept). Too high a limit can dramatically decrease performance"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Add a custom value",
@@ -174,11 +149,7 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way(s)",
         "UNDEFINED_VALUE": "Unknown",
         "LAST_TAG_USED": "Last used tags",
-        "BOOKMARKS": "Bookmarks",
-        "LAST_SURVEY": "",
-        "WARN_NODE_EDITED": "",
-        "ADD_TAG_PLACEHOLDER": "",
-        "SURVEY_QUESTION": ""
+        "BOOKMARKS": "Bookmarks"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "This tag is deprecated",
@@ -193,7 +164,8 @@
         "HIDDEN_TAGS_DESCRIPTION": "This window allows you to make the hidden elements visible.",
         "BOOKMARKED_TAGS": "Manage your favorites",
         "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
-        "RESET_HIDDEN_TAGS": "Reset"
+        "RESET_HIDDEN_TAGS": "Reset",
+        "REMOVE_ALL_HIDDEN_TAGS": "Remove all"
     },
     "DAYS": {
         "MONDAY": "Monday",

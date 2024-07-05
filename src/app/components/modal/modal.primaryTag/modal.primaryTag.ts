@@ -86,11 +86,9 @@ export class ModalPrimaryTag implements OnInit {
     }
 
     swipeLeft() {
-        console.log('this.swipeLeft')
         this.displayType = 'bookmarks'
     }
     swipeRight() {
-        console.log('swipeRight')
         this.displayType = 'lastTags'
     }
 

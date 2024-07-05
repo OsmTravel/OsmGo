@@ -7,7 +7,12 @@
             <ion-icon name="checkmark" slot="start"></ion-icon>
             {{ 'SHARED.YES' | translate }}
         </ion-button>
-        <ion-button fill="clear" color="danger" (click)="handleNo()">
+        <ion-button
+            fill="clear"
+            color="danger"
+            (click)="handleNo()"
+            [disabled]="feature.properties.type !== 'node'"
+        >
             <ion-icon name="close" slot="start"></ion-icon>
             {{ 'SHARED.NO' | translate }}
         </ion-button>

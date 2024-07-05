@@ -2,8 +2,6 @@ import { Injectable, EventEmitter } from '@angular/core'
 import { Observable, throwError, of, from } from 'rxjs'
 import { map, catchError, switchMap, tap, take } from 'rxjs/operators'
 
-import * as osmAuth from 'osm-auth'
-
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Storage } from '@ionic/storage-angular'
 
@@ -19,24 +17,10 @@ import { Platform } from '@ionic/angular'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 
 import { XMLParser } from 'fast-xml-parser'
+import { OsmAuthService } from './osm-auth.service'
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-    oauthParam = {
-        prod: {
-            url: 'https://www.openstreetmap.org',
-            oauth_consumer_key: 'v2oE6nAar9KvIWLZHs4ip5oB7GFzbp6wTfznPNkr',
-            oauth_secret: '1M71flXI86rh4JC3koIlAxn1KSzGksusvA8TgDz7',
-        },
-
-        dev: {
-            url: 'https://master.apis.dev.openstreetmap.org',
-            oauth_consumer_key: 'PmNIoIN7dRKXQqmVSi07LAh7okepVRv0VvQAX3pM',
-            oauth_secret: 'NULSrWvYE5nKtwOkSVSYAJ2zBQUJK6AgJo6ZE5Ax',
-        },
-    }
-
-    auth
     eventNewPoint = new EventEmitter()
 
     constructor(
@@ -47,101 +31,38 @@ export class OsmApiService {
         public dataService: DataService,
         public alertService: AlertService,
         public configService: ConfigService,
-        private localStorage: Storage
+        private localStorage: Storage,
+        public osmAuthService: OsmAuthService
     ) {}
 
-    initAuth() {
-        const landing = `${window.location.origin}/assets/land.html` // land_single.html
-        const windowType = 'newFullPage' // singlepage, popup, newFullPage
-
-        this.auth = new osmAuth.default({
-            url: this.configService.getIsDevServer()
-                ? this.oauthParam.dev.url
-                : this.oauthParam.prod.url,
-            oauth_consumer_key: this.configService.getIsDevServer()
-                ? this.oauthParam.dev.oauth_consumer_key
-                : this.oauthParam.prod.oauth_consumer_key,
-            oauth_secret: this.configService.getIsDevServer()
-                ? this.oauthParam.dev.oauth_secret
-                : this.oauthParam.prod.oauth_secret,
-            auto: false, // show a login form if the user is not authenticated and
-            landing: landing,
-            windowType: windowType,
-        })
-    }
-
-    login$(): Observable<any> {
-        return Observable.create((observer) => {
-            this.auth.authenticate((e) => {
-                observer.next(true)
-            })
-        }).pipe(
-            map((res) => {
-                return res
-            })
-        )
-    }
-
     isAuthenticated(): boolean {
-        return this.auth.authenticated()
-    }
-
-    logout() {
-        if (this.configService.user_info.authType == 'oauth') {
-            this.auth.logout()
-        }
-        this.localStorage.remove('changeset')
-        this.configService.resetUserInfo()
+        return this.osmAuthService.isAuthenticated()
     }
 
     // retourne l'URL de l'API (dev ou prod)
     getUrlApi() {
         return this.configService.getIsDevServer()
-            ? this.oauthParam.dev.url
-            : this.oauthParam.prod.url
+            ? this.osmAuthService.oauthParam.dev.url
+            : this.osmAuthService.oauthParam.prod.url
     }
 
     // DETAIL DE L'UTILISATEUR
-    getUserDetail$(
-        _user?,
-        _password?,
-        basicAuth = false,
-        passwordSaved = true,
-        test = false
-    ): Observable<User> {
+    getUserDetail$(test = false): Observable<User> {
         const PATH_API = '/api/0.6/user/details.json'
         let _observable
-        if (!basicAuth) {
-            _observable = Observable.create((observer) => {
-                this.auth.xhr(
-                    {
-                        method: 'GET',
-                        path: PATH_API,
-                        options: {
-                            header: { 'Content-Type': 'application/json' },
-                        },
-                    },
-                    (err, details) => {
-                        if (err) {
-                            observer.error({
-                                response: err.response || '??',
-                                status: err.status || 0,
-                            })
-                        }
-                        observer.next(JSON.parse(details))
-                    }
-                )
-            })
-        } else {
-            const url = this.getUrlApi() + PATH_API
-            // const headers = new Headers();
-            let headers = new HttpHeaders()
-            headers = headers
-                .set('Authorization', `Basic ${btoa(_user + ':' + _password)}`)
-                .set('Content-Type', 'application/json')
-
-            _observable = this.http.get(url, { headers: headers })
+        const token = this.osmAuthService.getToken()
+        if (!token) {
+            return throwError(() => new Error('You are not connected'))
         }
+
+        const url = this.getUrlApi() + PATH_API
+        // const headers = new Headers();
+        let headers = new HttpHeaders()
+        headers = headers
+            .set('Authorization', `Bearer ${token}`)
+            .set('Content-Type', 'application/json')
+
+        _observable = this.http.get(url, { headers: headers })
 
         return _observable.pipe(
             map((res: any) => {
@@ -149,12 +70,9 @@ export class OsmApiService {
                 const uid = x_user['id']
                 const display_name = x_user['display_name']
                 const _userInfo: User = {
-                    user: _user,
-                    password: passwordSaved ? _password : null,
                     uid: uid,
                     display_name: display_name,
                     connected: true,
-                    authType: basicAuth ? 'basic' : 'oauth',
                 }
                 if (!test) {
                     this.configService.setUserInfo(_userInfo)
@@ -162,6 +80,7 @@ export class OsmApiService {
                 return _userInfo
             }),
             catchError((error: any) => {
+                console.error(error)
                 return throwError(error)
             })
         )
@@ -174,14 +93,15 @@ export class OsmApiService {
     (currently 50,000 edits) and maximum lifetime (currently 24 hours)
     */
 
-    createOSMChangeSet(comment, password): Observable<any> {
-        const appVersion = `${this.configService.getAppVersion().appName} ${
-            this.configService.getAppVersion().appVersionNumber
-        }`
+    createOSMChangeSet(comment): Observable<any> {
+        const appVersion = this.configService.getAppFullVersion()
+
+        const localeId = navigator?.language || '*'
         const content_put = `
         <osm>
             <changeset>
                 <tag k="created_by" v="${appVersion}"/>
+                <tag k="locale" v="${localeId}"/>
                 <tag k="comment" v="${comment}"/>
                 <tag k="source" v="survey"/>
             </changeset>
@@ -190,43 +110,21 @@ export class OsmApiService {
         const PATH_API = `/api/0.6/changeset/create`
 
         let _observable
-        if (this.configService.user_info.authType === 'oauth') {
-            _observable = Observable.create((observer) => {
-                this.auth.xhr(
-                    {
-                        method: 'PUT',
-                        path: PATH_API,
-                        options: { header: { 'Content-Type': 'text/xml' } },
-                        content: content_put,
-                    },
-                    (err, details) => {
-                        if (err) {
-                            observer.error({
-                                response: err.response || '??',
-                                status: err.status || 0,
-                            })
-                        }
-                        observer.next(details)
-                    }
-                )
-            })
-        } else {
-            const url = this.getUrlApi() + PATH_API
-            let headers = new HttpHeaders()
-            headers = headers
-                .set(
-                    'Authorization',
-                    `Basic ${btoa(
-                        this.configService.getUserInfo().user + ':' + password
-                    )}`
-                )
-                .set('Content-Type', 'text/xml')
 
-            _observable = this.http.put(url, content_put, {
-                headers: headers,
-                responseType: 'text',
-            })
+        const url = this.getUrlApi() + PATH_API
+        const token = this.osmAuthService.getToken()
+        if (!token) {
+            return throwError(() => new Error('You are not connected'))
         }
+        let headers = new HttpHeaders()
+        headers = headers
+            .set('Authorization', `Bearer ${token}`)
+            .set('Content-Type', 'text/xml')
+
+        _observable = this.http.put(url, content_put, {
+            headers: headers,
+            responseType: 'text',
+        })
 
         return _observable.pipe(
             map((res) => {
@@ -242,16 +140,16 @@ export class OsmApiService {
     }
 
     // determine si le changset est valide, sinon on en crée un nouveau
-    getValidChangset(_comments, password): Observable<any> {
+    getValidChangset(_comments): Observable<any> {
         // si il n'existe pas
         if (
             this.configService.getChangeset().id == null ||
             this.configService.getChangeset().id === ''
         ) {
-            return this.createOSMChangeSet(_comments, password)
+            return this.createOSMChangeSet(_comments)
         } else if (_comments !== this.configService.getChangeset().comment) {
             // un commentaire différent => nouveau ChangeSet
-            return this.createOSMChangeSet(_comments, password)
+            return this.createOSMChangeSet(_comments)
         } else if (
             (Date.now() -
                 this.configService.getChangeset().last_changeset_activity) /
@@ -263,7 +161,7 @@ export class OsmApiService {
                 86360
         ) {
             // bientot > 24h
-            return this.createOSMChangeSet(_comments, password)
+            return this.createOSMChangeSet(_comments)
         } else {
             return of(this.configService.getChangeset().id).pipe(
                 map((CS) => CS)
@@ -410,62 +308,28 @@ export class OsmApiService {
         return result
     }
 
-    apiOsmSendOsmDiffFile(diffFile, changesetId, password) {
+    apiOsmSendOsmDiffFile(diffFile, changesetId) {
         const PATH_API = `/api/0.6/changeset/${changesetId}/upload`
         let _observable: Observable<string>
-        if (this.configService.user_info.authType === 'oauth') {
-            _observable = Observable.create((observer) => {
-                this.auth.xhr(
-                    {
-                        method: 'POST',
-                        path: PATH_API,
-                        options: {
-                            header: {
-                                'Content-Type': 'text/plain; charset=utf-8',
-                                accept: 'application/xml',
-                            },
-                        },
-                        content: diffFile,
-                    },
-                    (err, details) => {
-                        if (err) {
-                            console.error(err)
-                            observer.error({
-                                status: err.status || 500,
-                                error: err.responseText,
-                            })
-                        } else {
-                            try {
-                                const serializer = new XMLSerializer()
-                                const xmlStr =
-                                    serializer.serializeToString(details)
-                                observer.next(xmlStr)
-                            } catch (error) {
-                                console.error('error', error)
-                            }
-                        }
-                    }
-                )
-            })
-        } else {
-            const url =
-                this.getUrlApi() + `/api/0.6/changeset/${changesetId}/upload`
-            let headers = new HttpHeaders()
-            headers = headers
-                .set(
-                    'Authorization',
-                    `Basic ${btoa(
-                        this.configService.getUserInfo().user + ':' + password
-                    )}`
-                )
-                .set('accept', 'application/xml')
-                .set('Content-Type', 'text/plain; charset=utf-8')
 
-            _observable = this.http.post(url, diffFile, {
-                headers: headers,
-                responseType: 'text',
-            })
+        const url =
+            this.getUrlApi() + `/api/0.6/changeset/${changesetId}/upload`
+
+        const token = this.osmAuthService.getToken()
+        if (!token) {
+            return throwError(() => new Error('You are not connected'))
         }
+
+        let headers = new HttpHeaders()
+        headers = headers
+            .set('Authorization', `Bearer ${token}`)
+            .set('accept', 'application/xml')
+            .set('Content-Type', 'text/plain; charset=utf-8')
+
+        _observable = this.http.post(url, diffFile, {
+            headers: headers,
+            responseType: 'text',
+        })
 
         return _observable.pipe(
             map((diffTextResult) => {
@@ -602,7 +466,7 @@ export class OsmApiService {
             // jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
             feature.properties.changeType = 'Update'
             feature.properties.originalData = this.dataService.getFeatureById(
-                feature.properties.id,
+                feature.id,
                 'data'
             )
             this.dataService.deleteFeatureFromGeojson(feature)
@@ -640,7 +504,7 @@ export class OsmApiService {
             // jamais été modifié, n'exite donc pas dans this.geojsonChanged
             feature.properties.changeType = 'Delete'
             feature.properties.originalData = this.dataService.getFeatureById(
-                feature.properties.id,
+                feature.id,
                 'data'
             )
             this.dataService.deleteFeatureFromGeojson(feature)
@@ -696,6 +560,99 @@ export class OsmApiService {
                     }
                 }
             })
+        )
+    }
+
+    getOsmObjectById$(objectId: string): Observable<any> {
+        const headers = new HttpHeaders()
+            .set('Content-Type', 'application/json')
+            .set('Accept', 'application/json')
+
+        const url = this.getUrlApi() + `/api/0.6/${objectId}.json`
+        return this.http
+            .get<any>(url, { headers: headers, responseType: 'json' })
+            .pipe(
+                map((d) => {
+                    const object = d.elements[0]
+                    if (object) {
+                        return object
+                    } else {
+                        // return undefined
+                        throwError(() => new Error('No coordinates found'))
+                    }
+                })
+            )
+    }
+
+    fetchNodeCoordinates(nodeId: string): Observable<any> {
+        return this.getOsmObjectById$(`node/${nodeId}`).pipe(
+            map((node) => ({
+                lon: parseFloat(node.lon),
+                lat: parseFloat(node.lat),
+            }))
+        )
+    }
+
+    /*
+       get the first coordinate of an object
+        if it's a node, return the coordinate of the node
+        if it's a way, return the coordinate of the first node
+        if it's a relation, return the coordinate of the first node or way
+
+     */
+    getFirstCoordFromIdObject$(
+        objectId: string
+    ): Observable<{ lon: number; lat: number }> {
+        const type = objectId.split('/')[0]
+        if (!['node', 'way', 'relation'].includes(type)) {
+            return throwError(() => new Error('Type not supported'))
+        }
+
+        return this.getOsmObjectById$(objectId).pipe(
+            switchMap((object) => {
+                if (object.type === 'node') {
+                    return of({ lon: object.lon, lat: object.lat })
+                } else if (object.type === 'way') {
+                    const nodeId = object.nodes[0]
+                    return this.fetchNodeCoordinates(nodeId)
+                } else if (object.type === 'relation') {
+                    const referencedObject = object.members.find(
+                        (member) =>
+                            member.type === 'node' || member.type === 'way'
+                    )
+                    if (referencedObject) {
+                        return this.getOsmObjectById$(
+                            `${referencedObject.type}/${referencedObject.ref}`
+                        ).pipe(
+                            switchMap((referenced) => {
+                                if (referenced.type === 'way') {
+                                    const nodeId = referenced.nodes[0]
+                                    return this.fetchNodeCoordinates(nodeId)
+                                } else if (referenced.type === 'node') {
+                                    return of({
+                                        lon: referenced.lon,
+                                        lat: referenced.lat,
+                                    })
+                                } else {
+                                    return throwError(
+                                        () => new Error('No coordinates found')
+                                    )
+                                }
+                            })
+                        )
+                    } else {
+                        return throwError(
+                            () => new Error('No coordinates found')
+                        )
+                    }
+                } else {
+                    return throwError(() => new Error('No coordinates found'))
+                    // throw new Error('Type d\'objet non pris en charge');
+                }
+            }),
+            catchError(() =>
+                throwError(() => new Error('No coordinates found'))
+            )
         )
     }
 

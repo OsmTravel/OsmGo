@@ -135,7 +135,6 @@ export class DataService {
         let keys: string[] = await this.getKeysCacheIcon()
         let n: number = 0
         for (let key of keys) {
-            console.log(key)
             await this.localStorage.remove(key)
             n++
         }
@@ -146,7 +145,7 @@ export class DataService {
         try {
             await this.localStorage.clear()
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
 
         try {
@@ -218,19 +217,21 @@ export class DataService {
      *
      * @returns A deep copy of the feature if found, null otherwise.
      */
-    getFeatureById(id: number, source: FeatureIdSource): OsmGoFeature | null {
+    getFeatureById(
+        id: string,
+        source: FeatureIdSource
+    ): OsmGoFeature | undefined {
         const features =
             source === 'data_changed'
                 ? this.getGeojsonChanged().features
                 : this.getGeojson().features
 
-        for (let i = 0; i < features.length; i++) {
-            if (features[i].properties.id === id) {
-                return cloneDeep(features[i])
-            }
+        const feature = features.find((f) => f.id === id)
+        if (feature) {
+            return cloneDeep(feature)
+        } else {
+            return undefined
         }
-
-        return null
     }
 
     /**

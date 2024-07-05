@@ -11,13 +11,13 @@
     <div
         *ngIf="!icon || !jsonSprites[icon]"
         style="margin-left: auto; margin-right: auto"
-        [style.width]="jsonSprites['wiki_question'].width + 'px'"
-        [style.height]="jsonSprites['wiki_question'].height + 'px'"
+        [style.width]="jsonSprites['wiki-question'].width + 'px'"
+        [style.height]="jsonSprites['wiki-question'].height + 'px'"
         [style.background-position]="
             '-' +
-            jsonSprites['wiki_question'].x +
+            jsonSprites['wiki-question'].x +
             'px -' +
-            jsonSprites['wiki_question'].y +
+            jsonSprites['wiki-question'].y +
             'px'
         "
         [className]="'spritesX' + devicePixelRatio"

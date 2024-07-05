@@ -2,10 +2,19 @@
     <div class="menuContent" *ngIf="menuIsOpen">
         <ion-header>
             <ion-toolbar color="primary">
-                <ion-title>Osm Go!</ion-title>
-                <ion-buttons slot="end">
+                <ion-title
+                    >Osm Go!
+                    <span class="numVersion">
+                        {{configService.appVersion.appVersionNumber }}</span
+                    ></ion-title
+                >
+
+                <ion-buttons slot="start">
                     <ion-button (click)="closeMenu()">
-                        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+                        <ion-icon
+                            slot="icon-only"
+                            name="chevron-back-outline"
+                        ></ion-icon>
                     </ion-button>
                 </ion-buttons>
             </ion-toolbar>
@@ -23,7 +32,7 @@
 
                 <ion-item
                     *ngIf="!this.configService.user_info.connected"
-                    (click)="pushPage('/login')"
+                    (click)="login()"
                 >
                     <ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' |
                     translate }}
@@ -57,7 +66,7 @@
                     translate }}
                 </ion-item>
 
-                <ion-item color="danger" (click)="deleteDatapresentConfirm()">
+                <ion-item (click)="deleteDatapresentConfirm()">
                     <ion-icon name="trash"></ion-icon> {{'MENU.DELETE_DATA' |
                     translate }}
                 </ion-item>

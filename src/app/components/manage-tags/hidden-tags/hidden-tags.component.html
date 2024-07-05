@@ -2,7 +2,10 @@
     <ion-toolbar color="primary">
         <ion-buttons style="min-width: 32px" slot="primary">
             <ion-button (click)="modalCtrl.dismiss(refreshFilterMapAfterClose)">
-                <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+                <ion-icon
+                    name="chevron-back-outline"
+                    slot="icon-only"
+                ></ion-icon>
             </ion-button>
         </ion-buttons>
         <ion-title>
@@ -72,5 +75,13 @@
         (click)="tagsService.resetHiddenTags()"
     >
         {{ 'MANAGE_TAGS.RESET_HIDDEN_TAGS' | translate }}
+    </ion-button>
+
+    <ion-button
+        ion-button
+        color="danger"
+        (click)="tagsService.removeAllHiddenTags()"
+    >
+        {{ 'MANAGE_TAGS.REMOVE_ALL_HIDDEN_TAGS' | translate }}
     </ion-button>
 </ion-footer>

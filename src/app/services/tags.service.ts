@@ -44,6 +44,7 @@ export class TagsService {
         'highway/unclassified',
         'highway/residential',
         'highway/service',
+        'highway/service/alley',
         'highway/motorway_link',
         'highway/living_street',
         'highway/track',
@@ -255,6 +256,10 @@ export class TagsService {
         this.setHiddenTagsIds(defaultHiddenTagsIds)
     }
 
+    removeAllHiddenTags(): void {
+        this.setHiddenTagsIds([])
+    }
+
     loadLastTagsUsedIds$(): Observable<string[]> {
         return from(this.localStorage.get('lastTagsUsedIds')).pipe(
             map((lastTagsUsedIds: string[]) => {
@@ -389,14 +394,21 @@ export class TagsService {
 
     loadJsonSprites$(): Observable<JsonSprites> {
         const devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-        return this.http
-            .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
-            .pipe(
-                map((jsonSprites: JsonSprites) => {
-                    this.jsonSprites = jsonSprites
-                    return jsonSprites
-                })
-            )
+        const url =
+            devicePixelRatio == 1
+                ? `assets/mapStyle/sprites/sprites.json`
+                : `assets/mapStyle/sprites/sprites@2x.json`
+        return (
+            this.http
+                .get(url)
+                // .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
+                .pipe(
+                    map((jsonSprites: JsonSprites) => {
+                        this.jsonSprites = jsonSprites
+                        return jsonSprites
+                    })
+                )
+        )
     }
 
     loadTags$(): Observable<TagConfig[]> {

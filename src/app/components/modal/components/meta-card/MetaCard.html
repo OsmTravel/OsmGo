@@ -12,9 +12,7 @@
             ('MODAL_SELECTED_ITEM.META_UPDATED_AT_DATE' | translate) :
             ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' | translate) }}
             <span *ngIf="displayCode">
-                <!-- TODO: Local date -->
-                {{ feature.properties.meta.timestamp | date: 'dd/MM/yyyy HH:mm'
-                }}
+                {{ feature.properties.meta.timestamp | date: 'short' }}
             </span>
             <span *ngIf="!displayCode">
                 {{ feature.properties.meta.timestamp | amTimeAgo }}
@@ -27,7 +25,8 @@
         </p>
         <p *ngIf="lastSurvey">
             {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }}
-            <span> {{ lastSurvey | date: 'dd/MM/yyyy' }} </span>
+            <span *ngIf="!displayCode"> {{ lastSurvey | amTimeAgo }} </span>
+            <span *ngIf="displayCode"> {{ lastSurvey | date: 'short'}} </span>
         </p>
         <p *ngIf="usedByWays" class="warning">
             {{ ('MODAL_SELECTED_ITEM.THIS_NODE_IS_USED_BY_A_WAY' | translate)
