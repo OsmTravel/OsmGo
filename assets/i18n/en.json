@@ -105,7 +105,7 @@
         "DELETE_CACHE": "Delete entire app cache",
         "DELETE_CACHE_HINT": "Delete everything in the app cache: data, edits, login, etc.",
         "DISPLAY_OLD_TAGS_ICON": "Show an icon on old objects",
-        "OLD_TAGS_ICON_RANGE_PART_1": "The last modification of the object happens at least",
+        "OLD_TAGS_ICON_RANGE_PART_1": "The last modification of the object happened at least",
         "OLD_TAGS_ICON_RANGE_PART_2": "years ago",
         "OLD_TAGS_ICON_HINT": "If the object is older, display a small icon to the left of the marker on the map.",
         "DISPLAY_FIXME_ICON": "Display \"fixme\" icons",
@@ -164,7 +164,8 @@
         "HIDDEN_TAGS_DESCRIPTION": "This window allows you to make the hidden elements visible.",
         "BOOKMARKED_TAGS": "Manage your favorites",
         "BOOKMARKED_TAGS_DESCRIPTION": "This window allows you to manage your favorite tags.",
-        "RESET_HIDDEN_TAGS": "Reset"
+        "RESET_HIDDEN_TAGS": "Reset",
+        "REMOVE_ALL_HIDDEN_TAGS": "Remove all"
     },
     "DAYS": {
         "MONDAY": "Monday",

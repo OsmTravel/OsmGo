@@ -1,1 +1,6 @@
-{"SHARED": {"YES": "Si", "NO": "No"}}
+{
+    "SHARED": {
+        "YES": "Si",
+        "NO": "No"
+    }
+}

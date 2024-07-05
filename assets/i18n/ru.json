@@ -19,8 +19,7 @@
         "EXIT_CONFIRM_MESSAGE": "Выйти из Osm Go!?",
         "START_SNACK_ITEMS_IN_MEMORY": "объект в памяти",
         "WHAT_ITEM": "Какой?",
-        "LOAD_BBOX": "Загрузить данные?",
-        "CREATING_MISSING_ICONS": ""
+        "LOAD_BBOX": "Загрузить данные?"
     },
     "MENU": {
         "CONNECTION": "Войти в OpenStreetMap",
@@ -88,10 +87,7 @@
         "TAGS_LIST_ALL": "Все тэги",
         "TAGS_LIST_BOOKMARKS": "Закладки",
         "TAGS_LIST_TYPE": "По типу",
-        "DEFAULT_TAGS_LIST_HINT": "",
         "DATA": "Данные",
-        "MARGIN": "",
-        "MARGIN_HINT": "",
         "AERIAL_IMAGERY": "Спутниковое изображение",
         "AERIAL_IMAGERY_HINT": "Какое спутниковое изображение использовать:",
         "LANGUAGE_AND_REGION": "Язык и регион",
@@ -125,7 +121,6 @@
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Добавить свое значение",
         "PRIMARY_TAG_LIST": "Лист",
-        "PRIMARY_TAG_CUSTOM": "",
         "SEARCH_TAG_AT_LEAST_3_LETTERS": "Пожалуйста, введите хотя бы три символа в поле поиска",
         "LOADING": "Загрузка…",
         "META_VERSION": "Версия:",
@@ -144,7 +139,6 @@
         "ADD_SURVEY_DATE_CONFIRM_HEADER": "Объект был проверен?",
         "ADD_SURVEY_DATE_CONFIRM_MESSAGE": "Добавить тэг  'survey:date' с сегодняшней датой.",
         "PRIMARY_TAG_BOOKMARKS": "Закладки",
-        "PRIMARY_TAG_FULL": "",
         "SELECT_CATEGORY": "Выбрать категорию",
         "THIS_NODE_IS_USED_BY_A_WAY": "Точка используется в {x} линии(ях)",
         "UNDEFINED_VALUE": "Неизвестно",
@@ -152,8 +146,7 @@
         "BOOKMARKS": "Закладки"
     },
     "ALERT": {
-        "TAG_IS_DEPRECATED": "Этот тэг устарел",
-        "FIX": ""
+        "TAG_IS_DEPRECATED": "Этот тэг устарел"
     },
     "MANAGE_TAGS": {
         "TAG_MANAGEMENT_TITLE": "Управление тэгами",
