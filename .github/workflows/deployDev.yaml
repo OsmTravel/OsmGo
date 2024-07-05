@@ -13,7 +13,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -32,13 +32,28 @@ jobs:
       - name: Wait for build to finish
         run: sleep 10
 
-      - name: Deploy to S3
-        uses: jakejarvis/s3-sync-action@master
+      - name: List files to be deployed
+        run: ls ./www
+
+      - name: Check for index.html
+        run: |
+          if [ ! -f www/index.html ]; then
+            echo "index.html is missing!"
+            exit 1
+          fi
+
+      - name: Install rclone
+        run: curl https://rclone.org/install.sh | sudo bash
+
+      - name: Configure rclone environment
         env:
-          AWS_S3_ENDPOINT: ${{ secrets.STORJ_ENDPOINT }}
-          AWS_S3_BUCKET: osmgo-dev
-          AWS_ACCESS_KEY_ID: ${{ secrets.STORJ_ACCESS_KEY }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.STORJ_SECRET_KEY }}
-          SOURCE_DIR: './www'
-        with:
-          args: --acl public-read --follow-symlinks --delete --exact-timestamps
+          RCLONE_CONFIG_MYREMOTE_TYPE: s3
+          RCLONE_CONFIG_MYREMOTE_PROVIDER: Other
+          RCLONE_CONFIG_MYREMOTE_ACCESS_KEY_ID: ${{ secrets.STORJ_ACCESS_KEY }}
+          RCLONE_CONFIG_MYREMOTE_SECRET_ACCESS_KEY: ${{ secrets.STORJ_SECRET_KEY }}
+          RCLONE_CONFIG_MYREMOTE_ENDPOINT: ${{ secrets.STORJ_ENDPOINT }}
+        run: |
+          rclone config create storj s3 env_auth false access_key_id $RCLONE_CONFIG_MYREMOTE_ACCESS_KEY_ID secret_access_key $RCLONE_CONFIG_MYREMOTE_SECRET_ACCESS_KEY endpoint $RCLONE_CONFIG_MYREMOTE_ENDPOINT
+
+      - name: Deploy to S3 with rclone
+        run: rclone sync -v www storj:/osmgo-dev
