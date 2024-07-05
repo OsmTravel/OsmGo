@@ -1,9 +1,11 @@
-name: Deployment to dev.osmgo.com
+name: Deployment to osmgo.com || dev.osmgo.com
 
 on:
   push:
     branches:
       - develop
+      - main
+      - master
 
 jobs:
   deployment:
@@ -55,5 +57,8 @@ jobs:
         run: |
           rclone config create storj s3 env_auth false access_key_id $RCLONE_CONFIG_MYREMOTE_ACCESS_KEY_ID secret_access_key $RCLONE_CONFIG_MYREMOTE_SECRET_ACCESS_KEY endpoint $RCLONE_CONFIG_MYREMOTE_ENDPOINT
 
+      - name: Set bucket name
+        run: echo "BUCKET_NAME=$(if [ '${{ github.ref }}' = 'refs/heads/main' ] || [ '${{ github.ref }}' = 'refs/heads/master' ]; then echo 'osmgo-prod'; else echo 'osmgo-dev'; fi)" >> $GITHUB_ENV
+
       - name: Deploy to S3 with rclone
-        run: rclone sync -v www storj:/osmgo-dev
+        run: rclone sync www storj:/${{ env.BUCKET_NAME }}
