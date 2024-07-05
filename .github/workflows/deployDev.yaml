@@ -19,11 +19,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint code style
+        run: npm run prettier:check
+
       - name: Run tests
         run: npm run test:ci
 
       - name: Create build
         run: npm run build
+
+      # add delay to wait for the build to finish
+      - name: Wait for build to finish
+        run: sleep 10
 
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
@@ -34,4 +41,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.STORJ_SECRET_KEY }}
           SOURCE_DIR: './www'
         with:
-          args: --acl public-read --follow-symlinks --delete
+          args: --acl public-read --follow-symlinks --delete --exact-timestamps
