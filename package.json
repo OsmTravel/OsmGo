@@ -10,7 +10,7 @@
     "config": "ts-node --project ./scripts/tsconfig.json  ./src/environments/set-env.ts",
     "start": "npm run config PWA &&  ng serve --host 0.0.0.0",
     "build": "npm run config PWA &&  ng build --configuration production",
-    "buildAndroid": "node ./incrementVersion.js && npm run config Android &&  ionic build --prod --release && npx cap sync && npx cap open android",
+    "buildAndroid": "npm run config Android && node ./incrementVersion.js &&   ionic build --prod --release && npx cap sync && npx cap open android",
     "buildAndroidDebug": "npm run config Android && ng build --configuration development && npx cap sync",
     "test": "npm run config && ng test --ts-config src/tsconfig.spec.json --browsers Chrome",
     "test:coverage": "npm run config && npm run test -- --code-coverage",
