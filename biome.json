@@ -1,0 +1,58 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.6/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**/*.{ts,js,mjs,cjs,json,jsonc,css}",
+      "!!**/node_modules",
+      "!!**/dist",
+      "!!www",
+      "!!coverage",
+      "!!.angular",
+      "!!playwright-report",
+      "!!test-results",
+      "!!android",
+      "!!src/assets/**/*.json",
+      "!!src/assets/osmToOsmgo.min.js",
+      "!!scripts/osmToOsmgo/index.min.js",
+      "!!scripts/osmToOsmgo/package-lock.json",
+      "!!package-lock.json"
+    ]
+  },
+  "formatter": {
+    "enabled": false
+  },
+  "javascript": {
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "correctness": {
+        "noInnerDeclarations": "off",
+        "noSelfAssign": "off",
+        "noVoidTypeReturn": "off"
+      },
+      "suspicious": {
+        "noDoubleEquals": "off",
+        "noDuplicateTestHooks": "off",
+        "noExportsInTest": "off",
+        "noImplicitAnyLet": "off",
+        "noShadowRestrictedNames": "off",
+        "noUnsafeNegation": "off",
+        "useIterableCallbackReturn": "off"
+      }
+    }
+  },
+  "assist": {
+    "enabled": false
+  }
+}
