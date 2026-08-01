@@ -67,7 +67,7 @@
     "ionicons": "8.0.13",
     "lodash": "4.18.1",
     "maplibre-gl": "6.1.0",
-    "martinez-polygon-clipping": "^0.7.3",
+    "martinez-polygon-clipping": "0.8.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "^0.16.2"
