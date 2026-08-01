@@ -1,11 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    EventEmitter,
-    Input,
-    Output,
-} from '@angular/core'
-import * as moment from 'moment'
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
 
 @Component({
     selector: 'meta-card',
@@ -21,10 +14,8 @@ export class MetaCard {
     @Input() languageUi
     meta
     usedByWays
-    constructor() {}
 
     ngOnInit(): void {
         this.usedByWays = this.feature.properties.usedByWays || null
-        moment.locale(this.languageUi) // TODO Once...
     }
 }

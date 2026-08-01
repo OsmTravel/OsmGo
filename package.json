@@ -71,8 +71,6 @@
     "lodash": "^4.17.21",
     "maplibre-gl": "6.1.0",
     "martinez-polygon-clipping": "^0.7.3",
-    "moment": "^2.29.4",
-    "ngx-moment": "^6.0.2",
     "rxjs": "~7.8.0",
     "save-svg-as-png": "^1.4.17",
     "tslib": "^2.3.0",

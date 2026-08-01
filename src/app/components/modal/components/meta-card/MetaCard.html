@@ -16,7 +16,10 @@
                 {{ feature.properties.meta.timestamp | date: 'short' }}
             </span>
             } @if (!displayCode) {
-            <span> {{ feature.properties.meta.timestamp | amTimeAgo }} </span>
+            <span>
+                {{ feature.properties.meta.timestamp | relativeTime: languageUi
+                }}
+            </span>
             }
         </p>
         }
@@ -29,7 +32,7 @@
         <p>
             {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }} @if
             (!displayCode) {
-            <span> {{ lastSurvey | amTimeAgo }} </span>
+            <span> {{ lastSurvey | relativeTime: languageUi }} </span>
             } @if (displayCode) {
             <span> {{ lastSurvey | date: 'short'}} </span>
             }
