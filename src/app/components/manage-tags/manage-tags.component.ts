@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
-import { ModalController, NavController } from '@ionic/angular'
+import { IonicModule, ModalController, NavController } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
@@ -16,7 +17,7 @@ import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
     templateUrl: './manage-tags.component.html',
     styleUrls: ['./manage-tags.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule, TranslateModule],
 })
 export class ManageTagsComponent implements OnInit {
     tags: TagConfig[]

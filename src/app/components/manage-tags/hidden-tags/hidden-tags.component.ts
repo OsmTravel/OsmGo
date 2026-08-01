@@ -1,6 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
-import { ModalController } from '@ionic/angular'
+import { FormsModule } from '@angular/forms'
+import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
+import { IonicModule, ModalController } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
+import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
+import { FiltersTagsByIdsPipe } from '@pipes/filters-tags-by-ids.pipe'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 
@@ -9,7 +14,14 @@ import { TagsService } from '@services/tags.service'
     templateUrl: './hidden-tags.component.html',
     styleUrls: ['./hidden-tags.component.scss', '../sharedStyle.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        FilterByTagsContentPipe,
+        FiltersTagsByIdsPipe,
+        FormsModule,
+        IonicModule,
+        TagListElementComponent,
+        TranslateModule,
+    ],
 })
 export class HiddenTagsComponent implements OnInit {
     constructor(
