@@ -27,7 +27,7 @@ import { ConfigService } from '@services/config.service'
 import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 
 import { timer, forkJoin, take, of, Observable, pipe } from 'rxjs'
-import { catchError, filter, map } from 'rxjs/operators'
+import { catchError, filter, map, switchMap } from 'rxjs/operators'
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 
@@ -169,12 +169,14 @@ export class MainPage implements AfterViewInit {
 
     ngOnInit(): void {
         this.route.queryParams.subscribe((params) => {
-            if (params['code']) {
-                this.handleAuthCallback(params['code'])
-                //remove 'code' from url to prevent handling it again
+            if (params['code'] || params['state'] || params['error']) {
+                this.handleAuthCallback(window.location.href)
                 this.router.navigate([], {
                     queryParams: {
                         code: null,
+                        state: null,
+                        error: null,
+                        error_description: null,
                     },
                     queryParamsHandling: 'merge',
                 })
@@ -266,35 +268,15 @@ export class MainPage implements AfterViewInit {
             })
     }
 
-    private handleAuthCallback(code: string) {
-        console.log('handleAuthCallback', code)
-
-        this.osmAuthService.exchangeCodeForToken(code).subscribe(
-            (response) => {
-                console.log('Authentification réussie', response)
-                const token = response.access_token
-
-                this.osmApi.getUserDetail$().subscribe({
-                    next: (user_info: any) => {
-                        console.log(user_info)
-                        this.configService.setUserInfo(user_info)
-                        this.osmAuthService.setToken(token)
-                    },
-                    error: (error) => {
-                        console.error(
-                            "Erreur lors de la récupération des détails de l'utilisateur:",
-                            error
-                        )
-                    },
-                })
-
-                // Gérer l'authentification réussie ici
-            },
-            (error) => {
-                console.error("Erreur d'authentification", error)
-                // Gérer l'erreur d'authentification ici
-            }
-        )
+    private handleAuthCallback(url: string): void {
+        this.osmAuthService
+            .handleCallback(url)
+            .pipe(switchMap(() => this.osmApi.getUserDetail$()))
+            .subscribe({
+                error: (error) => {
+                    console.error('Authentication failed.', error)
+                },
+            })
     }
 
     openMenu(): void {

@@ -1,11 +1,16 @@
-import { Injectable } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { BehaviorSubject, Observable, from, tap } from 'rxjs'
-import { Storage } from '@ionic/storage'
-import { ConfigService } from './config.service'
-import { environment } from '@environments/environment.prod'
+import { Injectable } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
+import { Storage } from '@ionic/storage'
+import { BehaviorSubject, Observable, defer, from } from 'rxjs'
+import { finalize, switchMap, tap } from 'rxjs/operators'
+
+import { ConfigService } from './config.service'
+
+const OAUTH_SCOPES = 'read_prefs write_api'
+const OAUTH_STATE_KEY = 'osmOAuthState'
+const OAUTH_VERIFIER_KEY = 'osmOAuthCodeVerifier'
 
 @Injectable({
     providedIn: 'root',
@@ -15,12 +20,10 @@ export class OsmAuthService {
         prod: {
             url: 'https://www.openstreetmap.org',
             clientId: '-1NG8U9VYF2bMfdgWNHVRbO9LE1gWx_ABmst9egWdBQ',
-            secretClient: 'Kxte_brfB0XlrnjFjE8gqR6UMJkdZb_8hzMNQRBicG8',
         },
         dev: {
             url: 'https://master.apis.dev.openstreetmap.org',
             clientId: 'aqB_PKIY18QNLJODai_i4dQzoBlTAEwSxY_258JML0Y',
-            secretClient: 'j8HJ2UNWZkg1Pqazitbvys5TiHgkq7DxtyLc1NeRXco',
         },
     }
 
@@ -33,16 +36,16 @@ export class OsmAuthService {
         public localStorage: Storage
     ) {}
 
-    loadToken() {
+    loadToken(): void {
         this.localStorage
             .get('osmToken')
-            .then((val) => {
-                if (val) {
-                    this.tokenSubject.next(val)
+            .then((value) => {
+                if (value) {
+                    this.tokenSubject.next(value)
                 }
             })
-            .catch((err) => {
-                console.error(err)
+            .catch((error) => {
+                console.error(error)
             })
     }
 
@@ -50,7 +53,7 @@ export class OsmAuthService {
         if (Capacitor.isNativePlatform()) {
             return 'osmgo://auth'
         }
-        return window.location.origin + '/'
+        return document.baseURI
     }
 
     get clientId(): string {
@@ -60,42 +63,69 @@ export class OsmAuthService {
     }
 
     get oauthUrl(): string {
-        return this.configService.config.isDevServer
-            ? 'https://api06.dev.openstreetmap.org/oauth2'
-            : 'https://www.openstreetmap.org/oauth2'
+        const server = this.configService.config.isDevServer
+            ? this.oauthParam.dev.url
+            : this.oauthParam.prod.url
+        return `${server}/oauth2`
     }
 
-    get clientSecret(): string {
-        return this.configService.config.isDevServer
-            ? this.oauthParam.dev.secretClient
-            : this.oauthParam.prod.secretClient
-    }
+    async getLoginUrl(): Promise<string> {
+        const verifier = this.createRandomValue()
+        const state = this.createRandomValue()
+        const challenge = await this.createCodeChallenge(verifier)
 
-    getLoginUrl(): string {
-        const scope = 'read_prefs write_diary write_api write_notes'
-        return `${this.oauthUrl}/authorize?client_id=${this.clientId}&redirect_uri=${this.redirectUri}&response_type=code&scope=${scope}`
+        sessionStorage.setItem(OAUTH_VERIFIER_KEY, verifier)
+        sessionStorage.setItem(OAUTH_STATE_KEY, state)
+
+        const parameters = new URLSearchParams()
+        parameters.set('client_id', this.clientId)
+        parameters.set('redirect_uri', this.redirectUri)
+        parameters.set('response_type', 'code')
+        parameters.set('scope', OAUTH_SCOPES)
+        parameters.set('state', state)
+        parameters.set('code_challenge', challenge)
+        parameters.set('code_challenge_method', 'S256')
+
+        return `${this.oauthUrl}/authorize?${parameters.toString()}`
     }
 
     login(): Observable<void> {
-        return from(Browser.open({ url: this.getLoginUrl() }))
+        return from(this.getLoginUrl()).pipe(
+            switchMap((url) => from(Browser.open({ url })))
+        )
     }
 
     handleCallback(url: string): Observable<any> {
-        const urlParams = new URLSearchParams(url.split('?')[1])
-        const code = urlParams.get('code')
-        if (code) {
-            return this.exchangeCodeForToken(code)
-        }
-        throw new Error('No code found in callback URL')
+        return defer(() => {
+            const callbackUrl = new URL(url, window.location.origin)
+            const code = callbackUrl.searchParams.get('code')
+            const state = callbackUrl.searchParams.get('state')
+            const expectedState = sessionStorage.getItem(OAUTH_STATE_KEY)
+            const verifier = sessionStorage.getItem(OAUTH_VERIFIER_KEY)
+
+            this.clearPendingAuthorization()
+
+            if (!code) {
+                throw new Error('No authorization code found in callback URL.')
+            }
+            if (!state || !expectedState || state !== expectedState) {
+                throw new Error('Invalid OAuth state.')
+            }
+            if (!verifier) {
+                throw new Error('No PKCE verifier found for this callback.')
+            }
+
+            return this.exchangeCodeForToken(code, verifier)
+        }).pipe(finalize(() => this.closeNativeBrowser()))
     }
 
-    exchangeCodeForToken(code: string): Observable<any> {
+    exchangeCodeForToken(code: string, verifier: string): Observable<any> {
         const body = new URLSearchParams()
         body.set('grant_type', 'authorization_code')
         body.set('code', code)
         body.set('redirect_uri', this.redirectUri)
         body.set('client_id', this.clientId)
-        body.set('client_secret', this.clientSecret)
+        body.set('code_verifier', verifier)
 
         return this.http
             .post(`${this.oauthUrl}/token`, body.toString(), {
@@ -113,23 +143,60 @@ export class OsmAuthService {
             )
     }
 
-    setToken(token: string) {
+    setToken(token: string): void {
         this.localStorage.set('osmToken', token)
         this.tokenSubject.next(token)
+    }
+
+    clearToken(): void {
+        this.localStorage.remove('osmToken')
+        this.tokenSubject.next(null)
+        this.configService.resetUserInfo()
     }
 
     getToken(): string | null {
         return this.tokenSubject.value
     }
 
-    logout() {
-        this.localStorage.remove('osmToken')
-        this.tokenSubject.next(null)
+    logout(): void {
+        this.clearToken()
         this.localStorage.remove('changeset')
-        this.configService.resetUserInfo()
     }
 
     isAuthenticated(): boolean {
         return !!this.getToken()
+    }
+
+    private createRandomValue(): string {
+        const bytes = crypto.getRandomValues(new Uint8Array(32))
+        return this.toBase64Url(bytes)
+    }
+
+    private async createCodeChallenge(verifier: string): Promise<string> {
+        const value = new TextEncoder().encode(verifier)
+        const digest = await crypto.subtle.digest('SHA-256', value)
+        return this.toBase64Url(new Uint8Array(digest))
+    }
+
+    private toBase64Url(bytes: Uint8Array): string {
+        let value = ''
+        for (const byte of bytes) {
+            value += String.fromCharCode(byte)
+        }
+        return btoa(value)
+            .replace(/\+/g, '-')
+            .replace(/\//g, '_')
+            .replace(/=+$/, '')
+    }
+
+    private clearPendingAuthorization(): void {
+        sessionStorage.removeItem(OAUTH_STATE_KEY)
+        sessionStorage.removeItem(OAUTH_VERIFIER_KEY)
+    }
+
+    private closeNativeBrowser(): void {
+        if (Capacitor.isNativePlatform()) {
+            void Browser.close().catch(() => undefined)
+        }
     }
 }

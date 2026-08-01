@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { fakeAsync, flushMicrotasks, tick } from '@angular/core/testing'
-import { NEVER, Observable, of } from 'rxjs'
+import { NEVER, Observable, of, throwError } from 'rxjs'
 
 import { OsmApiService } from './osmApi.service'
 
@@ -117,6 +117,44 @@ describe('OsmApiService', () => {
                 service.apiOsmSendOsmDiffFile('<osmChange/>', '123')
             )
         }))
+    })
+
+    describe('expired authorization', () => {
+        for (const status of [401, 403]) {
+            it(`clears the local token after status ${status}`, () => {
+                const http = jasmine.createSpyObj<HttpClient>('HttpClient', [
+                    'get',
+                ])
+                http.get.and.returnValue(throwError(() => ({ status })))
+                const osmAuthService = {
+                    getToken: () => 'expired-token',
+                    clearToken: jasmine.createSpy('clearToken'),
+                    oauthParam: {
+                        dev: {
+                            url: 'https://api06.dev.openstreetmap.org',
+                        },
+                        prod: { url: 'https://api.openstreetmap.org' },
+                    },
+                }
+                const configService = { getIsDevServer: () => false }
+                const service = new OsmApiService(
+                    {} as any,
+                    http,
+                    {} as any,
+                    {} as any,
+                    {} as any,
+                    {} as any,
+                    configService as any,
+                    {} as any,
+                    osmAuthService as any
+                )
+                spyOn(console, 'error')
+
+                service.getUserDetail$().subscribe({ error: () => {} })
+
+                expect(osmAuthService.clearToken).toHaveBeenCalledTimes(1)
+            })
+        }
     })
 
     describe('OSM data worker', () => {

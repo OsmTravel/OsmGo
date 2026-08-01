@@ -13,8 +13,6 @@ import { Capacitor } from '@capacitor/core'
 
 import { SplashScreen } from '@capacitor/splash-screen'
 import { Router } from '@angular/router'
-import { OsmAuthService } from './services/osm-auth.service'
-import { URLOpenListenerEvent } from '@capacitor/app'
 
 @Component({
     selector: 'app-root',
@@ -42,7 +40,6 @@ export class AppComponent {
         this.platform.ready().then(() => {
             if (Capacitor.isPluginAvailable('App')) {
                 App.addListener('appUrlOpen', (data: any) => {
-                    console.log('appUrlOpen')
                     if (data.url.includes('osmgo://auth')) {
                         const urlParts = data.url.split('?')
                         if (urlParts.length > 1) {

@@ -85,7 +85,7 @@ export class OsmApiService {
             }),
             catchError((error: any) => {
                 console.error(error)
-                return throwError(error)
+                return this.handleAuthenticatedRequestError(error)
             })
         )
     }
@@ -140,7 +140,8 @@ export class OsmApiService {
                     comment
                 )
                 return res
-            })
+            }),
+            catchError((error) => this.handleAuthenticatedRequestError(error))
         )
     }
 
@@ -340,8 +341,16 @@ export class OsmApiService {
             timeout(OSM_REQUEST_TIMEOUT_MS),
             map((diffTextResult) => {
                 return this.convertDiffFileResult(diffTextResult)
-            })
+            }),
+            catchError((error) => this.handleAuthenticatedRequestError(error))
         )
+    }
+
+    private handleAuthenticatedRequestError(error: any): Observable<never> {
+        if (error?.status === 401 || error?.status === 403) {
+            this.osmAuthService.clearToken()
+        }
+        return throwError(() => error)
     }
 
     // GEOJSON => XML osm

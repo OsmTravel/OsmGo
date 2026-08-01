@@ -88,8 +88,10 @@ export class MenuPage {
         this.osmAuthService.logout()
     }
 
-    login() {
-        this.osmAuthService.login()
+    login(): void {
+        this.osmAuthService.login().subscribe({
+            error: (error) => console.error('Unable to start login.', error),
+        })
     }
 
     swipe(e) {
