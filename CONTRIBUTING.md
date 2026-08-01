@@ -28,7 +28,7 @@ TagInfo get those descriptions from OSM wiki. Make sure to add the "| descriptio
 
 Osm Go! is a _PWA_ application using:
 
--   Angular 16
+-   Angular 17
 -   Ionic 8
 -   Capacitor 6
 -   MapLibre GL
@@ -37,7 +37,7 @@ Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
 
 ### Requirements
 
-Use Node.js 18.20.8 and npm 10.8.2. The Node.js version is pinned in `.nvmrc` for the migration from Angular 16.
+Use Node.js 20.20.2 and npm 10.8.2. The Node.js version is pinned in `.nvmrc` for the Angular migration.
 
 💡 Be sure to checkout the branch develop to get the latest updates.
 
