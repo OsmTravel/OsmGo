@@ -1,38 +1,29 @@
-## Updating OsmGo assets
+# Updating Osm Go! assets
 
-OsmGo assets will do imports from:
+Install the pinned npm dependencies before running an importer:
 
-- [iD]
-- [id-tagging-schema].
+```sh
+npm ci
+```
 
-Name Suggestion Index data comes from the exact version installed by npm.
+The preset generator reads the exact iD Tagging Schema and Name Suggestion Index packages from `node_modules`. It does not require adjacent source checkouts.
 
-### 0. Quick setup
+```sh
+npm run presets:generate
+npm run test:scripts
+```
 
-To setup all required repos in a single step, use the [`setup-third-party.sh`](./setup-third-party.sh) shell script.
+The complete asset update also regenerates sprites and downloads the current basemap index:
 
-Alternatively you can follow steps I and II to clone the repositories individually.
-**Please note that the default name of the respoitories (= the folder name into which the code is cloned) should not be changed as they are hard-coded in the scripts.**
+```sh
+npm run update
+```
 
-### I. Clone iD
+The basemap and Taginfo importers use external HTTP sources. Run them only with network access and review their generated diff before committing it.
 
-The repo of iD must be at same root as OsmGo repo
+```sh
+npm run importBaseMaps
+npm run importDescriptions
+```
 
-`git clone https://github.com/openstreetmap/iD.git`
-
-### II. Clone id-tagging-schema
-
-The repo of id-tagging-schema must be at same root as OsmGo repo
-
-`git clone https://github.com/openstreetmap/id-tagging-schema.git`
-
-### III. Import translation from iD
-
-`tsx --tsconfig ./tsconfig.json addTranslationFromiD.ts`
-
-### IV. Import description from taginfo
-
-`tsx --tsconfig ./tsconfig.json importDescriptionFromTaginfo.ts --overwrite`
-
-[id]: https://github.com/openstreetmap/iD
-[id-tagging-schema]: https://github.com/openstreetmap/id-tagging-schema
+Commit all changed files under `src/assets/tagsAndPresets` and `src/assets/mapStyle/sprites`. CI verifies that preset generation is deterministic and that its output is committed.

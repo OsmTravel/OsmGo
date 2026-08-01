@@ -1,169 +1,214 @@
-# Translate
+# Contributing to Osm Go!
 
-You can translate Osm Go! at POEditor:
+Thank you for helping improve Osm Go!. Useful project links:
 
-- Add missing translations
-- Improve existing ones
-- Add comments on translations and so so...
+- [repository](https://github.com/DoFabien/OsmGo);
+- [issues](https://github.com/DoFabien/OsmGo/issues);
+- [releases](https://github.com/DoFabien/OsmGo/releases);
+- [user documentation](https://github.com/DoFabien/OsmGo/wiki).
 
-⏩ Follow [**this link**](https://poeditor.com/join/project/f2ASHUwwGp) to improve the translations.
+## Translations
 
-[![POEditor](https://poeditor.com/public/images/logo_small.png)](https://poeditor.com/join/project/f2ASHUwwGp)
+Osm Go! translations are managed on [POEditor](https://poeditor.com/join/project/f2ASHUwwGp). You can add missing translations, improve existing ones, and leave context for other translators.
 
-After joining, the [main site of the POEditor](https://poeditor.com/projects/) should list Osm Go! for logged in users.
+Some preset translations come from [iD Tagging Schema](https://github.com/openstreetmap/id-tagging-schema). Object descriptions come from the OpenStreetMap wiki through [Taginfo](https://taginfo.openstreetmap.org). Improve those descriptions on the related wiki item when the source text is incorrect.
 
-### iD presets
+## Supported development stack
 
-Some translations are from iD presets. For iD presets translation see [their documentation](https://github.com/openstreetmap/iD/blob/develop/CONTRIBUTING.md#translating).
+The maintained stack is:
 
-### TagInfo descriptions
+- Node.js 24.18.0 and npm 11.16.0;
+- Angular 22.1;
+- Ionic 8.8;
+- Capacitor 8.5;
+- MapLibre GL JS 6.1;
+- JDK 21 and Android SDK 36 for Android builds.
 
-Some translations are extracted from TagInfo like the element "descriptions". See the column "description" in TagInfo ([example for a bench](https://taginfo.openstreetmap.org/keys/bench#wiki)).
+Node is pinned in `.nvmrc`. Use npm and the committed `package-lock.json`; do not replace them with another package manager.
 
-TagInfo get those descriptions from OSM wiki. Make sure to add the "| description = " in the infobox of the related article in the wiki ([example for bench](https://wiki.openstreetmap.org/wiki/Key%3Abench)). Note you can also press the "pencil" icon in the description field of the infobox. It will redirect you to the corresponding wiki Item ([example for bench](https://wiki.openstreetmap.org/wiki/Item:Q88)).
+## Install and run
 
-# Development
-
-## Compile/run
-
-Osm Go! is a _PWA_ application using:
-
-- Angular 22
-- Ionic 8
-- Capacitor 6
-- MapLibre GL
-
-Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
-
-### Requirements
-
-Use Node.js 24.18.0 and npm 11.16.0. The Node.js version is pinned in `.nvmrc`.
-
-💡 Be sure to checkout the branch develop to get the latest updates.
-
-### Get the code
+Start from the development branch:
 
 ```sh
 git clone https://github.com/DoFabien/OsmGo.git
 cd OsmGo
-git checkout develop
-```
-
-### Install
-
-```sh
+git switch develop
 nvm install
 nvm use
 npm ci
-```
-
-Install Chromium once for the integration tests:
-
-```sh
 npm run test:integration:install
 ```
 
-### Run
-
-Test it in a browser
+Run the PWA locally:
 
 ```sh
 npm run start
 ```
 
-Run the automated checks:
-
-```sh
-npm run test:ci
-npm run test:converter
-npm run test:integration
-```
-
-### Build for web (=> ./www)
+The production web build is written to `www/`:
 
 ```sh
 npm run build
 ```
 
-### Hosting
+## Checks and tests
 
-- Pushes to `develop` deploy the development PWA to this repository's GitHub Pages site.
-- Pushes to `main` deploy the production PWA to Cloudflare Pages.
+Biome checks TypeScript, JavaScript, JSON, and CSS. Prettier checks the remaining HTML, SCSS, Markdown, and YAML files. Angular uses Vitest for unit tests, while Playwright covers the critical PWA flows with local fixtures.
 
-Enable GitHub Actions as the GitHub Pages source in the repository settings. For production, create a Cloudflare Pages Direct Upload project and configure these repository values:
-
-- variable `CLOUDFLARE_PAGES_PROJECT` with the Cloudflare Pages project name;
-- secret `CLOUDFLARE_ACCOUNT_ID` with the Cloudflare account ID;
-- secret `CLOUDFLARE_API_TOKEN` with a token limited to Cloudflare Pages edit access.
-
-### Build for Android
-
-Requirements:
-
-- JDK 17;
-- Android SDK 34.
-
-`package.json` provides the Android `versionName`. Update `VERSION_CODE` in `android/version.properties` during release preparation.
-
-Build environments without Git metadata must provide `OSMGO_BUILD_BRANCH`, `OSMGO_BUILD_SHA`, and `OSMGO_BUILD_DATE`.
+Run the same main checks as CI:
 
 ```sh
-npm run android:apk
-npm run android:aab
-npm run android:release
+npm run check
+npm run prettier:check
+npm run test:ci
+npm run test:scripts
+npm run test:converter
+npm run test:sprites
+npm run build
+npm run test:integration
+npm audit --omit=dev
 ```
 
-The commands use the Gradle wrapper and do not open Android Studio. To open the synchronized project manually, run:
+Tests must not write to the production OpenStreetMap API. HTTP, OAuth, map, and worker behavior in Playwright must use the local fixtures.
+
+### Generated tags, presets, and sprites
+
+The exact Name Suggestion Index and iD Tagging Schema versions are npm dependencies. No adjacent clone is needed for these imports.
 
 ```sh
-npm run android:studio
+npm run presets:generate
+npm run update
 ```
 
-### Debug on Android
+`presets:generate` updates tags, fields, translations, and brands. `update` also refreshes sprites and basemaps. Commit every generated file changed by these commands. CI runs the generator twice, checks determinism, and rejects uncommitted generated output.
 
-Requirements:
+## Git workflow
 
-- [Android Studio](https://developer.android.com) with JDK and gradle
+Use small branches and keep each commit independently testable:
+
+```text
+fix/<topic> or chore/<topic> from develop
+    -> pull request to develop
+
+release/<version> from develop
+    -> version, versionCode, changelog, and release notes only
+    -> merge --no-ff to main
+    -> tag <version>
+    -> merge --no-ff main back to develop
+
+hotfix/<version> from main
+    -> fix and regression test
+    -> merge to main and develop
+```
+
+Do not commit directly to `main`. Avoid direct commits to `develop`. Keep dependency updates, functional fixes, and mechanical formatting in separate commits.
+
+## OpenStreetMap development server
+
+Use the OSM development server for manual write tests. Never use automated write tests against OSM production.
+
+Before switching servers, upload or discard every pending edit. Switching removes downloaded data, pending edits, and the current user session.
+
+1. Open **Settings**.
+2. Under **Developer mode**, enable **Use the OSM development server**.
+3. Let the application reload and sign in with an account on the OSM development server.
+4. Confirm that the send screen displays `DEV SERVER` before uploading.
+5. Disable the setting to return to production; this clears the local working data again.
+
+The PWA and Android application both use OAuth Authorization Code with PKCE. If a new callback URL is introduced, register it in the matching OSM OAuth application before testing.
+
+## Web deployment
+
+There is one host per environment:
+
+- pushes to `develop` deploy the development PWA to this repository's GitHub Pages site, under `/OsmGo/`;
+- pushes to `main` deploy production only to Cloudflare Pages and verify `https://osmgo.com` after deployment.
+
+Do not add a second production deployment workflow.
+
+GitHub Pages must use GitHub Actions as its source. The protected `production` environment uses:
+
+- variable `CLOUDFLARE_PAGES_PROJECT`;
+- secret `CLOUDFLARE_ACCOUNT_ID`;
+- secret `CLOUDFLARE_API_TOKEN`, limited to Cloudflare Pages edit access.
+
+Each deployment publishes `build-info.json` with the application version and commit. Use it to verify a deployment and to identify the commit to revert.
+
+## Android development
+
+For local Android development, install JDK 21, Android SDK 36, and Android Studio. Synchronize a debug build and open it with:
 
 ```sh
 npm run buildAndroidDebug
+npm run android:studio
 ```
 
-Then run `npm run android:studio` to compile the app and run it on your device.
+Attach Chrome or Edge to the WebView through `chrome://inspect` or `edge://inspect` when debugging on a device.
 
-After you can use Google Chrome or Edge to attach a debugger to the web app on the device.
+### Signed reference build in Docker
 
-- For Edge, visit [edge://inspect](edge://inspect)
-- For Chrome, visit [chrome://inspect](chrome://inspect)
+The Docker build is the reference release build. It pins Node, JDK, Android command-line tools, Build Tools, Bundletool, and uses the Gradle wrapper. Docker is the only host requirement for this path.
 
-Find your device in those pages. Then click on the inspect button. You can set breakpoint in JavaScript files and inspect HTML code.
-
-## Known issues when developing
-
-### Running WebApp on Linux
-
-You may have following error:
-
-`Watchpack Error (watcher): Error: ENOSPC: System limit for number of file watchers reached`
-
-If so, we are gonna increase the max number of watches from 16384 (default) to 524288:
+Keep the release keystore outside the repository. Put only the environment variables in the ignored `.env.android-signing` file and restrict its permissions:
 
 ```sh
-echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+chmod 600 .env.android-signing
+set -a
+. ./.env.android-signing
+set +a
+./scripts/build-android-docker.sh
 ```
 
-### Building Android App on Linux
+The file must define:
 
-Set the following envvar to your Android Studio installation:
+```text
+ANDROID_KEYSTORE_PATH=/absolute/path/outside/OsmGo/release.keystore
+ANDROID_KEYSTORE_PASSWORD=...
+ANDROID_KEY_ALIAS=...
+ANDROID_KEY_PASSWORD=...
+```
 
-`export CAPACITOR_ANDROID_STUDIO_PATH=/opt/android-studio-2021.2.1/android-studio/bin/studio.sh`
+The keystore is mounted read-only under `/run/secrets/`; it is never copied into the image. The build fails if signing data is missing and verifies that secrets are absent from image metadata.
 
-Then you can use the buildAndroid target with npm
+The verified output is exactly:
 
-## Update tags and presets
+```text
+dist/android/osmgo-<version>.apk
+dist/android/osmgo-<version>.aab
+dist/android/SHA256SUMS
+dist/android/build-info.json
+```
 
-### Add CHANGE_ME colors
+The APK is for direct installation. The AAB is for Google Play and is not directly installable. The verifier checks the application ID `fr.dogeo.osmgo`, version, versionCode, target SDK 36, checksums, APK alignment, APK/AAB signatures, and Bundletool validation.
 
-Here is a simple jq query to list tags by "id : markerColor". It will help you to identify the 'correct' color for your new tags.
+## Preserve pending edits before reinstalling
 
-`cat src/assets/tagsAndPresets/tags.json | jq '.tags | sort_by(.id)[] | .id + " : " + .markerColor'`
+Downloaded data and pending edits are stored locally. Uninstalling Android, clearing application storage, clearing browser site data, or switching OSM servers can permanently remove them.
+
+Before any reinstall or storage reset:
+
+1. open the send screen and check the pending item count;
+2. confirm whether the app is connected to production or the development server;
+3. upload the pending edits and confirm that the queue is empty;
+4. only then update, uninstall, or clear storage.
+
+There is currently no supported export/import for a pending queue. If an upload cannot be completed, stop and preserve the existing app or browser data while the problem is diagnosed. Installing a correctly signed update over the existing Android app should preserve storage; uninstalling it will not.
+
+## Release and rollback
+
+Create `release/X.Y.Z` from `develop`. A release branch contains only:
+
+- `version` in `package.json`;
+- a strictly increasing `VERSION_CODE` in `android/version.properties`;
+- changelog and release notes.
+
+Before merging, run the complete checks, build the signed Docker artifacts, compare the signing certificate SHA-256 fingerprint with the existing Play application, and test an upgrade from version 1.7.0 without losing pending data.
+
+Merge the release branch to `main`, create the matching `X.Y.Z` tag, then merge `main` back into `develop`. The tag workflow builds the same signed artifacts and attaches the APK, AAB, checksums, and metadata to the GitHub Release. Upload the AAB to the Play internal track manually and validate the update before a progressive production rollout.
+
+For a web rollback, revert the faulty commit on `main`; Cloudflare then deploys the reverted state. Merge the rollback back to `develop`. For Android, stop the Play rollout and publish a corrected patch with a higher `VERSION_CODE`. Do not reuse, move, or delete a published release tag, and do not attempt to roll back Play with an older AAB.
+
+## Linux file watcher limit
+
+If the local web server reports `ENOSPC: System limit for number of file watchers reached`, increase the host watcher limit according to your distribution's documentation. Avoid changing this system setting when the error is unrelated.

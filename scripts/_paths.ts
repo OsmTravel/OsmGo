@@ -2,9 +2,6 @@ import path from 'path'
 
 /** OsmGo project's root directory. */
 export const rootDir = path.join(__dirname, '..')
-/** This directory is the parent directory of the current project. It is located
- * outside of the current project. */
-export const parentDir = path.join(rootDir, '..')
 
 // Assets & Resources
 /** Path to the asset directory of the OsmGo project. */
