@@ -120,7 +120,6 @@ export class ModalsContentPage implements OnInit {
         const surveyDates = []
 
         // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
-        // tslint:disable-next-line:forin
         for (const tag in this.feature.properties.tags) {
             const preset = tagsService.presets[tag.replace(':', '/')]
             const data: Tag = {

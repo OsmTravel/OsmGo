@@ -215,7 +215,6 @@ export class ConfigService {
         return from(this.localStorage.get('config')).pipe(
             map((d) => {
                 if (d) {
-                    // tslint:disable-next-line:forin
                     for (const key in d) {
                         this.config[key] = d[key]
                     }
@@ -274,7 +273,6 @@ export class ConfigService {
         return from(this.localStorage.get('config')).pipe(
             map(async (d) => {
                 if (d) {
-                    // tslint:disable-next-line:forin
                     for (const key in d) {
                         this.config[key] = d[key]
                     }
