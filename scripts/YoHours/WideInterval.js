@@ -16,7 +16,7 @@
  */
 
 //IMPORTS
-let Constants = require('./Constants')
+const Constants = require('./Constants')
 
 /**
  * A wide interval is an interval of one or more days, weeks, months, holidays.
@@ -136,7 +136,7 @@ class WideInterval {
      * @return True if the given object concerns the same interval as this one
      */
     equals(o) {
-        if ((!o) instanceof WideInterval) {
+        if (!(o instanceof WideInterval)) {
             return false
         }
         if (this === o) {

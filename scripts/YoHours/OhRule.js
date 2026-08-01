@@ -16,8 +16,8 @@
  */
 
 //IMPORTS
-let OhDate = require('./OhDate')
-let OhTime = require('./OhTime')
+const OhDate = require('./OhDate')
+const OhTime = require('./OhTime')
 
 /**
  * An opening_hours rule, such as "Mo,Tu 08:00-18:00"
@@ -66,7 +66,7 @@ class OhRule {
 
         //Add weekdays
         if (this._date.length > 0) {
-            let wd = this._date[0].getWeekdays()
+            const wd = this._date[0].getWeekdays()
             if (wd.length > 0) {
                 result += ' ' + wd
             }
@@ -162,7 +162,7 @@ class OhRule {
      */
     addDate(d) {
         //Check param
-        if (d == null || d == undefined || (!d) instanceof OhDate) {
+        if (d == null || d == undefined || !(d instanceof OhDate)) {
             throw Error('Invalid parameter')
         }
 
