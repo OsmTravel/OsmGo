@@ -177,6 +177,127 @@ describe('DataService', () => {
         })
     })
 
+    describe('upload results', () => {
+        function createdFeature(id: number): OsmGoFeature {
+            return point(
+                [id, id],
+                {
+                    id,
+                    type: 'node',
+                    changeType: 'Create',
+                    tags: { amenity: 'bench' },
+                    meta: { version: 0 },
+                },
+                { id: `node/${id}` }
+            ) as OsmGoFeature
+        }
+
+        it('applies one hundred confirmed creations in one batch', async () => {
+            const changedFeatures = Array.from({ length: 100 }, (_value, i) =>
+                createdFeature(-(i + 1))
+            )
+            await service.setGeojsonChanged(
+                featureCollection(changedFeatures) as OsmGoFeatureCollection
+            )
+            storageSpy.set.calls.reset()
+            const results = changedFeatures.map((feature, i) => ({
+                oldId: feature.id as string,
+                feature: createdFeature(i + 1),
+            }))
+
+            await service.applyUploadResults(results)
+
+            expect(service.getGeojsonChanged().features).toEqual([])
+            expect(service.getGeojson().features.length).toBe(100)
+            expect(
+                storageSpy.set.calls.allArgs().map((args) => args[0])
+            ).toEqual(['geojson', 'geojsonChanged'])
+        })
+
+        it('keeps every feature that was not confirmed', async () => {
+            const first = createdFeature(-1)
+            const second = createdFeature(-2)
+            await service.setGeojsonChanged(
+                featureCollection([first, second]) as OsmGoFeatureCollection
+            )
+
+            await service.applyUploadResults([
+                { oldId: first.id as string, feature: createdFeature(101) },
+            ])
+
+            expect(
+                service
+                    .getGeojsonChanged()
+                    .features.map((feature) => feature.id)
+            ).toEqual(['node/-2'])
+            expect(
+                service.getGeojson().features.map((feature) => feature.id)
+            ).toEqual(['node/101'])
+        })
+
+        it('does not change local data when a result is invalid', async () => {
+            const first = createdFeature(-1)
+            const second = createdFeature(-2)
+            await service.setGeojsonChanged(
+                featureCollection([first, second]) as OsmGoFeatureCollection
+            )
+
+            await expectAsync(
+                service.applyUploadResults([
+                    {
+                        oldId: first.id as string,
+                        feature: createdFeature(101),
+                    },
+                    {
+                        oldId: 'node/-999',
+                        feature: createdFeature(102),
+                    },
+                ])
+            ).toBeRejected()
+
+            expect(
+                service
+                    .getGeojsonChanged()
+                    .features.map((feature) => feature.id)
+            ).toEqual(['node/-1', 'node/-2'])
+            expect(service.getGeojson().features).toEqual([])
+        })
+
+        it('keeps local data when persistence fails', async () => {
+            const changedFeature = createdFeature(-1)
+            const officialFeature = createdFeature(50)
+            service.setGeojson(
+                featureCollection([officialFeature]) as OsmGoFeatureCollection
+            )
+            await service.setGeojsonChanged(
+                featureCollection([changedFeature]) as OsmGoFeatureCollection
+            )
+            storageSpy.set.and.callFake((key: string) =>
+                key === 'geojsonChanged'
+                    ? Promise.reject(new Error('Storage unavailable'))
+                    : Promise.resolve()
+            )
+
+            await expectAsync(
+                service.applyUploadResults([
+                    {
+                        oldId: changedFeature.id as string,
+                        feature: createdFeature(101),
+                    },
+                ])
+            ).toBeRejected()
+
+            expect(
+                service
+                    .getGeojsonChanged()
+                    .features.map((feature) => feature.id)
+            ).toEqual(['node/-1'])
+            expect(
+                service.getGeojson().features.map((feature) => feature.id)
+            ).toEqual(['node/50'])
+        })
+    })
+
     describe('getFeatureById', () => {
         it('should be possible to retrieve a feature by its prop id (source: data)', () => {
             // Preparation

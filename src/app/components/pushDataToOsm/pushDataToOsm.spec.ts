@@ -1,4 +1,11 @@
-import { BehaviorSubject, of, throwError, TimeoutError } from 'rxjs'
+import {
+    BehaviorSubject,
+    NEVER,
+    of,
+    Subject,
+    throwError,
+    TimeoutError,
+} from 'rxjs'
 
 import { PushDataToOsmPage } from './pushDataToOsm'
 
@@ -211,5 +218,225 @@ describe('PushDataToOsmPage', () => {
 
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(2)
         expect(configService.invalidateChangeset).toHaveBeenCalledTimes(1)
+    })
+
+    it('starts only one upload when the button is clicked twice', async () => {
+        let continuePreparation
+        const preparation = new Promise<void>(
+            (resolve) => (continuePreparation = resolve)
+        )
+        const changedData = { features: [{ id: 'node/-1' }] }
+        const dataService = {
+            getGeojsonChanged: () => changedData,
+            replaceIdGenerateByOldVersion: jasmine
+                .createSpy('replaceIdGenerateByOldVersion')
+                .and.returnValue(preparation),
+        }
+        const osmApi = {
+            getValidChangset: () => of('123'),
+            osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
+            apiOsmSendOsmDiffFile: jasmine
+                .createSpy('apiOsmSendOsmDiffFile')
+                .and.returnValue(NEVER),
+        }
+        const mapService = { isProcessing: new BehaviorSubject(false) }
+        const configService = {
+            getChangeSetComment: () => '',
+            setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
+        }
+        const page = new PushDataToOsmPage(
+            dataService as any,
+            osmApi as any,
+            {} as any,
+            mapService as any,
+            {} as any,
+            {} as any,
+            configService as any,
+            {} as any,
+            {} as any,
+            {} as any
+        )
+        spyOn(page, 'userIsConnected').and.resolveTo(true)
+        spyOn(console, 'log')
+
+        const firstUpload = page.pushDataToOsm('Survey')
+        const secondUpload = page.pushDataToOsm('Survey')
+        continuePreparation()
+        await Promise.all([firstUpload, secondUpload])
+
+        expect(dataService.replaceIdGenerateByOldVersion).toHaveBeenCalledTimes(
+            1
+        )
+        expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
+    })
+
+    it('prepares one hundred returned IDs and versions before applying them', async () => {
+        const features = Array.from({ length: 100 }, (_value, i) => ({
+            type: 'Feature',
+            id: `node/-${i + 1}`,
+            geometry: { type: 'Point', coordinates: [i, i] },
+            properties: {
+                id: -(i + 1),
+                type: 'node',
+                changeType: 'Create',
+                tags: i === 0 ? {} : { amenity: 'bench' },
+                meta: { version: 0 },
+            },
+        }))
+        const applyUploadResults = jasmine
+            .createSpy('applyUploadResults')
+            .and.resolveTo()
+        const dataService = {
+            getGeojsonChanged: () => ({ features }),
+            applyUploadResults,
+        }
+        const mapService = { getIconStyle: (feature) => feature }
+        const configService = {
+            getChangeSetComment: () => '',
+            getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+        }
+        const page = new PushDataToOsmPage(
+            dataService as any,
+            {} as any,
+            {} as any,
+            mapService as any,
+            {} as any,
+            {} as any,
+            configService as any,
+            {} as any,
+            {} as any,
+            {} as any
+        )
+        const diffResults = features.map((feature, i) => ({
+            typeChange: 'Create',
+            osmgoOldId: feature.id,
+            osmgoNewId: `node/${i + 1}`,
+            new_id: i + 1,
+            new_version: 1,
+        }))
+
+        await (page as any).updateLocalDataFromDiffResult(diffResults, features)
+
+        const preparedResults = applyUploadResults.calls.mostRecent().args[0]
+        expect(preparedResults.length).toBe(100)
+        expect(preparedResults[0].oldId).toBe('node/-1')
+        expect(preparedResults[0].feature.id).toBe('node/1')
+        expect(preparedResults[0].feature.properties.id).toBe(1)
+        expect(preparedResults[0].feature.properties.meta.version).toBe(1)
+        expect(preparedResults[0].feature.properties.changeType).toBeUndefined()
+    })
+
+    it('does not apply any result when the response is inconsistent', async () => {
+        const feature = {
+            id: 'node/-1',
+            properties: { tags: {}, meta: {} },
+        }
+        const applyUploadResults = jasmine.createSpy('applyUploadResults')
+        const dataService = {
+            getGeojsonChanged: () => ({ features: [feature] }),
+            applyUploadResults,
+        }
+        const configService = { getChangeSetComment: () => '' }
+        const page = new PushDataToOsmPage(
+            dataService as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            configService as any,
+            {} as any,
+            {} as any,
+            {} as any
+        )
+
+        await expectAsync(
+            (page as any).updateLocalDataFromDiffResult(
+                [
+                    {
+                        typeChange: 'Delete',
+                        osmgoOldId: 'node/-1',
+                    },
+                    {
+                        typeChange: 'Delete',
+                        osmgoOldId: 'node/-999',
+                    },
+                ],
+                [feature]
+            )
+        ).toBeRejected()
+
+        expect(applyUploadResults).not.toHaveBeenCalled()
+    })
+
+    it('finishes an acknowledged upload after the page is backgrounded', async () => {
+        const feature = {
+            id: 'node/-1',
+            properties: {
+                id: -1,
+                changeType: 'Create',
+                tags: { amenity: 'bench' },
+                meta: { version: 0 },
+            },
+            geometry: { type: 'Point', coordinates: [1, 2] },
+        }
+        const changedData = { features: [feature] }
+        const uploadResult = new Subject<any[]>()
+        const applyUploadResults = jasmine
+            .createSpy('applyUploadResults')
+            .and.resolveTo()
+        const dataService = {
+            getGeojsonChanged: () => changedData,
+            getGeojson: () => ({ features: [] }),
+            replaceIdGenerateByOldVersion: () => Promise.resolve(),
+            applyUploadResults,
+        }
+        const osmApi = {
+            getValidChangset: () => of('123'),
+            osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
+            apiOsmSendOsmDiffFile: () => uploadResult,
+        }
+        const mapService = {
+            isProcessing: new BehaviorSubject(false),
+            getIconStyle: (value) => value,
+            eventMarkerReDraw: jasmine.createSpyObj('EventEmitter', ['emit']),
+            eventMarkerChangedReDraw: jasmine.createSpyObj('EventEmitter', [
+                'emit',
+            ]),
+        }
+        const configService = {
+            getChangeSetComment: () => '',
+            setChangeSetComment: () => {},
+            getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+        }
+        const page = new PushDataToOsmPage(
+            dataService as any,
+            osmApi as any,
+            {} as any,
+            mapService as any,
+            { back: jasmine.createSpy('back') } as any,
+            {} as any,
+            configService as any,
+            {} as any,
+            {} as any,
+            {} as any
+        )
+        spyOn(page, 'userIsConnected').and.resolveTo(true)
+        await page.pushDataToOsm('Survey')
+        page.ngOnDestroy()
+
+        uploadResult.next([
+            {
+                typeChange: 'Create',
+                osmgoOldId: 'node/-1',
+                osmgoNewId: 'node/101',
+                new_id: 101,
+                new_version: 1,
+            },
+        ])
+        await new Promise((resolve) => setTimeout(resolve))
+
+        expect(applyUploadResults).toHaveBeenCalledTimes(1)
+        expect(page.uploadedOk).toBeTrue()
     })
 })

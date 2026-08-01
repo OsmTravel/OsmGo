@@ -113,24 +113,49 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     }
 
     // update Osm Go local data after success Diff push
-    private updateLocalDataFromDiffResult(
+    private async updateLocalDataFromDiffResult(
         diffResults,
         oldFeaturesChanged
-    ): void {
-        for (const diff of diffResults) {
-            const currentFeatureChanged = oldFeaturesChanged.find(
-                (f) => f.id == diff.osmgoOldId
-            )
+    ): Promise<void> {
+        if (!Array.isArray(diffResults)) {
+            throw new Error('OpenStreetMap returned an invalid upload result.')
+        }
 
-            // let newFeature = {};
+        const preparedResults = []
+        const processedIds = new Set<string>()
+        for (const diff of diffResults) {
+            const oldId = diff?.osmgoOldId
+            const currentFeatureChanged = oldFeaturesChanged.find(
+                (f) => f.id == oldId
+            )
+            if (
+                !currentFeatureChanged ||
+                processedIds.has(oldId) ||
+                !['Create', 'Update', 'Delete'].includes(diff.typeChange)
+            ) {
+                throw new Error(
+                    'The OSM upload result does not match local data.'
+                )
+            }
+            processedIds.add(oldId)
+
+            if (diff.typeChange === 'Delete') {
+                preparedResults.push({ oldId })
+                continue
+            }
+
+            if (
+                !diff.osmgoNewId ||
+                diff.new_id == null ||
+                diff.new_version == null
+            ) {
+                throw new Error('OpenStreetMap returned an incomplete result.')
+            }
+
             let newFeature = cloneDeep(currentFeatureChanged)
-            newFeature['id'] = `${diff.osmgoNewId ? diff.osmgoNewId : null}`
-            newFeature['properties']['id'] = diff.new_id
-                ? parseInt(diff.new_id)
-                : null
+            newFeature['id'] = diff.osmgoNewId
+            newFeature['properties']['id'] = Number(diff.new_id)
             newFeature['properties']['meta']['version'] = diff.new_version
-                ? diff.new_version
-                : null
             newFeature['properties']['meta']['user'] =
                 this.configService.getUserInfo().display_name
             newFeature['properties']['meta']['uid'] =
@@ -154,27 +179,18 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             newFeature = this.mapService.getIconStyle(newFeature) // style
             addAttributesToFeature(newFeature)
 
-            if (diff.typeChange == 'Create') {
-                newFeature = this.mapService.getIconStyle(newFeature) // style
-                this.dataService.deleteFeatureFromGeojsonChanged(
-                    currentFeatureChanged
-                )
-                this.dataService.addFeatureToGeojson(newFeature)
-            } else if (diff.typeChange == 'Update') {
-                newFeature = this.mapService.getIconStyle(newFeature) // style
-                this.dataService.deleteFeatureFromGeojsonChanged(
-                    currentFeatureChanged
-                )
-                // if theire is no tags, we don't add the feature
-                if (Object.keys(newFeature['properties']['tags']).length > 0) {
-                    this.dataService.addFeatureToGeojson(newFeature)
-                }
-            } else if (diff.typeChange == 'Delete') {
-                this.dataService.deleteFeatureFromGeojsonChanged(
-                    currentFeatureChanged
-                )
-            }
+            const hasTags =
+                Object.keys(newFeature['properties']['tags']).length > 0
+            preparedResults.push({
+                oldId,
+                feature:
+                    diff.typeChange === 'Create' || hasTags
+                        ? newFeature
+                        : undefined,
+            })
         }
+
+        await this.dataService.applyUploadResults(preparedResults)
     }
 
     userIsConnected() {
@@ -264,12 +280,18 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             return
         }
 
-        await this.dataService.replaceIdGenerateByOldVersion()
+        this.isPushing = true
+        this.mapService.isProcessing.next(true)
+
+        try {
+            await this.dataService.replaceIdGenerateByOldVersion()
+        } catch (error) {
+            this.stopPushingWithError(error)
+            return
+        }
 
         this.configService.setChangeSetComment(commentChangeset)
 
-        this.mapService.isProcessing.next(true)
-        this.isPushing = true
         this.uploadedOk = false
         try {
             await this.userIsConnected()
@@ -298,29 +320,32 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                         .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
                         .pipe(take(1))
                         .subscribe({
-                            next: (diffFileResult) => {
-                                this.updateLocalDataFromDiffResult(
-                                    diffFileResult,
-                                    features
-                                )
-                                this.mapService.eventMarkerReDraw.emit(
-                                    this.dataService.getGeojson()
-                                )
-                                this.mapService.eventMarkerChangedReDraw.emit(
-                                    this.dataService.getGeojsonChanged()
-                                )
-                                this.featuresChanges =
-                                    this.dataService.getGeojsonChanged().features
-                                this.error = undefined
-                                this.summary = this.getSummary()
-                                this.uploadedOk = true
-                                this.mapService.isProcessing.next(false)
-                                timer(1000)
-                                    .pipe(take(1))
-                                    .subscribe(() => {
-                                        // this.isPushing = false;
-                                        this.navCtrl.back()
-                                    })
+                            next: async (diffFileResult) => {
+                                try {
+                                    await this.updateLocalDataFromDiffResult(
+                                        diffFileResult,
+                                        features
+                                    )
+                                    this.mapService.eventMarkerReDraw.emit(
+                                        this.dataService.getGeojson()
+                                    )
+                                    this.mapService.eventMarkerChangedReDraw.emit(
+                                        this.dataService.getGeojsonChanged()
+                                    )
+                                    this.featuresChanges =
+                                        this.dataService.getGeojsonChanged().features
+                                    this.error = undefined
+                                    this.summary = this.getSummary()
+                                    this.uploadedOk = true
+                                    this.mapService.isProcessing.next(false)
+                                    timer(1000)
+                                        .pipe(take(1))
+                                        .subscribe(() => {
+                                            this.navCtrl.back()
+                                        })
+                                } catch (error) {
+                                    this.stopPushingWithError(error)
+                                }
                             },
                             error: (err) => {
                                 const message = this.getOsmErrorMessage(err)

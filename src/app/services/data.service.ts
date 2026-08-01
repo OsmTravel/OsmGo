@@ -317,6 +317,42 @@ export class DataService {
         return this.localStorage.set('geojsonChanged', this.geojsonChanged)
     }
 
+    async applyUploadResults(
+        results: Array<{ oldId: string; feature?: OsmGoFeature }>
+    ): Promise<void> {
+        const oldIds = results.map((result) => result.oldId)
+        if (
+            new Set(oldIds).size !== oldIds.length ||
+            oldIds.some((id) => !this._geojsonChanged[id])
+        ) {
+            throw new Error('The OSM upload result does not match local data.')
+        }
+
+        const nextGeojson = { ...this._geojson }
+        const nextGeojsonChanged = { ...this._geojsonChanged }
+
+        for (const result of results) {
+            delete nextGeojsonChanged[result.oldId]
+            delete nextGeojson[result.oldId]
+            if (result.feature) {
+                nextGeojson[result.feature.id] = cloneDeep(result.feature)
+            }
+        }
+
+        const geojson = featureCollection(
+            Object.values(nextGeojson)
+        ) as OsmGoFeatureCollection
+        const geojsonChanged = featureCollection(
+            Object.values(nextGeojsonChanged)
+        ) as OsmGoFeatureCollection
+        await Promise.all([
+            this.localStorage.set('geojson', geojson),
+            this.localStorage.set('geojsonChanged', geojsonChanged),
+        ])
+        this._geojson = nextGeojson
+        this._geojsonChanged = nextGeojsonChanged
+    }
+
     getMergedGeojsonGeojsonChanged(): OsmGoFeatureCollection {
         // stock les id dans un array
         const changedIds = Object.keys(this._geojsonChanged)
