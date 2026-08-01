@@ -45,4 +45,12 @@ src/environments/environment.prod.ts
 
 android/app/release/
 
+# Android release signing material
+*.jks
+*.jks.*
+*.keystore
+*.keystore.*
+keystore.properties
+.env.android-signing
+
 android/app/capacitor.build.gradle
