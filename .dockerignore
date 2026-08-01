@@ -1,0 +1,17 @@
+.git
+.github
+.angular
+**/.gradle
+**/build
+android/app/release
+coverage
+dist
+node_modules
+wFabien
+www
+*.jks
+*.jks.*
+*.keystore
+*.keystore.*
+keystore.properties
+.env.android-signing
