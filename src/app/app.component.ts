@@ -49,7 +49,7 @@ export class AppComponent {
             }
         })
 
-        this.translate.setDefaultLang('en')
+        this.translate.setFallbackLang('en')
         this.configService.platforms = this.platform.platforms()
         this.configService.deviceInfo = await Device.getInfo()
 

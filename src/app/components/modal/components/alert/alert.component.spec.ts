@@ -1,19 +1,10 @@
-import { HttpClient } from '@angular/common/http'
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-import {
-    TranslateLoader,
-    TranslateModule,
-    TranslateService,
-} from '@ngx-translate/core'
-import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
 import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 import { AlertComponent } from './alert.component'
-
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json')
-}
 
 describe('AlertComponent', () => {
     let component: AlertComponent
@@ -21,15 +12,9 @@ describe('AlertComponent', () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            imports: [
-                HttpClientTestingModule,
-                TranslateModule.forRoot({
-                    loader: {
-                        provide: TranslateLoader,
-                        useFactory: createTranslateLoader,
-                        deps: [HttpClient],
-                    },
-                }),
+            imports: [HttpClientTestingModule, TranslateModule.forRoot()],
+            providers: [
+                ...provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
             ],
             declarations: [AlertComponent, FilterByCountryCode],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],

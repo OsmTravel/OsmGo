@@ -1,17 +1,12 @@
-import { HttpClient } from '@angular/common/http'
 import {
     HttpClientTestingModule,
     HttpTestingController,
 } from '@angular/common/http/testing'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-import { createTranslateLoader } from '@app/app.module'
 import { ModalController, NavParams } from '@ionic/angular'
-import {
-    TranslateLoader,
-    TranslateModule,
-    TranslateService,
-} from '@ngx-translate/core'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
 import { DialogMultiFeaturesComponent } from './dialog-multi-features.component'
 
 export class NavParamsMock {
@@ -29,7 +24,7 @@ export class NavParamsMock {
 
 export class ModalControllerMock {
     public create(param1, param2) {
-        let rtn: Object = {}
+        const rtn: Object = {}
         rtn['present'] = () => true
         return rtn
     }
@@ -44,17 +39,9 @@ describe('DialogMultiFeaturesComponent', () => {
     beforeEach(waitForAsync(() => {
         NavParamsMock.setParams(null) //set your own params here
         TestBed.configureTestingModule({
-            imports: [
-                HttpClientTestingModule,
-                TranslateModule.forRoot({
-                    loader: {
-                        provide: TranslateLoader,
-                        useFactory: createTranslateLoader,
-                        deps: [HttpClient],
-                    },
-                }),
-            ],
+            imports: [HttpClientTestingModule, TranslateModule.forRoot()],
             providers: [
+                ...provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
                 { provide: NavParams, useClass: NavParamsMock },
                 { provide: ModalController, useClass: ModalControllerMock },
             ],

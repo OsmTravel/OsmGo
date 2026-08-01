@@ -1,5 +1,4 @@
 import {
-    HttpClient,
     provideHttpClient,
     withInterceptorsFromDi,
     withXhr,
@@ -43,8 +42,8 @@ import { TagListElementComponent } from '@components/tag-list-element/tag-list-e
 import { environment } from '@environments/environment'
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular'
 import { IonicStorageModule } from '@ionic/storage-angular'
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
-import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { TranslateModule } from '@ngx-translate/core'
+import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
@@ -68,10 +67,6 @@ import { RemoveBrandsPipe } from '@pipes/removeBrands.pipe'
 import { SearchForPipe } from '@pipes/searchFor.pipe'
 import { SortArrayPipe } from '@pipes/sort-array.pipe'
 import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
-
-export function createTranslateLoader(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/i18n/', '.json')
-}
 
 @NgModule({
     declarations: [
@@ -139,13 +134,7 @@ export function createTranslateLoader(http: HttpClient) {
         IonicModule.forRoot({ mode: 'md' }),
         IonicStorageModule.forRoot(),
         AppRoutingModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: createTranslateLoader,
-                deps: [HttpClient],
-            },
-        }),
+        TranslateModule.forRoot(),
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,
         }),
@@ -153,6 +142,7 @@ export function createTranslateLoader(http: HttpClient) {
     providers: [
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         provideHttpClient(withXhr(), withInterceptorsFromDi()),
+        ...provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
     ],
     bootstrap: [AppComponent],
 })
