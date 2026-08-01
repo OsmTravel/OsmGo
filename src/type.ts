@@ -1,11 +1,11 @@
-import { Point } from '@turf/turf'
-import {
+import type {
     Feature,
     FeatureCollection,
     Geometry,
     LineString,
     MultiLineString,
     MultiPoint,
+    Point,
 } from 'geojson'
 import { Marker } from 'maplibre-gl'
 import { MultiPolygon, Polygon } from 'martinez-polygon-clipping'

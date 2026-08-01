@@ -25,15 +25,16 @@ import { type Config, ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { LocationService } from '@services/location.service'
 import { TagsService } from '@services/tags.service'
-import {
-    type BBox,
-    destination,
+import { destination, point } from '@turf/turf'
+import type {
+    BBox,
+    Feature,
+    FeatureCollection,
+    LineString,
     MultiLineString,
     MultiPoint,
-    type Point,
-    point,
-} from '@turf/turf'
-import { Feature, type FeatureCollection, LineString } from 'geojson'
+    Point,
+} from 'geojson'
 import { cloneDeep, uniqBy } from 'lodash'
 import {
     AttributionControl,

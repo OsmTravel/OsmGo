@@ -1,6 +1,6 @@
 import SphericalMercator from '@mapbox/sphericalmercator'
 import * as cover from '@mapbox/tile-cover'
-import centroid from '@turf/centroid'
+import { centroid } from '@turf/centroid'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
 import orderBy from 'lodash/orderBy'
