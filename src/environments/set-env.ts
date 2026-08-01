@@ -1,5 +1,5 @@
+import { execFileSync } from 'child_process'
 import { readFileSync, writeFileSync } from 'fs'
-import git from 'git-last-commit'
 import path from 'path'
 
 const gitPath = path.join(__dirname, '..', '..')
@@ -11,27 +11,24 @@ type BuildMetadata = {
     date: string
 }
 
-const getGitMetadata = (): Promise<BuildMetadata> => {
-    return new Promise((resolve, reject) => {
-        git.getLastCommit(
-            (err, commit: any) => {
-                if (err) {
-                    reject(err)
-                    return
-                }
-
-                resolve({
-                    branch: commit.branch,
-                    shortHash: commit.shortHash,
-                    date: new Date(commit.committedOn * 1000).toISOString(),
-                })
-            },
-            { dst: gitPath }
-        )
-    })
+const runGit = (args: string[]): string => {
+    return execFileSync('git', args, {
+        cwd: gitPath,
+        encoding: 'utf8',
+    }).trim()
 }
 
-const getBuildMetadata = async (): Promise<BuildMetadata> => {
+const getGitMetadata = (): BuildMetadata => {
+    return {
+        branch: runGit(['rev-parse', '--abbrev-ref', 'HEAD']),
+        shortHash: runGit(['rev-parse', '--short=7', 'HEAD']),
+        date: new Date(
+            Number(runGit(['show', '-s', '--format=%ct', 'HEAD'])) * 1000
+        ).toISOString(),
+    }
+}
+
+const getBuildMetadata = (): BuildMetadata => {
     const branch = process.env.OSMGO_BUILD_BRANCH
     const sha = process.env.OSMGO_BUILD_SHA
     const date = process.env.OSMGO_BUILD_DATE
@@ -40,7 +37,7 @@ const getBuildMetadata = async (): Promise<BuildMetadata> => {
         return { branch, shortHash: sha.slice(0, 7), date }
     }
 
-    const gitMetadata = await getGitMetadata()
+    const gitMetadata = getGitMetadata()
     return {
         branch: branch || gitMetadata.branch,
         shortHash: sha ? sha.slice(0, 7) : gitMetadata.shortHash,
@@ -52,8 +49,8 @@ const asSourceValue = (value: string | undefined): string => {
     return value === undefined ? 'undefined' : JSON.stringify(value)
 }
 
-const setEnv = async (): Promise<void> => {
-    const buildMetadata = await getBuildMetadata()
+const setEnv = (): void => {
+    const buildMetadata = getBuildMetadata()
     const packageJson = JSON.parse(
         readFileSync(path.join(__dirname, '..', '..', 'package.json'), 'utf8')
     )
@@ -76,7 +73,9 @@ const setEnv = async (): Promise<void> => {
     writeFileSync(envPath, environmentContent)
 }
 
-setEnv().catch((error) => {
+try {
+    setEnv()
+} catch (error) {
     console.error('Unable to create the production environment file.', error)
     process.exitCode = 1
-})
+}

@@ -64,7 +64,6 @@
     "@turf/bbox-polygon": "^6.5.0",
     "@turf/turf": "^6.5.0",
     "fast-xml-parser": "^5.10.1",
-    "git-last-commit": "^1.0.1",
     "ionicons": "8.0.13",
     "lodash": "^4.17.21",
     "maplibre-gl": "6.1.0",
