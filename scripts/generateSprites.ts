@@ -4,7 +4,7 @@ import path from 'path'
 import cheerio from 'cheerio'
 // const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
 import { parseString } from 'xml2js'
-import svgRender from 'svg-render'
+import sharp from 'sharp'
 import Spritesmith from 'spritesmith'
 import { assetsDir, iconsSvgDir } from './_paths'
 
@@ -22,6 +22,19 @@ interface SpriteSheetOptions {
 interface SpriteResult {
     image: Buffer
     coordinates: Record<string, Record<string, number>>
+}
+
+export const renderSvgToPng: SvgRenderer = async (filePath, factor) => {
+    const image = sharp(filePath)
+    const metadata = await image.metadata()
+    if (!metadata.width || !metadata.height) {
+        throw new Error(`Cannot read SVG dimensions: ${filePath}`)
+    }
+
+    return image
+        .resize(metadata.width * factor, metadata.height * factor)
+        .png()
+        .toBuffer()
 }
 
 export const generateSpriteSheet = async ({
@@ -264,19 +277,6 @@ export const generateSprites = () => {
         )
     }
 
-    const sizeOf = require('image-size')
-
-    const svgToPNG = async (filePath, factor) => {
-        const dimensions = sizeOf(filePath)
-        const svgBuffer = fs.readFileSync(filePath)
-
-        return await svgRender({
-            buffer: svgBuffer,
-            width: dimensions.width * factor,
-            height: dimensions.height * factor,
-        })
-    }
-
     const markerFileNames = []
     for (const markerColor of markerColorUsed) {
         markerFileNames.push(
@@ -294,7 +294,7 @@ export const generateSprites = () => {
             outputFolder: outPath,
             temporaryFolder: path.join(outputTmp, 'PNG', '@1'),
             factor: 1,
-            render: svgToPNG,
+            render: renderSvgToPng,
         }),
         generateSpriteSheet({
             fileNames,
@@ -302,7 +302,7 @@ export const generateSprites = () => {
             outputFolder: outPath,
             temporaryFolder: path.join(outputTmp, 'PNG', '@2'),
             factor: 2,
-            render: svgToPNG,
+            render: renderSvgToPng,
         }),
     ]).then((e) => {
         console.log('END')

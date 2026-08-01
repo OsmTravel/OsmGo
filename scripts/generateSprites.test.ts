@@ -2,14 +2,15 @@ import assert from 'assert'
 import os from 'os'
 import path from 'path'
 import fs from 'fs-extra'
-import svgRender from 'svg-render'
-import { generateSpriteSheet } from './generateSprites'
+import sharp from 'sharp'
+import { generateSpriteSheet, renderSvgToPng } from './generateSprites'
 
-const fileNames = ['circle-test', 'square-test', 'penta-test']
-const fixtureSvg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2">
-    <rect width="2" height="2" fill="#008000" />
-</svg>`
+const fixtureColors: Record<string, number[]> = {
+    'circle-test': [255, 0, 0],
+    'square-test': [0, 255, 0],
+    'penta-test': [0, 0, 255],
+}
+const fileNames = Object.keys(fixtureColors)
 
 const delay = (milliseconds: number) =>
     new Promise((resolve) => setTimeout(resolve, milliseconds))
@@ -24,6 +25,11 @@ const run = async () => {
     try {
         await fs.ensureDir(inputFolder)
         for (const fileName of fileNames) {
+            const color = fixtureColors[fileName].join(',')
+            const fixtureSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2">
+    <rect width="2" height="2" fill="rgb(${color})" />
+</svg>`
             await fs.writeFile(
                 path.join(inputFolder, `${fileName}.svg`),
                 fixtureSvg
@@ -34,11 +40,7 @@ const run = async () => {
             if (path.basename(filePath) === 'penta-test.svg') {
                 await delay(50)
             }
-            return svgRender({
-                buffer: await fs.readFile(filePath),
-                width: 2 * factor,
-                height: 2 * factor,
-            })
+            return renderSvgToPng(filePath, factor)
         }
 
         await Promise.all(
@@ -59,14 +61,46 @@ const run = async () => {
             const pngPath = path.join(outputFolder, `${outputName}.png`)
             const jsonPath = path.join(outputFolder, `${outputName}.json`)
             const sprites = JSON.parse(await fs.readFile(jsonPath, 'utf8'))
+            const metadata = await sharp(pngPath).metadata()
 
             assert((await fs.stat(pngPath)).size > 0)
+            assert.strictEqual(metadata.format, 'png')
             assert.deepStrictEqual(
                 Object.keys(sprites).sort(),
                 [...fileNames].sort()
             )
+            const spriteValues = fileNames.map((fileName) => sprites[fileName])
+            assert.strictEqual(
+                metadata.width,
+                Math.max(
+                    ...spriteValues.map((sprite) => sprite.x + sprite.width)
+                )
+            )
+            assert.strictEqual(
+                metadata.height,
+                Math.max(
+                    ...spriteValues.map((sprite) => sprite.y + sprite.height)
+                )
+            )
             for (const fileName of fileNames) {
-                assert.strictEqual(sprites[fileName].pixelRatio, factor)
+                const sprite = sprites[fileName]
+                assert.strictEqual(sprite.pixelRatio, factor)
+                assert.strictEqual(sprite.width, 2 * factor)
+                assert.strictEqual(sprite.height, 2 * factor)
+
+                const pixel = await sharp(pngPath)
+                    .extract({
+                        left: sprite.x,
+                        top: sprite.y,
+                        width: 1,
+                        height: 1,
+                    })
+                    .raw()
+                    .toBuffer()
+                assert.deepStrictEqual(
+                    Array.from(pixel.subarray(0, 3)),
+                    fixtureColors[fileName]
+                )
             }
         }
     } finally {
