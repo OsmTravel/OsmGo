@@ -9,7 +9,7 @@ import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
 import { AlertService } from '@services/alert.service'
 import { LocationService } from '@services/location.service'
-import { ConfigService } from '@services/config.service'
+import { ConfigService, type Config } from '@services/config.service'
 import { HttpClient } from '@angular/common/http'
 
 import { debounceTime, filter, throttleTime } from 'rxjs/operators'
@@ -53,7 +53,6 @@ import {
     OsmGoMarker,
     TagConfig,
 } from '@osmgo/type'
-import { Config } from 'protractor'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { Feature, FeatureCollection, LineString } from 'geojson'
 import { ModalDismissData } from '../components/modal/modal'
