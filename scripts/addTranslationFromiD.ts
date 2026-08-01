@@ -107,20 +107,21 @@ for (const language of args.language as string[]) {
                     }
 
                     for (const osmgoOpt of osmGoPreset.options) {
-                        if (iDoptions[osmgoOpt.v]) {
-                            if (typeof iDoptions[osmgoOpt.v] === 'string') {
+                        const optionId =
+                            osmgoOpt.v === '' ? 'undefined' : osmgoOpt.v
+                        if (iDoptions[optionId]) {
+                            if (typeof iDoptions[optionId] === 'string') {
                                 if (!osmgoOpt.lbl[language] || args.overwrite) {
-                                    osmgoOpt.lbl[language] =
-                                        iDoptions[osmgoOpt.v]
+                                    osmgoOpt.lbl[language] = iDoptions[optionId]
                                 }
                             } else {
-                                if (iDoptions[osmgoOpt.v].title) {
+                                if (iDoptions[optionId].title) {
                                     if (
                                         !osmgoOpt.lbl[language] ||
                                         args.overwrite
                                     ) {
                                         osmgoOpt.lbl[language] =
-                                            iDoptions[osmgoOpt.v].title
+                                            iDoptions[optionId].title
                                     }
                                 }
                             }

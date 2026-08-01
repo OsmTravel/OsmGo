@@ -1,162 +1,176 @@
-const tagsConfig: any = require('../assets/tagsAndPresets/tags.json')
-const presets: any = require('../assets/tagsAndPresets/presets.json')
-describe('tagsAndPresets', () => {
-    beforeEach(() => {})
+interface TagConfig {
+    id: string
+    tags: Record<string, string>
+    presets: Array<string>
+    moreFields?: Array<string>
+    lbl?: Record<string, string>
+    geometry?: Array<string>
+}
 
-    it('tags should contain shop/amenity/etc..', () => {
-        const pkeys = tagsConfig.primaryKeys
-        expect(pkeys).toContain('shop')
-        expect(pkeys).toContain('advertising')
-        expect(pkeys).toContain('amenity')
-        expect(pkeys).toContain('leisure')
-        expect(pkeys).toContain('man_made')
+interface PresetOption {
+    v: string
+    lbl?: Record<string, string>
+}
+
+interface Preset {
+    key?: string
+    keys?: Array<string>
+    type: string
+    lbl?: Record<string, string>
+    options?: Array<PresetOption>
+}
+
+const tagsConfig = require('../assets/tagsAndPresets/tags.json') as {
+    primaryKeys: Array<string>
+    tags: Array<TagConfig>
+}
+const presets = require('../assets/tagsAndPresets/presets.json') as Record<
+    string,
+    Preset
+>
+
+const presetTypes = [
+    'select',
+    'list',
+    'number',
+    'text',
+    'tel',
+    'url',
+    'email',
+    'opening_hours',
+]
+const geometryTypes = ['point', 'vertex', 'line', 'area', 'relation']
+
+describe('generated tags and presets', () => {
+    it('keeps the expected primary tag groups', () => {
+        expect(tagsConfig.primaryKeys).toEqual(
+            expect.arrayContaining([
+                'shop',
+                'advertising',
+                'amenity',
+                'leisure',
+                'man_made',
+            ])
+        )
     })
 
-    it('tags should have an ID', () => {
-        for (let tag of tagsConfig.tags) {
-            const id = tag.id
-            expect(id).toBeTruthy()
+    it('uses unique tag IDs', () => {
+        const tagIds = tagsConfig.tags.map((tag) => tag.id)
+
+        expect(new Set(tagIds).size).toBe(tagIds.length)
+    })
+
+    it('uses unique tag combinations', () => {
+        const tagCombinations = tagsConfig.tags.map((tag) =>
+            Object.entries(tag.tags)
+                .sort(([left], [right]) => left.localeCompare(right))
+                .map(([key, value]) => `${key}=${value}`)
+                .join('&')
+        )
+
+        expect(new Set(tagCombinations).size).toBe(tagCombinations.length)
+    })
+
+    it('uses declared primary keys', () => {
+        for (const tag of tagsConfig.tags) {
+            const entries = Object.entries(tag.tags)
+
+            expect(tag.id).toBeTruthy()
+            expect(entries.length).toBeGreaterThan(0)
+            expect(
+                entries.some(([key]) => tagsConfig.primaryKeys.includes(key))
+            ).toBe(true)
         }
     })
 
-    it('tags should have a "tags" property', () => {
-        const withoutTags = []
-        for (let tag of tagsConfig.tags) {
-            if (!tag.tags || Object.keys(tag.tags).length === 0) {
-                withoutTags.push(tag.id)
-            }
-        }
-        expect(withoutTags).toEqual([])
-    })
-
-    it('tags should have a primary key tag', () => {
-        const idWithoutPrimarykey = []
-        const pkeys = tagsConfig.primaryKeys
-        for (let tag of tagsConfig.tags) {
-            const keysTag = Object.keys(tag.tags)
-            // intersection of keysTag and pkeys
-            const intersection = keysTag.filter((x) => pkeys.includes(x))
-            if (intersection.length === 0) {
-                idWithoutPrimarykey.push(tag.id)
-            }
-        }
-        expect(idWithoutPrimarykey).toEqual([])
-    })
-
-    it('tags should not have same "tags"', () => {
-        const uniqueTags = []
-        const duplicateTags = []
-
-        const tags = tagsConfig.tags
-        for (let tag of tags) {
-            let tagsStrs = []
-            for (let t in tag.tags) {
-                tagsStrs.push(`${t}:${tag.tags[t]}`)
-            }
-            let ts = tagsStrs.sort().join(',')
-            if (!uniqueTags.includes(ts)) {
-                uniqueTags.push(ts)
-            } else {
-                duplicateTags.push(`${tag.id} : ${JSON.stringify(ts)}`)
+    it('does not generate undefined keys or values', () => {
+        for (const tag of tagsConfig.tags) {
+            const entries = Object.entries(tag.tags)
+            for (const [key, value] of entries) {
+                expect(key).not.toBe('undefined')
+                expect(value).not.toBe('undefined')
             }
         }
 
-        expect(duplicateTags).toEqual([])
-    })
-
-    it('tags should have an unique ID', () => {
-        const ids = []
-        const duplicateIds = []
-        const tags = tagsConfig.tags
-        for (let tag of tags) {
-            const id = tag.id
-            if (!ids.includes(id)) {
-                ids.push(id)
-            } else {
-                duplicateIds.push(id)
+        for (const preset of Object.values(presets)) {
+            expect(preset.key).not.toBe('undefined')
+            expect(preset.keys || []).not.toContain('undefined')
+            for (const option of preset.options || []) {
+                expect(option.v).not.toBe('undefined')
             }
         }
-        expect(duplicateIds).toEqual([])
     })
 
-    it('tags should use existing presets id', () => {
-        const unknowPresetId = []
+    it('only references existing presets', () => {
+        const missingPresetIds: Array<string> = []
 
-        const tags = tagsConfig.tags
-        for (let tag of tags) {
-            const currentTagsPresets = [
+        for (const tag of tagsConfig.tags) {
+            for (const presetId of [
                 ...tag.presets,
                 ...(tag.moreFields || []),
-            ]
-            for (let pid of currentTagsPresets) {
-                if (!presets[pid]) {
-                    unknowPresetId.push(`${tag.id} : ${pid}`)
+            ]) {
+                if (!presets[presetId]) {
+                    missingPresetIds.push(`${tag.id}: ${presetId}`)
                 }
             }
         }
 
-        expect(unknowPresetId).toEqual([])
+        expect(missingPresetIds).toEqual([])
     })
 
-    it('tags should have english label', () => {
-        const noEn = []
-        const tags = tagsConfig.tags
-        for (let tag of tags) {
-            if (!tag.lbl || !tag.lbl.en) {
-                noEn.push(tag.id)
-            }
+    it('does not duplicate colon or underscore preset IDs', () => {
+        const normalizedIds = Object.keys(presets).map((presetId) =>
+            presetId.replaceAll(':', '/').replaceAll('_', '/')
+        )
+
+        expect(new Set(normalizedIds).size).toBe(normalizedIds.length)
+    })
+
+    it('keeps compound fields and the toilets field from iD', () => {
+        const caravanSite = tagsConfig.tags.find(
+            (tag) => tag.id === 'tourism/caravan_site'
+        )
+
+        expect(caravanSite?.presets).toContain('toilets')
+        expect(presets.toilets.key).toBe('toilets')
+        expect(presets.gender.keys).toEqual(['male', 'female', 'unisex'])
+    })
+
+    it('uses supported geometries', () => {
+        for (const tag of tagsConfig.tags) {
+            const geometries = tag.geometry || []
+
+            expect(geometries.length).toBeGreaterThan(0)
+            expect(
+                geometries.every((geometry) => geometryTypes.includes(geometry))
+            ).toBe(true)
+        }
+    })
+
+    it('provides English labels', () => {
+        for (const tag of tagsConfig.tags) {
+            expect(tag.lbl?.en).toBeTruthy()
         }
 
-        expect(noEn).toEqual([])
-    })
-
-    it('tags should have "geometry" property ([\'point\',etc} ', () => {
-        const nogeom = []
-
-        const tags = tagsConfig.tags
-        for (let tag of tags) {
-            if (!tag.geometry || tag.geometry.length < 1) {
-                nogeom.push(tag.id)
+        for (const preset of Object.values(presets)) {
+            expect(preset.lbl?.en).toBeTruthy()
+            for (const option of preset.options || []) {
+                expect(option.lbl?.en).toBeTruthy()
             }
         }
-
-        expect(nogeom).toEqual([])
     })
 
-    it('type of presets should be  list / select / number / text / tel / url / email / opening_hours', () => {
-        const noOptionsTags = []
-
-        for (let pid in presets) {
-            const preset = presets[pid]
-            if (
-                ![
-                    'select',
-                    'list',
-                    'number',
-                    'text',
-                    'tel',
-                    'url',
-                    'email',
-                    'opening_hours',
-                ].includes(preset.type)
-            ) {
-                noOptionsTags.push(pid)
-            }
+    it('uses supported preset types', () => {
+        for (const preset of Object.values(presets)) {
+            expect(presetTypes).toContain(preset.type)
         }
-        expect(noOptionsTags).toEqual([])
     })
 
-    it('presets with type "list" or "select" should have options', () => {
-        const noOptionsTags = []
-
-        for (let pid in presets) {
-            const preset = presets[pid]
+    it('provides options for selections', () => {
+        for (const preset of Object.values(presets)) {
             if (['select', 'list'].includes(preset.type)) {
-                if (!preset.options || preset.options.length < 1) {
-                    noOptionsTags.push(pid)
-                }
+                expect(preset.options?.length).toBeGreaterThan(0)
             }
         }
-        expect(noOptionsTags).toEqual([])
     })
 })

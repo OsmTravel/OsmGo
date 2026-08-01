@@ -42,6 +42,12 @@ jobs:
             - name: Run converter tests
               run: npm run test:converter
 
+            - name: Run data generation tests
+              run: npm run test:scripts
+
+            - name: Check generated data is committed
+              run: git diff --exit-code -- src/assets/tagsAndPresets
+
             - name: Run sprite tests
               run: npm run test:sprites
 

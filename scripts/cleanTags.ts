@@ -9,8 +9,30 @@ const presetsOsmgo = readTapPresetsFromJson()
 const uniqIds: string[] = []
 const indicesToDelete: number[] = []
 
+const getCanonicalPresetId = (presetId: string): string => {
+    const preset = presetsOsmgo[presetId]
+    if (!preset) {
+        return presetId
+    }
+
+    for (const separator of [':', '_']) {
+        const candidateId = presetId.split(separator).join('/')
+        const candidate = presetsOsmgo[candidateId]
+        if (candidate && candidate.key === preset.key) {
+            return candidateId
+        }
+    }
+
+    return presetId
+}
+
 for (let i = 0; i < tagsConfig.tags.length; i++) {
     const tag = tagsConfig.tags[i]
+
+    tag.presets = [...new Set(tag.presets.map(getCanonicalPresetId))]
+    if (tag.moreFields) {
+        tag.moreFields = [...new Set(tag.moreFields.map(getCanonicalPresetId))]
+    }
 
     if (tag.id) {
         if (!uniqIds.includes(tag.id)) {
@@ -29,7 +51,7 @@ for (let i = 0; i < tagsConfig.tags.length; i++) {
         delete tag.key
     }
 
-    for (let pid of tag.presets) {
+    for (const pid of tag.presets) {
         if (!presetsOsmgo[pid]) {
             console.error(`Preset ${pid} not found for tag ${tag.id}`)
         }
@@ -57,7 +79,7 @@ fs.writeFileSync(tapTagsPath, stringify(tagsConfig))
 
 // Delete unused presets
 let usedPresetIdsFromTags: string[] = []
-for (let tag of tagsConfig.tags) {
+for (const tag of tagsConfig.tags) {
     usedPresetIdsFromTags = [
         ...usedPresetIdsFromTags,
         ...tag.presets,
@@ -65,10 +87,21 @@ for (let tag of tagsConfig.tags) {
     ]
 }
 
-for (let pid in presetsOsmgo) {
+for (const pid in presetsOsmgo) {
     if (!usedPresetIdsFromTags.includes(pid)) {
         console.log(`Preset ${pid} not used => deletion`)
         delete presetsOsmgo[pid]
+        continue
+    }
+
+    const preset = presetsOsmgo[pid]
+    if (preset.options) {
+        preset.options = preset.options.filter((option) => {
+            return !(
+                option.v === 'undefined' ||
+                (option.v === '' && option.lbl?.en === 'undefined')
+            )
+        })
     }
 }
 

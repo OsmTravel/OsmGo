@@ -108,7 +108,7 @@ export interface Preset {
 }
 
 export interface TagConfig {
-    key: string
+    key?: string
     icon: string
     markerColor: string
     presets: string[]

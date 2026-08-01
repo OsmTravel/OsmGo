@@ -48,7 +48,7 @@ const getOsmGoMarkerColorFromTagRoot = (tagRoot) => {
     for (const tag of tagsOsmgo) {
         const currentTagRoot = tag.id.split('/')[0]
         if (currentTagRoot === tagRoot) {
-            let resultColor = result.find((r) => r.color === tag.markerColor)
+            const resultColor = result.find((r) => r.color === tag.markerColor)
             if (resultColor) {
                 resultColor.count = resultColor.count + 1
             } else {
@@ -66,10 +66,15 @@ const getOsmGoMarkerColorFromTagRoot = (tagRoot) => {
     return maxCountColor.color || '{CHANGE_ME}'
 }
 
-let idTagsFieldsListId = [] // list of id of fields to add...
+const idTagFieldIds = new Set<string>()
+
+const mergeFieldIds = (
+    currentIds: Array<string> = [],
+    importedIds: Array<string>
+): Array<string> => [...new Set([...currentIds, ...importedIds])]
 
 /* IMPORT TAGS */
-for (let iDid in tagsID) {
+for (const iDid in tagsID) {
     const tagiD = tagsID[iDid]
     const tagIDKeys = Object.keys(tagiD.tags)
 
@@ -134,56 +139,35 @@ for (let iDid in tagsID) {
         }
     }
 
-    for (let f of currentTagFields) {
+    for (const f of currentTagFields) {
         if (!presetsID[f]) {
-            // Todo : if field not in presetsID, and start with {, it's a reference to another field that reference to another field...
             console.log('missing preset', f)
             continue
         }
-        if (presetsID[f].type === 'typeCombo') {
-            // ignore presets with type 'typeCombo'
+        if (presetsID[f].type === 'typeCombo' || excludesPresets.includes(f)) {
             continue
         }
 
-        if (!idTagsFieldsListId.includes(f)) {
-            // if field not already added to list idTagsFieldsListId
-            idTagsFieldsListId.push(f)
-            iDFields = [...iDFields, f].filter(
-                (f) => !excludesPresets.includes(f)
-            )
-            // Same we should use union(iDFields, [f]) instead of this filter
-            continue
-        }
-
-        // Add tag
-        iDFields = [...iDFields, f].filter((f) => !excludesPresets.includes(f))
+        idTagFieldIds.add(f)
+        iDFields = mergeFieldIds(iDFields, [f])
     }
 
-    for (let f of currentTagMoreFields) {
-        if (presetsID[f] && presetsID[f].type === 'typeCombo') {
-            // ignore presets with type 'typeCombo'
+    for (const f of currentTagMoreFields) {
+        if (
+            !presetsID[f] ||
+            presetsID[f].type === 'typeCombo' ||
+            excludesPresets.includes(f)
+        ) {
             continue
         }
 
-        if (!idTagsFieldsListId.includes(f)) {
-            // if field not already added to list idTagsFieldsListId
-            idTagsFieldsListId.push(f)
-            iDMoreFields = [...iDMoreFields, f].filter(
-                (f) => !idTagsFieldsListId.includes(f)
-            )
-            // use union(iDFields, [f]) instead of this filter
-            continue
-        }
-
-        // Add tag
-        iDMoreFields = [...iDMoreFields, f].filter(
-            (f) => !idTagsFieldsListId.includes(f)
-        )
+        idTagFieldIds.add(f)
+        iDMoreFields = mergeFieldIds(iDMoreFields, [f])
     }
 
     const tagOsmgoById = tagsOsmgo.find((t) => t.id === iDid)
 
-    let currenOsmgoTag = tagsOsmgo.find((ogT) => {
+    const currenOsmgoTag = tagsOsmgo.find((ogT) => {
         return isEqual(tagiD.tags, ogT.tags)
     })
 
@@ -193,16 +177,18 @@ for (let iDid in tagsID) {
         // tag found by id, we can update tags
         console.log('!tags & sameIds', iDid)
         tagOsmgoById.tags = tagiD.tags
-        //tagOsmgoById.presets = iDFields; why don't we force presets update?
-        //tagOsmgoById.moreFields = iDMoreFields; why don't we force moreFields update?
+        tagOsmgoById.presets = mergeFieldIds(tagOsmgoById.presets, iDFields)
+        tagOsmgoById.moreFields = mergeFieldIds(
+            tagOsmgoById.moreFields,
+            iDMoreFields
+        )
         if (tagiD.addTags) {
             tagOsmgoById['addTags'] = tagiD.addTags
         }
     } else if (!tagOsmgoById && !currenOsmgoTag) {
         // new
         console.log('new', iDid)
-        let newTag: TagConfig = {
-            key: undefined, // TODO: @dotcs Is this a problem? Key is required in the interface.
+        const newTag = {
             id: iDid,
             tags: tagiD.tags,
             icon: tagiD.icon || '',
@@ -213,7 +199,7 @@ for (let iDid in tagsID) {
             terms: { en: tagiD.terms ? tagiD.terms.join(', ') : '' },
             geometry: tagiD.geometry,
             iDRef: iDid,
-        }
+        } as TagConfig
         if (tagiD.terms) newTag['terms'] = { en: tagiD.terms.join(', ') }
         if (tagiD.addTags) newTag['addTags'] = tagiD.addTags
         if (tagiD.reference) newTag['reference'] = tagiD.reference
@@ -223,10 +209,12 @@ for (let iDid in tagsID) {
     } else if (tagOsmgoById) {
         // tag already exist in tags.json
         // we can update tags
-        tagOsmgoById.tags = tagiD.tags //why don't we force tags update?
-        // TODO : rework this part. MoreFields is used on Osm Go ? May be we have to merger fields and moreFields
-        // tagOsmgoById.presets = iDFields //why don't we force presets update?
-        // tagOsmgoById.moreFields = iDMoreFields //why don't we force moreFields update?
+        tagOsmgoById.tags = tagiD.tags
+        tagOsmgoById.presets = mergeFieldIds(tagOsmgoById.presets, iDFields)
+        tagOsmgoById.moreFields = mergeFieldIds(
+            tagOsmgoById.moreFields,
+            iDMoreFields
+        )
     } else {
         // tagOsmgoById is null. yes it can happen
         console.log('tagOsmgoById is null for iDid=' + iDid)
@@ -236,11 +224,11 @@ for (let iDid in tagsID) {
 /* IMPORT PRESETS */
 // list des Presets/fields used : idTagsFieldsListId
 
-for (let fiDId of idTagsFieldsListId) {
+for (const fiDId of idTagFieldIds) {
     if (excludesPresets.includes(fiDId)) {
         continue
     }
-    const currentIDPreset = presetsID[fiDId]
+    const currentIDPreset = structuredClone(presetsID[fiDId])
     let currentOsmGoPreset = presetsOsmgo[fiDId]
     if (!currentIDPreset) {
         continue
@@ -250,10 +238,25 @@ for (let fiDId of idTagsFieldsListId) {
         currentIDPreset.lbl = { en: currentIDPreset.label }
     }
 
+    if (
+        !currentIDPreset.options &&
+        currentIDPreset.key &&
+        currentIDPreset.type === 'radio'
+    ) {
+        const matchingField = Object.values(presetsID).find((field: any) => {
+            return (
+                field !== presetsID[fiDId] &&
+                field.key === currentIDPreset.key &&
+                Array.isArray(field.options)
+            )
+        }) as { options?: Array<string> } | undefined
+        currentIDPreset.options = matchingField?.options
+    }
+
     if (currentIDPreset.options) {
         currentIDPreset.options = currentIDPreset.options.map((o) => {
             return {
-                v: o,
+                v: o === 'undefined' ? '' : o,
                 lbl: { en: o },
             }
         })
@@ -262,7 +265,7 @@ for (let fiDId of idTagsFieldsListId) {
     if (currentIDPreset.strings) {
         const objs = currentIDPreset.strings.options
         const options = []
-        for (let k in objs) {
+        for (const k in objs) {
             options.push({
                 v: k !== 'undefined' ? k : '',
                 lbl: { en: objs[k] },
@@ -321,7 +324,7 @@ for (let fiDId of idTagsFieldsListId) {
     // already in OSMGO
     if (currentOsmGoPreset) {
         if (currentIDPreset.options) {
-            for (let oiD of currentIDPreset.options) {
+            for (const oiD of currentIDPreset.options) {
                 let oGo
                 if (currentOsmGoPreset.options) {
                     oGo = currentOsmGoPreset.options.find((o) => o.v === oiD.v)
