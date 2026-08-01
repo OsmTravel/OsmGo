@@ -25,7 +25,7 @@ Read folowing article: [Settings](Settings.md)
 
 # Contributing
 
-Read main [readme](https://github.com/DoFabien/OsmGo/blob/master/README.md)
+Read main [readme](https://github.com/DoFabien/OsmGo/blob/main/README.md)
 
 # About OsmGo!
 
