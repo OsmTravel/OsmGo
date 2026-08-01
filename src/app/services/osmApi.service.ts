@@ -16,7 +16,7 @@ import bboxPolygon from '@turf/bbox-polygon'
 import { Platform } from '@ionic/angular'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 
-import { XMLParser } from 'fast-xml-parser'
+import { XMLParser, XMLValidator } from 'fast-xml-parser'
 import { OsmAuthService } from './osm-auth.service'
 
 const OSM_REQUEST_TIMEOUT_MS = 30_000
@@ -235,6 +235,13 @@ export class OsmApiService {
         type: 'node' | 'way' | 'relation',
         properties: any
     ) {
+        if (
+            !properties ||
+            typeof properties !== 'object' ||
+            Array.isArray(properties)
+        ) {
+            throw new Error('OpenStreetMap returned an invalid diff result.')
+        }
         let typeChange: string
         if (!properties.new_version) {
             typeChange = 'Delete'
@@ -265,15 +272,25 @@ export class OsmApiService {
     }
 
     convertDiffFileResult(diffTextResult: string): any[] {
+        if (XMLValidator.validate(diffTextResult) !== true) {
+            throw new Error('OpenStreetMap returned an invalid XML response.')
+        }
         const options = {
             ignoreAttributes: false,
             attributeNamePrefix: '',
             allowBooleanAttributes: true,
         }
         const parser = new XMLParser(options)
-        let diffJson = parser.parse(diffTextResult).diffResult
+        const diffJson = parser.parse(diffTextResult)?.diffResult
+        if (
+            !diffJson ||
+            typeof diffJson !== 'object' ||
+            Array.isArray(diffJson)
+        ) {
+            throw new Error('OpenStreetMap returned an invalid diff result.')
+        }
         const result = []
-        if (diffJson.node) {
+        if (diffJson.node !== undefined) {
             if (!Array.isArray(diffJson.node)) {
                 diffJson.node = [diffJson.node]
             }
@@ -286,7 +303,7 @@ export class OsmApiService {
             }
         }
 
-        if (diffJson.way) {
+        if (diffJson.way !== undefined) {
             if (!Array.isArray(diffJson.way)) {
                 diffJson.way = [diffJson.way]
             }
@@ -299,7 +316,7 @@ export class OsmApiService {
             }
         }
 
-        if (diffJson.relation) {
+        if (diffJson.relation !== undefined) {
             if (!Array.isArray(diffJson.relation)) {
                 diffJson.relation = [diffJson.relation]
             }

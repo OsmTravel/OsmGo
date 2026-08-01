@@ -101,6 +101,80 @@ describe('OsmApiService', () => {
         expect(http.put.calls.mostRecent().args[1]).toBe(expectedBody)
     })
 
+    describe('diff result XML', () => {
+        let service: OsmApiService
+
+        beforeEach(() => {
+            service = new OsmApiService(
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any
+            )
+        })
+
+        it('parses created, updated and deleted OSM elements', () => {
+            const xml = `
+                <diffResult generator="OpenStreetMap Server" version="0.6">
+                    <node old_id="-1" new_id="101" new_version="1"/>
+                    <way old_id="12" new_id="12" new_version="4"/>
+                    <relation old_id="20"/>
+                </diffResult>`
+
+            expect(service.convertDiffFileResult(xml)).toEqual([
+                {
+                    type: 'node',
+                    typeChange: 'Create',
+                    old_id: '-1',
+                    new_id: '101',
+                    new_version: 1,
+                    osmgoOldId: 'node/-1',
+                    osmgoNewId: 'node/101',
+                },
+                {
+                    type: 'way',
+                    typeChange: 'Update',
+                    old_id: '12',
+                    new_id: '12',
+                    new_version: 4,
+                    osmgoOldId: 'way/12',
+                    osmgoNewId: 'way/12',
+                },
+                {
+                    type: 'relation',
+                    typeChange: 'Delete',
+                    old_id: '20',
+                    osmgoOldId: 'relation/20',
+                },
+            ])
+        })
+
+        it('rejects malformed XML', () => {
+            expect(() =>
+                service.convertDiffFileResult('<diffResult><node></diffResult>')
+            ).toThrowError('OpenStreetMap returned an invalid XML response.')
+        })
+
+        it('rejects XML without a diff result', () => {
+            expect(() => service.convertDiffFileResult('<html/>')).toThrowError(
+                'OpenStreetMap returned an invalid diff result.'
+            )
+        })
+
+        it('rejects an empty diff element', () => {
+            expect(() =>
+                service.convertDiffFileResult(
+                    '<diffResult><node/></diffResult>'
+                )
+            ).toThrowError('OpenStreetMap returned an invalid diff result.')
+        })
+    })
+
     describe('request timeouts', () => {
         let http: jasmine.SpyObj<HttpClient>
         let service: OsmApiService
