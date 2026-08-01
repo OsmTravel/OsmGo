@@ -9,9 +9,7 @@
         </ion-fab-button>
     </ion-fab>
 
-    @switch (typeFiche) {
-    <!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
-    @case ('Read') {
+    @switch (typeFiche) { @case ('Read') {
     <div class="modal-content">
         <ion-header>
             <ion-toolbar>
@@ -111,9 +109,7 @@
             </div>
         </ion-footer>
     </div>
-    }
-    <!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
-    @case ('Edit') {
+    } @case ('Edit') {
     <div class="modal-content">
         <ion-header>
             <ion-toolbar>
@@ -280,9 +276,7 @@
             </div>
         </ion-footer>
     </div>
-    }
-    <!--EOF *ngSwitchCase="'Update'"-->
-    @case ('Loading') {
+    } @case ('Loading') {
     <div class="modal-content">
         <ion-header>
             <ion-toolbar>
