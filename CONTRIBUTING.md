@@ -88,6 +88,10 @@ Requirements:
 
 -   [Android Studio](https://developer.android.com) with JDK and gradle
 
+`package.json` provides the Android `versionName`. Update `VERSION_CODE` in `android/version.properties` during release preparation.
+
+Build environments without Git metadata must provide `OSMGO_BUILD_BRANCH`, `OSMGO_BUILD_SHA`, and `OSMGO_BUILD_DATE`.
+
 ```sh
 npm run buildAndroid
 ```

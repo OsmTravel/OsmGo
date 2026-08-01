@@ -1,4 +1,25 @@
+import groovy.json.JsonSlurper
+
 apply plugin: 'com.android.application'
+
+def versionProperties = new Properties()
+rootProject.file('version.properties').withInputStream { versionProperties.load(it) }
+
+def versionCodeError = 'android/version.properties must define VERSION_CODE as an integer from 1 to 2100000000.'
+def versionCodeText = versionProperties.getProperty('VERSION_CODE')
+if (!(versionCodeText ==~ /\d+/)) {
+    throw new GradleException(versionCodeError)
+}
+
+def appVersionCode = new BigInteger(versionCodeText)
+if (appVersionCode < 1 || appVersionCode > 2100000000) {
+    throw new GradleException(versionCodeError)
+}
+
+def appVersionName = new JsonSlurper().parse(rootProject.file('../package.json')).version
+if (!(appVersionName instanceof String) || appVersionName.trim().isEmpty()) {
+    throw new GradleException('package.json must define a non-empty version.')
+}
 
 android {
     namespace "fr.dogeo.osmgo"
@@ -7,8 +28,8 @@ android {
         applicationId "fr.dogeo.osmgo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1720102219
-        versionName "1.7.0"
+        versionCode appVersionCode.toInteger()
+        versionName appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.

@@ -1,37 +1,63 @@
-// const { writeFile } = require('fs');
+import { readFileSync, writeFileSync } from 'fs'
 import path from 'path'
 import git from 'git-last-commit'
-import { readFileSync, write, writeFileSync } from 'fs'
 
 const gitPath = path.join(__dirname, '..', '..')
-
 const envPath = path.join(__dirname, 'environment.prod.ts')
 
-const getLastCommit = () => {
+type BuildMetadata = {
+    branch: string
+    shortHash: string
+    date: string
+}
+
+const getGitMetadata = (): Promise<BuildMetadata> => {
     return new Promise((resolve, reject) => {
         git.getLastCommit(
             (err, commit: any) => {
                 if (err) {
                     reject(err)
+                    return
                 }
-                const info = {
-                    ...commit,
+
+                resolve({
+                    branch: commit.branch,
+                    shortHash: commit.shortHash,
                     date: new Date(commit.committedOn * 1000).toISOString(),
-                }
-                resolve(info)
+                })
             },
             { dst: gitPath }
         )
     })
 }
 
-const setEnv = async () => {
-    const gitInfo: any = await getLastCommit()
+const getBuildMetadata = async (): Promise<BuildMetadata> => {
+    const branch = process.env.OSMGO_BUILD_BRANCH
+    const sha = process.env.OSMGO_BUILD_SHA
+    const date = process.env.OSMGO_BUILD_DATE
 
-    const packagejson = JSON.parse(
+    if (branch && sha && date) {
+        return { branch, shortHash: sha.slice(0, 7), date }
+    }
+
+    const gitMetadata = await getGitMetadata()
+    return {
+        branch: branch || gitMetadata.branch,
+        shortHash: sha ? sha.slice(0, 7) : gitMetadata.shortHash,
+        date: date || gitMetadata.date,
+    }
+}
+
+const asSourceValue = (value: string | undefined): string => {
+    return value === undefined ? 'undefined' : JSON.stringify(value)
+}
+
+const setEnv = async (): Promise<void> => {
+    const buildMetadata = await getBuildMetadata()
+    const packageJson = JSON.parse(
         readFileSync(path.join(__dirname, '..', '..', 'package.json'), 'utf8')
     )
-    const vesion = packagejson.version
+    const version = packageJson.version
 
     let platform = process.argv[process.argv.length - 1]
     if (!['Android', 'PWA'].includes(platform)) {
@@ -40,14 +66,17 @@ const setEnv = async () => {
 
     const environmentContent = `export const environment = {
     production: true,
-    version: '${vesion}',
-    branch: '${gitInfo.branch}',
-    shortHash: '${gitInfo.shortHash}',
-    date: '${gitInfo.date}',
-    platform: '${platform}'
+    version: ${asSourceValue(version)},
+    branch: ${asSourceValue(buildMetadata.branch)},
+    shortHash: ${asSourceValue(buildMetadata.shortHash)},
+    date: ${asSourceValue(buildMetadata.date)},
+    platform: ${asSourceValue(platform)}
 }
 `
     writeFileSync(envPath, environmentContent)
 }
 
-setEnv()
+setEnv().catch((error) => {
+    console.error('Unable to create the production environment file.', error)
+    process.exitCode = 1
+})
