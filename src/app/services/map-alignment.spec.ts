@@ -1,4 +1,4 @@
-import { Map, StyleSpecification } from 'maplibre-gl'
+import { Map, type StyleSpecification } from 'maplibre-gl'
 
 import { getMarkerLayout, MapService } from './map.service'
 
@@ -41,7 +41,7 @@ describe('map marker alignment', () => {
             bearing: 90,
             interactive: false,
             attributionControl: false,
-            preserveDrawingBuffer: true,
+            canvasContextAttributes: { preserveDrawingBuffer: true },
         })
 
         await new Promise<void>((resolve, reject) => {

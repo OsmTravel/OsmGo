@@ -301,10 +301,7 @@ export class MapService {
                 newFilter = [...currentFilter, newConfigIdFilter]
             }
 
-            this.map.setFilter(
-                layerId,
-                newFilter as ['boolean', ...unknown[], unknown]
-            )
+            this.map.setFilter(layerId, newFilter as FilterSpecification)
         }
     }
 
@@ -1154,9 +1151,6 @@ export class MapService {
                 'circle-stroke-color': '#9bbcf2',
                 'circle-stroke-opacity': 0.5,
                 'circle-pitch-alignment': 'map',
-                // @ts-expect-error
-                // Currently the property 'circle-radius-transition' is missing in the typings.
-                // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898445988
                 'circle-radius-transition': { duration: 0 },
             },
         })
