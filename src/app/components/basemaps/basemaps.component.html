@@ -13,26 +13,29 @@
 </ion-header>
 
 @if (this.initService.isLoaded) {
-<ion-content class="ion-padding">
-    <h4>{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate }}</h4>
-    @for (bm of basemaps; track bm) {
-    <ion-card
-        (click)="selectBaseMap(bm)"
-        [ngClass]="{ selectedCard: bm.id == configService.config.basemap.id }"
-    >
-        <ion-card-header>
-            <ion-card-subtitle
-                >{{ bm?.category }} {{ bm?.end_date }}</ion-card-subtitle
+    <ion-content class="ion-padding">
+        <h4>{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate }}</h4>
+        @for (bm of basemaps; track bm) {
+            <ion-card
+                (click)="selectBaseMap(bm)"
+                [ngClass]="{
+                    selectedCard: bm.id == configService.config.basemap.id,
+                }"
             >
-            <ion-card-title>{{ bm.name }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-            @if (bm.description) {
-            <p [innerText]="bm.description"></p>
-            }
-            <p>{{ bm?.attribution?.text }}</p>
-        </ion-card-content>
-    </ion-card>
-    }
-</ion-content>
+                <ion-card-header>
+                    <ion-card-subtitle
+                        >{{ bm?.category }}
+                        {{ bm?.end_date }}</ion-card-subtitle
+                    >
+                    <ion-card-title>{{ bm.name }}</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                    @if (bm.description) {
+                        <p [innerText]="bm.description"></p>
+                    }
+                    <p>{{ bm?.attribution?.text }}</p>
+                </ion-card-content>
+            </ion-card>
+        }
+    </ion-content>
 }

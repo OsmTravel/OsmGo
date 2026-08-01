@@ -2,9 +2,9 @@
 
 You can translate Osm Go! at POEditor:
 
--   Add missing translations
--   Improve existing ones
--   Add comments on translations and so so...
+- Add missing translations
+- Improve existing ones
+- Add comments on translations and so so...
 
 ⏩ Follow [**this link**](https://poeditor.com/join/project/f2ASHUwwGp) to improve the translations.
 
@@ -28,10 +28,10 @@ TagInfo get those descriptions from OSM wiki. Make sure to add the "| descriptio
 
 Osm Go! is a _PWA_ application using:
 
--   Angular 22
--   Ionic 8
--   Capacitor 6
--   MapLibre GL
+- Angular 22
+- Ionic 8
+- Capacitor 6
+- MapLibre GL
 
 Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
 
@@ -87,21 +87,21 @@ npm run build
 
 ### Hosting
 
--   Pushes to `develop` deploy the development PWA to this repository's GitHub Pages site.
--   Pushes to `main` deploy the production PWA to Cloudflare Pages.
+- Pushes to `develop` deploy the development PWA to this repository's GitHub Pages site.
+- Pushes to `main` deploy the production PWA to Cloudflare Pages.
 
 Enable GitHub Actions as the GitHub Pages source in the repository settings. For production, create a Cloudflare Pages Direct Upload project and configure these repository values:
 
--   variable `CLOUDFLARE_PAGES_PROJECT` with the Cloudflare Pages project name;
--   secret `CLOUDFLARE_ACCOUNT_ID` with the Cloudflare account ID;
--   secret `CLOUDFLARE_API_TOKEN` with a token limited to Cloudflare Pages edit access.
+- variable `CLOUDFLARE_PAGES_PROJECT` with the Cloudflare Pages project name;
+- secret `CLOUDFLARE_ACCOUNT_ID` with the Cloudflare account ID;
+- secret `CLOUDFLARE_API_TOKEN` with a token limited to Cloudflare Pages edit access.
 
 ### Build for Android
 
 Requirements:
 
--   JDK 17;
--   Android SDK 34.
+- JDK 17;
+- Android SDK 34.
 
 `package.json` provides the Android `versionName`. Update `VERSION_CODE` in `android/version.properties` during release preparation.
 
@@ -123,7 +123,7 @@ npm run android:studio
 
 Requirements:
 
--   [Android Studio](https://developer.android.com) with JDK and gradle
+- [Android Studio](https://developer.android.com) with JDK and gradle
 
 ```sh
 npm run buildAndroidDebug
@@ -133,8 +133,8 @@ Then run `npm run android:studio` to compile the app and run it on your device.
 
 After you can use Google Chrome or Edge to attach a debugger to the web app on the device.
 
--   For Edge, visit [edge://inspect](edge://inspect)
--   For Chrome, visit [chrome://inspect](chrome://inspect)
+- For Edge, visit [edge://inspect](edge://inspect)
+- For Chrome, visit [chrome://inspect](chrome://inspect)
 
 Find your device in those pages. Then click on the inspect button. You can set breakpoint in JavaScript files and inspect HTML code.
 

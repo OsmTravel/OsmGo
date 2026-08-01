@@ -30,24 +30,31 @@
     <div class="listTag">
         <ion-list style="overflow-y: auto">
             <!-- TODO: filter by ids, (like bookmark, etc...) -->
-            @for ( tag of tagsService.tags | filtersTagsByIds:
-            this.tagsService.hiddenTagsIds | filterByTagsContent : [
-            configService.config.languageTags, configService.config.countryTags
-            ] : searchText ; track tag) {
-            <ion-item class="ion-no-padding">
-                <app-tag-list-element
-                    style="width: 100%"
-                    [tag]="tag"
-                    [countryTags]="configService.config.countryTags"
-                    [languageTags]="configService.config.languageTags"
-                    [jsonSprites]="tagsService.jsonSprites"
-                    [geometriesFilter]="['point']"
-                    [bookmarksIds]="tagsService.bookmarksIds"
-                    [isHiddenTag]="true"
-                    (removeHiddenTag)="removeHiddenTag($event)"
-                >
-                </app-tag-list-element>
-            </ion-item>
+            @for (
+                tag of tagsService.tags
+                    | filtersTagsByIds: this.tagsService.hiddenTagsIds
+                    | filterByTagsContent
+                        : [
+                              configService.config.languageTags,
+                              configService.config.countryTags,
+                          ]
+                        : searchText;
+                track tag
+            ) {
+                <ion-item class="ion-no-padding">
+                    <app-tag-list-element
+                        style="width: 100%"
+                        [tag]="tag"
+                        [countryTags]="configService.config.countryTags"
+                        [languageTags]="configService.config.languageTags"
+                        [jsonSprites]="tagsService.jsonSprites"
+                        [geometriesFilter]="['point']"
+                        [bookmarksIds]="tagsService.bookmarksIds"
+                        [isHiddenTag]="true"
+                        (removeHiddenTag)="removeHiddenTag($event)"
+                    >
+                    </app-tag-list-element>
+                </ion-item>
             }
         </ion-list>
     </div>

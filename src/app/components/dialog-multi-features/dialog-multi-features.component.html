@@ -19,58 +19,76 @@
                     </tr>
                 </thead>
                 @for (feature of features; track feature) {
-                <tbody>
-                    <tr (click)="selectFeature(feature)">
-                        <td
-                            style="width: 20px"
-                            [style.background-color]="
-                                feature.properties.hexColor
-                            "
-                        >
-                            <app-icon
-                                [icon]="feature.properties.icon"
-                                [jsonSprites]="jsonSprites"
+                    <tbody>
+                        <tr (click)="selectFeature(feature)">
+                            <td
+                                style="width: 20px"
+                                [style.background-color]="
+                                    feature.properties.hexColor
+                                "
                             >
-                            </app-icon>
-                        </td>
-                        <td>
-                            @if ( feature.properties.changeType == 'Create' ) {
-                            <ion-icon name="add" class="iconType"></ion-icon>
-                            } @if ( feature.properties.changeType == 'Update' )
-                            {
-                            <ion-icon name="create" class="iconType"></ion-icon>
-                            } @if ( feature.properties.changeType == 'Delete' )
-                            {
-                            <ion-icon name="trash" class="iconType"></ion-icon>
-                            }
-                        </td>
-                        <!-- TODO: geometryType -->
-                        <!-- <td>
+                                <app-icon
+                                    [icon]="feature.properties.icon"
+                                    [jsonSprites]="jsonSprites"
+                                >
+                                </app-icon>
+                            </td>
+                            <td>
+                                @if (
+                                    feature.properties.changeType == 'Create'
+                                ) {
+                                    <ion-icon
+                                        name="add"
+                                        class="iconType"
+                                    ></ion-icon>
+                                }
+                                @if (
+                                    feature.properties.changeType == 'Update'
+                                ) {
+                                    <ion-icon
+                                        name="create"
+                                        class="iconType"
+                                    ></ion-icon>
+                                }
+                                @if (
+                                    feature.properties.changeType == 'Delete'
+                                ) {
+                                    <ion-icon
+                                        name="trash"
+                                        class="iconType"
+                                    ></ion-icon>
+                                }
+                            </td>
+                            <!-- TODO: geometryType -->
+                            <!-- <td>
               <ion-icon *ngIf="!feature.properties.way_geometry" src="assets/idIcons/icon-vertex.svg"></ion-icon>
               <ion-icon *ngIf="feature.properties.way_geometry && feature.properties.way_geometry.type == 'Polyline'" class="iconGeometryType" src="assets/idIcons/icon-area.svg"></ion-icon>
               <ion-icon  *ngIf="feature.properties.way_geometry.type == 'Polygon'" src="assets/idIcons/icon-line.svg"></ion-icon>
             </td> -->
-                        <!-- TODO: translation -->
-                        <td>
-                            @if (feature.properties._name) {
-                            <span>
-                                {{ feature.properties._name }}
-                            </span>
-                            } @if (!feature.properties._name) {
-                            <span class="noname">
-                                {{ 'SHARED.UNDEFINED' | translate }}
-                            </span>
-                            }
-                        </td>
-                        <td>
-                            @if ( feature.properties.changeType !== 'Create' ) {
-                            <span class="spanId">
-                                {{ feature.properties.id }}
-                            </span>
-                            }
-                        </td>
-                    </tr>
-                </tbody>
+                            <!-- TODO: translation -->
+                            <td>
+                                @if (feature.properties._name) {
+                                    <span>
+                                        {{ feature.properties._name }}
+                                    </span>
+                                }
+                                @if (!feature.properties._name) {
+                                    <span class="noname">
+                                        {{ 'SHARED.UNDEFINED' | translate }}
+                                    </span>
+                                }
+                            </td>
+                            <td>
+                                @if (
+                                    feature.properties.changeType !== 'Create'
+                                ) {
+                                    <span class="spanId">
+                                        {{ feature.properties.id }}
+                                    </span>
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
                 }
             </table>
         </table>

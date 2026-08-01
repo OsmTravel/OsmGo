@@ -4,13 +4,5 @@
   "singleQuote": true,
   "trailingComma": "es5",
   "printWidth": 80,
-  "tabWidth": 4,
-  "overrides": [
-    {
-      "files": ["*.yaml", "*.json"],
-      "options": {
-        "tabWidth": 2
-      }
-    }
-  ]
+  "tabWidth": 4
 }

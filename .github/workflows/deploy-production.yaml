@@ -1,49 +1,49 @@
 name: Deploy production to Cloudflare Pages
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 concurrency:
-  group: production-deployment
-  cancel-in-progress: false
+    group: production-deployment
+    cancel-in-progress: false
 
 jobs:
-  deploy:
-    name: Deploy osmgo.com
-    runs-on: ubuntu-latest
-    environment: production
-    permissions:
-      contents: read
-      deployments: write
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    deploy:
+        name: Deploy osmgo.com
+        runs-on: ubuntu-latest
+        environment: production
+        permissions:
+            contents: read
+            deployments: write
+        steps:
+            - name: Check out the repository
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version-file: .nvmrc
-          cache: npm
+            - name: Set up Node.js
+              uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+              with:
+                  node-version-file: .nvmrc
+                  cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+            - name: Install dependencies
+              run: npm ci
 
-      - name: Run tests
-        run: npm run test:ci
+            - name: Run tests
+              run: npm run test:ci
 
-      - name: Build the PWA
-        run: npm run build
+            - name: Build the PWA
+              run: npm run build
 
-      - name: Check the build output
-        run: test -f www/index.html
+            - name: Check the build output
+              run: test -f www/index.html
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          wranglerVersion: 4.118.0
-          command: pages deploy www --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main
+            - name: Deploy to Cloudflare Pages
+              uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
+              with:
+                  apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                  accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                  gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+                  wranglerVersion: 4.118.0
+                  command: pages deploy www --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main

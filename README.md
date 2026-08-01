@@ -30,8 +30,8 @@ User documentation can be found [here](https://github.com/DoFabien/OsmGo/wiki).
 
 You can also have a look to:
 
--   the [release notes](https://github.com/DoFabien/OsmGo/releases)
--   the [changelog](CHANGELOG.md)
+- the [release notes](https://github.com/DoFabien/OsmGo/releases)
+- the [changelog](CHANGELOG.md)
 
 # Screenshots
 
@@ -39,10 +39,10 @@ You can also have a look to:
 
 # Contributing
 
--   👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translate)
--   🐞 [Report issues on GitHub](https://github.com/DoFabien/OsmGo/issues)
--   📚 [Improve user documentation](https://github.com/DoFabien/OsmGo/tree/main/docs)
--   🔧 [Contribute to the code (compile, debug, etc.)](CONTRIBUTING.md#development)
+- 👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translate)
+- 🐞 [Report issues on GitHub](https://github.com/DoFabien/OsmGo/issues)
+- 📚 [Improve user documentation](https://github.com/DoFabien/OsmGo/tree/main/docs)
+- 🔧 [Contribute to the code (compile, debug, etc.)](CONTRIBUTING.md#development)
 
 # License
 

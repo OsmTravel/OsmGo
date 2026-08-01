@@ -1,99 +1,130 @@
 @if (intervals && !displayCode && !isError && !isTooComplex) {
-<div>
-    @if (editMode) {
-    <ion-button
-        (click)="openModalAddOpeningHours(null)"
-        size="small"
-        expand="block"
-    >
-        <ion-icon name="add" slot="start"></ion-icon>
-        {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
-    </ion-button>
-    } @if (openingHours) {
     <div>
-        <!-- Only 1 member in this iteration -->
-        @for (dataRange of intervals; track dataRange; let indexDataRange =
-        $index) {
-        <div>
-            <table>
-                @for (day of days; track day) {
-                <tr>
-                    <td>{{ day.text }}</td>
-                    <td>
-                        @if ( findIntervalsByDay( dataRange._typical._intervals,
-                        day.index ); as _intervals ) {
-                        <div>
-                            @for ( interval of _intervals; track interval; let
-                            indexInterval = $index) {
-                            <div style="margin-bottom: 0.5em">
-                                {{ interval._start | minutesToHoursMinutes }} -
-                                {{ interval._end | minutesToHoursMinutes }}
-                                @if (editMode) {
-                                <ion-icon
-                                    (click)="
-                                        deleteCurrentInterval(
-                                            dataRange,
-                                            interval
-                                        )
-                                    "
-                                    name="close-outline"
-                                    style="
-                                        font-size: 1.5em;
-                                        vertical-align: bottom;
-                                        color: red;
-                                        cursor: pointer;
-                                    "
-                                ></ion-icon>
-                                }
-                            </div>
-                            } @if (_intervals.length == 0) {
-                            <div>
-                                {{ 'OPENINGHOURS.CLOSED' | translate }}
-                            </div>
+        @if (editMode) {
+            <ion-button
+                (click)="openModalAddOpeningHours(null)"
+                size="small"
+                expand="block"
+            >
+                <ion-icon name="add" slot="start"></ion-icon>
+                {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
+            </ion-button>
+        }
+        @if (openingHours) {
+            <div>
+                <!-- Only 1 member in this iteration -->
+                @for (
+                    dataRange of intervals;
+                    track dataRange;
+                    let indexDataRange = $index
+                ) {
+                    <div>
+                        <table>
+                            @for (day of days; track day) {
+                                <tr>
+                                    <td>{{ day.text }}</td>
+                                    <td>
+                                        @if (
+                                            findIntervalsByDay(
+                                                dataRange._typical._intervals,
+                                                day.index
+                                            );
+                                            as _intervals
+                                        ) {
+                                            <div>
+                                                @for (
+                                                    interval of _intervals;
+                                                    track interval;
+                                                    let indexInterval = $index
+                                                ) {
+                                                    <div
+                                                        style="
+                                                            margin-bottom: 0.5em;
+                                                        "
+                                                    >
+                                                        {{
+                                                            interval._start
+                                                                | minutesToHoursMinutes
+                                                        }}
+                                                        -
+                                                        {{
+                                                            interval._end
+                                                                | minutesToHoursMinutes
+                                                        }}
+                                                        @if (editMode) {
+                                                            <ion-icon
+                                                                (click)="
+                                                                    deleteCurrentInterval(
+                                                                        dataRange,
+                                                                        interval
+                                                                    )
+                                                                "
+                                                                name="close-outline"
+                                                                style="
+                                                                    font-size: 1.5em;
+                                                                    vertical-align: bottom;
+                                                                    color: red;
+                                                                    cursor: pointer;
+                                                                "
+                                                            ></ion-icon>
+                                                        }
+                                                    </div>
+                                                }
+                                                @if (_intervals.length == 0) {
+                                                    <div>
+                                                        {{
+                                                            'OPENINGHOURS.CLOSED'
+                                                                | translate
+                                                        }}
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    </td>
+                                </tr>
                             }
-                        </div>
-                        }
-                    </td>
-                </tr>
+                        </table>
+                    </div>
                 }
-            </table>
-        </div>
+            </div>
+        }
+        @if (!openingHours) {
+            <div>
+                {{ 'OPENINGHOURS.UNKNOW' | translate }}
+            </div>
         }
     </div>
-    } @if (!openingHours) {
-    <div>
-        {{ 'OPENINGHOURS.UNKNOW' | translate }}
-    </div>
+} @else {
+    @if (editMode) {
+        <div class="wrapperEdit2cols">
+            <div class="contentEdit2cols">
+                <ion-item style="padding-left: 0px">
+                    <ion-input
+                        type="text"
+                        debounce="200"
+                        [(ngModel)]="openingHours"
+                        [placeholder]="'opening_hours'"
+                        (ionChange)="valueChange($event)"
+                    ></ion-input>
+                </ion-item>
+            </div>
+            <div class="buttonEdit2cols">
+                <ion-icon
+                    (click)="openingHours = ''"
+                    name="close"
+                    style="width: 2em; height: 2em"
+                ></ion-icon>
+            </div>
+        </div>
     }
-</div>
-} @else { @if (editMode) {
-<div class="wrapperEdit2cols">
-    <div class="contentEdit2cols">
-        <ion-item style="padding-left: 0px">
-            <ion-input
-                type="text"
-                debounce="200"
-                [(ngModel)]="openingHours"
-                [placeholder]="'opening_hours'"
-                (ionChange)="valueChange($event)"
-            ></ion-input>
-        </ion-item>
-    </div>
-    <div class="buttonEdit2cols">
-        <ion-icon
-            (click)="openingHours = ''"
-            name="close"
-            style="width: 2em; height: 2em"
-        ></ion-icon>
-    </div>
-</div>
-} @if (!editMode) {
-<div>
-    {{ openingHours }}
-    @if (isTooComplex) {
-    <div class="tooComplex">
-        {{ 'OPENINGHOURS.TOO_COMPLEX_FOR_OSMGO' | translate }}
-    </div>
+    @if (!editMode) {
+        <div>
+            {{ openingHours }}
+            @if (isTooComplex) {
+                <div class="tooComplex">
+                    {{ 'OPENINGHOURS.TOO_COMPLEX_FOR_OSMGO' | translate }}
+                </div>
+            }
+        </div>
     }
-</div>
-} }
+}

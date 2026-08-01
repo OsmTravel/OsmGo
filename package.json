@@ -36,8 +36,8 @@
     "cleanTagsPresets": "ts-node --project ./scripts/tsconfig.json ./scripts/cleanTags.ts",
     "update": "npm run importFromID && npm run cleanTagsPresets && npm run sprites && npm run importBaseMaps",
     "prepare": "husky install",
-    "prettier:check": "npx prettier --check .",
-    "prettier:write": "npx prettier --write ."
+    "prettier:check": "prettier --check \"**/*.{html,scss,md,yaml,yml}\"",
+    "prettier:write": "prettier --write \"**/*.{html,scss,md,yaml,yml}\""
   },
   "dependencies": {
     "@angular/animations": "^22.1.0",
@@ -114,7 +114,7 @@
     "lint-staged": "^13.0.2",
     "node-fetch": "^2.6.7",
     "parse-svg-path": "^0.1.2",
-    "prettier": "2.7.1",
+    "prettier": "3.9.6",
     "scale-svg-path": "0.0.1",
     "serialize-svg-path": "^0.1.0",
     "sharp": "0.35.3",
@@ -129,6 +129,7 @@
     "yargs": "^17.5.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{ts,js,mjs,cjs,json,jsonc,css}": "biome check --write --no-errors-on-unmatched --diagnostic-level=error",
+    "*.{html,scss,md,yaml,yml}": "prettier --write"
   }
 }

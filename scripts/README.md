@@ -2,9 +2,9 @@
 
 OsmGo assets will do imports from:
 
--   [iD]
--   [id-tagging-schema]
--   and [name-suggestion-index].
+- [iD]
+- [id-tagging-schema]
+- and [name-suggestion-index].
 
 ### 0. Quick setup
 

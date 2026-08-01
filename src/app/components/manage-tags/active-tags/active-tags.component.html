@@ -29,38 +29,47 @@
     </div>
     <div class="listTag">
         @if (searchText.length > 2) {
-        <ion-list style="overflow-y: auto">
-            @for ( tag of tagsService.tags | filtersTagsByIds:
-            tagsService.hiddenTagsIds:true | filterDeprecatedTag |
-            filterByTagsContent : [ configService.config.languageTags,
-            configService.config.countryTags ] : searchText ; track tag) {
-            <ion-item class="ion-no-padding">
-                <app-tag-list-element
-                    style="width: 100%"
-                    [tag]="tag"
-                    [countryTags]="configService.config.countryTags"
-                    [languageTags]="configService.config.languageTags"
-                    [jsonSprites]="tagsService.jsonSprites"
-                    [geometriesFilter]="['point']"
-                    [bookmarksIds]="tagsService.bookmarksIds"
-                    [showHideTagButton]="true"
-                    (removeBookmark)="tagsService.removeBookMark(tag)"
-                    (addBookmark)="tagsService.addBookMark(tag)"
-                    (addHiddenTag)="addHiddenTag($event)"
-                >
-                </app-tag-list-element>
-            </ion-item>
-            }
-        </ion-list>
-        } @if (searchText.length <= 2) {
-        <div>
-            <h4 style="text-align: center">
-                {{
-                    'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS'
-                        | translate
-                }}
-            </h4>
-        </div>
+            <ion-list style="overflow-y: auto">
+                @for (
+                    tag of tagsService.tags
+                        | filtersTagsByIds: tagsService.hiddenTagsIds : true
+                        | filterDeprecatedTag
+                        | filterByTagsContent
+                            : [
+                                  configService.config.languageTags,
+                                  configService.config.countryTags,
+                              ]
+                            : searchText;
+                    track tag
+                ) {
+                    <ion-item class="ion-no-padding">
+                        <app-tag-list-element
+                            style="width: 100%"
+                            [tag]="tag"
+                            [countryTags]="configService.config.countryTags"
+                            [languageTags]="configService.config.languageTags"
+                            [jsonSprites]="tagsService.jsonSprites"
+                            [geometriesFilter]="['point']"
+                            [bookmarksIds]="tagsService.bookmarksIds"
+                            [showHideTagButton]="true"
+                            (removeBookmark)="tagsService.removeBookMark(tag)"
+                            (addBookmark)="tagsService.addBookMark(tag)"
+                            (addHiddenTag)="addHiddenTag($event)"
+                        >
+                        </app-tag-list-element>
+                    </ion-item>
+                }
+            </ion-list>
+        }
+        @if (searchText.length <= 2) {
+            <div>
+                <h4 style="text-align: center">
+                    {{
+                        'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS'
+                            | translate
+                    }}
+                </h4>
+            </div>
         }
     </div>
 </ion-content>

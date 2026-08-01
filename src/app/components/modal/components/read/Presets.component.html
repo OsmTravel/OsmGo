@@ -1,40 +1,47 @@
 <ion-card>
     <ion-card-header>
         @if (!displayCode) {
-        <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
-        } @if (displayCode) {
-        <b>{{ preset?.key }}</b>
-        } @if (preset?.type == 'url' && tag.value) {
-        <a href="{{ tag.value }}" target="_blank"
-            ><ion-icon name="link"></ion-icon
-        ></a>
+            <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+        }
+        @if (displayCode) {
+            <b>{{ preset?.key }}</b>
+        }
+        @if (preset?.type == 'url' && tag.value) {
+            <a href="{{ tag.value }}" target="_blank"
+                ><ion-icon name="link"></ion-icon
+            ></a>
         }
     </ion-card-header>
     @if (preset?.key != 'opening_hours') {
-    <ion-card-content>
-        @if ( !displayCode && (tag | displayPresetLabel: preset); as pr ) {
-        <p>
-            {{ pr.lbl[language] || pr.lbl['en'] }}
-        </p>
-        } @else { @if ( !['number', 'text', 'tel', 'url', 'email'].includes(
-        $safeNavigationMigration(preset?.type) ) ) {
-        <ion-icon name="code"></ion-icon>
-        }
-        {{ tag.value }}
-        }
-    </ion-card-content>
-    } @if (preset?.key == 'opening_hours') {
-    <ion-card-content>
-        @if (!displayCode) {
-        <app-opening-hours
-            [openingHours]="tag.value"
-            [displayCode]="displayCode"
-        >
-        </app-opening-hours>
-        } @else {
-        <ion-icon name="code"></ion-icon>
-        {{ tag.value }}
-        }
-    </ion-card-content>
+        <ion-card-content>
+            @if (!displayCode && (tag | displayPresetLabel: preset); as pr) {
+                <p>
+                    {{ pr.lbl[language] || pr.lbl['en'] }}
+                </p>
+            } @else {
+                @if (
+                    !['number', 'text', 'tel', 'url', 'email'].includes(
+                        $safeNavigationMigration(preset?.type)
+                    )
+                ) {
+                    <ion-icon name="code"></ion-icon>
+                }
+                {{ tag.value }}
+            }
+        </ion-card-content>
+    }
+    @if (preset?.key == 'opening_hours') {
+        <ion-card-content>
+            @if (!displayCode) {
+                <app-opening-hours
+                    [openingHours]="tag.value"
+                    [displayCode]="displayCode"
+                >
+                </app-opening-hours>
+            } @else {
+                <ion-icon name="code"></ion-icon>
+                {{ tag.value }}
+            }
+        </ion-card-content>
     }
 </ion-card>

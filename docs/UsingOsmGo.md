@@ -10,9 +10,9 @@ permalink: /UsingOsmGo
 
 With OsmGo you can:
 
--   Create/Update/Delete POI mapped as OpenStreetMap nodes
--   Create/Update/Delete some way/area objects filtered to keep the most 'usefull' ones
--   Use differents imageries: BDOrtho IGN, MapBox Satellite & Bing aerial imagery
+- Create/Update/Delete POI mapped as OpenStreetMap nodes
+- Create/Update/Delete some way/area objects filtered to keep the most 'usefull' ones
+- Use differents imageries: BDOrtho IGN, MapBox Satellite & Bing aerial imagery
 
 # Interface
 
@@ -34,9 +34,9 @@ Changing map backgroung from MapBox tiles to aerial imagery:
 
 On the right upper screen there are three buttons:
 
--   Zooming in
--   Zooming out
--   The last one toggles the the 'points always to the geographical north' functionality
+- Zooming in
+- Zooming out
+- The last one toggles the the 'points always to the geographical north' functionality
 
 ## Three object types
 
@@ -46,9 +46,9 @@ On the right upper screen there are three buttons:
 
 Three different looking markers represent the three different objects we have in OpenStreetMap:
 
--   <span style="background:url('./assets/markers.png');background-size: 100px;display:inline-block;height:40px;width:30px;background-position:1px 0px;background-repeat:no-repeat;"></span> **Round** for an OSM **node**
--   <span style="background:url('./assets/markers.png');background-size: 100px;display:inline-block;height:40px;width:30px;background-position:-36px 0px;background-repeat:no-repeat;"></span> **Hexagon** for an OSM **way**
--   <span style="background:url('./assets/markers.png');background-size: 100px;display:inline-block;height:40px;width:30px;background-position:-72px 0px;background-repeat:no-repeat;"></span> **Square** for an OSM **area**
+- <span style="background:url('./assets/markers.png');background-size: 100px;display:inline-block;height:40px;width:30px;background-position:1px 0px;background-repeat:no-repeat;"></span> **Round** for an OSM **node**
+- <span style="background:url('./assets/markers.png');background-size: 100px;display:inline-block;height:40px;width:30px;background-position:-36px 0px;background-repeat:no-repeat;"></span> **Hexagon** for an OSM **way**
+- <span style="background:url('./assets/markers.png');background-size: 100px;display:inline-block;height:40px;width:30px;background-position:-72px 0px;background-repeat:no-repeat;"></span> **Square** for an OSM **area**
 
 The area inside a polygon is clickable. The borders of the area represent the real objects' border.
 

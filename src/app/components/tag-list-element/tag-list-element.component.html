@@ -15,20 +15,20 @@
     </div>
 
     @if (!isHiddenTag) {
-    <div
-        (click)="addOrRemoveBookmark(tag)"
-        style="width: 36px"
-        class="bookmark"
-    >
-        <ion-icon
-            [style.color]="
-                (tag | isBookmarked: bookmarksIds) ? '#f71000' : '#d8d8d8'
-            "
-            name="heart"
-            item-left
-            style="font-size: 26px; height: 100%; width: 100%"
-        ></ion-icon>
-    </div>
+        <div
+            (click)="addOrRemoveBookmark(tag)"
+            style="width: 36px"
+            class="bookmark"
+        >
+            <ion-icon
+                [style.color]="
+                    (tag | isBookmarked: bookmarksIds) ? '#f71000' : '#d8d8d8'
+                "
+                name="heart"
+                item-left
+                style="font-size: 26px; height: 100%; width: 100%"
+            ></ion-icon>
+        </div>
     }
 
     <div class="tag-text spacer" (click)="selected.emit(tag)">
@@ -52,33 +52,35 @@
     </div>
 
     @if (oldTagConfig?.id === tag.id) {
-    <div class="action">
-        <ion-icon
-            name="checkmark"
-            item-left
-            [style.color]="oldTagConfig?.id === tag.id ? 'green' : 'black'"
-            style="font-size: 26px; height: 100%"
-        ></ion-icon>
-    </div>
-    } @if (isHiddenTag) {
-    <div>
-        <ion-button
-            class="ion-no-margin buttonUnhideTag"
-            color="success"
-            (click)="removeHiddenTag.emit(tag)"
-        >
-            <ion-icon name="add-circle"> </ion-icon>
-        </ion-button>
-    </div>
-    } @if (showHideTagButton) {
-    <div>
-        <ion-button
-            class="ion-no-margin buttonUnhideTag"
-            color="danger"
-            (click)="addHiddenTag.emit(tag)"
-        >
-            <ion-icon name="remove-circle"> </ion-icon>
-        </ion-button>
-    </div>
+        <div class="action">
+            <ion-icon
+                name="checkmark"
+                item-left
+                [style.color]="oldTagConfig?.id === tag.id ? 'green' : 'black'"
+                style="font-size: 26px; height: 100%"
+            ></ion-icon>
+        </div>
+    }
+    @if (isHiddenTag) {
+        <div>
+            <ion-button
+                class="ion-no-margin buttonUnhideTag"
+                color="success"
+                (click)="removeHiddenTag.emit(tag)"
+            >
+                <ion-icon name="add-circle"> </ion-icon>
+            </ion-button>
+        </div>
+    }
+    @if (showHideTagButton) {
+        <div>
+            <ion-button
+                class="ion-no-margin buttonUnhideTag"
+                color="danger"
+                (click)="addHiddenTag.emit(tag)"
+            >
+                <ion-icon name="remove-circle"> </ion-icon>
+            </ion-button>
+        </div>
     }
 </div>

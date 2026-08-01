@@ -1,6 +1,7 @@
 *.min.js
 android/
 fixture
+scripts/osmToOsmgo/flamegraph.html
 node_modules/
 package-lock.json
 package.json
