@@ -1,0 +1,72 @@
+name: Validate Android build
+
+on:
+    pull_request:
+        branches:
+            - develop
+    push:
+        branches:
+            - develop
+
+concurrency:
+    group: android-validation-${{ github.event.pull_request.number || github.sha }}
+    cancel-in-progress: true
+
+permissions:
+    contents: read
+
+jobs:
+    validate:
+        name: Build test-only release artifacts
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        steps:
+            - name: Check out the repository
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+            - name: Build and verify with a disposable key
+              shell: bash
+              run: |
+                  set -euo pipefail
+                  umask 077
+
+                  signing_directory="$(mktemp --directory "${RUNNER_TEMP}/osmgo-signing.XXXXXX")"
+                  export ANDROID_KEYSTORE_PATH="${signing_directory}/release.jks"
+                  export ANDROID_KEYSTORE_PASSWORD="$(openssl rand -hex 24)"
+                  export ANDROID_KEY_ALIAS=osmgo-test-only
+                  export ANDROID_KEY_PASSWORD="$(openssl rand -hex 24)"
+
+                  echo "::add-mask::${ANDROID_KEYSTORE_PASSWORD}"
+                  echo "::add-mask::${ANDROID_KEY_PASSWORD}"
+
+                  cleanup() {
+                      if [[ -f "${ANDROID_KEYSTORE_PATH}" ]]; then
+                          unlink "${ANDROID_KEYSTORE_PATH}"
+                      fi
+                      if [[ -d "${signing_directory}" ]]; then
+                          rmdir "${signing_directory}"
+                      fi
+                  }
+                  trap cleanup EXIT
+
+                  keytool -genkeypair \
+                      -keystore "${ANDROID_KEYSTORE_PATH}" \
+                      -storetype JKS \
+                      -storepass:env ANDROID_KEYSTORE_PASSWORD \
+                      -keypass:env ANDROID_KEY_PASSWORD \
+                      -alias "${ANDROID_KEY_ALIAS}" \
+                      -keyalg RSA \
+                      -keysize 3072 \
+                      -validity 1 \
+                      -dname "CN=OsmGo CI Test Only,O=OsmGo,C=FR"
+
+                  ./scripts/build-android-docker.sh
+
+            - name: Upload test-only artifacts
+              uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+              with:
+                  name: android-test-${{ github.sha }}
+                  path: dist/android
+                  if-no-files-found: error
+                  retention-days: 2
+                  compression-level: 0
