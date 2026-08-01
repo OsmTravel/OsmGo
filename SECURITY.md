@@ -32,6 +32,14 @@ The maintainers will assess the report, reproduce it in a safe environment, and 
 - Do not disrupt `osmgo.com`, Cloudflare, GitHub Actions, or OpenStreetMap services.
 - Stop testing and report privately if pending edits, credentials, signing keys, or user data could be exposed or lost.
 
+## Dependency audits
+
+`npm audit --omit=dev` is the release gate. High or critical production dependency advisories must be fixed before a release.
+
+The full development audit currently reports critical advisories in `request` and `form-data` through `spritesmith`. This dependency is used only by the local sprite generator, receives repository-controlled PNG file paths, and is not included in the application. Do not pass URLs or untrusted files to the sprite generator. Replace this dependency when a maintained alternative fits the existing simple pipeline.
+
+Review the full audit regularly. Any new high or critical advisory must either be fixed or documented here with its exact scope and mitigation.
+
 ## Maintainer handling
 
 For a confirmed vulnerability:
