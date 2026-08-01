@@ -1116,8 +1116,6 @@ export class MapService {
         this.map.addLayer({
             id: 'location_circle',
             type: 'circle',
-            // @ts-expect-error
-            // Type 'string' is not assignable to type 'SourceSpecification'.
             source: 'location_circle',
             layout: {},
             paint: {
