@@ -1,15 +1,15 @@
-import type { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http'
 import {
     DOCUMENT,
     EventEmitter,
     Inject,
     Injectable,
-    type NgZone,
+    NgZone,
 } from '@angular/core'
-import type { ActivatedRoute, Params, Router } from '@angular/router'
+import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
-import type { AlertController } from '@ionic/angular'
-import type { TranslateService } from '@ngx-translate/core'
+import { AlertController } from '@ionic/angular'
+import { TranslateService } from '@ngx-translate/core'
 import {
     type EventShowModal,
     type FeatureIdSource,
@@ -20,11 +20,11 @@ import {
     TagConfig,
 } from '@osmgo/type'
 import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
-import type { AlertService } from '@services/alert.service'
-import type { Config, ConfigService } from '@services/config.service'
-import type { DataService } from '@services/data.service'
-import type { LocationService } from '@services/location.service'
-import type { TagsService } from '@services/tags.service'
+import { AlertService } from '@services/alert.service'
+import { type Config, ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { LocationService } from '@services/location.service'
+import { TagsService } from '@services/tags.service'
 import {
     type BBox,
     destination,
@@ -74,17 +74,29 @@ export class MapService {
 
     spritesCache
     constructor(
+        @Inject(NgZone)
         private _ngZone: NgZone,
+        @Inject(DataService)
         public dataService: DataService,
+        @Inject(TagsService)
         public tagsService: TagsService,
+        @Inject(AlertService)
         public alertService: AlertService,
+        @Inject(LocationService)
         public locationService: LocationService,
+        @Inject(ConfigService)
         public configService: ConfigService,
+        @Inject(NgZone)
         private zone: NgZone,
+        @Inject(AlertController)
         private alertCtrl: AlertController,
+        @Inject(HttpClient)
         private http: HttpClient,
+        @Inject(TranslateService)
         private translate: TranslateService,
+        @Inject(Router)
         private router: Router,
+        @Inject(ActivatedRoute)
         private activatedRoute: ActivatedRoute,
         @Inject(DOCUMENT) private document: Document
     ) {
@@ -636,6 +648,14 @@ export class MapService {
 
     initMap(config: Config): void {
         this.getMapStyle().subscribe((mapStyle) => {
+            const canvas = this.document.createElement('canvas')
+            if (!canvas.getContext('webgl2')) {
+                this.alertService.eventNewAlert.emit(
+                    'WebGL 2 is required to display the map on this device.'
+                )
+                return
+            }
+
             this.positionIsFollow = config.centerWhenGpsIsReady
             this.headingIsLocked = config.centerWhenGpsIsReady
             this.zone.runOutsideAngular(() => {
@@ -1315,63 +1335,6 @@ export class MapService {
             this._ngZone.run(() => {
                 this.configService.currentZoom = this.map.getZoom()
             })
-        })
-
-        // TODO
-        this.map.on('styleimagemissing', async (e) => {
-            // this.map.addImage(iconId, image, { pixelRatio: Math.round(window.devicePixelRatio) });
-            const iconId = e.id
-            // // TODO => in function
-            // const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-            // let spriteGenerated = false
-            // let iconParam: { shape: string; color: string; id: string} | undefined
-            // const regex = /^(circle|square|penta)-(#\w{6})-([\w-]+)$/;
-            // const match = iconId.match(regex);
-
-            // if (match) {
-            //     const [, shape, color, id] = match;
-            //     iconParam = { shape, color, id }
-
-            //     const currentImage = await this.generateIconFromSprite(iconParam)
-
-            //     if (!currentImage){
-            //         console.log('no currentImage', iconId)
-            //     }
-            //     if (currentImage && !this.map.hasImage(iconId)){
-            //         spriteGenerated = true
-            //         this.map.addImage(iconId, currentImage.blob, {pixelRatio});
-            //         // this.map.loadImage(currentImage, (error, image) => {
-            //         //     if (error) throw error;
-            //         //     this.map.addImage(iconId, image, {pixelRatio});
-            //         // })
-            //     }
-
-            //   }
-            //   else {
-            //     console.log('no match', iconId)
-            //   }
-
-            // if (!spriteGenerated && !this.map.hasImage(iconId)){
-            //     if (/^circle/.test(iconId)) {
-            //         this.map.addImage(
-            //             iconId,
-            //             this.markerMaplibreUnknown['circle'],
-            //             { pixelRatio: pixelRatio }
-            //         )
-            //     }
-            //     if (/^penta/.test(iconId)) {
-            //         this.map.addImage(iconId, this.markerMaplibreUnknown['penta'], {
-            //             pixelRatio: pixelRatio,
-            //         })
-            //     }
-            //     if (/^square/.test(iconId)) {
-            //         this.map.addImage(
-            //             iconId,
-            //             this.markerMaplibreUnknown['square'],
-            //             { pixelRatio: pixelRatio }
-            //         )
-            //     }
-            // }
         })
 
         this.locationService.eventNewCompassHeading

@@ -1,4 +1,4 @@
-import { Map, type StyleSpecification } from 'maplibre-gl'
+import { Map, type StyleSpecification, setWorkerUrl } from 'maplibre-gl'
 
 import { getMarkerLayout, MapService } from './map.service'
 
@@ -7,6 +7,7 @@ describe('map marker alignment', () => {
     let map: Map
 
     beforeEach(() => {
+        setWorkerUrl('/node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs')
         container = document.createElement('div')
         container.style.position = 'relative'
         container.style.width = '320px'

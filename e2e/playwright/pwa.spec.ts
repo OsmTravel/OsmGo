@@ -1,4 +1,4 @@
-import { expect, Page, test } from '@playwright/test'
+import { expect, type Page, test } from '@playwright/test'
 
 const appUrl = '/?center=2.2945,48.8584&zoom=18'
 
@@ -183,6 +183,23 @@ test.describe('PWA installation', () => {
         await expect(page).toHaveTitle('Osm Go!')
         await page.context().setOffline(false)
     })
+})
+
+test('explains when WebGL 2 is unavailable', async ({ page }) => {
+    await page.addInitScript(() => {
+        const getContext = HTMLCanvasElement.prototype.getContext
+        HTMLCanvasElement.prototype.getContext = function (...args) {
+            if (args[0] === 'webgl2') {
+                return null
+            }
+            return getContext.apply(this, args)
+        }
+    })
+
+    await page.goto(appUrl)
+    await expect(
+        page.getByText('WebGL 2 is required to display the map on this device.')
+    ).toBeVisible()
 })
 
 test('downloads a small OSM area from a fixture', async ({ page }) => {
