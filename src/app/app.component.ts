@@ -6,7 +6,6 @@ import { Device } from '@capacitor/device'
 import { SplashScreen } from '@capacitor/splash-screen'
 import { Platform } from '@ionic/angular'
 import { Storage } from '@ionic/storage-angular'
-import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 
@@ -20,7 +19,6 @@ export class AppComponent {
     constructor(
         private platform: Platform,
         public configService: ConfigService,
-        private translate: TranslateService,
         public tagService: TagsService,
         private storage: Storage,
         private router: Router
@@ -49,7 +47,6 @@ export class AppComponent {
             }
         })
 
-        this.translate.setFallbackLang('en')
         this.configService.platforms = this.platform.platforms()
         this.configService.deviceInfo = await Device.getInfo()
 

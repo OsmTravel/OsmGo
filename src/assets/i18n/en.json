@@ -12,7 +12,12 @@
         "NAME": "Name",
         "ID": "Id",
         "CLOSE": "Close",
-        "LOADING": "Loading…"
+        "LOADING": "Loading…",
+        "CREATE": "Create",
+        "EDIT": "Edit",
+        "SAVE": "Save",
+        "DELETE": "Delete",
+        "CLEAR": "Clear"
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Are you sure?",
@@ -20,7 +25,19 @@
         "START_SNACK_ITEMS_IN_MEMORY": "items in memory",
         "WHAT_ITEM": "Which?",
         "LOAD_BBOX": "Load data?",
-        "CREATING_MISSING_ICONS": "Creating missing icons…"
+        "CREATING_MISSING_ICONS": "Creating missing icons…",
+        "BUTTONS": {
+            "MENU": "Menu",
+            "UPLOAD": "Upload",
+            "LOAD_DATA": "Download data",
+            "LOADING_DATA": "Loading",
+            "VIEW_AREAL_MAP": "View aerial imagery",
+            "VIEW_STYLED_MAP": "View map",
+            "ADD_NEW": "Create an object",
+            "CENTER_GPS": "Center the map on my location",
+            "CONFIRM_ADD": "Add an object",
+            "CONFIRM_MOVE": "Move an object"
+        }
     },
     "MENU": {
         "CONNECTION": "Log in at OpenStreetMap",
@@ -120,7 +137,15 @@
         "CENTER_WHEN_GPS_IS_READY": "On start, center the map on your location",
         "CENTER_WHEN_GPS_IS_READY_HINT": "Center the map on your location as soon as possible.",
         "LIMIT_FEATURES": "Maximum number of objects in memory",
-        "LIMIT_FEATURES_HINT": "After this limit, the old data will be deleted (the current modifications will be kept). Too high a limit can dramatically decrease performance"
+        "LIMIT_FEATURES_HINT": "After this limit, the old data will be deleted (the current modifications will be kept). Too high a limit can dramatically decrease performance",
+        "DISPLAY_SURVEY_CARD": "Show the survey card",
+        "DISPLAY_SURVEY_CARD_HINT": "Makes it easy to add the 'survey:date' tag.",
+        "DISPLAY_SURVEY_CARD_CHOICE": {
+            "NEVER": "Never",
+            "OLDER": "Older than...",
+            "ALWAYS": "Always"
+        },
+        "SURVEY_CARD_RANGE": "Show when the last update was more than {{year}} years ago"
     },
     "MODAL_SELECTED_ITEM": {
         "CUSTOM_KEY_VALUE": "Add a custom value",
@@ -149,7 +174,11 @@
         "THIS_NODE_IS_USED_BY_A_WAY": "This node is used by {x} way(s)",
         "UNDEFINED_VALUE": "Unknown",
         "LAST_TAG_USED": "Last used tags",
-        "BOOKMARKS": "Bookmarks"
+        "BOOKMARKS": "Bookmarks",
+        "ADD_TAG_PLACEHOLDER": "Enter a key or name",
+        "LAST_SURVEY": "Last survey",
+        "SURVEY_QUESTION": "Does this object still exist?",
+        "WARN_NODE_EDITED": "This object has local changes"
     },
     "ALERT": {
         "TAG_IS_DEPRECATED": "This tag is deprecated",

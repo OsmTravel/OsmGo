@@ -134,7 +134,7 @@ import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
         IonicModule.forRoot({ mode: 'md' }),
         IonicStorageModule.forRoot(),
         AppRoutingModule,
-        TranslateModule.forRoot(),
+        TranslateModule.forRoot({ fallbackLang: 'en' }),
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,
         }),
