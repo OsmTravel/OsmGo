@@ -21,6 +21,39 @@ if (!(appVersionName instanceof String) || appVersionName.trim().isEmpty()) {
     throw new GradleException('package.json must define a non-empty version.')
 }
 
+def signingVariableNames = [
+    'ANDROID_KEYSTORE_PATH',
+    'ANDROID_KEYSTORE_PASSWORD',
+    'ANDROID_KEY_ALIAS',
+    'ANDROID_KEY_PASSWORD',
+]
+def signingValues = signingVariableNames.collectEntries { name ->
+    [(name): System.getenv(name)]
+}
+def missingSigningVariables = signingVariableNames.findAll { name ->
+    !signingValues[name]
+}
+def signingConfigured = missingSigningVariables.isEmpty()
+def signingPartiallyConfigured = missingSigningVariables.size() < signingVariableNames.size()
+def releaseSigningError = "Release signing requires: ${missingSigningVariables.join(', ')}"
+
+if (signingPartiallyConfigured && !signingConfigured) {
+    throw new GradleException(releaseSigningError)
+}
+
+tasks.configureEach { task ->
+    if (!signingConfigured && task.name.toLowerCase().contains('release')) {
+        task.doFirst {
+            throw new GradleException(releaseSigningError)
+        }
+    }
+}
+
+def releaseKeystore = signingConfigured ? file(signingValues.ANDROID_KEYSTORE_PATH) : null
+if (signingConfigured && (!releaseKeystore.isFile() || !releaseKeystore.canRead())) {
+    throw new GradleException('ANDROID_KEYSTORE_PATH must point to a readable keystore file.')
+}
+
 android {
     namespace = "fr.dogeo.osmgo"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -37,8 +70,21 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        if (signingConfigured) {
+            release {
+                storeFile releaseKeystore
+                storePassword signingValues.ANDROID_KEYSTORE_PASSWORD
+                keyAlias signingValues.ANDROID_KEY_ALIAS
+                keyPassword signingValues.ANDROID_KEY_PASSWORD
+            }
+        }
+    }
     buildTypes {
         release {
+            if (signingConfigured) {
+                signingConfig signingConfigs.release
+            }
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
