@@ -111,7 +111,10 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
-            "buildTarget": "app:build"
+            "buildTarget": "app:build",
+            "prebundle": {
+              "exclude": ["@ionic/angular", "@ionic/core", "maplibre-gl"]
+            }
           },
           "configurations": {
             "production": {
