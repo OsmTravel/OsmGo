@@ -6,11 +6,11 @@ import {
     Output,
     ChangeDetectionStrategy,
 } from '@angular/core'
-import * as Interval from '@scripts/YoHours/Interval.js'
-import * as OpeningHoursParser from '@scripts/YoHours/OpeningHoursParser.js'
-import * as OpeningHoursBuilder from '@scripts/YoHours/OpeningHoursBuilder.js'
-import * as DateRange from '@scripts/YoHours/DateRange.js'
-import * as WideInterval from '@scripts/YoHours/WideInterval.js'
+import Interval from '@scripts/YoHours/Interval.js'
+import OpeningHoursParser from '@scripts/YoHours/OpeningHoursParser.js'
+import OpeningHoursBuilder from '@scripts/YoHours/OpeningHoursBuilder.js'
+import DateRange from '@scripts/YoHours/DateRange.js'
+import WideInterval from '@scripts/YoHours/WideInterval.js'
 import { TranslateService } from '@ngx-translate/core'
 
 import { ModalController } from '@ionic/angular'

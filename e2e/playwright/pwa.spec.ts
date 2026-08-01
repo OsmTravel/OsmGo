@@ -170,6 +170,18 @@ test.describe('PWA installation', () => {
             return registration.active?.state
         })
         expect(workerState).toBe('activated')
+
+        await page.reload()
+        await expect
+            .poll(() =>
+                page.evaluate(() => Boolean(navigator.serviceWorker.controller))
+            )
+            .toBe(true)
+
+        await page.context().setOffline(true)
+        await page.reload()
+        await expect(page).toHaveTitle('Osm Go!')
+        await page.context().setOffline(false)
     })
 })
 
