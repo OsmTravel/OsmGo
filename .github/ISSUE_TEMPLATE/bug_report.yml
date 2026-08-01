@@ -1,0 +1,125 @@
+name: Bug report
+description: Report a reproducible Osm Go! problem without sensitive data.
+title: '[Bug]: '
+body:
+    - type: markdown
+      attributes:
+          value: |
+              Thank you for helping improve Osm Go!. If pending edits disappeared, do not uninstall the app or clear its storage. For security vulnerabilities, use the private process in the [security policy](https://github.com/DoFabien/OsmGo/security/policy) instead of this form.
+
+    - type: input
+      id: version
+      attributes:
+          label: Osm Go! version
+          description: Copy the complete version shown on the About screen.
+          placeholder: 'Osm Go! 1.7.0-dev PWA'
+      validations:
+          required: true
+
+    - type: dropdown
+      id: platform
+      attributes:
+          label: Platform
+          options:
+              - Android native app
+              - PWA on Android
+              - PWA on desktop
+              - PWA on iOS or iPadOS
+              - Other
+      validations:
+          required: true
+
+    - type: dropdown
+      id: installation_source
+      attributes:
+          label: Installation source
+          options:
+              - Google Play
+              - GitHub release APK
+              - osmgo.com
+              - GitHub Pages development build
+              - Local development build
+              - Other
+      validations:
+          required: true
+
+    - type: textarea
+      id: device
+      attributes:
+          label: Device and browser details
+          description: For Android, include the Android and System WebView versions. For a PWA, include the operating system and browser versions.
+          placeholder: 'Android 16, Pixel 8, Android System WebView 140...'
+      validations:
+          required: true
+
+    - type: dropdown
+      id: affected_step
+      attributes:
+          label: Affected step
+          options:
+              - Downloading OSM data
+              - Editing local data
+              - Uploading OSM changes
+              - OSM authentication
+              - Map display
+              - App startup or update
+              - Other
+      validations:
+          required: true
+
+    - type: dropdown
+      id: osm_server
+      attributes:
+          label: OpenStreetMap server
+          options:
+              - Production server
+              - Development server
+              - Not sure
+      validations:
+          required: true
+
+    - type: dropdown
+      id: data_status
+      attributes:
+          label: Downloaded and pending data status
+          description: Tell us whether local data was preserved after the problem.
+          options:
+              - Pending edits are still present
+              - Pending edits disappeared
+              - There were no pending edits
+              - Not sure
+      validations:
+          required: true
+
+    - type: textarea
+      id: steps
+      attributes:
+          label: Steps to reproduce
+          description: Use the smallest area and data set that reproduce the problem.
+          placeholder: |
+              1. Open...
+              2. Download...
+              3. Edit...
+              4. See...
+      validations:
+          required: true
+
+    - type: textarea
+      id: result
+      attributes:
+          label: Expected and actual result
+          description: Explain what you expected and what happened instead. Add sanitized screenshots or logs if useful.
+      validations:
+          required: true
+
+    - type: checkboxes
+      id: checks
+      attributes:
+          label: Before submitting
+          options:
+              - label: I searched for an existing issue.
+                required: true
+              - label: I removed OAuth tokens, passwords, signing data, and unnecessary personal location data.
+                required: true
+              - label: This is a public bug report, not a private security vulnerability.
+                required: true

@@ -41,6 +41,7 @@ You can also have a look to:
 
 - 👅 [Translate Osm Go! into your language](CONTRIBUTING.md#translations)
 - 🐞 [Report issues on GitHub](https://github.com/DoFabien/OsmGo/issues)
+- 🔒 [Report a security vulnerability privately](SECURITY.md)
 - 📚 [Improve user documentation](https://github.com/DoFabien/OsmGo/tree/main/docs)
 - 🔧 [Contribute to the code, test, build, and release](CONTRIBUTING.md)
 

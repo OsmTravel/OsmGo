@@ -5,6 +5,7 @@ Thank you for helping improve Osm Go!. Useful project links:
 - [repository](https://github.com/DoFabien/OsmGo);
 - [issues](https://github.com/DoFabien/OsmGo/issues);
 - [releases](https://github.com/DoFabien/OsmGo/releases);
+- [security policy](SECURITY.md);
 - [user documentation](https://github.com/DoFabien/OsmGo/wiki).
 
 ## Translations

@@ -1,0 +1,44 @@
+# Security policy
+
+## Supported versions
+
+Security fixes are provided for the latest release available from Google Play, GitHub Releases, and `https://osmgo.com`.
+
+Older releases are not maintained. Builds from `develop` and GitHub Pages are previews for testing and should not be treated as supported releases.
+
+## Report a vulnerability privately
+
+Do not open a public issue with exploit details, credentials, tokens, private map data, or a proof of concept.
+
+Use **Security and quality → Report a vulnerability** in this GitHub repository. If private vulnerability reporting is unavailable, open a minimal public issue asking the maintainer for a private contact method without including security details.
+
+Include, when possible:
+
+- the affected version or commit;
+- the platform and installation source;
+- the security impact and who can trigger it;
+- minimal reproduction steps using test data;
+- whether downloaded or pending OSM edits remain safe;
+- a suggested mitigation, if known.
+
+Do not include real OAuth tokens, signing material, passwords, or unnecessary personal location data. Revoke any credential that may already be exposed.
+
+The maintainers will assess the report, reproduce it in a safe environment, and coordinate a fix and disclosure when appropriate. Response times depend on maintainer availability; no fixed service-level agreement is offered.
+
+## Safe security testing
+
+- Do not write test data to the production OpenStreetMap API. Use the OSM development server or local fixtures.
+- Do not access, modify, or delete another person's data.
+- Do not disrupt `osmgo.com`, Cloudflare, GitHub Actions, or OpenStreetMap services.
+- Stop testing and report privately if pending edits, credentials, signing keys, or user data could be exposed or lost.
+
+## Maintainer handling
+
+For a confirmed vulnerability:
+
+1. keep exploit details and fixes private until users have a safe upgrade path;
+2. add a focused regression test without real secrets or production OSM writes;
+3. rotate exposed credentials and verify Android signing identity when relevant;
+4. run the normal web, Android, and production dependency checks for the affected path;
+5. publish a patch release and security advisory with clear upgrade guidance;
+6. merge the fix back to `develop` and monitor new reports.
