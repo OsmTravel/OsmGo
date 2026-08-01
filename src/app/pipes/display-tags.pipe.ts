@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
     name: 'displayTags',
-    standalone: false,
 })
 export class DisplayTagsPipe implements PipeTransform {
     transform(tags: any, ...args: any[]): any {
@@ -10,7 +9,7 @@ export class DisplayTagsPipe implements PipeTransform {
             return
         }
         let results = []
-        for (let v in tags) {
+        for (const v in tags) {
             results = [...results, `${v}=${tags[v]}`]
         }
 

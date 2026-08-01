@@ -12,11 +12,8 @@ describe('TagListElementComponent', () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [
-                TagListElementComponent,
-                IsBookmarkedPipe,
-                DisplayTagsPipe,
-            ],
+            declarations: [TagListElementComponent, IsBookmarkedPipe],
+            imports: [DisplayTagsPipe],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents()
     }))

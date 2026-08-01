@@ -9,7 +9,6 @@ const YEAR = 365 * DAY
 
 @Pipe({
     name: 'relativeTime',
-    standalone: false,
 })
 export class RelativeTimePipe implements PipeTransform {
     transform(
