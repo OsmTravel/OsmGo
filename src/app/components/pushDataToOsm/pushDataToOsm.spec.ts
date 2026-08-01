@@ -155,4 +155,61 @@ describe('PushDataToOsmPage', () => {
         expect(osmApi.getValidChangset).not.toHaveBeenCalled()
         expect(changedData.features).toEqual([queuedFeature])
     })
+
+    it('invalidates a closed changeset without retrying the diff', async () => {
+        const queuedFeature = { id: 'node/-1' }
+        const changedData = { features: [queuedFeature] }
+        const dataService = {
+            getGeojsonChanged: () => changedData,
+            replaceIdGenerateByOldVersion: () => Promise.resolve(),
+        }
+        const closedChangesetError = {
+            status: 409,
+            error: 'The changeset 123 was closed at 2026-08-01T13:00:00Z.',
+        }
+        const osmApi = {
+            getValidChangset: () => of('123'),
+            osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
+            apiOsmSendOsmDiffFile: jasmine
+                .createSpy('apiOsmSendOsmDiffFile')
+                .and.returnValue(throwError(() => closedChangesetError)),
+        }
+        const processing = new BehaviorSubject(false)
+        const mapService = { isProcessing: processing }
+        const configService = {
+            getChangeSetComment: () => '',
+            setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
+            invalidateChangeset: jasmine.createSpy('invalidateChangeset'),
+        }
+        const page = new PushDataToOsmPage(
+            dataService as any,
+            osmApi as any,
+            {} as any,
+            mapService as any,
+            {} as any,
+            {} as any,
+            configService as any,
+            {} as any,
+            {} as any,
+            {} as any
+        )
+        spyOn(page, 'userIsConnected').and.resolveTo(true)
+
+        await page.pushDataToOsm('Survey')
+
+        expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
+        expect(configService.invalidateChangeset).toHaveBeenCalledTimes(1)
+        expect(page.isPushing).toBeFalse()
+        expect(processing.value).toBeFalse()
+        expect(page.error.message).toContain('Please retry')
+        expect(page.featuresChanges).toEqual([queuedFeature])
+        expect(changedData.features).toEqual([queuedFeature])
+
+        closedChangesetError.error =
+            'Version mismatch: Provided 3, server had: 4 of Node 12'
+        await page.pushDataToOsm('Survey')
+
+        expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(2)
+        expect(configService.invalidateChangeset).toHaveBeenCalledTimes(1)
+    })
 })

@@ -247,6 +247,17 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         this.mapService.isProcessing.next(false)
     }
 
+    private isClosedChangesetError(error): boolean {
+        if (error?.status !== 409 || typeof error.error !== 'string') {
+            return false
+        }
+
+        const match = error.error
+            .trim()
+            .match(/^The changeset (\d+) was closed at .+\.?$/)
+        return match?.[1] === String(this.changesetId)
+    }
+
     async pushDataToOsm(commentChangeset) {
         if (this.isPushing) {
             console.log('Already pushing')
@@ -313,6 +324,14 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                             },
                             error: (err) => {
                                 const message = this.getOsmErrorMessage(err)
+                                if (this.isClosedChangesetError(err)) {
+                                    this.configService.invalidateChangeset()
+                                    this.stopPushingWithError({
+                                        ...err,
+                                        error: `${message} Please retry to create a new changeset.`,
+                                    })
+                                    return
+                                }
                                 const feature = this.getFeatureFromErrorResult(
                                     err.status,
                                     message

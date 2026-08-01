@@ -183,6 +183,11 @@ export class ConfigService {
         this.localStorage.set('changeset', this.changeset)
     }
 
+    invalidateChangeset(): void {
+        this.changeset = { ...this.changeset, id: '' }
+        this.localStorage.set('changeset', this.changeset)
+    }
+
     updateChangesetLastActivity() {
         const time = Date.now()
         this.changeset.last_changeset_activity = time
