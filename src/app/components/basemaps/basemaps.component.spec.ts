@@ -1,10 +1,15 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+import {
+    type ComponentFixture,
+    TestBed,
+    waitForAsync,
+} from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { BasemapsService } from '@app/services/basemaps.service'
 import { IonicModule } from '@ionic/angular'
 import { IonicStorageModule } from '@ionic/storage-angular'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { MapService } from '@services/map.service'
 import { of } from 'rxjs'
 import type { MockedObject } from 'vitest'
 import { BasemapsComponent } from './basemaps.component'
@@ -40,6 +45,7 @@ describe('BasemapsComponent', () => {
                     },
                 },
                 { provide: BasemapsService, useValue: basemapsService },
+                { provide: MapService, useValue: {} },
                 TranslateService,
             ],
         })
