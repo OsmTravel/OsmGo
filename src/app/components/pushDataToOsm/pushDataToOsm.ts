@@ -188,7 +188,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                     },
                     (err) => {
                         console.error(err)
-                        reject(err.error)
+                        reject(this.getOsmErrorMessage(err))
                         this.isPushing = false
                     }
                 )
@@ -227,20 +227,20 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         return feature
     }
 
-    private getUploadErrorMessage(error): string {
+    private getOsmErrorMessage(error): string {
         if (typeof error?.error === 'string' && error.error.trim()) {
             return error.error
         }
         if (typeof error?.message === 'string' && error.message.trim()) {
             return error.message
         }
-        return 'OpenStreetMap could not process the upload.'
+        return 'OpenStreetMap could not process the request.'
     }
 
     private stopPushingWithError(error, feature = null): void {
         this.error = {
             status: typeof error?.status === 'number' ? error.status : 0,
-            message: this.getUploadErrorMessage(error),
+            message: this.getOsmErrorMessage(error),
             feature,
         }
         this.isPushing = false
@@ -312,24 +312,26 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                                     })
                             },
                             error: (err) => {
-                                const message = this.getUploadErrorMessage(err)
+                                const message = this.getOsmErrorMessage(err)
                                 const feature = this.getFeatureFromErrorResult(
                                     err.status,
                                     message
                                 )
                                 this.stopPushingWithError(err, feature)
-                                const featureWithError = {
-                                    ...this.featuresChanges.find(
-                                        (f) => f.id == feature?.id
-                                    ),
-                                    error: message,
+                                if (feature) {
+                                    const featureWithError = {
+                                        ...this.featuresChanges.find(
+                                            (f) => f.id == feature.id
+                                        ),
+                                        error: message,
+                                    }
+                                    this.featuresChanges = [
+                                        featureWithError,
+                                        ...this.featuresChanges.filter(
+                                            (f) => f.id !== feature.id
+                                        ),
+                                    ]
                                 }
-                                this.featuresChanges = [
-                                    featureWithError,
-                                    ...this.featuresChanges.filter(
-                                        (f) => f.id !== feature?.id
-                                    ),
-                                ]
                             },
                         })
                 },

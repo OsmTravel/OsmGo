@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core'
 import { Observable, throwError, of, from } from 'rxjs'
-import { map, catchError, switchMap, tap, take } from 'rxjs/operators'
+import { map, catchError, switchMap, tap, take, timeout } from 'rxjs/operators'
 
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Storage } from '@ionic/storage-angular'
@@ -18,6 +18,8 @@ import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 
 import { XMLParser } from 'fast-xml-parser'
 import { OsmAuthService } from './osm-auth.service'
+
+const OSM_REQUEST_TIMEOUT_MS = 30_000
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
@@ -65,6 +67,7 @@ export class OsmApiService {
         _observable = this.http.get(url, { headers: headers })
 
         return _observable.pipe(
+            timeout(OSM_REQUEST_TIMEOUT_MS),
             map((res: any) => {
                 const x_user = res.user
                 const uid = x_user['id']
@@ -127,6 +130,7 @@ export class OsmApiService {
         })
 
         return _observable.pipe(
+            timeout(OSM_REQUEST_TIMEOUT_MS),
             map((res) => {
                 this.configService.setChangeset(
                     res.toString(),
@@ -332,6 +336,7 @@ export class OsmApiService {
         })
 
         return _observable.pipe(
+            timeout(OSM_REQUEST_TIMEOUT_MS),
             map((diffTextResult) => {
                 return this.convertDiffFileResult(diffTextResult)
             })
