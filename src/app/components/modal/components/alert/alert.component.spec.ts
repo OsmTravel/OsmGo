@@ -12,11 +12,15 @@ describe('AlertComponent', () => {
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule, TranslateModule.forRoot()],
+            imports: [
+                FilterByCountryCode,
+                HttpClientTestingModule,
+                TranslateModule.forRoot(),
+            ],
             providers: [
                 ...provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
             ],
-            declarations: [AlertComponent, FilterByCountryCode],
+            declarations: [AlertComponent],
             schemas: [CUSTOM_ELEMENTS_SCHEMA],
         }).compileComponents()
     }))

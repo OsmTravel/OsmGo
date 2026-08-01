@@ -4,7 +4,6 @@ import { TagConfig } from '@osmgo/type'
 @Pipe({
     name: 'filterExcludeKeys',
     pure: false,
-    standalone: false,
 })
 export class FilterExcludeKeysPipe {
     transform(
@@ -25,8 +24,8 @@ export class FilterExcludeKeysPipe {
         excludesKeys = [...excludesKeys, ...Object.keys(tagConfig.tags)]
 
         if (presets && excludeOtherPresets) {
-            let keysInPresetsConfig = []
-            for (let pid of tagConfig.presets) {
+            const keysInPresetsConfig = []
+            for (const pid of tagConfig.presets) {
                 const currentPreset = presets[pid]
                 //countryCodes TODO exclude
                 keysInPresetsConfig.push(currentPreset.key)
@@ -35,8 +34,8 @@ export class FilterExcludeKeysPipe {
         }
 
         if (countryCode && presets) {
-            let excludeByCountryconde = []
-            for (let pid of tagConfig.presets) {
+            const excludeByCountryconde = []
+            for (const pid of tagConfig.presets) {
                 const currentPreset = presets[pid]
                 if (
                     currentPreset.countryCode &&

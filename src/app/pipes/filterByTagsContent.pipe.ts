@@ -3,7 +3,6 @@ import { Pipe, PipeTransform } from '@angular/core'
 @Pipe({
     name: 'filterByTagsContent',
     pure: false,
-    standalone: false,
 })
 export class FilterByTagsContentPipe implements PipeTransform {
     replaceCharSpe(text: string) {
@@ -36,7 +35,7 @@ export class FilterByTagsContentPipe implements PipeTransform {
 
             // By label
             if (item.lbl) {
-                let it = item.lbl[language]
+                const it = item.lbl[language]
                     ? item.lbl[language]
                     : item.lbl['en']
                 if (patt.test(it)) {
@@ -48,7 +47,7 @@ export class FilterByTagsContentPipe implements PipeTransform {
 
             // By terms
             if (item.terms) {
-                let it = item.terms[language]
+                const it = item.terms[language]
                     ? item.terms[language]
                     : item.terms['en']
                 if (patt.test(it)) {

@@ -4,7 +4,6 @@ import { Preset } from '@osmgo/type'
 @Pipe({
     name: 'removeBrands',
     pure: false,
-    standalone: false,
 })
 export class RemoveBrandsPipe {
     transform(items: Array<Preset>) {

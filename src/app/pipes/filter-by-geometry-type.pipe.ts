@@ -3,7 +3,6 @@ import { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByByGeometryType',
-    standalone: false,
 })
 export class FilterByByGeometryTypePipe implements PipeTransform {
     transform(
@@ -18,7 +17,7 @@ export class FilterByByGeometryTypePipe implements PipeTransform {
             if (!tc.geometry) {
                 return true
             }
-            for (let g of geometriesType) {
+            for (const g of geometriesType) {
                 if (tc.geometry.includes(g)) {
                     return true
                 }

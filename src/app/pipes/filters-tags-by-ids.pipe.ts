@@ -3,7 +3,6 @@ import { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filtersTagsByIds',
-    standalone: false,
 })
 export class FiltersTagsByIdsPipe implements PipeTransform {
     transform(tags: TagConfig[], ids: string[], reverse = false): any {
@@ -15,7 +14,7 @@ export class FiltersTagsByIdsPipe implements PipeTransform {
         if (!reverse) {
             orderedTags = new Array<TagConfig>(ids.length)
         } else {
-            orderedTags = new Array<TagConfig>()
+            orderedTags = [] as TagConfig[]
         }
 
         for (let i = 0; i < tags.length; i++) {

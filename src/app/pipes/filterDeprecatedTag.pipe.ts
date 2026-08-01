@@ -3,7 +3,6 @@ import { Pipe } from '@angular/core'
 @Pipe({
     name: 'filterDeprecatedTag',
     pure: false,
-    standalone: false,
 })
 export class FilterDeprecatedTagPipe {
     transform(items) {

@@ -2,7 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
     name: 'filterBySearchable',
-    standalone: false,
 })
 export class FilterBySearchablePipe implements PipeTransform {
     transform(items: any): any {
