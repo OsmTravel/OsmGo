@@ -288,7 +288,10 @@ describe('OsmApiService', () => {
             postedMessage
             terminateCalls = 0
 
-            constructor(public url: string) {
+            constructor(
+                public url: URL,
+                public options: WorkerOptions
+            ) {
                 FakeWorker.latest = this
             }
 
@@ -350,9 +353,10 @@ describe('OsmApiService', () => {
             let result
             startConversion().subscribe((value) => (result = value))
 
-            expect(FakeWorker.latest.url).toBe(
-                'assets/workers/worker-formatOsmData.js'
+            expect(FakeWorker.latest.url.pathname).toMatch(
+                /\/worker-[a-z0-9]+\.js$/i
             )
+            expect(FakeWorker.latest.options).toEqual({ type: 'module' })
             expect(FakeWorker.latest.postedMessage).toEqual({
                 tagsConfig: [{ key: 'amenity' }],
                 primaryKeys: ['amenity'],

@@ -224,7 +224,7 @@ test('downloads a small OSM area from a fixture', async ({ page }) => {
 })
 
 test('stops loading when the OSM worker fails', async ({ page }) => {
-    await page.route('**/assets/workers/worker-formatOsmData.js', (route) =>
+    await page.route('**/worker-*.js', (route) =>
         route.fulfill({
             status: 200,
             contentType: 'application/javascript',
@@ -249,7 +249,7 @@ test('stops loading when the OSM worker fails', async ({ page }) => {
 })
 
 test('creates, edits, and persists a POI locally', async ({ page }) => {
-    await page.route('**/assets/workers/worker-formatOsmData.js', (route) =>
+    await page.route('**/worker-*.js', (route) =>
         route.fulfill({
             status: 200,
             contentType: 'application/javascript',

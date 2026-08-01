@@ -15,15 +15,15 @@ It can filter output data with the osmGo tagconfig and get the "primary key" & g
 
 It can merge the new data with the old geojson data (and bbox)
 
-## Build with rollup
+## Tests
 
 ```sh
-npm i
-npm run build
+npm run test:converter
 ```
 
-Create index.min.js in this folder (cjs) and src/assets/osmToOsmgo.min.js (iife)
+The application and its web worker import this source directly. Angular bundles both
+entry points during the regular application build.
 
 ## Notes
 
-Files in folder "fixture" are only used for tests, so no need to update them.
+Files in the `fixture` folder are only used for tests.

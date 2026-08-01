@@ -18,10 +18,7 @@
       "!!test-results",
       "!!android",
       "!!src/assets/**/*.json",
-      "!!src/assets/osmToOsmgo.min.js",
-      "!!scripts/osmToOsmgo/index.min.js",
       "!!scripts/osmToOsmgo/fixture/**/*.json",
-      "!!scripts/osmToOsmgo/package-lock.json",
       "!!package-lock.json"
     ]
   },

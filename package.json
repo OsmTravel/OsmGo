@@ -23,7 +23,7 @@
     "test": "npm run config && ng test --watch=false && ng test --configuration browser",
     "test:coverage": "npm run config && ng test --watch=false --coverage && ng test --configuration browser",
     "test:ci": "npm run config && ng test --configuration ci --coverage && ng test --configuration browser",
-    "test:converter": "npm --prefix scripts/osmToOsmgo test",
+    "test:converter": "tsx scripts/osmToOsmgo/test.js",
     "test:sprites": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/generateSprites.test.ts",
     "test:scripts": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/_fetch.test.ts",
     "test:integration": "playwright test",

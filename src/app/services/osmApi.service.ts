@@ -574,7 +574,10 @@ export class OsmApiService {
         const oldBboxFeature = cloneDeep(oldBbox.features[0])
 
         return new Observable((subscriber) => {
-            const worker = new Worker('assets/workers/worker-formatOsmData.js')
+            const worker = new Worker(
+                new URL('../workers/osm-converter.worker', import.meta.url),
+                { type: 'module' }
+            )
             let isFinished = false
             const finish = (callback): void => {
                 if (isFinished) return
