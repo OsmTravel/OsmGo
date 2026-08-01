@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { fakeAsync, tick } from '@angular/core/testing'
+import { fakeAsync, flushMicrotasks, tick } from '@angular/core/testing'
 import { NEVER, Observable, of } from 'rxjs'
 
 import { OsmApiService } from './osmApi.service'
@@ -117,5 +117,178 @@ describe('OsmApiService', () => {
                 service.apiOsmSendOsmDiffFile('<osmChange/>', '123')
             )
         }))
+    })
+
+    describe('OSM data worker', () => {
+        class FakeWorker {
+            static latest: FakeWorker
+            onmessage
+            onerror
+            onmessageerror
+            postedMessage
+            terminateCalls = 0
+
+            constructor(public url: string) {
+                FakeWorker.latest = this
+            }
+
+            postMessage(message): void {
+                this.postedMessage = message
+            }
+
+            terminate(): void {
+                this.terminateCalls++
+            }
+        }
+
+        let originalWorker
+        let service: OsmApiService
+        let oldGeojson
+        let geojsonChanged
+
+        beforeEach(() => {
+            originalWorker = window.Worker
+            ;(window as any).Worker = FakeWorker
+            oldGeojson = { features: [{ id: 'node/1' }] }
+            geojsonChanged = { features: [{ id: 'node/-1' }] }
+            const dataService = {
+                getGeojsonBbox: () => ({
+                    features: [{ id: 'downloaded-area' }],
+                }),
+            }
+            const tagsService = {
+                tags: [{ key: 'amenity' }],
+                primaryKeys: ['amenity'],
+            }
+            service = new OsmApiService(
+                {} as any,
+                {} as any,
+                {} as any,
+                tagsService as any,
+                dataService as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any
+            )
+        })
+
+        afterEach(() => {
+            ;(window as any).Worker = originalWorker
+        })
+
+        function startConversion() {
+            return service.formatOsmJsonData$(
+                '<osm/>',
+                oldGeojson,
+                geojsonChanged,
+                100
+            )
+        }
+
+        it('resolves a successful structured response', fakeAsync(() => {
+            let result
+            startConversion().subscribe((value) => (result = value))
+
+            expect(FakeWorker.latest.url).toBe(
+                'assets/workers/worker-formatOsmData.js'
+            )
+            expect(FakeWorker.latest.postedMessage).toEqual({
+                tagsConfig: [{ key: 'amenity' }],
+                primaryKeys: ['amenity'],
+                osmData: '<osm/>',
+                oldGeojson,
+                oldBboxFeature: { id: 'downloaded-area' },
+                geojsonChanged,
+                limitFeatures: 100,
+            })
+
+            FakeWorker.latest.onmessage({
+                data: { ok: true, data: { geojson: { features: [] } } },
+            })
+            flushMicrotasks()
+
+            expect(result).toEqual({ geojson: { features: [] } })
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        }))
+
+        it('rejects an invalid worker response', fakeAsync(() => {
+            let resultError
+            startConversion().subscribe({
+                error: (error) => (resultError = error),
+            })
+
+            FakeWorker.latest.onmessage({
+                data: { ok: true, data: undefined },
+            })
+            flushMicrotasks()
+
+            expect(resultError.message).toContain('invalid response')
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        }))
+
+        it('rejects a conversion exception reported by the worker', fakeAsync(() => {
+            let resultError
+            startConversion().subscribe({
+                error: (error) => (resultError = error),
+            })
+
+            FakeWorker.latest.onmessage({
+                data: { ok: false, error: 'Conversion failed' },
+            })
+            flushMicrotasks()
+
+            expect(resultError.message).toBe('Conversion failed')
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+            expect(oldGeojson).toEqual({ features: [{ id: 'node/1' }] })
+            expect(geojsonChanged).toEqual({ features: [{ id: 'node/-1' }] })
+        }))
+
+        it('rejects worker errors', fakeAsync(() => {
+            let resultError
+            startConversion().subscribe({
+                error: (error) => (resultError = error),
+            })
+
+            FakeWorker.latest.onerror({ message: 'Worker crashed' })
+            flushMicrotasks()
+
+            expect(resultError.message).toBe('Worker crashed')
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        }))
+
+        it('rejects unreadable worker messages', fakeAsync(() => {
+            let resultError
+            startConversion().subscribe({
+                error: (error) => (resultError = error),
+            })
+
+            FakeWorker.latest.onmessageerror()
+            flushMicrotasks()
+
+            expect(resultError.message).toContain('unreadable message')
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        }))
+
+        it('terminates a worker that times out', fakeAsync(() => {
+            let resultError
+            startConversion().subscribe({
+                error: (error) => (resultError = error),
+            })
+
+            tick(30_001)
+            flushMicrotasks()
+
+            expect(resultError.message).toContain('timed out')
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        }))
+
+        it('terminates a worker when conversion is cancelled', () => {
+            const subscription = startConversion().subscribe()
+
+            subscription.unsubscribe()
+
+            expect(FakeWorker.latest.terminateCalls).toBe(1)
+        })
     })
 })

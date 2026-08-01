@@ -20,6 +20,7 @@ import { XMLParser } from 'fast-xml-parser'
 import { OsmAuthService } from './osm-auth.service'
 
 const OSM_REQUEST_TIMEOUT_MS = 30_000
+const OSM_WORKER_TIMEOUT_MS = 30_000
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
@@ -537,35 +538,75 @@ export class OsmApiService {
         geojsonChanged,
         limitFeatures: number = 10000
     ) {
-        const that = this
         const oldBbox = this.dataService.getGeojsonBbox()
         const oldBboxFeature = cloneDeep(oldBbox.features[0])
 
-        return from(
-            new Promise((resolve, reject) => {
-                const workerFormatData = new Worker(
-                    'assets/workers/worker-formatOsmData.js'
-                )
-                workerFormatData.postMessage({
-                    tagsConfig: that.tagsService.tags,
-                    primaryKeys: that.tagsService.primaryKeys,
-                    osmData: osmData,
-                    oldGeojson: oldGeojson,
-                    oldBboxFeature: oldBboxFeature,
-                    geojsonChanged: geojsonChanged,
-                    limitFeatures: limitFeatures,
-                })
+        return new Observable((subscriber) => {
+            const worker = new Worker('assets/workers/worker-formatOsmData.js')
+            let isFinished = false
+            const finish = (callback): void => {
+                if (isFinished) return
+                isFinished = true
+                window.clearTimeout(timeoutId)
+                worker.terminate()
+                callback()
+            }
+            const fail = (message: string): void => {
+                finish(() => subscriber.error(new Error(message)))
+            }
+            const timeoutId = window.setTimeout(() => {
+                fail('OSM data conversion timed out.')
+            }, OSM_WORKER_TIMEOUT_MS)
 
-                workerFormatData.onmessage = (formatedData) => {
-                    workerFormatData.terminate()
-                    if (formatedData.data) {
-                        resolve(formatedData.data)
-                    } else {
-                        reject(Error('It broke'))
-                    }
+            worker.onmessage = (event) => {
+                const response = event.data
+                if (
+                    !response ||
+                    typeof response.ok !== 'boolean' ||
+                    (response.ok && response.data == null)
+                ) {
+                    fail('The OSM data worker returned an invalid response.')
+                } else if (response.ok) {
+                    finish(() => {
+                        subscriber.next(response.data)
+                        subscriber.complete()
+                    })
+                } else {
+                    fail(
+                        typeof response.error === 'string' &&
+                            response.error.trim()
+                            ? response.error
+                            : 'The OSM data worker failed.'
+                    )
                 }
-            })
-        )
+            }
+            worker.onerror = (event) => {
+                fail(event.message || 'The OSM data worker crashed.')
+            }
+            worker.onmessageerror = () => {
+                fail('The OSM data worker returned an unreadable message.')
+            }
+
+            try {
+                worker.postMessage({
+                    tagsConfig: this.tagsService.tags,
+                    primaryKeys: this.tagsService.primaryKeys,
+                    osmData,
+                    oldGeojson,
+                    oldBboxFeature,
+                    geojsonChanged,
+                    limitFeatures,
+                })
+            } catch (error) {
+                fail(
+                    error instanceof Error
+                        ? error.message
+                        : 'The OSM data worker could not start.'
+                )
+            }
+
+            return () => finish(() => {})
+        })
     }
 
     getOsmObjectById$(objectId: string): Observable<any> {

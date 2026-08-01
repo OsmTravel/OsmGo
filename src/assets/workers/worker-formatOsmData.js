@@ -1,32 +1,24 @@
-importScripts('../osmToOsmgo.min.js');
+importScripts('../osmToOsmgo.min.js')
 
-console.time('time')
-function reponse(event) {
-    let osmData = event.data.osmData;
-    let oldGeojson = event.data.oldGeojson
-    let oldBboxFeature = event.data.oldBboxFeature
-    let geojsonChanged = event.data.geojsonChanged
-    let tagsConfig = event.data.tagsConfig;
-    let limitFeatures = event.data.limitFeatures;
-
-    let primaryKeys = event.data.primaryKeys;
-
-    const result = osmToOsmgo.convert(osmData, 
-        {
-        tagConfig: tagsConfig,
-        primaryKeys: primaryKeys,
-        oldGeojson: oldGeojson, 
-        geojsonChanged: geojsonChanged,
-        oldBboxFeature: oldBboxFeature,
-        limitFeatures: limitFeatures
-
-     }); 
-     // return { geojson, geojsonBbox }
-
-    // let geojsonFinal = mergeOldNewGeojsonData(oldGeojson,newGeojson,bbox_geojson,geojsonChanged );
-    console.timeEnd('time')
-    postMessage(result);
+function getErrorMessage(error) {
+    return error instanceof Error ? error.message : String(error)
 }
 
-//ajout d'un listener
-addEventListener("message", reponse, false);
+function formatOsmData(event) {
+    try {
+        const input = event.data
+        const data = osmToOsmgo.convert(input.osmData, {
+            tagConfig: input.tagsConfig,
+            primaryKeys: input.primaryKeys,
+            oldGeojson: input.oldGeojson,
+            geojsonChanged: input.geojsonChanged,
+            oldBboxFeature: input.oldBboxFeature,
+            limitFeatures: input.limitFeatures,
+        })
+        postMessage({ ok: true, data })
+    } catch (error) {
+        postMessage({ ok: false, error: getErrorMessage(error) })
+    }
+}
+
+addEventListener('message', formatOsmData, false)
