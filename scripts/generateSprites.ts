@@ -8,6 +8,74 @@ import svgRender from 'svg-render'
 import Spritesmith from 'spritesmith'
 import { assetsDir, iconsSvgDir } from './_paths'
 
+type SvgRenderer = (filePath: string, factor: number) => Promise<Buffer>
+
+interface SpriteSheetOptions {
+    fileNames: string[]
+    inputFolder: string
+    outputFolder: string
+    temporaryFolder: string
+    factor: number
+    render: SvgRenderer
+}
+
+interface SpriteResult {
+    image: Buffer
+    coordinates: Record<string, Record<string, number>>
+}
+
+export const generateSpriteSheet = async ({
+    fileNames,
+    inputFolder,
+    outputFolder,
+    temporaryFolder,
+    factor,
+    render,
+}: SpriteSheetOptions) => {
+    await fs.emptyDir(temporaryFolder)
+    await fs.ensureDir(outputFolder)
+
+    for (const fileName of fileNames) {
+        const image = await render(
+            path.join(inputFolder, `${fileName}.svg`),
+            factor
+        )
+        await fs.writeFile(path.join(temporaryFolder, `${fileName}.png`), image)
+    }
+
+    const pngFileNames = await fs.readdir(temporaryFolder)
+    const sprites = pngFileNames.map((fileName) =>
+        path.join(temporaryFolder, fileName)
+    )
+    const result = await new Promise<SpriteResult>((resolve, reject) => {
+        Spritesmith.run({ src: sprites }, (error, spriteResult) => {
+            if (error) {
+                reject(error)
+                return
+            }
+            resolve(spriteResult)
+        })
+    })
+
+    const outputName = factor === 1 ? 'sprites' : `sprites@${factor}x`
+    const pngPath = path.join(outputFolder, `${outputName}.png`)
+    const jsonPath = path.join(outputFolder, `${outputName}.json`)
+    await fs.writeFile(pngPath, result.image)
+
+    const jsonSprites = {}
+    for (const filePath in result.coordinates) {
+        const basename = path.basename(filePath).replace('.png', '')
+        jsonSprites[basename] = {
+            ...result.coordinates[filePath],
+            pixelRatio: factor,
+        }
+    }
+    await fs.writeFile(jsonPath, JSON.stringify(jsonSprites))
+    await fs.remove(temporaryFolder)
+
+    return { json: jsonPath, png: pngPath }
+}
+
 export const generateSprites = () => {
     let iconsUsed = []
     const markerColorUsed = []
@@ -196,8 +264,6 @@ export const generateSprites = () => {
         )
     }
 
-    const svgNames = fs.readdirSync(outputFolderSVG)
-    // filtrer que les SVG
     const sizeOf = require('image-size')
 
     const svgToPNG = async (filePath, factor) => {
@@ -211,82 +277,33 @@ export const generateSprites = () => {
         })
     }
 
-    const generateSprites = async (outPath, factor = 1) => {
-        const iconsPngPath = path.join(
-            assetsDir,
-            'mapStyle',
-            'iconsPNG',
-            `@${factor}`
+    const markerFileNames = []
+    for (const markerColor of markerColorUsed) {
+        markerFileNames.push(
+            `circle-${markerColor}`,
+            `square-${markerColor}`,
+            `penta-${markerColor}`
         )
-        const pngFolder = path.join(outputTmp, 'PNG', `@${factor}`)
-        await fs.emptyDir(pngFolder)
-
-        for (const markerColor of markerColorUsed) {
-            // console.log(markerColor)
-            const makerFileNames = [
-                `circle-${markerColor}`,
-                `square-${markerColor}`,
-                `penta-${markerColor}`,
-            ]
-            makerFileNames.forEach(async (fileName) => {
-                const filePath = path.join(outputFolderSVG, `${fileName}.svg`)
-                const image = await svgToPNG(filePath, factor)
-                const outputPath = path.join(pngFolder, `${fileName}.png`)
-                fs.writeFileSync(outputPath, image)
-            })
-        }
-
-        for (const iconName of [...whiteList, ...iconsUsed]) {
-            const filePath = path.join(outputFolderSVG, `${iconName}.svg`)
-            const image = await svgToPNG(filePath, factor)
-            const outputPath = path.join(pngFolder, `${iconName}.png`)
-            fs.writeFileSync(outputPath, image)
-        }
-
-        const pngsNameFile = fs.readdirSync(pngFolder)
-        const sprites = pngsNameFile.map((n) => path.join(pngFolder, n))
-
-        return new Promise((resolve, reject) => {
-            Spritesmith.run(
-                { src: sprites },
-                async function handleResult(err, result) {
-                    if (err) {
-                        reject(err)
-                    }
-
-                    const outFileName =
-                        factor === 1 ? 'sprites' : `sprites@${factor}x`
-                    fs.writeFileSync(
-                        path.join(outPath, outFileName + '.png'),
-                        result.image
-                    )
-
-                    const jsonSprites = {}
-                    for (const k in result.coordinates) {
-                        const basename = path.basename(k).replace('.png', '')
-                        jsonSprites[basename] = {
-                            ...result.coordinates[k],
-                            pixelRatio: factor,
-                        }
-                    }
-                    fs.writeFileSync(
-                        path.join(outPath, outFileName + '.json'),
-                        JSON.stringify(jsonSprites)
-                    )
-                    await fs.remove(pngFolder)
-
-                    resolve({
-                        json: path.join(outPath, outFileName + '.json'),
-                        png: path.join(outPath, outFileName + '.png'),
-                    })
-                }
-            )
-        })
     }
+    const fileNames = [...markerFileNames, ...whiteList, ...iconsUsed]
 
     return Promise.all([
-        generateSprites(outPath, 1),
-        generateSprites(outPath, 2),
+        generateSpriteSheet({
+            fileNames,
+            inputFolder: outputFolderSVG,
+            outputFolder: outPath,
+            temporaryFolder: path.join(outputTmp, 'PNG', '@1'),
+            factor: 1,
+            render: svgToPNG,
+        }),
+        generateSpriteSheet({
+            fileNames,
+            inputFolder: outputFolderSVG,
+            outputFolder: outPath,
+            temporaryFolder: path.join(outputTmp, 'PNG', '@2'),
+            factor: 2,
+            render: svgToPNG,
+        }),
     ]).then((e) => {
         console.log('END')
         fs.removeSync(outputTmp)

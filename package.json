@@ -25,6 +25,7 @@
     "test:coverage": "npm run config && npm run test -- --code-coverage",
     "test:ci": "npm run config && ng test --ts-config src/tsconfig.spec.json --watch=false --browsers=ChromeHeadlessCI --code-coverage",
     "test:converter": "npm --prefix scripts/osmToOsmgo test",
+    "test:sprites": "ts-node --project ./scripts/tsconfig.json ./scripts/generateSprites.test.ts",
     "test:integration": "playwright test",
     "test:integration:install": "playwright install chromium",
     "lint": "ng lint",

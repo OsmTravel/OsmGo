@@ -39,6 +39,9 @@ jobs:
       - name: Run converter tests
         run: npm run test:converter
 
+      - name: Run sprite tests
+        run: npm run test:sprites
+
       - name: Build the PWA
         run: npm run build
 
