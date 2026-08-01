@@ -30,6 +30,9 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
+            - name: Check source code
+              run: npm run check
+
             - name: Check formatting
               run: npm run prettier:check
 
