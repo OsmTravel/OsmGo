@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import { HttpClient } from '@angular/common/http'
 import { Capacitor } from '@capacitor/core'
 import { of } from 'rxjs'
@@ -5,27 +6,37 @@ import { of } from 'rxjs'
 import { OsmAuthService } from './osm-auth.service'
 
 describe('OsmAuthService', () => {
-    let http: jasmine.SpyObj<HttpClient>
+    let http: any
     let storage
     let configService
     let service: OsmAuthService
-    let nativePlatform: jasmine.Spy
+    let nativePlatform: Mock
 
     beforeEach(() => {
         sessionStorage.clear()
-        http = jasmine.createSpyObj<HttpClient>('HttpClient', ['post'])
-        storage = jasmine.createSpyObj('Storage', ['get', 'set', 'remove'])
-        storage.get.and.resolveTo(null)
-        storage.set.and.resolveTo()
-        storage.remove.and.resolveTo()
+        http = {
+            post: vi.fn().mockName('HttpClient.post'),
+        }
+        storage = {
+            get: vi.fn().mockName('Storage.get'),
+            set: vi.fn().mockName('Storage.set'),
+            remove: vi.fn().mockName('Storage.remove'),
+        }
+        storage.get.mockResolvedValue(null)
+        storage.set.mockResolvedValue()
+        storage.remove.mockResolvedValue()
         configService = {
             config: { isDevServer: false },
-            resetUserInfo: jasmine.createSpy('resetUserInfo'),
+            resetUserInfo: vi.fn().mockName('resetUserInfo'),
         }
-        nativePlatform = spyOn(Capacitor, 'isNativePlatform').and.returnValue(
-            false
+        nativePlatform = vi
+            .spyOn(Capacitor, 'isNativePlatform')
+            .mockReturnValue(false)
+        service = new OsmAuthService(
+            http as HttpClient,
+            configService as any,
+            storage as any
         )
-        service = new OsmAuthService(http, configService as any, storage as any)
     })
 
     afterEach(() => {
@@ -55,7 +66,7 @@ describe('OsmAuthService', () => {
 
     it('keeps the Android callback on the OSM development server', async () => {
         configService.config.isDevServer = true
-        nativePlatform.and.returnValue(true)
+        nativePlatform.mockReturnValue(true)
 
         const loginUrl = new URL(await service.getLoginUrl())
 
@@ -68,7 +79,7 @@ describe('OsmAuthService', () => {
     it('exchanges a valid callback without a client secret', () => {
         sessionStorage.setItem('osmOAuthState', 'expected-state')
         sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        http.post.and.returnValue(of({ access_token: 'access-token' }))
+        http.post.mockReturnValue(of({ access_token: 'access-token' }))
 
         service
             .handleCallback(
@@ -76,7 +87,7 @@ describe('OsmAuthService', () => {
             )
             .subscribe()
 
-        const [url, rawBody, options] = http.post.calls.mostRecent().args
+        const [url, rawBody, options] = vi.mocked(http.post).mock.lastCall
         const body = new URLSearchParams(rawBody as string)
         const keys = []
         body.forEach((_value, key) => keys.push(key))
@@ -92,7 +103,7 @@ describe('OsmAuthService', () => {
         expect(body.get('grant_type')).toBe('authorization_code')
         expect(body.get('code')).toBe('authorization-code')
         expect(body.get('code_verifier')).toBe('stored-verifier')
-        expect(body.has('client_secret')).toBeFalse()
+        expect(body.has('client_secret')).toBe(false)
         expect((options as any).headers.get('Content-Type')).toBe(
             'application/x-www-form-urlencoded'
         )
@@ -143,14 +154,13 @@ describe('OsmAuthService', () => {
     })
 
     it('closes the Capacitor browser after the callback', () => {
-        nativePlatform.and.returnValue(true)
-        const closeNativeBrowser = spyOn<any>(
-            service,
-            'closeNativeBrowser'
-        ).and.callThrough()
+        nativePlatform.mockReturnValue(true)
+        const closeNativeBrowser = vi
+            .spyOn(service as any, 'closeNativeBrowser')
+            .mockResolvedValue(undefined)
         sessionStorage.setItem('osmOAuthState', 'expected-state')
         sessionStorage.setItem('osmOAuthCodeVerifier', 'stored-verifier')
-        http.post.and.returnValue(of({ access_token: 'access-token' }))
+        http.post.mockReturnValue(of({ access_token: 'access-token' }))
 
         service
             .handleCallback(
@@ -159,7 +169,7 @@ describe('OsmAuthService', () => {
             .subscribe()
 
         const body = new URLSearchParams(
-            http.post.calls.mostRecent().args[1] as string
+            vi.mocked(http.post).mock.lastCall[1] as string
         )
         expect(body.get('redirect_uri')).toBe('osmgo://auth')
         expect(closeNativeBrowser).toHaveBeenCalledTimes(1)

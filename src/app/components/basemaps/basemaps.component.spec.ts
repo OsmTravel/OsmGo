@@ -1,3 +1,4 @@
+import type { MockedObject } from 'vitest'
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 import { IonicModule } from '@ionic/angular'
 import { IonicStorageModule } from '@ionic/storage-angular'
@@ -13,13 +14,13 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core'
 describe('BasemapsComponent', () => {
     let component: BasemapsComponent
     let fixture: ComponentFixture<BasemapsComponent>
-    let basemapsServiceSpy: jasmine.SpyObj<BasemapsService>
+    let basemapsServiceSpy: MockedObject<BasemapsService>
 
     beforeEach(waitForAsync(() => {
-        const basemapsService = jasmine.createSpyObj('BasemapsService', [
-            'getBasemaps',
-        ])
-        basemapsService.getBasemaps.and.returnValue(of([]))
+        const basemapsService = {
+            getBasemaps: vi.fn().mockName('BasemapsService.getBasemaps'),
+        }
+        basemapsService.getBasemaps.mockReturnValue(of([]))
 
         TestBed.configureTestingModule({
             declarations: [BasemapsComponent],
@@ -43,13 +44,15 @@ describe('BasemapsComponent', () => {
                 { provide: BasemapsService, useValue: basemapsService },
                 TranslateService,
             ],
-        }).compileComponents()
+        })
+            .overrideComponent(BasemapsComponent, { set: { template: '' } })
+            .compileComponents()
 
         fixture = TestBed.createComponent(BasemapsComponent)
         component = fixture.componentInstance
         basemapsServiceSpy = TestBed.inject(
             BasemapsService
-        ) as jasmine.SpyObj<BasemapsService>
+        ) as MockedObject<BasemapsService>
         fixture.detectChanges()
     }))
 

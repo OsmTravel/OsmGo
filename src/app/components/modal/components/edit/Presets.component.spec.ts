@@ -10,7 +10,7 @@ describe('EditPresets', () => {
             options: [{ v: 'male' }, { v: 'female' }, { v: 'unisex' }],
         }
 
-        expect(component.isMultiKeyPreset).toBeTrue()
+        expect(component.isMultiKeyPreset).toBe(true)
     })
 
     it('keeps the normal editor for a field with one primary key', () => {
@@ -21,6 +21,6 @@ describe('EditPresets', () => {
             type: 'tel',
         }
 
-        expect(component.isMultiKeyPreset).toBeFalse()
+        expect(component.isMultiKeyPreset).toBe(false)
     })
 })

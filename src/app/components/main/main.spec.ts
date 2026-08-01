@@ -1,3 +1,4 @@
+import type { Mock } from 'vitest'
 import { Subject, throwError } from 'rxjs'
 
 import { MainPage } from './main'
@@ -8,21 +9,26 @@ describe('MainPage', () => {
         const mapService = {
             eventShowDialogMultiFeatures: new Subject(),
             eventShowModal: new Subject(),
-            eventNewBboxPolygon: jasmine.createSpyObj('EventEmitter', ['emit']),
-            eventMarkerReDraw: jasmine.createSpyObj('EventEmitter', ['emit']),
+            eventNewBboxPolygon: {
+                emit: vi.fn().mockName('EventEmitter.emit'),
+            },
+            eventMarkerReDraw: {
+                emit: vi.fn().mockName('EventEmitter.emit'),
+            },
             getBbox: () => [1, 2, 3, 4],
-            setIsProcessing: jasmine.createSpy('setIsProcessing'),
+            setIsProcessing: vi.fn().mockName('setIsProcessing'),
         }
         const downloadError = new Error('Worker conversion failed')
         const osmApi = {
-            getDataFromBbox: jasmine
-                .createSpy('getDataFromBbox')
-                .and.returnValue(throwError(() => downloadError)),
+            getDataFromBbox: vi
+                .fn()
+                .mockName('getDataFromBbox')
+                .mockReturnValue(throwError(() => downloadError)),
         }
-        const dataService = jasmine.createSpyObj('DataService', [
-            'setGeojsonBbox',
-            'setGeojson',
-        ])
+        const dataService = {
+            setGeojsonBbox: vi.fn().mockName('DataService.setGeojsonBbox'),
+            setGeojson: vi.fn().mockName('DataService.setGeojson'),
+        }
         const alertService = {
             eventNewAlert: new Subject(),
             displayToolTipRefreshData: true,
@@ -40,7 +46,7 @@ describe('MainPage', () => {
             osmApi as any,
             {} as any,
             mapService as any,
-            dataService,
+            dataService as any,
             {} as any,
             alertService as any,
             configService as any,
@@ -54,20 +60,20 @@ describe('MainPage', () => {
             {} as any,
             {} as any
         )
-        spyOn(console, 'error')
-        spyOn(page, 'presentToast').and.resolveTo()
+        vi.spyOn(console, 'error').mockReturnValue(undefined)
+        vi.spyOn(page, 'presentToast').mockResolvedValue()
 
         page.loadData$().subscribe()
 
-        expect(mapService.setIsProcessing.calls.allArgs()).toEqual([
+        expect(vi.mocked(mapService.setIsProcessing).mock.calls).toEqual([
             [true],
             [false],
         ])
         expect(dataService.setGeojsonBbox).not.toHaveBeenCalled()
         expect(dataService.setGeojson).not.toHaveBeenCalled()
         expect(page.presentToast).toHaveBeenCalledTimes(1)
-        expect(
-            (page.presentToast as jasmine.Spy).calls.mostRecent().args[0]
-        ).toBe(downloadError)
+        expect(vi.mocked(page.presentToast as Mock).mock.lastCall[0]).toBe(
+            downloadError
+        )
     })
 })

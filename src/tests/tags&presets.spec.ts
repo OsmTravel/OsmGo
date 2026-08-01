@@ -15,7 +15,7 @@ describe('tagsAndPresets', () => {
     it('tags should have an ID', () => {
         for (let tag of tagsConfig.tags) {
             const id = tag.id
-            expect(id).toBeTruthy(id)
+            expect(id).toBeTruthy()
         }
     })
 
@@ -107,7 +107,7 @@ describe('tagsAndPresets', () => {
             }
         }
 
-        expect(noEn).toEqual([], noEn)
+        expect(noEn).toEqual([])
     })
 
     it('tags should have "geometry" property ([\'point\',etc} ', () => {

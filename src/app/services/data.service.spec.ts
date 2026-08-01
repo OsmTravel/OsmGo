@@ -1,4 +1,3 @@
-import { Storage } from '@ionic/storage'
 import { featureCollection, point } from '@turf/turf'
 import {
     FeatureProperties,
@@ -9,39 +8,41 @@ import { DataService } from '@services/data.service'
 
 describe('DataService', () => {
     let service: DataService
-    let storageSpy: jasmine.SpyObj<Storage>
+    let storageSpy: any
 
     beforeEach(() => {
-        storageSpy = jasmine.createSpyObj<Storage>('Storage', [
-            'get',
-            'set',
-            'keys',
-            'remove',
-            'clear',
-        ])
+        storageSpy = {
+            get: vi.fn().mockName('Storage.get'),
+            set: vi.fn().mockName('Storage.set'),
+            keys: vi.fn().mockName('Storage.keys'),
+            remove: vi.fn().mockName('Storage.remove'),
+            clear: vi.fn().mockName('Storage.clear'),
+        }
         service = new DataService(storageSpy)
     })
 
     it('should be possible to clear data cache', async () => {
-        // preparation
-        const _deleteDatabase = window.indexedDB.deleteDatabase
-        const deleteDatabaseSpy = jasmine.createSpy()
-        window.indexedDB.deleteDatabase = deleteDatabaseSpy
+        const originalIndexedDB = window.indexedDB
+        const deleteDatabaseSpy = vi.fn()
+        Object.defineProperty(window, 'indexedDB', {
+            configurable: true,
+            value: { deleteDatabase: deleteDatabaseSpy },
+        })
+        const clearSpy = vi.spyOn(Storage.prototype, 'clear')
 
-        const _clear = localStorage.clear
-        const clearSpy = jasmine.createSpy()
-        localStorage.clear = clearSpy
+        try {
+            await service.clearCache()
 
-        // test
-        await service.clearCache()
-
-        expect(storageSpy.clear.calls.count()).toBe(1)
-        expect(deleteDatabaseSpy.calls.count()).toBe(1)
-        expect(clearSpy.calls.count()).toBe(1)
-
-        // cleanup
-        window.indexedDB.deleteDatabase = _deleteDatabase
-        localStorage.clear = _clear
+            expect(storageSpy.clear).toHaveBeenCalledTimes(1)
+            expect(deleteDatabaseSpy).toHaveBeenCalledTimes(1)
+            expect(clearSpy).toHaveBeenCalledTimes(1)
+        } finally {
+            clearSpy.mockRestore()
+            Object.defineProperty(window, 'indexedDB', {
+                configurable: true,
+                value: originalIndexedDB,
+            })
+        }
     })
 
     it('should be possible to copy data from changed model to original', async () => {
@@ -199,7 +200,7 @@ describe('DataService', () => {
             await service.setGeojsonChanged(
                 featureCollection(changedFeatures) as OsmGoFeatureCollection
             )
-            storageSpy.set.calls.reset()
+            storageSpy.set.mockClear()
             const results = changedFeatures.map((feature, i) => ({
                 oldId: feature.id as string,
                 feature: createdFeature(i + 1),
@@ -210,7 +211,7 @@ describe('DataService', () => {
             expect(service.getGeojsonChanged().features).toEqual([])
             expect(service.getGeojson().features.length).toBe(100)
             expect(
-                storageSpy.set.calls.allArgs().map((args) => args[0])
+                vi.mocked(storageSpy.set).mock.calls.map((args) => args[0])
             ).toEqual(['geojson', 'geojsonChanged'])
         })
 
@@ -242,7 +243,7 @@ describe('DataService', () => {
                 featureCollection([first, second]) as OsmGoFeatureCollection
             )
 
-            await expectAsync(
+            await expect(
                 service.applyUploadResults([
                     {
                         oldId: first.id as string,
@@ -253,7 +254,7 @@ describe('DataService', () => {
                         feature: createdFeature(102),
                     },
                 ])
-            ).toBeRejected()
+            ).rejects.toThrow()
 
             expect(
                 service
@@ -272,20 +273,20 @@ describe('DataService', () => {
             await service.setGeojsonChanged(
                 featureCollection([changedFeature]) as OsmGoFeatureCollection
             )
-            storageSpy.set.and.callFake((key: string) =>
+            storageSpy.set.mockImplementation((key: string) =>
                 key === 'geojsonChanged'
                     ? Promise.reject(new Error('Storage unavailable'))
                     : Promise.resolve()
             )
 
-            await expectAsync(
+            await expect(
                 service.applyUploadResults([
                     {
                         oldId: changedFeature.id as string,
                         feature: createdFeature(101),
                     },
                 ])
-            ).toBeRejected()
+            ).rejects.toThrow()
 
             expect(
                 service
@@ -366,30 +367,28 @@ describe('DataService', () => {
     describe('icon cache', () => {
         it('should be possible to write into icon cache', () => {
             service.addIconCache('foobar', 'foo:bar')
-            expect(storageSpy.set.calls.count()).toBe(1)
-            expect(storageSpy.set.calls.mostRecent().args).toEqual([
+            expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(1)
+            expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
                 'foobar',
                 'foo:bar',
             ])
         })
 
         it('should be possible to read from icon cache', async () => {
-            storageSpy.get.and.returnValue(Promise.resolve('foo:bar'))
+            storageSpy.get.mockResolvedValue('foo:bar')
             const actual = await service.getIconCache('foobar')
-            expect(storageSpy.get.calls.count()).toBe(1)
+            expect(vi.mocked(storageSpy.get).mock.calls.length).toBe(1)
             expect(actual).toBe('foo:bar')
         })
 
         it('should be possible to read icon keys from cache (filtered by certain prefixes)', async () => {
-            storageSpy.keys.and.returnValue(
-                Promise.resolve([
-                    'abc',
-                    'def',
-                    'circle_abc',
-                    'square_def',
-                    'penta_ghi',
-                ])
-            )
+            storageSpy.keys.mockResolvedValue([
+                'abc',
+                'def',
+                'circle_abc',
+                'square_def',
+                'penta_ghi',
+            ])
             const actual = await service.getKeysCacheIcon()
             expect(actual.length).toBe(3)
             expect(actual[0]).toBe('circle_abc')
@@ -400,8 +399,8 @@ describe('DataService', () => {
         it('should be possible to clear the icon cache', async () => {
             service.getKeysCacheIcon = () => Promise.resolve(['foo', 'bar'])
             const actual = await service.clearIconCache()
-            expect(storageSpy.remove.calls.count()).toBe(2)
-            expect(storageSpy.remove.calls.mostRecent().args).toEqual(['bar'])
+            expect(vi.mocked(storageSpy.remove).mock.calls.length).toBe(2)
+            expect(vi.mocked(storageSpy.remove).mock.lastCall).toEqual(['bar'])
             expect(actual).toBe(2)
         })
     })
@@ -410,10 +409,10 @@ describe('DataService', () => {
         describe('geojson', () => {
             it('should be possible to read geojson data', async () => {
                 const sample = featureCollection([point([0, 0])])
-                storageSpy.get.and.returnValue(Promise.resolve(sample))
+                storageSpy.get.mockResolvedValue(sample)
                 const obs = service.loadGeojson$()
                 const actual = await obs.toPromise()
-                expect(storageSpy.get.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.get).mock.lastCall).toEqual([
                     'geojson',
                 ])
                 expect(actual.type).toBe('FeatureCollection')
@@ -421,10 +420,10 @@ describe('DataService', () => {
             })
 
             it('should return empty feature collection if no data is stored', async () => {
-                storageSpy.get.and.returnValue(Promise.resolve(undefined))
+                storageSpy.get.mockResolvedValue(undefined)
                 const obs = service.loadGeojson$()
                 const actual = await obs.toPromise()
-                expect(storageSpy.get.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.get).mock.lastCall).toEqual([
                     'geojson',
                 ])
                 expect(actual.type).toBe('FeatureCollection')
@@ -439,8 +438,8 @@ describe('DataService', () => {
                 service.setGeojson(fc)
 
                 expect(service.geojson).toEqual(fc)
-                expect(storageSpy.set.calls.count()).toBe(1)
-                expect(storageSpy.set.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(1)
+                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
                     'geojson',
                     fc,
                 ])
@@ -528,7 +527,7 @@ describe('DataService', () => {
                 service.resetGeojsonData()
 
                 expect(service.getGeojson().features.length).toBe(0)
-                expect(storageSpy.set.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
                     'geojson',
                     featureCollection([]),
                 ])
@@ -538,10 +537,10 @@ describe('DataService', () => {
         describe('geojsonChanged', () => {
             it('should be possible to read changed geojson data', async () => {
                 const sample = featureCollection([point([0, 0])])
-                storageSpy.get.and.returnValue(Promise.resolve(sample))
+                storageSpy.get.mockResolvedValue(sample)
                 const obs = service.loadGeojsonChanged$()
                 const actual = await obs.toPromise()
-                expect(storageSpy.get.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.get).mock.lastCall).toEqual([
                     'geojsonChanged',
                 ])
                 expect(actual.type).toBe('FeatureCollection')
@@ -549,10 +548,10 @@ describe('DataService', () => {
             })
 
             it('should return empty feature collection if no data is stored', async () => {
-                storageSpy.get.and.returnValue(Promise.resolve(undefined))
+                storageSpy.get.mockResolvedValue(undefined)
                 const obs = service.loadGeojsonChanged$()
                 const actual = await obs.toPromise()
-                expect(storageSpy.get.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.get).mock.lastCall).toEqual([
                     'geojsonChanged',
                 ])
                 expect(actual.type).toBe('FeatureCollection')
@@ -650,7 +649,7 @@ describe('DataService', () => {
                 await service.resetGeojsonChanged()
 
                 expect(service.getGeojsonChanged().features.length).toBe(0)
-                expect(storageSpy.set.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
                     'geojsonChanged',
                     featureCollection([]),
                 ])
@@ -660,10 +659,10 @@ describe('DataService', () => {
         describe('geojsonBbox', () => {
             it('should be possible to read bbox geojson data', async () => {
                 const sample = featureCollection([point([0, 0])])
-                storageSpy.get.and.returnValue(Promise.resolve(sample))
+                storageSpy.get.mockResolvedValue(sample)
                 const obs = service.loadGeojsonBbox$()
                 const actual = await obs.toPromise()
-                expect(storageSpy.get.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.get).mock.lastCall).toEqual([
                     'geojsonBbox',
                 ])
                 expect(actual.type).toBe('FeatureCollection')
@@ -671,10 +670,10 @@ describe('DataService', () => {
             })
 
             it('should return empty feature collection if no data is stored', async () => {
-                storageSpy.get.and.returnValue(Promise.resolve(undefined))
+                storageSpy.get.mockResolvedValue(undefined)
                 const obs = service.loadGeojsonBbox$()
                 const actual = await obs.toPromise()
-                expect(storageSpy.get.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.get).mock.lastCall).toEqual([
                     'geojsonBbox',
                 ])
                 expect(actual.type).toBe('FeatureCollection')
@@ -689,8 +688,8 @@ describe('DataService', () => {
 
                 expect(service.geojsonBbox).toEqual(fc)
                 // ensure that data is persisted in storage
-                expect(storageSpy.set.calls.count()).toBe(1)
-                expect(storageSpy.set.calls.mostRecent().args).toEqual([
+                expect(vi.mocked(storageSpy.set).mock.calls.length).toBe(1)
+                expect(vi.mocked(storageSpy.set).mock.lastCall).toEqual([
                     'geojsonBbox',
                     fc,
                 ])

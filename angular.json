@@ -79,6 +79,22 @@
             },
             "ci": {
               "progress": false
+            },
+            "testing": {
+              "assets": [
+                {
+                  "glob": "favicon.ico",
+                  "input": "src/",
+                  "output": "/"
+                },
+                {
+                  "glob": "**/*",
+                  "input": "src/assets",
+                  "output": "/assets"
+                }
+              ],
+              "styles": [],
+              "polyfills": ["src/zone-flags.ts", "zone.js"]
             }
           }
         },
@@ -100,31 +116,26 @@
           }
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "styles": [],
-            "scripts": [],
-            "assets": [
-              {
-                "glob": "favicon.ico",
-                "input": "src/",
-                "output": "/"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets"
-              }
-            ]
+            "tsConfig": "src/tsconfig.spec.json",
+            "reporters": ["default"],
+            "setupFiles": ["src/test.ts"],
+            "buildTarget": ":build:testing",
+            "runner": "vitest",
+            "runnerConfig": "vitest.config.mts",
+            "exclude": ["src/app/services/map-alignment.spec.ts"]
           },
           "configurations": {
             "ci": {
-              "progress": false,
               "watch": false
+            },
+            "browser": {
+              "browsers": ["ChromiumHeadless"],
+              "include": ["src/app/services/map-alignment.spec.ts"],
+              "exclude": [],
+              "watch": false,
+              "coverage": false
             }
           }
         },

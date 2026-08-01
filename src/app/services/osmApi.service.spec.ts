@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http'
 import { fakeAsync, flushMicrotasks, tick } from '@angular/core/testing'
 import { NEVER, Observable, of, throwError } from 'rxjs'
 
@@ -53,13 +52,15 @@ describe('OsmApiService', () => {
     })
 
     it('escapes every changeset XML attribute value', () => {
-        const http = jasmine.createSpyObj<HttpClient>('HttpClient', ['put'])
-        http.put.and.returnValue(of('123'))
+        const http = {
+            put: vi.fn().mockName('HttpClient.put'),
+        }
+        http.put.mockReturnValue(of('123'))
 
         const configService = {
             getAppFullVersion: () => `OsmGo's & "mobile" <app>`,
             getIsDevServer: () => false,
-            setChangeset: jasmine.createSpy('setChangeset'),
+            setChangeset: vi.fn().mockName('setChangeset'),
         }
         const osmAuthService = {
             getToken: () => 'token',
@@ -70,7 +71,7 @@ describe('OsmApiService', () => {
         }
         const service = new OsmApiService(
             {} as any,
-            http,
+            http as any,
             {} as any,
             {} as any,
             {} as any,
@@ -79,7 +80,7 @@ describe('OsmApiService', () => {
             {} as any,
             osmAuthService as any
         )
-        spyOnProperty(navigator, 'language', 'get').and.returnValue(
+        vi.spyOn(navigator, 'language', 'get').mockReturnValue(
             `fr-FR & "test" <locale>`
         )
 
@@ -98,7 +99,7 @@ describe('OsmApiService', () => {
         </osm>`
 
         expect(http.put).toHaveBeenCalledTimes(1)
-        expect(http.put.calls.mostRecent().args[1]).toBe(expectedBody)
+        expect(vi.mocked(http.put).mock.lastCall[1]).toBe(expectedBody)
     })
 
     describe('diff result XML', () => {
@@ -176,15 +177,15 @@ describe('OsmApiService', () => {
     })
 
     describe('request timeouts', () => {
-        let http: jasmine.SpyObj<HttpClient>
+        let http: any
         let service: OsmApiService
 
         beforeEach(() => {
-            http = jasmine.createSpyObj<HttpClient>('HttpClient', [
-                'get',
-                'put',
-                'post',
-            ])
+            http = {
+                get: vi.fn().mockName('HttpClient.get'),
+                put: vi.fn().mockName('HttpClient.put'),
+                post: vi.fn().mockName('HttpClient.post'),
+            }
             const configService = {
                 getAppFullVersion: () => 'OsmGo 1.7.0',
                 getIsDevServer: () => false,
@@ -213,26 +214,26 @@ describe('OsmApiService', () => {
             let requestError
             request.subscribe({ error: (error) => (requestError = error) })
 
-            tick(30_001)
+            tick(30001)
 
             expect(requestError?.name).toBe('TimeoutError')
         }
 
         it('times out user verification', fakeAsync(() => {
-            spyOn(console, 'error')
-            http.get.and.returnValue(NEVER)
+            vi.spyOn(console, 'error').mockReturnValue(undefined)
+            http.get.mockReturnValue(NEVER)
 
             expectRequestToTimeOut(service.getUserDetail$())
         }))
 
         it('times out changeset creation', fakeAsync(() => {
-            http.put.and.returnValue(NEVER)
+            http.put.mockReturnValue(NEVER)
 
             expectRequestToTimeOut(service.createOSMChangeSet('Survey'))
         }))
 
         it('times out diff uploads', fakeAsync(() => {
-            http.post.and.returnValue(NEVER)
+            http.post.mockReturnValue(NEVER)
 
             expectRequestToTimeOut(
                 service.apiOsmSendOsmDiffFile('<osmChange/>', '123')
@@ -243,13 +244,13 @@ describe('OsmApiService', () => {
     describe('expired authorization', () => {
         for (const status of [401, 403]) {
             it(`clears the local token after status ${status}`, () => {
-                const http = jasmine.createSpyObj<HttpClient>('HttpClient', [
-                    'get',
-                ])
-                http.get.and.returnValue(throwError(() => ({ status })))
+                const http = {
+                    get: vi.fn().mockName('HttpClient.get'),
+                }
+                http.get.mockReturnValue(throwError(() => ({ status })))
                 const osmAuthService = {
                     getToken: () => 'expired-token',
-                    clearToken: jasmine.createSpy('clearToken'),
+                    clearToken: vi.fn().mockName('clearToken'),
                     oauthParam: {
                         dev: {
                             url: 'https://api06.dev.openstreetmap.org',
@@ -260,7 +261,7 @@ describe('OsmApiService', () => {
                 const configService = { getIsDevServer: () => false }
                 const service = new OsmApiService(
                     {} as any,
-                    http,
+                    http as any,
                     {} as any,
                     {} as any,
                     {} as any,
@@ -269,7 +270,7 @@ describe('OsmApiService', () => {
                     {} as any,
                     osmAuthService as any
                 )
-                spyOn(console, 'error')
+                vi.spyOn(console, 'error').mockReturnValue(undefined)
 
                 service.getUserDetail$().subscribe({ error: () => {} })
 
@@ -435,7 +436,7 @@ describe('OsmApiService', () => {
                 error: (error) => (resultError = error),
             })
 
-            tick(30_001)
+            tick(30001)
             flushMicrotasks()
 
             expect(resultError.message).toContain('timed out')

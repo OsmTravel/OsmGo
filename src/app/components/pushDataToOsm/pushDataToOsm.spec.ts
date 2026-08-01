@@ -31,12 +31,13 @@ describe('PushDataToOsmPage', () => {
                 replaceIdGenerateByOldVersion: () => Promise.resolve(),
             }
             const osmApi = {
-                getValidChangset: jasmine
-                    .createSpy('getValidChangset')
-                    .and.returnValue(throwError(() => creationError)),
-                apiOsmSendOsmDiffFile: jasmine.createSpy(
-                    'apiOsmSendOsmDiffFile'
-                ),
+                getValidChangset: vi
+                    .fn()
+                    .mockName('getValidChangset')
+                    .mockReturnValue(throwError(() => creationError)),
+                apiOsmSendOsmDiffFile: vi
+                    .fn()
+                    .mockName('apiOsmSendOsmDiffFile'),
             }
             const processing = new BehaviorSubject(false)
             const processingValues = []
@@ -44,7 +45,7 @@ describe('PushDataToOsmPage', () => {
             const mapService = { isProcessing: processing }
             const configService = {
                 getChangeSetComment: () => '',
-                setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
+                setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
             }
             const page = new PushDataToOsmPage(
                 dataService as any,
@@ -58,7 +59,7 @@ describe('PushDataToOsmPage', () => {
                 {} as any,
                 {} as any
             )
-            spyOn(page, 'userIsConnected').and.resolveTo(true)
+            vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
 
             await page.pushDataToOsm('Survey')
 
@@ -66,8 +67,8 @@ describe('PushDataToOsmPage', () => {
                 typeof creationError.error === 'string'
                     ? creationError.error
                     : creationError.message
-            expect(page.isPushing).toBeFalse()
-            expect(processing.value).toBeFalse()
+            expect(page.isPushing).toBe(false)
+            expect(processing.value).toBe(false)
             expect(processingValues).toEqual([false, true, false])
             expect(page.error).toEqual({
                 status: creationError.status,
@@ -89,15 +90,16 @@ describe('PushDataToOsmPage', () => {
         const osmApi = {
             getValidChangset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
-            apiOsmSendOsmDiffFile: jasmine
-                .createSpy('apiOsmSendOsmDiffFile')
-                .and.returnValue(throwError(() => new TimeoutError())),
+            apiOsmSendOsmDiffFile: vi
+                .fn()
+                .mockName('apiOsmSendOsmDiffFile')
+                .mockReturnValue(throwError(() => new TimeoutError())),
         }
         const processing = new BehaviorSubject(false)
         const mapService = { isProcessing: processing }
         const configService = {
             getChangeSetComment: () => '',
-            setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
+            setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
         }
         const page = new PushDataToOsmPage(
             dataService as any,
@@ -111,13 +113,13 @@ describe('PushDataToOsmPage', () => {
             {} as any,
             {} as any
         )
-        spyOn(page, 'userIsConnected').and.resolveTo(true)
+        vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
 
         await page.pushDataToOsm('Survey')
 
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
-        expect(page.isPushing).toBeFalse()
-        expect(processing.value).toBeFalse()
+        expect(page.isPushing).toBe(false)
+        expect(processing.value).toBe(false)
         expect(page.error.message).toContain('Timeout')
         expect(page.featuresChanges).toEqual([queuedFeature])
         expect(changedData.features).toEqual([queuedFeature])
@@ -132,13 +134,13 @@ describe('PushDataToOsmPage', () => {
         }
         const osmApi = {
             getUserDetail$: () => throwError(() => new TimeoutError()),
-            getValidChangset: jasmine.createSpy('getValidChangset'),
+            getValidChangset: vi.fn().mockName('getValidChangset'),
         }
         const processing = new BehaviorSubject(false)
         const mapService = { isProcessing: processing }
         const configService = {
             getChangeSetComment: () => '',
-            setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
+            setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
         }
         const page = new PushDataToOsmPage(
             dataService as any,
@@ -152,12 +154,12 @@ describe('PushDataToOsmPage', () => {
             {} as any,
             {} as any
         )
-        spyOn(console, 'error')
+        vi.spyOn(console, 'error').mockReturnValue(undefined)
 
         await page.pushDataToOsm('Survey')
 
-        expect(page.isPushing).toBeFalse()
-        expect(processing.value).toBeFalse()
+        expect(page.isPushing).toBe(false)
+        expect(processing.value).toBe(false)
         expect(page.connectionError).toContain('Timeout')
         expect(osmApi.getValidChangset).not.toHaveBeenCalled()
         expect(changedData.features).toEqual([queuedFeature])
@@ -177,16 +179,17 @@ describe('PushDataToOsmPage', () => {
         const osmApi = {
             getValidChangset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
-            apiOsmSendOsmDiffFile: jasmine
-                .createSpy('apiOsmSendOsmDiffFile')
-                .and.returnValue(throwError(() => closedChangesetError)),
+            apiOsmSendOsmDiffFile: vi
+                .fn()
+                .mockName('apiOsmSendOsmDiffFile')
+                .mockReturnValue(throwError(() => closedChangesetError)),
         }
         const processing = new BehaviorSubject(false)
         const mapService = { isProcessing: processing }
         const configService = {
             getChangeSetComment: () => '',
-            setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
-            invalidateChangeset: jasmine.createSpy('invalidateChangeset'),
+            setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
+            invalidateChangeset: vi.fn().mockName('invalidateChangeset'),
         }
         const page = new PushDataToOsmPage(
             dataService as any,
@@ -200,14 +203,14 @@ describe('PushDataToOsmPage', () => {
             {} as any,
             {} as any
         )
-        spyOn(page, 'userIsConnected').and.resolveTo(true)
+        vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
 
         await page.pushDataToOsm('Survey')
 
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
         expect(configService.invalidateChangeset).toHaveBeenCalledTimes(1)
-        expect(page.isPushing).toBeFalse()
-        expect(processing.value).toBeFalse()
+        expect(page.isPushing).toBe(false)
+        expect(processing.value).toBe(false)
         expect(page.error.message).toContain('Please retry')
         expect(page.featuresChanges).toEqual([queuedFeature])
         expect(changedData.features).toEqual([queuedFeature])
@@ -228,21 +231,23 @@ describe('PushDataToOsmPage', () => {
         const changedData = { features: [{ id: 'node/-1' }] }
         const dataService = {
             getGeojsonChanged: () => changedData,
-            replaceIdGenerateByOldVersion: jasmine
-                .createSpy('replaceIdGenerateByOldVersion')
-                .and.returnValue(preparation),
+            replaceIdGenerateByOldVersion: vi
+                .fn()
+                .mockName('replaceIdGenerateByOldVersion')
+                .mockReturnValue(preparation),
         }
         const osmApi = {
             getValidChangset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
-            apiOsmSendOsmDiffFile: jasmine
-                .createSpy('apiOsmSendOsmDiffFile')
-                .and.returnValue(NEVER),
+            apiOsmSendOsmDiffFile: vi
+                .fn()
+                .mockName('apiOsmSendOsmDiffFile')
+                .mockReturnValue(NEVER),
         }
         const mapService = { isProcessing: new BehaviorSubject(false) }
         const configService = {
             getChangeSetComment: () => '',
-            setChangeSetComment: jasmine.createSpy('setChangeSetComment'),
+            setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
         }
         const page = new PushDataToOsmPage(
             dataService as any,
@@ -256,8 +261,8 @@ describe('PushDataToOsmPage', () => {
             {} as any,
             {} as any
         )
-        spyOn(page, 'userIsConnected').and.resolveTo(true)
-        spyOn(console, 'log')
+        vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
+        vi.spyOn(console, 'log').mockReturnValue(undefined)
 
         const firstUpload = page.pushDataToOsm('Survey')
         const secondUpload = page.pushDataToOsm('Survey')
@@ -283,9 +288,10 @@ describe('PushDataToOsmPage', () => {
                 meta: { version: 0 },
             },
         }))
-        const applyUploadResults = jasmine
-            .createSpy('applyUploadResults')
-            .and.resolveTo()
+        const applyUploadResults = vi
+            .fn()
+            .mockName('applyUploadResults')
+            .mockResolvedValue(undefined)
         const dataService = {
             getGeojsonChanged: () => ({ features }),
             applyUploadResults,
@@ -317,7 +323,7 @@ describe('PushDataToOsmPage', () => {
 
         await (page as any).updateLocalDataFromDiffResult(diffResults, features)
 
-        const preparedResults = applyUploadResults.calls.mostRecent().args[0]
+        const preparedResults = vi.mocked(applyUploadResults).mock.lastCall[0]
         expect(preparedResults.length).toBe(100)
         expect(preparedResults[0].oldId).toBe('node/-1')
         expect(preparedResults[0].feature.id).toBe('node/1')
@@ -331,7 +337,7 @@ describe('PushDataToOsmPage', () => {
             id: 'node/-1',
             properties: { tags: {}, meta: {} },
         }
-        const applyUploadResults = jasmine.createSpy('applyUploadResults')
+        const applyUploadResults = vi.fn().mockName('applyUploadResults')
         const dataService = {
             getGeojsonChanged: () => ({ features: [feature] }),
             applyUploadResults,
@@ -350,7 +356,7 @@ describe('PushDataToOsmPage', () => {
             {} as any
         )
 
-        await expectAsync(
+        await expect(
             (page as any).updateLocalDataFromDiffResult(
                 [
                     {
@@ -364,7 +370,7 @@ describe('PushDataToOsmPage', () => {
                 ],
                 [feature]
             )
-        ).toBeRejected()
+        ).rejects.toThrow()
 
         expect(applyUploadResults).not.toHaveBeenCalled()
     })
@@ -382,9 +388,10 @@ describe('PushDataToOsmPage', () => {
         }
         const changedData = { features: [feature] }
         const uploadResult = new Subject<any[]>()
-        const applyUploadResults = jasmine
-            .createSpy('applyUploadResults')
-            .and.resolveTo()
+        const applyUploadResults = vi
+            .fn()
+            .mockName('applyUploadResults')
+            .mockResolvedValue(undefined)
         const dataService = {
             getGeojsonChanged: () => changedData,
             getGeojson: () => ({ features: [] }),
@@ -399,10 +406,12 @@ describe('PushDataToOsmPage', () => {
         const mapService = {
             isProcessing: new BehaviorSubject(false),
             getIconStyle: (value) => value,
-            eventMarkerReDraw: jasmine.createSpyObj('EventEmitter', ['emit']),
-            eventMarkerChangedReDraw: jasmine.createSpyObj('EventEmitter', [
-                'emit',
-            ]),
+            eventMarkerReDraw: {
+                emit: vi.fn().mockName('EventEmitter.emit'),
+            },
+            eventMarkerChangedReDraw: {
+                emit: vi.fn().mockName('EventEmitter.emit'),
+            },
         }
         const configService = {
             getChangeSetComment: () => '',
@@ -414,14 +423,14 @@ describe('PushDataToOsmPage', () => {
             osmApi as any,
             {} as any,
             mapService as any,
-            { back: jasmine.createSpy('back') } as any,
+            { back: vi.fn().mockName('back') } as any,
             {} as any,
             configService as any,
             {} as any,
             {} as any,
             {} as any
         )
-        spyOn(page, 'userIsConnected').and.resolveTo(true)
+        vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
         await page.pushDataToOsm('Survey')
         page.ngOnDestroy()
 
@@ -437,6 +446,6 @@ describe('PushDataToOsmPage', () => {
         await new Promise((resolve) => setTimeout(resolve))
 
         expect(applyUploadResults).toHaveBeenCalledTimes(1)
-        expect(page.uploadedOk).toBeTrue()
+        expect(page.uploadedOk).toBe(true)
     })
 })

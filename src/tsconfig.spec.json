@@ -2,9 +2,8 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
-    "target": "es5",
-    "types": ["jasmine", "node"]
+    "types": ["vitest/globals", "node"]
   },
-  "files": ["test.ts", "polyfills.ts"],
+  "files": ["test.ts", "zone-flags.ts"],
   "include": ["**/*.spec.ts", "**/*.d.ts"]
 }

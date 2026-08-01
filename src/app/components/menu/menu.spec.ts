@@ -9,7 +9,7 @@ describe('MenuPage swipes', () => {
 
     it('closes the menu after a left swipe', () => {
         const page = createPage()
-        spyOn(page, 'closeMenu')
+        vi.spyOn(page, 'closeMenu').mockReturnValue(undefined)
 
         page.startSwipe(pointerAt(100))
         page.endSwipe(pointerAt(40))
@@ -19,7 +19,7 @@ describe('MenuPage swipes', () => {
 
     it('ignores a canceled swipe', () => {
         const page = createPage()
-        spyOn(page, 'closeMenu')
+        vi.spyOn(page, 'closeMenu').mockReturnValue(undefined)
 
         page.startSwipe(pointerAt(100))
         page.cancelSwipe()
