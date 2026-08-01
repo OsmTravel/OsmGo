@@ -41,10 +41,16 @@ cd "${WORK_DIR}"
 export HUSKY=0
 
 npm ci
-npm ci --prefix scripts/osmToOsmgo --ignore-scripts
+npm run check
 npm run test:ci
 npm run test:converter
-npm run android:release
+npm run android:prepare
+./android/gradlew -p android --no-daemon \
+    clean \
+    testReleaseUnitTest \
+    lintRelease \
+    assembleRelease \
+    bundleRelease
 
 readonly APK_PATH="$(find android/app/build/outputs/apk/release -type f -name '*.apk' -print -quit)"
 readonly AAB_PATH="$(find android/app/build/outputs/bundle/release -type f -name '*.aab' -print -quit)"
