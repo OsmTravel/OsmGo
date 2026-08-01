@@ -59,7 +59,7 @@ const setEnv = async (): Promise<void> => {
     )
     const version = packageJson.version
 
-    let platform = process.argv[process.argv.length - 1]
+    let platform: string | undefined = process.argv[process.argv.length - 1]
     if (!['Android', 'PWA'].includes(platform)) {
         platform = undefined
     }

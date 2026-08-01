@@ -1,5 +1,5 @@
 import { ConfigService } from '@services/config.service'
-import { Component } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 
 import { Platform } from '@ionic/angular'
 
@@ -17,6 +17,7 @@ import { Router } from '@angular/router'
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class AppComponent {

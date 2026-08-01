@@ -1,5 +1,11 @@
 @if (menuIsOpen) {
-<div id="menu" (swipeleft)="swipe($event)" @menuAnimation>
+<div
+    id="menu"
+    (pointerdown)="startSwipe($event)"
+    (pointerup)="endSwipe($event)"
+    (pointercancel)="cancelSwipe()"
+    @menuAnimation
+>
     @if (menuIsOpen) {
     <div class="menuContent">
         <ion-header>

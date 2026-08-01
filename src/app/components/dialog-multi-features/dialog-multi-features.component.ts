@@ -1,10 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core'
+import {
+    Component,
+    OnInit,
+    Input,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 import { NavParams, ModalController } from '@ionic/angular'
 
 @Component({
     selector: 'app-dialog-multi-features',
     templateUrl: './dialog-multi-features.component.html',
     styleUrls: ['./dialog-multi-features.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class DialogMultiFeaturesComponent implements OnInit {

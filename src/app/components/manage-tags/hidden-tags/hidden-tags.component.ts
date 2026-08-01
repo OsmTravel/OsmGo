@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 import { TagConfig } from '@osmgo/type'
@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular'
     selector: 'app-hidden-tags',
     templateUrl: './hidden-tags.component.html',
     styleUrls: ['./hidden-tags.component.scss', '../sharedStyle.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class HiddenTagsComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ModalController, NavController } from '@ionic/angular'
 import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
 import { forkJoin } from 'rxjs'
@@ -15,6 +15,7 @@ import { InitService } from '@services/init.service'
     selector: 'app-manage-tags',
     templateUrl: './manage-tags.component.html',
     styleUrls: ['./manage-tags.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class ManageTagsComponent implements OnInit {

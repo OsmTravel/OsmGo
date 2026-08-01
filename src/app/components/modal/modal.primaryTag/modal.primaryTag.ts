@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ModalController, Platform, NavParams } from '@ionic/angular'
 import { TagsService } from '@services/tags.service'
 import { ConfigService } from '@services/config.service'
@@ -8,9 +8,12 @@ import { TagConfig } from '@osmgo/type'
     selector: 'modal-primary-tag',
     templateUrl: './modal.primaryTag.html',
     styleUrls: ['./modal.primaryTag.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class ModalPrimaryTag implements OnInit {
+    private swipeStartX: number | null = null
+
     selectedKey: string
     tagsOfselectedKey
     loading = true
@@ -86,11 +89,26 @@ export class ModalPrimaryTag implements OnInit {
         this.summit(newConfig)
     }
 
-    swipeLeft() {
-        this.displayType = 'bookmarks'
+    startSwipe(event: PointerEvent): void {
+        this.swipeStartX = event.clientX
     }
-    swipeRight() {
-        this.displayType = 'lastTags'
+
+    endSwipe(event: PointerEvent): void {
+        if (this.swipeStartX === null) {
+            return
+        }
+
+        const distance = event.clientX - this.swipeStartX
+        if (distance < -50) {
+            this.displayType = 'bookmarks'
+        } else if (distance > 50) {
+            this.displayType = 'lastTags'
+        }
+        this.swipeStartX = null
+    }
+
+    cancelSwipe(): void {
+        this.swipeStartX = null
     }
 
     changePageLastTagsBookmarks(value) {

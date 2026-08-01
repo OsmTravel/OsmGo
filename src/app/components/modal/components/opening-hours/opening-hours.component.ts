@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import {
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 import * as Interval from '@scripts/YoHours/Interval.js'
 import * as OpeningHoursParser from '@scripts/YoHours/OpeningHoursParser.js'
 import * as OpeningHoursBuilder from '@scripts/YoHours/OpeningHoursBuilder.js'
@@ -16,6 +23,7 @@ const builder = new OpeningHoursBuilder()
     selector: 'app-opening-hours',
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss', '../style.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class OpeningHoursComponent implements OnInit {

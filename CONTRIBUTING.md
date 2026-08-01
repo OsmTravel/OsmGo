@@ -28,7 +28,7 @@ TagInfo get those descriptions from OSM wiki. Make sure to add the "| descriptio
 
 Osm Go! is a _PWA_ application using:
 
--   Angular 21
+-   Angular 22
 -   Ionic 8
 -   Capacitor 6
 -   MapLibre GL

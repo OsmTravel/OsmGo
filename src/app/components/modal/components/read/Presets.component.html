@@ -17,7 +17,7 @@
             {{ pr.lbl[language] || pr.lbl['en'] }}
         </p>
         } @else { @if ( !['number', 'text', 'tel', 'url', 'email'].includes(
-        preset?.type ) ) {
+        $safeNavigationMigration(preset?.type) ) ) {
         <ion-icon name="code"></ion-icon>
         }
         {{ tag.value }}

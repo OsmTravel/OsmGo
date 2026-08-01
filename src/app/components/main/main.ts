@@ -6,6 +6,7 @@ import {
     AfterViewInit,
     ViewChild,
     ElementRef,
+    ChangeDetectionStrategy,
 } from '@angular/core'
 import {
     NavController,
@@ -47,6 +48,7 @@ import { OsmAuthService } from '@app/services/osm-auth.service'
     templateUrl: './main.html',
     selector: 'main',
     styleUrls: ['./main.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class MainPage implements AfterViewInit {

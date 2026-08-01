@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 import { ModalController } from '@ionic/angular'
@@ -8,6 +8,7 @@ import { TagConfig } from '@osmgo/type'
     selector: 'app-active-tags',
     templateUrl: './active-tags.component.html',
     styleUrls: ['./active-tags.component.scss', '../sharedStyle.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class ActiveTagsComponent implements OnInit {

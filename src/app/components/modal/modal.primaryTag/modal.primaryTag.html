@@ -59,8 +59,9 @@
         } @if (searchText.length < 3 ) {
         <div
             class="listTag"
-            (swipeleft)="swipeLeft()"
-            (swiperight)="swipeRight()"
+            (pointerdown)="startSwipe($event)"
+            (pointerup)="endSwipe($event)"
+            (pointercancel)="cancelSwipe()"
         >
             <p style="text-align: center; margin: 0px 0px 24px">
                 {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' |

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { NavController } from '@ionic/angular'
 import { BasemapsService } from '@services/basemaps.service'
@@ -10,6 +10,7 @@ import { MapService } from '@services/map.service'
     selector: 'app-basemaps',
     templateUrl: './basemaps.component.html',
     styleUrls: ['./basemaps.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class BasemapsComponent implements OnInit {

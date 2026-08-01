@@ -37,7 +37,9 @@
         }}</b>
 
         <br />
-        <span style="font-size: 0.8em">{{ tag?.tags | displayTags }}</span>
+        <span style="font-size: 0.8em">{{
+            $safeNavigationMigration(tag?.tags) | displayTags
+        }}</span>
         <br />
         <span style="font-size: 11px; font-style: italic">
             {{

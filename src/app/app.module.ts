@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { BrowserModule, HammerModule } from '@angular/platform-browser'
+import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { RouteReuseStrategy } from '@angular/router'
@@ -60,6 +60,7 @@ import {
     HttpClient,
     provideHttpClient,
     withInterceptorsFromDi,
+    withXhr,
 } from '@angular/common/http'
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
@@ -160,8 +161,6 @@ export function createTranslateLoader(http: HttpClient) {
         IonicStorageModule.forRoot(),
         AppRoutingModule,
         MomentModule,
-        HammerModule,
-
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -175,7 +174,7 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     providers: [
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClient(withXhr(), withInterceptorsFromDi()),
     ],
     bootstrap: [AppComponent],
 })

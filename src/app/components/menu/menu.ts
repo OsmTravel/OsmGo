@@ -1,4 +1,11 @@
-import { Component, Output, EventEmitter, Input, NgZone } from '@angular/core'
+import {
+    Component,
+    Output,
+    EventEmitter,
+    Input,
+    NgZone,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 import { AlertController, Platform, NavController } from '@ionic/angular'
 import { AboutPage } from '@components/about/about'
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
@@ -18,9 +25,12 @@ import { OsmAuthService } from '@app/services/osm-auth.service'
     templateUrl: './menu.html',
     styleUrls: ['./menu.scss'],
     animations: menuAnimations,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class MenuPage {
+    private swipeStartX: number | null = null
+
     @Output() closeEvent = new EventEmitter()
     @Output() exitApp = new EventEmitter()
     @Input() menuIsOpen
@@ -95,8 +105,22 @@ export class MenuPage {
         })
     }
 
-    swipe(e) {
-        this.closeMenu()
+    startSwipe(event: PointerEvent): void {
+        this.swipeStartX = event.clientX
+    }
+
+    endSwipe(event: PointerEvent): void {
+        if (
+            this.swipeStartX !== null &&
+            event.clientX - this.swipeStartX < -50
+        ) {
+            this.closeMenu()
+        }
+        this.swipeStartX = null
+    }
+
+    cancelSwipe(): void {
+        this.swipeStartX = null
     }
 
     reloadApp() {

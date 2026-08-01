@@ -10,7 +10,11 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "CommonJS",
-    "lib": ["ES2015"],
+    "lib": ["ES2017"],
+    "types": ["node"],
+    "strict": false,
+    "noUncheckedSideEffectImports": false,
+    "ignoreDeprecations": "6.0",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "paths": {

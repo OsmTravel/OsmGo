@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { ModalController, Platform, NavParams } from '@ionic/angular'
 import { ConfigService } from '@services/config.service'
 
@@ -6,6 +6,7 @@ import { ConfigService } from '@services/config.service'
     templateUrl: './modalSelectList.html',
     styleUrls: ['./modalSelectList.scss'],
     selector: 'modal-select-list',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class ModalSelectList {

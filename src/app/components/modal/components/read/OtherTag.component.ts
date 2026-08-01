@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core'
 
 @Component({
     selector: 'read-other-tag',
@@ -12,6 +12,7 @@ import { Component, Input } from '@angular/core'
             </ion-card-content>
         </ion-card>
     `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class ReadOtherTag {

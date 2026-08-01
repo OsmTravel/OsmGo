@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { NavController, Platform, LoadingController } from '@ionic/angular'
 
 import { ConfigService } from '@services/config.service'
@@ -13,6 +13,7 @@ import { InitService } from '@services/init.service'
     selector: 'page-settings',
     templateUrl: './settings.html',
     styleUrls: ['./settings.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class SettingsPage {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 
 import { Platform, ModalController, NavController } from '@ionic/angular'
 import { ToastController } from '@ionic/angular'
@@ -7,6 +7,7 @@ import { ConfigService } from '@services/config.service'
 @Component({
     selector: 'page-about',
     templateUrl: './about.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class AboutPage {

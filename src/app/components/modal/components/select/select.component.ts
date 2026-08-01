@@ -11,6 +11,7 @@ import {
     selector: 'app-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss', '../style.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class SelectComponent implements OnInit {

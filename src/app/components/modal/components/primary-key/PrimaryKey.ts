@@ -1,10 +1,17 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import {
+    Component,
+    Input,
+    Output,
+    EventEmitter,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
 
 @Component({
     selector: 'primary-key',
     styleUrls: ['PrimaryKey.scss'],
     templateUrl: 'PrimaryKey.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class PrimaryKey {

@@ -89,7 +89,7 @@
 }
 
 <!-- Type : TEL / URL / EMAIL -->
-@if (['tel', 'email', 'url'].includes(preset?.type)) {
+@if (['tel', 'email', 'url'].includes($safeNavigationMigration(preset?.type))) {
 <ion-card>
     <ion-card-header>
         @if (!displayCode) {

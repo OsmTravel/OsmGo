@@ -1,4 +1,10 @@
-import { Component, AfterViewInit, OnInit, OnDestroy } from '@angular/core'
+import {
+    Component,
+    AfterViewInit,
+    OnInit,
+    OnDestroy,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 
 import { NavController, AlertController, Platform } from '@ionic/angular'
 import { OsmApiService } from '@services/osmApi.service'
@@ -18,6 +24,7 @@ import { OsmGoFeature } from '@osmgo/type'
     selector: 'page-push-data-to-osm',
     templateUrl: './pushDataToOsm.html',
     styleUrls: ['./pushDataToOsm.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {

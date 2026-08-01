@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ChangeDetectionStrategy } from '@angular/core'
 import { ModalController, NavParams } from '@ionic/angular'
 import { TagsService } from '@services/tags.service'
 import { ConfigService } from '@services/config.service'
@@ -10,6 +10,7 @@ import { nameToOsmKey } from '@osmgo/utils'
     selector: 'modal-add-tag',
     templateUrl: './modal.addTag.html',
     styleUrls: ['./modal.addTag.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class ModalAddTag {

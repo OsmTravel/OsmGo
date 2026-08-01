@@ -1,10 +1,18 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
+import {
+    Component,
+    OnInit,
+    Input,
+    Output,
+    EventEmitter,
+    ChangeDetectionStrategy,
+} from '@angular/core'
 import { TagConfig } from '@osmgo/type'
 
 @Component({
     selector: 'app-tag-list-element',
     templateUrl: './tag-list-element.component.html',
     styleUrls: ['./tag-list-element.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false,
 })
 export class TagListElementComponent implements OnInit {

@@ -79,8 +79,9 @@
             @if (error.feature?.properties?.tags) {
             <div>
                 <table id="errorTable">
-                    @for (item of error.feature?.properties?.tags | keyvalue;
-                    track item) { @if (item.value !== '') {
+                    @for (item of
+                    $safeNavigationMigration(error.feature?.properties?.tags) |
+                    keyvalue; track item) { @if (item.value !== '') {
                     <tr>
                         <td>{{item.key}}</td>
                         <td>{{item.value}}</td>
