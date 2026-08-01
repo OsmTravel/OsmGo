@@ -1,4 +1,10 @@
-import { Injectable, EventEmitter, NgZone, Inject } from '@angular/core'
+import {
+    Injectable,
+    EventEmitter,
+    NgZone,
+    Inject,
+    DOCUMENT,
+} from '@angular/core'
 import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
 import { AlertService } from '@services/alert.service'
@@ -52,7 +58,6 @@ import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
 import { Feature, FeatureCollection, LineString } from 'geojson'
 import { ModalDismissData } from '../components/modal/modal'
 import { ActivatedRoute, Params, Router } from '@angular/router'
-import { DOCUMENT } from '@angular/common'
 
 export const getMarkerLayout = () => ({
     'icon-image': '{marker}',
