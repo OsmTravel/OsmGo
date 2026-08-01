@@ -72,7 +72,6 @@
     "maplibre-gl": "6.1.0",
     "martinez-polygon-clipping": "^0.7.3",
     "rxjs": "~7.8.0",
-    "save-svg-as-png": "^1.4.17",
     "tslib": "^2.3.0",
     "zone.js": "^0.16.2"
   },
@@ -93,7 +92,6 @@
     "@types/lodash": "^4.14.197",
     "@types/node": "^24.13.3",
     "@types/node-fetch": "^2.6.2",
-    "@types/request-promise": "^4.1.48",
     "@types/svgo": "^3.0.0",
     "@types/xml2js": "^0.4.11",
     "@types/yargs": "^17.0.10",
@@ -114,7 +112,6 @@
     "scale-svg-path": "0.0.1",
     "serialize-svg-path": "^0.1.0",
     "sharp": "0.35.3",
-    "source-map-explorer": "^2.5.0",
     "spritesmith": "^3.4.1",
     "svgo": "^3.3.2",
     "ts-node": "^8.3.0",

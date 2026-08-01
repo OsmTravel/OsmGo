@@ -34,7 +34,7 @@ import {
     point,
 } from '@turf/turf'
 import { Feature, type FeatureCollection, LineString } from 'geojson'
-import { add, cloneDeep, uniqBy } from 'lodash'
+import { cloneDeep, uniqBy } from 'lodash'
 import {
     AttributionControl,
     type FilterSpecification,

@@ -1,22 +1,22 @@
 import {
-    AfterViewInit,
+    type AfterViewInit,
     ChangeDetectionStrategy,
     Component,
-    OnDestroy,
-    OnInit,
+    type OnDestroy,
+    type OnInit,
 } from '@angular/core'
 
-import { AlertController, NavController, Platform } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import type { AlertController, NavController, Platform } from '@ionic/angular'
+import type { TranslateService } from '@ngx-translate/core'
 import { OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
-import { ConfigService } from '@services/config.service'
-import { DataService } from '@services/data.service'
-import { InitService } from '@services/init.service'
-import { MapService } from '@services/map.service'
-import { OsmApiService } from '@services/osmApi.service'
-import { TagsService } from '@services/tags.service'
-import { clone, cloneDeep } from 'lodash'
+import type { ConfigService } from '@services/config.service'
+import type { DataService } from '@services/data.service'
+import type { InitService } from '@services/init.service'
+import type { MapService } from '@services/map.service'
+import type { OsmApiService } from '@services/osmApi.service'
+import type { TagsService } from '@services/tags.service'
+import { cloneDeep } from 'lodash'
 import { timer } from 'rxjs'
 import { take } from 'rxjs/operators'
 
@@ -406,7 +406,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     async cancelAllFeatures() {
         // rollBack
         const featuresChanged = this.dataService.getGeojsonChanged().features
-        for (let feature of featuresChanged) {
+        for (const feature of featuresChanged) {
             this.dataService.cancelFeatureChange(feature)
         }
         await this.dataService.resetGeojsonChanged()
