@@ -234,16 +234,24 @@ export class ModalsContentPage implements OnInit {
             // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
             for (let i = 0; i < _presetsIds.length; i++) {
                 const preset: Preset = this.tagsService.presets[_presetsIds[i]]
+                const presetKeys = preset.keys?.length
+                    ? preset.keys
+                    : [preset.key]
 
                 // le tag utilisant la clé du preset
                 const tagOfPreset: Tag =
-                    _tags.find((tag) => tag.key === preset.key) || undefined
+                    _tags.find((tag) => presetKeys.includes(tag.key)) ||
+                    undefined
 
                 if (tagOfPreset) {
                     tagOfPreset['preset'] = preset // on met la config du prset direct dans le "tag" => key, value, preset[]
                 } else {
                     // => un le tag avec la key du preset n'existe pas, on l'insert vide
-                    _tags.push({ key: preset.key, value: '', preset: preset })
+                    _tags.push({
+                        key: preset.key || '',
+                        value: '',
+                        preset: preset,
+                    })
                 }
             }
         }
@@ -416,7 +424,16 @@ export class ModalsContentPage implements OnInit {
     pushTagsToFeature() {
         const tagObjects = {}
         for (let i = 0; i < this.tags.length; i++) {
-            tagObjects[this.tags[i].key] = this.tags[i].value
+            const key = this.tags[i].key?.trim()
+            const value = this.tags[i].value
+            if (
+                key &&
+                key !== 'undefined' &&
+                value != null &&
+                String(value).trim() !== ''
+            ) {
+                tagObjects[key] = value
+            }
         }
         this.feature.properties.tags = tagObjects
     }

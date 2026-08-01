@@ -362,7 +362,7 @@ export class OsmApiService {
         const node_header = `<node changeset="${id_changeset}" id="${id}" lat="${lat}" lon="${lng}">`
         let tags_xml = ''
         for (const k in tags_json) {
-            if (k !== '' && tags_json[k] !== '') {
+            if (this.isValidOsmTag(k, tags_json[k])) {
                 // TODO: miss
                 tags_xml += `
                                     <tag k="${this.escapeXmlValue(
@@ -394,7 +394,7 @@ export class OsmApiService {
 
             let tags_xml = ''
             for (const k in tags_json) {
-                if (k !== '' && tags_json[k] !== '') {
+                if (this.isValidOsmTag(k, tags_json[k])) {
                     tags_xml += `<tag
                                     k="${this.escapeXmlValue(k.trim())}"
                                     v="${this.escapeXmlValue(
@@ -408,7 +408,7 @@ export class OsmApiService {
             const way_header = `<way id="${id}" changeset="${id_changeset}" version="${version}">`
             let tags_xml = ''
             for (const k in tags_json) {
-                if (k !== '' && tags_json[k] !== '') {
+                if (this.isValidOsmTag(k, tags_json[k])) {
                     tags_xml += `<tag
                     k="${this.escapeXmlValue(k.trim())}"
                     v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`
@@ -424,7 +424,7 @@ export class OsmApiService {
             const relation_header = `<relation id="${id}" changeset="${id_changeset}" version="${version}">`
             let tags_xml = ''
             for (const k in tags_json) {
-                if (k !== '' && tags_json[k] !== '') {
+                if (this.isValidOsmTag(k, tags_json[k])) {
                     tags_xml += `<tag
                         k="${this.escapeXmlValue(k.trim())}"
                         v="${this.escapeXmlValue(
@@ -446,6 +446,16 @@ export class OsmApiService {
                 </relation>`
             return xml
         }
+    }
+
+    private isValidOsmTag(key: string, value: unknown): boolean {
+        const normalizedKey = key.trim()
+        return (
+            normalizedKey !== '' &&
+            normalizedKey !== 'undefined' &&
+            value != null &&
+            String(value).trim() !== ''
+        )
     }
 
     /// CREATE NODE

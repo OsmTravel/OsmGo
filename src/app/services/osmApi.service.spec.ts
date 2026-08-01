@@ -5,6 +5,53 @@ import { NEVER, Observable, of, throwError } from 'rxjs'
 import { OsmApiService } from './osmApi.service'
 
 describe('OsmApiService', () => {
+    it('does not serialize empty or undefined OSM tag keys', () => {
+        const service = new OsmApiService(
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any,
+            {} as any
+        )
+        const feature = {
+            properties: {
+                id: -1,
+                tags: {
+                    amenity: 'toilets',
+                    undefined: 'unisex',
+                    ' ': 'female',
+                    name: '',
+                },
+            },
+            geometry: { coordinates: [1, 2] },
+        }
+
+        const createXml = service.geojson2OsmCreate(feature, '123')
+        const updateXml = service.geojson2OsmUpdate(
+            {
+                ...feature,
+                properties: {
+                    ...feature.properties,
+                    type: 'node',
+                    meta: { version: 1 },
+                },
+            },
+            '123'
+        )
+
+        for (const xml of [createXml, updateXml]) {
+            expect(xml).toContain('k="amenity"')
+            expect(xml).toContain('v="toilets"')
+            expect(xml).not.toContain('undefined')
+            expect(xml).not.toContain('female')
+            expect(xml).not.toContain('k="name"')
+        }
+    })
+
     it('escapes every changeset XML attribute value', () => {
         const http = jasmine.createSpyObj<HttpClient>('HttpClient', ['put'])
         http.put.and.returnValue(of('123'))

@@ -95,10 +95,12 @@ export interface PresetOption {
 }
 
 export interface Preset {
-    key: string
+    key?: string
+    keys?: string[]
     lbl: any
     options?: PresetOption[]
     type: string
+    iDtype?: string
     placeholder?: string
     snake_case?: boolean
     _id: string

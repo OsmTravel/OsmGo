@@ -1,5 +1,5 @@
 <app-select
-    *ngIf="preset?.type === 'select'"
+    *ngIf="preset?.type === 'select' || isMultiKeyPreset"
     [tag]="tag"
     [preset]="preset"
     [language]="language"
@@ -136,7 +136,7 @@
     </ion-card-content>
 </ion-card>
 
-<ion-card *ngIf="preset?.type === 'text'">
+<ion-card *ngIf="preset?.type === 'text' && !isMultiKeyPreset">
     <ion-card-header>
         <b *ngIf="!displayCode">{{
             preset?.lbl[language] || preset?.lbl['en']

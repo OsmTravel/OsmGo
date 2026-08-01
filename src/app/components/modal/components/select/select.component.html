@@ -21,7 +21,7 @@
                     <!-- So I changed the interface to action-sheet who can display all options with scrolling -->
                     <ion-select
                         [interface]="'action-sheet'"
-                        [value]="tag.value"
+                        [value]="selectedValue"
                         (ionChange)="selectChange($event)"
                         style="width: 100%; min-width: 100%; padding-left: 0"
                     >
