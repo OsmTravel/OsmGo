@@ -121,7 +121,7 @@
             [title]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
         >
             <ion-fab-button
-                data-testid="confirm-poi-position"
+                data-testid="center-on-gps"
                 tappable
                 ion-fab
                 fab-bottom
@@ -176,6 +176,7 @@
             [title]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
         >
             <ion-fab-button
+                data-testid="confirm-marker-move"
                 fab-bottom
                 color="secondary"
                 (click)="mapService.openModalWithNewPosition()"
@@ -192,6 +193,7 @@
             [title]="translate.instant('SHARED.CANCEL')"
         >
             <ion-fab-button
+                data-testid="cancel-marker-move"
                 ion-fab
                 fab-bottom
                 color="danger"

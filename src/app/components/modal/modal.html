@@ -233,6 +233,7 @@
                 <div class="middle section">
                     @if (feature.properties.type === 'node') {
                     <ion-button
+                        data-testid="move-poi"
                         tappable
                         [disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
                         (click)="moveOsmElement()"

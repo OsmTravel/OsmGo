@@ -158,6 +158,24 @@ async function mockAuthenticatedUser(page: Page): Promise<void> {
     )
 }
 
+async function panMap(
+    page: Page,
+    direction: 'ArrowLeft' | 'ArrowRight'
+): Promise<number[]> {
+    const initialCenter = new URL(page.url()).searchParams.get('center')
+    const canvas = page.locator('.maplibregl-canvas')
+    await canvas.focus()
+    await page.keyboard.press(direction)
+    await expect
+        .poll(() => new URL(page.url()).searchParams.get('center'))
+        .not.toBe(initialCenter)
+    const center = new URL(page.url()).searchParams.get('center')
+    if (!center) {
+        throw new Error('The map center is missing from the URL.')
+    }
+    return center.split(',').map(Number)
+}
+
 test.describe('PWA installation', () => {
     test.use({ serviceWorkers: 'allow' })
 
@@ -441,6 +459,94 @@ test('keeps the placement marker aligned at fixed map coordinates', async ({
         mapBox!.y + mapBox!.height / 2,
         0
     )
+})
+
+test('cancels and confirms moving an existing POI', async ({ page }) => {
+    await page.route('**/api/0.6/node/1.json', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({
+                elements: [
+                    {
+                        type: 'node',
+                        id: 1,
+                        lon: 2.2945,
+                        lat: 48.8584,
+                    },
+                ],
+            }),
+        })
+    )
+    await page.route('**/api/0.6/map?bbox=*', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: osmMapFixture,
+        })
+    )
+    await openApp(page, `${appUrl}&id=node/1&loadData=true`)
+
+    await expect(page.getByTestId('edit-poi')).toBeVisible()
+    await page.getByTestId('edit-poi').click()
+    await page.getByTestId('move-poi').click()
+
+    await expect(page.getByTestId('add-poi')).toHaveCount(0)
+    await expect(page.getByTestId('center-on-gps')).toHaveCount(0)
+    await expect(page.getByTestId('confirm-marker-move')).toBeVisible()
+    await expect(page.getByTestId('cancel-marker-move')).toBeVisible()
+
+    await panMap(page, 'ArrowRight')
+    await page.getByTestId('cancel-marker-move').click()
+    await expect(page.getByTestId('move-poi')).toBeVisible()
+
+    const queueAfterCancel = await readStoredValue<
+        { features: unknown[] } | undefined
+    >(page, 'geojsonChanged')
+    expect(queueAfterCancel?.features ?? []).toHaveLength(0)
+    const dataAfterCancel = await readStoredValue<{
+        features: Array<{
+            id: string
+            geometry: { coordinates: number[] }
+        }>
+    }>(page, 'geojson')
+    const originalFeature = dataAfterCancel.features.find(
+        (feature) => feature.id === 'node/1'
+    )
+    expect(originalFeature?.geometry.coordinates).toEqual([2.2945, 48.8584])
+
+    await page.getByTestId('move-poi').click()
+    await expect
+        .poll(() => new URL(page.url()).searchParams.get('center'))
+        .toBe('2.2945,48.8584')
+    const confirmedCoordinates = await panMap(page, 'ArrowLeft')
+    await page.getByTestId('confirm-marker-move').click()
+    await expect(page.getByTestId('save-poi')).toBeVisible()
+    await page.getByTestId('save-poi').click()
+
+    await expect
+        .poll(async () => {
+            const queue = await readStoredValue<{
+                features: Array<{
+                    id: string
+                    geometry: { coordinates: number[] }
+                }>
+            }>(page, 'geojsonChanged')
+            return queue.features.some((feature) => feature.id === 'node/1')
+        })
+        .toBe(true)
+    const savedQueue = await readStoredValue<{
+        features: Array<{
+            id: string
+            geometry: { coordinates: number[] }
+        }>
+    }>(page, 'geojsonChanged')
+    const savedCoordinates = savedQueue.features.find(
+        (feature) => feature.id === 'node/1'
+    )?.geometry.coordinates
+    expect(savedCoordinates).toBeDefined()
+    expect(savedCoordinates?.[0]).toBeCloseTo(confirmedCoordinates[0], 6)
+    expect(savedCoordinates?.[1]).toBeCloseTo(confirmedCoordinates[1], 6)
 })
 
 test('restores a pending queue after a page restart', async ({ page }) => {
