@@ -56,7 +56,11 @@ import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
 import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
-import { HttpClientModule, HttpClient } from '@angular/common/http'
+import {
+    HttpClient,
+    provideHttpClient,
+    withInterceptorsFromDi,
+} from '@angular/common/http'
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
@@ -155,7 +159,6 @@ export function createTranslateLoader(http: HttpClient) {
         IonicModule.forRoot({ mode: 'md' }),
         IonicStorageModule.forRoot(),
         AppRoutingModule,
-        HttpClientModule,
         MomentModule,
         HammerModule,
 
@@ -170,8 +173,10 @@ export function createTranslateLoader(http: HttpClient) {
             enabled: environment.production,
         }),
     ],
-
-    providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+    providers: [
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        provideHttpClient(withInterceptorsFromDi()),
+    ],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
