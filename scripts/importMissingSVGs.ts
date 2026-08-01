@@ -1,8 +1,8 @@
-import path from 'path'
 import fs, { createWriteStream } from 'fs'
+import fetch from 'node-fetch'
+import path from 'path'
 import { pipeline } from 'stream'
 import { promisify } from 'util'
-import fetch from 'node-fetch'
 import { iconsSvgDir, tapTagsPath } from './_paths'
 import { readTapTagsFromJson } from './_utils'
 

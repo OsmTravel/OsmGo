@@ -1,7 +1,7 @@
-import path from 'path'
 import fs from 'fs-extra'
-import stringify from 'json-stringify-pretty-compact'
 import got from 'got'
+import stringify from 'json-stringify-pretty-compact'
+import path from 'path'
 import { tapPresetsPath, tapTagsPath } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 

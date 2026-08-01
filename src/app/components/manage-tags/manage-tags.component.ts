@@ -1,15 +1,15 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { ModalController, NavController } from '@ionic/angular'
-import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
-import { forkJoin } from 'rxjs'
-import { ConfigService } from '@services/config.service'
-import { TagsService } from '@services/tags.service'
-import { switchMap } from 'rxjs/operators'
 import { TagConfig } from '@osmgo/type'
+import { ConfigService } from '@services/config.service'
+import { InitService } from '@services/init.service'
+import { MapService } from '@services/map.service'
+import { TagsService } from '@services/tags.service'
+import { forkJoin } from 'rxjs'
+import { switchMap } from 'rxjs/operators'
 import { ActiveTagsComponent } from './active-tags/active-tags.component'
 import { BookmarkedTagsComponent } from './bookmarked-tags/bookmarked-tags.component'
-import { MapService } from '@services/map.service'
-import { InitService } from '@services/init.service'
+import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
 
 @Component({
     selector: 'app-manage-tags',

@@ -1,10 +1,10 @@
 import {
-    Component,
-    OnInit,
-    Input,
-    Output,
-    EventEmitter,
     ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output,
 } from '@angular/core'
 import { TagConfig } from '@osmgo/type'
 

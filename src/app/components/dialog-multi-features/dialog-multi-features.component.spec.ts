@@ -1,19 +1,18 @@
+import { HttpClient } from '@angular/common/http'
+import {
+    HttpClientTestingModule,
+    HttpTestingController,
+} from '@angular/common/http/testing'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
+import { createTranslateLoader } from '@app/app.module'
+import { ModalController, NavParams } from '@ionic/angular'
 import {
-    TranslateModule,
     TranslateLoader,
+    TranslateModule,
     TranslateService,
 } from '@ngx-translate/core'
-import { createTranslateLoader } from '@app/app.module'
-
 import { DialogMultiFeaturesComponent } from './dialog-multi-features.component'
-import {
-    HttpTestingController,
-    HttpClientTestingModule,
-} from '@angular/common/http/testing'
-import { HttpClient } from '@angular/common/http'
-import { NavParams, ModalController } from '@ionic/angular'
 
 export class NavParamsMock {
     static returnParam = null

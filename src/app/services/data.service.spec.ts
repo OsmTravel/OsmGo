@@ -1,10 +1,10 @@
-import { featureCollection, point } from '@turf/turf'
 import {
     FeatureProperties,
     OsmGoFeature,
     OsmGoFeatureCollection,
 } from '@osmgo/type'
 import { DataService } from '@services/data.service'
+import { featureCollection, point } from '@turf/turf'
 
 describe('DataService', () => {
     let service: DataService

@@ -2,7 +2,7 @@ import { ModalPrimaryTag } from './modal.primaryTag'
 
 describe('ModalPrimaryTag swipes', () => {
     const pointerAt = (clientX: number): PointerEvent =>
-        ({ clientX } as PointerEvent)
+        ({ clientX }) as PointerEvent
 
     const createModal = (): ModalPrimaryTag =>
         new ModalPrimaryTag(

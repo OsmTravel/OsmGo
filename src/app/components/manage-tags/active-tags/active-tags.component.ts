@@ -1,8 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
-import { ConfigService } from '@services/config.service'
-import { TagsService } from '@services/tags.service'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 import { ModalController } from '@ionic/angular'
 import { TagConfig } from '@osmgo/type'
+import { ConfigService } from '@services/config.service'
+import { TagsService } from '@services/tags.service'
 
 @Component({
     selector: 'app-active-tags',

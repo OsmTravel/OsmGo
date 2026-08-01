@@ -1,8 +1,8 @@
-import pointOnFeature from '@turf/point-on-feature'
 import area from '@turf/area'
-import length from '@turf/length'
-import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
 import bboxPolygon from '@turf/bbox-polygon'
+import booleanPointInPolygon from '@turf/boolean-point-in-polygon'
+import length from '@turf/length'
+import pointOnFeature from '@turf/point-on-feature'
 
 import * as martinez from 'martinez-polygon-clipping'
 

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { Storage } from '@ionic/storage'
-import { BehaviorSubject, Observable, defer, from } from 'rxjs'
+import { BehaviorSubject, defer, from, Observable } from 'rxjs'
 import { finalize, switchMap, tap } from 'rxjs/operators'
 
 import { ConfigService } from './config.service'

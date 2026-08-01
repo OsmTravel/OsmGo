@@ -1,18 +1,14 @@
-import { ConfigService } from '@services/config.service'
-import { Component, ChangeDetectionStrategy } from '@angular/core'
-
-import { Platform } from '@ionic/angular'
-
-import { TranslateService } from '@ngx-translate/core'
-import { TagsService } from '@services/tags.service'
-import { Device } from '@capacitor/device'
-import { Storage } from '@ionic/storage-angular'
-
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { Router } from '@angular/router'
 import { App } from '@capacitor/app'
 import { Capacitor } from '@capacitor/core'
-
+import { Device } from '@capacitor/device'
 import { SplashScreen } from '@capacitor/splash-screen'
-import { Router } from '@angular/router'
+import { Platform } from '@ionic/angular'
+import { Storage } from '@ionic/storage-angular'
+import { TranslateService } from '@ngx-translate/core'
+import { ConfigService } from '@services/config.service'
+import { TagsService } from '@services/tags.service'
 
 @Component({
     selector: 'app-root',

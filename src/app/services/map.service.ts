@@ -1,30 +1,40 @@
-import {
-    Injectable,
-    EventEmitter,
-    NgZone,
-    Inject,
-    DOCUMENT,
-} from '@angular/core'
-import { DataService } from '@services/data.service'
-import { TagsService } from '@services/tags.service'
-import { AlertService } from '@services/alert.service'
-import { LocationService } from '@services/location.service'
-import { ConfigService, type Config } from '@services/config.service'
 import { HttpClient } from '@angular/common/http'
-
-import { debounceTime, filter, throttleTime } from 'rxjs/operators'
-import { uniqBy, cloneDeep, add } from 'lodash'
-
 import {
-    destination,
-    point,
-    Point,
+    DOCUMENT,
+    EventEmitter,
+    Inject,
+    Injectable,
+    NgZone,
+} from '@angular/core'
+import { ActivatedRoute, Params, Router } from '@angular/router'
+import { Haptics, ImpactStyle } from '@capacitor/haptics'
+import { AlertController } from '@ionic/angular'
+import { TranslateService } from '@ngx-translate/core'
+import {
+    EventShowModal,
+    FeatureIdSource,
+    MapMode,
+    OsmGoFeature,
+    OsmGoFeatureCollection,
+    OsmGoMarker,
+    TagConfig,
+} from '@osmgo/type'
+import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
+import { AlertService } from '@services/alert.service'
+import { type Config, ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { LocationService } from '@services/location.service'
+import { TagsService } from '@services/tags.service'
+import {
     BBox,
+    destination,
     MultiLineString,
     MultiPoint,
+    Point,
+    point,
 } from '@turf/turf'
-import { AlertController } from '@ionic/angular'
-
+import { Feature, FeatureCollection, LineString } from 'geojson'
+import { add, cloneDeep, uniqBy } from 'lodash'
 import {
     AttributionControl,
     FilterSpecification,
@@ -39,24 +49,9 @@ import {
     ScaleControl,
     StyleSpecification,
 } from 'maplibre-gl'
-import { TranslateService } from '@ngx-translate/core'
-import { map } from 'rxjs/operators'
-import { Haptics, ImpactStyle } from '@capacitor/haptics'
-
-import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
-import {
-    EventShowModal,
-    FeatureIdSource,
-    MapMode,
-    OsmGoFeature,
-    OsmGoFeatureCollection,
-    OsmGoMarker,
-    TagConfig,
-} from '@osmgo/type'
 import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
-import { Feature, FeatureCollection, LineString } from 'geojson'
+import { debounceTime, filter, map, throttleTime } from 'rxjs/operators'
 import { ModalDismissData } from '../components/modal/modal'
-import { ActivatedRoute, Params, Router } from '@angular/router'
 
 export const getMarkerLayout = () => ({
     'icon-image': '{marker}',
@@ -282,7 +277,13 @@ export class MapService {
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
             // prettier-ignore
-            const newConfigIdFilter: FilterSpecification = ['match', ['get', 'configId'], [...ids], false, true]
+            const newConfigIdFilter: FilterSpecification = [
+                'match',
+                ['get', 'configId'],
+                [...ids],
+                false,
+                true,
+            ]
             let newFilter = []
 
             // currentFilter[0] === 'all
@@ -1014,7 +1015,13 @@ export class MapService {
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
                 // prettier-ignore
-                ['match', ['geometry-type'], ['Polygon', 'MultiPolygon'], true, false],
+                [
+                    'match',
+                    ['geometry-type'],
+                    ['Polygon', 'MultiPolygon'],
+                    true,
+                    false,
+                ],
             ],
         })
 
@@ -1032,7 +1039,15 @@ export class MapService {
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
             // prettier-ignore
-            filter: ['all', [ 'match', ['geometry-type'], ['LineString', 'MultiLineString'], true, false],
+            filter: [
+                'all',
+                [
+                    'match',
+                    ['geometry-type'],
+                    ['LineString', 'MultiLineString'],
+                    true,
+                    false,
+                ],
             ],
         })
 
@@ -1049,7 +1064,13 @@ export class MapService {
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
                 // prettier-ignore
-                ['match', ['geometry-type'], ['Polygon', 'MultiPolygon'], true, false],
+                [
+                    'match',
+                    ['geometry-type'],
+                    ['Polygon', 'MultiPolygon'],
+                    true,
+                    false,
+                ],
             ],
         })
 
@@ -1068,7 +1089,13 @@ export class MapService {
                 // Types are not correct for the match filter used in the next line.
                 // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
                 // prettier-ignore
-                ['match', ['geometry-type'], ['LineString', 'MultiLineString'], true, false],
+                [
+                    'match',
+                    ['geometry-type'],
+                    ['LineString', 'MultiLineString'],
+                    true,
+                    false,
+                ],
             ],
         })
 

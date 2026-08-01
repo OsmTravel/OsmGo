@@ -1,11 +1,11 @@
-import fs from 'fs-extra'
-import path from 'path'
 // import * as cheerio from 'cheerio'
 import cheerio from 'cheerio'
-// const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
-import { parseString } from 'xml2js'
+import fs from 'fs-extra'
+import path from 'path'
 import sharp from 'sharp'
 import Spritesmith from 'spritesmith'
+// const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
+import { parseString } from 'xml2js'
 import { assetsDir, iconsSvgDir } from './_paths'
 
 type SvgRenderer = (filePath: string, factor: number) => Promise<Buffer>

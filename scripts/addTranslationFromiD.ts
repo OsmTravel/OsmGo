@@ -1,9 +1,9 @@
 import { writeFileSync } from 'fs'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
-import { tapTagsPath, tapPresetsPath } from './_paths'
-import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 import { defaultLanguages } from './_i18n'
+import { tapPresetsPath, tapTagsPath } from './_paths'
+import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const args = yargs(process.argv.slice(2))
     .usage(
@@ -30,10 +30,9 @@ const args = yargs(process.argv.slice(2))
     .parseSync()
 
 for (const language of args.language as string[]) {
-    const idTr =
-        require(`@openstreetmap/id-tagging-schema/dist/translations/${language}.json`)[
-            language
-        ]
+    const idTr = require(
+        `@openstreetmap/id-tagging-schema/dist/translations/${language}.json`
+    )[language]
 
     // const presetsIDPath = path.join(idRepoPath, 'data', 'presets', 'fields.json')
 

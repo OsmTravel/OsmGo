@@ -1,8 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { ModalController } from '@ionic/angular'
+import { TagConfig } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
-import { TagConfig } from '@osmgo/type'
-import { ModalController } from '@ionic/angular'
 
 @Component({
     selector: 'app-hidden-tags',

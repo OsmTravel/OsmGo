@@ -1,33 +1,27 @@
 import {
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     NgZone,
     OnInit,
-    ChangeDetectionStrategy,
-    ChangeDetectorRef,
 } from '@angular/core'
 import {
-    ModalController,
-    Platform,
-    LoadingController,
-    ToastController,
     AlertController,
+    LoadingController,
+    ModalController,
+    NavParams,
+    Platform,
+    ToastController,
 } from '@ionic/angular'
-import { NavParams } from '@ionic/angular'
-import { OsmApiService } from '@services/osmApi.service'
-import { MapService } from '@services/map.service'
-import { DataService } from '@services/data.service'
-import { ConfigService } from '@services/config.service'
-import { AlertService } from '@services/alert.service'
-import { TagsService } from '@services/tags.service'
-import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
-import { ModalSelectList } from './modalSelectList/modalSelectList'
-import { ModalAddTag } from './modal.addTag/modal.addTag'
-import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
-
-import { Tag, Preset, PrimaryTag, TagConfig, OsmGoFeature } from '@osmgo/type'
-
-import { cloneDeep, isEqual, findIndex } from 'lodash'
 import { TranslateService } from '@ngx-translate/core'
+import { OsmGoFeature, Preset, PrimaryTag, Tag, TagConfig } from '@osmgo/type'
+import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
 import {
     LineString,
     MultiLineString,
@@ -35,6 +29,10 @@ import {
     Point,
     Polygon,
 } from 'geojson'
+import { cloneDeep, findIndex, isEqual } from 'lodash'
+import { ModalAddTag } from './modal.addTag/modal.addTag'
+import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
+import { ModalSelectList } from './modalSelectList/modalSelectList'
 
 export interface ModalDismissData {
     redraw?: boolean

@@ -1,7 +1,7 @@
 import assert from 'assert'
+import fs from 'fs-extra'
 import os from 'os'
 import path from 'path'
-import fs from 'fs-extra'
 import sharp from 'sharp'
 import { generateSpriteSheet, renderSvgToPng } from './generateSprites'
 

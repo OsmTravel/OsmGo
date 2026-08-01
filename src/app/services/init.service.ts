@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core'
-import { forkJoin, of } from 'rxjs'
-import { ConfigService } from '@services/config.service'
-import { TagsService } from '@services/tags.service'
-import { map, switchMap, tap } from 'rxjs/operators'
 import { TranslateService } from '@ngx-translate/core'
+import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
+import { TagsService } from '@services/tags.service'
+import { forkJoin, of } from 'rxjs'
+import { map, switchMap, tap } from 'rxjs/operators'
 import { OsmApiService } from './osmApi.service'
 
 @Injectable({

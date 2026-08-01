@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs'
-import path from 'path'
 import git from 'git-last-commit'
+import path from 'path'
 
 const gitPath = path.join(__dirname, '..', '..')
 const envPath = path.join(__dirname, 'environment.prod.ts')

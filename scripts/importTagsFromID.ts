@@ -1,12 +1,13 @@
 /**
  * Update files tags.json & presets.json in folder tagsAndPresets
  */
+
+import { TagConfig } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
-import isEqual from 'lodash/isEqual'
 import intersection from 'lodash/intersection'
+import isEqual from 'lodash/isEqual'
 import { tapPresetsPath, tapTagsPath } from './_paths'
-import { TagConfig } from '@osmgo/type'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const tagConfig = readTapTagsFromJson()

@@ -1,7 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
-
-import { Platform, ModalController, NavController } from '@ionic/angular'
-import { ToastController } from '@ionic/angular'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import {
+    ModalController,
+    NavController,
+    Platform,
+    ToastController,
+} from '@ionic/angular'
 
 import { ConfigService } from '@services/config.service'
 @Component({

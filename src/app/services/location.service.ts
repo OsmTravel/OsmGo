@@ -1,10 +1,8 @@
-import { Injectable, EventEmitter } from '@angular/core'
-
+import { EventEmitter, Injectable } from '@angular/core'
+import { CompassHeading } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
-
 // import { Geolocation } from '@capacitor/geolocation'
 import { FeatureCollection, Point } from 'geojson'
-import { CompassHeading } from '@osmgo/type'
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {

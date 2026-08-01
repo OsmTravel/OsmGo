@@ -1,4 +1,4 @@
-import { Injectable, HostListener } from '@angular/core'
+import { HostListener, Injectable } from '@angular/core'
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 import { filter, map } from 'rxjs'
 

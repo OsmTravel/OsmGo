@@ -1,6 +1,6 @@
-import { convert } from './index.js'
 import * as fs from 'fs'
 import * as path from 'path'
+import { convert } from './index.js'
 
 const tagConfigPath = path.join(
     path.resolve(),

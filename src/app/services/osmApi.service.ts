@@ -1,22 +1,18 @@
-import { Injectable, EventEmitter } from '@angular/core'
-import { Observable, throwError, of, from } from 'rxjs'
-import { map, catchError, switchMap, tap, take, timeout } from 'rxjs/operators'
-
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { EventEmitter, Injectable } from '@angular/core'
+import { Platform } from '@ionic/angular'
 import { Storage } from '@ionic/storage-angular'
-
-import { MapService } from '@services/map.service'
-import { TagsService } from '@services/tags.service'
-import { DataService } from '@services/data.service'
+import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { AlertService } from '@services/alert.service'
 import { ConfigService, User } from '@services/config.service'
-import { cloneDeep } from 'lodash'
-
+import { DataService } from '@services/data.service'
+import { MapService } from '@services/map.service'
+import { TagsService } from '@services/tags.service'
 import bboxPolygon from '@turf/bbox-polygon'
-import { Platform } from '@ionic/angular'
-import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
-
 import { XMLParser, XMLValidator } from 'fast-xml-parser'
+import { cloneDeep } from 'lodash'
+import { from, Observable, of, throwError } from 'rxjs'
+import { catchError, map, switchMap, take, tap, timeout } from 'rxjs/operators'
 import { OsmAuthService } from './osm-auth.service'
 
 const OSM_REQUEST_TIMEOUT_MS = 30_000
@@ -385,8 +381,8 @@ export class OsmApiService {
                                     <tag k="${this.escapeXmlValue(
                                         k.trim()
                                     )}" v="${this.escapeXmlValue(
-                    String(tags_json[k]).trim()
-                )}"/>`
+                                        String(tags_json[k]).trim()
+                                    )}"/>`
             }
         }
         const xml = `${node_header}  ${tags_xml} </node>`

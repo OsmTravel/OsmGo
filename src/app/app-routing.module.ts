@@ -1,12 +1,11 @@
-import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
-import { AboutPage } from '@components/about/about'
 import { NgModule } from '@angular/core'
-import { Routes, RouterModule } from '@angular/router'
-import { MainPage } from '@components/main/main'
-import { SettingsPage } from '@components/settings/settings'
-
-import { ManageTagsComponent } from '@components/manage-tags/manage-tags.component'
+import { RouterModule, Routes } from '@angular/router'
+import { AboutPage } from '@components/about/about'
 import { BasemapsComponent } from '@components/basemaps/basemaps.component'
+import { MainPage } from '@components/main/main'
+import { ManageTagsComponent } from '@components/manage-tags/manage-tags.component'
+import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
+import { SettingsPage } from '@components/settings/settings'
 
 const routes: Routes = [
     {

@@ -136,7 +136,7 @@ class WideInterval {
      * @return True if the given object concerns the same interval as this one
      */
     equals(o) {
-        if (!o instanceof WideInterval) {
+        if ((!o) instanceof WideInterval) {
             return false
         }
         if (this === o) {

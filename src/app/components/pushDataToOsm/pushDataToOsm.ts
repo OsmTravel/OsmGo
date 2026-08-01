@@ -1,24 +1,24 @@
 import {
-    Component,
     AfterViewInit,
-    OnInit,
-    OnDestroy,
     ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit,
 } from '@angular/core'
 
-import { NavController, AlertController, Platform } from '@ionic/angular'
+import { AlertController, NavController, Platform } from '@ionic/angular'
+import { TranslateService } from '@ngx-translate/core'
+import { OsmGoFeature } from '@osmgo/type'
+import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { InitService } from '@services/init.service'
+import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
-import { MapService } from '@services/map.service'
-import { DataService } from '@services/data.service'
-import { ConfigService } from '@services/config.service'
+import { clone, cloneDeep } from 'lodash'
 import { timer } from 'rxjs'
-import { TranslateService } from '@ngx-translate/core'
-import { cloneDeep, clone } from 'lodash'
-import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
-import { InitService } from '@services/init.service'
 import { take } from 'rxjs/operators'
-import { OsmGoFeature } from '@osmgo/type'
 
 @Component({
     selector: 'page-push-data-to-osm',

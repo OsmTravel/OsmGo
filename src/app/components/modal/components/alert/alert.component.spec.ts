@@ -1,16 +1,15 @@
+import { HttpClient } from '@angular/common/http'
+import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
-
-import { AlertComponent } from './alert.component'
-import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
 import {
-    TranslateModule,
     TranslateLoader,
+    TranslateModule,
     TranslateService,
 } from '@ngx-translate/core'
-import { HttpClientTestingModule } from '@angular/common/http/testing'
-import { HttpClient } from '@angular/common/http'
 import { TranslateHttpLoader } from '@ngx-translate/http-loader'
+import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
+import { AlertComponent } from './alert.component'
 
 export function createTranslateLoader(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json')

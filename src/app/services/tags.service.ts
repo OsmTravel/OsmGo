@@ -1,9 +1,6 @@
 import { HttpClient } from '@angular/common/http'
-import { Observable, from, forkJoin } from 'rxjs'
-import { map } from 'rxjs/operators'
 import { Injectable } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
-import { ConfigService } from '@services/config.service'
 import {
     JsonSprites,
     OsmGoFeature,
@@ -13,6 +10,9 @@ import {
     TagConfig,
     TagsJson,
 } from '@osmgo/type'
+import { ConfigService } from '@services/config.service'
+import { forkJoin, from, Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {

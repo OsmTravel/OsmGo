@@ -2,7 +2,7 @@ import { MenuPage } from './menu'
 
 describe('MenuPage swipes', () => {
     const pointerAt = (clientX: number): PointerEvent =>
-        ({ clientX } as PointerEvent)
+        ({ clientX }) as PointerEvent
 
     const createPage = (): MenuPage =>
         new MenuPage(null, null, null, null, null, null, null, null, null, null)

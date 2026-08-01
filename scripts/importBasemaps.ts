@@ -1,12 +1,12 @@
-import got from 'got'
+import SphericalMercator from '@mapbox/sphericalmercator'
+import * as cover from '@mapbox/tile-cover'
+import centroid from '@turf/centroid'
 import fs from 'fs-extra'
-import path from 'path'
+import got from 'got'
 import stringify from 'json-stringify-pretty-compact'
 import orderBy from 'lodash/orderBy'
+import path from 'path'
 import { assetsDir } from './_paths'
-import * as cover from '@mapbox/tile-cover'
-import SphericalMercator from '@mapbox/sphericalmercator'
-import centroid from '@turf/centroid'
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
 

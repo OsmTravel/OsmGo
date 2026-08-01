@@ -1,7 +1,7 @@
-import type { Mock } from 'vitest'
 import { HttpClient } from '@angular/common/http'
 import { Capacitor } from '@capacitor/core'
 import { of } from 'rxjs'
+import type { Mock } from 'vitest'
 
 import { OsmAuthService } from './osm-auth.service'
 

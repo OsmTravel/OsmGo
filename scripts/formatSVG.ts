@@ -1,13 +1,15 @@
 // redimensionne et harmonise les path des SVG à 15px (min) et
 import fs from 'fs'
+
 // import * as cheerio from 'cheerio'
 const cheerio = require('cheerio') // TODO @dotcs: typings are wrong
-import path from 'path'
+
 import parse from 'parse-svg-path'
+import path from 'path'
 import scale from 'scale-svg-path'
 import serialize from 'serialize-svg-path'
-import { iconsSvgDir } from './_paths'
 import { optimize } from 'svgo'
+import { iconsSvgDir } from './_paths'
 
 function mergeSVGPaths(svgString: string): string {
     const result = optimize(svgString, {

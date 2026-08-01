@@ -1,6 +1,6 @@
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import { tapTagsPath, tapPresetsPath } from './_paths'
+import { tapPresetsPath, tapTagsPath } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
 const tagsConfig = readTapTagsFromJson()

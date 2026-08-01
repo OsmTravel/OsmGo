@@ -162,7 +162,7 @@ class OhRule {
      */
     addDate(d) {
         //Check param
-        if (d == null || d == undefined || !d instanceof OhDate) {
+        if (d == null || d == undefined || (!d) instanceof OhDate) {
             throw Error('Invalid parameter')
         }
 

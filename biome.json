@@ -20,16 +20,31 @@
       "!!src/assets/**/*.json",
       "!!src/assets/osmToOsmgo.min.js",
       "!!scripts/osmToOsmgo/index.min.js",
+      "!!scripts/osmToOsmgo/fixture/**/*.json",
       "!!scripts/osmToOsmgo/package-lock.json",
       "!!package-lock.json"
     ]
   },
   "formatter": {
-    "enabled": false
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 4,
+    "lineWidth": 80
   },
   "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "es5"
+    },
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2
     }
   },
   "linter": {
@@ -53,6 +68,11 @@
     }
   },
   "assist": {
-    "enabled": false
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   }
 }

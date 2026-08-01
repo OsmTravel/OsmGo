@@ -1,13 +1,12 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
-import { NavController, Platform, LoadingController } from '@ionic/angular'
-
-import { ConfigService } from '@services/config.service'
-import { MapService } from '@services/map.service'
-import { OsmApiService } from '@services/osmApi.service'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { LoadingController, NavController, Platform } from '@ionic/angular'
 import { TranslateService } from '@ngx-translate/core'
-import { TagsService } from '@services/tags.service'
+import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { InitService } from '@services/init.service'
+import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
 
 @Component({
     selector: 'page-settings',

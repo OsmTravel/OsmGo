@@ -1,8 +1,8 @@
-import path from 'path'
+import { Iso6391Language, Iso6391LanguageCodeJson } from '@osmgo/type'
 import fs from 'fs'
 import stringify from 'json-stringify-pretty-compact'
+import path from 'path'
 import { i18nDir, resourcesDir, tapTagsPath } from './_paths'
-import { Iso6391Language, Iso6391LanguageCodeJson } from '@osmgo/type'
 import { readTapTagsFromJson } from './_utils'
 
 const tagsOsmgo = readTapTagsFromJson()

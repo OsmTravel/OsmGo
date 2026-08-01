@@ -1,48 +1,42 @@
 declare const ResizeObserver: any
 
 import {
-    Component,
-    NgZone,
     AfterViewInit,
-    ViewChild,
-    ElementRef,
     ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    NgZone,
+    ViewChild,
 } from '@angular/core'
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
+import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
+import { OsmAuthService } from '@app/services/osm-auth.service'
+import { App as CapacitorApp } from '@capacitor/app'
+import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
+import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 import {
-    NavController,
-    MenuController,
-    ModalController,
-    ToastController,
-    Platform,
     AlertController,
     LoadingController,
+    MenuController,
+    ModalController,
+    NavController,
+    Platform,
+    ToastController,
 } from '@ionic/angular'
-
-import { OsmApiService } from '@services/osmApi.service'
-import { TagsService } from '@services/tags.service'
-import { MapService } from '@services/map.service'
-import { DataService } from '@services/data.service'
-import { LocationService } from '@services/location.service'
+import { TranslateService } from '@ngx-translate/core'
+import { FeatureIdSource } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
-import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
-
-import { timer, forkJoin, take, of, Observable, pipe } from 'rxjs'
-import { catchError, filter, map, switchMap } from 'rxjs/operators'
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router'
-import { TranslateService } from '@ngx-translate/core'
-
-import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
-
-import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
-
+import { DataService } from '@services/data.service'
 import { InitService } from '@services/init.service'
-
-import { App as CapacitorApp } from '@capacitor/app'
+import { LocationService } from '@services/location.service'
+import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
 import { BBox } from '@turf/turf'
-import { FeatureIdSource } from '@osmgo/type'
 import { LngLat } from 'maplibre-gl'
-import { OsmAuthService } from '@app/services/osm-auth.service'
+import { forkJoin, Observable, of, pipe, take, timer } from 'rxjs'
+import { catchError, filter, map, switchMap } from 'rxjs/operators'
 
 @Component({
     templateUrl: './main.html',

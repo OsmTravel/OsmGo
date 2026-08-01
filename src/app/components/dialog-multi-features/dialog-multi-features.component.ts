@@ -1,10 +1,10 @@
 import {
-    Component,
-    OnInit,
-    Input,
     ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
 } from '@angular/core'
-import { NavParams, ModalController } from '@ionic/angular'
+import { ModalController, NavParams } from '@ionic/angular'
 
 @Component({
     selector: 'app-dialog-multi-features',
@@ -17,7 +17,10 @@ export class DialogMultiFeaturesComponent implements OnInit {
     // @Input() features: string;
     features: any
     jsonSprites: any
-    constructor(navParams: NavParams, public modalCtrl: ModalController) {
+    constructor(
+        navParams: NavParams,
+        public modalCtrl: ModalController
+    ) {
         // console.log(this.features)
         this.features = navParams.get('features')
         this.jsonSprites = navParams.get('jsonSprites')

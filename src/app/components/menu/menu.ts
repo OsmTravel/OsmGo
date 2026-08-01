@@ -1,24 +1,23 @@
 import {
+    ChangeDetectionStrategy,
     Component,
-    Output,
     EventEmitter,
     Input,
     NgZone,
-    ChangeDetectionStrategy,
+    Output,
 } from '@angular/core'
-import { AlertController, Platform, NavController } from '@ionic/angular'
+import { OsmAuthService } from '@app/services/osm-auth.service'
 import { AboutPage } from '@components/about/about'
 import { PushDataToOsmPage } from '@components/pushDataToOsm/pushDataToOsm'
-
+import { AlertController, NavController, Platform } from '@ionic/angular'
+import { TranslateService } from '@ngx-translate/core'
+import { AlertService } from '@services/alert.service'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
-import { DataService } from '@services/data.service'
-import { ConfigService } from '@services/config.service'
-import { AlertService } from '@services/alert.service'
-import { TranslateService } from '@ngx-translate/core'
-import { menuAnimations } from './menu.animations'
 import { concat } from 'rxjs'
-import { OsmAuthService } from '@app/services/osm-auth.service'
+import { menuAnimations } from './menu.animations'
 
 @Component({
     selector: 'menu-component',

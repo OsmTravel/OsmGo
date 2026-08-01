@@ -8,8 +8,8 @@
 
 import { PresetOption } from '@osmgo/type'
 import fs from 'fs'
-import stringify from 'json-stringify-pretty-compact'
 import got from 'got'
+import stringify from 'json-stringify-pretty-compact'
 import { tapPresetsPath } from './_paths'
 import { readTapPresetsFromJson } from './_utils'
 

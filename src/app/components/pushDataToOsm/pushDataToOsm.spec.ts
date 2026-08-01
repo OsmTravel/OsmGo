@@ -3,8 +3,8 @@ import {
     NEVER,
     of,
     Subject,
-    throwError,
     TimeoutError,
+    throwError,
 } from 'rxjs'
 
 import { PushDataToOsmPage } from './pushDataToOsm'

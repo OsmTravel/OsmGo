@@ -1,5 +1,5 @@
-import type { Mock } from 'vitest'
 import { Subject, throwError } from 'rxjs'
+import type { Mock } from 'vitest'
 
 import { MainPage } from './main'
 

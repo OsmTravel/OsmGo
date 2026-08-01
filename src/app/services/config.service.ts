@@ -1,14 +1,13 @@
-import { Injectable, EventEmitter } from '@angular/core'
-import { Storage } from '@ionic/storage-angular'
 import { HttpClient } from '@angular/common/http'
-import { TranslateService } from '@ngx-translate/core'
+import { EventEmitter, Injectable } from '@angular/core'
 import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular'
-import { map } from 'rxjs/operators'
-import { from, Observable } from 'rxjs'
-import { TagConfig } from '@osmgo/type'
+import { Storage } from '@ionic/storage-angular'
+import { TranslateService } from '@ngx-translate/core'
+import { CountryCode, TagConfig } from '@osmgo/type'
 import { TagsService } from '@services/tags.service'
-import { CountryCode } from '@osmgo/type'
+import { from, Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 export interface User {
     uid: string
@@ -300,9 +299,8 @@ export class ConfigService {
                     }
                 }
 
-                let changeset: Changeset = await this.localStorage.get(
-                    'changeset'
-                )
+                let changeset: Changeset =
+                    await this.localStorage.get('changeset')
                 if (changeset) {
                     this.changeset = changeset
                 } else {

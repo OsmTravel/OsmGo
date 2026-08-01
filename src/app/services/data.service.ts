@@ -1,14 +1,14 @@
-import { Injectable, EventEmitter } from '@angular/core'
+import { EventEmitter, Injectable } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
+import {
+    FeatureIdSource,
+    OsmGoFeature,
+    OsmGoFeatureCollection,
+} from '@osmgo/type'
+import { feature, featureCollection } from '@turf/turf'
 import { cloneDeep } from 'lodash'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
-import {
-    OsmGoFeatureCollection,
-    OsmGoFeature,
-    FeatureIdSource,
-} from '@osmgo/type'
-import { feature, featureCollection } from '@turf/turf'
 
 @Injectable({ providedIn: 'root' })
 export class DataService {

@@ -1,10 +1,10 @@
-import got from 'got'
 import fs from 'fs-extra'
+import got from 'got'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
+import { defaultLanguages } from './_i18n'
 import { tapTagsPath } from './_paths'
 import { readTapTagsFromJson } from './_utils'
-import { defaultLanguages } from './_i18n'
 
 const args = yargs(process.argv.slice(2))
     .usage(

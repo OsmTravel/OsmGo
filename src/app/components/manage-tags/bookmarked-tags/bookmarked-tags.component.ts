@@ -1,7 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { ModalController } from '@ionic/angular'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
-import { ModalController } from '@ionic/angular'
 
 @Component({
     selector: 'app-bookmarked-tags',

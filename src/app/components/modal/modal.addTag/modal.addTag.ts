@@ -1,10 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core'
+import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { ModalController, NavParams } from '@ionic/angular'
-import { TagsService } from '@services/tags.service'
-import { ConfigService } from '@services/config.service'
 import { TranslateService } from '@ngx-translate/core'
 import { Preset } from '@osmgo/type'
 import { nameToOsmKey } from '@osmgo/utils'
+import { ConfigService } from '@services/config.service'
+import { TagsService } from '@services/tags.service'
 
 @Component({
     selector: 'modal-add-tag',
