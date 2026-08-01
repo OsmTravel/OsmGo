@@ -37,7 +37,7 @@ Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
 
 ### Requirements
 
-Use Node.js 20.20.2 and npm 10.8.2. The Node.js version is pinned in `.nvmrc` for the Angular migration.
+Use Node.js 24.18.0 and npm 11.16.0. The Node.js version is pinned in `.nvmrc`.
 
 💡 Be sure to checkout the branch develop to get the latest updates.
 
