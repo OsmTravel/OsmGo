@@ -12,12 +12,10 @@ PARENT_DIR=$(realpath "$SCRIPT_DIR/../..")
 
 URL_PROJECT_ID=https://github.com/openstreetmap/iD.git
 URL_PROJECT_IDTS=https://github.com/openstreetmap/id-tagging-schema.git
-URL_PROJECT_NSI=https://github.com/osmlab/name-suggestion-index.git
 
 declare -A projects
 projects["iD"]=$URL_PROJECT_ID
 projects["id-tagging-schema"]=$URL_PROJECT_IDTS
-projects["name-suggestion-index"]=$URL_PROJECT_NSI
 
 cd "${PARENT_DIR}"
 

@@ -3,14 +3,15 @@
 OsmGo assets will do imports from:
 
 - [iD]
-- [id-tagging-schema]
-- and [name-suggestion-index].
+- [id-tagging-schema].
+
+Name Suggestion Index data comes from the exact version installed by npm.
 
 ### 0. Quick setup
 
 To setup all required repos in a single step, use the [`setup-third-party.sh`](./setup-third-party.sh) shell script.
 
-Alternatively you can follow steps (I - III) to clone the repositories individually.
+Alternatively you can follow steps I and II to clone the repositories individually.
 **Please note that the default name of the respoitories (= the folder name into which the code is cloned) should not be changed as they are hard-coded in the scripts.**
 
 ### I. Clone iD
@@ -25,20 +26,13 @@ The repo of id-tagging-schema must be at same root as OsmGo repo
 
 `git clone https://github.com/openstreetmap/id-tagging-schema.git`
 
-### III. Clone name-suggestion-index
-
-The repo of name-suggestion-index must be at same root as OsmGo repo
-
-`git clone https://github.com/osmlab/name-suggestion-index.git`
-
-### IV. Import translation from iD
+### III. Import translation from iD
 
 `tsx --tsconfig ./tsconfig.json addTranslationFromiD.ts`
 
-### V. Import description from taginfo
+### IV. Import description from taginfo
 
 `tsx --tsconfig ./tsconfig.json importDescriptionFromTaginfo.ts --overwrite`
 
 [id]: https://github.com/openstreetmap/iD
 [id-tagging-schema]: https://github.com/openstreetmap/id-tagging-schema
-[name-suggestion-index]: https://github.com/osmlab/name-suggestion-index
