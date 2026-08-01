@@ -1,6 +1,7 @@
 import { Subject, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
+import { ModalsContentPage } from '../modal/modal'
 import { MainPage } from './main'
 
 const createPage = ({
@@ -51,10 +52,69 @@ const createPage = ({
         changeDetectorRef as any
     )
 
-    return { page, mapService: resolvedMapService }
+    return {
+        page,
+        mapService: resolvedMapService,
+        configService: resolvedConfigService,
+    }
 }
 
 describe('MainPage', () => {
+    it('opens and closes the feature modal with its input data', async () => {
+        const eventShowModal = new Subject<{
+            type: string
+            geojson: { id: string }
+            origineData: string
+        }>()
+        let dismissModal: (result: { data?: unknown }) => void = () => {
+            throw new Error('The modal dismissal is not ready.')
+        }
+        const dismissed = new Promise<{ data?: unknown }>((resolve) => {
+            dismissModal = resolve
+        })
+        const modal = {
+            present: vi.fn().mockResolvedValue(undefined),
+            onDidDismiss: vi.fn().mockReturnValue(dismissed),
+        }
+        const modalCtrl = {
+            create: vi.fn().mockResolvedValue(modal),
+        }
+        const feature = { id: 'node/1' }
+        const { page, configService, mapService } = createPage({
+            modalCtrl,
+            mapService: {
+                eventShowModal,
+                setCenterInUrl: vi.fn(),
+            },
+        })
+
+        eventShowModal.next({
+            type: 'Read',
+            geojson: feature,
+            origineData: 'data',
+        })
+
+        await vi.waitFor(() => expect(modal.present).toHaveBeenCalledOnce())
+        expect(modalCtrl.create).toHaveBeenCalledWith({
+            component: ModalsContentPage,
+            componentProps: {
+                type: 'Read',
+                data: feature,
+                newPosition: false,
+                origineData: 'data',
+                openPrimaryTagModalOnStart: undefined,
+            },
+        })
+        expect(page.modalIsOpen).toBe(true)
+        expect(configService.freezeMapRenderer).toBe(true)
+
+        dismissModal({})
+
+        await vi.waitFor(() => expect(page.modalIsOpen).toBe(false))
+        expect(configService.freezeMapRenderer).toBe(false)
+        expect(mapService.setCenterInUrl).toHaveBeenCalledOnce()
+    })
+
     it('keeps existing data and clears processing after a download failure', () => {
         const mapService = {
             eventNewBboxPolygon: {
