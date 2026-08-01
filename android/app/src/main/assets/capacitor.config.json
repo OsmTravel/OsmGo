@@ -6,6 +6,11 @@
 		"App": {
 			"url": "osmgo",
 			"androidScheme": "osmgo"
+		},
+		"SystemBars": {
+			"insetsHandling": "css",
+			"style": "DEFAULT",
+			"hidden": false
 		}
 	}
 }

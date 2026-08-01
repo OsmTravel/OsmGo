@@ -1,4 +1,4 @@
-import { CapacitorConfig } from '@capacitor/cli'
+import type { CapacitorConfig } from '@capacitor/cli'
 
 // Documetation: https://capacitorjs.com/docs/config
 const config: CapacitorConfig = {
@@ -12,6 +12,11 @@ const config: CapacitorConfig = {
         App: {
             url: 'osmgo',
             androidScheme: 'osmgo',
+        },
+        SystemBars: {
+            insetsHandling: 'css',
+            style: 'DEFAULT',
+            hidden: false,
         },
     },
 }

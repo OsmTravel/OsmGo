@@ -32,9 +32,9 @@ RUN curl --fail --location --silent --show-error \
 
 RUN yes | sdkmanager --licenses >/dev/null \
     && sdkmanager \
-        "build-tools;34.0.0" \
+        "build-tools;35.0.0" \
         "platform-tools" \
-        "platforms;android-35"
+        "platforms;android-36"
 
 COPY --chmod=0755 docker/android/entrypoint.sh /usr/local/bin/osmgo-android-build
 
