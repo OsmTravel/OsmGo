@@ -8,8 +8,8 @@
 
 import { PresetOption } from '@osmgo/type'
 import fs from 'fs'
-import got from 'got'
 import stringify from 'json-stringify-pretty-compact'
+import { fetchJson } from './_fetch'
 import { tapPresetsPath } from './_paths'
 import { readTapPresetsFromJson } from './_utils'
 
@@ -37,18 +37,18 @@ const getOptionsFromTagInfo = async (
     /** E.g., https://taginfo.openstreetmap.org/api/4/key/values?key=building&rp=10&sortname=count&sortorder=desc */
     const url = `https://taginfo.openstreetmap.org/api/4/key/values?key=${key}&rp=${nb}&sortname=count&sortorder=desc`
 
-    const ret: OsmApiResponse = await got(url).json()
+    const ret = await fetchJson<OsmApiResponse>(url)
     // console.log
     const data = ret.data
     if (!data) {
         return null
     }
     // console.log(data);
-    let options = []
+    const options = []
 
-    for (let d of data) {
+    for (const d of data) {
         if (!/;/.test(d.value)) {
-            let opt = { v: d.value, lbl: { en: d.value } }
+            const opt = { v: d.value, lbl: { en: d.value } }
             options.push(opt)
         }
     }
@@ -57,12 +57,12 @@ const getOptionsFromTagInfo = async (
 }
 
 const run = async (): Promise<void> => {
-    for (let k in presetsOsmgo) {
+    for (const k in presetsOsmgo) {
         const currentPreset = presetsOsmgo[k]
         if (['list', 'select'].includes(currentPreset.type)) {
             if (!currentPreset.options && !currentPreset.optionsFromJson) {
                 // console.log(currentPreset.key)
-                let options = await getOptionsFromTagInfo(currentPreset.key)
+                const options = await getOptionsFromTagInfo(currentPreset.key)
                 if (options) {
                     currentPreset.options = options.slice(0, 30)
                     console.log(currentPreset['options'])

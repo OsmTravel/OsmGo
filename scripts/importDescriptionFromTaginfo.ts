@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
-import got from 'got'
 import stringify from 'json-stringify-pretty-compact'
 import yargs from 'yargs'
+import { fetchJson } from './_fetch'
 import { defaultLanguages } from './_i18n'
 import { tapTagsPath } from './_paths'
 import { readTapTagsFromJson } from './_utils'
@@ -37,11 +37,11 @@ const getStatsByKey = async (key: string, language: string) => {
     console.log('Call: ' + uri)
     let res: { data: any[]; rp: any; data_until: any }
     try {
-        res = await got(uri).json()
+        res = await fetchJson(uri)
     } catch (e) {
         console.error(e)
         console.log('Retry call: ' + uri)
-        res = await got(uri).json()
+        res = await fetchJson(uri)
     }
     console.log('Called')
 
@@ -86,8 +86,8 @@ const run = async (language: string) => {
         // console.log(tagInfoKey);
         const tagsConfig = tagsOsmgo.tags
 
-        for (let tagConfig of tagsConfig) {
-            let keys = Object.keys(tagConfig.tags)
+        for (const tagConfig of tagsConfig) {
+            const keys = Object.keys(tagConfig.tags)
             if (keys.length == 1 && keys[0] === pk) {
                 const value = tagConfig.tags[pk]
                 const currentTagInfo = tagInfoKey.find(

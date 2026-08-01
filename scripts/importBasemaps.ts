@@ -2,10 +2,10 @@ import SphericalMercator from '@mapbox/sphericalmercator'
 import * as cover from '@mapbox/tile-cover'
 import centroid from '@turf/centroid'
 import fs from 'fs-extra'
-import got from 'got'
 import stringify from 'json-stringify-pretty-compact'
 import orderBy from 'lodash/orderBy'
 import path from 'path'
+import { fetchJson, fetchResponse } from './_fetch'
 import { assetsDir } from './_paths'
 
 const url = `https://osmlab.github.io/editor-layer-index/imagery.geojson`
@@ -53,14 +53,11 @@ const checkUrl = async (feature: any) => {
         .replace('{quadkey}', quadkey)
 
     try {
-        const response = await got(testUrl, {
-            responseType: 'text',
-            timeout: 5000,
-        })
+        const response = await fetchResponse(testUrl, 5_000)
 
         if (
-            response.statusCode === 200 &&
-            response.headers['access-control-allow-origin'] === '*'
+            response.status === 200 &&
+            response.headers.get('access-control-allow-origin') === '*'
         ) {
             return feature
         }
@@ -89,11 +86,11 @@ const tileToQuadkey = (x, y, z) => {
 
 const run = async () => {
     console.log('Importing basemaps from')
-    const data: any = await got(url).json()
+    const data: any = await fetchJson(url)
     const features = data.features
     // const features = data.features.filter((feature:any) => feature.properties.id === 'Bing')
 
-    let promisesCheckUrl = []
+    const promisesCheckUrl = []
     for (const feature of features) {
         if (ignoredIds.includes(feature.properties.id)) {
             // Ignore this imagery
@@ -135,7 +132,7 @@ const run = async () => {
                 'https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
             ]
             feature.properties['max_zoom'] = 19
-        } else if (/\{switch\:/.test(furl)) {
+        } else if (/\{switch:/.test(furl)) {
             // const fswitch = furl.match(/{switch\:.*\}/g)
             const fswitch = furl.match(/\{switch:.+?\}/g)
             const parts = fswitch[0].split(':')[1].slice(0, -1).split(',')

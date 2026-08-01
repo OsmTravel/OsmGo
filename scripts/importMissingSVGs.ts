@@ -1,9 +1,7 @@
-import fs, { createWriteStream } from 'fs'
-import fetch from 'node-fetch'
+import fs from 'fs'
 import path from 'path'
-import { pipeline } from 'stream'
-import { promisify } from 'util'
-import { iconsSvgDir, tapTagsPath } from './_paths'
+import { fetchResponse } from './_fetch'
+import { iconsSvgDir } from './_paths'
 import { readTapTagsFromJson } from './_utils'
 
 const tagConfig = readTapTagsFromJson()
@@ -17,15 +15,9 @@ const makiSvgUrl: string = `https://raw.githubusercontent.com/mapbox/maki/main/i
 // https://raw.githubusercontent.com/ideditor/temaki/main/icons/mast.svg
 
 const download = async ({ url, path }: { url: string; path: string }) => {
-    const streamPipeline = promisify(pipeline)
-
-    const response = await fetch(url)
-
-    if (!response.ok) {
-        throw new Error(`unexpected response ${response.statusText}`)
-    }
-
-    await streamPipeline(response.body, createWriteStream(path))
+    const response = await fetchResponse(url)
+    const content = Buffer.from(await response.arrayBuffer())
+    fs.writeFileSync(path, content)
 }
 
 const run = async () => {

@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
-import got from 'got'
 import stringify from 'json-stringify-pretty-compact'
 import path from 'path'
+import { fetchJson } from './_fetch'
 import { tapPresetsPath, tapTagsPath } from './_paths'
 import { readTapPresetsFromJson, readTapTagsFromJson } from './_utils'
 
@@ -13,7 +13,7 @@ const tags = tagsConfig.tags
 const presets = readTapPresetsFromJson()
 
 const formatBrandsNS = (brandsData: Array<any>): Array<unknown> => {
-    let result = []
+    const result = []
     brandsData.forEach((v) => {
         const lbl = v.name
         const brand = v.addTags.brand
@@ -37,7 +37,7 @@ const importBrandsToPresetsConfig = (
     const keep = ['v', 'lbl', 'countryCodes', 'tags', 'addTags']
 
     options = options.map((o) => {
-        for (let k in o) {
+        for (const k in o) {
             if (!keep.includes(k)) {
                 delete o[k]
             }
@@ -57,9 +57,9 @@ const importBrandsToPresetsConfig = (
 }
 
 const parseNsiPresets = (data) => {
-    let result = {}
-    for (let k in data.presets) {
-        let k_parts = k.split('/')
+    const result = {}
+    for (const k in data.presets) {
+        const k_parts = k.split('/')
         const id = k_parts.pop()
         const pkey = k_parts.join('/')
         if (!result[pkey]) result[pkey] = []
@@ -70,7 +70,7 @@ const parseNsiPresets = (data) => {
 }
 
 const run = async () => {
-    const brandsDataRaw = await got(nsiPresetsUrl).json()
+    const brandsDataRaw = await fetchJson<any>(nsiPresetsUrl)
     const brandsData = parseNsiPresets(brandsDataRaw)
 
     for (const tagConfig of tags) {
