@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+import { IonicModule } from '@ionic/angular'
 
 @Component({
     selector: 'read-other-tag',
@@ -13,7 +14,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
         </ion-card>
     `,
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule],
 })
 export class ReadOtherTag {
     @Input() tag

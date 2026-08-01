@@ -5,13 +5,15 @@ import {
     Input,
     Output,
 } from '@angular/core'
+import { IonicModule } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
     selector: 'survey-card',
     styleUrls: ['SurveyCard.scss'],
     templateUrl: './SurveyCard.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule, TranslateModule],
 })
 export class SurveyCard {
     @Output() yes = new EventEmitter()

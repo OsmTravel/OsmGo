@@ -10,7 +10,6 @@ import {
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
 })
 export class IconComponent implements OnInit {
     @Input() jsonSprites
