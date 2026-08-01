@@ -9,8 +9,13 @@ const tagsOsmgo = tagConfig.tags
 
 const idFaSvgUrl: string = `https://raw.githubusercontent.com/openstreetmap/iD/develop/svg/fontawesome`
 const temakiSvgUrl: string = `https://raw.githubusercontent.com/ideditor/temaki/main/icons`
-const roentgenSvgUrl: string = `https://raw.githubusercontent.com/openstreetmap/iD/develop/svg/roentgen`
+const roentgenSvgUrl: string = `https://raw.githubusercontent.com/facebook/Rapid/main/svg/roentgen`
 const makiSvgUrl: string = `https://raw.githubusercontent.com/mapbox/maki/main/icons`
+
+const roentgenIconAliases: Record<string, string> = {
+    vending_flower: 'flower_in_pot',
+    vending_pack: 'vending_machine',
+}
 
 // https://raw.githubusercontent.com/ideditor/temaki/main/icons/mast.svg
 
@@ -52,9 +57,9 @@ const run = async () => {
                 }
             } else if (/^roentgen/.test(t.icon)) {
                 // => roentgen
-                const iconRoentgenUrl = `${roentgenSvgUrl}/${
-                    t.icon.split('roentgen-')[1]
-                }.svg`
+                const iconName = t.icon.split('roentgen-')[1]
+                const sourceIconName = roentgenIconAliases[iconName] ?? iconName
+                const iconRoentgenUrl = `${roentgenSvgUrl}/${sourceIconName}.svg`
                 try {
                     await download({
                         url: iconRoentgenUrl,
