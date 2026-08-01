@@ -3,12 +3,60 @@ import type { Mock } from 'vitest'
 
 import { MainPage } from './main'
 
+const createPage = ({
+    modalCtrl = {},
+    osmApi = {},
+    mapService = {},
+    dataService = {},
+    alertService = {},
+    configService = {},
+    changeDetectorRef = { detectChanges: vi.fn() },
+}: any = {}) => {
+    const resolvedMapService = {
+        eventShowDialogMultiFeatures: new Subject(),
+        eventShowModal: new Subject(),
+        ...mapService,
+    }
+    const resolvedAlertService = {
+        eventNewAlert: new Subject(),
+        ...alertService,
+    }
+    const resolvedConfigService = {
+        freezeMapRenderer: false,
+        ...configService,
+    }
+    const router = { events: new Subject() }
+    const ngZone = { run: (callback) => callback() }
+    const page = new MainPage(
+        {} as any,
+        modalCtrl as any,
+        {} as any,
+        {} as any,
+        osmApi as any,
+        {} as any,
+        resolvedMapService as any,
+        dataService as any,
+        {} as any,
+        resolvedAlertService as any,
+        resolvedConfigService as any,
+        {} as any,
+        ngZone as any,
+        router as any,
+        {} as any,
+        {} as any,
+        {} as any,
+        {} as any,
+        {} as any,
+        {} as any,
+        changeDetectorRef as any
+    )
+
+    return { page, mapService: resolvedMapService }
+}
+
 describe('MainPage', () => {
     it('keeps existing data and clears processing after a download failure', () => {
-        const router = { events: new Subject() }
         const mapService = {
-            eventShowDialogMultiFeatures: new Subject(),
-            eventShowModal: new Subject(),
             eventNewBboxPolygon: {
                 emit: vi.fn().mockName('EventEmitter.emit'),
             },
@@ -37,29 +85,13 @@ describe('MainPage', () => {
             getLimitFeatures: () => 100,
             freezeMapRenderer: false,
         }
-        const ngZone = { run: (callback) => callback() }
-        const page = new MainPage(
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            osmApi as any,
-            {} as any,
-            mapService as any,
-            dataService as any,
-            {} as any,
-            alertService as any,
-            configService as any,
-            {} as any,
-            ngZone as any,
-            router as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const { page } = createPage({
+            osmApi,
+            mapService,
+            dataService,
+            alertService,
+            configService,
+        })
         vi.spyOn(console, 'error').mockReturnValue(undefined)
         vi.spyOn(page, 'presentToast').mockResolvedValue()
 
@@ -75,5 +107,47 @@ describe('MainPage', () => {
         expect(vi.mocked(page.presentToast as Mock).mock.lastCall[0]).toBe(
             downloadError
         )
+    })
+
+    it('refreshes the map controls when marker movement starts', async () => {
+        const eventShowModal = new Subject<any>()
+        const eventMoveElement = {
+            emit: vi.fn().mockName('eventMoveElement.emit'),
+        }
+        const changeDetectorRef = {
+            detectChanges: vi.fn().mockName('detectChanges'),
+        }
+        const movedFeature = {
+            type: 'Move',
+            geojson: { id: 'node/1' },
+            mode: 'Update',
+        }
+        const modal = {
+            present: vi.fn().mockResolvedValue(undefined),
+            onDidDismiss: vi.fn().mockResolvedValue({ data: movedFeature }),
+        }
+        const { mapService } = createPage({
+            modalCtrl: {
+                create: vi.fn().mockResolvedValue(modal),
+            },
+            mapService: {
+                eventShowModal,
+                eventMoveElement,
+                setCenterInUrl: vi.fn(),
+            },
+            changeDetectorRef,
+        })
+
+        eventShowModal.next({
+            type: 'Read',
+            geojson: movedFeature.geojson,
+            origineData: 'data',
+        })
+
+        await vi.waitFor(() => {
+            expect(eventMoveElement.emit).toHaveBeenCalledWith(movedFeature)
+        })
+        expect(changeDetectorRef.detectChanges).toHaveBeenCalledOnce()
+        expect(mapService.setCenterInUrl).toHaveBeenCalledOnce()
     })
 })

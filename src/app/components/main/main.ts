@@ -3,6 +3,7 @@ declare const ResizeObserver: any
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     ElementRef,
     NgZone,
@@ -81,7 +82,8 @@ export class MainPage implements AfterViewInit {
         private swUpdate: SwUpdate,
         public initService: InitService,
         private osmAuthService: OsmAuthService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private changeDetectorRef: ChangeDetectorRef
     ) {
         this.router.events.subscribe((e) => {
             if (e instanceof NavigationEnd) {
@@ -143,6 +145,7 @@ export class MainPage implements AfterViewInit {
                 if (data) {
                     if (data.type === 'Move') {
                         this.mapService.eventMoveElement.emit(data)
+                        this.changeDetectorRef.detectChanges()
                     }
                     if (data.redraw) {
                         timer(50).subscribe((t) => {
