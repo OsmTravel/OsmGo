@@ -1,57 +1,63 @@
-import { HttpClient } from '@angular/common/http'
+import type { HttpClient } from '@angular/common/http'
 import {
     DOCUMENT,
     EventEmitter,
     Inject,
     Injectable,
-    NgZone,
+    type NgZone,
 } from '@angular/core'
-import { ActivatedRoute, Params, Router } from '@angular/router'
+import type { ActivatedRoute, Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
-import { AlertController } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import type { AlertController } from '@ionic/angular'
+import type { TranslateService } from '@ngx-translate/core'
 import {
-    EventShowModal,
-    FeatureIdSource,
-    MapMode,
-    OsmGoFeature,
-    OsmGoFeatureCollection,
-    OsmGoMarker,
+    type EventShowModal,
+    type FeatureIdSource,
+    type MapMode,
+    type OsmGoFeature,
+    type OsmGoFeatureCollection,
+    type OsmGoMarker,
     TagConfig,
 } from '@osmgo/type'
 import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
-import { AlertService } from '@services/alert.service'
-import { type Config, ConfigService } from '@services/config.service'
-import { DataService } from '@services/data.service'
-import { LocationService } from '@services/location.service'
-import { TagsService } from '@services/tags.service'
+import type { AlertService } from '@services/alert.service'
+import type { Config, ConfigService } from '@services/config.service'
+import type { DataService } from '@services/data.service'
+import type { LocationService } from '@services/location.service'
+import type { TagsService } from '@services/tags.service'
 import {
-    BBox,
+    type BBox,
     destination,
     MultiLineString,
     MultiPoint,
-    Point,
+    type Point,
     point,
 } from '@turf/turf'
-import { Feature, FeatureCollection, LineString } from 'geojson'
+import { Feature, type FeatureCollection, LineString } from 'geojson'
 import { add, cloneDeep, uniqBy } from 'lodash'
 import {
     AttributionControl,
-    FilterSpecification,
-    GeoJSONSource,
-    LngLat,
-    LngLatLike,
+    type FilterSpecification,
+    type GeoJSONSource,
+    type LngLat,
+    type LngLatLike,
     Map,
-    MapGeoJSONFeature,
+    type MapGeoJSONFeature,
     Marker,
     NavigationControl,
-    RasterSourceSpecification,
+    type RasterSourceSpecification,
     ScaleControl,
-    StyleSpecification,
+    type StyleSpecification,
 } from 'maplibre-gl'
-import { BehaviorSubject, Observable, of, Subject, Subscription } from 'rxjs'
+import {
+    BehaviorSubject,
+    type Observable,
+    of,
+    Subject,
+    type Subscription,
+} from 'rxjs'
 import { debounceTime, filter, map, throttleTime } from 'rxjs/operators'
-import { ModalDismissData } from '../components/modal/modal'
+import type { ModalDismissData } from '../components/modal/modal'
 
 export const getMarkerLayout = () => ({
     'icon-image': '{marker}',
@@ -169,9 +175,9 @@ export class MapService {
         )
 
         this.eventMapMove.pipe(debounceTime(700)).subscribe(() => {
-            let mapCenter = this.map.getCenter()
-            let mapBearing = this.map.getBearing()
-            let mapZoom = this.map.getZoom()
+            const mapCenter = this.map.getCenter()
+            const mapBearing = this.map.getBearing()
+            const mapZoom = this.map.getZoom()
             const currentView = {
                 lng: mapCenter.lng,
                 lat: mapCenter.lat,
@@ -228,25 +234,16 @@ export class MapService {
         this.isProcessing.next(isProcessing)
     }
 
-    loadUnknownMarker(factor: number): void {
+    async loadUnknownMarker(factor: number): Promise<void> {
         const roundedFactor = factor > 1 ? 2 : 1
-        this.map.loadImage(
-            `./assets/mapStyle/unknown-marker/circle-unknown@${roundedFactor}X.png`,
-            (error, image) => {
-                this.markerMaplibreUnknown['circle'] = image
-            }
-        )
-        this.map.loadImage(
-            `./assets/mapStyle/unknown-marker/penta-unknown@${roundedFactor}X.png`,
-            (error, image) => {
-                this.markerMaplibreUnknown['penta'] = image
-            }
-        )
-        this.map.loadImage(
-            `./assets/mapStyle/unknown-marker/square-unknown@${roundedFactor}X.png`,
-            (error, image) => {
-                this.markerMaplibreUnknown['square'] = image
-            }
+        const markerShapes = ['circle', 'penta', 'square']
+        await Promise.all(
+            markerShapes.map(async (shape) => {
+                const response = await this.map.loadImage(
+                    `./assets/mapStyle/unknown-marker/${shape}-unknown@${roundedFactor}X.png`
+                )
+                this.markerMaplibreUnknown[shape] = response.data
+            })
         )
     }
 
@@ -268,7 +265,7 @@ export class MapService {
             ids = ['']
         }
 
-        for (let layerId of layersIds) {
+        for (const layerId of layersIds) {
             const currentFilter = this.map.getFilter(layerId) as any[]
             if (typeof currentFilter === 'undefined') {
                 // FIXME @dotcs: Do something here
@@ -825,7 +822,7 @@ export class MapService {
         value: number,
         _map: Map
     ): FilterSpecification {
-        let currentFilter = _map.getFilter(layerName) as any
+        const currentFilter = _map.getFilter(layerName) as any
         if (typeof currentFilter === 'undefined') {
             // FIXME: @dotcs add some error handling
         }
@@ -909,7 +906,7 @@ export class MapService {
         const OneYear = 31536000000
         const currentTime = new Date().getTime()
 
-        let currentFilter = (this.map.getFilter('icon-old') || []) as any[]
+        const currentFilter = (this.map.getFilter('icon-old') || []) as any[]
 
         let findedIndex: number
         for (let i = 1; i < currentFilter.length; i++) {
@@ -1241,7 +1238,7 @@ export class MapService {
 
         this.filterMakerByIds(this.tagsService.hiddenTagsIds)
 
-        let configOldTagIcon = this.configService.getOldTagsIcon()
+        const configOldTagIcon = this.configService.getOldTagsIcon()
         if (configOldTagIcon.display) {
             this.showOldTagIcon(configOldTagIcon.year)
         }
@@ -1496,10 +1493,10 @@ export class MapService {
                 const [, shape, color, id] = matchMarkerAndIcon
                 iconParam = { shape, color, id }
             } else if (matchMarkerOnly) {
-                let [, shape, color] = matchMarkerOnly
+                const [, shape, color] = matchMarkerOnly
                 iconParam = { shape, color, id: 'maki-circle' }
             } else if (matchShapeOnly) {
-                let [, shape] = matchShapeOnly
+                const [, shape] = matchShapeOnly
                 iconParam = { shape, color: '#000000', id: 'maki-circle' }
             } else {
                 iconParam = {

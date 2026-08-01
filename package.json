@@ -69,7 +69,7 @@
     "git-last-commit": "^1.0.1",
     "ionicons": "8.0.13",
     "lodash": "^4.17.21",
-    "maplibre-gl": "^3.2.2",
+    "maplibre-gl": "4.7.1",
     "martinez-polygon-clipping": "^0.7.3",
     "moment": "^2.29.4",
     "ngx-moment": "^6.0.2",
