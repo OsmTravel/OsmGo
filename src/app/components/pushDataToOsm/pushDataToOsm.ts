@@ -227,6 +227,26 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         return feature
     }
 
+    private getUploadErrorMessage(error): string {
+        if (typeof error?.error === 'string' && error.error.trim()) {
+            return error.error
+        }
+        if (typeof error?.message === 'string' && error.message.trim()) {
+            return error.message
+        }
+        return 'OpenStreetMap could not process the upload.'
+    }
+
+    private stopPushingWithError(error, feature = null): void {
+        this.error = {
+            status: typeof error?.status === 'number' ? error.status : 0,
+            message: this.getUploadErrorMessage(error),
+            feature,
+        }
+        this.isPushing = false
+        this.mapService.isProcessing.next(false)
+    }
+
     async pushDataToOsm(commentChangeset) {
         if (this.isPushing) {
             console.log('Already pushing')
@@ -253,69 +273,70 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         this.osmApi
             .getValidChangset(commentChangeset)
             .pipe(take(1))
-            .subscribe((CS) => {
-                const features = this.dataService.getGeojsonChanged().features
-                this.changesetId = CS
-                const diffFile = this.osmApi.osmGoFeaturesToOsmDiffFile(
-                    features,
-                    this.changesetId
-                )
+            .subscribe(
+                (CS) => {
+                    const features =
+                        this.dataService.getGeojsonChanged().features
+                    this.changesetId = CS
+                    const diffFile = this.osmApi.osmGoFeaturesToOsmDiffFile(
+                        features,
+                        this.changesetId
+                    )
 
-                this.osmApi
-                    .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
-                    .pipe(take(1))
-                    .subscribe({
-                        next: (diffFileResult) => {
-                            this.updateLocalDataFromDiffResult(
-                                diffFileResult,
-                                features
-                            )
-                            this.mapService.eventMarkerReDraw.emit(
-                                this.dataService.getGeojson()
-                            )
-                            this.mapService.eventMarkerChangedReDraw.emit(
-                                this.dataService.getGeojsonChanged()
-                            )
-                            this.featuresChanges =
-                                this.dataService.getGeojsonChanged().features
-                            this.error = undefined
-                            this.summary = this.getSummary()
-                            this.uploadedOk = true
-                            this.mapService.isProcessing.next(false)
-                            timer(1000)
-                                .pipe(take(1))
-                                .subscribe(() => {
-                                    // this.isPushing = false;
-                                    this.navCtrl.back()
-                                })
-                        },
-                        error: (err) => {
-                            const feature = this.getFeatureFromErrorResult(
-                                err.status,
-                                err.error
-                            )
-                            this.error = {
-                                status: err.status,
-                                message: err.error,
-                                feature,
-                            }
-                            const featureWithError = {
-                                ...this.featuresChanges.find(
-                                    (f) => f.id == feature?.id
-                                ),
-                                error: err.error,
-                            }
-                            this.featuresChanges = [
-                                featureWithError,
-                                ...this.featuresChanges.filter(
-                                    (f) => f.id !== feature?.id
-                                ),
-                            ]
-                            this.isPushing = false
-                            this.mapService.isProcessing.next(false)
-                        },
-                    })
-            })
+                    this.osmApi
+                        .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
+                        .pipe(take(1))
+                        .subscribe({
+                            next: (diffFileResult) => {
+                                this.updateLocalDataFromDiffResult(
+                                    diffFileResult,
+                                    features
+                                )
+                                this.mapService.eventMarkerReDraw.emit(
+                                    this.dataService.getGeojson()
+                                )
+                                this.mapService.eventMarkerChangedReDraw.emit(
+                                    this.dataService.getGeojsonChanged()
+                                )
+                                this.featuresChanges =
+                                    this.dataService.getGeojsonChanged().features
+                                this.error = undefined
+                                this.summary = this.getSummary()
+                                this.uploadedOk = true
+                                this.mapService.isProcessing.next(false)
+                                timer(1000)
+                                    .pipe(take(1))
+                                    .subscribe(() => {
+                                        // this.isPushing = false;
+                                        this.navCtrl.back()
+                                    })
+                            },
+                            error: (err) => {
+                                const message = this.getUploadErrorMessage(err)
+                                const feature = this.getFeatureFromErrorResult(
+                                    err.status,
+                                    message
+                                )
+                                this.stopPushingWithError(err, feature)
+                                const featureWithError = {
+                                    ...this.featuresChanges.find(
+                                        (f) => f.id == feature?.id
+                                    ),
+                                    error: message,
+                                }
+                                this.featuresChanges = [
+                                    featureWithError,
+                                    ...this.featuresChanges.filter(
+                                        (f) => f.id !== feature?.id
+                                    ),
+                                ]
+                            },
+                        })
+                },
+                (err) => {
+                    this.stopPushingWithError(err)
+                }
+            )
     }
 
     cancelErrorFeature(feature) {
