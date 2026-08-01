@@ -12,6 +12,7 @@ import { Component, Input } from '@angular/core'
             </ion-card-content>
         </ion-card>
     `,
+    standalone: false,
 })
 export class ReadOtherTag {
     @Input() tag

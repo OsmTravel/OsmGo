@@ -7,6 +7,7 @@ import { ConfigService } from '@services/config.service'
 @Component({
     selector: 'page-about',
     templateUrl: './about.html',
+    standalone: false,
 })
 export class AboutPage {
     constructor(

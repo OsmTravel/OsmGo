@@ -3,6 +3,7 @@ import { Pipe } from '@angular/core'
 @Pipe({
     name: 'filterExcludeTagByCountryCode',
     pure: false,
+    standalone: false,
 })
 export class FilterExcludeTagByCountryCode {
     transform(items, countryCode: string) {

@@ -5,6 +5,7 @@ import { NavParams, ModalController } from '@ionic/angular'
     selector: 'app-dialog-multi-features',
     templateUrl: './dialog-multi-features.component.html',
     styleUrls: ['./dialog-multi-features.component.scss'],
+    standalone: false,
 })
 export class DialogMultiFeaturesComponent implements OnInit {
     // @Input() features: string;

@@ -31,6 +31,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
             </ion-card-content>
         </ion-card>
     `,
+    standalone: false,
 })
 export class EditOtherTag {
     @Input() tag

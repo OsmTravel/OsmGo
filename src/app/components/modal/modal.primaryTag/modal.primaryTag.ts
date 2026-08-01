@@ -8,6 +8,7 @@ import { TagConfig } from '@osmgo/type'
     selector: 'modal-primary-tag',
     templateUrl: './modal.primaryTag.html',
     styleUrls: ['./modal.primaryTag.scss'],
+    standalone: false,
 })
 export class ModalPrimaryTag implements OnInit {
     selectedKey: string

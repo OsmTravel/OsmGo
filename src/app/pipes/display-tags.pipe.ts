@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
     name: 'displayTags',
+    standalone: false,
 })
 export class DisplayTagsPipe implements PipeTransform {
     transform(tags: any, ...args: any[]): any {

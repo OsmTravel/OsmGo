@@ -2,6 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 
 @Pipe({
     name: 'limitDisplayTags',
+    standalone: false,
 })
 export class LimitDisplayTagsPipe implements PipeTransform {
     transform(items: any[], limit: number): any {

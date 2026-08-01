@@ -10,8 +10,8 @@ import {
 @Component({
     selector: 'app-select',
     templateUrl: './select.component.html',
-
     styleUrls: ['./select.component.scss', '../style.scss'],
+    standalone: false,
 })
 export class SelectComponent implements OnInit {
     @Input() displayCode

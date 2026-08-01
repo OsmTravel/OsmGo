@@ -4,6 +4,7 @@ import { TagConfig } from '@osmgo/type'
 @Pipe({
     name: 'orderByPreset',
     pure: false,
+    standalone: false,
 })
 export class OrderByPresetPipe {
     transform(items, tagConfig: TagConfig) {

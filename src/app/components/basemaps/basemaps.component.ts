@@ -10,6 +10,7 @@ import { MapService } from '@services/map.service'
     selector: 'app-basemaps',
     templateUrl: './basemaps.component.html',
     styleUrls: ['./basemaps.component.scss'],
+    standalone: false,
 })
 export class BasemapsComponent implements OnInit {
     lat: number

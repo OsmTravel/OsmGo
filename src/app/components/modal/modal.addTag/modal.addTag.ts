@@ -10,6 +10,7 @@ import { nameToOsmKey } from '@osmgo/utils'
     selector: 'modal-add-tag',
     templateUrl: './modal.addTag.html',
     styleUrls: ['./modal.addTag.scss'],
+    standalone: false,
 })
 export class ModalAddTag {
     moreFields: Array<string>

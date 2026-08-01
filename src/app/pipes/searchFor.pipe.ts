@@ -5,6 +5,7 @@ import { nameToOsmKey } from '@osmgo/utils'
 @Pipe({
     name: 'searchFor',
     pure: false,
+    standalone: false,
 })
 export class SearchForPipe {
     transform(items: Array<Preset>, name: string, language: string) {

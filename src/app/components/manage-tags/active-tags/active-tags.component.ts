@@ -8,6 +8,7 @@ import { TagConfig } from '@osmgo/type'
     selector: 'app-active-tags',
     templateUrl: './active-tags.component.html',
     styleUrls: ['./active-tags.component.scss', '../sharedStyle.scss'],
+    standalone: false,
 })
 export class ActiveTagsComponent implements OnInit {
     searchText = ''

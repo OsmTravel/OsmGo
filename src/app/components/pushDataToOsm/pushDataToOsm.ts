@@ -18,6 +18,7 @@ import { OsmGoFeature } from '@osmgo/type'
     selector: 'page-push-data-to-osm',
     templateUrl: './pushDataToOsm.html',
     styleUrls: ['./pushDataToOsm.scss'],
+    standalone: false,
 })
 export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     summary = { Total: 0, Create: 0, Update: 0, Delete: 0 }

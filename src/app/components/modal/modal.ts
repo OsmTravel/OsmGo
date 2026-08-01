@@ -47,6 +47,7 @@ export interface ModalDismissData {
     templateUrl: './modal.html',
     styleUrls: ['./modal.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false,
 })
 export class ModalsContentPage implements OnInit {
     tags: Tag[] = [] // main data

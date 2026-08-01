@@ -18,6 +18,7 @@ import { OsmAuthService } from '@app/services/osm-auth.service'
     templateUrl: './menu.html',
     styleUrls: ['./menu.scss'],
     animations: menuAnimations,
+    standalone: false,
 })
 export class MenuPage {
     @Output() closeEvent = new EventEmitter()

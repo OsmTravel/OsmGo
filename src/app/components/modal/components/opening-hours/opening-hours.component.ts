@@ -16,6 +16,7 @@ const builder = new OpeningHoursBuilder()
     selector: 'app-opening-hours',
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss', '../style.scss'],
+    standalone: false,
 })
 export class OpeningHoursComponent implements OnInit {
     @Input() openingHours

@@ -5,6 +5,7 @@ import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
     selector: 'primary-key',
     styleUrls: ['PrimaryKey.scss'],
     templateUrl: 'PrimaryKey.html',
+    standalone: false,
 })
 export class PrimaryKey {
     @Output() openPrimaryTagModal = new EventEmitter()

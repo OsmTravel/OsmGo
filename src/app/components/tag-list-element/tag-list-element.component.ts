@@ -5,6 +5,7 @@ import { TagConfig } from '@osmgo/type'
     selector: 'app-tag-list-element',
     templateUrl: './tag-list-element.component.html',
     styleUrls: ['./tag-list-element.component.scss'],
+    standalone: false,
 })
 export class TagListElementComponent implements OnInit {
     @Input() tag: any

@@ -4,6 +4,7 @@ import { TagConfig } from '@osmgo/type'
 @Pipe({
     name: 'filterExcludeKeys',
     pure: false,
+    standalone: false,
 })
 export class FilterExcludeKeysPipe {
     transform(

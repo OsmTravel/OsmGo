@@ -7,6 +7,7 @@ import { ModalController } from '@ionic/angular'
     selector: 'app-bookmarked-tags',
     templateUrl: './bookmarked-tags.component.html',
     styleUrls: ['./bookmarked-tags.component.scss', '../sharedStyle.scss'],
+    standalone: false,
 })
 export class BookmarkedTagsComponent implements OnInit {
     searchText = ''

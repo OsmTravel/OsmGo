@@ -5,6 +5,7 @@ import * as moment from 'moment'
     selector: 'meta-card',
     styleUrls: ['MetaCard.scss'],
     templateUrl: './MetaCard.html',
+    standalone: false,
 })
 export class MetaCard {
     @Input() feature

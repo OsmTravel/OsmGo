@@ -3,6 +3,7 @@ import { Pipe } from '@angular/core'
 @Pipe({
     name: 'displayPresetLabel',
     pure: false,
+    standalone: false,
 })
 export class DisplayPresetLabelPipe {
     transform(tag, preset) {

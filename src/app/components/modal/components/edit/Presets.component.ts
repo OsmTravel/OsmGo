@@ -4,6 +4,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core'
     selector: 'edit-presets',
     styleUrls: ['../style.scss'],
     templateUrl: './Presets.component.html',
+    standalone: false,
 })
 export class EditPresets {
     @Input() displayCode

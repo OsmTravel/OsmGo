@@ -15,6 +15,7 @@ import { InitService } from '@services/init.service'
     selector: 'app-manage-tags',
     templateUrl: './manage-tags.component.html',
     styleUrls: ['./manage-tags.component.scss'],
+    standalone: false,
 })
 export class ManageTagsComponent implements OnInit {
     tags: TagConfig[]

@@ -3,6 +3,7 @@ import { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filtersTagsByIds',
+    standalone: false,
 })
 export class FiltersTagsByIdsPipe implements PipeTransform {
     transform(tags: TagConfig[], ids: string[], reverse = false): any {

@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core'
     selector: 'app-modal-add-opening-hours-interval',
     templateUrl: './modal-add-opening-hours-interval.component.html',
     styleUrls: ['./modal-add-opening-hours-interval.component.scss'],
+    standalone: false,
 })
 export class ModalAddOpeningHoursIntervalComponent implements OnInit {
     constructor(

@@ -47,6 +47,7 @@ import { OsmAuthService } from '@app/services/osm-auth.service'
     templateUrl: './main.html',
     selector: 'main',
     styleUrls: ['./main.scss'],
+    standalone: false,
 })
 export class MainPage implements AfterViewInit {
     modalIsOpen: boolean = false

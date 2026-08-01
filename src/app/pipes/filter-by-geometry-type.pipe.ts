@@ -3,6 +3,7 @@ import { TagConfig } from '@osmgo/type'
 
 @Pipe({
     name: 'filterByByGeometryType',
+    standalone: false,
 })
 export class FilterByByGeometryTypePipe implements PipeTransform {
     transform(

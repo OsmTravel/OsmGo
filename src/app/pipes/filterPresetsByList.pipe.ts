@@ -4,6 +4,7 @@ import { Preset } from '@osmgo/type'
 @Pipe({
     name: 'filterPresetsByList',
     pure: false,
+    standalone: false,
 })
 export class FilterPresetsByListPipe {
     transform(items: Array<Preset>, list: Array<string>) {

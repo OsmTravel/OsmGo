@@ -8,6 +8,7 @@ import { ModalController } from '@ionic/angular'
     selector: 'app-hidden-tags',
     templateUrl: './hidden-tags.component.html',
     styleUrls: ['./hidden-tags.component.scss', '../sharedStyle.scss'],
+    standalone: false,
 })
 export class HiddenTagsComponent implements OnInit {
     constructor(

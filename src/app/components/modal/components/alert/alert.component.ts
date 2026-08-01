@@ -4,6 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
     selector: 'app-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
+    standalone: false,
 })
 export class AlertComponent implements OnInit {
     @Input() tagConfig

@@ -13,6 +13,7 @@ import { InitService } from '@services/init.service'
     selector: 'page-settings',
     templateUrl: './settings.html',
     styleUrls: ['./settings.scss'],
+    standalone: false,
 })
 export class SettingsPage {
     constructor(

@@ -6,6 +6,7 @@ import { ConfigService } from '@services/config.service'
     templateUrl: './modalSelectList.html',
     styleUrls: ['./modalSelectList.scss'],
     selector: 'modal-select-list',
+    standalone: false,
 })
 export class ModalSelectList {
     data

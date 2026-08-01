@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 @Pipe({
     name: 'filterByTagsContent',
     pure: false,
+    standalone: false,
 })
 export class FilterByTagsContentPipe implements PipeTransform {
     replaceCharSpe(text: string) {
