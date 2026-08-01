@@ -5,6 +5,8 @@ import {
     Input,
     Output,
 } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { IonicModule } from '@ionic/angular'
 
 @Component({
     selector: 'edit-other-tag',
@@ -38,7 +40,7 @@ import {
         </ion-card>
     `,
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [FormsModule, IonicModule],
 })
 export class EditOtherTag {
     @Input() tag

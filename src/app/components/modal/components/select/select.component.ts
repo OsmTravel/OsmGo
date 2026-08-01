@@ -6,13 +6,22 @@ import {
     OnInit,
     Output,
 } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { IonicModule } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
+import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 
 @Component({
     selector: 'app-select',
     templateUrl: './select.component.html',
     styleUrls: ['./select.component.scss', '../style.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        DisplayPresetLabelPipe,
+        FormsModule,
+        IonicModule,
+        TranslateModule,
+    ],
 })
 export class SelectComponent implements OnInit {
     @Input() displayCode

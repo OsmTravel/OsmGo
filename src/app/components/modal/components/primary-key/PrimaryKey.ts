@@ -5,14 +5,17 @@ import {
     Input,
     Output,
 } from '@angular/core'
+import { IconComponent } from '@components/icon/icon.component'
+import { IonicModule } from '@ionic/angular'
 import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
+import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 
 @Component({
     selector: 'primary-key',
     styleUrls: ['PrimaryKey.scss'],
     templateUrl: 'PrimaryKey.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [DisplayTagsPipe, IconComponent, IonicModule],
 })
 export class PrimaryKey {
     @Output() openPrimaryTagModal = new EventEmitter()
