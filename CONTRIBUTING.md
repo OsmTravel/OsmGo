@@ -82,21 +82,28 @@ Enable GitHub Actions as the GitHub Pages source in the repository settings. For
 -   secret `CLOUDFLARE_ACCOUNT_ID` with the Cloudflare account ID;
 -   secret `CLOUDFLARE_API_TOKEN` with a token limited to Cloudflare Pages edit access.
 
-### Build for android (make apk)
+### Build for Android
 
 Requirements:
 
--   [Android Studio](https://developer.android.com) with JDK and gradle
+-   JDK 17;
+-   Android SDK 34.
 
 `package.json` provides the Android `versionName`. Update `VERSION_CODE` in `android/version.properties` during release preparation.
 
 Build environments without Git metadata must provide `OSMGO_BUILD_BRANCH`, `OSMGO_BUILD_SHA`, and `OSMGO_BUILD_DATE`.
 
 ```sh
-npm run buildAndroid
+npm run android:apk
+npm run android:aab
+npm run android:release
 ```
 
-Then open Android Studio and you can compile the app and run it on your device.
+The commands use the Gradle wrapper and do not open Android Studio. To open the synchronized project manually, run:
+
+```sh
+npm run android:studio
+```
 
 ### Debug on Android
 
@@ -108,7 +115,7 @@ Requirements:
 npm run buildAndroidDebug
 ```
 
-Then open Android Studio, compile the app and run it on your device.
+Then run `npm run android:studio` to compile the app and run it on your device.
 
 After you can use Google Chrome or Edge to attach a debugger to the web app on the device.
 
