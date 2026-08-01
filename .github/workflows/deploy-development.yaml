@@ -13,6 +13,8 @@ jobs:
     build:
         name: Build development PWA
         runs-on: ubuntu-latest
+        outputs:
+            version: ${{ steps.build-info.outputs.version }}
         permissions:
             contents: read
         steps:
@@ -34,8 +36,15 @@ jobs:
             - name: Build the PWA
               run: npm run build -- --base-href=/OsmGo/
 
+            - name: Add build information
+              id: build-info
+              run: |
+                  node scripts/write-web-build-info.mjs www
+                  version="$(node -p 'require("./package.json").version')"
+                  echo "version=${version}" >>"${GITHUB_OUTPUT}"
+
             - name: Check the build output
-              run: test -f www/index.html
+              run: test -f www/index.html && test -f www/build-info.json
 
             - name: Configure GitHub Pages
               uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
@@ -59,3 +68,18 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+            - name: Verify the deployed build
+              shell: bash
+              env:
+                  DEPLOYMENT_URL: ${{ steps.deployment.outputs.page_url }}
+                  EXPECTED_VERSION: ${{ needs.build.outputs.version }}
+                  EXPECTED_COMMIT: ${{ github.sha }}
+              run: |
+                  set -euo pipefail
+                  expected="$(printf '{"version":"%s","commit":"%s"}' "${EXPECTED_VERSION}" "${EXPECTED_COMMIT}")"
+                  actual="$(curl --fail --silent --show-error --retry 5 --retry-all-errors "${DEPLOYMENT_URL%/}/build-info.json?commit=${EXPECTED_COMMIT}")"
+                  if [[ "${actual}" != "${expected}" ]]; then
+                      echo "The GitHub Pages deployment does not match the expected build." >&2
+                      exit 1
+                  fi

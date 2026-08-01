@@ -13,7 +13,9 @@ jobs:
     deploy:
         name: Deploy osmgo.com
         runs-on: ubuntu-latest
-        environment: production
+        environment:
+            name: production
+            url: https://osmgo.com
         permissions:
             contents: read
             deployments: write
@@ -36,10 +38,14 @@ jobs:
             - name: Build the PWA
               run: npm run build
 
+            - name: Add build information
+              run: node scripts/write-web-build-info.mjs www
+
             - name: Check the build output
-              run: test -f www/index.html
+              run: test -f www/index.html && test -f www/build-info.json
 
             - name: Deploy to Cloudflare Pages
+              id: deploy
               uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -47,3 +53,27 @@ jobs:
                   gitHubToken: ${{ secrets.GITHUB_TOKEN }}
                   wranglerVersion: 4.118.0
                   command: pages deploy www --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main
+
+            - name: Verify the deployed build
+              shell: bash
+              env:
+                  DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+                  PRODUCTION_URL: https://osmgo.com
+                  EXPECTED_COMMIT: ${{ github.sha }}
+              run: |
+                  set -euo pipefail
+                  expected_version="$(node -p 'require("./package.json").version')"
+                  expected="$(printf '{"version":"%s","commit":"%s"}' "${expected_version}" "${EXPECTED_COMMIT}")"
+
+                  verify_deployment() {
+                      local url="$1"
+                      local actual
+                      actual="$(curl --fail --silent --show-error --retry 5 --retry-all-errors "${url%/}/build-info.json?commit=${EXPECTED_COMMIT}")"
+                      if [[ "${actual}" != "${expected}" ]]; then
+                          echo "Deployment ${url} does not match the expected build." >&2
+                          exit 1
+                      fi
+                  }
+
+                  verify_deployment "${DEPLOYMENT_URL}"
+                  verify_deployment "${PRODUCTION_URL}"
