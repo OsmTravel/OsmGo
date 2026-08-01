@@ -100,9 +100,6 @@ import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
         PrimaryKey,
 
         OpeningHoursComponent,
-        OrderByPresetPipe,
-        IsBookmarkedPipe,
-        SortArrayPipe,
         BasemapsComponent,
     ],
     imports: [
@@ -127,11 +124,14 @@ import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
         FilterExcludeTagByCountryCode,
         FilterPresetsByListPipe,
         FiltersTagsByIdsPipe,
+        IsBookmarkedPipe,
         LimitDisplayTagsPipe,
         MinutesToHoursMinutesPipe,
+        OrderByPresetPipe,
         RelativeTimePipe,
         RemoveBrandsPipe,
         SearchForPipe,
+        SortArrayPipe,
         ToOsmTagPipe,
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,

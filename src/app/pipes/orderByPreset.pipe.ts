@@ -4,14 +4,13 @@ import { TagConfig } from '@osmgo/type'
 @Pipe({
     name: 'orderByPreset',
     pure: false,
-    standalone: false,
 })
 export class OrderByPresetPipe {
     transform(items, tagConfig: TagConfig) {
-        let fields = []
-        let moreFields = []
-        let extraTags = []
-        let newFields = []
+        const fields = []
+        const moreFields = []
+        const extraTags = []
+        const newFields = []
         items.forEach((element) => {
             if (element.isJustAdded) {
                 newFields.push(element)
