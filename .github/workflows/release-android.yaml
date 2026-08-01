@@ -1,0 +1,149 @@
+name: Release Android artifacts
+
+on:
+    push:
+        tags:
+            - '*.*.*'
+
+concurrency:
+    group: android-release-${{ github.ref }}
+    cancel-in-progress: false
+
+permissions:
+    contents: read
+
+jobs:
+    validate-tag:
+        name: Validate release tag
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out the repository
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  fetch-depth: 0
+
+            - name: Verify the tag and version
+              shell: bash
+              run: |
+                  set -euo pipefail
+
+                  if [[ ! "${GITHUB_REF_NAME}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+                      echo "Release tags must use the X.Y.Z format." >&2
+                      exit 1
+                  fi
+
+                  package_version="$(sed -n 's/^[[:space:]]*"version": "\([^"]*\)",$/\1/p' package.json)"
+                  if [[ "${GITHUB_REF_NAME}" != "${package_version}" ]]; then
+                      echo "Tag ${GITHUB_REF_NAME} does not match package version ${package_version}." >&2
+                      exit 1
+                  fi
+
+                  git fetch origin main:refs/remotes/origin/main --no-tags
+                  tag_commit="$(git rev-parse "${GITHUB_REF_NAME}^{commit}")"
+                  if ! git merge-base --is-ancestor "${tag_commit}" origin/main; then
+                      echo "Release tag ${GITHUB_REF_NAME} is not on main." >&2
+                      exit 1
+                  fi
+
+    build:
+        name: Build signed release artifacts
+        needs: validate-tag
+        runs-on: ubuntu-latest
+        timeout-minutes: 30
+        environment: android-release
+        permissions:
+            contents: write
+        steps:
+            - name: Check out the release tag
+              uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+              with:
+                  persist-credentials: false
+
+            - name: Build and verify signed artifacts
+              shell: bash
+              env:
+                  ANDROID_CERT_SHA256: ${{ vars.ANDROID_CERT_SHA256 }}
+                  ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+                  ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+                  ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+                  ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+              run: |
+                  set -euo pipefail
+                  umask 077
+
+                  for variable_name in \
+                      ANDROID_KEYSTORE_BASE64 \
+                      ANDROID_KEYSTORE_PASSWORD \
+                      ANDROID_KEY_ALIAS \
+                      ANDROID_KEY_PASSWORD; do
+                      if [[ -z "${!variable_name}" ]]; then
+                          echo "Missing Android release secret: ${variable_name}" >&2
+                          exit 1
+                      fi
+                  done
+
+                  signing_directory="$(mktemp --directory "${RUNNER_TEMP}/osmgo-signing.XXXXXX")"
+                  export ANDROID_KEYSTORE_PATH="${signing_directory}/release.keystore"
+
+                  cleanup() {
+                      if [[ -f "${ANDROID_KEYSTORE_PATH}" ]]; then
+                          unlink "${ANDROID_KEYSTORE_PATH}"
+                      fi
+                      if [[ -d "${signing_directory}" ]]; then
+                          rmdir "${signing_directory}"
+                      fi
+                  }
+                  trap cleanup EXIT
+
+                  printf '%s' "${ANDROID_KEYSTORE_BASE64}" \
+                      | base64 --decode >"${ANDROID_KEYSTORE_PATH}"
+
+                  expected_cert_sha256="$(
+                      printf '%s' "${ANDROID_CERT_SHA256}" \
+                          | tr -d ':' \
+                          | tr '[:upper:]' '[:lower:]'
+                  )"
+                  if [[ ! "${expected_cert_sha256}" =~ ^[0-9a-f]{64}$ ]]; then
+                      echo "ANDROID_CERT_SHA256 must be a SHA-256 fingerprint." >&2
+                      exit 1
+                  fi
+
+                  actual_cert_sha256="$(
+                      keytool \
+                          -list \
+                          -v \
+                          -keystore "${ANDROID_KEYSTORE_PATH}" \
+                          -storepass:env ANDROID_KEYSTORE_PASSWORD \
+                          -alias "${ANDROID_KEY_ALIAS}" \
+                          | sed -n 's/^[[:space:]]*SHA256: //p' \
+                          | head -1 \
+                          | tr -d ':' \
+                          | tr '[:upper:]' '[:lower:]'
+                  )"
+                  if [[ "${actual_cert_sha256}" != "${expected_cert_sha256}" ]]; then
+                      echo "The Android release keystore certificate is not the expected one." >&2
+                      exit 1
+                  fi
+
+                  ./scripts/build-android-docker.sh
+
+            - name: Publish the GitHub Release assets
+              shell: bash
+              env:
+                  GH_TOKEN: ${{ github.token }}
+              run: |
+                  set -euo pipefail
+
+                  if gh release view "${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+                      gh release upload \
+                          "${GITHUB_REF_NAME}" \
+                          dist/android/* \
+                          --clobber
+                  else
+                      gh release create \
+                          "${GITHUB_REF_NAME}" \
+                          dist/android/* \
+                          --verify-tag \
+                          --generate-notes \
+                          --title "OsmGo ${GITHUB_REF_NAME}"
+                  fi
