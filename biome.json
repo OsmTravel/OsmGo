@@ -56,6 +56,9 @@
         "noSelfAssign": "off",
         "noVoidTypeReturn": "off"
       },
+      "style": {
+        "useImportType": "off"
+      },
       "suspicious": {
         "noDoubleEquals": "off",
         "noDuplicateTestHooks": "off",
