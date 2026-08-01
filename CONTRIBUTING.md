@@ -71,6 +71,17 @@ npm run start
 npm run build
 ```
 
+### Hosting
+
+-   Pushes to `develop` deploy the development PWA to this repository's GitHub Pages site.
+-   Pushes to `main` deploy the production PWA to Cloudflare Pages.
+
+Enable GitHub Actions as the GitHub Pages source in the repository settings. For production, create a Cloudflare Pages Direct Upload project and configure these repository values:
+
+-   variable `CLOUDFLARE_PAGES_PROJECT` with the Cloudflare Pages project name;
+-   secret `CLOUDFLARE_ACCOUNT_ID` with the Cloudflare account ID;
+-   secret `CLOUDFLARE_API_TOKEN` with a token limited to Cloudflare Pages edit access.
+
 ### Build for android (make apk)
 
 Requirements:
