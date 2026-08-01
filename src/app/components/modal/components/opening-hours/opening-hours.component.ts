@@ -6,8 +6,10 @@ import {
     OnInit,
     Output,
 } from '@angular/core'
-import { ModalController } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import { FormsModule } from '@angular/forms'
+import { IonicModule, ModalController } from '@ionic/angular'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { MinutesToHoursMinutesPipe } from '@pipes/minutes-to-hours-minutes.pipe'
 import DateRange from '@scripts/YoHours/DateRange.js'
 import Interval from '@scripts/YoHours/Interval.js'
 import OpeningHoursBuilder from '@scripts/YoHours/OpeningHoursBuilder.js'
@@ -23,7 +25,12 @@ const builder = new OpeningHoursBuilder()
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss', '../style.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        FormsModule,
+        IonicModule,
+        MinutesToHoursMinutesPipe,
+        TranslateModule,
+    ],
 })
 export class OpeningHoursComponent implements OnInit {
     @Input() openingHours

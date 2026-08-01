@@ -5,13 +5,26 @@ import {
     Input,
     Output,
 } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { IonicModule } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
+import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
+import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
+import { SelectComponent } from '../select/select.component'
 
 @Component({
     selector: 'edit-presets',
     styleUrls: ['../style.scss'],
     templateUrl: './Presets.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        DisplayPresetLabelPipe,
+        FormsModule,
+        IonicModule,
+        OpeningHoursComponent,
+        SelectComponent,
+        TranslateModule,
+    ],
 })
 export class EditPresets {
     @Input() displayCode

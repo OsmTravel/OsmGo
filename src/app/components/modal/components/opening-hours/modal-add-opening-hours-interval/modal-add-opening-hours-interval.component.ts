@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
-import { ModalController, NavParams } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import { FormsModule } from '@angular/forms'
+import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
 @Component({
     selector: 'app-modal-add-opening-hours-interval',
     templateUrl: './modal-add-opening-hours-interval.component.html',
     styleUrls: ['./modal-add-opening-hours-interval.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [CharLimitPipe, FormsModule, IonicModule, TranslateModule],
 })
 export class ModalAddOpeningHoursIntervalComponent implements OnInit {
     constructor(
