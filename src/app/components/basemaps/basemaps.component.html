@@ -18,9 +18,7 @@
         @for (bm of basemaps; track bm) {
             <ion-card
                 (click)="selectBaseMap(bm)"
-                [ngClass]="{
-                    selectedCard: bm.id == configService.config.basemap.id,
-                }"
+                [class.selectedCard]="bm.id == configService.config.basemap.id"
             >
                 <ion-card-header>
                     <ion-card-subtitle

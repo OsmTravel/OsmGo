@@ -1,4 +1,4 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing'
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import {
     type ComponentFixture,
     TestBed,
@@ -6,61 +6,58 @@ import {
 } from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { BasemapsService } from '@app/services/basemaps.service'
-import { IonicModule } from '@ionic/angular'
-import { IonicStorageModule } from '@ionic/storage-angular'
-import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { NavController } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
+import { ConfigService } from '@services/config.service'
+import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
 import { of } from 'rxjs'
-import type { MockedObject } from 'vitest'
 import { BasemapsComponent } from './basemaps.component'
 
 describe('BasemapsComponent', () => {
-    let component: BasemapsComponent
     let fixture: ComponentFixture<BasemapsComponent>
-    let basemapsServiceSpy: MockedObject<BasemapsService>
 
     beforeEach(waitForAsync(() => {
-        const basemapsService = {
-            getBasemaps: vi.fn().mockName('BasemapsService.getBasemaps'),
-        }
-        basemapsService.getBasemaps.mockReturnValue(of([]))
+        const basemaps = [
+            { id: 'selected', name: 'Selected map' },
+            { id: 'other', name: 'Other map' },
+        ]
 
         TestBed.configureTestingModule({
             declarations: [BasemapsComponent],
-            imports: [
-                IonicModule.forRoot(),
-                IonicStorageModule.forRoot(),
-                HttpClientTestingModule,
-                TranslateModule.forRoot(),
-            ],
+            imports: [TranslateModule.forRoot()],
             providers: [
                 {
                     provide: ActivatedRoute,
-                    useValue: {
-                        snapshot: {
-                            paramMap: {
-                                get: () => '1',
-                            },
-                        },
-                    },
+                    useValue: { params: of({ lat: '48', lng: '2' }) },
                 },
-                { provide: BasemapsService, useValue: basemapsService },
-                { provide: MapService, useValue: {} },
-                TranslateService,
+                {
+                    provide: BasemapsService,
+                    useValue: { getBasemaps$: () => of(basemaps) },
+                },
+                {
+                    provide: ConfigService,
+                    useValue: { config: { basemap: { id: 'selected' } } },
+                },
+                { provide: InitService, useValue: { isLoaded: true } },
+                {
+                    provide: MapService,
+                    useValue: { displaySatelliteBaseMap: vi.fn() },
+                },
+                { provide: NavController, useValue: { back: vi.fn() } },
             ],
-        })
-            .overrideComponent(BasemapsComponent, { set: { template: '' } })
-            .compileComponents()
+            schemas: [CUSTOM_ELEMENTS_SCHEMA],
+        }).compileComponents()
 
         fixture = TestBed.createComponent(BasemapsComponent)
-        component = fixture.componentInstance
-        basemapsServiceSpy = TestBed.inject(
-            BasemapsService
-        ) as MockedObject<BasemapsService>
         fixture.detectChanges()
     }))
 
-    it('should create', () => {
-        expect(component).toBeTruthy()
+    it('marks only the configured basemap as selected', () => {
+        const cards = fixture.nativeElement.querySelectorAll('ion-card')
+
+        expect(cards).toHaveLength(2)
+        expect(cards[0].classList.contains('selectedCard')).toBe(true)
+        expect(cards[1].classList.contains('selectedCard')).toBe(false)
     })
 })
