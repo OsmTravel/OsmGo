@@ -57,12 +57,26 @@ nvm use
 npm ci
 ```
 
+Install Chromium once for the integration tests:
+
+```sh
+npm run test:integration:install
+```
+
 ### Run
 
 Test it in a browser
 
 ```sh
 npm run start
+```
+
+Run the automated checks:
+
+```sh
+npm run test:ci
+npm run test:converter
+npm run test:integration
 ```
 
 ### Build for web (=> ./www)

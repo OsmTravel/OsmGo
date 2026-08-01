@@ -41,3 +41,9 @@ jobs:
 
       - name: Build the PWA
         run: npm run build
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run integration tests
+        run: npm run test:integration

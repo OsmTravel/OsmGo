@@ -8,7 +8,7 @@
 </div> -->
 
 <ion-content class="ion-padding home" #mycontent>
-    <div id="map" #map style="height: 100%; width: 100%">
+    <div id="map" #map data-testid="map" style="height: 100%; width: 100%">
         <!-- Top left button to open menu -->
         <ion-fab
             style="left: 0px; top: 0px; margin: 6px"
@@ -31,7 +31,10 @@
             *ngIf="dataService.geojsonChanged && dataService.geojsonChanged.features.length > 0 && !mapService.markerMoving"
             [title]="translate.instant('MAIN.BUTTONS.UPLOAD')"
         >
-            <ion-fab-button (click)="navCtrl.navigateForward('/pushData')">
+            <ion-fab-button
+                data-testid="open-upload"
+                (click)="navCtrl.navigateForward('/pushData')"
+            >
                 <ion-icon name="cloud-upload"></ion-icon>
             </ion-fab-button>
         </ion-fab>
@@ -43,6 +46,7 @@
             [title]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
         >
             <ion-fab-button
+                data-testid="load-osm-data"
                 tappable
                 (click)="loadData()"
                 arrow="true"
@@ -64,7 +68,7 @@
             style="left: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
         >
-            <ion-fab-button disabled>
+            <ion-fab-button data-testid="loading-osm-data" disabled>
                 <ion-spinner></ion-spinner>
             </ion-fab-button>
         </ion-fab>
@@ -92,6 +96,7 @@
             [title]="translate.instant('MAIN.BUTTONS.ADD_NEW')"
         >
             <ion-fab-button
+                data-testid="add-poi"
                 tappable
                 ion-fab
                 fab-bottom
@@ -111,6 +116,7 @@
             [title]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
         >
             <ion-fab-button
+                data-testid="confirm-poi-position"
                 tappable
                 ion-fab
                 fab-bottom

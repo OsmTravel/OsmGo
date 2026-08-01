@@ -9,3 +9,7 @@ www/
 yarn.lock
 .angular/
 coverage/
+playwright-report/
+test-results/
+src/environments/environment.prod.ts
+wFabien/

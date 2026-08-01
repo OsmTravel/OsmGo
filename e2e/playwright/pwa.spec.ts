@@ -1,0 +1,427 @@
+import { expect, Page, test } from '@playwright/test'
+
+const appUrl = '/?center=2.2945,48.8584&zoom=18'
+
+const emptyFeatureCollection = {
+    type: 'FeatureCollection',
+    features: [],
+}
+
+const changedPoi = {
+    type: 'Feature',
+    id: 'node/0',
+    properties: {
+        id: 0,
+        type: 'node',
+        tags: { amenity: 'bench', name: 'Fixture bench' },
+        meta: { timestamp: 0, version: 0, user: '' },
+        changeType: 'Create',
+        originalData: null,
+        primaryTag: { key: 'amenity', value: 'bench' },
+        _name: 'Fixture bench',
+        marker: 'circle-amenity_bench',
+        icon: 'maki-bench',
+        hexColor: '#6b7c31',
+    },
+    geometry: {
+        type: 'Point',
+        coordinates: [2.2945, 48.8584],
+    },
+}
+
+const osmMapFixture = JSON.stringify({
+    version: '0.6',
+    generator: 'Playwright',
+    bounds: {
+        minlat: 48.857,
+        minlon: 2.293,
+        maxlat: 48.86,
+        maxlon: 2.296,
+    },
+    elements: [
+        {
+            type: 'node',
+            id: 1,
+            lat: 48.8584,
+            lon: 2.2945,
+            version: 1,
+            timestamp: '2026-08-01T10:00:00Z',
+            uid: 7,
+            user: 'Fixture user',
+            tags: { amenity: 'bench', name: 'Downloaded bench' },
+        },
+    ],
+})
+
+async function mockExternalMapTiles(page: Page): Promise<void> {
+    await page.route(/https:\/\/[ab]\.tiles\.mapbox\.com\/.*/, (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/x-protobuf',
+            body: Buffer.alloc(0),
+        })
+    )
+}
+
+async function openApp(page: Page, url = appUrl): Promise<void> {
+    await mockExternalMapTiles(page)
+    await page.goto(url)
+    await expect(page.getByTestId('map')).toBeVisible()
+    await expect(page.locator('.maplibregl-canvas')).toBeVisible()
+}
+
+async function readStoredValue<T>(page: Page, key: string): Promise<T> {
+    return page.evaluate(async (storageKey) => {
+        const request = indexedDB.open('_ionicstorage')
+        const database = await new Promise<IDBDatabase>((resolve, reject) => {
+            request.onsuccess = () => resolve(request.result)
+            request.onerror = () => reject(request.error)
+        })
+        const transaction = database.transaction('_ionickv', 'readonly')
+        const result = transaction.objectStore('_ionickv').get(storageKey)
+        const value = await new Promise((resolve, reject) => {
+            result.onsuccess = () => resolve(result.result)
+            result.onerror = () => reject(result.error)
+        })
+        database.close()
+        return value
+    }, key)
+}
+
+async function writeStoredValues(
+    page: Page,
+    values: Record<string, unknown>
+): Promise<void> {
+    await page.evaluate(async (storageValues) => {
+        const request = indexedDB.open('_ionicstorage')
+        const database = await new Promise<IDBDatabase>((resolve, reject) => {
+            request.onsuccess = () => resolve(request.result)
+            request.onerror = () => reject(request.error)
+        })
+        const transaction = database.transaction('_ionickv', 'readwrite')
+        const store = transaction.objectStore('_ionickv')
+        for (const [key, value] of Object.entries(storageValues)) {
+            store.put(value, key)
+        }
+        await new Promise<void>((resolve, reject) => {
+            transaction.oncomplete = () => resolve()
+            transaction.onerror = () => reject(transaction.error)
+        })
+        database.close()
+    }, values)
+}
+
+async function seedPendingChange(page: Page): Promise<void> {
+    await openApp(page)
+    const config = await readStoredValue<Record<string, unknown>>(
+        page,
+        'config'
+    )
+    await writeStoredValues(page, {
+        config: {
+            ...config,
+            centerWhenGpsIsReady: false,
+            languageUi: 'en',
+            languageTags: 'en',
+            lastView: {
+                lng: 2.2945,
+                lat: 48.8584,
+                zoom: 18,
+                bearing: 0,
+            },
+        },
+        geojson: emptyFeatureCollection,
+        geojsonChanged: {
+            type: 'FeatureCollection',
+            features: [changedPoi],
+        },
+        user_info: {
+            uid: '7',
+            display_name: 'Fixture user',
+            connected: true,
+        },
+        osmToken: 'fixture-token',
+    })
+    await page.reload()
+    await expect(page.getByTestId('open-upload')).toBeVisible()
+}
+
+async function mockAuthenticatedUser(page: Page): Promise<void> {
+    await page.route('**/api/0.6/user/details.json', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({
+                user: { id: '7', display_name: 'Fixture user' },
+            }),
+        })
+    )
+}
+
+test.describe('PWA installation', () => {
+    test.use({ serviceWorkers: 'allow' })
+
+    test('opens the production PWA locally', async ({ page }) => {
+        await openApp(page)
+
+        await expect(page).toHaveTitle('Osm Go!')
+        const workerState = await page.evaluate(async () => {
+            const registration = await navigator.serviceWorker.ready
+            return registration.active?.state
+        })
+        expect(workerState).toBe('activated')
+    })
+})
+
+test('downloads a small OSM area from a fixture', async ({ page }) => {
+    await page.route('**/api/0.6/map?bbox=*', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: osmMapFixture,
+        })
+    )
+    await openApp(page)
+
+    await page.getByTestId('load-osm-data').click()
+    await expect
+        .poll(async () => {
+            const geojson = await readStoredValue<{
+                features: Array<{ id: string }>
+            }>(page, 'geojson')
+            return geojson?.features.some((feature) => feature.id === 'node/1')
+        })
+        .toBe(true)
+})
+
+test('stops loading when the OSM worker fails', async ({ page }) => {
+    await page.route('**/assets/workers/worker-formatOsmData.js', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/javascript',
+            body: `self.onmessage = () => {
+                    setTimeout(() => { throw new Error('Fixture worker failure') }, 100)
+                }`,
+        })
+    )
+    await page.route('**/api/0.6/map?bbox=*', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: osmMapFixture,
+        })
+    )
+    await openApp(page)
+
+    await page.getByTestId('load-osm-data').click()
+    await expect(page.getByTestId('loading-osm-data')).toBeVisible()
+    await expect(page.getByTestId('load-osm-data')).toBeVisible()
+    await expect(page.getByTestId('loading-osm-data')).toHaveCount(0)
+})
+
+test('creates, edits, and persists a POI locally', async ({ page }) => {
+    await page.route('**/assets/workers/worker-formatOsmData.js', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/javascript',
+            body: `self.onmessage = () => self.postMessage({
+                ok: true,
+                data: {
+                    geojson: { type: 'FeatureCollection', features: [] },
+                    geojsonBbox: { type: 'FeatureCollection', features: [] }
+                }
+            })`,
+        })
+    )
+    await page.route('**/api/0.6/map?bbox=*', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({
+                version: '0.6',
+                bounds: {
+                    minlat: 48.857,
+                    minlon: 2.293,
+                    maxlat: 48.86,
+                    maxlon: 2.296,
+                },
+                elements: [],
+            }),
+        })
+    )
+    await page.route('**/api/0.6/node/0.json', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({
+                elements: [{ type: 'node', id: 0, lon: 2.2945, lat: 48.8584 }],
+            }),
+        })
+    )
+    const tags = encodeURIComponent(
+        JSON.stringify({ amenity: 'bench', name: 'Created bench' })
+    )
+    await openApp(page, `/?center=2.2945,48.8584&zoom=18&add=${tags}`)
+
+    const createButton = page.getByTestId('create-poi')
+    await expect(createButton).toBeVisible()
+    const nativeCreateButton = createButton.locator('button')
+    await expect(nativeCreateButton).toBeEnabled()
+    await nativeCreateButton.click()
+    await expect
+        .poll(async () => {
+            const queue = await readStoredValue<{ features: unknown[] }>(
+                page,
+                'geojsonChanged'
+            )
+            return queue?.features.length
+        })
+        .toBe(1)
+
+    await page.goto('/?id=node/0')
+    await expect(page.getByTestId('edit-poi')).toBeVisible()
+    await page.getByTestId('edit-poi').click()
+    const nameInput = page.locator('ion-modal ion-title ion-input input')
+    await nameInput.fill('Edited bench')
+    await page.getByTestId('save-poi').locator('button').click()
+
+    await expect
+        .poll(async () => {
+            const queue = await readStoredValue<{
+                features: Array<{ properties: { tags: { name: string } } }>
+            }>(page, 'geojsonChanged')
+            return queue?.features[0]?.properties.tags.name
+        })
+        .toBe('Edited bench')
+})
+
+test('uploads a pending change with fixture responses', async ({ page }) => {
+    await mockAuthenticatedUser(page)
+    await page.route('**/api/0.6/changeset/create', (route) =>
+        route.fulfill({ status: 200, body: '123' })
+    )
+    await page.route('**/api/0.6/changeset/123/upload', (route) =>
+        route.fulfill({
+            status: 200,
+            contentType: 'application/xml',
+            body: '<diffResult><node old_id="-1" new_id="100" new_version="1"/></diffResult>',
+        })
+    )
+    await seedPendingChange(page)
+
+    await page.getByTestId('open-upload').click()
+    await page.locator('ion-input input').fill('Playwright fixture upload')
+    await page.getByTestId('upload-changes').click()
+    await expect(page).toHaveURL((url) => url.pathname === '/', {
+        timeout: 10_000,
+    })
+
+    const queue = await readStoredValue<{ features: unknown[] }>(
+        page,
+        'geojsonChanged'
+    )
+    expect(queue.features).toHaveLength(0)
+    const geojson = await readStoredValue<{
+        features: Array<{ id: string }>
+    }>(page, 'geojson')
+    expect(geojson.features.some((feature) => feature.id === 'node/100')).toBe(
+        true
+    )
+})
+
+test('keeps the queue when changeset creation fails', async ({ page }) => {
+    await mockAuthenticatedUser(page)
+    await page.route('**/api/0.6/changeset/create', (route) =>
+        route.fulfill({
+            status: 500,
+            contentType: 'text/plain',
+            body: 'Fixture changeset failure',
+        })
+    )
+    await seedPendingChange(page)
+
+    await page.getByTestId('open-upload').click()
+    await page.locator('ion-input input').fill('Failing fixture upload')
+    await page.getByTestId('upload-changes').click()
+    await expect(page.getByTestId('upload-error')).toContainText(
+        'Fixture changeset failure'
+    )
+
+    const queue = await readStoredValue<{ features: unknown[] }>(
+        page,
+        'geojsonChanged'
+    )
+    expect(queue.features).toHaveLength(1)
+})
+
+test('accepts a valid OAuth callback and rejects an invalid state', async ({
+    page,
+}) => {
+    let tokenRequests = 0
+    await page.route('**/oauth2/token', async (route) => {
+        tokenRequests++
+        await route.fulfill({
+            status: 200,
+            contentType: 'application/json',
+            body: JSON.stringify({ access_token: 'callback-token' }),
+        })
+    })
+    await mockAuthenticatedUser(page)
+    await openApp(page)
+
+    await page.evaluate(() => {
+        sessionStorage.setItem('osmOAuthState', 'expected-state')
+        sessionStorage.setItem('osmOAuthCodeVerifier', 'fixture-verifier')
+    })
+    await page.goto('/?code=fixture-code&state=expected-state')
+    await expect.poll(() => tokenRequests).toBe(1)
+    await expect
+        .poll(() => readStoredValue(page, 'osmToken'))
+        .toBe('callback-token')
+    await expect(page).not.toHaveURL(/code=|state=/)
+
+    await page.evaluate(() => {
+        sessionStorage.setItem('osmOAuthState', 'expected-state')
+        sessionStorage.setItem('osmOAuthCodeVerifier', 'fixture-verifier')
+    })
+    await page.goto('/?code=fixture-code&state=wrong-state')
+    await expect(page).not.toHaveURL(/code=|state=/)
+    expect(tokenRequests).toBe(1)
+    const pendingAuthorization = await page.evaluate(() => ({
+        state: sessionStorage.getItem('osmOAuthState'),
+        verifier: sessionStorage.getItem('osmOAuthCodeVerifier'),
+    }))
+    expect(pendingAuthorization).toEqual({ state: null, verifier: null })
+})
+
+test('keeps the placement marker aligned at fixed map coordinates', async ({
+    page,
+}) => {
+    await openApp(page)
+
+    await page.getByTestId('add-poi').click()
+    const mapBox = await page.getByTestId('map').boundingBox()
+    const markerBox = await page.locator('.moveMarkerIcon').boundingBox()
+    expect(mapBox).not.toBeNull()
+    expect(markerBox).not.toBeNull()
+    expect(markerBox!.x + markerBox!.width / 2).toBeCloseTo(
+        mapBox!.x + mapBox!.width / 2,
+        0
+    )
+    expect(markerBox!.y + markerBox!.height).toBeCloseTo(
+        mapBox!.y + mapBox!.height / 2,
+        0
+    )
+})
+
+test('restores a pending queue after a page restart', async ({ page }) => {
+    await seedPendingChange(page)
+    await page.reload()
+
+    await expect(page.getByTestId('open-upload')).toBeVisible()
+    const queue = await readStoredValue<{ features: Array<{ id: string }> }>(
+        page,
+        'geojsonChanged'
+    )
+    expect(queue.features.map((feature) => feature.id)).toEqual(['node/0'])
+})

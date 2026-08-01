@@ -20,6 +20,8 @@ modulepaths.json
 .tmp/
 .versions/
 coverage/
+playwright-report/
+test-results/
 dist/
 node_modules/
 tmp/

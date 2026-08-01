@@ -100,6 +100,7 @@
                 </div>
                 <div class="right section">
                     <ion-button
+                        data-testid="edit-poi"
                         (click)="updateMode()"
                         [disabled]="mapService.isProcessing | async"
                     >
@@ -256,6 +257,7 @@
                 </div>
                 <div class="right section">
                     <ion-button
+                        data-testid="save-poi"
                         tappable
                         color="secondary"
                         *ngIf="mode =='Update'"
@@ -267,6 +269,7 @@
                     </ion-button>
 
                     <ion-button
+                        data-testid="create-poi"
                         tappable
                         color="secondary"
                         *ngIf="mode =='Create'"

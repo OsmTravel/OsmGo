@@ -67,7 +67,7 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card *ngIf="error" class="cardError">
+    <ion-card *ngIf="error" class="cardError" data-testid="upload-error">
         <ion-card-header>
             <h4 style="color: white">Error</h4>
         </ion-card-header>
@@ -182,6 +182,7 @@
         >{{ 'SEND_DATA.DELETE' | translate}}</ion-button
     >
     <ion-button
+        data-testid="upload-changes"
         class="footerButton"
         [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
         (click)="pushDataToOsm(commentChangeset)"
