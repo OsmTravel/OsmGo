@@ -54,6 +54,13 @@ import { ModalDismissData } from '../components/modal/modal'
 import { ActivatedRoute, Params, Router } from '@angular/router'
 import { DOCUMENT } from '@angular/common'
 
+export const getMarkerLayout = () => ({
+    'icon-image': '{marker}',
+    'icon-allow-overlap': true,
+    'icon-ignore-placement': true,
+    'icon-anchor': 'bottom' as const,
+})
+
 @Injectable({ providedIn: 'root' })
 export class MapService {
     isFirstPosition: boolean = true
@@ -599,7 +606,7 @@ export class MapService {
     createDomMoveMarker(coord: LngLatLike, data: any): OsmGoMarker {
         const el = document.createElement('div')
         el.className = 'moveMarkerIcon'
-        const marker = new Marker({ element: el, offset: [0, -15] }).setLngLat(
+        const marker = new Marker({ element: el, anchor: 'bottom' }).setLngLat(
             coord
         ) as OsmGoMarker
         marker['data'] = data
@@ -1175,12 +1182,7 @@ export class MapService {
             type: 'symbol',
             minzoom: minzoom,
             source: 'data',
-            layout: {
-                'icon-image': '{marker}',
-                'icon-allow-overlap': true,
-                'icon-ignore-placement': true,
-                'icon-offset': [0, -14],
-            },
+            layout: getMarkerLayout(),
             filter: ['all'],
         })
 
@@ -1189,12 +1191,7 @@ export class MapService {
             type: 'symbol',
             source: 'data_changed',
             minzoom: minzoom,
-            layout: {
-                'icon-image': '{marker}',
-                'icon-allow-overlap': true,
-                'icon-ignore-placement': true,
-                'icon-offset': [0, -14],
-            },
+            layout: getMarkerLayout(),
             filter: ['all'],
         })
 
