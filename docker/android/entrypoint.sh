@@ -60,4 +60,23 @@ if [[ -z "${APK_PATH}" || -z "${AAB_PATH}" ]]; then
     exit 1
 fi
 
-cp "${APK_PATH}" "${AAB_PATH}" "${OUTPUT_DIR}/"
+readonly EXPECTED_CERT_SHA256="$(
+    keytool \
+        -list \
+        -v \
+        -keystore "${ANDROID_KEYSTORE_PATH}" \
+        -storepass:env ANDROID_KEYSTORE_PASSWORD \
+        -alias "${ANDROID_KEY_ALIAS}" \
+        | sed -n 's/^[[:space:]]*SHA256: //p' \
+        | head -1 \
+        | tr -d ':' \
+        | tr '[:upper:]' '[:lower:]'
+)"
+
+node scripts/package-android-artifacts.mjs \
+    "${APK_PATH}" \
+    "${AAB_PATH}" \
+    "${OUTPUT_DIR}"
+scripts/test-android-artifact-verifier.sh \
+    "${OUTPUT_DIR}" \
+    "${EXPECTED_CERT_SHA256}"

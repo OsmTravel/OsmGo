@@ -4,15 +4,17 @@ FROM node:24.18.0-bookworm-slim@sha256:6f7b03f7c2c8e2e784dcf9295400527b9b1270fd3
 
 ARG ANDROID_COMMAND_LINE_TOOLS_VERSION=15859902
 ARG ANDROID_COMMAND_LINE_TOOLS_SHA256=4e4c464f145a7512b57d088ac6c278c03c9eea610886b35a5e0804e74eedf583
+ARG ANDROID_BUILD_TOOLS_VERSION=35.0.0
 ARG BUNDLETOOL_VERSION=1.18.3
 ARG BUNDLETOOL_SHA256=a099cfa1543f55593bc2ed16a70a7c67fe54b1747bb7301f37fdfd6d91028e29
 
 ENV ANDROID_HOME=/opt/android-sdk \
     ANDROID_SDK_ROOT=/opt/android-sdk \
+    ANDROID_BUILD_TOOLS=/opt/android-sdk/build-tools/${ANDROID_BUILD_TOOLS_VERSION} \
     BUNDLETOOL_JAR=/opt/bundletool/bundletool.jar \
     CHROME_BIN=/usr/bin/chromium \
     JAVA_HOME=/opt/java/openjdk \
-    PATH=/opt/java/openjdk/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:$PATH
+    PATH=/opt/java/openjdk/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools/${ANDROID_BUILD_TOOLS_VERSION}:$PATH
 
 COPY --from=java /opt/java/openjdk /opt/java/openjdk
 
@@ -41,7 +43,7 @@ RUN mkdir -p "$(dirname "${BUNDLETOOL_JAR}")" \
 
 RUN yes | sdkmanager --licenses >/dev/null \
     && sdkmanager \
-        "build-tools;35.0.0" \
+        "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
         "platform-tools" \
         "platforms;android-36"
 

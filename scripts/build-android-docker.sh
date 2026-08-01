@@ -9,6 +9,7 @@ readonly CONTAINER_KEYSTORE_PATH=/run/secrets/osmgo-release.keystore
 readonly BUILD_BRANCH="$(git -C "${REPOSITORY_DIR}" rev-parse --abbrev-ref HEAD)"
 readonly BUILD_DATE="$(git -C "${REPOSITORY_DIR}" show -s --format=%cI HEAD)"
 readonly BUILD_SHA="$(git -C "${REPOSITORY_DIR}" rev-parse HEAD)"
+readonly WORKTREE_STATE_BEFORE="$(git -C "${REPOSITORY_DIR}" status --porcelain=v1 --untracked-files=all)"
 
 build_options=()
 if [[ "${1:-}" == "--no-cache" ]]; then
@@ -69,3 +70,32 @@ docker run --rm \
     --mount "type=bind,source=${HOST_KEYSTORE_PATH},target=${CONTAINER_KEYSTORE_PATH},readonly" \
     --mount "type=bind,source=${OUTPUT_DIR},target=/output" \
     "${IMAGE_NAME}"
+
+readonly WORKTREE_STATE_AFTER="$(git -C "${REPOSITORY_DIR}" status --porcelain=v1 --untracked-files=all)"
+if [[ "${WORKTREE_STATE_AFTER}" != "${WORKTREE_STATE_BEFORE}" ]]; then
+    echo "The Android build changed the repository worktree." >&2
+    exit 1
+fi
+
+readonly IMAGE_METADATA="$(
+    docker image inspect "${IMAGE_NAME}"
+    docker history --no-trunc --format '{{.CreatedBy}}' "${IMAGE_NAME}"
+)"
+for variable_name in \
+    ANDROID_KEYSTORE_PATH \
+    ANDROID_KEYSTORE_PASSWORD \
+    ANDROID_KEY_ALIAS \
+    ANDROID_KEY_PASSWORD; do
+    if [[ "${IMAGE_METADATA}" == *"${variable_name}"* ]]; then
+        echo "Android signing material was found in the Docker image metadata." >&2
+        exit 1
+    fi
+done
+
+for variable_name in ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_PASSWORD; do
+    variable_value="${!variable_name}"
+    if [[ "${#variable_value}" -ge 8 && "${IMAGE_METADATA}" == *"${variable_value}"* ]]; then
+        echo "Android signing material was found in the Docker image metadata." >&2
+        exit 1
+    fi
+done
