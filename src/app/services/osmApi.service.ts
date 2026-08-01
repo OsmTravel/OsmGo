@@ -97,13 +97,13 @@ export class OsmApiService {
         const appVersion = this.configService.getAppFullVersion()
 
         const localeId = navigator?.language || '*'
-        const content_put = `
+        const content = `
         <osm>
             <changeset>
-                <tag k="created_by" v="${appVersion}"/>
-                <tag k="locale" v="${localeId}"/>
-                <tag k="comment" v="${comment}"/>
-                <tag k="source" v="survey"/>
+                <tag k="created_by" v="${this.escapeXmlValue(appVersion)}"/>
+                <tag k="locale" v="${this.escapeXmlValue(localeId)}"/>
+                <tag k="comment" v="${this.escapeXmlValue(comment)}"/>
+                <tag k="source" v="${this.escapeXmlValue('survey')}"/>
             </changeset>
         </osm>`
 
@@ -121,7 +121,7 @@ export class OsmApiService {
             .set('Authorization', `Bearer ${token}`)
             .set('Content-Type', 'text/xml')
 
-        _observable = this.http.put(url, content_put, {
+        _observable = this.http.put(url, content, {
             headers: headers,
             responseType: 'text',
         })
@@ -169,8 +169,8 @@ export class OsmApiService {
         }
     }
 
-    escapeXmlValue(a) {
-        return a
+    escapeXmlValue(value: unknown): string {
+        return String(value)
             .replace(/&/g, '&amp;')
             .replace(/'/g, '&apos;')
             .replace(/"/g, '&quot;')
