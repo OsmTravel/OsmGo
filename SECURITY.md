@@ -4,7 +4,7 @@
 
 Security fixes are provided for the latest release available from Google Play, GitHub Releases, and `https://osmgo.com`.
 
-Older releases are not maintained. Builds from `develop` and GitHub Pages are previews for testing and should not be treated as supported releases.
+Older releases are not maintained. Builds from `develop` at `https://dev.osmgo.com` are previews for testing and should not be treated as supported releases.
 
 ## Report a vulnerability privately
 

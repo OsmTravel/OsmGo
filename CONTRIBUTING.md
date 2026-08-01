@@ -123,16 +123,18 @@ The PWA and Android application both use OAuth Authorization Code with PKCE. If 
 
 There is one host per environment:
 
-- pushes to `develop` deploy the development PWA to this repository's GitHub Pages site, under `/OsmGo/`;
-- pushes to `main` deploy production only to Cloudflare Pages and verify `https://osmgo.com` after deployment.
+- pushes to `develop` deploy only the development PWA to Cloudflare Pages and verify `https://dev.osmgo.com`;
+- pushes to `main` deploy only the production PWA to Cloudflare Pages and verify `https://osmgo.com`.
 
 Do not add a second production deployment workflow.
 
-GitHub Pages must use GitHub Actions as its source. The protected `production` environment uses:
+The protected `development` and `production` environments each use:
 
 - variable `CLOUDFLARE_PAGES_PROJECT`;
 - secret `CLOUDFLARE_ACCOUNT_ID`;
 - secret `CLOUDFLARE_API_TOKEN`, limited to Cloudflare Pages edit access.
+
+Set `CLOUDFLARE_PAGES_PROJECT` to the development project in the `development` environment and to the production project in the `production` environment. Keep the two custom domains and projects separate. Configure `develop` as the production branch of the development project and `main` as the production branch of the production project.
 
 Each deployment publishes `build-info.json` with the application version and commit. Use it to verify a deployment and to identify the commit to revert.
 

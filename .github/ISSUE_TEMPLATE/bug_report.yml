@@ -37,7 +37,7 @@ body:
               - Google Play
               - GitHub release APK
               - osmgo.com
-              - GitHub Pages development build
+              - dev.osmgo.com development build
               - Local development build
               - Other
       validations:
