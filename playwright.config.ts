@@ -18,7 +18,15 @@ export default defineConfig({
     },
     projects: [
         {
-            name: 'chromium',
+            name: 'chromium-dpr-1',
+            use: {
+                ...devices['Desktop Chrome'],
+                viewport: { width: 800, height: 600 },
+                deviceScaleFactor: 1,
+            },
+        },
+        {
+            name: 'chromium-dpr-2',
             use: {
                 ...devices['Desktop Chrome'],
                 viewport: { width: 800, height: 600 },
