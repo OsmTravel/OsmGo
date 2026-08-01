@@ -273,41 +273,39 @@
             >
         </ion-item-divider>
 
-        <ion-item
-            *ngIf="this.configService.config.languageUi && this.configService.i18nConfig"
-            lines="inset"
-        >
+        @if (this.configService.config.languageUi &&
+        this.configService.i18nConfig) {
+        <ion-item lines="inset">
             <ion-label>{{ 'SETTINGS.UI_LANGUAGE' | translate}}</ion-label>
             <ion-select
                 [value]="this.configService.config.languageUi"
                 (ionChange)="languageUiChange($event)"
             >
-                <ion-select-option
-                    *ngFor="let lang of this.configService.i18nConfig.language"
-                    [value]="lang.code"
-                >
+                @for (lang of this.configService.i18nConfig.language; track
+                lang) {
+                <ion-select-option [value]="lang.code">
                     {{lang.nativeName}}
                 </ion-select-option>
+                }
             </ion-select>
         </ion-item>
-
-        <ion-item
-            *ngIf="this.configService.config.languageTags && this.configService.i18nConfig"
-            lines="inset"
-        >
+        } @if (this.configService.config.languageTags &&
+        this.configService.i18nConfig) {
+        <ion-item lines="inset">
             <ion-label>{{'SETTINGS.TAG_LANGUAGE' | translate }}</ion-label>
             <ion-select
                 [value]="this.configService.config.languageTags"
                 (ionChange)="languageTagsChange($event)"
             >
-                <ion-select-option
-                    *ngFor="let lang of this.configService.i18nConfig.language"
-                    [value]="lang.code"
-                >
+                @for (lang of this.configService.i18nConfig.language; track
+                lang) {
+                <ion-select-option [value]="lang.code">
                     {{lang.nativeName}}
                 </ion-select-option>
+                }
             </ion-select>
         </ion-item>
+        }
 
         <ion-item lines="inset">
             <ion-label>
@@ -319,12 +317,12 @@
                 [interfaceOptions]="countryTagsOptions()"
                 (ionChange)="countryTagsChange($event)"
             >
-                <ion-select-option
-                    *ngFor="let country of this.configService.countryConfig"
-                    [value]="country.code"
-                >
+                @for (country of this.configService.countryConfig; track
+                country) {
+                <ion-select-option [value]="country.code">
                     {{country.name}}
                 </ion-select-option>
+                }
             </ion-select>
         </ion-item>
     </ion-item-group>

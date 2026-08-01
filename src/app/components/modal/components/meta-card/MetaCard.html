@@ -4,33 +4,41 @@
             {{ 'MODAL_SELECTED_ITEM.META_VERSION' | translate }} {{
             feature.properties?.meta.version }}
         </p>
-        <p *ngIf="feature.properties.meta.timestamp === 0">
-            {{ 'MODAL_SELECTED_ITEM.META_BEING_CREATED' | translate }}
-        </p>
-        <p *ngIf="feature.properties.meta.timestamp !== 0">
+        @if (feature.properties.meta.timestamp === 0) {
+        <p>{{ 'MODAL_SELECTED_ITEM.META_BEING_CREATED' | translate }}</p>
+        } @if (feature.properties.meta.timestamp !== 0) {
+        <p>
             {{ feature.properties.meta?.version > 1 ?
             ('MODAL_SELECTED_ITEM.META_UPDATED_AT_DATE' | translate) :
-            ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' | translate) }}
-            <span *ngIf="displayCode">
+            ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' | translate) }} @if
+            (displayCode) {
+            <span>
                 {{ feature.properties.meta.timestamp | date: 'short' }}
             </span>
-            <span *ngIf="!displayCode">
-                {{ feature.properties.meta.timestamp | amTimeAgo }}
-            </span>
+            } @if (!displayCode) {
+            <span> {{ feature.properties.meta.timestamp | amTimeAgo }} </span>
+            }
         </p>
+        }
         <p>
             {{ 'MODAL_SELECTED_ITEM.META_BY' | translate }} {{
             feature.properties.meta?.user ? feature.properties.meta?.user :
             ('MODAL_SELECTED_ITEM.META_MYSELF' | translate) }}
         </p>
-        <p *ngIf="lastSurvey">
-            {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }}
-            <span *ngIf="!displayCode"> {{ lastSurvey | amTimeAgo }} </span>
-            <span *ngIf="displayCode"> {{ lastSurvey | date: 'short'}} </span>
+        @if (lastSurvey) {
+        <p>
+            {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }} @if
+            (!displayCode) {
+            <span> {{ lastSurvey | amTimeAgo }} </span>
+            } @if (displayCode) {
+            <span> {{ lastSurvey | date: 'short'}} </span>
+            }
         </p>
-        <p *ngIf="usedByWays" class="warning">
+        } @if (usedByWays) {
+        <p class="warning">
             {{ ('MODAL_SELECTED_ITEM.THIS_NODE_IS_USED_BY_A_WAY' | translate)
             .replace('{x}', usedByWays.length) }}
         </p>
+        }
     </ion-card-content>
 </ion-card>

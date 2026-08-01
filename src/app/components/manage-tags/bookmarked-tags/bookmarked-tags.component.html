@@ -30,19 +30,11 @@
 
     <div class="listTag">
         <ion-list style="overflow-y: auto">
-            <ion-item
-                *ngFor="
-                    let tag of tagsService.tags
-                        | filtersTagsByIds: this.tagsService.bookmarksIds
-                        | filterByTagsContent
-                            : [
-                                  configService.config.languageTags,
-                                  configService.config.countryTags
-                              ]
-                            : searchText
-                "
-                class="ion-no-padding"
-            >
+            @for ( tag of tagsService.tags | filtersTagsByIds:
+            this.tagsService.bookmarksIds | filterByTagsContent : [
+            configService.config.languageTags, configService.config.countryTags
+            ] : searchText ; track tag) {
+            <ion-item class="ion-no-padding">
                 <app-tag-list-element
                     style="width: 100%"
                     [tag]="tag"
@@ -56,6 +48,7 @@
                 >
                 </app-tag-list-element>
             </ion-item>
+            }
         </ion-list>
     </div>
 </ion-content>

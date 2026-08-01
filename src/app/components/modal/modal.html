@@ -1,13 +1,18 @@
-<div class="wrapper" [ngSwitch]="typeFiche">
+<div class="wrapper">
     <ion-fab class="toogleCodeButton">
         <ion-fab-button size="small" (click)="toogleCode()">
-            <ion-icon *ngIf="displayCode" name="code-working"> </ion-icon>
-            <ion-icon *ngIf="!displayCode" name="code"> </ion-icon>
+            @if (displayCode) {
+            <ion-icon name="code-working"> </ion-icon>
+            } @if (!displayCode) {
+            <ion-icon name="code"> </ion-icon>
+            }
         </ion-fab-button>
     </ion-fab>
 
+    @switch (typeFiche) {
     <!-- -------------------------SOF *ngSwitchCase="'Read'"------------------------------------ -->
-    <div *ngSwitchCase="'Read'" class="modal-content">
+    @case ('Read') {
+    <div class="modal-content">
         <ion-header>
             <ion-toolbar>
                 <ion-title>
@@ -18,15 +23,15 @@
             </ion-toolbar>
         </ion-header>
         <div class="content">
+            @if (feature.properties.meta) {
             <meta-card
-                *ngIf="feature.properties.meta"
                 [feature]="feature"
                 [displayCode]="displayCode"
                 [languageUi]="configService.getUiLanguage()"
                 [lastSurvey]="lastSurvey"
             >
             </meta-card>
-
+            }
             <app-alert
                 [tagConfig]="tagConfig"
                 [language]="this.configService.config.languageTags"
@@ -34,7 +39,6 @@
                 (fixDeprecated)="fixDeprecated($event)"
             >
             </app-alert>
-
             <!--Primary Key-->
             <primary-key
                 [displayCode]="displayCode"
@@ -43,19 +47,18 @@
                 [jsonSprites]="tagsService.jsonSprites"
             >
             </primary-key>
-
+            @if (shouldShowSurveyCard()) {
             <survey-card
-                *ngIf="shouldShowSurveyCard()"
                 [feature]="feature"
                 (yes)="handleSurveyYes()"
                 (no)="handleSurveyNo()"
             ></survey-card>
-
-            <div
-                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets | orderByPreset:tagConfig"
-            >
+            } @for (tag of tags |
+            filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets
+            | orderByPreset:tagConfig; track tag) {
+            <div>
+                @if (tag.preset && tag.value !== '') {
                 <read-presets
-                    *ngIf="tag.preset && tag.value !== ''; else readOtherTag"
                     [displayCode]="displayCode"
                     [tag]="tag"
                     [preset]="tag.preset"
@@ -63,18 +66,15 @@
                     [countryCode]="this.configService.config.countryTags"
                 >
                 </read-presets>
-                <ng-template #readOtherTag>
-                    <read-other-tag [tag]="tag" *ngIf="!tag.preset ">
-                    </read-other-tag>
-                </ng-template>
+                } @else { @if (!tag.preset ) {
+                <read-other-tag [tag]="tag"> </read-other-tag>
+                } }
             </div>
+            }
         </div>
-
         <ion-footer>
-            <div
-                *ngIf="feature.properties['changeType']"
-                class="modifiedWarning"
-            >
+            @if (feature.properties['changeType']) {
+            <div class="modifiedWarning">
                 <ion-icon name="warning"></ion-icon>
                 <span
                     >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate
@@ -90,7 +90,7 @@
                     {{ 'SHARED.CLEAR' | translate }}
                 </ion-button>
             </div>
-
+            }
             <div class="actions">
                 <div class="left section">
                     <ion-button (click)="dismiss()" fill="clear">
@@ -111,9 +111,10 @@
             </div>
         </ion-footer>
     </div>
-
+    }
     <!-- ------------------------- *ngSwitchCase="'EDIT'"------------------------------------ -->
-    <div *ngSwitchCase="'Edit'" class="modal-content">
+    @case ('Edit') {
+    <div class="modal-content">
         <ion-header>
             <ion-toolbar>
                 <ion-title>
@@ -128,7 +129,6 @@
                 </ion-title>
             </ion-toolbar>
         </ion-header>
-
         <div class="content">
             <div class="top-actions">
                 <ion-fab>
@@ -139,8 +139,8 @@
                         <ion-icon src="./assets/fa/copy-solid.svg"></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
-
-                <ion-fab style="margin-left: 45px" *ngIf="savedFields">
+                @if (savedFields) {
+                <ion-fab style="margin-left: 45px">
                     <ion-fab-button
                         size="small"
                         (click)="restoreFields(tagId, tags)"
@@ -148,8 +148,8 @@
                         <ion-icon src="./assets/fa/paste-solid.svg"></ion-icon>
                     </ion-fab-button>
                 </ion-fab>
+                }
             </div>
-
             <!--Alert-->
             <app-alert
                 [tagConfig]="tagConfig"
@@ -158,7 +158,6 @@
                 (fixDeprecated)="fixDeprecated($event)"
             >
             </app-alert>
-
             <!--Primary key-->
             <primary-key
                 [displayCode]="displayCode"
@@ -171,15 +170,15 @@
                 (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
             >
             </primary-key>
-
             <!--Les presets-->
             <!--Le reste des tags-->
-
-            <div
-                *ngFor="let tag of tags | filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets | orderByPreset:tagConfig"
-            >
+            @for (tag of tags |
+            filterExcludeKeys:tagConfig:configService.config.countryTags:tagsService.primaryKeys:tagsService.presets
+            | orderByPreset:tagConfig; track tag) {
+            <div>
+                @if ((tag.preset || tagsService.presets[tag.key.replace(':',
+                '/')]) ) {
                 <edit-presets
-                    *ngIf="(tag.preset || tagsService.presets[tag.key.replace(':', '/')]) ; else editOtherTag"
                     [preset]="tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]"
                     [displayCode]="displayCode"
                     [tag]="tag"
@@ -188,13 +187,12 @@
                     (addTags)="addPresetsTags($event)"
                 >
                 </edit-presets>
-
-                <ng-template #editOtherTag>
-                    <edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)">
-                    </edit-other-tag>
-                </ng-template>
+                } @else {
+                <edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)">
+                </edit-other-tag>
+                }
             </div>
-
+            }
             <!--Nouveaux tag-->
             <ion-button
                 tappable
@@ -206,12 +204,9 @@
                 <ion-icon name="add"> </ion-icon>
             </ion-button>
         </div>
-
         <ion-footer>
-            <div
-                *ngIf="feature.properties['changeType']"
-                class="modifiedWarning"
-            >
+            @if (feature.properties['changeType']) {
+            <div class="modifiedWarning">
                 <ion-icon name="warning"></ion-icon>
                 <span
                     >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate
@@ -227,7 +222,7 @@
                     {{ 'SHARED.CLEAR' | translate }}
                 </ion-button>
             </div>
-
+            }
             <div class="actions">
                 <div class="left section">
                     <ion-button tappable (click)="dismiss()" fill="clear">
@@ -236,55 +231,58 @@
                     </ion-button>
                 </div>
                 <div class="middle section">
+                    @if (feature.properties.type === 'node') {
                     <ion-button
                         tappable
-                        *ngIf="feature.properties.type === 'node'"
                         [disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
                         (click)="moveOsmElement()"
                     >
                         <ion-icon name="move"></ion-icon>
                     </ion-button>
-
+                    } @if (feature.properties.type == 'node' && mode=='Update')
+                    {
                     <ion-button
                         tappable
                         color="danger"
-                        *ngIf="feature.properties.type == 'node' && mode=='Update'"
                         [disabled]="(mapService.isProcessing | async)"
                         (click)="presentConfirm(feature)"
                     >
                         <ion-icon name="trash"></ion-icon>
                     </ion-button>
+                    }
                 </div>
                 <div class="right section">
+                    @if (mode =='Update') {
                     <ion-button
                         data-testid="save-poi"
                         tappable
                         color="secondary"
-                        *ngIf="mode =='Update'"
                         [disabled]="mapService.isProcessing | async"
                         (click)="updateOsmElement(tagConfig)"
                     >
                         <ion-icon name="checkmark" slot="start"></ion-icon>
                         {{ 'SHARED.SAVE' | translate }}
                     </ion-button>
-
+                    } @if (mode =='Create') {
                     <ion-button
                         data-testid="create-poi"
                         tappable
                         color="secondary"
-                        *ngIf="mode =='Create'"
                         [disabled]="mapService.isProcessing | async"
                         (click)="createOsmElement(tagConfig)"
                     >
                         <ion-icon name="checkmark" slot="start"></ion-icon>
                         {{ 'SHARED.CREATE' | translate }}
                     </ion-button>
+                    }
                 </div>
             </div>
         </ion-footer>
     </div>
+    }
     <!--EOF *ngSwitchCase="'Update'"-->
-    <div *ngSwitchCase="'Loading'" class="modal-content">
+    @case ('Loading') {
+    <div class="modal-content">
         <ion-header>
             <ion-toolbar>
                 <ion-title> Loading... </ion-title>
@@ -295,4 +293,5 @@
         </ion-content>
         <ion-footer> </ion-footer>
     </div>
+    } }
 </div>

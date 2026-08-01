@@ -1,22 +1,18 @@
-<ion-card *ngIf="preset?.type === 'select'">
+@if (preset?.type === 'select') {
+<ion-card>
     <ion-card-header>
-        <b
-            *ngIf="
-                !displayCode && (preset?.lbl[language] || preset?.lbl['en']);
-                else diplayCodeSelect
-            "
-            >{{ preset?.lbl[language] || preset?.lbl['en'] }}</b
-        >
-        <ng-template #diplayCodeSelect>
-            <ion-icon name="code"></ion-icon>
-            {{ preset?.key }}
-        </ng-template>
+        @if ( !displayCode && (preset?.lbl[language] || preset?.lbl['en'])) {
+        <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+        } @else {
+        <ion-icon name="code"></ion-icon>
+        {{ preset?.key }}
+        }
     </ion-card-header>
-
     <ion-card-content>
         <div class="wrapperEdit2cols">
             <div class="contentEdit2cols">
-                <div *ngIf="!displayCode">
+                @if (!displayCode) {
+                <div>
                     <!-- Fix: in new ionic version, popover have overflow:hidden. It prevents the popover to show all the options -->
                     <!-- So I changed the interface to action-sheet who can display all options with scrolling -->
                     <ion-select
@@ -33,40 +29,34 @@
                                 }}
                             </p>
                         </ion-select-option>
-                        <ion-select-option
-                            *ngFor="let item of preset.options"
-                            [value]="item.v"
-                        >
+                        @for (item of preset.options; track item) {
+                        <ion-select-option [value]="item.v">
                             <p class="displayLabelListValue">
                                 {{ item.lbl[language] || item.lbl['en'] }}
                             </p>
                         </ion-select-option>
-
-                        <ion-select-option
-                            *ngIf="
-                                (tag | displayPresetLabel: preset) ===
-                                    undefined && tag.value != ''
-                            "
-                            [value]="tag.value"
-                        >
+                        } @if ( (tag | displayPresetLabel: preset) === undefined
+                        && tag.value != '' ) {
+                        <ion-select-option [value]="tag.value">
                             {{ '<> ' }}
                             <p class="displayLabelListValue">
                                 {{ tag.value }}
                                 {{ tag | displayPresetLabel: preset }}
                             </p>
                         </ion-select-option>
+                        }
                     </ion-select>
                 </div>
-
-                <ion-item *ngIf="displayCode">
+                } @if (displayCode) {
+                <ion-item>
                     <ion-input
                         type="text"
                         [(ngModel)]="tag.value"
                         [placeholder]="tag.key"
                     ></ion-input>
                 </ion-item>
+                }
             </div>
-
             <div class="buttonEdit2cols">
                 <ion-col width-10 class="ion-col10">
                     <ion-icon
@@ -79,3 +69,4 @@
         </div>
     </ion-card-content>
 </ion-card>
+}

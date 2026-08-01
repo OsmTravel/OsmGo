@@ -8,25 +8,26 @@
 
 <ion-content class="ion-padding-vertical">
     <div class="daysHeader">
+        @for (day of days; track day) {
         <ion-badge
-            *ngFor="let day of days"
             class="dayBadge"
             [color]="day.selected ? 'primary' : 'light'"
             (click)="toggleDay(day.index)"
         >
             {{ day.label | translate | charLimit: 3 }}
         </ion-badge>
+        }
     </div>
 
-    <div *ngIf="!dayIsSelected" class="alertSelectADay">
+    @if (!dayIsSelected) {
+    <div class="alertSelectADay">
         {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
     </div>
-
-    <ion-card *ngFor="let time of times; let index = index">
+    } @for (time of times; track time; let index = $index) {
+    <ion-card>
         <div class="timeGrid">
             <div class="timeBlock">
                 <h3>{{ 'OPENINGHOURS.START_TIME' | translate }}</h3>
-
                 <ion-datetime
                     display-format="HH:mm"
                     picker-format="HH:mm"
@@ -55,6 +56,7 @@
             {{ 'OPENINGHOURS.DELETE_INTERVAL' | translate }}
         </ion-button>
     </ion-card>
+    }
 
     <ion-button
         color="success"

@@ -1,10 +1,10 @@
 <!-- <div class="loadingFullScreen" *ngIf="loading" >
-		<div style="width: 100%;text-align: center; padding: 3em;"> 
-			{{ 'SHARED.LOADING' | translate}}
-		</div>
-		<div style="width: 100%;text-align: center; "> 
-			<ion-spinner></ion-spinner>
-		</div>	
+<div style="width: 100%;text-align: center; padding: 3em;">
+  {{ 'SHARED.LOADING' | translate}}
+</div>
+<div style="width: 100%;text-align: center; ">
+  <ion-spinner></ion-spinner>
+</div>
 </div> -->
 
 <ion-content class="ion-padding home" #mycontent>
@@ -14,21 +14,24 @@
             style="left: 0px; top: 0px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.MENU')"
         >
+            @if (newVersion) {
             <ion-badge
                 color="danger"
-                *ngIf="newVersion"
                 style="position: absolute; z-index: 1; left: 36px"
                 >!</ion-badge
             >
+            }
             <ion-fab-button tappable ion-fab fab-bottom (click)="openMenu()">
                 <ion-icon name="menu"></ion-icon>
             </ion-fab-button>
         </ion-fab>
 
         <!-- Top right button to upload changes on OSM -->
+        @if (dataService.geojsonChanged &&
+        dataService.geojsonChanged.features.length > 0 &&
+        !mapService.markerMoving) {
         <ion-fab
             style="right: 0; top: 0; margin: 6px; margin-right: 46px"
-            *ngIf="dataService.geojsonChanged && dataService.geojsonChanged.features.length > 0 && !mapService.markerMoving"
             [title]="translate.instant('MAIN.BUTTONS.UPLOAD')"
         >
             <ion-fab-button
@@ -38,10 +41,11 @@
                 <ion-icon name="cloud-upload"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom left button to get data from OSM -->
+        @if (!(mapService.isProcessing | async)) {
         <ion-fab
-            *ngIf="!(mapService.isProcessing | async)"
             style="left: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
         >
@@ -53,18 +57,17 @@
                 event="press"
                 [disabled]="configService.currentZoom < 14"
             >
-                <ion-icon
-                    *ngIf="!(mapService.isProcessing | async)"
-                    name="refresh"
-                ></ion-icon>
-                <ion-spinner
-                    *ngIf="mapService.isProcessing | async"
-                ></ion-spinner>
+                @if (!(mapService.isProcessing | async)) {
+                <ion-icon name="refresh"></ion-icon>
+                } @if (mapService.isProcessing | async) {
+                <ion-spinner></ion-spinner>
+                }
             </ion-fab-button>
         </ion-fab>
+        }
         <!-- Bottom left button to get data from OSM with state loading -->
+        @if (mapService.isProcessing | async) {
         <ion-fab
-            *ngIf="mapService.isProcessing | async"
             style="left: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
         >
@@ -72,6 +75,7 @@
                 <ion-spinner></ion-spinner>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom left button to toggle between base map and aerial imagery -->
         <ion-fab style="left: 0; bottom: 100px; margin: 6px">
@@ -88,11 +92,11 @@
         </ion-fab>
 
         <!-- Bottom right button to add a new marker -->
+        @if (!mapService.markerMoving && !mapService.markerMoveMoving) {
         <ion-fab
             right
             bottom
             style="right: 0; bottom: 100px; margin: 6px"
-            *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"
             [title]="translate.instant('MAIN.BUTTONS.ADD_NEW')"
         >
             <ion-fab-button
@@ -107,11 +111,12 @@
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom right button to use GPS location -->
+        @if (!mapService.markerMoving && !mapService.markerMoveMoving) {
         <ion-fab
             right
-            *ngIf="!mapService.markerMoving && !mapService.markerMoveMoving"
             style="right: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
         >
@@ -126,12 +131,13 @@
                 <ion-icon name="locate"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom right button to accept creating new marker-->
+        @if (mapService.markerMoving) {
         <ion-fab
             right
             bottom
-            *ngIf="mapService.markerMoving"
             style="right: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.CONFIRM_ADD')"
         >
@@ -144,11 +150,12 @@
                 <ion-icon name="checkmark"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom right button to cancel creating a new marker -->
+        @if (mapService.markerMoving) {
         <ion-fab
             style="right: 60px; bottom: 34px; margin: 6px"
-            *ngIf="mapService.markerMoving"
             [title]="translate.instant('SHARED.CANCEL')"
         >
             <ion-fab-button
@@ -160,11 +167,12 @@
                 <ion-icon name="close"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom right button to accept marker moving -->
+        @if (mapService.markerMoveMoving) {
         <ion-fab
             style="right: 60px; bottom: 34px; margin: 6px"
-            *ngIf="mapService.markerMoveMoving"
             [title]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
         >
             <ion-fab-button
@@ -175,11 +183,12 @@
                 <ion-icon name="checkmark"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
 
         <!-- Bottom right button to cancel marker moving -->
+        @if (mapService.markerMoveMoving) {
         <ion-fab
             style="right: 0; bottom: 34px; margin: 6px"
-            *ngIf="mapService.markerMoveMoving"
             [title]="translate.instant('SHARED.CANCEL')"
         >
             <ion-fab-button
@@ -191,6 +200,7 @@
                 <ion-icon name="close"></ion-icon>
             </ion-fab-button>
         </ion-fab>
+        }
     </div>
 </ion-content>
 

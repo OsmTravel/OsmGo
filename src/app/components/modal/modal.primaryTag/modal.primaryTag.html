@@ -1,4 +1,5 @@
-<div id="container" *ngIf="!loading">
+@if (!loading) {
+<div id="container">
     <div id="searchSelect">
         <div id="searchDiv">
             <ion-searchbar
@@ -11,21 +12,19 @@
             ></ion-searchbar>
         </div>
     </div>
-
     <ion-content>
-        <div class="listTag" *ngIf="searchText.length > 2 ">
+        @if (searchText.length > 2 ) {
+        <div class="listTag">
             <ion-list style="overflow-y: auto">
-                <ion-item
-                    *ngFor="let tag of currentListOfTags
-                        | filtersTagsByIds:tagsService.hiddenTagsIds:true
-                        | filterDeprecatedTag 
-                        | filterBySearchable 
-                        | filterExcludeTagByCountryCode:countryTags 
-                        | filterByByGeometryType:[geometryType]
-                        | filterByTagsContent:[configService.config.languageTags, configService.config.countryTags]:searchText
-                        | limitDisplayTags:50;"
-                    class="ion-no-padding"
-                >
+                @for (tag of currentListOfTags |
+                filtersTagsByIds:tagsService.hiddenTagsIds:true |
+                filterDeprecatedTag | filterBySearchable |
+                filterExcludeTagByCountryCode:countryTags |
+                filterByByGeometryType:[geometryType] |
+                filterByTagsContent:[configService.config.languageTags,
+                configService.config.countryTags]:searchText |
+                limitDisplayTags:50; track tag) {
+                <ion-item class="ion-no-padding">
                     <app-tag-list-element
                         style="width: 100%"
                         [tag]="tag"
@@ -41,24 +40,25 @@
                     >
                     </app-tag-list-element>
                 </ion-item>
+                }
             </ion-list>
-
             <!-- Add custum value (from searchBar to the key) -->
             <div>
                 <h4>{{ 'MODAL_SELECTED_ITEM.CUSTOM_KEY_VALUE' | translate}}</h4>
-                <ion-chip *ngFor="let k of tagsService.primaryKeys | sortArray">
+                @for (k of tagsService.primaryKeys | sortArray; track k) {
+                <ion-chip>
                     <ion-label
                         color="primary"
                         (click)="addCustomValue(k,searchText.toLowerCase())"
                         >{{ k }}={{searchText | lowercase}}</ion-label
                     >
                 </ion-chip>
+                }
             </div>
         </div>
-
+        } @if (searchText.length < 3 ) {
         <div
             class="listTag"
-            *ngIf="searchText.length < 3 "
             (swipeleft)="swipeLeft()"
             (swiperight)="swipeRight()"
         >
@@ -66,7 +66,6 @@
                 {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' |
                 translate}}
             </p>
-
             <div class="buttonsSwitchType">
                 <ion-button
                     ion-button
@@ -87,24 +86,19 @@
                     'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
                 </ion-button>
             </div>
-
             <div class="shadows"></div>
-
-            <div class="lastTags tagList" *ngIf="displayType == 'lastTags'">
+            @if (displayType == 'lastTags') {
+            <div class="lastTags tagList">
                 <h4 style="text-align: center">
                     {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}}
                 </h4>
-
                 <ion-list style="overflow-y: auto">
-                    <ion-item
-                        *ngFor="let tag of tagsService.tags
-                      | filtersTagsByIds:tagsService.lastTagsUsedIds 
-                      | filterDeprecatedTag 
-                      | filterBySearchable 
-                      | filterExcludeTagByCountryCode:countryTags 
-                      | filterByByGeometryType:[geometryType]"
-                        class="ion-no-padding"
-                    >
+                    @for (tag of tagsService.tags |
+                    filtersTagsByIds:tagsService.lastTagsUsedIds |
+                    filterDeprecatedTag | filterBySearchable |
+                    filterExcludeTagByCountryCode:countryTags |
+                    filterByByGeometryType:[geometryType]; track tag) {
+                    <ion-item class="ion-no-padding">
                         <app-tag-list-element
                             style="width: 100%"
                             [tag]="tag"
@@ -120,22 +114,20 @@
                         >
                         </app-tag-list-element>
                     </ion-item>
+                    }
                 </ion-list>
             </div>
-
-            <div class="bookmarks tagList" *ngIf="displayType == 'bookmarks'">
+            } @if (displayType == 'bookmarks') {
+            <div class="bookmarks tagList">
                 <h4 style="text-align: center">
                     {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
                 </h4>
-
                 <ion-list style="overflow-y: auto">
-                    <ion-item
-                        *ngFor="let tag of tagsService.tags 
-                | filtersTagsByIds:tagsService.bookmarksIds
-                | filterExcludeTagByCountryCode:countryTags 
-                | filterByByGeometryType:[geometryType]"
-                        class="ion-no-padding"
-                    >
+                    @for (tag of tagsService.tags |
+                    filtersTagsByIds:tagsService.bookmarksIds |
+                    filterExcludeTagByCountryCode:countryTags |
+                    filterByByGeometryType:[geometryType]; track tag) {
+                    <ion-item class="ion-no-padding">
                         <app-tag-list-element
                             style="width: 100%"
                             [tag]="tag"
@@ -151,11 +143,13 @@
                         >
                         </app-tag-list-element>
                     </ion-item>
+                    }
                 </ion-list>
             </div>
+            }
         </div>
+        }
     </ion-content>
-
     <ion-footer>
         <div class="actions">
             <ion-button tappable (click)="dismiss()" fill="clear">
@@ -165,10 +159,12 @@
         </div>
     </ion-footer>
 </div>
-<div *ngIf="loading" style="height: 100%">
+} @if (loading) {
+<div style="height: 100%">
     <!-- <ion-header>
-  <ion-toolbar> -->
+      <ion-toolbar> -->
     <ion-title> {{ 'MODAL_SELECTED_ITEM.LOADING' | translate}} </ion-title>
     <!-- </ion-toolbar>
-</ion-header> -->
+    </ion-header> -->
 </div>
+}

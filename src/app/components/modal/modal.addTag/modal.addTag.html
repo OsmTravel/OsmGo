@@ -8,38 +8,44 @@
 </ion-header>
 
 <ion-content>
-    <ion-item-group *ngIf="searchFilter.length == 0">
-        <ion-item *ngFor="let field of moreFields | filterByList:usedList">
+    @if (searchFilter.length == 0) {
+    <ion-item-group>
+        @for (field of moreFields | filterByList:usedList; track field) {
+        <ion-item>
             <ion-label (click)="select(field)">
                 <h3>{{ tagsService.presets[field].lbl[language] }}</h3>
                 <p>{{ field | toOsmTag }}</p>
             </ion-label>
         </ion-item>
+        }
     </ion-item-group>
-
-    <ion-item-group *ngIf="searchFilter.length > 0">
-        <ion-item
-            *ngIf="!usedList.includes(nameToOsmKey(searchFilter)) && nameToOsmKey(searchFilter).length != 0"
-        >
+    } @if (searchFilter.length > 0) {
+    <ion-item-group>
+        @if (!usedList.includes(nameToOsmKey(searchFilter)) &&
+        nameToOsmKey(searchFilter).length != 0) {
+        <ion-item>
             <ion-label (click)="select(searchFilter)">
-                <h3 *ngIf="tagsService.presets[nameToOsmKey(searchFilter)]">
+                @if (tagsService.presets[nameToOsmKey(searchFilter)]) {
+                <h3>
                     {{
                     tagsService.presets[nameToOsmKey(searchFilter)].lbl[language]
                     }}
                 </h3>
+                }
                 <p>{{ searchFilter | toOsmTag }}</p>
             </ion-label>
         </ion-item>
-
-        <ion-item
-            *ngFor="let preset of presets | filterPresetsByList:usedList | removeBrands | searchFor:searchFilter:language"
-        >
+        } @for (preset of presets | filterPresetsByList:usedList | removeBrands
+        | searchFor:searchFilter:language; track preset) {
+        <ion-item>
             <ion-label (click)="select(preset._id)">
                 <h3>{{ preset.lbl[language] }}</h3>
                 <p>{{ preset._id | toOsmTag}}</p>
             </ion-label>
         </ion-item>
+        }
     </ion-item-group>
+    }
 </ion-content>
 
 <ion-footer>

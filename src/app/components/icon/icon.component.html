@@ -1,15 +1,14 @@
 <div class="iconWrapper">
+    @if (icon && jsonSprites[icon]; as conf) {
     <div
-        *ngIf="icon && jsonSprites[icon]; let conf"
         style="margin-left: auto; margin-right: auto"
         [style.width]="conf.width + 'px'"
         [style.height]="conf.height + 'px'"
         [style.background-position]="'-' + conf.x + 'px -' + conf.y + 'px'"
         [className]="'spritesX' + devicePixelRatio"
     ></div>
-
+    } @if (!icon || !jsonSprites[icon]) {
     <div
-        *ngIf="!icon || !jsonSprites[icon]"
         style="margin-left: auto; margin-right: auto"
         [style.width]="jsonSprites['wiki-question'].width + 'px'"
         [style.height]="jsonSprites['wiki-question'].height + 'px'"
@@ -22,4 +21,5 @@
         "
         [className]="'spritesX' + devicePixelRatio"
     ></div>
+    }
 </div>

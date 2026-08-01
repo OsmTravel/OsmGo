@@ -28,21 +28,13 @@
         </div>
     </div>
     <div class="listTag">
-        <ion-list style="overflow-y: auto" *ngIf="searchText.length > 2">
-            <ion-item
-                *ngFor="
-                    let tag of tagsService.tags
-                        | filtersTagsByIds: tagsService.hiddenTagsIds:true
-                        | filterDeprecatedTag
-                        | filterByTagsContent
-                            : [
-                                  configService.config.languageTags,
-                                  configService.config.countryTags
-                              ]
-                            : searchText
-                "
-                class="ion-no-padding"
-            >
+        @if (searchText.length > 2) {
+        <ion-list style="overflow-y: auto">
+            @for ( tag of tagsService.tags | filtersTagsByIds:
+            tagsService.hiddenTagsIds:true | filterDeprecatedTag |
+            filterByTagsContent : [ configService.config.languageTags,
+            configService.config.countryTags ] : searchText ; track tag) {
+            <ion-item class="ion-no-padding">
                 <app-tag-list-element
                     style="width: 100%"
                     [tag]="tag"
@@ -58,9 +50,10 @@
                 >
                 </app-tag-list-element>
             </ion-item>
+            }
         </ion-list>
-
-        <div *ngIf="searchText.length <= 2">
+        } @if (searchText.length <= 2) {
+        <div>
             <h4 style="text-align: center">
                 {{
                     'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS'
@@ -68,6 +61,7 @@
                 }}
             </h4>
         </div>
+        }
     </div>
 </ion-content>
 

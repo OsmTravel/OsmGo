@@ -1,51 +1,40 @@
 <ion-card>
     <ion-card-header>
-        <b *ngIf="!displayCode">{{
-            preset?.lbl[language] || preset?.lbl['en']
-        }}</b>
-        <b *ngIf="displayCode">{{ preset?.key }}</b>
-        <a
-            *ngIf="preset?.type == 'url' && tag.value"
-            href="{{ tag.value }}"
-            target="_blank"
+        @if (!displayCode) {
+        <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+        } @if (displayCode) {
+        <b>{{ preset?.key }}</b>
+        } @if (preset?.type == 'url' && tag.value) {
+        <a href="{{ tag.value }}" target="_blank"
             ><ion-icon name="link"></ion-icon
         ></a>
+        }
     </ion-card-header>
-    <ion-card-content *ngIf="preset?.key != 'opening_hours'">
-        <p
-            *ngIf="
-                !displayCode && (tag | displayPresetLabel: preset);
-                else noPreset;
-                let pr
-            "
-        >
+    @if (preset?.key != 'opening_hours') {
+    <ion-card-content>
+        @if ( !displayCode && (tag | displayPresetLabel: preset); as pr ) {
+        <p>
             {{ pr.lbl[language] || pr.lbl['en'] }}
         </p>
-
-        <ng-template #noPreset>
-            <ion-icon
-                name="code"
-                *ngIf="
-                    !['number', 'text', 'tel', 'url', 'email'].includes(
-                        preset?.type
-                    )
-                "
-            ></ion-icon>
-            {{ tag.value }}
-        </ng-template>
+        } @else { @if ( !['number', 'text', 'tel', 'url', 'email'].includes(
+        preset?.type ) ) {
+        <ion-icon name="code"></ion-icon>
+        }
+        {{ tag.value }}
+        }
     </ion-card-content>
-
-    <ion-card-content *ngIf="preset?.key == 'opening_hours'">
+    } @if (preset?.key == 'opening_hours') {
+    <ion-card-content>
+        @if (!displayCode) {
         <app-opening-hours
-            *ngIf="!displayCode; else noPreset"
             [openingHours]="tag.value"
             [displayCode]="displayCode"
         >
         </app-opening-hours>
-
-        <ng-template #noPreset>
-            <ion-icon name="code"></ion-icon>
-            {{ tag.value }}
-        </ng-template>
+        } @else {
+        <ion-icon name="code"></ion-icon>
+        {{ tag.value }}
+        }
     </ion-card-content>
+    }
 </ion-card>

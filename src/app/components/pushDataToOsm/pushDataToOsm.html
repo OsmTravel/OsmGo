@@ -1,25 +1,25 @@
-<div class="pushDataOverlay" *ngIf="isPushing">
-    <ng-container *ngIf="!uploadedOk">
-        <div style="text-align: center">
-            <h2>{{ 'SEND_DATA.UPLOADING_DATA_TO_OSM' | translate}}</h2>
-        </div>
-        <div style="margin: 1em">
-            <ion-icon class="uploadingIcon" name="globe"></ion-icon>
-        </div>
-        <div style="text-align: center">
-            <h2>{{ 'SEND_DATA.DONT_CLOSE' | translate}}</h2>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="uploadedOk">
-        <div style="margin: 1em">
-            <ion-icon
-                class="uploadedOkIcon"
-                name="checkmark-circle-outline"
-            ></ion-icon>
-        </div>
-    </ng-container>
+@if (isPushing) {
+<div class="pushDataOverlay">
+    @if (!uploadedOk) {
+    <div style="text-align: center">
+        <h2>{{ 'SEND_DATA.UPLOADING_DATA_TO_OSM' | translate}}</h2>
+    </div>
+    <div style="margin: 1em">
+        <ion-icon class="uploadingIcon" name="globe"></ion-icon>
+    </div>
+    <div style="text-align: center">
+        <h2>{{ 'SEND_DATA.DONT_CLOSE' | translate}}</h2>
+    </div>
+    } @if (uploadedOk) {
+    <div style="margin: 1em">
+        <ion-icon
+            class="uploadedOkIcon"
+            name="checkmark-circle-outline"
+        ></ion-icon>
+    </div>
+    }
 </div>
+}
 
 <ion-header color="primary">
     <ion-toolbar color="primary">
@@ -36,17 +36,19 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-    <h1 *ngIf="this.configService.config.isDevServer">DEV SERVER</h1>
-
-    <ion-card *ngIf="connectionError" color="danger">
+    @if (this.configService.config.isDevServer) {
+    <h1>DEV SERVER</h1>
+    } @if (connectionError) {
+    <ion-card color="danger">
         <ion-card-content> {{connectionError}} </ion-card-content>
     </ion-card>
-
-    <ion-card *ngIf="!configService.user_info.connected" color="danger">
+    } @if (!configService.user_info.connected) {
+    <ion-card color="danger">
         <ion-card-content>
             {{ 'SEND_DATA.YOU_MUST_BE_LOGGED_IN' | translate}}
         </ion-card-content>
     </ion-card>
+    }
 
     <ion-card>
         <ion-card-content>
@@ -67,33 +69,33 @@
         </ion-card-content>
     </ion-card>
 
-    <ion-card *ngIf="error" class="cardError" data-testid="upload-error">
+    @if (error) {
+    <ion-card class="cardError" data-testid="upload-error">
         <ion-card-header>
             <h4 style="color: white">Error</h4>
         </ion-card-header>
         <ion-card-content>
             <span class="errorPush">{{error.status}} {{error.message}}</span>
-
-            <div *ngIf="error.feature?.properties?.tags">
+            @if (error.feature?.properties?.tags) {
+            <div>
                 <table id="errorTable">
-                    <ng-container
-                        *ngFor="let item of error.feature?.properties?.tags | keyvalue"
-                    >
-                        <tr *ngIf="item.value !== ''">
-                            <td>{{item.key}}</td>
-                            <td>{{item.value}}</td>
-                        </tr>
-                    </ng-container>
+                    @for (item of error.feature?.properties?.tags | keyvalue;
+                    track item) { @if (item.value !== '') {
+                    <tr>
+                        <td>{{item.key}}</td>
+                        <td>{{item.value}}</td>
+                    </tr>
+                    } }
                 </table>
             </div>
-
-            <ion-button
-                *ngIf="error.feature"
-                (click)="cancelErrorFeature(error.feature)"
+            } @if (error.feature) {
+            <ion-button (click)="cancelErrorFeature(error.feature)"
                 >{{ 'SEND_DATA.CANCEL_THIS_CHANGE' | translate}}</ion-button
             >
+            }
         </ion-card-content>
     </ion-card>
+    }
 
     <ion-card>
         <ion-card-header>
@@ -121,26 +123,28 @@
             <th style="width: 45px"><ion-icon name="locate"></ion-icon></th>
             <th style="width: 45px">{{ 'SEND_DATA.ERROR' | translate}}</th>
         </tr>
-        <tr *ngFor="let item of featuresChanges">
+        @for (item of featuresChanges; track item) {
+        <tr>
             <td>
+                @if (item.properties.changeType == 'Create') {
                 <ion-icon
-                    *ngIf="item.properties.changeType == 'Create'"
                     name="add"
                     class="iconType"
                     style="color: green"
                 ></ion-icon>
+                } @if (item.properties.changeType == 'Update') {
                 <ion-icon
-                    *ngIf="item.properties.changeType == 'Update'"
                     name="create"
                     class="iconType"
                     style="color: blue"
                 ></ion-icon>
+                } @if (item.properties.changeType == 'Delete') {
                 <ion-icon
-                    *ngIf="item.properties.changeType == 'Delete'"
                     name="trash"
                     class="iconType"
                     style="color: red"
                 ></ion-icon>
+                }
             </td>
             <td
                 [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'"
@@ -157,16 +161,18 @@
                 {{item.properties?.primaryTag.key}}:
                 {{item.properties?.primaryTag.value}}
             </td>
-
             <td (click)="centerToElement(item.geometry.coordinates)">
                 <ion-icon style="font-size: 2em" name="locate"></ion-icon>
             </td>
             <td>
-                <div *ngIf="item.error" (click)="displayError(item.error)">
+                @if (item.error) {
+                <div (click)="displayError(item.error)">
                     <ion-icon name="bug"></ion-icon>
                 </div>
+                }
             </td>
         </tr>
+        }
     </table>
 
     <!--[disabled]="summary.Total === 0 || isPushing"-->

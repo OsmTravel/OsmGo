@@ -14,8 +14,8 @@
         </div>
     </div>
 
+    @if (!isHiddenTag) {
     <div
-        *ngIf="!isHiddenTag"
         (click)="addOrRemoveBookmark(tag)"
         style="width: 36px"
         class="bookmark"
@@ -29,6 +29,7 @@
             style="font-size: 26px; height: 100%; width: 100%"
         ></ion-icon>
     </div>
+    }
 
     <div class="tag-text spacer" (click)="selected.emit(tag)">
         <b [style.color]="oldTagConfig?.id === tag.id ? '#3b22dd' : 'black'">{{
@@ -48,7 +49,8 @@
         </span>
     </div>
 
-    <div class="action" *ngIf="oldTagConfig?.id === tag.id">
+    @if (oldTagConfig?.id === tag.id) {
+    <div class="action">
         <ion-icon
             name="checkmark"
             item-left
@@ -56,7 +58,8 @@
             style="font-size: 26px; height: 100%"
         ></ion-icon>
     </div>
-    <div *ngIf="isHiddenTag">
+    } @if (isHiddenTag) {
+    <div>
         <ion-button
             class="ion-no-margin buttonUnhideTag"
             color="success"
@@ -65,8 +68,8 @@
             <ion-icon name="add-circle"> </ion-icon>
         </ion-button>
     </div>
-
-    <div *ngIf="showHideTagButton">
+    } @if (showHideTagButton) {
+    <div>
         <ion-button
             class="ion-no-margin buttonUnhideTag"
             color="danger"
@@ -75,4 +78,5 @@
             <ion-icon name="remove-circle"> </ion-icon>
         </ion-button>
     </div>
+    }
 </div>
