@@ -28,16 +28,16 @@ TagInfo get those descriptions from OSM wiki. Make sure to add the "| descriptio
 
 Osm Go! is a _PWA_ application using:
 
--   Angular 12
--   Ionic 5
--   Capacitor 3
+-   Angular 16
+-   Ionic 8
+-   Capacitor 6
 -   MapLibre GL
 
 Osm Go! can be compiled on Linux and Windows (MacOs not tested yet)
 
 ### Requirements
 
-Osm Go! use angular-cli 12, given this [compatibility list](https://gist.github.com/LayZeeDK/c822cc812f75bb07b7c55d07ba2719b3), you should install NodeJs 12 or 14. But it seems to work fine with NodeJs 16, you will just get some warning when installing dependencies via npm install.
+Use Node.js 18.20.8 and npm 10.8.2. The Node.js version is pinned in `.nvmrc` for the migration from Angular 16.
 
 💡 Be sure to checkout the branch develop to get the latest updates.
 
@@ -52,8 +52,9 @@ git checkout develop
 ### Install
 
 ```sh
-npm install -g @ionic/cli
-npm install
+nvm install
+nvm use
+npm ci
 ```
 
 ### Run
