@@ -1,7 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
+    input,
     NgZone,
     output,
 } from '@angular/core'
@@ -53,14 +53,8 @@ export class MenuPage {
 
     readonly closeEvent = output<void>()
     readonly exitApp = output<void>()
-    // TODO: Skipped for migration because:
-    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
-    //  and migrating would break narrowing currently.
-    @Input() menuIsOpen
-    // TODO: Skipped for migration because:
-    //  Class of this input is manually instantiated. This is discouraged and prevents
-    //  migration.
-    @Input() newVersion
+    readonly menuIsOpen = input(false)
+    readonly newVersion = input(false)
     constructor(
         public mapService: MapService,
         public osmApi: OsmApiService,

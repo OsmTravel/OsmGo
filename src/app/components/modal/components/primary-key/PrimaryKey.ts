@@ -1,13 +1,12 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
     input,
     output,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonCard, IonCardContent, IonIcon } from '@ionic/angular/standalone'
-import { OsmGoFeature, PrimaryTag } from '@osmgo/type'
+import { TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 
 @Component({
@@ -21,10 +20,7 @@ export class PrimaryKey {
     readonly openPrimaryTagModal = output<void>()
     readonly toggleBookmark = output<void>()
 
-    // TODO: Skipped for migration because:
-    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
-    //  and migrating would break narrowing currently.
-    @Input() tagConfig
+    readonly tagConfig = input<TagConfig>()
     readonly language = input(undefined)
     readonly jsonSprites = input(undefined)
     readonly isBookmarked = input(undefined)

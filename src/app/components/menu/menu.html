@@ -1,4 +1,4 @@
-@if (menuIsOpen) {
+@if (menuIsOpen()) {
 <div
     id="menu"
     (pointerdown)="startSwipe($event)"
@@ -6,7 +6,7 @@
     (pointercancel)="cancelSwipe()"
     @menuAnimation
 >
-    @if (menuIsOpen) {
+    @if (menuIsOpen()) {
     <div class="menuContent">
         <ion-header>
             <ion-toolbar color="primary">
@@ -28,7 +28,7 @@
         </ion-header>
         <ion-content>
             <ion-list style="padding-top: 0">
-                @if (this.newVersion) {
+                @if (newVersion()) {
                 <ion-item color="black" (click)="reloadApp()">
                     <ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' |
                     translate }}

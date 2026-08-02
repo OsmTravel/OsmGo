@@ -1,44 +1,41 @@
-@if (tagConfig && tagConfig?.deprecated) {
-    <ion-card class="alertCard">
-        <ion-card-content>
-            {{ 'ALERT.TAG_IS_DEPRECATED' | translate }}
-            @if (tagConfig.replace) {
-                <ion-button
-                    (click)="
-                        fixDeprecated.emit({
-                            old: tagConfig.tags,
-                            replace: tagConfig.replace,
-                        })
-                    "
-                >
-                    <ion-icon name="hammer"></ion-icon>
-                </ion-button>
-            }
-        </ion-card-content>
-    </ion-card>
-}
-@if (
-    tagConfig &&
-    tagConfig?.alert &&
-    (tagConfig?.alert[language] || tagConfig?.alert['en'])
-) {
-    <ion-card class="alertCard">
-        <ion-card-content>
-            {{ tagConfig?.alert[language] || tagConfig?.alert['en'] }}
-        </ion-card-content>
-    </ion-card>
-}
-@if (
-    tagConfig &&
-    tagConfig?.warning &&
-    (tagConfig?.warning[language] || tagConfig?.warning['en']) &&
-    (!tagConfig.warningCountryCodes ||
-        tagConfig.warningCountryCodes.includes(countryCode()))
-) {
-    <ion-card class="warningtCard">
-        <ion-card-content>
-            <!-- TODO bug? -->
-            {{ tagConfig?.warning[language] || tagConfig?.warning['en'] }}
-        </ion-card-content>
-    </ion-card>
+@if (tagConfig(); as config) {
+    @if (config.deprecated) {
+        <ion-card class="alertCard">
+            <ion-card-content>
+                {{ 'ALERT.TAG_IS_DEPRECATED' | translate }}
+                @if (config.replace) {
+                    <ion-button
+                        (click)="
+                            fixDeprecated.emit({
+                                old: config.tags,
+                                replace: config.replace,
+                            })
+                        "
+                    >
+                        <ion-icon name="hammer"></ion-icon>
+                    </ion-button>
+                }
+            </ion-card-content>
+        </ion-card>
+    }
+    @if (config.alert && (config.alert[language()] || config.alert['en'])) {
+        <ion-card class="alertCard">
+            <ion-card-content>
+                {{ config.alert[language()] || config.alert['en'] }}
+            </ion-card-content>
+        </ion-card>
+    }
+    @if (
+        config.warning &&
+        (config.warning[language()] || config.warning['en']) &&
+        (!config.warningCountryCodes ||
+            config.warningCountryCodes.includes(countryCode()))
+    ) {
+        <ion-card class="warningtCard">
+            <ion-card-content>
+                <!-- TODO bug? -->
+                {{ config.warning[language()] || config.warning['en'] }}
+            </ion-card-content>
+        </ion-card>
+    }
 }

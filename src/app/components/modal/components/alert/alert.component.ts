@@ -1,7 +1,6 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
     input,
     OnInit,
     output,
@@ -13,6 +12,15 @@ import {
     IonIcon,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
+import { TagConfig } from '@osmgo/type'
+
+interface AlertTagConfig extends TagConfig {
+    alert?: Record<string, string>
+    deprecated?: boolean
+    replace?: unknown
+    warning?: Record<string, string>
+    warningCountryCodes?: string[]
+}
 
 @Component({
     selector: 'app-alert',
@@ -22,14 +30,8 @@ import { TranslateModule } from '@ngx-translate/core'
     imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class AlertComponent implements OnInit {
-    // TODO: Skipped for migration because:
-    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
-    //  and migrating would break narrowing currently.
-    @Input() tagConfig
-    // TODO: Skipped for migration because:
-    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
-    //  and migrating would break narrowing currently.
-    @Input() language
+    readonly tagConfig = input<AlertTagConfig>()
+    readonly language = input('en')
     readonly countryCode = input(undefined)
     readonly fixDeprecated = output<{ old: unknown; replace: unknown }>()
 

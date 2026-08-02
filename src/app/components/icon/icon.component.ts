@@ -1,10 +1,16 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    Input,
     input,
     OnInit,
 } from '@angular/core'
+
+interface SpritePosition {
+    height: number
+    width: number
+    x: number
+    y: number
+}
 
 @Component({
     selector: 'app-icon',
@@ -13,10 +19,7 @@ import {
     changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class IconComponent implements OnInit {
-    // TODO: Skipped for migration because:
-    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
-    //  and migrating would break narrowing currently.
-    @Input() jsonSprites
+    readonly jsonSprites = input.required<Record<string, SpritePosition>>()
     readonly icon = input(undefined)
     currentSpriteConfig
     styleBackgroundPosition

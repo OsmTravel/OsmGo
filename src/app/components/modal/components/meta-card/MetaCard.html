@@ -2,22 +2,22 @@
     <ion-card-content>
         <p>
             {{ 'MODAL_SELECTED_ITEM.META_VERSION' | translate }} {{
-            feature.properties?.meta.version }}
+            feature().properties?.meta.version }}
         </p>
-        @if (feature.properties.meta.timestamp === 0) {
+        @if (feature().properties.meta.timestamp === 0) {
         <p>{{ 'MODAL_SELECTED_ITEM.META_BEING_CREATED' | translate }}</p>
-        } @if (feature.properties.meta.timestamp !== 0) {
+        } @if (feature().properties.meta.timestamp !== 0) {
         <p>
-            {{ feature.properties.meta?.version > 1 ?
+            {{ feature().properties.meta?.version > 1 ?
             ('MODAL_SELECTED_ITEM.META_UPDATED_AT_DATE' | translate) :
             ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' | translate) }} @if
             (displayCode()) {
             <span>
-                {{ feature.properties.meta.timestamp | date: 'short' }}
+                {{ feature().properties.meta.timestamp | date: 'short' }}
             </span>
             } @if (!displayCode()) {
             <span>
-                {{ feature.properties.meta.timestamp | relativeTime:
+                {{ feature().properties.meta.timestamp | relativeTime:
                 languageUi() }}
             </span>
             }
@@ -25,16 +25,16 @@
         }
         <p>
             {{ 'MODAL_SELECTED_ITEM.META_BY' | translate }} {{
-            feature.properties.meta?.user ? feature.properties.meta?.user :
+            feature().properties.meta?.user ? feature().properties.meta?.user :
             ('MODAL_SELECTED_ITEM.META_MYSELF' | translate) }}
         </p>
-        @if (lastSurvey) {
+        @if (lastSurvey(); as survey) {
         <p>
             {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }} @if
             (!displayCode()) {
-            <span> {{ lastSurvey | relativeTime: languageUi() }} </span>
+            <span> {{ survey | relativeTime: languageUi() }} </span>
             } @if (displayCode()) {
-            <span> {{ lastSurvey | date: 'short'}} </span>
+            <span> {{ survey | date: 'short'}} </span>
             }
         </p>
         } @if (usedByWays) {

@@ -1,31 +1,31 @@
 <ion-card>
+    @if (tagConfig(); as config) {
     <div class="primary-key">
         <div
             class="icon"
-            [style.background-color]="tagConfig && tagConfig.markerColor ? tagConfig.markerColor : 'black'"
+            [style.background-color]="config.markerColor ? config.markerColor : 'black'"
             (click)="emitOpenModal()"
         >
             <app-icon
-                [icon]="tagConfig && tagConfig.icon ? tagConfig.icon : null"
+                [icon]="config.icon ? config.icon : null"
                 [jsonSprites]="jsonSprites()"
             ></app-icon>
         </div>
         <ion-card-content (click)="emitOpenModal()">
-            @if (displayCode()) { @if (tagConfig) {
+            @if (displayCode()) {
             <p class="code">
                 <ion-icon name="code"></ion-icon>
-                {{ tagConfig.tags | displayTags }}
+                {{ config.tags | displayTags }}
             </p>
-            } } @else { @if (tagConfig?.lbl) {
+            } @else { @if (config.lbl) {
             <h3>
-                {{ tagConfig.lbl[language()] ? tagConfig.lbl[language()] :
-                tagConfig.lbl['en'] }}
+                {{ config.lbl[language()] ? config.lbl[language()] :
+                config.lbl['en'] }}
             </h3>
-            } @if (tagConfig && tagConfig.description) {
+            } @if (config.description) {
             <p class="description">
-                {{ tagConfig.description[language()] !== undefined ?
-                tagConfig.description[language()] : tagConfig.description['en']
-                }}
+                {{ config.description[language()] !== undefined ?
+                config.description[language()] : config.description['en'] }}
             </p>
             } }
         </ion-card-content>
@@ -39,4 +39,5 @@
         </div>
         }
     </div>
+    }
 </ion-card>
