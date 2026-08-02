@@ -28,12 +28,16 @@ export class TagsService {
     readonly hiddenTagsIds = this.hiddenTagsIdsState.asReadonly()
 
     savedFields: Record<string, any> = {}
-    tags: TagConfig[]
+    private readonly tagsState = signal<TagConfig[]>([])
+    readonly tags = this.tagsState.asReadonly()
     userTags: TagConfig[]
-    primaryKeys: string[] = []
-    presets: Record<string, Preset> = {}
+    private readonly primaryKeysState = signal<string[]>([])
+    readonly primaryKeys = this.primaryKeysState.asReadonly()
+    private readonly presetsState = signal<Record<string, Preset>>({})
+    readonly presets = this.presetsState.asReadonly()
     basemaps
-    jsonSprites: JsonSprites
+    private readonly jsonSpritesState = signal<JsonSprites>({})
+    readonly jsonSprites = this.jsonSpritesState.asReadonly()
 
     defaultHiddenTagsIds: string[] = [
         'highway/pedestrian_area',
@@ -169,7 +173,7 @@ export class TagsService {
     ]
 
     getTagConfigFromTagsID(tagIds: string[]): TagConfig[] {
-        return this.tags.filter((tag) => tagIds.includes(tag.id))
+        return this.tags().filter((tag) => tagIds.includes(tag.id))
     }
 
     setBookMarksIds(bookmarksIds: string[]): void {
@@ -192,7 +196,7 @@ export class TagsService {
         if (this.bookmarksIds().includes(tag.id)) {
             return
         }
-        const currentTag = this.tags.find((t) => t.id === tag.id)
+        const currentTag = this.tags().find((t) => t.id === tag.id)
         if (!currentTag) {
             this.addUserTags(tag)
         }
@@ -276,7 +280,7 @@ export class TagsService {
         const previousTagIds = this.lastTagsUsedIds().filter(
             (previousTagId) => previousTagId !== tagId
         )
-        const currentTag = this.tags.find((t) => t.id === tagId)
+        const currentTag = this.tags().find((t) => t.id === tagId)
         if (!currentTag) {
             return
         }
@@ -309,7 +313,7 @@ export class TagsService {
         newTag.icon = 'maki-circle-custom'
         newTag.markerColor = '#000000'
         this.userTags = [...this.userTags, newTag]
-        this.tags = [...this.tags, newTag]
+        this.tagsState.update((tags) => [...tags, newTag])
         this.setUserTags(this.userTags)
     }
 
@@ -333,7 +337,7 @@ export class TagsService {
     }
 
     findPkey(featureOrTags: OsmGoFeature | Tag[]): PrimaryTag {
-        const pkeys = this.primaryKeys
+        const pkeys = this.primaryKeys()
         if (
             !Array.isArray(featureOrTags) &&
             featureOrTags.properties &&
@@ -358,7 +362,7 @@ export class TagsService {
     getTagsConfig$(): Observable<TagsJson> {
         return this.http.get(`assets/tagsAndPresets/tags.json`).pipe(
             map((tagsConfig: TagsJson) => {
-                this.primaryKeys = tagsConfig.primaryKeys
+                this.primaryKeysState.set(tagsConfig.primaryKeys)
                 return tagsConfig
             })
         )
@@ -381,7 +385,7 @@ export class TagsService {
                 for (const k in json) {
                     json[k]._id = k
                 }
-                this.presets = json
+                this.presetsState.set(json)
                 return json
             })
         )
@@ -399,7 +403,7 @@ export class TagsService {
                 // .get('assets/iconsSprites@x' + devicePixelRatio + '.json')
                 .pipe(
                     map((jsonSprites: JsonSprites) => {
-                        this.jsonSprites = jsonSprites
+                        this.jsonSpritesState.set(jsonSprites)
                         return jsonSprites
                     })
                 )
@@ -410,7 +414,7 @@ export class TagsService {
         return forkJoin(this.getTagsConfig$(), this.loadUserTags$()).pipe(
             map(([tagsConfig, userTags]: [TagsJson, TagConfig[]]) => {
                 const tags: TagConfig[] = [...tagsConfig.tags, ...userTags]
-                this.tags = tags
+                this.tagsState.set(tags)
                 return tags
             })
         )

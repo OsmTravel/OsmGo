@@ -31,7 +31,7 @@
                         [tag]="tag"
                         [countryTags]="configService.config().countryTags"
                         [languageTags]="configService.config().languageTags"
-                        [jsonSprites]="tagsService.jsonSprites"
+                        [jsonSprites]="tagsService.jsonSprites()"
                         [geometriesFilter]="geometriesPossible"
                         [bookmarksIds]="tagsService.bookmarksIds()"
                         [oldTagConfig]="oldTagConfig"
@@ -46,7 +46,7 @@
             <!-- Add custum value (from searchBar to the key) -->
             <div>
                 <h4>{{ 'MODAL_SELECTED_ITEM.CUSTOM_KEY_VALUE' | translate}}</h4>
-                @for (k of tagsService.primaryKeys | sortArray; track k) {
+                @for (k of tagsService.primaryKeys() | sortArray; track k) {
                 <ion-chip>
                     <ion-label
                         color="primary"
@@ -95,7 +95,7 @@
                     {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}}
                 </h4>
                 <ion-list style="overflow-y: auto">
-                    @for (tag of tagsService.tags |
+                    @for (tag of tagsService.tags() |
                     filtersTagsByIds:tagsService.lastTagsUsedIds() |
                     filterDeprecatedTag | filterBySearchable |
                     filterExcludeTagByCountryCode:countryTags |
@@ -106,7 +106,7 @@
                             [tag]="tag"
                             [countryTags]="configService.config().countryTags"
                             [languageTags]="configService.config().languageTags"
-                            [jsonSprites]="tagsService.jsonSprites"
+                            [jsonSprites]="tagsService.jsonSprites()"
                             [geometriesFilter]="geometriesPossible"
                             [bookmarksIds]="tagsService.bookmarksIds()"
                             [oldTagConfig]="oldTagConfig"
@@ -125,7 +125,7 @@
                     {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
                 </h4>
                 <ion-list style="overflow-y: auto">
-                    @for (tag of tagsService.tags |
+                    @for (tag of tagsService.tags() |
                     filtersTagsByIds:tagsService.bookmarksIds() |
                     filterExcludeTagByCountryCode:countryTags |
                     filterByByGeometryType:[geometryType]; track tag) {
@@ -135,7 +135,7 @@
                             [tag]="tag"
                             [countryTags]="configService.config().countryTags"
                             [languageTags]="configService.config().languageTags"
-                            [jsonSprites]="tagsService.jsonSprites"
+                            [jsonSprites]="tagsService.jsonSprites()"
                             [geometriesFilter]="geometriesPossible"
                             [bookmarksIds]="tagsService.bookmarksIds()"
                             [oldTagConfig]="oldTagConfig"

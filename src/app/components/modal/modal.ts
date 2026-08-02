@@ -176,7 +176,7 @@ export class ModalsContentPage implements OnInit {
 
         // converti les tags (object of objects) en array (d'objets) ([{key: key, value: v}])
         for (const tag in this.feature.properties.tags) {
-            const preset = this.tagsService.presets[tag.replace(':', '/')]
+            const preset = this.tagsService.presets()[tag.replace(':', '/')]
             const data: Tag = {
                 key: tag,
                 value: this.feature.properties.tags[tag],
@@ -266,7 +266,7 @@ export class ModalsContentPage implements OnInit {
 
         // la configuration pour cette clé principale (lbl, icon, presets[], ...)
         if (!tagConfig) {
-            _tagConfig = getConfigTag(feature, this.tagsService.tags)
+            _tagConfig = getConfigTag(feature, this.tagsService.tags())
         } else {
             _tagConfig = tagConfig
         }
@@ -286,7 +286,8 @@ export class ModalsContentPage implements OnInit {
         if (_presetsIds && _presetsIds.length > 0) {
             // on ajoute les presets manquant aux données 'tags' (chaine vide); + ajout 'name' si manquant
             for (let i = 0; i < _presetsIds.length; i++) {
-                const preset: Preset = this.tagsService.presets[_presetsIds[i]]
+                const preset: Preset =
+                    this.tagsService.presets()[_presetsIds[i]]
                 const presetKeys = preset.keys?.length
                     ? preset.keys
                     : [preset.key]
@@ -368,7 +369,7 @@ export class ModalsContentPage implements OnInit {
             return
         }
 
-        const genericPreset = this.tagsService.presets[key]
+        const genericPreset = this.tagsService.presets()[key]
         if (!genericPreset) {
             this.tags = [
                 ...this.tags,

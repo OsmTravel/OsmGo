@@ -42,7 +42,7 @@
                 [displayCode]="displayCode"
                 [language]="configService.config().languageTags"
                 [tagConfig]="tagConfig"
-                [jsonSprites]="tagsService.jsonSprites"
+                [jsonSprites]="tagsService.jsonSprites()"
             >
             </primary-key>
             @if (shouldShowSurveyCard()) {
@@ -52,7 +52,7 @@
                 (no)="handleSurveyNo()"
             ></survey-card>
             } @for (tag of tags |
-            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys:tagsService.presets
+            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys():tagsService.presets()
             | orderByPreset:tagConfig; track tag) {
             <div>
                 @if (tag.preset && tag.value !== '') {
@@ -159,7 +159,7 @@
                 [displayCode]="displayCode"
                 [language]="configService.config().languageTags"
                 [tagConfig]="tagConfig"
-                [jsonSprites]="tagsService.jsonSprites"
+                [jsonSprites]="tagsService.jsonSprites()"
                 [isEditMode]="true"
                 [isBookmarked]="tagConfig | isBookmarked:tagsService.bookmarksIds()"
                 (openPrimaryTagModal)="openPrimaryTagModal()"
@@ -169,17 +169,17 @@
             <!--Les presets-->
             <!--Le reste des tags-->
             @for (tag of tags |
-            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys:tagsService.presets
+            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys():tagsService.presets()
             | orderByPreset:tagConfig; track tag) {
             <div>
-                @if ((tag.preset || tagsService.presets[tag.key.replace(':',
+                @if ((tag.preset || tagsService.presets()[tag.key.replace(':',
                 '/')]) ) {
                 <edit-presets
-                    [preset]="tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]"
+                    [preset]="tag.preset ? tag.preset : tagsService.presets()[tag.key.replace(':', '/')]"
                     [displayCode]="displayCode"
                     [tag]="tag"
                     [language]="this.configService.config().languageTags"
-                    (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets[tag.key.replace(':', '/')]))"
+                    (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets()[tag.key.replace(':', '/')]))"
                     (addTags)="addPresetsTags($event)"
                 >
                 </edit-presets>

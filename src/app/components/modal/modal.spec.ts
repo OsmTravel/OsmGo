@@ -53,8 +53,8 @@ describe('ModalsContentPage', () => {
             },
         }
         const tagsService = {
-            presets: { gender: genderPreset },
-            tags: [],
+            presets: () => ({ gender: genderPreset }),
+            tags: () => [],
             savedFields: {},
             findPkey: () => ({ key: 'amenity', value: 'toilets' }),
         }

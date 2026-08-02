@@ -14,7 +14,7 @@
         @for (field of moreFields() | filterByList:usedList(); track field) {
         <ion-item>
             <ion-label (click)="select(field)">
-                <h3>{{ tagsService.presets[field].lbl[language] }}</h3>
+                <h3>{{ tagsService.presets()[field].lbl[language] }}</h3>
                 <p>{{ field | toOsmTag }}</p>
             </ion-label>
         </ion-item>
@@ -26,10 +26,10 @@
         nameToOsmKey(searchFilter()).length != 0) {
         <ion-item>
             <ion-label (click)="select(searchFilter())">
-                @if (tagsService.presets[nameToOsmKey(searchFilter())]) {
+                @if (tagsService.presets()[nameToOsmKey(searchFilter())]) {
                 <h3>
                     {{
-                    tagsService.presets[nameToOsmKey(searchFilter())].lbl[language]
+                    tagsService.presets()[nameToOsmKey(searchFilter())].lbl[language]
                     }}
                 </h3>
                 }

@@ -32,7 +32,7 @@
     <div class="listTag">
         <ion-list style="overflow-y: auto">
             @for (
-                tag of tagsService.tags
+                tag of tagsService.tags()
                     | filtersTagsByIds: this.tagsService.bookmarksIds()
                     | filterByTagsContent
                         : [
@@ -48,7 +48,7 @@
                         [tag]="tag"
                         [countryTags]="configService.config().countryTags"
                         [languageTags]="configService.config().languageTags"
-                        [jsonSprites]="tagsService.jsonSprites"
+                        [jsonSprites]="tagsService.jsonSprites()"
                         [geometriesFilter]="['point']"
                         [bookmarksIds]="tagsService.bookmarksIds()"
                         (removeBookmark)="tagsService.removeBookMark(tag)"

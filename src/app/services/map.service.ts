@@ -553,16 +553,16 @@ export class MapService {
             newTag = { ...tags }
         } else if (this.tagsService.lastTagsUsedIds().length > 0) {
             // on récupere le dernier tag créé si il existe
-            const lastTagsUsed = this.tagsService.tags.find(
-                (t) => t.id === this.tagsService.lastTagsUsedIds()[0]
-            )
+            const lastTagsUsed = this.tagsService
+                .tags()
+                .find((t) => t.id === this.tagsService.lastTagsUsedIds()[0])
             if (lastTagsUsed) {
                 newTag = { ...lastTagsUsed.tags }
             } else {
-                newTag = { ...this.tagsService.tags[0].tags }
+                newTag = { ...this.tagsService.tags()[0].tags }
             }
         } else {
-            newTag = { ...this.tagsService.tags[0].tags }
+            newTag = { ...this.tagsService.tags()[0].tags }
         }
 
         const pt = point([coords.lng, coords.lat], {
@@ -647,7 +647,7 @@ export class MapService {
     }
 
     getIconStyle(feature: OsmGoFeature): OsmGoFeature {
-        feature = setIconStyle(feature, this.tagsService.tags)
+        feature = setIconStyle(feature, this.tagsService.tags())
         return feature
     }
 
@@ -1489,7 +1489,7 @@ export class MapService {
     getCanvasFromSpriteId(spriteId): Promise<HTMLCanvasElement> {
         return new Promise((resolve, reject) => {
             const t1 = new Date().getTime()
-            const spriteParams = this.tagsService.jsonSprites[spriteId]
+            const spriteParams = this.tagsService.jsonSprites()[spriteId]
 
             if (!spriteParams) {
                 reject(spriteId + ' no spriteParams')

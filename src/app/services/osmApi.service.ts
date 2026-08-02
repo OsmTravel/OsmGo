@@ -620,8 +620,8 @@ export class OsmApiService {
 
             try {
                 worker.postMessage({
-                    tagsConfig: this.tagsService.tags,
-                    primaryKeys: this.tagsService.primaryKeys,
+                    tagsConfig: this.tagsService.tags(),
+                    primaryKeys: this.tagsService.primaryKeys(),
                     osmData,
                     oldGeojson,
                     oldBboxFeature,

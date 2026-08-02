@@ -32,7 +32,7 @@
         <ion-list style="overflow-y: auto">
             <!-- TODO: filter by ids, (like bookmark, etc...) -->
             @for (
-                tag of tagsService.tags
+                tag of tagsService.tags()
                     | filtersTagsByIds: this.tagsService.hiddenTagsIds()
                     | filterByTagsContent
                         : [
@@ -48,7 +48,7 @@
                         [tag]="tag"
                         [countryTags]="configService.config().countryTags"
                         [languageTags]="configService.config().languageTags"
-                        [jsonSprites]="tagsService.jsonSprites"
+                        [jsonSprites]="tagsService.jsonSprites()"
                         [geometriesFilter]="['point']"
                         [bookmarksIds]="tagsService.bookmarksIds()"
                         [isHiddenTag]="true"

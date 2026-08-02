@@ -120,7 +120,7 @@ export class MainPage implements AfterViewInit {
                 cssClass: 'dialog-multi-features',
                 componentProps: {
                     features: features,
-                    jsonSprites: this.tagsService.jsonSprites,
+                    jsonSprites: this.tagsService.jsonSprites(),
                 },
             })
             await modal.present()

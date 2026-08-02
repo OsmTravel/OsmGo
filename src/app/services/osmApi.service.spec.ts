@@ -320,8 +320,8 @@ describe('OsmApiService', () => {
                 }),
             }
             const tagsService = {
-                tags: [{ key: 'amenity' }],
-                primaryKeys: ['amenity'],
+                tags: () => [{ key: 'amenity' }],
+                primaryKeys: () => ['amenity'],
             }
             service = createService({ tagsService, dataService })
         })

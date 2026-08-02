@@ -96,7 +96,7 @@ export class ModalPrimaryTag implements OnInit {
                 : 'lastTags'
         this.oldTagConfig = this.tagConfigInput()
         this.geometryType = this.geometryTypeInput()
-        this.currentListOfTags = this.tagsService.tags
+        this.currentListOfTags = this.tagsService.tags()
         this.loading = false
     }
 
