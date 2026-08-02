@@ -177,6 +177,17 @@ describe('PushDataToOsmPage', () => {
         expect(changedData.features).toEqual([queuedFeature])
     })
 
+    it('ignores an unrecognized deleted-feature conflict message', () => {
+        const page = createPage({
+            dataService: { getGeojsonChanged: () => ({ features: [] }) },
+            configService: { getChangeSetComment: () => '' },
+        })
+
+        expect(page.getFeatureFromErrorResult(410, 'Unexpected conflict')).toBe(
+            null
+        )
+    })
+
     it('returns to the screen after user verification times out', async () => {
         const queuedFeature = { id: 'node/-1' }
         const changedData = { features: [queuedFeature] }

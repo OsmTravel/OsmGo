@@ -130,19 +130,19 @@
         @for (item of featuresChanges(); track item) {
         <tr>
             <td>
-                @if (item.properties.changeType == 'Create') {
+                @if (item.properties.changeType === 'Create') {
                 <ion-icon
                     name="add"
                     class="iconType"
                     style="color: green"
                 ></ion-icon>
-                } @if (item.properties.changeType == 'Update') {
+                } @if (item.properties.changeType === 'Update') {
                 <ion-icon
                     name="create"
                     class="iconType"
                     style="color: blue"
                 ></ion-icon>
-                } @if (item.properties.changeType == 'Delete') {
+                } @if (item.properties.changeType === 'Delete') {
                 <ion-icon
                     name="trash"
                     class="iconType"

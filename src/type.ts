@@ -35,6 +35,8 @@ export type OsmGoFeature<G extends Geometry = Geometry> = Feature<
  * Osm Go! specific geojson feature properties.
  */
 export interface FeatureProperties {
+    /** Display name derived from the OSM name or reference tag. */
+    _name?: string
     /** Color of the marker as a hexadecimal string */
     hexColor: string
     /** Config marker icon or empty string. */
@@ -51,15 +53,22 @@ export interface FeatureProperties {
     tags: any
     type: string
     way_geometry?: Geometry
-    /** If true, the node is used by a way, otherwise false. */
-    usedByWays?: boolean
+    /** Way IDs that use the node, or a legacy boolean cache value. */
+    usedByWays?: boolean | string[]
     /**
      * Contains the original data of a feature in case it has been modified.
      * Needed to revert changes in case the user decides to undo her changes.
      */
-    originalData: OsmGoFeature | null
+    originalData?: OsmGoFeature | null
     /** Type of change by the user */
     changeType?: OsmGoChangeType
+    configId?: string
+    deprecated?: boolean
+    fixme?: boolean
+    mesure?: number
+    relations?: unknown[]
+    time?: number
+    unknowTags?: boolean
 }
 
 /**
