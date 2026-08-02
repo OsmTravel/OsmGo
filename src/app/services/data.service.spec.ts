@@ -26,6 +26,20 @@ describe('DataService', () => {
         service = TestBed.inject(DataService)
     })
 
+    it('notifies Angular when the changed feature count changes', () => {
+        const feature = point([0, 0], {}, { id: 'node/1' }) as OsmGoFeature
+
+        expect(service.changedFeatureCount()).toBe(0)
+
+        service.addFeatureToGeojsonChanged(feature)
+
+        expect(service.changedFeatureCount()).toBe(1)
+
+        service.deleteFeatureFromGeojsonChanged(feature)
+
+        expect(service.changedFeatureCount()).toBe(0)
+    })
+
     it('should be possible to clear data cache', async () => {
         const originalIndexedDB = window.indexedDB
         const deleteDatabaseSpy = vi.fn()

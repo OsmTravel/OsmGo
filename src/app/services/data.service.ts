@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core'
+import { computed, Injectable, inject, signal } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     FeatureIdSource,
@@ -22,7 +22,7 @@ export class DataService {
      * A hashmap is used to have a constant time complexity when looking up
      * entries with a known ID.
      */
-    _geojson: Record<string, OsmGoFeature> = {}
+    private _geojson: Record<string, OsmGoFeature> = {}
 
     /**
      * Primary data storage for self-created or modified POIs.
@@ -32,7 +32,12 @@ export class DataService {
      * A hashmap is used to have a constant time complexity when looking up
      * entries with a known ID.
      */
-    _geojsonChanged: Record<string, OsmGoFeature> = {}
+    private _geojsonChanged: Record<string, OsmGoFeature> = {}
+    private readonly changedDataRevisionState = signal(0)
+    readonly changedFeatureCount = computed(() => {
+        this.changedDataRevisionState()
+        return Object.keys(this._geojsonChanged).length
+    })
 
     geojsonWay: OsmGoFeatureCollection = featureCollection(
         []
@@ -104,6 +109,7 @@ export class DataService {
 
                 // At this point we know previously created elements from which we can determine the min ID.
                 this.forceNextFeatureIdSync()
+                this.notifyChangedData()
 
                 return geojson
             })
@@ -264,11 +270,16 @@ export class DataService {
         this._nextFeatureId = ids.length > 0 ? Math.min(...ids) - 1 : 0
     }
 
+    private notifyChangedData(): void {
+        this.changedDataRevisionState.update((revision) => revision + 1)
+    }
+
     async setGeojsonChanged(data: OsmGoFeatureCollection): Promise<void> {
         this._geojsonChanged = {}
         for (const feature of data.features) {
             this._geojsonChanged[feature.id] = cloneDeep(feature)
         }
+        this.notifyChangedData()
         await this.localStorage.set('geojsonChanged', this.geojsonChanged)
     }
 
@@ -302,16 +313,19 @@ export class DataService {
 
     addFeatureToGeojsonChanged(feature: OsmGoFeature): Promise<any> {
         this._geojsonChanged[feature.id] = feature
+        this.notifyChangedData()
         return this.localStorage.set('geojsonChanged', this.geojsonChanged)
     }
 
     updateFeatureToGeojsonChanged(feature: OsmGoFeature): Promise<any> {
         this._geojsonChanged[feature.id] = feature
+        this.notifyChangedData()
         return this.localStorage.set('geojsonChanged', this.geojsonChanged)
     }
 
     deleteFeatureFromGeojsonChanged(feature: OsmGoFeature): Promise<any> {
         delete this._geojsonChanged[feature.id]
+        this.notifyChangedData()
         return this.localStorage.set('geojsonChanged', this.geojsonChanged)
     }
 
@@ -349,6 +363,7 @@ export class DataService {
         ])
         this._geojson = nextGeojson
         this._geojsonChanged = nextGeojsonChanged
+        this.notifyChangedData()
     }
 
     getMergedGeojsonGeojsonChanged(): OsmGoFeatureCollection {
@@ -377,6 +392,7 @@ export class DataService {
     // supprime l'intégralité des changements
     async resetGeojsonChanged(): Promise<void> {
         this._geojsonChanged = {}
+        this.notifyChangedData()
         await this.localStorage.set('geojsonChanged', this.geojsonChanged)
         this._nextFeatureId = 0
     }

@@ -18,8 +18,7 @@
         </ion-fab>
 
         <!-- Top right button to upload changes on OSM -->
-        @if (dataService.geojsonChanged &&
-        dataService.geojsonChanged.features.length > 0 &&
+        @if (dataService.changedFeatureCount() > 0 &&
         !mapService.markerMoving()) {
         <ion-fab
             style="right: 0; top: 0; margin: 6px; margin-right: 46px"
