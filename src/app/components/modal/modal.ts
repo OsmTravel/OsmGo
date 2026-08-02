@@ -1,3 +1,4 @@
+import { AsyncPipe } from '@angular/common'
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
@@ -5,16 +6,29 @@ import {
     NgZone,
     OnInit,
 } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { AlertComponent } from '@components/modal/components/alert/alert.component'
+import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
+import { EditPresets } from '@components/modal/components/edit/Presets.component'
+import { MetaCard } from '@components/modal/components/meta-card/MetaCard'
+import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
+import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
+import { ReadPresets } from '@components/modal/components/read/Presets.component'
+import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import {
     AlertController,
+    IonicModule,
     LoadingController,
     ModalController,
     NavParams,
     Platform,
     ToastController,
 } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { OsmGoFeature, Preset, PrimaryTag, Tag, TagConfig } from '@osmgo/type'
+import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
+import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
+import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
@@ -45,7 +59,23 @@ export interface ModalDismissData {
     templateUrl: './modal.html',
     styleUrls: ['./modal.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false,
+    imports: [
+        AlertComponent,
+        AsyncPipe,
+        EditOtherTag,
+        EditPresets,
+        FilterExcludeKeysPipe,
+        FormsModule,
+        IonicModule,
+        IsBookmarkedPipe,
+        MetaCard,
+        OrderByPresetPipe,
+        PrimaryKey,
+        ReadOtherTag,
+        ReadPresets,
+        SurveyCard,
+        TranslateModule,
+    ],
 })
 export class ModalsContentPage implements OnInit {
     tags: Tag[] = [] // main data
@@ -186,7 +216,7 @@ export class ModalsContentPage implements OnInit {
 
     initComponent(tagConfig: TagConfig = null) {
         let _tags = [...this.tags]
-        let feature = cloneDeep(this.feature)
+        const feature = cloneDeep(this.feature)
         let _tagConfig: TagConfig
         let _tagId
         let _presetsIds: string[]
@@ -462,7 +492,7 @@ export class ModalsContentPage implements OnInit {
                 (t) => !oldKeyTagsToDelete.includes(t.key)
             )
 
-            for (let t of copyTags) {
+            for (const t of copyTags) {
                 if (t.preset) {
                     delete t.preset
                 }
@@ -473,7 +503,7 @@ export class ModalsContentPage implements OnInit {
             }
             const newTagsKeys = Object.keys(newTagConfig.tags)
             let newTagsToAdd = []
-            for (let k in newTagConfig.tags) {
+            for (const k in newTagConfig.tags) {
                 newTagsToAdd = [
                     { key: k, value: newTagConfig.tags[k] },
                     ...newTagsToAdd,
@@ -544,7 +574,7 @@ export class ModalsContentPage implements OnInit {
     //  add or remplace tags [] from tags {}
     addTags(newTags, existingTags) {
         let _existingTags = [...existingTags]
-        for (let t in newTags) {
+        for (const t in newTags) {
             const tagIndex = _existingTags.findIndex((o) => o.key == t)
             if (tagIndex !== -1) {
                 _existingTags[tagIndex] = { key: t, value: newTags[t] }
@@ -718,8 +748,8 @@ export class ModalsContentPage implements OnInit {
         const fields = this.tagsService.savedFields[tagId]
         const newTags = [...tags]
         if (fields) {
-            for (let stags of fields.tags) {
-                let t = newTags.find((o) => o.key === stags.key)
+            for (const stags of fields.tags) {
+                const t = newTags.find((o) => o.key === stags.key)
                 if (t) {
                     t['value'] = stags.value
                 } else {
@@ -737,7 +767,7 @@ export class ModalsContentPage implements OnInit {
         // delete old tags
         this.tags = this.tags.filter((t) => !deprecadetKeys.includes(t.key))
 
-        for (let depold of deprecadetKeys) {
+        for (const depold of deprecadetKeys) {
             if (this.feature.properties[depold]) {
                 delete this.feature.properties[depold]
             }
@@ -747,7 +777,7 @@ export class ModalsContentPage implements OnInit {
             ...deprecated.replace,
         }
         // add new
-        for (let k in deprecated.replace) {
+        for (const k in deprecated.replace) {
             this.tags = [{ key: k, value: deprecated.replace[k] }, ...this.tags]
         }
 
