@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     FeatureIdSource,
@@ -12,6 +12,8 @@ import { map } from 'rxjs/operators'
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
+    readonly localStorage = inject(Storage)
+
     /**
      * Primary data storage for official OSM POIs.
      * Don't read from this value directly. Instead use the `geojson` member
@@ -41,8 +43,6 @@ export class DataService {
 
     /** Next unused ID that can be used for a new feature. */
     private _nextFeatureId = 0
-
-    constructor(public localStorage: Storage) {}
 
     /**
      * Getter that translates the internal storage representation of OSM POIs

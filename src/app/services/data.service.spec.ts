@@ -1,3 +1,5 @@
+import { TestBed } from '@angular/core/testing'
+import { Storage as IonicStorage } from '@ionic/storage-angular'
 import {
     FeatureProperties,
     OsmGoFeature,
@@ -18,7 +20,10 @@ describe('DataService', () => {
             remove: vi.fn().mockName('Storage.remove'),
             clear: vi.fn().mockName('Storage.clear'),
         }
-        service = new DataService(storageSpy)
+        TestBed.configureTestingModule({
+            providers: [{ provide: IonicStorage, useValue: storageSpy }],
+        })
+        service = TestBed.inject(DataService)
     })
 
     it('should be possible to clear data cache', async () => {
