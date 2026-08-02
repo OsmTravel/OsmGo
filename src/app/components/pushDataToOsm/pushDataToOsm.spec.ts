@@ -79,6 +79,44 @@ describe('PushDataToOsmPage', () => {
         },
     ]
 
+    const queuedFeature = (
+        changeType: 'Create' | 'Update' | 'Delete',
+        id: number,
+        type: 'node' | 'way' | 'relation' = 'node',
+        version = changeType === 'Create' ? 0 : 3,
+        usedByWays?: boolean | string[]
+    ) => ({
+        type: 'Feature',
+        id: `${type}/${id}`,
+        geometry: { type: 'Point', coordinates: [1, 2] },
+        properties: {
+            id,
+            type,
+            changeType,
+            tags: { amenity: 'bench' },
+            meta: { version },
+            usedByWays,
+        },
+    })
+
+    const receiptFor = (feature: ReturnType<typeof queuedFeature>) => {
+        const type = feature.properties.type
+        const oldId = String(feature.properties.id)
+        const receipt: Record<string, unknown> = {
+            type,
+            old_id: oldId,
+            osmgoOldId: `${type}/${oldId}`,
+        }
+        if (feature.properties.changeType !== 'Delete') {
+            const newId =
+                feature.properties.changeType === 'Create' ? '101' : oldId
+            receipt['new_id'] = newId
+            receipt['new_version'] = feature.properties.meta.version + 1
+            receipt['osmgoNewId'] = `${type}/${newId}`
+        }
+        return receipt
+    }
+
     for (const creationError of creationErrors) {
         it(`recovers from a changeset creation error with status ${creationError.status}`, async () => {
             const queuedFeature = { id: 'node/-1' }
@@ -442,10 +480,11 @@ describe('PushDataToOsmPage', () => {
         }
         const page = createPage({ dataService, mapService, configService })
         const diffResults = features.map((feature, i) => ({
-            typeChange: 'Create',
+            type: 'node',
+            old_id: String(feature.properties.id),
             osmgoOldId: feature.id,
             osmgoNewId: `node/${i + 1}`,
-            new_id: i + 1,
+            new_id: String(i + 1),
             new_version: 1,
         }))
 
@@ -466,7 +505,13 @@ describe('PushDataToOsmPage', () => {
     it('does not apply any result when the response is inconsistent', async () => {
         const feature = {
             id: 'node/-1',
-            properties: { tags: {}, meta: {} },
+            properties: {
+                id: -1,
+                type: 'node',
+                changeType: 'Create',
+                tags: {},
+                meta: { version: 0 },
+            },
         }
         const applyUploadResults = vi.fn().mockName('applyUploadResults')
         const dataService = {
@@ -480,11 +525,13 @@ describe('PushDataToOsmPage', () => {
             (page as any).updateLocalDataFromDiffResult(
                 [
                     {
-                        typeChange: 'Delete',
+                        type: 'node',
+                        old_id: '-1',
                         osmgoOldId: 'node/-1',
                     },
                     {
-                        typeChange: 'Delete',
+                        type: 'node',
+                        old_id: '-999',
                         osmgoOldId: 'node/-999',
                     },
                 ],
@@ -495,11 +542,157 @@ describe('PushDataToOsmPage', () => {
         expect(applyUploadResults).not.toHaveBeenCalled()
     })
 
+    it.each([
+        [
+            'truncated',
+            () => {
+                const first = queuedFeature('Create', -1)
+                const second = queuedFeature('Create', -2)
+                return {
+                    features: [first, second],
+                    results: [receiptFor(first)],
+                }
+            },
+        ],
+        [
+            'additional',
+            () => {
+                const feature = queuedFeature('Create', -1)
+                return {
+                    features: [feature],
+                    results: [
+                        receiptFor(feature),
+                        receiptFor(queuedFeature('Create', -2)),
+                    ],
+                }
+            },
+        ],
+        [
+            'duplicated',
+            () => {
+                const first = queuedFeature('Create', -1)
+                const second = queuedFeature('Create', -2)
+                return {
+                    features: [first, second],
+                    results: [receiptFor(first), receiptFor(first)],
+                }
+            },
+        ],
+        [
+            'wrong element type',
+            () => {
+                const feature = queuedFeature('Create', -1)
+                return {
+                    features: [feature],
+                    results: [
+                        {
+                            ...receiptFor(feature),
+                            type: 'way',
+                            osmgoOldId: 'way/-1',
+                            osmgoNewId: 'way/101',
+                        },
+                    ],
+                }
+            },
+        ],
+        [
+            'invalid creation version',
+            () => {
+                const feature = queuedFeature('Create', -1)
+                return {
+                    features: [feature],
+                    results: [{ ...receiptFor(feature), new_version: 2 }],
+                }
+            },
+        ],
+        [
+            'incompatible deletion receipt',
+            () => {
+                const feature = queuedFeature('Delete', 12)
+                return {
+                    features: [feature],
+                    results: [
+                        {
+                            ...receiptFor(feature),
+                            new_id: '12',
+                            new_version: 4,
+                            osmgoNewId: 'node/12',
+                        },
+                    ],
+                }
+            },
+        ],
+    ])('keeps the queue intact for a %s diff result', async (_, arrange) => {
+        const { features, results } = arrange()
+        const applyUploadResults = vi.fn().mockName('applyUploadResults')
+        const page = createPage({
+            dataService: {
+                getGeojsonChanged: () => ({ features }),
+                applyUploadResults,
+            },
+            configService: { getChangeSetComment: () => '' },
+        })
+
+        await expect(
+            (page as any).updateLocalDataFromDiffResult(results, features)
+        ).rejects.toThrow()
+
+        expect(applyUploadResults).not.toHaveBeenCalled()
+    })
+
+    it('accepts a deletion receipt without a new ID or version', async () => {
+        const feature = queuedFeature('Delete', 12)
+        const applyUploadResults = vi.fn().mockResolvedValue(undefined)
+        const page = createPage({
+            dataService: {
+                getGeojsonChanged: () => ({ features: [feature] }),
+                applyUploadResults,
+            },
+            configService: { getChangeSetComment: () => '' },
+        })
+
+        await (page as any).updateLocalDataFromDiffResult(
+            [receiptFor(feature)],
+            [feature]
+        )
+
+        expect(applyUploadResults).toHaveBeenCalledWith([{ oldId: 'node/12' }])
+    })
+
+    it('accepts an acknowledged tag removal sent as a modification', async () => {
+        const feature = queuedFeature('Delete', 12, 'node', 3, true)
+        const applyUploadResults = vi.fn().mockResolvedValue(undefined)
+        const page = createPage({
+            dataService: {
+                getGeojsonChanged: () => ({ features: [feature] }),
+                applyUploadResults,
+            },
+            configService: { getChangeSetComment: () => '' },
+        })
+
+        await (page as any).updateLocalDataFromDiffResult(
+            [
+                {
+                    type: 'node',
+                    old_id: '12',
+                    osmgoOldId: 'node/12',
+                    new_id: '12',
+                    osmgoNewId: 'node/12',
+                    new_version: 4,
+                },
+            ],
+            [feature]
+        )
+
+        expect(applyUploadResults).toHaveBeenCalledWith([{ oldId: 'node/12' }])
+    })
+
     it('finishes an acknowledged upload after the page is backgrounded', async () => {
         const feature = {
             id: 'node/-1',
             properties: {
                 id: -1,
+                type: 'node',
                 changeType: 'Create',
                 tags: { amenity: 'bench' },
                 meta: { version: 0 },
@@ -555,10 +748,11 @@ describe('PushDataToOsmPage', () => {
 
         uploadResult.next([
             {
-                typeChange: 'Create',
+                type: 'node',
+                old_id: '-1',
                 osmgoOldId: 'node/-1',
                 osmgoNewId: 'node/101',
-                new_id: 101,
+                new_id: '101',
                 new_version: 1,
             },
         ])
@@ -576,6 +770,7 @@ describe('PushDataToOsmPage', () => {
             id: 'node/-1',
             properties: {
                 id: -1,
+                type: 'node',
                 changeType: 'Create',
                 tags: { amenity: 'bench' },
                 meta: { version: 0 },
@@ -597,10 +792,11 @@ describe('PushDataToOsmPage', () => {
             apiOsmSendOsmDiffFile: () =>
                 of([
                     {
-                        typeChange: 'Create',
+                        type: 'node',
+                        old_id: '-1',
                         osmgoOldId: 'node/-1',
                         osmgoNewId: 'node/101',
-                        new_id: 101,
+                        new_id: '101',
                         new_version: 1,
                     },
                 ]),
@@ -644,6 +840,7 @@ describe('PushDataToOsmPage', () => {
             id: 'node/-1',
             properties: {
                 id: -1,
+                type: 'node',
                 changeType: 'Create',
                 tags: { amenity: 'bench' },
                 meta: { version: 0 },
@@ -664,10 +861,11 @@ describe('PushDataToOsmPage', () => {
             apiOsmSendOsmDiffFile: () =>
                 of([
                     {
-                        typeChange: 'Create',
+                        type: 'node',
+                        old_id: '-1',
                         osmgoOldId: 'node/-1',
                         osmgoNewId: 'node/101',
-                        new_id: 101,
+                        new_id: '101',
                         new_version: 1,
                     },
                 ]),

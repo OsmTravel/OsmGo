@@ -244,7 +244,6 @@ describe('OsmApiService', () => {
             expect(service.convertDiffFileResult(xml)).toEqual([
                 {
                     type: 'node',
-                    typeChange: 'Create',
                     old_id: '-1',
                     new_id: '101',
                     new_version: 1,
@@ -253,7 +252,6 @@ describe('OsmApiService', () => {
                 },
                 {
                     type: 'way',
-                    typeChange: 'Update',
                     old_id: '12',
                     new_id: '12',
                     new_version: 4,
@@ -262,7 +260,6 @@ describe('OsmApiService', () => {
                 },
                 {
                     type: 'relation',
-                    typeChange: 'Delete',
                     old_id: '20',
                     osmgoOldId: 'relation/20',
                 },
@@ -304,6 +301,25 @@ describe('OsmApiService', () => {
                 )
             ).toThrowError('OpenStreetMap returned an invalid diff result.')
         })
+
+        it('rejects a new ID without a corresponding version', () => {
+            expect(() =>
+                service.convertDiffFileResult(
+                    '<diffResult><node old_id="1" new_id="1"/></diffResult>'
+                )
+            ).toThrowError('OpenStreetMap returned an invalid diff result.')
+        })
+
+        it.each(['0', 'abc', '1.5'])(
+            'rejects the invalid old ID %s',
+            (oldId) => {
+                expect(() =>
+                    service.convertDiffFileResult(
+                        `<diffResult><node old_id="${oldId}"/></diffResult>`
+                    )
+                ).toThrowError('OpenStreetMap returned an invalid diff result.')
+            }
+        )
     })
 
     it('returns an observable when deleting a locally created feature', async () => {

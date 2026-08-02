@@ -22,7 +22,7 @@ import {
 } from '@components/shared/confirm-dialog/confirm-dialog'
 import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { OsmGoFeature } from '@osmgo/type'
+import { type OsmGoChangeType, OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -56,6 +56,11 @@ interface OsmRequestError {
     status?: unknown
     error?: unknown
     message?: unknown
+}
+
+interface SubmittedUpload {
+    feature: UploadFeature
+    operation: OsmGoChangeType
 }
 
 export const UPLOAD_SUCCESS_DELAY_MS = new InjectionToken<number>(
@@ -179,8 +184,31 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
         diffResults: unknown,
         oldFeaturesChanged: UploadFeature[]
     ): Promise<void> {
-        if (!Array.isArray(diffResults)) {
+        if (
+            !Array.isArray(diffResults) ||
+            diffResults.length !== oldFeaturesChanged.length
+        ) {
             throw new Error('OpenStreetMap returned an invalid upload result.')
+        }
+
+        const submittedById = new Map<string, SubmittedUpload>()
+        for (const feature of oldFeaturesChanged) {
+            const type = feature.properties.type
+            const id = feature.properties.id
+            const osmgoId = `${type}/${id}`
+            if (
+                !['node', 'way', 'relation'].includes(type) ||
+                !Number.isInteger(id) ||
+                id === 0 ||
+                feature.id !== osmgoId ||
+                submittedById.has(osmgoId)
+            ) {
+                throw new Error('The local OSM upload queue is invalid.')
+            }
+            submittedById.set(osmgoId, {
+                feature,
+                operation: this.getSubmittedOperation(feature),
+            })
         }
 
         const preparedResults: Array<{
@@ -195,44 +223,30 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
                 )
             }
             const diff = result as OsmDiffResult
-            const oldId = diff?.osmgoOldId
-            const typeChange = diff.typeChange
-            const currentFeatureChanged = oldFeaturesChanged.find(
-                (feature) => feature.id === oldId
-            )
+            const oldId = diff.osmgoOldId
+            const submission = submittedById.get(oldId)
             if (
                 typeof oldId !== 'string' ||
-                !currentFeatureChanged ||
-                processedIds.has(oldId) ||
-                (typeChange !== 'Create' &&
-                    typeChange !== 'Update' &&
-                    typeChange !== 'Delete')
+                !submission ||
+                processedIds.has(oldId)
             ) {
                 throw new Error(
                     'The OSM upload result does not match local data.'
                 )
             }
+            this.validateUploadReceipt(diff, submission)
             processedIds.add(oldId)
 
-            if (typeChange === 'Delete') {
+            const currentFeatureChanged = submission.feature
+            if (currentFeatureChanged.properties.changeType === 'Delete') {
                 preparedResults.push({ oldId })
                 continue
             }
 
-            if (
-                !diff.osmgoNewId ||
-                diff.new_id === null ||
-                diff.new_id === undefined ||
-                diff.new_version === null ||
-                diff.new_version === undefined
-            ) {
-                throw new Error('OpenStreetMap returned an incomplete result.')
-            }
-
             let newFeature = cloneDeep(currentFeatureChanged)
-            newFeature['id'] = diff.osmgoNewId
-            newFeature['properties']['id'] = Number(diff.new_id)
-            newFeature['properties']['meta']['version'] = diff.new_version
+            newFeature.id = diff.osmgoNewId!
+            newFeature.properties.id = Number(diff.new_id)
+            newFeature.properties.meta.version = diff.new_version!
             newFeature['properties']['meta']['user'] =
                 this.configService.getUserInfo().display_name
             newFeature['properties']['meta']['uid'] =
@@ -258,11 +272,99 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             preparedResults.push({
                 oldId,
                 feature:
-                    typeChange === 'Create' || hasTags ? newFeature : undefined,
+                    currentFeatureChanged.properties.changeType === 'Create' ||
+                    hasTags
+                        ? newFeature
+                        : undefined,
             })
         }
 
+        if (processedIds.size !== submittedById.size) {
+            throw new Error('OpenStreetMap returned an incomplete result.')
+        }
+
         await this.dataService.applyUploadResults(preparedResults)
+    }
+
+    private getSubmittedOperation(feature: UploadFeature): OsmGoChangeType {
+        const changeType = feature.properties.changeType
+        if (
+            changeType !== 'Create' &&
+            changeType !== 'Update' &&
+            changeType !== 'Delete'
+        ) {
+            throw new Error('The local OSM upload queue is invalid.')
+        }
+        const usedByWays = feature.properties.usedByWays
+        if (
+            changeType === 'Delete' &&
+            (usedByWays === true ||
+                (Array.isArray(usedByWays) && usedByWays.length > 0))
+        ) {
+            return 'Update'
+        }
+        return changeType
+    }
+
+    private validateUploadReceipt(
+        diff: OsmDiffResult,
+        submission: SubmittedUpload
+    ): void {
+        const feature = submission.feature
+        const type = feature.properties.type
+        const oldId = String(feature.properties.id)
+        if (
+            diff.type !== type ||
+            diff.old_id !== oldId ||
+            diff.osmgoOldId !== `${type}/${oldId}`
+        ) {
+            throw new Error('The OSM upload result does not match local data.')
+        }
+
+        if (submission.operation === 'Delete') {
+            if (
+                diff.new_id !== undefined ||
+                diff.new_version !== undefined ||
+                diff.osmgoNewId !== undefined
+            ) {
+                throw new Error(
+                    'The OSM upload result does not match the submitted operation.'
+                )
+            }
+            return
+        }
+
+        const newId = Number(diff.new_id)
+        if (
+            typeof diff.new_id !== 'string' ||
+            !/^[1-9]\d*$/.test(diff.new_id) ||
+            !Number.isSafeInteger(newId) ||
+            typeof diff.new_version !== 'number' ||
+            !Number.isInteger(diff.new_version) ||
+            diff.new_version < 1 ||
+            diff.osmgoNewId !== `${type}/${diff.new_id}`
+        ) {
+            throw new Error('OpenStreetMap returned an incomplete result.')
+        }
+
+        if (submission.operation === 'Create') {
+            if (feature.properties.id >= 0 || diff.new_version !== 1) {
+                throw new Error(
+                    'The OSM upload result does not match the submitted operation.'
+                )
+            }
+            return
+        }
+
+        if (
+            feature.properties.id < 1 ||
+            newId !== feature.properties.id ||
+            diff.new_version !== feature.properties.meta.version + 1
+        ) {
+            throw new Error(
+                'The OSM upload result does not match the submitted operation.'
+            )
+        }
     }
 
     async userIsConnected(): Promise<boolean> {

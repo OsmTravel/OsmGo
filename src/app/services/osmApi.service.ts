@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { inject, Service } from '@angular/core'
 import type {
     FeatureIdSource,
-    OsmGoChangeType,
     OsmGoFeature,
     OsmGoFeatureCollection,
     OsmRelationMember,
@@ -52,11 +51,10 @@ interface WorkerResponse {
 
 export interface OsmDiffResult {
     type: 'node' | 'way' | 'relation'
-    typeChange: OsmGoChangeType
-    old_id?: string
+    old_id: string
     new_id?: string
     new_version?: number
-    osmgoOldId?: string
+    osmgoOldId: string
     osmgoNewId?: string
 }
 
@@ -257,7 +255,8 @@ export class OsmApiService {
         }
         const raw = properties as Record<string, unknown>
         const oldId = raw['old_id']
-        if (oldId === undefined || oldId === null || String(oldId) === '') {
+        const oldIdString = String(oldId ?? '').trim()
+        if (!/^-?[1-9]\d*$/.test(oldIdString)) {
             throw new Error('OpenStreetMap returned an invalid diff result.')
         }
 
@@ -274,32 +273,24 @@ export class OsmApiService {
         }
 
         const newId = raw['new_id']
-        if (
-            newVersion !== undefined &&
-            (newId === undefined || newId === null || String(newId) === '')
-        ) {
+        const newIdString = String(newId ?? '').trim()
+        if (newVersion !== undefined && !/^[1-9]\d*$/.test(newIdString)) {
             throw new Error('OpenStreetMap returned an invalid diff result.')
         }
-
-        const typeChange: OsmGoChangeType =
-            newVersion === undefined
-                ? 'Delete'
-                : newVersion === 1
-                  ? 'Create'
-                  : 'Update'
-        const oldIdString = String(oldId)
+        if (newVersion === undefined && newIdString !== '') {
+            throw new Error('OpenStreetMap returned an invalid diff result.')
+        }
         const row: OsmDiffResult = {
             type,
-            typeChange,
             old_id: oldIdString,
             osmgoOldId: `${type}/${oldIdString}`,
         }
 
-        if (newId !== undefined && newId !== null && String(newId) !== '') {
-            row.new_id = String(newId)
-            row.osmgoNewId = `${type}/${String(newId)}`
+        if (newVersion !== undefined) {
+            row.new_id = newIdString
+            row.osmgoNewId = `${type}/${newIdString}`
+            row.new_version = newVersion
         }
-        if (newVersion !== undefined) row.new_version = newVersion
         return row
     }
 
