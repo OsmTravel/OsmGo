@@ -7,7 +7,7 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/assets/i18n/**", "/manifest.webmanifest"]
+        "files": ["/assets/i18n/**"]
       }
     },
     {
@@ -15,40 +15,12 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
           "/index.html",
           "/*.css",
           "/*.js",
-          "/assets/osmtogeojson.js",
-          "/assets/mapStyle/sprites/sprites.json",
-          "/assets/mapStyle/sprites/sprites.png",
-          "/assets/mapStyle/sprites/sprites@2x.json",
-          "/assets/mapStyle/sprites/sprites@2x.png",
-
-          "/svg/md-menu.svg",
-          "/svg/md-refresh.svg",
-          "/svg/md-image.svg",
-          "/svg/md-arrow-back.svg",
-          "/svg/md-add.svg",
-          "/svg/md-locate.svg",
-          "/svg/md-close.svg",
-          "/svg/md-checkmark.svg",
-          "/svg/md-code.svg",
-          "/svg/md-move.svg",
-          "/svg/md-settings.svg",
-          "/svg/md-search.svg",
-          "/svg/md-code-working.svg",
-          "/svg/md-log-in.svg",
-          "/svg/md-star.svg",
-          "/svg/md-help-circle",
-          "/svg/md-trash.svg",
-          "/svg/md-help-circle.svg",
-          "/svg/md-cloud-upload.svg",
-          "/svg/md-heart.svg",
-          "/svg/md-create.svg",
-          "/svg/md-checkmark-circle-outline.svg",
-          "/svg/md-time.svg",
-          "/*.png"
+          "/*.mjs",
+          "/manifest.webmanifest",
+          "/media/**"
         ]
       }
     },
@@ -67,7 +39,7 @@
   ],
   "dataGroups": [
     {
-      "name": "tilesMap",
+      "name": "map-tiles-previously-viewed",
       "urls": [
         "https://a.tiles.mapbox.com/**",
         "https://b.tiles.mapbox.com/**",

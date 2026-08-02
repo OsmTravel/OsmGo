@@ -29,6 +29,8 @@
     "catalog:validate": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/validateGeneratedCatalog.ts",
     "test:integration": "playwright test",
     "test:integration:install": "playwright install chromium",
+    "pwa:validate": "npm run build && npm run pwa:validate:built",
+    "pwa:validate:built": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/validatePwaBuild.ts",
     "check": "biome check . --diagnostic-level=error",
     "sprites": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/importMissingSVGs.ts && tsx --tsconfig ./scripts/tsconfig.json ./scripts/formatSVG.ts && tsx --tsconfig ./scripts/tsconfig.json ./scripts/sprites.ts",
     "importFromID": "tsx --tsconfig ./scripts/tsconfig.json ./scripts/importTagsFromID.ts && tsx --tsconfig ./scripts/tsconfig.json ./scripts/ordersTags.ts && tsx --tsconfig ./scripts/tsconfig.json ./scripts/importDeprecatdeTagsFromiD.ts && tsx --tsconfig ./scripts/tsconfig.json ./scripts/addTranslationFromiD.ts",

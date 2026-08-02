@@ -54,6 +54,9 @@ jobs:
             - name: Build the PWA
               run: npm run build
 
+            - name: Validate the PWA cache manifest
+              run: npm run pwa:validate:built
+
             - name: Install Chromium
               run: npx playwright install --with-deps chromium
 

@@ -1,6 +1,9 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import { expect, type Page, test } from '@playwright/test'
 
 const appUrl = '/?center=2.2945,48.8584&zoom=18'
+const serviceWorkerManifestPath = path.join(process.cwd(), 'www', 'ngsw.json')
 
 const emptyFeatureCollection = {
     type: 'FeatureCollection',
@@ -68,6 +71,52 @@ async function openApp(page: Page, url = appUrl): Promise<void> {
     await page.goto(url)
     await expect(page.getByTestId('map')).toBeVisible()
     await expect(page.locator('.maplibregl-canvas')).toBeVisible()
+}
+
+async function requestServiceWorkerUpdate(page: Page): Promise<boolean> {
+    return page.evaluate(
+        () =>
+            new Promise<boolean>((resolve, reject) => {
+                const controller = navigator.serviceWorker.controller
+                if (!controller) {
+                    reject(
+                        new Error('The page has no service-worker controller.')
+                    )
+                    return
+                }
+                const nonce = Math.round(Math.random() * 10_000_000)
+                const timeout = window.setTimeout(() => {
+                    navigator.serviceWorker.removeEventListener(
+                        'message',
+                        listener
+                    )
+                    reject(new Error('The service-worker update timed out.'))
+                }, 15_000)
+                const listener = (event: MessageEvent) => {
+                    if (
+                        event.data?.type !== 'OPERATION_COMPLETED' ||
+                        event.data?.nonce !== nonce
+                    ) {
+                        return
+                    }
+                    window.clearTimeout(timeout)
+                    navigator.serviceWorker.removeEventListener(
+                        'message',
+                        listener
+                    )
+                    if (event.data.error) {
+                        reject(new Error(event.data.error))
+                    } else {
+                        resolve(Boolean(event.data.result))
+                    }
+                }
+                navigator.serviceWorker.addEventListener('message', listener)
+                controller.postMessage({
+                    action: 'CHECK_FOR_UPDATES',
+                    nonce,
+                })
+            })
+    )
 }
 
 async function readStoredValue<T>(page: Page, key: string): Promise<T> {
@@ -200,6 +249,54 @@ test.describe('PWA installation', () => {
         await page.reload()
         await expect(page).toHaveTitle('Osm Go!')
         await page.context().setOffline(false)
+    })
+
+    test('activates an upgrade and reloads the new version offline', async ({
+        page,
+    }) => {
+        const originalManifest = fs.readFileSync(
+            serviceWorkerManifestPath,
+            'utf8'
+        )
+
+        try {
+            await openApp(page)
+            await page.reload()
+            await expect
+                .poll(() =>
+                    page.evaluate(() =>
+                        Boolean(navigator.serviceWorker.controller)
+                    )
+                )
+                .toBe(true)
+
+            const nextManifest = JSON.parse(originalManifest)
+            nextManifest.appData = {
+                ...(nextManifest.appData ?? {}),
+                playwrightVersion: `${Date.now()}`,
+            }
+            fs.writeFileSync(
+                serviceWorkerManifestPath,
+                JSON.stringify(nextManifest)
+            )
+
+            await expect.poll(() => requestServiceWorkerUpdate(page)).toBe(true)
+            await page.getByTestId('open-menu').click()
+            const updateButton = page.getByRole('button', {
+                name: /New version available!/,
+            })
+            await expect(updateButton).toBeVisible()
+            await updateButton.click()
+            await expect(page.getByTestId('map')).toBeVisible()
+
+            await page.context().setOffline(true)
+            await page.reload()
+            await expect(page).toHaveTitle('Osm Go!')
+            await expect(page.getByTestId('map')).toBeVisible()
+        } finally {
+            await page.context().setOffline(false)
+            fs.writeFileSync(serviceWorkerManifestPath, originalManifest)
+        }
     })
 })
 

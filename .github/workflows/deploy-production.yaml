@@ -38,6 +38,9 @@ jobs:
             - name: Build the PWA
               run: npm run build
 
+            - name: Validate the PWA cache manifest
+              run: npm run pwa:validate:built
+
             - name: Add build information
               run: node scripts/write-web-build-info.mjs www
 
