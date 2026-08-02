@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing'
+import { ModalController } from '@ionic/angular/standalone'
 import type { SearchbarInputEventDetail } from '@ionic/core'
+import { ConfigService } from '@services/config.service'
+import { TagsService } from '@services/tags.service'
 import { ModalPrimaryTag } from './modal.primaryTag'
 
 describe('ModalPrimaryTag', () => {
@@ -7,9 +10,17 @@ describe('ModalPrimaryTag', () => {
         ({ clientX }) as PointerEvent
 
     const createModal = (): ModalPrimaryTag =>
-        TestBed.runInInjectionContext(
-            () => new ModalPrimaryTag(null, null, null)
-        )
+        TestBed.runInInjectionContext(() => new ModalPrimaryTag())
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: ModalController, useValue: {} },
+                { provide: TagsService, useValue: {} },
+                { provide: ConfigService, useValue: {} },
+            ],
+        })
+    })
 
     it('updates the search signal from the Ionic event', () => {
         const modal = createModal()

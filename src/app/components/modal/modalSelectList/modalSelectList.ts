@@ -1,6 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    inject,
     input,
     OnInit,
     signal,
@@ -17,7 +18,6 @@ import {
     IonTitle,
     IonToolbar,
     ModalController,
-    Platform,
 } from '@ionic/angular/standalone'
 import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
@@ -54,23 +54,14 @@ interface ModalSelectListData {
     ],
 })
 export class ModalSelectList implements OnInit {
+    readonly modalCtrl = inject(ModalController)
+    readonly configService = inject(ConfigService)
+
     readonly data = input.required<ModalSelectListData>()
     readonly searchText = signal('')
     initvalue: string
-    language: string
-    countryCode: string
-    constructor(
-        public modalCtrl: ModalController,
-        public platform: Platform,
-        public configService: ConfigService
-    ) {
-        this.language = this.configService.config.languageTags
-        this.countryCode = this.configService.config.countryTags
-
-        // this.platform.registerBackButtonAction(e => {
-        //     this.dismiss();
-        // });
-    }
+    readonly language = this.configService.config.languageTags
+    readonly countryCode = this.configService.config.countryTags
 
     ngOnInit(): void {
         this.initvalue = this.data().value

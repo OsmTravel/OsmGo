@@ -1,6 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    inject,
     input,
     signal,
 } from '@angular/core'
@@ -52,26 +53,19 @@ import { TagsService } from '@services/tags.service'
     ],
 })
 export class ModalAddTag {
+    readonly modalCtrl = inject(ModalController)
+    readonly tagsService = inject(TagsService)
+    readonly configService = inject(ConfigService)
+    readonly translate = inject(TranslateService)
+
     readonly moreFields = input<string[]>([])
     readonly usedList = input<string[]>([])
 
-    language: string
-    countryCode: string
+    readonly language = this.configService.config.languageTags
+    readonly countryCode = this.configService.config.countryTags
 
-    presets: Array<Preset>
+    readonly presets: Array<Preset> = Object.values(this.tagsService.presets)
     readonly searchFilter = signal('')
-
-    constructor(
-        public modalCtrl: ModalController,
-        public tagsService: TagsService,
-        public configService: ConfigService,
-        public translate: TranslateService
-    ) {
-        this.language = this.configService.config.languageTags
-        this.countryCode = this.configService.config.countryTags
-
-        this.presets = Object.values(tagsService.presets)
-    }
 
     onSearchInput(event: CustomEvent<InputInputEventDetail>): void {
         this.searchFilter.set(event.detail.value ?? '')

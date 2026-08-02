@@ -3,6 +3,7 @@ import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
+    inject,
     input,
     NgZone,
     OnInit,
@@ -96,6 +97,21 @@ export interface ModalDismissData {
     ],
 })
 export class ModalsContentPage implements OnInit {
+    readonly platform = inject(Platform)
+    readonly loadingCtrl = inject(LoadingController)
+    readonly osmApi = inject(OsmApiService)
+    readonly tagsService = inject(TagsService)
+    readonly modalCtrl = inject(ModalController)
+    readonly mapService = inject(MapService)
+    readonly dataService = inject(DataService)
+    readonly configService = inject(ConfigService)
+    readonly alertService = inject(AlertService)
+    readonly toastCtrl = inject(ToastController)
+    private readonly alertCtrl = inject(AlertController)
+    private readonly zone = inject(NgZone)
+    private readonly translate = inject(TranslateService)
+    private readonly cdr = inject(ChangeDetectorRef)
+
     tags: Tag[] = [] // main data
     originalTags = []
     feature: OsmGoFeature
@@ -125,23 +141,6 @@ export class ModalsContentPage implements OnInit {
     readonly openPrimaryTagModalOnStartInput = input(false, {
         alias: 'openPrimaryTagModalOnStart',
     })
-
-    constructor(
-        public platform: Platform,
-        public loadingCtrl: LoadingController,
-        public osmApi: OsmApiService,
-        public tagsService: TagsService,
-        public modalCtrl: ModalController,
-        public mapService: MapService,
-        public dataService: DataService,
-        public configService: ConfigService,
-        public alertService: AlertService,
-        public toastCtrl: ToastController,
-        private alertCtrl: AlertController,
-        private zone: NgZone,
-        private translate: TranslateService,
-        private cdr: ChangeDetectorRef
-    ) {}
 
     private initializeFromInputs(): void {
         this.newPosition = this.newPositionInput()

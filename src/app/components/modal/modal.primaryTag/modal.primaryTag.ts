@@ -2,6 +2,7 @@ import { LowerCasePipe } from '@angular/common'
 import {
     ChangeDetectionStrategy,
     Component,
+    inject,
     input,
     OnInit,
     signal,
@@ -64,6 +65,10 @@ import { TagsService } from '@services/tags.service'
     ],
 })
 export class ModalPrimaryTag implements OnInit {
+    readonly modalCtrl = inject(ModalController)
+    readonly tagsService = inject(TagsService)
+    readonly configService = inject(ConfigService)
+
     private swipeStartX: number | null = null
 
     selectedKey: string
@@ -83,12 +88,6 @@ export class ModalPrimaryTag implements OnInit {
     readonly geometryTypeInput = input.required<
         'point' | 'vertex' | 'line' | 'area'
     >({ alias: 'geometryType' })
-
-    constructor(
-        public modalCtrl: ModalController,
-        public tagsService: TagsService,
-        public configService: ConfigService
-    ) {}
 
     ngOnInit() {
         this.displayType =
