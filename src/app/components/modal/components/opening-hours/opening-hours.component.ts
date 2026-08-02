@@ -1,12 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    model,
-    OnInit,
-    output,
-} from '@angular/core'
+import { Component, inject, input, model, OnInit, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
     IonButton,
@@ -31,7 +23,6 @@ const builder = new OpeningHoursBuilder()
     selector: 'app-opening-hours',
     templateUrl: './opening-hours.component.html',
     styleUrls: ['./opening-hours.component.scss', '../style.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FormsModule,
         IonButton,

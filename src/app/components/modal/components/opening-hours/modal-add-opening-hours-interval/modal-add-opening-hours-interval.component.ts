@@ -1,10 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    computed,
-    inject,
-    signal,
-} from '@angular/core'
+import { Component, computed, inject, signal } from '@angular/core'
 import {
     IonBadge,
     IonButton,
@@ -38,7 +32,6 @@ interface OpeningHoursDay {
     selector: 'app-modal-add-opening-hours-interval',
     templateUrl: './modal-add-opening-hours-interval.component.html',
     styleUrls: ['./modal-add-opening-hours-interval.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CharLimitPipe,
         IonBadge,
