@@ -1,4 +1,12 @@
-import { Component, inject, input, OnInit, output, signal } from '@angular/core'
+import {
+    Component,
+    effect,
+    inject,
+    input,
+    output,
+    signal,
+    untracked,
+} from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { MatButtonModule } from '@angular/material/button'
 import { MatDialog } from '@angular/material/dialog'
@@ -96,7 +104,7 @@ interface DeprecatedTags {
         TranslateModule,
     ],
 })
-export class ObjectEditorContentComponent implements OnInit {
+export class ObjectEditorContentComponent {
     readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
     readonly mapService = inject(MapService)
@@ -190,11 +198,90 @@ export class ObjectEditorContentComponent implements OnInit {
     readonly displayCodeOnStart = input(false)
     readonly dismissed = output<ModalDismissData | undefined>()
     readonly categoryRequested = output<void>()
+    private initializedData?: OsmGoFeature
+    private initializedMode?: MapMode
+    private initializedNewPosition?: boolean
+    private initializedOrigin?: FeatureIdSource
+    private initializedOpenCategory?: boolean
+    private initializedDisplayCode?: boolean
 
-    private initializeFromInputs(): void {
-        this.displayCodeState.set(this.displayCodeOnStart())
-        this.newPosition = this.newPositionInput()
-        this.featureState.set(cloneDeep(this.dataInput()))
+    constructor() {
+        effect(() => {
+            const data = this.dataInput()
+            const mode = this.modeInput()
+            const newPosition = this.newPositionInput()
+            const origin = this.origineDataInput()
+            const openCategory = this.openPrimaryTagModalOnStartInput()
+            const displayCode = this.displayCodeOnStart()
+
+            untracked(() => {
+                this.synchronizeInputs({
+                    data,
+                    mode,
+                    newPosition,
+                    origin,
+                    openCategory,
+                    displayCode,
+                })
+            })
+        })
+    }
+
+    private synchronizeInputs(inputs: {
+        data: OsmGoFeature
+        mode: MapMode
+        newPosition: boolean
+        origin: FeatureIdSource
+        openCategory: boolean
+        displayCode: boolean
+    }): void {
+        const unchanged =
+            this.initializedData === inputs.data &&
+            this.initializedMode === inputs.mode &&
+            this.initializedNewPosition === inputs.newPosition &&
+            this.initializedOrigin === inputs.origin &&
+            this.initializedOpenCategory === inputs.openCategory &&
+            this.initializedDisplayCode === inputs.displayCode
+        if (unchanged) return
+
+        const currentFeature = this.featureState()
+        const wouldOverwriteDraft =
+            currentFeature !== undefined &&
+            (this.mode === 'Update' || this.mode === 'Create') &&
+            this.dataIsChanged() &&
+            (this.initializedData !== inputs.data ||
+                this.initializedMode !== inputs.mode ||
+                this.initializedNewPosition !== inputs.newPosition ||
+                this.initializedOrigin !== inputs.origin)
+
+        // The parent normally blocks selection changes while editing. Keep that
+        // invariant locally as well so an unexpected input cannot erase a draft.
+        if (wouldOverwriteDraft) return
+
+        this.initializedData = inputs.data
+        this.initializedMode = inputs.mode
+        this.initializedNewPosition = inputs.newPosition
+        this.initializedOrigin = inputs.origin
+        this.initializedOpenCategory = inputs.openCategory
+        this.initializedDisplayCode = inputs.displayCode
+        this.initializeFromInputs(inputs)
+        this.initComponent()
+        if (this.mode === 'Create' && this.openPrimaryTagModalOnStart) {
+            this.openPrimaryTagModal()
+        }
+    }
+
+    private initializeFromInputs(inputs: {
+        data: OsmGoFeature
+        mode: MapMode
+        newPosition: boolean
+        origin: FeatureIdSource
+        openCategory: boolean
+        displayCode: boolean
+    }): void {
+        this.displayCodeState.set(inputs.displayCode)
+        this.newPosition = inputs.newPosition
+        this.featureState.set(cloneDeep(inputs.data))
 
         const originalFeatureGeometry: Geometry = this.feature.properties
             .way_geometry
@@ -224,9 +311,9 @@ export class ObjectEditorContentComponent implements OnInit {
             throw new Error('The feature geometry is not supported.')
         }
 
-        this.modeState.set(this.modeInput())
-        this.openPrimaryTagModalOnStart = this.openPrimaryTagModalOnStartInput()
-        this.origineData = this.origineDataInput()
+        this.modeState.set(inputs.mode)
+        this.openPrimaryTagModalOnStart = inputs.openCategory
+        this.origineData = inputs.origin
         this.typeFicheState.set('Loading')
 
         const surveyDates: Date[] = []
@@ -258,14 +345,6 @@ export class ObjectEditorContentComponent implements OnInit {
 
         this.tagsState.set(tags)
         this.originalTags = cloneDeep(tags)
-    }
-
-    ngOnInit(): void {
-        this.initializeFromInputs()
-        this.initComponent()
-        if (this.mode === 'Create' && this.openPrimaryTagModalOnStart) {
-            void this.openPrimaryTagModal()
-        }
     }
 
     presentConfirm(): void {

@@ -15,30 +15,42 @@ describe('ObjectEditorContentComponent', () => {
     const genderPreset = {
         type: 'select',
         iDtype: 'radio',
+        lbl: { en: 'Gender' },
         keys: ['male', 'female', 'unisex'],
         options: [{ v: 'male' }, { v: 'female' }, { v: 'unisex' }],
-    }
+    } as any
     const tagConfig = {
         id: 'amenity/toilets',
+        lbl: { en: 'Toilets' },
         tags: { amenity: 'toilets' },
         presets: ['gender'],
+    }
+
+    function featureWith(id: number, tags: Record<string, string | number>) {
+        return {
+            type: 'Feature',
+            id: `node/${id}`,
+            geometry: { type: 'Point', coordinates: [1, 2] },
+            properties: {
+                type: 'node',
+                id,
+                tags,
+                meta: {
+                    changeset: '1',
+                    timestamp: 0,
+                    uid: '1',
+                    user: 'mapper',
+                    version: 1,
+                },
+            },
+        }
     }
 
     function createPage(
         tags: Record<string, string | number>,
         type: MapMode = 'Update'
     ) {
-        const feature = {
-            type: 'Feature',
-            id: 'node/1',
-            geometry: { type: 'Point', coordinates: [1, 2] },
-            properties: {
-                type: 'node',
-                id: 1,
-                tags,
-                meta: { version: 1 },
-            },
-        }
+        const feature = featureWith(1, tags)
         const tagsService = {
             presets: () => ({ gender: genderPreset }),
             tags: () => [tagConfig],
@@ -61,7 +73,10 @@ describe('ObjectEditorContentComponent', () => {
             providers: [
                 { provide: OsmApiService, useValue: {} },
                 { provide: TagsService, useValue: tagsService },
-                { provide: MapService, useValue: {} },
+                {
+                    provide: MapService,
+                    useValue: { isProcessing: () => false },
+                },
                 { provide: DataService, useValue: {} },
                 {
                     provide: ConfigService,
@@ -72,6 +87,9 @@ describe('ObjectEditorContentComponent', () => {
                             languageTags: 'en',
                             languageUi: 'en',
                         }),
+                        getDisplaySurveyCard: () => 'never',
+                        getSurveyCardYear: () => 1,
+                        getUiLanguage: () => 'en',
                     },
                 },
                 { provide: MatDialog, useValue: dialog },
@@ -82,9 +100,9 @@ describe('ObjectEditorContentComponent', () => {
         fixture.componentRef.setInput('data', feature)
         fixture.componentRef.setInput('type', type)
         fixture.componentRef.setInput('origineData', 'data')
+        fixture.detectChanges()
         const page = fixture.componentInstance
-        page.ngOnInit()
-        return { page, dialog, snackBar, nestedDialogRef }
+        return { page, fixture, dialog, snackBar, nestedDialogRef }
     }
 
     it('creates an empty editable field without an undefined key', () => {
@@ -170,6 +188,47 @@ describe('ObjectEditorContentComponent', () => {
             'Unable to save changes.',
             'SHARED.CLOSE',
             { duration: 4000 }
+        )
+    })
+
+    it('resynchronizes cloned and original tags when the read selection changes', () => {
+        const { page, fixture } = createPage(
+            { amenity: 'toilets', name: 'Object A' },
+            'Read'
+        )
+
+        fixture.componentRef.setInput(
+            'data',
+            featureWith(2, { amenity: 'toilets', name: 'Object B' })
+        )
+        fixture.detectChanges()
+
+        expect(page.feature.id).toBe('node/2')
+        expect(page.findElement(page.tags, { key: 'name' }).value).toBe(
+            'Object B'
+        )
+        expect(page.originalTags).toContainEqual({
+            key: 'name',
+            value: 'Object B',
+        })
+    })
+
+    it('does not overwrite an edited draft when another feature input arrives', () => {
+        const { page, fixture } = createPage({
+            amenity: 'toilets',
+            name: 'Object A',
+        })
+        page.findElement(page.tags, { key: 'name' }).value = 'Draft A'
+
+        fixture.componentRef.setInput(
+            'data',
+            featureWith(2, { amenity: 'toilets', name: 'Object B' })
+        )
+        fixture.detectChanges()
+
+        expect(page.feature.id).toBe('node/1')
+        expect(page.findElement(page.tags, { key: 'name' }).value).toBe(
+            'Draft A'
         )
     })
 })

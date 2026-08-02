@@ -105,7 +105,6 @@ export class ObjectSheetComponent {
     readonly levelChange = output<ObjectSheetLevel>()
     readonly sessionCompleted = output<ModalDismissData>()
 
-    readonly bookmarked = signal(false)
     readonly dragOffset = signal(0)
     readonly categoryOpen = signal(false)
     readonly advancedTagsRequested = signal(false)
@@ -114,7 +113,7 @@ export class ObjectSheetComponent {
     private activePointerId: number | null = null
     private sheetTouchStartY: number | null = null
     private sheetTouchStartedInHeader = false
-    private initializedSelectionKey = ''
+    private initializedObjectKey = ''
 
     readonly editor = viewChild<ObjectEditorContentComponent>('editor')
     readonly isEditing = computed(
@@ -157,6 +156,12 @@ export class ObjectSheetComponent {
     })
 
     readonly feature = computed<OsmGoFeature>(() => this.selection().geojson)
+    readonly selectedTagConfig = computed(() =>
+        getConfigTag(this.feature(), this.tagsService.tags())
+    )
+    readonly bookmarked = computed(() =>
+        this.tagsService.bookmarksIds().includes(this.selectedTagConfig().id)
+    )
     readonly title = computed(() => {
         const feature = this.feature()
         const name = feature.properties.tags['name'] || feature.properties._name
@@ -239,9 +244,12 @@ export class ObjectSheetComponent {
     constructor() {
         effect(() => {
             const selection = this.selection()
-            const key = `${selection.type}:${selection.geojson.id ?? selection.geojson.properties.id}:${selection.newPosition ? 'moved' : 'stable'}`
-            if (key === this.initializedSelectionKey) return
-            this.initializedSelectionKey = key
+            const key =
+                selection.geojson.id ??
+                `${selection.geojson.properties.type}/${selection.geojson.properties.id}`
+            if (key === this.initializedObjectKey) return
+            this.initializedObjectKey = key
+            this.advancedTagsRequested.set(false)
             this.categoryOpen.set(
                 selection.type === 'Create' &&
                     Boolean(selection.openPrimaryTagModalOnStart)
@@ -250,7 +258,12 @@ export class ObjectSheetComponent {
     }
 
     toggleBookmark(): void {
-        this.bookmarked.update((value) => !value)
+        const tagConfig = this.selectedTagConfig()
+        if (this.bookmarked()) {
+            this.tagsService.removeBookMark(tagConfig)
+        } else {
+            this.tagsService.addBookMark(tagConfig)
+        }
     }
 
     showDetails(): void {

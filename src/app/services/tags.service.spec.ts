@@ -98,4 +98,135 @@ describe('TagsService', () => {
             value: 'cafe',
         })
     })
+
+    it('removes a tag from hidden preferences when bookmarking it', () => {
+        const storage = {
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: {} },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+        const tag = {
+            id: 'amenity/cafe',
+            tags: { amenity: 'cafe' },
+        } as any
+        service.setHiddenTagsIds([tag.id])
+
+        service.addBookMark(tag)
+
+        expect(service.hiddenTagsIds()).toEqual([])
+        expect(service.bookmarksIds()).toEqual([tag.id])
+        expect(storage.set).toHaveBeenCalledWith('hiddenTagsIds', [])
+        expect(storage.set).toHaveBeenCalledWith('bookmarksIds', [tag.id])
+    })
+
+    it.each([
+        ['bookmarks first', true],
+        ['hidden tags first', false],
+    ])(
+        'restores disjoint bookmark and hidden sets with %s',
+        async (_, bookmarksFirst) => {
+            const storage = {
+                get: vi.fn((key: string) =>
+                    Promise.resolve(
+                        key === 'bookmarksIds'
+                            ? ['amenity/cafe']
+                            : ['amenity/cafe', 'highway/path']
+                    )
+                ),
+                set: vi.fn(),
+            }
+            TestBed.configureTestingModule({
+                providers: [
+                    { provide: HttpClient, useValue: {} },
+                    { provide: AppStorage, useValue: storage },
+                ],
+            })
+            const service = TestBed.inject(TagsService)
+
+            if (bookmarksFirst) {
+                await firstValueFrom(service.loadBookMarksIds$())
+                await firstValueFrom(service.loadHiddenTagsIds$())
+            } else {
+                await firstValueFrom(service.loadHiddenTagsIds$())
+                await firstValueFrom(service.loadBookMarksIds$())
+            }
+
+            expect(service.bookmarksIds()).toEqual(['amenity/cafe'])
+            expect(service.hiddenTagsIds()).toEqual(['highway/path'])
+        }
+    )
+
+    it('clones a user tag before applying local defaults', () => {
+        const storage = { set: vi.fn() }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: {} },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+        const input = {
+            id: 'amenity/custom',
+            tags: { amenity: 'custom' },
+            geometry: ['point'],
+            icon: 'original-icon',
+            markerColor: '#ffffff',
+        } as any
+
+        service.addUserTags(input)
+
+        expect(input).toMatchObject({
+            geometry: ['point'],
+            icon: 'original-icon',
+            markerColor: '#ffffff',
+        })
+        expect(service.userTags[0]).not.toBe(input)
+        expect(service.userTags[0].tags).not.toBe(input.tags)
+        expect(service.userTags[0]).toMatchObject({
+            geometry: ['point', 'vertex', 'line', 'area'],
+            icon: 'maki-circle-custom',
+            markerColor: '#000000',
+        })
+    })
+
+    it('keeps built-in tag definitions authoritative when user IDs collide', async () => {
+        const builtIn = {
+            id: 'amenity/cafe',
+            tags: { amenity: 'cafe' },
+            icon: 'built-in',
+        }
+        const userDuplicate = {
+            id: 'amenity/cafe',
+            tags: { amenity: 'cafe' },
+            icon: 'user',
+        }
+        const userOnly = {
+            id: 'amenity/custom',
+            tags: { amenity: 'custom' },
+            icon: 'user-only',
+        }
+        const http = {
+            get: vi.fn(() => of({ primaryKeys: ['amenity'], tags: [builtIn] })),
+        }
+        const storage = {
+            get: vi.fn(() => Promise.resolve([userDuplicate, userOnly])),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: HttpClient, useValue: http },
+                { provide: AppStorage, useValue: storage },
+            ],
+        })
+        const service = TestBed.inject(TagsService)
+
+        const tags = await firstValueFrom(service.loadTags$())
+
+        expect(tags).toEqual([builtIn, userOnly])
+        expect(service.tags()).toEqual([builtIn, userOnly])
+    })
 })

@@ -1,20 +1,36 @@
 import { signal } from '@angular/core'
 import { TestBed } from '@angular/core/testing'
 import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { By } from '@angular/platform-browser'
 import { TranslateModule } from '@ngx-translate/core'
 import type { EventShowModal } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
 import { of } from 'rxjs'
 
 import { IconComponent } from '../../icon/icon.component'
+import { ObjectEditorContentComponent } from '../../modal/modal'
 import { ObjectSheetComponent } from './object-sheet'
 
 describe('ObjectSheetComponent swipes', () => {
     const dialog = {
         open: vi.fn(() => ({ afterClosed: () => of(false) })),
+    }
+    let bookmarksIds: ReturnType<typeof signal<string[]>>
+    let tagsService: {
+        tags: ReturnType<typeof vi.fn>
+        presets: ReturnType<typeof vi.fn>
+        jsonSprites: ReturnType<typeof vi.fn>
+        primaryKeys: ReturnType<typeof vi.fn>
+        bookmarksIds: typeof bookmarksIds
+        savedFields: Record<string, never>
+        findPkey: ReturnType<typeof vi.fn>
+        addBookMark: ReturnType<typeof vi.fn>
+        removeBookMark: ReturnType<typeof vi.fn>
     }
     const touchStartAt = (clientY: number, target: EventTarget): TouchEvent =>
         ({ target, touches: [{ clientY }] }) as unknown as TouchEvent
@@ -67,31 +83,60 @@ describe('ObjectSheetComponent swipes', () => {
     }
 
     beforeEach(() => {
+        bookmarksIds = signal<string[]>([])
+        tagsService = {
+            tags: vi.fn(() => []),
+            presets: vi.fn(() => ({})),
+            jsonSprites: vi.fn(() => ({})),
+            primaryKeys: vi.fn(() => ['amenity']),
+            bookmarksIds,
+            savedFields: {},
+            findPkey: vi.fn((featureOrTags: any) => {
+                if (Array.isArray(featureOrTags)) {
+                    const tag = featureOrTags.find(
+                        (candidate) => candidate.key === 'amenity'
+                    )
+                    return tag ? { key: tag.key, value: tag.value } : undefined
+                }
+                const value = featureOrTags.properties.tags.amenity
+                return value ? { key: 'amenity', value } : undefined
+            }),
+            addBookMark: vi.fn((tag) => {
+                bookmarksIds.set([tag.id, ...bookmarksIds()])
+            }),
+            removeBookMark: vi.fn((tag) => {
+                bookmarksIds.set(bookmarksIds().filter((id) => id !== tag.id))
+            }),
+        }
         TestBed.configureTestingModule({
             imports: [ObjectSheetComponent, TranslateModule.forRoot()],
             providers: [
                 { provide: MatDialog, useValue: dialog },
                 {
                     provide: MapService,
-                    useValue: { isProcessing: signal(false) },
+                    useValue: {
+                        isProcessing: signal(false),
+                        setIsProcessing: vi.fn(),
+                    },
                 },
                 {
                     provide: ConfigService,
                     useValue: {
                         config: () => ({
+                            checkedKey: 'survey:date',
+                            countryTags: 'FR',
                             languageTags: 'fr',
                             languageUi: 'fr',
                         }),
+                        getDisplaySurveyCard: () => 'never',
+                        getSurveyCardYear: () => 1,
+                        getUiLanguage: () => 'fr',
                     },
                 },
-                {
-                    provide: TagsService,
-                    useValue: {
-                        tags: () => [],
-                        presets: () => ({}),
-                        jsonSprites: () => ({}),
-                    },
-                },
+                { provide: TagsService, useValue: tagsService },
+                { provide: OsmApiService, useValue: {} },
+                { provide: DataService, useValue: {} },
+                { provide: MatSnackBar, useValue: { open: vi.fn() } },
             ],
         })
     })
@@ -257,6 +302,83 @@ describe('ObjectSheetComponent swipes', () => {
 
         expect(iconContainer.style.backgroundColor).toBe('rgb(217, 119, 6)')
         expect(iconComponent.icon()).toBe('second-icon')
+    })
+
+    it('resynchronizes the embedded read editor when an expanded selection changes', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput('level', 'expanded')
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'first-icon', '#123456')
+        )
+        fixture.detectChanges()
+        const firstEditor = fixture.debugElement.query(
+            By.directive(ObjectEditorContentComponent)
+        ).componentInstance as ObjectEditorContentComponent
+
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(2, 'second-icon', '#d97706')
+        )
+        fixture.detectChanges()
+        const secondEditor = fixture.debugElement.query(
+            By.directive(ObjectEditorContentComponent)
+        ).componentInstance as ObjectEditorContentComponent
+
+        expect(secondEditor).toBe(firstEditor)
+        expect(secondEditor.feature.id).toBe('node/2')
+        expect(secondEditor.originalTags).toContainEqual({
+            key: 'amenity',
+            value: 'bench',
+        })
+    })
+
+    it('resets category and advanced-tag state for each selected object', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput('level', 'expanded')
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'first-icon', '#123456')
+        )
+        fixture.detectChanges()
+        const component = fixture.componentInstance
+        component.showAdvancedTags()
+        component.openCategory()
+
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(2, 'second-icon', '#d97706')
+        )
+        fixture.detectChanges()
+
+        expect(component.advancedTagsRequested()).toBe(false)
+        expect(component.categoryOpen()).toBe(false)
+        expect(component.editor()?.displayCode).toBe(false)
+    })
+
+    it('derives bookmarks from TagsService and persists both transitions', () => {
+        bookmarksIds.set(['amenity/bench'])
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'information', '#9d7178')
+        )
+        fixture.detectChanges()
+        const component = fixture.componentInstance
+
+        expect(component.bookmarked()).toBe(true)
+
+        component.toggleBookmark()
+        expect(tagsService.removeBookMark).toHaveBeenCalledWith(
+            expect.objectContaining({ id: 'amenity/bench' })
+        )
+        expect(component.bookmarked()).toBe(false)
+
+        component.toggleBookmark()
+        expect(tagsService.addBookMark).toHaveBeenCalledWith(
+            expect.objectContaining({ id: 'amenity/bench' })
+        )
+        expect(component.bookmarked()).toBe(true)
     })
 
     it('renders the complete object name without truncating it', () => {

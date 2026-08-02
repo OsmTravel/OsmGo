@@ -178,8 +178,15 @@ export class TagsService {
     }
 
     setBookMarksIds(bookmarksIds: string[]): void {
-        this.localStorage.set('bookmarksIds', bookmarksIds)
-        this.bookmarksIdsState.set(bookmarksIds)
+        const normalizedIds = [...new Set(bookmarksIds.filter(Boolean))]
+        const hiddenIds = this.hiddenTagsIds().filter(
+            (hiddenId) => !normalizedIds.includes(hiddenId)
+        )
+        if (hiddenIds.length !== this.hiddenTagsIds().length) {
+            this.setHiddenTagsIds(hiddenIds)
+        }
+        this.localStorage.set('bookmarksIds', normalizedIds)
+        this.bookmarksIdsState.set(normalizedIds)
     }
 
     setLastTagsUsedIds(lastTagsUsedIds: string[]): void {
@@ -197,6 +204,7 @@ export class TagsService {
         if (this.bookmarksIds().includes(tag.id)) {
             return
         }
+        this.removeHiddenTag(tag)
         const currentTag = this.tags().find((t) => t.id === tag.id)
         if (!currentTag) {
             this.addUserTags(tag)
@@ -207,9 +215,17 @@ export class TagsService {
     loadBookMarksIds$(): Observable<string[]> {
         return from(this.localStorage.get('bookmarksIds')).pipe(
             map((bookmarksIds: string[]) => {
-                bookmarksIds = bookmarksIds ? bookmarksIds : []
-                this.bookmarksIdsState.set(bookmarksIds)
-                return bookmarksIds
+                const normalizedIds = [
+                    ...new Set((bookmarksIds ?? []).filter(Boolean)),
+                ]
+                const hiddenIds = this.hiddenTagsIds().filter(
+                    (hiddenId) => !normalizedIds.includes(hiddenId)
+                )
+                if (hiddenIds.length !== this.hiddenTagsIds().length) {
+                    this.setHiddenTagsIds(hiddenIds)
+                }
+                this.bookmarksIdsState.set(normalizedIds)
+                return normalizedIds
             })
         )
     }
@@ -218,18 +234,32 @@ export class TagsService {
     loadHiddenTagsIds$(): Observable<string[]> {
         return from(this.localStorage.get('hiddenTagsIds')).pipe(
             map((hiddenTagsIds: string[]) => {
-                hiddenTagsIds = hiddenTagsIds
-                    ? hiddenTagsIds
-                    : [...this.defaultHiddenTagsIds]
-                this.hiddenTagsIdsState.set(hiddenTagsIds)
-                return hiddenTagsIds
+                const normalizedIds = [
+                    ...new Set(
+                        (hiddenTagsIds ?? this.defaultHiddenTagsIds).filter(
+                            (hiddenId) =>
+                                hiddenId &&
+                                !this.bookmarksIds().includes(hiddenId)
+                        )
+                    ),
+                ]
+                this.hiddenTagsIdsState.set(normalizedIds)
+                return normalizedIds
             })
         )
     }
 
     setHiddenTagsIds(hiddenTagsIds: string[]): void {
-        this.localStorage.set('hiddenTagsIds', hiddenTagsIds)
-        this.hiddenTagsIdsState.set(hiddenTagsIds)
+        const normalizedIds = [
+            ...new Set(
+                hiddenTagsIds.filter(
+                    (hiddenId) =>
+                        hiddenId && !this.bookmarksIds().includes(hiddenId)
+                )
+            ),
+        ]
+        this.localStorage.set('hiddenTagsIds', normalizedIds)
+        this.hiddenTagsIdsState.set(normalizedIds)
     }
 
     removeHiddenTag(tag: TagConfig): void {
@@ -306,11 +336,19 @@ export class TagsService {
         if (this.userTags.find((t) => t.id === newTagId)) {
             return
         }
-        newTag.geometry = ['point', 'vertex', 'line', 'area']
-        newTag.icon = 'maki-circle-custom'
-        newTag.markerColor = '#000000'
-        this.userTags = [...this.userTags, newTag]
-        this.tagsState.update((tags) => [...tags, newTag])
+        const normalizedTag: TagConfig = {
+            ...newTag,
+            tags: { ...newTag.tags },
+            geometry: ['point', 'vertex', 'line', 'area'],
+            icon: 'maki-circle-custom',
+            markerColor: '#000000',
+        }
+        this.userTags = [...this.userTags, normalizedTag]
+        this.tagsState.update((tags) =>
+            tags.some((tag) => tag.id === newTagId)
+                ? tags
+                : [...tags, normalizedTag]
+        )
         this.setUserTags(this.userTags)
     }
 
@@ -392,7 +430,13 @@ export class TagsService {
     loadTags$(): Observable<TagConfig[]> {
         return forkJoin(this.getTagsConfig$(), this.loadUserTags$()).pipe(
             map(([tagsConfig, userTags]: [TagsJson, TagConfig[]]) => {
-                const tags: TagConfig[] = [...tagsConfig.tags, ...userTags]
+                // Built-in definitions are authoritative; user tags only fill
+                // IDs that are absent from the generated catalog.
+                const builtInIds = new Set(tagsConfig.tags.map((tag) => tag.id))
+                const tags: TagConfig[] = [
+                    ...tagsConfig.tags,
+                    ...userTags.filter((tag) => !builtInIds.has(tag.id)),
+                ]
                 this.tagsState.set(tags)
                 return tags
             })
