@@ -1,6 +1,83 @@
 import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
+import { Subscription } from 'rxjs'
 
 import { MapService } from './map.service'
+
+describe('MapService lifecycle', () => {
+    const setPrivate = (service: MapService, key: string, value: unknown) => {
+        Object.defineProperty(service, key, {
+            value,
+            writable: true,
+            configurable: true,
+        })
+    }
+
+    it('tears one map session down exactly once', () => {
+        const service = Object.create(MapService.prototype) as MapService
+        const removeMap = vi.fn()
+        const removePositionMarker = vi.fn()
+        const removeMoveMarker = vi.fn()
+        const firstCleanup = vi.fn()
+        const secondCleanup = vi.fn()
+        const unsubscribeSession = vi.fn()
+        const unsubscribeInit = vi.fn()
+        service.map = { remove: removeMap } as unknown as MapLibreMap
+        service.layersAreLoaded = true
+        service.markerPositionate = {
+            remove: removePositionMarker,
+        } as never
+        service.markerMove = { remove: removeMoveMarker } as never
+        setPrivate(service, 'mapCreated', true)
+        setPrivate(service, 'styleReady', true)
+        setPrivate(service, 'markerMovingState', { set: vi.fn() })
+        setPrivate(service, 'markerMoveMovingState', { set: vi.fn() })
+        setPrivate(
+            service,
+            'mapSessionSubscriptions',
+            new Subscription(unsubscribeSession)
+        )
+        setPrivate(
+            service,
+            'mapInitSubscription',
+            new Subscription(unsubscribeInit)
+        )
+        setPrivate(service, 'mapEventCleanup', [firstCleanup, secondCleanup])
+
+        service.destroyMap()
+        service.destroyMap()
+
+        expect(unsubscribeInit).toHaveBeenCalledOnce()
+        expect(unsubscribeSession).toHaveBeenCalledOnce()
+        expect(secondCleanup).toHaveBeenCalledBefore(firstCleanup)
+        expect(removePositionMarker).toHaveBeenCalledOnce()
+        expect(removeMoveMarker).toHaveBeenCalledOnce()
+        expect(removeMap).toHaveBeenCalledOnce()
+        expect(service.layersAreLoaded).toBe(false)
+    })
+
+    it('replaces movement markers instead of accumulating sessions', () => {
+        const service = Object.create(MapService.prototype) as MapService
+        const firstMarker = { addTo: vi.fn(), remove: vi.fn() }
+        const secondMarker = { addTo: vi.fn(), remove: vi.fn() }
+        service.map = {
+            getCenter: () => ({ lng: 2, lat: 48 }),
+        } as unknown as MapLibreMap
+        setPrivate(service, 'markerMovingState', { set: vi.fn() })
+        setPrivate(service, 'markerMoveMovingState', { set: vi.fn() })
+        vi.spyOn(service, 'createDomMoveMarker')
+            .mockReturnValueOnce(firstMarker as never)
+            .mockReturnValueOnce(secondMarker as never)
+
+        service.positionateMarker()
+        service.positionateMarker()
+        service.cancelNewMarker()
+
+        expect(firstMarker.addTo).toHaveBeenCalledOnce()
+        expect(firstMarker.remove).toHaveBeenCalledOnce()
+        expect(secondMarker.addTo).toHaveBeenCalledOnce()
+        expect(secondMarker.remove).toHaveBeenCalledOnce()
+    })
+})
 
 describe('MapService filters', () => {
     function createService(): MapService {

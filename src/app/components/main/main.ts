@@ -712,6 +712,7 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         this.resizeObserver?.disconnect()
         void this.backButtonListener?.remove()
         window.removeEventListener('popstate', this.handlePopState)
+        this.mapService.destroyMap()
     }
 
     private openRequestedObject(): void {

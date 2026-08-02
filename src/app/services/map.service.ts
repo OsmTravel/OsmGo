@@ -40,13 +40,14 @@ import {
     type LngLatLike,
     Map,
     type MapGeoJSONFeature,
+    type MapMouseEvent,
     Marker,
     NavigationControl,
     type RasterSourceSpecification,
     ScaleControl,
     type StyleSpecification,
 } from 'maplibre-gl'
-import { type Observable, of, Subject } from 'rxjs'
+import { type Observable, Subject, Subscription } from 'rxjs'
 import { debounceTime, filter, map, throttleTime } from 'rxjs/operators'
 import type { ModalDismissData } from '../components/modal/modal'
 
@@ -81,6 +82,11 @@ export class MapService {
     readonly loadingData = this.loadingDataState.asReadonly()
     private readonly processingState = signal(false)
     readonly isProcessing = this.processingState.asReadonly()
+    private mapCreated = false
+    private styleReady = false
+    private mapInitSubscription?: Subscription
+    private mapSessionSubscriptions = new Subscription()
+    private mapEventCleanup: Array<() => void> = []
 
     spritesCache: HTMLImageElement | undefined
     constructor() {
@@ -99,17 +105,22 @@ export class MapService {
         spriteImage.src = pathSprites
 
         this.locationService.locationReady$.subscribe(() => {
-            if (this.map && this.configService.config().centerWhenGpsIsReady) {
+            if (
+                this.mapCreated &&
+                this.configService.config().centerWhenGpsIsReady
+            ) {
                 this.map.setZoom(19)
             }
         })
 
         this.markerRedraw$.subscribe((geojson) => {
+            if (!this.mapCreated || !this.layersAreLoaded) return
+            const activeMap = this.map
             const missingMarker: string[] = []
             for (const feature of geojson.features) {
                 const marker = feature.properties.marker
                 if (
-                    !this.map.hasImage(marker) &&
+                    !activeMap.hasImage(marker) &&
                     !missingMarker.includes(marker)
                 ) {
                     missingMarker.push(marker)
@@ -118,6 +129,7 @@ export class MapService {
             const t1 = new Date().getTime()
             this.addMissingIconsToMap(missingMarker)
                 .then(() => {
+                    if (!this.mapCreated || this.map !== activeMap) return
                     console.log(
                         'addMissingIconsToMap TIME',
                         new Date().getTime() - t1,
@@ -125,7 +137,7 @@ export class MapService {
                         missingMarker.length
                     )
                     if (geojson) {
-                        const source = this.map.getSource(
+                        const source = activeMap.getSource(
                             'data'
                         ) as GeoJSONSource
                         source.setData(geojson)
@@ -139,11 +151,13 @@ export class MapService {
 
         this.changedMarkerRedraw$.subscribe(
             (geojson: OsmGoFeatureCollection) => {
+                if (!this.mapCreated || !this.layersAreLoaded) return
+                const activeMap = this.map
                 const missingMarker: string[] = []
                 for (const feature of geojson.features) {
                     const marker = feature.properties.marker
                     if (
-                        !this.map.hasImage(marker) &&
+                        !activeMap.hasImage(marker) &&
                         !missingMarker.includes(marker)
                     ) {
                         missingMarker.push(marker)
@@ -152,12 +166,13 @@ export class MapService {
                 const t1 = new Date().getTime()
                 this.addMissingIconsToMap(missingMarker)
                     .then(() => {
+                        if (!this.mapCreated || this.map !== activeMap) return
                         console.log(
                             'addMissingIconsToMapChange TIME',
                             new Date().getTime() - t1
                         )
                         if (geojson) {
-                            const source = this.map.getSource(
+                            const source = activeMap.getSource(
                                 'data_changed'
                             ) as GeoJSONSource
                             source.setData(geojson)
@@ -171,6 +186,7 @@ export class MapService {
         )
 
         this.mapMove$.pipe(debounceTime(700)).subscribe(() => {
+            if (!this.mapCreated) return
             const mapCenter = this.map.getCenter()
             const mapBearing = this.map.getBearing()
             const mapZoom = this.map.getZoom()
@@ -185,7 +201,7 @@ export class MapService {
     }
 
     map!: Map
-    markerMove!: OsmGoMarker<OsmGoFeature<Point>>
+    markerMove?: OsmGoMarker<OsmGoFeature<Point>>
     private readonly markerMoveMovingState = signal(false)
     readonly markerMoveMoving = this.markerMoveMovingState.asReadonly()
     mode: MapMode = 'Update'
@@ -222,13 +238,11 @@ export class MapService {
 
     attributionControl!: AttributionControl
 
-    private readonly markerMoveSubject = new Subject<LngLat>()
-    readonly markerMove$ = this.markerMoveSubject.asObservable()
     private readonly mapMoveSubject = new Subject<void>()
     readonly mapMove$ = this.mapMoveSubject.asObservable()
     private readonly markerMovingState = signal(false)
     readonly markerMoving = this.markerMovingState.asReadonly()
-    markerPositionate!: OsmGoMarker<string>
+    markerPositionate?: OsmGoMarker<string>
     markerMaplibreUnknown: Record<string, LoadedMapImage> = {}
 
     setIsProcessing(isProcessing: boolean): void {
@@ -508,24 +522,22 @@ export class MapService {
         this.map.setPaintProperty('location_circle', 'circle-radius', pxRadius)
     }
     positionateMarker(): void {
+        this.endMarkerMovement()
         this.markerPositionate = this.createDomMoveMarker(
             [this.map.getCenter().lng, this.map.getCenter().lat],
             ''
         )
         this.markerMovingState.set(true)
         this.markerPositionate.addTo(this.map)
-        this.markerMove$.subscribe((center) => {
-            this.markerPositionate.setLngLat(center)
-        })
     }
 
     openModalOsm(
         lngLat?: LngLat,
         tags?: Record<string, string | number>
     ): void {
-        this.markerMovingState.set(false)
-        if (this.markerPositionate) this.markerPositionate?.remove()
-        const coords = lngLat ? lngLat : this.markerPositionate.getLngLat()
+        const coords = lngLat ?? this.markerPositionate?.getLngLat()
+        if (!coords) return
+        this.endMarkerMovement()
         let newTag: Record<string, string | number>
 
         if (tags) {
@@ -553,11 +565,11 @@ export class MapService {
     }
 
     cancelNewMarker(): void {
-        this.markerMovingState.set(false)
-        this.markerPositionate.remove()
+        this.endMarkerMovement()
     }
 
     openModalWithNewPosition(): void {
+        if (!this.markerMove) return
         this.markerMoveMovingState.set(false)
         this.markerMove.remove()
         const geojson = this.markerMove.data
@@ -572,9 +584,11 @@ export class MapService {
             newPosition: true,
             origineData: origineData,
         })
+        this.markerMove = undefined
     }
 
     cancelNewPosition(): void {
+        if (!this.markerMove) return
         this.markerMoveMovingState.set(false)
         const geojson = this.markerMove.data
         const origineData = geojson.properties.changeType
@@ -586,6 +600,16 @@ export class MapService {
             origineData: origineData,
         })
         this.markerMove.remove()
+        this.markerMove = undefined
+    }
+
+    private endMarkerMovement(): void {
+        this.markerMovingState.set(false)
+        this.markerMoveMovingState.set(false)
+        this.markerPositionate?.remove()
+        this.markerMove?.remove()
+        this.markerPositionate = undefined
+        this.markerMove = undefined
     }
 
     createDomMoveMarker<T>(coord: LngLatLike, data: T): OsmGoMarker<T> {
@@ -623,7 +647,14 @@ export class MapService {
     }
 
     initMap(config: Config): void {
-        this.getMapStyle().subscribe((mapStyle) => {
+        if (
+            this.mapCreated ||
+            (this.mapInitSubscription && !this.mapInitSubscription.closed)
+        ) {
+            return
+        }
+        this.mapInitSubscription = this.getMapStyle().subscribe((mapStyle) => {
+            if (this.mapCreated) return
             const canvas = this.document.createElement('canvas')
             if (!canvas.getContext('webgl2')) {
                 this.alertService.showAlert(
@@ -635,7 +666,7 @@ export class MapService {
             this.positionIsFollow = config.centerWhenGpsIsReady
             this.headingIsLocked = config.centerWhenGpsIsReady
             this.zone.runOutsideAngular(() => {
-                this.map = new Map({
+                const activeMap = new Map({
                     container: 'map',
                     style: mapStyle as StyleSpecification,
                     center: [config.lastView.lng, config.lastView.lat],
@@ -650,118 +681,136 @@ export class MapService {
                     pitchWithRotate: false,
                     collectResourceTiming: false,
                 })
-                this.configService.setCurrentZoom(this.map.getZoom())
+                this.map = activeMap
+                this.mapCreated = true
+                this.styleReady = false
+                this.layersAreLoaded = false
+                this.configService.setCurrentZoom(activeMap.getZoom())
 
-                this.map.addControl(new NavigationControl())
-
+                activeMap.addControl(new NavigationControl())
                 this.attributionControl = new AttributionControl({
                     customAttribution: '',
                 })
+                activeMap.addControl(this.attributionControl)
+                activeMap.addControl(
+                    new ScaleControl({ maxWidth: 160, unit: 'metric' })
+                )
 
-                this.map.addControl(this.attributionControl)
-
-                const scale = new ScaleControl({
-                    maxWidth: 160,
-                    unit: 'metric',
-                })
-                this.map.addControl(scale)
-
-                this.map.on('load', async () => {
+                const onLoad = (): void => {
+                    if (!this.mapCreated || this.map !== activeMap) return
+                    this.styleReady = true
                     this.mapIsLoaded()
-                    return of(this.map)
-                })
-
-                this.map.on('move', (e) => {
+                }
+                const onMove = (): void => {
+                    if (!this.mapCreated || this.map !== activeMap) return
                     this.mapMoveSubject.next()
-                    if (this.markerMoving() || this.markerMoveMoving()) {
-                        this.markerMoveSubject.next(this.map.getCenter())
+                    const center = activeMap.getCenter()
+                    if (this.markerMoving()) {
+                        this.markerPositionate?.setLngLat(center)
                     }
-                })
-
-                this.map.on('moveend', () => {
-                    this.setCenterInUrl()
-                })
-
-                this.map.on('zoom', (e) => {
+                    if (this.markerMoveMoving()) {
+                        this.markerMove?.setLngLat(center)
+                    }
+                }
+                const onMoveEnd = (): void => {
+                    if (this.mapCreated && this.map === activeMap) {
+                        this.setCenterInUrl()
+                    }
+                }
+                const onZoom = (): void => {
+                    if (!this.mapCreated || this.map !== activeMap) return
+                    this.configService.setCurrentZoom(activeMap.getZoom())
                     const location = this.locationService.location()
-                    if (this.layersAreLoaded && location) {
-                        if (location.coords.accuracy) {
-                            this.changeLocationRadius(
-                                location.coords.accuracy,
-                                false
-                            )
+                    if (this.layersAreLoaded && location?.coords.accuracy) {
+                        this.changeLocationRadius(
+                            location.coords.accuracy,
+                            false
+                        )
+                    }
+                }
+                activeMap.on('load', onLoad)
+                activeMap.on('move', onMove)
+                activeMap.on('moveend', onMoveEnd)
+                activeMap.on('zoom', onZoom)
+                this.mapEventCleanup.push(
+                    () => activeMap.off('load', onLoad),
+                    () => activeMap.off('move', onMove),
+                    () => activeMap.off('moveend', onMoveEnd),
+                    () => activeMap.off('zoom', onZoom)
+                )
+
+                this.mapSessionSubscriptions.add(
+                    this.bboxChanged$.subscribe((geojsonPolygon) => {
+                        if (!this.layersAreLoaded || this.map !== activeMap) {
+                            return
                         }
+                        const source = activeMap.getSource('bbox') as
+                            | GeoJSONSource
+                            | undefined
+                        source?.setData(geojsonPolygon)
+                    })
+                )
+                this.mapSessionSubscriptions.add(
+                    this.moveElement$.subscribe((data) => {
+                        if (
+                            this.map !== activeMap ||
+                            !data.mode ||
+                            !data.geojson ||
+                            data.geojson.geometry.type !== 'Point'
+                        ) {
+                            return
+                        }
+                        this.endMarkerMovement()
+                        this.mode = data.mode
+                        const pointFeature = data.geojson as OsmGoFeature<Point>
+                        const coordinates = pointFeature.geometry
+                            .coordinates as LngLatLike
+                        activeMap.setCenter(coordinates)
+                        this.markerMove = this.createDomMoveMarker(
+                            coordinates,
+                            pointFeature
+                        )
+                        this.markerMoveMovingState.set(true)
+                        this.markerMove.addTo(activeMap)
+                    })
+                )
+
+                const initialFeatures = [
+                    ...this.dataService.geojson.features,
+                    ...this.dataService.geojsonChanged.features,
+                ]
+                const missingMarkers = [
+                    ...new Set(
+                        initialFeatures
+                            .map((feature) => feature.properties.marker)
+                            .filter((marker) => !activeMap.hasImage(marker))
+                    ),
+                ]
+                this.addMissingIconsToMap(missingMarkers).catch((error) => {
+                    if (this.mapCreated && this.map === activeMap) {
+                        console.error(error)
                     }
                 })
-
-                const initStorageGeojson = this.dataService.geojson
-                const initStorageGeojsonChanged =
-                    this.dataService.geojsonChanged
-                const missingMarker: string[] = []
-                for (const feature of initStorageGeojson.features) {
-                    const marker = feature.properties.marker
-                    if (
-                        !this.map.hasImage(marker) &&
-                        !missingMarker.includes(marker)
-                    ) {
-                        missingMarker.push(marker)
-                    }
-                }
-                for (const feature of initStorageGeojsonChanged.features) {
-                    const marker = feature.properties.marker
-                    if (
-                        !this.map.hasImage(marker) &&
-                        !missingMarker.includes(marker)
-                    ) {
-                        missingMarker.push(marker)
-                    }
-                }
-                const t1 = new Date().getTime()
-                this.addMissingIconsToMap(missingMarker)
-                    .then((d) => {
-                        console.log(
-                            'addMissingIconsToMap INIT TIME',
-                            new Date().getTime() - t1,
-                            'count :',
-                            missingMarker.length
-                        )
-                    })
-                    .catch((err) => {
-                        console.error(err)
-                    })
-                    .finally(() => {
-                        this.bboxChanged$.subscribe((geojsonPolygon) => {
-                            const mapSource = this.map.getSource(
-                                'bbox'
-                            ) as GeoJSONSource
-                            mapSource.setData(geojsonPolygon)
-                        })
-                    })
             })
         })
+    }
 
-        this.moveElement$.subscribe((data) => {
-            if (!data.mode || !data.geojson) {
-                return
-            }
-            this.mode = data.mode
-            const geojson = data.geojson
-            if (geojson.geometry.type !== 'Point') {
-                return
-            }
-            const pointFeature = geojson as OsmGoFeature<Point>
-            const coordinates = pointFeature.geometry.coordinates as LngLatLike
-            this.map.setCenter(coordinates)
-            this.markerMove = this.createDomMoveMarker(
-                coordinates,
-                pointFeature
-            )
-            this.markerMoveMovingState.set(true)
-            this.markerMove.addTo(this.map)
-            this.markerMove$.subscribe((center) => {
-                this.markerMove.setLngLat(center)
-            })
-        })
+    destroyMap(): void {
+        this.mapInitSubscription?.unsubscribe()
+        this.mapInitSubscription = undefined
+        this.mapSessionSubscriptions.unsubscribe()
+        this.mapSessionSubscriptions = new Subscription()
+        this.endMarkerMovement()
+        const activeMap = this.mapCreated ? this.map : undefined
+        this.mapCreated = false
+        this.styleReady = false
+        this.layersAreLoaded = false
+        for (const cleanup of this.mapEventCleanup.splice(0).reverse()) {
+            cleanup()
+        }
+        activeMap?.remove()
+        this.lastRenderedHeading = null
+        this.isFirstPosition = true
     }
 
     setCenterInUrl(): void {
@@ -919,6 +968,7 @@ export class MapService {
     }
 
     mapIsLoaded(): void {
+        if (!this.mapCreated || !this.styleReady || this.layersAreLoaded) return
         const minzoom = 14
 
         this.map.addSource('bbox', {
@@ -945,10 +995,6 @@ export class MapService {
             type: 'geojson',
             data: { type: 'FeatureCollection', features: [] },
         })
-
-        this.redrawBbox(this.dataService.getGeojsonBbox())
-        this.redrawChangedMarkers(this.dataService.geojsonChanged)
-        this.redrawMarkers(this.dataService.geojson)
 
         this.map.addLayer({
             id: 'bboxLayer',
@@ -1194,6 +1240,10 @@ export class MapService {
 
         this.layersAreLoaded = true
 
+        this.redrawBbox(this.dataService.getGeojsonBbox())
+        this.redrawChangedMarkers(this.dataService.geojsonChanged)
+        this.redrawMarkers(this.dataService.geojson)
+
         this.filterMakerByIds(this.tagsService.hiddenTagsIds())
 
         const configOldTagIcon = this.configService.getOldTagsIcon()
@@ -1220,8 +1270,10 @@ export class MapService {
             this.map
         )
 
-        this.map.on('click', async (e) => {
-            const features = this.map.queryRenderedFeatures(e.point, {
+        const activeMap = this.map
+        const onClick = async (event: MapMouseEvent): Promise<void> => {
+            if (!this.mapCreated || this.map !== activeMap) return
+            const features = activeMap.queryRenderedFeatures(event.point, {
                 layers: this.configService.selecableLayers,
             })
             if (!features.length) {
@@ -1250,14 +1302,15 @@ export class MapService {
             } else {
                 this.selectFeature(uniqFeaturesById[0])
             }
-        })
+        }
 
-        this.map.on('touchmove', (e) => {
+        const onTouchMove = (): void => {
             this.headingIsLocked = false
             this.positionIsFollow = false
-        })
+        }
 
-        this.map.on('rotate', () => {
+        const onRotate = (): void => {
+            if (!this.mapCreated || this.map !== activeMap) return
             const trueHeading =
                 this.locationService.compassHeading().trueHeading
             if (
@@ -1267,97 +1320,110 @@ export class MapService {
             ) {
                 const iconRotate = this.getIconRotate(
                     trueHeading,
-                    this.map.getBearing()
+                    activeMap.getBearing()
                 )
-                this.map.setLayoutProperty(
+                activeMap.setLayoutProperty(
                     'location_user',
                     'icon-rotate',
                     iconRotate
                 )
             }
-        })
+        }
+        activeMap.on('click', onClick)
+        activeMap.on('touchmove', onTouchMove)
+        activeMap.on('rotate', onRotate)
+        this.mapEventCleanup.push(
+            () => activeMap.off('click', onClick),
+            () => activeMap.off('touchmove', onTouchMove),
+            () => activeMap.off('rotate', onRotate)
+        )
 
-        this.map.on('zoom', () => {
-            this.configService.setCurrentZoom(this.map.getZoom())
-        })
-
-        this.locationService.compassHeadingChanges$
-            .pipe(
-                filter((heading): heading is HeadingWithTrueHeading => {
-                    if (heading.trueHeading === null) return false
-                    return (
-                        this.lastRenderedHeading === null ||
-                        Math.abs(
-                            heading.trueHeading - this.lastRenderedHeading
-                        ) > 1
-                    )
-                }),
-                throttleTime(100)
-            )
-            .subscribe((heading) => {
-                if (this.lastRenderedHeading === null) {
-                    this.map.setLayoutProperty(
-                        'location_user',
-                        'icon-image',
-                        'location-with-orientation'
-                    )
-                }
-                this.lastRenderedHeading = heading.trueHeading
-
-                if (
-                    this.configService.config().lockMapHeading &&
-                    this.headingIsLocked
-                ) {
-                    this.map.rotateTo(heading.trueHeading)
-                    this.map.setLayoutProperty(
-                        'location_user',
-                        'icon-rotate',
-                        0
-                    )
-                } else {
-                    const iconRotate = this.getIconRotate(
-                        heading.trueHeading,
-                        this.map.getBearing()
-                    )
-
-                    this.map.setLayoutProperty(
-                        'location_user',
-                        'icon-rotate',
-                        iconRotate
-                    )
-                }
-            })
-
-        this.locationService.newLocation$.subscribe(
-            (geojsonPos: FeatureCollection) => {
-                if (geojsonPos.features && geojsonPos.features[0].properties) {
-                    const coordinates = (
-                        geojsonPos.features[0].geometry as Point
-                    ).coordinates as LngLatLike
-                    const locationSource = this.map.getSource(
-                        'location_circle'
-                    ) as GeoJSONSource
-                    locationSource.setData(geojsonPos)
-
-                    if (geojsonPos.features[0].properties?.accuracy) {
-                        this.changeLocationRadius(
-                            geojsonPos.features[0].properties?.accuracy,
-                            true
+        this.mapSessionSubscriptions.add(
+            this.locationService.compassHeadingChanges$
+                .pipe(
+                    filter((heading): heading is HeadingWithTrueHeading => {
+                        if (heading.trueHeading === null) return false
+                        return (
+                            this.lastRenderedHeading === null ||
+                            Math.abs(
+                                heading.trueHeading - this.lastRenderedHeading
+                            ) > 1
+                        )
+                    }),
+                    throttleTime(100)
+                )
+                .subscribe((heading) => {
+                    if (!this.mapCreated || this.map !== activeMap) return
+                    if (this.lastRenderedHeading === null) {
+                        activeMap.setLayoutProperty(
+                            'location_user',
+                            'icon-image',
+                            'location-with-orientation'
                         )
                     }
+                    this.lastRenderedHeading = heading.trueHeading
 
                     if (
-                        this.configService.config().followPosition &&
-                        this.positionIsFollow
+                        this.configService.config().lockMapHeading &&
+                        this.headingIsLocked
                     ) {
-                        this.map.setCenter(coordinates)
-                        if (this.isFirstPosition) {
-                            this.map.setZoom(18)
-                            this.isFirstPosition = false
+                        activeMap.rotateTo(heading.trueHeading)
+                        activeMap.setLayoutProperty(
+                            'location_user',
+                            'icon-rotate',
+                            0
+                        )
+                    } else {
+                        const iconRotate = this.getIconRotate(
+                            heading.trueHeading,
+                            activeMap.getBearing()
+                        )
+
+                        activeMap.setLayoutProperty(
+                            'location_user',
+                            'icon-rotate',
+                            iconRotate
+                        )
+                    }
+                })
+        )
+
+        this.mapSessionSubscriptions.add(
+            this.locationService.newLocation$.subscribe(
+                (geojsonPos: FeatureCollection) => {
+                    if (!this.mapCreated || this.map !== activeMap) return
+                    if (
+                        geojsonPos.features &&
+                        geojsonPos.features[0].properties
+                    ) {
+                        const coordinates = (
+                            geojsonPos.features[0].geometry as Point
+                        ).coordinates as LngLatLike
+                        const locationSource = activeMap.getSource(
+                            'location_circle'
+                        ) as GeoJSONSource
+                        locationSource.setData(geojsonPos)
+
+                        if (geojsonPos.features[0].properties?.accuracy) {
+                            this.changeLocationRadius(
+                                geojsonPos.features[0].properties?.accuracy,
+                                true
+                            )
+                        }
+
+                        if (
+                            this.configService.config().followPosition &&
+                            this.positionIsFollow
+                        ) {
+                            activeMap.setCenter(coordinates)
+                            if (this.isFirstPosition) {
+                                activeMap.setZoom(18)
+                                this.isFirstPosition = false
+                            }
                         }
                     }
                 }
-            }
+            )
         )
 
         // Location may be ready before the map finishes loading.
