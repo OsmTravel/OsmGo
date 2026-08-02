@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    OnInit,
-} from '@angular/core'
+import { Component, input, signal } from '@angular/core'
 
 interface SpritePosition {
     height: number
@@ -16,16 +11,9 @@ interface SpritePosition {
     selector: 'app-icon',
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
 })
-export class IconComponent implements OnInit {
+export class IconComponent {
     readonly jsonSprites = input.required<Record<string, SpritePosition>>()
     readonly icon = input(undefined)
-    currentSpriteConfig
-    styleBackgroundPosition
-    devicePixelRatio
-
-    ngOnInit() {
-        this.devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-    }
+    readonly devicePixelRatio = signal(window.devicePixelRatio > 1 ? 2 : 1)
 }
