@@ -1,9 +1,8 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
-    Output,
+    output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
@@ -58,8 +57,10 @@ import {
     ],
 })
 export class EditOtherTag {
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() tag
-    @Output() deleteTag = new EventEmitter()
+    readonly deleteTag = output<unknown>()
 
     eventDeleteTag() {
         this.deleteTag.emit(this.tag)

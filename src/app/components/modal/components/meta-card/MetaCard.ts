@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common'
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input, input } from '@angular/core'
 import { IonCard, IonCardContent } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { RelativeTimePipe } from '@pipes/relative-time.pipe'
@@ -18,10 +18,16 @@ import { RelativeTimePipe } from '@pipes/relative-time.pipe'
     ],
 })
 export class MetaCard {
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() feature
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() lastSurvey
-    @Input() displayCode
-    @Input() languageUi
+    readonly displayCode = input(undefined)
+    readonly languageUi = input(undefined)
     meta
     usedByWays
 

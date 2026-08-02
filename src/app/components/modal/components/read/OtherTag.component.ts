@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, input } from '@angular/core'
 import {
     IonCard,
     IonCardContent,
@@ -11,10 +11,10 @@ import {
     template: `
         <ion-card>
             <ion-card-header>
-                <b>{{ tag.key }}</b>
+                <b>{{ tag().key }}</b>
             </ion-card-header>
             <ion-card-content>
-                <p><ion-icon name="code"></ion-icon> {{ tag.value }}</p>
+                <p><ion-icon name="code"></ion-icon> {{ tag().value }}</p>
             </ion-card-content>
         </ion-card>
     `,
@@ -22,5 +22,5 @@ import {
     imports: [IonCard, IonCardContent, IonCardHeader, IonIcon],
 })
 export class ReadOtherTag {
-    @Input() tag
+    readonly tag = input(undefined)
 }

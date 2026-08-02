@@ -1,10 +1,9 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
     OnInit,
-    Output,
+    output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
@@ -42,12 +41,22 @@ import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
     ],
 })
 export class SelectComponent implements OnInit {
+    // TODO: Skipped for migration because:
+    //  Class of this input is manually instantiated. This is discouraged and prevents
+    //  migration.
     @Input() displayCode
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() tag
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() preset
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() language
 
-    @Output() addTags = new EventEmitter()
+    readonly addTags = output<Record<string, string>>()
 
     constructor() {}
 

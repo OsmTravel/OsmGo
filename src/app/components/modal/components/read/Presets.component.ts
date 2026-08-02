@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core'
+import { ChangeDetectionStrategy, Component, Input, input } from '@angular/core'
 import {
     IonCard,
     IonCardContent,
@@ -22,11 +22,20 @@ import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
     ],
 })
 export class ReadPresets {
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() displayCode
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() tag
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() preset
-    @Input() language
-    @Input() countryCode
+    readonly language = input(undefined)
+    readonly countryCode = input(undefined)
 
     ngOnInit(): void {}
 }

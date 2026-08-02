@@ -1,3 +1,4 @@
+import { TestBed } from '@angular/core/testing'
 import { SelectComponent } from './select.component'
 
 describe('SelectComponent', () => {
@@ -9,7 +10,9 @@ describe('SelectComponent', () => {
     }
 
     function createComponent(tag) {
-        const component = new SelectComponent()
+        const component = TestBed.runInInjectionContext(
+            () => new SelectComponent()
+        )
         component.preset = genderPreset
         component.tag = tag
         return component

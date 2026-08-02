@@ -1,10 +1,10 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
+    input,
     OnInit,
-    Output,
+    output,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonButton, IonIcon } from '@ionic/angular/standalone'
@@ -26,30 +26,37 @@ import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
     ],
 })
 export class TagListElementComponent implements OnInit {
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() tag: any
-    @Input() countryTags
-    @Input() languageTags
+    readonly countryTags = input(undefined)
+    readonly languageTags = input(undefined)
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() jsonSprites
-    @Input() geometriesFilter: string[]
-    @Input() bookmarksIds: string[]
+    readonly geometriesFilter = input<string[]>(undefined)
+    readonly bookmarksIds = input<string[]>(undefined)
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() oldTagConfig: TagConfig
-    @Input() isHiddenTag: boolean
-    @Input() showHideTagButton: boolean
+    readonly isHiddenTag = input<boolean>(undefined)
+    readonly showHideTagButton = input<boolean>(undefined)
 
-    @Output() removeBookmark = new EventEmitter()
-    @Output() addBookmark = new EventEmitter()
-    @Output() removeHiddenTag = new EventEmitter()
-    @Output() addHiddenTag = new EventEmitter()
+    readonly removeBookmark = output<TagConfig>()
+    readonly addBookmark = output<TagConfig>()
+    readonly removeHiddenTag = output<TagConfig>()
+    readonly addHiddenTag = output<TagConfig>()
 
     constructor() {}
 
     ngOnInit() {}
 
-    @Output() selected = new EventEmitter()
+    readonly selected = output<TagConfig>()
 
     isBookMarked(tag) {
         // TODO pipe
-        return this.bookmarksIds.includes(tag.id)
+        return this.bookmarksIds().includes(tag.id)
     }
 
     addOrRemoveBookmark(tag) {

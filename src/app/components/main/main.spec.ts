@@ -1,3 +1,4 @@
+import { TestBed } from '@angular/core/testing'
 import { Subject, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
@@ -28,28 +29,31 @@ const createPage = ({
     }
     const router = { events: new Subject() }
     const ngZone = { run: (callback) => callback() }
-    const page = new MainPage(
-        {} as any,
-        modalCtrl as any,
-        {} as any,
-        {} as any,
-        osmApi as any,
-        {} as any,
-        resolvedMapService as any,
-        dataService as any,
-        {} as any,
-        resolvedAlertService as any,
-        resolvedConfigService as any,
-        {} as any,
-        ngZone as any,
-        router as any,
-        {} as any,
-        {} as any,
-        {} as any,
-        {} as any,
-        {} as any,
-        {} as any,
-        changeDetectorRef as any
+    const page = TestBed.runInInjectionContext(
+        () =>
+            new MainPage(
+                {} as any,
+                modalCtrl as any,
+                {} as any,
+                {} as any,
+                osmApi as any,
+                {} as any,
+                resolvedMapService as any,
+                dataService as any,
+                {} as any,
+                resolvedAlertService as any,
+                resolvedConfigService as any,
+                {} as any,
+                ngZone as any,
+                router as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                {} as any,
+                changeDetectorRef as any
+            )
     )
 
     return {

@@ -1,10 +1,10 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
+    input,
     OnInit,
-    Output,
+    output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
@@ -42,11 +42,13 @@ const builder = new OpeningHoursBuilder()
     ],
 })
 export class OpeningHoursComponent implements OnInit {
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() openingHours
-    @Input() displayCode
-    @Input() editMode = false
+    readonly displayCode = input(undefined)
+    readonly editMode = input(false)
 
-    @Output() valueChangeEvent = new EventEmitter()
+    readonly valueChangeEvent = output<string>()
 
     constructor(
         public modalCtrl: ModalController,

@@ -1,9 +1,8 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
-    Output,
+    output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
@@ -41,13 +40,23 @@ import { SelectComponent } from '../select/select.component'
     ],
 })
 export class EditPresets {
+    // TODO: Skipped for migration because:
+    //  Class of this input is manually instantiated. This is discouraged and prevents
+    //  migration.
     @Input() displayCode
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() tag
+    // TODO: Skipped for migration because:
+    //  Class of this input is manually instantiated. This is discouraged and prevents
+    //  migration.
     @Input() language
+    // TODO: Skipped for migration because:
+    //  Your application code writes to the input. This prevents migration.
     @Input() preset
 
-    @Output() openPrimaryListModal = new EventEmitter()
-    @Output() addTags = new EventEmitter()
+    readonly openPrimaryListModal = output<unknown>()
+    readonly addTags = output<Record<string, string>>()
 
     get isMultiKeyPreset(): boolean {
         return (

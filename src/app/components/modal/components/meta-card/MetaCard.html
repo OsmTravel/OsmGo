@@ -11,14 +11,14 @@
             {{ feature.properties.meta?.version > 1 ?
             ('MODAL_SELECTED_ITEM.META_UPDATED_AT_DATE' | translate) :
             ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' | translate) }} @if
-            (displayCode) {
+            (displayCode()) {
             <span>
                 {{ feature.properties.meta.timestamp | date: 'short' }}
             </span>
-            } @if (!displayCode) {
+            } @if (!displayCode()) {
             <span>
-                {{ feature.properties.meta.timestamp | relativeTime: languageUi
-                }}
+                {{ feature.properties.meta.timestamp | relativeTime:
+                languageUi() }}
             </span>
             }
         </p>
@@ -31,9 +31,9 @@
         @if (lastSurvey) {
         <p>
             {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }} @if
-            (!displayCode) {
-            <span> {{ lastSurvey | relativeTime: languageUi }} </span>
-            } @if (displayCode) {
+            (!displayCode()) {
+            <span> {{ lastSurvey | relativeTime: languageUi() }} </span>
+            } @if (displayCode()) {
             <span> {{ lastSurvey | date: 'short'}} </span>
             }
         </p>

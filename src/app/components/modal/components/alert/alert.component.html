@@ -33,7 +33,7 @@
     tagConfig?.warning &&
     (tagConfig?.warning[language] || tagConfig?.warning['en']) &&
     (!tagConfig.warningCountryCodes ||
-        tagConfig.warningCountryCodes.includes(countryCode))
+        tagConfig.warningCountryCodes.includes(countryCode()))
 ) {
     <ion-card class="warningtCard">
         <ion-card-content>

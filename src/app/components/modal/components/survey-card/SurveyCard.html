@@ -11,7 +11,7 @@
             fill="clear"
             color="danger"
             (click)="handleNo()"
-            [disabled]="feature.properties.type !== 'node'"
+            [disabled]="feature().properties.type !== 'node'"
         >
             <ion-icon name="close" slot="start"></ion-icon>
             {{ 'SHARED.NO' | translate }}

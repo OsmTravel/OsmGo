@@ -1,5 +1,5 @@
 <div class="iconWrapper">
-    @if (icon && jsonSprites[icon]; as conf) {
+    @if (icon() && jsonSprites[icon()]; as conf) {
         <div
             style="margin-left: auto; margin-right: auto"
             [style.width]="conf.width + 'px'"
@@ -8,7 +8,7 @@
             [className]="'spritesX' + devicePixelRatio"
         ></div>
     }
-    @if (!icon || !jsonSprites[icon]) {
+    @if (!icon() || !jsonSprites[icon()]) {
         <div
             style="margin-left: auto; margin-right: auto"
             [style.width]="jsonSprites['wiki-question'].width + 'px'"

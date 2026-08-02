@@ -1,10 +1,9 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
     NgZone,
-    Output,
+    output,
 } from '@angular/core'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import {
@@ -52,9 +51,15 @@ import { menuAnimations } from './menu.animations'
 export class MenuPage {
     private swipeStartX: number | null = null
 
-    @Output() closeEvent = new EventEmitter()
-    @Output() exitApp = new EventEmitter()
+    readonly closeEvent = output<void>()
+    readonly exitApp = output<void>()
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() menuIsOpen
+    // TODO: Skipped for migration because:
+    //  Class of this input is manually instantiated. This is discouraged and prevents
+    //  migration.
     @Input() newVersion
     constructor(
         public mapService: MapService,

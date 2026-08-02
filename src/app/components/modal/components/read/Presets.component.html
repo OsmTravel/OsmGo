@@ -1,7 +1,7 @@
 <ion-card>
     <ion-card-header>
         @if (!displayCode) {
-            <b>{{ preset?.lbl[language] || preset?.lbl['en'] }}</b>
+            <b>{{ preset?.lbl[language()] || preset?.lbl['en'] }}</b>
         }
         @if (displayCode) {
             <b>{{ preset?.key }}</b>
@@ -16,7 +16,7 @@
         <ion-card-content>
             @if (!displayCode && (tag | displayPresetLabel: preset); as pr) {
                 <p>
-                    {{ pr.lbl[language] || pr.lbl['en'] }}
+                    {{ pr.lbl[language()] || pr.lbl['en'] }}
                 </p>
             } @else {
                 @if (

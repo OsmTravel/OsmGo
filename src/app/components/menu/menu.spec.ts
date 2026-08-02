@@ -1,3 +1,4 @@
+import { TestBed } from '@angular/core/testing'
 import { MenuPage } from './menu'
 
 describe('MenuPage swipes', () => {
@@ -5,7 +6,21 @@ describe('MenuPage swipes', () => {
         ({ clientX }) as PointerEvent
 
     const createPage = (): MenuPage =>
-        new MenuPage(null, null, null, null, null, null, null, null, null, null)
+        TestBed.runInInjectionContext(
+            () =>
+                new MenuPage(
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                )
+        )
 
     it('closes the menu after a left swipe', () => {
         const page = createPage()

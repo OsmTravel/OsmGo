@@ -1,9 +1,8 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
-    Input,
-    Output,
+    input,
+    output,
 } from '@angular/core'
 import {
     IonButton,
@@ -21,10 +20,10 @@ import { TranslateModule } from '@ngx-translate/core'
     imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class SurveyCard {
-    @Output() yes = new EventEmitter()
-    @Output() no = new EventEmitter()
+    readonly yes = output<void>()
+    readonly no = output<void>()
 
-    @Input() feature
+    readonly feature = input(undefined)
     constructor() {}
 
     ngOnInit(): void {}

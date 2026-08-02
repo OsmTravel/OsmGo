@@ -1,6 +1,6 @@
-@if (intervals && !displayCode && !isError && !isTooComplex) {
+@if (intervals && !displayCode() && !isError && !isTooComplex) {
     <div>
-        @if (editMode) {
+        @if (editMode()) {
             <ion-button
                 (click)="openModalAddOpeningHours(null)"
                 size="small"
@@ -51,7 +51,7 @@
                                                             interval._end
                                                                 | minutesToHoursMinutes
                                                         }}
-                                                        @if (editMode) {
+                                                        @if (editMode()) {
                                                             <ion-icon
                                                                 (click)="
                                                                     deleteCurrentInterval(
@@ -95,7 +95,7 @@
         }
     </div>
 } @else {
-    @if (editMode) {
+    @if (editMode()) {
         <div class="wrapperEdit2cols">
             <div class="contentEdit2cols">
                 <ion-item style="padding-left: 0px">
@@ -117,7 +117,7 @@
             </div>
         </div>
     }
-    @if (!editMode) {
+    @if (!editMode()) {
         <div>
             {{ openingHours }}
             @if (isTooComplex) {

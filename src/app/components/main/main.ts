@@ -8,7 +8,7 @@ import {
     Component,
     ElementRef,
     NgZone,
-    ViewChild,
+    viewChild,
 } from '@angular/core'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
@@ -74,7 +74,7 @@ export class MainPage implements AfterViewInit {
     idOsmObjectOnStart?: string
     addOsmObjectOnStart?: { coords: LngLat; tags: any }
 
-    @ViewChild('map', { static: false }) mapElement: ElementRef
+    readonly mapElement = viewChild.required<ElementRef<HTMLElement>>('map')
 
     // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
@@ -388,17 +388,16 @@ export class MainPage implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        if (this.mapElement && this.mapElement.nativeElement) {
-            const observer = new ResizeObserver((entries) => {
-                for (const entry of entries) {
-                    if (entry.target === this.mapElement.nativeElement) {
-                        if (this.mapService.map) this.mapService.map.resize()
-                    }
+        const mapElement = this.mapElement()
+        const observer = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                if (entry.target === mapElement.nativeElement) {
+                    if (this.mapService.map) this.mapService.map.resize()
                 }
-            })
+            }
+        })
 
-            observer.observe(this.mapElement.nativeElement)
-        }
+        observer.observe(mapElement.nativeElement)
 
         //http://localhost:4200/#/main?id=node/11108970847
 

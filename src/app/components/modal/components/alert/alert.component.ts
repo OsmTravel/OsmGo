@@ -1,10 +1,10 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
+    input,
     OnInit,
-    Output,
+    output,
 } from '@angular/core'
 import {
     IonButton,
@@ -22,10 +22,16 @@ import { TranslateModule } from '@ngx-translate/core'
     imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class AlertComponent implements OnInit {
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() tagConfig
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() language
-    @Input() countryCode
-    @Output() fixDeprecated = new EventEmitter()
+    readonly countryCode = input(undefined)
+    readonly fixDeprecated = output<{ old: unknown; replace: unknown }>()
 
     constructor() {}
 

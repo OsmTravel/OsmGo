@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    @if (!isHiddenTag) {
+    @if (!isHiddenTag()) {
         <div
             (click)="addOrRemoveBookmark(tag)"
             style="width: 36px"
@@ -22,7 +22,7 @@
         >
             <ion-icon
                 [style.color]="
-                    (tag | isBookmarked: bookmarksIds) ? '#f71000' : '#d8d8d8'
+                    (tag | isBookmarked: bookmarksIds()) ? '#f71000' : '#d8d8d8'
                 "
                 name="heart"
                 item-left
@@ -33,7 +33,7 @@
 
     <div class="tag-text spacer" (click)="selected.emit(tag)">
         <b [style.color]="oldTagConfig?.id === tag.id ? '#3b22dd' : 'black'">{{
-            tag?.lbl ? (tag?.lbl)[languageTags] || (tag?.lbl)['en'] : null
+            tag?.lbl ? (tag?.lbl)[languageTags()] || (tag?.lbl)['en'] : null
         }}</b>
 
         <br />
@@ -44,7 +44,7 @@
         <span style="font-size: 11px; font-style: italic">
             {{
                 tag?.description
-                    ? (tag?.description)[languageTags] ||
+                    ? (tag?.description)[languageTags()] ||
                       (tag?.description)['en']
                     : ''
             }}
@@ -61,7 +61,7 @@
             ></ion-icon>
         </div>
     }
-    @if (isHiddenTag) {
+    @if (isHiddenTag()) {
         <div>
             <ion-button
                 class="ion-no-margin buttonUnhideTag"
@@ -72,7 +72,7 @@
             </ion-button>
         </div>
     }
-    @if (showHideTagButton) {
+    @if (showHideTagButton()) {
         <div>
             <ion-button
                 class="ion-no-margin buttonUnhideTag"

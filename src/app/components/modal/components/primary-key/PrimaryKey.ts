@@ -1,9 +1,9 @@
 import {
     ChangeDetectionStrategy,
     Component,
-    EventEmitter,
     Input,
-    Output,
+    input,
+    output,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonCard, IonCardContent, IonIcon } from '@ionic/angular/standalone'
@@ -18,16 +18,19 @@ import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
     imports: [DisplayTagsPipe, IconComponent, IonCard, IonCardContent, IonIcon],
 })
 export class PrimaryKey {
-    @Output() openPrimaryTagModal = new EventEmitter()
-    @Output() toggleBookmark = new EventEmitter()
+    readonly openPrimaryTagModal = output<void>()
+    readonly toggleBookmark = output<void>()
 
+    // TODO: Skipped for migration because:
+    //  This input is used in a control flow expression (e.g. `@if` or `*ngIf`)
+    //  and migrating would break narrowing currently.
     @Input() tagConfig
-    @Input() language
-    @Input() jsonSprites
-    @Input() isBookmarked
+    readonly language = input(undefined)
+    readonly jsonSprites = input(undefined)
+    readonly isBookmarked = input(undefined)
 
-    @Input() displayCode
-    @Input() isEditMode
+    readonly displayCode = input(undefined)
+    readonly isEditMode = input(undefined)
 
     ngOnInit(): void {}
     emitOpenModal() {
@@ -37,37 +40,3 @@ export class PrimaryKey {
         this.toggleBookmark.emit()
     }
 }
-
-/*
-@Component({
-  selector: 'read-primary-key',
-  styleUrls: ['../style.scss'],
-  templateUrl: 'PrimaryKey.component.html',
-})
-export class ReadPrimaryKey {
-  @Input() displayCode
-  @Input() tagsConfig
-  @Input() tagConfig
-  @Input() language
-  @Input() feature
-  @Input() jsonSprites
-  @Input() primaryKeys
-
-  primaryKey
-
-  ngOnInit(): void {
-      this.primaryKey = this.findPkey(this.feature)
-
-      // console.log(this.currentSpriteConfig);
-  }
-
-  findPkey(feature) {
-      const pkeys = this.primaryKeys
-      for (let k in feature.properties.tags) {
-          if (pkeys.includes(k)) {
-              return { key: k, value: feature.properties.tags[k] }
-          }
-      }
-  }
-}
-*/
