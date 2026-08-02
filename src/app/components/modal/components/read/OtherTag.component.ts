@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { Component, input } from '@angular/core'
 import {
     IonCard,
     IonCardContent,
@@ -18,7 +18,6 @@ import {
             </ion-card-content>
         </ion-card>
     `,
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IonCard, IonCardContent, IonCardHeader, IonIcon],
 })
 export class ReadOtherTag {

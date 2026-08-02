@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { Component, input } from '@angular/core'
 import {
     IonCard,
     IonCardContent,
@@ -12,7 +12,6 @@ import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
 @Component({
     selector: 'read-presets',
     templateUrl: 'Presets.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DisplayPresetLabelPipe,
         IonCard,
@@ -32,6 +31,4 @@ export class ReadPresets {
     get openingHoursValue(): string {
         return String(this.tag().value ?? '')
     }
-
-    ngOnInit(): void {}
 }
