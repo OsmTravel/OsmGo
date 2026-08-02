@@ -1,4 +1,4 @@
-import { computed, Injectable, inject, signal } from '@angular/core'
+import { computed, inject, Service, signal } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     FeatureIdSource,
@@ -10,7 +10,7 @@ import { cloneDeep } from 'lodash'
 import { from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class DataService {
     readonly localStorage = inject(Storage)
 

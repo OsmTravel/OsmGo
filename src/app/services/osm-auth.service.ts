@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Injectable, inject, signal } from '@angular/core'
+import { inject, Service, signal } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { Storage } from '@ionic/storage'
@@ -12,9 +12,7 @@ const OAUTH_SCOPES = 'read_prefs write_api'
 const OAUTH_STATE_KEY = 'osmOAuthState'
 const OAUTH_VERIFIER_KEY = 'osmOAuthCodeVerifier'
 
-@Injectable({
-    providedIn: 'root',
-})
+@Service()
 export class OsmAuthService {
     private readonly http = inject(HttpClient)
     private readonly configService = inject(ConfigService)

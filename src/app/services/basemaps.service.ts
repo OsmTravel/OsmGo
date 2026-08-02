@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable, inject } from '@angular/core'
+import { inject, Service } from '@angular/core'
 import { booleanPointInPolygon, point } from '@turf/turf'
 import type { Feature, MultiPolygon, Polygon } from 'geojson'
 import type { Observable } from 'rxjs'
@@ -14,9 +14,7 @@ export interface Basemap {
     [key: string]: unknown
 }
 
-@Injectable({
-    providedIn: 'root',
-})
+@Service()
 export class BasemapsService {
     private readonly http = inject(HttpClient)
 

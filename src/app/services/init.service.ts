@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core'
+import { inject, Service } from '@angular/core'
 import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -7,9 +7,7 @@ import { forkJoin, of } from 'rxjs'
 import { map, switchMap, tap } from 'rxjs/operators'
 import { OsmApiService } from './osmApi.service'
 
-@Injectable({
-    providedIn: 'root',
-})
+@Service()
 export class InitService {
     readonly configService = inject(ConfigService)
     readonly tagsService = inject(TagsService)

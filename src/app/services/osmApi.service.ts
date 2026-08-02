@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Injectable, inject } from '@angular/core'
+import { inject, Service } from '@angular/core'
 import type {
     FeatureIdSource,
     OsmGoChangeType,
@@ -60,7 +60,7 @@ export interface OsmDiffResult {
     osmgoNewId?: string
 }
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class OsmApiService {
     private readonly http = inject(HttpClient)
     readonly mapService = inject(MapService)

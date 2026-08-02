@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { DOCUMENT, Injectable, inject, NgZone, signal } from '@angular/core'
+import { DOCUMENT, inject, NgZone, Service, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { AlertController } from '@ionic/angular/standalone'
@@ -62,7 +62,7 @@ type HeadingWithTrueHeading = CompassHeading & { trueHeading: number }
 type LoadedMapImage = Awaited<ReturnType<Map['loadImage']>>['data']
 type IconParameters = { shape: string; color: string; id: string }
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class MapService {
     private readonly _ngZone = inject(NgZone)
     readonly dataService = inject(DataService)

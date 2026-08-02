@@ -1,4 +1,4 @@
-import { Injectable, inject, signal } from '@angular/core'
+import { inject, Service, signal } from '@angular/core'
 import { CompassHeading } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 // import { Geolocation } from '@capacitor/geolocation'
@@ -12,7 +12,7 @@ const EMPTY_COMPASS_HEADING: CompassHeading = {
     timestamp: null,
 }
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class LocationService {
     readonly configService = inject(ConfigService)
 

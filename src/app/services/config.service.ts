@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable, inject, signal } from '@angular/core'
+import { inject, Service, signal } from '@angular/core'
 import type { DeviceInfo } from '@capacitor/device'
 import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular/standalone'
@@ -66,7 +66,7 @@ export interface Config {
     limitFeatures: number
 }
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class ConfigService {
     readonly localStorage = inject(Storage)
     private readonly platform = inject(Platform)

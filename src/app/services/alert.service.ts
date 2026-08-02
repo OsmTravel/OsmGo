@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core'
+import { Service } from '@angular/core'
 import { Subject } from 'rxjs'
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class AlertService {
     private readonly newAlertSubject = new Subject<string>()
     readonly newAlert$ = this.newAlertSubject.asObservable()

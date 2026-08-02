@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable, inject, signal } from '@angular/core'
+import { inject, Service, signal } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     JsonSprites,
@@ -17,7 +17,7 @@ export interface SavedField {
     tags: Tag[]
 }
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class TagsService {
     private readonly http = inject(HttpClient)
     readonly localStorage = inject(Storage)
