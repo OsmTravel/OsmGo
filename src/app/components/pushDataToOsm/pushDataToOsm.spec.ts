@@ -1,24 +1,16 @@
-import { Location } from '@angular/common'
 import { TestBed } from '@angular/core/testing'
 import { MatDialog } from '@angular/material/dialog'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
-import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
-import {
-    BehaviorSubject,
-    NEVER,
-    of,
-    Subject,
-    TimeoutError,
-    throwError,
-} from 'rxjs'
+import { BehaviorSubject, of, Subject, TimeoutError, throwError } from 'rxjs'
 
-import { PushDataToOsmPage } from './pushDataToOsm'
+import { PushDataToOsmPage, UPLOAD_SUCCESS_DELAY_MS } from './pushDataToOsm'
 
 interface PushPageDependencies {
     dataService: unknown
@@ -26,11 +18,11 @@ interface PushPageDependencies {
     osmApi?: unknown
     tagsService?: unknown
     mapService?: unknown
-    location?: unknown
+    overlayNavigation?: unknown
     dialog?: unknown
     snackBar?: unknown
     translate?: unknown
-    initService?: unknown
+    successDelayMs?: number
 }
 
 describe('PushDataToOsmPage', () => {
@@ -47,12 +39,12 @@ describe('PushDataToOsmPage', () => {
         osmApi = {},
         tagsService = {},
         mapService = {},
-        location = {},
+        overlayNavigation = { close: vi.fn().mockResolvedValue(true) },
         dialog = {},
         snackBar = {},
         configService,
         translate = {},
-        initService = {},
+        successDelayMs = 0,
     }: PushPageDependencies): PushDataToOsmPage => {
         TestBed.resetTestingModule()
         TestBed.configureTestingModule({
@@ -61,12 +53,15 @@ describe('PushDataToOsmPage', () => {
                 { provide: OsmApiService, useValue: osmApi },
                 { provide: TagsService, useValue: tagsService },
                 { provide: MapService, useValue: mapService },
-                { provide: Location, useValue: location },
+                {
+                    provide: OverlayNavigationService,
+                    useValue: overlayNavigation,
+                },
                 { provide: MatDialog, useValue: dialog },
                 { provide: MatSnackBar, useValue: snackBar },
                 { provide: ConfigService, useValue: configService },
                 { provide: TranslateService, useValue: translate },
-                { provide: InitService, useValue: initService },
+                { provide: UPLOAD_SUCCESS_DELAY_MS, useValue: successDelayMs },
             ],
         })
         return TestBed.runInInjectionContext(() => new PushDataToOsmPage())
@@ -279,6 +274,7 @@ describe('PushDataToOsmPage', () => {
         const preparation = new Promise<void>(
             (resolve) => (continuePreparation = resolve)
         )
+        const uploadResult = new Subject<never>()
         const changedData = { features: [{ id: 'node/-1' }] }
         const dataService = {
             getGeojsonChanged: () => changedData,
@@ -293,7 +289,7 @@ describe('PushDataToOsmPage', () => {
             apiOsmSendOsmDiffFile: vi
                 .fn()
                 .mockName('apiOsmSendOsmDiffFile')
-                .mockReturnValue(NEVER),
+                .mockReturnValue(uploadResult),
         }
         const mapService = createProcessingMapService()
         const configService = {
@@ -312,12 +308,17 @@ describe('PushDataToOsmPage', () => {
         const firstUpload = page.pushDataToOsm('Survey')
         const secondUpload = page.pushDataToOsm('Survey')
         continuePreparation()
+        await vi.waitFor(() =>
+            expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
+        )
+        uploadResult.error(new Error('Fixture upload stopped'))
         await Promise.all([firstUpload, secondUpload])
 
         expect(dataService.replaceIdGenerateByOldVersion).toHaveBeenCalledTimes(
             1
         )
         expect(osmApi.apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
+        expect(page.uploadInFlight()).toBe(false)
     })
 
     it('prepares one hundred returned IDs and versions before applying them', async () => {
@@ -424,10 +425,14 @@ describe('PushDataToOsmPage', () => {
             replaceIdGenerateByOldVersion: () => Promise.resolve(),
             applyUploadResults,
         }
+        const apiOsmSendOsmDiffFile = vi
+            .fn()
+            .mockName('apiOsmSendOsmDiffFile')
+            .mockReturnValue(uploadResult)
         const osmApi = {
             getValidChangeset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
-            apiOsmSendOsmDiffFile: () => uploadResult,
+            apiOsmSendOsmDiffFile,
         }
         const mapService = {
             ...createProcessingMapService(),
@@ -440,15 +445,19 @@ describe('PushDataToOsmPage', () => {
             setChangeSetComment: () => {},
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
         }
+        const closeOverlay = vi.fn().mockName('close').mockResolvedValue(true)
         const page = createPage({
             dataService,
             osmApi,
             mapService,
-            location: { back: vi.fn().mockName('back') },
+            overlayNavigation: { close: closeOverlay },
             configService,
         })
         vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
-        await page.pushDataToOsm('Survey')
+        const upload = page.pushDataToOsm('Survey')
+        await vi.waitFor(() =>
+            expect(apiOsmSendOsmDiffFile).toHaveBeenCalledTimes(1)
+        )
         page.ngOnDestroy()
 
         uploadResult.next([
@@ -460,9 +469,141 @@ describe('PushDataToOsmPage', () => {
                 new_version: 1,
             },
         ])
-        await new Promise((resolve) => setTimeout(resolve))
+        await upload
 
         expect(applyUploadResults).toHaveBeenCalledTimes(1)
         expect(page.uploadedOk()).toBe(true)
+        expect(page.uploadInFlight()).toBe(false)
+        expect(mapService.isProcessing.value).toBe(false)
+        expect(closeOverlay).not.toHaveBeenCalled()
+    })
+
+    it('unlocks before closing a successful upload exactly once', async () => {
+        const feature = {
+            id: 'node/-1',
+            properties: {
+                id: -1,
+                changeType: 'Create',
+                tags: { amenity: 'bench' },
+                meta: { version: 0 },
+            },
+            geometry: { type: 'Point', coordinates: [1, 2] },
+        }
+        const changedData = { features: [feature] }
+        const dataService = {
+            getGeojsonChanged: () => changedData,
+            getGeojson: () => ({ features: [] }),
+            replaceIdGenerateByOldVersion: () => Promise.resolve(),
+            applyUploadResults: vi.fn().mockImplementation(async () => {
+                changedData.features = []
+            }),
+        }
+        const osmApi = {
+            getValidChangeset: () => of('123'),
+            osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
+            apiOsmSendOsmDiffFile: () =>
+                of([
+                    {
+                        typeChange: 'Create',
+                        osmgoOldId: 'node/-1',
+                        osmgoNewId: 'node/101',
+                        new_id: 101,
+                        new_version: 1,
+                    },
+                ]),
+        }
+        const mapService = {
+            ...createProcessingMapService(),
+            getIconStyle: (value: unknown) => value,
+            redrawMarkers: vi.fn().mockName('redrawMarkers'),
+            redrawChangedMarkers: vi.fn().mockName('redrawChangedMarkers'),
+        }
+        const configService = {
+            getChangeSetComment: () => '',
+            setChangeSetComment: () => {},
+            getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+        }
+        let page: PushDataToOsmPage
+        const closeOverlay = vi.fn().mockImplementation(async () => {
+            expect(page.uploadInFlight()).toBe(false)
+            expect(mapService.isProcessing.value).toBe(false)
+            return true
+        })
+        page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            overlayNavigation: { close: closeOverlay },
+            configService,
+        })
+        vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
+
+        await page.pushDataToOsm('Survey')
+        page.back()
+
+        expect(page.uploadedOk()).toBe(true)
+        expect(page.uploadStatusVisible()).toBe(false)
+        expect(closeOverlay).toHaveBeenCalledTimes(1)
+    })
+
+    it('unlocks and keeps queued data when persistence fails', async () => {
+        const feature = {
+            id: 'node/-1',
+            properties: {
+                id: -1,
+                changeType: 'Create',
+                tags: { amenity: 'bench' },
+                meta: { version: 0 },
+            },
+            geometry: { type: 'Point', coordinates: [1, 2] },
+        }
+        const changedData = { features: [feature] }
+        const dataService = {
+            getGeojsonChanged: () => changedData,
+            replaceIdGenerateByOldVersion: () => Promise.resolve(),
+            applyUploadResults: vi
+                .fn()
+                .mockRejectedValue(new Error('Storage unavailable')),
+        }
+        const osmApi = {
+            getValidChangeset: () => of('123'),
+            osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
+            apiOsmSendOsmDiffFile: () =>
+                of([
+                    {
+                        typeChange: 'Create',
+                        osmgoOldId: 'node/-1',
+                        osmgoNewId: 'node/101',
+                        new_id: 101,
+                        new_version: 1,
+                    },
+                ]),
+        }
+        const mapService = {
+            ...createProcessingMapService(),
+            getIconStyle: (value: unknown) => value,
+        }
+        const configService = {
+            getChangeSetComment: () => '',
+            setChangeSetComment: () => {},
+            getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+        }
+        const closeOverlay = vi.fn().mockName('close')
+        const page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            overlayNavigation: { close: closeOverlay },
+            configService,
+        })
+        vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
+
+        await page.pushDataToOsm('Survey')
+
+        expect(page.uploadInFlight()).toBe(false)
+        expect(mapService.isProcessing.value).toBe(false)
+        expect(page.error()?.message).toBe('Storage unavailable')
+        expect(changedData.features).toEqual([feature])
+        expect(closeOverlay).not.toHaveBeenCalled()
     })
 })

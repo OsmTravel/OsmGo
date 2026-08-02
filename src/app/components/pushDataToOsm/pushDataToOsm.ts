@@ -2,6 +2,7 @@ import { KeyValuePipe } from '@angular/common'
 import {
     type AfterViewInit,
     Component,
+    InjectionToken,
     inject,
     type OnDestroy,
     signal,
@@ -56,6 +57,11 @@ interface OsmRequestError {
     message?: unknown
 }
 
+export const UPLOAD_SUCCESS_DELAY_MS = new InjectionToken<number>(
+    'Upload success feedback delay',
+    { factory: () => 1000 }
+)
+
 @Component({
     selector: 'page-push-data-to-osm',
     templateUrl: './pushDataToOsm.html',
@@ -83,6 +89,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     private readonly dialog = inject(MatDialog)
     private readonly overlayNavigation = inject(OverlayNavigationService)
     private readonly snackBar = inject(MatSnackBar)
+    private readonly successDelayMs = inject(UPLOAD_SUCCESS_DELAY_MS)
 
     readonly summary = signal<UploadSummary>({
         Total: 0,
@@ -92,23 +99,29 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     })
     changesetId = ''
     readonly commentChangeset = signal(this.configService.getChangeSetComment())
-    readonly isPushing = signal(false)
+    private readonly uploadInFlightState = signal(false)
+    readonly uploadInFlight = this.uploadInFlightState.asReadonly()
+    readonly isPushing = this.uploadInFlight
+    readonly uploadStatusVisible = signal(false)
     readonly uploadedOk = signal(false)
     readonly featuresChanges = signal<UploadFeature[]>(
         this.dataService.getGeojsonChanged().features
     )
     readonly connectionError = signal<string | undefined>(undefined)
     readonly error = signal<UploadError | undefined>(undefined)
+    private destroyed = false
+    private closeStarted = false
+
     ngOnDestroy(): void {
-        // An acknowledged upload must finish even if the page is backgrounded.
+        this.destroyed = true
     }
 
     back(): void {
-        if (this.canCloseOverlay()) void this.overlayNavigation.close()
+        if (this.canCloseOverlay()) void this.closeOverlayOnce()
     }
 
     canCloseOverlay(): boolean {
-        return !this.isPushing()
+        return !this.uploadInFlight()
     }
 
     presentConfirm(): void {
@@ -257,7 +270,6 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             return true
         } catch (error) {
             console.error(error)
-            this.isPushing.set(false)
             throw this.getOsmErrorMessage(error)
         }
     }
@@ -321,8 +333,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             message: this.getOsmErrorMessage(error),
             feature,
         })
-        this.isPushing.set(false)
-        this.mapService.setIsProcessing(false)
+        this.uploadStatusVisible.set(false)
     }
 
     private isClosedChangesetError(error: unknown): boolean {
@@ -338,123 +349,115 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     }
 
     async pushDataToOsm(commentChangeset: string): Promise<void> {
-        if (this.isPushing()) {
+        if (this.uploadInFlight()) {
             console.log('Already pushing')
             return
         }
 
-        this.isPushing.set(true)
+        this.uploadInFlightState.set(true)
+        this.uploadStatusVisible.set(true)
+        this.uploadedOk.set(false)
         this.mapService.setIsProcessing(true)
+        let uploadSucceeded = false
+        let phase: 'prepare' | 'connection' | 'changeset' | 'diff' | 'persist' =
+            'prepare'
 
         try {
             await this.dataService.replaceIdGenerateByOldVersion()
-        } catch (error) {
-            this.stopPushingWithError(error)
-            return
-        }
+            this.configService.setChangeSetComment(commentChangeset)
 
-        this.configService.setChangeSetComment(commentChangeset)
+            phase = 'connection'
+            try {
+                await this.userIsConnected()
+            } catch (error) {
+                this.connectionError.set(
+                    typeof error === 'string'
+                        ? error
+                        : this.getOsmErrorMessage(error)
+                )
+                this.uploadStatusVisible.set(false)
+                return
+            }
+            this.connectionError.set(undefined)
 
-        this.uploadedOk.set(false)
-        try {
-            await this.userIsConnected()
-        } catch (error) {
-            this.connectionError.set(
-                typeof error === 'string'
-                    ? error
-                    : this.getOsmErrorMessage(error)
+            phase = 'changeset'
+            const changesetId = await firstValueFrom(
+                this.osmApi.getValidChangeset(commentChangeset).pipe(take(1))
             )
-            this.isPushing.set(false)
-            this.mapService.setIsProcessing(false)
-            return
-        }
-        this.connectionError.set(undefined)
+            const features = this.dataService.getGeojsonChanged().features
+            this.changesetId = changesetId
+            const diffFile = this.osmApi.osmGoFeaturesToOsmDiffFile(
+                features,
+                this.changesetId
+            )
 
-        this.osmApi
-            .getValidChangeset(commentChangeset)
-            .pipe(take(1))
-            .subscribe(
-                (CS) => {
-                    const features =
-                        this.dataService.getGeojsonChanged().features
-                    this.changesetId = CS
-                    const diffFile = this.osmApi.osmGoFeaturesToOsmDiffFile(
-                        features,
-                        this.changesetId
+            phase = 'diff'
+            const diffFileResult = await firstValueFrom(
+                this.osmApi
+                    .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
+                    .pipe(take(1))
+            )
+
+            phase = 'persist'
+            await this.updateLocalDataFromDiffResult(diffFileResult, features)
+            this.mapService.redrawMarkers(this.dataService.getGeojson())
+            this.mapService.redrawChangedMarkers(
+                this.dataService.getGeojsonChanged()
+            )
+            this.featuresChanges.set(
+                this.dataService.getGeojsonChanged().features
+            )
+            this.error.set(undefined)
+            this.summary.set(this.getSummary())
+            this.uploadedOk.set(true)
+            uploadSucceeded = true
+        } catch (error) {
+            const message = this.getOsmErrorMessage(error)
+            if (this.isClosedChangesetError(error)) {
+                this.configService.invalidateChangeset()
+                this.stopPushingWithError({
+                    ...(typeof error === 'object' && error !== null
+                        ? error
+                        : {}),
+                    error: `${message} Please retry to create a new changeset.`,
+                })
+            } else {
+                const details = this.getOsmRequestError(error)
+                const feature =
+                    phase === 'diff'
+                        ? this.getFeatureFromErrorResult(
+                              typeof details.status === 'number'
+                                  ? details.status
+                                  : 0,
+                              message
+                          )
+                        : null
+                this.stopPushingWithError(error, feature)
+                if (feature) {
+                    const failedFeature = this.featuresChanges().find(
+                        (item) => item.id === feature.id
                     )
-
-                    this.osmApi
-                        .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
-                        .pipe(take(1))
-                        .subscribe({
-                            next: async (diffFileResult) => {
-                                try {
-                                    await this.updateLocalDataFromDiffResult(
-                                        diffFileResult,
-                                        features
-                                    )
-                                    this.mapService.redrawMarkers(
-                                        this.dataService.getGeojson()
-                                    )
-                                    this.mapService.redrawChangedMarkers(
-                                        this.dataService.getGeojsonChanged()
-                                    )
-                                    this.featuresChanges.set(
-                                        this.dataService.getGeojsonChanged()
-                                            .features
-                                    )
-                                    this.error.set(undefined)
-                                    this.summary.set(this.getSummary())
-                                    this.uploadedOk.set(true)
-                                    this.mapService.setIsProcessing(false)
-                                    timer(1000)
-                                        .pipe(take(1))
-                                        .subscribe(() => {
-                                            this.back()
-                                        })
-                                } catch (error) {
-                                    this.stopPushingWithError(error)
-                                }
-                            },
-                            error: (err) => {
-                                const message = this.getOsmErrorMessage(err)
-                                if (this.isClosedChangesetError(err)) {
-                                    this.configService.invalidateChangeset()
-                                    this.stopPushingWithError({
-                                        ...err,
-                                        error: `${message} Please retry to create a new changeset.`,
-                                    })
-                                    return
-                                }
-                                const feature = this.getFeatureFromErrorResult(
-                                    err.status,
-                                    message
-                                )
-                                this.stopPushingWithError(err, feature)
-                                if (feature) {
-                                    const failedFeature =
-                                        this.featuresChanges().find(
-                                            (item) => item.id === feature.id
-                                        )
-                                    if (failedFeature) {
-                                        this.featuresChanges.set([
-                                            {
-                                                ...failedFeature,
-                                                error: message,
-                                            },
-                                            ...this.featuresChanges().filter(
-                                                (item) => item.id !== feature.id
-                                            ),
-                                        ])
-                                    }
-                                }
-                            },
-                        })
-                },
-                (err) => {
-                    this.stopPushingWithError(err)
+                    if (failedFeature) {
+                        this.featuresChanges.set([
+                            { ...failedFeature, error: message },
+                            ...this.featuresChanges().filter(
+                                (item) => item.id !== feature.id
+                            ),
+                        ])
+                    }
                 }
-            )
+            }
+        } finally {
+            this.finishUploadAttempt()
+        }
+
+        if (!uploadSucceeded) return
+
+        await firstValueFrom(timer(this.successDelayMs).pipe(take(1)))
+        this.uploadStatusVisible.set(false)
+        if (!this.destroyed) {
+            await this.closeOverlayOnce()
+        }
     }
 
     cancelErrorFeature(feature: OsmGoFeature): void {
@@ -507,5 +510,16 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
             return error as OsmRequestError
         }
         return {}
+    }
+
+    private finishUploadAttempt(): void {
+        this.uploadInFlightState.set(false)
+        this.mapService.setIsProcessing(false)
+    }
+
+    private async closeOverlayOnce(): Promise<void> {
+        if (this.closeStarted) return
+        this.closeStarted = true
+        await this.overlayNavigation.close()
     }
 }

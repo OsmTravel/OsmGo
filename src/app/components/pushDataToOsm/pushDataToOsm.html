@@ -1,4 +1,4 @@
-@if (isPushing()) {
+@if (uploadStatusVisible()) {
 <div class="upload-overlay" role="status" aria-live="polite">
     @if (!uploadedOk()) {
     <mat-spinner diameter="54"></mat-spinner>
@@ -193,7 +193,7 @@
             mat-button
             class="delete-all"
             type="button"
-            [disabled]="isPushing()"
+            [disabled]="uploadInFlight()"
             (click)="presentConfirm()"
         >
             <mat-icon fontSet="material-symbols-rounded">delete_sweep</mat-icon>
@@ -203,7 +203,7 @@
             mat-flat-button
             data-testid="upload-changes"
             type="button"
-            [disabled]="!configService.userInfo().connected || featuresChanges().length === 0 || isPushing()"
+            [disabled]="!configService.userInfo().connected || featuresChanges().length === 0 || uploadInFlight()"
             (click)="pushDataToOsm(commentChangeset())"
         >
             <mat-icon fontSet="material-symbols-rounded">cloud_upload</mat-icon>
