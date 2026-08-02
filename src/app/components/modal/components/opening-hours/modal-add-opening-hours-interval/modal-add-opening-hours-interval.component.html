@@ -8,7 +8,7 @@
 
 <ion-content class="ion-padding-vertical">
     <div class="daysHeader">
-        @for (day of days; track day) {
+        @for (day of days(); track day.index) {
             <ion-badge
                 class="dayBadge"
                 [color]="day.selected ? 'primary' : 'light'"
@@ -19,12 +19,12 @@
         }
     </div>
 
-    @if (!dayIsSelected) {
+    @if (!dayIsSelected()) {
         <div class="alertSelectADay">
             {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
         </div>
     }
-    @for (time of times; track time; let index = $index) {
+    @for (time of times(); track time.id; let index = $index) {
         <ion-card>
             <div class="timeGrid">
                 <div class="timeBlock">
@@ -34,7 +34,8 @@
                         picker-format="HH:mm"
                         presentation="time"
                         minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
-                        [(ngModel)]="time.start"
+                        [value]="time.start"
+                        (ionChange)="updateTimeRange(index, 'start', $event)"
                     ></ion-datetime>
                 </div>
                 <div class="timeBlock">
@@ -44,7 +45,8 @@
                         picker-format="HH:mm"
                         presentation="time"
                         minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
-                        [(ngModel)]="time.end"
+                        [value]="time.end"
+                        (ionChange)="updateTimeRange(index, 'end', $event)"
                     ></ion-datetime>
                 </div>
             </div>
@@ -76,8 +78,8 @@
     </ion-button>
     <div class="spacer"></div>
     <ion-button
-        (click)="submit(times, days)"
-        [disabled]="!dayIsSelected || times.length == 0"
+        (click)="submit()"
+        [disabled]="!dayIsSelected() || times().length == 0"
         >Submit</ion-button
     >
 </ion-footer>

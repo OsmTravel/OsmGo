@@ -1,10 +1,10 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    computed,
     inject,
-    OnInit,
+    signal,
 } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 import {
     IonBadge,
     IonButton,
@@ -18,8 +18,21 @@ import {
     IonToolbar,
     ModalController,
 } from '@ionic/angular/standalone'
+import type { DatetimeChangeEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
+
+interface OpeningHoursTimeRange {
+    id: number
+    start: string
+    end: string
+}
+
+interface OpeningHoursDay {
+    index: number
+    selected: boolean
+    label: string
+}
 
 @Component({
     selector: 'app-modal-add-opening-hours-interval',
@@ -28,7 +41,6 @@ import { CharLimitPipe } from '@pipes/charLimit.pipe'
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         CharLimitPipe,
-        FormsModule,
         IonBadge,
         IonButton,
         IonCard,
@@ -42,12 +54,15 @@ import { CharLimitPipe } from '@pipes/charLimit.pipe'
         TranslateModule,
     ],
 })
-export class ModalAddOpeningHoursIntervalComponent implements OnInit {
+export class ModalAddOpeningHoursIntervalComponent {
     private readonly modalCtrl = inject(ModalController)
+    private nextTimeRangeId = 1
 
-    times = [{ start: '09:00', end: '12:00' }]
+    readonly times = signal<OpeningHoursTimeRange[]>([
+        { id: 0, start: '09:00', end: '12:00' },
+    ])
 
-    days = [
+    readonly days = signal<OpeningHoursDay[]>([
         { index: 0, selected: false, label: 'DAYS.MONDAY' },
         { index: 1, selected: false, label: 'DAYS.TUESDAY' },
         { index: 2, selected: false, label: 'DAYS.WEDNESDAY' },
@@ -55,34 +70,59 @@ export class ModalAddOpeningHoursIntervalComponent implements OnInit {
         { index: 4, selected: false, label: 'DAYS.FRIDAY' },
         { index: 5, selected: false, label: 'DAYS.SATURDAY' },
         { index: 6, selected: false, label: 'DAYS.SUNDAY' },
-    ]
+    ])
 
-    dayIsSelected = false
+    readonly dayIsSelected = computed(() =>
+        this.days().some((day) => day.selected)
+    )
 
-    ngOnInit() {}
-
-    timeChange(e) {
-        const newTimeStr = e.detail.value
+    updateTimeRange(
+        index: number,
+        field: 'start' | 'end',
+        event: CustomEvent<DatetimeChangeEventDetail>
+    ): void {
+        const value = event.detail.value
+        if (typeof value !== 'string') {
+            return
+        }
+        this.times.update((times) =>
+            times.map((time, currentIndex) =>
+                currentIndex === index ? { ...time, [field]: value } : time
+            )
+        )
     }
 
-    addNewInteval() {
-        this.times = [...this.times, { start: '09:00', end: '12:00' }]
+    addNewInteval(): void {
+        this.times.update((times) => [
+            ...times,
+            {
+                id: this.nextTimeRangeId++,
+                start: '09:00',
+                end: '12:00',
+            },
+        ])
     }
 
-    removeInteval(index) {
-        this.times.splice(index, 1)
+    removeInteval(index: number): void {
+        this.times.update((times) =>
+            times.filter((_, currentIndex) => currentIndex !== index)
+        )
     }
 
-    toggleDay(index) {
-        this.days[index].selected = !this.days[index].selected
-        this.dayIsSelected = this.days.map((d) => d.selected).includes(true)
+    toggleDay(index: number): void {
+        this.days.update((days) =>
+            days.map((day) =>
+                day.index === index ? { ...day, selected: !day.selected } : day
+            )
+        )
     }
 
-    cancel() {
+    cancel(): void {
         this.modalCtrl.dismiss(null)
     }
 
-    submit(times, days) {
-        this.modalCtrl.dismiss({ times, days })
+    submit(): void {
+        const times = this.times().map(({ start, end }) => ({ start, end }))
+        this.modalCtrl.dismiss({ times, days: this.days() })
     }
 }
