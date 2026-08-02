@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import {
     IonButton,
     IonCard,
@@ -16,7 +11,6 @@ import { TranslateModule } from '@ngx-translate/core'
     selector: 'survey-card',
     styleUrls: ['SurveyCard.scss'],
     templateUrl: './SurveyCard.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class SurveyCard {
