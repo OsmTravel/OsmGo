@@ -3,7 +3,8 @@ import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
-import { forkJoin, of } from 'rxjs'
+import { UploadCoordinatorService } from '@services/upload-coordinator.service'
+import { forkJoin, from, of } from 'rxjs'
 import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators'
 import { OsmApiService } from './osmApi.service'
 
@@ -14,6 +15,7 @@ export class InitService {
     readonly dataService = inject(DataService)
     private readonly translate = inject(TranslateService)
     private readonly osmApi = inject(OsmApiService)
+    private readonly uploadCoordinator = inject(UploadCoordinatorService)
 
     isLoaded = false
     /**
@@ -81,6 +83,11 @@ export class InitService {
 
                 return d
             }),
+            switchMap((data) =>
+                from(this.uploadCoordinator.recoverJournal()).pipe(
+                    map(() => data)
+                )
+            ),
             tap(() => {
                 this.isLoaded = true
                 this.translate.use(this.configService.config().languageUi)

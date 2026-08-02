@@ -3,6 +3,7 @@ import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
+import { UploadCoordinatorService } from '@services/upload-coordinator.service'
 import { firstValueFrom, of, throwError, timer } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { InitService } from './init.service'
@@ -61,6 +62,9 @@ describe('InitService', () => {
                 return coordinateResult
             }),
         }
+        const uploadCoordinator = {
+            recoverJournal: vi.fn(async () => ({ kind: 'idle' })),
+        }
         const translate = { use: vi.fn() }
 
         TestBed.configureTestingModule({
@@ -70,6 +74,10 @@ describe('InitService', () => {
                 { provide: TagsService, useValue: tagsService },
                 { provide: DataService, useValue: dataService },
                 { provide: OsmApiService, useValue: osmApi },
+                {
+                    provide: UploadCoordinatorService,
+                    useValue: uploadCoordinator,
+                },
                 { provide: TranslateService, useValue: translate },
             ],
         })
@@ -78,11 +86,13 @@ describe('InitService', () => {
             service: TestBed.inject(InitService),
             configService,
             osmApi,
+            uploadCoordinator,
         }
     }
 
     it('loads the selected API environment before resolving a linked object', async () => {
-        const { service, configService, osmApi } = configure()
+        const { service, configService, osmApi, uploadCoordinator } =
+            configure()
 
         const result = await firstValueFrom(
             service.initLoadData$(undefined, undefined, 'node/4330907486')
@@ -92,6 +102,7 @@ describe('InitService', () => {
         expect(osmApi.getFirstCoordFromIdObject$).toHaveBeenCalledWith(
             'node/4330907486'
         )
+        expect(uploadCoordinator.recoverJournal).toHaveBeenCalledOnce()
         expect(result.config.lastView).toMatchObject({
             lng: 5.744,
             lat: 45.186,

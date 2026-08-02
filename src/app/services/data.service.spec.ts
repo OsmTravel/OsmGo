@@ -410,6 +410,93 @@ describe('DataService', () => {
     })
 
     describe('upload receipt', () => {
+        it('persists every journal phase around one atomic reconciliation', async () => {
+            const pending = osmFeature(-1, 'Create')
+            await service.replacePendingFeatures(collection([pending]))
+            storageSpy.set.mockClear()
+            const prepared = {
+                journalVersion: 1 as const,
+                attemptId: 'attempt-1',
+                payloadHash: 'payload-hash',
+                changesetId: '123',
+                submittedIds: ['node/-1'],
+                summary: {
+                    Total: 1,
+                    Create: 1,
+                    Update: 0,
+                    Delete: 0,
+                },
+                startedAt: '2026-08-02T10:00:00.000Z',
+                phase: 'prepared' as const,
+            }
+
+            await service.beginUploadAttempt(prepared)
+            await service.acknowledgeUploadAttempt(
+                'attempt-1',
+                [{ osmgoOldId: 'node/-1' }],
+                '2026-08-02T10:00:01.000Z'
+            )
+            await service.applyAcknowledgedUploadReceipt(
+                'attempt-1',
+                [{ oldId: 'node/-1', feature: osmFeature(101) }],
+                '2026-08-02T10:00:02.000Z'
+            )
+
+            expect(service.getUploadJournal()).toMatchObject({
+                phase: 'applied',
+                attemptId: 'attempt-1',
+                appliedAt: '2026-08-02T10:00:02.000Z',
+            })
+            expect(service.getGeojsonChanged().features).toEqual([])
+            expect(service.getGeojson().features).toEqual([osmFeature(101)])
+
+            await service.clearAppliedUploadAttempt('attempt-1')
+
+            const snapshots = storageSpy.set.mock.calls.map(
+                (call) => call[1] as PersistedOsmStateV2
+            )
+            expect(
+                snapshots.map((state) => state.uploadJournal?.phase)
+            ).toEqual(['prepared', 'acknowledged', 'applied', undefined])
+            expect(service.getUploadJournal()).toBeUndefined()
+        })
+
+        it('keeps an acknowledged journal when local reconciliation fails', async () => {
+            const pending = osmFeature(-1, 'Create')
+            await service.replacePendingFeatures(collection([pending]))
+            await service.beginUploadAttempt({
+                journalVersion: 1,
+                attemptId: 'attempt-1',
+                payloadHash: 'payload-hash',
+                changesetId: '123',
+                submittedIds: ['node/-1'],
+                summary: {
+                    Total: 1,
+                    Create: 1,
+                    Update: 0,
+                    Delete: 0,
+                },
+                startedAt: '2026-08-02T10:00:00.000Z',
+                phase: 'prepared',
+            })
+            await service.acknowledgeUploadAttempt(
+                'attempt-1',
+                [{ osmgoOldId: 'node/-1' }],
+                '2026-08-02T10:00:01.000Z'
+            )
+
+            await expect(
+                service.applyAcknowledgedUploadReceipt(
+                    'attempt-1',
+                    [{ oldId: 'node/-999', feature: osmFeature(101) }],
+                    '2026-08-02T10:00:02.000Z'
+                )
+            ).rejects.toThrow('does not match local data')
+
+            expect(service.getUploadJournal()?.phase).toBe('acknowledged')
+            expect(service.getGeojsonChanged().features).toEqual([pending])
+        })
+
         it('reconciles one hundred creations in one write', async () => {
             const pending = Array.from({ length: 100 }, (_value, index) =>
                 osmFeature(-(index + 1), 'Create')

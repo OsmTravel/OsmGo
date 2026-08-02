@@ -400,25 +400,115 @@ export class DataService {
             }
         }
         await this.enqueueOsmStateMutation('apply upload receipt', (state) => {
-            const oldIds = receipt.map((result) => result.oldId)
-            if (
-                new Set(oldIds).size !== oldIds.length ||
-                oldIds.some((id) => !state.pendingById[id])
-            ) {
-                throw new Error(
-                    'The OSM upload result does not match local data.'
-                )
-            }
+            this.applyReceiptToState(state, receipt)
+        })
+    }
 
-            for (const result of receipt) {
-                delete state.pendingById[result.oldId]
-                delete state.officialById[result.oldId]
-                if (result.feature) {
-                    state.officialById[this.requireFeatureId(result.feature)] =
-                        cloneDeep(result.feature)
+    getUploadJournal(): PersistedUploadJournal | undefined {
+        return this._uploadJournal ? cloneDeep(this._uploadJournal) : undefined
+    }
+
+    beginUploadAttempt(
+        journal: Extract<PersistedUploadJournal, { phase: 'prepared' }>
+    ): Promise<void> {
+        const prepared = cloneDeep(journal)
+        return this.enqueueOsmStateMutation('begin upload attempt', (state) => {
+            if (state.uploadJournal) {
+                throw new Error('An upload journal is already active.')
+            }
+            state.uploadJournal = prepared
+        })
+    }
+
+    acknowledgeUploadAttempt(
+        attemptId: string,
+        rawReceipt: unknown,
+        acknowledgedAt: string
+    ): Promise<void> {
+        const receipt = cloneDeep(rawReceipt)
+        return this.enqueueOsmStateMutation(
+            'acknowledge upload attempt',
+            (state) => {
+                const journal = state.uploadJournal
+                if (
+                    journal?.attemptId !== attemptId ||
+                    journal.phase !== 'prepared'
+                ) {
+                    throw new Error('The active upload journal is invalid.')
+                }
+                state.uploadJournal = {
+                    ...journal,
+                    phase: 'acknowledged',
+                    rawReceipt: receipt,
+                    acknowledgedAt,
                 }
             }
-        })
+        )
+    }
+
+    applyAcknowledgedUploadReceipt(
+        attemptId: string,
+        results: UploadReceiptEntry[],
+        appliedAt: string
+    ): Promise<void> {
+        const receipt = cloneDeep(results)
+        for (const result of receipt) {
+            if (result.feature) {
+                this.requireCanonicalFeatureId(result.feature)
+            }
+        }
+        return this.enqueueOsmStateMutation(
+            'apply acknowledged upload receipt',
+            (state) => {
+                const journal = state.uploadJournal
+                if (
+                    journal?.attemptId !== attemptId ||
+                    journal.phase !== 'acknowledged'
+                ) {
+                    throw new Error(
+                        'The acknowledged upload journal is invalid.'
+                    )
+                }
+                this.applyReceiptToState(state, receipt)
+                state.uploadJournal = {
+                    ...journal,
+                    phase: 'applied',
+                    appliedAt,
+                }
+            }
+        )
+    }
+
+    clearAppliedUploadAttempt(attemptId: string): Promise<void> {
+        return this.enqueueOsmStateMutation(
+            'clear applied upload attempt',
+            (state) => {
+                const journal = state.uploadJournal
+                if (
+                    journal?.attemptId !== attemptId ||
+                    journal.phase !== 'applied'
+                ) {
+                    throw new Error('The applied upload journal is invalid.')
+                }
+                delete state.uploadJournal
+            }
+        )
+    }
+
+    discardPreparedUploadAttempt(attemptId: string): Promise<void> {
+        return this.enqueueOsmStateMutation(
+            'discard rejected upload attempt',
+            (state) => {
+                const journal = state.uploadJournal
+                if (
+                    journal?.attemptId !== attemptId ||
+                    journal.phase !== 'prepared'
+                ) {
+                    throw new Error('The prepared upload journal is invalid.')
+                }
+                delete state.uploadJournal
+            }
+        )
     }
 
     resetDownloadedData(): Promise<OsmDownload> {
@@ -453,6 +543,28 @@ export class DataService {
             throw new Error('A feature ID is required.')
         }
         return String(feature.id)
+    }
+
+    private applyReceiptToState(
+        state: PersistedOsmStateV2,
+        receipt: UploadReceiptEntry[]
+    ): void {
+        const oldIds = receipt.map((result) => result.oldId)
+        if (
+            new Set(oldIds).size !== oldIds.length ||
+            oldIds.some((id) => !state.pendingById[id])
+        ) {
+            throw new Error('The OSM upload result does not match local data.')
+        }
+
+        for (const result of receipt) {
+            delete state.pendingById[result.oldId]
+            delete state.officialById[result.oldId]
+            if (result.feature) {
+                state.officialById[this.requireFeatureId(result.feature)] =
+                    cloneDeep(result.feature)
+            }
+        }
     }
 
     private collectionToRecord(

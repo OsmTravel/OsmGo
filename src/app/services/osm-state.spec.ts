@@ -94,7 +94,23 @@ describe('OsmState migrations', () => {
             geojson: collection([feature(10)]),
             geojsonChanged: collection([feature(-1, 'Create')]),
             geojsonBbox: collection([]),
-            uploadJournal: { attemptId: 'attempt-1', acknowledged: true },
+            uploadJournal: {
+                journalVersion: 1,
+                attemptId: 'attempt-1',
+                payloadHash: 'payload-hash',
+                changesetId: '123',
+                submittedIds: ['node/-1'],
+                summary: {
+                    Total: 1,
+                    Create: 1,
+                    Update: 0,
+                    Delete: 0,
+                },
+                startedAt: '2026-08-02T10:00:00.000Z',
+                phase: 'acknowledged',
+                rawReceipt: [{ osmgoOldId: 'node/-1' }],
+                acknowledgedAt: '2026-08-02T10:00:01.000Z',
+            },
         })
 
         expect(state).toMatchObject({
@@ -103,7 +119,8 @@ describe('OsmState migrations', () => {
             nextTemporaryId: -2,
             uploadJournal: {
                 attemptId: 'attempt-1',
-                acknowledged: true,
+                phase: 'acknowledged',
+                submittedIds: ['node/-1'],
             },
         })
     })
@@ -149,6 +166,18 @@ describe('OsmState migrations', () => {
                 nextTemporaryId: -1,
             },
             'inconsistent ID',
+        ],
+        [
+            {
+                schemaVersion: 2,
+                revision: 0,
+                officialById: {},
+                pendingById: {},
+                bbox: collection([]),
+                nextTemporaryId: -1,
+                uploadJournal: 'corrupted',
+            },
+            'upload journal',
         ],
     ])('rejects a persisted state with an invalid %s', (state, message) => {
         expect(() => migratePersistedOsmState(state)).toThrow(message)

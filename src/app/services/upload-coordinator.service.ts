@@ -4,17 +4,16 @@ import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService, type User } from '@services/config.service'
 import { DataService, type UploadReceiptEntry } from '@services/data.service'
 import { MapService } from '@services/map.service'
+import type {
+    PersistedUploadJournal,
+    PersistedUploadSummary,
+} from '@services/osm-state'
 import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
 import { cloneDeep } from 'lodash'
 import { firstValueFrom, type Observable } from 'rxjs'
 import { take } from 'rxjs/operators'
 
-export interface UploadSummary {
-    Total: number
-    Create: number
-    Update: number
-    Delete: number
-}
+export type UploadSummary = PersistedUploadSummary
 
 export type UploadFeature = OsmGoFeature & { error?: string }
 
@@ -22,6 +21,7 @@ export type UploadFailureStage =
     | 'validation'
     | 'connection'
     | 'changeset'
+    | 'journal'
     | 'upload'
     | 'reconciliation'
 
@@ -75,7 +75,22 @@ export interface UploadCoordinatorDependencies {
     getValidChangeset(comment: string): Observable<string>
     serializeDiff(features: UploadFeature[], changesetId: string): string
     uploadDiff(diff: string, changesetId: string): Observable<unknown>
-    applyReceipt(receipt: UploadReceiptEntry[]): Promise<void>
+    getUploadJournal(): PersistedUploadJournal | undefined
+    beginUploadAttempt(
+        journal: Extract<PersistedUploadJournal, { phase: 'prepared' }>
+    ): Promise<void>
+    acknowledgeUploadAttempt(
+        attemptId: string,
+        rawReceipt: unknown,
+        acknowledgedAt: string
+    ): Promise<void>
+    applyAcknowledgedReceipt(
+        attemptId: string,
+        receipt: UploadReceiptEntry[],
+        appliedAt: string
+    ): Promise<void>
+    clearAppliedUploadAttempt(attemptId: string): Promise<void>
+    discardPreparedUploadAttempt(attemptId: string): Promise<void>
     getUserInfo(): User
     setChangesetComment(comment: string): void
     updateChangesetLastActivity(): void
@@ -84,6 +99,7 @@ export interface UploadCoordinatorDependencies {
     setProcessing(processing: boolean): void
     redraw(): void
     createAttemptId(): string
+    hashPayload(payload: string): Promise<string>
     now(): Date
     onTransition?(state: UploadState): void
 }
@@ -91,6 +107,19 @@ export interface UploadCoordinatorDependencies {
 const createAttemptId = (): string =>
     globalThis.crypto?.randomUUID?.() ??
     `upload-${Date.now()}-${Math.random().toString(16).slice(2)}`
+
+export const hashUploadPayload = async (payload: string): Promise<string> => {
+    if (!globalThis.crypto?.subtle) {
+        throw new Error('Secure payload hashing is unavailable.')
+    }
+    const digest = await globalThis.crypto.subtle.digest(
+        'SHA-256',
+        new TextEncoder().encode(payload)
+    )
+    return Array.from(new Uint8Array(digest), (byte) =>
+        byte.toString(16).padStart(2, '0')
+    ).join('')
+}
 
 const emptySummary = (): UploadSummary => ({
     Total: 0,
@@ -129,6 +158,32 @@ export class UploadCoordinator {
         return this.activeAttempt
     }
 
+    recoverJournal(): Promise<UploadState> {
+        if (this.activeAttempt) return this.activeAttempt
+        if (this.stateSignal().kind !== 'idle') {
+            return Promise.resolve(this.stateSignal())
+        }
+        const journal = this.dependencies.getUploadJournal()
+        if (!journal) return Promise.resolve(this.stateSignal())
+        if (journal.phase === 'prepared') {
+            const failed = this.createFailure(
+                'upload',
+                new Error(
+                    'A previous upload may have reached OpenStreetMap. Inspect the server before continuing.'
+                ),
+                journal.changesetId
+            )
+            this.transition(failed)
+            return Promise.resolve(failed)
+        }
+
+        const attempt = this.runRecovery(journal)
+        this.activeAttempt = attempt.finally(() => {
+            this.activeAttempt = undefined
+        })
+        return this.activeAttempt
+    }
+
     resetTerminalState(): void {
         const current = this.stateSignal().kind
         if (current === 'succeeded' || current === 'failed') {
@@ -139,6 +194,7 @@ export class UploadCoordinator {
     private async run(comment: string): Promise<UploadState> {
         let stage: UploadFailureStage = 'validation'
         let changesetId = ''
+        let attemptId = ''
         this.transition({ kind: 'validating' })
         this.dependencies.setProcessing(true)
 
@@ -159,12 +215,29 @@ export class UploadCoordinator {
                 this.dependencies.getValidChangeset(comment).pipe(take(1))
             )
             const diff = this.dependencies.serializeDiff(features, changesetId)
-            const attemptId = this.dependencies.createAttemptId()
+            attemptId = this.dependencies.createAttemptId()
+
+            stage = 'journal'
+            await this.dependencies.beginUploadAttempt({
+                journalVersion: 1,
+                attemptId,
+                payloadHash: await this.dependencies.hashPayload(diff),
+                changesetId,
+                submittedIds: [...submissions.keys()],
+                summary,
+                startedAt: this.dependencies.now().toISOString(),
+                phase: 'prepared',
+            })
 
             stage = 'upload'
             this.transition({ kind: 'uploading', attemptId })
             const rawReceipt = await firstValueFrom(
                 this.dependencies.uploadDiff(diff, changesetId).pipe(take(1))
+            )
+            await this.dependencies.acknowledgeUploadAttempt(
+                attemptId,
+                rawReceipt,
+                this.dependencies.now().toISOString()
             )
             this.transition({ kind: 'receiptReceived', attemptId })
             this.dependencies.updateChangesetLastActivity()
@@ -176,14 +249,93 @@ export class UploadCoordinator {
                 changesetId
             )
             this.transition({ kind: 'reconciling', attemptId })
-            await this.dependencies.applyReceipt(receipt)
+            await this.dependencies.applyAcknowledgedReceipt(
+                attemptId,
+                receipt,
+                this.dependencies.now().toISOString()
+            )
             this.dependencies.redraw()
+            await this.dependencies.clearAppliedUploadAttempt(attemptId)
 
             const succeeded: UploadState = { kind: 'succeeded', summary }
             this.transition(succeeded)
             return succeeded
         } catch (cause) {
-            const failed = this.createFailure(stage, cause, changesetId)
+            let failureCause = cause
+            if (
+                stage === 'upload' &&
+                attemptId &&
+                this.isDefinitiveUploadRejection(cause)
+            ) {
+                try {
+                    await this.dependencies.discardPreparedUploadAttempt(
+                        attemptId
+                    )
+                } catch (discardError) {
+                    failureCause = discardError
+                }
+            }
+            const failed = this.createFailure(stage, failureCause, changesetId)
+            this.transition(failed)
+            return failed
+        } finally {
+            this.dependencies.setProcessing(false)
+        }
+    }
+
+    private async runRecovery(
+        journal: Exclude<PersistedUploadJournal, { phase: 'prepared' }>
+    ): Promise<UploadState> {
+        this.dependencies.setProcessing(true)
+        this.transition({
+            kind: 'receiptReceived',
+            attemptId: journal.attemptId,
+        })
+        try {
+            this.transition({
+                kind: 'reconciling',
+                attemptId: journal.attemptId,
+            })
+            if (journal.phase === 'acknowledged') {
+                const submittedIds = new Set(journal.submittedIds)
+                const features = cloneDeep(
+                    this.dependencies
+                        .getPendingFeatures()
+                        .filter((feature) =>
+                            submittedIds.has(String(feature.id))
+                        )
+                )
+                if (features.length !== submittedIds.size) {
+                    throw new Error(
+                        'The acknowledged upload no longer matches the local queue.'
+                    )
+                }
+                const submissions = this.validateQueue(features)
+                const receipt = this.prepareReceipt(
+                    journal.rawReceipt,
+                    submissions,
+                    journal.changesetId
+                )
+                await this.dependencies.applyAcknowledgedReceipt(
+                    journal.attemptId,
+                    receipt,
+                    this.dependencies.now().toISOString()
+                )
+            }
+            this.dependencies.redraw()
+            await this.dependencies.clearAppliedUploadAttempt(journal.attemptId)
+            const succeeded: UploadState = {
+                kind: 'succeeded',
+                summary: journal.summary,
+            }
+            this.transition(succeeded)
+            return succeeded
+        } catch (cause) {
+            const failed = this.createFailure(
+                'reconciliation',
+                cause,
+                journal.changesetId
+            )
             this.transition(failed)
             return failed
         } finally {
@@ -517,10 +669,15 @@ export class UploadCoordinator {
         return match?.[1] === changesetId
     }
 
+    private isDefinitiveUploadRejection(error: unknown): boolean {
+        const status = this.getOsmRequestError(error).status
+        return typeof status === 'number' && status >= 400 && status < 500
+    }
+
     private transition(next: UploadState): void {
         const current = this.stateSignal().kind
         const allowed: Record<UploadState['kind'], UploadState['kind'][]> = {
-            idle: ['validating'],
+            idle: ['validating', 'receiptReceived', 'failed'],
             validating: ['creatingChangeset', 'failed'],
             creatingChangeset: ['uploading', 'failed'],
             uploading: ['receiptReceived', 'failed'],
@@ -553,7 +710,25 @@ export class UploadCoordinatorService {
             this.osmApi.osmGoFeaturesToOsmDiffFile(features, changesetId),
         uploadDiff: (diff, changesetId) =>
             this.osmApi.apiOsmSendOsmDiffFile(diff, changesetId),
-        applyReceipt: (receipt) => this.dataService.applyUploadReceipt(receipt),
+        getUploadJournal: () => this.dataService.getUploadJournal(),
+        beginUploadAttempt: (journal) =>
+            this.dataService.beginUploadAttempt(journal),
+        acknowledgeUploadAttempt: (attemptId, rawReceipt, acknowledgedAt) =>
+            this.dataService.acknowledgeUploadAttempt(
+                attemptId,
+                rawReceipt,
+                acknowledgedAt
+            ),
+        applyAcknowledgedReceipt: (attemptId, receipt, appliedAt) =>
+            this.dataService.applyAcknowledgedUploadReceipt(
+                attemptId,
+                receipt,
+                appliedAt
+            ),
+        clearAppliedUploadAttempt: (attemptId) =>
+            this.dataService.clearAppliedUploadAttempt(attemptId),
+        discardPreparedUploadAttempt: (attemptId) =>
+            this.dataService.discardPreparedUploadAttempt(attemptId),
         getUserInfo: () => this.configService.getUserInfo(),
         setChangesetComment: (comment) =>
             this.configService.setChangeSetComment(comment),
@@ -570,6 +745,7 @@ export class UploadCoordinatorService {
             )
         },
         createAttemptId,
+        hashPayload: hashUploadPayload,
         now: () => new Date(),
     })
 
@@ -578,6 +754,10 @@ export class UploadCoordinatorService {
 
     start(comment: string): Promise<UploadState> {
         return this.coordinator.start(comment)
+    }
+
+    recoverJournal(): Promise<UploadState> {
+        return this.coordinator.recoverJournal()
     }
 
     resetTerminalState(): void {

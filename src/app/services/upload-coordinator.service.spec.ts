@@ -1,5 +1,7 @@
 import type { UploadReceiptEntry } from '@services/data.service'
+import type { PersistedUploadJournal } from '@services/osm-state'
 import {
+    hashUploadPayload,
     UploadCoordinator,
     type UploadCoordinatorDependencies,
     type UploadFeature,
@@ -52,12 +54,36 @@ const receiptFor = (feature: UploadFeature): Record<string, unknown> => {
     return receipt
 }
 
+const journalBase = (feature: UploadFeature) => ({
+    journalVersion: 1 as const,
+    attemptId: 'attempt-1',
+    payloadHash: 'payload-hash',
+    changesetId: '123',
+    submittedIds: [String(feature.id)],
+    summary: { Total: 1, Create: 1, Update: 0, Delete: 0 },
+    startedAt: '2026-08-02T09:59:00.000Z',
+})
+
+const acknowledgedJournal = (
+    feature: UploadFeature
+): PersistedUploadJournal => ({
+    ...journalBase(feature),
+    phase: 'acknowledged',
+    rawReceipt: [receiptFor(feature)],
+    acknowledgedAt: '2026-08-02T10:00:00.000Z',
+})
+
 interface HarnessOptions {
     features?: UploadFeature[]
     connection$?: Observable<unknown>
     changeset$?: Observable<string>
     upload$?: Observable<unknown>
+    journal?: PersistedUploadJournal
+    beginUploadAttempt?: UploadCoordinatorDependencies['beginUploadAttempt']
+    acknowledgeUploadAttempt?: UploadCoordinatorDependencies['acknowledgeUploadAttempt']
     applyReceipt?: (receipt: UploadReceiptEntry[]) => Promise<void>
+    clearAppliedUploadAttempt?: UploadCoordinatorDependencies['clearAppliedUploadAttempt']
+    discardPreparedUploadAttempt?: UploadCoordinatorDependencies['discardPreparedUploadAttempt']
 }
 
 const createHarness = (options: HarnessOptions = {}) => {
@@ -66,6 +92,18 @@ const createHarness = (options: HarnessOptions = {}) => {
     const processing: boolean[] = []
     const applyReceipt = vi.fn(
         options.applyReceipt ?? (async () => Promise.resolve())
+    )
+    const beginUploadAttempt = vi.fn(
+        options.beginUploadAttempt ?? (async () => Promise.resolve())
+    )
+    const acknowledgeUploadAttempt = vi.fn(
+        options.acknowledgeUploadAttempt ?? (async () => Promise.resolve())
+    )
+    const clearAppliedUploadAttempt = vi.fn(
+        options.clearAppliedUploadAttempt ?? (async () => Promise.resolve())
+    )
+    const discardPreparedUploadAttempt = vi.fn(
+        options.discardPreparedUploadAttempt ?? (async () => Promise.resolve())
     )
     const uploadDiff = vi.fn(() =>
         options.upload$ ? options.upload$ : of(features.map(receiptFor))
@@ -76,7 +114,14 @@ const createHarness = (options: HarnessOptions = {}) => {
         getValidChangeset: vi.fn(() => options.changeset$ ?? of('123')),
         serializeDiff: vi.fn(() => '<osmChange/>'),
         uploadDiff,
-        applyReceipt,
+        getUploadJournal: vi.fn(() => options.journal),
+        beginUploadAttempt,
+        acknowledgeUploadAttempt,
+        applyAcknowledgedReceipt: vi.fn(async (_attemptId, receipt) =>
+            applyReceipt(receipt)
+        ),
+        clearAppliedUploadAttempt,
+        discardPreparedUploadAttempt,
         getUserInfo: vi.fn(() => ({
             uid: '7',
             display_name: 'Mapper',
@@ -89,6 +134,7 @@ const createHarness = (options: HarnessOptions = {}) => {
         setProcessing: vi.fn((value: boolean) => processing.push(value)),
         redraw: vi.fn(),
         createAttemptId: vi.fn(() => 'attempt-1'),
+        hashPayload: vi.fn(async () => 'payload-hash'),
         now: vi.fn(() => new Date('2026-08-02T10:00:00.000Z')),
         onTransition: (state: UploadState) => transitions.push(state),
     } satisfies UploadCoordinatorDependencies
@@ -102,6 +148,12 @@ const createHarness = (options: HarnessOptions = {}) => {
 }
 
 describe('UploadCoordinator', () => {
+    it('records payloads with a deterministic SHA-256 hash', async () => {
+        await expect(hashUploadPayload('abc')).resolves.toBe(
+            'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'
+        )
+    })
+
     it('executes the complete upload state machine and reconciles once', async () => {
         const harness = createHarness()
 
@@ -123,12 +175,50 @@ describe('UploadCoordinator', () => {
         })
         expect(harness.processing).toEqual([true, false])
         expect(harness.dependencies.uploadDiff).toHaveBeenCalledOnce()
-        expect(harness.dependencies.applyReceipt).toHaveBeenCalledOnce()
+        expect(harness.dependencies.beginUploadAttempt).toHaveBeenCalledWith({
+            journalVersion: 1,
+            attemptId: 'attempt-1',
+            payloadHash: 'payload-hash',
+            changesetId: '123',
+            submittedIds: ['node/-1'],
+            summary: { Total: 1, Create: 1, Update: 0, Delete: 0 },
+            startedAt: '2026-08-02T10:00:00.000Z',
+            phase: 'prepared',
+        })
+        expect(
+            harness.dependencies.acknowledgeUploadAttempt
+        ).toHaveBeenCalledOnce()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).toHaveBeenCalledOnce()
+        expect(
+            harness.dependencies.clearAppliedUploadAttempt
+        ).toHaveBeenCalledWith('attempt-1')
+        expect(
+            harness.dependencies.beginUploadAttempt.mock.invocationCallOrder[0]
+        ).toBeLessThan(
+            harness.dependencies.uploadDiff.mock.invocationCallOrder[0]
+        )
+        expect(
+            harness.dependencies.acknowledgeUploadAttempt.mock
+                .invocationCallOrder[0]
+        ).toBeLessThan(
+            harness.dependencies.applyAcknowledgedReceipt.mock
+                .invocationCallOrder[0]
+        )
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt.mock
+                .invocationCallOrder[0]
+        ).toBeLessThan(
+            harness.dependencies.clearAppliedUploadAttempt.mock
+                .invocationCallOrder[0]
+        )
         expect(harness.dependencies.redraw).toHaveBeenCalledOnce()
         expect(
             harness.dependencies.updateChangesetLastActivity
         ).toHaveBeenCalledOnce()
-        const applied = harness.dependencies.applyReceipt.mock.lastCall?.[0]
+        const applied =
+            harness.dependencies.applyAcknowledgedReceipt.mock.lastCall?.[1]
         expect(applied?.[0]).toMatchObject({
             oldId: 'node/-1',
             feature: {
@@ -269,6 +359,9 @@ describe('UploadCoordinator', () => {
             },
         })
         expect(harness.dependencies.invalidateChangeset).toHaveBeenCalledOnce()
+        expect(
+            harness.dependencies.discardPreparedUploadAttempt
+        ).toHaveBeenCalledWith('attempt-1')
     })
 
     it('does not resend automatically after an ambiguous upload response', async () => {
@@ -309,6 +402,9 @@ describe('UploadCoordinator', () => {
             stage: 'upload',
             error: { status: 409, feature: { id: 'node/12' } },
         })
+        expect(
+            harness.dependencies.discardPreparedUploadAttempt
+        ).toHaveBeenCalledWith('attempt-1')
     })
 
     it.each([
@@ -352,7 +448,9 @@ describe('UploadCoordinator', () => {
                 queuePreserved: true,
             },
         })
-        expect(harness.dependencies.applyReceipt).not.toHaveBeenCalled()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).not.toHaveBeenCalled()
         expect(harness.dependencies.uploadDiff).toHaveBeenCalledOnce()
     })
 
@@ -387,10 +485,110 @@ describe('UploadCoordinator', () => {
         })
         expect(second).toBe(first)
         expect(harness.dependencies.uploadDiff).toHaveBeenCalledOnce()
-        expect(harness.dependencies.applyReceipt).toHaveBeenCalledOnce()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).toHaveBeenCalledOnce()
         expect(
             harness.dependencies.updateChangesetLastActivity
         ).toHaveBeenCalledOnce()
         expect(harness.processing).toEqual([true, false])
+    })
+
+    it('treats a prepared journal after restart as server-ambiguous', async () => {
+        const feature = queuedFeature('Create', -1)
+        const harness = createHarness({
+            features: [feature],
+            journal: { ...journalBase(feature), phase: 'prepared' },
+        })
+
+        const state = await harness.coordinator.recoverJournal()
+
+        expect(state).toMatchObject({
+            kind: 'failed',
+            stage: 'upload',
+            error: {
+                recoveryAction: 'inspectServer',
+                canRetry: false,
+                queuePreserved: true,
+            },
+        })
+        expect(harness.dependencies.uploadDiff).not.toHaveBeenCalled()
+        expect(
+            harness.dependencies.clearAppliedUploadAttempt
+        ).not.toHaveBeenCalled()
+    })
+
+    it('reconciles an acknowledged journal after restart without resending', async () => {
+        const feature = queuedFeature('Create', -1)
+        const harness = createHarness({
+            features: [feature],
+            journal: acknowledgedJournal(feature),
+        })
+
+        const state = await harness.coordinator.recoverJournal()
+
+        expect(
+            harness.transitions.map((transition) => transition.kind)
+        ).toEqual(['receiptReceived', 'reconciling', 'succeeded'])
+        expect(state).toMatchObject({ kind: 'succeeded' })
+        expect(harness.dependencies.uploadDiff).not.toHaveBeenCalled()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).toHaveBeenCalledOnce()
+        expect(
+            harness.dependencies.clearAppliedUploadAttempt
+        ).toHaveBeenCalledWith('attempt-1')
+        expect(harness.processing).toEqual([true, false])
+    })
+
+    it('only clears an already-applied journal after restart', async () => {
+        const feature = queuedFeature('Create', -1)
+        const acknowledged = acknowledgedJournal(feature)
+        if (acknowledged.phase !== 'acknowledged') {
+            throw new Error('Invalid acknowledged journal fixture.')
+        }
+        const journal: PersistedUploadJournal = {
+            ...acknowledged,
+            phase: 'applied',
+            appliedAt: '2026-08-02T10:00:01.000Z',
+        }
+        const harness = createHarness({ features: [], journal })
+
+        const state = await harness.coordinator.recoverJournal()
+
+        expect(state).toMatchObject({ kind: 'succeeded' })
+        expect(harness.dependencies.uploadDiff).not.toHaveBeenCalled()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).not.toHaveBeenCalled()
+        expect(
+            harness.dependencies.clearAppliedUploadAttempt
+        ).toHaveBeenCalledWith('attempt-1')
+    })
+
+    it('blocks resubmission when the acknowledgement journal cannot be persisted', async () => {
+        const harness = createHarness({
+            acknowledgeUploadAttempt: async () => {
+                throw new Error('IndexedDB write failed')
+            },
+        })
+
+        const first = await harness.coordinator.start('Survey')
+        const second = await harness.coordinator.start('Survey again')
+
+        expect(first).toMatchObject({
+            kind: 'failed',
+            stage: 'upload',
+            error: {
+                message: 'IndexedDB write failed',
+                recoveryAction: 'inspectServer',
+                canRetry: false,
+            },
+        })
+        expect(second).toBe(first)
+        expect(harness.dependencies.uploadDiff).toHaveBeenCalledOnce()
+        expect(
+            harness.dependencies.applyAcknowledgedReceipt
+        ).not.toHaveBeenCalled()
     })
 })

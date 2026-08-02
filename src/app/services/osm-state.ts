@@ -3,9 +3,38 @@ import type { OsmGoFeature, OsmGoFeatureCollection } from '@osmgo/type'
 export const OSM_STATE_STORAGE_KEY = 'osmState'
 export const OSM_STATE_SCHEMA_VERSION = 2
 
-export interface PersistedUploadJournal {
-    readonly [key: string]: unknown
+export interface PersistedUploadSummary {
+    Total: number
+    Create: number
+    Update: number
+    Delete: number
 }
+
+interface PersistedUploadJournalBase {
+    journalVersion: 1
+    attemptId: string
+    payloadHash: string
+    changesetId: string
+    submittedIds: string[]
+    summary: PersistedUploadSummary
+    startedAt: string
+}
+
+export type PersistedUploadJournal = PersistedUploadJournalBase &
+    (
+        | { phase: 'prepared' }
+        | {
+              phase: 'acknowledged'
+              rawReceipt: unknown
+              acknowledgedAt: string
+          }
+        | {
+              phase: 'applied'
+              rawReceipt: unknown
+              acknowledgedAt: string
+              appliedAt: string
+          }
+    )
 
 export interface PersistedOsmStateV2 {
     schemaVersion: 2
@@ -55,6 +84,109 @@ const emptyFeatureCollection = (): OsmGoFeatureCollection => ({
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
     typeof value === 'object' && value !== null && !Array.isArray(value)
+
+const requireNonEmptyString = (value: unknown, label: string): string => {
+    if (typeof value !== 'string' || value.trim() === '') {
+        throw new Error(`The persisted ${label} is invalid.`)
+    }
+    return value
+}
+
+const requireUploadSummary = (value: unknown): PersistedUploadSummary => {
+    if (!isRecord(value)) {
+        throw new Error('The persisted upload journal summary is invalid.')
+    }
+    const counts = [
+        value['Total'],
+        value['Create'],
+        value['Update'],
+        value['Delete'],
+    ]
+    if (
+        counts.some(
+            (count) =>
+                typeof count !== 'number' ||
+                !Number.isInteger(count) ||
+                count < 0
+        )
+    ) {
+        throw new Error('The persisted upload journal summary is invalid.')
+    }
+    const summary: PersistedUploadSummary = {
+        Total: value['Total'] as number,
+        Create: value['Create'] as number,
+        Update: value['Update'] as number,
+        Delete: value['Delete'] as number,
+    }
+    if (summary.Total !== summary.Create + summary.Update + summary.Delete) {
+        throw new Error('The persisted upload journal summary is invalid.')
+    }
+    return summary
+}
+
+const requireUploadJournal = (value: unknown): PersistedUploadJournal => {
+    if (!isRecord(value) || value['journalVersion'] !== 1) {
+        throw new Error('The persisted upload journal is invalid.')
+    }
+    const submittedIds = value['submittedIds']
+    if (
+        !Array.isArray(submittedIds) ||
+        submittedIds.length === 0 ||
+        submittedIds.some((id) => typeof id !== 'string' || id.trim() === '') ||
+        new Set(submittedIds).size !== submittedIds.length
+    ) {
+        throw new Error('The persisted upload journal IDs are invalid.')
+    }
+    const base: PersistedUploadJournalBase = {
+        journalVersion: 1,
+        attemptId: requireNonEmptyString(
+            value['attemptId'],
+            'upload attempt ID'
+        ),
+        payloadHash: requireNonEmptyString(
+            value['payloadHash'],
+            'upload payload hash'
+        ),
+        changesetId: requireNonEmptyString(
+            value['changesetId'],
+            'upload changeset ID'
+        ),
+        submittedIds: [...submittedIds],
+        summary: requireUploadSummary(value['summary']),
+        startedAt: requireNonEmptyString(
+            value['startedAt'],
+            'upload start timestamp'
+        ),
+    }
+    if (value['phase'] === 'prepared') {
+        return { ...base, phase: 'prepared' }
+    }
+    const acknowledgedAt = requireNonEmptyString(
+        value['acknowledgedAt'],
+        'upload acknowledgement timestamp'
+    )
+    if (value['phase'] === 'acknowledged') {
+        return {
+            ...base,
+            phase: 'acknowledged',
+            rawReceipt: structuredClone(value['rawReceipt']),
+            acknowledgedAt,
+        }
+    }
+    if (value['phase'] === 'applied') {
+        return {
+            ...base,
+            phase: 'applied',
+            rawReceipt: structuredClone(value['rawReceipt']),
+            acknowledgedAt,
+            appliedAt: requireNonEmptyString(
+                value['appliedAt'],
+                'upload application timestamp'
+            ),
+        }
+    }
+    throw new Error('The persisted upload journal phase is invalid.')
+}
 
 const requireFeatureCollection = (
     value: unknown,
@@ -204,7 +336,7 @@ export const migratePersistedOsmState = (
                 ? Number(state.revision)
                 : 0
         if (state.uploadJournal) {
-            migrated.uploadJournal = structuredClone(state.uploadJournal)
+            migrated.uploadJournal = requireUploadJournal(state.uploadJournal)
         }
         return migrated
     }
@@ -231,8 +363,8 @@ export const migratePersistedOsmState = (
         bbox: requireFeatureCollection(value['bbox'], 'bbox data'),
         nextTemporaryId: Number(nextTemporaryId),
     }
-    if (isRecord(value['uploadJournal'])) {
-        state.uploadJournal = structuredClone(value['uploadJournal'])
+    if (value['uploadJournal'] !== undefined) {
+        state.uploadJournal = requireUploadJournal(value['uploadJournal'])
     }
     return state
 }
