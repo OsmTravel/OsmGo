@@ -1,37 +1,54 @@
-import { EventEmitter, Injectable, inject } from '@angular/core'
+import { Injectable, inject, signal } from '@angular/core'
 import { CompassHeading } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 // import { Geolocation } from '@capacitor/geolocation'
 import { FeatureCollection, Point } from 'geojson'
+import { Subject } from 'rxjs'
+
+const EMPTY_COMPASS_HEADING: CompassHeading = {
+    magneticHeading: null,
+    trueHeading: null,
+    headingAccuracy: null,
+    timestamp: null,
+}
 
 @Injectable({ providedIn: 'root' })
 export class LocationService {
     readonly configService = inject(ConfigService)
 
-    eventNewLocation = new EventEmitter<FeatureCollection>()
-    eventNewCompassHeading = new EventEmitter<CompassHeading>()
-    eventLocationIsReady = new EventEmitter<GeolocationPosition>()
-    location: GeolocationPosition
-    pointGeojson: FeatureCollection<Point>
-    compassHeading: CompassHeading = {
-        magneticHeading: null,
-        trueHeading: null,
-        headingAccuracy: null,
-        timestamp: null,
-    }
+    private readonly newLocationSubject = new Subject<
+        FeatureCollection<Point>
+    >()
+    readonly newLocation$ = this.newLocationSubject.asObservable()
+    private readonly compassHeadingSubject = new Subject<CompassHeading>()
+    readonly compassHeadingChanges$ = this.compassHeadingSubject.asObservable()
+    private readonly locationReadySubject = new Subject<GeolocationPosition>()
+    readonly locationReady$ = this.locationReadySubject.asObservable()
 
-    gpsIsReady: boolean = false
-    subscriptionWatchLocation: number
+    private readonly locationState = signal<GeolocationPosition | undefined>(
+        undefined
+    )
+    readonly location = this.locationState.asReadonly()
+    private readonly compassHeadingState = signal<CompassHeading>(
+        EMPTY_COMPASS_HEADING
+    )
+    readonly compassHeading = this.compassHeadingState.asReadonly()
+    private readonly gpsReadyState = signal(false)
+    readonly gpsIsReady = this.gpsReadyState.asReadonly()
+
+    private watchId?: number
+    private orientationEventName?:
+        | 'deviceorientationabsolute'
+        | 'deviceorientation'
 
     watchPosition(): void {
-        if (this.subscriptionWatchLocation) {
-            navigator.geolocation.clearWatch(this.subscriptionWatchLocation)
+        if (this.watchId !== undefined) {
+            navigator.geolocation.clearWatch(this.watchId)
         }
-        this.subscriptionWatchLocation = navigator.geolocation.watchPosition(
+        this.watchId = navigator.geolocation.watchPosition(
             (position: GeolocationPosition) => {
                 if (position?.coords) {
-                    this.location = position
-                    this.eventNewLocation.emit(this.getGeojsonPos())
+                    this.setLocation(position)
                 }
             },
             (err) => {
@@ -58,137 +75,147 @@ export class LocationService {
     enableGeolocation(): void {
         this.heading()
         this.getCurrentPosition().then((position: GeolocationPosition) => {
-            this.location = position
-            this.eventNewLocation.emit(this.getGeojsonPos())
-
-            this.eventLocationIsReady.emit(position)
-
-            this.gpsIsReady = true
+            this.setLocation(position)
+            this.gpsReadyState.set(true)
+            this.locationReadySubject.next(position)
             this.watchPosition()
         })
     }
 
     disableGeolocation(): void {
-        navigator.geolocation.clearWatch(this.subscriptionWatchLocation)
+        if (this.watchId !== undefined) {
+            navigator.geolocation.clearWatch(this.watchId)
+            this.watchId = undefined
+        }
+        if (this.orientationEventName) {
+            window.removeEventListener(
+                this.orientationEventName,
+                this.onDeviceOrientation,
+                true
+            )
+            this.orientationEventName = undefined
+        }
+        this.gpsReadyState.set(false)
     }
 
     heading(): void {
-        const onDeviceOrientation = (event: DeviceOrientationEvent) => {
-            if (!event.absolute) {
-                return
-            }
-            if (!event.alpha || !event.beta || !event.gamma) {
-                return
-            }
-
-            // Convert degrees to radians
-            const alphaRad = event.alpha * (Math.PI / 180)
-            const betaRad = event.beta * (Math.PI / 180)
-            const gammaRad = event.gamma * (Math.PI / 180)
-
-            // Calculate equation components
-            const cA = Math.cos(alphaRad)
-            const sA = Math.sin(alphaRad)
-            const cB = Math.cos(betaRad)
-            const sB = Math.sin(betaRad)
-            const cG = Math.cos(gammaRad)
-            const sG = Math.sin(gammaRad)
-
-            // Calculate A, B, C rotation components
-            const rA = -cA * sG - sA * sB * cG
-            const rB = -sA * sG + cA * sB * cG
-            const rC = -cB * cG
-
-            // Calculate compass heading
-            let compassHeading = Math.atan(rA / rB)
-
-            // Convert from half unit circle to whole unit circle
-            if (rB < 0) {
-                compassHeading += Math.PI
-            } else if (rA < 0) {
-                compassHeading += 2 * Math.PI
-            }
-
-            // Convert radians to degrees
-            compassHeading *= 180 / Math.PI
-
-            const newCompassHeading: CompassHeading = {
-                magneticHeading: compassHeading,
-                trueHeading: compassHeading,
-                headingAccuracy: null,
-                timestamp: new Date().getTime(),
-            }
-
-            this.eventNewCompassHeading.emit(newCompassHeading)
+        if (this.orientationEventName) {
+            window.removeEventListener(
+                this.orientationEventName,
+                this.onDeviceOrientation,
+                true
+            )
         }
 
         if (typeof window['ondeviceorientationabsolute'] == 'object') {
-            window.addEventListener(
-                'deviceorientationabsolute',
-                onDeviceOrientation,
-                true
-            )
+            this.orientationEventName = 'deviceorientationabsolute'
         } else if (typeof window['ondeviceorientation'] == 'object') {
-            window.addEventListener(
-                'deviceorientation',
-                onDeviceOrientation,
-                true
-            )
+            this.orientationEventName = 'deviceorientation'
         } else {
             console.log('utiliser le heading du gps ?')
+            return
         }
+
+        window.addEventListener(
+            this.orientationEventName,
+            this.onDeviceOrientation,
+            true
+        )
     }
 
-    getLocation(): GeolocationPosition {
-        return this.location
+    private readonly onDeviceOrientation = (event: DeviceOrientationEvent) => {
+        if (!event.absolute) {
+            return
+        }
+        if (!event.alpha || !event.beta || !event.gamma) {
+            return
+        }
+
+        const alphaRad = event.alpha * (Math.PI / 180)
+        const betaRad = event.beta * (Math.PI / 180)
+        const gammaRad = event.gamma * (Math.PI / 180)
+
+        const cA = Math.cos(alphaRad)
+        const sA = Math.sin(alphaRad)
+        const sB = Math.sin(betaRad)
+        const cG = Math.cos(gammaRad)
+        const sG = Math.sin(gammaRad)
+
+        const rA = -cA * sG - sA * sB * cG
+        const rB = -sA * sG + cA * sB * cG
+
+        let heading = Math.atan(rA / rB)
+        if (rB < 0) {
+            heading += Math.PI
+        } else if (rA < 0) {
+            heading += 2 * Math.PI
+        }
+        heading *= 180 / Math.PI
+
+        const newCompassHeading: CompassHeading = {
+            magneticHeading: heading,
+            trueHeading: heading,
+            headingAccuracy: null,
+            timestamp: Date.now(),
+        }
+
+        this.compassHeadingState.set(newCompassHeading)
+        this.compassHeadingSubject.next(newCompassHeading)
+    }
+
+    private setLocation(position: GeolocationPosition): void {
+        this.locationState.set(position)
+        this.publishCurrentLocation()
     }
 
     getCoordsPosition(): [number, number] {
-        if (this.location && this.location.coords) {
-            return [
-                this.location.coords.longitude,
-                this.location.coords.latitude,
-            ]
+        const location = this.location()
+        if (location?.coords) {
+            return [location.coords.longitude, location.coords.latitude]
         }
         throw new Error('no location')
     }
 
-    getGeojsonPos(): FeatureCollection<Point> {
-        if (!this.location?.coords) {
-            return
-        }
-        const lon: number = this.location.coords.longitude
-        const lat: number = this.location.coords.latitude
-        const accuracy: number =
-            this.location && this.location.coords
-                ? this.location.coords.accuracy
-                : 0
-        const heading = this.compassHeading.magneticHeading
+    getGeojsonPos(): FeatureCollection<Point> | undefined {
+        const location = this.location()
+        if (!location?.coords) return undefined
 
-        this.pointGeojson = {
+        return {
             type: 'FeatureCollection',
             features: [
                 {
                     type: 'Feature',
-                    geometry: { type: 'Point', coordinates: [lon, lat] },
+                    geometry: {
+                        type: 'Point',
+                        coordinates: [
+                            location.coords.longitude,
+                            location.coords.latitude,
+                        ],
+                    },
                     properties: {
-                        accuracy: accuracy,
-                        trueHeading: heading,
+                        accuracy: location.coords.accuracy,
+                        trueHeading: this.compassHeading().magneticHeading,
                     },
                 },
             ],
         }
-        return this.pointGeojson
+    }
+
+    publishCurrentLocation(): void {
+        const point = this.getGeojsonPos()
+        if (point) this.newLocationSubject.next(point)
     }
 
     getGeoJSONCirclePosition(points: number = 64): FeatureCollection {
         if (!points) {
             points = 64
         }
-        const radiusInKm = this.location.coords.accuracy / 1000
+        const location = this.location()
+        if (!location) throw new Error('no location')
+        const radiusInKm = location.coords.accuracy / 1000
         const coords: { latitude: number; longitude: number } = {
-            latitude: this.location.coords.latitude,
-            longitude: this.location.coords.longitude,
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude,
         }
         const km = radiusInKm
         const ret: number[][] = []

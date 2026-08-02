@@ -115,7 +115,7 @@ export class MapService {
         }
         spriteImage.src = pathSprites
 
-        this.locationService.eventLocationIsReady.subscribe((data) => {
+        this.locationService.locationReady$.subscribe(() => {
             if (this.map && this.configService.config.centerWhenGpsIsReady) {
                 this.map.setZoom(19)
             }
@@ -209,6 +209,7 @@ export class MapService {
     subscriptionMarkerMove: Subscription
     mode: MapMode = 'Update'
     headingIsLocked: boolean = true
+    private lastRenderedHeading: number | null = null
     positionIsFollow: boolean = true
     isDisplaySatelliteBaseMap: boolean = false
 
@@ -496,7 +497,7 @@ export class MapService {
         if (this.configService.config.followPosition) {
             this.positionIsFollow = true
             if (this.configService.config.lockMapHeading) {
-                bearing = this.locationService.compassHeading.trueHeading
+                bearing = this.locationService.compassHeading().trueHeading
 
                 this.map.setLayoutProperty('location_user', 'icon-rotate', 0)
             }
@@ -711,10 +712,11 @@ export class MapService {
                 })
 
                 this.map.on('zoom', (e) => {
-                    if (this.layersAreLoaded && this.locationService.location) {
-                        if (this.locationService.location?.coords?.accuracy) {
+                    const location = this.locationService.location()
+                    if (this.layersAreLoaded && location) {
+                        if (location.coords.accuracy) {
                             this.changeLocationRadius(
-                                this.locationService.location.coords.accuracy,
+                                location.coords.accuracy,
                                 false
                             )
                         }
@@ -1315,13 +1317,13 @@ export class MapService {
 
         this.map.on('rotate', async (e) => {
             if (
-                this.locationService.compassHeading.trueHeading &&
+                this.locationService.compassHeading().trueHeading &&
                 (!this.configService.config.lockMapHeading ||
                     !this.headingIsLocked)
             ) {
                 // on suit l'orientation, la map tourne
                 const iconRotate = this.getIconRotate(
-                    this.locationService.compassHeading.trueHeading,
+                    this.locationService.compassHeading().trueHeading,
                     this.map.getBearing()
                 )
                 this.map.setLayoutProperty(
@@ -1338,28 +1340,27 @@ export class MapService {
             })
         })
 
-        this.locationService.eventNewCompassHeading
+        this.locationService.compassHeadingChanges$
             .pipe(
                 filter(
                     (heading) =>
-                        !this.locationService.compassHeading.trueHeading ||
+                        this.lastRenderedHeading === null ||
                         Math.abs(
-                            heading.trueHeading -
-                                this.locationService.compassHeading.trueHeading
+                            heading.trueHeading - this.lastRenderedHeading
                         ) > 1
                 ),
                 throttleTime(100)
             )
             .subscribe((heading) => {
-                if (!this.locationService.compassHeading.trueHeading) {
+                if (this.lastRenderedHeading === null) {
                     this.map.setLayoutProperty(
                         'location_user',
                         'icon-image',
                         'location-with-orientation'
                     )
                 }
+                this.lastRenderedHeading = heading.trueHeading
 
-                this.locationService.compassHeading = { ...heading }
                 if (
                     this.configService.config.lockMapHeading &&
                     this.headingIsLocked
@@ -1388,7 +1389,7 @@ export class MapService {
                 }
             })
 
-        this.locationService.eventNewLocation.subscribe(
+        this.locationService.newLocation$.subscribe(
             (geojsonPos: FeatureCollection) => {
                 if (geojsonPos.features && geojsonPos.features[0].properties) {
                     const coordinates = (
@@ -1423,10 +1424,8 @@ export class MapService {
         )
 
         // La localisation était déjà ready avnt que la carte ne soit chargée
-        if (this.locationService.gpsIsReady) {
-            this.locationService.eventNewLocation.emit(
-                this.locationService.getGeojsonPos()
-            )
+        if (this.locationService.gpsIsReady()) {
+            this.locationService.publishCurrentLocation()
         }
 
         this.eventMapIsLoaded.emit()

@@ -117,7 +117,7 @@
                 ion-fab
                 fab-bottom
                 (click)="mapService.centerOnMyPosition()"
-                [disabled]="!locationService.gpsIsReady"
+                [disabled]="!locationService.gpsIsReady()"
             >
                 <ion-icon name="locate"></ion-icon>
             </ion-fab-button>
