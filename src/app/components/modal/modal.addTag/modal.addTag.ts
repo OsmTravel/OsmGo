@@ -1,8 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { ModalController, NavParams } from '@ionic/angular'
-import { TranslateService } from '@ngx-translate/core'
+import { FormsModule } from '@angular/forms'
+import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { Preset } from '@osmgo/type'
 import { nameToOsmKey } from '@osmgo/utils'
+import { FilterByListPipe } from '@pipes/filterByList.pipe'
+import { FilterPresetsByListPipe } from '@pipes/filterPresetsByList.pipe'
+import { RemoveBrandsPipe } from '@pipes/removeBrands.pipe'
+import { SearchForPipe } from '@pipes/searchFor.pipe'
+import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 
@@ -11,7 +17,16 @@ import { TagsService } from '@services/tags.service'
     templateUrl: './modal.addTag.html',
     styleUrls: ['./modal.addTag.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        FilterByListPipe,
+        FilterPresetsByListPipe,
+        FormsModule,
+        IonicModule,
+        RemoveBrandsPipe,
+        SearchForPipe,
+        ToOsmTagPipe,
+        TranslateModule,
+    ],
 })
 export class ModalAddTag {
     moreFields: Array<string>

@@ -1,5 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
-import { ModalController, NavParams, Platform } from '@ionic/angular'
+import { FormsModule } from '@angular/forms'
+import {
+    IonicModule,
+    ModalController,
+    NavParams,
+    Platform,
+} from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
+import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
+import { FilterByPresetsContentPipe } from '@pipes/filterByPresetsContent.pipe'
 import { ConfigService } from '@services/config.service'
 
 @Component({
@@ -7,7 +16,13 @@ import { ConfigService } from '@services/config.service'
     styleUrls: ['./modalSelectList.scss'],
     selector: 'modal-select-list',
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        FilterByCountryCode,
+        FilterByPresetsContentPipe,
+        FormsModule,
+        IonicModule,
+        TranslateModule,
+    ],
 })
 export class ModalSelectList {
     data

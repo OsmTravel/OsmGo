@@ -4,14 +4,16 @@ import {
     Input,
     OnInit,
 } from '@angular/core'
-import { ModalController, NavParams } from '@ionic/angular'
+import { IconComponent } from '@components/icon/icon.component'
+import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 
 @Component({
     selector: 'app-dialog-multi-features',
     templateUrl: './dialog-multi-features.component.html',
     styleUrls: ['./dialog-multi-features.component.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IconComponent, IonicModule, TranslateModule],
 })
 export class DialogMultiFeaturesComponent implements OnInit {
     // @Input() features: string;

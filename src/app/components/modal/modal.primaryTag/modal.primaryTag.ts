@@ -1,6 +1,18 @@
+import { LowerCasePipe } from '@angular/common'
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
-import { ModalController, NavParams, Platform } from '@ionic/angular'
+import { FormsModule } from '@angular/forms'
+import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
+import { IonicModule, ModalController, NavParams } from '@ionic/angular'
+import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
+import { FilterByByGeometryTypePipe } from '@pipes/filter-by-geometry-type.pipe'
+import { FilterBySearchablePipe } from '@pipes/filter-by-searchable.pipe'
+import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
+import { FilterDeprecatedTagPipe } from '@pipes/filterDeprecatedTag.pipe'
+import { FilterExcludeTagByCountryCode } from '@pipes/filterExcludeTagByCountryCode.pipe'
+import { FiltersTagsByIdsPipe } from '@pipes/filters-tags-by-ids.pipe'
+import { LimitDisplayTagsPipe } from '@pipes/limit-display-tags.pipe'
+import { SortArrayPipe } from '@pipes/sort-array.pipe'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 
@@ -9,7 +21,21 @@ import { TagsService } from '@services/tags.service'
     templateUrl: './modal.primaryTag.html',
     styleUrls: ['./modal.primaryTag.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [
+        FilterByByGeometryTypePipe,
+        FilterBySearchablePipe,
+        FilterByTagsContentPipe,
+        FilterDeprecatedTagPipe,
+        FilterExcludeTagByCountryCode,
+        FiltersTagsByIdsPipe,
+        FormsModule,
+        IonicModule,
+        LimitDisplayTagsPipe,
+        LowerCasePipe,
+        SortArrayPipe,
+        TagListElementComponent,
+        TranslateModule,
+    ],
 })
 export class ModalPrimaryTag implements OnInit {
     private swipeStartX: number | null = null
