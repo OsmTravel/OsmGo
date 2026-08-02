@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     JsonSprites,
@@ -16,6 +16,10 @@ import { map } from 'rxjs/operators'
 
 @Injectable({ providedIn: 'root' })
 export class TagsService {
+    private readonly http = inject(HttpClient)
+    readonly localStorage = inject(Storage)
+    readonly configService = inject(ConfigService)
+
     lastTagsUsedIds: string[]
 
     bookmarksIds: string[] = []
@@ -162,12 +166,6 @@ export class TagsService {
         'building/office',
     ]
 
-    constructor(
-        private http: HttpClient,
-        public localStorage: Storage,
-        public configService: ConfigService
-    ) {}
-
     getTagConfigFromTagsID(tagIds: string[]): TagConfig[] {
         return this.tags.filter((tag) => tagIds.includes(tag.id))
     }
@@ -191,7 +189,7 @@ export class TagsService {
         if (this.bookmarksIds.includes(tag.id)) {
             return
         }
-        let currentTag = this.tags.find((t) => t.id === tag.id)
+        const currentTag = this.tags.find((t) => t.id === tag.id)
         if (!currentTag) {
             this.addUserTags(tag)
         }
@@ -279,7 +277,7 @@ export class TagsService {
                 (tu) => tu !== tagId
             )
         }
-        let currentTag = this.tags.find((t) => t.id === tagId)
+        const currentTag = this.tags.find((t) => t.id === tagId)
         if (!currentTag) {
             return
         }
@@ -344,14 +342,14 @@ export class TagsService {
             featureOrTags.properties &&
             featureOrTags.properties.tags
         ) {
-            for (let k in featureOrTags.properties.tags) {
+            for (const k in featureOrTags.properties.tags) {
                 if (pkeys.includes(k)) {
                     return { key: k, value: featureOrTags.properties.tags[k] }
                 }
                 return undefined
             }
         } else if (Array.isArray(featureOrTags)) {
-            for (let t of featureOrTags) {
+            for (const t of featureOrTags) {
                 if (pkeys.includes(t.key)) {
                     return { key: t.key, value: t.value }
                 }
@@ -414,7 +412,7 @@ export class TagsService {
     loadTags$(): Observable<TagConfig[]> {
         return forkJoin(this.getTagsConfig$(), this.loadUserTags$()).pipe(
             map(([tagsConfig, userTags]: [TagsJson, TagConfig[]]) => {
-                let tags: TagConfig[] = [...tagsConfig.tags, ...userTags]
+                const tags: TagConfig[] = [...tagsConfig.tags, ...userTags]
                 this.tags = tags
                 return tags
             })
