@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import {
     IonButton,
     IonButtons,
@@ -22,7 +22,6 @@ import { ConfigService } from '@services/config.service'
 @Component({
     selector: 'page-about',
     templateUrl: './about.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IonButton,
         IonButtons,
