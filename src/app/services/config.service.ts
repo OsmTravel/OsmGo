@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
+import { Injectable, inject } from '@angular/core'
 import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
@@ -53,12 +53,11 @@ export interface Config {
 
 @Injectable({ providedIn: 'root' })
 export class ConfigService {
-    constructor(
-        public localStorage: Storage,
-        private platform: Platform,
-        private http: HttpClient,
-        private translate: TranslateService
-    ) {}
+    readonly localStorage = inject(Storage)
+    private readonly platform = inject(Platform)
+    private readonly http = inject(HttpClient)
+    private readonly translate = inject(TranslateService)
+
     user_info: User = {
         uid: '',
         display_name: '',

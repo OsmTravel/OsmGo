@@ -1,3 +1,9 @@
+import { HttpClient } from '@angular/common/http'
+import { TestBed } from '@angular/core/testing'
+import { Platform } from '@ionic/angular/standalone'
+import { Storage } from '@ionic/storage-angular'
+import { TranslateService } from '@ngx-translate/core'
+
 import { ConfigService } from './config.service'
 
 describe('ConfigService', () => {
@@ -5,12 +11,15 @@ describe('ConfigService', () => {
         const storage = {
             set: vi.fn().mockName('Storage.set'),
         }
-        const service = new ConfigService(
-            storage as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: Storage, useValue: storage },
+                { provide: Platform, useValue: {} },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
         service.changeset = {
             id: '123',
             created_at: 100,
