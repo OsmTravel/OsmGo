@@ -12,7 +12,6 @@ import {
     NavController,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
-import { TagConfig } from '@osmgo/type'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
@@ -47,7 +46,6 @@ export class ManageTagsComponent implements OnInit {
     readonly tagsService = inject(TagsService)
     readonly navCtrl = inject(NavController)
 
-    tags: TagConfig[]
     refreshFilterMapAfterClose = false
 
     ngOnInit() {

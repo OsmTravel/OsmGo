@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core'
 import { Router } from '@angular/router'
-import { App } from '@capacitor/app'
+import { App, type URLOpenListenerEvent } from '@capacitor/app'
 import { Capacitor } from '@capacitor/core'
 import { Device } from '@capacitor/device'
 import { SplashScreen } from '@capacitor/splash-screen'
@@ -29,12 +29,12 @@ export class AppComponent {
         SplashScreen.hide()
     }
 
-    async initializeApp() {
+    async initializeApp(): Promise<void> {
         await this.storage.create()
 
         this.platform.ready().then(() => {
             if (Capacitor.isPluginAvailable('App')) {
-                App.addListener('appUrlOpen', (data: any) => {
+                App.addListener('appUrlOpen', (data: URLOpenListenerEvent) => {
                     if (data.url.includes('osmgo://auth')) {
                         const urlParts = data.url.split('?')
                         if (urlParts.length > 1) {

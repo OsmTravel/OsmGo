@@ -88,7 +88,7 @@ export class MenuPage {
             })
     }
 
-    pushPage(path) {
+    pushPage(path: string): void {
         this.navCtrl.navigateForward(path)
     }
 

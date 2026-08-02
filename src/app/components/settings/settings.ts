@@ -18,6 +18,9 @@ import {
     LoadingController,
     NavController,
     Platform,
+    type RangeCustomEvent,
+    type SelectCustomEvent,
+    type ToggleCustomEvent,
 } from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
@@ -69,36 +72,38 @@ export class SettingsPage {
         }
     }
 
-    back() {
+    back(): void {
         this.navCtrl.back()
     }
 
-    mapMarginBufferChange(e) {
-        this.configService.setMapMarginBuffer(e.detail.value)
+    mapMarginBufferChange(event: RangeCustomEvent): void {
+        this.configService.setMapMarginBuffer(this.getRangeValue(event))
     }
 
-    limitFeaturesChange(e) {
-        this.configService.setLimitFeatures(e.detail.value)
+    limitFeaturesChange(event: RangeCustomEvent): void {
+        this.configService.setLimitFeatures(this.getRangeValue(event))
     }
 
-    lockMapHeadingChange(e) {
-        this.configService.setLockMapHeading(e.detail.checked)
+    lockMapHeadingChange(event: ToggleCustomEvent): void {
+        this.configService.setLockMapHeading(event.detail.checked)
     }
 
-    followPositionChange(e) {
-        this.configService.setFollowPosition(e.detail.checked)
+    followPositionChange(event: ToggleCustomEvent): void {
+        this.configService.setFollowPosition(event.detail.checked)
     }
 
-    centerWhenGpsIsReadyChange(e) {
-        this.configService.setCenterWhenGpsIsReady(e.detail.checked)
+    centerWhenGpsIsReadyChange(event: ToggleCustomEvent): void {
+        this.configService.setCenterWhenGpsIsReady(event.detail.checked)
     }
 
-    defaultPrimarykeyWindowsChange(e) {
-        this.configService.setDefaultPrimarykeyWindows(e.detail.value)
+    defaultPrimarykeyWindowsChange(
+        event: SelectCustomEvent<'lastTags' | 'bookmarks'>
+    ): void {
+        this.configService.setDefaultPrimarykeyWindows(event.detail.value)
     }
 
-    filterWayByArea(e) {
-        this.configService.setFilterWayByArea(e.detail.checked)
+    filterWayByArea(event: ToggleCustomEvent): void {
+        this.configService.setFilterWayByArea(event.detail.checked)
         // value en m²!
         this.mapService.toogleMesureFilter(
             this.configService.getFilterWayByArea(),
@@ -108,8 +113,8 @@ export class SettingsPage {
         )
     }
 
-    filterWayByLength(e) {
-        this.configService.setFilterWayByLength(e.detail.checked)
+    filterWayByLength(event: ToggleCustomEvent): void {
+        this.configService.setFilterWayByLength(event.detail.checked)
         // value en km!
         this.mapService.toogleMesureFilter(
             this.configService.getFilterWayByLength(),
@@ -119,12 +124,12 @@ export class SettingsPage {
         )
     }
 
-    displayOldTagIconChange(e) {
+    displayOldTagIconChange(event: ToggleCustomEvent): void {
         this.configService.setOldTagsIcon(
-            e.detail.checked,
+            event.detail.checked,
             this.configService.config().oldTagsIcon.year
         )
-        if (e.detail.checked) {
+        if (event.detail.checked) {
             this.mapService.showOldTagIcon(
                 this.configService.config().oldTagsIcon.year
             )
@@ -134,35 +139,40 @@ export class SettingsPage {
         // this.mapService
     }
 
-    yearOldTagIconChange(e) {
+    yearOldTagIconChange(event: RangeCustomEvent): void {
+        const year = this.getRangeValue(event)
         this.configService.setOldTagsIcon(
             this.configService.config().oldTagsIcon.display,
-            e.detail.value
+            year
         )
         if (this.configService.config().oldTagsIcon.display) {
-            this.mapService.showOldTagIcon(e.detail.value)
+            this.mapService.showOldTagIcon(year)
         }
     }
 
-    displayFixmeIconChange(e) {
-        this.configService.setDisplayFixmeIcon(e.detail.checked)
-        if (e.detail.checked) {
+    displayFixmeIconChange(event: ToggleCustomEvent): void {
+        this.configService.setDisplayFixmeIcon(event.detail.checked)
+        if (event.detail.checked) {
             this.mapService.showFixmeIcon()
         } else {
             this.mapService.hideFixmeIcon()
         }
     }
 
-    addSurveyDateChange(e) {
-        this.configService.setAddSurveyDate(e.detail.checked)
+    addSurveyDateChange(event: ToggleCustomEvent): void {
+        this.configService.setAddSurveyDate(event.detail.checked)
     }
 
-    checkedKeyChange(e) {
-        this.configService.setCheckedKey(e.detail.value)
+    checkedKeyChange(
+        event: SelectCustomEvent<'survey:date' | 'check_date'>
+    ): void {
+        this.configService.setCheckedKey(event.detail.value)
     }
 
-    displaySurveyCardChange(e) {
-        this.configService.setDisplaySurveyCard(e.detail.value)
+    displaySurveyCardChange(
+        event: SelectCustomEvent<'never' | 'when_older' | 'always'>
+    ): void {
+        this.configService.setDisplaySurveyCard(event.detail.value)
     }
 
     displaySurveyCardOptions() {
@@ -174,23 +184,20 @@ export class SettingsPage {
         }
     }
 
-    yearOldSurveyCardChange(e) {
-        this.configService.setSurveyCardYear(e.detail.value)
+    yearOldSurveyCardChange(event: RangeCustomEvent): void {
+        this.configService.setSurveyCardYear(this.getRangeValue(event))
     }
 
-    languageUiChange(e: any) {
-        const newLlang = e.detail.value
-        this.configService.setUiLanguage(newLlang)
+    languageUiChange(event: SelectCustomEvent<string>): void {
+        this.configService.setUiLanguage(event.detail.value)
     }
 
-    languageTagsChange(e) {
-        const newLlang = e.detail.value
-        this.configService.setLanguageTags(newLlang)
+    languageTagsChange(event: SelectCustomEvent<string>): void {
+        this.configService.setLanguageTags(event.detail.value)
     }
 
-    countryTagsChange(e) {
-        const newCountry = e.detail.value
-        this.configService.setCountryTags(newCountry)
+    countryTagsChange(event: SelectCustomEvent<string>): void {
+        this.configService.setCountryTags(event.detail.value)
     }
 
     countryTagsOptions() {
@@ -200,14 +207,14 @@ export class SettingsPage {
         }
     }
 
-    isSelectableLineChange(e) {
-        this.configService.setIsSelectableLine(e.detail.checked)
+    isSelectableLineChange(event: ToggleCustomEvent): void {
+        this.configService.setIsSelectableLine(event.detail.checked)
     }
-    isSelectablePolygonChange(e) {
-        this.configService.setIsSelectablePolygon(e.detail.checked)
+    isSelectablePolygonChange(event: ToggleCustomEvent): void {
+        this.configService.setIsSelectablePolygon(event.detail.checked)
     }
 
-    async deleteCache() {
+    async deleteCache(): Promise<void> {
         await this.dataService.clearCache()
         const cachesKeys = await caches.keys()
         for (const key of cachesKeys) {
@@ -219,10 +226,15 @@ export class SettingsPage {
         window.location.reload()
     }
 
-    async changeIsDevServer(isDev: boolean) {
+    async changeIsDevServer(isDev: boolean): Promise<void> {
         await this.configService.setIsDevServer(isDev)
         const mainLocation = `${window.location.origin}#/main`
         window.location.replace(mainLocation)
         window.location.reload()
+    }
+
+    private getRangeValue(event: RangeCustomEvent): number {
+        const value = event.detail.value
+        return typeof value === 'number' ? value : value.lower
     }
 }

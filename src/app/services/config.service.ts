@@ -94,7 +94,7 @@ export class ConfigService {
     countryConfig: CountryCode[]
 
     freezeMapRenderer = false
-    platforms = []
+    platforms: string[] = []
     deviceInfo
     baseMapSources = null
     selecableLayers: string[] = ['marker', 'marker_changed', 'icon-change']

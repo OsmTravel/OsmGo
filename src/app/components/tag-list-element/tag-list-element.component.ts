@@ -1,7 +1,7 @@
 import { Component, input, output } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonButton, IonIcon } from '@ionic/angular/standalone'
-import { TagConfig } from '@osmgo/type'
+import type { TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
 
@@ -26,14 +26,14 @@ interface SpritePosition {
 })
 export class TagListElementComponent {
     readonly tag = input.required<TagConfig>()
-    readonly countryTags = input(undefined)
-    readonly languageTags = input(undefined)
+    readonly countryTags = input('')
+    readonly languageTags = input('en')
     readonly jsonSprites = input.required<Record<string, SpritePosition>>()
-    readonly geometriesFilter = input<string[]>(undefined)
-    readonly bookmarksIds = input<string[]>(undefined)
+    readonly geometriesFilter = input<string[]>([])
+    readonly bookmarksIds = input<string[]>([])
     readonly oldTagConfig = input<TagConfig>()
-    readonly isHiddenTag = input<boolean>(undefined)
-    readonly showHideTagButton = input<boolean>(undefined)
+    readonly isHiddenTag = input(false)
+    readonly showHideTagButton = input(false)
 
     readonly removeBookmark = output<TagConfig>()
     readonly addBookmark = output<TagConfig>()
@@ -42,12 +42,12 @@ export class TagListElementComponent {
 
     readonly selected = output<TagConfig>()
 
-    isBookMarked(tag) {
+    isBookMarked(tag: TagConfig): boolean {
         // TODO pipe
         return this.bookmarksIds().includes(tag.id)
     }
 
-    addOrRemoveBookmark(tag) {
+    addOrRemoveBookmark(tag: TagConfig): void {
         const isBookMarked = this.isBookMarked(tag)
         if (isBookMarked) {
             this.removeBookmark.emit(tag)
