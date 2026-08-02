@@ -55,7 +55,10 @@ const createPage = ({
         ...mapService,
     } as MainPageMapServiceStub
     const resolvedAlertService = {
-        eventNewAlert: new Subject(),
+        newAlert$: new Subject(),
+        displayRefreshTooltip$: new Subject(),
+        showAlert: vi.fn(),
+        requestRefreshTooltip: vi.fn(),
         ...alertService,
     }
     const resolvedConfigService = {
@@ -175,7 +178,7 @@ describe('MainPage', () => {
             setGeojson: vi.fn().mockName('DataService.setGeojson'),
         }
         const alertService = {
-            eventNewAlert: new Subject(),
+            newAlert$: new Subject(),
             displayToolTipRefreshData: true,
         }
         const configService = {

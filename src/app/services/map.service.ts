@@ -651,7 +651,7 @@ export class MapService {
         this.getMapStyle().subscribe((mapStyle) => {
             const canvas = this.document.createElement('canvas')
             if (!canvas.getContext('webgl2')) {
-                this.alertService.eventNewAlert.emit(
+                this.alertService.showAlert(
                     'WebGL 2 is required to display the map on this device.'
                 )
                 return

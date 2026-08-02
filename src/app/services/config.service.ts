@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { EventEmitter, Injectable } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { environment } from '@environments/environment.prod'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
@@ -73,7 +73,6 @@ export class ConfigService {
     i18nConfig
     countryConfig: CountryCode[]
 
-    eventConfigIsLoaded = new EventEmitter()
     freezeMapRenderer = false
     platforms = []
     deviceInfo

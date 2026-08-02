@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Storage } from '@ionic/storage-angular'
 import {
     FeatureIdSource,
@@ -12,8 +12,6 @@ import { map } from 'rxjs/operators'
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-    eventNewPage = new EventEmitter()
-
     /**
      * Primary data storage for official OSM POIs.
      * Don't read from this value directly. Instead use the `geojson` member
@@ -125,16 +123,16 @@ export class DataService {
     }
 
     async getKeysCacheIcon(): Promise<string[]> {
-        let allKeys: string[] = await this.localStorage.keys()
+        const allKeys: string[] = await this.localStorage.keys()
         return allKeys.filter(
             (k) => /^circle/.test(k) || /^square/.test(k) || /^penta/.test(k)
         )
     }
 
     async clearIconCache(): Promise<number> {
-        let keys: string[] = await this.getKeysCacheIcon()
+        const keys: string[] = await this.getKeysCacheIcon()
         let n: number = 0
-        for (let key of keys) {
+        for (const key of keys) {
             await this.localStorage.remove(key)
             n++
         }

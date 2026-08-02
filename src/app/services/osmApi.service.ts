@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { EventEmitter, Injectable } from '@angular/core'
+import { Injectable } from '@angular/core'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
@@ -20,8 +20,6 @@ const OSM_WORKER_TIMEOUT_MS = 30_000
 
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-    eventNewPoint = new EventEmitter()
-
     constructor(
         private platform: Platform,
         private http: HttpClient,

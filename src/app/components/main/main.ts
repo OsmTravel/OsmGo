@@ -176,7 +176,7 @@ export class MainPage implements AfterViewInit {
             })
         })
 
-        this.alertService.eventNewAlert.subscribe((alert) => {
+        this.alertService.newAlert$.subscribe((alert) => {
             this.presentToast(alert)
         })
     }
@@ -474,7 +474,7 @@ export class MainPage implements AfterViewInit {
                     const nbData = this.dataService.getGeojson().features.length
                     if (nbData > 0) {
                         // Il y a des données stockées en mémoires...
-                        this.alertService.eventNewAlert.emit(
+                        this.alertService.showAlert(
                             nbData +
                                 ' ' +
                                 this.translate.instant(
@@ -483,12 +483,12 @@ export class MainPage implements AfterViewInit {
                         )
                     } else {
                         // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
-                        this.alertService.eventDisplayToolTipRefreshData.emit()
+                        this.alertService.requestRefreshTooltip()
                     }
                 })
         })
 
-        this.alertService.eventDisplayToolTipRefreshData.subscribe(async () => {
+        this.alertService.displayRefreshTooltip$.subscribe(async () => {
             const toast = await this.toastCtrl.create({
                 message: this.translate.instant('MAIN.LOAD_BBOX'),
                 duration: 4000,
