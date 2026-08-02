@@ -2,7 +2,6 @@ import {
     ChangeDetectionStrategy,
     Component,
     input,
-    OnInit,
     output,
 } from '@angular/core'
 import {
@@ -29,13 +28,9 @@ interface AlertTagConfig extends TagConfig {
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
-export class AlertComponent implements OnInit {
+export class AlertComponent {
     readonly tagConfig = input<AlertTagConfig>()
     readonly language = input('en')
     readonly countryCode = input(undefined)
     readonly fixDeprecated = output<{ old: unknown; replace: unknown }>()
-
-    constructor() {}
-
-    ngOnInit() {}
 }

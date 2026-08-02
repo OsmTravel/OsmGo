@@ -2,7 +2,6 @@ import {
     ChangeDetectionStrategy,
     Component,
     input,
-    OnInit,
     output,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
@@ -41,17 +40,13 @@ import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
         TranslateModule,
     ],
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent {
     readonly displayCode = input(false)
     readonly tag = input.required<Tag>()
     readonly preset = input.required<Preset>()
     readonly language = input('en')
 
     readonly addTags = output<Record<string, string>>()
-
-    constructor() {}
-
-    ngOnInit() {}
 
     get selectedValue(): string | number {
         return this.isMultiKeyPreset()

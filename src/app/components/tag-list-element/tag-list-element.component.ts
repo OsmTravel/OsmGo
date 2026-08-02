@@ -2,7 +2,6 @@ import {
     ChangeDetectionStrategy,
     Component,
     input,
-    OnInit,
     output,
 } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
@@ -31,7 +30,7 @@ interface SpritePosition {
         IsBookmarkedPipe,
     ],
 })
-export class TagListElementComponent implements OnInit {
+export class TagListElementComponent {
     readonly tag = input.required<TagConfig>()
     readonly countryTags = input(undefined)
     readonly languageTags = input(undefined)
@@ -46,10 +45,6 @@ export class TagListElementComponent implements OnInit {
     readonly addBookmark = output<TagConfig>()
     readonly removeHiddenTag = output<TagConfig>()
     readonly addHiddenTag = output<TagConfig>()
-
-    constructor() {}
-
-    ngOnInit() {}
 
     readonly selected = output<TagConfig>()
 

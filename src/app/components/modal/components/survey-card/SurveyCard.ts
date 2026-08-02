@@ -24,9 +24,6 @@ export class SurveyCard {
     readonly no = output<void>()
 
     readonly feature = input(undefined)
-    constructor() {}
-
-    ngOnInit(): void {}
 
     handleYes() {
         this.yes.emit()

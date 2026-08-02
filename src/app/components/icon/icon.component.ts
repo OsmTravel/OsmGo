@@ -25,8 +25,6 @@ export class IconComponent implements OnInit {
     styleBackgroundPosition
     devicePixelRatio
 
-    constructor() {}
-
     ngOnInit() {
         this.devicePixelRatio = window.devicePixelRatio > 1 ? 2 : 1
     }
