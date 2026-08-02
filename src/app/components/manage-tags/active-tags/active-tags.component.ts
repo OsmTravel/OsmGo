@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    signal,
-} from '@angular/core'
+import { Component, inject, signal } from '@angular/core'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
     IonButton,
@@ -32,7 +27,6 @@ import { TagsService } from '@services/tags.service'
     selector: 'app-active-tags',
     templateUrl: './active-tags.component.html',
     styleUrls: ['./active-tags.component.scss', '../sharedStyle.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FilterByTagsContentPipe,
         FilterDeprecatedTagPipe,

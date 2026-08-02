@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    OnInit,
-} from '@angular/core'
+import { Component, inject, OnInit } from '@angular/core'
 import {
     IonButton,
     IonButtons,
@@ -32,7 +27,6 @@ import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
     selector: 'app-manage-tags',
     templateUrl: './manage-tags.component.html',
     styleUrls: ['./manage-tags.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IonButton,
         IonButtons,

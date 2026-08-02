@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    signal,
-} from '@angular/core'
+import { Component, inject, signal } from '@angular/core'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
 import {
     IonButton,
@@ -31,7 +26,6 @@ import { TagsService } from '@services/tags.service'
     selector: 'app-hidden-tags',
     templateUrl: './hidden-tags.component.html',
     styleUrls: ['./hidden-tags.component.scss', '../sharedStyle.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         FilterByTagsContentPipe,
         FiltersTagsByIdsPipe,
