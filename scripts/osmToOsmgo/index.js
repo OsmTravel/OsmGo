@@ -140,7 +140,7 @@ const isFilteredByKeys = (tags, keysFilter) => {
     if (!tags) return false
     const keys = Object.keys(tags)
 
-    for (let k of keys) {
+    for (const k of keys) {
         if (keysFilter.includes(k)) {
             return true
         }
@@ -151,7 +151,7 @@ const isFilteredByKeys = (tags, keysFilter) => {
 const getPrimaryKeyOfObject = (feature, primaryKeys) => {
     const tags = feature.properties.tags
     let kv = { key: '', value: '' }
-    for (let k in tags) {
+    for (const k in tags) {
         if (primaryKeys.includes(k)) {
             kv = { key: k, value: tags[k] }
             return kv
@@ -166,8 +166,8 @@ export function getConfigTag(feature, presets) {
     const featureTags = feature.properties.tags
     let mostMaches = 0
 
-    let match = { exact: undefined, presets: [], moreFields: [] }
-    for (let variant of presets) {
+    const match = { exact: undefined, presets: [], moreFields: [] }
+    for (const variant of presets) {
         const presetID = variant.id
         if (featureID) {
             // Save presets and moreFields from parent IDs
@@ -186,12 +186,11 @@ export function getConfigTag(feature, presets) {
         } else {
             if (!presetID.includes(featurePrimaryTag)) continue
             let matches = 0
-            for (let key in variant.tags) {
+            for (const key in variant.tags) {
                 if (
                     !featureTags[key] ||
                     featureTags[key] !== variant.tags[key]
                 ) {
-                    continue
                 } else {
                     matches++
                 }
@@ -213,7 +212,7 @@ export function getConfigTag(feature, presets) {
     }
 
     if (match.exact) {
-        let result = JSON.parse(JSON.stringify(match.exact)) // DeepCopy
+        const result = JSON.parse(JSON.stringify(match.exact)) // DeepCopy
         // Add presets and moreFields from parent IDs
         result.presets = match.presets
         result.moreFields = match.moreFields
@@ -317,7 +316,7 @@ export function addAttributesToFeature(feature) {
 export function setIconStyle(feature, tagsConfig) {
     // /!\ mutable
 
-    let configMarker = getConfigTag(feature, tagsConfig)
+    const configMarker = getConfigTag(feature, tagsConfig)
 
     let markerShape
     if (feature.properties.type === 'node') {
@@ -362,72 +361,46 @@ const getMergedGeojsonGeojsonChanged = (geojson, geojsonChanged) => {
     if (!geojsonChanged) {
         return geojson
     }
-    // stock les id dans un array
-    let changedIds = []
-    for (let i = 0; i < geojsonChanged.features.length; i++) {
-        changedIds.push(geojsonChanged.features[i].id)
+    const changedIds = new Set(
+        geojsonChanged.features.map((feature) => feature.id)
+    )
+    return {
+        ...geojson,
+        features: geojson.features.filter(
+            (feature) => !changedIds.has(feature.id)
+        ),
     }
-    //DELETE from GEOJSON
-    for (let i = geojson.features.length - 1; i >= 0; i--) {
-        if (changedIds.includes(geojson.features[i].id)) {
-            geojson.features.splice(i, 1)
-        }
-    }
-    return { ...geojson }
 }
 
-const mergeOldNewGeojsonData = (
+export const mergeOldNewGeojsonData = (
     oldGeojson,
     newGeojson,
     newFeatureBbox,
     geojsonChanged
 ) => {
-    let oldFeatures = oldGeojson.features
-    let newFeatures = newGeojson.features
+    const oldFeatures = oldGeojson.features ?? []
+    const byId = new Map(oldFeatures.map((feature) => [feature.id, feature]))
+    const idsInsideBbox = new Set(
+        oldFeatures
+            .filter((feature) => booleanPointInPolygon(feature, newFeatureBbox))
+            .map((feature) => feature.id)
+    )
 
-    if (!oldFeatures || oldFeatures.length == 0) {
-        return newGeojson
+    for (const feature of newGeojson.features ?? []) {
+        byId.set(feature.id, feature)
+        idsInsideBbox.delete(feature.id)
+    }
+    for (const deletedId of idsInsideBbox) {
+        byId.delete(deletedId)
     }
 
-    //  le cas où une feature a été supprimé entre temps, on doit la supprimer de nos données:
-    let id_features_deleted = []
-    for (let i = 0; i < oldFeatures.length; i++) {
-        // si la feature est dans la BBOX, on la push pour la supprimer
-        if (booleanPointInPolygon(oldFeatures[i], newFeatureBbox)) {
-            id_features_deleted.push(oldFeatures[i].id)
-        }
-    }
-    for (let i = 0; i < newFeatures.length; i++) {
-        let feature_id = newFeatures[i].id
-
-        for (let j = 0; j < oldFeatures.length; j++) {
-            if (feature_id == oldFeatures[j].id) {
-                //la feature existe déjà dans nos données, on la remplace
-                oldFeatures[j] = newFeatures[i]
-                id_features_deleted.splice(
-                    id_features_deleted.indexOf(feature_id),
-                    1
-                ) //la feature existe toujours, on la supprime du tableau
-                break
-            }
-            if (j == oldFeatures.length - 1) {
-                //la feature n'existe pas, on l'ajoute
-                oldFeatures.push(newFeatures[i])
-            }
-        }
-    }
-    //parcours les features qui ont été supprimées pour les supprimer de nos données.
-    for (let i = 0; i < id_features_deleted.length; i++) {
-        let id_to_delete = id_features_deleted[i]
-        for (let j = 0; j < oldFeatures.length; j++) {
-            if (oldFeatures[j].id == id_to_delete) {
-                oldFeatures.splice(j, 1)
-                break
-            }
-        }
-    }
-
-    return getMergedGeojsonGeojsonChanged(oldGeojson, geojsonChanged)
+    return getMergedGeojsonGeojsonChanged(
+        {
+            ...oldGeojson,
+            features: [...byId.values()],
+        },
+        geojsonChanged
+    )
 }
 
 const mergeBounds = (newBboxFeature, oldBboxFeature) => {
@@ -439,7 +412,7 @@ const mergeBounds = (newBboxFeature, oldBboxFeature) => {
             oldBboxFeature.geometry.coordinates,
             newBboxFeature.geometry.coordinates
         )
-        let mergedFeature = {
+        const mergedFeature = {
             type: 'Feature',
             properties: {},
             geometry: {
@@ -477,7 +450,7 @@ export const convert = (osmData, options) => {
         const lastNodeId = ndRefs[ndRefs.length - 1]
         const typeGeom = firstNodeId == lastNodeId ? 'Polygon' : 'LineString'
 
-        let coordinates = []
+        const coordinates = []
         for (let i = 0; i < ndRefs.length; i++) {
             const ndId = `node/${ndRefs[i]}`
             if (_features[ndId]) {
@@ -498,11 +471,11 @@ export const convert = (osmData, options) => {
         let members = Array.isArray(rel.members) ? rel.members : [rel.members]
         rel['tainted'] = false
         for (let i = 0; i < members.length; i++) {
-            let member = members[i]
+            const member = members[i]
             const memberId = `${member.type}/${member.ref}`
 
             if (_features[memberId]) {
-                let g = _features[memberId].geometry
+                const g = _features[memberId].geometry
                 let ring
                 if (g.type === 'LineString') {
                     member['typeGeom'] = 'LineString'
@@ -547,7 +520,7 @@ export const convert = (osmData, options) => {
             const chainedRings = chainLinestringToPolygonRigs(
                 outersLineString.map((l) => l.ring)
             )
-            for (let r of chainedRings) {
+            for (const r of chainedRings) {
                 outersPolygons.push({
                     type: 'way',
                     ref: '',
@@ -562,7 +535,7 @@ export const convert = (osmData, options) => {
             const chainedRings = chainLinestringToPolygonRigs(
                 innersLineString.map((l) => l.ring)
             )
-            for (let r of chainedRings) {
+            for (const r of chainedRings) {
                 innersPolygons.push({
                     type: 'way',
                     ref: '',
@@ -577,7 +550,7 @@ export const convert = (osmData, options) => {
             // simple case ; 1 outer n inner
             const ring = [outersPolygons[0].ring]
 
-            for (let innerPoly of innersPolygons) {
+            for (const innerPoly of innersPolygons) {
                 ring.push(innerPoly.ring)
             }
             return { type: 'Polygon', coordinates: ring }
@@ -585,9 +558,9 @@ export const convert = (osmData, options) => {
             // > 1 outter rig => multipolygon
             const rings = outersPolygons.map((p) => [p.ring])
 
-            for (let innerPoly of innersPolygons) {
+            for (const innerPoly of innersPolygons) {
                 for (let i = 0; i < rings.length; i++) {
-                    let outRing = rings[i][0]
+                    const outRing = rings[i][0]
                     const innerPolyFirstCoords = innerPoly.ring[0]
                     if (inside(innerPolyFirstCoords, outRing)) {
                         // test if the first coords of inner is in polygon
@@ -600,7 +573,7 @@ export const convert = (osmData, options) => {
     }
 
     const chainLinestringToPolygonRigs = (rings) => {
-        let resultRings = []
+        const resultRings = []
         let currentRing = rings[0].slice()
         rings.splice(0, 1)
         let crStart = currentRing[0].toString()
@@ -667,13 +640,13 @@ export const convert = (osmData, options) => {
 
     const extractOsmGoData = (_features, tagConfig, primaryKeys) => {
         const featuresResult = []
-        for (let idObject in _features) {
+        for (const idObject in _features) {
             const f = _features[idObject]
 
             if (f.properties.type == 'node') {
                 if (f.geometry && f.properties.tags) {
                     if (tagConfig) {
-                        let primaryTag = getPrimaryKeyOfObject(f, primaryKeys)
+                        const primaryTag = getPrimaryKeyOfObject(f, primaryKeys)
                         if (primaryTag) {
                             f.properties['primaryTag'] = primaryTag
                             setIconStyle(f, tagConfig)
@@ -701,7 +674,7 @@ export const convert = (osmData, options) => {
                     }
                     wayToPoint(f)
                     if (tagConfig) {
-                        let primaryTag = getPrimaryKeyOfObject(f, primaryKeys)
+                        const primaryTag = getPrimaryKeyOfObject(f, primaryKeys)
                         if (primaryTag) {
                             f.properties['primaryTag'] = primaryTag
                             setIconStyle(f, tagConfig)
@@ -733,7 +706,7 @@ export const convert = (osmData, options) => {
                     }
                     wayToPoint(f)
                     if (tagConfig) {
-                        let primaryTag = getPrimaryKeyOfObject(f, primaryKeys)
+                        const primaryTag = getPrimaryKeyOfObject(f, primaryKeys)
 
                         if (primaryTag) {
                             f.properties['primaryTag'] = primaryTag
@@ -753,7 +726,7 @@ export const convert = (osmData, options) => {
 
     const multiPolygonIds = []
     const _features = []
-    for (let el of osm.elements) {
+    for (const el of osm.elements) {
         if (el.type === 'node') {
             const node = el
             const n = {
@@ -805,9 +778,9 @@ export const convert = (osmData, options) => {
             //add ndRefs
             if (el.nodes) {
                 const ndRefs = []
-                for (let refNodeId of el.nodes) {
+                for (const refNodeId of el.nodes) {
                     ndRefs.push(refNodeId)
-                    let nodeRef = _features[`node/${refNodeId}`] // add to the node
+                    const nodeRef = _features[`node/${refNodeId}`] // add to the node
                     if (nodeRef) {
                         if (!nodeRef.properties['usedByWays']) {
                             nodeRef.properties['usedByWays'] = []
@@ -845,7 +818,7 @@ export const convert = (osmData, options) => {
             if (!Array.isArray(el.members)) {
                 el.members = [el.members]
             }
-            for (let m of el.members) {
+            for (const m of el.members) {
                 const refId = `${m.type}/${m.ref}`
 
                 if (_features[refId]) {
