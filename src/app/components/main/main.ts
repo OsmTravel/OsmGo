@@ -1,13 +1,15 @@
-declare const ResizeObserver: any
-
 import {
-    AfterViewInit,
+    type AfterViewInit,
     Component,
+    DestroyRef,
     ElementRef,
     inject,
+    type OnDestroy,
+    type OnInit,
     signal,
     viewChild,
 } from '@angular/core'
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 import { OsmAuthService } from '@app/services/osm-auth.service'
@@ -23,15 +25,12 @@ import {
     IonFabButton,
     IonIcon,
     IonSpinner,
-    LoadingController,
-    MenuController,
     ModalController,
     NavController,
-    Platform,
     ToastController,
 } from '@ionic/angular/standalone'
 import { TranslateService } from '@ngx-translate/core'
-import { FeatureIdSource } from '@osmgo/type'
+import type { FeatureIdSource, OsmGoFeatureCollection } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -42,8 +41,13 @@ import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
 import type { BBox } from 'geojson'
 import { LngLat } from 'maplibre-gl'
-import { forkJoin, Observable, of, pipe, take, timer } from 'rxjs'
+import { EMPTY, type Observable, take, timer } from 'rxjs'
 import { catchError, filter, map, switchMap } from 'rxjs/operators'
+
+interface MapDataResult {
+    geojson: OsmGoFeatureCollection
+    geojsonBbox: OsmGoFeatureCollection
+}
 
 @Component({
     templateUrl: './main.html',
@@ -59,11 +63,10 @@ import { catchError, filter, map, switchMap } from 'rxjs/operators'
         MenuPage,
     ],
 })
-export class MainPage implements AfterViewInit {
+export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     readonly navCtrl = inject(NavController)
     readonly modalCtrl = inject(ModalController)
     readonly toastCtrl = inject(ToastController)
-    readonly menuCtrl = inject(MenuController)
     readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
     readonly mapService = inject(MapService)
@@ -74,122 +77,146 @@ export class MainPage implements AfterViewInit {
     private readonly alertCtrl = inject(AlertController)
     private readonly router = inject(Router)
     readonly translate = inject(TranslateService)
-    readonly loadingController = inject(LoadingController)
     private readonly swUpdate = inject(SwUpdate)
     readonly initService = inject(InitService)
     private readonly osmAuthService = inject(OsmAuthService)
     private readonly route = inject(ActivatedRoute)
+    private readonly destroyRef = inject(DestroyRef)
 
-    modalIsOpen: boolean = false
+    modalIsOpen = false
     readonly menuIsOpen = signal(false)
     readonly newVersion = signal(false)
     centerOnStart?: number[]
     zoomOnStart?: number
-    loadOsmDataOnStart: boolean = false
+    loadOsmDataOnStart = false
     idOsmObjectOnStart?: string
-    addOsmObjectOnStart?: { coords: LngLat; tags: any }
+    addOsmObjectOnStart?: { coords: LngLat; tags: Record<string, unknown> }
+    private resizeObserver?: ResizeObserver
+    private initializeHistory(): void {
+        window.history.pushState({ noBackExitsApp: true }, '')
+    }
+    private readonly handlePopState = (): void => {
+        window.history.pushState({ noBackExitsApp: true }, '')
+        if (this.menuIsOpen()) {
+            this.closeMenu()
+        } else if (this.modalIsOpen) {
+            void this.modalCtrl.dismiss()
+        }
+    }
 
     readonly mapElement = viewChild.required<ElementRef<HTMLElement>>('map')
 
     // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
     constructor() {
-        this.router.events.subscribe((e) => {
-            if (e instanceof NavigationEnd) {
-                if (e.urlAfterRedirects === '/main') {
+        this.router.events
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe((event) => {
+                if (event instanceof NavigationEnd) {
+                    if (event.urlAfterRedirects === '/main') {
+                        this.configService.freezeMapRenderer = false
+                        if (this.mapService.map) {
+                            timer(300)
+                                .pipe(takeUntilDestroyed(this.destroyRef))
+                                .subscribe(() => {
+                                    this.mapService.map.resize()
+                                })
+                        }
+                    } else {
+                        this.configService.freezeMapRenderer = true
+                    }
+                }
+            })
+
+        this.mapService.featureChoiceRequested$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(async (features) => {
+                const modal = await this.modalCtrl.create({
+                    component: DialogMultiFeaturesComponent,
+                    cssClass: 'dialog-multi-features',
+                    componentProps: {
+                        features: features,
+                        jsonSprites: this.tagsService.jsonSprites(),
+                    },
+                })
+                await modal.present()
+
+                modal.onDidDismiss().then((d) => {
+                    if (d && d.data) {
+                        this.mapService.selectFeature(d.data)
+                    }
+                })
+            })
+
+        this.mapService.showModal$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(async (_data) => {
+                this.configService.freezeMapRenderer = true
+                const newPosition = _data.newPosition ?? false
+
+                const modal = await this.modalCtrl.create({
+                    component: ModalsContentPage,
+                    componentProps: {
+                        type: _data.type,
+                        data: _data.geojson,
+                        newPosition: newPosition,
+                        origineData: _data.origineData,
+                        openPrimaryTagModalOnStart:
+                            _data.openPrimaryTagModalOnStart,
+                    },
+                })
+                await modal.present()
+                this.modalIsOpen = true
+
+                modal.onDidDismiss<ModalDismissData>().then((d) => {
+                    this.modalIsOpen = false
+                    const data = d.data
                     this.configService.freezeMapRenderer = false
-                    // la carte ne detect pas toujours le changement de taille du DOM...
-                    if (this.mapService.map) {
-                        timer(300).subscribe((t) => {
-                            this.mapService.map.resize()
-                        })
+                    if (data) {
+                        if (data.type === 'Move') {
+                            this.mapService.moveElement(data)
+                        }
+                        if (data.redraw) {
+                            timer(50)
+                                .pipe(takeUntilDestroyed(this.destroyRef))
+                                .subscribe(() => {
+                                    this.mapService.redrawMarkers(
+                                        this.dataService.getGeojson()
+                                    )
+                                    this.mapService.redrawChangedMarkers(
+                                        this.dataService.getGeojsonChanged()
+                                    )
+                                })
+                        }
                     }
-                } else {
-                    this.configService.freezeMapRenderer = true
-                }
-            }
-        })
-
-        this.mapService.featureChoiceRequested$.subscribe(async (features) => {
-            const modal = await this.modalCtrl.create({
-                component: DialogMultiFeaturesComponent,
-                cssClass: 'dialog-multi-features',
-                componentProps: {
-                    features: features,
-                    jsonSprites: this.tagsService.jsonSprites(),
-                },
+                    this.mapService.setCenterInUrl()
+                })
             })
-            await modal.present()
 
-            modal.onDidDismiss().then((d) => {
-                if (d && d.data) {
-                    const feature = d.data
-                    this.mapService.selectFeature(feature) // bof
-                }
+        this.alertService.newAlert$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe((alert) => {
+                void this.presentToast(alert)
             })
-        })
-
-        this.mapService.showModal$.subscribe(async (_data) => {
-            this.configService.freezeMapRenderer = true
-            const newPosition = _data.newPosition ? _data.newPosition : false
-
-            const modal = await this.modalCtrl.create({
-                component: ModalsContentPage,
-                componentProps: {
-                    type: _data.type,
-                    data: _data.geojson,
-                    newPosition: newPosition,
-                    origineData: _data.origineData,
-                    openPrimaryTagModalOnStart:
-                        _data.openPrimaryTagModalOnStart,
-                },
-            })
-            await modal.present()
-            this.modalIsOpen = true
-
-            modal.onDidDismiss<ModalDismissData>().then((d) => {
-                this.modalIsOpen = false
-                const data = d.data
-                this.configService.freezeMapRenderer = false
-                if (data) {
-                    if (data.type === 'Move') {
-                        this.mapService.moveElement(data)
-                    }
-                    if (data.redraw) {
-                        timer(50).subscribe((t) => {
-                            this.mapService.redrawMarkers(
-                                this.dataService.getGeojson()
-                            )
-                            this.mapService.redrawChangedMarkers(
-                                this.dataService.getGeojsonChanged()
-                            )
-                        })
-                    }
-                }
-                this.mapService.setCenterInUrl()
-            })
-        })
-
-        this.alertService.newAlert$.subscribe((alert) => {
-            this.presentToast(alert)
-        })
     }
 
     ngOnInit(): void {
-        this.route.queryParams.subscribe((params) => {
-            if (params['code'] || params['state'] || params['error']) {
-                this.handleAuthCallback(window.location.href)
-                this.router.navigate([], {
-                    queryParams: {
-                        code: null,
-                        state: null,
-                        error: null,
-                        error_description: null,
-                    },
-                    queryParamsHandling: 'merge',
-                })
-            }
-        })
+        this.route.queryParams
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe((params) => {
+                if (params['code'] || params['state'] || params['error']) {
+                    this.handleAuthCallback(window.location.href)
+                    this.router.navigate([], {
+                        queryParams: {
+                            code: null,
+                            state: null,
+                            error: null,
+                            error_description: null,
+                        },
+                        queryParamsHandling: 'merge',
+                    })
+                }
+            })
 
         this.osmAuthService.loadToken()
 
@@ -212,38 +239,43 @@ export class MainPage implements AfterViewInit {
         }
 
         const urlCenter = this.route.snapshot.queryParamMap.get('center')
-        if (urlCenter && urlCenter.split(',').length == 2) {
+        if (urlCenter && urlCenter.split(',').length === 2) {
             const center = urlCenter.split(',')
             const long = parseFloat(center[0])
             const lat = parseFloat(center[1])
 
             if (
-                long &&
-                lat &&
-                long > -180 &&
-                long < 180 &&
-                lat > -90 &&
-                lat < 90
+                Number.isFinite(long) &&
+                Number.isFinite(lat) &&
+                long >= -180 &&
+                long <= 180 &&
+                lat >= -90 &&
+                lat <= 90
             ) {
                 this.centerOnStart = [long, lat]
-                this.loadOsmDataOnStart =
-                    queryLoadData === 'true' ? true : false
+                this.loadOsmDataOnStart = queryLoadData === 'true'
             }
         }
 
-        // add={"shop": "bakery", "name": "Boulangerie"}
         const urlAddFeature = this.route.snapshot.queryParamMap.get('add')
         if (urlAddFeature && !this.idOsmObjectOnStart) {
             if (!this.centerOnStart) {
-                return console.error('addFeatureTag need center')
+                console.error('The add query parameter requires a map center.')
+                return
             }
             if (!this.zoomOnStart) {
                 this.zoomOnStart = 18
             }
             try {
                 const addFeatureTag = JSON.parse(urlAddFeature)
-                if (typeof addFeatureTag !== 'object')
-                    throw new Error('addFeatureTag is not an object')
+                if (
+                    typeof addFeatureTag !== 'object' ||
+                    addFeatureTag === null ||
+                    Array.isArray(addFeatureTag)
+                )
+                    throw new Error(
+                        'The add query parameter must be an object.'
+                    )
 
                 const _coords: LngLat = new LngLat(
                     this.centerOnStart[0],
@@ -251,7 +283,7 @@ export class MainPage implements AfterViewInit {
                 )
                 this.addOsmObjectOnStart = {
                     coords: _coords,
-                    tags: addFeatureTag,
+                    tags: addFeatureTag as Record<string, unknown>,
                 }
                 this.loadOsmDataOnStart = true
             } catch (error) {
@@ -265,13 +297,9 @@ export class MainPage implements AfterViewInit {
                     (evt): evt is VersionReadyEvent =>
                         evt.type === 'VERSION_READY'
                 ),
-                map((evt) => ({
-                    type: 'UPDATE_AVAILABLE',
-                    current: evt.currentVersion,
-                    available: evt.latestVersion,
-                }))
+                takeUntilDestroyed(this.destroyRef)
             )
-            .subscribe((event) => {
+            .subscribe(() => {
                 this.newVersion.set(true)
             })
     }
@@ -279,7 +307,10 @@ export class MainPage implements AfterViewInit {
     private handleAuthCallback(url: string): void {
         this.osmAuthService
             .handleCallback(url)
-            .pipe(switchMap(() => this.osmApi.getUserDetail$()))
+            .pipe(
+                switchMap(() => this.osmApi.getUserDetail$()),
+                takeUntilDestroyed(this.destroyRef)
+            )
             .subscribe({
                 error: (error) => {
                     console.error('Authentication failed.', error)
@@ -290,8 +321,6 @@ export class MainPage implements AfterViewInit {
     openMenu(): void {
         this.configService.freezeMapRenderer = true
         this.menuIsOpen.set(true)
-        // history.pushState({menu:'open'}, 'menu')
-        // TODO history.pushState({msg:'openned side bar', menu:'open'}, 'menu')
     }
 
     closeMenu(): void {
@@ -299,59 +328,57 @@ export class MainPage implements AfterViewInit {
         this.menuIsOpen.set(false)
     }
 
-    presentConfirm(): void {
-        this.alertCtrl
-            .create({
-                header: this.translate.instant('MAIN.EXIT_CONFIRM_HEADER'),
-                message: this.translate.instant('MAIN.EXIT_CONFIRM_MESSAGE'),
-                buttons: [
-                    {
-                        text: this.translate.instant('SHARED.NO'),
-                        role: 'cancel',
-                        handler: () => {},
+    async presentConfirm(): Promise<void> {
+        const alert = await this.alertCtrl.create({
+            header: this.translate.instant('MAIN.EXIT_CONFIRM_HEADER'),
+            message: this.translate.instant('MAIN.EXIT_CONFIRM_MESSAGE'),
+            buttons: [
+                {
+                    text: this.translate.instant('SHARED.NO'),
+                    role: 'cancel',
+                    handler: () => {},
+                },
+                {
+                    text: this.translate.instant('SHARED.YES'),
+                    handler: () => {
+                        void CapacitorApp.exitApp()
                     },
-                    {
-                        text: this.translate.instant('SHARED.YES'),
-                        handler: () => {
-                            window.navigator['app'].exitApp()
-                        },
-                    },
-                ],
-            })
-            .then((alert) => {
-                alert.present()
-            })
+                },
+            ],
+        })
+        await alert.present()
     }
 
     loadData(): void {
-        this.loadData$().pipe(take(1)).subscribe()
+        this.loadData$()
+            .pipe(take(1), takeUntilDestroyed(this.destroyRef))
+            .subscribe()
     }
 
-    loadData$(): Observable<any> {
+    loadData$(): Observable<void> {
         this.mapService.setIsProcessing(true)
-        // L'utilisateur charge les données, on supprime donc le tooltip
         this.alertService.displayToolTipRefreshData = false
-
-        // return a promise
 
         const bbox: BBox = this.mapService.getBbox()
         return this.osmApi
             .getDataFromBbox(bbox, this.configService.getLimitFeatures())
             .pipe(
                 map((newDataJson) => {
-                    this.dataService.setGeojsonBbox(newDataJson['geojsonBbox'])
-                    this.mapService.redrawBbox(newDataJson['geojsonBbox'])
-                    this.dataService.setGeojson(newDataJson['geojson'])
-                    this.mapService.redrawMarkers(newDataJson['geojson'])
+                    if (!this.isMapDataResult(newDataJson)) {
+                        throw new Error('The map worker returned invalid data.')
+                    }
+                    this.dataService.setGeojsonBbox(newDataJson.geojsonBbox)
+                    this.mapService.redrawBbox(newDataJson.geojsonBbox)
+                    this.dataService.setGeojson(newDataJson.geojson)
+                    this.mapService.redrawMarkers(newDataJson.geojson)
                     this.mapService.setIsProcessing(false)
                 }),
 
-                // catch error and display a toast
-                catchError((err) => {
+                catchError((error: unknown) => {
                     this.mapService.setIsProcessing(false)
-                    console.error(err)
-                    this.presentToast(err)
-                    return of(err)
+                    console.error(error)
+                    void this.presentToast(this.getErrorMessage(error))
+                    return EMPTY
                 })
             )
     }
@@ -369,12 +396,12 @@ export class MainPage implements AfterViewInit {
                 },
             ],
         })
-        toast.present()
+        await toast.present()
     }
 
     ngAfterViewInit(): void {
         const mapElement = this.mapElement()
-        const observer = new ResizeObserver((entries) => {
+        this.resizeObserver = new ResizeObserver((entries) => {
             for (const entry of entries) {
                 if (entry.target === mapElement.nativeElement) {
                     if (this.mapService.map) this.mapService.map.resize()
@@ -382,9 +409,7 @@ export class MainPage implements AfterViewInit {
             }
         })
 
-        observer.observe(mapElement.nativeElement)
-
-        //http://localhost:4200/#/main?id=node/11108970847
+        this.resizeObserver.observe(mapElement.nativeElement)
 
         this.initService
             .initLoadData$(
@@ -392,143 +417,136 @@ export class MainPage implements AfterViewInit {
                 this.zoomOnStart,
                 this.idOsmObjectOnStart
             )
-            .subscribe(
-                ({
-                    config,
-                    userInfo,
-                    savedFields,
-                    presets,
-                    tags,
-                    geojson,
-                    geojsonChanged,
-                    geojsonBbox,
-                }) => {
-                    this.locationService.enableGeolocation()
-
-                    this.mapService.initMap(config)
-                }
-            )
-
-        this.mapService.mapLoaded$.subscribe(() => {
-            if (this.addOsmObjectOnStart) {
-                this.mapService.openModalOsm(
-                    this.addOsmObjectOnStart.coords,
-                    this.addOsmObjectOnStart.tags
-                )
-            }
-
-            if (this.loadOsmDataOnStart) {
-                this.loadData$()
-                    .pipe(take(1))
-                    .subscribe({
-                        next: () => {
-                            if (this.idOsmObjectOnStart) {
-                                // find feature from dataChanged if exist, else from data
-                                let origineData: FeatureIdSource =
-                                    'data_changed'
-                                let feature = this.dataService.getFeatureById(
-                                    this.idOsmObjectOnStart,
-                                    'data_changed'
-                                )
-                                if (!feature) {
-                                    feature = this.dataService.getFeatureById(
-                                        this.idOsmObjectOnStart,
-                                        'data'
-                                    )
-                                    origineData = 'data'
-                                }
-
-                                if (!feature) {
-                                    // this.translate.instant(
-                                    const errorMessage =
-                                        'Objetct not found in data' // TODO translate
-                                    this.presentToast(errorMessage)
-                                    return
-                                }
-                                // this.mapService.selectFeature(feature)
-                                this.mapService.showModal({
-                                    type: 'Read',
-                                    geojson: feature,
-                                    origineData: origineData,
-                                })
-                            }
-                        },
-                    })
-            }
-            timer(2000)
-                .pipe(take(1))
-                .subscribe(() => {
-                    const nbData = this.dataService.getGeojson().features.length
-                    if (nbData > 0) {
-                        // Il y a des données stockées en mémoires...
-                        this.alertService.showAlert(
-                            nbData +
-                                ' ' +
-                                this.translate.instant(
-                                    'MAIN.START_SNACK_ITEMS_IN_MEMORY'
-                                )
-                        )
-                    } else {
-                        // L'utilisateur n'a pas de données stockées, on le guide pour en télécharger... Tooltip
-                        this.alertService.requestRefreshTooltip()
-                    }
-                })
-        })
-
-        this.alertService.displayRefreshTooltip$.subscribe(async () => {
-            const toast = await this.toastCtrl.create({
-                message: this.translate.instant('MAIN.LOAD_BBOX'),
-                duration: 4000,
-                position: 'bottom',
-                buttons: [
-                    {
-                        text: 'Ok',
-                        role: 'cancel',
-                        handler: () => {
-                            if (
-                                this.mapService.map &&
-                                this.mapService.map.getZoom() > 16
-                            ) {
-                                this.loadData$().pipe(take(1)).subscribe()
-                            }
-                        },
-                    },
-                ],
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(({ config }) => {
+                this.locationService.enableGeolocation()
+                this.mapService.initMap(config)
             })
-            toast.present()
-        })
 
-        // Initialize bahaviors when pressing backButton on device
-        /*TODO
-    CapacitorApp.addListener('backButton', ({canGoBack}) => {
-      if(canGoBack) {
-        window.history.back();
-      } else {
-        //TODO CapacitorApp.exitApp();
-      }
-    });*/
+        this.mapService.mapLoaded$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(() => {
+                if (this.addOsmObjectOnStart) {
+                    this.mapService.openModalOsm(
+                        this.addOsmObjectOnStart.coords,
+                        this.addOsmObjectOnStart.tags
+                    )
+                }
 
-        window.addEventListener('load', (e) => {
-            window.history.pushState({ noBackExitsApp: true }, '')
-            //TODO window.history.pushState({ msg: 'a state for load' }, 'load')
-        })
+                if (this.loadOsmDataOnStart) {
+                    this.loadData$()
+                        .pipe(take(1), takeUntilDestroyed(this.destroyRef))
+                        .subscribe({
+                            next: () => this.openRequestedObject(),
+                        })
+                }
+                timer(2000)
+                    .pipe(take(1), takeUntilDestroyed(this.destroyRef))
+                    .subscribe(() => {
+                        const featureCount =
+                            this.dataService.getGeojson().features.length
+                        if (featureCount > 0) {
+                            this.alertService.showAlert(
+                                `${featureCount} ${this.translate.instant(
+                                    'MAIN.START_SNACK_ITEMS_IN_MEMORY'
+                                )}`
+                            )
+                        } else {
+                            this.alertService.requestRefreshTooltip()
+                        }
+                    })
+            })
 
-        window.addEventListener('popstate', (e) => {
-            // We push a new state to "replace" the one that have been pop
-            // It is uggly, but it prevent the app to exit
-            // We need to only add state when we are really opening modal or other screens
-            // TODO: add state only when popup or action are in progress
-            // TODO: add a popup "Are you sure to quit OsmGo!"
-            // window.history.pushState({ msg: 'here a new state' }, 'after popstate')
-            if (this.menuIsOpen()) {
-                window.history.pushState({ noBackExitsApp: true }, '')
-                this.closeMenu()
-            } else if (this.modalIsOpen) {
-                window.history.pushState({ noBackExitsApp: true }, '')
-                this.modalCtrl.dismiss()
-            } else {
-                window.history.pushState({ noBackExitsApp: true }, '')
-            }
+        this.alertService.displayRefreshTooltip$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(async () => {
+                const toast = await this.toastCtrl.create({
+                    message: this.translate.instant('MAIN.LOAD_BBOX'),
+                    duration: 4000,
+                    position: 'bottom',
+                    buttons: [
+                        {
+                            text: 'Ok',
+                            role: 'cancel',
+                            handler: () => {
+                                if (this.mapService.map.getZoom() > 16) {
+                                    this.loadData$()
+                                        .pipe(
+                                            take(1),
+                                            takeUntilDestroyed(this.destroyRef)
+                                        )
+                                        .subscribe()
+                                }
+                            },
+                        },
+                    ],
+                })
+                await toast.present()
+            })
+
+        this.initializeHistory()
+        window.addEventListener('popstate', this.handlePopState)
+    }
+
+    ngOnDestroy(): void {
+        this.resizeObserver?.disconnect()
+        window.removeEventListener('popstate', this.handlePopState)
+    }
+
+    private openRequestedObject(): void {
+        if (!this.idOsmObjectOnStart) {
+            return
+        }
+
+        let origineData: FeatureIdSource = 'data_changed'
+        let feature = this.dataService.getFeatureById(
+            this.idOsmObjectOnStart,
+            origineData
+        )
+        if (!feature) {
+            origineData = 'data'
+            feature = this.dataService.getFeatureById(
+                this.idOsmObjectOnStart,
+                origineData
+            )
+        }
+
+        if (!feature) {
+            void this.presentToast('Object not found in downloaded data.')
+            return
+        }
+        this.mapService.showModal({
+            type: 'Read',
+            geojson: feature,
+            origineData,
         })
+    }
+
+    private getErrorMessage(error: unknown): string {
+        return error instanceof Error ? error.message : String(error)
+    }
+
+    private isMapDataResult(value: unknown): value is MapDataResult {
+        if (typeof value !== 'object' || value === null) {
+            return false
+        }
+        const candidate = value as Partial<MapDataResult>
+        return (
+            this.isFeatureCollection(candidate.geojson) &&
+            this.isFeatureCollection(candidate.geojsonBbox)
+        )
+    }
+
+    private isFeatureCollection(
+        value: unknown
+    ): value is OsmGoFeatureCollection {
+        if (typeof value !== 'object' || value === null) {
+            return false
+        }
+        const candidate = value as Partial<OsmGoFeatureCollection>
+        return (
+            candidate.type === 'FeatureCollection' &&
+            Array.isArray(candidate.features)
+        )
     }
 }

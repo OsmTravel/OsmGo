@@ -19,7 +19,7 @@ import { MapService } from '@services/map.service'
 import { OsmAuthService } from '@services/osm-auth.service'
 import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
-import { Subject, throwError } from 'rxjs'
+import { of, Subject, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
 import { ModalsContentPage } from '../modal/modal'
@@ -112,6 +112,24 @@ describe('MainPage', () => {
 
         expect(page.menuIsOpen()).toBe(false)
         expect(configService.freezeMapRenderer).toBe(false)
+    })
+
+    it('stops reacting to modal requests after destruction', () => {
+        const showModal$ = new Subject<unknown>()
+        const modalCtrl = { create: vi.fn().mockName('ModalController.create') }
+        createPage({
+            modalCtrl,
+            mapService: { showModal$ },
+        })
+
+        TestBed.resetTestingModule()
+        showModal$.next({
+            type: 'Read',
+            geojson: { id: 'node/1' },
+            origineData: 'data',
+        })
+
+        expect(modalCtrl.create).not.toHaveBeenCalled()
     })
 
     it('opens and closes the feature modal with its input data', async () => {
@@ -215,7 +233,49 @@ describe('MainPage', () => {
         expect(dataService.setGeojson).not.toHaveBeenCalled()
         expect(page.presentToast).toHaveBeenCalledTimes(1)
         expect(vi.mocked(page.presentToast as Mock).mock.lastCall[0]).toBe(
-            downloadError
+            'Worker conversion failed'
+        )
+    })
+
+    it('keeps existing data when the worker result is incomplete', () => {
+        const mapService = {
+            redrawBbox: vi.fn(),
+            redrawMarkers: vi.fn(),
+            getBbox: () => [1, 2, 3, 4],
+            setIsProcessing: vi.fn(),
+        }
+        const dataService = {
+            setGeojsonBbox: vi.fn(),
+            setGeojson: vi.fn(),
+        }
+        const { page } = createPage({
+            osmApi: {
+                getDataFromBbox: () =>
+                    of({
+                        geojson: { type: 'FeatureCollection', features: [] },
+                    }),
+            },
+            mapService,
+            dataService,
+            alertService: {
+                newAlert$: new Subject(),
+                displayToolTipRefreshData: true,
+            },
+            configService: {
+                getLimitFeatures: () => 100,
+                freezeMapRenderer: false,
+            },
+        })
+        vi.spyOn(console, 'error').mockReturnValue(undefined)
+        vi.spyOn(page, 'presentToast').mockResolvedValue()
+
+        page.loadData$().subscribe()
+
+        expect(dataService.setGeojsonBbox).not.toHaveBeenCalled()
+        expect(dataService.setGeojson).not.toHaveBeenCalled()
+        expect(mapService.setIsProcessing).toHaveBeenLastCalledWith(false)
+        expect(page.presentToast).toHaveBeenCalledWith(
+            'The map worker returned invalid data.'
         )
     })
 
