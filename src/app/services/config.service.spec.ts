@@ -7,6 +7,32 @@ import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from './config.service'
 
 describe('ConfigService', () => {
+    it('exposes user updates as read-only state', () => {
+        const storage = {
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: Storage, useValue: storage },
+                { provide: Platform, useValue: {} },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+        const user = {
+            uid: '42',
+            display_name: 'Mapper',
+            connected: true,
+        }
+
+        service.setUserInfo(user)
+
+        expect(service.userInfo()).toEqual(user)
+        expect(service.getUserInfo()).toEqual(user)
+        expect(storage.set).toHaveBeenCalledWith('user_info', user)
+    })
+
     it('exposes the current zoom as read-only state', () => {
         TestBed.configureTestingModule({
             providers: [

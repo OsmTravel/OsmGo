@@ -42,7 +42,7 @@
     <ion-card color="danger">
         <ion-card-content> {{connectionError}} </ion-card-content>
     </ion-card>
-    } @if (!configService.user_info.connected) {
+    } @if (!configService.userInfo().connected) {
     <ion-card color="danger">
         <ion-card-content>
             {{ 'SEND_DATA.YOU_MUST_BE_LOGGED_IN' | translate}}
@@ -191,7 +191,7 @@
     <ion-button
         data-testid="upload-changes"
         class="footerButton"
-        [disabled]="!configService.user_info.connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
+        [disabled]="!configService.userInfo().connected || !featuresChanges || featuresChanges.length === 0 || isPushing"
         (click)="pushDataToOsm(commentChangeset)"
         >{{ 'SEND_DATA.SEND' | translate}}</ion-button
     >

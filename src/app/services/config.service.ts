@@ -59,12 +59,13 @@ export class ConfigService {
     private readonly translate = inject(TranslateService)
     private readonly currentZoomState = signal<number | undefined>(undefined)
     readonly currentZoom = this.currentZoomState.asReadonly()
-
-    user_info: User = {
+    private readonly userInfoState = signal<User>({
         uid: '',
         display_name: '',
         connected: false,
-    }
+    })
+    readonly userInfo = this.userInfoState.asReadonly()
+
     changeset: Changeset = {
         id: '',
         last_changeset_activity: 0,
@@ -149,21 +150,22 @@ export class ConfigService {
     }
 
     getUserInfo() {
-        return this.user_info
+        return this.userInfo()
     }
 
-    setUserInfo(_user_info) {
-        this.user_info = _user_info
-        this.localStorage.set('user_info', this.user_info)
+    setUserInfo(userInfo: User): void {
+        this.userInfoState.set(userInfo)
+        this.localStorage.set('user_info', userInfo)
     }
 
-    resetUserInfo() {
-        this.user_info = {
+    resetUserInfo(): void {
+        const userInfo: User = {
             uid: '',
             display_name: '',
             connected: false,
         }
-        this.localStorage.set('user_info', this.user_info)
+        this.userInfoState.set(userInfo)
+        this.localStorage.set('user_info', userInfo)
     }
 
     getChangeset(): Changeset {
@@ -236,15 +238,15 @@ export class ConfigService {
         return from(this.localStorage.get('user_info')).pipe(
             map((userInfo) => {
                 if (userInfo && userInfo.connected) {
-                    this.user_info = userInfo
+                    this.userInfoState.set(userInfo)
                 } else {
-                    this.user_info = {
+                    this.userInfoState.set({
                         uid: '',
                         display_name: '',
                         connected: false,
-                    }
+                    })
                 }
-                return this.user_info
+                return this.userInfo()
             })
         )
     }
@@ -287,13 +289,13 @@ export class ConfigService {
 
                 const userInfo = await this.localStorage.get('user_info')
                 if (userInfo && userInfo.connected) {
-                    this.user_info = userInfo
+                    this.userInfoState.set(userInfo)
                 } else {
-                    this.user_info = {
+                    this.userInfoState.set({
                         uid: '',
                         display_name: '',
                         connected: false,
-                    }
+                    })
                 }
 
                 const changeset: Changeset =
@@ -310,12 +312,12 @@ export class ConfigService {
                 }
                 console.log({
                     config: this.config,
-                    user_info: this.user_info,
+                    user_info: this.userInfo(),
                     changeset: this.changeset,
                 })
                 return {
                     config: this.config,
-                    user_info: this.user_info,
+                    user_info: this.userInfo(),
                     changeset: this.changeset,
                 }
             })

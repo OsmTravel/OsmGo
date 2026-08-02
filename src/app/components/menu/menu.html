@@ -33,7 +33,7 @@
                     <ion-icon name="refresh"></ion-icon> {{'MENU.NEW_VERSION' |
                     translate }}
                 </ion-item>
-                } @if (!this.configService.user_info.connected) {
+                } @if (!this.configService.userInfo().connected) {
                 <ion-item (click)="login()">
                     <ion-icon name="log-in"></ion-icon> {{'MENU.CONNECTION' |
                     translate }}
@@ -55,7 +55,7 @@
                     <ion-icon name="help-circle"></ion-icon> {{'MENU.ABOUT' |
                     translate }}
                 </ion-item>
-                @if (this.configService.user_info.connected) {
+                @if (this.configService.userInfo().connected) {
                 <ion-item (click)="logout()">
                     <ion-icon name="log-out"></ion-icon> {{'MENU.SIGN_OUT' |
                     translate }}
