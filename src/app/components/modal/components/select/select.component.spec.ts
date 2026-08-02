@@ -21,28 +21,60 @@ describe('SelectComponent', () => {
     it('selects a real OSM key for a multi-key field', () => {
         const tag = { key: '', value: '' }
         const component = createComponent(tag)
+        const tagChange = vi.fn()
+        component.tagChange.subscribe(tagChange)
 
         component.selectChange('unisex')
 
-        expect(tag).toEqual({ key: 'unisex', value: 'yes' })
-        expect(component.selectedValue).toBe('unisex')
+        expect(tag).toEqual({ key: '', value: '' })
+        expect(tagChange).toHaveBeenCalledWith({
+            source: tag,
+            tag: { key: 'unisex', value: 'yes' },
+        })
     })
 
     it('replaces the previous key when the selection changes', () => {
         const tag = { key: 'unisex', value: 'yes' }
         const component = createComponent(tag)
+        const tagChange = vi.fn()
+        component.tagChange.subscribe(tagChange)
 
         component.selectChange('male')
 
-        expect(tag).toEqual({ key: 'male', value: 'yes' })
+        expect(tag).toEqual({ key: 'unisex', value: 'yes' })
+        expect(tagChange).toHaveBeenCalledWith({
+            source: tag,
+            tag: { key: 'male', value: 'yes' },
+        })
     })
 
     it('clears the current tag when the empty option is selected', () => {
         const tag = { key: 'unisex', value: 'yes' }
         const component = createComponent(tag)
+        const tagChange = vi.fn()
+        component.tagChange.subscribe(tagChange)
 
         component.selectChange('')
 
-        expect(tag).toEqual({ key: '', value: '' })
+        expect(tag).toEqual({ key: 'unisex', value: 'yes' })
+        expect(tagChange).toHaveBeenCalledWith({
+            source: tag,
+            tag: { key: '', value: '' },
+        })
+    })
+
+    it('emits code edits without mutating its input', () => {
+        const tag = { key: 'unisex', value: 'yes' }
+        const component = createComponent(tag)
+        const tagChange = vi.fn()
+        component.tagChange.subscribe(tagChange)
+
+        component.valueChange('no')
+
+        expect(tag).toEqual({ key: 'unisex', value: 'yes' })
+        expect(tagChange).toHaveBeenCalledWith({
+            source: tag,
+            tag: { key: 'unisex', value: 'no' },
+        })
     })
 })

@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core'
 import type { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
+import type { TagSelectionChange } from '../select/select.component'
 import { SelectComponent } from '../select/select.component'
 
 @Component({
@@ -34,6 +35,7 @@ export class EditPresets {
 
     readonly openPrimaryListModal = output<unknown>()
     readonly addTags = output<Record<string, string>>()
+    readonly tagChange = output<TagSelectionChange>()
 
     get isMultiKeyPreset(): boolean {
         return (

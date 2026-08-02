@@ -5,6 +5,7 @@
         [language]="language()"
         [displayCode]="displayCode()"
         (addTags)="addTags.emit($event)"
+        (tagChange)="tagChange.emit($event)"
     ></app-select>
 } @else if (preset().type === 'list') {
     <article class="edit-field">

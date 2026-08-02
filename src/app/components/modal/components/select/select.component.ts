@@ -9,6 +9,11 @@ import { TranslateModule } from '@ngx-translate/core'
 import type { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 
+export interface TagSelectionChange {
+    source: Tag
+    tag: Tag
+}
+
 @Component({
     selector: 'app-select',
     templateUrl: './select.component.html',
@@ -31,6 +36,7 @@ export class SelectComponent {
     readonly language = input('en')
 
     readonly addTags = output<Record<string, string>>()
+    readonly tagChange = output<TagSelectionChange>()
 
     get selectedValue(): string | number {
         return this.isMultiKeyPreset()
@@ -41,15 +47,21 @@ export class SelectComponent {
     }
 
     selectChange(newValue: string): void {
+        const source = this.tag()
+        let nextTag: Tag
         if (this.isMultiKeyPreset()) {
             const selectedKey = (this.preset().keys ?? []).includes(newValue)
                 ? newValue
                 : ''
-            this.tag().key = selectedKey
-            this.tag().value = selectedKey ? 'yes' : ''
+            nextTag = {
+                ...source,
+                key: selectedKey,
+                value: selectedKey ? 'yes' : '',
+            }
         } else {
-            this.tag().value = newValue
+            nextTag = { ...source, value: newValue }
         }
+        this.tagChange.emit({ source, tag: nextTag })
 
         const currentPresetOption = this.preset().options?.find(
             (po) => po.v == newValue
@@ -58,6 +70,14 @@ export class SelectComponent {
         if (extraTags) {
             this.addTags.emit(extraTags)
         }
+    }
+
+    valueChange(value: string | number): void {
+        const source = this.tag()
+        this.tagChange.emit({
+            source,
+            tag: { ...source, value: String(value) },
+        })
     }
 
     private isMultiKeyPreset(): boolean {

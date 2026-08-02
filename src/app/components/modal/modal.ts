@@ -17,6 +17,13 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatSnackBar } from '@angular/material/snack-bar'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTooltipModule } from '@angular/material/tooltip'
+import {
+    normalizedOsmTagMap,
+    normalizeEditorTags,
+    normalizeOsmTagKey,
+    normalizeOsmTags,
+    osmTagMapsEqual,
+} from '@app/utils/osm-tags'
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
 import { EditPresets } from '@components/modal/components/edit/Presets.component'
@@ -24,6 +31,7 @@ import { MetaCard } from '@components/modal/components/meta-card/MetaCard'
 import { PrimaryKey } from '@components/modal/components/primary-key/PrimaryKey'
 import { ReadOtherTag } from '@components/modal/components/read/OtherTag.component'
 import { ReadPresets } from '@components/modal/components/read/Presets.component'
+import type { TagSelectionChange } from '@components/modal/components/select/select.component'
 import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import {
     ConfirmDialogComponent,
@@ -49,7 +57,7 @@ import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
 import { type SavedField, TagsService } from '@services/tags.service'
 import type { Geometry } from 'geojson'
-import { cloneDeep, findIndex, isEqual } from 'lodash'
+import { cloneDeep, findIndex } from 'lodash'
 import { finalize } from 'rxjs/operators'
 import { ModalAddTag } from './modal.addTag/modal.addTag'
 import { ModalSelectList } from './modalSelectList/modalSelectList'
@@ -315,6 +323,9 @@ export class ObjectEditorContentComponent {
         this.openPrimaryTagModalOnStart = inputs.openCategory
         this.origineData = inputs.origin
         this.typeFicheState.set('Loading')
+        this.feature.properties.tags = normalizeOsmTags(
+            this.feature.properties.tags
+        )
 
         const surveyDates: Date[] = []
         const tags: Tag[] = []
@@ -378,7 +389,7 @@ export class ObjectEditorContentComponent {
         tags: Tag[]
         feature: OsmGoFeature
     } {
-        let _tags = this.tags.map((tag) => ({ ...tag }))
+        let _tags = normalizeEditorTags(this.tags)
         const feature = cloneDeep(this.feature)
         let _tagConfig: TagConfig
         let _tagId: string
@@ -396,9 +407,7 @@ export class ObjectEditorContentComponent {
             this.mode === 'Update' || this.mode === 'Create' ? 'Edit' : 'Read'
         )
 
-        _tags = _tags.filter(
-            (tag) => tag.value && tag.value !== '' && !tag.isDefaultValue
-        )
+        _tags = _tags.filter((tag) => tag.value !== '' && !tag.isDefaultValue)
         if (!_tags.find((tag) => tag.key === 'name')) {
             _tags.push({ key: 'name', value: '' })
         }
@@ -453,43 +462,15 @@ export class ObjectEditorContentComponent {
     }
 
     dataIsChanged(): boolean {
-        const tagsNotNull: Tag[] = []
-        for (let i = 0; i < this.tags.length; i++) {
-            if (this.tags[i].value) {
-                tagsNotNull.push({
-                    key: this.tags[i].key,
-                    value: this.tags[i].value,
-                })
-            }
-        }
-
-        const originalTagsNotNull: Tag[] = []
-        for (let i = 0; i < this.originalTags.length; i++) {
-            if (
-                this.originalTags[i].value &&
-                this.originalTags[i].value !== ''
-            ) {
-                originalTagsNotNull.push({
-                    key: this.originalTags[i].key,
-                    value: this.originalTags[i].value,
-                })
-            }
-        }
-
-        return !isEqual(tagsNotNull, originalTagsNotNull)
+        return !osmTagMapsEqual(
+            normalizedOsmTagMap(this.tags),
+            normalizedOsmTagMap(this.originalTags)
+        )
     }
 
     changedFieldCount(): number {
-        const original = new Map(
-            this.originalTags
-                .filter((tag) => String(tag.value ?? '').trim() !== '')
-                .map((tag) => [tag.key, String(tag.value)])
-        )
-        const current = new Map(
-            this.tags
-                .filter((tag) => String(tag.value ?? '').trim() !== '')
-                .map((tag) => [tag.key, String(tag.value)])
-        )
+        const original = normalizedOsmTagMap(this.originalTags)
+        const current = normalizedOsmTagMap(this.tags)
         const keys = new Set([...original.keys(), ...current.keys()])
         let changes = 0
         for (const key of keys) {
@@ -657,21 +638,9 @@ export class ObjectEditorContentComponent {
     }
 
     pushTagsToFeature(): void {
-        const tagObjects: Record<string, string | number> = {}
-        for (let i = 0; i < this.tags.length; i++) {
-            const key = this.tags[i].key?.trim()
-            const value = this.tags[i].value
-            if (
-                key &&
-                key !== 'undefined' &&
-                value !== null &&
-                value !== undefined &&
-                String(value).trim() !== ''
-            ) {
-                tagObjects[key] = value
-            }
-        }
-        this.feature.properties.tags = tagObjects
+        this.feature.properties.tags = Object.fromEntries(
+            normalizedOsmTagMap(this.tags)
+        )
     }
 
     moveOsmElement(): void {
@@ -762,19 +731,53 @@ export class ObjectEditorContentComponent {
         newTags: Record<string, string | number>,
         existingTags: Tag[]
     ): Tag[] {
-        let _existingTags = [...existingTags]
-        for (const t in newTags) {
-            const tagIndex = _existingTags.findIndex((tag) => tag.key === t)
+        let nextTags = existingTags.map((tag) => ({ ...tag }))
+        for (const [rawKey, rawValue] of Object.entries(newTags)) {
+            const key = normalizeOsmTagKey(rawKey)
+            const value = String(rawValue).trim()
+            if (!key || value === '') continue
+            const tagIndex = nextTags.findIndex((tag) => tag.key === key)
             if (tagIndex !== -1) {
-                _existingTags[tagIndex] = { key: t, value: newTags[t] }
+                nextTags[tagIndex] = {
+                    ...nextTags[tagIndex],
+                    key,
+                    value,
+                }
             } else {
-                _existingTags = [
-                    ..._existingTags,
-                    { key: t, value: newTags[t] },
-                ]
+                nextTags = [...nextTags, { key, value }]
             }
         }
-        return _existingTags
+        return nextTags
+    }
+
+    applyTagSelection(change: TagSelectionChange): void {
+        const sourceIndex = this.tags.indexOf(change.source)
+        if (sourceIndex < 0) return
+        const selected = normalizeEditorTags([change.tag])[0]
+        const nextTags = this.tags.map((tag) => ({ ...tag }))
+        const collisionIndex = selected.key
+            ? nextTags.findIndex(
+                  (tag, index) =>
+                      index !== sourceIndex && tag.key === selected.key
+              )
+            : -1
+        if (collisionIndex < 0) {
+            nextTags[sourceIndex] = selected
+        } else {
+            const merged = {
+                ...nextTags[collisionIndex],
+                ...selected,
+            }
+            const insertAt = Math.min(sourceIndex, collisionIndex)
+            const withoutDuplicates = nextTags.filter(
+                (_tag, index) =>
+                    index !== sourceIndex && index !== collisionIndex
+            )
+            withoutDuplicates.splice(insertAt, 0, merged)
+            this.tagsState.set(withoutDuplicates)
+            return
+        }
+        this.tagsState.set(nextTags)
     }
 
     addPresetsTags(newTags: Record<string, string | number>): void {
@@ -943,7 +946,7 @@ export class ObjectEditorContentComponent {
                 if (t) {
                     t.value = stags.value
                 } else {
-                    newTags.push(stags)
+                    newTags.push(cloneDeep(stags))
                 }
             }
         }

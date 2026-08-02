@@ -67,6 +67,8 @@ describe('OsmApiService', () => {
                     undefined: 'unisex',
                     ' ': 'female',
                     name: '',
+                    level: 0,
+                    ref: '  A 1  ',
                 },
                 type: 'node',
             },
@@ -82,6 +84,8 @@ describe('OsmApiService', () => {
             expect(xml).not.toContain('undefined')
             expect(xml).not.toContain('female')
             expect(xml).not.toContain('k="name"')
+            expect(xml).toContain('<tag k="level" v="0"/>')
+            expect(xml).toContain('<tag k="ref" v="A 1"/>')
         }
     })
 

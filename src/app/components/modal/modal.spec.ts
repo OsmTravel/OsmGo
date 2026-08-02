@@ -134,6 +134,58 @@ describe('ObjectEditorContentComponent', () => {
         })
     })
 
+    it('normalizes numeric values to strings without dropping zero', () => {
+        const { page } = createPage({
+            amenity: 'toilets',
+            level: 0,
+            name: '  Ground floor  ',
+        })
+
+        page.pushTagsToFeature()
+
+        expect(page.feature.properties.tags).toEqual({
+            amenity: 'toilets',
+            level: '0',
+            name: 'Ground floor',
+        })
+    })
+
+    it('does not report a change when tags are only reordered', () => {
+        const { page } = createPage({
+            amenity: 'toilets',
+            name: 'Public toilets',
+            level: 0,
+        })
+
+        page.tags.reverse()
+
+        expect(page.dataIsChanged()).toBe(false)
+        expect(page.changedFieldCount()).toBe(0)
+    })
+
+    it('merges a multi-key collision and keeps preset metadata', () => {
+        const { page } = createPage({
+            amenity: 'toilets',
+            unisex: 'yes',
+            male: 'yes',
+        })
+        page.initComponent(tagConfig as any)
+        const source = page.tags.find((tag) => tag.preset === genderPreset)
+        if (!source) throw new Error('Missing gender fixture.')
+
+        page.applyTagSelection({
+            source,
+            tag: { ...source, key: 'male', value: 'yes' },
+        })
+
+        const genderTags = page.tags.filter((tag) => tag.key === 'male')
+        expect(genderTags).toHaveLength(1)
+        expect(genderTags[0]).toMatchObject({
+            value: 'yes',
+            preset: genderPreset,
+        })
+    })
+
     it('asks the unified sheet to enter update mode from read mode', () => {
         const { page } = createPage({ amenity: 'toilets' }, 'Read')
         const dismissed = vi.fn()

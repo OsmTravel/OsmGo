@@ -204,6 +204,7 @@
                 [language]="configService.config().languageTags"
                 (openPrimaryListModal)="openModalList(tag, tag.preset || tagsService.presets()[tag.key.replace(':', '/')])"
                 (addTags)="addPresetsTags($event)"
+                (tagChange)="applyTagSelection($event)"
             ></edit-presets>
             } @else {
             <edit-other-tag

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { inject, Service } from '@angular/core'
+import { normalizeOsmTags } from '@app/utils/osm-tags'
 import type {
     FeatureIdSource,
     OsmGoFeature,
@@ -471,17 +472,6 @@ export class OsmApiService {
         return `<member type="${member.type}" ref="${ref}" role="${this.escapeXmlValue(member.role)}"/>`
     }
 
-    private isValidOsmTag(key: string, value: unknown): boolean {
-        const normalizedKey = key.trim()
-        return (
-            normalizedKey !== '' &&
-            normalizedKey !== 'undefined' &&
-            value !== null &&
-            value !== undefined &&
-            String(value).trim() !== ''
-        )
-    }
-
     createOsmNode(featureToCreate: OsmGoFeature): Observable<OsmGoFeature> {
         const feature = cloneDeep(featureToCreate)
         feature.properties.meta = {
@@ -754,10 +744,8 @@ export class OsmApiService {
 
     private osmTagsToXml(tags: Record<string, unknown>): string {
         let xml = ''
-        for (const [key, value] of Object.entries(tags)) {
-            if (this.isValidOsmTag(key, value)) {
-                xml += `<tag k="${this.escapeXmlValue(key.trim())}" v="${this.escapeXmlValue(String(value).trim())}"/>`
-            }
+        for (const [key, value] of Object.entries(normalizeOsmTags(tags))) {
+            xml += `<tag k="${this.escapeXmlValue(key)}" v="${this.escapeXmlValue(value)}"/>`
         }
         return xml
     }

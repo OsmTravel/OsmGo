@@ -44,7 +44,8 @@
                     <input
                         matInput
                         type="text"
-                        [(ngModel)]="tag().value"
+                        [ngModel]="tag().value"
+                        (ngModelChange)="valueChange($event)"
                         [placeholder]="tag().key"
                     />
                 </mat-form-field>
@@ -53,7 +54,7 @@
                 mat-icon-button
                 type="button"
                 [attr.aria-label]="'SHARED.CLEAR' | translate"
-                (click)="tag().value = ''"
+                (click)="valueChange('')"
             >
                 <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
             </button>
