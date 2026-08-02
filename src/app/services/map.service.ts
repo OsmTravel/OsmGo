@@ -190,7 +190,9 @@ export class MapService {
     headingIsLocked: boolean = true
     private lastRenderedHeading: number | null = null
     positionIsFollow: boolean = true
-    isDisplaySatelliteBaseMap: boolean = false
+    private readonly isDisplaySatelliteBaseMapState = signal(false)
+    readonly isDisplaySatelliteBaseMap =
+        this.isDisplaySatelliteBaseMapState.asReadonly()
 
     layersAreLoaded: boolean = false
 
@@ -480,7 +482,7 @@ export class MapService {
 
             this.map.addControl(this.attributionControl)
 
-            this.isDisplaySatelliteBaseMap = true
+            this.isDisplaySatelliteBaseMapState.set(true)
         } else {
             this.attributionControl = new AttributionControl({
                 customAttribution: '',
@@ -491,7 +493,7 @@ export class MapService {
             if (this.map.getLayer('basemap')) {
                 this.map.removeLayer('basemap')
             }
-            this.isDisplaySatelliteBaseMap = false
+            this.isDisplaySatelliteBaseMapState.set(false)
         }
     }
     centerOnMyPosition(): void {

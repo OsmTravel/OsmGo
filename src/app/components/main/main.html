@@ -73,9 +73,9 @@
                 tappable
                 ion-fab
                 fab-bottom
-                [color]="mapService.isDisplaySatelliteBaseMap ? 'light' : 'secondary'  "
-                (click)="mapService.displaySatelliteBaseMap(configService.getBasemap(), !mapService.isDisplaySatelliteBaseMap)"
-                [title]="translate.instant(mapService.isDisplaySatelliteBaseMap ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
+                [color]="mapService.isDisplaySatelliteBaseMap() ? 'light' : 'secondary'  "
+                (click)="mapService.displaySatelliteBaseMap(configService.getBasemap(), !mapService.isDisplaySatelliteBaseMap())"
+                [title]="translate.instant(mapService.isDisplaySatelliteBaseMap() ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
             >
                 <ion-icon name="image"></ion-icon>
             </ion-fab-button>
