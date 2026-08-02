@@ -1,3 +1,4 @@
+import type { OsmGoFeatureCollection } from '@osmgo/type'
 import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
 import { Subscription } from 'rxjs'
 
@@ -29,6 +30,7 @@ describe('MapService lifecycle', () => {
         service.markerMove = { remove: removeMoveMarker } as never
         setPrivate(service, 'mapCreated', true)
         setPrivate(service, 'styleReady', true)
+        setPrivate(service, 'loadingDataState', { set: vi.fn() })
         setPrivate(service, 'markerMovingState', { set: vi.fn() })
         setPrivate(service, 'markerMoveMovingState', { set: vi.fn() })
         setPrivate(
@@ -87,6 +89,7 @@ describe('MapService filters', () => {
     it('adds the measurement filter when enabled', () => {
         const setFilter = vi.fn().mockName('setFilter')
         const map = {
+            getLayer: () => ({ id: 'way_fill' }),
             getFilter: () => ['all'],
             setFilter,
         } as unknown as MapLibreMap
@@ -106,6 +109,7 @@ describe('MapService filters', () => {
         ]
         const setFilter = vi.fn().mockName('setFilter')
         const map = {
+            getLayer: () => ({ id: 'way_fill' }),
             getFilter: () => initialFilter,
             setFilter,
         } as unknown as MapLibreMap
@@ -121,6 +125,7 @@ describe('MapService filters', () => {
     it('leaves a missing layer filter unchanged', () => {
         const setFilter = vi.fn().mockName('setFilter')
         const map = {
+            getLayer: () => undefined,
             getFilter: () => undefined,
             setFilter,
         } as unknown as MapLibreMap
@@ -130,6 +135,176 @@ describe('MapService filters', () => {
             service.toogleMesureFilter(true, 'missing', 100, map)
         ).toBeUndefined()
         expect(setFilter).not.toHaveBeenCalled()
+    })
+
+    it('replaces an existing measurement clause instead of stacking it', () => {
+        let filter: FilterSpecification = ['all']
+        const map = {
+            getLayer: () => ({ id: 'way_fill' }),
+            getFilter: () => filter,
+            setFilter: (_layer: string, next: FilterSpecification) => {
+                filter = next
+            },
+        } as unknown as MapLibreMap
+        const service = createService()
+
+        service.toogleMesureFilter(true, 'way_fill', 5_000, map)
+        service.toogleMesureFilter(true, 'way_fill', 2_500, map)
+
+        expect(filter).toEqual(['all', ['<', ['get', 'mesure'], 2_500]])
+    })
+
+    it('applies and clears hidden tags on official and pending layers', () => {
+        const filters = new Map<string, FilterSpecification>([
+            ['marker', ['all']],
+            ['marker_changed', ['all']],
+            ['way_fill_changed', ['all']],
+        ])
+        const map = {
+            getLayer: (id: string) =>
+                filters.has(id) ? ({ id } as unknown) : undefined,
+            getFilter: (id: string) => filters.get(id),
+            setFilter: (id: string, filter: FilterSpecification) =>
+                filters.set(id, filter),
+        } as unknown as MapLibreMap
+        const service = createService()
+        service.map = map
+        Object.defineProperty(service, 'mapCreated', { value: true })
+        service.layersAreLoaded = true
+
+        service.filterMakerByIds(['amenity/bench', 'amenity/bench'])
+        service.filterMakerByIds(['amenity/bench'])
+
+        for (const filter of filters.values()) {
+            expect(filter).toEqual([
+                'all',
+                ['match', ['get', 'configId'], ['amenity/bench'], false, true],
+            ])
+        }
+
+        service.filterMakerByIds([])
+        for (const filter of filters.values()) expect(filter).toEqual(['all'])
+    })
+
+    it('keeps one numeric old-tag threshold across repeated updates', () => {
+        vi.useFakeTimers()
+        vi.setSystemTime(new Date('2026-08-02T10:00:00.000Z'))
+        let filter: FilterSpecification = ['all']
+        const setFilter = vi.fn((_layer: string, next: FilterSpecification) => {
+            filter = next
+        })
+        const map = {
+            getLayer: () => ({ id: 'icon-old' }),
+            getFilter: () => filter,
+            setFilter,
+            setLayoutProperty: vi.fn(),
+        } as unknown as MapLibreMap
+        const service = createService()
+        service.map = map
+        Object.defineProperty(service, 'mapCreated', { value: true })
+        service.layersAreLoaded = true
+
+        service.showOldTagIcon(3)
+        service.showOldTagIcon(5)
+
+        expect(filter).toHaveLength(2)
+        expect(filter[1]).toEqual([
+            '>',
+            Date.now() - 31_536_000_000 * 5,
+            ['get', 'time'],
+        ])
+        expect(typeof (filter[1] as unknown[])[1]).toBe('number')
+        vi.useRealTimers()
+    })
+})
+
+describe('MapService redraw ordering', () => {
+    const setPrivate = (service: MapService, key: string, value: unknown) => {
+        Object.defineProperty(service, key, {
+            value,
+            writable: true,
+            configurable: true,
+        })
+    }
+
+    it('ignores an older render that finishes after the latest one', async () => {
+        const service = Object.create(MapService.prototype) as MapService
+        const dataSource = { setData: vi.fn() }
+        const waysSource = { setData: vi.fn() }
+        const map = {
+            hasImage: () => true,
+            getSource: (id: string) =>
+                id === 'data' ? dataSource : waysSource,
+        } as unknown as MapLibreMap
+        service.map = map
+        setPrivate(service, 'mapCreated', true)
+        setPrivate(service, 'layersAreLoaded', true)
+        setPrivate(service, 'officialRenderRevision', 0)
+        setPrivate(service, 'pendingRenderRevision', 0)
+        setPrivate(service, 'activeRenderCount', 0)
+        setPrivate(service, 'loadingDataState', { set: vi.fn() })
+        let resolveFirst!: () => void
+        let resolveSecond!: () => void
+        const firstIcons = new Promise<void>((resolve) => {
+            resolveFirst = resolve
+        })
+        const secondIcons = new Promise<void>((resolve) => {
+            resolveSecond = resolve
+        })
+        vi.spyOn(service, 'addMissingIconsToMap')
+            .mockReturnValueOnce(firstIcons)
+            .mockReturnValueOnce(secondIcons)
+        const first: OsmGoFeatureCollection = {
+            type: 'FeatureCollection',
+            features: [],
+        }
+        const second: OsmGoFeatureCollection = {
+            type: 'FeatureCollection',
+            features: [],
+        }
+        const render = (
+            service as unknown as {
+                renderMarkerCollection(
+                    collection: OsmGoFeatureCollection,
+                    target: 'official'
+                ): Promise<void>
+            }
+        ).renderMarkerCollection.bind(service)
+
+        const older = render(first, 'official')
+        const latest = render(second, 'official')
+        resolveSecond()
+        await latest
+        resolveFirst()
+        await older
+
+        expect(dataSource.setData).toHaveBeenCalledOnce()
+        expect(dataSource.setData).toHaveBeenCalledWith(second)
+        expect(waysSource.setData).toHaveBeenCalledOnce()
+    })
+
+    it('uses a generated fallback while preserving the requested image ID', async () => {
+        const service = Object.create(MapService.prototype) as MapService
+        const addImage = vi.fn()
+        const map = {
+            hasImage: () => false,
+            addImage,
+        } as unknown as MapLibreMap
+        const fallbackBitmap = {} as ImageBitmap
+        vi.spyOn(service, 'generateIconFromSprite')
+            .mockRejectedValueOnce(new Error('Missing sprite'))
+            .mockResolvedValueOnce({
+                id: 'circle-#000000-maki-circle',
+                blob: fallbackBitmap,
+            })
+
+        await service.addMissingIconsToMap(['circle-#000000-missing'], map)
+
+        expect(addImage).toHaveBeenCalledWith(
+            'circle-#000000-missing',
+            fallbackBitmap,
+            { pixelRatio: 1 }
+        )
     })
 })
 

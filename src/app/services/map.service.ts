@@ -87,6 +87,9 @@ export class MapService {
     private mapInitSubscription?: Subscription
     private mapSessionSubscriptions = new Subscription()
     private mapEventCleanup: Array<() => void> = []
+    private officialRenderRevision = 0
+    private pendingRenderRevision = 0
+    private activeRenderCount = 0
 
     spritesCache: HTMLImageElement | undefined
     constructor() {
@@ -114,74 +117,12 @@ export class MapService {
         })
 
         this.markerRedraw$.subscribe((geojson) => {
-            if (!this.mapCreated || !this.layersAreLoaded) return
-            const activeMap = this.map
-            const missingMarker: string[] = []
-            for (const feature of geojson.features) {
-                const marker = feature.properties.marker
-                if (
-                    !activeMap.hasImage(marker) &&
-                    !missingMarker.includes(marker)
-                ) {
-                    missingMarker.push(marker)
-                }
-            }
-            const t1 = new Date().getTime()
-            this.addMissingIconsToMap(missingMarker)
-                .then(() => {
-                    if (!this.mapCreated || this.map !== activeMap) return
-                    console.log(
-                        'addMissingIconsToMap TIME',
-                        new Date().getTime() - t1,
-                        'count :',
-                        missingMarker.length
-                    )
-                    if (geojson) {
-                        const source = activeMap.getSource(
-                            'data'
-                        ) as GeoJSONSource
-                        source.setData(geojson)
-                        this.drawWaysPoly(geojson, 'ways')
-                    }
-                })
-                .catch((err) => {
-                    console.error(err)
-                })
+            void this.renderMarkerCollection(geojson, 'official')
         })
 
         this.changedMarkerRedraw$.subscribe(
             (geojson: OsmGoFeatureCollection) => {
-                if (!this.mapCreated || !this.layersAreLoaded) return
-                const activeMap = this.map
-                const missingMarker: string[] = []
-                for (const feature of geojson.features) {
-                    const marker = feature.properties.marker
-                    if (
-                        !activeMap.hasImage(marker) &&
-                        !missingMarker.includes(marker)
-                    ) {
-                        missingMarker.push(marker)
-                    }
-                }
-                const t1 = new Date().getTime()
-                this.addMissingIconsToMap(missingMarker)
-                    .then(() => {
-                        if (!this.mapCreated || this.map !== activeMap) return
-                        console.log(
-                            'addMissingIconsToMapChange TIME',
-                            new Date().getTime() - t1
-                        )
-                        if (geojson) {
-                            const source = activeMap.getSource(
-                                'data_changed'
-                            ) as GeoJSONSource
-                            source.setData(geojson)
-                            this.drawWaysPoly(geojson, 'ways_changed')
-                        }
-                    })
-                    .catch((err) => {
-                        console.error(err)
-                    })
+                void this.renderMarkerCollection(geojson, 'pending')
             }
         )
 
@@ -269,6 +210,51 @@ export class MapService {
         this.changedMarkerRedrawSubject.next(geojson)
     }
 
+    private async renderMarkerCollection(
+        geojson: OsmGoFeatureCollection,
+        target: 'official' | 'pending'
+    ): Promise<void> {
+        const revision =
+            target === 'official'
+                ? ++this.officialRenderRevision
+                : ++this.pendingRenderRevision
+        if (!this.mapCreated || !this.layersAreLoaded) return
+        const activeMap = this.map
+        const isCurrent = (): boolean =>
+            this.mapCreated &&
+            this.layersAreLoaded &&
+            this.map === activeMap &&
+            revision ===
+                (target === 'official'
+                    ? this.officialRenderRevision
+                    : this.pendingRenderRevision)
+        const missingMarkers = [
+            ...new Set(
+                geojson.features
+                    .map((feature) => feature.properties.marker)
+                    .filter((marker) => !activeMap.hasImage(marker))
+            ),
+        ]
+        this.activeRenderCount++
+        this.loadingDataState.set(true)
+        try {
+            await this.addMissingIconsToMap(missingMarkers, activeMap)
+            if (!isCurrent()) return
+            const dataSourceId = target === 'official' ? 'data' : 'data_changed'
+            const waysSourceId = target === 'official' ? 'ways' : 'ways_changed'
+            const source = activeMap.getSource(dataSourceId) as
+                | GeoJSONSource
+                | undefined
+            source?.setData(geojson)
+            this.drawWaysPoly(geojson, waysSourceId, activeMap)
+        } catch (error) {
+            if (isCurrent()) console.error(error)
+        } finally {
+            this.activeRenderCount = Math.max(0, this.activeRenderCount - 1)
+            if (this.activeRenderCount === 0) this.loadingDataState.set(false)
+        }
+    }
+
     async loadUnknownMarker(factor: number): Promise<void> {
         const roundedFactor = factor > 1 ? 2 : 1
         const markerShapes = ['circle', 'penta', 'square']
@@ -283,53 +269,49 @@ export class MapService {
     }
 
     filterMakerByIds(ids: string[]): void {
+        if (!this.mapCreated || !this.layersAreLoaded) return
         const layersIds = [
             'way_fill',
+            'way_fill_changed',
             'way_line',
+            'way_line_changed',
             'label',
+            'label_changed',
             'icon-old',
             'icon-fixme',
             'marker',
+            'marker_changed',
+            'icon-change',
         ]
-        if (ids.length === 0) {
-            ids = ['']
-        }
+        const hiddenIds = [...new Set(ids.filter((id) => id !== ''))]
 
         for (const layerId of layersIds) {
+            if (!this.map.getLayer(layerId)) continue
             const currentFilter = cloneDeep(this.map.getFilter(layerId))
             if (!Array.isArray(currentFilter)) continue
-
-            // Types are not correct for the match filter used in the next line.
-            // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
-            // prettier-ignore
-            const newConfigIdFilter: FilterSpecification = [
-                'match',
-                ['get', 'configId'],
-                [...ids],
-                false,
-                true,
-            ]
-            let newFilter: unknown[] = []
-
-            let findedFilter = false
-            for (let i = 1; i < currentFilter.length; i++) {
-                const filterItem = currentFilter[i]
-                if (this.isPropertyMatchFilter(filterItem, 'configId')) {
-                    currentFilter[i] = newConfigIdFilter
-                    newFilter = currentFilter
-                    findedFilter = true
-                }
+            const nextFilter = currentFilter.filter(
+                (clause, index) =>
+                    index === 0 ||
+                    !this.isPropertyMatchFilter(clause, 'configId')
+            )
+            if (hiddenIds.length > 0) {
+                nextFilter.push([
+                    'match',
+                    ['get', 'configId'],
+                    hiddenIds,
+                    false,
+                    true,
+                ])
             }
-
-            if (!findedFilter) {
-                newFilter = [...currentFilter, newConfigIdFilter]
-            }
-
-            this.map.setFilter(layerId, newFilter as FilterSpecification)
+            this.map.setFilter(layerId, nextFilter as FilterSpecification)
         }
     }
 
-    drawWaysPoly(geojson: OsmGoFeatureCollection, source: string): void {
+    drawWaysPoly(
+        geojson: OsmGoFeatureCollection,
+        source: string,
+        targetMap = this.map
+    ): void {
         const featuresWay: Feature[] = []
         for (const feature of geojson.features) {
             if (
@@ -344,8 +326,13 @@ export class MapService {
             }
         }
 
-        const mapSource = this.map.getSource(source) as GeoJSONSource
-        mapSource.setData({ type: 'FeatureCollection', features: featuresWay })
+        const mapSource = targetMap.getSource(source) as
+            | GeoJSONSource
+            | undefined
+        mapSource?.setData({
+            type: 'FeatureCollection',
+            features: featuresWay,
+        })
     }
 
     /** Converts a distance in meters to pixels at the current map scale. */
@@ -786,11 +773,13 @@ export class MapService {
                             .filter((marker) => !activeMap.hasImage(marker))
                     ),
                 ]
-                this.addMissingIconsToMap(missingMarkers).catch((error) => {
-                    if (this.mapCreated && this.map === activeMap) {
-                        console.error(error)
+                this.addMissingIconsToMap(missingMarkers, activeMap).catch(
+                    (error) => {
+                        if (this.mapCreated && this.map === activeMap) {
+                            console.error(error)
+                        }
                     }
-                })
+                )
             })
         })
     }
@@ -805,6 +794,9 @@ export class MapService {
         this.mapCreated = false
         this.styleReady = false
         this.layersAreLoaded = false
+        this.officialRenderRevision++
+        this.pendingRenderRevision++
+        this.loadingDataState.set(false)
         for (const cleanup of this.mapEventCleanup.splice(0).reverse()) {
             cleanup()
         }
@@ -853,28 +845,18 @@ export class MapService {
         value: number,
         _map: Map
     ): FilterSpecification | undefined {
+        if (!_map.getLayer(layerName)) return undefined
         const rawFilter = cloneDeep(_map.getFilter(layerName))
         if (!Array.isArray(rawFilter)) return undefined
-        const currentFilter: unknown[] = [...rawFilter]
-
-        let measureFilterIndex: number | undefined
-        for (let i = 1; i < currentFilter.length; i++) {
-            if (this.isPropertyComparisonFilter(currentFilter[i], 'mesure')) {
-                measureFilterIndex = i
-            }
-        }
-        if (measureFilterIndex !== undefined && !enable) {
-            currentFilter.splice(measureFilterIndex, 1)
-            const filter = currentFilter as FilterSpecification
-            _map.setFilter(layerName, filter)
-            return filter
-        } else if (enable) {
-            currentFilter.push(['<', ['get', 'mesure'], value])
-            const filter = currentFilter as FilterSpecification
-            _map.setFilter(layerName, filter)
-            return filter
-        }
-        return currentFilter as FilterSpecification
+        const nextFilter = rawFilter.filter(
+            (clause, index) =>
+                index === 0 ||
+                !this.isPropertyComparisonFilter(clause, 'mesure')
+        )
+        if (enable) nextFilter.push(['<', ['get', 'mesure'], value])
+        const filter = nextFilter as FilterSpecification
+        _map.setFilter(layerName, filter)
+        return filter
     }
 
     selectFeature(feature: MapGeoJSONFeature): void {
@@ -921,49 +903,56 @@ export class MapService {
     }
 
     showOldTagIcon(maxYearAgo: number): void {
-        const OneYear = 31536000000
-        const currentTime = new Date().getTime()
-
+        if (
+            !this.mapCreated ||
+            !this.layersAreLoaded ||
+            !this.map.getLayer('icon-old')
+        ) {
+            return
+        }
+        const oneYear = 31_536_000_000
+        const threshold = Date.now() - oneYear * maxYearAgo
         const currentFilter = cloneDeep(this.map.getFilter('icon-old'))
         if (!Array.isArray(currentFilter)) return
-
-        let oldTagFilterIndex: number | undefined
-        for (let i = 1; i < currentFilter.length; i++) {
-            const spec = currentFilter[i]
-            if (this.isPropertyComparisonFilter(spec, 'time', '>')) {
-                oldTagFilterIndex = i
-            }
-        }
-        let newFilter: unknown[]
-        if (oldTagFilterIndex !== undefined) {
-            currentFilter[oldTagFilterIndex] = [
-                '>',
-                '' + (currentTime - OneYear * maxYearAgo),
-                ['get', 'time'],
-            ]
-            newFilter = currentFilter
-        } else {
-            newFilter = [...currentFilter]
-            const filter = [
-                '>',
-                currentTime - OneYear * maxYearAgo,
-                ['get', 'time'],
-            ]
-            newFilter.push(filter)
-        }
-
-        this.map.setFilter('icon-old', newFilter as FilterSpecification)
+        const nextFilter = currentFilter.filter(
+            (clause, index) =>
+                index === 0 ||
+                !this.isPropertyComparisonFilter(clause, 'time', '>')
+        )
+        nextFilter.push(['>', threshold, ['get', 'time']])
+        this.map.setFilter('icon-old', nextFilter as FilterSpecification)
         this.map.setLayoutProperty('icon-old', 'visibility', 'visible')
     }
 
     hideOldTagIcon(): void {
+        if (
+            !this.mapCreated ||
+            !this.layersAreLoaded ||
+            !this.map.getLayer('icon-old')
+        ) {
+            return
+        }
         this.map.setLayoutProperty('icon-old', 'visibility', 'none')
     }
 
     showFixmeIcon(): void {
+        if (
+            !this.mapCreated ||
+            !this.layersAreLoaded ||
+            !this.map.getLayer('icon-fixme')
+        ) {
+            return
+        }
         this.map.setLayoutProperty('icon-fixme', 'visibility', 'visible')
     }
     hideFixmeIcon(): void {
+        if (
+            !this.mapCreated ||
+            !this.layersAreLoaded ||
+            !this.map.getLayer('icon-fixme')
+        ) {
+            return
+        }
         this.map.setLayoutProperty('icon-fixme', 'visibility', 'none')
     }
 
@@ -1262,10 +1251,22 @@ export class MapService {
             5000,
             this.map
         )
+        this.toogleMesureFilter(
+            this.configService.getFilterWayByArea(),
+            'way_fill_changed',
+            5000,
+            this.map
+        )
         // Length is measured in kilometers.
         this.toogleMesureFilter(
             this.configService.getFilterWayByLength(),
             'way_line',
+            0.2,
+            this.map
+        )
+        this.toogleMesureFilter(
+            this.configService.getFilterWayByLength(),
+            'way_line_changed',
             0.2,
             this.map
         )
@@ -1434,7 +1435,10 @@ export class MapService {
         this.mapLoadedSubject.next()
     }
 
-    async addMissingIconsToMap(iconsIds: string[]): Promise<void> {
+    async addMissingIconsToMap(
+        iconsIds: string[],
+        targetMap = this.map
+    ): Promise<void> {
         const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
         const promises: Array<Promise<{ blob: ImageBitmap; id: string }>> = []
         for (const iconId of iconsIds) {
@@ -1465,13 +1469,29 @@ export class MapService {
                 console.log('no match', iconId)
             }
 
-            promises.push(this.generateIconFromSprite(iconParam))
+            promises.push(
+                this.generateIconFromSprite(iconParam)
+                    .then((image) => ({ ...image, id: iconId }))
+                    .catch(async (error) => {
+                        if (iconParam.id === 'maki-circle') throw error
+                        const fallback = await this.generateIconFromSprite({
+                            ...iconParam,
+                            id: 'maki-circle',
+                        })
+                        return { ...fallback, id: iconId }
+                    })
+            )
         }
 
-        const images = await Promise.all(promises)
-        for (const image of images) {
-            if (!this.map.hasImage(image.id)) {
-                this.map.addImage(image.id, image.blob, { pixelRatio })
+        const results = await Promise.allSettled(promises)
+        for (const result of results) {
+            if (result.status === 'rejected') {
+                console.error(result.reason)
+                continue
+            }
+            const image = result.value
+            if (!targetMap.hasImage(image.id)) {
+                targetMap.addImage(image.id, image.blob, { pixelRatio })
             }
         }
     }
