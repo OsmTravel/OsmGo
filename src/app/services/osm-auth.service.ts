@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { Injectable, inject } from '@angular/core'
+import { Injectable, inject, signal } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
 import { Storage } from '@ionic/storage'
-import { BehaviorSubject, defer, from, Observable } from 'rxjs'
+import { defer, from, Observable } from 'rxjs'
 import { finalize, switchMap, tap } from 'rxjs/operators'
 
 import { ConfigService } from './config.service'
@@ -31,15 +31,15 @@ export class OsmAuthService {
         },
     }
 
-    private tokenSubject = new BehaviorSubject<string | null>(null)
-    public token$ = this.tokenSubject.asObservable()
+    private readonly tokenState = signal<string | null>(null)
+    readonly token = this.tokenState.asReadonly()
 
     loadToken(): void {
         this.localStorage
             .get('osmToken')
             .then((value) => {
                 if (value) {
-                    this.tokenSubject.next(value)
+                    this.tokenState.set(value)
                 }
             })
             .catch((error) => {
@@ -143,17 +143,17 @@ export class OsmAuthService {
 
     setToken(token: string): void {
         this.localStorage.set('osmToken', token)
-        this.tokenSubject.next(token)
+        this.tokenState.set(token)
     }
 
     clearToken(): void {
         this.localStorage.remove('osmToken')
-        this.tokenSubject.next(null)
+        this.tokenState.set(null)
         this.configService.resetUserInfo()
     }
 
     getToken(): string | null {
-        return this.tokenSubject.value
+        return this.token()
     }
 
     logout(): void {

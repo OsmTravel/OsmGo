@@ -152,9 +152,12 @@ describe('OsmAuthService', () => {
     it('clears the stored token and user information', () => {
         service.setToken('access-token')
 
+        expect(service.token()).toBe('access-token')
+
         service.clearToken()
 
         expect(storage.remove).toHaveBeenCalledWith('osmToken')
+        expect(service.token()).toBeNull()
         expect(service.getToken()).toBeNull()
         expect(configService.resetUserInfo).toHaveBeenCalledTimes(1)
     })
