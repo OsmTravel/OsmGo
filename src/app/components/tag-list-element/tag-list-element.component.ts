@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonButton, IonIcon } from '@ionic/angular/standalone'
 import { TagConfig } from '@osmgo/type'
@@ -21,7 +16,6 @@ interface SpritePosition {
     selector: 'app-tag-list-element',
     templateUrl: './tag-list-element.component.html',
     styleUrls: ['./tag-list-element.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DisplayTagsPipe,
         IconComponent,
