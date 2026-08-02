@@ -195,6 +195,8 @@ export class MapService {
     private readonly isDisplaySatelliteBaseMapState = signal(false)
     readonly isDisplaySatelliteBaseMap =
         this.isDisplaySatelliteBaseMapState.asReadonly()
+    private basemapSourceFingerprint: string | null = null
+    private basemapAttributionText = ''
 
     layersAreLoaded: boolean = false
 
@@ -405,29 +407,32 @@ export class MapService {
             tileSize: 256,
             maxzoom: baseMap.max_zoom,
         }
+        this.upsertBasemap(bmSource, isDisplay)
+        this.updateBasemapAttribution(
+            isDisplay ? (baseMap.attribution?.text ?? '') : ''
+        )
+        this.isDisplaySatelliteBaseMapState.set(isDisplay)
+    }
 
-        if (this.map.hasControl(this.attributionControl)) {
-            this.map.removeControl(this.attributionControl)
+    private upsertBasemap(
+        source: RasterSourceSpecification,
+        isVisible: boolean
+    ): void {
+        const fingerprint = JSON.stringify(source)
+        const existingSource = this.map.getSource('basemap')
+        const sourceChanged =
+            !existingSource || this.basemapSourceFingerprint !== fingerprint
+
+        if (sourceChanged) {
+            if (this.map.getLayer('basemap')) this.map.removeLayer('basemap')
+            if (existingSource) this.map.removeSource('basemap')
+            this.map.addSource('basemap', source)
+            this.basemapSourceFingerprint = fingerprint
         }
 
-        if (this.configService.config().basemap.id !== baseMap.id) {
-            if (this.map.getLayer('basemap')) {
-                this.map.removeLayer('basemap')
-            }
-
-            const mapSource = this.map.getSource('basemap')
-            if (mapSource) {
-                this.map.removeSource('basemap')
-            }
-            this.map.addSource('basemap', bmSource)
-        }
-
-        const mapSource = this.map.getSource('basemap')
-        if (!mapSource) {
-            this.map.addSource('basemap', bmSource)
-        }
-
-        if (isDisplay) {
+        const existingLayer = this.map.getLayer('basemap')
+        if (!existingLayer && isVisible) {
+            const beforeLayer = this.map.getLayer('bboxLayer')
             this.map.addLayer(
                 {
                     id: 'basemap',
@@ -435,30 +440,37 @@ export class MapService {
                     source: 'basemap',
                     minzoom: 0,
                 },
-                'bboxLayer'
+                beforeLayer ? 'bboxLayer' : undefined
             )
-
-            this.attributionControl = new AttributionControl({
-                customAttribution: baseMap?.attribution?.text
-                    ? baseMap?.attribution?.text
-                    : '',
-            })
-
-            this.map.addControl(this.attributionControl)
-
-            this.isDisplaySatelliteBaseMapState.set(true)
-        } else {
-            this.attributionControl = new AttributionControl({
-                customAttribution: '',
-            })
-
-            this.map.addControl(this.attributionControl)
-
-            if (this.map.getLayer('basemap')) {
-                this.map.removeLayer('basemap')
-            }
-            this.isDisplaySatelliteBaseMapState.set(false)
+            return
         }
+        if (existingLayer) {
+            this.map.setLayoutProperty(
+                'basemap',
+                'visibility',
+                isVisible ? 'visible' : 'none'
+            )
+        }
+    }
+
+    private updateBasemapAttribution(attribution: string): void {
+        if (
+            this.attributionControl &&
+            this.basemapAttributionText === attribution
+        ) {
+            return
+        }
+        if (
+            this.attributionControl &&
+            this.map.hasControl(this.attributionControl)
+        ) {
+            this.map.removeControl(this.attributionControl)
+        }
+        this.attributionControl = new AttributionControl({
+            customAttribution: attribution,
+        })
+        this.map.addControl(this.attributionControl)
+        this.basemapAttributionText = attribution
     }
     centerOnMyPosition(): void {
         const currentZoom = this.map.getZoom()

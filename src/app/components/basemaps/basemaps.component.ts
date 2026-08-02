@@ -54,8 +54,8 @@ export class BasemapsComponent {
     }
 
     selectBaseMap(basemap: Basemap): void {
-        this.configService.setBasemap(basemap)
         this.mapService.displaySatelliteBaseMap(basemap, true)
+        this.configService.setBasemap(basemap)
         this.back()
     }
 }

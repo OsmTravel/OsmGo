@@ -1,4 +1,4 @@
-import type { FilterSpecification, Map } from 'maplibre-gl'
+import type { FilterSpecification, Map as MapLibreMap } from 'maplibre-gl'
 
 import { MapService } from './map.service'
 
@@ -12,7 +12,7 @@ describe('MapService filters', () => {
         const map = {
             getFilter: () => ['all'],
             setFilter,
-        } as unknown as Map
+        } as unknown as MapLibreMap
         const service = createService()
 
         const filter = service.toogleMesureFilter(true, 'way_fill', 5_000, map)
@@ -31,7 +31,7 @@ describe('MapService filters', () => {
         const map = {
             getFilter: () => initialFilter,
             setFilter,
-        } as unknown as Map
+        } as unknown as MapLibreMap
         const service = createService()
 
         const filter = service.toogleMesureFilter(false, 'way_fill', 5_000, map)
@@ -46,7 +46,7 @@ describe('MapService filters', () => {
         const map = {
             getFilter: () => undefined,
             setFilter,
-        } as unknown as Map
+        } as unknown as MapLibreMap
         const service = createService()
 
         expect(
@@ -57,37 +57,68 @@ describe('MapService filters', () => {
 })
 
 describe('MapService aerial imagery', () => {
-    it('uses the maximum tile zoom supplied by the imagery index', () => {
-        const source = { type: 'raster' as const }
-        const addSource = vi.fn(
-            (_id: string, _specification: unknown) => undefined
+    function createHarness() {
+        const sources = new Map<string, unknown>()
+        const layers = new Set<string>(['bboxLayer'])
+        const controls = new Set<unknown>()
+        const addSource = vi.fn((id: string, source: unknown) => {
+            sources.set(id, source)
+        })
+        const removeSource = vi.fn((id: string) => {
+            sources.delete(id)
+        })
+        const addLayer = vi.fn((layer: { id: string }) => {
+            if (layers.has(layer.id)) throw new Error('Layer already exists')
+            layers.add(layer.id)
+        })
+        const removeLayer = vi.fn((id: string) => {
+            layers.delete(id)
+        })
+        const setLayoutProperty = vi.fn()
+        const addControl = vi.fn((control: unknown) => controls.add(control))
+        const removeControl = vi.fn((control: unknown) =>
+            controls.delete(control)
         )
         const map = {
-            addControl: vi.fn(),
-            addLayer: vi.fn(),
-            addSource: (
-                id: string,
-                specification: unknown
-            ): ReturnType<typeof addSource> => {
-                addSource(id, specification)
-            },
-            getLayer: vi.fn(() => undefined),
-            getSource: vi.fn(() =>
-                addSource.mock.calls.length > 0 ? source : undefined
-            ),
-            hasControl: vi.fn(() => false),
-            removeControl: vi.fn(),
-            removeLayer: vi.fn(),
-            removeSource: vi.fn(),
-        } as unknown as Map
+            addControl,
+            addLayer,
+            addSource,
+            getLayer: (id: string) =>
+                layers.has(id) ? ({ id } as unknown) : undefined,
+            getSource: (id: string) => sources.get(id),
+            hasControl: (control: unknown) => controls.has(control),
+            removeControl,
+            removeLayer,
+            removeSource,
+            setLayoutProperty,
+        } as unknown as MapLibreMap
         const service = Object.create(MapService.prototype) as MapService
         service.map = map
-        Object.defineProperty(service, 'configService', {
-            value: { config: () => ({ basemap: { id: 'legacy-basemap' } }) },
-        })
         Object.defineProperty(service, 'isDisplaySatelliteBaseMapState', {
             value: { set: vi.fn() },
         })
+        Object.defineProperty(service, 'basemapSourceFingerprint', {
+            value: null,
+            writable: true,
+        })
+        Object.defineProperty(service, 'basemapAttributionText', {
+            value: '',
+            writable: true,
+        })
+        return {
+            addControl,
+            addLayer,
+            addSource,
+            removeControl,
+            removeLayer,
+            removeSource,
+            service,
+            setLayoutProperty,
+        }
+    }
+
+    it('uses the maximum tile zoom supplied by the imagery index', () => {
+        const { addSource, service } = createHarness()
 
         service.displaySatelliteBaseMap(
             {
@@ -103,5 +134,98 @@ describe('MapService aerial imagery', () => {
             'basemap',
             expect.objectContaining({ maxzoom: 19 })
         )
+    })
+
+    it('switches A to B to A without retaining stale sources', () => {
+        const { addLayer, addSource, removeLayer, removeSource, service } =
+            createHarness()
+        const mapA = {
+            id: 'a',
+            name: 'A',
+            tiles: ['https://a.test/{z}/{x}/{y}.png'],
+        }
+        const mapB = {
+            id: 'b',
+            name: 'B',
+            tiles: ['https://b.test/{z}/{x}/{y}.png'],
+        }
+
+        service.displaySatelliteBaseMap(mapA, true)
+        service.displaySatelliteBaseMap(mapB, true)
+        service.displaySatelliteBaseMap(mapA, true)
+
+        expect(addSource).toHaveBeenCalledTimes(3)
+        expect(removeSource).toHaveBeenCalledTimes(2)
+        expect(addLayer).toHaveBeenCalledTimes(3)
+        expect(removeLayer).toHaveBeenCalledTimes(2)
+        expect(addSource.mock.calls.at(-1)?.[1]).toEqual(
+            expect.objectContaining({ tiles: mapA.tiles })
+        )
+    })
+
+    it('does not recreate a source or layer for identical updates', () => {
+        const { addLayer, addSource, removeLayer, removeSource, service } =
+            createHarness()
+        const basemap = {
+            id: 'a',
+            name: 'A',
+            tiles: ['https://a.test/{z}/{x}/{y}.png'],
+        }
+
+        service.displaySatelliteBaseMap(basemap, true)
+        service.displaySatelliteBaseMap(basemap, true)
+
+        expect(addSource).toHaveBeenCalledTimes(1)
+        expect(addLayer).toHaveBeenCalledTimes(1)
+        expect(removeSource).not.toHaveBeenCalled()
+        expect(removeLayer).not.toHaveBeenCalled()
+    })
+
+    it('toggles visibility without recreating the basemap', () => {
+        const {
+            addLayer,
+            addSource,
+            removeLayer,
+            removeSource,
+            service,
+            setLayoutProperty,
+        } = createHarness()
+        const basemap = {
+            id: 'a',
+            name: 'A',
+            tiles: ['https://a.test/{z}/{x}/{y}.png'],
+        }
+
+        service.displaySatelliteBaseMap(basemap, true)
+        service.displaySatelliteBaseMap(basemap, false)
+        service.displaySatelliteBaseMap(basemap, true)
+
+        expect(addSource).toHaveBeenCalledTimes(1)
+        expect(addLayer).toHaveBeenCalledTimes(1)
+        expect(removeSource).not.toHaveBeenCalled()
+        expect(removeLayer).not.toHaveBeenCalled()
+        expect(setLayoutProperty.mock.calls).toEqual([
+            ['basemap', 'visibility', 'none'],
+            ['basemap', 'visibility', 'visible'],
+        ])
+    })
+
+    it('updates attribution without replacing identical tiles', () => {
+        const { addControl, addSource, removeControl, service } =
+            createHarness()
+        const tiles = ['https://a.test/{z}/{x}/{y}.png']
+
+        service.displaySatelliteBaseMap(
+            { id: 'a', name: 'A', tiles, attribution: { text: 'Source A' } },
+            true
+        )
+        service.displaySatelliteBaseMap(
+            { id: 'b', name: 'B', tiles, attribution: { text: 'Source B' } },
+            true
+        )
+
+        expect(addSource).toHaveBeenCalledTimes(1)
+        expect(addControl).toHaveBeenCalledTimes(2)
+        expect(removeControl).toHaveBeenCalledTimes(1)
     })
 })
