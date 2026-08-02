@@ -242,8 +242,10 @@ test.describe('touch menu', () => {
         await page.getByTestId('open-menu').tap()
         await page.getByRole('button', { name: 'Settings', exact: true }).tap()
 
-        await expect(page).toHaveURL(/\/settings$/)
-        await expect(page.locator('ion-title').last()).toHaveText('Settings')
+        await expect(page).toHaveURL((url) => url.pathname === '/settings')
+        await expect(
+            page.getByRole('heading', { name: 'Settings' })
+        ).toBeVisible()
     })
 })
 
@@ -288,9 +290,10 @@ test('stops loading when the OSM worker fails', async ({ page }) => {
     await openApp(page)
 
     await page.getByTestId('load-osm-data').click()
-    await expect(page.getByTestId('loading-osm-data')).toBeVisible()
     await expect(page.getByTestId('load-osm-data')).toBeVisible()
-    await expect(page.getByTestId('loading-osm-data')).toHaveCount(0)
+    await expect
+        .poll(() => page.getByTestId('loading-osm-data').count())
+        .toBe(0)
 })
 
 test('creates, edits, and persists a POI locally', async ({ page }) => {
@@ -339,9 +342,8 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
 
     const createButton = page.getByTestId('create-poi')
     await expect(createButton).toBeVisible()
-    const nativeCreateButton = createButton.locator('button')
-    await expect(nativeCreateButton).toBeEnabled()
-    await nativeCreateButton.click()
+    await expect(createButton).toBeEnabled()
+    await createButton.click()
     await expect
         .poll(async () => {
             const queue = await readStoredValue<{ features: unknown[] }>(
@@ -353,11 +355,11 @@ test('creates, edits, and persists a POI locally', async ({ page }) => {
         .toBe(1)
 
     await page.goto('/?id=node/0')
-    await expect(page.getByTestId('edit-poi')).toBeVisible()
-    await page.getByTestId('edit-poi').click()
-    const nameInput = page.locator('ion-modal ion-title ion-input input')
+    await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
+    await page.getByTestId('edit-selected-poi').click()
+    const nameInput = page.getByPlaceholder('Name')
     await nameInput.fill('Edited bench')
-    await page.getByTestId('save-poi').locator('button').click()
+    await page.getByTestId('save-poi').click()
 
     await expect
         .poll(async () => {
@@ -384,7 +386,9 @@ test('uploads a pending change with fixture responses', async ({ page }) => {
     await seedPendingChange(page)
 
     await page.getByTestId('open-upload').click()
-    await page.locator('ion-input input').fill('Playwright fixture upload')
+    await page
+        .getByPlaceholder('Changeset comment')
+        .fill('Playwright fixture upload')
     await page.getByTestId('upload-changes').click()
     await expect(page).toHaveURL((url) => url.pathname === '/', {
         timeout: 10_000,
@@ -415,7 +419,9 @@ test('keeps the queue when changeset creation fails', async ({ page }) => {
     await seedPendingChange(page)
 
     await page.getByTestId('open-upload').click()
-    await page.locator('ion-input input').fill('Failing fixture upload')
+    await page
+        .getByPlaceholder('Changeset comment')
+        .fill('Failing fixture upload')
     await page.getByTestId('upload-changes').click()
     await expect(page.getByTestId('upload-error')).toContainText(
         'Fixture changeset failure'
@@ -514,8 +520,8 @@ test('cancels and confirms moving an existing POI', async ({ page }) => {
     )
     await openApp(page, `${appUrl}&id=node/1&loadData=true`)
 
-    await expect(page.getByTestId('edit-poi')).toBeVisible()
-    await page.getByTestId('edit-poi').click()
+    await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
+    await page.getByTestId('edit-selected-poi').click()
     await page.getByTestId('move-poi').click()
 
     await expect(page.getByTestId('add-poi')).toHaveCount(0)

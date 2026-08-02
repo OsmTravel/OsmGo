@@ -170,7 +170,7 @@ async function openStoredFeature(page: Page): Promise<void> {
         })
     )
     await openApp(page, `${appUrl}&id=node/1&loadData=true`)
-    await expect(page.getByTestId('edit-poi')).toBeVisible()
+    await expect(page.getByTestId('edit-selected-poi')).toBeVisible()
 }
 
 async function expectAccessible(page: Page, context: string): Promise<void> {
@@ -209,7 +209,7 @@ test('feature reading passes WCAG AA checks', async ({ page }) => {
 
 test('feature editing passes WCAG AA checks', async ({ page }) => {
     await openStoredFeature(page)
-    await page.getByTestId('edit-poi').click()
+    await page.getByTestId('edit-selected-poi').click()
     await expect(page.getByTestId('save-poi')).toBeVisible()
 
     await expectAccessible(page, 'Feature editing')
@@ -218,12 +218,9 @@ test('feature editing passes WCAG AA checks', async ({ page }) => {
 test('settings pass WCAG AA checks', async ({ page }) => {
     await openApp(page)
     await page.getByTestId('open-menu').click()
-    await page
-        .locator('ion-item')
-        .filter({ has: page.locator('ion-icon[name="settings"]') })
-        .click()
-    await expect(page).toHaveURL(/\/settings$/)
-    await expect(page.locator('ion-title').last()).toBeVisible()
+    await page.getByRole('button', { name: 'Settings', exact: true }).click()
+    await expect(page).toHaveURL((url) => url.pathname === '/settings')
+    await expect(page.getByRole('heading', { name: 'Settings' })).toBeVisible()
 
     await expectAccessible(page, 'Settings')
 })
