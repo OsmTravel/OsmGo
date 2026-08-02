@@ -307,7 +307,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             feature,
         }
         this.isPushing = false
-        this.mapService.isProcessing.next(false)
+        this.mapService.setIsProcessing(false)
     }
 
     private isClosedChangesetError(error): boolean {
@@ -328,7 +328,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         }
 
         this.isPushing = true
-        this.mapService.isProcessing.next(true)
+        this.mapService.setIsProcessing(true)
 
         try {
             await this.dataService.replaceIdGenerateByOldVersion()
@@ -345,7 +345,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         } catch (error) {
             this.connectionError = error
             this.isPushing = false
-            this.mapService.isProcessing.next(false)
+            this.mapService.setIsProcessing(false)
             return
         }
         this.connectionError = undefined
@@ -384,7 +384,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                                     this.error = undefined
                                     this.summary = this.getSummary()
                                     this.uploadedOk = true
-                                    this.mapService.isProcessing.next(false)
+                                    this.mapService.setIsProcessing(false)
                                     timer(1000)
                                         .pipe(take(1))
                                         .subscribe(() => {
@@ -460,7 +460,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                 this.mapService.eventMarkerChangedReDraw.emit(
                     this.dataService.getGeojsonChanged()
                 )
-                this.mapService.isProcessing.next(false)
+                this.mapService.setIsProcessing(false)
                 this.navCtrl.pop()
             })
     }

@@ -1,10 +1,8 @@
 declare const ResizeObserver: any
 
-import { AsyncPipe } from '@angular/common'
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
-    ChangeDetectorRef,
     Component,
     ElementRef,
     inject,
@@ -54,7 +52,6 @@ import { catchError, filter, map, switchMap } from 'rxjs/operators'
     styleUrls: ['./main.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
-        AsyncPipe,
         IonBadge,
         IonContent,
         IonFab,
@@ -85,7 +82,6 @@ export class MainPage implements AfterViewInit {
     readonly initService = inject(InitService)
     private readonly osmAuthService = inject(OsmAuthService)
     private readonly route = inject(ActivatedRoute)
-    private readonly changeDetectorRef = inject(ChangeDetectorRef)
 
     modalIsOpen: boolean = false
     menuIsOpen: boolean = false
@@ -164,7 +160,6 @@ export class MainPage implements AfterViewInit {
                 if (data) {
                     if (data.type === 'Move') {
                         this.mapService.eventMoveElement.emit(data)
-                        this.changeDetectorRef.detectChanges()
                     }
                     if (data.redraw) {
                         timer(50).subscribe((t) => {

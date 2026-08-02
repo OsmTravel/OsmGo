@@ -20,7 +20,7 @@
         <!-- Top right button to upload changes on OSM -->
         @if (dataService.geojsonChanged &&
         dataService.geojsonChanged.features.length > 0 &&
-        !mapService.markerMoving) {
+        !mapService.markerMoving()) {
         <ion-fab
             style="right: 0; top: 0; margin: 6px; margin-right: 46px"
             [title]="translate.instant('MAIN.BUTTONS.UPLOAD')"
@@ -35,7 +35,7 @@
         }
 
         <!-- Bottom left button to get data from OSM -->
-        @if (!(mapService.isProcessing | async)) {
+        @if (!mapService.isProcessing()) {
         <ion-fab
             style="left: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
@@ -48,16 +48,16 @@
                 event="press"
                 [disabled]="configService.currentZoom < 14"
             >
-                @if (!(mapService.isProcessing | async)) {
+                @if (!mapService.isProcessing()) {
                 <ion-icon name="refresh"></ion-icon>
-                } @if (mapService.isProcessing | async) {
+                } @if (mapService.isProcessing()) {
                 <ion-spinner></ion-spinner>
                 }
             </ion-fab-button>
         </ion-fab>
         }
         <!-- Bottom left button to get data from OSM with state loading -->
-        @if (mapService.isProcessing | async) {
+        @if (mapService.isProcessing()) {
         <ion-fab
             style="left: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
@@ -83,7 +83,7 @@
         </ion-fab>
 
         <!-- Bottom right button to add a new marker -->
-        @if (!mapService.markerMoving && !mapService.markerMoveMoving) {
+        @if (!mapService.markerMoving() && !mapService.markerMoveMoving()) {
         <ion-fab
             right
             bottom
@@ -97,7 +97,7 @@
                 fab-bottom
                 color="danger"
                 (click)="mapService.positionateMarker()"
-                [disabled]="mapService.loadingData"
+                [disabled]="mapService.loadingData()"
             >
                 <ion-icon name="add"></ion-icon>
             </ion-fab-button>
@@ -105,7 +105,7 @@
         }
 
         <!-- Bottom right button to use GPS location -->
-        @if (!mapService.markerMoving && !mapService.markerMoveMoving) {
+        @if (!mapService.markerMoving() && !mapService.markerMoveMoving()) {
         <ion-fab
             right
             style="right: 0; bottom: 34px; margin: 6px"
@@ -125,7 +125,7 @@
         }
 
         <!-- Bottom right button to accept creating new marker-->
-        @if (mapService.markerMoving) {
+        @if (mapService.markerMoving()) {
         <ion-fab
             right
             bottom
@@ -144,7 +144,7 @@
         }
 
         <!-- Bottom right button to cancel creating a new marker -->
-        @if (mapService.markerMoving) {
+        @if (mapService.markerMoving()) {
         <ion-fab
             style="right: 60px; bottom: 34px; margin: 6px"
             [title]="translate.instant('SHARED.CANCEL')"
@@ -161,7 +161,7 @@
         }
 
         <!-- Bottom right button to accept marker moving -->
-        @if (mapService.markerMoveMoving) {
+        @if (mapService.markerMoveMoving()) {
         <ion-fab
             style="right: 60px; bottom: 34px; margin: 6px"
             [title]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
@@ -178,7 +178,7 @@
         }
 
         <!-- Bottom right button to cancel marker moving -->
-        @if (mapService.markerMoveMoving) {
+        @if (mapService.markerMoveMoving()) {
         <ion-fab
             style="right: 0; bottom: 34px; margin: 6px"
             [title]="translate.instant('SHARED.CANCEL')"

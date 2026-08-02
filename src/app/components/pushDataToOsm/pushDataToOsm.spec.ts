@@ -36,6 +36,14 @@ interface PushPageDependencies {
 }
 
 describe('PushDataToOsmPage', () => {
+    const createProcessingMapService = () => {
+        const isProcessing = new BehaviorSubject(false)
+        return {
+            isProcessing,
+            setIsProcessing: (value: boolean) => isProcessing.next(value),
+        }
+    }
+
     const createPage = ({
         dataService,
         osmApi = {},
@@ -95,10 +103,10 @@ describe('PushDataToOsmPage', () => {
                     .fn()
                     .mockName('apiOsmSendOsmDiffFile'),
             }
-            const processing = new BehaviorSubject(false)
+            const mapService = createProcessingMapService()
+            const processing = mapService.isProcessing
             const processingValues = []
             processing.subscribe((value) => processingValues.push(value))
-            const mapService = { isProcessing: processing }
             const configService = {
                 getChangeSetComment: () => '',
                 setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
@@ -145,8 +153,8 @@ describe('PushDataToOsmPage', () => {
                 .mockName('apiOsmSendOsmDiffFile')
                 .mockReturnValue(throwError(() => new TimeoutError())),
         }
-        const processing = new BehaviorSubject(false)
-        const mapService = { isProcessing: processing }
+        const mapService = createProcessingMapService()
+        const processing = mapService.isProcessing
         const configService = {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
@@ -180,8 +188,8 @@ describe('PushDataToOsmPage', () => {
             getUserDetail$: () => throwError(() => new TimeoutError()),
             getValidChangset: vi.fn().mockName('getValidChangset'),
         }
-        const processing = new BehaviorSubject(false)
-        const mapService = { isProcessing: processing }
+        const mapService = createProcessingMapService()
+        const processing = mapService.isProcessing
         const configService = {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
@@ -222,8 +230,8 @@ describe('PushDataToOsmPage', () => {
                 .mockName('apiOsmSendOsmDiffFile')
                 .mockReturnValue(throwError(() => closedChangesetError)),
         }
-        const processing = new BehaviorSubject(false)
-        const mapService = { isProcessing: processing }
+        const mapService = createProcessingMapService()
+        const processing = mapService.isProcessing
         const configService = {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
@@ -276,7 +284,7 @@ describe('PushDataToOsmPage', () => {
                 .mockName('apiOsmSendOsmDiffFile')
                 .mockReturnValue(NEVER),
         }
-        const mapService = { isProcessing: new BehaviorSubject(false) }
+        const mapService = createProcessingMapService()
         const configService = {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
@@ -408,7 +416,7 @@ describe('PushDataToOsmPage', () => {
             apiOsmSendOsmDiffFile: () => uploadResult,
         }
         const mapService = {
-            isProcessing: new BehaviorSubject(false),
+            ...createProcessingMapService(),
             getIconStyle: (value) => value,
             eventMarkerReDraw: {
                 emit: vi.fn().mockName('EventEmitter.emit'),

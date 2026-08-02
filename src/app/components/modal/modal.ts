@@ -1,4 +1,3 @@
-import { AsyncPipe } from '@angular/common'
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
@@ -71,7 +70,6 @@ export interface ModalDismissData {
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [
         AlertComponent,
-        AsyncPipe,
         EditOtherTag,
         EditPresets,
         FilterExcludeKeysPipe,

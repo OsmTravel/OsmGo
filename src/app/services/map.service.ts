@@ -5,6 +5,7 @@ import {
     Inject,
     Injectable,
     NgZone,
+    signal,
 } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
@@ -50,13 +51,7 @@ import {
     ScaleControl,
     type StyleSpecification,
 } from 'maplibre-gl'
-import {
-    BehaviorSubject,
-    type Observable,
-    of,
-    Subject,
-    type Subscription,
-} from 'rxjs'
+import { type Observable, of, Subject, type Subscription } from 'rxjs'
 import { debounceTime, filter, map, throttleTime } from 'rxjs/operators'
 import type { ModalDismissData } from '../components/modal/modal'
 
@@ -70,8 +65,10 @@ export const getMarkerLayout = () => ({
 @Injectable({ providedIn: 'root' })
 export class MapService {
     isFirstPosition: boolean = true
-    loadingData: boolean = false
-    isProcessing: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+    private readonly loadingDataState = signal(false)
+    readonly loadingData = this.loadingDataState.asReadonly()
+    private readonly processingState = signal(false)
+    readonly isProcessing = this.processingState.asReadonly()
 
     spritesCache
     constructor(
@@ -204,7 +201,8 @@ export class MapService {
     bboxPolygon: OsmGoFeature
     map: Map
     markerMove: OsmGoMarker
-    markerMoveMoving: boolean = false
+    private readonly markerMoveMovingState = signal(false)
+    readonly markerMoveMoving = this.markerMoveMovingState.asReadonly()
     subscriptionMoveElement: Subscription
     subscriptionMarkerMove: Subscription
     mode: MapMode = 'Update'
@@ -236,7 +234,8 @@ export class MapService {
     // CREATE NEW MARKER
     eventMarkerMove = new EventEmitter()
     eventMapMove = new EventEmitter()
-    markerMoving = false // le marker est en train d'être positionné
+    private readonly markerMovingState = signal(false)
+    readonly markerMoving = this.markerMovingState.asReadonly()
     markerPositionate: OsmGoMarker
     markerMaplibreUnknown = {}
 
@@ -245,7 +244,7 @@ export class MapService {
     }
 
     setIsProcessing(isProcessing: boolean): void {
-        this.isProcessing.next(isProcessing)
+        this.processingState.set(isProcessing)
     }
 
     async loadUnknownMarker(factor: number): Promise<void> {
@@ -530,7 +529,7 @@ export class MapService {
             [this.map.getCenter().lng, this.map.getCenter().lat],
             ''
         )
-        this.markerMoving = true
+        this.markerMovingState.set(true)
         this.markerPositionate.addTo(this.map)
         this.eventMarkerMove.subscribe((center) => {
             this.markerPositionate.setLngLat(center)
@@ -538,7 +537,7 @@ export class MapService {
     }
 
     openModalOsm(lngLat?: LngLat, tags?: any): void {
-        this.markerMoving = false
+        this.markerMovingState.set(false)
         if (this.markerPositionate) this.markerPositionate?.remove()
         const coords = lngLat ? lngLat : this.markerPositionate.getLngLat()
         let newTag
@@ -576,12 +575,12 @@ export class MapService {
     }
 
     cancelNewMarker(): void {
-        this.markerMoving = false
+        this.markerMovingState.set(false)
         this.markerPositionate.remove()
     }
 
     openModalWithNewPosition(): void {
-        this.markerMoveMoving = false
+        this.markerMoveMovingState.set(false)
         this.markerMove.remove()
         const geojson = this.markerMove.data
         const newLngLat = this.markerMove.getLngLat()
@@ -599,7 +598,7 @@ export class MapService {
     }
 
     cancelNewPosition(): void {
-        this.markerMoveMoving = false
+        this.markerMoveMovingState.set(false)
         const geojson = this.markerMove.data
         const origineData = geojson.properties.changeType
             ? 'data_changed'
@@ -698,7 +697,7 @@ export class MapService {
 
                 this.map.on('move', (e) => {
                     this.eventMapMove.emit()
-                    if (this.markerMoving || this.markerMoveMoving) {
+                    if (this.markerMoving() || this.markerMoveMoving()) {
                         this.eventMarkerMove.emit(this.map.getCenter())
                     }
                 })
@@ -775,7 +774,6 @@ export class MapService {
         // un marker est à déplacer!
         this.subscriptionMoveElement = this.eventMoveElement.subscribe(
             (data) => {
-                // this.markerMoving = true;
                 this.mode = data.mode
                 const geojson = data.geojson
                 // on recupere le marker concerné
@@ -791,7 +789,7 @@ export class MapService {
                     .coordinates as LngLatLike
                 this.map.setCenter(coordinates)
                 this.markerMove = this.createDomMoveMarker(coordinates, geojson)
-                this.markerMoveMoving = true
+                this.markerMoveMovingState.set(true)
                 this.markerMove.addTo(this.map)
                 this.subscriptionMarkerMove = this.eventMarkerMove.subscribe(
                     (center) => {

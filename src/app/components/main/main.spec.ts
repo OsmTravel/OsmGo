@@ -1,4 +1,3 @@
-import { ChangeDetectorRef } from '@angular/core'
 import { TestBed } from '@angular/core/testing'
 import { ActivatedRoute, Router } from '@angular/router'
 import { SwUpdate } from '@angular/service-worker'
@@ -33,7 +32,6 @@ interface MainPageDependencies {
     dataService?: Record<string, unknown>
     alertService?: Record<string, unknown>
     configService?: Record<string, unknown>
-    changeDetectorRef?: Record<string, unknown>
 }
 
 interface MainPageMapServiceStub extends Record<string, unknown> {
@@ -49,7 +47,6 @@ const createPage = ({
     dataService = {},
     alertService = {},
     configService = {},
-    changeDetectorRef = { detectChanges: vi.fn() },
 }: MainPageDependencies = {}) => {
     const resolvedMapService: MainPageMapServiceStub = {
         eventShowDialogMultiFeatures: new Subject(),
@@ -88,7 +85,6 @@ const createPage = ({
             { provide: InitService, useValue: {} },
             { provide: OsmAuthService, useValue: {} },
             { provide: ActivatedRoute, useValue: {} },
-            { provide: ChangeDetectorRef, useValue: changeDetectorRef },
         ],
     })
     const page = TestBed.runInInjectionContext(() => new MainPage())
@@ -210,13 +206,10 @@ describe('MainPage', () => {
         )
     })
 
-    it('refreshes the map controls when marker movement starts', async () => {
+    it('forwards marker movement after the modal closes', async () => {
         const eventShowModal = new Subject<any>()
         const eventMoveElement = {
             emit: vi.fn().mockName('eventMoveElement.emit'),
-        }
-        const changeDetectorRef = {
-            detectChanges: vi.fn().mockName('detectChanges'),
         }
         const movedFeature = {
             type: 'Move',
@@ -236,7 +229,6 @@ describe('MainPage', () => {
                 eventMoveElement,
                 setCenterInUrl: vi.fn(),
             },
-            changeDetectorRef,
         })
 
         eventShowModal.next({
@@ -248,7 +240,6 @@ describe('MainPage', () => {
         await vi.waitFor(() => {
             expect(eventMoveElement.emit).toHaveBeenCalledWith(movedFeature)
         })
-        expect(changeDetectorRef.detectChanges).toHaveBeenCalledOnce()
         expect(mapService.setCenterInUrl).toHaveBeenCalledOnce()
     })
 })

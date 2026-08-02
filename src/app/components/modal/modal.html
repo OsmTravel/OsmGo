@@ -82,7 +82,7 @@
                 <ion-button
                     (click)="cancelChange()"
                     color="danger"
-                    [disabled]="mapService.isProcessing | async"
+                    [disabled]="mapService.isProcessing()"
                 >
                     <ion-icon name="reload" slot="start"></ion-icon>
                     {{ 'SHARED.CLEAR' | translate }}
@@ -100,7 +100,7 @@
                     <ion-button
                         data-testid="edit-poi"
                         (click)="updateMode()"
-                        [disabled]="mapService.isProcessing | async"
+                        [disabled]="mapService.isProcessing()"
                     >
                         <ion-icon name="pencil" slot="start"></ion-icon>
                         {{ 'SHARED.EDIT' | translate }}
@@ -212,7 +212,7 @@
                 <ion-button
                     (click)="cancelChange()"
                     color="danger"
-                    [disabled]="mapService.isProcessing | async"
+                    [disabled]="mapService.isProcessing()"
                 >
                     <ion-icon name="reload" slot="start"></ion-icon>
                     {{ 'SHARED.CLEAR' | translate }}
@@ -231,7 +231,7 @@
                     <ion-button
                         data-testid="move-poi"
                         tappable
-                        [disabled]="feature.properties.usedByWays || (mapService.isProcessing | async)"
+                        [disabled]="feature.properties.usedByWays || mapService.isProcessing()"
                         (click)="moveOsmElement()"
                     >
                         <ion-icon name="move"></ion-icon>
@@ -241,7 +241,7 @@
                     <ion-button
                         tappable
                         color="danger"
-                        [disabled]="(mapService.isProcessing | async)"
+                        [disabled]="mapService.isProcessing()"
                         (click)="presentConfirm(feature)"
                     >
                         <ion-icon name="trash"></ion-icon>
@@ -254,7 +254,7 @@
                         data-testid="save-poi"
                         tappable
                         color="secondary"
-                        [disabled]="mapService.isProcessing | async"
+                        [disabled]="mapService.isProcessing()"
                         (click)="updateOsmElement(tagConfig)"
                     >
                         <ion-icon name="checkmark" slot="start"></ion-icon>
@@ -265,7 +265,7 @@
                         data-testid="create-poi"
                         tappable
                         color="secondary"
-                        [disabled]="mapService.isProcessing | async"
+                        [disabled]="mapService.isProcessing()"
                         (click)="createOsmElement(tagConfig)"
                     >
                         <ion-icon name="checkmark" slot="start"></ion-icon>
