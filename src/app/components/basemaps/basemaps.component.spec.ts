@@ -1,7 +1,7 @@
+import { Location } from '@angular/common'
 import { type ComponentFixture, TestBed } from '@angular/core/testing'
 import { ActivatedRoute } from '@angular/router'
 import { BasemapsService } from '@app/services/basemaps.service'
-import { NavController } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
@@ -38,7 +38,7 @@ describe('BasemapsComponent', () => {
                     provide: MapService,
                     useValue: { displaySatelliteBaseMap: vi.fn() },
                 },
-                { provide: NavController, useValue: { back: vi.fn() } },
+                { provide: Location, useValue: { back: vi.fn() } },
             ],
         }).compileComponents()
 
@@ -53,10 +53,10 @@ describe('BasemapsComponent', () => {
         ])
         await fixture.whenStable()
 
-        const cards = fixture.nativeElement.querySelectorAll('ion-card')
+        const cards = fixture.nativeElement.querySelectorAll('.basemap-card')
 
         expect(cards).toHaveLength(2)
-        expect(cards[0].classList.contains('selectedCard')).toBe(true)
-        expect(cards[1].classList.contains('selectedCard')).toBe(false)
+        expect(cards[0].classList.contains('is-selected')).toBe(true)
+        expect(cards[1].classList.contains('is-selected')).toBe(false)
     })
 })

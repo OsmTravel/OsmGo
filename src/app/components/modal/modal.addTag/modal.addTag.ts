@@ -1,17 +1,9 @@
 import { Component, inject, input, signal } from '@angular/core'
-import {
-    IonButton,
-    IonContent,
-    IonFooter,
-    IonHeader,
-    IonIcon,
-    IonInput,
-    IonItem,
-    IonItemGroup,
-    IonLabel,
-    ModalController,
-} from '@ionic/angular/standalone'
-import type { InputInputEventDetail } from '@ionic/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogRef } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import type { Preset } from '@osmgo/type'
 import { nameToOsmKey } from '@osmgo/utils'
@@ -30,15 +22,10 @@ import { TagsService } from '@services/tags.service'
     imports: [
         FilterByListPipe,
         FilterPresetsByListPipe,
-        IonButton,
-        IonContent,
-        IonFooter,
-        IonHeader,
-        IonIcon,
-        IonInput,
-        IonItem,
-        IonItemGroup,
-        IonLabel,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
         RemoveBrandsPipe,
         SearchForPipe,
         ToOsmTagPipe,
@@ -46,7 +33,7 @@ import { TagsService } from '@services/tags.service'
     ],
 })
 export class ModalAddTag {
-    readonly modalCtrl = inject(ModalController)
+    private readonly dialogRef = inject(MatDialogRef<ModalAddTag>)
     readonly tagsService = inject(TagsService)
     readonly configService = inject(ConfigService)
     readonly translate = inject(TranslateService)
@@ -60,12 +47,12 @@ export class ModalAddTag {
     readonly presets: Array<Preset> = Object.values(this.tagsService.presets())
     readonly searchFilter = signal('')
 
-    onSearchInput(event: CustomEvent<InputInputEventDetail>): void {
-        this.searchFilter.set(event.detail.value ?? '')
+    onSearchInput(value: string): void {
+        this.searchFilter.set(value)
     }
 
     dismiss(data: string | null = null): void {
-        void this.modalCtrl.dismiss(data)
+        this.dialogRef.close(data)
     }
 
     select(key: string): void {

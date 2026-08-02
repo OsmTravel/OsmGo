@@ -1,25 +1,24 @@
-// http://ionicframework.com/docs/theming/
-@import '@ionic/angular/css/core.css';
-@import '@ionic/angular/css/normalize.css';
-@import '@ionic/angular/css/structure.css';
-@import '@ionic/angular/css/typography.css';
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-@import '@ionic/angular/css/padding.css';
-@import '@ionic/angular/css/float-elements.css';
-@import '@ionic/angular/css/text-alignment.css';
-@import '@ionic/angular/css/text-transformation.css';
-@import '@ionic/angular/css/flex-utils.css';
+html,
+body,
+app-root {
+    width: 100%;
+    min-height: 100%;
+}
+
+html,
+body {
+    overscroll-behavior-y: none;
+}
 
 .maplibre-ctrl-logo {
     display: none !important;
 }
-.menu-content-overlay {
-    z-index: -2 !important;
-}
-.show-menu {
-    z-index: 1000;
-}
-
 .positionMarkersSize {
     width: 64px;
     height: 64px;
@@ -34,27 +33,8 @@
     text-align: center;
 }
 
-// scale
-// .maplibregl-ctrl-bottom-left .maplibregl-ctrl {
-//     float: none !important;
-//     margin: auto !important;
-//     margin-left: auto ;
-//     margin-right: auto;
-// }
-
 .maplibregl-ctrl-bottom-left {
     width: 100%;
-}
-
-.dialog-multi-features .modal-wrapper {
-    height: 80%;
-    width: 90%;
-    margin: auto;
-    // height: 20%;
-    // top: 80%;
-    // position: absolute;
-    // display: block;
-    // padding: 20% 10%  !important;
 }
 
 // Fix for Maplibre attribution "i" button

@@ -1,66 +1,80 @@
-<ion-header color="primary">
-    <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button (click)="back()">
-                <ion-icon
-                    name="chevron-back-outline"
-                    slot="icon-only"
-                ></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title>
-            {{ 'MANAGE_TAGS.TAG_MANAGEMENT_TITLE' | translate }}
-        </ion-title>
-    </ion-toolbar>
-</ion-header>
+<main class="manage-tags-screen">
+    <app-screen-header
+        [title]="'MANAGE_TAGS.TAG_MANAGEMENT_TITLE' | translate"
+        (backRequested)="back()"
+    ></app-screen-header>
 
-<ion-content class="ion-padding">
-    <ion-card class="ion-padding">
-        <h4>{{ 'MANAGE_TAGS.ACTIVE_TAGS' | translate }}</h4>
-        <p>
-            {{ 'MANAGE_TAGS.ACTIVE_TAGS_DESCRIPTION' | translate }}
-        </p>
-        <p style="color: red">
-            {{ 'MANAGE_TAGS.HIDDEN_TAGS_WARNING' | translate }}
-        </p>
+    <div class="manage-tags-content">
+        <section class="tag-management-card">
+            <div class="card-icon card-icon--active" aria-hidden="true">
+                <mat-icon fontSet="material-symbols-rounded"
+                    >visibility</mat-icon
+                >
+            </div>
+            <div class="card-copy">
+                <h2>{{ 'MANAGE_TAGS.ACTIVE_TAGS' | translate }}</h2>
+                <p>{{ 'MANAGE_TAGS.ACTIVE_TAGS_DESCRIPTION' | translate }}</p>
+                <p class="warning">
+                    {{ 'MANAGE_TAGS.HIDDEN_TAGS_WARNING' | translate }}
+                </p>
+            </div>
+            <button
+                mat-flat-button
+                type="button"
+                (click)="openActiveTagsModal()"
+            >
+                {{ 'MANAGE_TAGS.ACTIVE_TAGS' | translate }}
+                <mat-icon fontSet="material-symbols-rounded"
+                    >chevron_right</mat-icon
+                >
+            </button>
+        </section>
 
-        <ion-button
-            style="text-transform: none"
-            expand="full"
-            (click)="openActiveTagsModal()"
-        >
-            {{ 'MANAGE_TAGS.ACTIVE_TAGS' | translate }}</ion-button
-        >
-    </ion-card>
+        <section class="tag-management-card">
+            <div class="card-icon card-icon--hidden" aria-hidden="true">
+                <mat-icon fontSet="material-symbols-rounded"
+                    >visibility_off</mat-icon
+                >
+            </div>
+            <div class="card-copy">
+                <h2>{{ 'MANAGE_TAGS.HIDDEN_TAGS' | translate }}</h2>
+                <p>{{ 'MANAGE_TAGS.HIDDEN_TAGS_DESCRIPTION' | translate }}</p>
+                <p class="warning">
+                    {{ 'MANAGE_TAGS.HIDDEN_TAGS_WARNING' | translate }}
+                </p>
+            </div>
+            <button
+                mat-flat-button
+                type="button"
+                (click)="openHiddenTagsModal()"
+            >
+                {{ 'MANAGE_TAGS.HIDDEN_TAGS' | translate }}
+                <mat-icon fontSet="material-symbols-rounded"
+                    >chevron_right</mat-icon
+                >
+            </button>
+        </section>
 
-    <ion-card class="ion-padding">
-        <h4>{{ 'MANAGE_TAGS.HIDDEN_TAGS' | translate }}</h4>
-        <p>
-            {{ 'MANAGE_TAGS.HIDDEN_TAGS_DESCRIPTION' | translate }}
-        </p>
-        <p style="color: red">
-            {{ 'MANAGE_TAGS.HIDDEN_TAGS_WARNING' | translate }}
-        </p>
-        <ion-button
-            style="text-transform: none"
-            expand="full"
-            (click)="openHiddenTagsModal()"
-        >
-            {{ 'MANAGE_TAGS.HIDDEN_TAGS' | translate }}</ion-button
-        >
-    </ion-card>
-
-    <ion-card class="ion-padding">
-        <h4>{{ 'MANAGE_TAGS.BOOKMARKED_TAGS' | translate }}</h4>
-        <p>
-            {{ 'MANAGE_TAGS.BOOKMARKED_TAGS_DESCRIPTION' | translate }}
-        </p>
-        <ion-button
-            style="text-transform: none"
-            expand="full"
-            (click)="openBookmarkedTagsModal()"
-        >
-            {{ 'MANAGE_TAGS.BOOKMARKED_TAGS' | translate }}</ion-button
-        >
-    </ion-card>
-</ion-content>
+        <section class="tag-management-card">
+            <div class="card-icon card-icon--bookmark" aria-hidden="true">
+                <mat-icon fontSet="material-symbols-rounded">bookmark</mat-icon>
+            </div>
+            <div class="card-copy">
+                <h2>{{ 'MANAGE_TAGS.BOOKMARKED_TAGS' | translate }}</h2>
+                <p>
+                    {{ 'MANAGE_TAGS.BOOKMARKED_TAGS_DESCRIPTION' | translate }}
+                </p>
+            </div>
+            <button
+                mat-flat-button
+                type="button"
+                (click)="openBookmarkedTagsModal()"
+            >
+                {{ 'MANAGE_TAGS.BOOKMARKED_TAGS' | translate }}
+                <mat-icon fontSet="material-symbols-rounded"
+                    >chevron_right</mat-icon
+                >
+            </button>
+        </section>
+    </div>
+</main>

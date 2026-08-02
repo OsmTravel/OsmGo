@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing'
-import { ModalController } from '@ionic/angular/standalone'
-import type { SearchbarInputEventDetail } from '@ionic/core'
+import { MatDialogRef } from '@angular/material/dialog'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
 import { ModalPrimaryTag } from './modal.primaryTag'
@@ -15,26 +14,21 @@ describe('ModalPrimaryTag', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
-                { provide: ModalController, useValue: {} },
+                { provide: MatDialogRef, useValue: {} },
                 { provide: TagsService, useValue: {} },
                 { provide: ConfigService, useValue: {} },
             ],
         })
     })
 
-    it('updates the search signal from the Ionic event', () => {
+    it('updates the search signal from a native input value', () => {
         const modal = createModal()
-        const event = {
-            detail: { value: 'cafe' },
-        } as CustomEvent<SearchbarInputEventDetail>
 
-        modal.onSearchInput(event)
+        modal.onSearchInput('cafe')
 
         expect(modal.searchText()).toBe('cafe')
 
-        modal.onSearchInput({
-            detail: { value: null },
-        } as CustomEvent<SearchbarInputEventDetail>)
+        modal.onSearchInput('')
 
         expect(modal.searchText()).toBe('')
     })

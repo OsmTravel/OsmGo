@@ -1,238 +1,130 @@
-@if (preset()?.type === 'select' || isMultiKeyPreset) {
+@if (preset().type === 'select' || isMultiKeyPreset) {
     <app-select
         [tag]="tag()"
         [preset]="preset()"
         [language]="language()"
         [displayCode]="displayCode()"
         (addTags)="addTags.emit($event)"
-    >
-    </app-select>
-}
-@if (preset()?.type === 'list') {
-    <ion-card>
-        <ion-card-header
-            role="button"
-            tabindex="0"
-            (click)="emitOpenModal(tag())"
-            (keydown.enter)="emitOpenModal(tag())"
-            (keydown.space)="emitOpenModal(tag()); $event.preventDefault()"
-        >
-            @if (!displayCode()) {
-                <b
-                    >{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}
-                    <ion-icon aria-hidden="true" name="settings"></ion-icon>
-                </b>
-            }
-            @if (displayCode()) {
-                <b>
-                    <ion-icon aria-hidden="true" name="code"></ion-icon>
-                    {{ preset()?.key }}
-                </b>
-            }
-        </ion-card-header>
-        <ion-card-content>
-            <div class="wrapperEdit2cols">
-                <div class="contentEdit2cols">
-                    @if (!displayCode()) {
-                        <ion-item (click)="emitOpenModal(tag())">
-                            @if (tag().value === '') {
-                                <p class="undefindedListValue">
-                                    {{
-                                        'MODAL_SELECTED_ITEM.UNDEFINED_VALUE'
-                                            | translate
-                                    }}
-                                </p>
-                            } @else if (
-                                tag() | displayPresetLabel: preset();
-                                as option
-                            ) {
-                                <p class="displayLabelListValue">
-                                    {{
-                                        option.lbl?.[language()] ||
-                                            option.lbl?.['en'] ||
-                                            option.v
-                                    }}
-                                </p>
-                            } @else {
-                                <p class="displayLabelListValue">
-                                    {{ tag().value }}
-                                </p>
-                            }
-                        </ion-item>
-                    } @else {
-                        <ion-label color="primary">
-                            <ion-icon aria-hidden="true" name="code"></ion-icon>
-                        </ion-label>
-                        <ion-input
-                            type="text"
-                            [(ngModel)]="tag().value"
-                            [placeholder]="tag().key"
-                        ></ion-input>
-                    }
-                </div>
-                <div class="buttonEdit2cols">
-                    <ion-icon
-                        role="button"
-                        tabindex="0"
-                        [attr.aria-label]="'SHARED.CLEAR' | translate"
-                        (click)="tag().value = ''"
-                        (keydown.enter)="tag().value = ''"
-                        (keydown.space)="
-                            tag().value = ''; $event.preventDefault()
-                        "
-                        name="close"
-                        style="width: 2em; height: 2em"
-                    ></ion-icon>
-                </div>
-            </div>
-        </ion-card-content>
-    </ion-card>
-}
-@if (preset()?.type === 'number') {
-    <ion-card>
-        <ion-card-header>
-            @if (!displayCode()) {
-                <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
-            }
-            @if (displayCode()) {
-                <b>
-                    <ion-icon aria-hidden="true" name="code"></ion-icon>
-                    {{ preset()?.key }}
-                </b>
-            }
-        </ion-card-header>
-        <ion-card-content>
-            <div class="wrapperEdit2cols">
-                <div class="contentEdit2cols">
-                    <ion-item style="padding-left: 0px">
-                        <ion-input
-                            type="number"
-                            [(ngModel)]="tag().value"
-                            [placeholder]="tag().key"
-                        ></ion-input>
-                    </ion-item>
-                </div>
-                <div class="buttonEdit2cols">
-                    <ion-icon
-                        role="button"
-                        tabindex="0"
-                        [attr.aria-label]="'SHARED.CLEAR' | translate"
-                        (click)="tag().value = ''"
-                        (keydown.enter)="tag().value = ''"
-                        (keydown.space)="
-                            tag().value = ''; $event.preventDefault()
-                        "
-                        name="close"
-                        style="width: 2em; height: 2em"
-                    ></ion-icon>
-                </div>
-            </div>
-        </ion-card-content>
-    </ion-card>
-}
-
-<!-- Type : TEL / URL / EMAIL -->
-@if (
-    ['tel', 'email', 'url'].includes($safeNavigationMigration(preset()?.type))
-) {
-    <ion-card>
-        <ion-card-header>
-            @if (!displayCode()) {
-                <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
-            }
-            @if (displayCode()) {
-                <b>
-                    <ion-icon aria-hidden="true" name="code"></ion-icon>
-                    {{ preset()?.key }}
-                </b>
-            }
-            @if (preset()?.type === 'url' && tag().value) {
-                <a
-                    href="{{ tag().value }}"
-                    target="_blank"
-                    [attr.aria-label]="'A11Y.OPEN_LINK' | translate"
-                    ><ion-icon aria-hidden="true" name="link"></ion-icon
-                ></a>
-            }
-        </ion-card-header>
-        <ion-card-content>
-            <div class="wrapperEdit2cols">
-                <div class="contentEdit2cols">
-                    <ion-item style="padding-left: 0px">
-                        <ion-input
-                            [type]="preset().type"
-                            [(ngModel)]="tag().value"
-                            [placeholder]="tag().key"
-                        ></ion-input>
-                    </ion-item>
-                </div>
-                <div class="buttonEdit2cols">
-                    <ion-icon
-                        role="button"
-                        tabindex="0"
-                        [attr.aria-label]="'SHARED.CLEAR' | translate"
-                        (click)="tag().value = ''"
-                        (keydown.enter)="tag().value = ''"
-                        (keydown.space)="
-                            tag().value = ''; $event.preventDefault()
-                        "
-                        name="close"
-                        style="width: 2em; height: 2em"
-                    ></ion-icon>
-                </div>
-            </div>
-        </ion-card-content>
-    </ion-card>
-}
-@if (preset()?.type === 'text' && !isMultiKeyPreset) {
-    <ion-card>
-        <ion-card-header>
-            @if (!displayCode()) {
-                <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
-            }
-            @if (displayCode()) {
-                <b>
-                    <ion-icon aria-hidden="true" name="code"></ion-icon>
-                    {{ preset()?.key }}
-                </b>
-            }
-        </ion-card-header>
-        <ion-card-content>
-            <div class="wrapperEdit2cols">
-                @if (preset()?.key === 'opening_hours') {
-                    <app-opening-hours
-                        [openingHours]="openingHoursValue"
-                        [displayCode]="displayCode()"
-                        [editMode]="true"
-                        (valueChangeEvent)="tag().value = $event"
-                    >
-                    </app-opening-hours>
+    ></app-select>
+} @else if (preset().type === 'list') {
+    <article class="edit-field">
+        <header>
+            <strong>
+                @if (displayCode()) {
+                    <mat-icon fontSet="material-symbols-rounded">code</mat-icon
+                    >{{ preset().key }}
                 } @else {
-                    <div class="contentEdit2cols">
-                        <ion-item style="padding-left: 0px">
-                            <ion-input
-                                type="text"
-                                [(ngModel)]="tag().value"
-                                [placeholder]="tag().key"
-                            ></ion-input>
-                        </ion-item>
-                    </div>
-                    <div class="buttonEdit2cols">
-                        <ion-icon
-                            role="button"
-                            tabindex="0"
-                            [attr.aria-label]="'SHARED.CLEAR' | translate"
-                            (click)="tag().value = ''"
-                            (keydown.enter)="tag().value = ''"
-                            (keydown.space)="
-                                tag().value = ''; $event.preventDefault()
-                            "
-                            name="close"
-                            style="width: 2em; height: 2em"
-                        ></ion-icon>
-                    </div>
+                    {{ preset().lbl[language()] || preset().lbl['en'] }}
                 }
+            </strong>
+        </header>
+
+        <div class="field-control">
+            @if (!displayCode()) {
+                <button
+                    class="list-value"
+                    type="button"
+                    (click)="emitOpenModal(tag())"
+                >
+                    @if (tag().value === '') {
+                        <span class="undefined-value">{{
+                            'MODAL_SELECTED_ITEM.UNDEFINED_VALUE' | translate
+                        }}</span>
+                    } @else if (
+                        tag() | displayPresetLabel: preset();
+                        as option
+                    ) {
+                        <span>{{
+                            option.lbl?.[language()] ||
+                                option.lbl?.['en'] ||
+                                option.v
+                        }}</span>
+                    } @else {
+                        <span>{{ tag().value }}</span>
+                    }
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >expand_more</mat-icon
+                    >
+                </button>
+            } @else {
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <input
+                        matInput
+                        type="text"
+                        [(ngModel)]="tag().value"
+                        [placeholder]="tag().key"
+                    />
+                </mat-form-field>
+            }
+            <button
+                mat-icon-button
+                type="button"
+                [attr.aria-label]="'SHARED.CLEAR' | translate"
+                (click)="tag().value = ''"
+            >
+                <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
+            </button>
+        </div>
+    </article>
+} @else if (
+    ['number', 'text', 'tel', 'url', 'email'].includes(preset().type || '')
+) {
+    <article class="edit-field">
+        <header>
+            <strong>
+                @if (displayCode()) {
+                    <mat-icon fontSet="material-symbols-rounded">code</mat-icon
+                    >{{ preset().key }}
+                } @else {
+                    {{ preset().lbl[language()] || preset().lbl['en'] }}
+                }
+            </strong>
+            @if (preset().type === 'url' && tag().value) {
+                <a
+                    [href]="tag().value"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    [attr.aria-label]="'A11Y.OPEN_LINK' | translate"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >open_in_new</mat-icon
+                    >
+                </a>
+            }
+        </header>
+
+        @if (preset().key === 'opening_hours') {
+            <app-opening-hours
+                [openingHours]="openingHoursValue"
+                [displayCode]="displayCode()"
+                [editMode]="true"
+                (valueChangeEvent)="tag().value = $event"
+            ></app-opening-hours>
+        } @else {
+            <div class="field-control">
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <input
+                        matInput
+                        [type]="
+                            preset().type === 'number'
+                                ? 'number'
+                                : preset().type || 'text'
+                        "
+                        [(ngModel)]="tag().value"
+                        [placeholder]="tag().key"
+                    />
+                </mat-form-field>
+                <button
+                    mat-icon-button
+                    type="button"
+                    [attr.aria-label]="'SHARED.CLEAR' | translate"
+                    (click)="tag().value = ''"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >close</mat-icon
+                    >
+                </button>
             </div>
-        </ion-card-content>
-    </ion-card>
+        }
+    </article>
 }

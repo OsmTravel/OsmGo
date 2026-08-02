@@ -1,405 +1,405 @@
-<ion-header color="primary">
-    <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button
-                [attr.aria-label]="'SHARED.CLOSE' | translate"
-                (click)="navCtrl.back()"
-            >
-                <ion-icon
-                    aria-hidden="true"
-                    name="chevron-back-outline"
-                    slot="icon-only"
-                ></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title>{{ 'SETTINGS.SETTINGS' | translate}}</ion-title>
-    </ion-toolbar>
-</ion-header>
+<main class="settings-screen">
+    <app-screen-header
+        [title]="'SETTINGS.SETTINGS' | translate"
+        (backRequested)="back()"
+    ></app-screen-header>
 
-<ion-content class="ion-padding-bottom">
-    <ion-item-group>
-        <ion-item-divider>
-            <ion-icon aria-hidden="true" name="map" slot="start"></ion-icon>
-            <ion-label>{{ 'SETTINGS.MAP' | translate}}</ion-label>
-        </ion-item-divider>
+    <div class="settings-content">
+        <section class="settings-section" aria-labelledby="settings-map">
+            <h2 id="settings-map">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >map</mat-icon
+                >
+                {{ 'SETTINGS.MAP' | translate }}
+            </h2>
 
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.POSITION_TRACKING' | translate}}</h3>
-                <p>{{ 'SETTINGS.POSITION_TRACKING_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.POSITION_TRACKING' | translate"
-                [checked]="this.configService.config().followPosition"
-                (ionChange)="followPositionChange($event)"
-            ></ion-toggle>
-        </ion-item>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.POSITION_TRACKING' | translate }}</h3>
+                    <p>{{ 'SETTINGS.POSITION_TRACKING_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.POSITION_TRACKING' | translate"
+                    [checked]="configService.config().followPosition"
+                    (change)="followPositionChange($event.checked)"
+                ></mat-slide-toggle>
+            </div>
 
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.ORIENTATION_TRACKING' | translate}}</h3>
-                <p>{{ 'SETTINGS.ORIENTATION_TRACKING_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.ORIENTATION_TRACKING' | translate"
-                [checked]="this.configService.config().lockMapHeading"
-                (ionChange)="lockMapHeadingChange($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate}}</h3>
-                <p>{{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate"
-                [checked]="this.configService.config().centerWhenGpsIsReady"
-                (ionChange)="centerWhenGpsIsReadyChange($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="none">
-            <ion-label>
-                <h3>{{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate}}</h3>
-                <p>{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate"
-                [checked]="this.configService.config().oldTagsIcon.display"
-                (ionChange)="displayOldTagIconChange($event)"
-            ></ion-toggle>
-        </ion-item>
-        <ion-item lines="inset">
-            <ion-label position="stacked">
-                {{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_1' | translate}} {{
-                this.configService.config().oldTagsIcon.year }} {{
-                'SETTINGS.OLD_TAGS_ICON_RANGE_PART_2' | translate}}
-            </ion-label>
-            <ion-range
-                [attr.aria-label]="'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate"
-                [disabled]="!this.configService.config().oldTagsIcon.display"
-                [value]="this.configService.config().oldTagsIcon.year"
-                debounce="300"
-                snaps
-                (ionChange)="yearOldTagIconChange($event)"
-                min="0"
-                max="10"
-                step="0.5"
-                pin
-            ></ion-range>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.DISPLAY_FIXME_ICON' | translate}}</h3>
-                <p>{{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.DISPLAY_FIXME_ICON' | translate"
-                [checked]="this.configService.config().displayFixmeIcon"
-                (ionChange)="displayFixmeIconChange($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.HIDE_LARGE_POLYGON' | translate}}</h3>
-                <p>{{ 'SETTINGS.HIDE_LARGE_POLYGON_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.HIDE_LARGE_POLYGON' | translate"
-                [checked]="this.configService.config().filterWayByArea"
-                (ionChange)="filterWayByArea($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.HIDE_LONG_LINE' | translate}}</h3>
-                <p>{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.HIDE_LONG_LINE' | translate"
-                [checked]="this.configService.config().filterWayByLength"
-                (ionChange)="filterWayByLength($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.LINES_SELECTABLE' | translate}}</h3>
-                <p>{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.LINES_SELECTABLE' | translate"
-                [checked]="this.configService.config().isSelectableLine"
-                (ionChange)="isSelectableLineChange($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.POLYGONS_SELECTABLE' | translate}}</h3>
-                <p>{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.POLYGONS_SELECTABLE' | translate"
-                [checked]="this.configService.config().isSelectablePolygon"
-                (ionChange)="isSelectablePolygonChange($event)"
-            ></ion-toggle>
-        </ion-item>
-    </ion-item-group>
-
-    <ion-item-group>
-        <ion-item-divider>
-            <ion-icon
-                aria-hidden="true"
-                name="pricetags"
-                slot="start"
-            ></ion-icon>
-            <ion-label>{{ 'SETTINGS.TAGS' | translate}}</ion-label>
-        </ion-item-divider>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.CHECKED_KEY' | translate}}</h3>
-            </ion-label>
-            <ion-select
-                [value]="this.configService.config().checkedKey"
-                (ionChange)="checkedKeyChange($event)"
-            >
-                <ion-select-option value="survey:date">
-                    survey:date
-                </ion-select-option>
-                <ion-select-option value="check_date">
-                    check_date
-                </ion-select-option>
-            </ion-select>
-        </ion-item>
-
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.ADD_SURVEY_DATE' | translate}}</h3>
-                <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate}}</p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'SETTINGS.ADD_SURVEY_DATE' | translate"
-                [checked]="this.configService.config().addSurveyDate"
-                (ionChange)="addSurveyDateChange($event)"
-            ></ion-toggle>
-        </ion-item>
-
-        <ion-item lines="none">
-            <ion-label>
-                <h3>{{ 'SETTINGS.DISPLAY_SURVEY_CARD' | translate}}</h3>
-                <p>{{ 'SETTINGS.DISPLAY_SURVEY_CARD_HINT' | translate}}</p>
-            </ion-label>
-            <ion-select
-                [value]="this.configService.config().surveyCard.display"
-                (ionChange)="displaySurveyCardChange($event)"
-                [interfaceOptions]="displaySurveyCardOptions()"
-            >
-                <ion-select-option value="never">
-                    {{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.NEVER' | translate}}
-                </ion-select-option>
-                <ion-select-option value="when_older">
-                    {{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.OLDER' | translate}}
-                </ion-select-option>
-                <ion-select-option value="always">
-                    {{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.ALWAYS' |
-                    translate}}
-                </ion-select-option>
-            </ion-select>
-        </ion-item>
-        <ion-item lines="inset">
-            <ion-label
-                position="stacked"
-                translate
-                [translateParams]="{year: this.configService.getSurveyCardYear()}"
-            >
-                SETTINGS.SURVEY_CARD_RANGE
-            </ion-label>
-            <ion-range
-                [attr.aria-label]="'SETTINGS.SURVEY_CARD_RANGE' | translate"
-                [disabled]="this.configService.config().surveyCard.display != 'when_older'"
-                [value]="this.configService.config().surveyCard.year"
-                debounce="300"
-                snaps
-                (ionChange)="yearOldSurveyCardChange($event)"
-                min="0"
-                max="10"
-                step="0.5"
-                pin
-            ></ion-range>
-        </ion-item>
-    </ion-item-group>
-
-    <ion-item-group>
-        <ion-item-divider>
-            <ion-icon aria-hidden="true" name="library" slot="start"></ion-icon>
-            <ion-label>{{ 'SETTINGS.DATA' | translate}}</ion-label>
-        </ion-item-divider>
-
-        <ion-item lines="inset">
-            <div>
-                <ion-label>
-                    <h3>
-                        {{ 'SETTINGS.LIMIT_FEATURES' | translate}}
-                        ({{this.configService.config().limitFeatures}})
-                    </h3>
-                    <p class="hint">
-                        {{ 'SETTINGS.LIMIT_FEATURES_HINT' | translate}}
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.ORIENTATION_TRACKING' | translate }}</h3>
+                    <p>
+                        {{ 'SETTINGS.ORIENTATION_TRACKING_HINT' | translate }}
                     </p>
-                </ion-label>
-                <ion-range
-                    [attr.aria-label]="'SETTINGS.LIMIT_FEATURES' | translate"
-                    [value]="this.configService.config().limitFeatures"
-                    debounce="300"
-                    step="2000"
-                    snaps
-                    (ionChange)="limitFeaturesChange($event)"
-                    min="0"
-                    max="60000"
-                ></ion-range>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.ORIENTATION_TRACKING' | translate"
+                    [checked]="configService.config().lockMapHeading"
+                    (change)="lockMapHeadingChange($event.checked)"
+                ></mat-slide-toggle>
             </div>
-        </ion-item>
 
-        <ion-item lines="inset">
-            <div>
-                <ion-label>
+            <div class="setting-row">
+                <div class="setting-copy">
                     <h3>
-                        {{ 'SETTINGS.MARGIN' | translate}}
-                        ({{this.configService.config().mapMarginBuffer}} m)
+                        {{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate }}
                     </h3>
-                    <p class="hint">{{ 'SETTINGS.MARGIN_HINT' | translate}}</p>
-                </ion-label>
-                <ion-range
-                    [attr.aria-label]="'SETTINGS.MARGIN' | translate"
-                    [value]="this.configService.config().mapMarginBuffer"
-                    debounce="300"
-                    snaps
-                    (ionChange)="mapMarginBufferChange($event)"
-                    min="0"
-                    max="100"
-                ></ion-range>
+                    <p>
+                        {{ 'SETTINGS.CENTER_WHEN_GPS_IS_READY_HINT' | translate
+                        }}
+                    </p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.CENTER_WHEN_GPS_IS_READY' | translate"
+                    [checked]="configService.config().centerWhenGpsIsReady"
+                    (change)="centerWhenGpsIsReadyChange($event.checked)"
+                ></mat-slide-toggle>
             </div>
-        </ion-item>
-    </ion-item-group>
 
-    <ion-item-group>
-        <ion-item-divider>
-            <ion-icon
-                aria-hidden="true"
-                name="language"
-                slot="start"
-            ></ion-icon>
-            <ion-label
-                >{{ 'SETTINGS.LANGUAGE_AND_REGION' | translate}}</ion-label
-            >
-        </ion-item-divider>
+            <div class="setting-row setting-row--stacked">
+                <div class="setting-row__heading">
+                    <div class="setting-copy">
+                        <h3>
+                            {{ 'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate }}
+                        </h3>
+                        <p>{{ 'SETTINGS.OLD_TAGS_ICON_HINT' | translate }}</p>
+                    </div>
+                    <mat-slide-toggle
+                        [attr.aria-label]="'SETTINGS.DISPLAY_OLD_TAGS_ICON' | translate"
+                        [checked]="configService.config().oldTagsIcon.display"
+                        (change)="displayOldTagIconChange($event.checked)"
+                    ></mat-slide-toggle>
+                </div>
+                <label class="slider-label" for="old-tags-year">
+                    {{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_1' | translate }}
+                    <strong
+                        >{{ configService.config().oldTagsIcon.year }}</strong
+                    >
+                    {{ 'SETTINGS.OLD_TAGS_ICON_RANGE_PART_2' | translate }}
+                </label>
+                <mat-slider min="0" max="10" step="0.5" discrete>
+                    <input
+                        id="old-tags-year"
+                        matSliderThumb
+                        [disabled]="!configService.config().oldTagsIcon.display"
+                        [value]="configService.config().oldTagsIcon.year"
+                        (valueChange)="yearOldTagIconChange($event)"
+                    />
+                </mat-slider>
+            </div>
 
-        @if (this.configService.config().languageUi &&
-        this.configService.i18nConfig) {
-        <ion-item lines="inset">
-            <ion-label>{{ 'SETTINGS.UI_LANGUAGE' | translate}}</ion-label>
-            <ion-select
-                [value]="this.configService.config().languageUi"
-                (ionChange)="languageUiChange($event)"
-            >
-                @for (lang of this.configService.i18nConfig.language; track
-                lang) {
-                <ion-select-option [value]="lang.code">
-                    {{lang.nativeName}}
-                </ion-select-option>
-                }
-            </ion-select>
-        </ion-item>
-        } @if (this.configService.config().languageTags &&
-        this.configService.i18nConfig) {
-        <ion-item lines="inset">
-            <ion-label>{{'SETTINGS.TAG_LANGUAGE' | translate }}</ion-label>
-            <ion-select
-                [value]="this.configService.config().languageTags"
-                (ionChange)="languageTagsChange($event)"
-            >
-                @for (lang of this.configService.i18nConfig.language; track
-                lang) {
-                <ion-select-option [value]="lang.code">
-                    {{lang.nativeName}}
-                </ion-select-option>
-                }
-            </ion-select>
-        </ion-item>
-        }
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.DISPLAY_FIXME_ICON' | translate }}</h3>
+                    <p>{{ 'SETTINGS.DISPLAY_FIXME_ICON_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.DISPLAY_FIXME_ICON' | translate"
+                    [checked]="configService.config().displayFixmeIcon"
+                    (change)="displayFixmeIconChange($event.checked)"
+                ></mat-slide-toggle>
+            </div>
 
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{'SETTINGS.TAG_COUNTRY' | translate }}</h3>
-                <p>{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate}}</p>
-            </ion-label>
-            <ion-select
-                [value]="this.configService.config().countryTags"
-                [interfaceOptions]="countryTagsOptions()"
-                (ionChange)="countryTagsChange($event)"
-            >
-                @for (country of this.configService.countryConfig; track
-                country) {
-                <ion-select-option [value]="country.code">
-                    {{country.name}}
-                </ion-select-option>
-                }
-            </ion-select>
-        </ion-item>
-    </ion-item-group>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.HIDE_LARGE_POLYGON' | translate }}</h3>
+                    <p>{{ 'SETTINGS.HIDE_LARGE_POLYGON_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.HIDE_LARGE_POLYGON' | translate"
+                    [checked]="configService.config().filterWayByArea"
+                    (change)="filterWayByArea($event.checked)"
+                ></mat-slide-toggle>
+            </div>
 
-    <ion-item-group>
-        <ion-item-divider>
-            <ion-icon
-                aria-hidden="true"
-                name="file-tray"
-                slot="start"
-            ></ion-icon>
-            <ion-label>{{ 'SETTINGS.CACHE' | translate}}</ion-label>
-        </ion-item-divider>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.HIDE_LONG_LINE' | translate }}</h3>
+                    <p>{{ 'SETTINGS.HIDE_LONG_LINE_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.HIDE_LONG_LINE' | translate"
+                    [checked]="configService.config().filterWayByLength"
+                    (change)="filterWayByLength($event.checked)"
+                ></mat-slide-toggle>
+            </div>
 
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>{{ 'SETTINGS.DELETE_CACHE' | translate}}</h3>
-                <p>{{ 'SETTINGS.DELETE_CACHE_HINT' | translate}}</p>
-            </ion-label>
-            <ion-button
-                color="danger"
-                [attr.aria-label]="'SHARED.DELETE' | translate"
-                shape="round"
-                (click)="deleteCache()"
-                size="big"
-            >
-                <ion-icon aria-hidden="true" slot="icon-only" name="trash">
-                </ion-icon>
-            </ion-button>
-        </ion-item>
-    </ion-item-group>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.LINES_SELECTABLE' | translate }}</h3>
+                    <p>{{ 'SETTINGS.LINES_SELECTABLE_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.LINES_SELECTABLE' | translate"
+                    [checked]="configService.config().isSelectableLine"
+                    (change)="isSelectableLineChange($event.checked)"
+                ></mat-slide-toggle>
+            </div>
 
-    <ion-item-group>
-        <ion-item-divider>
-            <ion-icon aria-hidden="true" name="bug" slot="start"></ion-icon>
-            <ion-label>Developer mode</ion-label>
-        </ion-item-divider>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.POLYGONS_SELECTABLE' | translate }}</h3>
+                    <p>{{ 'SETTINGS.POLYGONS_SELECTABLE_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.POLYGONS_SELECTABLE' | translate"
+                    [checked]="configService.config().isSelectablePolygon"
+                    (change)="isSelectablePolygonChange($event.checked)"
+                ></mat-slide-toggle>
+            </div>
+        </section>
 
-        <ion-item lines="inset">
-            <ion-label>
-                <h3>Use the OSM development server</h3>
-                <p>
-                    After this change, the application will be restarted and the
-                    data will be cleared
-                </p>
-            </ion-label>
-            <ion-toggle
-                [attr.aria-label]="'A11Y.USE_OSM_DEV_SERVER' | translate"
-                [checked]="this.configService.config().isDevServer"
-                (ionChange)="changeIsDevServer($event['detail']['checked'])"
-            ></ion-toggle>
-        </ion-item>
-    </ion-item-group>
-</ion-content>
+        <section class="settings-section" aria-labelledby="settings-tags">
+            <h2 id="settings-tags">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >sell</mat-icon
+                >
+                {{ 'SETTINGS.TAGS' | translate }}
+            </h2>
+
+            <div class="setting-row setting-row--field">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.CHECKED_KEY' | translate }}</h3>
+                </div>
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <mat-select
+                        [value]="configService.config().checkedKey"
+                        (selectionChange)="checkedKeyChange($event.value)"
+                    >
+                        <mat-option value="survey:date">survey:date</mat-option>
+                        <mat-option value="check_date">check_date</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.ADD_SURVEY_DATE' | translate }}</h3>
+                    <p>{{ 'SETTINGS.ADD_SURVEY_DATE_HINT' | translate }}</p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'SETTINGS.ADD_SURVEY_DATE' | translate"
+                    [checked]="configService.config().addSurveyDate"
+                    (change)="addSurveyDateChange($event.checked)"
+                ></mat-slide-toggle>
+            </div>
+
+            <div class="setting-row setting-row--field">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.DISPLAY_SURVEY_CARD' | translate }}</h3>
+                    <p>{{ 'SETTINGS.DISPLAY_SURVEY_CARD_HINT' | translate }}</p>
+                </div>
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <mat-select
+                        [value]="configService.config().surveyCard.display"
+                        (selectionChange)="displaySurveyCardChange($event.value)"
+                    >
+                        <mat-option value="never"
+                            >{{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.NEVER' |
+                            translate }}</mat-option
+                        >
+                        <mat-option value="when_older"
+                            >{{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.OLDER' |
+                            translate }}</mat-option
+                        >
+                        <mat-option value="always"
+                            >{{ 'SETTINGS.DISPLAY_SURVEY_CARD_CHOICE.ALWAYS' |
+                            translate }}</mat-option
+                        >
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="setting-row setting-row--stacked">
+                <label
+                    class="slider-label"
+                    for="survey-card-year"
+                    translate
+                    [translateParams]="{ year: configService.getSurveyCardYear() }"
+                    >SETTINGS.SURVEY_CARD_RANGE</label
+                >
+                <mat-slider min="0" max="10" step="0.5" discrete>
+                    <input
+                        id="survey-card-year"
+                        matSliderThumb
+                        [disabled]="configService.config().surveyCard.display !== 'when_older'"
+                        [value]="configService.config().surveyCard.year"
+                        (valueChange)="yearOldSurveyCardChange($event)"
+                    />
+                </mat-slider>
+            </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="settings-data">
+            <h2 id="settings-data">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >database</mat-icon
+                >
+                {{ 'SETTINGS.DATA' | translate }}
+            </h2>
+
+            <div class="setting-row setting-row--stacked">
+                <div class="setting-copy">
+                    <h3>
+                        {{ 'SETTINGS.LIMIT_FEATURES' | translate }}
+                        <strong
+                            >{{ configService.config().limitFeatures }}</strong
+                        >
+                    </h3>
+                    <p>{{ 'SETTINGS.LIMIT_FEATURES_HINT' | translate }}</p>
+                </div>
+                <mat-slider min="0" max="60000" step="2000" discrete>
+                    <input
+                        matSliderThumb
+                        [attr.aria-label]="'SETTINGS.LIMIT_FEATURES' | translate"
+                        [value]="configService.config().limitFeatures"
+                        (valueChange)="limitFeaturesChange($event)"
+                    />
+                </mat-slider>
+            </div>
+
+            <div class="setting-row setting-row--stacked">
+                <div class="setting-copy">
+                    <h3>
+                        {{ 'SETTINGS.MARGIN' | translate }}
+                        <strong
+                            >{{ configService.config().mapMarginBuffer }}
+                            m</strong
+                        >
+                    </h3>
+                    <p>{{ 'SETTINGS.MARGIN_HINT' | translate }}</p>
+                </div>
+                <mat-slider min="0" max="100" step="1" discrete>
+                    <input
+                        matSliderThumb
+                        [attr.aria-label]="'SETTINGS.MARGIN' | translate"
+                        [value]="configService.config().mapMarginBuffer"
+                        (valueChange)="mapMarginBufferChange($event)"
+                    />
+                </mat-slider>
+            </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="settings-language">
+            <h2 id="settings-language">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >language</mat-icon
+                >
+                {{ 'SETTINGS.LANGUAGE_AND_REGION' | translate }}
+            </h2>
+
+            @if (configService.config().languageUi && configService.i18nConfig)
+            {
+            <div class="setting-row setting-row--field">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.UI_LANGUAGE' | translate }}</h3>
+                </div>
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <mat-select
+                        [value]="configService.config().languageUi"
+                        (selectionChange)="languageUiChange($event.value)"
+                    >
+                        @for (lang of configService.i18nConfig.language; track
+                        lang.code) {
+                        <mat-option [value]="lang.code"
+                            >{{ lang.nativeName }}</mat-option
+                        >
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            } @if (configService.config().languageTags &&
+            configService.i18nConfig) {
+            <div class="setting-row setting-row--field">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.TAG_LANGUAGE' | translate }}</h3>
+                </div>
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <mat-select
+                        [value]="configService.config().languageTags"
+                        (selectionChange)="languageTagsChange($event.value)"
+                    >
+                        @for (lang of configService.i18nConfig.language; track
+                        lang.code) {
+                        <mat-option [value]="lang.code"
+                            >{{ lang.nativeName }}</mat-option
+                        >
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            }
+
+            <div class="setting-row setting-row--field">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.TAG_COUNTRY' | translate }}</h3>
+                    <p>{{ 'SETTINGS.TAG_COUNTRY_HINT' | translate }}</p>
+                </div>
+                <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                    <mat-select
+                        [value]="configService.config().countryTags"
+                        (selectionChange)="countryTagsChange($event.value)"
+                    >
+                        @for (country of configService.countryConfig; track
+                        country.code) {
+                        <mat-option [value]="country.code"
+                            >{{ country.name }}</mat-option
+                        >
+                        }
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="settings-cache">
+            <h2 id="settings-cache">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >inventory_2</mat-icon
+                >
+                {{ 'SETTINGS.CACHE' | translate }}
+            </h2>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>{{ 'SETTINGS.DELETE_CACHE' | translate }}</h3>
+                    <p>{{ 'SETTINGS.DELETE_CACHE_HINT' | translate }}</p>
+                </div>
+                <button
+                    mat-stroked-button
+                    class="danger-action"
+                    type="button"
+                    (click)="deleteCache()"
+                >
+                    <mat-icon
+                        fontSet="material-symbols-rounded"
+                        aria-hidden="true"
+                        >delete</mat-icon
+                    >
+                    {{ 'SHARED.DELETE' | translate }}
+                </button>
+            </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="settings-developer">
+            <h2 id="settings-developer">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >bug_report</mat-icon
+                >
+                Developer mode
+            </h2>
+            <div class="setting-row">
+                <div class="setting-copy">
+                    <h3>Use the OSM development server</h3>
+                    <p>
+                        After this change, the application will be restarted and
+                        the data will be cleared.
+                    </p>
+                </div>
+                <mat-slide-toggle
+                    [attr.aria-label]="'A11Y.USE_OSM_DEV_SERVER' | translate"
+                    [checked]="configService.config().isDevServer"
+                    (change)="changeIsDevServer($event.checked)"
+                ></mat-slide-toggle>
+            </div>
+        </section>
+    </div>
+</main>

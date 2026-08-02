@@ -1,76 +1,159 @@
-.modal-content {
-    width: 100%;
+:host {
+    display: block;
     height: 100%;
+}
+
+.object-editor {
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    color: var(--osmgo-ink-strong);
+    background: var(--osmgo-surface-muted);
+}
+
+.editor-toolbar {
+    min-height: calc(68px + env(safe-area-inset-top));
+    gap: 10px;
+    padding: env(safe-area-inset-top) 10px 0;
+    color: var(--osmgo-ink-strong);
+    background: var(--osmgo-surface);
+    box-shadow: 0 2px 12px rgba(25, 42, 35, 0.1);
+
+    h1 {
+        flex: 1;
+        margin: 0;
+        overflow: hidden;
+        font-size: 22px;
+        font-weight: 700;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    button.is-active {
+        color: var(--osmgo-blue);
+        background: var(--osmgo-blue-container);
+    }
+}
+
+.editor-toolbar--edit mat-form-field {
+    min-width: 0;
+    flex: 1;
+}
+
+.editor-content {
+    display: grid;
+    width: min(100%, 860px);
+    align-content: start;
+    gap: 12px;
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 14px 12px 24px;
+    overscroll-behavior: contain;
+}
+
+.object-fields {
+    display: grid;
+    gap: 10px;
+}
+
+.field-memory-actions {
     display: flex;
-    flex-direction: column;
+    gap: 8px;
+    overflow-x: auto;
+
+    button {
+        flex: 0 0 auto;
+    }
 }
 
-.toogleCodeButton {
-    position: absolute;
-    right: 0;
-    top: 28px;
+.add-field-button {
+    min-height: 50px;
+    border-radius: 14px;
 }
 
-.wrapper {
-    position: absolute;
-    top: 0;
+.editor-footer {
+    position: sticky;
+    z-index: 30;
     bottom: 0;
-    left: 0;
-    right: 0;
+    border-top: 1px solid var(--osmgo-divider);
+    background: var(--osmgo-surface);
+    box-shadow: 0 -3px 16px rgba(25, 42, 35, 0.1);
 }
 
-ion-header {
-    background-color: white;
-}
-ion-footer {
-    background-color: white;
+.modified-warning {
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    color: var(--osmgo-amber-ink);
+    background: var(--osmgo-amber-container);
 
-    .modifiedWarning {
-        background-color: rgb(255, 173, 50);
-        padding: 4px 10px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .actions {
-        padding: 0px 10px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: 'left middle right';
-
-        .left {
-            grid-area: left;
-            justify-self: start;
-        }
-        .middle {
-            grid-area: middle;
-            justify-self: center;
-        }
-        .right {
-            grid-area: right;
-            justify-self: end;
-        }
-
-        .section {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-    }
-
-    .spacer {
-        flex-grow: 1;
+    span {
+        flex: 1;
+        font-size: 13px;
     }
 }
-.content {
-    overflow: auto scroll;
-    background-color: white;
-    flex-grow: 1;
+
+.footer-actions {
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+
+    > button:last-child {
+        min-height: 50px;
+        border-radius: 15px;
+    }
 }
 
-.top-actions {
-    position: relative;
-    min-height: 40px;
-    width: 100%;
+.footer-actions--read {
+    justify-content: space-between;
+}
+
+.footer-actions--edit {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr);
+
+    > button:last-child {
+        min-width: 0;
+    }
+}
+
+.secondary-actions {
+    display: flex;
+    align-items: center;
+}
+
+.delete-action {
+    color: var(--osmgo-error);
+}
+
+.editor-loading {
+    display: grid;
+    height: 100%;
+    place-items: center;
+    align-content: center;
+    gap: 16px;
+    background: var(--osmgo-surface);
+
+    p {
+        color: var(--osmgo-ink-muted);
+    }
+}
+
+@media (min-width: 768px) {
+    .editor-toolbar {
+        padding-inline: 18px;
+    }
+
+    .editor-content {
+        padding: 24px 20px 40px;
+    }
+
+    .footer-actions,
+    .modified-warning {
+        padding-inline: 20px;
+    }
 }

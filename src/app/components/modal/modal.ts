@@ -1,5 +1,14 @@
-import { Component, inject, input, OnInit, signal } from '@angular/core'
+import { Component, inject, input, OnInit, output, signal } from '@angular/core'
 import { FormsModule } from '@angular/forms'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialog } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatTooltipModule } from '@angular/material/tooltip'
 import { AlertComponent } from '@components/modal/components/alert/alert.component'
 import { EditOtherTag } from '@components/modal/components/edit/OtherTag.component'
 import { EditPresets } from '@components/modal/components/edit/Presets.component'
@@ -9,22 +18,9 @@ import { ReadOtherTag } from '@components/modal/components/read/OtherTag.compone
 import { ReadPresets } from '@components/modal/components/read/Presets.component'
 import { SurveyCard } from '@components/modal/components/survey-card/SurveyCard'
 import {
-    AlertController,
-    IonButton,
-    IonContent,
-    IonFab,
-    IonFabButton,
-    IonFooter,
-    IonHeader,
-    IonIcon,
-    IonInput,
-    IonTitle,
-    IonToolbar,
-    LoadingController,
-    ModalController,
-    Platform,
-    ToastController,
-} from '@ionic/angular/standalone'
+    ConfirmDialogComponent,
+    type ConfirmDialogData,
+} from '@components/shared/confirm-dialog/confirm-dialog'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import {
     type FeatureIdSource,
@@ -39,7 +35,6 @@ import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
 import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
 import { getConfigTag } from '@scripts/osmToOsmgo/index.js'
-import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
@@ -47,8 +42,8 @@ import { OsmApiService } from '@services/osmApi.service'
 import { type SavedField, TagsService } from '@services/tags.service'
 import type { Geometry } from 'geojson'
 import { cloneDeep, findIndex, isEqual } from 'lodash'
+import { finalize } from 'rxjs/operators'
 import { ModalAddTag } from './modal.addTag/modal.addTag'
-import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
 import { ModalSelectList } from './modalSelectList/modalSelectList'
 
 export interface ModalDismissData {
@@ -56,6 +51,8 @@ export interface ModalDismissData {
     type?: string
     geojson?: OsmGoFeature
     mode?: MapMode
+    deleted?: boolean
+    origineData?: FeatureIdSource
 }
 
 interface SelectedTagConfig extends TagConfig {
@@ -73,7 +70,7 @@ interface DeprecatedTags {
     replace: Record<string, string | number>
 }
 @Component({
-    selector: 'modal',
+    selector: 'app-object-editor-content',
     templateUrl: './modal.html',
     styleUrls: ['./modal.scss'],
     imports: [
@@ -82,17 +79,14 @@ interface DeprecatedTags {
         EditPresets,
         FilterExcludeKeysPipe,
         FormsModule,
-        IonButton,
-        IonContent,
-        IonFab,
-        IonFabButton,
-        IonFooter,
-        IonHeader,
-        IonIcon,
-        IonInput,
-        IonTitle,
-        IonToolbar,
         IsBookmarkedPipe,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatProgressSpinnerModule,
+        MatToolbarModule,
+        MatTooltipModule,
         MetaCard,
         OrderByPresetPipe,
         PrimaryKey,
@@ -102,19 +96,15 @@ interface DeprecatedTags {
         TranslateModule,
     ],
 })
-export class ModalsContentPage implements OnInit {
-    readonly platform = inject(Platform)
-    readonly loadingCtrl = inject(LoadingController)
+export class ObjectEditorContentComponent implements OnInit {
     readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
-    readonly modalCtrl = inject(ModalController)
     readonly mapService = inject(MapService)
     readonly dataService = inject(DataService)
     readonly configService = inject(ConfigService)
-    readonly alertService = inject(AlertService)
-    readonly toastCtrl = inject(ToastController)
-    private readonly alertCtrl = inject(AlertController)
     private readonly translate = inject(TranslateService)
+    private readonly dialog = inject(MatDialog)
+    private readonly snackBar = inject(MatSnackBar)
 
     private readonly tagsState = signal<Tag[]>([])
     get tags(): Tag[] {
@@ -158,6 +148,10 @@ export class ModalsContentPage implements OnInit {
         return tagConfig
     }
 
+    currentTagConfig(): TagConfig | undefined {
+        return this.tagConfigState()
+    }
+
     primaryKey: PrimaryTag = { key: '', value: '' }
     private readonly savedFieldsState = signal<SavedField | undefined>(
         undefined
@@ -193,8 +187,12 @@ export class ModalsContentPage implements OnInit {
     readonly openPrimaryTagModalOnStartInput = input(false, {
         alias: 'openPrimaryTagModalOnStart',
     })
+    readonly displayCodeOnStart = input(false)
+    readonly dismissed = output<ModalDismissData | undefined>()
+    readonly categoryRequested = output<void>()
 
     private initializeFromInputs(): void {
+        this.displayCodeState.set(this.displayCodeOnStart())
         this.newPosition = this.newPositionInput()
         this.featureState.set(cloneDeep(this.dataInput()))
 
@@ -270,29 +268,30 @@ export class ModalsContentPage implements OnInit {
         }
     }
 
-    async presentConfirm(): Promise<void> {
-        const alert = await this.alertCtrl.create({
-            header: this.translate.instant(
+    presentConfirm(): void {
+        const data: ConfirmDialogData = {
+            title: this.translate.instant(
                 'MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER'
             ),
             message: this.translate.instant(
                 'MODAL_SELECTED_ITEM.DELETE_CONFIRM_MESSAGE'
             ),
-            buttons: [
-                {
-                    text: this.translate.instant('SHARED.CANCEL'),
-                    role: 'cancel',
-                    handler: () => {},
-                },
-                {
-                    text: this.translate.instant('SHARED.CONFIRM'),
-                    handler: () => {
-                        this.deleteOsmElement()
-                    },
-                },
-            ],
-        })
-        await alert.present()
+            cancelLabel: this.translate.instant('SHARED.CANCEL'),
+            confirmLabel: this.translate.instant('SHARED.CONFIRM'),
+            destructive: true,
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
+            })
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) {
+                    this.deleteOsmElement()
+                }
+            })
     }
 
     initComponent(tagConfig?: TagConfig): {
@@ -401,9 +400,29 @@ export class ModalsContentPage implements OnInit {
         return !isEqual(tagsNotNull, originalTagsNotNull)
     }
 
+    changedFieldCount(): number {
+        const original = new Map(
+            this.originalTags
+                .filter((tag) => String(tag.value ?? '').trim() !== '')
+                .map((tag) => [tag.key, String(tag.value)])
+        )
+        const current = new Map(
+            this.tags
+                .filter((tag) => String(tag.value ?? '').trim() !== '')
+                .map((tag) => [tag.key, String(tag.value)])
+        )
+        const keys = new Set([...original.keys(), ...current.keys()])
+        let changes = 0
+        for (const key of keys) {
+            if (original.get(key) !== current.get(key)) {
+                changes++
+            }
+        }
+        return changes + (this.newPosition ? 1 : 0)
+    }
+
     updateMode(): void {
-        this.modeState.set('Update')
-        this.typeFicheState.set('Edit')
+        this.dismissed.emit({ type: 'Edit' })
     }
 
     toogleCode(): void {
@@ -457,7 +476,7 @@ export class ModalsContentPage implements OnInit {
     }
 
     dismiss(data?: ModalDismissData): void {
-        void this.modalCtrl.dismiss(data)
+        this.dismissed.emit(data)
     }
 
     createOsmElement(tagConfig: TagConfig): void {
@@ -471,14 +490,27 @@ export class ModalsContentPage implements OnInit {
         }
 
         this.pushTagsToFeature()
-        this.osmApi.createOsmNode(this.feature).subscribe({
-            next: () => {
-                this.dismiss({ redraw: true })
-            },
-            complete: () => {
-                this.mapService.setIsProcessing(false)
-            },
-        })
+        this.osmApi
+            .createOsmNode(this.feature)
+            .pipe(
+                finalize(() => {
+                    this.mapService.setIsProcessing(false)
+                })
+            )
+            .subscribe({
+                next: (feature) => {
+                    this.dismiss({
+                        redraw: true,
+                        geojson: feature,
+                        origineData: 'data_changed',
+                    })
+                },
+                error: (error: unknown) => {
+                    console.error(error)
+                    this.typeFicheState.set('Edit')
+                    this.presentToast(this.translate.instant('SHARED.ERROR'))
+                },
+            })
     }
 
     updateOsmElement(tagConfig?: TagConfig): void {
@@ -500,27 +532,49 @@ export class ModalsContentPage implements OnInit {
 
         this.pushTagsToFeature()
 
-        this.osmApi.updateOsmElement(this.feature, this.origineData).subscribe({
-            next: () => {
-                this.dismiss({ redraw: true })
-            },
-            complete: () => {
-                this.mapService.setIsProcessing(false)
-            },
-        })
+        this.osmApi
+            .updateOsmElement(this.feature, this.origineData)
+            .pipe(
+                finalize(() => {
+                    this.mapService.setIsProcessing(false)
+                })
+            )
+            .subscribe({
+                next: (feature) => {
+                    this.dismiss({
+                        redraw: true,
+                        geojson: feature,
+                        origineData: 'data_changed',
+                    })
+                },
+                error: (error: unknown) => {
+                    console.error(error)
+                    this.typeFicheState.set('Edit')
+                    this.presentToast(this.translate.instant('SHARED.ERROR'))
+                },
+            })
     }
 
     deleteOsmElement(): void {
         this.mapService.setIsProcessing(true)
         this.typeFicheState.set('Loading')
-        this.osmApi.deleteOsmElement(this.feature).subscribe({
-            next: () => {
-                this.dismiss({ redraw: true })
-            },
-            complete: () => {
-                this.mapService.setIsProcessing(false)
-            },
-        })
+        this.osmApi
+            .deleteOsmElement(this.feature)
+            .pipe(
+                finalize(() => {
+                    this.mapService.setIsProcessing(false)
+                })
+            )
+            .subscribe({
+                next: () => {
+                    this.dismiss({ redraw: true, deleted: true })
+                },
+                error: (error: unknown) => {
+                    console.error(error)
+                    this.typeFicheState.set('Edit')
+                    this.presentToast(this.translate.instant('SHARED.ERROR'))
+                },
+            })
     }
 
     pushTagsToFeature(): void {
@@ -546,64 +600,45 @@ export class ModalsContentPage implements OnInit {
         this.dismiss({ type: 'Move', geojson: this.feature, mode: this.mode })
     }
 
-    async openPrimaryTagModal(): Promise<void> {
-        const modal = await this.modalCtrl.create({
-            component: ModalPrimaryTag,
-            componentProps: {
-                geojson: this.feature,
-                tagConfig: this.tagConfig,
-                tags: this.tags,
-                geometryType: this.geometryType,
-            },
-        })
-        await modal.present()
-        modal.onDidDismiss<SelectedTagConfig>().then((d) => {
-            const newTagConfig = d.data
-            const oldTagConfig = this.tagConfig
-            const oldKeyTagsToDelete = Object.keys(oldTagConfig.tags)
-            let copyTags = cloneDeep(this.tags)
-            copyTags = copyTags.filter(
-                (t) => !oldKeyTagsToDelete.includes(t.key)
-            )
-
-            for (const t of copyTags) {
-                if (t.preset) {
-                    delete t.preset
-                }
-            }
-            if (!newTagConfig) {
-                return
-            }
-            const newTagsKeys = Object.keys(newTagConfig.tags)
-            let newTagsToAdd: Tag[] = []
-            for (const k in newTagConfig.tags) {
-                newTagsToAdd = [
-                    { key: k, value: newTagConfig.tags[k] },
-                    ...newTagsToAdd,
-                ]
-            }
-
-            copyTags = copyTags.filter((ct) => !newTagsKeys.includes(ct.key))
-            copyTags = [...newTagsToAdd, ...copyTags]
-
-            if (newTagConfig.addTags) {
-                copyTags = this.addTags(newTagConfig.addTags, copyTags)
-            }
-
-            this.tagsState.set([...copyTags])
-            this.initComponent(newTagConfig)
-        })
+    openPrimaryTagModal(): void {
+        this.categoryRequested.emit()
     }
 
-    async openModalList(data: Tag, preset: Preset): Promise<void> {
-        const modal = await this.modalCtrl.create({
-            component: ModalSelectList,
-            componentProps: { ...data, preset },
-        })
-        await modal.present()
+    applyPrimaryTagSelection(newTagConfig: SelectedTagConfig): void {
+        const oldKeyTagsToDelete = Object.keys(this.tagConfig.tags)
+        let copyTags = cloneDeep(this.tags).filter(
+            (tag) => !oldKeyTagsToDelete.includes(tag.key)
+        )
 
-        modal.onDidDismiss<ModalSelectListResult>().then((d) => {
-            const _data = d.data
+        for (const tag of copyTags) {
+            if (tag.preset) delete tag.preset
+        }
+
+        const newTagsKeys = Object.keys(newTagConfig.tags)
+        const newTagsToAdd = Object.entries(newTagConfig.tags).map(
+            ([key, value]) => ({ key, value })
+        )
+        copyTags = copyTags.filter((tag) => !newTagsKeys.includes(tag.key))
+        copyTags = [...newTagsToAdd, ...copyTags]
+
+        if (newTagConfig.addTags) {
+            copyTags = this.addTags(newTagConfig.addTags, copyTags)
+        }
+
+        this.tagsState.set(copyTags)
+        this.initComponent(newTagConfig)
+    }
+
+    openModalList(data: Tag, preset: Preset): void {
+        const dialogRef = this.dialog.open(ModalSelectList, {
+            width: 'min(560px, calc(100vw - 24px))',
+            maxWidth: 'calc(100vw - 24px)',
+            maxHeight: 'calc(100dvh - 24px)',
+            panelClass: 'osmgo-dialog',
+            autoFocus: 'dialog',
+        })
+        dialogRef.componentRef?.setInput('data', { ...data, preset })
+        dialogRef.afterClosed().subscribe((_data?: ModalSelectListResult) => {
             if (_data) {
                 this.tagsState.set(
                     this.tags.map((tag) =>
@@ -620,21 +655,24 @@ export class ModalsContentPage implements OnInit {
         })
     }
 
-    async openModalAddTag(): Promise<void> {
-        const modal = await this.modalCtrl.create({
-            component: ModalAddTag,
-            componentProps: {
-                moreFields: this.tagConfig.moreFields || [],
-                usedList: [
-                    ...this.tagConfig.presets,
-                    ...this.tags.map((e) => e.key),
-                ],
-            },
+    openModalAddTag(): void {
+        const dialogRef = this.dialog.open(ModalAddTag, {
+            width: 'min(620px, calc(100vw - 24px))',
+            height: 'min(760px, calc(100dvh - 24px))',
+            maxWidth: 'calc(100vw - 24px)',
+            maxHeight: 'calc(100dvh - 24px)',
+            panelClass: 'osmgo-dialog',
+            autoFocus: 'dialog',
         })
-        await modal.present()
-
-        modal.onDidDismiss().then((d) => {
-            const newTag = d.data
+        dialogRef.componentRef?.setInput(
+            'moreFields',
+            this.tagConfig.moreFields || []
+        )
+        dialogRef.componentRef?.setInput('usedList', [
+            ...this.tagConfig.presets,
+            ...this.tags.map((e) => e.key),
+        ])
+        dialogRef.afterClosed().subscribe((newTag?: string) => {
             if (!newTag) return
 
             this.addNewKey(newTag)
@@ -668,51 +706,49 @@ export class ModalsContentPage implements OnInit {
     }
 
     cancelChange(): void {
+        const originalFeature = cloneDeep(
+            this.feature.properties.originalData ?? undefined
+        )
         this.dataService.cancelFeatureChange(this.feature)
-        this.dismiss({ redraw: true })
+        if (originalFeature) {
+            this.dismiss({
+                redraw: true,
+                geojson: this.mapService.getIconStyle(originalFeature),
+                origineData: 'data',
+            })
+        } else {
+            this.dismiss({ redraw: true, deleted: true })
+        }
     }
-    async presentToast(message: string): Promise<void> {
-        const toast = await this.toastCtrl.create({
-            message,
+    presentToast(message: string): void {
+        this.snackBar.open(message, this.translate.instant('SHARED.CLOSE'), {
             duration: 4000,
-            position: 'bottom',
-            buttons: [
-                {
-                    text: 'X',
-                    role: 'cancel',
-                    handler: () => {},
-                },
-            ],
         })
-        await toast.present()
     }
 
     confirmAddSurveyDate(): void {
-        this.alertCtrl
-            .create({
-                header: this.translate.instant(
-                    'MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_HEADER'
-                ),
-                subHeader: this.translate.instant(
-                    'MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_MESSAGE'
-                ),
-                buttons: [
-                    {
-                        text: this.translate.instant('SHARED.NO'),
-                        role: 'cancel',
-                        handler: () => {},
-                    },
-                    {
-                        text: this.translate.instant('SHARED.YES'),
-                        handler: () => {
-                            this.addSurveyDate()
-                            this.updateOsmElement()
-                        },
-                    },
-                ],
+        const data: ConfirmDialogData = {
+            title: this.translate.instant(
+                'MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_HEADER'
+            ),
+            message: this.translate.instant(
+                'MODAL_SELECTED_ITEM.ADD_SURVEY_DATE_CONFIRM_MESSAGE'
+            ),
+            cancelLabel: this.translate.instant('SHARED.NO'),
+            confirmLabel: this.translate.instant('SHARED.YES'),
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
             })
-            .then((alert) => {
-                void alert.present()
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) {
+                    this.addSurveyDate()
+                    this.updateOsmElement()
+                }
             })
     }
 

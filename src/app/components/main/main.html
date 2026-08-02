@@ -1,224 +1,69 @@
-<ion-content class="ion-padding home" #mycontent>
-    <div id="map" #map data-testid="map" style="height: 100%; width: 100%">
-        <!-- Top left button to open menu -->
-        <ion-fab
-            style="left: 0px; top: 0px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.MENU')"
-        >
-            @if (newVersion()) {
-            <ion-badge
-                color="danger"
-                style="position: absolute; z-index: 1; left: 36px"
-                >!</ion-badge
-            >
-            }
-            <ion-fab-button
-                data-testid="open-menu"
-                tappable
-                ion-fab
-                fab-bottom
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.MENU')"
-                (click)="openMenu()"
-            >
-                <ion-icon aria-hidden="true" name="menu"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
+<section
+    class="map-screen"
+    [class.has-selection]="selectedFeature()"
+    [class.sheet-expanded]="sheetLevel() === 'expanded'"
+    [style.--map-controls-bottom]="mapControlsBottom()"
+    [attr.inert]="overlayOpen() ? '' : null"
+    [attr.aria-hidden]="overlayOpen() ? 'true' : null"
+>
+    <div id="map" #map data-testid="map" class="map-canvas"></div>
 
-        <!-- Top right button to upload changes on OSM -->
-        @if (dataService.changedFeatureCount() > 0 &&
-        !mapService.markerMoving()) {
-        <ion-fab
-            style="right: 0; top: 0; margin: 6px; margin-right: 46px"
-            [title]="translate.instant('MAIN.BUTTONS.UPLOAD')"
-        >
-            <ion-fab-button
-                data-testid="open-upload"
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.UPLOAD')"
-                (click)="navCtrl.navigateForward('/pushData')"
-            >
-                <ion-icon aria-hidden="true" name="cloud-upload"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
+    <app-map-controls
+        [newVersion]="newVersion()"
+        [attr.inert]="sheetLevel() === 'expanded' ? '' : null"
+        [attr.aria-hidden]="sheetLevel() === 'expanded' ? 'true' : null"
+        (menuRequested)="openMenu()"
+        (refreshRequested)="loadData()"
+        (addRequested)="startAddingObject()"
+    ></app-map-controls>
 
-        <!-- Bottom left button to get data from OSM -->
-        @if (!mapService.isProcessing()) {
-        <ion-fab
-            style="left: 0; bottom: 34px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
-        >
-            <ion-fab-button
-                data-testid="load-osm-data"
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.LOAD_DATA')"
-                tappable
-                (click)="loadData()"
-                arrow="true"
-                event="press"
-                [disabled]="(configService.currentZoom() ?? 0) < 14"
-            >
-                @if (!mapService.isProcessing()) {
-                <ion-icon aria-hidden="true" name="refresh"></ion-icon>
-                } @if (mapService.isProcessing()) {
-                <ion-spinner></ion-spinner>
-                }
-            </ion-fab-button>
-        </ion-fab>
-        }
-        <!-- Bottom left button to get data from OSM with state loading -->
-        @if (mapService.isProcessing()) {
-        <ion-fab
-            style="left: 0; bottom: 34px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
-        >
-            <ion-fab-button
-                data-testid="loading-osm-data"
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.LOADING_DATA')"
-                disabled
-            >
-                <ion-spinner></ion-spinner>
-            </ion-fab-button>
-        </ion-fab>
-        }
-
-        <!-- Bottom left button to toggle between base map and aerial imagery -->
-        <ion-fab style="left: 0; bottom: 100px; margin: 6px">
-            <ion-fab-button
-                tappable
-                ion-fab
-                fab-bottom
-                [color]="mapService.isDisplaySatelliteBaseMap() ? 'light' : 'secondary'  "
-                (click)="mapService.displaySatelliteBaseMap(configService.getBasemap(), !mapService.isDisplaySatelliteBaseMap())"
-                [title]="translate.instant(mapService.isDisplaySatelliteBaseMap() ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
-                [attr.aria-label]="translate.instant(mapService.isDisplaySatelliteBaseMap() ? 'MAIN.BUTTONS.VIEW_STYLED_MAP' : 'MAIN.BUTTONS.VIEW_AREAL_MAP')"
-            >
-                <ion-icon aria-hidden="true" name="image"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-
-        <!-- Bottom right button to add a new marker -->
-        @if (!mapService.markerMoving() && !mapService.markerMoveMoving()) {
-        <ion-fab
-            right
-            bottom
-            style="right: 0; bottom: 100px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.ADD_NEW')"
-        >
-            <ion-fab-button
-                data-testid="add-poi"
-                tappable
-                ion-fab
-                fab-bottom
-                color="danger"
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.ADD_NEW')"
-                (click)="mapService.positionateMarker()"
-                [disabled]="mapService.loadingData()"
-            >
-                <ion-icon aria-hidden="true" name="add"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
-
-        <!-- Bottom right button to use GPS location -->
-        @if (!mapService.markerMoving() && !mapService.markerMoveMoving()) {
-        <ion-fab
-            right
-            style="right: 0; bottom: 34px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
-        >
-            <ion-fab-button
-                data-testid="center-on-gps"
-                tappable
-                ion-fab
-                fab-bottom
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.CENTER_GPS')"
-                (click)="mapService.centerOnMyPosition()"
-                [disabled]="!locationService.gpsIsReady()"
-            >
-                <ion-icon aria-hidden="true" name="locate"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
-
-        <!-- Bottom right button to accept creating new marker-->
-        @if (mapService.markerMoving()) {
-        <ion-fab
-            right
-            bottom
-            style="right: 0; bottom: 34px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.CONFIRM_ADD')"
-        >
-            <ion-fab-button
-                tappable
-                fab-bottom
-                color="secondary"
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.CONFIRM_ADD')"
-                (click)="mapService.openModalOsm()"
-            >
-                <ion-icon aria-hidden="true" name="checkmark"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
-
-        <!-- Bottom right button to cancel creating a new marker -->
-        @if (mapService.markerMoving()) {
-        <ion-fab
-            style="right: 60px; bottom: 34px; margin: 6px"
-            [title]="translate.instant('SHARED.CANCEL')"
-        >
-            <ion-fab-button
-                tappable
-                fab-bottom
-                color="danger"
-                [attr.aria-label]="translate.instant('SHARED.CANCEL')"
-                (click)="mapService.cancelNewMarker()"
-            >
-                <ion-icon aria-hidden="true" name="close"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
-
-        <!-- Bottom right button to accept marker moving -->
-        @if (mapService.markerMoveMoving()) {
-        <ion-fab
-            style="right: 60px; bottom: 34px; margin: 6px"
-            [title]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
-        >
-            <ion-fab-button
-                data-testid="confirm-marker-move"
-                fab-bottom
-                color="secondary"
-                [attr.aria-label]="translate.instant('MAIN.BUTTONS.CONFIRM_MOVE')"
-                (click)="mapService.openModalWithNewPosition()"
-            >
-                <ion-icon aria-hidden="true" name="checkmark"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
-
-        <!-- Bottom right button to cancel marker moving -->
-        @if (mapService.markerMoveMoving()) {
-        <ion-fab
-            style="right: 0; bottom: 34px; margin: 6px"
-            [title]="translate.instant('SHARED.CANCEL')"
-        >
-            <ion-fab-button
-                data-testid="cancel-marker-move"
-                ion-fab
-                fab-bottom
-                color="danger"
-                [attr.aria-label]="translate.instant('SHARED.CANCEL')"
-                (click)="mapService.cancelNewPosition()"
-            >
-                <ion-icon aria-hidden="true" name="close"></ion-icon>
-            </ion-fab-button>
-        </ion-fab>
-        }
-    </div>
-</ion-content>
+    @if (displayedSelection(); as selection) {
+    <app-object-sheet
+        #objectSheet
+        [selection]="selection"
+        [level]="sheetLevel()"
+        (levelChange)="sheetLevel.set($event)"
+        (closeRequested)="closeSelection()"
+        (detailsRequested)="openSelectedDetails()"
+        (editRequested)="editSelectedFeature()"
+        (sessionCompleted)="handleSheetSession($event)"
+    ></app-object-sheet>
+    }
+</section>
 
 <menu-component
     [menuIsOpen]="menuIsOpen()"
     [newVersion]="newVersion()"
     (closeEvent)="closeMenu()"
+    [attr.inert]="overlayOpen() ? '' : null"
+    [attr.aria-hidden]="overlayOpen() ? 'true' : null"
+></menu-component>
+
+<div
+    class="route-overlay-host"
+    [class.is-open]="overlayOpen()"
+    [attr.data-overlay-size]="overlaySize()"
+    [attr.aria-hidden]="overlayOpen() ? null : 'true'"
 >
-</menu-component>
+    @if (overlayOpen()) {
+    <button
+        class="route-overlay-backdrop"
+        type="button"
+        [attr.aria-label]="'SHARED.CLOSE' | translate"
+        (click)="closeOverlay()"
+    ></button>
+    }
+    <section
+        class="route-overlay-panel"
+        role="dialog"
+        [attr.aria-modal]="overlayOpen() ? 'true' : null"
+        [attr.aria-label]="'MAIN.OVERLAY.LABEL' | translate"
+        cdkTrapFocus
+        [cdkTrapFocusAutoCapture]="overlayOpen()"
+    >
+        <router-outlet
+            (activate)="onOverlayActivate($event)"
+            (deactivate)="onOverlayDeactivate()"
+        ></router-outlet>
+    </section>
+</div>

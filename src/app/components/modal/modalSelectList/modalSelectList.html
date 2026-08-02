@@ -1,41 +1,56 @@
-<ion-toolbar>
-    <ion-title>
-        {{ data().preset.lbl[language] || data().preset.lbl['en'] }}
-    </ion-title>
-</ion-toolbar>
-<div id="divContentSB">
-    <div id="searchDiv">
-        <ion-searchbar
-            [value]="searchText()"
-            (ionInput)="onSearchInput($event)"
-            [debounce]="300"
-        ></ion-searchbar>
-    </div>
-</div>
+<main class="option-dialog">
+    <header>
+        <div>
+            <mat-icon fontSet="material-symbols-rounded">list</mat-icon>
+            <h2>
+                {{ data().preset.lbl[language] || data().preset.lbl['en'] }}
+            </h2>
+        </div>
+        <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="'SHARED.CLOSE' | translate"
+            (click)="dismiss()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
+        </button>
+    </header>
 
-<div class="listTag">
-    <ion-list>
-        <ion-radio-group (ionChange)="selected($event)">
-            @for ( option of data().preset.options | filterByCountryCode:
-            countryCode | filterByPresetsContent: [language]: searchText();
-            track option.v ) {
-            <ion-item>
-                <ion-label>
-                    <b
-                        >{{ option.lbl?.[language] || option.lbl?.['en'] ||
-                        option.v }}</b
-                    >
-                    <br />
-                    {{ option.v }}
-                </ion-label>
-                <ion-radio [value]="option"></ion-radio>
-            </ion-item>
-            }
-        </ion-radio-group>
-    </ion-list>
-</div>
-<ion-footer id="footer">
-    <ion-button ion-button color="danger" (click)="dismiss()"
-        >{{ 'SHARED.CANCEL' | translate}}</ion-button
-    >
-</ion-footer>
+    <div class="option-search">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-icon matPrefix fontSet="material-symbols-rounded"
+                >search</mat-icon
+            >
+            <input
+                #searchInput
+                matInput
+                type="search"
+                [value]="searchText()"
+                [placeholder]="'SHARED.SEARCH' | translate"
+                (input)="onSearchInput(searchInput.value)"
+            />
+        </mat-form-field>
+    </div>
+
+    <mat-radio-group class="option-list" [value]="initialValue">
+        @for ( option of data().preset.options | filterByCountryCode:
+        countryCode | filterByPresetsContent: [language] : searchText(); track
+        option.v ) {
+        <mat-radio-button [value]="option.v" (change)="selected(option)">
+            <span class="option-copy">
+                <strong
+                    >{{ option.lbl?.[language] || option.lbl?.['en'] || option.v
+                    }}</strong
+                >
+                <small>{{ option.v }}</small>
+            </span>
+        </mat-radio-button>
+        }
+    </mat-radio-group>
+
+    <footer>
+        <button mat-button type="button" (click)="dismiss()">
+            {{ 'SHARED.CANCEL' | translate }}
+        </button>
+    </footer>
+</main>

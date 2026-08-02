@@ -4,38 +4,30 @@ import {
     Component,
     inject,
     type OnDestroy,
-    type OnInit,
     signal,
 } from '@angular/core'
 import { FormsModule } from '@angular/forms'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialog } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { IconComponent } from '@components/icon/icon.component'
-
 import {
-    AlertController,
-    IonButton,
-    IonButtons,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonContent,
-    IonFooter,
-    IonHeader,
-    IonIcon,
-    IonInput,
-    IonItem,
-    IonTitle,
-    IonToolbar,
-    NavController,
-    Platform,
-} from '@ionic/angular/standalone'
+    ConfirmDialogComponent,
+    type ConfirmDialogData,
+} from '@components/shared/confirm-dialog/confirm-dialog'
+import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
-import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
 import { cloneDeep } from 'lodash'
 import { firstValueFrom, timer } from 'rxjs'
@@ -71,34 +63,26 @@ interface OsmRequestError {
     imports: [
         FormsModule,
         IconComponent,
-        IonButton,
-        IonButtons,
-        IonCard,
-        IonCardContent,
-        IonCardHeader,
-        IonContent,
-        IonFooter,
-        IonHeader,
-        IonIcon,
-        IonInput,
-        IonItem,
-        IonTitle,
-        IonToolbar,
         KeyValuePipe,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatProgressSpinnerModule,
+        ScreenHeaderComponent,
         TranslateModule,
     ],
 })
-export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
+export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
     readonly dataService = inject(DataService)
     readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
     readonly mapService = inject(MapService)
-    readonly navCtrl = inject(NavController)
-    private readonly alertCtrl = inject(AlertController)
     readonly configService = inject(ConfigService)
-    readonly platform = inject(Platform)
     private readonly translate = inject(TranslateService)
-    readonly initService = inject(InitService)
+    private readonly dialog = inject(MatDialog)
+    private readonly overlayNavigation = inject(OverlayNavigationService)
+    private readonly snackBar = inject(MatSnackBar)
 
     readonly summary = signal<UploadSummary>({
         Total: 0,
@@ -115,50 +99,45 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     )
     readonly connectionError = signal<string | undefined>(undefined)
     readonly error = signal<UploadError | undefined>(undefined)
-    ngOnInit(): void {
-        if (!this.initService.isLoaded) {
-            // We need to instantiate the map
-            this.navCtrl.back()
-        }
-    }
-
     ngOnDestroy(): void {
         // An acknowledged upload must finish even if the page is backgrounded.
     }
 
-    async presentConfirm(): Promise<void> {
-        const alert = await this.alertCtrl.create({
-            header: this.translate.instant('SEND_DATA.DELETE_CONFIRM_HEADER'),
-            message: this.translate.instant('SEND_DATA.DELETE_CONFIRM_MESSAGE'),
-            buttons: [
-                {
-                    text: this.translate.instant('SHARED.CANCEL'),
-                    role: 'cancel',
-                    handler: () => {},
-                },
-                {
-                    text: this.translate.instant('SHARED.CONFIRM'),
-                    handler: () => {
-                        void this.cancelAllFeatures()
-                    },
-                },
-            ],
-        })
-        await alert.present()
+    back(): void {
+        if (this.canCloseOverlay()) void this.overlayNavigation.close()
     }
 
-    async displayError(error: string): Promise<void> {
-        const alert = await this.alertCtrl.create({
-            message: error,
-            buttons: [
-                {
-                    text: this.translate.instant('SHARED.CLOSE'),
-                    role: 'cancel',
-                    handler: () => {},
-                },
-            ],
+    canCloseOverlay(): boolean {
+        return !this.isPushing()
+    }
+
+    presentConfirm(): void {
+        const data: ConfirmDialogData = {
+            title: this.translate.instant('SEND_DATA.DELETE_CONFIRM_HEADER'),
+            message: this.translate.instant('SEND_DATA.DELETE_CONFIRM_MESSAGE'),
+            cancelLabel: this.translate.instant('SHARED.CANCEL'),
+            confirmLabel: this.translate.instant('SHARED.CONFIRM'),
+            destructive: true,
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
+            })
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) {
+                    void this.cancelAllFeatures()
+                }
+            })
+    }
+
+    displayError(error: string): void {
+        this.snackBar.open(error, this.translate.instant('SHARED.CLOSE'), {
+            duration: 8000,
+            panelClass: 'osmgo-error-snackbar',
         })
-        await alert.present()
     }
 
     getSummary(): UploadSummary {
@@ -431,7 +410,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                                     timer(1000)
                                         .pipe(take(1))
                                         .subscribe(() => {
-                                            this.navCtrl.back()
+                                            this.back()
                                         })
                                 } catch (error) {
                                     this.stopPushingWithError(error)
@@ -504,7 +483,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
                     this.dataService.getGeojsonChanged()
                 )
                 this.mapService.setIsProcessing(false)
-                this.navCtrl.pop()
+                this.back()
             })
     }
 
@@ -516,7 +495,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
             this.mapService.map.setZoom(18.5)
         }
         this.mapService.map.setCenter(geometry.coordinates as [number, number])
-        this.navCtrl.pop()
+        this.back()
     }
 
     ngAfterViewInit(): void {

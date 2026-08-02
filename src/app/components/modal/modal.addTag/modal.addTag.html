@@ -1,59 +1,82 @@
-<ion-header>
-    <div class="searchContainer">
-        <ion-input
-            [placeholder]="translate.instant('MODAL_SELECTED_ITEM.ADD_TAG_PLACEHOLDER')"
-            [value]="searchFilter()"
-            (ionInput)="onSearchInput($event)"
-        ></ion-input>
-    </div>
-</ion-header>
+<main class="add-tag-dialog">
+    <header>
+        <div>
+            <mat-icon fontSet="material-symbols-rounded">add_circle</mat-icon>
+            <h2>{{ 'MODAL_SELECTED_ITEM.ADD_A_TAG' | translate }}</h2>
+        </div>
+        <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="'SHARED.CLOSE' | translate"
+            (click)="dismiss()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
+        </button>
+    </header>
 
-<ion-content>
-    @if (searchFilter().length == 0) {
-    <ion-item-group>
-        @for (field of moreFields() | filterByList:usedList(); track field) {
-        <ion-item>
-            <ion-label (click)="select(field)">
-                <h3>{{ tagsService.presets()[field].lbl[language] }}</h3>
-                <p>{{ field | toOsmTag }}</p>
-            </ion-label>
-        </ion-item>
-        }
-    </ion-item-group>
-    } @if (searchFilter().length > 0) {
-    <ion-item-group>
-        @if (!usedList().includes(nameToOsmKey(searchFilter())) &&
-        nameToOsmKey(searchFilter()).length != 0) {
-        <ion-item>
-            <ion-label (click)="select(searchFilter())">
+    <div class="add-tag-search">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-icon matPrefix fontSet="material-symbols-rounded"
+                >search</mat-icon
+            >
+            <input
+                #searchInput
+                matInput
+                type="search"
+                [placeholder]="'MODAL_SELECTED_ITEM.ADD_TAG_PLACEHOLDER' | translate"
+                [value]="searchFilter()"
+                (input)="onSearchInput(searchInput.value)"
+            />
+        </mat-form-field>
+    </div>
+
+    <div class="add-tag-list">
+        @if (searchFilter().length === 0) { @for (field of moreFields() |
+        filterByList: usedList(); track field) {
+        <button class="tag-option" type="button" (click)="select(field)">
+            <span>
+                <strong
+                    >{{ tagsService.presets()[field].lbl[language] }}</strong
+                >
+                <small>{{ field | toOsmTag }}</small>
+            </span>
+            <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+        </button>
+        } } @else { @if (!usedList().includes(nameToOsmKey(searchFilter())) &&
+        nameToOsmKey(searchFilter()).length !== 0) {
+        <button
+            class="tag-option tag-option--custom"
+            type="button"
+            (click)="select(searchFilter())"
+        >
+            <span>
                 @if (tagsService.presets()[nameToOsmKey(searchFilter())]) {
-                <h3>
-                    {{
+                <strong
+                    >{{
                     tagsService.presets()[nameToOsmKey(searchFilter())].lbl[language]
-                    }}
-                </h3>
+                    }}</strong
+                >
                 }
-                <p>{{ searchFilter() | toOsmTag }}</p>
-            </ion-label>
-        </ion-item>
-        } @for (preset of presets | filterPresetsByList:usedList() |
-        removeBrands | searchFor:searchFilter():language; track preset) {
-        <ion-item>
-            <ion-label (click)="select(preset._id)">
-                <h3>{{ preset.lbl[language] }}</h3>
-                <p>{{ preset._id | toOsmTag}}</p>
-            </ion-label>
-        </ion-item>
-        }
-    </ion-item-group>
-    }
-</ion-content>
-
-<ion-footer>
-    <div class="actions">
-        <ion-button tappable (click)="dismiss()" fill="clear">
-            <ion-icon name="close" slot="start"></ion-icon>
-            {{ 'SHARED.CANCEL' | translate }}
-        </ion-button>
+                <small>{{ searchFilter() | toOsmTag }}</small>
+            </span>
+            <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+        </button>
+        } @for ( preset of presets | filterPresetsByList: usedList() |
+        removeBrands | searchFor: searchFilter() : language; track preset._id )
+        {
+        <button class="tag-option" type="button" (click)="select(preset._id)">
+            <span>
+                <strong>{{ preset.lbl[language] }}</strong>
+                <small>{{ preset._id | toOsmTag }}</small>
+            </span>
+            <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+        </button>
+        } }
     </div>
-</ion-footer>
+
+    <footer>
+        <button mat-button type="button" (click)="dismiss()">
+            {{ 'SHARED.CANCEL' | translate }}
+        </button>
+    </footer>
+</main>

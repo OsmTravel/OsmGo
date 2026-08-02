@@ -1,32 +1,80 @@
-$tabHeight: 0;
-$searchSelectHeight: 65px;
-
-#searchSelect {
-    position: absolute;
-    top: $tabHeight;
-    height: $searchSelectHeight;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+:host {
+    display: block;
+    height: 100%;
+    background: var(--osmgo-surface-muted);
 }
 
-#searchDiv {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+.tag-dialog {
+    display: grid;
+    height: 100dvh;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    background: var(--osmgo-surface-muted);
 }
 
-.listTag {
-    position: absolute;
-    top: $searchSelectHeight + $tabHeight;
-    bottom: 50px;
-    width: 100%;
-    overflow-y: scroll;
+.tag-dialog__search {
+    padding: 14px 12px 8px;
+    background: var(--osmgo-surface);
+
+    mat-form-field {
+        width: 100%;
+    }
 }
 
-#footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
+.tag-dialog__list {
+    display: grid;
+    align-content: start;
+    gap: 8px;
+    overflow-y: auto;
+    padding: 10px 12px 20px;
+    overscroll-behavior: contain;
+}
+
+.tag-dialog__empty {
+    display: grid;
+    min-height: 240px;
+    place-items: center;
+    align-content: center;
+    color: var(--osmgo-ink-muted);
+    text-align: center;
+
+    mat-icon {
+        width: 44px;
+        height: 44px;
+        color: var(--osmgo-map-blue);
+        font-size: 44px;
+    }
+
+    p {
+        max-width: 320px;
+        margin: 12px 0 0;
+    }
+}
+
+.tag-dialog__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--osmgo-divider);
+    background: var(--osmgo-surface);
+}
+
+.tag-dialog__footer--multiple {
+    overflow-x: auto;
+
+    button {
+        flex: 0 0 auto;
+    }
+}
+
+.danger-action {
+    color: var(--osmgo-error);
+}
+
+@media (min-width: 768px) {
+    .tag-dialog__search,
+    .tag-dialog__list,
+    .tag-dialog__footer {
+        padding-inline: max(20px, calc((100vw - 860px) / 2));
+    }
 }

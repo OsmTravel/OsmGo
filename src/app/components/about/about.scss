@@ -1,2 +1,61 @@
-page-about {
+:host {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    overflow: auto;
+    background: var(--osmgo-surface-muted);
+}
+
+.about-screen {
+    min-height: 100%;
+}
+
+.about-content {
+    width: min(100%, 720px);
+    margin: 0 auto;
+    padding: 20px 16px calc(32px + env(safe-area-inset-bottom));
+}
+
+.brand-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+    padding: 22px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 24px;
+    background: var(--osmgo-surface);
+
+    img {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 720;
+    }
+
+    p {
+        margin: 2px 0 0;
+        color: var(--osmgo-ink-muted);
+    }
+}
+
+.about-list {
+    overflow: hidden;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 20px;
+    background: var(--osmgo-surface);
+
+    mat-list-item,
+    a[mat-list-item] {
+        min-height: 70px;
+    }
+
+    mat-icon[matListItemIcon] {
+        color: var(--osmgo-map-blue);
+    }
 }

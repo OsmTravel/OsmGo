@@ -1,12 +1,8 @@
 import { Component, inject, input } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
+import { MatIconModule } from '@angular/material/icon'
 import { IconComponent } from '@components/icon/icon.component'
-import {
-    IonHeader,
-    IonIcon,
-    IonTitle,
-    IonToolbar,
-    ModalController,
-} from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import type { JsonSprites, OsmGoFeature } from '@osmgo/type'
 
@@ -20,20 +16,21 @@ type DialogFeature = OsmGoFeature & {
     styleUrls: ['./dialog-multi-features.component.scss'],
     imports: [
         IconComponent,
-        IonHeader,
-        IonIcon,
-        IonTitle,
-        IonToolbar,
+        MatButtonModule,
+        MatDialogModule,
+        MatIconModule,
         TranslateModule,
     ],
 })
 export class DialogMultiFeaturesComponent {
-    readonly modalCtrl = inject(ModalController)
+    private readonly dialogRef = inject(
+        MatDialogRef<DialogMultiFeaturesComponent>
+    )
 
     readonly features = input.required<DialogFeature[]>()
     readonly jsonSprites = input.required<JsonSprites>()
 
     selectFeature(feature: DialogFeature) {
-        this.modalCtrl.dismiss(feature)
+        this.dialogRef.close(feature)
     }
 }

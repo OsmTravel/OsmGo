@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http'
 import { DOCUMENT, inject, NgZone, Service, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
-import { AlertController } from '@ionic/angular/standalone'
 import { TranslateService } from '@ngx-translate/core'
 import {
     type CompassHeading,
@@ -71,7 +70,6 @@ export class MapService {
     readonly locationService = inject(LocationService)
     readonly configService = inject(ConfigService)
     private readonly zone = inject(NgZone)
-    private readonly alertCtrl = inject(AlertController)
     private readonly http = inject(HttpClient)
     private readonly translate = inject(TranslateService)
     private readonly router = inject(Router)
@@ -216,6 +214,8 @@ export class MapService {
         this.changedMarkerRedrawSubject.asObservable()
     private readonly featureChoiceSubject = new Subject<MapGeoJSONFeature[]>()
     readonly featureChoiceRequested$ = this.featureChoiceSubject.asObservable()
+    private readonly mapBackgroundClickSubject = new Subject<void>()
+    readonly mapBackgroundClick$ = this.mapBackgroundClickSubject.asObservable()
     markersLayer: OsmGoMarker[] = []
 
     attributionControl!: AttributionControl
@@ -1212,6 +1212,7 @@ export class MapService {
                 layers: this.configService.selecableLayers,
             })
             if (!features.length) {
+                this.mapBackgroundClickSubject.next()
                 return
             }
 

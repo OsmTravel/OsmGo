@@ -1,0 +1,61 @@
+:host {
+    display: block;
+}
+.edit-field {
+    padding: 12px 14px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 16px;
+    background: var(--osmgo-surface);
+}
+header {
+    display: flex;
+    min-height: 28px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+header strong {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--osmgo-ink-muted);
+    font-size: 13px;
+    font-weight: 650;
+}
+header strong mat-icon {
+    width: 17px;
+    height: 17px;
+    font-size: 17px;
+}
+header a {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    color: var(--osmgo-blue);
+}
+.field-control {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px;
+    align-items: center;
+    gap: 4px;
+}
+.field-control mat-form-field {
+    width: 100%;
+}
+.list-value {
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
+    border: 1px solid var(--osmgo-outline-soft);
+    border-radius: 13px;
+    color: var(--osmgo-ink-strong);
+    text-align: left;
+    background: var(--osmgo-surface);
+}
+.undefined-value {
+    color: var(--osmgo-ink-muted);
+    font-style: italic;
+}

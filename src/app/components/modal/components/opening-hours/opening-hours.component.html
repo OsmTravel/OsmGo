@@ -1,128 +1,123 @@
 @if (intervals && !displayCode() && !isError && !isTooComplex) {
-    <div>
+    <section class="opening-hours">
         @if (editMode()) {
-            <ion-button
+            <button
+                mat-stroked-button
+                type="button"
+                class="add-hours"
                 (click)="openModalAddOpeningHours(null)"
-                size="small"
-                expand="block"
             >
-                <ion-icon name="add" slot="start"></ion-icon>
+                <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
                 {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
-            </ion-button>
+            </button>
         }
         @if (openingHours()) {
-            <div>
-                <!-- Only 1 member in this iteration -->
-                @for (
-                    dataRange of intervals;
-                    track dataRange;
-                    let indexDataRange = $index
-                ) {
-                    <div>
-                        <table>
-                            @for (day of days; track day) {
-                                <tr>
-                                    <td>{{ day.text }}</td>
-                                    <td>
-                                        @if (
-                                            findIntervalsByDay(
-                                                dataRange._typical._intervals,
-                                                day.index
-                                            );
-                                            as _intervals
-                                        ) {
-                                            <div>
-                                                @for (
-                                                    interval of _intervals;
-                                                    track interval;
-                                                    let indexInterval = $index
-                                                ) {
-                                                    <div
-                                                        style="
-                                                            margin-bottom: 0.5em;
-                                                        "
+            @for (dataRange of intervals; track dataRange) {
+                <div class="schedule" role="table">
+                    @for (day of days; track day.index) {
+                        <div class="schedule-row" role="row">
+                            <strong role="rowheader">{{ day.text }}</strong>
+                            @if (
+                                findIntervalsByDay(
+                                    dataRange._typical._intervals,
+                                    day.index
+                                );
+                                as dayIntervals
+                            ) {
+                                <div class="day-intervals" role="cell">
+                                    @for (
+                                        interval of dayIntervals;
+                                        track interval
+                                    ) {
+                                        <div class="interval">
+                                            <span>
+                                                {{
+                                                    interval._start
+                                                        | minutesToHoursMinutes
+                                                }}–{{
+                                                    interval._end
+                                                        | minutesToHoursMinutes
+                                                }}
+                                            </span>
+                                            @if (editMode()) {
+                                                <button
+                                                    mat-icon-button
+                                                    type="button"
+                                                    class="delete-interval"
+                                                    [attr.aria-label]="
+                                                        'OPENINGHOURS.DELETE_INTERVAL'
+                                                            | translate
+                                                    "
+                                                    (click)="
+                                                        deleteCurrentInterval(
+                                                            dataRange,
+                                                            interval
+                                                        )
+                                                    "
+                                                >
+                                                    <mat-icon
+                                                        fontSet="material-symbols-rounded"
                                                     >
-                                                        {{
-                                                            interval._start
-                                                                | minutesToHoursMinutes
-                                                        }}
-                                                        -
-                                                        {{
-                                                            interval._end
-                                                                | minutesToHoursMinutes
-                                                        }}
-                                                        @if (editMode()) {
-                                                            <ion-icon
-                                                                (click)="
-                                                                    deleteCurrentInterval(
-                                                                        dataRange,
-                                                                        interval
-                                                                    )
-                                                                "
-                                                                name="close-outline"
-                                                                style="
-                                                                    font-size: 1.5em;
-                                                                    vertical-align: bottom;
-                                                                    color: red;
-                                                                    cursor: pointer;
-                                                                "
-                                                            ></ion-icon>
-                                                        }
-                                                    </div>
-                                                }
-                                                @if (_intervals.length == 0) {
-                                                    <div>
-                                                        {{
-                                                            'OPENINGHOURS.CLOSED'
-                                                                | translate
-                                                        }}
-                                                    </div>
-                                                }
-                                            </div>
-                                        }
-                                    </td>
-                                </tr>
+                                                        close
+                                                    </mat-icon>
+                                                </button>
+                                            }
+                                        </div>
+                                    }
+                                    @if (dayIntervals.length === 0) {
+                                        <span class="closed">
+                                            {{
+                                                'OPENINGHOURS.CLOSED'
+                                                    | translate
+                                            }}
+                                        </span>
+                                    }
+                                </div>
                             }
-                        </table>
-                    </div>
-                }
-            </div>
+                        </div>
+                    }
+                </div>
+            }
         }
         @if (!openingHours()) {
-            <div>
+            <div class="unknown-hours">
                 {{ 'OPENINGHOURS.UNKNOW' | translate }}
             </div>
         }
-    </div>
+    </section>
 } @else {
     @if (editMode()) {
-        <div class="wrapperEdit2cols">
-            <div class="contentEdit2cols">
-                <ion-item style="padding-left: 0px">
-                    <ion-input
-                        type="text"
-                        debounce="200"
-                        [ngModel]="openingHours()"
-                        (ngModelChange)="openingHours.set($event)"
-                        [placeholder]="'opening_hours'"
-                        (ionChange)="valueChange($event)"
-                    ></ion-input>
-                </ion-item>
-            </div>
-            <div class="buttonEdit2cols">
-                <ion-icon
-                    (click)="openingHours.set('')"
-                    name="close"
-                    style="width: 2em; height: 2em"
-                ></ion-icon>
-            </div>
+        <div class="raw-editor">
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                <mat-label>opening_hours</mat-label>
+                <input
+                    #rawInput
+                    matInput
+                    type="text"
+                    [value]="openingHours()"
+                    (input)="valueChange(rawInput.value)"
+                />
+                @if (openingHours()) {
+                    <button
+                        mat-icon-button
+                        matSuffix
+                        type="button"
+                        [attr.aria-label]="'SHARED.DELETE' | translate"
+                        (click)="valueChange('')"
+                    >
+                        <mat-icon fontSet="material-symbols-rounded"
+                            >close</mat-icon
+                        >
+                    </button>
+                }
+            </mat-form-field>
         </div>
     }
     @if (!editMode()) {
-        <div>
-            {{ openingHours() }}
+        <div class="raw-value">
+            <code>{{ openingHours() }}</code>
             @if (isTooComplex) {
-                <div class="tooComplex">
+                <div class="too-complex">
                     {{ 'OPENINGHOURS.TOO_COMPLEX_FOR_OSMGO' | translate }}
                 </div>
             }

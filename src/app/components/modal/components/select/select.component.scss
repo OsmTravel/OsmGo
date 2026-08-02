@@ -1,0 +1,32 @@
+:host {
+    display: block;
+}
+.select-field {
+    padding: 12px 14px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 16px;
+    background: var(--osmgo-surface);
+}
+.select-field > strong {
+    display: flex;
+    min-height: 28px;
+    align-items: center;
+    gap: 5px;
+    color: var(--osmgo-ink-muted);
+    font-size: 13px;
+    font-weight: 650;
+}
+.select-field > strong mat-icon {
+    width: 17px;
+    height: 17px;
+    font-size: 17px;
+}
+.select-control {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px;
+    align-items: center;
+    gap: 4px;
+}
+mat-form-field {
+    width: 100%;
+}

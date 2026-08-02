@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
-import { provideIonicAngular } from '@ionic/angular/standalone'
+import { MatDialogRef } from '@angular/material/dialog'
 import { TranslateModule } from '@ngx-translate/core'
 import { DialogMultiFeaturesComponent } from './dialog-multi-features.component'
 
@@ -10,7 +10,7 @@ describe('DialogMultiFeaturesComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [DialogMultiFeaturesComponent, TranslateModule.forRoot()],
-            providers: [provideIonicAngular()],
+            providers: [{ provide: MatDialogRef, useValue: {} }],
         }).compileComponents()
     })
 

@@ -1,20 +1,11 @@
 import { Component, inject, signal } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogRef } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
-import {
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonFooter,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonList,
-    IonSearchbar,
-    IonTitle,
-    IonToolbar,
-    ModalController,
-} from '@ionic/angular/standalone'
-import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
 import { FilterByTagsContentPipe } from '@pipes/filterByTagsContent.pipe'
@@ -29,17 +20,11 @@ import { TagsService } from '@services/tags.service'
     imports: [
         FilterByTagsContentPipe,
         FiltersTagsByIdsPipe,
-        IonButton,
-        IonButtons,
-        IonContent,
-        IonFooter,
-        IonHeader,
-        IonIcon,
-        IonItem,
-        IonList,
-        IonSearchbar,
-        IonTitle,
-        IonToolbar,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        ScreenHeaderComponent,
         TagListElementComponent,
         TranslateModule,
     ],
@@ -47,13 +32,17 @@ import { TagsService } from '@services/tags.service'
 export class HiddenTagsComponent {
     readonly configService = inject(ConfigService)
     readonly tagsService = inject(TagsService)
-    readonly modalCtrl = inject(ModalController)
+    private readonly dialogRef = inject(MatDialogRef<HiddenTagsComponent>)
 
     readonly searchText = signal('')
     refreshFilterMapAfterClose = false
 
-    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
-        this.searchText.set(event.detail.value ?? '')
+    onSearchInput(value: string): void {
+        this.searchText.set(value)
+    }
+
+    close(): void {
+        this.dialogRef.close(this.refreshFilterMapAfterClose)
     }
 
     removeHiddenTag(tag: TagConfig) {

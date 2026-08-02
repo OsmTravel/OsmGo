@@ -1,334 +1,320 @@
-<div class="wrapper">
-    <ion-fab class="toogleCodeButton">
-        <ion-fab-button
-            size="small"
+<main class="object-editor" [attr.data-mode]="typeFiche">
+    @switch (typeFiche) { @case ('Read') {
+    <mat-toolbar class="editor-toolbar">
+        <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="'SHARED.CLOSE' | translate"
+            (click)="dismiss()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">arrow_back</mat-icon>
+        </button>
+        <h1>
+            {{ findElement(tags, { key: 'name' }).value !== '' ?
+            findElement(tags, { key: 'name' }).value :
+            ('MODAL_SELECTED_ITEM.NO_NAME' | translate) }}
+        </h1>
+        <button
+            mat-icon-button
+            type="button"
+            [class.is-active]="displayCode"
+            [matTooltip]="'A11Y.CODE' | translate"
             [attr.aria-label]="'A11Y.CODE' | translate"
             (click)="toogleCode()"
         >
-            @if (displayCode) {
-            <ion-icon aria-hidden="true" name="code-working"> </ion-icon>
-            } @if (!displayCode) {
-            <ion-icon aria-hidden="true" name="code"> </ion-icon>
-            }
-        </ion-fab-button>
-    </ion-fab>
+            <mat-icon fontSet="material-symbols-rounded">code</mat-icon>
+        </button>
+    </mat-toolbar>
 
-    @switch (typeFiche) { @case ('Read') {
-    <div class="modal-content">
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>
-                    {{(findElement(tags,{key:'name'}).value !== '') ?
-                    findElement(tags,{key:'name'}).value :
-                    ('MODAL_SELECTED_ITEM.NO_NAME' | translate) }}
-                </ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <div class="content">
-            @if (feature.properties.meta) {
-            <meta-card
-                [feature]="feature"
+    <div class="editor-content">
+        @if (feature.properties.meta) {
+        <meta-card
+            [feature]="feature"
+            [displayCode]="displayCode"
+            [languageUi]="configService.getUiLanguage()"
+            [lastSurvey]="lastSurvey"
+        ></meta-card>
+        }
+        <app-alert
+            [tagConfig]="tagConfig"
+            [language]="configService.config().languageTags"
+            [countryCode]="configService.config().countryTags"
+            (fixDeprecated)="fixDeprecated($event)"
+        ></app-alert>
+        <primary-key
+            [displayCode]="displayCode"
+            [language]="configService.config().languageTags"
+            [tagConfig]="tagConfig"
+            [jsonSprites]="tagsService.jsonSprites()"
+        ></primary-key>
+
+        @if (shouldShowSurveyCard()) {
+        <survey-card
+            [feature]="feature"
+            (yes)="handleSurveyYes()"
+            (no)="handleSurveyNo()"
+        ></survey-card>
+        }
+
+        <section class="object-fields" aria-label="Informations de l’objet">
+            @for ( tag of tags | filterExcludeKeys : tagConfig :
+            configService.config().countryTags : tagsService.primaryKeys() :
+            tagsService.presets() | orderByPreset: tagConfig; track tag.key ) {
+            @if (tag.preset && tag.value !== '') {
+            <read-presets
                 [displayCode]="displayCode"
-                [languageUi]="configService.getUiLanguage()"
-                [lastSurvey]="lastSurvey"
-            >
-            </meta-card>
-            }
-            <app-alert
-                [tagConfig]="tagConfig"
-                [language]="this.configService.config().languageTags"
-                [countryCode]="this.configService.config().countryTags"
-                (fixDeprecated)="fixDeprecated($event)"
-            >
-            </app-alert>
-            <!-- Primary tag -->
-            <primary-key
-                [displayCode]="displayCode"
+                [tag]="tag"
+                [preset]="tag.preset"
                 [language]="configService.config().languageTags"
-                [tagConfig]="tagConfig"
-                [jsonSprites]="tagsService.jsonSprites()"
-            >
-            </primary-key>
-            @if (shouldShowSurveyCard()) {
-            <survey-card
-                [feature]="feature"
-                (yes)="handleSurveyYes()"
-                (no)="handleSurveyNo()"
-            ></survey-card>
-            } @for (tag of tags |
-            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys():tagsService.presets()
-            | orderByPreset:tagConfig; track tag.key) {
-            <div>
-                @if (tag.preset && tag.value !== '') {
-                <read-presets
-                    [displayCode]="displayCode"
-                    [tag]="tag"
-                    [preset]="tag.preset"
-                    [language]="this.configService.config().languageTags"
-                    [countryCode]="this.configService.config().countryTags"
-                >
-                </read-presets>
-                } @else { @if (!tag.preset ) {
-                <read-other-tag [tag]="tag"> </read-other-tag>
-                } }
-            </div>
-            }
-        </div>
-        <ion-footer>
-            @if (feature.properties['changeType']) {
-            <div class="modifiedWarning">
-                <ion-icon aria-hidden="true" name="warning"></ion-icon>
-                <span
-                    >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate
-                    }}</span
-                >
-                <div class="spacer"></div>
-                <ion-button
-                    (click)="cancelChange()"
-                    color="danger"
-                    [disabled]="mapService.isProcessing()"
-                >
-                    <ion-icon
-                        aria-hidden="true"
-                        name="reload"
-                        slot="start"
-                    ></ion-icon>
-                    {{ 'SHARED.CLEAR' | translate }}
-                </ion-button>
-            </div>
-            }
-            <div class="actions">
-                <div class="left section">
-                    <ion-button (click)="dismiss()" fill="clear">
-                        <ion-icon
-                            aria-hidden="true"
-                            name="close"
-                            slot="start"
-                        ></ion-icon>
-                        {{ 'SHARED.CLOSE' | translate }}
-                    </ion-button>
-                </div>
-                <div class="right section">
-                    <ion-button
-                        data-testid="edit-poi"
-                        (click)="updateMode()"
-                        [disabled]="mapService.isProcessing()"
-                    >
-                        <ion-icon
-                            aria-hidden="true"
-                            name="pencil"
-                            slot="start"
-                        ></ion-icon>
-                        {{ 'SHARED.EDIT' | translate }}
-                    </ion-button>
-                </div>
-            </div>
-        </ion-footer>
+                [countryCode]="configService.config().countryTags"
+            ></read-presets>
+            } @else if (!tag.preset) {
+            <read-other-tag [tag]="tag"></read-other-tag>
+            } }
+        </section>
     </div>
+
+    <footer class="editor-footer">
+        @if (feature.properties.changeType) {
+        <div class="modified-warning">
+            <mat-icon fontSet="material-symbols-rounded"
+                >pending_actions</mat-icon
+            >
+            <span
+                >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate }}</span
+            >
+            <button
+                mat-button
+                type="button"
+                [disabled]="mapService.isProcessing()"
+                (click)="cancelChange()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">undo</mat-icon>
+                {{ 'SHARED.CLEAR' | translate }}
+            </button>
+        </div>
+        }
+        <div class="footer-actions footer-actions--read">
+            <button mat-button type="button" (click)="dismiss()">
+                {{ 'SHARED.CLOSE' | translate }}
+            </button>
+            <button
+                mat-flat-button
+                data-testid="edit-poi"
+                type="button"
+                [disabled]="mapService.isProcessing()"
+                (click)="updateMode()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">edit</mat-icon>
+                {{ 'SHARED.EDIT' | translate }}
+            </button>
+        </div>
+    </footer>
     } @case ('Edit') {
-    <div class="modal-content">
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>
-                    <ion-input
-                        type="text"
-                        clearInput="true"
-                        [placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate"
-                        [(ngModel)]="findElement(tags,{key : 'name'}).value"
-                        autocorrect="off"
-                        autocapitalize="off"
-                    ></ion-input>
-                </ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <div class="content">
-            <div class="top-actions">
-                <ion-fab>
-                    <ion-fab-button
-                        size="small"
-                        [attr.aria-label]="'A11Y.COPY_FIELDS' | translate"
-                        (click)="saveFields(tagId, tags)"
-                    >
-                        <ion-icon
-                            aria-hidden="true"
-                            src="./assets/fa/copy-solid.svg"
-                        ></ion-icon>
-                    </ion-fab-button>
-                </ion-fab>
-                @if (savedFields) {
-                <ion-fab style="margin-left: 45px">
-                    <ion-fab-button
-                        size="small"
-                        [attr.aria-label]="'A11Y.PASTE_FIELDS' | translate"
-                        (click)="restoreFields(tagId, tags)"
-                    >
-                        <ion-icon
-                            aria-hidden="true"
-                            src="./assets/fa/paste-solid.svg"
-                        ></ion-icon>
-                    </ion-fab-button>
-                </ion-fab>
-                }
-            </div>
-            <!-- Alert -->
-            <app-alert
-                [tagConfig]="tagConfig"
-                [language]="this.configService.config().languageTags"
-                [countryCode]="this.configService.config().countryTags"
-                (fixDeprecated)="fixDeprecated($event)"
+    <mat-toolbar class="editor-toolbar editor-toolbar--edit">
+        <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="'SHARED.CLOSE' | translate"
+            (click)="dismiss()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">arrow_back</mat-icon>
+        </button>
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <input
+                matInput
+                type="text"
+                [placeholder]="'MODAL_SELECTED_ITEM.PLACEHOLDER_NAME' | translate"
+                [(ngModel)]="findElement(tags, { key: 'name' }).value"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+            />
+        </mat-form-field>
+        <button
+            mat-icon-button
+            type="button"
+            [class.is-active]="displayCode"
+            [matTooltip]="'A11Y.CODE' | translate"
+            [attr.aria-label]="'A11Y.CODE' | translate"
+            (click)="toogleCode()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">code</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <div class="editor-content editor-content--edit">
+        <div class="field-memory-actions">
+            <button
+                mat-stroked-button
+                type="button"
+                [attr.aria-label]="'A11Y.COPY_FIELDS' | translate"
+                (click)="saveFields(tagId, tags)"
             >
-            </app-alert>
-            <!-- Primary tag -->
-            <primary-key
-                [displayCode]="displayCode"
-                [language]="configService.config().languageTags"
-                [tagConfig]="tagConfig"
-                [jsonSprites]="tagsService.jsonSprites()"
-                [isEditMode]="true"
-                [isBookmarked]="tagConfig | isBookmarked:tagsService.bookmarksIds()"
-                (openPrimaryTagModal)="openPrimaryTagModal()"
-                (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
-            >
-            </primary-key>
-            <!-- Preset fields and remaining tags -->
-            @for (tag of tags |
-            filterExcludeKeys:tagConfig:configService.config().countryTags:tagsService.primaryKeys():tagsService.presets()
-            | orderByPreset:tagConfig; track tag.key) {
-            <div>
-                @if ((tag.preset || tagsService.presets()[tag.key.replace(':',
-                '/')]) ) {
-                <edit-presets
-                    [preset]="tag.preset ? tag.preset : tagsService.presets()[tag.key.replace(':', '/')]"
-                    [displayCode]="displayCode"
-                    [tag]="tag"
-                    [language]="this.configService.config().languageTags"
-                    (openPrimaryListModal)="openModalList(tag, (tag.preset ? tag.preset : tagsService.presets()[tag.key.replace(':', '/')]))"
-                    (addTags)="addPresetsTags($event)"
+                <mat-icon fontSet="material-symbols-rounded"
+                    >content_copy</mat-icon
                 >
-                </edit-presets>
-                } @else {
-                <edit-other-tag [tag]="tag" (deleteTag)="deleteTag($event)">
-                </edit-other-tag>
-                }
-            </div>
-            }
-            <!-- Add a tag -->
-            <ion-button
-                tappable
-                color="secondary"
-                [attr.aria-label]="'SHARED.ADD' | translate"
-                (click)="openModalAddTag()"
-                style="margin: 5px 10px 10px"
-                expand="block"
+                {{ 'A11Y.COPY_FIELDS' | translate }}
+            </button>
+            @if (savedFields) {
+            <button
+                mat-stroked-button
+                type="button"
+                [attr.aria-label]="'A11Y.PASTE_FIELDS' | translate"
+                (click)="restoreFields(tagId, tags)"
             >
-                <ion-icon aria-hidden="true" name="add"> </ion-icon>
-            </ion-button>
+                <mat-icon fontSet="material-symbols-rounded"
+                    >content_paste</mat-icon
+                >
+                {{ 'A11Y.PASTE_FIELDS' | translate }}
+            </button>
+            }
         </div>
-        <ion-footer>
-            @if (feature.properties['changeType']) {
-            <div class="modifiedWarning">
-                <ion-icon aria-hidden="true" name="warning"></ion-icon>
-                <span
-                    >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate
-                    }}</span
-                >
-                <div class="spacer"></div>
-                <ion-button
-                    (click)="cancelChange()"
-                    color="danger"
-                    [disabled]="mapService.isProcessing()"
-                >
-                    <ion-icon
-                        aria-hidden="true"
-                        name="reload"
-                        slot="start"
-                    ></ion-icon>
-                    {{ 'SHARED.CLEAR' | translate }}
-                </ion-button>
-            </div>
-            }
-            <div class="actions">
-                <div class="left section">
-                    <ion-button tappable (click)="dismiss()" fill="clear">
-                        <ion-icon
-                            aria-hidden="true"
-                            name="close"
-                            slot="start"
-                        ></ion-icon>
-                        {{ 'SHARED.CLOSE' | translate }}
-                    </ion-button>
-                </div>
-                <div class="middle section">
-                    @if (feature.properties.type === 'node') {
-                    <ion-button
-                        data-testid="move-poi"
-                        [attr.aria-label]="'MAIN.BUTTONS.CONFIRM_MOVE' | translate"
-                        tappable
-                        [disabled]="feature.properties.usedByWays || mapService.isProcessing()"
-                        (click)="moveOsmElement()"
-                    >
-                        <ion-icon aria-hidden="true" name="move"></ion-icon>
-                    </ion-button>
-                    } @if (feature.properties.type === 'node' && mode ===
-                    'Update') {
-                    <ion-button
-                        tappable
-                        color="danger"
-                        [attr.aria-label]="'SHARED.DELETE' | translate"
-                        [disabled]="mapService.isProcessing()"
-                        (click)="presentConfirm()"
-                    >
-                        <ion-icon aria-hidden="true" name="trash"></ion-icon>
-                    </ion-button>
-                    }
-                </div>
-                <div class="right section">
-                    @if (mode === 'Update') {
-                    <ion-button
-                        data-testid="save-poi"
-                        tappable
-                        color="secondary"
-                        [disabled]="mapService.isProcessing()"
-                        (click)="updateOsmElement(tagConfig)"
-                    >
-                        <ion-icon
-                            aria-hidden="true"
-                            name="checkmark"
-                            slot="start"
-                        ></ion-icon>
-                        {{ 'SHARED.SAVE' | translate }}
-                    </ion-button>
-                    } @if (mode === 'Create') {
-                    <ion-button
-                        data-testid="create-poi"
-                        tappable
-                        color="secondary"
-                        [disabled]="mapService.isProcessing()"
-                        (click)="createOsmElement(tagConfig)"
-                    >
-                        <ion-icon
-                            aria-hidden="true"
-                            name="checkmark"
-                            slot="start"
-                        ></ion-icon>
-                        {{ 'SHARED.CREATE' | translate }}
-                    </ion-button>
-                    }
-                </div>
-            </div>
-        </ion-footer>
+
+        <app-alert
+            [tagConfig]="tagConfig"
+            [language]="configService.config().languageTags"
+            [countryCode]="configService.config().countryTags"
+            (fixDeprecated)="fixDeprecated($event)"
+        ></app-alert>
+        <primary-key
+            [displayCode]="displayCode"
+            [language]="configService.config().languageTags"
+            [tagConfig]="tagConfig"
+            [jsonSprites]="tagsService.jsonSprites()"
+            [isEditMode]="true"
+            [isBookmarked]="tagConfig | isBookmarked: tagsService.bookmarksIds()"
+            (openPrimaryTagModal)="openPrimaryTagModal()"
+            (toggleBookmark)="addOrRemoveBookmark(tagConfig)"
+        ></primary-key>
+
+        <section
+            class="object-fields object-fields--edit"
+            aria-label="Champs de l’objet"
+        >
+            @for ( tag of tags | filterExcludeKeys : tagConfig :
+            configService.config().countryTags : tagsService.primaryKeys() :
+            tagsService.presets() | orderByPreset: tagConfig; track tag.key ) {
+            @if (tag.preset || tagsService.presets()[tag.key.replace(':', '/')])
+            {
+            <edit-presets
+                [preset]="tag.preset || tagsService.presets()[tag.key.replace(':', '/')]"
+                [displayCode]="displayCode"
+                [tag]="tag"
+                [language]="configService.config().languageTags"
+                (openPrimaryListModal)="openModalList(tag, tag.preset || tagsService.presets()[tag.key.replace(':', '/')])"
+                (addTags)="addPresetsTags($event)"
+            ></edit-presets>
+            } @else {
+            <edit-other-tag
+                [tag]="tag"
+                (deleteTag)="deleteTag($event)"
+            ></edit-other-tag>
+            } }
+        </section>
+
+        <button
+            class="add-field-button"
+            mat-stroked-button
+            type="button"
+            (click)="openModalAddTag()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+            {{ 'SHARED.ADD' | translate }}
+        </button>
     </div>
+
+    <footer class="editor-footer">
+        @if (feature.properties.changeType) {
+        <div class="modified-warning">
+            <mat-icon fontSet="material-symbols-rounded"
+                >pending_actions</mat-icon
+            >
+            <span
+                >{{ 'MODAL_SELECTED_ITEM.WARN_NODE_EDITED' | translate }}</span
+            >
+            <button
+                mat-button
+                type="button"
+                [disabled]="mapService.isProcessing()"
+                (click)="cancelChange()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">undo</mat-icon>
+                {{ 'SHARED.CLEAR' | translate }}
+            </button>
+        </div>
+        }
+
+        <div class="footer-actions footer-actions--edit">
+            <button mat-button type="button" (click)="dismiss()">
+                {{ 'SHARED.CANCEL' | translate }}
+            </button>
+
+            <div class="secondary-actions">
+                @if (feature.properties.type === 'node') {
+                <button
+                    mat-icon-button
+                    data-testid="move-poi"
+                    type="button"
+                    [matTooltip]="'MAIN.BUTTONS.CONFIRM_MOVE' | translate"
+                    [attr.aria-label]="'MAIN.BUTTONS.CONFIRM_MOVE' | translate"
+                    [disabled]="feature.properties.usedByWays || mapService.isProcessing()"
+                    (click)="moveOsmElement()"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >open_with</mat-icon
+                    >
+                </button>
+                } @if (feature.properties.type === 'node' && mode === 'Update')
+                {
+                <button
+                    mat-icon-button
+                    class="delete-action"
+                    type="button"
+                    [matTooltip]="'SHARED.DELETE' | translate"
+                    [attr.aria-label]="'SHARED.DELETE' | translate"
+                    [disabled]="mapService.isProcessing()"
+                    (click)="presentConfirm()"
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >delete</mat-icon
+                    >
+                </button>
+                }
+            </div>
+
+            @if (mode === 'Update') {
+            <button
+                mat-flat-button
+                data-testid="save-poi"
+                type="button"
+                [disabled]="mapService.isProcessing()"
+                (click)="updateOsmElement(tagConfig)"
+            >
+                <mat-icon fontSet="material-symbols-rounded">check</mat-icon>
+                @if (changedFieldCount() === 1) { {{
+                'MODAL_SELECTED_ITEM.SAVE_CHANGE' | translate }} } @else { {{
+                'MODAL_SELECTED_ITEM.SAVE_CHANGES' | translate: { count:
+                changedFieldCount() } }} }
+            </button>
+            } @else if (mode === 'Create') {
+            <button
+                mat-flat-button
+                data-testid="create-poi"
+                type="button"
+                [disabled]="mapService.isProcessing()"
+                (click)="createOsmElement(tagConfig)"
+            >
+                <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+                {{ 'SHARED.CREATE' | translate }}
+            </button>
+            }
+        </div>
+    </footer>
     } @case ('Loading') {
-    <div class="modal-content">
-        <ion-header>
-            <ion-toolbar>
-                <ion-title> Loading... </ion-title>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content>
-            <h1>Loading ...</h1>
-        </ion-content>
-        <ion-footer> </ion-footer>
+    <div class="editor-loading" role="status">
+        <mat-spinner diameter="48"></mat-spinner>
+        <p>{{ 'MODAL_SELECTED_ITEM.LOADING' | translate }}</p>
     </div>
     } }
-</div>
+</main>

@@ -1,6 +1,7 @@
 import { Component, input, output } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 import { IconComponent } from '@components/icon/icon.component'
-import { IonCard, IonCardContent, IonIcon } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import type { JsonSprites, TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
@@ -12,9 +13,8 @@ import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
     imports: [
         DisplayTagsPipe,
         IconComponent,
-        IonCard,
-        IonCardContent,
-        IonIcon,
+        MatButtonModule,
+        MatIconModule,
         TranslateModule,
     ],
 })

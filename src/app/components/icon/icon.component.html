@@ -1,19 +1,42 @@
-<div class="iconWrapper">
-    @if (sprite(); as conf) {
+@if (renderMode() === 'svg') {
+    <div class="vectorIcon" [class.vectorIcon--loaded]="svgIsLoaded()">
+        @if (renderedSprite(); as conf) {
+            <div
+                class="iconWrapper vectorIcon__fallback"
+                [style.width]="conf.width + 'px'"
+                [style.height]="conf.viewportHeight + 'px'"
+            >
+                <div
+                    class="sprite"
+                    [style.width]="conf.width + 'px'"
+                    [style.height]="conf.height + 'px'"
+                    [style.background-position]="
+                        '-' + conf.x + 'px -' + conf.y + 'px'
+                    "
+                ></div>
+            </div>
+        }
+        <img
+            class="svgIcon"
+            [src]="svgPath()"
+            alt=""
+            aria-hidden="true"
+            draggable="false"
+            (load)="onSvgLoad($event)"
+            (error)="onSvgError($event)"
+        />
+    </div>
+} @else if (renderedSprite(); as conf) {
+    <div
+        class="iconWrapper"
+        [style.width]="conf.width + 'px'"
+        [style.height]="conf.viewportHeight + 'px'"
+    >
         <div
-            style="margin-left: auto; margin-right: auto"
+            class="sprite"
             [style.width]="conf.width + 'px'"
             [style.height]="conf.height + 'px'"
             [style.background-position]="'-' + conf.x + 'px -' + conf.y + 'px'"
-            [className]="'spritesX' + devicePixelRatio()"
         ></div>
-    } @else if (fallbackSprite(); as conf) {
-        <div
-            style="margin-left: auto; margin-right: auto"
-            [style.width]="conf.width + 'px'"
-            [style.height]="conf.height + 'px'"
-            [style.background-position]="'-' + conf.x + 'px -' + conf.y + 'px'"
-            [className]="'spritesX' + devicePixelRatio()"
-        ></div>
-    }
-</div>
+    </div>
+}

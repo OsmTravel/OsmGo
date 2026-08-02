@@ -1,14 +1,9 @@
+import { signal } from '@angular/core'
 import { TestBed } from '@angular/core/testing'
+import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { ActivatedRoute, Router } from '@angular/router'
 import { SwUpdate } from '@angular/service-worker'
-import {
-    AlertController,
-    LoadingController,
-    MenuController,
-    ModalController,
-    NavController,
-    ToastController,
-} from '@ionic/angular/standalone'
 import { TranslateService } from '@ngx-translate/core'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
@@ -22,7 +17,6 @@ import { TagsService } from '@services/tags.service'
 import { of, Subject, throwError } from 'rxjs'
 import type { Mock } from 'vitest'
 
-import { ModalsContentPage } from '../modal/modal'
 import { MainPage } from './main'
 
 interface MainPageDependencies {
@@ -36,6 +30,7 @@ interface MainPageDependencies {
 
 interface MainPageMapServiceStub extends Record<string, unknown> {
     featureChoiceRequested$: Subject<unknown>
+    mapBackgroundClick$: Subject<void>
     showModal$: Subject<unknown>
     setCenterInUrl: Mock
 }
@@ -50,6 +45,9 @@ const createPage = ({
 }: MainPageDependencies = {}) => {
     const resolvedMapService: MainPageMapServiceStub = {
         featureChoiceRequested$: new Subject(),
+        mapBackgroundClick$: new Subject(),
+        markerMoveMoving: signal(false),
+        markerMoving: signal(false),
         showModal$: new Subject(),
         setCenterInUrl: vi.fn(),
         ...mapService,
@@ -65,14 +63,12 @@ const createPage = ({
         freezeMapRenderer: false,
         ...configService,
     }
-    const router = { events: new Subject() }
+    const router = { events: new Subject(), navigate: vi.fn() }
     TestBed.resetTestingModule()
     TestBed.configureTestingModule({
         providers: [
-            { provide: NavController, useValue: {} },
-            { provide: ModalController, useValue: modalCtrl },
-            { provide: ToastController, useValue: {} },
-            { provide: MenuController, useValue: {} },
+            { provide: MatDialog, useValue: modalCtrl },
+            { provide: MatSnackBar, useValue: {} },
             { provide: OsmApiService, useValue: osmApi },
             { provide: TagsService, useValue: {} },
             { provide: MapService, useValue: resolvedMapService },
@@ -80,10 +76,8 @@ const createPage = ({
             { provide: LocationService, useValue: {} },
             { provide: AlertService, useValue: resolvedAlertService },
             { provide: ConfigService, useValue: resolvedConfigService },
-            { provide: AlertController, useValue: {} },
             { provide: Router, useValue: router },
             { provide: TranslateService, useValue: {} },
-            { provide: LoadingController, useValue: {} },
             { provide: SwUpdate, useValue: {} },
             { provide: InitService, useValue: {} },
             { provide: OsmAuthService, useValue: {} },
@@ -96,6 +90,7 @@ const createPage = ({
         page,
         mapService: resolvedMapService,
         configService: resolvedConfigService,
+        router,
     }
 }
 
@@ -114,9 +109,45 @@ describe('MainPage', () => {
         expect(configService.freezeMapRenderer).toBe(false)
     })
 
+    it('opens and deactivates the routed overlay without destroying the map page', () => {
+        const { page, configService } = createPage()
+
+        page.onOverlayActivate({})
+
+        expect(page.overlayOpen()).toBe(true)
+        expect(page.overlaySize()).toBe('standard')
+        expect(configService.freezeMapRenderer).toBe(true)
+
+        page.onOverlayDeactivate()
+
+        expect(page.overlayOpen()).toBe(false)
+        expect(configService.freezeMapRenderer).toBe(false)
+    })
+
+    it('protects an overlay workflow that cannot be closed yet', () => {
+        const { page, router } = createPage()
+        page.onOverlayActivate({ canCloseOverlay: () => false })
+
+        page.closeOverlay()
+
+        expect(router.navigate).not.toHaveBeenCalled()
+    })
+
+    it('closes a routed overlay while preserving map query parameters', () => {
+        const { page, router } = createPage()
+        page.onOverlayActivate({})
+
+        page.closeOverlay()
+
+        expect(router.navigate).toHaveBeenCalledWith(['/'], {
+            queryParamsHandling: 'preserve',
+            replaceUrl: true,
+        })
+    })
+
     it('stops reacting to modal requests after destruction', () => {
         const showModal$ = new Subject<unknown>()
-        const modalCtrl = { create: vi.fn().mockName('ModalController.create') }
+        const modalCtrl = { open: vi.fn().mockName('MatDialog.open') }
         createPage({
             modalCtrl,
             mapService: { showModal$ },
@@ -129,35 +160,16 @@ describe('MainPage', () => {
             origineData: 'data',
         })
 
-        expect(modalCtrl.create).not.toHaveBeenCalled()
+        expect(modalCtrl.open).not.toHaveBeenCalled()
     })
 
-    it('opens and closes the feature modal with its input data', async () => {
-        const showModal$ = new Subject<{
-            type: string
-            geojson: { id: string }
-            origineData: string
-        }>()
-        let dismissModal: (result: { data?: unknown }) => void = () => {
-            throw new Error('The modal dismissal is not ready.')
-        }
-        const dismissed = new Promise<{ data?: unknown }>((resolve) => {
-            dismissModal = resolve
-        })
-        const modal = {
-            present: vi.fn().mockResolvedValue(undefined),
-            onDidDismiss: vi.fn().mockReturnValue(dismissed),
-        }
-        const modalCtrl = {
-            create: vi.fn().mockResolvedValue(modal),
-        }
+    it('opens a read selection in the mobile bottom sheet', () => {
+        const showModal$ = new Subject<any>()
         const feature = { id: 'node/1' }
-        const { page, configService, mapService } = createPage({
+        const modalCtrl = { open: vi.fn() }
+        const { page } = createPage({
             modalCtrl,
-            mapService: {
-                showModal$,
-                setCenterInUrl: vi.fn(),
-            },
+            mapService: { showModal$ },
         })
 
         showModal$.next({
@@ -166,25 +178,129 @@ describe('MainPage', () => {
             origineData: 'data',
         })
 
-        await vi.waitFor(() => expect(modal.present).toHaveBeenCalledOnce())
-        expect(modalCtrl.create).toHaveBeenCalledWith({
-            component: ModalsContentPage,
-            componentProps: {
-                type: 'Read',
-                data: feature,
-                newPosition: false,
-                origineData: 'data',
-                openPrimaryTagModalOnStart: undefined,
+        expect(page.selectedFeature()).toEqual({
+            type: 'Read',
+            geojson: feature,
+            origineData: 'data',
+        })
+        expect(page.sheetLevel()).toBe('medium')
+        expect(modalCtrl.open).not.toHaveBeenCalled()
+    })
+
+    it('hides the selected sheet while its marker is being moved', () => {
+        const showModal$ = new Subject<any>()
+        const markerMoveMoving = signal(false)
+        const feature = { id: 'node/1' }
+        const { page } = createPage({
+            mapService: { showModal$, markerMoveMoving },
+        })
+
+        showModal$.next({
+            type: 'Read',
+            geojson: feature,
+            origineData: 'data',
+        })
+
+        expect(page.displayedSelection()?.geojson).toBe(feature)
+
+        markerMoveMoving.set(true)
+
+        expect(page.displayedSelection()).toBeNull()
+        expect(page.selectedFeature()?.geojson).toBe(feature)
+        expect(page.mapControlsBottom()).toBe(
+            'max(46px, calc(env(safe-area-inset-bottom) + 42px))'
+        )
+
+        markerMoveMoving.set(false)
+
+        expect(page.displayedSelection()?.geojson).toBe(feature)
+    })
+
+    it('closes the selected sheet after a click on the map background', () => {
+        const showModal$ = new Subject<any>()
+        const mapBackgroundClick$ = new Subject<void>()
+        const { page, router } = createPage({
+            mapService: { showModal$, mapBackgroundClick$ },
+        })
+
+        showModal$.next({
+            type: 'Read',
+            geojson: { id: 'node/1' },
+            origineData: 'data',
+        })
+        mapBackgroundClick$.next()
+
+        expect(page.selectedFeature()).toBeNull()
+        expect(page.sheetLevel()).toBe('medium')
+        expect(router.navigate).toHaveBeenCalledWith([], {
+            replaceUrl: true,
+            relativeTo: expect.anything(),
+            queryParams: { id: null },
+            queryParamsHandling: 'merge',
+        })
+    })
+
+    it('ignores map background clicks when no sheet is open', () => {
+        const mapBackgroundClick$ = new Subject<void>()
+        const { router } = createPage({
+            mapService: { mapBackgroundClick$ },
+        })
+
+        mapBackgroundClick$.next()
+
+        expect(router.navigate).not.toHaveBeenCalled()
+    })
+
+    it('routes edit requests into the expanded object sheet', () => {
+        const showModal$ = new Subject<{
+            type: string
+            geojson: { id: string }
+            origineData: string
+        }>()
+        const modalCtrl = {
+            open: vi.fn(),
+        }
+        const feature = { id: 'node/1' }
+        const { page, configService } = createPage({
+            modalCtrl,
+            mapService: {
+                showModal$,
+                setCenterInUrl: vi.fn(),
             },
         })
-        expect(page.modalIsOpen).toBe(true)
-        expect(configService.freezeMapRenderer).toBe(true)
 
-        dismissModal({})
+        showModal$.next({
+            type: 'Update',
+            geojson: feature,
+            origineData: 'data',
+        })
 
-        await vi.waitFor(() => expect(page.modalIsOpen).toBe(false))
+        expect(page.selectedFeature()).toEqual({
+            type: 'Update',
+            geojson: feature,
+            origineData: 'data',
+        })
+        expect(page.sheetLevel()).toBe('expanded')
+        expect(modalCtrl.open).not.toHaveBeenCalled()
         expect(configService.freezeMapRenderer).toBe(false)
-        expect(mapService.setCenterInUrl).toHaveBeenCalledOnce()
+    })
+
+    it('ignores map background clicks while editing', () => {
+        const showModal$ = new Subject<any>()
+        const mapBackgroundClick$ = new Subject<void>()
+        const { page, router } = createPage({
+            mapService: { showModal$, mapBackgroundClick$ },
+        })
+
+        showModal$.next({
+            type: 'Update',
+            geojson: { id: 'node/1' },
+            origineData: 'data',
+        })
+        mapBackgroundClick$.next()
+
+        expect(page.selectedFeature()?.type).toBe('Update')
+        expect(router.navigate).not.toHaveBeenCalled()
     })
 
     it('keeps existing data and clears processing after a download failure', () => {
@@ -279,7 +395,7 @@ describe('MainPage', () => {
         )
     })
 
-    it('forwards marker movement after the modal closes', async () => {
+    it('forwards marker movement from the unified sheet', () => {
         const showModal$ = new Subject<any>()
         const moveElement = vi.fn().mockName('moveElement')
         const movedFeature = {
@@ -287,14 +403,7 @@ describe('MainPage', () => {
             geojson: { id: 'node/1' },
             mode: 'Update',
         }
-        const modal = {
-            present: vi.fn().mockResolvedValue(undefined),
-            onDidDismiss: vi.fn().mockResolvedValue({ data: movedFeature }),
-        }
-        const { mapService } = createPage({
-            modalCtrl: {
-                create: vi.fn().mockResolvedValue(modal),
-            },
+        const { page } = createPage({
             mapService: {
                 showModal$,
                 moveElement,
@@ -303,14 +412,13 @@ describe('MainPage', () => {
         })
 
         showModal$.next({
-            type: 'Read',
+            type: 'Update',
             geojson: movedFeature.geojson,
             origineData: 'data',
         })
+        page.handleSheetSession(movedFeature as any)
 
-        await vi.waitFor(() => {
-            expect(moveElement).toHaveBeenCalledWith(movedFeature)
-        })
-        expect(mapService.setCenterInUrl).toHaveBeenCalledOnce()
+        expect(moveElement).toHaveBeenCalledWith(movedFeature)
+        expect(page.selectedFeature()?.geojson).toBe(movedFeature.geojson)
     })
 })

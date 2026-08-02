@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
-import { Storage } from '@ionic/storage-angular'
 import type { OsmGoFeature } from '@osmgo/type'
+import { AppStorage } from '@services/app-storage.service'
 import { firstValueFrom, of } from 'rxjs'
 
 import { TagsService } from './tags.service'
@@ -23,7 +23,7 @@ describe('TagsService', () => {
         TestBed.configureTestingModule({
             providers: [
                 { provide: HttpClient, useValue: http },
-                { provide: Storage, useValue: {} },
+                { provide: AppStorage, useValue: {} },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -42,7 +42,7 @@ describe('TagsService', () => {
         TestBed.configureTestingModule({
             providers: [
                 { provide: HttpClient, useValue: {} },
-                { provide: Storage, useValue: storage },
+                { provide: AppStorage, useValue: storage },
             ],
         })
         const service = TestBed.inject(TagsService)
@@ -64,7 +64,7 @@ describe('TagsService', () => {
         TestBed.configureTestingModule({
             providers: [
                 { provide: HttpClient, useValue: http },
-                { provide: Storage, useValue: {} },
+                { provide: AppStorage, useValue: {} },
             ],
         })
         const service = TestBed.inject(TagsService)

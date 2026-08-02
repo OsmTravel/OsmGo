@@ -1,9 +1,27 @@
-.alertCard {
-    background-color: #da281c;
-    color: white;
+:host {
+    display: contents;
 }
-
-.warningtCard {
-    background-color: #ff6b3e;
-    color: white;
+.notice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 16px;
+}
+.notice p {
+    min-width: 0;
+    flex: 1;
+    margin: 0;
+    line-height: 1.35;
+}
+.notice--error {
+    color: #690005;
+    background: #ffdad6;
+}
+.notice--warning {
+    color: var(--osmgo-amber-ink);
+    background: var(--osmgo-amber-container);
+}
+.notice button {
+    flex: 0 0 auto;
 }

@@ -1,14 +1,63 @@
-.spritesX1 {
-    background: url('../../../assets/mapStyle/sprites/sprites.png') 0 0
-        no-repeat;
+:host {
+    display: grid;
+    place-items: center;
+    line-height: 0;
 }
 
-.spritesX2 {
-    background: url('../../../assets/mapStyle/sprites/sprites@2x.png') 0 0
-        no-repeat;
+.vectorIcon {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+}
+
+.vectorIcon__fallback,
+.svgIcon {
+    grid-area: 1 / 1;
+    transition: opacity 80ms ease-out;
+}
+
+.svgIcon {
+    display: block;
+    width: var(--osmgo-svg-icon-size, 24px);
+    height: var(--osmgo-svg-icon-size, 24px);
+    opacity: 0;
+    object-fit: contain;
+    user-select: none;
+}
+
+.vectorIcon--loaded {
+    .vectorIcon__fallback {
+        opacity: 0;
+    }
+
+    .svgIcon {
+        opacity: 1;
+    }
+}
+
+.sprite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: image-set(
+        url('../../../assets/mapStyle/sprites/sprites.png') 1x,
+        url('../../../assets/mapStyle/sprites/sprites@2x.png') 2x
+    );
+    background-repeat: no-repeat;
 }
 
 .iconWrapper {
     position: relative;
-    display: block;
+    overflow: hidden;
+    line-height: 0;
+    transform: scale(var(--osmgo-icon-scale, 1));
+    transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .vectorIcon__fallback,
+    .svgIcon {
+        transition: none;
+    }
 }

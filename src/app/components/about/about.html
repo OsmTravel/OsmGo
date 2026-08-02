@@ -1,41 +1,53 @@
-<ion-header color="primary">
-    <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button (click)="navCtrl.back()">
-                <ion-icon
-                    name="chevron-back-outline"
-                    slot="icon-only"
-                ></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title> {{'ABOUT.ABOUT' | translate}} </ion-title>
-    </ion-toolbar>
-</ion-header>
+<main class="about-screen">
+    <app-screen-header
+        [title]="'ABOUT.ABOUT' | translate"
+        (backRequested)="back()"
+    ></app-screen-header>
 
-<ion-content class="ion-padding-vertical">
-    <ion-item-group>
-        <ion-item lines="none">
-            <ion-thumbnail slot="start">
-                <img alt="" src="/assets/logo.png" />
-            </ion-thumbnail>
-            <ion-label>OSM Go!</ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>
-                <h3>{{'ABOUT.VERSION' | translate}}</h3>
-                <p>{{configService.getAppFullVersion()}}</p>
-            </ion-label>
-        </ion-item>
-        <ion-item>
-            <ion-label>
-                <h3>{{'ABOUT.DATA' | translate}}</h3>
-                <p>{{'ABOUT.OSM_CONTRIBUTORS' | translate}}</p>
-                <!-- Ortophoto : <a href="http://openstreetmap.fr/f/2016.05.20_OSM-FR_IGN_Ortho.pdf" target="_blank">IGN</a>  -->
-            </ion-label>
-        </ion-item>
-        <ion-item href="https://github.com/DoFabien/OsmGo" target="_blank">
-            <ion-icon name="logo-github" slot="start"></ion-icon>
-            <ion-label>GitHub</ion-label>
-        </ion-item>
-    </ion-item-group>
-</ion-content>
+    <div class="about-content">
+        <section class="brand-card" aria-labelledby="about-product-name">
+            <img src="/assets/logo.png" alt="" />
+            <div>
+                <h2 id="about-product-name">OsmGo</h2>
+                <p>Map them all!</p>
+            </div>
+        </section>
+
+        <mat-list class="about-list">
+            <mat-list-item>
+                <mat-icon matListItemIcon fontSet="material-symbols-rounded"
+                    >deployed_code</mat-icon
+                >
+                <span matListItemTitle>{{ 'ABOUT.VERSION' | translate }}</span>
+                <span matListItemLine
+                    >{{ configService.getAppFullVersion() }}</span
+                >
+            </mat-list-item>
+
+            <mat-list-item>
+                <mat-icon matListItemIcon fontSet="material-symbols-rounded"
+                    >database</mat-icon
+                >
+                <span matListItemTitle>{{ 'ABOUT.DATA' | translate }}</span>
+                <span matListItemLine
+                    >{{ 'ABOUT.OSM_CONTRIBUTORS' | translate }}</span
+                >
+            </mat-list-item>
+
+            <a
+                mat-list-item
+                href="https://github.com/DoFabien/OsmGo"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <mat-icon matListItemIcon fontSet="material-symbols-rounded"
+                    >code</mat-icon
+                >
+                <span matListItemTitle>GitHub</span>
+                <mat-icon matListItemMeta fontSet="material-symbols-rounded"
+                    >open_in_new</mat-icon
+                >
+            </a>
+        </mat-list>
+    </div>
+</main>

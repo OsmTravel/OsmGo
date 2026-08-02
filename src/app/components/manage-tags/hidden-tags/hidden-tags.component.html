@@ -1,88 +1,76 @@
-<ion-header color="primary">
-    <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button (click)="modalCtrl.dismiss(refreshFilterMapAfterClose)">
-                <ion-icon
-                    name="chevron-back-outline"
-                    slot="icon-only"
-                ></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title>
-            {{ 'MANAGE_TAGS.HIDDEN_TAGS' | translate }}
-        </ion-title>
-    </ion-toolbar>
-</ion-header>
-<ion-content>
-    <div id="searchSelect">
-        <div id="searchDiv">
-            <ion-searchbar
+<main class="tag-dialog">
+    <app-screen-header
+        [title]="'MANAGE_TAGS.HIDDEN_TAGS' | translate"
+        (backRequested)="close()"
+    ></app-screen-header>
+
+    <div class="tag-dialog__search">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-icon matPrefix fontSet="material-symbols-rounded"
+                >search</mat-icon
+            >
+            <input
+                #searchInput
+                matInput
+                type="search"
                 autocomplete="off"
-                autocorrect="off"
-                autocapitalize="none"
-                inputmode="text"
                 [value]="searchText()"
-                (ionInput)="onSearchInput($event)"
-                [debounce]="300"
-            ></ion-searchbar>
-        </div>
+                [placeholder]="'SHARED.SEARCH' | translate"
+                (input)="onSearchInput(searchInput.value)"
+            />
+        </mat-form-field>
     </div>
 
-    <div class="listTag">
-        <ion-list style="overflow-y: auto">
-            <!-- TODO: filter by ids, (like bookmark, etc...) -->
-            @for (
-                tag of tagsService.tags()
-                    | filtersTagsByIds: this.tagsService.hiddenTagsIds()
-                    | filterByTagsContent
-                        : [
-                              configService.config().languageTags,
-                              configService.config().countryTags,
-                          ]
-                        : searchText();
-                track tag
-            ) {
-                <ion-item class="ion-no-padding">
-                    <app-tag-list-element
-                        style="width: 100%"
-                        [tag]="tag"
-                        [countryTags]="configService.config().countryTags"
-                        [languageTags]="configService.config().languageTags"
-                        [jsonSprites]="tagsService.jsonSprites()"
-                        [geometriesFilter]="['point']"
-                        [bookmarksIds]="tagsService.bookmarksIds()"
-                        [isHiddenTag]="true"
-                        (removeHiddenTag)="removeHiddenTag($event)"
-                    >
-                    </app-tag-list-element>
-                </ion-item>
-            }
-        </ion-list>
+    <div class="tag-dialog__list">
+        @for (
+            tag of tagsService.tags()
+                | filtersTagsByIds: tagsService.hiddenTagsIds()
+                | filterByTagsContent
+                    : [
+                          configService.config().languageTags,
+                          configService.config().countryTags,
+                      ]
+                    : searchText();
+            track tag.id
+        ) {
+            <app-tag-list-element
+                [tag]="tag"
+                [countryTags]="configService.config().countryTags"
+                [languageTags]="configService.config().languageTags"
+                [jsonSprites]="tagsService.jsonSprites()"
+                [geometriesFilter]="['point']"
+                [bookmarksIds]="tagsService.bookmarksIds()"
+                [isHiddenTag]="true"
+                (removeHiddenTag)="removeHiddenTag($event)"
+            ></app-tag-list-element>
+        } @empty {
+            <div class="tag-dialog__empty">
+                <mat-icon fontSet="material-symbols-rounded"
+                    >visibility</mat-icon
+                >
+                <p>{{ 'MANAGE_TAGS.HIDDEN_TAGS_DESCRIPTION' | translate }}</p>
+            </div>
+        }
     </div>
-</ion-content>
 
-<ion-footer id="footer">
-    <ion-button
-        ion-button
-        color="primary"
-        (click)="modalCtrl.dismiss(refreshFilterMapAfterClose)"
-    >
-        {{ 'SHARED.CLOSE' | translate }}
-    </ion-button>
-
-    <ion-button
-        ion-button
-        color="danger"
-        (click)="tagsService.resetHiddenTags()"
-    >
-        {{ 'MANAGE_TAGS.RESET_HIDDEN_TAGS' | translate }}
-    </ion-button>
-
-    <ion-button
-        ion-button
-        color="danger"
-        (click)="tagsService.removeAllHiddenTags()"
-    >
-        {{ 'MANAGE_TAGS.REMOVE_ALL_HIDDEN_TAGS' | translate }}
-    </ion-button>
-</ion-footer>
+    <footer class="tag-dialog__footer tag-dialog__footer--multiple">
+        <button
+            mat-button
+            type="button"
+            (click)="tagsService.resetHiddenTags()"
+        >
+            {{ 'MANAGE_TAGS.RESET_HIDDEN_TAGS' | translate }}
+        </button>
+        <button
+            class="danger-action"
+            mat-button
+            type="button"
+            (click)="tagsService.removeAllHiddenTags()"
+        >
+            {{ 'MANAGE_TAGS.REMOVE_ALL_HIDDEN_TAGS' | translate }}
+        </button>
+        <button mat-flat-button type="button" (click)="close()">
+            {{ 'SHARED.CLOSE' | translate }}
+        </button>
+    </footer>
+</main>

@@ -13,7 +13,8 @@ const YEAR = 365 * DAY
 export class RelativeTimePipe implements PipeTransform {
     transform(
         value: Date | number | string | null | undefined,
-        locale?: string
+        locale?: string,
+        numeric: Intl.RelativeTimeFormatNumeric = 'auto'
     ): string {
         if (value === null || value === undefined || value === '') {
             return ''
@@ -27,7 +28,7 @@ export class RelativeTimePipe implements PipeTransform {
         const difference = date.getTime() - Date.now()
         const { amount, unit } = this.getRelativeValue(difference)
 
-        return new Intl.RelativeTimeFormat(locale, { numeric: 'auto' }).format(
+        return new Intl.RelativeTimeFormat(locale, { numeric }).format(
             amount,
             unit
         )

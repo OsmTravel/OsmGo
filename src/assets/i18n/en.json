@@ -15,9 +15,11 @@
         "LOADING": "Loading…",
         "CREATE": "Create",
         "EDIT": "Edit",
+        "SEARCH": "Search",
         "SAVE": "Save",
         "DELETE": "Delete",
-        "CLEAR": "Clear"
+        "CLEAR": "Clear",
+        "ERROR": "Something went wrong. Your changes have been preserved."
     },
     "A11Y": {
         "ADD_BOOKMARK": "Add bookmark",
@@ -37,10 +39,39 @@
         "WHAT_ITEM": "Which?",
         "LOAD_BBOX": "Load data?",
         "CREATING_MISSING_ICONS": "Creating missing icons…",
+        "OVERLAY": {
+            "LABEL": "OsmGo secondary page"
+        },
+        "SELECTION": {
+            "SELECTED_OBJECT": "Selected object",
+            "RESIZE_PANEL": "Resize panel",
+            "VIEW_DETAILS": "View details",
+            "ADD_BOOKMARK": "Add bookmark",
+            "REMOVE_BOOKMARK": "Remove bookmark",
+            "MORE_ACTIONS": "More actions",
+            "OSM_TAGS": "OSM tags",
+            "DISCARD_TITLE": "Discard changes?",
+            "DISCARD_MESSAGE": "Unsaved changes will be lost.",
+            "DISCARD": "Discard",
+            "METADATA": {
+                "LABEL": "OpenStreetMap history",
+                "CREATED": "Created",
+                "UPDATED": "Updated",
+                "BY": "by",
+                "VERSION": "version {{version}}",
+                "PENDING": "Being created"
+            },
+            "FIELDS": {
+                "ARTIST": "Artist",
+                "MATERIAL": "Material",
+                "START_DATE": "Installation date"
+            }
+        },
         "BUTTONS": {
             "MENU": "Menu",
             "UPLOAD": "Upload",
             "LOAD_DATA": "Download data",
+            "REFRESH_DATA": "Refresh",
             "LOADING_DATA": "Loading",
             "VIEW_AREAL_MAP": "View aerial imagery",
             "VIEW_STYLED_MAP": "View map",
@@ -92,6 +123,8 @@
         "NAME": "Name",
         "ERROR": "Error",
         "SEND": "Upload!",
+        "SEND_CHANGE": "Upload 1 change",
+        "SEND_CHANGES": "Upload {{count}} changes",
         "DELETE": "Delete",
         "DELETE_CONFIRM_HEADER": "Are you sure?",
         "DELETE_CONFIRM_MESSAGE": "Delete all changes?",
@@ -174,6 +207,8 @@
         "META_MYSELF": "Myself",
         "NO_NAME": "No name",
         "PLACEHOLDER_NAME": "Name",
+        "SAVE_CHANGE": "Save 1 change",
+        "SAVE_CHANGES": "Save {{count}} changes",
         "ADD_A_TAG": "Add a tag",
         "DELETE_CONFIRM_HEADER": "Are you sure?",
         "DELETE_CONFIRM_MESSAGE": "Delete this item?",

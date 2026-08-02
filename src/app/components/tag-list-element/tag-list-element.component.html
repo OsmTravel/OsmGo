@@ -1,94 +1,98 @@
-<div class="content">
-    <div
-        class="tag-icon"
-        style="width: 50px"
-        [style.background-color]="
-            tag().markerColor ? tag().markerColor : 'black'
-        "
-    >
-        <div class="icon-wrapper">
+<article class="tag-row" [class.is-current]="oldTagConfig()?.id === tag().id">
+    <button class="tag-row__main" type="button" (click)="selected.emit(tag())">
+        <span
+            class="tag-icon"
+            [style.background-color]="tag().markerColor || '#26352f'"
+            aria-hidden="true"
+        >
             <app-icon
                 [icon]="tag().icon"
-                style="display: block"
                 [jsonSprites]="jsonSprites()"
-            >
-            </app-icon>
-        </div>
-    </div>
-
-    @if (!isHiddenTag()) {
-        <div
-            (click)="addOrRemoveBookmark(tag())"
-            style="width: 36px"
-            class="bookmark"
-        >
-            <ion-icon
-                [style.color]="
-                    (tag() | isBookmarked: bookmarksIds())
-                        ? '#f71000'
-                        : '#d8d8d8'
-                "
-                name="heart"
-                item-left
-                style="font-size: 26px; height: 100%; width: 100%"
-            ></ion-icon>
-        </div>
-    }
-
-    <div class="tag-text spacer" (click)="selected.emit(tag())">
-        <b
-            [style.color]="
-                oldTagConfig()?.id === tag().id ? '#3b22dd' : 'black'
-            "
-            >{{ tag().lbl?.[languageTags()] || tag().lbl?.['en'] }}</b
-        >
-
-        <br />
-        <span style="font-size: 0.8em">{{
-            $safeNavigationMigration(tag()?.tags) | displayTags
-        }}</span>
-        <br />
-        <span style="font-size: 11px; font-style: italic">
-            {{
-                tag().description?.[languageTags()] ||
-                    tag().description?.['en'] ||
-                    ''
-            }}
+            ></app-icon>
         </span>
-    </div>
 
-    @if (oldTagConfig()?.id === tag().id) {
-        <div class="action">
-            <ion-icon
-                name="checkmark"
-                item-left
-                [style.color]="
-                    oldTagConfig()?.id === tag().id ? 'green' : 'black'
+        <span class="tag-copy">
+            <strong>{{
+                tag().lbl?.[languageTags()] || tag().lbl?.['en']
+            }}</strong>
+            <span class="tag-values">{{
+                $safeNavigationMigration(tag()?.tags) | displayTags
+            }}</span>
+            @if (
+                tag().description?.[languageTags()] || tag().description?.['en']
+            ) {
+                <span class="tag-description">
+                    {{
+                        tag().description?.[languageTags()] ||
+                            tag().description?.['en']
+                    }}
+                </span>
+            }
+        </span>
+    </button>
+
+    <div class="tag-actions">
+        @if (!isHiddenTag()) {
+            <button
+                mat-icon-button
+                type="button"
+                [class.is-bookmarked]="tag() | isBookmarked: bookmarksIds()"
+                [matTooltip]="
+                    (tag() | isBookmarked: bookmarksIds())
+                        ? 'Retirer des favoris'
+                        : 'Ajouter aux favoris'
                 "
-                style="font-size: 26px; height: 100%"
-            ></ion-icon>
-        </div>
-    }
-    @if (isHiddenTag()) {
-        <div>
-            <ion-button
-                class="ion-no-margin buttonUnhideTag"
-                color="success"
+                [attr.aria-label]="
+                    (tag() | isBookmarked: bookmarksIds())
+                        ? 'Retirer des favoris'
+                        : 'Ajouter aux favoris'
+                "
+                (click)="addOrRemoveBookmark(tag())"
+            >
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true">
+                    {{
+                        (tag() | isBookmarked: bookmarksIds())
+                            ? 'bookmark'
+                            : 'bookmark_border'
+                    }}
+                </mat-icon>
+            </button>
+        }
+
+        @if (oldTagConfig()?.id === tag().id) {
+            <span class="current-indicator" aria-label="Sélectionné">
+                <mat-icon fontSet="material-symbols-rounded"
+                    >check_circle</mat-icon
+                >
+            </span>
+        }
+
+        @if (isHiddenTag()) {
+            <button
+                mat-icon-button
+                class="show-action"
+                type="button"
+                aria-label="Afficher ce tag"
                 (click)="removeHiddenTag.emit(tag())"
             >
-                <ion-icon name="add-circle"> </ion-icon>
-            </ion-button>
-        </div>
-    }
-    @if (showHideTagButton()) {
-        <div>
-            <ion-button
-                class="ion-no-margin buttonUnhideTag"
-                color="danger"
+                <mat-icon fontSet="material-symbols-rounded"
+                    >visibility</mat-icon
+                >
+            </button>
+        }
+
+        @if (showHideTagButton()) {
+            <button
+                mat-icon-button
+                class="hide-action"
+                type="button"
+                aria-label="Masquer ce tag"
                 (click)="addHiddenTag.emit(tag())"
             >
-                <ion-icon name="remove-circle"> </ion-icon>
-            </ion-button>
-        </div>
-    }
-</div>
+                <mat-icon fontSet="material-symbols-rounded"
+                    >visibility_off</mat-icon
+                >
+            </button>
+        }
+    </div>
+</article>

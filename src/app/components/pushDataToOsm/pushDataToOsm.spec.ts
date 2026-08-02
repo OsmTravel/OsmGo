@@ -1,9 +1,7 @@
+import { Location } from '@angular/common'
 import { TestBed } from '@angular/core/testing'
-import {
-    AlertController,
-    NavController,
-    Platform,
-} from '@ionic/angular/standalone'
+import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateService } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -28,9 +26,9 @@ interface PushPageDependencies {
     osmApi?: unknown
     tagsService?: unknown
     mapService?: unknown
-    navCtrl?: unknown
-    alertCtrl?: unknown
-    platform?: unknown
+    location?: unknown
+    dialog?: unknown
+    snackBar?: unknown
     translate?: unknown
     initService?: unknown
 }
@@ -49,10 +47,10 @@ describe('PushDataToOsmPage', () => {
         osmApi = {},
         tagsService = {},
         mapService = {},
-        navCtrl = {},
-        alertCtrl = {},
+        location = {},
+        dialog = {},
+        snackBar = {},
         configService,
-        platform = {},
         translate = {},
         initService = {},
     }: PushPageDependencies): PushDataToOsmPage => {
@@ -63,10 +61,10 @@ describe('PushDataToOsmPage', () => {
                 { provide: OsmApiService, useValue: osmApi },
                 { provide: TagsService, useValue: tagsService },
                 { provide: MapService, useValue: mapService },
-                { provide: NavController, useValue: navCtrl },
-                { provide: AlertController, useValue: alertCtrl },
+                { provide: Location, useValue: location },
+                { provide: MatDialog, useValue: dialog },
+                { provide: MatSnackBar, useValue: snackBar },
                 { provide: ConfigService, useValue: configService },
-                { provide: Platform, useValue: platform },
                 { provide: TranslateService, useValue: translate },
                 { provide: InitService, useValue: initService },
             ],
@@ -446,7 +444,7 @@ describe('PushDataToOsmPage', () => {
             dataService,
             osmApi,
             mapService,
-            navCtrl: { back: vi.fn().mockName('back') },
+            location: { back: vi.fn().mockName('back') },
             configService,
         })
         vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)

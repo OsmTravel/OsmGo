@@ -1,10 +1,10 @@
 import { TestBed } from '@angular/core/testing'
-import { Storage as IonicStorage } from '@ionic/storage-angular'
 import {
     FeatureProperties,
     OsmGoFeature,
     OsmGoFeatureCollection,
 } from '@osmgo/type'
+import { AppStorage } from '@services/app-storage.service'
 import { DataService } from '@services/data.service'
 import { featureCollection, point } from '@turf/turf'
 import { firstValueFrom } from 'rxjs'
@@ -29,7 +29,7 @@ describe('DataService', () => {
             clear: vi.fn().mockName('Storage.clear'),
         }
         TestBed.configureTestingModule({
-            providers: [{ provide: IonicStorage, useValue: storageSpy }],
+            providers: [{ provide: AppStorage, useValue: storageSpy }],
         })
         service = TestBed.inject(DataService)
     })

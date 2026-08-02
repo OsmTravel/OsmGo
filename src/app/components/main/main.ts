@@ -1,8 +1,11 @@
+import { CdkTrapFocus } from '@angular/cdk/a11y'
 import {
     type AfterViewInit,
     Component,
+    computed,
     DestroyRef,
     ElementRef,
+    HostListener,
     inject,
     type OnDestroy,
     type OnInit,
@@ -10,27 +13,26 @@ import {
     viewChild,
 } from '@angular/core'
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop'
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router'
+import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router'
 import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import { App as CapacitorApp } from '@capacitor/app'
+import type { PluginListenerHandle } from '@capacitor/core'
 import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
 import { MenuPage } from '@components/menu/menu'
-import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
+import type { ModalDismissData } from '@components/modal/modal'
 import {
-    AlertController,
-    IonBadge,
-    IonContent,
-    IonFab,
-    IonFabButton,
-    IonIcon,
-    IonSpinner,
-    ModalController,
-    NavController,
-    ToastController,
-} from '@ionic/angular/standalone'
-import { TranslateService } from '@ngx-translate/core'
-import type { FeatureIdSource, OsmGoFeatureCollection } from '@osmgo/type'
+    ConfirmDialogComponent,
+    type ConfirmDialogData,
+} from '@components/shared/confirm-dialog/confirm-dialog'
+import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import type {
+    EventShowModal,
+    FeatureIdSource,
+    OsmGoFeatureCollection,
+} from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
@@ -38,15 +40,27 @@ import { InitService } from '@services/init.service'
 import { LocationService } from '@services/location.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
 import type { BBox } from 'geojson'
 import { LngLat } from 'maplibre-gl'
 import { EMPTY, type Observable, take, timer } from 'rxjs'
-import { catchError, filter, map, switchMap } from 'rxjs/operators'
+import { catchError, filter, finalize, map, switchMap } from 'rxjs/operators'
+import { MapControlsComponent } from './map-controls/map-controls'
+import {
+    ObjectSheetComponent,
+    type ObjectSheetLevel,
+} from './object-sheet/object-sheet'
 
 interface MapDataResult {
     geojson: OsmGoFeatureCollection
     geojsonBbox: OsmGoFeatureCollection
+}
+
+type OverlaySize = 'compact' | 'standard' | 'wide'
+
+interface RouteOverlayContent {
+    canCloseOverlay?: () => boolean
 }
 
 @Component({
@@ -54,19 +68,15 @@ interface MapDataResult {
     selector: 'main',
     styleUrls: ['./main.scss'],
     imports: [
-        IonBadge,
-        IonContent,
-        IonFab,
-        IonFabButton,
-        IonIcon,
-        IonSpinner,
+        CdkTrapFocus,
+        MapControlsComponent,
         MenuPage,
+        ObjectSheetComponent,
+        RouterOutlet,
+        TranslateModule,
     ],
 })
 export class MainPage implements AfterViewInit, OnDestroy, OnInit {
-    readonly navCtrl = inject(NavController)
-    readonly modalCtrl = inject(ModalController)
-    readonly toastCtrl = inject(ToastController)
     readonly osmApi = inject(OsmApiService)
     readonly tagsService = inject(TagsService)
     readonly mapService = inject(MapService)
@@ -74,7 +84,6 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     readonly locationService = inject(LocationService)
     readonly alertService = inject(AlertService)
     readonly configService = inject(ConfigService)
-    private readonly alertCtrl = inject(AlertController)
     private readonly router = inject(Router)
     readonly translate = inject(TranslateService)
     private readonly swUpdate = inject(SwUpdate)
@@ -82,10 +91,42 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     private readonly osmAuthService = inject(OsmAuthService)
     private readonly route = inject(ActivatedRoute)
     private readonly destroyRef = inject(DestroyRef)
+    private readonly dialog = inject(MatDialog)
+    private readonly snackBar = inject(MatSnackBar)
+    private readonly overlayNavigation = inject(OverlayNavigationService)
+    private pendingAuthCallbackUrl: string | null = null
+    private authCallbackInProgress = false
+    private initialDataLoaded = false
+    private tokenLoaded = Promise.resolve<string | null>(null)
 
-    modalIsOpen = false
     readonly menuIsOpen = signal(false)
     readonly newVersion = signal(false)
+    readonly overlayOpen = signal(false)
+    readonly overlaySize = signal<OverlaySize>('standard')
+    readonly selectedFeature = signal<EventShowModal | null>(null)
+    private readonly readBeforeEdit = signal<EventShowModal | null>(null)
+    readonly displayedSelection = computed(() =>
+        this.mapService.markerMoveMoving() ? null : this.selectedFeature()
+    )
+    readonly sheetLevel = signal<ObjectSheetLevel>('medium')
+    readonly mapControlsBottom = computed(() => {
+        if (
+            this.mapService.markerMoving() ||
+            this.mapService.markerMoveMoving()
+        ) {
+            return 'max(46px, calc(env(safe-area-inset-bottom) + 42px))'
+        }
+        if (!this.selectedFeature()) {
+            return 'max(46px, calc(env(safe-area-inset-bottom) + 42px))'
+        }
+        if (this.sheetLevel() === 'collapsed') {
+            return '164px'
+        }
+        if (this.sheetLevel() === 'expanded') {
+            return 'calc(100dvh + 24px)'
+        }
+        return 'calc(min(49dvh, 430px) + 12px)'
+    })
     centerOnStart?: number[]
     zoomOnStart?: number
     loadOsmDataOnStart = false
@@ -95,105 +136,91 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         tags: Record<string, string | number>
     }
     private resizeObserver?: ResizeObserver
+    private backButtonListener?: PluginListenerHandle
+    private activeOverlayContent?: RouteOverlayContent
     private initializeHistory(): void {
         window.history.pushState({ noBackExitsApp: true }, '')
     }
     private readonly handlePopState = (): void => {
         window.history.pushState({ noBackExitsApp: true }, '')
-        if (this.menuIsOpen()) {
+        if (this.overlayOpen()) {
+            this.closeOverlay()
+        } else if (this.menuIsOpen()) {
             this.closeMenu()
-        } else if (this.modalIsOpen) {
-            void this.modalCtrl.dismiss()
+        } else if (this.selectedFeature()) {
+            this.objectSheet()?.requestExit()
         }
     }
 
     readonly mapElement = viewChild.required<ElementRef<HTMLElement>>('map')
+    readonly objectSheet = viewChild<ObjectSheetComponent>('objectSheet')
 
     // authType = this.platform.platforms().includes('hybrid') ? 'basic' : 'oauth'
 
     constructor() {
-        this.router.events
-            .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe((event) => {
-                if (event instanceof NavigationEnd) {
-                    if (event.urlAfterRedirects === '/main') {
-                        this.configService.freezeMapRenderer = false
-                        if (this.mapService.map) {
-                            timer(300)
-                                .pipe(takeUntilDestroyed(this.destroyRef))
-                                .subscribe(() => {
-                                    this.mapService.map.resize()
-                                })
-                        }
-                    } else {
-                        this.configService.freezeMapRenderer = true
-                    }
-                }
-            })
-
         this.mapService.featureChoiceRequested$
             .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe(async (features) => {
-                const modal = await this.modalCtrl.create({
-                    component: DialogMultiFeaturesComponent,
-                    cssClass: 'dialog-multi-features',
-                    componentProps: {
-                        features: features,
-                        jsonSprites: this.tagsService.jsonSprites(),
-                    },
-                })
-                await modal.present()
+            .subscribe((features) => {
+                if (
+                    this.selectedFeature()?.type === 'Update' ||
+                    this.selectedFeature()?.type === 'Create'
+                ) {
+                    return
+                }
+                const dialogRef = this.dialog.open(
+                    DialogMultiFeaturesComponent,
+                    {
+                        autoFocus: 'dialog',
+                        maxWidth: 'calc(100vw - 24px)',
+                        panelClass: [
+                            'osmgo-dialog',
+                            'osmgo-feature-choice-dialog',
+                        ],
+                    }
+                )
+                dialogRef.componentRef?.setInput('features', features)
+                dialogRef.componentRef?.setInput(
+                    'jsonSprites',
+                    this.tagsService.jsonSprites()
+                )
 
-                modal.onDidDismiss().then((d) => {
-                    if (d && d.data) {
-                        this.mapService.selectFeature(d.data)
+                dialogRef.afterClosed().subscribe((feature) => {
+                    if (feature) {
+                        this.mapService.selectFeature(feature)
                     }
                 })
+            })
+
+        this.mapService.mapBackgroundClick$
+            .pipe(takeUntilDestroyed(this.destroyRef))
+            .subscribe(() => {
+                if (this.selectedFeature()?.type === 'Read') {
+                    this.closeSelection()
+                }
             })
 
         this.mapService.showModal$
             .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe(async (_data) => {
-                this.configService.freezeMapRenderer = true
-                const newPosition = _data.newPosition ?? false
-
-                const modal = await this.modalCtrl.create({
-                    component: ModalsContentPage,
-                    componentProps: {
-                        type: _data.type,
-                        data: _data.geojson,
-                        newPosition: newPosition,
-                        origineData: _data.origineData,
-                        openPrimaryTagModalOnStart:
-                            _data.openPrimaryTagModalOnStart,
-                    },
-                })
-                await modal.present()
-                this.modalIsOpen = true
-
-                modal.onDidDismiss<ModalDismissData>().then((d) => {
-                    this.modalIsOpen = false
-                    const data = d.data
-                    this.configService.freezeMapRenderer = false
-                    if (data) {
-                        if (data.type === 'Move') {
-                            this.mapService.moveElement(data)
-                        }
-                        if (data.redraw) {
-                            timer(50)
-                                .pipe(takeUntilDestroyed(this.destroyRef))
-                                .subscribe(() => {
-                                    this.mapService.redrawMarkers(
-                                        this.dataService.getGeojson()
-                                    )
-                                    this.mapService.redrawChangedMarkers(
-                                        this.dataService.getGeojsonChanged()
-                                    )
-                                })
-                        }
-                    }
-                    this.mapService.setCenterInUrl()
-                })
+            .subscribe((_data) => {
+                const current = this.selectedFeature()
+                if (
+                    (current?.type === 'Update' ||
+                        current?.type === 'Create') &&
+                    _data.type === 'Read'
+                ) {
+                    return
+                }
+                if (_data.type === 'Update' && current?.type === 'Read') {
+                    this.readBeforeEdit.set(current)
+                } else if (_data.type === 'Create' || _data.type === 'Read') {
+                    this.readBeforeEdit.set(null)
+                }
+                this.selectedFeature.set(_data)
+                this.sheetLevel.set(
+                    _data.type === 'Read' && !_data.newPosition
+                        ? 'medium'
+                        : 'expanded'
+                )
             })
 
         this.alertService.newAlert$
@@ -208,20 +235,14 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             .pipe(takeUntilDestroyed(this.destroyRef))
             .subscribe((params) => {
                 if (params['code'] || params['state'] || params['error']) {
-                    this.handleAuthCallback(window.location.href)
-                    this.router.navigate([], {
-                        queryParams: {
-                            code: null,
-                            state: null,
-                            error: null,
-                            error_description: null,
-                        },
-                        queryParamsHandling: 'merge',
-                    })
+                    if (!this.authCallbackInProgress) {
+                        this.pendingAuthCallbackUrl = window.location.href
+                    }
+                    this.tryHandleAuthCallback()
                 }
             })
 
-        this.osmAuthService.loadToken()
+        this.tokenLoaded = this.osmAuthService.loadToken()
 
         const urlId = this.route.snapshot.queryParamMap.get('id') // ex : id=node/5432 or id=way/123456 or relation/123
         if (
@@ -318,21 +339,79 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             })
     }
 
-    private handleAuthCallback(url: string): void {
+    private tryHandleAuthCallback(): void {
+        if (
+            !this.initialDataLoaded ||
+            this.authCallbackInProgress ||
+            !this.pendingAuthCallbackUrl
+        ) {
+            return
+        }
+
+        const url = this.pendingAuthCallbackUrl
+        this.pendingAuthCallbackUrl = null
+        this.authCallbackInProgress = true
+
         this.osmAuthService
             .handleCallback(url)
             .pipe(
                 switchMap(() => this.osmApi.getUserDetail$()),
+                finalize(() => {
+                    this.authCallbackInProgress = false
+                    void this.router.navigate([], {
+                        queryParams: {
+                            code: null,
+                            state: null,
+                            error: null,
+                            error_description: null,
+                        },
+                        queryParamsHandling: 'merge',
+                        replaceUrl: true,
+                    })
+                    this.tryHandleAuthCallback()
+                }),
                 takeUntilDestroyed(this.destroyRef)
             )
             .subscribe({
                 error: (error) => {
                     console.error('Authentication failed.', error)
+                    void this.presentToast(this.getErrorMessage(error))
                 },
             })
     }
 
+    private refreshStoredAuthentication(): void {
+        void this.tokenLoaded.then((token) => {
+            if (
+                !token ||
+                this.pendingAuthCallbackUrl ||
+                this.authCallbackInProgress
+            ) {
+                return
+            }
+
+            this.osmApi
+                .getUserDetail$()
+                .pipe(take(1), takeUntilDestroyed(this.destroyRef))
+                .subscribe({
+                    error: (error) => {
+                        console.error(
+                            'Unable to refresh the OpenStreetMap account.',
+                            error
+                        )
+                    },
+                })
+        })
+    }
+
     openMenu(): void {
+        if (
+            this.selectedFeature()?.type === 'Update' ||
+            this.selectedFeature()?.type === 'Create'
+        ) {
+            this.objectSheet()?.requestExit()
+            return
+        }
         this.configService.freezeMapRenderer = true
         this.menuIsOpen.set(true)
     }
@@ -342,25 +421,142 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
         this.menuIsOpen.set(false)
     }
 
-    async presentConfirm(): Promise<void> {
-        const alert = await this.alertCtrl.create({
-            header: this.translate.instant('MAIN.EXIT_CONFIRM_HEADER'),
-            message: this.translate.instant('MAIN.EXIT_CONFIRM_MESSAGE'),
-            buttons: [
-                {
-                    text: this.translate.instant('SHARED.NO'),
-                    role: 'cancel',
-                    handler: () => {},
-                },
-                {
-                    text: this.translate.instant('SHARED.YES'),
-                    handler: () => {
-                        void CapacitorApp.exitApp()
-                    },
-                },
-            ],
+    onOverlayActivate(component: unknown): void {
+        this.activeOverlayContent = component as RouteOverlayContent
+        const configuredSize = this.route.firstChild?.snapshot.data[
+            'overlaySize'
+        ] as OverlaySize | undefined
+        this.overlaySize.set(configuredSize ?? 'standard')
+        this.overlayOpen.set(true)
+        this.menuIsOpen.set(false)
+        this.configService.freezeMapRenderer = true
+    }
+
+    onOverlayDeactivate(): void {
+        this.activeOverlayContent = undefined
+        this.overlayOpen.set(false)
+        this.configService.freezeMapRenderer = false
+        if (this.mapService.map) {
+            requestAnimationFrame(() => {
+                this.mapService.map.resize()
+                const menuButton = document.querySelector<HTMLElement>(
+                    '[data-testid="open-menu"]'
+                )
+                menuButton?.focus()
+            })
+        }
+    }
+
+    closeOverlay(): void {
+        if (this.activeOverlayContent?.canCloseOverlay?.() === false) return
+        void this.overlayNavigation.close()
+    }
+
+    @HostListener('document:keydown.escape')
+    handleEscapeKey(): void {
+        if (this.overlayOpen()) {
+            this.closeOverlay()
+        } else if (this.menuIsOpen()) {
+            this.closeMenu()
+        }
+    }
+
+    closeSelection(): void {
+        this.selectedFeature.set(null)
+        this.readBeforeEdit.set(null)
+        this.sheetLevel.set('medium')
+        void this.router.navigate([], {
+            replaceUrl: true,
+            relativeTo: this.route,
+            queryParams: { id: null },
+            queryParamsHandling: 'merge',
         })
-        await alert.present()
+    }
+
+    openSelectedDetails(): void {
+        if (this.selectedFeature()) this.sheetLevel.set('expanded')
+    }
+
+    editSelectedFeature(): void {
+        const selection = this.selectedFeature()
+        if (selection) {
+            this.readBeforeEdit.set(selection)
+            this.selectedFeature.set({ ...selection, type: 'Update' })
+            this.sheetLevel.set('expanded')
+        }
+    }
+
+    startAddingObject(): void {
+        this.closeSelection()
+        this.mapService.positionateMarker()
+    }
+
+    handleSheetSession(data: ModalDismissData): void {
+        const selection = this.selectedFeature()
+        if (!selection) return
+
+        if (data.type === 'Move' && data.geojson) {
+            this.selectedFeature.set({
+                ...selection,
+                type: data.mode ?? selection.type,
+                geojson: data.geojson,
+                newPosition: false,
+            })
+            this.mapService.moveElement(data)
+            return
+        }
+
+        if (data.deleted) {
+            this.closeSelection()
+        } else if (data.geojson) {
+            this.readBeforeEdit.set(null)
+            this.selectedFeature.set({
+                type: 'Read',
+                geojson: data.geojson,
+                origineData: data.origineData ?? 'data_changed',
+            })
+            this.sheetLevel.set('medium')
+        } else if (data.type === 'Cancel') {
+            const previousRead = this.readBeforeEdit()
+            this.selectedFeature.set(
+                previousRead ?? { ...selection, type: 'Read' }
+            )
+            this.readBeforeEdit.set(null)
+            this.sheetLevel.set('medium')
+        }
+
+        if (data.redraw) {
+            timer(50)
+                .pipe(takeUntilDestroyed(this.destroyRef))
+                .subscribe(() => {
+                    this.mapService.redrawMarkers(this.dataService.getGeojson())
+                    this.mapService.redrawChangedMarkers(
+                        this.dataService.getGeojsonChanged()
+                    )
+                })
+        }
+        this.mapService.setCenterInUrl()
+    }
+
+    presentConfirm(): void {
+        const data: ConfirmDialogData = {
+            title: this.translate.instant('MAIN.EXIT_CONFIRM_HEADER'),
+            message: this.translate.instant('MAIN.EXIT_CONFIRM_MESSAGE'),
+            cancelLabel: this.translate.instant('SHARED.NO'),
+            confirmLabel: this.translate.instant('SHARED.YES'),
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
+            })
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) {
+                    void CapacitorApp.exitApp()
+                }
+            })
     }
 
     loadData(): void {
@@ -397,20 +593,11 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             )
     }
 
-    async presentToast(message: string): Promise<void> {
-        const toast = await this.toastCtrl.create({
-            message: message,
+    presentToast(message: string): void {
+        this.snackBar.open(message, this.translate.instant('SHARED.CLOSE'), {
             duration: 4000,
-            position: 'top',
-            buttons: [
-                {
-                    text: 'X',
-                    role: 'cancel',
-                    handler: () => {},
-                },
-            ],
+            verticalPosition: 'top',
         })
-        await toast.present()
     }
 
     ngAfterViewInit(): void {
@@ -433,6 +620,9 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
             )
             .pipe(takeUntilDestroyed(this.destroyRef))
             .subscribe(({ config }) => {
+                this.initialDataLoaded = true
+                this.tryHandleAuthCallback()
+                this.refreshStoredAuthentication()
                 this.locationService.enableGeolocation()
                 this.mapService.initMap(config)
             })
@@ -473,37 +663,47 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
 
         this.alertService.displayRefreshTooltip$
             .pipe(takeUntilDestroyed(this.destroyRef))
-            .subscribe(async () => {
-                const toast = await this.toastCtrl.create({
-                    message: this.translate.instant('MAIN.LOAD_BBOX'),
-                    duration: 4000,
-                    position: 'bottom',
-                    buttons: [
-                        {
-                            text: 'Ok',
-                            role: 'cancel',
-                            handler: () => {
-                                if (this.mapService.map.getZoom() > 16) {
-                                    this.loadData$()
-                                        .pipe(
-                                            take(1),
-                                            takeUntilDestroyed(this.destroyRef)
-                                        )
-                                        .subscribe()
-                                }
-                            },
-                        },
-                    ],
-                })
-                await toast.present()
+            .subscribe(() => {
+                const snackBarRef = this.snackBar.open(
+                    this.translate.instant('MAIN.LOAD_BBOX'),
+                    'OK',
+                    { duration: 4000 }
+                )
+                snackBarRef
+                    .onAction()
+                    .pipe(take(1), takeUntilDestroyed(this.destroyRef))
+                    .subscribe(() => {
+                        if (this.mapService.map.getZoom() > 16) {
+                            this.loadData$()
+                                .pipe(
+                                    take(1),
+                                    takeUntilDestroyed(this.destroyRef)
+                                )
+                                .subscribe()
+                        }
+                    })
             })
 
         this.initializeHistory()
         window.addEventListener('popstate', this.handlePopState)
+        void CapacitorApp.addListener('backButton', () => {
+            if (this.overlayOpen()) {
+                this.closeOverlay()
+            } else if (this.menuIsOpen()) {
+                this.closeMenu()
+            } else if (this.selectedFeature()) {
+                this.objectSheet()?.requestExit()
+            } else {
+                this.presentConfirm()
+            }
+        }).then((listener) => {
+            this.backButtonListener = listener
+        })
     }
 
     ngOnDestroy(): void {
         this.resizeObserver?.disconnect()
+        void this.backButtonListener?.remove()
         window.removeEventListener('popstate', this.handlePopState)
     }
 

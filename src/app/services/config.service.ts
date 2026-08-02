@@ -2,10 +2,9 @@ import { HttpClient } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
 import type { DeviceInfo } from '@capacitor/device'
 import { environment } from '@environments/environment.prod'
-import { Platform } from '@ionic/angular/standalone'
-import { Storage } from '@ionic/storage-angular'
 import { TranslateService } from '@ngx-translate/core'
 import type { CountryCode, Iso6391Language } from '@osmgo/type'
+import { AppStorage } from '@services/app-storage.service'
 import type { Basemap } from '@services/basemaps.service'
 import { TagsService } from '@services/tags.service'
 import { from, Observable } from 'rxjs'
@@ -68,8 +67,7 @@ export interface Config {
 
 @Service()
 export class ConfigService {
-    readonly localStorage = inject(Storage)
-    private readonly platform = inject(Platform)
+    readonly localStorage = inject(AppStorage)
     private readonly http = inject(HttpClient)
     private readonly translate = inject(TranslateService)
     private readonly currentZoomState = signal<number | undefined>(undefined)
@@ -334,8 +332,8 @@ export class ConfigService {
                     })
                 }
 
-                const changeset: Changeset =
-                    await this.localStorage.get('changeset')
+                const changeset =
+                    await this.localStorage.get<Changeset>('changeset')
                 if (changeset) {
                     this.changeset = changeset
                 } else {

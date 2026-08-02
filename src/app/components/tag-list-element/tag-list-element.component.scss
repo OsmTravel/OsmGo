@@ -1,62 +1,97 @@
-.box {
-    display: flex;
+:host {
+    display: block;
 }
 
-.content {
-    position: relative;
-    width: 100%;
+.tag-row {
     display: flex;
+    min-height: 76px;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 16px;
+    background: var(--osmgo-surface);
+
+    &.is-current {
+        border-color: var(--osmgo-blue);
+        background: var(--osmgo-blue-container);
+    }
 }
+
+.tag-row__main {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 auto;
+    align-self: stretch;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 8px 10px 10px;
+    border: 0;
+    color: var(--osmgo-ink-strong);
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
+}
+
 .tag-icon {
-    position: relative;
-    // width: 45px;
+    display: grid;
     width: 50px;
-    min-width: 50px;
-    // vertical-align: middle;
-    padding: 0.2em;
+    height: 50px;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-.icon-wrapper {
-    // vertical-align: middle;
-    width: 45px;
-    height: 45px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+.tag-copy {
+    display: grid;
+    min-width: 0;
+    gap: 2px;
+
+    strong {
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: 670;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 
-.buttonUnhideTag {
-    height: 100%;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.tag-values {
+    color: var(--osmgo-map-blue);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 12px;
 }
 
-.bookmark {
-    // position: absolute;
-    // left: 45px;
-    width: 36px;
-    min-width: 36px;
-    // width:36px;
-    vertical-align: middle;
-    padding: 0.2em;
+.tag-description {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--osmgo-ink-muted);
+    font-size: 12px;
+    line-height: 1.25;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
-.action {
-    // position: absolute;
-    // right: 45px;
-    width: 45px;
-    min-width: 45px;
+.tag-actions {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    padding-right: 6px;
 }
 
-.tag-text {
-    // position: absolute;
-    // left: 90px;
-    // right: 45px;
-    padding: 0.5em;
+.tag-actions button {
+    color: var(--osmgo-ink-muted);
+
+    &.is-bookmarked {
+        color: var(--osmgo-amber-ink);
+    }
 }
 
-.spacer {
-    flex-grow: 1;
+.current-indicator,
+.show-action {
+    color: var(--osmgo-blue);
+}
+
+.hide-action {
+    color: var(--osmgo-error) !important;
 }

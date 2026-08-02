@@ -20,6 +20,10 @@
           "/*.css",
           "/*.js",
           "/assets/osmtogeojson.js",
+          "/assets/mapStyle/sprites/sprites.json",
+          "/assets/mapStyle/sprites/sprites.png",
+          "/assets/mapStyle/sprites/sprites@2x.json",
+          "/assets/mapStyle/sprites/sprites@2x.png",
 
           "/svg/md-menu.svg",
           "/svg/md-refresh.svg",
@@ -44,8 +48,6 @@
           "/svg/md-create.svg",
           "/svg/md-checkmark-circle-outline.svg",
           "/svg/md-time.svg",
-          "/assets/ionicons/ionicons_save.svg",
-          "/assets/ionicons/ionicons_restore-save.svg",
           "/*.png"
         ]
       }

@@ -1,3 +1,83 @@
-.selectedCard {
-    background-color: lightgray;
+:host {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    overflow: auto;
+    background: var(--osmgo-surface-muted);
+}
+
+.basemaps-content {
+    width: min(100%, 920px);
+    margin: 0 auto;
+    padding: 18px 16px calc(32px + env(safe-area-inset-bottom));
+}
+
+.screen-intro {
+    margin: 0 4px 18px;
+    color: var(--osmgo-ink-muted);
+    line-height: 1.45;
+}
+
+.basemap-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.basemap-card {
+    display: grid;
+    width: 100%;
+    gap: 7px;
+    padding: 18px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 18px;
+    color: var(--osmgo-ink-strong);
+    text-align: left;
+    background: var(--osmgo-surface);
+    cursor: pointer;
+
+    &.is-selected {
+        border: 2px solid var(--osmgo-blue);
+        background: var(--osmgo-blue-container);
+    }
+
+    strong {
+        font-size: 18px;
+        font-weight: 680;
+    }
+}
+
+.basemap-card__topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--osmgo-map-blue);
+    font-size: 13px;
+    font-weight: 620;
+    text-transform: uppercase;
+
+    mat-icon {
+        color: var(--osmgo-blue);
+    }
+}
+
+.basemap-card__description {
+    color: var(--osmgo-ink-muted);
+    line-height: 1.4;
+}
+
+.basemap-card__attribution {
+    color: var(--osmgo-ink-muted);
+    font-size: 12px;
+}
+
+.loading-state {
+    display: grid;
+    min-height: 240px;
+    place-items: center;
+}
+
+@media (min-width: 720px) {
+    .basemap-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }

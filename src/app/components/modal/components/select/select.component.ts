@@ -1,16 +1,10 @@
 import { Component, input, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import {
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCol,
-    IonIcon,
-    IonInput,
-    IonItem,
-    IonSelect,
-    IonSelectOption,
-} from '@ionic/angular/standalone'
+import { MatButtonModule } from '@angular/material/button'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatSelectModule } from '@angular/material/select'
 import { TranslateModule } from '@ngx-translate/core'
 import type { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
@@ -22,15 +16,11 @@ import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
     imports: [
         DisplayPresetLabelPipe,
         FormsModule,
-        IonCard,
-        IonCardContent,
-        IonCardHeader,
-        IonCol,
-        IonIcon,
-        IonInput,
-        IonItem,
-        IonSelect,
-        IonSelectOption,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatSelectModule,
         TranslateModule,
     ],
 })
@@ -50,10 +40,7 @@ export class SelectComponent {
             : this.tag().value
     }
 
-    selectChange(event?: { detail: { value: string } }): void {
-        if (!event?.detail) return
-
-        const newValue = event.detail.value
+    selectChange(newValue: string): void {
         if (this.isMultiKeyPreset()) {
             const selectedKey = (this.preset().keys ?? []).includes(newValue)
                 ? newValue

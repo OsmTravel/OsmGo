@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing'
-import { ModalController } from '@ionic/angular/standalone'
+import { MatDialog } from '@angular/material/dialog'
 import { TranslateService } from '@ngx-translate/core'
 import DateRange from '@scripts/YoHours/DateRange.js'
 import Interval from '@scripts/YoHours/Interval.js'
@@ -10,7 +10,7 @@ describe('OpeningHoursComponent', () => {
     it('deletes an interval only from its matching date range', () => {
         TestBed.configureTestingModule({
             providers: [
-                { provide: ModalController, useValue: {} },
+                { provide: MatDialog, useValue: {} },
                 {
                     provide: TranslateService,
                     useValue: { instant: (key: string) => key },

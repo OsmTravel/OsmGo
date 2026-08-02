@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
-import { Storage } from '@ionic/storage-angular'
 import {
     JsonSprites,
     OsmGoFeature,
@@ -10,6 +9,7 @@ import {
     TagConfig,
     TagsJson,
 } from '@osmgo/type'
+import { AppStorage } from '@services/app-storage.service'
 import { forkJoin, from, Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
@@ -20,7 +20,7 @@ export interface SavedField {
 @Service()
 export class TagsService {
     private readonly http = inject(HttpClient)
-    readonly localStorage = inject(Storage)
+    readonly localStorage = inject(AppStorage)
 
     private readonly lastTagsUsedIdsState = signal<string[]>([])
     readonly lastTagsUsedIds = this.lastTagsUsedIdsState.asReadonly()

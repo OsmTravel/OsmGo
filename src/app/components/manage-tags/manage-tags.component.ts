@@ -1,23 +1,14 @@
-import { Component, inject, OnInit } from '@angular/core'
-import {
-    IonButton,
-    IonButtons,
-    IonCard,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonTitle,
-    IonToolbar,
-    ModalController,
-    NavController,
-} from '@ionic/angular/standalone'
+import type { ComponentType } from '@angular/cdk/portal'
+import { Component, inject } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialog } from '@angular/material/dialog'
+import { MatIconModule } from '@angular/material/icon'
+import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TranslateModule } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
-import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { TagsService } from '@services/tags.service'
-import { forkJoin } from 'rxjs'
-import { switchMap } from 'rxjs/operators'
 import { ActiveTagsComponent } from './active-tags/active-tags.component'
 import { BookmarkedTagsComponent } from './bookmarked-tags/bookmarked-tags.component'
 import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
@@ -27,66 +18,39 @@ import { HiddenTagsComponent } from './hidden-tags/hidden-tags.component'
     templateUrl: './manage-tags.component.html',
     styleUrls: ['./manage-tags.component.scss'],
     imports: [
-        IonButton,
-        IonButtons,
-        IonCard,
-        IonContent,
-        IonHeader,
-        IonIcon,
-        IonTitle,
-        IonToolbar,
+        MatButtonModule,
+        MatIconModule,
+        ScreenHeaderComponent,
         TranslateModule,
     ],
 })
-export class ManageTagsComponent implements OnInit {
-    readonly modalCtrl = inject(ModalController)
-    readonly initService = inject(InitService)
+export class ManageTagsComponent {
     readonly configService = inject(ConfigService)
     readonly mapService = inject(MapService)
     readonly tagsService = inject(TagsService)
-    readonly navCtrl = inject(NavController)
+    private readonly dialog = inject(MatDialog)
+    private readonly overlayNavigation = inject(OverlayNavigationService)
 
     refreshFilterMapAfterClose = false
 
-    ngOnInit() {
-        if (!this.initService.isLoaded) {
-            this.initService.initLoadData$().subscribe()
-        }
-    }
-
-    async openHiddenTagsModal() {
-        const modal = await this.modalCtrl.create({
-            component: HiddenTagsComponent,
-        })
-        await modal.present()
-
-        modal.onDidDismiss().then((d) => {
-            if (d.data === true || d.data === undefined) {
+    openHiddenTagsModal(): void {
+        this.openTagDialog(HiddenTagsComponent, (data) => {
+            if (data === true || data === undefined) {
                 this.refreshFilterMapAfterClose = true
             }
         })
     }
 
-    async openActiveTagsModal() {
-        const modal = await this.modalCtrl.create({
-            component: ActiveTagsComponent,
-        })
-        await modal.present()
-
-        modal.onDidDismiss().then((d) => {
-            if (d.data === true || d.data === undefined) {
+    openActiveTagsModal(): void {
+        this.openTagDialog(ActiveTagsComponent, (data) => {
+            if (data === true || data === undefined) {
                 this.refreshFilterMapAfterClose = true
             }
         })
     }
 
-    async openBookmarkedTagsModal() {
-        const modal = await this.modalCtrl.create({
-            component: BookmarkedTagsComponent,
-        })
-        await modal.present()
-
-        modal.onDidDismiss().then((d) => {})
+    openBookmarkedTagsModal(): void {
+        this.openTagDialog(BookmarkedTagsComponent)
     }
 
     back() {
@@ -95,6 +59,23 @@ export class ManageTagsComponent implements OnInit {
             this.mapService.filterMakerByIds(this.tagsService.hiddenTagsIds())
         }
 
-        this.navCtrl.back()
+        void this.overlayNavigation.close()
+    }
+
+    private openTagDialog<T>(
+        component: ComponentType<T>,
+        onClose?: (data: unknown) => void
+    ): void {
+        this.dialog
+            .open(component, {
+                width: '100vw',
+                height: '100dvh',
+                maxWidth: '100vw',
+                maxHeight: '100dvh',
+                panelClass: 'osmgo-fullscreen-dialog',
+                autoFocus: 'dialog',
+            })
+            .afterClosed()
+            .subscribe((data) => onClose?.(data))
     }
 }

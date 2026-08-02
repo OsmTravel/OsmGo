@@ -1,10 +1,5 @@
 import { Component, input } from '@angular/core'
-import {
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonIcon,
-} from '@ionic/angular/standalone'
+import { MatIconModule } from '@angular/material/icon'
 import { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
 import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
@@ -12,14 +7,8 @@ import { OpeningHoursComponent } from '../opening-hours/opening-hours.component'
 @Component({
     selector: 'read-presets',
     templateUrl: 'Presets.component.html',
-    imports: [
-        DisplayPresetLabelPipe,
-        IonCard,
-        IonCardContent,
-        IonCardHeader,
-        IonIcon,
-        OpeningHoursComponent,
-    ],
+    styleUrls: ['Presets.component.scss'],
+    imports: [DisplayPresetLabelPipe, MatIconModule, OpeningHoursComponent],
 })
 export class ReadPresets {
     readonly displayCode = input(false)

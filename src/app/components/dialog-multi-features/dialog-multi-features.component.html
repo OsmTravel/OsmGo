@@ -1,90 +1,82 @@
-<div style="height: 100%">
-    <ion-header>
-        <ion-toolbar>
-            <ion-title>
-                {{ 'MAIN.WHAT_ITEM' | translate }}
-            </ion-title>
-        </ion-toolbar>
-    </ion-header>
-    <div class="content">
-        <table>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 20px"></th>
-                        <th style="width: 20px"></th>
-                        <!-- <th> Type </th> -->
-                        <th>{{ 'SHARED.NAME' | translate }}</th>
-                        <th>{{ 'SHARED.ID' | translate }}</th>
-                    </tr>
-                </thead>
-                @for (feature of features(); track feature.properties.id) {
-                    <tbody>
-                        <tr (click)="selectFeature(feature)">
-                            <td
-                                style="width: 20px"
-                                [style.background-color]="
-                                    feature.properties.hexColor
-                                "
+<section class="feature-choice">
+    <header class="feature-choice__header">
+        <div class="feature-choice__icon" aria-hidden="true">
+            <mat-icon fontSet="material-symbols-rounded">touch_app</mat-icon>
+        </div>
+        <div>
+            <h2 mat-dialog-title>{{ 'MAIN.WHAT_ITEM' | translate }}</h2>
+            <p>Sélectionnez l’objet voulu à cet emplacement.</p>
+        </div>
+    </header>
+
+    <mat-dialog-content>
+        <div class="feature-list" role="list">
+            @for (feature of features(); track feature.properties.id) {
+                <button
+                    class="feature-row"
+                    type="button"
+                    role="listitem"
+                    (click)="selectFeature(feature)"
+                >
+                    <span
+                        class="feature-symbol"
+                        [style.background-color]="feature.properties.hexColor"
+                    >
+                        <app-icon
+                            [icon]="feature.properties.icon"
+                            [jsonSprites]="jsonSprites()"
+                        ></app-icon>
+                    </span>
+
+                    <span class="feature-copy">
+                        <strong>
+                            @if (feature.properties._name) {
+                                {{ feature.properties._name }}
+                            } @else {
+                                <span class="noname">{{
+                                    'SHARED.UNDEFINED' | translate
+                                }}</span>
+                            }
+                        </strong>
+                        @if (feature.properties.changeType !== 'Create') {
+                            <span class="feature-id">{{
+                                feature.properties.id
+                            }}</span>
+                        }
+                    </span>
+
+                    @if (feature.properties.changeType; as changeType) {
+                        <span
+                            class="change-state"
+                            [attr.data-change-type]="changeType"
+                        >
+                            <mat-icon
+                                fontSet="material-symbols-rounded"
+                                aria-hidden="true"
                             >
-                                <app-icon
-                                    [icon]="feature.properties.icon"
-                                    [jsonSprites]="jsonSprites()"
-                                >
-                                </app-icon>
-                            </td>
-                            <td>
-                                @if (
-                                    feature.properties.changeType == 'Create'
-                                ) {
-                                    <ion-icon
-                                        name="add"
-                                        class="iconType"
-                                    ></ion-icon>
+                                @switch (changeType) {
+                                    @case ('Create') {
+                                        add
+                                    }
+                                    @case ('Update') {
+                                        edit
+                                    }
+                                    @case ('Delete') {
+                                        delete
+                                    }
                                 }
-                                @if (
-                                    feature.properties.changeType == 'Update'
-                                ) {
-                                    <ion-icon
-                                        name="create"
-                                        class="iconType"
-                                    ></ion-icon>
-                                }
-                                @if (
-                                    feature.properties.changeType == 'Delete'
-                                ) {
-                                    <ion-icon
-                                        name="trash"
-                                        class="iconType"
-                                    ></ion-icon>
-                                }
-                            </td>
-                            <!-- TODO: translation -->
-                            <td>
-                                @if (feature.properties._name) {
-                                    <span>
-                                        {{ feature.properties._name }}
-                                    </span>
-                                }
-                                @if (!feature.properties._name) {
-                                    <span class="noname">
-                                        {{ 'SHARED.UNDEFINED' | translate }}
-                                    </span>
-                                }
-                            </td>
-                            <td>
-                                @if (
-                                    feature.properties.changeType !== 'Create'
-                                ) {
-                                    <span class="spanId">
-                                        {{ feature.properties.id }}
-                                    </span>
-                                }
-                            </td>
-                        </tr>
-                    </tbody>
-                }
-            </table>
-        </table>
-    </div>
-</div>
+                            </mat-icon>
+                        </span>
+                    }
+
+                    <mat-icon
+                        class="row-arrow"
+                        fontSet="material-symbols-rounded"
+                        aria-hidden="true"
+                        >chevron_right</mat-icon
+                    >
+                </button>
+            }
+        </div>
+    </mat-dialog-content>
+</section>

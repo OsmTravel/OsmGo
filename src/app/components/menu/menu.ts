@@ -1,25 +1,18 @@
+import { CdkTrapFocus } from '@angular/cdk/a11y'
 import { Component, inject, input, output } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialog } from '@angular/material/dialog'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatIconModule } from '@angular/material/icon'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import {
-    AlertController,
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonList,
-    IonTitle,
-    IonToolbar,
-    NavController,
-    Platform,
-} from '@ionic/angular/standalone'
+    ConfirmDialogComponent,
+    type ConfirmDialogData,
+} from '@components/shared/confirm-dialog/confirm-dialog'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
-import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
-import { OsmApiService } from '@services/osmApi.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { menuAnimations } from './menu.animations'
 
 @Component({
@@ -28,29 +21,20 @@ import { menuAnimations } from './menu.animations'
     styleUrls: ['./menu.scss'],
     animations: menuAnimations,
     imports: [
-        IonButton,
-        IonButtons,
-        IonContent,
-        IonHeader,
-        IonIcon,
-        IonItem,
-        IonList,
-        IonTitle,
-        IonToolbar,
+        CdkTrapFocus,
+        MatButtonModule,
+        MatDividerModule,
+        MatIconModule,
         TranslateModule,
     ],
 })
 export class MenuPage {
     readonly mapService = inject(MapService)
-    readonly osmApi = inject(OsmApiService)
-    readonly dataService = inject(DataService)
     readonly configService = inject(ConfigService)
-    readonly alertService = inject(AlertService)
-    private readonly alertCtrl = inject(AlertController)
-    readonly platform = inject(Platform)
+    private readonly dialog = inject(MatDialog)
     private readonly translate = inject(TranslateService)
-    private readonly navCtrl = inject(NavController)
-    private readonly osmAuthService = inject(OsmAuthService)
+    private readonly overlayNavigation = inject(OverlayNavigationService)
+    readonly osmAuthService = inject(OsmAuthService)
 
     private swipeStartX: number | null = null
 
@@ -59,37 +43,33 @@ export class MenuPage {
     readonly menuIsOpen = input(false)
     readonly newVersion = input(false)
 
-    deleteDatapresentConfirm() {
-        this.alertCtrl
-            .create({
-                header: this.translate.instant(
-                    'MENU.DELETE_DATA_CONFIRM_HEADER'
-                ),
-                message: this.translate.instant(
-                    'MENU.DELETE_DATA_CONFIRM_MESSAGE'
-                ),
-                buttons: [
-                    {
-                        text: this.translate.instant('SHARED.CANCEL'),
-                        role: 'cancel',
-                        handler: () => {},
-                    },
-                    {
-                        text: this.translate.instant('SHARED.CONFIRM'),
-                        handler: () => {
-                            this.mapService.resetDataMap()
-                            this.closeMenu()
-                        },
-                    },
-                ],
+    deleteDatapresentConfirm(): void {
+        const data: ConfirmDialogData = {
+            title: this.translate.instant('MENU.DELETE_DATA_CONFIRM_HEADER'),
+            message: this.translate.instant('MENU.DELETE_DATA_CONFIRM_MESSAGE'),
+            cancelLabel: this.translate.instant('SHARED.CANCEL'),
+            confirmLabel: this.translate.instant('SHARED.CONFIRM'),
+            destructive: true,
+        }
+        this.dialog
+            .open(ConfirmDialogComponent, {
+                data,
+                autoFocus: 'dialog',
+                maxWidth: 'calc(100vw - 32px)',
+                panelClass: 'osmgo-dialog',
             })
-            .then((alert) => {
-                alert.present()
+            .afterClosed()
+            .subscribe((confirmed) => {
+                if (confirmed) {
+                    this.mapService.resetDataMap()
+                    this.closeMenu()
+                }
             })
     }
 
     pushPage(path: string): void {
-        this.navCtrl.navigateForward(path)
+        this.closeMenu()
+        void this.overlayNavigation.open(path)
     }
 
     openBaseMapsPage() {
@@ -105,6 +85,7 @@ export class MenuPage {
 
     logout() {
         this.osmAuthService.logout()
+        this.closeMenu()
     }
 
     login(): void {

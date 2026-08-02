@@ -1,10 +1,10 @@
 import { computed, inject, Service, signal } from '@angular/core'
-import { Storage } from '@ionic/storage-angular'
 import {
     FeatureIdSource,
     OsmGoFeature,
     OsmGoFeatureCollection,
 } from '@osmgo/type'
+import { AppStorage } from '@services/app-storage.service'
 import { featureCollection } from '@turf/turf'
 import { cloneDeep } from 'lodash'
 import { from, Observable } from 'rxjs'
@@ -12,7 +12,7 @@ import { map } from 'rxjs/operators'
 
 @Service()
 export class DataService {
-    readonly localStorage = inject(Storage)
+    readonly localStorage = inject(AppStorage)
 
     /**
      * Primary data storage for official OSM POIs.

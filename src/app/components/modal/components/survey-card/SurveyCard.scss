@@ -1,18 +1,32 @@
-ion-card-content {
-    padding-bottom: 0px;
-
-    p {
-        font-weight: bold;
-    }
+:host {
+    display: block;
 }
-
-div.actions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 8px;
-    padding: 0px 8px;
+.survey-card {
+    padding: 14px;
+    border: 1px solid #f1d28a;
+    border-radius: 18px;
+    background: var(--osmgo-amber-container);
 }
-
+.survey-card__question {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--osmgo-amber-ink);
+}
+.survey-card__question p {
+    margin: 0;
+    font-weight: 650;
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 12px;
+}
 .yes-button {
-    --color: #167a3f;
+    color: #fff;
+    background: #276f3b;
+}
+.no-button {
+    color: var(--osmgo-error);
 }

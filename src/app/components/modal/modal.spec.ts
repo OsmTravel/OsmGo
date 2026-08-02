@@ -1,33 +1,17 @@
 import { TestBed } from '@angular/core/testing'
-import {
-    AlertController,
-    LoadingController,
-    ModalController,
-    Platform,
-    ToastController,
-} from '@ionic/angular/standalone'
+import { MatDialog } from '@angular/material/dialog'
+import { MatSnackBar } from '@angular/material/snack-bar'
 import { TranslateModule } from '@ngx-translate/core'
 import type { MapMode } from '@osmgo/type'
-import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
-import { ModalsContentPage } from './modal'
-import { ModalPrimaryTag } from './modal.primaryTag/modal.primaryTag'
+import { of } from 'rxjs'
+import { ObjectEditorContentComponent } from './modal'
 
-describe('ModalsContentPage', () => {
-    interface PageOptions {
-        type?: MapMode
-        modalCtrl?: {
-            create: ReturnType<typeof vi.fn>
-            dismiss: ReturnType<typeof vi.fn>
-        }
-        alertCtrl?: { create: ReturnType<typeof vi.fn> }
-        toastCtrl?: { create: ReturnType<typeof vi.fn> }
-    }
-
+describe('ObjectEditorContentComponent', () => {
     const genderPreset = {
         type: 'select',
         iDtype: 'radio',
@@ -42,15 +26,7 @@ describe('ModalsContentPage', () => {
 
     function createPage(
         tags: Record<string, string | number>,
-        {
-            type = 'Update',
-            modalCtrl = {
-                create: vi.fn(),
-                dismiss: vi.fn(),
-            },
-            alertCtrl = { create: vi.fn() },
-            toastCtrl = { create: vi.fn() },
-        }: PageOptions = {}
+        type: MapMode = 'Update'
     ) {
         const feature = {
             type: 'Feature',
@@ -65,22 +41,26 @@ describe('ModalsContentPage', () => {
         }
         const tagsService = {
             presets: () => ({ gender: genderPreset }),
-            tags: () => [],
+            tags: () => [tagConfig],
             jsonSprites: () => ({}),
             bookmarksIds: () => [],
             primaryKeys: () => [],
             savedFields: {},
             findPkey: () => ({ key: 'amenity', value: 'toilets' }),
         }
+        const nestedDialogRef = {
+            componentRef: { setInput: vi.fn() },
+            afterClosed: () => of(undefined),
+        }
+        const dialog = { open: vi.fn(() => nestedDialogRef) }
+        const snackBar = { open: vi.fn() }
+
         TestBed.resetTestingModule()
         TestBed.configureTestingModule({
-            imports: [ModalsContentPage, TranslateModule.forRoot()],
+            imports: [ObjectEditorContentComponent, TranslateModule.forRoot()],
             providers: [
-                { provide: Platform, useValue: {} },
-                { provide: LoadingController, useValue: {} },
                 { provide: OsmApiService, useValue: {} },
                 { provide: TagsService, useValue: tagsService },
-                { provide: ModalController, useValue: modalCtrl },
                 { provide: MapService, useValue: {} },
                 { provide: DataService, useValue: {} },
                 {
@@ -94,23 +74,17 @@ describe('ModalsContentPage', () => {
                         }),
                     },
                 },
-                { provide: AlertService, useValue: {} },
-                { provide: ToastController, useValue: toastCtrl },
-                { provide: AlertController, useValue: alertCtrl },
+                { provide: MatDialog, useValue: dialog },
+                { provide: MatSnackBar, useValue: snackBar },
             ],
         })
-        const fixture = TestBed.createComponent(ModalsContentPage)
+        const fixture = TestBed.createComponent(ObjectEditorContentComponent)
         fixture.componentRef.setInput('data', feature)
         fixture.componentRef.setInput('type', type)
         fixture.componentRef.setInput('origineData', 'data')
         const page = fixture.componentInstance
         page.ngOnInit()
-        return {
-            page,
-            modalCtrl,
-            alertCtrl,
-            toastCtrl,
-        }
+        return { page, dialog, snackBar, nestedDialogRef }
     }
 
     it('creates an empty editable field without an undefined key', () => {
@@ -142,14 +116,14 @@ describe('ModalsContentPage', () => {
         })
     })
 
-    it('changes from read mode to update mode', () => {
-        const { page } = createPage({ amenity: 'toilets' }, { type: 'Read' })
-        page.initComponent(tagConfig as any)
+    it('asks the unified sheet to enter update mode from read mode', () => {
+        const { page } = createPage({ amenity: 'toilets' }, 'Read')
+        const dismissed = vi.fn()
+        page.dismissed.subscribe(dismissed)
 
         page.updateMode()
 
-        expect(page.mode).toBe('Update')
-        expect(page.typeFiche).toBe('Edit')
+        expect(dismissed).toHaveBeenCalledWith({ type: 'Edit' })
     })
 
     it('updates survey tags with a new signal value', () => {
@@ -165,70 +139,37 @@ describe('ModalsContentPage', () => {
         })
     })
 
-    it('dismisses the feature modal with its result', () => {
-        const { page, modalCtrl } = createPage({ amenity: 'toilets' })
+    it('emits its result to the unified object sheet', () => {
+        const { page } = createPage({ amenity: 'toilets' })
         const result = { redraw: true }
+        const dismissed = vi.fn()
+        page.dismissed.subscribe(dismissed)
 
         page.dismiss(result)
 
-        expect(modalCtrl.dismiss).toHaveBeenCalledWith(result)
+        expect(dismissed).toHaveBeenCalledWith(result)
     })
 
-    it('opens the primary tag modal with the current feature data', async () => {
-        const primaryTagModal = {
-            present: vi.fn().mockResolvedValue(undefined),
-            onDidDismiss: vi.fn().mockResolvedValue({ data: undefined }),
-        }
-        const modalCtrl = {
-            create: vi.fn().mockResolvedValue(primaryTagModal),
-            dismiss: vi.fn(),
-        }
-        const { page } = createPage({ amenity: 'toilets' }, { modalCtrl })
-        page.initComponent(tagConfig as any)
+    it('asks the unified sheet to select a category', () => {
+        const { page, dialog } = createPage({ amenity: 'toilets' }, 'Update')
+        const categoryRequested = vi.fn()
+        page.categoryRequested.subscribe(categoryRequested)
 
-        await page.openPrimaryTagModal()
+        page.openPrimaryTagModal()
 
-        expect(modalCtrl.create).toHaveBeenCalledWith({
-            component: ModalPrimaryTag,
-            componentProps: {
-                geojson: page.feature,
-                tagConfig: page.tagConfig,
-                tags: page.tags,
-                geometryType: 'point',
-            },
-        })
-        expect(primaryTagModal.present).toHaveBeenCalledOnce()
+        expect(categoryRequested).toHaveBeenCalledOnce()
+        expect(dialog.open).not.toHaveBeenCalled()
     })
 
-    it('presents a confirmation alert', async () => {
-        const alert = { present: vi.fn().mockResolvedValue(undefined) }
-        const alertCtrl = { create: vi.fn().mockResolvedValue(alert) }
-        const { page } = createPage({ amenity: 'toilets' }, { alertCtrl })
+    it('shows feedback through the Material snackbar', () => {
+        const { page, snackBar } = createPage({ amenity: 'toilets' })
 
-        await page.presentConfirm()
+        page.presentToast('Unable to save changes.')
 
-        expect(alert.present).toHaveBeenCalledOnce()
-        expect(alertCtrl.create).toHaveBeenCalledWith(
-            expect.objectContaining({
-                header: 'MODAL_SELECTED_ITEM.DELETE_CONFIRM_HEADER',
-                message: 'MODAL_SELECTED_ITEM.DELETE_CONFIRM_MESSAGE',
-            })
+        expect(snackBar.open).toHaveBeenCalledWith(
+            'Unable to save changes.',
+            'SHARED.CLOSE',
+            { duration: 4000 }
         )
-    })
-
-    it('presents a toast message', async () => {
-        const toast = { present: vi.fn().mockResolvedValue(undefined) }
-        const toastCtrl = { create: vi.fn().mockResolvedValue(toast) }
-        const { page } = createPage({ amenity: 'toilets' }, { toastCtrl })
-
-        await page.presentToast('Unable to save changes.')
-
-        expect(toastCtrl.create).toHaveBeenCalledWith({
-            message: 'Unable to save changes.',
-            duration: 4000,
-            position: 'bottom',
-            buttons: [expect.objectContaining({ text: 'X', role: 'cancel' })],
-        })
-        expect(toast.present).toHaveBeenCalledOnce()
     })
 })

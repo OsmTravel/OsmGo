@@ -1,227 +1,215 @@
 @if (isPushing()) {
-<div class="pushDataOverlay">
+<div class="upload-overlay" role="status" aria-live="polite">
     @if (!uploadedOk()) {
-    <div style="text-align: center">
-        <h2>{{ 'SEND_DATA.UPLOADING_DATA_TO_OSM' | translate}}</h2>
-    </div>
-    <div style="margin: 1em">
-        <ion-icon
-            aria-hidden="true"
-            class="uploadingIcon"
-            name="globe"
-        ></ion-icon>
-    </div>
-    <div style="text-align: center">
-        <h2>{{ 'SEND_DATA.DONT_CLOSE' | translate}}</h2>
-    </div>
-    } @if (uploadedOk()) {
-    <div style="margin: 1em">
-        <ion-icon
-            aria-hidden="true"
-            class="uploadedOkIcon"
-            name="checkmark-circle-outline"
-        ></ion-icon>
+    <mat-spinner diameter="54"></mat-spinner>
+    <h2>{{ 'SEND_DATA.UPLOADING_DATA_TO_OSM' | translate }}</h2>
+    <p>{{ 'SEND_DATA.DONT_CLOSE' | translate }}</p>
+    } @else {
+    <div class="upload-success" aria-hidden="true">
+        <mat-icon fontSet="material-symbols-rounded">check_circle</mat-icon>
     </div>
     }
 </div>
 }
 
-<ion-header color="primary">
-    <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button
-                [attr.aria-label]="'SHARED.CLOSE' | translate"
-                (click)="navCtrl.back()"
-                [disabled]="isPushing()"
-            >
-                <ion-icon
-                    aria-hidden="true"
-                    name="chevron-back-outline"
-                    slot="icon-only"
-                ></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title> {{ 'SEND_DATA.SEND_DATA' | translate}} </ion-title>
-    </ion-toolbar>
-</ion-header>
+<main class="upload-screen">
+    <app-screen-header
+        [title]="'SEND_DATA.SEND_DATA' | translate"
+        (backRequested)="back()"
+    ></app-screen-header>
 
-<ion-content class="ion-padding">
-    @if (this.configService.config().isDevServer) {
-    <h1>DEV SERVER</h1>
-    } @if (connectionError()) {
-    <ion-card color="danger">
-        <ion-card-content> {{connectionError()}} </ion-card-content>
-    </ion-card>
-    } @if (!configService.userInfo().connected) {
-    <ion-card color="danger">
-        <ion-card-content>
-            {{ 'SEND_DATA.YOU_MUST_BE_LOGGED_IN' | translate}}
-        </ion-card-content>
-    </ion-card>
-    }
+    <div class="upload-content">
+        @if (configService.config().isDevServer) {
+        <div class="environment-banner">
+            <mat-icon fontSet="material-symbols-rounded">science</mat-icon>
+            OSM DEV SERVER
+        </div>
+        } @if (connectionError()) {
+        <section class="message-card message-card--error" role="alert">
+            <mat-icon fontSet="material-symbols-rounded">cloud_off</mat-icon>
+            <p>{{ connectionError() }}</p>
+        </section>
+        } @if (!configService.userInfo().connected) {
+        <section class="message-card message-card--error" role="alert">
+            <mat-icon fontSet="material-symbols-rounded">login</mat-icon>
+            <p>{{ 'SEND_DATA.YOU_MUST_BE_LOGGED_IN' | translate }}</p>
+        </section>
+        }
 
-    <ion-card>
-        <ion-card-content>
-            <table style="width: 100%">
-                <tr>
-                    <th>{{ 'SEND_DATA.TOTAL_ITEMS' | translate}}</th>
-                    <th>{{ 'SEND_DATA.ADDED_ITEMS' | translate}}</th>
-                    <th>{{ 'SEND_DATA.UPDATED_ITEMS' | translate}}</th>
-                    <th>{{ 'SEND_DATA.DELETED_ITEMS' | translate}}</th>
-                </tr>
-                <tr>
-                    <td>{{summary().Total}}</td>
-                    <td>{{summary().Create}}</td>
-                    <td>{{summary().Update}}</td>
-                    <td>{{summary().Delete}}</td>
-                </tr>
-            </table>
-        </ion-card-content>
-    </ion-card>
-
-    @if (error(); as uploadError) {
-    <ion-card class="cardError" data-testid="upload-error">
-        <ion-card-header>
-            <h4 style="color: white">Error</h4>
-        </ion-card-header>
-        <ion-card-content>
-            <span class="errorPush"
-                >{{uploadError.status}} {{uploadError.message}}</span
-            >
-            @if (uploadError.feature?.properties?.tags) {
+        <section class="summary-card" aria-label="Résumé des modifications">
             <div>
-                <table id="errorTable">
-                    @for (item of
-                    $safeNavigationMigration(uploadError.feature?.properties?.tags)
-                    | keyvalue; track item) { @if (item.value !== '') {
-                    <tr>
-                        <td>{{item.key}}</td>
-                        <td>{{item.value}}</td>
-                    </tr>
-                    } }
-                </table>
+                <strong>{{ summary().Total }}</strong>
+                <span>{{ 'SEND_DATA.TOTAL_ITEMS' | translate }}</span>
             </div>
-            } @if (uploadError.feature) {
-            <ion-button (click)="cancelErrorFeature(uploadError.feature)"
-                >{{ 'SEND_DATA.CANCEL_THIS_CHANGE' | translate}}</ion-button
-            >
-            }
-        </ion-card-content>
-    </ion-card>
-    }
+            <div class="summary-create">
+                <strong>{{ summary().Create }}</strong>
+                <span>{{ 'SEND_DATA.ADDED_ITEMS' | translate }}</span>
+            </div>
+            <div class="summary-update">
+                <strong>{{ summary().Update }}</strong>
+                <span>{{ 'SEND_DATA.UPDATED_ITEMS' | translate }}</span>
+            </div>
+            <div class="summary-delete">
+                <strong>{{ summary().Delete }}</strong>
+                <span>{{ 'SEND_DATA.DELETED_ITEMS' | translate }}</span>
+            </div>
+        </section>
 
-    <ion-card>
-        <ion-card-header>
-            {{ 'SEND_DATA.CHANGESET_COMMENT' | translate}}
-        </ion-card-header>
-        <ion-card-content>
-            <ion-item>
-                <ion-input
+        @if (error(); as uploadError) {
+        <section class="upload-error" data-testid="upload-error" role="alert">
+            <header>
+                <mat-icon fontSet="material-symbols-rounded">error</mat-icon>
+                <h2>OpenStreetMap</h2>
+            </header>
+            <p class="error-message">
+                {{ uploadError.status }} {{ uploadError.message }}
+            </p>
+            @if (uploadError.feature?.properties?.tags) {
+            <dl class="error-tags">
+                @for ( item of
+                $safeNavigationMigration(uploadError.feature?.properties?.tags)
+                | keyvalue; track item.key ) { @if (item.value !== '') {
+                <div>
+                    <dt>{{ item.key }}</dt>
+                    <dd>{{ item.value }}</dd>
+                </div>
+                } }
+            </dl>
+            } @if (uploadError.feature) {
+            <button
+                mat-stroked-button
+                type="button"
+                (click)="cancelErrorFeature(uploadError.feature)"
+            >
+                {{ 'SEND_DATA.CANCEL_THIS_CHANGE' | translate }}
+            </button>
+            }
+        </section>
+        }
+
+        <section class="comment-card">
+            <div class="section-title">
+                <mat-icon fontSet="material-symbols-rounded">comment</mat-icon>
+                <h2>{{ 'SEND_DATA.CHANGESET_COMMENT' | translate }}</h2>
+            </div>
+            <mat-form-field appearance="outline" subscriptSizing="dynamic">
+                <textarea
+                    matInput
+                    rows="3"
                     [ngModel]="commentChangeset()"
                     (ngModelChange)="commentChangeset.set($event)"
-                    type="text"
                     [placeholder]="'SEND_DATA.CHANGESET_COMMENT' | translate"
-                ></ion-input>
-            </ion-item>
-        </ion-card-content>
-    </ion-card>
+                ></textarea>
+            </mat-form-field>
+        </section>
 
-    <table style="width: 100%">
-        <tr>
-            <th style="width: 45px">{{ 'SEND_DATA.TYPE' | translate}}</th>
-            <th style="width: 45px"></th>
-
-            <th>{{ 'SEND_DATA.NAME' | translate}}</th>
-            <th>{{ 'SEND_DATA.PRIMARY_KEY' | translate}}</th>
-
-            <th
-                style="width: 45px"
-                [attr.aria-label]="'A11Y.LOCATION' | translate"
-            >
-                <ion-icon aria-hidden="true" name="locate"></ion-icon>
-            </th>
-            <th style="width: 45px">{{ 'SEND_DATA.ERROR' | translate}}</th>
-        </tr>
-        @for (item of featuresChanges(); track item) {
-        <tr>
-            <td>
-                @if (item.properties.changeType === 'Create') {
-                <ion-icon
-                    [attr.aria-label]="'SHARED.CREATE' | translate"
-                    name="add"
-                    class="iconType"
-                    style="color: green"
-                ></ion-icon>
-                } @if (item.properties.changeType === 'Update') {
-                <ion-icon
-                    [attr.aria-label]="'SHARED.EDIT' | translate"
-                    name="create"
-                    class="iconType"
-                    style="color: blue"
-                ></ion-icon>
-                } @if (item.properties.changeType === 'Delete') {
-                <ion-icon
-                    [attr.aria-label]="'SHARED.DELETE' | translate"
-                    name="trash"
-                    class="iconType"
-                    style="color: red"
-                ></ion-icon>
-                }
-            </td>
-            <td
-                [style.background-color]="item.properties && item.properties.hexColor ? item.properties.hexColor : 'black'"
-            >
-                <app-icon
-                    class="imgCenter iconImg"
-                    [icon]="item.properties.icon"
-                    [jsonSprites]="tagsService.jsonSprites()"
+        <section class="changes-section" aria-labelledby="changes-title">
+            <div class="section-title">
+                <mat-icon fontSet="material-symbols-rounded"
+                    >edit_note</mat-icon
                 >
-                </app-icon>
-            </td>
-            <td>{{item.properties?._name}}</td>
-            <td>
-                {{item.properties?.primaryTag.key}}:
-                {{item.properties?.primaryTag.value}}
-            </td>
-            <td
-                role="button"
-                tabindex="0"
-                [attr.aria-label]="'A11Y.CENTER_FEATURE' | translate"
-                (click)="centerToElement(item.geometry)"
-                (keydown.enter)="centerToElement(item.geometry)"
-                (keydown.space)="centerToElement(item.geometry); $event.preventDefault()"
-            >
-                <ion-icon
-                    aria-hidden="true"
-                    style="font-size: 2em"
-                    name="locate"
-                ></ion-icon>
-            </td>
-            <td>
-                @if (item.error) {
-                <div (click)="displayError(item.error)">
-                    <ion-icon aria-hidden="true" name="bug"></ion-icon>
+                <h2 id="changes-title">
+                    {{ 'SEND_DATA.TOTAL_ITEMS' | translate }} · {{
+                    featuresChanges().length }}
+                </h2>
+            </div>
+
+            <div class="change-list">
+                @for (item of featuresChanges(); track item.id) {
+                <article
+                    class="change-card"
+                    [attr.data-change-type]="item.properties.changeType"
+                >
+                    <div
+                        class="change-type"
+                        [attr.aria-label]="item.properties.changeType"
+                    >
+                        <mat-icon fontSet="material-symbols-rounded">
+                            @switch (item.properties.changeType) { @case
+                            ('Create') { add } @case ('Update') { edit } @case
+                            ('Delete') { delete } }
+                        </mat-icon>
+                    </div>
+
+                    <div
+                        class="change-symbol"
+                        [style.background-color]="item.properties.hexColor || '#26352f'"
+                        aria-hidden="true"
+                    >
+                        <app-icon
+                            [icon]="item.properties.icon"
+                            [jsonSprites]="tagsService.jsonSprites()"
+                        ></app-icon>
+                    </div>
+
+                    <div class="change-copy">
+                        <strong
+                            >{{ item.properties._name || ('SHARED.UNDEFINED' |
+                            translate) }}</strong
+                        >
+                        <span
+                            >{{ item.properties.primaryTag.key }}={{
+                            item.properties.primaryTag.value }}</span
+                        >
+                        @if (item.error) {
+                        <button
+                            class="inline-error"
+                            type="button"
+                            (click)="displayError(item.error)"
+                        >
+                            <mat-icon fontSet="material-symbols-rounded"
+                                >bug_report</mat-icon
+                            >
+                            {{ 'SEND_DATA.ERROR' | translate }}
+                        </button>
+                        }
+                    </div>
+
+                    <button
+                        mat-icon-button
+                        type="button"
+                        [attr.aria-label]="'A11Y.CENTER_FEATURE' | translate"
+                        (click)="centerToElement(item.geometry)"
+                    >
+                        <mat-icon fontSet="material-symbols-rounded"
+                            >my_location</mat-icon
+                        >
+                    </button>
+                </article>
+                } @empty {
+                <div class="empty-changes">
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >check_circle</mat-icon
+                    >
+                    <p>Aucune modification en attente.</p>
                 </div>
                 }
-            </td>
-        </tr>
-        }
-    </table>
-</ion-content>
+            </div>
+        </section>
+    </div>
 
-<ion-footer>
-    <ion-button
-        class="footerButton"
-        color="danger"
-        [disabled]="isPushing()"
-        (click)="presentConfirm()"
-        >{{ 'SEND_DATA.DELETE' | translate}}</ion-button
-    >
-    <ion-button
-        data-testid="upload-changes"
-        class="footerButton"
-        [disabled]="!configService.userInfo().connected || featuresChanges().length === 0 || isPushing()"
-        (click)="pushDataToOsm(commentChangeset())"
-        >{{ 'SEND_DATA.SEND' | translate}}</ion-button
-    >
-</ion-footer>
+    <footer class="upload-actions">
+        <button
+            mat-button
+            class="delete-all"
+            type="button"
+            [disabled]="isPushing()"
+            (click)="presentConfirm()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">delete_sweep</mat-icon>
+            {{ 'SEND_DATA.DELETE' | translate }}
+        </button>
+        <button
+            mat-flat-button
+            data-testid="upload-changes"
+            type="button"
+            [disabled]="!configService.userInfo().connected || featuresChanges().length === 0 || isPushing()"
+            (click)="pushDataToOsm(commentChangeset())"
+        >
+            <mat-icon fontSet="material-symbols-rounded">cloud_upload</mat-icon>
+            @if (featuresChanges().length === 1) { {{ 'SEND_DATA.SEND_CHANGE' |
+            translate }} } @else { {{ 'SEND_DATA.SEND_CHANGES' | translate: {
+            count: featuresChanges().length } }} }
+        </button>
+    </footer>
+</main>

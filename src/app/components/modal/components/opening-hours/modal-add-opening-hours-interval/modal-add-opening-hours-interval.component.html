@@ -1,85 +1,130 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>{{
-            'OPENINGHOURS.ADD_OPENING_HOURS' | translate
-        }}</ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding-vertical">
-    <div class="daysHeader">
-        @for (day of days(); track day.index) {
-            <ion-badge
-                class="dayBadge"
-                [color]="day.selected ? 'primary' : 'light'"
-                (click)="toggleDay(day.index)"
-            >
-                {{ day.label | translate | charLimit: 3 }}
-            </ion-badge>
-        }
-    </div>
-
-    @if (!dayIsSelected()) {
-        <div class="alertSelectADay">
-            {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
+<main class="interval-dialog">
+    <header>
+        <div>
+            <mat-icon fontSet="material-symbols-rounded">schedule</mat-icon>
+            <h2>{{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}</h2>
         </div>
-    }
-    @for (time of times(); track time.id; let index = $index) {
-        <ion-card>
-            <div class="timeGrid">
-                <div class="timeBlock">
-                    <h3>{{ 'OPENINGHOURS.START_TIME' | translate }}</h3>
-                    <ion-datetime
-                        display-format="HH:mm"
-                        picker-format="HH:mm"
-                        presentation="time"
-                        minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
-                        [value]="time.start"
-                        (ionChange)="updateTimeRange(index, 'start', $event)"
-                    ></ion-datetime>
-                </div>
-                <div class="timeBlock">
-                    <h3>{{ 'OPENINGHOURS.END_TIME' | translate }}</h3>
-                    <ion-datetime
-                        display-format="HH:mm"
-                        picker-format="HH:mm"
-                        presentation="time"
-                        minuteValues="0,5,10,15,20,25,30,35,40,45,50,55"
-                        [value]="time.end"
-                        (ionChange)="updateTimeRange(index, 'end', $event)"
-                    ></ion-datetime>
-                </div>
-            </div>
-            <ion-button
-                color="danger"
-                (click)="removeInteval(index)"
-                fill="clear"
-                expand="full"
-            >
-                {{ 'OPENINGHOURS.DELETE_INTERVAL' | translate }}
-            </ion-button>
-        </ion-card>
-    }
+        <button
+            mat-icon-button
+            type="button"
+            [attr.aria-label]="'SHARED.CLOSE' | translate"
+            (click)="cancel()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
+        </button>
+    </header>
 
-    <ion-button
-        color="success"
-        (click)="addNewInteval()"
-        expand="block"
-        class="addInterval"
-    >
-        {{ 'OPENINGHOURS.ADD_INTERVAL' | translate }}
-    </ion-button>
-</ion-content>
+    <section class="dialog-content">
+        <div class="days" role="group">
+            @for (day of days(); track day.index) {
+                <button
+                    mat-button
+                    type="button"
+                    class="day-button"
+                    [class.day-button--selected]="day.selected"
+                    [attr.aria-pressed]="day.selected"
+                    (click)="toggleDay(day.index)"
+                >
+                    {{ day.label | translate | charLimit: 3 }}
+                </button>
+            }
+        </div>
 
-<ion-footer id="footer">
-    <ion-button (click)="cancel()" fill="clear">
-        <ion-icon name="close" slot="start"></ion-icon>
-        {{ 'SHARED.CANCEL' | translate }}
-    </ion-button>
-    <div class="spacer"></div>
-    <ion-button
-        (click)="submit()"
-        [disabled]="!dayIsSelected() || times().length == 0"
-        >Submit</ion-button
-    >
-</ion-footer>
+        @if (!dayIsSelected()) {
+            <p class="day-warning">
+                <mat-icon fontSet="material-symbols-rounded">info</mat-icon>
+                {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
+            </p>
+        }
+
+        <div class="time-ranges">
+            @for (time of times(); track time.id; let index = $index) {
+                <article class="time-card">
+                    <div class="time-grid">
+                        <mat-form-field
+                            appearance="outline"
+                            subscriptSizing="dynamic"
+                        >
+                            <mat-label>{{
+                                'OPENINGHOURS.START_TIME' | translate
+                            }}</mat-label>
+                            <input
+                                #startInput
+                                matInput
+                                type="time"
+                                step="300"
+                                [value]="time.start"
+                                (input)="
+                                    updateTimeRange(
+                                        index,
+                                        'start',
+                                        startInput.value
+                                    )
+                                "
+                            />
+                        </mat-form-field>
+                        <mat-form-field
+                            appearance="outline"
+                            subscriptSizing="dynamic"
+                        >
+                            <mat-label>{{
+                                'OPENINGHOURS.END_TIME' | translate
+                            }}</mat-label>
+                            <input
+                                #endInput
+                                matInput
+                                type="time"
+                                step="300"
+                                [value]="time.end"
+                                (input)="
+                                    updateTimeRange(
+                                        index,
+                                        'end',
+                                        endInput.value
+                                    )
+                                "
+                            />
+                        </mat-form-field>
+                    </div>
+                    <button
+                        mat-button
+                        type="button"
+                        class="remove-time"
+                        (click)="removeInterval(index)"
+                    >
+                        <mat-icon fontSet="material-symbols-rounded"
+                            >delete</mat-icon
+                        >
+                        {{ 'OPENINGHOURS.DELETE_INTERVAL' | translate }}
+                    </button>
+                </article>
+            }
+        </div>
+
+        <button
+            mat-stroked-button
+            type="button"
+            class="add-interval"
+            (click)="addNewInterval()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+            {{ 'OPENINGHOURS.ADD_INTERVAL' | translate }}
+        </button>
+    </section>
+
+    <footer>
+        <button mat-button type="button" (click)="cancel()">
+            {{ 'SHARED.CANCEL' | translate }}
+        </button>
+        <button
+            mat-flat-button
+            type="button"
+            class="submit-button"
+            (click)="submit()"
+            [disabled]="!dayIsSelected() || times().length === 0"
+        >
+            <mat-icon fontSet="material-symbols-rounded">check</mat-icon>
+            {{ 'SHARED.VALIDATE' | translate }}
+        </button>
+    </footer>
+</main>

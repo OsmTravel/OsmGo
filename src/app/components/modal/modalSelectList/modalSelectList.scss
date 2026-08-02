@@ -1,43 +1,77 @@
-$headerHeight: 56px;
-$tabHeight: 50px;
-$searchSelectHeight: 65px;
-$searchDivHeight: 58px;
-
-ion-toolbar {
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+:host {
+    display: block;
+    height: 100%;
 }
-
-#divContentSB {
-    position: absolute;
-    top: $headerHeight;
-    height: $searchSelectHeight;
+.option-dialog {
+    display: grid;
+    max-height: calc(100dvh - 24px);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    background: var(--osmgo-surface-muted);
+}
+header {
+    display: flex;
+    min-height: 66px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 12px;
+    background: var(--osmgo-surface);
+}
+header > div {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+}
+header > div > mat-icon {
+    flex: 0 0 auto;
+    color: var(--osmgo-blue);
+}
+header h2 {
+    margin: 0;
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.option-search {
+    padding: 8px 12px;
+    background: var(--osmgo-surface);
+}
+.option-search mat-form-field {
     width: 100%;
-    background-color: white;
 }
-#searchDiv {
-    width: 100%;
-    //height: $searchDivHeight;
+.option-list {
+    display: grid;
+    align-content: start;
+    gap: 7px;
+    overflow-y: auto;
+    padding: 10px 12px 20px;
 }
-
-.listTag {
-    position: absolute;
-    top: $searchDivHeight + $headerHeight;
-    bottom: 50px;
-    width: 100%;
-    overflow-y: scroll;
-    background-color: white;
+.option-list mat-radio-button {
+    padding: 10px 12px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 15px;
+    background: var(--osmgo-surface);
 }
-
-#footer {
-    position: absolute;
-    bottom: 0;
-    height: 50px;
-    width: 100%;
-    background-color: white;
-    box-shadow: -1px -2px 4px rgba(0, 0, 0, 0.3);
+.option-copy {
+    display: grid;
+    min-width: 0;
+    gap: 2px;
+    margin-left: 6px;
 }
-
-td {
-    padding: 10px;
-    border-bottom: 1px solid grey;
+.option-copy strong {
+    font-weight: 650;
+}
+.option-copy small {
+    color: var(--osmgo-map-blue);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 9px 12px;
+    border-top: 1px solid var(--osmgo-divider);
+    background: var(--osmgo-surface);
 }

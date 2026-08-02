@@ -1,3 +1,1 @@
-import { registerIcons } from '@app/icons'
-
-registerIcons()
+// Global test setup is intentionally empty.

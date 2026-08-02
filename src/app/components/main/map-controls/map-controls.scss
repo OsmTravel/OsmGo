@@ -1,0 +1,214 @@
+:host {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    display: block;
+    pointer-events: none;
+}
+
+button {
+    pointer-events: auto;
+    touch-action: manipulation;
+}
+
+.map-control,
+.map-action-dock {
+    position: absolute;
+}
+
+.map-control--menu {
+    top: max(14px, env(safe-area-inset-top));
+    left: 14px;
+}
+
+.map-control--pending {
+    top: max(14px, env(safe-area-inset-top));
+    right: 14px;
+}
+
+.osmgo-map-button {
+    width: 56px;
+    height: 56px;
+    color: var(--osmgo-ink-strong);
+    background: var(--osmgo-surface);
+    box-shadow: var(--osmgo-map-control-shadow);
+
+    &.is-active {
+        color: var(--osmgo-blue);
+        background: var(--osmgo-blue-container);
+    }
+
+    mat-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 28px;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 560,
+            'GRAD' 0,
+            'opsz' 28;
+    }
+}
+
+.osmgo-map-button--pending {
+    color: var(--osmgo-amber-ink);
+    background: var(--osmgo-amber-container);
+}
+
+.update-indicator {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--osmgo-surface);
+    border-radius: 50%;
+    background: var(--osmgo-amber);
+}
+
+.map-action-dock {
+    right: 14px;
+    bottom: var(--map-controls-bottom, max(46px, env(safe-area-inset-bottom)));
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 4px;
+    border-radius: 28px;
+    background: var(--osmgo-surface);
+    box-shadow: var(--osmgo-map-control-shadow);
+    transition: bottom 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.map-action-dock--browse {
+    right: 14px;
+    left: 14px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    gap: 7px;
+    padding-inline: 8px;
+}
+
+.map-action-group {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-self: center;
+}
+
+.dock-button {
+    width: 48px;
+    height: 48px;
+    color: var(--osmgo-ink-strong);
+
+    mat-icon {
+        width: 27px;
+        height: 27px;
+        font-size: 27px;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 520,
+            'GRAD' 0,
+            'opsz' 28;
+    }
+}
+
+.basemap-button {
+    justify-self: start;
+
+    &.is-active {
+        color: var(--osmgo-blue);
+        background: var(--osmgo-blue-container);
+    }
+}
+
+.refresh-button {
+    min-width: 112px;
+    height: 48px;
+    padding: 0 14px 0 12px;
+    color: white;
+    border-radius: 20px;
+    background: var(--osmgo-blue);
+    font-size: 0.9375rem;
+    font-weight: 680;
+    letter-spacing: 0.005em;
+
+    mat-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: 7px;
+        font-size: 25px;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 620,
+            'GRAD' 0,
+            'opsz' 28;
+    }
+
+    mat-spinner {
+        margin-right: 9px;
+        --mdc-circular-progress-active-indicator-color: white;
+    }
+
+    &:disabled {
+        color: var(--osmgo-ink-muted);
+        background: var(--osmgo-surface-muted);
+    }
+}
+
+.add-button,
+.confirm-button {
+    width: 48px;
+    height: 48px;
+    color: var(--osmgo-on-amber);
+    background: var(--osmgo-amber);
+    box-shadow: none;
+
+    mat-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 28px;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 470,
+            'GRAD' 0,
+            'opsz' 28;
+    }
+}
+
+.map-action-dock--browse .add-button {
+    justify-self: end;
+}
+
+.confirm-button {
+    color: white;
+    background: var(--osmgo-blue);
+}
+
+.dock-button--cancel {
+    color: var(--osmgo-error);
+}
+
+@media (min-width: 768px) {
+    .map-control--menu {
+        left: 20px;
+    }
+
+    .map-control--pending,
+    .map-action-dock {
+        right: var(--desktop-panel-offset, 20px);
+    }
+
+    .map-action-dock--browse {
+        left: 20px;
+        width: auto;
+        max-width: 640px;
+        margin-inline: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .map-action-dock {
+        transition: none;
+    }
+}

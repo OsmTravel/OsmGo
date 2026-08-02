@@ -1,47 +1,49 @@
-<ion-card color="primary">
-    <ion-card-content>
+<section class="meta-card" aria-label="Métadonnées OpenStreetMap">
+    <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+        >history</mat-icon
+    >
+    <div class="meta-card__content">
         <p>
-            {{ 'MODAL_SELECTED_ITEM.META_VERSION' | translate }} {{
-            feature().properties?.meta.version }}
+            <strong
+                >{{ 'MODAL_SELECTED_ITEM.META_VERSION' | translate }} {{
+                feature().properties.meta.version }}</strong
+            >
         </p>
         @if (feature().properties.meta.timestamp === 0) {
         <p>{{ 'MODAL_SELECTED_ITEM.META_BEING_CREATED' | translate }}</p>
-        } @if (feature().properties.meta.timestamp !== 0) {
+        } @else {
         <p>
-            {{ feature().properties.meta?.version > 1 ?
+            {{ feature().properties.meta.version > 1 ? (displayCode() ?
             ('MODAL_SELECTED_ITEM.META_UPDATED_AT_DATE' | translate) :
-            ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' | translate) }} @if
-            (displayCode()) {
+            ('MODAL_SELECTED_ITEM.META_UPDATED_AT_DATE_TIME_AGO' | translate)) :
+            (displayCode() ? ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE' |
+            translate) : ('MODAL_SELECTED_ITEM.META_CREATED_AT_DATE_TIME_AGO' |
+            translate)) }}
             <span>
-                {{ feature().properties.meta.timestamp | date: 'short' }}
+                {{ displayCode() ? (feature().properties.meta.timestamp |
+                localizedDate: userLocale()) :
+                (feature().properties.meta.timestamp | relativeTime:
+                languageUi(): 'always') }}
             </span>
-            } @if (!displayCode()) {
-            <span>
-                {{ feature().properties.meta.timestamp | relativeTime:
-                languageUi() }}
-            </span>
-            }
         </p>
         }
         <p>
             {{ 'MODAL_SELECTED_ITEM.META_BY' | translate }} {{
-            feature().properties.meta?.user ? feature().properties.meta?.user :
-            ('MODAL_SELECTED_ITEM.META_MYSELF' | translate) }}
+            feature().properties.meta.user || ('MODAL_SELECTED_ITEM.META_MYSELF'
+            | translate) }}
         </p>
         @if (lastSurvey(); as survey) {
         <p>
-            {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }} @if
-            (!displayCode()) {
-            <span> {{ survey | relativeTime: languageUi() }} </span>
-            } @if (displayCode()) {
-            <span> {{ survey | date: 'short'}} </span>
-            }
+            {{ 'MODAL_SELECTED_ITEM.LAST_SURVEY' | translate }} {{ displayCode()
+            ? (survey | localizedDate: userLocale()) : (survey | relativeTime:
+            languageUi()) }}
         </p>
         } @if (usedByWaysCount(); as count) {
         <p class="warning">
-            {{ ('MODAL_SELECTED_ITEM.THIS_NODE_IS_USED_BY_A_WAY' | translate)
-            .replace('{x}', count) }}
+            <mat-icon fontSet="material-symbols-rounded">warning</mat-icon>
+            {{ ('MODAL_SELECTED_ITEM.THIS_NODE_IS_USED_BY_A_WAY' |
+            translate).replace('{x}', count) }}
         </p>
         }
-    </ion-card-content>
-</ion-card>
+    </div>
+</section>

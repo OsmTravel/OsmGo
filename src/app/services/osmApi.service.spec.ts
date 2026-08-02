@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
-import { Platform } from '@ionic/angular/standalone'
-import { Storage } from '@ionic/storage-angular'
 import type { OsmGoFeature, OsmGoFeatureCollection } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
@@ -33,14 +31,12 @@ function createService({
     TestBed.resetTestingModule()
     TestBed.configureTestingModule({
         providers: [
-            { provide: Platform, useValue: {} },
             { provide: HttpClient, useValue: http },
             { provide: MapService, useValue: mapService },
             { provide: TagsService, useValue: tagsService },
             { provide: DataService, useValue: dataService },
             { provide: AlertService, useValue: {} },
             { provide: ConfigService, useValue: configService },
-            { provide: Storage, useValue: {} },
             { provide: OsmAuthService, useValue: osmAuthService },
         ],
     })

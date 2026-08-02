@@ -1,0 +1,87 @@
+:host {
+    display: block;
+    height: 100%;
+    min-height: 0;
+    overflow: auto;
+    background: var(--osmgo-surface-muted);
+}
+
+.manage-tags-content {
+    display: grid;
+    width: min(100%, 920px);
+    gap: 14px;
+    margin: 0 auto;
+    padding: 16px 12px calc(32px + env(safe-area-inset-bottom));
+}
+
+.tag-management-card {
+    display: grid;
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 22px;
+    background: var(--osmgo-surface);
+
+    > button {
+        grid-column: 1 / -1;
+        min-height: 48px;
+        justify-content: space-between;
+        border-radius: 14px;
+    }
+}
+
+.card-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border-radius: 17px;
+    color: var(--osmgo-blue);
+    background: var(--osmgo-blue-container);
+}
+
+.card-icon--hidden {
+    color: var(--osmgo-error);
+    background: #ffdad6;
+}
+
+.card-icon--bookmark {
+    color: var(--osmgo-amber-ink);
+    background: var(--osmgo-amber-container);
+}
+
+.card-copy {
+    h2 {
+        margin: 2px 0 6px;
+        font-size: 19px;
+        font-weight: 690;
+    }
+
+    p {
+        margin: 0;
+        color: var(--osmgo-ink-muted);
+        line-height: 1.38;
+    }
+
+    .warning {
+        margin-top: 8px;
+        color: var(--osmgo-error);
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 720px) {
+    .manage-tags-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding: 24px 20px 48px;
+    }
+
+    .tag-management-card {
+        grid-template-columns: 1fr;
+
+        > button {
+            align-self: end;
+        }
+    }
+}

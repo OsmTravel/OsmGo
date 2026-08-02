@@ -1,0 +1,24 @@
+<div class="confirm-dialog">
+    <div class="confirm-dialog__icon" [class.is-destructive]="data.destructive">
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true">
+            {{ data.destructive ? 'delete' : 'help' }}
+        </mat-icon>
+    </div>
+
+    <h2 mat-dialog-title>{{ data.title }}</h2>
+    <mat-dialog-content>{{ data.message }}</mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button mat-button type="button" (click)="cancel()">
+            {{ data.cancelLabel }}
+        </button>
+        <button
+            mat-flat-button
+            type="button"
+            [class.danger-button]="data.destructive"
+            (click)="confirm()"
+        >
+            {{ data.confirmLabel }}
+        </button>
+    </mat-dialog-actions>
+</div>

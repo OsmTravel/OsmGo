@@ -1,29 +1,32 @@
 @if (tagConfig(); as config) {
     @if (config.deprecated) {
-        <ion-card class="alertCard">
-            <ion-card-content>
-                {{ 'ALERT.TAG_IS_DEPRECATED' | translate }}
-                @if (config.replace) {
-                    <ion-button
-                        (click)="
-                            fixDeprecated.emit({
-                                old: config.tags,
-                                replace: config.replace,
-                            })
-                        "
+        <section class="notice notice--error" role="alert">
+            <mat-icon fontSet="material-symbols-rounded">warning</mat-icon>
+            <p>{{ 'ALERT.TAG_IS_DEPRECATED' | translate }}</p>
+            @if (config.replace) {
+                <button
+                    mat-stroked-button
+                    type="button"
+                    (click)="
+                        fixDeprecated.emit({
+                            old: config.tags,
+                            replace: config.replace,
+                        })
+                    "
+                >
+                    <mat-icon fontSet="material-symbols-rounded"
+                        >build</mat-icon
                     >
-                        <ion-icon name="hammer"></ion-icon>
-                    </ion-button>
-                }
-            </ion-card-content>
-        </ion-card>
+                    Corriger
+                </button>
+            }
+        </section>
     }
     @if (config.alert && (config.alert[language()] || config.alert['en'])) {
-        <ion-card class="alertCard">
-            <ion-card-content>
-                {{ config.alert[language()] || config.alert['en'] }}
-            </ion-card-content>
-        </ion-card>
+        <section class="notice notice--error" role="alert">
+            <mat-icon fontSet="material-symbols-rounded">error</mat-icon>
+            <p>{{ config.alert[language()] || config.alert['en'] }}</p>
+        </section>
     }
     @if (
         config.warning &&
@@ -31,11 +34,9 @@
         (!config.warningCountryCodes ||
             config.warningCountryCodes.includes(countryCode()))
     ) {
-        <ion-card class="warningtCard">
-            <ion-card-content>
-                <!-- TODO bug? -->
-                {{ config.warning[language()] || config.warning['en'] }}
-            </ion-card-content>
-        </ion-card>
+        <section class="notice notice--warning" role="status">
+            <mat-icon fontSet="material-symbols-rounded">info</mat-icon>
+            <p>{{ config.warning[language()] || config.warning['en'] }}</p>
+        </section>
     }
 }

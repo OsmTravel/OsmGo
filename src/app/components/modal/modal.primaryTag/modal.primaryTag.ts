@@ -1,20 +1,14 @@
 import { LowerCasePipe } from '@angular/common'
-import { Component, inject, input, OnInit, signal } from '@angular/core'
+import { Component, inject, input, OnInit, output, signal } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
+import { MatDialogRef } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TagListElementComponent } from '@components/tag-list-element/tag-list-element.component'
-import {
-    IonButton,
-    IonChip,
-    IonContent,
-    IonFooter,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonSearchbar,
-    IonTitle,
-    ModalController,
-} from '@ionic/angular/standalone'
-import type { SearchbarInputEventDetail } from '@ionic/core'
 import { TranslateModule } from '@ngx-translate/core'
 import type { TagConfig } from '@osmgo/type'
 import { FilterByByGeometryTypePipe } from '@pipes/filter-by-geometry-type.pipe'
@@ -39,25 +33,24 @@ import { TagsService } from '@services/tags.service'
         FilterDeprecatedTagPipe,
         FilterExcludeTagByCountryCode,
         FiltersTagsByIdsPipe,
-        IonButton,
-        IonChip,
-        IonContent,
-        IonFooter,
-        IonIcon,
-        IonItem,
-        IonLabel,
-        IonList,
-        IonSearchbar,
-        IonTitle,
         LimitDisplayTagsPipe,
         LowerCasePipe,
+        MatButtonModule,
+        MatButtonToggleModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatProgressSpinnerModule,
+        ScreenHeaderComponent,
         SortArrayPipe,
         TagListElementComponent,
         TranslateModule,
     ],
 })
 export class ModalPrimaryTag implements OnInit {
-    readonly modalCtrl = inject(ModalController)
+    private readonly dialogRef = inject(MatDialogRef<ModalPrimaryTag>, {
+        optional: true,
+    })
     readonly tagsService = inject(TagsService)
     readonly configService = inject(ConfigService)
 
@@ -75,6 +68,8 @@ export class ModalPrimaryTag implements OnInit {
     readonly geometryTypeInput = input.required<
         'point' | 'vertex' | 'line' | 'area'
     >({ alias: 'geometryType' })
+    readonly embedded = input(false)
+    readonly completed = output<TagConfig | null>()
 
     ngOnInit(): void {
         this.displayType =
@@ -88,12 +83,16 @@ export class ModalPrimaryTag implements OnInit {
         this.loading = false
     }
 
-    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
-        this.searchText.set(event.detail.value ?? '')
+    onSearchInput(value: string): void {
+        this.searchText.set(value)
     }
 
     dismiss(data: TagConfig | null = null): void {
-        void this.modalCtrl.dismiss(data)
+        if (this.embedded()) {
+            this.completed.emit(data)
+            return
+        }
+        this.dialogRef?.close(data)
     }
 
     summit(data: TagConfig): void {

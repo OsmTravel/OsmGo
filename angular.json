@@ -26,6 +26,11 @@
                 "output": "assets"
               },
               {
+                "glob": "**/*.svg",
+                "input": "resources/IconsSVG",
+                "output": "assets/osm-icons"
+              },
+              {
                 "glob": "maplibre-gl-worker.mjs",
                 "input": "node_modules/maplibre-gl/dist",
                 "output": "/"
@@ -39,6 +44,9 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@fontsource-variable/source-sans-3/index.css",
+              "./node_modules/@angular/material/prebuilt-themes/azure-blue.css",
+              "./node_modules/material-symbols/rounded.css",
               "src/theme/variables.scss",
               "src/global.scss",
               "./node_modules/maplibre-gl/dist/maplibre-gl.css"
@@ -95,6 +103,11 @@
                   "glob": "**/*",
                   "input": "src/assets",
                   "output": "/assets"
+                },
+                {
+                  "glob": "**/*.svg",
+                  "input": "resources/IconsSVG",
+                  "output": "/assets/osm-icons"
                 }
               ],
               "styles": []
@@ -106,7 +119,7 @@
           "options": {
             "buildTarget": "app:build",
             "prebundle": {
-              "exclude": ["@ionic/angular", "@ionic/core", "maplibre-gl"]
+              "exclude": ["maplibre-gl"]
             }
           },
           "configurations": {

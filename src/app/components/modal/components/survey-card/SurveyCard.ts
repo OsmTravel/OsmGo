@@ -1,10 +1,6 @@
 import { Component, input, output } from '@angular/core'
-import {
-    IonButton,
-    IonCard,
-    IonCardContent,
-    IonIcon,
-} from '@ionic/angular/standalone'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 import { TranslateModule } from '@ngx-translate/core'
 import type { OsmGoFeature } from '@osmgo/type'
 
@@ -12,7 +8,7 @@ import type { OsmGoFeature } from '@osmgo/type'
     selector: 'survey-card',
     styleUrls: ['SurveyCard.scss'],
     templateUrl: './SurveyCard.html',
-    imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
+    imports: [MatButtonModule, MatIconModule, TranslateModule],
 })
 export class SurveyCard {
     readonly yes = output<void>()

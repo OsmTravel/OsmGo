@@ -1,78 +1,143 @@
 @if (menuIsOpen()) {
 <div
     id="menu"
+    role="presentation"
     (pointerdown)="startSwipe($event)"
     (pointerup)="endSwipe($event)"
     (pointercancel)="cancelSwipe()"
     @menuAnimation
 >
-    @if (menuIsOpen()) {
-    <div class="menuContent">
-        <ion-header>
-            <ion-toolbar color="primary">
-                <ion-title
-                    >Osm Go!
-                    <span class="numVersion">
-                        {{configService.appVersion().appVersionNumber }}</span
-                    ></ion-title
+    <div
+        class="menu-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="menu-title"
+        cdkTrapFocus
+        [cdkTrapFocusAutoCapture]="true"
+    >
+        <header class="menu-header">
+            <button
+                mat-icon-button
+                type="button"
+                [attr.aria-label]="'SHARED.CLOSE' | translate"
+                (click)="closeMenu()"
+            >
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >arrow_back</mat-icon
                 >
-                <ion-buttons slot="start">
-                    <ion-button
-                        [attr.aria-label]="'SHARED.CLOSE' | translate"
-                        (click)="closeMenu()"
-                    >
-                        <ion-icon
-                            aria-hidden="true"
-                            slot="icon-only"
-                            name="chevron-back-outline"
-                        ></ion-icon>
-                    </ion-button>
-                </ion-buttons>
-            </ion-toolbar>
-        </ion-header>
-        <ion-content>
-            <ion-list style="padding-top: 0">
-                @if (newVersion()) {
-                <ion-item button color="black" (click)="reloadApp()">
-                    <ion-icon aria-hidden="true" name="refresh"></ion-icon>
-                    {{'MENU.NEW_VERSION' | translate }}
-                </ion-item>
-                } @if (!this.configService.userInfo().connected) {
-                <ion-item button (click)="login()">
-                    <ion-icon aria-hidden="true" name="log-in"></ion-icon>
-                    {{'MENU.CONNECTION' | translate }}
-                </ion-item>
-                }
-                <ion-item button (click)="openBaseMapsPage()">
-                    <ion-icon aria-hidden="true" name="map"></ion-icon> {{
-                    'SETTINGS.AERIAL_IMAGERY' | translate}}
-                </ion-item>
-                <ion-item button (click)="pushPage('/tags')">
-                    <ion-icon aria-hidden="true" name="pricetags"></ion-icon>
-                    {{'MENU.TAG_MANAGEMENT' | translate }}
-                </ion-item>
-                <ion-item button (click)="pushPage('/settings')">
-                    <ion-icon aria-hidden="true" name="settings"></ion-icon>
-                    {{'MENU.SETTINGS' | translate }}
-                </ion-item>
-                <ion-item button (click)="pushPage('/about')">
-                    <ion-icon aria-hidden="true" name="help-circle"></ion-icon>
-                    {{'MENU.ABOUT' | translate }}
-                </ion-item>
-                @if (this.configService.userInfo().connected) {
-                <ion-item button (click)="logout()">
-                    <ion-icon aria-hidden="true" name="log-out"></ion-icon>
-                    {{'MENU.SIGN_OUT' | translate }}
-                </ion-item>
-                }
-                <ion-item button (click)="deleteDatapresentConfirm()">
-                    <ion-icon aria-hidden="true" name="trash"></ion-icon>
-                    {{'MENU.DELETE_DATA' | translate }}
-                </ion-item>
-            </ion-list>
-        </ion-content>
+            </button>
+            <div>
+                <h1 id="menu-title">OsmGo</h1>
+                <span class="version"
+                    >v{{ configService.appVersion().appVersionNumber }}</span
+                >
+            </div>
+        </header>
+
+        @if (osmAuthService.isAuthenticated()) {
+        <section class="account-card" aria-label="Compte OpenStreetMap">
+            <div class="account-avatar" aria-hidden="true">
+                <mat-icon fontSet="material-symbols-rounded">person</mat-icon>
+            </div>
+            <div class="account-copy">
+                <strong
+                    >{{ configService.userInfo().display_name || 'OpenStreetMap'
+                    }}</strong
+                >
+                <span>OpenStreetMap</span>
+            </div>
+        </section>
+        }
+
+        <nav class="menu-navigation" aria-label="Navigation principale">
+            @if (newVersion()) {
+            <button
+                mat-button
+                type="button"
+                class="menu-item update-row"
+                (click)="reloadApp()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">refresh</mat-icon>
+                <span class="menu-item__copy">
+                    <strong>{{ 'MENU.NEW_VERSION' | translate }}</strong>
+                    <small>Installer la dernière version</small>
+                </span>
+            </button>
+            } @if (!osmAuthService.isAuthenticated()) {
+            <button
+                mat-button
+                class="menu-item"
+                type="button"
+                (click)="login()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">login</mat-icon>
+                <span>{{ 'MENU.CONNECTION' | translate }}</span>
+            </button>
+            }
+
+            <button
+                mat-button
+                class="menu-item"
+                type="button"
+                (click)="openBaseMapsPage()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">map</mat-icon>
+                <span>{{ 'SETTINGS.AERIAL_IMAGERY' | translate }}</span>
+            </button>
+            <button
+                mat-button
+                class="menu-item"
+                type="button"
+                (click)="pushPage('/tags')"
+            >
+                <mat-icon fontSet="material-symbols-rounded">sell</mat-icon>
+                <span>{{ 'MENU.TAG_MANAGEMENT' | translate }}</span>
+            </button>
+            <button
+                mat-button
+                class="menu-item"
+                type="button"
+                (click)="pushPage('/settings')"
+            >
+                <mat-icon fontSet="material-symbols-rounded">settings</mat-icon>
+                <span>{{ 'MENU.SETTINGS' | translate }}</span>
+            </button>
+            <button
+                mat-button
+                class="menu-item"
+                type="button"
+                (click)="pushPage('/about')"
+            >
+                <mat-icon fontSet="material-symbols-rounded">info</mat-icon>
+                <span>{{ 'MENU.ABOUT' | translate }}</span>
+            </button>
+        </nav>
+
+        <div class="menu-footer">
+            <mat-divider></mat-divider>
+            @if (osmAuthService.isAuthenticated()) {
+            <button mat-button type="button" (click)="logout()">
+                <mat-icon fontSet="material-symbols-rounded">logout</mat-icon>
+                {{ 'MENU.SIGN_OUT' | translate }}
+            </button>
+            }
+            <button
+                class="delete-button"
+                mat-button
+                type="button"
+                (click)="deleteDatapresentConfirm()"
+            >
+                <mat-icon fontSet="material-symbols-rounded">delete</mat-icon>
+                {{ 'MENU.DELETE_DATA' | translate }}
+            </button>
+        </div>
     </div>
-    }
-    <div class="backdrop" (click)="closeMenu()"></div>
+    <button
+        class="backdrop"
+        type="button"
+        tabindex="-1"
+        [attr.aria-label]="'SHARED.CLOSE' | translate"
+        (click)="closeMenu()"
+    ></button>
 </div>
 }

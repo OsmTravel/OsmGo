@@ -1,109 +1,70 @@
 import { Component, inject } from '@angular/core'
-import {
-    IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonItemDivider,
-    IonItemGroup,
-    IonLabel,
-    IonRange,
-    IonSelect,
-    IonSelectOption,
-    IonTitle,
-    IonToggle,
-    IonToolbar,
-    LoadingController,
-    NavController,
-    Platform,
-    type RangeCustomEvent,
-    type SelectCustomEvent,
-    type ToggleCustomEvent,
-} from '@ionic/angular/standalone'
-import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDividerModule } from '@angular/material/divider'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatSelectModule } from '@angular/material/select'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatSliderModule } from '@angular/material/slider'
+import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
+import { TranslateModule } from '@ngx-translate/core'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
-import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
-import { OsmApiService } from '@services/osmApi.service'
-import { TagsService } from '@services/tags.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 
 @Component({
     selector: 'page-settings',
     templateUrl: './settings.html',
     styleUrls: ['./settings.scss'],
     imports: [
-        IonButton,
-        IonButtons,
-        IonContent,
-        IonHeader,
-        IonIcon,
-        IonItem,
-        IonItemDivider,
-        IonItemGroup,
-        IonLabel,
-        IonRange,
-        IonSelect,
-        IonSelectOption,
-        IonTitle,
-        IonToggle,
-        IonToolbar,
+        MatButtonModule,
+        MatDividerModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatSelectModule,
+        MatSliderModule,
+        MatSlideToggleModule,
+        ScreenHeaderComponent,
         TranslateModule,
     ],
 })
 export class SettingsPage {
-    readonly navCtrl = inject(NavController)
     readonly configService = inject(ConfigService)
     readonly mapService = inject(MapService)
-    readonly platform = inject(Platform)
-    readonly tagsService = inject(TagsService)
     readonly dataService = inject(DataService)
-    readonly osmApi = inject(OsmApiService)
-    readonly loadingController = inject(LoadingController)
-    readonly initService = inject(InitService)
-    private readonly translate = inject(TranslateService)
-
-    ngOnInit(): void {
-        if (!this.initService.isLoaded) {
-            // We need to instantiate the map
-            this.navCtrl.back()
-        }
-    }
+    private readonly overlayNavigation = inject(OverlayNavigationService)
 
     back(): void {
-        this.navCtrl.back()
+        void this.overlayNavigation.close()
     }
 
-    mapMarginBufferChange(event: RangeCustomEvent): void {
-        this.configService.setMapMarginBuffer(this.getRangeValue(event))
+    mapMarginBufferChange(value: number): void {
+        this.configService.setMapMarginBuffer(value)
     }
 
-    limitFeaturesChange(event: RangeCustomEvent): void {
-        this.configService.setLimitFeatures(this.getRangeValue(event))
+    limitFeaturesChange(value: number): void {
+        this.configService.setLimitFeatures(value)
     }
 
-    lockMapHeadingChange(event: ToggleCustomEvent): void {
-        this.configService.setLockMapHeading(event.detail.checked)
+    lockMapHeadingChange(checked: boolean): void {
+        this.configService.setLockMapHeading(checked)
     }
 
-    followPositionChange(event: ToggleCustomEvent): void {
-        this.configService.setFollowPosition(event.detail.checked)
+    followPositionChange(checked: boolean): void {
+        this.configService.setFollowPosition(checked)
     }
 
-    centerWhenGpsIsReadyChange(event: ToggleCustomEvent): void {
-        this.configService.setCenterWhenGpsIsReady(event.detail.checked)
+    centerWhenGpsIsReadyChange(checked: boolean): void {
+        this.configService.setCenterWhenGpsIsReady(checked)
     }
 
-    defaultPrimarykeyWindowsChange(
-        event: SelectCustomEvent<'lastTags' | 'bookmarks'>
-    ): void {
-        this.configService.setDefaultPrimarykeyWindows(event.detail.value)
+    defaultPrimarykeyWindowsChange(value: 'lastTags' | 'bookmarks'): void {
+        this.configService.setDefaultPrimarykeyWindows(value)
     }
 
-    filterWayByArea(event: ToggleCustomEvent): void {
-        this.configService.setFilterWayByArea(event.detail.checked)
+    filterWayByArea(checked: boolean): void {
+        this.configService.setFilterWayByArea(checked)
         // value en m²!
         this.mapService.toogleMesureFilter(
             this.configService.getFilterWayByArea(),
@@ -113,8 +74,8 @@ export class SettingsPage {
         )
     }
 
-    filterWayByLength(event: ToggleCustomEvent): void {
-        this.configService.setFilterWayByLength(event.detail.checked)
+    filterWayByLength(checked: boolean): void {
+        this.configService.setFilterWayByLength(checked)
         // value en km!
         this.mapService.toogleMesureFilter(
             this.configService.getFilterWayByLength(),
@@ -124,12 +85,12 @@ export class SettingsPage {
         )
     }
 
-    displayOldTagIconChange(event: ToggleCustomEvent): void {
+    displayOldTagIconChange(checked: boolean): void {
         this.configService.setOldTagsIcon(
-            event.detail.checked,
+            checked,
             this.configService.config().oldTagsIcon.year
         )
-        if (event.detail.checked) {
+        if (checked) {
             this.mapService.showOldTagIcon(
                 this.configService.config().oldTagsIcon.year
             )
@@ -139,8 +100,7 @@ export class SettingsPage {
         // this.mapService
     }
 
-    yearOldTagIconChange(event: RangeCustomEvent): void {
-        const year = this.getRangeValue(event)
+    yearOldTagIconChange(year: number): void {
         this.configService.setOldTagsIcon(
             this.configService.config().oldTagsIcon.display,
             year
@@ -150,68 +110,48 @@ export class SettingsPage {
         }
     }
 
-    displayFixmeIconChange(event: ToggleCustomEvent): void {
-        this.configService.setDisplayFixmeIcon(event.detail.checked)
-        if (event.detail.checked) {
+    displayFixmeIconChange(checked: boolean): void {
+        this.configService.setDisplayFixmeIcon(checked)
+        if (checked) {
             this.mapService.showFixmeIcon()
         } else {
             this.mapService.hideFixmeIcon()
         }
     }
 
-    addSurveyDateChange(event: ToggleCustomEvent): void {
-        this.configService.setAddSurveyDate(event.detail.checked)
+    addSurveyDateChange(checked: boolean): void {
+        this.configService.setAddSurveyDate(checked)
     }
 
-    checkedKeyChange(
-        event: SelectCustomEvent<'survey:date' | 'check_date'>
-    ): void {
-        this.configService.setCheckedKey(event.detail.value)
+    checkedKeyChange(value: 'survey:date' | 'check_date'): void {
+        this.configService.setCheckedKey(value)
     }
 
-    displaySurveyCardChange(
-        event: SelectCustomEvent<'never' | 'when_older' | 'always'>
-    ): void {
-        this.configService.setDisplaySurveyCard(event.detail.value)
+    displaySurveyCardChange(value: 'never' | 'when_older' | 'always'): void {
+        this.configService.setDisplaySurveyCard(value)
     }
 
-    displaySurveyCardOptions() {
-        return {
-            header: this.translate.instant('SETTINGS.DISPLAY_SURVEY_CARD'),
-            subHeader: this.translate.instant(
-                'SETTINGS.DISPLAY_SURVEY_CARD_HINT'
-            ),
-        }
+    yearOldSurveyCardChange(value: number): void {
+        this.configService.setSurveyCardYear(value)
     }
 
-    yearOldSurveyCardChange(event: RangeCustomEvent): void {
-        this.configService.setSurveyCardYear(this.getRangeValue(event))
+    languageUiChange(value: string): void {
+        this.configService.setUiLanguage(value)
     }
 
-    languageUiChange(event: SelectCustomEvent<string>): void {
-        this.configService.setUiLanguage(event.detail.value)
+    languageTagsChange(value: string): void {
+        this.configService.setLanguageTags(value)
     }
 
-    languageTagsChange(event: SelectCustomEvent<string>): void {
-        this.configService.setLanguageTags(event.detail.value)
+    countryTagsChange(value: string): void {
+        this.configService.setCountryTags(value)
     }
 
-    countryTagsChange(event: SelectCustomEvent<string>): void {
-        this.configService.setCountryTags(event.detail.value)
+    isSelectableLineChange(checked: boolean): void {
+        this.configService.setIsSelectableLine(checked)
     }
-
-    countryTagsOptions() {
-        return {
-            header: this.translate.instant('SETTINGS.TAG_COUNTRY'),
-            subHeader: this.translate.instant('SETTINGS.TAG_COUNTRY_HINT'),
-        }
-    }
-
-    isSelectableLineChange(event: ToggleCustomEvent): void {
-        this.configService.setIsSelectableLine(event.detail.checked)
-    }
-    isSelectablePolygonChange(event: ToggleCustomEvent): void {
-        this.configService.setIsSelectablePolygon(event.detail.checked)
+    isSelectablePolygonChange(checked: boolean): void {
+        this.configService.setIsSelectablePolygon(checked)
     }
 
     async deleteCache(): Promise<void> {
@@ -221,20 +161,15 @@ export class SettingsPage {
             await caches.delete(key)
         }
 
-        const mainLocation = `${window.location.origin}#/main`
+        const mainLocation = `${window.location.origin}/`
         window.location.replace(mainLocation)
         window.location.reload()
     }
 
     async changeIsDevServer(isDev: boolean): Promise<void> {
         await this.configService.setIsDevServer(isDev)
-        const mainLocation = `${window.location.origin}#/main`
+        const mainLocation = `${window.location.origin}/`
         window.location.replace(mainLocation)
         window.location.reload()
-    }
-
-    private getRangeValue(event: RangeCustomEvent): number {
-        const value = event.detail.value
-        return typeof value === 'number' ? value : value.lower
     }
 }

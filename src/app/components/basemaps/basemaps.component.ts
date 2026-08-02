@@ -1,26 +1,16 @@
-import { Component, inject, OnInit } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
+import { MatRippleModule } from '@angular/material/core'
+import { MatIconModule } from '@angular/material/icon'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { ActivatedRoute } from '@angular/router'
-import {
-    IonButton,
-    IonButtons,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCardTitle,
-    IonContent,
-    IonHeader,
-    IonIcon,
-    IonTitle,
-    IonToolbar,
-    NavController,
-} from '@ionic/angular/standalone'
+import { ScreenHeaderComponent } from '@components/shared/screen-header/screen-header'
 import { TranslateModule } from '@ngx-translate/core'
 import { type Basemap, BasemapsService } from '@services/basemaps.service'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
+import { OverlayNavigationService } from '@services/overlay-navigation.service'
 import { catchError, of, switchMap } from 'rxjs'
 
 @Component({
@@ -28,23 +18,15 @@ import { catchError, of, switchMap } from 'rxjs'
     templateUrl: './basemaps.component.html',
     styleUrls: ['./basemaps.component.scss'],
     imports: [
-        IonButton,
-        IonButtons,
-        IonCard,
-        IonCardContent,
-        IonCardHeader,
-        IonCardSubtitle,
-        IonCardTitle,
-        IonContent,
-        IonHeader,
-        IonIcon,
-        IonTitle,
-        IonToolbar,
+        MatIconModule,
+        MatProgressSpinnerModule,
+        MatRippleModule,
+        ScreenHeaderComponent,
         TranslateModule,
     ],
 })
-export class BasemapsComponent implements OnInit {
-    readonly navCtrl = inject(NavController)
+export class BasemapsComponent {
+    private readonly overlayNavigation = inject(OverlayNavigationService)
     private readonly route = inject(ActivatedRoute)
     private readonly basemapsService = inject(BasemapsService)
     readonly initService = inject(InitService)
@@ -67,16 +49,13 @@ export class BasemapsComponent implements OnInit {
         { initialValue: [] }
     )
 
-    ngOnInit() {
-        if (!this.initService.isLoaded) {
-            // We need to instantiate the map
-            this.navCtrl.back()
-        }
+    back(): void {
+        void this.overlayNavigation.close()
     }
 
     selectBaseMap(basemap: Basemap): void {
         this.configService.setBasemap(basemap)
         this.mapService.displaySatelliteBaseMap(basemap, true)
-        this.navCtrl.back()
+        this.back()
     }
 }

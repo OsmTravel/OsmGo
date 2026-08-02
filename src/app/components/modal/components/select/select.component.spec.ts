@@ -22,7 +22,7 @@ describe('SelectComponent', () => {
         const tag = { key: '', value: '' }
         const component = createComponent(tag)
 
-        component.selectChange({ detail: { value: 'unisex' } })
+        component.selectChange('unisex')
 
         expect(tag).toEqual({ key: 'unisex', value: 'yes' })
         expect(component.selectedValue).toBe('unisex')
@@ -32,17 +32,17 @@ describe('SelectComponent', () => {
         const tag = { key: 'unisex', value: 'yes' }
         const component = createComponent(tag)
 
-        component.selectChange({ detail: { value: 'male' } })
+        component.selectChange('male')
 
         expect(tag).toEqual({ key: 'male', value: 'yes' })
     })
 
-    it('keeps the current tag when selection is cancelled', () => {
+    it('clears the current tag when the empty option is selected', () => {
         const tag = { key: 'unisex', value: 'yes' }
         const component = createComponent(tag)
 
-        component.selectChange(undefined)
+        component.selectChange('')
 
-        expect(tag).toEqual({ key: 'unisex', value: 'yes' })
+        expect(tag).toEqual({ key: '', value: '' })
     })
 })

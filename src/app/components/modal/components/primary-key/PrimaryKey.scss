@@ -1,51 +1,67 @@
-div.primary-key {
+:host {
+    display: block;
+}
+.primary-key {
     display: flex;
-    min-height: 65px;
-
-    .icon {
-        width: 50px;
-        min-width: 50px;
-        position: relative;
-        app-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    ion-card-content {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 8px;
-        padding-right: 0px;
-
-        h3 {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        p.description {
-            font-size: 0.8em;
-            opacity: 0.8;
-        }
-        p.code {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-    }
-
-    .actions {
-        padding: 12px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        ion-icon {
-            width: 2em;
-            height: 2em;
-        }
-    }
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 18px;
+    background: var(--osmgo-surface);
+}
+.primary-key.is-editable {
+    border-color: #bdd2ed;
+    background: var(--osmgo-blue-container);
+}
+.primary-key__main {
+    display: flex;
+    min-width: 0;
+    min-height: 76px;
+    flex: 1;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 0;
+    color: var(--osmgo-ink-strong);
+    text-align: left;
+    background: transparent;
+    cursor: pointer;
+}
+.primary-key__icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 16px;
+}
+.primary-key__copy {
+    display: grid;
+    min-width: 0;
+    flex: 1;
+    gap: 3px;
+}
+.primary-key__copy strong {
+    font-size: 18px;
+    font-weight: 700;
+}
+.primary-key__copy > span:not(.code) {
+    color: var(--osmgo-ink-muted);
+    font-size: 13px;
+    line-height: 1.35;
+}
+.code {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--osmgo-map-blue);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 13px;
+}
+.change-icon {
+    color: var(--osmgo-blue);
+}
+button.is-bookmarked {
+    color: var(--osmgo-amber-ink);
 }

@@ -1,48 +1,56 @@
-<ion-card>
-    @if (tagConfig(); as config) {
-    <div class="primary-key">
-        <div
-            class="icon"
-            [style.background-color]="config.markerColor ? config.markerColor : 'black'"
-            (click)="emitOpenModal()"
+@if (tagConfig(); as config) {
+<article class="primary-key" [class.is-editable]="isEditMode()">
+    <button class="primary-key__main" type="button" (click)="emitOpenModal()">
+        <span
+            class="primary-key__icon"
+            [style.background-color]="config.markerColor || '#26352f'"
+            aria-hidden="true"
         >
             <app-icon
-                [icon]="config.icon ? config.icon : null"
+                [icon]="config.icon || null"
                 [jsonSprites]="jsonSprites()"
             ></app-icon>
-        </div>
-        <ion-card-content (click)="emitOpenModal()">
+        </span>
+        <span class="primary-key__copy">
             @if (displayCode()) {
-            <p class="code">
-                <ion-icon aria-hidden="true" name="code"></ion-icon>
-                {{ config.tags | displayTags }}
-            </p>
-            } @else { @if (config.lbl) {
-            <h3>
-                {{ config.lbl[language()] ? config.lbl[language()] :
-                config.lbl['en'] }}
-            </h3>
-            } @if (config.description) {
-            <p class="description">
-                {{ config.description[language()] !== undefined ?
-                config.description[language()] : config.description['en'] }}
-            </p>
+            <span class="code"
+                ><mat-icon fontSet="material-symbols-rounded">code</mat-icon>{{
+                config.tags | displayTags }}</span
+            >
+            } @else {
+            <strong
+                >{{ config.lbl?.[language()] || config.lbl?.['en'] }}</strong
+            >
+            @if (config.description?.[language()] || config.description?.['en'])
+            {
+            <span
+                >{{ config.description?.[language()] ||
+                config.description?.['en'] }}</span
+            >
             } }
-        </ion-card-content>
+        </span>
         @if (isEditMode()) {
-        <div class="actions">
-            <ion-icon
-                role="button"
-                tabindex="0"
-                [attr.aria-label]="(isBookmarked() ? 'A11Y.REMOVE_BOOKMARK' : 'A11Y.ADD_BOOKMARK') | translate"
-                [style.color]="isBookmarked() ? '#f71000' : '#d8d8d8'"
-                name="heart"
-                (click)="emitToggleBookmark()"
-                (keydown.enter)="emitToggleBookmark()"
-                (keydown.space)="emitToggleBookmark(); $event.preventDefault()"
-            ></ion-icon>
-        </div>
+        <mat-icon
+            class="change-icon"
+            fontSet="material-symbols-rounded"
+            aria-hidden="true"
+            >swap_horiz</mat-icon
+        >
         }
-    </div>
+    </button>
+
+    @if (isEditMode()) {
+    <button
+        mat-icon-button
+        type="button"
+        [class.is-bookmarked]="isBookmarked()"
+        [attr.aria-label]="(isBookmarked() ? 'A11Y.REMOVE_BOOKMARK' : 'A11Y.ADD_BOOKMARK') | translate"
+        (click)="emitToggleBookmark()"
+    >
+        <mat-icon fontSet="material-symbols-rounded"
+            >{{ isBookmarked() ? 'bookmark' : 'bookmark_border' }}</mat-icon
+        >
+    </button>
     }
-</ion-card>
+</article>
+}

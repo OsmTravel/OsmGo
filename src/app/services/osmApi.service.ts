@@ -469,14 +469,14 @@ export class OsmApiService {
         )
     }
 
-    createOsmNode(featureToCreate: OsmGoFeature): Observable<unknown> {
+    createOsmNode(featureToCreate: OsmGoFeature): Observable<OsmGoFeature> {
         const feature = cloneDeep(featureToCreate)
         const id = this.dataService.nextFeatureId
 
         feature.id = 'node/' + id
         feature.properties.id = id
         feature.properties.meta = {
-            timestamp: '',
+            timestamp: '0',
             version: 0,
             user: '',
             uid: '',
@@ -485,25 +485,23 @@ export class OsmApiService {
         feature.properties.changeType = 'Create'
         feature.properties.originalData = null
         addAttributesToFeature(feature)
+        const styledFeature = this.mapService.getIconStyle(feature)
         return from(
-            this.dataService.addFeatureToGeojsonChanged(
-                this.mapService.getIconStyle(feature)
-            )
-        )
+            this.dataService.addFeatureToGeojsonChanged(styledFeature)
+        ).pipe(map(() => styledFeature))
     }
 
     updateOsmElement(
         featureToUpdate: OsmGoFeature,
         origineData: FeatureIdSource
-    ): Observable<unknown> {
+    ): Observable<OsmGoFeature> {
         const feature = cloneDeep(featureToUpdate)
         addAttributesToFeature(feature)
+        const styledFeature = this.mapService.getIconStyle(feature)
         if (origineData === 'data_changed') {
             return from(
-                this.dataService.updateFeatureToGeojsonChanged(
-                    this.mapService.getIconStyle(feature)
-                )
-            )
+                this.dataService.updateFeatureToGeojsonChanged(styledFeature)
+            ).pipe(map(() => styledFeature))
         } else {
             if (!feature.id) {
                 return throwError(() => new Error('A feature ID is required.'))
@@ -520,11 +518,10 @@ export class OsmApiService {
             feature.properties.changeType = 'Update'
             feature.properties.originalData = originalData
             this.dataService.deleteFeatureFromGeojson(feature)
+            const changedFeature = this.mapService.getIconStyle(feature)
             return from(
-                this.dataService.addFeatureToGeojsonChanged(
-                    this.mapService.getIconStyle(feature)
-                )
-            )
+                this.dataService.addFeatureToGeojsonChanged(changedFeature)
+            ).pipe(map(() => changedFeature))
         }
     }
 

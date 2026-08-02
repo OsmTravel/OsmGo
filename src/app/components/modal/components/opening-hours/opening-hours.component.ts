@@ -1,13 +1,10 @@
 import { Component, inject, input, model, OnInit, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import {
-    type InputCustomEvent,
-    IonButton,
-    IonIcon,
-    IonInput,
-    IonItem,
-    ModalController,
-} from '@ionic/angular/standalone'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialog } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
 import { MinutesToHoursMinutesPipe } from '@pipes/minutes-to-hours-minutes.pipe'
 import DateRange from '@scripts/YoHours/DateRange.js'
@@ -31,16 +28,16 @@ const builder = new OpeningHoursBuilder()
     styleUrls: ['./opening-hours.component.scss', '../style.scss'],
     imports: [
         FormsModule,
-        IonButton,
-        IonIcon,
-        IonInput,
-        IonItem,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
         MinutesToHoursMinutesPipe,
         TranslateModule,
     ],
 })
 export class OpeningHoursComponent implements OnInit {
-    private readonly modalCtrl = inject(ModalController)
+    private readonly dialog = inject(MatDialog)
     private readonly translate = inject(TranslateService)
 
     readonly openingHours = model('')
@@ -62,8 +59,9 @@ export class OpeningHoursComponent implements OnInit {
         { index: 6, text: this.translate.instant('DAYS.SUNDAY') },
     ]
 
-    valueChange(event: InputCustomEvent): void {
-        this.valueChangeEvent.emit(String(event.detail.value ?? ''))
+    valueChange(value: string): void {
+        this.openingHours.set(value)
+        this.valueChangeEvent.emit(value)
         this.parseOpeningHours()
     }
 
@@ -168,18 +166,29 @@ export class OpeningHoursComponent implements OnInit {
         return min + hour * 60
     }
 
-    async openModalAddOpeningHours(
-        data: Record<string, unknown> | null
-    ): Promise<void> {
-        const modal = await this.modalCtrl.create({
-            component: ModalAddOpeningHoursIntervalComponent,
-            componentProps: data ?? undefined,
-        })
-        await modal.present()
-
-        const result = await modal.onDidDismiss<OpeningHoursDialogResult>()
-        if (result.data) {
-            this.addIntervals(result.data.times, result.data.days)
+    openModalAddOpeningHours(data: Record<string, unknown> | null): void {
+        const dialogRef = this.dialog.open(
+            ModalAddOpeningHoursIntervalComponent,
+            {
+                width: 'min(620px, calc(100vw - 24px))',
+                maxWidth: 'calc(100vw - 24px)',
+                maxHeight: 'calc(100dvh - 24px)',
+                panelClass: 'osmgo-dialog',
+                autoFocus: 'dialog',
+            }
+        )
+        if (data) {
+            for (const [key, value] of Object.entries(data)) {
+                dialogRef.componentRef?.setInput(key, value)
+            }
         }
+
+        dialogRef
+            .afterClosed()
+            .subscribe((result?: OpeningHoursDialogResult) => {
+                if (result) {
+                    this.addIntervals(result.times, result.days)
+                }
+            })
     }
 }

@@ -1,18 +1,9 @@
 import { Component, computed, inject, signal } from '@angular/core'
-import {
-    IonBadge,
-    IonButton,
-    IonCard,
-    IonContent,
-    IonDatetime,
-    IonFooter,
-    IonHeader,
-    IonIcon,
-    IonTitle,
-    IonToolbar,
-    ModalController,
-} from '@ionic/angular/standalone'
-import type { DatetimeChangeEventDetail } from '@ionic/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogRef } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
 import { TranslateModule } from '@ngx-translate/core'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
@@ -42,21 +33,17 @@ export interface OpeningHoursDialogResult {
     styleUrls: ['./modal-add-opening-hours-interval.component.scss'],
     imports: [
         CharLimitPipe,
-        IonBadge,
-        IonButton,
-        IonCard,
-        IonContent,
-        IonDatetime,
-        IonFooter,
-        IonHeader,
-        IonIcon,
-        IonTitle,
-        IonToolbar,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
         TranslateModule,
     ],
 })
 export class ModalAddOpeningHoursIntervalComponent {
-    private readonly modalCtrl = inject(ModalController)
+    private readonly dialogRef = inject(
+        MatDialogRef<ModalAddOpeningHoursIntervalComponent>
+    )
     private nextTimeRangeId = 1
 
     readonly times = signal<OpeningHoursTimeRange[]>([
@@ -80,12 +67,8 @@ export class ModalAddOpeningHoursIntervalComponent {
     updateTimeRange(
         index: number,
         field: 'start' | 'end',
-        event: CustomEvent<DatetimeChangeEventDetail>
+        value: string
     ): void {
-        const value = event.detail.value
-        if (typeof value !== 'string') {
-            return
-        }
         this.times.update((times) =>
             times.map((time, currentIndex) =>
                 currentIndex === index ? { ...time, [field]: value } : time
@@ -93,7 +76,7 @@ export class ModalAddOpeningHoursIntervalComponent {
         )
     }
 
-    addNewInteval(): void {
+    addNewInterval(): void {
         this.times.update((times) => [
             ...times,
             {
@@ -104,7 +87,7 @@ export class ModalAddOpeningHoursIntervalComponent {
         ])
     }
 
-    removeInteval(index: number): void {
+    removeInterval(index: number): void {
         this.times.update((times) =>
             times.filter((_, currentIndex) => currentIndex !== index)
         )
@@ -119,11 +102,11 @@ export class ModalAddOpeningHoursIntervalComponent {
     }
 
     cancel(): void {
-        this.modalCtrl.dismiss(null)
+        this.dialogRef.close(null)
     }
 
     submit(): void {
         const times = this.times().map(({ start, end }) => ({ start, end }))
-        this.modalCtrl.dismiss({ times, days: this.days() })
+        this.dialogRef.close({ times, days: this.days() })
     }
 }

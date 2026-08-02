@@ -1,24 +1,27 @@
-<ion-card>
-    <ion-card-content>
+<section class="survey-card">
+    <div class="survey-card__question">
+        <mat-icon fontSet="material-symbols-rounded">fact_check</mat-icon>
         <p>{{ 'MODAL_SELECTED_ITEM.SURVEY_QUESTION' | translate }}</p>
-    </ion-card-content>
+    </div>
     <div class="actions">
-        <ion-button class="yes-button" fill="clear" (click)="handleYes()">
-            <ion-icon
-                aria-hidden="true"
-                name="checkmark"
-                slot="start"
-            ></ion-icon>
+        <button
+            mat-flat-button
+            class="yes-button"
+            type="button"
+            (click)="handleYes()"
+        >
+            <mat-icon fontSet="material-symbols-rounded">check</mat-icon>
             {{ 'SHARED.YES' | translate }}
-        </ion-button>
-        <ion-button
-            fill="clear"
-            color="danger"
+        </button>
+        <button
+            mat-button
+            class="no-button"
+            type="button"
             (click)="handleNo()"
             [disabled]="feature().properties.type !== 'node'"
         >
-            <ion-icon aria-hidden="true" name="close" slot="start"></ion-icon>
+            <mat-icon fontSet="material-symbols-rounded">close</mat-icon>
             {{ 'SHARED.NO' | translate }}
-        </ion-button>
+        </button>
     </div>
-</ion-card>
+</section>

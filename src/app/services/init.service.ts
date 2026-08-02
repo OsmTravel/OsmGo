@@ -4,7 +4,7 @@ import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { TagsService } from '@services/tags.service'
 import { forkJoin, of } from 'rxjs'
-import { map, switchMap, tap } from 'rxjs/operators'
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators'
 import { OsmApiService } from './osmApi.service'
 
 @Service()
@@ -24,14 +24,15 @@ export class InitService {
         zoomOnStart?: number,
         idOsmObjectOnStart?: string
     ) {
+        const config$ = this.configService.getI18nConfig$().pipe(
+            switchMap((i18nConfig) =>
+                this.configService.loadConfig$(i18nConfig)
+            ),
+            shareReplay({ bufferSize: 1, refCount: true })
+        )
+
         return forkJoin({
-            config: this.configService
-                .getI18nConfig$()
-                .pipe(
-                    switchMap((i18nConfig) =>
-                        this.configService.loadConfig$(i18nConfig)
-                    )
-                ),
+            config: config$,
             country: this.configService.getCountryConfig$(),
             userInfo: this.configService.loadUserInfo$(),
             changeSet: this.configService.loadChangeSet$(),
@@ -49,7 +50,14 @@ export class InitService {
             geojsonChanged: this.dataService.loadGeojsonChanged$(),
             geojsonBbox: this.dataService.loadGeojsonBbox$(),
             objectOnStartCoords: idOsmObjectOnStart
-                ? this.osmApi.getFirstCoordFromIdObject$(idOsmObjectOnStart)
+                ? config$.pipe(
+                      switchMap(() =>
+                          this.osmApi.getFirstCoordFromIdObject$(
+                              idOsmObjectOnStart
+                          )
+                      ),
+                      catchError(() => of(undefined))
+                  )
                 : of(undefined),
         }).pipe(
             map((d) => {

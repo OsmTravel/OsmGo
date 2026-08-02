@@ -39,6 +39,12 @@ describe('RelativeTimePipe', () => {
         expect(pipe.transform('2026-07-30T12:00:00Z', 'fr')).toBe('avant-hier')
     })
 
+    it('can always express an elapsed duration', () => {
+        expect(pipe.transform('2025-08-01T12:00:00Z', 'fr', 'always')).toBe(
+            'il y a 1 an'
+        )
+    })
+
     it('returns an empty string for missing or invalid dates', () => {
         expect(pipe.transform(null, 'en')).toBe('')
         expect(pipe.transform('not-a-date', 'en')).toBe('')

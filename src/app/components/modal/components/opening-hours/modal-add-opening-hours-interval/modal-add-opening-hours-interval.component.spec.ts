@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing'
-import { ModalController } from '@ionic/angular/standalone'
-import type { DatetimeChangeEventDetail } from '@ionic/core'
+import { MatDialogRef } from '@angular/material/dialog'
 import { ModalAddOpeningHoursIntervalComponent } from './modal-add-opening-hours-interval.component'
 
 describe('ModalAddOpeningHoursIntervalComponent', () => {
@@ -8,7 +7,9 @@ describe('ModalAddOpeningHoursIntervalComponent', () => {
 
     const createComponent = (): ModalAddOpeningHoursIntervalComponent => {
         TestBed.configureTestingModule({
-            providers: [{ provide: ModalController, useValue: { dismiss } }],
+            providers: [
+                { provide: MatDialogRef, useValue: { close: dismiss } },
+            ],
         })
         return TestBed.runInInjectionContext(
             () => new ModalAddOpeningHoursIntervalComponent()
@@ -20,13 +21,10 @@ describe('ModalAddOpeningHoursIntervalComponent', () => {
         dismiss.mockReset()
     })
 
-    it('updates a time range from an Ionic event', () => {
+    it('updates a time range from a native time value', () => {
         const component = createComponent()
-        const event = {
-            detail: { value: '10:30' },
-        } as CustomEvent<DatetimeChangeEventDetail>
 
-        component.updateTimeRange(0, 'start', event)
+        component.updateTimeRange(0, 'start', '10:30')
 
         expect(component.times()[0].start).toBe('10:30')
     })

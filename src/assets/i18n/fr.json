@@ -14,10 +14,12 @@
         "CLOSE": "Fermer",
         "LOADING": "Chargement…",
         "CREATE": "Créer",
-        "EDIT": "Editer",
+        "EDIT": "Modifier",
+        "SEARCH": "Rechercher",
         "SAVE": "Sauvegarder",
         "DELETE": "Supprimer",
-        "CLEAR": "Annuler"
+        "CLEAR": "Annuler",
+        "ERROR": "Une erreur est survenue. Vos modifications ont été conservées."
     },
     "MAIN": {
         "EXIT_CONFIRM_HEADER": "Vraiment ?",
@@ -26,10 +28,39 @@
         "WHAT_ITEM": "Lequel ?",
         "LOAD_BBOX": "Charger les données de l'emprise ?",
         "CREATING_MISSING_ICONS": "Création des icônes manquantes…",
+        "OVERLAY": {
+            "LABEL": "Page secondaire OsmGo"
+        },
+        "SELECTION": {
+            "SELECTED_OBJECT": "Objet sélectionné",
+            "RESIZE_PANEL": "Redimensionner le panneau",
+            "VIEW_DETAILS": "Voir la fiche",
+            "ADD_BOOKMARK": "Ajouter aux favoris",
+            "REMOVE_BOOKMARK": "Retirer des favoris",
+            "MORE_ACTIONS": "Plus d'actions",
+            "OSM_TAGS": "Tags OSM",
+            "DISCARD_TITLE": "Abandonner les modifications ?",
+            "DISCARD_MESSAGE": "Les modifications non enregistrées seront perdues.",
+            "DISCARD": "Abandonner",
+            "METADATA": {
+                "LABEL": "Historique OpenStreetMap",
+                "CREATED": "Créé",
+                "UPDATED": "Modifié",
+                "BY": "par",
+                "VERSION": "version {{version}}",
+                "PENDING": "En cours de création"
+            },
+            "FIELDS": {
+                "ARTIST": "Artiste",
+                "MATERIAL": "Matériau",
+                "START_DATE": "Date d'installation"
+            }
+        },
         "BUTTONS": {
             "MENU": "Menu",
             "UPLOAD": "Envoyer",
             "LOAD_DATA": "Télécharger les données",
+            "REFRESH_DATA": "Actualiser",
             "LOADING_DATA": "Chargement",
             "VIEW_AREAL_MAP": "Imagerie aérienne",
             "VIEW_STYLED_MAP": "Afficher la carte",
@@ -81,6 +112,8 @@
         "NAME": "Nom",
         "ERROR": "Erreur",
         "SEND": "Envoyer !",
+        "SEND_CHANGE": "Envoyer 1 modification",
+        "SEND_CHANGES": "Envoyer {{count}} modifications",
         "DELETE": "Supprimer",
         "DELETE_CONFIRM_HEADER": "Vraiment ?",
         "DELETE_CONFIRM_MESSAGE": "Supprimer toutes les modifications ?",
@@ -163,6 +196,8 @@
         "META_MYSELF": "Moi-même",
         "NO_NAME": "Sans nom",
         "PLACEHOLDER_NAME": "Nom",
+        "SAVE_CHANGE": "Enregistrer 1 modification",
+        "SAVE_CHANGES": "Enregistrer {{count}} modifications",
         "ADD_A_TAG": "Ajouter un tag",
         "DELETE_CONFIRM_HEADER": "Vraiment ?",
         "DELETE_CONFIRM_MESSAGE": "Supprimer cet élément?",

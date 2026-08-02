@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
-import { Platform } from '@ionic/angular/standalone'
-import { Storage } from '@ionic/storage-angular'
 import { TranslateService } from '@ngx-translate/core'
+import { AppStorage } from '@services/app-storage.service'
 import { firstValueFrom } from 'rxjs'
 
 import { ConfigService } from './config.service'
@@ -15,8 +14,7 @@ describe('ConfigService', () => {
         }
         TestBed.configureTestingModule({
             providers: [
-                { provide: Storage, useValue: storage },
-                { provide: Platform, useValue: {} },
+                { provide: AppStorage, useValue: storage },
                 { provide: HttpClient, useValue: {} },
                 { provide: TranslateService, useValue: {} },
             ],
@@ -37,8 +35,7 @@ describe('ConfigService', () => {
         }
         TestBed.configureTestingModule({
             providers: [
-                { provide: Storage, useValue: storage },
-                { provide: Platform, useValue: {} },
+                { provide: AppStorage, useValue: storage },
                 { provide: HttpClient, useValue: {} },
                 { provide: TranslateService, useValue: {} },
             ],
@@ -59,8 +56,7 @@ describe('ConfigService', () => {
     it('exposes the application version as read-only state', async () => {
         TestBed.configureTestingModule({
             providers: [
-                { provide: Storage, useValue: {} },
-                { provide: Platform, useValue: {} },
+                { provide: AppStorage, useValue: {} },
                 { provide: HttpClient, useValue: {} },
                 { provide: TranslateService, useValue: {} },
             ],
@@ -78,8 +74,7 @@ describe('ConfigService', () => {
         }
         TestBed.configureTestingModule({
             providers: [
-                { provide: Storage, useValue: storage },
-                { provide: Platform, useValue: {} },
+                { provide: AppStorage, useValue: storage },
                 { provide: HttpClient, useValue: {} },
                 { provide: TranslateService, useValue: {} },
             ],
@@ -101,8 +96,7 @@ describe('ConfigService', () => {
     it('exposes the current zoom as read-only state', () => {
         TestBed.configureTestingModule({
             providers: [
-                { provide: Storage, useValue: {} },
-                { provide: Platform, useValue: {} },
+                { provide: AppStorage, useValue: {} },
                 { provide: HttpClient, useValue: {} },
                 { provide: TranslateService, useValue: {} },
             ],
@@ -122,8 +116,7 @@ describe('ConfigService', () => {
         }
         TestBed.configureTestingModule({
             providers: [
-                { provide: Storage, useValue: storage },
-                { provide: Platform, useValue: {} },
+                { provide: AppStorage, useValue: storage },
                 { provide: HttpClient, useValue: {} },
                 { provide: TranslateService, useValue: {} },
             ],

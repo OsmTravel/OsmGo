@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { inject, Service, signal } from '@angular/core'
 import { Browser } from '@capacitor/browser'
 import { Capacitor } from '@capacitor/core'
-import { Storage } from '@ionic/storage'
-import { defer, from, Observable } from 'rxjs'
-import { finalize, switchMap, tap } from 'rxjs/operators'
+import { AppStorage } from '@services/app-storage.service'
+import { defer, from, map, Observable, of } from 'rxjs'
+import { finalize, switchMap } from 'rxjs/operators'
 
 import { ConfigService } from './config.service'
 
@@ -12,11 +12,18 @@ const OAUTH_SCOPES = 'read_prefs write_api'
 const OAUTH_STATE_KEY = 'osmOAuthState'
 const OAUTH_VERIFIER_KEY = 'osmOAuthCodeVerifier'
 
+interface OAuthTokenResponse {
+    access_token?: string
+    token_type?: string
+    scope?: string
+    created_at?: number
+}
+
 @Service()
 export class OsmAuthService {
     private readonly http = inject(HttpClient)
     private readonly configService = inject(ConfigService)
-    readonly localStorage = inject(Storage)
+    readonly localStorage = inject(AppStorage)
 
     oauthParam = {
         prod: {
@@ -31,18 +38,20 @@ export class OsmAuthService {
 
     private readonly tokenState = signal<string | null>(null)
     readonly token = this.tokenState.asReadonly()
+    private tokenRevision = 0
+    private tokenPersistence = Promise.resolve()
 
-    loadToken(): void {
-        this.localStorage
-            .get('osmToken')
-            .then((value) => {
-                if (value) {
-                    this.tokenState.set(value)
-                }
-            })
-            .catch((error) => {
-                console.error(error)
-            })
+    async loadToken(): Promise<string | null> {
+        const revision = this.tokenRevision
+        try {
+            const value = await this.localStorage.get<string>('osmToken')
+            if (revision === this.tokenRevision && value) {
+                this.tokenState.set(value)
+            }
+        } catch (error) {
+            console.error(error)
+        }
+        return this.token()
     }
 
     get redirectUri(): string {
@@ -87,11 +96,25 @@ export class OsmAuthService {
 
     login(): Observable<void> {
         return from(this.getLoginUrl()).pipe(
-            switchMap((url) => from(Browser.open({ url })))
+            switchMap((url) => {
+                if (Capacitor.isNativePlatform()) {
+                    return from(Browser.open({ url }))
+                }
+
+                // OAuth must stay in the current web tab. Opening a second tab
+                // separates the callback from its sessionStorage PKCE verifier
+                // and leaves the original OsmGo tab unaware of the new token.
+                window.location.assign(url)
+                return of(undefined)
+            })
         )
     }
 
-    handleCallback(url: string): Observable<any> {
+    handleCallback(url: string): Observable<OAuthTokenResponse> {
+        const shouldCloseBrowser =
+            Capacitor.isNativePlatform() ||
+            new URL(url, window.location.origin).protocol.startsWith('osmgo')
+
         return defer(() => {
             const callbackUrl = new URL(url, window.location.origin)
             const code = callbackUrl.searchParams.get('code')
@@ -112,10 +135,19 @@ export class OsmAuthService {
             }
 
             return this.exchangeCodeForToken(code, verifier)
-        }).pipe(finalize(() => this.closeNativeBrowser()))
+        }).pipe(
+            finalize(() => {
+                if (shouldCloseBrowser) {
+                    void this.closeNativeBrowser()
+                }
+            })
+        )
     }
 
-    exchangeCodeForToken(code: string, verifier: string): Observable<any> {
+    exchangeCodeForToken(
+        code: string,
+        verifier: string
+    ): Observable<OAuthTokenResponse> {
         const body = new URLSearchParams()
         body.set('grant_type', 'authorization_code')
         body.set('code', code)
@@ -124,29 +156,56 @@ export class OsmAuthService {
         body.set('code_verifier', verifier)
 
         return this.http
-            .post(`${this.oauthUrl}/token`, body.toString(), {
-                headers: new HttpHeaders().set(
-                    'Content-Type',
-                    'application/x-www-form-urlencoded'
-                ),
-            })
+            .post<OAuthTokenResponse>(
+                `${this.oauthUrl}/token`,
+                body.toString(),
+                {
+                    headers: new HttpHeaders().set(
+                        'Content-Type',
+                        'application/x-www-form-urlencoded'
+                    ),
+                }
+            )
             .pipe(
-                tap((response: any) => {
-                    if (response.access_token) {
-                        this.setToken(response.access_token)
+                switchMap((response) => {
+                    if (!response.access_token) {
+                        throw new Error(
+                            'OpenStreetMap returned no OAuth access token.'
+                        )
                     }
+
+                    return from(this.setToken(response.access_token)).pipe(
+                        map(() => response)
+                    )
                 })
             )
     }
 
-    setToken(token: string): void {
-        this.localStorage.set('osmToken', token)
+    async setToken(token: string): Promise<void> {
+        const previousToken = this.token()
+        const revision = ++this.tokenRevision
         this.tokenState.set(token)
+
+        try {
+            await this.queueTokenPersistence(() =>
+                this.localStorage.set('osmToken', token)
+            )
+        } catch (error) {
+            if (revision === this.tokenRevision) {
+                this.tokenState.set(previousToken)
+            }
+            throw error
+        }
     }
 
     clearToken(): void {
-        this.localStorage.remove('osmToken')
+        this.tokenRevision++
         this.tokenState.set(null)
+        void this.queueTokenPersistence(() =>
+            this.localStorage.remove('osmToken')
+        ).catch((error) => {
+            console.error(error)
+        })
         this.configService.resetUserInfo()
     }
 
@@ -190,9 +249,18 @@ export class OsmAuthService {
         sessionStorage.removeItem(OAUTH_VERIFIER_KEY)
     }
 
-    private closeNativeBrowser(): void {
-        if (Capacitor.isNativePlatform()) {
-            void Browser.close().catch(() => undefined)
-        }
+    private queueTokenPersistence(
+        operation: () => Promise<unknown>
+    ): Promise<void> {
+        const persistence = this.tokenPersistence
+            .catch(() => undefined)
+            .then(operation)
+            .then(() => undefined)
+        this.tokenPersistence = persistence.catch(() => undefined)
+        return persistence
+    }
+
+    private async closeNativeBrowser(): Promise<void> {
+        await Browser.close().catch(() => undefined)
     }
 }

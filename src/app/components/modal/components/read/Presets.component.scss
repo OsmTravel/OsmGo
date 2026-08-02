@@ -1,0 +1,45 @@
+:host {
+    display: block;
+}
+.read-field {
+    padding: 14px 16px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 16px;
+    background: var(--osmgo-surface);
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+header strong {
+    color: var(--osmgo-ink-muted);
+    font-size: 13px;
+    font-weight: 620;
+}
+header a {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    color: var(--osmgo-blue);
+}
+p {
+    margin: 6px 0 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+.code-value {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--osmgo-map-blue);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 13px;
+}
+.code-value mat-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+}

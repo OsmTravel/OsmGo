@@ -1,15 +1,85 @@
-table {
-    width: 100%;
-}
-td {
-    padding: 0.5em;
-}
-th,
-td {
-    border-bottom: 1px solid #ddd;
+:host {
+    display: block;
 }
 
-.tooComplex {
-    font-size: small;
+.opening-hours {
+    display: grid;
+    gap: 12px;
+}
+
+.add-hours {
+    width: 100%;
+    min-height: 44px;
+    border-radius: 13px;
+}
+
+.schedule {
+    overflow: hidden;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 14px;
+    background: var(--osmgo-surface);
+}
+
+.schedule-row {
+    display: grid;
+    grid-template-columns: minmax(88px, 0.75fr) minmax(130px, 1.25fr);
+    align-items: center;
+    min-height: 44px;
+    padding: 5px 8px 5px 12px;
+    border-bottom: 1px solid var(--osmgo-divider);
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    strong {
+        font-size: 14px;
+        font-weight: 650;
+    }
+}
+
+.day-intervals {
+    display: grid;
+    gap: 3px;
+}
+
+.interval {
+    display: flex;
+    min-height: 34px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    font-variant-numeric: tabular-nums;
+}
+
+.delete-interval {
+    --mdc-icon-button-state-layer-size: 34px;
+    color: var(--osmgo-danger);
+}
+
+.closed,
+.unknown-hours {
+    color: var(--osmgo-text-muted);
+    font-size: 14px;
+}
+
+.raw-editor mat-form-field {
+    width: 100%;
+}
+
+.raw-value {
+    display: grid;
+    gap: 7px;
+
+    code {
+        overflow-wrap: anywhere;
+        color: var(--osmgo-map-blue);
+        font-size: 13px;
+    }
+}
+
+.too-complex {
+    color: var(--osmgo-text-muted);
+    font-size: 13px;
     font-style: italic;
 }

@@ -1,50 +1,38 @@
-<ion-card>
-    <ion-card-header>
-        @if (!displayCode()) {
-            <b>{{ preset()?.lbl[language()] || preset()?.lbl['en'] }}</b>
-        }
-        @if (displayCode()) {
-            <b>{{ preset()?.key }}</b>
-        }
+<article class="read-field">
+    <header>
+        <strong>{{
+            displayCode()
+                ? preset().key
+                : preset().lbl[language()] || preset().lbl['en']
+        }}</strong>
         @if (preset().type === 'url' && tag().value) {
-            <a href="{{ tag().value }}" target="_blank"
-                ><ion-icon name="link"></ion-icon
-            ></a>
-        }
-    </ion-card-header>
-    @if (preset().key !== 'opening_hours') {
-        <ion-card-content>
-            @if (
-                !displayCode() && (tag() | displayPresetLabel: preset());
-                as pr
-            ) {
-                <p>
-                    {{ pr.lbl?.[language()] || pr.lbl?.['en'] || pr.v }}
-                </p>
-            } @else {
-                @if (
-                    !['number', 'text', 'tel', 'url', 'email'].includes(
-                        $safeNavigationMigration(preset()?.type)
-                    )
-                ) {
-                    <ion-icon name="code"></ion-icon>
-                }
-                {{ tag().value }}
-            }
-        </ion-card-content>
-    }
-    @if (preset().key === 'opening_hours') {
-        <ion-card-content>
-            @if (!displayCode()) {
-                <app-opening-hours
-                    [openingHours]="openingHoursValue"
-                    [displayCode]="displayCode()"
+            <a
+                [href]="tag().value"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ouvrir le lien"
+            >
+                <mat-icon fontSet="material-symbols-rounded"
+                    >open_in_new</mat-icon
                 >
-                </app-opening-hours>
-            } @else {
-                <ion-icon name="code"></ion-icon>
-                {{ tag().value }}
-            }
-        </ion-card-content>
+            </a>
+        }
+    </header>
+
+    @if (preset().key === 'opening_hours' && !displayCode()) {
+        <app-opening-hours
+            [openingHours]="openingHoursValue"
+            [displayCode]="displayCode()"
+        ></app-opening-hours>
+    } @else if (
+        !displayCode() && (tag() | displayPresetLabel: preset());
+        as option
+    ) {
+        <p>{{ option.lbl?.[language()] || option.lbl?.['en'] || option.v }}</p>
+    } @else {
+        <p class="code-value">
+            <mat-icon fontSet="material-symbols-rounded">code</mat-icon
+            >{{ tag().value }}
+        </p>
     }
-</ion-card>
+</article>

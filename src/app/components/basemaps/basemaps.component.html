@@ -1,41 +1,62 @@
-<ion-header color="primary">
-    <ion-toolbar color="primary">
-        <ion-buttons style="min-width: 32px" slot="primary">
-            <ion-button (click)="navCtrl.back()">
-                <ion-icon
-                    name="chevron-back-outline"
-                    slot="icon-only"
-                ></ion-icon>
-            </ion-button>
-        </ion-buttons>
-        <ion-title>{{ 'SETTINGS.AERIAL_IMAGERY' | translate }}</ion-title>
-    </ion-toolbar>
-</ion-header>
+<main class="basemaps-screen">
+    <app-screen-header
+        [title]="'SETTINGS.AERIAL_IMAGERY' | translate"
+        (backRequested)="back()"
+    ></app-screen-header>
 
-@if (this.initService.isLoaded) {
-    <ion-content class="ion-padding">
-        <h4>{{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate }}</h4>
-        @for (bm of basemaps(); track bm) {
-            <ion-card
-                (click)="selectBaseMap(bm)"
-                [class.selectedCard]="
-                    bm.id == configService.config().basemap.id
-                "
-            >
-                <ion-card-header>
-                    <ion-card-subtitle
-                        >{{ bm?.category }}
-                        {{ bm?.end_date }}</ion-card-subtitle
-                    >
-                    <ion-card-title>{{ bm.name }}</ion-card-title>
-                </ion-card-header>
-                <ion-card-content>
-                    @if (bm.description) {
-                        <p [innerText]="bm.description"></p>
+    @if (initService.isLoaded) {
+        <div class="basemaps-content">
+            <p class="screen-intro">
+                {{ 'SETTINGS.AERIAL_IMAGERY_HINT' | translate }}
+            </p>
+
+            @if (basemaps().length === 0) {
+                <div class="loading-state" role="status">
+                    <mat-spinner diameter="32"></mat-spinner>
+                </div>
+            } @else {
+                <div class="basemap-grid" role="list">
+                    @for (bm of basemaps(); track bm.id) {
+                        <button
+                            class="basemap-card"
+                            type="button"
+                            role="listitem"
+                            matRipple
+                            [class.is-selected]="
+                                bm.id === configService.config().basemap.id
+                            "
+                            [attr.aria-pressed]="
+                                bm.id === configService.config().basemap.id
+                            "
+                            (click)="selectBaseMap(bm)"
+                        >
+                            <span class="basemap-card__topline">
+                                <span>{{ bm.category }} {{ bm.end_date }}</span>
+                                @if (
+                                    bm.id === configService.config().basemap.id
+                                ) {
+                                    <mat-icon
+                                        fontSet="material-symbols-rounded"
+                                        aria-hidden="true"
+                                        >check_circle</mat-icon
+                                    >
+                                }
+                            </span>
+                            <strong>{{ bm.name }}</strong>
+                            @if (bm.description) {
+                                <span class="basemap-card__description">{{
+                                    bm.description
+                                }}</span>
+                            }
+                            @if (bm.attribution?.text) {
+                                <span class="basemap-card__attribution">{{
+                                    bm.attribution?.text
+                                }}</span>
+                            }
+                        </button>
                     }
-                    <p>{{ bm?.attribution?.text }}</p>
-                </ion-card-content>
-            </ion-card>
-        }
-    </ion-content>
-}
+                </div>
+            }
+        </div>
+    }
+</main>

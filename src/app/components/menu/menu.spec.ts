@@ -1,9 +1,6 @@
 import { TestBed } from '@angular/core/testing'
-import {
-    AlertController,
-    NavController,
-    Platform,
-} from '@ionic/angular/standalone'
+import { MatDialog } from '@angular/material/dialog'
+import { Router } from '@angular/router'
 import { TranslateService } from '@ngx-translate/core'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
@@ -28,10 +25,9 @@ describe('MenuPage swipes', () => {
                 { provide: DataService, useValue: {} },
                 { provide: ConfigService, useValue: {} },
                 { provide: AlertService, useValue: {} },
-                { provide: AlertController, useValue: {} },
-                { provide: Platform, useValue: {} },
+                { provide: MatDialog, useValue: {} },
                 { provide: TranslateService, useValue: {} },
-                { provide: NavController, useValue: {} },
+                { provide: Router, useValue: {} },
                 { provide: OsmAuthService, useValue: {} },
             ],
         })

@@ -1,0 +1,14 @@
+<mat-toolbar class="screen-toolbar">
+    <button
+        mat-icon-button
+        type="button"
+        [attr.aria-label]="'SHARED.CLOSE' | translate"
+        (click)="backRequested.emit()"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >arrow_back</mat-icon
+        >
+    </button>
+    <h1>{{ title() }}</h1>
+    <ng-content></ng-content>
+</mat-toolbar>

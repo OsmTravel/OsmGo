@@ -1,172 +1,145 @@
 @if (!loading) {
-<div id="container">
-    <div id="searchSelect">
-        <div id="searchDiv">
-            <ion-searchbar
+<main class="category-picker">
+    <app-screen-header
+        [title]="'MODAL_SELECTED_ITEM.SELECT_CATEGORY' | translate"
+        (backRequested)="cancel()"
+    ></app-screen-header>
+
+    <div class="category-search">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic">
+            <mat-icon matPrefix fontSet="material-symbols-rounded"
+                >search</mat-icon
+            >
+            <input
+                #searchInput
+                matInput
+                type="search"
                 autocomplete="off"
                 autocorrect="off"
                 autocapitalize="none"
-                inputmode="text"
                 [value]="searchText()"
-                (ionInput)="onSearchInput($event)"
-                [debounce]="300"
-            ></ion-searchbar>
-        </div>
+                [placeholder]="'SHARED.SEARCH' | translate"
+                (input)="onSearchInput(searchInput.value)"
+            />
+        </mat-form-field>
     </div>
-    <ion-content>
-        @if (searchText().length > 2 ) {
-        <div class="listTag">
-            <ion-list style="overflow-y: auto">
-                @for (tag of currentListOfTags |
-                filtersTagsByIds:tagsService.hiddenTagsIds():true |
-                filterDeprecatedTag | filterBySearchable |
-                filterExcludeTagByCountryCode:countryTags |
-                filterByByGeometryType:[geometryType] |
-                filterByTagsContent:[configService.config().languageTags,
-                configService.config().countryTags]:searchText() |
-                limitDisplayTags:50; track tag) {
-                <ion-item class="ion-no-padding">
-                    <app-tag-list-element
-                        style="width: 100%"
-                        [tag]="tag"
-                        [countryTags]="configService.config().countryTags"
-                        [languageTags]="configService.config().languageTags"
-                        [jsonSprites]="tagsService.jsonSprites()"
-                        [geometriesFilter]="geometriesPossible"
-                        [bookmarksIds]="tagsService.bookmarksIds()"
-                        [oldTagConfig]="oldTagConfig"
-                        (removeBookmark)="tagsService.removeBookMark(tag)"
-                        (addBookmark)="tagsService.addBookMark(tag)"
-                        (selected)="selected($event)"
-                    >
-                    </app-tag-list-element>
-                </ion-item>
-                }
-            </ion-list>
-            <!-- Add custum value (from searchBar to the key) -->
-            <div>
-                <h4>{{ 'MODAL_SELECTED_ITEM.CUSTOM_KEY_VALUE' | translate}}</h4>
-                @for (k of tagsService.primaryKeys() | sortArray; track k) {
-                <ion-chip>
-                    <ion-label
-                        color="primary"
-                        (click)="addCustomValue(k,searchText().toLowerCase())"
-                        >{{ k }}={{searchText() | lowercase}}</ion-label
-                    >
-                </ion-chip>
-                }
-            </div>
-        </div>
-        } @if (searchText().length < 3 ) {
-        <div
-            class="listTag"
-            (pointerdown)="startSwipe($event)"
-            (pointerup)="endSwipe($event)"
-            (pointercancel)="cancelSwipe()"
-        >
-            <p style="text-align: center; margin: 0px 0px 24px">
-                {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' |
-                translate}}
-            </p>
-            <div class="buttonsSwitchType">
-                <ion-button
-                    ion-button
-                    (click)="changePageLastTagsBookmarks('lastTags')"
-                    class="buttonSwitchType"
-                    [disabled]="displayType === 'lastTags'"
-                >
-                    <ion-icon name="time" slot="start"></ion-icon>
-                    {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}}
-                </ion-button>
-                <ion-button
-                    ion-button
-                    (click)="changePageLastTagsBookmarks('bookmarks')"
-                    class="buttonSwitchType"
-                    [disabled]="displayType === 'bookmarks'"
-                >
-                    <ion-icon name="heart" slot="start"></ion-icon> {{
-                    'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
-                </ion-button>
-            </div>
-            <div class="shadows"></div>
-            @if (displayType == 'lastTags') {
-            <div class="lastTags tagList">
-                <h4 style="text-align: center">
-                    {{'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate}}
-                </h4>
-                <ion-list style="overflow-y: auto">
-                    @for (tag of tagsService.tags() |
-                    filtersTagsByIds:tagsService.lastTagsUsedIds() |
-                    filterDeprecatedTag | filterBySearchable |
-                    filterExcludeTagByCountryCode:countryTags |
-                    filterByByGeometryType:[geometryType]; track tag) {
-                    <ion-item class="ion-no-padding">
-                        <app-tag-list-element
-                            style="width: 100%"
-                            [tag]="tag"
-                            [countryTags]="configService.config().countryTags"
-                            [languageTags]="configService.config().languageTags"
-                            [jsonSprites]="tagsService.jsonSprites()"
-                            [geometriesFilter]="geometriesPossible"
-                            [bookmarksIds]="tagsService.bookmarksIds()"
-                            [oldTagConfig]="oldTagConfig"
-                            (removeBookmark)="removeBookmark($event)"
-                            (addBookmark)="addBookmark($event)"
-                            (selected)="selected($event)"
-                        >
-                        </app-tag-list-element>
-                    </ion-item>
-                    }
-                </ion-list>
-            </div>
-            } @if (displayType == 'bookmarks') {
-            <div class="bookmarks tagList">
-                <h4 style="text-align: center">
-                    {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
-                </h4>
-                <ion-list style="overflow-y: auto">
-                    @for (tag of tagsService.tags() |
-                    filtersTagsByIds:tagsService.bookmarksIds() |
-                    filterExcludeTagByCountryCode:countryTags |
-                    filterByByGeometryType:[geometryType]; track tag) {
-                    <ion-item class="ion-no-padding">
-                        <app-tag-list-element
-                            style="width: 100%"
-                            [tag]="tag"
-                            [countryTags]="configService.config().countryTags"
-                            [languageTags]="configService.config().languageTags"
-                            [jsonSprites]="tagsService.jsonSprites()"
-                            [geometriesFilter]="geometriesPossible"
-                            [bookmarksIds]="tagsService.bookmarksIds()"
-                            [oldTagConfig]="oldTagConfig"
-                            (removeBookmark)="removeBookmark($event)"
-                            (addBookmark)="addBookmark($event)"
-                            (selected)="selected($event)"
-                        >
-                        </app-tag-list-element>
-                    </ion-item>
-                    }
-                </ion-list>
-            </div>
+
+    <div
+        class="category-content"
+        (pointerdown)="startSwipe($event)"
+        (pointerup)="endSwipe($event)"
+        (pointercancel)="cancelSwipe()"
+    >
+        @if (searchText().length > 2) {
+        <div class="category-list">
+            @for ( tag of currentListOfTags | filtersTagsByIds:
+            tagsService.hiddenTagsIds() : true | filterDeprecatedTag |
+            filterBySearchable | filterExcludeTagByCountryCode: countryTags |
+            filterByByGeometryType: [geometryType] | filterByTagsContent :
+            [configService.config().languageTags,
+            configService.config().countryTags] : searchText() |
+            limitDisplayTags: 50; track tag.id ) {
+            <app-tag-list-element
+                [tag]="tag"
+                [countryTags]="configService.config().countryTags"
+                [languageTags]="configService.config().languageTags"
+                [jsonSprites]="tagsService.jsonSprites()"
+                [geometriesFilter]="geometriesPossible"
+                [bookmarksIds]="tagsService.bookmarksIds()"
+                [oldTagConfig]="oldTagConfig"
+                (removeBookmark)="tagsService.removeBookMark(tag)"
+                (addBookmark)="tagsService.addBookMark(tag)"
+                (selected)="selected($event)"
+            ></app-tag-list-element>
             }
         </div>
-        }
-    </ion-content>
-    <ion-footer>
-        <div class="actions">
-            <ion-button tappable (click)="dismiss()" fill="clear">
-                <ion-icon name="close" slot="start"></ion-icon>
-                {{ 'SHARED.CANCEL' | translate }}
-            </ion-button>
+
+        <section class="custom-values">
+            <h2>{{ 'MODAL_SELECTED_ITEM.CUSTOM_KEY_VALUE' | translate }}</h2>
+            <div>
+                @for (key of tagsService.primaryKeys() | sortArray; track key) {
+                <button
+                    mat-stroked-button
+                    type="button"
+                    (click)="addCustomValue(key, searchText().toLowerCase())"
+                >
+                    <span class="code"
+                        >{{ key }}={{ searchText() | lowercase }}</span
+                    >
+                </button>
+                }
+            </div>
+        </section>
+        } @else {
+        <p class="search-hint">
+            {{ 'MODAL_SELECTED_ITEM.SEARCH_TAG_AT_LEAST_3_LETTERS' | translate
+            }}
+        </p>
+
+        <mat-button-toggle-group
+            class="category-tabs"
+            [value]="displayType"
+            aria-label="Source des catégories"
+            (change)="changePageLastTagsBookmarks($event.value)"
+        >
+            <mat-button-toggle value="lastTags">
+                <mat-icon fontSet="material-symbols-rounded">history</mat-icon>
+                {{ 'MODAL_SELECTED_ITEM.LAST_TAG_USED' | translate }}
+            </mat-button-toggle>
+            <mat-button-toggle value="bookmarks">
+                <mat-icon fontSet="material-symbols-rounded">bookmark</mat-icon>
+                {{ 'MODAL_SELECTED_ITEM.BOOKMARKS' | translate }}
+            </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <div class="category-list">
+            @if (displayType === 'lastTags') { @for ( tag of tagsService.tags()
+            | filtersTagsByIds: tagsService.lastTagsUsedIds() |
+            filterDeprecatedTag | filterBySearchable |
+            filterExcludeTagByCountryCode: countryTags | filterByByGeometryType:
+            [geometryType]; track tag.id ) {
+            <app-tag-list-element
+                [tag]="tag"
+                [countryTags]="configService.config().countryTags"
+                [languageTags]="configService.config().languageTags"
+                [jsonSprites]="tagsService.jsonSprites()"
+                [geometriesFilter]="geometriesPossible"
+                [bookmarksIds]="tagsService.bookmarksIds()"
+                [oldTagConfig]="oldTagConfig"
+                (removeBookmark)="removeBookmark($event)"
+                (addBookmark)="addBookmark($event)"
+                (selected)="selected($event)"
+            ></app-tag-list-element>
+            } } @else { @for ( tag of tagsService.tags() | filtersTagsByIds:
+            tagsService.bookmarksIds() | filterExcludeTagByCountryCode:
+            countryTags | filterByByGeometryType: [geometryType]; track tag.id )
+            {
+            <app-tag-list-element
+                [tag]="tag"
+                [countryTags]="configService.config().countryTags"
+                [languageTags]="configService.config().languageTags"
+                [jsonSprites]="tagsService.jsonSprites()"
+                [geometriesFilter]="geometriesPossible"
+                [bookmarksIds]="tagsService.bookmarksIds()"
+                [oldTagConfig]="oldTagConfig"
+                (removeBookmark)="removeBookmark($event)"
+                (addBookmark)="addBookmark($event)"
+                (selected)="selected($event)"
+            ></app-tag-list-element>
+            } }
         </div>
-    </ion-footer>
-</div>
-} @if (loading) {
-<div style="height: 100%">
-    <!-- <ion-header>
-      <ion-toolbar> -->
-    <ion-title> {{ 'MODAL_SELECTED_ITEM.LOADING' | translate}} </ion-title>
-    <!-- </ion-toolbar>
-    </ion-header> -->
+        }
+    </div>
+
+    <footer class="category-footer">
+        <button mat-button type="button" (click)="cancel()">
+            {{ 'SHARED.CANCEL' | translate }}
+        </button>
+    </footer>
+</main>
+} @else {
+<div class="category-loading" role="status">
+    <mat-spinner diameter="44"></mat-spinner>
+    <p>{{ 'MODAL_SELECTED_ITEM.LOADING' | translate }}</p>
 </div>
 }

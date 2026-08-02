@@ -1,0 +1,175 @@
+<div class="map-control map-control--menu">
+    <button
+        mat-icon-button
+        class="osmgo-map-button"
+        type="button"
+        data-testid="open-menu"
+        [matTooltip]="'MAIN.BUTTONS.MENU' | translate"
+        [attr.aria-label]="'MAIN.BUTTONS.MENU' | translate"
+        (click)="menuRequested.emit()"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >menu</mat-icon
+        >
+        @if (newVersion()) {
+        <span class="update-indicator" aria-hidden="true"></span>
+        }
+    </button>
+</div>
+
+@if (dataService.changedFeatureCount() > 0 && !mapService.markerMoving()) {
+<div class="map-control map-control--pending">
+    <button
+        mat-icon-button
+        class="osmgo-map-button osmgo-map-button--pending"
+        type="button"
+        data-testid="open-upload"
+        [matBadge]="dataService.changedFeatureCount()"
+        matBadgeColor="warn"
+        [matTooltip]="'MAIN.BUTTONS.UPLOAD' | translate"
+        [attr.aria-label]="'MAIN.BUTTONS.UPLOAD' | translate"
+        (click)="openUpload()"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >cloud_upload</mat-icon
+        >
+    </button>
+</div>
+} @if (!mapService.markerMoving() && !mapService.markerMoveMoving()) {
+<div class="map-action-dock map-action-dock--browse">
+    <button
+        mat-icon-button
+        class="dock-button basemap-button"
+        type="button"
+        data-testid="toggle-basemap"
+        [class.is-active]="mapService.isDisplaySatelliteBaseMap()"
+        [matTooltip]="
+            (mapService.isDisplaySatelliteBaseMap()
+                ? 'MAIN.BUTTONS.VIEW_STYLED_MAP'
+                : 'MAIN.BUTTONS.VIEW_AREAL_MAP'
+            ) | translate
+        "
+        [attr.aria-label]="
+            (mapService.isDisplaySatelliteBaseMap()
+                ? 'MAIN.BUTTONS.VIEW_STYLED_MAP'
+                : 'MAIN.BUTTONS.VIEW_AREAL_MAP'
+            ) | translate
+        "
+        (click)="toggleBasemap()"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >layers</mat-icon
+        >
+    </button>
+
+    <div class="map-action-group">
+        <button
+            mat-flat-button
+            class="refresh-button"
+            type="button"
+            data-testid="load-osm-data"
+            [disabled]="
+                    mapService.isProcessing() ||
+                    (configService.currentZoom() ?? 0) < 14
+                "
+            [matTooltip]="'MAIN.BUTTONS.LOAD_DATA' | translate"
+            [attr.aria-label]="'MAIN.BUTTONS.LOAD_DATA' | translate"
+            (click)="refreshRequested.emit()"
+        >
+            @if (mapService.isProcessing()) {
+            <mat-spinner diameter="22"></mat-spinner>
+            } @else {
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >refresh</mat-icon
+            >
+            }
+            <span>
+                {{ (mapService.isProcessing() ? 'MAIN.BUTTONS.LOADING_DATA' :
+                'MAIN.BUTTONS.REFRESH_DATA' ) | translate }}
+            </span>
+        </button>
+
+        <button
+            mat-icon-button
+            class="dock-button"
+            type="button"
+            data-testid="center-on-gps"
+            [disabled]="!locationService.gpsIsReady()"
+            [matTooltip]="'MAIN.BUTTONS.CENTER_GPS' | translate"
+            [attr.aria-label]="'MAIN.BUTTONS.CENTER_GPS' | translate"
+            (click)="mapService.centerOnMyPosition()"
+        >
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >my_location</mat-icon
+            >
+        </button>
+    </div>
+
+    <button
+        mat-fab
+        class="add-button"
+        type="button"
+        data-testid="add-poi"
+        [disabled]="mapService.loadingData()"
+        [matTooltip]="'MAIN.BUTTONS.ADD_NEW' | translate"
+        [attr.aria-label]="'MAIN.BUTTONS.ADD_NEW' | translate"
+        (click)="addRequested.emit()"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >add</mat-icon
+        >
+    </button>
+</div>
+} @if (mapService.markerMoving() || mapService.markerMoveMoving()) {
+<div class="map-action-dock map-action-dock--confirm">
+    <button
+        mat-icon-button
+        class="dock-button dock-button--cancel"
+        type="button"
+        [attr.data-testid]="
+                mapService.markerMoveMoving() ? 'cancel-marker-move' : null
+            "
+        [matTooltip]="'SHARED.CANCEL' | translate"
+        [attr.aria-label]="'SHARED.CANCEL' | translate"
+        (click)="
+                mapService.markerMoveMoving()
+                    ? mapService.cancelNewPosition()
+                    : mapService.cancelNewMarker()
+            "
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >close</mat-icon
+        >
+    </button>
+
+    <button
+        mat-fab
+        class="confirm-button"
+        type="button"
+        [attr.data-testid]="
+                mapService.markerMoveMoving() ? 'confirm-marker-move' : null
+            "
+        [matTooltip]="
+                (mapService.markerMoveMoving()
+                    ? 'MAIN.BUTTONS.CONFIRM_MOVE'
+                    : 'MAIN.BUTTONS.CONFIRM_ADD'
+                ) | translate
+            "
+        [attr.aria-label]="
+                (mapService.markerMoveMoving()
+                    ? 'MAIN.BUTTONS.CONFIRM_MOVE'
+                    : 'MAIN.BUTTONS.CONFIRM_ADD'
+                ) | translate
+            "
+        (click)="
+                mapService.markerMoveMoving()
+                    ? mapService.openModalWithNewPosition()
+                    : mapService.openModalOsm()
+            "
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >check</mat-icon
+        >
+    </button>
+</div>
+}

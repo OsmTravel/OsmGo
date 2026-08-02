@@ -1,0 +1,206 @@
+<section
+    class="object-sheet"
+    [class.object-sheet--embedded]="showEmbeddedContent()"
+    [attr.data-sheet-mode]="mode()"
+    data-testid="selected-object-sheet"
+    [attr.aria-label]="'MAIN.SELECTION.SELECTED_OBJECT' | translate"
+    [style.transform]="'translateY(' + dragOffset() + 'px)'"
+    (touchstart)="onSheetTouchStart($event)"
+    (touchend)="onSheetTouchEnd($event)"
+    (touchcancel)="onSheetTouchCancel()"
+>
+    @if (showEmbeddedContent()) {
+    <div class="embedded-editor" [class.is-hidden]="categoryOpen()">
+        @switch (selection().type) { @case ('Create') {
+        <app-object-editor-content
+            #editor
+            type="Create"
+            [data]="selection().geojson"
+            [newPosition]="selection().newPosition ?? false"
+            [origineData]="selection().origineData"
+            (dismissed)="handleEditorDismissed($event)"
+            (categoryRequested)="openCategory()"
+        ></app-object-editor-content>
+        } @case ('Update') {
+        <app-object-editor-content
+            #editor
+            type="Update"
+            [data]="selection().geojson"
+            [newPosition]="selection().newPosition ?? false"
+            [origineData]="selection().origineData"
+            (dismissed)="handleEditorDismissed($event)"
+            (categoryRequested)="openCategory()"
+        ></app-object-editor-content>
+        } @default {
+        <app-object-editor-content
+            #editor
+            type="Read"
+            [data]="selection().geojson"
+            [origineData]="selection().origineData"
+            [displayCodeOnStart]="advancedTagsRequested()"
+            (dismissed)="handleEditorDismissed($event)"
+        ></app-object-editor-content>
+        } }
+    </div>
+    @if (categoryOpen()) {
+    <div class="embedded-category">
+        <modal-primary-tag
+            [tagConfig]="categoryTagConfig()"
+            [geometryType]="categoryGeometry()"
+            [embedded]="true"
+            (completed)="handleCategoryCompleted($event)"
+        ></modal-primary-tag>
+    </div>
+    } } @else {
+    <button
+        type="button"
+        class="sheet-handle"
+        [attr.aria-label]="'MAIN.SELECTION.RESIZE_PANEL' | translate"
+        (pointerdown)="onPointerDown($event)"
+        (pointermove)="onPointerMove($event)"
+        (pointerup)="onPointerUp($event)"
+        (pointercancel)="onPointerCancel()"
+    >
+        <span aria-hidden="true"></span>
+    </button>
+
+    <div class="object-header-actions">
+        <button
+            mat-icon-button
+            type="button"
+            [class.is-active]="bookmarked()"
+            [matTooltip]="
+                (bookmarked()
+                    ? 'MAIN.SELECTION.REMOVE_BOOKMARK'
+                    : 'MAIN.SELECTION.ADD_BOOKMARK'
+                ) | translate
+            "
+            [attr.aria-label]="
+                (bookmarked()
+                    ? 'MAIN.SELECTION.REMOVE_BOOKMARK'
+                    : 'MAIN.SELECTION.ADD_BOOKMARK'
+                ) | translate
+            "
+            (click)="toggleBookmark()"
+        >
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true">
+                {{ bookmarked() ? 'bookmark' : 'bookmark_border' }}
+            </mat-icon>
+        </button>
+
+        <button
+            mat-icon-button
+            type="button"
+            [matMenuTriggerFor]="objectMenu"
+            [matTooltip]="'MAIN.SELECTION.MORE_ACTIONS' | translate"
+            [attr.aria-label]="'MAIN.SELECTION.MORE_ACTIONS' | translate"
+        >
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >more_vert</mat-icon
+            >
+        </button>
+    </div>
+
+    <header class="object-header">
+        <div
+            class="object-icon"
+            [style.background-color]="feature().properties.hexColor || null"
+            aria-hidden="true"
+        >
+            <app-icon
+                [icon]="feature().properties.icon"
+                [jsonSprites]="tagsService.jsonSprites()"
+                renderMode="svg"
+            ></app-icon>
+        </div>
+
+        <div class="object-identity">
+            <h1 [attr.data-title-size]="titleSize()">{{ title() }}</h1>
+            <p>{{ category() }}</p>
+        </div>
+    </header>
+
+    <section
+        class="object-metadata"
+        [attr.aria-label]="'MAIN.SELECTION.METADATA.LABEL' | translate"
+    >
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >history</mat-icon
+        >
+        @if (metadataTimestamp() !== 0) {
+        <p class="metadata-primary">
+            {{ metadataActionKey() | translate }} {{ metadataTimestamp() |
+            relativeTime: configService.config().languageUi: 'always' }} ·
+            <strong>{{ metadataAuthor() }}</strong>
+        </p>
+        <p class="metadata-secondary">
+            v{{ feature().properties.meta.version }}
+        </p>
+        } @else {
+        <p class="metadata-primary metadata-primary--pending">
+            {{ 'MAIN.SELECTION.METADATA.PENDING' | translate }} ·
+            <strong>{{ metadataAuthor() }}</strong>
+        </p>
+        }
+    </section>
+
+    <div class="sheet-content" cdkScrollable>
+        @if (rows().length > 0) {
+        <dl class="object-facts">
+            @for (row of rows(); track row.key) {
+            <div class="fact-row">
+                <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                    >{{ row.icon }}</mat-icon
+                >
+                <div>
+                    <dt>{{ row.label }}</dt>
+                    <dd>{{ row.value }}</dd>
+                </div>
+            </div>
+            }
+        </dl>
+        }
+    </div>
+
+    <footer class="sheet-actions">
+        <button
+            mat-stroked-button
+            type="button"
+            class="close-action"
+            (click)="closeRequested.emit()"
+        >
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >close</mat-icon
+            >
+            {{ 'SHARED.CLOSE' | translate }}
+        </button>
+        <button
+            mat-flat-button
+            type="button"
+            class="primary-action"
+            data-testid="edit-selected-poi"
+            (click)="editRequested.emit()"
+        >
+            <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+                >edit</mat-icon
+            >
+            {{ 'SHARED.EDIT' | translate }}
+        </button>
+    </footer>
+    }
+</section>
+
+<mat-menu #objectMenu="matMenu" xPosition="before">
+    <button mat-menu-item type="button" (click)="showDetails()">
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >visibility</mat-icon
+        >
+        <span>{{ 'MAIN.SELECTION.VIEW_DETAILS' | translate }}</span>
+    </button>
+    <button mat-menu-item type="button" (click)="showAdvancedTags()">
+        <mat-icon fontSet="material-symbols-rounded" aria-hidden="true"
+            >sell</mat-icon
+        >
+        <span>{{ 'MAIN.SELECTION.OSM_TAGS' | translate }}</span>
+    </button>
+</mat-menu>

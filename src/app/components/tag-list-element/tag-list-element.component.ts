@@ -1,6 +1,9 @@
 import { Component, input, output } from '@angular/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
+import { MatTooltipModule } from '@angular/material/tooltip'
 import { IconComponent } from '@components/icon/icon.component'
-import { IonButton, IonIcon } from '@ionic/angular/standalone'
+import { TranslateModule } from '@ngx-translate/core'
 import type { JsonSprites, TagConfig } from '@osmgo/type'
 import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
@@ -12,9 +15,11 @@ import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
     imports: [
         DisplayTagsPipe,
         IconComponent,
-        IonButton,
-        IonIcon,
         IsBookmarkedPipe,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        TranslateModule,
     ],
 })
 export class TagListElementComponent {

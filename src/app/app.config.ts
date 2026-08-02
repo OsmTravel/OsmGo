@@ -3,21 +3,12 @@ import {
     withInterceptorsFromDi,
     withXhr,
 } from '@angular/common/http'
-import {
-    ApplicationConfig,
-    importProvidersFrom,
-    provideCheckNoChangesConfig,
-} from '@angular/core'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { provideRouter, RouteReuseStrategy } from '@angular/router'
+import { ApplicationConfig, provideCheckNoChangesConfig } from '@angular/core'
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
+import { provideRouter } from '@angular/router'
 import { provideServiceWorker } from '@angular/service-worker'
 import { routes } from '@app/app.routes'
 import { environment } from '@environments/environment'
-import {
-    IonicRouteStrategy,
-    provideIonicAngular,
-} from '@ionic/angular/standalone'
-import { IonicStorageModule } from '@ionic/storage-angular'
 import { provideTranslateService } from '@ngx-translate/core'
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
 
@@ -32,8 +23,8 @@ export const appConfig: ApplicationConfig = {
                       interval: 1000,
                   }),
               ]),
-        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
         provideHttpClient(withXhr(), withInterceptorsFromDi()),
+        provideAnimationsAsync(),
         provideServiceWorker('ngsw-worker.js', {
             enabled: environment.production,
         }),
@@ -41,10 +32,5 @@ export const appConfig: ApplicationConfig = {
             fallbackLang: 'en',
             loader: provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
         }),
-        importProvidersFrom(
-            BrowserAnimationsModule,
-            IonicStorageModule.forRoot()
-        ),
-        provideIonicAngular({ mode: 'md', useSetInputAPI: true }),
     ],
 }

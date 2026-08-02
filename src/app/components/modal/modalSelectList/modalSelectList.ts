@@ -1,19 +1,10 @@
 import { Component, inject, input, OnInit, signal } from '@angular/core'
-import {
-    IonButton,
-    IonFooter,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonRadio,
-    IonRadioGroup,
-    IonSearchbar,
-    IonTitle,
-    IonToolbar,
-    ModalController,
-    type RadioGroupCustomEvent,
-} from '@ionic/angular/standalone'
-import type { SearchbarInputEventDetail } from '@ionic/core'
+import { MatButtonModule } from '@angular/material/button'
+import { MatDialogRef } from '@angular/material/dialog'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatRadioModule } from '@angular/material/radio'
 import { TranslateModule } from '@ngx-translate/core'
 import type { Preset, PresetOption } from '@osmgo/type'
 import { FilterByCountryCode } from '@pipes/filterByCountryCode.pipe'
@@ -43,21 +34,16 @@ interface ModalSelectListResult {
     imports: [
         FilterByCountryCode,
         FilterByPresetsContentPipe,
-        IonButton,
-        IonFooter,
-        IonItem,
-        IonLabel,
-        IonList,
-        IonRadio,
-        IonRadioGroup,
-        IonSearchbar,
-        IonTitle,
-        IonToolbar,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatRadioModule,
         TranslateModule,
     ],
 })
 export class ModalSelectList implements OnInit {
-    readonly modalCtrl = inject(ModalController)
+    private readonly dialogRef = inject(MatDialogRef<ModalSelectList>)
     readonly configService = inject(ConfigService)
 
     readonly data = input.required<ModalSelectListData>()
@@ -70,16 +56,15 @@ export class ModalSelectList implements OnInit {
         this.initialValue = this.data().value
     }
 
-    onSearchInput(event: CustomEvent<SearchbarInputEventDetail>): void {
-        this.searchText.set(event.detail.value ?? '')
+    onSearchInput(value: string): void {
+        this.searchText.set(value)
     }
 
     dismiss(data: ModalSelectListResult | null = null): void {
-        void this.modalCtrl.dismiss(data)
+        this.dialogRef.close(data)
     }
 
-    selected(event: RadioGroupCustomEvent<SelectablePresetOption>): void {
-        const option = event.detail.value
+    selected(option: SelectablePresetOption): void {
         if (option && this.initialValue !== option.v) {
             this.dismiss({
                 key: this.data().key,

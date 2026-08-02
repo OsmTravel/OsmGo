@@ -1,0 +1,336 @@
+import { signal } from '@angular/core'
+import { TestBed } from '@angular/core/testing'
+import { MatDialog } from '@angular/material/dialog'
+import { By } from '@angular/platform-browser'
+import { TranslateModule } from '@ngx-translate/core'
+import type { EventShowModal } from '@osmgo/type'
+import { ConfigService } from '@services/config.service'
+import { MapService } from '@services/map.service'
+import { TagsService } from '@services/tags.service'
+import { of } from 'rxjs'
+
+import { IconComponent } from '../../icon/icon.component'
+import { ObjectSheetComponent } from './object-sheet'
+
+describe('ObjectSheetComponent swipes', () => {
+    const dialog = {
+        open: vi.fn(() => ({ afterClosed: () => of(false) })),
+    }
+    const touchStartAt = (clientY: number, target: EventTarget): TouchEvent =>
+        ({ target, touches: [{ clientY }] }) as unknown as TouchEvent
+    const touchEndAt = (clientY: number): TouchEvent =>
+        ({ changedTouches: [{ clientY }] }) as unknown as TouchEvent
+    const pointerAt = (
+        clientY: number,
+        currentTarget: EventTarget
+    ): PointerEvent =>
+        ({ clientY, currentTarget, pointerId: 1 }) as unknown as PointerEvent
+    const selectionWith = (
+        id: number,
+        icon: string,
+        hexColor: string
+    ): EventShowModal => ({
+        type: 'Read',
+        origineData: 'data',
+        geojson: {
+            type: 'Feature',
+            id: `node/${id}`,
+            geometry: { type: 'Point', coordinates: [0, 0] },
+            properties: {
+                _name: `Object ${id}`,
+                hexColor,
+                icon,
+                id,
+                marker: '',
+                meta: {
+                    changeset: '1',
+                    timestamp: '2026-01-01T00:00:00Z',
+                    uid: '1',
+                    user: 'mapper',
+                    version: 1,
+                },
+                primaryTag: { key: 'amenity', value: 'bench' },
+                tags: { amenity: 'bench' },
+                type: 'node',
+            },
+        },
+    })
+
+    const createComponent = (level: 'collapsed' | 'medium' | 'expanded') => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput('level', level)
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'information', '#9d7178')
+        )
+        return fixture.componentInstance
+    }
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [ObjectSheetComponent, TranslateModule.forRoot()],
+            providers: [
+                { provide: MatDialog, useValue: dialog },
+                {
+                    provide: MapService,
+                    useValue: { isProcessing: signal(false) },
+                },
+                {
+                    provide: ConfigService,
+                    useValue: {
+                        config: () => ({
+                            languageTags: 'fr',
+                            languageUi: 'fr',
+                        }),
+                    },
+                },
+                {
+                    provide: TagsService,
+                    useValue: {
+                        tags: () => [],
+                        presets: () => ({}),
+                        jsonSprites: () => ({}),
+                    },
+                },
+            ],
+        })
+    })
+
+    it('disables resize gestures while editing', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        selection.type = 'Update'
+        fixture.componentRef.setInput('selection', selection)
+        fixture.componentRef.setInput('level', 'expanded')
+        const component = fixture.componentInstance
+        const levelChange = vi.fn()
+        component.levelChange.subscribe(levelChange)
+
+        component.onSheetTouchStart(
+            touchStartAt(120, document.createElement('div'))
+        )
+        component.onSheetTouchEnd(touchEndAt(210))
+
+        expect(levelChange).not.toHaveBeenCalled()
+    })
+
+    it('protects a creation draft before closing the sheet', () => {
+        dialog.open.mockClear()
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        selection.type = 'Create'
+        fixture.componentRef.setInput('selection', selection)
+
+        fixture.componentInstance.requestExit()
+
+        expect(dialog.open).toHaveBeenCalledWith(
+            expect.anything(),
+            expect.objectContaining({ panelClass: 'osmgo-dialog' })
+        )
+    })
+
+    it.each([
+        ['content', document.createElement('div')],
+        ['action', document.createElement('button')],
+    ])(
+        'reduces the expanded sheet after a downward swipe from its %s',
+        (_, target) => {
+            const component = createComponent('expanded')
+            const closeRequested = vi.fn()
+            const levelChange = vi.fn()
+            component.closeRequested.subscribe(closeRequested)
+            component.levelChange.subscribe(levelChange)
+
+            component.onSheetTouchStart(touchStartAt(120, target))
+            component.onSheetTouchEnd(touchEndAt(190))
+
+            expect(levelChange).toHaveBeenCalledWith('medium')
+            expect(closeRequested).not.toHaveBeenCalled()
+        }
+    )
+
+    it('keeps the expanded sheet open after a short downward gesture', () => {
+        const component = createComponent('expanded')
+        const closeRequested = vi.fn()
+        const levelChange = vi.fn()
+        component.closeRequested.subscribe(closeRequested)
+        component.levelChange.subscribe(levelChange)
+
+        component.onSheetTouchStart(
+            touchStartAt(120, document.createElement('div'))
+        )
+        component.onSheetTouchEnd(touchEndAt(170))
+
+        expect(closeRequested).not.toHaveBeenCalled()
+        expect(levelChange).not.toHaveBeenCalled()
+    })
+
+    it('closes a medium sheet after a downward swipe', () => {
+        const component = createComponent('medium')
+        const closeRequested = vi.fn()
+        component.closeRequested.subscribe(closeRequested)
+
+        component.onSheetTouchStart(
+            touchStartAt(120, document.createElement('div'))
+        )
+        component.onSheetTouchEnd(touchEndAt(210))
+
+        expect(closeRequested).toHaveBeenCalledOnce()
+    })
+
+    it('expands a medium sheet after an upward swipe from the header', () => {
+        const component = createComponent('medium')
+        const levelChange = vi.fn()
+        component.levelChange.subscribe(levelChange)
+        const header = document.createElement('header')
+        header.className = 'object-header'
+        const title = document.createElement('h1')
+        header.append(title)
+
+        component.onSheetTouchStart(touchStartAt(210, title))
+        component.onSheetTouchEnd(touchEndAt(130))
+
+        expect(levelChange).toHaveBeenCalledWith('expanded')
+    })
+
+    it('ignores an upward swipe outside the header', () => {
+        const component = createComponent('medium')
+        const levelChange = vi.fn()
+        component.levelChange.subscribe(levelChange)
+
+        component.onSheetTouchStart(
+            touchStartAt(210, document.createElement('div'))
+        )
+        component.onSheetTouchEnd(touchEndAt(130))
+
+        expect(levelChange).not.toHaveBeenCalled()
+    })
+
+    it('uses the same downward state transitions from the handle', () => {
+        const handle = {
+            setPointerCapture: vi.fn(),
+            releasePointerCapture: vi.fn(),
+        } as unknown as HTMLElement
+        const expanded = createComponent('expanded')
+        const expandedLevelChange = vi.fn()
+        expanded.levelChange.subscribe(expandedLevelChange)
+
+        expanded.onPointerDown(pointerAt(100, handle))
+        expanded.onPointerUp(pointerAt(160, handle))
+
+        expect(expandedLevelChange).toHaveBeenCalledWith('medium')
+
+        const medium = createComponent('medium')
+        const closeRequested = vi.fn()
+        medium.closeRequested.subscribe(closeRequested)
+
+        medium.onPointerDown(pointerAt(100, handle))
+        medium.onPointerUp(pointerAt(160, handle))
+
+        expect(closeRequested).toHaveBeenCalledOnce()
+    })
+
+    it('updates the icon and its background when the selection changes', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'first-icon', '#123456')
+        )
+        fixture.detectChanges()
+
+        const iconContainer = fixture.nativeElement.querySelector(
+            '.object-icon'
+        ) as HTMLElement
+        const iconComponent = fixture.debugElement.query(
+            By.directive(IconComponent)
+        ).componentInstance as IconComponent
+
+        expect(iconContainer.style.backgroundColor).toBe('rgb(18, 52, 86)')
+        expect(iconComponent.icon()).toBe('first-icon')
+        expect(iconComponent.renderMode()).toBe('svg')
+
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(2, 'second-icon', '#d97706')
+        )
+        fixture.detectChanges()
+
+        expect(iconContainer.style.backgroundColor).toBe('rgb(217, 119, 6)')
+        expect(iconComponent.icon()).toBe('second-icon')
+    })
+
+    it('renders the complete object name without truncating it', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        selection.geojson.properties._name =
+            'Tourism Malaysia — Office de tourisme international'
+        fixture.componentRef.setInput('selection', selection)
+        fixture.detectChanges()
+
+        const title = fixture.nativeElement.querySelector('h1') as HTMLElement
+        const titleStyle = getComputedStyle(title)
+
+        expect(title.textContent?.trim()).toBe(
+            'Tourism Malaysia — Office de tourisme international'
+        )
+        expect(titleStyle.whiteSpace).toBe('normal')
+        expect(titleStyle.textOverflow).toBe('clip')
+        expect(titleStyle.overflowWrap).toBe('anywhere')
+        expect(title.dataset['titleSize']).toBe('compact')
+    })
+
+    it.each([
+        ['Tourism Malaysia', 'large'],
+        ['École élémentaire du Bourg', 'medium'],
+        ['Tourism Malaysia — Office de tourisme international', 'compact'],
+        [
+            'Centre international de documentation et de ressources communautaires',
+            'minimum',
+        ],
+    ])('adapts the title size for %s', (name, expectedSize) => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        const selection = selectionWith(1, 'information', '#9d7178')
+        selection.geojson.properties._name = name
+        fixture.componentRef.setInput('selection', selection)
+        fixture.detectChanges()
+
+        const title = fixture.nativeElement.querySelector('h1') as HTMLElement
+        expect(title.dataset['titleSize']).toBe(expectedSize)
+    })
+
+    it('keeps header actions outside the identity header', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'information', '#9d7178')
+        )
+        fixture.detectChanges()
+
+        const sheet = fixture.nativeElement.querySelector(
+            '.object-sheet'
+        ) as HTMLElement
+        const header = sheet.querySelector('.object-header') as HTMLElement
+        const actions = sheet.querySelector(
+            '.object-header-actions'
+        ) as HTMLElement
+
+        expect(header.contains(actions)).toBe(false)
+        expect(actions.parentElement).toBe(sheet)
+    })
+
+    it('shows only the OSM version after the relative metadata', () => {
+        const fixture = TestBed.createComponent(ObjectSheetComponent)
+        fixture.componentRef.setInput(
+            'selection',
+            selectionWith(1, 'information', '#9d7178')
+        )
+        fixture.detectChanges()
+
+        const secondaryMetadata = fixture.nativeElement.querySelector(
+            '.metadata-secondary'
+        ) as HTMLElement
+
+        expect(secondaryMetadata.textContent?.trim()).toBe('v1')
+        expect(secondaryMetadata.querySelector('time')).toBeNull()
+    })
+})

@@ -1,10 +1,6 @@
 import { Component, input, output } from '@angular/core'
-import {
-    IonButton,
-    IonCard,
-    IonCardContent,
-    IonIcon,
-} from '@ionic/angular/standalone'
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
 import { TranslateModule } from '@ngx-translate/core'
 import { TagConfig } from '@osmgo/type'
 
@@ -20,7 +16,7 @@ interface AlertTagConfig extends TagConfig {
     selector: 'app-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
-    imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
+    imports: [MatButtonModule, MatIconModule, TranslateModule],
 })
 export class AlertComponent {
     readonly tagConfig = input<AlertTagConfig>()

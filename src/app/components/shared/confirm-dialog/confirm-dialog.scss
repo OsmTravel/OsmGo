@@ -1,0 +1,44 @@
+:host {
+    display: block;
+}
+
+.confirm-dialog {
+    max-width: 420px;
+    padding-top: 8px;
+}
+
+.confirm-dialog__icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin: 12px 24px 0;
+    place-items: center;
+    border-radius: 16px;
+    color: var(--osmgo-blue);
+    background: var(--osmgo-blue-container);
+
+    &.is-destructive {
+        color: var(--osmgo-error);
+        background: #ffdad6;
+    }
+}
+
+h2 {
+    padding-bottom: 4px;
+    font-weight: 680;
+}
+
+mat-dialog-content {
+    color: var(--osmgo-ink-muted);
+    line-height: 1.45;
+}
+
+mat-dialog-actions {
+    gap: 8px;
+    padding: 16px 24px 22px;
+}
+
+.danger-button {
+    color: #fff;
+    background: var(--osmgo-error);
+}

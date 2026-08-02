@@ -1,14 +1,9 @@
 import { Component, input, output } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import {
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonIcon,
-    IonInput,
-    IonItem,
-    IonLabel,
-} from '@ionic/angular/standalone'
+import { MatButtonModule } from '@angular/material/button'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
 import { TranslateModule } from '@ngx-translate/core'
 import type { Preset, Tag } from '@osmgo/type'
 import { DisplayPresetLabelPipe } from '@pipes/displayPresetLabel.pipe'
@@ -17,18 +12,15 @@ import { SelectComponent } from '../select/select.component'
 
 @Component({
     selector: 'edit-presets',
-    styleUrls: ['../style.scss'],
+    styleUrls: ['Presets.component.scss'],
     templateUrl: './Presets.component.html',
     imports: [
         DisplayPresetLabelPipe,
         FormsModule,
-        IonCard,
-        IonCardContent,
-        IonCardHeader,
-        IonIcon,
-        IonInput,
-        IonItem,
-        IonLabel,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
         OpeningHoursComponent,
         SelectComponent,
         TranslateModule,
