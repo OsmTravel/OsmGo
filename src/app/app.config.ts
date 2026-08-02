@@ -36,6 +36,6 @@ export const appConfig: ApplicationConfig = {
             IonicStorageModule.forRoot(),
             TranslateModule.forRoot({ fallbackLang: 'en' })
         ),
-        provideIonicAngular({ mode: 'md' }),
+        provideIonicAngular({ mode: 'md', useSetInputAPI: true }),
     ],
 }
