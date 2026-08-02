@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { Router } from '@angular/router'
 import { App } from '@capacitor/app'
 import { Capacitor } from '@capacitor/core'
@@ -12,7 +12,6 @@ import { TagsService } from '@services/tags.service'
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
