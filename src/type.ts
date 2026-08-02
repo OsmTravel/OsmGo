@@ -145,9 +145,9 @@ export type FeatureIdSource = 'data' | 'data_changed'
 
 export type MapMode = 'Read' | 'Create' | 'Update' | 'Delete' // FIXME: @dotcs Is this valid?
 
-export class OsmGoMarker<T = any> extends Marker {
-    id: string
-    data: T
+export class OsmGoMarker<T = OsmGoFeature> extends Marker {
+    declare id: string
+    declare data: T
 }
 
 export type JsonSprites = Record<string, Sprite>
@@ -167,10 +167,10 @@ export interface TagsJson {
 }
 
 export interface CompassHeading {
-    magneticHeading: number
-    trueHeading: number
-    headingAccuracy: null
-    timestamp: number
+    magneticHeading: number | null
+    trueHeading: number | null
+    headingAccuracy: number | null
+    timestamp: number | null
 }
 
 export interface EventShowModal {

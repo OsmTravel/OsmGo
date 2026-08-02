@@ -17,7 +17,7 @@ import {
     NavController,
 } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
-import { BasemapsService } from '@services/basemaps.service'
+import { type Basemap, BasemapsService } from '@services/basemaps.service'
 import { ConfigService } from '@services/config.service'
 import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
@@ -74,7 +74,7 @@ export class BasemapsComponent implements OnInit {
         }
     }
 
-    selectBaseMap(basemap: Record<string, any>) {
+    selectBaseMap(basemap: Basemap): void {
         this.configService.setBasemap(basemap)
         this.mapService.displaySatelliteBaseMap(basemap, true)
         this.navCtrl.back()

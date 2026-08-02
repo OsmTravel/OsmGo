@@ -181,7 +181,7 @@ export class MapService {
 
     bboxPolygon: OsmGoFeature
     map: Map
-    markerMove: OsmGoMarker
+    markerMove: OsmGoMarker<OsmGoFeature<Point>>
     private readonly markerMoveMovingState = signal(false)
     readonly markerMoveMoving = this.markerMoveMovingState.asReadonly()
     subscriptionMoveElement: Subscription
@@ -225,7 +225,7 @@ export class MapService {
     readonly mapMove$ = this.mapMoveSubject.asObservable()
     private readonly markerMovingState = signal(false)
     readonly markerMoving = this.markerMovingState.asReadonly()
-    markerPositionate: OsmGoMarker
+    markerPositionate: OsmGoMarker<string>
     markerMaplibreUnknown = {}
 
     filters = {
@@ -621,13 +621,13 @@ export class MapService {
         return cloneDeep(this.bboxPolygon)
     }
 
-    createDomMoveMarker(coord: LngLatLike, data: any): OsmGoMarker {
+    createDomMoveMarker<T>(coord: LngLatLike, data: T): OsmGoMarker<T> {
         const el = document.createElement('div')
         el.className = 'moveMarkerIcon'
         const marker = new Marker({ element: el, anchor: 'bottom' }).setLngLat(
             coord
-        ) as OsmGoMarker
-        marker['data'] = data
+        ) as OsmGoMarker<T>
+        marker.data = data
         return marker
     }
 
@@ -782,6 +782,10 @@ export class MapService {
         this.subscriptionMoveElement = this.moveElement$.subscribe((data) => {
             this.mode = data.mode
             const geojson = data.geojson
+            if (geojson.geometry.type !== 'Point') {
+                return
+            }
+            const pointFeature = geojson as OsmGoFeature<Point>
             // on recupere le marker concerné
             let marker = null
             for (let i = 0; i < this.markersLayer.length; i++) {
@@ -791,10 +795,12 @@ export class MapService {
                     break
                 }
             }
-            const coordinates = (geojson.geometry as GeoJSON.Point)
-                .coordinates as LngLatLike
+            const coordinates = pointFeature.geometry.coordinates as LngLatLike
             this.map.setCenter(coordinates)
-            this.markerMove = this.createDomMoveMarker(coordinates, geojson)
+            this.markerMove = this.createDomMoveMarker(
+                coordinates,
+                pointFeature
+            )
             this.markerMoveMovingState.set(true)
             this.markerMove.addTo(this.map)
             this.subscriptionMarkerMove = this.markerMove$.subscribe(
