@@ -90,7 +90,10 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
     zoomOnStart?: number
     loadOsmDataOnStart = false
     idOsmObjectOnStart?: string
-    addOsmObjectOnStart?: { coords: LngLat; tags: Record<string, unknown> }
+    addOsmObjectOnStart?: {
+        coords: LngLat
+        tags: Record<string, string | number>
+    }
     private resizeObserver?: ResizeObserver
     private initializeHistory(): void {
         window.history.pushState({ noBackExitsApp: true }, '')
@@ -276,6 +279,17 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                     throw new Error(
                         'The add query parameter must be an object.'
                     )
+                if (
+                    !Object.values(addFeatureTag).every(
+                        (value) =>
+                            typeof value === 'string' ||
+                            typeof value === 'number'
+                    )
+                ) {
+                    throw new Error(
+                        'The add query parameter values must be strings or numbers.'
+                    )
+                }
 
                 const _coords: LngLat = new LngLat(
                     this.centerOnStart[0],
@@ -283,7 +297,7 @@ export class MainPage implements AfterViewInit, OnDestroy, OnInit {
                 )
                 this.addOsmObjectOnStart = {
                     coords: _coords,
-                    tags: addFeatureTag as Record<string, unknown>,
+                    tags: addFeatureTag as Record<string, string | number>,
                 }
                 this.loadOsmDataOnStart = true
             } catch (error) {

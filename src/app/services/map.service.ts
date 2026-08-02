@@ -5,16 +5,19 @@ import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { AlertController } from '@ionic/angular/standalone'
 import { TranslateService } from '@ngx-translate/core'
 import {
+    type CompassHeading,
     type EventShowModal,
     type FeatureIdSource,
     type MapMode,
     type OsmGoFeature,
     type OsmGoFeatureCollection,
     type OsmGoMarker,
+    type Sprite,
     TagConfig,
 } from '@osmgo/type'
 import { setIconStyle } from '@scripts/osmToOsmgo/index.js'
 import { AlertService } from '@services/alert.service'
+import type { Basemap } from '@services/basemaps.service'
 import { type Config, ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { LocationService } from '@services/location.service'
@@ -44,7 +47,7 @@ import {
     ScaleControl,
     type StyleSpecification,
 } from 'maplibre-gl'
-import { type Observable, of, Subject, type Subscription } from 'rxjs'
+import { type Observable, of, Subject } from 'rxjs'
 import { debounceTime, filter, map, throttleTime } from 'rxjs/operators'
 import type { ModalDismissData } from '../components/modal/modal'
 
@@ -54,6 +57,10 @@ export const getMarkerLayout = () => ({
     'icon-ignore-placement': true,
     'icon-anchor': 'bottom' as const,
 })
+
+type HeadingWithTrueHeading = CompassHeading & { trueHeading: number }
+type LoadedMapImage = Awaited<ReturnType<Map['loadImage']>>['data']
+type IconParameters = { shape: string; color: string; id: string }
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
@@ -77,11 +84,11 @@ export class MapService {
     private readonly processingState = signal(false)
     readonly isProcessing = this.processingState.asReadonly()
 
-    spritesCache
+    spritesCache: HTMLImageElement | undefined
     constructor() {
         // Preload sprites
         const pathSprites =
-            window.devicePixelRatio == 1
+            window.devicePixelRatio === 1
                 ? `assets/mapStyle/sprites/sprites.png`
                 : `assets/mapStyle/sprites/sprites@2x.png`
         const spriteImage = new Image()
@@ -100,7 +107,7 @@ export class MapService {
         })
 
         this.markerRedraw$.subscribe((geojson) => {
-            const missingMarker = []
+            const missingMarker: string[] = []
             for (const feature of geojson.features) {
                 const marker = feature.properties.marker
                 if (
@@ -134,7 +141,7 @@ export class MapService {
 
         this.changedMarkerRedraw$.subscribe(
             (geojson: OsmGoFeatureCollection) => {
-                const missingMarker = []
+                const missingMarker: string[] = []
                 for (const feature of geojson.features) {
                     const marker = feature.properties.marker
                     if (
@@ -177,15 +184,12 @@ export class MapService {
             }
             this.configService.setLastView(currentView)
         })
-    } // EOF constructor
+    }
 
-    bboxPolygon: OsmGoFeature
-    map: Map
-    markerMove: OsmGoMarker<OsmGoFeature<Point>>
+    map!: Map
+    markerMove!: OsmGoMarker<OsmGoFeature<Point>>
     private readonly markerMoveMovingState = signal(false)
     readonly markerMoveMoving = this.markerMoveMovingState.asReadonly()
-    subscriptionMoveElement: Subscription
-    subscriptionMarkerMove: Subscription
     mode: MapMode = 'Update'
     headingIsLocked: boolean = true
     private lastRenderedHeading: number | null = null
@@ -195,8 +199,6 @@ export class MapService {
         this.isDisplaySatelliteBaseMapState.asReadonly()
 
     layersAreLoaded: boolean = false
-
-    markersLoaded = []
 
     private readonly bboxChangedSubject = new Subject<OsmGoFeatureCollection>()
     readonly bboxChanged$ = this.bboxChangedSubject.asObservable()
@@ -216,21 +218,16 @@ export class MapService {
     readonly featureChoiceRequested$ = this.featureChoiceSubject.asObservable()
     markersLayer: OsmGoMarker[] = []
 
-    attributionControl: AttributionControl
+    attributionControl!: AttributionControl
 
-    // CREATE NEW MARKER
     private readonly markerMoveSubject = new Subject<LngLat>()
     readonly markerMove$ = this.markerMoveSubject.asObservable()
     private readonly mapMoveSubject = new Subject<void>()
     readonly mapMove$ = this.mapMoveSubject.asObservable()
     private readonly markerMovingState = signal(false)
     readonly markerMoving = this.markerMovingState.asReadonly()
-    markerPositionate: OsmGoMarker<string>
-    markerMaplibreUnknown = {}
-
-    filters = {
-        fixme: null,
-    }
+    markerPositionate!: OsmGoMarker<string>
+    markerMaplibreUnknown: Record<string, LoadedMapImage> = {}
 
     setIsProcessing(isProcessing: boolean): void {
         this.processingState.set(isProcessing)
@@ -273,25 +270,18 @@ export class MapService {
         const layersIds = [
             'way_fill',
             'way_line',
-            // 'way_fill_changed',
-            // 'way_line_changed',
             'label',
-            // 'label_changed',
             'icon-old',
             'icon-fixme',
             'marker',
-            // 'marker_changed'
         ]
         if (ids.length === 0) {
-            // avoid :expected at least one branch label.
             ids = ['']
         }
 
         for (const layerId of layersIds) {
-            const currentFilter = this.map.getFilter(layerId) as any[]
-            if (typeof currentFilter === 'undefined') {
-                // FIXME @dotcs: Do something here
-            }
+            const currentFilter = cloneDeep(this.map.getFilter(layerId))
+            if (!Array.isArray(currentFilter)) continue
 
             // Types are not correct for the match filter used in the next line.
             // See this discussion for details: https://github.com/DoFabien/OsmGo/pull/117#discussion_r898447098
@@ -303,19 +293,15 @@ export class MapService {
                 false,
                 true,
             ]
-            let newFilter = []
+            let newFilter: unknown[] = []
 
-            // currentFilter[0] === 'all
             let findedFilter = false
             for (let i = 1; i < currentFilter.length; i++) {
-                if (
-                    currentFilter[i][0] === 'match' &&
-                    currentFilter[i][1][1] === 'configId'
-                ) {
+                const filterItem = currentFilter[i]
+                if (this.isPropertyMatchFilter(filterItem, 'configId')) {
                     currentFilter[i] = newConfigIdFilter
                     newFilter = currentFilter
                     findedFilter = true
-                    // break;
                 }
             }
 
@@ -328,17 +314,17 @@ export class MapService {
     }
 
     drawWaysPoly(geojson: OsmGoFeatureCollection, source: string): void {
-        const features = geojson.features
-        const featuresWay = []
-        for (let i = 0; i < features.length; i++) {
-            const feature = features[i]
-            if (feature.properties.type !== 'node') {
-                const featureWay = {
+        const featuresWay: Feature[] = []
+        for (const feature of geojson.features) {
+            if (
+                feature.properties.type !== 'node' &&
+                feature.properties.way_geometry
+            ) {
+                featuresWay.push({
                     type: 'Feature',
                     properties: feature.properties,
                     geometry: feature.properties.way_geometry,
-                }
-                featuresWay.push(featureWay)
+                })
             }
         }
 
@@ -346,11 +332,7 @@ export class MapService {
         mapSource.setData({ type: 'FeatureCollection', features: featuresWay })
     }
 
-    /*
-  On lui donne une distance en mètre, il nous retourne distance en pixel
-  Fortement inspirer de :
-  https://github.com/mapbox/mapbox-gl-js/blob/9ee69dd4a74a021d4a04a8a96a3e8f06062d633a/src/ui/control/scale_control.js#L87
-  */
+    /** Converts a distance in meters to pixels at the current map scale. */
     getPixelDistFromMeter(_map: Map, dist: number): number {
         const y = _map.getContainer().clientHeight / 2
         const mapWidth = _map.getContainer().clientWidth
@@ -378,41 +360,26 @@ export class MapService {
     }
 
     getBbox(): BBox {
-        const marginBuffer = this.configService.getMapMarginBuffer() || 50 // buffer en m
-        const w = document.getElementById('map').offsetWidth
-        const h = document.getElementById('map').offsetHeight
+        const marginBuffer = this.configService.getMapMarginBuffer() || 50
+        const mapContainer = this.map.getContainer()
+        const w = mapContainer.offsetWidth
+        const h = mapContainer.offsetHeight
         const cUL = this.map.unproject([0, 0]).toArray()
         const cUR = this.map.unproject([w, 0]).toArray()
         const cLR = this.map.unproject([w, h]).toArray()
         const cLL = this.map.unproject([0, h]).toArray()
 
         const coordinates = [cUL, cUR, cLR, cLL, cUL]
-        let lng_min = null
-        let lng_max = null
-        let lat_min = null
-        let lat_max = null
-        for (let i = 1; i < coordinates.length; i++) {
-            if (!lng_min || coordinates[i][0] < lng_min) {
-                lng_min = coordinates[i][0]
-            }
-            if (!lng_max || coordinates[i][0] > lng_max) {
-                lng_max = coordinates[i][0]
-            }
-            if (!lat_min || coordinates[i][1] < lat_min) {
-                lat_min = coordinates[i][1]
-            }
-            if (!lat_max || coordinates[i][1] > lat_max) {
-                lat_max = coordinates[i][1]
-            }
-        }
+        const longitudes = coordinates.map(([longitude]) => longitude)
+        const latitudes = coordinates.map(([, latitude]) => latitude)
 
         const pointMin: Point = {
             type: 'Point',
-            coordinates: [lng_min, lat_min],
+            coordinates: [Math.min(...longitudes), Math.min(...latitudes)],
         }
         const pointMax: Point = {
             type: 'Point',
-            coordinates: [lng_max, lat_max],
+            coordinates: [Math.max(...longitudes), Math.max(...latitudes)],
         }
         const coordsMin = destination(pointMin, marginBuffer / 1000, -135)
             .geometry.coordinates
@@ -423,7 +390,7 @@ export class MapService {
             coordsMin[1],
             coordsMax[0],
             coordsMax[1],
-        ] // TODO : on est pas à 1m près
+        ]
         return bbox
     }
 
@@ -431,10 +398,7 @@ export class MapService {
         this.map.resetNorth()
     }
 
-    displaySatelliteBaseMap(
-        baseMap: Record<string, any>,
-        isDisplay: boolean
-    ): void {
+    displaySatelliteBaseMap(baseMap: Basemap, isDisplay: boolean): void {
         const bmSource: RasterSourceSpecification = {
             type: 'raster',
             tiles: baseMap.tiles,
@@ -446,7 +410,7 @@ export class MapService {
             this.map.removeControl(this.attributionControl)
         }
 
-        if (this.configService.config().basemap !== baseMap.id) {
+        if (this.configService.config().basemap.id !== baseMap.id) {
             if (this.map.getLayer('basemap')) {
                 this.map.removeLayer('basemap')
             }
@@ -505,15 +469,13 @@ export class MapService {
         if (this.configService.config().followPosition) {
             this.positionIsFollow = true
             if (this.configService.config().lockMapHeading) {
-                bearing = this.locationService.compassHeading().trueHeading
+                bearing = this.locationService.compassHeading().trueHeading ?? 0
 
                 this.map.setLayoutProperty('location_user', 'icon-rotate', 0)
             }
         }
         let newZoom = currentZoom
-        // this.map.setCenter(this.locationService.getCoordsPosition())
         if (currentZoom < 17) {
-            // this.map.setZoom(18)
             newZoom = 18
         }
         this.map.flyTo({
@@ -523,7 +485,7 @@ export class MapService {
             speed: 2,
         })
     }
-    changeLocationRadius(newRadius: number, transition: boolean = false): void {
+    changeLocationRadius(newRadius: number, transition = false): void {
         const pxRadius = this.getPixelDistFromMeter(this.map, newRadius)
         const duration = transition ? 300 : 0
         this.map.setPaintProperty(
@@ -545,26 +507,24 @@ export class MapService {
         })
     }
 
-    openModalOsm(lngLat?: LngLat, tags?: any): void {
+    openModalOsm(
+        lngLat?: LngLat,
+        tags?: Record<string, string | number>
+    ): void {
         this.markerMovingState.set(false)
         if (this.markerPositionate) this.markerPositionate?.remove()
         const coords = lngLat ? lngLat : this.markerPositionate.getLngLat()
-        let newTag
+        let newTag: Record<string, string | number>
 
         if (tags) {
             newTag = { ...tags }
-        } else if (this.tagsService.lastTagsUsedIds().length > 0) {
-            // on récupere le dernier tag créé si il existe
+        } else {
+            const configuredTags = this.tagsService.tags()
             const lastTagsUsed = this.tagsService
                 .tags()
                 .find((t) => t.id === this.tagsService.lastTagsUsedIds()[0])
-            if (lastTagsUsed) {
-                newTag = { ...lastTagsUsed.tags }
-            } else {
-                newTag = { ...this.tagsService.tags()[0].tags }
-            }
-        } else {
-            newTag = { ...this.tagsService.tags()[0].tags }
+            const defaultTag = lastTagsUsed ?? configuredTags[0]
+            newTag = defaultTag ? { ...defaultTag.tags } : {}
         }
 
         const pt = point([coords.lng, coords.lat], {
@@ -575,7 +535,7 @@ export class MapService {
         this.showModal({
             type: 'Create',
             geojson: pt,
-            origineData: null,
+            origineData: 'data_changed',
             openPrimaryTagModalOnStart: !tags,
         })
     }
@@ -590,7 +550,6 @@ export class MapService {
         this.markerMove.remove()
         const geojson = this.markerMove.data
         const newLngLat = this.markerMove.getLngLat()
-        // on pousse les nouvelle coordonnées dans le geojson
         geojson.geometry.coordinates = [newLngLat.lng, newLngLat.lat]
         const origineData = geojson.properties.changeType
             ? 'data_changed'
@@ -617,10 +576,6 @@ export class MapService {
         this.markerMove.remove()
     }
 
-    getBboxPolygon(): OsmGoFeature {
-        return cloneDeep(this.bboxPolygon)
-    }
-
     createDomMoveMarker<T>(coord: LngLatLike, data: T): OsmGoMarker<T> {
         const el = document.createElement('div')
         el.className = 'moveMarkerIcon'
@@ -636,16 +591,17 @@ export class MapService {
         this.redrawMarkers(this.dataService.resetGeojsonData())
     }
 
-    getMapStyle(): Observable<any> {
-        return this.http.get('assets/mapStyle/brigthCustom.json').pipe(
-            map((maplibreStyle) => {
-                const baseUrl = this.document.location.origin
-                const spritesFullPath = `${baseUrl}/assets/mapStyle/sprites/sprites`
+    getMapStyle(): Observable<StyleSpecification> {
+        return this.http
+            .get<StyleSpecification>('assets/mapStyle/brigthCustom.json')
+            .pipe(
+                map((maplibreStyle) => {
+                    const baseUrl = this.document.location.origin
+                    const spritesFullPath = `${baseUrl}/assets/mapStyle/sprites/sprites`
 
-                maplibreStyle['sprite'] = spritesFullPath
-                return maplibreStyle
-            })
-        )
+                    return { ...maplibreStyle, sprite: spritesFullPath }
+                })
+            )
     }
 
     getIconStyle(feature: OsmGoFeature): OsmGoFeature {
@@ -683,7 +639,7 @@ export class MapService {
                 })
                 this.configService.setCurrentZoom(this.map.getZoom())
 
-                this.map.addControl(new NavigationControl(null))
+                this.map.addControl(new NavigationControl())
 
                 this.attributionControl = new AttributionControl({
                     customAttribution: '',
@@ -709,11 +665,7 @@ export class MapService {
                     }
                 })
 
-                this.map.on('movestart', (e) => {
-                    // this.configService.freezeMapRenderer = true;
-                })
-
-                this.map.on('moveend', (e) => {
+                this.map.on('moveend', () => {
                     this.setCenterInUrl()
                 })
 
@@ -732,7 +684,7 @@ export class MapService {
                 const initStorageGeojson = this.dataService.geojson
                 const initStorageGeojsonChanged =
                     this.dataService.geojsonChanged
-                const missingMarker = []
+                const missingMarker: string[] = []
                 for (const feature of initStorageGeojson.features) {
                     const marker = feature.properties.marker
                     if (
@@ -775,26 +727,16 @@ export class MapService {
             })
         })
 
-        /* SUBSCRIPTIONS */
-        // un nouveau polygon!
-
-        // un marker est à déplacer!
-        this.subscriptionMoveElement = this.moveElement$.subscribe((data) => {
+        this.moveElement$.subscribe((data) => {
+            if (!data.mode || !data.geojson) {
+                return
+            }
             this.mode = data.mode
             const geojson = data.geojson
             if (geojson.geometry.type !== 'Point') {
                 return
             }
             const pointFeature = geojson as OsmGoFeature<Point>
-            // on recupere le marker concerné
-            let marker = null
-            for (let i = 0; i < this.markersLayer.length; i++) {
-                const m = this.markersLayer[i]
-                if (m.id === geojson.id) {
-                    marker = m
-                    break
-                }
-            }
             const coordinates = pointFeature.geometry.coordinates as LngLatLike
             this.map.setCenter(coordinates)
             this.markerMove = this.createDomMoveMarker(
@@ -803,11 +745,9 @@ export class MapService {
             )
             this.markerMoveMovingState.set(true)
             this.markerMove.addTo(this.map)
-            this.subscriptionMarkerMove = this.markerMove$.subscribe(
-                (center) => {
-                    this.markerMove.setLngLat(center)
-                }
-            )
+            this.markerMove$.subscribe((center) => {
+                this.markerMove.setLngLat(center)
+            })
         })
     }
 
@@ -850,50 +790,33 @@ export class MapService {
         layerName: string,
         value: number,
         _map: Map
-    ): FilterSpecification {
-        const currentFilter = _map.getFilter(layerName) as any
-        if (typeof currentFilter === 'undefined') {
-            // FIXME: @dotcs add some error handling
-        }
-        let findIndex = null
+    ): FilterSpecification | undefined {
+        const rawFilter = cloneDeep(_map.getFilter(layerName))
+        if (!Array.isArray(rawFilter)) return undefined
+        const currentFilter: unknown[] = [...rawFilter]
+
+        let measureFilterIndex: number | undefined
         for (let i = 1; i < currentFilter.length; i++) {
-            if (currentFilter[i][1][1] == 'mesure') {
-                findIndex = i
+            if (this.isPropertyComparisonFilter(currentFilter[i], 'mesure')) {
+                measureFilterIndex = i
             }
         }
-        if (findIndex && !enable) {
-            // delete filter
-            currentFilter.splice(findIndex, 1)
-            _map.setFilter(layerName, currentFilter)
-            return currentFilter
+        if (measureFilterIndex !== undefined && !enable) {
+            currentFilter.splice(measureFilterIndex, 1)
+            const filter = currentFilter as FilterSpecification
+            _map.setFilter(layerName, filter)
+            return filter
         } else if (enable) {
-            ;(currentFilter as FilterSpecification[]).push([
-                '<',
-                ['get', 'mesure'],
-                value,
-            ])
-            _map.setFilter(layerName, currentFilter)
-            return currentFilter
+            currentFilter.push(['<', ['get', 'mesure'], value])
+            const filter = currentFilter as FilterSpecification
+            _map.setFilter(layerName, filter)
+            return filter
         }
-    }
-
-    addDomMarkerPosition(): void {
-        // if (!this.markerLocation) {
-        //     this.markerLocation = new OsmGoMarker({
-        //         element: this.domMarkerPosition,
-        //         offset: [0, 0],
-        //     }).setLngLat(
-        //         this.locationService.getGeojsonPos().features[0].geometry
-        //             .coordinates as LngLatLike
-        //     )
-        //     // FIXME: @dotcs not all members are set (id, data)
-        //     this.markerLocation.addTo(this.map)
-        // }
+        return currentFilter as FilterSpecification
     }
 
     selectFeature(feature: MapGeoJSONFeature): void {
         const layer = feature['layer'].id
-        // Provenance de la donnée d'origine (data OU data_changed)
         let origineData: FeatureIdSource = 'data'
         if (
             [
@@ -909,6 +832,10 @@ export class MapService {
 
         const idFromMap = `${feature.properties.type}/${feature.properties.id}`
         const geojson = this.dataService.getFeatureById(idFromMap, origineData)
+        if (!geojson) {
+            console.error(`Feature ${idFromMap} was not found.`)
+            return
+        }
 
         if (origineData !== 'data_changed') {
             const queryParams: Params = {
@@ -935,23 +862,19 @@ export class MapService {
         const OneYear = 31536000000
         const currentTime = new Date().getTime()
 
-        const currentFilter = (this.map.getFilter('icon-old') || []) as any[]
+        const currentFilter = cloneDeep(this.map.getFilter('icon-old'))
+        if (!Array.isArray(currentFilter)) return
 
-        let findedIndex: number
+        let oldTagFilterIndex: number | undefined
         for (let i = 1; i < currentFilter.length; i++) {
             const spec = currentFilter[i]
-            if (
-                spec.length == 3 &&
-                spec[2] &&
-                spec[0] == '>' &&
-                spec[2][1] === 'time'
-            ) {
-                findedIndex = i
+            if (this.isPropertyComparisonFilter(spec, 'time', '>')) {
+                oldTagFilterIndex = i
             }
         }
-        let newFilter: any
-        if (findedIndex) {
-            currentFilter[findedIndex] = [
+        let newFilter: unknown[]
+        if (oldTagFilterIndex !== undefined) {
+            currentFilter[oldTagFilterIndex] = [
                 '>',
                 '' + (currentTime - OneYear * maxYearAgo),
                 ['get', 'time'],
@@ -967,7 +890,7 @@ export class MapService {
             newFilter.push(filter)
         }
 
-        this.map.setFilter('icon-old', newFilter)
+        this.map.setFilter('icon-old', newFilter as FilterSpecification)
         this.map.setLayoutProperty('icon-old', 'visibility', 'visible')
     }
 
@@ -1010,7 +933,6 @@ export class MapService {
             data: { type: 'FeatureCollection', features: [] },
         })
 
-        // this.loadDataFromLocalStorage();
         this.redrawBbox(this.dataService.geojsonBbox)
         this.redrawChangedMarkers(this.dataService.geojsonChanged)
         this.redrawMarkers(this.dataService.geojson)
@@ -1035,7 +957,6 @@ export class MapService {
                 'fill-color': { property: 'hexColor', type: 'identity' },
                 'fill-opacity': 0.3,
             },
-            // ,'filter': ['all']
             filter: [
                 'all',
                 // Types are not correct for the match filter used in the next line.
@@ -1169,7 +1090,6 @@ export class MapService {
             filter: ['all'],
         })
 
-        // location
         this.map.addLayer({
             id: 'location_circle',
             type: 'circle',
@@ -1193,7 +1113,6 @@ export class MapService {
             source: 'location_circle',
             layout: {
                 'icon-size': 0.5,
-                // 'icon-image': 'location-with-orientation',
                 'icon-image': 'location-without-orientation',
                 'icon-ignore-placement': true,
                 'icon-allow-overlap': true,
@@ -1273,14 +1192,14 @@ export class MapService {
             this.showFixmeIcon()
         }
 
-        // value en m²!
+        // Area is measured in square meters.
         this.toogleMesureFilter(
             this.configService.getFilterWayByArea(),
             'way_fill',
             5000,
             this.map
         )
-        // value en km!
+        // Length is measured in kilometers.
         this.toogleMesureFilter(
             this.configService.getFilterWayByLength(),
             'way_line',
@@ -1324,15 +1243,16 @@ export class MapService {
             this.positionIsFollow = false
         })
 
-        this.map.on('rotate', async (e) => {
+        this.map.on('rotate', () => {
+            const trueHeading =
+                this.locationService.compassHeading().trueHeading
             if (
-                this.locationService.compassHeading().trueHeading &&
+                trueHeading !== null &&
                 (!this.configService.config().lockMapHeading ||
                     !this.headingIsLocked)
             ) {
-                // on suit l'orientation, la map tourne
                 const iconRotate = this.getIconRotate(
-                    this.locationService.compassHeading().trueHeading,
+                    trueHeading,
                     this.map.getBearing()
                 )
                 this.map.setLayoutProperty(
@@ -1349,13 +1269,15 @@ export class MapService {
 
         this.locationService.compassHeadingChanges$
             .pipe(
-                filter(
-                    (heading) =>
+                filter((heading): heading is HeadingWithTrueHeading => {
+                    if (heading.trueHeading === null) return false
+                    return (
                         this.lastRenderedHeading === null ||
                         Math.abs(
                             heading.trueHeading - this.lastRenderedHeading
                         ) > 1
-                ),
+                    )
+                }),
                 throttleTime(100)
             )
             .subscribe((heading) => {
@@ -1372,17 +1294,13 @@ export class MapService {
                     this.configService.config().lockMapHeading &&
                     this.headingIsLocked
                 ) {
-                    // on suit l'orientation, la map tourne
                     this.map.rotateTo(heading.trueHeading)
                     this.map.setLayoutProperty(
                         'location_user',
                         'icon-rotate',
                         0
                     )
-
-                    // plus  jolie en vu du dessus, icon toujours au nord, la carte tourne
                 } else {
-                    // la map reste fixe, l'icon tourne
                     const iconRotate = this.getIconRotate(
                         heading.trueHeading,
                         this.map.getBearing()
@@ -1402,8 +1320,6 @@ export class MapService {
                     const coordinates = (
                         geojsonPos.features[0].geometry as Point
                     ).coordinates as LngLatLike
-                    // this.markerLocation.setLngLat(coordinates)
-
                     const locationSource = this.map.getSource(
                         'location_circle'
                     ) as GeoJSONSource
@@ -1430,7 +1346,7 @@ export class MapService {
             }
         )
 
-        // La localisation était déjà ready avnt que la carte ne soit chargée
+        // Location may be ready before the map finishes loading.
         if (this.locationService.gpsIsReady()) {
             this.locationService.publishCurrentLocation()
         }
@@ -1438,13 +1354,11 @@ export class MapService {
         this.mapLoadedSubject.next()
     }
 
-    async addMissingIconsToMap(iconsIds) {
+    async addMissingIconsToMap(iconsIds: string[]): Promise<void> {
         const pixelRatio = window.devicePixelRatio > 1 ? 2 : 1
-        const promises = []
+        const promises: Array<Promise<{ blob: ImageBitmap; id: string }>> = []
         for (const iconId of iconsIds) {
-            let iconParam:
-                | { shape: string; color: string; id: string }
-                | undefined
+            let iconParam: IconParameters
             const matchMarkerAndIcon = iconId.match(
                 /^(circle|square|penta)-(#\w{6})-([\w-]+)$/
             )
@@ -1471,39 +1385,30 @@ export class MapService {
                 console.log('no match', iconId)
             }
 
-            if (
-                !iconParam ||
-                !iconParam.shape ||
-                !iconParam.color ||
-                !iconParam.id
-            ) {
-                continue
-            }
             promises.push(this.generateIconFromSprite(iconParam))
         }
 
-        Promise.all(promises).then((images) => {
-            for (const image of images) {
-                if (image.blob && !this.map.hasImage(image.id)) {
-                    this.map.addImage(image.id, image.blob, { pixelRatio })
-                }
+        const images = await Promise.all(promises)
+        for (const image of images) {
+            if (!this.map.hasImage(image.id)) {
+                this.map.addImage(image.id, image.blob, { pixelRatio })
             }
-        })
-
-        return true
+        }
     }
 
-    getCanvasFromSpriteId(spriteId): Promise<HTMLCanvasElement> {
+    getCanvasFromSpriteId(spriteId: string): Promise<HTMLCanvasElement> {
         return new Promise((resolve, reject) => {
-            const t1 = new Date().getTime()
             const spriteParams = this.tagsService.jsonSprites()[spriteId]
 
             if (!spriteParams) {
-                reject(spriteId + ' no spriteParams')
+                reject(
+                    new Error(`Sprite parameters are missing for ${spriteId}.`)
+                )
+                return
             }
             const pxRatio = spriteParams.pixelRatio || 1
             const pathSprites =
-                pxRatio == 1
+                pxRatio === 1
                     ? `assets/mapStyle/sprites/sprites.png`
                     : `assets/mapStyle/sprites/sprites@2x.png`
 
@@ -1534,13 +1439,16 @@ export class MapService {
 
     private createCanvasFromSprite(
         spriteImage: HTMLImageElement,
-        spriteParams: any
+        spriteParams: Sprite
     ): HTMLCanvasElement {
         const canvas = document.createElement('canvas')
         const ctx = canvas.getContext('2d')
-        const { x, y, width, height, pixelRatio } = spriteParams
-        canvas.width = width * 1
-        canvas.height = height * 1
+        if (!ctx) {
+            throw new Error('Unable to create a canvas context.')
+        }
+        const { x, y, width, height } = spriteParams
+        canvas.width = width
+        canvas.height = height
         ctx.drawImage(
             spriteImage,
             x,
@@ -1564,13 +1472,16 @@ export class MapService {
         canvasCombined.height = canvasMarker.height
 
         const ctx = canvasCombined.getContext('2d')
+        if (!ctx) {
+            throw new Error('Unable to create a canvas context.')
+        }
         ctx.drawImage(canvasMarker, 0, 0)
         ctx.drawImage(canvasIcon, 0, 0)
         return canvasCombined
     }
 
     async generateIconFromSprite(
-        markerParam: { shape: string; color: string; id: string } | undefined
+        markerParam: IconParameters
     ): Promise<{ blob: ImageBitmap; id: string }> {
         const id = `${markerParam.shape}-${markerParam.color}-${markerParam.id}`
         const markerId = `${markerParam.shape}-${markerParam.color}`
@@ -1584,11 +1495,46 @@ export class MapService {
         )
 
         return new Promise((resolve, reject) => {
-            canvasCombined.toBlob((blob) => {
-                createImageBitmap(blob).then((imageBitmap) => {
-                    resolve({ id: id, blob: imageBitmap })
-                })
+            canvasCombined.toBlob(async (blob) => {
+                if (!blob) {
+                    reject(new Error(`Unable to render map icon ${id}.`))
+                    return
+                }
+                try {
+                    const imageBitmap = await createImageBitmap(blob)
+                    resolve({ id, blob: imageBitmap })
+                } catch (error) {
+                    reject(error)
+                }
             })
         })
+    }
+
+    private isPropertyMatchFilter(
+        value: unknown,
+        propertyName: string
+    ): boolean {
+        if (!Array.isArray(value) || value[0] !== 'match') return false
+        const getter = value[1]
+        return (
+            Array.isArray(getter) &&
+            getter[0] === 'get' &&
+            getter[1] === propertyName
+        )
+    }
+
+    private isPropertyComparisonFilter(
+        value: unknown,
+        propertyName: string,
+        operator?: string
+    ): boolean {
+        if (!Array.isArray(value) || value.length !== 3) return false
+        if (operator && value[0] !== operator) return false
+        return value.some(
+            (part) =>
+                Array.isArray(part) &&
+                part[0] === 'get' &&
+                part[1] === propertyName
+        )
     }
 }
