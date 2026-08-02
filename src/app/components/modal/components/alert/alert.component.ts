@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import {
     IonButton,
     IonCard,
@@ -25,7 +20,6 @@ interface AlertTagConfig extends TagConfig {
     selector: 'app-alert',
     templateUrl: './alert.component.html',
     styleUrls: ['./alert.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IonButton, IonCard, IonCardContent, IonIcon, TranslateModule],
 })
 export class AlertComponent {
