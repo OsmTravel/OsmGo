@@ -1,6 +1,7 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    inject,
     input,
     model,
     OnInit,
@@ -42,16 +43,14 @@ const builder = new OpeningHoursBuilder()
     ],
 })
 export class OpeningHoursComponent implements OnInit {
+    private readonly modalCtrl = inject(ModalController)
+    private readonly translate = inject(TranslateService)
+
     readonly openingHours = model('')
     readonly displayCode = input(undefined)
     readonly editMode = input(false)
 
     readonly valueChangeEvent = output<string>()
-
-    constructor(
-        public modalCtrl: ModalController,
-        private translate: TranslateService
-    ) {}
     intervals: any
     isError = false
     isTooComplex = false

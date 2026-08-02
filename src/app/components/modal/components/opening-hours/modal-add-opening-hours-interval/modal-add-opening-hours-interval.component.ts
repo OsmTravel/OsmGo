@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnInit,
+} from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import {
     IonBadge,
@@ -13,7 +18,7 @@ import {
     IonToolbar,
     ModalController,
 } from '@ionic/angular/standalone'
-import { TranslateModule, TranslateService } from '@ngx-translate/core'
+import { TranslateModule } from '@ngx-translate/core'
 import { CharLimitPipe } from '@pipes/charLimit.pipe'
 
 @Component({
@@ -38,10 +43,7 @@ import { CharLimitPipe } from '@pipes/charLimit.pipe'
     ],
 })
 export class ModalAddOpeningHoursIntervalComponent implements OnInit {
-    constructor(
-        public modalCtrl: ModalController,
-        private translate: TranslateService
-    ) {}
+    private readonly modalCtrl = inject(ModalController)
 
     times = [{ start: '09:00', end: '12:00' }]
 
