@@ -69,7 +69,6 @@ import { SortArrayPipe } from '@pipes/sort-array.pipe'
 import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
 
 @NgModule({
-    declarations: [AppComponent, MainPage],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
@@ -81,6 +80,7 @@ import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
         AboutPage,
         ActiveTagsComponent,
         AlertComponent,
+        AppComponent,
         BasemapsComponent,
         BookmarkedTagsComponent,
         CharLimitPipe,
@@ -105,6 +105,7 @@ import { ToOsmTagPipe } from '@pipes/toOsmTag.pipe'
         IsBookmarkedPipe,
         LimitDisplayTagsPipe,
         ManageTagsComponent,
+        MainPage,
         MenuPage,
         MetaCard,
         MinutesToHoursMinutesPipe,

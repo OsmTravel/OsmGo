@@ -1,5 +1,6 @@
 declare const ResizeObserver: any
 
+import { AsyncPipe } from '@angular/common'
 import {
     AfterViewInit,
     ChangeDetectionStrategy,
@@ -14,9 +15,11 @@ import { SwUpdate, VersionReadyEvent } from '@angular/service-worker'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import { App as CapacitorApp } from '@capacitor/app'
 import { DialogMultiFeaturesComponent } from '@components/dialog-multi-features/dialog-multi-features.component'
+import { MenuPage } from '@components/menu/menu'
 import { ModalDismissData, ModalsContentPage } from '@components/modal/modal'
 import {
     AlertController,
+    IonicModule,
     LoadingController,
     MenuController,
     ModalController,
@@ -44,7 +47,7 @@ import { catchError, filter, map, switchMap } from 'rxjs/operators'
     selector: 'main',
     styleUrls: ['./main.scss'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [AsyncPipe, IonicModule, MenuPage],
 })
 export class MainPage implements AfterViewInit {
     modalIsOpen: boolean = false

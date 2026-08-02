@@ -4,7 +4,7 @@ import { App } from '@capacitor/app'
 import { Capacitor } from '@capacitor/core'
 import { Device } from '@capacitor/device'
 import { SplashScreen } from '@capacitor/splash-screen'
-import { Platform } from '@ionic/angular'
+import { IonicModule, Platform } from '@ionic/angular'
 import { Storage } from '@ionic/storage-angular'
 import { ConfigService } from '@services/config.service'
 import { TagsService } from '@services/tags.service'
@@ -13,7 +13,7 @@ import { TagsService } from '@services/tags.service'
     selector: 'app-root',
     templateUrl: './app.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false,
+    imports: [IonicModule],
 })
 export class AppComponent {
     constructor(
