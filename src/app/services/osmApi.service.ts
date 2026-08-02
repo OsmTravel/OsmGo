@@ -151,13 +151,19 @@ export class OsmApiService {
             .pipe(
                 timeout(OSM_REQUEST_TIMEOUT_MS),
                 map((res) => {
+                    const changesetId = String(res).trim()
+                    if (!/^[1-9]\d*$/.test(changesetId)) {
+                        throw new Error(
+                            'OpenStreetMap returned an invalid changeset ID.'
+                        )
+                    }
                     this.configService.setChangeset(
-                        res.toString(),
+                        changesetId,
                         Date.now(),
                         Date.now(),
                         comment
                     )
-                    return res
+                    return changesetId
                 }),
                 catchError((error) =>
                     this.handleAuthenticatedRequestError(error)
@@ -168,7 +174,7 @@ export class OsmApiService {
     getValidChangeset(comment: string): Observable<string> {
         const changeset = this.configService.getChangeset()
         if (
-            changeset.id === '' ||
+            !/^[1-9]\d*$/.test(changeset.id) ||
             comment !== changeset.comment ||
             Date.now() - changeset.last_changeset_activity > 3_540_000
         ) {
@@ -390,7 +396,7 @@ export class OsmApiService {
 
     private handleAuthenticatedRequestError(error: unknown): Observable<never> {
         const status = this.getErrorStatus(error)
-        if (status === 401 || status === 403) {
+        if (status === 401) {
             this.osmAuthService.clearToken()
         }
         return throwError(() => error)

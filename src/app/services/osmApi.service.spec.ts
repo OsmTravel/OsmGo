@@ -185,7 +185,7 @@ describe('OsmApiService', () => {
         const http = {
             put: vi.fn().mockName('HttpClient.put'),
         }
-        http.put.mockReturnValue(of('123'))
+        http.put.mockReturnValue(of('\n123\n'))
 
         const configService = {
             getAppFullVersion: () => `OsmGo's & "mobile" <app>`,
@@ -224,7 +224,66 @@ describe('OsmApiService', () => {
             expectedBody,
             expect.any(Object)
         )
+        expect(configService.setChangeset).toHaveBeenCalledWith(
+            '123',
+            expect.any(Number),
+            expect.any(Number),
+            `Commerces & cafés <centre> "nuit"`
+        )
     })
+
+    it.each(['', '0', '-1', '12.5', 'abc', '0123'])(
+        'rejects the invalid changeset ID response %j',
+        async (response) => {
+            const http = { put: vi.fn(() => of(response)) }
+            const configService = {
+                getAppFullVersion: () => 'OsmGo 2',
+                getIsDevServer: () => false,
+                setChangeset: vi.fn(),
+            }
+            const osmAuthService = {
+                getToken: () => 'token',
+                clearToken: vi.fn(),
+                oauthParam: {
+                    dev: { url: 'https://api06.dev.openstreetmap.org' },
+                    prod: { url: 'https://api.openstreetmap.org' },
+                },
+            }
+            const service = createService({
+                http,
+                configService,
+                osmAuthService,
+            })
+
+            await expect(
+                firstValueFrom(service.createOSMChangeSet('Survey'))
+            ).rejects.toThrow('invalid changeset ID')
+            expect(configService.setChangeset).not.toHaveBeenCalled()
+        }
+    )
+
+    it.each(['', '0', '-1', 'invalid'])(
+        'does not reuse the invalid cached changeset ID %j',
+        async (id) => {
+            const configService = {
+                getChangeset: () => ({
+                    id,
+                    comment: 'Survey',
+                    created_at: Date.now(),
+                    last_changeset_activity: Date.now(),
+                }),
+            }
+            const service = createService({ configService })
+            const create = vi
+                .spyOn(service, 'createOSMChangeSet')
+                .mockReturnValue(of('456'))
+
+            await expect(
+                firstValueFrom(service.getValidChangeset('Survey'))
+            ).resolves.toBe('456')
+            expect(create).toHaveBeenCalledWith('Survey')
+        }
+    )
 
     describe('diff result XML', () => {
         let service: OsmApiService
@@ -422,8 +481,12 @@ describe('OsmApiService', () => {
     })
 
     describe('expired authorization', () => {
-        for (const status of [401, 403]) {
-            it(`clears the local token after status ${status}`, () => {
+        it.each([
+            [401, 1],
+            [403, 0],
+        ])(
+            'status %s clears the local token %s time(s)',
+            (status, expectedCalls) => {
                 const http = {
                     get: vi.fn().mockName('HttpClient.get'),
                 }
@@ -448,9 +511,11 @@ describe('OsmApiService', () => {
 
                 service.getUserDetail$().subscribe({ error: () => {} })
 
-                expect(osmAuthService.clearToken).toHaveBeenCalledTimes(1)
-            })
-        }
+                expect(osmAuthService.clearToken).toHaveBeenCalledTimes(
+                    expectedCalls
+                )
+            }
+        )
     })
 
     describe('OSM data worker', () => {

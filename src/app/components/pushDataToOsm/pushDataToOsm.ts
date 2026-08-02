@@ -251,6 +251,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
                 this.configService.getUserInfo().display_name
             newFeature['properties']['meta']['uid'] =
                 this.configService.getUserInfo().uid
+            newFeature.properties.meta.changeset = this.changesetId
             newFeature['properties']['meta']['timestamp'] =
                 new Date().toISOString()
             newFeature.properties.time = Date.now()
@@ -500,6 +501,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnDestroy {
                     .apiOsmSendOsmDiffFile(diffFile, this.changesetId)
                     .pipe(take(1))
             )
+            this.configService.updateChangesetLastActivity()
 
             phase = 'persist'
             await this.updateLocalDataFromDiffResult(diffFileResult, features)

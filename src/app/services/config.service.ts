@@ -237,10 +237,22 @@ export class ConfigService {
         this.localStorage.set('changeset', this.changeset)
     }
 
-    updateChangesetLastActivity() {
-        const time = Date.now()
-        this.changeset.last_changeset_activity = time
-        this.localStorage.set('last_changeset_activity', time.toString())
+    resetChangeset(): void {
+        this.changeset = {
+            id: '',
+            last_changeset_activity: 0,
+            created_at: 0,
+            comment: '',
+        }
+        this.localStorage.set('changeset', this.changeset)
+    }
+
+    updateChangesetLastActivity(time = Date.now()): void {
+        this.changeset = {
+            ...this.changeset,
+            last_changeset_activity: time,
+        }
+        this.localStorage.set('changeset', this.changeset)
     }
 
     getI18nConfig$(): Observable<I18nConfig> {

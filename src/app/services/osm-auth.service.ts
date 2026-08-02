@@ -214,6 +214,7 @@ export class OsmAuthService {
             console.error(error)
         })
         this.configService.resetUserInfo()
+        this.configService.resetChangeset()
     }
 
     getToken(): string | null {
@@ -222,7 +223,6 @@ export class OsmAuthService {
 
     logout(): void {
         this.clearToken()
-        this.localStorage.remove('changeset')
     }
 
     isAuthenticated(): boolean {

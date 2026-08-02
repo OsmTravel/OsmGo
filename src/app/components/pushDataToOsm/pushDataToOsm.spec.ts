@@ -59,7 +59,13 @@ describe('PushDataToOsmPage', () => {
                 },
                 { provide: MatDialog, useValue: dialog },
                 { provide: MatSnackBar, useValue: snackBar },
-                { provide: ConfigService, useValue: configService },
+                {
+                    provide: ConfigService,
+                    useValue: {
+                        updateChangesetLastActivity: vi.fn(),
+                        ...(configService as object),
+                    },
+                },
                 { provide: TranslateService, useValue: translate },
                 { provide: UPLOAD_SUCCESS_DELAY_MS, useValue: successDelayMs },
             ],
@@ -479,6 +485,7 @@ describe('PushDataToOsmPage', () => {
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
         }
         const page = createPage({ dataService, mapService, configService })
+        page.changesetId = '456'
         const diffResults = features.map((feature, i) => ({
             type: 'node',
             old_id: String(feature.properties.id),
@@ -499,6 +506,7 @@ describe('PushDataToOsmPage', () => {
         expect(preparedResults[0].feature.id).toBe('node/1')
         expect(preparedResults[0].feature.properties.id).toBe(1)
         expect(preparedResults[0].feature.properties.meta.version).toBe(1)
+        expect(preparedResults[0].feature.properties.meta.changeset).toBe('456')
         expect(preparedResults[0].feature.properties.changeType).toBeUndefined()
     })
 
@@ -730,6 +738,7 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             setChangeSetComment: () => {},
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+            updateChangesetLastActivity: vi.fn(),
         }
         const closeOverlay = vi.fn().mockName('close').mockResolvedValue(true)
         const page = createPage({
@@ -811,6 +820,7 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             setChangeSetComment: () => {},
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+            updateChangesetLastActivity: vi.fn(),
         }
         let page: PushDataToOsmPage
         const closeOverlay = vi.fn().mockImplementation(async () => {
@@ -832,6 +842,9 @@ describe('PushDataToOsmPage', () => {
 
         expect(page.uploadedOk()).toBe(true)
         expect(page.uploadStatusVisible()).toBe(false)
+        expect(configService.updateChangesetLastActivity).toHaveBeenCalledTimes(
+            1
+        )
         expect(closeOverlay).toHaveBeenCalledTimes(1)
     })
 
@@ -878,6 +891,7 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             setChangeSetComment: () => {},
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
+            updateChangesetLastActivity: vi.fn(),
         }
         const closeOverlay = vi.fn().mockName('close')
         const page = createPage({
@@ -894,6 +908,9 @@ describe('PushDataToOsmPage', () => {
         expect(page.uploadInFlight()).toBe(false)
         expect(mapService.isProcessing.value).toBe(false)
         expect(page.error()?.message).toBe('Storage unavailable')
+        expect(configService.updateChangesetLastActivity).toHaveBeenCalledTimes(
+            1
+        )
         expect(changedData.features).toEqual([feature])
         expect(closeOverlay).not.toHaveBeenCalled()
     })

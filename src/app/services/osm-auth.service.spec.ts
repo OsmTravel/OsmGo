@@ -11,7 +11,11 @@ import { OAUTH_BROWSER, OsmAuthService } from './osm-auth.service'
 describe('OsmAuthService', () => {
     let http: { post: Mock }
     let storage: { get: Mock; set: Mock; remove: Mock }
-    let configService: { config: Mock; resetUserInfo: Mock }
+    let configService: {
+        config: Mock
+        resetUserInfo: Mock
+        resetChangeset: Mock
+    }
     let service: OsmAuthService
     let nativePlatform: Mock
     let closeBrowser: Mock
@@ -36,6 +40,7 @@ describe('OsmAuthService', () => {
         configService = {
             config: vi.fn(() => ({ isDevServer: false })),
             resetUserInfo: vi.fn().mockName('resetUserInfo'),
+            resetChangeset: vi.fn().mockName('resetChangeset'),
         }
         nativePlatform = vi
             .spyOn(Capacitor, 'isNativePlatform')
@@ -177,6 +182,8 @@ describe('OsmAuthService', () => {
         expect(service.token()).toBeNull()
         expect(service.getToken()).toBeNull()
         expect(configService.resetUserInfo).toHaveBeenCalledTimes(1)
+        expect(configService.resetChangeset).toHaveBeenCalledTimes(1)
+        expect(storage.remove).not.toHaveBeenCalledWith('changeset')
     })
 
     it('closes the Capacitor browser after the callback', async () => {

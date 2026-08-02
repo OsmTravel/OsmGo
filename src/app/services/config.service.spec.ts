@@ -202,4 +202,64 @@ describe('ConfigService', () => {
         expect(storage.set).toHaveBeenCalledTimes(1)
         expect(storage.set).toHaveBeenCalledWith('changeset', service.changeset)
     })
+
+    it('persists changeset activity in the complete changeset object', () => {
+        const storage = { set: vi.fn().mockName('Storage.set') }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+        service.changeset = {
+            id: '123',
+            created_at: 100,
+            last_changeset_activity: 200,
+            comment: 'Survey',
+        }
+
+        service.updateChangesetLastActivity(300)
+
+        expect(service.changeset).toEqual({
+            id: '123',
+            created_at: 100,
+            last_changeset_activity: 300,
+            comment: 'Survey',
+        })
+        expect(storage.set).toHaveBeenCalledWith('changeset', service.changeset)
+        expect(storage.set).not.toHaveBeenCalledWith(
+            'last_changeset_activity',
+            expect.anything()
+        )
+    })
+
+    it('resets every changeset lifecycle field', () => {
+        const storage = { set: vi.fn().mockName('Storage.set') }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+        service.changeset = {
+            id: '123',
+            created_at: 100,
+            last_changeset_activity: 200,
+            comment: 'Survey',
+        }
+
+        service.resetChangeset()
+
+        expect(service.changeset).toEqual({
+            id: '',
+            created_at: 0,
+            last_changeset_activity: 0,
+            comment: '',
+        })
+        expect(storage.set).toHaveBeenCalledWith('changeset', service.changeset)
+    })
 })
