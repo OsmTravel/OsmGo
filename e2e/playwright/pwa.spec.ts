@@ -220,6 +220,16 @@ test('explains when WebGL 2 is unavailable', async ({ page }) => {
     ).toBeVisible()
 })
 
+test('loads interface translations', async ({ page }) => {
+    await openApp(page)
+    await page.getByTestId('open-menu').click()
+
+    await expect(page.getByText('Settings', { exact: true })).toBeVisible()
+    await expect(page.getByText('MENU.SETTINGS', { exact: true })).toHaveCount(
+        0
+    )
+})
+
 test('downloads a small OSM area from a fixture', async ({ page }) => {
     await page.route('**/api/0.6/map?bbox=*', (route) =>
         route.fulfill({

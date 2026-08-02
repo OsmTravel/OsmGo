@@ -18,7 +18,7 @@ import {
     provideIonicAngular,
 } from '@ionic/angular/standalone'
 import { IonicStorageModule } from '@ionic/storage-angular'
-import { TranslateModule } from '@ngx-translate/core'
+import { provideTranslateService } from '@ngx-translate/core'
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader'
 
 export const appConfig: ApplicationConfig = {
@@ -37,11 +37,13 @@ export const appConfig: ApplicationConfig = {
         provideServiceWorker('ngsw-worker.js', {
             enabled: environment.production,
         }),
-        provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
+        provideTranslateService({
+            fallbackLang: 'en',
+            loader: provideTranslateHttpLoader({ prefix: './assets/i18n/' }),
+        }),
         importProvidersFrom(
             BrowserAnimationsModule,
-            IonicStorageModule.forRoot(),
-            TranslateModule.forRoot({ fallbackLang: 'en' })
+            IonicStorageModule.forRoot()
         ),
         provideIonicAngular({ mode: 'md', useSetInputAPI: true }),
     ],
