@@ -26,7 +26,14 @@ import {
     ToastController,
 } from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { OsmGoFeature, Preset, PrimaryTag, Tag, TagConfig } from '@osmgo/type'
+import {
+    type FeatureIdSource,
+    OsmGoFeature,
+    Preset,
+    PrimaryTag,
+    Tag,
+    TagConfig,
+} from '@osmgo/type'
 import { FilterExcludeKeysPipe } from '@pipes/filterExcludeKeys.pipe'
 import { IsBookmarkedPipe } from '@pipes/is-bookmarked.pipe'
 import { OrderByPresetPipe } from '@pipes/orderByPreset.pipe'
@@ -114,7 +121,7 @@ export class ModalsContentPage implements OnInit {
         return feature
     }
 
-    origineData: string
+    origineData: FeatureIdSource = 'data'
     private readonly typeFicheState = signal('Loading')
     get typeFiche(): string {
         return this.typeFicheState()
@@ -169,7 +176,9 @@ export class ModalsContentPage implements OnInit {
     readonly newPositionInput = input<unknown>(false, {
         alias: 'newPosition',
     })
-    readonly origineDataInput = input('', { alias: 'origineData' })
+    readonly origineDataInput = input<FeatureIdSource>('data', {
+        alias: 'origineData',
+    })
     readonly openPrimaryTagModalOnStartInput = input(false, {
         alias: 'openPrimaryTagModalOnStart',
     })

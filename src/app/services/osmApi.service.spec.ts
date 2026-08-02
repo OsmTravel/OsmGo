@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http'
 import { TestBed } from '@angular/core/testing'
 import { Platform } from '@ionic/angular/standalone'
 import { Storage } from '@ionic/storage-angular'
+import type { OsmGoFeature } from '@osmgo/type'
 import { AlertService } from '@services/alert.service'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { OsmAuthService } from '@services/osm-auth.service'
 import { TagsService } from '@services/tags.service'
-import { NEVER, Observable, of, throwError } from 'rxjs'
+import { firstValueFrom, NEVER, Observable, of, throwError } from 'rxjs'
 
 import { OsmApiService } from './osmApi.service'
 
@@ -16,6 +17,7 @@ interface ServiceDependencies {
     http?: object
     tagsService?: object
     dataService?: object
+    mapService?: object
     configService?: object
     osmAuthService?: object
 }
@@ -24,6 +26,7 @@ function createService({
     http = {},
     tagsService = {},
     dataService = {},
+    mapService = {},
     configService = {},
     osmAuthService = {},
 }: ServiceDependencies = {}): OsmApiService {
@@ -32,7 +35,7 @@ function createService({
         providers: [
             { provide: Platform, useValue: {} },
             { provide: HttpClient, useValue: http },
-            { provide: MapService, useValue: {} },
+            { provide: MapService, useValue: mapService },
             { provide: TagsService, useValue: tagsService },
             { provide: DataService, useValue: dataService },
             { provide: AlertService, useValue: {} },
@@ -47,31 +50,35 @@ function createService({
 describe('OsmApiService', () => {
     it('does not serialize empty or undefined OSM tag keys', () => {
         const service = createService()
-        const feature = {
+        const feature: OsmGoFeature = {
+            type: 'Feature',
+            id: 'node/-1',
             properties: {
+                hexColor: '',
+                icon: '',
                 id: -1,
+                marker: '',
+                meta: {
+                    changeset: '',
+                    timestamp: '',
+                    uid: '',
+                    user: '',
+                    version: 1,
+                },
+                primaryTag: { key: 'amenity', value: 'toilets' },
                 tags: {
                     amenity: 'toilets',
                     undefined: 'unisex',
                     ' ': 'female',
                     name: '',
                 },
+                type: 'node',
             },
-            geometry: { coordinates: [1, 2] },
+            geometry: { type: 'Point', coordinates: [1, 2] },
         }
 
         const createXml = service.geojson2OsmCreate(feature, '123')
-        const updateXml = service.geojson2OsmUpdate(
-            {
-                ...feature,
-                properties: {
-                    ...feature.properties,
-                    type: 'node',
-                    meta: { version: 1 },
-                },
-            },
-            '123'
-        )
+        const updateXml = service.geojson2OsmUpdate(feature, '123')
 
         for (const xml of [createXml, updateXml]) {
             expect(xml).toContain('k="amenity"')
@@ -185,6 +192,59 @@ describe('OsmApiService', () => {
                 )
             ).toThrowError('OpenStreetMap returned an invalid diff result.')
         })
+
+        it('rejects a non-positive version', () => {
+            expect(() =>
+                service.convertDiffFileResult(
+                    '<diffResult><node old_id="-1" new_id="1" new_version="0"/></diffResult>'
+                )
+            ).toThrowError('OpenStreetMap returned an invalid diff result.')
+        })
+
+        it('rejects a created or updated element without a new ID', () => {
+            expect(() =>
+                service.convertDiffFileResult(
+                    '<diffResult><node old_id="-1" new_version="1"/></diffResult>'
+                )
+            ).toThrowError('OpenStreetMap returned an invalid diff result.')
+        })
+    })
+
+    it('returns an observable when deleting a locally created feature', async () => {
+        const deleteFeatureFromGeojsonChanged = vi
+            .fn()
+            .mockName('deleteFeatureFromGeojsonChanged')
+            .mockResolvedValue(undefined)
+        const feature: OsmGoFeature = {
+            type: 'Feature',
+            id: 'node/-1',
+            properties: {
+                changeType: 'Create',
+                hexColor: '',
+                icon: '',
+                id: -1,
+                marker: '',
+                meta: {
+                    changeset: '',
+                    timestamp: '',
+                    uid: '',
+                    user: '',
+                    version: 0,
+                },
+                primaryTag: { key: 'amenity', value: 'bench' },
+                tags: { amenity: 'bench' },
+                type: 'node',
+            },
+            geometry: { type: 'Point', coordinates: [1, 2] },
+        }
+        const service = createService({
+            dataService: { deleteFeatureFromGeojsonChanged },
+            mapService: { getIconStyle: (value: OsmGoFeature) => value },
+        })
+
+        await firstValueFrom(service.deleteOsmElement(feature))
+
+        expect(deleteFeatureFromGeojsonChanged).toHaveBeenCalledWith(feature)
     })
 
     describe('request timeouts', () => {

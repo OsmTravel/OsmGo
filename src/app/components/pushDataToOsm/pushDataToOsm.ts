@@ -29,13 +29,13 @@ import {
     Platform,
 } from '@ionic/angular/standalone'
 import { TranslateModule, TranslateService } from '@ngx-translate/core'
-import { type OsmGoChangeType, OsmGoFeature } from '@osmgo/type'
+import { OsmGoFeature } from '@osmgo/type'
 import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
 import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { InitService } from '@services/init.service'
 import { MapService } from '@services/map.service'
-import { OsmApiService } from '@services/osmApi.service'
+import { OsmApiService, type OsmDiffResult } from '@services/osmApi.service'
 import { TagsService } from '@services/tags.service'
 import { cloneDeep } from 'lodash'
 import { firstValueFrom, timer } from 'rxjs'
@@ -56,14 +56,6 @@ interface UploadError {
     status: number
     message: string
     feature: UploadFeature | null
-}
-
-interface OsmDiffResult {
-    typeChange?: OsmGoChangeType
-    osmgoOldId?: string
-    osmgoNewId?: string
-    new_id?: string | number
-    new_version?: number
 }
 
 interface OsmRequestError {
@@ -400,7 +392,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
         this.connectionError.set(undefined)
 
         this.osmApi
-            .getValidChangset(commentChangeset)
+            .getValidChangeset(commentChangeset)
             .pipe(take(1))
             .subscribe(
                 (CS) => {

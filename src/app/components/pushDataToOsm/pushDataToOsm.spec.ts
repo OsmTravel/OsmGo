@@ -95,9 +95,9 @@ describe('PushDataToOsmPage', () => {
                 replaceIdGenerateByOldVersion: () => Promise.resolve(),
             }
             const osmApi = {
-                getValidChangset: vi
+                getValidChangeset: vi
                     .fn()
-                    .mockName('getValidChangset')
+                    .mockName('getValidChangeset')
                     .mockReturnValue(throwError(() => creationError)),
                 apiOsmSendOsmDiffFile: vi
                     .fn()
@@ -146,7 +146,7 @@ describe('PushDataToOsmPage', () => {
             replaceIdGenerateByOldVersion: () => Promise.resolve(),
         }
         const osmApi = {
-            getValidChangset: () => of('123'),
+            getValidChangeset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
             apiOsmSendOsmDiffFile: vi
                 .fn()
@@ -197,7 +197,7 @@ describe('PushDataToOsmPage', () => {
         }
         const osmApi = {
             getUserDetail$: () => throwError(() => new TimeoutError()),
-            getValidChangset: vi.fn().mockName('getValidChangset'),
+            getValidChangeset: vi.fn().mockName('getValidChangeset'),
         }
         const mapService = createProcessingMapService()
         const processing = mapService.isProcessing
@@ -218,7 +218,7 @@ describe('PushDataToOsmPage', () => {
         expect(page.isPushing()).toBe(false)
         expect(processing.value).toBe(false)
         expect(page.connectionError()).toContain('Timeout')
-        expect(osmApi.getValidChangset).not.toHaveBeenCalled()
+        expect(osmApi.getValidChangeset).not.toHaveBeenCalled()
         expect(changedData.features).toEqual([queuedFeature])
     })
 
@@ -234,7 +234,7 @@ describe('PushDataToOsmPage', () => {
             error: 'The changeset 123 was closed at 2026-08-01T13:00:00Z.',
         }
         const osmApi = {
-            getValidChangset: () => of('123'),
+            getValidChangeset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
             apiOsmSendOsmDiffFile: vi
                 .fn()
@@ -288,7 +288,7 @@ describe('PushDataToOsmPage', () => {
                 .mockReturnValue(preparation),
         }
         const osmApi = {
-            getValidChangset: () => of('123'),
+            getValidChangeset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
             apiOsmSendOsmDiffFile: vi
                 .fn()
@@ -422,7 +422,7 @@ describe('PushDataToOsmPage', () => {
             applyUploadResults,
         }
         const osmApi = {
-            getValidChangset: () => of('123'),
+            getValidChangeset: () => of('123'),
             osmGoFeaturesToOsmDiffFile: () => '<osmChange/>',
             apiOsmSendOsmDiffFile: () => uploadResult,
         }

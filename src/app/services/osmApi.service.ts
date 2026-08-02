@@ -1,95 +1,125 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Injectable, inject } from '@angular/core'
-import { Platform } from '@ionic/angular/standalone'
-import { Storage } from '@ionic/storage-angular'
-import { addAttributesToFeature } from '@scripts/osmToOsmgo/index.js'
-import { AlertService } from '@services/alert.service'
-import { ConfigService, User } from '@services/config.service'
+import type {
+    FeatureIdSource,
+    OsmGoChangeType,
+    OsmGoFeature,
+    OsmGoFeatureCollection,
+    OsmRelationMember,
+} from '@osmgo/type'
+import {
+    addAttributesToFeature,
+    type ConvertResult,
+} from '@scripts/osmToOsmgo/index.js'
+import { ConfigService, type User } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { TagsService } from '@services/tags.service'
-import { bboxPolygon } from '@turf/bbox-polygon'
 import { XMLParser, XMLValidator } from 'fast-xml-parser'
+import type { BBox } from 'geojson'
 import { cloneDeep } from 'lodash'
 import { from, Observable, of, throwError } from 'rxjs'
-import { catchError, map, switchMap, take, tap, timeout } from 'rxjs/operators'
+import { catchError, map, switchMap, take, timeout } from 'rxjs/operators'
 import { OsmAuthService } from './osm-auth.service'
 
 const OSM_REQUEST_TIMEOUT_MS = 30_000
 const OSM_WORKER_TIMEOUT_MS = 30_000
 
+interface OsmUserResponse {
+    user: {
+        id: string | number
+        display_name: string
+    }
+}
+
+interface OsmApiObject {
+    type: 'node' | 'way' | 'relation'
+    lon?: string | number
+    lat?: string | number
+    nodes?: Array<string | number>
+    members?: OsmRelationMember[]
+}
+
+interface OsmObjectResponse {
+    elements: OsmApiObject[]
+}
+
+interface WorkerResponse {
+    ok: boolean
+    data?: ConvertResult
+    error?: string
+}
+
+export interface OsmDiffResult {
+    type: 'node' | 'way' | 'relation'
+    typeChange: OsmGoChangeType
+    old_id?: string
+    new_id?: string
+    new_version?: number
+    osmgoOldId?: string
+    osmgoNewId?: string
+}
+
 @Injectable({ providedIn: 'root' })
 export class OsmApiService {
-    private readonly platform = inject(Platform)
     private readonly http = inject(HttpClient)
     readonly mapService = inject(MapService)
     readonly tagsService = inject(TagsService)
     readonly dataService = inject(DataService)
-    readonly alertService = inject(AlertService)
     readonly configService = inject(ConfigService)
-    private readonly localStorage = inject(Storage)
     readonly osmAuthService = inject(OsmAuthService)
 
     isAuthenticated(): boolean {
         return this.osmAuthService.isAuthenticated()
     }
 
-    // retourne l'URL de l'API (dev ou prod)
-    getUrlApi() {
+    getUrlApi(): string {
         return this.configService.getIsDevServer()
             ? this.osmAuthService.oauthParam.dev.url
             : this.osmAuthService.oauthParam.prod.url
     }
 
-    // DETAIL DE L'UTILISATEUR
     getUserDetail$(test = false): Observable<User> {
         const PATH_API = '/api/0.6/user/details.json'
-        let _observable
         const token = this.osmAuthService.getToken()
         if (!token) {
             return throwError(() => new Error('You are not connected'))
         }
 
         const url = this.getUrlApi() + PATH_API
-        // const headers = new Headers();
         let headers = new HttpHeaders()
         headers = headers
             .set('Authorization', `Bearer ${token}`)
             .set('Content-Type', 'application/json')
 
-        _observable = this.http.get(url, { headers: headers })
-
-        return _observable.pipe(
+        return this.http.get<OsmUserResponse>(url, { headers }).pipe(
             timeout(OSM_REQUEST_TIMEOUT_MS),
-            map((res: any) => {
-                const x_user = res.user
-                const uid = x_user['id']
-                const display_name = x_user['display_name']
-                const _userInfo: User = {
-                    uid: uid,
-                    display_name: display_name,
+            map((response) => {
+                if (
+                    !response.user ||
+                    response.user.id === null ||
+                    response.user.id === undefined ||
+                    typeof response.user.display_name !== 'string'
+                ) {
+                    throw new Error('OpenStreetMap returned invalid user data.')
+                }
+                const userInfo: User = {
+                    uid: String(response.user.id),
+                    display_name: response.user.display_name,
                     connected: true,
                 }
                 if (!test) {
-                    this.configService.setUserInfo(_userInfo)
+                    this.configService.setUserInfo(userInfo)
                 }
-                return _userInfo
+                return userInfo
             }),
-            catchError((error: any) => {
+            catchError((error: unknown) => {
                 console.error(error)
                 return this.handleAuthenticatedRequestError(error)
             })
         )
     }
-    // CHANGESET
-    /* Edits can only be added to a changeset as long as it is still open;
-    a changeset can either be closed explicitly (see your editor's documentation),
-    or it closes itself if no edits are added to it for a period of inactivity (currently one hour).
-    The same user can have multiple active changesets at the same time. A changeset has a maximum capacity
-    (currently 50,000 edits) and maximum lifetime (currently 24 hours)
-    */
-
-    createOSMChangeSet(comment): Observable<any> {
+    createOSMChangeSet(comment: string): Observable<string> {
         const appVersion = this.configService.getAppFullVersion()
 
         const localeId = navigator?.language || '*'
@@ -103,9 +133,7 @@ export class OsmApiService {
             </changeset>
         </osm>`
 
-        const PATH_API = `/api/0.6/changeset/create`
-
-        let _observable
+        const PATH_API = '/api/0.6/changeset/create'
 
         const url = this.getUrlApi() + PATH_API
         const token = this.osmAuthService.getToken()
@@ -117,54 +145,38 @@ export class OsmApiService {
             .set('Authorization', `Bearer ${token}`)
             .set('Content-Type', 'text/xml')
 
-        _observable = this.http.put(url, content, {
-            headers: headers,
-            responseType: 'text',
-        })
-
-        return _observable.pipe(
-            timeout(OSM_REQUEST_TIMEOUT_MS),
-            map((res) => {
-                this.configService.setChangeset(
-                    res.toString(),
-                    Date.now(),
-                    Date.now(),
-                    comment
+        return this.http
+            .put(url, content, {
+                headers: headers,
+                responseType: 'text',
+            })
+            .pipe(
+                timeout(OSM_REQUEST_TIMEOUT_MS),
+                map((res) => {
+                    this.configService.setChangeset(
+                        res.toString(),
+                        Date.now(),
+                        Date.now(),
+                        comment
+                    )
+                    return res
+                }),
+                catchError((error) =>
+                    this.handleAuthenticatedRequestError(error)
                 )
-                return res
-            }),
-            catchError((error) => this.handleAuthenticatedRequestError(error))
-        )
+            )
     }
 
-    // determine si le changset est valide, sinon on en crée un nouveau
-    getValidChangset(_comments): Observable<any> {
-        // si il n'existe pas
+    getValidChangeset(comment: string): Observable<string> {
+        const changeset = this.configService.getChangeset()
         if (
-            this.configService.getChangeset().id == null ||
-            this.configService.getChangeset().id === ''
+            changeset.id === '' ||
+            comment !== changeset.comment ||
+            Date.now() - changeset.last_changeset_activity > 3_540_000
         ) {
-            return this.createOSMChangeSet(_comments)
-        } else if (_comments !== this.configService.getChangeset().comment) {
-            // un commentaire différent => nouveau ChangeSet
-            return this.createOSMChangeSet(_comments)
-        } else if (
-            (Date.now() -
-                this.configService.getChangeset().last_changeset_activity) /
-                1000 >
-                3540 || // bientot une heure sans activité
-            (Date.now() -
-                this.configService.getChangeset().last_changeset_activity) /
-                1000 >
-                86360
-        ) {
-            // bientot > 24h
-            return this.createOSMChangeSet(_comments)
-        } else {
-            return of(this.configService.getChangeset().id).pipe(
-                map((CS) => CS)
-            )
+            return this.createOSMChangeSet(comment)
         }
+        return of(changeset.id)
     }
 
     escapeXmlValue(value: unknown): string {
@@ -176,26 +188,35 @@ export class OsmApiService {
             .replace(/>/g, '&gt;')
     }
 
-    osmGoFeaturesToOsmDiffFile(features, idChangeset): string {
-        const createChanges = []
-        const modifyChanges = []
-        const deleteChanges = []
+    osmGoFeaturesToOsmDiffFile(
+        features: OsmGoFeature[],
+        idChangeset: string
+    ): string {
+        const createChanges: string[] = []
+        const modifyChanges: string[] = []
+        const deleteChanges: string[] = []
 
         for (const feature of features) {
-            if (feature.properties.changeType == 'Create') {
+            if (feature.properties.changeType === 'Create') {
                 const xml = this.geojson2OsmCreate(feature, idChangeset)
                 createChanges.push(xml)
-            } else if (feature.properties.changeType == 'Update') {
+            } else if (feature.properties.changeType === 'Update') {
                 const xml = this.geojson2OsmUpdate(feature, idChangeset)
                 modifyChanges.push(xml)
-            } else if (feature.properties.changeType == 'Delete') {
-                // if the node is used by a way, we just remove the tag, not the node
+            } else if (feature.properties.changeType === 'Delete') {
+                const usedByWays = feature.properties.usedByWays
                 if (
-                    feature.properties.usedByWays &&
-                    feature.properties.usedByWays.length > 0
+                    usedByWays === true ||
+                    (Array.isArray(usedByWays) && usedByWays.length > 0)
                 ) {
-                    feature.properties.tags = {}
-                    const xml = this.geojson2OsmUpdate(feature, idChangeset)
+                    const featureWithoutTags = {
+                        ...feature,
+                        properties: { ...feature.properties, tags: {} },
+                    }
+                    const xml = this.geojson2OsmUpdate(
+                        featureWithoutTags,
+                        idChangeset
+                    )
                     modifyChanges.push(xml)
                 } else {
                     const xml = this.geojson2OsmUpdate(feature, idChangeset)
@@ -223,10 +244,10 @@ export class OsmApiService {
         return diffFile
     }
 
-    convertDiffFileResultPorperties(
+    convertDiffFileResultProperties(
         type: 'node' | 'way' | 'relation',
-        properties: any
-    ) {
+        properties: unknown
+    ): OsmDiffResult {
         if (
             !properties ||
             typeof properties !== 'object' ||
@@ -234,36 +255,55 @@ export class OsmApiService {
         ) {
             throw new Error('OpenStreetMap returned an invalid diff result.')
         }
-        let typeChange: string
-        if (!properties.new_version) {
-            typeChange = 'Delete'
-        } else if (parseInt(properties.new_version) === 1) {
-            typeChange = 'Create'
-        } else if (parseInt(properties.new_version) > 1) {
-            typeChange = 'Update'
+        const raw = properties as Record<string, unknown>
+        const oldId = raw['old_id']
+        if (oldId === undefined || oldId === null || String(oldId) === '') {
+            throw new Error('OpenStreetMap returned an invalid diff result.')
         }
-        let row = { type, typeChange, ...properties }
-        if (properties.old_id) {
-            row = {
-                ...row,
-                old_id: properties.old_id,
-                osmgoOldId: `${type}/${properties.old_id}`,
-            }
+
+        const rawVersion = raw['new_version']
+        const newVersion =
+            rawVersion === undefined || rawVersion === null
+                ? undefined
+                : Number(rawVersion)
+        if (
+            newVersion !== undefined &&
+            (!Number.isInteger(newVersion) || newVersion < 1)
+        ) {
+            throw new Error('OpenStreetMap returned an invalid diff result.')
         }
-        if (properties.new_id) {
-            row = {
-                ...row,
-                new_id: properties.new_id,
-                osmgoNewId: `${type}/${properties.new_id}`,
-            }
+
+        const newId = raw['new_id']
+        if (
+            newVersion !== undefined &&
+            (newId === undefined || newId === null || String(newId) === '')
+        ) {
+            throw new Error('OpenStreetMap returned an invalid diff result.')
         }
-        if (properties.new_version) {
-            row = { ...row, new_version: parseInt(properties.new_version) }
+
+        const typeChange: OsmGoChangeType =
+            newVersion === undefined
+                ? 'Delete'
+                : newVersion === 1
+                  ? 'Create'
+                  : 'Update'
+        const oldIdString = String(oldId)
+        const row: OsmDiffResult = {
+            type,
+            typeChange,
+            old_id: oldIdString,
+            osmgoOldId: `${type}/${oldIdString}`,
         }
+
+        if (newId !== undefined && newId !== null && String(newId) !== '') {
+            row.new_id = String(newId)
+            row.osmgoNewId = `${type}/${String(newId)}`
+        }
+        if (newVersion !== undefined) row.new_version = newVersion
         return row
     }
 
-    convertDiffFileResult(diffTextResult: string): any[] {
+    convertDiffFileResult(diffTextResult: string): OsmDiffResult[] {
         if (XMLValidator.validate(diffTextResult) !== true) {
             throw new Error('OpenStreetMap returned an invalid XML response.')
         }
@@ -281,13 +321,13 @@ export class OsmApiService {
         ) {
             throw new Error('OpenStreetMap returned an invalid diff result.')
         }
-        const result = []
+        const result: OsmDiffResult[] = []
         if (diffJson.node !== undefined) {
             if (!Array.isArray(diffJson.node)) {
                 diffJson.node = [diffJson.node]
             }
             for (const properties of diffJson.node) {
-                const rowConverted = this.convertDiffFileResultPorperties(
+                const rowConverted = this.convertDiffFileResultProperties(
                     'node',
                     properties
                 )
@@ -300,7 +340,7 @@ export class OsmApiService {
                 diffJson.way = [diffJson.way]
             }
             for (const properties of diffJson.way) {
-                const rowConverted = this.convertDiffFileResultPorperties(
+                const rowConverted = this.convertDiffFileResultProperties(
                     'way',
                     properties
                 )
@@ -313,7 +353,7 @@ export class OsmApiService {
                 diffJson.relation = [diffJson.relation]
             }
             for (const properties of diffJson.relation) {
-                const rowConverted = this.convertDiffFileResultPorperties(
+                const rowConverted = this.convertDiffFileResultProperties(
                     'relation',
                     properties
                 )
@@ -323,10 +363,10 @@ export class OsmApiService {
         return result
     }
 
-    apiOsmSendOsmDiffFile(diffFile, changesetId) {
-        const PATH_API = `/api/0.6/changeset/${changesetId}/upload`
-        let _observable: Observable<string>
-
+    apiOsmSendOsmDiffFile(
+        diffFile: string,
+        changesetId: string
+    ): Observable<OsmDiffResult[]> {
         const url =
             this.getUrlApi() + `/api/0.6/changeset/${changesetId}/upload`
 
@@ -341,120 +381,81 @@ export class OsmApiService {
             .set('accept', 'application/xml')
             .set('Content-Type', 'text/plain; charset=utf-8')
 
-        _observable = this.http.post(url, diffFile, {
-            headers: headers,
-            responseType: 'text',
-        })
-
-        return _observable.pipe(
-            timeout(OSM_REQUEST_TIMEOUT_MS),
-            map((diffTextResult) => {
-                return this.convertDiffFileResult(diffTextResult)
-            }),
-            catchError((error) => this.handleAuthenticatedRequestError(error))
-        )
+        return this.http
+            .post(url, diffFile, {
+                headers: headers,
+                responseType: 'text',
+            })
+            .pipe(
+                timeout(OSM_REQUEST_TIMEOUT_MS),
+                map((diffTextResult) => {
+                    return this.convertDiffFileResult(diffTextResult)
+                }),
+                catchError((error) =>
+                    this.handleAuthenticatedRequestError(error)
+                )
+            )
     }
 
-    private handleAuthenticatedRequestError(error: any): Observable<never> {
-        if (error?.status === 401 || error?.status === 403) {
+    private handleAuthenticatedRequestError(error: unknown): Observable<never> {
+        const status = this.getErrorStatus(error)
+        if (status === 401 || status === 403) {
             this.osmAuthService.clearToken()
         }
         return throwError(() => error)
     }
 
-    // GEOJSON => XML osm
-    geojson2OsmCreate(feature, id_changeset) {
-        const tags_json = feature.properties.tags
+    geojson2OsmCreate(feature: OsmGoFeature, changesetId: string): string {
+        if (feature.geometry.type !== 'Point') {
+            throw new Error('Only point features can be created.')
+        }
         const lng = feature.geometry.coordinates[0]
         const lat = feature.geometry.coordinates[1]
         const id = feature.properties.id
-        const node_header = `<node changeset="${id_changeset}" id="${id}" lat="${lat}" lon="${lng}">`
-        let tags_xml = ''
-        for (const k in tags_json) {
-            if (this.isValidOsmTag(k, tags_json[k])) {
-                // TODO: miss
-                tags_xml += `
-                                    <tag k="${this.escapeXmlValue(
-                                        k.trim()
-                                    )}" v="${this.escapeXmlValue(
-                                        String(tags_json[k]).trim()
-                                    )}"/>`
-            }
-        }
-        const xml = `${node_header}  ${tags_xml} </node>`
-        return xml
+        const header = `<node changeset="${changesetId}" id="${id}" lat="${lat}" lon="${lng}">`
+        return `${header}${this.osmTagsToXml(feature.properties.tags)}</node>`
     }
 
-    // convert feature to xml(osm)
-    geojson2OsmUpdate(_feature, id_changeset) {
-        const tags_json = _feature.properties.tags
-        const type_objet = _feature.properties.type
-        const version = _feature.properties.meta.version
-        const id = _feature.properties.id
+    geojson2OsmUpdate(feature: OsmGoFeature, changesetId: string): string {
+        const tagsXml = this.osmTagsToXml(feature.properties.tags)
+        const objectType = feature.properties.type
+        const version = feature.properties.meta.version
+        const id = feature.properties.id
 
-        if (type_objet === 'node') {
-            // c'est un noeud, les coords sont dans le Geojson
-            const lng = _feature.geometry.coordinates[0]
-            const lat = _feature.geometry.coordinates[1]
+        if (objectType === 'node') {
+            if (feature.geometry.type !== 'Point') {
+                throw new Error('An OSM node requires point geometry.')
+            }
+            const lng = feature.geometry.coordinates[0]
+            const lat = feature.geometry.coordinates[1]
             const node_header = `<node id="${id}"
-                    changeset="${id_changeset}"
+                    changeset="${changesetId}"
                     version="${version}"
                     lat="${lat}" lon="${lng}">`
-
-            let tags_xml = ''
-            for (const k in tags_json) {
-                if (this.isValidOsmTag(k, tags_json[k])) {
-                    tags_xml += `<tag
-                                    k="${this.escapeXmlValue(k.trim())}"
-                                    v="${this.escapeXmlValue(
-                                        String(tags_json[k]).trim()
-                                    )}"/>`
-                }
-            }
-            const xml = `${node_header} ${tags_xml}  </node>`
-            return xml
-        } else if (type_objet === 'way') {
-            const way_header = `<way id="${id}" changeset="${id_changeset}" version="${version}">`
-            let tags_xml = ''
-            for (const k in tags_json) {
-                if (this.isValidOsmTag(k, tags_json[k])) {
-                    tags_xml += `<tag
-                    k="${this.escapeXmlValue(k.trim())}"
-                    v="${this.escapeXmlValue(String(tags_json[k]).trim())}"/>`
-                }
-            }
-            let nd_ref_xml = ''
-            for (let i = 0; i < _feature.ndRefs.length; i++) {
-                nd_ref_xml += `<nd ref="${_feature.ndRefs[i]}"/>`
-            }
-            const xml = `${way_header}${nd_ref_xml}${tags_xml}</way>`
-            return xml
-        } else if (type_objet === 'relation') {
-            const relation_header = `<relation id="${id}" changeset="${id_changeset}" version="${version}">`
-            let tags_xml = ''
-            for (const k in tags_json) {
-                if (this.isValidOsmTag(k, tags_json[k])) {
-                    tags_xml += `<tag
-                        k="${this.escapeXmlValue(k.trim())}"
-                        v="${this.escapeXmlValue(
-                            String(tags_json[k]).trim()
-                        )}"/>`
-                }
-            }
-            let rel_ref_xml = ''
-            for (let i = 0; i < _feature.members.length; i++) {
-                rel_ref_xml += `<member
-                    type="${_feature.members[i].type}"
-                    role="${_feature.members[i].role}"
-                    ref="${_feature.members[i].ref}"/>`
-            }
-            const xml = `
-                    ${relation_header}
-                    ${tags_xml}
-                    ${rel_ref_xml}
-                </relation>`
-            return xml
+            return `${node_header}${tagsXml}</node>`
         }
+        if (objectType === 'way') {
+            if (!feature.ndRefs) {
+                throw new Error('An OSM way requires node references.')
+            }
+            const nodeReferences = feature.ndRefs
+                .map((reference) => `<nd ref="${reference}"/>`)
+                .join('')
+            return `<way id="${id}" changeset="${changesetId}" version="${version}">${nodeReferences}${tagsXml}</way>`
+        }
+        if (objectType === 'relation') {
+            if (!feature.members) {
+                throw new Error('An OSM relation requires members.')
+            }
+            const members = feature.members
+                .map(
+                    (member) =>
+                        `<member type="${member.type}" role="${this.escapeXmlValue(member.role)}" ref="${member.ref}"/>`
+                )
+                .join('')
+            return `<relation id="${id}" changeset="${changesetId}" version="${version}">${tagsXml}${members}</relation>`
+        }
+        throw new Error(`Unsupported OSM object type: ${objectType}`)
     }
 
     private isValidOsmTag(key: string, value: unknown): boolean {
@@ -462,19 +463,25 @@ export class OsmApiService {
         return (
             normalizedKey !== '' &&
             normalizedKey !== 'undefined' &&
-            value != null &&
+            value !== null &&
+            value !== undefined &&
             String(value).trim() !== ''
         )
     }
 
-    /// CREATE NODE
-    createOsmNode(_feature) {
-        const feature = cloneDeep(_feature)
+    createOsmNode(featureToCreate: OsmGoFeature): Observable<unknown> {
+        const feature = cloneDeep(featureToCreate)
         const id = this.dataService.nextFeatureId
 
         feature.id = 'node/' + id
         feature.properties.id = id
-        feature.properties['meta'] = { timestamp: 0, version: 0, user: '' }
+        feature.properties.meta = {
+            timestamp: '',
+            version: 0,
+            user: '',
+            uid: '',
+            changeset: '',
+        }
         feature.properties.changeType = 'Create'
         feature.properties.originalData = null
         addAttributesToFeature(feature)
@@ -485,24 +492,33 @@ export class OsmApiService {
         )
     }
 
-    // Update
-    updateOsmElement(_feature, origineData) {
-        const feature = cloneDeep(_feature)
+    updateOsmElement(
+        featureToUpdate: OsmGoFeature,
+        origineData: FeatureIdSource
+    ): Observable<unknown> {
+        const feature = cloneDeep(featureToUpdate)
         addAttributesToFeature(feature)
         if (origineData === 'data_changed') {
-            // il a déjà été modifié == if (feature.properties.changeType)
             return from(
                 this.dataService.updateFeatureToGeojsonChanged(
                     this.mapService.getIconStyle(feature)
                 )
             )
         } else {
-            // jamais été modifié, n'exite donc pas dans this.geojsonChanged mais dans le this.geojson
-            feature.properties.changeType = 'Update'
-            feature.properties.originalData = this.dataService.getFeatureById(
+            if (!feature.id) {
+                return throwError(() => new Error('A feature ID is required.'))
+            }
+            const originalData = this.dataService.getFeatureById(
                 feature.id,
                 'data'
             )
+            if (!originalData) {
+                return throwError(
+                    () => new Error('The original feature data is missing.')
+                )
+            }
+            feature.properties.changeType = 'Update'
+            feature.properties.originalData = originalData
             this.dataService.deleteFeatureFromGeojson(feature)
             return from(
                 this.dataService.addFeatureToGeojsonChanged(
@@ -512,18 +528,21 @@ export class OsmApiService {
         }
     }
 
-    // Delete
-    deleteOsmElement(_feature) {
-        const feature = cloneDeep(_feature)
+    deleteOsmElement(featureToDelete: OsmGoFeature): Observable<unknown> {
+        const feature = cloneDeep(featureToDelete)
         addAttributesToFeature(feature)
 
         if (feature.properties.changeType) {
-            // il a déjà été modifié
             if (feature.properties.changeType === 'Create') {
-                // il n'est pas sur le serveur, on le supprime des 2 geojson
-                this.dataService.deleteFeatureFromGeojsonChanged(feature)
+                return from(
+                    this.dataService.deleteFeatureFromGeojsonChanged(feature)
+                )
             } else if (feature.properties.changeType === 'Update') {
-                // on reprend les données originales
+                if (!feature.properties.originalData) {
+                    return throwError(
+                        () => new Error('The original feature data is missing.')
+                    )
+                }
                 this.dataService.updateFeatureToGeojson(
                     feature.properties.originalData
                 )
@@ -535,12 +554,20 @@ export class OsmApiService {
                 )
             }
         } else {
-            // jamais été modifié, n'exite donc pas dans this.geojsonChanged
-            feature.properties.changeType = 'Delete'
-            feature.properties.originalData = this.dataService.getFeatureById(
+            if (!feature.id) {
+                return throwError(() => new Error('A feature ID is required.'))
+            }
+            const originalData = this.dataService.getFeatureById(
                 feature.id,
                 'data'
             )
+            if (!originalData) {
+                return throwError(
+                    () => new Error('The original feature data is missing.')
+                )
+            }
+            feature.properties.changeType = 'Delete'
+            feature.properties.originalData = originalData
             this.dataService.deleteFeatureFromGeojson(feature)
             return from(
                 this.dataService.addFeatureToGeojsonChanged(
@@ -548,34 +575,25 @@ export class OsmApiService {
                 )
             )
         }
+        return throwError(() => new Error('Unsupported feature change type.'))
     }
 
-    /*
-        Convertit les donnée XML d'OSM en geojson en utilisant osmtogeojson
-        Filtre les données*
-        Convertit les polygones/lignes en point
-        Generation du style dans les properties*
-        Fusion avec les données existantes (ancienne + les données modifiés)*
-
-        * utilisation du webworker
-    */
-
     formatOsmJsonData$(
-        osmData,
-        oldGeojson,
-        geojsonChanged,
-        limitFeatures: number = 10000
-    ) {
+        osmData: string,
+        oldGeojson: OsmGoFeatureCollection,
+        geojsonChanged: OsmGoFeatureCollection,
+        limitFeatures = 10_000
+    ): Observable<ConvertResult> {
         const oldBbox = this.dataService.getGeojsonBbox()
         const oldBboxFeature = cloneDeep(oldBbox.features[0])
 
-        return new Observable((subscriber) => {
+        return new Observable<ConvertResult>((subscriber) => {
             const worker = new Worker(
                 new URL('../workers/osm-converter.worker', import.meta.url),
                 { type: 'module' }
             )
             let isFinished = false
-            const finish = (callback): void => {
+            const finish = (callback: () => void): void => {
                 if (isFinished) return
                 isFinished = true
                 window.clearTimeout(timeoutId)
@@ -590,16 +608,20 @@ export class OsmApiService {
             }, OSM_WORKER_TIMEOUT_MS)
 
             worker.onmessage = (event) => {
-                const response = event.data
-                if (
-                    !response ||
-                    typeof response.ok !== 'boolean' ||
-                    (response.ok && response.data == null)
-                ) {
+                const response = event.data as WorkerResponse
+                const data = response?.data
+                if (!response || typeof response.ok !== 'boolean') {
                     fail('The OSM data worker returned an invalid response.')
                 } else if (response.ok) {
+                    if (data === undefined) {
+                        fail(
+                            'The OSM data worker returned an invalid response.'
+                        )
+                        return
+                    }
+                    const convertedData = data
                     finish(() => {
-                        subscriber.next(response.data)
+                        subscriber.next(convertedData)
                         subscriber.complete()
                     })
                 } else {
@@ -640,33 +662,33 @@ export class OsmApiService {
         })
     }
 
-    getOsmObjectById$(objectId: string): Observable<any> {
+    getOsmObjectById$(objectId: string): Observable<OsmApiObject> {
         const headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
 
         const url = this.getUrlApi() + `/api/0.6/${objectId}.json`
         return this.http
-            .get<any>(url, { headers: headers, responseType: 'json' })
+            .get<OsmObjectResponse>(url, {
+                headers: headers,
+                responseType: 'json',
+            })
             .pipe(
-                map((d) => {
-                    const object = d.elements[0]
-                    if (object) {
-                        return object
-                    } else {
-                        // return undefined
-                        throwError(() => new Error('No coordinates found'))
+                map((response) => {
+                    const object = response.elements?.[0]
+                    if (!object) {
+                        throw new Error('No OSM object found.')
                     }
+                    return object
                 })
             )
     }
 
-    fetchNodeCoordinates(nodeId: string): Observable<any> {
+    fetchNodeCoordinates(
+        nodeId: string | number
+    ): Observable<{ lon: number; lat: number }> {
         return this.getOsmObjectById$(`node/${nodeId}`).pipe(
-            map((node) => ({
-                lon: parseFloat(node.lon),
-                lat: parseFloat(node.lat),
-            }))
+            map((node) => this.getNodeCoordinates(node))
         )
     }
 
@@ -688,12 +710,17 @@ export class OsmApiService {
         return this.getOsmObjectById$(objectId).pipe(
             switchMap((object) => {
                 if (object.type === 'node') {
-                    return of({ lon: object.lon, lat: object.lat })
+                    return of(this.getNodeCoordinates(object))
                 } else if (object.type === 'way') {
-                    const nodeId = object.nodes[0]
+                    const nodeId = object.nodes?.[0]
+                    if (nodeId === undefined) {
+                        return throwError(
+                            () => new Error('No coordinates found')
+                        )
+                    }
                     return this.fetchNodeCoordinates(nodeId)
                 } else if (object.type === 'relation') {
-                    const referencedObject = object.members.find(
+                    const referencedObject = object.members?.find(
                         (member) =>
                             member.type === 'node' || member.type === 'way'
                     )
@@ -703,13 +730,20 @@ export class OsmApiService {
                         ).pipe(
                             switchMap((referenced) => {
                                 if (referenced.type === 'way') {
-                                    const nodeId = referenced.nodes[0]
+                                    const nodeId = referenced.nodes?.[0]
+                                    if (nodeId === undefined) {
+                                        return throwError(
+                                            () =>
+                                                new Error(
+                                                    'No coordinates found'
+                                                )
+                                        )
+                                    }
                                     return this.fetchNodeCoordinates(nodeId)
                                 } else if (referenced.type === 'node') {
-                                    return of({
-                                        lon: referenced.lon,
-                                        lat: referenced.lat,
-                                    })
+                                    return of(
+                                        this.getNodeCoordinates(referenced)
+                                    )
                                 } else {
                                     return throwError(
                                         () => new Error('No coordinates found')
@@ -724,7 +758,6 @@ export class OsmApiService {
                     }
                 } else {
                     return throwError(() => new Error('No coordinates found'))
-                    // throw new Error('Type d\'objet non pris en charge');
                 }
             }),
             catchError(() =>
@@ -733,15 +766,10 @@ export class OsmApiService {
         )
     }
 
-    getDataFromBbox(bbox: any, limitFeatures: number = 10000) {
-        const featureBbox = bboxPolygon(bbox)
-        for (let i = 0; i < featureBbox.geometry.coordinates[0].length; i++) {
-            featureBbox.geometry.coordinates[0][i][0] =
-                featureBbox.geometry.coordinates[0][i][0]
-            featureBbox.geometry.coordinates[0][i][1] =
-                featureBbox.geometry.coordinates[0][i][1]
-        }
-
+    getDataFromBbox(
+        bbox: BBox,
+        limitFeatures = 10_000
+    ): Observable<ConvertResult> {
         const headers = new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Accept', 'application/json')
@@ -760,12 +788,58 @@ export class OsmApiService {
                     )
                 ),
                 take(1),
-                catchError((error: any) => {
-                    return throwError(
-                        error.error ||
-                            'Impossible de télécharger les données (api)'
+                catchError((error: unknown) =>
+                    throwError(
+                        () =>
+                            new Error(
+                                this.getErrorMessage(
+                                    error,
+                                    'Unable to download OpenStreetMap data.'
+                                )
+                            )
                     )
-                })
+                )
             )
+    }
+
+    private osmTagsToXml(tags: Record<string, unknown>): string {
+        let xml = ''
+        for (const [key, value] of Object.entries(tags)) {
+            if (this.isValidOsmTag(key, value)) {
+                xml += `<tag k="${this.escapeXmlValue(key.trim())}" v="${this.escapeXmlValue(String(value).trim())}"/>`
+            }
+        }
+        return xml
+    }
+
+    private getNodeCoordinates(node: OsmApiObject): {
+        lon: number
+        lat: number
+    } {
+        const lon = Number(node.lon)
+        const lat = Number(node.lat)
+        if (!Number.isFinite(lon) || !Number.isFinite(lat)) {
+            throw new Error('No coordinates found')
+        }
+        return { lon, lat }
+    }
+
+    private getErrorStatus(error: unknown): number | undefined {
+        if (typeof error !== 'object' || error === null) return undefined
+        const status = (error as { status?: unknown }).status
+        return typeof status === 'number' ? status : undefined
+    }
+
+    private getErrorMessage(error: unknown, fallback: string): string {
+        if (error instanceof Error && error.message) return error.message
+        if (typeof error !== 'object' || error === null) return fallback
+        const details = error as { error?: unknown; message?: unknown }
+        if (typeof details.error === 'string' && details.error.trim()) {
+            return details.error
+        }
+        if (typeof details.message === 'string' && details.message.trim()) {
+            return details.message
+        }
+        return fallback
     }
 }

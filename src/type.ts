@@ -29,6 +29,14 @@ export type OsmGoFeature<G extends Geometry = Geometry> = Feature<
     FeatureProperties
 > & {
     id: string | undefined
+    members?: OsmRelationMember[]
+    ndRefs?: Array<string | number>
+}
+
+export interface OsmRelationMember {
+    type: 'node' | 'way' | 'relation'
+    ref: string | number
+    role: string
 }
 
 /**
