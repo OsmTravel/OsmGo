@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-} from '@angular/core'
+import { Component, inject, input } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import {
     IonHeader,
@@ -30,7 +25,6 @@ type DialogFeature = OsmGoFeature & {
     selector: 'app-dialog-multi-features',
     templateUrl: './dialog-multi-features.component.html',
     styleUrls: ['./dialog-multi-features.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IconComponent,
         IonHeader,
@@ -46,7 +40,7 @@ export class DialogMultiFeaturesComponent {
     readonly features = input.required<DialogFeature[]>()
     readonly jsonSprites = input.required<Record<string, SpritePosition>>()
 
-    selectFeature(feature) {
+    selectFeature(feature: DialogFeature) {
         this.modalCtrl.dismiss(feature)
     }
 }
