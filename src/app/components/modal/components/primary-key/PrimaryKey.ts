@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    input,
-    output,
-} from '@angular/core'
+import { Component, input, output } from '@angular/core'
 import { IconComponent } from '@components/icon/icon.component'
 import { IonCard, IonCardContent, IonIcon } from '@ionic/angular/standalone'
 import { TagConfig } from '@osmgo/type'
@@ -13,7 +8,6 @@ import { DisplayTagsPipe } from '@pipes/display-tags.pipe'
     selector: 'primary-key',
     styleUrls: ['PrimaryKey.scss'],
     templateUrl: 'PrimaryKey.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [DisplayTagsPipe, IconComponent, IonCard, IonCardContent, IonIcon],
 })
 export class PrimaryKey {
@@ -27,8 +21,6 @@ export class PrimaryKey {
 
     readonly displayCode = input(undefined)
     readonly isEditMode = input(undefined)
-
-    ngOnInit(): void {}
     emitOpenModal() {
         this.openPrimaryTagModal.emit()
     }
