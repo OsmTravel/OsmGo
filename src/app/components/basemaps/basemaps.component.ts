@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import {
+    ChangeDetectionStrategy,
+    Component,
+    inject,
+    OnInit,
+} from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import {
     IonButton,
@@ -43,18 +48,16 @@ import { MapService } from '@services/map.service'
     ],
 })
 export class BasemapsComponent implements OnInit {
+    readonly navCtrl = inject(NavController)
+    private readonly route = inject(ActivatedRoute)
+    private readonly basemapsService = inject(BasemapsService)
+    readonly initService = inject(InitService)
+    readonly configService = inject(ConfigService)
+    readonly mapService = inject(MapService)
+
     lat: number
     lng: number
     basemaps: Record<string, any>[]
-
-    constructor(
-        public navCtrl: NavController,
-        private route: ActivatedRoute,
-        private basemapsService: BasemapsService,
-        public initService: InitService,
-        public configService: ConfigService,
-        public mapService: MapService
-    ) {}
 
     ngOnInit() {
         if (!this.initService.isLoaded) {

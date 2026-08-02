@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import {
     IonButton,
     IonButtons,
@@ -39,13 +39,11 @@ import { ConfigService } from '@services/config.service'
     ],
 })
 export class AboutPage {
-    constructor(
-        public configService: ConfigService,
-        public platform: Platform,
-        public viewCtrl: ModalController,
-        public navCtrl: NavController,
-        public toastController: ToastController
-    ) {}
+    readonly configService = inject(ConfigService)
+    readonly platform = inject(Platform)
+    readonly viewCtrl = inject(ModalController)
+    readonly navCtrl = inject(NavController)
+    readonly toastController = inject(ToastController)
 
     async presentToast() {
         const toast = await this.toastController.create({

@@ -3,6 +3,7 @@ import {
     type AfterViewInit,
     ChangeDetectionStrategy,
     Component,
+    inject,
     type OnDestroy,
     type OnInit,
 } from '@angular/core'
@@ -66,6 +67,17 @@ import { take } from 'rxjs/operators'
     ],
 })
 export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
+    readonly dataService = inject(DataService)
+    readonly osmApi = inject(OsmApiService)
+    readonly tagsService = inject(TagsService)
+    readonly mapService = inject(MapService)
+    readonly navCtrl = inject(NavController)
+    private readonly alertCtrl = inject(AlertController)
+    readonly configService = inject(ConfigService)
+    readonly platform = inject(Platform)
+    private readonly translate = inject(TranslateService)
+    readonly initService = inject(InitService)
+
     summary = { Total: 0, Create: 0, Update: 0, Delete: 0 }
     changesetId = ''
     commentChangeset = ''
@@ -76,18 +88,7 @@ export class PushDataToOsmPage implements AfterViewInit, OnInit, OnDestroy {
     connectionError
     error: { status: number; message: string; feature: any }
 
-    constructor(
-        public dataService: DataService,
-        public osmApi: OsmApiService,
-        public tagsService: TagsService,
-        public mapService: MapService,
-        public navCtrl: NavController,
-        private alertCtrl: AlertController,
-        public configService: ConfigService,
-        public platform: Platform,
-        private translate: TranslateService,
-        public initService: InitService
-    ) {
+    constructor() {
         this.commentChangeset = this.configService.getChangeSetComment()
         this.featuresChanges = this.dataService.getGeojsonChanged().features
     }

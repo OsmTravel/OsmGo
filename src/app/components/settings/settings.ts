@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
 import {
     IonButton,
     IonButtons,
@@ -52,18 +52,16 @@ import { TagsService } from '@services/tags.service'
     ],
 })
 export class SettingsPage {
-    constructor(
-        public navCtrl: NavController,
-        public configService: ConfigService,
-        public mapService: MapService,
-        public platform: Platform,
-        public tagsService: TagsService,
-        public dataService: DataService,
-        public osmApi: OsmApiService,
-        public loadingController: LoadingController,
-        public initService: InitService,
-        private translate: TranslateService
-    ) {}
+    readonly navCtrl = inject(NavController)
+    readonly configService = inject(ConfigService)
+    readonly mapService = inject(MapService)
+    readonly platform = inject(Platform)
+    readonly tagsService = inject(TagsService)
+    readonly dataService = inject(DataService)
+    readonly osmApi = inject(OsmApiService)
+    readonly loadingController = inject(LoadingController)
+    readonly initService = inject(InitService)
+    private readonly translate = inject(TranslateService)
 
     ngOnInit(): void {
         if (!this.initService.isLoaded) {

@@ -1,3 +1,16 @@
+import { TestBed } from '@angular/core/testing'
+import {
+    AlertController,
+    NavController,
+    Platform,
+} from '@ionic/angular/standalone'
+import { TranslateService } from '@ngx-translate/core'
+import { ConfigService } from '@services/config.service'
+import { DataService } from '@services/data.service'
+import { InitService } from '@services/init.service'
+import { MapService } from '@services/map.service'
+import { OsmApiService } from '@services/osmApi.service'
+import { TagsService } from '@services/tags.service'
 import {
     BehaviorSubject,
     NEVER,
@@ -9,7 +22,50 @@ import {
 
 import { PushDataToOsmPage } from './pushDataToOsm'
 
+interface PushPageDependencies {
+    dataService: unknown
+    configService: unknown
+    osmApi?: unknown
+    tagsService?: unknown
+    mapService?: unknown
+    navCtrl?: unknown
+    alertCtrl?: unknown
+    platform?: unknown
+    translate?: unknown
+    initService?: unknown
+}
+
 describe('PushDataToOsmPage', () => {
+    const createPage = ({
+        dataService,
+        osmApi = {},
+        tagsService = {},
+        mapService = {},
+        navCtrl = {},
+        alertCtrl = {},
+        configService,
+        platform = {},
+        translate = {},
+        initService = {},
+    }: PushPageDependencies): PushDataToOsmPage => {
+        TestBed.resetTestingModule()
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: DataService, useValue: dataService },
+                { provide: OsmApiService, useValue: osmApi },
+                { provide: TagsService, useValue: tagsService },
+                { provide: MapService, useValue: mapService },
+                { provide: NavController, useValue: navCtrl },
+                { provide: AlertController, useValue: alertCtrl },
+                { provide: ConfigService, useValue: configService },
+                { provide: Platform, useValue: platform },
+                { provide: TranslateService, useValue: translate },
+                { provide: InitService, useValue: initService },
+            ],
+        })
+        return TestBed.runInInjectionContext(() => new PushDataToOsmPage())
+    }
+
     const creationErrors = [
         { status: 400, error: 'Invalid changeset request' },
         { status: 401, error: 'Authentication failed' },
@@ -47,18 +103,12 @@ describe('PushDataToOsmPage', () => {
                 getChangeSetComment: () => '',
                 setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
             }
-            const page = new PushDataToOsmPage(
-                dataService as any,
-                osmApi as any,
-                {} as any,
-                mapService as any,
-                {} as any,
-                {} as any,
-                configService as any,
-                {} as any,
-                {} as any,
-                {} as any
-            )
+            const page = createPage({
+                dataService,
+                osmApi,
+                mapService,
+                configService,
+            })
             vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
 
             await page.pushDataToOsm('Survey')
@@ -101,18 +151,12 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
         }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            osmApi as any,
-            {} as any,
-            mapService as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            configService,
+        })
         vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
 
         await page.pushDataToOsm('Survey')
@@ -142,18 +186,12 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
         }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            osmApi as any,
-            {} as any,
-            mapService as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            configService,
+        })
         vi.spyOn(console, 'error').mockReturnValue(undefined)
 
         await page.pushDataToOsm('Survey')
@@ -191,18 +229,12 @@ describe('PushDataToOsmPage', () => {
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
             invalidateChangeset: vi.fn().mockName('invalidateChangeset'),
         }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            osmApi as any,
-            {} as any,
-            mapService as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            configService,
+        })
         vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
 
         await page.pushDataToOsm('Survey')
@@ -249,18 +281,12 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             setChangeSetComment: vi.fn().mockName('setChangeSetComment'),
         }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            osmApi as any,
-            {} as any,
-            mapService as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            configService,
+        })
         vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
         vi.spyOn(console, 'log').mockReturnValue(undefined)
 
@@ -301,18 +327,7 @@ describe('PushDataToOsmPage', () => {
             getChangeSetComment: () => '',
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
         }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            {} as any,
-            {} as any,
-            mapService as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({ dataService, mapService, configService })
         const diffResults = features.map((feature, i) => ({
             typeChange: 'Create',
             osmgoOldId: feature.id,
@@ -343,18 +358,7 @@ describe('PushDataToOsmPage', () => {
             applyUploadResults,
         }
         const configService = { getChangeSetComment: () => '' }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({ dataService, configService })
 
         await expect(
             (page as any).updateLocalDataFromDiffResult(
@@ -418,18 +422,13 @@ describe('PushDataToOsmPage', () => {
             setChangeSetComment: () => {},
             getUserInfo: () => ({ uid: 7, display_name: 'Mapper' }),
         }
-        const page = new PushDataToOsmPage(
-            dataService as any,
-            osmApi as any,
-            {} as any,
-            mapService as any,
-            { back: vi.fn().mockName('back') } as any,
-            {} as any,
-            configService as any,
-            {} as any,
-            {} as any,
-            {} as any
-        )
+        const page = createPage({
+            dataService,
+            osmApi,
+            mapService,
+            navCtrl: { back: vi.fn().mockName('back') },
+            configService,
+        })
         vi.spyOn(page, 'userIsConnected').mockResolvedValue(true)
         await page.pushDataToOsm('Survey')
         page.ngOnDestroy()
