@@ -5,10 +5,17 @@
                 mat-stroked-button
                 type="button"
                 class="add-hours"
-                (click)="openModalAddOpeningHours(null)"
+                (click)="openModalAddOpeningHours()"
             >
-                <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
-                {{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}
+                <mat-icon fontSet="material-symbols-rounded">
+                    {{ openingHours() ? 'edit_calendar' : 'add' }}
+                </mat-icon>
+                {{
+                    (openingHours()
+                        ? 'OPENINGHOURS.EDIT_OPENING_HOURS'
+                        : 'OPENINGHOURS.ADD_OPENING_HOURS'
+                    ) | translate
+                }}
             </button>
         }
         @if (openingHours()) {

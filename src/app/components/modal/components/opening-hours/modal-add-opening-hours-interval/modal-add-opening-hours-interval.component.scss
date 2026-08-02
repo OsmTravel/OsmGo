@@ -10,7 +10,7 @@
     background: var(--osmgo-surface-muted);
 }
 
-header {
+.dialog-header {
     display: flex;
     min-height: 66px;
     align-items: center;
@@ -40,9 +40,37 @@ header {
 .dialog-content {
     display: grid;
     align-content: start;
-    gap: 14px;
+    gap: 12px;
     overflow-y: auto;
-    padding: 14px 12px 22px;
+    padding: 12px 12px 22px;
+}
+
+.schedule-group {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--osmgo-divider);
+    border-radius: 18px;
+    background: var(--osmgo-surface);
+}
+
+.group-header {
+    display: flex;
+    min-height: 32px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+
+    h3 {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 720;
+    }
+}
+
+.remove-group,
+.remove-time {
+    color: var(--osmgo-danger);
 }
 
 .days {
@@ -84,32 +112,36 @@ header {
 
 .time-ranges {
     display: grid;
-    gap: 10px;
+    gap: 8px;
 }
 
 .time-card {
     display: grid;
-    gap: 8px;
-    padding: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 6px 8px 10px;
     border: 1px solid var(--osmgo-divider);
-    border-radius: 16px;
-    background: var(--osmgo-surface);
+    border-radius: 14px;
+    background: var(--osmgo-surface-muted);
 }
 
 .time-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px;
+    gap: 8px;
 }
 
-.remove-time {
-    justify-self: end;
-    color: var(--osmgo-danger);
-}
-
-.add-interval {
+.add-interval,
+.add-group {
     min-height: 44px;
     border-radius: 13px;
+}
+
+.add-group {
+    border-style: dashed;
+    background: var(--osmgo-surface);
+    color: var(--osmgo-blue-dark);
 }
 
 footer {
@@ -129,6 +161,14 @@ footer {
 }
 
 @media (max-width: 420px) {
+    .dialog-content {
+        padding-inline: 8px;
+    }
+
+    .schedule-group {
+        padding-inline: 8px;
+    }
+
     .days {
         gap: 3px;
     }
@@ -138,7 +178,15 @@ footer {
         font-size: 12px;
     }
 
+    .time-card {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
     .time-grid {
         grid-template-columns: 1fr;
+    }
+
+    footer {
+        justify-content: space-between;
     }
 }

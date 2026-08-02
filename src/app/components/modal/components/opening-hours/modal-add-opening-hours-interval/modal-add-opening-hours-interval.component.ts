@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core'
 import { MatButtonModule } from '@angular/material/button'
-import { MatDialogRef } from '@angular/material/dialog'
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
@@ -22,10 +22,34 @@ export interface OpeningHoursDay {
     label: string
 }
 
-export interface OpeningHoursDialogResult {
-    times: OpeningHoursTime[]
+export interface OpeningHoursScheduleGroup {
     days: OpeningHoursDay[]
+    times: OpeningHoursTime[]
 }
+
+export interface OpeningHoursDialogData {
+    groups: OpeningHoursScheduleGroup[]
+}
+
+export interface OpeningHoursDialogResult {
+    groups: OpeningHoursScheduleGroup[]
+}
+
+interface EditableScheduleGroup {
+    id: number
+    days: OpeningHoursDay[]
+    times: OpeningHoursTimeRange[]
+}
+
+const DAY_LABELS = [
+    'DAYS.MONDAY',
+    'DAYS.TUESDAY',
+    'DAYS.WEDNESDAY',
+    'DAYS.THURSDAY',
+    'DAYS.FRIDAY',
+    'DAYS.SATURDAY',
+    'DAYS.SUNDAY',
+]
 
 @Component({
     selector: 'app-modal-add-opening-hours-interval',
@@ -44,60 +68,109 @@ export class ModalAddOpeningHoursIntervalComponent {
     private readonly dialogRef = inject(
         MatDialogRef<ModalAddOpeningHoursIntervalComponent>
     )
-    private nextTimeRangeId = 1
+    private readonly data = inject<OpeningHoursDialogData>(MAT_DIALOG_DATA, {
+        optional: true,
+    })
+    private nextTimeRangeId = 0
+    private nextGroupId = 0
 
-    readonly times = signal<OpeningHoursTimeRange[]>([
-        { id: 0, start: '09:00', end: '12:00' },
-    ])
-
-    readonly days = signal<OpeningHoursDay[]>([
-        { index: 0, selected: false, label: 'DAYS.MONDAY' },
-        { index: 1, selected: false, label: 'DAYS.TUESDAY' },
-        { index: 2, selected: false, label: 'DAYS.WEDNESDAY' },
-        { index: 3, selected: false, label: 'DAYS.THURSDAY' },
-        { index: 4, selected: false, label: 'DAYS.FRIDAY' },
-        { index: 5, selected: false, label: 'DAYS.SATURDAY' },
-        { index: 6, selected: false, label: 'DAYS.SUNDAY' },
-    ])
-
-    readonly dayIsSelected = computed(() =>
-        this.days().some((day) => day.selected)
+    readonly groups = signal<EditableScheduleGroup[]>(
+        this.createInitialGroups(this.data?.groups)
     )
 
+    readonly groupsAreValid = computed(
+        () =>
+            this.groups().length > 0 &&
+            this.groups().every(
+                (group) =>
+                    this.dayIsSelected(group) &&
+                    group.times.length > 0 &&
+                    group.times.every(
+                        (time) =>
+                            this.isValidTime(time.start) &&
+                            this.isValidTime(time.end)
+                    )
+            )
+    )
+
+    dayIsSelected(group: EditableScheduleGroup): boolean {
+        return group.days.some((day) => day.selected)
+    }
+
     updateTimeRange(
-        index: number,
+        groupId: number,
+        timeId: number,
         field: 'start' | 'end',
         value: string
     ): void {
-        this.times.update((times) =>
-            times.map((time, currentIndex) =>
-                currentIndex === index ? { ...time, [field]: value } : time
+        this.groups.update((groups) =>
+            groups.map((group) =>
+                group.id === groupId
+                    ? {
+                          ...group,
+                          times: group.times.map((time) =>
+                              time.id === timeId
+                                  ? { ...time, [field]: value }
+                                  : time
+                          ),
+                      }
+                    : group
             )
         )
     }
 
-    addNewInterval(): void {
-        this.times.update((times) => [
-            ...times,
-            {
-                id: this.nextTimeRangeId++,
-                start: '09:00',
-                end: '12:00',
-            },
-        ])
-    }
-
-    removeInterval(index: number): void {
-        this.times.update((times) =>
-            times.filter((_, currentIndex) => currentIndex !== index)
+    addNewInterval(groupId: number): void {
+        this.groups.update((groups) =>
+            groups.map((group) =>
+                group.id === groupId
+                    ? {
+                          ...group,
+                          times: [...group.times, this.createTimeRange()],
+                      }
+                    : group
+            )
         )
     }
 
-    toggleDay(index: number): void {
-        this.days.update((days) =>
-            days.map((day) =>
-                day.index === index ? { ...day, selected: !day.selected } : day
+    removeInterval(groupId: number, timeId: number): void {
+        this.groups.update((groups) =>
+            groups.map((group) =>
+                group.id === groupId
+                    ? {
+                          ...group,
+                          times: group.times.filter(
+                              (time) => time.id !== timeId
+                          ),
+                      }
+                    : group
             )
+        )
+    }
+
+    toggleDay(groupId: number, dayIndex: number): void {
+        this.groups.update((groups) =>
+            groups.map((group) =>
+                group.id === groupId
+                    ? {
+                          ...group,
+                          days: group.days.map((day) =>
+                              day.index === dayIndex
+                                  ? { ...day, selected: !day.selected }
+                                  : day
+                          ),
+                      }
+                    : group
+            )
+        )
+    }
+
+    addScheduleGroup(): void {
+        this.groups.update((groups) => [...groups, this.createGroup()])
+    }
+
+    removeScheduleGroup(groupId: number): void {
+        this.groups.update((groups) =>
+            groups.filter((group) => group.id !== groupId)
         )
     }
 
@@ -106,7 +179,47 @@ export class ModalAddOpeningHoursIntervalComponent {
     }
 
     submit(): void {
-        const times = this.times().map(({ start, end }) => ({ start, end }))
-        this.dialogRef.close({ times, days: this.days() })
+        if (!this.groupsAreValid()) return
+
+        const groups = this.groups().map((group) => ({
+            days: group.days.map((day) => ({ ...day })),
+            times: group.times.map(({ start, end }) => ({ start, end })),
+        }))
+        this.dialogRef.close({ groups })
+    }
+
+    private createInitialGroups(
+        groups: OpeningHoursScheduleGroup[] | undefined
+    ): EditableScheduleGroup[] {
+        if (!groups?.length) return [this.createGroup()]
+        return groups.map((group) => this.createGroup(group))
+    }
+
+    private createGroup(
+        group?: OpeningHoursScheduleGroup
+    ): EditableScheduleGroup {
+        return {
+            id: this.nextGroupId++,
+            days: DAY_LABELS.map((label, index) => ({
+                index,
+                selected:
+                    group?.days.find((day) => day.index === index)?.selected ??
+                    false,
+                label,
+            })),
+            times: group?.times.length
+                ? group.times.map((time) => this.createTimeRange(time))
+                : [this.createTimeRange()],
+        }
+    }
+
+    private createTimeRange(
+        time: OpeningHoursTime = { start: '09:00', end: '12:00' }
+    ): OpeningHoursTimeRange {
+        return { id: this.nextTimeRangeId++, ...time }
+    }
+
+    private isValidTime(value: string): boolean {
+        return /^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value)
     }
 }

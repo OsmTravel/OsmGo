@@ -1,8 +1,8 @@
 <main class="interval-dialog">
-    <header>
+    <header class="dialog-header">
         <div>
             <mat-icon fontSet="material-symbols-rounded">schedule</mat-icon>
-            <h2>{{ 'OPENINGHOURS.ADD_OPENING_HOURS' | translate }}</h2>
+            <h2>{{ 'OPENINGHOURS.MANAGE_OPENING_HOURS' | translate }}</h2>
         </div>
         <button
             mat-icon-button
@@ -15,100 +15,162 @@
     </header>
 
     <section class="dialog-content">
-        <div class="days" role="group">
-            @for (day of days(); track day.index) {
-                <button
-                    mat-button
-                    type="button"
-                    class="day-button"
-                    [class.day-button--selected]="day.selected"
-                    [attr.aria-pressed]="day.selected"
-                    (click)="toggleDay(day.index)"
-                >
-                    {{ day.label | translate | charLimit: 3 }}
-                </button>
-            }
-        </div>
-
-        @if (!dayIsSelected()) {
-            <p class="day-warning">
-                <mat-icon fontSet="material-symbols-rounded">info</mat-icon>
-                {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
-            </p>
-        }
-
-        <div class="time-ranges">
-            @for (time of times(); track time.id; let index = $index) {
-                <article class="time-card">
-                    <div class="time-grid">
-                        <mat-form-field
-                            appearance="outline"
-                            subscriptSizing="dynamic"
+        @for (group of groups(); track group.id; let groupIndex = $index) {
+            <article class="schedule-group">
+                <div class="group-header">
+                    <h3>
+                        {{
+                            'OPENINGHOURS.SCHEDULE_GROUP'
+                                | translate: { number: groupIndex + 1 }
+                        }}
+                    </h3>
+                    @if (groups().length > 1) {
+                        <button
+                            mat-icon-button
+                            type="button"
+                            class="remove-group"
+                            [attr.aria-label]="
+                                'OPENINGHOURS.DELETE_SCHEDULE_GROUP' | translate
+                            "
+                            (click)="removeScheduleGroup(group.id)"
                         >
-                            <mat-label>{{
-                                'OPENINGHOURS.START_TIME' | translate
-                            }}</mat-label>
-                            <input
-                                #startInput
-                                matInput
-                                type="time"
-                                step="300"
-                                [value]="time.start"
-                                (input)="
-                                    updateTimeRange(
-                                        index,
-                                        'start',
-                                        startInput.value
-                                    )
-                                "
-                            />
-                        </mat-form-field>
-                        <mat-form-field
-                            appearance="outline"
-                            subscriptSizing="dynamic"
+                            <mat-icon fontSet="material-symbols-rounded"
+                                >delete</mat-icon
+                            >
+                        </button>
+                    }
+                </div>
+
+                <div class="days" role="group">
+                    @for (day of group.days; track day.index) {
+                        <button
+                            mat-button
+                            type="button"
+                            class="day-button"
+                            [class.day-button--selected]="day.selected"
+                            [attr.aria-pressed]="day.selected"
+                            (click)="toggleDay(group.id, day.index)"
                         >
-                            <mat-label>{{
-                                'OPENINGHOURS.END_TIME' | translate
-                            }}</mat-label>
-                            <input
-                                #endInput
-                                matInput
-                                type="time"
-                                step="300"
-                                [value]="time.end"
-                                (input)="
-                                    updateTimeRange(
-                                        index,
-                                        'end',
-                                        endInput.value
-                                    )
-                                "
-                            />
-                        </mat-form-field>
-                    </div>
-                    <button
-                        mat-button
-                        type="button"
-                        class="remove-time"
-                        (click)="removeInterval(index)"
-                    >
+                            {{ day.label | translate | charLimit: 3 }}
+                        </button>
+                    }
+                </div>
+
+                @if (!dayIsSelected(group)) {
+                    <p class="day-warning">
                         <mat-icon fontSet="material-symbols-rounded"
-                            >delete</mat-icon
+                            >info</mat-icon
                         >
-                        {{ 'OPENINGHOURS.DELETE_INTERVAL' | translate }}
-                    </button>
-                </article>
-            }
-        </div>
+                        {{ 'OPENINGHOURS.SELECT_AT_LEAST_ONE_DAY' | translate }}
+                    </p>
+                }
+
+                <div class="time-ranges">
+                    @for (time of group.times; track time.id) {
+                        <div class="time-card">
+                            <div class="time-grid">
+                                <mat-form-field
+                                    appearance="outline"
+                                    subscriptSizing="dynamic"
+                                >
+                                    <mat-label>{{
+                                        'OPENINGHOURS.START_TIME' | translate
+                                    }}</mat-label>
+                                    <input
+                                        #startInput
+                                        matInput
+                                        required
+                                        type="time"
+                                        step="300"
+                                        [value]="time.start"
+                                        (input)="
+                                            updateTimeRange(
+                                                group.id,
+                                                time.id,
+                                                'start',
+                                                startInput.value
+                                            )
+                                        "
+                                        (change)="
+                                            updateTimeRange(
+                                                group.id,
+                                                time.id,
+                                                'start',
+                                                startInput.value
+                                            )
+                                        "
+                                    />
+                                </mat-form-field>
+                                <mat-form-field
+                                    appearance="outline"
+                                    subscriptSizing="dynamic"
+                                >
+                                    <mat-label>{{
+                                        'OPENINGHOURS.END_TIME' | translate
+                                    }}</mat-label>
+                                    <input
+                                        #endInput
+                                        matInput
+                                        required
+                                        type="time"
+                                        step="300"
+                                        [value]="time.end"
+                                        (input)="
+                                            updateTimeRange(
+                                                group.id,
+                                                time.id,
+                                                'end',
+                                                endInput.value
+                                            )
+                                        "
+                                        (change)="
+                                            updateTimeRange(
+                                                group.id,
+                                                time.id,
+                                                'end',
+                                                endInput.value
+                                            )
+                                        "
+                                    />
+                                </mat-form-field>
+                            </div>
+                            <button
+                                mat-icon-button
+                                type="button"
+                                class="remove-time"
+                                [attr.aria-label]="
+                                    'OPENINGHOURS.DELETE_INTERVAL' | translate
+                                "
+                                (click)="removeInterval(group.id, time.id)"
+                            >
+                                <mat-icon fontSet="material-symbols-rounded"
+                                    >delete</mat-icon
+                                >
+                            </button>
+                        </div>
+                    }
+                </div>
+
+                <button
+                    mat-stroked-button
+                    type="button"
+                    class="add-interval"
+                    (click)="addNewInterval(group.id)"
+                >
+                    <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
+                    {{ 'OPENINGHOURS.ADD_INTERVAL' | translate }}
+                </button>
+            </article>
+        }
 
         <button
             mat-stroked-button
             type="button"
-            class="add-interval"
-            (click)="addNewInterval()"
+            class="add-group"
+            (click)="addScheduleGroup()"
         >
             <mat-icon fontSet="material-symbols-rounded">add</mat-icon>
-            {{ 'OPENINGHOURS.ADD_INTERVAL' | translate }}
+            {{ 'OPENINGHOURS.ADD_SCHEDULE_GROUP' | translate }}
         </button>
     </section>
 
@@ -121,10 +183,10 @@
             type="button"
             class="submit-button"
             (click)="submit()"
-            [disabled]="!dayIsSelected() || times().length === 0"
+            [disabled]="!groupsAreValid()"
         >
             <mat-icon fontSet="material-symbols-rounded">check</mat-icon>
-            {{ 'SHARED.VALIDATE' | translate }}
+            {{ 'OPENINGHOURS.SAVE_OPENING_HOURS' | translate }}
         </button>
     </footer>
 </main>

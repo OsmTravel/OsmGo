@@ -29,6 +29,68 @@ describe('ConfigService', () => {
         expect(service.config()).toBe(config)
     })
 
+    it('migrates the stale maximum zoom of a stored Bing basemap', async () => {
+        const storedBasemap = {
+            id: 'Bing',
+            name: 'Bing Maps Aerial',
+            tiles: ['https://example.test/{quadkey}.jpeg'],
+            max_zoom: 22,
+        }
+        const storage = {
+            get: vi.fn().mockResolvedValue({ basemap: storedBasemap }),
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        const config = await firstValueFrom(service.loadConfig$(undefined))
+
+        expect(config.basemap.max_zoom).toBe(19)
+        expect(storage.set).toHaveBeenCalledWith('config', config)
+    })
+
+    it('migrates a stored BDOrtho basemap away from the retired IGN host', async () => {
+        const storage = {
+            get: vi.fn().mockResolvedValue({
+                basemap: {
+                    id: 'fr.ign.bdortho',
+                    name: 'BDOrtho IGN',
+                    tiles: [
+                        'https://wxs.ign.fr/pratique/geoportail/wmts?TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
+                    ],
+                    max_zoom: 19,
+                },
+            }),
+            set: vi.fn().mockName('Storage.set'),
+        }
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: AppStorage, useValue: storage },
+                { provide: HttpClient, useValue: {} },
+                { provide: TranslateService, useValue: {} },
+            ],
+        })
+        const service = TestBed.inject(ConfigService)
+
+        const config = await firstValueFrom(service.loadConfig$(undefined))
+
+        expect(config.basemap).toEqual(
+            expect.objectContaining({
+                max_zoom: 19,
+                tiles: [
+                    'https://data.geopf.fr/tms/1.0.0/ORTHOIMAGERY.ORTHOPHOTOS/{z}/{x}/{y}.jpeg',
+                ],
+            })
+        )
+        expect(storage.set).toHaveBeenCalledWith('config', config)
+    })
+
     it('replaces and persists configuration updates', () => {
         const storage = {
             set: vi.fn().mockName('Storage.set'),

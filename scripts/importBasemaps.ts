@@ -1,9 +1,13 @@
 import SphericalMercator from '@mapbox/sphericalmercator'
 import * as cover from '@mapbox/tile-cover'
+import {
+    BING_MAX_ZOOM,
+    IGN_BDORTHO_ID,
+    IGN_BDORTHO_MAX_ZOOM,
+} from '@osmgo/shared/basemap.constants'
 import { centroid } from '@turf/centroid'
 import fs from 'fs-extra'
 import stringify from 'json-stringify-pretty-compact'
-import orderBy from 'lodash/orderBy'
 import path from 'path'
 import { fetchJson, fetchResponse } from './_fetch'
 import { assetsDir } from './_paths'
@@ -84,13 +88,34 @@ const tileToQuadkey = (x, y, z) => {
     return quadkey
 }
 
+const mapWithConcurrency = async <T, R>(
+    items: T[],
+    concurrency: number,
+    callback: (item: T) => Promise<R>
+): Promise<R[]> => {
+    const results = new Array<R>(items.length)
+    let nextIndex = 0
+    const workers = Array.from(
+        { length: Math.min(concurrency, items.length) },
+        async () => {
+            while (nextIndex < items.length) {
+                const index = nextIndex
+                nextIndex += 1
+                results[index] = await callback(items[index])
+            }
+        }
+    )
+    await Promise.all(workers)
+    return results
+}
+
 const run = async () => {
     console.log('Importing basemaps from')
     const data: any = await fetchJson(url)
     const features = data.features
     // const features = data.features.filter((feature:any) => feature.properties.id === 'Bing')
 
-    const promisesCheckUrl = []
+    const featuresToCheck = []
     for (const feature of features) {
         if (ignoredIds.includes(feature.properties.id)) {
             // Ignore this imagery
@@ -111,6 +136,13 @@ const run = async () => {
             continue
         }
 
+        // Do not commit third-party Mapbox tokens from the upstream index.
+        // GitHub push protection treats them as secrets, even when they are
+        // intended for public imagery layers.
+        if (/access_token=pk\./.test(furl)) {
+            continue
+        }
+
         feature.properties['local'] = feature.geometry ? true : false
 
         if (feature.properties.id === 'Bing') {
@@ -126,12 +158,10 @@ const run = async () => {
                 text: 'Bing© 2022 Microsoft Corporation',
                 url: 'https://blog.openstreetmap.org/2010/11/30/microsoft-imagery-details/',
             }
-            feature.properties['max_zoom'] = 19
-        } else if (feature.properties.id === 'fr.ign.bdortho') {
-            feature.properties['tiles'] = [
-                'https://wxs.ign.fr/pratique/geoportail/wmts?LAYER=ORTHOIMAGERY.ORTHOPHOTOS&EXCEPTIONS=text/xml&FORMAT=image/jpeg&SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&STYLE=normal&TILEMATRIXSET=PM&&TILEMATRIX={z}&TILECOL={x}&TILEROW={y}',
-            ]
-            feature.properties['max_zoom'] = 19
+            feature.properties['max_zoom'] = BING_MAX_ZOOM
+        } else if (feature.properties.id === IGN_BDORTHO_ID) {
+            feature.properties['tiles'].push(furl)
+            feature.properties['max_zoom'] = IGN_BDORTHO_MAX_ZOOM
         } else if (/\{switch:/.test(furl)) {
             // const fswitch = furl.match(/{switch\:.*\}/g)
             const fswitch = furl.match(/\{switch:.+?\}/g)
@@ -150,10 +180,14 @@ const run = async () => {
             continue
         }
 
-        promisesCheckUrl.push(checkUrl(feature))
+        featuresToCheck.push(feature)
     }
 
-    const resultCheckUrl = await Promise.all(promisesCheckUrl)
+    const resultCheckUrl = await mapWithConcurrency(
+        featuresToCheck,
+        20,
+        checkUrl
+    )
 
     const resultFeatures = resultCheckUrl.filter((f) => f !== false)
     const noValidBaseMaps = resultCheckUrl.filter((f) => f === false)
@@ -169,7 +203,11 @@ const run = async () => {
         ['bing'].includes(f.properties.type)
     )
     const catPhoto = resultFeatures
-        .filter((f) => ['photo'].includes(f.properties.category))
+        .filter(
+            (f) =>
+                ['photo'].includes(f.properties.category) &&
+                !['bing'].includes(f.properties.type)
+        )
         .sort((a, b) => {
             if (b.propertiesbest !== a.properties.best) {
                 return b.properties.best - a.properties.best
@@ -187,10 +225,11 @@ const run = async () => {
     const catQa = resultFeatures.filter((f) =>
         ['qa'].includes(f.properties.category)
     )
-    const catOther = resultFeatures.filter((f) =>
-        ['photo', 'historicphoto', 'map', 'osmbasedmap', 'qa'].includes(
-            f.properties.category
-        )
+    const catOther = resultFeatures.filter(
+        (f) =>
+            !['photo', 'historicphoto', 'map', 'osmbasedmap', 'qa'].includes(
+                f.properties.category
+            ) && !['bing'].includes(f.properties.type)
     )
 
     const ordered = [

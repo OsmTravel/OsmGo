@@ -1,3 +1,20 @@
+# 2.0.0
+
+### Added
+
+- Introduce the mobile-first OsmGo V2 interface based on Angular Material and Capacitor.
+- Unify object reading, creation, and editing in a responsive map sheet.
+
+### Changed
+
+- Replace the main Ionic workflows with Angular Material and custom OsmGo components.
+- Keep settings, upload, tag management, and about screens over the persistent map.
+- Modernize map controls, object metadata, SVG icons, gestures, and responsive layouts.
+
+### Fixed
+
+- Make OAuth callbacks and token persistence reliable on web and Android.
+
 # 1.7.0
 
 ### Added

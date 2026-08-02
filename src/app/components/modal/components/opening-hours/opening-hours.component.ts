@@ -15,7 +15,9 @@ import WideInterval from '@scripts/YoHours/WideInterval.js'
 import {
     ModalAddOpeningHoursIntervalComponent,
     type OpeningHoursDay,
+    type OpeningHoursDialogData,
     type OpeningHoursDialogResult,
+    type OpeningHoursScheduleGroup,
     type OpeningHoursTime,
 } from './modal-add-opening-hours-interval/modal-add-opening-hours-interval.component'
 
@@ -161,12 +163,109 @@ export class OpeningHoursComponent implements OnInit {
         this.parseOpeningHours()
     }
 
+    getScheduleGroups(): OpeningHoursScheduleGroup[] {
+        const currentDataRange = this.intervals.find(
+            (dateRange) => dateRange._wideInterval._type === 'always'
+        )
+        if (!currentDataRange) return []
+
+        const groups = new Map<
+            string,
+            { days: OpeningHoursDay[]; times: OpeningHoursTime[] }
+        >()
+
+        for (const day of this.days) {
+            const times = this.findIntervalsByDay(
+                currentDataRange.getTypical().getIntervals(),
+                day.index
+            )
+                .map((interval) => ({
+                    start: this.minutesToTime(interval._start),
+                    end: this.minutesToTime(interval._end),
+                }))
+                .sort((first, second) =>
+                    first.start.localeCompare(second.start)
+                )
+
+            if (times.length === 0) continue
+
+            const signature = JSON.stringify(times)
+            const existingGroup = groups.get(signature)
+            if (existingGroup) {
+                existingGroup.days[day.index].selected = true
+                continue
+            }
+
+            groups.set(signature, {
+                days: this.createDaysSelection(day.index),
+                times,
+            })
+        }
+
+        return [...groups.values()]
+    }
+
+    replaceScheduleGroups(groups: OpeningHoursScheduleGroup[]): void {
+        const wideInterval = new WideInterval()
+        const dateRange = new DateRange(wideInterval.always())
+
+        for (const group of groups) {
+            const daysIndex = group.days
+                .filter((day) => day.selected)
+                .map((day) => day.index)
+
+            for (const dayIndex of daysIndex) {
+                for (const time of group.times) {
+                    const start = this.timeToMinutes(time.start)
+                    const end = this.timeToMinutes(time.end)
+                    let dayEnd = start > end ? dayIndex + 1 : dayIndex
+                    if (dayEnd === 7) dayEnd = 0
+                    dateRange
+                        .getTypical()
+                        .addInterval(new Interval(dayIndex, dayEnd, start, end))
+                }
+            }
+        }
+
+        this.intervals = [dateRange]
+        this.openingHours.set(builder.build(this.intervals))
+        this.valueChangeEvent.emit(this.openingHours())
+        this.parseOpeningHours()
+    }
+
     timeToMinutes(time: string): number {
-        const [hour, min] = time.split(':').map((t) => parseInt(t))
+        const [hour, min] = time.split(':').map((t) => parseInt(t, 10))
         return min + hour * 60
     }
 
-    openModalAddOpeningHours(data: Record<string, unknown> | null): void {
+    minutesToTime(minutes: number): string {
+        const hour = Math.floor(minutes / 60)
+        const minute = minutes % 60
+        return `${hour.toString().padStart(2, '0')}:${minute
+            .toString()
+            .padStart(2, '0')}`
+    }
+
+    private createDaysSelection(selectedDay: number): OpeningHoursDay[] {
+        return this.days.map((day) => ({
+            index: day.index,
+            selected: day.index === selectedDay,
+            label: [
+                'DAYS.MONDAY',
+                'DAYS.TUESDAY',
+                'DAYS.WEDNESDAY',
+                'DAYS.THURSDAY',
+                'DAYS.FRIDAY',
+                'DAYS.SATURDAY',
+                'DAYS.SUNDAY',
+            ][day.index],
+        }))
+    }
+
+    openModalAddOpeningHours(): void {
+        const data: OpeningHoursDialogData = {
+            groups: this.getScheduleGroups(),
+        }
         const dialogRef = this.dialog.open(
             ModalAddOpeningHoursIntervalComponent,
             {
@@ -175,19 +274,15 @@ export class OpeningHoursComponent implements OnInit {
                 maxHeight: 'calc(100dvh - 24px)',
                 panelClass: 'osmgo-dialog',
                 autoFocus: 'dialog',
+                data,
             }
         )
-        if (data) {
-            for (const [key, value] of Object.entries(data)) {
-                dialogRef.componentRef?.setInput(key, value)
-            }
-        }
 
         dialogRef
             .afterClosed()
             .subscribe((result?: OpeningHoursDialogResult) => {
                 if (result) {
-                    this.addIntervals(result.times, result.days)
+                    this.replaceScheduleGroups(result.groups)
                 }
             })
     }

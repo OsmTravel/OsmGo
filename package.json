@@ -3,7 +3,7 @@
   "author": "Fabien Del Olmo",
   "description": "Map them all !",
   "homepage": "https://github.com/DoFabien/OsmGo",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "engines": {
     "node": ">=24.18.0 <25",
     "npm": "11.16.0"

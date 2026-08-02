@@ -3,6 +3,12 @@ import { inject, Service, signal } from '@angular/core'
 import type { DeviceInfo } from '@capacitor/device'
 import { environment } from '@environments/environment.prod'
 import { TranslateService } from '@ngx-translate/core'
+import {
+    BING_MAX_ZOOM,
+    IGN_BDORTHO_ID,
+    IGN_BDORTHO_MAX_ZOOM,
+    IGN_BDORTHO_TILE_URL,
+} from '@osmgo/shared/basemap.constants'
 import type { CountryCode, Iso6391Language } from '@osmgo/type'
 import { AppStorage } from '@services/app-storage.service'
 import type { Basemap } from '@services/basemaps.service'
@@ -110,7 +116,7 @@ export class ConfigService {
         icon: 'https://osmlab.github.io/editor-layer-index/sources/world/Bing.png',
         id: 'Bing',
         license_url: 'https://wiki.openstreetmap.org/wiki/Bing_Maps',
-        max_zoom: 22,
+        max_zoom: BING_MAX_ZOOM,
         min_zoom: 1,
         name: 'Bing Maps Aerial',
         no_tile_header: { 'X-VE-Tile-Info': ['no-tile'] },
@@ -158,6 +164,25 @@ export class ConfigService {
         limitFeatures: 10000,
     })
     readonly config = this.configState.asReadonly()
+
+    private normalizeBasemap(basemap: Basemap): Basemap {
+        if (basemap.id === 'Bing' && basemap.max_zoom !== BING_MAX_ZOOM) {
+            return { ...basemap, max_zoom: BING_MAX_ZOOM }
+        }
+        if (
+            basemap.id === IGN_BDORTHO_ID &&
+            (basemap.max_zoom !== IGN_BDORTHO_MAX_ZOOM ||
+                basemap.tiles.length !== 1 ||
+                basemap.tiles[0] !== IGN_BDORTHO_TILE_URL)
+        ) {
+            return {
+                ...basemap,
+                max_zoom: IGN_BDORTHO_MAX_ZOOM,
+                tiles: [IGN_BDORTHO_TILE_URL],
+            }
+        }
+        return basemap
+    }
 
     currentTagsCountryChoice: string[] = []
 
@@ -239,16 +264,20 @@ export class ConfigService {
     loadConfig$(_i18nConfig: I18nConfig | undefined): Observable<Config> {
         return from(this.localStorage.get('config')).pipe(
             map((d) => {
+                const basemap = this.normalizeBasemap(
+                    d?.basemap || this.config().basemap
+                )
                 const config = {
                     ...this.config(),
                     ...d,
+                    basemap,
                     languageTags:
                         d?.languageTags || this.config().languageTags || 'en',
                     countryTags:
                         d?.countryTags || this.config().countryTags || 'GB',
                 }
                 this.configState.set(config)
-                if (!d) {
+                if (!d || basemap !== d.basemap) {
                     this.localStorage.set('config', config)
                 }
 
@@ -305,16 +334,20 @@ export class ConfigService {
     > {
         return from(this.localStorage.get('config')).pipe(
             map(async (d) => {
+                const basemap = this.normalizeBasemap(
+                    d?.basemap || this.config().basemap
+                )
                 const config = {
                     ...this.config(),
                     ...d,
+                    basemap,
                     languageTags:
                         d?.languageTags || this.config().languageTags || 'en',
                     countryTags:
                         d?.countryTags || this.config().countryTags || 'GB',
                 }
                 this.configState.set(config)
-                if (!d) {
+                if (!d || basemap !== d.basemap) {
                     this.localStorage.set('config', config)
                 }
 
@@ -430,7 +463,7 @@ export class ConfigService {
     }
 
     setBasemap(basemap: Basemap): void {
-        void this.updateConfig({ basemap })
+        void this.updateConfig({ basemap: this.normalizeBasemap(basemap) })
     }
 
     getBasemap() {

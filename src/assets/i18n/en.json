@@ -257,7 +257,13 @@
         "START_TIME": "Start Time",
         "END_TIME": "End Time",
         "ADD_OPENING_HOURS": "Add opening hours",
+        "EDIT_OPENING_HOURS": "Edit opening hours",
+        "MANAGE_OPENING_HOURS": "Manage opening hours",
         "ADD_INTERVAL": "Add an interval",
+        "ADD_SCHEDULE_GROUP": "Add other days",
+        "SCHEDULE_GROUP": "Schedule {{ number }}",
+        "DELETE_SCHEDULE_GROUP": "Delete this schedule group",
+        "SAVE_OPENING_HOURS": "Save opening hours",
         "DELETE_INTERVAL": "Delete this interval",
         "SELECT_AT_LEAST_ONE_DAY": "You need to select at least one day",
         "TOO_COMPLEX_FOR_OSMGO": "This format is too complex for Osm Go!"

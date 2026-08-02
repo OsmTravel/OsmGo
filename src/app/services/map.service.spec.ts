@@ -55,3 +55,53 @@ describe('MapService filters', () => {
         expect(setFilter).not.toHaveBeenCalled()
     })
 })
+
+describe('MapService aerial imagery', () => {
+    it('uses the maximum tile zoom supplied by the imagery index', () => {
+        const source = { type: 'raster' as const }
+        const addSource = vi.fn(
+            (_id: string, _specification: unknown) => undefined
+        )
+        const map = {
+            addControl: vi.fn(),
+            addLayer: vi.fn(),
+            addSource: (
+                id: string,
+                specification: unknown
+            ): ReturnType<typeof addSource> => {
+                addSource(id, specification)
+            },
+            getLayer: vi.fn(() => undefined),
+            getSource: vi.fn(() =>
+                addSource.mock.calls.length > 0 ? source : undefined
+            ),
+            hasControl: vi.fn(() => false),
+            removeControl: vi.fn(),
+            removeLayer: vi.fn(),
+            removeSource: vi.fn(),
+        } as unknown as Map
+        const service = Object.create(MapService.prototype) as MapService
+        service.map = map
+        Object.defineProperty(service, 'configService', {
+            value: { config: () => ({ basemap: { id: 'legacy-basemap' } }) },
+        })
+        Object.defineProperty(service, 'isDisplaySatelliteBaseMapState', {
+            value: { set: vi.fn() },
+        })
+
+        service.displaySatelliteBaseMap(
+            {
+                id: 'test-imagery',
+                name: 'Test imagery',
+                tiles: ['https://example.test/{z}/{x}/{y}.jpeg'],
+                max_zoom: 19,
+            },
+            true
+        )
+
+        expect(addSource).toHaveBeenCalledWith(
+            'basemap',
+            expect.objectContaining({ maxzoom: 19 })
+        )
+    })
+})
