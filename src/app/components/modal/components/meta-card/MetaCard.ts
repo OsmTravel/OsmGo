@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common'
-import { ChangeDetectionStrategy, Component, input } from '@angular/core'
+import { Component, computed, input } from '@angular/core'
 import { IonCard, IonCardContent } from '@ionic/angular/standalone'
 import { TranslateModule } from '@ngx-translate/core'
 import { RelativeTimePipe } from '@pipes/relative-time.pipe'
@@ -11,7 +11,7 @@ interface MetaFeature {
             user?: string
             version: number
         }
-        usedByWays?: unknown
+        usedByWays?: unknown[]
     }
 }
 
@@ -19,7 +19,6 @@ interface MetaFeature {
     selector: 'meta-card',
     styleUrls: ['MetaCard.scss'],
     templateUrl: './MetaCard.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         DatePipe,
         IonCard,
@@ -33,10 +32,7 @@ export class MetaCard {
     readonly lastSurvey = input<Date>()
     readonly displayCode = input(undefined)
     readonly languageUi = input(undefined)
-    meta
-    usedByWays
-
-    ngOnInit(): void {
-        this.usedByWays = this.feature().properties.usedByWays || null
-    }
+    readonly usedByWays = computed(
+        () => this.feature().properties.usedByWays || null
+    )
 }

@@ -37,10 +37,10 @@
             <span> {{ survey | date: 'short'}} </span>
             }
         </p>
-        } @if (usedByWays) {
+        } @if (usedByWays(); as ways) {
         <p class="warning">
             {{ ('MODAL_SELECTED_ITEM.THIS_NODE_IS_USED_BY_A_WAY' | translate)
-            .replace('{x}', usedByWays.length) }}
+            .replace('{x}', ways.length) }}
         </p>
         }
     </ion-card-content>
