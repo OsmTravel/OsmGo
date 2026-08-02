@@ -1,11 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    inject,
-    input,
-    NgZone,
-    output,
-} from '@angular/core'
+import { Component, inject, input, output } from '@angular/core'
 import { OsmAuthService } from '@app/services/osm-auth.service'
 import {
     AlertController,
@@ -27,7 +20,6 @@ import { ConfigService } from '@services/config.service'
 import { DataService } from '@services/data.service'
 import { MapService } from '@services/map.service'
 import { OsmApiService } from '@services/osmApi.service'
-import { concat } from 'rxjs'
 import { menuAnimations } from './menu.animations'
 
 @Component({
@@ -35,7 +27,6 @@ import { menuAnimations } from './menu.animations'
     templateUrl: './menu.html',
     styleUrls: ['./menu.scss'],
     animations: menuAnimations,
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IonButton,
         IonButtons,
