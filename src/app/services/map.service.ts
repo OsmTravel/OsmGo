@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http'
-import { DOCUMENT, Inject, Injectable, NgZone, signal } from '@angular/core'
+import { DOCUMENT, Injectable, inject, NgZone, signal } from '@angular/core'
 import { ActivatedRoute, type Params, Router } from '@angular/router'
 import { Haptics, ImpactStyle } from '@capacitor/haptics'
 import { AlertController } from '@ionic/angular/standalone'
@@ -57,6 +57,20 @@ export const getMarkerLayout = () => ({
 
 @Injectable({ providedIn: 'root' })
 export class MapService {
+    private readonly _ngZone = inject(NgZone)
+    readonly dataService = inject(DataService)
+    readonly tagsService = inject(TagsService)
+    readonly alertService = inject(AlertService)
+    readonly locationService = inject(LocationService)
+    readonly configService = inject(ConfigService)
+    private readonly zone = inject(NgZone)
+    private readonly alertCtrl = inject(AlertController)
+    private readonly http = inject(HttpClient)
+    private readonly translate = inject(TranslateService)
+    private readonly router = inject(Router)
+    private readonly activatedRoute = inject(ActivatedRoute)
+    private readonly document = inject(DOCUMENT)
+
     isFirstPosition: boolean = true
     private readonly loadingDataState = signal(false)
     readonly loadingData = this.loadingDataState.asReadonly()
@@ -64,33 +78,7 @@ export class MapService {
     readonly isProcessing = this.processingState.asReadonly()
 
     spritesCache
-    constructor(
-        @Inject(NgZone)
-        private _ngZone: NgZone,
-        @Inject(DataService)
-        public dataService: DataService,
-        @Inject(TagsService)
-        public tagsService: TagsService,
-        @Inject(AlertService)
-        public alertService: AlertService,
-        @Inject(LocationService)
-        public locationService: LocationService,
-        @Inject(ConfigService)
-        public configService: ConfigService,
-        @Inject(NgZone)
-        private zone: NgZone,
-        @Inject(AlertController)
-        private alertCtrl: AlertController,
-        @Inject(HttpClient)
-        private http: HttpClient,
-        @Inject(TranslateService)
-        private translate: TranslateService,
-        @Inject(Router)
-        private router: Router,
-        @Inject(ActivatedRoute)
-        private activatedRoute: ActivatedRoute,
-        @Inject(DOCUMENT) private document: Document
-    ) {
+    constructor() {
         // Preload sprites
         const pathSprites =
             window.devicePixelRatio == 1
